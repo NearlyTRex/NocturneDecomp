@@ -1,16 +1,23 @@
+#!/usr/bin/env python3
 # CRT Function Analysis Tool
 # Identifies potential issues with CRT function definitions (return types, calling conventions, params)
+# PyGhidra-compatible headless version.
 #
-# Run with: analyzeHeadless <project_dir> <project_name> -process <program> -postScript analyze_crt_functions.py
+# Usage (PyGhidra headless - recommended):
+#   python analyze_crt_functions.py <project_dir> <project_name> <program_name>
+#
+# Example:
+#   python analyze_crt_functions.py ./projects NocturneEdit nocedit.exe
+#
+#@author NearlyTRex
+#@category Annotations
 
 import os
+import sys
 import json
 import re
+import argparse
 from collections import defaultdict
-
-from ghidra.program.model.symbol import SourceType
-from ghidra.program.model.listing import Function
-from ghidra.app.decompiler import DecompInterface, DecompileOptions
 
 # CRT address range for this binary
 # Actual CRT code starts at 0x5fd990 (crt_stdio.c_fread) and ends around 0x611000
@@ -881,6 +888,9 @@ def format_expected_signature(known):
 
 def analyze_crt_functions(program):
     """Analyze all CRT functions and generate report."""
+    # Import Ghidra classes (must be after PyGhidra starts)
+    from ghidra.app.decompiler import DecompInterface, DecompileOptions
+
     # Build output lines for both console and file
     output_lines = []
 
@@ -1090,6 +1100,56 @@ def analyze_crt_functions(program):
     return results
 
 
-# Main execution
-if __name__ == "__main__" or "currentProgram" in dir():
+def run_analysis(currentProgram):
+    """Main entry point for analysis."""
     analyze_crt_functions(currentProgram)
+
+
+def main():
+    """Entry point for PyGhidra headless execution."""
+    parser = argparse.ArgumentParser(
+        description="Analyze CRT functions for calling convention and signature issues",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Examples:
+  %(prog)s ./projects NocturneEdit nocedit.exe
+"""
+    )
+    parser.add_argument("project_path", help="Path to Ghidra project directory")
+    parser.add_argument("project_name", help="Ghidra project name")
+    parser.add_argument("program_name", help="Program name within the project")
+    args = parser.parse_args()
+
+    # Import pyghidra
+    try:
+        import pyghidra
+    except ImportError:
+        print("ERROR: pyghidra is not installed.")
+        print("Install the PyGhidra package from your Ghidra installation.")
+        sys.exit(1)
+
+    # Start PyGhidra
+    print("Starting PyGhidra...")
+    pyghidra.start()
+
+    # Open the project and program
+    print("Opening project: %s/%s" % (args.project_path, args.project_name))
+    print("Opening program: %s" % args.program_name)
+    exit_code = 0
+    try:
+        project = pyghidra.open_project(args.project_path, args.project_name)
+        with pyghidra.program_context(project, "/" + args.program_name) as currentProgram:
+            run_analysis(currentProgram)
+        project.close()
+    except Exception as e:
+        print("ERROR: %s" % str(e))
+        import traceback
+        traceback.print_exc()
+        exit_code = 1
+
+    # Force exit - JVM shutdown can hang
+    os._exit(exit_code)
+
+
+if __name__ == "__main__":
+    main()
