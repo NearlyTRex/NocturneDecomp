@@ -18,7 +18,8 @@ from ghidra_annotations.annotations.pseudocode.assembly import (
 )
 from ghidra_annotations.annotations.pseudocode.functions import (
     get_function_xrefs, get_function_globals, get_function_calls,
-    estimate_call_site_params
+    estimate_call_site_params, estimate_call_site_params_with_vtable,
+    load_vtable_data
 )
 from ghidra_annotations.annotations.pseudocode.stack_patterns import (
     detect_stack_patterns_from_listing
@@ -74,7 +75,7 @@ class DecompileResult:
         'func_signature', 'func_addr_range', 'func_convention',
         'raw_decompiled_code', 'assembly_code',
         'func_xrefs', 'func_globals', 'func_calls',
-        'stack_frame', 'stack_patterns_raw', 'param_estimates',
+        'stack_frame', 'stack_patterns_raw', 'param_estimates', 'vtable_info',
         'decompile_time', 'assembly_time', 'metadata_time'
     ]
 
@@ -95,6 +96,7 @@ class DecompileResult:
         self.stack_frame = None
         self.stack_patterns_raw = []
         self.param_estimates = None
+        self.vtable_info = None
         self.decompile_time = 0.0
         self.assembly_time = 0.0
         self.metadata_time = 0.0
@@ -110,7 +112,7 @@ class DecompileWorker:
 
     def __init__(self, func, currentProgram, decompiler_tls,
                  symbol_table, reference_manager, program_listing,
-                 string_map, global_symbols):
+                 string_map, global_symbols, vtable_data=None):
         self.func = func
         self.currentProgram = currentProgram
         self.decompiler_tls = decompiler_tls
@@ -119,6 +121,7 @@ class DecompileWorker:
         self.program_listing = program_listing
         self.string_map = string_map
         self.global_symbols = global_symbols
+        self.vtable_data = vtable_data
 
     def __call__(self):
         """Execute all Java-heavy operations and return results."""
@@ -157,8 +160,17 @@ class DecompileWorker:
             result.stack_patterns_raw = detect_stack_patterns_from_listing(
                 self.program_listing, func)
             # Parameter estimation is optional - don't fail function if it errors
+            # Use vtable-aware estimation if vtable data is available
             try:
-                result.param_estimates = estimate_call_site_params(self.currentProgram, func)
+                if self.vtable_data:
+                    param_result = estimate_call_site_params_with_vtable(
+                        self.currentProgram, func, self.vtable_data)
+                    # Extract vtable_info to top level (it's function metadata, not param-specific)
+                    if param_result and 'vtable_info' in param_result:
+                        result.vtable_info = param_result.pop('vtable_info')
+                    result.param_estimates = param_result
+                else:
+                    result.param_estimates = estimate_call_site_params(self.currentProgram, func)
             except Exception:
                 result.param_estimates = None
             result.metadata_time = time.time() - metadata_start

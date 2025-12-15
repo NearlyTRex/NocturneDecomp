@@ -36,7 +36,7 @@ from ghidra_annotations.annotations.pseudocode.cleanup import delete_pseudocode
 
 # Python-heavy processing imports (for main thread)
 from ghidra_annotations.annotations.pseudocode.functions import (
-    extract_virtual_filename, generate_source_filename
+    extract_virtual_filename, generate_source_filename, load_vtable_data
 )
 from ghidra_annotations.annotations.pseudocode.transforms import (
     apply_all_transforms, load_custom_replacements, apply_custom_replacements,
@@ -202,7 +202,7 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map):
         result.func_addr_range, result.func_convention, result.func_signature,
         decompiled_code, result.assembly_code, result.func_xrefs, result.func_globals,
         result.func_calls, result.stack_frame, suspects, complexity, custom_replacements,
-        stack_patterns, result.param_estimates)
+        stack_patterns, result.param_estimates, result.vtable_info)
     output_time = time.time() - output_start
 
     total_process_time = time.time() - process_start
@@ -343,6 +343,19 @@ def export_pseudocode(currentProgram, path):
     log_info("Built global symbols map with %d symbols" % len(global_symbols))
     timer.end_phase()
 
+    # Load vtable data for indirect call parameter estimation
+    timer.start_phase("Load vtable data")
+    vtables_json_path = os.path.join(path, "vtables", "vtables.json")
+    vtable_data = None
+    if os.path.exists(vtables_json_path):
+        vtable_data = load_vtable_data(vtables_json_path)
+        vtable_func_count = len(vtable_data.get('func_to_vtables', {}))
+        log_info("Loaded vtable data: %d vtable addresses, %d functions in vtables" % (
+            len(vtable_data.get('vtable_addrs', set())), vtable_func_count))
+    else:
+        log_info("No vtables.json found at %s - skipping vtable parameter analysis" % vtables_json_path)
+    timer.end_phase()
+
     # Collect all non-external functions first
     timer.start_phase("Collect functions")
     log_info("Collecting functions for parallel processing")
@@ -374,7 +387,7 @@ def export_pseudocode(currentProgram, path):
         worker = DecompileWorker(
             func, currentProgram, decompiler_tls,
             symbol_table, reference_manager, program_listing,
-            string_map, global_symbols)
+            string_map, global_symbols, vtable_data)
         futures.append(executor.submit(worker))
 
     # Collect raw decompilation results
