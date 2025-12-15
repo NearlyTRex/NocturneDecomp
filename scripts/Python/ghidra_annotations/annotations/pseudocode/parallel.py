@@ -17,7 +17,8 @@ from ghidra_annotations.annotations.pseudocode.assembly import (
     generate_assembly_code_rich
 )
 from ghidra_annotations.annotations.pseudocode.functions import (
-    get_function_xrefs, get_function_globals, get_function_calls
+    get_function_xrefs, get_function_globals, get_function_calls,
+    estimate_call_site_params
 )
 from ghidra_annotations.annotations.pseudocode.stack_patterns import (
     detect_stack_patterns_from_listing
@@ -73,7 +74,7 @@ class DecompileResult:
         'func_signature', 'func_addr_range', 'func_convention',
         'raw_decompiled_code', 'assembly_code',
         'func_xrefs', 'func_globals', 'func_calls',
-        'stack_frame', 'stack_patterns_raw',
+        'stack_frame', 'stack_patterns_raw', 'param_estimates',
         'decompile_time', 'assembly_time', 'metadata_time'
     ]
 
@@ -93,6 +94,7 @@ class DecompileResult:
         self.func_calls = []
         self.stack_frame = None
         self.stack_patterns_raw = []
+        self.param_estimates = None
         self.decompile_time = 0.0
         self.assembly_time = 0.0
         self.metadata_time = 0.0
@@ -154,6 +156,11 @@ class DecompileWorker:
             result.stack_frame = export_stack_frame(func)
             result.stack_patterns_raw = detect_stack_patterns_from_listing(
                 self.program_listing, func)
+            # Parameter estimation is optional - don't fail function if it errors
+            try:
+                result.param_estimates = estimate_call_site_params(self.currentProgram, func)
+            except Exception:
+                result.param_estimates = None
             result.metadata_time = time.time() - metadata_start
 
             result.success = True

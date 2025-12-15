@@ -202,7 +202,7 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map):
         result.func_addr_range, result.func_convention, result.func_signature,
         decompiled_code, result.assembly_code, result.func_xrefs, result.func_globals,
         result.func_calls, result.stack_frame, suspects, complexity, custom_replacements,
-        stack_patterns)
+        stack_patterns, result.param_estimates)
     output_time = time.time() - output_start
 
     total_process_time = time.time() - process_start

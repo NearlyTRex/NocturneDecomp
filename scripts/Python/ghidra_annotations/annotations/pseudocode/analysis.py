@@ -8,6 +8,7 @@
 # - suspect_type_analysis.txt - Analysis by suspect type
 # - easy_wins.txt - Prioritized action list
 # - stack_pattern_analysis.txt - Stack pattern correlation
+# - param_mismatch_analysis.txt - Parameter count mismatch analysis
 # - virtual_files.csv - CSV for graphing
 # - functions.csv - CSV for analysis
 # - completion_pie.svg - Overall completion pie chart
@@ -17,7 +18,6 @@
 import os
 import json
 import csv
-import datetime
 import math
 from collections import defaultdict
 from ghidra_annotations.util.log import log_info
@@ -382,7 +382,6 @@ def generate_virtual_file_report(files, output_path):
     lines = []
     lines.append("=" * 100)
     lines.append("VIRTUAL FILE COMPLETION REPORT")
-    lines.append("Generated: %s" % datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
     lines.append("=" * 100)
     lines.append("")
 
@@ -476,7 +475,6 @@ def generate_function_breakdown(functions, output_path):
     lines = []
     lines.append("=" * 120)
     lines.append("FUNCTION SUSPECT BREAKDOWN")
-    lines.append("Generated: %s" % datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
     lines.append("=" * 120)
     lines.append("")
 
@@ -562,7 +560,6 @@ def generate_suspect_type_analysis(functions, output_path):
     lines = []
     lines.append("=" * 100)
     lines.append("SUSPECT TYPE ANALYSIS")
-    lines.append("Generated: %s" % datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
     lines.append("=" * 100)
     lines.append("")
 
@@ -639,7 +636,6 @@ def generate_easy_wins_list(functions, files, output_path):
     lines = []
     lines.append("=" * 100)
     lines.append("EASY WINS - PRIORITIZED ACTION LIST")
-    lines.append("Generated: %s" % datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
     lines.append("=" * 100)
     lines.append("")
 
@@ -732,7 +728,6 @@ def generate_stack_pattern_report(functions, output_path):
     lines = []
     lines.append("=" * 100)
     lines.append("STACK PATTERN ANALYSIS")
-    lines.append("Generated: %s" % datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
     lines.append("=" * 100)
     lines.append("")
     lines.append("Functions with stack manipulation patterns that affect decompilation quality.")
@@ -840,6 +835,198 @@ def generate_stack_pattern_report(functions, output_path):
     return report_text
 
 
+def generate_param_mismatch_report(functions, output_path):
+    """Generate report on functions with mismatched parameter counts.
+
+    Compares declared parameter count with estimated count from call site analysis.
+    """
+    lines = []
+    lines.append("=" * 100)
+    lines.append("PARAMETER COUNT MISMATCH ANALYSIS")
+    lines.append("=" * 100)
+    lines.append("")
+    lines.append("This report identifies functions where the declared parameter count differs")
+    lines.append("from the estimated count based on call site analysis.")
+    lines.append("")
+    lines.append("Mismatches may indicate:")
+    lines.append("  - Incorrect function signature in Ghidra")
+    lines.append("  - Calling convention misidentification")
+    lines.append("  - Variadic functions")
+    lines.append("  - Functions called with wrong number of arguments (bugs)")
+    lines.append("")
+
+    # Collect functions with param estimates
+    funcs_with_estimates = []
+    mismatches = {'high': [], 'medium': [], 'low': []}
+    no_callers = []
+
+    for func in functions:
+        param_est = func.get('param_estimates')
+        if not param_est:
+            continue
+
+        func_info = func.get('function', {})
+        declared = param_est.get('declared_params', 0)
+        estimated = param_est.get('estimated_params', 0)
+        confidence = param_est.get('confidence', 'unknown')
+        call_site_count = param_est.get('call_site_count', 0)
+
+        funcs_with_estimates.append(func)
+
+        if call_site_count == 0:
+            no_callers.append(func)
+            continue
+
+        if declared != estimated:
+            mismatch_info = {
+                'func': func,
+                'declared': declared,
+                'estimated': estimated,
+                'confidence': confidence,
+                'diff': estimated - declared,
+                'call_sites': call_site_count
+            }
+            if confidence in mismatches:
+                mismatches[confidence].append(mismatch_info)
+            else:
+                mismatches['low'].append(mismatch_info)
+
+    # Summary statistics
+    total_with_estimates = len(funcs_with_estimates)
+    total_mismatches = sum(len(m) for m in mismatches.values())
+    total_no_callers = len(no_callers)
+
+    lines.append("SUMMARY")
+    lines.append("-" * 50)
+    lines.append("Functions with parameter estimates: %d" % total_with_estimates)
+    lines.append("Functions with no callers: %d" % total_no_callers)
+    lines.append("Parameter mismatches detected: %d" % total_mismatches)
+    if total_with_estimates > 0:
+        match_rate = (total_with_estimates - total_mismatches - total_no_callers) * 100.0 / (total_with_estimates - total_no_callers) if (total_with_estimates - total_no_callers) > 0 else 0
+        lines.append("Signature accuracy rate: %.1f%%" % match_rate)
+    lines.append("")
+    lines.append("Mismatches by confidence:")
+    lines.append("  High confidence:   %d (multiple call sites agree)" % len(mismatches['high']))
+    lines.append("  Medium confidence: %d (some agreement)" % len(mismatches['medium']))
+    lines.append("  Low confidence:    %d (limited data)" % len(mismatches['low']))
+    lines.append("")
+
+    # High confidence mismatches (most likely to be real issues)
+    if mismatches['high']:
+        lines.append("=" * 100)
+        lines.append("HIGH CONFIDENCE MISMATCHES - Likely signature issues")
+        lines.append("=" * 100)
+        lines.append("")
+
+        # Sort by absolute difference
+        mismatches['high'].sort(key=lambda x: (-abs(x['diff']), x['func'].get('function', {}).get('name', '')))
+
+        for m in mismatches['high']:
+            func_info = m['func'].get('function', {})
+            vfile = m['func'].get('_virtual_file', 'unknown')
+            signature = func_info.get('signature', 'unknown')
+
+            diff_str = "+%d" % m['diff'] if m['diff'] > 0 else str(m['diff'])
+            lines.append("  %s" % func_info.get('name', 'unknown'))
+            lines.append("    Declared: %d params, Estimated: %d params (%s)" % (m['declared'], m['estimated'], diff_str))
+            lines.append("    Call sites: %d, Confidence: %s" % (m['call_sites'], m['confidence']))
+            lines.append("    File: %s" % vfile)
+            lines.append("    Signature: %s" % signature[:80])
+
+            # Show sample call site details
+            call_sites = m['func'].get('param_estimates', {}).get('call_sites', [])
+            if call_sites:
+                lines.append("    Sample call sites:")
+                for site in call_sites[:3]:
+                    reg_params = ', '.join(site.get('reg_params', []))
+                    lines.append("      %s at %s: %d reg [%s], %d stack" % (
+                        site.get('caller', '?')[:30],
+                        site.get('call_addr', '?'),
+                        len(site.get('reg_params', [])),
+                        reg_params,
+                        site.get('stack_params', 0)
+                    ))
+            lines.append("")
+
+    # Medium confidence mismatches
+    if mismatches['medium']:
+        lines.append("=" * 100)
+        lines.append("MEDIUM CONFIDENCE MISMATCHES")
+        lines.append("=" * 100)
+        lines.append("")
+
+        mismatches['medium'].sort(key=lambda x: (-abs(x['diff']), x['func'].get('function', {}).get('name', '')))
+
+        for m in mismatches['medium'][:50]:
+            func_info = m['func'].get('function', {})
+            diff_str = "+%d" % m['diff'] if m['diff'] > 0 else str(m['diff'])
+            lines.append("  %-50s declared:%d est:%d (%s) [%d calls]" % (
+                func_info.get('name', 'unknown')[:50],
+                m['declared'], m['estimated'], diff_str, m['call_sites']))
+
+        if len(mismatches['medium']) > 50:
+            lines.append("")
+            lines.append("  ... and %d more" % (len(mismatches['medium']) - 50))
+        lines.append("")
+
+    # Low confidence mismatches (informational)
+    if mismatches['low']:
+        lines.append("=" * 100)
+        lines.append("LOW CONFIDENCE MISMATCHES (limited data)")
+        lines.append("=" * 100)
+        lines.append("")
+
+        # Just show count and a few examples
+        lines.append("  %d functions with low-confidence mismatches" % len(mismatches['low']))
+        lines.append("  Sample:")
+        for m in mismatches['low'][:10]:
+            func_info = m['func'].get('function', {})
+            diff_str = "+%d" % m['diff'] if m['diff'] > 0 else str(m['diff'])
+            lines.append("    %-45s declared:%d est:%d (%s)" % (
+                func_info.get('name', 'unknown')[:45],
+                m['declared'], m['estimated'], diff_str))
+        lines.append("")
+
+    # Summary of mismatch directions
+    lines.append("=" * 100)
+    lines.append("MISMATCH DIRECTION ANALYSIS")
+    lines.append("=" * 100)
+    lines.append("")
+
+    all_mismatches = mismatches['high'] + mismatches['medium'] + mismatches['low']
+    over_declared = [m for m in all_mismatches if m['diff'] < 0]  # Declared > Estimated
+    under_declared = [m for m in all_mismatches if m['diff'] > 0]  # Declared < Estimated
+
+    lines.append("Functions where declaration has MORE params than estimated: %d" % len(over_declared))
+    lines.append("  (May indicate: extra params not being passed, or params in globals)")
+    lines.append("")
+    lines.append("Functions where declaration has FEWER params than estimated: %d" % len(under_declared))
+    lines.append("  (May indicate: missing params in signature, or calling convention issue)")
+    lines.append("")
+
+    # Group by difference amount
+    diff_counts = defaultdict(int)
+    for m in all_mismatches:
+        diff_counts[m['diff']] += 1
+
+    lines.append("Distribution of differences (estimated - declared):")
+    for diff in sorted(diff_counts.keys()):
+        diff_str = "+%d" % diff if diff > 0 else str(diff)
+        lines.append("  %s params: %d functions" % (diff_str, diff_counts[diff]))
+
+    report_text = "\n".join(lines)
+
+    report_path = os.path.join(output_path, "param_mismatch_analysis.txt")
+    try:
+        with open(report_path, 'w') as f:
+            f.write(report_text)
+        log_info("Wrote parameter mismatch analysis: %s" % report_path)
+    except Exception as e:
+        log_info("Failed to write parameter mismatch analysis: %s" % str(e))
+
+    return report_text
+
+
 def generate_csv_data(functions, files, output_path):
     """Generate CSV files for further analysis or graphing."""
 
@@ -916,7 +1103,6 @@ def generate_summary_report(functions, files, output_path):
     report_lines = []
     report_lines.append("=" * 80)
     report_lines.append("NOCTURNE DECOMPILATION ANALYSIS REPORT")
-    report_lines.append("Generated: %s" % datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
     report_lines.append("=" * 80)
     report_lines.append("")
     report_lines.append("SUMMARY")
@@ -1066,6 +1252,7 @@ def generate_analysis_report(pseudocode_src_dir, output_path):
     generate_suspect_type_analysis(functions, output_path)
     generate_easy_wins_list(functions, files, output_path)
     generate_stack_pattern_report(functions, output_path)
+    generate_param_mismatch_report(functions, output_path)
     generate_csv_data(functions, files, output_path)
 
     # Generate SVG graphs for README

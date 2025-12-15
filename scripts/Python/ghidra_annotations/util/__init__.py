@@ -4,5 +4,6 @@ from ghidra_annotations.util.functions import *
 from ghidra_annotations.util.log import *
 from ghidra_annotations.util.memory import *
 from ghidra_annotations.util.namespace import *
+from ghidra_annotations.util.parallel import *
 from ghidra_annotations.util.string import *
 from ghidra_annotations.util.ui import *

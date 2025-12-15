@@ -302,6 +302,234 @@ def generate_function_prototype(func_signature, original_func_name, cpp_func_nam
     return prototype
 
 
+def estimate_call_site_params(currentProgram, function):
+    """Estimate parameter counts by analyzing call sites to this function.
+
+    For Watcom register calling convention, parameters are passed in:
+    - Registers: EAX, EDX, EBX, ECX (first 4 params)
+    - Stack: Additional params via PUSH
+
+    For __cdecl/__stdcall, all parameters are passed via PUSH on the stack.
+
+    This function analyzes each call site and counts parameter setup.
+
+    Args:
+        currentProgram: The Ghidra program
+        function: The function to analyze
+
+    Returns:
+        Dictionary with:
+        - declared_params: Number of declared parameters in signature
+        - call_sites: List of call site analysis results
+        - estimated_params: Most common estimated param count from call sites
+        - confidence: Confidence level ('high', 'medium', 'low', 'unknown')
+    """
+    listing = currentProgram.getListing()
+    ref_manager = currentProgram.getReferenceManager()
+    func_manager = currentProgram.getFunctionManager()
+
+    # Get declared parameter count from function signature
+    params = function.getParameters()
+    declared_params = len(params) if params else 0
+
+    # Get calling convention to determine parameter passing style
+    # Based on x86watcom.cspec:
+    #   Register params (EAX, EDX, EBX, ECX): __watcallRegister, __softfp_double
+    #   Stack-only params: __watcallStack, __stdcall, __cdecl, __syscall, __crtmath, __fpustack
+    #   FPU register params (ST0, etc.): __fpureg, __fpureg_safe, __fpu_thunk
+    #   No params: __mathinternal
+    calling_convention = function.getCallingConventionName()
+
+    # Conventions that use general-purpose register parameters (EAX, EDX, EBX, ECX)
+    REGISTER_PARAM_CONVENTIONS = {'__watcallRegister', '__softfp_double'}
+    # Conventions that use stack-only parameters (passed via PUSH)
+    STACK_ONLY_CONVENTIONS = {'__watcallStack', '__stdcall', '__cdecl', '__syscall', '__crtmath', '__fpustack'}
+    # FPU register conventions - params passed in ST0-ST3, not general regs or stack
+    FPU_REGISTER_CONVENTIONS = {'__fpureg', '__fpureg_safe', '__fpu_thunk'}
+    # No parameters
+    NO_PARAM_CONVENTIONS = {'__mathinternal'}
+
+    if calling_convention in NO_PARAM_CONVENTIONS:
+        # No parameters to estimate
+        uses_register_params = False
+    elif calling_convention in FPU_REGISTER_CONVENTIONS:
+        # FPU register calling conventions - params via FPU stack, not countable via PUSH/MOV
+        uses_register_params = False
+    elif calling_convention in REGISTER_PARAM_CONVENTIONS:
+        uses_register_params = True
+    elif calling_convention in STACK_ONLY_CONVENTIONS:
+        uses_register_params = False
+    else:
+        # Unknown convention - assume Watcom register style as default
+        uses_register_params = True
+
+    # Get all references to this function's entry point
+    entry_point = function.getEntryPoint()
+    refs_to = ref_manager.getReferencesTo(entry_point)
+
+    call_sites = []
+    param_counts = []
+    max_call_sites = 50  # Limit analysis for heavily-called functions
+
+    for ref in refs_to:
+        if len(call_sites) >= max_call_sites:
+            break
+        ref_type = ref.getReferenceType()
+        # Only analyze CALL references
+        if not ref_type.isCall():
+            continue
+
+        from_addr = ref.getFromAddress()
+        caller_func = func_manager.getFunctionContaining(from_addr)
+        if not caller_func or caller_func == function:
+            continue
+
+        # Analyze the call site with awareness of calling convention
+        site_info = _analyze_call_site(listing, from_addr, caller_func, uses_register_params)
+        if site_info:
+            site_info['caller'] = caller_func.getName()
+            site_info['call_addr'] = str(from_addr)
+            call_sites.append(site_info)
+            param_counts.append(site_info['estimated_params'])
+
+    # Determine most common param count
+    estimated_params = declared_params  # Default to declared
+    confidence = 'unknown'
+
+    if param_counts:
+        # Find mode (most common count)
+        from collections import Counter
+        count_freq = Counter(param_counts)
+        most_common = count_freq.most_common(1)[0]
+        estimated_params = most_common[0]
+        agreement_ratio = most_common[1] / len(param_counts)
+
+        # Confidence is based on:
+        # 1. How many call sites agree with each other
+        # 2. Whether the estimate matches the declared signature (validation)
+        matches_declared = (estimated_params == declared_params)
+
+        if matches_declared:
+            # Estimate matches declaration - higher confidence
+            if len(param_counts) >= 3 and agreement_ratio >= 0.9:
+                confidence = 'high'
+            elif len(param_counts) >= 2 and agreement_ratio >= 0.7:
+                confidence = 'high'  # Boosted from medium since it matches
+            elif len(param_counts) >= 1:
+                confidence = 'medium'  # Boosted from low since it matches
+        else:
+            # Estimate differs from declaration - use call site agreement only
+            if agreement_ratio >= 0.9 and len(param_counts) >= 3:
+                confidence = 'high'
+            elif agreement_ratio >= 0.7 and len(param_counts) >= 2:
+                confidence = 'medium'
+            elif len(param_counts) >= 1:
+                confidence = 'low'
+
+    return {
+        'declared_params': declared_params,
+        'estimated_params': estimated_params,
+        'call_site_count': len(call_sites),
+        'confidence': confidence,
+        'call_sites': call_sites[:10]  # Limit to first 10 for JSON size
+    }
+
+
+def _analyze_call_site(listing, call_addr, caller_func, uses_register_params=True):
+    """Analyze a single call site to estimate parameter count.
+
+    Walks backward from the CALL instruction to identify parameter setup.
+
+    Args:
+        listing: Program listing
+        call_addr: Address of the CALL instruction
+        caller_func: The function containing the call
+        uses_register_params: If True, count register params (Watcom).
+                              If False, only count stack params (__cdecl/__stdcall).
+
+    Returns:
+        Dictionary with analysis results or None on failure
+    """
+    # Register parameters (Watcom order: EAX, EDX, EBX, ECX)
+    WATCOM_REG_PARAMS = {'EAX', 'EDX', 'EBX', 'ECX', 'eax', 'edx', 'ebx', 'ecx'}
+
+    reg_params_found = set()
+    stack_params = 0
+    instructions_checked = 0
+    max_instructions = 30  # Don't look back too far
+
+    # Get the CALL instruction
+    call_instr = listing.getInstructionAt(call_addr)
+    if not call_instr:
+        return None
+
+    # Walk backward through instructions
+    current_instr = call_instr.getPrevious()
+    caller_body = caller_func.getBody()
+
+    while current_instr and instructions_checked < max_instructions:
+        # Stop if we leave the caller function
+        if not caller_body.contains(current_instr.getAddress()):
+            break
+
+        mnemonic = current_instr.getMnemonicString().upper()
+        instructions_checked += 1
+
+        # Stop conditions: hit another CALL, RET, or unconditional jump
+        if mnemonic in ('CALL', 'RET', 'RETN', 'JMP'):
+            break
+
+        # Stop at conditional jumps that might indicate branch target
+        if mnemonic.startswith('J') and mnemonic not in ('JMP',):
+            # Check if this is a target of a branch (would mean we crossed a branch boundary)
+            refs_to = listing.getProgram().getReferenceManager().getReferencesTo(current_instr.getAddress())
+            has_branch_ref = False
+            for r in refs_to:
+                if r.getReferenceType().isJump():
+                    has_branch_ref = True
+                    break
+            if has_branch_ref:
+                break
+
+        # Check for PUSH instructions (stack parameters)
+        # Near a CALL, ALL pushes are parameters - don't skip EBP/ESI/EDI
+        # (prologue saves happen at function entry, not before calls)
+        if mnemonic == 'PUSH':
+            stack_params += 1
+
+        # Check for MOV/LEA to register params (Watcom register params only)
+        elif uses_register_params and mnemonic in ('MOV', 'LEA', 'XOR', 'MOVSX', 'MOVZX'):
+            dest_operand = current_instr.getDefaultOperandRepresentation(0)
+            if dest_operand:
+                dest_upper = dest_operand.upper()
+                # Check if destination is a Watcom register parameter
+                # Also check for partial registers (AL, AX, DL, DX, etc.)
+                for reg in WATCOM_REG_PARAMS:
+                    if dest_upper == reg or dest_upper.startswith(reg[0:2]):
+                        reg_params_found.add(reg.upper()[:3])  # Normalize to EAX, EDX, etc.
+                        break
+
+        current_instr = current_instr.getPrevious()
+
+    # Calculate total estimated params
+    # For Watcom: register params + stack params
+    # For __cdecl/__stdcall: stack params only
+    if uses_register_params:
+        num_reg_params = len(reg_params_found)
+        estimated_total = num_reg_params + stack_params
+    else:
+        num_reg_params = 0
+        reg_params_found = set()  # Clear for non-register calling conventions
+        estimated_total = stack_params
+
+    return {
+        'estimated_params': estimated_total,
+        'reg_params': list(reg_params_found),
+        'stack_params': stack_params,
+        'instructions_analyzed': instructions_checked
+    }
+
+
 def generate_source_filename(func_name, decompiled_code):
     """Generate source filename from function name and decompiled code.
 

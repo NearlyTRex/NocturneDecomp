@@ -298,7 +298,7 @@ def create_asm_content(func_name, func_addr, func_addr_range, func_signature, fu
 def create_function_json(func_name, func_addr, func_addr_range, func_convention,
                          func_signature, decompiled_code, assembly_code,
                          func_xrefs, func_globals, func_calls, stack_frame, suspects, complexity,
-                         existing_replacements=None, stack_patterns=None):
+                         existing_replacements=None, stack_patterns=None, param_estimates=None):
     """Create function metadata JSON.
 
     Args:
@@ -317,6 +317,7 @@ def create_function_json(func_name, func_addr, func_addr_range, func_convention,
         complexity: Complexity metrics
         existing_replacements: Optional list of custom replacements to preserve
         stack_patterns: Optional stack manipulation patterns that affect decompilation
+        param_estimates: Optional parameter estimation from call site analysis
 
     Returns:
         Dictionary for JSON serialization
@@ -349,6 +350,9 @@ def create_function_json(func_name, func_addr, func_addr_range, func_convention,
     # Include stack manipulation patterns that affect decompilation quality
     if stack_patterns:
         function_json["stack_patterns"] = stack_patterns
+    # Include parameter estimation from call site analysis
+    if param_estimates:
+        function_json["param_estimates"] = param_estimates
     return function_json
 
 
@@ -356,7 +360,8 @@ def generate_function_file_contents(output_base_path, source_filename, func_name
                                      func_addr_range, func_convention, func_signature,
                                      decompiled_code, assembly_code, func_xrefs, func_globals,
                                      func_calls, stack_frame, suspects, complexity,
-                                     existing_replacements=None, stack_patterns=None):
+                                     existing_replacements=None, stack_patterns=None,
+                                     param_estimates=None):
     """Generate file contents for a function without writing to disk.
 
     Args:
@@ -377,6 +382,7 @@ def generate_function_file_contents(output_base_path, source_filename, func_name
         complexity: Complexity metrics
         existing_replacements: Optional list of custom replacements to preserve in JSON
         stack_patterns: Optional stack manipulation patterns that affect decompilation
+        param_estimates: Optional parameter estimation from call site analysis
 
     Returns:
         Dictionary with paths and contents: {cpp_path, cpp_content, asm_path, asm_content, json_path, json_content}
@@ -427,7 +433,7 @@ def generate_function_file_contents(output_base_path, source_filename, func_name
             func_name, func_addr, func_addr_range, func_convention,
             func_signature, decompiled_code, assembly_code,
             func_xrefs, func_globals, func_calls, stack_frame, suspects, complexity,
-            existing_replacements, stack_patterns)
+            existing_replacements, stack_patterns, param_estimates)
         result['json_content'] = json.dumps(function_json, indent=2, sort_keys=True)
     except Exception as e:
         log_info("Failed to generate .json content for %s: %s" % (base_name + '.json', str(e)))
