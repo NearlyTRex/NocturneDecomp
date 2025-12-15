@@ -125,11 +125,7 @@ def sanitize_for_ascii(text):
         elif code < 128:
             result.append('\\x%02x' % code)
         else:
-            try:
-                encoded = char.encode('ascii', 'backslashreplace')
-                result.append(encoded)
-            except:
-                result.append('\\u%04x' % code)
+            result.append('\\u%04x' % code)
     return ''.join(result)
 
 
