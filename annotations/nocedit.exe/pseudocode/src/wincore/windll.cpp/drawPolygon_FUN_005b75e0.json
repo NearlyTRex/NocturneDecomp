@@ -69,6 +69,54 @@
       "value": null
     }
   ],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "00553748",
+        "caller": "engine_prim.c_renderScanlinePolygon_FUN_00553470",
+        "estimated_params": 3,
+        "instructions_analyzed": 7,
+        "reg_params": [],
+        "stack_params": 3
+      },
+      {
+        "call_addr": "005b7aed",
+        "caller": "wincore_windll.cpp_drawFullScreenQuad_FUN_005b7a50",
+        "estimated_params": 3,
+        "instructions_analyzed": 30,
+        "reg_params": [],
+        "stack_params": 3
+      },
+      {
+        "call_addr": "005fd2b0",
+        "caller": "engine_3d.c_rasterizeTriangle_FUN_005fcfc0",
+        "estimated_params": 3,
+        "instructions_analyzed": 7,
+        "reg_params": [],
+        "stack_params": 3
+      },
+      {
+        "call_addr": "005526fe",
+        "caller": "engine_prim.c_renderPolygonSoftware_FUN_00552510",
+        "estimated_params": 3,
+        "instructions_analyzed": 12,
+        "reg_params": [],
+        "stack_params": 3
+      },
+      {
+        "call_addr": "005dd664",
+        "caller": "engine_texture.cpp_CTextureCache_renderAllTextures_FUN_005dd580",
+        "estimated_params": 2,
+        "instructions_analyzed": 30,
+        "reg_params": [],
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "estimated_params": 3
+  },
   "stack_frame": {
     "frame_size": 16,
     "local_size": 4,

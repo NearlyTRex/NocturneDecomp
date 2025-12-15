@@ -50,6 +50,30 @@
       "value": null
     }
   ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "005a6189",
+        "caller": "sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_005a6170",
+        "estimated_params": 1,
+        "instructions_analyzed": 4,
+        "reg_params": [],
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005a62de",
+        "caller": "sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "reg_params": [],
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,

@@ -106,6 +106,38 @@
       "value": null
     }
   ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "0054c404",
+        "caller": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBMFileRange_FUN_0054c3d0",
+        "estimated_params": 2,
+        "instructions_analyzed": 8,
+        "reg_params": [],
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0054bea2",
+        "caller": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_0054be70",
+        "estimated_params": 2,
+        "instructions_analyzed": 7,
+        "reg_params": [],
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0054c016",
+        "caller": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40",
+        "estimated_params": 2,
+        "instructions_analyzed": 4,
+        "reg_params": [],
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
   "stack_frame": {
     "frame_size": 220,
     "local_size": 212,

@@ -86,6 +86,70 @@
       "value": "00212044"
     }
   ],
+  "param_estimates": {
+    "call_site_count": 7,
+    "call_sites": [
+      {
+        "call_addr": "0060a101",
+        "caller": "crt_sync.c_leave_global_critical_section_FUN_0060a0fc",
+        "estimated_params": 1,
+        "instructions_analyzed": 1,
+        "reg_params": [],
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0060a0a5",
+        "caller": "crt_sync.c_enter_reentrant_critical_section_FUN_0060a060",
+        "estimated_params": 1,
+        "instructions_analyzed": 4,
+        "reg_params": [],
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0060a191",
+        "caller": "crt_sync.c_leave_global_memory_critical_section_FUN_0060a18c",
+        "estimated_params": 1,
+        "instructions_analyzed": 1,
+        "reg_params": [],
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0060a1b1",
+        "caller": "crt_sync.c_leave_global_thread_critical_section_FUN_0060a1ac",
+        "estimated_params": 1,
+        "instructions_analyzed": 1,
+        "reg_params": [],
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0060a1d1",
+        "caller": "crt_sync.c_leave_global_io_critical_section_FUN_0060a1cc",
+        "estimated_params": 1,
+        "instructions_analyzed": 1,
+        "reg_params": [],
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0060a1f1",
+        "caller": "crt_sync.c_leave_global_runtime_critical_section_FUN_0060a1ec",
+        "estimated_params": 1,
+        "instructions_analyzed": 1,
+        "reg_params": [],
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0060a138",
+        "caller": "crt_tls.c_leave_critical_section_by_index_FUN_0060a128",
+        "estimated_params": 1,
+        "instructions_analyzed": 5,
+        "reg_params": [],
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,

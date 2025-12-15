@@ -152,6 +152,38 @@
       "value": null
     }
   ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "00505860",
+        "caller": "engine_light.cpp_calculateAndStoreVertexLight_FUN_00505850",
+        "estimated_params": 4,
+        "instructions_analyzed": 8,
+        "reg_params": [],
+        "stack_params": 4
+      },
+      {
+        "call_addr": "0045d74e",
+        "caller": "shape_design.c_processVerticesAndRenderPolygons_FUN_0045d5d0",
+        "estimated_params": 3,
+        "instructions_analyzed": 8,
+        "reg_params": [],
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00505840",
+        "caller": "engine_light.cpp_calculateVertexLighting_FUN_00505830",
+        "estimated_params": 4,
+        "instructions_analyzed": 8,
+        "reg_params": [],
+        "stack_params": 4
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 3,
+    "estimated_params": 4
+  },
   "stack_frame": {
     "frame_size": 52,
     "local_size": 40,

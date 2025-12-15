@@ -91,6 +91,30 @@
       "value": null
     }
   ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0060012e",
+        "caller": "crt_stdio.c_vsscanf_FUN_00600100",
+        "estimated_params": 5,
+        "instructions_analyzed": 15,
+        "reg_params": [],
+        "stack_params": 5
+      },
+      {
+        "call_addr": "005fe79c",
+        "caller": "crt_stdio.c_vfscanf_FUN_005fe738",
+        "estimated_params": 3,
+        "instructions_analyzed": 13,
+        "reg_params": [],
+        "stack_params": 3
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 3,
+    "estimated_params": 5
+  },
   "stack_frame": {
     "frame_size": 36,
     "local_size": 24,

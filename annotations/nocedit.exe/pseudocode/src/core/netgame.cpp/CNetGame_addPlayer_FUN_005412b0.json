@@ -98,6 +98,64 @@
       "value": null
     }
   ],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "00540888",
+        "caller": "core_netgame.cpp_CNetGame_allocSimFrame_FUN_005406a0",
+        "estimated_params": 8,
+        "instructions_analyzed": 11,
+        "reg_params": [
+          "EDX",
+          "ECX",
+          "EBX"
+        ],
+        "stack_params": 5
+      },
+      {
+        "call_addr": "00542abf",
+        "caller": "core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470",
+        "estimated_params": 8,
+        "instructions_analyzed": 11,
+        "reg_params": [
+          "EAX",
+          "ECX",
+          "EDX"
+        ],
+        "stack_params": 5
+      },
+      {
+        "call_addr": "0053f8bf",
+        "caller": "core_netgame.cpp_initializeNetworkToHost_FUN_0053f860",
+        "estimated_params": 2,
+        "instructions_analyzed": 4,
+        "reg_params": [],
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0053f951",
+        "caller": "core_netgame.cpp_initializeNetworkToJoin_FUN_0053f900",
+        "estimated_params": 2,
+        "instructions_analyzed": 4,
+        "reg_params": [],
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0053f998",
+        "caller": "core_netgame.cpp_initializeNetworkToJoin_FUN_0053f900",
+        "estimated_params": 6,
+        "instructions_analyzed": 8,
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_params": 5
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "estimated_params": 8
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,

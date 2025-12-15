@@ -56,6 +56,30 @@
       "value": "0xf4"
     }
   ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0060a2ed",
+        "caller": "crt_tls.c_initialize_thread_tls_data_FUN_0060a2d8",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "reg_params": [],
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0060246f",
+        "caller": "crt_startup.c_initialize_runtime_FUN_0060245c",
+        "estimated_params": 5,
+        "instructions_analyzed": 8,
+        "reg_params": [],
+        "stack_params": 5
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,

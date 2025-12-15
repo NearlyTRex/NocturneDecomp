@@ -88,6 +88,38 @@
       "value": null
     }
   ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "00606500",
+        "caller": "crt_fstream.cpp_fstream_destructor_thunk_from_ios_FUN_006064f1",
+        "estimated_params": 2,
+        "instructions_analyzed": 6,
+        "reg_params": [],
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005ff802",
+        "caller": "crt_fstream.cpp_ofstream_dtor_FUN_005ff7bc",
+        "estimated_params": 2,
+        "instructions_analyzed": 5,
+        "reg_params": [],
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005ff89c",
+        "caller": "crt_fstream.cpp_ifstream_dtor_FUN_005ff856",
+        "estimated_params": 2,
+        "instructions_analyzed": 5,
+        "reg_params": [],
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 4,
+    "estimated_params": 2
+  },
   "stack_frame": {
     "frame_size": 20,
     "local_size": 4,

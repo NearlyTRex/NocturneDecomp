@@ -64,6 +64,30 @@
     }
   ],
   "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0060eea0",
+        "caller": "crt_env.c_putenv_internal_FUN_0060ee80",
+        "estimated_params": 6,
+        "instructions_analyzed": 12,
+        "reg_params": [],
+        "stack_params": 6
+      },
+      {
+        "call_addr": "0060c1b2",
+        "caller": "crt_string.c_strpbrk_FUN_0060c190",
+        "estimated_params": 2,
+        "instructions_analyzed": 4,
+        "reg_params": [],
+        "stack_params": 2
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 2,
+    "estimated_params": 6
+  },
   "stack_frame": {
     "frame_size": 10,
     "local_size": 4,

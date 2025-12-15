@@ -43,6 +43,30 @@
     }
   ],
   "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00600edd",
+        "caller": "crt_fstream.cpp_openFile_FUN_00600e85",
+        "estimated_params": 2,
+        "instructions_analyzed": 6,
+        "reg_params": [],
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00481b7a",
+        "caller": "engine_dosio.c_reopenFileStream_FUN_00481b50",
+        "estimated_params": 2,
+        "instructions_analyzed": 7,
+        "reg_params": [],
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "estimated_params": 2
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,

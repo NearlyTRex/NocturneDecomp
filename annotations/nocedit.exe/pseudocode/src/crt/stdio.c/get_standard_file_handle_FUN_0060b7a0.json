@@ -47,6 +47,38 @@
       "value": "00000000"
     }
   ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "006060a8",
+        "caller": "crt_stdio.c_prepare_stream_for_write_FUN_00606055",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "reg_params": [],
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00606095",
+        "caller": "crt_stdio.c_prepare_stream_for_write_FUN_00606055",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "reg_params": [],
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0060e29e",
+        "caller": "crt_math.c_print_error_message_FUN_0060e298",
+        "estimated_params": 3,
+        "instructions_analyzed": 4,
+        "reg_params": [],
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,

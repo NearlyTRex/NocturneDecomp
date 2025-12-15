@@ -62,6 +62,30 @@
       "value": "0060242c"
     }
   ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0060f937",
+        "caller": "crt_thread.c_threadStartupWrapper_FUN_0060f8c0",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "reg_params": [],
+        "stack_params": 1
+      },
+      {
+        "call_addr": "006026db",
+        "caller": "crt_startup.cpp_InitializeWinAppRuntime_FUN_006026a8",
+        "estimated_params": 1,
+        "instructions_analyzed": 4,
+        "reg_params": [],
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,

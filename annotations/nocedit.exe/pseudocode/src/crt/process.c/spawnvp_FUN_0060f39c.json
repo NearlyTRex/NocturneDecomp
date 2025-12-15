@@ -218,6 +218,46 @@
       "value": "0060b180"
     }
   ],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "00610202",
+        "caller": "crt_process.c_execv_FUN_006101f0",
+        "estimated_params": 5,
+        "instructions_analyzed": 8,
+        "reg_params": [],
+        "stack_params": 5
+      },
+      {
+        "call_addr": "0060e803",
+        "caller": "crt_process.c_spawnvp_with_path_search_FUN_0060e6a0",
+        "estimated_params": 4,
+        "instructions_analyzed": 10,
+        "reg_params": [],
+        "stack_params": 4
+      },
+      {
+        "call_addr": "006107a7",
+        "caller": "crt_process.c_execvp_FUN_00610790",
+        "estimated_params": 5,
+        "instructions_analyzed": 9,
+        "reg_params": [],
+        "stack_params": 5
+      },
+      {
+        "call_addr": "0060e6d4",
+        "caller": "crt_process.c_spawnvp_with_path_search_FUN_0060e6a0",
+        "estimated_params": 8,
+        "instructions_analyzed": 14,
+        "reg_params": [],
+        "stack_params": 8
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 3,
+    "estimated_params": 5
+  },
   "stack_frame": {
     "frame_size": 212,
     "local_size": 200,

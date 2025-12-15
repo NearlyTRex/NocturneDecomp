@@ -702,6 +702,36 @@
       "value": null
     }
   ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00562293",
+        "caller": "core_script.cpp_SCmdParse_parse_FUN_00561fd0",
+        "estimated_params": 6,
+        "instructions_analyzed": 11,
+        "reg_params": [
+          "EDX",
+          "ECX",
+          "EAX"
+        ],
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0056443c",
+        "caller": "core_script.cpp_SetTemplateText_TemplateBugCantShowUsage_FUN_005643d0",
+        "estimated_params": 4,
+        "instructions_analyzed": 6,
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_params": 3
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "estimated_params": 6
+  },
   "stack_frame": {
     "frame_size": 28,
     "local_size": 28,

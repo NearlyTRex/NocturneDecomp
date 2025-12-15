@@ -119,6 +119,30 @@
       "value": null
     }
   ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0054c44c",
+        "caller": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBMFileRange_FUN_0054c3d0",
+        "estimated_params": 3,
+        "instructions_analyzed": 10,
+        "reg_params": [],
+        "stack_params": 3
+      },
+      {
+        "call_addr": "0054b91b",
+        "caller": "cockpit_pkbitmap.cpp_CPackedBitmap_loadStoredPBMFile_FUN_0054b910",
+        "estimated_params": 3,
+        "instructions_analyzed": 5,
+        "reg_params": [],
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "estimated_params": 3
+  },
   "stack_frame": {
     "frame_size": 124,
     "local_size": 112,

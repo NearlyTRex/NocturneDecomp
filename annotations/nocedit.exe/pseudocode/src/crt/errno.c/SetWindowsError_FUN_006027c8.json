@@ -62,6 +62,46 @@
       "value": "0060242c"
     }
   ],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "0060e7a2",
+        "caller": "crt_process.c_spawnvp_with_path_search_FUN_0060e6a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "reg_params": [],
+        "stack_params": 1
+      },
+      {
+        "call_addr": "006102ed",
+        "caller": "crt_process.c_build_cmdline_FUN_00610258",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "reg_params": [],
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00608396",
+        "caller": "crt_errno.c_convertWindowsErrorToErrno_FUN_00608390",
+        "estimated_params": 2,
+        "instructions_analyzed": 3,
+        "reg_params": [],
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0060f5f6",
+        "caller": "crt_process.c_spawnvp_FUN_0060f39c",
+        "estimated_params": 1,
+        "instructions_analyzed": 4,
+        "reg_params": [],
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "estimated_params": 1
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
