@@ -88,6 +88,7 @@
     "call_sites": [
       {
         "call_addr": "00422995",
+        "call_type": "direct",
         "caller": "core_boxactor.cpp_CLightActor_ctor_FUN_00422990",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -96,6 +97,7 @@
       },
       {
         "call_addr": "005bad15",
+        "call_type": "direct",
         "caller": "core_stone.cpp_CTempleStone_ctor_FUN_005bad10",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -104,6 +106,7 @@
       },
       {
         "call_addr": "004216da",
+        "call_type": "direct",
         "caller": "core_boxactor.cpp_FUN_004216c0",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -112,6 +115,7 @@
       },
       {
         "call_addr": "0053e8fc",
+        "call_type": "direct",
         "caller": "core_msnedit.cpp_PrepareMissionAndEditGore_FUN_0053e220",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -121,7 +125,9 @@
     ],
     "confidence": "high",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 4,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,
@@ -294,5 +300,16 @@
       "text": "return (CBoxActor *)(pCVar3[-2].scrape_points + 2);",
       "type": "negative_offset"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CBoxActor",
+        "offset": 0,
+        "vtable_addr": "0065b3d4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

@@ -56,7 +56,9 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 3,
-    "estimated_params": 3
+    "direct_call_count": 0,
+    "estimated_params": 3,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 16,
@@ -103,5 +105,21 @@
       "text": "core_weapon_cpp_CWeapon_dtor_FUN_005edf80(&this_ptr->base_weapon,1,unaff_EBX,unaff_retaddr);",
       "type": "unaffected_reg"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWeapon",
+        "offset": 228,
+        "vtable_addr": "00664674"
+      },
+      {
+        "class_name": "CTommyGun",
+        "offset": 8,
+        "vtable_addr": "00664784"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
 }

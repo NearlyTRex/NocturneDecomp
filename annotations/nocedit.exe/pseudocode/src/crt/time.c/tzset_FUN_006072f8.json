@@ -137,6 +137,7 @@
     "call_sites": [
       {
         "call_addr": "006006a3",
+        "call_type": "direct",
         "caller": "crt_time.c_strftime_FUN_006002d4",
         "estimated_params": 0,
         "instructions_analyzed": 1,
@@ -145,6 +146,7 @@
       },
       {
         "call_addr": "00600236",
+        "call_type": "direct",
         "caller": "crt_time.c_localtime_r_FUN_00600230",
         "estimated_params": 2,
         "instructions_analyzed": 3,
@@ -153,6 +155,7 @@
       },
       {
         "call_addr": "0060109b",
+        "call_type": "direct",
         "caller": "crt_time.c_mktime_FUN_00600f80",
         "estimated_params": 0,
         "instructions_analyzed": 2,
@@ -162,7 +165,9 @@
     ],
     "confidence": "medium",
     "declared_params": 0,
-    "estimated_params": 0
+    "direct_call_count": 3,
+    "estimated_params": 0,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 4,

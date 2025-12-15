@@ -45,6 +45,7 @@
     "call_sites": [
       {
         "call_addr": "005d2250",
+        "call_type": "direct",
         "caller": "shape_superopt.cpp_CObj_ctor_FUN_005d2230",
         "estimated_params": 3,
         "instructions_analyzed": 7,
@@ -53,6 +54,7 @@
       },
       {
         "call_addr": "005d789a",
+        "call_type": "direct",
         "caller": "shape_superopt.cpp_TriListSomething_FUN_005d77a0",
         "estimated_params": 3,
         "instructions_analyzed": 7,
@@ -62,7 +64,9 @@
     ],
     "confidence": "high",
     "declared_params": 3,
-    "estimated_params": 3
+    "direct_call_count": 2,
+    "estimated_params": 3,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 16,
@@ -137,5 +141,16 @@
       "text": "iVar1 = (*this_ptr->vtable->allocateVertices)(this_ptr,in_stack_0000002c);",
       "type": "stack_param"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CObj",
+        "offset": 8,
+        "vtable_addr": "00663b64"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

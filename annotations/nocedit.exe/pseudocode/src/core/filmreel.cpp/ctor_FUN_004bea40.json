@@ -114,6 +114,7 @@
     "call_sites": [
       {
         "call_addr": "004bea1d",
+        "call_type": "direct",
         "caller": "core_filmreel.cpp_FUN_004bea00",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -123,7 +124,9 @@
     ],
     "confidence": "medium",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 1,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,
@@ -177,5 +180,16 @@
       "text": "return (CFilmProjector *)(this_ptr_00[-2].animation_state + 0x28);",
       "type": "negative_offset"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 0,
+        "vtable_addr": "0065dc14"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

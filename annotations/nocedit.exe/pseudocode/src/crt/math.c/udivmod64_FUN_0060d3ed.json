@@ -40,21 +40,24 @@
     "call_sites": [
       {
         "call_addr": "0060ad8f",
+        "call_type": "direct",
         "caller": "crt_stdlib.c_i64toa_FUN_0060ad40",
         "estimated_params": 9,
         "instructions_analyzed": 29,
         "reg_params": [
           "EAX",
+          "EBX",
           "ECX",
-          "EDX",
-          "EBX"
+          "EDX"
         ],
         "stack_params": 5
       }
     ],
     "confidence": "low",
     "declared_params": 2,
-    "estimated_params": 9
+    "direct_call_count": 1,
+    "estimated_params": 9,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 4,

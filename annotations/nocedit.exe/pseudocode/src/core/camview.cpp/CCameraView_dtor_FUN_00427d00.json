@@ -67,6 +67,7 @@
     "call_sites": [
       {
         "call_addr": "0044c0af",
+        "call_type": "direct",
         "caller": "core_dcamera.cpp_CDemonCamera_dtor_FUN_0044c090",
         "estimated_params": 2,
         "instructions_analyzed": 4,
@@ -76,7 +77,9 @@
     ],
     "confidence": "medium",
     "declared_params": 2,
-    "estimated_params": 2
+    "direct_call_count": 1,
+    "estimated_params": 2,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 12,
@@ -101,5 +104,21 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CCameraView",
+        "offset": 0,
+        "vtable_addr": "0065b7d4"
+      },
+      {
+        "class_name": "CCameraView",
+        "offset": 8,
+        "vtable_addr": "0065b7f4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
 }

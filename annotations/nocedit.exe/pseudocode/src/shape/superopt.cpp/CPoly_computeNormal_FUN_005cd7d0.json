@@ -43,6 +43,7 @@
     "call_sites": [
       {
         "call_addr": "005d7add",
+        "call_type": "direct",
         "caller": "shape_superopt.cpp_TriListSomething_FUN_005d77a0",
         "estimated_params": 1,
         "instructions_analyzed": 4,
@@ -52,7 +53,9 @@
     ],
     "confidence": "medium",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 1,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 760,
@@ -746,5 +749,16 @@
       "text": "if (local_2a8 < (double)CONCAT44 /* combine 2-byte values */(uStack_2ec,local_2f0)) {",
       "type": "concat_artifact"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CPoly",
+        "offset": 68,
+        "vtable_addr": "00663ad4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

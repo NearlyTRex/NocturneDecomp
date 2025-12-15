@@ -215,6 +215,7 @@
     "call_sites": [
       {
         "call_addr": "004234ec",
+        "call_type": "direct",
         "caller": "core_boxactor.cpp_CLightActor_FUN_004234e0",
         "estimated_params": 5,
         "instructions_analyzed": 6,
@@ -225,19 +226,22 @@
       },
       {
         "call_addr": "005baddb",
+        "call_type": "direct",
         "caller": "core_stone.cpp_FUN_005badd0",
         "estimated_params": 5,
         "instructions_analyzed": 5,
         "reg_params": [
-          "EDX",
-          "ECX"
+          "ECX",
+          "EDX"
         ],
         "stack_params": 3
       }
     ],
     "confidence": "medium",
     "declared_params": 0,
-    "estimated_params": 5
+    "direct_call_count": 2,
+    "estimated_params": 5,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 4,
@@ -430,5 +434,16 @@
       "text": "core_actor_cpp_CActorPropertyList_FUN_0040e330(in_stack_00000008);",
       "type": "stack_param"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 212,
+        "vtable_addr": "0065b1b4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

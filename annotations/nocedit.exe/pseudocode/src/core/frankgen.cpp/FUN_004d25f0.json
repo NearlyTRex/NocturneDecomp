@@ -77,7 +77,9 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 0,
-    "estimated_params": 0
+    "direct_call_count": 0,
+    "estimated_params": 0,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 28,
@@ -218,5 +220,16 @@
       "text": "*(uint *)(in_stack_00000004[1].actor_name + 4) = *(uint *)(iVar1 + 0x15c);",
       "type": "stack_param"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 208,
+        "vtable_addr": "0065e684"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

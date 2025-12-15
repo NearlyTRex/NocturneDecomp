@@ -47,6 +47,7 @@
     "call_sites": [
       {
         "call_addr": "004f69a3",
+        "call_type": "direct",
         "caller": "core_hostage.cpp_CHostage_FUN_004f6550",
         "estimated_params": 2,
         "instructions_analyzed": 5,
@@ -56,7 +57,9 @@
     ],
     "confidence": "low",
     "declared_params": 1,
-    "estimated_params": 2
+    "direct_call_count": 1,
+    "estimated_params": 2,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 64,
@@ -159,5 +162,36 @@
       "text": "unaff_ESI = unaff_ESI + (uint)bVar3 * -2 + 1;",
       "type": "unaffected_reg"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CArmour",
+        "offset": 320,
+        "vtable_addr": "00659d34"
+      },
+      {
+        "class_name": "CBaron",
+        "offset": 320,
+        "vtable_addr": "0065a074"
+      },
+      {
+        "class_name": "CBatCreature",
+        "offset": 320,
+        "vtable_addr": "0065a5c4"
+      },
+      {
+        "class_name": "CBatman",
+        "offset": 320,
+        "vtable_addr": "0065a784"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 320,
+        "vtable_addr": "0065aa64"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 35
+  }
 }

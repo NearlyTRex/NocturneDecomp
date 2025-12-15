@@ -69,6 +69,7 @@
     "call_sites": [
       {
         "call_addr": "004ee015",
+        "call_type": "direct",
         "caller": "core_gore.cpp_CreateFlies_FUN_004edf30",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -77,6 +78,7 @@
       },
       {
         "call_addr": "004cbd3a",
+        "call_type": "direct",
         "caller": "core_flies.cpp_FUN_004cbd20",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -86,7 +88,9 @@
     ],
     "confidence": "high",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 2,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 20,
@@ -224,5 +228,16 @@
       "text": "return (CFlies *)((int)pvVar2 + -0x168);",
       "type": "pointer_cast"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 0,
+        "vtable_addr": "0065e634"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

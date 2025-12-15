@@ -126,7 +126,9 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 0,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,
@@ -257,5 +259,16 @@
       "text": "return (SMRGLHeaderExtended *)(in_stack_00000010 + 0x18 + *(int *)(in_stack_00000010 + 4) * 0xc);",
       "type": "stack_param"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 224,
+        "vtable_addr": "0066df88"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

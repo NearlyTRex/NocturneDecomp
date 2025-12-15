@@ -187,7 +187,9 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 3,
-    "estimated_params": 3
+    "direct_call_count": 0,
+    "estimated_params": 3,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 3296,
@@ -356,5 +358,16 @@
       "text": "sound_sndmain_cpp_logSoundError_FUN_005adba0((char *)((int)&uStack_cc0 + 4));",
       "type": "pointer_cast"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDirectSoundDevice",
+        "offset": 64,
+        "vtable_addr": "00663204"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

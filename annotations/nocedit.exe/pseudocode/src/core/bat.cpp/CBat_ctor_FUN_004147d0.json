@@ -93,6 +93,7 @@
     "call_sites": [
       {
         "call_addr": "004147aa",
+        "call_type": "direct",
         "caller": "core_bat.cpp_FUN_00414790",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -102,7 +103,9 @@
     ],
     "confidence": "medium",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 1,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,
@@ -149,5 +152,16 @@
       "text": "return (CBat *)(this_ptr_00[-2].animation_state + 0x94);",
       "type": "negative_offset"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CBat",
+        "offset": 0,
+        "vtable_addr": "0065a574"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

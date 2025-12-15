@@ -214,7 +214,9 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 0,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 128,
@@ -471,5 +473,16 @@
       "text": "g_RenderVertexBuffer[3].v = 7.34684e-40;",
       "type": "suspect_float"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CParticle",
+        "offset": 8,
+        "vtable_addr": "0065dcf4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

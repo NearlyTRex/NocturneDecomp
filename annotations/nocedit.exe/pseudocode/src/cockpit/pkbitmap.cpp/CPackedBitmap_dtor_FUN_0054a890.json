@@ -42,6 +42,7 @@
     "call_sites": [
       {
         "call_addr": "0054bb06",
+        "call_type": "direct",
         "caller": "cockpit_pkbitmap.cpp_parsePBGFile_FUN_0054b9b0",
         "estimated_params": 2,
         "instructions_analyzed": 5,
@@ -51,7 +52,9 @@
     ],
     "confidence": "low",
     "declared_params": 1,
-    "estimated_params": 2
+    "direct_call_count": 1,
+    "estimated_params": 2,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,
@@ -69,5 +72,16 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CPackedBitmap",
+        "offset": 8,
+        "vtable_addr": "00662264"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

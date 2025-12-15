@@ -98,6 +98,7 @@
     "call_sites": [
       {
         "call_addr": "004f0c87",
+        "call_type": "direct",
         "caller": "core_haystack.cpp_FUN_004f0c80",
         "estimated_params": 3,
         "instructions_analyzed": 4,
@@ -106,6 +107,7 @@
       },
       {
         "call_addr": "004f7e87",
+        "call_type": "direct",
         "caller": "core_icepick.cpp_FUN_004f7e80",
         "estimated_params": 3,
         "instructions_analyzed": 4,
@@ -114,6 +116,7 @@
       },
       {
         "call_addr": "004d2c48",
+        "call_type": "direct",
         "caller": "core_gabriela.cpp_FUN_004d2c40",
         "estimated_params": 4,
         "instructions_analyzed": 5,
@@ -122,6 +125,7 @@
       },
       {
         "call_addr": "005d8911",
+        "call_type": "direct",
         "caller": "core_svetlana.cpp_CSvetlana_FUN_005d88e0",
         "estimated_params": 1,
         "instructions_analyzed": 3,
@@ -130,6 +134,7 @@
       },
       {
         "call_addr": "00412cb7",
+        "call_type": "direct",
         "caller": "core_baron.cpp_CBaron_FUN_00412cb0",
         "estimated_params": 3,
         "instructions_analyzed": 4,
@@ -138,6 +143,7 @@
       },
       {
         "call_addr": "0043f857",
+        "call_type": "direct",
         "caller": "core_colonel.cpp_FUN_0043f850",
         "estimated_params": 3,
         "instructions_analyzed": 4,
@@ -146,6 +152,7 @@
       },
       {
         "call_addr": "00556f97",
+        "call_type": "direct",
         "caller": "core_scat.cpp_FUN_00556f90",
         "estimated_params": 3,
         "instructions_analyzed": 4,
@@ -154,6 +161,7 @@
       },
       {
         "call_addr": "00528cf9",
+        "call_type": "direct",
         "caller": "core_moloch.cpp_CMoloch_setup_FUN_00528c70",
         "estimated_params": 1,
         "instructions_analyzed": 3,
@@ -162,6 +170,7 @@
       },
       {
         "call_addr": "005bb4bb",
+        "call_type": "direct",
         "caller": "core_stranger.cpp_CStranger_FUN_005bb4b0",
         "estimated_params": 4,
         "instructions_analyzed": 6,
@@ -171,7 +180,9 @@
     ],
     "confidence": "low",
     "declared_params": 1,
-    "estimated_params": 3
+    "direct_call_count": 9,
+    "estimated_params": 3,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,
@@ -189,5 +200,16 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CHero",
+        "offset": 0,
+        "vtable_addr": "0065f6d4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

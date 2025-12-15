@@ -113,6 +113,7 @@
     "call_sites": [
       {
         "call_addr": "005c6a5a",
+        "call_type": "direct",
         "caller": "core_succubus.cpp_FUN_005c6a40",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -122,7 +123,9 @@
     ],
     "confidence": "medium",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 1,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,
@@ -140,5 +143,16 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CSuccubus",
+        "offset": 0,
+        "vtable_addr": "00663ab4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

@@ -73,6 +73,7 @@
     "call_sites": [
       {
         "call_addr": "0060244d",
+        "call_type": "direct",
         "caller": "crt_io.c_invalidate_handle_wrapper_FUN_00602448",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -81,6 +82,7 @@
       },
       {
         "call_addr": "0060a171",
+        "call_type": "direct",
         "caller": "crt_io.c_invalidate_handle_wrapper_FUN_0060a154",
         "estimated_params": 1,
         "instructions_analyzed": 4,
@@ -90,7 +92,9 @@
     ],
     "confidence": "high",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 2,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,

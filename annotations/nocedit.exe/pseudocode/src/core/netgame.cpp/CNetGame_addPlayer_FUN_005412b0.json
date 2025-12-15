@@ -103,30 +103,33 @@
     "call_sites": [
       {
         "call_addr": "00540888",
+        "call_type": "direct",
         "caller": "core_netgame.cpp_CNetGame_allocSimFrame_FUN_005406a0",
         "estimated_params": 8,
         "instructions_analyzed": 11,
         "reg_params": [
+          "EBX",
           "ECX",
-          "EDX",
-          "EBX"
+          "EDX"
         ],
         "stack_params": 5
       },
       {
         "call_addr": "00542abf",
+        "call_type": "direct",
         "caller": "core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_00542470",
         "estimated_params": 8,
         "instructions_analyzed": 11,
         "reg_params": [
+          "ECX",
           "EAX",
-          "EDX",
-          "ECX"
+          "EDX"
         ],
         "stack_params": 5
       },
       {
         "call_addr": "0053f8bf",
+        "call_type": "direct",
         "caller": "core_netgame.cpp_initializeNetworkToHost_FUN_0053f860",
         "estimated_params": 2,
         "instructions_analyzed": 4,
@@ -135,6 +138,7 @@
       },
       {
         "call_addr": "0053f951",
+        "call_type": "direct",
         "caller": "core_netgame.cpp_initializeNetworkToJoin_FUN_0053f900",
         "estimated_params": 2,
         "instructions_analyzed": 4,
@@ -143,6 +147,7 @@
       },
       {
         "call_addr": "0053f998",
+        "call_type": "direct",
         "caller": "core_netgame.cpp_initializeNetworkToJoin_FUN_0053f900",
         "estimated_params": 6,
         "instructions_analyzed": 8,
@@ -154,7 +159,9 @@
     ],
     "confidence": "low",
     "declared_params": 0,
-    "estimated_params": 8
+    "direct_call_count": 5,
+    "estimated_params": 8,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 4,

@@ -56,7 +56,9 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 0,
-    "estimated_params": 0
+    "direct_call_count": 0,
+    "estimated_params": 0,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 4,
@@ -81,5 +83,16 @@
       "text": "(g_CConsolePtr,\"Warning: called fire() for melee weapon %s\\n\",in_stack_00000004);",
       "type": "stack_param"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWeapon",
+        "offset": 248,
+        "vtable_addr": "00662bd4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

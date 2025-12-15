@@ -84,7 +84,9 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 0,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,
@@ -124,5 +126,16 @@
       "text": "if (((*(byte *)(*(int *)((int)g_WaveOutHeaders + iVar2) + 0x10) & 1) != 0) &&",
       "type": "pointer_cast"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWavOutDevice",
+        "offset": 16,
+        "vtable_addr": "00663284"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

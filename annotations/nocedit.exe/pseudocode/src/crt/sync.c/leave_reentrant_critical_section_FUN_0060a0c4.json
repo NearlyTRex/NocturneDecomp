@@ -91,6 +91,7 @@
     "call_sites": [
       {
         "call_addr": "0060a101",
+        "call_type": "direct",
         "caller": "crt_sync.c_leave_global_critical_section_FUN_0060a0fc",
         "estimated_params": 1,
         "instructions_analyzed": 1,
@@ -99,6 +100,7 @@
       },
       {
         "call_addr": "0060a0a5",
+        "call_type": "direct",
         "caller": "crt_sync.c_enter_reentrant_critical_section_FUN_0060a060",
         "estimated_params": 1,
         "instructions_analyzed": 4,
@@ -107,6 +109,7 @@
       },
       {
         "call_addr": "0060a191",
+        "call_type": "direct",
         "caller": "crt_sync.c_leave_global_memory_critical_section_FUN_0060a18c",
         "estimated_params": 1,
         "instructions_analyzed": 1,
@@ -115,6 +118,7 @@
       },
       {
         "call_addr": "0060a1b1",
+        "call_type": "direct",
         "caller": "crt_sync.c_leave_global_thread_critical_section_FUN_0060a1ac",
         "estimated_params": 1,
         "instructions_analyzed": 1,
@@ -123,6 +127,7 @@
       },
       {
         "call_addr": "0060a1d1",
+        "call_type": "direct",
         "caller": "crt_sync.c_leave_global_io_critical_section_FUN_0060a1cc",
         "estimated_params": 1,
         "instructions_analyzed": 1,
@@ -131,6 +136,7 @@
       },
       {
         "call_addr": "0060a1f1",
+        "call_type": "direct",
         "caller": "crt_sync.c_leave_global_runtime_critical_section_FUN_0060a1ec",
         "estimated_params": 1,
         "instructions_analyzed": 1,
@@ -139,6 +145,7 @@
       },
       {
         "call_addr": "0060a138",
+        "call_type": "direct",
         "caller": "crt_tls.c_leave_critical_section_by_index_FUN_0060a128",
         "estimated_params": 1,
         "instructions_analyzed": 5,
@@ -148,7 +155,9 @@
     ],
     "confidence": "high",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 7,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,

@@ -61,6 +61,7 @@
     "call_sites": [
       {
         "call_addr": "00601b27",
+        "call_type": "direct",
         "caller": "crt_stdio.c_fopenThreadSafe_FUN_00601b14",
         "estimated_params": 6,
         "instructions_analyzed": 10,
@@ -69,6 +70,7 @@
       },
       {
         "call_addr": "00601a2e",
+        "call_type": "direct",
         "caller": "crt_stdio.c_fopenWithFlags_FUN_00601a20",
         "estimated_params": 5,
         "instructions_analyzed": 8,
@@ -78,7 +80,9 @@
     ],
     "confidence": "low",
     "declared_params": 2,
-    "estimated_params": 6
+    "direct_call_count": 2,
+    "estimated_params": 6,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 32,

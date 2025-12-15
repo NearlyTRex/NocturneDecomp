@@ -50,6 +50,7 @@
     "call_sites": [
       {
         "call_addr": "0043f2d5",
+        "call_type": "direct",
         "caller": "support_codec.cpp_CLZWCompress_ctor_FUN_0043f2d0",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -58,6 +59,7 @@
       },
       {
         "call_addr": "0043f495",
+        "call_type": "direct",
         "caller": "support_codec.cpp_CLZWDecompress_ctor_FUN_0043f490",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -67,7 +69,9 @@
     ],
     "confidence": "high",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 2,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,
@@ -85,5 +89,16 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CCodec",
+        "offset": 0,
+        "vtable_addr": "0065bc54"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

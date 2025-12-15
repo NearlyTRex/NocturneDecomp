@@ -52,7 +52,9 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 0,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,
@@ -85,5 +87,16 @@
       "text": "iVar1 = crt_string_c_stricmp_FUN_005fe7f0(str1->motion_name,unaff_EBP);",
       "type": "unaffected_reg"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CTentacle",
+        "offset": 104,
+        "vtable_addr": "00664474"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

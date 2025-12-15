@@ -42,6 +42,7 @@
     "call_sites": [
       {
         "call_addr": "005c675c",
+        "call_type": "direct",
         "caller": "core_stranger.cpp_CStranger_FUN_005c6750",
         "estimated_params": 2,
         "instructions_analyzed": 4,
@@ -51,7 +52,9 @@
     ],
     "confidence": "low",
     "declared_params": 1,
-    "estimated_params": 2
+    "direct_call_count": 1,
+    "estimated_params": 2,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,
@@ -69,5 +72,36 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CBaron",
+        "offset": 352,
+        "vtable_addr": "0065a074"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 352,
+        "vtable_addr": "0065bd54"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 352,
+        "vtable_addr": "0065e804"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 352,
+        "vtable_addr": "0065f3f4"
+      },
+      {
+        "class_name": "CHero",
+        "offset": 352,
+        "vtable_addr": "0065f6d4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 9
+  }
 }

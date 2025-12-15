@@ -48,7 +48,9 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 3,
-    "estimated_params": 3
+    "direct_call_count": 0,
+    "estimated_params": 3,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 156,
@@ -130,5 +132,26 @@
       "text": "crt_strstream_cpp_ostrstream_dtor_FUN_005ff48a((ostrstream *)&stack0xffffff90,0);",
       "type": "stack_ref"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CCodec",
+        "offset": 32,
+        "vtable_addr": "0065bbc4"
+      },
+      {
+        "class_name": "CLZWCompress",
+        "offset": 32,
+        "vtable_addr": "0065bbf4"
+      },
+      {
+        "class_name": "CLZWDecompress",
+        "offset": 32,
+        "vtable_addr": "0065bc24"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 3
+  }
 }

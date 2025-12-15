@@ -67,6 +67,7 @@
     "call_sites": [
       {
         "call_addr": "00587eba",
+        "call_type": "direct",
         "caller": "core_shotgun.cpp_FUN_00587ea0",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -76,7 +77,9 @@
     ],
     "confidence": "medium",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 1,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,
@@ -102,5 +105,16 @@
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CShotgun",
+        "offset": 0,
+        "vtable_addr": "00662b94"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

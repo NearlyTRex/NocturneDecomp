@@ -83,6 +83,7 @@
     "call_sites": [
       {
         "call_addr": "00494246",
+        "call_type": "direct",
         "caller": "core_dtrace.cpp_CDemonRaytrace_dtor_FUN_00494240",
         "estimated_params": 2,
         "instructions_analyzed": 3,
@@ -91,6 +92,7 @@
       },
       {
         "call_addr": "00494d7c",
+        "call_type": "direct",
         "caller": "core_dtrace.cpp_CDemonRaytrace_loadBinary_FUN_004947a0",
         "estimated_params": 1,
         "instructions_analyzed": 3,
@@ -100,7 +102,9 @@
     ],
     "confidence": "low",
     "declared_params": 1,
-    "estimated_params": 2
+    "direct_call_count": 2,
+    "estimated_params": 2,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,

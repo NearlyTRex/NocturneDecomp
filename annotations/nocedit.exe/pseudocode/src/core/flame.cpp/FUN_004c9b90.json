@@ -51,20 +51,23 @@
     "call_sites": [
       {
         "call_addr": "0041aebf",
+        "call_type": "direct",
         "caller": "core_bodypart.cpp_FUN_0041ae50",
         "estimated_params": 4,
         "instructions_analyzed": 11,
         "reg_params": [
+          "ECX",
           "EAX",
-          "EDX",
-          "ECX"
+          "EDX"
         ],
         "stack_params": 1
       }
     ],
     "confidence": "low",
     "declared_params": 0,
-    "estimated_params": 4
+    "direct_call_count": 1,
+    "estimated_params": 4,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 4,
@@ -103,5 +106,16 @@
       "text": "*(uint *)(in_stack_0000000c + 0x294) = uVar1 & 1;",
       "type": "stack_param"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 0,
+        "vtable_addr": "0065e034"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

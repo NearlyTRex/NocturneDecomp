@@ -110,7 +110,9 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 2,
-    "estimated_params": 2
+    "direct_call_count": 0,
+    "estimated_params": 2,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 12,
@@ -164,5 +166,21 @@
       "text": "((CDemonActor *)(pCVar2[-1].part_visibility_flags + 7),1);",
       "type": "negative_offset"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CMimic",
+        "offset": 228,
+        "vtable_addr": "00661424"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 8,
+        "vtable_addr": "00661594"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
 }

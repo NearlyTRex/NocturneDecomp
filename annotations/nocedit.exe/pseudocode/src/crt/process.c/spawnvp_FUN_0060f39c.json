@@ -223,6 +223,7 @@
     "call_sites": [
       {
         "call_addr": "00610202",
+        "call_type": "direct",
         "caller": "crt_process.c_execv_FUN_006101f0",
         "estimated_params": 5,
         "instructions_analyzed": 8,
@@ -231,6 +232,7 @@
       },
       {
         "call_addr": "0060e803",
+        "call_type": "direct",
         "caller": "crt_process.c_spawnvp_with_path_search_FUN_0060e6a0",
         "estimated_params": 4,
         "instructions_analyzed": 10,
@@ -239,6 +241,7 @@
       },
       {
         "call_addr": "006107a7",
+        "call_type": "direct",
         "caller": "crt_process.c_execvp_FUN_00610790",
         "estimated_params": 5,
         "instructions_analyzed": 9,
@@ -247,6 +250,7 @@
       },
       {
         "call_addr": "0060e6d4",
+        "call_type": "direct",
         "caller": "crt_process.c_spawnvp_with_path_search_FUN_0060e6a0",
         "estimated_params": 8,
         "instructions_analyzed": 14,
@@ -256,7 +260,9 @@
     ],
     "confidence": "low",
     "declared_params": 3,
-    "estimated_params": 5
+    "direct_call_count": 4,
+    "estimated_params": 5,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 212,

@@ -54,6 +54,7 @@
     "call_sites": [
       {
         "call_addr": "0044f6e9",
+        "call_type": "direct",
         "caller": "core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3e0",
         "estimated_params": 6,
         "instructions_analyzed": 18,
@@ -63,7 +64,9 @@
     ],
     "confidence": "medium",
     "declared_params": 6,
-    "estimated_params": 6
+    "direct_call_count": 1,
+    "estimated_params": 6,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 52,
@@ -152,5 +155,16 @@
       "text": "(&this_ptr->lzw_dict,&(this_ptr->lzw_dict).bit_state,&stack0xffffffe8,",
       "type": "stack_ref"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CLZWDecompress",
+        "offset": 24,
+        "vtable_addr": "0065bc24"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

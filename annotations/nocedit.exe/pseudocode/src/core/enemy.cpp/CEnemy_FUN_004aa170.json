@@ -260,6 +260,7 @@
     "call_sites": [
       {
         "call_addr": "0041842c",
+        "call_type": "direct",
         "caller": "core_beast.cpp_FUN_00418420",
         "estimated_params": 4,
         "instructions_analyzed": 6,
@@ -268,6 +269,7 @@
       },
       {
         "call_addr": "0047f92c",
+        "call_type": "direct",
         "caller": "core_dog.cpp_CZombieDog_getPropertyList_FUN_0047f920",
         "estimated_params": 4,
         "instructions_analyzed": 6,
@@ -276,6 +278,7 @@
       },
       {
         "call_addr": "0048f52c",
+        "call_type": "direct",
         "caller": "core_drone.cpp_FUN_0048f520",
         "estimated_params": 4,
         "instructions_analyzed": 6,
@@ -284,6 +287,7 @@
       },
       {
         "call_addr": "005e51ac",
+        "call_type": "direct",
         "caller": "core_tvbat.cpp_CTVBat_FUN_005e51a0",
         "estimated_params": 4,
         "instructions_analyzed": 6,
@@ -292,6 +296,7 @@
       },
       {
         "call_addr": "00418c8d",
+        "call_type": "direct",
         "caller": "core_biggs.cpp_snag_FUN_00418c80",
         "estimated_params": 5,
         "instructions_analyzed": 7,
@@ -300,6 +305,7 @@
       },
       {
         "call_addr": "004e8dcd",
+        "call_type": "direct",
         "caller": "core_ghoul.cpp_FUN_004e8dc0",
         "estimated_params": 5,
         "instructions_analyzed": 7,
@@ -308,6 +314,7 @@
       },
       {
         "call_addr": "005dbc6d",
+        "call_type": "direct",
         "caller": "core_tentacle.cpp_CTentacle_FUN_005dbc60",
         "estimated_params": 5,
         "instructions_analyzed": 7,
@@ -316,6 +323,7 @@
       },
       {
         "call_addr": "005fca8d",
+        "call_type": "direct",
         "caller": "core_zombie.cpp_CZombie_FUN_005fca80",
         "estimated_params": 5,
         "instructions_analyzed": 7,
@@ -324,6 +332,7 @@
       },
       {
         "call_addr": "004277f0",
+        "call_type": "direct",
         "caller": "core_bugs.cpp_CBugs_FUN_004277e0",
         "estimated_params": 5,
         "instructions_analyzed": 8,
@@ -332,6 +341,7 @@
       },
       {
         "call_addr": "00424b1b",
+        "call_type": "direct",
         "caller": "core_bride.cpp_FUN_00424b10",
         "estimated_params": 3,
         "instructions_analyzed": 5,
@@ -341,7 +351,9 @@
     ],
     "confidence": "low",
     "declared_params": 1,
-    "estimated_params": 4
+    "direct_call_count": 27,
+    "estimated_params": 4,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,
@@ -444,5 +456,16 @@
       "text": "return extraout_EAX_00;",
       "type": "extra_output"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CEnemy",
+        "offset": 212,
+        "vtable_addr": "0065d7d4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

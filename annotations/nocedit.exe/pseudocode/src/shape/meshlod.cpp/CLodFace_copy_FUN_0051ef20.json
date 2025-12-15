@@ -44,7 +44,9 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 2,
-    "estimated_params": 2
+    "direct_call_count": 0,
+    "estimated_params": 2,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 12,
@@ -105,5 +107,16 @@
       "text": "*(int *)((int)pvVar1 + 0x34) = other->affected_by_edge_stamp;",
       "type": "pointer_cast"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CLodFace",
+        "offset": 4,
+        "vtable_addr": "00661394"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

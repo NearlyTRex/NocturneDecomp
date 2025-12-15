@@ -60,7 +60,9 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 4,
-    "estimated_params": 4
+    "direct_call_count": 0,
+    "estimated_params": 4,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 20,
@@ -107,5 +109,21 @@
       "text": "((CCodec *)&pCVar1[-1].bit_state.accumulated_bits,1);",
       "type": "negative_offset"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CLZWDecompress",
+        "offset": 0,
+        "vtable_addr": "0065bc24"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 8,
+        "vtable_addr": "0065bcf4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
 }

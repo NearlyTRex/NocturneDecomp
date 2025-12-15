@@ -42,7 +42,9 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 0,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,
@@ -82,5 +84,21 @@
       "text": "(in_stack_00000008,new_buffer,(void *)((int)new_buffer + 0x204),1);",
       "type": "pointer_cast"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 40,
+        "vtable_addr": "00665f70"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 40,
+        "vtable_addr": "00665fcc"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
 }

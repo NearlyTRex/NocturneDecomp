@@ -123,6 +123,7 @@
     "call_sites": [
       {
         "call_addr": "004f3f2b",
+        "call_type": "direct",
         "caller": "core_hero.cpp_CHero_FUN_004f3f20",
         "estimated_params": 3,
         "instructions_analyzed": 5,
@@ -131,6 +132,7 @@
       },
       {
         "call_addr": "00544e4d",
+        "call_type": "direct",
         "caller": "core_npc.cpp_CNPC_FUN_00544e40",
         "estimated_params": 5,
         "instructions_analyzed": 7,
@@ -139,6 +141,7 @@
       },
       {
         "call_addr": "004aa17c",
+        "call_type": "direct",
         "caller": "core_enemy.cpp_CEnemy_FUN_004aa170",
         "estimated_params": 4,
         "instructions_analyzed": 6,
@@ -148,7 +151,9 @@
     ],
     "confidence": "low",
     "declared_params": 1,
-    "estimated_params": 3
+    "direct_call_count": 3,
+    "estimated_params": 3,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,
@@ -216,5 +221,16 @@
       "text": "core_actor_cpp_CActorPropertyList_FUN_0040e640(in_stack_00000008);",
       "type": "stack_param"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CCharacter",
+        "offset": 212,
+        "vtable_addr": "0065b844"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

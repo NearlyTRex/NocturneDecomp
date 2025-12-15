@@ -237,6 +237,7 @@
     "call_sites": [
       {
         "call_addr": "004f37b0",
+        "call_type": "direct",
         "caller": "core_hero.cpp_CallInventorySelectHealth_FUN_004f3760",
         "estimated_params": 2,
         "instructions_analyzed": 4,
@@ -245,6 +246,7 @@
       },
       {
         "call_addr": "005015f4",
+        "call_type": "direct",
         "caller": "core_inv.cpp_CInventory_autoUseHealthItem_FUN_00501570",
         "estimated_params": 2,
         "instructions_analyzed": 4,
@@ -253,6 +255,7 @@
       },
       {
         "call_addr": "005015fd",
+        "call_type": "direct",
         "caller": "core_inv.cpp_CInventory_autoUseHealthItem_FUN_00501570",
         "estimated_params": 2,
         "instructions_analyzed": 3,
@@ -262,7 +265,9 @@
     ],
     "confidence": "high",
     "declared_params": 2,
-    "estimated_params": 2
+    "direct_call_count": 3,
+    "estimated_params": 2,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 288,

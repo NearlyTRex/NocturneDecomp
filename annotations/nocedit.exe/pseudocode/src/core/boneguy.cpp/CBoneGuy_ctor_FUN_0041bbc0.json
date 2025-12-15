@@ -121,6 +121,7 @@
     "call_sites": [
       {
         "call_addr": "0041b83a",
+        "call_type": "direct",
         "caller": "core_boneguy.cpp_constructor_FUN_0041b820",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -130,7 +131,9 @@
     ],
     "confidence": "medium",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 1,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 40,
@@ -352,5 +355,16 @@
       "text": "return extraout_EAX;",
       "type": "extra_output"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CBoneGuy",
+        "offset": 0,
+        "vtable_addr": "0065b104"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

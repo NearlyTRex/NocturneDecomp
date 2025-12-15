@@ -55,6 +55,7 @@
     "call_sites": [
       {
         "call_addr": "004726a5",
+        "call_type": "direct",
         "caller": "core_dlight.cpp_CDemonLight_ctor_FUN_004726a0",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -63,6 +64,7 @@
       },
       {
         "call_addr": "0056905f",
+        "call_type": "direct",
         "caller": "core_set.cpp_staticInit_FUN_00569040",
         "estimated_params": 1,
         "instructions_analyzed": 3,
@@ -72,7 +74,9 @@
     ],
     "confidence": "high",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 2,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,
@@ -90,5 +94,16 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDemonCamera",
+        "offset": 0,
+        "vtable_addr": "0065c694"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

@@ -102,6 +102,7 @@
     "call_sites": [
       {
         "call_addr": "005e20cd",
+        "call_type": "direct",
         "caller": "core_turret.cpp_FUN_005e20b0",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -111,7 +112,9 @@
     ],
     "confidence": "medium",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 1,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 44,
@@ -221,5 +224,16 @@
       "text": "return (CTurret *)(this_ptr_00[-4].part_visibility_flags + 0x1b);",
       "type": "negative_offset"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CTurret",
+        "offset": 0,
+        "vtable_addr": "00664c94"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

@@ -30,7 +30,9 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 0,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,
@@ -48,5 +50,36 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CBaronWeapon",
+        "offset": 128,
+        "vtable_addr": "0065a1e4"
+      },
+      {
+        "class_name": "CWeapon",
+        "offset": 128,
+        "vtable_addr": "0065c394"
+      },
+      {
+        "class_name": "CWeapon",
+        "offset": 128,
+        "vtable_addr": "0065d314"
+      },
+      {
+        "class_name": "CWeapon",
+        "offset": 128,
+        "vtable_addr": "0065d534"
+      },
+      {
+        "class_name": "CWeapon",
+        "offset": 128,
+        "vtable_addr": "0065e284"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 14
+  }
 }

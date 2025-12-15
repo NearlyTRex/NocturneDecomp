@@ -49,6 +49,7 @@
     "call_sites": [
       {
         "call_addr": "005ebe4a",
+        "call_type": "direct",
         "caller": "core_waypoint.cpp_FUN_005ebe30",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -58,7 +59,9 @@
     ],
     "confidence": "medium",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 1,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,
@@ -76,5 +79,16 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWayPoint",
+        "offset": 0,
+        "vtable_addr": "00665574"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

@@ -53,7 +53,9 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 4,
-    "estimated_params": 4
+    "direct_call_count": 0,
+    "estimated_params": 4,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 252,
@@ -390,5 +392,16 @@
       "text": "*(uint *)((int)&out_hit_point->z + 4) = local_b4;",
       "type": "pointer_cast"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CPoly",
+        "offset": 96,
+        "vtable_addr": "00663ad4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

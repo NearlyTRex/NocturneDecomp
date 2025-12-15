@@ -162,6 +162,7 @@
     "call_sites": [
       {
         "call_addr": "005b81fa",
+        "call_type": "direct",
         "caller": "core_spike.cpp_FUN_005b81e0",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -171,7 +172,9 @@
     ],
     "confidence": "medium",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 1,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,
@@ -218,5 +221,16 @@
       "text": "return (CSpike *)(this_ptr_00[-1].part_visibility_flags + 9);",
       "type": "negative_offset"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CSpike",
+        "offset": 0,
+        "vtable_addr": "00663454"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

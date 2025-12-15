@@ -40,7 +40,9 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 4,
-    "estimated_params": 4
+    "direct_call_count": 0,
+    "estimated_params": 4,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 44,
@@ -192,5 +194,16 @@
       "text": "*(float *)((int)start_frame + 0x225c) + in_stack_00000014 * fVar2;",
       "type": "pointer_cast"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDeformableModelInstance",
+        "offset": 8,
+        "vtable_addr": "00662ec4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

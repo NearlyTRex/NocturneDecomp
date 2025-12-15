@@ -66,6 +66,7 @@
     "call_sites": [
       {
         "call_addr": "004e600d",
+        "call_type": "direct",
         "caller": "core_ghoul.cpp_FUN_004e5ff0",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -75,7 +76,9 @@
     ],
     "confidence": "medium",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 1,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 16,
@@ -115,5 +118,16 @@
       "text": "fVar7 = 7.197803e-39;",
       "type": "suspect_float"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 0,
+        "vtable_addr": "0065eeb4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

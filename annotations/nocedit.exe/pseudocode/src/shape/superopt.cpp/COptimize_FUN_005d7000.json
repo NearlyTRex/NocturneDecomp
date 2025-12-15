@@ -64,6 +64,7 @@
     "call_sites": [
       {
         "call_addr": "005d6fba",
+        "call_type": "direct",
         "caller": "shape_superopt.cpp_COptimize_ctor_FUN_005d6f90",
         "estimated_params": 1,
         "instructions_analyzed": 7,
@@ -72,6 +73,7 @@
       },
       {
         "call_addr": "005d6fdd",
+        "call_type": "direct",
         "caller": "shape_superopt.cpp_COptimize_dtor_FUN_005d6fd0",
         "estimated_params": 2,
         "instructions_analyzed": 4,
@@ -81,7 +83,9 @@
     ],
     "confidence": "medium",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 2,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,
@@ -99,5 +103,16 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "COptimize",
+        "offset": 0,
+        "vtable_addr": "00663c44"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

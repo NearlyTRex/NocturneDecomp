@@ -303,7 +303,9 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 0,
-    "estimated_params": 0
+    "direct_call_count": 0,
+    "estimated_params": 0,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 124,
@@ -1137,5 +1139,16 @@
       "text": "in_stack_00000058 = (CBoundingBox3D *)((int)in_stack_00000058 + 4);",
       "type": "pointer_cast"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWeapon",
+        "offset": 248,
+        "vtable_addr": "00660a64"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

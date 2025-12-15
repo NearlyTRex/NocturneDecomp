@@ -174,17 +174,19 @@
     "call_sites": [
       {
         "call_addr": "00578648",
+        "call_type": "direct",
         "caller": "core_setedit.cpp_EditingGroundTypesAndSaving_FUN_00578630",
         "estimated_params": 5,
         "instructions_analyzed": 7,
         "reg_params": [
-          "EDX",
-          "EBX"
+          "EBX",
+          "EDX"
         ],
         "stack_params": 3
       },
       {
         "call_addr": "005796ed",
+        "call_type": "direct",
         "caller": "core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80",
         "estimated_params": 2,
         "instructions_analyzed": 4,
@@ -196,7 +198,9 @@
     ],
     "confidence": "low",
     "declared_params": 0,
-    "estimated_params": 5
+    "direct_call_count": 2,
+    "estimated_params": 5,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 416,

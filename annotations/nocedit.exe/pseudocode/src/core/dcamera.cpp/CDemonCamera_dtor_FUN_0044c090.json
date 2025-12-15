@@ -71,6 +71,7 @@
     "call_sites": [
       {
         "call_addr": "0047277f",
+        "call_type": "direct",
         "caller": "core_dlight.cpp_CDemonLight_dtor_FUN_00472760",
         "estimated_params": 2,
         "instructions_analyzed": 4,
@@ -80,7 +81,9 @@
     ],
     "confidence": "low",
     "declared_params": 4,
-    "estimated_params": 2
+    "direct_call_count": 1,
+    "estimated_params": 2,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 20,
@@ -119,5 +122,21 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDemonCamera",
+        "offset": 0,
+        "vtable_addr": "0065c664"
+      },
+      {
+        "class_name": "CDemonCamera",
+        "offset": 8,
+        "vtable_addr": "0065c694"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
 }

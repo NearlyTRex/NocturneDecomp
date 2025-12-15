@@ -103,6 +103,7 @@
     "call_sites": [
       {
         "call_addr": "004f97aa",
+        "call_type": "direct",
         "caller": "core_icepick.cpp_FUN_004f97a0",
         "estimated_params": 2,
         "instructions_analyzed": 4,
@@ -111,6 +112,7 @@
       },
       {
         "call_addr": "0055912a",
+        "call_type": "direct",
         "caller": "core_scat.cpp_FUN_00559120",
         "estimated_params": 2,
         "instructions_analyzed": 4,
@@ -119,6 +121,7 @@
       },
       {
         "call_addr": "0044061a",
+        "call_type": "direct",
         "caller": "core_colonel.cpp_FUN_00440610",
         "estimated_params": 2,
         "instructions_analyzed": 4,
@@ -127,6 +130,7 @@
       },
       {
         "call_addr": "004d761a",
+        "call_type": "direct",
         "caller": "core_gabriela.cpp_FUN_004d7610",
         "estimated_params": 2,
         "instructions_analyzed": 4,
@@ -135,6 +139,7 @@
       },
       {
         "call_addr": "004f1cda",
+        "call_type": "direct",
         "caller": "core_haystack.cpp_FUN_004f1cd0",
         "estimated_params": 2,
         "instructions_analyzed": 4,
@@ -143,6 +148,7 @@
       },
       {
         "call_addr": "005c68fa",
+        "call_type": "direct",
         "caller": "core_stranger.cpp_CStranger_FUN_005c68f0",
         "estimated_params": 2,
         "instructions_analyzed": 4,
@@ -151,6 +157,7 @@
       },
       {
         "call_addr": "005d9f1a",
+        "call_type": "direct",
         "caller": "core_svetlana.cpp_CSvetlana_FUN_005d9f10",
         "estimated_params": 2,
         "instructions_analyzed": 4,
@@ -159,6 +166,7 @@
       },
       {
         "call_addr": "0041401c",
+        "call_type": "direct",
         "caller": "core_baron.cpp_CBaron_FUN_00414010",
         "estimated_params": 4,
         "instructions_analyzed": 6,
@@ -167,6 +175,7 @@
       },
       {
         "call_addr": "0052995c",
+        "call_type": "direct",
         "caller": "core_moloch.cpp_FUN_00529950",
         "estimated_params": 4,
         "instructions_analyzed": 6,
@@ -176,7 +185,9 @@
     ],
     "confidence": "medium",
     "declared_params": 1,
-    "estimated_params": 2
+    "direct_call_count": 9,
+    "estimated_params": 2,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,
@@ -209,5 +220,16 @@
       "text": "core_actor_cpp_CActorPropertyList_FUN_0040e4d0(in_stack_0000000c);",
       "type": "stack_param"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CHero",
+        "offset": 212,
+        "vtable_addr": "0065f6d4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

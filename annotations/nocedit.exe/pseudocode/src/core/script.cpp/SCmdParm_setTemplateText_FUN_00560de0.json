@@ -707,18 +707,20 @@
     "call_sites": [
       {
         "call_addr": "00562293",
+        "call_type": "direct",
         "caller": "core_script.cpp_SCmdParse_parse_FUN_00561fd0",
         "estimated_params": 6,
         "instructions_analyzed": 11,
         "reg_params": [
           "EAX",
-          "EDX",
-          "ECX"
+          "ECX",
+          "EDX"
         ],
         "stack_params": 3
       },
       {
         "call_addr": "0056443c",
+        "call_type": "direct",
         "caller": "core_script.cpp_SetTemplateText_TemplateBugCantShowUsage_FUN_005643d0",
         "estimated_params": 4,
         "instructions_analyzed": 6,
@@ -730,7 +732,9 @@
     ],
     "confidence": "low",
     "declared_params": 0,
-    "estimated_params": 6
+    "direct_call_count": 2,
+    "estimated_params": 6,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 28,

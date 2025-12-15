@@ -117,6 +117,7 @@
     "call_sites": [
       {
         "call_addr": "004f4695",
+        "call_type": "direct",
         "caller": "core_hiram.cpp_CHiram_load_FUN_004f4690",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -125,6 +126,7 @@
       },
       {
         "call_addr": "004f7bd5",
+        "call_type": "direct",
         "caller": "core_hpriest.cpp_CHighPriestOfGardath_load_FUN_004f7bd0",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -133,6 +135,7 @@
       },
       {
         "call_addr": "004f6177",
+        "call_type": "direct",
         "caller": "core_hostage.cpp_CHostage_load_FUN_004f6170",
         "estimated_params": 3,
         "instructions_analyzed": 4,
@@ -141,6 +144,7 @@
       },
       {
         "call_addr": "00546197",
+        "call_type": "direct",
         "caller": "core_passngr.cpp_CPassenger_load_FUN_00546190",
         "estimated_params": 3,
         "instructions_analyzed": 4,
@@ -150,7 +154,9 @@
     ],
     "confidence": "medium",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 4,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,
@@ -168,5 +174,26 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CNPC",
+        "offset": 232,
+        "vtable_addr": "00661d94"
+      },
+      {
+        "class_name": "CBassPlayer",
+        "offset": 232,
+        "vtable_addr": "00663f14"
+      },
+      {
+        "class_name": "CDrummer",
+        "offset": 232,
+        "vtable_addr": "00664074"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 3
+  }
 }

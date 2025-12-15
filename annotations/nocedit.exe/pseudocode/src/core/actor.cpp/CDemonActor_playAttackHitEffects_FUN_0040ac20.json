@@ -30,7 +30,9 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 4,
-    "estimated_params": 4
+    "direct_call_count": 0,
+    "estimated_params": 4,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 20,
@@ -69,5 +71,36 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDemonActor",
+        "offset": 120,
+        "vtable_addr": "006597d4"
+      },
+      {
+        "class_name": "CAmmo",
+        "offset": 120,
+        "vtable_addr": "006599a4"
+      },
+      {
+        "class_name": "CAmmoBox",
+        "offset": 120,
+        "vtable_addr": "00659ad4"
+      },
+      {
+        "class_name": "CAnvil",
+        "offset": 120,
+        "vtable_addr": "00659c04"
+      },
+      {
+        "class_name": "CArmour",
+        "offset": 120,
+        "vtable_addr": "00659d34"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 112
+  }
 }

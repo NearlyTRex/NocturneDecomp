@@ -80,7 +80,9 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 10,
-    "estimated_params": 10
+    "direct_call_count": 0,
+    "estimated_params": 10,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 44,
@@ -169,5 +171,21 @@
       "text": "((CDemonActor *)(pCVar2[-1].part_visibility_flags + 7),1);",
       "type": "negative_offset"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CBoneGuy",
+        "offset": 228,
+        "vtable_addr": "0065af74"
+      },
+      {
+        "class_name": "CBoneGuy",
+        "offset": 8,
+        "vtable_addr": "0065b104"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
 }

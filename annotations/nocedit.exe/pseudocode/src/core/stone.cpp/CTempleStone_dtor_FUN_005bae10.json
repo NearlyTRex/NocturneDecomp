@@ -60,7 +60,9 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 4,
-    "estimated_params": 4
+    "direct_call_count": 0,
+    "estimated_params": 4,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 20,
@@ -107,5 +109,21 @@
       "text": "((CDemonActor *)(pCVar1[-2].scrape_points + 2),1);",
       "type": "negative_offset"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 228,
+        "vtable_addr": "00663604"
+      },
+      {
+        "class_name": "CTempleStone",
+        "offset": 8,
+        "vtable_addr": "006636f4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
 }

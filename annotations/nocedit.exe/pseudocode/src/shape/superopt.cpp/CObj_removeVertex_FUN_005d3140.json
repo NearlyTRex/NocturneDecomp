@@ -45,7 +45,9 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 2,
-    "estimated_params": 2
+    "direct_call_count": 0,
+    "estimated_params": 2,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 12,
@@ -113,5 +115,16 @@
       "text": "*(uint *)((int)pCVar1->uv_coords + iVar4 + -4) = uVar2 - 1;",
       "type": "pointer_cast"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CObj",
+        "offset": 84,
+        "vtable_addr": "00663b64"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

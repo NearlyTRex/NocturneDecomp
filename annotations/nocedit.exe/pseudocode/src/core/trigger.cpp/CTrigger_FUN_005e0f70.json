@@ -187,6 +187,7 @@
     "call_sites": [
       {
         "call_addr": "005ec4da",
+        "call_type": "direct",
         "caller": "core_waypoint.cpp_CWayPoint_FUN_005ec4d0",
         "estimated_params": 2,
         "instructions_analyzed": 4,
@@ -196,7 +197,9 @@
     ],
     "confidence": "low",
     "declared_params": 1,
-    "estimated_params": 2
+    "direct_call_count": 1,
+    "estimated_params": 2,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,
@@ -341,5 +344,16 @@
       "text": "core_actor_cpp_CActorPropertyList_FUN_0040e330(in_stack_00000008);",
       "type": "stack_param"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CTrigger",
+        "offset": 212,
+        "vtable_addr": "00664a24"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

@@ -51,6 +51,7 @@
     "call_sites": [
       {
         "call_addr": "0042f8ac",
+        "call_type": "direct",
         "caller": "core_charactr.cpp_CCharacter_FUN_0042f8a0",
         "estimated_params": 4,
         "instructions_analyzed": 6,
@@ -59,6 +60,7 @@
       },
       {
         "call_addr": "005babfa",
+        "call_type": "direct",
         "caller": "core_stairs.cpp_FUN_005babf0",
         "estimated_params": 2,
         "instructions_analyzed": 4,
@@ -67,6 +69,7 @@
       },
       {
         "call_addr": "005dab7b",
+        "call_type": "direct",
         "caller": "core_teleport.cpp_CTeleport_FUN_005dab70",
         "estimated_params": 3,
         "instructions_analyzed": 5,
@@ -76,7 +79,9 @@
     ],
     "confidence": "low",
     "declared_params": 2,
-    "estimated_params": 4
+    "direct_call_count": 3,
+    "estimated_params": 4,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 12,
@@ -116,5 +121,36 @@
       "text": "if (pCVar1 != in_stack_00000014) {",
       "type": "stack_param"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDemonActor",
+        "offset": 204,
+        "vtable_addr": "006597d4"
+      },
+      {
+        "class_name": "CAmmo",
+        "offset": 204,
+        "vtable_addr": "006599a4"
+      },
+      {
+        "class_name": "CAmmoBox",
+        "offset": 204,
+        "vtable_addr": "00659ad4"
+      },
+      {
+        "class_name": "CAnvil",
+        "offset": 204,
+        "vtable_addr": "00659c04"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 204,
+        "vtable_addr": "00659f44"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 63
+  }
 }

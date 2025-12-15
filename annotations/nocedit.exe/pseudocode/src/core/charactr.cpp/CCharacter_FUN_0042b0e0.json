@@ -60,6 +60,7 @@
     "call_sites": [
       {
         "call_addr": "005f1968",
+        "call_type": "direct",
         "caller": "core_werewolf.cpp_CWerewolf_FUN_005f1820",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -68,6 +69,7 @@
       },
       {
         "call_addr": "004d624c",
+        "call_type": "direct",
         "caller": "core_gabriela.cpp_FUN_004d6230",
         "estimated_params": 1,
         "instructions_analyzed": 4,
@@ -76,6 +78,7 @@
       },
       {
         "call_addr": "005f1934",
+        "call_type": "direct",
         "caller": "core_werewolf.cpp_CWerewolf_FUN_005f1820",
         "estimated_params": 1,
         "instructions_analyzed": 5,
@@ -84,6 +87,7 @@
       },
       {
         "call_addr": "005c3716",
+        "call_type": "direct",
         "caller": "core_stranger.cpp_CStranger_FUN_005c3710",
         "estimated_params": 2,
         "instructions_analyzed": 3,
@@ -92,6 +96,7 @@
       },
       {
         "call_addr": "005fbfb9",
+        "call_type": "direct",
         "caller": "core_zombie.cpp_CZombie_FUN_005fbe70",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -101,7 +106,9 @@
     ],
     "confidence": "high",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 5,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,
@@ -119,5 +126,36 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CArmour",
+        "offset": 12,
+        "vtable_addr": "00659d34"
+      },
+      {
+        "class_name": "CBatCreature",
+        "offset": 12,
+        "vtable_addr": "0065a5c4"
+      },
+      {
+        "class_name": "CBatman",
+        "offset": 12,
+        "vtable_addr": "0065a784"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 12,
+        "vtable_addr": "0065aa64"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 12,
+        "vtable_addr": "0065ac24"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 39
+  }
 }

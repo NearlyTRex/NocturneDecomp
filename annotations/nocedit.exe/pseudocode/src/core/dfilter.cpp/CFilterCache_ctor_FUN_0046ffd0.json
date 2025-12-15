@@ -37,6 +37,7 @@
     "call_sites": [
       {
         "call_addr": "0046ff97",
+        "call_type": "direct",
         "caller": "core_dfilter.cpp_staticInit_FUN_0046ff50",
         "estimated_params": 1,
         "instructions_analyzed": 3,
@@ -46,7 +47,9 @@
     ],
     "confidence": "medium",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 1,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,
@@ -64,5 +67,16 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CFilterCache",
+        "offset": 0,
+        "vtable_addr": "0065c864"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

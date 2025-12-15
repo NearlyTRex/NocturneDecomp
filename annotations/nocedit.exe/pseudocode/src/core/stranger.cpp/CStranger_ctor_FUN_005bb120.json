@@ -197,6 +197,7 @@
     "call_sites": [
       {
         "call_addr": "005bb0fd",
+        "call_type": "direct",
         "caller": "core_stranger.cpp_FUN_005bb0e0",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -206,7 +207,9 @@
     ],
     "confidence": "medium",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 1,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,
@@ -323,5 +326,16 @@
       "text": "((CKeyFramedModelInstance *)(*(int *)(pCVar5[-2].model_name + 0x10) + 0x158),",
       "type": "negative_offset"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CStranger",
+        "offset": 0,
+        "vtable_addr": "006638f4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

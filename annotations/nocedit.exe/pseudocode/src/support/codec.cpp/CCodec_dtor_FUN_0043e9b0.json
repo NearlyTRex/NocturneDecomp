@@ -91,6 +91,7 @@
     "call_sites": [
       {
         "call_addr": "004e10e7",
+        "call_type": "direct",
         "caller": "core_game.cpp_CGame_saveGame_FUN_004e0cd0",
         "estimated_params": 2,
         "instructions_analyzed": 5,
@@ -99,6 +100,7 @@
       },
       {
         "call_addr": "004e16cd",
+        "call_type": "direct",
         "caller": "core_game.cpp_CGame_loadSaveGame_FUN_004e12b0",
         "estimated_params": 2,
         "instructions_analyzed": 5,
@@ -107,6 +109,7 @@
       },
       {
         "call_addr": "0043f6d0",
+        "call_type": "direct",
         "caller": "support_codec.cpp_CLZWDecompress_dtor_FUN_0043f6b0",
         "estimated_params": 2,
         "instructions_analyzed": 5,
@@ -115,6 +118,7 @@
       },
       {
         "call_addr": "0043f730",
+        "call_type": "direct",
         "caller": "support_codec.cpp_CLZWCompress_dtor_FUN_0043f710",
         "estimated_params": 2,
         "instructions_analyzed": 5,
@@ -123,6 +127,7 @@
       },
       {
         "call_addr": "004e18b1",
+        "call_type": "direct",
         "caller": "core_game.cpp_CGame_loadSaveGame_FUN_004e12b0",
         "estimated_params": 2,
         "instructions_analyzed": 5,
@@ -131,6 +136,7 @@
       },
       {
         "call_addr": "00452f52",
+        "call_type": "direct",
         "caller": "core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_004529b0",
         "estimated_params": 2,
         "instructions_analyzed": 5,
@@ -140,7 +146,9 @@
     ],
     "confidence": "high",
     "declared_params": 2,
-    "estimated_params": 2
+    "direct_call_count": 6,
+    "estimated_params": 2,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 12,
@@ -165,5 +173,21 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CCodec",
+        "offset": 0,
+        "vtable_addr": "0065bbc4"
+      },
+      {
+        "class_name": "CCodec",
+        "offset": 8,
+        "vtable_addr": "0065bc54"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
 }

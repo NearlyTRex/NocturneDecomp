@@ -91,6 +91,7 @@
     "call_sites": [
       {
         "call_addr": "005ff4d0",
+        "call_type": "direct",
         "caller": "crt_strstream.cpp_ostrstream_dtor_FUN_005ff48a",
         "estimated_params": 2,
         "instructions_analyzed": 5,
@@ -99,6 +100,7 @@
       },
       {
         "call_addr": "005ff610",
+        "call_type": "direct",
         "caller": "crt_strstream.cpp_istrstream_dtor_FUN_005ff5ca",
         "estimated_params": 2,
         "instructions_analyzed": 5,
@@ -107,6 +109,7 @@
       },
       {
         "call_addr": "00606199",
+        "call_type": "direct",
         "caller": "crt_strstream.cpp_strstreambase_destructor_thunk_FUN_0060618a",
         "estimated_params": 2,
         "instructions_analyzed": 6,
@@ -116,7 +119,9 @@
     ],
     "confidence": "high",
     "declared_params": 4,
-    "estimated_params": 2
+    "direct_call_count": 3,
+    "estimated_params": 2,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 20,
@@ -170,5 +175,16 @@
       "text": "this_ptr = (strstreambase *)&piVar4[-2].__error_state;",
       "type": "negative_offset"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 8,
+        "vtable_addr": "00665e34"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

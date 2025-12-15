@@ -150,7 +150,9 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 2,
-    "estimated_params": 2
+    "direct_call_count": 0,
+    "estimated_params": 2,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 12,
@@ -249,5 +251,21 @@
       "text": "*(uint *)(&stack0xfffffff8 + (uint)bVar4 * -8 + (uint)bVar4 * -8);",
       "type": "stack_ref"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDemonCamera",
+        "offset": 16,
+        "vtable_addr": "0065c664"
+      },
+      {
+        "class_name": "CDemonLight",
+        "offset": 16,
+        "vtable_addr": "0065c924"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
 }

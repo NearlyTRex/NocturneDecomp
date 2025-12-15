@@ -56,7 +56,9 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 4,
-    "estimated_params": 4
+    "direct_call_count": 0,
+    "estimated_params": 4,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 20,
@@ -103,5 +105,21 @@
       "text": "((CDemonActor *)&pCVar1[-3].orient_matrix.m[0].z,1);",
       "type": "negative_offset"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CCryptVessel",
+        "offset": 228,
+        "vtable_addr": "006651b4"
+      },
+      {
+        "class_name": "CCryptVessel",
+        "offset": 8,
+        "vtable_addr": "006652a4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
 }

@@ -64,6 +64,7 @@
     "call_sites": [
       {
         "call_addr": "0041b201",
+        "call_type": "direct",
         "caller": "core_bodypart.cpp_CBodyPart_getAllowedMeleeAttackTypes_FUN_0041b1f0",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -73,7 +74,9 @@
     ],
     "confidence": "medium",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 1,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 56,
@@ -130,5 +133,36 @@
       "text": "BADSPACEBASE *in_ESP;",
       "type": "register_param"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDemonActor",
+        "offset": 108,
+        "vtable_addr": "006597d4"
+      },
+      {
+        "class_name": "CAmmo",
+        "offset": 108,
+        "vtable_addr": "006599a4"
+      },
+      {
+        "class_name": "CAmmoBox",
+        "offset": 108,
+        "vtable_addr": "00659ad4"
+      },
+      {
+        "class_name": "CAnvil",
+        "offset": 108,
+        "vtable_addr": "00659c04"
+      },
+      {
+        "class_name": "CArmour",
+        "offset": 108,
+        "vtable_addr": "00659d34"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 108
+  }
 }

@@ -216,6 +216,7 @@
     "call_sites": [
       {
         "call_addr": "00407c47",
+        "call_type": "direct",
         "caller": "engine_3d.c_dispatchMRGLToRenderer_FUN_00407aa0",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -225,7 +226,9 @@
     ],
     "confidence": "medium",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 1,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 32,
@@ -307,5 +310,16 @@
       "text": "return (SMRGLHeaderExtended *)((int)&polygon_info[1].base + (polygon_info->base).count * 0xc);",
       "type": "pointer_cast"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 260,
+        "vtable_addr": "0066df88"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

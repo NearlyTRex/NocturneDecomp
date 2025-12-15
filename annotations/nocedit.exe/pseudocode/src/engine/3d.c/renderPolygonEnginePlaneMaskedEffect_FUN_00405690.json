@@ -87,6 +87,7 @@
     "call_sites": [
       {
         "call_addr": "00406f0c",
+        "call_type": "direct",
         "caller": "engine_3d.c_renderPolygonSpecialEffectsPlaneMasked_FUN_00406de0",
         "estimated_params": 1,
         "instructions_analyzed": 3,
@@ -96,7 +97,9 @@
     ],
     "confidence": "medium",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 1,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,
@@ -114,5 +117,16 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 144,
+        "vtable_addr": "0066df88"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

@@ -48,6 +48,7 @@
     "call_sites": [
       {
         "call_addr": "00413da5",
+        "call_type": "direct",
         "caller": "core_baron.cpp_CBaronWeapon_FUN_00413da0",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -56,6 +57,7 @@
       },
       {
         "call_addr": "005e225b",
+        "call_type": "direct",
         "caller": "core_turret.cpp_CTurret_FUN_005e2240",
         "estimated_params": 1,
         "instructions_analyzed": 3,
@@ -65,7 +67,9 @@
     ],
     "confidence": "high",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 2,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,
@@ -83,5 +87,36 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWeapon",
+        "offset": 0,
+        "vtable_addr": "0065c394"
+      },
+      {
+        "class_name": "CWeapon",
+        "offset": 0,
+        "vtable_addr": "0065d314"
+      },
+      {
+        "class_name": "CWeapon",
+        "offset": 0,
+        "vtable_addr": "0065d534"
+      },
+      {
+        "class_name": "CWeapon",
+        "offset": 0,
+        "vtable_addr": "0065e284"
+      },
+      {
+        "class_name": "CWeapon",
+        "offset": 0,
+        "vtable_addr": "0065e3d4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 12
+  }
 }

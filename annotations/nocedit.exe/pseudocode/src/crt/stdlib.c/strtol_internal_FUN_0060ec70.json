@@ -69,6 +69,7 @@
     "call_sites": [
       {
         "call_addr": "0060ee0e",
+        "call_type": "direct",
         "caller": "crt_stdlib.c_strtol_FUN_0060edfc",
         "estimated_params": 5,
         "instructions_analyzed": 8,
@@ -77,6 +78,7 @@
       },
       {
         "call_addr": "0060edf2",
+        "call_type": "direct",
         "caller": "crt_stdlib.c_strtoul_FUN_0060ede0",
         "estimated_params": 5,
         "instructions_analyzed": 8,
@@ -86,7 +88,9 @@
     ],
     "confidence": "medium",
     "declared_params": 4,
-    "estimated_params": 5
+    "direct_call_count": 2,
+    "estimated_params": 5,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 48,

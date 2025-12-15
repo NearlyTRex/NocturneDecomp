@@ -52,6 +52,7 @@
     "call_sites": [
       {
         "call_addr": "004be12d",
+        "call_type": "direct",
         "caller": "core_fileman.cpp_CDemonFileManager_addDeformableModelToExtractList_FUN_004be070",
         "estimated_params": 2,
         "instructions_analyzed": 3,
@@ -61,7 +62,9 @@
     ],
     "confidence": "low",
     "declared_params": 1,
-    "estimated_params": 2
+    "direct_call_count": 1,
+    "estimated_params": 2,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,
@@ -108,5 +111,16 @@
       "text": "return (CDeformableModel *)(extraout_EAX_00 + -0x7c90);",
       "type": "extra_output"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDeformableModel",
+        "offset": 8,
+        "vtable_addr": "00662ef4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

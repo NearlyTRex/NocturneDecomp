@@ -73,6 +73,7 @@
     "call_sites": [
       {
         "call_addr": "006068a6",
+        "call_type": "direct",
         "caller": "crt_math.c_math_domain_error_FUN_00606832",
         "estimated_params": 3,
         "instructions_analyzed": 7,
@@ -81,6 +82,7 @@
       },
       {
         "call_addr": "0060bf09",
+        "call_type": "direct",
         "caller": "crt_math.c_set_math_errno_FUN_0060befa",
         "estimated_params": 4,
         "instructions_analyzed": 8,
@@ -90,7 +92,9 @@
     ],
     "confidence": "medium",
     "declared_params": 3,
-    "estimated_params": 3
+    "direct_call_count": 2,
+    "estimated_params": 3,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 76,

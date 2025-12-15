@@ -56,7 +56,9 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 3,
-    "estimated_params": 3
+    "direct_call_count": 0,
+    "estimated_params": 3,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 16,
@@ -103,5 +105,21 @@
       "text": "ptr = engine_pod_cpp_CPod_dtor_FUN_005509b0((CPod *)this_ptr,1,unaff_EBX);",
       "type": "unaffected_reg"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDemonPod",
+        "offset": 0,
+        "vtable_addr": "00662404"
+      },
+      {
+        "class_name": "CDemonPod",
+        "offset": 8,
+        "vtable_addr": "00662424"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
 }

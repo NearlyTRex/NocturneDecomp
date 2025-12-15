@@ -69,6 +69,7 @@
     "call_sites": [
       {
         "call_addr": "0049ce76",
+        "call_type": "direct",
         "caller": "core_dynamite.cpp_FUN_0049ce70",
         "estimated_params": 3,
         "instructions_analyzed": 3,
@@ -79,6 +80,7 @@
       },
       {
         "call_addr": "00448f5d",
+        "call_type": "direct",
         "caller": "core_crossbow.cpp_CCrossbow_FUN_00448f20",
         "estimated_params": 1,
         "instructions_analyzed": 3,
@@ -87,6 +89,7 @@
       },
       {
         "call_addr": "004a719d",
+        "call_type": "direct",
         "caller": "core_elephant.cpp_FUN_004a7160",
         "estimated_params": 1,
         "instructions_analyzed": 3,
@@ -95,6 +98,7 @@
       },
       {
         "call_addr": "005ddba1",
+        "call_type": "direct",
         "caller": "core_tommygun.cpp_FUN_005ddb30",
         "estimated_params": 1,
         "instructions_analyzed": 3,
@@ -103,6 +107,7 @@
       },
       {
         "call_addr": "004f038d",
+        "call_type": "direct",
         "caller": "core_gun.cpp_FUN_004f0350",
         "estimated_params": 1,
         "instructions_analyzed": 3,
@@ -111,6 +116,7 @@
       },
       {
         "call_addr": "0058809a",
+        "call_type": "direct",
         "caller": "core_shotgun.cpp_FUN_00588060",
         "estimated_params": 1,
         "instructions_analyzed": 3,
@@ -120,7 +126,9 @@
     ],
     "confidence": "medium",
     "declared_params": 0,
-    "estimated_params": 1
+    "direct_call_count": 6,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 4,
@@ -159,5 +167,16 @@
       "text": "*(int *)(in_stack_00000004 + 0x568) = *(int *)(in_stack_00000004 + 0x568) + -1;",
       "type": "stack_param"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWeapon",
+        "offset": 248,
+        "vtable_addr": "006655b4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

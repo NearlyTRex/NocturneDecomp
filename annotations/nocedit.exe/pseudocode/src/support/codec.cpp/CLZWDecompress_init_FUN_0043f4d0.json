@@ -54,6 +54,7 @@
     "call_sites": [
       {
         "call_addr": "0044f6a0",
+        "call_type": "direct",
         "caller": "core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044f3e0",
         "estimated_params": 1,
         "instructions_analyzed": 3,
@@ -62,6 +63,7 @@
       },
       {
         "call_addr": "004e15f0",
+        "call_type": "direct",
         "caller": "core_game.cpp_CGame_loadSaveGame_FUN_004e12b0",
         "estimated_params": 1,
         "instructions_analyzed": 4,
@@ -71,7 +73,9 @@
     ],
     "confidence": "high",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 2,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,
@@ -104,5 +108,16 @@
       "text": "(&this_ptr->lzw_dict,this_ptr->buffer_size,this_ptr->num_bits,unaff_EBX,unaff_retaddr);",
       "type": "unaffected_reg"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CLZWDecompress",
+        "offset": 4,
+        "vtable_addr": "0065bc24"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

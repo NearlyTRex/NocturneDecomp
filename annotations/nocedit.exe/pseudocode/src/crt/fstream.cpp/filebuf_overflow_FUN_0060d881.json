@@ -52,7 +52,9 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 2,
-    "estimated_params": 2
+    "direct_call_count": 0,
+    "estimated_params": 2,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 32,
@@ -134,5 +136,16 @@
       "text": "(iVar3 = crt_stdio_c_lseek_FUN_00606690(this_ptr->__file_handle,unaff_EDI,0), -1 < iVar3))",
       "type": "unaffected_reg"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 12,
+        "vtable_addr": "00665fcc"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

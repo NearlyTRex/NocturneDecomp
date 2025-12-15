@@ -109,6 +109,7 @@
     "call_sites": [
       {
         "call_addr": "005ff841",
+        "call_type": "direct",
         "caller": "crt_fstream.cpp_ofstream_dtor_FUN_005ff7bc",
         "estimated_params": 2,
         "instructions_analyzed": 4,
@@ -117,6 +118,7 @@
       },
       {
         "call_addr": "00606441",
+        "call_type": "direct",
         "caller": "crt_iostream.cpp_istream_dtor_FUN_006063e1",
         "estimated_params": 2,
         "instructions_analyzed": 4,
@@ -125,6 +127,7 @@
       },
       {
         "call_addr": "005ff50f",
+        "call_type": "direct",
         "caller": "crt_strstream.cpp_ostrstream_dtor_FUN_005ff48a",
         "estimated_params": 2,
         "instructions_analyzed": 4,
@@ -133,6 +136,7 @@
       },
       {
         "call_addr": "005ff64f",
+        "call_type": "direct",
         "caller": "crt_strstream.cpp_istrstream_dtor_FUN_005ff5ca",
         "estimated_params": 2,
         "instructions_analyzed": 4,
@@ -141,6 +145,7 @@
       },
       {
         "call_addr": "00606291",
+        "call_type": "direct",
         "caller": "crt_iostream.cpp_ostream_dtor_FUN_00606231",
         "estimated_params": 2,
         "instructions_analyzed": 4,
@@ -149,6 +154,7 @@
       },
       {
         "call_addr": "00606317",
+        "call_type": "direct",
         "caller": "crt_strstream.cpp_strstreambase_dtor_FUN_006062a6",
         "estimated_params": 2,
         "instructions_analyzed": 4,
@@ -157,6 +163,7 @@
       },
       {
         "call_addr": "0060657a",
+        "call_type": "direct",
         "caller": "crt_fstream.cpp_fstreambase_dtor_FUN_00606509",
         "estimated_params": 2,
         "instructions_analyzed": 4,
@@ -165,6 +172,7 @@
       },
       {
         "call_addr": "005ff8db",
+        "call_type": "direct",
         "caller": "crt_fstream.cpp_ifstream_dtor_FUN_005ff856",
         "estimated_params": 2,
         "instructions_analyzed": 4,
@@ -174,7 +182,9 @@
     ],
     "confidence": "high",
     "declared_params": 3,
-    "estimated_params": 2
+    "direct_call_count": 8,
+    "estimated_params": 2,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 16,
@@ -206,5 +216,16 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 8,
+        "vtable_addr": "00665e54"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

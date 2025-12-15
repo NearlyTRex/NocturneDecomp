@@ -97,6 +97,7 @@
     "call_sites": [
       {
         "call_addr": "0041642a",
+        "call_type": "direct",
         "caller": "core_batman.cpp_FUN_00416410",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -106,7 +107,9 @@
     ],
     "confidence": "medium",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 1,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,
@@ -132,5 +135,16 @@
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CBatman",
+        "offset": 0,
+        "vtable_addr": "0065a8f4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

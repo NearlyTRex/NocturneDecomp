@@ -107,7 +107,9 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 4,
-    "estimated_params": 4
+    "direct_call_count": 0,
+    "estimated_params": 4,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 20,
@@ -182,5 +184,16 @@
       "text": "(&stack0xfffffe90,\"DirectSux: Unable to %s.  (%s)\",\"Lock hw sample buffer\",",
       "type": "stack_ref"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDirectSoundDevice",
+        "offset": 52,
+        "vtable_addr": "00663204"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

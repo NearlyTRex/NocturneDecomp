@@ -65,6 +65,7 @@
     "call_sites": [
       {
         "call_addr": "005c67e0",
+        "call_type": "direct",
         "caller": "core_stranger.cpp_CStranger_FUN_005c67c0",
         "estimated_params": 1,
         "instructions_analyzed": 3,
@@ -74,7 +75,9 @@
     ],
     "confidence": "medium",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 1,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,
@@ -107,5 +110,36 @@
       "text": "iVar2 = crt_string_c_strnicmp_FUN_005ff070(pcVar1,str2,unaff_EBX);",
       "type": "unaffected_reg"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CArmour",
+        "offset": 288,
+        "vtable_addr": "00659d34"
+      },
+      {
+        "class_name": "CBaron",
+        "offset": 288,
+        "vtable_addr": "0065a074"
+      },
+      {
+        "class_name": "CBatCreature",
+        "offset": 288,
+        "vtable_addr": "0065a5c4"
+      },
+      {
+        "class_name": "CBatman",
+        "offset": 288,
+        "vtable_addr": "0065a784"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 288,
+        "vtable_addr": "0065ac24"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 37
+  }
 }

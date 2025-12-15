@@ -57,6 +57,7 @@
     "call_sites": [
       {
         "call_addr": "00434859",
+        "call_type": "direct",
         "caller": "cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690",
         "estimated_params": 4,
         "instructions_analyzed": 9,
@@ -65,6 +66,7 @@
       },
       {
         "call_addr": "004317e0",
+        "call_type": "direct",
         "caller": "cockpit_ckptutil.c_loadBitmapWithPalette_FUN_004317b0",
         "estimated_params": 4,
         "instructions_analyzed": 9,
@@ -73,6 +75,7 @@
       },
       {
         "call_addr": "00431862",
+        "call_type": "direct",
         "caller": "cockpit_ckptutil.c_applyColorPalette_FUN_004319b0",
         "estimated_params": 4,
         "instructions_analyzed": 9,
@@ -82,7 +85,9 @@
     ],
     "confidence": "high",
     "declared_params": 4,
-    "estimated_params": 4
+    "direct_call_count": 3,
+    "estimated_params": 4,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 20,

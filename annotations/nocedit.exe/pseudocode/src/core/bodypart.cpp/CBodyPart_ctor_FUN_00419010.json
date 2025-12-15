@@ -79,6 +79,7 @@
     "call_sites": [
       {
         "call_addr": "00418fea",
+        "call_type": "direct",
         "caller": "core_bodypart.cpp_createBodyPart_FUN_00418fd0",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -87,6 +88,7 @@
       },
       {
         "call_addr": "00418f19",
+        "call_type": "direct",
         "caller": "core_bodypart.cpp_CreateBodyPart_FUN_00418e10",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -96,7 +98,9 @@
     ],
     "confidence": "high",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 2,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,
@@ -290,5 +294,16 @@
       "text": "return (CBodyPart *)&pCVar3[-6].scrape_points[2].raytrace_normal;",
       "type": "negative_offset"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CBodyPart",
+        "offset": 0,
+        "vtable_addr": "0065af04"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

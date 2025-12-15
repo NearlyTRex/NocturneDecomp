@@ -61,6 +61,7 @@
     "call_sites": [
       {
         "call_addr": "004a3bc0",
+        "call_type": "direct",
         "caller": "shape_edittool.cpp_CPickList_ctor_FUN_004a3b90",
         "estimated_params": 1,
         "instructions_analyzed": 4,
@@ -69,6 +70,7 @@
       },
       {
         "call_addr": "0049dc4e",
+        "call_type": "direct",
         "caller": "shape_edittool.cpp_showTextInputDialog_FUN_0049db10",
         "estimated_params": 1,
         "instructions_analyzed": 8,
@@ -77,6 +79,7 @@
       },
       {
         "call_addr": "005075ce",
+        "call_type": "direct",
         "caller": "core_main.c_showDeveloperToolsMenu_FUN_005073a0",
         "estimated_params": 1,
         "instructions_analyzed": 4,
@@ -85,6 +88,7 @@
       },
       {
         "call_addr": "004a3bb2",
+        "call_type": "direct",
         "caller": "shape_edittool.cpp_CPickList_ctor_FUN_004a3b90",
         "estimated_params": 1,
         "instructions_analyzed": 4,
@@ -93,6 +97,7 @@
       },
       {
         "call_addr": "0049e297",
+        "call_type": "direct",
         "caller": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_0049e130",
         "estimated_params": 1,
         "instructions_analyzed": 8,
@@ -101,6 +106,7 @@
       },
       {
         "call_addr": "0049dc5e",
+        "call_type": "direct",
         "caller": "shape_edittool.cpp_showTextInputDialog_FUN_0049db10",
         "estimated_params": 1,
         "instructions_analyzed": 4,
@@ -109,6 +115,7 @@
       },
       {
         "call_addr": "005075be",
+        "call_type": "direct",
         "caller": "core_main.c_showDeveloperToolsMenu_FUN_005073a0",
         "estimated_params": 1,
         "instructions_analyzed": 8,
@@ -117,6 +124,7 @@
       },
       {
         "call_addr": "005071d3",
+        "call_type": "direct",
         "caller": "core_main.c_showLicenseAgreement_FUN_005070f0",
         "estimated_params": 1,
         "instructions_analyzed": 8,
@@ -125,6 +133,7 @@
       },
       {
         "call_addr": "005071e3",
+        "call_type": "direct",
         "caller": "core_main.c_showLicenseAgreement_FUN_005070f0",
         "estimated_params": 1,
         "instructions_analyzed": 4,
@@ -134,7 +143,9 @@
     ],
     "confidence": "high",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 9,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,
@@ -152,5 +163,16 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CEdButton",
+        "offset": 0,
+        "vtable_addr": "0065d4d4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

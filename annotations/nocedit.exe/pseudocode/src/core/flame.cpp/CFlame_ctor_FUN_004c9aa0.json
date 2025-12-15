@@ -77,6 +77,7 @@
     "call_sites": [
       {
         "call_addr": "00448c84",
+        "call_type": "direct",
         "caller": "core_crossbow.cpp_FUN_00448c70",
         "estimated_params": 1,
         "instructions_analyzed": 4,
@@ -85,6 +86,7 @@
       },
       {
         "call_addr": "004cb184",
+        "call_type": "direct",
         "caller": "core_flamecan.cpp_FUN_004cb160",
         "estimated_params": 1,
         "instructions_analyzed": 4,
@@ -93,6 +95,7 @@
       },
       {
         "call_addr": "005e8e84",
+        "call_type": "direct",
         "caller": "core_vessel.cpp_CCryptVessel_ctor_FUN_005e8e60",
         "estimated_params": 1,
         "instructions_analyzed": 4,
@@ -101,6 +104,7 @@
       },
       {
         "call_addr": "0041b628",
+        "call_type": "direct",
         "caller": "core_bodypart.cpp_SBodyPartFire_ctor_FUN_0041b620",
         "estimated_params": 1,
         "instructions_analyzed": 3,
@@ -109,6 +113,7 @@
       },
       {
         "call_addr": "004c9a7a",
+        "call_type": "direct",
         "caller": "core_flame.cpp_FUN_004c9a60",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -118,7 +123,9 @@
     ],
     "confidence": "high",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 5,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 16,
@@ -143,5 +150,16 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CFlame",
+        "offset": 0,
+        "vtable_addr": "00659ee4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

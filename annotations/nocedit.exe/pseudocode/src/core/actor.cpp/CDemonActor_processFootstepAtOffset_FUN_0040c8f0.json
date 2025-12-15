@@ -102,7 +102,9 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 3,
-    "estimated_params": 3
+    "direct_call_count": 0,
+    "estimated_params": 3,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 68,
@@ -296,5 +298,36 @@
       "text": "iVar1 = (*this_ptr->vtable->handleFootstep)(this_ptr,&local_20,iVar1,in_stack_00000020);",
       "type": "stack_param"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDemonActor",
+        "offset": 28,
+        "vtable_addr": "006597d4"
+      },
+      {
+        "class_name": "CAmmo",
+        "offset": 28,
+        "vtable_addr": "006599a4"
+      },
+      {
+        "class_name": "CAmmoBox",
+        "offset": 28,
+        "vtable_addr": "00659ad4"
+      },
+      {
+        "class_name": "CAnvil",
+        "offset": 28,
+        "vtable_addr": "00659c04"
+      },
+      {
+        "class_name": "CArmour",
+        "offset": 28,
+        "vtable_addr": "00659d34"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 113
+  }
 }

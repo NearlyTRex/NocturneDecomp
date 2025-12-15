@@ -39,7 +39,9 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 0,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 32,
@@ -100,5 +102,21 @@
       "text": "(&this_ptr->base_actor,(CVector3f *)(auStack_2c + 0x14),in_stack_0000000c);",
       "type": "stack_param"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CTrigger",
+        "offset": 88,
+        "vtable_addr": "00664a24"
+      },
+      {
+        "class_name": "CWaypoint",
+        "offset": 88,
+        "vtable_addr": "00665484"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
 }

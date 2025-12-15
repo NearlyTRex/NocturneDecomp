@@ -42,7 +42,9 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 6,
-    "estimated_params": 6
+    "direct_call_count": 0,
+    "estimated_params": 6,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 176,
@@ -124,5 +126,21 @@
       "text": "BADSPACEBASE *in_ESP;",
       "type": "register_param"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CCodec",
+        "offset": 24,
+        "vtable_addr": "0065bbc4"
+      },
+      {
+        "class_name": "CLZWCompress",
+        "offset": 24,
+        "vtable_addr": "0065bbf4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
 }

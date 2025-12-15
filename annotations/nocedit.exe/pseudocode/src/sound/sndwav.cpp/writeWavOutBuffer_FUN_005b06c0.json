@@ -149,6 +149,7 @@
     "call_sites": [
       {
         "call_addr": "005b0c67",
+        "call_type": "direct",
         "caller": "sound_sndwav.cpp_CWavOutDevice_poll_FUN_005b0c10",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -157,6 +158,7 @@
       },
       {
         "call_addr": "005b0957",
+        "call_type": "direct",
         "caller": "sound_sndwav.cpp_CWavOutDevice_start_FUN_005b08f0",
         "estimated_params": 1,
         "instructions_analyzed": 19,
@@ -166,7 +168,9 @@
     ],
     "confidence": "high",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 2,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,

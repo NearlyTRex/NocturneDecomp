@@ -65,7 +65,9 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 5,
-    "estimated_params": 5
+    "direct_call_count": 0,
+    "estimated_params": 5,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 24,
@@ -133,5 +135,21 @@
       "text": "((CDemonActor *)&pCVar1[-2].reflection.mirror_transform_matrix.m[2].x,1);",
       "type": "negative_offset"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CGlass",
+        "offset": 228,
+        "vtable_addr": "0065eef4"
+      },
+      {
+        "class_name": "CGlass",
+        "offset": 8,
+        "vtable_addr": "0065efe4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
 }

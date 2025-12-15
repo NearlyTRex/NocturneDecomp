@@ -65,6 +65,7 @@
     "call_sites": [
       {
         "call_addr": "00448c4a",
+        "call_type": "direct",
         "caller": "core_crossbow.cpp_FUN_00448c30",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -74,7 +75,9 @@
     ],
     "confidence": "medium",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 1,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,
@@ -121,5 +124,16 @@
       "text": "return (CCrossbow *)(pCVar3[-3].field7_0x1b8 + 0xb8);",
       "type": "negative_offset"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 0,
+        "vtable_addr": "0065c4a4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

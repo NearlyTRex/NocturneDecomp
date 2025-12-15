@@ -111,6 +111,7 @@
     "call_sites": [
       {
         "call_addr": "0054c404",
+        "call_type": "direct",
         "caller": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBMFileRange_FUN_0054c3d0",
         "estimated_params": 2,
         "instructions_analyzed": 8,
@@ -119,6 +120,7 @@
       },
       {
         "call_addr": "0054bea2",
+        "call_type": "direct",
         "caller": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadBitmapSetFromRange_FUN_0054be70",
         "estimated_params": 2,
         "instructions_analyzed": 7,
@@ -127,6 +129,7 @@
       },
       {
         "call_addr": "0054c016",
+        "call_type": "direct",
         "caller": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40",
         "estimated_params": 2,
         "instructions_analyzed": 4,
@@ -136,7 +139,9 @@
     ],
     "confidence": "high",
     "declared_params": 2,
-    "estimated_params": 2
+    "direct_call_count": 3,
+    "estimated_params": 2,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 220,

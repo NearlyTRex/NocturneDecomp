@@ -73,7 +73,9 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 0,
-    "estimated_params": 0
+    "direct_call_count": 0,
+    "estimated_params": 0,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 40,
@@ -239,5 +241,16 @@
       "text": "(&in_stack_00000004->base_actor,(CVector3f *)&stack0xfffffff8,input_local_point);",
       "type": "stack_ref"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWeapon",
+        "offset": 4,
+        "vtable_addr": "00661174"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

@@ -32,7 +32,9 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 2,
-    "estimated_params": 2
+    "direct_call_count": 0,
+    "estimated_params": 2,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 12,
@@ -100,5 +102,16 @@
       "text": "*(uint *)((int)&(this_ptr->impl).z + 4) = *(uint *)((int)&(other->impl).z + 4);",
       "type": "pointer_cast"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CVec",
+        "offset": 4,
+        "vtable_addr": "00663c84"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

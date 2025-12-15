@@ -90,6 +90,7 @@
     "call_sites": [
       {
         "call_addr": "004e152c",
+        "call_type": "direct",
         "caller": "core_game.cpp_CGame_loadSaveGame_FUN_004e12b0",
         "estimated_params": 2,
         "instructions_analyzed": 7,
@@ -98,6 +99,7 @@
       },
       {
         "call_addr": "004e0f8e",
+        "call_type": "direct",
         "caller": "core_game.cpp_CGame_saveGame_FUN_004e0cd0",
         "estimated_params": 2,
         "instructions_analyzed": 6,
@@ -107,7 +109,9 @@
     ],
     "confidence": "high",
     "declared_params": 2,
-    "estimated_params": 2
+    "direct_call_count": 2,
+    "estimated_params": 2,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 12,
@@ -182,5 +186,16 @@
       "text": "*(void ***)((int)ppvVar4 + *(int *)((int)pvVar1 + 4) + 0x28) = &g_IFStream_IOSDestructor;",
       "type": "pointer_cast"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 0,
+        "vtable_addr": "0065bcb4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

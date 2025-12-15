@@ -62,6 +62,7 @@
     "call_sites": [
       {
         "call_addr": "005e1cde",
+        "call_type": "direct",
         "caller": "support_trisock.cpp_performSocketOperation_FUN_005e1ca0",
         "estimated_params": 1,
         "instructions_analyzed": 4,
@@ -70,6 +71,7 @@
       },
       {
         "call_addr": "005e1bde",
+        "call_type": "direct",
         "caller": "support_trisock.cpp_connectSocket_FUN_005e1bd0",
         "estimated_params": 3,
         "instructions_analyzed": 6,
@@ -79,7 +81,9 @@
     ],
     "confidence": "low",
     "declared_params": 2,
-    "estimated_params": 1
+    "direct_call_count": 2,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 32,

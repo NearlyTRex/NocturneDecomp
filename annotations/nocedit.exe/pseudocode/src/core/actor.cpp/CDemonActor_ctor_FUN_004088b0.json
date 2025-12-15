@@ -393,6 +393,7 @@
     "call_sites": [
       {
         "call_addr": "004141c5",
+        "call_type": "direct",
         "caller": "core_barrier.cpp_CBarrier_ctor_FUN_004141c0",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -401,6 +402,7 @@
       },
       {
         "call_addr": "004d1725",
+        "call_type": "direct",
         "caller": "core_frankgen.cpp_FUN_004d1720",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -409,6 +411,7 @@
       },
       {
         "call_addr": "004f3c05",
+        "call_type": "direct",
         "caller": "core_hero.cpp_FUN_004f3c00",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -417,6 +420,7 @@
       },
       {
         "call_addr": "005da9e5",
+        "call_type": "direct",
         "caller": "core_teleport.cpp_CTeleport_ctor_FUN_005da9e0",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -425,6 +429,7 @@
       },
       {
         "call_addr": "00421706",
+        "call_type": "direct",
         "caller": "core_boxactor.cpp_CBoxActor_ctor_FUN_00421700",
         "estimated_params": 2,
         "instructions_analyzed": 3,
@@ -433,6 +438,7 @@
       },
       {
         "call_addr": "004e5d06",
+        "call_type": "direct",
         "caller": "core_gasmask.cpp_CGasMask_ctor_FUN_004e5d00",
         "estimated_params": 2,
         "instructions_analyzed": 3,
@@ -441,6 +447,7 @@
       },
       {
         "call_addr": "00502546",
+        "call_type": "direct",
         "caller": "core_ladder.cpp_FUN_00502540",
         "estimated_params": 2,
         "instructions_analyzed": 3,
@@ -449,6 +456,7 @@
       },
       {
         "call_addr": "0042fb87",
+        "call_type": "direct",
         "caller": "core_chain.cpp_CChain_ctor_FUN_0042fb80",
         "estimated_params": 3,
         "instructions_analyzed": 4,
@@ -457,6 +465,7 @@
       },
       {
         "call_addr": "004496a7",
+        "call_type": "direct",
         "caller": "core_curtain.cpp_FUN_004496a0",
         "estimated_params": 3,
         "instructions_analyzed": 4,
@@ -465,6 +474,7 @@
       },
       {
         "call_addr": "004e9047",
+        "call_type": "direct",
         "caller": "core_glass.cpp_CGlass_ctor_FUN_004e9040",
         "estimated_params": 3,
         "instructions_analyzed": 4,
@@ -474,7 +484,9 @@
     ],
     "confidence": "low",
     "declared_params": 1,
-    "estimated_params": 4
+    "direct_call_count": 48,
+    "estimated_params": 4,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,
@@ -801,5 +813,16 @@
       "text": "pfVar4 = (float *)((int)pfVar4 + 2);",
       "type": "pointer_cast"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDemonActor",
+        "offset": 0,
+        "vtable_addr": "006598e4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

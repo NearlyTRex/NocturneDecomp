@@ -65,6 +65,7 @@
     "call_sites": [
       {
         "call_addr": "005deb4a",
+        "call_type": "direct",
         "caller": "core_trash.cpp_FUN_005deb30",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -74,7 +75,9 @@
     ],
     "confidence": "medium",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 1,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,
@@ -107,5 +110,16 @@
       "text": "return (CTrash *)(this_ptr_00[-1].part_visibility_flags + 9);",
       "type": "negative_offset"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CTrash",
+        "offset": 0,
+        "vtable_addr": "006649e4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

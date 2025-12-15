@@ -303,6 +303,7 @@
     "call_sites": [
       {
         "call_addr": "00410e67",
+        "call_type": "direct",
         "caller": "core_ammo.cpp_CAmmo_setup_FUN_00410e50",
         "estimated_params": 1,
         "instructions_analyzed": 4,
@@ -311,6 +312,7 @@
       },
       {
         "call_addr": "004e5d55",
+        "call_type": "direct",
         "caller": "core_gasmask.cpp_CGasMask_FUN_004e5d50",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -319,6 +321,7 @@
       },
       {
         "call_addr": "005de6e6",
+        "call_type": "direct",
         "caller": "core_trap.cpp_CTrap_FUN_005de6e0",
         "estimated_params": 2,
         "instructions_analyzed": 3,
@@ -327,6 +330,7 @@
       },
       {
         "call_addr": "005debc9",
+        "call_type": "direct",
         "caller": "core_trash.cpp_CTrash_FUN_005debc0",
         "estimated_params": 2,
         "instructions_analyzed": 4,
@@ -335,6 +339,7 @@
       },
       {
         "call_addr": "005eaa00",
+        "call_type": "direct",
         "caller": "core_wateract.cpp_CWaterActor_FUN_005ea9f0",
         "estimated_params": 5,
         "instructions_analyzed": 9,
@@ -343,6 +348,7 @@
       },
       {
         "call_addr": "005edff6",
+        "call_type": "direct",
         "caller": "core_weapon.cpp_CWeapon_FUN_005edff0",
         "estimated_params": 2,
         "instructions_analyzed": 3,
@@ -351,6 +357,7 @@
       },
       {
         "call_addr": "005e8fc9",
+        "call_type": "direct",
         "caller": "core_vessel.cpp_CCryptVessel_FUN_005e8fc0",
         "estimated_params": 2,
         "instructions_analyzed": 4,
@@ -359,6 +366,7 @@
       },
       {
         "call_addr": "005e7b9c",
+        "call_type": "direct",
         "caller": "core_vehicle.cpp_CVehicle_FUN_005e7b90",
         "estimated_params": 5,
         "instructions_analyzed": 7,
@@ -367,6 +375,7 @@
       },
       {
         "call_addr": "005df996",
+        "call_type": "direct",
         "caller": "core_trigger.cpp_CTrigger_FUN_005df990",
         "estimated_params": 2,
         "instructions_analyzed": 3,
@@ -375,6 +384,7 @@
       },
       {
         "call_addr": "005b9be5",
+        "call_type": "direct",
         "caller": "core_stairs.cpp_FUN_005b9be0",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -384,7 +394,9 @@
     ],
     "confidence": "medium",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 42,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,
@@ -402,5 +414,31 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDemonActor",
+        "offset": 0,
+        "vtable_addr": "006597d4"
+      },
+      {
+        "class_name": "CDemonActor",
+        "offset": 0,
+        "vtable_addr": "0065f844"
+      },
+      {
+        "class_name": "CDemonActor",
+        "offset": 0,
+        "vtable_addr": "00664234"
+      },
+      {
+        "class_name": "CDemonActor",
+        "offset": 0,
+        "vtable_addr": "00664324"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 4
+  }
 }

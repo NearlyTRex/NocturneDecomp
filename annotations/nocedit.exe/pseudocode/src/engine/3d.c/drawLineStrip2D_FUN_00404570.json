@@ -65,6 +65,7 @@
     "call_sites": [
       {
         "call_addr": "00443ac5",
+        "call_type": "direct",
         "caller": "core_course.cpp_FUN_00443760",
         "estimated_params": 1,
         "instructions_analyzed": 4,
@@ -73,6 +74,7 @@
       },
       {
         "call_addr": "00443ae8",
+        "call_type": "direct",
         "caller": "core_course.cpp_FUN_00443760",
         "estimated_params": 1,
         "instructions_analyzed": 6,
@@ -81,6 +83,7 @@
       },
       {
         "call_addr": "00443ad4",
+        "call_type": "direct",
         "caller": "core_course.cpp_FUN_00443760",
         "estimated_params": 1,
         "instructions_analyzed": 5,
@@ -90,7 +93,9 @@
     ],
     "confidence": "high",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 3,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 120,
@@ -252,5 +257,16 @@
       "text": "return (SMRGLHeaderExtended *)(*(int *)(in_stack_00000008 + 4) * 4 + in_stack_00000008 + 8);",
       "type": "stack_param"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 88,
+        "vtable_addr": "0066df88"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

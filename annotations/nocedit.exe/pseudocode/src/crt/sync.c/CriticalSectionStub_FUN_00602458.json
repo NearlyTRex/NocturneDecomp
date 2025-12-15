@@ -49,6 +49,7 @@
     "call_sites": [
       {
         "call_addr": "006026ed",
+        "call_type": "direct",
         "caller": "crt_startup.cpp_InitializeWinAppRuntime_FUN_006026a8",
         "estimated_params": 0,
         "instructions_analyzed": 1,
@@ -57,6 +58,7 @@
       },
       {
         "call_addr": "0060fa58",
+        "call_type": "direct",
         "caller": "crt_thread.c_exit_thread_FUN_0060fa58",
         "estimated_params": 0,
         "instructions_analyzed": 0,
@@ -65,6 +67,7 @@
       },
       {
         "call_addr": "0060f93f",
+        "call_type": "direct",
         "caller": "crt_thread.c_threadStartupWrapper_FUN_0060f8c0",
         "estimated_params": 0,
         "instructions_analyzed": 2,
@@ -74,7 +77,9 @@
     ],
     "confidence": "high",
     "declared_params": 0,
-    "estimated_params": 0
+    "direct_call_count": 3,
+    "estimated_params": 0,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 4,
@@ -84,5 +89,21 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": []
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 64,
+        "vtable_addr": "00684ee4"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 68,
+        "vtable_addr": "00684ee4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
 }

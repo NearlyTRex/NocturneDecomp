@@ -46,7 +46,9 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 0,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 12,
@@ -100,5 +102,16 @@
       "text": "return (CSkeleton *)(extraout_EAX + -0x2937c);",
       "type": "extra_output"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CSkeleton",
+        "offset": 8,
+        "vtable_addr": "00662f14"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

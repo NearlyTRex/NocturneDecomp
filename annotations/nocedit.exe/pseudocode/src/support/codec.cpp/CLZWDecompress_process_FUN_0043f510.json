@@ -50,6 +50,7 @@
     "call_sites": [
       {
         "call_addr": "004e1618",
+        "call_type": "direct",
         "caller": "core_game.cpp_CGame_loadSaveGame_FUN_004e12b0",
         "estimated_params": 4,
         "instructions_analyzed": 10,
@@ -59,7 +60,9 @@
     ],
     "confidence": "medium",
     "declared_params": 4,
-    "estimated_params": 4
+    "direct_call_count": 1,
+    "estimated_params": 4,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 20,
@@ -98,5 +101,16 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CLZWDecompress",
+        "offset": 8,
+        "vtable_addr": "0065bc24"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

@@ -255,6 +255,7 @@
     "call_sites": [
       {
         "call_addr": "00529886",
+        "call_type": "direct",
         "caller": "core_moloch.cpp_CMoloch_load_FUN_00529880",
         "estimated_params": 2,
         "instructions_analyzed": 3,
@@ -263,6 +264,7 @@
       },
       {
         "call_addr": "005c2fe6",
+        "call_type": "direct",
         "caller": "core_stranger.cpp_CStranger_serialize_FUN_005c2fe0",
         "estimated_params": 2,
         "instructions_analyzed": 3,
@@ -271,6 +273,7 @@
       },
       {
         "call_addr": "00440495",
+        "call_type": "direct",
         "caller": "core_colonel.cpp_CColonel_load_FUN_00440490",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -279,6 +282,7 @@
       },
       {
         "call_addr": "004f1b55",
+        "call_type": "direct",
         "caller": "core_haystack.cpp_CHaystack_load_FUN_004f1b50",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -287,6 +291,7 @@
       },
       {
         "call_addr": "004f9595",
+        "call_type": "direct",
         "caller": "core_icepick.cpp_CIcePick_load_FUN_004f9590",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -295,6 +300,7 @@
       },
       {
         "call_addr": "00557db5",
+        "call_type": "direct",
         "caller": "core_scat.cpp_CSCat_load_FUN_00557db0",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -303,6 +309,7 @@
       },
       {
         "call_addr": "005d9bb5",
+        "call_type": "direct",
         "caller": "core_svetlana.cpp_CSVetlana_serialize_FUN_005d9bb0",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -311,6 +318,7 @@
       },
       {
         "call_addr": "00413a76",
+        "call_type": "direct",
         "caller": "core_baron.cpp_CBaron_serialize_FUN_00413a70",
         "estimated_params": 2,
         "instructions_analyzed": 3,
@@ -319,6 +327,7 @@
       },
       {
         "call_addr": "004d6096",
+        "call_type": "direct",
         "caller": "core_gabriela.cpp_CGabriella_load_FUN_004d6090",
         "estimated_params": 2,
         "instructions_analyzed": 3,
@@ -328,7 +337,9 @@
     ],
     "confidence": "medium",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 9,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 220,
@@ -389,5 +400,16 @@
       "text": "core_actor_cpp_serializeString_FUN_0040b5c0((char **)&stack0xffffff38,acStack_64);",
       "type": "stack_ref"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CHero",
+        "offset": 232,
+        "vtable_addr": "0065f6d4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

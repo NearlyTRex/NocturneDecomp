@@ -112,7 +112,9 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 0,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 28,
@@ -159,5 +161,16 @@
       "text": "uVar1 = (**(code **)(**(int **)((int)g_DirectSoundHardwareSfxBuffers + iVar4) + 0x48))();",
       "type": "unresolved_funcptr"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDirectSoundDevice",
+        "offset": 8,
+        "vtable_addr": "00663204"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

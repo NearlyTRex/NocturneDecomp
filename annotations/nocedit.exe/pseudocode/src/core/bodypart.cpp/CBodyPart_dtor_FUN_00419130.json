@@ -78,7 +78,9 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 7,
-    "estimated_params": 7
+    "direct_call_count": 0,
+    "estimated_params": 7,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 32,
@@ -146,5 +148,21 @@
       "text": "((SBodyPartFire **)&pCVar1[-3].scrape_points[4].local_position.z);",
       "type": "negative_offset"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CBodyPart",
+        "offset": 228,
+        "vtable_addr": "0065add4"
+      },
+      {
+        "class_name": "CBodyPart",
+        "offset": 8,
+        "vtable_addr": "0065af04"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
 }

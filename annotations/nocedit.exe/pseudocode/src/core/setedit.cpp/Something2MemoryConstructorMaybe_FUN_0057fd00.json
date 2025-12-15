@@ -193,18 +193,20 @@
     "call_sites": [
       {
         "call_addr": "0057e188",
+        "call_type": "direct",
         "caller": "core_setedit.cpp_UserInputCreate_FUN_0057d660",
         "estimated_params": 6,
         "instructions_analyzed": 8,
         "reg_params": [
+          "EBX",
           "ECX",
-          "EDX",
-          "EBX"
+          "EDX"
         ],
         "stack_params": 3
       },
       {
         "call_addr": "0057adcc",
+        "call_type": "direct",
         "caller": "core_setedit.cpp_CDemonSet_ViewerVisitSet_FUN_0057a940",
         "estimated_params": 5,
         "instructions_analyzed": 6,
@@ -217,7 +219,9 @@
     ],
     "confidence": "low",
     "declared_params": 0,
-    "estimated_params": 6
+    "direct_call_count": 2,
+    "estimated_params": 6,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 84,

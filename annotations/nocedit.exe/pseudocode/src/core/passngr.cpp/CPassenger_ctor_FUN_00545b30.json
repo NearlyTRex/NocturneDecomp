@@ -135,6 +135,7 @@
     "call_sites": [
       {
         "call_addr": "00545b0a",
+        "call_type": "direct",
         "caller": "core_passngr.cpp_FUN_00545af0",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -144,7 +145,9 @@
     ],
     "confidence": "medium",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 1,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,
@@ -162,5 +165,16 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CPassenger",
+        "offset": 0,
+        "vtable_addr": "006620c4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

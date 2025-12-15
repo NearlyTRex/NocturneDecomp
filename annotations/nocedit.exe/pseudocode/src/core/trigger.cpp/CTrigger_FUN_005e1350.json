@@ -355,6 +355,7 @@
     "call_sites": [
       {
         "call_addr": "005ec69b",
+        "call_type": "direct",
         "caller": "core_waypoint.cpp_CWayPoint_FUN_005ec690",
         "estimated_params": 3,
         "instructions_analyzed": 5,
@@ -364,7 +365,9 @@
     ],
     "confidence": "low",
     "declared_params": 1,
-    "estimated_params": 3
+    "direct_call_count": 1,
+    "estimated_params": 3,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,
@@ -810,5 +813,16 @@
       "text": "core_actor_cpp_drawTextLine_FUN_0040d240(in_stack_00000008,\"        the trigger becomes active and then inactive once again.\");",
       "type": "stack_param"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CTrigger",
+        "offset": 220,
+        "vtable_addr": "00664a24"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

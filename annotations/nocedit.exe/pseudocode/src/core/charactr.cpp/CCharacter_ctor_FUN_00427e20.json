@@ -96,6 +96,7 @@
     "call_sites": [
       {
         "call_addr": "004f2346",
+        "call_type": "direct",
         "caller": "core_hero.cpp_FUN_004f2340",
         "estimated_params": 2,
         "instructions_analyzed": 3,
@@ -104,6 +105,7 @@
       },
       {
         "call_addr": "005447e6",
+        "call_type": "direct",
         "caller": "core_npc.cpp_FUN_005447e0",
         "estimated_params": 2,
         "instructions_analyzed": 3,
@@ -112,6 +114,7 @@
       },
       {
         "call_addr": "004a950b",
+        "call_type": "direct",
         "caller": "core_enemy.cpp_CEnemy_ctor_FUN_004a9500",
         "estimated_params": 4,
         "instructions_analyzed": 6,
@@ -121,7 +124,9 @@
     ],
     "confidence": "low",
     "declared_params": 1,
-    "estimated_params": 2
+    "direct_call_count": 3,
+    "estimated_params": 2,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 20,
@@ -651,5 +656,16 @@
       "text": "return (CCharacter *)((int)pvVar3 + -0x33cc);",
       "type": "pointer_cast"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CCharacter",
+        "offset": 0,
+        "vtable_addr": "0065b9c4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

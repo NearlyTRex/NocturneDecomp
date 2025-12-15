@@ -54,6 +54,7 @@
     "call_sites": [
       {
         "call_addr": "0060d6e7",
+        "call_type": "direct",
         "caller": "crt_iostream.cpp_setBuffer_FUN_0060d6a8",
         "estimated_params": 1,
         "instructions_analyzed": 3,
@@ -62,6 +63,7 @@
       },
       {
         "call_addr": "0060d66b",
+        "call_type": "direct",
         "caller": "crt_iostream.cpp_streambuf_destructor_FUN_0060d64f",
         "estimated_params": 1,
         "instructions_analyzed": 3,
@@ -70,6 +72,7 @@
       },
       {
         "call_addr": "0060bdd1",
+        "call_type": "direct",
         "caller": "crt_iostream.cpp_ios_freeBufferChain_FUN_0060bdc0",
         "estimated_params": 1,
         "instructions_analyzed": 3,
@@ -79,7 +82,9 @@
     ],
     "confidence": "high",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 3,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,

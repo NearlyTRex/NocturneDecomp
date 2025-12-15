@@ -54,6 +54,7 @@
     "call_sites": [
       {
         "call_addr": "00601268",
+        "call_type": "direct",
         "caller": "crt_unknown.c_AnotherFunctorCall2_FUN_00601258",
         "estimated_params": 4,
         "instructions_analyzed": 7,
@@ -62,6 +63,7 @@
       },
       {
         "call_addr": "0060124f",
+        "call_type": "direct",
         "caller": "crt_memory.c_constructTypedObjectArray_FUN_00601232",
         "estimated_params": 3,
         "instructions_analyzed": 9,
@@ -71,7 +73,9 @@
     ],
     "confidence": "low",
     "declared_params": 3,
-    "estimated_params": 4
+    "direct_call_count": 2,
+    "estimated_params": 4,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 16,

@@ -52,6 +52,7 @@
     "call_sites": [
       {
         "call_addr": "006060a8",
+        "call_type": "direct",
         "caller": "crt_stdio.c_prepare_stream_for_write_FUN_00606055",
         "estimated_params": 1,
         "instructions_analyzed": 3,
@@ -60,6 +61,7 @@
       },
       {
         "call_addr": "00606095",
+        "call_type": "direct",
         "caller": "crt_stdio.c_prepare_stream_for_write_FUN_00606055",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -68,6 +70,7 @@
       },
       {
         "call_addr": "0060e29e",
+        "call_type": "direct",
         "caller": "crt_math.c_print_error_message_FUN_0060e298",
         "estimated_params": 3,
         "instructions_analyzed": 4,
@@ -77,7 +80,9 @@
     ],
     "confidence": "medium",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 3,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,

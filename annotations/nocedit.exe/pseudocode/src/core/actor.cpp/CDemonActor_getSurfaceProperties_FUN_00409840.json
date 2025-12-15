@@ -73,6 +73,7 @@
     "call_sites": [
       {
         "call_addr": "004eb261",
+        "call_type": "direct",
         "caller": "core_glass.cpp_CGlass_getSurfaceProperties_FUN_004eb250",
         "estimated_params": 6,
         "instructions_analyzed": 9,
@@ -81,6 +82,7 @@
       },
       {
         "call_addr": "0050b2cb",
+        "call_type": "direct",
         "caller": "core_manpuz.cpp_FUN_0050b2c0",
         "estimated_params": 3,
         "instructions_analyzed": 5,
@@ -89,6 +91,7 @@
       },
       {
         "call_addr": "005097f4",
+        "call_type": "direct",
         "caller": "core_manpuz.cpp_FUN_005097e0",
         "estimated_params": 6,
         "instructions_analyzed": 11,
@@ -97,6 +100,7 @@
       },
       {
         "call_addr": "005eb91b",
+        "call_type": "direct",
         "caller": "core_wateract.cpp_CWaterActor_FUN_005eb910",
         "estimated_params": 3,
         "instructions_analyzed": 5,
@@ -105,6 +109,7 @@
       },
       {
         "call_addr": "005e0a5c",
+        "call_type": "direct",
         "caller": "core_trigger.cpp_CTrigger_FUN_005e0a50",
         "estimated_params": 4,
         "instructions_analyzed": 6,
@@ -114,7 +119,9 @@
     ],
     "confidence": "low",
     "declared_params": 2,
-    "estimated_params": 6
+    "direct_call_count": 5,
+    "estimated_params": 6,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 12,
@@ -139,5 +146,36 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDemonActor",
+        "offset": 172,
+        "vtable_addr": "006597d4"
+      },
+      {
+        "class_name": "CAmmo",
+        "offset": 172,
+        "vtable_addr": "006599a4"
+      },
+      {
+        "class_name": "CAmmoBox",
+        "offset": 172,
+        "vtable_addr": "00659ad4"
+      },
+      {
+        "class_name": "CAnvil",
+        "offset": 172,
+        "vtable_addr": "00659c04"
+      },
+      {
+        "class_name": "CArmour",
+        "offset": 172,
+        "vtable_addr": "00659d34"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 107
+  }
 }

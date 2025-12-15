@@ -60,6 +60,7 @@
     "call_sites": [
       {
         "call_addr": "004e108c",
+        "call_type": "direct",
         "caller": "core_game.cpp_CGame_saveGame_FUN_004e0cd0",
         "estimated_params": 4,
         "instructions_analyzed": 10,
@@ -69,7 +70,9 @@
     ],
     "confidence": "medium",
     "declared_params": 4,
-    "estimated_params": 4
+    "direct_call_count": 1,
+    "estimated_params": 4,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 44,
@@ -228,5 +231,16 @@
       "text": "unaff_EBP = uVar3;",
       "type": "unaffected_reg"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CLZWCompress",
+        "offset": 8,
+        "vtable_addr": "0065bbf4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

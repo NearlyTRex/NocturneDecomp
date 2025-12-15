@@ -50,6 +50,7 @@
     "call_sites": [
       {
         "call_addr": "00551b05",
+        "call_type": "direct",
         "caller": "core_podmain.cpp_CDemonPod_ctor_FUN_00551b00",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -58,6 +59,7 @@
       },
       {
         "call_addr": "00551995",
+        "call_type": "direct",
         "caller": "core_podmain.cpp_staticInit_FUN_00551990",
         "estimated_params": 1,
         "instructions_analyzed": 1,
@@ -67,7 +69,9 @@
     ],
     "confidence": "high",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 2,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,
@@ -85,5 +89,16 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CPod",
+        "offset": 0,
+        "vtable_addr": "006623d4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

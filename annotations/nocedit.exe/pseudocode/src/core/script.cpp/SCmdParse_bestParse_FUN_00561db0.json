@@ -121,6 +121,7 @@
     "call_sites": [
       {
         "call_addr": "00565f27",
+        "call_type": "direct",
         "caller": "core_script.cpp_FUN_00565e70",
         "estimated_params": 3,
         "instructions_analyzed": 5,
@@ -131,6 +132,7 @@
       },
       {
         "call_addr": "00565d4c",
+        "call_type": "direct",
         "caller": "core_script.cpp_FUN_00565d00",
         "estimated_params": 2,
         "instructions_analyzed": 4,
@@ -139,19 +141,21 @@
       },
       {
         "call_addr": "005616cd",
+        "call_type": "direct",
         "caller": "core_script.cpp_FUN_00561690",
         "estimated_params": 13,
         "instructions_analyzed": 17,
         "reg_params": [
+          "ECX",
           "EBX",
           "EAX",
-          "EDX",
-          "ECX"
+          "EDX"
         ],
         "stack_params": 9
       },
       {
         "call_addr": "00565fcf",
+        "call_type": "direct",
         "caller": "core_script.cpp_FUN_00565f70",
         "estimated_params": 2,
         "instructions_analyzed": 4,
@@ -161,7 +165,9 @@
     ],
     "confidence": "low",
     "declared_params": 0,
-    "estimated_params": 2
+    "direct_call_count": 4,
+    "estimated_params": 2,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 1128,

@@ -115,6 +115,7 @@
     "call_sites": [
       {
         "call_addr": "004e1260",
+        "call_type": "direct",
         "caller": "core_game.cpp_CGame_saveGame_FUN_004e0cd0",
         "estimated_params": 2,
         "instructions_analyzed": 5,
@@ -123,6 +124,7 @@
       },
       {
         "call_addr": "004e1866",
+        "call_type": "direct",
         "caller": "core_game.cpp_CGame_loadSaveGame_FUN_004e12b0",
         "estimated_params": 2,
         "instructions_analyzed": 5,
@@ -131,6 +133,7 @@
       },
       {
         "call_addr": "005ff707",
+        "call_type": "direct",
         "caller": "crt_fstream.cpp_ifstream_destructor_thunk_from_ios_FUN_005ff6f8",
         "estimated_params": 2,
         "instructions_analyzed": 6,
@@ -139,6 +142,7 @@
       },
       {
         "call_addr": "0043ed08",
+        "call_type": "direct",
         "caller": "support_codec.cpp_CCodec_processFiles_FUN_0043ec30",
         "estimated_params": 2,
         "instructions_analyzed": 6,
@@ -147,6 +151,7 @@
       },
       {
         "call_addr": "004e1109",
+        "call_type": "direct",
         "caller": "core_game.cpp_CGame_saveGame_FUN_004e0cd0",
         "estimated_params": 2,
         "instructions_analyzed": 5,
@@ -155,6 +160,7 @@
       },
       {
         "call_addr": "005ff6ef",
+        "call_type": "direct",
         "caller": "crt_fstream.cpp_ifstream_destructor_thunk_from_istream_FUN_005ff6e2",
         "estimated_params": 2,
         "instructions_analyzed": 5,
@@ -163,6 +169,7 @@
       },
       {
         "call_addr": "004e16f1",
+        "call_type": "direct",
         "caller": "core_game.cpp_CGame_loadSaveGame_FUN_004e12b0",
         "estimated_params": 2,
         "instructions_analyzed": 5,
@@ -171,6 +178,7 @@
       },
       {
         "call_addr": "004e18d3",
+        "call_type": "direct",
         "caller": "core_game.cpp_CGame_loadSaveGame_FUN_004e12b0",
         "estimated_params": 2,
         "instructions_analyzed": 5,
@@ -179,6 +187,7 @@
       },
       {
         "call_addr": "004e181a",
+        "call_type": "direct",
         "caller": "core_game.cpp_CGame_loadSaveGame_FUN_004e12b0",
         "estimated_params": 2,
         "instructions_analyzed": 5,
@@ -187,6 +196,7 @@
       },
       {
         "call_addr": "004e129d",
+        "call_type": "direct",
         "caller": "core_game.cpp_CGame_saveGame_FUN_004e0cd0",
         "estimated_params": 2,
         "instructions_analyzed": 5,
@@ -196,7 +206,9 @@
     ],
     "confidence": "high",
     "declared_params": 5,
-    "estimated_params": 2
+    "direct_call_count": 10,
+    "estimated_params": 2,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 24,
@@ -285,5 +297,16 @@
       "text": "ptr = (ifstream *)&piVar4[-2].__tied_stream;",
       "type": "negative_offset"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 8,
+        "vtable_addr": "0065bcb4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

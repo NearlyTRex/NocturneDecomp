@@ -86,6 +86,7 @@
     "call_sites": [
       {
         "call_addr": "005b04ef",
+        "call_type": "direct",
         "caller": "sound_snddx.cpp_getDirectSoundDevice_FUN_005b0440",
         "estimated_params": 1,
         "instructions_analyzed": 3,
@@ -94,6 +95,7 @@
       },
       {
         "call_addr": "005b0455",
+        "call_type": "direct",
         "caller": "sound_snddx.cpp_getDirectSoundDevice_FUN_005b0440",
         "estimated_params": 4,
         "instructions_analyzed": 6,
@@ -103,7 +105,9 @@
     ],
     "confidence": "medium",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 2,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,
@@ -121,5 +125,16 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDirectSoundDevice",
+        "offset": 0,
+        "vtable_addr": "00663204"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

@@ -62,6 +62,7 @@
     "call_sites": [
       {
         "call_addr": "00534956",
+        "call_type": "direct",
         "caller": "sound_mp3.cpp_CMP3Decoder_parseHeader_FUN_00534630",
         "estimated_params": 1,
         "instructions_analyzed": 5,
@@ -70,6 +71,7 @@
       },
       {
         "call_addr": "005a66bb",
+        "call_type": "direct",
         "caller": "sound_sndmain.cpp_CSfxSample_seek_FUN_005a65a0",
         "estimated_params": 2,
         "instructions_analyzed": 4,
@@ -78,6 +80,7 @@
       },
       {
         "call_addr": "00534d1b",
+        "call_type": "direct",
         "caller": "sound_mp3.cpp_CMP3Decoder_getTotalSamples_FUN_00534d10",
         "estimated_params": 4,
         "instructions_analyzed": 6,
@@ -87,7 +90,9 @@
     ],
     "confidence": "low",
     "declared_params": 2,
-    "estimated_params": 1
+    "direct_call_count": 3,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 12,

@@ -65,6 +65,7 @@
     "call_sites": [
       {
         "call_addr": "005adc62",
+        "call_type": "direct",
         "caller": "sound_sndmain.cpp_logSoundError_FUN_005adba0",
         "estimated_params": 1,
         "instructions_analyzed": 3,
@@ -73,6 +74,7 @@
       },
       {
         "call_addr": "005b24f2",
+        "call_type": "direct",
         "caller": "core_sound.cpp_playSfxInternal_FUN_005b1fd0",
         "estimated_params": 1,
         "instructions_analyzed": 3,
@@ -81,6 +83,7 @@
       },
       {
         "call_addr": "00507094",
+        "call_type": "direct",
         "caller": "core_main.c_displayErrorAndQuit_FUN_00506f10",
         "estimated_params": 1,
         "instructions_analyzed": 3,
@@ -90,7 +93,9 @@
     ],
     "confidence": "high",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 3,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,

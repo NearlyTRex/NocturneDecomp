@@ -74,6 +74,7 @@
     "call_sites": [
       {
         "call_addr": "00553748",
+        "call_type": "direct",
         "caller": "engine_prim.c_renderScanlinePolygon_FUN_00553470",
         "estimated_params": 3,
         "instructions_analyzed": 7,
@@ -82,6 +83,7 @@
       },
       {
         "call_addr": "005b7aed",
+        "call_type": "direct",
         "caller": "wincore_windll.cpp_drawFullScreenQuad_FUN_005b7a50",
         "estimated_params": 3,
         "instructions_analyzed": 30,
@@ -90,6 +92,7 @@
       },
       {
         "call_addr": "005fd2b0",
+        "call_type": "direct",
         "caller": "engine_3d.c_rasterizeTriangle_FUN_005fcfc0",
         "estimated_params": 3,
         "instructions_analyzed": 7,
@@ -98,6 +101,7 @@
       },
       {
         "call_addr": "005526fe",
+        "call_type": "direct",
         "caller": "engine_prim.c_renderPolygonSoftware_FUN_00552510",
         "estimated_params": 3,
         "instructions_analyzed": 12,
@@ -106,6 +110,7 @@
       },
       {
         "call_addr": "005dd664",
+        "call_type": "direct",
         "caller": "engine_texture.cpp_CTextureCache_renderAllTextures_FUN_005dd580",
         "estimated_params": 2,
         "instructions_analyzed": 30,
@@ -115,7 +120,9 @@
     ],
     "confidence": "high",
     "declared_params": 3,
-    "estimated_params": 3
+    "direct_call_count": 5,
+    "estimated_params": 3,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 16,

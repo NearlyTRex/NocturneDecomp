@@ -147,6 +147,7 @@
     "call_sites": [
       {
         "call_addr": "00422a67",
+        "call_type": "direct",
         "caller": "core_boxactor.cpp_FUN_00422a50",
         "estimated_params": 5,
         "instructions_analyzed": 6,
@@ -158,7 +159,9 @@
     ],
     "confidence": "low",
     "declared_params": 0,
-    "estimated_params": 5
+    "direct_call_count": 1,
+    "estimated_params": 5,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 236,
@@ -523,5 +526,21 @@
       "text": "auStack_8c._8_4_ = (float)auStack_8c._0_4_ * this_ptr[2].field12_0xe0.x * 0.2f;",
       "type": "unknown_field"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 4,
+        "vtable_addr": "0065b1b4"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 4,
+        "vtable_addr": "00663604"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
 }

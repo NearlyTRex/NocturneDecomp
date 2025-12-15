@@ -96,6 +96,7 @@
     "call_sites": [
       {
         "call_addr": "0060012e",
+        "call_type": "direct",
         "caller": "crt_stdio.c_vsscanf_FUN_00600100",
         "estimated_params": 5,
         "instructions_analyzed": 15,
@@ -104,6 +105,7 @@
       },
       {
         "call_addr": "005fe79c",
+        "call_type": "direct",
         "caller": "crt_stdio.c_vfscanf_FUN_005fe738",
         "estimated_params": 3,
         "instructions_analyzed": 13,
@@ -113,7 +115,9 @@
     ],
     "confidence": "low",
     "declared_params": 3,
-    "estimated_params": 5
+    "direct_call_count": 2,
+    "estimated_params": 5,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 36,

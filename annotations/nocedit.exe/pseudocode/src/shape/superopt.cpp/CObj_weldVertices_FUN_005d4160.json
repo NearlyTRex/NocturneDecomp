@@ -64,6 +64,7 @@
     "call_sites": [
       {
         "call_addr": "005d72a0",
+        "call_type": "direct",
         "caller": "shape_superopt.cpp_COptimize_FUN_005d7290",
         "estimated_params": 5,
         "instructions_analyzed": 8,
@@ -73,7 +74,9 @@
     ],
     "confidence": "low",
     "declared_params": 3,
-    "estimated_params": 5
+    "direct_call_count": 1,
+    "estimated_params": 5,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 284,
@@ -375,5 +378,16 @@
       "text": "shape_memdbg_cpp_debugFree_FUN_0050f210(unaff_EBP);",
       "type": "unaffected_reg"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CObj",
+        "offset": 200,
+        "vtable_addr": "00663b64"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

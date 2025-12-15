@@ -79,6 +79,7 @@
     "call_sites": [
       {
         "call_addr": "0041da05",
+        "call_type": "direct",
         "caller": "core_boneguy.cpp_FUN_0041da00",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -87,6 +88,7 @@
       },
       {
         "call_addr": "0047f965",
+        "call_type": "direct",
         "caller": "core_dog.cpp_CZombieDog_FUN_0047f960",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -95,6 +97,7 @@
       },
       {
         "call_addr": "0048f565",
+        "call_type": "direct",
         "caller": "core_drone.cpp_FUN_0048f560",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -103,6 +106,7 @@
       },
       {
         "call_addr": "005f21e5",
+        "call_type": "direct",
         "caller": "core_werewolf.cpp_FUN_005f21e0",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -111,6 +115,7 @@
       },
       {
         "call_addr": "004e8e46",
+        "call_type": "direct",
         "caller": "core_ghoul.cpp_FUN_004e8e40",
         "estimated_params": 2,
         "instructions_analyzed": 3,
@@ -119,6 +124,7 @@
       },
       {
         "call_addr": "00444c95",
+        "call_type": "direct",
         "caller": "core_cow.cpp_FUN_00444c90",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -127,6 +133,7 @@
       },
       {
         "call_addr": "00527c35",
+        "call_type": "direct",
         "caller": "core_mobster.cpp_FUN_00527c30",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -135,6 +142,7 @@
       },
       {
         "call_addr": "005fcb79",
+        "call_type": "direct",
         "caller": "core_zombie.cpp_CZombie_FUN_005fcb70",
         "estimated_params": 4,
         "instructions_analyzed": 6,
@@ -144,7 +152,9 @@
     ],
     "confidence": "high",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 8,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,
@@ -162,5 +172,36 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CArmour",
+        "offset": 348,
+        "vtable_addr": "00659d34"
+      },
+      {
+        "class_name": "CBatCreature",
+        "offset": 348,
+        "vtable_addr": "0065a5c4"
+      },
+      {
+        "class_name": "CBatman",
+        "offset": 348,
+        "vtable_addr": "0065a784"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 348,
+        "vtable_addr": "0065aa64"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 348,
+        "vtable_addr": "0065ac24"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 20
+  }
 }

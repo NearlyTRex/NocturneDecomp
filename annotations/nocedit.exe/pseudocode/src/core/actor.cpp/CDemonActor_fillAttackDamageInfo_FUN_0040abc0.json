@@ -55,6 +55,7 @@
     "call_sites": [
       {
         "call_addr": "0050eb09",
+        "call_type": "direct",
         "caller": "core_melee.cpp_FUN_0050eaf0",
         "estimated_params": 6,
         "instructions_analyzed": 11,
@@ -63,6 +64,7 @@
       },
       {
         "call_addr": "0041b229",
+        "call_type": "direct",
         "caller": "core_bodypart.cpp_CBodyPart_fillAttackDamageInfo_FUN_0041b210",
         "estimated_params": 6,
         "instructions_analyzed": 11,
@@ -72,7 +74,9 @@
     ],
     "confidence": "medium",
     "declared_params": 4,
-    "estimated_params": 6
+    "direct_call_count": 2,
+    "estimated_params": 6,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 20,
@@ -111,5 +115,36 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDemonActor",
+        "offset": 116,
+        "vtable_addr": "006597d4"
+      },
+      {
+        "class_name": "CAmmo",
+        "offset": 116,
+        "vtable_addr": "006599a4"
+      },
+      {
+        "class_name": "CAmmoBox",
+        "offset": 116,
+        "vtable_addr": "00659ad4"
+      },
+      {
+        "class_name": "CAnvil",
+        "offset": 116,
+        "vtable_addr": "00659c04"
+      },
+      {
+        "class_name": "CArmour",
+        "offset": 116,
+        "vtable_addr": "00659d34"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 111
+  }
 }

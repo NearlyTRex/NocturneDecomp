@@ -125,6 +125,7 @@
     "call_sites": [
       {
         "call_addr": "0054b046",
+        "call_type": "direct",
         "caller": "cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0054b000",
         "estimated_params": 6,
         "instructions_analyzed": 11,
@@ -133,6 +134,7 @@
       },
       {
         "call_addr": "0054c117",
+        "call_type": "direct",
         "caller": "cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40",
         "estimated_params": 6,
         "instructions_analyzed": 15,
@@ -142,7 +144,9 @@
     ],
     "confidence": "high",
     "declared_params": 6,
-    "estimated_params": 6
+    "direct_call_count": 2,
+    "estimated_params": 6,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 365,

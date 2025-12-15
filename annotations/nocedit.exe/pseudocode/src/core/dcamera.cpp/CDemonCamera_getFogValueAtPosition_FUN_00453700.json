@@ -60,7 +60,9 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 2,
-    "estimated_params": 2
+    "direct_call_count": 0,
+    "estimated_params": 2,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 52,
@@ -149,5 +151,21 @@
       "text": "(&g_CameraFogGrid,(CVector3i *)(extraout_EDX + 0x16c),end_pos,(int)ROUND(dVar5))",
       "type": "extra_output"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDemonCamera",
+        "offset": 8,
+        "vtable_addr": "0065c664"
+      },
+      {
+        "class_name": "CDemonLight",
+        "offset": 8,
+        "vtable_addr": "0065c924"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
 }

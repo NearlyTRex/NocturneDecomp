@@ -106,6 +106,7 @@
     "call_sites": [
       {
         "call_addr": "004b446b",
+        "call_type": "direct",
         "caller": "engine_fileio.cpp_CCheckOutItem_processFiles_FUN_004b4220",
         "estimated_params": 2,
         "instructions_analyzed": 6,
@@ -114,6 +115,7 @@
       },
       {
         "call_addr": "004bb696",
+        "call_type": "direct",
         "caller": "engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00",
         "estimated_params": 2,
         "instructions_analyzed": 6,
@@ -123,7 +125,9 @@
     ],
     "confidence": "medium",
     "declared_params": 1,
-    "estimated_params": 2
+    "direct_call_count": 2,
+    "estimated_params": 2,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 32,

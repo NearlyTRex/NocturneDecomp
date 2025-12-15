@@ -60,6 +60,7 @@
     "call_sites": [
       {
         "call_addr": "005076a0",
+        "call_type": "direct",
         "caller": "core_main.c_showDeveloperToolsMenu_FUN_005073a0",
         "estimated_params": 2,
         "instructions_analyzed": 5,
@@ -68,6 +69,7 @@
       },
       {
         "call_addr": "00507760",
+        "call_type": "direct",
         "caller": "core_main.c_showDeveloperToolsMenu_FUN_005073a0",
         "estimated_params": 2,
         "instructions_analyzed": 5,
@@ -76,6 +78,7 @@
       },
       {
         "call_addr": "004a3cc3",
+        "call_type": "direct",
         "caller": "shape_edittool.cpp_CPickList_dtor_FUN_004a3c80",
         "estimated_params": 2,
         "instructions_analyzed": 5,
@@ -84,6 +87,7 @@
       },
       {
         "call_addr": "00536baa",
+        "call_type": "direct",
         "caller": "core_msnedit.cpp_MasterEditorKeysHelpScreen_FUN_00535e70",
         "estimated_params": 2,
         "instructions_analyzed": 4,
@@ -92,6 +96,7 @@
       },
       {
         "call_addr": "00507324",
+        "call_type": "direct",
         "caller": "core_main.c_showLicenseAgreement_FUN_005070f0",
         "estimated_params": 2,
         "instructions_analyzed": 5,
@@ -100,6 +105,7 @@
       },
       {
         "call_addr": "00507385",
+        "call_type": "direct",
         "caller": "core_main.c_showLicenseAgreement_FUN_005070f0",
         "estimated_params": 2,
         "instructions_analyzed": 6,
@@ -109,7 +115,9 @@
     ],
     "confidence": "high",
     "declared_params": 1,
-    "estimated_params": 2
+    "direct_call_count": 6,
+    "estimated_params": 2,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,
@@ -127,5 +135,16 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CEdScrollBar",
+        "offset": 8,
+        "vtable_addr": "00660d54"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

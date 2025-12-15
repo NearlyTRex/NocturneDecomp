@@ -65,6 +65,7 @@
     "call_sites": [
       {
         "call_addr": "005f11cd",
+        "call_type": "direct",
         "caller": "core_werewolf.cpp_FUN_005f11a0",
         "estimated_params": 4,
         "instructions_analyzed": 7,
@@ -74,7 +75,9 @@
     ],
     "confidence": "low",
     "declared_params": 1,
-    "estimated_params": 4
+    "direct_call_count": 1,
+    "estimated_params": 4,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,
@@ -156,5 +159,36 @@
       "text": "(&this_ptr->base_actor,(CVector3f *)0xbf800000,in_stack_00000008);",
       "type": "stack_param"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CArmour",
+        "offset": 324,
+        "vtable_addr": "00659d34"
+      },
+      {
+        "class_name": "CBaron",
+        "offset": 324,
+        "vtable_addr": "0065a074"
+      },
+      {
+        "class_name": "CBatCreature",
+        "offset": 324,
+        "vtable_addr": "0065a5c4"
+      },
+      {
+        "class_name": "CBatman",
+        "offset": 324,
+        "vtable_addr": "0065a784"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 324,
+        "vtable_addr": "0065aa64"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 45
+  }
 }

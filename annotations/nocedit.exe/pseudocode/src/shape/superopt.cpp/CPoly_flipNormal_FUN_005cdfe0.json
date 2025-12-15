@@ -32,7 +32,9 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 0,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 56,
@@ -173,5 +175,16 @@
       "text": "*(uint *)((int)&this_ptr->uv_coords[1].y + 4) = uVar5;",
       "type": "pointer_cast"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CPoly",
+        "offset": 72,
+        "vtable_addr": "00663ad4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

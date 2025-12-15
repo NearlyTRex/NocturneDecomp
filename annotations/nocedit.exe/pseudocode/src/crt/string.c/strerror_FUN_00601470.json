@@ -68,6 +68,7 @@
     "call_sites": [
       {
         "call_addr": "005070b3",
+        "call_type": "direct",
         "caller": "core_main.c_displayErrorAndQuit_FUN_00506f10",
         "estimated_params": 1,
         "instructions_analyzed": 3,
@@ -76,6 +77,7 @@
       },
       {
         "call_addr": "004b20b4",
+        "call_type": "direct",
         "caller": "engine_fileio.cpp_copyFileWithProgress_FUN_004b2030",
         "estimated_params": 1,
         "instructions_analyzed": 3,
@@ -84,6 +86,7 @@
       },
       {
         "call_addr": "004b1fed",
+        "call_type": "direct",
         "caller": "engine_fileio.cpp_formatSystemError_FUN_004b1fe0",
         "estimated_params": 1,
         "instructions_analyzed": 3,
@@ -93,7 +96,9 @@
     ],
     "confidence": "high",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 3,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,

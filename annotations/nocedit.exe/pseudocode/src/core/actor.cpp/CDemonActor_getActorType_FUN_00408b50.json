@@ -70,7 +70,9 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 0,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,
@@ -88,5 +90,36 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDemonActor",
+        "offset": 196,
+        "vtable_addr": "006597d4"
+      },
+      {
+        "class_name": "CCharacter",
+        "offset": 196,
+        "vtable_addr": "0065b844"
+      },
+      {
+        "class_name": "CEnemy",
+        "offset": 196,
+        "vtable_addr": "0065d7d4"
+      },
+      {
+        "class_name": "CHero",
+        "offset": 196,
+        "vtable_addr": "0065f6d4"
+      },
+      {
+        "class_name": "CWeapon",
+        "offset": 196,
+        "vtable_addr": "006655b4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 5
+  }
 }

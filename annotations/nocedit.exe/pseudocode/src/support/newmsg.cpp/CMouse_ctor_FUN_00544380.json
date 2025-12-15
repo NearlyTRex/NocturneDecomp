@@ -51,6 +51,7 @@
     "call_sites": [
       {
         "call_addr": "00544365",
+        "call_type": "direct",
         "caller": "support_newmsg.cpp_staticInit_FUN_00544360",
         "estimated_params": 1,
         "instructions_analyzed": 1,
@@ -60,7 +61,9 @@
     ],
     "confidence": "medium",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 1,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,
@@ -114,5 +117,16 @@
       "text": "return (CMouse *)((int)pvVar1 + -300);",
       "type": "pointer_cast"
     }
-  ]
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CMouse",
+        "offset": 0,
+        "vtable_addr": "00661d54"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
 }

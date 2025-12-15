@@ -58,6 +58,7 @@
     "call_sites": [
       {
         "call_addr": "005ffd4a",
+        "call_type": "direct",
         "caller": "crt_stdio.c_stream_write_internal_FUN_005ffcb3",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -66,6 +67,7 @@
       },
       {
         "call_addr": "005ff35e",
+        "call_type": "direct",
         "caller": "crt_stdio.c_fputc_FUN_005ff2d7",
         "estimated_params": 1,
         "instructions_analyzed": 2,
@@ -75,7 +77,9 @@
     ],
     "confidence": "high",
     "declared_params": 1,
-    "estimated_params": 1
+    "direct_call_count": 2,
+    "estimated_params": 1,
+    "indirect_call_count": 0
   },
   "stack_frame": {
     "frame_size": 8,
