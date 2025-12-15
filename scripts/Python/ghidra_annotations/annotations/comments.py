@@ -2,6 +2,7 @@ import os
 from ghidra_annotations.util import *
 from ghidra.program.model.listing import CodeUnit
 
+
 def delete_comments(currentProgram, path):
 
     # Load comments to get importable markings
@@ -82,6 +83,34 @@ def import_comments(currentProgram, path):
         currentProgram.endTransaction(tx_id, True)
         log_info("Import complete")
 
+def _scan_comments_worker(start_addr, end_addr, listing):
+    """Worker function to scan comments in an address range."""
+    comments = []
+    try:
+        addr_set = create_address_set(start_addr, end_addr)
+        code_units = listing.getCodeUnits(addr_set, True)
+
+        while code_units.hasNext():
+            cu = code_units.next()
+            cmt_addr = str(cu.getMinAddress())
+            cmt_plate = cu.getComment(CodeUnit.PLATE_COMMENT)
+            cmt_pre = cu.getComment(CodeUnit.PRE_COMMENT)
+            cmt_post = cu.getComment(CodeUnit.POST_COMMENT)
+            cmt_eol = cu.getComment(CodeUnit.EOL_COMMENT)
+
+            if any(c and str(c).strip() for c in (cmt_plate, cmt_pre, cmt_post, cmt_eol)):
+                comments.append({
+                    "addr": cmt_addr,
+                    "plate": cmt_plate,
+                    "pre": cmt_pre,
+                    "post": cmt_post,
+                    "eol": cmt_eol
+                })
+    except Exception:
+        pass
+    return comments
+
+
 def export_comments(currentProgram, path):
 
     # Load existing comments to preserve importable markings
@@ -94,34 +123,21 @@ def export_comments(currentProgram, path):
                 cmt_addr = cmt_data.get("addr")
                 if cmt_addr:
                     existing_importable[cmt_addr] = cmt_data.get("importable", False)
-                    log_info("Preserving importable marking for comment at: %s" % cmt_addr)
     except:
         log_info("No existing comments file found, all comments will default to non-importable")
 
-    # Gather comments
-    log_info("Gathering comments")
-    comments = []
+    # Scan in parallel
+    log_info("Gathering comments (parallel)")
     listing = currentProgram.getListing()
-    for cu in listing.getCodeUnits(True):
-        cmt_addr = str(cu.getMinAddress())
-        cmt_plate = cu.getComment(CodeUnit.PLATE_COMMENT)
-        cmt_pre = cu.getComment(CodeUnit.PRE_COMMENT)
-        cmt_post = cu.getComment(CodeUnit.POST_COMMENT)
-        cmt_eol = cu.getComment(CodeUnit.EOL_COMMENT)
-        cmt_importable = existing_importable.get(cmt_addr, True)
+    comments = parallel_scan_ranges(currentProgram, _scan_comments_worker, extra_args=(listing,))
+    log_info("Found %d comments" % len(comments))
 
-        # Record comment
-        obj = {
-            "addr": cmt_addr,
-            "plate": cmt_plate,
-            "pre": cmt_pre,
-            "post": cmt_post,
-            "eol": cmt_eol,
-            "importable": cmt_importable
-        }
-        if any(obj[k] and str(obj[k]).strip() for k in ("plate", "pre", "post", "eol")):
-            log_info("Recording comment at %s" % cmt_addr)
-            comments.append(obj)
+    # Apply importable markings
+    for cmt in comments:
+        cmt["importable"] = existing_importable.get(cmt["addr"], True)
+
+    # Sort by address for consistent output
+    comments.sort(key=lambda x: x["addr"])
 
     # Export comments
     log_info("Exporting %s comments" % len(comments))

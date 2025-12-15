@@ -203,6 +203,34 @@ def import_cross_references(currentProgram, path):
         currentProgram.endTransaction(tx_id, True)
         log_info("Import complete")
 
+def _scan_references_worker(start_addr, end_addr, ref_mgr):
+    """Worker function to scan references in an address range."""
+    references = []
+    try:
+        addr_set = create_address_set(start_addr, end_addr)
+        addresses = addr_set.getAddresses(True)
+
+        while addresses.hasNext():
+            addr = addresses.next()
+            refs = list(ref_mgr.getReferencesFrom(addr))
+
+            for ref in refs:
+                ref_data = {
+                    "from": str(ref.getFromAddress()),
+                    "to": str(ref.getToAddress()),
+                    "type": str(ref.getReferenceType())
+                }
+                operand_index = ref.getOperandIndex()
+                if operand_index != 0:
+                    ref_data["operand"] = operand_index
+                if not ref.isPrimary():
+                    ref_data["non_primary"] = True
+                references.append(ref_data)
+    except Exception:
+        pass
+    return references
+
+
 def export_cross_references(currentProgram, path):
 
     # Load existing cross references to preserve importable markings
@@ -214,54 +242,19 @@ def export_cross_references(currentProgram, path):
             for xref_data in existing_xrefs:
                 xref_key = get_reference_key(xref_data)
                 existing_importable[xref_key] = xref_data.get("importable", True)
-                log_info("Preserving importable marking for cross reference: %s" % xref_key)
     except:
         log_info("No existing cross references file found, all cross references will default to non-importable")
 
-    # Gather cross references
-    log_info("Gathering cross references")
-    cross_references = []
+    # Scan in parallel
+    log_info("Gathering cross references (parallel)")
+    ref_mgr = currentProgram.getReferenceManager()
+    cross_references = parallel_scan_ranges(currentProgram, _scan_references_worker, extra_args=(ref_mgr,))
+    log_info("Found %d cross references" % len(cross_references))
 
-    # Get all memory addresses and iterate through them
-    address_set = currentProgram.getMemory().getAllInitializedAddressSet()
-    addresses = address_set.getAddresses(True)
-    while addresses.hasNext():
-        addr = addresses.next()
-
-        # Record references from this address
-        refs = list(currentProgram.getReferenceManager().getReferencesFrom(addr))
-
-        # Sort references deterministically to ensure consistent ordering
-        # Sort by: to_address, operand_index, reference_type, primary_flag
-        refs.sort(key=lambda ref: (
-            get_sortable_address_value(str(ref.getToAddress())),
-            ref.getOperandIndex(),
-            str(ref.getReferenceType()),
-            not ref.isPrimary()
-        ))
-        for ref in refs:
-            from_addr = str(ref.getFromAddress())
-            to_addr = str(ref.getToAddress())
-            ref_type = str(ref.getReferenceType())
-            operand_index = ref.getOperandIndex()
-            is_primary = ref.isPrimary()
-
-            # Create reference data
-            ref_data = {
-                "from": from_addr,
-                "to": to_addr,
-                "type": ref_type
-            }
-            if operand_index != 0:
-                ref_data["operand"] = operand_index
-            if not is_primary:
-                ref_data["non_primary"] = True
-
-            # Get importable status
-            ref_key = get_reference_key(ref_data)
-            ref_importable = existing_importable.get(ref_key, True)
-            ref_data["importable"] = ref_importable
-            cross_references.append(ref_data)
+    # Apply importable markings
+    for ref_data in cross_references:
+        ref_key = get_reference_key(ref_data)
+        ref_data["importable"] = existing_importable.get(ref_key, True)
 
     # Sort cross references for consistent output
     log_info("Sorting cross references by address and operand index")

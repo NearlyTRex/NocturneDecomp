@@ -2,6 +2,7 @@ import os
 import hashlib
 from ghidra_annotations.util import *
 
+
 def delete_equates(currentProgram, path):
 
     # Load equates to get importable markings
@@ -69,6 +70,70 @@ def import_equates(currentProgram, path):
         currentProgram.endTransaction(tx_id, True)
         log_info("Import complete")
 
+def _scan_equates_worker(start_addr, end_addr, listing, equate_table):
+    """Worker function to scan instructions for scalars and applied equates.
+
+    Returns a dict with two keys:
+    - 'scalars': dict of {value: [(addr_str, op_index), ...]}
+    - 'applied': dict of {equate_name: [(addr_str, op_index), ...]}
+    """
+    scalars = {}
+    applied = {}
+
+    try:
+        addr_set = create_address_set(start_addr, end_addr)
+        instruction_iter = listing.getInstructions(addr_set, True)
+
+        while instruction_iter.hasNext():
+            instruction = instruction_iter.next()
+            addr = instruction.getAddress()
+            addr_str = str(addr)
+            num_operands = instruction.getNumOperands()
+
+            for op_index in range(num_operands):
+                # Check for applied equates
+                try:
+                    existing_equates = equate_table.getEquates(addr, op_index)
+                    for eq in existing_equates:
+                        eq_name = eq.getName()
+                        if eq_name not in applied:
+                            applied[eq_name] = []
+                        applied[eq_name].append((addr_str, op_index))
+                except:
+                    pass
+
+                # Extract scalar values
+                try:
+                    operand_objects = instruction.getOpObjects(op_index)
+                    if operand_objects:
+                        for obj in operand_objects:
+                            scalar_value = None
+                            if hasattr(obj, 'getValue') and hasattr(obj, 'isSigned'):
+                                try:
+                                    scalar_value = obj.getValue()
+                                except:
+                                    pass
+                            elif str(type(obj)).find("Scalar") != -1:
+                                try:
+                                    if hasattr(obj, 'getUnsignedValue'):
+                                        scalar_value = obj.getUnsignedValue()
+                                    elif hasattr(obj, 'getValue'):
+                                        scalar_value = obj.getValue()
+                                except:
+                                    pass
+
+                            if scalar_value is not None:
+                                if scalar_value not in scalars:
+                                    scalars[scalar_value] = []
+                                scalars[scalar_value].append((addr_str, op_index))
+                except:
+                    continue
+    except Exception:
+        pass
+
+    return {'scalars': scalars, 'applied': applied}
+
+
 def export_equates(currentProgram, path):
 
     # Load existing equates to preserve importable markings
@@ -81,16 +146,15 @@ def export_equates(currentProgram, path):
                 eq_name = eq_data.get("name")
                 if eq_name:
                     existing_importable[eq_name] = eq_data.get("importable", False)
-                    log_info("Preserving importable marking for equate: %s" % eq_name)
     except:
         log_info("No existing equates files found, all equates will default to non-importable")
 
-    # Gather equates
+    # Gather equates and build value-to-equate map
     log_info("Gathering equates")
     equate_table = currentProgram.getEquateTable()
     equates_map = {}
+    value_to_equates = {}
 
-    # Build map of all equates
     for equate in equate_table.getEquates():
         eq_name = equate.getName()
         eq_value = equate.getValue()
@@ -101,81 +165,51 @@ def export_equates(currentProgram, path):
             "refs": [],
             "importable": eq_importable
         }
+        if eq_value not in value_to_equates:
+            value_to_equates[eq_value] = []
+        value_to_equates[eq_value].append(eq_name)
 
-    # Now scan for references using a comprehensive approach
-    log_info("Scanning for equate references using comprehensive method")
+    if not equates_map:
+        log_info("No equates found, nothing to export")
+        return
+
+    log_info("Found %d equates with %d unique values" % (len(equates_map), len(value_to_equates)))
+
+    # Scan in parallel
+    log_info("Scanning for scalar values (parallel)")
     listing = currentProgram.getListing()
+    results = parallel_scan_ranges(currentProgram, _scan_equates_worker, extra_args=(listing, equate_table))
 
-    # For each equate, search through all instructions to find references
+    # Merge results from all workers
+    all_scalars = {}
+    all_applied = {}
+    for result in results:
+        for value, locations in result.get('scalars', {}).items():
+            if value not in all_scalars:
+                all_scalars[value] = []
+            all_scalars[value].extend(locations)
+        for eq_name, locations in result.get('applied', {}).items():
+            if eq_name not in all_applied:
+                all_applied[eq_name] = []
+            all_applied[eq_name].extend(locations)
+
+    log_info("Found %d unique scalar values" % len(all_scalars))
+
+    # Match equates to references (O(equates) instead of O(equates × instructions))
+    log_info("Matching equates to scalar locations")
     for eq_name, eq_data in equates_map.items():
         eq_value = eq_data["value"]
-        log_info("Searching for references to equate %s (value=%d)" % (eq_name, eq_value))
+        refs_set = set()
 
-        # Scan all instructions in the program
-        instruction_iter = listing.getInstructions(True)
-        while instruction_iter.hasNext():
-            instruction = instruction_iter.next()
-            addr = instruction.getAddress()
+        if eq_name in all_applied:
+            for loc in all_applied[eq_name]:
+                refs_set.add(loc)
 
-            # Check each operand of this instruction
-            num_operands = instruction.getNumOperands()
-            for op_index in range(num_operands):
+        if eq_value in all_scalars:
+            for loc in all_scalars[eq_value]:
+                refs_set.add(loc)
 
-                # First check if there's already an equate applied here
-                existing_equates = equate_table.getEquates(addr, op_index)
-                for existing_equate in existing_equates:
-                    if existing_equate.getName() == eq_name:
-                        ref_entry = {
-                            "addr": str(addr),
-                            "opIndex": op_index
-                        }
-                        if ref_entry not in eq_data["refs"]:
-                            eq_data["refs"].append(ref_entry)
-                            log_info("Found applied equate reference: %s at %s[%d]" % (eq_name, addr, op_index))
-
-                # Also check for scalar values that match this equate value
-                try:
-                    operand_objects = instruction.getOpObjects(op_index)
-                    if operand_objects:
-                        for obj in operand_objects:
-
-                            # Check if this is a scalar that matches our equate value
-                            if hasattr(obj, 'getValue') and hasattr(obj, 'isSigned'):
-                                try:
-                                    scalar_value = obj.getValue()
-                                    if scalar_value == eq_value:
-                                        ref_entry = {
-                                            "addr": str(addr),
-                                            "opIndex": op_index
-                                        }
-                                        if ref_entry not in eq_data["refs"]:
-                                            eq_data["refs"].append(ref_entry)
-                                            log_info("Found scalar match for equate: %s=%d at %s[%d]" % (eq_name, eq_value, addr, op_index))
-                                except:
-                                    continue
-
-                            # Also check if it's a general scalar object
-                            elif str(type(obj)).find("Scalar") != -1:
-                                try:
-                                    # Try to get the value different ways
-                                    scalar_value = None
-                                    if hasattr(obj, 'getUnsignedValue'):
-                                        scalar_value = obj.getUnsignedValue()
-                                    elif hasattr(obj, 'getValue'):
-                                        scalar_value = obj.getValue()
-
-                                    if scalar_value is not None and scalar_value == eq_value:
-                                        ref_entry = {
-                                            "addr": str(addr),
-                                            "opIndex": op_index
-                                        }
-                                        if ref_entry not in eq_data["refs"]:
-                                            eq_data["refs"].append(ref_entry)
-                                            log_info("Found scalar object match for equate: %s=%d at %s[%d]" % (eq_name, eq_value, addr, op_index))
-                                except:
-                                    continue
-                except:
-                    continue
+        eq_data["refs"] = [{"addr": addr, "opIndex": op} for addr, op in refs_set]
 
     # Convert to list and sort
     equates = []
@@ -186,7 +220,7 @@ def export_equates(currentProgram, path):
         log_info("Recording equate: %s = %s (%d references)" % (
             eq_data["name"], eq_data["value"], len(eq_data["refs"])))
 
-    # Export equates using bucketing by name hash to manage file size
+    # Export equates
     log_info("Exporting %d equates using bucketing by name" % len(equates))
     save_json_files(path,
         filename_base = "equates",
