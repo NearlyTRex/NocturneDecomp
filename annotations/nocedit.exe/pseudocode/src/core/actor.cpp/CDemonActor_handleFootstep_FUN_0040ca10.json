@@ -128,9 +128,7 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 4,
-    "direct_call_count": 0,
-    "estimated_params": 4,
-    "indirect_call_count": 0
+    "estimated_params": 4
   },
   "stack_frame": {
     "frame_size": 168,
@@ -285,5 +283,30 @@
     ],
     "in_vtable": true,
     "vtable_count": 113
+  },
+  "possible_indirect_callers": {
+    "method_name": "handleFootstep",
+    "vtable_offset": 32,
+    "possible_callers": [
+      "CDemonActor_processFootstepAtOffset_FUN_0040c8f0",
+      "CDemonActor_processFootstep_FUN_0040c830"
+    ],
+    "param_analysis": {
+      "estimated_params": 4,
+      "param_estimates": [
+        4
+      ],
+      "call_site_count": 2,
+      "caller_details": [
+        {
+          "caller": "CDemonActor_processFootstepAtOffset_FUN_0040c8f0",
+          "estimated_params": 4
+        },
+        {
+          "caller": "CDemonActor_processFootstep_FUN_0040c830",
+          "estimated_params": 4
+        }
+      ]
+    }
   }
 }

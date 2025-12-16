@@ -150,5 +150,25 @@
       "text": "(this_ptr->data_array + start_index,this_ptr->data_array + in_stack_00000010 + 1,",
       "type": "stack_param"
     }
-  ]
+  ],
+  "possible_indirect_callers": {
+    "method_name": "remove",
+    "vtable_offset": 4,
+    "possible_callers": [
+      "CStrList_removeAt_FUN_004a2de0"
+    ],
+    "param_analysis": {
+      "estimated_params": 3,
+      "param_estimates": [
+        3
+      ],
+      "call_site_count": 1,
+      "caller_details": [
+        {
+          "caller": "CStrList_removeAt_FUN_004a2de0",
+          "estimated_params": 3
+        }
+      ]
+    }
+  }
 }

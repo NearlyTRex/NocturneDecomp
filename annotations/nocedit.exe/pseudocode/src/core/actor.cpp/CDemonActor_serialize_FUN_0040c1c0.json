@@ -439,5 +439,31 @@
       "text": "core_actor_cpp_serializeFloat_FUN_0040b770((float *)&stack0x00000000,\"fov\");",
       "type": "stack_ref"
     }
-  ]
+  ],
+  "possible_indirect_callers": {
+    "method_name": "serialize",
+    "vtable_offset": 232,
+    "possible_callers": [
+      "CDemonActor_load_FUN_0040b050",
+      "CDemonActor_save_FUN_0040af30"
+    ],
+    "param_analysis": {
+      "estimated_params": 2,
+      "param_estimates": [
+        1,
+        2
+      ],
+      "call_site_count": 2,
+      "caller_details": [
+        {
+          "caller": "CDemonActor_load_FUN_0040b050",
+          "estimated_params": 2
+        },
+        {
+          "caller": "CDemonActor_save_FUN_0040af30",
+          "estimated_params": 1
+        }
+      ]
+    }
+  }
 }

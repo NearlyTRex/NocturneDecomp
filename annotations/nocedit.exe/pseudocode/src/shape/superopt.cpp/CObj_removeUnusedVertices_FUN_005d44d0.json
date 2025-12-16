@@ -72,9 +72,7 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 1,
-    "direct_call_count": 0,
-    "estimated_params": 1,
-    "indirect_call_count": 0
+    "estimated_params": 1
   },
   "stack_frame": {
     "frame_size": 132,
@@ -321,5 +319,36 @@
     ],
     "in_vtable": true,
     "vtable_count": 1
+  },
+  "possible_indirect_callers": {
+    "method_name": "removeUnusedVertices",
+    "vtable_offset": 204,
+    "possible_callers": [
+      "CObj_removeInvalidPolygons_FUN_005d46f0",
+      "CObj_removeVerticesByFlag_FUN_005d3280",
+      "CObj_weldVertices_FUN_005d4160"
+    ],
+    "param_analysis": {
+      "estimated_params": 1,
+      "param_estimates": [
+        1,
+        4
+      ],
+      "call_site_count": 3,
+      "caller_details": [
+        {
+          "caller": "CObj_removeInvalidPolygons_FUN_005d46f0",
+          "estimated_params": 1
+        },
+        {
+          "caller": "CObj_removeVerticesByFlag_FUN_005d3280",
+          "estimated_params": 4
+        },
+        {
+          "caller": "CObj_weldVertices_FUN_005d4160",
+          "estimated_params": 1
+        }
+      ]
+    }
   }
 }

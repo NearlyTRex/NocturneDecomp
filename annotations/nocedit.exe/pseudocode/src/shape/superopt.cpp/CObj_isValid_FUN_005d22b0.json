@@ -30,9 +30,7 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 1,
-    "direct_call_count": 0,
-    "estimated_params": 1,
-    "indirect_call_count": 0
+    "estimated_params": 1
   },
   "stack_frame": {
     "frame_size": 8,
@@ -61,5 +59,41 @@
     ],
     "in_vtable": true,
     "vtable_count": 1
+  },
+  "possible_indirect_callers": {
+    "method_name": "isValid",
+    "vtable_offset": 4,
+    "possible_callers": [
+      "CObj_transformMasked_FUN_005d2dd0",
+      "CObj_transform_FUN_005d2c40",
+      "CObj_translateMasked_FUN_005d28d0",
+      "CObj_translate_FUN_005d2880"
+    ],
+    "param_analysis": {
+      "estimated_params": 5,
+      "param_estimates": [
+        3,
+        5
+      ],
+      "call_site_count": 4,
+      "caller_details": [
+        {
+          "caller": "CObj_transformMasked_FUN_005d2dd0",
+          "estimated_params": 5
+        },
+        {
+          "caller": "CObj_transform_FUN_005d2c40",
+          "estimated_params": 5
+        },
+        {
+          "caller": "CObj_translateMasked_FUN_005d28d0",
+          "estimated_params": 5
+        },
+        {
+          "caller": "CObj_translate_FUN_005d2880",
+          "estimated_params": 3
+        }
+      ]
+    }
   }
 }

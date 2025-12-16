@@ -30,9 +30,7 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 2,
-    "direct_call_count": 0,
-    "estimated_params": 2,
-    "indirect_call_count": 0
+    "estimated_params": 2
   },
   "stack_frame": {
     "frame_size": 12,
@@ -68,5 +66,30 @@
     ],
     "in_vtable": true,
     "vtable_count": 1
+  },
+  "possible_indirect_callers": {
+    "method_name": "finalize",
+    "vtable_offset": 12,
+    "possible_callers": [
+      "CCodec_processFiles_FUN_0043ec30",
+      "CCodec_processToBuffer_FUN_0043ea80"
+    ],
+    "param_analysis": {
+      "estimated_params": 2,
+      "param_estimates": [
+        2
+      ],
+      "call_site_count": 2,
+      "caller_details": [
+        {
+          "caller": "CCodec_processFiles_FUN_0043ec30",
+          "estimated_params": 2
+        },
+        {
+          "caller": "CCodec_processToBuffer_FUN_0043ea80",
+          "estimated_params": 2
+        }
+      ]
+    }
   }
 }

@@ -30,9 +30,7 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 2,
-    "direct_call_count": 0,
-    "estimated_params": 2,
-    "indirect_call_count": 0
+    "estimated_params": 2
   },
   "stack_frame": {
     "frame_size": 12,
@@ -68,5 +66,56 @@
     ],
     "in_vtable": true,
     "vtable_count": 1
+  },
+  "possible_indirect_callers": {
+    "method_name": "getBoundingBox",
+    "vtable_offset": 20,
+    "possible_callers": [
+      "CDemonActor_FUN_0040dec0",
+      "CDemonActor_getAllowedMeleeAttackTypes_FUN_0040a0f0",
+      "CDemonActor_getWorldBoundingBox_FUN_00409270",
+      "CDemonActor_processMeleeHit_FUN_0040a210",
+      "CDemonActor_rayIntersect_FUN_00409470"
+    ],
+    "param_analysis": {
+      "estimated_params": 2,
+      "param_estimates": [
+        2,
+        3,
+        5,
+        6
+      ],
+      "call_site_count": 7,
+      "caller_details": [
+        {
+          "caller": "CDemonActor_FUN_0040dec0",
+          "estimated_params": 6
+        },
+        {
+          "caller": "CDemonActor_getAllowedMeleeAttackTypes_FUN_0040a0f0",
+          "estimated_params": 2
+        },
+        {
+          "caller": "CDemonActor_getWorldBoundingBox_FUN_00409270",
+          "estimated_params": 5
+        },
+        {
+          "caller": "CDemonActor_processMeleeHit_FUN_0040a210",
+          "estimated_params": 2
+        },
+        {
+          "caller": "CDemonActor_processMeleeHit_FUN_0040a210",
+          "estimated_params": 3
+        },
+        {
+          "caller": "CDemonActor_processMeleeHit_FUN_0040a210",
+          "estimated_params": 3
+        },
+        {
+          "caller": "CDemonActor_rayIntersect_FUN_00409470",
+          "estimated_params": 5
+        }
+      ]
+    }
   }
 }

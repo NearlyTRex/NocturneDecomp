@@ -82,9 +82,7 @@
     ],
     "confidence": "medium",
     "declared_params": 1,
-    "direct_call_count": 3,
-    "estimated_params": 1,
-    "indirect_call_count": 0
+    "estimated_params": 1
   },
   "stack_frame": {
     "frame_size": 8,
@@ -113,5 +111,30 @@
     ],
     "in_vtable": true,
     "vtable_count": 1
+  },
+  "possible_indirect_callers": {
+    "method_name": "free",
+    "vtable_offset": 28,
+    "possible_callers": [
+      "CObj_copyFrom_FUN_005d2650",
+      "CObj_init_FUN_005d22d0"
+    ],
+    "param_analysis": {
+      "estimated_params": 3,
+      "param_estimates": [
+        3
+      ],
+      "call_site_count": 2,
+      "caller_details": [
+        {
+          "caller": "CObj_copyFrom_FUN_005d2650",
+          "estimated_params": 3
+        },
+        {
+          "caller": "CObj_init_FUN_005d22d0",
+          "estimated_params": 3
+        }
+      ]
+    }
   }
 }

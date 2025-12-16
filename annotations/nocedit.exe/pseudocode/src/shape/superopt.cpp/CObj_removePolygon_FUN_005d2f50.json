@@ -43,9 +43,7 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 2,
-    "direct_call_count": 0,
-    "estimated_params": 2,
-    "indirect_call_count": 0
+    "estimated_params": 2
   },
   "stack_frame": {
     "frame_size": 12,
@@ -81,5 +79,40 @@
     ],
     "in_vtable": true,
     "vtable_count": 1
+  },
+  "possible_indirect_callers": {
+    "method_name": "removePolygon",
+    "vtable_offset": 64,
+    "possible_callers": [
+      "CObj_findAndRemovePolygon_FUN_005d3020",
+      "CObj_removeInvalidPolygons_FUN_005d46f0",
+      "CObj_removePolygonsAtVertex_FUN_005d3050",
+      "CObj_removePolygonsByFlag_FUN_005d30f0"
+    ],
+    "param_analysis": {
+      "estimated_params": 2,
+      "param_estimates": [
+        2
+      ],
+      "call_site_count": 4,
+      "caller_details": [
+        {
+          "caller": "CObj_findAndRemovePolygon_FUN_005d3020",
+          "estimated_params": 2
+        },
+        {
+          "caller": "CObj_removeInvalidPolygons_FUN_005d46f0",
+          "estimated_params": 2
+        },
+        {
+          "caller": "CObj_removePolygonsAtVertex_FUN_005d3050",
+          "estimated_params": 2
+        },
+        {
+          "caller": "CObj_removePolygonsByFlag_FUN_005d30f0",
+          "estimated_params": 2
+        }
+      ]
+    }
   }
 }

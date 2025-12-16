@@ -45,9 +45,7 @@
     "call_sites": [],
     "confidence": "unknown",
     "declared_params": 2,
-    "direct_call_count": 0,
-    "estimated_params": 2,
-    "indirect_call_count": 0
+    "estimated_params": 2
   },
   "stack_frame": {
     "frame_size": 12,
@@ -126,5 +124,30 @@
     ],
     "in_vtable": true,
     "vtable_count": 1
+  },
+  "possible_indirect_callers": {
+    "method_name": "removeVertex",
+    "vtable_offset": 84,
+    "possible_callers": [
+      "CObj_findAndRemoveVertex_FUN_005d3250",
+      "CObj_removeVerticesByFlag_FUN_005d3280"
+    ],
+    "param_analysis": {
+      "estimated_params": 2,
+      "param_estimates": [
+        2
+      ],
+      "call_site_count": 2,
+      "caller_details": [
+        {
+          "caller": "CObj_findAndRemoveVertex_FUN_005d3250",
+          "estimated_params": 2
+        },
+        {
+          "caller": "CObj_removeVerticesByFlag_FUN_005d3280",
+          "estimated_params": 2
+        }
+      ]
+    }
   }
 }
