@@ -76,6 +76,26 @@
     "declared_params": 3,
     "estimated_params": 5
   },
+  "possible_indirect_callers": {
+    "method_name": "weldVertices",
+    "param_analysis": {
+      "call_site_count": 1,
+      "caller_details": [
+        {
+          "caller": "CObj_removeTJunctions_FUN_005d47b0",
+          "estimated_params": 4
+        }
+      ],
+      "estimated_params": 4,
+      "param_estimates": [
+        4
+      ]
+    },
+    "possible_callers": [
+      "CObj_removeTJunctions_FUN_005d47b0"
+    ],
+    "vtable_offset": 200
+  },
   "stack_frame": {
     "frame_size": 284,
     "local_size": 268,
@@ -387,25 +407,5 @@
     ],
     "in_vtable": true,
     "vtable_count": 1
-  },
-  "possible_indirect_callers": {
-    "method_name": "weldVertices",
-    "vtable_offset": 200,
-    "possible_callers": [
-      "CObj_removeTJunctions_FUN_005d47b0"
-    ],
-    "param_analysis": {
-      "estimated_params": 4,
-      "param_estimates": [
-        4
-      ],
-      "call_site_count": 1,
-      "caller_details": [
-        {
-          "caller": "CObj_removeTJunctions_FUN_005d47b0",
-          "estimated_params": 4
-        }
-      ]
-    }
   }
 }

@@ -44,6 +44,31 @@
     "declared_params": 2,
     "estimated_params": 2
   },
+  "possible_indirect_callers": {
+    "method_name": "hasCollision",
+    "param_analysis": {
+      "call_site_count": 2,
+      "caller_details": [
+        {
+          "caller": "CDemonActor_testLineIntersection_FUN_00409150",
+          "estimated_params": 2
+        },
+        {
+          "caller": "CDemonActor_testRayIntersection_FUN_004093f0",
+          "estimated_params": 2
+        }
+      ],
+      "estimated_params": 2,
+      "param_estimates": [
+        2
+      ]
+    },
+    "possible_callers": [
+      "CDemonActor_testLineIntersection_FUN_00409150",
+      "CDemonActor_testRayIntersection_FUN_004093f0"
+    ],
+    "vtable_offset": 52
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -88,30 +113,5 @@
     ],
     "in_vtable": true,
     "vtable_count": 3
-  },
-  "possible_indirect_callers": {
-    "method_name": "hasCollision",
-    "vtable_offset": 52,
-    "possible_callers": [
-      "CDemonActor_testLineIntersection_FUN_00409150",
-      "CDemonActor_testRayIntersection_FUN_004093f0"
-    ],
-    "param_analysis": {
-      "estimated_params": 2,
-      "param_estimates": [
-        2
-      ],
-      "call_site_count": 2,
-      "caller_details": [
-        {
-          "caller": "CDemonActor_testLineIntersection_FUN_00409150",
-          "estimated_params": 2
-        },
-        {
-          "caller": "CDemonActor_testRayIntersection_FUN_004093f0",
-          "estimated_params": 2
-        }
-      ]
-    }
   }
 }

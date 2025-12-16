@@ -48,6 +48,9 @@ from ghidra_annotations.annotations.pseudocode.suspects import (
 from ghidra_annotations.annotations.pseudocode.stack_patterns import (
     summarize_stack_patterns
 )
+from ghidra_annotations.annotations.pseudocode.vtable_calls import (
+    update_function_json_files as update_vtable_indirect_callers
+)
 
 
 class PhaseTimer:
@@ -343,7 +346,7 @@ def export_pseudocode(currentProgram, path):
     log_info("Built global symbols map with %d symbols" % len(global_symbols))
     timer.end_phase()
 
-    # Load vtable data for indirect call parameter estimation
+    # Load vtable data
     timer.start_phase("Load vtable data")
     vtables_json_path = os.path.join(path, "vtables", "vtables.json")
     vtable_data = None
@@ -353,7 +356,7 @@ def export_pseudocode(currentProgram, path):
         log_info("Loaded vtable data: %d vtable addresses, %d functions in vtables" % (
             len(vtable_data.get('vtable_addrs', set())), vtable_func_count))
     else:
-        log_info("No vtables.json found at %s - skipping vtable parameter analysis" % vtables_json_path)
+        log_info("No vtables.json found at %s - skipping vtable analysis" % vtables_json_path)
     timer.end_phase()
 
     # Collect all non-external functions first
@@ -577,6 +580,15 @@ def export_pseudocode(currentProgram, path):
     timer.start_phase("Generate analysis report")
     log_info("Generating analysis report...")
     generate_analysis_report(pseudocode_src_dir, path)
+    timer.end_phase()
+
+    # Second pass: Update JSON files with vtable indirect caller analysis
+    timer.start_phase("Vtable indirect caller analysis")
+    if os.path.exists(vtables_json_path):
+        log_info("Running second pass: analyzing vtable indirect callers...")
+        update_vtable_indirect_callers(pseudocode_src_dir, vtables_json_path)
+    else:
+        log_info("Skipping vtable indirect caller analysis (no vtables.json)")
     timer.end_phase()
 
     # Log timing profile

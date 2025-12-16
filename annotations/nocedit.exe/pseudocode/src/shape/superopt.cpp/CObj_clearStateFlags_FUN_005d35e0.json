@@ -38,6 +38,32 @@
   },
   "function_calls": [],
   "globals": [],
+  "possible_indirect_callers": {
+    "method_name": "clearStateFlags",
+    "param_analysis": {
+      "call_site_count": 2,
+      "caller_details": [
+        {
+          "caller": "CObj_findCoplanarPolygon_FUN_005d5800",
+          "estimated_params": 2
+        },
+        {
+          "caller": "CObj_weldVertices_FUN_005d4160",
+          "estimated_params": 6
+        }
+      ],
+      "estimated_params": 2,
+      "param_estimates": [
+        2,
+        6
+      ]
+    },
+    "possible_callers": [
+      "CObj_findCoplanarPolygon_FUN_005d5800",
+      "CObj_weldVertices_FUN_005d4160"
+    ],
+    "vtable_offset": 132
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -61,31 +87,5 @@
       }
     ]
   },
-  "suspects": [],
-  "possible_indirect_callers": {
-    "method_name": "clearStateFlags",
-    "vtable_offset": 132,
-    "possible_callers": [
-      "CObj_findCoplanarPolygon_FUN_005d5800",
-      "CObj_weldVertices_FUN_005d4160"
-    ],
-    "param_analysis": {
-      "estimated_params": 2,
-      "param_estimates": [
-        2,
-        6
-      ],
-      "call_site_count": 2,
-      "caller_details": [
-        {
-          "caller": "CObj_findCoplanarPolygon_FUN_005d5800",
-          "estimated_params": 2
-        },
-        {
-          "caller": "CObj_weldVertices_FUN_005d4160",
-          "estimated_params": 6
-        }
-      ]
-    }
-  }
+  "suspects": []
 }

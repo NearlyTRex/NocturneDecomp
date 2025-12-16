@@ -32,6 +32,26 @@
     "declared_params": 1,
     "estimated_params": 1
   },
+  "possible_indirect_callers": {
+    "method_name": "load",
+    "param_analysis": {
+      "call_site_count": 1,
+      "caller_details": [
+        {
+          "caller": "CPod_init_FUN_00550c30",
+          "estimated_params": 1
+        }
+      ],
+      "estimated_params": 1,
+      "param_estimates": [
+        1
+      ]
+    },
+    "possible_callers": [
+      "CPod_init_FUN_00550c30"
+    ],
+    "vtable_offset": 4
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -59,25 +79,5 @@
     ],
     "in_vtable": true,
     "vtable_count": 1
-  },
-  "possible_indirect_callers": {
-    "method_name": "load",
-    "vtable_offset": 4,
-    "possible_callers": [
-      "CPod_init_FUN_00550c30"
-    ],
-    "param_analysis": {
-      "estimated_params": 1,
-      "param_estimates": [
-        1
-      ],
-      "call_site_count": 1,
-      "caller_details": [
-        {
-          "caller": "CPod_init_FUN_00550c30",
-          "estimated_params": 1
-        }
-      ]
-    }
   }
 }

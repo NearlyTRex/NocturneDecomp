@@ -44,6 +44,31 @@
     "declared_params": 2,
     "estimated_params": 2
   },
+  "possible_indirect_callers": {
+    "method_name": "getCentroid",
+    "param_analysis": {
+      "call_site_count": 2,
+      "caller_details": [
+        {
+          "caller": "CPoly_hasCentroidIntersection_FUN_005d1230",
+          "estimated_params": 5
+        },
+        {
+          "caller": "CPoly_hasCentroidIntersection_FUN_005d1230",
+          "estimated_params": 1
+        }
+      ],
+      "estimated_params": 5,
+      "param_estimates": [
+        1,
+        5
+      ]
+    },
+    "possible_callers": [
+      "CPoly_hasCentroidIntersection_FUN_005d1230"
+    ],
+    "vtable_offset": 108
+  },
   "stack_frame": {
     "frame_size": 148,
     "local_size": 140,
@@ -293,30 +318,5 @@
     ],
     "in_vtable": true,
     "vtable_count": 1
-  },
-  "possible_indirect_callers": {
-    "method_name": "getCentroid",
-    "vtable_offset": 108,
-    "possible_callers": [
-      "CPoly_hasCentroidIntersection_FUN_005d1230"
-    ],
-    "param_analysis": {
-      "estimated_params": 5,
-      "param_estimates": [
-        1,
-        5
-      ],
-      "call_site_count": 2,
-      "caller_details": [
-        {
-          "caller": "CPoly_hasCentroidIntersection_FUN_005d1230",
-          "estimated_params": 5
-        },
-        {
-          "caller": "CPoly_hasCentroidIntersection_FUN_005d1230",
-          "estimated_params": 1
-        }
-      ]
-    }
   }
 }

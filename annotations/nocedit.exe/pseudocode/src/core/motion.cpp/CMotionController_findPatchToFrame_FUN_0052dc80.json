@@ -62,6 +62,37 @@
     "declared_params": 1,
     "estimated_params": 1
   },
+  "possible_indirect_callers": {
+    "method_name": "findPatchToFrame",
+    "param_analysis": {
+      "call_site_count": 3,
+      "caller_details": [
+        {
+          "caller": "CMotionController_advanceFrameAndCheckSignals_FUN_0052de70",
+          "estimated_params": 3
+        },
+        {
+          "caller": "CMotionController_jumpToMotion_FUN_0052dde0",
+          "estimated_params": 4
+        },
+        {
+          "caller": "CMotionController_startTransition_FUN_0052dbc0",
+          "estimated_params": 4
+        }
+      ],
+      "estimated_params": 4,
+      "param_estimates": [
+        3,
+        4
+      ]
+    },
+    "possible_callers": [
+      "CMotionController_advanceFrameAndCheckSignals_FUN_0052de70",
+      "CMotionController_jumpToMotion_FUN_0052dde0",
+      "CMotionController_startTransition_FUN_0052dbc0"
+    ],
+    "vtable_offset": 4
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -89,36 +120,5 @@
     ],
     "in_vtable": true,
     "vtable_count": 1
-  },
-  "possible_indirect_callers": {
-    "method_name": "findPatchToFrame",
-    "vtable_offset": 4,
-    "possible_callers": [
-      "CMotionController_advanceFrameAndCheckSignals_FUN_0052de70",
-      "CMotionController_jumpToMotion_FUN_0052dde0",
-      "CMotionController_startTransition_FUN_0052dbc0"
-    ],
-    "param_analysis": {
-      "estimated_params": 4,
-      "param_estimates": [
-        3,
-        4
-      ],
-      "call_site_count": 3,
-      "caller_details": [
-        {
-          "caller": "CMotionController_advanceFrameAndCheckSignals_FUN_0052de70",
-          "estimated_params": 3
-        },
-        {
-          "caller": "CMotionController_jumpToMotion_FUN_0052dde0",
-          "estimated_params": 4
-        },
-        {
-          "caller": "CMotionController_startTransition_FUN_0052dbc0",
-          "estimated_params": 4
-        }
-      ]
-    }
   }
 }

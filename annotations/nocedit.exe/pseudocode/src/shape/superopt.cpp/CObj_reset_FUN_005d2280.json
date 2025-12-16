@@ -49,6 +49,26 @@
     "declared_params": 1,
     "estimated_params": 2
   },
+  "possible_indirect_callers": {
+    "method_name": "reset",
+    "param_analysis": {
+      "call_site_count": 1,
+      "caller_details": [
+        {
+          "caller": "CObj_copyFrom_FUN_005d2650",
+          "estimated_params": 1
+        }
+      ],
+      "estimated_params": 1,
+      "param_estimates": [
+        1
+      ]
+    },
+    "possible_callers": [
+      "CObj_copyFrom_FUN_005d2650"
+    ],
+    "vtable_offset": 0
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -76,25 +96,5 @@
     ],
     "in_vtable": true,
     "vtable_count": 1
-  },
-  "possible_indirect_callers": {
-    "method_name": "reset",
-    "vtable_offset": 0,
-    "possible_callers": [
-      "CObj_copyFrom_FUN_005d2650"
-    ],
-    "param_analysis": {
-      "estimated_params": 1,
-      "param_estimates": [
-        1
-      ],
-      "call_site_count": 1,
-      "caller_details": [
-        {
-          "caller": "CObj_copyFrom_FUN_005d2650",
-          "estimated_params": 1
-        }
-      ]
-    }
   }
 }

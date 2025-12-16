@@ -34,6 +34,31 @@
     "declared_params": 3,
     "estimated_params": 3
   },
+  "possible_indirect_callers": {
+    "method_name": "getBounds",
+    "param_analysis": {
+      "call_site_count": 2,
+      "caller_details": [
+        {
+          "caller": "CPoly_intersectPoly_FUN_005ce580",
+          "estimated_params": 7
+        },
+        {
+          "caller": "CPoly_intersectPoly_FUN_005ce580",
+          "estimated_params": 3
+        }
+      ],
+      "estimated_params": 7,
+      "param_estimates": [
+        3,
+        7
+      ]
+    },
+    "possible_callers": [
+      "CPoly_intersectPoly_FUN_005ce580"
+    ],
+    "vtable_offset": 88
+  },
   "stack_frame": {
     "frame_size": 36,
     "local_size": 24,
@@ -293,30 +318,5 @@
     ],
     "in_vtable": true,
     "vtable_count": 1
-  },
-  "possible_indirect_callers": {
-    "method_name": "getBounds",
-    "vtable_offset": 88,
-    "possible_callers": [
-      "CPoly_intersectPoly_FUN_005ce580"
-    ],
-    "param_analysis": {
-      "estimated_params": 7,
-      "param_estimates": [
-        3,
-        7
-      ],
-      "call_site_count": 2,
-      "caller_details": [
-        {
-          "caller": "CPoly_intersectPoly_FUN_005ce580",
-          "estimated_params": 7
-        },
-        {
-          "caller": "CPoly_intersectPoly_FUN_005ce580",
-          "estimated_params": 3
-        }
-      ]
-    }
   }
 }

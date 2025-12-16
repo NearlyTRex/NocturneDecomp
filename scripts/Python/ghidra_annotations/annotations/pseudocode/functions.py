@@ -302,140 +302,7 @@ def generate_function_prototype(func_signature, original_func_name, cpp_func_nam
     return prototype
 
 
-def estimate_call_site_params(currentProgram, function):
-    """Estimate parameter counts by analyzing call sites to this function.
-
-    For Watcom register calling convention, parameters are passed in:
-    - Registers: EAX, EDX, EBX, ECX (first 4 params)
-    - Stack: Additional params via PUSH
-
-    For __cdecl/__stdcall, all parameters are passed via PUSH on the stack.
-
-    This function analyzes each call site and counts parameter setup.
-
-    Args:
-        currentProgram: The Ghidra program
-        function: The function to analyze
-
-    Returns:
-        Dictionary with:
-        - declared_params: Number of declared parameters in signature
-        - call_sites: List of call site analysis results
-        - estimated_params: Most common estimated param count from call sites
-        - confidence: Confidence level ('high', 'medium', 'low', 'unknown')
-    """
-    listing = currentProgram.getListing()
-    ref_manager = currentProgram.getReferenceManager()
-    func_manager = currentProgram.getFunctionManager()
-
-    # Get declared parameter count from function signature
-    params = function.getParameters()
-    declared_params = len(params) if params else 0
-
-    # Get calling convention to determine parameter passing style
-    # Based on x86watcom.cspec:
-    #   Register params (EAX, EDX, EBX, ECX): __watcallRegister, __softfp_double
-    #   Stack-only params: __watcallStack, __stdcall, __cdecl, __syscall, __crtmath, __fpustack
-    #   FPU register params (ST0, etc.): __fpureg, __fpureg_safe, __fpu_thunk
-    #   No params: __mathinternal
-    calling_convention = function.getCallingConventionName()
-
-    # Conventions that use general-purpose register parameters (EAX, EDX, EBX, ECX)
-    REGISTER_PARAM_CONVENTIONS = {'__watcallRegister', '__softfp_double'}
-    # Conventions that use stack-only parameters (passed via PUSH)
-    STACK_ONLY_CONVENTIONS = {'__watcallStack', '__stdcall', '__cdecl', '__syscall', '__crtmath', '__fpustack'}
-    # FPU register conventions - params passed in ST0-ST3, not general regs or stack
-    FPU_REGISTER_CONVENTIONS = {'__fpureg', '__fpureg_safe', '__fpu_thunk'}
-    # No parameters
-    NO_PARAM_CONVENTIONS = {'__mathinternal'}
-
-    if calling_convention in NO_PARAM_CONVENTIONS:
-        # No parameters to estimate
-        uses_register_params = False
-    elif calling_convention in FPU_REGISTER_CONVENTIONS:
-        # FPU register calling conventions - params via FPU stack, not countable via PUSH/MOV
-        uses_register_params = False
-    elif calling_convention in REGISTER_PARAM_CONVENTIONS:
-        uses_register_params = True
-    elif calling_convention in STACK_ONLY_CONVENTIONS:
-        uses_register_params = False
-    else:
-        # Unknown convention - assume Watcom register style as default
-        uses_register_params = True
-
-    # Get all references to this function's entry point
-    entry_point = function.getEntryPoint()
-    refs_to = ref_manager.getReferencesTo(entry_point)
-
-    call_sites = []
-    param_counts = []
-    max_call_sites = 50  # Limit analysis for heavily-called functions
-
-    for ref in refs_to:
-        if len(call_sites) >= max_call_sites:
-            break
-        ref_type = ref.getReferenceType()
-        # Only analyze CALL references
-        if not ref_type.isCall():
-            continue
-
-        from_addr = ref.getFromAddress()
-        caller_func = func_manager.getFunctionContaining(from_addr)
-        if not caller_func or caller_func == function:
-            continue
-
-        # Analyze the call site with awareness of calling convention
-        site_info = _analyze_call_site(listing, from_addr, caller_func, uses_register_params)
-        if site_info:
-            site_info['caller'] = caller_func.getName()
-            site_info['call_addr'] = str(from_addr)
-            call_sites.append(site_info)
-            param_counts.append(site_info['estimated_params'])
-
-    # Determine most common param count
-    estimated_params = declared_params  # Default to declared
-    confidence = 'unknown'
-
-    if param_counts:
-        # Find mode (most common count)
-        from collections import Counter
-        count_freq = Counter(param_counts)
-        most_common = count_freq.most_common(1)[0]
-        estimated_params = most_common[0]
-        agreement_ratio = most_common[1] / len(param_counts)
-
-        # Confidence is based on:
-        # 1. How many call sites agree with each other
-        # 2. Whether the estimate matches the declared signature (validation)
-        matches_declared = (estimated_params == declared_params)
-
-        if matches_declared:
-            # Estimate matches declaration - higher confidence
-            if len(param_counts) >= 3 and agreement_ratio >= 0.9:
-                confidence = 'high'
-            elif len(param_counts) >= 2 and agreement_ratio >= 0.7:
-                confidence = 'high'  # Boosted from medium since it matches
-            elif len(param_counts) >= 1:
-                confidence = 'medium'  # Boosted from low since it matches
-        else:
-            # Estimate differs from declaration - use call site agreement only
-            if agreement_ratio >= 0.9 and len(param_counts) >= 3:
-                confidence = 'high'
-            elif agreement_ratio >= 0.7 and len(param_counts) >= 2:
-                confidence = 'medium'
-            elif len(param_counts) >= 1:
-                confidence = 'low'
-
-    return {
-        'declared_params': declared_params,
-        'estimated_params': estimated_params,
-        'call_site_count': len(call_sites),
-        'confidence': confidence,
-        'call_sites': call_sites[:10]  # Limit to first 10 for JSON size
-    }
-
-
-def _analyze_call_site(listing, call_addr, caller_func, uses_register_params=True):
+def analyze_call_site(listing, call_addr, caller_func, uses_register_params=True):
     """Analyze a single call site to estimate parameter count.
 
     Walks backward from the CALL instruction to identify parameter setup.
@@ -463,19 +330,18 @@ def _analyze_call_site(listing, call_addr, caller_func, uses_register_params=Tru
     if not call_instr:
         return None
 
-    # Walk backward through instructions
-    current_instr = call_instr.getPrevious()
+    # Walk backward through instructions for param counting
     caller_body = caller_func.getBody()
-
+    current_instr = call_instr.getPrevious()
     while current_instr and instructions_checked < max_instructions:
+
         # Stop if we leave the caller function
         if not caller_body.contains(current_instr.getAddress()):
             break
 
+        # Stop conditions: hit another CALL, RET, or unconditional jump
         mnemonic = current_instr.getMnemonicString().upper()
         instructions_checked += 1
-
-        # Stop conditions: hit another CALL, RET, or unconditional jump
         if mnemonic in ('CALL', 'RET', 'RETN', 'JMP'):
             break
 
@@ -498,7 +364,7 @@ def _analyze_call_site(listing, call_addr, caller_func, uses_register_params=Tru
             stack_params += 1
 
         # Check for MOV/LEA to register params (Watcom register params only)
-        elif uses_register_params and mnemonic in ('MOV', 'LEA', 'XOR', 'MOVSX', 'MOVZX'):
+        if uses_register_params and mnemonic in ('MOV', 'LEA', 'XOR', 'MOVSX', 'MOVZX'):
             dest_operand = current_instr.getDefaultOperandRepresentation(0)
             if dest_operand:
                 dest_upper = dest_operand.upper()
@@ -524,15 +390,11 @@ def _analyze_call_site(listing, call_addr, caller_func, uses_register_params=Tru
 
     return {
         'estimated_params': estimated_total,
-        'reg_params': list(reg_params_found),
+        'reg_params': sorted(reg_params_found),
         'stack_params': stack_params,
         'instructions_analyzed': instructions_checked
     }
 
-
-# =============================================================================
-# Vtable-aware parameter estimation
-# =============================================================================
 
 def load_vtable_data(vtables_json_path):
     """Load vtable data from JSON and build lookup structures.
@@ -608,222 +470,17 @@ def load_vtable_data(vtables_json_path):
     return result
 
 
-def _find_indirect_call_for_vtable_ref(listing, ref_addr, target_offset, max_scan=20):
-    """Scan forward from a vtable reference to find matching indirect calls.
+def estimate_call_site_params(currentProgram, function, vtable_data=None):
+    """Estimate parameter counts by analyzing call sites to this function.
 
-    Looks for patterns like:
-        MOV EAX, [vtable_addr]    ; ref_addr points here
-        ...
-        CALL [EAX + offset]       ; or CALL [reg + offset]
+    For Watcom register calling convention, parameters are passed in:
+    - Registers: EAX, EDX, EBX, ECX (first 4 params)
+    - Stack: Additional params via PUSH
 
-    Args:
-        listing: Program listing
-        ref_addr: Address where vtable is referenced
-        target_offset: The vtable offset we're looking for
-        max_scan: Maximum instructions to scan forward
+    For __cdecl/__stdcall, all parameters are passed via PUSH on the stack.
 
-    Returns:
-        List of (call_addr, call_type) tuples where call_type is 'direct_offset' or 'reg_indirect'
-    """
-    indirect_calls = []
-    instr = listing.getInstructionAt(ref_addr)
-    if not instr:
-        return indirect_calls
-
-    # Track which register might hold the vtable pointer
-    vtable_reg = None
-
-    # Check if the reference instruction loads vtable into a register
-    # e.g., MOV EAX, [ECX] where [ECX] contains vtable addr
-    mnemonic = instr.getMnemonicString().upper()
-    if mnemonic in ('MOV', 'LEA'):
-        dest = instr.getDefaultOperandRepresentation(0)
-        if dest:
-            dest_upper = dest.upper()
-            if dest_upper in ('EAX', 'EBX', 'ECX', 'EDX', 'ESI', 'EDI'):
-                vtable_reg = dest_upper
-
-    # Scan forward looking for indirect calls
-    current = instr.getNext()
-    scanned = 0
-
-    while current and scanned < max_scan:
-        scanned += 1
-        mnem = current.getMnemonicString().upper()
-
-        # Stop at function boundaries
-        if mnem in ('RET', 'RETN'):
-            break
-
-        # Check for CALL instruction
-        if mnem == 'CALL':
-            operand = current.getDefaultOperandRepresentation(0)
-            if operand:
-                op_upper = operand.upper()
-
-                # Pattern 1: CALL [reg + offset]
-                # e.g., CALL dword ptr [EAX + 0x10]
-                if '[' in op_upper and '+' in op_upper:
-                    # Extract offset from operand like "[EAX + 0x10]"
-                    match = re.search(r'\[\s*(\w+)\s*\+\s*(0x[0-9a-fA-F]+|\d+)\s*\]', op_upper)
-                    if match:
-                        reg = match.group(1)
-                        offset_str = match.group(2)
-                        try:
-                            offset = int(offset_str, 16) if offset_str.startswith('0X') else int(offset_str)
-                            if offset == target_offset:
-                                # Check if this register could hold vtable
-                                if vtable_reg is None or reg == vtable_reg:
-                                    indirect_calls.append((current.getAddress(), 'direct_offset'))
-                        except ValueError:
-                            pass
-
-                # Pattern 2: CALL [reg] (offset 0)
-                elif '[' in op_upper and '+' not in op_upper and '-' not in op_upper:
-                    if target_offset == 0:
-                        match = re.search(r'\[\s*(\w+)\s*\]', op_upper)
-                        if match:
-                            reg = match.group(1)
-                            if vtable_reg is None or reg == vtable_reg:
-                                indirect_calls.append((current.getAddress(), 'direct_offset'))
-
-                # Pattern 3: CALL reg (register was loaded with func ptr)
-                elif op_upper in ('EAX', 'EBX', 'ECX', 'EDX', 'ESI', 'EDI'):
-                    # This is trickier - need to check if reg was loaded from vtable+offset
-                    # For now, skip this pattern as it requires more complex tracking
-                    pass
-
-        # Update vtable_reg tracking if register is overwritten
-        elif mnem in ('MOV', 'LEA', 'XOR', 'POP'):
-            dest = current.getDefaultOperandRepresentation(0)
-            if dest and dest.upper() == vtable_reg:
-                # Vtable register was overwritten, stop tracking
-                vtable_reg = None
-
-        current = current.getNext()
-
-    return indirect_calls
-
-
-def find_vtable_indirect_call_sites(currentProgram, func_addr, vtable_data):
-    """Find indirect call sites for a function that's in a vtable.
-
-    Args:
-        currentProgram: The Ghidra program
-        func_addr: Address of the function (hex string without 0x)
-        vtable_data: Vtable lookup data from load_vtable_data()
-
-    Returns:
-        List of indirect call site addresses
-    """
-    func_addr_lower = func_addr.lower().replace('0x', '')
-    vtable_entries = vtable_data.get('func_to_vtables', {}).get(func_addr_lower, [])
-
-    if not vtable_entries:
-        return []
-
-    listing = currentProgram.getListing()
-    ref_manager = currentProgram.getReferenceManager()
-    addr_factory = currentProgram.getAddressFactory()
-
-    indirect_call_addrs = []
-
-    for entry in vtable_entries:
-        vtable_addr_str = entry['vtable_addr']
-        target_offset = entry['offset']
-
-        # Convert vtable address string to Address object
-        try:
-            vtable_addr = addr_factory.getAddress(vtable_addr_str)
-        except Exception:
-            continue
-
-        # Find all references TO the vtable address
-        # These are places where code is loading/using the vtable
-        refs_to_vtable = ref_manager.getReferencesTo(vtable_addr)
-
-        for ref in refs_to_vtable:
-            from_addr = ref.getFromAddress()
-
-            # Scan forward from this reference looking for indirect calls
-            # that use the target offset
-            calls = _find_indirect_call_for_vtable_ref(
-                listing, from_addr, target_offset)
-
-            for call_addr, call_type in calls:
-                indirect_call_addrs.append({
-                    'call_addr': call_addr,
-                    'call_type': call_type,
-                    'vtable_addr': vtable_addr_str,
-                    'offset': target_offset,
-                    'class_name': entry.get('class_name', 'Unknown')
-                })
-
-    return indirect_call_addrs
-
-
-def _analyze_indirect_call_site(listing, call_addr, caller_func, func_manager):
-    """Analyze an indirect call site to estimate parameter count.
-
-    Similar to _analyze_call_site but for indirect calls (CALL [reg+offset]).
-    Assumes thiscall convention where ECX = this pointer (implicit param).
-
-    Args:
-        listing: Program listing
-        call_addr: Address of the indirect CALL instruction
-        caller_func: The function containing the call
-        func_manager: Function manager
-
-    Returns:
-        Dictionary with analysis results or None on failure
-    """
-    # For thiscall, ECX is the implicit 'this' pointer - don't count it
-    # Other register params are rare for virtual functions
-    # Most params go on stack via PUSH
-
-    stack_params = 0
-    instructions_checked = 0
-    max_instructions = 30
-
-    call_instr = listing.getInstructionAt(call_addr)
-    if not call_instr:
-        return None
-
-    # Walk backward through instructions
-    current_instr = call_instr.getPrevious()
-    caller_body = caller_func.getBody()
-
-    while current_instr and instructions_checked < max_instructions:
-        if not caller_body.contains(current_instr.getAddress()):
-            break
-
-        mnemonic = current_instr.getMnemonicString().upper()
-        instructions_checked += 1
-
-        # Stop conditions
-        if mnemonic in ('CALL', 'RET', 'RETN', 'JMP'):
-            break
-
-        # Count PUSH instructions as stack parameters
-        if mnemonic == 'PUSH':
-            stack_params += 1
-
-        current_instr = current_instr.getPrevious()
-
-    return {
-        'estimated_params': stack_params,
-        'stack_params': stack_params,
-        'reg_params': [],  # thiscall: ECX is implicit, not counted
-        'instructions_analyzed': instructions_checked,
-        'is_indirect': True
-    }
-
-
-def estimate_call_site_params_with_vtable(currentProgram, function, vtable_data=None):
-    """Estimate parameter counts including vtable indirect calls.
-
-    Enhanced version of estimate_call_site_params that also analyzes
-    indirect calls through vtables.
+    Optionally includes vtable membership info if vtable_data is provided.
+    Note: Indirect caller detection is done in a second pass by vtable_calls.py.
 
     Args:
         currentProgram: The Ghidra program
@@ -831,7 +488,7 @@ def estimate_call_site_params_with_vtable(currentProgram, function, vtable_data=
         vtable_data: Optional vtable lookup data from load_vtable_data()
 
     Returns:
-        Dictionary with parameter estimation results including vtable info
+        Dictionary with parameter estimation results, optionally including vtable info
     """
     listing = currentProgram.getListing()
     ref_manager = currentProgram.getReferenceManager()
@@ -881,7 +538,7 @@ def estimate_call_site_params_with_vtable(currentProgram, function, vtable_data=
         if not caller_func or caller_func == function:
             continue
 
-        site_info = _analyze_call_site(listing, from_addr, caller_func, uses_register_params)
+        site_info = analyze_call_site(listing, from_addr, caller_func, uses_register_params)
         if site_info:
             site_info['caller'] = caller_func.getName()
             site_info['call_addr'] = str(from_addr)
@@ -889,15 +546,13 @@ def estimate_call_site_params_with_vtable(currentProgram, function, vtable_data=
             call_sites.append(site_info)
             param_counts.append(site_info['estimated_params'])
 
-    # === Indirect call sites via vtable ===
+    # === Vtable info ===
     vtable_info = None
-    indirect_call_sites = []
-
     if vtable_data:
         func_addr = str(entry_point).lower().replace('0x', '')
         vtable_entries = vtable_data.get('func_to_vtables', {}).get(func_addr, [])
-
         if vtable_entries:
+
             # Record vtable info for this function
             vtable_info = {
                 'in_vtable': True,
@@ -912,34 +567,12 @@ def estimate_call_site_params_with_vtable(currentProgram, function, vtable_data=
                 ]
             }
 
-            # Find indirect call sites
-            indirect_calls = find_vtable_indirect_call_sites(
-                currentProgram, func_addr, vtable_data)
-
-            for call_info in indirect_calls[:max_call_sites - len(call_sites)]:
-                call_addr = call_info['call_addr']
-                caller_func = func_manager.getFunctionContaining(call_addr)
-                if not caller_func or caller_func == function:
-                    continue
-
-                site_info = _analyze_indirect_call_site(
-                    listing, call_addr, caller_func, func_manager)
-                if site_info:
-                    site_info['caller'] = caller_func.getName()
-                    site_info['call_addr'] = str(call_addr)
-                    site_info['call_type'] = 'indirect_vtable'
-                    site_info['vtable_offset'] = call_info['offset']
-                    site_info['class_name'] = call_info['class_name']
-                    indirect_call_sites.append(site_info)
-                    param_counts.append(site_info['estimated_params'])
-
-    # Combine all call sites
-    all_call_sites = call_sites + indirect_call_sites
+    # Use direct call sites for parameter estimation
+    all_call_sites = call_sites
 
     # Determine most common param count
     estimated_params = declared_params
     confidence = 'unknown'
-
     if param_counts:
         from collections import Counter
         count_freq = Counter(param_counts)
@@ -968,8 +601,6 @@ def estimate_call_site_params_with_vtable(currentProgram, function, vtable_data=
         'declared_params': declared_params,
         'estimated_params': estimated_params,
         'call_site_count': len(all_call_sites),
-        'direct_call_count': len(call_sites),
-        'indirect_call_count': len(indirect_call_sites),
         'confidence': confidence,
         'call_sites': all_call_sites[:10]
     }

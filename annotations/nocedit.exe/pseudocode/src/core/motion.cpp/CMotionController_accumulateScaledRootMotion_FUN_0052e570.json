@@ -32,6 +32,39 @@
     "declared_params": 4,
     "estimated_params": 4
   },
+  "possible_indirect_callers": {
+    "method_name": "accumulateScaledRootMotion",
+    "param_analysis": {
+      "call_site_count": 4,
+      "caller_details": [
+        {
+          "caller": "CMotionController_advanceFrameAndCheckSignals_FUN_0052de70",
+          "estimated_params": 2
+        },
+        {
+          "caller": "CMotionController_advanceFrameAndCheckSignals_FUN_0052de70",
+          "estimated_params": 2
+        },
+        {
+          "caller": "CMotionController_advanceFrameToExitPoint_FUN_0052e020",
+          "estimated_params": 2
+        },
+        {
+          "caller": "CMotionController_advanceFrameToExitPoint_FUN_0052e020",
+          "estimated_params": 2
+        }
+      ],
+      "estimated_params": 2,
+      "param_estimates": [
+        2
+      ]
+    },
+    "possible_callers": [
+      "CMotionController_advanceFrameAndCheckSignals_FUN_0052de70",
+      "CMotionController_advanceFrameToExitPoint_FUN_0052e020"
+    ],
+    "vtable_offset": 8
+  },
   "stack_frame": {
     "frame_size": 20,
     "local_size": 4,
@@ -80,38 +113,5 @@
     ],
     "in_vtable": true,
     "vtable_count": 1
-  },
-  "possible_indirect_callers": {
-    "method_name": "accumulateScaledRootMotion",
-    "vtable_offset": 8,
-    "possible_callers": [
-      "CMotionController_advanceFrameAndCheckSignals_FUN_0052de70",
-      "CMotionController_advanceFrameToExitPoint_FUN_0052e020"
-    ],
-    "param_analysis": {
-      "estimated_params": 2,
-      "param_estimates": [
-        2
-      ],
-      "call_site_count": 4,
-      "caller_details": [
-        {
-          "caller": "CMotionController_advanceFrameAndCheckSignals_FUN_0052de70",
-          "estimated_params": 2
-        },
-        {
-          "caller": "CMotionController_advanceFrameAndCheckSignals_FUN_0052de70",
-          "estimated_params": 2
-        },
-        {
-          "caller": "CMotionController_advanceFrameToExitPoint_FUN_0052e020",
-          "estimated_params": 2
-        },
-        {
-          "caller": "CMotionController_advanceFrameToExitPoint_FUN_0052e020",
-          "estimated_params": 2
-        }
-      ]
-    }
   }
 }

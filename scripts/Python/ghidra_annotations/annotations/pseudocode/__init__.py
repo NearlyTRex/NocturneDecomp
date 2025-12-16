@@ -106,3 +106,6 @@ from ghidra_annotations.annotations.pseudocode.transforms import (
 from ghidra_annotations.annotations.pseudocode.exporter import (
     export_pseudocode
 )
+from ghidra_annotations.annotations.pseudocode.vtable_calls import (
+    update_function_json_files as update_vtable_indirect_callers
+)

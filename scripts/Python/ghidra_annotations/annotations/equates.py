@@ -70,7 +70,7 @@ def import_equates(currentProgram, path):
         currentProgram.endTransaction(tx_id, True)
         log_info("Import complete")
 
-def _scan_equates_worker(start_addr, end_addr, listing, equate_table):
+def scan_equates_worker(start_addr, end_addr, listing, equate_table):
     """Worker function to scan instructions for scalars and applied equates.
 
     Returns a dict with two keys:
@@ -178,7 +178,7 @@ def export_equates(currentProgram, path):
     # Scan in parallel
     log_info("Scanning for scalar values (parallel)")
     listing = currentProgram.getListing()
-    results = parallel_scan_ranges(currentProgram, _scan_equates_worker, extra_args=(listing, equate_table))
+    results = parallel_scan_ranges(currentProgram, scan_equates_worker, extra_args=(listing, equate_table))
 
     # Merge results from all workers
     all_scalars = {}

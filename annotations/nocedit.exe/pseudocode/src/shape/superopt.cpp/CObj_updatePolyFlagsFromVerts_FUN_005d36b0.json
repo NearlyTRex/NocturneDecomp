@@ -32,6 +32,31 @@
     "declared_params": 2,
     "estimated_params": 2
   },
+  "possible_indirect_callers": {
+    "method_name": "updatePolyFlagsFromVerts",
+    "param_analysis": {
+      "call_site_count": 2,
+      "caller_details": [
+        {
+          "caller": "CObj_setStateFlagFromAttrib_FUN_005d3590",
+          "estimated_params": 4
+        },
+        {
+          "caller": "CObj_setStateFlagToAttrib_FUN_005d3650",
+          "estimated_params": 4
+        }
+      ],
+      "estimated_params": 4,
+      "param_estimates": [
+        4
+      ]
+    },
+    "possible_callers": [
+      "CObj_setStateFlagFromAttrib_FUN_005d3590",
+      "CObj_setStateFlagToAttrib_FUN_005d3650"
+    ],
+    "vtable_offset": 140
+  },
   "stack_frame": {
     "frame_size": 44,
     "local_size": 36,
@@ -94,30 +119,5 @@
     ],
     "in_vtable": true,
     "vtable_count": 1
-  },
-  "possible_indirect_callers": {
-    "method_name": "updatePolyFlagsFromVerts",
-    "vtable_offset": 140,
-    "possible_callers": [
-      "CObj_setStateFlagFromAttrib_FUN_005d3590",
-      "CObj_setStateFlagToAttrib_FUN_005d3650"
-    ],
-    "param_analysis": {
-      "estimated_params": 4,
-      "param_estimates": [
-        4
-      ],
-      "call_site_count": 2,
-      "caller_details": [
-        {
-          "caller": "CObj_setStateFlagFromAttrib_FUN_005d3590",
-          "estimated_params": 4
-        },
-        {
-          "caller": "CObj_setStateFlagToAttrib_FUN_005d3650",
-          "estimated_params": 4
-        }
-      ]
-    }
   }
 }

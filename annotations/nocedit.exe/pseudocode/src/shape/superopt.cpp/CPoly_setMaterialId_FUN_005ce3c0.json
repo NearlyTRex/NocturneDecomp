@@ -32,6 +32,26 @@
     "declared_params": 2,
     "estimated_params": 2
   },
+  "possible_indirect_callers": {
+    "method_name": "setMaterialId",
+    "param_analysis": {
+      "call_site_count": 1,
+      "caller_details": [
+        {
+          "caller": "CPoly_init_FUN_005cc670",
+          "estimated_params": 2
+        }
+      ],
+      "estimated_params": 2,
+      "param_estimates": [
+        2
+      ]
+    },
+    "possible_callers": [
+      "CPoly_init_FUN_005cc670"
+    ],
+    "vtable_offset": 80
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -66,25 +86,5 @@
     ],
     "in_vtable": true,
     "vtable_count": 1
-  },
-  "possible_indirect_callers": {
-    "method_name": "setMaterialId",
-    "vtable_offset": 80,
-    "possible_callers": [
-      "CPoly_init_FUN_005cc670"
-    ],
-    "param_analysis": {
-      "estimated_params": 2,
-      "param_estimates": [
-        2
-      ],
-      "call_site_count": 1,
-      "caller_details": [
-        {
-          "caller": "CPoly_init_FUN_005cc670",
-          "estimated_params": 2
-        }
-      ]
-    }
   }
 }

@@ -83,7 +83,7 @@ def import_comments(currentProgram, path):
         currentProgram.endTransaction(tx_id, True)
         log_info("Import complete")
 
-def _scan_comments_worker(start_addr, end_addr, listing):
+def scan_comments_worker(start_addr, end_addr, listing):
     """Worker function to scan comments in an address range."""
     comments = []
     try:
@@ -129,7 +129,7 @@ def export_comments(currentProgram, path):
     # Scan in parallel
     log_info("Gathering comments (parallel)")
     listing = currentProgram.getListing()
-    comments = parallel_scan_ranges(currentProgram, _scan_comments_worker, extra_args=(listing,))
+    comments = parallel_scan_ranges(currentProgram, scan_comments_worker, extra_args=(listing,))
     log_info("Found %d comments" % len(comments))
 
     # Apply importable markings

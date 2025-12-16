@@ -118,6 +118,61 @@
     "declared_params": 1,
     "estimated_params": 1
   },
+  "possible_indirect_callers": {
+    "method_name": "load",
+    "param_analysis": {
+      "call_site_count": 8,
+      "caller_details": [
+        {
+          "caller": "CFileManager_checkInPodFile_FUN_004baf00",
+          "estimated_params": 1
+        },
+        {
+          "caller": "CFileManager_checkInPodFile_FUN_004baf00",
+          "estimated_params": 2
+        },
+        {
+          "caller": "CFileManager_checkOutAndExtractPod_FUN_004ba740",
+          "estimated_params": 1
+        },
+        {
+          "caller": "CFileManager_extractPodFile_FUN_004b6e10",
+          "estimated_params": 1
+        },
+        {
+          "caller": "CFileManager_managePodMounts_FUN_004bcec0",
+          "estimated_params": 1
+        },
+        {
+          "caller": "CFileManager_rebuildLastPod_FUN_004b5a50",
+          "estimated_params": 1
+        },
+        {
+          "caller": "CFileManager_undoCheckout_FUN_004bc2b0",
+          "estimated_params": 1
+        },
+        {
+          "caller": "remountAllPods_FUN_004b5350",
+          "estimated_params": 1
+        }
+      ],
+      "estimated_params": 1,
+      "param_estimates": [
+        1,
+        2
+      ]
+    },
+    "possible_callers": [
+      "CFileManager_checkInPodFile_FUN_004baf00",
+      "CFileManager_checkOutAndExtractPod_FUN_004ba740",
+      "CFileManager_extractPodFile_FUN_004b6e10",
+      "CFileManager_managePodMounts_FUN_004bcec0",
+      "CFileManager_rebuildLastPod_FUN_004b5a50",
+      "CFileManager_undoCheckout_FUN_004bc2b0",
+      "remountAllPods_FUN_004b5350"
+    ],
+    "vtable_offset": 4
+  },
   "stack_frame": {
     "frame_size": 376,
     "local_size": 372,
@@ -272,60 +327,5 @@
     ],
     "in_vtable": true,
     "vtable_count": 1
-  },
-  "possible_indirect_callers": {
-    "method_name": "load",
-    "vtable_offset": 4,
-    "possible_callers": [
-      "CFileManager_checkInPodFile_FUN_004baf00",
-      "CFileManager_checkOutAndExtractPod_FUN_004ba740",
-      "CFileManager_extractPodFile_FUN_004b6e10",
-      "CFileManager_managePodMounts_FUN_004bcec0",
-      "CFileManager_rebuildLastPod_FUN_004b5a50",
-      "CFileManager_undoCheckout_FUN_004bc2b0",
-      "remountAllPods_FUN_004b5350"
-    ],
-    "param_analysis": {
-      "estimated_params": 1,
-      "param_estimates": [
-        1,
-        2
-      ],
-      "call_site_count": 8,
-      "caller_details": [
-        {
-          "caller": "CFileManager_checkInPodFile_FUN_004baf00",
-          "estimated_params": 1
-        },
-        {
-          "caller": "CFileManager_checkInPodFile_FUN_004baf00",
-          "estimated_params": 2
-        },
-        {
-          "caller": "CFileManager_checkOutAndExtractPod_FUN_004ba740",
-          "estimated_params": 1
-        },
-        {
-          "caller": "CFileManager_extractPodFile_FUN_004b6e10",
-          "estimated_params": 1
-        },
-        {
-          "caller": "CFileManager_managePodMounts_FUN_004bcec0",
-          "estimated_params": 1
-        },
-        {
-          "caller": "CFileManager_rebuildLastPod_FUN_004b5a50",
-          "estimated_params": 1
-        },
-        {
-          "caller": "CFileManager_undoCheckout_FUN_004bc2b0",
-          "estimated_params": 1
-        },
-        {
-          "caller": "remountAllPods_FUN_004b5350",
-          "estimated_params": 1
-        }
-      ]
-    }
   }
 }

@@ -34,6 +34,31 @@
     "declared_params": 2,
     "estimated_params": 2
   },
+  "possible_indirect_callers": {
+    "method_name": "findVertexIndex",
+    "param_analysis": {
+      "call_site_count": 2,
+      "caller_details": [
+        {
+          "caller": "CObj_findAndRemovePolygonsUsingVertex_FUN_005d30c0",
+          "estimated_params": 3
+        },
+        {
+          "caller": "CObj_findAndRemoveVertex_FUN_005d3250",
+          "estimated_params": 3
+        }
+      ],
+      "estimated_params": 3,
+      "param_estimates": [
+        3
+      ]
+    },
+    "possible_callers": [
+      "CObj_findAndRemovePolygonsUsingVertex_FUN_005d30c0",
+      "CObj_findAndRemoveVertex_FUN_005d3250"
+    ],
+    "vtable_offset": 96
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -83,30 +108,5 @@
     ],
     "in_vtable": true,
     "vtable_count": 1
-  },
-  "possible_indirect_callers": {
-    "method_name": "findVertexIndex",
-    "vtable_offset": 96,
-    "possible_callers": [
-      "CObj_findAndRemovePolygonsUsingVertex_FUN_005d30c0",
-      "CObj_findAndRemoveVertex_FUN_005d3250"
-    ],
-    "param_analysis": {
-      "estimated_params": 3,
-      "param_estimates": [
-        3
-      ],
-      "call_site_count": 2,
-      "caller_details": [
-        {
-          "caller": "CObj_findAndRemovePolygonsUsingVertex_FUN_005d30c0",
-          "estimated_params": 3
-        },
-        {
-          "caller": "CObj_findAndRemoveVertex_FUN_005d3250",
-          "estimated_params": 3
-        }
-      ]
-    }
   }
 }

@@ -34,6 +34,26 @@
     "declared_params": 1,
     "estimated_params": 1
   },
+  "possible_indirect_callers": {
+    "method_name": "restoreVertexPositions",
+    "param_analysis": {
+      "call_site_count": 1,
+      "caller_details": [
+        {
+          "caller": "CObj_restoreVertexPositionsWithFlag_FUN_005d38b0",
+          "estimated_params": 1
+        }
+      ],
+      "estimated_params": 1,
+      "param_estimates": [
+        1
+      ]
+    },
+    "possible_callers": [
+      "CObj_restoreVertexPositionsWithFlag_FUN_005d38b0"
+    ],
+    "vtable_offset": 152
+  },
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -69,25 +89,5 @@
     ],
     "in_vtable": true,
     "vtable_count": 1
-  },
-  "possible_indirect_callers": {
-    "method_name": "restoreVertexPositions",
-    "vtable_offset": 152,
-    "possible_callers": [
-      "CObj_restoreVertexPositionsWithFlag_FUN_005d38b0"
-    ],
-    "param_analysis": {
-      "estimated_params": 1,
-      "param_estimates": [
-        1
-      ],
-      "call_site_count": 1,
-      "caller_details": [
-        {
-          "caller": "CObj_restoreVertexPositionsWithFlag_FUN_005d38b0",
-          "estimated_params": 1
-        }
-      ]
-    }
   }
 }

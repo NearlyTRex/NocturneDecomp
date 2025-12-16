@@ -43,6 +43,26 @@
     "declared_params": 2,
     "estimated_params": 2
   },
+  "possible_indirect_callers": {
+    "method_name": "containsPoint2D",
+    "param_analysis": {
+      "call_site_count": 1,
+      "caller_details": [
+        {
+          "caller": "CPoly_rayIntersect_FUN_005d0010",
+          "estimated_params": 2
+        }
+      ],
+      "estimated_params": 2,
+      "param_estimates": [
+        2
+      ]
+    },
+    "possible_callers": [
+      "CPoly_rayIntersect_FUN_005d0010"
+    ],
+    "vtable_offset": 100
+  },
   "stack_frame": {
     "frame_size": 484,
     "local_size": 476,
@@ -2146,25 +2166,5 @@
     ],
     "in_vtable": true,
     "vtable_count": 1
-  },
-  "possible_indirect_callers": {
-    "method_name": "containsPoint2D",
-    "vtable_offset": 100,
-    "possible_callers": [
-      "CPoly_rayIntersect_FUN_005d0010"
-    ],
-    "param_analysis": {
-      "estimated_params": 2,
-      "param_estimates": [
-        2
-      ],
-      "call_site_count": 1,
-      "caller_details": [
-        {
-          "caller": "CPoly_rayIntersect_FUN_005d0010",
-          "estimated_params": 2
-        }
-      ]
-    }
   }
 }

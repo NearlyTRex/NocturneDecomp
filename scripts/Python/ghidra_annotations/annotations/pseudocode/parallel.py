@@ -18,8 +18,7 @@ from ghidra_annotations.annotations.pseudocode.assembly import (
 )
 from ghidra_annotations.annotations.pseudocode.functions import (
     get_function_xrefs, get_function_globals, get_function_calls,
-    estimate_call_site_params, estimate_call_site_params_with_vtable,
-    load_vtable_data
+    estimate_call_site_params
 )
 from ghidra_annotations.annotations.pseudocode.stack_patterns import (
     detect_stack_patterns_from_listing
@@ -160,17 +159,13 @@ class DecompileWorker:
             result.stack_patterns_raw = detect_stack_patterns_from_listing(
                 self.program_listing, func)
             # Parameter estimation is optional - don't fail function if it errors
-            # Use vtable-aware estimation if vtable data is available
             try:
-                if self.vtable_data:
-                    param_result = estimate_call_site_params_with_vtable(
-                        self.currentProgram, func, self.vtable_data)
-                    # Extract vtable_info to top level (it's function metadata, not param-specific)
-                    if param_result and 'vtable_info' in param_result:
-                        result.vtable_info = param_result.pop('vtable_info')
-                    result.param_estimates = param_result
-                else:
-                    result.param_estimates = estimate_call_site_params(self.currentProgram, func)
+                param_result = estimate_call_site_params(
+                    self.currentProgram, func, self.vtable_data)
+                # Extract vtable_info to top level (it's function metadata, not param-specific)
+                if param_result and 'vtable_info' in param_result:
+                    result.vtable_info = param_result.pop('vtable_info')
+                result.param_estimates = param_result
             except Exception:
                 result.param_estimates = None
             result.metadata_time = time.time() - metadata_start

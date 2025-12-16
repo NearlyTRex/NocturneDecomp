@@ -203,7 +203,7 @@ def import_cross_references(currentProgram, path):
         currentProgram.endTransaction(tx_id, True)
         log_info("Import complete")
 
-def _scan_references_worker(start_addr, end_addr, ref_mgr):
+def scan_references_worker(start_addr, end_addr, ref_mgr):
     """Worker function to scan references in an address range."""
     references = []
     try:
@@ -248,7 +248,7 @@ def export_cross_references(currentProgram, path):
     # Scan in parallel
     log_info("Gathering cross references (parallel)")
     ref_mgr = currentProgram.getReferenceManager()
-    cross_references = parallel_scan_ranges(currentProgram, _scan_references_worker, extra_args=(ref_mgr,))
+    cross_references = parallel_scan_ranges(currentProgram, scan_references_worker, extra_args=(ref_mgr,))
     log_info("Found %d cross references" % len(cross_references))
 
     # Apply importable markings
