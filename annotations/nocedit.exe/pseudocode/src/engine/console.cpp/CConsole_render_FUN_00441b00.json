@@ -1,18 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 122,
-    "complexity_score": 97,
+    "complexity_score": 51,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
-    "pseudocode_lines": 52,
-    "suspect_count": 3,
-    "suspect_types": [
-      "badspacebase",
-      "pointer_cast",
-      "register_param"
-    ],
-    "total_lines": 174
+    "pseudocode_lines": 51,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 173
   },
   "cross_references": [
     {
@@ -50,6 +46,25 @@
       "name": "g_ActiveRenderColor",
       "type": "int",
       "value": null
+    }
+  ],
+  "replacements": [
+    {
+      "description": "Remove unused BADSPACEBASE variable",
+      "find": "  BADSPACEBASE *in_ESP;\n",
+      "replace": ""
+    },
+    {
+      "description": "Simplify pointer increment to valid C++",
+      "find": "(\\w+) = \\(CConsole \\*\\)\\(\\(int\\)&\\1->file_logging_enabled \\+ 1\\);",
+      "regex": true,
+      "replace": "\\1 = (CConsole *)((char *)\\1 + 1);"
+    },
+    {
+      "description": "Clarify row stride pointer arithmetic",
+      "find": "(\\w+) = \\(CConsole \\*\\)\\((\\w+)->console_buffer \\+ 0x4c\\);",
+      "regex": true,
+      "replace": "\\1 = (CConsole *)((char *)\\2 + 0x50);  // next row (80 byte stride)"
     }
   ],
   "stack_frame": {
@@ -110,27 +125,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 6,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 6,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 33,
-      "match": "(CConsole *)((int)",
-      "text": "pCVar3 = (CConsole *)((int)&pCVar3->fileLoggingEnabled + 1);",
-      "type": "pointer_cast"
-    }
-  ]
+  "suspects": []
 }

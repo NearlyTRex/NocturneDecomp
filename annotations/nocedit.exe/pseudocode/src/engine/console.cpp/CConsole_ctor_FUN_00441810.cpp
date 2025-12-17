@@ -11,17 +11,17 @@ engine_console_cpp_CConsole_ctor_FUN_00441810
           (CConsole *this_ptr,int width,int height,int screen_x,int screen_y)
 
 {
-  this_ptr->consoleWidth = width;
-  this_ptr->consoleHeight = height;
-  this_ptr->screenX = screen_x;
-  this_ptr->screenY = screen_y;
-  if (this_ptr->screenX < 1) {
-    this_ptr->screenX = 1;
+  this_ptr->console_width = width;
+  this_ptr->console_height = height;
+  this_ptr->screen_x = screen_x;
+  this_ptr->screen_y = screen_y;
+  if (this_ptr->screen_x < 1) {
+    this_ptr->screen_x = 1;
   }
-  if (this_ptr->screenY < 1) {
-    this_ptr->screenY = 1;
+  if (this_ptr->screen_y < 1) {
+    this_ptr->screen_y = 1;
   }
   engine_console_cpp_CConsole_reset_FUN_00441a40(this_ptr);
-  this_ptr->fileLoggingEnabled = 0;
+  this_ptr->file_logging_enabled = 0;
   return this_ptr;
 }

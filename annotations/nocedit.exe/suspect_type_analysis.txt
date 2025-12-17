@@ -5,13 +5,13 @@ SUSPECT TYPE ANALYSIS
 SUSPECT TYPE COUNTS
 --------------------------------------------------
   stack_param                    37707 ( 60.5%)
-  pointer_cast                    5195 (  8.3%)
-  stack_ref                       4205 (  6.7%)
-  unknown_field                   3024 (  4.8%)
+  pointer_cast                    5194 (  8.3%)
+  stack_ref                       4201 (  6.7%)
+  unknown_field                   3024 (  4.9%)
   unaffected_reg                  2776 (  4.5%)
   concat_artifact                 1901 (  3.0%)
-  register_param                  1835 (  2.9%)
-  badspacebase                    1624 (  2.6%)
+  register_param                  1833 (  2.9%)
+  badspacebase                    1622 (  2.6%)
   extra_output                    1440 (  2.3%)
   suspect_float                    932 (  1.5%)
   unresolved_funcptr               472 (  0.8%)
@@ -65,7 +65,7 @@ Example functions:
     int in_stack_0000001c;...
 
 ====================================================================================================
-TYPE: pointer_cast (5195 occurrences)
+TYPE: pointer_cast (5194 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -101,7 +101,7 @@ Example functions:
     pvVar2 = (void *)((int)g_ScreenBufferArray[width] + dest_y);...
 
 ====================================================================================================
-TYPE: stack_ref (4205 occurrences)
+TYPE: stack_ref (4201 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -261,11 +261,11 @@ Example functions:
     if ((((CVert *)this_ptr)->position).x <= (double)CONCAT44 /* combine 2-byte valu...
 
 ====================================================================================================
-TYPE: register_param (1835 occurrences)
+TYPE: register_param (1833 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  1625x  in_ESP
+  1623x  in_ESP
     86x  in_EAX
     39x  in_ECX
     20x  in_EDX
@@ -349,11 +349,11 @@ Example functions:
     BADSPACEBASE *in_ESP;...
 
 ====================================================================================================
-TYPE: badspacebase (1624 occurrences)
+TYPE: badspacebase (1622 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  1624x  BADSPACEBASE
+  1622x  BADSPACEBASE
 
 Example functions:
   entry

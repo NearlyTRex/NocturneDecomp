@@ -19,11 +19,11 @@ void __cdecl engine_console_cpp_CConsole_scrollUp_FUN_00441a80(CConsole *this_pt
   char *pcVar8;
   
   iVar6 = 0;
-  pcVar5 = this_ptr->consoleBuffer;
-  pcVar4 = this_ptr->consoleBuffer;
-  while (pcVar5 = pcVar5 + GAME_CONSOLE_ROW_STRIDE, iVar1 = this_ptr->consoleHeight + -1,
+  pcVar5 = this_ptr->console_buffer;
+  pcVar4 = this_ptr->console_buffer;
+  while (pcVar5 = pcVar5 + GAME_CONSOLE_ROW_STRIDE, iVar1 = this_ptr->console_height + -1,
         iVar6 < iVar1) {
-    uVar3 = this_ptr->consoleWidth;
+    uVar3 = this_ptr->console_width;
     iVar6 = iVar6 + 1;
     pcVar7 = pcVar5;
     pcVar8 = pcVar4;
@@ -39,6 +39,7 @@ void __cdecl engine_console_cpp_CConsole_scrollUp_FUN_00441a80(CConsole *this_pt
     }
     pcVar4 = pcVar4 + GAME_CONSOLE_ROW_STRIDE;
   }
-  crt_memory_c_memset_FUN_005fde40(this_ptr->consoleBuffer + iVar1 * 0x50,0,this_ptr->consoleWidth);
+  crt_memory_c_memset_FUN_005fde40
+            (this_ptr->console_buffer + iVar1 * 0x50,0,this_ptr->console_width);
   return;
 }

@@ -158,7 +158,7 @@ void __cdecl core_inivar_cpp_readIniData_FUN_004fbd90(void)
   engine_ini_cpp_CIniFile_readIniHeader_FUN_004fbae0((CIniFile *)&stack0xffffff00,"Debug");
   engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30
             ((CIniFile *)&stack0xffffff04,"logConsoleFlag",
-             &g_CConsolePtr->fileLoggingEnabled);
+             &g_CConsolePtr->file_logging_enabled);
   engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30
             ((CIniFile *)&stack0xffffff08,"headOfHorrorCheat",
              &g_CGamePtr->head_of_horror_cheat);

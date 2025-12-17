@@ -6,9 +6,9 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 258
 Total functions: 7154
-Clean functions: 2882 (40.3%)
-Files at 100%: 21
-Files at 90%+: 22
+Clean functions: 2884 (40.3%)
+Files at 100%: 22
+Files at 90%+: 23
 Files at 50%+: 100
 
 ====================================================================================================
@@ -34,9 +34,10 @@ FILES AT 100% (COMPLETE)
   crt/system.c: 1 functions, 5 lines
   crt/util.c: 1 functions, 7 lines
   crt/windows.c: 1 functions, 16 lines
+  engine/console.cpp: 8 functions, 198 lines
   engine/keys.cpp: 9 functions, 56 lines
 
-Total: 21 files
+Total: 22 files
 
 ====================================================================================================
 FILES AT 90-99% (ALMOST COMPLETE)
@@ -77,9 +78,6 @@ FILES AT 50-89%
    75.0% | core/water.cpp
          6/8 clean, 2 remaining
          Suspects: badspacebase:2, extra_output:2, pointer_cast:2, register_param:2, sborrow_artifact:1, stack_param:7, stack_ref:3, suspect_float:2, unknown_field:7, warning_overlapping_globals:2
-   75.0% | engine/console.cpp
-         6/8 clean, 2 remaining
-         Suspects: badspacebase:2, pointer_cast:1, register_param:2, stack_ref:4
    75.0% | wincore/windll.cpp
          54/72 clean, 18 remaining
          Suspects: badspacebase:6, concat_artifact:277, pointer_cast:58, register_param:12, stack_param:6, stack_ref:1, sub_artifact:6, unaffected_reg:8, undefined_type:5, unknown_field:4, warning_indirect_jump:1, warning_jumptable:1, warning_overlapping_globals:3
@@ -285,7 +283,7 @@ FILES AT 50-89%
          3/6 clean, 3 remaining
          Suspects: badspacebase:1, register_param:1, stack_param:19, stack_ref:2, suspect_float:5, unaffected_reg:2, unknown_field:3
 
-Total: 78 files
+Total: 77 files
 
 ====================================================================================================
 FILES BELOW 50%

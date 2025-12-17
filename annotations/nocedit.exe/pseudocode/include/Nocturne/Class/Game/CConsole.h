@@ -3,13 +3,13 @@
 // Structure: CConsole
 // Ghidra size: 0xfbc (4028 bytes)
 typedef struct CConsole {
-    int fileLoggingEnabled; // 0x0
-    char consoleBuffer[4000]; // 0x4
-    int currentColumn; // 0xfa4
-    int currentRow; // 0xfa8
-    int consoleWidth; // 0xfac
-    int consoleHeight; // 0xfb0
-    int screenX; // 0xfb4
-    int screenY; // 0xfb8
+    int file_logging_enabled; // 0x0
+    char console_buffer[4000]; // 0x4
+    int current_column; // 0xfa4
+    int current_row; // 0xfa8
+    int console_width; // 0xfac
+    int console_height; // 0xfb0
+    int screen_x; // 0xfb4
+    int screen_y; // 0xfb8
 } CConsole;
 

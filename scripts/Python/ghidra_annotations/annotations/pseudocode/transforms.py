@@ -5,6 +5,8 @@ import os
 import json as json_module
 import re
 
+from ghidra_annotations.util.log import log_info
+
 
 # Type replacement mappings for undefined types
 UNDEFINED_TYPE_REPLACEMENTS = {
@@ -281,6 +283,7 @@ def preload_custom_replacements(base_dir):
     """Pre-load all custom replacements from JSON files in a directory.
 
     Call this once before processing functions to cache all replacements.
+    Recursively scans all subdirectories.
 
     Args:
         base_dir: Directory containing function JSON files
@@ -292,19 +295,21 @@ def preload_custom_replacements(base_dir):
     if not base_dir or not os.path.exists(base_dir):
         return
 
-    # Scan for all .json files and load their replacements
+    # Recursively scan for all .json files and load their replacements
     try:
-        for filename in os.listdir(base_dir):
-            if filename.endswith('.json'):
-                json_path = os.path.join(base_dir, filename)
-                try:
-                    with open(json_path, 'r') as f:
-                        data = json_module.load(f)
-                        replacements = data.get('replacements', [])
-                        if replacements:
-                            _replacements_cache[json_path] = replacements
-                except Exception:
-                    pass
+        for root, dirs, files in os.walk(base_dir):
+            for filename in files:
+                if filename.endswith('.json'):
+                    json_path = os.path.join(root, filename)
+                    try:
+                        with open(json_path, 'r') as f:
+                            data = json_module.load(f)
+                            replacements = data.get('replacements', [])
+                            if replacements:
+                                log_info("Preloaded %d replacements from %s" % (len(replacements), json_path))
+                                _replacements_cache[json_path] = replacements
+                    except Exception:
+                        pass
     except Exception:
         pass
 
@@ -330,20 +335,20 @@ def load_custom_replacements(json_path):
 
     # Use cache if available
     if json_path in _replacements_cache:
+        log_info("Found %d replacements in cache for %s" % (len(_replacements_cache[json_path]), json_path))
         return _replacements_cache[json_path]
 
-    # If cache was populated but this path isn't in it, file doesn't have replacements
-    if _replacements_cache_dir and json_path.startswith(_replacements_cache_dir):
-        return []
-
-    # Fallback to file I/O (for cases where preload wasn't called)
+    # Fallback to file I/O (handles cache misses and path mismatches)
     if not os.path.exists(json_path):
         return []
 
     try:
         with open(json_path, 'r') as f:
             data = json_module.load(f)
-            return data.get('replacements', [])
+            replacements = data.get('replacements', [])
+            if replacements:
+                log_info("Loaded %d replacements from disk for %s" % (len(replacements), json_path))
+            return replacements
     except Exception:
         return []
 

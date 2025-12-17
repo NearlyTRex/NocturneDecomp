@@ -5,13 +5,13 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 7154
-Functions with zero suspects: 2882 (40.3%)
-Functions with suspects: 4272 (59.7%)
+Functions with zero suspects: 2884 (40.3%)
+Functions with suspects: 4270 (59.7%)
 
-Total suspect patterns: 62354
-Average suspects per function: 8.72
+Total suspect patterns: 62345
+Average suspects per function: 8.71
 
-Virtual files: 258 total, 21 at 100%, 22 at 90%+
+Virtual files: 258 total, 22 at 100%, 23 at 90%+
 
 Pseudocode lines:
   Min: 1, Max: 3059, Average: 47.9
@@ -21,13 +21,13 @@ Average complexity score: 142.7
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
   stack_param               37707
-  pointer_cast              5195
-  stack_ref                 4205
+  pointer_cast              5194
+  stack_ref                 4201
   unknown_field             3024
   unaffected_reg            2776
   concat_artifact           1901
-  register_param            1835
-  badspacebase              1624
+  register_param            1833
+  badspacebase              1622
   extra_output              1440
   suspect_float             932
   unresolved_funcptr        472
@@ -94,7 +94,7 @@ EASIEST FUNCTIONS (Zero Suspects, Sorted by Size)
   005ade30: sound_sndmain.cpp_CSfxOptions_dtor_FUN_005ade30 (4 lines)
   005abea0: sound_sndmain.cpp_getMaxSwLatency_FUN_005abea0 (4 lines)
   005ab590: sound_sndmain.cpp_isHardwareMixingEnabled_FUN_005ab590 (4 lines)
-  ... and 2832 more
+  ... and 2834 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
@@ -145,7 +145,7 @@ FUNCTIONS BY SUSPECT TYPE
     00433440: cockpit_ckptutil.c_loadSingleEdgeList_FUN_00433440
     ... and 2819 more
 
-  pointer_cast (1051 functions):
+  pointer_cast (1050 functions):
     0060239a: entry
     00432d90: cockpit_ckptutil.c_copyScreenRegion_FUN_00432d90
     00431528: cockpit_ckptutil.c_optimizedMemcpy_FUN_00431528
@@ -156,9 +156,9 @@ FUNCTIONS BY SUSPECT TYPE
     00433f50: cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50
     00432300: cockpit_ckptutil.c_blitUnifiedSprite_FUN_00432300
     00431f40: cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_00431f40
-    ... and 1041 more
+    ... and 1040 more
 
-  stack_ref (1098 functions):
+  stack_ref (1097 functions):
     0060239a: entry
     00434870: cockpit_ckptutil.c_rotateBitmap_FUN_00434870
     004331f0: cockpit_ckptutil.c_loadEdgeListFile_FUN_004331f0
@@ -169,7 +169,7 @@ FUNCTIONS BY SUSPECT TYPE
     00431a30: cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00431a30
     00434af0: cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af0
     004336e0: cockpit_ckptutil.c_rasterizeEdgeEndpoints_FUN_004336e0
-    ... and 1088 more
+    ... and 1087 more
 
   unknown_field (331 functions):
     00516620: shape_meshlod.cpp_CLodMesh_buildSpatialGrid_FUN_00516620
@@ -210,7 +210,7 @@ FUNCTIONS BY SUSPECT TYPE
     005c8b50: shape_superopt.cpp_FUN_005c8b50
     ... and 274 more
 
-  register_param (1657 functions):
+  register_param (1655 functions):
     0060239a: entry
     00434870: cockpit_ckptutil.c_rotateBitmap_FUN_00434870
     004331f0: cockpit_ckptutil.c_loadEdgeListFile_FUN_004331f0
@@ -221,9 +221,9 @@ FUNCTIONS BY SUSPECT TYPE
     00435730: cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730
     00433440: cockpit_ckptutil.c_loadSingleEdgeList_FUN_00433440
     00431a30: cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00431a30
-    ... and 1647 more
+    ... and 1645 more
 
-  badspacebase (1623 functions):
+  badspacebase (1621 functions):
     0060239a: entry
     00434870: cockpit_ckptutil.c_rotateBitmap_FUN_00434870
     004331f0: cockpit_ckptutil.c_loadEdgeListFile_FUN_004331f0
@@ -234,7 +234,7 @@ FUNCTIONS BY SUSPECT TYPE
     00435730: cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730
     00433440: cockpit_ckptutil.c_loadSingleEdgeList_FUN_00433440
     00431a30: cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00431a30
-    ... and 1613 more
+    ... and 1611 more
 
   extra_output (262 functions):
     00433f50: cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50

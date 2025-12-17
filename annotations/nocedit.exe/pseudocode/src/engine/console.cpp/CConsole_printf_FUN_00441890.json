@@ -1,17 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 94,
-    "complexity_score": 117,
+    "complexity_score": 42,
     "cross_reference_count": 79,
     "function_call_count": 5,
     "global_count": 5,
     "pseudocode_lines": 42,
-    "suspect_count": 6,
-    "suspect_types": [
-      "badspacebase",
-      "register_param",
-      "stack_ref"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 136
   },
   "cross_references": [
@@ -556,6 +552,39 @@
       "value": null
     }
   ],
+  "replacements": [
+    {
+      "description": "Remove unused BADSPACEBASE variable",
+      "find": "  BADSPACEBASE *in_ESP;\n",
+      "replace": ""
+    },
+    {
+      "description": "Add buffer declaration and fix va_list type",
+      "find": "  va_list_t local_14;",
+      "replace": "  char buffer[4096];\n  va_list local_14;"
+    },
+    {
+      "description": "Use proper va_start macro",
+      "find": "local_14 = &stack0x0000000c;",
+      "replace": "va_start(local_14, format);"
+    },
+    {
+      "description": "Replace stack reference with buffer",
+      "find": "&stack0xffffefec",
+      "replace": "buffer"
+    },
+    {
+      "description": "Replace stack reference with buffer",
+      "find": "&stack0xffffeff0",
+      "replace": "buffer"
+    },
+    {
+      "description": "Add buffer argument to fprintf",
+      "find": "FUN_005fe6d0\\(([^,]+),([^)]+)\\)",
+      "regex": true,
+      "replace": "FUN_005fe6d0(\\1,\\2,buffer)"
+    }
+  ],
   "stack_frame": {
     "frame_size": 4128,
     "local_size": 4120,
@@ -593,48 +622,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 9,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 9,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 15,
-      "match": "&stack0x0000000c",
-      "text": "local_14 = &stack0x0000000c;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 16,
-      "match": "&stack0xffffefec",
-      "text": "crt_stdio_c_vsprintf_FUN_005fdba8(&stack0xffffefec,format,&local_14);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 19,
-      "match": "&stack0xffffefec",
-      "text": "pcVar4 = &stack0xffffefec;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 28,
-      "match": "&stack0xffffeff0",
-      "text": "pcVar4 = &stack0xffffeff0 + iVar3;",
-      "type": "stack_ref"
-    }
-  ]
+  "suspects": []
 }

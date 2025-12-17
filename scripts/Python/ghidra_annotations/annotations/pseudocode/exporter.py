@@ -238,15 +238,23 @@ def export_pseudocode(currentProgram, path):
     timer = PhaseTimer()
     timer.start_total()
 
-    # Clean up existing pseudocode files first to handle renamed functions
+    # Define output directories first (needed for preloading)
+    pseudocode_dir = os.path.join(path, "pseudocode")
+    pseudocode_include_dir = os.path.join(pseudocode_dir, "include")
+    pseudocode_src_dir = os.path.join(pseudocode_dir, "src")
+
+    # Pre-load custom replacements BEFORE cleanup to preserve user modifications
+    timer.start_phase("Preload custom replacements")
+    log_info("Pre-loading custom replacements from existing JSON files...")
+    preload_custom_replacements(pseudocode_src_dir)
+    timer.end_phase()
+
+    # Clean up existing pseudocode files (now safe - replacements are cached)
     timer.start_phase("Cleanup existing files")
     log_info("Cleaning up existing pseudocode files before export")
     delete_pseudocode(currentProgram, path)
 
     # Create output directory
-    pseudocode_dir = os.path.join(path, "pseudocode")
-    pseudocode_include_dir = os.path.join(pseudocode_dir, "include")
-    pseudocode_src_dir = os.path.join(pseudocode_dir, "src")
     make_dirs(pseudocode_dir)
     timer.end_phase()
 
@@ -436,10 +444,6 @@ def export_pseudocode(currentProgram, path):
     # =========================================================================
     timer.start_phase("Python processing (main thread)")
     log_info("Processing %d decompiled functions..." % len(decompile_results))
-
-    # Pre-load custom replacements to avoid file I/O per function
-    log_info("Pre-loading custom replacements from existing JSON files...")
-    preload_custom_replacements(pseudocode_src_dir)
 
     files_created = 0
     function_groups = {}
