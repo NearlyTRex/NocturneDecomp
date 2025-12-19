@@ -106,6 +106,14 @@ GhidraCraft is a modified Ghidra that allows direct P-code patching. Instead of 
 
 https://github.com/Escapingbug/ghidracraft
 
+### Status Warning
+
+**GhidraCraft appears to be unmaintained or minimally maintained.** The project describes itself as "still in early-development" with a future plan documented in August 2021. It's unclear what Ghidra version it's based on, and it likely does not support Ghidra 12.1.
+
+**Recommendation**: Consider this approach only if:
+- You're willing to update GhidraCraft to work with Ghidra 12.1
+- Or you're willing to use an older Ghidra version for patching experiments
+
 ### How It Works
 
 GhidraCraft adds the ability to modify P-code (Ghidra's intermediate representation) without changing actual bytes:
@@ -230,66 +238,292 @@ Call fixups only apply **at call sites**, not at arbitrary instructions. They ad
 
 Create a custom Java class that intercepts P-code generation at analysis time. This is a "man-in-the-middle" approach that modifies P-code before the decompiler sees it.
 
-### Implementation Outline
+`PcodeInjectLibrary` is Ghidra's mechanism for **dynamically generating P-code** when static SLEIGH definitions aren't sufficient. It was designed for cases where instruction semantics depend on runtime context or are too complex for SLEIGH.
+
+### How PcodeInjectLibrary Works
+
+#### The Flow
+
+```
+1. Ghidra encounters an instruction during analysis
+2. SLEIGH normally generates P-code for it
+3. BUT if the instruction has a "callother" fixup marked as dynamic...
+4. Ghidra calls PcodeInjectLibrary.getPayload()
+5. Your custom class returns an InjectPayload
+6. InjectPayload.getPcode() generates the actual P-code
+7. Decompiler uses YOUR P-code instead of SLEIGH's
+```
+
+#### Key Classes
+
+| Class | Purpose |
+|-------|---------|
+| `PcodeInjectLibrary` | Base class you extend; manages payload dispatch |
+| `InjectPayload` | Represents injectable P-code; you create subclasses |
+| `InjectContext` | Provides context about current instruction |
+| `PcodeParser` | Parses P-code strings into operations |
+
+### Architecture
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                     Ghidra Analysis                          │
+├─────────────────────────────────────────────────────────────┤
+│                                                              │
+│  Instruction ──► SLEIGH ──► Normal P-code                   │
+│       │                                                      │
+│       │ (if callotherfixup dynamic="true")                  │
+│       ▼                                                      │
+│  PcodeInjectLibrary.getPayload(type, name)                  │
+│       │                                                      │
+│       ▼                                                      │
+│  InjectPayload.getPcode(program, context)                   │
+│       │                                                      │
+│       ▼                                                      │
+│  Custom P-code ──► Decompiler                               │
+│                                                              │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### Implementation Details
+
+#### Step 1: Create Custom InjectPayload
 
 ```java
 package custom.watcom;
 
-import ghidra.program.model.lang.InjectPayload;
-import ghidra.program.model.lang.PcodeInjectLibrary;
+import ghidra.program.model.lang.*;
+import ghidra.program.model.listing.Program;
+import ghidra.program.model.pcode.PcodeOp;
 
-public class WatcomPcodeInjectLibrary extends PcodeInjectLibrary {
+public class ESPRelativePayload implements InjectPayload {
 
-    public WatcomPcodeInjectLibrary(SleighLanguage lang) {
-        super(lang);
+    private String name;
+    private int espOffset;
+    private int frameSize;
+
+    public ESPRelativePayload(String name, int espOffset, int frameSize) {
+        this.name = name;
+        this.espOffset = espOffset;
+        this.frameSize = frameSize;
     }
 
     @Override
-    public InjectPayload getPayload(int type, String name) {
-        // Check if this is an ESP-relative stack access
-        // If so, return modified P-code with EBP-relative semantics
-
-        if (isESPRelativeAccess(name)) {
-            return createEBPRelativePayload(name);
-        }
-
-        return super.getPayload(type, name);
+    public String getName() {
+        return name;
     }
 
-    private InjectPayload createEBPRelativePayload(String name) {
-        // Generate P-code that uses EBP instead of ESP
-        // This would be called for each instruction during analysis
+    @Override
+    public int getType() {
+        return InjectPayload.CALLOTHERFIXUP_TYPE;
+    }
+
+    @Override
+    public PcodeOp[] getPcode(Program program, InjectContext context) {
+        // This is where the magic happens!
+        // Generate P-code that uses EBP-relative addressing
+
+        // Calculate EBP-relative offset
+        // Original: [ESP + espOffset]
+        // New: [EBP + (espOffset - frameSize)]
+        int ebpOffset = espOffset - frameSize;
+
+        // Build P-code operations
+        // This is pseudo-code - actual API is more complex
+        PcodeOp[] ops = new PcodeOp[2];
+
+        // temp = EBP + ebpOffset
+        ops[0] = createIntAdd(TEMP_0, EBP_VARNODE, constant(ebpOffset));
+
+        // result = LOAD [temp]
+        ops[1] = createLoad(OUTPUT_VARNODE, TEMP_0);
+
+        return ops;
+    }
+
+    @Override
+    public boolean isFallThru() {
+        return true;  // Execution continues after this
     }
 }
 ```
 
-### Registration
+#### Step 2: Create PcodeInjectLibrary Subclass
 
-The inject library must be registered in the processor's `.pspec` or via a Ghidra extension:
+```java
+package custom.watcom;
+
+import ghidra.program.model.lang.*;
+import ghidra.app.plugin.processors.sleigh.SleighLanguage;
+import java.util.HashSet;
+
+public class WatcomPcodeInjectLibrary extends PcodeInjectLibrary {
+
+    private HashSet<String> supportedOps;
+    private int frameSize;  // Would need to be determined per-function
+
+    public WatcomPcodeInjectLibrary(SleighLanguage language) {
+        super(language);
+
+        // Register operations we handle
+        supportedOps = new HashSet<>();
+        supportedOps.add("ESP_RELATIVE_LOAD");
+        supportedOps.add("ESP_RELATIVE_STORE");
+    }
+
+    @Override
+    public InjectPayload getPayload(int type, String name,
+                                     Program program, String context) {
+
+        // Don't intercept call mechanism stuff
+        if (type == InjectPayload.CALLMECHANISM_TYPE) {
+            return super.getPayload(type, name, program, context);
+        }
+
+        // Check if this is one of our custom operations
+        if (supportedOps.contains(name)) {
+            // Parse the context to get ESP offset
+            int espOffset = parseEspOffset(context);
+
+            // Return our custom payload
+            return new ESPRelativePayload(name, espOffset, frameSize);
+        }
+
+        // Fall back to default handling
+        return super.getPayload(type, name, program, context);
+    }
+
+    private int parseEspOffset(String context) {
+        // Parse offset from context string
+        // Format depends on how we set up the SLEIGH/CSPEC
+        return Integer.parseInt(context);
+    }
+}
+```
+
+#### Step 3: Configure PSPEC File
+
+Register the library in the processor specification:
 
 ```xml
+<!-- In x86.pspec or custom x86watcom.pspec -->
 <processor_spec>
-  <programcounter register="EIP"/>
-  <inject_library name="WatcomPcodeInjectLibrary"
-                  class="custom.watcom.WatcomPcodeInjectLibrary"/>
+    <programcounter register="EIP"/>
+
+    <!-- Register our custom inject library -->
+    <properties>
+        <property key="pcodeInjectLibraryClass"
+                  value="custom.watcom.WatcomPcodeInjectLibrary"/>
+    </properties>
 </processor_spec>
 ```
 
+#### Step 4: Configure CSPEC File
+
+Declare dynamic callother fixups:
+
+```xml
+<!-- In x86watcom.cspec -->
+<compiler_spec>
+    <!-- ... existing content ... -->
+
+    <!-- Declare custom dynamic operations -->
+    <callotherfixup targetop="ESP_RELATIVE_LOAD">
+        <pcode dynamic="true">
+            <input name="esp_offset" size="4"/>
+            <output name="result" size="4"/>
+        </pcode>
+    </callotherfixup>
+
+    <callotherfixup targetop="ESP_RELATIVE_STORE">
+        <pcode dynamic="true">
+            <input name="esp_offset" size="4"/>
+            <input name="value" size="4"/>
+        </pcode>
+    </callotherfixup>
+</compiler_spec>
+```
+
+#### Step 5: Modify SLEIGH to Use Custom Operations
+
+Here's where it gets tricky. We'd need to modify ia.sinc to emit our custom operations:
+
+```sleigh
+# In ia.sinc - hypothetical modification
+# Instead of normal ESP-relative load:
+
+:MOV Reg32, dword ptr [ESP + offset32] is ... {
+    # Original SLEIGH:
+    # Reg32 = *[ram]:4 (ESP + offset32);
+
+    # Modified to use our custom operation:
+    Reg32 = ESP_RELATIVE_LOAD(offset32);
+}
+```
+
+### The Big Problem for Our Use Case
+
+**PcodeInjectLibrary is designed for custom instructions, not for overriding existing x86 semantics.**
+
+The intended use case is:
+- Custom processor with weird instructions
+- Dynamically compute P-code based on runtime state
+- Handle instructions SLEIGH can't express
+
+For standard x86 `MOV EAX, [ESP+0x20]`, Ghidra uses the built-in SLEIGH definitions. There's no hook point for us to intercept and modify that P-code generation.
+
+### What Would Actually Be Needed
+
+To use PcodeInjectLibrary for BADSPACEBASE, we would need to:
+
+1. **Fork Ghidra's x86 SLEIGH** (`ia.sinc`)
+2. **Replace all ESP-relative memory access patterns** with custom `callother` operations
+3. **Implement the inject library** to compute correct offsets
+4. **Rebuild Ghidra** with modified processor
+
+This is essentially creating a custom x86 processor variant in Ghidra.
+
+### Alternative: Post-Analysis P-code Modification
+
+Ghidra doesn't officially support modifying P-code after analysis, but:
+
+```java
+// Hypothetical - this API doesn't quite exist as shown
+Instruction instr = getInstructionAt(addr);
+PcodeOp[] original = instr.getPcode();
+PcodeOp[] modified = transformToEBPRelative(original);
+instr.setPcode(modified);  // This method doesn't exist in stock Ghidra
+```
+
+This is what GhidraCraft adds - the ability to patch P-code post-analysis.
+
 ### Pros
-- True runtime interception
+- True runtime interception (if we could make it work)
 - Could handle all ESP-relative accesses automatically
 - Clean separation from base Ghidra
 
 ### Cons
-- Requires building custom Ghidra module
-- Complex implementation
-- Must handle all edge cases
-- Significant development effort
+- **Not designed for our use case** - meant for custom processors
+- Requires forking x86 SLEIGH definitions
+- Essentially creating a new processor variant
+- Massive implementation effort
+- Must rebuild Ghidra from source
+
+### Verdict
+
+**PcodeInjectLibrary is not the right tool for this problem.** It's designed for custom processors where you define new instructions, not for modifying how standard x86 instructions are interpreted.
+
+For our use case, the more practical approaches are:
+1. **Byte patching** - Modify instructions directly
+2. **GhidraCraft** - If updated to Ghidra 12.1
+3. **Decompiler C++ modifications** - Change ESP tracking algorithm
 
 ### References
 - [Guide to P-code Injection - PT SWARM](https://swarm.ptsecurity.com/guide-to-p-code-injection/)
+- [Creating a Ghidra processor module in SLEIGH - PT SWARM](https://swarm.ptsecurity.com/creating-a-ghidra-processor-module-in-sleigh-using-v8-bytecode-as-an-example/)
 - [Dynamic assembly/pcode patching - Ghidra Issue #2376](https://github.com/NationalSecurityAgency/ghidra/issues/2376)
 - [Is there any way to dynamically inject pcode? - Ghidra Discussion #5450](https://github.com/NationalSecurityAgency/ghidra/discussions/5450)
+- [Ghidra Processor Module Generator - GitHub](https://github.com/oberoisecurity/ghidra-processor-module-generator)
 
 ---
 
@@ -383,13 +617,25 @@ def compute_ebp_offset(esp_offset, frame_size, push_count):
 
 ## Comparison Matrix
 
-| Approach | Stock Ghidra | Automation | Complexity | Effectiveness |
-|----------|--------------|------------|------------|---------------|
-| Byte Patching | Yes | Manual | Low | High if done right |
-| GhidraCraft P-code | No (fork) | Scriptable | Medium | High |
-| Call Fixups | Yes | Semi-auto | Low | Low (calls only) |
-| PcodeInjectLibrary | No (module) | Automatic | High | High |
-| Hybrid Script | Yes | Automatic | High | High |
+| Approach | Stock Ghidra | Automation | Complexity | Effectiveness | Practical? |
+|----------|--------------|------------|------------|---------------|------------|
+| Byte Patching | Yes | Manual/Script | Medium | High | **Yes** |
+| GhidraCraft P-code | No (outdated fork) | Scriptable | Medium | High | Maybe |
+| Call Fixups | Yes | Semi-auto | Low | Low (calls only) | No |
+| PcodeInjectLibrary | No (requires SLEIGH fork) | Automatic | Very High | High | **No** |
+| Hybrid Script | Yes | Automatic | High | High | **Yes** |
+
+### Key Insight
+
+After investigation, **PcodeInjectLibrary is not suitable** for our use case. It's designed for:
+- Custom processors with new instruction sets
+- Dynamic P-code generation for instructions SLEIGH can't express
+
+It is NOT designed for:
+- Overriding standard x86 instruction semantics
+- Intercepting existing instruction P-code
+
+To use it, we'd have to fork the entire x86 SLEIGH definition and replace all ESP-relative memory access patterns with custom `callother` operations - essentially creating a new processor variant.
 
 ## Recommended Starting Point
 

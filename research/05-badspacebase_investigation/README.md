@@ -71,9 +71,9 @@ Since we use Ghidra 12.1 built from source, any SLEIGH or decompiler changes req
 | Callfixup | Not viable | Wrong part of problem |
 | Decompiler C++ | Not attempted | Most promising but complex |
 | Binary patching | Not attempted | Would work but very complex |
-| Byte patching in Ghidra | Not attempted | Promising, per-function fix |
-| GhidraCraft P-code | Not attempted | Powerful but requires fork |
-| PcodeInjectLibrary | Not attempted | Runtime interception, high complexity |
+| Byte patching in Ghidra | Not attempted | **Most promising**, per-function fix |
+| GhidraCraft P-code | Not attempted | Powerful but fork is outdated |
+| PcodeInjectLibrary | Investigated | **Not suitable** - designed for custom processors, not x86 override |
 
 ## Changelog
 
