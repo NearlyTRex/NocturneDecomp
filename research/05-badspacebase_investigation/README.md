@@ -35,6 +35,7 @@ The binary is believed to be compiled with **Watcom C/C++ 11** (released ~1996-1
 | [05_DECOMPILER_CPP_CHANGES.md](05_DECOMPILER_CPP_CHANGES.md) | Potential Ghidra decompiler C++ modifications |
 | [06_ATTEMPTED_SOLUTIONS.md](06_ATTEMPTED_SOLUTIONS.md) | All solutions tried and why they failed |
 | [07_REMAINING_OPTIONS.md](07_REMAINING_OPTIONS.md) | What options remain for fixing this |
+| [08_RUNTIME_PATCHING_APPROACHES.md](08_RUNTIME_PATCHING_APPROACHES.md) | Byte patching, P-code injection, and transformation approaches |
 
 ## Quick Reference
 
@@ -70,7 +71,11 @@ Since we use Ghidra 12.1 built from source, any SLEIGH or decompiler changes req
 | Callfixup | Not viable | Wrong part of problem |
 | Decompiler C++ | Not attempted | Most promising but complex |
 | Binary patching | Not attempted | Would work but very complex |
+| Byte patching in Ghidra | Not attempted | Promising, per-function fix |
+| GhidraCraft P-code | Not attempted | Powerful but requires fork |
+| PcodeInjectLibrary | Not attempted | Runtime interception, high complexity |
 
 ## Changelog
 
-- 2025-12-18: Restructured into multiple files, added Ghidra version info
+- 2025-12-18: Added runtime patching approaches documentation (byte patching, GhidraCraft, PcodeInjectLibrary)
+- 2025-12-18: Restructured into multiple files, added Ghidra version info, Watcom 11 estimate
