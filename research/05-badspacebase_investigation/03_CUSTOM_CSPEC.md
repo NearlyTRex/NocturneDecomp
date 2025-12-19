@@ -9,6 +9,8 @@ spec/Ghidra/Processors/x86/data/languages/x86watcom.cspec
 
 This defines Watcom-specific calling conventions to help Ghidra understand function signatures.
 
+The target binary (nocedit.exe) is believed to be compiled with **Watcom C/C++ 11** (~1996-1997), which was common for game development in the late 1990s.
+
 ## File Locations
 
 | File | Purpose |

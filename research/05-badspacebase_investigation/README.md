@@ -8,8 +8,15 @@ This directory documents the investigation into Ghidra's BADSPACEBASE decompilat
 |-----------|-----------------|
 | **Ghidra** | 12.1 (built from source) |
 | **Target Binary** | nocedit.exe |
-| **Compiler** | Watcom C/C++ |
+| **Compiler** | Watcom C/C++ 11 (estimated) |
 | **Architecture** | x86 32-bit, little-endian |
+
+### Compiler Version Notes
+
+The binary is believed to be compiled with **Watcom C/C++ 11** (released ~1996-1997), based on:
+- Code patterns and calling conventions
+- Time period of Nocturne's development (1999)
+- Watcom 11 was the common choice for game development in that era
 
 ## Problem Scale
 
