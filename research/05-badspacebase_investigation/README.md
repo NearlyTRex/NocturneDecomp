@@ -36,6 +36,8 @@ The binary is believed to be compiled with **Watcom C/C++ 11** (released ~1996-1
 | [06_ATTEMPTED_SOLUTIONS.md](06_ATTEMPTED_SOLUTIONS.md) | All solutions tried and why they failed |
 | [07_REMAINING_OPTIONS.md](07_REMAINING_OPTIONS.md) | What options remain for fixing this |
 | [08_RUNTIME_PATCHING_APPROACHES.md](08_RUNTIME_PATCHING_APPROACHES.md) | Byte patching, P-code injection, and transformation approaches |
+| [09_MINIMAL_PCODE_PATCHING.md](09_MINIMAL_PCODE_PATCHING.md) | **IMPLEMENTED** - P-code patching via file injection |
+| [pcode_patching/](pcode_patching/) | Implementation files: patch, modified Java source, examples |
 
 ## Quick Reference
 
@@ -69,13 +71,17 @@ Since we use Ghidra 12.1 built from source, any SLEIGH or decompiler changes req
 | SLEIGH patch | Implemented | Minimal impact on BADSPACEBASE |
 | JSON replacements | Partial | Cosmetic only |
 | Callfixup | Not viable | Wrong part of problem |
-| Decompiler C++ | Not attempted | Most promising but complex |
-| Binary patching | Not attempted | Would work but very complex |
-| Byte patching in Ghidra | Not attempted | **Most promising**, per-function fix |
-| GhidraCraft P-code | Not attempted | Powerful but fork is outdated |
+| Decompiler C++ | Not attempted | Complex, requires understanding decompiler internals |
+| Binary patching | Not attempted | Can't change instruction sizes |
+| Byte patching in Ghidra | Not attempted | Limited by instruction size constraints |
+| GhidraCraft P-code | Not attempted | Powerful but fork is outdated (Ghidra 9.x) |
 | PcodeInjectLibrary | Investigated | **Not suitable** - designed for custom processors, not x86 override |
+| **DecompileCallback Patch** | **IMPLEMENTED** | **Best option** - Single file change, file-based patches |
 
 ## Changelog
 
+- 2025-12-18: **IMPLEMENTED** P-code patching via DecompileCallback.java modification
+- 2025-12-18: Added implementation files to pcode_patching/ directory
+- 2025-12-18: Added minimal P-code patching implementation plan (GhidraCraft-like without UI)
 - 2025-12-18: Added runtime patching approaches documentation (byte patching, GhidraCraft, PcodeInjectLibrary)
 - 2025-12-18: Restructured into multiple files, added Ghidra version info, Watcom 11 estimate

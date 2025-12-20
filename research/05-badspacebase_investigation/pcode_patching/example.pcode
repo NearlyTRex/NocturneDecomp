@@ -1,0 +1,92 @@
+# Example P-code Patch File
+# ==========================
+#
+# This file demonstrates the format for patching P-code at a specific address.
+# Save as: ~/.ghidra_pcode_patches/<address>.pcode
+# Example: ~/.ghidra_pcode_patches/00510456.pcode
+#
+# The address format must match Ghidra's display (no "0x" prefix typically).
+
+# ============================================================================
+# FORMAT
+# ============================================================================
+#
+# OPCODE (output_varnode) = (input1), (input2), ...
+#
+# Varnode format: (space, offset, size)
+#   - space: register, const, unique, ram, stack
+#   - offset: hex (0x...) or decimal
+#   - size: in bytes (decimal)
+
+# ============================================================================
+# x86 32-bit REGISTER OFFSETS
+# ============================================================================
+#
+# EAX = 0x0     ECX = 0x4     EDX = 0x8     EBX = 0xc
+# ESP = 0x10    EBP = 0x14    ESI = 0x18    EDI = 0x1c
+#
+# AL = 0x0 (size 1)    AH = 0x1 (size 1)    AX = 0x0 (size 2)
+# CL = 0x4 (size 1)    CH = 0x5 (size 1)    CX = 0x4 (size 2)
+# etc.
+
+# ============================================================================
+# COMMON PATTERNS
+# ============================================================================
+
+# --- Pattern 1: Fix ESP-relative load to EBP-relative ---
+# Original: MOV EAX, [ESP+0x20c]   (ESP tracking lost -> BADSPACEBASE)
+# Fixed:    MOV EAX, [EBP-0x8]     (correct frame-relative offset)
+#
+# INT_ADD (unique,0x10000,4) = (register,0x14,4), (const,0xfffffff8,4)
+# LOAD (register,0x0,4) = (const,0x1b1,4), (unique,0x10000,4)
+
+# --- Pattern 2: Fix ESP-relative store to EBP-relative ---
+# Original: MOV [ESP+0x20c], EAX
+# Fixed:    MOV [EBP-0x8], EAX
+#
+# INT_ADD (unique,0x10000,4) = (register,0x14,4), (const,0xfffffff8,4)
+# STORE (const,0x1b1,4), (unique,0x10000,4), (register,0x0,4)
+
+# --- Pattern 3: Simple register copy ---
+# MOV EAX, EBP
+#
+# COPY (register,0x0,4) = (register,0x14,4)
+
+# --- Pattern 4: Load immediate ---
+# MOV EAX, 0x1234
+#
+# COPY (register,0x0,4) = (const,0x1234,4)
+
+# --- Pattern 5: LEA with offset ---
+# LEA EAX, [EBP-0x10]
+#
+# INT_ADD (register,0x0,4) = (register,0x14,4), (const,0xfffffff0,4)
+
+# ============================================================================
+# ACTUAL PATCH (uncomment and modify as needed)
+# ============================================================================
+
+# Example: Fix BADSPACEBASE at this instruction
+# Step 1: Calculate EBP-relative address
+INT_ADD (unique,0x10000,4) = (register,0x14,4), (const,0xfffffff8,4)
+
+# Step 2: Load from that address into EAX
+# Note: 0x1b1 is the space ID for RAM in Ghidra
+LOAD (register,0x0,4) = (const,0x1b1,4), (unique,0x10000,4)
+
+# ============================================================================
+# NOTES
+# ============================================================================
+#
+# 1. Space IDs vary by program. Check Ghidra's AddressFactory for your binary:
+#    - ram/mem: Usually 0x1b1 for x86
+#    - stack: Usually separate space
+#
+# 2. Unique space is for temporaries. Use high offsets (0x10000+) to avoid
+#    conflicts with SLEIGH-generated unique varnodes.
+#
+# 3. The patch replaces ALL P-code for the instruction. You must provide
+#    complete semantics, not just the part you want to change.
+#
+# 4. Test patches carefully - incorrect P-code can crash the decompiler
+#    or produce nonsense output.
