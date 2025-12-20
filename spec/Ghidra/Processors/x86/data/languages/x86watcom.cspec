@@ -105,6 +105,168 @@
             <register name="EDX" />
         </killedbycall>
     </prototype>
+    <!-- cdecl variants with fixed extrapop for BADSPACEBASE resolution -->
+    <!-- Use these when Ghidra can't determine stack cleanup automatically -->
+    <!-- __cdecl0: No args cleaned by callee (pure caller-cleans cdecl) -->
+    <prototype name="__cdecl0" extrapop="4" stackshift="4">
+        <input>
+            <pentry minsize="1" maxsize="500" align="4"><addr offset="4" space="stack" /></pentry>
+        </input>
+        <output killedbycall="true">
+            <pentry minsize="1" maxsize="4"><register name="EAX" /></pentry>
+        </output>
+        <unaffected>
+            <register name="EBX" />
+            <register name="ESI" />
+            <register name="EDI" />
+            <register name="EBP" />
+        </unaffected>
+        <killedbycall>
+            <register name="EAX" />
+            <register name="ECX" />
+            <register name="EDX" />
+        </killedbycall>
+    </prototype>
+    <!-- __cdecl4: 4 bytes cleaned by callee (1 dword arg, stdcall-like) -->
+    <prototype name="__cdecl4" extrapop="8" stackshift="4">
+        <input>
+            <pentry minsize="1" maxsize="500" align="4"><addr offset="4" space="stack" /></pentry>
+        </input>
+        <output killedbycall="true">
+            <pentry minsize="1" maxsize="4"><register name="EAX" /></pentry>
+        </output>
+        <unaffected>
+            <register name="EBX" />
+            <register name="ESI" />
+            <register name="EDI" />
+            <register name="EBP" />
+        </unaffected>
+        <killedbycall>
+            <register name="EAX" />
+            <register name="ECX" />
+            <register name="EDX" />
+        </killedbycall>
+    </prototype>
+    <!-- __cdecl8: 8 bytes cleaned by callee (2 dword args) -->
+    <prototype name="__cdecl8" extrapop="12" stackshift="4">
+        <input>
+            <pentry minsize="1" maxsize="500" align="4"><addr offset="4" space="stack" /></pentry>
+        </input>
+        <output killedbycall="true">
+            <pentry minsize="1" maxsize="4"><register name="EAX" /></pentry>
+        </output>
+        <unaffected>
+            <register name="EBX" />
+            <register name="ESI" />
+            <register name="EDI" />
+            <register name="EBP" />
+        </unaffected>
+        <killedbycall>
+            <register name="EAX" />
+            <register name="ECX" />
+            <register name="EDX" />
+        </killedbycall>
+    </prototype>
+    <!-- __cdecl12: 12 bytes cleaned by callee (3 dword args) -->
+    <prototype name="__cdecl12" extrapop="16" stackshift="4">
+        <input>
+            <pentry minsize="1" maxsize="500" align="4"><addr offset="4" space="stack" /></pentry>
+        </input>
+        <output killedbycall="true">
+            <pentry minsize="1" maxsize="4"><register name="EAX" /></pentry>
+        </output>
+        <unaffected>
+            <register name="EBX" />
+            <register name="ESI" />
+            <register name="EDI" />
+            <register name="EBP" />
+        </unaffected>
+        <killedbycall>
+            <register name="EAX" />
+            <register name="ECX" />
+            <register name="EDX" />
+        </killedbycall>
+    </prototype>
+    <!-- __cdecl16: 16 bytes cleaned by callee (4 dword args) -->
+    <prototype name="__cdecl16" extrapop="20" stackshift="4">
+        <input>
+            <pentry minsize="1" maxsize="500" align="4"><addr offset="4" space="stack" /></pentry>
+        </input>
+        <output killedbycall="true">
+            <pentry minsize="1" maxsize="4"><register name="EAX" /></pentry>
+        </output>
+        <unaffected>
+            <register name="EBX" />
+            <register name="ESI" />
+            <register name="EDI" />
+            <register name="EBP" />
+        </unaffected>
+        <killedbycall>
+            <register name="EAX" />
+            <register name="ECX" />
+            <register name="EDX" />
+        </killedbycall>
+    </prototype>
+    <!-- __cdecl20: 20 bytes cleaned by callee (5 dword args) -->
+    <prototype name="__cdecl20" extrapop="24" stackshift="4">
+        <input>
+            <pentry minsize="1" maxsize="500" align="4"><addr offset="4" space="stack" /></pentry>
+        </input>
+        <output killedbycall="true">
+            <pentry minsize="1" maxsize="4"><register name="EAX" /></pentry>
+        </output>
+        <unaffected>
+            <register name="EBX" />
+            <register name="ESI" />
+            <register name="EDI" />
+            <register name="EBP" />
+        </unaffected>
+        <killedbycall>
+            <register name="EAX" />
+            <register name="ECX" />
+            <register name="EDX" />
+        </killedbycall>
+    </prototype>
+    <!-- __cdecl24: 24 bytes cleaned by callee (6 dword args) -->
+    <prototype name="__cdecl24" extrapop="28" stackshift="4">
+        <input>
+            <pentry minsize="1" maxsize="500" align="4"><addr offset="4" space="stack" /></pentry>
+        </input>
+        <output killedbycall="true">
+            <pentry minsize="1" maxsize="4"><register name="EAX" /></pentry>
+        </output>
+        <unaffected>
+            <register name="EBX" />
+            <register name="ESI" />
+            <register name="EDI" />
+            <register name="EBP" />
+        </unaffected>
+        <killedbycall>
+            <register name="EAX" />
+            <register name="ECX" />
+            <register name="EDX" />
+        </killedbycall>
+    </prototype>
+    <!-- __cdecl28: 28 bytes cleaned by callee (7 dword args) -->
+    <prototype name="__cdecl28" extrapop="32" stackshift="4">
+        <input>
+            <pentry minsize="1" maxsize="500" align="4"><addr offset="4" space="stack" /></pentry>
+        </input>
+        <output killedbycall="true">
+            <pentry minsize="1" maxsize="4"><register name="EAX" /></pentry>
+        </output>
+        <unaffected>
+            <register name="EBX" />
+            <register name="ESI" />
+            <register name="EDI" />
+            <register name="EBP" />
+        </unaffected>
+        <killedbycall>
+            <register name="EAX" />
+            <register name="ECX" />
+            <register name="EDX" />
+        </killedbycall>
+    </prototype>
     <prototype name="__syscall" extrapop="4" stackshift="4">
         <input>
             <pentry minsize="1" maxsize="500" align="4"><addr offset="4" space="stack" /></pentry>
