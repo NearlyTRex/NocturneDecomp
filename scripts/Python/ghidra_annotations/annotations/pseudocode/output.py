@@ -10,6 +10,9 @@ from ghidra_annotations.annotations.pseudocode.strings import sanitize_for_ascii
 from ghidra_annotations.annotations.pseudocode.functions import (
     extract_virtual_filename, extract_cpp_function_name, generate_function_prototype
 )
+from ghidra_annotations.annotations.pseudocode.pcode import (
+    generate_pcode_file_content, create_pcode_summary
+)
 
 
 def create_pseudocode_file_content(
@@ -366,7 +369,7 @@ def generate_function_file_contents(output_base_path, source_filename, func_name
                                      decompiled_code, assembly_code, func_xrefs, func_globals,
                                      func_calls, stack_frame, suspects, complexity,
                                      existing_replacements=None, stack_patterns=None,
-                                     param_estimates=None, vtable_info=None):
+                                     param_estimates=None, vtable_info=None, pcode_data=None):
     """Generate file contents for a function without writing to disk.
 
     Args:
@@ -389,9 +392,11 @@ def generate_function_file_contents(output_base_path, source_filename, func_name
         stack_patterns: Optional stack manipulation patterns that affect decompilation
         param_estimates: Optional parameter estimation from call site analysis
         vtable_info: Optional vtable membership info (class, offset, etc.)
+        pcode_data: Optional P-code data for the function (list of instruction P-code)
 
     Returns:
-        Dictionary with paths and contents: {cpp_path, cpp_content, asm_path, asm_content, json_path, json_content}
+        Dictionary with paths and contents: {cpp_path, cpp_content, asm_path, asm_content,
+                                            json_path, json_content, pcode_path, pcode_content}
     """
     # Determine base path without extension
     if source_filename.endswith('.cpp'):
@@ -401,17 +406,20 @@ def generate_function_file_contents(output_base_path, source_filename, func_name
     else:
         base_name = source_filename
 
+    # Determine output path
     cpp_path = os.path.join(output_base_path, source_filename)
     asm_path = os.path.join(output_base_path, base_name + '.asm')
     json_path = os.path.join(output_base_path, base_name + '.json')
-
+    pcode_path = os.path.join(output_base_path, base_name + '.pcode')
     result = {
         'cpp_path': cpp_path,
         'cpp_content': None,
         'asm_path': asm_path,
         'asm_content': None,
         'json_path': json_path,
-        'json_content': None
+        'json_content': None,
+        'pcode_path': pcode_path,
+        'pcode_content': None
     }
 
     # Generate lean .cpp content
@@ -440,9 +448,23 @@ def generate_function_file_contents(output_base_path, source_filename, func_name
             func_signature, decompiled_code, assembly_code,
             func_xrefs, func_globals, func_calls, stack_frame, suspects, complexity,
             existing_replacements, stack_patterns, param_estimates, vtable_info)
+        # Add P-code summary to JSON if available
+        if pcode_data:
+            function_json['pcode_summary'] = create_pcode_summary(pcode_data)
         result['json_content'] = json.dumps(function_json, indent=2, sort_keys=True)
     except Exception as e:
         log_info("Failed to generate .json content for %s: %s" % (base_name + '.json', str(e)))
+
+    # Generate .pcode content
+    if pcode_data:
+        try:
+            # Check if function has BADSPACEBASE (look in suspects)
+            has_badspacebase = any('BADSPACEBASE' in s.get('pattern', '') for s in suspects) if suspects else False
+            pcode_content = generate_pcode_file_content(
+                func_name, func_addr, func_signature, pcode_data, has_badspacebase)
+            result['pcode_content'] = pcode_content + "\n"
+        except Exception as e:
+            log_info("Failed to generate .pcode content for %s: %s" % (base_name + '.pcode', str(e)))
 
     return result
 

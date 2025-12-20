@@ -23,6 +23,9 @@ from ghidra_annotations.annotations.pseudocode.functions import (
 from ghidra_annotations.annotations.pseudocode.stack_patterns import (
     detect_stack_patterns_from_listing
 )
+from ghidra_annotations.annotations.pseudocode.pcode import (
+    extract_function_pcode
+)
 
 # Default number of worker threads for parallel processing
 # With the restructured approach (Java in workers, Python in main thread),
@@ -65,17 +68,17 @@ class DecompileResult:
     """Container for all Java-heavy operation results.
 
     Contains data from all Java-heavy operations (decompilation, assembly,
-    xrefs, globals, calls, stack analysis). Python-only processing
+    xrefs, globals, calls, stack analysis, pcode). Python-only processing
     (transforms, JSON, file generation) is done in the main thread.
     """
     __slots__ = [
         'success', 'error',
         'func', 'func_name', 'func_addr',
         'func_signature', 'func_addr_range', 'func_convention',
-        'raw_decompiled_code', 'assembly_code',
+        'raw_decompiled_code', 'assembly_code', 'pcode_data',
         'func_xrefs', 'func_globals', 'func_calls',
         'stack_frame', 'stack_patterns_raw', 'param_estimates', 'vtable_info',
-        'decompile_time', 'assembly_time', 'metadata_time'
+        'decompile_time', 'assembly_time', 'metadata_time', 'pcode_time'
     ]
 
     def __init__(self):
@@ -89,6 +92,7 @@ class DecompileResult:
         self.func_convention = ""
         self.raw_decompiled_code = ""
         self.assembly_code = ""
+        self.pcode_data = []
         self.func_xrefs = []
         self.func_globals = []
         self.func_calls = []
@@ -99,6 +103,7 @@ class DecompileResult:
         self.decompile_time = 0.0
         self.assembly_time = 0.0
         self.metadata_time = 0.0
+        self.pcode_time = 0.0
 
 
 class DecompileWorker:
@@ -149,6 +154,11 @@ class DecompileWorker:
                 self.currentProgram, func, self.symbol_table, self.reference_manager,
                 self.program_listing, self.string_map, self.global_symbols)
             result.assembly_time = time.time() - assembly_start
+
+            # === JAVA-HEAVY: P-code extraction (GIL released during JVM calls) ===
+            pcode_start = time.time()
+            result.pcode_data = extract_function_pcode(self.currentProgram, func)
+            result.pcode_time = time.time() - pcode_start
 
             # === JAVA-HEAVY: Function metadata (xrefs, globals, calls) ===
             metadata_start = time.time()

@@ -205,7 +205,7 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map):
         result.func_addr_range, result.func_convention, result.func_signature,
         decompiled_code, result.assembly_code, result.func_xrefs, result.func_globals,
         result.func_calls, result.stack_frame, suspects, complexity, custom_replacements,
-        stack_patterns, result.param_estimates, result.vtable_info)
+        stack_patterns, result.param_estimates, result.vtable_info, result.pcode_data)
     output_time = time.time() - output_start
 
     total_process_time = time.time() - process_start
@@ -409,6 +409,7 @@ def export_pseudocode(currentProgram, path):
     decompiled_count = 0
     total_decompile_time = 0.0
     total_assembly_time = 0.0
+    total_pcode_time = 0.0
 
     for future in as_completed(futures):
         try:
@@ -416,6 +417,7 @@ def export_pseudocode(currentProgram, path):
             decompiled_count += 1
             total_decompile_time += result.decompile_time
             total_assembly_time += result.assembly_time
+            total_pcode_time += result.pcode_time
 
             if result.success:
                 decompile_results.append(result)
@@ -498,9 +500,11 @@ def export_pseudocode(currentProgram, path):
                         pending_writes.append((contents['asm_path'], contents['asm_content']))
                     if contents.get('json_content'):
                         pending_writes.append((contents['json_path'], contents['json_content']))
+                    if contents.get('pcode_content'):
+                        pending_writes.append((contents['pcode_path'], contents['pcode_content']))
 
-                    # Write batch when buffer is full
-                    if len(pending_writes) >= PROCESS_BATCH_SIZE * 3:
+                    # Write batch when buffer is full (4 files per function now)
+                    if len(pending_writes) >= PROCESS_BATCH_SIZE * 4:
                         write_batched_files(pending_writes)
                         pending_writes = []
             else:
@@ -539,12 +543,14 @@ def export_pseudocode(currentProgram, path):
     log_info("=" * 65)
     log_info("PER-FUNCTION TIMING BREAKDOWN (cumulative across all functions)")
     log_info("=" * 65)
-    total_func_time = total_decompile_time + total_assembly_time + total_transform_time + total_output_time
+    total_func_time = total_decompile_time + total_assembly_time + total_pcode_time + total_transform_time + total_output_time
     if total_func_time > 0:
         log_info("  %-30s %12s  (%5.1f%%)" % ("Decompilation", timer.format_duration(total_decompile_time),
             total_decompile_time / total_func_time * 100))
         log_info("  %-30s %12s  (%5.1f%%)" % ("Assembly generation", timer.format_duration(total_assembly_time),
             total_assembly_time / total_func_time * 100))
+        log_info("  %-30s %12s  (%5.1f%%)" % ("P-code extraction", timer.format_duration(total_pcode_time),
+            total_pcode_time / total_func_time * 100))
         log_info("  %-30s %12s  (%5.1f%%)" % ("Transforms", timer.format_duration(total_transform_time),
             total_transform_time / total_func_time * 100))
         log_info("  %-30s %12s  (%5.1f%%)" % ("Output generation", timer.format_duration(total_output_time),
