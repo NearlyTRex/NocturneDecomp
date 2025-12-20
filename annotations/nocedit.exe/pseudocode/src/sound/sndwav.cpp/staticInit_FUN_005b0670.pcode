@@ -1,0 +1,35 @@
+# ============================================================================
+# Function P-code Export
+# ============================================================================
+#
+# Function:    sound_sndwav.cpp_staticInit_FUN_005b0670
+# Entry:       005b0670
+# Signature:   void sound_sndwav.cpp_staticInit_FUN_005b0670(void)
+#
+# Format: @<address> [ESP:offset] # <assembly>
+#         [ESP:offset] = cumulative ESP delta from function entry
+#         Delta markers: (+n) ESP increased, (-n) ESP decreased
+#         Certainty:  no marker = known, ? = computed, ?? = unknown, ! = CALLIND
+#
+# ============================================================================
+
+@005b0670 [ESP:+0]  # MOV ECX, 0x663264
+COPY (register,0x4,4) /* ECX */ = (const,0x663264,4)
+
+@005b0675 [ESP:+0]  # MOV EDX, 0x663284
+COPY (register,0x8,4) /* EDX */ = (const,0x663284,4)
+
+@005b067a [ESP:+0]  # MOV dword ptr [0x03f6af44], ECX
+COPY (ram,0x3f6af44,4) = (register,0x4,4) /* ECX */
+
+@005b0680 [ESP:+0]  # MOV dword ptr [0x03f6af40], EDX
+COPY (ram,0x3f6af40,4) = (register,0x8,4) /* EDX */
+
+@005b0686 [ESP:+4](+4)  # RET
+LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
+INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+RETURN (register,0x284,4)
+
+# ============================================================================
+# Summary: 5 instructions, 7 P-code ops
+# ============================================================================

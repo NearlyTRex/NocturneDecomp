@@ -169,27 +169,27 @@ void core_course_cpp_FUN_00443bc0(void)
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
     local_30 = g_CGamePtr->delta_time_float;
-    iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,1);
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
     if (iVar2 != 0) break;
-    iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x19);
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x19);
     if (iVar2 != 0) {
       local_28 = (uint)(local_28 == 0);
     }
-    iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x13);
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x13);
     if (iVar2 != 0) {
       local_24 = (uint)(local_24 == 0);
     }
     local_cc.z = 0x444022;
-    iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x1f);
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x1f);
     if (iVar2 != 0) {
       local_2c = (uint)(local_2c == 0);
     }
     local_b0 = 6.26787e-39;
-    iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x34);
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x34);
     if (iVar2 != 0) {
       local_18 = local_18 + 1.0;
     }
-    iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x33);
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x33);
     if (iVar2 != 0) {
       local_18 = local_18 + -1f;
     }

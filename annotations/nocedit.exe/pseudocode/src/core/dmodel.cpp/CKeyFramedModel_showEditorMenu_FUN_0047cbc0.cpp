@@ -22,9 +22,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
   undefined3 extraout_var_00;
   undefined3 extraout_var_01;
   undefined3 extraout_var_02;
-  undefined3 extraout_var_03;
   int extraout_EAX;
-  undefined3 extraout_var_04;
+  undefined3 extraout_var_03;
   int iVar8;
   CKeyFramedModel *pCVar9;
   BADSPACEBASE *in_ESP;
@@ -267,33 +266,33 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
     core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
     local_5c = g_CGamePtr->delta_time_float;
     local_48 = local_5c;
-    iVar8 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x38);
+    iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
     if (iVar8 != 0) {
       local_5c = local_48 * _DAT_00620def;
     }
-    iVar8 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x2a);
+    iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
     if (iVar8 != 0) {
       local_5c = local_5c * 3f;
     }
     local_58 = local_5c * (float)3.1415926535000001;
     local_54 = local_5c * 10f;
     local_50 = 1;
-    iVar8 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x52);
+    iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x52);
     if (iVar8 != 0) {
       local_d8.y = local_d8.y + local_58;
       local_50 = 0;
     }
-    iVar8 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x53);
+    iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x53);
     if (iVar8 != 0) {
       local_d8.y = local_d8.y - local_58;
       local_50 = 0;
     }
-    iVar8 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x4a);
+    iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4a);
     if (iVar8 != 0) {
       local_d8.x = local_d8.x + local_58;
       local_50 = 0;
     }
-    iVar8 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x4e);
+    iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4e);
     if (iVar8 != 0) {
       local_d8.x = local_d8.x - local_58;
       local_50 = 0;
@@ -304,11 +303,11 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
     if ((float)1.57079632675 < local_d8.x) {
       local_d8.x = 1.5707964;
     }
-    iVar8 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0xd);
+    iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0xd);
     if (iVar8 != 0) {
       local_80 = local_80 + 1.0;
     }
-    iVar8 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0xc);
+    iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0xc);
     if (iVar8 != 0) {
       local_80 = local_80 + -1f;
     }
@@ -319,37 +318,37 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
       local_80 = 1.0;
     }
     if (local_6c == 0) {
-      iVar8 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x48);
+      iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x48);
       if (iVar8 != 0) {
         local_7c = local_7c - local_54;
         local_50 = 0;
       }
-      iVar8 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x50);
+      iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x50);
       if (iVar8 != 0) {
         local_7c = local_7c + local_54;
         local_50 = 0;
       }
-      iVar8 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x4b);
+      iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
       if (iVar8 != 0) {
         local_78 = local_78 - local_54;
         local_50 = 0;
       }
-      iVar8 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x4d);
+      iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4d);
       if (iVar8 != 0) {
         local_78 = local_78 + local_54;
         local_50 = 0;
       }
-      iVar8 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1e);
+      iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1e);
       if (iVar8 != 0) {
         local_74 = local_74 - local_54;
         local_50 = 0;
       }
-      iVar8 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x10);
+      iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x10);
       if (iVar8 != 0) {
         local_74 = local_74 + local_54;
         local_50 = 0;
       }
-      iVar8 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x4c);
+      iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4c);
       if (iVar8 != 0) {
         local_78 = 0.0;
         local_50 = 0;
@@ -360,32 +359,32 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
       local_18c = 0.0;
       local_188 = 0.0;
       local_184 = 0.0;
-      iVar8 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x48);
+      iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x48);
       if (iVar8 != 0) {
         local_184 = local_184 - local_54;
         local_50 = 0;
       }
-      iVar8 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x50);
+      iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x50);
       if (iVar8 != 0) {
         local_184 = local_184 + local_54;
         local_50 = 0;
       }
-      iVar8 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x4b);
+      iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
       if (iVar8 != 0) {
         local_18c = local_18c - local_54;
         local_50 = 0;
       }
-      iVar8 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x4d);
+      iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4d);
       if (iVar8 != 0) {
         local_18c = local_18c + local_54;
         local_50 = 0;
       }
-      iVar8 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1e);
+      iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1e);
       if (iVar8 != 0) {
         local_188 = local_188 - local_54;
         local_50 = 0;
       }
-      iVar8 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x10);
+      iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x10);
       if (iVar8 != 0) {
         local_188 = local_188 + local_54;
         local_50 = 0;
@@ -406,28 +405,28 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
         core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(this_ptr);
       }
     }
-    iVar8 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x3e);
+    iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x3e);
     if (iVar8 != 0) {
       g_KeyFrameModelPoolEnd = (CKeyFramedModel *)(g_KeyFrameModelPoolEnd->model_filename + 1);
       crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_02c14c88,"noc%d.pcx");
       engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(&DAT_02c14c88);
     }
-    iVar8 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x4c);
+    iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x4c);
     if (iVar8 != 0) {
       local_d8.y = 0.0;
       local_d8.x = 0.0;
       local_7c = 15.0;
       local_d8.z = 0.0;
     }
-    iVar8 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x3b);
+    iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x3b);
     if (iVar8 != 0) {
       local_60 = (uint)(local_60 == 0);
     }
-    iVar8 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x34);
+    iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x34);
     if (iVar8 != 0) {
       local_70 = local_70 + 1.0;
     }
-    iVar8 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x33);
+    iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x33);
     if (iVar8 != 0) {
       local_70 = local_70 + -1f;
     }
@@ -448,8 +447,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
       wincore_winrun_cpp_clearKeypresses_FUN_005f2e70();
     }
     else {
-      bVar6 = wincore_winrun_cpp_wasKeyPressed_FUN_005f2f00();
-      if (CONCAT31 /* combine 2-byte values */(extraout_var,bVar6) != 0) {
+      iVar8 = wincore_winrun_cpp_wasKeyPressed_FUN_005f2f00();
+      if (iVar8 != 0) {
         local_84 = engine_keys_cpp_CKeys_getUppercasedInputKey_FUN_00502470(g_CKeysPtr);
         if (local_84 < 0x42) {
           if (local_84 < 0x35) {
@@ -475,7 +474,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
                       (bVar6 = shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
                                          (g_CEditorToolsPtr,"Save Keyframed model",
                                           "models",0x620967,SUB41 /* extract 2-byte value */(this_ptr,0)),
-                      CONCAT31 /* combine 2-byte values */(extraout_var_00,bVar6) != 0)) {
+                      CONCAT31 /* combine 2-byte values */(extraout_var,bVar6) != 0)) {
                 core_dmodel_cpp_CKeyFramedModel_export_FUN_00478e10
                           (this_ptr,this_ptr->model_filename);
                 local_64 = 1;
@@ -496,7 +495,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
               bVar6 = shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
                                 (g_CEditorToolsPtr,"Import Keyframed model",true,local_408)
               ;
-              if (CONCAT31 /* combine 2-byte values */(extraout_var_01,bVar6) != 0) {
+              if (CONCAT31 /* combine 2-byte values */(extraout_var_00,bVar6) != 0) {
                 core_dmodel_cpp_CKeyFramedModel_importFromS3D_FUN_00479330(this_ptr,local_408);
                 local_64 = 0;
                 crt_string_c_splitpath_FUN_005ff178
@@ -528,7 +527,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
               bVar6 = shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
                                 (g_CEditorToolsPtr,"Get model and textures from network",true,
                                  "t:\\");
-              if (CONCAT31 /* combine 2-byte values */(extraout_var_04,bVar6) != 0) {
+              if (CONCAT31 /* combine 2-byte values */(extraout_var_03,bVar6) != 0) {
                 crt_string_c_splitpath_FUN_005ff178
                           ("t:\\",local_18,local_998,local_698,local_b98);
                 crt_file_c_makepath_FUN_005febfc
@@ -607,7 +606,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
               bVar6 = shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020
                                 (g_CEditorToolsPtr,"Enter number of crams",&local_3c,true,1
                                  ,4,true);
-              if (CONCAT31 /* combine 2-byte values */(extraout_var_02,bVar6) != 0) {
+              if (CONCAT31 /* combine 2-byte values */(extraout_var_01,bVar6) != 0) {
                 crt_string_c_splitpath_FUN_005ff178
                           (this_ptr->model_filename,(char *)0x0,(char *)0x0,local_408,(char *)0x0);
                 shape_design_c_initializeTextureManager_FUN_0046a880(1);
@@ -898,7 +897,7 @@ LAB_0047dc33:
   bVar6 = shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020
                     (g_CEditorToolsPtr,"Enter crams output size",&local_38,true,0x40,0x100,
                      true);
-  if (CONCAT31 /* combine 2-byte values */(extraout_var_03,bVar6) == 0) goto LAB_0047d6c7;
+  if (CONCAT31 /* combine 2-byte values */(extraout_var_02,bVar6) == 0) goto LAB_0047d6c7;
   if (((local_38 == 0x40) || (local_38 == 0x100)) || (local_38 == 0x80)) {
     local_64 = 1;
     core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0

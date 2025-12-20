@@ -14,7 +14,7 @@
 ;   CKeys* g_CKeysPtr = 02dcd7d4
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   CEditorTools g_CEditorToolsPtr
-;   void* g_CKeysPtr
+;   CKeys g_CKeysInstance
 ;   CDemonMission g_CDemonMissionInstance
 ;
 ; Called Functions:
@@ -39,8 +39,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x478]     ; 005da877
     PUSH 0x14                           ; 005da87e
     MOV EAX,[0x0067cf44]                ; 005da880 | g_CKeysPtr
-    PUSH EAX                            ; 005da885 | g_CKeysPtr
-    MOV EDX,dword ptr [EAX]             ; 005da886 | g_CKeysPtr
+    PUSH EAX                            ; 005da885 | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 005da886 | g_CKeysInstance
     CALL dword ptr [EDX + 0x4]          ; 005da888
     ADD ESP,0x8                         ; 005da88b
     TEST EAX,EAX                        ; 005da88e

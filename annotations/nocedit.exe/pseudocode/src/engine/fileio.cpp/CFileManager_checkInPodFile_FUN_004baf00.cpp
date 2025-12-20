@@ -517,7 +517,7 @@ LAB_004bba53:
         in_stack_0000003c = pCVar9;
         shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
                   (g_CEditorToolsPtr,(float)(int)pCVar9,40.0);
-        iVar3 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,1);
+        iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
         if (iVar3 != 0) {
           pCVar9 = (CStrList_vtable *)0x28;
         }

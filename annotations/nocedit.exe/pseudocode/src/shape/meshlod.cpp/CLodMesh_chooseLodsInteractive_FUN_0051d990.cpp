@@ -314,7 +314,7 @@ LAB_0051e453:
     engine_2d_c_drawText_FUN_00401fd0(in_stack_fffff8e8,0,g_WindowHeight + -0xb);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
-    iVar8 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x31);
+    iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x31);
     if (iVar8 != 0) {
       if (in_stack_00000064 < in_stack_00000010) {
         in_stack_0000000c[in_stack_00000064] = auStack_114._48_4_;
@@ -330,34 +330,34 @@ LAB_0051e453:
     }
     if (0 < iVar3) {
       iVar8 = in_stack_0000000c[iVar3] / 0x14;
-      iVar6 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x2a);
+      iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
       if (iVar6 != 0) {
         iVar8 = iVar8 * 3;
       }
-      iVar6 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x38);
+      iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
       if ((iVar6 != 0) || (iVar8 < 2)) {
         iVar8 = 2;
       }
       in_stack_fffff8d4 = (char *)0x4b;
       in_stack_fffff8cc = (char *)0x51e0dc;
       in_stack_fffff8d0 = g_CKeysPtr;
-      iVar6 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x4b);
+      iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x4b);
       if (iVar6 != 0) {
         in_stack_0000000c[iVar3] = in_stack_0000000c[iVar3] - iVar8;
       }
       in_stack_fffff8e8 = (char *)0x4d;
-      iVar6 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x4d);
+      iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x4d);
       if (iVar6 != 0) {
         in_stack_0000000c[iVar3] = in_stack_0000000c[iVar3] + iVar8;
       }
-      iVar8 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x21);
+      iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x21);
       if (iVar8 != 0) {
         shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020
                   (g_CEditorToolsPtr,"Enter face count",in_stack_0000000c + iVar3,false,0,0
                    ,true);
       }
     }
-    iVar8 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x20);
+    iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x20);
     if ((iVar8 != 0) && (0 < iVar3)) {
       crt_stdio_c_sprintf_FUN_005fdbd0(acStack_19c,"Delete LOD %d?",iVar3);
       iVar8 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
@@ -411,9 +411,9 @@ LAB_0051e453:
         in_stack_00000098 = in_stack_00000098 + 1;
       } while (in_stack_00000098 < in_stack_00000090);
     }
-    iVar8 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0xf);
+    iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0xf);
     if (iVar8 != 0) {
-      iVar8 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x2a);
+      iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
       if (iVar8 == 0) {
         iVar3 = iVar3 + 1;
       }
@@ -427,7 +427,7 @@ LAB_0051e453:
         iVar3 = 0;
       }
     }
-    iVar8 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x14);
+    iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x14);
     if (iVar8 != 0) {
       if (iVar3 < 0) {
         iVar3 = 0;
@@ -436,7 +436,7 @@ LAB_0051e453:
         iVar3 = -1;
       }
     }
-    iVar8 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,1);
+    iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
     if (iVar8 != 0) {
       shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff990);
       shape_edittool_cpp_CStrList_add_FUN_004a2b80

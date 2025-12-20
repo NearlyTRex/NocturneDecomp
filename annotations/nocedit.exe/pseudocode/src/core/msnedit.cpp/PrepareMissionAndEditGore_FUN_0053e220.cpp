@@ -172,7 +172,7 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
     in_stack_ffffffc8._3_1_ = '\0';
     in_stack_ffffffc0 = 0x53e56e;
     in_stack_ffffffc4 = g_CKeysPtr;
-    iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,1);
+    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
     if (iVar4 != 0) break;
     core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)&stack0xfffffff4);
     if (((byte)g_MouseButtonFlags & 1) != 0) {
@@ -203,7 +203,7 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
     }
     in_stack_ffffffe8 = (CVector3i *)0x39;
     in_stack_ffffffe4 = g_CKeysPtr;
-    iVar4 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x39);
+    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x39);
     if (iVar4 == 0) {
       in_stack_00000008 = (CGore *)0x0;
     }
@@ -214,7 +214,7 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
         core_gore_cpp_FUN_004edaa0();
       }
     }
-    iVar4 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1c);
+    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1c);
     if (iVar4 == 0) {
       in_stack_00000028 = (CDemonSet *)0x0;
     }
@@ -231,7 +231,7 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
         core_gore_cpp_FUN_004edaa0();
       }
     }
-    iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x19);
+    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x19);
     if (iVar4 != 0) {
       in_stack_00000084 = fStack00000044;
       in_stack_0000008c = in_stack_0000004c;
@@ -267,7 +267,7 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
     }
     in_stack_00000034 = (CBoxActor *)g_CKeysPtr;
     in_stack_00000030 = (CVector3f *)0x53e8ab;
-    iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x13);
+    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x13);
     pCVar2 = g_CEditorToolsPtr;
     if (iVar4 != 0) {
       in_stack_0000004c = "Reset gore?";

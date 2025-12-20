@@ -371,8 +371,8 @@ section .text
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
     PUSH 0x1                            ; 0050771a
     MOV EAX,[0x0067cf44]                ; 0050771c | g_CKeysPtr
-    PUSH EAX                            ; 00507721 | g_CKeysPtr
-    MOV EBX,dword ptr [EAX]             ; 00507722 | g_CKeysPtr
+    PUSH EAX                            ; 00507721 | g_CKeysInstance
+    MOV EBX,dword ptr [EAX]             ; 00507722 | g_CKeysInstance
     CALL dword ptr [EBX + 0x4]          ; 00507724
     ADD ESP,0x8                         ; 00507727
     TEST EAX,EAX                        ; 0050772a

@@ -1475,8 +1475,8 @@ section .text
     PUSH EBX                            ; 005148f9
         ;   Label: LAB_005148f9
     MOV EAX,[0x0067cf44]                ; 005148fa | g_CKeysPtr
-    PUSH EAX                            ; 005148ff | g_CKeysPtr
-    MOV EDI,dword ptr [EAX]             ; 00514900 | g_CKeysPtr
+    PUSH EAX                            ; 005148ff | g_CKeysInstance
+    MOV EDI,dword ptr [EAX]             ; 00514900 | g_CKeysInstance
     CALL dword ptr [EDI]                ; 00514902
     ADD ESP,0x8                         ; 00514904
     TEST EAX,EAX                        ; 00514907
@@ -1498,8 +1498,8 @@ section .text
     ADD ESP,0x8                         ; 0051492d
     MOV EAX,[0x0067cf44]                ; 00514930 | g_CKeysPtr
     PUSH 0x1                            ; 00514935
-    MOV EDX,dword ptr [EAX]             ; 00514937 | g_CKeysPtr
-    PUSH EAX                            ; 00514939 | g_CKeysPtr
+    MOV EDX,dword ptr [EAX]             ; 00514937 | g_CKeysInstance
+    PUSH EAX                            ; 00514939 | g_CKeysInstance
     CALL dword ptr [EDX]                ; 0051493a
     ADD ESP,0x8                         ; 0051493c
     TEST EAX,EAX                        ; 0051493f
@@ -1527,8 +1527,8 @@ section .text
     PUSH 0x1                            ; 00514963
         ;   Label: LAB_00514963
     MOV EAX,[0x0067cf44]                ; 00514965 | g_CKeysPtr
-    PUSH EAX                            ; 0051496a | g_CKeysPtr
-    MOV EDX,dword ptr [EAX]             ; 0051496b | g_CKeysPtr
+    PUSH EAX                            ; 0051496a | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 0051496b | g_CKeysInstance
     CALL dword ptr [EDX]                ; 0051496d
     ADD ESP,0x8                         ; 0051496f
     TEST EAX,EAX                        ; 00514972
@@ -1589,9 +1589,9 @@ section .text
     ADD ESP,0x8                         ; 005149f0
     PUSH 0x1                            ; 005149f3
     MOV ESI,dword ptr [0x0067cf44]      ; 005149f5 | g_CKeysPtr
-    PUSH ESI                            ; 005149fb | g_CKeysPtr
+    PUSH ESI                            ; 005149fb | g_CKeysInstance
     CALL engine_keys.cpp_CKeys_toggleInputMask_FUN_005024b0 ; 005149fc
-        ;   XREF to: 005024b0 (UNCONDITIONAL_CALL)  ; void engine_keys.cpp_CKeys_toggleInputMask_FUN_005024b0(CKeys * this, int enableExtended)
+        ;   XREF to: 005024b0 (UNCONDITIONAL_CALL)  ; void engine_keys.cpp_CKeys_toggleInputMask_FUN_005024b0(CKeys * this_ptr, int enable_extended)
     ADD ESP,0x8                         ; 00514a01
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 00514a04
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
@@ -1606,8 +1606,8 @@ section .text
     PUSH EBX                            ; 00514a22
         ;   Label: LAB_00514a22
     MOV EAX,[0x0067cf44]                ; 00514a23 | g_CKeysPtr
-    PUSH EAX                            ; 00514a28 | g_CKeysPtr
-    MOV EDI,dword ptr [EAX]             ; 00514a29 | g_CKeysPtr
+    PUSH EAX                            ; 00514a28 | g_CKeysInstance
+    MOV EDI,dword ptr [EAX]             ; 00514a29 | g_CKeysInstance
     CALL dword ptr [EDI]                ; 00514a2b
     ADD ESP,0x8                         ; 00514a2d
     TEST EAX,EAX                        ; 00514a30
@@ -1648,8 +1648,8 @@ section .text
     PUSH EBX                            ; 00514a81
         ;   Label: LAB_00514a81
     MOV ESI,dword ptr [0x0067cf44]      ; 00514a82 | g_CKeysPtr
-    PUSH ESI                            ; 00514a88 | g_CKeysPtr
-    MOV EAX,dword ptr [ESI]             ; 00514a89 | g_CKeysPtr
+    PUSH ESI                            ; 00514a88 | g_CKeysInstance
+    MOV EAX,dword ptr [ESI]             ; 00514a89 | g_CKeysInstance
     CALL dword ptr [EAX]                ; 00514a8b
     ADD ESP,0x8                         ; 00514a8d
     TEST EAX,EAX                        ; 00514a90
@@ -1721,9 +1721,9 @@ section .text
     PUSH 0x0                            ; 00514b11
         ;   Label: LAB_00514b11
     MOV EDI,dword ptr [0x0067cf44]      ; 00514b13 | g_CKeysPtr
-    PUSH EDI                            ; 00514b19 | g_CKeysPtr
+    PUSH EDI                            ; 00514b19 | g_CKeysInstance
     CALL engine_keys.cpp_CKeys_toggleInputMask_FUN_005024b0 ; 00514b1a
-        ;   XREF to: 005024b0 (UNCONDITIONAL_CALL)  ; void engine_keys.cpp_CKeys_toggleInputMask_FUN_005024b0(CKeys * this, int enableExtended)
+        ;   XREF to: 005024b0 (UNCONDITIONAL_CALL)  ; void engine_keys.cpp_CKeys_toggleInputMask_FUN_005024b0(CKeys * this_ptr, int enable_extended)
     JMP 0x00514852                      ; 00514b1f
         ;   XREF to: 00514852 (UNCONDITIONAL_JUMP)  ; LAB_00514852
     MOV EDI,EBX                         ; 00514b24

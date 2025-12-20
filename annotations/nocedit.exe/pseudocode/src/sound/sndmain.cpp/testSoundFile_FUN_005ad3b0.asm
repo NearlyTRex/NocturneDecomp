@@ -21,7 +21,7 @@
 ;   TerminatedCString s_Error_playing_s_00651278
 ;   TerminatedCString s_Canceled_00651289
 ;   CKeys* g_CKeysPtr = 02dcd7d4
-;   void* g_CKeysPtr
+;   CKeys g_CKeysInstance
 ;   char[220] g_SoundTestErrorBuffer
 ;
 ; Called Functions:
@@ -212,8 +212,8 @@ section .text
     PUSH 0x1                            ; 005ad53f
         ;   Label: LAB_005ad53f
     MOV EAX,[0x0067cf44]                ; 005ad541 | g_CKeysPtr
-    PUSH EAX                            ; 005ad546 | g_CKeysPtr
-    MOV EDX,dword ptr [EAX]             ; 005ad547 | g_CKeysPtr
+    PUSH EAX                            ; 005ad546 | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 005ad547 | g_CKeysInstance
     CALL dword ptr [EDX]                ; 005ad549
     ADD ESP,0x8                         ; 005ad54b
     TEST EAX,EAX                        ; 005ad54e

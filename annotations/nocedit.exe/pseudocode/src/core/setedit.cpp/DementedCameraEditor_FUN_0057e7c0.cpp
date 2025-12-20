@@ -15,7 +15,6 @@ void __cdecl core_setedit_cpp_DementedCameraEditor_FUN_0057e7c0(CDemonSet *this_
   CEditorTools *this_ptr_00;
   bool bVar3;
   undefined3 extraout_var;
-  undefined3 extraout_var_00;
   byte *pbVar4;
   FILE *pFVar5;
   FILE *pFVar6;
@@ -180,8 +179,8 @@ void __cdecl core_setedit_cpp_DementedCameraEditor_FUN_0057e7c0(CDemonSet *this_
     }
     wincore_winrun_cpp_drawCrosshair_FUN_005f2fd0();
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-    bVar3 = wincore_winrun_cpp_wasKeyPressed_FUN_005f2f00();
-    if (CONCAT31 /* combine 2-byte values */(extraout_var,bVar3) == 0) {
+    iVar10 = wincore_winrun_cpp_wasKeyPressed_FUN_005f2f00();
+    if (iVar10 == 0) {
       local_38 = (C3DSCamera *)0xffffffff;
     }
     else {
@@ -295,7 +294,7 @@ void __cdecl core_setedit_cpp_DementedCameraEditor_FUN_0057e7c0(CDemonSet *this_
       bVar3 = shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
                         (g_CEditorToolsPtr,"Save set","models",0x6481d1,
                          (bool)((char)acStack_470 + '\x04'));
-      if (CONCAT31 /* combine 2-byte values */(extraout_var_00,bVar3) != 0) {
+      if (CONCAT31 /* combine 2-byte values */(extraout_var,bVar3) != 0) {
         core_setedit_cpp_CDemonSet_save_FUN_0057a2a0(this_ptr,acStack_470 + 8);
       }
       break;

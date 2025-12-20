@@ -156,7 +156,7 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
       }
       if (((this_ptr->velocity_debug_enabled != 0) ||
           (pcVar6 = crt_env_c_getenv_FUN_006013f0("SPOOKHOUSE"), pcVar6 != (char *)0x0)) &&
-         (iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x3e), iVar4 != 0)) {
+         (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x3e), iVar4 != 0)) {
         DAT_02d82568 = DAT_02d82568 + 1;
         crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_02d82570,"demon%d.pcx",DAT_02d82568);
         engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(&DAT_02d82570);
@@ -168,9 +168,9 @@ void __cdecl core_game_cpp_CGame_processFrame_FUN_004da100(CGame *this_ptr)
       }
       core_game_cpp_CGame_drawScreenBorder_FUN_004d7e50(this_ptr);
       if (g_CheatFlags != 0) {
-        iVar4 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1d);
+        iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
         if ((iVar4 != 0) &&
-           (iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x2f), iVar4 != 0)) {
+           (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x2f), iVar4 != 0)) {
           iVar4 = g_DebugRecording;
           if (g_DebugRecording == 0) {
             g_DebugRecording = 1;

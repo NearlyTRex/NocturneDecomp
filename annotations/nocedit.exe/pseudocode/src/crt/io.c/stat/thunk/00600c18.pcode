@@ -1,0 +1,21 @@
+# ============================================================================
+# Function P-code Export
+# ============================================================================
+#
+# Function:    crt_io.c_stat_thunk_00600c18
+# Entry:       00600c18
+# Signature:   int crt_io.c_stat_thunk_00600c18(char * filename, stat * file_info)
+#
+# Format: @<address> [ESP:offset] # <assembly>
+#         [ESP:offset] = cumulative ESP delta from function entry
+#         Delta markers: (+n) ESP increased, (-n) ESP decreased
+#         Certainty:  no marker = known, ? = computed, ?? = unknown, ! = CALLIND
+#
+# ============================================================================
+
+@00600c18 [ESP:+0]  # JMP 0x00607e64
+BRANCH (ram,0x607e64,4)
+
+# ============================================================================
+# Summary: 1 instructions, 1 P-code ops
+# ============================================================================

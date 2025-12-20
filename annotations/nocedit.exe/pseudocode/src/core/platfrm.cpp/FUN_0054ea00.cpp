@@ -96,9 +96,9 @@ void core_platfrm_cpp_FUN_0054ea00(void)
            *(float *)(in_stack_00000004[2].create_event + 4);
       afStack_50[3] =
            in_stack_00000004[2].create_prob - *(float *)(in_stack_00000004[2].create_event + 8);
-      iVar2 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1d);
-      if ((iVar2 != 0) && (iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x47), iVar2 != 0)
-         ) {
+      iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
+      if ((iVar2 != 0) &&
+         (iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x47), iVar2 != 0)) {
         pcVar1 = this_ptr[2].create_event;
         if ((CLocation *)pcVar1 != &this_ptr->location) {
           *(float *)pcVar1 = (this_ptr->location).position.x;
@@ -129,7 +129,7 @@ void core_platfrm_cpp_FUN_0054ea00(void)
         *puVar7 = *puVar11;
         puVar7[(uint)bVar12 * -2 + 1] = puVar11[(uint)bVar12 * -2 + 1];
       }
-      iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x15);
+      iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x15);
       if (iVar2 != 0) {
         core_platfrm_cpp_FUN_0054e480();
       }
@@ -286,14 +286,14 @@ void core_platfrm_cpp_FUN_0054ea00(void)
     else {
       local_18[0] = in_stack_00000004[2].runtime_state;
     }
-    (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x2a);
-    (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x38);
-    iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x34);
+    (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+    (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x34);
     if (iVar2 != 0) {
       this_ptr[2].location.area_id =
            (int)((float)this_ptr[2].location.area_id + (float)auStack_268._0_4_);
     }
-    iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x33);
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x33);
     if (iVar2 != 0) {
       this_ptr[2].location.area_id = (int)((float)this_ptr[2].location.area_id - fStack_254);
     }

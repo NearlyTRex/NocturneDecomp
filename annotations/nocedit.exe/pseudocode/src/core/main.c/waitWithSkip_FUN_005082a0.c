@@ -29,9 +29,9 @@ void __cdecl core_main_c_waitWithSkip_FUN_005082a0(int duration_ms)
         g_GlobalDeltaTimeInt = 0x4000;
       }
       duration_ms = duration_ms - g_GlobalDeltaTimeInt;
-      iVar2 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x2a);
+      iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
       if (iVar2 == 0) break;
-      iVar2 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,1);
+      iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,1);
       if (iVar2 != 0) {
         return;
       }

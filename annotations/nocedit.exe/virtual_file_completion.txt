@@ -6,7 +6,7 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 258
 Total functions: 7154
-Clean functions: 2884 (40.3%)
+Clean functions: 2885 (40.3%)
 Files at 100%: 22
 Files at 90%+: 23
 Files at 50%+: 100
@@ -179,7 +179,7 @@ FILES AT 50-89%
          Suspects: badspacebase:2, concat_artifact:2, extra_output:2, negative_offset:3, pointer_cast:21, register_param:2, stack_param:2, stack_ref:8, suspect_float:3
    57.1% | shape/cramtex.cpp
          12/21 clean, 9 remaining
-         Suspects: badspacebase:1, concat_artifact:2, pointer_cast:46, register_param:1, stack_param:77, stack_ref:2, unaffected_reg:4, undefined_type:1
+         Suspects: badspacebase:1, concat_artifact:1, pointer_cast:46, register_param:1, stack_param:77, stack_ref:2, unaffected_reg:4
    57.1% | sound/sndwav.cpp
          20/35 clean, 15 remaining
          Suspects: badspacebase:7, negative_offset:2, pointer_cast:54, register_param:7, stack_param:31, stack_ref:6, unknown_field:8, unresolved_funcptr:1
@@ -234,15 +234,15 @@ FILES AT 50-89%
    52.8% | core/setdir.cpp
          19/36 clean, 17 remaining
          Suspects: badspacebase:7, pointer_cast:28, register_param:7, stack_param:77, stack_ref:21, suspect_float:1, unaffected_reg:37, unknown_field:1
+   52.6% | shape/edittool.cpp
+         82/156 clean, 74 remaining
+         Suspects: badspacebase:37, concat_artifact:5, extra_output:2, negative_offset:8, pointer_cast:44, register_param:43, stack_param:450, stack_ref:127, sub_artifact:3, unaffected_reg:63, undefined_type:7, unknown_field:29
    52.3% | sound/sndmain.cpp
          101/193 clean, 92 remaining
          Suspects: badspacebase:19, concat_artifact:73, extra_output:110, pointer_cast:120, register_param:22, stack_param:357, stack_ref:88, sub_artifact:23, unaffected_reg:46, unknown_field:106, warning_unreachable:6
    52.0% | crt/math.c
          53/102 clean, 49 remaining
          Suspects: badspacebase:4, concat_artifact:77, extra_output:8, pointer_cast:3, register_param:15, stack_param:87, stack_ref:2, sub_artifact:12, unaffected_reg:8, undefined_type:22, unknown_field:27, unresolved_funcptr:32, warning_indirect_jump:2, warning_jumptable:2, warning_overlapping_globals:1, warning_unreachable:1
-   51.9% | shape/edittool.cpp
-         81/156 clean, 75 remaining
-         Suspects: badspacebase:37, concat_artifact:10, extra_output:2, negative_offset:8, pointer_cast:44, register_param:43, stack_param:450, stack_ref:127, sub_artifact:3, unaffected_reg:63, undefined_type:12, unknown_field:29
    51.6% | core/actor.cpp
          95/184 clean, 89 remaining
          Suspects: badspacebase:33, concat_artifact:5, extra_output:8, negative_offset:36, pointer_cast:53, register_param:37, stack_param:619, stack_ref:110, sub_artifact:3, suspect_float:30, unaffected_reg:21, undefined_type:1, unknown_field:22, unresolved_funcptr:3

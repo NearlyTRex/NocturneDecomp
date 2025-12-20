@@ -232,9 +232,9 @@ section .text
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 00583150
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
     MOV EBX,dword ptr [0x0067cf44]      ; 00583155 | g_CKeysPtr
-    PUSH EBX                            ; 0058315b | g_CKeysPtr
+    PUSH EBX                            ; 0058315b | g_CKeysInstance
     CALL engine_keys.cpp_CKeys_getInputKey_FUN_00502460 ; 0058315c
-        ;   XREF to: 00502460 (UNCONDITIONAL_CALL)  ; int engine_keys.cpp_CKeys_getInputKey_FUN_00502460(CKeys * this)
+        ;   XREF to: 00502460 (UNCONDITIONAL_CALL)  ; int engine_keys.cpp_CKeys_getInputKey_FUN_00502460(CKeys * this_ptr)
     ADD ESP,0x4                         ; 00583161
     CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 00583164
         ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()

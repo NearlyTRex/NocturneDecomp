@@ -20,27 +20,29 @@ uint core_setedit_cpp_CDemonSet_unk201_FUN_0057ae50(void)
   double dVar6;
   CDemonSet *in_stack_00000004;
   int in_stack_00000008;
-  int in_stack_0000001c;
-  int in_stack_0000003c;
-  int in_stack_00000058;
-  int in_stack_0000005c;
+  int in_stack_00000014;
+  int in_stack_00000034;
+  int in_stack_00000050;
+  int in_stack_00000054;
+  uint in_stack_000000b0;
+  uint in_stack_000000b4;
   uint in_stack_000000b8;
-  uint in_stack_000000bc;
-  uint in_stack_000000c0;
   CGame *in_stack_fffffe8c;
-  int in_stack_fffffe94;
   CDemonLight *this_ptr;
   CDemonLight *intensity;
-  char acStack_100 [8];
+  char acStack_108 [8];
   char acStack_6c [76];
   uint local_20;
   uint local_1c;
   uint local_18;
-  uint local_14;
+  char local_14 [4];
   
   local_20 = *(uint *)(in_stack_00000008 + 0x11e0);
   local_18 = 1;
-  local_14 = 0;
+  local_14[0] = '\0';
+  local_14[1] = '\0';
+  local_14[2] = '\0';
+  local_14[3] = '\0';
   local_1c = 0;
   *(uint *)(in_stack_00000008 + 0x11e0) = 0;
   core_dlight_cpp_CDemonLight_init_FUN_004727c0(&g_CDemonLightInstance);
@@ -81,9 +83,9 @@ LAB_0057af67:
   if (0x1df < g_WindowHeight) {
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
   }
-  (*g_CKeysPtr->vtable[1].isKeyDown)(g_CKeysPtr,in_stack_fffffe94);
+  (*g_CKeysPtr->vtable->clearKeyPresses)(g_CKeysPtr);
   core_slew_cpp_CSlew_processInput_FUN_005a20b0(PTR_DAT_00681ab8);
-  if (in_stack_0000001c != 0) {
+  if (in_stack_00000014 != 0) {
     if (PTR_DAT_00681ab8 != &g_CDemonLightInstance.base.base.position) {
       g_CDemonLightInstance.base.base.position.x = *(int *)PTR_DAT_00681ab8;
       g_CDemonLightInstance.base.base.position.z = *(int *)((int)PTR_DAT_00681ab8 + 8);
@@ -102,16 +104,16 @@ LAB_0057af67:
     g_CDemonLightInstance.base.max_distance = 255.0;
     g_CDemonLightInstance.light_enabled_flag = 1;
     core_set_cpp_CDemonSet_FUN_0056c1a0(in_stack_00000004);
-    iVar3 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x2e);
+    iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x2e);
     if (iVar3 != 0) {
-      in_stack_0000003c = in_stack_0000003c + 1;
-      if (in_stack_00000004->camera_count <= in_stack_0000003c) {
-        in_stack_0000003c = 0;
+      in_stack_00000034 = in_stack_00000034 + 1;
+      if (in_stack_00000004->camera_count <= in_stack_00000034) {
+        in_stack_00000034 = 0;
       }
-      core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(in_stack_00000004,in_stack_0000003c);
+      core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(in_stack_00000004,in_stack_00000034);
     }
   }
-  if ((in_stack_0000003c == 0) || (0xf0 < g_WindowHeight)) {
+  if ((in_stack_00000034 == 0) || (0xf0 < g_WindowHeight)) {
     core_dlight_cpp_CDemonLight_renderShadowMapDebugView_FUN_00473390
               (&g_CDemonLightInstance,0x180,0,0x100);
   }
@@ -119,47 +121,48 @@ LAB_0057af67:
   if (iVar3 != -1) {
     core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(in_stack_00000004,iVar3);
   }
-  iVar3 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x32);
-  if ((iVar3 != 0) && (in_stack_00000058 = 1 - in_stack_00000058, in_stack_00000058 != 0)) {
-    core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(in_stack_00000004,in_stack_0000005c);
+  iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x32);
+  if ((iVar3 != 0) && (in_stack_00000050 = 1 - in_stack_00000050, in_stack_00000050 != 0)) {
+    core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(in_stack_00000004,in_stack_00000054);
   }
   engine_2d_c_drawText_FUN_00401fd0("Position light.  Press SPACE when done",0,0);
-  engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffff4,0,0xb);
+  engine_2d_c_drawText_FUN_00401fd0(local_14,0,0xb);
   crt_stdio_c_sprintf_FUN_005fdbd0
-            (&stack0xfffffef8,"%f",(double)(1.0 / g_CGamePtr->delta_time_float));
-  engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffefc,0,g_WindowHeight + -0xb);
+            (&stack0xfffffef0,"%f",(double)(1.0 / g_CGamePtr->delta_time_float));
+  engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffef4,0,g_WindowHeight + -0xb);
   crt_stdio_c_sprintf_FUN_005fdbd0
-            (acStack_100,"pos: %4.1f %4.1f %4.1f   pbh: %3.1f %3.1f %6.3f   fov : %2.1f",(double)*(float *)PTR_DAT_00681ab8,
+            (acStack_108,"pos: %4.1f %4.1f %4.1f   pbh: %3.1f %3.1f %6.3f   fov : %2.1f",(double)*(float *)PTR_DAT_00681ab8,
              (double)*(float *)((int)PTR_DAT_00681ab8 + 4),
              (double)*(float *)((int)PTR_DAT_00681ab8 + 8),
              180 * (double)*(float *)((int)PTR_DAT_00681ab8 + 0xc) * 0.31830988619288902,
              (double)*(float *)((int)PTR_DAT_00681ab8 + 0x14) * 0.31830988619288902 * 180,
              (double)*(float *)((int)PTR_DAT_00681ab8 + 0x10) * 0.31830988619288902 * 180,
              (double)*(float *)((int)PTR_DAT_00681ab8 + 0x18));
-  engine_2d_c_drawText_FUN_00401fd0(acStack_100 + 4,0,0x16);
-  acStack_100[0] = -0x11;
-  acStack_100[1] = -0x4f;
-  acStack_100[2] = 'W';
-  acStack_100[3] = '\0';
+  engine_2d_c_drawText_FUN_00401fd0(acStack_108 + 4,0,0x16);
+  acStack_108[0] = -0x11;
+  acStack_108[1] = -0x4f;
+  acStack_108[2] = 'W';
+  acStack_108[3] = '\0';
   wincore_winrun_cpp_drawCrosshair_FUN_005f2fd0();
-  acStack_100[4] = -0xc;
-  acStack_100[5] = -0x4f;
-  acStack_100[6] = 'W';
-  acStack_100[7] = '\0';
+  acStack_108[4] = -0xc;
+  acStack_108[5] = -0x4f;
+  acStack_108[6] = 'W';
+  acStack_108[7] = '\0';
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-  acStack_100[4] = -1;
-  acStack_100[5] = -0x4f;
-  acStack_100[6] = 'W';
-  acStack_100[7] = '\0';
+  acStack_108[4] = -1;
+  acStack_108[5] = -0x4f;
+  acStack_108[6] = 'W';
+  acStack_108[7] = '\0';
   core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
-  acStack_100[4] = '\x0e';
-  acStack_100[5] = -0x4e;
-  acStack_100[6] = 'W';
-  acStack_100[7] = '\0';
-  iVar3 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,1);
+  acStack_108[4] = '\x0e';
+  acStack_108[5] = -0x4e;
+  acStack_108[6] = 'W';
+  acStack_108[7] = '\0';
+  iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,1);
   if (iVar3 != 0) goto LAB_0057b3c9;
-  iVar3 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x39);
-  if ((iVar3 != 0) || (iVar3 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x1c), iVar3 != 0)) {
+  iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x39);
+  if ((iVar3 != 0) ||
+     (iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x1c), iVar3 != 0)) {
     pvVar2 = PTR_DAT_00681ab8;
     if (g_ActiveLightCount != 0x5f) goto LAB_0057b341;
     engine_2d_c_drawText_FUN_00401fd0("Too many visible lights in view!",0,0);
@@ -167,16 +170,16 @@ LAB_0057af67:
     engine_2d_c_clearInputAndWait_FUN_00403260();
     engine_keys_cpp_CKeys_getInputKey_FUN_00502460(g_CKeysPtr);
   }
-  iVar3 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x21);
+  iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x21);
   if (iVar3 != 0) {
     shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
               (g_CEditorToolsPtr,"Edit FOV",(float *)((int)PTR_DAT_00681ab8 + 0x18),true,
                0.0,100.0,true);
   }
-  iVar3 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x31);
+  iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x31);
   if (iVar3 != 0) {
     shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
-              (g_CEditorToolsPtr,"Edit light name",&stack0x0000007c,100,1);
+              (g_CEditorToolsPtr,"Edit light name",&stack0x00000074,100,1);
   }
   goto LAB_0057af67;
 LAB_0057b341:
@@ -191,8 +194,8 @@ LAB_0057b341:
     *(uint *)(in_stack_00000008 + 0x114) = *(uint *)((int)pvVar2 + 0x10);
     *(uint *)(in_stack_00000008 + 0x118) = *(uint *)((int)pvVar2 + 0x14);
   }
-  pcVar5 = &stack0x00000050;
-  in_stack_000000b8 = 1;
+  pcVar5 = &stack0x00000048;
+  in_stack_000000b0 = 1;
   pcVar4 = (char *)(in_stack_00000008 + 4);
   *(uint *)(in_stack_00000008 + 0x11c) = *(uint *)((int)PTR_DAT_00681ab8 + 0x18);
   do {
@@ -208,6 +211,6 @@ LAB_0057b3c9:
   core_slew_cpp_CSlew_free_FUN_005a20a0();
   engine_2d_c_clearInputAndWait_FUN_00403260();
   g_CDemonLightInstance.light_enabled_flag = 0;
-  *(uint *)(in_stack_00000008 + 0x11e0) = in_stack_000000bc;
-  return in_stack_000000c0;
+  *(uint *)(in_stack_00000008 + 0x11e0) = in_stack_000000b4;
+  return in_stack_000000b8;
 }

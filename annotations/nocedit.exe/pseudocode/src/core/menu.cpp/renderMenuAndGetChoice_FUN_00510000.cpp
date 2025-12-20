@@ -123,7 +123,7 @@ core_menu_cpp_renderMenuAndGetChoice_FUN_00510000
   pcVar5 = (char *)0x0;
 LAB_00510279:
   g_MenuInputHappened = 0;
-  iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x48);
+  iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x48);
   if (iVar4 != 0) {
     iVar4 = *in_stack_0000004c;
     g_MenuInputHappened = 1;
@@ -132,7 +132,7 @@ LAB_00510279:
       *in_stack_0000004c = in_stack_00000048 + -1;
     }
   }
-  iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x50);
+  iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x50);
   if (iVar4 != 0) {
     g_MenuInputHappened = 1;
     iVar4 = *in_stack_00000060;
@@ -143,15 +143,15 @@ LAB_00510279:
   }
   if (pcVar5 != (char *)0x0) {
     g_MenuLeftRightPressed = 0;
-    iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x4b);
+    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x4b);
     if (iVar4 != 0) {
       g_MenuLeftRightPressed = 1;
       return *in_stack_00000074;
     }
-    iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x4d);
+    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x4d);
     if (iVar4 != 0) goto LAB_00510340;
   }
-  iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x1c);
+  iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x1c);
   if (iVar4 == 0) {
     return -1;
   }

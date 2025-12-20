@@ -611,7 +611,7 @@ extern WatcomDestructorCall WatcomDestructorCall_00660444;
 extern WatcomDestructorCall WatcomDestructorCall_00660450;
 extern WatcomDestructorCall WatcomDestructorCall_0066045c;
 extern WatcomTypeInfo g_CKeyActorTypeInfo;
-extern void* g_CKeysVTable;
+extern CKeys_vtable g_CKeysVTable;
 extern WatcomTypeInfo g_CLadderTypeInfo;
 extern CCharacter_vtable DAT_00660820;
 extern CEnemy_vtable DAT_00660888;

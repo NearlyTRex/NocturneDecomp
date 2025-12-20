@@ -5,14 +5,14 @@
 ;
 ;
 ; Referenced Globals:
-;   void* g_CKeysVTable = 00502420
-;   void* g_CKeysPtr
+;   CKeys_vtable g_CKeysVTable
+;   CKeys g_CKeysInstance
 ;
 ; *****************************************************************************
 
 section .text
 
-    MOV dword ptr [0x02dcd7d4],0x6605bc ; 00502410 | g_CKeysPtr | g_CKeysVTable
+    MOV dword ptr [0x02dcd7d4],0x6605bc ; 00502410 | g_CKeysInstance | g_CKeysVTable
         ;   Label: engine_keys.cpp_staticInit_FUN_00502410
     RET                                 ; 0050241a
 

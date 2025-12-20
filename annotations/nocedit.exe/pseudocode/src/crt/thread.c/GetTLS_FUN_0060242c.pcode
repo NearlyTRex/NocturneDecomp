@@ -1,0 +1,24 @@
+# ============================================================================
+# Function P-code Export
+# ============================================================================
+#
+# Function:    crt_thread.c_GetTLS_FUN_0060242c
+# Entry:       0060242c
+# Signature:   ThreadData * crt_thread.c_GetTLS_FUN_0060242c(void)
+#
+# Format: @<address> [ESP:offset] # <assembly>
+#         [ESP:offset] = cumulative ESP delta from function entry
+#         Delta markers: (+n) ESP increased, (-n) ESP decreased
+#         Certainty:  no marker = known, ? = computed, ?? = unknown, ! = CALLIND
+#
+# ============================================================================
+
+@0060242c [ESP:+0]  # MOV EAX, [0x03f9b22c]
+COPY (register,0x0,4) /* EAX */ = (ram,0x3f9b22c,4)
+
+@00602431 [ESP:+0]  # LEA EAX, [EAX]
+COPY (register,0x0,4) /* EAX */ = (register,0x0,4) /* EAX */
+
+# ============================================================================
+# Summary: 2 instructions, 2 P-code ops
+# ============================================================================

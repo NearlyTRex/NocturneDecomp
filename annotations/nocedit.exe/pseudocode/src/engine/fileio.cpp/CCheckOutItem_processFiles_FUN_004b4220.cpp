@@ -400,7 +400,7 @@ LAB_004b4980:
           in_stack_00000030 = pFVar3;
           shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
                     (g_CEditorToolsPtr,(float)(int)pFVar3,40.0);
-          iVar5 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,1);
+          iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
           if (iVar5 != 0) {
             pFVar3 = (FILE *)0x28;
           }

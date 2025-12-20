@@ -276,8 +276,8 @@ section .text
     ADD ESP,0x4                         ; 00513175
     MOV EAX,[0x0067cf44]                ; 00513178 | g_CKeysPtr
     PUSH 0x2a                           ; 0051317d
-    MOV EDX,dword ptr [EAX]             ; 0051317f | g_CKeysPtr
-    PUSH EAX                            ; 00513181 | g_CKeysPtr
+    MOV EDX,dword ptr [EAX]             ; 0051317f | g_CKeysInstance
+    PUSH EAX                            ; 00513181 | g_CKeysInstance
     CALL dword ptr [EDX]                ; 00513182
     ADD ESP,0x8                         ; 00513184
     TEST EAX,EAX                        ; 00513187
@@ -285,8 +285,8 @@ section .text
         ;   XREF to: 005133aa (CONDITIONAL_JUMP)  ; LAB_005133aa
     PUSH 0x1d                           ; 0051318f
     MOV EAX,[0x0067cf44]                ; 00513191 | g_CKeysPtr
-    PUSH EAX                            ; 00513196 | g_CKeysPtr
-    MOV EDX,dword ptr [EAX]             ; 00513197 | g_CKeysPtr
+    PUSH EAX                            ; 00513196 | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 00513197 | g_CKeysInstance
     CALL dword ptr [EDX]                ; 00513199
     ADD ESP,0x8                         ; 0051319b
     TEST EAX,EAX                        ; 0051319e
@@ -317,8 +317,8 @@ section .text
     PUSH 0x1                            ; 005131dd
         ;   Label: default
     MOV EAX,[0x0067cf44]                ; 005131df | g_CKeysPtr
-    PUSH EAX                            ; 005131e4 | g_CKeysPtr
-    MOV EDX,dword ptr [EAX]             ; 005131e5 | g_CKeysPtr
+    PUSH EAX                            ; 005131e4 | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 005131e5 | g_CKeysInstance
     CALL dword ptr [EDX + 0x4]          ; 005131e7
     ADD ESP,0x8                         ; 005131ea
     TEST EAX,EAX                        ; 005131ed
@@ -328,8 +328,8 @@ section .text
     PUSH 0x1d                           ; 005131f6
         ;   Label: LAB_005131f6
     MOV EAX,[0x0067cf44]                ; 005131f8 | g_CKeysPtr
-    PUSH EAX                            ; 005131fd | g_CKeysPtr
-    MOV EDX,dword ptr [EAX]             ; 005131fe | g_CKeysPtr
+    PUSH EAX                            ; 005131fd | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 005131fe | g_CKeysInstance
     CALL dword ptr [EDX]                ; 00513200
     ADD ESP,0x8                         ; 00513202
     TEST EAX,EAX                        ; 00513205
@@ -337,8 +337,8 @@ section .text
         ;   XREF to: 00513243 (CONDITIONAL_JUMP)  ; LAB_00513243
     PUSH 0x32                           ; 00513209
     MOV EAX,[0x0067cf44]                ; 0051320b | g_CKeysPtr
-    PUSH EAX                            ; 00513210 | g_CKeysPtr
-    MOV EDX,dword ptr [EAX]             ; 00513211 | g_CKeysPtr
+    PUSH EAX                            ; 00513210 | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 00513211 | g_CKeysInstance
     CALL dword ptr [EDX + 0x4]          ; 00513213
     ADD ESP,0x8                         ; 00513216
     TEST EAX,EAX                        ; 00513219
@@ -361,8 +361,8 @@ section .text
     PUSH 0x1d                           ; 00513243
         ;   Label: LAB_00513243
     MOV EAX,[0x0067cf44]                ; 00513245 | g_CKeysPtr
-    PUSH EAX                            ; 0051324a | g_CKeysPtr
-    MOV EDX,dword ptr [EAX]             ; 0051324b | g_CKeysPtr
+    PUSH EAX                            ; 0051324a | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 0051324b | g_CKeysInstance
     CALL dword ptr [EDX]                ; 0051324d
     ADD ESP,0x8                         ; 0051324f
     TEST EAX,EAX                        ; 00513252
@@ -370,8 +370,8 @@ section .text
         ;   XREF to: 005132dc (CONDITIONAL_JUMP)  ; LAB_005132dc
     PUSH 0x20                           ; 0051325a
     MOV EAX,[0x0067cf44]                ; 0051325c | g_CKeysPtr
-    PUSH EAX                            ; 00513261 | g_CKeysPtr
-    MOV EDX,dword ptr [EAX]             ; 00513262 | g_CKeysPtr
+    PUSH EAX                            ; 00513261 | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 00513262 | g_CKeysInstance
     CALL dword ptr [EDX + 0x4]          ; 00513264
     ADD ESP,0x8                         ; 00513267
     TEST EAX,EAX                        ; 0051326a
@@ -419,8 +419,8 @@ section .text
     PUSH 0x1d                           ; 005132dc
         ;   Label: LAB_005132dc
     MOV EAX,[0x0067cf44]                ; 005132de | g_CKeysPtr
-    PUSH EAX                            ; 005132e3 | g_CKeysPtr
-    MOV EDX,dword ptr [EAX]             ; 005132e4 | g_CKeysPtr
+    PUSH EAX                            ; 005132e3 | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 005132e4 | g_CKeysInstance
     CALL dword ptr [EDX]                ; 005132e6
     ADD ESP,0x8                         ; 005132e8
     TEST EAX,EAX                        ; 005132eb
@@ -428,8 +428,8 @@ section .text
         ;   XREF to: 0051332d (CONDITIONAL_JUMP)  ; LAB_0051332d
     PUSH 0x21                           ; 005132ef
     MOV EAX,[0x0067cf44]                ; 005132f1 | g_CKeysPtr
-    PUSH EAX                            ; 005132f6 | g_CKeysPtr
-    MOV EDX,dword ptr [EAX]             ; 005132f7 | g_CKeysPtr
+    PUSH EAX                            ; 005132f6 | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 005132f7 | g_CKeysInstance
     CALL dword ptr [EDX + 0x4]          ; 005132f9
     ADD ESP,0x8                         ; 005132fc
     TEST EAX,EAX                        ; 005132ff
@@ -499,8 +499,8 @@ section .text
     PUSH 0x1d                           ; 005133aa
         ;   Label: LAB_005133aa
     MOV EAX,[0x0067cf44]                ; 005133ac | g_CKeysPtr
-    PUSH EAX                            ; 005133b1 | g_CKeysPtr
-    MOV EDX,dword ptr [EAX]             ; 005133b2 | g_CKeysPtr
+    PUSH EAX                            ; 005133b1 | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 005133b2 | g_CKeysInstance
     CALL dword ptr [EDX]                ; 005133b4
     ADD ESP,0x8                         ; 005133b6
     TEST EAX,EAX                        ; 005133b9
@@ -559,8 +559,8 @@ section .text
     PUSH 0x26                           ; 0051343f
         ;   Label: LAB_0051343f
     MOV EAX,[0x0067cf44]                ; 00513441 | g_CKeysPtr
-    PUSH EAX                            ; 00513446 | g_CKeysPtr
-    MOV EDX,dword ptr [EAX]             ; 00513447 | g_CKeysPtr
+    PUSH EAX                            ; 00513446 | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 00513447 | g_CKeysInstance
     CALL dword ptr [EDX + 0x4]          ; 00513449
     ADD ESP,0x8                         ; 0051344c
     TEST EAX,EAX                        ; 0051344f

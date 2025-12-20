@@ -26,7 +26,7 @@
 ;   int g_ClipTop
 ;   int g_ClipRight
 ;   int g_ClipBottom
-;   void* g_CKeysPtr
+;   CKeys g_CKeysInstance
 ;
 ; Called Functions:
 ;   engine_2d.c_clearInputAndWait_FUN_00403260
@@ -121,8 +121,8 @@ section .text
     PUSH 0x4b                           ; 00510894
         ;   Label: LAB_00510894
     MOV EAX,[0x0067cf44]                ; 00510896 | g_CKeysPtr
-    PUSH EAX                            ; 0051089b | g_CKeysPtr
-    MOV EDX,dword ptr [EAX]             ; 0051089c | g_CKeysPtr
+    PUSH EAX                            ; 0051089b | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 0051089c | g_CKeysInstance
     CALL dword ptr [EDX + 0x4]          ; 0051089e
     ADD ESP,0x8                         ; 005108a1
     TEST EAX,EAX                        ; 005108a4
@@ -132,8 +132,8 @@ section .text
     PUSH 0x4d                           ; 005108ae
         ;   Label: LAB_005108ae
     MOV EAX,[0x0067cf44]                ; 005108b0 | g_CKeysPtr
-    PUSH EAX                            ; 005108b5 | g_CKeysPtr
-    MOV EDX,dword ptr [EAX]             ; 005108b6 | g_CKeysPtr
+    PUSH EAX                            ; 005108b5 | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 005108b6 | g_CKeysInstance
     CALL dword ptr [EDX + 0x4]          ; 005108b8
     ADD ESP,0x8                         ; 005108bb
     TEST EAX,EAX                        ; 005108be
@@ -220,26 +220,26 @@ section .text
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
     PUSH 0x1                            ; 005109ab
     MOV EAX,[0x0067cf44]                ; 005109ad | g_CKeysPtr
-    PUSH EAX                            ; 005109b2 | g_CKeysPtr
-    MOV EDX,dword ptr [EAX]             ; 005109b3 | g_CKeysPtr
+    PUSH EAX                            ; 005109b2 | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 005109b3 | g_CKeysInstance
     CALL dword ptr [EDX + 0x4]          ; 005109b5
     ADD ESP,0x8                         ; 005109b8
     TEST EAX,EAX                        ; 005109bb
     JNZ 0x005109f5                      ; 005109bd
         ;   XREF to: 005109f5 (CONDITIONAL_JUMP)  ; LAB_005109f5
     PUSH 0x1c                           ; 005109bf
-    MOV EDX,dword ptr [0x0067cf44]      ; 005109c1 | g_CKeysPtr
-    PUSH EDX                            ; 005109c7 | g_CKeysPtr
-    MOV EAX,dword ptr [EDX]             ; 005109c8 | g_CKeysPtr
+    MOV EDX,dword ptr [0x0067cf44]      ; 005109c1 | g_CKeysInstance | g_CKeysPtr
+    PUSH EDX                            ; 005109c7 | g_CKeysInstance
+    MOV EAX,dword ptr [EDX]             ; 005109c8 | g_CKeysInstance
     CALL dword ptr [EAX + 0x4]          ; 005109ca
     ADD ESP,0x8                         ; 005109cd
     TEST EAX,EAX                        ; 005109d0
     JNZ 0x005109f0                      ; 005109d2
         ;   XREF to: 005109f0 (CONDITIONAL_JUMP)  ; LAB_005109f0
     PUSH 0x200                          ; 005109d4
-    MOV EDX,dword ptr [0x0067cf44]      ; 005109d9 | g_CKeysPtr
-    PUSH EDX                            ; 005109df | g_CKeysPtr
-    MOV EAX,dword ptr [EDX]             ; 005109e0 | g_CKeysPtr
+    MOV EDX,dword ptr [0x0067cf44]      ; 005109d9 | g_CKeysInstance | g_CKeysPtr
+    PUSH EDX                            ; 005109df | g_CKeysInstance
+    MOV EAX,dword ptr [EDX]             ; 005109e0 | g_CKeysInstance
     CALL dword ptr [EAX + 0x4]          ; 005109e2
     ADD ESP,0x8                         ; 005109e5
     TEST EAX,EAX                        ; 005109e8

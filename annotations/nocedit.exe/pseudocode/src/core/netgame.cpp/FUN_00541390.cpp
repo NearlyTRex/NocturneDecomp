@@ -268,9 +268,9 @@ LAB_005415cb:
           core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_00542ff0();
         }
       }
-      iVar5 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,1);
+      iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
       if (iVar5 != 0) goto LAB_005416d1;
-      iVar5 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x1c);
+      iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x1c);
       if (iVar5 != 0) {
         *(uint *)(in_stack_00000004->players[in_stack_00000004->local_player_index].field5_0x38 +
                  0xc) =
@@ -292,7 +292,7 @@ LAB_005415cb:
       acStack_12c[5] = '\x1a';
       acStack_12c[6] = 'T';
       acStack_12c[7] = '\0';
-      iVar5 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x1f);
+      iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x1f);
       if ((iVar5 != 0) &&
          (iVar5 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                             (g_CEditorToolsPtr,"Send chat",&DAT_02f7c640,0x100,1),

@@ -356,8 +356,8 @@ section .text
     PUSH 0x1                            ; 00511bc6
         ;   Label: default
     MOV EAX,[0x0067cf44]                ; 00511bc8 | g_CKeysPtr
-    PUSH EAX                            ; 00511bcd | g_CKeysPtr
-    MOV EBX,dword ptr [EAX]             ; 00511bce | g_CKeysPtr
+    PUSH EAX                            ; 00511bcd | g_CKeysInstance
+    MOV EBX,dword ptr [EAX]             ; 00511bce | g_CKeysInstance
     CALL dword ptr [EBX + 0x4]          ; 00511bd0
     ADD ESP,0x8                         ; 00511bd3
     TEST EAX,EAX                        ; 00511bd6

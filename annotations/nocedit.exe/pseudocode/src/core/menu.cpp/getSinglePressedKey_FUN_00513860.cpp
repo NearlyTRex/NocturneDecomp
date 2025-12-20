@@ -10,7 +10,7 @@ int __cdecl core_menu_cpp_getSinglePressedKey_FUN_00513860(void)
 
 {
   int iVar1;
-  int keyCode;
+  int key_code;
   int iVar2;
   
   if (g_CGamePtr->game_control == CONTROL_MODE_GAMEPAD) {
@@ -20,19 +20,19 @@ int __cdecl core_menu_cpp_getSinglePressedKey_FUN_00513860(void)
   iVar2 = -1;
   while( true ) {
     while( true ) {
-      keyCode = iVar1;
-      iVar1 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,keyCode);
+      key_code = iVar1;
+      iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,key_code);
       if (iVar1 != 0) break;
-      iVar1 = keyCode + 1;
-      if (599 < keyCode + 1) {
+      iVar1 = key_code + 1;
+      if (599 < key_code + 1) {
         return iVar2;
       }
     }
     if (-1 < iVar2) break;
-    iVar1 = keyCode + 1;
-    iVar2 = keyCode;
-    if (599 < keyCode + 1) {
-      return keyCode;
+    iVar1 = key_code + 1;
+    iVar2 = key_code;
+    if (599 < key_code + 1) {
+      return key_code;
     }
   }
   return -2;

@@ -240,10 +240,10 @@ section .text
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
     CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 00537877
         ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()
-    MOV EBX,dword ptr [0x0067cf44]      ; 0053787c | g_CKeysPtr
-    PUSH EBX                            ; 00537882 | g_CKeysPtr
+    MOV EBX,dword ptr [0x0067cf44]      ; 0053787c | g_CKeysInstance | g_CKeysPtr
+    PUSH EBX                            ; 00537882 | g_CKeysInstance
     CALL engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_00502470 ; 00537883
-        ;   XREF to: 00502470 (UNCONDITIONAL_CALL)  ; int engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_00502470(CKeys * this)
+        ;   XREF to: 00502470 (UNCONDITIONAL_CALL)  ; int engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_00502470(CKeys * this_ptr)
     MOV EDI,EAX                         ; 00537888
     SUB EAX,0x31                        ; 0053788a
     ADD ESP,0x4                         ; 0053788d

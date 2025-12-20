@@ -1,0 +1,26 @@
+# ============================================================================
+# Function P-code Export
+# ============================================================================
+#
+# Function:    core_door.cpp_CDoor_getActorType_FUN_0047fac0
+# Entry:       0047fac0
+# Signature:   CDemonActorType * core_door.cpp_CDoor_getActorType_FUN_0047fac0(CDoor * this_ptr)
+#
+# Format: @<address> [ESP:offset] # <assembly>
+#         [ESP:offset] = cumulative ESP delta from function entry
+#         Delta markers: (+n) ESP increased, (-n) ESP decreased
+#         Certainty:  no marker = known, ? = computed, ?? = unknown, ! = CALLIND
+#
+# ============================================================================
+
+@0047fac0 [ESP:+0]  # MOV EAX, 0x2c14cdc
+COPY (register,0x0,4) /* EAX */ = (const,0x2c14cdc,4)
+
+@0047fac5 [ESP:+4](+4)  # RET
+LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
+INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+RETURN (register,0x284,4)
+
+# ============================================================================
+# Summary: 2 instructions, 4 P-code ops
+# ============================================================================

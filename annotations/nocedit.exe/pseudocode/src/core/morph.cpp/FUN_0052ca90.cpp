@@ -28,11 +28,11 @@ void core_morph_cpp_FUN_0052ca90(void)
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
     shape_spotview_cpp_CSpotView_FUN_005b9670(g_CSpotViewPtr);
-    iVar1 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,1);
+    iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
     if (iVar1 != 0) break;
-    (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x38);
-    (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x33);
-    (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x34);
+    (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
+    (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x33);
+    (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x34);
   }
   engine_2d_c_clearInputAndWait_FUN_00403260();
   return;

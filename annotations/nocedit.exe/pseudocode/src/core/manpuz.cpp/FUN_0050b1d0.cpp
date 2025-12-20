@@ -17,12 +17,12 @@ void core_manpuz_cpp_FUN_0050b1d0(void)
   float in_stack_00000018;
   float in_stack_0000002c;
   
-  (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x38);
-  iVar1 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x33);
+  (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
+  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x33);
   if (iVar1 != 0) {
     (in_stack_00000004->orient).bank = (in_stack_00000004->orient).bank - in_stack_00000018;
   }
-  iVar1 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x34);
+  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x34);
   if (iVar1 != 0) {
     (in_stack_00000004->orient).bank = (in_stack_00000004->orient).bank + in_stack_0000002c;
   }

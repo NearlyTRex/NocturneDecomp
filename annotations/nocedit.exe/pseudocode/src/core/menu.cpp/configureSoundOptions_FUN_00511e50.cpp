@@ -776,7 +776,7 @@ LAB_005126f5:
       core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
     }
     in_stack_fffff65c = 1;
-    iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,1);
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
     if (iVar2 != 0) {
       return;
     }

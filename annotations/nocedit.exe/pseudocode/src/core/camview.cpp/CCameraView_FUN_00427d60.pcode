@@ -1,0 +1,30 @@
+# ============================================================================
+# Function P-code Export
+# ============================================================================
+#
+# Function:    core_camview.cpp_CCameraView_FUN_00427d60
+# Entry:       00427d60
+# Signature:   int core_camview.cpp_CCameraView_FUN_00427d60(CCameraView * this_ptr)
+#
+# Format: @<address> [ESP:offset] # <assembly>
+#         [ESP:offset] = cumulative ESP delta from function entry
+#         Delta markers: (+n) ESP increased, (-n) ESP decreased
+#         Certainty:  no marker = known, ? = computed, ?? = unknown, ! = CALLIND
+#
+# ============================================================================
+
+@00427d60 [ESP:+0]  # MOV EAX, 0x1
+COPY (register,0x0,4) /* EAX */ = (const,0x1,4)
+
+@00427d65 [ESP:+0]  # LEA EAX, [EAX]
+COPY (register,0x0,4) /* EAX */ = (register,0x0,4) /* EAX */
+
+@00427d6b [ESP:+0]  # LEA EDX, [EDX]
+COPY (register,0x8,4) /* EDX */ = (register,0x8,4) /* EDX */
+
+@00427d6e [ESP:+0]  # MOV EBX, EBX
+COPY (register,0xc,4) /* EBX */ = (register,0xc,4) /* EBX */
+
+# ============================================================================
+# Summary: 4 instructions, 4 P-code ops
+# ============================================================================

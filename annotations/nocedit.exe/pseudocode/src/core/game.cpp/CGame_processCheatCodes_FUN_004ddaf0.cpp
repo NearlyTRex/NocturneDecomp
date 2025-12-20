@@ -24,13 +24,12 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
   bool bVar10;
   int iVar11;
   char *pcVar12;
-  undefined3 extraout_var;
   uint uVar13;
   int iVar14;
   byte *pbVar15;
+  undefined3 extraout_var;
   undefined3 extraout_var_00;
   undefined3 extraout_var_01;
-  undefined3 extraout_var_02;
   CDemonActor *pCVar16;
   CDemonActor *this_ptr_01;
   CSkeleton *pCVar17;
@@ -228,7 +227,7 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
       core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav");
     }
     if ((this_ptr->subtitle_system_enabled == 0) &&
-       (iVar11 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x44), iVar11 != 0)) {
+       (iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x44), iVar11 != 0)) {
       iVar18 = 0;
       iVar11 = 100;
       pbVar21 = abStack_358;
@@ -247,8 +246,8 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
     }
     pfStack_18c = &this_ptr->time_scale_factor;
     while( true ) {
-      bVar10 = wincore_winrun_cpp_wasKeyPressed_FUN_005f2f00();
-      if (CONCAT31 /* combine 2-byte values */(extraout_var,bVar10) == 0) break;
+      iVar11 = wincore_winrun_cpp_wasKeyPressed_FUN_005f2f00();
+      if (iVar11 == 0) break;
       uVar13 = engine_keys_cpp_CKeys_getUppercasedInputKey_FUN_00502470(g_CKeysPtr);
       iVar11 = (uVar13 & 0xff) << 8;
       iVar18 = 0x13;
@@ -621,13 +620,13 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
                (bVar10 = shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020
                                    (g_CEditorToolsPtr,"Enter number of frames to record (or 0 to record until CTRL+V is pressed)",
                                     (int *)&g_DebugRecordingParams,true,0,99999,true),
-               CONCAT31 /* combine 2-byte values */(extraout_var_00,bVar10) != 0)) &&
+               CONCAT31 /* combine 2-byte values */(extraout_var,bVar10) != 0)) &&
               (bVar10 = shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020
                                   (g_CEditorToolsPtr,"Enter image width",&DAT_0067b664,true
-                                   ,1,9999,true), CONCAT31 /* combine 2-byte values */(extraout_var_01,bVar10) != 0)) &&
+                                   ,1,9999,true), CONCAT31 /* combine 2-byte values */(extraout_var_00,bVar10) != 0)) &&
              (bVar10 = shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020
                                  (g_CEditorToolsPtr,"Enter image height",&DAT_0067b668,true
-                                  ,1,9999,true), CONCAT31 /* combine 2-byte values */(extraout_var_02,bVar10) != 0)) {
+                                  ,1,9999,true), CONCAT31 /* combine 2-byte values */(extraout_var_01,bVar10) != 0)) {
             shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
                       (g_CEditorToolsPtr,"Press CTRL+V to begin recording.");
             g_CheatFlags = 1;
@@ -1207,9 +1206,9 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
           g_InputHistory[1] = '\0';
         }
         else {
-          iVar11 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1d);
+          iVar11 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
           if ((iVar11 == 0) ||
-             (iVar11 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x13), iVar11 == 0))
+             (iVar11 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x13), iVar11 == 0))
           goto LAB_004df408;
         }
         core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav")

@@ -36,7 +36,7 @@
 ;   double g_MaxTimeout = 30
 ;   double g_SyncTimeout = 0.100000000000000
 ;   CKeys* g_CKeysPtr = 02dcd7d4
-;   void* g_CKeysPtr
+;   CKeys g_CKeysInstance
 ;   char* g_CurrentFilename
 ;   int g_CurrentLineNumber
 ;   ... and 3 more
@@ -262,8 +262,8 @@ section .text
     PUSH 0x1                            ; 0054042d
         ;   Label: LAB_0054042d
     MOV EAX,[0x0067cf44]                ; 0054042f | g_CKeysPtr
-    PUSH EAX                            ; 00540434 | g_CKeysPtr
-    MOV EBX,dword ptr [EAX]             ; 00540435 | g_CKeysPtr
+    PUSH EAX                            ; 00540434 | g_CKeysInstance
+    MOV EBX,dword ptr [EAX]             ; 00540435 | g_CKeysInstance
     CALL dword ptr [EBX + 0x4]          ; 00540437
     ADD ESP,0x8                         ; 0054043a
     TEST EAX,EAX                        ; 0054043d
@@ -348,8 +348,8 @@ section .text
     ADD ESP,0x4                         ; 005404f7
     MOV EAX,[0x0067cf44]                ; 005404fa | g_CKeysPtr
     PUSH 0x1                            ; 005404ff
-    MOV EBX,dword ptr [EAX]             ; 00540501 | g_CKeysPtr
-    PUSH EAX                            ; 00540503 | g_CKeysPtr
+    MOV EBX,dword ptr [EAX]             ; 00540501 | g_CKeysInstance
+    PUSH EAX                            ; 00540503 | g_CKeysInstance
     CALL dword ptr [EBX + 0x4]          ; 00540504
     ADD ESP,0x8                         ; 00540507
     TEST EAX,EAX                        ; 0054050a

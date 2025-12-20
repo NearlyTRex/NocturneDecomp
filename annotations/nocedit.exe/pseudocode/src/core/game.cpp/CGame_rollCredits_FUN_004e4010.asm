@@ -36,7 +36,7 @@
 ;   float FLOAT_0062d66d = 32
 ;   CKeys* g_CKeysPtr = 02dcd7d4
 ;   CBitFont* g_ThemeFont
-;   void* g_CKeysPtr
+;   CKeys g_CKeysInstance
 ;   ... and 3 more
 ;
 ; Called Functions:
@@ -276,8 +276,8 @@ section .text
         ;   Label: LAB_004e428f
     PUSH 0x1                            ; 004e4294
     MOV EAX,[0x0067cf44]                ; 004e4296 | g_CKeysPtr
-    PUSH EAX                            ; 004e429b | g_CKeysPtr
-    MOV EDX,dword ptr [EAX]             ; 004e429c | g_CKeysPtr
+    PUSH EAX                            ; 004e429b | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 004e429c | g_CKeysInstance
     CALL dword ptr [EDX]                ; 004e429e
     ADD ESP,0x8                         ; 004e42a0
     TEST EAX,EAX                        ; 004e42a3

@@ -18,7 +18,6 @@ void core_script_cpp_CScript_Unk20_FUN_00565130(void)
   bool bVar5;
   int iVar6;
   undefined3 extraout_var;
-  undefined3 extraout_var_00;
   uint uVar7;
   int iVar8;
   uint uVar9;
@@ -40,7 +39,7 @@ void core_script_cpp_CScript_Unk20_FUN_00565130(void)
   int in_stack_000002b8;
   
   bVar11 = 0;
-  (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x2a);
+  (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
   DAT_0310fd40 = DAT_0310fd40 + g_GlobalDeltaTimeInt & 0xfffff;
   core_script_cpp_CScript_CallingScriptEditorX2_2_FUN_00566910();
   core_script_cpp_CScript_Unk18_FUN_005669a0();
@@ -49,53 +48,53 @@ void core_script_cpp_CScript_Unk20_FUN_00565130(void)
   shape_edittool_cpp_CEdScrollBar_handleInput_FUN_004a5fc0((CEdScrollBar *)&DAT_0310fcd8);
   core_script_cpp_FUN_00566880();
   bVar2 = false;
-  iVar6 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x4b);
+  iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x4b);
   if (iVar6 != 0) {
     core_script_cpp_CScript_editorAction_FUN_00564820();
   }
-  iVar6 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x4d);
+  iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x4d);
   if (iVar6 != 0) {
     core_script_cpp_CScript_editorAction_FUN_00564820();
   }
-  iVar6 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x50);
+  iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x50);
   if (iVar6 != 0) {
     core_script_cpp_CScript_editorAction_FUN_00564820();
   }
-  iVar6 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x48);
+  iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x48);
   if (iVar6 != 0) {
     core_script_cpp_CScript_editorAction_FUN_00564820();
   }
-  iVar6 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x47);
+  iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x47);
   if (iVar6 != 0) {
-    (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1d);
+    (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
     core_script_cpp_CScript_editorAction_FUN_00564820();
   }
-  iVar6 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x4f);
+  iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x4f);
   if (iVar6 != 0) {
-    (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1d);
+    (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
     core_script_cpp_CScript_editorAction_FUN_00564820();
   }
-  iVar6 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x51);
-  if (iVar6 != 0) {
-    core_script_cpp_CScript_editorAction_FUN_00564820();
-  }
-  iVar6 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x49);
+  iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x51);
   if (iVar6 != 0) {
     core_script_cpp_CScript_editorAction_FUN_00564820();
   }
-  iVar6 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x53);
+  iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x49);
+  if (iVar6 != 0) {
+    core_script_cpp_CScript_editorAction_FUN_00564820();
+  }
+  iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x53);
   if (iVar6 != 0) {
     bVar2 = true;
     if (-1 < DAT_0310fd4c) {
-      (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x2a);
+      (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
     }
     core_script_cpp_CScript_editorAction_FUN_00564820();
   }
-  iVar6 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x52);
+  iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x52);
   if (iVar6 != 0) {
-    iVar6 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1d);
+    iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
     if (iVar6 == 0) {
-      iVar6 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x2a);
+      iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
       if (iVar6 == 0) {
         DAT_0068105c = (uint)(DAT_0068105c == 0);
         goto LAB_00565363;
@@ -105,26 +104,27 @@ void core_script_cpp_CScript_Unk20_FUN_00565130(void)
     core_script_cpp_CScript_editorAction_FUN_00564820();
   }
 LAB_00565363:
-  iVar6 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1d);
+  iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
   if (iVar6 != 0) {
-    iVar6 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x2d);
+    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x2d);
     if (iVar6 != 0) {
       core_script_cpp_CScript_editorAction_FUN_00564820();
       wincore_winrun_cpp_clearKeypresses_FUN_005f2e70();
     }
-    iVar6 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x2e);
+    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x2e);
     if (iVar6 != 0) {
       core_script_cpp_CScript_editorAction_FUN_00564820();
       wincore_winrun_cpp_clearKeypresses_FUN_005f2e70();
     }
-    iVar6 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x2f);
+    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x2f);
     if (iVar6 != 0) {
       core_script_cpp_CScript_editorAction_FUN_00564820();
       wincore_winrun_cpp_clearKeypresses_FUN_005f2e70();
     }
   }
-  iVar6 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1d);
-  if ((iVar6 != 0) && (iVar6 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x22), iVar6 != 0)) {
+  iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
+  if ((iVar6 != 0) &&
+     (iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x22), iVar6 != 0)) {
     iVar6 = shape_edittool_cpp_getFontBitmapCount_FUN_004a6ed0
                       ((CBitFont *)(in_stack_00000004->button_text + 0x1c));
     bVar5 = shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020
@@ -137,12 +137,12 @@ LAB_00565363:
     }
     engine_2d_c_clearInputAndWait_FUN_00403260();
   }
-  iVar6 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1d);
+  iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
   if (iVar6 != 0) {
     in_stack_000001d4 = 0x56548d;
-    iVar6 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x21);
+    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x21);
     if (iVar6 != 0) {
-      (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x2a);
+      (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
       iVar6 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                         (g_CEditorToolsPtr,"Find",&DAT_0310fd58,100,1);
       if (iVar6 != 0) {
@@ -161,9 +161,9 @@ LAB_00565363:
       }
     }
   }
-  iVar6 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x3d);
+  iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x3d);
   if (iVar6 != 0) {
-    (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x2a);
+    (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
     if (DAT_0310fd58 == '\0') {
       shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                 (g_CEditorToolsPtr,"Find",&DAT_0310fd58,100,1);
@@ -183,17 +183,17 @@ LAB_00565363:
       }
     }
   }
-  iVar6 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x3e);
+  iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x3e);
   if (iVar6 != 0) {
     bVar2 = true;
     core_script_cpp_FUN_00565ae0();
   }
-  iVar6 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x40);
+  iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x40);
   if (iVar6 != 0) {
     bVar2 = true;
     core_script_cpp_FUN_00565d00();
   }
-  iVar6 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x3b);
+  iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x3b);
   if (iVar6 != 0) {
     core_script_cpp_FUN_00565e70();
   }
@@ -232,7 +232,7 @@ LAB_00565363:
       iVar6 = core_script_cpp_FUN_00566c20();
       pCVar4 = g_ActiveButton;
       if ((iVar6 != 0) &&
-         (iVar6 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x38), pCVar4 = in_stack_00000004,
+         (iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38), pCVar4 = in_stack_00000004,
          iVar6 != 0)) {
         core_script_cpp_FUN_00565ae0();
         g_MouseButtonFlags = (int)pCVar3;
@@ -248,8 +248,8 @@ LAB_00565363:
       do {
         while( true ) {
           while( true ) {
-            bVar5 = wincore_winrun_cpp_wasKeyPressed_FUN_005f2f00();
-            if (CONCAT31 /* combine 2-byte values */(extraout_var_00,bVar5) == 0) {
+            iVar6 = wincore_winrun_cpp_wasKeyPressed_FUN_005f2f00();
+            if (iVar6 == 0) {
               core_script_cpp_CScript_Unk18_FUN_005669a0();
               if (bVar2) {
                 core_script_cpp_FUN_005644e0();

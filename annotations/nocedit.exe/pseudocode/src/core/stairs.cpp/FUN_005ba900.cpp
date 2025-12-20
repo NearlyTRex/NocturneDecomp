@@ -24,38 +24,38 @@ void core_stairs_cpp_FUN_005ba900(void)
   float in_stack_0000008c;
   float in_stack_00000090;
   
-  iVar3 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1d);
+  iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
   if (iVar3 == 0) {
     core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(in_stack_00000004);
   }
   else {
-    (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x38);
-    iVar3 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x4b);
+    (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
+    iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
     if (iVar3 != 0) {
       *(float *)(in_stack_00000004[1].actor_name + 8) =
            *(float *)(in_stack_00000004[1].actor_name + 8) - in_stack_00000024;
     }
-    iVar3 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x4d);
+    iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4d);
     if (iVar3 != 0) {
       *(float *)(in_stack_00000004[1].actor_name + 8) =
            *(float *)(in_stack_00000004[1].actor_name + 8) + in_stack_00000038;
     }
-    iVar3 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1e);
+    iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1e);
     if (iVar3 != 0) {
       *(float *)in_stack_00000004[1].actor_name =
            *(float *)in_stack_00000004[1].actor_name - in_stack_0000004c;
     }
-    iVar3 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x10);
+    iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x10);
     if (iVar3 != 0) {
       *(float *)in_stack_00000004[1].actor_name =
            *(float *)in_stack_00000004[1].actor_name + in_stack_00000060;
     }
-    iVar3 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x50);
+    iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x50);
     if (iVar3 != 0) {
       *(float *)(in_stack_00000004[1].actor_name + 4) =
            *(float *)(in_stack_00000004[1].actor_name + 4) - in_stack_00000074;
     }
-    iVar3 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x48);
+    iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x48);
     if (iVar3 != 0) {
       *(float *)(in_stack_00000004[1].actor_name + 4) =
            *(float *)(in_stack_00000004[1].actor_name + 4) + in_stack_00000088;

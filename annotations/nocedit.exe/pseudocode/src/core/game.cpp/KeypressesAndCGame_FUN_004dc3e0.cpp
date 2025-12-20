@@ -23,8 +23,8 @@ void __cdecl core_game_cpp_KeypressesAndCGame_FUN_004dc3e0(CGame *game,SPlayerCo
   
   pCVar4 = game;
   if (game->screen_clear_condition != 0) {
-    (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x200);
-    (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x201);
+    (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x200);
+    (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x201);
   }
   ctrl->strafe_speed = 0.0;
   pfVar1 = &ctrl->strafe_speed;
@@ -181,62 +181,62 @@ LAB_004dc4e9:
   else {
     ctrl->action_states[7] = (uint)(byte)g_KeyboardState[iVar5];
   }
-  iVar5 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,pCVar4->key_next_weapon);
+  iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,pCVar4->key_next_weapon);
   if (iVar5 != 0) {
     core_inv_cpp_CInventory_selectWeapon_FUN_004feb10
               (&g_HeroActors[g_LocalHeroIndex]->inventory,(CDemonActor *)0x0,5,1);
   }
-  iVar5 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,pCVar4->key_prev_weapon);
+  iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,pCVar4->key_prev_weapon);
   if (iVar5 != 0) {
     core_inv_cpp_CInventory_selectWeapon_FUN_004feb10
               (&g_HeroActors[g_LocalHeroIndex]->inventory,(CDemonActor *)0x0,5,-1);
   }
-  iVar5 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,pCVar4->key_next_item);
+  iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,pCVar4->key_next_item);
   if (iVar5 != 0) {
     core_inv_cpp_CInventory_selectItem_FUN_004fec10(&g_HeroActors[g_LocalHeroIndex]->inventory,1);
   }
-  iVar5 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,pCVar4->key_prev_item);
+  iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,pCVar4->key_prev_item);
   if (iVar5 != 0) {
     core_inv_cpp_CInventory_selectItem_FUN_004fec10(&g_HeroActors[g_LocalHeroIndex]->inventory,-1);
   }
-  iVar5 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,pCVar4->key_next_ammo);
+  iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,pCVar4->key_next_ammo);
   if (iVar5 != 0) {
     core_inv_cpp_CInventory_cycleWeaponOfSameClass_FUN_004fed10
               (&g_HeroActors[g_LocalHeroIndex]->inventory,1);
   }
-  iVar5 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,pCVar4->key_item_desc);
+  iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,pCVar4->key_item_desc);
   if (iVar5 != 0) {
     uStack0000009c = 0x4dc7cb;
     core_inv_cpp_CInventory_toggleDetailView_FUN_00501500
               (&g_HeroActors[g_LocalHeroIndex]->inventory);
   }
   uStack0000009c = 0x4dc7dd;
-  iVar5 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,pCVar4->key_weapon_1);
+  iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,pCVar4->key_weapon_1);
   if (iVar5 != 0) {
     core_inv_cpp_CInventory_selectWeapon_FUN_004feb10
               (&g_HeroActors[g_LocalHeroIndex]->inventory,(CDemonActor *)0x0,0,1);
   }
-  iVar5 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,pCVar4->key_weapon_2);
+  iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,pCVar4->key_weapon_2);
   if (iVar5 != 0) {
     core_inv_cpp_CInventory_selectWeapon_FUN_004feb10
               (&g_HeroActors[g_LocalHeroIndex]->inventory,(CDemonActor *)0x0,1,1);
   }
-  iVar5 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,pCVar4->key_weapon_3);
+  iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,pCVar4->key_weapon_3);
   if (iVar5 != 0) {
     core_inv_cpp_CInventory_selectWeapon_FUN_004feb10
               (&g_HeroActors[g_LocalHeroIndex]->inventory,(CDemonActor *)0x0,2,1);
   }
-  iVar5 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,pCVar4->key_weapon_4);
+  iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,pCVar4->key_weapon_4);
   if (iVar5 != 0) {
     core_inv_cpp_CInventory_selectWeapon_FUN_004feb10
               (&g_HeroActors[g_LocalHeroIndex]->inventory,(CDemonActor *)0x0,4,1);
   }
-  iVar5 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,pCVar4->key_weapon_5);
+  iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,pCVar4->key_weapon_5);
   if (iVar5 != 0) {
     core_inv_cpp_CInventory_selectWeapon_FUN_004feb10
               (&g_HeroActors[g_LocalHeroIndex]->inventory,(CDemonActor *)0x0,3,1);
   }
-  iVar5 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,pCVar4->key_infrared);
+  iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,pCVar4->key_infrared);
   if (iVar5 != 0) {
     uVar6 = (uint)(pCVar4->block_auto_save == 0);
     pCVar4->block_auto_save = uVar6;

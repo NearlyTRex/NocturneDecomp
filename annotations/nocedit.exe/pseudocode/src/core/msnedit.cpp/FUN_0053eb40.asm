@@ -20,7 +20,7 @@
 ;   CKeys* g_CKeysPtr = 02dcd7d4
 ;   CSound* g_CSoundPtr = 03f6af64
 ;   CEditorTools g_CEditorToolsPtr
-;   void* g_CKeysPtr
+;   CKeys g_CKeysInstance
 ;   CSound g_CSoundInstance
 ;
 ; Called Functions:
@@ -119,8 +119,8 @@ section .text
     ADD ESP,0xc                         ; 0053ec06
     MOV EAX,[0x0067cf44]                ; 0053ec09 | g_CKeysPtr
     PUSH 0x1                            ; 0053ec0e
-    MOV EDX,dword ptr [EAX]             ; 0053ec10 | g_CKeysPtr
-    PUSH EAX                            ; 0053ec12 | g_CKeysPtr
+    MOV EDX,dword ptr [EAX]             ; 0053ec10 | g_CKeysInstance
+    PUSH EAX                            ; 0053ec12 | g_CKeysInstance
     CALL dword ptr [EDX]                ; 0053ec13
     ADD ESP,0x8                         ; 0053ec15
     TEST EAX,EAX                        ; 0053ec18

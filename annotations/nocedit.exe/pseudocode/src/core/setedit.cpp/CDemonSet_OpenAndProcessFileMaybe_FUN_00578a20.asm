@@ -216,10 +216,10 @@ section .text
     ADD ESP,0xc                         ; 00578bd7
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 00578bda
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
-    MOV EBX,dword ptr [0x0067cf44]      ; 00578bdf | g_CKeysPtr
-    PUSH EBX                            ; 00578be5 | g_CKeysPtr
+    MOV EBX,dword ptr [0x0067cf44]      ; 00578bdf | g_CKeysInstance | g_CKeysPtr
+    PUSH EBX                            ; 00578be5 | g_CKeysInstance
     CALL engine_keys.cpp_CKeys_getInputKey_FUN_00502460 ; 00578be6
-        ;   XREF to: 00502460 (UNCONDITIONAL_CALL)  ; int engine_keys.cpp_CKeys_getInputKey_FUN_00502460(CKeys * this)
+        ;   XREF to: 00502460 (UNCONDITIONAL_CALL)  ; int engine_keys.cpp_CKeys_getInputKey_FUN_00502460(CKeys * this_ptr)
     ADD ESP,0x4                         ; 00578beb
     ADD ESP,0x4c8                       ; 00578bee
     POP EBP                             ; 00578bf4
@@ -259,10 +259,10 @@ section .text
     ADD ESP,0xc                         ; 00578c3d
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 00578c40
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
-    MOV ECX,dword ptr [0x0067cf44]      ; 00578c45 | g_CKeysPtr
-    PUSH ECX                            ; 00578c4b | g_CKeysPtr
+    MOV ECX,dword ptr [0x0067cf44]      ; 00578c45 | g_CKeysInstance | g_CKeysPtr
+    PUSH ECX                            ; 00578c4b | g_CKeysInstance
     CALL engine_keys.cpp_CKeys_getInputKey_FUN_00502460 ; 00578c4c
-        ;   XREF to: 00502460 (UNCONDITIONAL_CALL)  ; int engine_keys.cpp_CKeys_getInputKey_FUN_00502460(CKeys * this)
+        ;   XREF to: 00502460 (UNCONDITIONAL_CALL)  ; int engine_keys.cpp_CKeys_getInputKey_FUN_00502460(CKeys * this_ptr)
     ADD ESP,0x4                         ; 00578c51
     ADD ESP,0x4c8                       ; 00578c54
     POP EBP                             ; 00578c5a

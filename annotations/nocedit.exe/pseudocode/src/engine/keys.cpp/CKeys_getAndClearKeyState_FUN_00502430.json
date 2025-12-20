@@ -21,7 +21,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_keys.cpp_CKeys_getAndClearKeyState_FUN_00502430",
-    "signature": "char engine_keys.cpp_CKeys_getAndClearKeyState_FUN_00502430(CKeys * this, int keyCode)"
+    "signature": "int engine_keys.cpp_CKeys_getAndClearKeyState_FUN_00502430(CKeys * this_ptr, int key_code)"
   },
   "function_calls": [],
   "globals": [
@@ -39,6 +39,135 @@
     "declared_params": 2,
     "estimated_params": 2
   },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.625,
+    "instruction_count": 8,
+    "opcode_distribution": {
+      "COPY": 10,
+      "INT_ADD": 5,
+      "INT_AND": 4,
+      "INT_EQUAL": 4,
+      "INT_SLESS": 2,
+      "INT_SUB": 1,
+      "INT_XOR": 2,
+      "LOAD": 4,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 2
+    },
+    "pcode_op_count": 37
+  },
+  "possible_indirect_callers": {
+    "method_name": "getAndClearKeyState",
+    "param_analysis": {
+      "call_site_count": 275,
+      "caller_details": [
+        {
+          "caller": "BoneAndClothEditor_FUN_0043c880",
+          "estimated_params": 2
+        },
+        {
+          "caller": "CBat_FUN_00414f00",
+          "estimated_params": 2
+        },
+        {
+          "caller": "CBat_FUN_00414f00",
+          "estimated_params": 2
+        },
+        {
+          "caller": "CCheckOutItem_processFiles_FUN_004b4220",
+          "estimated_params": 2
+        },
+        {
+          "caller": "CDeformableModelInstance_viewModel_FUN_005968b0",
+          "estimated_params": 2
+        },
+        {
+          "caller": "CDeformableModelInstance_viewModel_FUN_005968b0",
+          "estimated_params": 2
+        },
+        {
+          "caller": "CDeformableModelInstance_viewModel_FUN_005968b0",
+          "estimated_params": 2
+        },
+        {
+          "caller": "CDeformableModelInstance_viewModel_FUN_005968b0",
+          "estimated_params": 2
+        },
+        {
+          "caller": "CDeformableModelInstance_viewModel_FUN_005968b0",
+          "estimated_params": 2
+        },
+        {
+          "caller": "CDeformableModelInstance_viewModel_FUN_005968b0",
+          "estimated_params": 2
+        }
+      ],
+      "estimated_params": 2,
+      "param_estimates": [
+        1,
+        2,
+        3,
+        6
+      ]
+    },
+    "possible_callers": [
+      "BoneAndClothEditor_FUN_0043c880",
+      "CBat_FUN_00414f00",
+      "CCheckOutItem_processFiles_FUN_004b4220",
+      "CDeformableModelInstance_viewModel_FUN_005968b0",
+      "CDemonActor_processInEditor_FUN_0040d040",
+      "CDemonSet_FUN_00581aa0",
+      "CDemonSet_FUN_00583170",
+      "CDemonSet_ViewerVisitSet_FUN_0057a940",
+      "CDemonSet_unk201_FUN_0057ae50",
+      "CFileManager_checkInPodFile_FUN_004baf00",
+      "CGame_processCheatCodes_FUN_004ddaf0",
+      "CGame_processFrame_FUN_004da100",
+      "CGame_runGameSession_FUN_004daf80",
+      "CInputString_handleKeyboardInput_FUN_0049d6c0",
+      "CKeyFramedModel_showEditorMenu_FUN_0047cbc0",
+      "CLodMesh_chooseLodsInteractive_FUN_0051d990",
+      "CLodMesh_previewLodGeneration_FUN_0051d520",
+      "CNetGame_syncPlayers_FUN_005401e0",
+      "CPickList_handleInput_FUN_004a3f20",
+      "CScript_Unk20_FUN_00565130",
+      "CSpotView_FUN_005b9670",
+      "CTeleportDest_FUN_005da870",
+      "CTeleport_FUN_005dabe0",
+      "FUN_00443bc0",
+      "FUN_004d25f0",
+      "FUN_004d7810",
+      "FUN_00502d00",
+      "FUN_0052bcb0",
+      "FUN_0052ca90",
+      "FUN_00541390",
+      "FUN_0054ea00",
+      "FUN_00581320",
+      "KeypressesAndCGame_FUN_004dc3e0",
+      "LockVerticesMaybe_FUN_0043d590",
+      "MasterEditorKeysHelpScreen_FUN_00535e70",
+      "PrepareMissionAndEditGore_FUN_0053e220",
+      "PrepareMissionMaybe_FUN_005390f0",
+      "SaveRelated_FUN_004dcee0",
+      "UserInputCreate_FUN_0057d660",
+      "adjustFudgePosition_FUN_004d8750",
+      "adjustMouseSensitivity_FUN_005107c0",
+      "calibrateGamepad_FUN_005104d0",
+      "checkAndCalibrateGamepad_FUN_00511840",
+      "configureCustomKeys_FUN_00511890",
+      "configureGraphicsOptions_FUN_00510c80",
+      "configureSoundOptions_FUN_00511e50",
+      "initializeNetworkToJoin_FUN_0053f900",
+      "renderMenuAndGetChoice_FUN_00510000",
+      "showMainGameMenu_FUN_00512f40",
+      "showMultiChoiceDialog_FUN_0049e9d0",
+      "showOptionsScreen_FUN_00512d30",
+      "showTextInputDialog_FUN_0049db10",
+      "testSoundFiles_FUN_005ad5c0"
+    ],
+    "vtable_offset": 4
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -48,14 +177,14 @@
     "variables": [
       {
         "is_param": true,
-        "name": "this",
+        "name": "this_ptr",
         "offset": 4,
         "size": 4,
         "type": "CKeys *"
       },
       {
         "is_param": true,
-        "name": "keyCode",
+        "name": "key_code",
         "offset": 8,
         "size": 4,
         "type": "int"

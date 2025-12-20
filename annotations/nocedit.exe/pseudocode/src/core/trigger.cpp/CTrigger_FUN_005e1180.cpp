@@ -23,37 +23,37 @@ void __cdecl core_trigger_cpp_CTrigger_FUN_005e1180(CTrigger *this_ptr)
   this_ptr->field1_0x158[0x15] = '\0';
   this_ptr->field1_0x158[0x16] = '\0';
   this_ptr->field1_0x158[0x17] = '\0';
-  iVar1 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1d);
+  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
   if (iVar1 == 0) {
     core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base_actor);
   }
   else {
-    iVar1 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x4b);
+    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
     if (iVar1 != 0) {
       *(float *)(this_ptr->field1_0x158 + 8) =
            *(float *)(this_ptr->field1_0x158 + 8) - in_stack_00000020;
     }
-    iVar1 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x4d);
+    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4d);
     if (iVar1 != 0) {
       *(float *)(this_ptr->field1_0x158 + 8) =
            *(float *)(this_ptr->field1_0x158 + 8) + in_stack_00000034;
     }
-    iVar1 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1e);
+    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1e);
     if (iVar1 != 0) {
       *(float *)(this_ptr->field1_0x158 + 0xc) =
            *(float *)(this_ptr->field1_0x158 + 0xc) - in_stack_00000048;
     }
-    iVar1 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x10);
+    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x10);
     if (iVar1 != 0) {
       *(float *)(this_ptr->field1_0x158 + 0xc) =
            *(float *)(this_ptr->field1_0x158 + 0xc) + in_stack_0000005c;
     }
-    iVar1 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x50);
+    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x50);
     if (iVar1 != 0) {
       *(float *)(this_ptr->field1_0x158 + 0x10) =
            *(float *)(this_ptr->field1_0x158 + 0x10) - in_stack_00000070;
     }
-    iVar1 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x48);
+    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x48);
     if (iVar1 != 0) {
       *(float *)(this_ptr->field1_0x158 + 0x10) =
            *(float *)(this_ptr->field1_0x158 + 0x10) + in_stack_00000084;

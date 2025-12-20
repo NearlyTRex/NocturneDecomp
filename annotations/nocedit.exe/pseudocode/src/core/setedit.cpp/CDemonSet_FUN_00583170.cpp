@@ -503,7 +503,7 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
     local_21c = 8.102699e-39;
     core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
     local_21c = 8.102721e-39;
-    iVar7 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,1);
+    iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
     if (iVar7 != 0) {
       core_set_cpp_CDemonSet_FUN_0056d2d0(this_ptr);
       engine_2d_c_clearInputAndWait_FUN_00403260();
@@ -519,10 +519,10 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
       fVar19 = g_CGamePtr->delta_time_float;
       local_208 = 8.105839e-39;
       fVar20 = fVar19;
-      iVar7 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x38);
+      iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
       if (iVar7 == 0) {
         local_1f4 = 8.106803e-39;
-        iVar7 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x2a);
+        iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
         if (iVar7 != 0) {
           fVar19 = fVar20 * (float)10;
         }
@@ -532,26 +532,26 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
       }
       fVar19 = (float)pCVar21 * (float)0.5 * fVar19;
       local_1e8.z = 8.105933e-39;
-      (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x4a);
+      (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4a);
       local_1cc = 8.105972e-39;
-      (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x4e);
+      (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4e);
       local_1b8 = 0x584443;
-      (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x52);
-      (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x53);
+      (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x52);
+      (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x53);
       fStack_190 = 8.106091e-39;
-      iVar7 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0xd);
+      iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0xd);
       if (iVar7 != 0) {
         pCVar21 = (CKeys *)((float)pCVar21 - fVar19);
       }
       local_17c = 8.106132e-39;
-      iVar7 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0xc);
+      iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0xc);
       if (iVar7 != 0) {
         pCVar21 = (CKeys *)((float)pCVar21 + fVar19);
       }
       if ((float)pCVar21 < (float)0.5) {
         pCVar21 = (CKeys *)0x3f000000;
       }
-      iVar7 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1d);
+      iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
       if (iVar7 == 0) {
         core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)&stack0xfffffdd8);
         if ((SVDBox *)&stack0xfffffdd8 != local_3c) {
@@ -576,31 +576,31 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
       else {
         local_48 = g_CGamePtr->delta_time_float * (float)4;
         local_154 = 8.106393e-39;
-        iVar7 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x38);
+        iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
         if (iVar7 != 0) {
           local_48 = local_48 * (float)0.10000000000000001;
         }
-        iVar7 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x4b);
+        iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
         if (iVar7 != 0) {
           (local_3c->extents).x = (local_3c->extents).x - local_48;
         }
-        iVar7 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x4d);
+        iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4d);
         if (iVar7 != 0) {
           (local_3c->extents).x = (local_3c->extents).x + local_48;
         }
-        iVar7 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1e);
+        iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1e);
         if (iVar7 != 0) {
           (local_3c->extents).y = (local_3c->extents).y - local_48;
         }
-        iVar7 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x10);
+        iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x10);
         if (iVar7 != 0) {
           (local_3c->extents).y = (local_3c->extents).y + local_48;
         }
-        iVar7 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x50);
+        iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x50);
         if (iVar7 != 0) {
           (local_3c->extents).z = (local_3c->extents).z - local_48;
         }
-        iVar7 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x48);
+        iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x48);
         if (iVar7 != 0) {
           (local_3c->extents).z = (local_3c->extents).z + local_48;
         }
@@ -615,10 +615,10 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
         }
       }
     }
-    iVar7 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0xf);
+    iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0xf);
     if (iVar7 != 0) {
       local_128 = 8.102816e-39;
-      iVar7 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x2a);
+      iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
       if (iVar7 == 0) {
         local_18 = (float)((int)local_18 + 1);
         if (this_ptr->vdir_box_count <= (int)local_18) {
@@ -633,7 +633,7 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
       }
     }
     local_114 = 8.102871e-39;
-    iVar7 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x17);
+    iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x17);
     if (iVar7 != 0) {
       fVar6 = (float)this_ptr->vdir_box_count;
       if ((int)fVar6 < 0xfa) {
@@ -661,7 +661,7 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
                   (g_CEditorToolsPtr,"Max number of boxes has been reached, can't add any more boxes.");
       }
     }
-    iVar7 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x13);
+    iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x13);
     if (iVar7 != 0) {
       iVar7 = this_ptr->vdir_box_count;
       if (iVar7 < 0xfa) {
@@ -709,7 +709,7 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,format);
     }
 LAB_00583c6f:
-    iVar7 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x20);
+    iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x20);
     if (((iVar7 != 0) && (-1 < (int)local_18)) && ((int)local_18 < this_ptr->vdir_box_count)) {
       fStack_d0 = 8.103296e-39;
       iVar7 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
@@ -726,12 +726,12 @@ LAB_00583c6f:
         }
       }
     }
-    iVar7 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x31);
+    iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x31);
     if (iVar7 != 0) {
       local_18 = -NAN;
     }
     local_bc.z = 8.103475e-39;
-    iVar7 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x3b);
+    iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x3b);
     if (iVar7 != 0) {
       wincore_windll_cpp_clearScreen_FUN_005b3e70();
       local_a0 = 0x583d62;

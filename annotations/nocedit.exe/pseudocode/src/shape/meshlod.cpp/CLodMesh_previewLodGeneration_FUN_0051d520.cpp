@@ -108,7 +108,7 @@ LAB_0051d5ec:
     acStack_78[2] = 'Q';
     acStack_78[3] = '\0';
     shape_spotview_cpp_CSpotView_FUN_005b9670(g_CSpotViewPtr);
-    iVar3 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,1);
+    iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
     if (iVar3 != 0) {
       shape_edittool_cpp_CEditorTools_createCenteredDialog_FUN_0049e940
                 (g_CEditorToolsPtr,(char *)0x0);
@@ -116,7 +116,7 @@ LAB_0051d5ec:
         shape_edittool_cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870
                   (g_CEditorToolsPtr,"OK - let go of ESC...");
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-        iVar3 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,1);
+        iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,1);
       } while (iVar3 != 0);
       shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
       engine_2d_c_clearInputAndWait_FUN_00403260();
@@ -130,30 +130,31 @@ LAB_0051d915:
         return in_stack_00000080;
       }
     }
-    iVar3 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x19);
+    iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x19);
     if (iVar3 == 0) {
       if (iVar5 == 0) goto LAB_0051d915;
     }
     else {
       iVar5 = 1;
     }
-    iVar3 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x2f);
+    iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x2f);
     if (iVar3 != 0) {
       INT_02f31234 = (int)(INT_02f31234 == 0);
     }
     local_20 = 7.516394e-39;
-    iVar3 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x18);
+    iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x18);
     if (iVar3 != 0) {
       INT_02f31238 = (int)(INT_02f31238 == 0);
     }
-    iVar3 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x12);
+    iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x12);
     if (iVar3 != 0) {
       INT_02f3123c = (int)(INT_02f3123c == 0);
     }
     render_mode = (int)g_CKeysPtr;
     pause_flag = 0x51d8f6;
-    iVar3 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x39);
-    if ((iVar3 != 0) || (iVar3 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x1c), iVar3 != 0))
+    iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x39);
+    if ((iVar3 != 0) ||
+       (iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x1c), iVar3 != 0))
     goto LAB_0051d915;
   } while( true );
 }

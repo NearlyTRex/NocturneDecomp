@@ -373,9 +373,9 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
         core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
         shape_spotview_cpp_CSpotView_FUN_005b9670(g_CSpotViewPtr);
-        iVar9 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,1);
+        iVar9 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
         if (iVar9 != 0) break;
-        iVar9 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x14);
+        iVar9 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x14);
         if (iVar9 != 0) {
           core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80
                     ((CDeformableModelInstance *)&pCStack_4d18);
@@ -396,7 +396,7 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
           core_morph_cpp_FUN_0052ca90();
           core_morph_cpp_CMorphModel_FUN_0052b350(in_stack_000000c0);
         }
-        iVar9 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x32);
+        iVar9 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x32);
         if (iVar9 != 0) {
           shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)auStack_778);
           iVar9 = 0;
@@ -424,7 +424,7 @@ void __cdecl core_morph_cpp_FUN_0052bcb0(void)
         }
         in_stack_ffffb328 = 3.36312e-44;
         in_stack_ffffb320 = 7.603025e-39;
-        (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x18);
+        (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x18);
       }
       g_CDemonSetPtr->lighting_quality_mode = 0;
       engine_2d_c_clearInputAndWait_FUN_00403260();

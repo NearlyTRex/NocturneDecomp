@@ -168,7 +168,7 @@ LAB_004e43c1:
       engine_2d_c_fillRectColor_FUN_00403170(0x19e,0x1b7,0x27f,0x1df,0);
     }
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-    iVar7 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,1);
+    iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,1);
     if (iVar7 != 0) goto LAB_004e43c1;
     core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(in_stack_0000005c);
     in_stack_00000044 = in_stack_00000044 - *(float *)(in_stack_00000060 + 0x264) * 32f;

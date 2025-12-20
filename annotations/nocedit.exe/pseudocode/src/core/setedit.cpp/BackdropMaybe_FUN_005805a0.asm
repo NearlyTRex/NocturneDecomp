@@ -23,7 +23,7 @@
 ;   CEditorTools g_CEditorToolsPtr
 ;   undefined4 g_CDemonLightInstance.light_enabled_flag
 ;   CGame g_CGameInstance
-;   void* g_CKeysPtr
+;   CKeys g_CKeysInstance
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_setGameRes_FUN_004dade0
@@ -155,15 +155,15 @@ section .text
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 005806b7
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
     CALL wincore_winrun.cpp_wasKeyPressed_FUN_005f2f00 ; 005806bc
-        ;   XREF to: 005f2f00 (UNCONDITIONAL_CALL)  ; bool wincore_winrun.cpp_wasKeyPressed_FUN_005f2f00()
+        ;   XREF to: 005f2f00 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_wasKeyPressed_FUN_005f2f00()
         ;   Label: LAB_005806bc
     TEST EAX,EAX                        ; 005806c1
     JZ 0x00580714                       ; 005806c3
         ;   XREF to: 00580714 (CONDITIONAL_JUMP)  ; LAB_00580714
     MOV EBP,dword ptr [0x0067cf44]      ; 005806c5 | g_CKeysPtr
-    PUSH EBP                            ; 005806cb | g_CKeysPtr
+    PUSH EBP                            ; 005806cb | g_CKeysInstance
     CALL engine_keys.cpp_CKeys_getInputKey_FUN_00502460 ; 005806cc
-        ;   XREF to: 00502460 (UNCONDITIONAL_CALL)  ; int engine_keys.cpp_CKeys_getInputKey_FUN_00502460(CKeys * this)
+        ;   XREF to: 00502460 (UNCONDITIONAL_CALL)  ; int engine_keys.cpp_CKeys_getInputKey_FUN_00502460(CKeys * this_ptr)
     ADD ESP,0x4                         ; 005806d1
     CMP EAX,0x1b                        ; 005806d4
     JNZ 0x005806bc                      ; 005806d7

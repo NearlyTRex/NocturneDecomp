@@ -67,7 +67,7 @@ void __cdecl sound_sndmain_cpp_testSoundFiles_FUN_005ad5c0(void)
   iVar3 = 0;
   if (0 < (int)ppcStack_24) {
     do {
-      fname = (CStrList_remove *)(*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,1);
+      fname = (CStrList_remove *)(*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,1);
       if (fname != (CStrList_remove *)0x0) break;
       dir = (CStrList_dtor *)auStack_258;
       pcVar4 = (char *)0x0;
@@ -107,7 +107,7 @@ void __cdecl sound_sndmain_cpp_testSoundFiles_FUN_005ad5c0(void)
     iVar3 = 0;
     if (0 < (int)CStack_48.data_array) {
       do {
-        iVar2 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,1);
+        iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,1);
         if (iVar2 != 0) break;
         iStack_1c = iVar3;
         shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
@@ -188,7 +188,7 @@ void __cdecl sound_sndmain_cpp_testSoundFiles_FUN_005ad5c0(void)
     iVar3 = 0;
     if (0 < (int)pCStack_50) {
       do {
-        iVar2 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,1);
+        iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,1);
         if (iVar2 != 0) break;
         shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
                   (g_CEditorToolsPtr,(float)iVar3,(float)(int)CStack_48.vtable);
@@ -203,7 +203,7 @@ void __cdecl sound_sndmain_cpp_testSoundFiles_FUN_005ad5c0(void)
     }
     shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
     sound_sndmain_cpp_resetSoundDevice_FUN_005ab130();
-    (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,1);
+    (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
     if ((int)pcVar1 < 1) {
       shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
                 (g_CEditorToolsPtr,"No sound file problems found");

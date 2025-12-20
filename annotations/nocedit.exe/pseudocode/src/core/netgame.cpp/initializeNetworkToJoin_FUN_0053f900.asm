@@ -233,8 +233,8 @@ section .text
     PUSH 0x1                            ; 0053fae4
         ;   Label: LAB_0053fae4
     MOV EAX,[0x0067cf44]                ; 0053fae6 | g_CKeysPtr
-    PUSH EAX                            ; 0053faeb | g_CKeysPtr
-    MOV EDX,dword ptr [EAX]             ; 0053faec | g_CKeysPtr
+    PUSH EAX                            ; 0053faeb | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 0053faec | g_CKeysInstance
     CALL dword ptr [EDX + 0x4]          ; 0053faee
     ADD ESP,0x8                         ; 0053faf1
     TEST EAX,EAX                        ; 0053faf4

@@ -48,9 +48,9 @@ void __cdecl core_main_c_showPromoScreen_FUN_00508340(void)
       g_GlobalDeltaTimeInt = 0x4000;
     }
     iVar5 = iVar5 - g_GlobalDeltaTimeInt;
-    iVar3 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x2a);
-  } while (((iVar3 == 0) || (iVar3 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,1), iVar3 == 0)) &&
-          (iVar3 = iVar4, 0 < iVar5));
+    iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+  } while (((iVar3 == 0) || (iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,1), iVar3 == 0))
+          && (iVar3 = iVar4, 0 < iVar5));
   text = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Press any key to continue...");
   iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_MediumFont,text);
   engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80

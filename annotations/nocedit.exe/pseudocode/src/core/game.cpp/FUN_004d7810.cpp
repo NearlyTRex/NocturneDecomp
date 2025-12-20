@@ -31,9 +31,9 @@ void core_game_cpp_FUN_004d7810(void)
   char acStack_68 [88];
   
   if (g_CheatFlags != 0) {
-    iVar2 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1d);
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
     if (iVar2 != 0) {
-      iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x2f);
+      iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x2f);
       if (iVar2 != 0) {
         iVar2 = g_DebugRecording;
         if (g_DebugRecording == 0) {

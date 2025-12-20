@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl void engine_keys.cpp_CKeys_clearKeyPressState_FUN_005024a0(CKeys * this, int keyCode)
+; __cdecl void engine_keys.cpp_CKeys_clearKeyPressState_FUN_005024a0(CKeys * this_ptr, int key_code)
 ;
 ; Parameters:
-; CKeys *          Stack[0x4]:4   this
-; int              Stack[0x8]:4   keyCode
+; CKeys *          Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   key_code
 ;
 ; XREF[1]:
 ;   core_game.cpp_CGame_resetKeyState_FUN_004dbe60 at 004dc145

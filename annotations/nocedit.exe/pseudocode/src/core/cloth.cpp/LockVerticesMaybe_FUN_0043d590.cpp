@@ -277,13 +277,13 @@ void core_cloth_cpp_LockVerticesMaybe_FUN_0043d590(void)
     }
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
-    (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x26);
-    iVar10 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,1);
+    (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x26);
+    iVar10 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
     if (iVar10 != 0) break;
     unaff_EDI = 0x31;
     local_14 = 0x43dab9;
     unaff_EBP = g_CKeysPtr;
-    (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x31);
+    (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x31);
   }
   shape_spotview_cpp_CSpotView_FUN_005b9620(g_CSpotViewPtr);
   pCVar5 = g_CSpotViewPtr;

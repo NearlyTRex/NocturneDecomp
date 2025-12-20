@@ -20,27 +20,27 @@ void core_ladder_cpp_FUN_00502d00(void)
   CKeys *pCVar4;
   
   pCVar4 = g_CKeysPtr;
-  iVar2 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1d);
+  iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
   if (iVar2 == 0) {
     core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(in_stack_00000004);
   }
   else {
-    iVar2 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x4b);
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
     if (iVar2 != 0) {
       in_stack_00000004[2].location.position.y =
            in_stack_00000004[2].location.position.y - fStack_2c;
     }
-    iVar2 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x4d);
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4d);
     if (iVar2 != 0) {
       in_stack_00000004[2].location.position.y =
            in_stack_00000004[2].location.position.y + (float)pCVar4;
     }
-    iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x1e);
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x1e);
     if (iVar2 != 0) {
       in_stack_00000004[2].location.position.z =
            in_stack_00000004[2].location.position.z - DAT_006605e8;
     }
-    iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x10);
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x10);
     if (iVar2 != 0) {
       in_stack_00000004[2].location.position.z =
            DAT_006605e8 + in_stack_00000004[2].location.position.z;

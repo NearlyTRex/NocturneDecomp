@@ -23,7 +23,7 @@
 ;   CKeys* g_CKeysPtr = 02dcd7d4
 ;   CDemonMission* g_CDemonMissionPtr = 02f33740
 ;   int g_MouseButtonFlags
-;   void* g_CKeysPtr
+;   CKeys g_CKeysInstance
 ;   CDemonMission g_CDemonMissionInstance
 ;
 ; Called Functions:
@@ -54,8 +54,8 @@ section .text
     PUSH 0x29                           ; 0040d068
         ;   Label: LAB_0040d068
     MOV EAX,[0x0067cf44]                ; 0040d06a | g_CKeysPtr
-    PUSH EAX                            ; 0040d06f | g_CKeysPtr
-    MOV EDX,dword ptr [EAX]             ; 0040d070 | g_CKeysPtr
+    PUSH EAX                            ; 0040d06f | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 0040d070 | g_CKeysInstance
     CALL dword ptr [EDX]                ; 0040d072
     ADD ESP,0x8                         ; 0040d074
     TEST EAX,EAX                        ; 0040d077
@@ -64,8 +64,8 @@ section .text
     PUSH 0x22                           ; 0040d07b
         ;   Label: LAB_0040d07b
     MOV EAX,[0x0067cf44]                ; 0040d07d | g_CKeysPtr
-    PUSH EAX                            ; 0040d082 | g_CKeysPtr
-    MOV EDX,dword ptr [EAX]             ; 0040d083 | g_CKeysPtr
+    PUSH EAX                            ; 0040d082 | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 0040d083 | g_CKeysInstance
     CALL dword ptr [EDX + 0x4]          ; 0040d085
     ADD ESP,0x8                         ; 0040d088
     TEST EAX,EAX                        ; 0040d08b

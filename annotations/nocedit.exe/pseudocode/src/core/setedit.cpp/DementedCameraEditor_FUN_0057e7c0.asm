@@ -337,14 +337,14 @@ section .text
     CALL wincore_wddvmem.cpp_swapBuffers_FUN_005eda20 ; 0057ea51
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
     CALL wincore_winrun.cpp_wasKeyPressed_FUN_005f2f00 ; 0057ea56
-        ;   XREF to: 005f2f00 (UNCONDITIONAL_CALL)  ; bool wincore_winrun.cpp_wasKeyPressed_FUN_005f2f00()
+        ;   XREF to: 005f2f00 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_wasKeyPressed_FUN_005f2f00()
     TEST EAX,EAX                        ; 0057ea5b
     JZ 0x0057eb69                       ; 0057ea5d
         ;   XREF to: 0057eb69 (CONDITIONAL_JUMP)  ; LAB_0057eb69
     MOV ESI,dword ptr [0x0067cf44]      ; 0057ea63 | g_CKeysPtr
-    PUSH ESI                            ; 0057ea69 | g_CKeysPtr
+    PUSH ESI                            ; 0057ea69 | g_CKeysInstance
     CALL engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_00502470 ; 0057ea6a
-        ;   XREF to: 00502470 (UNCONDITIONAL_CALL)  ; int engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_00502470(CKeys * this)
+        ;   XREF to: 00502470 (UNCONDITIONAL_CALL)  ; int engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_00502470(CKeys * this_ptr)
     ADD ESP,0x4                         ; 0057ea6f
     MOV dword ptr [ESP + 0x4704],EAX    ; 0057ea72
     MOV EAX,dword ptr [ESP + 0x4704]    ; 0057ea79

@@ -1,0 +1,47 @@
+# ============================================================================
+# Function P-code Export
+# ============================================================================
+#
+# Function:    core_dstrender.cpp_saveMMXRegisters_FUN_004906b0
+# Entry:       004906b0
+# Signature:   void core_dstrender.cpp_saveMMXRegisters_FUN_004906b0(void)
+#
+# Format: @<address> [ESP:offset] # <assembly>
+#         [ESP:offset] = cumulative ESP delta from function entry
+#         Delta markers: (+n) ESP increased, (-n) ESP decreased
+#         Certainty:  no marker = known, ? = computed, ?? = unknown, ! = CALLIND
+#
+# ============================================================================
+
+@004906b0 [ESP:+0]  # MOVQ qword ptr [0x02d05258], MM0
+COPY (ram,0x2d05258,8) = (register,0x1100,8)
+
+@004906b7 [ESP:+0]  # MOVQ qword ptr [0x02d05260], MM1
+COPY (ram,0x2d05260,8) = (register,0x1110,8)
+
+@004906be [ESP:+0]  # MOVQ qword ptr [0x02d05268], MM2
+COPY (ram,0x2d05268,8) = (register,0x1120,8)
+
+@004906c5 [ESP:+0]  # MOVQ qword ptr [0x02d05270], MM3
+COPY (ram,0x2d05270,8) = (register,0x1130,8)
+
+@004906cc [ESP:+0]  # MOVQ qword ptr [0x02d05278], MM4
+COPY (ram,0x2d05278,8) = (register,0x1140,8)
+
+@004906d3 [ESP:+0]  # MOVQ qword ptr [0x02d05280], MM5
+COPY (ram,0x2d05280,8) = (register,0x1150,8)
+
+@004906da [ESP:+0]  # MOVQ qword ptr [0x02d05288], MM6
+COPY (ram,0x2d05288,8) = (register,0x1160,8)
+
+@004906e1 [ESP:+0]  # MOVQ qword ptr [0x02d05290], MM7
+COPY (ram,0x2d05290,8) = (register,0x1170,8)
+
+@004906e8 [ESP:+4](+4)  # RET
+LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
+INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+RETURN (register,0x284,4)
+
+# ============================================================================
+# Summary: 9 instructions, 11 P-code ops
+# ============================================================================

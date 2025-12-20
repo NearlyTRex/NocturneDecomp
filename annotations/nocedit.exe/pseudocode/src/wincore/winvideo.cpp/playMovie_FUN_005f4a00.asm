@@ -337,7 +337,7 @@ section .text
     JZ 0x005f4d89                       ; 005f4d1a
         ;   XREF to: 005f4d89 (CONDITIONAL_JUMP)  ; LAB_005f4d89
     CALL wincore_winrun.cpp_wasKeyPressed_FUN_005f2f00 ; 005f4d1c
-        ;   XREF to: 005f2f00 (UNCONDITIONAL_CALL)  ; bool wincore_winrun.cpp_wasKeyPressed_FUN_005f2f00()
+        ;   XREF to: 005f2f00 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_wasKeyPressed_FUN_005f2f00()
     TEST EAX,EAX                        ; 005f4d21
     JNZ 0x005f4d89                      ; 005f4d23
         ;   XREF to: 005f4d89 (CONDITIONAL_JUMP)  ; LAB_005f4d89

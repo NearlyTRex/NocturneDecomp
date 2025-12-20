@@ -35,38 +35,38 @@ void __cdecl core_tvbat_cpp_CTVBat_FUN_005e5260(CTVBat *this_ptr)
   }
   this_ptr_00 = g_CKeysPtr;
   (this_ptr->base_enemy).base_character.hit_points = 10.0;
-  iVar2 = (*this_ptr_00->vtable->isKeyDown)(this_ptr_00,0x1d);
+  iVar2 = (*this_ptr_00->vtable->getKeyState)(this_ptr_00,0x1d);
   if (iVar2 == 0) {
     core_charactr_cpp_CCharacter_computePickupInLoop_FUN_0042f800((CCharacter *)this_ptr);
     return;
   }
   fStack00000008 = g_CGamePtr->delta_time_float * (float)4;
-  iVar2 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x4b);
+  iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
   if (iVar2 != 0) {
     this_ptr->max_distance = this_ptr->max_distance - in_stack_0000001c;
   }
   uStack0000000c = 0x5e52f4;
-  iVar2 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x4d);
+  iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4d);
   if (iVar2 != 0) {
     this_ptr->max_distance = this_ptr->max_distance + in_stack_00000030;
   }
   uStack00000020 = 0x5e5317;
-  iVar2 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1e);
+  iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1e);
   if (iVar2 != 0) {
     this_ptr->max_height = this_ptr->max_height - in_stack_00000044;
   }
   uStack00000034 = 0x5e533a;
-  iVar2 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x10);
+  iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x10);
   if (iVar2 != 0) {
     this_ptr->max_height = this_ptr->max_height + in_stack_00000058;
   }
   uStack00000048 = 0x5e535d;
-  iVar2 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x50);
+  iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x50);
   if (iVar2 != 0) {
     this_ptr->max_distance = this_ptr->max_distance - in_stack_0000006c;
   }
   uStack0000005c = 0x5e5380;
-  iVar2 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x48);
+  iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x48);
   if (iVar2 != 0) {
     this_ptr->max_distance = this_ptr->max_distance + in_stack_00000080;
   }

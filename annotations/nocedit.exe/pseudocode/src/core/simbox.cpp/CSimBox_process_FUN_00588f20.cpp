@@ -53,7 +53,7 @@ void __cdecl core_simbox_cpp_CSimBox_process_FUN_00588f20(CSimBox *this_ptr)
     }
   }
   if (*(int *)(this_ptr->field1_0x158 + 0x17c) == 0) {
-    iVar3 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x13);
+    iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x13);
     if (iVar3 != 0) {
       (this_ptr->base_actor).location.position.x = *(float *)(this_ptr->field1_0x158 + 0x45c);
       (this_ptr->base_actor).location.position.y = *(float *)(this_ptr->field1_0x158 + 0x460);

@@ -30,8 +30,8 @@ void __cdecl core_game_cpp_SaveRelated_FUN_004dcee0(CGame *this_ptr)
   if (g_CheatSystemEnabled == 0) {
     if (this_ptr->cutscene_skippable == 0) {
       if ((((this_ptr->velocity_debug_enabled != 0) &&
-           (iVar4 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1d), iVar4 != 0)) &&
-          (iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x12), iVar4 != 0)) &&
+           (iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d), iVar4 != 0)) &&
+          (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x12), iVar4 != 0)) &&
          (iVar4 = 1 - this_ptr_00->is_game_active, this_ptr_00->is_game_active = iVar4, iVar4 != 0))
       {
         core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
@@ -43,8 +43,8 @@ void __cdecl core_game_cpp_SaveRelated_FUN_004dcee0(CGame *this_ptr)
         pCVar2->padding_0x10[3] = '\0';
       }
       if ((this_ptr_00->is_game_active == 0) &&
-         (iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x2e), iVar4 != 0)) {
-        iVar4 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x2a);
+         (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x2e), iVar4 != 0)) {
+        iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
         pCVar3 = g_CDemonSetPtr;
         if (iVar4 == 0) {
           iVar4 = this_ptr_00->camera_view_index + 1;
@@ -65,8 +65,8 @@ void __cdecl core_game_cpp_SaveRelated_FUN_004dcee0(CGame *this_ptr)
       }
     }
     if (((this_ptr_00->velocity_debug_enabled != 0) &&
-        (iVar4 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1d), iVar4 != 0)) &&
-       (iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x15), iVar4 != 0)) {
+        (iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d), iVar4 != 0)) &&
+       (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x15), iVar4 != 0)) {
       iVar4 = 1 - this_ptr_00->is_paused;
       this_ptr_00->is_paused = iVar4;
       if (iVar4 == 0) {
@@ -79,19 +79,19 @@ void __cdecl core_game_cpp_SaveRelated_FUN_004dcee0(CGame *this_ptr)
     }
     if ((((this_ptr_00->velocity_debug_enabled != 0) ||
          (pcVar5 = crt_env_c_getenv_FUN_006013f0("SPOOKHOUSE"), pcVar5 != (char *)0x0)) &&
-        (iVar4 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1d), iVar4 != 0)) &&
-       (iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x2c), iVar4 != 0)) {
+        (iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d), iVar4 != 0)) &&
+       (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x2c), iVar4 != 0)) {
       this_ptr_00->camera_debug_enabled = 1 - this_ptr_00->camera_debug_enabled;
     }
-    iVar4 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x38);
-    if ((iVar4 != 0) && (iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x32), iVar4 != 0))
-    {
+    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
+    if ((iVar4 != 0) &&
+       (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x32), iVar4 != 0)) {
       DAT_02f43978 = (uint)(DAT_02f43978 == 0);
     }
     if (((this_ptr_00->subtitle_system_enabled == 0) &&
-        (iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x3f), iVar4 != 0)) ||
-       ((iVar4 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1d), iVar4 != 0 &&
-        (iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x32), iVar4 != 0)))) {
+        (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x3f), iVar4 != 0)) ||
+       ((iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d), iVar4 != 0 &&
+        (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x32), iVar4 != 0)))) {
       iVar4 = sound_sndmain_cpp_isSoundEnabled_FUN_005a96b0();
       if (iVar4 == 0) {
         core_sound_cpp_CSound_shutdown_FUN_005b2f70(g_CSoundPtr);
@@ -103,39 +103,40 @@ void __cdecl core_game_cpp_SaveRelated_FUN_004dcee0(CGame *this_ptr)
       }
     }
     if ((((this_ptr_00->velocity_debug_enabled != 0) &&
-         (iVar4 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1d), iVar4 != 0)) &&
-        (iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x11), iVar4 != 0)) &&
+         (iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d), iVar4 != 0)) &&
+        (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x11), iVar4 != 0)) &&
        (0x1df < g_WindowHeight)) {
       this_ptr_00->screen_clear_enabled = 1 - this_ptr_00->screen_clear_enabled;
       core_set_cpp_CDemonSet_CallToDemonCameraInitAndSetView_FUN_0056b7e0();
     }
     if (((this_ptr_00->velocity_debug_enabled != 0) && (g_CheatFlags == 0)) &&
-       ((iVar4 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1d), iVar4 != 0 &&
-        ((iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x2f), iVar4 != 0 &&
+       ((iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d), iVar4 != 0 &&
+        ((iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x2f), iVar4 != 0 &&
          (0x1df < g_WindowHeight)))))) {
       this_ptr_00->field59_0x1e8 = (uint)(this_ptr_00->field59_0x1e8 == 0);
     }
-    iVar4 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1d);
-    if (((iVar4 != 0) && (iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x1f), iVar4 != 0))
-       && (this_ptr_00->letterbox_mode == 0)) {
+    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
+    if (((iVar4 != 0) &&
+        (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x1f), iVar4 != 0)) &&
+       (this_ptr_00->letterbox_mode == 0)) {
       core_game_cpp_CGame_saveGame_FUN_004e0cd0(this_ptr_00,(char *)0x0);
     }
-    iVar4 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x3c);
+    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x3c);
     if ((iVar4 != 0) && (this_ptr_00->letterbox_mode == 0)) {
       core_game_cpp_CGame_saveGame_FUN_004e0cd0(this_ptr_00,(char *)0x0);
     }
-    iVar4 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x3d);
+    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x3d);
     if (iVar4 != 0) {
       core_game_cpp_CGame_FUN_004e36f0(this_ptr_00);
     }
-    iVar4 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x40);
+    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x40);
     if ((iVar4 != 0) && (this_ptr_00->letterbox_mode == 0)) {
       core_game_cpp_CGame_saveGame_FUN_004e0cd0(this_ptr_00,"quicksavedgame.noc");
       pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Quick Save");
       core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr_00,pcVar5,in_stack_fffffecc);
     }
     if ((this_ptr_00->subtitle_system_enabled == 0) &&
-       (iVar4 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x43), iVar4 != 0)) {
+       (iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x43), iVar4 != 0)) {
       file_ptr = engine_dosio_c_getFile_FUN_00481a50
                            ("save","quicksavedgame.noc","rb");
       if (file_ptr == (FILE *)0x0) {
@@ -165,18 +166,18 @@ void __cdecl core_game_cpp_SaveRelated_FUN_004dcee0(CGame *this_ptr)
         }
       }
     }
-    iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x3b);
+    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x3b);
     if (iVar4 != 0) {
       this_ptr_00->show_customizable_keys = (uint)(this_ptr_00->show_customizable_keys == 0);
     }
     if (((this_ptr_00->velocity_debug_enabled != 0) ||
         (pcVar5 = crt_env_c_getenv_FUN_006013f0("SPOOKHOUSE"), pcVar5 != (char *)0x0)) &&
-       (iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0xf), iVar4 != 0)) {
+       (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0xf), iVar4 != 0)) {
       this_ptr_00->console_enabled = (uint)(this_ptr_00->console_enabled == 0);
     }
     if (this_ptr_00->is_paused == 0) {
       if ((*(int *)g_CScriptPtr->padding_0x18 != 2) &&
-         (iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x3f), iVar4 != 0)) {
+         (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x3f), iVar4 != 0)) {
         this_ptr_00->screen_clear_enabled = 1;
         core_set_cpp_CDemonSet_CallToDemonCameraInitAndSetView_FUN_0056b7e0();
         pCVar2 = g_CScriptPtr;
@@ -196,14 +197,14 @@ void __cdecl core_game_cpp_SaveRelated_FUN_004dcee0(CGame *this_ptr)
       }
       if (this_ptr_00->subtitle_system_enabled != 0) {
         if ((*(int *)g_CScriptPtr->padding_0x18 == 2) &&
-           (iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x44), iVar4 != 0)) {
+           (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x44), iVar4 != 0)) {
           pCVar2 = g_CScriptPtr;
           pCVar2->padding_0x18[0] = '\x01';
           pCVar2->padding_0x18[1] = '\0';
           pCVar2->padding_0x18[2] = '\0';
           pCVar2->padding_0x18[3] = '\0';
         }
-        iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x3f);
+        iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x3f);
         if (iVar4 != 0) {
           pCVar2 = g_CScriptPtr;
           pCVar2->padding_0x18[0] = '\0';
@@ -211,13 +212,13 @@ void __cdecl core_game_cpp_SaveRelated_FUN_004dcee0(CGame *this_ptr)
           pCVar2->padding_0x18[2] = '\0';
           pCVar2->padding_0x18[3] = '\0';
         }
-        iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x43);
+        iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x43);
         if (iVar4 != 0) {
           core_script_cpp_FUN_005602b0();
         }
       }
     }
-    iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x57);
+    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x57);
     if (iVar4 != 0) {
       iVar4 = this_ptr_00->gamma + -0x400;
       this_ptr_00->gamma = iVar4;
@@ -229,7 +230,7 @@ void __cdecl core_game_cpp_SaveRelated_FUN_004dcee0(CGame *this_ptr)
       core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr_00,&stack0x00000008,1.0);
       core_set_cpp_CDemonSet_setGamma_FUN_00570d60(g_CDemonSetPtr,this_ptr_00->gamma);
     }
-    iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x58);
+    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x58);
     if (iVar4 != 0) {
       iVar4 = this_ptr_00->gamma + 0x400;
       this_ptr_00->gamma = iVar4;
@@ -242,15 +243,15 @@ void __cdecl core_game_cpp_SaveRelated_FUN_004dcee0(CGame *this_ptr)
       core_set_cpp_CDemonSet_setGamma_FUN_00570d60(g_CDemonSetPtr,this_ptr_00->gamma);
     }
     if (((this_ptr_00->velocity_debug_enabled != 0) &&
-        (iVar4 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1d), iVar4 != 0)) &&
-       (iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x23), iVar4 != 0)) {
+        (iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d), iVar4 != 0)) &&
+       (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x23), iVar4 != 0)) {
       g_CDemonSetPtr->camera_enabled_flag = (uint)(g_CDemonSetPtr->camera_enabled_flag == 0);
     }
     if (((this_ptr_00->velocity_debug_enabled != 0) &&
-        (iVar4 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x38), iVar4 != 0)) &&
-       (iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x1e), iVar4 != 0)) {
+        (iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38), iVar4 != 0)) &&
+       (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x1e), iVar4 != 0)) {
       uStack0000015c = 0x3ca3d70a;
-      iVar4 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x2a);
+      iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
       if (iVar4 != 0) {
         in_stack_00000170 = 0xbca3d70a;
       }

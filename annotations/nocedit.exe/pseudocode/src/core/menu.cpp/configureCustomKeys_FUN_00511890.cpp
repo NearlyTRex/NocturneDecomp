@@ -228,7 +228,7 @@ LAB_00511b4c:
         core_menu_cpp_calibrateGamepad_FUN_005104d0();
       }
     }
-    iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,1);
+    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
     if ((iVar4 != 0) &&
        (((g_CGamePtr->game_control != 2 || (g_CGamePtr->x_center != 0)) ||
         (iVar4 = core_menu_cpp_calibrateGamepad_FUN_005104d0(), iVar4 != 0)))) {

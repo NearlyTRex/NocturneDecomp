@@ -251,10 +251,10 @@ section .text
         ;   XREF to: 005a1ea0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_freeAllSkeletons_FUN_005a1ea0()
     CALL core_skeleton.cpp_freeAllModels_FUN_005a1dc0 ; 00599172
         ;   XREF to: 005a1dc0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_freeAllModels_FUN_005a1dc0()
-    MOV EBX,dword ptr [0x0067cf44]      ; 00599177 | g_CKeysPtr
-    PUSH EBX                            ; 0059917d | g_CKeysPtr
+    MOV EBX,dword ptr [0x0067cf44]      ; 00599177 | g_CKeysInstance | g_CKeysPtr
+    PUSH EBX                            ; 0059917d | g_CKeysInstance
     CALL engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_00502470 ; 0059917e
-        ;   XREF to: 00502470 (UNCONDITIONAL_CALL)  ; int engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_00502470(CKeys * this)
+        ;   XREF to: 00502470 (UNCONDITIONAL_CALL)  ; int engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_00502470(CKeys * this_ptr)
     ADD ESP,0x4                         ; 00599183
     MOV ESI,EAX                         ; 00599186
     CMP EAX,0x33                        ; 00599188

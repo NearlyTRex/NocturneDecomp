@@ -16,7 +16,7 @@ void core_grave_cpp_FUN_004eea70(void)
   CDemonActor *in_stack_00000004;
   
   core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(in_stack_00000004);
-  iVar1 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1d);
+  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
   if (iVar1 == 0) {
     in_stack_00000004[2].location.position.y = 0.0;
     return;

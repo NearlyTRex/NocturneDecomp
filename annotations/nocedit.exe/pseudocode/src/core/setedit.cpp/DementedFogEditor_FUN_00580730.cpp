@@ -15,7 +15,6 @@ void __cdecl core_setedit_cpp_DementedFogEditor_FUN_00580730(void *unk)
   char *pcVar4;
   void *pvVar5;
   undefined3 extraout_var;
-  undefined3 extraout_var_00;
   uint uVar6;
   int iVar7;
   uint *puVar8;
@@ -179,8 +178,8 @@ void __cdecl core_setedit_cpp_DementedFogEditor_FUN_00580730(void *unk)
       }
       wincore_winrun_cpp_drawCrosshair_FUN_005f2fd0();
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-      bVar2 = wincore_winrun_cpp_wasKeyPressed_FUN_005f2f00();
-    } while (CONCAT31 /* combine 2-byte values */(extraout_var,bVar2) == 0);
+      iVar3 = wincore_winrun_cpp_wasKeyPressed_FUN_005f2f00();
+    } while (iVar3 == 0);
     uVar6 = engine_keys_cpp_CKeys_getUppercasedInputKey_FUN_00502470(g_CKeysPtr);
     if (uVar6 < 0x37) {
       if (uVar6 < 0x33) {
@@ -356,7 +355,7 @@ void __cdecl core_setedit_cpp_DementedFogEditor_FUN_00580730(void *unk)
       bVar2 = shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
                         (g_CEditorToolsPtr,"Save set","models",0x64888c,
                          SUB41 /* extract 2-byte value */(acStack_cc,0));
-      if (CONCAT31 /* combine 2-byte values */(extraout_var_00,bVar2) != 0) {
+      if (CONCAT31 /* combine 2-byte values */(extraout_var,bVar2) != 0) {
         core_setedit_cpp_CDemonSet_save_FUN_0057a2a0(unk,acStack_c8);
       }
     }

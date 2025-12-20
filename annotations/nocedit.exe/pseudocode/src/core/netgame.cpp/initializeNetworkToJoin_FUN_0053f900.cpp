@@ -112,7 +112,7 @@ uint core_netgame_cpp_initializeNetworkToJoin_FUN_0053f900(void)
         goto LAB_0053fb81;
       }
     }
-    iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,1);
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
     if (iVar2 != 0) {
 LAB_0053fb81:
       core_netgame_cpp_CNetGame_FUN_0053fd00(in_stack_00000004);

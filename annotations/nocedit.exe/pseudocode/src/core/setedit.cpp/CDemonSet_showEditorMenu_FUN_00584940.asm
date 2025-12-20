@@ -188,9 +188,9 @@ section .text
     CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 00584ad3
         ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()
     MOV EDI,dword ptr [0x0067cf44]      ; 00584ad8 | g_CKeysPtr
-    PUSH EDI                            ; 00584ade | g_CKeysPtr
+    PUSH EDI                            ; 00584ade | g_CKeysInstance
     CALL engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_00502470 ; 00584adf
-        ;   XREF to: 00502470 (UNCONDITIONAL_CALL)  ; int engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_00502470(CKeys * this)
+        ;   XREF to: 00502470 (UNCONDITIONAL_CALL)  ; int engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_00502470(CKeys * this_ptr)
     ADD ESP,0x4                         ; 00584ae4
     MOV EBX,EAX                         ; 00584ae7
     CMP EAX,0x41                        ; 00584ae9

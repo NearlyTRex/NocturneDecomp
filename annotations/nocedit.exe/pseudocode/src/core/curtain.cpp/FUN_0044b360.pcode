@@ -1,0 +1,42 @@
+# ============================================================================
+# Function P-code Export
+# ============================================================================
+#
+# Function:    core_curtain.cpp_FUN_0044b360
+# Entry:       0044b360
+# Signature:   undefined core_curtain.cpp_FUN_0044b360()
+#
+# Format: @<address> [ESP:offset] # <assembly>
+#         [ESP:offset] = cumulative ESP delta from function entry
+#         Delta markers: (+n) ESP increased, (-n) ESP decreased
+#         Certainty:  no marker = known, ? = computed, ?? = unknown, ! = CALLIND
+#
+# ============================================================================
+
+@0044b360 [ESP:+0]  # MOV EAX, dword ptr [ESP + 0x4]
+INT_ADD (unique,0x3b00,4) = (const,0x4,4), (register,0x10,4) /* ESP */
+LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3b00,4)
+COPY (register,0x0,4) /* EAX */ = (unique,0xb900,4)
+
+@0044b364 [ESP:+0]  # CMP dword ptr [EAX + 0x17c], 0xfde8
+INT_ADD (unique,0x3400,4) = (register,0x0,4) /* EAX */, (const,0x17c,4)
+LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3400,4)
+COPY (unique,0x32d80,4) = (unique,0xb900,4)
+INT_LESS (register,0x200,1) = (unique,0x32d80,4), (const,0xfde8,4)
+INT_SBORROW (register,0x20b,1) = (unique,0x32d80,4), (const,0xfde8,4)
+INT_SUB (unique,0x32e80,4) = (unique,0x32d80,4), (const,0xfde8,4)
+INT_SLESS (register,0x207,1) = (unique,0x32e80,4), (const,0x0,4)
+INT_EQUAL (register,0x206,1) = (unique,0x32e80,4), (const,0x0,4)
+INT_AND (unique,0x24c00,4) = (unique,0x32e80,4), (const,0xff,4)
+POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
+INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
+INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
+
+@0044b36e [ESP:+0]  # JLE 0x0044b353
+INT_NOTEQUAL (unique,0xc500,1) = (register,0x20b,1), (register,0x207,1)
+BOOL_OR (unique,0xc600,1) = (register,0x206,1), (unique,0xc500,1)
+CBRANCH (ram,0x44b353,4), (unique,0xc600,1)
+
+# ============================================================================
+# Summary: 3 instructions, 18 P-code ops
+# ============================================================================

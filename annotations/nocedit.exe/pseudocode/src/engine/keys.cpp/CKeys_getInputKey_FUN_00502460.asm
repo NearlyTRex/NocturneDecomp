@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int engine_keys.cpp_CKeys_getInputKey_FUN_00502460(CKeys * this)
+; __cdecl int engine_keys.cpp_CKeys_getInputKey_FUN_00502460(CKeys * this_ptr)
 ;
 ; Parameters:
-; CKeys *          Stack[0x4]:4   this
+; CKeys *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[10]:
 ;   core_setedit.cpp_BackdropMaybe_FUN_005805a0 at 005806cc

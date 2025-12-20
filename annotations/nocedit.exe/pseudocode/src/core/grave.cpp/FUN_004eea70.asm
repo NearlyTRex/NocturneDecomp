@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   CKeys* g_CKeysPtr = 02dcd7d4
-;   void* g_CKeysPtr
+;   CKeys g_CKeysInstance
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040
@@ -26,8 +26,8 @@ section .text
     ADD ESP,0x4                         ; 004eea7e
     MOV EAX,[0x0067cf44]                ; 004eea81 | g_CKeysPtr
     PUSH 0x1d                           ; 004eea86
-    MOV EDX,dword ptr [EAX]             ; 004eea88 | g_CKeysPtr
-    PUSH EAX                            ; 004eea8a | g_CKeysPtr
+    MOV EDX,dword ptr [EAX]             ; 004eea88 | g_CKeysInstance
+    PUSH EAX                            ; 004eea8a | g_CKeysInstance
     CALL dword ptr [EDX]                ; 004eea8b
     ADD ESP,0x8                         ; 004eea8d
     TEST EAX,EAX                        ; 004eea90

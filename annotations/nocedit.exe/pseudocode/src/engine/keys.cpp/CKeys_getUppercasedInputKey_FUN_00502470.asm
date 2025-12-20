@@ -1,10 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; __cdecl int engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_00502470(CKeys * this)
+; __cdecl int engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_00502470(CKeys * this_ptr)
 ;
 ; Parameters:
-; CKeys *          Stack[0x4]:4   this
+; CKeys *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[15]:
 ;   core_cloth.cpp_FUN_0043ddf0 at 0043deb3

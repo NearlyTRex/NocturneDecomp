@@ -17,15 +17,15 @@ void __cdecl core_bat_cpp_CBat_FUN_00414f00(CBat *this_ptr)
   CBat *pCStack0000003c;
   float in_stack_00000040;
   
-  (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x2a);
-  (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x38);
+  (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+  (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
   uStack0000000c = 0x414f5c;
-  iVar1 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x34);
+  iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x34);
   if (iVar1 != 0) {
     this_ptr->param = this_ptr->param + in_stack_0000002c;
   }
   uStack00000020 = 0x414f7f;
-  iVar1 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x33);
+  iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x33);
   if (iVar1 != 0) {
     this_ptr->param = this_ptr->param - in_stack_00000040;
   }

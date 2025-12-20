@@ -1,0 +1,69 @@
+# ============================================================================
+# Function P-code Export
+# ============================================================================
+#
+# Function:    crt_unknown.c_FUN_00610970
+# Entry:       00610970
+# Signature:   undefined crt_unknown.c_FUN_00610970()
+#
+# Format: @<address> [ESP:offset] # <assembly>
+#         [ESP:offset] = cumulative ESP delta from function entry
+#         Delta markers: (+n) ESP increased, (-n) ESP decreased
+#         Certainty:  no marker = known, ? = computed, ?? = unknown, ! = CALLIND
+#
+# ============================================================================
+
+@00610970 [ESP:+0]  # MOV EAX, dword ptr [ESP + 0x4]
+INT_ADD (unique,0x3b00,4) = (const,0x4,4), (register,0x10,4) /* ESP */
+LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3b00,4)
+COPY (register,0x0,4) /* EAX */ = (unique,0xb900,4)
+
+@00610974 [ESP:+0]  # CMP AX, 0x61
+INT_LESS (register,0x200,1) = (register,0x0,2), (const,0x61,2)
+INT_SBORROW (register,0x20b,1) = (register,0x0,2), (const,0x61,2)
+INT_SUB (unique,0x32900,2) = (register,0x0,2), (const,0x61,2)
+INT_SLESS (register,0x207,1) = (unique,0x32900,2), (const,0x0,2)
+INT_EQUAL (register,0x206,1) = (unique,0x32900,2), (const,0x0,2)
+INT_AND (unique,0x24c00,2) = (unique,0x32900,2), (const,0xff,2)
+POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,2)
+INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
+INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
+
+@00610978 [ESP:+0]  # JC 0x00610983
+CBRANCH (ram,0x610983,4), (register,0x200,1)
+
+@0061097a [ESP:+0]  # CMP AX, 0x7a
+INT_LESS (register,0x200,1) = (register,0x0,2), (const,0x7a,2)
+INT_SBORROW (register,0x20b,1) = (register,0x0,2), (const,0x7a,2)
+INT_SUB (unique,0x32900,2) = (register,0x0,2), (const,0x7a,2)
+INT_SLESS (register,0x207,1) = (unique,0x32900,2), (const,0x0,2)
+INT_EQUAL (register,0x206,1) = (unique,0x32900,2), (const,0x0,2)
+INT_AND (unique,0x24c00,2) = (unique,0x32900,2), (const,0xff,2)
+POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,2)
+INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
+INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
+
+@0061097e [ESP:+0]  # JA 0x00610983
+BOOL_OR (unique,0xbf80,1) = (register,0x200,1), (register,0x206,1)
+BOOL_NEGATE (unique,0xc080,1) = (unique,0xbf80,1)
+CBRANCH (ram,0x610983,4), (unique,0xc080,1)
+
+@00610980 [ESP:+0]  # SUB EAX, 0x20
+INT_LESS (register,0x200,1) = (register,0x0,4) /* EAX */, (const,0x20,4)
+INT_SBORROW (register,0x20b,1) = (register,0x0,4) /* EAX */, (const,0x20,4)
+INT_SUB (register,0x0,4) /* EAX */ = (register,0x0,4) /* EAX */, (const,0x20,4)
+INT_SLESS (register,0x207,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
+INT_EQUAL (register,0x206,1) = (register,0x0,4) /* EAX */, (const,0x0,4)
+INT_AND (unique,0x24c00,4) = (register,0x0,4) /* EAX */, (const,0xff,4)
+POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
+INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
+INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
+
+@00610983 [ESP:+4](+4)  # RET
+LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
+INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+RETURN (register,0x284,4)
+
+# ============================================================================
+# Summary: 7 instructions, 37 P-code ops
+# ============================================================================

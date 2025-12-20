@@ -9,7 +9,7 @@
 ; Referenced Globals:
 ;   CKeys* g_CKeysPtr = 02dcd7d4
 ;   int g_GlobalDeltaTimeInt
-;   void* g_CKeysPtr
+;   CKeys g_CKeysInstance
 ;
 ; Called Functions:
 ;   wincore_wddvmem.cpp_swapBuffers_FUN_005eda20
@@ -59,8 +59,8 @@ section .text
     PUSH 0x2a                           ; 005082f6
     SUB EBX,EAX                         ; 005082f8
     MOV EAX,[0x0067cf44]                ; 005082fa | g_CKeysPtr
-    PUSH EAX                            ; 005082ff | g_CKeysPtr
-    MOV EDX,dword ptr [EAX]             ; 00508300 | g_CKeysPtr
+    PUSH EAX                            ; 005082ff | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 00508300 | g_CKeysInstance
     CALL dword ptr [EDX]                ; 00508302
     ADD ESP,0x8                         ; 00508304
     TEST EAX,EAX                        ; 00508307
@@ -83,8 +83,8 @@ section .text
     PUSH 0x1                            ; 0050831e
         ;   Label: LAB_0050831e
     MOV EAX,[0x0067cf44]                ; 00508320 | g_CKeysPtr
-    PUSH EAX                            ; 00508325 | g_CKeysPtr
-    MOV EDX,dword ptr [EAX]             ; 00508326 | g_CKeysPtr
+    PUSH EAX                            ; 00508325 | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 00508326 | g_CKeysInstance
     CALL dword ptr [EDX]                ; 00508328
     ADD ESP,0x8                         ; 0050832a
     TEST EAX,EAX                        ; 0050832d

@@ -15,7 +15,7 @@
 ;   CBitFont* g_MediumFont
 ;   CBitFont* g_ThemeFont
 ;   int g_GlobalDeltaTimeInt
-;   void* g_CKeysPtr
+;   CKeys g_CKeysInstance
 ;   CAlphaBitmap g_LoadingScreenBitmap1
 ;   CAlphaBitmap g_LoadingScreenBitmap2
 ;
@@ -165,8 +165,8 @@ section .text
     PUSH 0x2a                           ; 0050849c
     SUB EBX,EAX                         ; 0050849e
     MOV EAX,[0x0067cf44]                ; 005084a0 | g_CKeysPtr
-    PUSH EAX                            ; 005084a5 | g_CKeysPtr
-    MOV EDX,dword ptr [EAX]             ; 005084a6 | g_CKeysPtr
+    PUSH EAX                            ; 005084a5 | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 005084a6 | g_CKeysInstance
     CALL dword ptr [EDX]                ; 005084a8
     ADD ESP,0x8                         ; 005084aa
     TEST EAX,EAX                        ; 005084ad
@@ -237,8 +237,8 @@ section .text
     PUSH 0x1                            ; 0050854e
         ;   Label: LAB_0050854e
     MOV EAX,[0x0067cf44]                ; 00508550 | g_CKeysPtr
-    PUSH EAX                            ; 00508555 | g_CKeysPtr
-    MOV EDX,dword ptr [EAX]             ; 00508556 | g_CKeysPtr
+    PUSH EAX                            ; 00508555 | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 00508556 | g_CKeysInstance
     CALL dword ptr [EDX]                ; 00508558
     ADD ESP,0x8                         ; 0050855a
     TEST EAX,EAX                        ; 0050855d

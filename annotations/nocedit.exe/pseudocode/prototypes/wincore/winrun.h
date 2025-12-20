@@ -25,7 +25,7 @@ int getNextKeypress(void);
 
 // Original: wincore_winrun.cpp_wasKeyPressed_FUN_005f2f00
 // Address: 005f2f00
-bool wasKeyPressed(void);
+int wasKeyPressed(void);
 
 // Original: wincore_winrun.cpp_getValue_FUN_005f2f20
 // Address: 005f2f20

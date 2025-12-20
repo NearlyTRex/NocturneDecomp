@@ -222,40 +222,40 @@ void core_msnedit_cpp_MasterEditorKeysHelpScreen_FUN_00535e70
     param_21 = 1;
     param_20 = g_CKeysPtr;
     param_19 = 0x536ab1;
-    iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,1);
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
     if (iVar2 != 0) break;
     param_26 = 0x50;
     param_25 = g_CKeysPtr;
     param_24 = 0x536ac9;
-    iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x50);
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x50);
     if (iVar2 != 0) {
       in_stack_00000138 = in_stack_00000138 + 0xb;
     }
     param_31 = 0x48;
     param_30 = g_CKeysPtr;
     param_29 = 0x536ae4;
-    iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x48);
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x48);
     if (iVar2 != 0) {
       in_stack_0000014c = in_stack_0000014c + -0xb;
     }
     param_36 = 0x51;
     param_35 = g_CKeysPtr;
     param_34 = 0x536b00;
-    iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x51);
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x51);
     if (iVar2 != 0) {
       in_stack_00000160 = in_stack_00000160 + in_stack_00000168;
     }
     param_41 = 0x49;
     param_40 = g_CKeysPtr;
     param_39 = 0x536b22;
-    iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x49);
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x49);
     if (iVar2 != 0) {
       in_stack_00000174 = in_stack_00000174 - in_stack_0000017c;
     }
     param_46 = 0x47;
     param_45 = g_CKeysPtr;
     param_44 = 0x536b44;
-    iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x47);
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x47);
     if (iVar2 != 0) {
       in_stack_00000188 = 0;
     }

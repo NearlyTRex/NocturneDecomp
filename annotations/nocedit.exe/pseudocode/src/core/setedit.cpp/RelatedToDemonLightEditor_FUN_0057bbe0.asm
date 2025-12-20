@@ -367,10 +367,10 @@ section .text
         ;   Label: LAB_0057c00c
     CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 0057c011
         ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()
-    MOV ECX,dword ptr [0x0067cf44]      ; 0057c016 | g_CKeysPtr
-    PUSH ECX                            ; 0057c01c | g_CKeysPtr
+    MOV ECX,dword ptr [0x0067cf44]      ; 0057c016 | g_CKeysInstance | g_CKeysPtr
+    PUSH ECX                            ; 0057c01c | g_CKeysInstance
     CALL engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_00502470 ; 0057c01d
-        ;   XREF to: 00502470 (UNCONDITIONAL_CALL)  ; int engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_00502470(CKeys * this)
+        ;   XREF to: 00502470 (UNCONDITIONAL_CALL)  ; int engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_00502470(CKeys * this_ptr)
     ADD ESP,0x4                         ; 0057c022
     MOV dword ptr [ESP + 0x878],EAX     ; 0057c025
     SUB EAX,0x41                        ; 0057c02c

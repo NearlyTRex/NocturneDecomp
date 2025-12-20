@@ -21,9 +21,9 @@ void __cdecl core_teleport_cpp_CTeleport_FUN_005dabe0(CTeleport *this_ptr)
   float in_stack_00000068;
   float in_stack_0000007c;
   
-  iVar1 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1d);
+  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
   if (iVar1 == 0) {
-    iVar1 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x14);
+    iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x14);
     if (iVar1 == 0) {
       core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base_actor);
       return;
@@ -41,34 +41,34 @@ void __cdecl core_teleport_cpp_CTeleport_FUN_005dabe0(CTeleport *this_ptr)
     }
   }
   else {
-    iVar1 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x4b);
+    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
     if (iVar1 != 0) {
       *(float *)this_ptr->field1_0x158 = *(float *)this_ptr->field1_0x158 - in_stack_00000018;
     }
-    iVar1 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x4d);
+    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4d);
     if (iVar1 != 0) {
       *(float *)this_ptr->field1_0x158 = *(float *)this_ptr->field1_0x158 + in_stack_0000002c;
     }
     uStack0000001c = 0x5dac68;
-    iVar1 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1e);
+    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1e);
     if (iVar1 != 0) {
       *(float *)(this_ptr->field1_0x158 + 4) =
            *(float *)(this_ptr->field1_0x158 + 4) - in_stack_00000040;
     }
     uStack00000030 = 0x5dac8b;
-    iVar1 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x10);
+    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x10);
     if (iVar1 != 0) {
       *(float *)(this_ptr->field1_0x158 + 4) =
            *(float *)(this_ptr->field1_0x158 + 4) + in_stack_00000054;
     }
     uStack00000044 = 0x5dacae;
-    iVar1 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x50);
+    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x50);
     if (iVar1 != 0) {
       *(float *)(this_ptr->field1_0x158 + 8) =
            *(float *)(this_ptr->field1_0x158 + 8) - in_stack_00000068;
     }
     uStack00000058 = 0x5dacd1;
-    iVar1 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x48);
+    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x48);
     if (iVar1 != 0) {
       *(float *)(this_ptr->field1_0x158 + 8) =
            *(float *)(this_ptr->field1_0x158 + 8) + in_stack_0000007c;

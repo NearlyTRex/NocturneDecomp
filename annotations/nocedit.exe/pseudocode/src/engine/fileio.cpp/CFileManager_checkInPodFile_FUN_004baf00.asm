@@ -1457,8 +1457,8 @@ section .text
     ADD ESP,0xc                         ; 004bbe37
     MOV EAX,[0x0067cf44]                ; 004bbe3a | g_CKeysPtr
     PUSH 0x1                            ; 004bbe3f
-    MOV ESI,dword ptr [EAX]             ; 004bbe41 | g_CKeysPtr
-    PUSH EAX                            ; 004bbe43 | g_CKeysPtr
+    MOV ESI,dword ptr [EAX]             ; 004bbe41 | g_CKeysInstance
+    PUSH EAX                            ; 004bbe43 | g_CKeysInstance
     CALL dword ptr [ESI + 0x4]          ; 004bbe44
     ADD ESP,0x8                         ; 004bbe47
     TEST EAX,EAX                        ; 004bbe4a

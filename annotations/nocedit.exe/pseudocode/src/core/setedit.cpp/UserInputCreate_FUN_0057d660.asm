@@ -332,8 +332,8 @@ section .text
     MOV dword ptr [ESP + 0x114c],EAX    ; 0057d9c3
     MOV EAX,[0x0067cf44]                ; 0057d9ca | g_CKeysPtr
         ;   Label: LAB_0057d9ca
-    PUSH EAX                            ; 0057d9cf | g_CKeysPtr
-    MOV EDX,dword ptr [EAX]             ; 0057d9d0 | g_CKeysPtr
+    PUSH EAX                            ; 0057d9cf | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 0057d9d0 | g_CKeysInstance
     CALL dword ptr [EDX + 0x8]          ; 0057d9d2
     ADD ESP,0x4                         ; 0057d9d5
     CMP dword ptr [ESP + 0x1144],0x0    ; 0057d9d8
@@ -438,8 +438,8 @@ section .text
     ADD ESP,0x4                         ; 0057db33
     MOV EAX,[0x0067cf44]                ; 0057db36 | g_CKeysPtr
     PUSH 0x1                            ; 0057db3b
-    MOV EDX,dword ptr [EAX]             ; 0057db3d | g_CKeysPtr
-    PUSH EAX                            ; 0057db3f | g_CKeysPtr
+    MOV EDX,dword ptr [EAX]             ; 0057db3d | g_CKeysInstance
+    PUSH EAX                            ; 0057db3f | g_CKeysInstance
     CALL dword ptr [EDX + 0x4]          ; 0057db40
     ADD ESP,0x8                         ; 0057db43
     TEST EAX,EAX                        ; 0057db46
@@ -534,8 +534,8 @@ section .text
     PUSH 0x18                           ; 0057dc57
         ;   Label: LAB_0057dc57
     MOV EAX,[0x0067cf44]                ; 0057dc59 | g_CKeysPtr
-    PUSH EAX                            ; 0057dc5e | g_CKeysPtr
-    MOV EDX,dword ptr [EAX]             ; 0057dc5f | g_CKeysPtr
+    PUSH EAX                            ; 0057dc5e | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 0057dc5f | g_CKeysInstance
     CALL dword ptr [EDX]                ; 0057dc61
     ADD ESP,0x8                         ; 0057dc63
     TEST EAX,EAX                        ; 0057dc66
@@ -617,8 +617,8 @@ section .text
     ADD ESP,0x8                         ; 0057dd6f
     MOV EAX,[0x0067cf44]                ; 0057dd72 | g_CKeysPtr
     PUSH 0x39                           ; 0057dd77
-    MOV EDX,dword ptr [EAX]             ; 0057dd79 | g_CKeysPtr
-    PUSH EAX                            ; 0057dd7b | g_CKeysPtr
+    MOV EDX,dword ptr [EAX]             ; 0057dd79 | g_CKeysInstance
+    PUSH EAX                            ; 0057dd7b | g_CKeysInstance
     CALL dword ptr [EDX + 0x4]          ; 0057dd7c
     ADD ESP,0x8                         ; 0057dd7f
     TEST EAX,EAX                        ; 0057dd82
@@ -982,8 +982,8 @@ section .text
     PUSH 0x3b                           ; 0057e206
         ;   Label: LAB_0057e206
     MOV EAX,[0x0067cf44]                ; 0057e208 | g_CKeysPtr
-    PUSH EAX                            ; 0057e20d | g_CKeysPtr
-    MOV EDX,dword ptr [EAX]             ; 0057e20e | g_CKeysPtr
+    PUSH EAX                            ; 0057e20d | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 0057e20e | g_CKeysInstance
     CALL dword ptr [EDX + 0x4]          ; 0057e210
     ADD ESP,0x8                         ; 0057e213
     TEST EAX,EAX                        ; 0057e216
@@ -992,15 +992,15 @@ section .text
     MOV ESI,0x32758e4                   ; 0057e21a | g_CDemonCameraInstance
         ;   Label: LAB_0057e21a
     CALL wincore_winrun.cpp_wasKeyPressed_FUN_005f2f00 ; 0057e21f
-        ;   XREF to: 005f2f00 (UNCONDITIONAL_CALL)  ; bool wincore_winrun.cpp_wasKeyPressed_FUN_005f2f00()
+        ;   XREF to: 005f2f00 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_wasKeyPressed_FUN_005f2f00()
         ;   Label: LAB_0057e21f
     TEST EAX,EAX                        ; 0057e224
     JZ 0x0057d9ca                       ; 0057e226
         ;   XREF to: 0057d9ca (CONDITIONAL_JUMP)  ; LAB_0057d9ca
     MOV EDI,dword ptr [0x0067cf44]      ; 0057e22c | g_CKeysPtr
-    PUSH EDI                            ; 0057e232 | g_CKeysPtr
+    PUSH EDI                            ; 0057e232 | g_CKeysInstance
     CALL engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_00502470 ; 0057e233
-        ;   XREF to: 00502470 (UNCONDITIONAL_CALL)  ; int engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_00502470(CKeys * this)
+        ;   XREF to: 00502470 (UNCONDITIONAL_CALL)  ; int engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_00502470(CKeys * this_ptr)
     ADD ESP,0x4                         ; 0057e238
     CMP EAX,0x46                        ; 0057e23b
     JNC 0x0057e3dc                      ; 0057e23e

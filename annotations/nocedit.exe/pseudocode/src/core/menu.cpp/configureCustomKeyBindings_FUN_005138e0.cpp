@@ -783,7 +783,7 @@ LAB_0051390e:
           iVar30 = -1;
           iVar29 = 0;
           do {
-            iVar3 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,iVar29);
+            iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,iVar29);
             if ((iVar3 != 0) && (bVar34 = -1 < iVar30, iVar30 = iVar29, bVar34)) goto LAB_00514913;
             iVar29 = iVar29 + 1;
           } while (iVar29 < 600);
@@ -793,11 +793,11 @@ LAB_00514913:
                              ("OK - you can release the key now...");
           shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                     (g_CEditorToolsPtr,pcVar2);
-          iVar30 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,1);
+          iVar30 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,1);
           if (iVar30 != 0) break;
           wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
         }
-        iVar30 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,1);
+        iVar30 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,1);
         if (iVar30 != 0) {
           engine_2d_c_clearInputAndWait_FUN_00403260();
           shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
@@ -850,7 +850,7 @@ LAB_00514a04:
           iVar30 = -1;
           iVar29 = 0;
           do {
-            iVar3 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,iVar29);
+            iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,iVar29);
             if ((iVar3 != 0) && (bVar34 = -1 < iVar30, iVar30 = iVar29, bVar34)) goto LAB_00514a04;
             iVar29 = iVar29 + 1;
           } while (iVar29 < 600);
@@ -867,7 +867,7 @@ LAB_00514a04:
           iVar30 = -1;
           iVar29 = 0;
           do {
-            iVar3 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,iVar29);
+            iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,iVar29);
             if ((iVar3 != 0) && (bVar34 = -1 < iVar30, iVar30 = iVar29, bVar34)) goto LAB_00514a9c;
             iVar29 = iVar29 + 1;
           } while (iVar29 < 600);

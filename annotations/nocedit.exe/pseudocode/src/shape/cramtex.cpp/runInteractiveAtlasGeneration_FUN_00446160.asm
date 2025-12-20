@@ -1922,7 +1922,7 @@ section .text
         ;   Label: LAB_0044742c
     XOR ESI,ESI                         ; 00447432
     CALL wincore_winrun.cpp_wasKeyPressed_FUN_005f2f00 ; 00447434
-        ;   XREF to: 005f2f00 (UNCONDITIONAL_CALL)  ; bool wincore_winrun.cpp_wasKeyPressed_FUN_005f2f00()
+        ;   XREF to: 005f2f00 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_wasKeyPressed_FUN_005f2f00()
         ;   Label: LAB_00447434
     TEST EAX,EAX                        ; 00447439
     JNZ 0x00447479                      ; 0044743b

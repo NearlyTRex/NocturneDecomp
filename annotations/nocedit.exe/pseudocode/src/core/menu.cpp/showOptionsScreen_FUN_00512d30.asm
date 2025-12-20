@@ -26,7 +26,7 @@
 ;   undefined4 g_CGameInstance.game_control
 ;   undefined4 g_CGameInstance.hero_number
 ;   undefined4 g_CGameInstance.delta_time_float
-;   void* g_CKeysPtr
+;   CKeys g_CKeysInstance
 ;   CMoon g_CMoonInstance
 ;   ... and 7 more
 ;
@@ -162,8 +162,8 @@ section .text
     PUSH 0x1                            ; 00512e62
         ;   Label: default
     MOV EAX,[0x0067cf44]                ; 00512e64 | g_CKeysPtr
-    PUSH EAX                            ; 00512e69 | g_CKeysPtr
-    MOV EBX,dword ptr [EAX]             ; 00512e6a | g_CKeysPtr
+    PUSH EAX                            ; 00512e69 | g_CKeysInstance
+    MOV EBX,dword ptr [EAX]             ; 00512e6a | g_CKeysInstance
     CALL dword ptr [EBX + 0x4]          ; 00512e6c
     ADD ESP,0x8                         ; 00512e6f
     TEST EAX,EAX                        ; 00512e72

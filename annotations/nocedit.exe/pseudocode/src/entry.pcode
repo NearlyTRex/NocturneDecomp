@@ -1,0 +1,21 @@
+# ============================================================================
+# Function P-code Export
+# ============================================================================
+#
+# Function:    entry
+# Entry:       0060239a
+# Signature:   void entry(void)
+#
+# Format: @<address> [ESP:offset] # <assembly>
+#         [ESP:offset] = cumulative ESP delta from function entry
+#         Delta markers: (+n) ESP increased, (-n) ESP decreased
+#         Certainty:  no marker = known, ? = computed, ?? = unknown, ! = CALLIND
+#
+# ============================================================================
+
+@0060239a [ESP:+0]  # JMP 0x00609e70
+BRANCH (ram,0x609e70,4)
+
+# ============================================================================
+# Summary: 1 instructions, 1 P-code ops
+# ============================================================================

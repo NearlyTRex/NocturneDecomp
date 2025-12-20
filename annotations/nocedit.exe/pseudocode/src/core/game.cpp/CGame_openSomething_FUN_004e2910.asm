@@ -357,7 +357,7 @@ section .text
         ;   XREF to: 004dbe60 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_CGame_resetKeyState_FUN_004dbe60()
     ADD ESP,0x4                         ; 004e2cfe
     CALL wincore_winrun.cpp_wasKeyPressed_FUN_005f2f00 ; 004e2d01
-        ;   XREF to: 005f2f00 (UNCONDITIONAL_CALL)  ; bool wincore_winrun.cpp_wasKeyPressed_FUN_005f2f00()
+        ;   XREF to: 005f2f00 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_wasKeyPressed_FUN_005f2f00()
         ;   Label: LAB_004e2d01
     TEST EAX,EAX                        ; 004e2d06
     JZ 0x004e2e57                       ; 004e2d08
@@ -477,8 +477,8 @@ section .text
     MOV EBP,dword ptr [ECX + 0x48]      ; 004e2e5e
     MOV EAX,[0x0067cf44]                ; 004e2e61 | g_CKeysPtr
     PUSH EBP                            ; 004e2e66
-    MOV EDX,dword ptr [EAX]             ; 004e2e67 | g_CKeysPtr
-    PUSH EAX                            ; 004e2e69 | g_CKeysPtr
+    MOV EDX,dword ptr [EAX]             ; 004e2e67 | g_CKeysInstance
+    PUSH EAX                            ; 004e2e69 | g_CKeysInstance
     CALL dword ptr [EDX]                ; 004e2e6a
     ADD ESP,0x8                         ; 004e2e6c
     TEST EAX,EAX                        ; 004e2e6f
@@ -494,8 +494,8 @@ section .text
     MOV ESI,dword ptr [ECX + 0x48]      ; 004e2e8f
     MOV EAX,[0x0067cf44]                ; 004e2e92 | g_CKeysPtr
     PUSH ESI                            ; 004e2e97
-    MOV EDX,dword ptr [EAX]             ; 004e2e98 | g_CKeysPtr
-    PUSH EAX                            ; 004e2e9a | g_CKeysPtr
+    MOV EDX,dword ptr [EAX]             ; 004e2e98 | g_CKeysInstance
+    PUSH EAX                            ; 004e2e9a | g_CKeysInstance
     CALL dword ptr [EDX]                ; 004e2e9b
     ADD ESP,0x8                         ; 004e2e9d
     TEST EAX,EAX                        ; 004e2ea0

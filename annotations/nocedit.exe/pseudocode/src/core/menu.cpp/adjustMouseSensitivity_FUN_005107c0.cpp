@@ -46,12 +46,12 @@ LAB_00510823:
     if (g_MouseX != unaff_ESI) {
       iVar3 = (int)(((longlong)g_MouseX * 0x3c000) / (longlong)(g_WindowWidth + -1)) + 0x4000;
     }
-    iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x4b);
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x4b);
     if (iVar2 != 0) {
       iVar3 = iVar3 + -700;
     }
     unaff_ESI = 0x5108bb;
-    iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x4d);
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x4d);
     if (iVar2 != 0) {
       iVar3 = iVar3 + 700;
     }
@@ -77,11 +77,11 @@ LAB_00510823:
               (g_EditorFont,g_ClipLeft,g_ClipRight,(iVar5 - iVar4) / 2,0,0x636649,SUB84 /* extract 2-byte value */(dVar1,0));
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     in_stack_00000020 = 0x5109b8;
-    iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,1);
+    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
     if (iVar4 != 0) goto LAB_005109f5;
-    iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x1c);
+    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x1c);
   } while ((iVar4 == 0) &&
-          (iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x200), iVar4 == 0));
+          (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x200), iVar4 == 0));
   *(int *)iVar2 = iVar3;
 LAB_005109f5:
   shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);

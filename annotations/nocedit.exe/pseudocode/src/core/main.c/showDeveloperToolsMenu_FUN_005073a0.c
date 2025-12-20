@@ -220,7 +220,7 @@ LAB_0050740e:
     shape_edittool_cpp_CEdButton_paint_FUN_004a65e0((CEdButton *)auStack_f8,0);
     shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(g_CEditorToolsPtr,false);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-    iVar1 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,1);
+    iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
   } while (iVar1 == 0);
   shape_edittool_cpp_CEdButton_dtor_FUN_004a6510((CEdButton *)auStack_100);
   shape_edittool_cpp_CEdButton_dtor_FUN_004a6510((CEdButton *)(auStack_1ec + 0xc));

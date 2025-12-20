@@ -4,12 +4,12 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  stack_param                    37707 ( 60.5%)
+  stack_param                    37682 ( 60.5%)
   pointer_cast                    5194 (  8.3%)
-  stack_ref                       4201 (  6.7%)
+  stack_ref                       4200 (  6.7%)
   unknown_field                   3024 (  4.9%)
-  unaffected_reg                  2776 (  4.5%)
-  concat_artifact                 1901 (  3.0%)
+  unaffected_reg                  2784 (  4.5%)
+  concat_artifact                 1885 (  3.0%)
   register_param                  1833 (  2.9%)
   badspacebase                    1622 (  2.6%)
   extra_output                    1440 (  2.3%)
@@ -19,7 +19,7 @@ SUSPECT TYPE COUNTS
   sub_artifact                     284 (  0.5%)
   warning_overlapping_globals      219 (  0.4%)
   warning_unreachable              143 (  0.2%)
-  undefined_type                   125 (  0.2%)
+  undefined_type                   109 (  0.2%)
   sborrow_artifact                  26 (  0.0%)
   warning_jumptable                 12 (  0.0%)
   warning_indirect_jump             12 (  0.0%)
@@ -27,30 +27,30 @@ SUSPECT TYPE COUNTS
   warning_noreturn                   1 (  0.0%)
 
 ====================================================================================================
-TYPE: stack_param (37707 occurrences)
+TYPE: stack_param (37682 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  15349x  in_stack_00000004
-  6658x  in_stack_00000008
-  3153x  in_stack_0000000c
+  15342x  in_stack_00000004
+  6659x  in_stack_00000008
+  3152x  in_stack_0000000c
   1547x  in_stack_00000010
-   997x  in_stack_00000014
+  1001x  in_stack_00000014
    755x  in_stack_00000018
-   566x  in_stack_0000001c
+   562x  in_stack_0000001c
    400x  in_stack_00000020
    379x  in_stack_00000024
-   291x  in_stack_00000028
+   292x  in_stack_00000028
    220x  in_stack_00000030
    216x  in_stack_0000002c
-   192x  in_stack_00000034
-   182x  in_stack_0000003c
-   159x  in_stack_00000038
-   131x  in_stack_00000040
-   124x  in_stack_00000048
-   113x  in_stack_0000004c
-    96x  in_stack_0000005c
-    88x  in_stack_00000044
+   200x  in_stack_00000034
+   173x  in_stack_0000003c
+   160x  in_stack_00000038
+   132x  in_stack_00000040
+   122x  in_stack_00000048
+   111x  in_stack_0000004c
+    99x  in_stack_0000005c
+    91x  in_stack_00000044
 
 Example functions:
   cockpit_ckptutil.c_rotateBitmap_FUN_00434870
@@ -69,8 +69,8 @@ TYPE: pointer_cast (5194 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  1730x  (uint *)((int)
-  1197x  (int *)((int)
+  1732x  (uint *)((int)
+  1195x  (int *)((int)
    492x  (float *)((int)
    252x  (SRenderVertex *)((int)
    221x  (double *)((int)
@@ -101,14 +101,14 @@ Example functions:
     pvVar2 = (void *)((int)g_ScreenBufferArray[width] + dest_y);...
 
 ====================================================================================================
-TYPE: stack_ref (4201 occurrences)
+TYPE: stack_ref (4200 occurrences)
 ====================================================================================================
 
 Unique patterns:
    128x  &stack0xfffffff0
    104x  &stack0xfffffff8
    103x  &stack0xfffffff4
-    81x  &stack0xfffffffc
+    80x  &stack0xfffffffc
     79x  &stack0x00000000
     59x  &stack0xffffff48
     58x  &stack0xffffffec
@@ -120,7 +120,7 @@ Unique patterns:
     45x  &stack0xffffffe4
     44x  &stack0xffffff90
     40x  &stack0xffffff78
-    40x  &stack0x00000034
+    39x  &stack0x00000034
     38x  &stack0xffffffe0
     38x  &stack0x00000008
     37x  &stack0xffffffdc
@@ -185,13 +185,13 @@ Example functions:
     local_8c._16_4_ = pCVar4->x;...
 
 ====================================================================================================
-TYPE: unaffected_reg (2776 occurrences)
+TYPE: unaffected_reg (2784 occurrences)
 ====================================================================================================
 
 Unique patterns:
    870x  unaff_ESI
-   684x  unaff_EBX
-   613x  unaff_EDI
+   687x  unaff_EBX
+   618x  unaff_EDI
    586x  unaff_EBP
      9x  unaff_BP
      9x  unaff_DI
@@ -215,14 +215,14 @@ Example functions:
     int unaff_ESI;...
 
 ====================================================================================================
-TYPE: concat_artifact (1901 occurrences)
+TYPE: concat_artifact (1885 occurrences)
 ====================================================================================================
 
 Unique patterns:
    696x  CONCAT44
    152x  CONCAT11
-   120x  CONCAT31
    115x  CONCAT22
+   104x  CONCAT31
     96x  CONCAT12
     82x  CONCAT14
     68x  CONCAT21
@@ -760,12 +760,12 @@ Example functions:
     /* WARNING: Removing unreachable block (ram,0x004f4365) */...
 
 ====================================================================================================
-TYPE: undefined_type (125 occurrences)
+TYPE: undefined_type (109 occurrences)
 ====================================================================================================
 
 Unique patterns:
-    59x  undefined3 extraout_var
-    18x  undefined3 extraout_var_00
+    49x  undefined3 extraout_var
+    14x  undefined3 extraout_var_00
      7x  undefined6 uStack00000050
      7x  undefined6 uStack0000000c
      7x  undefined6 uStack00000020
@@ -774,40 +774,30 @@ Unique patterns:
      2x  undefined3 in_stack_00000009
      2x  undefined3 in_stack_00000015
      2x  undefined6 uVar7
-     2x  undefined3 extraout_var_02
      1x  undefined3 in_stack_0000001d
      1x  undefined7 uVar5
      1x  undefined5 uVar8
      1x  undefined3 uVar2
      1x  undefined3 unaff_retaddr
      1x  undefined3 in_stack_00000005
+     1x  undefined3 extraout_var_02
      1x  undefined3 extraout_var_03
-     1x  undefined3 extraout_var_04
      1x  undefined3 uVar3
+     1x  undefined3 uStack_53
 
 Example functions:
   shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520
     undefined3 extraout_var;...
   shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990
     undefined3 extraout_var;...
-  shape_cramtex.cpp_runInteractiveAtlasGeneration_FUN_00446160
-    undefined3 extraout_var;...
   shape_edittool.cpp_CEditorTools_promptForValidDouble_FUN_004a01f0
     undefined3 in_stack_00000011;...
   shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020
     undefined3 in_stack_0000001d;...
-  shape_edittool.cpp_showTextInputDialog_FUN_0049db10
-    undefined3 extraout_var;...
-  shape_edittool.cpp_CPickList_handleInput_FUN_004a3f20
-    undefined3 extraout_var;...
   shape_edittool.cpp_CEditorTools_setMousePointerType_FUN_004a1380
     undefined3 extraout_var;...
   shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
-    undefined3 extraout_var;...
-  shape_edittool.cpp_showMultiChoiceDialog_FUN_0049e9d0
-    undefined3 extraout_var;...
-  shape_edittool.cpp_drawSingleButtonPrompt_FUN_0049e130
-    undefined3 extraout_var;...
+    undefined3 in_stack_00000015;...
   shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
     undefined3 in_stack_00000015;...
   shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
@@ -821,8 +811,6 @@ Example functions:
   wincore_windll.cpp_loadExternalRenderer_FUN_005b6750
     undefined3 extraout_var;...
   wincore_windll.cpp_initializeExternalRenderer_FUN_005b5ec0
-    undefined3 extraout_var;...
-  wincore_winvideo.cpp_playMovie_FUN_005f4a00
     undefined3 extraout_var;...
   wincore_winrun.cpp_getNextKeypress_FUN_005f2e90
     undefined3 uVar2;...
@@ -838,6 +826,20 @@ Example functions:
     undefined3 in_stack_00000009;...
   crt_math.c_FUN_00606b7a
     undefined6 uStack00000050;...
+  crt_math.c_FUN_00606eae
+    undefined6 uStack00000050;...
+  crt_math.c_fdiv_thunk_FUN_00606b17
+    undefined6 uStack0000000c;...
+  crt_math.c_fdiv_thunk_FUN_00606ee7
+    undefined6 uStack0000000c;...
+  crt_math.c_fdiv_thunk_FUN_00606bb3
+    undefined6 uStack0000000c;...
+  crt_math.c_fdiv_thunk_FUN_00606cfb
+    undefined6 uStack0000000c;...
+  crt_math.c_pow_FUN_005ffd76
+    undefined6 uVar7;...
+  crt_math.c_fdiv_thunk_FUN_00606e0f
+    undefined6 uStack00000020;...
 
 ====================================================================================================
 TYPE: sborrow_artifact (26 occurrences)

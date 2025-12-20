@@ -18,37 +18,37 @@ void core_flies_cpp_FUN_004ccaf0(void)
   float fStack_40;
   float fStack_2c;
   
-  iVar1 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1d);
+  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
   if (iVar1 == 0) {
     core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(in_stack_00000004);
   }
   else {
-    iVar1 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x4b);
+    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
     if (iVar1 != 0) {
       *(float *)in_stack_00000004[1].actor_name =
            *(float *)in_stack_00000004[1].actor_name - fStack_54;
     }
-    iVar1 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x4d);
+    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4d);
     if (iVar1 != 0) {
       *(float *)in_stack_00000004[1].actor_name =
            *(float *)in_stack_00000004[1].actor_name + fStack_40;
     }
-    iVar1 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1e);
+    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1e);
     if (iVar1 != 0) {
       *(float *)(in_stack_00000004[1].actor_name + 4) =
            *(float *)(in_stack_00000004[1].actor_name + 4) - fStack_2c;
     }
-    iVar1 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x10);
+    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x10);
     if (iVar1 != 0) {
       *(float *)(in_stack_00000004[1].actor_name + 4) =
            *(float *)(in_stack_00000004[1].actor_name + 4) + 7.052326e-39;
     }
-    iVar1 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x50);
+    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x50);
     if (iVar1 != 0) {
       *(float *)(in_stack_00000004[1].actor_name + 8) =
            *(float *)(in_stack_00000004[1].actor_name + 8) - 7.052388e-39;
     }
-    iVar1 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x48);
+    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x48);
     if (iVar1 != 0) {
       *(float *)(in_stack_00000004[1].actor_name + 8) =
            *(float *)(in_stack_00000004[1].actor_name + 8) + in_stack_00000010;

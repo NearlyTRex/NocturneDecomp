@@ -19,7 +19,7 @@
 ;   CEditorTools g_CEditorToolsPtr
 ;   undefined4 g_CDemonLightInstance.light_enabled_flag
 ;   CGame g_CGameInstance
-;   void* g_CKeysPtr
+;   CKeys g_CKeysInstance
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_setGameRes_FUN_004dade0
@@ -102,8 +102,8 @@ section .text
         ;   XREF to: 005eda20 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005eda20()
     PUSH 0x1                            ; 005813c4
     MOV EAX,[0x0067cf44]                ; 005813c6 | g_CKeysPtr
-    PUSH EAX                            ; 005813cb | g_CKeysPtr
-    MOV EDX,dword ptr [EAX]             ; 005813cc | g_CKeysPtr
+    PUSH EAX                            ; 005813cb | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 005813cc | g_CKeysInstance
     CALL dword ptr [EDX + 0x4]          ; 005813ce
     ADD ESP,0x8                         ; 005813d1
     TEST EAX,EAX                        ; 005813d4
@@ -111,8 +111,8 @@ section .text
         ;   XREF to: 00581420 (CONDITIONAL_JUMP)  ; LAB_00581420
     PUSH 0x2e                           ; 005813d8
     MOV EAX,[0x0067cf44]                ; 005813da | g_CKeysPtr
-    PUSH EAX                            ; 005813df | g_CKeysPtr
-    MOV EDX,dword ptr [EAX]             ; 005813e0 | g_CKeysPtr
+    PUSH EAX                            ; 005813df | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 005813e0 | g_CKeysInstance
     CALL dword ptr [EDX + 0x4]          ; 005813e2
     ADD ESP,0x8                         ; 005813e5
     TEST EAX,EAX                        ; 005813e8
@@ -120,8 +120,8 @@ section .text
         ;   XREF to: 005813ab (CONDITIONAL_JUMP)  ; LAB_005813ab
     PUSH 0x2a                           ; 005813ec
     MOV EAX,[0x0067cf44]                ; 005813ee | g_CKeysPtr
-    PUSH EAX                            ; 005813f3 | g_CKeysPtr
-    MOV EDX,dword ptr [EAX]             ; 005813f4 | g_CKeysPtr
+    PUSH EAX                            ; 005813f3 | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 005813f4 | g_CKeysInstance
     CALL dword ptr [EDX]                ; 005813f6
     ADD ESP,0x8                         ; 005813f8
     TEST EAX,EAX                        ; 005813fb

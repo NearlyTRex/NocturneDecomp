@@ -43,7 +43,7 @@ void core_msnedit_cpp_FUN_0053eb40(void)
         shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
                   (g_CEditorToolsPtr,(float)dVar2,1.0);
         in_stack_fffffecc = g_CKeysPtr;
-        iVar1 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,1);
+        iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,1);
       } while (iVar1 == 0);
       shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
     }

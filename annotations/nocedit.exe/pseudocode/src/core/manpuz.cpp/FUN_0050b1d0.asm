@@ -11,7 +11,7 @@
 ;   double DOUBLE_0063592d = 30
 ;   double DOUBLE_00635935 = 0.200000000000000
 ;   CKeys* g_CKeysPtr = 02dcd7d4
-;   void* g_CKeysPtr
+;   CKeys g_CKeysInstance
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10
@@ -32,8 +32,8 @@ section .text
     FDIV double ptr [0x0063592d]        ; 0050b1e6 | DOUBLE_0063592d
     PUSH 0x38                           ; 0050b1ec
     MOV EAX,[0x0067cf44]                ; 0050b1ee | g_CKeysPtr
-    PUSH EAX                            ; 0050b1f3 | g_CKeysPtr
-    MOV EDX,dword ptr [EAX]             ; 0050b1f4 | g_CKeysPtr
+    PUSH EAX                            ; 0050b1f3 | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 0050b1f4 | g_CKeysInstance
     FSTP float ptr [ESP + 0x8]          ; 0050b1f6
     CALL dword ptr [EDX]                ; 0050b1fa
     ADD ESP,0x8                         ; 0050b1fc
@@ -46,8 +46,8 @@ section .text
     PUSH 0x33                           ; 0050b20f
         ;   Label: LAB_0050b20f
     MOV EAX,[0x0067cf44]                ; 0050b211 | g_CKeysPtr
-    PUSH EAX                            ; 0050b216 | g_CKeysPtr
-    MOV EDX,dword ptr [EAX]             ; 0050b217 | g_CKeysPtr
+    PUSH EAX                            ; 0050b216 | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 0050b217 | g_CKeysInstance
     CALL dword ptr [EDX]                ; 0050b219
     ADD ESP,0x8                         ; 0050b21b
     TEST EAX,EAX                        ; 0050b21e
@@ -59,8 +59,8 @@ section .text
     PUSH 0x34                           ; 0050b22b
         ;   Label: LAB_0050b22b
     MOV EAX,[0x0067cf44]                ; 0050b22d | g_CKeysPtr
-    PUSH EAX                            ; 0050b232 | g_CKeysPtr
-    MOV EDX,dword ptr [EAX]             ; 0050b233 | g_CKeysPtr
+    PUSH EAX                            ; 0050b232 | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 0050b233 | g_CKeysInstance
     CALL dword ptr [EDX]                ; 0050b235
     ADD ESP,0x8                         ; 0050b237
     TEST EAX,EAX                        ; 0050b23a

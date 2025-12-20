@@ -22,14 +22,14 @@ shape_edittool_cpp_CInputString_handleKeyboardInput_FUN_0049d6c0(CInputString *t
   uint uStack000000d0;
   
   bVar1 = false;
-  iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x4b);
+  iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x4b);
   if (iVar2 != 0) {
     bVar1 = true;
     if (0 < this_ptr->cursor_position) {
       this_ptr->cursor_position = this_ptr->cursor_position + -1;
     }
   }
-  iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x4d);
+  iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x4d);
   if (iVar2 != 0) {
     bVar1 = true;
     if (this_ptr->cursor_position < this_ptr->current_length) {
@@ -37,27 +37,27 @@ shape_edittool_cpp_CInputString_handleKeyboardInput_FUN_0049d6c0(CInputString *t
     }
   }
   uStack0000000c = 0x49d736;
-  iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x47);
+  iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x47);
   if (iVar2 != 0) {
     bVar1 = true;
     this_ptr->cursor_position = 0;
   }
   uStack00000020 = 0x49d759;
-  iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x4f);
+  iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x4f);
   if (iVar2 != 0) {
     bVar1 = true;
     this_ptr->cursor_position = this_ptr->current_length;
   }
   uStack00000034 = 0x49d77d;
-  iVar2 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1d);
+  iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
   if (iVar2 == 0) {
     uStack00000048 = 0x49d843;
-    iVar2 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x2a);
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
     if (iVar2 == 0) {
       if (bVar1) {
         shape_edittool_cpp_CInputString_setSelectionToCursor_FUN_0049d460(this_ptr);
       }
-      iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x53);
+      iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x53);
       if (iVar2 != 0) {
         iVar2 = this_ptr->cursor_position;
         if (iVar2 != this_ptr->selection_start) {
@@ -71,12 +71,12 @@ shape_edittool_cpp_CInputString_handleKeyboardInput_FUN_0049d6c0(CInputString *t
     }
     else {
       uStack0000005c = 0x49d857;
-      iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x52);
+      iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x52);
       if (iVar2 != 0) {
         shape_edittool_cpp_CInputString_deleteSelection_FUN_0049d580(this_ptr);
         shape_edittool_cpp_CInputString_pasteFromClipboard_FUN_0049d660(this_ptr);
       }
-      iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x53);
+      iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x53);
       if (iVar2 != 0) {
         uStack00000090 = 0x49d88a;
         shape_edittool_cpp_CInputString_copySelectionToClipboard_FUN_0049d610(this_ptr);
@@ -87,25 +87,25 @@ shape_edittool_cpp_CInputString_handleKeyboardInput_FUN_0049d6c0(CInputString *t
   }
   else {
     uStack00000048 = 0x49d796;
-    iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x2d);
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x2d);
     if (iVar2 != 0) {
       shape_edittool_cpp_CInputString_copySelectionToClipboard_FUN_0049d610(this_ptr);
       shape_edittool_cpp_CInputString_deleteSelection_FUN_0049d580(this_ptr);
     }
-    iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x52);
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x52);
     if (iVar2 != 0) {
       shape_edittool_cpp_CInputString_copySelectionToClipboard_FUN_0049d610(this_ptr);
     }
-    iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x2e);
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x2e);
     if (iVar2 != 0) {
       shape_edittool_cpp_CInputString_copySelectionToClipboard_FUN_0049d610(this_ptr);
     }
-    iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x2f);
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x2f);
     if (iVar2 != 0) {
       shape_edittool_cpp_CInputString_deleteSelection_FUN_0049d580(this_ptr);
       shape_edittool_cpp_CInputString_pasteFromClipboard_FUN_0049d660(this_ptr);
     }
-    iVar2 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x53);
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x53);
     if (iVar2 != 0) {
       shape_edittool_cpp_CInputString_deleteSelection_FUN_0049d580(this_ptr);
     }

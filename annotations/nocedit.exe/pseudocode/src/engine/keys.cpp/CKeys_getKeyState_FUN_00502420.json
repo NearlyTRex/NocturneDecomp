@@ -21,7 +21,7 @@
     ],
     "convention": "__cdecl",
     "name": "engine_keys.cpp_CKeys_getKeyState_FUN_00502420",
-    "signature": "char engine_keys.cpp_CKeys_getKeyState_FUN_00502420(CKeys * this, int keyCode)"
+    "signature": "int engine_keys.cpp_CKeys_getKeyState_FUN_00502420(CKeys * this_ptr, int key_code)"
   },
   "function_calls": [],
   "globals": [
@@ -39,6 +39,136 @@
     "declared_params": 2,
     "estimated_params": 2
   },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.5,
+    "instruction_count": 4,
+    "opcode_distribution": {
+      "COPY": 4,
+      "INT_ADD": 3,
+      "INT_AND": 2,
+      "INT_EQUAL": 2,
+      "INT_SLESS": 1,
+      "INT_XOR": 1,
+      "LOAD": 3,
+      "POPCOUNT": 1,
+      "RETURN": 1
+    },
+    "pcode_op_count": 18
+  },
+  "possible_indirect_callers": {
+    "method_name": "getKeyState",
+    "param_analysis": {
+      "call_site_count": 310,
+      "caller_details": [
+        {
+          "caller": "CBarrier_FUN_00414460",
+          "estimated_params": 4
+        },
+        {
+          "caller": "CBarrier_FUN_00414460",
+          "estimated_params": 2
+        },
+        {
+          "caller": "CBarrier_FUN_00414460",
+          "estimated_params": 2
+        },
+        {
+          "caller": "CBarrier_FUN_00414460",
+          "estimated_params": 2
+        },
+        {
+          "caller": "CBarrier_FUN_00414460",
+          "estimated_params": 2
+        },
+        {
+          "caller": "CBarrier_FUN_00414460",
+          "estimated_params": 2
+        },
+        {
+          "caller": "CBarrier_FUN_00414460",
+          "estimated_params": 2
+        },
+        {
+          "caller": "CBarrier_FUN_00414460",
+          "estimated_params": 2
+        },
+        {
+          "caller": "CBarrier_FUN_00414460",
+          "estimated_params": 2
+        },
+        {
+          "caller": "CBat_FUN_00414f00",
+          "estimated_params": 4
+        }
+      ],
+      "estimated_params": 2,
+      "param_estimates": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "possible_callers": [
+      "BoneAndClothEditor_FUN_0043c880",
+      "CBarrier_FUN_00414460",
+      "CBat_FUN_00414f00",
+      "CDeformableModelInstance_viewModel_FUN_005968b0",
+      "CDemonActor_processInEditor_FUN_0040d040",
+      "CDemonSet_FUN_00581aa0",
+      "CDemonSet_FUN_00583170",
+      "CDemonSet_ViewerVisitSet_FUN_0057a940",
+      "CDemonSet_unk201_FUN_0057ae50",
+      "CGame_openSomething_FUN_004e2910",
+      "CGame_processCheatCodes_FUN_004ddaf0",
+      "CGame_processFrame_FUN_004da100",
+      "CGame_rollCredits_FUN_004e4010",
+      "CGlass_processInEditor_FUN_004eb490",
+      "CInputString_handleKeyboardInput_FUN_0049d6c0",
+      "CKeyFramedModel_showEditorMenu_FUN_0047cbc0",
+      "CLodMesh_chooseLodsInteractive_FUN_0051d990",
+      "CLodMesh_previewLodGeneration_FUN_0051d520",
+      "CPickList_handleInput_FUN_004a3f20",
+      "CScript_Unk20_FUN_00565130",
+      "CSimBox_process_FUN_00588f20",
+      "CSlew_processInput_FUN_005a20b0",
+      "CSpotView_FUN_005b9670",
+      "CTVBat_FUN_005e5260",
+      "CTeleport_FUN_005dabe0",
+      "CTrigger_FUN_005e1180",
+      "CWaterActor_FUN_005ebab0",
+      "FUN_004421c0",
+      "FUN_0044b7a0",
+      "FUN_004a8fe0",
+      "FUN_004caf60",
+      "FUN_004ccaf0",
+      "FUN_004d25f0",
+      "FUN_004d7810",
+      "FUN_004eea70",
+      "FUN_00502d00",
+      "FUN_0050b1d0",
+      "FUN_0052ca90",
+      "FUN_0053eb40",
+      "FUN_0054ea00",
+      "FUN_00581320",
+      "FUN_005ba900",
+      "PrepareMissionAndEditGore_FUN_0053e220",
+      "PrepareMissionMaybe_FUN_005390f0",
+      "SaveRelated_FUN_004dcee0",
+      "UserInputCreate_FUN_0057d660",
+      "adjustFudgePosition_FUN_004d8750",
+      "configureCustomKeyBindings_FUN_005138e0",
+      "getSinglePressedKey_FUN_00513860",
+      "showMainGameMenu_FUN_00512f40",
+      "showMultiChoiceDialog_FUN_0049e9d0",
+      "showTextInputDialog_FUN_0049db10",
+      "testSoundFile_FUN_005ad3b0",
+      "testSoundFiles_FUN_005ad5c0"
+    ],
+    "vtable_offset": 0
+  },
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -48,14 +178,14 @@
     "variables": [
       {
         "is_param": true,
-        "name": "this",
+        "name": "this_ptr",
         "offset": 4,
         "size": 4,
         "type": "CKeys *"
       },
       {
         "is_param": true,
-        "name": "keyCode",
+        "name": "key_code",
         "offset": 8,
         "size": 4,
         "type": "int"

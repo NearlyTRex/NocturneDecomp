@@ -23,7 +23,7 @@ void __cdecl core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(CDemonActor
   this_ptr->was_created = 0;
   pCVar2 = (*this_ptr->vtable->getCarrier)(this_ptr);
   if (pCVar2 == (CDemonActor *)0x0) {
-    iVar3 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x29);
+    iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x29);
     if (iVar3 == 0) {
       if ((CLocation *)&stack0x00000000 != &this_ptr->location) {
         in_stack_00000008 = (this_ptr->location).position.z;
@@ -44,7 +44,7 @@ void __cdecl core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(CDemonActor
         (pCVar1->orient).heading = in_stack_00000018;
       }
     }
-    iVar3 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x22);
+    iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x22);
     if (iVar3 != 0) {
       in_stack_00000014 = (CDemonMission *)pCVar1;
       in_stack_00000010 = g_CDemonMissionPtr;

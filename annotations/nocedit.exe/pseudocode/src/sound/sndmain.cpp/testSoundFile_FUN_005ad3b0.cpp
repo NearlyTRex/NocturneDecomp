@@ -61,7 +61,7 @@ char * __cdecl sound_sndmain_cpp_testSoundFile_FUN_005ad3b0(char *sample_name)
       fStack00000010 = (float)dStack00000008;
       if (0.0 <= fStack00000010) {
         while (iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(sfx_handle), iVar2 != 0) {
-          iVar2 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,1);
+          iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,1);
           if (iVar2 != 0) {
             return "Canceled";
           }

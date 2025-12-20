@@ -208,8 +208,6 @@ const undefined4 DAT_0066eb54 = {0x30, 0x78, 0x30, 0x00};
 const undefined4 DAT_0066eeac = {0x30, 0x78, 0x33, 0x00};
 
 // void* constants
-const void* DAT_006605C0 = 0x00502430;
-const void* DAT_006605C4 = 0x00502450;
 const void* DAT_006618F4 = 0x00527360;
 const void* DAT_006630E4 = 0x005A3280;
 const void* DAT_00664E89 = 0x0042F000;

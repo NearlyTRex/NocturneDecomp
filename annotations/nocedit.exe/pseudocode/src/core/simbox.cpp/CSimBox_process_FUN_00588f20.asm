@@ -16,7 +16,7 @@
 ;   CEventList* g_CEventListPtr = 02d05310
 ;   CKeys* g_CKeysPtr = 02dcd7d4
 ;   CEventList g_CEventListInstance
-;   void* g_CKeysPtr
+;   CKeys g_CKeysInstance
 ;
 ; Called Functions:
 ;   core_box.cpp_CBox_process_FUN_0041e2f0
@@ -99,8 +99,8 @@ section .text
         ;   XREF to: 0058908f (CONDITIONAL_JUMP)  ; LAB_0058908f
     PUSH 0x13                           ; 00588fed
     MOV EAX,[0x0067cf44]                ; 00588fef | g_CKeysPtr
-    PUSH EAX                            ; 00588ff4 | g_CKeysPtr
-    MOV ESI,dword ptr [EAX]             ; 00588ff5 | g_CKeysPtr
+    PUSH EAX                            ; 00588ff4 | g_CKeysInstance
+    MOV ESI,dword ptr [EAX]             ; 00588ff5 | g_CKeysInstance
     CALL dword ptr [ESI]                ; 00588ff7
     ADD ESP,0x8                         ; 00588ff9
     TEST EAX,EAX                        ; 00588ffc

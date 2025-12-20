@@ -12,9 +12,8 @@ void __cdecl core_setedit_cpp_showDementedLightEditor_FUN_0057c5d0(CDemonSet *th
   int *piVar1;
   char cVar2;
   bool bVar3;
-  undefined3 extraout_var;
   uint uVar4;
-  undefined3 extraout_var_00;
+  undefined3 extraout_var;
   int iVar5;
   CDemonSet *pCVar6;
   BADSPACEBASE *in_ESP;
@@ -144,8 +143,8 @@ void __cdecl core_setedit_cpp_showDementedLightEditor_FUN_0057c5d0(CDemonSet *th
                      (uint)((g_WindowWidth >> 0x1f) << 1 < 0)) >> 2) + g_WindowWidth / 2,iVar9);
     wincore_winrun_cpp_drawCrosshair_FUN_005f2fd0();
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-    bVar3 = wincore_winrun_cpp_wasKeyPressed_FUN_005f2f00();
-    if (CONCAT31 /* combine 2-byte values */(extraout_var,bVar3) == 0) {
+    iVar7 = wincore_winrun_cpp_wasKeyPressed_FUN_005f2f00();
+    if (iVar7 == 0) {
       in_stack_00000010 = (char *)0x0;
     }
     else {
@@ -316,7 +315,7 @@ void __cdecl core_setedit_cpp_showDementedLightEditor_FUN_0057c5d0(CDemonSet *th
         bVar3 = shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
                           (g_CEditorToolsPtr,"Save set","models",0x647c8f,
                            (bool)((char)&CStack_488 + -0x5c));
-        if (CONCAT31 /* combine 2-byte values */(extraout_var_00,bVar3) != 0) {
+        if (CONCAT31 /* combine 2-byte values */(extraout_var,bVar3) != 0) {
           core_setedit_cpp_CDemonSet_save_FUN_0057a2a0(this_ptr,acStack_e0);
         }
       }

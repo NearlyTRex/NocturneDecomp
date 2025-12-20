@@ -9,7 +9,7 @@
 ;   CKeys* g_CKeysPtr = 02dcd7d4
 ;   CGame g_CGameInstance
 ;   undefined4 g_CGameInstance.game_control
-;   void* g_CKeysPtr
+;   CKeys g_CKeysInstance
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_resetKeyState_FUN_004dbe60
@@ -31,8 +31,8 @@ section .text
     PUSH EBX                            ; 00513877
         ;   Label: LAB_00513877
     MOV EAX,[0x0067cf44]                ; 00513878 | g_CKeysPtr
-    PUSH EAX                            ; 0051387d | g_CKeysPtr
-    MOV EDX,dword ptr [EAX]             ; 0051387e | g_CKeysPtr
+    PUSH EAX                            ; 0051387d | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 0051387e | g_CKeysInstance
     CALL dword ptr [EDX]                ; 00513880
     ADD ESP,0x8                         ; 00513882
     TEST EAX,EAX                        ; 00513885

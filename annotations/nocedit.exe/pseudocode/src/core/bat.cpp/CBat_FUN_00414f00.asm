@@ -11,7 +11,7 @@
 ; Referenced Globals:
 ;   double DOUBLE_00615426 = 0.25
 ;   CKeys* g_CKeysPtr = 02dcd7d4
-;   void* g_CKeysPtr
+;   CKeys g_CKeysInstance
 ;
 ; Called Functions:
 ;   core_bat.cpp_FUN_00414ce0
@@ -30,9 +30,9 @@ section .text
     PUSH 0x2a                           ; 00414f0d
     MOV EAX,[0x0067cf44]                ; 00414f0f | g_CKeysPtr
     MOV EDX,0x3f800000                  ; 00414f14
-    PUSH EAX                            ; 00414f19 | g_CKeysPtr
+    PUSH EAX                            ; 00414f19 | g_CKeysInstance
     MOV dword ptr [ESP + 0x8],EDX       ; 00414f1a
-    MOV EDX,dword ptr [EAX]             ; 00414f1e | g_CKeysPtr
+    MOV EDX,dword ptr [EAX]             ; 00414f1e | g_CKeysInstance
     CALL dword ptr [EDX]                ; 00414f20
     ADD ESP,0x8                         ; 00414f22
     TEST EAX,EAX                        ; 00414f25
@@ -42,8 +42,8 @@ section .text
     PUSH 0x38                           ; 00414f30
         ;   Label: LAB_00414f30
     MOV EAX,[0x0067cf44]                ; 00414f32 | g_CKeysPtr
-    PUSH EAX                            ; 00414f37 | g_CKeysPtr
-    MOV EDX,dword ptr [EAX]             ; 00414f38 | g_CKeysPtr
+    PUSH EAX                            ; 00414f37 | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 00414f38 | g_CKeysInstance
     CALL dword ptr [EDX]                ; 00414f3a
     ADD ESP,0x8                         ; 00414f3c
     TEST EAX,EAX                        ; 00414f3f
@@ -55,8 +55,8 @@ section .text
     PUSH 0x34                           ; 00414f4f
         ;   Label: LAB_00414f4f
     MOV EAX,[0x0067cf44]                ; 00414f51 | g_CKeysPtr
-    PUSH EAX                            ; 00414f56 | g_CKeysPtr
-    MOV EDX,dword ptr [EAX]             ; 00414f57 | g_CKeysPtr
+    PUSH EAX                            ; 00414f56 | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 00414f57 | g_CKeysInstance
     CALL dword ptr [EDX + 0x4]          ; 00414f59
     ADD ESP,0x8                         ; 00414f5c
     TEST EAX,EAX                        ; 00414f5f
@@ -68,8 +68,8 @@ section .text
     PUSH 0x33                           ; 00414f72
         ;   Label: LAB_00414f72
     MOV EAX,[0x0067cf44]                ; 00414f74 | g_CKeysPtr
-    PUSH EAX                            ; 00414f79 | g_CKeysPtr
-    MOV EDX,dword ptr [EAX]             ; 00414f7a | g_CKeysPtr
+    PUSH EAX                            ; 00414f79 | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 00414f7a | g_CKeysInstance
     CALL dword ptr [EDX + 0x4]          ; 00414f7c
     ADD ESP,0x8                         ; 00414f7f
     TEST EAX,EAX                        ; 00414f82

@@ -11,7 +11,7 @@
 ;   CGame* g_CGamePtr = 02d81a9c
 ;   CKeys* g_CKeysPtr = 02dcd7d4
 ;   undefined4 g_CGameInstance.delta_time_float
-;   void* g_CKeysPtr
+;   CKeys g_CKeysInstance
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040
@@ -26,8 +26,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x14]      ; 005ebab4
     PUSH 0x1d                           ; 005ebab8
     MOV EAX,[0x0067cf44]                ; 005ebaba | g_CKeysPtr
-    PUSH EAX                            ; 005ebabf | g_CKeysPtr
-    MOV EDX,dword ptr [EAX]             ; 005ebac0 | g_CKeysPtr
+    PUSH EAX                            ; 005ebabf | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 005ebac0 | g_CKeysInstance
     CALL dword ptr [EDX]                ; 005ebac2
     ADD ESP,0x8                         ; 005ebac4
     TEST EAX,EAX                        ; 005ebac7
@@ -38,8 +38,8 @@ section .text
     FLD float ptr [EAX + 0x264]         ; 005ebad6 | g_CGameInstance.delta_time_float
     MOV EAX,[0x0067cf44]                ; 005ebadc | g_CKeysPtr
     FMUL double ptr [0x006574b7]        ; 005ebae1 | DOUBLE_006574b7
-    PUSH EAX                            ; 005ebae7 | g_CKeysPtr
-    MOV EDX,dword ptr [EAX]             ; 005ebae8 | g_CKeysPtr
+    PUSH EAX                            ; 005ebae7 | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 005ebae8 | g_CKeysInstance
     FSTP float ptr [ESP + 0x10]         ; 005ebaea
     CALL dword ptr [EDX]                ; 005ebaee
     ADD ESP,0x8                         ; 005ebaf0
@@ -52,8 +52,8 @@ section .text
     PUSH 0x4d                           ; 005ebb07
         ;   Label: LAB_005ebb07
     MOV EAX,[0x0067cf44]                ; 005ebb09 | g_CKeysPtr
-    PUSH EAX                            ; 005ebb0e | g_CKeysPtr
-    MOV EDX,dword ptr [EAX]             ; 005ebb0f | g_CKeysPtr
+    PUSH EAX                            ; 005ebb0e | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 005ebb0f | g_CKeysInstance
     CALL dword ptr [EDX]                ; 005ebb11
     ADD ESP,0x8                         ; 005ebb13
     TEST EAX,EAX                        ; 005ebb16
@@ -65,8 +65,8 @@ section .text
     PUSH 0x50                           ; 005ebb2a
         ;   Label: LAB_005ebb2a
     MOV EAX,[0x0067cf44]                ; 005ebb2c | g_CKeysPtr
-    PUSH EAX                            ; 005ebb31 | g_CKeysPtr
-    MOV EDX,dword ptr [EAX]             ; 005ebb32 | g_CKeysPtr
+    PUSH EAX                            ; 005ebb31 | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 005ebb32 | g_CKeysInstance
     CALL dword ptr [EDX]                ; 005ebb34
     ADD ESP,0x8                         ; 005ebb36
     TEST EAX,EAX                        ; 005ebb39
@@ -78,8 +78,8 @@ section .text
     PUSH 0x48                           ; 005ebb4d
         ;   Label: LAB_005ebb4d
     MOV EAX,[0x0067cf44]                ; 005ebb4f | g_CKeysPtr
-    PUSH EAX                            ; 005ebb54 | g_CKeysPtr
-    MOV EDX,dword ptr [EAX]             ; 005ebb55 | g_CKeysPtr
+    PUSH EAX                            ; 005ebb54 | g_CKeysInstance
+    MOV EDX,dword ptr [EAX]             ; 005ebb55 | g_CKeysInstance
     CALL dword ptr [EDX]                ; 005ebb57
     ADD ESP,0x8                         ; 005ebb59
     TEST EAX,EAX                        ; 005ebb5c

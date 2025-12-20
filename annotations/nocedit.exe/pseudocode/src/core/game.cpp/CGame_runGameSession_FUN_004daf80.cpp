@@ -37,7 +37,6 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
   uint in_stack_fffff8c8;
   uint in_stack_fffff8cc;
   uint in_stack_fffff8d0;
-  int in_stack_fffff8d8;
   CPickList local_4c8;
   char local_120 [256];
   byte *local_20;
@@ -188,7 +187,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
       core_game_cpp_CGame_processFrame_FUN_004da100(this_ptr);
       if (g_CheatSystemEnabled == 0) {
         in_stack_fffff810 = (CGame *)g_CKeysPtr;
-        iVar5 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,1);
+        iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
         if (iVar5 != 0) {
           shape_edittool_cpp_CPickList_clear_FUN_004a5770(&g_CPickList);
           this_ptr->wait_for_keypress = 0;
@@ -346,7 +345,7 @@ int __cdecl core_game_cpp_CGame_runGameSession_FUN_004daf80(CGame *this_ptr)
                         ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],in_stack_fffff860);
       if (iVar4 == 2) {
         in_stack_fffff868 = (CKeys *)0x4dbaf1;
-        iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x1c);
+        iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x1c);
         if (iVar4 != 0) goto LAB_004db434;
         if (local_14 < 0.0) {
           iVar4 = core_game_cpp_CGame_fadeIn_FUN_004e0b90(this_ptr);
@@ -406,7 +405,7 @@ LAB_004db434:
   engine_keys_cpp_CKeys_toggleInputMask_FUN_005024b0(g_CKeysPtr,0);
   core_sound_cpp_CSound_shutdown_FUN_005b2f70(g_CSoundPtr);
   core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004daed0(this_ptr);
-  (*g_CKeysPtr->vtable[1].isKeyDown)(g_CKeysPtr,in_stack_fffff8d8);
+  (*g_CKeysPtr->vtable->clearKeyPresses)(g_CKeysPtr);
   core_set_cpp_CDemonSet_FUN_0056d2d0(g_CDemonSetPtr);
   this_ptr->time_scale_factor = 1.0;
   shape_edittool_cpp_CPickList_clear_FUN_004a5770(&g_CPickList);

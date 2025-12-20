@@ -115,9 +115,10 @@ int __cdecl core_main_c_enterMainGameMenu_FUN_00512f40(void)
     case 0:
       core_moon_cpp_CMoon_free_FUN_00529ce0(&g_CMoonInstance);
       core_sound_cpp_CSound_reset_FUN_005b39a0(g_CSoundPtr);
-      iVar5 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x2a);
-      if ((iVar5 == 0) || (iVar5 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1d), iVar5 == 0)) {
-        iVar4 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1d);
+      iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+      if ((iVar5 == 0) || (iVar5 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d), iVar5 == 0))
+      {
+        iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
         if (iVar4 == 0) {
           iVar4 = 0;
         }
@@ -147,21 +148,21 @@ LAB_005131d5:
       iVar6 = 99;
     }
     in_stack_00000034 = 1;
-    iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,1);
+    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
     if (iVar4 != 0) {
       iVar6 = 99;
     }
-    iVar4 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1d);
-    if ((iVar4 != 0) && (iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x32), iVar4 != 0))
-    {
+    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
+    if ((iVar4 != 0) &&
+       (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x32), iVar4 != 0)) {
       iVar4 = sound_sndmain_cpp_isSoundEnabled_FUN_005a96b0();
       sound_sndmain_cpp_setSoundEnabled_FUN_005a96c0((uint)(iVar4 == 0));
       core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
     }
-    iVar4 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1d);
+    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
     if ((iVar4 != 0) &&
-       ((iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x20), iVar4 != 0 ||
-        (iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x26), iVar4 != 0)))) {
+       ((iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x20), iVar4 != 0 ||
+        (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x26), iVar4 != 0)))) {
       if (g_FullscreenMode != 0) {
         wincore_windll_cpp_clearScreen_FUN_005b3e70();
         engine_2d_c_drawText_FUN_00401fd0("3D acceleration has been turned off!",0,0);
@@ -175,9 +176,9 @@ LAB_005131d5:
       core_main_c_showDeveloperToolsMenu_FUN_005073a0();
       core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
     }
-    iVar4 = (*g_CKeysPtr->vtable->isKeyDown)(g_CKeysPtr,0x1d);
-    if ((iVar4 != 0) && (iVar4 = (*g_CKeysPtr->vtable->isKeyPressed)(g_CKeysPtr,0x21), iVar4 != 0))
-    {
+    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
+    if ((iVar4 != 0) &&
+       (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x21), iVar4 != 0)) {
       core_sound_cpp_CSound_reset_FUN_005b39a0(g_CSoundPtr);
       core_fileman_cpp_CDemonFileManager_showEditorMenu_FUN_004be270(&g_CDemonFileManagerInstance);
       core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);

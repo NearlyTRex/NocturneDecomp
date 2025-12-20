@@ -1,0 +1,66 @@
+# ============================================================================
+# Function P-code Export
+# ============================================================================
+#
+# Function:    crt_math.c_round_FUN_005fe6b0
+# Entry:       005fe6b0
+# Signature:   double crt_math.c_round_FUN_005fe6b0(double value)
+#
+# Format: @<address> [ESP:offset] # <assembly>
+#         [ESP:offset] = cumulative ESP delta from function entry
+#         Delta markers: (+n) ESP increased, (-n) ESP decreased
+#         Certainty:  no marker = known, ? = computed, ?? = unknown, ! = CALLIND
+#
+# ============================================================================
+
+@005fe6b0 [ESP:-4](-4)  # PUSH EAX
+COPY (unique,0x20a80,4) = (register,0x0,4) /* EAX */
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x20a80,4)
+
+@005fe6b1 [ESP:-4]  # FSTCW word ptr [ESP]
+COPY (unique,0x5100,2) = (register,0x10a0,2)
+STORE (const,0x1a1,4), (register,0x10,4) /* ESP */, (unique,0x5100,2)
+
+@005fe6b5 [ESP:-4]  # WAIT
+# (no p-code)
+
+@005fe6b6 [ESP:-8](-4)  # PUSH dword ptr [ESP]
+LOAD (unique,0xb900,4) = (const,0x1a1,4), (register,0x10,4) /* ESP */
+COPY (unique,0x20a80,4) = (unique,0xb900,4)
+INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x20a80,4)
+
+@005fe6b9 [ESP:-8]  # MOV byte ptr [ESP + 0x1], 0x1f
+INT_ADD (unique,0x3b00,4) = (const,0x1,4), (register,0x10,4) /* ESP */
+COPY (unique,0x5080,1) = (const,0x1f,1)
+STORE (const,0x1a1,4), (unique,0x3b00,4), (unique,0x5080,1)
+
+@005fe6be [ESP:-8]  # FLDCW word ptr [ESP]
+LOAD (unique,0x5100,2) = (const,0x1a1,4), (register,0x10,4) /* ESP */
+COPY (register,0x10a0,2) = (unique,0x5100,2)
+
+@005fe6c1 [ESP:-8]  # FRNDINT
+COPY (register,0x10ac,4) = (const,0x5fe6c1,4)
+ROUND (register,0x1100,10) = (register,0x1100,10)
+
+@005fe6c3 [ESP:-8]  # FLDCW word ptr [ESP + 0x4]
+INT_ADD (unique,0x3b00,4) = (const,0x4,4), (register,0x10,4) /* ESP */
+LOAD (unique,0x5100,2) = (const,0x1a1,4), (unique,0x3b00,4)
+COPY (register,0x10a0,2) = (unique,0x5100,2)
+
+@005fe6c7 [ESP:-8]  # WAIT
+# (no p-code)
+
+@005fe6c8 [ESP:-8]  # LEA ESP, [ESP + 0x8]
+INT_ADD (unique,0x3b00,4) = (const,0x8,4), (register,0x10,4) /* ESP */
+COPY (register,0x10,4) /* ESP */ = (unique,0x3b00,4)
+
+@005fe6cc [ESP:-4](+4)  # RET
+LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
+INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
+RETURN (register,0x284,4)
+
+# ============================================================================
+# Summary: 11 instructions, 24 P-code ops
+# ============================================================================

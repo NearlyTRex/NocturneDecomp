@@ -17,7 +17,7 @@
 ;   TerminatedCString s_N_00646bd0
 ;   TerminatedCString s_s_s_00646bd2
 ;   CKeys* g_CKeysPtr = 02dcd7d4
-;   void* g_CKeysPtr
+;   CKeys g_CKeysInstance
 ;
 ; Called Functions:
 ;   crt_stdio.c_sprintf_FUN_005fdbd0
@@ -60,9 +60,9 @@ section .text
     ADD ESP,0xc                         ; 00578ce3
     MOV EDI,dword ptr [0x0067cf44]      ; 00578ce6 | g_CKeysPtr
         ;   Label: LAB_00578ce6
-    PUSH EDI                            ; 00578cec | g_CKeysPtr
+    PUSH EDI                            ; 00578cec | g_CKeysInstance
     CALL engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_00502470 ; 00578ced
-        ;   XREF to: 00502470 (UNCONDITIONAL_CALL)  ; int engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_00502470(CKeys * this)
+        ;   XREF to: 00502470 (UNCONDITIONAL_CALL)  ; int engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_00502470(CKeys * this_ptr)
     ADD ESP,0x4                         ; 00578cf2
     MOV EDX,EAX                         ; 00578cf5
     CMP EAX,0x1b                        ; 00578cf7

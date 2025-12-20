@@ -43067,11 +43067,11 @@
     "conv":"__cdecl",
     "importable":true,
     "name":"engine_keys.cpp_CKeys_getKeyState_FUN_00502420",
-    "ret":"char",
+    "ret":"int",
     "vars":{
       "params":[
         {
-          "name":"this",
+          "name":"this_ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -43087,7 +43087,7 @@
           "type":"CKeys*"
         },
         {
-          "name":"keyCode",
+          "name":"key_code",
           "storage":{
             "offset":8,
             "size":4,
@@ -43104,12 +43104,12 @@
         }
       ],
       "ret_storage":{
-        "reg":"AL",
-        "size":1,
+        "reg":"EAX",
+        "size":4,
         "varnodes":[
           {
             "addr":"register:00000000",
-            "size":1
+            "size":4
           }
         ]
       }
@@ -43131,7 +43131,7 @@
     "vars":{
       "params":[
         {
-          "name":"this",
+          "name":"this_ptr",
           "storage":{
             "offset":4,
             "size":4,
@@ -43147,7 +43147,7 @@
           "type":"CKeys*"
         },
         {
-          "name":"keyCode",
+          "name":"key_code",
           "storage":{
             "offset":8,
             "size":4,

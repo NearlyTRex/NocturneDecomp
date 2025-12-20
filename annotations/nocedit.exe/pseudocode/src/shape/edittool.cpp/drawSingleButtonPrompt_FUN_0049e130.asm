@@ -197,7 +197,7 @@ section .text
     CALL engine_2d.c_clearInputAndWait_FUN_00403260 ; 0049e2d9
         ;   XREF to: 00403260 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_00403260()
     CALL wincore_winrun.cpp_wasKeyPressed_FUN_005f2f00 ; 0049e2de
-        ;   XREF to: 005f2f00 (UNCONDITIONAL_CALL)  ; bool wincore_winrun.cpp_wasKeyPressed_FUN_005f2f00()
+        ;   XREF to: 005f2f00 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_wasKeyPressed_FUN_005f2f00()
         ;   Label: LAB_0049e2de
     TEST EAX,EAX                        ; 0049e2e3
     JNZ 0x0049e3d7                      ; 0049e2e5
