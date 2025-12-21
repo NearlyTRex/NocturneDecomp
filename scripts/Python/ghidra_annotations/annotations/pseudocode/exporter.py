@@ -5,9 +5,11 @@
 # main thread does Python-heavy processing sequentially (no GIL contention).
 
 import os
+import json
 import time
+from java.util import ArrayList
 from concurrent.futures import ThreadPoolExecutor, as_completed
-
+from ghidra.app.decompiler import DecompileCallback
 from ghidra_annotations.util import make_dirs
 from ghidra_annotations.util.log import log_info
 from ghidra_annotations.annotations import is_function_external
@@ -40,7 +42,7 @@ from ghidra_annotations.annotations.pseudocode.functions import (
 )
 from ghidra_annotations.annotations.pseudocode.transforms import (
     apply_all_transforms, load_custom_replacements, apply_custom_replacements,
-    preload_custom_replacements
+    preload_custom_replacements, set_pcode_overrides_cache, load_pcode_overrides
 )
 from ghidra_annotations.annotations.pseudocode.suspects import (
     identify_suspect_lines, calculate_complexity_metrics
@@ -131,6 +133,61 @@ class PhaseTimer:
         # Log throughput stats if we have function processing info
         return total_time
 
+def register_pcode_overrides(src_dir):
+    """Load pcode overrides from JSON files and register them with DecompileCallback.
+
+    Scans JSON files in src_dir for 'pcode_overrides' key which should be a dict
+    mapping instruction addresses (as hex strings) to lists of pcode operation strings.
+
+    Also populates the Python cache for preserving overrides in output JSON.
+
+    Returns the count of overrides registered.
+    """
+
+    # Check source dir
+    if not os.path.isdir(src_dir):
+        return 0
+
+    # Find json file
+    override_count = 0
+    for root, dirs, files in os.walk(src_dir):
+        for filename in files:
+            if not filename.endswith('.json'):
+                continue
+
+            # Load json
+            filepath = os.path.join(root, filename)
+            try:
+
+                # Get overrides
+                with open(filepath, 'r') as f:
+                    data = json.load(f)
+                overrides = data.get('pcode_overrides')
+                if not overrides or not isinstance(overrides, dict):
+                    continue
+
+                # Cache for preservation in output JSON
+                set_pcode_overrides_cache(filepath, overrides)
+
+                # Get function address from the JSON data (nested in function object)
+                func_addr_str = data.get('function', {}).get('address', '')
+                if not func_addr_str:
+                    continue
+
+                # Parse function address
+                func_addr = int(func_addr_str.replace('0x', ''), 16)
+
+                # Register each override with decompiler
+                for instr_addr_str, pcode_lines in overrides.items():
+                    instr_addr = int(instr_addr_str.replace('0x', ''), 16)
+                    java_list = ArrayList()
+                    for line in pcode_lines:
+                        java_list.add(line)
+                    DecompileCallback.registerPcodeOverride(func_addr, instr_addr, java_list)
+                    override_count += 1
+            except (json.JSONDecodeError, ValueError, IOError):
+                continue
+    return override_count
 
 def process_decompile_result(result, pseudocode_src_dir, constants_map):
     """Process a decompilation result in the main thread.
@@ -173,6 +230,9 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map):
     custom_replacements = load_custom_replacements(existing_json_path)
     if custom_replacements:
         decompiled_code = apply_custom_replacements(decompiled_code, custom_replacements)
+
+    # Load pcode overrides to preserve them in output
+    pcode_overrides = load_pcode_overrides(existing_json_path)
     transform_time = time.time() - transform_start
 
     # === PYTHON-ONLY: Analysis using pre-computed data from worker ===
@@ -205,7 +265,8 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map):
         result.func_addr_range, result.func_convention, result.func_signature,
         decompiled_code, result.assembly_code, result.func_xrefs, result.func_globals,
         result.func_calls, result.stack_frame, suspects, complexity, custom_replacements,
-        stack_patterns, result.param_estimates, result.vtable_info, result.pcode_data)
+        stack_patterns, result.param_estimates, result.vtable_info, result.pcode_data,
+        pcode_overrides)
     output_time = time.time() - output_start
 
     total_process_time = time.time() - process_start
@@ -238,12 +299,20 @@ def export_pseudocode(currentProgram, path):
     timer = PhaseTimer()
     timer.start_total()
 
+    # Register pcode overrides from existing JSON files before decompilation
+    # This allows manual fixes to pcode (e.g., for BADSPACEBASE issues) to be applied
+    abs_path = os.path.abspath(path)
+    pcode_override_count = register_pcode_overrides(os.path.join(abs_path, "pseudocode", "src"))
+    if pcode_override_count > 0:
+        log_info("Loaded %d P-code overrides from JSON files" % pcode_override_count)
+
     # Define output directories first (needed for preloading)
     pseudocode_dir = os.path.join(path, "pseudocode")
     pseudocode_include_dir = os.path.join(pseudocode_dir, "include")
     pseudocode_src_dir = os.path.join(pseudocode_dir, "src")
 
     # Pre-load custom replacements BEFORE cleanup to preserve user modifications
+    # (pcode overrides are already cached by register_pcode_overrides above)
     timer.start_phase("Preload custom replacements")
     log_info("Pre-loading custom replacements from existing JSON files...")
     preload_custom_replacements(pseudocode_src_dir)
@@ -613,5 +682,8 @@ def export_pseudocode(currentProgram, path):
         log_info("  Avg time per function:    %.3fs" % (total_time / files_created))
         log_info("  Thread count:             %d" % num_threads)
         log_info("=" * 60)
+
+    # Clear pcode overrides to free memory
+    DecompileCallback.clearPcodeOverrides()
 
     log_info("Export complete - created %d pseudocode files" % files_created)

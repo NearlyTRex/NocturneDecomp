@@ -278,6 +278,24 @@ def apply_custom_replacements(code, replacements):
 _replacements_cache = {}
 _replacements_cache_dir = None
 
+# Cache for pcode overrides to avoid repeated file I/O
+_pcode_overrides_cache = {}
+_pcode_overrides_cache_dir = None
+
+
+def set_pcode_overrides_cache(json_path, overrides):
+    """Set a pcode overrides entry in the cache.
+
+    Called by register_pcode_overrides in exporter.py to populate cache
+    while registering overrides with the decompiler.
+
+    Args:
+        json_path: Path to the JSON file
+        overrides: Dict of pcode overrides
+    """
+    global _pcode_overrides_cache
+    _pcode_overrides_cache[json_path] = overrides
+
 
 def preload_custom_replacements(base_dir):
     """Pre-load all custom replacements from JSON files in a directory.
@@ -372,4 +390,90 @@ def load_custom_replacements(json_path):
 #       "description": "Annotate extra output register"
 #     }
 #   ]
+# }
+
+
+def preload_pcode_overrides(base_dir):
+    """Pre-load all pcode overrides from JSON files in a directory.
+
+    Call this once before processing functions to cache all pcode overrides.
+    Recursively scans all subdirectories.
+
+    Args:
+        base_dir: Directory containing function JSON files
+    """
+    global _pcode_overrides_cache, _pcode_overrides_cache_dir
+    _pcode_overrides_cache = {}
+    _pcode_overrides_cache_dir = base_dir
+
+    if not base_dir or not os.path.exists(base_dir):
+        return
+
+    # Recursively scan for all .json files and load their pcode_overrides
+    try:
+        for root, dirs, files in os.walk(base_dir):
+            for filename in files:
+                if filename.endswith('.json'):
+                    json_path = os.path.join(root, filename)
+                    try:
+                        with open(json_path, 'r') as f:
+                            data = json_module.load(f)
+                            pcode_overrides = data.get('pcode_overrides')
+                            if pcode_overrides and isinstance(pcode_overrides, dict):
+                                log_info("Preloaded %d pcode overrides from %s" % (len(pcode_overrides), json_path))
+                                _pcode_overrides_cache[json_path] = pcode_overrides
+                    except Exception:
+                        pass
+    except Exception:
+        pass
+
+
+def load_pcode_overrides(json_path):
+    """Load pcode overrides from an existing JSON file.
+
+    Looks for a 'pcode_overrides' key in the JSON that contains a dict
+    mapping instruction addresses to lists of pcode operations.
+
+    Uses cache if preload_pcode_overrides was called.
+
+    Args:
+        json_path: Path to the function's JSON file
+
+    Returns:
+        Dict of pcode overrides, or empty dict if none found
+    """
+    global _pcode_overrides_cache
+
+    if not json_path:
+        return {}
+
+    # Use cache if available
+    if json_path in _pcode_overrides_cache:
+        log_info("Found %d pcode overrides in cache for %s" % (len(_pcode_overrides_cache[json_path]), json_path))
+        return _pcode_overrides_cache[json_path]
+
+    # Fallback to file I/O (handles cache misses and path mismatches)
+    if not os.path.exists(json_path):
+        return {}
+
+    try:
+        with open(json_path, 'r') as f:
+            data = json_module.load(f)
+            pcode_overrides = data.get('pcode_overrides')
+            if pcode_overrides and isinstance(pcode_overrides, dict):
+                log_info("Loaded %d pcode overrides from disk for %s" % (len(pcode_overrides), json_path))
+                return pcode_overrides
+            return {}
+    except Exception:
+        return {}
+
+
+# Example JSON format for pcode overrides:
+# {
+#   "pcode_overrides": {
+#     "0x005a20b7": [
+#       "COPY (register,0x200,1) = (const,0x0,1)",
+#       "INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)"
+#     ]
+#   }
 # }
