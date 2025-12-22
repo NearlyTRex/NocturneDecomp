@@ -183,6 +183,7 @@ def register_pcode_overrides(src_dir):
                     java_list = ArrayList()
                     for line in pcode_lines:
                         java_list.add(line)
+                    log_info("Registering pcode override: func=0x%x instr=0x%x (%d ops)" % (func_addr, instr_addr, len(pcode_lines)))
                     DecompileCallback.registerPcodeOverride(func_addr, instr_addr, java_list)
                     override_count += 1
             except (json.JSONDecodeError, ValueError, IOError):
@@ -305,9 +306,13 @@ def export_pseudocode(currentProgram, path):
     pcode_override_count = register_pcode_overrides(os.path.join(abs_path, "pseudocode", "src"))
     if pcode_override_count > 0:
         log_info("Loaded %d P-code overrides from JSON files" % pcode_override_count)
+        # Verify Java side received the overrides
+        has_overrides = DecompileCallback.hasPcodeOverrides()
+        log_info("Java hasPcodeOverrides() returns: %s" % has_overrides)
 
     # Define output directories first (needed for preloading)
-    pseudocode_dir = os.path.join(path, "pseudocode")
+    # Use abs_path to match paths cached by register_pcode_overrides
+    pseudocode_dir = os.path.join(abs_path, "pseudocode")
     pseudocode_include_dir = os.path.join(pseudocode_dir, "include")
     pseudocode_src_dir = os.path.join(pseudocode_dir, "src")
 

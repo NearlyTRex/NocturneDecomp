@@ -1,12 +1,23 @@
-import os
 import sys
 import logging
 
 logger_instance = None
 
-def setup_logging(name = "ghidra_script", filename = "ghidra_script.log", level = logging.DEBUG):
 
-    # Get existing instance
+def setup_logging(name="ghidra_script", filename=None, level=logging.DEBUG, timestamp_filename=True):
+    """
+    Set up simple logging to stdout.
+
+    When running via JoyBox's decompiler_tool, all stdout/stderr (including Java
+    System.out) is automatically captured to ~/Logs/output.log by command.py.
+    No need for complex file/tee handling here.
+
+    Args:
+        name: Logger name
+        filename: Ignored (kept for compatibility - JoyBox handles file logging)
+        level: Logging level
+        timestamp_filename: Ignored (kept for compatibility)
+    """
     global logger_instance
     if logger_instance:
         return logger_instance
@@ -15,18 +26,13 @@ def setup_logging(name = "ghidra_script", filename = "ghidra_script.log", level 
     logger = logging.getLogger(name)
     logger.setLevel(level)
 
-    # Console handler
-    formatter = logging.Formatter('[%(levelname)s] %(message)s')
+    # Format with timestamps
+    formatter = logging.Formatter('%(asctime)s [%(levelname)s] %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
+
+    # Console handler only
     stream_handler = logging.StreamHandler(sys.stdout)
     stream_handler.setFormatter(formatter)
     logger.addHandler(stream_handler)
-
-    # File handler
-    file_handler = logging.FileHandler(filename, mode='w')
-    file_handler.setFormatter(formatter)
-    logger.addHandler(file_handler)
-
-    # Add instance
     logger.propagate = False
     logger_instance = logger
     return logger
