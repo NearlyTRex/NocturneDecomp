@@ -2,6 +2,7 @@
 # Identifies problematic patterns in decompiled code that may need manual review
 
 import re
+from collections import defaultdict
 
 # Patterns that indicate potential issues in decompiled code
 # Format: (pattern_string, issue_type, description)
@@ -122,3 +123,387 @@ def calculate_complexity_metrics(decompiled_code, assembly_code, suspects, xrefs
             (len(suspect_types) * 5)  # Variety of issues adds complexity
         )
     }
+
+
+def identify_pcode_suspects(pcode_data, assembly_code=None, existing_overrides=None):
+    """Identify fixable suspect patterns from P-code data.
+
+    Detects patterns that can be fixed with P-code overrides:
+    - Type A: CALLIND followed by ADD ESP with uncertain tracking
+    - Type B: Jump targets with ESP mismatch (after RET)
+
+    Only reports suspects that are NOT already fixed by existing p-code overrides.
+    This allows iterative refinement toward zero suspects.
+
+    Args:
+        pcode_data: List of instruction dicts from extract_function_pcode()
+        assembly_code: Optional assembly code string for additional context
+        existing_overrides: Optional dict of address -> pcode_lines from JSON
+
+    Returns:
+        List of suspect dictionaries with type, description, and fix metadata
+    """
+    suspects = []
+
+    if not pcode_data:
+        return suspects
+
+    # Normalize existing override addresses for comparison
+    fixed_addresses = set()
+    if existing_overrides:
+        for addr in existing_overrides.keys():
+            # Normalize to lowercase without 0x prefix
+            normalized = addr.lower().replace('0x', '').lstrip('0') or '0'
+            fixed_addresses.add(normalized)
+
+    # Detect Type A: CALLIND + uncertain ADD ESP
+    callind_suspects = _detect_callind_esp_uncertain(pcode_data)
+    suspects.extend(callind_suspects)
+
+    # Detect Type B: Jump target ESP mismatch
+    # Need to parse assembly for jump targets and RET locations
+    if assembly_code:
+        mismatch_suspects = _detect_jump_target_esp_mismatch(pcode_data, assembly_code)
+        suspects.extend(mismatch_suspects)
+
+    # Filter out suspects that are already fixed by existing overrides
+    if fixed_addresses:
+        unfixed_suspects = []
+        for suspect in suspects:
+            fix_addr = suspect.get('fix_address', '')
+            # Normalize for comparison
+            normalized_fix = fix_addr.lower().replace('0x', '').lstrip('0') or '0'
+            if normalized_fix not in fixed_addresses:
+                unfixed_suspects.append(suspect)
+        suspects = unfixed_suspects
+    return suspects
+
+
+def _detect_callind_esp_uncertain(pcode_data):
+    """Detect CALLIND instructions followed by ADD ESP with uncertain tracking.
+
+    Pattern: CALLIND makes ESP opaque, subsequent ADD ESP can't resolve it.
+
+    Returns two types of suspects:
+    - callind_esp_uncertain: Function has EBP frame, fixable with ESP = EBP - offset
+    - callind_esp_no_frame: Function lacks EBP frame, needs different fix approach
+
+    Returns:
+        List of suspect dictionaries
+    """
+    suspects = []
+
+    if not pcode_data:
+        return suspects
+
+    # Check if function uses EBP-based frame
+    frame_offset = get_frame_offset_from_pcode(pcode_data)
+    has_ebp_frame = frame_offset is not None
+
+    # Find CALLIND instructions and look for ADD ESP after them
+    i = 0
+    while i < len(pcode_data):
+        entry = pcode_data[i]
+        pcode_lines = entry.get('pcode', [])
+
+        # Check if this instruction has CALLIND
+        has_callind = any('CALLIND' in line for line in pcode_lines)
+
+        if has_callind:
+            # Look for ADD ESP in next few instructions
+            for j in range(i + 1, min(i + 5, len(pcode_data))):
+                next_entry = pcode_data[j]
+                next_asm = next_entry.get('assembly', '')
+
+                # Check for ADD ESP, N
+                if next_asm.upper().startswith('ADD ') and 'ESP' in next_asm.upper():
+                    # Check ESP certainty
+                    certainty = next_entry.get('esp_certainty', 'unknown')
+
+                    # If computed or unknown after CALLIND, this is a problem
+                    if certainty in ('computed', 'unknown', 'callind_unknown'):
+                        # Parse the ADD value
+                        add_value = _parse_add_esp_value(next_asm)
+
+                        if has_ebp_frame:
+                            # Fixable with ESP = EBP - frame_offset
+                            suspects.append({
+                                'type': 'callind_esp_uncertain',
+                                'match': 'CALLIND...ADD ESP',
+                                'text': 'CALLIND at %s, ADD ESP at %s' % (
+                                    entry.get('address', '?'), next_entry.get('address', '?')),
+                                'description': 'CALLIND makes ESP uncertain; fixable with ESP anchor',
+                                'fix_type': 'esp_anchor_after_callind',
+                                'fix_address': next_entry.get('address', ''),
+                                'callind_address': entry.get('address', ''),
+                                'add_esp_value': add_value,
+                                'frame_offset': frame_offset
+                            })
+                        else:
+                            # No EBP frame - can't use ESP anchor technique
+                            suspects.append({
+                                'type': 'callind_esp_no_frame',
+                                'match': 'CALLIND...ADD ESP',
+                                'text': 'CALLIND at %s, ADD ESP at %s (no EBP frame)' % (
+                                    entry.get('address', '?'), next_entry.get('address', '?')),
+                                'description': 'CALLIND makes ESP uncertain; no EBP frame for anchor fix',
+                                'fix_address': next_entry.get('address', ''),
+                                'callind_address': entry.get('address', ''),
+                                'add_esp_value': add_value
+                            })
+                    break  # Only look at first ADD ESP after CALLIND
+
+                # Stop if we hit another call or control flow
+                next_pcode = next_entry.get('pcode', [])
+                if any(op in ' '.join(next_pcode) for op in ['CALL', 'CALLIND', 'RETURN', 'BRANCH']):
+                    break
+        i += 1
+    return suspects
+
+
+def _detect_jump_target_esp_mismatch(pcode_data, assembly_code):
+    """Detect jump targets with ESP values that don't match their sources.
+
+    Pattern: Code after RET is only reachable by jumps, but Ghidra computes
+    ESP from sequential fall-through instead of jump sources.
+    Fix: Override first instruction at target to anchor ESP.
+
+    Returns:
+        List of suspect dictionaries
+    """
+    suspects = []
+
+    # Build address to entry map
+    addr_to_entry = {}
+    addr_to_index = {}
+    for idx, entry in enumerate(pcode_data):
+        addr = entry.get('address', '')
+        if addr:
+            addr_to_entry[addr] = entry
+            addr_to_index[addr] = idx
+
+    # Find RET instructions
+    ret_indices = []
+    for idx, entry in enumerate(pcode_data):
+        asm = entry.get('assembly', '').upper()
+        if asm.startswith('RET') or asm.startswith('RETN'):
+            ret_indices.append(idx)
+
+    # Find jump sources and targets from assembly
+    jumps = _parse_jumps_from_assembly(assembly_code)
+
+    # Check each instruction after a RET
+    for ret_idx in ret_indices:
+        if ret_idx + 1 >= len(pcode_data):
+            continue
+
+        target_entry = pcode_data[ret_idx + 1]
+        target_addr = target_entry.get('address', '')
+
+        if not target_addr:
+            continue
+
+        # Check if this address is a jump target
+        if target_addr not in jumps:
+            continue
+
+        # Get sources that jump to this target
+        source_addrs = jumps[target_addr]
+
+        # Get ESP values
+        target_esp = target_entry.get('esp_offset')
+
+        # Check each source for mismatch
+        for source_addr in source_addrs:
+            if source_addr not in addr_to_entry:
+                continue
+
+            source_entry = addr_to_entry[source_addr]
+            source_esp = source_entry.get('esp_offset')
+
+            # Check for mismatch
+            if source_esp is not None and target_esp is not None:
+                if source_esp != target_esp:
+                    delta = target_esp - source_esp
+
+                    suspects.append({
+                        'type': 'jump_target_esp_mismatch',
+                        'match': 'ESP:%+d -> ESP:%+d' % (source_esp, target_esp),
+                        'text': 'Jump from %s (ESP:%+d) to %s (ESP:%+d) after RET' % (
+                            source_addr, source_esp, target_addr, target_esp),
+                        'description': 'Jump target has ESP mismatch (%+d bytes) - computed from RET fall-through' % delta,
+                        'fix_type': 'esp_anchor_at_jump_target',
+                        'fix_address': target_addr,
+                        'source_address': source_addr,
+                        'source_esp': source_esp,
+                        'target_esp': target_esp,
+                        'esp_delta': delta,
+                        'target_assembly': target_entry.get('assembly', '')
+                    })
+                    break  # Only report once per target
+    return suspects
+
+
+def _parse_add_esp_value(asm_line):
+    """Parse the value from an ADD ESP, N instruction.
+
+    Args:
+        asm_line: Assembly line like "ADD ESP, 0x10" or "ADD ESP,0x8"
+
+    Returns:
+        Integer value or None if not parseable
+    """
+    # Match ADD ESP, value
+    match = re.search(r'ADD\s+ESP\s*,\s*(0x[0-9a-fA-F]+|\d+)', asm_line, re.IGNORECASE)
+    if match:
+        try:
+            return int(match.group(1), 0)
+        except ValueError:
+            pass
+    return None
+
+
+def _parse_jumps_from_assembly(assembly_code):
+    """Parse jump instructions from assembly code.
+
+    Args:
+        assembly_code: Full assembly code string
+
+    Returns:
+        Dict mapping target_addr -> [source_addrs]
+    """
+    jumps = defaultdict(list)
+
+    if not assembly_code:
+        return jumps
+
+    # Pattern for jump instructions with target address
+    # Matches: JMP 0x005d5984, JZ 0x005d58ce, JNC 0x005d5984, etc.
+    jump_pattern = re.compile(
+        r'^\s*([0-9a-fA-F]+):\s*(J\w+)\s+(?:dword ptr\s+)?\[?(?:0x)?([0-9a-fA-F]+)\]?',
+        re.IGNORECASE | re.MULTILINE
+    )
+
+    # Also match XREF comments that indicate jump targets
+    # Format: ;   XREF to: 005d5984 (CONDITIONAL_JUMP)
+    xref_pattern = re.compile(
+        r';.*XREF.*:\s*([0-9a-fA-F]+)\s*\((CONDITIONAL_JUMP|UNCONDITIONAL_JUMP)\)',
+        re.IGNORECASE
+    )
+
+    for match in jump_pattern.finditer(assembly_code):
+        source_addr = match.group(1).lower()
+        # mnemonic = match.group(2)
+        target_addr = match.group(3).lower()
+
+        # Normalize addresses (ensure consistent format)
+        if len(source_addr) < 8:
+            source_addr = source_addr.zfill(8)
+        if len(target_addr) < 8:
+            target_addr = target_addr.zfill(8)
+
+        jumps[target_addr].append(source_addr)
+    return jumps
+
+
+def get_frame_offset_from_pcode(pcode_data):
+    """Extract the frame offset (SUB ESP, N value) from function prologue.
+
+    Looks for the SUB ESP, N instruction in the prologue after MOV EBP, ESP.
+
+    Args:
+        pcode_data: List of instruction dicts from extract_function_pcode()
+
+    Returns:
+        Frame offset as integer, or None if not found/not EBP-based frame
+    """
+    found_mov_ebp_esp = False
+    frame_offset = None
+
+    # Only check first 20 instructions (prologue area)
+    for entry in pcode_data[:20]:
+        asm = entry.get('assembly', '').upper()
+
+        # Look for MOV EBP, ESP (frame pointer setup)
+        if 'MOV' in asm and 'EBP' in asm and 'ESP' in asm:
+            # Check it's MOV EBP, ESP not MOV ESP, EBP
+            if re.search(r'MOV\s+EBP\s*,\s*ESP', asm):
+                found_mov_ebp_esp = True
+
+        # Look for SUB ESP, N after frame pointer setup
+        elif found_mov_ebp_esp and asm.startswith('SUB '):
+            match = re.search(r'SUB\s+ESP\s*,\s*(0x[0-9a-fA-F]+|\d+)', asm)
+            if match:
+                try:
+                    frame_offset = int(match.group(1), 0)
+                    break
+                except ValueError:
+                    pass
+    return frame_offset if found_mov_ebp_esp else None
+
+
+def identify_param_count_mismatch(param_estimates, vtable_info):
+    """Detect parameter count mismatch for non-vtable functions.
+
+    Compares declared parameter count against estimated count from call sites.
+    Only applies to direct calls (non-vtable) since indirect call analysis
+    is unreliable for determining push counts.
+
+    Args:
+        param_estimates: Dict with 'declared_params', 'estimated_params',
+                        'call_site_count', 'confidence'
+        vtable_info: Dict with 'in_vtable' bool
+
+    Returns:
+        A suspect dict if mismatch found, None otherwise
+    """
+    if not param_estimates:
+        return None
+
+    # Skip vtable functions - indirect call analysis is unreliable
+    if vtable_info and vtable_info.get('in_vtable', False):
+        return None
+
+    declared = param_estimates.get('declared_params')
+    estimated = param_estimates.get('estimated_params')
+    call_site_count = param_estimates.get('call_site_count', 0)
+
+    # Need both values and at least one call site to compare
+    if declared is None or estimated is None:
+        return None
+    if call_site_count == 0:
+        return None
+
+    # Check for mismatch
+    if declared != estimated:
+        delta = estimated - declared
+
+        if delta > 0:
+            # Call sites push MORE than declared - missing params in signature
+            return {
+                'type': 'param_count_too_few',
+                'match': 'declared:%d vs estimated:%d' % (declared, estimated),
+                'text': 'Function declares %d params but call sites push %d (%d missing)' % (
+                    declared, estimated, delta),
+                'description': 'Signature has too few params - likely missing this ptr or other params',
+                'fix_type': 'add_params',
+                'declared_params': declared,
+                'estimated_params': estimated,
+                'call_site_count': call_site_count,
+                'param_delta': delta
+            }
+        else:
+            # Call sites push FEWER than declared - extra params in signature
+            return {
+                'type': 'param_count_too_many',
+                'match': 'declared:%d vs estimated:%d' % (declared, estimated),
+                'text': 'Function declares %d params but call sites push %d (%d extra)' % (
+                    declared, estimated, abs(delta)),
+                'description': 'Signature has too many params - likely wrong calling convention',
+                'fix_type': 'remove_params',
+                'declared_params': declared,
+                'estimated_params': estimated,
+                'call_site_count': call_site_count,
+                'param_delta': delta
+            }
+    return None

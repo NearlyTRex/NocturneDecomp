@@ -45,7 +45,8 @@ from ghidra_annotations.annotations.pseudocode.transforms import (
     preload_custom_replacements, set_pcode_overrides_cache, load_pcode_overrides
 )
 from ghidra_annotations.annotations.pseudocode.suspects import (
-    identify_suspect_lines, calculate_complexity_metrics
+    identify_suspect_lines, calculate_complexity_metrics, identify_pcode_suspects,
+    identify_param_count_mismatch
 )
 from ghidra_annotations.annotations.pseudocode.stack_patterns import (
     summarize_stack_patterns
@@ -240,9 +241,20 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map):
     # Summarize stack patterns (Python-only processing of worker data)
     stack_patterns = summarize_stack_patterns(result.stack_patterns_raw)
 
-    # Identify suspect patterns (Python regex matching)
+    # Identify suspect patterns (Python regex matching on decompiled code)
     suspects = identify_suspect_lines(decompiled_code)
-    suspect_count = len(suspects)
+
+    # Identify P-code based suspects (fixable patterns like CALLIND+ESP)
+    # Pass existing overrides so we only report UNFIXED suspects
+    pcode_suspects = identify_pcode_suspects(
+        result.pcode_data, result.assembly_code, pcode_overrides)
+    suspects.extend(pcode_suspects)
+
+    # Identify parameter count mismatch (non-vtable functions only)
+    param_mismatch = identify_param_count_mismatch(
+        result.param_estimates, result.vtable_info)
+    if param_mismatch:
+        suspects.append(param_mismatch)
 
     # Calculate complexity metrics (Python-only)
     complexity = calculate_complexity_metrics(
@@ -276,7 +288,7 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map):
         'success': contents is not None,
         'func_name': func_name,
         'func_addr': func_addr,
-        'suspect_count': suspect_count,
+        'suspect_count': len(suspects),
         'virtual_filename': virtual_filename,
         'function_group_entry': function_group_entry,
         'contents': contents,
