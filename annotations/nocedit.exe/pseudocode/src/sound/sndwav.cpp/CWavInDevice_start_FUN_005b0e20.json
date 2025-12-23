@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 92,
-    "complexity_score": 72,
+    "complexity_score": 97,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 12,
     "pseudocode_lines": 37,
-    "suspect_count": 3,
+    "suspect_count": 5,
     "suspect_types": [
+      "callind_esp_no_frame",
       "pointer_cast"
     ],
     "total_lines": 129
@@ -197,6 +198,24 @@
       "match": "(int *)((int)",
       "text": "*(int *)(*(int *)((int)g_WaveInHeaders + iVar3) + 4) =",
       "type": "pointer_cast"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "005b0ed8",
+      "description": "CALLIND makes ESP uncertain; no EBP frame for anchor fix",
+      "fix_address": "005b0edb",
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 005b0ed8, ADD ESP at 005b0edb (no EBP frame)",
+      "type": "callind_esp_no_frame"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "005b0ef5",
+      "description": "CALLIND makes ESP uncertain; no EBP frame for anchor fix",
+      "fix_address": "005b0ef8",
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 005b0ef5, ADD ESP at 005b0ef8 (no EBP frame)",
+      "type": "callind_esp_no_frame"
     }
   ],
   "vtable_info": {

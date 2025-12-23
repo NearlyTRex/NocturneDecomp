@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 15,
-    "complexity_score": 98,
+    "complexity_score": 113,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
     "pseudocode_lines": 13,
-    "suspect_count": 8,
+    "suspect_count": 9,
     "suspect_types": [
+      "param_count_too_few",
       "stack_param"
     ],
     "total_lines": 28
@@ -150,6 +151,17 @@
       "match": "in_stack_00000010",
       "text": "support_trisock_cpp_cleanupWinsock_FUN_005e1ee0(in_stack_0000000c,in_stack_00000010);",
       "type": "stack_param"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

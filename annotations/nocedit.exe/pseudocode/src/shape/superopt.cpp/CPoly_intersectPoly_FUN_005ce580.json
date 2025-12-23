@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 1738,
-    "complexity_score": 3537,
+    "complexity_score": 3622,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 4,
     "pseudocode_lines": 922,
-    "suspect_count": 257,
+    "suspect_count": 265,
     "suspect_types": [
       "badspacebase",
+      "callind_esp_uncertain",
       "concat_artifact",
       "pointer_cast",
       "register_param",
@@ -1979,6 +1980,94 @@
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&uStack_444 + iVar4 + 4);",
       "type": "pointer_cast"
+    },
+    {
+      "add_esp_value": 12,
+      "callind_address": "005ce5af",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "005ce5b2",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 0,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 005ce5af, ADD ESP at 005ce5b2",
+      "type": "callind_esp_uncertain"
+    },
+    {
+      "add_esp_value": 12,
+      "callind_address": "005ce5c9",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "005ce5cc",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 0,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 005ce5c9, ADD ESP at 005ce5cc",
+      "type": "callind_esp_uncertain"
+    },
+    {
+      "add_esp_value": 16,
+      "callind_address": "005ce684",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "005ce687",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 0,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 005ce684, ADD ESP at 005ce687",
+      "type": "callind_esp_uncertain"
+    },
+    {
+      "add_esp_value": 16,
+      "callind_address": "005ce6c8",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "005ce6cb",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 0,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 005ce6c8, ADD ESP at 005ce6cb",
+      "type": "callind_esp_uncertain"
+    },
+    {
+      "add_esp_value": 16,
+      "callind_address": "005cf1a3",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "005cf1a6",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 0,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 005cf1a3, ADD ESP at 005cf1a6",
+      "type": "callind_esp_uncertain"
+    },
+    {
+      "add_esp_value": 16,
+      "callind_address": "005cf1e8",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "005cf1eb",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 0,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 005cf1e8, ADD ESP at 005cf1eb",
+      "type": "callind_esp_uncertain"
+    },
+    {
+      "add_esp_value": 16,
+      "callind_address": "005cf22d",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "005cf230",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 0,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 005cf22d, ADD ESP at 005cf230",
+      "type": "callind_esp_uncertain"
+    },
+    {
+      "add_esp_value": 16,
+      "callind_address": "005cf272",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "005cf275",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 0,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 005cf272, ADD ESP at 005cf275",
+      "type": "callind_esp_uncertain"
     }
   ],
   "vtable_info": {

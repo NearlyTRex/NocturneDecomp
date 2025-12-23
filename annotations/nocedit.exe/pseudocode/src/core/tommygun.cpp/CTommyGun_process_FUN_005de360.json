@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 137,
-    "complexity_score": 253,
+    "complexity_score": 268,
     "cross_reference_count": 0,
     "function_call_count": 13,
     "global_count": 3,
     "pseudocode_lines": 73,
-    "suspect_count": 14,
+    "suspect_count": 15,
     "suspect_types": [
       "badspacebase",
+      "callind_esp_uncertain",
       "concat_artifact",
       "extra_output",
       "register_param",
@@ -364,6 +365,17 @@
       "match": "extraout_EBX",
       "text": "sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(extraout_EBX + 0x57c));",
       "type": "extra_output"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "005de554",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "005de557",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 0,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 005de554, ADD ESP at 005de557",
+      "type": "callind_esp_uncertain"
     }
   ],
   "vtable_info": {

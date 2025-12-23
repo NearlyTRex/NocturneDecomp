@@ -1,14 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 119,
+    "complexity_score": 179,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 7,
     "pseudocode_lines": 29,
-    "suspect_count": 7,
+    "suspect_count": 12,
     "suspect_types": [
       "badspacebase",
+      "callind_esp_no_frame",
+      "param_count_too_few",
       "register_param",
       "stack_param",
       "stack_ref"
@@ -201,6 +203,53 @@
       "match": "in_stack_00000020",
       "text": "(*PTR_SetConsoleMode_00611610)(hConsoleHandle,in_stack_00000020);",
       "type": "stack_param"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "0060b41a",
+      "description": "CALLIND makes ESP uncertain; no EBP frame for anchor fix",
+      "fix_address": "0060b420",
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 0060b41a, ADD ESP at 0060b420 (no EBP frame)",
+      "type": "callind_esp_no_frame"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "0060b424",
+      "description": "CALLIND makes ESP uncertain; no EBP frame for anchor fix",
+      "fix_address": "0060b42a",
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 0060b424, ADD ESP at 0060b42a (no EBP frame)",
+      "type": "callind_esp_no_frame"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "0060b432",
+      "description": "CALLIND makes ESP uncertain; no EBP frame for anchor fix",
+      "fix_address": "0060b438",
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 0060b432, ADD ESP at 0060b438 (no EBP frame)",
+      "type": "callind_esp_no_frame"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "0060b470",
+      "description": "CALLIND makes ESP uncertain; no EBP frame for anchor fix",
+      "fix_address": "0060b476",
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 0060b470, ADD ESP at 0060b476 (no EBP frame)",
+      "type": "callind_esp_no_frame"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

@@ -1,15 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 293,
-    "complexity_score": 577,
+    "complexity_score": 617,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 3,
     "pseudocode_lines": 127,
-    "suspect_count": 42,
+    "suspect_count": 45,
     "suspect_types": [
       "badspacebase",
+      "callind_esp_uncertain",
       "extra_output",
+      "param_count_too_few",
       "register_param",
       "stack_param",
       "unresolved_funcptr",
@@ -479,6 +481,39 @@
       "match": "in_stack_00000004",
       "text": "iVar4 = *(int *)(in_stack_00000004[1].base_actor.create_event + 0x24);",
       "type": "stack_param"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "00425cde",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "00425cea",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 0,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 00425cde, ADD ESP at 00425cea",
+      "type": "callind_esp_uncertain"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "00425df6",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "00425dfc",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 0,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 00425df6, ADD ESP at 00425dfc",
+      "type": "callind_esp_uncertain"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

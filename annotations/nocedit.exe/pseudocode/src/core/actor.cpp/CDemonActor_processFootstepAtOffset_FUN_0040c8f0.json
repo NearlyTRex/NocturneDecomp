@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 102,
-    "complexity_score": 205,
+    "complexity_score": 220,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 8,
     "pseudocode_lines": 40,
-    "suspect_count": 14,
+    "suspect_count": 15,
     "suspect_types": [
       "badspacebase",
+      "callind_esp_no_frame",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -333,6 +334,15 @@
       "match": "in_stack_00000020",
       "text": "iVar1 = (*this_ptr->vtable->handleFootstep)(this_ptr,&local_20,iVar1,in_stack_00000020);",
       "type": "stack_param"
+    },
+    {
+      "add_esp_value": 16,
+      "callind_address": "0040c9fc",
+      "description": "CALLIND makes ESP uncertain; no EBP frame for anchor fix",
+      "fix_address": "0040c9ff",
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 0040c9fc, ADD ESP at 0040c9ff (no EBP frame)",
+      "type": "callind_esp_no_frame"
     }
   ],
   "vtable_info": {

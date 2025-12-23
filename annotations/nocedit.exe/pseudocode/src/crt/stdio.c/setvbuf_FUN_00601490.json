@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 90,
-    "complexity_score": 54,
+    "complexity_score": 79,
     "cross_reference_count": 10,
     "function_call_count": 3,
     "global_count": 2,
     "pseudocode_lines": 39,
-    "suspect_count": 1,
+    "suspect_count": 3,
     "suspect_types": [
+      "callind_esp_no_frame",
       "pointer_cast"
     ],
     "total_lines": 129
@@ -187,6 +188,24 @@
       "match": "(byte *)((int)",
       "text": "pbVar1 = (byte *)((int)&stream_ptr->_flag + 1);",
       "type": "pointer_cast"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "006014f0",
+      "description": "CALLIND makes ESP uncertain; no EBP frame for anchor fix",
+      "fix_address": "006014f6",
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 006014f0, ADD ESP at 006014f6 (no EBP frame)",
+      "type": "callind_esp_no_frame"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "0060152e",
+      "description": "CALLIND makes ESP uncertain; no EBP frame for anchor fix",
+      "fix_address": "00601534",
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 0060152e, ADD ESP at 00601534 (no EBP frame)",
+      "type": "callind_esp_no_frame"
     }
   ]
 }

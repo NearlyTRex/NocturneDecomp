@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 160,
-    "complexity_score": 372,
+    "complexity_score": 387,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 10,
     "pseudocode_lines": 87,
-    "suspect_count": 25,
+    "suspect_count": 26,
     "suspect_types": [
       "badspacebase",
+      "param_count_too_few",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -514,6 +515,17 @@
       "match": "._4_4_",
       "text": "unaff_EDI = (float)local_40._4_4_;",
       "type": "unknown_field"
+    },
+    {
+      "call_site_count": 2,
+      "declared_params": 1,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 3,
+      "fix_type": "add_params",
+      "match": "declared:1 vs estimated:3",
+      "param_delta": 2,
+      "text": "Function declares 1 params but call sites push 3 (2 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

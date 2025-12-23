@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 389,
-    "complexity_score": 198,
+    "complexity_score": 213,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
     "pseudocode_lines": 153,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
+      "callind_esp_uncertain",
       "pointer_cast"
     ],
     "total_lines": 542
@@ -198,6 +199,17 @@
       "match": "(CVector3d *)((int)",
       "text": "local_5c = (CVector3d *)((int)(local_5c + 4) + 8);",
       "type": "pointer_cast"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "005d39ae",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "005d39b1",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 0,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 005d39ae, ADD ESP at 005d39b1",
+      "type": "callind_esp_uncertain"
     }
   ],
   "vtable_info": {

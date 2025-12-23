@@ -1,14 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 111,
+    "complexity_score": 161,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
     "pseudocode_lines": 21,
-    "suspect_count": 7,
+    "suspect_count": 11,
     "suspect_types": [
       "badspacebase",
+      "callind_esp_no_frame",
+      "param_count_too_few",
       "register_param",
       "stack_param",
       "stack_ref"
@@ -181,6 +183,44 @@
       "match": "&stack0xffffffe8",
       "text": "((scanf_state_t *)&stack0xffffffe8,in_stack_00000014,in_stack_00000018);",
       "type": "stack_ref"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "005fe747",
+      "description": "CALLIND makes ESP uncertain; no EBP frame for anchor fix",
+      "fix_address": "005fe753",
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 005fe747, ADD ESP at 005fe753 (no EBP frame)",
+      "type": "callind_esp_no_frame"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "005fe763",
+      "description": "CALLIND makes ESP uncertain; no EBP frame for anchor fix",
+      "fix_address": "005fe769",
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 005fe763, ADD ESP at 005fe769 (no EBP frame)",
+      "type": "callind_esp_no_frame"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "005fe7aa",
+      "description": "CALLIND makes ESP uncertain; no EBP frame for anchor fix",
+      "fix_address": "005fe7b0",
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 005fe7aa, ADD ESP at 005fe7b0 (no EBP frame)",
+      "type": "callind_esp_no_frame"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 3,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 4,
+      "fix_type": "add_params",
+      "match": "declared:3 vs estimated:4",
+      "param_delta": 1,
+      "text": "Function declares 3 params but call sites push 4 (1 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

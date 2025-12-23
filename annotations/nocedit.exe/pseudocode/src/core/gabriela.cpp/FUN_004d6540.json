@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 420,
-    "complexity_score": 1168,
+    "complexity_score": 1193,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 13,
     "pseudocode_lines": 203,
-    "suspect_count": 94,
+    "suspect_count": 96,
     "suspect_types": [
       "badspacebase",
+      "callind_esp_uncertain",
       "register_param",
       "stack_param",
       "unresolved_funcptr",
@@ -968,6 +969,28 @@
       "match": "in_stack_00000004",
       "text": "*(uint *)(in_stack_00000004[0x17a].actor_name + 0x18) = uVar1;",
       "type": "stack_param"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "004d680a",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "004d680d",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 0,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 004d680a, ADD ESP at 004d680d",
+      "type": "callind_esp_uncertain"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "004d6925",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "004d692f",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 0,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 004d6925, ADD ESP at 004d692f",
+      "type": "callind_esp_uncertain"
     }
   ]
 }

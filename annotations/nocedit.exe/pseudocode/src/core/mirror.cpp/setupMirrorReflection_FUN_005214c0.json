@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 876,
-    "complexity_score": 1108,
+    "complexity_score": 1123,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 10,
     "pseudocode_lines": 423,
-    "suspect_count": 65,
+    "suspect_count": 66,
     "suspect_types": [
       "badspacebase",
+      "param_count_too_few",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -1505,6 +1506,17 @@
       "match": "._4_4_",
       "text": "local_34._4_4_ = pCVar2->z;",
       "type": "unknown_field"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 1,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 4,
+      "fix_type": "add_params",
+      "match": "declared:1 vs estimated:4",
+      "param_delta": 3,
+      "text": "Function declares 1 params but call sites push 4 (3 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

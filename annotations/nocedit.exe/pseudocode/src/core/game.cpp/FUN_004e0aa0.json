@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 96,
-    "complexity_score": 68,
+    "complexity_score": 83,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 9,
     "pseudocode_lines": 43,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
-      "extra_output"
+      "extra_output",
+      "param_count_too_few"
     ],
     "total_lines": 139
   },
@@ -187,6 +188,17 @@
       "match": "extraout_EAX",
       "text": "if (0 < extraout_EAX) {",
       "type": "extra_output"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

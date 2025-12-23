@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 837,
-    "complexity_score": 1007,
+    "complexity_score": 1042,
     "cross_reference_count": 2,
     "function_call_count": 26,
     "global_count": 64,
     "pseudocode_lines": 312,
-    "suspect_count": 67,
+    "suspect_count": 70,
     "suspect_types": [
       "badspacebase",
+      "callind_esp_uncertain",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -1152,6 +1153,39 @@
       "match": "in_stack_00000004",
       "text": "core_netgame_cpp_CNetGame_FUN_0053fd00(in_stack_00000004);",
       "type": "stack_param"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "00541a97",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "00541a9a",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 0,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 00541a97, ADD ESP at 00541a9a",
+      "type": "callind_esp_uncertain"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "00541aaf",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "00541ab2",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 0,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 00541aaf, ADD ESP at 00541ab2",
+      "type": "callind_esp_uncertain"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "00541af5",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "00541af8",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 0,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 00541af5, ADD ESP at 00541af8",
+      "type": "callind_esp_uncertain"
     }
   ]
 }

@@ -1,22 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 409,
-    "complexity_score": 443,
+    "complexity_score": 317,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 158,
-    "suspect_count": 25,
+    "pseudocode_lines": 157,
+    "suspect_count": 14,
     "suspect_types": [
       "badspacebase",
       "pointer_cast",
       "register_param",
-      "stack_param",
-      "stack_ref",
-      "unaffected_reg",
       "warning_unreachable"
     ],
-    "total_lines": 567
+    "total_lines": 566
   },
   "cross_references": [],
   "function": {
@@ -44,6 +41,45 @@
     "confidence": "unknown",
     "declared_params": 3,
     "estimated_params": 3
+  },
+  "pcode_overrides": {
+    "005d5837": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffb0,4)"
+    ],
+    "005d5850": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffb0,4)"
+    ],
+    "005d5984": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffb0,4)",
+      "COPY (register,0x4,4) = (const,0xffffffff,4)"
+    ],
+    "005d5a07": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffb0,4)"
+    ],
+    "005d5a77": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffb0,4)"
+    ],
+    "005d5b57": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffb0,4)",
+      "COPY (unique,0x20a80,4) = (register,0xc,4)",
+      "INT_SUB (register,0x10,4) = (register,0x10,4), (const,0x4,4)",
+      "STORE (const,0x1a1,8), (register,0x10,4), (unique,0x20a80,4)"
+    ],
+    "005d5b5f": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffb0,4)"
+    ],
+    "005d5b83": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffb0,4)"
+    ],
+    "005d5b8d": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffb0,4)",
+      "COPY (unique,0x20a80,4) = (register,0xc,4)",
+      "INT_SUB (register,0x10,4) = (register,0x10,4), (const,0x4,4)",
+      "STORE (const,0x1a1,8), (register,0x10,4), (unique,0x20a80,4)"
+    ],
+    "005d5ba6": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffb0,4)"
+    ]
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.136498516320475,
@@ -286,155 +322,78 @@
       "type": "register_param"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 15,
-      "match": "unaff_EBP",
-      "text": "double *unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_ffffffac",
-      "text": "uint in_stack_ffffffac;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_ffffffb0",
-      "text": "uint in_stack_ffffffb0;",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 48,
+      "line": 47,
       "match": "(byte *)((int)",
       "text": "*(byte *)((int)&search_polygon->flags + 1) = *(byte *)((int)&search_polygon->flags + 1) | 0x20;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 48,
+      "line": 47,
       "match": "(byte *)((int)",
       "text": "*(byte *)((int)&search_polygon->flags + 1) = *(byte *)((int)&search_polygon->flags + 1) | 0x20;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 67,
+      "line": 66,
       "match": "(int *)((int)",
       "text": "point = this_ptr->vertex_data + *(int *)((int)local_18->uv_coords + local_28 * 4 + -0xc);",
       "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 73,
-      "match": "&stack0xffffffa8",
-      "text": "puVar8 = (uint *)&stack0xffffffa8;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
+      "description": "Complex pointer cast",
       "line": 79,
-      "match": "in_stack_ffffffac",
-      "text": "*(uint *)&(point->position).x = in_stack_ffffffac;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 80,
-      "match": "in_stack_ffffffb0",
-      "text": "*(uint *)((int)&(point->position).x + 4) = in_stack_ffffffb0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 80,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&(point->position).x + 4) = in_stack_ffffffb0;",
+      "text": "*(uint *)((int)&(point->position).x + 4) = local_54;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 82,
+      "line": 81,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&(point->position).y + 4) = local_48;",
+      "text": "*(uint *)((int)&(point->position).y + 4) = local_4c;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 84,
+      "line": 83,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&(point->position).z + 4) = local_40;",
+      "text": "*(uint *)((int)&(point->position).z + 4) = local_44;",
       "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 85,
-      "match": "unaff_EBP",
-      "text": "(local_14->normal).x = *unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
+      "description": "Complex pointer cast",
       "line": 86,
-      "match": "unaff_EBP",
-      "text": "*(uint *)&(local_14->normal).y = *(uint *)(unaff_EBP + 1);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 87,
-      "match": "unaff_EBP",
-      "text": "*(uint *)((int)&(local_14->normal).y + 4) = *(uint *)((int)unaff_EBP + 0xc);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 87,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&(local_14->normal).y + 4) = *(uint *)((int)unaff_EBP + 0xc);",
+      "text": "*(uint *)((int)&(local_18->normal).y + 4) = *(uint *)((int)&local_14->y + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 87,
+      "line": 86,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&(local_14->normal).y + 4) = *(uint *)((int)unaff_EBP + 0xc);",
+      "text": "*(uint *)((int)&(local_18->normal).y + 4) = *(uint *)((int)&local_14->y + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
+      "description": "Complex pointer cast",
       "line": 88,
-      "match": "unaff_EBP",
-      "text": "*(uint *)&(local_14->normal).z = *(uint *)(unaff_EBP + 2);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 89,
-      "match": "unaff_EBP",
-      "text": "*(uint *)((int)&(local_14->normal).z + 4) = *(uint *)((int)unaff_EBP + 0x14);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 89,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&(local_14->normal).z + 4) = *(uint *)((int)unaff_EBP + 0x14);",
+      "text": "*(uint *)((int)&(local_18->normal).z + 4) = *(uint *)((int)&local_14->z + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 89,
+      "line": 88,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&(local_14->normal).z + 4) = *(uint *)((int)unaff_EBP + 0x14);",
+      "text": "*(uint *)((int)&(local_18->normal).z + 4) = *(uint *)((int)&local_14->z + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 121,
+      "line": 120,
       "match": "(CVector3d *)((int)",
       "text": "pCVar4 = (CVector3d *)((int)(pCVar4 + 4) + 8);",
       "type": "pointer_cast"

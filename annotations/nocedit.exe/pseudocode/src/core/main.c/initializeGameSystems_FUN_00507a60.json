@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 798,
-    "complexity_score": 709,
+    "complexity_score": 724,
     "cross_reference_count": 1,
     "function_call_count": 39,
     "global_count": 96,
     "pseudocode_lines": 519,
-    "suspect_count": 17,
+    "suspect_count": 18,
     "suspect_types": [
       "badspacebase",
+      "param_count_too_few",
       "pointer_cast",
       "register_param",
       "stack_ref"
@@ -1051,6 +1052,17 @@
       "match": "(uint *)((int)",
       "text": "puVar1 = (uint *)((int)&g_PlayerFilters + iVar9);",
       "type": "pointer_cast"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

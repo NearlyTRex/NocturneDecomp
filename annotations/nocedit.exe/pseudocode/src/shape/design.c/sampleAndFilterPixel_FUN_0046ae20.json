@@ -1,16 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 204,
-    "complexity_score": 303,
+    "complexity_score": 318,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 1,
     "pseudocode_lines": 78,
-    "suspect_count": 20,
+    "suspect_count": 21,
     "suspect_types": [
       "badspacebase",
       "concat_artifact",
       "extra_output",
+      "param_count_too_many",
       "register_param",
       "sub_artifact"
     ],
@@ -489,6 +490,17 @@
       "match": "extraout_EAX_02",
       "text": "*extraout_EAX_02 = (int)ROUND(dVar1);",
       "type": "extra_output"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 14,
+      "description": "Signature has too many params - likely wrong calling convention",
+      "estimated_params": 8,
+      "fix_type": "remove_params",
+      "match": "declared:14 vs estimated:8",
+      "param_delta": -6,
+      "text": "Function declares 14 params but call sites push 8 (6 extra)",
+      "type": "param_count_too_many"
     }
   ]
 }

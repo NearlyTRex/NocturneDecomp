@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 1775,
-    "complexity_score": 2228,
+    "complexity_score": 2253,
     "cross_reference_count": 0,
     "function_call_count": 56,
     "global_count": 80,
     "pseudocode_lines": 728,
-    "suspect_count": 145,
+    "suspect_count": 147,
     "suspect_types": [
       "badspacebase",
+      "callind_esp_uncertain",
       "concat_artifact",
       "pointer_cast",
       "register_param",
@@ -2258,6 +2259,28 @@
       "match": "&stack0xffffda1c",
       "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xffffda1c);",
       "type": "stack_ref"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "004bb540",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "004bb543",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 0,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 004bb540, ADD ESP at 004bb543",
+      "type": "callind_esp_uncertain"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "004bbe44",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "004bbe47",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 0,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 004bbe44, ADD ESP at 004bbe47",
+      "type": "callind_esp_uncertain"
     }
   ]
 }

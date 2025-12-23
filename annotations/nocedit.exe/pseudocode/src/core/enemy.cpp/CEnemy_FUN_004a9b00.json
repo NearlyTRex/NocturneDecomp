@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 96,
-    "complexity_score": 316,
+    "complexity_score": 331,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 8,
     "pseudocode_lines": 161,
-    "suspect_count": 13,
+    "suspect_count": 14,
     "suspect_types": [
       "badspacebase",
+      "callind_esp_uncertain",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -334,6 +335,17 @@
       "match": "code *",
       "text": "(iVar5 = (**(code **)(*(int *)(*(int *)(this_ptr->field6_0xbe38 + 4) + 0x154) + 0x120))",
       "type": "unresolved_funcptr"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "004a9bd8",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "004a9bde",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 0,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 004a9bd8, ADD ESP at 004a9bde",
+      "type": "callind_esp_uncertain"
     }
   ],
   "vtable_info": {

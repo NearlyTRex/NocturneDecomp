@@ -1,13 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 366,
-    "complexity_score": 891,
+    "complexity_score": 961,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 11,
     "pseudocode_lines": 126,
-    "suspect_count": 76,
+    "suspect_count": 82,
     "suspect_types": [
+      "callind_esp_uncertain",
+      "param_count_too_few",
       "stack_param"
     ],
     "total_lines": 492
@@ -781,6 +783,72 @@
       "match": "in_stack_00000008",
       "text": "in_stack_00000008[1] = in_stack_00000008[1];",
       "type": "stack_param"
+    },
+    {
+      "add_esp_value": 12,
+      "callind_address": "00527563",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "00527569",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 0,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 00527563, ADD ESP at 00527569",
+      "type": "callind_esp_uncertain"
+    },
+    {
+      "add_esp_value": 12,
+      "callind_address": "00527577",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "0052757d",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 0,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 00527577, ADD ESP at 0052757d",
+      "type": "callind_esp_uncertain"
+    },
+    {
+      "add_esp_value": 12,
+      "callind_address": "005275d9",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "005275df",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 0,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 005275d9, ADD ESP at 005275df",
+      "type": "callind_esp_uncertain"
+    },
+    {
+      "add_esp_value": 12,
+      "callind_address": "005275ed",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "005275f3",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 0,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 005275ed, ADD ESP at 005275f3",
+      "type": "callind_esp_uncertain"
+    },
+    {
+      "add_esp_value": 12,
+      "callind_address": "00527611",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "00527617",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 0,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 00527611, ADD ESP at 00527617",
+      "type": "callind_esp_uncertain"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 18,
-    "complexity_score": 89,
+    "complexity_score": 104,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
     "pseudocode_lines": 9,
-    "suspect_count": 6,
+    "suspect_count": 7,
     "suspect_types": [
       "badspacebase",
+      "callind_esp_no_frame",
       "register_param",
       "stack_param",
       "stack_ref"
@@ -188,6 +189,15 @@
       "match": "&stack0x00000000",
       "text": "(*PTR_FileTimeToDosDateTime_0061153c)((FILETIME *)&stack0x00000000,in_stack_00000014,dos_time);",
       "type": "stack_ref"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "00609cd2",
+      "description": "CALLIND makes ESP uncertain; no EBP frame for anchor fix",
+      "fix_address": "00609cd9",
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 00609cd2, ADD ESP at 00609cd9 (no EBP frame)",
+      "type": "callind_esp_no_frame"
     }
   ]
 }

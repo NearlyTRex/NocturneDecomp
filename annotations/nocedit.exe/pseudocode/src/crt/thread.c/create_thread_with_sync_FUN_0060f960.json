@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 98,
-    "complexity_score": 111,
+    "complexity_score": 126,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 10,
     "pseudocode_lines": 66,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
       "badspacebase",
+      "callind_esp_no_frame",
       "register_param",
       "stack_ref"
     ],
@@ -252,6 +253,15 @@
       "match": "&stack0xffffffb4",
       "text": "pvStack_20 = (*PTR_CreateEventA_0061150c)((LPSECURITY_ATTRIBUTES)0x0,0,0,&stack0xffffffb4);",
       "type": "stack_ref"
+    },
+    {
+      "add_esp_value": 56,
+      "callind_address": "0060fa43",
+      "description": "CALLIND makes ESP uncertain; no EBP frame for anchor fix",
+      "fix_address": "0060fa4c",
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 0060fa43, ADD ESP at 0060fa4c (no EBP frame)",
+      "type": "callind_esp_no_frame"
     }
   ],
   "vtable_info": {

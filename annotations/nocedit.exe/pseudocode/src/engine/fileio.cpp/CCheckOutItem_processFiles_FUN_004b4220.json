@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 1287,
-    "complexity_score": 1689,
+    "complexity_score": 1704,
     "cross_reference_count": 0,
     "function_call_count": 43,
     "global_count": 63,
     "pseudocode_lines": 534,
-    "suspect_count": 111,
+    "suspect_count": 112,
     "suspect_types": [
       "badspacebase",
+      "callind_esp_uncertain",
       "concat_artifact",
       "pointer_cast",
       "register_param",
@@ -1746,6 +1747,17 @@
       "match": "in_stack_00000030",
       "text": "shape_memdbg_cpp_closeFile_FUN_0050f9b0(in_stack_00000030,\"..\\\\engine\\\\fileio.cpp\",0xc4);",
       "type": "stack_param"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "004b4cdf",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "004b4ce2",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 0,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 004b4cdf, ADD ESP at 004b4ce2",
+      "type": "callind_esp_uncertain"
     }
   ]
 }

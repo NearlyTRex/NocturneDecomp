@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 28,
-    "complexity_score": 96,
+    "complexity_score": 111,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 3,
     "pseudocode_lines": 11,
-    "suspect_count": 8,
+    "suspect_count": 9,
     "suspect_types": [
+      "param_count_too_few",
       "stack_param"
     ],
     "total_lines": 39
@@ -194,6 +195,17 @@
       "match": "in_stack_00000008",
       "text": "return in_stack_00000008 + -128f;",
       "type": "stack_param"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 4,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:4",
+      "param_delta": 4,
+      "text": "Function declares 0 params but call sites push 4 (4 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

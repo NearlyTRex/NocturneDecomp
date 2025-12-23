@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 239,
-    "complexity_score": 308,
+    "complexity_score": 323,
     "cross_reference_count": 0,
     "function_call_count": 21,
     "global_count": 17,
     "pseudocode_lines": 78,
-    "suspect_count": 20,
+    "suspect_count": 21,
     "suspect_types": [
       "badspacebase",
+      "callind_esp_no_frame",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -453,6 +454,15 @@
       "match": "&stack0x00000000",
       "text": "shape_edittool_cpp_CEdScrollBar_dtor_FUN_004a5b20((CEdScrollBar *)&stack0x00000000);",
       "type": "stack_ref"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "005072e9",
+      "description": "CALLIND makes ESP uncertain; no EBP frame for anchor fix",
+      "fix_address": "005072ec",
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 005072e9, ADD ESP at 005072ec (no EBP frame)",
+      "type": "callind_esp_no_frame"
     }
   ]
 }

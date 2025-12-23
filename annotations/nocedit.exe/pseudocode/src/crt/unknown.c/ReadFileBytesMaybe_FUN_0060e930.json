@@ -1,14 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 238,
-    "complexity_score": 325,
+    "complexity_score": 435,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 8,
     "pseudocode_lines": 105,
-    "suspect_count": 20,
+    "suspect_count": 30,
     "suspect_types": [
       "badspacebase",
+      "callind_esp_no_frame",
+      "param_count_too_few",
       "register_param",
       "stack_ref",
       "unaffected_reg"
@@ -339,6 +341,98 @@
       "match": "&stack0xfffffff4",
       "text": "(unaff_retaddr,param_6,param_7,(LPDWORD)&stack0xfffffff4,(LPOVERLAPPED)0x0",
       "type": "stack_ref"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "0060e99e",
+      "description": "CALLIND makes ESP uncertain; no EBP frame for anchor fix",
+      "fix_address": "0060e9a4",
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 0060e99e, ADD ESP at 0060e9a4 (no EBP frame)",
+      "type": "callind_esp_no_frame"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "0060e9b7",
+      "description": "CALLIND makes ESP uncertain; no EBP frame for anchor fix",
+      "fix_address": "0060e9c2",
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 0060e9b7, ADD ESP at 0060e9c2 (no EBP frame)",
+      "type": "callind_esp_no_frame"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "0060e9dc",
+      "description": "CALLIND makes ESP uncertain; no EBP frame for anchor fix",
+      "fix_address": "0060e9e2",
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 0060e9dc, ADD ESP at 0060e9e2 (no EBP frame)",
+      "type": "callind_esp_no_frame"
+    },
+    {
+      "add_esp_value": 12,
+      "callind_address": "0060e9ec",
+      "description": "CALLIND makes ESP uncertain; no EBP frame for anchor fix",
+      "fix_address": "0060e9f2",
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 0060e9ec, ADD ESP at 0060e9f2 (no EBP frame)",
+      "type": "callind_esp_no_frame"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "0060ea21",
+      "description": "CALLIND makes ESP uncertain; no EBP frame for anchor fix",
+      "fix_address": "0060ea27",
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 0060ea21, ADD ESP at 0060ea27 (no EBP frame)",
+      "type": "callind_esp_no_frame"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "0060ea5b",
+      "description": "CALLIND makes ESP uncertain; no EBP frame for anchor fix",
+      "fix_address": "0060ea61",
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 0060ea5b, ADD ESP at 0060ea61 (no EBP frame)",
+      "type": "callind_esp_no_frame"
+    },
+    {
+      "add_esp_value": 12,
+      "callind_address": "0060ea6f",
+      "description": "CALLIND makes ESP uncertain; no EBP frame for anchor fix",
+      "fix_address": "0060ea75",
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 0060ea6f, ADD ESP at 0060ea75 (no EBP frame)",
+      "type": "callind_esp_no_frame"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "0060ea9f",
+      "description": "CALLIND makes ESP uncertain; no EBP frame for anchor fix",
+      "fix_address": "0060eaa5",
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 0060ea9f, ADD ESP at 0060eaa5 (no EBP frame)",
+      "type": "callind_esp_no_frame"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "0060eb26",
+      "description": "CALLIND makes ESP uncertain; no EBP frame for anchor fix",
+      "fix_address": "0060eb2c",
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 0060eb26, ADD ESP at 0060eb2c (no EBP frame)",
+      "type": "callind_esp_no_frame"
+    },
+    {
+      "call_site_count": 2,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 4,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:4",
+      "param_delta": 4,
+      "text": "Function declares 0 params but call sites push 4 (4 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

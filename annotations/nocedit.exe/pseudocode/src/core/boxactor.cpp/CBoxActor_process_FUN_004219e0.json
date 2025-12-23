@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 305,
-    "complexity_score": 480,
+    "complexity_score": 495,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 8,
     "pseudocode_lines": 125,
-    "suspect_count": 32,
+    "suspect_count": 33,
     "suspect_types": [
       "badspacebase",
+      "callind_esp_uncertain",
       "concat_artifact",
       "extra_output",
       "register_param",
@@ -572,6 +573,17 @@
       "match": "._0_4_",
       "text": "auStack_8c._8_4_ = (float)auStack_8c._0_4_ * this_ptr[2].field12_0xe0.x * 0.2f;",
       "type": "unknown_field"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "00421ca9",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "00421cb3",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 0,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 00421ca9, ADD ESP at 00421cb3",
+      "type": "callind_esp_uncertain"
     }
   ],
   "vtable_info": {

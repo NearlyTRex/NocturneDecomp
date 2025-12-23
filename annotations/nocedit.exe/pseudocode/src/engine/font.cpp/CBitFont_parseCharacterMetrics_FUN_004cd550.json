@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 357,
-    "complexity_score": 213,
+    "complexity_score": 228,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 12,
     "pseudocode_lines": 158,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
       "badspacebase",
+      "param_count_too_many",
       "register_param",
       "stack_ref"
     ],
@@ -357,6 +358,17 @@
       "match": "&stack0xfffffe98",
       "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xfffffe98);",
       "type": "stack_ref"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 7,
+      "description": "Signature has too many params - likely wrong calling convention",
+      "estimated_params": 5,
+      "fix_type": "remove_params",
+      "match": "declared:7 vs estimated:5",
+      "param_delta": -2,
+      "text": "Function declares 7 params but call sites push 5 (2 extra)",
+      "type": "param_count_too_many"
     }
   ]
 }

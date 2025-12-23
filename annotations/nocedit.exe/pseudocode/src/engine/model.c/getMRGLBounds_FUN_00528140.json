@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 339,
-    "complexity_score": 355,
+    "complexity_score": 370,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 6,
     "pseudocode_lines": 185,
-    "suspect_count": 14,
+    "suspect_count": 15,
     "suspect_types": [
       "badspacebase",
       "extra_output",
+      "param_count_too_many",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -489,6 +490,17 @@
       "match": "extraout_ECX",
       "text": "iVar5 = extraout_ECX;",
       "type": "extra_output"
+    },
+    {
+      "call_site_count": 2,
+      "declared_params": 2,
+      "description": "Signature has too many params - likely wrong calling convention",
+      "estimated_params": 1,
+      "fix_type": "remove_params",
+      "match": "declared:2 vs estimated:1",
+      "param_delta": -1,
+      "text": "Function declares 2 params but call sites push 1 (1 extra)",
+      "type": "param_count_too_many"
     }
   ]
 }

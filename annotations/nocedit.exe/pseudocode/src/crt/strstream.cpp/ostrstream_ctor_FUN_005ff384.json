@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 158,
+    "complexity_score": 173,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 5,
     "pseudocode_lines": 53,
-    "suspect_count": 9,
+    "suspect_count": 10,
     "suspect_types": [
       "negative_offset",
+      "param_count_too_few",
       "pointer_cast",
       "stack_param"
     ],
@@ -248,6 +249,17 @@
       "match": "(int *)((int)",
       "text": "*(void ***)((int)(&poVar6->ios + -1) + *(int *)((int)pvVar3 + 4)) = &PTR_FUN_00665b8c;",
       "type": "pointer_cast"
+    },
+    {
+      "call_site_count": 2,
+      "declared_params": 5,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 9,
+      "fix_type": "add_params",
+      "match": "declared:5 vs estimated:9",
+      "param_delta": 4,
+      "text": "Function declares 5 params but call sites push 9 (4 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 65,
-    "complexity_score": 121,
+    "complexity_score": 146,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 0,
     "pseudocode_lines": 21,
-    "suspect_count": 8,
+    "suspect_count": 10,
     "suspect_types": [
       "badspacebase",
+      "callind_esp_no_frame",
       "register_param",
       "stack_param",
       "stack_ref"
@@ -215,6 +216,24 @@
       "match": "&stack0xffffffb0",
       "text": "crt_strstream_cpp_ostrstream_dtor_FUN_005ff48a((ostrstream *)&stack0xffffffb0,0);",
       "type": "stack_ref"
+    },
+    {
+      "add_esp_value": 16,
+      "callind_address": "0043eacc",
+      "description": "CALLIND makes ESP uncertain; no EBP frame for anchor fix",
+      "fix_address": "0043eacf",
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 0043eacc, ADD ESP at 0043eacf (no EBP frame)",
+      "type": "callind_esp_no_frame"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "0043eaea",
+      "description": "CALLIND makes ESP uncertain; no EBP frame for anchor fix",
+      "fix_address": "0043eaed",
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 0043eaea, ADD ESP at 0043eaed (no EBP frame)",
+      "type": "callind_esp_no_frame"
     }
   ],
   "vtable_info": {

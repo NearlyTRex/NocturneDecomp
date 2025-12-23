@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 156,
-    "complexity_score": 417,
+    "complexity_score": 432,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 15,
     "pseudocode_lines": 82,
-    "suspect_count": 30,
+    "suspect_count": 31,
     "suspect_types": [
       "badspacebase",
+      "callind_esp_no_frame",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -427,6 +428,15 @@
       "match": "in_stack_fffffac8",
       "text": "in_stack_fffffac4,(uint)in_stack_fffffac8);",
       "type": "stack_param"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "0053c78d",
+      "description": "CALLIND makes ESP uncertain; no EBP frame for anchor fix",
+      "fix_address": "0053c793",
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 0053c78d, ADD ESP at 0053c793 (no EBP frame)",
+      "type": "callind_esp_no_frame"
     }
   ]
 }

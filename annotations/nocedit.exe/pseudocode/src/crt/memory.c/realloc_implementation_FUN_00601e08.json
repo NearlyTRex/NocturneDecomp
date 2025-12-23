@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 90,
-    "complexity_score": 68,
+    "complexity_score": 83,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 0,
     "pseudocode_lines": 43,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
+      "param_count_too_few",
       "pointer_cast"
     ],
     "total_lines": 133
@@ -134,6 +135,17 @@
       "match": "(uint *)((int)",
       "text": "puVar5 = (uint *)((int)puVar5 + (uint)bVar6 * -2 + 1);",
       "type": "pointer_cast"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 2,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 3,
+      "fix_type": "add_params",
+      "match": "declared:2 vs estimated:3",
+      "param_delta": 1,
+      "text": "Function declares 2 params but call sites push 3 (1 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

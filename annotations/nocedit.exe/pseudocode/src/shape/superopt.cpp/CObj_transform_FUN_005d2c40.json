@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 132,
-    "complexity_score": 197,
+    "complexity_score": 212,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 82,
-    "suspect_count": 10,
+    "suspect_count": 11,
     "suspect_types": [
       "badspacebase",
+      "callind_esp_uncertain",
       "pointer_cast",
       "register_param"
     ],
@@ -193,6 +194,17 @@
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&(pCVar2->position).z + 4) = uStack_58;",
       "type": "pointer_cast"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "005d2c5c",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "005d2c5f",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 0,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 005d2c5c, ADD ESP at 005d2c5f",
+      "type": "callind_esp_uncertain"
     }
   ],
   "vtable_info": {

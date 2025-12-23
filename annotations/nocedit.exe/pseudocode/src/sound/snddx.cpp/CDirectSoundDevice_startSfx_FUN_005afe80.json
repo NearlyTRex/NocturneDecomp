@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 144,
-    "complexity_score": 180,
+    "complexity_score": 195,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 12,
     "pseudocode_lines": 55,
-    "suspect_count": 10,
+    "suspect_count": 11,
     "suspect_types": [
       "badspacebase",
+      "callind_esp_no_frame",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -253,6 +254,15 @@
       "match": "&stack0xfffffe98",
       "text": "(&stack0xfffffe98,\"DirectSux: Unable to %s.  (%s)\",",
       "type": "stack_ref"
+    },
+    {
+      "add_esp_value": 12,
+      "callind_address": "005afed9",
+      "description": "CALLIND makes ESP uncertain; no EBP frame for anchor fix",
+      "fix_address": "005afedc",
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 005afed9, ADD ESP at 005afedc (no EBP frame)",
+      "type": "callind_esp_no_frame"
     }
   ],
   "vtable_info": {

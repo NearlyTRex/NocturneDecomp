@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 582,
-    "complexity_score": 495,
+    "complexity_score": 520,
     "cross_reference_count": 0,
     "function_call_count": 26,
     "global_count": 21,
     "pseudocode_lines": 260,
-    "suspect_count": 21,
+    "suspect_count": 23,
     "suspect_types": [
       "badspacebase",
+      "callind_esp_uncertain",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -610,6 +611,28 @@
       "match": "in_stack_00000034",
       "text": "(&pCVar1->motion_controller,in_stack_00000044,in_stack_00000034);",
       "type": "stack_param"
+    },
+    {
+      "add_esp_value": 12,
+      "callind_address": "00528f5d",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "00528f63",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 0,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 00528f5d, ADD ESP at 00528f63",
+      "type": "callind_esp_uncertain"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "00528fad",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "00528fb3",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 0,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 00528fad, ADD ESP at 00528fb3",
+      "type": "callind_esp_uncertain"
     }
   ],
   "vtable_info": {

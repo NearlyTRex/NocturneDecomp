@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 13,
-    "complexity_score": 36,
+    "complexity_score": 51,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 1,
     "pseudocode_lines": 11,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
+      "param_count_too_few",
       "unresolved_funcptr"
     ],
     "total_lines": 24
@@ -137,6 +138,17 @@
       "match": "code *",
       "text": "pcVar1 = (code *)swi(3);",
       "type": "unresolved_funcptr"
+    },
+    {
+      "call_site_count": 2,
+      "declared_params": 2,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 3,
+      "fix_type": "add_params",
+      "match": "declared:2 vs estimated:3",
+      "param_delta": 1,
+      "text": "Function declares 2 params but call sites push 3 (1 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

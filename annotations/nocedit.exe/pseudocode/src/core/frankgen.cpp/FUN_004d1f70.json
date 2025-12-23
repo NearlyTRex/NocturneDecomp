@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 146,
-    "complexity_score": 331,
+    "complexity_score": 346,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 11,
     "pseudocode_lines": 56,
-    "suspect_count": 24,
+    "suspect_count": 25,
     "suspect_types": [
       "badspacebase",
+      "callind_esp_uncertain",
       "extra_output",
       "register_param",
       "stack_param",
@@ -376,6 +377,17 @@
       "match": "in_stack_00000004",
       "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_00000004);",
       "type": "stack_param"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "004d1fb9",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "004d1fbc",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 0,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 004d1fb9, ADD ESP at 004d1fbc",
+      "type": "callind_esp_uncertain"
     }
   ],
   "vtable_info": {

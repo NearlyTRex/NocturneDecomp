@@ -1,14 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 81,
-    "complexity_score": 66,
+    "complexity_score": 96,
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 13,
     "pseudocode_lines": 36,
-    "suspect_count": 2,
+    "suspect_count": 4,
     "suspect_types": [
+      "callind_esp_no_frame",
       "concat_artifact",
+      "param_count_too_few",
       "unresolved_funcptr"
     ],
     "total_lines": 117
@@ -256,6 +258,26 @@
       "match": "CONCAT44",
       "text": "uVar6 = CONCAT44 /* combine 2-byte values */(DAT_02d873d8,uVar3);",
       "type": "concat_artifact"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "004eda8b",
+      "description": "CALLIND makes ESP uncertain; no EBP frame for anchor fix",
+      "fix_address": "004eda8e",
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 004eda8b, ADD ESP at 004eda8e (no EBP frame)",
+      "type": "callind_esp_no_frame"
+    },
+    {
+      "call_site_count": 3,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 51,
+    "complexity_score": 66,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 5,
     "pseudocode_lines": 26,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
-      "negative_offset"
+      "negative_offset",
+      "param_count_too_few"
     ],
     "total_lines": 70
   },
@@ -186,6 +187,17 @@
       "match": "piVar3[-1].",
       "text": "piVar3[-1].ios.cleanup_vtable = &PTR_FUN_00665bf4.destructor_func;",
       "type": "negative_offset"
+    },
+    {
+      "call_site_count": 2,
+      "declared_params": 4,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 8,
+      "fix_type": "add_params",
+      "match": "declared:4 vs estimated:8",
+      "param_delta": 4,
+      "text": "Function declares 4 params but call sites push 8 (4 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

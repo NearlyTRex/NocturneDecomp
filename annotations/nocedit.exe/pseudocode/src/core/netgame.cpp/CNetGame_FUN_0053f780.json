@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 70,
-    "complexity_score": 70,
+    "complexity_score": 85,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 11,
     "pseudocode_lines": 35,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
+      "param_count_too_few",
       "stack_param"
     ],
     "total_lines": 105
@@ -205,6 +206,17 @@
       "match": "in_stack_00000018",
       "text": "core_netgame_cpp_CNetGame_FUN_0053fd00(in_stack_00000018);",
       "type": "stack_param"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

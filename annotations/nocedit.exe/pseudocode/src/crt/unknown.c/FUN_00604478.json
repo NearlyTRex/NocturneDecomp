@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 364,
-    "complexity_score": 976,
+    "complexity_score": 991,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
     "pseudocode_lines": 181,
-    "suspect_count": 77,
+    "suspect_count": 78,
     "suspect_types": [
       "concat_artifact",
+      "param_count_too_few",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -672,6 +673,17 @@
       "match": "in_stack_00000014",
       "text": "*(byte *)(iVar8 + 1 + (int)in_stack_00000014) = 0;",
       "type": "stack_param"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 7,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:7",
+      "param_delta": 7,
+      "text": "Function declares 0 params but call sites push 7 (7 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

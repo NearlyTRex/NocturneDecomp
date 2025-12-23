@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 73,
+    "complexity_score": 88,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 8,
     "pseudocode_lines": 28,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
+      "callind_esp_no_frame",
       "stack_param"
     ],
     "total_lines": 103
@@ -172,6 +173,15 @@
       "match": "in_stack_00000008",
       "text": "core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(in_stack_00000008);",
       "type": "stack_param"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "00598fb2",
+      "description": "CALLIND makes ESP uncertain; no EBP frame for anchor fix",
+      "fix_address": "00598fb4",
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 00598fb2, ADD ESP at 00598fb4 (no EBP frame)",
+      "type": "callind_esp_no_frame"
     }
   ]
 }

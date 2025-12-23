@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 17,
-    "complexity_score": 33,
+    "complexity_score": 48,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 8,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
+      "param_count_too_many",
       "unaffected_reg"
     ],
     "total_lines": 25
@@ -143,6 +144,17 @@
       "match": "unaff_ESI",
       "text": "cockpit_drawsurf_cpp_CDrawSurface_drawTextCentered_FUN_00489590(this_ptr,height,x,y,unaff_ESI);",
       "type": "unaffected_reg"
+    },
+    {
+      "call_site_count": 2,
+      "declared_params": 5,
+      "description": "Signature has too many params - likely wrong calling convention",
+      "estimated_params": 4,
+      "fix_type": "remove_params",
+      "match": "declared:5 vs estimated:4",
+      "param_delta": -1,
+      "text": "Function declares 5 params but call sites push 4 (1 extra)",
+      "type": "param_count_too_many"
     }
   ]
 }

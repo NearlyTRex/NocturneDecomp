@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 229,
-    "complexity_score": 139,
+    "complexity_score": 154,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 19,
     "pseudocode_lines": 94,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
       "badspacebase",
+      "param_count_too_many",
       "register_param",
       "stack_ref"
     ],
@@ -420,6 +421,17 @@
       "match": "&stack0x00000000",
       "text": "if ((int *)&stack0x00000000 != &g_DeformableModelPool[0].lod_info[2].shadow_only_flag) {",
       "type": "stack_ref"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 6,
+      "description": "Signature has too many params - likely wrong calling convention",
+      "estimated_params": 1,
+      "fix_type": "remove_params",
+      "match": "declared:6 vs estimated:1",
+      "param_delta": -5,
+      "text": "Function declares 6 params but call sites push 1 (5 extra)",
+      "type": "param_count_too_many"
     }
   ]
 }

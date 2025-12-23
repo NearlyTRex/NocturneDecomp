@@ -1,13 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 68,
+    "complexity_score": 98,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 8,
     "pseudocode_lines": 43,
-    "suspect_count": 2,
+    "suspect_count": 4,
     "suspect_types": [
+      "callind_esp_no_frame",
+      "param_count_too_few",
       "unaffected_reg"
     ],
     "total_lines": 130
@@ -176,6 +178,26 @@
       "match": "unaff_EBX",
       "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Can't create flies!\",unaff_EBX);",
       "type": "unaffected_reg"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "004edfe9",
+      "description": "CALLIND makes ESP uncertain; no EBP frame for anchor fix",
+      "fix_address": "004edfeb",
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 004edfe9, ADD ESP at 004edfeb (no EBP frame)",
+      "type": "callind_esp_no_frame"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 11,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:11",
+      "param_delta": 11,
+      "text": "Function declares 0 params but call sites push 11 (11 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

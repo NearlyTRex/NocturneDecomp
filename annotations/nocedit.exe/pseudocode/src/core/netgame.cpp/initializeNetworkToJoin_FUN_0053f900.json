@@ -1,14 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 278,
-    "complexity_score": 388,
+    "complexity_score": 418,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 19,
     "pseudocode_lines": 113,
-    "suspect_count": 25,
+    "suspect_count": 27,
     "suspect_types": [
       "badspacebase",
+      "callind_esp_uncertain",
+      "param_count_too_few",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -542,6 +544,28 @@
       "match": "in_stack_00000004",
       "text": "iVar2 = *(int *)in_stack_00000004->padding;",
       "type": "stack_param"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "0053faee",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "0053faf1",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 0,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 0053faee, ADD ESP at 0053faf1",
+      "type": "callind_esp_uncertain"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 3,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:3",
+      "param_delta": 3,
+      "text": "Function declares 0 params but call sites push 3 (3 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

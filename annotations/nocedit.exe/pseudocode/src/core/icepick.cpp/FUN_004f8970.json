@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 292,
+    "complexity_score": 307,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 5,
     "pseudocode_lines": 57,
-    "suspect_count": 21,
+    "suspect_count": 22,
     "suspect_types": [
       "badspacebase",
+      "callind_esp_uncertain",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -338,6 +339,17 @@
       "match": "in_stack_00000004",
       "text": "((CMotionController *)(in_stack_00000004 + 1),0x13,1);",
       "type": "stack_param"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "004f89f9",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "004f89ff",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 0,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 004f89f9, ADD ESP at 004f89ff",
+      "type": "callind_esp_uncertain"
     }
   ]
 }

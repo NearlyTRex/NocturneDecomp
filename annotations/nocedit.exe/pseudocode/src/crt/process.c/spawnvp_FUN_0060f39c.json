@@ -1,16 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 541,
-    "complexity_score": 482,
+    "complexity_score": 522,
     "cross_reference_count": 3,
     "function_call_count": 26,
     "global_count": 10,
     "pseudocode_lines": 207,
-    "suspect_count": 24,
+    "suspect_count": 27,
     "suspect_types": [
       "badspacebase",
+      "callind_esp_uncertain",
       "concat_artifact",
       "extra_output",
+      "param_count_too_few",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -653,6 +655,39 @@
       "match": "&stack0xffffff3c",
       "text": "((LPCRITICAL_SECTION)&stack0xffffff3c);",
       "type": "stack_ref"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "0060f58f",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "0060f595",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 0,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 0060f58f, ADD ESP at 0060f595",
+      "type": "callind_esp_uncertain"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "0060f851",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "0060f857",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 0,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 0060f851, ADD ESP at 0060f857",
+      "type": "callind_esp_uncertain"
+    },
+    {
+      "call_site_count": 4,
+      "declared_params": 3,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 5,
+      "fix_type": "add_params",
+      "match": "declared:3 vs estimated:5",
+      "param_delta": 2,
+      "text": "Function declares 3 params but call sites push 5 (2 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

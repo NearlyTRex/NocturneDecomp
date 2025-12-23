@@ -1,14 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 369,
-    "complexity_score": 590,
+    "complexity_score": 640,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 10,
     "pseudocode_lines": 135,
-    "suspect_count": 43,
+    "suspect_count": 47,
     "suspect_types": [
       "badspacebase",
+      "callind_esp_uncertain",
+      "param_count_too_few",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -532,6 +534,50 @@
       "match": "._8_4_",
       "text": "auStack_e4._8_4_ = in_stack_00000004;",
       "type": "unknown_field"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "005b8973",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "005b897b",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 0,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 005b8973, ADD ESP at 005b897b",
+      "type": "callind_esp_uncertain"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "005b8c26",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "005b8c29",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 0,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 005b8c26, ADD ESP at 005b8c29",
+      "type": "callind_esp_uncertain"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "005b8e77",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "005b8e7d",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 0,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 005b8e77, ADD ESP at 005b8e7d",
+      "type": "callind_esp_uncertain"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 1,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:1",
+      "param_delta": 1,
+      "text": "Function declares 0 params but call sites push 1 (1 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

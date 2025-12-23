@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 363,
-    "complexity_score": 319,
+    "complexity_score": 334,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 1,
     "pseudocode_lines": 134,
-    "suspect_count": 16,
+    "suspect_count": 17,
     "suspect_types": [
       "badspacebase",
+      "param_count_too_many",
       "pointer_cast",
       "register_param",
       "unaffected_reg",
@@ -568,6 +569,17 @@
       "match": "._8_4_",
       "text": "auStack_7c._8_4_ = -(triangle->normal).z;",
       "type": "unknown_field"
+    },
+    {
+      "call_site_count": 2,
+      "declared_params": 5,
+      "description": "Signature has too many params - likely wrong calling convention",
+      "estimated_params": 1,
+      "fix_type": "remove_params",
+      "match": "declared:5 vs estimated:1",
+      "param_delta": -4,
+      "text": "Function declares 5 params but call sites push 1 (4 extra)",
+      "type": "param_count_too_many"
     }
   ]
 }

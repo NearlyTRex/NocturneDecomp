@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 576,
-    "complexity_score": 490,
+    "complexity_score": 535,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 25,
     "pseudocode_lines": 245,
-    "suspect_count": 21,
+    "suspect_count": 25,
     "suspect_types": [
       "badspacebase",
+      "callind_esp_uncertain",
       "concat_artifact",
       "extra_output",
       "pointer_cast",
@@ -586,6 +587,50 @@
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&DAT_032bf6d4 + iVar6) = uVar1;",
       "type": "pointer_cast"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "0056b9cd",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "0056b9db",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 0,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 0056b9cd, ADD ESP at 0056b9db",
+      "type": "callind_esp_uncertain"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "0056ba2b",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "0056ba31",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 0,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 0056ba2b, ADD ESP at 0056ba31",
+      "type": "callind_esp_uncertain"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "0056baff",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "0056bb05",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 0,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 0056baff, ADD ESP at 0056bb05",
+      "type": "callind_esp_uncertain"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "0056bb8d",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "0056bb93",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 0,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 0056bb8d, ADD ESP at 0056bb93",
+      "type": "callind_esp_uncertain"
     }
   ]
 }

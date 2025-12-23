@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 353,
-    "complexity_score": 393,
+    "complexity_score": 408,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 38,
     "pseudocode_lines": 153,
-    "suspect_count": 21,
+    "suspect_count": 22,
     "suspect_types": [
       "badspacebase",
+      "param_count_too_many",
       "pointer_cast",
       "register_param",
       "stack_ref",
@@ -669,6 +670,17 @@
       "match": "&stack0xffffffc4",
       "text": "((SMRGLHeaderPrimitive *)&stack0xffffffc4,iVar15,0,iVar8,iVar7);",
       "type": "stack_ref"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 8,
+      "description": "Signature has too many params - likely wrong calling convention",
+      "estimated_params": 7,
+      "fix_type": "remove_params",
+      "match": "declared:8 vs estimated:7",
+      "param_delta": -1,
+      "text": "Function declares 8 params but call sites push 7 (1 extra)",
+      "type": "param_count_too_many"
     }
   ]
 }

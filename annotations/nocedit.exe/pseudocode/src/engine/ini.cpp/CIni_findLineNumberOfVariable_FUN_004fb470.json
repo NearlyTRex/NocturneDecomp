@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 206,
-    "complexity_score": 239,
+    "complexity_score": 254,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 8,
     "pseudocode_lines": 94,
-    "suspect_count": 12,
+    "suspect_count": 13,
     "suspect_types": [
       "badspacebase",
+      "param_count_too_few",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -342,6 +343,17 @@
       "match": "unaff_EDI",
       "text": "iVar4 = crt_string_c_strcmp_FUN_005fef20((char *)(unaff_EDI + 1),in_stack_0000001c);",
       "type": "unaffected_reg"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 5,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 9,
+      "fix_type": "add_params",
+      "match": "declared:5 vs estimated:9",
+      "param_delta": 4,
+      "text": "Function declares 5 params but call sites push 9 (4 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

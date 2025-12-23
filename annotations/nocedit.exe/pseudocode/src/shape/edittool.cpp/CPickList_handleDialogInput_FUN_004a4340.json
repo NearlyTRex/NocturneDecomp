@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 217,
-    "complexity_score": 99,
+    "complexity_score": 114,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 7,
     "pseudocode_lines": 84,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "callind_esp_uncertain",
       "unknown_field"
     ],
     "total_lines": 301
@@ -191,6 +192,17 @@
       "match": "._0_1_",
       "text": "g_MouseButtonFlags._0_1_ = (byte)g_MouseButtonFlags & 0xfe;",
       "type": "unknown_field"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "004a4384",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "004a4387",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 0,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 004a4384, ADD ESP at 004a4387",
+      "type": "callind_esp_uncertain"
     }
   ]
 }

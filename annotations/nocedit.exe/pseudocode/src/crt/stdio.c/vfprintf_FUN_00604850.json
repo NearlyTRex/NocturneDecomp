@@ -1,13 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 156,
+    "complexity_score": 206,
     "cross_reference_count": 3,
     "function_call_count": 4,
     "global_count": 2,
     "pseudocode_lines": 46,
-    "suspect_count": 10,
+    "suspect_count": 14,
     "suspect_types": [
+      "callind_esp_no_frame",
+      "param_count_too_few",
       "pointer_cast",
       "stack_param"
     ],
@@ -239,6 +241,44 @@
       "match": "(byte *)((int)",
       "text": "*(byte *)((int)&file->_flag + 1) = bVar4 | 4;",
       "type": "pointer_cast"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "0060485c",
+      "description": "CALLIND makes ESP uncertain; no EBP frame for anchor fix",
+      "fix_address": "00604868",
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 0060485c, ADD ESP at 00604868 (no EBP frame)",
+      "type": "callind_esp_no_frame"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "00604878",
+      "description": "CALLIND makes ESP uncertain; no EBP frame for anchor fix",
+      "fix_address": "0060487e",
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 00604878, ADD ESP at 0060487e (no EBP frame)",
+      "type": "callind_esp_no_frame"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "0060491e",
+      "description": "CALLIND makes ESP uncertain; no EBP frame for anchor fix",
+      "fix_address": "00604924",
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 0060491e, ADD ESP at 00604924 (no EBP frame)",
+      "type": "callind_esp_no_frame"
+    },
+    {
+      "call_site_count": 3,
+      "declared_params": 3,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 4,
+      "fix_type": "add_params",
+      "match": "declared:3 vs estimated:4",
+      "param_delta": 1,
+      "text": "Function declares 3 params but call sites push 4 (1 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

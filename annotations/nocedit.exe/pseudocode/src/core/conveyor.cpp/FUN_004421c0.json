@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 110,
-    "complexity_score": 294,
+    "complexity_score": 349,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 5,
     "pseudocode_lines": 49,
-    "suspect_count": 24,
+    "suspect_count": 29,
     "suspect_types": [
+      "callind_esp_no_frame",
       "stack_param"
     ],
     "total_lines": 159
@@ -283,6 +284,51 @@
       "match": "in_stack_00000004",
       "text": "*(uint *)(in_stack_00000004 + 0x734) = 0x3f000000;",
       "type": "stack_param"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "004421dc",
+      "description": "CALLIND makes ESP uncertain; no EBP frame for anchor fix",
+      "fix_address": "004421de",
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 004421dc, ADD ESP at 004421de (no EBP frame)",
+      "type": "callind_esp_no_frame"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "00442208",
+      "description": "CALLIND makes ESP uncertain; no EBP frame for anchor fix",
+      "fix_address": "0044220a",
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 00442208, ADD ESP at 0044220a (no EBP frame)",
+      "type": "callind_esp_no_frame"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "0044222b",
+      "description": "CALLIND makes ESP uncertain; no EBP frame for anchor fix",
+      "fix_address": "0044222d",
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 0044222b, ADD ESP at 0044222d (no EBP frame)",
+      "type": "callind_esp_no_frame"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "0044224e",
+      "description": "CALLIND makes ESP uncertain; no EBP frame for anchor fix",
+      "fix_address": "00442250",
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 0044224e, ADD ESP at 00442250 (no EBP frame)",
+      "type": "callind_esp_no_frame"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "00442271",
+      "description": "CALLIND makes ESP uncertain; no EBP frame for anchor fix",
+      "fix_address": "00442273",
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 00442271, ADD ESP at 00442273 (no EBP frame)",
+      "type": "callind_esp_no_frame"
     }
   ],
   "vtable_info": {

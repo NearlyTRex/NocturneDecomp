@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 131,
+    "complexity_score": 146,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 0,
     "pseudocode_lines": 26,
-    "suspect_count": 8,
+    "suspect_count": 9,
     "suspect_types": [
       "badspacebase",
+      "param_count_too_many",
       "pointer_cast",
       "register_param",
       "stack_ref",
@@ -187,6 +188,17 @@
       "match": "&stack0xfffffffc",
       "text": "((int)(&stack0xfffffffc + (uint)bVar3 * -8 + (uint)bVar3 * -8) + ((uint)bVar3 * -2 + 1) * 4)",
       "type": "stack_ref"
+    },
+    {
+      "call_site_count": 2,
+      "declared_params": 2,
+      "description": "Signature has too many params - likely wrong calling convention",
+      "estimated_params": 1,
+      "fix_type": "remove_params",
+      "match": "declared:2 vs estimated:1",
+      "param_delta": -1,
+      "text": "Function declares 2 params but call sites push 1 (1 extra)",
+      "type": "param_count_too_many"
     }
   ]
 }

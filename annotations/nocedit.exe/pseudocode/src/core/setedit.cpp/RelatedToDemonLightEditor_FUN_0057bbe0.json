@@ -1,16 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 732,
-    "complexity_score": 793,
+    "complexity_score": 808,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 40,
     "pseudocode_lines": 293,
-    "suspect_count": 45,
+    "suspect_count": 46,
     "suspect_types": [
       "badspacebase",
       "concat_artifact",
       "extra_output",
+      "param_count_too_few",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -897,6 +898,17 @@
       "match": "SUB81",
       "text": "(g_CEditorToolsPtr,pcVar8,(float *)uVar9,SUB81 /* extract 2-byte value */(uVar9 >> 0x20,0),0.0,max_value,true);",
       "type": "sub_artifact"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 3,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:3",
+      "param_delta": 3,
+      "text": "Function declares 0 params but call sites push 3 (3 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 278,
-    "complexity_score": 327,
+    "complexity_score": 342,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 16,
     "pseudocode_lines": 107,
-    "suspect_count": 20,
+    "suspect_count": 21,
     "suspect_types": [
       "badspacebase",
+      "param_count_too_few",
       "register_param",
       "stack_param",
       "stack_ref"
@@ -441,6 +442,17 @@
       "match": "in_stack_00000038",
       "text": "crt_stdio_c_rename_FUN_006015d0(acStack_1f0,in_stack_00000038);",
       "type": "stack_param"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 5,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 7,
+      "fix_type": "add_params",
+      "match": "declared:5 vs estimated:7",
+      "param_delta": 2,
+      "text": "Function declares 5 params but call sites push 7 (2 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

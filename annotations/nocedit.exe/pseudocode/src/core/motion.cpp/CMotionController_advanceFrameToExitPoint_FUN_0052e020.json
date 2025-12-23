@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 156,
-    "complexity_score": 79,
+    "complexity_score": 104,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 2,
     "pseudocode_lines": 64,
-    "suspect_count": 1,
+    "suspect_count": 3,
     "suspect_types": [
+      "callind_esp_uncertain",
       "pointer_cast"
     ],
     "total_lines": 220
@@ -231,6 +232,28 @@
       "match": "(SMotionTransition *)((int)",
       "text": "pSVar7 = (SMotionTransition *)((int)pSVar7 + (uint)bVar8 * -8 + 4);",
       "type": "pointer_cast"
+    },
+    {
+      "add_esp_value": 16,
+      "callind_address": "0052e0d9",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "0052e0e1",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 0,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 0052e0d9, ADD ESP at 0052e0e1",
+      "type": "callind_esp_uncertain"
+    },
+    {
+      "add_esp_value": 16,
+      "callind_address": "0052e18e",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "0052e191",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 0,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 0052e18e, ADD ESP at 0052e191",
+      "type": "callind_esp_uncertain"
     }
   ]
 }

@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 153,
-    "complexity_score": 229,
+    "complexity_score": 244,
     "cross_reference_count": 4,
     "function_call_count": 4,
     "global_count": 13,
     "pseudocode_lines": 69,
-    "suspect_count": 14,
+    "suspect_count": 15,
     "suspect_types": [
       "badspacebase",
+      "callind_esp_no_frame",
       "register_param",
       "stack_param",
       "stack_ref"
@@ -327,6 +328,15 @@
       "match": "in_stack_00000014",
       "text": "g_ActorDataFile = in_stack_00000014;",
       "type": "stack_param"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "0040b105",
+      "description": "CALLIND makes ESP uncertain; no EBP frame for anchor fix",
+      "fix_address": "0040b10b",
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 0040b105, ADD ESP at 0040b10b (no EBP frame)",
+      "type": "callind_esp_no_frame"
     }
   ]
 }

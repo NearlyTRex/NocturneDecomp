@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 23,
-    "complexity_score": 24,
+    "complexity_score": 39,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 9,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "callind_esp_no_frame",
       "unresolved_funcptr"
     ],
     "total_lines": 32
@@ -85,6 +86,15 @@
       "match": "code *",
       "text": "(**(code **)(*(int *)(*(int *)(this_ptr->field2_0x1fbd8 + 0x54) + 0x154) + 0xc))();",
       "type": "unresolved_funcptr"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "005c3738",
+      "description": "CALLIND makes ESP uncertain; no EBP frame for anchor fix",
+      "fix_address": "005c373b",
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 005c3738, ADD ESP at 005c373b (no EBP frame)",
+      "type": "callind_esp_no_frame"
     }
   ],
   "vtable_info": {

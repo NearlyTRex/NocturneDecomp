@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 43,
-    "complexity_score": 36,
+    "complexity_score": 51,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 3,
     "pseudocode_lines": 11,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
+      "param_count_too_few",
       "stack_param"
     ],
     "total_lines": 54
@@ -143,6 +144,17 @@
       "match": "in_stack_0000001c",
       "text": "*(uint *)(g_TossPool[iVar1].field0_0x0 + 0x3e0) = in_stack_0000001c;",
       "type": "stack_param"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 1,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 7,
+      "fix_type": "add_params",
+      "match": "declared:1 vs estimated:7",
+      "param_delta": 6,
+      "text": "Function declares 1 params but call sites push 7 (6 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

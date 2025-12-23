@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 24,
-    "complexity_score": 75,
+    "complexity_score": 90,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "pseudocode_lines": 10,
-    "suspect_count": 6,
+    "suspect_count": 7,
     "suspect_types": [
+      "param_count_too_few",
       "stack_param"
     ],
     "total_lines": 34
@@ -130,6 +131,17 @@
       "match": "in_stack_00000008",
       "text": "core_morph_cpp_CMorphModel_animate_FUN_0052a920(in_stack_00000008);",
       "type": "stack_param"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 6,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:6",
+      "param_delta": 6,
+      "text": "Function declares 0 params but call sites push 6 (6 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

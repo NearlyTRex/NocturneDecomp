@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 114,
+    "complexity_score": 129,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 5,
     "pseudocode_lines": 29,
-    "suspect_count": 8,
+    "suspect_count": 9,
     "suspect_types": [
+      "callind_esp_no_frame",
       "stack_param"
     ],
     "total_lines": 103
@@ -157,6 +158,15 @@
       "match": "in_stack_00000004",
       "text": "iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(in_stack_00000004,\"CSvetlana\");",
       "type": "stack_param"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "00505a2c",
+      "description": "CALLIND makes ESP uncertain; no EBP frame for anchor fix",
+      "fix_address": "00505a32",
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 00505a2c, ADD ESP at 00505a32 (no EBP frame)",
+      "type": "callind_esp_no_frame"
     }
   ]
 }

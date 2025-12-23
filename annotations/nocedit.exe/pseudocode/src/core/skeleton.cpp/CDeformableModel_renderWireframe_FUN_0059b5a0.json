@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 65,
-    "complexity_score": 94,
+    "complexity_score": 109,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
     "pseudocode_lines": 29,
-    "suspect_count": 6,
+    "suspect_count": 7,
     "suspect_types": [
+      "param_count_too_many",
       "pointer_cast"
     ],
     "total_lines": 94
@@ -168,6 +169,17 @@
       "match": "(ushort *)((int)",
       "text": "puVar2 = (ushort *)((int)&(pSVar3->vertex_indices).vertex_index_2 + iVar5);",
       "type": "pointer_cast"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 2,
+      "description": "Signature has too many params - likely wrong calling convention",
+      "estimated_params": 1,
+      "fix_type": "remove_params",
+      "match": "declared:2 vs estimated:1",
+      "param_delta": -1,
+      "text": "Function declares 2 params but call sites push 1 (1 extra)",
+      "type": "param_count_too_many"
     }
   ]
 }

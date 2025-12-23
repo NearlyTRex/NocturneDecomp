@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 379,
-    "complexity_score": 964,
+    "complexity_score": 979,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 10,
     "pseudocode_lines": 194,
-    "suspect_count": 74,
+    "suspect_count": 75,
     "suspect_types": [
       "badspacebase",
+      "callind_esp_uncertain",
       "register_param",
       "stack_param",
       "suspect_float",
@@ -817,6 +818,17 @@
       "match": "in_stack_00000004",
       "text": "*(float *)(in_stack_00000004[2].cloth_data + 0x54fc) + local_70;",
       "type": "stack_param"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "00557aa6",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "00557aac",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 0,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 00557aa6, ADD ESP at 00557aac",
+      "type": "callind_esp_uncertain"
     }
   ]
 }

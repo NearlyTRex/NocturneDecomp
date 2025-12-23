@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 114,
-    "complexity_score": 80,
+    "complexity_score": 95,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 13,
     "pseudocode_lines": 55,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
+      "param_count_too_few",
       "unaffected_reg"
     ],
     "total_lines": 169
@@ -218,6 +219,17 @@
       "match": "unaff_EBX",
       "text": "uVar2 = unaff_EBX;",
       "type": "unaffected_reg"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

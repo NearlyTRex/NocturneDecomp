@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 91,
-    "complexity_score": 167,
+    "complexity_score": 232,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 7,
     "pseudocode_lines": 42,
-    "suspect_count": 11,
+    "suspect_count": 17,
     "suspect_types": [
       "badspacebase",
+      "callind_esp_no_frame",
       "register_param",
       "stack_param"
     ],
@@ -238,6 +239,60 @@
       "match": "in_stack_00000028",
       "text": "return in_stack_00000028;",
       "type": "stack_param"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "006028ac",
+      "description": "CALLIND makes ESP uncertain; no EBP frame for anchor fix",
+      "fix_address": "006028b8",
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 006028ac, ADD ESP at 006028b8 (no EBP frame)",
+      "type": "callind_esp_no_frame"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "006028c0",
+      "description": "CALLIND makes ESP uncertain; no EBP frame for anchor fix",
+      "fix_address": "006028c6",
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 006028c0, ADD ESP at 006028c6 (no EBP frame)",
+      "type": "callind_esp_no_frame"
+    },
+    {
+      "add_esp_value": 12,
+      "callind_address": "006028d8",
+      "description": "CALLIND makes ESP uncertain; no EBP frame for anchor fix",
+      "fix_address": "006028de",
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 006028d8, ADD ESP at 006028de (no EBP frame)",
+      "type": "callind_esp_no_frame"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "006028e4",
+      "description": "CALLIND makes ESP uncertain; no EBP frame for anchor fix",
+      "fix_address": "006028ea",
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 006028e4, ADD ESP at 006028ea (no EBP frame)",
+      "type": "callind_esp_no_frame"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "0060291e",
+      "description": "CALLIND makes ESP uncertain; no EBP frame for anchor fix",
+      "fix_address": "00602924",
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 0060291e, ADD ESP at 00602924 (no EBP frame)",
+      "type": "callind_esp_no_frame"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "00602935",
+      "description": "CALLIND makes ESP uncertain; no EBP frame for anchor fix",
+      "fix_address": "0060293b",
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 00602935, ADD ESP at 0060293b (no EBP frame)",
+      "type": "callind_esp_no_frame"
     }
   ]
 }

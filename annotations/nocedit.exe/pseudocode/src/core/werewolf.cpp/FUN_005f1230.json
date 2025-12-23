@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 354,
-    "complexity_score": 619,
+    "complexity_score": 634,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 7,
     "pseudocode_lines": 154,
-    "suspect_count": 43,
+    "suspect_count": 44,
     "suspect_types": [
       "badspacebase",
+      "param_count_too_few",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -928,6 +929,17 @@
       "match": "&stack0xfffffefc",
       "text": "(g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)&stack0xfffffefc);",
       "type": "stack_ref"
+    },
+    {
+      "call_site_count": 2,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:2",
+      "param_delta": 2,
+      "text": "Function declares 0 params but call sites push 2 (2 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

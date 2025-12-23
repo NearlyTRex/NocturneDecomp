@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 47,
+    "complexity_score": 62,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 12,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
+      "param_count_too_few",
       "pointer_cast"
     ],
     "total_lines": 48
@@ -155,6 +156,17 @@
       "match": "(int *)((int)",
       "text": "(*(int *)((int)&stream->_link + *(int *)(stream->_ptr + 4)) == 0)) {",
       "type": "pointer_cast"
+    },
+    {
+      "call_site_count": 3,
+      "declared_params": 2,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 4,
+      "fix_type": "add_params",
+      "match": "declared:2 vs estimated:4",
+      "param_delta": 2,
+      "text": "Function declares 2 params but call sites push 4 (2 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

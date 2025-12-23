@@ -4,22 +4,26 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  stack_param                    37682 ( 60.5%)
-  pointer_cast                    5194 (  8.3%)
-  stack_ref                       4200 (  6.7%)
-  unknown_field                   3024 (  4.9%)
-  unaffected_reg                  2784 (  4.5%)
-  concat_artifact                 1885 (  3.0%)
-  register_param                  1833 (  2.9%)
-  badspacebase                    1622 (  2.6%)
-  extra_output                    1440 (  2.3%)
-  suspect_float                    932 (  1.5%)
-  unresolved_funcptr               472 (  0.8%)
-  negative_offset                  416 (  0.7%)
-  sub_artifact                     284 (  0.5%)
-  warning_overlapping_globals      219 (  0.4%)
+  stack_param                    37646 ( 57.8%)
+  pointer_cast                    5194 (  8.0%)
+  stack_ref                       4199 (  6.4%)
+  unknown_field                   3024 (  4.6%)
+  unaffected_reg                  2774 (  4.3%)
+  concat_artifact                 1885 (  2.9%)
+  register_param                  1833 (  2.8%)
+  badspacebase                    1622 (  2.5%)
+  extra_output                    1440 (  2.2%)
+  callind_esp_no_frame            1097 (  1.7%)
+  callind_esp_uncertain           1087 (  1.7%)
+  suspect_float                    931 (  1.4%)
+  param_count_too_few              631 (  1.0%)
+  unresolved_funcptr               472 (  0.7%)
+  negative_offset                  416 (  0.6%)
+  sub_artifact                     284 (  0.4%)
+  warning_overlapping_globals      219 (  0.3%)
   warning_unreachable              143 (  0.2%)
   undefined_type                   109 (  0.2%)
+  param_count_too_many              89 (  0.1%)
   sborrow_artifact                  26 (  0.0%)
   warning_jumptable                 12 (  0.0%)
   warning_indirect_jump             12 (  0.0%)
@@ -27,7 +31,7 @@ SUSPECT TYPE COUNTS
   warning_noreturn                   1 (  0.0%)
 
 ====================================================================================================
-TYPE: stack_param (37682 occurrences)
+TYPE: stack_param (37646 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -40,16 +44,16 @@ Unique patterns:
    562x  in_stack_0000001c
    400x  in_stack_00000020
    379x  in_stack_00000024
-   292x  in_stack_00000028
+   290x  in_stack_00000028
    220x  in_stack_00000030
    216x  in_stack_0000002c
-   200x  in_stack_00000034
-   173x  in_stack_0000003c
+   197x  in_stack_00000034
+   171x  in_stack_0000003c
    160x  in_stack_00000038
    132x  in_stack_00000040
-   122x  in_stack_00000048
+   119x  in_stack_00000048
    111x  in_stack_0000004c
-    99x  in_stack_0000005c
+    96x  in_stack_0000005c
     91x  in_stack_00000044
 
 Example functions:
@@ -101,7 +105,7 @@ Example functions:
     pvVar2 = (void *)((int)g_ScreenBufferArray[width] + dest_y);...
 
 ====================================================================================================
-TYPE: stack_ref (4200 occurrences)
+TYPE: stack_ref (4199 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -185,14 +189,14 @@ Example functions:
     local_8c._16_4_ = pCVar4->x;...
 
 ====================================================================================================
-TYPE: unaffected_reg (2784 occurrences)
+TYPE: unaffected_reg (2774 occurrences)
 ====================================================================================================
 
 Unique patterns:
    870x  unaff_ESI
-   687x  unaff_EBX
+   683x  unaff_EBX
    618x  unaff_EDI
-   586x  unaff_EBP
+   580x  unaff_EBP
      9x  unaff_BP
      9x  unaff_DI
      3x  unaff_SI
@@ -458,7 +462,65 @@ Example functions:
     int extraout_EAX;...
 
 ====================================================================================================
-TYPE: suspect_float (932 occurrences)
+TYPE: callind_esp_no_frame (1097 occurrences)
+====================================================================================================
+
+Unique patterns:
+  1097x  CALLIND...ADD ESP
+
+Example functions:
+  cockpit_ckptutil.c_blitSimpleSprite_FUN_00432540
+    CALLIND at 004325ac, ADD ESP at 004325b0 (no EBP frame)...
+  cockpit_ckptutil.c_blitHorizontallyClippedSprite_FUN_004328d0
+    CALLIND at 0043297a, ADD ESP at 0043297c (no EBP frame)...
+  cockpit_ckptutil.c_blitUnifiedSprite_FUN_00432300
+    CALLIND at 00432409, ADD ESP at 0043240d (no EBP frame)...
+  cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_00431f40
+    CALLIND at 00432088, ADD ESP at 0043208c (no EBP frame)...
+  cockpit_ckptutil.c_blitSpanBasedSpriteVerticallyClipped_FUN_00432b60
+    CALLIND at 00432c3a, ADD ESP at 00432c3c (no EBP frame)...
+  cockpit_ckptutil.c_blitRectangleClipped_FUN_00432190
+    CALLIND at 00432239, ADD ESP at 0043223d (no EBP frame)...
+  cockpit_ckptutil.c_blitVerticalColumn_FUN_00432a10
+    CALLIND at 00432a8e, ADD ESP at 00432a92 (no EBP frame)...
+  cockpit_ckptutil.c_blitDualModeSprite_FUN_004326a0
+    CALLIND at 00432750, ADD ESP at 00432752 (no EBP frame)...
+  cockpit_ckptutil.c_blitSpanBasedSprite_FUN_00431d00
+    CALLIND at 00431e3b, ADD ESP at 00431e3f (no EBP frame)...
+  cockpit_ckptutil.c_copyBitmapRegion_FUN_00432860
+    CALLIND at 004328af, ADD ESP at 004328b3 (no EBP frame)...
+  cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa20
+    CALLIND at 0054aaea, ADD ESP at 0054aaee (no EBP frame)...
+  cockpit_pkbitmap.cpp_CPackedBitmap_renderClippedRegion_FUN_0054ab30
+    CALLIND at 0054ac56, ADD ESP at 0054ac5a (no EBP frame)...
+  cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70
+    CALLIND at 0054af25, ADD ESP at 0054af29 (no EBP frame)...
+  shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520
+    CALLIND at 0051d7de, ADD ESP at 0051d7e1 (no EBP frame)...
+
+====================================================================================================
+TYPE: callind_esp_uncertain (1087 occurrences)
+====================================================================================================
+
+Unique patterns:
+  1087x  CALLIND...ADD ESP
+
+Example functions:
+  shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990
+    CALLIND at 0051e023, ADD ESP at 0051e026...
+  shape_superopt.cpp_CObj_transform_FUN_005d2c40
+    CALLIND at 005d2c5c, ADD ESP at 005d2c5f...
+  shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0
+    CALLIND at 005d4d72, ADD ESP at 005d4d78...
+  shape_superopt.cpp_CPoly_intersectPoly_FUN_005ce580
+    CALLIND at 005ce5af, ADD ESP at 005ce5b2...
+  shape_superopt.cpp_COptimize_FUN_005d7460
+    CALLIND at 005d74e9, ADD ESP at 005d74fb...
+  shape_superopt.cpp_CObj_transformMasked_FUN_005d2dd0
+    CALLIND at 005d2dec, ADD ESP at 005d2def...
+
+====================================================================================================
+TYPE: suspect_float (931 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -502,6 +564,94 @@ Example functions:
     fVar3 = 3.67342e-40;...
   engine_3d.c_renderPolygonLitDetailed_FUN_00404220
     fVar3 = 9.18355e-41;...
+
+====================================================================================================
+TYPE: param_count_too_few (631 occurrences)
+====================================================================================================
+
+Unique patterns:
+    93x  declared:1 vs estimated:2
+    88x  declared:0 vs estimated:2
+    79x  declared:0 vs estimated:1
+    58x  declared:0 vs estimated:3
+    55x  declared:0 vs estimated:4
+    25x  declared:1 vs estimated:3
+    24x  declared:1 vs estimated:5
+    21x  declared:3 vs estimated:4
+    18x  declared:0 vs estimated:5
+    16x  declared:2 vs estimated:3
+    15x  declared:0 vs estimated:6
+    14x  declared:1 vs estimated:4
+    10x  declared:5 vs estimated:6
+     9x  declared:2 vs estimated:6
+     8x  declared:0 vs estimated:9
+     8x  declared:0 vs estimated:7
+     6x  declared:2 vs estimated:5
+     6x  declared:4 vs estimated:5
+     6x  declared:3 vs estimated:5
+     6x  declared:1 vs estimated:7
+
+Example functions:
+  cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_00431f40
+    Function declares 8 params but call sites push 12 (4 missing)...
+  cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0
+    Function declares 2 params but call sites push 5 (3 missing)...
+  cockpit_ckptutil.c_isLineClippingDisabled_FUN_00434660
+    Function declares 0 params but call sites push 4 (4 missing)...
+  cockpit_ckptutil.c_blitDualModeSprite_FUN_004326a0
+    Function declares 6 params but call sites push 8 (2 missing)...
+  cockpit_pkbitmap.cpp_CPackedBitmap_renderIfIntersectsRect_FUN_0054adb0
+    Function declares 7 params but call sites push 11 (4 missing)...
+  cockpit_pkbitmap.cpp_CPackedBitmap_reset_FUN_0054a8b0
+    Function declares 1 params but call sites push 2 (1 missing)...
+  cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70
+    Function declares 4 params but call sites push 7 (3 missing)...
+  cockpit_pkbitmap.cpp_CPackedBitmap_free_FUN_0054a8e0
+    Function declares 1 params but call sites push 5 (4 missing)...
+  cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_FUN_0054bd60
+    Function declares 1 params but call sites push 5 (4 missing)...
+  cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_0054c1e0
+    Function declares 1 params but call sites push 3 (2 missing)...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBounds_FUN_00489800
+    Function declares 6 params but call sites push 8 (2 missing)...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCentered_FUN_00489660
+    Function declares 5 params but call sites push 6 (1 missing)...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariant_FUN_004894c0
+    Function declares 5 params but call sites push 6 (1 missing)...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120
+    Function declares 7 params but call sites push 9 (2 missing)...
+  cockpit_drawsurf.cpp_CDrawSurface_init_FUN_00486ee0
+    Function declares 6 params but call sites push 10 (4 missing)...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_00489450
+    Function declares 4 params but call sites push 5 (1 missing)...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredBoth_FUN_00489730
+    Function declares 5 params but call sites push 6 (1 missing)...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_00489940
+    Function declares 5 params but call sites push 6 (1 missing)...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_00489c40
+    Function declares 2 params but call sites push 3 (1 missing)...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_00489a30
+    Function declares 6 params but call sites push 7 (1 missing)...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered_FUN_00489590
+    Function declares 5 params but call sites push 6 (1 missing)...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInArea_FUN_004898e0
+    Function declares 5 params but call sites push 8 (3 missing)...
+  shape_meshlod.cpp_CLodMesh_free_FUN_00515970
+    Function declares 1 params but call sites push 5 (4 missing)...
+  shape_meshlod.cpp_CLodVert_findEdge_FUN_00515e50
+    Function declares 2 params but call sites push 3 (1 missing)...
+  shape_meshlod.cpp_CLodFace_computeNormalAndPlane_FUN_00519870
+    Function declares 4 params but call sites push 6 (2 missing)...
+  shape_meshlod.cpp_CLodMesh_validateEdgeCollapse_FUN_00518490
+    Function declares 4 params but call sites push 7 (3 missing)...
+  shape_meshlod.cpp_CLodEdge_findFace_FUN_00515d60
+    Function declares 2 params but call sites push 3 (1 missing)...
+  shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_00516d50
+    Function declares 1 params but call sites push 5 (4 missing)...
+  shape_meshlod.cpp_CLodEdge_removeFace_FUN_00515d10
+    Function declares 2 params but call sites push 6 (4 missing)...
+  shape_superopt.cpp_CondCallDebugMallocUnknownString_FUN_005cbe20
+    Function declares 0 params but call sites push 5 (5 missing)...
 
 ====================================================================================================
 TYPE: unresolved_funcptr (472 occurrences)
@@ -840,6 +990,94 @@ Example functions:
     undefined6 uVar7;...
   crt_math.c_fdiv_thunk_FUN_00606e0f
     undefined6 uStack00000020;...
+
+====================================================================================================
+TYPE: param_count_too_many (89 occurrences)
+====================================================================================================
+
+Unique patterns:
+    24x  declared:2 vs estimated:1
+    13x  declared:3 vs estimated:2
+     9x  declared:1 vs estimated:0
+     7x  declared:3 vs estimated:1
+     4x  declared:4 vs estimated:1
+     3x  declared:7 vs estimated:6
+     3x  declared:6 vs estimated:5
+     3x  declared:4 vs estimated:3
+     3x  declared:2 vs estimated:0
+     2x  declared:5 vs estimated:2
+     2x  declared:5 vs estimated:1
+     2x  declared:8 vs estimated:7
+     2x  declared:4 vs estimated:2
+     2x  declared:6 vs estimated:1
+     1x  declared:5 vs estimated:4
+     1x  declared:11 vs estimated:10
+     1x  declared:14 vs estimated:8
+     1x  declared:5 vs estimated:3
+     1x  declared:3 vs estimated:0
+     1x  declared:6 vs estimated:3
+
+Example functions:
+  cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0054b000
+    Function declares 7 params but call sites push 6 (1 extra)...
+  cockpit_pkbmpset.cpp_CPackedBitmapSet_loadPBGFileComplete_FUN_0054c480
+    Function declares 6 params but call sites push 5 (1 extra)...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredWrapper_FUN_004895c0
+    Function declares 5 params but call sites push 4 (1 extra)...
+  cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBoundsWrapper_FUN_00489830
+    Function declares 6 params but call sites push 5 (1 extra)...
+  shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a150
+    Function declares 2 params but call sites push 1 (1 extra)...
+  shape_meshlod.cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0
+    Function declares 3 params but call sites push 2 (1 extra)...
+  shape_design.c_interactiveGlobalWeld_FUN_00466040
+    Function declares 1 params but call sites push 0 (1 extra)...
+  shape_design.c_weldNearbyVertices_FUN_00465c50
+    Function declares 2 params but call sites push 1 (1 extra)...
+  shape_design.c_samplePixelAndAccumulate_FUN_0046ad00
+    Function declares 11 params but call sites push 10 (1 extra)...
+  shape_design.c_clampedArccos_FUN_00461c50
+    Function declares 1 params but call sites push 0 (1 extra)...
+  shape_design.c_sampleAndFilterPixel_FUN_0046ae20
+    Function declares 14 params but call sites push 8 (6 extra)...
+  shape_design.c_interactiveWeldVertices_FUN_00465e90
+    Function declares 2 params but call sites push 1 (1 extra)...
+  shape_design.c_polygonMergerSelectAndProcess_FUN_00465160
+    Function declares 2 params but call sites push 1 (1 extra)...
+  shape_design.c_mergePolygonsWithValidation_FUN_00465b40
+    Function declares 4 params but call sites push 3 (1 extra)...
+  shape_dsemodel.cpp_CDSEModel_scaleX_FUN_0048fd70
+    Function declares 2 params but call sites push 1 (1 extra)...
+  shape_dsemodel.cpp_CDSEModel_scaleZ_FUN_0048fcc0
+    Function declares 2 params but call sites push 1 (1 extra)...
+  shape_dsemodel.cpp_CDSEModel_scaleY_FUN_0048fe20
+    Function declares 2 params but call sites push 1 (1 extra)...
+  shape_edittool.cpp_CEditorTools_showCheatInputDialog_FUN_004a0400
+    Function declares 5 params but call sites push 2 (3 extra)...
+  shape_edittool.cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004a1e90
+    Function declares 5 params but call sites push 3 (2 extra)...
+  shape_edittool.cpp_CEditorTools_draw3DProjectedLine_FUN_004a28a0
+    Function declares 3 params but call sites push 2 (1 extra)...
+  sound_sndmain.cpp_setNextSfxDelay_FUN_005a8b40
+    Function declares 1 params but call sites push 0 (1 extra)...
+  sound_sndmain.cpp_setNextSfxStaticPosition_FUN_005a88e0
+    Function declares 3 params but call sites push 0 (3 extra)...
+  sound_mp3.cpp_calculateMainDataSize_FUN_00533c50
+    Function declares 1 params but call sites push 0 (1 extra)...
+  sound_mp3.cpp_CMP3Decoder_putByte_FUN_0052f260
+    Function declares 3 params but call sites push 2 (1 extra)...
+  sound_mp3.cpp_CMP3Decoder_seek_FUN_00534ba0
+    Function declares 2 params but call sites push 1 (1 extra)...
+  wincore_winrun.cpp_waitForMutexTimeout_FUN_005f4010
+    Function declares 2 params but call sites push 1 (1 extra)...
+  wincore_winrun.cpp_winMain_FUN_005f3680
+    Function declares 5 params but call sites push 1 (4 extra)...
+  crt_process.c_build_cmdline_FUN_00610258
+    Function declares 8 params but call sites push 7 (1 extra)...
+  crt_process.c_spawnCommand_FUN_00609c90
+    Function declares 6 params but call sites push 3 (3 extra)...
+  crt_process.c_execvp_FUN_00610790
+    Function declares 4 params but call sites push 2 (2 extra)...
 
 ====================================================================================================
 TYPE: sborrow_artifact (26 occurrences)

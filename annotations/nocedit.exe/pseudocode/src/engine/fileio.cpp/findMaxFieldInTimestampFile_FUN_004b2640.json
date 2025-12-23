@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 130,
-    "complexity_score": 239,
+    "complexity_score": 254,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 5,
     "pseudocode_lines": 59,
-    "suspect_count": 15,
+    "suspect_count": 16,
     "suspect_types": [
       "badspacebase",
+      "param_count_too_few",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -291,6 +292,17 @@
       "match": "unaff_EBX",
       "text": "shape_memdbg_cpp_debugFree_FUN_0050f460(unaff_EBX,\"..\\\\engine\\\\fileio.cpp\",0x201);",
       "type": "unaffected_reg"
+    },
+    {
+      "call_site_count": 2,
+      "declared_params": 1,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 2,
+      "fix_type": "add_params",
+      "match": "declared:1 vs estimated:2",
+      "param_delta": 1,
+      "text": "Function declares 1 params but call sites push 2 (1 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

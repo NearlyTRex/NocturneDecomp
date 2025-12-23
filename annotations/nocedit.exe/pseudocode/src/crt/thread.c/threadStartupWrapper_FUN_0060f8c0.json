@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 196,
+    "complexity_score": 211,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 5,
     "pseudocode_lines": 41,
-    "suspect_count": 13,
+    "suspect_count": 14,
     "suspect_types": [
       "badspacebase",
+      "callind_esp_uncertain",
       "pointer_cast",
       "register_param",
       "stack_ref",
@@ -268,6 +269,17 @@
       "match": "&stack0xffffffd4",
       "text": "BVar2 = crt_tls_c_initialize_thread_tls_data_FUN_0060a2d8(*(void **)(&stack0xffffffd4 + iVar1));",
       "type": "stack_ref"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "0060f946",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "0060f949",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 0,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 0060f946, ADD ESP at 0060f949",
+      "type": "callind_esp_uncertain"
     }
   ]
 }

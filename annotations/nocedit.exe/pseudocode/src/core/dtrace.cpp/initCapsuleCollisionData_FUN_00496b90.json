@@ -1,13 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 28,
+    "complexity_score": 43,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 28,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "param_count_too_many"
+    ],
     "total_lines": 105
   },
   "cross_references": [
@@ -191,5 +193,17 @@
     ],
     "severity": "medium"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "call_site_count": 3,
+      "declared_params": 8,
+      "description": "Signature has too many params - likely wrong calling convention",
+      "estimated_params": 6,
+      "fix_type": "remove_params",
+      "match": "declared:8 vs estimated:6",
+      "param_delta": -2,
+      "text": "Function declares 8 params but call sites push 6 (2 extra)",
+      "type": "param_count_too_many"
+    }
+  ]
 }

@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 33,
-    "complexity_score": 24,
+    "complexity_score": 39,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
     "pseudocode_lines": 9,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "param_count_too_few",
       "pointer_cast"
     ],
     "total_lines": 42
@@ -115,6 +116,17 @@
       "match": "(CFireball *)((int)",
       "text": "g_CFireEffectFireballsEnd = (CFireball *)((int)&(g_CFireEffectFireballsEnd->base).position.x + 1);",
       "type": "pointer_cast"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 1,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 4,
+      "fix_type": "add_params",
+      "match": "declared:1 vs estimated:4",
+      "param_delta": 3,
+      "text": "Function declares 1 params but call sites push 4 (3 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 125,
-    "complexity_score": 364,
+    "complexity_score": 379,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 0,
     "pseudocode_lines": 49,
-    "suspect_count": 30,
+    "suspect_count": 31,
     "suspect_types": [
       "concat_artifact",
       "extra_output",
+      "param_count_too_few",
       "stack_param"
     ],
     "total_lines": 174
@@ -398,6 +399,17 @@
       "match": "in_stack_00000008",
       "text": "iVar3 - *(int *)(in_stack_00000004 + 0x4040 + in_stack_00000008);",
       "type": "stack_param"
+    },
+    {
+      "call_site_count": 4,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 4,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:4",
+      "param_delta": 4,
+      "text": "Function declares 0 params but call sites push 4 (4 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

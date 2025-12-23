@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 119,
+    "complexity_score": 134,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 3,
     "pseudocode_lines": 44,
-    "suspect_count": 6,
+    "suspect_count": 7,
     "suspect_types": [
       "badspacebase",
+      "param_count_too_few",
       "pointer_cast",
       "register_param"
     ],
@@ -194,6 +195,17 @@
       "match": "(SShapeEditorPolygon *)((int)",
       "text": "pSVar2 = (SShapeEditorPolygon *)((int)pSVar2 + ((uint)bVar5 * -2 + 1) * 4);",
       "type": "pointer_cast"
+    },
+    {
+      "call_site_count": 2,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 4,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:4",
+      "param_delta": 4,
+      "text": "Function declares 0 params but call sites push 4 (4 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

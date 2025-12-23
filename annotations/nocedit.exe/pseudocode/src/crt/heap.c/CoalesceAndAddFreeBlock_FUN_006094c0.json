@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 160,
-    "complexity_score": 146,
+    "complexity_score": 161,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 96,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
       "concat_artifact",
+      "param_count_too_many",
       "pointer_cast"
     ],
     "total_lines": 256
@@ -124,6 +125,17 @@
       "match": "(uint *)((int)",
       "text": "puVar4 = (uint *)((int)puVar4 + (uVar6 & 0xfffffffe));",
       "type": "pointer_cast"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 3,
+      "description": "Signature has too many params - likely wrong calling convention",
+      "estimated_params": 2,
+      "fix_type": "remove_params",
+      "match": "declared:3 vs estimated:2",
+      "param_delta": -1,
+      "text": "Function declares 3 params but call sites push 2 (1 extra)",
+      "type": "param_count_too_many"
     }
   ]
 }

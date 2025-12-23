@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 223,
-    "complexity_score": 273,
+    "complexity_score": 288,
     "cross_reference_count": 2,
     "function_call_count": 10,
     "global_count": 14,
     "pseudocode_lines": 103,
-    "suspect_count": 15,
+    "suspect_count": 16,
     "suspect_types": [
       "badspacebase",
+      "param_count_too_few",
       "register_param",
       "stack_param",
       "stack_ref"
@@ -384,6 +385,17 @@
       "match": "in_stack_00000008",
       "text": "pcStack_194 = in_stack_00000008;",
       "type": "stack_param"
+    },
+    {
+      "call_site_count": 2,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 5,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:5",
+      "param_delta": 5,
+      "text": "Function declares 0 params but call sites push 5 (5 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

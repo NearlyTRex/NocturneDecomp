@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 90,
-    "complexity_score": 261,
+    "complexity_score": 276,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "pseudocode_lines": 51,
-    "suspect_count": 19,
+    "suspect_count": 20,
     "suspect_types": [
       "concat_artifact",
+      "param_count_too_few",
       "stack_param",
       "sub_artifact",
       "unknown_field"
@@ -305,6 +306,17 @@
       "match": "CONCAT22",
       "text": "return (double)CONCAT44 /* combine 2-byte values */(uStack_18,CONCAT22 /* combine 2-byte values */(uStack_1a,local_1c));",
       "type": "concat_artifact"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 2,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 3,
+      "fix_type": "add_params",
+      "match": "declared:2 vs estimated:3",
+      "param_delta": 1,
+      "text": "Function declares 2 params but call sites push 3 (1 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 72,
+    "complexity_score": 87,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 3,
     "pseudocode_lines": 32,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
+      "param_count_too_few",
       "pointer_cast",
       "stack_param"
     ],
@@ -134,6 +135,17 @@
       "match": "(FILE *)((int)",
       "text": "if ((FILE *)((int)&g_StaticFilePoolStart + in_stack_00000004 * 0x1a) <= file_handle) {",
       "type": "pointer_cast"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 1,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:1",
+      "param_delta": 1,
+      "text": "Function declares 0 params but call sites push 1 (1 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }
