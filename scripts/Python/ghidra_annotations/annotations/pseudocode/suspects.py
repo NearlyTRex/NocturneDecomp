@@ -422,17 +422,15 @@ def get_frame_offset_from_pcode(pcode_data):
 
     # Only check first 20 instructions (prologue area)
     for entry in pcode_data[:20]:
-        asm = entry.get('assembly', '').upper()
+        asm = entry.get('assembly', '')
 
         # Look for MOV EBP, ESP (frame pointer setup)
-        if 'MOV' in asm and 'EBP' in asm and 'ESP' in asm:
-            # Check it's MOV EBP, ESP not MOV ESP, EBP
-            if re.search(r'MOV\s+EBP\s*,\s*ESP', asm):
-                found_mov_ebp_esp = True
+        if re.search(r'MOV\s+EBP\s*,\s*ESP', asm, re.IGNORECASE):
+            found_mov_ebp_esp = True
 
         # Look for SUB ESP, N after frame pointer setup
-        elif found_mov_ebp_esp and asm.startswith('SUB '):
-            match = re.search(r'SUB\s+ESP\s*,\s*(0x[0-9a-fA-F]+|\d+)', asm)
+        elif found_mov_ebp_esp:
+            match = re.search(r'SUB\s+ESP\s*,\s*(0x[0-9a-fA-F]+|\d+)', asm, re.IGNORECASE)
             if match:
                 try:
                     frame_offset = int(match.group(1), 0)
