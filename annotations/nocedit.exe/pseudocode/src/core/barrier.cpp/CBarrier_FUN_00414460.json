@@ -1,17 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 169,
-    "complexity_score": 297,
+    "complexity_score": 63,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 6,
-    "pseudocode_lines": 77,
-    "suspect_count": 21,
-    "suspect_types": [
-      "callind_esp_uncertain",
-      "stack_param"
-    ],
-    "total_lines": 246
+    "pseudocode_lines": 63,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 232
   },
   "cross_references": [],
   "function": {
@@ -76,6 +73,35 @@
     "confidence": "unknown",
     "declared_params": 1,
     "estimated_params": 1
+  },
+  "pcode_overrides": {
+    "00414479": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
+    ],
+    "004144a5": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
+    ],
+    "004144c8": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
+    ],
+    "004144e7": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
+    ],
+    "00414509": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
+    ],
+    "0041452b": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
+    ],
+    "0041454d": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
+    ],
+    "0041456f": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
+    ],
+    "00414591": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
+    ]
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.489510489510489,
@@ -147,191 +173,7 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_00000038",
-      "text": "float in_stack_00000038;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_0000004c",
-      "text": "float in_stack_0000004c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000060",
-      "text": "float in_stack_00000060;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000074",
-      "text": "float in_stack_00000074;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000088",
-      "text": "float in_stack_00000088;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_0000009c",
-      "text": "float in_stack_0000009c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 29,
-      "match": "in_stack_00000038",
-      "text": "*(float *)this_ptr->field1_0x158 = *(float *)this_ptr->field1_0x158 - in_stack_00000038;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 34,
-      "match": "in_stack_0000004c",
-      "text": "*(float *)this_ptr->field1_0x158 = *(float *)this_ptr->field1_0x158 + in_stack_0000004c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 40,
-      "match": "in_stack_00000060",
-      "text": "*(float *)(this_ptr->field1_0x158 + 4) - in_stack_00000060;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 46,
-      "match": "in_stack_00000074",
-      "text": "*(float *)(this_ptr->field1_0x158 + 4) + in_stack_00000074;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 52,
-      "match": "in_stack_00000088",
-      "text": "*(float *)(this_ptr->field1_0x158 + 8) - in_stack_00000088;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 58,
-      "match": "in_stack_0000009c",
-      "text": "*(float *)(this_ptr->field1_0x158 + 8) + in_stack_0000009c;",
-      "type": "stack_param"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "00414477",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "00414479",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 00414477, ADD ESP at 00414479",
-      "type": "callind_esp_uncertain"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "004144a3",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "004144a5",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 004144a3, ADD ESP at 004144a5",
-      "type": "callind_esp_uncertain"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "004144c6",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "004144c8",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 004144c6, ADD ESP at 004144c8",
-      "type": "callind_esp_uncertain"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "004144e5",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "004144e7",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 004144e5, ADD ESP at 004144e7",
-      "type": "callind_esp_uncertain"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "00414507",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "00414509",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 00414507, ADD ESP at 00414509",
-      "type": "callind_esp_uncertain"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "00414529",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "0041452b",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 00414529, ADD ESP at 0041452b",
-      "type": "callind_esp_uncertain"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "0041454b",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "0041454d",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 0041454b, ADD ESP at 0041454d",
-      "type": "callind_esp_uncertain"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "0041456d",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "0041456f",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 0041456d, ADD ESP at 0041456f",
-      "type": "callind_esp_uncertain"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "0041458f",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "00414591",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 0041458f, ADD ESP at 00414591",
-      "type": "callind_esp_uncertain"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

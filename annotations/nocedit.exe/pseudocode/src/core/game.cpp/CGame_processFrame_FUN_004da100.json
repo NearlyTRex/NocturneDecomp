@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 1136,
-    "complexity_score": 694,
+    "complexity_score": 766,
     "cross_reference_count": 1,
     "function_call_count": 53,
     "global_count": 77,
-    "pseudocode_lines": 369,
-    "suspect_count": 28,
+    "pseudocode_lines": 396,
+    "suspect_count": 33,
     "suspect_types": [
       "badspacebase",
-      "callind_esp_uncertain",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -18,7 +17,7 @@
       "unknown_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1505
+    "total_lines": 1532
   },
   "cross_references": [
     {
@@ -718,6 +717,26 @@
       "value": null
     }
   ],
+  "pcode_overrides": {
+    "004da2c5": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
+    ],
+    "004da364": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
+    ],
+    "004da46f": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
+    ],
+    "004da501": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
+    ],
+    "004da515": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
+    ],
+    "004daa32": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff9e4,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.971122994652406,
     "instruction_count": 935,
@@ -1090,202 +1109,213 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
-      "match": "in_stack_fffff9bc",
-      "text": "ulonglong in_stack_fffff9bc;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 26,
-      "match": "in_stack_fffff9c4",
-      "text": "CVector3i *in_stack_fffff9c4;",
+      "match": "in_stack_fffff956",
+      "text": "ulonglong in_stack_fffff956;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 61,
-      "match": "in_stack_fffff9bc",
-      "text": "iVar4 = (int)((ulonglong)in_stack_fffff9bc >> 0x20);",
+      "line": 32,
+      "match": "in_stack_fffff9da",
+      "text": "CSfxSample *in_stack_fffff9da;",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 91,
+      "line": 94,
       "match": "._0_4_",
       "text": "local_b0._0_4_ = (pCVar8->position).x;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 92,
+      "line": 95,
       "match": "._4_4_",
-      "text": "local_b0._4_4_ = (pCVar3->base_character).base_actor.location.position.y;",
+      "text": "local_b0._4_4_ = (pCVar2->base_character).base_actor.location.position.y;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 93,
+      "line": 96,
       "match": "._8_4_",
-      "text": "local_b0._8_4_ = (pCVar3->base_character).base_actor.location.position.z;",
+      "text": "local_b0._8_4_ = (pCVar2->base_character).base_actor.location.position.z;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 98,
+      "line": 101,
       "match": "._12_4_",
       "text": "local_b0._12_4_ = pCVar9->pitch;",
       "type": "unknown_field"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Unresolved stack parameter",
       "line": 112,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)&local_70 + ((uint)bVar13 * -2 + -1) * 4 + 8) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 114,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)&local_70 + ((uint)bVar13 * -2 + (uint)bVar13 * -2) * 4 + 8) =",
-      "type": "pointer_cast"
+      "match": "in_stack_fffff956",
+      "text": "(&g_CDemonCameraInstance,(CVector3i *)g_MouseX,g_MouseY,(int)in_stack_fffff956);",
+      "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 117,
-      "match": "in_stack_fffff9c4",
-      "text": "(&g_CDemonCameraInstance,output_ptr,in_stack_fffff9c4);",
+      "line": 114,
+      "match": "in_stack_fffff956",
+      "text": "input_ptr = (CVector3i *)((ulonglong)in_stack_fffff956 >> 0x20);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 119,
+      "line": 116,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)&local_70 + ((uint)bVar13 * -2 + -1) * 4 + 8) = aiStack_90[(uint)bVar13 * -2];",
+      "text": "*(int *)((int)&local_70 + ((uint)bVar14 * -2 + -1) * 4 + 8) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 120,
+      "line": 118,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)&local_70 + ((uint)bVar13 * -2 + (uint)bVar13 * -2) * 4 + 8) =",
+      "text": "*(int *)((int)&local_70 + ((uint)bVar14 * -2 + (uint)bVar14 * -2) * 4 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 123,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)&local_70 + ((uint)bVar14 * -2 + -1) * 4 + 8) = aiStack_90[(uint)bVar14 * -2];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 124,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)&local_70 + ((uint)bVar14 * -2 + (uint)bVar14 * -2) * 4 + 8) =",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 129,
+      "line": 133,
       "match": "._0_1_",
       "text": "g_MouseButtonFlags._0_1_ = (byte)g_MouseButtonFlags & 0xfe;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 207,
+      "line": 208,
       "match": "(int *)((int)",
       "text": "*(int *)((int)g_ScreenBufferArray + local_24));",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler double/longlong extraction artifact",
-      "line": 258,
+      "line": 261,
       "match": "SUB84",
-      "text": "SUB84 /* extract 2-byte value */(1.0 / (double)this_ptr->delta_time_float,0));",
+      "text": "(local_3dc,\"FR: %f, AVG: %f, PC: %d\",SUB84 /* extract 2-byte value */(dVar18,0),",
       "type": "sub_artifact"
     },
     {
       "description": "Decompiler double/longlong extraction artifact",
-      "line": 265,
+      "line": 262,
       "match": "SUB84",
-      "text": "(double)(pCVar3->base_character).base_actor.location.position.y,SUB84 /* extract 2-byte value */(dVar1,0),",
+      "text": "(int)((ulonglong)dVar18 >> 0x20),SUB84 /* extract 2-byte value */((double)DAT_02d7c2e8 / _DAT_02d7c2e0,0),",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 275,
+      "match": "SUB84",
+      "text": "(double)(pCVar2->base_character).base_actor.location.position.y,SUB84 /* extract 2-byte value */(dVar18,0),",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 276,
+      "match": "SUB84",
+      "text": "(int)((ulonglong)dVar18 >> 0x20),SUB84 /* extract 2-byte value */(dVar16,0),(int)((ulonglong)dVar16 >> 0x20)",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 277,
+      "match": "SUB84",
+      "text": ",SUB84 /* extract 2-byte value */(dVar17,0),(int)((ulonglong)dVar17 >> 0x20),",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 289,
+      "match": "SUB84",
+      "text": "(local_3dc,\"Fudge: %g,%g,%g\",(double)*pfVar3,SUB84 /* extract 2-byte value */((double)pfVar3[1],0),",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 290,
+      "match": "SUB84",
+      "text": "(int)((ulonglong)(double)pfVar3[1] >> 0x20),SUB84 /* extract 2-byte value */((double)pfVar3[2],0),",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 304,
+      "match": "SUB84",
+      "text": "SUB84 /* extract 2-byte value */(dVar16,0),(int)((ulonglong)dVar16 >> 0x20),SUB84 /* extract 2-byte value */(dVar17,0),",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 304,
+      "match": "SUB84",
+      "text": "SUB84 /* extract 2-byte value */(dVar16,0),(int)((ulonglong)dVar16 >> 0x20),SUB84 /* extract 2-byte value */(dVar17,0),",
       "type": "sub_artifact"
     },
     {
       "description": "Direct stack address reference",
-      "line": 301,
+      "line": 327,
       "match": "&stack0xfffff9d4",
       "text": "sound_sndmain_cpp_CSfxSample_init_FUN_005a8480((CSfxSample *)&stack0xfffff9d4);",
       "type": "stack_ref"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 302,
-      "match": "&stack0xfffff9d4",
-      "text": "pcVar14 = &stack0xfffff9d4;",
-      "type": "stack_ref"
+      "description": "Unresolved stack parameter",
+      "line": 328,
+      "match": "in_stack_fffff9da",
+      "text": "in_stack_fffff9da = (CSfxSample *)&stack0xfffff9d4;",
+      "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 306,
+      "line": 328,
+      "match": "&stack0xfffff9d4",
+      "text": "in_stack_fffff9da = (CSfxSample *)&stack0xfffff9d4;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 329,
+      "match": "in_stack_fffff9da",
+      "text": "iVar4 = sound_sndmain_cpp_getSfxSampleInfo_FUN_005a96e0(uVar5,in_stack_fffff9da);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 331,
+      "match": "in_stack_fffff9da",
+      "text": "in_stack_fffff9da = y_pos;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 332,
       "match": "&stack0xfffff9d4",
       "text": "engine_2d_c_drawTextXY_FUN_00402130(0,(int)y_pos,&stack0xfffff9d4);",
       "type": "stack_ref"
     },
     {
-      "add_esp_value": 12,
-      "callind_address": "004da2bc",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "004da2c5",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 004da2bc, ADD ESP at 004da2c5",
-      "type": "callind_esp_uncertain"
-    },
-    {
-      "add_esp_value": 12,
-      "callind_address": "004da358",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "004da364",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 004da358, ADD ESP at 004da364",
-      "type": "callind_esp_uncertain"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "004da46c",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "004da46f",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 004da46c, ADD ESP at 004da46f",
-      "type": "callind_esp_uncertain"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "004da4ff",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "004da501",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 004da4ff, ADD ESP at 004da501",
-      "type": "callind_esp_uncertain"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "004da512",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "004da515",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 004da512, ADD ESP at 004da515",
-      "type": "callind_esp_uncertain"
-    },
-    {
-      "add_esp_value": 4,
-      "callind_address": "004daa2c",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "004daa32",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 004daa2c, ADD ESP at 004daa32",
-      "type": "callind_esp_uncertain"
+      "description": "Unresolved stack parameter",
+      "line": 350,
+      "match": "in_stack_fffff9da",
+      "text": "(SCollisionInfo *)in_stack_fffff9da);",
+      "type": "stack_param"
     }
   ]
 }

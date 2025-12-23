@@ -1,20 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 267,
-    "complexity_score": 271,
+    "complexity_score": 242,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 12,
-    "pseudocode_lines": 126,
-    "suspect_count": 12,
+    "pseudocode_lines": 122,
+    "suspect_count": 10,
     "suspect_types": [
       "badspacebase",
-      "callind_esp_uncertain",
       "register_param",
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 393
+    "total_lines": 389
   },
   "cross_references": [
     {
@@ -197,6 +196,11 @@
     "declared_params": 1,
     "estimated_params": 3
   },
+  "pcode_overrides": {
+    "00544937": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffb8,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.9818181818181815,
     "instruction_count": 220,
@@ -300,70 +304,52 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 32,
+      "line": 31,
       "match": "in_stack_00000008",
       "text": "collision_info = in_stack_00000008;",
       "type": "stack_param"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 47,
-      "match": "&stack0xfffffff0",
-      "text": "((CDemonActor *)this_ptr,(CVector3f *)&stack0xfffffff0,input_local_point);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 56,
+      "line": 55,
       "match": "in_stack_00000008",
       "text": "(float)in_stack_00000008 * fVar4 * fVar3;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 98,
+      "line": 97,
       "match": "in_stack_00000008",
       "text": "(float)in_stack_00000008 * (float)32;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
+      "line": 99,
+      "match": "in_stack_00000008",
+      "text": "(float)in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
       "line": 101,
       "match": "in_stack_00000008",
-      "text": "*(float *)((this_ptr->base_character).field2_0x240c + 0x1c) * (float)in_stack_00000008 +",
+      "text": "(float)in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 104,
+      "line": 102,
       "match": "in_stack_00000008",
-      "text": "*(float *)((this_ptr->base_character).field2_0x240c + 0x20) * (float)in_stack_00000008 +",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 107,
-      "match": "in_stack_00000008",
-      "text": "*(float *)((this_ptr->base_character).field2_0x240c + 0x24) * (float)in_stack_00000008 +",
+      "text": "fStack_20 = *(float *)((this_ptr->base_character).field2_0x240c + 0x24) * (float)in_stack_00000008",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 121,
-      "match": "&stack0xffffffdc",
-      "text": "puStack_2c = &stack0xffffffdc;",
+      "line": 117,
+      "match": "&stack0xffffffc0",
+      "text": "puStack_48 = &stack0xffffffc0;",
       "type": "stack_ref"
-    },
-    {
-      "add_esp_value": 4,
-      "callind_address": "00544931",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "00544937",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 00544931, ADD ESP at 00544937",
-      "type": "callind_esp_uncertain"
     }
   ],
   "vtable_info": {

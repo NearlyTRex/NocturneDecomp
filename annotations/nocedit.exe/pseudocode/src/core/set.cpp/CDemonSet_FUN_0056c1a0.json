@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 801,
-    "complexity_score": 440,
+    "complexity_score": 425,
     "cross_reference_count": 6,
     "function_call_count": 35,
     "global_count": 47,
     "pseudocode_lines": 280,
-    "suspect_count": 13,
+    "suspect_count": 12,
     "suspect_types": [
       "badspacebase",
-      "callind_esp_uncertain",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -493,6 +492,11 @@
       "value": null
     }
   ],
+  "pcode_overrides": {
+    "0056c62c": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffac,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.7,
     "instruction_count": 620,
@@ -762,17 +766,6 @@
       "match": "(uint *)((int)",
       "text": "puVar1 = (uint *)((int)g_ActiveLightList + iVar6);",
       "type": "pointer_cast"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "0056c629",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "0056c62c",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 0056c629, ADD ESP at 0056c62c",
-      "type": "callind_esp_uncertain"
     }
   ]
 }

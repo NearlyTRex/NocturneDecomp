@@ -1,17 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 250,
-    "complexity_score": 427,
+    "complexity_score": 457,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 26,
     "pseudocode_lines": 202,
-    "suspect_count": 20,
+    "suspect_count": 23,
     "suspect_types": [
       "badspacebase",
-      "callind_esp_uncertain",
       "register_param",
       "suspect_float",
+      "unknown_field",
       "warning_unreachable"
     ],
     "total_lines": 452
@@ -235,6 +235,11 @@
     "confidence": "unknown",
     "declared_params": 1,
     "estimated_params": 1
+  },
+  "pcode_overrides": {
+    "004c04c9": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff3c,4)"
+    ]
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.680365296803653,
@@ -464,6 +469,13 @@
       "type": "register_param"
     },
     {
+      "description": "Unknown/mangled field access",
+      "line": 62,
+      "match": "._8_4_",
+      "text": "auStack_54._8_4_ = (uint)ROUND(256f * 0.4);",
+      "type": "unknown_field"
+    },
+    {
       "description": "Likely misinterpreted integer as float",
       "line": 101,
       "match": "9.18341e-41",
@@ -520,6 +532,27 @@
       "type": "suspect_float"
     },
     {
+      "description": "Unknown/mangled field access",
+      "line": 146,
+      "match": "._0_4_",
+      "text": "auStack_54._0_4_ = (uint)ROUND(local_b4 * 256f);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 147,
+      "match": "._4_4_",
+      "text": "auStack_54._4_4_ = (uint)ROUND(local_b4 * 256f);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 148,
+      "match": "._8_4_",
+      "text": "auStack_54._8_4_ = (uint)ROUND(256f * 0.0);",
+      "type": "unknown_field"
+    },
+    {
       "description": "Likely misinterpreted integer as float",
       "line": 183,
       "match": "9.18341e-41",
@@ -574,17 +607,6 @@
       "match": "9.18341e-41",
       "text": "g_RenderVertexBuffer[3].fog = 9.18341e-41;",
       "type": "suspect_float"
-    },
-    {
-      "add_esp_value": 12,
-      "callind_address": "004c04bb",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "004c04c9",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 004c04bb, ADD ESP at 004c04c9",
-      "type": "callind_esp_uncertain"
     }
   ],
   "vtable_info": {

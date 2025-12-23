@@ -28,7 +28,7 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
   byte bVar15;
   int in_stack_00000008;
   int *in_stack_0000000c;
-  CDemonActor *in_stack_fffff570;
+  ulonglong in_stack_fffff570;
   float local_a88;
   char local_a84 [255];
   char local_985 [100];
@@ -56,13 +56,14 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
   CVector3f local_110 [2];
   CVector3f local_f8 [2];
   uint local_e0;
-  int local_dc;
-  uint local_d8;
+  uint local_dc;
+  int local_d8;
   char *local_d4;
   char *local_d0;
   int local_cc;
   char *local_c8;
-  int local_c4 [2];
+  byte local_c4 [4];
+  uint local_c0;
   char *local_bc;
   int local_b8;
   CDemonActor *local_b4;
@@ -95,8 +96,7 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
   int local_38;
   int local_34;
   CLocation *local_30;
-  int iStack_2c;
-  float *pfStack_28;
+  float *pfStack_2c;
   int local_20;
   int local_1c;
   float local_18 [2];
@@ -186,6 +186,7 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
     *in_stack_0000000c = *in_stack_0000000c + 1;
     pcVar13 = pcVar13 + 1;
     iVar6 = core_event_cpp_FUN_004b0f90();
+    pCVar8 = (CDemonActor *)in_stack_fffff570;
   } while (iVar6 != 0);
   *pcVar13 = '\0';
   if (*(char *)(in_stack_00000008 + *in_stack_0000000c) != '(') {
@@ -593,16 +594,15 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
                 } while (cVar1 != '\0');
               }
               else {
-                pCVar8 = (CDemonActor *)core_event_cpp_FUN_004aa400();
-                if (pCVar8 != (CDemonActor *)0x0) {
-                  if (pCVar8 == DAT_0065d95c) {
+                pCVar9 = (CDemonActor *)core_event_cpp_FUN_004aa400();
+                if (pCVar9 != (CDemonActor *)0x0) {
+                  if (pCVar9 == DAT_0065d95c) {
                     *in_stack_0000000c = *in_stack_0000000c + local_90;
                   }
                   else {
-                    iVar6 = (*pCVar8->vtable[1].hasCollision)
-                                      (pCVar8,(SCollisionInfo *)in_stack_fffff570);
-                    local_d8 = (uint)(1 < iVar6);
-                    *in_stack_0000000c = *in_stack_0000000c + local_88;
+                    iVar6 = (*pCVar9->vtable[1].hasCollision)(pCVar9,(SCollisionInfo *)pCVar8);
+                    local_dc = (uint)(1 < iVar6);
+                    *in_stack_0000000c = *in_stack_0000000c + local_8c;
                   }
                   goto LAB_004ae5e7;
                 }
@@ -1115,29 +1115,30 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
                               local_e0 = 0;
                               if (local_b4 != DAT_0065d95c) {
                                 local_30 = &local_b4->location;
-                                local_c4[1] = 0;
+                                local_c0 = 0;
                                 for (iVar6 = 0;
                                     iVar6 < *(int *)(g_CDemonSetPtr->field19_0x14f0a0 + 0x1f3c);
                                     iVar6 = iVar6 + 1) {
                                   iVar7 = *(int *)(g_CDemonSetPtr->field19_0x14f0a0 +
-                                                  local_b8 + 8000);
-                                  if ((((local_ac == *(int *)(iVar7 + 0xbe3c)) &&
+                                                  (int)local_bc + 8000);
+                                  if ((((local_b0 == (char *)*(int *)(iVar7 + 0xbe3c)) &&
                                        (iVar10 = (**(code **)(*(int *)(iVar7 + 0x154) + 0x120))(),
                                        iVar10 < 1)) &&
                                       (iVar10 = (**(code **)(*(int *)(iVar7 + 0x154) + 0x68))(),
                                       iVar10 == 0)) &&
-                                     (fVar2 = *(float *)(iVar7 + 0x20) - *pfStack_28,
-                                     fVar4 = *(float *)(iVar7 + 0x24) - pfStack_28[1],
-                                     fVar3 = *(float *)(iVar7 + 0x28) - pfStack_28[2],
+                                     (fVar2 = *(float *)(iVar7 + 0x20) - *pfStack_2c,
+                                     fVar4 = *(float *)(iVar7 + 0x24) - pfStack_2c[1],
+                                     fVar3 = *(float *)(iVar7 + 0x28) - pfStack_2c[2],
                                      SQRT(fVar3 * fVar3 + fVar4 * fVar4 + fVar2 * fVar2) <=
                                      (float)30)) {
-                                    local_d8 = 1;
+                                    local_dc = 1;
                                     break;
                                   }
-                                  local_b8 = local_b8 + 4;
+                                  local_bc = (char *)((int)local_bc + 4);
                                 }
                               }
-                              *in_stack_0000000c = *in_stack_0000000c + iStack_2c;
+                              *in_stack_0000000c = (int)&(local_30->position).x + *in_stack_0000000c
+                              ;
                               goto LAB_004ae5e7;
                             }
                           }
@@ -1166,18 +1167,17 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
                             } while (cVar1 != '\0');
                             return -1;
                           }
-                          pCVar8 = (CDemonActor *)core_event_cpp_FUN_004aa400();
-                          if (pCVar8 == (CDemonActor *)0x0) {
+                          pCVar9 = (CDemonActor *)core_event_cpp_FUN_004aa400();
+                          if (pCVar9 == (CDemonActor *)0x0) {
                             return -1;
                           }
-                          if (pCVar8 == DAT_0065d95c) {
-                            local_d8 = (uint)pCVar8 ^ (uint)DAT_0065d95c;
+                          if (pCVar9 == DAT_0065d95c) {
+                            local_dc = (uint)pCVar9 ^ (uint)DAT_0065d95c;
                           }
                           else {
-                            local_d8 = (*pCVar8->vtable[1].processMeleeHit)
-                                                 (pCVar8,(int)in_stack_fffff570);
+                            local_dc = (*pCVar9->vtable[1].processMeleeHit)(pCVar9,(int)pCVar8);
                           }
-                          *in_stack_0000000c = *in_stack_0000000c + (int)local_18[0];
+                          *in_stack_0000000c = *in_stack_0000000c + local_1c;
                         }
                         else {
                           iVar6 = crt_string_c_stricmp_FUN_005fe7f0
@@ -1256,26 +1256,26 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
                                 } while (cVar1 != '\0');
                               }
                               else {
-                                pCVar8 = (CDemonActor *)core_event_cpp_FUN_004aa400();
-                                if (pCVar8 != (CDemonActor *)0x0) {
-                                  if (pCVar8 == DAT_0065d95c) {
+                                pCVar9 = (CDemonActor *)core_event_cpp_FUN_004aa400();
+                                if (pCVar9 != (CDemonActor *)0x0) {
+                                  if (pCVar9 == DAT_0065d95c) {
                                     *in_stack_0000000c = *in_stack_0000000c + local_cc;
                                   }
                                   else {
-                                    iVar6 = (*pCVar8->vtable[1].onPickup)(pCVar8,in_stack_fffff570);
-                                    local_d8 = (uint)(iVar6 != 0);
-                                    *in_stack_0000000c = *in_stack_0000000c + local_c4[0];
+                                    iVar6 = (*pCVar9->vtable[1].onPickup)(pCVar9,pCVar8);
+                                    local_dc = (uint)(iVar6 != 0);
+                                    *in_stack_0000000c = *in_stack_0000000c + (int)local_c8;
                                   }
                                   goto LAB_004ae5e7;
                                 }
                               }
                               return -1;
                             }
-                            local_d8 = 0xffffffff;
+                            local_d8 = -1;
                             crt_stdio_c_sscanf_FUN_0060013c
                                       ((char *)(in_stack_00000008 + *in_stack_0000000c),
                                        " ( %f )%n",local_18,&local_d8);
-                            if ((int)local_d8 < 3) {
+                            if (local_d8 < 3) {
                               pcVar13 = "Error parsing randBool parameters.";
                               pcVar14 = &DAT_02d0a460;
                               do {
@@ -1307,11 +1307,11 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
     }
     goto LAB_004ae5e7;
   }
-  local_dc = -1;
+  local_dc = 0xffffffff;
   crt_stdio_c_sscanf_FUN_0060013c
             ((char *)(in_stack_00000008 + *in_stack_0000000c)," ( %s %s %[^ )] )%n",acStack_921 + 1,
              local_985 + 1,local_3a9 + 1,&local_dc);
-  if (local_dc < 3) {
+  if ((int)local_dc < 3) {
     pcVar13 = "Error parsing cmp parameters.";
     pcVar14 = &DAT_02d0a460;
     do {
@@ -1485,7 +1485,7 @@ LAB_004ae5e7:
             [(byte)(*(char *)(in_stack_00000008 + *in_stack_0000000c) + 1)] & 2U) != 0) {
       *in_stack_0000000c = *in_stack_0000000c + 1;
     }
-    return local_d8;
+    return local_dc;
   }
   core_event_cpp_CEventList_FUN_004b0830(g_CEventListPtr);
   switch(iVar6) {

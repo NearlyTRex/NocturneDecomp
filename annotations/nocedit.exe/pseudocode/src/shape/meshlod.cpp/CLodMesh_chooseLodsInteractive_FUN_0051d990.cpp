@@ -9,106 +9,99 @@
 int __cdecl shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(CLodMesh *this_ptr)
 
 {
-  uint uVar1;
-  uchar uVar2;
-  int iVar3;
-  CVector3f *pCVar4;
-  float fVar5;
+  float *pfVar1;
+  float fVar2;
+  uchar uVar3;
+  int iVar4;
+  CVector3f *pCVar5;
+  CStrList_vtable *d2;
+  float fVar6;
   CSpotView *this_ptr_00;
   undefined3 extraout_var;
   undefined3 extraout_var_00;
-  int iVar6;
-  int *piVar7;
-  int iVar8;
-  BADSPACEBASE *in_ESP;
-  uint unaff_EBP;
+  int iVar7;
+  float fVar8;
   int *piVar9;
+  BADSPACEBASE *in_ESP;
+  int unaff_ESI;
+  float fVar10;
+  int *piVar11;
   SIZE_T n;
-  bool bVar10;
-  double dVar11;
+  bool bVar12;
+  double dVar13;
   int *in_stack_00000008;
   int *in_stack_0000000c;
   int in_stack_00000010;
   uint in_stack_00000014;
-  uint in_stack_00000018;
-  int in_stack_00000024;
-  int *in_stack_00000030;
-  int in_stack_00000034;
-  int *piStack00000038;
-  int *in_stack_0000003c;
-  char *in_stack_00000040;
-  int in_stack_00000060;
-  int in_stack_00000064;
-  int in_stack_00000080;
-  int in_stack_00000084;
-  int in_stack_00000090;
-  int in_stack_00000098;
-  int in_stack_000000a0;
-  int in_stack_000000a4;
-  int in_stack_000000a8;
-  int *in_stack_000000ac;
-  int in_stack_000000b8;
-  int in_stack_000000f4;
-  CGame *in_stack_fffff89c;
+  int in_stack_0000001c;
+  int *in_stack_00000028;
+  int in_stack_0000002c;
+  int *piStack00000030;
+  int *in_stack_00000034;
+  char *in_stack_00000038;
+  CGame *in_stack_fffff894;
+  CStrList_vtable *d3;
+  CStrList_vtable *d4;
+  CStrList_vtable *d5;
+  CDemonRenderer *d6;
+  char *in_stack_fffff8c4;
+  int in_stack_fffff8c8;
   char *in_stack_fffff8cc;
-  CKeys *in_stack_fffff8d0;
-  char *in_stack_fffff8d4;
-  char *in_stack_fffff8e8;
-  CStrList_vtable *in_stack_fffff9a4;
-  CStrList_vtable *in_stack_fffff9a8;
-  CStrList_vtable *in_stack_fffff9ac;
-  CStrList_vtable *in_stack_fffff9b0;
-  uint in_stack_fffff9b4;
-  SLodSamplePoint *pSStack_3ac;
-  float afStack_390 [19];
-  uint auStack_344 [10];
-  byte auStack_31c [4];
-  uint auStack_318 [26];
-  int aiStack_2b0 [44];
-  char acStack_200 [4];
-  char acStack_1fc [20];
-  char acStack_1e8 [4];
-  char acStack_1e4 [12];
-  char acStack_1d8 [4];
-  char acStack_1d4 [56];
-  char acStack_19c [4];
-  char acStack_198 [56];
-  byte auStack_160 [40];
+  char *in_stack_fffff8e0;
+  float local_3d8 [4];
+  byte auStack_3c8 [4];
+  float afStack_3c4 [4];
+  SLodSamplePoint *pSStack_3b4;
+  float afStack_398 [84];
+  char local_248 [4];
+  char acStack_244 [60];
+  char acStack_208 [4];
+  char acStack_204 [20];
+  char acStack_1f0 [4];
+  char acStack_1ec [12];
+  char acStack_1e0 [4];
+  char acStack_1dc [100];
+  int local_178;
+  byte auStack_168 [40];
+  int iStack_140;
   int iStack_138;
-  int iStack_130;
-  byte auStack_11c [8];
-  byte auStack_114 [56];
-  FILE *local_dc;
+  byte auStack_124 [8];
+  byte auStack_11c [56];
+  FILE *local_e4;
+  float local_e0;
+  CLodEdge *local_dc;
   float local_d8;
   CLodEdge *local_d4;
-  float local_d0;
-  CLodEdge *local_cc;
-  SSpatialGrid *local_c8;
-  byte local_c4 [4];
-  byte local_c0 [8];
+  SSpatialGrid *local_d0;
+  byte local_cc [4];
+  byte local_c8 [8];
+  float local_c0;
+  SLodSamplePoint *local_bc;
   float local_b8;
-  SLodSamplePoint *local_b4;
+  float local_b4;
   float local_b0;
   float fStack_ac;
-  float local_a8;
+  FILE *local_a8;
   float local_a4;
-  FILE *pFStack_a0;
+  CLodEdge *pCStack_a0;
   float fStack_9c;
   CLodEdge *local_98;
-  float local_94;
-  CLodEdge *local_90;
-  byte local_8c [20];
-  SLodSamplePoint *local_78;
-  float local_74;
-  byte local_70 [8];
+  byte local_94 [20];
+  SLodSamplePoint *local_80;
+  float local_7c;
+  byte local_78 [8];
+  float local_70;
+  float fStack_6c;
   float fStack_68;
-  float local_64;
-  float local_60;
-  CBoundingBox3D local_5c;
-  CVector3f CStack_40;
+  CBoundingBox3D local_64;
+  CVector3f local_48;
+  float local_38;
+  float local_34;
   float local_30;
-  float local_2c;
-  float fStack_28;
+  int local_2c;
+  int iStack_28;
+  int iStack_1c;
+  int local_14;
   
   if (this_ptr->next_lod == (CLodMesh *)0x0) {
     g_CurrentFilename = "..\\shape\\meshlod.cpp";
@@ -116,359 +109,352 @@ int __cdecl shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(CLodMe
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't call LodMesh::chooseLodsInteractive until LODs have been created!");
   }
   *in_stack_00000008 = 999999;
-  local_2c = 1.4013e-45;
-  iVar3 = shape_meshlod_cpp_CLodMesh_countUnprocessedFaces_FUN_005164d0(this_ptr->next_lod);
-  *in_stack_0000000c = iVar3;
+  local_34 = 1.4013e-45;
+  iVar4 = shape_meshlod_cpp_CLodMesh_countUnprocessedFaces_FUN_005164d0(this_ptr->next_lod);
+  *in_stack_0000000c = iVar4;
   shape_meshlod_cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500
-            (this_ptr,(CBoundingBox3D *)local_8c);
-  shape_spotview_cpp_CSpotView_ctor_FUN_005b95c0((CSpotView *)local_c4);
-  shape_spotview_cpp_CSpotView_FUN_005b9620((CSpotView *)local_c0);
-  pCVar4 = shape_meshlod_cpp_CLodMesh_worldToNormalizedSpace_FUN_0051b2e0
-                     (this_ptr,&local_5c.min,(CVector3f *)(local_8c + 0xc));
-  if ((CVector3f *)(local_8c + 0x10) != pCVar4) {
-    local_8c._16_4_ = pCVar4->x;
-    local_78 = (SLodSamplePoint *)pCVar4->y;
-    local_74 = pCVar4->z;
+            (this_ptr,(CBoundingBox3D *)local_94);
+  shape_spotview_cpp_CSpotView_ctor_FUN_005b95c0((CSpotView *)local_cc);
+  shape_spotview_cpp_CSpotView_FUN_005b9620((CSpotView *)local_c8);
+  pCVar5 = shape_meshlod_cpp_CLodMesh_worldToNormalizedSpace_FUN_0051b2e0
+                     (this_ptr,&local_64.min,(CVector3f *)(local_94 + 0xc));
+  if ((CVector3f *)(local_94 + 0x10) != pCVar5) {
+    local_94._16_4_ = pCVar5->x;
+    local_80 = (SLodSamplePoint *)pCVar5->y;
+    local_7c = pCVar5->z;
   }
-  pCVar4 = shape_meshlod_cpp_CLodMesh_worldToNormalizedSpace_FUN_0051b2e0
-                     (this_ptr,&CStack_40,(CVector3f *)local_70);
-  if ((CVector3f *)(local_70 + 4) != pCVar4) {
-    local_70._4_4_ = pCVar4->x;
-    fStack_68 = pCVar4->y;
-    local_64 = pCVar4->z;
+  pCVar5 = shape_meshlod_cpp_CLodMesh_worldToNormalizedSpace_FUN_0051b2e0
+                     (this_ptr,&local_48,(CVector3f *)local_78);
+  if ((CVector3f *)(local_78 + 4) != pCVar5) {
+    local_78._4_4_ = pCVar5->x;
+    local_70 = pCVar5->y;
+    fStack_6c = pCVar5->z;
   }
-  local_30 = (float)local_78 + (float)local_70._4_4_;
-  local_60 = local_30 * 0.5f;
-  local_2c = local_74 + fStack_68;
-  fStack_28 = (float)local_70._0_4_ + local_64;
-  local_5c.min.x = local_2c * 0.5f;
-  local_5c.min.y = fStack_28 * 0.5f;
-  if (&fStack_9c != &local_60) {
-    fStack_9c = local_60;
-    local_98 = (CLodEdge *)local_5c.min.x;
-    local_94 = local_5c.min.y;
+  local_38 = (float)local_80 + (float)local_78._4_4_;
+  fStack_68 = local_38 * 0.5f;
+  local_34 = local_7c + local_70;
+  local_30 = (float)local_78._0_4_ + fStack_6c;
+  local_64.min.x = local_34 * 0.5f;
+  local_64.min.y = local_30 * 0.5f;
+  if (&local_a4 != &fStack_68) {
+    local_a4 = fStack_68;
+    pCStack_a0 = (CLodEdge *)local_64.min.x;
+    fStack_9c = local_64.min.y;
   }
-  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_fffff89c);
-  shape_meshlod_cpp_CLodMesh_ctor_FUN_00515840((CLodMesh *)auStack_160);
-  CStack_40.y = local_60 - (float)local_70._4_4_;
-  iVar3 = -1;
-  CStack_40.x = local_64 - (float)local_70._0_4_;
-  CStack_40.z = local_5c.min.x - fStack_68;
+  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_fffff894);
+  shape_meshlod_cpp_CLodMesh_ctor_FUN_00515840((CLodMesh *)auStack_168);
+  local_48.y = fStack_68 - (float)local_78._4_4_;
+  afStack_3c4[2] = local_48.y * (float)0.75;
+  fVar10 = -NAN;
+  local_48.x = fStack_6c - (float)local_78._0_4_;
+  local_48.z = local_64.min.x - local_70;
   do {
-    engine_2d_c_fillRectColor_FUN_00403170(0,0,g_WindowWidth + -1,g_WindowHeight + -1,0xfc);
+    d3 = (CStrList_vtable *)0xfc;
+    d2 = (CStrList_vtable *)(g_WindowHeight - 1);
+    engine_2d_c_fillRectColor_FUN_00403170(0,0,g_WindowWidth + -1,(int)d2,0xfc);
     wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
-    if (iVar3 == 0) {
-      local_78 = pSStack_3ac;
+    if (fVar10 == 0.0) {
+      local_80 = pSStack_3b4;
     }
-    shape_spotview_cpp_CSpotView_ctor_FUN_005b95c0((CSpotView *)(auStack_114 + 0x34));
-    local_dc = pFStack_a0;
+    d4 = (CStrList_vtable *)0x51dbce;
+    shape_spotview_cpp_CSpotView_ctor_FUN_005b95c0((CSpotView *)(auStack_11c + 0x34));
+    local_e4 = local_a8;
+    local_e0 = local_a4;
+    local_dc = pCStack_a0;
     local_d8 = fStack_9c;
     local_d4 = local_98;
-    local_d0 = local_94;
-    local_cc = local_90;
-    local_c8 = (SSpatialGrid *)local_8c._0_4_;
-    if (local_c4 != local_8c + 4) {
-      local_c4 = (byte  [4])local_8c._4_4_;
-      local_c0._0_4_ = local_8c._8_4_;
-      local_c0._4_4_ = local_8c._12_4_;
+    local_d0 = (SSpatialGrid *)local_94._0_4_;
+    if (local_cc != local_94 + 4) {
+      local_cc = (byte  [4])local_94._4_4_;
+      local_c8._0_4_ = local_94._8_4_;
+      local_c8._4_4_ = local_94._12_4_;
     }
-    local_b4 = local_78;
-    local_b0 = local_74;
-    local_a4 = fStack_68;
-    local_b8 = 0.0;
-    fStack_ac = 0.0;
-    local_a8 = 0.0;
-    shape_spotview_cpp_CSpotView_FUN_005b9a20((CSpotView *)&local_dc);
+    local_bc = local_80;
+    local_b8 = local_7c;
+    fStack_ac = local_70;
+    local_c0 = 0.0;
+    local_b4 = 0.0;
+    local_b0 = 0.0;
+    shape_spotview_cpp_CSpotView_FUN_005b9a20((CSpotView *)&local_e4);
+    d5 = (CStrList_vtable *)0x51dcc3;
+    d6 = g_CDemonRendererPtr;
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
               (g_CDemonRendererPtr,&g_ZeroVector);
-    fVar5 = core_box_cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_00420840(&local_5c);
-    dVar11 = crt_math_c_round_FUN_005fe6b0((double)fVar5);
+    fVar6 = core_box_cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_00420840(&local_64);
+    dVar13 = crt_math_c_round_FUN_005fe6b0((double)fVar6);
     shape_spotview_cpp_CSpotView_FUN_005b9a20(this_ptr_00);
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
               (g_CDemonRendererPtr,&g_ZeroVector);
-    if (iVar3 < 0) {
-      iVar8 = in_stack_00000010 + -1;
-      if (iVar8 < 1) {
+    if ((int)fVar10 < 0) {
+      iVar4 = (int)in_stack_00000008 + -1;
+      if (iVar4 < 1) {
 LAB_0051e453:
-        iVar8 = in_stack_0000000c[iVar8];
+        iVar4 = in_stack_0000000c[iVar4];
       }
       else {
-        piVar9 = in_stack_00000008 + iVar8;
+        piVar11 = in_stack_00000008 + iVar4;
         do {
-          if ((int)in_stack_0000000c < *piVar9) goto LAB_0051e453;
-          iVar8 = iVar8 + -1;
-          piVar9 = piVar9 + -1;
-        } while (0 < iVar8);
-        iVar8 = in_stack_0000000c[iVar8];
+          if ((int)this_ptr < *piVar11) goto LAB_0051e453;
+          iVar4 = iVar4 + -1;
+          piVar11 = piVar11 + -1;
+        } while (0 < iVar4);
+        iVar4 = in_stack_0000000c[iVar4];
       }
     }
-    else if (iVar3 == 0) {
-      iVar8 = ((CLodMesh *)(int)ROUND(dVar11))->next_lod->tri_count;
+    else if (fVar10 == 0.0) {
+      iVar4 = this_ptr->next_lod->tri_count;
     }
     else {
-      iVar8 = in_stack_0000000c[iVar3];
+      iVar4 = in_stack_0000000c[(int)fVar10];
     }
-    if (((iStack_138 < iVar8 + -1) || (iVar8 < iStack_138)) &&
-       (shape_meshlod_cpp_CLodMesh_getLOD_FUN_0051b920((CLodMesh *)(int)ROUND(dVar11)),
-       iVar8 = INT_0067d39c, INT_0067d39c = iVar8, in_stack_00000014 == 2)) {
+    if (((iStack_140 < iVar4 + -1) || (iVar4 < iStack_140)) &&
+       (shape_meshlod_cpp_CLodMesh_getLOD_FUN_0051b920(this_ptr), iVar4 = INT_0067d39c,
+       INT_0067d39c = iVar4, in_stack_00000014 == 2)) {
       INT_0067d39c = 0;
-      shape_meshlod_cpp_CLodMesh_fixupAfterCram_FUN_0051bac0((CLodMesh *)(auStack_160 + 0x24));
-      INT_0067d39c = iVar8;
+      shape_meshlod_cpp_CLodMesh_fixupAfterCram_FUN_0051bac0((CLodMesh *)(auStack_168 + 0x24));
+      INT_0067d39c = iVar4;
     }
-    if (0 < iVar3) {
-      in_stack_0000000c[iVar3] = iStack_130;
-      in_stack_00000008[iVar3] = in_stack_00000014;
-      afStack_390[iVar3] = local_5c.min.x;
+    if (0 < (int)fVar10) {
+      in_stack_0000000c[(int)fVar10] = iStack_138;
+      in_stack_00000008[(int)fVar10] = (int)in_stack_0000000c;
+      afStack_398[(int)fVar10] = local_64.min.x;
     }
-    if (iVar3 < 0) {
+    if ((int)fVar10 < 0) {
       engine_2d_c_drawText_FUN_00401fd0("TEST MODE: Adjust view to test LODs.",0,0);
-      in_stack_fffff8d4 = (char *)0xb;
-      in_stack_fffff8d0 = (CKeys *)0x0;
-      in_stack_fffff8cc = "Press N to create a new LOD at this distance";
+      in_stack_fffff8cc = (char *)0xb;
+      in_stack_fffff8c8 = 0;
+      in_stack_fffff8c4 = "Press N to create a new LOD at this distance";
     }
-    else if (iVar3 != 0) {
-      crt_stdio_c_sprintf_FUN_005fdbd0
-                (acStack_200,"Editing LOD %d of %d.",iVar3,in_stack_00000018);
-      engine_2d_c_drawText_FUN_00401fd0(acStack_1fc,0,0);
+    else if (fVar10 != 0.0) {
+      crt_stdio_c_sprintf_FUN_005fdbd0(acStack_208,"Editing LOD %d of %d.");
+      engine_2d_c_drawText_FUN_00401fd0(acStack_204,0,0);
       engine_2d_c_drawText_FUN_00401fd0("Use LEFT/RIGHT to adjust face count.",0,0xb);
       engine_2d_c_drawText_FUN_00401fd0("Press T to go to test mode.",0,0x16);
-      in_stack_fffff8d4 = (char *)0x21;
-      in_stack_fffff8d0 = (CKeys *)0x0;
-      in_stack_fffff8cc = "Press TAB/SHIFT-TAB for prev/next LOD.";
+      in_stack_fffff8cc = (char *)0x21;
+      in_stack_fffff8c8 = 0;
+      in_stack_fffff8c4 = "Press TAB/SHIFT-TAB for prev/next LOD.";
     }
-    engine_2d_c_drawText_FUN_00401fd0
-              (in_stack_fffff8cc,(int)in_stack_fffff8d0,(int)in_stack_fffff8d4);
+    engine_2d_c_drawText_FUN_00401fd0(in_stack_fffff8c4,in_stack_fffff8c8,(int)in_stack_fffff8cc);
     g_ActiveRenderColor = 1;
     engine_2d_c_drawLine_FUN_004011b0(0,0x2b,10,0x2b);
-    in_stack_fffff8d4 = (char *)((int)in_stack_0000003c + 0xb);
-    in_stack_fffff8d0 = (CKeys *)0x0;
-    in_stack_fffff8cc = (char *)0x51de02;
-    engine_2d_c_drawLine_FUN_004011b0(0,(int)in_stack_fffff8d4,10,(int)in_stack_fffff8d4);
-    iVar8 = 0;
-    if (0 < in_stack_00000034) {
-      piStack00000038 = in_stack_00000008;
+    in_stack_fffff8cc = (char *)((int)in_stack_00000034 + 0xb);
+    in_stack_fffff8c8 = 0;
+    in_stack_fffff8c4 = (char *)0x51de02;
+    engine_2d_c_drawLine_FUN_004011b0(0,(int)in_stack_fffff8cc,10,(int)in_stack_fffff8cc);
+    iVar4 = 0;
+    if (0 < in_stack_0000002c) {
+      piStack00000030 = in_stack_00000008;
       do {
-        if (iVar8 < 1) {
-          crt_stdio_c_sprintf_FUN_005fdbd0(acStack_1e4,"LOD%d: F=%d");
+        if (iVar4 < 1) {
+          crt_stdio_c_sprintf_FUN_005fdbd0(acStack_1ec,"LOD%d: F=%d");
         }
         else {
-          crt_stdio_c_sprintf_FUN_005fdbd0(acStack_1e4,"LOD%d: P=%d F=%d");
+          crt_stdio_c_sprintf_FUN_005fdbd0(acStack_1ec,"LOD%d: P=%d F=%d");
         }
-        piVar9 = (int *)((int)piStack00000038 - (*in_stack_00000030 * in_stack_00000024) / 0x1e0);
-        if ((int)piVar9 < 0x2c) {
-          piVar9 = (int *)0x2c;
+        piVar11 = (int *)((int)piStack00000030 - (*in_stack_00000028 * in_stack_0000001c) / 0x1e0);
+        if ((int)piVar11 < 0x2c) {
+          piVar11 = (int *)0x2c;
         }
-        if ((int)piStack00000038 < (int)piVar9) {
-          piVar9 = piStack00000038;
+        if ((int)piStack00000030 < (int)piVar11) {
+          piVar11 = piStack00000030;
         }
-        if ((iVar3 == 0) && (iVar8 == 0)) {
-          uVar2 = shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330
+        if ((fVar10 == 0.0) && (iVar4 == 0)) {
+          uVar3 = shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330
                             (g_CEditorToolsPtr);
-          g_ActiveRenderColor = CONCAT31 /* combine 2-byte values */(extraout_var,uVar2);
+          g_ActiveRenderColor = CONCAT31 /* combine 2-byte values */(extraout_var,uVar3);
         }
-        else if (auStack_11c._0_4_ == *in_stack_0000003c) {
+        else if (auStack_124._0_4_ == *in_stack_00000034) {
           g_ActiveRenderColor = 0xfa;
         }
         else {
           g_ActiveRenderColor = 0xff;
         }
-        in_stack_fffff8cc = (char *)0x0;
-        engine_2d_c_drawLine_FUN_004011b0(0,(int)piVar9,10,(int)piVar9);
-        in_stack_fffff8d4 = acStack_1e8;
-        in_stack_fffff8d0 = (CKeys *)0x51def1;
-        engine_2d_c_drawText_FUN_00401fd0(in_stack_fffff8d4,10,(int)piVar9);
-        iVar8 = iVar8 + 1;
-        piStack00000038 = piStack00000038 + 1;
-      } while (iVar8 < in_stack_00000034);
+        in_stack_fffff8c4 = (char *)0x0;
+        engine_2d_c_drawLine_FUN_004011b0(0,(int)piVar11,10,(int)piVar11);
+        in_stack_fffff8cc = acStack_1f0;
+        in_stack_fffff8c8 = 0x51def1;
+        engine_2d_c_drawText_FUN_00401fd0(in_stack_fffff8cc,10,(int)piVar11);
+        iVar4 = iVar4 + 1;
+        piStack00000030 = piStack00000030 + 1;
+      } while (iVar4 < in_stack_0000002c);
     }
-    if (iVar3 != 0) {
-      in_stack_fffff8d4 =
-           in_stack_00000040 +
-           -(((int)(in_stack_00000040 + -0x2c) * (int)in_stack_00000030) / 0x1e0);
-      if ((int)in_stack_fffff8d4 < 0x2c) {
-        in_stack_fffff8d4 = (char *)0x2c;
+    if (fVar10 != 0.0) {
+      in_stack_fffff8cc =
+           in_stack_00000038 +
+           -(((int)(in_stack_00000038 + -0x2c) * (int)in_stack_00000028) / 0x1e0);
+      if ((int)in_stack_fffff8cc < 0x2c) {
+        in_stack_fffff8cc = (char *)0x2c;
       }
-      if ((int)in_stack_00000040 < (int)in_stack_fffff8d4) {
-        in_stack_fffff8d4 = in_stack_00000040;
+      if ((int)in_stack_00000038 < (int)in_stack_fffff8cc) {
+        in_stack_fffff8cc = in_stack_00000038;
       }
-      uVar2 = shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(g_CEditorToolsPtr)
+      uVar3 = shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330(g_CEditorToolsPtr)
       ;
-      g_ActiveRenderColor = CONCAT31 /* combine 2-byte values */(extraout_var_00,uVar2);
-      in_stack_fffff8d0 = (CKeys *)0x0;
-      in_stack_fffff8cc = (char *)0x51df88;
-      engine_2d_c_drawLine_FUN_004011b0(0,(int)in_stack_fffff8d4,10,(int)in_stack_fffff8d4);
+      g_ActiveRenderColor = CONCAT31 /* combine 2-byte values */(extraout_var_00,uVar3);
+      in_stack_fffff8c8 = 0;
+      in_stack_fffff8c4 = (char *)0x51df88;
+      engine_2d_c_drawLine_FUN_004011b0(0,(int)in_stack_fffff8cc,10,(int)in_stack_fffff8cc);
     }
-    shape_meshlod_cpp_CLodMesh_transformVerticesForPreview_FUN_0051e6b0((CLodMesh *)auStack_11c);
+    shape_meshlod_cpp_CLodMesh_transformVerticesForPreview_FUN_0051e6b0((CLodMesh *)auStack_124);
     if (in_stack_00000014 == 0) {
-      shape_meshlod_cpp_CLodMesh_renderShadedTriangles_FUN_0051e990((CLodMesh *)(auStack_11c + 4),0)
+      shape_meshlod_cpp_CLodMesh_renderShadedTriangles_FUN_0051e990((CLodMesh *)(auStack_124 + 4),0)
       ;
     }
     else if ((in_stack_00000014 < 2) || (in_stack_00000014 == 2)) {
       shape_meshlod_cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0
-                ((CLodMesh *)(auStack_11c + 4),0,(int)in_stack_fffff8e8);
+                ((CLodMesh *)(auStack_124 + 4),0,(int)in_stack_fffff8e0);
     }
-    iVar8 = shape_meshlod_cpp_CLodMesh_countUnprocessedFaces_FUN_005164d0((CLodMesh *)auStack_114);
-    crt_stdio_c_sprintf_FUN_005fdbd0
-              (acStack_1d8,"Current: %d pixelHeight, %d faces",in_stack_0000003c,iVar8);
-    in_stack_fffff8e8 = acStack_1d4;
-    engine_2d_c_drawText_FUN_00401fd0(in_stack_fffff8e8,0,g_WindowHeight + -0xb);
+    shape_meshlod_cpp_CLodMesh_countUnprocessedFaces_FUN_005164d0((CLodMesh *)auStack_11c);
+    crt_stdio_c_sprintf_FUN_005fdbd0(acStack_1e0,"Current: %d pixelHeight, %d faces");
+    in_stack_fffff8e0 = acStack_1dc;
+    engine_2d_c_drawText_FUN_00401fd0(in_stack_fffff8e0,0,g_WindowHeight + -0xb);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
-    iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x31);
-    if (iVar8 != 0) {
-      if (in_stack_00000064 < in_stack_00000010) {
-        in_stack_0000000c[in_stack_00000064] = auStack_114._48_4_;
-        in_stack_00000008[in_stack_00000064] = in_stack_00000060;
-        auStack_344[in_stack_00000064] = unaff_EBP;
-        iVar3 = in_stack_00000064;
-        in_stack_00000064 = in_stack_00000064 + 1;
+    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x31);
+    fVar6 = local_30;
+    if (iVar4 != 0) {
+      if ((int)local_30 < in_stack_00000010) {
+        in_stack_0000000c[(int)local_30] = local_178;
+        in_stack_00000008[(int)local_30] = (int)local_34;
+        pfVar1 = local_3d8 + (int)local_30;
+        local_30 = (float)((int)local_30 + 1);
+        *pfVar1 = local_a4;
+        fVar10 = fVar6;
       }
       else {
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                   (g_CEditorToolsPtr,"Can't have more than %d LODs.",in_stack_00000010);
       }
     }
-    if (0 < iVar3) {
-      iVar8 = in_stack_0000000c[iVar3] / 0x14;
-      iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
-      if (iVar6 != 0) {
-        iVar8 = iVar8 * 3;
+    if (0 < (int)fVar10) {
+      iVar4 = in_stack_0000000c[(int)fVar10] / 0x14;
+      iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+      if (iVar7 != 0) {
+        iVar4 = iVar4 * 3;
       }
-      iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
-      if ((iVar6 != 0) || (iVar8 < 2)) {
-        iVar8 = 2;
+      iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
+      if ((iVar7 != 0) || (iVar4 < 2)) {
+        iVar4 = 2;
       }
-      in_stack_fffff8d4 = (char *)0x4b;
-      in_stack_fffff8cc = (char *)0x51e0dc;
-      in_stack_fffff8d0 = g_CKeysPtr;
-      iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x4b);
-      if (iVar6 != 0) {
-        in_stack_0000000c[iVar3] = in_stack_0000000c[iVar3] - iVar8;
+      iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x4b);
+      if (iVar7 != 0) {
+        in_stack_0000000c[(int)fVar10] = in_stack_0000000c[(int)fVar10] - iVar4;
       }
-      in_stack_fffff8e8 = (char *)0x4d;
-      iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x4d);
-      if (iVar6 != 0) {
-        in_stack_0000000c[iVar3] = in_stack_0000000c[iVar3] + iVar8;
+      iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x4d);
+      if (iVar7 != 0) {
+        in_stack_0000000c[(int)fVar10] = in_stack_0000000c[(int)fVar10] + iVar4;
       }
-      iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x21);
-      if (iVar8 != 0) {
+      iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x21);
+      if (iVar4 != 0) {
         shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020
-                  (g_CEditorToolsPtr,"Enter face count",in_stack_0000000c + iVar3,false,0,0
-                   ,true);
+                  (g_CEditorToolsPtr,"Enter face count",in_stack_0000000c + (int)fVar10,
+                   false,0,0,true);
       }
     }
-    iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x20);
-    if ((iVar8 != 0) && (0 < iVar3)) {
-      crt_stdio_c_sprintf_FUN_005fdbd0(acStack_19c,"Delete LOD %d?",iVar3);
-      iVar8 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
-                        (g_CEditorToolsPtr,acStack_198);
-      if (iVar8 != 0) {
-        in_stack_00000084 = in_stack_00000084 + -1;
-        in_stack_000000a0 = iVar3 * 4 + 4;
-        n = (in_stack_00000084 - iVar3) * 4;
-        crt_string_c_memmove_FUN_005fe5e0(in_stack_00000008 + iVar3,in_stack_00000008 + iVar3 + 1,n)
-        ;
+    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x20);
+    if ((iVar4 != 0) && (0 < (int)fVar10)) {
+      crt_stdio_c_sprintf_FUN_005fdbd0(local_248,"Delete LOD %d?",fVar10);
+      iVar4 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
+                        (g_CEditorToolsPtr,acStack_244);
+      if (iVar4 != 0) {
+        iStack_28 = iStack_28 + -1;
+        n = (iStack_28 - (int)fVar10) * 4;
         crt_string_c_memmove_FUN_005fe5e0
-                  (in_stack_0000000c + iVar3,(void *)((int)in_stack_0000000c + in_stack_000000a4),n)
-        ;
-        crt_string_c_memmove_FUN_005fe5e0(auStack_31c + iVar3 * 4,auStack_31c + in_stack_000000a8,n)
-        ;
+                  (in_stack_00000008 + (int)fVar10,in_stack_00000008 + (int)fVar10 + 1,n);
+        crt_string_c_memmove_FUN_005fe5e0
+                  (in_stack_0000000c + (int)fVar10,(void *)((int)in_stack_0000000c + unaff_ESI),n);
+        crt_string_c_memmove_FUN_005fe5e0
+                  (auStack_3c8 + (int)fVar10 * 4,auStack_3c8 + (int)ROUND(dVar13),n);
       }
     }
-    in_stack_00000098 = 0;
-    if (0 < in_stack_00000090) {
-      in_stack_000000a4 = in_stack_00000090 + -1;
+    local_14 = 0;
+    if (0 < iStack_1c) {
+      unaff_ESI = iStack_1c + -1;
       do {
-        iVar6 = 1;
-        iVar8 = iVar3;
-        piVar9 = in_stack_00000008;
-        if (1 < in_stack_000000a4) {
+        fVar8 = 1.4013e-45;
+        fVar6 = fVar10;
+        piVar11 = in_stack_00000008;
+        if (1 < unaff_ESI) {
           do {
-            piVar7 = piVar9 + 1;
-            in_stack_000000a8 = iVar6 * 4;
-            iVar3 = iVar8;
-            if (*piVar7 < piVar9[2]) {
-              in_stack_00000080 = *piVar7;
-              *piVar7 = in_stack_00000008[iVar6 + 1];
-              in_stack_00000008[iVar6 + 1] = in_stack_00000080;
-              in_stack_000000ac = in_stack_0000000c + iVar6 + 1;
-              in_stack_00000084 = in_stack_0000000c[iVar6];
-              in_stack_0000000c[iVar6] = *in_stack_000000ac;
-              *in_stack_000000ac = in_stack_00000084;
-              uVar1 = auStack_318[iVar6];
-              auStack_318[iVar6] = auStack_318[iVar6 + 1];
-              iVar3 = iVar6 + 1;
-              auStack_318[iVar6 + 1] = uVar1;
-              if ((iVar8 != iVar6) && (bVar10 = iVar8 == iVar3, iVar3 = iVar8, bVar10)) {
-                iVar3 = iVar6;
+            piVar9 = piVar11 + 1;
+            fVar10 = fVar6;
+            if (*piVar9 < piVar11[2]) {
+              local_2c = *piVar9;
+              *piVar9 = in_stack_00000008[(int)fVar8 + 1];
+              in_stack_00000008[(int)fVar8 + 1] = local_2c;
+              iStack_28 = in_stack_0000000c[(int)fVar8];
+              in_stack_0000000c[(int)fVar8] = in_stack_0000000c[(int)fVar8 + 1];
+              in_stack_0000000c[(int)fVar8 + 1] = iStack_28;
+              fVar2 = afStack_3c4[(int)fVar8];
+              afStack_3c4[(int)fVar8] = afStack_3c4[(int)fVar8 + 1];
+              fVar10 = (float)((int)fVar8 + 1);
+              afStack_3c4[(int)fVar8 + 1] = fVar2;
+              if ((fVar6 != fVar8) && (bVar12 = fVar6 == fVar10, fVar10 = fVar6, bVar12)) {
+                fVar10 = fVar8;
               }
             }
-            iVar6 = iVar6 + 1;
-            iVar8 = iVar3;
-            piVar9 = piVar7;
-          } while (iVar6 < in_stack_000000a4);
+            fVar8 = (float)((int)fVar8 + 1);
+            fVar6 = fVar10;
+            piVar11 = piVar9;
+          } while ((int)fVar8 < unaff_ESI);
         }
-        in_stack_00000098 = in_stack_00000098 + 1;
-      } while (in_stack_00000098 < in_stack_00000090);
+        local_14 = local_14 + 1;
+      } while (local_14 < iStack_1c);
     }
-    iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0xf);
-    if (iVar8 != 0) {
-      iVar8 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
-      if (iVar8 == 0) {
-        iVar3 = iVar3 + 1;
+    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0xf);
+    if (iVar4 != 0) {
+      iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+      if (iVar4 == 0) {
+        fVar10 = (float)((int)fVar10 + 1);
       }
       else {
-        iVar3 = iVar3 + -1;
+        fVar10 = (float)((int)fVar10 + -1);
       }
-      if (iVar3 < 0) {
-        iVar3 = in_stack_000000b8 + -1;
+      if ((int)fVar10 < 0) {
+        fVar10 = (float)((int)local_30 + -1);
       }
-      if (in_stack_000000b8 <= iVar3) {
-        iVar3 = 0;
+      if ((int)local_30 <= (int)fVar10) {
+        fVar10 = 0.0;
       }
     }
-    iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x14);
-    if (iVar8 != 0) {
-      if (iVar3 < 0) {
-        iVar3 = 0;
+    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x14);
+    if (iVar4 != 0) {
+      if ((int)fVar10 < 0) {
+        fVar10 = 0.0;
       }
       else {
-        iVar3 = -1;
+        fVar10 = -NAN;
       }
     }
-    iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
-    if (iVar8 != 0) {
-      shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff990);
+    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
+    if (iVar4 != 0) {
+      shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff880);
       shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                ((CStrList *)&stack0xfffff994,"Accept LOD settings.");
+                ((CStrList *)&stack0xfffff884,"Accept LOD settings.");
       shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                ((CStrList *)&stack0xfffff998,"Cancel LOD selection.");
+                ((CStrList *)&stack0xfffff888,"Cancel LOD selection.");
       shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                ((CStrList *)&stack0xfffff99c,"Oops, go back to editing the LODs.");
-      iVar8 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                        ((CPickList *)&stack0xfffff9a0,"Accept or Cancel?",-1,0);
-      if (iVar8 == 0) {
+                ((CStrList *)&stack0xfffff88c,"Oops, go back to editing the LODs.");
+      iVar4 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
+                        ((CPickList *)&stack0xfffff890,"Accept or Cancel?",-1,0);
+      if (iVar4 == 0) {
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                  ((CPickList *)&stack0xfffff9a4,0,(uint)in_stack_fffff9a4,(uint)in_stack_fffff9a8,
-                   (uint)in_stack_fffff9ac,(uint)in_stack_fffff9b0,in_stack_fffff9b4);
-        shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950((CLodMesh *)&local_5c.min.y);
-        return in_stack_000000f4;
+                  ((CPickList *)&stack0xfffff894,0,(uint)d2,(uint)d3,(uint)d4,(uint)d5,(uint)d6);
+        shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950((CLodMesh *)auStack_168);
+        return iStack_1c;
       }
-      if (iVar8 == 1) {
+      if (iVar4 == 1) {
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                  ((CPickList *)&stack0xfffff9a4,0,(uint)in_stack_fffff9a4,(uint)in_stack_fffff9a8,
-                   (uint)in_stack_fffff9ac,(uint)in_stack_fffff9b0,in_stack_fffff9b4);
-        shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950((CLodMesh *)&local_5c.min.y);
+                  ((CPickList *)&stack0xfffff894,0,(uint)d2,(uint)d3,(uint)d4,(uint)d5,(uint)d6);
+        shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950((CLodMesh *)auStack_168);
         return -1;
       }
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                ((CPickList *)&stack0xfffff9a4,0,(uint)in_stack_fffff9a4,(uint)in_stack_fffff9a8,
-                 (uint)in_stack_fffff9ac,(uint)in_stack_fffff9b0,in_stack_fffff9b4);
+                ((CPickList *)&stack0xfffff894,0,(uint)d2,(uint)d3,(uint)d4,(uint)d5,(uint)d6);
     }
-    if (-1 < iVar3) {
-      in_stack_00000084 = aiStack_2b0[iVar3];
+    if (-1 < (int)fVar10) {
+      local_94._8_4_ = afStack_3c4[(int)fVar10 + 1];
     }
-    in_stack_fffff9a4 = (CStrList_vtable *)0xf;
-    shape_spotview_cpp_CSpotView_FUN_005b9670((CSpotView *)&stack0x00000058);
+    shape_spotview_cpp_CSpotView_FUN_005b9670((CSpotView *)&local_b8);
   } while( true );
 }

@@ -13,10 +13,12 @@ int __cdecl core_mimic_cpp_CMimic_FUN_005205f0(CMimic *this_ptr)
   CBoundingBox3D *this_ptr_01;
   int iVar1;
   BADSPACEBASE *in_ESP;
-  uint *puVar2;
-  uint *puVar3;
+  float *pfVar2;
+  CVector3f *pCVar3;
   byte bVar4;
-  CMatrix3x4f *in_stack_ffffff40;
+  CMatrix3x4f *in_stack_fffffeaa;
+  CMatrix3x4f local_c4;
+  CVector3f local_94 [4];
   CBoundingBox3D local_64;
   byte local_4c [16];
   float local_3c;
@@ -55,22 +57,21 @@ int __cdecl core_mimic_cpp_CMimic_FUN_005205f0(CMimic *this_ptr)
           local_34.m[1].y = 3.1415927;
           local_38 = 0.185;
           core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
-                    ((CMatrix3x4f *)&stack0xffffff3c,(CVector3f *)(local_4c + 0xc),local_34.m + 1);
+                    (&local_c4,(CVector3f *)(local_4c + 0xc),local_34.m + 1);
           core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
-                    ((CMatrix3x4f *)&stack0xffffff3c,
+                    (&local_c4,
                      (CMatrix3x4f *)
                      (this_ptr->field0_0x0).base_character.model.bone_transform.bone_world_matrices
-                     [DAT_02f33378].m,in_stack_ffffff40);
-          puVar2 = (uint *)&stack0xffffff0c;
-          puVar3 = (uint *)&stack0xffffff6c;
+                     [DAT_02f33378].m,in_stack_fffffeaa);
+          pfVar2 = (float *)&stack0xffffff0c;
+          pCVar3 = local_94;
           for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-            *puVar3 = *puVar2;
-            puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
-            puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
+            pCVar3->x = *pfVar2;
+            pfVar2 = pfVar2 + (uint)bVar4 * -2 + 1;
+            pCVar3 = (CVector3f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
           }
-          core_xform_cpp_getTranslation_FUN_005f6110
-                    ((CVector3f *)&stack0xffffff6c,(CMatrix3x4f *)local_4c);
-          core_xform_cpp_matrixToEulerAngles_FUN_005f5690((CVector3f *)&stack0xffffff6c,&local_34);
+          core_xform_cpp_getTranslation_FUN_005f6110(local_94,(CMatrix3x4f *)local_4c);
+          core_xform_cpp_matrixToEulerAngles_FUN_005f5690(local_94,&local_34);
           engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
                     (g_CDemonRendererPtr,(CVector3i *)&local_34,(CVector3i *)local_4c);
           core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20

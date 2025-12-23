@@ -18,11 +18,13 @@ void core_bride_cpp_FUN_00424830(void)
   int iVar2;
   uint uVar3;
   BADSPACEBASE *in_ESP;
-  int unaff_EBP;
   CCharacter *in_stack_00000004;
   int in_stack_00000008;
-  float in_stack_ffffffd0;
+  int in_stack_ffffffb4;
+  int in_stack_ffffffb8;
   char *sound_name;
+  CVector3f local_3c;
+  CVector3f local_30;
   CVector3f local_24;
   
   sound_sndmain_cpp_killSfx_FUN_005a9c40
@@ -31,8 +33,7 @@ void core_bride_cpp_FUN_00424830(void)
     iVar2 = 0;
     *(float *)(in_stack_00000008 + 4) = *(float *)(in_stack_00000008 + 4) * (float)2;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-              (&in_stack_00000004->base_actor,(CVector3f *)&stack0xffffffc4,
-               (CVector3f *)(in_stack_00000008 + 0x1c));
+              (&in_stack_00000004->base_actor,&local_3c,(CVector3f *)(in_stack_00000008 + 0x1c));
     do {
       iVar2 = iVar2 + 1;
       core_fire_cpp_CFireEffect_FUN_004c79d0(g_CFireEffectPtr);
@@ -43,7 +44,7 @@ void core_bride_cpp_FUN_00424830(void)
          core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
                    (&in_stack_00000004->model,&local_24,0);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-              (&in_stack_00000004->base_actor,(CVector3f *)&stack0xffffffd0,input_local_point);
+              (&in_stack_00000004->base_actor,&local_30,input_local_point);
     core_charactr_cpp_CCharacter_FUN_0042b5b0(in_stack_00000004);
   }
   core_bride_cpp_FUN_00424600();
@@ -56,9 +57,8 @@ void core_bride_cpp_FUN_00424830(void)
   if (0.0 < in_stack_00000004->hit_points) {
     iVar2 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              (&this_ptr->motion_controller,(iVar2 == 0) + 7,(int)in_stack_ffffffd0);
-    iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
-                      (*(uint *)(in_stack_00000004[1].base_actor.create_event + 0x48));
+              (&this_ptr->motion_controller,(iVar2 == 0) + 7,in_stack_ffffffb4);
+    iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(0x4249f6);
     if (iVar2 != 0) goto LAB_00424955;
     sound_name = "ub-hurt?.wav";
   }
@@ -67,11 +67,9 @@ void core_bride_cpp_FUN_00424830(void)
     pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        (&this_ptr->motion_controller);
     if ((pSVar1->state_index == 0xe) || (pSVar1->state_index == 0xd)) goto LAB_00424955;
-    local_24.z = 6.087358e-39;
     iVar2 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
-    local_24.z = 6.08739e-39;
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              (&this_ptr->motion_controller,(iVar2 == 0) + 0xb,unaff_EBP);
+              (&this_ptr->motion_controller,(iVar2 == 0) + 0xb,in_stack_ffffffb8);
     sound_sndmain_cpp_killSfx_FUN_005a9c40
               (*(uint *)(in_stack_00000004[1].base_actor.create_event + 0x48));
     sound_name = "ub-die?.wav";
@@ -80,7 +78,6 @@ void core_bride_cpp_FUN_00424830(void)
                     (&in_stack_00000004->base_actor,sound_name);
   *(uint *)(in_stack_00000004[1].base_actor.create_event + 0x48) = uVar3;
 LAB_00424955:
-  local_24.z = 6.087459e-39;
   core_enemy_cpp_FUN_004a9f10();
   return;
 }

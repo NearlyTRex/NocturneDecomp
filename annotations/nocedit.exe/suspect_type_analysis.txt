@@ -4,25 +4,24 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  stack_param                    37646 ( 57.8%)
-  pointer_cast                    5194 (  8.0%)
-  stack_ref                       4199 (  6.4%)
-  unknown_field                   3024 (  4.6%)
-  unaffected_reg                  2774 (  4.3%)
-  concat_artifact                 1885 (  2.9%)
-  register_param                  1833 (  2.8%)
-  badspacebase                    1622 (  2.5%)
-  extra_output                    1440 (  2.2%)
+  stack_param                    36773 ( 58.5%)
+  pointer_cast                    5275 (  8.4%)
+  stack_ref                       3987 (  6.3%)
+  unknown_field                   2954 (  4.7%)
+  unaffected_reg                  2755 (  4.4%)
+  register_param                  1834 (  2.9%)
+  concat_artifact                 1832 (  2.9%)
+  badspacebase                    1622 (  2.6%)
+  extra_output                    1443 (  2.3%)
   callind_esp_no_frame            1097 (  1.7%)
-  callind_esp_uncertain           1087 (  1.7%)
-  suspect_float                    931 (  1.4%)
+  suspect_float                    853 (  1.4%)
   param_count_too_few              631 (  1.0%)
-  unresolved_funcptr               472 (  0.7%)
-  negative_offset                  416 (  0.6%)
-  sub_artifact                     284 (  0.4%)
+  unresolved_funcptr               474 (  0.8%)
+  negative_offset                  416 (  0.7%)
+  sub_artifact                     322 (  0.5%)
   warning_overlapping_globals      219 (  0.3%)
-  warning_unreachable              143 (  0.2%)
-  undefined_type                   109 (  0.2%)
+  warning_unreachable              134 (  0.2%)
+  undefined_type                   110 (  0.2%)
   param_count_too_many              89 (  0.1%)
   sborrow_artifact                  26 (  0.0%)
   warning_jumptable                 12 (  0.0%)
@@ -31,30 +30,30 @@ SUSPECT TYPE COUNTS
   warning_noreturn                   1 (  0.0%)
 
 ====================================================================================================
-TYPE: stack_param (37646 occurrences)
+TYPE: stack_param (36773 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  15342x  in_stack_00000004
-  6659x  in_stack_00000008
-  3152x  in_stack_0000000c
-  1547x  in_stack_00000010
-  1001x  in_stack_00000014
-   755x  in_stack_00000018
-   562x  in_stack_0000001c
-   400x  in_stack_00000020
-   379x  in_stack_00000024
-   290x  in_stack_00000028
-   220x  in_stack_00000030
-   216x  in_stack_0000002c
-   197x  in_stack_00000034
-   171x  in_stack_0000003c
-   160x  in_stack_00000038
-   132x  in_stack_00000040
-   119x  in_stack_00000048
-   111x  in_stack_0000004c
-    96x  in_stack_0000005c
-    91x  in_stack_00000044
+  15480x  in_stack_00000004
+  6599x  in_stack_00000008
+  3140x  in_stack_0000000c
+  1526x  in_stack_00000010
+   980x  in_stack_00000014
+   720x  in_stack_00000018
+   529x  in_stack_0000001c
+   377x  in_stack_00000020
+   344x  in_stack_00000024
+   268x  in_stack_00000028
+   192x  in_stack_00000030
+   183x  in_stack_0000002c
+   169x  in_stack_0000003c
+   163x  in_stack_00000034
+   147x  in_stack_00000038
+   100x  in_stack_00000048
+    96x  in_stack_00000040
+    88x  in_stack_0000005c
+    82x  in_stack_0000004c
+    73x  in_stack_00000044
 
 Example functions:
   cockpit_ckptutil.c_rotateBitmap_FUN_00434870
@@ -69,24 +68,24 @@ Example functions:
     int in_stack_0000001c;...
 
 ====================================================================================================
-TYPE: pointer_cast (5194 occurrences)
+TYPE: pointer_cast (5275 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  1732x  (uint *)((int)
-  1195x  (int *)((int)
-   492x  (float *)((int)
-   252x  (SRenderVertex *)((int)
-   221x  (double *)((int)
+  1806x  (uint *)((int)
+  1197x  (int *)((int)
+   487x  (float *)((int)
+   256x  (SRenderVertex *)((int)
+   224x  (double *)((int)
+   215x  (byte *)((int)
    214x  (void *)((int)
-   213x  (byte *)((int)
-   148x  (char *)((int)
+   150x  (char *)((int)
     71x  (ushort *)((int)
-    62x  (CMatrix3x4f *)((int)
-    50x  (CVector3f *)((int)
+    63x  (CMatrix3x4f *)((int)
+    48x  (CVector3f *)((int)
     47x  (short *)((int)
     34x  (SShapeEditorPolygon *)((int)
-    28x  (FILE *)((int)
+    27x  (FILE *)((int)
     17x  (CDemonActor *)((int)
     15x  (SMRGLHeaderExtended *)((int)
     14x  (HGLOBAL *)((int)
@@ -105,30 +104,30 @@ Example functions:
     pvVar2 = (void *)((int)g_ScreenBufferArray[width] + dest_y);...
 
 ====================================================================================================
-TYPE: stack_ref (4199 occurrences)
+TYPE: stack_ref (3987 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   128x  &stack0xfffffff0
-   104x  &stack0xfffffff8
-   103x  &stack0xfffffff4
-    80x  &stack0xfffffffc
-    79x  &stack0x00000000
+   115x  &stack0xfffffff0
+    94x  &stack0xfffffff4
+    91x  &stack0xfffffff8
+    76x  &stack0x00000000
+    72x  &stack0xfffffffc
     59x  &stack0xffffff48
-    58x  &stack0xffffffec
+    57x  &stack0xffffffec
     55x  &stack0xffffffc0
-    54x  &stack0xffffffd0
+    52x  &stack0xffffffd0
     51x  &stack0xffffffe8
-    49x  &stack0xffffffd8
-    46x  &stack0xffffff9c
-    45x  &stack0xffffffe4
+    47x  &stack0xffffffd8
+    45x  &stack0xffffff9c
     44x  &stack0xffffff90
-    40x  &stack0xffffff78
-    39x  &stack0x00000034
-    38x  &stack0xffffffe0
-    38x  &stack0x00000008
-    37x  &stack0xffffffdc
-    37x  &stack0xfffffee4
+    44x  &stack0xffffffe4
+    44x  &stack0xffffff78
+    42x  &stack0xffffffdc
+    39x  &stack0xffffffe0
+    36x  &stack0xfffffee4
+    36x  &stack0x00000034
+    34x  &stack0xffffffd4
 
 Example functions:
   entry
@@ -145,30 +144,30 @@ Example functions:
     pcVar7 = &stack0xffffff54;...
 
 ====================================================================================================
-TYPE: unknown_field (3024 occurrences)
+TYPE: unknown_field (2954 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  1148x  ._0_4_
-  1080x  ._4_4_
-   352x  ._8_4_
-    95x  ._12_4_
-    53x  ._16_4_
+  1126x  ._0_4_
+  1044x  ._4_4_
+   339x  ._8_4_
+   100x  ._12_4_
+    52x  ._16_4_
     33x  ._20_4_
-    28x  ._0_1_
     28x  ._2_2_
-    26x  ._28_4_
-    25x  ._24_4_
-    24x  ._32_4_
+    28x  ._28_4_
+    27x  ._0_1_
+    27x  ._32_4_
     22x  ._0_2_
-    17x  ._3_1_
-    13x  ._1_1_
-    11x  ._36_4_
-    10x  ._2_1_
-     7x  ._48_4_
-     7x  ._4_8_
+    22x  ._24_4_
+    18x  ._3_1_
+    14x  ._36_4_
+    12x  ._1_1_
+     9x  ._2_1_
+     8x  ._80_4_
      7x  ._0_8_
-     5x  ._44_4_
+     6x  ._40_4_
+     5x  ._4_8_
 
 Example functions:
   shape_meshlod.cpp_CLodMesh_buildSpatialGrid_FUN_00516620
@@ -186,17 +185,17 @@ Example functions:
   shape_meshlod.cpp_CLodMesh_transformVerticesForPreview_FUN_0051e6b0
     local_18._0_4_ = (uint)ROUND(local_8 * 256f);...
   shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990
-    local_8c._16_4_ = pCVar4->x;...
+    local_94._16_4_ = pCVar5->x;...
 
 ====================================================================================================
-TYPE: unaffected_reg (2774 occurrences)
+TYPE: unaffected_reg (2755 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   870x  unaff_ESI
-   683x  unaff_EBX
-   618x  unaff_EDI
-   580x  unaff_EBP
+   834x  unaff_ESI
+   671x  unaff_EBX
+   628x  unaff_EBP
+   599x  unaff_EDI
      9x  unaff_BP
      9x  unaff_DI
      3x  unaff_SI
@@ -219,57 +218,11 @@ Example functions:
     int unaff_ESI;...
 
 ====================================================================================================
-TYPE: concat_artifact (1885 occurrences)
+TYPE: register_param (1834 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   696x  CONCAT44
-   152x  CONCAT11
-   115x  CONCAT22
-   104x  CONCAT31
-    96x  CONCAT12
-    82x  CONCAT14
-    68x  CONCAT21
-    66x  CONCAT13
-    63x  CONCAT26
-    63x  CONCAT24
-    55x  CONCAT25
-    53x  CONCAT41
-    50x  CONCAT34
-    31x  CONCAT43
-    29x  CONCAT52
-    28x  CONCAT16
-    27x  CONCAT17
-    27x  CONCAT15
-    23x  CONCAT64
-    20x  CONCAT62
-
-Example functions:
-  cockpit_ckptutil.c_expandIndexedTo16Bit_FUN_00431410
-    CONCAT22 /* combine 2-byte values */(g_Hardware16BitPalette[*(byte *)((int)index...
-  shape_meshlod.cpp_CLodMesh_findClosestPointOnMesh_FUN_0051a300
-    dVar4 = (double)CONCAT44 /* combine 2-byte values */(local_38,uStack_3c);...
-  shape_meshlod.cpp_CLodMesh_eqLoad_FUN_0051cdf0
-    dVar6 = (double)CONCAT44 /* combine 2-byte values */(9.9999999999999997e+34._4_4...
-  shape_meshlod.cpp_CLodMesh_findMinimumCostEdge_FUN_00519680
-    (double)CONCAT44 /* combine 2-byte values */(uStack_1c,local_20)) {...
-  shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
-    local_78 = (double)CONCAT44 /* combine 2-byte values */(iVar3,(uint)local_78);...
-  shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520
-    g_ActiveRenderColor = CONCAT31 /* combine 2-byte values */(extraout_var,uVar2);...
-  shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0
-    fVar22 = (float10)(double)CONCAT44 /* combine 2-byte values */(local_e0,uStack_e...
-  shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990
-    g_ActiveRenderColor = CONCAT31 /* combine 2-byte values */(extraout_var,uVar2);...
-  shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0
-    if ((((CVert *)this_ptr)->position).x <= (double)CONCAT44 /* combine 2-byte valu...
-
-====================================================================================================
-TYPE: register_param (1833 occurrences)
-====================================================================================================
-
-Unique patterns:
-  1623x  in_ESP
+  1624x  in_ESP
     86x  in_EAX
     39x  in_ECX
     20x  in_EDX
@@ -353,6 +306,52 @@ Example functions:
     BADSPACEBASE *in_ESP;...
 
 ====================================================================================================
+TYPE: concat_artifact (1832 occurrences)
+====================================================================================================
+
+Unique patterns:
+   641x  CONCAT44
+   152x  CONCAT11
+   119x  CONCAT22
+   102x  CONCAT31
+    96x  CONCAT12
+    82x  CONCAT14
+    68x  CONCAT21
+    66x  CONCAT13
+    63x  CONCAT26
+    63x  CONCAT24
+    55x  CONCAT25
+    53x  CONCAT41
+    50x  CONCAT34
+    31x  CONCAT43
+    29x  CONCAT52
+    28x  CONCAT16
+    27x  CONCAT17
+    27x  CONCAT15
+    23x  CONCAT64
+    20x  CONCAT62
+
+Example functions:
+  cockpit_ckptutil.c_expandIndexedTo16Bit_FUN_00431410
+    CONCAT22 /* combine 2-byte values */(g_Hardware16BitPalette[*(byte *)((int)index...
+  shape_meshlod.cpp_CLodMesh_findClosestPointOnMesh_FUN_0051a300
+    dVar4 = (double)CONCAT44 /* combine 2-byte values */(local_38,uStack_3c);...
+  shape_meshlod.cpp_CLodMesh_eqLoad_FUN_0051cdf0
+    dVar6 = (double)CONCAT44 /* combine 2-byte values */(9.9999999999999997e+34._4_4...
+  shape_meshlod.cpp_CLodMesh_findMinimumCostEdge_FUN_00519680
+    (double)CONCAT44 /* combine 2-byte values */(uStack_1c,local_20)) {...
+  shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
+    local_78 = (double)CONCAT44 /* combine 2-byte values */(iVar3,(uint)local_78);...
+  shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520
+    g_ActiveRenderColor = CONCAT31 /* combine 2-byte values */(extraout_var,uVar2);...
+  shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0
+    fVar22 = (float10)(double)CONCAT44 /* combine 2-byte values */(local_e0,uStack_e...
+  shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990
+    g_ActiveRenderColor = CONCAT31 /* combine 2-byte values */(extraout_var,uVar3);...
+  shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0
+    if ((local_1c->position).x <= (double)CONCAT44 /* combine 2-byte values */(uVar1...
+
+====================================================================================================
 TYPE: badspacebase (1622 occurrences)
 ====================================================================================================
 
@@ -422,13 +421,13 @@ Example functions:
     BADSPACEBASE *in_ESP;...
 
 ====================================================================================================
-TYPE: extra_output (1440 occurrences)
+TYPE: extra_output (1443 occurrences)
 ====================================================================================================
 
 Unique patterns:
    409x  extraout_EAX
-   219x  extraout_EDX
-   124x  extraout_EAX_00
+   220x  extraout_EDX
+   126x  extraout_EAX_00
    108x  extraout_ECX
     87x  extraout_EBX
     78x  extraout_ECX_00
@@ -499,48 +498,27 @@ Example functions:
     CALLIND at 0051d7de, ADD ESP at 0051d7e1 (no EBP frame)...
 
 ====================================================================================================
-TYPE: callind_esp_uncertain (1087 occurrences)
-====================================================================================================
-
-Unique patterns:
-  1087x  CALLIND...ADD ESP
-
-Example functions:
-  shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990
-    CALLIND at 0051e023, ADD ESP at 0051e026...
-  shape_superopt.cpp_CObj_transform_FUN_005d2c40
-    CALLIND at 005d2c5c, ADD ESP at 005d2c5f...
-  shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0
-    CALLIND at 005d4d72, ADD ESP at 005d4d78...
-  shape_superopt.cpp_CPoly_intersectPoly_FUN_005ce580
-    CALLIND at 005ce5af, ADD ESP at 005ce5b2...
-  shape_superopt.cpp_COptimize_FUN_005d7460
-    CALLIND at 005d74e9, ADD ESP at 005d74fb...
-  shape_superopt.cpp_CObj_transformMasked_FUN_005d2dd0
-    CALLIND at 005d2dec, ADD ESP at 005d2def...
-
-====================================================================================================
-TYPE: suspect_float (931 occurrences)
+TYPE: suspect_float (853 occurrences)
 ====================================================================================================
 
 Unique patterns:
    133x  9.18341e-41
    114x  7.34684e-40
-   108x  1.4013e-45
    107x  2.2775203e-38
-    48x  2.8026e-45
-    30x  4.2039e-45
-    18x  5.60519e-45
+   102x  1.4013e-45
+    46x  2.8026e-45
+    27x  4.2039e-45
+    17x  5.60519e-45
     12x  1.14794e-41
      9x  1.83671e-40
-     9x  1.1754944e-38
      8x  9.18355e-41
      8x  2.29589e-41
-     8x  8.40779e-45
      8x  7.00649e-45
      8x  2.86846e-42
      8x  4.59163e-41
+     7x  1.1754944e-38
      7x  2.3326216e-38
+     7x  8.40779e-45
      6x  2.341805e-38
      6x  2.3509887e-38
      6x  1.12104e-44
@@ -551,19 +529,19 @@ Example functions:
   shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520
     local_20 = 7.516394e-39;...
   shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990
-    local_2c = 1.4013e-45;...
+    local_34 = 1.4013e-45;...
   shape_design.c_configureSpatialSplittingPlane_FUN_004617c0
     if (local_28 == 1.12104e-43) {...
   shape_design.c_complexPolygonReduction_FUN_00463b30
     3.58732e-43,8);...
   shape_design.c_tileTextureMaps_FUN_0046a180
     fVar11 = 6.487317e-39;...
-  shape_spotview.cpp_CSpotView_FUN_005b9670
-    fVar6 = 7.84727e-44;...
   engine_3d.c_renderPolygonTexturePerspectiveCorrect_FUN_00406290
     fVar3 = 3.67342e-40;...
   engine_3d.c_renderPolygonLitDetailed_FUN_00404220
     fVar3 = 9.18355e-41;...
+  engine_3d.c_renderPolygonPlaneMaskedDetailedComplex_FUN_00406860
+    fVar3 = 3.67342e-40;...
 
 ====================================================================================================
 TYPE: param_count_too_few (631 occurrences)
@@ -654,11 +632,11 @@ Example functions:
     Function declares 0 params but call sites push 5 (5 missing)...
 
 ====================================================================================================
-TYPE: unresolved_funcptr (472 occurrences)
+TYPE: unresolved_funcptr (474 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   472x  code *
+   474x  code *
 
 Example functions:
   shape_superopt.cpp_CObj_copyFrom_FUN_005d2650
@@ -732,7 +710,7 @@ Example functions:
   shape_meshlod.cpp_CLodMesh_free_FUN_00515970
     crt_memory_c_free_FUN_005fe659(&this_ptr->sample_points_ptr[-1].weight);...
   shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0
-    local_14 = (CVector2d *)((int)&local_14[-1].y + 7);...
+    local_34 = (CVector2d *)((int)&local_34[-1].y + 7);...
   shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
     if ((int)((int)&in_stack_ffffe178[-1].handleInput + 3) <= (int)pcVar2) {...
   shape_edittool.cpp_CPickList_ctor_FUN_004a3b90
@@ -767,12 +745,12 @@ Example functions:
     pfVar4 = (fstreambase *)&piVar3[-2].__enabled_exceptions;...
 
 ====================================================================================================
-TYPE: sub_artifact (284 occurrences)
+TYPE: sub_artifact (322 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   231x  SUB84
-    34x  SUB41
+   271x  SUB84
+    32x  SUB41
     10x  SUB82
      4x  SUB42
      3x  SUB104
@@ -790,20 +768,20 @@ Example functions:
     SUB84 /* extract 2-byte value */(in_stack_fffffeec,0));...
   shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0
     local_c8 = SUB84 /* extract 2-byte value */(dVar7,0);...
+  shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0
+    uStack_24c = (double)CONCAT44 /* combine 2-byte values */(*local_44,SUB84 /* ext...
   shape_superopt.cpp_EdgeListCheckPlusFreesLarge_FUN_005c84c0
     local_c4 = SUB84 /* extract 2-byte value */(dVar1 * dVar2,0);...
   shape_superopt.cpp_FUN_005cb3a0
     local_38 = SUB84 /* extract 2-byte value */(dVar5,0);...
   shape_superopt.cpp_CPoly_intersectPoly_FUN_005ce580
-    uStack_6c._0_4_ = SUB84 /* extract 2-byte value */(*pdStack000000fc - *pdStack00...
+    uStack_4d0 = SUB84 /* extract 2-byte value */(dVar3,0);...
   shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
     SUB84 /* extract 2-byte value */(-plane_normal->x,0));...
   shape_superopt.cpp_CPoly_containsPoint2D_FUN_005d0340
     (&local_178,(CVector2d *)(local_190 + 8),SUB84 /* extract 2-byte value */(dVar4,...
   shape_superopt.cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590
     uStack_304 = SUB84 /* extract 2-byte value */(dVar2,0);...
-  shape_superopt.cpp_FUN_005cbf90
-    (&local_e8,&local_d8,SUB84 /* extract 2-byte value */(dVar4,0));...
 
 ====================================================================================================
 TYPE: warning_overlapping_globals (219 occurrences)
@@ -875,11 +853,11 @@ Example functions:
     /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
 
 ====================================================================================================
-TYPE: warning_unreachable (143 occurrences)
+TYPE: warning_unreachable (134 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   143x  WARNING: Removing unreachable block
+   134x  WARNING: Removing unreachable block
 
 Example functions:
   cockpit_ckptutil.c_buildHardwarePalettes_FUN_00431c00
@@ -910,7 +888,7 @@ Example functions:
     /* WARNING: Removing unreachable block (ram,0x004f4365) */...
 
 ====================================================================================================
-TYPE: undefined_type (109 occurrences)
+TYPE: undefined_type (110 occurrences)
 ====================================================================================================
 
 Unique patterns:

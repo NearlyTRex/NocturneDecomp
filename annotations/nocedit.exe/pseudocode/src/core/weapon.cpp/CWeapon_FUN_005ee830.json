@@ -1,19 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 163,
-    "complexity_score": 153,
+    "complexity_score": 127,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 7,
-    "pseudocode_lines": 53,
-    "suspect_count": 8,
+    "pseudocode_lines": 52,
+    "suspect_count": 6,
     "suspect_types": [
       "badspacebase",
-      "callind_esp_uncertain",
       "register_param",
       "unknown_field"
     ],
-    "total_lines": 216
+    "total_lines": 215
   },
   "cross_references": [],
   "function": {
@@ -116,6 +115,11 @@
     "confidence": "unknown",
     "declared_params": 1,
     "estimated_params": 1
+  },
+  "pcode_overrides": {
+    "005ee872": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
+    ]
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.5337837837837838,
@@ -519,49 +523,31 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 39,
+      "line": 38,
       "match": "._12_4_",
-      "text": "local_94._12_4_ = *(uint *)this_ptr->field7_0x2f4;",
+      "text": "local_94.field0_0x0._12_4_ = *(uint *)this_ptr->field7_0x2f4;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 39,
+      "match": "._16_4_",
+      "text": "local_94.field0_0x0._16_4_ = *(uint *)(this_ptr->field7_0x2f4 + 4);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 40,
-      "match": "._16_4_",
-      "text": "local_94._16_4_ = *(uint *)(this_ptr->field7_0x2f4 + 4);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 41,
       "match": "._20_4_",
-      "text": "local_94._20_4_ = *(uint *)(this_ptr->field7_0x2f4 + 8);",
+      "text": "local_94.field0_0x0._20_4_ = *(uint *)(this_ptr->field7_0x2f4 + 8);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 48,
+      "line": 47,
       "match": "._24_4_",
-      "text": "local_94._24_4_ = ZEXT14(pCVar2 != (CDemonActor *)0x0);",
+      "text": "local_94.field0_0x0._24_4_ = ZEXT14(pCVar2 != (CDemonActor *)0x0);",
       "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 53,
-      "match": "._24_4_",
-      "text": "core_fire_cpp_CFireEffect_FUN_004c8230((CFireEffect *)local_94._24_4_);",
-      "type": "unknown_field"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "005ee86c",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "005ee872",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 005ee86c, ADD ESP at 005ee872",
-      "type": "callind_esp_uncertain"
     }
   ],
   "vtable_info": {

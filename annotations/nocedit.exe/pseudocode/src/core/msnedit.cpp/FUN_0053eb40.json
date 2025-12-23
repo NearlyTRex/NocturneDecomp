@@ -1,21 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 124,
-    "complexity_score": 203,
+    "complexity_score": 136,
     "cross_reference_count": 2,
     "function_call_count": 12,
     "global_count": 9,
-    "pseudocode_lines": 43,
-    "suspect_count": 13,
+    "pseudocode_lines": 46,
+    "suspect_count": 7,
     "suspect_types": [
       "badspacebase",
-      "callind_esp_uncertain",
       "param_count_too_few",
       "register_param",
-      "stack_param",
-      "stack_ref"
+      "stack_param"
     ],
-    "total_lines": 167
+    "total_lines": 170
   },
   "cross_references": [
     {
@@ -177,6 +175,11 @@
     "declared_params": 0,
     "estimated_params": 3
   },
+  "pcode_overrides": {
+    "0053ec15": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffec8,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.278350515463917,
     "instruction_count": 97,
@@ -277,77 +280,31 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 11,
+      "line": 10,
       "match": "in_stack_00000008",
       "text": "char *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_fffffecc",
-      "text": "CKeys *in_stack_fffffecc;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 24,
       "match": "in_stack_00000008",
       "text": "core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 27,
+      "line": 29,
       "match": "in_stack_00000008",
       "text": "(g_CEditorToolsPtr,\"Failed to play \\\"%s\\\"\",in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 30,
+      "line": 33,
       "match": "in_stack_00000008",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffec8,\"Playing %s\",in_stack_00000008);",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(buffer,\"Playing %s\",in_stack_00000008);",
       "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 30,
-      "match": "&stack0xfffffec8",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffec8,\"Playing %s\",in_stack_00000008);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 32,
-      "match": "&stack0xfffffecc",
-      "text": "(g_CEditorToolsPtr,&stack0xfffffecc);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 34,
-      "match": "in_stack_fffffecc",
-      "text": "dVar2 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(2,(uint)in_stack_fffffecc);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 38,
-      "match": "in_stack_fffffecc",
-      "text": "in_stack_fffffecc = g_CKeysPtr;",
-      "type": "stack_param"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "0053ec13",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "0053ec15",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 0053ec13, ADD ESP at 0053ec15",
-      "type": "callind_esp_uncertain"
     },
     {
       "call_site_count": 2,

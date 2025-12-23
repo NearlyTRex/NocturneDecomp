@@ -12,12 +12,10 @@ int __cdecl core_dracbrid_cpp_CDraculaBride_renderOpaque_FUN_00485be0(CDraculaBr
   int iVar1;
   int iVar2;
   CBoundingBox3D *this_ptr_00;
-  uint unaff_EBX;
   BADSPACEBASE *in_ESP;
-  float unaff_ESI;
-  float fStack_20;
-  ulonglong uVar3;
-  float fVar4;
+  uint render_flags;
+  float fVar3;
+  float render_alpha;
   
   iVar1 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00(g_CDemonRendererPtr);
   if (iVar1 == 0) {
@@ -32,8 +30,8 @@ int __cdecl core_dracbrid_cpp_CDraculaBride_renderOpaque_FUN_00485be0(CDraculaBr
        (*(int *)(this_ptr->base_enemy).base_character.field2_0x240c == 0)) {
       core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
       this_ptr_00 = (*((this_ptr->base_enemy).base_character.base_actor.vtable)->getBoundingBox)
-                              ((CDemonActor *)this_ptr,(CBoundingBox3D *)&fStack_20);
-      fStack_20 = 6.645305e-39;
+                              ((CDemonActor *)this_ptr,(CBoundingBox3D *)&stack0xffffffe0);
+      render_alpha = 6.645305e-39;
       iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
       if (iVar1 != 0) {
         iVar2 = this_ptr->mistState;
@@ -48,33 +46,28 @@ int __cdecl core_dracbrid_cpp_CDraculaBride_renderOpaque_FUN_00485be0(CDraculaBr
         }
         else {
           if (iVar2 == 1) {
-            fVar4 = (1.0 - this_ptr->vanishTimer) / DAT_0065cd88;
+            fVar3 = (1.0 - this_ptr->vanishTimer) / DAT_0065cd88;
           }
           else {
-            fVar4 = ((float)0.5 - this_ptr->vanishTimer) / DAT_0065cd88;
-            if (fVar4 < 0.0) {
-              fVar4 = 0.0;
+            fVar3 = ((float)0.5 - this_ptr->vanishTimer) / DAT_0065cd88;
+            if (fVar3 < 0.0) {
+              fVar3 = 0.0;
             }
           }
-          if (0.0 < fVar4) {
-            fStack_20 = 6.645571e-39;
+          if (0.0 < fVar3) {
             engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr,0);
             engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca70
-                      (g_CDemonRendererPtr,unaff_ESI);
+                      (g_CDemonRendererPtr,render_alpha);
             engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0048d6c0
                       (g_CDemonRendererPtr,1);
-            if ((double)CONCAT44 /* combine 2-byte values */(unaff_EBX,unaff_ESI) <= 0.5) {
-              uVar3._0_4_ = 8.61799e-43;
-              uVar3._4_4_ = 1.4013e-45;
+            if ((double)CONCAT44 /* combine 2-byte values */(this_ptr_00,render_alpha) <= 0.5) {
+              render_flags = 0x267;
             }
             else {
-              uVar3._0_4_ = 1.04116e-42;
-              uVar3._4_4_ = 1.4013e-45;
+              render_flags = 0x2e7;
             }
-            fStack_20 = 6.645678e-39;
             core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
-                      (&(this_ptr->base_enemy).base_character.model,-1,(uint)(float)uVar3,
-                       (int)SUB84 /* extract 2-byte value */(uVar3,4),0);
+                      (&(this_ptr->base_enemy).base_character.model,-1,render_flags,1,0);
             engine_drender_cpp_CDemonRenderer_processCapturedFaces_FUN_0048da80(g_CDemonRendererPtr)
             ;
           }

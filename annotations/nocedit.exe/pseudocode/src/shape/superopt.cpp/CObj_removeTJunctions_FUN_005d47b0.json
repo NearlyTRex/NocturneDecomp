@@ -1,23 +1,22 @@
 {
   "complexity": {
     "assembly_lines": 1051,
-    "complexity_score": 1781,
+    "complexity_score": 1594,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 3,
-    "pseudocode_lines": 501,
-    "suspect_count": 124,
+    "pseudocode_lines": 489,
+    "suspect_count": 107,
     "suspect_types": [
       "badspacebase",
-      "callind_esp_uncertain",
       "concat_artifact",
       "negative_offset",
       "pointer_cast",
       "register_param",
-      "stack_param",
+      "sub_artifact",
       "unknown_field"
     ],
-    "total_lines": 1552
+    "total_lines": 1540
   },
   "cross_references": [
     {
@@ -89,6 +88,17 @@
       "value": "0.000100000000000000"
     }
   ],
+  "pcode_overrides": {
+    "005d4d78": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffd30,4)"
+    ],
+    "005d546f": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffd30,4)"
+    ],
+    "005d5495": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffd30,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.007600434310532,
     "instruction_count": 921,
@@ -813,883 +823,752 @@
   "suspects": [
     {
       "description": "Ghidra failed to resolve stack frame",
-      "line": 25,
+      "line": 22,
       "match": "BADSPACEBASE",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "badspacebase"
     },
     {
       "description": "Inferred register parameter",
-      "line": 25,
+      "line": 22,
       "match": "in_ESP",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "register_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_fffffd20",
-      "text": "CVert *in_stack_fffffd20;",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 146,
+      "line": 137,
       "match": "(uint *)((int)",
-      "text": "uVar11 = *(uint *)((int)&(pCVar15->position).x + 4);",
+      "text": "uVar12 = *(uint *)((int)&(local_14->position).x + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 150,
+      "line": 141,
       "match": "(uint *)((int)",
-      "text": "uVar11 = *(uint *)((int)&(pCVar1->position).x + 4);",
+      "text": "uVar12 = *(uint *)((int)&(segStart->position).x + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 152,
+      "line": 143,
       "match": "CONCAT44",
-      "text": "if ((((CVert *)this_ptr)->position).x <= (double)CONCAT44 /* combine 2-byte values */(uVar11,local_264)) {",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 168,
-      "match": "CONCAT44",
-      "text": "local_1f4 = (double)CONCAT44 /* combine 2-byte values */(local_258,iStack_25c) + -0.0001;",
+      "text": "if ((local_1c->position).x <= (double)CONCAT44 /* combine 2-byte values */(uVar12,uStack_284)) {",
       "type": "concat_artifact"
     },
     {
       "description": "Complex pointer cast",
-      "line": 177,
+      "line": 145,
       "match": "(uint *)((int)",
-      "text": "local_2a0 = *(uint *)((int)&(pCVar13->position).y + 4);",
+      "text": "uVar12 = *(uint *)((int)&(local_1c->position).x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 156,
+      "match": "(uint *)((int)",
+      "text": "uVar12 = *(uint *)((int)&(pCVar11->position).x + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 178,
+      "line": 160,
       "match": "CONCAT44",
-      "text": "if ((((CVert *)this_ptr)->position).y <= (double)CONCAT44 /* combine 2-byte values */(local_2a0,local_2a4)) {",
+      "text": "dVar1 = (double)CONCAT44 /* combine 2-byte values */(uVar12,uStack_27c) + -0.0001;",
       "type": "concat_artifact"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 169,
+      "match": "(uint *)((int)",
+      "text": "local_2c0 = *(uint *)((int)&(pCVar11->position).y + 4);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Decompiler double/longlong composition artifact",
+      "line": 170,
+      "match": "CONCAT44",
+      "text": "if ((local_1c->position).y <= (double)CONCAT44 /* combine 2-byte values */(local_2c0,uStack_2c4)) {",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 172,
+      "match": "(uint *)((int)",
+      "text": "uVar12 = *(uint *)((int)&(local_1c->position).y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 183,
+      "match": "(uint *)((int)",
+      "text": "uVar12 = *(uint *)((int)&(pCVar11->position).y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 186,
+      "match": "CONCAT44",
+      "text": "dVar2 = (double)CONCAT44 /* combine 2-byte values */(uVar12,uStack_25c) + -0.0001;",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 195,
-      "match": "CONCAT44",
-      "text": "local_204 = (double)CONCAT44 /* combine 2-byte values */(pCVar12,iStack_23c) + -0.0001;",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 204,
       "match": "(uint *)((int)",
-      "text": "uVar11 = *(uint *)((int)&(pCVar13->position).z + 4);",
+      "text": "local_290 = *(uint *)((int)&(pCVar11->position).z + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 205,
+      "line": 196,
       "match": "CONCAT44",
-      "text": "if ((((CVert *)this_ptr)->position).z <= (double)CONCAT44 /* combine 2-byte values */(uVar11,local_274)) {",
+      "text": "if ((local_1c->position).z <= (double)CONCAT44 /* combine 2-byte values */(local_290,uStack_294)) {",
       "type": "concat_artifact"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 206,
-      "match": "._4_4_",
-      "text": "local_218._4_4_ = *(uint *)&(((CVert *)this_ptr)->position).z;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 219,
-      "match": "._4_4_",
-      "text": "local_218._4_4_ = local_1e4;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 222,
-      "match": "._4_4_",
-      "text": "local_20c = (double)CONCAT44 /* combine 2-byte values */(local_210,local_218._4_4_) + -0.0001;",
+      "line": 211,
+      "match": "._0_4_",
+      "text": "local_200._0_4_ = pCVar10;",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 222,
+      "line": 213,
       "match": "CONCAT44",
-      "text": "local_20c = (double)CONCAT44 /* combine 2-byte values */(local_210,local_218._4_4_) + -0.0001;",
+      "text": "dVar3 = (double)CONCAT44 /* combine 2-byte values */(pCVar10,uStack_234) + -0.0001;",
       "type": "concat_artifact"
     },
     {
       "description": "Complex pointer cast",
-      "line": 231,
+      "line": 222,
       "match": "(uint *)((int)",
-      "text": "if ((double)CONCAT44 /* combine 2-byte values */(*(uint *)((int)&(pCVar13->position).x + 4),uStack_27c) <=",
+      "text": "local_298 = *(uint *)((int)&(pCVar11->position).x + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 231,
+      "line": 223,
       "match": "CONCAT44",
-      "text": "if ((double)CONCAT44 /* combine 2-byte values */(*(uint *)((int)&(pCVar13->position).x + 4),uStack_27c) <=",
+      "text": "if ((double)CONCAT44 /* combine 2-byte values */(local_298,uStack_29c) <= (local_1c->position).x) {",
       "type": "concat_artifact"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 225,
+      "match": "(uint *)((int)",
+      "text": "uVar12 = *(uint *)((int)&(local_1c->position).x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 236,
+      "match": "(uint *)((int)",
+      "text": "uVar12 = *(uint *)((int)&(pCVar11->position).x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 239,
+      "match": "CONCAT44",
+      "text": "dVar4 = (double)CONCAT44 /* combine 2-byte values */(uVar12,uStack_26c) + 0.0001;",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 248,
+      "match": "(uint *)((int)",
+      "text": "local_2d0 = *(uint *)((int)&(pCVar11->position).y + 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
       "line": 249,
       "match": "CONCAT44",
-      "text": "dVar2 = (double)CONCAT44 /* combine 2-byte values */(pCVar13,iStack_24c) + 0.0001;",
+      "text": "if ((double)CONCAT44 /* combine 2-byte values */(local_2d0,uStack_2d4) <= (local_1c->position).y) {",
       "type": "concat_artifact"
     },
     {
       "description": "Complex pointer cast",
-      "line": 258,
+      "line": 251,
       "match": "(uint *)((int)",
-      "text": "local_2b0 = *(uint *)((int)&(pCVar14->position).y + 4);",
+      "text": "local_2b8 = *(uint *)((int)&(local_1c->position).y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 262,
+      "match": "(uint *)((int)",
+      "text": "local_2b8 = *(uint *)((int)&(pCVar11->position).y + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 259,
+      "line": 266,
       "match": "CONCAT44",
-      "text": "if ((double)CONCAT44 /* combine 2-byte values */(local_2b0,uStack_2b4) <= (((CVert *)this_ptr)->position).y) {",
+      "text": "uStack_24c = (double)CONCAT44 /* combine 2-byte values */(local_2b8,uStack_2bc) + 0.0001;",
       "type": "concat_artifact"
     },
     {
       "description": "Complex pointer cast",
-      "line": 279,
+      "line": 275,
       "match": "(uint *)((int)",
-      "text": "if ((double)CONCAT44 /* combine 2-byte values */(*(uint *)((int)&(pCVar14->position).z + 4),uStack_294) <=",
+      "text": "local_2b0 = *(uint *)((int)&(pCVar11->position).z + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 279,
+      "line": 276,
       "match": "CONCAT44",
-      "text": "if ((double)CONCAT44 /* combine 2-byte values */(*(uint *)((int)&(pCVar14->position).z + 4),uStack_294) <=",
+      "text": "if ((double)CONCAT44 /* combine 2-byte values */(local_2b0,uStack_2b4) <= (local_1c->position).z) {",
       "type": "concat_artifact"
     },
     {
       "description": "Complex pointer cast",
-      "line": 282,
-      "match": "(int *)((int)",
-      "text": "local_2b8 = *(int *)((int)&(((CVert *)this_ptr)->position).z + 4);",
+      "line": 278,
+      "match": "(uint *)((int)",
+      "text": "uVar12 = *(uint *)((int)&(local_1c->position).z + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
+      "line": 289,
+      "match": "(uint *)((int)",
+      "text": "uVar12 = *(uint *)((int)&(pCVar11->position).z + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
       "line": 292,
-      "match": "(int *)((int)",
-      "text": "local_2b8 = *(int *)((int)&(pCVar15->position).z + 4);",
+      "match": "CONCAT44",
+      "text": "dVar5 = (double)CONCAT44 /* combine 2-byte values */(uVar12,local_274) + 0.0001;",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 300,
+      "match": "(uint *)((int)",
+      "text": "puVar17 = (uint *)((int)&local_18->x + (int)&this_ptr->vertex_data->position);",
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 297,
-      "match": "CONCAT44",
-      "text": "local_1fc = (byte  [8])((double)CONCAT44 /* combine 2-byte values */(local_2b8,iStack_2bc) + 0.0001);",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 313,
-      "match": "CONCAT44",
-      "text": "if (((((double)CONCAT44 /* combine 2-byte values */(pCVar12,iStack_23c) <=",
-      "type": "concat_artifact"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 314,
-      "match": "._4_4_",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(auStack_130._4_4_,auStack_130._0_4_)) &&",
+      "line": 307,
+      "match": "._4_8_",
+      "text": "if ((((dVar1 <= (double)local_10c._4_8_) && ((double)local_10c._4_8_ <= dVar4)) &&",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 314,
-      "match": "._0_4_",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(auStack_130._4_4_,auStack_130._0_4_)) &&",
+      "line": 307,
+      "match": "._4_8_",
+      "text": "if ((((dVar1 <= (double)local_10c._4_8_) && ((double)local_10c._4_8_ <= dVar4)) &&",
       "type": "unknown_field"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 314,
-      "match": "CONCAT44",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(auStack_130._4_4_,auStack_130._0_4_)) &&",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 315,
-      "match": "._4_4_",
-      "text": "((double)CONCAT44 /* combine 2-byte values */(auStack_130._4_4_,auStack_130._0_4_) <=",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 315,
-      "match": "._0_4_",
-      "text": "((double)CONCAT44 /* combine 2-byte values */(auStack_130._4_4_,auStack_130._0_4_) <=",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 315,
-      "match": "CONCAT44",
-      "text": "((double)CONCAT44 /* combine 2-byte values */(auStack_130._4_4_,auStack_130._0_4_) <=",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 316,
-      "match": "CONCAT44",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(local_2b0,uStack_2b4))) &&",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 317,
-      "match": "CONCAT44",
-      "text": "(((double)CONCAT44 /* combine 2-byte values */(pCVar13,iStack_24c) <=",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 318,
-      "match": "._4_4_",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(auStack_128._4_4_,auStack_128._0_4_) &&",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 318,
-      "match": "._0_4_",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(auStack_128._4_4_,auStack_128._0_4_) &&",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 318,
-      "match": "CONCAT44",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(auStack_128._4_4_,auStack_128._0_4_) &&",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 319,
-      "match": "._4_4_",
-      "text": "(((double)CONCAT44 /* combine 2-byte values */(auStack_128._4_4_,auStack_128._0_4_) <=",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 319,
-      "match": "._0_4_",
-      "text": "(((double)CONCAT44 /* combine 2-byte values */(auStack_128._4_4_,auStack_128._0_4_) <=",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 319,
-      "match": "CONCAT44",
-      "text": "(((double)CONCAT44 /* combine 2-byte values */(auStack_128._4_4_,auStack_128._0_4_) <=",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 320,
-      "match": "CONCAT44",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(uVar11,local_274) &&",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 321,
-      "match": "CONCAT44",
-      "text": "((double)CONCAT44 /* combine 2-byte values */(local_250,iStack_254) <=",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Unknown/mangled field access",
+      "description": "Complex pointer cast",
       "line": 322,
-      "match": "._12_4_",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(auStack_128._12_4_,auStack_128._8_4_))))))) &&",
-      "type": "unknown_field"
+      "match": "(uint *)((int)",
+      "text": "local_11c = *(uint *)((int)&(local_1c->position).x + 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 322,
-      "match": "._8_4_",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(auStack_128._12_4_,auStack_128._8_4_))))))) &&",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 322,
-      "match": "CONCAT44",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(auStack_128._12_4_,auStack_128._8_4_))))))) &&",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 323,
-      "match": "._12_4_",
-      "text": "((double)CONCAT44 /* combine 2-byte values */(auStack_128._12_4_,auStack_128._8_4_) <=",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 323,
-      "match": "._8_4_",
-      "text": "((double)CONCAT44 /* combine 2-byte values */(auStack_128._12_4_,auStack_128._8_4_) <=",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 323,
-      "match": "CONCAT44",
-      "text": "((double)CONCAT44 /* combine 2-byte values */(auStack_128._12_4_,auStack_128._8_4_) <=",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Complex pointer cast",
       "line": 324,
-      "match": "CONCAT44",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(local_240,iStack_244))) {",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 337,
       "match": "(uint *)((int)",
-      "text": "uStack_138 = *(uint *)((int)&local_38->x + 4);",
+      "text": "local_114 = *(uint *)((int)&(local_1c->position).y + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 339,
+      "line": 326,
       "match": "(uint *)((int)",
-      "text": "auStack_130._0_4_ = *(uint *)((int)&local_38->y + 4);",
+      "text": "local_10c._0_4_ = *(uint *)((int)&(local_1c->position).z + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 339,
+      "line": 326,
       "match": "._0_4_",
-      "text": "auStack_130._0_4_ = *(uint *)((int)&local_38->y + 4);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 340,
-      "match": "._4_4_",
-      "text": "auStack_130._4_4_ = *(uint *)&local_38->z;",
+      "text": "local_10c._0_4_ = *(uint *)((int)&(local_1c->position).z + 4);",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 341,
+      "line": 328,
       "match": "(uint *)((int)",
-      "text": "auStack_128._0_4_ = *(uint *)((int)&local_38->z + 4);",
+      "text": "local_2c8 = *(uint *)((int)&local_38->y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 330,
+      "match": "(uint *)((int)",
+      "text": "local_134 = *(uint *)((int)&(segStart->position).x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 332,
+      "match": "(uint *)((int)",
+      "text": "local_12c = *(uint *)((int)&(segStart->position).y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 334,
+      "match": "(uint *)((int)",
+      "text": "local_124 = *(uint *)((int)&(segStart->position).z + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 336,
+      "match": "(uint *)((int)",
+      "text": "local_238 = *(uint *)((int)&local_40->x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 342,
+      "match": "(uint *)((int)",
+      "text": "local_11c = *(uint *)((int)&(local_14->position).x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 344,
+      "match": "(uint *)((int)",
+      "text": "local_114 = *(uint *)((int)&(local_14->position).y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 346,
+      "match": "(uint *)((int)",
+      "text": "local_10c._0_4_ = *(uint *)((int)&(local_14->position).z + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 341,
+      "line": 346,
       "match": "._0_4_",
-      "text": "auStack_128._0_4_ = *(uint *)((int)&local_38->z + 4);",
+      "text": "local_10c._0_4_ = *(uint *)((int)&(local_14->position).z + 4);",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 343,
+      "line": 348,
       "match": "(uint *)((int)",
-      "text": "uStack_150 = *(uint *)((int)&pCVar10->x + 4);",
+      "text": "local_2c8 = *(uint *)((int)&local_34->y + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 345,
+      "line": 350,
       "match": "(uint *)((int)",
-      "text": "uStack_148 = *(uint *)((int)&pCVar10->y + 4);",
+      "text": "local_134 = *(uint *)((int)&(local_1c->position).x + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 347,
+      "line": 352,
       "match": "(uint *)((int)",
-      "text": "uStack_140 = *(uint *)((int)&pCVar10->z + 4);",
+      "text": "local_12c = *(uint *)((int)&(local_1c->position).y + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 358,
-      "match": "._0_4_",
-      "text": "auStack_130._0_4_ = local_34[4];",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 359,
-      "match": "._4_4_",
-      "text": "auStack_130._4_4_ = local_34[5];",
-      "type": "unknown_field"
+      "description": "Complex pointer cast",
+      "line": 354,
+      "match": "(uint *)((int)",
+      "text": "local_124 = *(uint *)((int)&(local_1c->position).z + 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 362,
+      "line": 356,
       "match": "(uint *)((int)",
-      "text": "uStack_154 = *(uint *)((int)&local_3c->x + 4);",
+      "text": "local_238 = *(uint *)((int)&local_38->x + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 364,
       "match": "(uint *)((int)",
-      "text": "uStack_14c = *(uint *)((int)&local_3c->y + 4);",
+      "text": "uStack_120 = *(uint *)((int)&(local_14->position).x + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 366,
       "match": "(uint *)((int)",
-      "text": "uStack_144 = *(uint *)((int)&local_3c->z + 4);",
+      "text": "uStack_118 = *(uint *)((int)&(local_14->position).y + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 379,
-      "match": "._0_4_",
-      "text": "auStack_130._0_4_ = local_34[5];",
-      "type": "unknown_field"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 383,
+      "line": 368,
       "match": "(uint *)((int)",
-      "text": "uStack_158 = *(uint *)((int)&local_38->x + 4);",
+      "text": "uStack_110 = *(uint *)((int)&(local_14->position).z + 4);",
       "type": "pointer_cast"
     },
     {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 369,
+      "match": "CONCAT44",
+      "text": "uStack_24c = (double)CONCAT44 /* combine 2-byte values */(*local_44,SUB84 /* extract 2-byte value */(uStack_24c,0));",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 369,
+      "match": "SUB84",
+      "text": "uStack_24c = (double)CONCAT44 /* combine 2-byte values */(*local_44,SUB84 /* extract 2-byte value */(uStack_24c,0));",
+      "type": "sub_artifact"
+    },
+    {
       "description": "Complex pointer cast",
-      "line": 385,
+      "line": 373,
       "match": "(uint *)((int)",
-      "text": "uStack_150 = *(uint *)((int)&local_38->y + 4);",
+      "text": "uStack_138 = *(uint *)((int)&local_18->x + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 387,
+      "line": 375,
       "match": "(uint *)((int)",
-      "text": "uStack_148 = *(uint *)((int)&local_38->z + 4);",
+      "text": "uStack_130 = *(uint *)((int)&local_18->y + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
+      "line": 377,
+      "match": "(uint *)((int)",
+      "text": "uStack_128 = *(uint *)((int)&local_18->z + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 378,
+      "match": "(uint *)((int)",
+      "text": "uStack_23c = *(uint *)((int)&local_38->x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 389,
+      "match": "CONCAT44",
+      "text": "dVar1 = (double)CONCAT44 /* combine 2-byte values */(local_12c,uStack_130) -",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
       "line": 390,
-      "match": "(uint *)((int)",
-      "text": "puStack_64 = (uint *)((int)puStack_64 + -1);",
-      "type": "pointer_cast"
+      "match": "CONCAT44",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(local_114,uStack_118);",
+      "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 399,
+      "line": 392,
       "match": "CONCAT44",
-      "text": "dVar2 = (double)CONCAT44 /* combine 2-byte values */(uStack_148,uStack_14c) -",
+      "text": "dVar6 = (double)CONCAT44 /* combine 2-byte values */(local_124,uStack_128) -",
       "type": "concat_artifact"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 400,
+      "line": 393,
       "match": "._0_4_",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(auStack_130._0_4_,local_134);",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(local_10c._0_4_,uStack_110);",
       "type": "unknown_field"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 393,
+      "match": "CONCAT44",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(local_10c._0_4_,uStack_110);",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 394,
+      "match": "(int *)((int)",
+      "text": "local_1f8.vertex_idx_2 = *(int *)((int)local_24->uv_coords + (int)local_34 * 4 + -0xc)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 396,
+      "match": "._4_8_",
+      "text": "dVar5 = (double)CONCAT44 /* combine 2-byte values */(local_11c,uStack_120) - (double)local_10c._4_8_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 396,
+      "match": "CONCAT44",
+      "text": "dVar5 = (double)CONCAT44 /* combine 2-byte values */(local_11c,uStack_120) - (double)local_10c._4_8_;",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 397,
+      "match": "._0_4_",
+      "text": "local_1f8.uv_coords[0].x._0_4_ =",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 398,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)local_24->uv_coords + local_3c * 4 + -0xc);",
+      "type": "pointer_cast"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
       "line": 400,
       "match": "CONCAT44",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(auStack_130._0_4_,local_134);",
+      "text": "dVar2 = dStack_100 - (double)CONCAT44 /* combine 2-byte values */(local_114,uStack_118);",
       "type": "concat_artifact"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 401,
+      "match": "._0_4_",
+      "text": "dVar3 = dStack_f8 - (double)CONCAT44 /* combine 2-byte values */(local_10c._0_4_,uStack_110);",
+      "type": "unknown_field"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
       "line": 401,
       "match": "CONCAT44",
-      "text": "dVar7 = (double)CONCAT44 /* combine 2-byte values */(uStack_140,uStack_144) -",
+      "text": "dVar3 = dStack_f8 - (double)CONCAT44 /* combine 2-byte values */(local_10c._0_4_,uStack_110);",
       "type": "concat_artifact"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 402,
-      "match": "._0_4_",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(auStack_128._0_4_,auStack_130._4_4_);",
+      "match": "._4_8_",
+      "text": "dVar4 = dStack_f0 - (double)local_10c._4_8_;",
       "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 402,
-      "match": "._4_4_",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(auStack_128._0_4_,auStack_130._4_4_);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 402,
-      "match": "CONCAT44",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(auStack_128._0_4_,auStack_130._4_4_);",
-      "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
       "line": 403,
       "match": "CONCAT44",
-      "text": "local_20c = (double)CONCAT44 /* combine 2-byte values */(*(uint *)",
+      "text": "uStack_e8 = (double)CONCAT44 /* combine 2-byte values */(pCVar10,uStack_234) -",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 404,
+      "match": "CONCAT44",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(local_238,uStack_23c);",
       "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
       "line": 405,
       "match": "CONCAT44",
-      "text": "dVar6 = (double)CONCAT44 /* combine 2-byte values */(uStack_138,local_13c) -",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 406,
-      "match": "._8_4_",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(auStack_128._8_4_,auStack_128._4_4_);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 406,
-      "match": "._4_4_",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(auStack_128._8_4_,auStack_128._4_4_);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 406,
-      "match": "CONCAT44",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(auStack_128._8_4_,auStack_128._4_4_);",
+      "text": "dVar7 = (double)CONCAT44 /* combine 2-byte values */(local_2c0,uStack_2c4);",
       "type": "concat_artifact"
     },
     {
       "description": "Complex pointer cast",
-      "line": 407,
+      "line": 410,
       "match": "(uint *)((int)",
-      "text": "local_204._0_4_ = *(uint *)((int)&local_40->x + iStack_58 * 4 + 4);",
+      "text": "*(uint *)((int)&uStack_e8 + (uint)bVar20 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 407,
-      "match": "._0_4_",
-      "text": "local_204._0_4_ = *(uint *)((int)&local_40->x + iStack_58 * 4 + 4);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 409,
-      "match": "._16_4_",
-      "text": "dVar3 = (double)CONCAT44 /* combine 2-byte values */(auStack_128._16_4_,auStack_128._12_4_) -",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 409,
-      "match": "._12_4_",
-      "text": "dVar3 = (double)CONCAT44 /* combine 2-byte values */(auStack_128._16_4_,auStack_128._12_4_) -",
-      "type": "unknown_field"
-    },
-    {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 409,
-      "match": "CONCAT44",
-      "text": "dVar3 = (double)CONCAT44 /* combine 2-byte values */(auStack_128._16_4_,auStack_128._12_4_) -",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 410,
-      "match": "._0_4_",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(auStack_130._0_4_,local_134);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 410,
-      "match": "CONCAT44",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(auStack_130._0_4_,local_134);",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 411,
-      "match": "._20_8_",
-      "text": "dVar4 = (double)auStack_128._20_8_ -",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 412,
-      "match": "._0_4_",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(auStack_128._0_4_,auStack_130._4_4_);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 412,
-      "match": "._4_4_",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(auStack_128._0_4_,auStack_130._4_4_);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 412,
-      "match": "CONCAT44",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(auStack_128._0_4_,auStack_130._4_4_);",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 413,
-      "match": "._8_4_",
-      "text": "dVar5 = local_10c - (double)CONCAT44 /* combine 2-byte values */(auStack_128._8_4_,auStack_128._4_4_);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 413,
-      "match": "._4_4_",
-      "text": "dVar5 = local_10c - (double)CONCAT44 /* combine 2-byte values */(auStack_128._8_4_,auStack_128._4_4_);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 413,
-      "match": "CONCAT44",
-      "text": "dVar5 = local_10c - (double)CONCAT44 /* combine 2-byte values */(auStack_128._8_4_,auStack_128._4_4_);",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 414,
-      "match": "CONCAT44",
-      "text": "local_104 = (double)CONCAT44 /* combine 2-byte values */(iStack_24c,local_250) -",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 415,
-      "match": "CONCAT44",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(iStack_254,local_258);",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 416,
-      "match": "in_stack_fffffd20",
-      "text": "dVar8 = (double)CONCAT44 /* combine 2-byte values */(uStack_2dc,in_stack_fffffd20);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 416,
-      "match": "CONCAT44",
-      "text": "dVar8 = (double)CONCAT44 /* combine 2-byte values */(uStack_2dc,in_stack_fffffd20);",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 418,
-      "match": "CONCAT44",
-      "text": "local_fc = (double)CONCAT44 /* combine 2-byte values */(local_264,local_268) - dVar8;",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 421,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&local_104 + (uint)bVar24 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 432,
       "match": "CONCAT44",
-      "text": "local_b4 = (double)CONCAT44 /* combine 2-byte values */(uStack_d0,local_d4) * dVar2;",
+      "text": "uStack_98 = (double)CONCAT44 /* combine 2-byte values */(local_b4,uStack_b8) * dVar1;",
       "type": "concat_artifact"
     },
     {
       "description": "Complex pointer cast",
-      "line": 438,
+      "line": 427,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&local_b4 + (uint)bVar24 * -8 + 4);",
+      "text": "*(uint *)((int)&uStack_98 + (uint)bVar20 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 446,
+      "line": 435,
       "match": "CONCAT44",
-      "text": "local_c4 = (double)CONCAT44 /* combine 2-byte values */(iStack_254,local_258) +",
+      "text": "uStack_a8 = (double)CONCAT44 /* combine 2-byte values */(local_238,uStack_23c) +",
       "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 447,
+      "line": 436,
       "match": "CONCAT44",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(local_e0,auStack_f0[3]);",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(local_c4,local_d4[3]);",
       "type": "concat_artifact"
     },
     {
       "description": "Complex pointer cast",
+      "line": 441,
+      "match": "(uint *)((int)",
+      "text": "local_d4[(uint)bVar20 * -2] = *(uint *)((int)&uStack_a8 + (uint)bVar20 * -8 + 4)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 449,
+      "match": "._4_4_",
+      "text": "local_1f8.uv_coords[0].x._4_4_ = local_d8;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 450,
+      "match": "._0_4_",
+      "text": "local_1f8.uv_coords[0].y._0_4_ = local_d4[0];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 451,
+      "match": "._4_4_",
+      "text": "local_1f8.uv_coords[0].y._4_4_ = local_d4[1];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
       "line": 453,
+      "match": "._0_4_",
+      "text": "local_1f8.uv_coords[1].x._0_4_ = local_d4[2];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 454,
+      "match": "._4_4_",
+      "text": "local_1f8.uv_coords[1].x._4_4_ = *(uint *)&pCVar16->x;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 455,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&local_c4 + (uint)bVar24 * -8 + 4);",
+      "text": "local_1f8.uv_coords[1].y._0_4_ = *(uint *)((int)&pCVar16->x + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Unknown/mangled field access",
+      "line": 455,
+      "match": "._0_4_",
+      "text": "local_1f8.uv_coords[1].y._0_4_ = *(uint *)((int)&pCVar16->x + 4);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 456,
+      "match": "._4_4_",
+      "text": "local_1f8.uv_coords[1].y._4_4_ = *(uint *)&pCVar16->y;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 457,
+      "match": "(uint *)((int)",
+      "text": "local_1f8.uv_coords[2].x._0_4_ = *(uint *)((int)&pCVar16->y + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 457,
+      "match": "._0_4_",
+      "text": "local_1f8.uv_coords[2].x._0_4_ = *(uint *)((int)&pCVar16->y + 4);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 459,
+      "match": "._4_4_",
+      "text": "local_1f8.uv_coords[2].x._4_4_ = *(uint *)&pCVar18->x;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 460,
-      "match": "CONCAT44",
-      "text": "local_204 = (double)CONCAT44 /* combine 2-byte values */(local_f4,(uint)local_204);",
-      "type": "concat_artifact"
+      "match": "(uint *)((int)",
+      "text": "local_1f8.uv_coords[2].y._0_4_ = *(uint *)((int)&pCVar18->x + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 460,
+      "match": "._0_4_",
+      "text": "local_1f8.uv_coords[2].y._0_4_ = *(uint *)((int)&pCVar18->x + 4);",
+      "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 461,
       "match": "._4_4_",
-      "text": "local_1fc._4_4_ = auStack_f0[1];",
+      "text": "local_1f8.uv_coords[2].y._4_4_ = *(uint *)&pCVar18->y;",
       "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 462,
+      "match": "(uint *)((int)",
+      "text": "local_1f8.normal.x._0_4_ = *(uint *)((int)&pCVar18->y + 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 462,
       "match": "._0_4_",
-      "text": "local_1fc._0_4_ = auStack_f0[0];",
+      "text": "local_1f8.normal.x._0_4_ = *(uint *)((int)&pCVar18->y + 4);",
       "type": "unknown_field"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
+      "description": "Complex pointer cast",
       "line": 464,
-      "match": "CONCAT44",
-      "text": "local_1f4 = (double)CONCAT44 /* combine 2-byte values */(*(uint *)pdVar20,auStack_f0[2]);",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 465,
-      "match": "(int *)((int)",
-      "text": "local_1ec = *(int *)((int)pdVar20 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 467,
-      "match": "(int *)((int)",
-      "text": "local_1e4 = *(int *)((int)pdVar20 + 0xc);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 470,
-      "match": "(int *)((int)",
-      "text": "local_1e0.vertex_idx_0 = *(int *)((int)pdVar22 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 472,
-      "match": "(int *)((int)",
-      "text": "local_1e0.vertex_idx_2 = *(int *)((int)pdVar22 + 0xc);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 474,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pdVar20 + 4) = auStack_f0[0];",
+      "text": "*(uint *)((int)&pCVar16->x + 4) = local_d4[0];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 476,
+      "line": 466,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pdVar20 + 0xc) = auStack_f0[2];",
+      "text": "*(uint *)((int)&pCVar16->y + 4) = local_d4[2];",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 487,
-      "match": "in_stack_fffffd20",
-      "text": "in_stack_fffffd20 = (CVert *)this_ptr;",
-      "type": "stack_param"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 489,
-      "match": "local_14[-1].",
-      "text": "local_14 = (CVector2d *)((int)&local_14[-1].y + 7);",
+      "line": 476,
+      "match": "local_34[-1].",
+      "text": "local_34 = (CVector2d *)((int)&local_34[-1].y + 7);",
       "type": "negative_offset"
     },
     {
       "description": "Complex pointer cast",
-      "line": 489,
+      "line": 476,
       "match": "(CVector2d *)((int)",
-      "text": "local_14 = (CVector2d *)((int)&local_14[-1].y + 7);",
+      "text": "local_34 = (CVector2d *)((int)&local_34[-1].y + 7);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 490,
-      "match": "(CVector3d *)((int)",
-      "text": "local_30 = (CVector3d *)((int)&local_30->x + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 496,
+      "line": 477,
       "match": "(void *)((int)",
-      "text": "pvVar19 = (void *)((int)pvVar19 + 1);",
+      "text": "local_50 = (void *)((int)local_50 + 1);",
       "type": "pointer_cast"
     },
     {
-      "add_esp_value": 16,
-      "callind_address": "005d4d72",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "005d4d78",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 005d4d72, ADD ESP at 005d4d78",
-      "type": "callind_esp_uncertain"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "005d546c",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "005d546f",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 005d546c, ADD ESP at 005d546f",
-      "type": "callind_esp_uncertain"
-    },
-    {
-      "add_esp_value": 12,
-      "callind_address": "005d5492",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "005d5495",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 005d5492, ADD ESP at 005d5495",
-      "type": "callind_esp_uncertain"
+      "description": "Complex pointer cast",
+      "line": 483,
+      "match": "(CPoly *)((int)",
+      "text": "pCVar15 = (CPoly *)((int)&pCVar15->parent_obj + 1);",
+      "type": "pointer_cast"
     }
   ]
 }

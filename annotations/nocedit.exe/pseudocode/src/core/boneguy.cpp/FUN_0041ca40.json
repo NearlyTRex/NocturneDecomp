@@ -1,23 +1,21 @@
 {
   "complexity": {
     "assembly_lines": 178,
-    "complexity_score": 333,
+    "complexity_score": 294,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 3,
-    "pseudocode_lines": 93,
-    "suspect_count": 20,
+    "pseudocode_lines": 94,
+    "suspect_count": 17,
     "suspect_types": [
       "badspacebase",
-      "callind_esp_uncertain",
       "pointer_cast",
       "register_param",
       "stack_param",
-      "stack_ref",
       "unaffected_reg",
       "unresolved_funcptr"
     ],
-    "total_lines": 271
+    "total_lines": 272
   },
   "cross_references": [],
   "function": {
@@ -76,6 +74,11 @@
     "confidence": "unknown",
     "declared_params": 0,
     "estimated_params": 0
+  },
+  "pcode_overrides": {
+    "0041cab1": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
+    ]
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.994011976047904,
@@ -413,111 +416,86 @@
     {
       "description": "Unresolved stack parameter",
       "line": 18,
-      "match": "in_stack_fffffee0",
-      "text": "CMatrix3x4f *in_stack_fffffee0;",
+      "match": "in_stack_fffffe66",
+      "text": "CMatrix3x4f *in_stack_fffffe66;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 40,
+      "line": 41,
       "match": "in_stack_00000008",
       "text": "iVar1 = in_stack_00000008 * 0x44 + in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 40,
+      "line": 41,
       "match": "in_stack_00000004",
       "text": "iVar1 = in_stack_00000008 * 0x44 + in_stack_00000004;",
       "type": "stack_param"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 47,
-      "match": "&stack0xfffffee0",
-      "text": "((CMatrix3x4f *)&stack0xfffffee0,&g_ZeroVector,&local_60);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 48,
+      "line": 49,
       "match": "code *",
       "text": "(**(code **)(*(int *)(iVar3 + 0x154) + 0x14))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 66,
+      "line": 67,
       "match": "in_stack_00000004",
       "text": "(&local_78,&local_6c,(CMatrix3x4f *)(in_stack_00000004 + 0xfd8 + iVar1 * 0x30))",
       "type": "stack_param"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 74,
-      "match": "&stack0xfffffee0",
-      "text": "((CMatrix3x4f *)&stack0xfffffee0,",
-      "type": "stack_ref"
-    },
-    {
       "description": "Unresolved stack parameter",
       "line": 75,
       "match": "in_stack_00000004",
-      "text": "(CMatrix3x4f *)(in_stack_00000004 + 0xfd8 + iVar1 * 0x30),in_stack_fffffee0);",
+      "text": "(&local_120,(CMatrix3x4f *)(in_stack_00000004 + 0xfd8 + iVar1 * 0x30),in_stack_fffffe66)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 75,
-      "match": "in_stack_fffffee0",
-      "text": "(CMatrix3x4f *)(in_stack_00000004 + 0xfd8 + iVar1 * 0x30),in_stack_fffffee0);",
+      "match": "in_stack_fffffe66",
+      "text": "(&local_120,(CMatrix3x4f *)(in_stack_00000004 + 0xfd8 + iVar1 * 0x30),in_stack_fffffe66)",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 81,
+      "line": 82,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unaffected register variable",
-      "line": 92,
+      "line": 93,
       "match": "unaff_ESI",
       "text": "*unaff_ESI = pCVar5->m[0].w;",
       "type": "unaffected_reg"
     },
     {
       "description": "Complex pointer cast",
-      "line": 93,
+      "line": 94,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unaffected register variable",
-      "line": 94,
+      "line": 95,
       "match": "unaff_ESI",
       "text": "unaff_ESI = unaff_ESI + (uint)bVar6 * -2 + 1;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 94,
+      "line": 95,
       "match": "unaff_ESI",
       "text": "unaff_ESI = unaff_ESI + (uint)bVar6 * -2 + 1;",
       "type": "unaffected_reg"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "0041caae",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "0041cab1",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 0041caae, ADD ESP at 0041cab1",
-      "type": "callind_esp_uncertain"
     }
   ],
   "vtable_info": {

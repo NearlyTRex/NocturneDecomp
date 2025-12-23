@@ -19,11 +19,10 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_005448b0(CNPC *this_ptr)
   CMotionList *this_ptr_00;
   BADSPACEBASE *in_ESP;
   SCollisionInfo *in_stack_00000008;
-  float fStack0000000c;
-  float fStack00000010;
-  float fStack00000014;
-  char *pcVar6;
-  byte *puStack_2c;
+  char *state_name;
+  byte *puStack_48;
+  CVector3f CStack_2c;
+  float fStack_20;
   
   iVar5 = core_charactr_cpp_CCharacter_FUN_00429870(&this_ptr->base_character);
   if (iVar5 == 0) {
@@ -49,9 +48,9 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_005448b0(CNPC *this_ptr)
       (this_ptr->pool_me == 0)) && ((this_ptr->base_character).base_actor.field11_0xdc == 0)) {
     input_local_point =
          core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
-                   (pCVar1,(CVector3f *)&puStack_2c,0);
+                   (pCVar1,(CVector3f *)&puStack_48,0);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-              ((CDemonActor *)this_ptr,(CVector3f *)&stack0xfffffff0,input_local_point);
+              ((CDemonActor *)this_ptr,&CStack_2c,input_local_point);
     core_gore_cpp_FUN_004ede30();
     this_ptr->pool_me = 1;
   }
@@ -67,14 +66,14 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_005448b0(CNPC *this_ptr)
   if (uVar2 < 2) {
     if (uVar2 == 1) {
 LAB_005449de:
-      pcVar6 = "WALK";
+      state_name = "WALK";
     }
     else {
 LAB_00544b62:
-      pcVar6 = "STAND";
+      state_name = "STAND";
     }
     core_motion_cpp_CMotionController_setDesiredStateByName_FUN_0052db90
-              (&(this_ptr->base_character).model.motion_controller,pcVar6,1);
+              (&(this_ptr->base_character).model.motion_controller,state_name,1);
   }
   else {
     pCVar1 = &(this_ptr->base_character).model;
@@ -103,31 +102,28 @@ LAB_00544a0c:
   *(float *)((this_ptr->base_character).field2_0x240c + 0x20) =
        *(float *)((this_ptr->base_character).field2_0x240c + 0x20) -
        (float)in_stack_00000008 * (float)32;
-  pcVar6 = (this_ptr->base_character).field2_0x240c + 0x10;
-  fStack0000000c =
-       *(float *)((this_ptr->base_character).field2_0x240c + 0x1c) * (float)in_stack_00000008 +
-       *(float *)pcVar6;
-  fStack00000010 =
-       *(float *)((this_ptr->base_character).field2_0x240c + 0x20) * (float)in_stack_00000008 +
-       *(float *)((this_ptr->base_character).field2_0x240c + 0x14);
-  fStack00000014 =
-       *(float *)((this_ptr->base_character).field2_0x240c + 0x24) * (float)in_stack_00000008 +
-       *(float *)((this_ptr->base_character).field2_0x240c + 0x18);
+  CStack_2c.y = *(float *)((this_ptr->base_character).field2_0x240c + 0x1c) *
+                (float)in_stack_00000008;
+  CStack_2c.z = *(float *)((this_ptr->base_character).field2_0x240c + 0x20) *
+                (float)in_stack_00000008;
+  fStack_20 = *(float *)((this_ptr->base_character).field2_0x240c + 0x24) * (float)in_stack_00000008
+  ;
   (this_ptr->base_character).field2_0x240c[0x18] = '\0';
   (this_ptr->base_character).field2_0x240c[0x19] = '\0';
   (this_ptr->base_character).field2_0x240c[0x1a] = '\0';
   (this_ptr->base_character).field2_0x240c[0x1b] = '\0';
   *(uint *)((this_ptr->base_character).field2_0x240c + 0x14) =
        *(uint *)((this_ptr->base_character).field2_0x240c + 0x18);
-  *(float *)pcVar6 = *(float *)((this_ptr->base_character).field2_0x240c + 0x14);
+  *(uint *)((this_ptr->base_character).field2_0x240c + 0x10) =
+       *(uint *)((this_ptr->base_character).field2_0x240c + 0x14);
   (this_ptr->base_character).model.accumulated_root_motion.z = 0.0;
   (this_ptr->base_character).model.accumulated_root_motion.y =
        (this_ptr->base_character).model.accumulated_root_motion.z;
   (this_ptr->base_character).model.accumulated_root_motion.x =
        (this_ptr->base_character).model.accumulated_root_motion.y;
-  puStack_2c = &stack0xffffffdc;
+  puStack_48 = &stack0xffffffc0;
   core_charactr_cpp_CCharacter_FUN_00428f40(&this_ptr->base_character);
-  puStack_2c = (byte *)0x544ada;
+  puStack_48 = (byte *)0x544ada;
   core_charactr_cpp_CCharacter_FUN_00429820(&this_ptr->base_character);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020
             (&(this_ptr->base_character).model);

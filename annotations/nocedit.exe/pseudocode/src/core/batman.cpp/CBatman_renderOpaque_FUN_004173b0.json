@@ -1,23 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 195,
-    "complexity_score": 343,
+    "complexity_score": 151,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 5,
-    "pseudocode_lines": 83,
-    "suspect_count": 22,
+    "pseudocode_lines": 76,
+    "suspect_count": 5,
     "suspect_types": [
       "badspacebase",
-      "callind_esp_uncertain",
       "concat_artifact",
       "register_param",
-      "sub_artifact",
-      "suspect_float",
-      "unaffected_reg",
-      "unknown_field"
+      "stack_ref",
+      "suspect_float"
     ],
-    "total_lines": 278
+    "total_lines": 271
   },
   "cross_references": [],
   "function": {
@@ -121,6 +118,14 @@
     "declared_params": 1,
     "estimated_params": 1
   },
+  "pcode_overrides": {
+    "0041742f": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffdc,4)"
+    ],
+    "00417494": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffdc,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.173333333333333,
     "instruction_count": 150,
@@ -202,166 +207,39 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 8,
-      "match": "unaff_EBX",
-      "text": "uint unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Ghidra failed to resolve stack frame",
-      "line": 9,
+      "line": 8,
       "match": "BADSPACEBASE",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "badspacebase"
     },
     {
       "description": "Inferred register parameter",
-      "line": 9,
+      "line": 8,
       "match": "in_ESP",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "register_param"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 10,
-      "match": "unaff_ESI",
-      "text": "float unaff_ESI;",
-      "type": "unaffected_reg"
+      "description": "Direct stack address reference",
+      "line": 26,
+      "match": "&stack0xffffffe0",
+      "text": "((CDemonActor *)this_ptr,(CBoundingBox3D *)&stack0xffffffe0);",
+      "type": "stack_ref"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 29,
+      "line": 27,
       "match": "6.010999e-39",
-      "text": "fStack_20 = 6.010999e-39;",
+      "text": "render_alpha = 6.010999e-39;",
       "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 51,
-      "match": "6.011244e-39",
-      "text": "fStack_20 = 6.011244e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 54,
-      "match": "unaff_ESI",
-      "text": "(g_CDemonRendererPtr,unaff_ESI);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 57,
-      "match": "unaff_EBX",
-      "text": "if ((double)CONCAT44 /* combine 2-byte values */(unaff_EBX,unaff_ESI) <= 0.5) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 57,
-      "match": "unaff_ESI",
-      "text": "if ((double)CONCAT44 /* combine 2-byte values */(unaff_EBX,unaff_ESI) <= 0.5) {",
-      "type": "unaffected_reg"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 57,
+      "line": 54,
       "match": "CONCAT44",
-      "text": "if ((double)CONCAT44 /* combine 2-byte values */(unaff_EBX,unaff_ESI) <= 0.5) {",
+      "text": "if ((double)CONCAT44 /* combine 2-byte values */(this_ptr_00,render_alpha) <= 0.5) {",
       "type": "concat_artifact"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 58,
-      "match": "8.61799e-43",
-      "text": "uVar3._0_4_ = 8.61799e-43;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 58,
-      "match": "._0_4_",
-      "text": "uVar3._0_4_ = 8.61799e-43;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 59,
-      "match": "1.4013e-45",
-      "text": "uVar3._4_4_ = 1.4013e-45;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 59,
-      "match": "._4_4_",
-      "text": "uVar3._4_4_ = 1.4013e-45;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 62,
-      "match": "1.04116e-42",
-      "text": "uVar3._0_4_ = 1.04116e-42;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 62,
-      "match": "._0_4_",
-      "text": "uVar3._0_4_ = 1.04116e-42;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 63,
-      "match": "1.4013e-45",
-      "text": "uVar3._4_4_ = 1.4013e-45;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 63,
-      "match": "._4_4_",
-      "text": "uVar3._4_4_ = 1.4013e-45;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 65,
-      "match": "6.01135e-39",
-      "text": "fStack_20 = 6.01135e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 68,
-      "match": "SUB84",
-      "text": "(int)SUB84 /* extract 2-byte value */(uVar3,4),0);",
-      "type": "sub_artifact"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "0041742c",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "0041742f",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 0041742c, ADD ESP at 0041742f",
-      "type": "callind_esp_uncertain"
-    },
-    {
-      "add_esp_value": 4,
-      "callind_address": "00417491",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "00417494",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 00417491, ADD ESP at 00417494",
-      "type": "callind_esp_uncertain"
     }
   ],
   "vtable_info": {

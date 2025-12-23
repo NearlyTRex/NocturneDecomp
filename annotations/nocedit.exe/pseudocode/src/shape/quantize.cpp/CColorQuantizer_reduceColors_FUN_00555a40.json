@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 506,
-    "complexity_score": 446,
+    "complexity_score": 428,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
-    "pseudocode_lines": 191,
-    "suspect_count": 24,
+    "pseudocode_lines": 188,
+    "suspect_count": 23,
     "suspect_types": [
-      "callind_esp_uncertain",
       "pointer_cast",
       "unknown_field"
     ],
-    "total_lines": 697
+    "total_lines": 694
   },
   "cross_references": [
     {
@@ -68,6 +67,11 @@
     "confidence": "medium",
     "declared_params": 1,
     "estimated_params": 1
+  },
+  "pcode_overrides": {
+    "00555b41": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffb4,4)"
+    ]
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.793838862559242,
@@ -280,175 +284,164 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 61,
+      "line": 59,
       "match": "(int *)((int)",
-      "text": "iVar7 = *(int *)((int)&this_ptr->boxes[local_4c + -1].pixel_count + 2) >> 0x10;",
+      "text": "iVar7 = *(int *)((int)&this_ptr->boxes[local_48 + -1].pixel_count + 2) >> 0x10;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 65,
+      "line": 63,
       "match": "(byte *)((int)",
-      "text": "if (iVar7 < (int)(uint)*(byte *)((int)this_ptr->pixel_data + local_44)) {",
+      "text": "if (iVar7 < (int)(uint)*(byte *)((int)this_ptr->pixel_data + local_40)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 68,
+      "line": 66,
       "match": "(byte *)((int)",
       "text": "(iVar7 < (int)(uint)*(byte *)((int)this_ptr->pixel_data + iVar6)));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 74,
+      "line": 72,
       "match": "(uint *)((int)",
       "text": "*puVar5 = *(uint *)((int)this_ptr->pixel_data + iVar4 * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 75,
+      "line": 73,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)this_ptr->pixel_data + iVar4 * 4) = uVar1;",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 93,
+      "line": 90,
       "match": "._0_2_",
-      "text": "iVar7._0_2_ = this_ptr->boxes[local_4c].avg_red;",
+      "text": "iVar7._0_2_ = this_ptr->boxes[local_48].avg_red;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 94,
+      "line": 91,
       "match": "._2_2_",
-      "text": "iVar7._2_2_ = this_ptr->boxes[local_4c].avg_green;",
+      "text": "iVar7._2_2_ = this_ptr->boxes[local_48].avg_green;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 99,
+      "line": 96,
       "match": "(byte *)((int)",
-      "text": "if (iVar7 >> 0x10 < (int)(uint)*(byte *)((int)this_ptr->pixel_data + local_38 + 1)) {",
+      "text": "if (iVar7 >> 0x10 < (int)(uint)*(byte *)((int)this_ptr->pixel_data + local_34 + 1)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 102,
+      "line": 99,
       "match": "(byte *)((int)",
       "text": "(iVar7 >> 0x10 < (int)(uint)*(byte *)((int)this_ptr->pixel_data + iVar6 + 1)))) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 108,
+      "line": 105,
       "match": "(uint *)((int)",
       "text": "*puVar5 = *(uint *)((int)this_ptr->pixel_data + iVar4 * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 109,
+      "line": 106,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)this_ptr->pixel_data + iVar4 * 4) = uVar1;",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 127,
+      "line": 123,
       "match": "._0_2_",
-      "text": "iVar4._0_2_ = this_ptr->boxes[local_4c].avg_green;",
+      "text": "iVar4._0_2_ = this_ptr->boxes[local_48].avg_green;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 128,
+      "line": 124,
       "match": "._2_2_",
-      "text": "iVar4._2_2_ = this_ptr->boxes[local_4c].avg_blue;",
+      "text": "iVar4._2_2_ = this_ptr->boxes[local_48].avg_blue;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 133,
+      "line": 129,
       "match": "(byte *)((int)",
-      "text": "if (iVar4 >> 0x10 < (int)(uint)*(byte *)((int)this_ptr->pixel_data + local_40 + 2)) {",
+      "text": "if (iVar4 >> 0x10 < (int)(uint)*(byte *)((int)this_ptr->pixel_data + local_3c + 2)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 136,
+      "line": 132,
       "match": "(byte *)((int)",
       "text": "(iVar4 >> 0x10 < (int)(uint)*(byte *)((int)this_ptr->pixel_data + iVar6 + 2)))) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 142,
+      "line": 138,
       "match": "(uint *)((int)",
       "text": "*puVar5 = *(uint *)((int)this_ptr->pixel_data + iVar7 * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 143,
+      "line": 139,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)this_ptr->pixel_data + iVar7 * 4) = uVar1;",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 160,
+      "line": 157,
       "match": "._0_2_",
-      "text": "iVar6._0_2_ = this_ptr->boxes[local_4c].avg_blue;",
+      "text": "iVar6._0_2_ = this_ptr->boxes[local_48].avg_blue;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 161,
+      "line": 158,
       "match": "._2_2_",
-      "text": "iVar6._2_2_ = this_ptr->boxes[local_4c].avg_intensity;",
+      "text": "iVar6._2_2_ = this_ptr->boxes[local_48].avg_intensity;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 166,
+      "line": 163,
       "match": "(byte *)((int)",
-      "text": "if (iVar6 >> 0x10 < (int)(uint)*(byte *)((int)this_ptr->pixel_data + local_3c + 3)) {",
+      "text": "if (iVar6 >> 0x10 < (int)(uint)*(byte *)((int)this_ptr->pixel_data + local_38 + 3)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 169,
+      "line": 166,
       "match": "(byte *)((int)",
       "text": "(iVar6 >> 0x10 < (int)(uint)*(byte *)((int)this_ptr->pixel_data + iVar4 + 3)))) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 175,
+      "line": 172,
       "match": "(uint *)((int)",
       "text": "*puVar5 = *(uint *)((int)this_ptr->pixel_data + iVar7 * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 176,
+      "line": 173,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)this_ptr->pixel_data + iVar7 * 4) = uVar1;",
       "type": "pointer_cast"
-    },
-    {
-      "add_esp_value": 12,
-      "callind_address": "00555b3f",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "00555b41",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 00555b3f, ADD ESP at 00555b41",
-      "type": "callind_esp_uncertain"
     }
   ]
 }

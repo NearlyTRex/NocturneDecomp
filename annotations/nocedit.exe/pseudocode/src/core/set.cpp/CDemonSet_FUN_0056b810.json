@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 576,
-    "complexity_score": 535,
+    "complexity_score": 601,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 25,
-    "pseudocode_lines": 245,
-    "suspect_count": 25,
+    "pseudocode_lines": 216,
+    "suspect_count": 35,
     "suspect_types": [
       "badspacebase",
-      "callind_esp_uncertain",
       "concat_artifact",
       "extra_output",
       "pointer_cast",
@@ -17,7 +16,7 @@
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 821
+    "total_lines": 792
   },
   "cross_references": [
     {
@@ -262,6 +261,20 @@
     "declared_params": 1,
     "estimated_params": 1
   },
+  "pcode_overrides": {
+    "0056b9db": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff6c,4)"
+    ],
+    "0056ba31": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff6c,4)"
+    ],
+    "0056bb05": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff6c,4)"
+    ],
+    "0056bb93": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff6c,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.8524945770065075,
     "instruction_count": 461,
@@ -443,194 +456,248 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 9,
+      "line": 13,
       "match": "extraout_EAX",
       "text": "int extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Ghidra failed to resolve stack frame",
-      "line": 13,
+      "line": 17,
       "match": "BADSPACEBASE",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "badspacebase"
     },
     {
       "description": "Inferred register parameter",
-      "line": 13,
+      "line": 17,
       "match": "in_ESP",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "register_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_fffffefc",
-      "text": "SCollisionInfo *in_stack_fffffefc;",
+      "line": 21,
+      "match": "in_stack_0000000c",
+      "text": "int in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_ffffff18",
-      "text": "float in_stack_ffffff18;",
+      "line": 23,
+      "match": "in_stack_ffffff60",
+      "text": "CLocation *in_stack_ffffff60;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_ffffff84",
+      "text": "float in_stack_ffffff84;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_ffffff88",
+      "text": "SCollisionInfo *in_stack_ffffff88;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 62,
+      "line": 46,
       "match": "CONCAT22",
-      "text": "CONCAT22 /* combine 2-byte values */((short)((uint)local_50 >> 0x10),",
+      "text": "CONCAT22 /* combine 2-byte values */((short)((uint)fVar1 >> 0x10),",
       "type": "concat_artifact"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 60,
+      "match": "in_stack_ffffff84",
+      "text": "if (0.0 < in_stack_ffffff84) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 66,
+      "match": "in_stack_0000000c",
+      "text": "iVar8 = in_stack_0000000c << 2;",
+      "type": "stack_param"
+    },
+    {
       "description": "Complex pointer cast",
-      "line": 101,
+      "line": 83,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)&DAT_032bd794 + iVar5) = iVar2 - (int)local_50;",
+      "text": "*(int *)((int)&DAT_032bd794 + iVar8) = iVar5 - (int)fVar1;",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 142,
-      "match": "in_stack_fffffefc",
-      "text": "(iVar5 = (*pCStack_90->vtable[1].hasCollision)(pCStack_90,in_stack_fffffefc), iVar5 == 0",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 143,
-      "match": "in_stack_fffffefc",
-      "text": ")) && (in_stack_fffffefc = (SCollisionInfo *)g_CFireEffectPtr, iStack_94 = iVar5,",
+      "line": 123,
+      "match": "in_stack_ffffff88",
+      "text": "(iVar8 = (*pCVar6->vtable[1].hasCollision)(pCVar6,in_stack_ffffff88), iVar8 == 0)) &&",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 145,
-      "match": "&stack0xffffff18",
-      "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffff18);",
+      "line": 125,
+      "match": "&stack0xffffff60",
+      "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffff60);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 151,
-      "match": "in_stack_ffffff18",
-      "text": "(pCStack_74,acStack_e4,in_stack_ffffff18);",
+      "line": 127,
+      "match": "in_stack_ffffff60",
+      "text": "(local_2c,&stack0xffffff64,(float)in_stack_ffffff60);",
       "type": "stack_param"
     },
     {
+      "description": "Direct stack address reference",
+      "line": 127,
+      "match": "&stack0xffffff64",
+      "text": "(local_2c,&stack0xffffff64,(float)in_stack_ffffff60);",
+      "type": "stack_ref"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 165,
+      "line": 137,
       "match": "extraout_EAX",
       "text": "extraout_EAX != 0)) {",
       "type": "extra_output"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 141,
+      "match": "in_stack_ffffff60",
+      "text": "in_stack_ffffff60 = (CLocation *)0x56bc02;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 146,
+      "match": "in_stack_ffffff60",
+      "text": "in_stack_ffffff60 = &pCVar6->location;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 167,
+      "match": "in_stack_0000000c",
+      "text": "if (0 < in_stack_0000000c + -1) {",
+      "type": "stack_param"
+    },
+    {
       "description": "Complex pointer cast",
-      "line": 201,
+      "line": 169,
+      "match": "(byte *)((int)",
+      "text": "puVar9 = (byte *)((int)&this_ptr->camera_count + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 170,
+      "match": "in_stack_0000000c",
+      "text": "if ((int)puVar9 < in_stack_0000000c) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 173,
       "match": "(int *)((int)",
-      "text": "iVar5 = *(int *)((int)&DAT_032bd794 + local_28);",
+      "text": "iVar5 = *(int *)((int)&DAT_032bd794 + iVar10);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 202,
+      "line": 174,
       "match": "(int *)((int)",
-      "text": "if (iVar5 < *(int *)((int)&DAT_032bd794 + iVar6)) {",
+      "text": "if (iVar5 < *(int *)((int)&DAT_032bd794 + iVar8)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 203,
+      "line": 175,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&DAT_032bd794 + local_28) =",
+      "text": "*(uint *)((int)&DAT_032bd794 + iVar10) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 204,
+      "line": 176,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&DAT_032bd794 + iVar6);",
+      "text": "*(uint *)((int)&DAT_032bd794 + iVar8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 205,
+      "line": 177,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)&DAT_032bd794 + iVar6) = iVar5;",
+      "text": "*(int *)((int)&DAT_032bd794 + iVar8) = iVar5;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 206,
+      "line": 178,
       "match": "(uint *)((int)",
-      "text": "uVar1 = *(uint *)((int)&DAT_032bf6d4 + local_28);",
+      "text": "uVar4 = *(uint *)((int)&DAT_032bf6d4 + iVar10);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 207,
+      "line": 179,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&DAT_032bf6d4 + local_28) =",
+      "text": "*(uint *)((int)&DAT_032bf6d4 + iVar10) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 208,
+      "line": 180,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&DAT_032bf6d4 + iVar6);",
+      "text": "*(uint *)((int)&DAT_032bf6d4 + iVar8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 209,
+      "line": 181,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&DAT_032bf6d4 + iVar6) = uVar1;",
+      "text": "*(uint *)((int)&DAT_032bf6d4 + iVar8) = uVar4;",
       "type": "pointer_cast"
     },
     {
-      "add_esp_value": 8,
-      "callind_address": "0056b9cd",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "0056b9db",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 0056b9cd, ADD ESP at 0056b9db",
-      "type": "callind_esp_uncertain"
+      "description": "Unresolved stack parameter",
+      "line": 184,
+      "match": "in_stack_0000000c",
+      "text": "} while (iVar8 < in_stack_0000000c << 2);",
+      "type": "stack_param"
     },
     {
-      "add_esp_value": 4,
-      "callind_address": "0056ba2b",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "0056ba31",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 0056ba2b, ADD ESP at 0056ba31",
-      "type": "callind_esp_uncertain"
+      "description": "Complex pointer cast",
+      "line": 187,
+      "match": "(CDemonSet *)((int)",
+      "text": "this_ptr = (CDemonSet *)((int)&this_ptr->camera_count + 1);",
+      "type": "pointer_cast"
     },
     {
-      "add_esp_value": 4,
-      "callind_address": "0056baff",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "0056bb05",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 0056baff, ADD ESP at 0056bb05",
-      "type": "callind_esp_uncertain"
+      "description": "Unresolved stack parameter",
+      "line": 188,
+      "match": "in_stack_0000000c",
+      "text": "} while ((int)this_ptr < in_stack_0000000c + -1);",
+      "type": "stack_param"
     },
     {
-      "add_esp_value": 8,
-      "callind_address": "0056bb8d",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "0056bb93",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 0056bb8d, ADD ESP at 0056bb93",
-      "type": "callind_esp_uncertain"
+      "description": "Unresolved stack parameter",
+      "line": 191,
+      "match": "in_stack_0000000c",
+      "text": "if (in_stack_0000000c < 0x14) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 192,
+      "match": "in_stack_0000000c",
+      "text": "iVar10 = in_stack_0000000c;",
+      "type": "stack_param"
     }
   ]
 }

@@ -1,19 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 111,
+    "complexity_score": 105,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 2,
-    "pseudocode_lines": 21,
+    "pseudocode_lines": 20,
     "suspect_count": 7,
     "suspect_types": [
-      "callind_esp_uncertain",
       "concat_artifact",
       "extra_output",
       "stack_param"
     ],
-    "total_lines": 90
+    "total_lines": 89
   },
   "cross_references": [
     {
@@ -71,6 +70,11 @@
       "value": null
     }
   ],
+  "pcode_overrides": {
+    "005a811f": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.9491525423728815,
     "instruction_count": 59,
@@ -150,49 +154,45 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 8,
+      "line": 7,
       "match": "in_stack_ffffffe0",
       "text": "CSfxSlot *in_stack_ffffffe0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 12,
       "match": "in_stack_ffffffe0",
       "text": "((double *)g_CSoundDevicePtr,(CSoundDevice *)this_ptr,in_stack_ffffffe0);",
       "type": "stack_param"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 14,
+      "line": 13,
       "match": "extraout_EDX",
       "text": "if ((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,pdVar1) < 0.0) {",
       "type": "extra_output"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 14,
+      "line": 13,
       "match": "CONCAT44",
       "text": "if ((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,pdVar1) < 0.0) {",
       "type": "concat_artifact"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 20,
-      "match": "CONCAT44",
-      "text": "(this_ptr,(double)CONCAT44 /* combine 2-byte values */(unaff_retaddr,pdVar1));",
-      "type": "concat_artifact"
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 19,
+      "match": "extraout_EDX",
+      "text": "(this_ptr,(double)CONCAT44 /* combine 2-byte values */(extraout_EDX,pdVar1));",
+      "type": "extra_output"
     },
     {
-      "add_esp_value": 8,
-      "callind_address": "005a8110",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "005a811f",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 005a8110, ADD ESP at 005a811f",
-      "type": "callind_esp_uncertain"
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 19,
+      "match": "CONCAT44",
+      "text": "(this_ptr,(double)CONCAT44 /* combine 2-byte values */(extraout_EDX,pdVar1));",
+      "type": "concat_artifact"
     }
   ]
 }

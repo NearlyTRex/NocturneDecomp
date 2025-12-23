@@ -1,23 +1,21 @@
 {
   "complexity": {
     "assembly_lines": 146,
-    "complexity_score": 346,
+    "complexity_score": 294,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 11,
-    "pseudocode_lines": 56,
-    "suspect_count": 25,
+    "pseudocode_lines": 54,
+    "suspect_count": 21,
     "suspect_types": [
       "badspacebase",
-      "callind_esp_uncertain",
+      "concat_artifact",
       "extra_output",
       "register_param",
       "stack_param",
-      "stack_ref",
-      "sub_artifact",
-      "suspect_float"
+      "unaffected_reg"
     ],
-    "total_lines": 202
+    "total_lines": 200
   },
   "cross_references": [],
   "function": {
@@ -137,6 +135,11 @@
     "declared_params": 0,
     "estimated_params": 0
   },
+  "pcode_overrides": {
+    "004d1fbc": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffdc,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.078260869565217,
     "instruction_count": 115,
@@ -232,6 +235,13 @@
       "type": "register_param"
     },
     {
+      "description": "Unaffected register variable",
+      "line": 12,
+      "match": "unaff_EBP",
+      "text": "uint unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 14,
       "match": "in_stack_00000004",
@@ -239,25 +249,18 @@
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_ffffffe8",
-      "text": "ulonglong in_stack_ffffffe8;",
-      "type": "stack_param"
+      "description": "Unaffected register variable",
+      "line": 20,
+      "match": "unaff_EBP",
+      "text": "stack0xffffffec = (double)CONCAT44 /* combine 2-byte values */(unaff_EBP,CStack_28.max.z);",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Decompiler double/longlong composition artifact",
       "line": 20,
-      "match": "in_stack_ffffffe8",
-      "text": "fVar5 = SUB84 /* extract 2-byte value */(in_stack_ffffffe8,4);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 20,
-      "match": "SUB84",
-      "text": "fVar5 = SUB84 /* extract 2-byte value */(in_stack_ffffffe8,4);",
-      "type": "sub_artifact"
+      "match": "CONCAT44",
+      "text": "stack0xffffffec = (double)CONCAT44 /* combine 2-byte values */(unaff_EBP,CStack_28.max.z);",
+      "type": "concat_artifact"
     },
     {
       "description": "Unresolved stack parameter",
@@ -275,119 +278,87 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 27,
+      "line": 28,
       "match": "in_stack_00000004",
-      "text": "this_ptr = (*in_stack_00000004->vtable->getBoundingBox)",
+      "text": "this_ptr = (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,out_box);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 28,
       "match": "in_stack_00000004",
-      "text": "(in_stack_00000004,(CBoundingBox3D *)&stack0xffffffd8);",
+      "text": "this_ptr = (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,out_box);",
       "type": "stack_param"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 28,
-      "match": "&stack0xffffffd8",
-      "text": "(in_stack_00000004,(CBoundingBox3D *)&stack0xffffffd8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 31,
-      "match": "7.082796e-39",
-      "text": "fStack_24 = 7.082796e-39;",
-      "type": "suspect_float"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 33,
+      "line": 32,
       "match": "in_stack_00000004",
       "text": "((CKeyFramedModelInstance *)&in_stack_00000004[1].location.area_id,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
+      "line": 33,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004[1].location.position.z,-1),",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
       "line": 34,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[1].location.position.z,-1);",
+      "text": "in_stack_00000004[2].create_event[0x5c] != '\\0')) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 35,
       "match": "in_stack_00000004",
-      "text": "if (in_stack_00000004[2].create_event[0x5c] != '\\0') {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 36,
-      "match": "in_stack_00000004",
       "text": "iVar1 = *(int *)(in_stack_00000004[1].actor_name + 4);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 39,
+      "line": 38,
       "match": "in_stack_00000004",
       "text": "input_value = (double)((*(float *)(in_stack_00000004[1].actor_name + 4) + -2000f) *",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 49,
+      "line": 48,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004 = extraout_EBX;",
       "type": "stack_param"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 49,
+      "line": 48,
       "match": "extraout_EBX",
       "text": "in_stack_00000004 = extraout_EBX;",
       "type": "extra_output"
     },
     {
-      "description": "Likely misinterpreted integer as float",
+      "description": "Unresolved stack parameter",
       "line": 51,
-      "match": "7.08288e-39",
-      "text": "fStack_24 = 7.08288e-39;",
-      "type": "suspect_float"
+      "match": "in_stack_00000004",
+      "text": "((CKeyFramedModelInstance *)&in_stack_00000004[2].orient_matrix.m[2].z,(float)out_box,",
+      "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 53,
       "match": "in_stack_00000004",
-      "text": "((CKeyFramedModelInstance *)&in_stack_00000004[2].orient_matrix.m[2].z,fVar5,-1);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 54,
-      "match": "in_stack_00000004",
       "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 58,
+      "line": 56,
       "match": "in_stack_00000004",
       "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_00000004);",
       "type": "stack_param"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "004d1fb9",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "004d1fbc",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 004d1fb9, ADD ESP at 004d1fbc",
-      "type": "callind_esp_uncertain"
     }
   ],
   "vtable_info": {

@@ -14,57 +14,59 @@ uint core_hero_cpp_FUN_004f33b0(void)
   CLocation *input_world_point;
   CCharacter *this_ptr;
   float fVar1;
-  int iVar2;
-  CVector3f *pCVar3;
-  float fVar4;
+  float fVar2;
+  int iVar3;
+  CVector3f *pCVar4;
   BADSPACEBASE *in_ESP;
   CCharacter *in_stack_00000004;
-  int iStack_6c;
-  float fVar5;
-  byte local_30 [12];
-  CVector3f CStack_24;
-  int iStack_18;
+  SInteractionInfo SStack_80;
+  CVector3f local_60;
+  CVector3f CStack_54;
+  byte auStack_48 [24];
+  CVector3f local_30;
+  int local_20;
+  int local_1c;
+  float fStack_18;
   
-  iVar2 = core_charactr_cpp_CCharacter_FUN_0042d360(in_stack_00000004);
-  if (iVar2 == 0) {
+  iVar3 = core_charactr_cpp_CCharacter_FUN_0042d360(in_stack_00000004);
+  if (iVar3 == 0) {
     if (*(int *)(in_stack_00000004[2].cloth_data + 0x54d0) != 0) {
       return 1;
     }
     input_world_point = &(in_stack_00000004->base_actor).location;
-    iStack_18 = 0;
-    for (CStack_24.z = 0.0; (int)CStack_24.z < (int)g_CDemonSetPtr->actor_list_ptr;
-        CStack_24.z = (float)((int)CStack_24.z + 1)) {
-      this_ptr = *(CCharacter **)(g_CDemonSetPtr->actor_list_data + iStack_18);
-      fVar5 = (this_ptr->base_actor).location.position.x - (input_world_point->position).x;
-      fVar1 = (this_ptr->base_actor).location.position.z -
-              (in_stack_00000004->base_actor).location.position.z;
+    local_1c = 0;
+    for (local_20 = 0; local_20 < (int)g_CDemonSetPtr->actor_list_ptr; local_20 = local_20 + 1) {
+      this_ptr = *(CCharacter **)(g_CDemonSetPtr->actor_list_data + local_1c);
+      local_60.x = (this_ptr->base_actor).location.position.x - (input_world_point->position).x;
+      local_60.z = (this_ptr->base_actor).location.position.z -
+                   (in_stack_00000004->base_actor).location.position.z;
       if (((ABS((this_ptr->base_actor).location.position.y -
                 (in_stack_00000004->base_actor).location.position.y) <= (float)10) &&
-          (SQRT(fVar1 * fVar1 + fVar5 * fVar5) <= (float)10)) &&
+          (local_60.y = 0.0,
+          SQRT(local_60.z * local_60.z + local_60.x * local_60.x) <= (float)10)) &&
          (this_ptr != in_stack_00000004)) {
-        pCVar3 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
-                           ((CVector3f *)(local_30 + 4),(CVector3f *)&stack0xffffffa4);
-        fVar4 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                          (pCVar3->y - (in_stack_00000004->base_actor).orient.bank);
-        if (ABS(fVar4) <= (float)1.04719755116667) {
-          pCVar3 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                             (&this_ptr->base_actor,(CVector3f *)local_30,
+        pCVar4 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+                           (&local_30,&local_60);
+        fStack_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
+                              (pCVar4->y - (in_stack_00000004->base_actor).orient.bank);
+        if (ABS(fStack_18) <= (float)1.04719755116667) {
+          pCVar4 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
+                             (&this_ptr->base_actor,(CVector3f *)(auStack_48 + 8),
                               &input_world_point->position);
-          if ((pCVar3->z <= 0.0) &&
-             ((*((this_ptr->base_actor).vtable)->getInteractionInfo)
-                        (&this_ptr->base_actor,(SInteractionInfo *)&stack0xffffff90), fVar5 != 0.0))
-          {
-            CStack_24.x = 0.0;
-            CStack_24.y = 0.0;
-            iStack_6c = 0x4f3525;
-            CStack_24.z = fVar1;
+          if (((pCVar4->z <= 0.0) &&
+              ((*((this_ptr->base_actor).vtable)->getInteractionInfo)
+                         (&this_ptr->base_actor,&SStack_80), SStack_80.can_interact != 0)) &&
+             ((float)SStack_80.reference_data == 0.0)) {
+            auStack_48._8_4_ = SStack_80.distance_min;
+            auStack_48._0_4_ = SStack_80.reference_data;
+            auStack_48._4_4_ = SStack_80.reference_data;
             core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                      (&this_ptr->base_actor,(CVector3f *)local_30,&CStack_24);
-            fVar5 = (float)local_30._4_4_ - (input_world_point->position).x;
-            fVar1 = CStack_24.x - (in_stack_00000004->base_actor).location.position.z;
-            if ((SQRT(fVar1 * fVar1 + fVar5 * fVar5) <= (float)5) &&
-               (iVar2 = (*((this_ptr->base_actor).vtable)->startInteraction)
-                                  (&this_ptr->base_actor,&in_stack_00000004->base_actor), iVar2 != 0
+                      (&this_ptr->base_actor,&CStack_54,(CVector3f *)auStack_48);
+            fVar1 = CStack_54.x - (input_world_point->position).x;
+            fVar2 = CStack_54.z - (in_stack_00000004->base_actor).location.position.z;
+            if ((SQRT(fVar2 * fVar2 + fVar1 * fVar1) <= (float)5) &&
+               (iVar3 = (*((this_ptr->base_actor).vtable)->startInteraction)
+                                  (&this_ptr->base_actor,&in_stack_00000004->base_actor), iVar3 != 0
                )) {
               *(CCharacter **)(in_stack_00000004[2].cloth_data + 0x54d0) = this_ptr;
               return 1;
@@ -72,7 +74,7 @@ uint core_hero_cpp_FUN_004f33b0(void)
           }
         }
       }
-      iStack_18 = iStack_18 + 4;
+      local_1c = local_1c + 4;
     }
   }
   return 0;

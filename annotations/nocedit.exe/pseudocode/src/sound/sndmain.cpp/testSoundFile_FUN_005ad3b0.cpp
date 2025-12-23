@@ -16,15 +16,13 @@ char * __cdecl sound_sndmain_cpp_testSoundFile_FUN_005ad3b0(char *sample_name)
   char *pcVar3;
   char *pcVar4;
   double dVar5;
-  double dStack00000008;
-  float fStack00000010;
-  float in_stack_0000002c;
-  uint in_stack_fffffeb4;
-  uint in_stack_fffffed0;
-  float fStack_58;
+  uint output_format;
+  uint in_stack_fffffe94;
+  float fStack_78;
+  float fStack_14;
   
   sound_sndmain_cpp_CSfxSample_init_FUN_005a8480((CSfxSample *)&stack0xfffffe90);
-  pcVar4 = &stack0xfffffe94;
+  pcVar4 = &stack0xfffffe74;
   pcVar3 = sample_name;
   do {
     cVar1 = *pcVar3;
@@ -35,12 +33,12 @@ char * __cdecl sound_sndmain_cpp_testSoundFile_FUN_005ad3b0(char *sample_name)
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  iVar2 = sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0((CSfxSample *)&stack0xfffffe94);
+  iVar2 = sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0((CSfxSample *)&stack0xfffffe74);
   if (iVar2 == 0) {
     crt_stdio_c_sprintf_FUN_005fdbd0(g_SoundTestErrorBuffer,"Can't get sample info for %s");
     pcVar3 = g_SoundTestErrorBuffer;
   }
-  else if ((int)fStack_58 < 1) {
+  else if ((int)fStack_78 < 1) {
     crt_stdio_c_sprintf_FUN_005fdbd0(g_SoundTestErrorBuffer,"Sample %s has unknown or invalid length");
     pcVar3 = g_SoundTestErrorBuffer;
   }
@@ -57,19 +55,19 @@ char * __cdecl sound_sndmain_cpp_testSoundFile_FUN_005ad3b0(char *sample_name)
       pcVar3 = g_SoundTestErrorBuffer;
     }
     else {
-      dStack00000008 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(0,in_stack_fffffeb4);
-      fStack00000010 = (float)dStack00000008;
-      if (0.0 <= fStack00000010) {
+      dVar5 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(0,in_stack_fffffe94);
+      fStack_14 = (float)((ulonglong)dVar5 >> 0x20);
+      if (0.0 <= (float)dVar5) {
         while (iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(sfx_handle), iVar2 != 0) {
+          output_format = 0x5ad54b;
           iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,1);
           if (iVar2 != 0) {
             return "Canceled";
           }
-          dVar5 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(0,in_stack_fffffed0);
-          if ((float)dVar5 < in_stack_0000002c) break;
-          in_stack_fffffed0 = 0x3fa99999;
+          dVar5 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(0,output_format);
+          if ((float)dVar5 < fStack_14) break;
           wincore_winrun_cpp_sleep_FUN_005f40e0(0.05);
-          in_stack_0000002c = (float)dVar5;
+          fStack_14 = (float)dVar5;
         }
       }
       pcVar3 = (char *)0x0;

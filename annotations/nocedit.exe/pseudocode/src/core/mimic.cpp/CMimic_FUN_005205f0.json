@@ -1,22 +1,21 @@
 {
   "complexity": {
     "assembly_lines": 225,
-    "complexity_score": 258,
+    "complexity_score": 204,
     "cross_reference_count": 1,
     "function_call_count": 20,
     "global_count": 13,
-    "pseudocode_lines": 93,
-    "suspect_count": 13,
+    "pseudocode_lines": 94,
+    "suspect_count": 8,
     "suspect_types": [
       "badspacebase",
-      "callind_esp_uncertain",
       "pointer_cast",
       "register_param",
       "stack_param",
       "stack_ref",
       "unknown_field"
     ],
-    "total_lines": 318
+    "total_lines": 319
   },
   "cross_references": [
     {
@@ -221,6 +220,11 @@
     "declared_params": 1,
     "estimated_params": 1
   },
+  "pcode_overrides": {
+    "0052062f": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff1c,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.371727748691099,
     "instruction_count": 191,
@@ -406,83 +410,44 @@
     {
       "description": "Unresolved stack parameter",
       "line": 12,
-      "match": "in_stack_ffffff40",
-      "text": "CMatrix3x4f *in_stack_ffffff40;",
+      "match": "in_stack_fffffeaa",
+      "text": "CMatrix3x4f *in_stack_fffffeaa;",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 47,
+      "line": 49,
       "match": "._12_4_",
       "text": "local_4c._12_4_ = 0.0;",
       "type": "unknown_field"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 51,
-      "match": "&stack0xffffff3c",
-      "text": "((CMatrix3x4f *)&stack0xffffff3c,(CVector3f *)(local_4c + 0xc),local_34.m + 1);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 53,
-      "match": "&stack0xffffff3c",
-      "text": "((CMatrix3x4f *)&stack0xffffff3c,",
-      "type": "stack_ref"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 56,
-      "match": "in_stack_ffffff40",
-      "text": "[DAT_02f33378].m,in_stack_ffffff40);",
+      "line": 58,
+      "match": "in_stack_fffffeaa",
+      "text": "[DAT_02f33378].m,in_stack_fffffeaa);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 57,
+      "line": 59,
       "match": "&stack0xffffff0c",
-      "text": "puVar2 = (uint *)&stack0xffffff0c;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 58,
-      "match": "&stack0xffffff6c",
-      "text": "puVar3 = (uint *)&stack0xffffff6c;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 65,
-      "match": "&stack0xffffff6c",
-      "text": "((CVector3f *)&stack0xffffff6c,(CMatrix3x4f *)local_4c);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 66,
-      "match": "&stack0xffffff6c",
-      "text": "core_xform_cpp_matrixToEulerAngles_FUN_005f5690((CVector3f *)&stack0xffffff6c,&local_34);",
+      "text": "pfVar2 = (float *)&stack0xffffff0c;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 71,
-      "match": "(CDemonActor *)((int)",
-      "text": "&(((CDemonActor *)((int)local_34.m[2].z + 0x1fbf0))->field12_0xe0).z,0.0,-1);",
+      "line": 64,
+      "match": "(CVector3f *)((int)",
+      "text": "pCVar3 = (CVector3f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
-      "add_esp_value": 8,
-      "callind_address": "0052062c",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "0052062f",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 0052062c, ADD ESP at 0052062f",
-      "type": "callind_esp_uncertain"
+      "description": "Complex pointer cast",
+      "line": 72,
+      "match": "(CDemonActor *)((int)",
+      "text": "&(((CDemonActor *)((int)local_34.m[2].z + 0x1fbf0))->field12_0xe0).z,0.0,-1);",
+      "type": "pointer_cast"
     }
   ]
 }

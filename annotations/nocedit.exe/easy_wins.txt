@@ -79,7 +79,7 @@ PRIORITY 1: Files with 1-2 functions remaining
     - core_gun.cpp_FUN_004f0b50
       Suspects: unaffected_reg, unaffected_reg
     - core_gun.cpp_FUN_004f0350
-      Suspects: extra_output, badspacebase, register_param, unaffected_reg, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, unknown_field, unknown_field, unknown_field, stack_param, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, stack_param, unknown_field, unknown_field, unknown_field, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, extra_output, stack_param, unaffected_reg, stack_ref, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, stack_ref, stack_param, stack_ref, stack_param, stack_param, pointer_cast, stack_param, unknown_field, unknown_field, stack_ref, callind_esp_uncertain, callind_esp_uncertain, callind_esp_uncertain, callind_esp_uncertain, callind_esp_uncertain, callind_esp_uncertain, callind_esp_uncertain
+      Suspects: extra_output, badspacebase, register_param, unaffected_reg, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, unknown_field, unknown_field, stack_param, unknown_field, unknown_field, unknown_field, stack_param, unknown_field, unknown_field, stack_param, stack_param, stack_param, stack_param, extra_output, unaffected_reg, stack_param, stack_param, stack_ref, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_ref, stack_param, unknown_field, unknown_field, stack_param, stack_param, unknown_field, unknown_field, stack_param, unknown_field, unknown_field
 
   core/shovel.cpp (2 remaining of 8)
     - core_shovel.cpp_fire_FUN_00588c20
@@ -97,7 +97,7 @@ PRIORITY 1: Files with 1-2 functions remaining
     - core_particle.cpp_CParticle_dtor_FUN_00545670
       Suspects: param_count_too_few
     - core_particle.cpp_CParticle_process_FUN_00545760
-      Suspects: unaffected_reg, badspacebase, register_param, unaffected_reg, stack_param, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, unknown_field, stack_param, pointer_cast, pointer_cast, unaffected_reg, unaffected_reg, unaffected_reg, unaffected_reg, callind_esp_uncertain
+      Suspects: badspacebase, register_param, stack_param, stack_param, pointer_cast, pointer_cast, unknown_field, unknown_field, unknown_field, unknown_field
 
   core/dirmat.cpp (2 remaining of 7)
     - core_dirmat.cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
@@ -204,7 +204,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_gabriela.cpp_staticInit_FUN_004d2910               ( 24 lines)
     ... and 21 more
 
-  [param_count_too_many] - 26 functions
+  [param_count_too_many] - 27 functions
     sound_sndmain.cpp_setNextSfxDelay_FUN_005a8b40          (  5 lines)
     support_trisock.cpp_cleanupWinsock_FUN_005e1ee0         (  7 lines)
     core_skeleton.cpp_CDeformableModel_rotateVertices_FUN_0 (  8 lines)
@@ -215,7 +215,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_skeleton.cpp_CDeformableModel_lightVertices_FUN_00 (  9 lines)
     core_game.cpp_CallToJoystickStuff_FUN_004dc230          (  9 lines)
     shape_edittool.cpp_CEditorTools_showCheatInputDialog_FU ( 10 lines)
-    ... and 16 more
+    ... and 17 more
 
   [unknown_field] - 5 functions
     crt_math.c_modf_FUN_00602102                            (  9 lines)
@@ -238,9 +238,6 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
   [stack_param] - 2 functions
     engine_matrix.c_interpolatedCos_FUN_0050c600            ( 11 lines)
     engine_matrix.c_interpolatedSin_FUN_0050c5c0            ( 11 lines)
-
-  [callind_esp_uncertain] - 1 functions
-    crt_math.c_report_math_error_FUN_0060e2e5               ( 15 lines)
 
   [undefined_ptr_cast] - 1 functions
     crt_stdio.c_store_count_FUN_00604fb0                    ( 33 lines)

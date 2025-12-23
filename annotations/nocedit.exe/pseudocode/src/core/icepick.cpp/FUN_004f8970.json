@@ -1,21 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 307,
+    "complexity_score": 240,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 5,
-    "pseudocode_lines": 57,
-    "suspect_count": 22,
+    "pseudocode_lines": 55,
+    "suspect_count": 17,
     "suspect_types": [
       "badspacebase",
-      "callind_esp_uncertain",
       "register_param",
-      "stack_param",
-      "stack_ref",
-      "unaffected_reg"
+      "stack_param"
     ],
-    "total_lines": 184
+    "total_lines": 182
   },
   "cross_references": [
     {
@@ -83,6 +80,11 @@
       "value": null
     }
   ],
+  "pcode_overrides": {
+    "004f89ff": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd4,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.419642857142857,
     "instruction_count": 112,
@@ -208,148 +210,109 @@
       "type": "register_param"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 11,
-      "match": "unaff_ESI",
-      "text": "float unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 13,
       "match": "in_stack_00000004",
       "text": "CDemonActor *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 19,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[0x17a].actor_name[8] = '\\0';",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 20,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[0x17a].actor_name[9] = '\\0';",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 21,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[0x17a].actor_name[10] = '\\0';",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 22,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[0x17a].actor_name[0xb] = '\\0';",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 29,
+      "line": 27,
       "match": "in_stack_00000004",
-      "text": "(in_stack_00000004,(CVector3f *)&stack0xffffffcc,&local_28);",
+      "text": "core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(in_stack_00000004,&local_34,&local_28);",
       "type": "stack_param"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 29,
-      "match": "&stack0xffffffcc",
-      "text": "(in_stack_00000004,(CVector3f *)&stack0xffffffcc,&local_28);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 41,
-      "match": "unaff_ESI",
-      "text": "(fVar1 = fVar1 * fVar1 + local_28.y * local_28.y, fVar1 <= unaff_ESI)) {",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 42,
+      "line": 40,
       "match": "in_stack_00000004",
       "text": "*(CDemonActor **)(in_stack_00000004[0x17a].actor_name + 8) = this_ptr;",
       "type": "stack_param"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 43,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI = fVar1;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 49,
+      "line": 47,
       "match": "in_stack_00000004",
       "text": "if (*(int *)(in_stack_00000004[0x17a].actor_name + 8) == 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 52,
+      "line": 50,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->location).position.x =",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 53,
+      "line": 51,
       "match": "in_stack_00000004",
-      "text": "(*(float *)(*(int *)(in_stack_00000004[0x17a].actor_name + 8) + 0x20) - fStack_30) +",
+      "text": "(*(float *)(*(int *)(in_stack_00000004[0x17a].actor_name + 8) + 0x20) - local_34.z) +",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 54,
+      "line": 52,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->location).position.x;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 55,
+      "line": 53,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->location).position.z =",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 56,
+      "line": 54,
       "match": "in_stack_00000004",
-      "text": "(*(float *)(*(int *)(in_stack_00000004[0x17a].actor_name + 8) + 0x28) - local_28.x) +",
+      "text": "(*(float *)(*(int *)(in_stack_00000004[0x17a].actor_name + 8) + 0x28) - local_28.y) +",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 57,
+      "line": 55,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->location).position.z;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 59,
+      "line": 57,
       "match": "in_stack_00000004",
       "text": "((CMotionController *)(in_stack_00000004 + 1),0x13,1);",
       "type": "stack_param"
-    },
-    {
-      "add_esp_value": 4,
-      "callind_address": "004f89f9",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "004f89ff",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 004f89f9, ADD ESP at 004f89ff",
-      "type": "callind_esp_uncertain"
     }
   ]
 }

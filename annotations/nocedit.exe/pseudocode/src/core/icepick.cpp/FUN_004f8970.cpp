@@ -15,25 +15,23 @@ uint core_icepick_cpp_FUN_004f8970(void)
   float fVar1;
   CDemonActor *pCVar2;
   BADSPACEBASE *in_ESP;
-  float unaff_ESI;
   int iVar3;
   int iVar4;
   CDemonActor *in_stack_00000004;
-  float fStack_30;
+  CVector3f local_34;
   CVector3f local_28;
-  float local_1c;
-  float fStack_18;
+  uint local_1c;
+  float fStack_14;
   
   in_stack_00000004[0x17a].actor_name[8] = '\0';
   in_stack_00000004[0x17a].actor_name[9] = '\0';
   in_stack_00000004[0x17a].actor_name[10] = '\0';
   in_stack_00000004[0x17a].actor_name[0xb] = '\0';
-  local_1c = 4.0;
+  local_1c = 0x40800000;
   local_28.x = 1.0;
   local_28.y = 0.0;
   local_28.z = 2.0;
-  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-            (in_stack_00000004,(CVector3f *)&stack0xffffffcc,&local_28);
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(in_stack_00000004,&local_34,&local_28);
   iVar4 = 0;
   for (iVar3 = 0; iVar3 < (int)g_CDemonSetPtr->actor_list_ptr; iVar3 = iVar3 + 1) {
     this_ptr = *(CDemonActor **)(g_CDemonSetPtr->actor_list_data + iVar4);
@@ -41,13 +39,13 @@ uint core_icepick_cpp_FUN_004f8970(void)
     if (pCVar2 == (CDemonActor *)0x0) {
       pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790(this_ptr,g_CTommyGunClassInfo.name_hash);
       if (pCVar2 != (CDemonActor *)0x0) {
-        fVar1 = (this_ptr->location).position.x - local_28.z;
-        local_28.x = (this_ptr->location).position.y - local_1c;
-        local_28.y = (this_ptr->location).position.z - fStack_18;
-        if ((ABS(local_28.x) <= (float)2) &&
-           (fVar1 = fVar1 * fVar1 + local_28.y * local_28.y, fVar1 <= unaff_ESI)) {
+        fVar1 = (this_ptr->location).position.x - local_34.z;
+        local_34.x = (this_ptr->location).position.y - local_28.x;
+        local_34.y = (this_ptr->location).position.z - local_28.y;
+        if ((ABS(local_34.x) <= (float)2) &&
+           (fVar1 = fVar1 * fVar1 + local_34.y * local_34.y, fVar1 <= fStack_14)) {
           *(CDemonActor **)(in_stack_00000004[0x17a].actor_name + 8) = this_ptr;
-          unaff_ESI = fVar1;
+          fStack_14 = fVar1;
         }
       }
     }
@@ -57,10 +55,10 @@ uint core_icepick_cpp_FUN_004f8970(void)
     return 0;
   }
   (in_stack_00000004->location).position.x =
-       (*(float *)(*(int *)(in_stack_00000004[0x17a].actor_name + 8) + 0x20) - fStack_30) +
+       (*(float *)(*(int *)(in_stack_00000004[0x17a].actor_name + 8) + 0x20) - local_34.z) +
        (in_stack_00000004->location).position.x;
   (in_stack_00000004->location).position.z =
-       (*(float *)(*(int *)(in_stack_00000004[0x17a].actor_name + 8) + 0x28) - local_28.x) +
+       (*(float *)(*(int *)(in_stack_00000004[0x17a].actor_name + 8) + 0x28) - local_28.y) +
        (in_stack_00000004->location).position.z;
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
             ((CMotionController *)(in_stack_00000004 + 1),0x13,1);

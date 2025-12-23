@@ -14,24 +14,21 @@ int __cdecl crt_io_c_write_FUN_006084ec(int fd,void *buffer,SIZE_T count)
   int iVar3;
   BOOL BVar4;
   BADSPACEBASE *in_ESP;
-  uint uStack00000020;
-  uint uStack00000028;
-  uint uStack00000038;
+  SIZE_T in_stack_ffffffc8;
   DWORD nNumberOfBytesToWrite;
-  DWORD DVar5;
-  SIZE_T in_stack_ffffffe4;
-  DWORD DVar6;
-  byte *hFile;
-  byte *hFile_00;
-  uint uVar7;
+  DWORD local_20;
+  DWORD local_1c;
+  HANDLE local_18;
+  uint local_14;
   
   if ((fd < 0) || (g_MaxHandleCount < (uint)fd)) {
     crt_errno_c_setErrno_FUN_00602790(4);
     count = 0xffffffff;
   }
   else {
-    hFile = g_IOControlBlock->standard_handles[fd];
+    local_18 = g_IOControlBlock->standard_handles[fd];
     uVar1 = crt_io_c_getFileTypeFlags_FUN_006088b0(fd);
+    local_14 = uVar1;
     if (uVar1 == 0) {
       crt_errno_c_setErrno_FUN_00602790(4);
       return -1;
@@ -40,144 +37,133 @@ int __cdecl crt_io_c_write_FUN_006084ec(int fd,void *buffer,SIZE_T count)
       crt_errno_c_setErrno_FUN_00602790(6);
       return -1;
     }
-    uVar7 = uVar1;
     (*PTR_crt_sync_c_EnterCriticalSection_FUN_00602434_00684ee8)(fd);
     if ((uVar1 & 0x80) != 0) {
-      hFile = &DAT_00000002;
-      in_stack_ffffffe4 = 0;
-      DVar2 = (*SetFilePointer)(&DAT_00000002,0,(PLONG)0x0,2);
+      in_stack_ffffffc8 = 0x608583;
+      DVar2 = (*SetFilePointer)(local_18,0,(PLONG)0x0,2);
       if (DVar2 == 0xffffffff) {
         (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(fd);
         DVar2 = crt_errno_c_getLastErrorAndSetErrno_FUN_006083fc();
         return DVar2;
       }
     }
-    if (((uVar7 & 0x8000) != 0) &&
+    if (((local_14 & 0x8000) != 0) &&
        (iVar3 = crt_io_c_extend_file_for_append_FUN_00608410(fd), iVar3 != 0)) {
       (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(fd);
       return -1;
     }
-    if ((uVar7 & 0x40) == 0) {
-      uVar1 = crt_stack_c_GetStackUsage_FUN_0060c260();
-      if (uVar1 < 0xb0) {
+    if ((local_14 & 0x40) == 0) {
+      local_20 = crt_stack_c_GetStackUsage_FUN_0060c260();
+      if (local_20 < 0xb0) {
                     /* WARNING: Subroutine does not return */
-        crt_stack_c_stack_overflow_handler_FUN_005ffa22(fd);
+        crt_stack_c_stack_overflow_handler_FUN_005ffa22(in_stack_ffffffc8);
       }
       DVar2 = 0x200;
-      if (uVar1 < 0x230) {
+      if (local_20 < 0x230) {
         DVar2 = 0x80;
       }
-      DVar5 = 0;
+      local_20 = 0;
       nNumberOfBytesToWrite = 0;
-      DVar6 = 0;
+      local_1c = 0;
       if (count != 0) {
         do {
-          if (*(char *)((int)buffer + DVar5) == '\n') {
-            (&stack0x00000018)[nNumberOfBytesToWrite] = 0xd;
+          if (*(char *)((int)buffer + local_20) == '\n') {
+            (&stack0xffffffdc)[nNumberOfBytesToWrite] = 0xd;
             nNumberOfBytesToWrite = nNumberOfBytesToWrite + 1;
             if (DVar2 == nNumberOfBytesToWrite) {
               if ((g_SpecialDeviceWriteFuncPtr == (SPECIAL_DEVICE_WRITE_FUNC *)0x0) ||
-                 (buffer = (void *)(*g_IsSpecialDeviceFuncPtr)(fd), buffer == (void *)0x0)) {
+                 (iVar3 = (*g_IsSpecialDeviceFuncPtr)(fd), iVar3 == 0)) {
                 BVar4 = (*PTR_WriteFile_00611678)
-                                  (hFile,&stack0x00000018,DVar2,(LPDWORD)&stack0xffffffdc,
+                                  (local_18,&stack0xffffffdc,DVar2,(LPDWORD)&stack0xffffffdc,
                                    (LPOVERLAPPED)0x0);
-                buffer = &stack0x00000018;
-                count = DVar2;
                 if (BVar4 == 0) {
-                  uStack00000028 = 0x608713;
+                  local_14 = 0x608713;
                   (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(fd);
-                  uStack00000038 = 0x60871b;
                   DVar2 = crt_errno_c_getLastErrorAndSetErrno_FUN_006083fc();
                   return DVar2;
                 }
               }
               else {
-                nNumberOfBytesToWrite =
-                     (*g_SpecialDeviceWriteFuncPtr)((int)buffer,&stack0x00000018,DVar2);
-                count = (SIZE_T)&stack0x00000018;
+                nNumberOfBytesToWrite = (*g_SpecialDeviceWriteFuncPtr)(iVar3,&stack0xffffffdc,DVar2)
+                ;
               }
               if (DVar2 != nNumberOfBytesToWrite) {
-                uStack00000028 = 0x60872e;
+                local_14 = 0x60872e;
                 crt_errno_c_setErrno_FUN_00602790(0xc);
                 (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(fd);
-                return DVar6 + nNumberOfBytesToWrite;
+                return local_1c + nNumberOfBytesToWrite;
               }
+              local_1c = local_20;
               nNumberOfBytesToWrite = 0;
-              DVar6 = DVar5;
             }
           }
-          (&stack0x00000018)[nNumberOfBytesToWrite] = *(byte *)((int)buffer + DVar5);
-          DVar5 = DVar5 + 1;
+          (&stack0xffffffdc)[nNumberOfBytesToWrite] = *(byte *)((int)buffer + local_20);
+          local_20 = local_20 + 1;
           nNumberOfBytesToWrite = nNumberOfBytesToWrite + 1;
           if (DVar2 == nNumberOfBytesToWrite) {
-            hFile_00 = hFile;
             if ((g_SpecialDeviceWriteFuncPtr == (SPECIAL_DEVICE_WRITE_FUNC *)0x0) ||
-               (iVar3 = (*g_IsSpecialDeviceFuncPtr)(fd), hFile_00 = hFile, iVar3 == 0)) {
-              hFile = (byte *)0x6087b4;
+               (iVar3 = (*g_IsSpecialDeviceFuncPtr)(fd), iVar3 == 0)) {
               BVar4 = (*PTR_WriteFile_00611678)
-                                (hFile_00,&stack0x00000018,DVar2,(LPDWORD)&stack0xffffffdc,
+                                (local_18,&stack0xffffffdc,DVar2,(LPDWORD)&stack0xffffffdc,
                                  (LPOVERLAPPED)0x0);
               if (BVar4 == 0) {
                 (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(fd);
-                uStack00000020 = 0x6087c7;
                 DVar2 = crt_errno_c_getLastErrorAndSetErrno_FUN_006083fc();
                 return DVar2;
               }
             }
             else {
-              nNumberOfBytesToWrite = (*g_SpecialDeviceWriteFuncPtr)(iVar3,&stack0x00000018,DVar2);
+              nNumberOfBytesToWrite = (*g_SpecialDeviceWriteFuncPtr)(iVar3,&stack0xffffffdc,DVar2);
             }
             if (DVar2 != nNumberOfBytesToWrite) {
               crt_errno_c_setErrno_FUN_00602790(0xc);
               (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(fd);
-              return DVar6 + nNumberOfBytesToWrite;
+              return local_1c + fd;
             }
+            local_1c = local_20;
             nNumberOfBytesToWrite = 0;
-            DVar6 = DVar5;
           }
-        } while (DVar5 < count);
+        } while (local_20 < count);
       }
       if (nNumberOfBytesToWrite != 0) {
         if ((g_SpecialDeviceWriteFuncPtr == (SPECIAL_DEVICE_WRITE_FUNC *)0x0) ||
            (iVar3 = (*g_IsSpecialDeviceFuncPtr)(fd), iVar3 == 0)) {
           BVar4 = (*PTR_WriteFile_00611678)
-                            (hFile,&stack0x00000018,nNumberOfBytesToWrite,(LPDWORD)&stack0xffffffe0,
+                            (local_18,&stack0xffffffdc,nNumberOfBytesToWrite,&local_20,
                              (LPOVERLAPPED)0x0);
           if (BVar4 == 0) {
+            local_14 = 0x608863;
             (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(fd);
-            uStack00000020 = 0x60886b;
             DVar2 = crt_errno_c_getLastErrorAndSetErrno_FUN_006083fc();
             return DVar2;
           }
         }
         else {
-          DVar5 = (*g_SpecialDeviceWriteFuncPtr)(iVar3,&stack0x00000018,nNumberOfBytesToWrite);
+          local_20 = (*g_SpecialDeviceWriteFuncPtr)(iVar3,&stack0xffffffdc,nNumberOfBytesToWrite);
         }
-        if (DVar5 != nNumberOfBytesToWrite) {
+        if (local_20 != nNumberOfBytesToWrite) {
           crt_errno_c_setErrno_FUN_00602790(0xc);
           (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(fd);
-          return DVar6 + DVar5;
+          return local_1c + local_20;
         }
       }
     }
     else {
       if ((g_SpecialDeviceWriteFuncPtr == (SPECIAL_DEVICE_WRITE_FUNC *)0x0) ||
          (iVar3 = (*g_IsSpecialDeviceFuncPtr)(fd), iVar3 == 0)) {
-        BVar4 = (*PTR_WriteFile_00611678)
-                          (hFile,buffer,count,(LPDWORD)&stack0xffffffe4,(LPOVERLAPPED)0x0);
+        BVar4 = (*PTR_WriteFile_00611678)(local_18,buffer,count,&local_1c,(LPOVERLAPPED)0x0);
         if (BVar4 == 0) {
           (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(fd);
-          uStack00000020 = 0x608629;
           DVar2 = crt_errno_c_getLastErrorAndSetErrno_FUN_006083fc();
           return DVar2;
         }
       }
       else {
-        in_stack_ffffffe4 = (*g_SpecialDeviceWriteFuncPtr)(iVar3,buffer,count);
+        local_1c = (*g_SpecialDeviceWriteFuncPtr)(iVar3,buffer,count);
       }
-      if (in_stack_ffffffe4 != count) {
-        count = in_stack_ffffffe4;
+      if (local_1c != count) {
         crt_errno_c_setErrno_FUN_00602790(0xc);
+        count = local_1c;
       }
     }
     (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(fd);

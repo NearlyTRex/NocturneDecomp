@@ -30,6 +30,7 @@ void core_drone_cpp_FUN_0048ec70(void)
   BADSPACEBASE *in_ESP;
   CEnemy *in_stack_00000004;
   float in_stack_00000008;
+  SDamageInfo local_dc;
   CVector3f local_a0;
   CVector3f local_94;
   CVector3f local_88;
@@ -126,7 +127,7 @@ void core_drone_cpp_FUN_0048ec70(void)
                           (&in_stack_00000004->base_character);
         if (iVar7 < 0) {
           engine_console_cpp_CConsole_printf_FUN_00441890
-                    (g_CConsolePtr,"%s gave up chase - I'm confused\n");
+                    (g_CConsolePtr,"%s gave up chase - I'm confused\n",in_stack_00000004);
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&this_ptr->motion_controller,0,1);
         }
@@ -149,8 +150,11 @@ void core_drone_cpp_FUN_0048ec70(void)
       }
       break;
     case 2:
-      core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffff24);
-      local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(10.0,15.0);
+      core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_dc);
+      local_dc.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(10.0,15.0);
+      local_dc.attacker = (CDemonActor *)in_stack_00000004;
+      local_dc.wielder = (CDemonActor *)in_stack_00000004;
+      local_14 = local_dc.damage_amount;
       pCVar11 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                           (&local_88,&g_ZeroVector,
                            (in_stack_00000004->base_character).model.bone_transform.
@@ -160,7 +164,10 @@ void core_drone_cpp_FUN_0048ec70(void)
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 ((CDemonActor *)in_stack_00000004,&local_58,pCVar11);
       core_enemy_cpp_FUN_004a9880();
-      local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(10.0,15.0);
+      local_dc.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(10.0,15.0);
+      local_dc.attacker = (CDemonActor *)in_stack_00000004;
+      local_dc.wielder = (CDemonActor *)in_stack_00000004;
+      local_14 = local_dc.damage_amount;
       pCVar11 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                           (&local_4c,&g_ZeroVector,
                            (in_stack_00000004->base_character).model.bone_transform.

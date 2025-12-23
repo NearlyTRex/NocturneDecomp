@@ -30,16 +30,16 @@ float * core_stranger_cpp_CStranger_FUN_005c07b0(void)
   int in_stack_00000004;
   CDemonActor *in_stack_00000008;
   float in_stack_0000000c;
+  CMatrix3x4f *in_stack_fffff232;
+  CMatrix3x4f *in_stack_fffff236;
+  CMatrix3x4f *in_stack_fffff23a;
   CMatrix3x4f *in_stack_fffff2ac;
   CMatrix3x4f *in_stack_fffff2b0;
   CMatrix3x4f *in_stack_fffff2b4;
   CMatrix3x4f *in_stack_fffff2b8;
   CMatrix3x4f *in_stack_fffff2bc;
   float in_stack_fffff2c0;
-  CMatrix3x4f *in_stack_fffff2cc;
-  CMatrix3x4f *in_stack_fffff2d0;
-  CMatrix3x4f *in_stack_fffff2dc;
-  CMatrix3x4f *in_stack_fffff2e0;
+  CMatrix3x4f local_d2c;
   CMatrix3x4f local_cfc;
   CMatrix3x4f local_ccc;
   CMatrix3x4f local_c9c;
@@ -406,7 +406,7 @@ float * core_stranger_cpp_CStranger_FUN_005c07b0(void)
         pfVar9 = pfVar9 + (uint)bVar13 * -2 + 1;
         pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar13 * -2 + 1) * 4);
       }
-      core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_96c,in_stack_fffff2cc,in_stack_fffff2d0);
+      core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_96c,in_stack_fffff232,in_stack_fffff236);
       pfVar9 = local_90c;
       pCVar7 = &local_2ac;
       for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {
@@ -498,7 +498,7 @@ LAB_005c10ab:
     local_1d4.y = -0.161673;
     local_1d4.z = -0.489897;
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
-              ((CMatrix3x4f *)&stack0xfffff2d4,&local_1d4,&local_12c);
+              (&local_d2c,&local_1d4,&local_12c);
     local_15c.x = 0.30057;
     local_120.z = -0.49418;
     local_120.x = 0.385392;
@@ -508,8 +508,7 @@ LAB_005c10ab:
     core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
               (&local_cfc,&local_120,&local_15c);
     fVar2 = (float)core_charactr_cpp_CCharacter_FUN_0042e840();
-    core_xform_cpp_lerpMatrix3x4_FUN_005f7140
-              ((CMatrix3x4f *)&stack0xfffff2d4,&local_cfc,1.0 - fVar2);
+    core_xform_cpp_lerpMatrix3x4_FUN_005f7140(&local_d2c,&local_cfc,1.0 - fVar2);
     pfVar9 = local_84c;
     pCVar7 = &local_99c;
     for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {
@@ -517,7 +516,7 @@ LAB_005c10ab:
       pfVar9 = pfVar9 + (uint)bVar13 * -2 + 1;
       pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar13 * -2 + 1) * 4);
     }
-    core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_99c,in_stack_fffff2dc,in_stack_fffff2e0);
+    core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_99c,in_stack_fffff236,in_stack_fffff23a);
     pfVar9 = (float *)&stack0xfffff2a4;
     pCVar4 = local_9cc;
     for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {

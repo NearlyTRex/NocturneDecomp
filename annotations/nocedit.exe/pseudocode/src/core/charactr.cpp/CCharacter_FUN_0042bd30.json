@@ -1,20 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 183,
-    "complexity_score": 279,
+    "complexity_score": 263,
     "cross_reference_count": 13,
     "function_call_count": 6,
     "global_count": 1,
-    "pseudocode_lines": 74,
-    "suspect_count": 18,
+    "pseudocode_lines": 83,
+    "suspect_count": 16,
     "suspect_types": [
       "badspacebase",
-      "callind_esp_uncertain",
+      "pointer_cast",
       "register_param",
-      "stack_param",
-      "stack_ref"
+      "stack_param"
     ],
-    "total_lines": 257
+    "total_lines": 266
   },
   "cross_references": [
     {
@@ -142,6 +141,11 @@
       "value": null
     }
   ],
+  "pcode_overrides": {
+    "0042be57": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff74,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.920529801324503,
     "instruction_count": 151,
@@ -323,97 +327,79 @@
     {
       "description": "Unresolved stack parameter",
       "line": 15,
-      "match": "in_stack_ffffff68",
-      "text": "CMatrix3x4f *in_stack_ffffff68;",
+      "match": "in_stack_fffffef2",
+      "text": "CMatrix3x4f *in_stack_fffffef2;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
+      "line": 31,
       "match": "in_stack_0000000c",
       "text": "((this_ptr->model).part_visibility_flags[in_stack_0000000c] != 0)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 26,
+      "line": 33,
       "match": "in_stack_00000008",
       "text": "(&this_ptr->model,in_stack_00000008,in_stack_0000000c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 26,
+      "line": 33,
       "match": "in_stack_0000000c",
       "text": "(&this_ptr->model,in_stack_00000008,in_stack_0000000c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 32,
+      "line": 39,
       "match": "in_stack_0000000c",
       "text": "if (in_stack_0000000c == *(int *)pcVar1) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 34,
-      "match": "in_stack_ffffff68",
-      "text": "((CMatrix3x4f *)(pcVar1 + 8),local_18 + *(int *)(pcVar1 + 4),in_stack_ffffff68);",
+      "line": 41,
+      "match": "in_stack_fffffef2",
+      "text": "((CMatrix3x4f *)(pcVar1 + 8),local_18 + *(int *)(pcVar1 + 4),in_stack_fffffef2);",
       "type": "stack_param"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 36,
-      "match": "&stack0xffffff64",
-      "text": "puVar5 = (uint *)&stack0xffffff64;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 43,
-      "match": "&stack0xffffff64",
-      "text": "((CVector3f *)&stack0xffffff64,(CMatrix3x3f *)&local_24);",
-      "type": "stack_ref"
+      "description": "Complex pointer cast",
+      "line": 47,
+      "match": "(CVector3f *)((int)",
+      "text": "pCVar5 = (CVector3f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 54,
+      "line": 63,
       "match": "in_stack_0000000c",
       "text": "if ((in_stack_0000000c == *(int *)pcVar1) && (-1 < *(int *)(pcVar1 + 4))) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 67,
+      "line": 76,
       "match": "in_stack_0000000c",
       "text": "if (in_stack_0000000c == *(int *)(pCVar3->carry_hands[0].field0_0x0 + 4)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 73,
+      "line": 82,
       "match": "in_stack_00000008",
       "text": "*(uint *)in_stack_00000008->field1_0x158 = in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 73,
+      "line": 82,
       "match": "in_stack_00000010",
       "text": "*(uint *)in_stack_00000008->field1_0x158 = in_stack_00000010;",
       "type": "stack_param"
-    },
-    {
-      "add_esp_value": 12,
-      "callind_address": "0042be51",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "0042be57",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 0042be51, ADD ESP at 0042be57",
-      "type": "callind_esp_uncertain"
     }
   ]
 }

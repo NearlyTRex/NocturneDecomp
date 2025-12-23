@@ -1,19 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 132,
-    "complexity_score": 212,
+    "complexity_score": 200,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 82,
-    "suspect_count": 11,
+    "pseudocode_lines": 85,
+    "suspect_count": 10,
     "suspect_types": [
       "badspacebase",
-      "callind_esp_uncertain",
       "pointer_cast",
       "register_param"
     ],
-    "total_lines": 214
+    "total_lines": 217
   },
   "cross_references": [],
   "function": {
@@ -36,6 +35,11 @@
     "confidence": "unknown",
     "declared_params": 3,
     "estimated_params": 3
+  },
+  "pcode_overrides": {
+    "005d2c5f": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff6c,4)"
+    ]
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.944444444444445,
@@ -141,70 +145,59 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 49,
+      "line": 50,
       "match": "(double *)((int)",
       "text": "pdVar3 = (double *)((int)pdVar3 + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 50,
+      "line": 51,
       "match": "(double *)((int)",
       "text": "pdVar4 = (double *)((int)pdVar4 + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 60,
+      "line": 63,
       "match": "(double *)((int)",
       "text": "pdVar3 = (double *)((int)pdVar3 + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 61,
+      "line": 64,
       "match": "(double *)((int)",
       "text": "pdVar4 = (double *)((int)pdVar4 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 70,
+      "line": 73,
       "match": "(double *)((int)",
       "text": "pdVar3 = (double *)((int)pdVar3 + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 74,
+      "line": 77,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&(pCVar2->position).x + 4) = uStack_68;",
+      "text": "*(uint *)((int)&(pCVar2->position).x + 4) = uStack_70;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 76,
+      "line": 79,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&(pCVar2->position).y + 4) = uStack_60;",
+      "text": "*(uint *)((int)&(pCVar2->position).y + 4) = uStack_68;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 78,
+      "line": 81,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&(pCVar2->position).z + 4) = uStack_58;",
+      "text": "*(uint *)((int)&(pCVar2->position).z + 4) = uStack_60;",
       "type": "pointer_cast"
-    },
-    {
-      "add_esp_value": 4,
-      "callind_address": "005d2c5c",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "005d2c5f",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 005d2c5c, ADD ESP at 005d2c5f",
-      "type": "callind_esp_uncertain"
     }
   ],
   "vtable_info": {

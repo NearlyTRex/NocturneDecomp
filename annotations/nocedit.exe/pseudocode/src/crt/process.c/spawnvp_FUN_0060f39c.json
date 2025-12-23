@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 541,
-    "complexity_score": 522,
+    "complexity_score": 501,
     "cross_reference_count": 3,
     "function_call_count": 26,
     "global_count": 10,
-    "pseudocode_lines": 207,
-    "suspect_count": 27,
+    "pseudocode_lines": 211,
+    "suspect_count": 25,
     "suspect_types": [
       "badspacebase",
-      "callind_esp_uncertain",
       "concat_artifact",
       "extra_output",
       "param_count_too_few",
@@ -18,7 +17,7 @@
       "stack_ref",
       "undefined_type"
     ],
-    "total_lines": 748
+    "total_lines": 752
   },
   "cross_references": [
     {
@@ -263,6 +262,14 @@
     "confidence": "low",
     "declared_params": 3,
     "estimated_params": 5
+  },
+  "pcode_overrides": {
+    "0060f595": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff4c,4)"
+    ],
+    "0060f857": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff4c,4)"
+    ]
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.239336492890995,
@@ -532,151 +539,129 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
+      "line": 27,
       "match": "in_stack_ffffff3c",
       "text": "PRTL_CRITICAL_SECTION_DEBUG in_stack_ffffff3c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 51,
+      "line": 53,
       "match": "in_stack_00000010",
       "text": "pcVar5 = *in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 52,
+      "line": 54,
       "match": "in_stack_00000010",
       "text": "ppcVar3 = in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 65,
+      "line": 67,
       "match": "in_stack_00000010",
       "text": "crt_string_c_memcpy_FUN_0060cd60(ppcVar3,in_stack_00000010,size - 4);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 69,
+      "line": 71,
       "match": "in_stack_00000010",
       "text": "in_stack_00000010 = ppcVar3;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 74,
+      "line": 76,
       "match": "in_stack_00000010",
       "text": "iVar8 = crt_process_c_execv_FUN_006101f0((int)cmdname,(char *)argv,in_stack_00000010);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 78,
+      "line": 80,
       "match": "in_stack_00000010",
       "text": "crt_memory_c_free_FUN_00601cd0(in_stack_00000010);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 83,
+      "line": 86,
       "match": "in_stack_00000010",
       "text": "((int)argv,in_stack_00000010,(char *)&local_38,&local_3c,&local_40,&local_44,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 84,
+      "line": 87,
       "match": "in_stack_ffffff3c",
       "text": "(int *)0x0,(int)in_stack_ffffff3c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 87,
+      "line": 90,
       "match": "in_stack_00000010",
       "text": "crt_memory_c_free_FUN_00601cd0(in_stack_00000010);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 101,
+      "line": 104,
       "match": "&stack0xffffff3c",
       "text": "pcVar5 = &stack0xffffff3c;",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 110,
+      "line": 113,
       "match": "in_stack_00000010",
       "text": "crt_memory_c_free_FUN_00601cd0(in_stack_00000010);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 120,
+      "line": 123,
       "match": "&stack0xffffff3c",
       "text": "((LPCRITICAL_SECTION)&stack0xffffff3c);",
       "type": "stack_ref"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 172,
+      "line": 175,
       "match": "CONCAT31",
       "text": "if (CONCAT31 /* combine 2-byte values */(extraout_var_00,bVar2) == 0) goto LAB_0060f80e;",
       "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 183,
+      "line": 186,
       "match": "CONCAT31",
       "text": "if (CONCAT31 /* combine 2-byte values */(extraout_var,bVar2) == 0) goto LAB_0060f687;",
       "type": "concat_artifact"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 196,
+      "line": 200,
       "match": "extraout_EAX",
       "text": "arg2 = extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 201,
+      "line": 205,
       "match": "in_stack_00000010",
       "text": "crt_memory_c_free_FUN_00601cd0(in_stack_00000010);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 208,
+      "line": 212,
       "match": "&stack0xffffff3c",
       "text": "((LPCRITICAL_SECTION)&stack0xffffff3c);",
       "type": "stack_ref"
-    },
-    {
-      "add_esp_value": 4,
-      "callind_address": "0060f58f",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "0060f595",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 0060f58f, ADD ESP at 0060f595",
-      "type": "callind_esp_uncertain"
-    },
-    {
-      "add_esp_value": 4,
-      "callind_address": "0060f851",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "0060f857",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 0060f851, ADD ESP at 0060f857",
-      "type": "callind_esp_uncertain"
     },
     {
       "call_site_count": 4,

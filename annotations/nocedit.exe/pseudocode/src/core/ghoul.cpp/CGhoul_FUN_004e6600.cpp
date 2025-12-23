@@ -44,8 +44,9 @@ void core_ghoul_cpp_CGhoul_FUN_004e6600(void)
   CEnemy *in_stack_00000004;
   float in_stack_00000008;
   int force_immediate;
-  SCollisionInfo *in_stack_fffffc88;
-  SCollisionInfo *in_stack_fffffc94;
+  SCollisionInfo *in_stack_fffffc0e;
+  SCollisionInfo *in_stack_fffffc1a;
+  char local_378 [100];
   SDamageInfo local_314;
   SDamageInfo local_2d8;
   SDamageInfo local_29c;
@@ -418,7 +419,7 @@ switchD_004e6f9a_caseD_e:
           cVar20 = cVar20 + '\x01';
         }
         iVar12 = (*(g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable[1].
-                   hasCollision)((CDemonActor *)g_HeroActors[g_LocalHeroIndex],in_stack_fffffc88);
+                   hasCollision)((CDemonActor *)g_HeroActors[g_LocalHeroIndex],in_stack_fffffc0e);
         pCVar9 = g_CGamePtr;
         if (iVar12 == 0) {
           (*(in_stack_00000004->base_character).base_actor.vtable[1].getAllowedMeleeAttackTypes)
@@ -579,7 +580,7 @@ LAB_004e7a33:
               if (((0 < iVar12) &&
                   (iVar12 = (*(g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable[1].
                               hasCollision)((CDemonActor *)g_HeroActors[g_LocalHeroIndex],
-                                            in_stack_fffffc94), iVar12 == 2)) &&
+                                            in_stack_fffffc1a), iVar12 == 2)) &&
                  (core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                             (&(in_stack_00000004->base_character).model.motion_controller,
                              *(int *)(in_stack_00000004[1].base_character.base_actor.actor_name +
@@ -1006,9 +1007,9 @@ LAB_004e6754:
     ;
     if (extraout_EAX == 0) {
       crt_stdio_c_sprintf_FUN_005fdbd0
-                (&stack0xfffffc88,"ghoul-walk-?.wav *%f",(double)in_stack_00000004->speed);
+                (local_378,"ghoul-walk-?.wav *%f",(double)in_stack_00000004->speed);
       uVar16 = (*((in_stack_00000004->base_character).base_actor.vtable)->playAmbientSound)
-                         ((CDemonActor *)in_stack_00000004,&stack0xfffffc88);
+                         ((CDemonActor *)in_stack_00000004,local_378);
       *(uint *)(in_stack_00000004[1].base_character.base_actor.actor_name + 8) = uVar16;
     }
   }

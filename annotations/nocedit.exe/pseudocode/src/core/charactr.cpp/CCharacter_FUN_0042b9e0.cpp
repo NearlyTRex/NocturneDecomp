@@ -20,13 +20,14 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b9e0(CCharacter *this_ptr)
   byte auStack_7c [20];
   float local_68;
   float local_64;
-  byte local_48 [8];
-  byte auStack_40 [12];
+  CVector3f CStack_5c;
+  byte auStack_50 [16];
+  CVector3f CStack_40;
   CVector3f CStack_34;
   float fStack_28;
+  float local_24;
   float local_20;
   float local_1c;
-  float fStack_14;
   
   max_value = 6.127877e-39;
   sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->cloth_data + 0x8d3c));
@@ -46,11 +47,11 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b9e0(CCharacter *this_ptr)
             CStack_34.z = -(float)in_stack_ffffff44;
             local_20 = core_actor_cpp_getRandomFloat_FUN_0040cc10
                                  (CStack_34.z,(float)in_stack_ffffff44);
-            auStack_40._0_4_ = local_20 + (float)auStack_40._0_4_;
+            CStack_40.x = local_20 + CStack_40.x;
             local_1c = core_actor_cpp_getRandomFloat_FUN_0040cc10(fStack_28,max_value);
-            auStack_40._0_4_ = local_1c + (float)auStack_40._0_4_;
+            CStack_40.x = local_1c + CStack_40.x;
             core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
-                      ((CMatrix3x3f *)&stack0xffffff50,(CVector3f *)auStack_40);
+                      ((CMatrix3x3f *)&stack0xffffff50,&CStack_40);
             local_64 = SQRT(in_stack_00000008->z * in_stack_00000008->z +
                             in_stack_00000008->x * in_stack_00000008->x +
                             in_stack_00000008->y * in_stack_00000008->y);
@@ -58,7 +59,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b9e0(CCharacter *this_ptr)
             local_68 = 0.0;
             local_1c = local_64;
             core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
-                      ((CMatrix3x3f *)&stack0xffffff54,(CVector3f *)local_48,
+                      ((CMatrix3x3f *)&stack0xffffff54,(CVector3f *)(auStack_50 + 8),
                        (CVector3f *)(auStack_7c + 0x10));
           }
           in_stack_ffffff44 = this_ptr;
@@ -71,12 +72,14 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b9e0(CCharacter *this_ptr)
   }
   pCVar2 = (*((this_ptr->base_actor).vtable)->getBoundingBox)
                      (&this_ptr->base_actor,(CBoundingBox3D *)auStack_7c);
-  fStack_14 = (pCVar2->min).x + (pCVar2->max).x;
-  auStack_40._8_4_ = fStack_14 * 0.5f;
-  CStack_34.x = ((pCVar2->min).y + (pCVar2->max).y) * 0.5f;
-  CStack_34.y = ((pCVar2->min).z + (pCVar2->max).z) * 0.5f;
+  CStack_34.z = (pCVar2->min).x + (pCVar2->max).x;
+  fStack_28 = (pCVar2->min).y + (pCVar2->max).y;
+  auStack_50._0_4_ = CStack_34.z * 0.5f;
+  auStack_50._4_4_ = fStack_28 * 0.5f;
+  local_24 = (pCVar2->min).z + (pCVar2->max).z;
+  auStack_50._8_4_ = local_24 * 0.5f;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-            (&this_ptr->base_actor,(CVector3f *)(local_48 + 4),(CVector3f *)(auStack_40 + 8));
+            (&this_ptr->base_actor,&CStack_5c,(CVector3f *)auStack_50);
   if (*(int *)(this_ptr->cloth_data + 0x8d40) == 0) {
     core_gore_cpp_FUN_004edbb0();
     (this_ptr->base_actor).was_created = 2;

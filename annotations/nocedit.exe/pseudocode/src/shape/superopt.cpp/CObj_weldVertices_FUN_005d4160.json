@@ -1,22 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 310,
-    "complexity_score": 525,
+    "complexity_score": 418,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 1,
-    "pseudocode_lines": 130,
-    "suspect_count": 36,
+    "pseudocode_lines": 133,
+    "suspect_count": 26,
     "suspect_types": [
       "badspacebase",
-      "callind_esp_uncertain",
       "concat_artifact",
       "pointer_cast",
       "register_param",
-      "stack_param",
-      "unaffected_reg"
+      "stack_param"
     ],
-    "total_lines": 440
+    "total_lines": 443
   },
   "cross_references": [
     {
@@ -76,6 +74,14 @@
     "confidence": "low",
     "declared_params": 3,
     "estimated_params": 5
+  },
+  "pcode_overrides": {
+    "005d4191": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff0c,4)"
+    ],
+    "005d44c3": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff0c,4)"
+    ]
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.294117647058823,
@@ -217,99 +223,50 @@
       "type": "register_param"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 14,
-      "match": "unaff_EBP",
-      "text": "void *unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 15,
-      "match": "unaff_ESI",
-      "text": "int unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_ffffff10",
-      "text": "int in_stack_ffffff10;",
+      "line": 17,
+      "match": "in_stack_ffffff00",
+      "text": "int in_stack_ffffff00;",
       "type": "stack_param"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 42,
-      "match": "unaff_EBP",
-      "text": "unaff_EBP = shape_memdbg_cpp_debugAlloc_FUN_0050f1d0(4);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 48,
-      "match": "unaff_EBP",
-      "text": "if ((unaff_EBP != (void *)0x0) && ((char)uVar10 == '\\0')) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 51,
-      "match": "unaff_ESI",
-      "text": "\"Welding vertices (%d removed so far)\",unaff_ESI);",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 53,
+      "line": 55,
       "match": "(double *)((int)",
-      "text": "pdVar4 = (double *)((int)&(this_ptr->vertex_data->position).x + iVar11);",
+      "text": "pdVar4 = (double *)((int)&(this_ptr->vertex_data->position).x + iStack_1c);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 54,
+      "line": 57,
       "match": "(byte *)((int)",
       "text": "if ((*(byte *)((int)pdVar4 + 0x35) & 0x80) == 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 55,
-      "match": "in_stack_ffffff10",
-      "text": "dVar2 = (double)CONCAT44 /* combine 2-byte values */(uStack_ec,in_stack_ffffff10);",
+      "line": 58,
+      "match": "in_stack_ffffff00",
+      "text": "dVar2 = (double)CONCAT44 /* combine 2-byte values */(uStack_fc,in_stack_ffffff00);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 55,
+      "line": 58,
       "match": "CONCAT44",
-      "text": "dVar2 = (double)CONCAT44 /* combine 2-byte values */(uStack_ec,in_stack_ffffff10);",
+      "text": "dVar2 = (double)CONCAT44 /* combine 2-byte values */(uStack_fc,in_stack_ffffff00);",
       "type": "concat_artifact"
     },
     {
       "description": "Complex pointer cast",
-      "line": 63,
+      "line": 66,
       "match": "(double *)((int)",
       "text": "pdVar7 = (double *)((int)pdVar7 + (uint)bVar9 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 64,
-      "match": "(double *)((int)",
-      "text": "pdVar8 = (double *)((int)pdVar8 + (uint)bVar9 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 73,
-      "match": "(double *)((int)",
-      "text": "pdVar7 = (double *)((int)pdVar7 + (uint)bVar9 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 74,
+      "line": 67,
       "match": "(double *)((int)",
       "text": "pdVar8 = (double *)((int)pdVar8 + (uint)bVar9 * -8 + 4);",
       "type": "pointer_cast"
@@ -317,150 +274,121 @@
     {
       "description": "Complex pointer cast",
       "line": 76,
-      "match": "(byte *)((int)",
-      "text": "*(byte *)((int)pdVar4 + 0x35) = *(byte *)((int)pdVar4 + 0x35) | 0x80;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 76,
-      "match": "(byte *)((int)",
-      "text": "*(byte *)((int)pdVar4 + 0x35) = *(byte *)((int)pdVar4 + 0x35) | 0x80;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 81,
       "match": "(double *)((int)",
-      "text": "pdVar7 = (double *)((int)&(this_ptr->vertex_data->position).x + iStack_14);",
+      "text": "pdVar7 = (double *)((int)pdVar7 + (uint)bVar9 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 82,
+      "line": 77,
+      "match": "(double *)((int)",
+      "text": "pdVar8 = (double *)((int)pdVar8 + (uint)bVar9 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 79,
       "match": "(byte *)((int)",
-      "text": "if ((*(byte *)((int)pdVar7 + 0x35) & 0x80) == 0) {",
+      "text": "*(byte *)((int)pdVar4 + 0x35) = *(byte *)((int)pdVar4 + 0x35) | 0x80;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 79,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)pdVar4 + 0x35) = *(byte *)((int)pdVar4 + 0x35) | 0x80;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 84,
+      "match": "(double *)((int)",
+      "text": "pdVar4 = (double *)((int)&(this_ptr->vertex_data->position).x + iStack_24);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 85,
+      "match": "(byte *)((int)",
+      "text": "if ((*(byte *)((int)pdVar4 + 0x35) & 0x80) == 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 83,
-      "match": "in_stack_ffffff10",
-      "text": "if (((uStack_ec & 0x7fffffff) == 0) && (in_stack_ffffff10 == 0)) {",
+      "line": 86,
+      "match": "in_stack_ffffff00",
+      "text": "if (((uStack_fc & 0x7fffffff) == 0) && (in_stack_ffffff00 == 0)) {",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 92,
+      "line": 95,
       "match": "(uint *)((int)",
       "text": "if (uVar5 == *(uint *)((int)pCVar1->uv_coords + iVar3 + -0xc)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 93,
+      "line": 96,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pCVar1->uv_coords + iVar3 + -0xc) = uVar10;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 95,
+      "line": 98,
       "match": "(uint *)((int)",
       "text": "if (uVar5 == *(uint *)((int)pCVar1->uv_coords + iVar3 + -8)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 96,
+      "line": 99,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pCVar1->uv_coords + iVar3 + -8) = uVar10;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 98,
+      "line": 101,
       "match": "(uint *)((int)",
       "text": "if (uVar5 == *(uint *)((int)pCVar1->uv_coords + iVar3 + -4)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 99,
+      "line": 102,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pCVar1->uv_coords + iVar3 + -4) = uVar10;",
       "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 105,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI = unaff_ESI + 1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 105,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI = unaff_ESI + 1;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 106,
+      "line": 109,
       "match": "(byte *)((int)",
-      "text": "*(byte *)((int)pdVar7 + 0x35) = *(byte *)((int)pdVar7 + 0x35) | 0x80;",
+      "text": "*(byte *)((int)pdVar4 + 0x35) = *(byte *)((int)pdVar4 + 0x35) | 0x80;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 106,
+      "line": 109,
       "match": "(byte *)((int)",
-      "text": "*(byte *)((int)pdVar7 + 0x35) = *(byte *)((int)pdVar7 + 0x35) | 0x80;",
+      "text": "*(byte *)((int)pdVar4 + 0x35) = *(byte *)((int)pdVar4 + 0x35) | 0x80;",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 116,
-      "match": "in_stack_ffffff10",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(uStack_ec,in_stack_ffffff10))) goto LAB_005d43a8;",
+      "line": 119,
+      "match": "in_stack_ffffff00",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(uStack_fc,in_stack_ffffff00))) goto LAB_005d43a8;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 116,
+      "line": 119,
       "match": "CONCAT44",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(uStack_ec,in_stack_ffffff10))) goto LAB_005d43a8;",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(uStack_fc,in_stack_ffffff00))) goto LAB_005d43a8;",
       "type": "concat_artifact"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 127,
-      "match": "unaff_EBP",
-      "text": "shape_memdbg_cpp_debugFree_FUN_0050f210(unaff_EBP);",
-      "type": "unaffected_reg"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "005d418b",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "005d4191",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 005d418b, ADD ESP at 005d4191",
-      "type": "callind_esp_uncertain"
-    },
-    {
-      "add_esp_value": 4,
-      "callind_address": "005d44bd",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "005d44c3",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 005d44bd, ADD ESP at 005d44c3",
-      "type": "callind_esp_uncertain"
     }
   ],
   "vtable_info": {

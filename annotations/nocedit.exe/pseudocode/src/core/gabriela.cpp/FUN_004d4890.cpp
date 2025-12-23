@@ -19,21 +19,19 @@ void core_gabriela_cpp_FUN_004d4890(void)
   CDemonActor *pCVar3;
   CVector3f *pCVar4;
   BADSPACEBASE *in_ESP;
+  double dVar5;
   CCharacter *in_stack_00000004;
   float in_stack_00000008;
-  float in_stack_ffffff44;
-  CCharacter *in_stack_ffffff58;
-  byte local_a0 [16];
-  float fStack_90;
-  CVector3f local_84 [2];
-  CCharacter *local_6c;
-  byte local_68 [12];
-  byte auStack_5c [28];
-  CVector3f local_40;
-  CVector3f local_34;
-  CVector3f local_28;
-  CDemonActor *local_1c;
-  float local_18;
+  float volume;
+  double in_stack_ffffff5c;
+  SDamageInfo local_9c;
+  CVector3f CStack_60;
+  byte auStack_54 [16];
+  byte auStack_44 [20];
+  CVector3f CStack_30;
+  CVector3f CStack_24;
+  CDemonActor *local_18;
+  float fStack_14;
   
   this_ptr = &in_stack_00000004->model;
   do {
@@ -46,29 +44,29 @@ void core_gabriela_cpp_FUN_004d4890(void)
         bone_index = DAT_02d7b868;
       }
       core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
-                (this_ptr,(CVector3f *)(auStack_5c + 4),bone_index);
+                (this_ptr,(CVector3f *)auStack_54,bone_index);
       if (*(int *)(in_stack_00000004[2].cloth_data + 0x54cc) == 0) {
         if (*(int *)(in_stack_00000004->field2_0x240c + 4) != 0) {
-          local_18 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-                               (&this_ptr->motion_controller,2);
-          if ((float)0.40000000000000002 < local_18) {
+          fStack_14 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
+                                (&this_ptr->motion_controller,2);
+          if ((float)0.40000000000000002 < fStack_14) {
             (*((in_stack_00000004->base_actor).vtable)->processFootstepAtOffset)
-                      (&in_stack_00000004->base_actor,(CVector3f *)(auStack_5c + 4),1.7);
+                      (&in_stack_00000004->base_actor,(CVector3f *)auStack_54,1.7);
           }
           else {
-            local_18 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-                                 (&this_ptr->motion_controller,1);
-            if (local_18 <= (float)0.40000000000000002) {
-              local_18 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-                                   (&this_ptr->motion_controller,3);
-              if ((float)0.40000000000000002 < local_18) {
+            fStack_14 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
+                                  (&this_ptr->motion_controller,1);
+            if (fStack_14 <= (float)0.40000000000000002) {
+              fStack_14 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
+                                    (&this_ptr->motion_controller,3);
+              if ((float)0.40000000000000002 < fStack_14) {
                 (*((in_stack_00000004->base_actor).vtable)->processFootstepAtOffset)
-                          (&in_stack_00000004->base_actor,(CVector3f *)(auStack_5c + 4),1.0);
+                          (&in_stack_00000004->base_actor,(CVector3f *)auStack_54,1.0);
               }
             }
             else {
               (*((in_stack_00000004->base_actor).vtable)->processFootstepAtOffset)
-                        (&in_stack_00000004->base_actor,(CVector3f *)(auStack_5c + 4),1.0);
+                        (&in_stack_00000004->base_actor,(CVector3f *)auStack_54,1.0);
             }
           }
         }
@@ -78,9 +76,10 @@ void core_gabriela_cpp_FUN_004d4890(void)
         iVar2 = (**(code **)(*(int *)(*(int *)(in_stack_00000004[2].cloth_data + 0x54cc) + 0x154) +
                             0x3c))();
         pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                           (&in_stack_00000004->base_actor,(CVector3f *)auStack_5c,
-                            (CVector3f *)local_68);
-        (*pCVar1->handleFootstep)(&in_stack_00000004->base_actor,pCVar4,iVar2,in_stack_ffffff44);
+                           (&in_stack_00000004->base_actor,(CVector3f *)auStack_44,
+                            (CVector3f *)(auStack_54 + 4));
+        (*pCVar1->handleFootstep)
+                  (&in_stack_00000004->base_actor,pCVar4,iVar2,SUB84 /* extract 2-byte value */(in_stack_ffffff5c,0));
       }
       break;
     case 2:
@@ -107,7 +106,6 @@ void core_gabriela_cpp_FUN_004d4890(void)
     case 3:
       (*(in_stack_00000004->base_actor).vtable[1].renderTargetPoints)
                 (&in_stack_00000004->base_actor);
-      in_stack_ffffff58 = (CCharacter *)&DAT_00000001;
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 (&this_ptr->motion_controller,0,1);
       break;
@@ -117,32 +115,31 @@ void core_gabriela_cpp_FUN_004d4890(void)
     case 6:
       pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790
                          (in_stack_00000004->grabbed_by,g_CEnemyClassInfo.name_hash);
-      local_1c = pCVar3;
+      volume = SUB84 /* extract 2-byte value */(in_stack_ffffff5c,0);
+      local_18 = pCVar3;
       if (pCVar3 != (CDemonActor *)0x0) {
         pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
-                           (this_ptr,&local_40,DAT_02d7b878);
+                           (this_ptr,(CVector3f *)(auStack_44 + 8),DAT_02d7b878);
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                  (&in_stack_00000004->base_actor,(CVector3f *)(local_68 + 4),pCVar4);
-        core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)local_a0);
-        local_18 = core_actor_cpp_getRandomFloat_FUN_0040cc10(10.0,15.0);
-        local_a0._4_4_ = local_18;
+                  (&in_stack_00000004->base_actor,&CStack_60,pCVar4);
+        core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_9c);
+        local_9c.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(10.0,15.0);
+        fStack_14 = local_9c.damage_amount;
         pCVar4 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                           (pCVar3,&local_34,(CVector3f *)(local_68 + 4));
-        if (local_84 != pCVar4) {
-          local_84[0].x = pCVar4->x;
-          local_84[0].y = pCVar4->y;
-          local_84[0].z = pCVar4->z;
+                           (pCVar3,&CStack_30,&CStack_60);
+        if (&local_9c.impact_direction != pCVar4) {
+          local_9c.impact_direction.x = pCVar4->x;
+          local_9c.impact_direction.y = pCVar4->y;
+          local_9c.impact_direction.z = pCVar4->z;
         }
-        local_6c = in_stack_00000004;
-        local_68._0_4_ = in_stack_00000004;
-        (*local_1c->vtable[1].playAmbientSoundWithVolume)
-                  (local_1c,local_a0,(float)in_stack_ffffff58);
-        local_a0._4_8_ = (ulonglong)fStack_90;
-        if (0.0 < (double)local_a0._4_8_) {
-          local_a0._0_4_ = 0x4d4ba5;
-          crt_math_c_round_FUN_005fe6b0((double)local_a0._4_8_ * 0.20000000000000001);
+        local_9c.attacker = &in_stack_00000004->base_actor;
+        local_9c.wielder = &in_stack_00000004->base_actor;
+        (*local_18->vtable[1].playAmbientSoundWithVolume)(local_18,(char *)&local_9c,volume);
+        in_stack_ffffff5c = (double)local_9c.damage_amount;
+        if (0.0 < in_stack_ffffff5c) {
+          dVar5 = crt_math_c_round_FUN_005fe6b0(in_stack_ffffff5c * 0.20000000000000001);
+          local_18 = (CDemonActor *)(int)ROUND(dVar5);
           core_gore_cpp_FUN_004edbb0();
-          in_stack_ffffff58 = in_stack_00000004;
           (*((in_stack_00000004->base_actor).vtable)->playSound)
                     (&in_stack_00000004->base_actor,"kick1.wav");
           in_stack_00000004->grabbed_by = (CDemonActor *)0x0;
@@ -154,7 +151,7 @@ void core_gabriela_cpp_FUN_004d4890(void)
     case 0xf:
       if ((in_stack_00000004->grabbed_by != (CDemonActor *)0x0) &&
          (pCVar4 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                             (&in_stack_00000004->base_actor,&local_28,
+                             (&in_stack_00000004->base_actor,&CStack_24,
                               &(in_stack_00000004->grabbed_by->location).position), 0.0 < pCVar4->z)
          ) {
         (*((in_stack_00000004->base_actor).vtable)->playSound)

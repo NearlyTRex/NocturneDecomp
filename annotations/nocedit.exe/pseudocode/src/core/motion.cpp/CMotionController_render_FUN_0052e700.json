@@ -1,19 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 182,
-    "complexity_score": 163,
+    "complexity_score": 150,
     "cross_reference_count": 9,
     "function_call_count": 7,
     "global_count": 6,
-    "pseudocode_lines": 63,
-    "suspect_count": 8,
+    "pseudocode_lines": 65,
+    "suspect_count": 7,
     "suspect_types": [
       "badspacebase",
-      "callind_esp_uncertain",
       "register_param",
       "stack_ref"
     ],
-    "total_lines": 245
+    "total_lines": 247
   },
   "cross_references": [
     {
@@ -151,6 +150,11 @@
       "value": null
     }
   ],
+  "pcode_overrides": {
+    "0052e758": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff68,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.2,
     "instruction_count": 155,
@@ -290,63 +294,52 @@
   "suspects": [
     {
       "description": "Ghidra failed to resolve stack frame",
-      "line": 13,
+      "line": 14,
       "match": "BADSPACEBASE",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "badspacebase"
     },
     {
       "description": "Inferred register parameter",
-      "line": 13,
+      "line": 14,
       "match": "in_ESP",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "register_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 42,
+      "line": 43,
       "match": "&stack0xffffff58",
-      "text": "pcVar7 = &stack0xffffff58;",
+      "text": "pcVar5 = &stack0xffffff58;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 56,
+      "line": 57,
       "match": "&stack0xffffff58",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff58,\"%s -> %s\");",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff58,\"%s -> %s\",pcVar5);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 58,
+      "line": 59,
       "match": "&stack0xffffff58",
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff58,local_14,iVar6 + -0x16);",
+      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff58,local_14,iVar7 + -0x16);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 60,
+      "line": 62,
       "match": "&stack0xffffff58",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff58,\"%s : %5.2f\");",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff58,\"%s : %5.2f\",pSVar4,uVar8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 61,
+      "line": 63,
       "match": "&stack0xffffff58",
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff58,local_14,iVar6 + -0xb);",
+      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff58,local_14,iVar7 + -0xb);",
       "type": "stack_ref"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "0052e74c",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "0052e758",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 0052e74c, ADD ESP at 0052e758",
-      "type": "callind_esp_uncertain"
     }
   ]
 }

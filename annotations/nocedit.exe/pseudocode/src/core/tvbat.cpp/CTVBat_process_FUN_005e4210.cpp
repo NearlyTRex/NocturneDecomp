@@ -32,18 +32,19 @@ void __cdecl core_tvbat_cpp_CTVBat_process_FUN_005e4210(CTVBat *this_ptr)
   float10 fVar20;
   float10 extraout_ST1;
   float in_stack_00000008;
-  float local_178;
-  float local_170;
-  SDamageInfo local_16c;
-  SCollisionInfo local_130;
-  float local_f0;
-  float local_ec;
-  float fStack_e8;
+  float local_16c;
+  float fStack_164;
+  byte auStack_160 [52];
+  CTVBat *pCStack_12c;
+  CTVBat *local_128;
+  float fStack_110;
+  float fStack_10c;
+  float fStack_e4;
+  float fStack_e0;
   CVector3f local_dc;
-  float local_d0;
-  float local_cc;
-  float local_c8;
-  float fStack_c4;
+  float local_d0 [4];
+  float fStack_c0;
+  float fStack_bc;
   float local_b8;
   float local_b4;
   float local_b0;
@@ -63,13 +64,14 @@ void __cdecl core_tvbat_cpp_CTVBat_process_FUN_005e4210(CTVBat *this_ptr)
   float local_58;
   float local_54;
   float local_50;
-  float fStack_44;
-  float local_3c;
   float fStack_38;
+  float local_30;
+  float fStack_2c;
   float local_28;
   float local_24;
-  float local_20;
-  int local_18;
+  float local_1c;
+  float local_18;
+  float fStack_14;
   
   if ((this_ptr->follow_orders != 0) && (*(int *)(this_ptr->field16_0xc0e8 + 8) == 0)) {
     iVar14 = 0;
@@ -142,7 +144,7 @@ void __cdecl core_tvbat_cpp_CTVBat_process_FUN_005e4210(CTVBat *this_ptr)
            *(uint *)(this_ptr->field11_0xc068 + 0xc);
       *(float *)(this_ptr->field11_0xc068 + 4) = *(float *)(this_ptr->field11_0xc068 + 8);
     }
-    if (&local_88 != &local_d0) {
+    if (&local_88 != local_d0) {
       local_88 = local_dc.x - (this_ptr->base_enemy).base_character.base_actor.location.position.x;
       local_84 = local_dc.y - (this_ptr->base_enemy).base_character.base_actor.location.position.y;
       local_80 = local_dc.z - (this_ptr->base_enemy).base_character.base_actor.location.position.z;
@@ -167,8 +169,8 @@ void __cdecl core_tvbat_cpp_CTVBat_process_FUN_005e4210(CTVBat *this_ptr)
         local_54 = (pCVar9->base_character).base_actor.location.position.y;
         local_50 = (pCVar9->base_character).base_actor.location.position.z;
       }
-      local_18 = (this_ptr->base_enemy).base_character.base_actor.field7_0x6c % 8 + -4;
-      local_54 = (float)local_18 * (float)0.5 +
+      local_18 = (float)((this_ptr->base_enemy).base_character.base_actor.field7_0x6c % 8 + -4);
+      local_54 = (float)(int)local_18 * (float)0.5 +
                  *(float *)this_ptr->field9_0xc060 + (float)4 + local_54;
       goto LAB_005e4342;
     }
@@ -243,28 +245,28 @@ LAB_005e4342:
   local_24 = (float)extraout_ST1;
   local_28 = (float)-fVar17;
   if ((*(int *)((this_ptr->base_enemy).field6_0xbe38 + 4) != 0) && (this_ptr->follow_orders != 0)) {
-    core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&local_130);
+    core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0((SCollisionInfo *)(auStack_160 + 0x30));
     (**(code **)(*(int *)(*(int *)((this_ptr->base_enemy).field6_0xbe38 + 4) + 0x154) + 0x34))();
     iVar14 = *(int *)((this_ptr->base_enemy).field6_0xbe38 + 4);
-    local_f0 = (this_ptr->base_enemy).base_character.base_actor.location.position.x -
-               *(float *)(iVar14 + 0x20);
-    local_ec = (this_ptr->base_enemy).base_character.base_actor.location.position.y -
-               *(float *)(iVar14 + 0x24);
-    fStack_e8 = (this_ptr->base_enemy).base_character.base_actor.location.position.z -
-                *(float *)(iVar14 + 0x28);
-    if (&local_90 != &local_f0) {
-      local_90 = local_f0;
-      local_8c = local_ec;
-      local_88 = fStack_e8;
+    fStack_e4 = (this_ptr->base_enemy).base_character.base_actor.location.position.x -
+                *(float *)(iVar14 + 0x20);
+    fStack_e0 = (this_ptr->base_enemy).base_character.base_actor.location.position.y -
+                *(float *)(iVar14 + 0x24);
+    local_dc.x = (this_ptr->base_enemy).base_character.base_actor.location.position.z -
+                 *(float *)(iVar14 + 0x28);
+    if (&local_84 != &fStack_e4) {
+      local_84 = fStack_e4;
+      local_80 = fStack_e0;
+      local_7c = local_dc.x;
     }
-    if (((local_130.cylinder_bottom_y <= local_8c) && (local_8c <= local_130.cylinder_top_y)) &&
-       (local_178 < (float)2)) {
-      core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_16c);
-      local_16c.damage_amount = 1.0;
-      local_16c.attacker = (CDemonActor *)this_ptr;
-      local_16c.wielder = (CDemonActor *)this_ptr;
+    if (((fStack_110 <= local_80) && (local_80 <= fStack_10c)) &&
+       (local_16c < (float)2)) {
+      core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)auStack_160);
+      auStack_160._4_4_ = 1.0;
+      pCStack_12c = this_ptr;
+      local_128 = this_ptr;
       (**(code **)(*(int *)(*(int *)((this_ptr->base_enemy).field6_0xbe38 + 4) + 0x154) + 0x11c))();
-      if (0.0 < local_16c.damage_amount) {
+      if (0.0 < (float)auStack_160._4_4_) {
         core_gore_cpp_FUN_004edbb0();
       }
     }
@@ -275,64 +277,64 @@ LAB_005e4342:
   fVar20 = (float10)fsin(fVar19);
   fVar17 = (float10)fcos(fVar17);
   fVar19 = (float10)fcos(fVar19);
-  fStack_38 = (float)-fVar18;
-  local_3c = (float)(fVar20 * fVar17);
-  fStack_44 = (float)(fVar19 * fVar17);
-  local_24 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                       (local_24 - (this_ptr->base_enemy).base_character.base_actor.orient.bank);
+  fStack_2c = (float)-fVar18;
+  local_30 = (float)(fVar20 * fVar17);
+  fStack_38 = (float)(fVar19 * fVar17);
+  local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
+                       (local_18 - (this_ptr->base_enemy).base_character.base_actor.orient.bank);
   fVar13 = (this_ptr->base_enemy).base_character.base_actor.orient.pitch;
   (this_ptr->base_enemy).base_character.base_actor.orient.bank =
-       local_24 * in_stack_00000008 * this_ptr->rot_speed +
+       local_18 * in_stack_00000008 * this_ptr->rot_speed +
        (this_ptr->base_enemy).base_character.base_actor.orient.bank;
-  local_20 = local_24;
-  local_28 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(local_28 - fVar13);
+  fStack_14 = local_18;
+  local_1c = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(local_1c - fVar13);
   fVar13 = this_ptr->move_speed;
   fVar3 = this_ptr->move_speed;
   fVar4 = this_ptr->move_speed;
   fVar5 = this_ptr->move_speed;
   fVar8 = (float)0.33333333333333298;
   fVar6 = this_ptr->rot_speed;
-  *(float *)(this_ptr->field11_0xc068 + 4) = this_ptr->move_speed * local_3c;
+  *(float *)(this_ptr->field11_0xc068 + 4) = this_ptr->move_speed * local_30;
   fVar7 = this_ptr->move_speed;
-  *(float *)(this_ptr->field11_0xc068 + 8) = fVar13 * fStack_38;
-  *(float *)(this_ptr->field11_0xc068 + 0xc) = fVar7 * fStack_44;
-  (this_ptr->base_enemy).base_character.base_actor.orient.heading = -local_24 * fVar8;
+  *(float *)(this_ptr->field11_0xc068 + 8) = fVar13 * fStack_2c;
+  *(float *)(this_ptr->field11_0xc068 + 0xc) = fVar7 * fStack_38;
+  (this_ptr->base_enemy).base_character.base_actor.orient.heading = -local_18 * fVar8;
   fVar13 = (this_ptr->base_enemy).base_character.base_actor.location.position.y;
   fVar7 = (this_ptr->base_enemy).base_character.base_actor.location.position.z;
   fVar8 = (this_ptr->base_enemy).base_character.base_actor.orient.pitch;
   (this_ptr->base_enemy).base_character.base_actor.location.position.x =
-       local_3c * fVar3 * in_stack_00000008 +
+       local_30 * fVar3 * in_stack_00000008 +
        (this_ptr->base_enemy).base_character.base_actor.location.position.x;
   (this_ptr->base_enemy).base_character.base_actor.location.position.y =
-       fStack_38 * fVar4 * in_stack_00000008 + fVar13;
+       fStack_2c * fVar4 * in_stack_00000008 + fVar13;
   (this_ptr->base_enemy).base_character.base_actor.location.position.z =
-       fStack_44 * fVar5 * in_stack_00000008 + fVar7;
+       fStack_38 * fVar5 * in_stack_00000008 + fVar7;
   (this_ptr->base_enemy).base_character.base_actor.orient.pitch =
-       local_28 * in_stack_00000008 * fVar6 + fVar8;
-  local_cc = (this_ptr->base_enemy).base_character.base_actor.location.position.x - local_84;
-  local_c8 = (this_ptr->base_enemy).base_character.base_actor.location.position.y - local_80;
-  fStack_c4 = (this_ptr->base_enemy).base_character.base_actor.location.position.z - local_7c;
-  local_170 = (local_c8 * (float)4) / in_stack_00000008 + (float)35;
-  if (local_170 < (float)10) {
-    local_170 = 10.0;
+       local_1c * in_stack_00000008 * fVar6 + fVar8;
+  fStack_c0 = (this_ptr->base_enemy).base_character.base_actor.location.position.x - local_78;
+  fStack_bc = (this_ptr->base_enemy).base_character.base_actor.location.position.y - local_74;
+  local_b8 = (this_ptr->base_enemy).base_character.base_actor.location.position.z - local_70;
+  fStack_164 = (fStack_bc * (float)4) / in_stack_00000008 + (float)35;
+  if (fStack_164 < (float)10) {
+    fStack_164 = 10.0;
   }
-  if ((float)60 < local_170) {
-    local_170 = 60.0;
+  if ((float)60 < fStack_164) {
+    fStack_164 = 60.0;
   }
   *(float *)this_ptr->field3_0xc040 =
-       (local_170 - *(float *)this_ptr->field3_0xc040) * (float)0.69999999999999996 +
+       (fStack_164 - *(float *)this_ptr->field3_0xc040) * (float)0.69999999999999996 +
        *(float *)this_ptr->field3_0xc040;
   *(float *)(this_ptr->field1_0xbeb4 + 8) =
        in_stack_00000008 * *(float *)this_ptr->field3_0xc040 * this_ptr->speed +
        *(float *)(this_ptr->field1_0xbeb4 + 8);
-  local_20 = local_28;
+  fStack_14 = local_1c;
   pCVar11 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
                       ((CKeyFramedModelInstance *)(this_ptr->field1_0xbeb4 + 0xc));
-  local_20 = (float)pCVar11->frame_count;
-  if (*(float *)(this_ptr->field1_0xbeb4 + 8) < (float)(int)local_20) {
+  fStack_14 = (float)pCVar11->frame_count;
+  if (*(float *)(this_ptr->field1_0xbeb4 + 8) < (float)(int)fStack_14) {
     if (*(float *)(this_ptr->field1_0xbeb4 + 8) < 0.0) {
-      local_20 = (float)((int)local_20 + -1);
-      *(float *)(this_ptr->field1_0xbeb4 + 8) = (float)(int)local_20;
+      fStack_14 = (float)((int)fStack_14 + -1);
+      *(float *)(this_ptr->field1_0xbeb4 + 8) = (float)(int)fStack_14;
     }
   }
   else {

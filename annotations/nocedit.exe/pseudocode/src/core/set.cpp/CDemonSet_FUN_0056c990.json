@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 352,
-    "complexity_score": 200,
+    "complexity_score": 185,
     "cross_reference_count": 1,
     "function_call_count": 25,
     "global_count": 36,
     "pseudocode_lines": 115,
-    "suspect_count": 6,
+    "suspect_count": 5,
     "suspect_types": [
       "badspacebase",
-      "callind_esp_uncertain",
       "register_param",
       "stack_ref",
       "unresolved_funcptr"
@@ -356,6 +355,11 @@
       "value": null
     }
   ],
+  "pcode_overrides": {
+    "0056cb4b": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffb4,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.409090909090909,
     "instruction_count": 308,
@@ -563,17 +567,6 @@
       "match": "code *",
       "text": "(**(code **)(*(int *)(*(int *)(pCVar5->field73_0x15f6e4 + 4) + 0x154) + 8))();",
       "type": "unresolved_funcptr"
-    },
-    {
-      "add_esp_value": 4,
-      "callind_address": "0056cb48",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "0056cb4b",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 0056cb48, ADD ESP at 0056cb4b",
-      "type": "callind_esp_uncertain"
     }
   ]
 }

@@ -34,10 +34,9 @@ void core_boneguy_cpp_FUN_0041bf90(void)
   byte bVar15;
   CBoneGuy *in_stack_00000004;
   float in_stack_00000008;
-  float afStackY_1908 [1484];
+  float afStackY_1908 [1455];
   CQuaternion4f *quat_ptr;
   float in_stack_fffffe44;
-  int iStack_1b4;
   SDamageInfo local_180;
   CBoundingBox3D local_144;
   CQuaternion4f local_12c;
@@ -274,7 +273,7 @@ void core_boneguy_cpp_FUN_0041bf90(void)
           pCVar1 = &(in_stack_00000004->base_enemy).base_character.model;
           if (iVar8 < 0) {
             engine_console_cpp_CConsole_printf_FUN_00441890
-                      (g_CConsolePtr,"%s gave up chase - I'm confused\n");
+                      (g_CConsolePtr,"%s gave up chase - I'm confused\n",in_stack_00000004);
             core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                       (&pCVar1->motion_controller,0,1);
           }
@@ -473,7 +472,6 @@ LAB_0041c60c:
     uVar12 = (*((in_stack_00000004->base_enemy).base_character.base_actor.vtable)->playAmbientSound)
                        ((CDemonActor *)in_stack_00000004,"boneGuy-walkloop.wav");
     *(uint *)(in_stack_00000004->field1_0xbeb4 + 0x18) = uVar12;
-    iStack_1b4 = 0x41c5d5;
     sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
     return;
   }

@@ -1,21 +1,22 @@
 {
   "complexity": {
     "assembly_lines": 324,
-    "complexity_score": 281,
+    "complexity_score": 293,
     "cross_reference_count": 2,
     "function_call_count": 10,
     "global_count": 18,
-    "pseudocode_lines": 121,
+    "pseudocode_lines": 128,
     "suspect_count": 13,
     "suspect_types": [
       "badspacebase",
-      "callind_esp_uncertain",
       "concat_artifact",
       "register_param",
       "stack_ref",
-      "unaffected_reg"
+      "unaffected_reg",
+      "undefined_type",
+      "unknown_field"
     ],
-    "total_lines": 445
+    "total_lines": 452
   },
   "cross_references": [
     {
@@ -195,6 +196,14 @@
       "value": null
     }
   ],
+  "pcode_overrides": {
+    "0054043a": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe78,4)"
+    ],
+    "00540507": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe78,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.910852713178294,
     "instruction_count": 258,
@@ -358,103 +367,95 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 9,
-      "match": "unaff_EBX",
-      "text": "int unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Ghidra failed to resolve stack frame",
-      "line": 11,
+      "line": 9,
       "match": "BADSPACEBASE",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "badspacebase"
     },
     {
       "description": "Inferred register parameter",
-      "line": 11,
+      "line": 9,
       "match": "in_ESP",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "register_param"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 45,
-      "match": "&stack0xfffffe7c",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffe7c,\"Syncing stage %d.\",sync_stage);",
-      "type": "stack_ref"
+      "description": "Unaffected register variable",
+      "line": 10,
+      "match": "unaff_EBP",
+      "text": "uint unaff_EBP;",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 46,
-      "match": "&stack0xfffffe80",
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe80,0,0xb);",
-      "type": "stack_ref"
+      "description": "Unresolved type",
+      "line": 19,
+      "match": "undefined3 uStack_f",
+      "text": "undefined3 uStack_f;",
+      "type": "undefined_type"
     },
     {
       "description": "Unaffected register variable",
-      "line": 56,
-      "match": "unaff_EBX",
-      "text": "engine_2d_c_drawText_FUN_00401fd0((char *)(iVar2 * 0x78 + unaff_EBX),0,(int)this_ptr);",
+      "line": 21,
+      "match": "unaff_EBP",
+      "text": "uStack_13._3_1_ = (byte)unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 21,
+      "match": "._3_1_",
+      "text": "uStack_13._3_1_ = (byte)unaff_EBP;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 22,
+      "match": "unaff_EBP",
+      "text": "uStack_f = (undefined3)((uint)unaff_EBP >> 8);",
       "type": "unaffected_reg"
     },
     {
       "description": "Direct stack address reference",
-      "line": 58,
-      "match": "&stack0xfffffe80",
-      "text": "(&stack0xfffffe80,\"%d\",",
+      "line": 49,
+      "match": "&stack0xfffffe70",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffe70,\"Syncing stage %d.\",sync_stage);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 60,
-      "match": "&stack0xfffffe84",
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe84,200,0);",
+      "line": 50,
+      "match": "&stack0xfffffe74",
+      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe74,0,0xb);",
       "type": "stack_ref"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 78,
-      "match": "unaff_EBX",
-      "text": "unaff_EBX = CONCAT31 /* combine 2-byte values */((int3)((uint)unaff_EBX >> 8),(char)((uint)sync_stage >> 0x18));",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 78,
-      "match": "unaff_EBX",
-      "text": "unaff_EBX = CONCAT31 /* combine 2-byte values */((int3)((uint)unaff_EBX >> 8),(char)((uint)sync_stage >> 0x18));",
-      "type": "unaffected_reg"
+      "description": "Unknown/mangled field access",
+      "line": 61,
+      "match": "._3_1_",
+      "text": "((char *)(iVar3 * 0x78 + CONCAT31 /* combine 2-byte values */(uStack_f,uStack_13._3_1_)),0,iVar2);",
+      "type": "unknown_field"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 78,
+      "line": 61,
       "match": "CONCAT31",
-      "text": "unaff_EBX = CONCAT31 /* combine 2-byte values */((int3)((uint)unaff_EBX >> 8),(char)((uint)sync_stage >> 0x18));",
+      "text": "((char *)(iVar3 * 0x78 + CONCAT31 /* combine 2-byte values */(uStack_f,uStack_13._3_1_)),0,iVar2);",
       "type": "concat_artifact"
     },
     {
-      "add_esp_value": 8,
-      "callind_address": "00540437",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "0054043a",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 00540437, ADD ESP at 0054043a",
-      "type": "callind_esp_uncertain"
+      "description": "Direct stack address reference",
+      "line": 63,
+      "match": "&stack0xfffffe74",
+      "text": "(&stack0xfffffe74,\"%d\",",
+      "type": "stack_ref"
     },
     {
-      "add_esp_value": 8,
-      "callind_address": "00540504",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "00540507",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 00540504, ADD ESP at 00540507",
-      "type": "callind_esp_uncertain"
+      "description": "Direct stack address reference",
+      "line": 65,
+      "match": "&stack0xfffffe78",
+      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe78,200,0);",
+      "type": "stack_ref"
     }
   ]
 }

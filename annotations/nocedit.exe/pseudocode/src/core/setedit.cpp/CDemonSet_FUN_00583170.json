@@ -1,24 +1,23 @@
 {
   "complexity": {
     "assembly_lines": 2005,
-    "complexity_score": 2796,
+    "complexity_score": 2284,
     "cross_reference_count": 1,
     "function_call_count": 41,
     "global_count": 52,
-    "pseudocode_lines": 791,
-    "suspect_count": 196,
+    "pseudocode_lines": 894,
+    "suspect_count": 135,
     "suspect_types": [
       "badspacebase",
-      "callind_esp_uncertain",
       "concat_artifact",
       "pointer_cast",
       "register_param",
       "stack_param",
       "stack_ref",
-      "suspect_float",
-      "undefined_type"
+      "undefined_type",
+      "unknown_field"
     ],
-    "total_lines": 2796
+    "total_lines": 2899
   },
   "cross_references": [
     {
@@ -544,6 +543,80 @@
     "confidence": "medium",
     "declared_params": 1,
     "estimated_params": 1
+  },
+  "pcode_overrides": {
+    "00583b17": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
+    ],
+    "00583b48": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
+    ],
+    "00583b5b": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
+    ],
+    "00583b82": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
+    ],
+    "00583c3c": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
+    ],
+    "00583c7c": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
+    ],
+    "00583d16": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
+    ],
+    "00583d31": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
+    ],
+    "005843c8": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
+    ],
+    "0058440b": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
+    ],
+    "00584427": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
+    ],
+    "00584443": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
+    ],
+    "0058445f": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
+    ],
+    "0058447c": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
+    ],
+    "00584499": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
+    ],
+    "00584528": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
+    ],
+    "00584553": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
+    ],
+    "00584572": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
+    ],
+    "00584591": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
+    ],
+    "005845b0": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
+    ],
+    "005845cf": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
+    ],
+    "005845ee": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
+    ],
+    "0058460d": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
+    ],
+    "00584678": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
+    ]
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.23289246693502,
@@ -1652,1471 +1725,948 @@
   "suspects": [
     {
       "description": "Unresolved type",
-      "line": 9,
+      "line": 10,
       "match": "undefined3 extraout_var",
       "text": "undefined3 extraout_var;",
       "type": "undefined_type"
     },
     {
       "description": "Ghidra failed to resolve stack frame",
-      "line": 12,
+      "line": 14,
       "match": "BADSPACEBASE",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "badspacebase"
     },
     {
       "description": "Inferred register parameter",
-      "line": 12,
+      "line": 14,
       "match": "in_ESP",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "register_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_fffffd4c",
-      "text": "SRenderVertex *in_stack_fffffd4c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 21,
-      "match": "in_stack_fffffd50",
-      "text": "SRenderVertex *in_stack_fffffd50;",
+      "match": "in_stack_fffffd02",
+      "text": "SRenderVertex *in_stack_fffffd02;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 22,
-      "match": "in_stack_fffffd54",
-      "text": "SRenderVertex *in_stack_fffffd54;",
+      "match": "in_stack_fffffd06",
+      "text": "SRenderVertex *in_stack_fffffd06;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 23,
-      "match": "in_stack_fffffd58",
-      "text": "SRenderVertex *in_stack_fffffd58;",
+      "match": "in_stack_fffffd0a",
+      "text": "SRenderVertex *in_stack_fffffd0a;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 24,
-      "match": "in_stack_fffffd5c",
-      "text": "SRenderVertex *in_stack_fffffd5c;",
+      "match": "in_stack_fffffd0e",
+      "text": "SRenderVertex *in_stack_fffffd0e;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 25,
-      "match": "in_stack_fffffd60",
-      "text": "SRenderVertex *in_stack_fffffd60;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_fffffd64",
-      "text": "SRenderVertex *in_stack_fffffd64;",
+      "match": "in_stack_fffffd12",
+      "text": "SRenderVertex *in_stack_fffffd12;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 27,
-      "match": "in_stack_fffffd68",
-      "text": "SRenderVertex *in_stack_fffffd68;",
+      "match": "in_stack_fffffd16",
+      "text": "SRenderVertex *in_stack_fffffd16;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 28,
-      "match": "in_stack_fffffd6c",
-      "text": "SRenderVertex *in_stack_fffffd6c;",
+      "match": "in_stack_fffffd1a",
+      "text": "SRenderVertex *in_stack_fffffd1a;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 29,
-      "match": "in_stack_fffffd70",
-      "text": "SRenderVertex *in_stack_fffffd70;",
+      "match": "in_stack_fffffd1e",
+      "text": "SRenderVertex *in_stack_fffffd1e;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_fffffdb0",
-      "text": "CGame *in_stack_fffffdb0;",
+      "line": 30,
+      "match": "in_stack_fffffd22",
+      "text": "SRenderVertex *in_stack_fffffd22;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 31,
+      "match": "in_stack_fffffd26",
+      "text": "SRenderVertex *in_stack_fffffd26;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 35,
-      "match": "in_stack_fffffdc0",
-      "text": "CMatrix3x3f *in_stack_fffffdc0;",
+      "match": "in_stack_fffffd66",
+      "text": "CGame *in_stack_fffffd66;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 36,
-      "match": "in_stack_fffffdc4",
-      "text": "CVector3f *in_stack_fffffdc4;",
+      "line": 128,
+      "match": "in_stack_fffffd66",
+      "text": "core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_fffffd66);",
       "type": "stack_param"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 87,
-      "match": "&stack0xfffffdbc",
-      "text": "core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)&stack0xfffffdbc);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 89,
-      "match": "in_stack_fffffdb0",
-      "text": "core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_fffffdb0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 104,
-      "match": "8.099656e-39",
-      "text": "fVar14 = 8.099656e-39;",
-      "type": "suspect_float"
+      "description": "Unknown/mangled field access",
+      "line": 152,
+      "match": "._12_4_",
+      "text": "local_244._12_4_ = local_c8;",
+      "type": "unknown_field"
     },
     {
       "description": "Direct stack address reference",
-      "line": 108,
-      "match": "&stack0xfffffe24",
-      "text": "(&local_3c->rotation_matrix,(CVector3f *)&stack0xfffffe24);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 110,
+      "line": 160,
       "match": "&stack0xfffffd94",
-      "text": "((CMatrix3x3f *)&stack0xfffffd94,(CVector3f *)&stack0xfffffdc8);",
+      "text": "((CMatrix3x3f *)&stack0xfffffd94,(CVector3f *)(local_244 + 0xc));",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 110,
-      "match": "&stack0xfffffdc8",
-      "text": "((CMatrix3x3f *)&stack0xfffffd94,(CVector3f *)&stack0xfffffdc8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 111,
-      "match": "in_stack_fffffdc4",
-      "text": "in_stack_fffffdc4 = (CVector3f *)&stack0xfffffecc;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 111,
-      "match": "&stack0xfffffecc",
-      "text": "in_stack_fffffdc4 = (CVector3f *)&stack0xfffffecc;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 112,
-      "match": "in_stack_fffffdc0",
-      "text": "in_stack_fffffdc0 = (CMatrix3x3f *)&stack0xfffffd94;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 112,
+      "line": 166,
       "match": "&stack0xfffffd94",
-      "text": "in_stack_fffffdc0 = (CMatrix3x3f *)&stack0xfffffd94;",
+      "text": "((CMatrix3x3f *)&stack0xfffffd94,&local_134,&local_1d0);",
       "type": "stack_ref"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 115,
-      "match": "8.099886e-39",
-      "text": "fVar14 = 8.099886e-39;",
-      "type": "suspect_float"
+      "description": "Unknown/mangled field access",
+      "line": 171,
+      "match": "._0_4_",
+      "text": "local_244._0_4_ = local_1c4;",
+      "type": "unknown_field"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 117,
-      "match": "in_stack_fffffdc0",
-      "text": "(in_stack_fffffdc0,in_stack_fffffdc4,(CVector3f *)&local_1d0);",
-      "type": "stack_param"
+      "description": "Unknown/mangled field access",
+      "line": 172,
+      "match": "._4_4_",
+      "text": "local_244._4_4_ = local_1c0;",
+      "type": "unknown_field"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 117,
-      "match": "in_stack_fffffdc4",
-      "text": "(in_stack_fffffdc0,in_stack_fffffdc4,(CVector3f *)&local_1d0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 118,
-      "match": "&stack0xfffffdbc",
-      "text": "if (&stack0xfffffdbc != &stack0xfffffe3c) {",
-      "type": "stack_ref"
+      "description": "Unknown/mangled field access",
+      "line": 173,
+      "match": "._8_4_",
+      "text": "local_244._8_4_ = local_1bc;",
+      "type": "unknown_field"
     },
     {
       "description": "Direct stack address reference",
-      "line": 118,
-      "match": "&stack0xfffffe3c",
-      "text": "if (&stack0xfffffdbc != &stack0xfffffe3c) {",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 120,
-      "match": "in_stack_fffffdc0",
-      "text": "in_stack_fffffdc0 = (CMatrix3x3f *)(pCVar3->y + (local_3c->position).y);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 121,
-      "match": "in_stack_fffffdc4",
-      "text": "in_stack_fffffdc4 = (CVector3f *)(pCVar3->z + (local_3c->position).z);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 124,
+      "line": 177,
       "match": "&stack0x00000000",
       "text": "if ((int *)&stack0x00000000 != &g_CDemonCameraInstance.rect_array[7].top) {",
       "type": "stack_ref"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 126,
-      "match": "in_stack_fffffdc0",
-      "text": "g_CDemonCameraInstance.base.position.y = (int)in_stack_fffffdc0;",
-      "type": "stack_param"
+      "description": "Unknown/mangled field access",
+      "line": 178,
+      "match": "._0_4_",
+      "text": "g_CDemonCameraInstance.base.position.x = local_244._0_4_;",
+      "type": "unknown_field"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 127,
-      "match": "in_stack_fffffdc4",
-      "text": "g_CDemonCameraInstance.base.position.z = (int)in_stack_fffffdc4;",
-      "type": "stack_param"
+      "description": "Unknown/mangled field access",
+      "line": 179,
+      "match": "._4_4_",
+      "text": "g_CDemonCameraInstance.base.position.y = local_244._4_4_;",
+      "type": "unknown_field"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 129,
-      "match": "in_stack_fffffdc4",
-      "text": "in_stack_fffffdc4 = (CVector3f *)0x5833d6;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 133,
-      "match": "&stack0xfffffdc8",
-      "text": "(CVector3f *)&stack0xfffffdc8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 152,
-      "match": "&stack0xfffffe6c",
-      "text": "(local_34,(CVector3f *)&stack0xfffffe6c);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 156,
-      "match": "&stack0xfffffe6c",
-      "text": "(g_CDemonRendererPtr,(CVector3i *)&stack0xfffffe6c,(CVector3i *)0x0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 161,
-      "match": "in_stack_fffffdc0",
-      "text": "in_stack_fffffdc0 = (CMatrix3x3f *)0x0;",
-      "type": "stack_param"
+      "description": "Unknown/mangled field access",
+      "line": 180,
+      "match": "._8_4_",
+      "text": "g_CDemonCameraInstance.base.position.z = local_244._8_4_;",
+      "type": "unknown_field"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 168,
+      "line": 216,
       "match": "CONCAT31",
-      "text": "(g_CEditorToolsPtr,2.0,CONCAT31 /* combine 2-byte values */(extraout_var,uVar2));",
+      "text": "uVar17 = (ushort)CONCAT31 /* combine 2-byte values */(extraout_var,uVar4);",
       "type": "concat_artifact"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 171,
-      "match": "in_stack_fffffdc4",
-      "text": "in_stack_fffffdc4 = (CVector3f *)0x583576;",
-      "type": "stack_param"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 173,
-      "match": "CONCAT31",
-      "text": "(g_CEditorToolsPtr,(CVector3f *)corner1,corner2,CONCAT31 /* combine 2-byte values */(extraout_var,uVar2));",
+      "line": 219,
+      "match": "CONCAT22",
+      "text": "(g_CEditorToolsPtr,2.0,CONCAT22 /* combine 2-byte values */(uVar18,uVar17));",
       "type": "concat_artifact"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 181,
-      "match": "&stack0xffffff08",
-      "text": "core_setedit_cpp_FUN_005817d0(&stack0xffffff08);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 182,
-      "match": "in_stack_fffffdc4",
-      "text": "in_stack_fffffdc4 = (CVector3f *)&stack0xffffff74;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 182,
-      "match": "&stack0xffffff74",
-      "text": "in_stack_fffffdc4 = (CVector3f *)&stack0xffffff74;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 184,
-      "match": "8.100852e-39",
-      "text": "fVar14 = 8.100852e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 185,
-      "match": "in_stack_fffffdc0",
-      "text": "in_stack_fffffdc0 = (CMatrix3x3f *)g_CEditorToolsPtr;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 187,
-      "match": "in_stack_fffffdc4",
-      "text": "(g_CEditorToolsPtr,in_stack_fffffdc4,pCVar3 + 1,2);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 190,
-      "match": "in_stack_fffffdc4",
-      "text": "in_stack_fffffdc4 = (CVector3f *)0x0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 191,
-      "match": "in_stack_fffffdc0",
-      "text": "in_stack_fffffdc0 = (CMatrix3x3f *)0x0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 193,
-      "match": "&stack0xfffffec0",
-      "text": "core_setedit_cpp_FUN_005817d0(&stack0xfffffec0);",
-      "type": "stack_ref"
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 224,
+      "match": "CONCAT22",
+      "text": "(g_CEditorToolsPtr,&local_128,pCVar1,CONCAT22 /* combine 2-byte values */(uVar18,uVar17));",
+      "type": "concat_artifact"
     },
     {
       "description": "Complex pointer cast",
-      "line": 198,
+      "line": 253,
       "match": "(CMatrix3x3f *)((int)",
-      "text": "local_34 = (CMatrix3x3f *)((int)(local_34 + 1) + 0x20);",
+      "text": "local_34 = (CMatrix3x3f *)((int)(pCVar3 + 1) + 0x20);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 228,
-      "match": "&stack0xffffff20",
-      "text": "(CVector3i *)&stack0xffffff20);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 241,
-      "match": "&stack0xffffff50",
-      "text": "(CVector3i *)&stack0xffffff50);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 246,
-      "match": "&stack0xfffffe60",
-      "text": "(CVector3i *)&stack0xfffffe60);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 250,
-      "match": "&stack0xfffffe90",
-      "text": "(CVector3i *)&stack0xfffffe90);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 254,
-      "match": "&stack0xfffffeb4",
-      "text": "(CVector3i *)&stack0xfffffeb4);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 270,
-      "match": "8.102432e-39",
-      "text": "fVar14 = 8.102432e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 272,
-      "match": "in_stack_fffffdc0",
-      "text": "in_stack_fffffdc0 = (CMatrix3x3f *)0x583a5c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 274,
-      "match": "in_stack_fffffdc4",
-      "text": "in_stack_fffffdc4 = (CVector3f *)0x583a6f;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 283,
-      "match": "&stack0xfffffd7c",
-      "text": "piVar11 = (int *)&stack0xfffffd7c;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 286,
-      "match": "(SRenderVertex *)((int)",
-      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar12 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 289,
-      "match": "&stack0xfffffd4c",
-      "text": "piVar11 = (int *)&stack0xfffffd4c;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 292,
-      "match": "(SRenderVertex *)((int)",
-      "text": "pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar12 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 296,
-      "match": "in_stack_fffffd4c",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd4c,in_stack_fffffd50);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 296,
-      "match": "in_stack_fffffd50",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd4c,in_stack_fffffd50);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 299,
-      "match": "&stack0xfffffd80",
-      "text": "piVar11 = (int *)&stack0xfffffd80;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 302,
-      "match": "(SRenderVertex *)((int)",
-      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar12 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 306,
-      "match": "&stack0xfffffd50",
-      "text": "piVar11 = (int *)&stack0xfffffd50;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 309,
-      "match": "(SRenderVertex *)((int)",
-      "text": "pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar12 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 312,
-      "match": "in_stack_fffffd4c",
-      "text": "in_stack_fffffd4c = (SRenderVertex *)0x5841b6;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 313,
-      "match": "in_stack_fffffd50",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd50,in_stack_fffffd54);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 313,
-      "match": "in_stack_fffffd54",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd50,in_stack_fffffd54);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 316,
-      "match": "&stack0xfffffd84",
-      "text": "piVar11 = (int *)&stack0xfffffd84;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 319,
-      "match": "(SRenderVertex *)((int)",
-      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar12 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 323,
-      "match": "&stack0xfffffd54",
-      "text": "piVar11 = (int *)&stack0xfffffd54;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 326,
-      "match": "(SRenderVertex *)((int)",
-      "text": "pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar12 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 329,
-      "match": "in_stack_fffffd50",
-      "text": "in_stack_fffffd50 = (SRenderVertex *)0x5841e6;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 330,
-      "match": "in_stack_fffffd54",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd54,in_stack_fffffd58);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 330,
-      "match": "in_stack_fffffd58",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd54,in_stack_fffffd58);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 333,
-      "match": "&stack0xfffffd88",
-      "text": "piVar11 = (int *)&stack0xfffffd88;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 336,
-      "match": "(SRenderVertex *)((int)",
-      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar12 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 340,
-      "match": "&stack0xfffffd58",
-      "text": "piVar11 = (int *)&stack0xfffffd58;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 343,
-      "match": "(SRenderVertex *)((int)",
-      "text": "pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar12 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 346,
-      "match": "in_stack_fffffd54",
-      "text": "in_stack_fffffd54 = (SRenderVertex *)0x584215;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 347,
-      "match": "in_stack_fffffd58",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd58,in_stack_fffffd5c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 347,
-      "match": "in_stack_fffffd5c",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd58,in_stack_fffffd5c);",
-      "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
       "line": 350,
-      "match": "&stack0xfffffd8c",
-      "text": "piVar11 = (int *)&stack0xfffffd8c;",
+      "match": "&stack0xfffffd32",
+      "text": "piVar13 = (int *)&stack0xfffffd32;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
       "line": 353,
       "match": "(SRenderVertex *)((int)",
-      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar12 * -2 + 1) * 4);",
+      "text": "pSVar10 = (SRenderVertex *)((int)pSVar10 + ((uint)bVar14 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 357,
-      "match": "&stack0xfffffd5c",
-      "text": "piVar11 = (int *)&stack0xfffffd5c;",
+      "line": 356,
+      "match": "&stack0xfffffd02",
+      "text": "piVar13 = (int *)&stack0xfffffd02;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 360,
+      "line": 359,
       "match": "(SRenderVertex *)((int)",
-      "text": "pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar12 * -2 + 1) * 4);",
+      "text": "pSVar11 = (SRenderVertex *)((int)pSVar11 + ((uint)bVar14 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 363,
-      "match": "in_stack_fffffd58",
-      "text": "in_stack_fffffd58 = (SRenderVertex *)0x584248;",
+      "match": "in_stack_fffffd02",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd02,in_stack_fffffd06);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 364,
-      "match": "in_stack_fffffd5c",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd5c,in_stack_fffffd60);",
+      "line": 363,
+      "match": "in_stack_fffffd06",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd02,in_stack_fffffd06);",
       "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 366,
+      "match": "&stack0xfffffd36",
+      "text": "piVar13 = (int *)&stack0xfffffd36;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 369,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar10 = (SRenderVertex *)((int)pSVar10 + ((uint)bVar14 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 373,
+      "match": "&stack0xfffffd06",
+      "text": "piVar13 = (int *)&stack0xfffffd06;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 376,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar11 = (SRenderVertex *)((int)pSVar11 + ((uint)bVar14 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 364,
-      "match": "in_stack_fffffd60",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd5c,in_stack_fffffd60);",
+      "line": 379,
+      "match": "in_stack_fffffd02",
+      "text": "in_stack_fffffd02 = (SRenderVertex *)0x5841b6;",
       "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 367,
-      "match": "&stack0xfffffd90",
-      "text": "piVar11 = (int *)&stack0xfffffd90;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 370,
-      "match": "(SRenderVertex *)((int)",
-      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar12 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 374,
-      "match": "&stack0xfffffd60",
-      "text": "piVar11 = (int *)&stack0xfffffd60;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 377,
-      "match": "(SRenderVertex *)((int)",
-      "text": "pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar12 * -2 + 1) * 4);",
-      "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 380,
-      "match": "in_stack_fffffd5c",
-      "text": "in_stack_fffffd5c = (SRenderVertex *)0x58427b;",
+      "match": "in_stack_fffffd06",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd06,in_stack_fffffd0a);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 381,
-      "match": "in_stack_fffffd60",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd60,in_stack_fffffd64);",
+      "line": 380,
+      "match": "in_stack_fffffd0a",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd06,in_stack_fffffd0a);",
       "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 383,
+      "match": "&stack0xfffffd3a",
+      "text": "piVar13 = (int *)&stack0xfffffd3a;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 386,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar10 = (SRenderVertex *)((int)pSVar10 + ((uint)bVar14 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 390,
+      "match": "&stack0xfffffd0a",
+      "text": "piVar13 = (int *)&stack0xfffffd0a;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 393,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar11 = (SRenderVertex *)((int)pSVar11 + ((uint)bVar14 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 381,
-      "match": "in_stack_fffffd64",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd60,in_stack_fffffd64);",
+      "line": 396,
+      "match": "in_stack_fffffd06",
+      "text": "in_stack_fffffd06 = (SRenderVertex *)0x5841e6;",
       "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 384,
-      "match": "&stack0xfffffd94",
-      "text": "piVar11 = (int *)&stack0xfffffd94;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 387,
-      "match": "(SRenderVertex *)((int)",
-      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar12 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 391,
-      "match": "&stack0xfffffd64",
-      "text": "piVar11 = (int *)&stack0xfffffd64;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 394,
-      "match": "(SRenderVertex *)((int)",
-      "text": "pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar12 * -2 + 1) * 4);",
-      "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 397,
-      "match": "in_stack_fffffd60",
-      "text": "in_stack_fffffd60 = (SRenderVertex *)0x5842ae;",
+      "match": "in_stack_fffffd0a",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd0a,in_stack_fffffd0e);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 398,
-      "match": "in_stack_fffffd64",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd64,in_stack_fffffd68);",
+      "line": 397,
+      "match": "in_stack_fffffd0e",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd0a,in_stack_fffffd0e);",
       "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 400,
+      "match": "&stack0xfffffd3e",
+      "text": "piVar13 = (int *)&stack0xfffffd3e;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 403,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar10 = (SRenderVertex *)((int)pSVar10 + ((uint)bVar14 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 407,
+      "match": "&stack0xfffffd0e",
+      "text": "piVar13 = (int *)&stack0xfffffd0e;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 410,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar11 = (SRenderVertex *)((int)pSVar11 + ((uint)bVar14 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 398,
-      "match": "in_stack_fffffd68",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd64,in_stack_fffffd68);",
+      "line": 413,
+      "match": "in_stack_fffffd0a",
+      "text": "in_stack_fffffd0a = (SRenderVertex *)0x584215;",
       "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 401,
-      "match": "&stack0xfffffd98",
-      "text": "piVar11 = (int *)&stack0xfffffd98;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 404,
-      "match": "(SRenderVertex *)((int)",
-      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar12 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 408,
-      "match": "&stack0xfffffd68",
-      "text": "piVar11 = (int *)&stack0xfffffd68;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 411,
-      "match": "(SRenderVertex *)((int)",
-      "text": "pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar12 * -2 + 1) * 4);",
-      "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 414,
-      "match": "in_stack_fffffd64",
-      "text": "in_stack_fffffd64 = (SRenderVertex *)0x5842e1;",
+      "match": "in_stack_fffffd0e",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd0e,in_stack_fffffd12);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 415,
-      "match": "in_stack_fffffd68",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd68,in_stack_fffffd6c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 415,
-      "match": "in_stack_fffffd6c",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd68,in_stack_fffffd6c);",
+      "line": 414,
+      "match": "in_stack_fffffd12",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd0e,in_stack_fffffd12);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 418,
-      "match": "&stack0xfffffd9c",
-      "text": "piVar11 = (int *)&stack0xfffffd9c;",
+      "line": 417,
+      "match": "&stack0xfffffd42",
+      "text": "piVar13 = (int *)&stack0xfffffd42;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 421,
+      "line": 420,
       "match": "(SRenderVertex *)((int)",
-      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar12 * -2 + 1) * 4);",
+      "text": "pSVar10 = (SRenderVertex *)((int)pSVar10 + ((uint)bVar14 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
       "line": 424,
-      "match": "&stack0xfffffd6c",
-      "text": "piVar11 = (int *)&stack0xfffffd6c;",
+      "match": "&stack0xfffffd12",
+      "text": "piVar13 = (int *)&stack0xfffffd12;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
       "line": 427,
       "match": "(SRenderVertex *)((int)",
-      "text": "pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar12 * -2 + 1) * 4);",
+      "text": "pSVar11 = (SRenderVertex *)((int)pSVar11 + ((uint)bVar14 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 430,
-      "match": "in_stack_fffffd68",
-      "text": "in_stack_fffffd68 = (SRenderVertex *)0x584310;",
+      "match": "in_stack_fffffd0e",
+      "text": "in_stack_fffffd0e = (SRenderVertex *)0x584248;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 431,
-      "match": "in_stack_fffffd6c",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd6c,in_stack_fffffd70);",
+      "match": "in_stack_fffffd12",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd12,in_stack_fffffd16);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 431,
-      "match": "in_stack_fffffd70",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd6c,in_stack_fffffd70);",
+      "match": "in_stack_fffffd16",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd12,in_stack_fffffd16);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
       "line": 434,
-      "match": "&stack0xfffffda0",
-      "text": "piVar11 = (int *)&stack0xfffffda0;",
+      "match": "&stack0xfffffd46",
+      "text": "piVar13 = (int *)&stack0xfffffd46;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
       "line": 437,
       "match": "(SRenderVertex *)((int)",
-      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar12 * -2 + 1) * 4);",
+      "text": "pSVar10 = (SRenderVertex *)((int)pSVar10 + ((uint)bVar14 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
       "line": 441,
-      "match": "&stack0xfffffd70",
-      "text": "piVar11 = (int *)&stack0xfffffd70;",
+      "match": "&stack0xfffffd16",
+      "text": "piVar13 = (int *)&stack0xfffffd16;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
       "line": 444,
       "match": "(SRenderVertex *)((int)",
-      "text": "pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar12 * -2 + 1) * 4);",
+      "text": "pSVar11 = (SRenderVertex *)((int)pSVar11 + ((uint)bVar14 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 447,
-      "match": "in_stack_fffffd6c",
-      "text": "in_stack_fffffd6c = (SRenderVertex *)0x584340;",
+      "match": "in_stack_fffffd12",
+      "text": "in_stack_fffffd12 = (SRenderVertex *)0x58427b;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 448,
-      "match": "in_stack_fffffd70",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd70,pSVar13);",
+      "match": "in_stack_fffffd16",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd16,in_stack_fffffd1a);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 448,
+      "match": "in_stack_fffffd1a",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd16,in_stack_fffffd1a);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
       "line": 451,
-      "match": "&stack0xfffffda4",
-      "text": "piVar11 = (int *)&stack0xfffffda4;",
+      "match": "&stack0xfffffd4a",
+      "text": "piVar13 = (int *)&stack0xfffffd4a;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
       "line": 454,
       "match": "(SRenderVertex *)((int)",
-      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar12 * -2 + 1) * 4);",
+      "text": "pSVar10 = (SRenderVertex *)((int)pSVar10 + ((uint)bVar14 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
       "line": 458,
-      "match": "&stack0xfffffd74",
-      "text": "piVar11 = (int *)&stack0xfffffd74;",
+      "match": "&stack0xfffffd1a",
+      "text": "piVar13 = (int *)&stack0xfffffd1a;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
       "line": 461,
       "match": "(SRenderVertex *)((int)",
-      "text": "pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar12 * -2 + 1) * 4);",
+      "text": "pSVar11 = (SRenderVertex *)((int)pSVar11 + ((uint)bVar14 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 464,
-      "match": "in_stack_fffffd70",
-      "text": "in_stack_fffffd70 = (SRenderVertex *)0x584370;",
+      "match": "in_stack_fffffd16",
+      "text": "in_stack_fffffd16 = (SRenderVertex *)0x5842ae;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 465,
+      "match": "in_stack_fffffd1a",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd1a,in_stack_fffffd1e);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 465,
+      "match": "in_stack_fffffd1e",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd1a,in_stack_fffffd1e);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
       "line": 468,
-      "match": "&stack0xfffffda8",
-      "text": "piVar11 = (int *)&stack0xfffffda8;",
+      "match": "&stack0xfffffd4e",
+      "text": "piVar13 = (int *)&stack0xfffffd4e;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
       "line": 471,
       "match": "(SRenderVertex *)((int)",
-      "text": "pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar12 * -2 + 1) * 4);",
+      "text": "pSVar10 = (SRenderVertex *)((int)pSVar10 + ((uint)bVar14 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
       "line": 475,
-      "match": "&stack0xfffffd78",
-      "text": "piVar11 = (int *)&stack0xfffffd78;",
+      "match": "&stack0xfffffd1e",
+      "text": "piVar13 = (int *)&stack0xfffffd1e;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
       "line": 478,
       "match": "(SRenderVertex *)((int)",
-      "text": "pSVar13 = (SRenderVertex *)((int)pSVar13 + ((uint)bVar12 * -2 + 1) * 4);",
+      "text": "pSVar11 = (SRenderVertex *)((int)pSVar11 + ((uint)bVar14 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Likely misinterpreted integer as float",
+      "description": "Unresolved stack parameter",
+      "line": 481,
+      "match": "in_stack_fffffd1a",
+      "text": "in_stack_fffffd1a = (SRenderVertex *)0x5842e1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 482,
+      "match": "in_stack_fffffd1e",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd1e,in_stack_fffffd22);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 482,
+      "match": "in_stack_fffffd22",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd1e,in_stack_fffffd22);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 485,
+      "match": "&stack0xfffffd52",
+      "text": "piVar13 = (int *)&stack0xfffffd52;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 488,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar10 = (SRenderVertex *)((int)pSVar10 + ((uint)bVar14 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
       "line": 491,
-      "match": "8.10267e-39",
-      "text": "fVar6 = 8.10267e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 494,
-      "match": "8.102682e-39",
-      "text": "local_21c = 8.102682e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 496,
-      "match": "8.102699e-39",
-      "text": "local_21c = 8.102699e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 498,
-      "match": "8.102721e-39",
-      "text": "local_21c = 8.102721e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 509,
-      "match": "&stack0xfffffdbc",
-      "text": "core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)&stack0xfffffdbc);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 513,
-      "match": "8.105839e-39",
-      "text": "local_208 = 8.105839e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 517,
-      "match": "8.106803e-39",
-      "text": "local_1f4 = 8.106803e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 527,
-      "match": "8.105933e-39",
-      "text": "local_1e8.z = 8.105933e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 529,
-      "match": "8.105972e-39",
-      "text": "local_1cc = 8.105972e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 534,
-      "match": "8.106091e-39",
-      "text": "fStack_190 = 8.106091e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 539,
-      "match": "8.106132e-39",
-      "text": "local_17c = 8.106132e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 549,
-      "match": "&stack0xfffffdd8",
-      "text": "core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)&stack0xfffffdd8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 550,
-      "match": "&stack0xfffffdd8",
-      "text": "if ((SVDBox *)&stack0xfffffdd8 != local_3c) {",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 560,
-      "match": "&stack0xfffffdd8",
-      "text": "core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)&stack0xfffffdd8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 561,
-      "match": "&stack0xfffffdd8",
-      "text": "if ((SVDBox *)&stack0xfffffdd8 != local_3c) {",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 571,
-      "match": "8.106393e-39",
-      "text": "local_154 = 8.106393e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 613,
-      "match": "8.102816e-39",
-      "text": "local_128 = 8.102816e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 628,
-      "match": "8.102871e-39",
-      "text": "local_114 = 8.102871e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 634,
-      "match": "&stack0xfffffdbc",
-      "text": "if (pSVar5 != (SVDBox *)&stack0xfffffdbc) {",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 636,
-      "match": "in_stack_fffffdc0",
-      "text": "(pSVar5->position).y = (float)in_stack_fffffdc0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 637,
-      "match": "in_stack_fffffdc4",
-      "text": "(pSVar5->position).z = (float)in_stack_fffffdc4;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 688,
-      "match": "8.107557e-39",
-      "text": "local_ec = 8.107557e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 691,
-      "match": "&stack0xfffffe54",
-      "text": "(CVector3f *)&stack0xfffffe54);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 707,
-      "match": "8.103296e-39",
-      "text": "fStack_d0 = 8.103296e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 713,
-      "match": "8.103383e-39",
-      "text": "fStack_d0 = 8.103383e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 726,
-      "match": "8.103475e-39",
-      "text": "local_bc.z = 8.103475e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 758,
-      "match": "&stack0xffffff2c",
-      "text": "(&g_CDemonCameraInstance,(CVector3f *)&stack0xffffff2c,g_MouseX,g_MouseY);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 770,
-      "match": "&stack0xfffffef0",
-      "text": "(local_1c,(CVector3f *)&stack0xfffffef0,(CVector3f *)&local_1f4);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 772,
-      "match": "&stack0xffffff68",
-      "text": "(local_1c,(CVector3f *)&stack0xffffff68,&local_1e8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 781,
-      "match": "&stack0xfffffef0",
-      "text": "((CBoundingBox3D *)&local_20c,(CVector3f *)&stack0xfffffef0,",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 782,
-      "match": "&stack0xffffff68",
-      "text": "(CVector3f *)&stack0xffffff68,(CVector3f *)0x0);",
+      "match": "&stack0xfffffd22",
+      "text": "piVar13 = (int *)&stack0xfffffd22;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 787,
+      "line": 494,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar11 = (SRenderVertex *)((int)pSVar11 + ((uint)bVar14 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 497,
+      "match": "in_stack_fffffd1e",
+      "text": "in_stack_fffffd1e = (SRenderVertex *)0x584310;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 498,
+      "match": "in_stack_fffffd22",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd22,in_stack_fffffd26);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 498,
+      "match": "in_stack_fffffd26",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd22,in_stack_fffffd26);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 501,
+      "match": "&stack0xfffffd56",
+      "text": "piVar13 = (int *)&stack0xfffffd56;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 504,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar10 = (SRenderVertex *)((int)pSVar10 + ((uint)bVar14 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 508,
+      "match": "&stack0xfffffd26",
+      "text": "piVar13 = (int *)&stack0xfffffd26;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 511,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar11 = (SRenderVertex *)((int)pSVar11 + ((uint)bVar14 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 514,
+      "match": "in_stack_fffffd22",
+      "text": "in_stack_fffffd22 = (SRenderVertex *)0x584340;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 515,
+      "match": "in_stack_fffffd26",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffd26,pSVar15);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 518,
+      "match": "&stack0xfffffd5a",
+      "text": "piVar13 = (int *)&stack0xfffffd5a;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 521,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar10 = (SRenderVertex *)((int)pSVar10 + ((uint)bVar14 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 525,
+      "match": "&stack0xfffffd2a",
+      "text": "piVar13 = (int *)&stack0xfffffd2a;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 528,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar11 = (SRenderVertex *)((int)pSVar11 + ((uint)bVar14 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 531,
+      "match": "in_stack_fffffd26",
+      "text": "in_stack_fffffd26 = (SRenderVertex *)0x584370;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 535,
+      "match": "&stack0xfffffd5e",
+      "text": "piVar13 = (int *)&stack0xfffffd5e;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 538,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar11 = (SRenderVertex *)((int)pSVar11 + ((uint)bVar14 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 542,
+      "match": "&stack0xfffffd2e",
+      "text": "piVar13 = (int *)&stack0xfffffd2e;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 545,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar15 = (SRenderVertex *)((int)pSVar15 + ((uint)bVar14 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 634,
+      "match": "._0_4_",
+      "text": "local_228._0_4_ = (pSVar8->position).x;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 635,
+      "match": "._4_4_",
+      "text": "local_228._4_4_ = (pSVar8->position).y;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 636,
+      "match": "._8_4_",
+      "text": "local_228._8_4_ = (pSVar8->position).z;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 642,
+      "match": "._12_4_",
+      "text": "local_228._12_4_ = pCVar5->x;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 648,
+      "match": "._0_4_",
+      "text": "(pSVar8->position).x = (float)local_228._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 649,
+      "match": "._4_4_",
+      "text": "(pSVar8->position).y = (float)local_228._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 650,
+      "match": "._8_4_",
+      "text": "(pSVar8->position).z = (float)local_228._8_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 652,
+      "match": "in_stack_fffffd1e",
+      "text": "in_stack_fffffd1e = (SRenderVertex *)0x584750;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 698,
+      "match": "in_stack_fffffd22",
+      "text": "in_stack_fffffd22 = (SRenderVertex *)0x583b48;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 699,
+      "match": "in_stack_fffffd26",
+      "text": "in_stack_fffffd26 = (SRenderVertex *)g_CKeysPtr;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 722,
+      "match": "._0_4_",
+      "text": "(pSVar8->position).x = (float)local_244._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 723,
+      "match": "._4_4_",
+      "text": "(pSVar8->position).y = (float)local_244._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 724,
+      "match": "._8_4_",
+      "text": "(pSVar8->position).z = (float)local_244._8_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 776,
+      "match": "in_stack_fffffd06",
+      "text": "in_stack_fffffd06 = (SRenderVertex *)0x584892;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 805,
+      "match": "in_stack_fffffd1a",
+      "text": "in_stack_fffffd1a = (SRenderVertex *)0x31;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 806,
+      "match": "in_stack_fffffd16",
+      "text": "in_stack_fffffd16 = (SRenderVertex *)g_CKeysPtr;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 811,
+      "match": "in_stack_fffffd12",
+      "text": "in_stack_fffffd12 = (SRenderVertex *)0x3b;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 812,
+      "match": "in_stack_fffffd0a",
+      "text": "in_stack_fffffd0a = (SRenderVertex *)0x583d31;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 813,
+      "match": "in_stack_fffffd0e",
+      "text": "in_stack_fffffd0e = (SRenderVertex *)g_CKeysPtr;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 817,
+      "match": "in_stack_fffffd0a",
+      "text": "in_stack_fffffd0a = (SRenderVertex *)0x583d62;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 819,
+      "match": "in_stack_fffffd0e",
+      "text": "in_stack_fffffd0e = (SRenderVertex *)0x583d85;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 821,
+      "match": "in_stack_fffffd12",
+      "text": "in_stack_fffffd12 = (SRenderVertex *)0x583da9;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 823,
+      "match": "in_stack_fffffd16",
+      "text": "in_stack_fffffd16 = (SRenderVertex *)0x583dc7;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 825,
+      "match": "in_stack_fffffd1a",
+      "text": "in_stack_fffffd1a = (SRenderVertex *)0x583deb;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 827,
+      "match": "in_stack_fffffd1e",
+      "text": "in_stack_fffffd1e = (SRenderVertex *)0x583e0e;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 829,
+      "match": "in_stack_fffffd22",
+      "text": "in_stack_fffffd22 = (SRenderVertex *)0x583e32;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 831,
+      "match": "in_stack_fffffd26",
+      "text": "in_stack_fffffd26 = (SRenderVertex *)0x583e50;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 889,
       "match": "(CVector3f *)((int)",
-      "text": "pCVar3 = (CVector3f *)((int)(pCVar3 + 5) + 8);",
+      "text": "pCVar5 = (CVector3f *)((int)(pCVar5 + 5) + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 789,
+      "line": 891,
       "match": "(CMatrix3x3f *)((int)",
       "text": "local_1c = (CMatrix3x3f *)((int)(local_1c + 1) + 0x20);",
       "type": "pointer_cast"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "00583b14",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "00583b17",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 00583b14, ADD ESP at 00583b17",
-      "type": "callind_esp_uncertain"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "00583b45",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "00583b48",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 00583b45, ADD ESP at 00583b48",
-      "type": "callind_esp_uncertain"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "00583b59",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "00583b5b",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 00583b59, ADD ESP at 00583b5b",
-      "type": "callind_esp_uncertain"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "00583b7f",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "00583b82",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 00583b7f, ADD ESP at 00583b82",
-      "type": "callind_esp_uncertain"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "00583c39",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "00583c3c",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 00583c39, ADD ESP at 00583c3c",
-      "type": "callind_esp_uncertain"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "00583c79",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "00583c7c",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 00583c79, ADD ESP at 00583c7c",
-      "type": "callind_esp_uncertain"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "00583d13",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "00583d16",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 00583d13, ADD ESP at 00583d16",
-      "type": "callind_esp_uncertain"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "00583d2e",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "00583d31",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 00583d2e, ADD ESP at 00583d31",
-      "type": "callind_esp_uncertain"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "005843c6",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "005843c8",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 005843c6, ADD ESP at 005843c8",
-      "type": "callind_esp_uncertain"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "00584409",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "0058440b",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 00584409, ADD ESP at 0058440b",
-      "type": "callind_esp_uncertain"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "00584425",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "00584427",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 00584425, ADD ESP at 00584427",
-      "type": "callind_esp_uncertain"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "00584441",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "00584443",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 00584441, ADD ESP at 00584443",
-      "type": "callind_esp_uncertain"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "0058445d",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "0058445f",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 0058445d, ADD ESP at 0058445f",
-      "type": "callind_esp_uncertain"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "00584479",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "0058447c",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 00584479, ADD ESP at 0058447c",
-      "type": "callind_esp_uncertain"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "00584496",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "00584499",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 00584496, ADD ESP at 00584499",
-      "type": "callind_esp_uncertain"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "00584526",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "00584528",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 00584526, ADD ESP at 00584528",
-      "type": "callind_esp_uncertain"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "00584551",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "00584553",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 00584551, ADD ESP at 00584553",
-      "type": "callind_esp_uncertain"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "00584570",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "00584572",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 00584570, ADD ESP at 00584572",
-      "type": "callind_esp_uncertain"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "0058458f",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "00584591",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 0058458f, ADD ESP at 00584591",
-      "type": "callind_esp_uncertain"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "005845ae",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "005845b0",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 005845ae, ADD ESP at 005845b0",
-      "type": "callind_esp_uncertain"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "005845cd",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "005845cf",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 005845cd, ADD ESP at 005845cf",
-      "type": "callind_esp_uncertain"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "005845ec",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "005845ee",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 005845ec, ADD ESP at 005845ee",
-      "type": "callind_esp_uncertain"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "0058460b",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "0058460d",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 0058460b, ADD ESP at 0058460d",
-      "type": "callind_esp_uncertain"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "00584676",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "00584678",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 00584676, ADD ESP at 00584678",
-      "type": "callind_esp_uncertain"
     }
   ]
 }

@@ -1,22 +1,22 @@
 {
   "complexity": {
     "assembly_lines": 509,
-    "complexity_score": 377,
+    "complexity_score": 359,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 21,
-    "pseudocode_lines": 242,
-    "suspect_count": 10,
+    "pseudocode_lines": 244,
+    "suspect_count": 8,
     "suspect_types": [
       "badspacebase",
-      "callind_esp_uncertain",
       "pointer_cast",
       "register_param",
       "stack_param",
+      "unknown_field",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 751
+    "total_lines": 753
   },
   "cross_references": [],
   "function": {
@@ -208,6 +208,17 @@
     "declared_params": 1,
     "estimated_params": 1
   },
+  "pcode_overrides": {
+    "005dfb1f": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff54,4)"
+    ],
+    "005dfcbc": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff54,4)"
+    ],
+    "005dfedc": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff54,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.259803921568627,
     "instruction_count": 408,
@@ -380,57 +391,31 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 54,
+      "line": 55,
       "match": "(uint *)((int)",
       "text": "uVar4 = *(uint *)((int)g_HeroActors + iVar10);",
       "type": "pointer_cast"
     },
     {
+      "description": "Unknown/mangled field access",
+      "line": 112,
+      "match": "._0_8_",
+      "text": "auStack_bc._0_8_ = (ulonglong)iStack_14;",
+      "type": "unknown_field"
+    },
+    {
       "description": "Unresolved stack parameter",
-      "line": 138,
+      "line": 140,
       "match": "in_stack_00000008",
       "text": "fVar1 = *(float *)(this_ptr->field1_0x158 + 0x214) - in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 159,
+      "line": 161,
       "match": "code *",
       "text": "iVar8 = (**(code **)(*(int *)(iVar10 + 0x154) + 0x54))();",
       "type": "unresolved_funcptr"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "005dfb17",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "005dfb1f",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 005dfb17, ADD ESP at 005dfb1f",
-      "type": "callind_esp_uncertain"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "005dfcb2",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "005dfcbc",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 005dfcb2, ADD ESP at 005dfcbc",
-      "type": "callind_esp_uncertain"
-    },
-    {
-      "add_esp_value": 4,
-      "callind_address": "005dfed9",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "005dfedc",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 005dfed9, ADD ESP at 005dfedc",
-      "type": "callind_esp_uncertain"
     }
   ],
   "vtable_info": {

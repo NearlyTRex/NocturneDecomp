@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 504,
-    "complexity_score": 416,
+    "complexity_score": 382,
     "cross_reference_count": 0,
     "function_call_count": 21,
     "global_count": 13,
-    "pseudocode_lines": 196,
-    "suspect_count": 18,
+    "pseudocode_lines": 197,
+    "suspect_count": 15,
     "suspect_types": [
       "badspacebase",
-      "callind_esp_uncertain",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -17,7 +16,7 @@
       "unknown_field",
       "unresolved_funcptr"
     ],
-    "total_lines": 700
+    "total_lines": 701
   },
   "cross_references": [],
   "function": {
@@ -204,6 +203,20 @@
     "confidence": "unknown",
     "declared_params": 1,
     "estimated_params": 1
+  },
+  "pcode_overrides": {
+    "005c32fd": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffde4,4)"
+    ],
+    "005c3382": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffde4,4)"
+    ],
+    "005c33af": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffde4,4)"
+    ],
+    "005c33c9": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffde4,4)"
+    ]
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.4496314496314495,
@@ -530,130 +543,93 @@
     {
       "description": "Unresolved stack parameter",
       "line": 15,
+      "match": "in_stack_fffffd56",
+      "text": "CMatrix3x4f *in_stack_fffffd56;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
       "match": "in_stack_fffffdd4",
       "text": "CMatrix3x4f *in_stack_fffffdd4;",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 45,
+      "line": 46,
       "match": "._12_4_",
       "text": "local_ac._12_4_ = 0.0;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 53,
+      "line": 54,
       "match": "in_stack_fffffdd4",
       "text": "DAT_03f6bacc,in_stack_fffffdd4);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 54,
+      "line": 55,
       "match": "&stack0xfffffdd4",
       "text": "pfVar5 = (float *)&stack0xfffffdd4;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 59,
+      "line": 60,
       "match": "(CVector3f *)((int)",
       "text": "pCVar4 = (CVector3f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 107,
+      "line": 108,
       "match": "code *",
       "text": "(**(code **)(*(int *)(*(int *)(this_ptr->field2_0x1fbd8 + 0x54) + 0x154) + 8))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 133,
+      "line": 134,
       "match": "code *",
       "text": "(**(code **)(*(int *)(*(int *)(this_ptr->field2_0x1fbd8 + 0x54) + 0x154) + 0x104))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 138,
+      "line": 139,
       "match": "code *",
       "text": "(**(code **)(*(int *)(*(int *)(this_ptr->field2_0x1fbd8 + 0x54) + 0x154) + 8))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 140,
+      "line": 141,
       "match": "code *",
       "text": "(**(code **)(*(int *)(*(int *)(this_ptr->field2_0x1fbd8 + 0x54) + 0x154) + 0x104))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 161,
-      "match": "in_stack_fffffdd4",
-      "text": "DAT_03f6bacc,in_stack_fffffdd4);",
+      "line": 162,
+      "match": "in_stack_fffffd56",
+      "text": "DAT_03f6bacc,in_stack_fffffd56);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 176,
-      "match": "in_stack_fffffdd4",
-      "text": "DAT_03f6bb04,in_stack_fffffdd4);",
+      "line": 177,
+      "match": "in_stack_fffffd56",
+      "text": "DAT_03f6bb04,in_stack_fffffd56);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 183,
+      "line": 184,
       "match": "(CVector3f *)((int)",
       "text": "pCVar4 = (CVector3f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
-    },
-    {
-      "add_esp_value": 4,
-      "callind_address": "005c32fa",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "005c32fd",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 005c32fa, ADD ESP at 005c32fd",
-      "type": "callind_esp_uncertain"
-    },
-    {
-      "add_esp_value": 4,
-      "callind_address": "005c337c",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "005c3382",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 005c337c, ADD ESP at 005c3382",
-      "type": "callind_esp_uncertain"
-    },
-    {
-      "add_esp_value": 4,
-      "callind_address": "005c33ac",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "005c33af",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 005c33ac, ADD ESP at 005c33af",
-      "type": "callind_esp_uncertain"
-    },
-    {
-      "add_esp_value": 4,
-      "callind_address": "005c33c3",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "005c33c9",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 0,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 005c33c3, ADD ESP at 005c33c9",
-      "type": "callind_esp_uncertain"
     }
   ],
   "vtable_info": {
