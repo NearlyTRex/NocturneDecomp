@@ -186,7 +186,7 @@ def _detect_callind_esp_uncertain(pcode_data):
 
     Returns two types of suspects:
     - callind_esp_uncertain: Function has EBP frame, fixable with ESP = EBP - offset
-    - callind_esp_no_frame: Function lacks EBP frame, needs different fix approach
+    - callind_esp_no_frame: Function lacks EBP frame, fixable with prologue-based ESP reset
 
     Returns:
         List of suspect dictionaries
@@ -196,9 +196,11 @@ def _detect_callind_esp_uncertain(pcode_data):
     if not pcode_data:
         return suspects
 
-    # Check if function uses EBP-based frame
-    frame_offset = get_frame_offset_from_pcode(pcode_data)
-    has_ebp_frame = frame_offset is not None
+    # Get prologue information (works for all functions)
+    prologue_offset, has_ebp_frame = get_prologue_offset(pcode_data)
+
+    # For EBP-frame functions, also get the frame_offset (SUB ESP value after MOV EBP, ESP)
+    frame_offset = get_frame_offset_from_pcode(pcode_data) if has_ebp_frame else None
 
     # Find CALLIND instructions and look for ADD ESP after them
     i = 0
@@ -225,7 +227,7 @@ def _detect_callind_esp_uncertain(pcode_data):
                         # Parse the ADD value
                         add_value = _parse_add_esp_value(next_asm)
 
-                        if has_ebp_frame:
+                        if has_ebp_frame and frame_offset is not None:
                             # Fixable with ESP = EBP - frame_offset
                             suspects.append({
                                 'type': 'callind_esp_uncertain',
@@ -240,16 +242,17 @@ def _detect_callind_esp_uncertain(pcode_data):
                                 'frame_offset': frame_offset
                             })
                         else:
-                            # No EBP frame - can't use ESP anchor technique
+                            # No EBP frame - use prologue-based ESP reset
                             suspects.append({
                                 'type': 'callind_esp_no_frame',
                                 'match': 'CALLIND...ADD ESP',
                                 'text': 'CALLIND at %s, ADD ESP at %s (no EBP frame)' % (
                                     entry.get('address', '?'), next_entry.get('address', '?')),
-                                'description': 'CALLIND makes ESP uncertain; no EBP frame for anchor fix',
+                                'description': 'CALLIND makes ESP uncertain; fixable with prologue-based reset',
                                 'fix_address': next_entry.get('address', ''),
                                 'callind_address': entry.get('address', ''),
-                                'add_esp_value': add_value
+                                'add_esp_value': add_value,
+                                'prologue_offset': prologue_offset
                             })
                     break  # Only look at first ADD ESP after CALLIND
 
@@ -438,6 +441,74 @@ def get_frame_offset_from_pcode(pcode_data):
                 except ValueError:
                     pass
     return frame_offset if found_mov_ebp_esp else None
+
+
+def get_prologue_offset(pcode_data):
+    """Compute total ESP drop from function entry (prologue offset).
+
+    Counts initial PUSH instructions and SUB ESP, N to compute how much
+    ESP drops from function entry. Works for any function, not just EBP-frame.
+
+    Args:
+        pcode_data: List of instruction dicts from extract_function_pcode()
+
+    Returns:
+        Tuple of (prologue_offset, has_ebp_frame) where:
+        - prologue_offset: Total ESP drop in bytes (0 if none found)
+        - has_ebp_frame: True if function has MOV EBP, ESP
+    """
+    if not pcode_data:
+        return 0, False
+
+    push_count = 0
+    sub_esp_value = 0
+    has_ebp_frame = False
+    found_sub_esp = False
+    in_prologue = True
+
+    # Scan prologue area (first ~20 instructions)
+    for entry in pcode_data[:20]:
+        asm = entry.get('assembly', '')
+
+        if not in_prologue:
+            break
+
+        # Count PUSH instructions at start of function
+        if re.match(r'PUSH\s+', asm, re.IGNORECASE):
+            push_count += 1
+            continue
+
+        # Check for MOV EBP, ESP (frame pointer setup)
+        if re.search(r'MOV\s+EBP\s*,\s*ESP', asm, re.IGNORECASE):
+            has_ebp_frame = True
+            continue
+
+        # Look for SUB ESP, N
+        match = re.search(r'SUB\s+ESP\s*,\s*(0x[0-9a-fA-F]+|\d+)', asm, re.IGNORECASE)
+        if match:
+            try:
+                sub_esp_value = int(match.group(1), 0)
+                found_sub_esp = True
+            except ValueError:
+                pass
+            # After SUB ESP, prologue is typically done
+            in_prologue = False
+            continue
+
+        # If we hit something other than PUSH/MOV EBP/SUB ESP, prologue may be done
+        # But be lenient - some prologues have MOVs for saving registers to stack
+        if not re.match(r'(MOV|LEA|NOP)\s+', asm, re.IGNORECASE):
+            # If we already have pushes, we might be past prologue
+            if push_count > 0 and not found_sub_esp:
+                # Keep scanning for SUB ESP
+                pass
+            else:
+                in_prologue = False
+
+    # Total offset = (push_count * 4) + sub_esp_value
+    prologue_offset = (push_count * 4) + sub_esp_value
+
+    return prologue_offset, has_ebp_frame
 
 
 def identify_param_count_mismatch(param_estimates, vtable_info):

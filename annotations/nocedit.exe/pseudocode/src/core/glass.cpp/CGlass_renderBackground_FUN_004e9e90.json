@@ -193,9 +193,10 @@
     {
       "add_esp_value": 8,
       "callind_address": "004e9ed8",
-      "description": "CALLIND makes ESP uncertain; no EBP frame for anchor fix",
+      "description": "CALLIND makes ESP uncertain; fixable with prologue-based reset",
       "fix_address": "004e9edb",
       "match": "CALLIND...ADD ESP",
+      "prologue_offset": 32,
       "text": "CALLIND at 004e9ed8, ADD ESP at 004e9edb (no EBP frame)",
       "type": "callind_esp_no_frame"
     }
