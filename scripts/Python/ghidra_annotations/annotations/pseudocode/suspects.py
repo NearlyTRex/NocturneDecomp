@@ -242,15 +242,22 @@ def _detect_callind_esp_uncertain(pcode_data):
                                 'frame_offset': frame_offset
                             })
                         else:
-                            # No EBP frame - use prologue-based ESP reset
+                            # No EBP frame - need to preserve ESP across CALLIND
+                            # Parse the call target from assembly
+                            callind_asm = entry.get('assembly', '')
+                            target_type, target_value = _parse_callind_target(callind_asm)
+
                             suspects.append({
                                 'type': 'callind_esp_no_frame',
                                 'match': 'CALLIND...ADD ESP',
                                 'text': 'CALLIND at %s, ADD ESP at %s (no EBP frame)' % (
                                     entry.get('address', '?'), next_entry.get('address', '?')),
-                                'description': 'CALLIND makes ESP uncertain; fixable with prologue-based reset',
+                                'description': 'CALLIND makes ESP uncertain; fixable with ESP preserve',
                                 'fix_address': next_entry.get('address', ''),
                                 'callind_address': entry.get('address', ''),
+                                'callind_assembly': callind_asm,
+                                'call_target_type': target_type,
+                                'call_target_value': target_value,
                                 'add_esp_value': add_value,
                                 'prologue_offset': prologue_offset
                             })
@@ -364,6 +371,38 @@ def _parse_add_esp_value(asm_line):
         except ValueError:
             pass
     return None
+
+
+def _parse_callind_target(asm_line):
+    """Parse the target from an indirect CALL instruction.
+
+    Args:
+        asm_line: Assembly line like "CALL dword ptr [ESP + 0x18]" or "CALL EBP"
+
+    Returns:
+        Tuple of (target_type, value) where:
+        - ('esp_offset', int) for CALL [ESP + offset]
+        - ('register', str) for CALL REG (e.g., 'EBP', 'EAX')
+        - (None, None) if not parseable
+    """
+    # Match CALL dword ptr [ESP + offset] or [ESP+offset]
+    match = re.search(
+        r'CALL\s+(?:dword\s+ptr\s+)?\[\s*ESP\s*\+\s*(0x[0-9a-fA-F]+|\d+)\s*\]',
+        asm_line, re.IGNORECASE)
+    if match:
+        try:
+            return ('esp_offset', int(match.group(1), 0))
+        except ValueError:
+            pass
+
+    # Match CALL REG (register-based indirect call)
+    match = re.search(
+        r'CALL\s+(E[ABCD]X|E[SD]I|E[BS]P|[ABCD]X|[SD]I|[BS]P)\s*(?:;|$)',
+        asm_line, re.IGNORECASE)
+    if match:
+        return ('register', match.group(1).upper())
+
+    return (None, None)
 
 
 def _parse_jumps_from_assembly(assembly_code):
