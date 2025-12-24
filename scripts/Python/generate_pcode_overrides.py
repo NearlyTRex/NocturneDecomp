@@ -9,6 +9,9 @@ Handles:
 - callind_esp_uncertain: CALLIND followed by ADD ESP with uncertain ESP tracking
   Fix: Override ADD ESP to anchor ESP = EBP - frame_offset
 
+- callind_esp_no_frame: CALLIND in function without EBP frame
+  Fix: Override ADD ESP to set ESP using stack-relative computation
+
 Usage:
     # Scan and show what would be fixed (dry run)
     python generate_pcode_overrides.py /path/to/pseudocode/src
@@ -49,6 +52,52 @@ def generate_esp_anchor_pcode(frame_offset):
     return "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0x%x,4)" % offset_twos
 
 
+def generate_callind_esp_preserve_pcode(target_type, target_value):
+    """Generate p-code to preserve ESP across a CALLIND.
+
+    For cdecl calls, ESP is unchanged by the call itself (caller cleans up).
+    We save ESP before the call and restore it after, so Ghidra knows ESP
+    is preserved and subsequent ADD ESP works on a known value.
+
+    Args:
+        target_type: 'esp_offset' or 'register'
+        target_value: The offset (int) or register name (str)
+
+    Returns:
+        List of P-code operation strings
+    """
+    # Register offsets for x86
+    REG_OFFSETS = {
+        'EAX': 0x0, 'ECX': 0x4, 'EDX': 0x8, 'EBX': 0xc,
+        'ESP': 0x10, 'EBP': 0x14, 'ESI': 0x18, 'EDI': 0x1c,
+    }
+
+    # Using unique space offsets:
+    #   0x10000 = saved ESP
+    #   0x10010 = call target address (for esp_offset type)
+    #   0x10020 = function pointer loaded from memory (for esp_offset type)
+
+    if target_type == 'esp_offset':
+        # CALL dword ptr [ESP + offset]
+        return [
+            "COPY (unique,0x10000,4) = (register,0x10,4)",  # save ESP
+            "INT_ADD (unique,0x10010,4) = (register,0x10,4), (const,0x%x,4)" % target_value,  # addr = ESP + offset
+            "LOAD (unique,0x10020,4) = (ram,(unique,0x10010,4),4)",  # load func ptr
+            "CALLIND (unique,0x10020,4)",  # call the function
+            "COPY (register,0x10,4) = (unique,0x10000,4)"   # restore ESP
+        ]
+    elif target_type == 'register':
+        # CALL REG (e.g., CALL EBP)
+        reg_offset = REG_OFFSETS.get(target_value, 0x14)  # default to EBP
+        return [
+            "COPY (unique,0x10000,4) = (register,0x10,4)",  # save ESP
+            "CALLIND (register,0x%x,4)" % reg_offset,  # call via register
+            "COPY (register,0x10,4) = (unique,0x10000,4)"   # restore ESP
+        ]
+    else:
+        return None
+
+
 def find_fixable_suspects(json_data, verbose=True):
     """Find suspects that can be fixed with p-code overrides.
 
@@ -57,7 +106,9 @@ def find_fixable_suspects(json_data, verbose=True):
         verbose: If True, print warnings
 
     Returns:
-        Tuple of (fixes, skipped) where fixes is list of (fix_address, pcode_lines, frame_offset)
+        Tuple of (fixes, skipped) where:
+        - fixes is list of (fix_address, pcode_lines, offset_value, fix_type)
+        - skipped is list of (fix_address, reason)
     """
     fixes = []
     skipped = []
@@ -71,41 +122,79 @@ def find_fixable_suspects(json_data, verbose=True):
 
     for suspect in suspects:
         suspect_type = suspect.get('type', '')
+        fix_address = suspect.get('fix_address', '')
+
+        if not fix_address:
+            continue
+
+        # Normalize address for comparison
+        norm_addr = fix_address.lower().replace('0x', '').lstrip('0') or '0'
+
+        # Check if already fixed
+        already_fixed = False
+        for existing_addr in existing_overrides.keys():
+            existing_norm = existing_addr.lower().replace('0x', '').lstrip('0') or '0'
+            if existing_norm == norm_addr:
+                already_fixed = True
+                break
+
+        if already_fixed:
+            continue
 
         if suspect_type == 'callind_esp_uncertain':
-            fix_address = suspect.get('fix_address', '')
+            # EBP-frame function: use ESP = EBP - frame_offset
             frame_offset = suspect.get('frame_offset')
-
-            if not fix_address:
-                continue
 
             if frame_offset is None:
                 skipped.append((fix_address, 'no frame_offset'))
                 continue
 
             if frame_offset == 0:
-                # frame_offset=0 likely means detection failed to find SUB ESP
-                # Skip these as ESP = EBP + 0 is rarely correct
                 skipped.append((fix_address, 'frame_offset=0 (detection may have failed)'))
-                continue
-
-            # Normalize address for comparison
-            norm_addr = fix_address.lower().replace('0x', '').lstrip('0') or '0'
-
-            # Check if already fixed
-            already_fixed = False
-            for existing_addr in existing_overrides.keys():
-                existing_norm = existing_addr.lower().replace('0x', '').lstrip('0') or '0'
-                if existing_norm == norm_addr:
-                    already_fixed = True
-                    break
-
-            if already_fixed:
                 continue
 
             # Generate the fix
             pcode = generate_esp_anchor_pcode(frame_offset)
-            fixes.append((fix_address, [pcode], frame_offset))
+            fixes.append((fix_address, [pcode], frame_offset, 'ebp_anchor'))
+
+        elif suspect_type == 'callind_esp_no_frame':
+            # Non-EBP-frame function: fix the CALLIND to preserve ESP
+            callind_address = suspect.get('callind_address', '')
+            target_type = suspect.get('call_target_type')
+            target_value = suspect.get('call_target_value')
+
+            if not callind_address:
+                skipped.append((fix_address, 'no callind_address'))
+                continue
+
+            if target_type is None:
+                skipped.append((callind_address, 'unparseable indirect call'))
+                continue
+
+            # Check if callind_address already fixed
+            norm_callind = callind_address.lower().replace('0x', '').lstrip('0') or '0'
+            callind_already_fixed = False
+            for existing_addr in existing_overrides.keys():
+                existing_norm = existing_addr.lower().replace('0x', '').lstrip('0') or '0'
+                if existing_norm == norm_callind:
+                    callind_already_fixed = True
+                    break
+
+            if callind_already_fixed:
+                continue
+
+            # Generate the fix - override CALLIND to preserve ESP
+            pcode_lines = generate_callind_esp_preserve_pcode(target_type, target_value)
+            if pcode_lines is None:
+                skipped.append((callind_address, 'unsupported call target type'))
+                continue
+
+            # For display, show the target info
+            if target_type == 'esp_offset':
+                display_value = target_value
+            else:
+                display_value = target_value  # register name
+            fixes.append((callind_address, pcode_lines, display_value, 'callind_preserve'))
 
     return fixes, skipped
 
@@ -147,8 +236,16 @@ def process_json_file(json_path, apply=False, verbose=True):
 
         if fixes:
             print("  Fixes (%d):" % len(fixes))
-            for addr, pcode_lines, frame_offset in fixes:
-                print("    %s (frame_offset=0x%x):" % (addr, frame_offset))
+            for addr, pcode_lines, offset_value, fix_type in fixes:
+                if fix_type == 'ebp_anchor':
+                    print("    %s (frame_offset=0x%x, type=%s):" % (addr, offset_value, fix_type))
+                elif fix_type == 'callind_preserve':
+                    if isinstance(offset_value, int):
+                        print("    %s (esp_offset=0x%x, type=%s):" % (addr, offset_value, fix_type))
+                    else:
+                        print("    %s (reg=%s, type=%s):" % (addr, offset_value, fix_type))
+                else:
+                    print("    %s (offset=0x%x, type=%s):" % (addr, offset_value, fix_type))
                 for line in pcode_lines:
                     print("      %s" % line)
 
@@ -158,7 +255,7 @@ def process_json_file(json_path, apply=False, verbose=True):
             data['pcode_overrides'] = {}
 
         # Add the new overrides
-        for addr, pcode_lines, frame_offset in fixes:
+        for addr, pcode_lines, offset_value, fix_type in fixes:
             data['pcode_overrides'][addr] = pcode_lines
 
         # Write back
