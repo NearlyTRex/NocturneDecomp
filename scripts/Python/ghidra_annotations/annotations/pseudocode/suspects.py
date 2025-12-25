@@ -245,16 +245,21 @@ def _detect_callind_esp_uncertain(pcode_data):
                             # No EBP frame - need to preserve ESP across CALLIND
                             # Parse the call target from assembly
                             callind_asm = entry.get('assembly', '')
-                            target_type, target_value = _parse_callind_target(callind_asm)
+                            callind_addr = entry.get('address', '?')
+                            try:
+                                target_type, target_value = _parse_callind_target(callind_asm)
+                            except UnhandledCallIndirectError as e:
+                                raise UnhandledCallIndirectError(
+                                    "At address %s: %s" % (callind_addr, e))
 
                             suspects.append({
                                 'type': 'callind_esp_no_frame',
                                 'match': 'CALLIND...ADD ESP',
                                 'text': 'CALLIND at %s, ADD ESP at %s (no EBP frame)' % (
-                                    entry.get('address', '?'), next_entry.get('address', '?')),
+                                    callind_addr, next_entry.get('address', '?')),
                                 'description': 'CALLIND makes ESP uncertain; fixable with ESP preserve',
                                 'fix_address': next_entry.get('address', ''),
-                                'callind_address': entry.get('address', ''),
+                                'callind_address': callind_addr,
                                 'callind_assembly': callind_asm,
                                 'call_target_type': target_type,
                                 'call_target_value': target_value,
@@ -373,6 +378,11 @@ def _parse_add_esp_value(asm_line):
     return None
 
 
+class UnhandledCallIndirectError(Exception):
+    """Raised when a CALLIND target pattern is not recognized."""
+    pass
+
+
 def _parse_callind_target(asm_line):
     """Parse the target from an indirect CALL instruction.
 
@@ -381,28 +391,44 @@ def _parse_callind_target(asm_line):
 
     Returns:
         Tuple of (target_type, value) where:
-        - ('esp_offset', int) for CALL [ESP + offset]
+        - ('reg_offset', {'reg': str, 'offset': int}) for CALL [REG + offset]
+        - ('reg_deref', str) for CALL [REG] (e.g., 'EAX')
         - ('register', str) for CALL REG (e.g., 'EBP', 'EAX')
-        - (None, None) if not parseable
+
+    Raises:
+        UnhandledCallIndirectError: If the pattern is not recognized
     """
-    # Match CALL dword ptr [ESP + offset] or [ESP+offset]
+    # Pattern for 32-bit registers
+    reg_pattern = r'E[ABCD]X|E[SD]I|E[BS]P'
+
+    # Match CALL dword ptr [REG + offset] or [REG+offset]
     match = re.search(
-        r'CALL\s+(?:dword\s+ptr\s+)?\[\s*ESP\s*\+\s*(0x[0-9a-fA-F]+|\d+)\s*\]',
+        r'CALL\s+(?:dword\s+ptr\s+)?\[\s*(' + reg_pattern + r')\s*\+\s*(0x[0-9a-fA-F]+|\d+)\s*\]',
         asm_line, re.IGNORECASE)
     if match:
         try:
-            return ('esp_offset', int(match.group(1), 0))
+            reg = match.group(1).upper()
+            offset = int(match.group(2), 0)
+            return ('reg_offset', {'reg': reg, 'offset': offset})
         except ValueError:
             pass
 
-    # Match CALL REG (register-based indirect call)
+    # Match CALL dword ptr [REG] (no offset)
+    match = re.search(
+        r'CALL\s+(?:dword\s+ptr\s+)?\[\s*(' + reg_pattern + r')\s*\]',
+        asm_line, re.IGNORECASE)
+    if match:
+        return ('reg_deref', match.group(1).upper())
+
+    # Match CALL REG (register-based indirect call, not dereferenced)
     match = re.search(
         r'CALL\s+(E[ABCD]X|E[SD]I|E[BS]P|[ABCD]X|[SD]I|[BS]P)\s*(?:;|$)',
         asm_line, re.IGNORECASE)
     if match:
         return ('register', match.group(1).upper())
 
-    return (None, None)
+    raise UnhandledCallIndirectError(
+        "Unhandled CALLIND pattern: %r - add support for this register/pattern" % asm_line)
 
 
 def _parse_jumps_from_assembly(assembly_code):

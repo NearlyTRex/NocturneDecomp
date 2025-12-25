@@ -60,8 +60,9 @@ def generate_callind_esp_preserve_pcode(target_type, target_value):
     is preserved and subsequent ADD ESP works on a known value.
 
     Args:
-        target_type: 'esp_offset' or 'register'
-        target_value: The offset (int) or register name (str)
+        target_type: 'reg_offset', 'reg_deref', or 'register'
+        target_value: {'reg': str, 'offset': int} for reg_offset,
+                      register name (str) for reg_deref/register
 
     Returns:
         List of P-code operation strings
@@ -74,15 +75,27 @@ def generate_callind_esp_preserve_pcode(target_type, target_value):
 
     # Using unique space offsets:
     #   0x10000 = saved ESP
-    #   0x10010 = call target address (for esp_offset type)
-    #   0x10020 = function pointer loaded from memory (for esp_offset type)
+    #   0x10010 = call target address (for reg_offset type)
+    #   0x10020 = function pointer loaded from memory
 
-    if target_type == 'esp_offset':
-        # CALL dword ptr [ESP + offset]
+    if target_type == 'reg_offset':
+        # CALL dword ptr [REG + offset]
+        reg = target_value.get('reg', 'ESP')
+        offset = target_value.get('offset', 0)
+        reg_offset = REG_OFFSETS.get(reg, 0x10)
         return [
             "COPY (unique,0x10000,4) = (register,0x10,4)",  # save ESP
-            "INT_ADD (unique,0x10010,4) = (register,0x10,4), (const,0x%x,4)" % target_value,  # addr = ESP + offset
+            "INT_ADD (unique,0x10010,4) = (register,0x%x,4), (const,0x%x,4)" % (reg_offset, offset),  # addr = REG + offset
             "LOAD (unique,0x10020,4) = (ram,(unique,0x10010,4),4)",  # load func ptr
+            "CALLIND (unique,0x10020,4)",  # call the function
+            "COPY (register,0x10,4) = (unique,0x10000,4)"   # restore ESP
+        ]
+    elif target_type == 'reg_deref':
+        # CALL dword ptr [REG] (no offset)
+        reg_offset = REG_OFFSETS.get(target_value, 0x10)
+        return [
+            "COPY (unique,0x10000,4) = (register,0x10,4)",  # save ESP
+            "LOAD (unique,0x10020,4) = (ram,(register,0x%x,4),4)" % reg_offset,  # load func ptr from [REG]
             "CALLIND (unique,0x10020,4)",  # call the function
             "COPY (register,0x10,4) = (unique,0x10000,4)"   # restore ESP
         ]
@@ -168,8 +181,16 @@ def find_fixable_suspects(json_data, verbose=True):
                 continue
 
             if target_type is None:
-                skipped.append((callind_address, 'unparseable indirect call'))
-                continue
+                callind_asm = suspect.get('callind_assembly', '<unknown>')
+                raise ValueError(
+                    "Unhandled CALLIND at %s: %r - re-export JSON or add pattern support"
+                    % (callind_address, callind_asm))
+
+            if target_value is None:
+                callind_asm = suspect.get('callind_assembly', '<unknown>')
+                raise ValueError(
+                    "Null target_value for CALLIND at %s: %r - re-export JSON or add pattern support"
+                    % (callind_address, callind_asm))
 
             # Check if callind_address already fixed
             norm_callind = callind_address.lower().replace('0x', '').lstrip('0') or '0'
@@ -186,15 +207,13 @@ def find_fixable_suspects(json_data, verbose=True):
             # Generate the fix - override CALLIND to preserve ESP
             pcode_lines = generate_callind_esp_preserve_pcode(target_type, target_value)
             if pcode_lines is None:
-                skipped.append((callind_address, 'unsupported call target type'))
-                continue
+                callind_asm = suspect.get('callind_assembly', '<unknown>')
+                raise ValueError(
+                    "Unsupported call target type '%s' at %s: %r - add support in generate_callind_esp_preserve_pcode"
+                    % (target_type, callind_address, callind_asm))
 
-            # For display, show the target info
-            if target_type == 'esp_offset':
-                display_value = target_value
-            else:
-                display_value = target_value  # register name
-            fixes.append((callind_address, pcode_lines, display_value, 'callind_preserve'))
+            # For display, use target_value directly (dict for reg_offset, str for others)
+            fixes.append((callind_address, pcode_lines, target_value, 'callind_preserve'))
 
     return fixes, skipped
 
@@ -240,12 +259,15 @@ def process_json_file(json_path, apply=False, verbose=True):
                 if fix_type == 'ebp_anchor':
                     print("    %s (frame_offset=0x%x, type=%s):" % (addr, offset_value, fix_type))
                 elif fix_type == 'callind_preserve':
-                    if isinstance(offset_value, int):
-                        print("    %s (esp_offset=0x%x, type=%s):" % (addr, offset_value, fix_type))
+                    if isinstance(offset_value, dict):
+                        # reg_offset type: {'reg': str, 'offset': int}
+                        print("    %s ([%s+0x%x], type=%s):" % (
+                            addr, offset_value.get('reg', '?'), offset_value.get('offset', 0), fix_type))
                     else:
+                        # reg_deref or register type: just the register name
                         print("    %s (reg=%s, type=%s):" % (addr, offset_value, fix_type))
                 else:
-                    print("    %s (offset=0x%x, type=%s):" % (addr, offset_value, fix_type))
+                    print("    %s (value=%s, type=%s):" % (addr, offset_value, fix_type))
                 for line in pcode_lines:
                     print("      %s" % line)
 
