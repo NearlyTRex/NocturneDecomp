@@ -167,8 +167,11 @@
     },
     {
       "add_esp_value": null,
+      "call_target_type": "mem_absolute",
+      "call_target_value": 6362728,
       "callind_address": "0060a6b5",
-      "description": "CALLIND makes ESP uncertain; fixable with prologue-based reset",
+      "callind_assembly": "CALL dword ptr CS:[0x611668]",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
       "fix_address": "0060a6bf",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 40,

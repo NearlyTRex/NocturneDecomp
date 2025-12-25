@@ -215,8 +215,14 @@
     },
     {
       "add_esp_value": 20,
+      "call_target_type": "reg_offset",
+      "call_target_value": {
+        "offset": 12,
+        "reg": "ECX"
+      },
       "callind_address": "005aba2c",
-      "description": "CALLIND makes ESP uncertain; fixable with prologue-based reset",
+      "callind_assembly": "CALL dword ptr [ECX + 0xc]",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
       "fix_address": "005aba2f",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 16,

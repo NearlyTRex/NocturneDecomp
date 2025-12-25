@@ -87,8 +87,14 @@
   "suspects": [
     {
       "add_esp_value": 4,
+      "call_target_type": "reg_offset",
+      "call_target_value": {
+        "offset": 4,
+        "reg": "EAX"
+      },
       "callind_address": "005d288e",
-      "description": "CALLIND makes ESP uncertain; fixable with prologue-based reset",
+      "callind_assembly": "CALL dword ptr [EAX + 0x4]",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
       "fix_address": "005d2891",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 16,

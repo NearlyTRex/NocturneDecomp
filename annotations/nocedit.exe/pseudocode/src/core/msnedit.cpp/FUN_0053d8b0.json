@@ -488,8 +488,11 @@
     },
     {
       "add_esp_value": 4,
+      "call_target_type": "reg_deref",
+      "call_target_value": "EAX",
       "callind_address": "0053d9f8",
-      "description": "CALLIND makes ESP uncertain; fixable with prologue-based reset",
+      "callind_assembly": "CALL dword ptr [EAX]",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
       "fix_address": "0053d9fa",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 20524,
@@ -498,8 +501,14 @@
     },
     {
       "add_esp_value": 8,
+      "call_target_type": "reg_offset",
+      "call_target_value": {
+        "offset": 212,
+        "reg": "EDX"
+      },
       "callind_address": "0053da43",
-      "description": "CALLIND makes ESP uncertain; fixable with prologue-based reset",
+      "callind_assembly": "CALL dword ptr [EDX + 0xd4]",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
       "fix_address": "0053da49",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 20524,
@@ -508,8 +517,14 @@
     },
     {
       "add_esp_value": 8,
+      "call_target_type": "reg_offset",
+      "call_target_value": {
+        "offset": 212,
+        "reg": "EDX"
+      },
       "callind_address": "0053da60",
-      "description": "CALLIND makes ESP uncertain; fixable with prologue-based reset",
+      "callind_assembly": "CALL dword ptr [EDX + 0xd4]",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
       "fix_address": "0053da66",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 20524,
@@ -518,8 +533,11 @@
     },
     {
       "add_esp_value": 4,
+      "call_target_type": "reg_deref",
+      "call_target_value": "EAX",
       "callind_address": "0053db95",
-      "description": "CALLIND makes ESP uncertain; fixable with prologue-based reset",
+      "callind_assembly": "CALL dword ptr [EAX]",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
       "fix_address": "0053db97",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 20524,

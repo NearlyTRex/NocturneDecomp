@@ -424,8 +424,14 @@
     },
     {
       "add_esp_value": 20,
+      "call_target_type": "reg_offset",
+      "call_target_value": {
+        "offset": 280,
+        "reg": "EDX"
+      },
       "callind_address": "005d9b59",
-      "description": "CALLIND makes ESP uncertain; fixable with prologue-based reset",
+      "callind_assembly": "CALL dword ptr [EDX + 0x118]",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
       "fix_address": "005d9b5f",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 132,
@@ -434,8 +440,14 @@
     },
     {
       "add_esp_value": 8,
+      "call_target_type": "reg_offset",
+      "call_target_value": {
+        "offset": 36,
+        "reg": "EAX"
+      },
       "callind_address": "005d9b8e",
-      "description": "CALLIND makes ESP uncertain; fixable with prologue-based reset",
+      "callind_assembly": "CALL dword ptr [EAX + 0x24]",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
       "fix_address": "005d9b91",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 132,

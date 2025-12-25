@@ -120,8 +120,11 @@
   "suspects": [
     {
       "add_esp_value": 4,
+      "call_target_type": "register",
+      "call_target_value": "EBX",
       "callind_address": "0060d180",
-      "description": "CALLIND makes ESP uncertain; fixable with prologue-based reset",
+      "callind_assembly": "CALL EBX",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
       "fix_address": "0060d182",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 16,

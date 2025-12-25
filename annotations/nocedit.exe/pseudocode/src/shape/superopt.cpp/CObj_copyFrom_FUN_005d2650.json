@@ -186,8 +186,14 @@
     },
     {
       "add_esp_value": 4,
+      "call_target_type": "reg_offset",
+      "call_target_value": {
+        "offset": 28,
+        "reg": "EAX"
+      },
       "callind_address": "005d265a",
-      "description": "CALLIND makes ESP uncertain; fixable with prologue-based reset",
+      "callind_assembly": "CALL dword ptr [EAX + 0x1c]",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
       "fix_address": "005d265d",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 28,
@@ -196,8 +202,11 @@
     },
     {
       "add_esp_value": 4,
+      "call_target_type": "reg_deref",
+      "call_target_value": "EAX",
       "callind_address": "005d2664",
-      "description": "CALLIND makes ESP uncertain; fixable with prologue-based reset",
+      "callind_assembly": "CALL dword ptr [EAX]",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
       "fix_address": "005d2666",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 28,
@@ -206,8 +215,14 @@
     },
     {
       "add_esp_value": 12,
+      "call_target_type": "reg_offset",
+      "call_target_value": {
+        "offset": 8,
+        "reg": "EAX"
+      },
       "callind_address": "005d2678",
-      "description": "CALLIND makes ESP uncertain; fixable with prologue-based reset",
+      "callind_assembly": "CALL dword ptr [EAX + 0x8]",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
       "fix_address": "005d267b",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 28,
@@ -216,8 +231,14 @@
     },
     {
       "add_esp_value": 12,
+      "call_target_type": "reg_offset",
+      "call_target_value": {
+        "offset": 4,
+        "reg": "EDX"
+      },
       "callind_address": "005d26d4",
-      "description": "CALLIND makes ESP uncertain; fixable with prologue-based reset",
+      "callind_assembly": "CALL dword ptr [EDX + 0x4]",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
       "fix_address": "005d26da",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 28,

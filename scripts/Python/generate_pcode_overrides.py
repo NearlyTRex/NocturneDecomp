@@ -60,9 +60,11 @@ def generate_callind_esp_preserve_pcode(target_type, target_value):
     is preserved and subsequent ADD ESP works on a known value.
 
     Args:
-        target_type: 'reg_offset', 'reg_deref', or 'register'
+        target_type: 'reg_offset', 'reg_deref', 'register', 'mem_absolute', or 'scaled_index'
         target_value: {'reg': str, 'offset': int} for reg_offset,
-                      register name (str) for reg_deref/register
+                      {'reg': str, 'scale': int, 'offset': int} for scaled_index,
+                      register name (str) for reg_deref/register,
+                      absolute address (int) for mem_absolute
 
     Returns:
         List of P-code operation strings
@@ -77,6 +79,7 @@ def generate_callind_esp_preserve_pcode(target_type, target_value):
     #   0x10000 = saved ESP
     #   0x10010 = call target address (for reg_offset type)
     #   0x10020 = function pointer loaded from memory
+    #   0x10030 = scaled value (for scaled_index type)
 
     if target_type == 'reg_offset':
         # CALL dword ptr [REG + offset]
@@ -105,6 +108,30 @@ def generate_callind_esp_preserve_pcode(target_type, target_value):
         return [
             "COPY (unique,0x10000,4) = (register,0x10,4)",  # save ESP
             "CALLIND (register,0x%x,4)" % reg_offset,  # call via register
+            "COPY (register,0x10,4) = (unique,0x10000,4)"   # restore ESP
+        ]
+    elif target_type == 'mem_absolute':
+        # CALL dword ptr [0xADDRESS] or CALL dword ptr CS:[0xADDRESS]
+        # target_value is the absolute memory address (int)
+        return [
+            "COPY (unique,0x10000,4) = (register,0x10,4)",  # save ESP
+            "LOAD (unique,0x10020,4) = (ram,(const,0x%x,4),4)" % target_value,  # load func ptr from [addr]
+            "CALLIND (unique,0x10020,4)",  # call the function
+            "COPY (register,0x10,4) = (unique,0x10000,4)"   # restore ESP
+        ]
+    elif target_type == 'scaled_index':
+        # CALL dword ptr [REG*scale + offset]
+        # e.g., CALL dword ptr [EAX*0x4 + 0x66df88]
+        reg = target_value.get('reg', 'EAX')
+        scale = target_value.get('scale', 4)
+        offset = target_value.get('offset', 0)
+        reg_offset = REG_OFFSETS.get(reg, 0x0)
+        return [
+            "COPY (unique,0x10000,4) = (register,0x10,4)",  # save ESP
+            "INT_MULT (unique,0x10030,4) = (register,0x%x,4), (const,0x%x,4)" % (reg_offset, scale),  # scaled = REG * scale
+            "INT_ADD (unique,0x10010,4) = (unique,0x10030,4), (const,0x%x,4)" % offset,  # addr = scaled + offset
+            "LOAD (unique,0x10020,4) = (ram,(unique,0x10010,4),4)",  # load func ptr
+            "CALLIND (unique,0x10020,4)",  # call the function
             "COPY (register,0x10,4) = (unique,0x10000,4)"   # restore ESP
         ]
     else:
@@ -260,9 +287,19 @@ def process_json_file(json_path, apply=False, verbose=True):
                     print("    %s (frame_offset=0x%x, type=%s):" % (addr, offset_value, fix_type))
                 elif fix_type == 'callind_preserve':
                     if isinstance(offset_value, dict):
-                        # reg_offset type: {'reg': str, 'offset': int}
-                        print("    %s ([%s+0x%x], type=%s):" % (
-                            addr, offset_value.get('reg', '?'), offset_value.get('offset', 0), fix_type))
+                        if 'scale' in offset_value:
+                            # scaled_index type: {'reg': str, 'scale': int, 'offset': int}
+                            print("    %s ([%s*0x%x+0x%x], type=%s):" % (
+                                addr, offset_value.get('reg', '?'),
+                                offset_value.get('scale', 0),
+                                offset_value.get('offset', 0), fix_type))
+                        else:
+                            # reg_offset type: {'reg': str, 'offset': int}
+                            print("    %s ([%s+0x%x], type=%s):" % (
+                                addr, offset_value.get('reg', '?'), offset_value.get('offset', 0), fix_type))
+                    elif isinstance(offset_value, int):
+                        # mem_absolute type: absolute memory address
+                        print("    %s ([0x%x], type=%s):" % (addr, offset_value, fix_type))
                     else:
                         # reg_deref or register type: just the register name
                         print("    %s (reg=%s, type=%s):" % (addr, offset_value, fix_type))

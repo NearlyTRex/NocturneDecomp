@@ -208,8 +208,11 @@
   "suspects": [
     {
       "add_esp_value": 16,
+      "call_target_type": "mem_absolute",
+      "call_target_value": 66500764,
       "callind_address": "005b74aa",
-      "description": "CALLIND makes ESP uncertain; fixable with prologue-based reset",
+      "callind_assembly": "CALL dword ptr [0x03f6b89c]",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
       "fix_address": "005b74b0",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 28,
@@ -218,8 +221,11 @@
     },
     {
       "add_esp_value": 8,
+      "call_target_type": "mem_absolute",
+      "call_target_value": 66500864,
       "callind_address": "005b74c5",
-      "description": "CALLIND makes ESP uncertain; fixable with prologue-based reset",
+      "callind_assembly": "CALL dword ptr [0x03f6b900]",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
       "fix_address": "005b74cb",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 28,
@@ -228,8 +234,11 @@
     },
     {
       "add_esp_value": 12,
+      "call_target_type": "mem_absolute",
+      "call_target_value": 66500848,
       "callind_address": "005b74ed",
-      "description": "CALLIND makes ESP uncertain; fixable with prologue-based reset",
+      "callind_assembly": "CALL dword ptr [0x03f6b8f0]",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
       "fix_address": "005b74f3",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 28,

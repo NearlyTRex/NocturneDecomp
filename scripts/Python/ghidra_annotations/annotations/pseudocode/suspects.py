@@ -394,16 +394,34 @@ def _parse_callind_target(asm_line):
         - ('reg_offset', {'reg': str, 'offset': int}) for CALL [REG + offset]
         - ('reg_deref', str) for CALL [REG] (e.g., 'EAX')
         - ('register', str) for CALL REG (e.g., 'EBP', 'EAX')
+        - ('mem_absolute', int) for CALL [SEG:]?[0xADDRESS]
+        - ('scaled_index', {'reg': str, 'scale': int, 'offset': int}) for CALL [REG*scale + offset]
 
     Raises:
         UnhandledCallIndirectError: If the pattern is not recognized
     """
     # Pattern for 32-bit registers
     reg_pattern = r'E[ABCD]X|E[SD]I|E[BS]P'
+    # Pattern for segment registers (optional prefix)
+    seg_pattern = r'(?:[CDEFGS]S:)?'
+
+    # Match CALL dword ptr [REG*scale + offset] (scaled index addressing)
+    # e.g., CALL dword ptr [EAX*0x4 + 0x66df88]
+    match = re.search(
+        r'CALL\s+(?:dword\s+ptr\s+)?' + seg_pattern + r'\[\s*(' + reg_pattern + r')\s*\*\s*(0x[0-9a-fA-F]+|\d+)\s*\+\s*(0x[0-9a-fA-F]+|\d+)\s*\]',
+        asm_line, re.IGNORECASE)
+    if match:
+        try:
+            reg = match.group(1).upper()
+            scale = int(match.group(2), 0)
+            offset = int(match.group(3), 0)
+            return ('scaled_index', {'reg': reg, 'scale': scale, 'offset': offset})
+        except ValueError:
+            pass
 
     # Match CALL dword ptr [REG + offset] or [REG+offset]
     match = re.search(
-        r'CALL\s+(?:dword\s+ptr\s+)?\[\s*(' + reg_pattern + r')\s*\+\s*(0x[0-9a-fA-F]+|\d+)\s*\]',
+        r'CALL\s+(?:dword\s+ptr\s+)?' + seg_pattern + r'\[\s*(' + reg_pattern + r')\s*\+\s*(0x[0-9a-fA-F]+|\d+)\s*\]',
         asm_line, re.IGNORECASE)
     if match:
         try:
@@ -415,10 +433,21 @@ def _parse_callind_target(asm_line):
 
     # Match CALL dword ptr [REG] (no offset)
     match = re.search(
-        r'CALL\s+(?:dword\s+ptr\s+)?\[\s*(' + reg_pattern + r')\s*\]',
+        r'CALL\s+(?:dword\s+ptr\s+)?' + seg_pattern + r'\[\s*(' + reg_pattern + r')\s*\]',
         asm_line, re.IGNORECASE)
     if match:
         return ('reg_deref', match.group(1).upper())
+
+    # Match CALL dword ptr [SEG:]?[0xADDRESS] (absolute memory address, optional segment prefix)
+    # e.g., CALL dword ptr [0x00684ee4] or CALL dword ptr CS:[0x6114c8]
+    match = re.search(
+        r'CALL\s+(?:dword\s+ptr\s+)?' + seg_pattern + r'\[\s*(0x[0-9a-fA-F]+)\s*\]',
+        asm_line, re.IGNORECASE)
+    if match:
+        try:
+            return ('mem_absolute', int(match.group(1), 16))
+        except ValueError:
+            pass
 
     # Match CALL REG (register-based indirect call, not dereferenced)
     match = re.search(

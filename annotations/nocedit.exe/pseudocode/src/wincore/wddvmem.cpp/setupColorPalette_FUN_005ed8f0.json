@@ -311,8 +311,11 @@
   "suspects": [
     {
       "add_esp_value": 8,
+      "call_target_type": "mem_absolute",
+      "call_target_value": 66500864,
       "callind_address": "005ed9ea",
-      "description": "CALLIND makes ESP uncertain; fixable with prologue-based reset",
+      "callind_assembly": "CALL dword ptr [0x03f6b900]",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
       "fix_address": "005ed9f0",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 12,
