@@ -112,6 +112,8 @@ def calculate_esp_delta(mnemonic, operands_str, pcode_lines):
     Returns:
         Tuple of (delta, certainty) where:
             - delta: ESP adjustment in bytes (negative = down, positive = up)
+                     OR special string 'frame_reset' for MOV ESP, EBP
+                     OR special string 'leave' for LEAVE instruction
             - certainty: 'known', 'computed', or 'unknown'
     """
 
@@ -148,10 +150,27 @@ def calculate_esp_delta(mnemonic, operands_str, pcode_lines):
             except:
                 pass
 
-    # Check for LEAVE instruction (reverses ENTER)
+    # Check for LEAVE instruction (MOV ESP, EBP then POP EBP)
+    # Returns special marker - actual ESP handled by frame tracking
     if mnemonic_upper == 'LEAVE':
-        return (0, 'computed')  # MOV ESP, EBP then POP EBP - net effect depends on frame
+        return ('leave', 'frame_restore')
+
+    # Check for MOV ESP, EBP (frame pointer restore)
+    if mnemonic_upper == 'MOV' and operands_str:
+        parts = [p.strip() for p in operands_str.split(',')]
+        if len(parts) == 2 and parts[0].upper() == 'ESP' and parts[1].upper() == 'EBP':
+            return ('frame_reset', 'frame_restore')
+
     return (0, 'unknown')
+
+
+def is_frame_pointer_setup(mnemonic, operands_str):
+    """Check if instruction sets up EBP as frame pointer (MOV EBP, ESP)."""
+    if mnemonic.upper() == 'MOV' and operands_str:
+        parts = [p.strip() for p in operands_str.split(',')]
+        if len(parts) == 2 and parts[0].upper() == 'EBP' and parts[1].upper() == 'ESP':
+            return True
+    return False
 
 
 def extract_function_pcode(program, func, track_esp=True):
@@ -181,6 +200,12 @@ def extract_function_pcode(program, func, track_esp=True):
     esp_offset = 0  # Cumulative offset from function entry (ESP at entry = 0)
     esp_tracking_lost = False
     lost_at_addr = None
+
+    # EBP frame tracking - track where EBP points relative to function entry
+    # When MOV EBP, ESP is executed, ebp_value = current esp_offset
+    # When MOV ESP, EBP or LEAVE is executed, esp_offset = ebp_value
+    ebp_frame_value = None  # ESP offset when EBP was set (None = not an EBP frame function)
+
     while instr_iter.hasNext():
         instr = instr_iter.next()
         addr = str(instr.getAddress())
@@ -214,6 +239,10 @@ def extract_function_pcode(program, func, track_esp=True):
 
         # ESP tracking
         if track_esp:
+            # Check if this instruction sets up EBP frame pointer (MOV EBP, ESP)
+            if is_frame_pointer_setup(mnemonic, operands_str):
+                ebp_frame_value = esp_offset  # EBP now points to current ESP
+
             if esp_tracking_lost:
                 entry['esp_delta'] = 0
                 entry['esp_offset'] = None
@@ -222,33 +251,63 @@ def extract_function_pcode(program, func, track_esp=True):
             else:
                 delta, certainty = calculate_esp_delta(mnemonic, operands_str, pcode_lines)
 
-                # Check if this is a CALL and we might lose tracking
-                # For indirect calls (vtable calls) or unknown functions, mark as potentially lost
-                is_indirect_call = 'CALL' in mnemonic.upper() and (
-                    operands_str.startswith('[') or
-                    operands_str.startswith('dword ptr') or
-                    any('CALLIND' in pl for pl in pcode_lines)
-                )
-                is_any_call = 'CALL' in mnemonic.upper() and not mnemonic.upper().startswith('CALLIND')
+                # Handle special frame restore instructions
+                if delta == 'frame_reset':
+                    # MOV ESP, EBP - restore ESP to frame pointer value
+                    if ebp_frame_value is not None:
+                        entry['esp_delta'] = ebp_frame_value - esp_offset  # Actual change
+                        esp_offset = ebp_frame_value
+                        entry['esp_offset'] = esp_offset
+                        entry['esp_certainty'] = 'known'
+                        entry['esp_frame_restore'] = True
+                    else:
+                        # No frame pointer was set - can't determine ESP
+                        entry['esp_delta'] = 0
+                        entry['esp_offset'] = esp_offset  # Keep current, mark uncertain
+                        entry['esp_certainty'] = 'computed'
+                elif delta == 'leave':
+                    # LEAVE = MOV ESP, EBP then POP EBP
+                    if ebp_frame_value is not None:
+                        entry['esp_delta'] = (ebp_frame_value + 4) - esp_offset
+                        esp_offset = ebp_frame_value + 4  # Frame restore + POP EBP
+                        entry['esp_offset'] = esp_offset
+                        entry['esp_certainty'] = 'known'
+                        entry['esp_frame_restore'] = True
+                    else:
+                        # No frame pointer - estimate LEAVE as +4 (just the POP EBP effect)
+                        entry['esp_delta'] = 4
+                        esp_offset += 4
+                        entry['esp_offset'] = esp_offset
+                        entry['esp_certainty'] = 'computed'
+                else:
+                    # Normal delta handling
+                    # Check if this is a CALL and we might lose tracking
+                    # For indirect calls (vtable calls) or unknown functions, mark as potentially lost
+                    is_indirect_call = 'CALL' in mnemonic.upper() and (
+                        operands_str.startswith('[') or
+                        operands_str.startswith('dword ptr') or
+                        any('CALLIND' in pl for pl in pcode_lines)
+                    )
+                    is_any_call = 'CALL' in mnemonic.upper() and not mnemonic.upper().startswith('CALLIND')
 
-                # For CALL instructions: the -4 for pushing return address is immediately
-                # followed by the callee's RET which pops it (+4). Net effect on ESP after
-                # the call returns is 0. We track this by adding delta, then +4 for RET.
-                entry['esp_delta'] = delta
-                esp_offset += delta
-                if is_any_call or is_indirect_call:
-                    # Account for callee's RET popping the return address
-                    esp_offset += 4
-                entry['esp_offset'] = esp_offset
-                if certainty == 'unknown' and delta == 0:
+                    # For CALL instructions: the -4 for pushing return address is immediately
+                    # followed by the callee's RET which pops it (+4). Net effect on ESP after
+                    # the call returns is 0. We track this by adding delta, then +4 for RET.
+                    entry['esp_delta'] = delta
+                    esp_offset += delta
+                    if is_any_call or is_indirect_call:
+                        # Account for callee's RET popping the return address
+                        esp_offset += 4
+                    entry['esp_offset'] = esp_offset
+                    if certainty == 'unknown' and delta == 0:
 
-                    # Unknown change - might have lost tracking
-                    if is_indirect_call:
-                        entry['esp_certainty'] = 'callind_unknown'
+                        # Unknown change - might have lost tracking
+                        if is_indirect_call:
+                            entry['esp_certainty'] = 'callind_unknown'
+                        else:
+                            entry['esp_certainty'] = certainty
                     else:
                         entry['esp_certainty'] = certainty
-                else:
-                    entry['esp_certainty'] = certainty
 
                 # After RET/RETN or unconditional JMP, the next instruction in address
                 # order is NOT a continuation - it's either dead code or a jump target
@@ -295,7 +354,8 @@ def generate_pcode_file_content(func_name, func_addr, func_signature, pcode_data
         lines.append("# Format: @<address> [ESP:offset] # <assembly>")
         lines.append("#         [ESP:offset] = cumulative ESP delta from function entry")
         lines.append("#         Delta markers: (+n) ESP increased, (-n) ESP decreased")
-        lines.append("#         Certainty:  no marker = known, ? = computed, ?? = unknown, ! = CALLIND")
+        lines.append("#         Certainty:  no marker = known, ? = computed, ~ = cfg_resolved")
+        lines.append("#                     !! = lost, !? = conflict, ?? = unreachable")
     else:
         lines.append("# Format: @<address>  # <assembly>")
     # lines.append("#         OPCODE (output) = (input1), (input2), ...")
@@ -344,6 +404,13 @@ def generate_pcode_file_content(func_name, func_addr, func_signature, pcode_data
                 callind_count += 1
             elif certainty == 'computed':
                 esp_str += "?"
+            elif certainty == 'cfg_resolved':
+                esp_str += "~"
+            elif certainty == 'conflict':
+                esp_str += "!?"
+                uncertain_esp_count += 1
+            elif certainty == 'unreachable':
+                esp_str += "??"
             elif certainty == 'unknown' and delta == 0:
                 # Don't mark simple instructions with no ESP effect
                 pass
@@ -394,3 +461,302 @@ def create_pcode_summary(pcode_data):
         'avg_pcode_per_instr': total_pcode_ops / total_instructions if total_instructions > 0 else 0,
         'opcode_distribution': opcode_counts
     }
+
+
+# =============================================================================
+# CFG-aware ESP tracking
+# =============================================================================
+
+def _parse_jump_target(assembly):
+    """Extract jump target address from assembly instruction.
+
+    Args:
+        assembly: Assembly string like "JZ 0x005447b9" or "JMP 0x00431a18"
+
+    Returns:
+        Target address as string (lowercase, no 0x prefix), or None if not found
+    """
+    # Match jump instructions with hex target
+    match = re.search(r'\b(J\w+|CALL)\s+(?:0x)?([0-9a-fA-F]+)\b', assembly, re.IGNORECASE)
+    if match:
+        return match.group(2).lower().zfill(8)
+    return None
+
+
+def _is_conditional_branch(mnemonic):
+    """Check if instruction is a conditional branch."""
+    m = mnemonic.upper()
+    # All conditional jumps start with J but not JMP
+    return m.startswith('J') and m != 'JMP'
+
+
+def _is_unconditional_jump(mnemonic):
+    """Check if instruction is an unconditional jump."""
+    return mnemonic.upper() == 'JMP'
+
+
+def _is_return(mnemonic):
+    """Check if instruction is a return."""
+    return mnemonic.upper() in ('RET', 'RETN')
+
+
+def _is_call(mnemonic):
+    """Check if instruction is a call."""
+    return 'CALL' in mnemonic.upper()
+
+
+def apply_cfg_esp_tracking(pcode_data):
+    """Apply CFG-aware ESP tracking to pcode data.
+
+    This improves on linear ESP tracking by following control flow:
+    1. Build basic blocks and CFG edges
+    2. Propagate ESP values along all paths
+    3. At merge points, verify ESP values agree
+    4. Update each instruction with computed ESP
+
+    Args:
+        pcode_data: List from extract_function_pcode() with linear ESP tracking
+
+    Returns:
+        Modified pcode_data with improved ESP tracking (modified in place)
+    """
+    if not pcode_data:
+        return pcode_data
+
+    # Build address -> index mapping
+    addr_to_idx = {}
+    for idx, entry in enumerate(pcode_data):
+        addr = entry['address'].lower().zfill(8)
+        addr_to_idx[addr] = idx
+
+    # Step 1: Identify basic block boundaries
+    # A block starts at: function entry, jump target, instruction after branch/jump/ret
+    # A block ends at: branch, jump, ret, or before a jump target
+    block_starts = set()
+    block_starts.add(pcode_data[0]['address'].lower().zfill(8))  # Function entry
+
+    for idx, entry in enumerate(pcode_data):
+        mnemonic = entry['assembly'].split()[0] if entry['assembly'] else ''
+        addr = entry['address'].lower().zfill(8)
+
+        # Check for jump targets
+        if _is_conditional_branch(mnemonic) or _is_unconditional_jump(mnemonic):
+            target = _parse_jump_target(entry['assembly'])
+            if target and target in addr_to_idx:
+                block_starts.add(target)
+            # Instruction after branch is also a block start (fall-through target)
+            if idx + 1 < len(pcode_data):
+                next_addr = pcode_data[idx + 1]['address'].lower().zfill(8)
+                block_starts.add(next_addr)
+
+        # Instruction after RET is a block start (only reachable by jumps)
+        if _is_return(mnemonic) and idx + 1 < len(pcode_data):
+            next_addr = pcode_data[idx + 1]['address'].lower().zfill(8)
+            block_starts.add(next_addr)
+
+    # Step 2: Build basic blocks
+    # Each block is a list of instruction indices
+    blocks = {}  # block_start_addr -> [indices]
+    current_block_start = None
+    current_block = []
+
+    for idx, entry in enumerate(pcode_data):
+        addr = entry['address'].lower().zfill(8)
+
+        if addr in block_starts:
+            # Save previous block
+            if current_block_start is not None and current_block:
+                blocks[current_block_start] = current_block
+            # Start new block
+            current_block_start = addr
+            current_block = [idx]
+        else:
+            current_block.append(idx)
+
+    # Save last block
+    if current_block_start is not None and current_block:
+        blocks[current_block_start] = current_block
+
+    # Step 3: Build CFG edges
+    # edges[block_addr] = [(target_addr, edge_type), ...]
+    edges = {addr: [] for addr in blocks}
+
+    for block_addr, indices in blocks.items():
+        if not indices:
+            continue
+        last_idx = indices[-1]
+        last_entry = pcode_data[last_idx]
+        mnemonic = last_entry['assembly'].split()[0] if last_entry['assembly'] else ''
+        last_addr = last_entry['address'].lower().zfill(8)
+
+        if _is_return(mnemonic):
+            # No outgoing edges from RET
+            pass
+        elif _is_unconditional_jump(mnemonic):
+            # Only jump edge, no fall-through
+            target = _parse_jump_target(last_entry['assembly'])
+            if target and target in blocks:
+                edges[block_addr].append((target, 'jump'))
+        elif _is_conditional_branch(mnemonic):
+            # Both jump edge and fall-through edge
+            target = _parse_jump_target(last_entry['assembly'])
+            if target and target in blocks:
+                edges[block_addr].append((target, 'branch_taken'))
+            # Fall-through
+            if last_idx + 1 < len(pcode_data):
+                next_addr = pcode_data[last_idx + 1]['address'].lower().zfill(8)
+                if next_addr in blocks:
+                    edges[block_addr].append((next_addr, 'fall_through'))
+        else:
+            # Regular instruction - fall through to next block if exists
+            if last_idx + 1 < len(pcode_data):
+                next_addr = pcode_data[last_idx + 1]['address'].lower().zfill(8)
+                if next_addr in blocks:
+                    edges[block_addr].append((next_addr, 'fall_through'))
+
+    # Step 4: Compute ESP at start of each block using dataflow analysis
+    # esp_in[block_addr] = ESP value at block entry (None = unknown/conflict)
+    entry_addr = pcode_data[0]['address'].lower().zfill(8)
+    esp_in = {addr: None for addr in blocks}
+    esp_in[entry_addr] = 0  # ESP is 0 at function entry
+
+    # Track EBP frame pointer value (ESP when MOV EBP, ESP was executed)
+    # We detect this by scanning for the frame setup instruction
+    ebp_frame_value = None
+    for entry in pcode_data:
+        asm = entry.get('assembly', '')
+        if 'MOV EBP, ESP' in asm.upper().replace(',', ', '):
+            # Found frame setup - EBP was set to this ESP value
+            ebp_frame_value = entry.get('esp_offset')
+            break
+
+    # Compute ESP delta for each block, handling frame resets
+    def compute_block_esp_delta(block_indices):
+        """Compute total ESP delta for a basic block.
+
+        Returns tuple of (delta, has_frame_reset, frame_reset_esp)
+        - delta: cumulative ESP change (only valid if no frame reset)
+        - has_frame_reset: True if block contains MOV ESP, EBP or LEAVE
+        - frame_reset_esp: ESP value after frame reset (if has_frame_reset)
+        """
+        total_delta = 0
+        has_frame_reset = False
+        frame_reset_esp = None
+
+        for idx in block_indices:
+            entry = pcode_data[idx]
+            asm = entry.get('assembly', '')
+            mnemonic = asm.split()[0] if asm else ''
+            delta = entry.get('esp_delta', 0)
+
+            # Check for frame reset instructions
+            if entry.get('esp_frame_restore'):
+                # This instruction resets ESP to frame pointer
+                has_frame_reset = True
+                frame_reset_esp = entry.get('esp_offset')
+                total_delta = 0  # Reset delta after frame restore
+            elif isinstance(delta, int):
+                total_delta += delta
+
+            # Account for CALL's return address being popped by callee
+            if _is_call(mnemonic):
+                total_delta += 4  # Callee's RET pops the return address
+
+        return (total_delta, has_frame_reset, frame_reset_esp)
+
+    block_info = {addr: compute_block_esp_delta(indices) for addr, indices in blocks.items()}
+
+    # Iterative dataflow: propagate ESP values until stable
+    max_iterations = len(blocks) + 10  # Prevent infinite loops
+    changed = True
+    iteration = 0
+
+    while changed and iteration < max_iterations:
+        changed = False
+        iteration += 1
+
+        for block_addr in blocks:
+            block_esp = esp_in[block_addr]
+            if not isinstance(block_esp, int) and block_addr != entry_addr:
+                continue  # Can't propagate from unknown or conflict
+
+            # Compute ESP at block exit
+            if isinstance(block_esp, int):
+                delta, has_frame_reset, frame_reset_esp = block_info[block_addr]
+
+                # If block contains frame reset (MOV ESP, EBP or LEAVE), use that value
+                if has_frame_reset and frame_reset_esp is not None:
+                    esp_out = frame_reset_esp
+                else:
+                    esp_out = block_esp + delta
+
+                # Propagate to successors
+                for target_addr, edge_type in edges[block_addr]:
+                    target_esp = esp_in[target_addr]
+                    if target_esp is None:
+                        esp_in[target_addr] = esp_out
+                        changed = True
+                    elif isinstance(target_esp, int) and target_esp != esp_out:
+                        # Conflict! Different paths have different ESP values
+                        # This could be a bug in analysis or unusual code
+                        # Mark as conflict by setting to special value
+                        esp_in[target_addr] = 'conflict'
+                        changed = True
+
+    # Step 5: Update each instruction with computed ESP
+    for block_addr, indices in blocks.items():
+        block_esp = esp_in[block_addr]
+
+        if block_esp == 'conflict':
+            # Mark all instructions in this block as having ESP conflict
+            for idx in indices:
+                pcode_data[idx]['esp_offset'] = None
+                pcode_data[idx]['esp_certainty'] = 'conflict'
+        elif block_esp is None:
+            # Unreachable block - no paths lead here
+            for idx in indices:
+                pcode_data[idx]['esp_offset'] = None
+                pcode_data[idx]['esp_certainty'] = 'unreachable'
+        else:
+            # Valid ESP - compute for each instruction in block
+            running_esp = block_esp
+            for idx in indices:
+                entry = pcode_data[idx]
+                asm = entry.get('assembly', '')
+                mnemonic = asm.split()[0] if asm else ''
+                # Get operands for recalculating delta
+                operands_str = ''
+                if ' ' in asm:
+                    operands_str = asm.split(' ', 1)[1]
+
+                # Check if we need to recompute delta (for instructions that had lost tracking)
+                orig_certainty = entry.get('esp_certainty', 'unknown')
+                if orig_certainty in ('lost', 'unreachable', 'conflict'):
+                    # Recompute delta from instruction
+                    delta, _ = calculate_esp_delta(mnemonic, operands_str, entry.get('pcode', []))
+                    if delta == 'frame_reset' and ebp_frame_value is not None:
+                        delta = ebp_frame_value - running_esp
+                    elif delta == 'leave' and ebp_frame_value is not None:
+                        delta = (ebp_frame_value + 4) - running_esp
+                    elif not isinstance(delta, int):
+                        delta = 0
+                    entry['esp_delta'] = delta
+                else:
+                    delta = entry.get('esp_delta', 0)
+
+                # Check if this instruction does a frame reset
+                if entry.get('esp_frame_restore'):
+                    # Frame reset instruction - use the esp_offset computed during
+                    # linear pass (which correctly handled MOV ESP, EBP / LEAVE)
+                    running_esp = entry.get('esp_offset', running_esp)
+                elif isinstance(delta, int):
+                    running_esp += delta
+                    if _is_call(mnemonic):
+                        running_esp += 4  # Callee's RET
+
+                entry['esp_offset'] = running_esp
+                # Keep original certainty for known/computed, upgrade lost to cfg_resolved
+                if orig_certainty == 'lost':
+                    entry['esp_certainty'] = 'cfg_resolved'
+
+    return pcode_data

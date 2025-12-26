@@ -24,7 +24,7 @@ from ghidra_annotations.annotations.pseudocode.stack_patterns import (
     detect_stack_patterns_from_listing
 )
 from ghidra_annotations.annotations.pseudocode.pcode import (
-    extract_function_pcode
+    extract_function_pcode, apply_cfg_esp_tracking
 )
 
 # Default number of worker threads for parallel processing
@@ -158,6 +158,8 @@ class DecompileWorker:
             # === JAVA-HEAVY: P-code extraction (GIL released during JVM calls) ===
             pcode_start = time.time()
             result.pcode_data = extract_function_pcode(self.currentProgram, func)
+            # Apply CFG-aware ESP tracking to resolve ESP values across branches
+            apply_cfg_esp_tracking(result.pcode_data)
             result.pcode_time = time.time() - pcode_start
 
             # === JAVA-HEAVY: Function metadata (xrefs, globals, calls) ===

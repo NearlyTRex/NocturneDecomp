@@ -222,8 +222,10 @@ def _detect_callind_esp_uncertain(pcode_data):
                     # Check ESP certainty
                     certainty = next_entry.get('esp_certainty', 'unknown')
 
-                    # If computed, unknown, or lost after CALLIND, this is a problem
-                    if certainty in ('computed', 'unknown', 'callind_unknown', 'lost'):
+                    # If ESP certainty indicates the decompiler may have trouble, create suspect
+                    # cfg_resolved means OUR tracker resolved it, but Ghidra may still struggle
+                    if certainty in ('computed', 'unknown', 'callind_unknown', 'lost',
+                                     'cfg_resolved', 'conflict', 'unreachable'):
                         # Parse the ADD value
                         add_value = _parse_add_esp_value(next_asm)
 
@@ -257,7 +259,11 @@ def _detect_callind_esp_uncertain(pcode_data):
                             # After ADD ESP, ESP = esp_at_callind + add_value
                             esp_at_callind = entry.get('esp_offset')
                             esp_certainty = entry.get('esp_certainty', 'unknown')
-                            esp_tracking_lost = esp_at_callind is None or esp_certainty == 'lost'
+                            # ESP is lost if None or if CFG analysis found conflict/unreachable
+                            esp_tracking_lost = (
+                                esp_at_callind is None or
+                                esp_certainty in ('lost', 'conflict', 'unreachable')
+                            )
                             if esp_at_callind is not None and add_value is not None:
                                 expected_esp_offset = esp_at_callind + add_value
                             else:
