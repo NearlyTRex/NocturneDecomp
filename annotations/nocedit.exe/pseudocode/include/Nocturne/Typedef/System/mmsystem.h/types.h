@@ -28,6 +28,10 @@ typedef tagJOYCAPSA* LPJOYCAPSA;
 // pointer to joyinfo_tag
 typedef joyinfo_tag* LPJOYINFO;
 
+// Typedef: LPJOYINFOEX
+// pointer to JOYINFOEX
+typedef JOYINFOEX* LPJOYINFOEX;
+
 // Typedef: LPWAVEHDR
 // pointer to wavehdr_tag
 typedef wavehdr_tag* LPWAVEHDR;

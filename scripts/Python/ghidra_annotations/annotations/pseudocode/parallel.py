@@ -117,7 +117,7 @@ class DecompileWorker:
     def __init__(self, func, currentProgram, decompiler_tls,
                  symbol_table, reference_manager, program_listing,
                  string_map, global_symbols, vtable_data=None, switch_targets=None,
-                 noreturn_addrs=None):
+                 noreturn_addrs=None, func_conventions=None):
         self.func = func
         self.currentProgram = currentProgram
         self.decompiler_tls = decompiler_tls
@@ -129,6 +129,7 @@ class DecompileWorker:
         self.vtable_data = vtable_data
         self.switch_targets = switch_targets
         self.noreturn_addrs = noreturn_addrs
+        self.func_conventions = func_conventions
 
     def __call__(self):
         """Execute all Java-heavy operations and return results."""
@@ -158,17 +159,21 @@ class DecompileWorker:
                 self.program_listing, self.string_map, self.global_symbols)
             result.assembly_time = time.time() - assembly_start
 
+            # === JAVA-HEAVY: Get globals early (needed for ESP tracking) ===
+            result.func_globals = get_function_globals(self.currentProgram, func)
+
             # === JAVA-HEAVY: P-code extraction (GIL released during JVM calls) ===
             pcode_start = time.time()
             result.pcode_data = extract_function_pcode(self.currentProgram, func)
             # Apply CFG-aware ESP tracking to resolve ESP values across branches
-            apply_cfg_esp_tracking(result.pcode_data, self.switch_targets, self.noreturn_addrs)
+            # Pass func_conventions and func_globals for CALLIND stdcall handling
+            apply_cfg_esp_tracking(result.pcode_data, self.switch_targets, self.noreturn_addrs,
+                                   self.func_conventions, result.func_globals)
             result.pcode_time = time.time() - pcode_start
 
-            # === JAVA-HEAVY: Function metadata (xrefs, globals, calls) ===
+            # === JAVA-HEAVY: Function metadata (xrefs, calls) ===
             metadata_start = time.time()
             result.func_xrefs = get_function_xrefs(self.currentProgram, func)
-            result.func_globals = get_function_globals(self.currentProgram, func)
             result.func_calls = get_function_calls(self.currentProgram, func)
             result.stack_frame = export_stack_frame(func)
             result.stack_patterns_raw = detect_stack_patterns_from_listing(

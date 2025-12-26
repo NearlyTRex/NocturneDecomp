@@ -2437,6 +2437,10 @@
       "type":"function_definition"
     },
     {
+      "name":"JOYINFOEX",
+      "type":"struct"
+    },
+    {
       "name":"LONG",
       "type":"typedef"
     },
@@ -2974,6 +2978,10 @@
     },
     {
       "name":"LPISSPECIALDEVICE",
+      "type":"typedef"
+    },
+    {
+      "name":"LPJOYINFOEX",
       "type":"typedef"
     },
     {
@@ -5327,6 +5335,10 @@
     {
       "name":"istream_core",
       "type":"struct"
+    },
+    {
+      "name":"joyGetPosEx",
+      "type":"function_definition"
     },
     {
       "name":"joyinfo_tag",
@@ -15786,6 +15798,24 @@
         {
           "name":"pji",
           "type":"LPJOYINFO"
+        }
+      ],
+      "return_type":"MMRESULT",
+      "type":"function_definition"
+    },
+    {
+      "calling_convention":"__stdcall",
+      "cat":"/Nocturne/FunctionDefinition/System/mmsystem.h",
+      "importable":true,
+      "name":"joyGetPosEx",
+      "parameters":[
+        {
+          "name":"uJoyID",
+          "type":"UINT"
+        },
+        {
+          "name":"pji",
+          "type":"LPJOYINFOEX"
         }
       ],
       "return_type":"MMRESULT",
@@ -42535,6 +42565,96 @@
       "type":"struct"
     },
     {
+      "alig":1,
+      "cat":"/Nocturne/Struct/System/mmsystem.h",
+      "desc":"",
+      "fields":[
+        {
+          "len":4,
+          "name":"dwSize",
+          "offset":0,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwFlags",
+          "offset":4,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwXpos",
+          "offset":8,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwYpos",
+          "offset":12,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwZpos",
+          "offset":16,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwRpos",
+          "offset":20,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwUpos",
+          "offset":24,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwVpos",
+          "offset":28,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwButtons",
+          "offset":32,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwButtonNumber",
+          "offset":36,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwPOV",
+          "offset":40,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwReserved1",
+          "offset":44,
+          "type":"DWORD"
+        },
+        {
+          "len":4,
+          "name":"dwReserved2",
+          "offset":48,
+          "type":"DWORD"
+        }
+      ],
+      "importable":true,
+      "len":52,
+      "name":"JOYINFOEX",
+      "pack":false,
+      "type":"struct"
+    },
+    {
       "alig":4,
       "cat":"/Nocturne/Struct/System",
       "desc":"",
@@ -53083,6 +53203,13 @@
       "cat":"/Nocturne/Typedef/System/mmsystem.h",
       "importable":true,
       "name":"LPJOYINFO",
+      "type":"typedef"
+    },
+    {
+      "base":"JOYINFOEX*",
+      "cat":"/Nocturne/Typedef/System/mmsystem.h",
+      "importable":true,
+      "name":"LPJOYINFOEX",
       "type":"typedef"
     },
     {

@@ -6,6 +6,9 @@ typedef MMRESULT (*joyGetDevCapsA)(UINT uJoyID, LPJOYCAPSA pjc, UINT cbjc);
 // Function Definition: joyGetPos
 typedef MMRESULT (*joyGetPos)(UINT uJoyID, LPJOYINFO pji);
 
+// Function Definition: joyGetPosEx
+typedef MMRESULT (*joyGetPosEx)(UINT uJoyID, LPJOYINFOEX pji);
+
 // Function Definition: mciGetErrorStringA
 typedef BOOL (*mciGetErrorStringA)(MCIERROR mcierr, LPSTR pszText, UINT cchText);
 

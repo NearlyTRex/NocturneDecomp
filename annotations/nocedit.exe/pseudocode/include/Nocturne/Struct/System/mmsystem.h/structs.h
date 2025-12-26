@@ -10,6 +10,23 @@ typedef struct HWAVEOUT__ {
     int unused;
 } HWAVEOUT__;
 
+// Structure: JOYINFOEX
+typedef struct JOYINFOEX {
+    DWORD dwSize;
+    DWORD dwFlags;
+    DWORD dwXpos;
+    DWORD dwYpos;
+    DWORD dwZpos;
+    DWORD dwRpos;
+    DWORD dwUpos;
+    DWORD dwVpos;
+    DWORD dwButtons;
+    DWORD dwButtonNumber;
+    DWORD dwPOV;
+    DWORD dwReserved1;
+    DWORD dwReserved2;
+} JOYINFOEX;
+
 // Structure: joyinfo_tag
 typedef struct joyinfo_tag {
     UINT wXpos;

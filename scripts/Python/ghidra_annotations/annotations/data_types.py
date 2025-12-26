@@ -1254,3 +1254,54 @@ def export_data_types(currentProgram, path):
     log_info("Exporting %d data types (%d function definitions)" % (len(type_defs), len(function_definitions)))
     save_json_file(path, "data_types", data_types)
     log_info("Export complete")
+
+    # Export function conventions lookup for ESP tracking
+    export_func_conventions(currentProgram, path)
+
+
+def export_func_conventions(currentProgram, path):
+    """Export function calling conventions lookup for ESP tracking.
+
+    Creates a simple lookup file mapping function definition names to their
+    calling convention and parameter byte sizes. Used by pcode.py to handle
+    indirect calls (CALLIND) with proper stack cleanup.
+
+    Args:
+        currentProgram: The Ghidra program
+        path: Base path for output files
+    """
+    from ghidra.program.model.data import FunctionDefinition as FuncDefType
+
+    log_info("Exporting function conventions lookup")
+    conventions = {}
+
+    dtm = currentProgram.getDataTypeManager()
+    for dt in dtm.getAllDataTypes():
+        # Check if it's a function definition
+        if not isinstance(dt, FuncDefType):
+            continue
+
+        name = dt.getName()
+        if not name or name.startswith("undefined"):
+            continue
+
+        cc_name = dt.getCallingConventionName()
+
+        # Calculate total parameter bytes
+        param_bytes = 0
+        args = dt.getArguments()
+        if args:
+            for arg in args:
+                arg_type = arg.getDataType()
+                if arg_type:
+                    # Get actual size, align to 4 bytes for stack
+                    size = arg_type.getLength()
+                    param_bytes += max(4, ((size + 3) // 4) * 4)
+
+        conventions[name] = {
+            'convention': str(cc_name) if cc_name else None,
+            'param_bytes': param_bytes
+        }
+
+    log_info("Exported %d function conventions" % len(conventions))
+    save_json_file(path, "func_conventions", conventions)

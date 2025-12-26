@@ -478,6 +478,21 @@ def export_pseudocode(currentProgram, path):
         log_info("No functions directory found at %s - noreturn tracking disabled" % functions_dir)
     timer.end_phase()
 
+    # Load function conventions for CALLIND stdcall handling
+    timer.start_phase("Load function conventions")
+    func_conventions_path = os.path.join(path, "data_types", "func_conventions.json")
+    func_conventions = None
+    if os.path.exists(func_conventions_path):
+        try:
+            with open(func_conventions_path, 'r') as f:
+                func_conventions = json.load(f)
+            log_info("Loaded function conventions: %d function definitions" % len(func_conventions))
+        except Exception as e:
+            log_info("Failed to load func_conventions.json: %s" % str(e))
+    else:
+        log_info("No func_conventions.json found at %s - CALLIND convention tracking disabled" % func_conventions_path)
+    timer.end_phase()
+
     # Collect all non-external functions first
     timer.start_phase("Collect functions")
     log_info("Collecting functions for parallel processing")
@@ -509,7 +524,8 @@ def export_pseudocode(currentProgram, path):
         worker = DecompileWorker(
             func, currentProgram, decompiler_tls,
             symbol_table, reference_manager, program_listing,
-            string_map, global_symbols, vtable_data, switch_targets, noreturn_addrs)
+            string_map, global_symbols, vtable_data, switch_targets, noreturn_addrs,
+            func_conventions)
         futures.append(executor.submit(worker))
 
     # Collect raw decompilation results
