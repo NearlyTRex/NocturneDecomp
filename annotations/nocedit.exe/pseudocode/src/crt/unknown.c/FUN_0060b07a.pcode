@@ -93,15 +93,15 @@ LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
-@0060b0a0 [ESP:+4]  # MOV EAX, 0x2
+@0060b0a0 [ESP:???]!!  # MOV EAX, 0x2
 COPY (register,0x0,4) /* EAX */ = (const,0x2,4)
 
-@0060b0a5 [ESP:+8](+4)  # RET
+@0060b0a5 [ESP:???]!!  # RET
 LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
-@0060b0a6 [ESP:+8]  # TEST word ptr [EAX + 0x8], 0x7fff
+@0060b0a6 [ESP:???]!!  # TEST word ptr [EAX + 0x8], 0x7fff
 INT_ADD (unique,0x3300,4) = (register,0x0,4) /* EAX */, (const,0x8,4)
 COPY (register,0x200,1) = (const,0x0,1)
 COPY (register,0x20b,1) = (const,0x0,1)
@@ -114,11 +114,11 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,2)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@0060b0ac [ESP:+8]  # JNZ 0x0060b0c2
+@0060b0ac [ESP:???]!!  # JNZ 0x0060b0c2
 BOOL_NEGATE (unique,0xbe00,1) = (register,0x206,1)
 CBRANCH (ram,0x60b0c2,4), (unique,0xbe00,1)
 
-@0060b0ae [ESP:+8]  # CMP dword ptr [EAX + 0x4], 0x0
+@0060b0ae [ESP:???]!!  # CMP dword ptr [EAX + 0x4], 0x0
 INT_ADD (unique,0x3300,4) = (register,0x0,4) /* EAX */, (const,0x4,4)
 LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
 COPY (unique,0x33080,4) = (unique,0xb900,4)
@@ -132,11 +132,11 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@0060b0b2 [ESP:+8]  # JNZ 0x0060b0bc
+@0060b0b2 [ESP:???]!!  # JNZ 0x0060b0bc
 BOOL_NEGATE (unique,0xbe00,1) = (register,0x206,1)
 CBRANCH (ram,0x60b0bc,4), (unique,0xbe00,1)
 
-@0060b0b4 [ESP:+8]  # CMP dword ptr [EAX], 0x0
+@0060b0b4 [ESP:???]!!  # CMP dword ptr [EAX], 0x0
 LOAD (unique,0xb900,4) = (const,0x1a1,4), (register,0x0,4) /* EAX */
 COPY (unique,0x33080,4) = (unique,0xb900,4)
 INT_LESS (register,0x200,1) = (unique,0x33080,4), (const,0x0,4)
@@ -149,11 +149,11 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@0060b0b7 [ESP:+8]  # JNZ 0x0060b0bc
+@0060b0b7 [ESP:???]!!  # JNZ 0x0060b0bc
 BOOL_NEGATE (unique,0xbe00,1) = (register,0x206,1)
 CBRANCH (ram,0x60b0bc,4), (unique,0xbe00,1)
 
-@0060b0b9 [ESP:+8]  # XOR EAX, EAX
+@0060b0b9 [ESP:???]!!  # XOR EAX, EAX
 COPY (register,0x200,1) = (const,0x0,1)
 COPY (register,0x20b,1) = (const,0x0,1)
 INT_XOR (register,0x0,4) /* EAX */ = (register,0x0,4) /* EAX */, (register,0x0,4) /* EAX */
@@ -164,27 +164,28 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@0060b0bb [ESP:+12](+4)  # RET
+@0060b0bb [ESP:???]!!  # RET
 LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
-@0060b0bc [ESP:+12]  # MOV EAX, 0x4
+@0060b0bc [ESP:???]!!  # MOV EAX, 0x4
 COPY (register,0x0,4) /* EAX */ = (const,0x4,4)
 
-@0060b0c1 [ESP:+16](+4)  # RET
+@0060b0c1 [ESP:???]!!  # RET
 LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
-@0060b0c2 [ESP:+16]  # MOV EAX, 0x1
+@0060b0c2 [ESP:???]!!  # MOV EAX, 0x1
 COPY (register,0x0,4) /* EAX */ = (const,0x1,4)
 
-@0060b0c7 [ESP:+20](+4)  # RET
+@0060b0c7 [ESP:???]!!  # RET
 LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
 # ============================================================================
 # Summary: 25 instructions, 122 P-code ops
+# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

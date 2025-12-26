@@ -187,6 +187,8 @@
       "callind_address": "004d6009",
       "callind_assembly": "CALL dword ptr [EDX + 0xf8]",
       "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
+      "esp_at_callind": -12,
+      "expected_esp_offset": -8,
       "fix_address": "004d600f",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 20,

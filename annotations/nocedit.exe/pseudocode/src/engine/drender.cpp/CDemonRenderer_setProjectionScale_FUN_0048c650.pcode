@@ -38,12 +38,12 @@ FLOAT2FLOAT (unique,0x5d380,10) = (ram,0x62203d,8)
 FLOAT_MULT (register,0x1100,10) = (register,0x1100,10), (unique,0x5d380,10)
 COPY (register,0x10ac,4) = (const,0x48c65a,4)
 
-@0048c660 [ESP:-4](-4)  # CALL 0x005fe6b0
+@0048c660 [ESP:+0](-4)  # CALL 0x005fe6b0
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x48c665,4)
 CALL (ram,0x5fe6b0,4)
 
-@0048c665 [ESP:-4]  # FISTP dword ptr [0x006793c0]
+@0048c665 [ESP:+0]  # FISTP dword ptr [0x006793c0]
 COPY (register,0x10ac,4) = (const,0x48c665,4)
 ROUND (unique,0x5bd00,10) = (register,0x1100,10)
 COPY (register,0x1100,10) = (register,0x1110,10)
@@ -55,7 +55,7 @@ COPY (register,0x1150,10) = (register,0x1160,10)
 COPY (register,0x1160,10) = (register,0x1170,10)
 TRUNC (ram,0x6793c0,4) = (unique,0x5bd00,10)
 
-@0048c66b [ESP:+0](+4)  # RET
+@0048c66b [ESP:+4](+4)  # RET
 LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)

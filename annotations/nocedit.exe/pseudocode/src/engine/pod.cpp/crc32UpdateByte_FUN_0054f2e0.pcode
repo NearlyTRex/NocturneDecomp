@@ -350,50 +350,51 @@ LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
-@0054f37b [ESP:+4]  # MOV EAX, EDX
+@0054f37b [ESP:???]!!  # MOV EAX, EDX
 COPY (register,0x0,4) /* EAX */ = (register,0x8,4) /* EDX */
 
-@0054f37d [ESP:+4]  # JMP 0x0054f314
+@0054f37d [ESP:???]!!  # JMP 0x0054f314
 BRANCH (ram,0x54f314,4)
 
-@0054f37f [ESP:+4]  # MOV EAX, EDX
+@0054f37f [ESP:???]!!  # MOV EAX, EDX
 COPY (register,0x0,4) /* EAX */ = (register,0x8,4) /* EDX */
 
-@0054f381 [ESP:+4]  # JMP 0x0054f325
+@0054f381 [ESP:???]!!  # JMP 0x0054f325
 BRANCH (ram,0x54f325,4)
 
-@0054f383 [ESP:+4]  # MOV EAX, EDX
+@0054f383 [ESP:???]!!  # MOV EAX, EDX
 COPY (register,0x0,4) /* EAX */ = (register,0x8,4) /* EDX */
 
-@0054f385 [ESP:+4]  # JMP 0x0054f336
+@0054f385 [ESP:???]!!  # JMP 0x0054f336
 BRANCH (ram,0x54f336,4)
 
-@0054f387 [ESP:+4]  # MOV EAX, EDX
+@0054f387 [ESP:???]!!  # MOV EAX, EDX
 COPY (register,0x0,4) /* EAX */ = (register,0x8,4) /* EDX */
 
-@0054f389 [ESP:+4]  # JMP 0x0054f347
+@0054f389 [ESP:???]!!  # JMP 0x0054f347
 BRANCH (ram,0x54f347,4)
 
-@0054f38b [ESP:+4]  # MOV EAX, EDX
+@0054f38b [ESP:???]!!  # MOV EAX, EDX
 COPY (register,0x0,4) /* EAX */ = (register,0x8,4) /* EDX */
 
-@0054f38d [ESP:+4]  # JMP 0x0054f358
+@0054f38d [ESP:???]!!  # JMP 0x0054f358
 BRANCH (ram,0x54f358,4)
 
-@0054f38f [ESP:+4]  # MOV EAX, EDX
+@0054f38f [ESP:???]!!  # MOV EAX, EDX
 COPY (register,0x0,4) /* EAX */ = (register,0x8,4) /* EDX */
 
-@0054f391 [ESP:+4]  # JMP 0x0054f369
+@0054f391 [ESP:???]!!  # JMP 0x0054f369
 BRANCH (ram,0x54f369,4)
 
-@0054f393 [ESP:+4]  # MOV EAX, EDX
+@0054f393 [ESP:???]!!  # MOV EAX, EDX
 COPY (register,0x0,4) /* EAX */ = (register,0x8,4) /* EDX */
 
-@0054f395 [ESP:+8](+4)  # RET
+@0054f395 [ESP:???]!!  # RET
 LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
 # ============================================================================
 # Summary: 59 instructions, 263 P-code ops
+# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

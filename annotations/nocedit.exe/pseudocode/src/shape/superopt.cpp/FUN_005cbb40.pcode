@@ -1865,7 +1865,7 @@ LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
-@005cbe09 [ESP:-252]  # FLD double ptr [ESP + 0x8]
+@005cbe09 [ESP:???]!!  # FLD double ptr [ESP + 0x8]
 INT_ADD (unique,0x3b00,4) = (const,0x8,4), (register,0x10,4) /* ESP */
 COPY (register,0x10ac,4) = (const,0x5cbe09,4)
 COPY (unique,0x29480,10) = (register,0x1170,10)
@@ -1880,11 +1880,11 @@ COPY (register,0x1100,10) = (unique,0x29480,10)
 LOAD (unique,0x5500,8) = (const,0x1a1,4), (unique,0x3b00,4)
 FLOAT2FLOAT (register,0x1100,10) = (unique,0x5500,8)
 
-@005cbe0d [ESP:-252]  # FCHS
+@005cbe0d [ESP:???]!!  # FCHS
 COPY (register,0x10ac,4) = (const,0x5cbe0d,4)
 FLOAT_NEG (register,0x1100,10) = (register,0x1100,10)
 
-@005cbe0f [ESP:-252]  # FSTP double ptr [ESP]
+@005cbe0f [ESP:???]!!  # FSTP double ptr [ESP]
 COPY (register,0x10ac,4) = (const,0x5cbe0f,4)
 FLOAT2FLOAT (unique,0x5500,8) = (register,0x1100,10)
 STORE (const,0x1a1,4), (register,0x10,4) /* ESP */, (unique,0x5500,8)
@@ -1896,9 +1896,10 @@ COPY (register,0x1140,10) = (register,0x1150,10)
 COPY (register,0x1150,10) = (register,0x1160,10)
 COPY (register,0x1160,10) = (register,0x1170,10)
 
-@005cbe12 [ESP:-252]  # JMP 0x005cbd13
+@005cbe12 [ESP:???]!!  # JMP 0x005cbd13
 BRANCH (ram,0x5cbd13,4)
 
 # ============================================================================
 # Summary: 213 instructions, 1460 P-code ops
+# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

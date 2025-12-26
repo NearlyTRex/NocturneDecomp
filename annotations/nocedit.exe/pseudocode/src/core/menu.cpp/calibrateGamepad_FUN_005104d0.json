@@ -1,7 +1,7 @@
 {
   "complexity": {
     "assembly_lines": 252,
-    "complexity_score": 294,
+    "complexity_score": 299,
     "cross_reference_count": 3,
     "function_call_count": 9,
     "global_count": 19,
@@ -10,6 +10,7 @@
     "suspect_types": [
       "badspacebase",
       "callind_esp_no_frame",
+      "callind_esp_no_frame_lost",
       "register_param",
       "stack_param",
       "stack_ref"
@@ -372,6 +373,8 @@
       "callind_address": "005105bf",
       "callind_assembly": "CALL dword ptr [EDX + 0x4]",
       "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
+      "esp_at_callind": -556,
+      "expected_esp_offset": -548,
       "fix_address": "005105c2",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 548,
@@ -388,6 +391,8 @@
       "callind_address": "005106a8",
       "callind_assembly": "CALL dword ptr [EDX + 0x4]",
       "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
+      "esp_at_callind": -556,
+      "expected_esp_offset": -548,
       "fix_address": "005106ab",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 548,
@@ -404,6 +409,8 @@
       "callind_address": "005106c1",
       "callind_assembly": "CALL dword ptr [EAX + 0x4]",
       "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
+      "esp_at_callind": -556,
+      "expected_esp_offset": -548,
       "fix_address": "005106c4",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 548,
@@ -419,12 +426,12 @@
       },
       "callind_address": "0051071c",
       "callind_assembly": "CALL dword ptr [EDX + 0x4]",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
+      "description": "CALLIND with lost ESP tracking (branching code)",
       "fix_address": "0051071f",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 548,
       "text": "CALLIND at 0051071c, ADD ESP at 0051071f (no EBP frame)",
-      "type": "callind_esp_no_frame"
+      "type": "callind_esp_no_frame_lost"
     }
   ]
 }

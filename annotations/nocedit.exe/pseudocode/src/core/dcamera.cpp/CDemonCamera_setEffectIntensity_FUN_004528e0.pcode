@@ -38,12 +38,12 @@ INT_ADD (unique,0x3b00,4) = (const,0x4,4), (register,0x10,4) /* ESP */
 LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3b00,4)
 COPY (register,0x0,4) /* EAX */ = (unique,0xb900,4)
 
-@004528ee [ESP:-4](-4)  # CALL 0x005fe6b0
+@004528ee [ESP:+0](-4)  # CALL 0x005fe6b0
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x4528f3,4)
 CALL (ram,0x5fe6b0,4)
 
-@004528f3 [ESP:-4]  # FISTP dword ptr [EAX + 0x11e8]
+@004528f3 [ESP:+0]  # FISTP dword ptr [EAX + 0x11e8]
 INT_ADD (unique,0x3400,4) = (register,0x0,4) /* EAX */, (const,0x11e8,4)
 COPY (register,0x10ac,4) = (const,0x4528f3,4)
 ROUND (unique,0x5bd00,10) = (register,0x1100,10)
@@ -57,7 +57,7 @@ COPY (register,0x1160,10) = (register,0x1170,10)
 TRUNC (unique,0x5180,4) = (unique,0x5bd00,10)
 STORE (const,0x1a1,4), (unique,0x3400,4), (unique,0x5180,4)
 
-@004528f9 [ESP:+0](+4)  # RET
+@004528f9 [ESP:+4](+4)  # RET
 LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)

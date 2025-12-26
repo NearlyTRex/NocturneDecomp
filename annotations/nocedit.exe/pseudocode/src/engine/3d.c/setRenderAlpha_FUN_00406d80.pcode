@@ -226,7 +226,7 @@ LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
-@00406dc1 [ESP:+4]  # XOR EDX, EDX
+@00406dc1 [ESP:???]!!  # XOR EDX, EDX
 COPY (register,0x200,1) = (const,0x0,1)
 COPY (register,0x20b,1) = (const,0x0,1)
 INT_XOR (register,0x8,4) /* EDX */ = (register,0x8,4) /* EDX */, (register,0x8,4) /* EDX */
@@ -237,9 +237,10 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@00406dc3 [ESP:+4]  # JMP 0x00406d98
+@00406dc3 [ESP:???]!!  # JMP 0x00406d98
 BRANCH (ram,0x406d98,4)
 
 # ============================================================================
 # Summary: 22 instructions, 183 P-code ops
+# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

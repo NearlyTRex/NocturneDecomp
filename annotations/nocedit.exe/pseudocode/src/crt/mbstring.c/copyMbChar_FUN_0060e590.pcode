@@ -117,25 +117,26 @@ LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
-@0060e5c3 [ESP:+4]  # MOV AL, byte ptr [EAX]
+@0060e5c3 [ESP:???]!!  # MOV AL, byte ptr [EAX]
 LOAD (unique,0xb800,1) = (const,0x1a1,4), (register,0x0,4) /* EAX */
 COPY (register,0x0,1) = (unique,0xb800,1)
 
-@0060e5c5 [ESP:+4]  # MOV byte ptr [EBX], AL
+@0060e5c5 [ESP:???]!!  # MOV byte ptr [EBX], AL
 COPY (unique,0x5080,1) = (register,0x0,1)
 STORE (const,0x1a1,4), (register,0xc,4) /* EBX */, (unique,0x5080,1)
 
-@0060e5c7 [ESP:+8](+4)  # POP EBX
+@0060e5c7 [ESP:???]!!  # POP EBX
 COPY (unique,0x43980,4) = (const,0x0,4)
 LOAD (unique,0x43980,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 COPY (register,0xc,4) /* EBX */ = (unique,0x43980,4)
 
-@0060e5c8 [ESP:+12](+4)  # RET
+@0060e5c8 [ESP:???]!!  # RET
 LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
 # ============================================================================
 # Summary: 21 instructions, 81 P-code ops
+# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

@@ -104,21 +104,22 @@ LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
-@00605a3a [ESP:+4]  # MOV byte ptr [EAX], DL
+@00605a3a [ESP:???]!!  # MOV byte ptr [EAX], DL
 COPY (unique,0x5080,1) = (register,0x8,1)
 STORE (const,0x1a1,4), (register,0x0,4) /* EAX */, (unique,0x5080,1)
 
-@00605a3c [ESP:+8](+4)  # POP EBX
+@00605a3c [ESP:???]!!  # POP EBX
 COPY (unique,0x43980,4) = (const,0x0,4)
 LOAD (unique,0x43980,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 COPY (register,0xc,4) /* EBX */ = (unique,0x43980,4)
 
-@00605a3d [ESP:+12](+4)  # RET
+@00605a3d [ESP:???]!!  # RET
 LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
 # ============================================================================
 # Summary: 14 instructions, 78 P-code ops
+# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

@@ -55,17 +55,17 @@ PRIORITY 1: Files with 1-2 functions remaining
 
   core/dfont.cpp (1 remaining of 3)
     - core_dfont.cpp_freeFonts_FUN_004710a0
-      Suspects: callind_esp_no_frame, callind_esp_no_frame, callind_esp_no_frame, callind_esp_no_frame
+      Suspects: callind_esp_no_frame, callind_esp_no_frame, callind_esp_no_frame, callind_esp_no_frame_lost
 
   crt/signal.c (2 remaining of 7)
     - crt_signal.c_raiseFPE_FUN_0060d028
       Suspects: callind_esp_no_frame
     - crt_signal.c_processSignal_FUN_0060d128
-      Suspects: callind_esp_no_frame
+      Suspects: callind_esp_no_frame_lost
 
   crt/watcom.c (2 remaining of 3)
     - crt_watcom.c_heapchk_FUN_00600ad0
-      Suspects: badspacebase, register_param, callind_esp_no_frame, callind_esp_no_frame, callind_esp_no_frame, param_count_too_few
+      Suspects: badspacebase, register_param, callind_esp_no_frame, callind_esp_no_frame_lost, callind_esp_no_frame_lost, param_count_too_few
     - crt_watcom.c_memavl_FUN_006008f0
       Suspects: param_count_too_few
 
@@ -133,7 +133,7 @@ PRIORITY 1: Files with 1-2 functions remaining
     - core_podmain.cpp_CDemonPod_dtor_FUN_00551b20
       Suspects: unaffected_reg, unaffected_reg
     - core_podmain.cpp_CDemonPod_load_FUN_005519c0
-      Suspects: unaffected_reg, badspacebase, register_param, stack_param, stack_ref, stack_ref, stack_param, stack_ref, stack_ref, stack_param, stack_ref, stack_ref, stack_ref, unaffected_reg, unaffected_reg, callind_esp_no_frame, callind_esp_no_frame
+      Suspects: unaffected_reg, badspacebase, register_param, stack_param, stack_ref, stack_ref, stack_param, stack_ref, stack_ref, stack_param, stack_ref, stack_ref, stack_ref, unaffected_reg, unaffected_reg, callind_esp_no_frame, callind_esp_no_frame_lost
 
 ====================================================================================================
 PRIORITY 2: Small functions with 1 suspect (<50 lines)
@@ -152,19 +152,6 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_water.cpp_CWater_process_FUN_005e9ed0              (  4 lines)
     ... and 127 more
 
-  [callind_esp_no_frame] - 93 functions
-    shape_edittool.cpp_CStrList_sort_FUN_004a2ec0           (  5 lines)
-    shape_edittool.cpp_CStrList_removeAt_FUN_004a2de0       (  5 lines)
-    shape_edittool.cpp_CStrList_add_FUN_004a2b80            (  5 lines)
-    crt_unknown.c_CallReturnZero6_FUN_0060e880              (  6 lines)
-    crt_stdio.c_scanf_getc_wrapper_FUN_00604930             (  6 lines)
-    crt_stdio.c_scanf_ungetc_wrapper_FUN_0060493c           (  6 lines)
-    core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b (  6 lines)
-    engine_palette.cpp_CFont_drawText_FUN_00544ed0          (  7 lines)
-    core_waypoint.cpp_CWayPoint_FUN_005ec5e0                (  7 lines)
-    shape_superopt.cpp_CPoly_init_FUN_005cc670              (  8 lines)
-    ... and 83 more
-
   [pointer_cast] - 68 functions
     crt_heap.c_GetBlockSize_FUN_00609790                    (  4 lines)
     crt_stdio.c_string_ungetc_FUN_006000f8                  (  5 lines)
@@ -178,6 +165,19 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_mirror.cpp_CMirror_ctor_FUN_005213c0               (  7 lines)
     ... and 58 more
 
+  [callind_esp_no_frame_lost] - 57 functions
+    wincore_windll.cpp_addParticle_FUN_005b7985             (  9 lines)
+    wincore_windll.cpp_lockTexture_FUN_005b7e23             (  9 lines)
+    wincore_windll.cpp_selectCard_FUN_005b7d90              (  9 lines)
+    wincore_windll.cpp_masterZBuffer_FUN_005b7d00           (  9 lines)
+    wincore_windll.cpp_clearZBox_FUN_005b7c00               (  9 lines)
+    wincore_windll.cpp_setMipMapLevel_FUN_005b7436          (  9 lines)
+    wincore_windll.cpp_getTextureInfo_FUN_005b7e70          (  9 lines)
+    crt_memory.c_copyArrayWithFunction_FUN_006020c2         (  9 lines)
+    engine_pod.cpp_findFileInPod_FUN_00551960               (  9 lines)
+    sound_sndmain.cpp_set3DListenerDistanceFactor_FUN_005aa ( 10 lines)
+    ... and 47 more
+
   [negative_offset] - 55 functions
     core_fire.cpp_CStake_dtor_FUN_004c9760                  (  6 lines)
     core_fire.cpp_CStake_ctor_FUN_004c9740                  (  6 lines)
@@ -190,6 +190,19 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     crt_strstream.cpp_istrstream_destructor_thunk_from_istr (  8 lines)
     core_bodypart.cpp_SBodyPartModel_ctor_FUN_0041b660      (  8 lines)
     ... and 45 more
+
+  [callind_esp_no_frame] - 36 functions
+    shape_edittool.cpp_CStrList_sort_FUN_004a2ec0           (  5 lines)
+    shape_edittool.cpp_CStrList_removeAt_FUN_004a2de0       (  5 lines)
+    shape_edittool.cpp_CStrList_add_FUN_004a2b80            (  5 lines)
+    crt_unknown.c_CallReturnZero6_FUN_0060e880              (  6 lines)
+    crt_stdio.c_scanf_getc_wrapper_FUN_00604930             (  6 lines)
+    crt_stdio.c_scanf_ungetc_wrapper_FUN_0060493c           (  6 lines)
+    core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b (  6 lines)
+    engine_palette.cpp_CFont_drawText_FUN_00544ed0          (  7 lines)
+    core_waypoint.cpp_CWayPoint_FUN_005ec5e0                (  7 lines)
+    shape_superopt.cpp_CPoly_init_FUN_005cc670              (  8 lines)
+    ... and 26 more
 
   [warning_overlapping_globals] - 31 functions
     core_script.cpp_FUN_00559ac0                            ( 10 lines)

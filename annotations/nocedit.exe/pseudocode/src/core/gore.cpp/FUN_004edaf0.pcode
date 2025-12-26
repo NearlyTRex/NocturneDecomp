@@ -183,32 +183,33 @@ LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
-@004edb25 [ESP:+0](-4)  # PUSH EBX
+@004edb25 [ESP:???]!!  # PUSH EBX
 COPY (unique,0x20a80,4) = (register,0xc,4) /* EBX */
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x20a80,4)
 
-@004edb26 [ESP:+0]  # LEA EBX, [EDX + 0x1]
+@004edb26 [ESP:???]!!  # LEA EBX, [EDX + 0x1]
 INT_ADD (unique,0x3300,4) = (register,0x8,4) /* EDX */, (const,0x1,4)
 COPY (register,0xc,4) /* EBX */ = (unique,0x3300,4)
 
-@004edb29 [ESP:+0]  # MOV dword ptr [0x02d873d8], EBX
+@004edb29 [ESP:???]!!  # MOV dword ptr [0x02d873d8], EBX
 COPY (ram,0x2d873d8,4) = (register,0xc,4) /* EBX */
 
-@004edb2f [ESP:+4](+4)  # POP EBX
+@004edb2f [ESP:???]!!  # POP EBX
 COPY (unique,0x43980,4) = (const,0x0,4)
 LOAD (unique,0x43980,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 COPY (register,0xc,4) /* EBX */ = (unique,0x43980,4)
 
-@004edb30 [ESP:+4]  # MOV dword ptr [0x02d873d4], ECX
+@004edb30 [ESP:???]!!  # MOV dword ptr [0x02d873d4], ECX
 COPY (ram,0x2d873d4,4) = (register,0x4,4) /* ECX */
 
-@004edb36 [ESP:+8](+4)  # RET
+@004edb36 [ESP:???]!!  # RET
 LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
 # ============================================================================
 # Summary: 21 instructions, 154 P-code ops
+# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

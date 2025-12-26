@@ -350,13 +350,14 @@ LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
-@004907e0 [ESP:+4]  # MOV word ptr [EBX], 0xffff
+@004907e0 [ESP:???]!!  # MOV word ptr [EBX], 0xffff
 COPY (unique,0x5100,2) = (const,0xffff,2)
 STORE (const,0x1a1,4), (register,0xc,4) /* EBX */, (unique,0x5100,2)
 
-@004907e5 [ESP:+4]  # JMP 0x004907c6
+@004907e5 [ESP:???]!!  # JMP 0x004907c6
 BRANCH (ram,0x4907c6,4)
 
 # ============================================================================
 # Summary: 35 instructions, 274 P-code ops
+# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

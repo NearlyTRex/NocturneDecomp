@@ -1,7 +1,7 @@
 {
   "complexity": {
     "assembly_lines": 413,
-    "complexity_score": 427,
+    "complexity_score": 432,
     "cross_reference_count": 2,
     "function_call_count": 25,
     "global_count": 23,
@@ -10,6 +10,7 @@
     "suspect_types": [
       "badspacebase",
       "callind_esp_no_frame",
+      "callind_esp_no_frame_lost",
       "param_count_too_few",
       "register_param",
       "stack_param",
@@ -594,6 +595,8 @@
       "callind_address": "0049dd66",
       "callind_assembly": "CALL dword ptr [EBX]",
       "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
+      "esp_at_callind": -808,
+      "expected_esp_offset": -800,
       "fix_address": "0049dd68",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 800,
@@ -607,6 +610,8 @@
       "callind_address": "0049dd7d",
       "callind_assembly": "CALL dword ptr [EBX]",
       "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
+      "esp_at_callind": -808,
+      "expected_esp_offset": -800,
       "fix_address": "0049dd7f",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 800,
@@ -623,6 +628,8 @@
       "callind_address": "0049dd90",
       "callind_assembly": "CALL dword ptr [EBX + 0x4]",
       "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
+      "esp_at_callind": -808,
+      "expected_esp_offset": -800,
       "fix_address": "0049dd93",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 800,
@@ -638,12 +645,12 @@
       },
       "callind_address": "0049de68",
       "callind_assembly": "CALL dword ptr [EBX + 0x4]",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
+      "description": "CALLIND with lost ESP tracking (branching code)",
       "fix_address": "0049de6b",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 800,
       "text": "CALLIND at 0049de68, ADD ESP at 0049de6b (no EBP frame)",
-      "type": "callind_esp_no_frame"
+      "type": "callind_esp_no_frame_lost"
     },
     {
       "call_site_count": 2,

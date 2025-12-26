@@ -1884,7 +1884,7 @@ LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
-@005a3fba [ESP:-152]  # INC dword ptr [ESP + 0x84]
+@005a3fba [ESP:???]!!  # INC dword ptr [ESP + 0x84]
 INT_ADD (unique,0x3f80,4) = (const,0x84,4), (register,0x10,4) /* ESP */
 LOAD (unique,0x5180,4) = (const,0x1a1,4), (unique,0x3f80,4)
 INT_SCARRY (register,0x20b,1) = (unique,0x5180,4), (const,0x1,4)
@@ -1901,10 +1901,10 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@005a3fc1 [ESP:-152]  # JMP 0x005a3cd9
+@005a3fc1 [ESP:???]!!  # JMP 0x005a3cd9
 BRANCH (ram,0x5a3cd9,4)
 
-@005a3fc6 [ESP:-152]  # ADD ECX, EBX
+@005a3fc6 [ESP:???]!!  # ADD ECX, EBX
 INT_CARRY (register,0x200,1) = (register,0x4,4) /* ECX */, (register,0xc,4) /* EBX */
 INT_SCARRY (register,0x20b,1) = (register,0x4,4) /* ECX */, (register,0xc,4) /* EBX */
 INT_ADD (register,0x4,4) /* ECX */ = (register,0x4,4) /* ECX */, (register,0xc,4) /* EBX */
@@ -1915,17 +1915,18 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@005a3fc8 [ESP:-152]  # MOV EDX, dword ptr [ECX]
+@005a3fc8 [ESP:???]!!  # MOV EDX, dword ptr [ECX]
 LOAD (unique,0xb900,4) = (const,0x1a1,4), (register,0x4,4) /* ECX */
 COPY (register,0x8,4) /* EDX */ = (unique,0xb900,4)
 
-@005a3fca [ESP:-152]  # MOV dword ptr [EAX], EDX
+@005a3fca [ESP:???]!!  # MOV dword ptr [EAX], EDX
 COPY (unique,0x5180,4) = (register,0x8,4) /* EDX */
 STORE (const,0x1a1,4), (register,0x0,4) /* EAX */, (unique,0x5180,4)
 
-@005a3fcc [ESP:-152]  # JMP 0x005a3d4a
+@005a3fcc [ESP:???]!!  # JMP 0x005a3d4a
 BRANCH (ram,0x5a3d4a,4)
 
 # ============================================================================
 # Summary: 235 instructions, 1443 P-code ops
+# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

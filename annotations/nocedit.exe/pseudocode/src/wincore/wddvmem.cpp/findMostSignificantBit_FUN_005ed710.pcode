@@ -84,22 +84,23 @@ INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 @005ed722 [ESP:+0]  # JMP 0x005ed71a
 BRANCH (ram,0x5ed71a,4)
 
-@005ed724 [ESP:+0]  # MOV EAX, 0x20
+@005ed724 [ESP:???]!!  # MOV EAX, 0x20
 COPY (register,0x0,4) /* EAX */ = (const,0x20,4)
 
-@005ed729 [ESP:+4](+4)  # RET
+@005ed729 [ESP:???]!!  # RET
 LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
-@005ed72a [ESP:+4]  # MOV EAX, EDX
+@005ed72a [ESP:???]!!  # MOV EAX, EDX
 COPY (register,0x0,4) /* EAX */ = (register,0x8,4) /* EDX */
 
-@005ed72c [ESP:+8](+4)  # RET
+@005ed72c [ESP:???]!!  # RET
 LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
 # ============================================================================
 # Summary: 13 instructions, 61 P-code ops
+# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

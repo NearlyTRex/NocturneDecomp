@@ -33,7 +33,7 @@ COPY (unique,0x20a80,4) = (register,0x18,4) /* ESI */
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x20a80,4)
 
-@004cbe27 [ESP:-16](-4)  # CALL 0x00408bb0
+@004cbe27 [ESP:-12](-4)  # CALL 0x00408bb0
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x4cbe2c,4)
 CALL (ram,0x408bb0,4)

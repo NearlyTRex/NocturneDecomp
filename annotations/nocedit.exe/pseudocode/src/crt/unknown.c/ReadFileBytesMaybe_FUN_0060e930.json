@@ -9,7 +9,7 @@
     "suspect_count": 30,
     "suspect_types": [
       "badspacebase",
-      "callind_esp_no_frame",
+      "callind_esp_no_frame_lost",
       "param_count_too_few",
       "register_param",
       "stack_ref",
@@ -348,12 +348,12 @@
       "call_target_value": 6835944,
       "callind_address": "0060e99e",
       "callind_assembly": "CALL dword ptr [0x00684ee8]",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
+      "description": "CALLIND with lost ESP tracking (branching code)",
       "fix_address": "0060e9a4",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 32,
       "text": "CALLIND at 0060e99e, ADD ESP at 0060e9a4 (no EBP frame)",
-      "type": "callind_esp_no_frame"
+      "type": "callind_esp_no_frame_lost"
     },
     {
       "add_esp_value": 4,
@@ -361,12 +361,12 @@
       "call_target_value": 6835948,
       "callind_address": "0060e9b7",
       "callind_assembly": "CALL dword ptr [0x00684eec]",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
+      "description": "CALLIND with lost ESP tracking (branching code)",
       "fix_address": "0060e9c2",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 32,
       "text": "CALLIND at 0060e9b7, ADD ESP at 0060e9c2 (no EBP frame)",
-      "type": "callind_esp_no_frame"
+      "type": "callind_esp_no_frame_lost"
     },
     {
       "add_esp_value": 4,
@@ -374,12 +374,12 @@
       "call_target_value": 6836868,
       "callind_address": "0060e9dc",
       "callind_assembly": "CALL dword ptr [0x00685284]",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
+      "description": "CALLIND with lost ESP tracking (branching code)",
       "fix_address": "0060e9e2",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 32,
       "text": "CALLIND at 0060e9dc, ADD ESP at 0060e9e2 (no EBP frame)",
-      "type": "callind_esp_no_frame"
+      "type": "callind_esp_no_frame_lost"
     },
     {
       "add_esp_value": 12,
@@ -387,12 +387,12 @@
       "call_target_value": 6836908,
       "callind_address": "0060e9ec",
       "callind_assembly": "CALL dword ptr [0x006852ac]",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
+      "description": "CALLIND with lost ESP tracking (branching code)",
       "fix_address": "0060e9f2",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 32,
       "text": "CALLIND at 0060e9ec, ADD ESP at 0060e9f2 (no EBP frame)",
-      "type": "callind_esp_no_frame"
+      "type": "callind_esp_no_frame_lost"
     },
     {
       "add_esp_value": 4,
@@ -400,12 +400,12 @@
       "call_target_value": 6835948,
       "callind_address": "0060ea21",
       "callind_assembly": "CALL dword ptr [0x00684eec]",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
+      "description": "CALLIND with lost ESP tracking (branching code)",
       "fix_address": "0060ea27",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 32,
       "text": "CALLIND at 0060ea21, ADD ESP at 0060ea27 (no EBP frame)",
-      "type": "callind_esp_no_frame"
+      "type": "callind_esp_no_frame_lost"
     },
     {
       "add_esp_value": 4,
@@ -413,12 +413,12 @@
       "call_target_value": 6836868,
       "callind_address": "0060ea5b",
       "callind_assembly": "CALL dword ptr [0x00685284]",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
+      "description": "CALLIND with lost ESP tracking (branching code)",
       "fix_address": "0060ea61",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 32,
       "text": "CALLIND at 0060ea5b, ADD ESP at 0060ea61 (no EBP frame)",
-      "type": "callind_esp_no_frame"
+      "type": "callind_esp_no_frame_lost"
     },
     {
       "add_esp_value": 12,
@@ -426,12 +426,12 @@
       "call_target_value": 6836908,
       "callind_address": "0060ea6f",
       "callind_assembly": "CALL dword ptr [0x006852ac]",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
+      "description": "CALLIND with lost ESP tracking (branching code)",
       "fix_address": "0060ea75",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 32,
       "text": "CALLIND at 0060ea6f, ADD ESP at 0060ea75 (no EBP frame)",
-      "type": "callind_esp_no_frame"
+      "type": "callind_esp_no_frame_lost"
     },
     {
       "add_esp_value": 4,
@@ -439,12 +439,12 @@
       "call_target_value": 6835948,
       "callind_address": "0060ea9f",
       "callind_assembly": "CALL dword ptr [0x00684eec]",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
+      "description": "CALLIND with lost ESP tracking (branching code)",
       "fix_address": "0060eaa5",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 32,
       "text": "CALLIND at 0060ea9f, ADD ESP at 0060eaa5 (no EBP frame)",
-      "type": "callind_esp_no_frame"
+      "type": "callind_esp_no_frame_lost"
     },
     {
       "add_esp_value": 4,
@@ -452,12 +452,12 @@
       "call_target_value": 6835948,
       "callind_address": "0060eb26",
       "callind_assembly": "CALL dword ptr [0x00684eec]",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
+      "description": "CALLIND with lost ESP tracking (branching code)",
       "fix_address": "0060eb2c",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 32,
       "text": "CALLIND at 0060eb26, ADD ESP at 0060eb2c (no EBP frame)",
-      "type": "callind_esp_no_frame"
+      "type": "callind_esp_no_frame_lost"
     },
     {
       "call_site_count": 2,

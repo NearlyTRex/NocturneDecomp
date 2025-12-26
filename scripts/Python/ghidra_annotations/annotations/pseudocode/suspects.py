@@ -222,8 +222,8 @@ def _detect_callind_esp_uncertain(pcode_data):
                     # Check ESP certainty
                     certainty = next_entry.get('esp_certainty', 'unknown')
 
-                    # If computed or unknown after CALLIND, this is a problem
-                    if certainty in ('computed', 'unknown', 'callind_unknown'):
+                    # If computed, unknown, or lost after CALLIND, this is a problem
+                    if certainty in ('computed', 'unknown', 'callind_unknown', 'lost'):
                         # Parse the ADD value
                         add_value = _parse_add_esp_value(next_asm)
 
@@ -252,20 +252,45 @@ def _detect_callind_esp_uncertain(pcode_data):
                                 raise UnhandledCallIndirectError(
                                     "At address %s: %s" % (callind_addr, e))
 
-                            suspects.append({
-                                'type': 'callind_esp_no_frame',
+                            # Get ESP offset at CALLIND (after the call returns)
+                            # After cdecl call returns, ESP is unchanged from before the call
+                            # After ADD ESP, ESP = esp_at_callind + add_value
+                            esp_at_callind = entry.get('esp_offset')
+                            esp_certainty = entry.get('esp_certainty', 'unknown')
+                            esp_tracking_lost = esp_at_callind is None or esp_certainty == 'lost'
+                            if esp_at_callind is not None and add_value is not None:
+                                expected_esp_offset = esp_at_callind + add_value
+                            else:
+                                expected_esp_offset = None
+
+                            # Use different type if ESP tracking was lost (due to branches)
+                            if esp_tracking_lost:
+                                suspect_type = 'callind_esp_no_frame_lost'
+                                description = 'CALLIND with lost ESP tracking (branching code)'
+                            else:
+                                suspect_type = 'callind_esp_no_frame'
+                                description = 'CALLIND makes ESP uncertain; fixable with ESP preserve'
+
+                            # Add suspect - build dict and only include ESP fields when known
+                            suspect = {
+                                'type': suspect_type,
                                 'match': 'CALLIND...ADD ESP',
                                 'text': 'CALLIND at %s, ADD ESP at %s (no EBP frame)' % (
                                     callind_addr, next_entry.get('address', '?')),
-                                'description': 'CALLIND makes ESP uncertain; fixable with ESP preserve',
+                                'description': description,
                                 'fix_address': next_entry.get('address', ''),
                                 'callind_address': callind_addr,
                                 'callind_assembly': callind_asm,
                                 'call_target_type': target_type,
                                 'call_target_value': target_value,
                                 'add_esp_value': add_value,
-                                'prologue_offset': prologue_offset
-                            })
+                                'prologue_offset': prologue_offset,
+                            }
+                            # Only include ESP fields when tracking wasn't lost
+                            if not esp_tracking_lost:
+                                suspect['esp_at_callind'] = esp_at_callind
+                                suspect['expected_esp_offset'] = expected_esp_offset
+                            suspects.append(suspect)
                     break  # Only look at first ADD ESP after CALLIND
 
                 # Stop if we hit another call or control flow
@@ -332,7 +357,6 @@ def _detect_jump_target_esp_mismatch(pcode_data, assembly_code):
         for source_addr in source_addrs:
             if source_addr not in addr_to_entry:
                 continue
-
             source_entry = addr_to_entry[source_addr]
             source_esp = source_entry.get('esp_offset')
 
@@ -341,6 +365,7 @@ def _detect_jump_target_esp_mismatch(pcode_data, assembly_code):
                 if source_esp != target_esp:
                     delta = target_esp - source_esp
 
+                    # Add suspect
                     suspects.append({
                         'type': 'jump_target_esp_mismatch',
                         'match': 'ESP:%+d -> ESP:%+d' % (source_esp, target_esp),

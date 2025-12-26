@@ -73,17 +73,18 @@ INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 @00610253 [ESP:-4]  # JMP 0x00610249
 BRANCH (ram,0x610249,4)
 
-@00610255 [ESP:+0](+4)  # POP EBX
+@00610255 [ESP:???]!!  # POP EBX
 COPY (unique,0x43980,4) = (const,0x0,4)
 LOAD (unique,0x43980,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 COPY (register,0xc,4) /* EBX */ = (unique,0x43980,4)
 
-@00610256 [ESP:+4](+4)  # RET
+@00610256 [ESP:???]!!  # RET
 LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
 # ============================================================================
 # Summary: 12 instructions, 47 P-code ops
+# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

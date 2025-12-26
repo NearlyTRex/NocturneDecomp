@@ -16,12 +16,12 @@
 @0060eb4b [ESP:+0]  # MOV EAX, 0x83
 COPY (register,0x0,4) /* EAX */ = (const,0x83,4)
 
-@0060eb50 [ESP:-4](-4)  # CALL 0x0060fa80
+@0060eb50 [ESP:+0](-4)  # CALL 0x0060fa80
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x60eb55,4)
 CALL (ram,0x60fa80,4)
 
-@0060eb55 [ESP:-4]  # JMP 0x0060eb68
+@0060eb55 [ESP:+0]  # JMP 0x0060eb68
 BRANCH (ram,0x60eb68,4)
 
 # ============================================================================

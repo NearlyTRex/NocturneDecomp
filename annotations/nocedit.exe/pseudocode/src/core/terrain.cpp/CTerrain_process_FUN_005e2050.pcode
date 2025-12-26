@@ -120,30 +120,31 @@ LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
-@005e2073 [ESP:+0](-4)  # PUSH ESI
+@005e2073 [ESP:???]!!  # PUSH ESI
 COPY (unique,0x20a80,4) = (register,0x18,4) /* ESI */
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x20a80,4)
 
-@005e2074 [ESP:+0]  # LEA ESI, [EDX + 0xf8000000]
+@005e2074 [ESP:???]!!  # LEA ESI, [EDX + 0xf8000000]
 INT_ADD (unique,0x3400,4) = (register,0x8,4) /* EDX */, (const,0xf8000000,4)
 COPY (register,0x18,4) /* ESI */ = (unique,0x3400,4)
 
-@005e207a [ESP:+0]  # MOV dword ptr [ECX], ESI
+@005e207a [ESP:???]!!  # MOV dword ptr [ECX], ESI
 COPY (unique,0x5180,4) = (register,0x18,4) /* ESI */
 STORE (const,0x1a1,4), (register,0x4,4) /* ECX */, (unique,0x5180,4)
 
-@005e207c [ESP:+4](+4)  # POP ESI
+@005e207c [ESP:???]!!  # POP ESI
 COPY (unique,0x43980,4) = (const,0x0,4)
 LOAD (unique,0x43980,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 COPY (register,0x18,4) /* ESI */ = (unique,0x43980,4)
 
-@005e207d [ESP:+8](+4)  # RET
+@005e207d [ESP:???]!!  # RET
 LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
 # ============================================================================
 # Summary: 16 instructions, 99 P-code ops
+# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

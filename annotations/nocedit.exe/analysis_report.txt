@@ -16,7 +16,7 @@ Virtual files: 258 total, 19 at 100%, 20 at 90%+
 Pseudocode lines:
   Min: 1, Max: 3059, Average: 48.0
 
-Average complexity score: 144.3
+Average complexity score: 144.4
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
@@ -29,9 +29,10 @@ SUSPECT PATTERN BREAKDOWN
   concat_artifact           1832
   badspacebase              1622
   extra_output              1443
-  callind_esp_no_frame      1097
   suspect_float             853
   param_count_too_few       631
+  callind_esp_no_frame_lost 618
+  callind_esp_no_frame      479
   unresolved_funcptr        474
   negative_offset           416
   sub_artifact              322
@@ -252,19 +253,6 @@ FUNCTIONS BY SUSPECT TYPE
     00555090: shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090
     ... and 252 more
 
-  callind_esp_no_frame (591 functions):
-    00432540: cockpit_ckptutil.c_blitSimpleSprite_FUN_00432540
-    004328d0: cockpit_ckptutil.c_blitHorizontallyClippedSprite_FUN_004328d0
-    00432300: cockpit_ckptutil.c_blitUnifiedSprite_FUN_00432300
-    00431f40: cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_00431f40
-    00432b60: cockpit_ckptutil.c_blitSpanBasedSpriteVerticallyClipped_FUN_00432b60
-    00432190: cockpit_ckptutil.c_blitRectangleClipped_FUN_00432190
-    00432a10: cockpit_ckptutil.c_blitVerticalColumn_FUN_00432a10
-    004326a0: cockpit_ckptutil.c_blitDualModeSprite_FUN_004326a0
-    00431d00: cockpit_ckptutil.c_blitSpanBasedSprite_FUN_00431d00
-    00432860: cockpit_ckptutil.c_copyBitmapRegion_FUN_00432860
-    ... and 581 more
-
   suspect_float (229 functions):
     00519b50: shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
     0051d520: shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520
@@ -290,6 +278,32 @@ FUNCTIONS BY SUSPECT TYPE
     0054bd60: cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_FUN_0054bd60
     0054c1e0: cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_0054c1e0
     ... and 621 more
+
+  callind_esp_no_frame_lost (373 functions):
+    00432540: cockpit_ckptutil.c_blitSimpleSprite_FUN_00432540
+    004328d0: cockpit_ckptutil.c_blitHorizontallyClippedSprite_FUN_004328d0
+    00432300: cockpit_ckptutil.c_blitUnifiedSprite_FUN_00432300
+    00431f40: cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_00431f40
+    00432b60: cockpit_ckptutil.c_blitSpanBasedSpriteVerticallyClipped_FUN_00432b60
+    00432190: cockpit_ckptutil.c_blitRectangleClipped_FUN_00432190
+    00432a10: cockpit_ckptutil.c_blitVerticalColumn_FUN_00432a10
+    004326a0: cockpit_ckptutil.c_blitDualModeSprite_FUN_004326a0
+    00431d00: cockpit_ckptutil.c_blitSpanBasedSprite_FUN_00431d00
+    00432860: cockpit_ckptutil.c_copyBitmapRegion_FUN_00432860
+    ... and 363 more
+
+  callind_esp_no_frame (282 functions):
+    0054ae70: cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70
+    0051d520: shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520
+    005d3440: shape_superopt.cpp_CObj_setStateFlags_FUN_005d3440
+    005d2650: shape_superopt.cpp_CObj_copyFrom_FUN_005d2650
+    005d34d0: shape_superopt.cpp_CObj_setStateFlagIfCondition_FUN_005d34d0
+    005d3e40: shape_superopt.cpp_CObj_projectAllPlanarUVs_FUN_005d3e40
+    005d1230: shape_superopt.cpp_CPoly_hasCentroidIntersection_FUN_005d1230
+    005d3db0: shape_superopt.cpp_CObj_flipAllPolyNormals_FUN_005d3db0
+    005d30c0: shape_superopt.cpp_CObj_findAndRemovePolygonsUsingVertex_FUN_005d30c0
+    005d3590: shape_superopt.cpp_CObj_setStateFlagFromAttrib_FUN_005d3590
+    ... and 272 more
 
   unresolved_funcptr (254 functions):
     005d2650: shape_superopt.cpp_CObj_copyFrom_FUN_005d2650

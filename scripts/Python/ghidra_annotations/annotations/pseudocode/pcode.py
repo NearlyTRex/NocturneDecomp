@@ -229,8 +229,16 @@ def extract_function_pcode(program, func, track_esp=True):
                     operands_str.startswith('dword ptr') or
                     any('CALLIND' in pl for pl in pcode_lines)
                 )
+                is_any_call = 'CALL' in mnemonic.upper() and not mnemonic.upper().startswith('CALLIND')
+
+                # For CALL instructions: the -4 for pushing return address is immediately
+                # followed by the callee's RET which pops it (+4). Net effect on ESP after
+                # the call returns is 0. We track this by adding delta, then +4 for RET.
                 entry['esp_delta'] = delta
                 esp_offset += delta
+                if is_any_call or is_indirect_call:
+                    # Account for callee's RET popping the return address
+                    esp_offset += 4
                 entry['esp_offset'] = esp_offset
                 if certainty == 'unknown' and delta == 0:
 
@@ -241,6 +249,13 @@ def extract_function_pcode(program, func, track_esp=True):
                         entry['esp_certainty'] = certainty
                 else:
                     entry['esp_certainty'] = certainty
+
+                # After RET/RETN or unconditional JMP, the next instruction in address
+                # order is NOT a continuation - it's either dead code or a jump target
+                # from elsewhere. Reset ESP tracking to avoid polluting subsequent instructions.
+                if mnemonic.upper() in ('RET', 'RETN', 'JMP'):
+                    esp_tracking_lost = True
+                    lost_at_addr = addr
         result.append(entry)
     return result
 

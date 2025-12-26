@@ -384,17 +384,18 @@ LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
-@00432d88 [ESP:+4]  # MOV CL, byte ptr [ECX]
+@00432d88 [ESP:???]!!  # MOV CL, byte ptr [ECX]
 LOAD (unique,0xb800,1) = (const,0x1a1,4), (register,0x4,4) /* ECX */
 COPY (register,0x4,1) = (unique,0xb800,1)
 
-@00432d8a [ESP:+4]  # MOV byte ptr [EDX], CL
+@00432d8a [ESP:???]!!  # MOV byte ptr [EDX], CL
 COPY (unique,0x5080,1) = (register,0x4,1)
 STORE (const,0x1a1,4), (register,0x8,4) /* EDX */, (unique,0x5080,1)
 
-@00432d8c [ESP:+4]  # JMP 0x00432d5c
+@00432d8c [ESP:???]!!  # JMP 0x00432d5c
 BRANCH (ram,0x432d5c,4)
 
 # ============================================================================
 # Summary: 56 instructions, 270 P-code ops
+# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

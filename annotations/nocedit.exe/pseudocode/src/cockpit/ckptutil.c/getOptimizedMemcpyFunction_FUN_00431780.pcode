@@ -36,14 +36,15 @@ LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
-@0043178f [ESP:+4]  # MOV EAX, 0x431528
+@0043178f [ESP:???]!!  # MOV EAX, 0x431528
 COPY (register,0x0,4) /* EAX */ = (const,0x431528,4)
 
-@00431794 [ESP:+8](+4)  # RET
+@00431794 [ESP:???]!!  # RET
 LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
 # ============================================================================
 # Summary: 6 instructions, 19 P-code ops
+# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

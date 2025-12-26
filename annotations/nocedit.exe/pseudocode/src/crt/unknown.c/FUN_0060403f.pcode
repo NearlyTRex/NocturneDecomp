@@ -404,12 +404,12 @@ COPY (unique,0x20a80,4) = (register,0x8,4) /* EDX */
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x20a80,4)
 
-@006040d0 [ESP:-12](-4)  # CALL 0x006040d7
+@006040d0 [ESP:-8](-4)  # CALL 0x006040d7
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x6040d5,4)
 CALL (ram,0x6040d7,4)
 
-@006040d5 [ESP:-12]  # JMP 0x0060411c
+@006040d5 [ESP:-8]  # JMP 0x0060411c
 BRANCH (ram,0x60411c,4)
 
 # ============================================================================

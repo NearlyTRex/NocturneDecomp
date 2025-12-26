@@ -13,13 +13,13 @@
 #
 # ============================================================================
 
-@00601620 [ESP:-4](-4)  # CALL dword ptr [0x00684c84]
+@00601620 [ESP:+0](-4)  # CALL dword ptr [0x00684c84]
 COPY (unique,0x31a80,4) = (ram,0x684c84,4)
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x601626,4)
 CALLIND (unique,0x31a80,4)
 
-@00601626 [ESP:-4]  # MOV EAX, EAX
+@00601626 [ESP:+0]  # MOV EAX, EAX
 COPY (register,0x0,4) /* EAX */ = (register,0x0,4) /* EAX */
 
 # ============================================================================

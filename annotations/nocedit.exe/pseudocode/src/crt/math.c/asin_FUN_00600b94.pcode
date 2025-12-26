@@ -54,12 +54,12 @@ COPY (register,0x1160,10) = (register,0x1170,10)
 @00600b9c [ESP:+0]  # MOV AL, 0x2
 COPY (register,0x0,1) = (const,0x2,1)
 
-@00600b9e [ESP:-4](-4)  # CALL 0x0060710c
+@00600b9e [ESP:+0](-4)  # CALL 0x0060710c
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x600ba3,4)
 CALL (ram,0x60710c,4)
 
-@00600ba3 [ESP:-4]  # CMP AL, 0x0
+@00600ba3 [ESP:+0]  # CMP AL, 0x0
 INT_LESS (register,0x200,1) = (register,0x0,1), (const,0x0,1)
 INT_SBORROW (register,0x20b,1) = (register,0x0,1), (const,0x0,1)
 INT_SUB (unique,0x32800,1) = (register,0x0,1), (const,0x0,1)
@@ -70,22 +70,22 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,1)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@00600ba5 [ESP:-4]  # JNZ 0x00600bae
+@00600ba5 [ESP:+0]  # JNZ 0x00600bae
 BOOL_NEGATE (unique,0xbe00,1) = (register,0x206,1)
 CBRANCH (ram,0x600bae,4), (unique,0xbe00,1)
 
-@00600ba7 [ESP:-4]  # FXCH
+@00600ba7 [ESP:+0]  # FXCH
 COPY (register,0x10ac,4) = (const,0x600ba7,4)
 COPY (unique,0x61b80,10) = (register,0x1100,10)
 COPY (register,0x1100,10) = (register,0x1110,10)
 COPY (register,0x1110,10) = (unique,0x61b80,10)
 
-@00600ba9 [ESP:-8](-4)  # CALL 0x006013b1
+@00600ba9 [ESP:+0](-4)  # CALL 0x006013b1
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x600bae,4)
 CALL (ram,0x6013b1,4)
 
-@00600bae [ESP:-4](+4)  # RET
+@00600bae [ESP:+4](+4)  # RET
 LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)

@@ -13,15 +13,15 @@
 #
 # ============================================================================
 
-@0060ce3c [ESP:-4](-4)  # CALL 0x0060cdbc
+@0060ce3c [ESP:+0](-4)  # CALL 0x0060cdbc
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x60ce41,4)
 CALL (ram,0x60cdbc,4)
 
-@0060ce41 [ESP:-4]  # MOV EAX, [0x00685500]
+@0060ce41 [ESP:+0]  # MOV EAX, [0x00685500]
 COPY (register,0x0,4) /* EAX */ = (ram,0x685500,4)
 
-@0060ce46 [ESP:+0](+4)  # RET
+@0060ce46 [ESP:+4](+4)  # RET
 LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)

@@ -423,22 +423,23 @@ LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
-@0052b301 [ESP:+4]  # MOV EAX, dword ptr [ESP + 0x10]
+@0052b301 [ESP:???]!!  # MOV EAX, dword ptr [ESP + 0x10]
 INT_ADD (unique,0x3b00,4) = (const,0x10,4), (register,0x10,4) /* ESP */
 LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3b00,4)
 COPY (register,0x0,4) /* EAX */ = (unique,0xb900,4)
 
-@0052b305 [ESP:+4]  # MOV EDI, EDX
+@0052b305 [ESP:???]!!  # MOV EDI, EDX
 COPY (register,0x1c,4) /* EDI */ = (register,0x8,4) /* EDX */
 
-@0052b307 [ESP:+4]  # MOV dword ptr [ESP + 0xc], EAX
+@0052b307 [ESP:???]!!  # MOV dword ptr [ESP + 0xc], EAX
 INT_ADD (unique,0x3b00,4) = (const,0xc,4), (register,0x10,4) /* ESP */
 COPY (unique,0x5180,4) = (register,0x0,4) /* EAX */
 STORE (const,0x1a1,4), (unique,0x3b00,4), (unique,0x5180,4)
 
-@0052b30b [ESP:+4]  # JMP 0x0052b2e7
+@0052b30b [ESP:???]!!  # JMP 0x0052b2e7
 BRANCH (ram,0x52b2e7,4)
 
 # ============================================================================
 # Summary: 55 instructions, 316 P-code ops
+# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

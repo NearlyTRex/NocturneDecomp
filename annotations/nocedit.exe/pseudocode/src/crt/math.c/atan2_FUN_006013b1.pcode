@@ -48,16 +48,17 @@ COPY (register,0x1160,10) = (register,0x1170,10)
 @006013be [ESP:+0]  # JMP 0x006013c5
 BRANCH (ram,0x6013c5,4)
 
-@006013c0 [ESP:-4](-4)  # CALL 0x00608e14
+@006013c0 [ESP:???]!!  # CALL 0x00608e14
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x6013c5,4)
 CALL (ram,0x608e14,4)
 
-@006013c5 [ESP:+0](+4)  # RET
+@006013c5 [ESP:???]!!  # RET
 LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
 # ============================================================================
 # Summary: 7 instructions, 31 P-code ops
+# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

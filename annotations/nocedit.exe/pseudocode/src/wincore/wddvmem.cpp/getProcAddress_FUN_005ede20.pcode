@@ -33,13 +33,13 @@ COPY (unique,0x20a80,4) = (register,0x4,4) /* ECX */
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x20a80,4)
 
-@005ede2a [ESP:-12](-4)  # CALL dword ptr CS:[0x6115bc]
+@005ede2a [ESP:-8](-4)  # CALL dword ptr CS:[0x6115bc]
 COPY (unique,0x31a80,4) = (ram,0x6115bc,4)
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x5ede31,4)
 CALLIND (unique,0x31a80,4)
 
-@005ede31 [ESP:-8](+4)  # RET
+@005ede31 [ESP:-4](+4)  # RET
 LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)

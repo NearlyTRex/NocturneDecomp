@@ -1,7 +1,7 @@
 {
   "complexity": {
     "assembly_lines": 153,
-    "complexity_score": 289,
+    "complexity_score": 294,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 15,
@@ -10,6 +10,7 @@
     "suspect_types": [
       "badspacebase",
       "callind_esp_no_frame",
+      "callind_esp_no_frame_lost",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -368,6 +369,8 @@
       "callind_address": "005b0a3e",
       "callind_assembly": "CALL dword ptr [EAX]",
       "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
+      "esp_at_callind": -40,
+      "expected_esp_offset": -36,
       "fix_address": "005b0a40",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 36,
@@ -380,12 +383,12 @@
       "call_target_value": "EAX",
       "callind_address": "005b0bdf",
       "callind_assembly": "CALL dword ptr [EAX]",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
+      "description": "CALLIND with lost ESP tracking (branching code)",
       "fix_address": "005b0be1",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 36,
       "text": "CALLIND at 005b0bdf, ADD ESP at 005b0be1 (no EBP frame)",
-      "type": "callind_esp_no_frame"
+      "type": "callind_esp_no_frame_lost"
     }
   ],
   "vtable_info": {

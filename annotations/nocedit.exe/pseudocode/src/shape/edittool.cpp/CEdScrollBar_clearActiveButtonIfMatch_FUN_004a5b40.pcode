@@ -38,7 +38,7 @@ LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
-@004a5b4d [ESP:+4]  # XOR ECX, ECX
+@004a5b4d [ESP:???]!!  # XOR ECX, ECX
 COPY (register,0x200,1) = (const,0x0,1)
 COPY (register,0x20b,1) = (const,0x0,1)
 INT_XOR (register,0x4,4) /* ECX */ = (register,0x4,4) /* ECX */, (register,0x4,4) /* ECX */
@@ -49,14 +49,15 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@004a5b4f [ESP:+4]  # MOV dword ptr [0x02cf2b00], ECX
+@004a5b4f [ESP:???]!!  # MOV dword ptr [0x02cf2b00], ECX
 COPY (ram,0x2cf2b00,4) = (register,0x4,4) /* ECX */
 
-@004a5b55 [ESP:+8](+4)  # RET
+@004a5b55 [ESP:???]!!  # RET
 LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
 # ============================================================================
 # Summary: 7 instructions, 30 P-code ops
+# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================
