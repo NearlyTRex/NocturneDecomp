@@ -753,6 +753,7 @@ def export_functions(currentProgram, path):
         func_conv = f.getCallingConventionName()
         func_inline = f.isInline()
         func_variadic = f.hasVarArgs()
+        func_noreturn = f.hasNoReturn()
         func_thunked = f.isThunk()
         func_thunk_target = str(f.getThunkedFunction(True).getEntryPoint()) if f.isThunk() and f.getThunkedFunction(True) else None
         func_cmt = f.getComment()
@@ -792,6 +793,8 @@ def export_functions(currentProgram, path):
             func_data["inline"] = True
         if func_variadic:
             func_data["variadic"] = True
+        if func_noreturn:
+            func_data["noreturn"] = True
 
         # Handle thunk information
         final_thunked = func_thunked or func_existing_thunk.get("thunk", False)
