@@ -480,7 +480,7 @@ def export_pseudocode(currentProgram, path):
 
     # Load function conventions for CALLIND stdcall handling
     timer.start_phase("Load function conventions")
-    func_conventions_path = os.path.join(path, "data_types", "func_conventions.json")
+    func_conventions_path = os.path.join(path, "func_conventions", "func_conventions.json")
     func_conventions = None
     if os.path.exists(func_conventions_path):
         try:
