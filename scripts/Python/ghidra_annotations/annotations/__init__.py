@@ -21,6 +21,7 @@ from ghidra_annotations.annotations.symbols_label import *
 from ghidra_annotations.annotations.symbols_namespace import *
 from ghidra_annotations.annotations.type_info import *
 from ghidra_annotations.annotations.vtables import *
+from ghidra_annotations.annotations.switch_tables import *
 
 def delete_annotations(currentProgram, path):
     delete_data_types(currentProgram, path)
@@ -66,6 +67,7 @@ def export_annotations(currentProgram, folder):
     export_metadata(currentProgram, folder)
     export_type_info(currentProgram, folder)
     export_vtables(currentProgram, folder)
+    export_switch_tables(currentProgram, folder)
     export_pseudocode(currentProgram, folder)
 
 def import_annotations(currentProgram, folder):
