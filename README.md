@@ -11,13 +11,13 @@ This project uses [Ghidra](https://ghidra-sre.org/) to decompile and analyze the
 ## Decompilation Progress
 
 ### Overall Completion
-![Completion Status](annotations/nocedit.exe/completion_pie.svg)
+![Completion Status](annotations/nocedit.exe/reports/completion_pie.svg)
 
 ### Virtual File Progress
-![File Progress](annotations/nocedit.exe/files_progress.svg)
+![File Progress](annotations/nocedit.exe/reports/files_progress.svg)
 
 ### Suspect Pattern Distribution
-![Suspect Breakdown](annotations/nocedit.exe/suspect_breakdown.svg)
+![Suspect Breakdown](annotations/nocedit.exe/reports/suspect_breakdown.svg)
 
 *Graphs are automatically generated during annotation export. "Clean" functions have no decompiler artifacts (extraout_, unaff_, BADSPACEBASE, etc.) and represent high-confidence decompilation output.*
 

@@ -1038,10 +1038,12 @@ def analyze_crt_functions(program):
     project_location = str(program.getDomainFile().getProjectLocator().getProjectDir())
     # Go up from projects/NocturneEdit.rep to the repo root
     repo_root = os.path.dirname(os.path.dirname(project_location))
-    annotations_dir = os.path.join(repo_root, 'annotations', 'nocedit.exe')
+    reports_dir = os.path.join(repo_root, 'annotations', 'nocedit.exe', 'reports')
+    if not os.path.exists(reports_dir):
+        os.makedirs(reports_dir)
 
     # Save text report
-    txt_report_path = os.path.join(annotations_dir, 'crt_analysis_report.txt')
+    txt_report_path = os.path.join(reports_dir, 'crt_analysis_report.txt')
     try:
         with open(txt_report_path, 'w') as f:
             f.write('\n'.join(output_lines))
@@ -1050,7 +1052,7 @@ def analyze_crt_functions(program):
         log("\nFailed to save text report: %s" % str(e))
 
     # Save detailed JSON report
-    json_report_path = os.path.join(annotations_dir, 'crt_analysis.json')
+    json_report_path = os.path.join(reports_dir, 'crt_analysis.json')
     try:
         # Convert asm_patterns for JSON serialization (remove non-serializable items)
         json_results = []

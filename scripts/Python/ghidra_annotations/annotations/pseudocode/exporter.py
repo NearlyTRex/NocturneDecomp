@@ -675,7 +675,9 @@ def export_pseudocode(currentProgram, path):
     # Generate analysis report
     timer.start_phase("Generate analysis report")
     log_info("Generating analysis report...")
-    generate_analysis_report(pseudocode_src_dir, path)
+    reports_dir = os.path.join(abs_path, "reports")
+    make_dirs(reports_dir)
+    generate_analysis_report(pseudocode_src_dir, reports_dir)
     timer.end_phase()
 
     # Second pass: Update JSON files with vtable indirect caller analysis
