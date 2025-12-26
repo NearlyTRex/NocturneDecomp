@@ -54,6 +54,9 @@ from ghidra_annotations.annotations.pseudocode.stack_patterns import (
 from ghidra_annotations.annotations.pseudocode.vtable_calls import (
     update_function_json_files as update_vtable_indirect_callers
 )
+from ghidra_annotations.annotations.pseudocode.pcode import (
+    load_switch_table_data, load_noreturn_functions
+)
 
 
 class PhaseTimer:
@@ -453,6 +456,28 @@ def export_pseudocode(currentProgram, path):
         log_info("No vtables.json found at %s - skipping vtable analysis" % vtables_json_path)
     timer.end_phase()
 
+    # Load switch table data for CFG-aware ESP tracking
+    timer.start_phase("Load switch table data")
+    switch_tables_json_path = os.path.join(path, "switch_tables", "switch_tables.json")
+    switch_targets = None
+    if os.path.exists(switch_tables_json_path):
+        switch_targets = load_switch_table_data(switch_tables_json_path)
+        log_info("Loaded switch table data: %d switch statements" % len(switch_targets))
+    else:
+        log_info("No switch_tables.json found at %s - switch target tracking disabled" % switch_tables_json_path)
+    timer.end_phase()
+
+    # Load noreturn function data for CFG-aware ESP tracking
+    timer.start_phase("Load noreturn function data")
+    functions_dir = os.path.join(path, "functions")
+    noreturn_addrs = None
+    if os.path.exists(functions_dir):
+        noreturn_addrs = load_noreturn_functions(functions_dir)
+        log_info("Loaded noreturn function data: %d noreturn functions" % len(noreturn_addrs))
+    else:
+        log_info("No functions directory found at %s - noreturn tracking disabled" % functions_dir)
+    timer.end_phase()
+
     # Collect all non-external functions first
     timer.start_phase("Collect functions")
     log_info("Collecting functions for parallel processing")
@@ -484,7 +509,7 @@ def export_pseudocode(currentProgram, path):
         worker = DecompileWorker(
             func, currentProgram, decompiler_tls,
             symbol_table, reference_manager, program_listing,
-            string_map, global_symbols, vtable_data)
+            string_map, global_symbols, vtable_data, switch_targets, noreturn_addrs)
         futures.append(executor.submit(worker))
 
     # Collect raw decompilation results

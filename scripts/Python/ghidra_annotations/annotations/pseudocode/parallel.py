@@ -116,7 +116,8 @@ class DecompileWorker:
 
     def __init__(self, func, currentProgram, decompiler_tls,
                  symbol_table, reference_manager, program_listing,
-                 string_map, global_symbols, vtable_data=None):
+                 string_map, global_symbols, vtable_data=None, switch_targets=None,
+                 noreturn_addrs=None):
         self.func = func
         self.currentProgram = currentProgram
         self.decompiler_tls = decompiler_tls
@@ -126,6 +127,8 @@ class DecompileWorker:
         self.string_map = string_map
         self.global_symbols = global_symbols
         self.vtable_data = vtable_data
+        self.switch_targets = switch_targets
+        self.noreturn_addrs = noreturn_addrs
 
     def __call__(self):
         """Execute all Java-heavy operations and return results."""
@@ -159,7 +162,7 @@ class DecompileWorker:
             pcode_start = time.time()
             result.pcode_data = extract_function_pcode(self.currentProgram, func)
             # Apply CFG-aware ESP tracking to resolve ESP values across branches
-            apply_cfg_esp_tracking(result.pcode_data)
+            apply_cfg_esp_tracking(result.pcode_data, self.switch_targets, self.noreturn_addrs)
             result.pcode_time = time.time() - pcode_start
 
             # === JAVA-HEAVY: Function metadata (xrefs, globals, calls) ===

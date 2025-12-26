@@ -43,11 +43,12 @@ def parse_pcode_file(filepath):
     # Format: @<address> [ESP:offset](delta)<certainty>  # <assembly>
     # ESP can be numeric or ??? for unknown
     # Certainty markers: none=known, ?=computed, ~=cfg_resolved, !!=lost, !?=conflict, ??=unreachable
+    #                    ~!=ebp_frame_conflict, ~>=frame_recovered
     instr_pattern = re.compile(
         r'^@([0-9a-fA-F]+)\s+'
         r'\[ESP:([+-]?\d+|\?\?\?)\]'  # ESP value or ???
         r'(?:\(([+-]?\d+)\))?'  # Optional delta
-        r'([?~!]+)?'  # Optional certainty marker
+        r'([?~!>]+)?'  # Optional certainty marker (added > for frame_recovered)
         r'\s+#\s+(.+)$'
     )
 
@@ -67,6 +68,10 @@ def parse_pcode_file(filepath):
                 certainty = 'lost'
             elif certainty_marker == '!?':
                 certainty = 'conflict'
+            elif certainty_marker == '~!':
+                certainty = 'ebp_frame_conflict'
+            elif certainty_marker == '~>':
+                certainty = 'frame_recovered'
             elif certainty_marker == '??':
                 certainty = 'unreachable'
             else:
@@ -200,15 +205,21 @@ def generate_report(pcode_dir):
                 func_unknown_count += 1
 
         # Determine worst certainty in function
+        # Order: lost > conflict > ebp_frame_conflict > unreachable > frame_recovered > cfg_resolved > computed > known
         if func_certainties['lost'] > 0:
             worst = 'lost'
             files_with_lost.append((filepath, func_name, func_certainties['lost']))
         elif func_certainties['conflict'] > 0:
             worst = 'conflict'
             files_with_conflict.append((filepath, func_name, func_certainties['conflict']))
+        elif func_certainties['ebp_frame_conflict'] > 0:
+            worst = 'ebp_frame_conflict'
+            # Not added to problematic list - this is expected behavior
         elif func_certainties['unreachable'] > 0:
             worst = 'unreachable'
             files_with_unreachable.append((filepath, func_name, func_certainties['unreachable']))
+        elif func_certainties['frame_recovered'] > 0:
+            worst = 'frame_recovered'
         elif func_certainties['cfg_resolved'] > 0:
             worst = 'cfg_resolved'
         elif func_certainties['computed'] > 0:
@@ -242,15 +253,15 @@ def generate_report(pcode_dir):
     print(f"\nTotal instructions analyzed: {total_instructions}")
     print(f"Instructions with ESP=??? (unknown value): {esp_unknown_count} ({esp_unknown_count/total_instructions*100:.2f}%)")
     print("\nCertainty breakdown:")
-    for cert in ['known', 'computed', 'cfg_resolved', 'lost', 'conflict', 'unreachable']:
+    for cert in ['known', 'computed', 'cfg_resolved', 'ebp_frame_conflict', 'frame_recovered', 'lost', 'conflict', 'unreachable']:
         count = certainty_counts.get(cert, 0)
         pct = (count / total_instructions * 100) if total_instructions > 0 else 0
-        print(f"  {cert:15s}: {count:8d} ({pct:5.2f}%)")
+        print(f"  {cert:20s}: {count:8d} ({pct:5.2f}%)")
 
     print("\n" + "=" * 80)
     print("FUNCTIONS BY WORST CERTAINTY")
     print("=" * 80)
-    for cert in ['known', 'computed', 'cfg_resolved', 'lost', 'conflict', 'unreachable']:
+    for cert in ['known', 'computed', 'cfg_resolved', 'ebp_frame_conflict', 'frame_recovered', 'lost', 'conflict', 'unreachable']:
         funcs = functions_by_worst_certainty.get(cert, [])
         print(f"\n{cert}: {len(funcs)} functions")
 
@@ -428,13 +439,25 @@ def generate_report(pcode_dir):
 
     total_lost = certainty_counts.get('lost', 0)
     total_conflict = certainty_counts.get('conflict', 0)
+    total_ebp_frame_conflict = certainty_counts.get('ebp_frame_conflict', 0)
+    total_frame_recovered = certainty_counts.get('frame_recovered', 0)
     total_unreachable = certainty_counts.get('unreachable', 0)
+    # Only count real conflicts as problematic (not ebp_frame_conflict which is expected)
     total_problematic = total_lost + total_conflict + total_unreachable
 
     print(f"\nTotal problematic instructions: {total_problematic} ({total_problematic/total_instructions*100:.2f}%)")
     print(f"  - Lost: {total_lost}")
-    print(f"  - Conflict: {total_conflict}")
+    print(f"  - Conflict (real): {total_conflict}")
     print(f"  - Unreachable: {total_unreachable}")
+
+    if total_ebp_frame_conflict > 0:
+        print(f"\nEBP-frame conflicts (expected, not problematic): {total_ebp_frame_conflict}")
+        print("  - These occur in functions using EBP as frame pointer")
+        print("  - ESP varies but locals accessed via [EBP+offset] - safe")
+
+    if total_frame_recovered > 0:
+        print(f"\nFrame-recovered instructions: {total_frame_recovered}")
+        print("  - ESP tracking recovered after frame reset (MOV ESP, EBP)")
 
     if len(problematic_callinds) > 0:
         print(f"\n1. INDIRECT CALLS: {len(problematic_callinds)} CALLINDs cause ESP tracking issues")
@@ -444,7 +467,7 @@ def generate_report(pcode_dir):
     if total_conflict > 0:
         print(f"\n2. CFG CONFLICTS: {total_conflict} instructions have conflicting ESP values")
         print("   - Different code paths reach the same point with different ESP")
-        print("   - May indicate unusual control flow or analysis bugs")
+        print("   - NOT in EBP-frame functions - may need investigation")
 
     if total_unreachable > 0:
         print(f"\n3. UNREACHABLE CODE: {total_unreachable} instructions marked unreachable")

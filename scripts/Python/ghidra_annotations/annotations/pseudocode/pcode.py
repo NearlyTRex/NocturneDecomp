@@ -35,6 +35,92 @@ ESP_ADJUSTMENTS = {
 }
 
 
+def load_switch_table_data(switch_tables_json_path):
+    """Load switch table data from JSON and build lookup structure.
+
+    Args:
+        switch_tables_json_path: Path to switch_tables.json file
+
+    Returns:
+        Dictionary mapping switch instruction addresses to lists of target addresses.
+        Addresses are normalized to lowercase 8-char hex strings.
+        Example: {'0040ea67': ['0040ea6e', '0040ea88', ...]}
+    """
+    import json
+
+    switch_targets = {}
+
+    try:
+        with open(switch_tables_json_path, 'r') as f:
+            data = json.load(f)
+    except Exception:
+        return switch_targets
+
+    for switch_entry in data.get('switch_tables', []):
+        switch_addr = switch_entry.get('switch_addr', '').lower()
+        # Normalize address to 8 chars (remove 0x prefix if present)
+        if switch_addr.startswith('0x'):
+            switch_addr = switch_addr[2:]
+        switch_addr = switch_addr.zfill(8)
+
+        if not switch_addr:
+            continue
+
+        # Extract target addresses
+        targets = []
+        for target in switch_entry.get('targets', []):
+            target_addr = target.get('addr', '').lower()
+            if target_addr.startswith('0x'):
+                target_addr = target_addr[2:]
+            target_addr = target_addr.zfill(8)
+            if target_addr:
+                targets.append(target_addr)
+
+        if targets:
+            switch_targets[switch_addr] = targets
+
+    return switch_targets
+
+
+def load_noreturn_functions(functions_dir):
+    """Load noreturn function addresses from functions JSON files.
+
+    Args:
+        functions_dir: Path to the functions/ directory containing bucket files
+
+    Returns:
+        Set of noreturn function addresses (normalized to lowercase 8-char hex).
+        Example: {'00506f10', '005f3920', ...}
+    """
+    import os
+    import json
+    import glob
+
+    noreturn_addrs = set()
+
+    # Find all function bucket files
+    pattern = os.path.join(functions_dir, 'functions_bucket_*.json')
+    bucket_files = glob.glob(pattern)
+
+    for bucket_file in bucket_files:
+        try:
+            with open(bucket_file, 'r') as f:
+                functions = json.load(f)
+        except Exception:
+            continue
+
+        for func in functions:
+            if func.get('noreturn'):
+                addr = func.get('addr', '').lower()
+                if addr.startswith('0x'):
+                    addr = addr[2:]
+                addr = addr.zfill(8)
+                if addr:
+                    noreturn_addrs.add(addr)
+
+    return noreturn_addrs
+
+
 def format_varnode(vn):
     """Format a varnode for P-code output.
 
@@ -356,6 +442,8 @@ def generate_pcode_file_content(func_name, func_addr, func_signature, pcode_data
         lines.append("#         Delta markers: (+n) ESP increased, (-n) ESP decreased")
         lines.append("#         Certainty:  no marker = known, ? = computed, ~ = cfg_resolved")
         lines.append("#                     !! = lost, !? = conflict, ?? = unreachable")
+        lines.append("#                     ~! = ebp_frame_conflict (expected in EBP-frame functions)")
+        lines.append("#                     ~> = frame_recovered (ESP recovered after frame reset)")
     else:
         lines.append("# Format: @<address>  # <assembly>")
     # lines.append("#         OPCODE (output) = (input1), (input2), ...")
@@ -409,6 +497,11 @@ def generate_pcode_file_content(func_name, func_addr, func_signature, pcode_data
             elif certainty == 'conflict':
                 esp_str += "!?"
                 uncertain_esp_count += 1
+            elif certainty == 'ebp_frame_conflict':
+                esp_str += "~!"
+                # Don't count as uncertain - expected in EBP-frame functions
+            elif certainty == 'frame_recovered':
+                esp_str += "~>"
             elif certainty == 'unreachable':
                 esp_str += "??"
             elif certainty == 'unknown' and delta == 0:
@@ -505,7 +598,7 @@ def _is_call(mnemonic):
     return 'CALL' in mnemonic.upper()
 
 
-def apply_cfg_esp_tracking(pcode_data):
+def apply_cfg_esp_tracking(pcode_data, switch_targets=None, noreturn_addrs=None):
     """Apply CFG-aware ESP tracking to pcode data.
 
     This improves on linear ESP tracking by following control flow:
@@ -516,6 +609,10 @@ def apply_cfg_esp_tracking(pcode_data):
 
     Args:
         pcode_data: List from extract_function_pcode() with linear ESP tracking
+        switch_targets: Optional dict mapping switch instruction addresses to
+                       lists of target addresses (from switch_tables.json)
+        noreturn_addrs: Optional set of function addresses that never return
+                       (from functions.json with noreturn=true)
 
     Returns:
         Modified pcode_data with improved ESP tracking (modified in place)
@@ -609,10 +706,40 @@ def apply_cfg_esp_tracking(pcode_data):
                     edges[block_addr].append((next_addr, 'fall_through'))
         else:
             # Regular instruction - fall through to next block if exists
-            if last_idx + 1 < len(pcode_data):
+            # But check if it's a CALL to a noreturn function
+            is_noreturn_call = False
+            if _is_call(mnemonic) and noreturn_addrs:
+                call_target = _parse_jump_target(last_entry['assembly'])
+                if call_target and call_target in noreturn_addrs:
+                    is_noreturn_call = True
+
+            if not is_noreturn_call and last_idx + 1 < len(pcode_data):
                 next_addr = pcode_data[last_idx + 1]['address'].lower().zfill(8)
                 if next_addr in blocks:
                     edges[block_addr].append((next_addr, 'fall_through'))
+
+    # Step 3b: Add edges for switch/jump table targets
+    # Use switch_targets data from Ghidra if available, otherwise skip
+    if switch_targets:
+        for block_addr, indices in blocks.items():
+            if not indices:
+                continue
+            last_idx = indices[-1]
+            last_entry = pcode_data[last_idx]
+
+            # Check if block ends with indirect jump (BRANCHIND)
+            has_branchind = any('BRANCHIND' in pl for pl in last_entry.get('pcode', []))
+            if not has_branchind:
+                continue
+
+            # Look up switch targets for this instruction address
+            switch_addr = last_entry['address'].lower().zfill(8)
+            if switch_addr in switch_targets:
+                # Add edges to all switch case targets
+                for target_addr in switch_targets[switch_addr]:
+                    target_normalized = target_addr.lower().zfill(8)
+                    if target_normalized in blocks:
+                        edges[block_addr].append((target_normalized, 'switch_case'))
 
     # Step 4: Compute ESP at start of each block using dataflow analysis
     # esp_in[block_addr] = ESP value at block entry (None = unknown/conflict)
@@ -622,12 +749,19 @@ def apply_cfg_esp_tracking(pcode_data):
 
     # Track EBP frame pointer value (ESP when MOV EBP, ESP was executed)
     # We detect this by scanning for the frame setup instruction
+    # Also track if this is an EBP-frame function (uses EBP as frame pointer)
     ebp_frame_value = None
-    for entry in pcode_data:
+    is_ebp_frame = False
+    for idx, entry in enumerate(pcode_data):
         asm = entry.get('assembly', '')
-        if 'MOV EBP, ESP' in asm.upper().replace(',', ', '):
+        # Normalize whitespace for comparison
+        asm_normalized = ' '.join(asm.upper().replace(',', ' ').split())
+        if 'MOV EBP ESP' in asm_normalized:
             # Found frame setup - EBP was set to this ESP value
             ebp_frame_value = entry.get('esp_offset')
+            # Only consider it an EBP-frame if it's early in the function (first 20 instructions)
+            if idx < 20:
+                is_ebp_frame = True
             break
 
     # Compute ESP delta for each block, handling frame resets
@@ -677,8 +811,18 @@ def apply_cfg_esp_tracking(pcode_data):
 
         for block_addr in blocks:
             block_esp = esp_in[block_addr]
-            if not isinstance(block_esp, int) and block_addr != entry_addr:
-                continue  # Can't propagate from unknown or conflict
+            if block_esp is None and block_addr != entry_addr:
+                continue  # Can't propagate from unreached blocks
+
+            # Handle conflict blocks - propagate conflict to successors
+            if block_esp == 'conflict':
+                for target_addr, edge_type in edges[block_addr]:
+                    target_esp = esp_in[target_addr]
+                    if target_esp is None:
+                        # Successor hasn't been reached yet - mark as conflict
+                        esp_in[target_addr] = 'conflict'
+                        changed = True
+                continue
 
             # Compute ESP at block exit
             if isinstance(block_esp, int):
@@ -708,10 +852,43 @@ def apply_cfg_esp_tracking(pcode_data):
         block_esp = esp_in[block_addr]
 
         if block_esp == 'conflict':
-            # Mark all instructions in this block as having ESP conflict
+            # Handle conflict blocks - check for frame reset to resume tracking
+            # Use 'ebp_frame_conflict' for EBP-frame functions (conflicts are expected)
+            conflict_type = 'ebp_frame_conflict' if is_ebp_frame else 'conflict'
+
+            frame_reset_found = False
+            frame_reset_esp = None
+
             for idx in indices:
-                pcode_data[idx]['esp_offset'] = None
-                pcode_data[idx]['esp_certainty'] = 'conflict'
+                entry = pcode_data[idx]
+
+                if not frame_reset_found:
+                    # Still in conflict region - mark as conflict
+                    entry['esp_offset'] = None
+                    entry['esp_certainty'] = conflict_type
+
+                    # Check if this instruction is a frame reset
+                    if entry.get('esp_frame_restore') and ebp_frame_value is not None:
+                        # Found frame reset! Resume tracking from here
+                        frame_reset_found = True
+                        frame_reset_esp = ebp_frame_value
+                        # Update this instruction with the known ESP after reset
+                        entry['esp_offset'] = frame_reset_esp
+                        entry['esp_certainty'] = 'frame_recovered'
+                else:
+                    # After frame reset - we can track ESP again
+                    asm = entry.get('assembly', '')
+                    mnemonic = asm.split()[0] if asm else ''
+                    delta = entry.get('esp_delta', 0)
+
+                    if isinstance(delta, int):
+                        frame_reset_esp += delta
+                        if _is_call(mnemonic):
+                            frame_reset_esp += 4  # Callee's RET
+
+                    entry['esp_offset'] = frame_reset_esp
+                    entry['esp_certainty'] = 'frame_recovered'
+
         elif block_esp is None:
             # Unreachable block - no paths lead here
             for idx in indices:
