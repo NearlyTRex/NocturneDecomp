@@ -5,6 +5,7 @@ def scan_for_vtables(currentProgram, addr, max_scan = 100):
 
     # Get pointer size
     pointer_size = get_pointer_size(currentProgram)
+    function_manager = currentProgram.getFunctionManager()
 
     # Find vtables
     scan_addr = addr
@@ -18,11 +19,22 @@ def scan_for_vtables(currentProgram, addr, max_scan = 100):
         target_addr = read_pointer_at_address(currentProgram, scan_addr)
         if target_addr and is_function_address(currentProgram, target_addr):
             function_name = get_function_name(currentProgram, target_addr)
+
+            # Get calling convention
+            func = function_manager.getFunctionAt(target_addr)
+            convention = None
+            param_count = 0
+            if func:
+                convention = func.getCallingConventionName()
+                param_count = func.getParameterCount()
+
             functions.append({
                 "offset": i * pointer_size,
                 "ptr_addr": str(scan_addr),
                 "func_addr": str(target_addr),
-                "func_name": function_name
+                "func_name": function_name,
+                "convention": str(convention) if convention else None,
+                "param_count": param_count
             })
             scan_addr = scan_addr.add(pointer_size)
         else:
@@ -68,16 +80,39 @@ def export_vtables(currentProgram, path):
             else:
                 current_addr = current_addr.add(pointer_size)
 
-    # Create summary
-    vtables_data = {
-        "vtables": vtables,
-        "count": len(vtables),
-        "total_functions": sum(vt["count"] for vt in vtables)
+    # Analyze calling conventions across all vtables
+    convention_counts = {}
+    non_cdecl_funcs = []
+    for vt in vtables:
+        for func in vt["functions"]:
+            conv = func.get("convention", "__cdecl") or "__cdecl"
+            convention_counts[conv] = convention_counts.get(conv, 0) + 1
+            if conv != "__cdecl":
+                non_cdecl_funcs.append({
+                    "vtable_addr": vt["addr"],
+                    "offset": func["offset"],
+                    "func_addr": func["func_addr"],
+                    "func_name": func["func_name"],
+                    "convention": conv,
+                    "param_count": func.get("param_count", 0)
+                })
+
+    # Create convention analysis file
+    convention_analysis = {
+        "convention_summary": convention_counts,
+        "non_cdecl_count": len(non_cdecl_funcs),
+        "non_cdecl_functions": non_cdecl_funcs
     }
 
-    # Export vtables
-    log_info("Exporting %d vtables" % len(vtables))
-    save_json_file(path, "vtables", clean_data(vtables_data))
+    # Export convention analysis
+    log_info("Exporting vtable convention analysis (%d non-cdecl functions)" % len(non_cdecl_funcs))
+    save_json_file(path, "vtable_conventions", clean_data(convention_analysis))
+
+    # Export vtables using bucketed files (creates vtables_buckets.json metadata)
+    # Shift address right by 4 to skip always-zero alignment bits and get better distribution
+    log_info("Exporting %d vtables to bucketed files" % len(vtables))
+    save_json_files(path, "vtables", vtables,
+                    lambda vt: "%x" % (int(vt["addr"], 16) >> 4), bucket_bits=4)
     log_info("Export complete")
 
     # Print summary
