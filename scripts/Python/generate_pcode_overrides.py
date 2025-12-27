@@ -323,7 +323,7 @@ def process_json_file(json_path, suspect_types=None, apply=False, verbose=True):
         # Write back
         try:
             with open(json_path, 'w') as f:
-                json.dump(data, f, indent=2)
+                json.dump(data, f, indent=2, sort_keys=True)
             if verbose:
                 print("  Applied %d fix(es)" % len(fixes))
         except IOError as e:
