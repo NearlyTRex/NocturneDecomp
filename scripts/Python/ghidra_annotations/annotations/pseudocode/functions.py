@@ -3,6 +3,8 @@
 
 import os
 import re
+import json
+import glob
 from ghidra_annotations.util import resolve_data_type_name
 
 
@@ -396,11 +398,34 @@ def analyze_call_site(listing, call_addr, caller_func, uses_register_params=True
     }
 
 
-def load_vtable_data(vtables_json_path):
-    """Load vtable data from JSON and build lookup structures.
+def load_vtable_bucket_files(vtables_dir):
+    """Load raw vtable data from bucket JSON files.
 
     Args:
-        vtables_json_path: Path to vtables.json file
+        vtables_dir: Path to vtables directory containing vtables_bucket_*.json files
+
+    Returns:
+        List of vtable dictionaries from all bucket files
+    """
+    bucket_pattern = os.path.join(vtables_dir, 'vtables_bucket_*.json')
+    bucket_files = sorted(glob.glob(bucket_pattern))
+    vtables = []
+    for bucket_file in bucket_files:
+        try:
+            with open(bucket_file, 'r') as f:
+                bucket_data = json.load(f)
+            if isinstance(bucket_data, list):
+                vtables.extend(bucket_data)
+        except Exception:
+            continue
+    return vtables
+
+
+def load_vtable_data(vtables_dir):
+    """Load vtable data from bucket JSON files and build lookup structures.
+
+    Args:
+        vtables_dir: Path to vtables directory containing vtables_bucket_*.json files
 
     Returns:
         Dictionary with:
@@ -408,21 +433,15 @@ def load_vtable_data(vtables_json_path):
         - vtable_info: {vtable_addr -> {offset -> func_info}}
         - vtable_addrs: set of all vtable addresses (for quick lookup)
     """
-    import json
-
     result = {
         'func_to_vtables': {},
         'vtable_info': {},
         'vtable_addrs': set()
     }
 
-    try:
-        with open(vtables_json_path, 'r') as f:
-            data = json.load(f)
-    except Exception:
-        return result
+    vtables = load_vtable_bucket_files(vtables_dir)
 
-    for vtable in data.get('vtables', []):
+    for vtable in vtables:
         vtable_addr = vtable.get('addr', '').lower()
         if not vtable_addr:
             continue

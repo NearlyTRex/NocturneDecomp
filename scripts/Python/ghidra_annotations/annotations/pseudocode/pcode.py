@@ -858,6 +858,13 @@ def apply_cfg_esp_tracking(pcode_data, switch_targets=None, noreturn_addrs=None,
 
             # Account for CALL's return address being popped by callee
             if _is_call(mnemonic):
+                # CALL always pushes return address (-4), but esp_delta might be 0
+                # if tracking was lost during linear pass. Use known value.
+                call_push_delta = ESP_ADJUSTMENTS.get('CALL', -4)
+                if delta != call_push_delta:
+                    # esp_delta wasn't set correctly (e.g., tracking was lost)
+                    # Adjust total_delta to account for the missing push
+                    total_delta += call_push_delta - delta
                 total_delta += 4  # Callee's RET pops the return address
 
                 # For indirect calls (CALLIND), check if it's stdcall
@@ -906,6 +913,13 @@ def apply_cfg_esp_tracking(pcode_data, switch_targets=None, noreturn_addrs=None,
 
                 # Propagate to successors
                 for target_addr, edge_type in edges[block_addr]:
+                    # Skip self-loops (back-edges to same block)
+                    # In a loop, the entry ESP should remain constant across iterations.
+                    # The non-zero delta represents temporary stack usage within each
+                    # iteration (push args -> call -> cleanup) that balances out.
+                    if target_addr == block_addr:
+                        continue
+
                     target_esp = esp_in[target_addr]
                     if target_esp is None:
                         esp_in[target_addr] = esp_out

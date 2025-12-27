@@ -14,6 +14,7 @@ import json
 from collections import defaultdict
 
 from ghidra_annotations.util.log import log_info
+from ghidra_annotations.annotations.pseudocode.functions import load_vtable_bucket_files
 
 
 def extract_class_from_global(global_name):
@@ -136,21 +137,19 @@ def scan_pseudocode_directory(pseudocode_dir):
     return vtable_call_map
 
 
-def load_vtable_method_map(vtables_json_path):
-    """Load vtables.json and build a map of (class, method) -> function address.
+def load_vtable_method_map(vtables_dir):
+    """Load vtable data from bucket files and build a map of (class, method) -> function address.
+
+    Args:
+        vtables_dir: Path to vtables directory containing vtables_bucket_*.json files
 
     Returns:
         Dict mapping (class_name, method_name) -> func_addr
     """
-    try:
-        with open(vtables_json_path, 'r') as f:
-            data = json.load(f)
-    except Exception:
-        return {}
-
     method_map = {}
+    vtables = load_vtable_bucket_files(vtables_dir)
 
-    for vtable in data.get('vtables', []):
+    for vtable in vtables:
         functions = vtable.get('functions', [])
         if not functions:
             continue
@@ -187,8 +186,12 @@ def load_vtable_method_map(vtables_json_path):
     return method_map
 
 
-def build_indirect_caller_map(pseudocode_dir, vtables_json_path):
+def build_indirect_caller_map(pseudocode_dir, vtables_dir):
     """Build a map of function addresses to their possible indirect callers.
+
+    Args:
+        pseudocode_dir: Base directory for pseudocode files
+        vtables_dir: Path to vtables directory containing vtables_bucket_*.json files
 
     Returns:
         Dict mapping func_addr -> {
@@ -202,7 +205,7 @@ def build_indirect_caller_map(pseudocode_dir, vtables_json_path):
     vtable_calls = scan_pseudocode_directory(pseudocode_dir)
 
     # Load vtable method mapping
-    method_map = load_vtable_method_map(vtables_json_path)
+    method_map = load_vtable_method_map(vtables_dir)
 
     # Build reverse map: func_addr -> caller info
     indirect_caller_map = {}
@@ -358,7 +361,7 @@ def analyze_callers_for_params(pseudocode_dir, callers, vtable_offset):
     }
 
 
-def update_function_json_files(pseudocode_dir, vtables_json_path):
+def update_function_json_files(pseudocode_dir, vtables_dir):
     """Update all function JSON files with indirect call analysis.
 
     This is the main entry point for the second pass. It:
@@ -366,10 +369,12 @@ def update_function_json_files(pseudocode_dir, vtables_json_path):
     2. Analyzes the assembly of those callers to count PUSHes
     3. Updates the JSON with parameter estimates
 
-    This is the main entry point for the second pass.
+    Args:
+        pseudocode_dir: Base directory for pseudocode files
+        vtables_dir: Path to vtables directory containing vtables_bucket_*.json files
     """
     log_info("Building indirect caller map from pseudocode...")
-    indirect_map = build_indirect_caller_map(pseudocode_dir, vtables_json_path)
+    indirect_map = build_indirect_caller_map(pseudocode_dir, vtables_dir)
     log_info("Found %d virtual methods with identified callers" % len(indirect_map))
 
     # Walk through all JSON files and update them

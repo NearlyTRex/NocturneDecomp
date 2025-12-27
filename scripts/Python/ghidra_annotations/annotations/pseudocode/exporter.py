@@ -445,15 +445,15 @@ def export_pseudocode(currentProgram, path):
 
     # Load vtable data
     timer.start_phase("Load vtable data")
-    vtables_json_path = os.path.join(path, "vtables", "vtables.json")
+    vtables_dir = os.path.join(path, "vtables")
     vtable_data = None
-    if os.path.exists(vtables_json_path):
-        vtable_data = load_vtable_data(vtables_json_path)
+    if os.path.isdir(vtables_dir):
+        vtable_data = load_vtable_data(vtables_dir)
         vtable_func_count = len(vtable_data.get('func_to_vtables', {}))
         log_info("Loaded vtable data: %d vtable addresses, %d functions in vtables" % (
             len(vtable_data.get('vtable_addrs', set())), vtable_func_count))
     else:
-        log_info("No vtables.json found at %s - skipping vtable analysis" % vtables_json_path)
+        log_info("No vtables directory found at %s - skipping vtable analysis" % vtables_dir)
     timer.end_phase()
 
     # Load switch table data for CFG-aware ESP tracking
@@ -723,11 +723,11 @@ def export_pseudocode(currentProgram, path):
 
     # Second pass: Update JSON files with vtable indirect caller analysis
     timer.start_phase("Vtable indirect caller analysis")
-    if os.path.exists(vtables_json_path):
+    if os.path.isdir(vtables_dir):
         log_info("Running second pass: analyzing vtable indirect callers...")
-        update_vtable_indirect_callers(pseudocode_src_dir, vtables_json_path)
+        update_vtable_indirect_callers(pseudocode_src_dir, vtables_dir)
     else:
-        log_info("Skipping vtable indirect caller analysis (no vtables.json)")
+        log_info("Skipping vtable indirect caller analysis (no vtables directory)")
     timer.end_phase()
 
     # Log timing profile
