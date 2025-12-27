@@ -261,6 +261,9 @@ def _detect_callind_esp_uncertain(pcode_data):
                                 raise UnhandledCallIndirectError(
                                     "At address %s: %s" % (callind_addr, e))
 
+                            # Get return address (next instruction after CALLIND)
+                            return_address = pcode_data[i + 1].get('address', '') if i + 1 < len(pcode_data) else None
+
                             # Get ESP offset at CALLIND (after the call returns)
                             # After cdecl call returns, ESP is unchanged from before the call
                             # After ADD ESP, ESP = esp_at_callind + add_value
@@ -294,6 +297,7 @@ def _detect_callind_esp_uncertain(pcode_data):
                                 'fix_address': next_entry.get('address', ''),
                                 'callind_address': callind_addr,
                                 'callind_assembly': callind_asm,
+                                'return_address': return_address,
                                 'call_target_type': target_type,
                                 'call_target_value': target_value,
                                 'add_esp_value': add_value,
