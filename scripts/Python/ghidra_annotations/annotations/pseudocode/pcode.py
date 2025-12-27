@@ -598,7 +598,67 @@ def _is_call(mnemonic):
     return 'CALL' in mnemonic.upper()
 
 
-def apply_cfg_esp_tracking(pcode_data, switch_targets=None, noreturn_addrs=None):
+def _get_callind_cleanup(assembly, func_conventions, func_globals):
+    """Get stdcall cleanup bytes for an indirect call.
+
+    For indirect calls (CALLIND), looks up the function pointer address in globals,
+    gets its type (e.g., 'joyGetPosEx*'), strips the '*' to get the function
+    definition name, and looks up the calling convention.
+
+    Args:
+        assembly: The assembly instruction string (e.g., 'CALL dword ptr [0x03f994f4]')
+        func_conventions: Dict mapping function def names to {'convention', 'param_bytes'}
+        func_globals: List of globals dicts with 'addr', 'type', 'name' keys
+
+    Returns:
+        int: Number of bytes callee cleans up (for stdcall), or 0 for cdecl/unknown
+    """
+    if not func_conventions or not func_globals:
+        return 0
+
+    # Extract the memory address from the CALL instruction
+    # Patterns: CALL dword ptr [0x03f994f4], CALL dword ptr CS:[0x611408]
+    match = re.search(r'\[(?:.*:)?(0x[0-9a-fA-F]+)\]', assembly)
+    if not match:
+        return 0
+
+    call_addr = match.group(1).lower()
+    # Normalize address format (remove 0x, pad to 8 chars)
+    call_addr_norm = call_addr.replace('0x', '').zfill(8)
+
+    # Build address lookup from globals if not already cached
+    # Look for this address in globals
+    ptr_type = None
+    for glob in func_globals:
+        glob_addr = glob.get('addr', '').lower().replace('0x', '').zfill(8)
+        if glob_addr == call_addr_norm:
+            ptr_type = glob.get('type', '')
+            break
+
+    if not ptr_type:
+        return 0
+
+    # Strip pointer suffix to get function definition name
+    # e.g., 'joyGetPosEx*' -> 'joyGetPosEx'
+    func_def_name = ptr_type.rstrip('*').strip()
+
+    # Look up in func_conventions
+    if func_def_name not in func_conventions:
+        return 0
+
+    conv_info = func_conventions[func_def_name]
+    convention = conv_info.get('convention', '')
+    param_bytes = conv_info.get('param_bytes', 0)
+
+    # stdcall: callee cleans up parameters
+    # Also check for __stdcall, stdcall, WINAPI variants
+    if convention and 'stdcall' in convention.lower():
+        return param_bytes
+    return 0
+
+
+def apply_cfg_esp_tracking(pcode_data, switch_targets=None, noreturn_addrs=None,
+                           func_conventions=None, func_globals=None):
     """Apply CFG-aware ESP tracking to pcode data.
 
     This improves on linear ESP tracking by following control flow:
@@ -613,6 +673,10 @@ def apply_cfg_esp_tracking(pcode_data, switch_targets=None, noreturn_addrs=None)
                        lists of target addresses (from switch_tables.json)
         noreturn_addrs: Optional set of function addresses that never return
                        (from functions.json with noreturn=true)
+        func_conventions: Optional dict mapping function definition names to
+                         {'convention': str, 'param_bytes': int} for CALLIND handling
+        func_globals: Optional list of globals dicts with 'addr', 'type', 'name' keys
+                     for looking up function pointer types at CALLIND addresses
 
     Returns:
         Modified pcode_data with improved ESP tracking (modified in place)
@@ -796,6 +860,12 @@ def apply_cfg_esp_tracking(pcode_data, switch_targets=None, noreturn_addrs=None)
             if _is_call(mnemonic):
                 total_delta += 4  # Callee's RET pops the return address
 
+                # For indirect calls (CALLIND), check if it's stdcall
+                # stdcall callees also clean up their parameters
+                stdcall_cleanup = _get_callind_cleanup(asm, func_conventions, func_globals)
+                if stdcall_cleanup > 0:
+                    total_delta += stdcall_cleanup
+
         return (total_delta, has_frame_reset, frame_reset_esp)
 
     block_info = {addr: compute_block_esp_delta(indices) for addr, indices in blocks.items()}
@@ -885,6 +955,10 @@ def apply_cfg_esp_tracking(pcode_data, switch_targets=None, noreturn_addrs=None)
                         frame_reset_esp += delta
                         if _is_call(mnemonic):
                             frame_reset_esp += 4  # Callee's RET
+                            # For indirect calls (CALLIND), check if it's stdcall
+                            stdcall_cleanup = _get_callind_cleanup(asm, func_conventions, func_globals)
+                            if stdcall_cleanup > 0:
+                                frame_reset_esp += stdcall_cleanup
 
                     entry['esp_offset'] = frame_reset_esp
                     entry['esp_certainty'] = 'frame_recovered'
@@ -930,6 +1004,10 @@ def apply_cfg_esp_tracking(pcode_data, switch_targets=None, noreturn_addrs=None)
                     running_esp += delta
                     if _is_call(mnemonic):
                         running_esp += 4  # Callee's RET
+                        # For indirect calls (CALLIND), check if it's stdcall
+                        stdcall_cleanup = _get_callind_cleanup(asm, func_conventions, func_globals)
+                        if stdcall_cleanup > 0:
+                            running_esp += stdcall_cleanup
 
                 entry['esp_offset'] = running_esp
                 # Keep original certainty for known/computed, upgrade lost to cfg_resolved
