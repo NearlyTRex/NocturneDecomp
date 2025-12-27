@@ -5,22 +5,27 @@ generate_pcode_overrides.py
 Scans exported function JSON files for fixable ESP tracking issues and generates
 p-code overrides to fix them.
 
-Handles:
-- callind_esp_uncertain: CALLIND followed by ADD ESP with uncertain ESP tracking
+Suspect Types:
+- callind_esp_uncertain (--type=ebp): CALLIND in function WITH EBP frame
   Fix: Override ADD ESP to anchor ESP = EBP - frame_offset
+  Status: STABLE - proven to work
 
-- callind_esp_no_frame: CALLIND in function without EBP frame
-  Fix: Override ADD ESP to set ESP using stack-relative computation
+- callind_esp_no_frame (--type=no-frame): CALLIND in function WITHOUT EBP frame
+  Fix: Save ESP at entry, restore ESP = saved + offset after CALLIND
+  Status: EXPERIMENTAL - may break decompilation
 
 Usage:
-    # Scan and show what would be fixed (dry run)
+    # Scan for EBP-frame suspects only (default, stable)
     python generate_pcode_overrides.py /path/to/pseudocode/src
 
-    # Apply fixes to JSON files
+    # Apply EBP-frame fixes
     python generate_pcode_overrides.py /path/to/pseudocode/src --apply
 
-    # Process a specific file
-    python generate_pcode_overrides.py /path/to/function.json --apply
+    # Scan for experimental no-frame suspects
+    python generate_pcode_overrides.py /path/to/pseudocode/src --type=no-frame
+
+    # Scan for all suspect types
+    python generate_pcode_overrides.py /path/to/pseudocode/src --type=all
 """
 
 import argparse
@@ -138,11 +143,15 @@ def generate_callind_esp_preserve_pcode(target_type, target_value):
         return None
 
 
-def find_fixable_suspects(json_data, verbose=True):
+def find_fixable_suspects(json_data, suspect_types=None, verbose=True):
     """Find suspects that can be fixed with p-code overrides.
 
     Args:
         json_data: Parsed JSON data from function export
+        suspect_types: Set of suspect types to process. Options:
+            - 'callind_esp_uncertain' (EBP-frame, stable)
+            - 'callind_esp_no_frame' (no EBP frame, experimental)
+            If None, defaults to {'callind_esp_uncertain'}
         verbose: If True, print warnings
 
     Returns:
@@ -152,6 +161,9 @@ def find_fixable_suspects(json_data, verbose=True):
     """
     fixes = []
     skipped = []
+
+    if suspect_types is None:
+        suspect_types = {'callind_esp_uncertain'}
 
     # Skip non-dict JSON (some files may be arrays or other structures)
     if not isinstance(json_data, dict):
@@ -165,6 +177,10 @@ def find_fixable_suspects(json_data, verbose=True):
         fix_address = suspect.get('fix_address', '')
 
         if not fix_address:
+            continue
+
+        # Skip suspect types not in the allowed set
+        if suspect_type not in suspect_types:
             continue
 
         # Normalize address for comparison
@@ -245,11 +261,12 @@ def find_fixable_suspects(json_data, verbose=True):
     return fixes, skipped
 
 
-def process_json_file(json_path, apply=False, verbose=True):
+def process_json_file(json_path, suspect_types=None, apply=False, verbose=True):
     """Process a single JSON file for fixable suspects.
 
     Args:
         json_path: Path to the JSON file
+        suspect_types: Set of suspect types to process
         apply: If True, write fixes back to the file
         verbose: If True, print progress info
 
@@ -265,7 +282,7 @@ def process_json_file(json_path, apply=False, verbose=True):
         return 0, 0
 
     # Find fixable suspects
-    fixes, skipped = find_fixable_suspects(data, verbose)
+    fixes, skipped = find_fixable_suspects(data, suspect_types, verbose)
 
     if not fixes and not skipped:
         return 0, 0
@@ -316,11 +333,12 @@ def process_json_file(json_path, apply=False, verbose=True):
     return len(fixes), len(skipped)
 
 
-def scan_directory(src_dir, apply=False, verbose=True):
+def scan_directory(src_dir, suspect_types=None, apply=False, verbose=True):
     """Scan a directory tree for JSON files with fixable suspects.
 
     Args:
         src_dir: Root directory to scan
+        suspect_types: Set of suspect types to process
         apply: If True, apply fixes to files
         verbose: If True, print progress info
 
@@ -341,7 +359,7 @@ def scan_directory(src_dir, apply=False, verbose=True):
             json_path = os.path.join(root, filename)
             files_scanned += 1
 
-            fixes, skipped = process_json_file(json_path, apply=apply, verbose=verbose)
+            fixes, skipped = process_json_file(json_path, suspect_types, apply=apply, verbose=verbose)
 
             if fixes > 0:
                 files_with_fixes += 1
@@ -359,18 +377,28 @@ def main():
         description='Generate p-code overrides for fixable ESP tracking issues',
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
+Suspect Types:
+    ebp       - callind_esp_uncertain: Functions WITH EBP frame (STABLE)
+    no-frame  - callind_esp_no_frame: Functions WITHOUT EBP frame (EXPERIMENTAL)
+    all       - Both types (includes experimental)
+
 Examples:
-    # Dry run - show what would be fixed
+    # Dry run - EBP-frame suspects only (default, stable)
     %(prog)s /path/to/pseudocode/src
 
-    # Apply fixes to JSON files
+    # Apply EBP-frame fixes
     %(prog)s /path/to/pseudocode/src --apply
 
-    # Process a specific file
-    %(prog)s /path/to/function.json --apply
+    # Scan experimental no-frame suspects
+    %(prog)s /path/to/pseudocode/src --type=no-frame
+
+    # Process all suspect types
+    %(prog)s /path/to/pseudocode/src --type=all --apply
         """
     )
     parser.add_argument('path', help='Directory to scan or specific JSON file')
+    parser.add_argument('--type', choices=['ebp', 'no-frame', 'all'], default='ebp',
+                        help='Suspect type to process (default: ebp)')
     parser.add_argument('--apply', action='store_true',
                         help='Apply fixes to JSON files (default: dry run)')
     parser.add_argument('-q', '--quiet', action='store_true',
@@ -378,8 +406,25 @@ Examples:
 
     args = parser.parse_args()
 
+    # Map --type argument to suspect type set
+    if args.type == 'ebp':
+        suspect_types = {'callind_esp_uncertain'}
+        type_desc = 'EBP-frame (stable)'
+    elif args.type == 'no-frame':
+        suspect_types = {'callind_esp_no_frame'}
+        type_desc = 'no-frame (EXPERIMENTAL)'
+    else:  # all
+        suspect_types = {'callind_esp_uncertain', 'callind_esp_no_frame'}
+        type_desc = 'all types (includes EXPERIMENTAL)'
+
     path = Path(args.path)
     verbose = not args.quiet
+
+    # Warn about experimental types
+    if 'callind_esp_no_frame' in suspect_types:
+        print("WARNING: Processing EXPERIMENTAL no-frame suspects.")
+        print("         These overrides may break decompilation!")
+        print()
 
     if not path.exists():
         print("Error: Path does not exist: %s" % path)
@@ -391,10 +436,10 @@ Examples:
             print("Error: File must be a JSON file")
             sys.exit(1)
 
-        fixes, skipped = process_json_file(str(path), apply=args.apply, verbose=verbose)
+        fixes, skipped = process_json_file(str(path), suspect_types, apply=args.apply, verbose=verbose)
 
         if fixes == 0 and skipped == 0:
-            print("No fixable suspects found")
+            print("No fixable suspects found for type: %s" % type_desc)
         else:
             if skipped > 0:
                 print("\n%d suspect(s) skipped (frame_offset=0 or missing)" % skipped)
@@ -403,15 +448,16 @@ Examples:
     else:
         # Scan directory
         if verbose:
-            print("Scanning %s for fixable suspects..." % path)
+            print("Scanning %s for %s suspects..." % (path, type_desc))
             if not args.apply:
                 print("(Dry run - use --apply to apply fixes)\n")
 
         files_scanned, files_with_fixes, total_fixes, files_with_skipped, total_skipped = \
-            scan_directory(str(path), apply=args.apply, verbose=verbose)
+            scan_directory(str(path), suspect_types, apply=args.apply, verbose=verbose)
 
         print("\n" + "=" * 60)
         print("Summary:")
+        print("  Suspect type: %s" % type_desc)
         print("  Files scanned: %d" % files_scanned)
         print("  Files with fixes: %d" % files_with_fixes)
         print("  Total fixes: %d" % total_fixes)
