@@ -505,6 +505,52 @@
     },
     "pcode_op_count": 3416
   },
+  "resolved_suspects": [
+    {
+      "add_esp_value": 8,
+      "callind_address": "005752a0",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "005752a3",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 352,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 005752a0, ADD ESP at 005752a3",
+      "type": "callind_esp_uncertain"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "00575413",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "00575416",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 352,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 00575413, ADD ESP at 00575416",
+      "type": "callind_esp_uncertain"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "00575842",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "00575845",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 352,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 00575842, ADD ESP at 00575845",
+      "type": "callind_esp_uncertain"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "0057589c",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "005758a6",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 352,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 0057589c, ADD ESP at 005758a6",
+      "type": "callind_esp_uncertain"
+    }
+  ],
   "stack_frame": {
     "frame_size": 376,
     "local_size": 364,

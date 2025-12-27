@@ -1,19 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 409,
-    "complexity_score": 317,
+    "complexity_score": 384,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 157,
-    "suspect_count": 14,
+    "pseudocode_lines": 159,
+    "suspect_count": 20,
     "suspect_types": [
       "badspacebase",
       "pointer_cast",
       "register_param",
+      "unaffected_reg",
       "warning_unreachable"
     ],
-    "total_lines": 566
+    "total_lines": 568
   },
   "cross_references": [],
   "function": {
@@ -49,33 +50,14 @@
     "005d5850": [
       "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffb0,4)"
     ],
-    "005d5984": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffb0,4)",
-      "COPY (register,0x4,4) = (const,0xffffffff,4)"
-    ],
-    "005d5a07": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffb0,4)"
-    ],
     "005d5a77": [
       "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffb0,4)"
-    ],
-    "005d5b57": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffb0,4)",
-      "COPY (unique,0x20a80,4) = (register,0xc,4)",
-      "INT_SUB (register,0x10,4) = (register,0x10,4), (const,0x4,4)",
-      "STORE (const,0x1a1,8), (register,0x10,4), (unique,0x20a80,4)"
     ],
     "005d5b5f": [
       "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffb0,4)"
     ],
     "005d5b83": [
       "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffb0,4)"
-    ],
-    "005d5b8d": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffb0,4)",
-      "COPY (unique,0x20a80,4) = (register,0xc,4)",
-      "INT_SUB (register,0x10,4) = (register,0x10,4), (const,0x4,4)",
-      "STORE (const,0x1a1,8), (register,0x10,4), (unique,0x20a80,4)"
     ],
     "005d5ba6": [
       "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffb0,4)"
@@ -154,6 +136,74 @@
     ],
     "vtable_offset": 216
   },
+  "resolved_suspects": [
+    {
+      "add_esp_value": 8,
+      "callind_address": "005d5831",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "005d5837",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 80,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 005d5831, ADD ESP at 005d5837",
+      "type": "callind_esp_uncertain"
+    },
+    {
+      "add_esp_value": 16,
+      "callind_address": "005d584a",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "005d5850",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 80,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 005d584a, ADD ESP at 005d5850",
+      "type": "callind_esp_uncertain"
+    },
+    {
+      "add_esp_value": 16,
+      "callind_address": "005d5a71",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "005d5a77",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 80,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 005d5a71, ADD ESP at 005d5a77",
+      "type": "callind_esp_uncertain"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "005d5b5c",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "005d5b5f",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 80,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 005d5b5c, ADD ESP at 005d5b5f",
+      "type": "callind_esp_uncertain"
+    },
+    {
+      "add_esp_value": 16,
+      "callind_address": "005d5b7d",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "005d5b83",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 80,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 005d5b7d, ADD ESP at 005d5b83",
+      "type": "callind_esp_uncertain"
+    },
+    {
+      "add_esp_value": 16,
+      "callind_address": "005d5ba0",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "005d5ba6",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 80,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 005d5ba0, ADD ESP at 005d5ba6",
+      "type": "callind_esp_uncertain"
+    }
+  ],
   "stack_frame": {
     "frame_size": 116,
     "local_size": 100,
@@ -322,78 +372,120 @@
       "type": "register_param"
     },
     {
+      "description": "Unaffected register variable",
+      "line": 15,
+      "match": "unaff_EBP",
+      "text": "double *unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
       "description": "Complex pointer cast",
-      "line": 47,
+      "line": 49,
       "match": "(byte *)((int)",
       "text": "*(byte *)((int)&search_polygon->flags + 1) = *(byte *)((int)&search_polygon->flags + 1) | 0x20;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 47,
+      "line": 49,
       "match": "(byte *)((int)",
       "text": "*(byte *)((int)&search_polygon->flags + 1) = *(byte *)((int)&search_polygon->flags + 1) | 0x20;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 66,
+      "line": 68,
       "match": "(int *)((int)",
       "text": "point = this_ptr->vertex_data + *(int *)((int)local_18->uv_coords + local_28 * 4 + -0xc);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 79,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&(point->position).x + 4) = local_54;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 81,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&(point->position).y + 4) = local_4c;",
+      "text": "*(uint *)((int)&(point->position).x + 4) = local_50;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 83,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&(point->position).z + 4) = local_44;",
+      "text": "*(uint *)((int)&(point->position).y + 4) = local_48;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 86,
+      "line": 85,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&(local_18->normal).y + 4) = *(uint *)((int)&local_14->y + 4);",
+      "text": "*(uint *)((int)&(point->position).z + 4) = local_40;",
       "type": "pointer_cast"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Unaffected register variable",
       "line": 86,
+      "match": "unaff_EBP",
+      "text": "(local_14->normal).x = *unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 87,
+      "match": "unaff_EBP",
+      "text": "*(uint *)&(local_14->normal).y = *(uint *)(unaff_EBP + 1);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 88,
+      "match": "unaff_EBP",
+      "text": "*(uint *)((int)&(local_14->normal).y + 4) = *(uint *)((int)unaff_EBP + 0xc);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 88,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&(local_18->normal).y + 4) = *(uint *)((int)&local_14->y + 4);",
+      "text": "*(uint *)((int)&(local_14->normal).y + 4) = *(uint *)((int)unaff_EBP + 0xc);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 88,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&(local_18->normal).z + 4) = *(uint *)((int)&local_14->z + 4);",
+      "text": "*(uint *)((int)&(local_14->normal).y + 4) = *(uint *)((int)unaff_EBP + 0xc);",
       "type": "pointer_cast"
     },
     {
+      "description": "Unaffected register variable",
+      "line": 89,
+      "match": "unaff_EBP",
+      "text": "*(uint *)&(local_14->normal).z = *(uint *)(unaff_EBP + 2);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 90,
+      "match": "unaff_EBP",
+      "text": "*(uint *)((int)&(local_14->normal).z + 4) = *(uint *)((int)unaff_EBP + 0x14);",
+      "type": "unaffected_reg"
+    },
+    {
       "description": "Complex pointer cast",
-      "line": 88,
+      "line": 90,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&(local_18->normal).z + 4) = *(uint *)((int)&local_14->z + 4);",
+      "text": "*(uint *)((int)&(local_14->normal).z + 4) = *(uint *)((int)unaff_EBP + 0x14);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 120,
+      "line": 90,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&(local_14->normal).z + 4) = *(uint *)((int)unaff_EBP + 0x14);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 122,
       "match": "(CVector3d *)((int)",
       "text": "pCVar4 = (CVector3d *)((int)(pCVar4 + 4) + 8);",
       "type": "pointer_cast"

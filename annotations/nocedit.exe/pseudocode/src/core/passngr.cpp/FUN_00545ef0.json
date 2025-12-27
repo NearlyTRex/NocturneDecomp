@@ -152,6 +152,19 @@
     },
     "pcode_op_count": 762
   },
+  "resolved_suspects": [
+    {
+      "add_esp_value": 8,
+      "callind_address": "00545fc6",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "00545fc9",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 16,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 00545fc6, ADD ESP at 00545fc9",
+      "type": "callind_esp_uncertain"
+    }
+  ],
   "stack_frame": {
     "frame_size": 36,
     "local_size": 36,

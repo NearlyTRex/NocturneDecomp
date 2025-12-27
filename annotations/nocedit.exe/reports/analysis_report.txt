@@ -8,7 +8,7 @@ Total functions: 7154
 Functions with zero suspects: 2599 (36.3%)
 Functions with suspects: 4555 (63.7%)
 
-Total suspect patterns: 62885
+Total suspect patterns: 62905
 Average suspects per function: 8.79
 
 Virtual files: 258 total, 19 at 100%, 20 at 90%+
@@ -16,21 +16,21 @@ Virtual files: 258 total, 19 at 100%, 20 at 90%+
 Pseudocode lines:
   Min: 1, Max: 3059, Average: 48.0
 
-Average complexity score: 144.3
+Average complexity score: 144.4
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
   stack_param               36773
-  pointer_cast              5275
-  stack_ref                 3987
-  unknown_field             2954
-  unaffected_reg            2761
+  pointer_cast              5276
+  stack_ref                 3983
+  unknown_field             2955
+  unaffected_reg            2778
   register_param            1834
-  concat_artifact           1832
+  concat_artifact           1831
   badspacebase              1622
   extra_output              1443
   callind_esp_no_frame      1078
-  suspect_float             853
+  suspect_float             859
   param_count_too_few       631
   unresolved_funcptr        474
   negative_offset           416
@@ -136,7 +136,7 @@ MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
 
-  stack_param (2817 functions):
+  stack_param (2816 functions):
     00434870: cockpit_ckptutil.c_rotateBitmap_FUN_00434870
     004328d0: cockpit_ckptutil.c_blitHorizontallyClippedSprite_FUN_004328d0
     004331f0: cockpit_ckptutil.c_loadEdgeListFile_FUN_004331f0
@@ -147,7 +147,7 @@ FUNCTIONS BY SUSPECT TYPE
     00434690: cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690
     00435730: cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730
     00433440: cockpit_ckptutil.c_loadSingleEdgeList_FUN_00433440
-    ... and 2807 more
+    ... and 2806 more
 
   pointer_cast (1048 functions):
     0060239a: entry
@@ -188,7 +188,7 @@ FUNCTIONS BY SUSPECT TYPE
     005c8b50: shape_superopt.cpp_FUN_005c8b50
     ... and 326 more
 
-  unaffected_reg (576 functions):
+  unaffected_reg (579 functions):
     00432540: cockpit_ckptutil.c_blitSimpleSprite_FUN_00432540
     00434870: cockpit_ckptutil.c_rotateBitmap_FUN_00434870
     004328d0: cockpit_ckptutil.c_blitHorizontallyClippedSprite_FUN_004328d0
@@ -199,7 +199,7 @@ FUNCTIONS BY SUSPECT TYPE
     0054b690: cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_0054b690
     0054ae70: cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70
     0054a840: cockpit_pkbitmap.cpp_CPackedBitmap_init_FUN_0054a840
-    ... and 566 more
+    ... and 569 more
 
   register_param (1655 functions):
     0060239a: entry
@@ -266,7 +266,7 @@ FUNCTIONS BY SUSPECT TYPE
     00432860: cockpit_ckptutil.c_copyBitmapRegion_FUN_00432860
     ... and 573 more
 
-  suspect_float (229 functions):
+  suspect_float (231 functions):
     00519b50: shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
     0051d520: shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520
     0051d990: shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990
@@ -277,7 +277,7 @@ FUNCTIONS BY SUSPECT TYPE
     00404220: engine_3d.c_renderPolygonLitDetailed_FUN_00404220
     00406860: engine_3d.c_renderPolygonPlaneMaskedDetailedComplex_FUN_00406860
     0050c640: engine_matrix.c_invertTransformMatrix_FUN_0050c640
-    ... and 219 more
+    ... and 221 more
 
   param_count_too_few (631 functions):
     00431f40: cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_00431f40

@@ -128,6 +128,30 @@
     },
     "pcode_op_count": 806
   },
+  "resolved_suspects": [
+    {
+      "add_esp_value": 8,
+      "callind_address": "00558167",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "0055816d",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 16,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 00558167, ADD ESP at 0055816d",
+      "type": "callind_esp_uncertain"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "005581a6",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "005581b8",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 16,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 005581a6, ADD ESP at 005581b8",
+      "type": "callind_esp_uncertain"
+    }
+  ],
   "stack_frame": {
     "frame_size": 36,
     "local_size": 36,

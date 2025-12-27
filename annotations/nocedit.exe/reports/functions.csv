@@ -337,7 +337,7 @@ shape_superopt.cpp_FUN_005c8b50,005c8b50,shape/superopt.cpp,139,18,badspacebase|
 shape_superopt.cpp_BonesAndPointsCheck_FUN_005d7e00,005d7e00,shape/superopt.cpp,140,11,pointer_cast|stack_param,260
 shape_superopt.cpp_CPoly_projectUVPlanar_FUN_005ce0a0,005ce0a0,shape/superopt.cpp,101,0,,101
 shape_superopt.cpp_CObj_findPolygonIndex_FUN_005d3380,005d3380,shape/superopt.cpp,8,0,,8
-shape_superopt.cpp_CObj_findCoplanarPolygon_FUN_005d5800,005d5800,shape/superopt.cpp,157,14,badspacebase|pointer_cast|register_param|warning_unreachable,317
+shape_superopt.cpp_CObj_findCoplanarPolygon_FUN_005d5800,005d5800,shape/superopt.cpp,159,20,badspacebase|pointer_cast|register_param|unaffected_reg|warning_unreachable,384
 shape_superopt.cpp_FUN_005d83d0,005d83d0,shape/superopt.cpp,11,9,stack_param|unaffected_reg,111
 shape_superopt.cpp_CObj_updatePolyFlagsFromVerts_FUN_005d36b0,005d36b0,shape/superopt.cpp,40,0,,40
 shape_superopt.cpp_FUN_005cbf00,005cbf00,shape/superopt.cpp,5,3,param_count_too_few|stack_param,45
@@ -1973,7 +1973,7 @@ crt_io.c_get_handle_FUN_006109f0,006109f0,crt/io.c,8,0,,8
 crt_io.c_ftruncate_FUN_00600cf0,00600cf0,crt/io.c,54,9,callind_esp_no_frame|stack_param|unaffected_reg,159
 crt_io.c_tell_FUN_00606720,00606720,crt/io.c,21,2,callind_esp_no_frame,46
 crt_io.c_findNextFileWrapper_FUN_00602300,00602300,crt/io.c,25,9,badspacebase|register_param|stack_param|stack_ref,135
-crt_io.c_write_FUN_006084ec,006084ec,crt/io.c,162,18,badspacebase|pointer_cast|register_param|stack_param|stack_ref|warning_noreturn,372
+crt_io.c_write_FUN_006084ec,006084ec,crt/io.c,183,13,badspacebase|pointer_cast|register_param|stack_ref|unaffected_reg|warning_noreturn,343
 crt_io.c_getTempDirectory_FUN_00609afc,00609afc,crt/io.c,56,0,,56
 crt_io.c_file_exists_FUN_0060f380,0060f380,crt/io.c,6,0,,6
 crt_io.c_parseFileInfo_FUN_0060e3b0,0060e3b0,crt/io.c,61,11,badspacebase|register_param|stack_ref,186
@@ -3559,7 +3559,7 @@ core_setedit.cpp_CallToFreeSomeMemory_FUN_00580560,00580560,core/setedit.cpp,8,0
 core_setedit.cpp_FUN_00581590,00581590,core/setedit.cpp,25,0,,25
 core_setedit.cpp_CDemonSet_unk201_FUN_0057ae50,0057ae50,core/setedit.cpp,196,63,badspacebase|pointer_cast|register_param|stack_param|stack_ref,851
 core_setedit.cpp_CDemonSet_ViewerVisitSet_FUN_0057a940,0057a940,core/setedit.cpp,142,33,badspacebase|pointer_cast|register_param|stack_param|stack_ref|unaffected_reg,502
-core_setedit.cpp_CDemonSet_FUN_00581aa0,00581aa0,core/setedit.cpp,502,81,badspacebase|concat_artifact|pointer_cast|register_param|stack_param|stack_ref|undefined_type|unknown_field,1352
+core_setedit.cpp_CDemonSet_FUN_00581aa0,00581aa0,core/setedit.cpp,491,81,badspacebase|concat_artifact|pointer_cast|register_param|stack_param|stack_ref|undefined_type|unknown_field,1341
 core_setedit.cpp_Something2MemoryConstructorMaybe_FUN_0057fd00,0057fd00,core/setedit.cpp,116,29,badspacebase|param_count_too_few|pointer_cast|register_param|stack_param|stack_ref,436
 core_setedit.cpp_OpenSomethingBackdropThumbs_FUN_005769a0,005769a0,core/setedit.cpp,140,29,badspacebase|pointer_cast|register_param|stack_param|stack_ref|unaffected_reg,460
 core_boxactor.cpp_FUN_00422390,00422390,core/boxactor.cpp,47,22,badspacebase|register_param|stack_param|unknown_field,287
@@ -4074,8 +4074,8 @@ core_bride.cpp_staticInit_FUN_00423700,00423700,core/bride.cpp,15,1,warning_over
 core_bride.cpp_FUN_00424600,00424600,core/bride.cpp,80,43,param_count_too_few|stack_param,520
 core_bride.cpp_FUN_00423810,00423810,core/bride.cpp,70,16,stack_param|warning_overlapping_globals,240
 core_bride.cpp_FUN_00423760,00423760,core/bride.cpp,10,0,,10
-core_bride.cpp_FUN_00423a30,00423a30,core/bride.cpp,385,152,badspacebase|extra_output|register_param|stack_param|stack_ref|unresolved_funcptr,1935
-core_bride.cpp_FUN_00424830,00424830,core/bride.cpp,72,31,badspacebase|register_param|stack_param,397
+core_bride.cpp_FUN_00423a30,00423a30,core/bride.cpp,389,153,badspacebase|extra_output|register_param|stack_param|unresolved_funcptr,1944
+core_bride.cpp_FUN_00424830,00424830,core/bride.cpp,75,37,badspacebase|register_param|stack_param|stack_ref|suspect_float|unaffected_reg,475
 core_bride.cpp_CBride_ctor_FUN_004237a0,004237a0,core/bride.cpp,31,1,warning_overlapping_globals,46
 core_bride.cpp_FUN_00424b10,00424b10,core/bride.cpp,10,4,stack_param,55
 core_dcamera.cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0,0044cdf0,core/dcamera.cpp,66,8,pointer_cast|register_param|stack_param,161
@@ -5047,7 +5047,7 @@ core_lightgun.cpp_FUN_00505ac0,00505ac0,core/lightgun.cpp,28,9,badspacebase|call
 core_lightgun.cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450,00506450,core/lightgun.cpp,77,34,extra_output|stack_param|warning_overlapping_globals,432
 core_lightgun.cpp_FUN_005058c0,005058c0,core/lightgun.cpp,10,0,,10
 core_lightgun.cpp_FUN_00505c70,00505c70,core/lightgun.cpp,202,63,badspacebase|pointer_cast|register_param|stack_param|stack_ref|suspect_float|unknown_field,867
-core_lightgun.cpp_FUN_005066b0,005066b0,core/lightgun.cpp,99,12,badspacebase|register_param|stack_param|warning_overlapping_globals,239
+core_lightgun.cpp_FUN_005066b0,005066b0,core/lightgun.cpp,101,21,badspacebase|register_param|stack_param|unaffected_reg|warning_overlapping_globals,336
 core_lightgun.cpp_FUN_00505b70,00505b70,core/lightgun.cpp,42,14,badspacebase|callind_esp_no_frame|register_param|stack_param|stack_ref|suspect_float,212
 core_lightgun.cpp_FUN_00505a20,00505a20,core/lightgun.cpp,29,9,callind_esp_no_frame|stack_param,129
 core_lightgun.cpp_FUN_005059c0,005059c0,core/lightgun.cpp,19,5,stack_param,74
@@ -5397,7 +5397,7 @@ core_weapon.cpp_CWeapon_FUN_005ee340,005ee340,core/weapon.cpp,32,11,stack_param|
 core_weapon.cpp_CWeapon_serialize_FUN_005ee250,005ee250,core/weapon.cpp,25,2,badspacebase|register_param,55
 core_weapon.cpp_CWeapon_FUN_005ee9f0,005ee9f0,core/weapon.cpp,12,5,stack_param,67
 core_weapon.cpp_CWeapon_process_FUN_005ee110,005ee110,core/weapon.cpp,53,9,callind_esp_no_frame|stack_param|unknown_field,158
-core_weapon.cpp_CWeapon_FUN_005ee830,005ee830,core/weapon.cpp,52,6,badspacebase|register_param|unknown_field,127
+core_weapon.cpp_CWeapon_FUN_005ee830,005ee830,core/weapon.cpp,53,7,badspacebase|register_param|unknown_field,138
 core_weapon.cpp_CWeapon_FUN_005ee640,005ee640,core/weapon.cpp,6,2,stack_param,31
 core_weapon.cpp_CWeapon_FUN_005eea60,005eea60,core/weapon.cpp,7,2,stack_param,32
 core_weapon.cpp_CWeapon_FUN_005ee650,005ee650,core/weapon.cpp,6,2,stack_param,31
@@ -6010,7 +6010,7 @@ core_baron.cpp_FUN_00414090,00414090,core/baron.cpp,7,4,stack_param,52
 core_baron.cpp_staticInit_FUN_00412b20,00412b20,core/baron.cpp,13,0,,13
 core_baron.cpp_CBaron_serialize_FUN_00413a70,00413a70,core/baron.cpp,14,0,,14
 core_baron.cpp_CBaron_FUN_00414070,00414070,core/baron.cpp,5,0,,5
-core_baron.cpp_CBaron_renderTransparent_FUN_00413ae0,00413ae0,core/baron.cpp,66,11,badspacebase|register_param|stack_param|stack_ref|unaffected_reg,201
+core_baron.cpp_CBaron_renderTransparent_FUN_00413ae0,00413ae0,core/baron.cpp,72,13,badspacebase|register_param|stack_param|stack_ref|suspect_float,227
 core_baron.cpp_CBaron_FUN_00412cb0,00412cb0,core/baron.cpp,54,1,warning_overlapping_globals,69
 core_baron.cpp_CBaronWeapon_dtor_FUN_004140b0,004140b0,core/baron.cpp,20,2,unaffected_reg,45
 core_baron.cpp_CBaron_process_FUN_00412e80,00412e80,core/baron.cpp,263,26,badspacebase|register_param|stack_param|unaffected_reg|unknown_field|unresolved_funcptr,553

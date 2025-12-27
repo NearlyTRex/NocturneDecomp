@@ -25,6 +25,7 @@ void core_bride_cpp_FUN_00423a30(void)
   BADSPACEBASE *in_ESP;
   CEnemy *in_stack_00000004;
   float in_stack_00000008;
+  SDamageInfo local_1f4;
   SDamageInfo local_1b8;
   SDamageInfo local_17c;
   SDamageInfo local_140;
@@ -211,8 +212,11 @@ void core_bride_cpp_FUN_00423a30(void)
             else if ((in_stack_00000004->base_character).model.part_visibility_flags
                      [*(int *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0x14)] !=
                      0) {
-              core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffe0c);
-              local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+              core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_1f4);
+              local_1f4.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+              local_1f4.attacker = (CDemonActor *)in_stack_00000004;
+              local_1f4.wielder = (CDemonActor *)in_stack_00000004;
+              local_14 = local_1f4.damage_amount;
               pCVar7 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                                  (&local_e0,(CVector3f *)&DAT_00822c94,
                                   (in_stack_00000004->base_character).model.bone_transform.

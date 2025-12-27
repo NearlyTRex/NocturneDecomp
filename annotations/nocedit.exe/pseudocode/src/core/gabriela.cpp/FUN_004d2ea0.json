@@ -482,9 +482,6 @@
     "estimated_params": 0
   },
   "pcode_overrides": {
-    "004d33f6": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe34,4)"
-    ],
     "004d369b": [
       "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe34,4)"
     ],
@@ -544,6 +541,52 @@
     },
     "pcode_op_count": 7673
   },
+  "resolved_suspects": [
+    {
+      "add_esp_value": 4,
+      "callind_address": "004d3695",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "004d369b",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 460,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 004d3695, ADD ESP at 004d369b",
+      "type": "callind_esp_uncertain"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "004d36e6",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "004d36f5",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 460,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 004d36e6, ADD ESP at 004d36f5",
+      "type": "callind_esp_uncertain"
+    },
+    {
+      "add_esp_value": 12,
+      "callind_address": "004d3827",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "004d382d",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 460,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 004d3827, ADD ESP at 004d382d",
+      "type": "callind_esp_uncertain"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "004d3e56",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "004d3e59",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 460,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 004d3e56, ADD ESP at 004d3e59",
+      "type": "callind_esp_uncertain"
+    }
+  ],
   "stack_frame": {
     "frame_size": 484,
     "local_size": 484,

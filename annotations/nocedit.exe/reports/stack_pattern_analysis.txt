@@ -41,7 +41,7 @@ HIGH SEVERITY - Severe decompilation impact
 
   crt_io.c_write_FUN_006084ec
     Address: 006084ec
-    Suspect count: 18
+    Suspect count: 13
     Note: Function contains stack manipulation that severely impacts decompilation quality.
     - [dynamic_alloca] at 0060868e: SUB ESP,EAX
     - [alt_frame_pointer] at 0060869e: MOV ESI,ESP
@@ -211,7 +211,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 005ce0a9: AND ESP,0xfffffff8
 
   shape_superopt.cpp_CObj_findCoplanarPolygon_FUN_005d5800
-    File: shape/superopt.cpp, Suspects: 14
+    File: shape/superopt.cpp, Suspects: 20
     - [stack_alignment] at 005d5809: AND ESP,0xfffffff8
 
   shape_superopt.cpp_FUN_005d83d0

@@ -19,6 +19,7 @@ shape_superopt_cpp_CObj_findCoplanarPolygon_FUN_005d5800
   CPoly *other;
   CPoly *pCVar3;
   BADSPACEBASE *in_ESP;
+  double *unaff_EBP;
   CVector3d *pCVar4;
   uint uVar5;
   uint *puVar6;
@@ -31,13 +32,14 @@ shape_superopt_cpp_CObj_findCoplanarPolygon_FUN_005d5800
   uint local_4c;
   uint local_48;
   uint local_44;
+  uint local_40;
   uint auStack_3c [5];
   int local_28;
   CVector3d *local_24;
   uint local_20;
   uint local_1c;
   CPoly *local_18;
-  CVector3d *local_14;
+  CPoly *local_14;
   
   bVar9 = 0;
   if (search_polygon == (CPoly *)0x0) {
@@ -71,10 +73,10 @@ shape_superopt_cpp_CObj_findCoplanarPolygon_FUN_005d5800
           local_28 = 2;
 LAB_005d59af:
           point = this_ptr->vertex_data + *(int *)((int)local_18->uv_coords + local_28 * 4 + -0xc);
-          local_14 = &search_polygon->normal;
+          local_14 = (CPoly *)&search_polygon->normal;
           shape_superopt_cpp_projectPointOntoPlane_FUN_005d63d0
                     (&point->position,&this_ptr->vertex_data[search_polygon->vertex_idx_0].position,
-                     local_14);
+                     (CVector3d *)local_14);
           puVar6 = auStack_3c;
           puVar8 = &local_58;
           for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -82,18 +84,18 @@ LAB_005d59af:
             puVar6 = puVar6 + (uint)bVar9 * -2 + 1;
             puVar8 = puVar8 + (uint)bVar9 * -2 + 1;
           }
-          *(uint *)&(point->position).x = local_58;
-          *(uint *)((int)&(point->position).x + 4) = local_54;
-          *(uint *)&(point->position).y = local_50;
-          *(uint *)((int)&(point->position).y + 4) = local_4c;
-          *(uint *)&(point->position).z = local_48;
-          *(uint *)((int)&(point->position).z + 4) = local_44;
-          (local_18->normal).x = local_14->x;
-          *(uint *)&(local_18->normal).y = *(uint *)&local_14->y;
-          *(uint *)((int)&(local_18->normal).y + 4) = *(uint *)((int)&local_14->y + 4);
-          *(uint *)&(local_18->normal).z = *(uint *)&local_14->z;
-          *(uint *)((int)&(local_18->normal).z + 4) = *(uint *)((int)&local_14->z + 4);
-          iVar1 = (*this_ptr->vtable->findCoplanarPolygon)(this_ptr,coplanar_threshold,local_18);
+          *(uint *)&(point->position).x = local_54;
+          *(uint *)((int)&(point->position).x + 4) = local_50;
+          *(uint *)&(point->position).y = local_4c;
+          *(uint *)((int)&(point->position).y + 4) = local_48;
+          *(uint *)&(point->position).z = local_44;
+          *(uint *)((int)&(point->position).z + 4) = local_40;
+          (local_14->normal).x = *unaff_EBP;
+          *(uint *)&(local_14->normal).y = *(uint *)(unaff_EBP + 1);
+          *(uint *)((int)&(local_14->normal).y + 4) = *(uint *)((int)unaff_EBP + 0xc);
+          *(uint *)&(local_14->normal).z = *(uint *)(unaff_EBP + 2);
+          *(uint *)((int)&(local_14->normal).z + 4) = *(uint *)((int)unaff_EBP + 0x14);
+          iVar1 = (*this_ptr->vtable->findCoplanarPolygon)(this_ptr,coplanar_threshold,local_14);
           return iVar1;
         }
         if ((piVar7[1] == search_polygon->vertex_idx_2) &&

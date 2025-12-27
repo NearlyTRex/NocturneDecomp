@@ -5,16 +5,16 @@ SUSPECT TYPE ANALYSIS
 SUSPECT TYPE COUNTS
 --------------------------------------------------
   stack_param                    36773 ( 58.5%)
-  pointer_cast                    5275 (  8.4%)
-  stack_ref                       3987 (  6.3%)
-  unknown_field                   2954 (  4.7%)
-  unaffected_reg                  2761 (  4.4%)
+  pointer_cast                    5276 (  8.4%)
+  stack_ref                       3983 (  6.3%)
+  unknown_field                   2955 (  4.7%)
+  unaffected_reg                  2778 (  4.4%)
   register_param                  1834 (  2.9%)
-  concat_artifact                 1832 (  2.9%)
+  concat_artifact                 1831 (  2.9%)
   badspacebase                    1622 (  2.6%)
   extra_output                    1443 (  2.3%)
   callind_esp_no_frame            1078 (  1.7%)
-  suspect_float                    853 (  1.4%)
+  suspect_float                    859 (  1.4%)
   param_count_too_few              631 (  1.0%)
   unresolved_funcptr               474 (  0.8%)
   negative_offset                  416 (  0.7%)
@@ -35,9 +35,9 @@ TYPE: stack_param (36773 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  15480x  in_stack_00000004
+  15483x  in_stack_00000004
   6599x  in_stack_00000008
-  3140x  in_stack_0000000c
+  3142x  in_stack_0000000c
   1526x  in_stack_00000010
    980x  in_stack_00000014
    720x  in_stack_00000018
@@ -69,7 +69,7 @@ Example functions:
     int in_stack_0000001c;...
 
 ====================================================================================================
-TYPE: pointer_cast (5275 occurrences)
+TYPE: pointer_cast (5276 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -78,7 +78,7 @@ Unique patterns:
    487x  (float *)((int)
    256x  (SRenderVertex *)((int)
    224x  (double *)((int)
-   215x  (byte *)((int)
+   216x  (byte *)((int)
    214x  (void *)((int)
    150x  (char *)((int)
     71x  (ushort *)((int)
@@ -105,7 +105,7 @@ Example functions:
     pvVar2 = (void *)((int)g_ScreenBufferArray[width] + dest_y);...
 
 ====================================================================================================
-TYPE: stack_ref (3987 occurrences)
+TYPE: stack_ref (3983 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -117,17 +117,17 @@ Unique patterns:
     59x  &stack0xffffff48
     57x  &stack0xffffffec
     55x  &stack0xffffffc0
-    52x  &stack0xffffffd0
+    53x  &stack0xffffffd0
     51x  &stack0xffffffe8
     47x  &stack0xffffffd8
+    46x  &stack0xffffffe4
     45x  &stack0xffffff9c
     44x  &stack0xffffff90
-    44x  &stack0xffffffe4
     44x  &stack0xffffff78
-    42x  &stack0xffffffdc
-    39x  &stack0xffffffe0
+    40x  &stack0xffffffe0
     36x  &stack0xfffffee4
     36x  &stack0x00000034
+    34x  &stack0xffffffdc
     34x  &stack0xffffffd4
 
 Example functions:
@@ -145,7 +145,7 @@ Example functions:
     pcVar7 = &stack0xffffff54;...
 
 ====================================================================================================
-TYPE: unknown_field (2954 occurrences)
+TYPE: unknown_field (2955 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -159,8 +159,8 @@ Unique patterns:
     28x  ._28_4_
     27x  ._0_1_
     27x  ._32_4_
+    23x  ._24_4_
     22x  ._0_2_
-    22x  ._24_4_
     18x  ._3_1_
     14x  ._36_4_
     12x  ._1_1_
@@ -189,14 +189,14 @@ Example functions:
     local_94._16_4_ = pCVar5->x;...
 
 ====================================================================================================
-TYPE: unaffected_reg (2761 occurrences)
+TYPE: unaffected_reg (2778 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   836x  unaff_ESI
+   839x  unaff_ESI
    673x  unaff_EBX
-   628x  unaff_EBP
-   601x  unaff_EDI
+   639x  unaff_EBP
+   604x  unaff_EDI
      9x  unaff_BP
      9x  unaff_DI
      3x  unaff_SI
@@ -307,14 +307,14 @@ Example functions:
     BADSPACEBASE *in_ESP;...
 
 ====================================================================================================
-TYPE: concat_artifact (1832 occurrences)
+TYPE: concat_artifact (1831 occurrences)
 ====================================================================================================
 
 Unique patterns:
    641x  CONCAT44
    152x  CONCAT11
-   119x  CONCAT22
-   102x  CONCAT31
+   117x  CONCAT22
+   103x  CONCAT31
     96x  CONCAT12
     82x  CONCAT14
     68x  CONCAT21
@@ -499,7 +499,7 @@ Example functions:
     CALLIND at 0051d7de, ADD ESP at 0051d7e1 (no EBP frame)...
 
 ====================================================================================================
-TYPE: suspect_float (853 occurrences)
+TYPE: suspect_float (859 occurrences)
 ====================================================================================================
 
 Unique patterns:
