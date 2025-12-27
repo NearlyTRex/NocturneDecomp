@@ -198,49 +198,49 @@ def find_fixable_suspects(json_data, verbose=True):
             fixes.append((fix_address, [pcode], frame_offset, 'ebp_anchor'))
 
         elif suspect_type == 'callind_esp_no_frame':
-            # Non-EBP-frame function: fix the CALLIND to preserve ESP
-            callind_address = suspect.get('callind_address', '')
-            target_type = suspect.get('call_target_type')
-            target_value = suspect.get('call_target_value')
+            # Non-EBP-frame function: use entry ESP save + computed restore
+            expected_esp_offset = suspect.get('expected_esp_offset')
 
-            if not callind_address:
-                skipped.append((fix_address, 'no callind_address'))
+            if expected_esp_offset is None:
+                skipped.append((fix_address, 'no expected_esp_offset (re-export JSON)'))
                 continue
 
-            if target_type is None:
-                callind_asm = suspect.get('callind_assembly', '<unknown>')
-                raise ValueError(
-                    "Unhandled CALLIND at %s: %r - re-export JSON or add pattern support"
-                    % (callind_address, callind_asm))
+            # Sanity check: ESP offset should be negative (below entry) and reasonable
+            # Positive offsets or very large negative offsets indicate polluted ESP tracking
+            if expected_esp_offset > 0:
+                skipped.append((fix_address, 'invalid esp_offset=%d (positive, tracking polluted)' % expected_esp_offset))
+                continue
+            if expected_esp_offset < -4096:  # More than 4KB of stack seems unreasonable
+                skipped.append((fix_address, 'invalid esp_offset=%d (too large)' % expected_esp_offset))
+                continue
 
-            if target_value is None:
-                callind_asm = suspect.get('callind_assembly', '<unknown>')
-                raise ValueError(
-                    "Null target_value for CALLIND at %s: %r - re-export JSON or add pattern support"
-                    % (callind_address, callind_asm))
+            # Generate the fix - set ESP = saved_entry_ESP + expected_esp_offset
+            # The entry-point save will be added separately (once per function)
+            offset_twos = to_twos_complement(expected_esp_offset)
+            pcode = "INT_ADD (register,0x10,4) = (unique,0x10000,4), (const,0x%x,4)" % offset_twos
+            fixes.append((fix_address, [pcode], expected_esp_offset, 'esp_from_entry'))
 
-            # Check if callind_address already fixed
-            norm_callind = callind_address.lower().replace('0x', '').lstrip('0') or '0'
-            callind_already_fixed = False
+    # If we have any esp_from_entry fixes, we need to add an entry-point save
+    has_esp_from_entry = any(f[3] == 'esp_from_entry' for f in fixes)
+    if has_esp_from_entry:
+        # Get function entry address
+        func_info = json_data.get('function', {})
+        entry_addr = func_info.get('address', '')
+
+        if entry_addr:
+            # Check if entry already has an override
+            norm_entry = entry_addr.lower().replace('0x', '').lstrip('0') or '0'
+            entry_already_fixed = False
             for existing_addr in existing_overrides.keys():
                 existing_norm = existing_addr.lower().replace('0x', '').lstrip('0') or '0'
-                if existing_norm == norm_callind:
-                    callind_already_fixed = True
+                if existing_norm == norm_entry:
+                    entry_already_fixed = True
                     break
 
-            if callind_already_fixed:
-                continue
-
-            # Generate the fix - override CALLIND to preserve ESP
-            pcode_lines = generate_callind_esp_preserve_pcode(target_type, target_value)
-            if pcode_lines is None:
-                callind_asm = suspect.get('callind_assembly', '<unknown>')
-                raise ValueError(
-                    "Unsupported call target type '%s' at %s: %r - add support in generate_callind_esp_preserve_pcode"
-                    % (target_type, callind_address, callind_asm))
-
-            # For display, use target_value directly (dict for reg_offset, str for others)
-            fixes.append((callind_address, pcode_lines, target_value, 'callind_preserve'))
+            if not entry_already_fixed:
+                # Add save ESP at entry point
+                save_pcode = "COPY (unique,0x10000,4) = (register,0x10,4)"
+                fixes.insert(0, (entry_addr, [save_pcode], 0, 'entry_esp_save'))
 
     return fixes, skipped
 
@@ -285,24 +285,10 @@ def process_json_file(json_path, apply=False, verbose=True):
             for addr, pcode_lines, offset_value, fix_type in fixes:
                 if fix_type == 'ebp_anchor':
                     print("    %s (frame_offset=0x%x, type=%s):" % (addr, offset_value, fix_type))
-                elif fix_type == 'callind_preserve':
-                    if isinstance(offset_value, dict):
-                        if 'scale' in offset_value:
-                            # scaled_index type: {'reg': str, 'scale': int, 'offset': int}
-                            print("    %s ([%s*0x%x+0x%x], type=%s):" % (
-                                addr, offset_value.get('reg', '?'),
-                                offset_value.get('scale', 0),
-                                offset_value.get('offset', 0), fix_type))
-                        else:
-                            # reg_offset type: {'reg': str, 'offset': int}
-                            print("    %s ([%s+0x%x], type=%s):" % (
-                                addr, offset_value.get('reg', '?'), offset_value.get('offset', 0), fix_type))
-                    elif isinstance(offset_value, int):
-                        # mem_absolute type: absolute memory address
-                        print("    %s ([0x%x], type=%s):" % (addr, offset_value, fix_type))
-                    else:
-                        # reg_deref or register type: just the register name
-                        print("    %s (reg=%s, type=%s):" % (addr, offset_value, fix_type))
+                elif fix_type == 'entry_esp_save':
+                    print("    %s (save entry ESP, type=%s):" % (addr, fix_type))
+                elif fix_type == 'esp_from_entry':
+                    print("    %s (ESP=entry%+d, type=%s):" % (addr, offset_value, fix_type))
                 else:
                     print("    %s (value=%s, type=%s):" % (addr, offset_value, fix_type))
                 for line in pcode_lines:
