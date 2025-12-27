@@ -9,7 +9,10 @@
 # Format: @<address> [ESP:offset] # <assembly>
 #         [ESP:offset] = cumulative ESP delta from function entry
 #         Delta markers: (+n) ESP increased, (-n) ESP decreased
-#         Certainty:  no marker = known, ? = computed, ?? = unknown, ! = CALLIND
+#         Certainty:  no marker = known, ? = computed, ~ = cfg_resolved
+#                     !! = lost, !? = conflict, ?? = unreachable
+#                     ~! = ebp_frame_conflict (expected in EBP-frame functions)
+#                     ~> = frame_recovered (ESP recovered after frame reset)
 #
 # ============================================================================
 
@@ -1066,22 +1069,22 @@ LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
-@0052ac6f [ESP:???]!!  # MOV ESI, dword ptr [EBX + 0x60]
+@0052ac6f [ESP:-40]~  # MOV ESI, dword ptr [EBX + 0x60]
 INT_ADD (unique,0x3300,4) = (register,0xc,4) /* EBX */, (const,0x60,4)
 LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
 COPY (register,0x18,4) /* ESI */ = (unique,0xb900,4)
 
-@0052ac72 [ESP:???]!!  # LEA EDI, [ESI + EAX*0x1 + 0x18]
+@0052ac72 [ESP:-40]~  # LEA EDI, [ESI + EAX*0x1 + 0x18]
 INT_ADD (unique,0x3880,4) = (const,0x18,4), (register,0x18,4) /* ESI */
 INT_MULT (unique,0x3900,4) = (register,0x0,4) /* EAX */, (const,0x1,4)
 INT_ADD (unique,0x3a00,4) = (unique,0x3880,4), (unique,0x3900,4)
 COPY (register,0x1c,4) /* EDI */ = (unique,0x3a00,4)
 
-@0052ac76 [ESP:???]!!  # LEA ESI, [EBP + 0x18]
+@0052ac76 [ESP:-40]~  # LEA ESI, [EBP + 0x18]
 INT_ADD (unique,0x3300,4) = (register,0x14,4) /* EBP */, (const,0x18,4)
 COPY (register,0x18,4) /* ESI */ = (unique,0x3300,4)
 
-@0052ac79 [ESP:???]!!  # MOVSD ES:EDI, ESI
+@0052ac79 [ESP:-40]~  # MOVSD ES:EDI, ESI
 COPY (unique,0xb500,4) = (register,0x1c,4) /* EDI */
 INT_ADD (unique,0xb580,4) = (register,0x1c,4) /* EDI */, (const,0x4,4)
 INT_ZEXT (unique,0xb600,4) = (register,0x20a,1)
@@ -1096,7 +1099,7 @@ LOAD (unique,0xa400,4) = (const,0x1a1,4), (unique,0xa180,4)
 COPY (unique,0xb780,4) = (unique,0xa400,4)
 STORE (const,0x1a1,4), (unique,0xb500,4), (unique,0xb780,4)
 
-@0052ac7a [ESP:???]!!  # MOVSD ES:EDI, ESI
+@0052ac7a [ESP:-40]~  # MOVSD ES:EDI, ESI
 COPY (unique,0xb500,4) = (register,0x1c,4) /* EDI */
 INT_ADD (unique,0xb580,4) = (register,0x1c,4) /* EDI */, (const,0x4,4)
 INT_ZEXT (unique,0xb600,4) = (register,0x20a,1)
@@ -1111,7 +1114,7 @@ LOAD (unique,0xa400,4) = (const,0x1a1,4), (unique,0xa180,4)
 COPY (unique,0xb780,4) = (unique,0xa400,4)
 STORE (const,0x1a1,4), (unique,0xb500,4), (unique,0xb780,4)
 
-@0052ac7b [ESP:???]!!  # MOVSD ES:EDI, ESI
+@0052ac7b [ESP:-40]~  # MOVSD ES:EDI, ESI
 COPY (unique,0xb500,4) = (register,0x1c,4) /* EDI */
 INT_ADD (unique,0xb580,4) = (register,0x1c,4) /* EDI */, (const,0x4,4)
 INT_ZEXT (unique,0xb600,4) = (register,0x20a,1)
@@ -1126,22 +1129,22 @@ LOAD (unique,0xa400,4) = (const,0x1a1,4), (unique,0xa180,4)
 COPY (unique,0xb780,4) = (unique,0xa400,4)
 STORE (const,0x1a1,4), (unique,0xb500,4), (unique,0xb780,4)
 
-@0052ac7c [ESP:???]!!  # MOV ESI, dword ptr [EBX + 0x60]
+@0052ac7c [ESP:-40]~  # MOV ESI, dword ptr [EBX + 0x60]
 INT_ADD (unique,0x3300,4) = (register,0xc,4) /* EBX */, (const,0x60,4)
 LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
 COPY (register,0x18,4) /* ESI */ = (unique,0xb900,4)
 
-@0052ac7f [ESP:???]!!  # LEA EDI, [ESI + EAX*0x1 + 0x24]
+@0052ac7f [ESP:-40]~  # LEA EDI, [ESI + EAX*0x1 + 0x24]
 INT_ADD (unique,0x3880,4) = (const,0x24,4), (register,0x18,4) /* ESI */
 INT_MULT (unique,0x3900,4) = (register,0x0,4) /* EAX */, (const,0x1,4)
 INT_ADD (unique,0x3a00,4) = (unique,0x3880,4), (unique,0x3900,4)
 COPY (register,0x1c,4) /* EDI */ = (unique,0x3a00,4)
 
-@0052ac83 [ESP:???]!!  # LEA ESI, [EDX + 0xc]
+@0052ac83 [ESP:-40]~  # LEA ESI, [EDX + 0xc]
 INT_ADD (unique,0x3300,4) = (register,0x8,4) /* EDX */, (const,0xc,4)
 COPY (register,0x18,4) /* ESI */ = (unique,0x3300,4)
 
-@0052ac86 [ESP:???]!!  # MOVSD ES:EDI, ESI
+@0052ac86 [ESP:-40]~  # MOVSD ES:EDI, ESI
 COPY (unique,0xb500,4) = (register,0x1c,4) /* EDI */
 INT_ADD (unique,0xb580,4) = (register,0x1c,4) /* EDI */, (const,0x4,4)
 INT_ZEXT (unique,0xb600,4) = (register,0x20a,1)
@@ -1156,7 +1159,7 @@ LOAD (unique,0xa400,4) = (const,0x1a1,4), (unique,0xa180,4)
 COPY (unique,0xb780,4) = (unique,0xa400,4)
 STORE (const,0x1a1,4), (unique,0xb500,4), (unique,0xb780,4)
 
-@0052ac87 [ESP:???]!!  # MOVSD ES:EDI, ESI
+@0052ac87 [ESP:-40]~  # MOVSD ES:EDI, ESI
 COPY (unique,0xb500,4) = (register,0x1c,4) /* EDI */
 INT_ADD (unique,0xb580,4) = (register,0x1c,4) /* EDI */, (const,0x4,4)
 INT_ZEXT (unique,0xb600,4) = (register,0x20a,1)
@@ -1171,7 +1174,7 @@ LOAD (unique,0xa400,4) = (const,0x1a1,4), (unique,0xa180,4)
 COPY (unique,0xb780,4) = (unique,0xa400,4)
 STORE (const,0x1a1,4), (unique,0xb500,4), (unique,0xb780,4)
 
-@0052ac88 [ESP:???]!!  # MOVSD ES:EDI, ESI
+@0052ac88 [ESP:-40]~  # MOVSD ES:EDI, ESI
 COPY (unique,0xb500,4) = (register,0x1c,4) /* EDI */
 INT_ADD (unique,0xb580,4) = (register,0x1c,4) /* EDI */, (const,0x4,4)
 INT_ZEXT (unique,0xb600,4) = (register,0x20a,1)
@@ -1186,25 +1189,24 @@ LOAD (unique,0xa400,4) = (const,0x1a1,4), (unique,0xa180,4)
 COPY (unique,0xb780,4) = (unique,0xa400,4)
 STORE (const,0x1a1,4), (unique,0xb500,4), (unique,0xb780,4)
 
-@0052ac89 [ESP:???]!!  # MOV ESI, dword ptr [EBX + 0x60]
+@0052ac89 [ESP:-40]~  # MOV ESI, dword ptr [EBX + 0x60]
 INT_ADD (unique,0x3300,4) = (register,0xc,4) /* EBX */, (const,0x60,4)
 LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
 COPY (register,0x18,4) /* ESI */ = (unique,0xb900,4)
 
-@0052ac8c [ESP:???]!!  # LEA EDI, [ESI + EAX*0x1 + 0x30]
+@0052ac8c [ESP:-40]~  # LEA EDI, [ESI + EAX*0x1 + 0x30]
 INT_ADD (unique,0x3880,4) = (const,0x30,4), (register,0x18,4) /* ESI */
 INT_MULT (unique,0x3900,4) = (register,0x0,4) /* EAX */, (const,0x1,4)
 INT_ADD (unique,0x3a00,4) = (unique,0x3880,4), (unique,0x3900,4)
 COPY (register,0x1c,4) /* EDI */ = (unique,0x3a00,4)
 
-@0052ac90 [ESP:???]!!  # LEA ESI, [EDX + 0x18]
+@0052ac90 [ESP:-40]~  # LEA ESI, [EDX + 0x18]
 INT_ADD (unique,0x3300,4) = (register,0x8,4) /* EDX */, (const,0x18,4)
 COPY (register,0x18,4) /* ESI */ = (unique,0x3300,4)
 
-@0052ac93 [ESP:???]!!  # JMP 0x0052abda
+@0052ac93 [ESP:-40]~  # JMP 0x0052abda
 BRANCH (ram,0x52abda,4)
 
 # ============================================================================
 # Summary: 153 instructions, 885 P-code ops
-# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

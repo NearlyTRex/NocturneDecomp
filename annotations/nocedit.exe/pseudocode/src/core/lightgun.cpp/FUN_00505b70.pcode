@@ -9,7 +9,10 @@
 # Format: @<address> [ESP:offset] # <assembly>
 #         [ESP:offset] = cumulative ESP delta from function entry
 #         Delta markers: (+n) ESP increased, (-n) ESP decreased
-#         Certainty:  no marker = known, ? = computed, ?? = unknown, ! = CALLIND
+#         Certainty:  no marker = known, ? = computed, ~ = cfg_resolved
+#                     !! = lost, !? = conflict, ?? = unreachable
+#                     ~! = ebp_frame_conflict (expected in EBP-frame functions)
+#                     ~> = frame_recovered (ESP recovered after frame reset)
 #
 # ============================================================================
 
@@ -617,13 +620,12 @@ LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
-@00505c68 [ESP:???]!!  # MOV EBP, 0x1
+@00505c68 [ESP:-76]~  # MOV EBP, 0x1
 COPY (register,0x14,4) /* EBP */ = (const,0x1,4)
 
-@00505c6d [ESP:???]!!  # JMP 0x00505c4f
+@00505c6d [ESP:-76]~  # JMP 0x00505c4f
 BRANCH (ram,0x505c4f,4)
 
 # ============================================================================
 # Summary: 91 instructions, 428 P-code ops
-# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

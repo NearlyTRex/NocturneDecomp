@@ -9,7 +9,10 @@
 # Format: @<address> [ESP:offset] # <assembly>
 #         [ESP:offset] = cumulative ESP delta from function entry
 #         Delta markers: (+n) ESP increased, (-n) ESP decreased
-#         Certainty:  no marker = known, ? = computed, ?? = unknown, ! = CALLIND
+#         Certainty:  no marker = known, ? = computed, ~ = cfg_resolved
+#                     !! = lost, !? = conflict, ?? = unreachable
+#                     ~! = ebp_frame_conflict (expected in EBP-frame functions)
+#                     ~> = frame_recovered (ESP recovered after frame reset)
 #
 # ============================================================================
 
@@ -276,7 +279,7 @@ LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
-@004ee0dd [ESP:???]!!  # XOR ESI, ESI
+@004ee0dd [ESP:-16]~  # XOR ESI, ESI
 COPY (register,0x200,1) = (const,0x0,1)
 COPY (register,0x20b,1) = (const,0x0,1)
 INT_XOR (register,0x18,4) /* ESI */ = (register,0x18,4) /* ESI */, (register,0x18,4) /* ESI */
@@ -287,13 +290,12 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@004ee0df [ESP:???]!!  # MOV dword ptr [0x02da8c24], ESI
+@004ee0df [ESP:-16]~  # MOV dword ptr [0x02da8c24], ESI
 COPY (ram,0x2da8c24,4) = (register,0x18,4) /* ESI */
 
-@004ee0e5 [ESP:???]!!  # JMP 0x004ee09a
+@004ee0e5 [ESP:-16]~  # JMP 0x004ee09a
 BRANCH (ram,0x4ee09a,4)
 
 # ============================================================================
 # Summary: 43 instructions, 194 P-code ops
-# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

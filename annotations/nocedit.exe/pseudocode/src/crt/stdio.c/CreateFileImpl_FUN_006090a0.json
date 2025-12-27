@@ -9,7 +9,7 @@
     "suspect_count": 13,
     "suspect_types": [
       "badspacebase",
-      "callind_esp_no_frame_lost",
+      "callind_esp_no_frame",
       "param_count_too_few",
       "register_param",
       "stack_ref",
@@ -333,12 +333,14 @@
       "call_target_value": 6835952,
       "callind_address": "00609141",
       "callind_assembly": "CALL dword ptr [0x00684ef0]",
-      "description": "CALLIND with lost ESP tracking (branching code)",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
+      "esp_at_callind": -44,
+      "expected_esp_offset": -40,
       "fix_address": "00609147",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 40,
       "text": "CALLIND at 00609141, ADD ESP at 00609147 (no EBP frame)",
-      "type": "callind_esp_no_frame_lost"
+      "type": "callind_esp_no_frame"
     },
     {
       "add_esp_value": 12,
@@ -346,12 +348,14 @@
       "call_target_value": 6836876,
       "callind_address": "00609156",
       "callind_assembly": "CALL dword ptr [0x0068528c]",
-      "description": "CALLIND with lost ESP tracking (branching code)",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
+      "esp_at_callind": -52,
+      "expected_esp_offset": -40,
       "fix_address": "0060915c",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 40,
       "text": "CALLIND at 00609156, ADD ESP at 0060915c (no EBP frame)",
-      "type": "callind_esp_no_frame_lost"
+      "type": "callind_esp_no_frame"
     },
     {
       "add_esp_value": 4,
@@ -359,12 +363,14 @@
       "call_target_value": 6835952,
       "callind_address": "0060923e",
       "callind_assembly": "CALL dword ptr [0x00684ef0]",
-      "description": "CALLIND with lost ESP tracking (branching code)",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
+      "esp_at_callind": -16,
+      "expected_esp_offset": -12,
       "fix_address": "0060924c",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 40,
       "text": "CALLIND at 0060923e, ADD ESP at 0060924c (no EBP frame)",
-      "type": "callind_esp_no_frame_lost"
+      "type": "callind_esp_no_frame"
     },
     {
       "call_site_count": 1,

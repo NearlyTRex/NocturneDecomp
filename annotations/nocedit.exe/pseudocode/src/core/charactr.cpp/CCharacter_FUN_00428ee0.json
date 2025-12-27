@@ -1,7 +1,7 @@
 {
   "complexity": {
     "assembly_lines": 33,
-    "complexity_score": 145,
+    "complexity_score": 140,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
@@ -10,7 +10,6 @@
     "suspect_types": [
       "badspacebase",
       "callind_esp_no_frame",
-      "callind_esp_no_frame_lost",
       "register_param",
       "stack_param",
       "stack_ref"
@@ -170,40 +169,42 @@
       },
       "callind_address": "00428f26",
       "callind_assembly": "CALL dword ptr [EDX + 0x11c]",
-      "description": "CALLIND with lost ESP tracking (branching code)",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
+      "esp_at_callind": -72,
+      "expected_esp_offset": -64,
       "fix_address": "00428f2c",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 64,
       "text": "CALLIND at 00428f26, ADD ESP at 00428f2c (no EBP frame)",
-      "type": "callind_esp_no_frame_lost"
+      "type": "callind_esp_no_frame"
     }
   ],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "CArmour",
+        "class_name": "Unknown",
         "offset": 236,
-        "vtable_addr": "00659d34"
+        "vtable_addr": "0065e804"
       },
       {
-        "class_name": "CBaron",
+        "class_name": "CBassPlayer",
         "offset": 236,
-        "vtable_addr": "0065a074"
-      },
-      {
-        "class_name": "CBatCreature",
-        "offset": 236,
-        "vtable_addr": "0065a5c4"
-      },
-      {
-        "class_name": "CBatman",
-        "offset": 236,
-        "vtable_addr": "0065a784"
+        "vtable_addr": "00663f14"
       },
       {
         "class_name": "Unknown",
         "offset": 236,
-        "vtable_addr": "0065aa64"
+        "vtable_addr": "0065ac24"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 236,
+        "vtable_addr": "0065b424"
+      },
+      {
+        "class_name": "CMimic",
+        "offset": 236,
+        "vtable_addr": "00661424"
       }
     ],
     "in_vtable": true,

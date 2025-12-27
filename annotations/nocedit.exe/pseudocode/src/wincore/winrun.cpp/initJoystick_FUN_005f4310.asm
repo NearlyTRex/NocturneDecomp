@@ -16,7 +16,7 @@
 ;   int g_JoystickNumButtons = 0x4
 ;   int g_JoystickPresent
 ;   int g_JoystickHasPOV
-;   FARPROC g_joyGetPosEx
+;   joyGetPosEx* g_joyGetPosEx
 ;   HMODULE g_WinmmDll
 ;
 ; *****************************************************************************

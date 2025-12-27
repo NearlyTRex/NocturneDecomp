@@ -9,7 +9,10 @@
 # Format: @<address> [ESP:offset] # <assembly>
 #         [ESP:offset] = cumulative ESP delta from function entry
 #         Delta markers: (+n) ESP increased, (-n) ESP decreased
-#         Certainty:  no marker = known, ? = computed, ?? = unknown, ! = CALLIND
+#         Certainty:  no marker = known, ? = computed, ~ = cfg_resolved
+#                     !! = lost, !? = conflict, ?? = unreachable
+#                     ~! = ebp_frame_conflict (expected in EBP-frame functions)
+#                     ~> = frame_recovered (ESP recovered after frame reset)
 #
 # ============================================================================
 
@@ -296,13 +299,13 @@ LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
-@00406120 [ESP:???]!!  # MOV dword ptr [0x02d0257c], 0x5b5322
+@00406120 [ESP:-12]~  # MOV dword ptr [0x02d0257c], 0x5b5322
 COPY (ram,0x2d0257c,4) = (const,0x5b5322,4)
 
-@0040612a [ESP:???]!!  # JMP 0x004060d6
+@0040612a [ESP:-12]~  # JMP 0x004060d6
 BRANCH (ram,0x4060d6,4)
 
-@0040612c [ESP:???]!!  # CMP dword ptr [0x0067939c], 0x20
+@0040612c [ESP:-12]~  # CMP dword ptr [0x0067939c], 0x20
 COPY (unique,0x33080,4) = (ram,0x67939c,4)
 INT_LESS (register,0x200,1) = (unique,0x33080,4), (const,0x20,4)
 INT_SBORROW (register,0x20b,1) = (unique,0x33080,4), (const,0x20,4)
@@ -314,23 +317,22 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@00406133 [ESP:???]!!  # JNZ 0x00406141
+@00406133 [ESP:-12]~  # JNZ 0x00406141
 BOOL_NEGATE (unique,0xbe00,1) = (register,0x206,1)
 CBRANCH (ram,0x406141,4), (unique,0xbe00,1)
 
-@00406135 [ESP:???]!!  # MOV dword ptr [0x02d0257c], 0x5b4031
+@00406135 [ESP:-12]~  # MOV dword ptr [0x02d0257c], 0x5b4031
 COPY (ram,0x2d0257c,4) = (const,0x5b4031,4)
 
-@0040613f [ESP:???]!!  # JMP 0x004060d6
+@0040613f [ESP:-12]~  # JMP 0x004060d6
 BRANCH (ram,0x4060d6,4)
 
-@00406141 [ESP:???]!!  # MOV dword ptr [0x02d0257c], 0x5b4823
+@00406141 [ESP:-12]~  # MOV dword ptr [0x02d0257c], 0x5b4823
 COPY (ram,0x2d0257c,4) = (const,0x5b4823,4)
 
-@0040614b [ESP:???]!!  # JMP 0x004060d6
+@0040614b [ESP:-12]~  # JMP 0x004060d6
 BRANCH (ram,0x4060d6,4)
 
 # ============================================================================
 # Summary: 49 instructions, 219 P-code ops
-# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

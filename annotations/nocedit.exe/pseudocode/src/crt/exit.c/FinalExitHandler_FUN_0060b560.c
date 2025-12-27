@@ -16,6 +16,6 @@ void __cdecl crt_exit_c_FinalExitHandler_FUN_0060b560(int exit_code)
   if (DAT_006852c4 != (code *)0x0) {
     (*DAT_006852c4)();
   }
+                    /* WARNING: Subroutine does not return */
   crt_exit_c_ExitProcess_FUN_00602700(unaff_EBX);
-  return;
 }

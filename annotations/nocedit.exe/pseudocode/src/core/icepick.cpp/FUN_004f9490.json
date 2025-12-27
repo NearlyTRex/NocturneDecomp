@@ -9,7 +9,7 @@
     "suspect_count": 16,
     "suspect_types": [
       "badspacebase",
-      "callind_esp_no_frame_lost",
+      "callind_esp_no_frame",
       "param_count_too_few",
       "register_param",
       "stack_param",
@@ -337,12 +337,14 @@
       },
       "callind_address": "004f957f",
       "callind_assembly": "CALL dword ptr [EAX + 0x24]",
-      "description": "CALLIND with lost ESP tracking (branching code)",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
+      "esp_at_callind": -116,
+      "expected_esp_offset": -108,
       "fix_address": "004f9582",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 108,
       "text": "CALLIND at 004f957f, ADD ESP at 004f9582 (no EBP frame)",
-      "type": "callind_esp_no_frame_lost"
+      "type": "callind_esp_no_frame"
     },
     {
       "call_site_count": 2,

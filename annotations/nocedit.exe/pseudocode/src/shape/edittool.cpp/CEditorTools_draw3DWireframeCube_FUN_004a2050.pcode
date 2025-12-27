@@ -9,7 +9,10 @@
 # Format: @<address> [ESP:offset] # <assembly>
 #         [ESP:offset] = cumulative ESP delta from function entry
 #         Delta markers: (+n) ESP increased, (-n) ESP decreased
-#         Certainty:  no marker = known, ? = computed, ?? = unknown, ! = CALLIND
+#         Certainty:  no marker = known, ? = computed, ~ = cfg_resolved
+#                     !! = lost, !? = conflict, ?? = unreachable
+#                     ~! = ebp_frame_conflict (expected in EBP-frame functions)
+#                     ~> = frame_recovered (ESP recovered after frame reset)
 #
 # ============================================================================
 
@@ -2468,7 +2471,7 @@ LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
-@004a24e5 [ESP:???]!!  # TEST AL, 0x1
+@004a24e5 [ESP:-272]~  # TEST AL, 0x1
 COPY (register,0x200,1) = (const,0x0,1)
 COPY (register,0x20b,1) = (const,0x0,1)
 INT_AND (unique,0x56a00,1) = (register,0x0,1), (const,0x1,1)
@@ -2479,38 +2482,37 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,1)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@004a24e7 [ESP:???]!!  # JZ 0x004a207e
+@004a24e7 [ESP:-272]~  # JZ 0x004a207e
 CBRANCH (ram,0x4a207e,4), (register,0x206,1)
 
-@004a24ed [ESP:???]!!  # MOV EDI, dword ptr [EBX]
+@004a24ed [ESP:-272]~  # MOV EDI, dword ptr [EBX]
 LOAD (unique,0xb900,4) = (const,0x1a1,4), (register,0xc,4) /* EBX */
 COPY (register,0x1c,4) /* EDI */ = (unique,0xb900,4)
 
-@004a24ef [ESP:???]!!  # MOV dword ptr [ESP + 0xf4], EDI
+@004a24ef [ESP:-272]~  # MOV dword ptr [ESP + 0xf4], EDI
 INT_ADD (unique,0x3f80,4) = (const,0xf4,4), (register,0x10,4) /* ESP */
 COPY (unique,0x5180,4) = (register,0x1c,4) /* EDI */
 STORE (const,0x1a1,4), (unique,0x3f80,4), (unique,0x5180,4)
 
-@004a24f6 [ESP:???]!!  # JMP 0x004a208a
+@004a24f6 [ESP:-272]~  # JMP 0x004a208a
 BRANCH (ram,0x4a208a,4)
 
-@004a24fb [ESP:???]!!  # MOV EDI, dword ptr [EBX + 0x4]
+@004a24fb [ESP:-272]~  # MOV EDI, dword ptr [EBX + 0x4]
 INT_ADD (unique,0x3300,4) = (register,0xc,4) /* EBX */, (const,0x4,4)
 LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
 COPY (register,0x1c,4) /* EDI */ = (unique,0xb900,4)
 
-@004a24fe [ESP:???]!!  # JMP 0x004a209f
+@004a24fe [ESP:-272]~  # JMP 0x004a209f
 BRANCH (ram,0x4a209f,4)
 
-@004a2503 [ESP:???]!!  # MOV EDI, dword ptr [ESI + 0x8]
+@004a2503 [ESP:-272]~  # MOV EDI, dword ptr [ESI + 0x8]
 INT_ADD (unique,0x3300,4) = (register,0x18,4) /* ESI */, (const,0x8,4)
 LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
 COPY (register,0x1c,4) /* EDI */ = (unique,0xb900,4)
 
-@004a2506 [ESP:???]!!  # JMP 0x004a20bc
+@004a2506 [ESP:-272]~  # JMP 0x004a20bc
 BRANCH (ram,0x4a20bc,4)
 
 # ============================================================================
 # Summary: 295 instructions, 1907 P-code ops
-# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

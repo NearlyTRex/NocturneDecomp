@@ -8,7 +8,7 @@
     "pseudocode_lines": 15,
     "suspect_count": 3,
     "suspect_types": [
-      "callind_esp_no_frame_lost"
+      "callind_esp_no_frame"
     ],
     "total_lines": 53
   },
@@ -142,12 +142,14 @@
       "call_target_value": 6835944,
       "callind_address": "0060c305",
       "callind_assembly": "CALL dword ptr [0x00684ee8]",
-      "description": "CALLIND with lost ESP tracking (branching code)",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
+      "esp_at_callind": -12,
+      "expected_esp_offset": -8,
       "fix_address": "0060c30b",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 20,
       "text": "CALLIND at 0060c305, ADD ESP at 0060c30b (no EBP frame)",
-      "type": "callind_esp_no_frame_lost"
+      "type": "callind_esp_no_frame"
     },
     {
       "add_esp_value": 4,
@@ -155,12 +157,14 @@
       "call_target_value": 6835948,
       "callind_address": "0060c31a",
       "callind_assembly": "CALL dword ptr [0x00684eec]",
-      "description": "CALLIND with lost ESP tracking (branching code)",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
+      "esp_at_callind": -12,
+      "expected_esp_offset": -8,
       "fix_address": "0060c320",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 20,
       "text": "CALLIND at 0060c31a, ADD ESP at 0060c320 (no EBP frame)",
-      "type": "callind_esp_no_frame_lost"
+      "type": "callind_esp_no_frame"
     },
     {
       "add_esp_value": 4,
@@ -168,12 +172,14 @@
       "call_target_value": 6835956,
       "callind_address": "0060c324",
       "callind_assembly": "CALL dword ptr [0x00684ef4]",
-      "description": "CALLIND with lost ESP tracking (branching code)",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
+      "esp_at_callind": -12,
+      "expected_esp_offset": -8,
       "fix_address": "0060c32a",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 20,
       "text": "CALLIND at 0060c324, ADD ESP at 0060c32a (no EBP frame)",
-      "type": "callind_esp_no_frame_lost"
+      "type": "callind_esp_no_frame"
     }
   ]
 }

@@ -9,7 +9,10 @@
 # Format: @<address> [ESP:offset] # <assembly>
 #         [ESP:offset] = cumulative ESP delta from function entry
 #         Delta markers: (+n) ESP increased, (-n) ESP decreased
-#         Certainty:  no marker = known, ? = computed, ?? = unknown, ! = CALLIND
+#         Certainty:  no marker = known, ? = computed, ~ = cfg_resolved
+#                     !! = lost, !? = conflict, ?? = unreachable
+#                     ~! = ebp_frame_conflict (expected in EBP-frame functions)
+#                     ~> = frame_recovered (ESP recovered after frame reset)
 #
 # ============================================================================
 
@@ -109,18 +112,18 @@ LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
-@0061021f [ESP:???]!!  # CALL dword ptr [0x00685478]
+@0061021f [ESP:-4](-4)~  # CALL dword ptr [0x00685478]
 COPY (unique,0x31a80,4) = (ram,0x685478,4)
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x610225,4)
 CALLIND (unique,0x31a80,4)
 
-@00610225 [ESP:???]!!  # PUSH EBX
+@00610225 [ESP:-8](-4)~  # PUSH EBX
 COPY (unique,0x20a80,4) = (register,0xc,4) /* EBX */
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x20a80,4)
 
-@00610226 [ESP:???]!!  # CALL dword ptr CS:[0x611534]
+@00610226 [ESP:-4](-4)~  # CALL dword ptr CS:[0x611534]
 COPY (unique,0x31a80,4) = (ram,0x611534,4)
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x61022d,4)
@@ -128,5 +131,4 @@ CALLIND (unique,0x31a80,4)
 
 # ============================================================================
 # Summary: 20 instructions, 73 P-code ops
-# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

@@ -8,15 +8,14 @@ SUSPECT TYPE COUNTS
   pointer_cast                    5275 (  8.4%)
   stack_ref                       3987 (  6.3%)
   unknown_field                   2954 (  4.7%)
-  unaffected_reg                  2755 (  4.4%)
+  unaffected_reg                  2761 (  4.4%)
   register_param                  1834 (  2.9%)
   concat_artifact                 1832 (  2.9%)
   badspacebase                    1622 (  2.6%)
   extra_output                    1443 (  2.3%)
+  callind_esp_no_frame            1078 (  1.7%)
   suspect_float                    853 (  1.4%)
   param_count_too_few              631 (  1.0%)
-  callind_esp_no_frame_lost        618 (  1.0%)
-  callind_esp_no_frame             479 (  0.8%)
   unresolved_funcptr               474 (  0.8%)
   negative_offset                  416 (  0.7%)
   sub_artifact                     322 (  0.5%)
@@ -25,10 +24,11 @@ SUSPECT TYPE COUNTS
   undefined_type                   110 (  0.2%)
   param_count_too_many              89 (  0.1%)
   sborrow_artifact                  26 (  0.0%)
+  callind_esp_no_frame_lost         19 (  0.0%)
   warning_jumptable                 12 (  0.0%)
   warning_indirect_jump             12 (  0.0%)
   undefined_ptr_cast                 5 (  0.0%)
-  warning_noreturn                   1 (  0.0%)
+  warning_noreturn                   4 (  0.0%)
 
 ====================================================================================================
 TYPE: stack_param (36773 occurrences)
@@ -189,14 +189,14 @@ Example functions:
     local_94._16_4_ = pCVar5->x;...
 
 ====================================================================================================
-TYPE: unaffected_reg (2755 occurrences)
+TYPE: unaffected_reg (2761 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   834x  unaff_ESI
-   671x  unaff_EBX
+   836x  unaff_ESI
+   673x  unaff_EBX
    628x  unaff_EBP
-   599x  unaff_EDI
+   601x  unaff_EDI
      9x  unaff_BP
      9x  unaff_DI
      3x  unaff_SI
@@ -462,6 +462,43 @@ Example functions:
     int extraout_EAX;...
 
 ====================================================================================================
+TYPE: callind_esp_no_frame (1078 occurrences)
+====================================================================================================
+
+Unique patterns:
+  1078x  CALLIND...ADD ESP
+
+Example functions:
+  cockpit_ckptutil.c_blitSimpleSprite_FUN_00432540
+    CALLIND at 004325ac, ADD ESP at 004325b0 (no EBP frame)...
+  cockpit_ckptutil.c_blitHorizontallyClippedSprite_FUN_004328d0
+    CALLIND at 0043297a, ADD ESP at 0043297c (no EBP frame)...
+  cockpit_ckptutil.c_blitUnifiedSprite_FUN_00432300
+    CALLIND at 00432409, ADD ESP at 0043240d (no EBP frame)...
+  cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_00431f40
+    CALLIND at 00432088, ADD ESP at 0043208c (no EBP frame)...
+  cockpit_ckptutil.c_blitSpanBasedSpriteVerticallyClipped_FUN_00432b60
+    CALLIND at 00432c3a, ADD ESP at 00432c3c (no EBP frame)...
+  cockpit_ckptutil.c_blitRectangleClipped_FUN_00432190
+    CALLIND at 00432239, ADD ESP at 0043223d (no EBP frame)...
+  cockpit_ckptutil.c_blitVerticalColumn_FUN_00432a10
+    CALLIND at 00432a8e, ADD ESP at 00432a92 (no EBP frame)...
+  cockpit_ckptutil.c_blitDualModeSprite_FUN_004326a0
+    CALLIND at 00432750, ADD ESP at 00432752 (no EBP frame)...
+  cockpit_ckptutil.c_blitSpanBasedSprite_FUN_00431d00
+    CALLIND at 00431e3b, ADD ESP at 00431e3f (no EBP frame)...
+  cockpit_ckptutil.c_copyBitmapRegion_FUN_00432860
+    CALLIND at 004328af, ADD ESP at 004328b3 (no EBP frame)...
+  cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa20
+    CALLIND at 0054aaea, ADD ESP at 0054aaee (no EBP frame)...
+  cockpit_pkbitmap.cpp_CPackedBitmap_renderClippedRegion_FUN_0054ab30
+    CALLIND at 0054ac56, ADD ESP at 0054ac5a (no EBP frame)...
+  cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70
+    CALLIND at 0054af25, ADD ESP at 0054af29 (no EBP frame)...
+  shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520
+    CALLIND at 0051d7de, ADD ESP at 0051d7e1 (no EBP frame)...
+
+====================================================================================================
 TYPE: suspect_float (853 occurrences)
 ====================================================================================================
 
@@ -594,82 +631,6 @@ Example functions:
     Function declares 2 params but call sites push 6 (4 missing)...
   shape_superopt.cpp_CondCallDebugMallocUnknownString_FUN_005cbe20
     Function declares 0 params but call sites push 5 (5 missing)...
-
-====================================================================================================
-TYPE: callind_esp_no_frame_lost (618 occurrences)
-====================================================================================================
-
-Unique patterns:
-   618x  CALLIND...ADD ESP
-
-Example functions:
-  cockpit_ckptutil.c_blitSimpleSprite_FUN_00432540
-    CALLIND at 004325ac, ADD ESP at 004325b0 (no EBP frame)...
-  cockpit_ckptutil.c_blitHorizontallyClippedSprite_FUN_004328d0
-    CALLIND at 0043297a, ADD ESP at 0043297c (no EBP frame)...
-  cockpit_ckptutil.c_blitUnifiedSprite_FUN_00432300
-    CALLIND at 00432409, ADD ESP at 0043240d (no EBP frame)...
-  cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_00431f40
-    CALLIND at 00432088, ADD ESP at 0043208c (no EBP frame)...
-  cockpit_ckptutil.c_blitSpanBasedSpriteVerticallyClipped_FUN_00432b60
-    CALLIND at 00432c3a, ADD ESP at 00432c3c (no EBP frame)...
-  cockpit_ckptutil.c_blitRectangleClipped_FUN_00432190
-    CALLIND at 00432239, ADD ESP at 0043223d (no EBP frame)...
-  cockpit_ckptutil.c_blitVerticalColumn_FUN_00432a10
-    CALLIND at 00432a8e, ADD ESP at 00432a92 (no EBP frame)...
-  cockpit_ckptutil.c_blitDualModeSprite_FUN_004326a0
-    CALLIND at 00432750, ADD ESP at 00432752 (no EBP frame)...
-  cockpit_ckptutil.c_blitSpanBasedSprite_FUN_00431d00
-    CALLIND at 00431e3b, ADD ESP at 00431e3f (no EBP frame)...
-  cockpit_ckptutil.c_copyBitmapRegion_FUN_00432860
-    CALLIND at 004328af, ADD ESP at 004328b3 (no EBP frame)...
-  cockpit_pkbitmap.cpp_CPackedBitmap_renderToScreenBuffer_FUN_0054aa20
-    CALLIND at 0054aaea, ADD ESP at 0054aaee (no EBP frame)...
-  cockpit_pkbitmap.cpp_CPackedBitmap_renderClippedRegion_FUN_0054ab30
-    CALLIND at 0054ac56, ADD ESP at 0054ac5a (no EBP frame)...
-  shape_superopt.cpp_CPoly_hasCentroidIntersection_FUN_005d1230
-    CALLIND at 005d1297, ADD ESP at 005d129a (no EBP frame)...
-  shape_superopt.cpp_CObj_findAndRemovePolygonsUsingVertex_FUN_005d30c0
-    CALLIND at 005d30e2, ADD ESP at 005d30e5 (no EBP frame)...
-
-====================================================================================================
-TYPE: callind_esp_no_frame (479 occurrences)
-====================================================================================================
-
-Unique patterns:
-   479x  CALLIND...ADD ESP
-
-Example functions:
-  cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70
-    CALLIND at 0054af25, ADD ESP at 0054af29 (no EBP frame)...
-  shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520
-    CALLIND at 0051d7de, ADD ESP at 0051d7e1 (no EBP frame)...
-  shape_superopt.cpp_CObj_setStateFlags_FUN_005d3440
-    CALLIND at 005d3497, ADD ESP at 005d349a (no EBP frame)...
-  shape_superopt.cpp_CObj_copyFrom_FUN_005d2650
-    CALLIND at 005d265a, ADD ESP at 005d265d (no EBP frame)...
-  shape_superopt.cpp_CObj_setStateFlagIfCondition_FUN_005d34d0
-    CALLIND at 005d353a, ADD ESP at 005d353d (no EBP frame)...
-  shape_superopt.cpp_CObj_projectAllPlanarUVs_FUN_005d3e40
-    CALLIND at 005d3e65, ADD ESP at 005d3e6b (no EBP frame)...
-  shape_superopt.cpp_CPoly_hasCentroidIntersection_FUN_005d1230
-    CALLIND at 005d1252, ADD ESP at 005d1255 (no EBP frame)...
-  shape_superopt.cpp_CObj_flipAllPolyNormals_FUN_005d3db0
-    CALLIND at 005d3dc8, ADD ESP at 005d3dcb (no EBP frame)...
-  shape_superopt.cpp_CObj_findAndRemovePolygonsUsingVertex_FUN_005d30c0
-    CALLIND at 005d30ce, ADD ESP at 005d30d1 (no EBP frame)...
-  shape_superopt.cpp_CObj_setStateFlagFromAttrib_FUN_005d3590
-    CALLIND at 005d35c6, ADD ESP at 005d35cc (no EBP frame)...
-  shape_superopt.cpp_CObj_removeVerticesByFlag_FUN_005d3280
-    CALLIND at 005d32ac, ADD ESP at 005d32b2 (no EBP frame)...
-  shape_superopt.cpp_COptimize_FUN_005d7290
-    CALLIND at 005d72d7, ADD ESP at 005d72da (no EBP frame)...
-  shape_superopt.cpp_CObj_isClosedManifold_FUN_005d4070
-    CALLIND at 005d40b0, ADD ESP at 005d40b3 (no EBP frame)...
-  shape_superopt.cpp_CObj_clearStateFlags_FUN_005d35e0
-    CALLIND at 005d3622, ADD ESP at 005d3625 (no EBP frame)...
-  shape_superopt.cpp_COptimize_FUN_005d7000
-    CALLIND at 005d7063, ADD ESP at 005d7066 (no EBP frame)...
 
 ====================================================================================================
 TYPE: unresolved_funcptr (474 occurrences)
@@ -1135,6 +1096,43 @@ Example functions:
     bVar6 = SBORROW /* signed borrow */4(iVar2,iVar4);...
 
 ====================================================================================================
+TYPE: callind_esp_no_frame_lost (19 occurrences)
+====================================================================================================
+
+Unique patterns:
+    19x  CALLIND...ADD ESP
+
+Example functions:
+  shape_superopt.cpp_CObj_setStateFlagIfCondition_FUN_005d34d0
+    CALLIND at 005d353a, ADD ESP at 005d353d (no EBP frame)...
+  sound_snddx.cpp_CDirectSoundDevice_allocateSfx_FUN_005af410
+    CALLIND at 005af59d, ADD ESP at 005af5a8 (no EBP frame)...
+  sound_snddx.cpp_CDirectSoundDevice_initPropertySet_FUN_005ae660
+    CALLIND at 005ae80c, ADD ESP at 005ae816 (no EBP frame)...
+  sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70
+    CALLIND at 005b1179, ADD ESP at 005b117b (no EBP frame)...
+  sound_sndwav.cpp_CWavOutDevice_setMode_FUN_005b0a30
+    CALLIND at 005b0bdf, ADD ESP at 005b0be1 (no EBP frame)...
+  crt_unknown.c_ReadFileBytesMaybe_FUN_0060e930
+    CALLIND at 0060eb26, ADD ESP at 0060eb2c (no EBP frame)...
+  crt_process.c_spawn_FUN_006105a0
+    CALLIND at 00610740, ADD ESP at 0061074b (no EBP frame)...
+  crt_thread.c_create_thread_with_sync_FUN_0060f960
+    CALLIND at 0060fa43, ADD ESP at 0060fa4c (no EBP frame)...
+  crt_stdio.c_write_FUN_006038c0
+    CALLIND at 00603943, ADD ESP at 00603949 (no EBP frame)...
+  crt_stdio.c_fgetc_FUN_005fe840
+    CALLIND at 005fe8fe, ADD ESP at 005fe904 (no EBP frame)...
+  core_imp.cpp_FUN_004fae00
+    CALLIND at 004faef0, ADD ESP at 004faef3 (no EBP frame)...
+  core_boneguy.cpp_CBoneGuy_FUN_0041d680
+    CALLIND at 0041d867, ADD ESP at 0041d86a (no EBP frame)...
+  core_zombie.cpp_CZombie_FUN_005fc4f0
+    CALLIND at 005fc5db, ADD ESP at 005fc5de (no EBP frame)...
+  core_sentinel.cpp_SentinelBehavior_FUN_00568cd0
+    CALLIND at 00568d41, ADD ESP at 00568d44 (no EBP frame)...
+
+====================================================================================================
 TYPE: warning_jumptable (12 occurrences)
 ====================================================================================================
 
@@ -1200,12 +1198,18 @@ Example functions:
     unaff_ESI = (byte *)*(undefined6 *)pcVar2;...
 
 ====================================================================================================
-TYPE: warning_noreturn (1 occurrences)
+TYPE: warning_noreturn (4 occurrences)
 ====================================================================================================
 
 Unique patterns:
-     1x  WARNING: Subroutine does not return
+     4x  WARNING: Subroutine does not return
 
 Example functions:
+  crt_startup.c_WriteErrorAndExit_FUN_00606620
+    /* WARNING: Subroutine does not return */...
   crt_io.c_write_FUN_006084ec
+    /* WARNING: Subroutine does not return */...
+  crt_exit.c_FinalExitHandler_FUN_0060b560
+    /* WARNING: Subroutine does not return */...
+  core_main.c_displayErrorAndQuit_FUN_00506f10
     /* WARNING: Subroutine does not return */...

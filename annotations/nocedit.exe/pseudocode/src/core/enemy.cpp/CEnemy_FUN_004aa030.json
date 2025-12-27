@@ -8,7 +8,7 @@
     "pseudocode_lines": 21,
     "suspect_count": 4,
     "suspect_types": [
-      "callind_esp_no_frame_lost",
+      "callind_esp_no_frame",
       "unresolved_funcptr"
     ],
     "total_lines": 72
@@ -113,12 +113,14 @@
       },
       "callind_address": "004aa050",
       "callind_assembly": "CALL dword ptr [EDX + 0x108]",
-      "description": "CALLIND with lost ESP tracking (branching code)",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
+      "esp_at_callind": -20,
+      "expected_esp_offset": -16,
       "fix_address": "004aa056",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 16,
       "text": "CALLIND at 004aa050, ADD ESP at 004aa056 (no EBP frame)",
-      "type": "callind_esp_no_frame_lost"
+      "type": "callind_esp_no_frame"
     },
     {
       "add_esp_value": 4,
@@ -129,40 +131,42 @@
       },
       "callind_address": "004aa06a",
       "callind_assembly": "CALL dword ptr [EDX + 0x104]",
-      "description": "CALLIND with lost ESP tracking (branching code)",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
+      "esp_at_callind": -20,
+      "expected_esp_offset": -16,
       "fix_address": "004aa073",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 16,
       "text": "CALLIND at 004aa06a, ADD ESP at 004aa073 (no EBP frame)",
-      "type": "callind_esp_no_frame_lost"
+      "type": "callind_esp_no_frame"
     }
   ],
   "vtable_info": {
     "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 268,
+        "vtable_addr": "0065ac24"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 268,
+        "vtable_addr": "0065b424"
+      },
+      {
+        "class_name": "CMimic",
+        "offset": 268,
+        "vtable_addr": "00661424"
+      },
       {
         "class_name": "CArmour",
         "offset": 268,
         "vtable_addr": "00659d34"
       },
       {
-        "class_name": "CBatCreature",
-        "offset": 268,
-        "vtable_addr": "0065a5c4"
-      },
-      {
-        "class_name": "CBatman",
-        "offset": 268,
-        "vtable_addr": "0065a784"
-      },
-      {
         "class_name": "Unknown",
         "offset": 268,
-        "vtable_addr": "0065aa64"
-      },
-      {
-        "class_name": "Unknown",
-        "offset": 268,
-        "vtable_addr": "0065ac24"
+        "vtable_addr": "00660734"
       }
     ],
     "in_vtable": true,

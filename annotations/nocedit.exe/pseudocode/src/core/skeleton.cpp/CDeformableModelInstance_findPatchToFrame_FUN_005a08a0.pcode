@@ -9,7 +9,10 @@
 # Format: @<address> [ESP:offset] # <assembly>
 #         [ESP:offset] = cumulative ESP delta from function entry
 #         Delta markers: (+n) ESP increased, (-n) ESP decreased
-#         Certainty:  no marker = known, ? = computed, ?? = unknown, ! = CALLIND
+#         Certainty:  no marker = known, ? = computed, ~ = cfg_resolved
+#                     !! = lost, !? = conflict, ?? = unreachable
+#                     ~! = ebp_frame_conflict (expected in EBP-frame functions)
+#                     ~> = frame_recovered (ESP recovered after frame reset)
 #
 # ============================================================================
 
@@ -862,25 +865,24 @@ LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
-@005a0aad [ESP:???]!!  # MOV EAX, dword ptr [ESP + 0x3580]
+@005a0aad [ESP:-13720]~  # MOV EAX, dword ptr [ESP + 0x3580]
 INT_ADD (unique,0x3f80,4) = (const,0x3580,4), (register,0x10,4) /* ESP */
 LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3f80,4)
 COPY (register,0x0,4) /* EAX */ = (unique,0xb900,4)
 
-@005a0ab4 [ESP:???]!!  # MOV dword ptr [ESP + 0x3574], ESI
+@005a0ab4 [ESP:-13720]~  # MOV dword ptr [ESP + 0x3574], ESI
 INT_ADD (unique,0x3f80,4) = (const,0x3574,4), (register,0x10,4) /* ESP */
 COPY (unique,0x5180,4) = (register,0x18,4) /* ESI */
 STORE (const,0x1a1,4), (unique,0x3f80,4), (unique,0x5180,4)
 
-@005a0abb [ESP:???]!!  # MOV dword ptr [ESP + 0x357c], EAX
+@005a0abb [ESP:-13720]~  # MOV dword ptr [ESP + 0x357c], EAX
 INT_ADD (unique,0x3f80,4) = (const,0x357c,4), (register,0x10,4) /* ESP */
 COPY (unique,0x5180,4) = (register,0x0,4) /* EAX */
 STORE (const,0x1a1,4), (unique,0x3f80,4), (unique,0x5180,4)
 
-@005a0ac2 [ESP:???]!!  # JMP 0x005a0a8b
+@005a0ac2 [ESP:-13720]~  # JMP 0x005a0a8b
 BRANCH (ram,0x5a0a8b,4)
 
 # ============================================================================
 # Summary: 124 instructions, 619 P-code ops
-# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

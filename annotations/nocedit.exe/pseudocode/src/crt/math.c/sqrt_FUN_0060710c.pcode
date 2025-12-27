@@ -9,7 +9,10 @@
 # Format: @<address> [ESP:offset] # <assembly>
 #         [ESP:offset] = cumulative ESP delta from function entry
 #         Delta markers: (+n) ESP increased, (-n) ESP decreased
-#         Certainty:  no marker = known, ? = computed, ?? = unknown, ! = CALLIND
+#         Certainty:  no marker = known, ? = computed, ~ = cfg_resolved
+#                     !! = lost, !? = conflict, ?? = unreachable
+#                     ~! = ebp_frame_conflict (expected in EBP-frame functions)
+#                     ~> = frame_recovered (ESP recovered after frame reset)
 #
 # ============================================================================
 
@@ -182,28 +185,27 @@ COPY (register,0x0,1) = (const,0x1,1)
 @00607140 [ESP:-28]  # JMP 0x00607146
 BRANCH (ram,0x607146,4)
 
-@00607142 [ESP:???]!!  # FSQRT
+@00607142 [ESP:-20]~  # FSQRT
 COPY (register,0x10ac,4) = (const,0x607142,4)
 FLOAT_SQRT (register,0x1100,10) = (register,0x1100,10)
 
-@00607144 [ESP:???]!!  # MOV AL, 0x0
+@00607144 [ESP:-20]~  # MOV AL, 0x0
 COPY (register,0x0,1) = (const,0x0,1)
 
-@00607146 [ESP:???]!!  # MOV ESP, EBP
+@00607146 [ESP:???]~!  # MOV ESP, EBP
 COPY (register,0x10,4) /* ESP */ = (register,0x14,4) /* EBP */
 
-@00607148 [ESP:???]!!  # POP EBP
+@00607148 [ESP:???]~!  # POP EBP
 COPY (unique,0x43980,4) = (const,0x0,4)
 LOAD (unique,0x43980,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 COPY (register,0x14,4) /* EBP */ = (unique,0x43980,4)
 
-@00607149 [ESP:???]!!  # RET
+@00607149 [ESP:???]~!  # RET
 LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
 # ============================================================================
 # Summary: 28 instructions, 132 P-code ops
-# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

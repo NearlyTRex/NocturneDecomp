@@ -9,7 +9,10 @@
 # Format: @<address> [ESP:offset] # <assembly>
 #         [ESP:offset] = cumulative ESP delta from function entry
 #         Delta markers: (+n) ESP increased, (-n) ESP decreased
-#         Certainty:  no marker = known, ? = computed, ?? = unknown, ! = CALLIND
+#         Certainty:  no marker = known, ? = computed, ~ = cfg_resolved
+#                     !! = lost, !? = conflict, ?? = unreachable
+#                     ~! = ebp_frame_conflict (expected in EBP-frame functions)
+#                     ~> = frame_recovered (ESP recovered after frame reset)
 #
 # ============================================================================
 
@@ -126,15 +129,15 @@ LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
-@0054457f [ESP:???]!!  # MOV dword ptr [EDX + 0x25c], 0x1
+@0054457f [ESP:-4]~  # MOV dword ptr [EDX + 0x25c], 0x1
 INT_ADD (unique,0x3400,4) = (register,0x8,4) /* EDX */, (const,0x25c,4)
 COPY (unique,0x5180,4) = (const,0x1,4)
 STORE (const,0x1a1,4), (unique,0x3400,4), (unique,0x5180,4)
 
-@00544589 [ESP:???]!!  # JMP 0x00544572
+@00544589 [ESP:-4]~  # JMP 0x00544572
 BRANCH (ram,0x544572,4)
 
-@0054458b [ESP:???]!!  # XOR EAX, EAX
+@0054458b [ESP:+0]~  # XOR EAX, EAX
 COPY (register,0x200,1) = (const,0x0,1)
 COPY (register,0x20b,1) = (const,0x0,1)
 INT_XOR (register,0x0,4) /* EAX */ = (register,0x0,4) /* EAX */, (register,0x0,4) /* EAX */
@@ -145,15 +148,14 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@0054458d [ESP:???]!!  # MOV dword ptr [0x02cf6a94], ECX
+@0054458d [ESP:+0]~  # MOV dword ptr [0x02cf6a94], ECX
 COPY (ram,0x2cf6a94,4) = (register,0x4,4) /* ECX */
 
-@00544593 [ESP:???]!!  # RET
+@00544593 [ESP:+4](+4)~  # RET
 LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
 # ============================================================================
 # Summary: 23 instructions, 94 P-code ops
-# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

@@ -8,7 +8,7 @@
     "pseudocode_lines": 52,
     "suspect_count": 7,
     "suspect_types": [
-      "callind_esp_no_frame_lost",
+      "callind_esp_no_frame",
       "stack_param"
     ],
     "total_lines": 154
@@ -146,12 +146,14 @@
       },
       "callind_address": "004f6509",
       "callind_assembly": "CALL dword ptr [EAX + 0xa0]",
-      "description": "CALLIND with lost ESP tracking (branching code)",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
+      "esp_at_callind": -24,
+      "expected_esp_offset": -12,
       "fix_address": "004f650f",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 12,
       "text": "CALLIND at 004f6509, ADD ESP at 004f650f (no EBP frame)",
-      "type": "callind_esp_no_frame_lost"
+      "type": "callind_esp_no_frame"
     },
     {
       "add_esp_value": 8,
@@ -162,12 +164,14 @@
       },
       "callind_address": "004f6520",
       "callind_assembly": "CALL dword ptr [EDX + 0x24]",
-      "description": "CALLIND with lost ESP tracking (branching code)",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
+      "esp_at_callind": -20,
+      "expected_esp_offset": -12,
       "fix_address": "004f6523",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 12,
       "text": "CALLIND at 004f6520, ADD ESP at 004f6523 (no EBP frame)",
-      "type": "callind_esp_no_frame_lost"
+      "type": "callind_esp_no_frame"
     },
     {
       "add_esp_value": 8,
@@ -178,12 +182,14 @@
       },
       "callind_address": "004f6536",
       "callind_assembly": "CALL dword ptr [EDX + 0x24]",
-      "description": "CALLIND with lost ESP tracking (branching code)",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
+      "esp_at_callind": -20,
+      "expected_esp_offset": -12,
       "fix_address": "004f6539",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 12,
       "text": "CALLIND at 004f6536, ADD ESP at 004f6539 (no EBP frame)",
-      "type": "callind_esp_no_frame_lost"
+      "type": "callind_esp_no_frame"
     }
   ],
   "vtable_info": {

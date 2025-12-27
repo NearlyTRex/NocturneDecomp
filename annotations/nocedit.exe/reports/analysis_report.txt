@@ -8,7 +8,7 @@ Total functions: 7154
 Functions with zero suspects: 2599 (36.3%)
 Functions with suspects: 4555 (63.7%)
 
-Total suspect patterns: 62876
+Total suspect patterns: 62885
 Average suspects per function: 8.79
 
 Virtual files: 258 total, 19 at 100%, 20 at 90%+
@@ -16,7 +16,7 @@ Virtual files: 258 total, 19 at 100%, 20 at 90%+
 Pseudocode lines:
   Min: 1, Max: 3059, Average: 48.0
 
-Average complexity score: 144.4
+Average complexity score: 144.3
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
@@ -24,15 +24,14 @@ SUSPECT PATTERN BREAKDOWN
   pointer_cast              5275
   stack_ref                 3987
   unknown_field             2954
-  unaffected_reg            2755
+  unaffected_reg            2761
   register_param            1834
   concat_artifact           1832
   badspacebase              1622
   extra_output              1443
+  callind_esp_no_frame      1078
   suspect_float             853
   param_count_too_few       631
-  callind_esp_no_frame_lost 618
-  callind_esp_no_frame      479
   unresolved_funcptr        474
   negative_offset           416
   sub_artifact              322
@@ -41,10 +40,11 @@ SUSPECT PATTERN BREAKDOWN
   undefined_type            110
   param_count_too_many      89
   sborrow_artifact          26
+  callind_esp_no_frame_lost 19
   warning_jumptable         12
   warning_indirect_jump     12
   undefined_ptr_cast        5
-  warning_noreturn          1
+  warning_noreturn          4
 
 EASIEST FUNCTIONS (Zero Suspects, Sorted by Size)
 ----------------------------------------
@@ -188,7 +188,7 @@ FUNCTIONS BY SUSPECT TYPE
     005c8b50: shape_superopt.cpp_FUN_005c8b50
     ... and 326 more
 
-  unaffected_reg (575 functions):
+  unaffected_reg (576 functions):
     00432540: cockpit_ckptutil.c_blitSimpleSprite_FUN_00432540
     00434870: cockpit_ckptutil.c_rotateBitmap_FUN_00434870
     004328d0: cockpit_ckptutil.c_blitHorizontallyClippedSprite_FUN_004328d0
@@ -199,7 +199,7 @@ FUNCTIONS BY SUSPECT TYPE
     0054b690: cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_0054b690
     0054ae70: cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70
     0054a840: cockpit_pkbitmap.cpp_CPackedBitmap_init_FUN_0054a840
-    ... and 565 more
+    ... and 566 more
 
   register_param (1655 functions):
     0060239a: entry
@@ -253,6 +253,19 @@ FUNCTIONS BY SUSPECT TYPE
     00555090: shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090
     ... and 252 more
 
+  callind_esp_no_frame (583 functions):
+    00432540: cockpit_ckptutil.c_blitSimpleSprite_FUN_00432540
+    004328d0: cockpit_ckptutil.c_blitHorizontallyClippedSprite_FUN_004328d0
+    00432300: cockpit_ckptutil.c_blitUnifiedSprite_FUN_00432300
+    00431f40: cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_00431f40
+    00432b60: cockpit_ckptutil.c_blitSpanBasedSpriteVerticallyClipped_FUN_00432b60
+    00432190: cockpit_ckptutil.c_blitRectangleClipped_FUN_00432190
+    00432a10: cockpit_ckptutil.c_blitVerticalColumn_FUN_00432a10
+    004326a0: cockpit_ckptutil.c_blitDualModeSprite_FUN_004326a0
+    00431d00: cockpit_ckptutil.c_blitSpanBasedSprite_FUN_00431d00
+    00432860: cockpit_ckptutil.c_copyBitmapRegion_FUN_00432860
+    ... and 573 more
+
   suspect_float (229 functions):
     00519b50: shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
     0051d520: shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520
@@ -278,32 +291,6 @@ FUNCTIONS BY SUSPECT TYPE
     0054bd60: cockpit_pkbmpset.cpp_CPackedBitmapSet_reset_FUN_0054bd60
     0054c1e0: cockpit_pkbmpset.cpp_CPackedBitmapSet_reload_FUN_0054c1e0
     ... and 621 more
-
-  callind_esp_no_frame_lost (373 functions):
-    00432540: cockpit_ckptutil.c_blitSimpleSprite_FUN_00432540
-    004328d0: cockpit_ckptutil.c_blitHorizontallyClippedSprite_FUN_004328d0
-    00432300: cockpit_ckptutil.c_blitUnifiedSprite_FUN_00432300
-    00431f40: cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_00431f40
-    00432b60: cockpit_ckptutil.c_blitSpanBasedSpriteVerticallyClipped_FUN_00432b60
-    00432190: cockpit_ckptutil.c_blitRectangleClipped_FUN_00432190
-    00432a10: cockpit_ckptutil.c_blitVerticalColumn_FUN_00432a10
-    004326a0: cockpit_ckptutil.c_blitDualModeSprite_FUN_004326a0
-    00431d00: cockpit_ckptutil.c_blitSpanBasedSprite_FUN_00431d00
-    00432860: cockpit_ckptutil.c_copyBitmapRegion_FUN_00432860
-    ... and 363 more
-
-  callind_esp_no_frame (282 functions):
-    0054ae70: cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70
-    0051d520: shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520
-    005d3440: shape_superopt.cpp_CObj_setStateFlags_FUN_005d3440
-    005d2650: shape_superopt.cpp_CObj_copyFrom_FUN_005d2650
-    005d34d0: shape_superopt.cpp_CObj_setStateFlagIfCondition_FUN_005d34d0
-    005d3e40: shape_superopt.cpp_CObj_projectAllPlanarUVs_FUN_005d3e40
-    005d1230: shape_superopt.cpp_CPoly_hasCentroidIntersection_FUN_005d1230
-    005d3db0: shape_superopt.cpp_CObj_flipAllPolyNormals_FUN_005d3db0
-    005d30c0: shape_superopt.cpp_CObj_findAndRemovePolygonsUsingVertex_FUN_005d30c0
-    005d3590: shape_superopt.cpp_CObj_setStateFlagFromAttrib_FUN_005d3590
-    ... and 272 more
 
   unresolved_funcptr (254 functions):
     005d2650: shape_superopt.cpp_CObj_copyFrom_FUN_005d2650
@@ -409,6 +396,19 @@ FUNCTIONS BY SUSPECT TYPE
     004518f0: core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_004518f0
     ... and 4 more
 
+  callind_esp_no_frame_lost (14 functions):
+    005d34d0: shape_superopt.cpp_CObj_setStateFlagIfCondition_FUN_005d34d0
+    005af410: sound_snddx.cpp_CDirectSoundDevice_allocateSfx_FUN_005af410
+    005ae660: sound_snddx.cpp_CDirectSoundDevice_initPropertySet_FUN_005ae660
+    005b0f70: sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70
+    005b0a30: sound_sndwav.cpp_CWavOutDevice_setMode_FUN_005b0a30
+    0060e930: crt_unknown.c_ReadFileBytesMaybe_FUN_0060e930
+    006105a0: crt_process.c_spawn_FUN_006105a0
+    0060f960: crt_thread.c_create_thread_with_sync_FUN_0060f960
+    006038c0: crt_stdio.c_write_FUN_006038c0
+    005fe840: crt_stdio.c_fgetc_FUN_005fe840
+    ... and 4 more
+
   warning_jumptable (7 functions):
     00489120: cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00489120
     005b5710: wincore_windll.cpp_renderScanline_FUN_005b5710
@@ -434,5 +434,8 @@ FUNCTIONS BY SUSPECT TYPE
     00604e4c: crt_stdio.c_scanf_string_FUN_00604e4c
     00605064: crt_stdio.c_scanf_scanset_FUN_00605064
 
-  warning_noreturn (1 functions):
+  warning_noreturn (4 functions):
+    00606620: crt_startup.c_WriteErrorAndExit_FUN_00606620
     006084ec: crt_io.c_write_FUN_006084ec
+    0060b560: crt_exit.c_FinalExitHandler_FUN_0060b560
+    00506f10: core_main.c_displayErrorAndQuit_FUN_00506f10

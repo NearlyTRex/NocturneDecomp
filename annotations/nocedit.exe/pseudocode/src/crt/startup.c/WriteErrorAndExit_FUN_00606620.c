@@ -24,6 +24,6 @@ void __cdecl crt_startup_c_WriteErrorAndExit_FUN_00606620(char *error_message,in
   (*PTR_WriteFile_00611678)
             (g_IOControlBlock->standard_handles[2],error_message,nNumberOfBytesToWrite,&local_8,
              (LPOVERLAPPED)0x0);
+                    /* WARNING: Subroutine does not return */
   crt_exit_c_ExitProcess_FUN_00602700(in_stack_00000010);
-  return;
 }

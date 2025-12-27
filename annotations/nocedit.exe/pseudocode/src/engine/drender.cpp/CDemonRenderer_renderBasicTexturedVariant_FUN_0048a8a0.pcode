@@ -9,7 +9,10 @@
 # Format: @<address> [ESP:offset] # <assembly>
 #         [ESP:offset] = cumulative ESP delta from function entry
 #         Delta markers: (+n) ESP increased, (-n) ESP decreased
-#         Certainty:  no marker = known, ? = computed, ?? = unknown, ! = CALLIND
+#         Certainty:  no marker = known, ? = computed, ~ = cfg_resolved
+#                     !! = lost, !? = conflict, ?? = unreachable
+#                     ~! = ebp_frame_conflict (expected in EBP-frame functions)
+#                     ~> = frame_recovered (ESP recovered after frame reset)
 #
 # ============================================================================
 
@@ -281,21 +284,21 @@ LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
-@0048a916 [ESP:???]!!  # LEA EAX, [ESI + 0x8]
+@0048a916 [ESP:-12]~  # LEA EAX, [ESI + 0x8]
 INT_ADD (unique,0x3300,4) = (register,0x18,4) /* ESI */, (const,0x8,4)
 COPY (register,0x0,4) /* EAX */ = (unique,0x3300,4)
 
-@0048a919 [ESP:???]!!  # PUSH EAX
+@0048a919 [ESP:-16](-4)~  # PUSH EAX
 COPY (unique,0x20a80,4) = (register,0x0,4) /* EAX */
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x20a80,4)
 
-@0048a91a [ESP:???]!!  # CALL 0x00403950
+@0048a91a [ESP:-16](-4)~  # CALL 0x00403950
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x48a91f,4)
 CALL (ram,0x403950,4)
 
-@0048a91f [ESP:???]!!  # ADD ESP, 0x4
+@0048a91f [ESP:-12](+4)~  # ADD ESP, 0x4
 INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0x4,4)
 INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0x4,4)
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
@@ -306,7 +309,7 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@0048a922 [ESP:???]!!  # TEST EAX, EAX
+@0048a922 [ESP:-12]~  # TEST EAX, EAX
 COPY (register,0x200,1) = (const,0x0,1)
 COPY (register,0x20b,1) = (const,0x0,1)
 INT_AND (unique,0x57200,4) = (register,0x0,4) /* EAX */, (register,0x0,4) /* EAX */
@@ -317,34 +320,33 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@0048a924 [ESP:???]!!  # JZ 0x0048a912
+@0048a924 [ESP:-12]~  # JZ 0x0048a912
 CBRANCH (ram,0x48a912,4), (register,0x206,1)
 
-@0048a926 [ESP:???]!!  # JMP 0x0048a8b1
+@0048a926 [ESP:-12]~  # JMP 0x0048a8b1
 BRANCH (ram,0x48a8b1,4)
 
-@0048a928 [ESP:???]!!  # MOV EDX, 0xc0
+@0048a928 [ESP:-16]~  # MOV EDX, 0xc0
 COPY (register,0x8,4) /* EDX */ = (const,0xc0,4)
 
-@0048a92d [ESP:???]!!  # MOV ECX, 0x6
+@0048a92d [ESP:-16]~  # MOV ECX, 0x6
 COPY (register,0x4,4) /* ECX */ = (const,0x6,4)
 
-@0048a932 [ESP:???]!!  # MOV EAX, 0x490a58
+@0048a932 [ESP:-16]~  # MOV EAX, 0x490a58
 COPY (register,0x0,4) /* EAX */ = (const,0x490a58,4)
 
-@0048a937 [ESP:???]!!  # MOV dword ptr [0x02d052a0], EDX
+@0048a937 [ESP:-16]~  # MOV dword ptr [0x02d052a0], EDX
 COPY (ram,0x2d052a0,4) = (register,0x8,4) /* EDX */
 
-@0048a93d [ESP:???]!!  # MOV dword ptr [0x02d052a4], ECX
+@0048a93d [ESP:-16]~  # MOV dword ptr [0x02d052a4], ECX
 COPY (ram,0x2d052a4,4) = (register,0x4,4) /* ECX */
 
-@0048a943 [ESP:???]!!  # MOV [0x02d0257c], EAX
+@0048a943 [ESP:-16]~  # MOV [0x02d0257c], EAX
 COPY (ram,0x2d0257c,4) = (register,0x0,4) /* EAX */
 
-@0048a948 [ESP:???]!!  # JMP 0x0048a8ff
+@0048a948 [ESP:-16]~  # JMP 0x0048a8ff
 BRANCH (ram,0x48a8ff,4)
 
 # ============================================================================
 # Summary: 56 instructions, 219 P-code ops
-# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

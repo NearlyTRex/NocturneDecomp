@@ -1,7 +1,7 @@
 {
   "complexity": {
     "assembly_lines": 70,
-    "complexity_score": 232,
+    "complexity_score": 227,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
@@ -10,7 +10,6 @@
     "suspect_types": [
       "badspacebase",
       "callind_esp_no_frame",
-      "callind_esp_no_frame_lost",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -271,40 +270,42 @@
       },
       "callind_address": "00428ec1",
       "callind_assembly": "CALL dword ptr [EAX + 0x11c]",
-      "description": "CALLIND with lost ESP tracking (branching code)",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
+      "esp_at_callind": -76,
+      "expected_esp_offset": -68,
       "fix_address": "00428ec7",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 68,
       "text": "CALLIND at 00428ec1, ADD ESP at 00428ec7 (no EBP frame)",
-      "type": "callind_esp_no_frame_lost"
+      "type": "callind_esp_no_frame"
     }
   ],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "CArmour",
+        "class_name": "CBassPlayer",
         "offset": 240,
-        "vtable_addr": "00659d34"
-      },
-      {
-        "class_name": "CBatCreature",
-        "offset": 240,
-        "vtable_addr": "0065a5c4"
-      },
-      {
-        "class_name": "CBatman",
-        "offset": 240,
-        "vtable_addr": "0065a784"
-      },
-      {
-        "class_name": "Unknown",
-        "offset": 240,
-        "vtable_addr": "0065aa64"
+        "vtable_addr": "00663f14"
       },
       {
         "class_name": "Unknown",
         "offset": 240,
         "vtable_addr": "0065ac24"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 240,
+        "vtable_addr": "0065b424"
+      },
+      {
+        "class_name": "CMimic",
+        "offset": 240,
+        "vtable_addr": "00661424"
+      },
+      {
+        "class_name": "CArmour",
+        "offset": 240,
+        "vtable_addr": "00659d34"
       }
     ],
     "in_vtable": true,

@@ -9,7 +9,10 @@
 # Format: @<address> [ESP:offset] # <assembly>
 #         [ESP:offset] = cumulative ESP delta from function entry
 #         Delta markers: (+n) ESP increased, (-n) ESP decreased
-#         Certainty:  no marker = known, ? = computed, ?? = unknown, ! = CALLIND
+#         Certainty:  no marker = known, ? = computed, ~ = cfg_resolved
+#                     !! = lost, !? = conflict, ?? = unreachable
+#                     ~! = ebp_frame_conflict (expected in EBP-frame functions)
+#                     ~> = frame_recovered (ESP recovered after frame reset)
 #
 # ============================================================================
 
@@ -149,19 +152,19 @@ LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
-@0057441e [ESP:???]!!  # MOV ESI, dword ptr [EAX + 0x156da8]
+@0057441e [ESP:-8]~  # MOV ESI, dword ptr [EAX + 0x156da8]
 INT_ADD (unique,0x3400,4) = (register,0x0,4) /* EAX */, (const,0x156da8,4)
 LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3400,4)
 COPY (register,0x18,4) /* ESI */ = (unique,0xb900,4)
 
-@00574424 [ESP:???]!!  # MOV dword ptr [EAX + ESI*0x4 + 0x156dac], EBX
+@00574424 [ESP:-8]~  # MOV dword ptr [EAX + ESI*0x4 + 0x156dac], EBX
 INT_ADD (unique,0x3d00,4) = (const,0x156dac,4), (register,0x0,4) /* EAX */
 INT_MULT (unique,0x3d80,4) = (register,0x18,4) /* ESI */, (const,0x4,4)
 INT_ADD (unique,0x3e80,4) = (unique,0x3d00,4), (unique,0x3d80,4)
 COPY (unique,0x5180,4) = (register,0xc,4) /* EBX */
 STORE (const,0x1a1,4), (unique,0x3e80,4), (unique,0x5180,4)
 
-@0057442b [ESP:???]!!  # INC dword ptr [EAX + 0x156da8]
+@0057442b [ESP:-8]~  # INC dword ptr [EAX + 0x156da8]
 INT_ADD (unique,0x3400,4) = (register,0x0,4) /* EAX */, (const,0x156da8,4)
 LOAD (unique,0x5180,4) = (const,0x1a1,4), (unique,0x3400,4)
 INT_SCARRY (register,0x20b,1) = (unique,0x5180,4), (const,0x1,4)
@@ -178,10 +181,9 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@00574431 [ESP:???]!!  # JMP 0x0057440d
+@00574431 [ESP:-8]~  # JMP 0x0057440d
 BRANCH (ram,0x57440d,4)
 
 # ============================================================================
 # Summary: 24 instructions, 120 P-code ops
-# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

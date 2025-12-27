@@ -9,7 +9,10 @@
 # Format: @<address> [ESP:offset] # <assembly>
 #         [ESP:offset] = cumulative ESP delta from function entry
 #         Delta markers: (+n) ESP increased, (-n) ESP decreased
-#         Certainty:  no marker = known, ? = computed, ?? = unknown, ! = CALLIND
+#         Certainty:  no marker = known, ? = computed, ~ = cfg_resolved
+#                     !! = lost, !? = conflict, ?? = unreachable
+#                     ~! = ebp_frame_conflict (expected in EBP-frame functions)
+#                     ~> = frame_recovered (ESP recovered after frame reset)
 #
 # ============================================================================
 
@@ -198,19 +201,18 @@ LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
-@005892bb [ESP:???]!!  # MOV ESI, 0x649c60
+@005892bb [ESP:-8]~  # MOV ESI, 0x649c60
 COPY (register,0x18,4) /* ESI */ = (const,0x649c60,4)
 
-@005892c0 [ESP:???]!!  # JMP 0x0058929e
+@005892c0 [ESP:-8]~  # JMP 0x0058929e
 BRANCH (ram,0x58929e,4)
 
-@005892c2 [ESP:???]!!  # MOV ESI, 0x649c70
+@005892c2 [ESP:-8]~  # MOV ESI, 0x649c70
 COPY (register,0x18,4) /* ESI */ = (const,0x649c70,4)
 
-@005892c7 [ESP:???]!!  # JMP 0x0058929e
+@005892c7 [ESP:-8]~  # JMP 0x0058929e
 BRANCH (ram,0x58929e,4)
 
 # ============================================================================
 # Summary: 34 instructions, 129 P-code ops
-# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

@@ -9,7 +9,10 @@
 # Format: @<address> [ESP:offset] # <assembly>
 #         [ESP:offset] = cumulative ESP delta from function entry
 #         Delta markers: (+n) ESP increased, (-n) ESP decreased
-#         Certainty:  no marker = known, ? = computed, ?? = unknown, ! = CALLIND
+#         Certainty:  no marker = known, ? = computed, ~ = cfg_resolved
+#                     !! = lost, !? = conflict, ?? = unreachable
+#                     ~! = ebp_frame_conflict (expected in EBP-frame functions)
+#                     ~> = frame_recovered (ESP recovered after frame reset)
 #
 # ============================================================================
 
@@ -185,17 +188,17 @@ LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
-@0040cc5b [ESP:???]!!  # CALL 0x005feb5c
+@0040cc5b [ESP:-16](-4)~  # CALL 0x005feb5c
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x40cc60,4)
 CALL (ram,0x5feb5c,4)
 
-@0040cc60 [ESP:???]!!  # MOV dword ptr [ESP + 0xc], EAX
+@0040cc60 [ESP:-16]~  # MOV dword ptr [ESP + 0xc], EAX
 INT_ADD (unique,0x3b00,4) = (const,0xc,4), (register,0x10,4) /* ESP */
 COPY (unique,0x5180,4) = (register,0x0,4) /* EAX */
 STORE (const,0x1a1,4), (unique,0x3b00,4), (unique,0x5180,4)
 
-@0040cc64 [ESP:???]!!  # FILD dword ptr [ESP + 0xc]
+@0040cc64 [ESP:-16]~  # FILD dword ptr [ESP + 0xc]
 INT_ADD (unique,0x3b00,4) = (const,0xc,4), (register,0x10,4) /* ESP */
 COPY (register,0x10ac,4) = (const,0x40cc64,4)
 COPY (unique,0x29480,10) = (register,0x1170,10)
@@ -210,15 +213,14 @@ COPY (register,0x1100,10) = (unique,0x29480,10)
 LOAD (unique,0x5180,4) = (const,0x1a1,4), (unique,0x3b00,4)
 INT2FLOAT (register,0x1100,10) = (unique,0x5180,4)
 
-@0040cc68 [ESP:???]!!  # FMUL float ptr [0x006142f0]
+@0040cc68 [ESP:-16]~  # FMUL float ptr [0x006142f0]
 COPY (register,0x10ac,4) = (const,0x40cc68,4)
 FLOAT2FLOAT (unique,0x5d280,10) = (ram,0x6142f0,4)
 FLOAT_MULT (register,0x1100,10) = (register,0x1100,10), (unique,0x5d280,10)
 
-@0040cc6e [ESP:???]!!  # JMP 0x0040cc41
+@0040cc6e [ESP:-16]~  # JMP 0x0040cc41
 BRANCH (ram,0x40cc41,4)
 
 # ============================================================================
 # Summary: 25 instructions, 155 P-code ops
-# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

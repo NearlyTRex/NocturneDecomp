@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 13,
-    "complexity_score": 51,
+    "complexity_score": 66,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 3,
     "pseudocode_lines": 11,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
       "unaffected_reg",
-      "unresolved_funcptr"
+      "unresolved_funcptr",
+      "warning_noreturn"
     ],
     "total_lines": 24
   },
@@ -133,8 +134,15 @@
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Unaffected register variable",
+      "description": "Subroutine marked as non-returning",
       "line": 12,
+      "match": "WARNING: Subroutine does not return",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 13,
       "match": "unaff_EBX",
       "text": "crt_exit_c_ExitProcess_FUN_00602700(unaff_EBX);",
       "type": "unaffected_reg"

@@ -9,7 +9,10 @@
 # Format: @<address> [ESP:offset] # <assembly>
 #         [ESP:offset] = cumulative ESP delta from function entry
 #         Delta markers: (+n) ESP increased, (-n) ESP decreased
-#         Certainty:  no marker = known, ? = computed, ?? = unknown, ! = CALLIND
+#         Certainty:  no marker = known, ? = computed, ~ = cfg_resolved
+#                     !! = lost, !? = conflict, ?? = unreachable
+#                     ~! = ebp_frame_conflict (expected in EBP-frame functions)
+#                     ~> = frame_recovered (ESP recovered after frame reset)
 #
 # ============================================================================
 
@@ -51,111 +54,110 @@ INT_ADD (unique,0x3780,4) = (const,0x4eed48,4), (unique,0x3680,4)
 LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3780,4)
 BRANCHIND (unique,0xb900,4)
 
-@004eed91 [ESP:???]!!  # MOV EAX, 0x62e5f8
+@004eed91 [ESP:+0]~  # MOV EAX, 0x62e5f8
 COPY (register,0x0,4) /* EAX */ = (const,0x62e5f8,4)
 
-@004eed96 [ESP:???]!!  # RET
+@004eed96 [ESP:+4](+4)~  # RET
 LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
-@004eed97 [ESP:???]!!  # MOV EAX, 0x62e604
+@004eed97 [ESP:+0]~  # MOV EAX, 0x62e604
 COPY (register,0x0,4) /* EAX */ = (const,0x62e604,4)
 
-@004eed9c [ESP:???]!!  # RET
+@004eed9c [ESP:+4](+4)~  # RET
 LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
-@004eed9d [ESP:???]!!  # MOV EAX, 0x62e614
+@004eed9d [ESP:+0]~  # MOV EAX, 0x62e614
 COPY (register,0x0,4) /* EAX */ = (const,0x62e614,4)
 
-@004eeda2 [ESP:???]!!  # RET
+@004eeda2 [ESP:+4](+4)~  # RET
 LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
-@004eeda3 [ESP:???]!!  # MOV EAX, 0x62e620
+@004eeda3 [ESP:+0]~  # MOV EAX, 0x62e620
 COPY (register,0x0,4) /* EAX */ = (const,0x62e620,4)
 
-@004eeda8 [ESP:???]!!  # RET
+@004eeda8 [ESP:+4](+4)~  # RET
 LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
-@004eeda9 [ESP:???]!!  # MOV EAX, 0x62e62d
+@004eeda9 [ESP:+0]~  # MOV EAX, 0x62e62d
 COPY (register,0x0,4) /* EAX */ = (const,0x62e62d,4)
 
-@004eedae [ESP:???]!!  # RET
+@004eedae [ESP:+4](+4)~  # RET
 LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
-@004eedaf [ESP:???]!!  # MOV EAX, 0x62e63a
+@004eedaf [ESP:+0]~  # MOV EAX, 0x62e63a
 COPY (register,0x0,4) /* EAX */ = (const,0x62e63a,4)
 
-@004eedb4 [ESP:???]!!  # RET
+@004eedb4 [ESP:+4](+4)~  # RET
 LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
-@004eedb5 [ESP:???]!!  # MOV EAX, 0x62e647
+@004eedb5 [ESP:+0]~  # MOV EAX, 0x62e647
 COPY (register,0x0,4) /* EAX */ = (const,0x62e647,4)
 
-@004eedba [ESP:???]!!  # RET
+@004eedba [ESP:+4](+4)~  # RET
 LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
-@004eedbb [ESP:???]!!  # MOV EAX, 0x62e653
+@004eedbb [ESP:+0]~  # MOV EAX, 0x62e653
 COPY (register,0x0,4) /* EAX */ = (const,0x62e653,4)
 
-@004eedc0 [ESP:???]!!  # RET
+@004eedc0 [ESP:+4](+4)~  # RET
 LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
-@004eedc1 [ESP:???]!!  # MOV EAX, 0x62e661
+@004eedc1 [ESP:+0]~  # MOV EAX, 0x62e661
 COPY (register,0x0,4) /* EAX */ = (const,0x62e661,4)
 
-@004eedc6 [ESP:???]!!  # RET
+@004eedc6 [ESP:+4](+4)~  # RET
 LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
-@004eedc7 [ESP:???]!!  # MOV EAX, 0x62e66c
+@004eedc7 [ESP:+0]~  # MOV EAX, 0x62e66c
 COPY (register,0x0,4) /* EAX */ = (const,0x62e66c,4)
 
-@004eedcc [ESP:???]!!  # RET
+@004eedcc [ESP:+4](+4)~  # RET
 LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
-@004eedcd [ESP:???]!!  # MOV EAX, 0x62e67a
+@004eedcd [ESP:+0]~  # MOV EAX, 0x62e67a
 COPY (register,0x0,4) /* EAX */ = (const,0x62e67a,4)
 
-@004eedd2 [ESP:???]!!  # RET
+@004eedd2 [ESP:+4](+4)~  # RET
 LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
-@004eedd3 [ESP:???]!!  # MOV EAX, 0x62e687
+@004eedd3 [ESP:+0]~  # MOV EAX, 0x62e687
 COPY (register,0x0,4) /* EAX */ = (const,0x62e687,4)
 
-@004eedd8 [ESP:???]!!  # RET
+@004eedd8 [ESP:+4](+4)~  # RET
 LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
-@004eedd9 [ESP:???]!!  # MOV EAX, 0x62e68e
+@004eedd9 [ESP:+0]~  # MOV EAX, 0x62e68e
 COPY (register,0x0,4) /* EAX */ = (const,0x62e68e,4)
 
-@004eedde [ESP:???]!!  # RET
+@004eedde [ESP:+4](+4)~  # RET
 LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
 # ============================================================================
 # Summary: 31 instructions, 80 P-code ops
-# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

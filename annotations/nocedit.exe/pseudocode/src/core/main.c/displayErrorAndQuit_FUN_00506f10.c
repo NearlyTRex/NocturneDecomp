@@ -1,6 +1,6 @@
 // Name: core_main.c_displayErrorAndQuit_FUN_00506f10
 // Address: 00506f10
-// Address Range: [[00506f10, 005070ea]]
+// Address Range: [[00506f10, 00507030] [0050703b, 005070ea]]
 // Convention: __cdecl
 // Signature: void core_main.c_displayErrorAndQuit_FUN_00506f10(char * format, ...)
 
@@ -85,8 +85,8 @@ LAB_00506f71:
         core_sound_cpp_CSound_dtor_FUN_005aaeb0();
         engine_2d_c_cleanupGraphicsSystem_FUN_005ecd90();
         wincore_winrun_cpp_endPeriod_FUN_005f2db0();
+                    /* WARNING: Subroutine does not return */
         wincore_winrun_cpp_displayMessageBoxAndQuit_FUN_005f3920(g_ErrorMessageBuffer);
-        return;
       }
       do {
         pcVar5 = g_CurrentFilename;

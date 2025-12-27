@@ -9,7 +9,10 @@
 # Format: @<address> [ESP:offset] # <assembly>
 #         [ESP:offset] = cumulative ESP delta from function entry
 #         Delta markers: (+n) ESP increased, (-n) ESP decreased
-#         Certainty:  no marker = known, ? = computed, ?? = unknown, ! = CALLIND
+#         Certainty:  no marker = known, ? = computed, ~ = cfg_resolved
+#                     !! = lost, !? = conflict, ?? = unreachable
+#                     ~! = ebp_frame_conflict (expected in EBP-frame functions)
+#                     ~> = frame_recovered (ESP recovered after frame reset)
 #
 # ============================================================================
 
@@ -747,29 +750,29 @@ LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
-@00498f79 [ESP:???]!!  # MOV ECX, 0x622bf2
+@00498f79 [ESP:-40]~  # MOV ECX, 0x622bf2
 COPY (register,0x4,4) /* ECX */ = (const,0x622bf2,4)
 
-@00498f7e [ESP:???]!!  # MOV ESI, 0x8c9
+@00498f7e [ESP:-40]~  # MOV ESI, 0x8c9
 COPY (register,0x18,4) /* ESI */ = (const,0x8c9,4)
 
-@00498f83 [ESP:???]!!  # PUSH 0x622c05
+@00498f83 [ESP:-44](-4)~  # PUSH 0x622c05
 COPY (unique,0x43f80,4) = (const,0x622c05,4)
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x43f80,4)
 
-@00498f88 [ESP:???]!!  # MOV dword ptr [0x02f0ca48], ECX
+@00498f88 [ESP:-44]~  # MOV dword ptr [0x02f0ca48], ECX
 COPY (ram,0x2f0ca48,4) = (register,0x4,4) /* ECX */
 
-@00498f8e [ESP:???]!!  # MOV dword ptr [0x02f0ca4c], ESI
+@00498f8e [ESP:-44]~  # MOV dword ptr [0x02f0ca4c], ESI
 COPY (ram,0x2f0ca4c,4) = (register,0x18,4) /* ESI */
 
-@00498f94 [ESP:???]!!  # CALL 0x00506f10
+@00498f94 [ESP:-44](-4)~  # CALL 0x00506f10
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x498f99,4)
 CALL (ram,0x506f10,4)
 
-@00498f99 [ESP:???]!!  # ADD ESP, 0x4
+@00498f99 [ESP:-40](+4)~  # ADD ESP, 0x4
 INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0x4,4)
 INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0x4,4)
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
@@ -780,10 +783,9 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@00498f9c [ESP:???]!!  # JMP 0x00498e8c
+@00498f9c [ESP:-40]~  # JMP 0x00498e8c
 BRANCH (ram,0x498e8c,4)
 
 # ============================================================================
 # Summary: 99 instructions, 572 P-code ops
-# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

@@ -190,12 +190,6 @@ section .text
     PUSH 0x2dd3130                      ; 00507027 | g_ErrorMessageBuffer
     CALL wincore_winrun.cpp_displayMessageBoxAndQuit_FUN_005f3920 ; 0050702c
         ;   XREF to: 005f3920 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_displayMessageBoxAndQuit_FUN_005f3920(char * message)
-    ADD ESP,0x4                         ; 00507031
-    ADD ESP,0x8                         ; 00507034
-    POP EBP                             ; 00507037
-    POP ESI                             ; 00507038
-    POP EBX                             ; 00507039
-    RET                                 ; 0050703a
     PUSH EDI                            ; 0050703b
         ;   Label: LAB_0050703b
     PUSH 0x631614                       ; 0050703c | = "-------------------------------------..."

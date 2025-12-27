@@ -9,7 +9,10 @@
 # Format: @<address> [ESP:offset] # <assembly>
 #         [ESP:offset] = cumulative ESP delta from function entry
 #         Delta markers: (+n) ESP increased, (-n) ESP decreased
-#         Certainty:  no marker = known, ? = computed, ?? = unknown, ! = CALLIND
+#         Certainty:  no marker = known, ? = computed, ~ = cfg_resolved
+#                     !! = lost, !? = conflict, ?? = unreachable
+#                     ~! = ebp_frame_conflict (expected in EBP-frame functions)
+#                     ~> = frame_recovered (ESP recovered after frame reset)
 #
 # ============================================================================
 
@@ -418,37 +421,38 @@ INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x4cc7ef,4)
 CALL (ram,0x40cc10,4)
 
-@004cc808 [ESP:-56]  # MOV EDX, dword ptr [EAX]
+@004cc808 [ESP:???]!?  # MOV EDX, dword ptr [EAX]
 LOAD (unique,0xb900,4) = (const,0x1a1,4), (register,0x0,4) /* EAX */
 COPY (register,0x8,4) /* EDX */ = (unique,0xb900,4)
 
-@004cc80a [ESP:-56]  # MOV dword ptr [EBX], EDX
+@004cc80a [ESP:???]!?  # MOV dword ptr [EBX], EDX
 COPY (unique,0x5180,4) = (register,0x8,4) /* EDX */
 STORE (const,0x1a1,4), (register,0xc,4) /* EBX */, (unique,0x5180,4)
 
-@004cc80c [ESP:-56]  # MOV EDX, dword ptr [EAX + 0x4]
+@004cc80c [ESP:???]!?  # MOV EDX, dword ptr [EAX + 0x4]
 INT_ADD (unique,0x3300,4) = (register,0x0,4) /* EAX */, (const,0x4,4)
 LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
 COPY (register,0x8,4) /* EDX */ = (unique,0xb900,4)
 
-@004cc80f [ESP:-56]  # MOV dword ptr [EBX + 0x4], EDX
+@004cc80f [ESP:???]!?  # MOV dword ptr [EBX + 0x4], EDX
 INT_ADD (unique,0x3300,4) = (register,0xc,4) /* EBX */, (const,0x4,4)
 COPY (unique,0x5180,4) = (register,0x8,4) /* EDX */
 STORE (const,0x1a1,4), (unique,0x3300,4), (unique,0x5180,4)
 
-@004cc812 [ESP:-56]  # MOV EDX, dword ptr [EAX + 0x8]
+@004cc812 [ESP:???]!?  # MOV EDX, dword ptr [EAX + 0x8]
 INT_ADD (unique,0x3300,4) = (register,0x0,4) /* EAX */, (const,0x8,4)
 LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
 COPY (register,0x8,4) /* EDX */ = (unique,0xb900,4)
 
-@004cc815 [ESP:-56]  # MOV dword ptr [EBX + 0x8], EDX
+@004cc815 [ESP:???]!?  # MOV dword ptr [EBX + 0x8], EDX
 INT_ADD (unique,0x3300,4) = (register,0xc,4) /* EBX */, (const,0x8,4)
 COPY (unique,0x5180,4) = (register,0x8,4) /* EDX */
 STORE (const,0x1a1,4), (unique,0x3300,4), (unique,0x5180,4)
 
-@004cc818 [ESP:-56]  # JMP 0x004cc7a3
+@004cc818 [ESP:???]!?  # JMP 0x004cc7a3
 BRANCH (ram,0x4cc7a3,4)
 
 # ============================================================================
 # Summary: 58 instructions, 320 P-code ops
+# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

@@ -71,10 +71,10 @@ FILES AT 50-89%
          Suspects: stack_param:13
    71.4% | crt/signal.c
          5/7 clean, 2 remaining
-         Suspects: callind_esp_no_frame:1, callind_esp_no_frame_lost:1
+         Suspects: callind_esp_no_frame:2
    66.7% | core/dfont.cpp
          2/3 clean, 1 remaining
-         Suspects: callind_esp_no_frame:3, callind_esp_no_frame_lost:1
+         Suspects: callind_esp_no_frame:4
    66.7% | core/dimage.cpp
          4/6 clean, 2 remaining
          Suspects: badspacebase:1, param_count_too_few:1, register_param:1, stack_param:20, stack_ref:4
@@ -92,13 +92,13 @@ FILES AT 50-89%
          Suspects: badspacebase:8, concat_artifact:2, negative_offset:1, param_count_too_few:1, pointer_cast:56, register_param:8, stack_param:14, stack_ref:2, sub_artifact:1, unknown_field:58, unresolved_funcptr:1, warning_indirect_jump:1, warning_jumptable:1
    64.3% | core/barrier.cpp
          9/14 clean, 5 remaining
-         Suspects: badspacebase:1, callind_esp_no_frame_lost:1, register_param:1, stack_param:24, stack_ref:1
+         Suspects: badspacebase:1, callind_esp_no_frame:1, register_param:1, stack_param:24, stack_ref:1
    62.5% | core/water.cpp
          5/8 clean, 3 remaining
          Suspects: badspacebase:2, extra_output:2, param_count_too_few:1, pointer_cast:2, register_param:2, sborrow_artifact:1, stack_param:7, stack_ref:3, suspect_float:2, unknown_field:7, warning_overlapping_globals:2
    62.5% | crt/string.c
          25/40 clean, 15 remaining
-         Suspects: badspacebase:6, callind_esp_no_frame_lost:1, concat_artifact:17, param_count_too_few:3, pointer_cast:29, register_param:10, stack_param:21, stack_ref:9, unknown_field:7
+         Suspects: badspacebase:6, callind_esp_no_frame:1, concat_artifact:17, param_count_too_few:3, pointer_cast:29, register_param:10, stack_param:21, stack_ref:9, unknown_field:7
    62.5% | shape/memdbg.cpp
          15/24 clean, 9 remaining
          Suspects: badspacebase:1, pointer_cast:5, register_param:1, stack_param:40
@@ -107,16 +107,16 @@ FILES AT 50-89%
          Suspects: badspacebase:2, pointer_cast:2, register_param:2, sborrow_artifact:12, stack_param:172, stack_ref:4, unaffected_reg:2
    61.5% | core/dog.cpp
          8/13 clean, 5 remaining
-         Suspects: badspacebase:2, callind_esp_no_frame_lost:1, extra_output:10, negative_offset:1, register_param:2, stack_param:10, unaffected_reg:3, unresolved_funcptr:2, warning_overlapping_globals:2
+         Suspects: badspacebase:2, callind_esp_no_frame:1, extra_output:10, negative_offset:1, register_param:2, stack_param:10, unaffected_reg:3, unresolved_funcptr:2, warning_overlapping_globals:2
    61.1% | core/ammo.cpp
          11/18 clean, 7 remaining
          Suspects: badspacebase:1, callind_esp_no_frame:1, negative_offset:2, param_count_too_few:1, pointer_cast:8, register_param:1, stack_param:36, stack_ref:1, suspect_float:1
    60.0% | core/setcolid.cpp
          24/40 clean, 16 remaining
-         Suspects: badspacebase:13, callind_esp_no_frame:3, callind_esp_no_frame_lost:5, param_count_too_few:2, pointer_cast:5, register_param:13, stack_param:116, stack_ref:76, unaffected_reg:12, unknown_field:97, unresolved_funcptr:3
+         Suspects: badspacebase:13, callind_esp_no_frame:8, param_count_too_few:2, pointer_cast:5, register_param:13, stack_param:116, stack_ref:76, unaffected_reg:12, unknown_field:97, unresolved_funcptr:3
    60.0% | crt/startup.c
          6/10 clean, 4 remaining
-         Suspects: badspacebase:2, callind_esp_no_frame_lost:1, pointer_cast:2, register_param:4, stack_param:11, unaffected_reg:2
+         Suspects: badspacebase:2, callind_esp_no_frame:1, pointer_cast:2, register_param:4, stack_param:11, unaffected_reg:2, warning_noreturn:1
    59.1% | engine/texture.cpp
          13/22 clean, 9 remaining
          Suspects: badspacebase:2, extra_output:2, param_count_too_few:2, param_count_too_many:2, pointer_cast:3, register_param:2, stack_param:18, stack_ref:14, unaffected_reg:16, unknown_field:24, warning_unreachable:1
@@ -125,10 +125,10 @@ FILES AT 50-89%
          Suspects: badspacebase:8, concat_artifact:3, extra_output:8, param_count_too_few:1, pointer_cast:10, register_param:8, stack_param:91, stack_ref:21, sub_artifact:1, unaffected_reg:6, unknown_field:27
    58.4% | engine/3d.c
          59/101 clean, 42 remaining
-         Suspects: badspacebase:15, callind_esp_no_frame:1, callind_esp_no_frame_lost:1, extra_output:12, param_count_too_few:1, param_count_too_many:1, pointer_cast:44, register_param:18, sborrow_artifact:2, stack_param:185, stack_ref:82, suspect_float:24, unaffected_reg:7, unresolved_funcptr:2
+         Suspects: badspacebase:15, callind_esp_no_frame:2, extra_output:12, param_count_too_few:1, param_count_too_many:1, pointer_cast:44, register_param:18, sborrow_artifact:2, stack_param:185, stack_ref:82, suspect_float:24, unaffected_reg:7, unresolved_funcptr:2
    58.3% | core/glass.cpp
          14/24 clean, 10 remaining
-         Suspects: badspacebase:8, callind_esp_no_frame:3, callind_esp_no_frame_lost:2, extra_output:8, negative_offset:1, pointer_cast:24, register_param:8, stack_param:39, stack_ref:22, suspect_float:4, unaffected_reg:2, unknown_field:94
+         Suspects: badspacebase:8, callind_esp_no_frame:5, extra_output:8, negative_offset:1, pointer_cast:24, register_param:8, stack_param:39, stack_ref:22, suspect_float:4, unaffected_reg:2, unknown_field:94
    57.1% | core/moon.cpp
          8/14 clean, 6 remaining
          Suspects: badspacebase:2, concat_artifact:2, extra_output:2, negative_offset:3, param_count_too_many:1, pointer_cast:21, register_param:2, stack_param:2, stack_ref:8, suspect_float:3
@@ -143,37 +143,37 @@ FILES AT 50-89%
          Suspects: badspacebase:1, concat_artifact:1, pointer_cast:46, register_param:1, stack_param:77, stack_ref:2, unaffected_reg:4
    57.1% | sound/sndwav.cpp
          20/35 clean, 15 remaining
-         Suspects: badspacebase:7, callind_esp_no_frame:4, callind_esp_no_frame_lost:5, negative_offset:2, pointer_cast:54, register_param:7, stack_param:31, stack_ref:6, unknown_field:8, unresolved_funcptr:1
+         Suspects: badspacebase:7, callind_esp_no_frame:7, callind_esp_no_frame_lost:2, negative_offset:2, pointer_cast:54, register_param:7, stack_param:31, stack_ref:6, unknown_field:8, unresolved_funcptr:1
    56.2% | core/tbplayer.cpp
          9/16 clean, 7 remaining
          Suspects: badspacebase:2, negative_offset:4, register_param:2, stack_param:50, unaffected_reg:8
    54.5% | shape/quantize.cpp
          18/33 clean, 15 remaining
-         Suspects: badspacebase:3, callind_esp_no_frame_lost:1, concat_artifact:2, extra_output:31, param_count_too_few:2, pointer_cast:39, register_param:3, stack_param:72, stack_ref:15, unaffected_reg:9, unknown_field:18
+         Suspects: badspacebase:3, callind_esp_no_frame:1, concat_artifact:2, extra_output:31, param_count_too_few:2, pointer_cast:39, register_param:3, stack_param:72, stack_ref:15, unaffected_reg:9, unknown_field:18
    54.3% | core/baron.cpp
          19/35 clean, 16 remaining
-         Suspects: badspacebase:5, callind_esp_no_frame:1, callind_esp_no_frame_lost:3, param_count_too_few:4, register_param:5, stack_param:101, stack_ref:8, suspect_float:1, unaffected_reg:10, unknown_field:8, unresolved_funcptr:4, warning_overlapping_globals:1
+         Suspects: badspacebase:5, callind_esp_no_frame:4, param_count_too_few:4, register_param:5, stack_param:101, stack_ref:8, suspect_float:1, unaffected_reg:10, unknown_field:8, unresolved_funcptr:4, warning_overlapping_globals:1
    53.8% | support/codec.cpp
          21/39 clean, 18 remaining
-         Suspects: badspacebase:9, callind_esp_no_frame:8, callind_esp_no_frame_lost:1, negative_offset:4, param_count_too_few:2, pointer_cast:7, register_param:9, stack_param:28, stack_ref:14, unaffected_reg:16, unresolved_funcptr:2
+         Suspects: badspacebase:9, callind_esp_no_frame:9, negative_offset:4, param_count_too_few:2, pointer_cast:7, register_param:9, stack_param:28, stack_ref:14, unaffected_reg:16, unresolved_funcptr:2
    53.6% | core/door.cpp
          15/28 clean, 13 remaining
-         Suspects: badspacebase:6, callind_esp_no_frame_lost:6, negative_offset:6, param_count_too_few:1, pointer_cast:4, register_param:6, stack_param:63, stack_ref:6, suspect_float:2, unaffected_reg:12, unknown_field:8, unresolved_funcptr:1
+         Suspects: badspacebase:6, callind_esp_no_frame:6, negative_offset:6, param_count_too_few:1, pointer_cast:4, register_param:6, stack_param:63, stack_ref:6, suspect_float:2, unaffected_reg:12, unknown_field:8, unresolved_funcptr:1
    53.6% | wincore/wddvmem.cpp
          15/28 clean, 13 remaining
-         Suspects: badspacebase:4, callind_esp_no_frame_lost:1, concat_artifact:2, param_count_too_few:2, pointer_cast:15, register_param:4, stack_param:36, stack_ref:7, unknown_field:12, warning_unreachable:1
+         Suspects: badspacebase:4, callind_esp_no_frame:1, concat_artifact:2, param_count_too_few:2, pointer_cast:15, register_param:4, stack_param:36, stack_ref:7, unknown_field:12, warning_unreachable:1
    53.5% | core/inv.cpp
          23/43 clean, 20 remaining
-         Suspects: badspacebase:7, callind_esp_no_frame:2, callind_esp_no_frame_lost:17, extra_output:6, param_count_too_few:3, pointer_cast:1, register_param:7, stack_param:156, stack_ref:37, suspect_float:9, unaffected_reg:11, warning_unreachable:1
+         Suspects: badspacebase:7, callind_esp_no_frame:19, extra_output:6, param_count_too_few:3, pointer_cast:1, register_param:7, stack_param:156, stack_ref:37, suspect_float:9, unaffected_reg:11, warning_unreachable:1
    53.3% | core/trash.cpp
          8/15 clean, 7 remaining
          Suspects: badspacebase:3, callind_esp_no_frame:1, negative_offset:2, register_param:3, stack_param:48, stack_ref:4, suspect_float:1
    52.9% | core/flamegun.cpp
          9/17 clean, 8 remaining
-         Suspects: badspacebase:1, callind_esp_no_frame_lost:1, concat_artifact:1, extra_output:2, register_param:1, stack_param:42, stack_ref:1, suspect_float:1, unaffected_reg:4, warning_overlapping_globals:5
+         Suspects: badspacebase:1, callind_esp_no_frame:1, concat_artifact:1, extra_output:2, register_param:1, stack_param:42, stack_ref:1, suspect_float:1, unaffected_reg:4, warning_overlapping_globals:5
    52.9% | core/trap.cpp
          9/17 clean, 8 remaining
-         Suspects: badspacebase:2, callind_esp_no_frame:2, callind_esp_no_frame_lost:3, negative_offset:2, register_param:2, stack_param:20, stack_ref:4, suspect_float:1, unaffected_reg:8, unknown_field:1, unresolved_funcptr:1
+         Suspects: badspacebase:2, callind_esp_no_frame:5, negative_offset:2, register_param:2, stack_param:20, stack_ref:4, suspect_float:1, unaffected_reg:8, unknown_field:1, unresolved_funcptr:1
    52.6% | core/dfilter.cpp
          10/19 clean, 9 remaining
          Suspects: badspacebase:1, extra_output:8, param_count_too_few:4, pointer_cast:5, register_param:1, stack_param:4, stack_ref:4
@@ -182,16 +182,16 @@ FILES AT 50-89%
          Suspects: badspacebase:6, param_count_too_few:2, param_count_too_many:1, register_param:6, stack_param:44, stack_ref:8
    51.5% | wincore/winrun.cpp
          17/33 clean, 16 remaining
-         Suspects: badspacebase:8, callind_esp_no_frame:5, callind_esp_no_frame_lost:4, concat_artifact:2, param_count_too_few:1, param_count_too_many:2, pointer_cast:3, register_param:8, stack_param:22, stack_ref:7, unaffected_reg:2, undefined_type:1, unknown_field:8, unresolved_funcptr:1
+         Suspects: badspacebase:8, callind_esp_no_frame:9, concat_artifact:2, param_count_too_few:1, param_count_too_many:2, pointer_cast:3, register_param:8, stack_param:22, stack_ref:7, unaffected_reg:8, undefined_type:1, unknown_field:8, unresolved_funcptr:1
    51.4% | core/dlight.cpp
          19/37 clean, 18 remaining
          Suspects: badspacebase:9, extra_output:26, param_count_too_few:2, pointer_cast:24, register_param:9, stack_param:72, stack_ref:11, suspect_float:81, unaffected_reg:18, unknown_field:79
    51.4% | core/fire.cpp
          95/185 clean, 90 remaining
-         Suspects: badspacebase:41, callind_esp_no_frame:18, callind_esp_no_frame_lost:3, concat_artifact:1, extra_output:41, negative_offset:4, param_count_too_few:18, pointer_cast:50, register_param:41, stack_param:494, stack_ref:38, sub_artifact:19, suspect_float:172, unaffected_reg:15, unknown_field:123, unresolved_funcptr:2, warning_overlapping_globals:1, warning_unreachable:3
+         Suspects: badspacebase:41, callind_esp_no_frame:21, concat_artifact:1, extra_output:41, negative_offset:4, param_count_too_few:18, pointer_cast:50, register_param:41, stack_param:494, stack_ref:38, sub_artifact:19, suspect_float:172, unaffected_reg:15, unknown_field:123, unresolved_funcptr:2, warning_overlapping_globals:1, warning_unreachable:3
    51.3% | crt/io.c
          20/39 clean, 19 remaining
-         Suspects: badspacebase:10, callind_esp_no_frame:3, callind_esp_no_frame_lost:15, param_count_too_few:1, pointer_cast:4, register_param:10, stack_param:47, stack_ref:50, unaffected_reg:6, unknown_field:4, warning_noreturn:1
+         Suspects: badspacebase:10, callind_esp_no_frame:18, param_count_too_few:1, pointer_cast:4, register_param:10, stack_param:47, stack_ref:50, unaffected_reg:6, unknown_field:4, warning_noreturn:1
    51.0% | crt/math.c
          52/102 clean, 50 remaining
          Suspects: badspacebase:4, concat_artifact:77, extra_output:8, param_count_too_few:4, param_count_too_many:4, pointer_cast:3, register_param:15, stack_param:87, stack_ref:2, sub_artifact:12, unaffected_reg:8, undefined_type:22, unknown_field:27, unresolved_funcptr:32, warning_indirect_jump:2, warning_jumptable:2, warning_overlapping_globals:1, warning_unreachable:1
@@ -200,25 +200,25 @@ FILES AT 50-89%
          Suspects: badspacebase:16, extra_output:12, param_count_too_few:12, param_count_too_many:2, pointer_cast:32, register_param:34, stack_param:70, stack_ref:109, unaffected_reg:24, warning_indirect_jump:2, warning_jumptable:2, warning_unreachable:2
    50.0% | core/backgnd.cpp
          10/20 clean, 10 remaining
-         Suspects: badspacebase:2, callind_esp_no_frame_lost:2, concat_artifact:1, negative_offset:2, param_count_too_few:2, register_param:2, stack_param:24, stack_ref:2, suspect_float:2
+         Suspects: badspacebase:2, callind_esp_no_frame:2, concat_artifact:1, negative_offset:2, param_count_too_few:2, register_param:2, stack_param:24, stack_ref:2, suspect_float:2
    50.0% | core/box.cpp
          15/30 clean, 15 remaining
          Suspects: badspacebase:12, callind_esp_no_frame:1, param_count_too_few:4, param_count_too_many:3, pointer_cast:49, register_param:12, stack_param:8, stack_ref:8, suspect_float:22, unaffected_reg:8, unknown_field:18, warning_unreachable:1
    50.0% | core/conveyor.cpp
          10/20 clean, 10 remaining
-         Suspects: badspacebase:3, callind_esp_no_frame:5, callind_esp_no_frame_lost:1, concat_artifact:2, register_param:3, stack_param:124, stack_ref:3, sub_artifact:1, suspect_float:1
+         Suspects: badspacebase:3, callind_esp_no_frame:6, concat_artifact:2, register_param:3, stack_param:124, stack_ref:3, sub_artifact:1, suspect_float:1
    50.0% | core/dskybox.cpp
          2/4 clean, 2 remaining
          Suspects: badspacebase:1, extra_output:10, pointer_cast:1, register_param:1, stack_ref:1, suspect_float:5, unaffected_reg:9, unknown_field:24
    50.0% | core/litecone.cpp
          6/12 clean, 6 remaining
-         Suspects: badspacebase:1, callind_esp_no_frame_lost:1, register_param:1, stack_param:45, suspect_float:1
+         Suspects: badspacebase:1, callind_esp_no_frame:1, register_param:1, stack_param:45, suspect_float:1
    50.0% | core/npc.cpp
          7/14 clean, 7 remaining
-         Suspects: badspacebase:2, callind_esp_no_frame:1, callind_esp_no_frame_lost:1, negative_offset:10, register_param:2, stack_param:27, stack_ref:4
+         Suspects: badspacebase:2, callind_esp_no_frame:2, negative_offset:10, register_param:2, stack_param:27, stack_ref:4
    50.0% | core/podmain.cpp
          2/4 clean, 2 remaining
-         Suspects: badspacebase:1, callind_esp_no_frame:1, callind_esp_no_frame_lost:1, register_param:1, stack_param:3, stack_ref:7, unaffected_reg:5
+         Suspects: badspacebase:1, callind_esp_no_frame:2, register_param:1, stack_param:3, stack_ref:7, unaffected_reg:5
    50.0% | core/stone.cpp
          4/8 clean, 4 remaining
          Suspects: negative_offset:1, stack_param:10
@@ -230,7 +230,7 @@ FILES AT 50-89%
          Suspects: badspacebase:1, extra_output:6, register_param:1, stack_ref:1, suspect_float:1, unknown_field:2
    50.0% | engine/pod.cpp
          17/34 clean, 17 remaining
-         Suspects: badspacebase:12, callind_esp_no_frame_lost:2, pointer_cast:16, register_param:12, stack_param:75, stack_ref:28, unaffected_reg:22, unknown_field:1
+         Suspects: badspacebase:12, callind_esp_no_frame:2, pointer_cast:16, register_param:12, stack_param:75, stack_ref:28, unaffected_reg:22, unknown_field:1
    50.0% | shape/spotview.cpp
          3/6 clean, 3 remaining
          Suspects: badspacebase:1, param_count_too_few:1, register_param:1, stack_param:12, stack_ref:2, unknown_field:3

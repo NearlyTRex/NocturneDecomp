@@ -9,7 +9,10 @@
 # Format: @<address> [ESP:offset] # <assembly>
 #         [ESP:offset] = cumulative ESP delta from function entry
 #         Delta markers: (+n) ESP increased, (-n) ESP decreased
-#         Certainty:  no marker = known, ? = computed, ?? = unknown, ! = CALLIND
+#         Certainty:  no marker = known, ? = computed, ~ = cfg_resolved
+#                     !! = lost, !? = conflict, ?? = unreachable
+#                     ~! = ebp_frame_conflict (expected in EBP-frame functions)
+#                     ~> = frame_recovered (ESP recovered after frame reset)
 #
 # ============================================================================
 
@@ -750,7 +753,7 @@ LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
-@005a58e5 [ESP:???]!!  # CMP dword ptr [0x03f692d0], 0x0
+@005a58e5 [ESP:-28]~  # CMP dword ptr [0x03f692d0], 0x0
 COPY (unique,0x33080,4) = (ram,0x3f692d0,4)
 INT_LESS (register,0x200,1) = (unique,0x33080,4), (const,0x0,4)
 INT_SBORROW (register,0x20b,1) = (unique,0x33080,4), (const,0x0,4)
@@ -762,10 +765,10 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@005a58ec [ESP:???]!!  # JZ 0x005a580b
+@005a58ec [ESP:-28]~  # JZ 0x005a580b
 CBRANCH (ram,0x5a580b,4), (register,0x206,1)
 
-@005a58f2 [ESP:???]!!  # TEST EAX, EAX
+@005a58f2 [ESP:-28]~  # TEST EAX, EAX
 COPY (register,0x200,1) = (const,0x0,1)
 COPY (register,0x20b,1) = (const,0x0,1)
 INT_AND (unique,0x57200,4) = (register,0x0,4) /* EAX */, (register,0x0,4) /* EAX */
@@ -776,13 +779,12 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@005a58f4 [ESP:???]!!  # JZ 0x005a580b
+@005a58f4 [ESP:-28]~  # JZ 0x005a580b
 CBRANCH (ram,0x5a580b,4), (register,0x206,1)
 
-@005a58fa [ESP:???]!!  # JMP 0x005a582d
+@005a58fa [ESP:-28]~  # JMP 0x005a582d
 BRANCH (ram,0x5a582d,4)
 
 # ============================================================================
 # Summary: 118 instructions, 532 P-code ops
-# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

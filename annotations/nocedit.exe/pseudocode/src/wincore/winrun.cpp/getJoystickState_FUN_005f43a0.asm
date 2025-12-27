@@ -23,7 +23,7 @@
 ;   int g_JoyWantRAxis
 ;   int g_JoystickHasPOV
 ;   int g_JoyPOVDirection
-;   FARPROC g_joyGetPosEx
+;   joyGetPosEx* g_joyGetPosEx
 ;
 ; Called Functions:
 ;   joyGetPos

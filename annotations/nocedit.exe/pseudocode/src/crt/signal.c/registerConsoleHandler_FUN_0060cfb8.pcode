@@ -9,7 +9,10 @@
 # Format: @<address> [ESP:offset] # <assembly>
 #         [ESP:offset] = cumulative ESP delta from function entry
 #         Delta markers: (+n) ESP increased, (-n) ESP decreased
-#         Certainty:  no marker = known, ? = computed, ?? = unknown, ! = CALLIND
+#         Certainty:  no marker = known, ? = computed, ~ = cfg_resolved
+#                     !! = lost, !? = conflict, ?? = unreachable
+#                     ~! = ebp_frame_conflict (expected in EBP-frame functions)
+#                     ~> = frame_recovered (ESP recovered after frame reset)
 #
 # ============================================================================
 
@@ -39,13 +42,13 @@ COPY (unique,0x43f80,4) = (const,0x60cf20,4)
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x43f80,4)
 
-@0060cfc8 [ESP:-8](-4)  # CALL dword ptr CS:[0x61160c]
+@0060cfc8 [ESP:+0](-4)  # CALL dword ptr CS:[0x61160c]
 COPY (unique,0x31a80,4) = (ram,0x61160c,4)
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x60cfcf,4)
 CALLIND (unique,0x31a80,4)
 
-@0060cfcf [ESP:-8]  # TEST EAX, EAX
+@0060cfcf [ESP:+0]  # TEST EAX, EAX
 COPY (register,0x200,1) = (const,0x0,1)
 COPY (register,0x20b,1) = (const,0x0,1)
 INT_AND (unique,0x57200,4) = (register,0x0,4) /* EAX */, (register,0x0,4) /* EAX */
@@ -56,13 +59,13 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@0060cfd1 [ESP:-8]  # JZ 0x0060cfda
+@0060cfd1 [ESP:+0]  # JZ 0x0060cfda
 CBRANCH (ram,0x60cfda,4), (register,0x206,1)
 
-@0060cfd3 [ESP:-8]  # MOV byte ptr [0x0068556c], 0x1
+@0060cfd3 [ESP:+0]  # MOV byte ptr [0x0068556c], 0x1
 COPY (ram,0x68556c,1) = (const,0x1,1)
 
-@0060cfda [ESP:-8]  # XOR EAX, EAX
+@0060cfda [ESP:+0]  # XOR EAX, EAX
 COPY (register,0x200,1) = (const,0x0,1)
 COPY (register,0x20b,1) = (const,0x0,1)
 INT_XOR (register,0x0,4) /* EAX */ = (register,0x0,4) /* EAX */, (register,0x0,4) /* EAX */
@@ -73,10 +76,10 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@0060cfdc [ESP:-8]  # MOV AL, [0x0068556c]
+@0060cfdc [ESP:+0]  # MOV AL, [0x0068556c]
 COPY (register,0x0,1) = (ram,0x68556c,1)
 
-@0060cfe1 [ESP:-4](+4)  # RET
+@0060cfe1 [ESP:+4](+4)  # RET
 LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)

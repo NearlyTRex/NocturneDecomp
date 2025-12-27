@@ -9,7 +9,10 @@
 # Format: @<address> [ESP:offset] # <assembly>
 #         [ESP:offset] = cumulative ESP delta from function entry
 #         Delta markers: (+n) ESP increased, (-n) ESP decreased
-#         Certainty:  no marker = known, ? = computed, ?? = unknown, ! = CALLIND
+#         Certainty:  no marker = known, ? = computed, ~ = cfg_resolved
+#                     !! = lost, !? = conflict, ?? = unreachable
+#                     ~! = ebp_frame_conflict (expected in EBP-frame functions)
+#                     ~> = frame_recovered (ESP recovered after frame reset)
 #
 # ============================================================================
 
@@ -495,17 +498,17 @@ COPY (unique,0x43d80,4) = (const,0x9,4)
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x43d80,4)
 
-@005572df [ESP:-148](-4)  # PUSH ESI
+@005572df [ESP:???](-4)~!  # PUSH ESI
 COPY (unique,0x20a80,4) = (register,0x18,4) /* ESI */
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x20a80,4)
 
-@005572e0 [ESP:-148](-4)  # CALL 0x0052db00
+@005572e0 [ESP:???](-4)~!  # CALL 0x0052db00
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x5572e5,4)
 CALL (ram,0x52db00,4)
 
-@005572e5 [ESP:-136](+12)?  # ADD ESP, 0xc
+@005572e5 [ESP:???](+12)~!  # ADD ESP, 0xc
 INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0xc,4)
 INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0xc,4)
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0xc,4)
@@ -1222,12 +1225,12 @@ COPY (unique,0x20a80,4) = (register,0x0,4) /* EAX */
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x20a80,4)
 
-@00557400 [ESP:-148](-4)  # CALL 0x0052db00
+@00557400 [ESP:???](-4)~!  # CALL 0x0052db00
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x557405,4)
 CALL (ram,0x52db00,4)
 
-@00557405 [ESP:-136](+12)?  # ADD ESP, 0xc
+@00557405 [ESP:???](+12)~!  # ADD ESP, 0xc
 INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0xc,4)
 INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0xc,4)
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0xc,4)
@@ -2353,39 +2356,39 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@005575b3 [ESP:-136]  # MOV ESP, EBP
+@005575b3 [ESP:-16](+120)  # MOV ESP, EBP
 COPY (register,0x10,4) /* ESP */ = (register,0x14,4) /* EBP */
 
-@005575b5 [ESP:-132](+4)  # POP EBP
+@005575b5 [ESP:-12](+4)  # POP EBP
 COPY (unique,0x43980,4) = (const,0x0,4)
 LOAD (unique,0x43980,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 COPY (register,0x14,4) /* EBP */ = (unique,0x43980,4)
 
-@005575b6 [ESP:-128](+4)  # POP EDI
+@005575b6 [ESP:-8](+4)  # POP EDI
 COPY (unique,0x43980,4) = (const,0x0,4)
 LOAD (unique,0x43980,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 COPY (register,0x1c,4) /* EDI */ = (unique,0x43980,4)
 
-@005575b7 [ESP:-124](+4)  # POP ESI
+@005575b7 [ESP:-4](+4)  # POP ESI
 COPY (unique,0x43980,4) = (const,0x0,4)
 LOAD (unique,0x43980,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 COPY (register,0x18,4) /* ESI */ = (unique,0x43980,4)
 
-@005575b8 [ESP:-120](+4)  # POP EBX
+@005575b8 [ESP:+0](+4)  # POP EBX
 COPY (unique,0x43980,4) = (const,0x0,4)
 LOAD (unique,0x43980,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 COPY (register,0xc,4) /* EBX */ = (unique,0x43980,4)
 
-@005575b9 [ESP:-116](+4)  # RET
+@005575b9 [ESP:+4](+4)  # RET
 LOAD (register,0x284,4) = (const,0x1a1,8), (register,0x10,4) /* ESP */
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 RETURN (register,0x284,4)
 
-@005575ba [ESP:???]!!  # FLD float ptr [EBX + 0x2438]
+@005575ba [ESP:-136]~  # FLD float ptr [EBX + 0x2438]
 INT_ADD (unique,0x3400,4) = (register,0xc,4) /* EBX */, (const,0x2438,4)
 COPY (register,0x10ac,4) = (const,0x5575ba,4)
 COPY (unique,0x29480,10) = (register,0x1170,10)
@@ -2400,12 +2403,12 @@ COPY (register,0x1100,10) = (unique,0x29480,10)
 LOAD (unique,0x5480,4) = (const,0x1a1,4), (unique,0x3400,4)
 FLOAT2FLOAT (register,0x1100,10) = (unique,0x5480,4)
 
-@005575c0 [ESP:???]!!  # FMUL double ptr [0x006413a4]
+@005575c0 [ESP:-136]~  # FMUL double ptr [0x006413a4]
 FLOAT2FLOAT (unique,0x5d380,10) = (ram,0x6413a4,8)
 FLOAT_MULT (register,0x1100,10) = (register,0x1100,10), (unique,0x5d380,10)
 COPY (register,0x10ac,4) = (const,0x5575c0,4)
 
-@005575c6 [ESP:???]!!  # FSTP float ptr [EBX + 0x2438]
+@005575c6 [ESP:-136]~  # FSTP float ptr [EBX + 0x2438]
 INT_ADD (unique,0x3400,4) = (register,0xc,4) /* EBX */, (const,0x2438,4)
 COPY (register,0x10ac,4) = (const,0x5575c6,4)
 FLOAT2FLOAT (unique,0x5480,4) = (register,0x1100,10)
@@ -2418,33 +2421,33 @@ COPY (register,0x1140,10) = (register,0x1150,10)
 COPY (register,0x1150,10) = (register,0x1160,10)
 COPY (register,0x1160,10) = (register,0x1170,10)
 
-@005575cc [ESP:???]!!  # JMP 0x00557234
+@005575cc [ESP:-136]~  # JMP 0x00557234
 BRANCH (ram,0x557234,4)
 
-@005575d1 [ESP:???]!!  # PUSH EBX
+@005575d1 [ESP:-140](-4)~  # PUSH EBX
 COPY (unique,0x20a80,4) = (register,0xc,4) /* EBX */
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x20a80,4)
 
-@005575d2 [ESP:???]!!  # PUSH 0x64136f
+@005575d2 [ESP:-144](-4)~  # PUSH 0x64136f
 COPY (unique,0x43f80,4) = (const,0x64136f,4)
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x43f80,4)
 
-@005575d7 [ESP:???]!!  # MOV ECX, dword ptr [0x0066e8e0]
+@005575d7 [ESP:-144]~  # MOV ECX, dword ptr [0x0066e8e0]
 COPY (register,0x4,4) /* ECX */ = (ram,0x66e8e0,4)
 
-@005575dd [ESP:???]!!  # PUSH ECX
+@005575dd [ESP:-148](-4)~  # PUSH ECX
 COPY (unique,0x20a80,4) = (register,0x4,4) /* ECX */
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x20a80,4)
 
-@005575de [ESP:???]!!  # CALL 0x00441890
+@005575de [ESP:-148](-4)~  # CALL 0x00441890
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x5575e3,4)
 CALL (ram,0x441890,4)
 
-@005575e3 [ESP:???]!!  # ADD ESP, 0xc
+@005575e3 [ESP:-136](+12)~  # ADD ESP, 0xc
 INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0xc,4)
 INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0xc,4)
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0xc,4)
@@ -2455,17 +2458,17 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@005575e6 [ESP:???]!!  # PUSH EBX
+@005575e6 [ESP:-140](-4)~  # PUSH EBX
 COPY (unique,0x20a80,4) = (register,0xc,4) /* EBX */
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x20a80,4)
 
-@005575e7 [ESP:???]!!  # CALL 0x00558010
+@005575e7 [ESP:-140](-4)~  # CALL 0x00558010
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x5575ec,4)
 CALL (ram,0x558010,4)
 
-@005575ec [ESP:???]!!  # ADD ESP, 0x4
+@005575ec [ESP:-136](+4)~  # ADD ESP, 0x4
 INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0x4,4)
 INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0x4,4)
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
@@ -2476,7 +2479,7 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@005575ef [ESP:???]!!  # TEST EAX, EAX
+@005575ef [ESP:-136]~  # TEST EAX, EAX
 COPY (register,0x200,1) = (const,0x0,1)
 COPY (register,0x20b,1) = (const,0x0,1)
 INT_AND (unique,0x57200,4) = (register,0x0,4) /* EAX */, (register,0x0,4) /* EAX */
@@ -2487,59 +2490,59 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@005575f1 [ESP:???]!!  # JZ 0x005575fc
+@005575f1 [ESP:-136]~  # JZ 0x005575fc
 CBRANCH (ram,0x5575fc,4), (register,0x206,1)
 
-@005575f3 [ESP:???]!!  # PUSH 0x1
+@005575f3 [ESP:-140](-4)~  # PUSH 0x1
 COPY (unique,0x43d80,4) = (const,0x1,4)
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x43d80,4)
 
-@005575f5 [ESP:???]!!  # PUSH 0x7
+@005575f5 [ESP:-144](-4)~  # PUSH 0x7
 COPY (unique,0x43d80,4) = (const,0x7,4)
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x43d80,4)
 
-@005575f7 [ESP:???]!!  # JMP 0x005572df
+@005575f7 [ESP:-144]~  # JMP 0x005572df
 BRANCH (ram,0x5572df,4)
 
-@005575fc [ESP:???]!!  # PUSH 0x1
+@005575fc [ESP:-140](-4)~  # PUSH 0x1
 COPY (unique,0x43d80,4) = (const,0x1,4)
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x43d80,4)
 
-@005575fe [ESP:???]!!  # PUSH EAX
+@005575fe [ESP:-144](-4)~  # PUSH EAX
 COPY (unique,0x20a80,4) = (register,0x0,4) /* EAX */
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x20a80,4)
 
-@005575ff [ESP:???]!!  # JMP 0x005572df
+@005575ff [ESP:-144]~  # JMP 0x005572df
 BRANCH (ram,0x5572df,4)
 
-@00557604 [ESP:???]!!  # PUSH 0x1
+@00557604 [ESP:-140](-4)~  # PUSH 0x1
 COPY (unique,0x43d80,4) = (const,0x1,4)
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x43d80,4)
 
-@00557606 [ESP:???]!!  # PUSH 0x1
+@00557606 [ESP:-144](-4)~  # PUSH 0x1
 COPY (unique,0x43d80,4) = (const,0x1,4)
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x43d80,4)
 
-@00557608 [ESP:???]!!  # JMP 0x005572df
+@00557608 [ESP:-144]~  # JMP 0x005572df
 BRANCH (ram,0x5572df,4)
 
-@0055760d [ESP:???]!!  # PUSH EBX
+@0055760d [ESP:-140](-4)~  # PUSH EBX
 COPY (unique,0x20a80,4) = (register,0xc,4) /* EBX */
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x20a80,4)
 
-@0055760e [ESP:???]!!  # CALL 0x00558010
+@0055760e [ESP:-140](-4)~  # CALL 0x00558010
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x557613,4)
 CALL (ram,0x558010,4)
 
-@00557613 [ESP:???]!!  # ADD ESP, 0x4
+@00557613 [ESP:-136](+4)~  # ADD ESP, 0x4
 INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0x4,4)
 INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0x4,4)
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
@@ -2550,7 +2553,7 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@00557616 [ESP:???]!!  # TEST EAX, EAX
+@00557616 [ESP:-136]~  # TEST EAX, EAX
 COPY (register,0x200,1) = (const,0x0,1)
 COPY (register,0x20b,1) = (const,0x0,1)
 INT_AND (unique,0x57200,4) = (register,0x0,4) /* EAX */, (register,0x0,4) /* EAX */
@@ -2561,46 +2564,46 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@00557618 [ESP:???]!!  # JNZ 0x005572db
+@00557618 [ESP:-136]~  # JNZ 0x005572db
 BOOL_NEGATE (unique,0xbe00,1) = (register,0x206,1)
 CBRANCH (ram,0x5572db,4), (unique,0xbe00,1)
 
-@0055761e [ESP:???]!!  # PUSH 0x1
+@0055761e [ESP:-140](-4)~  # PUSH 0x1
 COPY (unique,0x43d80,4) = (const,0x1,4)
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x43d80,4)
 
-@00557620 [ESP:???]!!  # PUSH 0x2
+@00557620 [ESP:-144](-4)~  # PUSH 0x2
 COPY (unique,0x43d80,4) = (const,0x2,4)
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x43d80,4)
 
-@00557622 [ESP:???]!!  # JMP 0x005572df
+@00557622 [ESP:-144]~  # JMP 0x005572df
 BRANCH (ram,0x5572df,4)
 
-@00557627 [ESP:???]!!  # PUSH 0x1
+@00557627 [ESP:-140](-4)~  # PUSH 0x1
 COPY (unique,0x43d80,4) = (const,0x1,4)
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x43d80,4)
 
-@00557629 [ESP:???]!!  # PUSH ESI
+@00557629 [ESP:-144](-4)~  # PUSH ESI
 COPY (unique,0x20a80,4) = (register,0x18,4) /* ESI */
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x20a80,4)
 
-@0055762a [ESP:???]!!  # PUSH EAX
+@0055762a [ESP:-148](-4)~  # PUSH EAX
 COPY (unique,0x20a80,4) = (register,0x0,4) /* EAX */
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x20a80,4)
 
-@0055762b [ESP:???]!!  # JMP 0x005572e0
+@0055762b [ESP:-148]~  # JMP 0x005572e0
 BRANCH (ram,0x5572e0,4)
 
-@00557630 [ESP:???]!!  # JBE 0x0055760d
+@00557630 [ESP:-136]~  # JBE 0x0055760d
 BOOL_OR (unique,0xbf00,1) = (register,0x200,1), (register,0x206,1)
 CBRANCH (ram,0x55760d,4), (unique,0xbf00,1)
 
-@00557632 [ESP:???]!!  # CMP EAX, 0x3
+@00557632 [ESP:-136]~  # CMP EAX, 0x3
 COPY (unique,0x33080,4) = (register,0x0,4) /* EAX */
 INT_LESS (register,0x200,1) = (unique,0x33080,4), (const,0x3,4)
 INT_SBORROW (register,0x20b,1) = (unique,0x33080,4), (const,0x3,4)
@@ -2612,23 +2615,23 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@00557635 [ESP:???]!!  # JZ 0x005575d1
+@00557635 [ESP:-136]~  # JZ 0x005575d1
 CBRANCH (ram,0x5575d1,4), (register,0x206,1)
 
-@00557637 [ESP:???]!!  # PUSH EBX
+@00557637 [ESP:-140](-4)~  # PUSH EBX
 COPY (unique,0x20a80,4) = (register,0xc,4) /* EBX */
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x20a80,4)
 
-@00557638 [ESP:???]!!  # CALL 0x00558010
+@00557638 [ESP:-140](-4)~  # CALL 0x00558010
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x55763d,4)
 CALL (ram,0x558010,4)
 
-@0055763d [ESP:???]!!  # MOV ESI, EAX
+@0055763d [ESP:-140]~  # MOV ESI, EAX
 COPY (register,0x18,4) /* ESI */ = (register,0x0,4) /* EAX */
 
-@0055763f [ESP:???]!!  # ADD ESP, 0x4
+@0055763f [ESP:-136](+4)~  # ADD ESP, 0x4
 INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0x4,4)
 INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0x4,4)
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
@@ -2639,11 +2642,11 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@00557642 [ESP:???]!!  # LEA EAX, [EBX + 0x158]
+@00557642 [ESP:-136]~  # LEA EAX, [EBX + 0x158]
 INT_ADD (unique,0x3400,4) = (register,0xc,4) /* EBX */, (const,0x158,4)
 COPY (register,0x0,4) /* EAX */ = (unique,0x3400,4)
 
-@00557648 [ESP:???]!!  # TEST ESI, ESI
+@00557648 [ESP:-136]~  # TEST ESI, ESI
 COPY (register,0x200,1) = (const,0x0,1)
 COPY (register,0x20b,1) = (const,0x0,1)
 INT_AND (unique,0x57200,4) = (register,0x18,4) /* ESI */, (register,0x18,4) /* ESI */
@@ -2654,28 +2657,28 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@0055764a [ESP:???]!!  # JZ 0x00557627
+@0055764a [ESP:-136]~  # JZ 0x00557627
 CBRANCH (ram,0x557627,4), (register,0x206,1)
 
-@0055764c [ESP:???]!!  # PUSH 0x1
+@0055764c [ESP:-140](-4)~  # PUSH 0x1
 COPY (unique,0x43d80,4) = (const,0x1,4)
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x43d80,4)
 
-@0055764e [ESP:???]!!  # PUSH 0x7
+@0055764e [ESP:-144](-4)~  # PUSH 0x7
 COPY (unique,0x43d80,4) = (const,0x7,4)
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x43d80,4)
 
-@00557650 [ESP:???]!!  # PUSH EAX
+@00557650 [ESP:-148](-4)~  # PUSH EAX
 COPY (unique,0x20a80,4) = (register,0x0,4) /* EAX */
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x20a80,4)
 
-@00557651 [ESP:???]!!  # JMP 0x005572e0
+@00557651 [ESP:-148]~  # JMP 0x005572e0
 BRANCH (ram,0x5572e0,4)
 
-@00557656 [ESP:???]!!  # CMP dword ptr [EBX + 0xbe28], 0x2
+@00557656 [ESP:-136]~  # CMP dword ptr [EBX + 0xbe28], 0x2
 INT_ADD (unique,0x3400,4) = (register,0xc,4) /* EBX */, (const,0xbe28,4)
 LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3400,4)
 COPY (unique,0x33080,4) = (unique,0xb900,4)
@@ -2689,28 +2692,28 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@0055765d [ESP:???]!!  # JNZ 0x0055766b
+@0055765d [ESP:-136]~  # JNZ 0x0055766b
 BOOL_NEGATE (unique,0xbe00,1) = (register,0x206,1)
 CBRANCH (ram,0x55766b,4), (unique,0xbe00,1)
 
-@0055765f [ESP:???]!!  # PUSH dword ptr [EBP + 0x18]
+@0055765f [ESP:-140](-4)~  # PUSH dword ptr [EBP + 0x18]
 INT_ADD (unique,0x3300,4) = (register,0x14,4) /* EBP */, (const,0x18,4)
 LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
 COPY (unique,0x20a80,4) = (unique,0xb900,4)
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x20a80,4)
 
-@00557662 [ESP:???]!!  # PUSH EBX
+@00557662 [ESP:-144](-4)~  # PUSH EBX
 COPY (unique,0x20a80,4) = (register,0xc,4) /* EBX */
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x20a80,4)
 
-@00557663 [ESP:???]!!  # CALL 0x005578e0
+@00557663 [ESP:-144](-4)~  # CALL 0x005578e0
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x557668,4)
 CALL (ram,0x5578e0,4)
 
-@00557668 [ESP:???]!!  # ADD ESP, 0x8
+@00557668 [ESP:-136](+8)~  # ADD ESP, 0x8
 INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0x8,4)
 INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0x8,4)
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x8,4)
@@ -2721,26 +2724,26 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@0055766b [ESP:???]!!  # LEA EAX, [EBX + 0x158]
+@0055766b [ESP:-136]~  # LEA EAX, [EBX + 0x158]
 INT_ADD (unique,0x3400,4) = (register,0xc,4) /* EBX */, (const,0x158,4)
 COPY (register,0x0,4) /* EAX */ = (unique,0x3400,4)
 
-@00557671 [ESP:???]!!  # PUSH EAX
+@00557671 [ESP:-140](-4)~  # PUSH EAX
 COPY (unique,0x20a80,4) = (register,0x0,4) /* EAX */
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x20a80,4)
 
-@00557672 [ESP:???]!!  # CALL 0x0052dab0
+@00557672 [ESP:-140](-4)~  # CALL 0x0052dab0
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x557677,4)
 CALL (ram,0x52dab0,4)
 
-@00557677 [ESP:???]!!  # MOV EAX, dword ptr [EAX + 0x24]
+@00557677 [ESP:-140]~  # MOV EAX, dword ptr [EAX + 0x24]
 INT_ADD (unique,0x3300,4) = (register,0x0,4) /* EAX */, (const,0x24,4)
 LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
 COPY (register,0x0,4) /* EAX */ = (unique,0xb900,4)
 
-@0055767a [ESP:???]!!  # ADD ESP, 0x4
+@0055767a [ESP:-136](+4)~  # ADD ESP, 0x4
 INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0x4,4)
 INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0x4,4)
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
@@ -2751,7 +2754,7 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@0055767d [ESP:???]!!  # CMP EAX, 0xa
+@0055767d [ESP:-136]~  # CMP EAX, 0xa
 COPY (unique,0x33080,4) = (register,0x0,4) /* EAX */
 INT_LESS (register,0x200,1) = (unique,0x33080,4), (const,0xa,4)
 INT_SBORROW (register,0x20b,1) = (unique,0x33080,4), (const,0xa,4)
@@ -2763,18 +2766,18 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@00557680 [ESP:???]!!  # JA 0x005572e8
+@00557680 [ESP:-136]~  # JA 0x005572e8
 BOOL_OR (unique,0xbf80,1) = (register,0x200,1), (register,0x206,1)
 BOOL_NEGATE (unique,0xc080,1) = (unique,0xbf80,1)
 CBRANCH (ram,0x5572e8,4), (unique,0xc080,1)
 
-@00557686 [ESP:???]!!  # JMP dword ptr [EAX*0x4 + 0x5571b8]
+@00557686 [ESP:-136]~  # JMP dword ptr [EAX*0x4 + 0x5571b8]
 INT_MULT (unique,0x3680,4) = (register,0x0,4) /* EAX */, (const,0x4,4)
 INT_ADD (unique,0x3780,4) = (const,0x5571b8,4), (unique,0x3680,4)
 LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3780,4)
 BRANCHIND (unique,0xb900,4)
 
-@0055768d [ESP:???]!!  # CMP dword ptr [EBX + 0x2410], 0x0
+@0055768d [ESP:-136]~  # CMP dword ptr [EBX + 0x2410], 0x0
 INT_ADD (unique,0x3400,4) = (register,0xc,4) /* EBX */, (const,0x2410,4)
 LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3400,4)
 COPY (unique,0x33080,4) = (unique,0xb900,4)
@@ -2788,20 +2791,20 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@00557694 [ESP:???]!!  # JZ 0x005572e8
+@00557694 [ESP:-136]~  # JZ 0x005572e8
 CBRANCH (ram,0x5572e8,4), (register,0x206,1)
 
-@0055769a [ESP:???]!!  # PUSH EBX
+@0055769a [ESP:-140](-4)~  # PUSH EBX
 COPY (unique,0x20a80,4) = (register,0xc,4) /* EBX */
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x20a80,4)
 
-@0055769b [ESP:???]!!  # CALL 0x00558010
+@0055769b [ESP:-140](-4)~  # CALL 0x00558010
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x5576a0,4)
 CALL (ram,0x558010,4)
 
-@005576a0 [ESP:???]!!  # XOR ESI, ESI
+@005576a0 [ESP:-140]~  # XOR ESI, ESI
 COPY (register,0x200,1) = (const,0x0,1)
 COPY (register,0x20b,1) = (const,0x0,1)
 INT_XOR (register,0x18,4) /* ESI */ = (register,0x18,4) /* ESI */, (register,0x18,4) /* ESI */
@@ -2812,7 +2815,7 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@005576a2 [ESP:???]!!  # ADD ESP, 0x4
+@005576a2 [ESP:-136](+4)~  # ADD ESP, 0x4
 INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0x4,4)
 INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0x4,4)
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
@@ -2823,7 +2826,7 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@005576a5 [ESP:???]!!  # TEST EAX, EAX
+@005576a5 [ESP:-136]~  # TEST EAX, EAX
 COPY (register,0x200,1) = (const,0x0,1)
 COPY (register,0x20b,1) = (const,0x0,1)
 INT_AND (unique,0x57200,4) = (register,0x0,4) /* EAX */, (register,0x0,4) /* EAX */
@@ -2834,13 +2837,13 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@005576a7 [ESP:???]!!  # JZ 0x005576ae
+@005576a7 [ESP:-136]~  # JZ 0x005576ae
 CBRANCH (ram,0x5576ae,4), (register,0x206,1)
 
-@005576a9 [ESP:???]!!  # MOV ESI, 0x7
+@005576a9 [ESP:-136]~  # MOV ESI, 0x7
 COPY (register,0x18,4) /* ESI */ = (const,0x7,4)
 
-@005576ae [ESP:???]!!  # CMP dword ptr [EBX + 0xbe2c], 0x0
+@005576ae [ESP:-136]~  # CMP dword ptr [EBX + 0xbe2c], 0x0
 INT_ADD (unique,0x3400,4) = (register,0xc,4) /* EBX */, (const,0xbe2c,4)
 LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3400,4)
 COPY (unique,0x33080,4) = (unique,0xb900,4)
@@ -2854,20 +2857,20 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@005576b5 [ESP:???]!!  # JZ 0x005576cd
+@005576b5 [ESP:-136]~  # JZ 0x005576cd
 CBRANCH (ram,0x5576cd,4), (register,0x206,1)
 
-@005576b7 [ESP:???]!!  # PUSH EBX
+@005576b7 [ESP:-140](-4)~  # PUSH EBX
 COPY (unique,0x20a80,4) = (register,0xc,4) /* EBX */
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x20a80,4)
 
-@005576b8 [ESP:???]!!  # CALL 0x00558010
+@005576b8 [ESP:-140](-4)~  # CALL 0x00558010
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x5576bd,4)
 CALL (ram,0x558010,4)
 
-@005576bd [ESP:???]!!  # ADD ESP, 0x4
+@005576bd [ESP:-136](+4)~  # ADD ESP, 0x4
 INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0x4,4)
 INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0x4,4)
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
@@ -2878,7 +2881,7 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@005576c0 [ESP:???]!!  # TEST EAX, EAX
+@005576c0 [ESP:-136]~  # TEST EAX, EAX
 COPY (register,0x200,1) = (const,0x0,1)
 COPY (register,0x20b,1) = (const,0x0,1)
 INT_AND (unique,0x57200,4) = (register,0x0,4) /* EAX */, (register,0x0,4) /* EAX */
@@ -2889,13 +2892,13 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@005576c2 [ESP:???]!!  # JZ 0x005577c9
+@005576c2 [ESP:-136]~  # JZ 0x005577c9
 CBRANCH (ram,0x5577c9,4), (register,0x206,1)
 
-@005576c8 [ESP:???]!!  # MOV ESI, 0x9
+@005576c8 [ESP:-136]~  # MOV ESI, 0x9
 COPY (register,0x18,4) /* ESI */ = (const,0x9,4)
 
-@005576cd [ESP:???]!!  # CMP dword ptr [EBX + 0xbe30], 0x0
+@005576cd [ESP:-136]~  # CMP dword ptr [EBX + 0xbe30], 0x0
 INT_ADD (unique,0x3400,4) = (register,0xc,4) /* EBX */, (const,0xbe30,4)
 LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3400,4)
 COPY (unique,0x33080,4) = (unique,0xb900,4)
@@ -2909,20 +2912,20 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@005576d4 [ESP:???]!!  # JZ 0x005576ec
+@005576d4 [ESP:-136]~  # JZ 0x005576ec
 CBRANCH (ram,0x5576ec,4), (register,0x206,1)
 
-@005576d6 [ESP:???]!!  # PUSH EBX
+@005576d6 [ESP:-140](-4)~  # PUSH EBX
 COPY (unique,0x20a80,4) = (register,0xc,4) /* EBX */
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x20a80,4)
 
-@005576d7 [ESP:???]!!  # CALL 0x00558010
+@005576d7 [ESP:-140](-4)~  # CALL 0x00558010
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x5576dc,4)
 CALL (ram,0x558010,4)
 
-@005576dc [ESP:???]!!  # ADD ESP, 0x4
+@005576dc [ESP:-136](+4)~  # ADD ESP, 0x4
 INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0x4,4)
 INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0x4,4)
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
@@ -2933,7 +2936,7 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@005576df [ESP:???]!!  # TEST EAX, EAX
+@005576df [ESP:-136]~  # TEST EAX, EAX
 COPY (register,0x200,1) = (const,0x0,1)
 COPY (register,0x20b,1) = (const,0x0,1)
 INT_AND (unique,0x57200,4) = (register,0x0,4) /* EAX */, (register,0x0,4) /* EAX */
@@ -2944,13 +2947,13 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@005576e1 [ESP:???]!!  # JZ 0x005577e6
+@005576e1 [ESP:-136]~  # JZ 0x005577e6
 CBRANCH (ram,0x5577e6,4), (register,0x206,1)
 
-@005576e7 [ESP:???]!!  # MOV ESI, 0xa
+@005576e7 [ESP:-136]~  # MOV ESI, 0xa
 COPY (register,0x18,4) /* ESI */ = (const,0xa,4)
 
-@005576ec [ESP:???]!!  # CMP dword ptr [EBX + 0xbe38], 0x0
+@005576ec [ESP:-136]~  # CMP dword ptr [EBX + 0xbe38], 0x0
 INT_ADD (unique,0x3400,4) = (register,0xc,4) /* EBX */, (const,0xbe38,4)
 LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3400,4)
 COPY (unique,0x33080,4) = (unique,0xb900,4)
@@ -2964,10 +2967,10 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@005576f3 [ESP:???]!!  # JZ 0x00557752
+@005576f3 [ESP:-136]~  # JZ 0x00557752
 CBRANCH (ram,0x557752,4), (register,0x206,1)
 
-@005576f5 [ESP:???]!!  # CMP dword ptr [EBX + 0x1fbd4], 0x0
+@005576f5 [ESP:-136]~  # CMP dword ptr [EBX + 0x1fbd4], 0x0
 INT_ADD (unique,0x3400,4) = (register,0xc,4) /* EBX */, (const,0x1fbd4,4)
 LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3400,4)
 COPY (unique,0x33080,4) = (unique,0xb900,4)
@@ -2981,15 +2984,15 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@005576fc [ESP:???]!!  # JZ 0x00557752
+@005576fc [ESP:-136]~  # JZ 0x00557752
 CBRANCH (ram,0x557752,4), (register,0x206,1)
 
-@005576fe [ESP:???]!!  # MOV EAX, dword ptr [EBX + 0x1fbe8]
+@005576fe [ESP:-136]~  # MOV EAX, dword ptr [EBX + 0x1fbe8]
 INT_ADD (unique,0x3400,4) = (register,0xc,4) /* EBX */, (const,0x1fbe8,4)
 LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3400,4)
 COPY (register,0x0,4) /* EAX */ = (unique,0xb900,4)
 
-@00557704 [ESP:???]!!  # TEST EAX, EAX
+@00557704 [ESP:-136]~  # TEST EAX, EAX
 COPY (register,0x200,1) = (const,0x0,1)
 COPY (register,0x20b,1) = (const,0x0,1)
 INT_AND (unique,0x57200,4) = (register,0x0,4) /* EAX */, (register,0x0,4) /* EAX */
@@ -3000,20 +3003,20 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@00557706 [ESP:???]!!  # JZ 0x00557752
+@00557706 [ESP:-136]~  # JZ 0x00557752
 CBRANCH (ram,0x557752,4), (register,0x206,1)
 
-@00557708 [ESP:???]!!  # PUSH EAX
+@00557708 [ESP:-140](-4)~  # PUSH EAX
 COPY (unique,0x20a80,4) = (register,0x0,4) /* EAX */
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x20a80,4)
 
-@00557709 [ESP:???]!!  # MOV EDI, dword ptr [EAX + 0x154]
+@00557709 [ESP:-140]~  # MOV EDI, dword ptr [EAX + 0x154]
 INT_ADD (unique,0x3400,4) = (register,0x0,4) /* EAX */, (const,0x154,4)
 LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3400,4)
 COPY (register,0x1c,4) /* EDI */ = (unique,0xb900,4)
 
-@0055770f [ESP:???]!!  # CALL dword ptr [EDI + 0xfc]
+@0055770f [ESP:-140](-4)~  # CALL dword ptr [EDI + 0xfc]
 INT_ADD (unique,0x3400,4) = (register,0x1c,4) /* EDI */, (const,0xfc,4)
 LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3400,4)
 COPY (unique,0x31a80,4) = (unique,0xb900,4)
@@ -3021,7 +3024,7 @@ INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x557715,4)
 CALLIND (unique,0x31a80,4)
 
-@00557715 [ESP:???]!!  # ADD ESP, 0x4
+@00557715 [ESP:-136](+4)~  # ADD ESP, 0x4
 INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0x4,4)
 INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0x4,4)
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
@@ -3032,7 +3035,7 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@00557718 [ESP:???]!!  # TEST EAX, EAX
+@00557718 [ESP:-136]~  # TEST EAX, EAX
 COPY (register,0x200,1) = (const,0x0,1)
 COPY (register,0x20b,1) = (const,0x0,1)
 INT_AND (unique,0x57200,4) = (register,0x0,4) /* EAX */, (register,0x0,4) /* EAX */
@@ -3043,25 +3046,25 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@0055771a [ESP:???]!!  # JZ 0x00557752
+@0055771a [ESP:-136]~  # JZ 0x00557752
 CBRANCH (ram,0x557752,4), (register,0x206,1)
 
-@0055771c [ESP:???]!!  # MOV EAX, dword ptr [EBX + 0x1fbe8]
+@0055771c [ESP:-136]~  # MOV EAX, dword ptr [EBX + 0x1fbe8]
 INT_ADD (unique,0x3400,4) = (register,0xc,4) /* EBX */, (const,0x1fbe8,4)
 LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3400,4)
 COPY (register,0x0,4) /* EAX */ = (unique,0xb900,4)
 
-@00557722 [ESP:???]!!  # PUSH EAX
+@00557722 [ESP:-140](-4)~  # PUSH EAX
 COPY (unique,0x20a80,4) = (register,0x0,4) /* EAX */
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x20a80,4)
 
-@00557723 [ESP:???]!!  # MOV EDI, dword ptr [EAX + 0x154]
+@00557723 [ESP:-140]~  # MOV EDI, dword ptr [EAX + 0x154]
 INT_ADD (unique,0x3400,4) = (register,0x0,4) /* EAX */, (const,0x154,4)
 LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3400,4)
 COPY (register,0x1c,4) /* EDI */ = (unique,0xb900,4)
 
-@00557729 [ESP:???]!!  # CALL dword ptr [EDI + 0xf8]
+@00557729 [ESP:-140](-4)~  # CALL dword ptr [EDI + 0xf8]
 INT_ADD (unique,0x3400,4) = (register,0x1c,4) /* EDI */, (const,0xf8,4)
 LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3400,4)
 COPY (unique,0x31a80,4) = (unique,0xb900,4)
@@ -3069,22 +3072,22 @@ INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x55772f,4)
 CALLIND (unique,0x31a80,4)
 
-@0055772f [ESP:???]!!  # MOV EAX, dword ptr [EBX + 0x1fbe8]
+@0055772f [ESP:-140]~  # MOV EAX, dword ptr [EBX + 0x1fbe8]
 INT_ADD (unique,0x3400,4) = (register,0xc,4) /* EBX */, (const,0x1fbe8,4)
 LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3400,4)
 COPY (register,0x0,4) /* EAX */ = (unique,0xb900,4)
 
-@00557735 [ESP:???]!!  # MOV dword ptr [EBX + 0xbe38], 0x0
+@00557735 [ESP:-140]~  # MOV dword ptr [EBX + 0xbe38], 0x0
 INT_ADD (unique,0x3400,4) = (register,0xc,4) /* EBX */, (const,0xbe38,4)
 COPY (unique,0x5180,4) = (const,0x0,4)
 STORE (const,0x1a1,4), (unique,0x3400,4), (unique,0x5180,4)
 
-@0055773f [ESP:???]!!  # MOV EDX, dword ptr [EAX + 0x2e0]
+@0055773f [ESP:-140]~  # MOV EDX, dword ptr [EAX + 0x2e0]
 INT_ADD (unique,0x3400,4) = (register,0x0,4) /* EAX */, (const,0x2e0,4)
 LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3400,4)
 COPY (register,0x8,4) /* EDX */ = (unique,0xb900,4)
 
-@00557745 [ESP:???]!!  # ADD ESP, 0x4
+@00557745 [ESP:-136](+4)~  # ADD ESP, 0x4
 INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0x4,4)
 INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0x4,4)
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
@@ -3095,7 +3098,7 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@00557748 [ESP:???]!!  # CMP EDX, 0x8
+@00557748 [ESP:-136]~  # CMP EDX, 0x8
 COPY (unique,0x33080,4) = (register,0x8,4) /* EDX */
 INT_LESS (register,0x200,1) = (unique,0x33080,4), (const,0x8,4)
 INT_SBORROW (register,0x20b,1) = (unique,0x33080,4), (const,0x8,4)
@@ -3107,14 +3110,14 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@0055774b [ESP:???]!!  # JNZ 0x00557752
+@0055774b [ESP:-136]~  # JNZ 0x00557752
 BOOL_NEGATE (unique,0xbe00,1) = (register,0x206,1)
 CBRANCH (ram,0x557752,4), (unique,0xbe00,1)
 
-@0055774d [ESP:???]!!  # MOV ESI, 0xb
+@0055774d [ESP:-136]~  # MOV ESI, 0xb
 COPY (register,0x18,4) /* ESI */ = (const,0xb,4)
 
-@00557752 [ESP:???]!!  # FLD float ptr [EBX + 0xbe50]
+@00557752 [ESP:-136]~  # FLD float ptr [EBX + 0xbe50]
 INT_ADD (unique,0x3400,4) = (register,0xc,4) /* EBX */, (const,0xbe50,4)
 COPY (register,0x10ac,4) = (const,0x557752,4)
 COPY (unique,0x29480,10) = (register,0x1170,10)
@@ -3129,30 +3132,30 @@ COPY (register,0x1100,10) = (unique,0x29480,10)
 LOAD (unique,0x5480,4) = (const,0x1a1,4), (unique,0x3400,4)
 FLOAT2FLOAT (register,0x1100,10) = (unique,0x5480,4)
 
-@00557758 [ESP:???]!!  # FMUL float ptr [EBX + 0x2438]
+@00557758 [ESP:-136]~  # FMUL float ptr [EBX + 0x2438]
 INT_ADD (unique,0x3400,4) = (register,0xc,4) /* EBX */, (const,0x2438,4)
 COPY (register,0x10ac,4) = (const,0x557758,4)
 LOAD (unique,0x5480,4) = (const,0x1a1,4), (unique,0x3400,4)
 FLOAT2FLOAT (unique,0x5d280,10) = (unique,0x5480,4)
 FLOAT_MULT (register,0x1100,10) = (register,0x1100,10), (unique,0x5d280,10)
 
-@0055775e [ESP:???]!!  # LEA EDI, [EBX + 0x158]
+@0055775e [ESP:-136]~  # LEA EDI, [EBX + 0x158]
 INT_ADD (unique,0x3400,4) = (register,0xc,4) /* EBX */, (const,0x158,4)
 COPY (register,0x1c,4) /* EDI */ = (unique,0x3400,4)
 
-@00557764 [ESP:???]!!  # FADD float ptr [EBX + 0x2418]
+@00557764 [ESP:-136]~  # FADD float ptr [EBX + 0x2418]
 INT_ADD (unique,0x3400,4) = (register,0xc,4) /* EBX */, (const,0x2418,4)
 COPY (register,0x10ac,4) = (const,0x557764,4)
 LOAD (unique,0x5480,4) = (const,0x1a1,4), (unique,0x3400,4)
 FLOAT2FLOAT (unique,0x59280,10) = (unique,0x5480,4)
 FLOAT_ADD (register,0x1100,10) = (register,0x1100,10), (unique,0x59280,10)
 
-@0055776a [ESP:???]!!  # PUSH EDI
+@0055776a [ESP:-140](-4)~  # PUSH EDI
 COPY (unique,0x20a80,4) = (register,0x1c,4) /* EDI */
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x20a80,4)
 
-@0055776b [ESP:???]!!  # FSTP float ptr [EBX + 0x2418]
+@0055776b [ESP:-140]~  # FSTP float ptr [EBX + 0x2418]
 INT_ADD (unique,0x3400,4) = (register,0xc,4) /* EBX */, (const,0x2418,4)
 COPY (register,0x10ac,4) = (const,0x55776b,4)
 FLOAT2FLOAT (unique,0x5480,4) = (register,0x1100,10)
@@ -3165,17 +3168,17 @@ COPY (register,0x1140,10) = (register,0x1150,10)
 COPY (register,0x1150,10) = (register,0x1160,10)
 COPY (register,0x1160,10) = (register,0x1170,10)
 
-@00557771 [ESP:???]!!  # CALL 0x0052dab0
+@00557771 [ESP:-140](-4)~  # CALL 0x0052dab0
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x557776,4)
 CALL (ram,0x52dab0,4)
 
-@00557776 [ESP:???]!!  # MOV EAX, dword ptr [EAX + 0x24]
+@00557776 [ESP:-140]~  # MOV EAX, dword ptr [EAX + 0x24]
 INT_ADD (unique,0x3300,4) = (register,0x0,4) /* EAX */, (const,0x24,4)
 LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
 COPY (register,0x0,4) /* EAX */ = (unique,0xb900,4)
 
-@00557779 [ESP:???]!!  # ADD ESP, 0x4
+@00557779 [ESP:-136](+4)~  # ADD ESP, 0x4
 INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0x4,4)
 INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0x4,4)
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
@@ -3186,7 +3189,7 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@0055777c [ESP:???]!!  # CMP ESI, EAX
+@0055777c [ESP:-136]~  # CMP ESI, EAX
 COPY (unique,0x33500,4) = (register,0x18,4) /* ESI */
 INT_LESS (register,0x200,1) = (unique,0x33500,4), (register,0x0,4) /* EAX */
 INT_SBORROW (register,0x20b,1) = (unique,0x33500,4), (register,0x0,4) /* EAX */
@@ -3198,30 +3201,30 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@0055777e [ESP:???]!!  # JZ 0x0055778c
+@0055777e [ESP:-136]~  # JZ 0x0055778c
 CBRANCH (ram,0x55778c,4), (register,0x206,1)
 
-@00557780 [ESP:???]!!  # PUSH 0x1
+@00557780 [ESP:-140](-4)~  # PUSH 0x1
 COPY (unique,0x43d80,4) = (const,0x1,4)
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x43d80,4)
 
-@00557782 [ESP:???]!!  # PUSH ESI
+@00557782 [ESP:-144](-4)~  # PUSH ESI
 COPY (unique,0x20a80,4) = (register,0x18,4) /* ESI */
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x20a80,4)
 
-@00557783 [ESP:???]!!  # PUSH EDI
+@00557783 [ESP:-148](-4)~  # PUSH EDI
 COPY (unique,0x20a80,4) = (register,0x1c,4) /* EDI */
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x20a80,4)
 
-@00557784 [ESP:???]!!  # CALL 0x0052db00
+@00557784 [ESP:-148](-4)~  # CALL 0x0052db00
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x557789,4)
 CALL (ram,0x52db00,4)
 
-@00557789 [ESP:???]!!  # ADD ESP, 0xc
+@00557789 [ESP:-136](+12)~  # ADD ESP, 0xc
 INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0xc,4)
 INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0xc,4)
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0xc,4)
@@ -3232,7 +3235,7 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@0055778c [ESP:???]!!  # CMP dword ptr [EBX + 0xbe44], 0x0
+@0055778c [ESP:-136]~  # CMP dword ptr [EBX + 0xbe44], 0x0
 INT_ADD (unique,0x3400,4) = (register,0xc,4) /* EBX */, (const,0xbe44,4)
 LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3400,4)
 COPY (unique,0x33080,4) = (unique,0xb900,4)
@@ -3246,25 +3249,25 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@00557793 [ESP:???]!!  # JZ 0x005572e8
+@00557793 [ESP:-136]~  # JZ 0x005572e8
 CBRANCH (ram,0x5572e8,4), (register,0x206,1)
 
-@00557799 [ESP:???]!!  # MOV dword ptr [EBX + 0xbe44], 0x0
+@00557799 [ESP:-136]~  # MOV dword ptr [EBX + 0xbe44], 0x0
 INT_ADD (unique,0x3400,4) = (register,0xc,4) /* EBX */, (const,0xbe44,4)
 COPY (unique,0x5180,4) = (const,0x0,4)
 STORE (const,0x1a1,4), (unique,0x3400,4), (unique,0x5180,4)
 
-@005577a3 [ESP:???]!!  # MOV EDX, dword ptr [EBX + 0x1fbd4]
+@005577a3 [ESP:-136]~  # MOV EDX, dword ptr [EBX + 0x1fbd4]
 INT_ADD (unique,0x3400,4) = (register,0xc,4) /* EBX */, (const,0x1fbd4,4)
 LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3400,4)
 COPY (register,0x8,4) /* EDX */ = (unique,0xb900,4)
 
-@005577a9 [ESP:???]!!  # MOV ESI, dword ptr [EBX + 0x154]
+@005577a9 [ESP:-136]~  # MOV ESI, dword ptr [EBX + 0x154]
 INT_ADD (unique,0x3400,4) = (register,0xc,4) /* EBX */, (const,0x154,4)
 LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3400,4)
 COPY (register,0x18,4) /* ESI */ = (unique,0xb900,4)
 
-@005577af [ESP:???]!!  # TEST EDX, EDX
+@005577af [ESP:-136]~  # TEST EDX, EDX
 COPY (register,0x200,1) = (const,0x0,1)
 COPY (register,0x20b,1) = (const,0x0,1)
 INT_AND (unique,0x57200,4) = (register,0x8,4) /* EDX */, (register,0x8,4) /* EDX */
@@ -3275,10 +3278,10 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@005577b1 [ESP:???]!!  # SETZ AL
+@005577b1 [ESP:-136]~  # SETZ AL
 COPY (register,0x0,1) = (register,0x206,1)
 
-@005577b4 [ESP:???]!!  # AND EAX, 0xff
+@005577b4 [ESP:-136]~  # AND EAX, 0xff
 COPY (register,0x200,1) = (const,0x0,1)
 COPY (register,0x20b,1) = (const,0x0,1)
 INT_AND (register,0x0,4) /* EAX */ = (register,0x0,4) /* EAX */, (const,0xff,4)
@@ -3289,17 +3292,17 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@005577b9 [ESP:???]!!  # PUSH EAX
+@005577b9 [ESP:-140](-4)~  # PUSH EAX
 COPY (unique,0x20a80,4) = (register,0x0,4) /* EAX */
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x20a80,4)
 
-@005577ba [ESP:???]!!  # PUSH EBX
+@005577ba [ESP:-144](-4)~  # PUSH EBX
 COPY (unique,0x20a80,4) = (register,0xc,4) /* EBX */
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x20a80,4)
 
-@005577bb [ESP:???]!!  # CALL dword ptr [ESI + 0x158]
+@005577bb [ESP:-144](-4)~  # CALL dword ptr [ESI + 0x158]
 INT_ADD (unique,0x3400,4) = (register,0x18,4) /* ESI */, (const,0x158,4)
 LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3400,4)
 COPY (unique,0x31a80,4) = (unique,0xb900,4)
@@ -3307,7 +3310,7 @@ INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x5577c1,4)
 CALLIND (unique,0x31a80,4)
 
-@005577c1 [ESP:???]!!  # ADD ESP, 0x8
+@005577c1 [ESP:-136](+8)~  # ADD ESP, 0x8
 INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0x8,4)
 INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0x8,4)
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x8,4)
@@ -3318,10 +3321,10 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@005577c4 [ESP:???]!!  # JMP 0x005572e8
+@005577c4 [ESP:-136]~  # JMP 0x005572e8
 BRANCH (ram,0x5572e8,4)
 
-@005577c9 [ESP:???]!!  # CMP dword ptr [EBX + 0xbe34], 0x0
+@005577c9 [ESP:-136]~  # CMP dword ptr [EBX + 0xbe34], 0x0
 INT_ADD (unique,0x3400,4) = (register,0xc,4) /* EBX */, (const,0xbe34,4)
 LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3400,4)
 COPY (unique,0x33080,4) = (unique,0xb900,4)
@@ -3335,36 +3338,36 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@005577d0 [ESP:???]!!  # JZ 0x005577dc
+@005577d0 [ESP:-136]~  # JZ 0x005577dc
 CBRANCH (ram,0x5577dc,4), (register,0x206,1)
 
-@005577d2 [ESP:???]!!  # MOV ESI, 0x2
+@005577d2 [ESP:-136]~  # MOV ESI, 0x2
 COPY (register,0x18,4) /* ESI */ = (const,0x2,4)
 
-@005577d7 [ESP:???]!!  # JMP 0x005576cd
+@005577d7 [ESP:-136]~  # JMP 0x005576cd
 BRANCH (ram,0x5576cd,4)
 
-@005577dc [ESP:???]!!  # MOV ESI, 0x1
+@005577dc [ESP:-136]~  # MOV ESI, 0x1
 COPY (register,0x18,4) /* ESI */ = (const,0x1,4)
 
-@005577e1 [ESP:???]!!  # JMP 0x005576cd
+@005577e1 [ESP:-136]~  # JMP 0x005576cd
 BRANCH (ram,0x5576cd,4)
 
-@005577e6 [ESP:???]!!  # MOV ESI, 0x3
+@005577e6 [ESP:-136]~  # MOV ESI, 0x3
 COPY (register,0x18,4) /* ESI */ = (const,0x3,4)
 
-@005577eb [ESP:???]!!  # JMP 0x005576ec
+@005577eb [ESP:-136]~  # JMP 0x005576ec
 BRANCH (ram,0x5576ec,4)
 
-@005577f0 [ESP:???]!!  # MOV dword ptr [EBX + 0x2598], EAX
+@005577f0 [ESP:-136]~  # MOV dword ptr [EBX + 0x2598], EAX
 INT_ADD (unique,0x3400,4) = (register,0xc,4) /* EBX */, (const,0x2598,4)
 COPY (unique,0x5180,4) = (register,0x0,4) /* EAX */
 STORE (const,0x1a1,4), (unique,0x3400,4), (unique,0x5180,4)
 
-@005577f6 [ESP:???]!!  # JMP 0x005573f5
+@005577f6 [ESP:-136]~  # JMP 0x005573f5
 BRANCH (ram,0x5573f5,4)
 
-@005577fb [ESP:???]!!  # CMP dword ptr [EBX + 0xbe38], 0x0
+@005577fb [ESP:-136]~  # CMP dword ptr [EBX + 0xbe38], 0x0
 INT_ADD (unique,0x3400,4) = (register,0xc,4) /* EBX */, (const,0xbe38,4)
 LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3400,4)
 COPY (unique,0x33080,4) = (unique,0xb900,4)
@@ -3378,36 +3381,36 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@00557802 [ESP:???]!!  # JZ 0x00557408
+@00557802 [ESP:-136]~  # JZ 0x00557408
 CBRANCH (ram,0x557408,4), (register,0x206,1)
 
-@00557808 [ESP:???]!!  # PUSH 0x1
+@00557808 [ESP:-140](-4)~  # PUSH 0x1
 COPY (unique,0x43d80,4) = (const,0x1,4)
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x43d80,4)
 
-@0055780a [ESP:???]!!  # PUSH 0xf
+@0055780a [ESP:-144](-4)~  # PUSH 0xf
 COPY (unique,0x43d80,4) = (const,0xf,4)
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x43d80,4)
 
-@0055780c [ESP:???]!!  # PUSH EDI
+@0055780c [ESP:-148](-4)~  # PUSH EDI
 COPY (unique,0x20a80,4) = (register,0x1c,4) /* EDI */
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x20a80,4)
 
-@0055780d [ESP:???]!!  # JMP 0x00557400
+@0055780d [ESP:-148]~  # JMP 0x00557400
 BRANCH (ram,0x557400,4)
 
-@00557812 [ESP:???]!!  # LEA EAX, [EBX + 0x23ac]
+@00557812 [ESP:-136]~  # LEA EAX, [EBX + 0x23ac]
 INT_ADD (unique,0x3400,4) = (register,0xc,4) /* EBX */, (const,0x23ac,4)
 COPY (register,0x0,4) /* EAX */ = (unique,0x3400,4)
 
-@00557818 [ESP:???]!!  # LEA ESI, [EBX + 0x241c]
+@00557818 [ESP:-136]~  # LEA ESI, [EBX + 0x241c]
 INT_ADD (unique,0x3400,4) = (register,0xc,4) /* EBX */, (const,0x241c,4)
 COPY (register,0x18,4) /* ESI */ = (unique,0x3400,4)
 
-@0055781e [ESP:???]!!  # FLD float ptr [EAX]
+@0055781e [ESP:-136]~  # FLD float ptr [EAX]
 COPY (register,0x10ac,4) = (const,0x55781e,4)
 COPY (unique,0x29480,10) = (register,0x1170,10)
 COPY (register,0x1170,10) = (register,0x1160,10)
@@ -3421,13 +3424,13 @@ COPY (register,0x1100,10) = (unique,0x29480,10)
 LOAD (unique,0x5480,4) = (const,0x1a1,4), (register,0x0,4) /* EAX */
 FLOAT2FLOAT (register,0x1100,10) = (unique,0x5480,4)
 
-@00557820 [ESP:???]!!  # FADD float ptr [ESI]
+@00557820 [ESP:-136]~  # FADD float ptr [ESI]
 COPY (register,0x10ac,4) = (const,0x557820,4)
 LOAD (unique,0x5480,4) = (const,0x1a1,4), (register,0x18,4) /* ESI */
 FLOAT2FLOAT (unique,0x59280,10) = (unique,0x5480,4)
 FLOAT_ADD (register,0x1100,10) = (register,0x1100,10), (unique,0x59280,10)
 
-@00557822 [ESP:???]!!  # FSTP float ptr [ESP + 0x3c]
+@00557822 [ESP:-136]~  # FSTP float ptr [ESP + 0x3c]
 INT_ADD (unique,0x3b00,4) = (const,0x3c,4), (register,0x10,4) /* ESP */
 COPY (register,0x10ac,4) = (const,0x557822,4)
 FLOAT2FLOAT (unique,0x5480,4) = (register,0x1100,10)
@@ -3440,7 +3443,7 @@ COPY (register,0x1140,10) = (register,0x1150,10)
 COPY (register,0x1150,10) = (register,0x1160,10)
 COPY (register,0x1160,10) = (register,0x1170,10)
 
-@00557826 [ESP:???]!!  # FLD float ptr [EAX + 0x4]
+@00557826 [ESP:-136]~  # FLD float ptr [EAX + 0x4]
 INT_ADD (unique,0x3300,4) = (register,0x0,4) /* EAX */, (const,0x4,4)
 COPY (register,0x10ac,4) = (const,0x557826,4)
 COPY (unique,0x29480,10) = (register,0x1170,10)
@@ -3455,14 +3458,14 @@ COPY (register,0x1100,10) = (unique,0x29480,10)
 LOAD (unique,0x5480,4) = (const,0x1a1,4), (unique,0x3300,4)
 FLOAT2FLOAT (register,0x1100,10) = (unique,0x5480,4)
 
-@00557829 [ESP:???]!!  # FADD float ptr [ESI + 0x4]
+@00557829 [ESP:-136]~  # FADD float ptr [ESI + 0x4]
 INT_ADD (unique,0x3300,4) = (register,0x18,4) /* ESI */, (const,0x4,4)
 COPY (register,0x10ac,4) = (const,0x557829,4)
 LOAD (unique,0x5480,4) = (const,0x1a1,4), (unique,0x3300,4)
 FLOAT2FLOAT (unique,0x59280,10) = (unique,0x5480,4)
 FLOAT_ADD (register,0x1100,10) = (register,0x1100,10), (unique,0x59280,10)
 
-@0055782c [ESP:???]!!  # FLD float ptr [EBP + 0x18]
+@0055782c [ESP:-136]~  # FLD float ptr [EBP + 0x18]
 INT_ADD (unique,0x3300,4) = (register,0x14,4) /* EBP */, (const,0x18,4)
 COPY (register,0x10ac,4) = (const,0x55782c,4)
 COPY (unique,0x29480,10) = (register,0x1170,10)
@@ -3477,7 +3480,7 @@ COPY (register,0x1100,10) = (unique,0x29480,10)
 LOAD (unique,0x5480,4) = (const,0x1a1,4), (unique,0x3300,4)
 FLOAT2FLOAT (register,0x1100,10) = (unique,0x5480,4)
 
-@0055782f [ESP:???]!!  # FLD ST0
+@0055782f [ESP:-136]~  # FLD ST0
 COPY (unique,0x5c200,10) = (register,0x1100,10)
 COPY (register,0x1170,10) = (register,0x1160,10)
 COPY (register,0x1160,10) = (register,0x1150,10)
@@ -3488,13 +3491,13 @@ COPY (register,0x1120,10) = (register,0x1110,10)
 COPY (register,0x1110,10) = (register,0x1100,10)
 COPY (register,0x1100,10) = (unique,0x5c200,10)
 
-@00557831 [ESP:???]!!  # FXCH ST2
+@00557831 [ESP:-136]~  # FXCH ST2
 COPY (register,0x10ac,4) = (const,0x557831,4)
 COPY (unique,0x61b00,10) = (register,0x1100,10)
 COPY (register,0x1100,10) = (register,0x1120,10)
 COPY (register,0x1120,10) = (unique,0x61b00,10)
 
-@00557833 [ESP:???]!!  # FSTP float ptr [ESP + 0x40]
+@00557833 [ESP:-136]~  # FSTP float ptr [ESP + 0x40]
 INT_ADD (unique,0x3b00,4) = (const,0x40,4), (register,0x10,4) /* ESP */
 COPY (register,0x10ac,4) = (const,0x557833,4)
 FLOAT2FLOAT (unique,0x5480,4) = (register,0x1100,10)
@@ -3507,7 +3510,7 @@ COPY (register,0x1140,10) = (register,0x1150,10)
 COPY (register,0x1150,10) = (register,0x1160,10)
 COPY (register,0x1160,10) = (register,0x1170,10)
 
-@00557837 [ESP:???]!!  # FLD float ptr [EAX + 0x8]
+@00557837 [ESP:-136]~  # FLD float ptr [EAX + 0x8]
 INT_ADD (unique,0x3300,4) = (register,0x0,4) /* EAX */, (const,0x8,4)
 COPY (register,0x10ac,4) = (const,0x557837,4)
 COPY (unique,0x29480,10) = (register,0x1170,10)
@@ -3522,31 +3525,31 @@ COPY (register,0x1100,10) = (unique,0x29480,10)
 LOAD (unique,0x5480,4) = (const,0x1a1,4), (unique,0x3300,4)
 FLOAT2FLOAT (register,0x1100,10) = (unique,0x5480,4)
 
-@0055783a [ESP:???]!!  # FADD float ptr [ESI + 0x8]
+@0055783a [ESP:-136]~  # FADD float ptr [ESI + 0x8]
 INT_ADD (unique,0x3300,4) = (register,0x18,4) /* ESI */, (const,0x8,4)
 COPY (register,0x10ac,4) = (const,0x55783a,4)
 LOAD (unique,0x5480,4) = (const,0x1a1,4), (unique,0x3300,4)
 FLOAT2FLOAT (unique,0x59280,10) = (unique,0x5480,4)
 FLOAT_ADD (register,0x1100,10) = (register,0x1100,10), (unique,0x59280,10)
 
-@0055783d [ESP:???]!!  # FXCH ST2
+@0055783d [ESP:-136]~  # FXCH ST2
 COPY (register,0x10ac,4) = (const,0x55783d,4)
 COPY (unique,0x61b00,10) = (register,0x1100,10)
 COPY (register,0x1100,10) = (register,0x1120,10)
 COPY (register,0x1120,10) = (unique,0x61b00,10)
 
-@0055783f [ESP:???]!!  # FMUL double ptr [0x006413ac]
+@0055783f [ESP:-136]~  # FMUL double ptr [0x006413ac]
 FLOAT2FLOAT (unique,0x5d380,10) = (ram,0x6413ac,8)
 FLOAT_MULT (register,0x1100,10) = (register,0x1100,10), (unique,0x5d380,10)
 COPY (register,0x10ac,4) = (const,0x55783f,4)
 
-@00557845 [ESP:???]!!  # FXCH ST2
+@00557845 [ESP:-136]~  # FXCH ST2
 COPY (register,0x10ac,4) = (const,0x557845,4)
 COPY (unique,0x61b00,10) = (register,0x1100,10)
 COPY (register,0x1100,10) = (register,0x1120,10)
 COPY (register,0x1120,10) = (unique,0x61b00,10)
 
-@00557847 [ESP:???]!!  # FSTP float ptr [ESP + 0x44]
+@00557847 [ESP:-136]~  # FSTP float ptr [ESP + 0x44]
 INT_ADD (unique,0x3b00,4) = (const,0x44,4), (register,0x10,4) /* ESP */
 COPY (register,0x10ac,4) = (const,0x557847,4)
 FLOAT2FLOAT (unique,0x5480,4) = (register,0x1100,10)
@@ -3559,55 +3562,55 @@ COPY (register,0x1140,10) = (register,0x1150,10)
 COPY (register,0x1150,10) = (register,0x1160,10)
 COPY (register,0x1160,10) = (register,0x1170,10)
 
-@0055784b [ESP:???]!!  # MOV dword ptr [EAX + 0x8], 0x0
+@0055784b [ESP:-136]~  # MOV dword ptr [EAX + 0x8], 0x0
 INT_ADD (unique,0x3300,4) = (register,0x0,4) /* EAX */, (const,0x8,4)
 COPY (unique,0x5180,4) = (const,0x0,4)
 STORE (const,0x1a1,4), (unique,0x3300,4), (unique,0x5180,4)
 
-@00557852 [ESP:???]!!  # MOV EDX, dword ptr [EAX + 0x8]
+@00557852 [ESP:-136]~  # MOV EDX, dword ptr [EAX + 0x8]
 INT_ADD (unique,0x3300,4) = (register,0x0,4) /* EAX */, (const,0x8,4)
 LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
 COPY (register,0x8,4) /* EDX */ = (unique,0xb900,4)
 
-@00557855 [ESP:???]!!  # MOV dword ptr [EAX + 0x4], EDX
+@00557855 [ESP:-136]~  # MOV dword ptr [EAX + 0x4], EDX
 INT_ADD (unique,0x3300,4) = (register,0x0,4) /* EAX */, (const,0x4,4)
 COPY (unique,0x5180,4) = (register,0x8,4) /* EDX */
 STORE (const,0x1a1,4), (unique,0x3300,4), (unique,0x5180,4)
 
-@00557858 [ESP:???]!!  # MOV EDX, dword ptr [EAX + 0x4]
+@00557858 [ESP:-136]~  # MOV EDX, dword ptr [EAX + 0x4]
 INT_ADD (unique,0x3300,4) = (register,0x0,4) /* EAX */, (const,0x4,4)
 LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
 COPY (register,0x8,4) /* EDX */ = (unique,0xb900,4)
 
-@0055785b [ESP:???]!!  # MOV dword ptr [EAX], EDX
+@0055785b [ESP:-136]~  # MOV dword ptr [EAX], EDX
 COPY (unique,0x5180,4) = (register,0x8,4) /* EDX */
 STORE (const,0x1a1,4), (register,0x0,4) /* EAX */, (unique,0x5180,4)
 
-@0055785d [ESP:???]!!  # MOV dword ptr [ESI + 0x8], 0x0
+@0055785d [ESP:-136]~  # MOV dword ptr [ESI + 0x8], 0x0
 INT_ADD (unique,0x3300,4) = (register,0x18,4) /* ESI */, (const,0x8,4)
 COPY (unique,0x5180,4) = (const,0x0,4)
 STORE (const,0x1a1,4), (unique,0x3300,4), (unique,0x5180,4)
 
-@00557864 [ESP:???]!!  # MOV EAX, dword ptr [ESI + 0x8]
+@00557864 [ESP:-136]~  # MOV EAX, dword ptr [ESI + 0x8]
 INT_ADD (unique,0x3300,4) = (register,0x18,4) /* ESI */, (const,0x8,4)
 LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
 COPY (register,0x0,4) /* EAX */ = (unique,0xb900,4)
 
-@00557867 [ESP:???]!!  # MOV dword ptr [ESI + 0x4], EAX
+@00557867 [ESP:-136]~  # MOV dword ptr [ESI + 0x4], EAX
 INT_ADD (unique,0x3300,4) = (register,0x18,4) /* ESI */, (const,0x4,4)
 COPY (unique,0x5180,4) = (register,0x0,4) /* EAX */
 STORE (const,0x1a1,4), (unique,0x3300,4), (unique,0x5180,4)
 
-@0055786a [ESP:???]!!  # MOV EAX, dword ptr [ESI + 0x4]
+@0055786a [ESP:-136]~  # MOV EAX, dword ptr [ESI + 0x4]
 INT_ADD (unique,0x3300,4) = (register,0x18,4) /* ESI */, (const,0x4,4)
 LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3300,4)
 COPY (register,0x0,4) /* EAX */ = (unique,0xb900,4)
 
-@0055786d [ESP:???]!!  # MOV dword ptr [ESI], EAX
+@0055786d [ESP:-136]~  # MOV dword ptr [ESI], EAX
 COPY (unique,0x5180,4) = (register,0x0,4) /* EAX */
 STORE (const,0x1a1,4), (register,0x18,4) /* ESI */, (unique,0x5180,4)
 
-@0055786f [ESP:???]!!  # FLD float ptr [EBX + 0x242c]
+@0055786f [ESP:-136]~  # FLD float ptr [EBX + 0x242c]
 INT_ADD (unique,0x3400,4) = (register,0xc,4) /* EBX */, (const,0x242c,4)
 COPY (register,0x10ac,4) = (const,0x55786f,4)
 COPY (unique,0x29480,10) = (register,0x1170,10)
@@ -3622,21 +3625,21 @@ COPY (register,0x1100,10) = (unique,0x29480,10)
 LOAD (unique,0x5480,4) = (const,0x1a1,4), (unique,0x3400,4)
 FLOAT2FLOAT (register,0x1100,10) = (unique,0x5480,4)
 
-@00557875 [ESP:???]!!  # FXCH ST2
+@00557875 [ESP:-136]~  # FXCH ST2
 COPY (register,0x10ac,4) = (const,0x557875,4)
 COPY (unique,0x61b00,10) = (register,0x1100,10)
 COPY (register,0x1100,10) = (register,0x1120,10)
 COPY (register,0x1120,10) = (unique,0x61b00,10)
 
-@00557877 [ESP:???]!!  # FSUBR ST0, ST2
+@00557877 [ESP:-136]~  # FSUBR ST0, ST2
 COPY (register,0x10ac,4) = (const,0x557877,4)
 FLOAT_SUB (register,0x1100,10) = (register,0x1120,10), (register,0x1100,10)
 
-@00557879 [ESP:???]!!  # LEA EAX, [EBX + 0x2428]
+@00557879 [ESP:-136]~  # LEA EAX, [EBX + 0x2428]
 INT_ADD (unique,0x3400,4) = (register,0xc,4) /* EBX */, (const,0x2428,4)
 COPY (register,0x0,4) /* EAX */ = (unique,0x3400,4)
 
-@0055787f [ESP:???]!!  # FSTP ST2
+@0055787f [ESP:-136]~  # FSTP ST2
 COPY (register,0x10ac,4) = (const,0x55787f,4)
 COPY (register,0x1120,10) = (register,0x1100,10)
 COPY (register,0x1100,10) = (register,0x1110,10)
@@ -3647,13 +3650,13 @@ COPY (register,0x1140,10) = (register,0x1150,10)
 COPY (register,0x1150,10) = (register,0x1160,10)
 COPY (register,0x1160,10) = (register,0x1170,10)
 
-@00557881 [ESP:???]!!  # FXCH
+@00557881 [ESP:-136]~  # FXCH
 COPY (register,0x10ac,4) = (const,0x557881,4)
 COPY (unique,0x61b80,10) = (register,0x1100,10)
 COPY (register,0x1100,10) = (register,0x1110,10)
 COPY (register,0x1110,10) = (unique,0x61b80,10)
 
-@00557883 [ESP:???]!!  # FSTP float ptr [EBX + 0x242c]
+@00557883 [ESP:-136]~  # FSTP float ptr [EBX + 0x242c]
 INT_ADD (unique,0x3400,4) = (register,0xc,4) /* EBX */, (const,0x242c,4)
 COPY (register,0x10ac,4) = (const,0x557883,4)
 FLOAT2FLOAT (unique,0x5480,4) = (register,0x1100,10)
@@ -3666,7 +3669,7 @@ COPY (register,0x1140,10) = (register,0x1150,10)
 COPY (register,0x1150,10) = (register,0x1160,10)
 COPY (register,0x1160,10) = (register,0x1170,10)
 
-@00557889 [ESP:???]!!  # FLD float ptr [EAX]
+@00557889 [ESP:-136]~  # FLD float ptr [EAX]
 COPY (register,0x10ac,4) = (const,0x557889,4)
 COPY (unique,0x29480,10) = (register,0x1170,10)
 COPY (register,0x1170,10) = (register,0x1160,10)
@@ -3680,11 +3683,11 @@ COPY (register,0x1100,10) = (unique,0x29480,10)
 LOAD (unique,0x5480,4) = (const,0x1a1,4), (register,0x0,4) /* EAX */
 FLOAT2FLOAT (register,0x1100,10) = (unique,0x5480,4)
 
-@0055788b [ESP:???]!!  # FMUL ST1
+@0055788b [ESP:-136]~  # FMUL ST1
 COPY (register,0x10ac,4) = (const,0x55788b,4)
 FLOAT_MULT (register,0x1100,10) = (register,0x1100,10), (register,0x1110,10)
 
-@0055788d [ESP:???]!!  # FSTP float ptr [ESP + 0x24]
+@0055788d [ESP:-136]~  # FSTP float ptr [ESP + 0x24]
 INT_ADD (unique,0x3b00,4) = (const,0x24,4), (register,0x10,4) /* ESP */
 COPY (register,0x10ac,4) = (const,0x55788d,4)
 FLOAT2FLOAT (unique,0x5480,4) = (register,0x1100,10)
@@ -3697,7 +3700,7 @@ COPY (register,0x1140,10) = (register,0x1150,10)
 COPY (register,0x1150,10) = (register,0x1160,10)
 COPY (register,0x1160,10) = (register,0x1170,10)
 
-@00557891 [ESP:???]!!  # FLD float ptr [EAX + 0x4]
+@00557891 [ESP:-136]~  # FLD float ptr [EAX + 0x4]
 INT_ADD (unique,0x3300,4) = (register,0x0,4) /* EAX */, (const,0x4,4)
 COPY (register,0x10ac,4) = (const,0x557891,4)
 COPY (unique,0x29480,10) = (register,0x1170,10)
@@ -3712,11 +3715,11 @@ COPY (register,0x1100,10) = (unique,0x29480,10)
 LOAD (unique,0x5480,4) = (const,0x1a1,4), (unique,0x3300,4)
 FLOAT2FLOAT (register,0x1100,10) = (unique,0x5480,4)
 
-@00557894 [ESP:???]!!  # FMUL ST1
+@00557894 [ESP:-136]~  # FMUL ST1
 COPY (register,0x10ac,4) = (const,0x557894,4)
 FLOAT_MULT (register,0x1100,10) = (register,0x1100,10), (register,0x1110,10)
 
-@00557896 [ESP:???]!!  # FSTP float ptr [ESP + 0x28]
+@00557896 [ESP:-136]~  # FSTP float ptr [ESP + 0x28]
 INT_ADD (unique,0x3b00,4) = (const,0x28,4), (register,0x10,4) /* ESP */
 COPY (register,0x10ac,4) = (const,0x557896,4)
 FLOAT2FLOAT (unique,0x5480,4) = (register,0x1100,10)
@@ -3729,14 +3732,14 @@ COPY (register,0x1140,10) = (register,0x1150,10)
 COPY (register,0x1150,10) = (register,0x1160,10)
 COPY (register,0x1160,10) = (register,0x1170,10)
 
-@0055789a [ESP:???]!!  # FMUL float ptr [EAX + 0x8]
+@0055789a [ESP:-136]~  # FMUL float ptr [EAX + 0x8]
 INT_ADD (unique,0x3300,4) = (register,0x0,4) /* EAX */, (const,0x8,4)
 COPY (register,0x10ac,4) = (const,0x55789a,4)
 LOAD (unique,0x5480,4) = (const,0x1a1,4), (unique,0x3300,4)
 FLOAT2FLOAT (unique,0x5d280,10) = (unique,0x5480,4)
 FLOAT_MULT (register,0x1100,10) = (register,0x1100,10), (unique,0x5d280,10)
 
-@0055789d [ESP:???]!!  # FLD float ptr [ESP + 0x40]
+@0055789d [ESP:-136]~  # FLD float ptr [ESP + 0x40]
 INT_ADD (unique,0x3b00,4) = (const,0x40,4), (register,0x10,4) /* ESP */
 COPY (register,0x10ac,4) = (const,0x55789d,4)
 COPY (unique,0x29480,10) = (register,0x1170,10)
@@ -3751,7 +3754,7 @@ COPY (register,0x1100,10) = (unique,0x29480,10)
 LOAD (unique,0x5480,4) = (const,0x1a1,4), (unique,0x3b00,4)
 FLOAT2FLOAT (register,0x1100,10) = (unique,0x5480,4)
 
-@005578a1 [ESP:???]!!  # FLD float ptr [ESP + 0x3c]
+@005578a1 [ESP:-136]~  # FLD float ptr [ESP + 0x3c]
 INT_ADD (unique,0x3b00,4) = (const,0x3c,4), (register,0x10,4) /* ESP */
 COPY (register,0x10ac,4) = (const,0x5578a1,4)
 COPY (unique,0x29480,10) = (register,0x1170,10)
@@ -3766,14 +3769,14 @@ COPY (register,0x1100,10) = (unique,0x29480,10)
 LOAD (unique,0x5480,4) = (const,0x1a1,4), (unique,0x3b00,4)
 FLOAT2FLOAT (register,0x1100,10) = (unique,0x5480,4)
 
-@005578a5 [ESP:???]!!  # FADD float ptr [ESP + 0x24]
+@005578a5 [ESP:-136]~  # FADD float ptr [ESP + 0x24]
 INT_ADD (unique,0x3b00,4) = (const,0x24,4), (register,0x10,4) /* ESP */
 COPY (register,0x10ac,4) = (const,0x5578a5,4)
 LOAD (unique,0x5480,4) = (const,0x1a1,4), (unique,0x3b00,4)
 FLOAT2FLOAT (unique,0x59280,10) = (unique,0x5480,4)
 FLOAT_ADD (register,0x1100,10) = (register,0x1100,10), (unique,0x59280,10)
 
-@005578a9 [ESP:???]!!  # FLD float ptr [ESP + 0x44]
+@005578a9 [ESP:-136]~  # FLD float ptr [ESP + 0x44]
 INT_ADD (unique,0x3b00,4) = (const,0x44,4), (register,0x10,4) /* ESP */
 COPY (register,0x10ac,4) = (const,0x5578a9,4)
 COPY (unique,0x29480,10) = (register,0x1170,10)
@@ -3788,13 +3791,13 @@ COPY (register,0x1100,10) = (unique,0x29480,10)
 LOAD (unique,0x5480,4) = (const,0x1a1,4), (unique,0x3b00,4)
 FLOAT2FLOAT (register,0x1100,10) = (unique,0x5480,4)
 
-@005578ad [ESP:???]!!  # FXCH
+@005578ad [ESP:-136]~  # FXCH
 COPY (register,0x10ac,4) = (const,0x5578ad,4)
 COPY (unique,0x61b80,10) = (register,0x1100,10)
 COPY (register,0x1100,10) = (register,0x1110,10)
 COPY (register,0x1110,10) = (unique,0x61b80,10)
 
-@005578af [ESP:???]!!  # FSTP float ptr [ESP + 0x3c]
+@005578af [ESP:-136]~  # FSTP float ptr [ESP + 0x3c]
 INT_ADD (unique,0x3b00,4) = (const,0x3c,4), (register,0x10,4) /* ESP */
 COPY (register,0x10ac,4) = (const,0x5578af,4)
 FLOAT2FLOAT (unique,0x5480,4) = (register,0x1100,10)
@@ -3807,24 +3810,24 @@ COPY (register,0x1140,10) = (register,0x1150,10)
 COPY (register,0x1150,10) = (register,0x1160,10)
 COPY (register,0x1160,10) = (register,0x1170,10)
 
-@005578b3 [ESP:???]!!  # FXCH
+@005578b3 [ESP:-136]~  # FXCH
 COPY (register,0x10ac,4) = (const,0x5578b3,4)
 COPY (unique,0x61b80,10) = (register,0x1100,10)
 COPY (register,0x1100,10) = (register,0x1110,10)
 COPY (register,0x1110,10) = (unique,0x61b80,10)
 
-@005578b5 [ESP:???]!!  # FADD float ptr [ESP + 0x28]
+@005578b5 [ESP:-136]~  # FADD float ptr [ESP + 0x28]
 INT_ADD (unique,0x3b00,4) = (const,0x28,4), (register,0x10,4) /* ESP */
 COPY (register,0x10ac,4) = (const,0x5578b5,4)
 LOAD (unique,0x5480,4) = (const,0x1a1,4), (unique,0x3b00,4)
 FLOAT2FLOAT (unique,0x59280,10) = (unique,0x5480,4)
 FLOAT_ADD (register,0x1100,10) = (register,0x1100,10), (unique,0x59280,10)
 
-@005578b9 [ESP:???]!!  # LEA EAX, [ESP + 0x3c]
+@005578b9 [ESP:-136]~  # LEA EAX, [ESP + 0x3c]
 INT_ADD (unique,0x3b00,4) = (const,0x3c,4), (register,0x10,4) /* ESP */
 COPY (register,0x0,4) /* EAX */ = (unique,0x3b00,4)
 
-@005578bd [ESP:???]!!  # FSTP float ptr [ESP + 0x40]
+@005578bd [ESP:-136]~  # FSTP float ptr [ESP + 0x40]
 INT_ADD (unique,0x3b00,4) = (const,0x40,4), (register,0x10,4) /* ESP */
 COPY (register,0x10ac,4) = (const,0x5578bd,4)
 FLOAT2FLOAT (unique,0x5480,4) = (register,0x1100,10)
@@ -3837,13 +3840,13 @@ COPY (register,0x1140,10) = (register,0x1150,10)
 COPY (register,0x1150,10) = (register,0x1160,10)
 COPY (register,0x1160,10) = (register,0x1170,10)
 
-@005578c1 [ESP:???]!!  # FXCH
+@005578c1 [ESP:-136]~  # FXCH
 COPY (register,0x10ac,4) = (const,0x5578c1,4)
 COPY (unique,0x61b80,10) = (register,0x1100,10)
 COPY (register,0x1100,10) = (register,0x1110,10)
 COPY (register,0x1110,10) = (unique,0x61b80,10)
 
-@005578c3 [ESP:???]!!  # FSTP float ptr [ESP + 0x2c]
+@005578c3 [ESP:-136]~  # FSTP float ptr [ESP + 0x2c]
 INT_ADD (unique,0x3b00,4) = (const,0x2c,4), (register,0x10,4) /* ESP */
 COPY (register,0x10ac,4) = (const,0x5578c3,4)
 FLOAT2FLOAT (unique,0x5480,4) = (register,0x1100,10)
@@ -3856,24 +3859,24 @@ COPY (register,0x1140,10) = (register,0x1150,10)
 COPY (register,0x1150,10) = (register,0x1160,10)
 COPY (register,0x1160,10) = (register,0x1170,10)
 
-@005578c7 [ESP:???]!!  # PUSH EAX
+@005578c7 [ESP:-140](-4)~  # PUSH EAX
 COPY (unique,0x20a80,4) = (register,0x0,4) /* EAX */
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x20a80,4)
 
-@005578c8 [ESP:???]!!  # FADD float ptr [ESP + 0x30]
+@005578c8 [ESP:-140]~  # FADD float ptr [ESP + 0x30]
 INT_ADD (unique,0x3b00,4) = (const,0x30,4), (register,0x10,4) /* ESP */
 COPY (register,0x10ac,4) = (const,0x5578c8,4)
 LOAD (unique,0x5480,4) = (const,0x1a1,4), (unique,0x3b00,4)
 FLOAT2FLOAT (unique,0x59280,10) = (unique,0x5480,4)
 FLOAT_ADD (register,0x1100,10) = (register,0x1100,10), (unique,0x59280,10)
 
-@005578cc [ESP:???]!!  # PUSH EBX
+@005578cc [ESP:-144](-4)~  # PUSH EBX
 COPY (unique,0x20a80,4) = (register,0xc,4) /* EBX */
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (unique,0x20a80,4)
 
-@005578cd [ESP:???]!!  # FSTP float ptr [ESP + 0x4c]
+@005578cd [ESP:-144]~  # FSTP float ptr [ESP + 0x4c]
 INT_ADD (unique,0x3b00,4) = (const,0x4c,4), (register,0x10,4) /* ESP */
 COPY (register,0x10ac,4) = (const,0x5578cd,4)
 FLOAT2FLOAT (unique,0x5480,4) = (register,0x1100,10)
@@ -3886,12 +3889,12 @@ COPY (register,0x1140,10) = (register,0x1150,10)
 COPY (register,0x1150,10) = (register,0x1160,10)
 COPY (register,0x1160,10) = (register,0x1170,10)
 
-@005578d1 [ESP:???]!!  # CALL 0x00428f40
+@005578d1 [ESP:-144](-4)~  # CALL 0x00428f40
 INT_SUB (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x4,4)
 STORE (const,0x1a1,8), (register,0x10,4) /* ESP */, (const,0x5578d6,4)
 CALL (ram,0x428f40,4)
 
-@005578d6 [ESP:???]!!  # ADD ESP, 0x8
+@005578d6 [ESP:-136](+8)~  # ADD ESP, 0x8
 INT_CARRY (register,0x200,1) = (register,0x10,4) /* ESP */, (const,0x8,4)
 INT_SCARRY (register,0x20b,1) = (register,0x10,4) /* ESP */, (const,0x8,4)
 INT_ADD (register,0x10,4) /* ESP */ = (register,0x10,4) /* ESP */, (const,0x8,4)
@@ -3902,10 +3905,9 @@ POPCOUNT (unique,0x24c80,1) = (unique,0x24c00,4)
 INT_AND (unique,0x24d00,1) = (unique,0x24c80,1), (const,0x1,1)
 INT_EQUAL (register,0x202,1) = (unique,0x24d00,1), (const,0x0,1)
 
-@005578d9 [ESP:???]!!  # JMP 0x00557408
+@005578d9 [ESP:-136]~  # JMP 0x00557408
 BRANCH (ram,0x557408,4)
 
 # ============================================================================
 # Summary: 518 instructions, 2856 P-code ops
-# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

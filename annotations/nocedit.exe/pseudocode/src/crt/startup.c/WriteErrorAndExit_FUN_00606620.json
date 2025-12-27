@@ -1,16 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 30,
-    "complexity_score": 74,
+    "complexity_score": 89,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 2,
     "pseudocode_lines": 19,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
       "badspacebase",
       "register_param",
-      "stack_param"
+      "stack_param",
+      "warning_noreturn"
     ],
     "total_lines": 49
   },
@@ -141,8 +142,15 @@
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Subroutine marked as non-returning",
       "line": 20,
+      "match": "WARNING: Subroutine does not return",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
       "match": "in_stack_00000010",
       "text": "crt_exit_c_ExitProcess_FUN_00602700(in_stack_00000010);",
       "type": "stack_param"

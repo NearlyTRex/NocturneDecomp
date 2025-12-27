@@ -9,7 +9,10 @@
 # Format: @<address> [ESP:offset] # <assembly>
 #         [ESP:offset] = cumulative ESP delta from function entry
 #         Delta markers: (+n) ESP increased, (-n) ESP decreased
-#         Certainty:  no marker = known, ? = computed, ?? = unknown, ! = CALLIND
+#         Certainty:  no marker = known, ? = computed, ~ = cfg_resolved
+#                     !! = lost, !? = conflict, ?? = unreachable
+#                     ~! = ebp_frame_conflict (expected in EBP-frame functions)
+#                     ~> = frame_recovered (ESP recovered after frame reset)
 #
 # ============================================================================
 
@@ -850,22 +853,23 @@ COPY (register,0x0,4) /* EAX */ = (register,0x0,4) /* EAX */
 @0040158d [ESP:+0]  # LEA EDX, [EDX]
 COPY (register,0x8,4) /* EDX */ = (register,0x8,4) /* EDX */
 
-@00401591 [ESP:+0]  # MOV EAX, dword ptr [ESP + 0x24]
+@00401591 [ESP:???]!?  # MOV EAX, dword ptr [ESP + 0x24]
 INT_ADD (unique,0x3b00,4) = (const,0x24,4), (register,0x10,4) /* ESP */
 LOAD (unique,0xb900,4) = (const,0x1a1,4), (unique,0x3b00,4)
 COPY (register,0x0,4) /* EAX */ = (unique,0xb900,4)
 
-@00401595 [ESP:+0]  # MOV EDI, EBX
+@00401595 [ESP:???]!?  # MOV EDI, EBX
 COPY (register,0x1c,4) /* EDI */ = (register,0xc,4) /* EBX */
 
-@00401597 [ESP:+0]  # MOV dword ptr [ESP + 0x20], EAX
+@00401597 [ESP:???]!?  # MOV dword ptr [ESP + 0x20], EAX
 INT_ADD (unique,0x3b00,4) = (const,0x20,4), (register,0x10,4) /* ESP */
 COPY (unique,0x5180,4) = (register,0x0,4) /* EAX */
 STORE (const,0x1a1,4), (unique,0x3b00,4), (unique,0x5180,4)
 
-@0040159b [ESP:+0]  # JMP 0x0040156b
+@0040159b [ESP:???]!?  # JMP 0x0040156b
 BRANCH (ram,0x40156b,4)
 
 # ============================================================================
 # Summary: 107 instructions, 639 P-code ops
+# ESP Warning: Tracking lost after instruction (marked with !!)
 # ============================================================================

@@ -8,7 +8,7 @@
     "pseudocode_lines": 13,
     "suspect_count": 3,
     "suspect_types": [
-      "callind_esp_no_frame_lost",
+      "callind_esp_no_frame",
       "register_param"
     ],
     "total_lines": 29
@@ -114,40 +114,42 @@
       },
       "callind_address": "0042bf63",
       "callind_assembly": "CALL dword ptr [ECX + 0x110]",
-      "description": "CALLIND with lost ESP tracking (branching code)",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
+      "esp_at_callind": -8,
+      "expected_esp_offset": 0,
       "fix_address": "0042bf69",
       "match": "CALLIND...ADD ESP",
       "prologue_offset": 0,
       "text": "CALLIND at 0042bf63, ADD ESP at 0042bf69 (no EBP frame)",
-      "type": "callind_esp_no_frame_lost"
+      "type": "callind_esp_no_frame"
     }
   ],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "CArmour",
+        "class_name": "CBassPlayer",
         "offset": 260,
-        "vtable_addr": "00659d34"
-      },
-      {
-        "class_name": "CBatCreature",
-        "offset": 260,
-        "vtable_addr": "0065a5c4"
-      },
-      {
-        "class_name": "CBatman",
-        "offset": 260,
-        "vtable_addr": "0065a784"
-      },
-      {
-        "class_name": "Unknown",
-        "offset": 260,
-        "vtable_addr": "0065aa64"
+        "vtable_addr": "00663f14"
       },
       {
         "class_name": "Unknown",
         "offset": 260,
         "vtable_addr": "0065ac24"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 260,
+        "vtable_addr": "0065b424"
+      },
+      {
+        "class_name": "CMimic",
+        "offset": 260,
+        "vtable_addr": "00661424"
+      },
+      {
+        "class_name": "CArmour",
+        "offset": 260,
+        "vtable_addr": "00659d34"
       }
     ],
     "in_vtable": true,
