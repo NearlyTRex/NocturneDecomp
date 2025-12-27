@@ -302,7 +302,7 @@ def create_function_json(func_name, func_addr, func_addr_range, func_convention,
                          func_signature, decompiled_code, assembly_code,
                          func_xrefs, func_globals, func_calls, stack_frame, suspects, complexity,
                          existing_replacements=None, stack_patterns=None, param_estimates=None,
-                         vtable_info=None, existing_pcode_overrides=None):
+                         vtable_info=None, existing_pcode_overrides=None, resolved_suspects=None):
     """Create function metadata JSON.
 
     Args:
@@ -324,6 +324,7 @@ def create_function_json(func_name, func_addr, func_addr_range, func_convention,
         param_estimates: Optional parameter estimation from call site analysis
         vtable_info: Optional vtable membership info (class, offset, etc.)
         existing_pcode_overrides: Optional dict of pcode overrides to preserve
+        resolved_suspects: Optional list of suspects fixed by pcode overrides
 
     Returns:
         Dictionary for JSON serialization
@@ -367,6 +368,9 @@ def create_function_json(func_name, func_addr, func_addr_range, func_convention,
     # Include vtable membership info (class hierarchy metadata)
     if vtable_info:
         function_json["vtable_info"] = vtable_info
+    # Include resolved suspects (p-code suspects fixed by overrides)
+    if resolved_suspects:
+        function_json["resolved_suspects"] = resolved_suspects
     return function_json
 
 
@@ -376,7 +380,7 @@ def generate_function_file_contents(output_base_path, source_filename, func_name
                                      func_calls, stack_frame, suspects, complexity,
                                      existing_replacements=None, stack_patterns=None,
                                      param_estimates=None, vtable_info=None, pcode_data=None,
-                                     existing_pcode_overrides=None):
+                                     existing_pcode_overrides=None, resolved_suspects=None):
     """Generate file contents for a function without writing to disk.
 
     Args:
@@ -401,6 +405,7 @@ def generate_function_file_contents(output_base_path, source_filename, func_name
         vtable_info: Optional vtable membership info (class, offset, etc.)
         pcode_data: Optional P-code data for the function (list of instruction P-code)
         existing_pcode_overrides: Optional dict of pcode overrides to preserve in JSON
+        resolved_suspects: Optional list of suspects that were fixed by pcode overrides
 
     Returns:
         Dictionary with paths and contents: {cpp_path, cpp_content, asm_path, asm_content,
@@ -456,7 +461,7 @@ def generate_function_file_contents(output_base_path, source_filename, func_name
             func_signature, decompiled_code, assembly_code,
             func_xrefs, func_globals, func_calls, stack_frame, suspects, complexity,
             existing_replacements, stack_patterns, param_estimates, vtable_info,
-            existing_pcode_overrides)
+            existing_pcode_overrides, resolved_suspects)
         # Add P-code summary to JSON if available
         if pcode_data:
             function_json['pcode_summary'] = create_pcode_summary(pcode_data)

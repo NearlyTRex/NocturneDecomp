@@ -248,8 +248,8 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map):
     suspects = identify_suspect_lines(decompiled_code)
 
     # Identify P-code based suspects (fixable patterns like CALLIND+ESP)
-    # Pass existing overrides so we only report UNFIXED suspects
-    pcode_suspects = identify_pcode_suspects(
+    # Pass existing overrides to separate unfixed from resolved suspects
+    pcode_suspects, resolved_suspects = identify_pcode_suspects(
         result.pcode_data, result.assembly_code, pcode_overrides)
     suspects.extend(pcode_suspects)
 
@@ -282,7 +282,7 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map):
         decompiled_code, result.assembly_code, result.func_xrefs, result.func_globals,
         result.func_calls, result.stack_frame, suspects, complexity, custom_replacements,
         stack_patterns, result.param_estimates, result.vtable_info, result.pcode_data,
-        pcode_overrides)
+        pcode_overrides, resolved_suspects)
     output_time = time.time() - output_start
 
     total_process_time = time.time() - process_start

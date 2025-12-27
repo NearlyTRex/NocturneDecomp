@@ -132,8 +132,7 @@ def identify_pcode_suspects(pcode_data, assembly_code=None, existing_overrides=N
     - Type A: CALLIND followed by ADD ESP with uncertain tracking
     - Type B: Jump targets with ESP mismatch (after RET)
 
-    Only reports suspects that are NOT already fixed by existing p-code overrides.
-    This allows iterative refinement toward zero suspects.
+    Separates suspects into unfixed and resolved lists based on existing overrides.
 
     Args:
         pcode_data: List of instruction dicts from extract_function_pcode()
@@ -141,12 +140,15 @@ def identify_pcode_suspects(pcode_data, assembly_code=None, existing_overrides=N
         existing_overrides: Optional dict of address -> pcode_lines from JSON
 
     Returns:
-        List of suspect dictionaries with type, description, and fix metadata
+        Tuple of (suspects, resolved_suspects) where:
+        - suspects: List of unfixed suspect dictionaries
+        - resolved_suspects: List of suspects that have been fixed by overrides
     """
     suspects = []
+    resolved_suspects = []
 
     if not pcode_data:
-        return suspects
+        return suspects, resolved_suspects
 
     # Normalize existing override addresses for comparison
     fixed_addresses = set()
@@ -158,25 +160,30 @@ def identify_pcode_suspects(pcode_data, assembly_code=None, existing_overrides=N
 
     # Detect Type A: CALLIND + uncertain ADD ESP
     callind_suspects = _detect_callind_esp_uncertain(pcode_data)
-    suspects.extend(callind_suspects)
 
     # Detect Type B: Jump target ESP mismatch
     # Need to parse assembly for jump targets and RET locations
+    mismatch_suspects = []
     if assembly_code:
         mismatch_suspects = _detect_jump_target_esp_mismatch(pcode_data, assembly_code)
-        suspects.extend(mismatch_suspects)
 
-    # Filter out suspects that are already fixed by existing overrides
+    # Combine all detected suspects
+    all_suspects = callind_suspects + mismatch_suspects
+
+    # Separate into unfixed and resolved based on existing overrides
     if fixed_addresses:
-        unfixed_suspects = []
-        for suspect in suspects:
+        for suspect in all_suspects:
             fix_addr = suspect.get('fix_address', '')
             # Normalize for comparison
             normalized_fix = fix_addr.lower().replace('0x', '').lstrip('0') or '0'
-            if normalized_fix not in fixed_addresses:
-                unfixed_suspects.append(suspect)
-        suspects = unfixed_suspects
-    return suspects
+            if normalized_fix in fixed_addresses:
+                resolved_suspects.append(suspect)
+            else:
+                suspects.append(suspect)
+    else:
+        suspects = all_suspects
+
+    return suspects, resolved_suspects
 
 
 def _detect_callind_esp_uncertain(pcode_data):
