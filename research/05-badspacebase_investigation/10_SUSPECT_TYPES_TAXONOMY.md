@@ -138,7 +138,7 @@ These patterns are detected in JSON metadata but have no pcode override fix.
 
 | Pattern | Detection | Override | Functions |
 |---------|-----------|----------|-----------|
-| `stack_alignment` | `stack_patterns.patterns[].pattern_id` | None | 334 (20.6%) |
+| `stack_alignment` | `stack_patterns.patterns[].pattern_id` | **YES (proposed)** | 334 total, 198 with BADSPACEBASE |
 
 **Instruction:** `AND ESP, 0xFFFFFFF8` (or similar alignment mask)
 
@@ -148,9 +148,35 @@ to meet ABI requirements for certain calls.
 **Why it causes BADSPACEBASE:** After AND ESP, the exact ESP value depends on
 the runtime value at function entry. All ESP-relative accesses become uncertain.
 
-**Potential Fix Strategies:**
-1. None practical - alignment is inherently runtime-dependent
-2. Could annotate these functions as "alignment-affected" for manual review
+**Key Finding:** ALL 540 functions with stack_alignment ALSO have an EBP frame.
+The typical prologue is:
+```
+PUSH EBX/ESI/EDI/EBP
+MOV EBP, ESP          ; EBP set BEFORE alignment
+SUB ESP, 0x14c        ; Allocate locals
+AND ESP, 0xFFFFFFF8   ; Align ESP (makes it uncertain)
+```
+
+**Fix Strategy: `stack_align_anchor`**
+
+Since EBP is set BEFORE the AND ESP instruction, we can anchor ESP at the AND ESP
+instruction to the value it had BEFORE alignment:
+
+```
+# At AND ESP instruction, override to:
+ESP = EBP - (SUB ESP offset)
+
+# Example: if SUB ESP was 0x14c (332), the pcode override is:
+INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeb4,4)
+```
+
+This "lies" about the actual ESP value by up to 7 bytes, but:
+- Ghidra gets a deterministic frame to work with
+- All locals resolve to named variables instead of `in_stack_*`
+- The 0-7 byte difference is within alignment padding anyway
+- Parameters accessed via EBP are unaffected
+
+**Coverage:** 198 functions can be fixed with this approach.
 
 ---
 
@@ -336,7 +362,7 @@ Examples with NO detected pattern (truly unknown):
 | CALLIND (no EBP) | Yes | Yes (exp) | included above | - |
 | Variadic (EBP) | Yes | Yes | 602 | - |
 | Variadic (no EBP) | Yes | Yes (exp) | included above | - |
-| Stack alignment | Yes | No | 334 | LOW |
+| **Stack alignment** | Yes | **YES (proposed)** | 198 | **HIGH** |
 | Alt frame pointer | Yes | No | 174 | MEDIUM |
 | **Direct CALL uncertain** | **NO** | **NO** | **409** | **HIGH** |
 | LEA ESP | NO | NO | 45 | MEDIUM |
@@ -345,10 +371,11 @@ Examples with NO detected pattern (truly unknown):
 
 ### Proposed Implementation Order
 
-1. **`call_esp_uncertain_preserve`** - 409 functions, same fix strategy as CALLIND
-2. **`lea_esp_stack_addr`** - 45 functions, detection + possible fix
-3. **`cfg_esp_conflict`** - 10 functions, detection only initially
-4. **`special_function`** - ~20 functions, detection for documentation
+1. **`call_esp_preserve`** - 409 functions, same fix strategy as CALLIND (HIGH)
+2. **`stack_align_anchor`** - 198 functions, anchor ESP at AND ESP instruction (HIGH)
+3. **`lea_esp_stack_addr`** - 45 functions, detection + possible fix (MEDIUM)
+4. **`cfg_esp_conflict`** - 10 functions, detection only initially (LOW)
+5. **`special_function`** - ~20 functions, detection for documentation (LOW)
 
 ---
 
@@ -391,6 +418,10 @@ variadic_preserve           # No EBP frame
 call_esp_anchor             # EBP frame, direct call causes uncertainty
 call_esp_preserve           # No EBP frame, direct call causes uncertainty
 
+# Stack alignment (NEW - fixable!)
+stack_align_anchor          # EBP frame with AND ESP alignment
+                            # Fix: Anchor ESP = EBP - (SUB ESP offset) at AND ESP
+
 # LEA stack address (NEW)
 lea_esp_stack_addr          # Takes address of ESP-relative stack location
 
@@ -399,7 +430,6 @@ cfg_esp_conflict            # Multiple paths with different ESP values
 cfg_esp_unreachable         # Code unreachable by normal flow
 
 # Stack manipulation (existing detection, no fix)
-stack_alignment             # AND ESP alignment instruction
 alt_frame_pointer           # Non-EBP frame pointer register
 
 # Special functions (NEW)
@@ -458,6 +488,75 @@ def _detect_direct_call_esp_uncertainty(pcode_data):
 
 **Override generation:** Reuse existing `generate_esp_anchor_pcode()` and
 `generate_call_esp_preserve_pcode()` functions.
+
+---
+
+### For `stack_align_anchor` (High Priority)
+
+**Detection in `suspects.py`:**
+```python
+def _detect_stack_align_anchor(json_data, pcode_data):
+    """Detect stack alignment that can be fixed with ESP anchor."""
+    suspects = []
+
+    # Check if function has stack_alignment pattern
+    patterns = json_data.get('stack_patterns', {}).get('patterns', [])
+    align_pattern = None
+    for p in patterns:
+        if p.get('pattern_id') == 'stack_alignment':
+            align_pattern = p
+            break
+
+    if not align_pattern:
+        return suspects
+
+    # Must be EBP frame (all stack_alignment functions are)
+    if not json_data.get('function', {}).get('is_ebp_frame', False):
+        return suspects
+
+    # Find SUB ESP offset before AND ESP
+    sub_esp_offset = None
+    for entry in pcode_data:
+        asm = entry.get('assembly', '')
+        if 'SUB ESP' in asm.upper():
+            import re
+            match = re.search(r'SUB ESP,\s*0x([0-9a-fA-F]+)', asm, re.IGNORECASE)
+            if match:
+                sub_esp_offset = int(match.group(1), 16)
+                break
+
+    if sub_esp_offset is None:
+        return suspects
+
+    suspects.append({
+        'type': 'stack_align_anchor',
+        'fix_address': align_pattern.get('address'),
+        'sub_esp_offset': sub_esp_offset,
+        'description': f'Stack alignment can be anchored: ESP = EBP - 0x{sub_esp_offset:x}'
+    })
+
+    return suspects
+```
+
+**Override generation:**
+```python
+def generate_stack_align_anchor_pcode(sub_esp_offset):
+    """Generate p-code to anchor ESP at stack alignment instruction.
+
+    Args:
+        sub_esp_offset: The SUB ESP offset before the AND ESP (e.g., 0x14c)
+
+    Returns:
+        P-code operation string: ESP = EBP - sub_esp_offset
+    """
+    # ESP = EBP + (-sub_esp_offset) in two's complement
+    offset_twos = (-sub_esp_offset) & 0xFFFFFFFF
+    return "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0x%x,4)" % offset_twos
+```
+
+**Key insight:** This uses the same `generate_esp_anchor_pcode()` function but with
+`sub_esp_offset` instead of `frame_offset`. The offset comes from the SUB ESP
+instruction that precedes the AND ESP.
 
 ---
 
