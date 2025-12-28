@@ -57,12 +57,50 @@ def generate_esp_anchor_pcode(frame_offset):
     return "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0x%x,4)" % offset_twos
 
 
-def generate_callind_esp_preserve_pcode(target_type, target_value):
+def generate_call_esp_preserve_pcode(target_address, return_address, unique_index=0):
+    """Generate p-code to preserve ESP across a regular CALL instruction.
+
+    For variadic functions like sprintf/fscanf, internal stack frame issues
+    can confuse Ghidra's ESP tracking in the caller. This override saves
+    ESP before the call and restores it after.
+
+    Args:
+        target_address: Target function address (int)
+        return_address: Return address (int) - instruction after the CALL
+        unique_index: Index to offset unique addresses (0, 1, 2, ...) to avoid conflicts
+
+    Returns:
+        List of P-code operation strings
+    """
+    # RAM space ID for x86 (from Ghidra's address space)
+    RAM_SPACE_ID = 0x1a1
+
+    # Use unique space offsets, offset by unique_index * 0x100 to avoid conflicts
+    base = 0x10000 + (unique_index * 0x100)
+
+    # P-code sequence:
+    # 1. Save ESP to unique
+    # 2. Push return address (ESP -= 4, store return addr)
+    # 3. CALL target
+    # 4. Restore ESP from unique
+    return [
+        "COPY (unique,0x%x,4) = (register,0x10,4)" % base,  # save ESP
+        "INT_SUB (register,0x10,4) = (register,0x10,4), (const,0x4,4)",  # ESP -= 4
+        "STORE (const,0x%x,4), (register,0x10,4), (const,0x%x,4)" % (RAM_SPACE_ID, return_address),  # push return addr
+        "CALL (ram,0x%x,4)" % target_address,  # call the function
+        "COPY (register,0x10,4) = (unique,0x%x,4)" % base   # restore ESP
+    ]
+
+
+def generate_callind_esp_preserve_pcode(target_type, target_value, return_address=None, unique_index=0):
     """Generate p-code to preserve ESP across a CALLIND.
 
     For cdecl calls, ESP is unchanged by the call itself (caller cleans up).
     We save ESP before the call and restore it after, so Ghidra knows ESP
     is preserved and subsequent ADD ESP works on a known value.
+
+    If return_address is provided, we also push it onto the stack before
+    the CALLIND to properly simulate the call instruction.
 
     Args:
         target_type: 'reg_offset', 'reg_deref', 'register', 'mem_absolute', or 'scaled_index'
@@ -70,6 +108,8 @@ def generate_callind_esp_preserve_pcode(target_type, target_value):
                       {'reg': str, 'scale': int, 'offset': int} for scaled_index,
                       register name (str) for reg_deref/register,
                       absolute address (int) for mem_absolute
+        return_address: Optional return address (int) to push before CALLIND
+        unique_index: Index to offset unique addresses (0, 1, 2, ...) to avoid conflicts
 
     Returns:
         List of P-code operation strings
@@ -80,64 +120,89 @@ def generate_callind_esp_preserve_pcode(target_type, target_value):
         'ESP': 0x10, 'EBP': 0x14, 'ESI': 0x18, 'EDI': 0x1c,
     }
 
-    # Using unique space offsets:
-    #   0x10000 = saved ESP
-    #   0x10010 = call target address (for reg_offset type)
-    #   0x10020 = function pointer loaded from memory
-    #   0x10030 = scaled value (for scaled_index type)
+    # RAM space ID for x86 (from Ghidra's address space)
+    RAM_SPACE_ID = 0x1a1
+
+    # Using unique space offsets, offset by unique_index * 0x100 to avoid conflicts:
+    #   base + 0x00 = saved ESP
+    #   base + 0x10 = call target address (for reg_offset type)
+    #   base + 0x20 = function pointer loaded from memory
+    #   base + 0x30 = scaled value (for scaled_index type)
+    base = 0x10000 + (unique_index * 0x100)
+
+    # Build push return address ops if needed
+    # These go AFTER target computation but BEFORE CALLIND
+    # STORE format: STORE (const,SPACE_ID,4), (pointer), (value) - no output, no =
+    push_ops = []
+    if return_address is not None:
+        push_ops = [
+            "INT_SUB (register,0x10,4) = (register,0x10,4), (const,0x4,4)",  # ESP -= 4
+            "STORE (const,0x%x,4), (register,0x10,4), (const,0x%x,4)" % (RAM_SPACE_ID, return_address),  # push return addr
+        ]
 
     if target_type == 'reg_offset':
         # CALL dword ptr [REG + offset]
+        # Order: save ESP, compute target, push ret addr, call, restore ESP
         reg = target_value.get('reg', 'ESP')
         offset = target_value.get('offset', 0)
         reg_offset = REG_OFFSETS.get(reg, 0x10)
         return [
-            "COPY (unique,0x10000,4) = (register,0x10,4)",  # save ESP
-            "INT_ADD (unique,0x10010,4) = (register,0x%x,4), (const,0x%x,4)" % (reg_offset, offset),  # addr = REG + offset
-            "LOAD (unique,0x10020,4) = (ram,(unique,0x10010,4),4)",  # load func ptr
-            "CALLIND (unique,0x10020,4)",  # call the function
-            "COPY (register,0x10,4) = (unique,0x10000,4)"   # restore ESP
+            "COPY (unique,0x%x,4) = (register,0x10,4)" % base,  # save ESP
+            "INT_ADD (unique,0x%x,4) = (register,0x%x,4), (const,0x%x,4)" % (base + 0x10, reg_offset, offset),  # addr = REG + offset
+            "LOAD (unique,0x%x,4) = (const,0x%x,4), (unique,0x%x,4)" % (base + 0x20, RAM_SPACE_ID, base + 0x10),  # load func ptr
+        ] + push_ops + [
+            "CALLIND (unique,0x%x,4)" % (base + 0x20),  # call the function
+            "COPY (register,0x10,4) = (unique,0x%x,4)" % base   # restore ESP
         ]
     elif target_type == 'reg_deref':
         # CALL dword ptr [REG] (no offset)
+        # Order: save ESP, load target, push ret addr, call, restore ESP
         reg_offset = REG_OFFSETS.get(target_value, 0x10)
         return [
-            "COPY (unique,0x10000,4) = (register,0x10,4)",  # save ESP
-            "LOAD (unique,0x10020,4) = (ram,(register,0x%x,4),4)" % reg_offset,  # load func ptr from [REG]
-            "CALLIND (unique,0x10020,4)",  # call the function
-            "COPY (register,0x10,4) = (unique,0x10000,4)"   # restore ESP
+            "COPY (unique,0x%x,4) = (register,0x10,4)" % base,  # save ESP
+            "LOAD (unique,0x%x,4) = (const,0x%x,4), (register,0x%x,4)" % (base + 0x20, RAM_SPACE_ID, reg_offset),  # load func ptr from [REG]
+        ] + push_ops + [
+            "CALLIND (unique,0x%x,4)" % (base + 0x20),  # call the function
+            "COPY (register,0x10,4) = (unique,0x%x,4)" % base   # restore ESP
         ]
     elif target_type == 'register':
         # CALL REG (e.g., CALL EBP)
+        # Order: save ESP, push ret addr, call, restore ESP
+        # (no target computation needed - register is used directly)
         reg_offset = REG_OFFSETS.get(target_value, 0x14)  # default to EBP
         return [
-            "COPY (unique,0x10000,4) = (register,0x10,4)",  # save ESP
+            "COPY (unique,0x%x,4) = (register,0x10,4)" % base,  # save ESP
+        ] + push_ops + [
             "CALLIND (register,0x%x,4)" % reg_offset,  # call via register
-            "COPY (register,0x10,4) = (unique,0x10000,4)"   # restore ESP
+            "COPY (register,0x10,4) = (unique,0x%x,4)" % base   # restore ESP
         ]
     elif target_type == 'mem_absolute':
         # CALL dword ptr [0xADDRESS] or CALL dword ptr CS:[0xADDRESS]
+        # Order: save ESP, load target, push ret addr, call, restore ESP
         # target_value is the absolute memory address (int)
         return [
-            "COPY (unique,0x10000,4) = (register,0x10,4)",  # save ESP
-            "LOAD (unique,0x10020,4) = (ram,(const,0x%x,4),4)" % target_value,  # load func ptr from [addr]
-            "CALLIND (unique,0x10020,4)",  # call the function
-            "COPY (register,0x10,4) = (unique,0x10000,4)"   # restore ESP
+            "COPY (unique,0x%x,4) = (register,0x10,4)" % base,  # save ESP
+            "LOAD (unique,0x%x,4) = (const,0x%x,4), (const,0x%x,4)" % (base + 0x20, RAM_SPACE_ID, target_value),  # load func ptr from [addr]
+        ] + push_ops + [
+            "CALLIND (unique,0x%x,4)" % (base + 0x20),  # call the function
+            "COPY (register,0x10,4) = (unique,0x%x,4)" % base   # restore ESP
         ]
     elif target_type == 'scaled_index':
         # CALL dword ptr [REG*scale + offset]
         # e.g., CALL dword ptr [EAX*0x4 + 0x66df88]
+        # Order: save ESP, compute target, push ret addr, call, restore ESP
         reg = target_value.get('reg', 'EAX')
         scale = target_value.get('scale', 4)
         offset = target_value.get('offset', 0)
         reg_offset = REG_OFFSETS.get(reg, 0x0)
         return [
-            "COPY (unique,0x10000,4) = (register,0x10,4)",  # save ESP
-            "INT_MULT (unique,0x10030,4) = (register,0x%x,4), (const,0x%x,4)" % (reg_offset, scale),  # scaled = REG * scale
-            "INT_ADD (unique,0x10010,4) = (unique,0x10030,4), (const,0x%x,4)" % offset,  # addr = scaled + offset
-            "LOAD (unique,0x10020,4) = (ram,(unique,0x10010,4),4)",  # load func ptr
-            "CALLIND (unique,0x10020,4)",  # call the function
-            "COPY (register,0x10,4) = (unique,0x10000,4)"   # restore ESP
+            "COPY (unique,0x%x,4) = (register,0x10,4)" % base,  # save ESP
+            "INT_MULT (unique,0x%x,4) = (register,0x%x,4), (const,0x%x,4)" % (base + 0x30, reg_offset, scale),  # scaled = REG * scale
+            "INT_ADD (unique,0x%x,4) = (unique,0x%x,4), (const,0x%x,4)" % (base + 0x10, base + 0x30, offset),  # addr = scaled + offset
+            "LOAD (unique,0x%x,4) = (const,0x%x,4), (unique,0x%x,4)" % (base + 0x20, RAM_SPACE_ID, base + 0x10),  # load func ptr
+        ] + push_ops + [
+            "CALLIND (unique,0x%x,4)" % (base + 0x20),  # call the function
+            "COPY (register,0x10,4) = (unique,0x%x,4)" % base   # restore ESP
         ]
     else:
         return None
@@ -171,16 +236,24 @@ def find_fixable_suspects(json_data, suspect_types=None, verbose=True):
 
     suspects = json_data.get('suspects', [])
     existing_overrides = json_data.get('pcode_overrides', {})
+    callind_index = 0  # Counter for unique addresses per CALLIND in this function
 
     for suspect in suspects:
         suspect_type = suspect.get('type', '')
-        fix_address = suspect.get('fix_address', '')
-
-        if not fix_address:
-            continue
 
         # Skip suspect types not in the allowed set
         if suspect_type not in suspect_types:
+            continue
+
+        # Get the appropriate address field based on suspect type
+        if suspect_type == 'call_variadic':
+            fix_address = suspect.get('call_address', '')
+        elif suspect_type in ('callind_esp_no_frame', 'callind_esp_no_frame_lost'):
+            fix_address = suspect.get('callind_address', '')
+        else:
+            fix_address = suspect.get('fix_address', '')
+
+        if not fix_address:
             continue
 
         # Normalize address for comparison
@@ -214,49 +287,97 @@ def find_fixable_suspects(json_data, suspect_types=None, verbose=True):
             fixes.append((fix_address, [pcode], frame_offset, 'ebp_anchor'))
 
         elif suspect_type == 'callind_esp_no_frame':
-            # Non-EBP-frame function: use entry ESP save + computed restore
-            expected_esp_offset = suspect.get('expected_esp_offset')
+            # Non-EBP-frame function: override the CALLIND to preserve ESP
+            # and push the return address properly
+            callind_address = suspect.get('callind_address', '')
+            return_address = suspect.get('return_address', '')
+            target_type = suspect.get('call_target_type', '')
+            target_value = suspect.get('call_target_value', {})
 
-            if expected_esp_offset is None:
-                skipped.append((fix_address, 'no expected_esp_offset (re-export JSON)'))
+            if not callind_address:
+                skipped.append((fix_address, 'no callind_address'))
                 continue
 
-            # Sanity check: ESP offset should be negative (below entry) and reasonable
-            # Positive offsets or very large negative offsets indicate polluted ESP tracking
-            if expected_esp_offset > 0:
-                skipped.append((fix_address, 'invalid esp_offset=%d (positive, tracking polluted)' % expected_esp_offset))
-                continue
-            if expected_esp_offset < -4096:  # More than 4KB of stack seems unreasonable
-                skipped.append((fix_address, 'invalid esp_offset=%d (too large)' % expected_esp_offset))
+            if not return_address:
+                skipped.append((fix_address, 'no return_address (re-export JSON)'))
                 continue
 
-            # Generate the fix - set ESP = saved_entry_ESP + expected_esp_offset
-            # The entry-point save will be added separately (once per function)
-            offset_twos = to_twos_complement(expected_esp_offset)
-            pcode = "INT_ADD (register,0x10,4) = (unique,0x10000,4), (const,0x%x,4)" % offset_twos
-            fixes.append((fix_address, [pcode], expected_esp_offset, 'esp_from_entry'))
+            if not target_type:
+                skipped.append((fix_address, 'no call_target_type'))
+                continue
 
-    # If we have any esp_from_entry fixes, we need to add an entry-point save
-    has_esp_from_entry = any(f[3] == 'esp_from_entry' for f in fixes)
-    if has_esp_from_entry:
-        # Get function entry address
-        func_info = json_data.get('function', {})
-        entry_addr = func_info.get('address', '')
+            # Parse return address to int
+            try:
+                ret_addr_int = int(return_address, 16)
+            except (ValueError, TypeError):
+                skipped.append((fix_address, 'invalid return_address: %s' % return_address))
+                continue
 
-        if entry_addr:
-            # Check if entry already has an override
-            norm_entry = entry_addr.lower().replace('0x', '').lstrip('0') or '0'
-            entry_already_fixed = False
+            # Check if callind_address already has an override
+            norm_callind = callind_address.lower().replace('0x', '').lstrip('0') or '0'
+            callind_already_fixed = False
             for existing_addr in existing_overrides.keys():
                 existing_norm = existing_addr.lower().replace('0x', '').lstrip('0') or '0'
-                if existing_norm == norm_entry:
-                    entry_already_fixed = True
+                if existing_norm == norm_callind:
+                    callind_already_fixed = True
                     break
 
-            if not entry_already_fixed:
-                # Add save ESP at entry point
-                save_pcode = "COPY (unique,0x10000,4) = (register,0x10,4)"
-                fixes.insert(0, (entry_addr, [save_pcode], 0, 'entry_esp_save'))
+            if callind_already_fixed:
+                continue
+
+            # Generate p-code override for the CALLIND with return address push
+            # Use unique_index to get separate unique addresses for each CALLIND
+            pcode_lines = generate_callind_esp_preserve_pcode(target_type, target_value, ret_addr_int, callind_index)
+            if pcode_lines is None:
+                skipped.append((fix_address, 'unsupported target_type: %s' % target_type))
+                continue
+
+            fixes.append((callind_address, pcode_lines, ret_addr_int, 'callind_esp_preserve'))
+            callind_index += 1  # Increment for next CALLIND
+
+        elif suspect_type == 'call_variadic':
+            # Variadic function call - preserve ESP across the CALL
+            call_address = suspect.get('call_address', '')
+            return_address = suspect.get('return_address', '')
+            target_address = suspect.get('target_address', '')
+            target_function = suspect.get('target_function', '')
+
+            if not call_address:
+                skipped.append((call_address or 'unknown', 'no call_address'))
+                continue
+
+            if not return_address:
+                skipped.append((call_address, 'no return_address'))
+                continue
+
+            if not target_address:
+                skipped.append((call_address, 'no target_address'))
+                continue
+
+            # Parse addresses to int
+            try:
+                ret_addr_int = int(return_address, 16)
+                target_addr_int = int(target_address, 16)
+            except (ValueError, TypeError):
+                skipped.append((call_address, 'invalid address format'))
+                continue
+
+            # Check if call_address already has an override
+            norm_call = call_address.lower().replace('0x', '').lstrip('0') or '0'
+            call_already_fixed = False
+            for existing_addr in existing_overrides.keys():
+                existing_norm = existing_addr.lower().replace('0x', '').lstrip('0') or '0'
+                if existing_norm == norm_call:
+                    call_already_fixed = True
+                    break
+
+            if call_already_fixed:
+                continue
+
+            # Generate p-code override for the CALL
+            pcode_lines = generate_call_esp_preserve_pcode(target_addr_int, ret_addr_int, callind_index)
+            fixes.append((call_address, pcode_lines, target_function, 'call_variadic'))
+            callind_index += 1  # Use same counter for unique addresses
 
     return fixes, skipped
 
@@ -302,10 +423,10 @@ def process_json_file(json_path, suspect_types=None, apply=False, verbose=True):
             for addr, pcode_lines, offset_value, fix_type in fixes:
                 if fix_type == 'ebp_anchor':
                     print("    %s (frame_offset=0x%x, type=%s):" % (addr, offset_value, fix_type))
-                elif fix_type == 'entry_esp_save':
-                    print("    %s (save entry ESP, type=%s):" % (addr, fix_type))
-                elif fix_type == 'esp_from_entry':
-                    print("    %s (ESP=entry%+d, type=%s):" % (addr, offset_value, fix_type))
+                elif fix_type == 'callind_esp_preserve':
+                    print("    %s (return_addr=0x%x, type=%s):" % (addr, offset_value, fix_type))
+                elif fix_type == 'call_variadic':
+                    print("    %s (target=%s, type=%s):" % (addr, offset_value, fix_type))
                 else:
                     print("    %s (value=%s, type=%s):" % (addr, offset_value, fix_type))
                 for line in pcode_lines:
@@ -380,7 +501,8 @@ def main():
 Suspect Types:
     ebp       - callind_esp_uncertain: Functions WITH EBP frame (STABLE)
     no-frame  - callind_esp_no_frame: Functions WITHOUT EBP frame (EXPERIMENTAL)
-    all       - Both types (includes experimental)
+    variadic  - call_variadic: Calls to variadic functions (EXPERIMENTAL)
+    all       - All types (includes experimental)
 
 Examples:
     # Dry run - EBP-frame suspects only (default, stable)
@@ -392,12 +514,15 @@ Examples:
     # Scan experimental no-frame suspects
     %(prog)s /path/to/pseudocode/src --type=no-frame
 
+    # Scan variadic function call suspects
+    %(prog)s /path/to/pseudocode/src --type=variadic
+
     # Process all suspect types
     %(prog)s /path/to/pseudocode/src --type=all --apply
         """
     )
     parser.add_argument('path', help='Directory to scan or specific JSON file')
-    parser.add_argument('--type', choices=['ebp', 'no-frame', 'all'], default='ebp',
+    parser.add_argument('--type', choices=['ebp', 'no-frame', 'variadic', 'all'], default='ebp',
                         help='Suspect type to process (default: ebp)')
     parser.add_argument('--apply', action='store_true',
                         help='Apply fixes to JSON files (default: dry run)')
@@ -413,17 +538,21 @@ Examples:
     elif args.type == 'no-frame':
         suspect_types = {'callind_esp_no_frame'}
         type_desc = 'no-frame (EXPERIMENTAL)'
+    elif args.type == 'variadic':
+        suspect_types = {'call_variadic'}
+        type_desc = 'variadic function calls (EXPERIMENTAL)'
     else:  # all
-        suspect_types = {'callind_esp_uncertain', 'callind_esp_no_frame'}
+        suspect_types = {'callind_esp_uncertain', 'callind_esp_no_frame', 'call_variadic'}
         type_desc = 'all types (includes EXPERIMENTAL)'
 
     path = Path(args.path)
     verbose = not args.quiet
 
     # Warn about experimental types
-    if 'callind_esp_no_frame' in suspect_types:
-        print("WARNING: Processing EXPERIMENTAL no-frame suspects.")
-        print("         These overrides may break decompilation!")
+    experimental_types = suspect_types & {'callind_esp_no_frame', 'call_variadic'}
+    if experimental_types:
+        print("WARNING: Processing EXPERIMENTAL suspect types: %s" % ', '.join(sorted(experimental_types)))
+        print("         These overrides may affect decompilation!")
         print()
 
     if not path.exists():
