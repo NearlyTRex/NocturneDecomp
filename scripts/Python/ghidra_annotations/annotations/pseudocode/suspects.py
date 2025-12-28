@@ -159,7 +159,7 @@ def identify_pcode_suspects(pcode_data, assembly_code=None, existing_overrides=N
             fixed_addresses.add(normalized)
 
     # Detect Type A: CALLIND + uncertain ADD ESP
-    callind_suspects = _detect_callind_esp_uncertain(pcode_data)
+    callind_suspects = _detect_callind_anchor(pcode_data)
 
     # Detect Type B: Jump target ESP mismatch
     # Need to parse assembly for jump targets and RET locations
@@ -175,7 +175,7 @@ def identify_pcode_suspects(pcode_data, assembly_code=None, existing_overrides=N
         for suspect in all_suspects:
             suspect_type = suspect.get('type', '')
             # For no-frame CALLIND, override is at callind_address, not fix_address
-            if suspect_type in ('callind_esp_no_frame', 'callind_esp_no_frame_lost'):
+            if suspect_type in ('callind_preserve', 'callind_preserve_lost'):
                 check_addr = suspect.get('callind_address', '')
             else:
                 check_addr = suspect.get('fix_address', '')
@@ -191,14 +191,14 @@ def identify_pcode_suspects(pcode_data, assembly_code=None, existing_overrides=N
     return suspects, resolved_suspects
 
 
-def _detect_callind_esp_uncertain(pcode_data):
+def _detect_callind_anchor(pcode_data):
     """Detect CALLIND instructions followed by ADD ESP with uncertain tracking.
 
     Pattern: CALLIND makes ESP opaque, subsequent ADD ESP can't resolve it.
 
     Returns two types of suspects:
-    - callind_esp_uncertain: Function has EBP frame, fixable with ESP = EBP - offset
-    - callind_esp_no_frame: Function lacks EBP frame, fixable with prologue-based ESP reset
+    - callind_anchor: Function has EBP frame, fixable with ESP = EBP - offset
+    - callind_preserve: Function lacks EBP frame, fixable with prologue-based ESP reset
 
     Returns:
         List of suspect dictionaries
@@ -244,7 +244,7 @@ def _detect_callind_esp_uncertain(pcode_data):
                         if has_ebp_frame and frame_offset is not None:
                             # Fixable with ESP = EBP - frame_offset
                             suspects.append({
-                                'type': 'callind_esp_uncertain',
+                                'type': 'callind_anchor',
                                 'match': 'CALLIND...ADD ESP',
                                 'text': 'CALLIND at %s, ADD ESP at %s' % (
                                     entry.get('address', '?'), next_entry.get('address', '?')),
@@ -286,10 +286,10 @@ def _detect_callind_esp_uncertain(pcode_data):
 
                             # Use different type if ESP tracking was lost (due to branches)
                             if esp_tracking_lost:
-                                suspect_type = 'callind_esp_no_frame_lost'
+                                suspect_type = 'callind_preserve_lost'
                                 description = 'CALLIND with lost ESP tracking (branching code)'
                             else:
-                                suspect_type = 'callind_esp_no_frame'
+                                suspect_type = 'callind_preserve'
                                 description = 'CALLIND makes ESP uncertain; fixable with ESP preserve'
 
                             # Add suspect - build dict and only include ESP fields when known
@@ -725,6 +725,10 @@ def identify_variadic_calls(pcode_data, func_calls=None, has_stack_issues=False,
     Variadic functions (sprintf, fscanf, etc.) can have internal stack frame issues
     that confuse Ghidra's ESP tracking in calling functions.
 
+    Creates two types of suspects based on whether the caller has an EBP frame:
+    - variadic_anchor: Caller has EBP frame, fix by anchoring ESP at ADD ESP
+    - variadic_preserve: Caller lacks EBP frame, fix by preserving ESP across CALL
+
     Args:
         pcode_data: List of instruction dicts from extract_function_pcode()
         func_calls: List of function call dicts with 'addr', 'name', 'is_variadic' keys
@@ -753,6 +757,10 @@ def identify_variadic_calls(pcode_data, func_calls=None, has_stack_issues=False,
 
     if not variadic_funcs:
         return suspects, resolved_suspects
+
+    # Get prologue info to determine if caller has EBP frame
+    prologue_offset, has_ebp_frame = get_prologue_offset(pcode_data)
+    frame_offset = get_frame_offset_from_pcode(pcode_data) if has_ebp_frame else None
 
     # Normalize existing override addresses for comparison
     fixed_addresses = set()
@@ -793,26 +801,98 @@ def identify_variadic_calls(pcode_data, func_calls=None, has_stack_issues=False,
             esp_certainty = entry.get('esp_certainty', 'unknown')
             next_certainty = pcode_data[i + 1].get('esp_certainty', 'unknown') if i + 1 < len(pcode_data) else 'unknown'
 
-            # Create suspect
-            suspect = {
-                'type': 'call_variadic',
-                'match': 'CALL %s' % func_name,
-                'text': 'Call to variadic function %s at %s' % (func_name, call_addr),
-                'description': 'Variadic function call may destabilize ESP tracking',
-                'call_address': call_addr,
-                'return_address': return_address,
-                'target_address': '0x%s' % target_addr,
-                'target_function': func_name,
-                'esp_certainty_at_call': esp_certainty,
-                'esp_certainty_after': next_certainty,
-                'caller_has_stack_issues': has_stack_issues,
-            }
+            # For EBP-frame functions, find the ADD ESP instruction after the call
+            # This is where we'll anchor ESP instead of overriding the CALL
+            add_esp_address = None
+            add_esp_value = None
+            if has_ebp_frame:
+                # Look for ADD ESP in next few instructions
+                for j in range(i + 1, min(i + 5, len(pcode_data))):
+                    next_entry = pcode_data[j]
+                    next_asm = next_entry.get('assembly', '')
+                    if next_asm.upper().startswith('ADD ') and 'ESP' in next_asm.upper():
+                        add_esp_address = next_entry.get('address', '')
+                        # Parse the ADD value
+                        add_match = re.search(r'ADD\s+ESP\s*,\s*(0x[0-9a-fA-F]+|\d+)', next_asm, re.IGNORECASE)
+                        if add_match:
+                            try:
+                                add_esp_value = int(add_match.group(1), 0)
+                            except ValueError:
+                                pass
+                        break
+                    # Stop if we hit another call or control flow
+                    next_pcode = next_entry.get('pcode', [])
+                    if any(op in ' '.join(next_pcode) for op in ['CALL', 'CALLIND', 'RETURN', 'BRANCH']):
+                        break
 
-            # Check if already fixed
-            norm_call = call_addr.lower().replace('0x', '').lstrip('0') or '0'
-            if norm_call in fixed_addresses:
-                resolved_suspects.append(suspect)
+            # Create suspect based on whether caller has EBP frame and ADD ESP
+            if has_ebp_frame and frame_offset is not None and add_esp_address:
+                # EBP-frame function with ADD ESP: anchor ESP at ADD ESP instruction
+                suspect = {
+                    'type': 'variadic_anchor',
+                    'match': 'CALL %s' % func_name,
+                    'text': 'Call to variadic function %s at %s (EBP frame + ADD ESP)' % (func_name, call_addr),
+                    'description': 'Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP',
+                    'call_address': call_addr,
+                    'return_address': return_address,
+                    'target_address': '0x%s' % target_addr,
+                    'target_function': func_name,
+                    'fix_address': add_esp_address,
+                    'frame_offset': frame_offset,
+                    'add_esp_value': add_esp_value,
+                    'esp_certainty_at_call': esp_certainty,
+                    'esp_certainty_after': next_certainty,
+                    'caller_has_stack_issues': has_stack_issues,
+                }
+                # Check if fix_address already has an override
+                norm_fix = add_esp_address.lower().replace('0x', '').lstrip('0') or '0'
+                if norm_fix in fixed_addresses:
+                    resolved_suspects.append(suspect)
+                else:
+                    suspects.append(suspect)
+            elif has_ebp_frame and frame_offset is not None:
+                # EBP-frame function but no ADD ESP found: preserve ESP across CALL
+                suspect = {
+                    'type': 'variadic_preserve_ebp',
+                    'match': 'CALL %s' % func_name,
+                    'text': 'Call to variadic function %s at %s (EBP frame, no ADD ESP)' % (func_name, call_addr),
+                    'description': 'Variadic call in EBP-frame function without ADD ESP; fix by preserving ESP across CALL',
+                    'call_address': call_addr,
+                    'return_address': return_address,
+                    'target_address': '0x%s' % target_addr,
+                    'target_function': func_name,
+                    'frame_offset': frame_offset,
+                    'esp_certainty_at_call': esp_certainty,
+                    'esp_certainty_after': next_certainty,
+                    'caller_has_stack_issues': has_stack_issues,
+                }
+                # Check if call_address already has an override
+                norm_call = call_addr.lower().replace('0x', '').lstrip('0') or '0'
+                if norm_call in fixed_addresses:
+                    resolved_suspects.append(suspect)
+                else:
+                    suspects.append(suspect)
             else:
-                suspects.append(suspect)
+                # Non-EBP-frame function: preserve ESP across CALL
+                suspect = {
+                    'type': 'variadic_preserve',
+                    'match': 'CALL %s' % func_name,
+                    'text': 'Call to variadic function %s at %s (no EBP frame)' % (func_name, call_addr),
+                    'description': 'Variadic call in non-EBP-frame function; fix by preserving ESP across CALL',
+                    'call_address': call_addr,
+                    'return_address': return_address,
+                    'target_address': '0x%s' % target_addr,
+                    'target_function': func_name,
+                    'prologue_offset': prologue_offset,
+                    'esp_certainty_at_call': esp_certainty,
+                    'esp_certainty_after': next_certainty,
+                    'caller_has_stack_issues': has_stack_issues,
+                }
+                # Check if call_address already has an override
+                norm_call = call_addr.lower().replace('0x', '').lstrip('0') or '0'
+                if norm_call in fixed_addresses:
+                    resolved_suspects.append(suspect)
+                else:
+                    suspects.append(suspect)
 
     return suspects, resolved_suspects

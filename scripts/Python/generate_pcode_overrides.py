@@ -2,27 +2,38 @@
 """
 generate_pcode_overrides.py
 
-Scans exported function JSON files for fixable ESP tracking issues and generates
-p-code overrides to fix them.
+Generates p-code overrides to fix ESP tracking issues in exported function JSON files.
 
 Suspect Types:
-- callind_esp_uncertain (--type=ebp): CALLIND in function WITH EBP frame
+- callind_anchor (--type=callind-anchor): CALLIND in function WITH EBP frame
   Fix: Override ADD ESP to anchor ESP = EBP - frame_offset
   Status: STABLE - proven to work
 
-- callind_esp_no_frame (--type=no-frame): CALLIND in function WITHOUT EBP frame
+- callind_preserve (--type=callind-preserve): CALLIND in function WITHOUT EBP frame
   Fix: Save ESP at entry, restore ESP = saved + offset after CALLIND
   Status: EXPERIMENTAL - may break decompilation
 
+- variadic_anchor (--type=variadic-anchor): Variadic CALL with ADD ESP cleanup
+  Fix: Override ADD ESP to anchor ESP = EBP - frame_offset
+  Status: STABLE - preserves argument detection
+
+- variadic_preserve_ebp (--type=variadic-ebp-preserve): Variadic CALL in EBP-frame, no ADD ESP
+  Fix: Save/restore ESP across the CALL
+  Status: EXPERIMENTAL - may break argument detection
+
+- variadic_preserve (--type=variadic-preserve): Variadic CALL without EBP frame
+  Fix: Save/restore ESP across the CALL
+  Status: EXPERIMENTAL - may break argument detection
+
 Usage:
-    # Scan for EBP-frame suspects only (default, stable)
+    # Scan for CALLIND anchor suspects only (default, stable)
     python generate_pcode_overrides.py /path/to/pseudocode/src
 
-    # Apply EBP-frame fixes
+    # Apply CALLIND anchor fixes
     python generate_pcode_overrides.py /path/to/pseudocode/src --apply
 
-    # Scan for experimental no-frame suspects
-    python generate_pcode_overrides.py /path/to/pseudocode/src --type=no-frame
+    # Scan for variadic anchor suspects (stable)
+    python generate_pcode_overrides.py /path/to/pseudocode/src --type=variadic-anchor
 
     # Scan for all suspect types
     python generate_pcode_overrides.py /path/to/pseudocode/src --type=all
@@ -92,7 +103,7 @@ def generate_call_esp_preserve_pcode(target_address, return_address, unique_inde
     ]
 
 
-def generate_callind_esp_preserve_pcode(target_type, target_value, return_address=None, unique_index=0):
+def generate_callind_preserve_pcode(target_type, target_value, return_address=None, unique_index=0):
     """Generate p-code to preserve ESP across a CALLIND.
 
     For cdecl calls, ESP is unchanged by the call itself (caller cleans up).
@@ -214,9 +225,12 @@ def find_fixable_suspects(json_data, suspect_types=None, verbose=True):
     Args:
         json_data: Parsed JSON data from function export
         suspect_types: Set of suspect types to process. Options:
-            - 'callind_esp_uncertain' (EBP-frame, stable)
-            - 'callind_esp_no_frame' (no EBP frame, experimental)
-            If None, defaults to {'callind_esp_uncertain'}
+            - 'callind_anchor' (EBP-frame CALLIND, stable)
+            - 'callind_preserve' (no EBP frame CALLIND, experimental)
+            - 'variadic_anchor' (EBP-frame variadic CALL with ADD ESP, stable)
+            - 'variadic_preserve_ebp' (EBP-frame variadic CALL without ADD ESP, experimental)
+            - 'variadic_preserve' (no EBP frame variadic CALL, experimental)
+            If None, defaults to {'callind_anchor'}
         verbose: If True, print warnings
 
     Returns:
@@ -228,7 +242,7 @@ def find_fixable_suspects(json_data, suspect_types=None, verbose=True):
     skipped = []
 
     if suspect_types is None:
-        suspect_types = {'callind_esp_uncertain'}
+        suspect_types = {'callind_anchor'}
 
     # Skip non-dict JSON (some files may be arrays or other structures)
     if not isinstance(json_data, dict):
@@ -246,11 +260,12 @@ def find_fixable_suspects(json_data, suspect_types=None, verbose=True):
             continue
 
         # Get the appropriate address field based on suspect type
-        if suspect_type == 'call_variadic':
+        if suspect_type in ('variadic_preserve', 'variadic_preserve_ebp'):
             fix_address = suspect.get('call_address', '')
-        elif suspect_type in ('callind_esp_no_frame', 'callind_esp_no_frame_lost'):
+        elif suspect_type in ('callind_preserve', 'callind_preserve_lost'):
             fix_address = suspect.get('callind_address', '')
         else:
+            # callind_anchor, variadic_anchor use fix_address
             fix_address = suspect.get('fix_address', '')
 
         if not fix_address:
@@ -270,7 +285,7 @@ def find_fixable_suspects(json_data, suspect_types=None, verbose=True):
         if already_fixed:
             continue
 
-        if suspect_type == 'callind_esp_uncertain':
+        if suspect_type == 'callind_anchor':
             # EBP-frame function: use ESP = EBP - frame_offset
             frame_offset = suspect.get('frame_offset')
 
@@ -286,7 +301,7 @@ def find_fixable_suspects(json_data, suspect_types=None, verbose=True):
             pcode = generate_esp_anchor_pcode(frame_offset)
             fixes.append((fix_address, [pcode], frame_offset, 'ebp_anchor'))
 
-        elif suspect_type == 'callind_esp_no_frame':
+        elif suspect_type == 'callind_preserve':
             # Non-EBP-frame function: override the CALLIND to preserve ESP
             # and push the return address properly
             callind_address = suspect.get('callind_address', '')
@@ -327,16 +342,34 @@ def find_fixable_suspects(json_data, suspect_types=None, verbose=True):
 
             # Generate p-code override for the CALLIND with return address push
             # Use unique_index to get separate unique addresses for each CALLIND
-            pcode_lines = generate_callind_esp_preserve_pcode(target_type, target_value, ret_addr_int, callind_index)
+            pcode_lines = generate_callind_preserve_pcode(target_type, target_value, ret_addr_int, callind_index)
             if pcode_lines is None:
                 skipped.append((fix_address, 'unsupported target_type: %s' % target_type))
                 continue
 
-            fixes.append((callind_address, pcode_lines, ret_addr_int, 'callind_esp_preserve'))
+            fixes.append((callind_address, pcode_lines, ret_addr_int, 'callind_preserve'))
             callind_index += 1  # Increment for next CALLIND
 
-        elif suspect_type == 'call_variadic':
-            # Variadic function call - preserve ESP across the CALL
+        elif suspect_type == 'variadic_anchor':
+            # EBP-frame variadic call with ADD ESP - anchor ESP at ADD ESP instruction
+            # This preserves the original CALL semantics (argument detection works)
+            frame_offset = suspect.get('frame_offset')
+            target_function = suspect.get('target_function', '')
+
+            if frame_offset is None:
+                skipped.append((fix_address, 'no frame_offset'))
+                continue
+
+            if frame_offset == 0:
+                skipped.append((fix_address, 'frame_offset=0 (detection may have failed)'))
+                continue
+
+            # Generate the fix - same as callind_anchor
+            pcode = generate_esp_anchor_pcode(frame_offset)
+            fixes.append((fix_address, [pcode], frame_offset, 'variadic_anchor'))
+
+        elif suspect_type == 'variadic_preserve_ebp':
+            # EBP-frame variadic call without ADD ESP - preserve ESP across CALL
             call_address = suspect.get('call_address', '')
             return_address = suspect.get('return_address', '')
             target_address = suspect.get('target_address', '')
@@ -376,7 +409,51 @@ def find_fixable_suspects(json_data, suspect_types=None, verbose=True):
 
             # Generate p-code override for the CALL
             pcode_lines = generate_call_esp_preserve_pcode(target_addr_int, ret_addr_int, callind_index)
-            fixes.append((call_address, pcode_lines, target_function, 'call_variadic'))
+            fixes.append((call_address, pcode_lines, target_function, 'variadic_preserve_ebp'))
+            callind_index += 1
+
+        elif suspect_type == 'variadic_preserve':
+            # Non-EBP-frame variadic call - preserve ESP across the CALL
+            call_address = suspect.get('call_address', '')
+            return_address = suspect.get('return_address', '')
+            target_address = suspect.get('target_address', '')
+            target_function = suspect.get('target_function', '')
+
+            if not call_address:
+                skipped.append((call_address or 'unknown', 'no call_address'))
+                continue
+
+            if not return_address:
+                skipped.append((call_address, 'no return_address'))
+                continue
+
+            if not target_address:
+                skipped.append((call_address, 'no target_address'))
+                continue
+
+            # Parse addresses to int
+            try:
+                ret_addr_int = int(return_address, 16)
+                target_addr_int = int(target_address, 16)
+            except (ValueError, TypeError):
+                skipped.append((call_address, 'invalid address format'))
+                continue
+
+            # Check if call_address already has an override
+            norm_call = call_address.lower().replace('0x', '').lstrip('0') or '0'
+            call_already_fixed = False
+            for existing_addr in existing_overrides.keys():
+                existing_norm = existing_addr.lower().replace('0x', '').lstrip('0') or '0'
+                if existing_norm == norm_call:
+                    call_already_fixed = True
+                    break
+
+            if call_already_fixed:
+                continue
+
+            # Generate p-code override for the CALL
+            pcode_lines = generate_call_esp_preserve_pcode(target_addr_int, ret_addr_int, callind_index)
+            fixes.append((call_address, pcode_lines, target_function, 'variadic_preserve'))
             callind_index += 1  # Use same counter for unique addresses
 
     return fixes, skipped
@@ -421,11 +498,11 @@ def process_json_file(json_path, suspect_types=None, apply=False, verbose=True):
         if fixes:
             print("  Fixes (%d):" % len(fixes))
             for addr, pcode_lines, offset_value, fix_type in fixes:
-                if fix_type == 'ebp_anchor':
+                if fix_type in ('ebp_anchor', 'variadic_anchor'):
                     print("    %s (frame_offset=0x%x, type=%s):" % (addr, offset_value, fix_type))
-                elif fix_type == 'callind_esp_preserve':
+                elif fix_type == 'callind_preserve':
                     print("    %s (return_addr=0x%x, type=%s):" % (addr, offset_value, fix_type))
-                elif fix_type == 'call_variadic':
+                elif fix_type in ('variadic_preserve', 'variadic_preserve_ebp'):
                     print("    %s (target=%s, type=%s):" % (addr, offset_value, fix_type))
                 else:
                     print("    %s (value=%s, type=%s):" % (addr, offset_value, fix_type))
@@ -499,22 +576,28 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Suspect Types:
-    ebp       - callind_esp_uncertain: Functions WITH EBP frame (STABLE)
-    no-frame  - callind_esp_no_frame: Functions WITHOUT EBP frame (EXPERIMENTAL)
-    variadic  - call_variadic: Calls to variadic functions (EXPERIMENTAL)
-    all       - All types (includes experimental)
+    callind-anchor     - CALLIND with ESP anchor fix (ESP = EBP - offset) (STABLE)
+    callind-preserve   - CALLIND with ESP preserve fix (save/restore ESP) (EXPERIMENTAL)
+    callind            - Both CALLIND types
+
+    variadic-anchor    - Variadic CALL with ESP anchor at ADD ESP (STABLE)
+    variadic-ebp-preserve - Variadic CALL in EBP-frame but no ADD ESP (EXPERIMENTAL)
+    variadic-preserve  - Variadic CALL in non-EBP-frame function (EXPERIMENTAL)
+    variadic           - All variadic types
+
+    all                - All types (includes experimental)
 
 Examples:
-    # Dry run - EBP-frame suspects only (default, stable)
+    # Dry run - CALLIND anchor suspects only (default, stable)
     %(prog)s /path/to/pseudocode/src
 
-    # Apply EBP-frame fixes
+    # Apply CALLIND anchor fixes
     %(prog)s /path/to/pseudocode/src --apply
 
-    # Scan experimental no-frame suspects
-    %(prog)s /path/to/pseudocode/src --type=no-frame
+    # Scan variadic calls with anchor fix (stable)
+    %(prog)s /path/to/pseudocode/src --type=variadic-anchor
 
-    # Scan variadic function call suspects
+    # Scan all variadic call suspects
     %(prog)s /path/to/pseudocode/src --type=variadic
 
     # Process all suspect types
@@ -522,8 +605,10 @@ Examples:
         """
     )
     parser.add_argument('path', help='Directory to scan or specific JSON file')
-    parser.add_argument('--type', choices=['ebp', 'no-frame', 'variadic', 'all'], default='ebp',
-                        help='Suspect type to process (default: ebp)')
+    parser.add_argument('--type', choices=['callind-anchor', 'callind-preserve', 'callind',
+                                           'variadic-anchor', 'variadic-ebp-preserve', 'variadic-preserve',
+                                           'variadic', 'all'],
+                        default='callind-anchor', help='Suspect type to process (default: callind-anchor)')
     parser.add_argument('--apply', action='store_true',
                         help='Apply fixes to JSON files (default: dry run)')
     parser.add_argument('-q', '--quiet', action='store_true',
@@ -532,24 +617,37 @@ Examples:
     args = parser.parse_args()
 
     # Map --type argument to suspect type set
-    if args.type == 'ebp':
-        suspect_types = {'callind_esp_uncertain'}
-        type_desc = 'EBP-frame (stable)'
-    elif args.type == 'no-frame':
-        suspect_types = {'callind_esp_no_frame'}
-        type_desc = 'no-frame (EXPERIMENTAL)'
+    if args.type == 'callind-anchor':
+        suspect_types = {'callind_anchor'}
+        type_desc = 'CALLIND anchor (stable)'
+    elif args.type == 'callind-preserve':
+        suspect_types = {'callind_preserve'}
+        type_desc = 'CALLIND preserve (EXPERIMENTAL)'
+    elif args.type == 'callind':
+        suspect_types = {'callind_anchor', 'callind_preserve'}
+        type_desc = 'all CALLIND types'
+    elif args.type == 'variadic-anchor':
+        suspect_types = {'variadic_anchor'}
+        type_desc = 'variadic anchor (stable)'
+    elif args.type == 'variadic-ebp-preserve':
+        suspect_types = {'variadic_preserve_ebp'}
+        type_desc = 'variadic EBP-frame preserve (EXPERIMENTAL)'
+    elif args.type == 'variadic-preserve':
+        suspect_types = {'variadic_preserve'}
+        type_desc = 'variadic non-EBP preserve (EXPERIMENTAL)'
     elif args.type == 'variadic':
-        suspect_types = {'call_variadic'}
-        type_desc = 'variadic function calls (EXPERIMENTAL)'
+        suspect_types = {'variadic_anchor', 'variadic_preserve_ebp', 'variadic_preserve'}
+        type_desc = 'all variadic types'
     else:  # all
-        suspect_types = {'callind_esp_uncertain', 'callind_esp_no_frame', 'call_variadic'}
+        suspect_types = {'callind_anchor', 'callind_preserve',
+                         'variadic_anchor', 'variadic_preserve_ebp', 'variadic_preserve'}
         type_desc = 'all types (includes EXPERIMENTAL)'
 
     path = Path(args.path)
     verbose = not args.quiet
 
     # Warn about experimental types
-    experimental_types = suspect_types & {'callind_esp_no_frame', 'call_variadic'}
+    experimental_types = suspect_types & {'callind_preserve', 'variadic_preserve_ebp', 'variadic_preserve'}
     if experimental_types:
         print("WARNING: Processing EXPERIMENTAL suspect types: %s" % ', '.join(sorted(experimental_types)))
         print("         These overrides may affect decompilation!")
