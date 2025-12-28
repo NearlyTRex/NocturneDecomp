@@ -39,6 +39,61 @@ DEFAULT_NUM_THREADS = 12
 PROCESS_BATCH_SIZE = 100
 
 
+def detect_ebp_frame(program_listing, func):
+    """Detect if a function uses an EBP frame (can be used as anchor).
+
+    Checks for prologue pattern (within first 10 instructions):
+       push ebp
+       mov ebp, esp  (immediately after push ebp)
+
+    The push ebp / mov ebp, esp may not be the first instructions - some
+    functions save other registers (push ebx, push esi, etc.) before setting
+    up the frame.
+
+    Once EBP is set to ESP, it remains stable throughout the function and
+    can be used as an anchor for stack-relative addressing.
+
+    Args:
+        program_listing: The program's listing
+        func: The function to check
+
+    Returns:
+        True if the function sets up an EBP frame, False otherwise
+    """
+    try:
+        entry_point = func.getEntryPoint()
+        instr = program_listing.getInstructionAt(entry_point)
+        if not instr:
+            return False
+
+        # Scan first 10 instructions looking for "push ebp" followed by "mov ebp, esp"
+        for _ in range(10):
+            if not instr:
+                break
+
+            mnemonic = str(instr.getMnemonicString()).lower()
+
+            # Check for "push ebp"
+            if mnemonic == 'push' and instr.getNumOperands() >= 1:
+                operand = str(instr.getDefaultOperandRepresentation(0)).lower()
+                if operand == 'ebp':
+                    # Check if next instruction is "mov ebp, esp"
+                    next_instr = instr.getNext()
+                    if next_instr:
+                        next_mnemonic = str(next_instr.getMnemonicString()).lower()
+                        if next_mnemonic == 'mov' and next_instr.getNumOperands() >= 2:
+                            op1 = str(next_instr.getDefaultOperandRepresentation(0)).lower()
+                            op2 = str(next_instr.getDefaultOperandRepresentation(1)).lower()
+                            if op1 == 'ebp' and op2 == 'esp':
+                                return True
+
+            instr = instr.getNext()
+
+        return False
+    except Exception:
+        return False
+
+
 class DecompilerThreadLocal:
     """Thread-local storage for DecompInterface instances.
 
@@ -78,6 +133,7 @@ class DecompileResult:
         'raw_decompiled_code', 'assembly_code', 'pcode_data',
         'func_xrefs', 'func_globals', 'func_calls',
         'stack_frame', 'stack_patterns_raw', 'param_estimates', 'vtable_info',
+        'is_ebp_frame',
         'decompile_time', 'assembly_time', 'metadata_time', 'pcode_time'
     ]
 
@@ -100,6 +156,7 @@ class DecompileResult:
         self.stack_patterns_raw = []
         self.param_estimates = None
         self.vtable_info = None
+        self.is_ebp_frame = False
         self.decompile_time = 0.0
         self.assembly_time = 0.0
         self.metadata_time = 0.0
@@ -176,6 +233,7 @@ class DecompileWorker:
             result.func_xrefs = get_function_xrefs(self.currentProgram, func)
             result.func_calls = get_function_calls(self.currentProgram, func)
             result.stack_frame = export_stack_frame(func)
+            result.is_ebp_frame = detect_ebp_frame(self.program_listing, func)
             result.stack_patterns_raw = detect_stack_patterns_from_listing(
                 self.program_listing, func)
             # Parameter estimation is optional - don't fail function if it errors

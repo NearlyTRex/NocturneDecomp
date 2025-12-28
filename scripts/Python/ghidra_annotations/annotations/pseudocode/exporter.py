@@ -295,7 +295,7 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map):
         decompiled_code, result.assembly_code, result.func_xrefs, result.func_globals,
         result.func_calls, result.stack_frame, suspects, complexity, custom_replacements,
         stack_patterns, result.param_estimates, result.vtable_info, result.pcode_data,
-        pcode_overrides, resolved_suspects)
+        pcode_overrides, resolved_suspects, result.is_ebp_frame)
     output_time = time.time() - output_start
 
     total_process_time = time.time() - process_start
