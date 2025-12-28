@@ -10,6 +10,7 @@ void __cdecl engine_console_cpp_CConsole_render_FUN_00441b00(CConsole *this_ptr)
 
 {
   int iVar1;
+  BADSPACEBASE *in_ESP;
   int iVar2;
   CConsole *pCVar3;
   int iVar4;
@@ -36,12 +37,12 @@ void __cdecl engine_console_cpp_CConsole_render_FUN_00441b00(CConsole *this_ptr)
             engine_2d_c_drawString_FUN_00402080
                       (local_14,this_ptr->screen_x + iVar4,iVar1 + this_ptr->screen_y,0xf8);
           }
-          pCVar3 = (CConsole *)((char *)pCVar3 + 1);
+          pCVar3 = (CConsole *)((int)&pCVar3->file_logging_enabled + 1);
           iVar2 = iVar2 + 1;
           iVar4 = iVar4 + 7;
         } while (iVar2 < this_ptr->console_width);
       }
-      pCVar3 = (CConsole *)((char *)pCVar5 + 0x50);  // next row (80 byte stride)
+      pCVar3 = (CConsole *)(pCVar5->console_buffer + 0x4c);
       local_18 = local_18 + 0xb;
       iVar6 = iVar6 + 1;
     } while (iVar6 < this_ptr->console_height);

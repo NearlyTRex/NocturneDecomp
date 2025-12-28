@@ -1,25 +1,23 @@
 {
   "complexity": {
     "assembly_lines": 1287,
-    "complexity_score": 1632,
+    "complexity_score": 1122,
     "cross_reference_count": 0,
     "function_call_count": 43,
     "global_count": 63,
-    "pseudocode_lines": 532,
-    "suspect_count": 105,
+    "pseudocode_lines": 552,
+    "suspect_count": 53,
     "suspect_types": [
       "badspacebase",
-      "call_variadic",
       "concat_artifact",
       "register_param",
       "stack_param",
       "stack_ref",
-      "unaffected_reg",
       "undefined_type",
       "unknown_field",
       "warning_unreachable"
     ],
-    "total_lines": 1819
+    "total_lines": 1839
   },
   "cross_references": [],
   "function": {
@@ -639,7 +637,64 @@
     "estimated_params": 3
   },
   "pcode_overrides": {
+    "004b437d": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffec48,4)"
+    ],
+    "004b43bf": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffec48,4)"
+    ],
+    "004b43dd": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffec48,4)"
+    ],
+    "004b44a7": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffec48,4)"
+    ],
+    "004b44ce": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffec48,4)"
+    ],
+    "004b4665": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffec48,4)"
+    ],
+    "004b4765": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffec48,4)"
+    ],
+    "004b482e": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffec48,4)"
+    ],
+    "004b48fd": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffec48,4)"
+    ],
+    "004b4a54": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffec48,4)"
+    ],
+    "004b4b1f": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffec48,4)"
+    ],
+    "004b4bd9": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffec48,4)"
+    ],
+    "004b4c3e": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffec48,4)"
+    ],
+    "004b4c85": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffec48,4)"
+    ],
     "004b4ce2": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffec48,4)"
+    ],
+    "004b4dc6": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffec48,4)"
+    ],
+    "004b4e1e": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffec48,4)"
+    ],
+    "004b4eb4": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffec48,4)"
+    ],
+    "004b4f4a": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffec48,4)"
+    ],
+    "004b500e": [
       "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffec48,4)"
     ]
   },
@@ -687,7 +742,311 @@
       "frame_offset": 5048,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 004b4cdf, ADD ESP at 004b4ce2",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "004b4378",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "004b437d",
+      "frame_offset": 5048,
+      "match": "CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0",
+      "return_address": "004b437d",
+      "target_address": "0x49f0f0",
+      "target_function": "shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0",
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 at 004b4378 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "004b43ba",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "004b43bf",
+      "frame_offset": 5048,
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "004b43bf",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 004b43ba (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 16,
+      "call_address": "004b43d8",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "004b43dd",
+      "frame_offset": 5048,
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "004b43dd",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 004b43d8 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "004b44a2",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "004b44a7",
+      "frame_offset": 5048,
+      "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "return_address": "004b44a7",
+      "target_address": "0x49e740",
+      "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 004b44a2 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "004b44c9",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "004b44ce",
+      "frame_offset": 5048,
+      "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "return_address": "004b44ce",
+      "target_address": "0x49e740",
+      "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 004b44c9 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "004b4660",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "004b4665",
+      "frame_offset": 5048,
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "004b4665",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 004b4660 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "004b4760",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "004b4765",
+      "frame_offset": 5048,
+      "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "return_address": "004b4765",
+      "target_address": "0x49e740",
+      "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 004b4760 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "004b4829",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "004b482e",
+      "frame_offset": 5048,
+      "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "return_address": "004b482e",
+      "target_address": "0x49e740",
+      "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 004b4829 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "004b48f8",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "004b48fd",
+      "frame_offset": 5048,
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "004b48fd",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 004b48f8 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "004b4a4f",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "004b4a54",
+      "frame_offset": 5048,
+      "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "return_address": "004b4a54",
+      "target_address": "0x49e740",
+      "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 004b4a4f (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "004b4b1a",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "004b4b1f",
+      "frame_offset": 5048,
+      "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "return_address": "004b4b1f",
+      "target_address": "0x49e740",
+      "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 004b4b1a (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "004b4bd4",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "004b4bd9",
+      "frame_offset": 5048,
+      "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "return_address": "004b4bd9",
+      "target_address": "0x49e740",
+      "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 004b4bd4 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 16,
+      "call_address": "004b4c39",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "004b4c3e",
+      "frame_offset": 5048,
+      "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "return_address": "004b4c3e",
+      "target_address": "0x49e740",
+      "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 004b4c39 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "004b4c80",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "004b4c85",
+      "frame_offset": 5048,
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "004b4c85",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 004b4c80 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "004b4dc1",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "004b4dc6",
+      "frame_offset": 5048,
+      "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "return_address": "004b4dc6",
+      "target_address": "0x49e740",
+      "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 004b4dc1 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "004b4e19",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "004b4e1e",
+      "frame_offset": 5048,
+      "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "return_address": "004b4e1e",
+      "target_address": "0x49e740",
+      "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 004b4e19 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 40,
+      "call_address": "004b4eaf",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "004b4eb4",
+      "frame_offset": 5048,
+      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
+      "return_address": "004b4eb4",
+      "target_address": "0x5fe6d0",
+      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
+      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 004b4eaf (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "004b4f45",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "004b4f4a",
+      "frame_offset": 5048,
+      "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "return_address": "004b4f4a",
+      "target_address": "0x49e740",
+      "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 004b4f45 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "004b5009",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "004b500e",
+      "frame_offset": 5048,
+      "match": "CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0",
+      "return_address": "004b500e",
+      "target_address": "0x49e6f0",
+      "target_function": "shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0",
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0 at 004b5009 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
     }
   ],
   "stack_frame": {
@@ -1041,24 +1400,17 @@
     },
     {
       "description": "Unresolved type",
-      "line": 12,
+      "line": 13,
       "match": "undefined3 extraout_var",
       "text": "undefined3 extraout_var;",
       "type": "undefined_type"
     },
     {
       "description": "Unresolved type",
-      "line": 14,
+      "line": 16,
       "match": "undefined3 extraout_var_00",
       "text": "undefined3 extraout_var_00;",
       "type": "undefined_type"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 16,
-      "match": "unaff_EBX",
-      "text": "int unaff_EBX;",
-      "type": "unaffected_reg"
     },
     {
       "description": "Ghidra failed to resolve stack frame",
@@ -1075,811 +1427,340 @@
       "type": "register_param"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 19,
-      "match": "unaff_EBP",
-      "text": "FILE *unaff_EBP;",
-      "type": "unaffected_reg"
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_ffffec60",
+      "text": "CStrList_vtable *in_stack_ffffec60;",
+      "type": "stack_param"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 20,
-      "match": "unaff_ESI",
-      "text": "FILE *unaff_ESI;",
-      "type": "unaffected_reg"
+      "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_ffffec64",
+      "text": "CStrList_vtable *in_stack_ffffec64;",
+      "type": "stack_param"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 23,
-      "match": "unaff_EDI",
-      "text": "FILE *unaff_EDI;",
-      "type": "unaffected_reg"
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_ffffec68",
+      "text": "CStrList_vtable *in_stack_ffffec68;",
+      "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 27,
-      "match": "in_stack_ffffebf0",
-      "text": "CStrList_vtable *in_stack_ffffebf0;",
+      "match": "in_stack_ffffec6c",
+      "text": "CStrList_vtable *in_stack_ffffec6c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 28,
-      "match": "in_stack_ffffebf4",
-      "text": "CStrList_vtable *in_stack_ffffebf4;",
+      "match": "in_stack_ffffec70",
+      "text": "uint in_stack_ffffec70;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 29,
-      "match": "in_stack_ffffebf8",
-      "text": "CStrList_vtable *in_stack_ffffebf8;",
+      "match": "in_stack_ffffec74",
+      "text": "char **in_stack_ffffec74;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 30,
-      "match": "in_stack_ffffebfc",
-      "text": "CStrList_vtable *in_stack_ffffebfc;",
+      "match": "in_stack_ffffec78",
+      "text": "CStrList_vtable *in_stack_ffffec78;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 31,
-      "match": "in_stack_ffffec00",
-      "text": "CStrList_vtable *in_stack_ffffec00;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_ffffec04",
-      "text": "char **in_stack_ffffec04;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_ffffec08",
-      "text": "CStrList_vtable *in_stack_ffffec08;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 34,
-      "match": "in_stack_ffffec0c",
-      "text": "uint in_stack_ffffec0c;",
+      "match": "in_stack_ffffec7c",
+      "text": "uint in_stack_ffffec7c;",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 104,
-      "match": "._0_4_",
-      "text": "local_48._0_4_ = 0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 148,
+      "line": 159,
       "match": "._520_4_",
-      "text": "if (((iStack_c64 == auStack_1080._520_4_) && (uStack_c5c < uStack_e70 + 2)) &&",
+      "text": "if (((iStack_bf4 == auStack_1010._520_4_) && (uStack_bec < uStack_e00 + 2)) &&",
       "type": "unknown_field"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 150,
-      "match": "&stack0xffffebf4",
-      "text": "shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xffffebf4);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 152,
-      "match": "&stack0xffffebe0",
-      "text": "((CStrList *)&stack0xffffebe0,\"Undo the checkout.\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 154,
-      "match": "&stack0xffffebe4",
-      "text": "((CStrList *)&stack0xffffebe4,\"Yes, I did change the file.  Check it in, like I said to do in the first place.\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 156,
-      "match": "&stack0xffffebe8",
-      "text": "((CStrList *)&stack0xffffebe8,\"Oops.  Keep the file checked out.\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 158,
-      "match": "&stack0xffffebec",
-      "text": "((CPickList *)&stack0xffffebec,\"Checking in file that didn't change.\",-1,0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 161,
-      "match": "in_stack_ffffebf0",
-      "text": "((CPickList *)&stack0xffffebf0,0,(uint)in_stack_ffffebf0,(uint)in_stack_ffffebf4,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 161,
-      "match": "in_stack_ffffebf4",
-      "text": "((CPickList *)&stack0xffffebf0,0,(uint)in_stack_ffffebf0,(uint)in_stack_ffffebf4,",
-      "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
       "line": 161,
-      "match": "&stack0xffffebf0",
-      "text": "((CPickList *)&stack0xffffebf0,0,(uint)in_stack_ffffebf0,(uint)in_stack_ffffebf4,",
+      "match": "&stack0xffffec4c",
+      "text": "shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xffffec4c);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 163,
+      "match": "&stack0xffffec50",
+      "text": "((CStrList *)&stack0xffffec50,\"Undo the checkout.\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 165,
+      "match": "&stack0xffffec54",
+      "text": "((CStrList *)&stack0xffffec54,\"Yes, I did change the file.  Check it in, like I said to do in the first place.\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 167,
+      "match": "&stack0xffffec58",
+      "text": "((CStrList *)&stack0xffffec58,\"Oops.  Keep the file checked out.\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 169,
+      "match": "&stack0xffffec5c",
+      "text": "((CPickList *)&stack0xffffec5c,\"Checking in file that didn't change.\",-1,0);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 162,
-      "match": "in_stack_ffffebf8",
-      "text": "(uint)in_stack_ffffebf8,(uint)in_stack_ffffebfc,(uint)in_stack_ffffec00);",
+      "line": 172,
+      "match": "in_stack_ffffec60",
+      "text": "((CPickList *)&stack0xffffec60,0,(uint)in_stack_ffffec60,(uint)in_stack_ffffec64,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 162,
-      "match": "in_stack_ffffebfc",
-      "text": "(uint)in_stack_ffffebf8,(uint)in_stack_ffffebfc,(uint)in_stack_ffffec00);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 162,
-      "match": "in_stack_ffffec00",
-      "text": "(uint)in_stack_ffffebf8,(uint)in_stack_ffffebfc,(uint)in_stack_ffffec00);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 179,
-      "match": "in_stack_ffffebfc",
-      "text": "((CPickList *)&stack0xffffebfc,0,(uint)in_stack_ffffebfc,(uint)in_stack_ffffec00,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 179,
-      "match": "in_stack_ffffec00",
-      "text": "((CPickList *)&stack0xffffebfc,0,(uint)in_stack_ffffebfc,(uint)in_stack_ffffec00,",
+      "line": 172,
+      "match": "in_stack_ffffec64",
+      "text": "((CPickList *)&stack0xffffec60,0,(uint)in_stack_ffffec60,(uint)in_stack_ffffec64,",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 179,
-      "match": "&stack0xffffebfc",
-      "text": "((CPickList *)&stack0xffffebfc,0,(uint)in_stack_ffffebfc,(uint)in_stack_ffffec00,",
+      "line": 172,
+      "match": "&stack0xffffec60",
+      "text": "((CPickList *)&stack0xffffec60,0,(uint)in_stack_ffffec60,(uint)in_stack_ffffec64,",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 180,
-      "match": "in_stack_ffffec04",
-      "text": "(uint)in_stack_ffffec04,(uint)in_stack_ffffec08,in_stack_ffffec0c);",
+      "line": 173,
+      "match": "in_stack_ffffec68",
+      "text": "(uint)in_stack_ffffec68,(uint)in_stack_ffffec6c,in_stack_ffffec70);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 180,
-      "match": "in_stack_ffffec08",
-      "text": "(uint)in_stack_ffffec04,(uint)in_stack_ffffec08,in_stack_ffffec0c);",
+      "line": 173,
+      "match": "in_stack_ffffec6c",
+      "text": "(uint)in_stack_ffffec68,(uint)in_stack_ffffec6c,in_stack_ffffec70);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 180,
-      "match": "in_stack_ffffec0c",
-      "text": "(uint)in_stack_ffffec04,(uint)in_stack_ffffec08,in_stack_ffffec0c);",
+      "line": 173,
+      "match": "in_stack_ffffec70",
+      "text": "(uint)in_stack_ffffec68,(uint)in_stack_ffffec6c,in_stack_ffffec70);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 184,
-      "match": "in_stack_ffffebf0",
-      "text": "((CPickList *)&stack0xffffebf0,0,(uint)in_stack_ffffebf0,(uint)in_stack_ffffebf4,",
+      "line": 190,
+      "match": "in_stack_ffffec6c",
+      "text": "((CPickList *)&stack0xffffec6c,0,(uint)in_stack_ffffec6c,in_stack_ffffec70,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 184,
-      "match": "in_stack_ffffebf4",
-      "text": "((CPickList *)&stack0xffffebf0,0,(uint)in_stack_ffffebf0,(uint)in_stack_ffffebf4,",
+      "line": 190,
+      "match": "in_stack_ffffec70",
+      "text": "((CPickList *)&stack0xffffec6c,0,(uint)in_stack_ffffec6c,in_stack_ffffec70,",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 184,
-      "match": "&stack0xffffebf0",
-      "text": "((CPickList *)&stack0xffffebf0,0,(uint)in_stack_ffffebf0,(uint)in_stack_ffffebf4,",
+      "line": 190,
+      "match": "&stack0xffffec6c",
+      "text": "((CPickList *)&stack0xffffec6c,0,(uint)in_stack_ffffec6c,in_stack_ffffec70,",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 185,
-      "match": "in_stack_ffffebf8",
-      "text": "(uint)in_stack_ffffebf8,(uint)in_stack_ffffebfc,(uint)in_stack_ffffec00);",
+      "line": 191,
+      "match": "in_stack_ffffec74",
+      "text": "(uint)in_stack_ffffec74,(uint)in_stack_ffffec78,in_stack_ffffec7c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 185,
-      "match": "in_stack_ffffebfc",
-      "text": "(uint)in_stack_ffffebf8,(uint)in_stack_ffffebfc,(uint)in_stack_ffffec00);",
+      "line": 191,
+      "match": "in_stack_ffffec78",
+      "text": "(uint)in_stack_ffffec74,(uint)in_stack_ffffec78,in_stack_ffffec7c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 185,
-      "match": "in_stack_ffffec00",
-      "text": "(uint)in_stack_ffffebf8,(uint)in_stack_ffffebfc,(uint)in_stack_ffffec00);",
+      "line": 191,
+      "match": "in_stack_ffffec7c",
+      "text": "(uint)in_stack_ffffec74,(uint)in_stack_ffffec78,in_stack_ffffec7c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 195,
+      "match": "in_stack_ffffec60",
+      "text": "((CPickList *)&stack0xffffec60,0,(uint)in_stack_ffffec60,(uint)in_stack_ffffec64,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 195,
+      "match": "in_stack_ffffec64",
+      "text": "((CPickList *)&stack0xffffec60,0,(uint)in_stack_ffffec60,(uint)in_stack_ffffec64,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 195,
+      "match": "&stack0xffffec60",
+      "text": "((CPickList *)&stack0xffffec60,0,(uint)in_stack_ffffec60,(uint)in_stack_ffffec64,",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 196,
+      "match": "in_stack_ffffec68",
+      "text": "(uint)in_stack_ffffec68,(uint)in_stack_ffffec6c,in_stack_ffffec70);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 196,
+      "match": "in_stack_ffffec6c",
+      "text": "(uint)in_stack_ffffec68,(uint)in_stack_ffffec6c,in_stack_ffffec70);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 196,
+      "match": "in_stack_ffffec70",
+      "text": "(uint)in_stack_ffffec68,(uint)in_stack_ffffec6c,in_stack_ffffec70);",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 227,
+      "line": 239,
       "match": "._4_4_",
-      "text": "local_48._4_4_ =",
+      "text": "auStack_64._4_4_ =",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 230,
+      "line": 243,
       "match": "._4_4_",
-      "text": "if ((CCheckOutItem *)local_48._4_4_ == (CCheckOutItem *)0x0) {",
+      "text": "if ((CCheckOutItem *)auStack_64._4_4_ == (CCheckOutItem *)0x0) {",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 283,
+      "line": 335,
       "match": "._0_4_",
-      "text": "local_1c._0_4_ = 0;",
+      "text": "auStack_94._0_4_ = 0;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 323,
+      "line": 423,
       "match": "._0_4_",
-      "text": "local_48._0_4_ = 0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 356,
-      "match": "._4_4_",
-      "text": "if ((CCheckOutItem *)local_3c._4_4_ != (CCheckOutItem *)0x0) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 358,
-      "match": "._4_4_",
-      "text": "((FILE *)local_3c._4_4_,\"..\\\\engine\\\\fileio.cpp\",0xc4);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 378,
-      "match": "._0_4_",
-      "text": "if ((FILE *)local_3c._0_4_ != (FILE *)0x0) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 380,
-      "match": "._0_4_",
-      "text": "((FILE *)local_3c._0_4_,\"..\\\\engine\\\\fileio.cpp\",0xc4);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 381,
-      "match": "._4_4_",
-      "text": "local_3c._4_4_ = (CCheckOutItem *)0x0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 396,
-      "match": "._4_4_",
-      "text": "local_1c._4_4_ = pCVar5;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 409,
-      "match": "._0_4_",
-      "text": "if ((FILE *)local_3c._0_4_ != (FILE *)0x0) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 411,
-      "match": "._0_4_",
-      "text": "((FILE *)local_3c._0_4_,\"..\\\\engine\\\\fileio.cpp\",0xc4);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 412,
-      "match": "._4_4_",
-      "text": "local_3c._4_4_ = (CCheckOutItem *)0x0;",
+      "text": "auStack_64._0_4_ = (FILE *)0x0;",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 420,
+      "line": 431,
       "match": "CONCAT31",
       "text": "if (CONCAT31 /* combine 2-byte values */(extraout_var,bVar2) == 0) {",
       "type": "concat_artifact"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 421,
-      "match": "._4_4_",
-      "text": "if ((CCheckOutItem *)local_3c._4_4_ != (CCheckOutItem *)0x0) {",
+      "line": 432,
+      "match": "._0_4_",
+      "text": "if ((FILE *)auStack_64._0_4_ != (FILE *)0x0) {",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 423,
-      "match": "._4_4_",
-      "text": "((FILE *)local_3c._4_4_,\"..\\\\engine\\\\fileio.cpp\",0xc4);",
+      "line": 434,
+      "match": "._0_4_",
+      "text": "((FILE *)auStack_64._0_4_,\"..\\\\engine\\\\fileio.cpp\",0xc4);",
       "type": "unknown_field"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 433,
-      "match": "unaff_EDI",
-      "text": "unaff_EDI = shape_memdbg_cpp_openFile_FUN_0050f7a0",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 436,
-      "match": "unaff_EDI",
-      "text": "if (unaff_EDI != (FILE *)0x0) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 437,
-      "match": "unaff_EDI",
-      "text": "crt_stdio_c_setvbuf_FUN_00601490(unaff_EDI,(char *)0x0,0,0x400);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 445,
-      "match": "unaff_EDI",
-      "text": "unaff_EDI = (FILE *)0x0;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 447,
-      "match": "unaff_EDI",
-      "text": "if (unaff_EDI != (FILE *)0x0) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 450,
-      "match": "unaff_EDI",
-      "text": "crt_stdio_c_fprintf_FUN_005fe6d0(unaff_EDI,\"%4d: %04d/%02d/%02d %02d:%02d:%02d \\\"%s\\\"\\n\");",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 451,
-      "match": "unaff_EDI",
-      "text": "crt_stdio_c_fflush_FUN_00601540(unaff_EDI);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 452,
-      "match": "unaff_EDI",
-      "text": "if ((unaff_EDI->_flag & 0x20) == 0) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 453,
-      "match": "unaff_EDI",
-      "text": "shape_memdbg_cpp_closeFile_FUN_0050f9b0(unaff_EDI,\"..\\\\engine\\\\fileio.cpp\",0xc4)",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 456,
-      "match": "unaff_EBX",
-      "text": "if (unaff_EBX != 0) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 461,
-      "match": "unaff_EDI",
-      "text": "((CCheckOutList *)local_1c,(int)unaff_EDI);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 463,
-      "match": "unaff_EBP",
-      "text": "if (unaff_EBP != (FILE *)0x0) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 465,
-      "match": "unaff_EBP",
-      "text": "(unaff_EBP,\"..\\\\engine\\\\fileio.cpp\",0xc4);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 466,
-      "match": "unaff_EBP",
-      "text": "unaff_EBP = (FILE *)0x0;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 473,
-      "match": "&stack0xfffffff0",
-      "text": "((CCheckOutList *)(local_1c + 4),(FILE **)&stack0xfffffff0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 475,
-      "match": "unaff_EDI",
-      "text": "if (unaff_EDI != (FILE *)0x0) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 477,
-      "match": "unaff_EDI",
-      "text": "(unaff_EDI,\"..\\\\engine\\\\fileio.cpp\",0xc4);",
-      "type": "unaffected_reg"
+      "description": "Unknown/mangled field access",
+      "line": 435,
+      "match": "._0_4_",
+      "text": "auStack_64._0_4_ = (FILE *)0x0;",
+      "type": "unknown_field"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 483,
+      "line": 501,
       "match": "CONCAT31",
-      "text": "CONCAT31 /* combine 2-byte values */(extraout_var_00,bVar2) == 0)) || (iVar4 < 0)) {",
+      "text": "CONCAT31 /* combine 2-byte values */(extraout_var_00,bVar2) == 0)) || (iVar7 < 0)) {",
       "type": "concat_artifact"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 488,
-      "match": "&stack0xfffffffc",
-      "text": "((CCheckOutList *)&stack0xfffffffc);",
-      "type": "stack_ref"
+      "description": "Unknown/mangled field access",
+      "line": 515,
+      "match": "._0_4_",
+      "text": "if ((FILE *)auStack_64._0_4_ != (FILE *)0x0) {",
+      "type": "unknown_field"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 501,
-      "match": "unaff_EDI",
-      "text": "if (unaff_EDI != (FILE *)0x0) {",
-      "type": "unaffected_reg"
+      "description": "Unknown/mangled field access",
+      "line": 517,
+      "match": "._0_4_",
+      "text": "((FILE *)auStack_64._0_4_,\"..\\\\engine\\\\fileio.cpp\",0xc4);",
+      "type": "unknown_field"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 502,
-      "match": "unaff_EDI",
-      "text": "shape_memdbg_cpp_closeFile_FUN_0050f9b0(unaff_EDI,\"..\\\\engine\\\\fileio.cpp\",0xc4);",
-      "type": "unaffected_reg"
+      "description": "Unknown/mangled field access",
+      "line": 518,
+      "match": "._0_4_",
+      "text": "auStack_64._0_4_ = (FILE *)0x0;",
+      "type": "unknown_field"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 503,
-      "match": "unaff_EDI",
-      "text": "unaff_EDI = (FILE *)0x0;",
-      "type": "unaffected_reg"
+      "description": "Unknown/mangled field access",
+      "line": 543,
+      "match": "._4_4_",
+      "text": "if ((CCheckOutItem *)auStack_64._4_4_ != (CCheckOutItem *)0x0) {",
+      "type": "unknown_field"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 522,
-      "match": "unaff_EBP",
-      "text": "if (unaff_EBP != (FILE *)0x0) {",
-      "type": "unaffected_reg"
+      "description": "Unknown/mangled field access",
+      "line": 545,
+      "match": "._4_4_",
+      "text": "((FILE *)auStack_64._4_4_,\"..\\\\engine\\\\fileio.cpp\",0xc4);",
+      "type": "unknown_field"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 523,
-      "match": "unaff_EBP",
-      "text": "shape_memdbg_cpp_closeFile_FUN_0050f9b0(unaff_EBP,\"..\\\\engine\\\\fileio.cpp\",0xc4);",
-      "type": "unaffected_reg"
+      "description": "Unknown/mangled field access",
+      "line": 547,
+      "match": "._0_4_",
+      "text": "if ((FILE *)auStack_64._0_4_ != (FILE *)0x0) {",
+      "type": "unknown_field"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 525,
-      "match": "unaff_ESI",
-      "text": "if (unaff_ESI != (FILE *)0x0) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 526,
-      "match": "unaff_ESI",
-      "text": "shape_memdbg_cpp_closeFile_FUN_0050f9b0(unaff_ESI,\"..\\\\engine\\\\fileio.cpp\",0xc4);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 528,
-      "match": "unaff_EDI",
-      "text": "if (unaff_EDI != (FILE *)0x0) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 529,
-      "match": "unaff_EDI",
-      "text": "shape_memdbg_cpp_closeFile_FUN_0050f9b0(unaff_EDI,\"..\\\\engine\\\\fileio.cpp\",0xc4);",
-      "type": "unaffected_reg"
-    },
-    {
-      "call_address": "004b4378",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0",
-      "return_address": "004b437d",
-      "target_address": "0x49f0f0",
-      "target_function": "shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0",
-      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 at 004b4378",
-      "type": "call_variadic"
-    },
-    {
-      "call_address": "004b43ba",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "004b43bf",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 004b43ba",
-      "type": "call_variadic"
-    },
-    {
-      "call_address": "004b43d8",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
-      "return_address": "004b43dd",
-      "target_address": "0x5fdbd0",
-      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
-      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 004b43d8",
-      "type": "call_variadic"
-    },
-    {
-      "call_address": "004b44a2",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
-      "return_address": "004b44a7",
-      "target_address": "0x49e740",
-      "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
-      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 004b44a2",
-      "type": "call_variadic"
-    },
-    {
-      "call_address": "004b44c9",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
-      "return_address": "004b44ce",
-      "target_address": "0x49e740",
-      "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
-      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 004b44c9",
-      "type": "call_variadic"
-    },
-    {
-      "call_address": "004b4660",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
-      "return_address": "004b4665",
-      "target_address": "0x5fdbd0",
-      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
-      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 004b4660",
-      "type": "call_variadic"
-    },
-    {
-      "call_address": "004b4760",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
-      "return_address": "004b4765",
-      "target_address": "0x49e740",
-      "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
-      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 004b4760",
-      "type": "call_variadic"
-    },
-    {
-      "call_address": "004b4829",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
-      "return_address": "004b482e",
-      "target_address": "0x49e740",
-      "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
-      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 004b4829",
-      "type": "call_variadic"
-    },
-    {
-      "call_address": "004b48f8",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "004b48fd",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 004b48f8",
-      "type": "call_variadic"
-    },
-    {
-      "call_address": "004b4a4f",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
-      "return_address": "004b4a54",
-      "target_address": "0x49e740",
-      "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
-      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 004b4a4f",
-      "type": "call_variadic"
-    },
-    {
-      "call_address": "004b4b1a",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
-      "return_address": "004b4b1f",
-      "target_address": "0x49e740",
-      "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
-      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 004b4b1a",
-      "type": "call_variadic"
-    },
-    {
-      "call_address": "004b4bd4",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
-      "return_address": "004b4bd9",
-      "target_address": "0x49e740",
-      "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
-      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 004b4bd4",
-      "type": "call_variadic"
-    },
-    {
-      "call_address": "004b4c39",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
-      "return_address": "004b4c3e",
-      "target_address": "0x49e740",
-      "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
-      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 004b4c39",
-      "type": "call_variadic"
-    },
-    {
-      "call_address": "004b4c80",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
-      "return_address": "004b4c85",
-      "target_address": "0x5fdbd0",
-      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
-      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 004b4c80",
-      "type": "call_variadic"
-    },
-    {
-      "call_address": "004b4dc1",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
-      "return_address": "004b4dc6",
-      "target_address": "0x49e740",
-      "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
-      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 004b4dc1",
-      "type": "call_variadic"
-    },
-    {
-      "call_address": "004b4e19",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
-      "return_address": "004b4e1e",
-      "target_address": "0x49e740",
-      "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
-      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 004b4e19",
-      "type": "call_variadic"
-    },
-    {
-      "call_address": "004b4eaf",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
-      "return_address": "004b4eb4",
-      "target_address": "0x5fe6d0",
-      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
-      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 004b4eaf",
-      "type": "call_variadic"
-    },
-    {
-      "call_address": "004b4f45",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
-      "return_address": "004b4f4a",
-      "target_address": "0x49e740",
-      "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
-      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 004b4f45",
-      "type": "call_variadic"
-    },
-    {
-      "call_address": "004b5009",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0",
-      "return_address": "004b500e",
-      "target_address": "0x49e6f0",
-      "target_function": "shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0",
-      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0 at 004b5009",
-      "type": "call_variadic"
+      "description": "Unknown/mangled field access",
+      "line": 549,
+      "match": "._0_4_",
+      "text": "((FILE *)auStack_64._0_4_,\"..\\\\engine\\\\fileio.cpp\",0xc4);",
+      "type": "unknown_field"
     }
   ]
 }

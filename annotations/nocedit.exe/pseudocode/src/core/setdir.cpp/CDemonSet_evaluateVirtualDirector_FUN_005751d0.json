@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 745,
-    "complexity_score": 547,
+    "complexity_score": 522,
     "cross_reference_count": 8,
     "function_call_count": 11,
     "global_count": 53,
     "pseudocode_lines": 312,
-    "suspect_count": 20,
+    "suspect_count": 18,
     "suspect_types": [
       "badspacebase",
-      "call_variadic",
       "pointer_cast",
       "register_param",
       "stack_ref",
@@ -464,6 +463,12 @@
     "00575416": [
       "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
     ],
+    "0057552c": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
+    ],
+    "005755f9": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
+    ],
     "00575845": [
       "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffea0,4)"
     ],
@@ -527,7 +532,7 @@
       "frame_offset": 352,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 005752a0, ADD ESP at 005752a3",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -538,7 +543,7 @@
       "frame_offset": 352,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 00575413, ADD ESP at 00575416",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 4,
@@ -549,7 +554,7 @@
       "frame_offset": 352,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 00575842, ADD ESP at 00575845",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -560,7 +565,39 @@
       "frame_offset": 352,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 0057589c, ADD ESP at 005758a6",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "00575527",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "0057552c",
+      "frame_offset": 352,
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0057552c",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00575527 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "005755f4",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "005755f9",
+      "frame_offset": 352,
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "005755f9",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005755f4 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
     }
   ],
   "stack_frame": {
@@ -685,28 +722,28 @@
       "description": "Unknown/mangled field access",
       "line": 102,
       "match": "._4_4_",
-      "text": "fStack_74 = (float)local_cc._4_4_ + CStack_c0.y;",
+      "text": "fStack_74 = (float)local_cc._4_4_ + CStack_bc.x;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 103,
       "match": "._4_4_",
-      "text": "fStack_8c = ((float)local_cc._4_4_ + CStack_c0.y) * 0.5f;",
+      "text": "fStack_8c = ((float)local_cc._4_4_ + CStack_bc.x) * 0.5f;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 104,
       "match": "._8_4_",
-      "text": "fStack_70 = (float)local_cc._8_4_ + CStack_c0.z;",
+      "text": "fStack_70 = (float)local_cc._8_4_ + CStack_bc.y;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 105,
       "match": "._8_4_",
-      "text": "fStack_88 = ((float)local_cc._8_4_ + CStack_c0.z) * 0.5f;",
+      "text": "fStack_88 = ((float)local_cc._8_4_ + CStack_bc.y) * 0.5f;",
       "type": "unknown_field"
     },
     {
@@ -785,32 +822,6 @@
       "match": "1.4013e-45",
       "text": "fStack_38 = 1.4013e-45;",
       "type": "suspect_float"
-    },
-    {
-      "call_address": "00575527",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "0057552c",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00575527",
-      "type": "call_variadic"
-    },
-    {
-      "call_address": "005755f4",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "005755f9",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005755f4",
-      "type": "call_variadic"
     }
   ]
 }

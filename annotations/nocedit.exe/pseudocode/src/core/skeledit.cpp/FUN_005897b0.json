@@ -8,8 +8,8 @@
     "pseudocode_lines": 110,
     "suspect_count": 4,
     "suspect_types": [
-      "call_variadic",
-      "unaffected_reg"
+      "unaffected_reg",
+      "variadic_preserve"
     ],
     "total_lines": 420
   },
@@ -224,28 +224,30 @@
     {
       "call_address": "0058980f",
       "caller_has_stack_issues": false,
-      "description": "Variadic function call may destabilize ESP tracking",
+      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
       "match": "CALL crt_stdio.c_fscanf_FUN_005fe7c0",
+      "prologue_offset": 20,
       "return_address": "00589814",
       "target_address": "0x5fe7c0",
       "target_function": "crt_stdio.c_fscanf_FUN_005fe7c0",
-      "text": "Call to variadic function crt_stdio.c_fscanf_FUN_005fe7c0 at 0058980f",
-      "type": "call_variadic"
+      "text": "Call to variadic function crt_stdio.c_fscanf_FUN_005fe7c0 at 0058980f (no EBP frame)",
+      "type": "variadic_preserve"
     },
     {
       "call_address": "00589961",
       "caller_has_stack_issues": false,
-      "description": "Variadic function call may destabilize ESP tracking",
+      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
       "match": "CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0",
+      "prologue_offset": 20,
       "return_address": "00589966",
       "target_address": "0x49e6a0",
       "target_function": "shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0",
-      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 at 00589961",
-      "type": "call_variadic"
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 at 00589961 (no EBP frame)",
+      "type": "variadic_preserve"
     }
   ]
 }

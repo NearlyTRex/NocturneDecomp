@@ -8,9 +8,9 @@
     "pseudocode_lines": 117,
     "suspect_count": 35,
     "suspect_types": [
-      "call_variadic",
       "stack_param",
-      "unaffected_reg"
+      "unaffected_reg",
+      "variadic_preserve"
     ],
     "total_lines": 437
   },
@@ -466,28 +466,30 @@
     {
       "call_address": "005c5c2e",
       "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
+      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
       "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "prologue_offset": 20,
       "return_address": "005c5c33",
       "target_address": "0x49e740",
       "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
-      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 005c5c2e",
-      "type": "call_variadic"
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 005c5c2e (no EBP frame)",
+      "type": "variadic_preserve"
     },
     {
       "call_address": "005c5c7f",
       "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
+      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
       "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "prologue_offset": 20,
       "return_address": "005c5c84",
       "target_address": "0x49e740",
       "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
-      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 005c5c7f",
-      "type": "call_variadic"
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 005c5c7f (no EBP frame)",
+      "type": "variadic_preserve"
     }
   ]
 }

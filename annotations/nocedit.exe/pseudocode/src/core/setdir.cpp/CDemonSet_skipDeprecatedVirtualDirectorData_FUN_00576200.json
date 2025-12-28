@@ -9,10 +9,10 @@
     "suspect_count": 12,
     "suspect_types": [
       "badspacebase",
-      "call_variadic",
       "register_param",
       "stack_ref",
-      "unaffected_reg"
+      "unaffected_reg",
+      "variadic_preserve"
     ],
     "total_lines": 93
   },
@@ -206,28 +206,30 @@
     {
       "call_address": "00576232",
       "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
+      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
       "match": "CALL crt_stdio.c_fscanf_FUN_005fe7c0",
+      "prologue_offset": 280,
       "return_address": "00576237",
       "target_address": "0x5fe7c0",
       "target_function": "crt_stdio.c_fscanf_FUN_005fe7c0",
-      "text": "Call to variadic function crt_stdio.c_fscanf_FUN_005fe7c0 at 00576232",
-      "type": "call_variadic"
+      "text": "Call to variadic function crt_stdio.c_fscanf_FUN_005fe7c0 at 00576232 (no EBP frame)",
+      "type": "variadic_preserve"
     },
     {
       "call_address": "00576255",
       "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
+      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
       "match": "CALL crt_stdio.c_fscanf_FUN_005fe7c0",
+      "prologue_offset": 280,
       "return_address": "0057625a",
       "target_address": "0x5fe7c0",
       "target_function": "crt_stdio.c_fscanf_FUN_005fe7c0",
-      "text": "Call to variadic function crt_stdio.c_fscanf_FUN_005fe7c0 at 00576255",
-      "type": "call_variadic"
+      "text": "Call to variadic function crt_stdio.c_fscanf_FUN_005fe7c0 at 00576255 (no EBP frame)",
+      "type": "variadic_preserve"
     }
   ]
 }

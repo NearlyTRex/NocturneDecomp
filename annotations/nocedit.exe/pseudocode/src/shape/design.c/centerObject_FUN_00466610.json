@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 361,
-    "complexity_score": 166,
+    "complexity_score": 132,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 10,
-    "pseudocode_lines": 121,
-    "suspect_count": 3,
+    "pseudocode_lines": 102,
+    "suspect_count": 2,
     "suspect_types": [
       "badspacebase",
-      "call_variadic",
       "register_param"
     ],
-    "total_lines": 482
+    "total_lines": 463
   },
   "cross_references": [
     {
@@ -150,6 +149,11 @@
     "declared_params": 0,
     "estimated_params": 0
   },
+  "pcode_overrides": {
+    "00466788": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff4c,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.397849462365591,
     "instruction_count": 279,
@@ -192,6 +196,24 @@
     },
     "pcode_op_count": 1785
   },
+  "resolved_suspects": [
+    {
+      "add_esp_value": 16,
+      "call_address": "00466783",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "00466788",
+      "frame_offset": 180,
+      "match": "CALL crt_stdio.c_sscanf_FUN_0060013c",
+      "return_address": "00466788",
+      "target_address": "0x60013c",
+      "target_function": "crt_stdio.c_sscanf_FUN_0060013c",
+      "text": "Call to variadic function crt_stdio.c_sscanf_FUN_0060013c at 00466783 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 200,
     "local_size": 200,
@@ -316,30 +338,17 @@
   "suspects": [
     {
       "description": "Ghidra failed to resolve stack frame",
-      "line": 10,
+      "line": 7,
       "match": "BADSPACEBASE",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "badspacebase"
     },
     {
       "description": "Inferred register parameter",
-      "line": 10,
+      "line": 7,
       "match": "in_ESP",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "register_param"
-    },
-    {
-      "call_address": "00466783",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL crt_stdio.c_sscanf_FUN_0060013c",
-      "return_address": "00466788",
-      "target_address": "0x60013c",
-      "target_function": "crt_stdio.c_sscanf_FUN_0060013c",
-      "text": "Call to variadic function crt_stdio.c_sscanf_FUN_0060013c at 00466783",
-      "type": "call_variadic"
     }
   ]
 }

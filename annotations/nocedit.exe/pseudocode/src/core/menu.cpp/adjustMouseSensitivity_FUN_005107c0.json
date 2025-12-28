@@ -1,18 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 240,
-    "complexity_score": 148,
+    "complexity_score": 95,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 14,
-    "pseudocode_lines": 83,
-    "suspect_count": 5,
+    "pseudocode_lines": 80,
+    "suspect_count": 1,
     "suspect_types": [
-      "call_variadic",
-      "stack_param",
       "sub_artifact"
     ],
-    "total_lines": 323
+    "total_lines": 320
   },
   "cross_references": [
     {
@@ -205,6 +203,9 @@
     "005108bb": [
       "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
     ],
+    "005109a3": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
+    ],
     "005109b8": [
       "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
     ],
@@ -267,7 +268,7 @@
       "frame_offset": 16,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 0051089e, ADD ESP at 005108a1",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -278,7 +279,7 @@
       "frame_offset": 16,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 005108b8, ADD ESP at 005108bb",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -289,7 +290,7 @@
       "frame_offset": 16,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 005109b5, ADD ESP at 005109b8",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -300,7 +301,7 @@
       "frame_offset": 16,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 005109ca, ADD ESP at 005109cd",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -311,7 +312,23 @@
       "frame_offset": 16,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 005109e2, ADD ESP at 005109e5",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
+    },
+    {
+      "add_esp_value": 36,
+      "call_address": "0051099e",
+      "caller_has_stack_issues": false,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "fix_address": "005109a3",
+      "frame_offset": 16,
+      "match": "CALL engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30",
+      "return_address": "005109a3",
+      "target_address": "0x4cdf30",
+      "target_function": "engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30",
+      "text": "Call to variadic function engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30 at 0051099e (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
     }
   ],
   "stack_frame": {
@@ -363,45 +380,11 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_ffffffec",
-      "text": "CKeys *in_stack_ffffffec;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 41,
-      "match": "in_stack_ffffffec",
-      "text": "if ((CKeys *)g_MouseX != in_stack_ffffffec) {",
-      "type": "stack_param"
-    },
-    {
       "description": "Decompiler double/longlong extraction artifact",
-      "line": 73,
+      "line": 72,
       "match": "SUB84",
       "text": "SUB84 /* extract 2-byte value */(dVar1,0));",
       "type": "sub_artifact"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 76,
-      "match": "in_stack_ffffffec",
-      "text": "in_stack_ffffffec = g_CKeysPtr;",
-      "type": "stack_param"
-    },
-    {
-      "call_address": "0051099e",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "match": "CALL engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30",
-      "return_address": "005109a3",
-      "target_address": "0x4cdf30",
-      "target_function": "engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30",
-      "text": "Call to variadic function engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30 at 0051099e",
-      "type": "call_variadic"
     }
   ]
 }

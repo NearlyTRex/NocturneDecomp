@@ -8,7 +8,7 @@
     "pseudocode_lines": 17,
     "suspect_count": 2,
     "suspect_types": [
-      "call_variadic"
+      "variadic_preserve"
     ],
     "total_lines": 69
   },
@@ -131,28 +131,30 @@
     {
       "call_address": "005dca76",
       "caller_has_stack_issues": false,
-      "description": "Variadic function call may destabilize ESP tracking",
+      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
       "match": "CALL engine_2d.c_drawTextRightAlignedColorFormatted_FUN_00402580",
+      "prologue_offset": 20,
       "return_address": "005dca7b",
       "target_address": "0x402580",
       "target_function": "engine_2d.c_drawTextRightAlignedColorFormatted_FUN_00402580",
-      "text": "Call to variadic function engine_2d.c_drawTextRightAlignedColorFormatted_FUN_00402580 at 005dca76",
-      "type": "call_variadic"
+      "text": "Call to variadic function engine_2d.c_drawTextRightAlignedColorFormatted_FUN_00402580 at 005dca76 (no EBP frame)",
+      "type": "variadic_preserve"
     },
     {
       "call_address": "005dcaa0",
       "caller_has_stack_issues": false,
-      "description": "Variadic function call may destabilize ESP tracking",
+      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
       "match": "CALL engine_2d.c_drawTextRightAlignedColorFormatted_FUN_00402580",
+      "prologue_offset": 20,
       "return_address": "005dcaa5",
       "target_address": "0x402580",
       "target_function": "engine_2d.c_drawTextRightAlignedColorFormatted_FUN_00402580",
-      "text": "Call to variadic function engine_2d.c_drawTextRightAlignedColorFormatted_FUN_00402580 at 005dcaa0",
-      "type": "call_variadic"
+      "text": "Call to variadic function engine_2d.c_drawTextRightAlignedColorFormatted_FUN_00402580 at 005dcaa0 (no EBP frame)",
+      "type": "variadic_preserve"
     }
   ]
 }

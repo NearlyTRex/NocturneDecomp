@@ -1,15 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 79,
-    "complexity_score": 55,
+    "complexity_score": 40,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 5,
     "pseudocode_lines": 40,
-    "suspect_count": 1,
-    "suspect_types": [
-      "call_variadic"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 119
   },
   "cross_references": [
@@ -78,6 +76,11 @@
     "declared_params": 2,
     "estimated_params": 2
   },
+  "pcode_overrides": {
+    "004677a3": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffec,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.885245901639344,
     "instruction_count": 61,
@@ -115,6 +118,24 @@
     },
     "pcode_op_count": 298
   },
+  "resolved_suspects": [
+    {
+      "add_esp_value": 4,
+      "call_address": "0046779e",
+      "caller_has_stack_issues": false,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "004677a3",
+      "frame_offset": 20,
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "004677a3",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0046779e (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 48,
     "local_size": 40,
@@ -173,19 +194,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "call_address": "0046779e",
-      "caller_has_stack_issues": false,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "004677a3",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0046779e",
-      "type": "call_variadic"
-    }
-  ]
+  "suspects": []
 }

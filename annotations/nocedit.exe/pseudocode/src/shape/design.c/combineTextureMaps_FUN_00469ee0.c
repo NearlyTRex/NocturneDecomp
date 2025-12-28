@@ -17,6 +17,7 @@ void __cdecl shape_design_c_combineTextureMaps_FUN_00469ee0(void)
   char *pcVar5;
   char *pcVar6;
   byte bVar7;
+  char local_134 [80];
   char local_e4 [80];
   char local_94 [80];
   int local_44;
@@ -25,7 +26,7 @@ void __cdecl shape_design_c_combineTextureMaps_FUN_00469ee0(void)
   int local_38;
   int local_34;
   float local_30;
-  float local_2c;
+  float local_2c [3];
   float local_20;
   float local_1c;
   float local_18;
@@ -50,17 +51,18 @@ void __cdecl shape_design_c_combineTextureMaps_FUN_00469ee0(void)
       g_CurrentLineNumber = 0x25a2;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Bad name");
     }
-    crt_stdio_c_fscanf_FUN_005fe7c0(local_40,"%s\n");
-    crt_stdio_c_fscanf_FUN_005fe7c0(local_40,"%f,%f\n");
-    crt_stdio_c_fscanf_FUN_005fe7c0(local_40,"%d\n");
+    crt_stdio_c_fscanf_FUN_005fe7c0(local_40,"%s\n",local_134);
+    crt_stdio_c_fscanf_FUN_005fe7c0(local_40,"%f,%f\n",&local_30,local_2c);
+    crt_stdio_c_fscanf_FUN_005fe7c0(local_40,"%d\n",&local_44);
     for (local_38 = 0; local_38 < local_44; local_38 = local_38 + 1) {
-      crt_stdio_c_fscanf_FUN_005fe7c0(local_40,"%s\n");
-      crt_stdio_c_fscanf_FUN_005fe7c0(local_40,"%f,%f,%f,%f\n");
+      crt_stdio_c_fscanf_FUN_005fe7c0(local_40,"%s\n",local_e4);
+      crt_stdio_c_fscanf_FUN_005fe7c0
+                (local_40,"%f,%f,%f,%f\n",&local_20,&local_1c,&local_18,&local_14);
       for (local_34 = 0; local_34 < g_PolygonCount; local_34 = local_34 + 1) {
         iVar4 = crt_string_c_strcmp_FUN_005fef20(g_ModelPolygonData[local_34].texture_name,local_e4)
         ;
         if (iVar4 == 0) {
-          pcVar5 = &stack0xfffffecc;
+          pcVar5 = local_134;
           pcVar6 = g_ModelPolygonData[local_34].texture_name;
           do {
             cVar2 = *pcVar5;
@@ -79,7 +81,7 @@ void __cdecl shape_design_c_combineTextureMaps_FUN_00469ee0(void)
                    g_ModelPolygonData[local_34].uv_u[local_3c] * (float)0.0039215686274509803 +
                   local_20) / local_30) * (float)255;
             g_ModelPolygonData[local_34].uv_v[local_3c] =
-                 ((local_14 * fVar1 * fVar3 + local_1c) / local_2c) * (float)255;
+                 ((local_14 * fVar1 * fVar3 + local_1c) / local_2c[0]) * (float)255;
           }
         }
       }

@@ -1,21 +1,21 @@
 {
   "complexity": {
     "assembly_lines": 278,
-    "complexity_score": 425,
+    "complexity_score": 416,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 19,
-    "pseudocode_lines": 115,
-    "suspect_count": 28,
+    "pseudocode_lines": 116,
+    "suspect_count": 27,
     "suspect_types": [
       "badspacebase",
-      "call_variadic",
       "param_count_too_few",
       "register_param",
       "stack_param",
+      "unaffected_reg",
       "unknown_field"
     ],
-    "total_lines": 393
+    "total_lines": 394
   },
   "cross_references": [
     {
@@ -222,6 +222,15 @@
   "pcode_overrides": {
     "0053faf1": [
       "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffb4,4)"
+    ],
+    "0053fb2e": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffb4,4)"
+    ],
+    "0053fb56": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffb4,4)"
+    ],
+    "0053fb7e": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffb4,4)"
     ]
   },
   "pcode_summary": {
@@ -275,7 +284,55 @@
       "frame_offset": 76,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 0053faee, ADD ESP at 0053faf1",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "0053fb29",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "0053fb2e",
+      "frame_offset": 76,
+      "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "return_address": "0053fb2e",
+      "target_address": "0x49e740",
+      "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 0053fb29 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "0053fb51",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "0053fb56",
+      "frame_offset": 76,
+      "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "return_address": "0053fb56",
+      "target_address": "0x49e740",
+      "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 0053fb51 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "0053fb79",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "0053fb7e",
+      "frame_offset": 76,
+      "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "return_address": "0053fb7e",
+      "target_address": "0x49e740",
+      "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 0053fb79 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
     }
   ],
   "stack_frame": {
@@ -411,155 +468,169 @@
       "type": "register_param"
     },
     {
+      "description": "Unaffected register variable",
+      "line": 10,
+      "match": "unaff_EBP",
+      "text": "int unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 15,
       "match": "in_stack_00000004",
       "text": "CNetGame *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 16,
       "match": "in_stack_00000008",
       "text": "uint32_t *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 26,
+      "line": 27,
       "match": "in_stack_00000004",
       "text": "core_netgame_cpp_CNetGame_FUN_0053fd00(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 27,
+      "line": 28,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->player_count = 0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 30,
+      "line": 31,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->local_player_index = iVar2;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 36,
+      "line": 37,
       "match": "in_stack_00000008",
       "text": "((SNetworkAddr *)(auStack_33 + 3),in_stack_00000008,0x1ddf);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 39,
+      "line": 40,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->connection_type = 2;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 41,
+      "line": 42,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->network_mode = 1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 42,
+      "line": 43,
       "match": "in_stack_00000004",
       "text": "*(uint *)in_stack_00000004->padding = uVar3;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 49,
+      "line": 50,
       "match": "in_stack_00000004",
       "text": "if (-1 < *(int *)in_stack_00000004->padding) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 50,
+      "line": 51,
       "match": "in_stack_00000004",
       "text": "pcStack_14 = in_stack_00000004->network_data;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 63,
+      "line": 64,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->players[in_stack_00000004->local_player_index].name + 0x14);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 63,
+      "line": 64,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->players[in_stack_00000004->local_player_index].name + 0x14);",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 64,
+      "line": 65,
       "match": "._0_4_",
       "text": "auStack_33._0_4_ =",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 66,
+      "line": 67,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->players[in_stack_00000004->local_player_index].name + 0x18);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 66,
+      "line": 67,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->players[in_stack_00000004->local_player_index].name + 0x18);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 82,
+      "line": 83,
       "match": "in_stack_00000004",
       "text": "core_netgame_cpp_CNetGame_receivePackets_FUN_005405b0(in_stack_00000004);",
       "type": "stack_param"
     },
     {
+      "description": "Unaffected register variable",
+      "line": 85,
+      "match": "unaff_EBP",
+      "text": "g_ForceMessagePump = unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
       "description": "Unresolved stack parameter",
-      "line": 91,
+      "line": 92,
       "match": "in_stack_00000004",
       "text": "core_netgame_cpp_CNetGame_FUN_0053fd00(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 99,
+      "line": 100,
       "match": "in_stack_00000004",
       "text": "core_netgame_cpp_CNetGame_FUN_0053fd00(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 111,
+      "line": 112,
       "match": "in_stack_00000004",
       "text": "core_netgame_cpp_CNetGame_FUN_0053fd00(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 114,
+      "line": 115,
       "match": "in_stack_00000004",
       "text": "} while (-1 < *(int *)in_stack_00000004->padding);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 116,
+      "line": 117,
       "match": "in_stack_00000004",
       "text": "core_netgame_cpp_CNetGame_FUN_0053fd00(in_stack_00000004);",
       "type": "stack_param"
@@ -574,45 +645,6 @@
       "param_delta": 3,
       "text": "Function declares 0 params but call sites push 3 (3 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "call_address": "0053fb29",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
-      "return_address": "0053fb2e",
-      "target_address": "0x49e740",
-      "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
-      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 0053fb29",
-      "type": "call_variadic"
-    },
-    {
-      "call_address": "0053fb51",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
-      "return_address": "0053fb56",
-      "target_address": "0x49e740",
-      "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
-      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 0053fb51",
-      "type": "call_variadic"
-    },
-    {
-      "call_address": "0053fb79",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
-      "return_address": "0053fb7e",
-      "target_address": "0x49e740",
-      "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
-      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 0053fb79",
-      "type": "call_variadic"
     }
   ]
 }

@@ -14,13 +14,14 @@ uint core_netgame_cpp_initializeNetworkToJoin_FUN_0053f900(void)
   int iVar2;
   uint uVar3;
   BADSPACEBASE *in_ESP;
+  int unaff_EBP;
   char *pcVar4;
   uint uVar5;
   char *pcVar6;
   byte bVar7;
   CNetGame *in_stack_00000004;
   uint32_t *in_stack_00000008;
-  float local_5c;
+  float fVar8;
   int local_4f;
   char acStack_4b [7];
   SNetworkAddr SStack_44;
@@ -57,14 +58,14 @@ uint core_netgame_cpp_initializeNetworkToJoin_FUN_0053f900(void)
     pcStack_14 = in_stack_00000004->network_data;
     do {
       local_20[1] = g_CurrentGameTime - uVar5;
-      local_5c = (float)(int)(g_CurrentGameTime - uVar5) * (float)1.52587890625e-05;
-      if (local_5c < 0.0) {
-        local_5c = 0.0;
+      fVar8 = (float)(int)(g_CurrentGameTime - uVar5) * (float)1.52587890625e-05;
+      if (fVar8 < 0.0) {
+        fVar8 = 0.0;
       }
-      if ((float)30 < local_5c) {
-        local_5c = 30.0;
+      if ((float)30 < fVar8) {
+        fVar8 = 30.0;
       }
-      if ((float)0.20000000000000001 < local_5c) {
+      if ((float)0.20000000000000001 < fVar8) {
         (&local_4f)[(uint)bVar7 * -2] = local_20[(uint)bVar7 * -2];
         local_37 = *(uint *)
                     (in_stack_00000004->players[in_stack_00000004->local_player_index].name + 0x14);
@@ -88,7 +89,7 @@ uint core_netgame_cpp_initializeNetworkToJoin_FUN_0053f900(void)
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
       core_netgame_cpp_CNetGame_receivePackets_FUN_005405b0(in_stack_00000004);
       if (DAT_02f7c8bc == 1) {
-        g_ForceMessagePump = local_20[1];
+        g_ForceMessagePump = unaff_EBP;
         return 1;
       }
       if (DAT_02f7c8bc < 3) {

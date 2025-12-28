@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 1466,
-    "complexity_score": 1125,
+    "complexity_score": 1110,
     "cross_reference_count": 0,
     "function_call_count": 35,
     "global_count": 37,
     "pseudocode_lines": 650,
-    "suspect_count": 43,
+    "suspect_count": 42,
     "suspect_types": [
       "badspacebase",
-      "call_variadic",
       "extra_output",
       "pointer_cast",
       "register_param",
@@ -445,6 +444,9 @@
     "005e5b2f": [
       "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffdc4,4)"
     ],
+    "005e5fae": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffdc4,4)"
+    ],
     "005e66ad": [
       "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffdc4,4)"
     ],
@@ -509,7 +511,7 @@
       "frame_offset": 572,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 005e5b29, ADD ESP at 005e5b2f",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 12,
@@ -520,7 +522,7 @@
       "frame_offset": 572,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 005e66a7, ADD ESP at 005e66ad",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -531,7 +533,23 @@
       "frame_offset": 572,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 005e677e, ADD ESP at 005e6784",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "005e5fa9",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "005e5fae",
+      "frame_offset": 572,
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "005e5fae",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005e5fa9 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
     }
   ],
   "stack_frame": {
@@ -1323,19 +1341,6 @@
       "match": "in_stack_00000008",
       "text": "(float)in_stack_00000008 * (float)3;",
       "type": "stack_param"
-    },
-    {
-      "call_address": "005e5fa9",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "005e5fae",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005e5fa9",
-      "type": "call_variadic"
     }
   ],
   "vtable_info": {

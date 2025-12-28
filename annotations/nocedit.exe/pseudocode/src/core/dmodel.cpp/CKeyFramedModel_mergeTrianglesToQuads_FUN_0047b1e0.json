@@ -1,21 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 723,
-    "complexity_score": 528,
+    "complexity_score": 539,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 14,
-    "pseudocode_lines": 338,
-    "suspect_count": 16,
+    "pseudocode_lines": 344,
+    "suspect_count": 17,
     "suspect_types": [
       "badspacebase",
-      "call_variadic",
       "pointer_cast",
       "register_param",
       "stack_param",
       "unaffected_reg"
     ],
-    "total_lines": 1061
+    "total_lines": 1067
   },
   "cross_references": [
     {
@@ -197,6 +196,11 @@
     "declared_params": 2,
     "estimated_params": 2
   },
+  "pcode_overrides": {
+    "0047b2d3": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff04,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.915064102564102,
     "instruction_count": 624,
@@ -244,6 +248,24 @@
     },
     "pcode_op_count": 3691
   },
+  "resolved_suspects": [
+    {
+      "add_esp_value": 4,
+      "call_address": "0047b2ce",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "0047b2d3",
+      "frame_offset": 252,
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0047b2d3",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0047b2ce (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 292,
     "local_size": 284,
@@ -636,122 +658,123 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 19,
-      "match": "unaff_EBX",
-      "text": "float unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Ghidra failed to resolve stack frame",
-      "line": 21,
+      "line": 20,
       "match": "BADSPACEBASE",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "badspacebase"
     },
     {
       "description": "Inferred register parameter",
-      "line": 21,
+      "line": 20,
       "match": "in_ESP",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "register_param"
     },
     {
+      "description": "Unaffected register variable",
+      "line": 21,
+      "match": "unaff_EBP",
+      "text": "float unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
       "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_ffffff08",
-      "text": "double in_stack_ffffff08;",
+      "line": 29,
+      "match": "in_stack_fffffefc",
+      "text": "double in_stack_fffffefc;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 132,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)g_TriangleMatchTableA + local_34) * 0xc + 0x18)",
+      "line": 121,
+      "match": "(uchar *)((int)",
+      "text": "(*(uchar *)((int)local_4c + (int)puVar1) == puVar1[local_44])))) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 134,
+      "line": 135,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)g_TriangleMatchTableA + local_40) * 0xc + 0x18)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 137,
       "match": "(int *)((int)",
       "text": "*(int *)((int)g_TriangleMatchTableB + iVar11) * 0xc + 0x18))",
       "type": "pointer_cast"
     },
     {
       "description": "Unaffected register variable",
-      "line": 186,
-      "match": "unaff_EBX",
-      "text": "< unaff_EBX) goto LAB_0047b55a;",
+      "line": 189,
+      "match": "unaff_EBP",
+      "text": "< unaff_EBP) goto LAB_0047b55a;",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 191,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)aiStack_e0 + (int)fVar17) * 0xc);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 195,
-      "match": "(int *)((int)",
-      "text": "fVar4 = (float)(*(int *)((int)local_88.z + 4) - piVar14[1]);",
-      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 196,
       "match": "(int *)((int)",
-      "text": "fVar6 = (float)(*(int *)((int)local_88.z + 8) - piVar14[2]);",
+      "text": "*(int *)((int)aiStack_ec + (int)local_1c) * 0xc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 200,
+      "match": "(int *)((int)",
+      "text": "fVar4 = (float)(*(int *)((int)CStack_94.z + 4) - piVar14[1]);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 201,
+      "match": "(int *)((int)",
+      "text": "fVar6 = (float)(*(int *)((int)CStack_94.z + 8) - piVar14[2]);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 239,
-      "match": "in_stack_ffffff08",
-      "text": "in_stack_ffffff08 = in_stack_ffffff08 + local_f0;",
+      "line": 245,
+      "match": "in_stack_fffffefc",
+      "text": "in_stack_fffffefc = in_stack_fffffefc + dStack_fc;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 239,
-      "match": "in_stack_ffffff08",
-      "text": "in_stack_ffffff08 = in_stack_ffffff08 + local_f0;",
+      "line": 245,
+      "match": "in_stack_fffffefc",
+      "text": "in_stack_fffffefc = in_stack_fffffefc + dStack_fc;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 242,
-      "match": "in_stack_ffffff08",
-      "text": "if ((in_stack_ffffff08 < 6.2744586607402804) ||",
+      "line": 248,
+      "match": "in_stack_fffffefc",
+      "text": "if ((in_stack_fffffefc < 6.2744586607402804) ||",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 243,
-      "match": "in_stack_ffffff08",
-      "text": "(6.2919119532597199 < in_stack_ffffff08)) goto LAB_0047b55a;",
+      "line": 249,
+      "match": "in_stack_fffffefc",
+      "text": "(6.2919119532597199 < in_stack_fffffefc)) goto LAB_0047b55a;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 315,
+      "line": 294,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)this_ptr->poly_texture_index_list + iVar12) =",
+      "text": "local_4c = (uint *)((int)local_4c + 1);",
       "type": "pointer_cast"
     },
     {
-      "call_address": "0047b2ce",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "0047b2d3",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0047b2ce",
-      "type": "call_variadic"
+      "description": "Complex pointer cast",
+      "line": 321,
+      "match": "(uint *)((int)",
+      "text": "puStack_14 = (uint *)((int)this_ptr->poly_texture_index_list + iVar12);",
+      "type": "pointer_cast"
     }
   ]
 }

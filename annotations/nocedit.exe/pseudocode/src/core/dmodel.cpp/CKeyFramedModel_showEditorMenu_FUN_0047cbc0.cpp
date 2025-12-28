@@ -37,10 +37,9 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
   byte bVar15;
   float10 fVar16;
   double dVar17;
-  CGame *in_stack_fffff0da;
+  CGame *in_stack_fffff0ca;
   uint uVar18;
-  byte local_db0 [264];
-  int local_ca8;
+  SFoundFileInfo local_eb0;
   char local_c9c [260];
   char local_b98 [256];
   char local_a98 [256];
@@ -150,7 +149,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
   local_d8.y = 0.0;
   local_80 = 28.0;
   local_7c = 15.0;
-  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_fffff0da);
+  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_fffff0ca);
   local_6c = 0;
   local_68 = 0;
   local_64 = (uint)(0 < this_ptr->poly_count);
@@ -279,12 +278,11 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
       }
       crt_stdio_c_sprintf_FUN_005fdbd0(local_408,"T.  Transparent pixel (currently %s)",pcVar13);
       engine_2d_c_drawText_FUN_00401fd0(local_408,0,0x14a);
-      crt_stdio_c_sprintf_FUN_005fdbd0
-                (local_408,"Vertex count: %d",(short)this_ptr->vertex_count);
+      crt_stdio_c_sprintf_FUN_005fdbd0(local_408,"Vertex count: %d",this_ptr->vertex_count);
       engine_2d_c_drawText_FUN_00401fd0(local_408,0,g_WindowHeight + -0x2c);
-      crt_stdio_c_sprintf_FUN_005fdbd0(local_408,"Poly count: %d");
+      crt_stdio_c_sprintf_FUN_005fdbd0(local_408,"Poly count: %d",this_ptr->poly_count);
       engine_2d_c_drawText_FUN_00401fd0(local_408,0,g_WindowHeight + -0x21);
-      crt_stdio_c_sprintf_FUN_005fdbd0(local_408,"Frame count: %d");
+      crt_stdio_c_sprintf_FUN_005fdbd0(local_408,"Frame count: %d",this_ptr->frame_count);
       engine_2d_c_drawText_FUN_00401fd0(local_408,0,g_WindowHeight + -0x16);
     }
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
@@ -433,7 +431,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
     iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x3e);
     if (iVar8 != 0) {
       g_KeyFrameModelPoolEnd = (CKeyFramedModel *)(g_KeyFrameModelPoolEnd->model_filename + 1);
-      crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_02c14c88,"noc%d.pcx");
+      crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_02c14c88,"noc%d.pcx",g_KeyFrameModelPoolEnd);
       engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(&DAT_02c14c88);
     }
     iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x4c);
@@ -556,10 +554,11 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
                 crt_string_c_splitpath_FUN_005ff178
                           ("t:\\",local_18,local_998,local_698,local_b98);
                 crt_file_c_makepath_FUN_005febfc
-                          (&stack0xfffff150,(char *)0x0,"models",local_698,local_b98);
-                iVar8 = engine_dosio_c_findFile_FUN_00481760((SFoundFileInfo *)&stack0xfffff150);
-                if ((iVar8 == 0) || (local_ca8 == 0)) {
-                  iVar8 = core_dmodel_cpp_copyFile_FUN_0047c930("t:\\",&stack0xfffff150,1);
+                          (local_eb0.found_path,(char *)0x0,"models",local_698,local_b98);
+                iVar8 = engine_dosio_c_findFile_FUN_00481760(&local_eb0);
+                if ((iVar8 == 0) || (local_eb0.is_archive == 0)) {
+                  iVar8 = core_dmodel_cpp_copyFile_FUN_0047c930("t:\\",local_eb0.found_path,1)
+                  ;
                   if (iVar8 != 0) {
                     crt_file_c_makepath_FUN_005febfc
                               (local_408,(char *)0x0,(char *)0x0,local_698,local_b98);
@@ -583,8 +582,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
                 }
                 else {
                   shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-                            (g_CEditorToolsPtr,"%s is in mounted pod %s",&stack0xfffff150,
-                             local_db0);
+                            (g_CEditorToolsPtr,"%s is in mounted pod %s",&local_eb0,
+                             local_eb0.target_path);
                 }
               }
             }

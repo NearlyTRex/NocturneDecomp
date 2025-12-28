@@ -9,24 +9,20 @@
 int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(CNetGame *this_ptr,int sync_stage)
 
 {
-  bool bVar1;
+  float fVar1;
   int iVar2;
   int iVar3;
   CNetGame *pCVar4;
   BADSPACEBASE *in_ESP;
-  uint unaff_EBP;
-  float fStack_180;
-  char acStack_90 [4];
-  char acStack_8c [104];
+  float afStack_18c [62];
+  char local_94 [4];
+  char acStack_90 [108];
   int local_24;
   SNetPlayer *local_20;
-  uint local_18;
-  byte local_14;
-  uint uStack_13;
-  undefined3 uStack_f;
+  int local_1c;
+  float local_18;
+  int local_14;
   
-  uStack_13._3_1_ = (byte)unaff_EBP;
-  uStack_f = (undefined3)((uint)unaff_EBP >> 8);
   engine_2d_c_clearInputAndWait_FUN_00403260();
   if (sync_stage < 1) {
     g_CurrentFilename = "..\\core\\netgame.cpp";
@@ -54,42 +50,41 @@ int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(CNetGame *this_pt
     while( true ) {
       wincore_windll_cpp_clearScreen_FUN_005b3e70();
       crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffe70,"Syncing stage %d.",sync_stage);
-      engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe74,0,0xb);
+      engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe6c,0,0xb);
       engine_2d_c_drawText_FUN_00401fd0("Waiting on:",0,0x16);
-      bVar1 = true;
-      iVar2 = 0x21;
-      iVar3 = 0;
+      local_18 = 1.4013e-45;
+      local_14 = 0x21;
+      iVar2 = 0;
       pCVar4 = this_ptr;
       if (0 < this_ptr->player_count) {
         do {
           if (*(int *)(pCVar4->players[0].field5_0x38 + 4) < sync_stage) {
-            bVar1 = false;
-            engine_2d_c_drawText_FUN_00401fd0
-                      ((char *)(iVar3 * 0x78 + CONCAT31 /* combine 2-byte values */(uStack_f,uStack_13._3_1_)),0,iVar2);
-            crt_stdio_c_sprintf_FUN_005fdbd0
-                      (&stack0xfffffe74,"%d",
-                       *(uint *)(pCVar4->players[0].field5_0x38 + 4));
-            engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe78,200,0);
-            iVar2 = iVar2 + 0xb;
+            local_18 = 0.0;
+            engine_2d_c_drawText_FUN_00401fd0((char *)(iVar2 * 0x78 + local_1c),0,local_14);
+            crt_stdio_c_sprintf_FUN_005fdbd0((char *)afStack_18c,"%d");
+            engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe6c,200,(int)local_18);
+            local_14 = local_14 + 0xb;
           }
-          iVar3 = iVar3 + 1;
+          iVar2 = iVar2 + 1;
           pCVar4 = (CNetGame *)(pCVar4->players[0].field5_0x38 + 0x20);
-        } while (iVar3 < this_ptr->player_count);
+        } while (iVar2 < this_ptr->player_count);
       }
-      if (bVar1) break;
+      fVar1 = local_18;
+      if (local_18 != 0.0) break;
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
       core_netgame_cpp_CNetGame_receivePackets_FUN_005405b0(this_ptr);
-      fStack_180 = (float)(int)g_CurrentGameTime * (float)1.52587890625e-05;
-      if (fStack_180 < 0.0) {
-        fStack_180 = 0.0;
+      afStack_18c[0] = (float)(int)(g_CurrentGameTime - (int)local_18) * (float)1.52587890625e-05;
+      if (afStack_18c[0] < 0.0) {
+        afStack_18c[0] = fVar1;
       }
-      if ((float)30 < fStack_180) {
-        fStack_180 = 30.0;
+      if ((float)30 < afStack_18c[0]) {
+        afStack_18c[0] = 30.0;
       }
-      if ((float)0.10000000000000001 < fStack_180) {
-        local_14 = 8;
-        local_18 = 9;
-        uStack_13 = sync_stage;
+      if ((float)0.10000000000000001 < afStack_18c[0]) {
+        local_18 = (float)g_CurrentGameTime;
+        local_24 = 9;
+        local_20 = (SNetPlayer *)CONCAT31 /* combine 2-byte values */((int3)sync_stage,8);
+        local_1c._0_1_ = (byte)((uint)sync_stage >> 0x18);
         iVar2 = 0;
         pCVar4 = this_ptr;
         if (0 < this_ptr->player_count) {
@@ -119,7 +114,7 @@ int __cdecl core_netgame_cpp_CNetGame_syncPlayers_FUN_005401e0(CNetGame *this_pt
     while (g_RemoteSyncStage < sync_stage) {
       wincore_windll_cpp_clearScreen_FUN_005b3e70();
       crt_stdio_c_sprintf_FUN_005fdbd0(acStack_90,"Waiting on sync code %d from server...",sync_stage);
-      engine_2d_c_drawText_FUN_00401fd0(acStack_8c,0,0xb);
+      engine_2d_c_drawText_FUN_00401fd0(local_94,0,0xb);
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
       core_netgame_cpp_CNetGame_receivePackets_FUN_005405b0(this_ptr);
       iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);

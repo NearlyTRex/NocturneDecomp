@@ -642,8 +642,9 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
           local_228._4_4_ = (pSVar8->position).y;
           local_228._8_4_ = (pSVar8->position).z;
         }
+        in_stack_fffffd1a = (SRenderVertex *)&local_3c->rotation_matrix;
         pCVar5 = core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
-                           (&local_3c->rotation_matrix,&local_17c);
+                           ((CMatrix3x3f *)in_stack_fffffd1a,&local_17c);
         pSVar8 = local_3c;
         if ((CVector3f *)(local_228 + 0xc) != pCVar5) {
           local_228._12_4_ = pCVar5->x;
@@ -803,14 +804,14 @@ LAB_00583c6f:
        iVar6 != 0)) {
       iVar6 = this_ptr->vdir_box_count + -1;
       this_ptr->vdir_box_count = iVar6;
+      in_stack_fffffd06 = (SRenderVertex *)0x583cef;
       crt_string_c_memmove_FUN_005fe5e0
                 (local_40 + local_18,local_40 + local_18 + 1,(iVar6 - local_18) * 0x44);
       if (this_ptr->vdir_box_count <= iVar9) {
         local_18 = 0;
       }
     }
-    in_stack_fffffd1a = (SRenderVertex *)0x31;
-    in_stack_fffffd16 = (SRenderVertex *)g_CKeysPtr;
+    in_stack_fffffd16 = (SRenderVertex *)0x31;
     iVar9 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x31);
     if (iVar9 != 0) {
       local_18 = -1;

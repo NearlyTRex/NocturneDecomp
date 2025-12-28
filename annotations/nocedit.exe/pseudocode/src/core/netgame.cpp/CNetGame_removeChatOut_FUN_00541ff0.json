@@ -1,21 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 272,
-    "complexity_score": 270,
+    "complexity_score": 262,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 26,
-    "pseudocode_lines": 120,
+    "pseudocode_lines": 117,
     "suspect_count": 12,
     "suspect_types": [
       "badspacebase",
-      "call_variadic",
       "param_count_too_few",
       "pointer_cast",
       "register_param",
       "stack_param"
     ],
-    "total_lines": 392
+    "total_lines": 389
   },
   "cross_references": [
     {
@@ -234,6 +233,11 @@
     "declared_params": 0,
     "estimated_params": 1
   },
+  "pcode_overrides": {
+    "005421da": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffebc,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.63963963963964,
     "instruction_count": 222,
@@ -277,6 +281,24 @@
     },
     "pcode_op_count": 1252
   },
+  "resolved_suspects": [
+    {
+      "add_esp_value": 4,
+      "call_address": "005421d5",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "fix_address": "005421da",
+      "frame_offset": 324,
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "005421da",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005421d5 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 348,
     "local_size": 348,
@@ -460,52 +482,59 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 44,
+      "line": 43,
       "match": "in_stack_00000004",
-      "text": "local_3c = in_stack_00000004 + 0x20;",
+      "text": "local_38 = in_stack_00000004 + 0x20;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 58,
+      "line": 56,
       "match": "in_stack_00000004",
-      "text": "(local_24 = 0, 0 < *(int *)(in_stack_00000004 + 0x1c))) {",
+      "text": "(local_20 = 0, 0 < *(int *)(in_stack_00000004 + 0x1c))) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 61,
+      "line": 59,
       "match": "in_stack_00000004",
-      "text": "local_20 = in_stack_00000004;",
+      "text": "local_1c = in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 89,
+      "line": 86,
       "match": "(char *)((int)",
       "text": "cVar1 = *(char *)((int)piVar5 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 90,
+      "line": 87,
       "match": "(int *)((int)",
       "text": "piVar5 = (int *)((int)piVar5 + 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 99,
+      "line": 96,
       "match": "(int *)((int)",
-      "text": "local_1c = (int *)((int)local_1c + 1);",
+      "text": "local_18 = (int *)((int)local_18 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 103,
+      "line": 100,
       "match": "in_stack_00000004",
-      "text": "} while (local_24 < *(int *)(in_stack_00000004 + 0x1c));",
+      "text": "} while (local_20 < *(int *)(in_stack_00000004 + 0x1c));",
       "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 104,
+      "match": "(int *)((int)",
+      "text": "local_34 = (int *)((int)local_34 + 1);",
+      "type": "pointer_cast"
     },
     {
       "call_site_count": 1,
@@ -517,19 +546,6 @@
       "param_delta": 1,
       "text": "Function declares 0 params but call sites push 1 (1 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "call_address": "005421d5",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "005421da",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005421d5",
-      "type": "call_variadic"
     }
   ]
 }

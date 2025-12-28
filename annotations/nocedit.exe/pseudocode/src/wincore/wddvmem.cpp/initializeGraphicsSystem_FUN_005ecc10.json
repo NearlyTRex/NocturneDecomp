@@ -8,9 +8,9 @@
     "pseudocode_lines": 47,
     "suspect_count": 4,
     "suspect_types": [
-      "call_variadic",
       "param_count_too_few",
-      "pointer_cast"
+      "pointer_cast",
+      "variadic_preserve"
     ],
     "total_lines": 184
   },
@@ -256,28 +256,30 @@
     {
       "call_address": "005ecc9f",
       "caller_has_stack_issues": false,
-      "description": "Variadic function call may destabilize ESP tracking",
+      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
       "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "prologue_offset": 28,
       "return_address": "005ecca4",
       "target_address": "0x506f10",
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005ecc9f",
-      "type": "call_variadic"
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005ecc9f (no EBP frame)",
+      "type": "variadic_preserve"
     },
     {
       "call_address": "005ecd66",
       "caller_has_stack_issues": false,
-      "description": "Variadic function call may destabilize ESP tracking",
+      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
       "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "prologue_offset": 28,
       "return_address": "005ecd6b",
       "target_address": "0x506f10",
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005ecd66",
-      "type": "call_variadic"
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005ecd66 (no EBP frame)",
+      "type": "variadic_preserve"
     }
   ]
 }

@@ -8,11 +8,11 @@
     "pseudocode_lines": 45,
     "suspect_count": 16,
     "suspect_types": [
-      "call_variadic",
-      "callind_esp_no_frame",
+      "callind_preserve",
       "pointer_cast",
       "stack_param",
-      "unresolved_funcptr"
+      "unresolved_funcptr",
+      "variadic_preserve"
     ],
     "total_lines": 132
   },
@@ -203,7 +203,7 @@
       "prologue_offset": 28,
       "return_address": "005d265d",
       "text": "CALLIND at 005d265a, ADD ESP at 005d265d (no EBP frame)",
-      "type": "callind_esp_no_frame"
+      "type": "callind_preserve"
     },
     {
       "add_esp_value": 4,
@@ -219,7 +219,7 @@
       "prologue_offset": 28,
       "return_address": "005d2666",
       "text": "CALLIND at 005d2664, ADD ESP at 005d2666 (no EBP frame)",
-      "type": "callind_esp_no_frame"
+      "type": "callind_preserve"
     },
     {
       "add_esp_value": 12,
@@ -238,7 +238,7 @@
       "prologue_offset": 28,
       "return_address": "005d267b",
       "text": "CALLIND at 005d2678, ADD ESP at 005d267b (no EBP frame)",
-      "type": "callind_esp_no_frame"
+      "type": "callind_preserve"
     },
     {
       "add_esp_value": 12,
@@ -257,20 +257,21 @@
       "prologue_offset": 28,
       "return_address": "005d26d7",
       "text": "CALLIND at 005d26d4, ADD ESP at 005d26da (no EBP frame)",
-      "type": "callind_esp_no_frame"
+      "type": "callind_preserve"
     },
     {
       "call_address": "005d2709",
       "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
+      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
       "match": "CALL shape_superopt.cpp_logToFile_FUN_005c7910",
+      "prologue_offset": 28,
       "return_address": "005d270e",
       "target_address": "0x5c7910",
       "target_function": "shape_superopt.cpp_logToFile_FUN_005c7910",
-      "text": "Call to variadic function shape_superopt.cpp_logToFile_FUN_005c7910 at 005d2709",
-      "type": "call_variadic"
+      "text": "Call to variadic function shape_superopt.cpp_logToFile_FUN_005c7910 at 005d2709 (no EBP frame)",
+      "type": "variadic_preserve"
     }
   ]
 }

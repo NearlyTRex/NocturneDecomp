@@ -1,20 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 269,
-    "complexity_score": 206,
+    "complexity_score": 181,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 10,
-    "pseudocode_lines": 111,
-    "suspect_count": 7,
+    "pseudocode_lines": 116,
+    "suspect_count": 5,
     "suspect_types": [
       "badspacebase",
-      "call_variadic",
       "register_param",
-      "stack_ref",
       "suspect_float"
     ],
-    "total_lines": 380
+    "total_lines": 385
   },
   "cross_references": [],
   "function": {
@@ -150,6 +148,11 @@
     "declared_params": 1,
     "estimated_params": 1
   },
+  "pcode_overrides": {
+    "004618de": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffdf8,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.8796296296296298,
     "instruction_count": 216,
@@ -183,6 +186,24 @@
     },
     "pcode_op_count": 838
   },
+  "resolved_suspects": [
+    {
+      "add_esp_value": 20,
+      "call_address": "004618d9",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "004618de",
+      "frame_offset": 520,
+      "match": "CALL crt_stdio.c_sscanf_FUN_0060013c",
+      "return_address": "004618de",
+      "target_address": "0x60013c",
+      "target_function": "crt_stdio.c_sscanf_FUN_0060013c",
+      "text": "Call to variadic function crt_stdio.c_sscanf_FUN_0060013c at 004618d9 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 544,
     "local_size": 540,
@@ -383,38 +404,18 @@
       "type": "suspect_float"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 58,
-      "match": "&stack0xfffffdec",
-      "text": "((SShapeEditorPolygon *)&stack0xfffffdec);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Likely misinterpreted integer as float",
-      "line": 73,
+      "line": 77,
       "match": "1.23314e-43",
       "text": "if (local_28 == 1.23314e-43) {",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 82,
+      "line": 86,
       "match": "1.26117e-43",
       "text": "else if (local_28 == 1.26117e-43) {",
       "type": "suspect_float"
-    },
-    {
-      "call_address": "004618d9",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL crt_stdio.c_sscanf_FUN_0060013c",
-      "return_address": "004618de",
-      "target_address": "0x60013c",
-      "target_function": "crt_stdio.c_sscanf_FUN_0060013c",
-      "text": "Call to variadic function crt_stdio.c_sscanf_FUN_0060013c at 004618d9",
-      "type": "call_variadic"
     }
   ]
 }

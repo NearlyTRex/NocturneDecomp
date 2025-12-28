@@ -18,11 +18,13 @@ void __cdecl shape_design_c_tileTextureMaps_FUN_0046a180(char *model_name,int pr
   char *pcVar6;
   byte bVar7;
   double dVar8;
-  float fVar9;
-  float fVar10;
+  int min_v;
   int max_v;
+  float fVar9;
+  float local_1bc;
   float local_1b8;
-  float fVar11;
+  float local_1b4;
+  char local_1ac [200];
   char local_e4 [200];
   int local_1c;
   int local_14;
@@ -64,36 +66,34 @@ void __cdecl shape_design_c_tileTextureMaps_FUN_0046a180(char *model_name,int pr
   shape_design_c_normalizeUVCoordinates_FUN_0046e340();
   for (local_14 = 0; local_14 < g_PolygonCount; local_14 = local_14 + 1) {
     if (g_ModelPolygonData[local_14].texture_name[0] != '\0') {
-      fVar11 = g_ModelPolygonData[local_14].uv_u[0];
+      local_1b4 = g_ModelPolygonData[local_14].uv_u[0];
       local_1b8 = g_ModelPolygonData[local_14].uv_v[0];
-      fVar10 = g_ModelPolygonData[local_14].uv_u[0];
+      local_1bc = g_ModelPolygonData[local_14].uv_u[0];
       fVar9 = g_ModelPolygonData[local_14].uv_v[0];
       for (local_1c = 1; local_1c < (int)g_ModelPolygonData[local_14].vertex_indices_count;
           local_1c = local_1c + 1) {
-        if (g_ModelPolygonData[local_14].uv_u[local_1c] < fVar11) {
-          fVar11 = g_ModelPolygonData[local_14].uv_u[local_1c];
+        if (g_ModelPolygonData[local_14].uv_u[local_1c] < local_1b4) {
+          local_1b4 = g_ModelPolygonData[local_14].uv_u[local_1c];
         }
         if (g_ModelPolygonData[local_14].uv_v[local_1c] < local_1b8) {
           local_1b8 = g_ModelPolygonData[local_14].uv_v[local_1c];
         }
-        if (fVar10 < g_ModelPolygonData[local_14].uv_u[local_1c]) {
-          fVar10 = g_ModelPolygonData[local_14].uv_u[local_1c];
+        if (local_1bc < g_ModelPolygonData[local_14].uv_u[local_1c]) {
+          local_1bc = g_ModelPolygonData[local_14].uv_u[local_1c];
         }
         if (fVar9 < g_ModelPolygonData[local_14].uv_v[local_1c]) {
           fVar9 = g_ModelPolygonData[local_14].uv_v[local_1c];
         }
       }
       crt_math_c_round_FUN_005fe6b0((double)(fVar9 * 65536f));
-      fVar11 = 6.487317e-39;
-      dVar8 = crt_math_c_round_FUN_005fe6b0((double)(fVar10 * 65536f));
+      crt_math_c_round_FUN_005fe6b0((double)(local_1bc * 65536f));
       max_v = 0x46a41d;
-      dVar8 = crt_math_c_round_FUN_005fe6b0
-                        ((double)((float)(int)ROUND(dVar8) * 65536f));
+      dVar8 = crt_math_c_round_FUN_005fe6b0((double)(local_1b8 * 65536f));
       iVar2 = (int)ROUND(dVar8);
-      dVar8 = crt_math_c_round_FUN_005fe6b0((double)(fVar11 * 65536f));
+      min_v = 0x46a43a;
+      dVar8 = crt_math_c_round_FUN_005fe6b0((double)(local_1b4 * 65536f));
       shape_design_c_cramTextures_FUN_0046a970
-                (g_ModelPolygonData[local_14].texture_name,(int)ROUND(dVar8),(int)ROUND(dVar8),iVar2
-                 ,max_v);
+                (g_ModelPolygonData[local_14].texture_name,(int)ROUND(dVar8),min_v,iVar2,max_v);
     }
   }
   if (g_TextureProcessedCount == 0) {
@@ -116,9 +116,9 @@ void __cdecl shape_design_c_tileTextureMaps_FUN_0046a180(char *model_name,int pr
         if (-1 < iVar2) {
           for (local_1c = 0; local_1c < (int)g_ModelPolygonData[local_14].vertex_indices_count;
               local_1c = local_1c + 1) {
+            iVar2 = local_14 * 0x184 + 0x16e9a08 + local_1c * 4;
             shape_design_c_fixupCramUV_FUN_0046e090
-                      (iVar2,(float *)(local_14 * 0x184 + 0x16e9a08 + local_1c * 4),
-                       (float *)(local_14 * 0x184 + 0x16e9a48 + local_1c * 4));
+                      (iVar2,(float *)iVar2,(float *)(local_14 * 0x184 + 0x16e9a48 + local_1c * 4));
           }
           pcVar4 = g_ModelPolygonData[local_14].texture_name;
           pcVar5 = g_ModelPolygonData[local_14].lightmap_name;
@@ -172,9 +172,8 @@ LAB_0046a6ad:
         if (pcVar5 != (char *)0x0) {
           *pcVar5 = '\0';
         }
-        crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffe54,"Model name to save [%s] : ");
-        iVar2 = engine_2d_c_getInputWithPrompt_FUN_004032c0
-                          (g_LoadedModelName,0x27,0,0,&stack0xfffffe54);
+        crt_stdio_c_sprintf_FUN_005fdbd0(local_1ac,"Model name to save [%s] : ",local_e4);
+        iVar2 = engine_2d_c_getInputWithPrompt_FUN_004032c0(g_LoadedModelName,0x27,0,0,local_1ac);
         if (iVar2 == 0x1b) {
           pcVar4 = local_e4;
           pcVar5 = g_LoadedModelName;

@@ -1,21 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 250,
-    "complexity_score": 448,
+    "complexity_score": 202,
     "cross_reference_count": 0,
     "function_call_count": 14,
     "global_count": 31,
-    "pseudocode_lines": 88,
-    "suspect_count": 33,
+    "pseudocode_lines": 87,
+    "suspect_count": 9,
     "suspect_types": [
       "badspacebase",
-      "call_variadic",
       "register_param",
       "stack_param",
       "stack_ref",
       "unaffected_reg"
     ],
-    "total_lines": 338
+    "total_lines": 337
   },
   "cross_references": [],
   "function": {
@@ -297,6 +296,20 @@
     "declared_params": 0,
     "estimated_params": 0
   },
+  "pcode_overrides": {
+    "0053423a": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd8,4)"
+    ],
+    "00534315": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd8,4)"
+    ],
+    "00534492": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd8,4)"
+    ],
+    "005344ca": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd8,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.280788177339901,
     "instruction_count": 203,
@@ -337,6 +350,72 @@
     },
     "pcode_op_count": 869
   },
+  "resolved_suspects": [
+    {
+      "add_esp_value": 8,
+      "call_address": "00534235",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "fix_address": "0053423a",
+      "frame_offset": 40,
+      "match": "CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0",
+      "return_address": "0053423a",
+      "target_address": "0x49f0f0",
+      "target_function": "shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0",
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 at 00534235 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "00534310",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "fix_address": "00534315",
+      "frame_offset": 40,
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "00534315",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00534310 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 20,
+      "call_address": "0053448d",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "fix_address": "00534492",
+      "frame_offset": 40,
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "00534492",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0053448d (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "005344c5",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "005344ca",
+      "frame_offset": 40,
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "005344ca",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005344c5 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 68,
     "local_size": 68,
@@ -442,13 +521,6 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 10,
-      "match": "unaff_EBX",
-      "text": "int unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Ghidra failed to resolve stack frame",
       "line": 12,
       "match": "BADSPACEBASE",
@@ -465,236 +537,51 @@
     {
       "description": "Unaffected register variable",
       "line": 13,
-      "match": "unaff_EDI",
-      "text": "CMP3Decoder *unaff_EDI;",
+      "match": "unaff_EBP",
+      "text": "int unaff_EBP;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000008",
-      "text": "FILE *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_0000000c",
-      "text": "FILE *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 16,
-      "match": "in_stack_00000010",
-      "text": "CMP3Decoder *in_stack_00000010;",
+      "match": "in_stack_ffffffcc",
+      "text": "CMP3Decoder *in_stack_ffffffcc;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 17,
-      "match": "in_stack_00000018",
-      "text": "CMP3Decoder *in_stack_00000018;",
+      "match": "in_stack_ffffffd4",
+      "text": "int in_stack_ffffffd4;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_0000001c",
-      "text": "SIZE_T in_stack_0000001c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_00000020",
-      "text": "int in_stack_00000020;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_00000024",
-      "text": "int in_stack_00000024;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
       "line": 37,
-      "match": "unaff_EDI",
-      "text": "sound_mp3_cpp_CMP3Decoder_openFile_FUN_00534550(unaff_EDI,\"pixies.mp3\");",
-      "type": "unaffected_reg"
+      "match": "in_stack_ffffffcc",
+      "text": "sound_mp3_cpp_CMP3Decoder_openFile_FUN_00534550(in_stack_ffffffcc,\"pixies.mp3\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 39,
+      "match": "in_stack_ffffffd4",
+      "text": "file_ptr = (FILE *)(*(int *)(in_stack_ffffffd4 + 0x104) * 2);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 58,
+      "match": "&stack0xffffffc8",
+      "text": "crt_time_c_time_with_rounding_FUN_006001f0((time_t *)&stack0xffffffc8);",
+      "type": "stack_ref"
     },
     {
       "description": "Unaffected register variable",
-      "line": 39,
-      "match": "unaff_EBX",
-      "text": "samples_requested = (SIZE_T)(0x20000 / (longlong)(*(int *)(unaff_EBX + 0x104) * 2));",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 57,
-      "match": "&stack0xfffffff8",
-      "text": "crt_time_c_time_with_rounding_FUN_006001f0((time_t *)&stack0xfffffff8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 60,
-      "match": "in_stack_00000010",
-      "text": "(in_stack_00000010,(short *)g_MpegPCMDecodeTestBuffer,samples_requested);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 61,
-      "match": "in_stack_00000018",
-      "text": "if (in_stack_00000018 != (CMP3Decoder *)0x0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 63,
-      "match": "in_stack_0000001c",
-      "text": "(g_MpegPCMDecodeTestBuffer,size,in_stack_0000001c,(FILE *)in_stack_00000010);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 63,
-      "match": "in_stack_00000010",
-      "text": "(g_MpegPCMDecodeTestBuffer,size,in_stack_0000001c,(FILE *)in_stack_00000010);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 65,
-      "match": "in_stack_00000020",
-      "text": "iVar4 = iVar4 + in_stack_00000020 * size;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 66,
-      "match": "in_stack_0000001c",
-      "text": "if (in_stack_0000001c != 0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 67,
-      "match": "in_stack_00000024",
-      "text": "in_stack_00000024 = iVar4;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 72,
-      "match": "in_stack_0000000c",
-      "text": "shape_memdbg_cpp_closeFile_FUN_0050f9b0(in_stack_0000000c,\"..\\\\sound\\\\mp3.cpp\",0xde8);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 73,
-      "match": "in_stack_00000008",
-      "text": "shape_memdbg_cpp_closeFile_FUN_0050f9b0(in_stack_00000008,\"..\\\\sound\\\\mp3.cpp\",0xde9);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 76,
-      "match": "in_stack_00000018",
-      "text": "pCVar1 = sound_mp3_cpp_CMP3Decoder_dtor_FUN_00534530(in_stack_00000018);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 80,
-      "match": "in_stack_00000018",
-      "text": "if (in_stack_00000018 != (CMP3Decoder *)0x0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 81,
-      "match": "in_stack_00000018",
-      "text": "pCVar1 = sound_mp3_cpp_CMP3Decoder_dtor_FUN_00534530(in_stack_00000018);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 84,
-      "match": "&stack0x00000018",
-      "text": "crt_time_c_time_with_rounding_FUN_006001f0((time_t *)&stack0x00000018);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 85,
-      "match": "in_stack_0000001c",
-      "text": "iStack0000003c = in_stack_0000001c - (int)in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 85,
-      "match": "in_stack_00000018",
-      "text": "iStack0000003c = in_stack_0000001c - (int)in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "call_address": "00534235",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "match": "CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0",
-      "return_address": "0053423a",
-      "target_address": "0x49f0f0",
-      "target_function": "shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0",
-      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 at 00534235",
-      "type": "call_variadic"
-    },
-    {
-      "call_address": "00534310",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "00534315",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00534310",
-      "type": "call_variadic"
-    },
-    {
-      "call_address": "0053448d",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "00534492",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0053448d",
-      "type": "call_variadic"
-    },
-    {
-      "call_address": "005344c5",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "005344ca",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005344c5",
-      "type": "call_variadic"
+      "match": "unaff_EBP",
+      "text": "iVar5 = iVar5 + unaff_EBP * size;",
+      "type": "unaffected_reg"
     }
   ]
 }

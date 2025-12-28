@@ -8,9 +8,9 @@
     "pseudocode_lines": 70,
     "suspect_count": 12,
     "suspect_types": [
-      "call_variadic",
-      "callind_esp_no_frame",
-      "stack_param"
+      "callind_preserve",
+      "stack_param",
+      "variadic_preserve"
     ],
     "total_lines": 264
   },
@@ -402,33 +402,35 @@
       "prologue_offset": 20,
       "return_address": "005244c9",
       "text": "CALLIND at 005244c3, ADD ESP at 005244c9 (no EBP frame)",
-      "type": "callind_esp_no_frame"
+      "type": "callind_preserve"
     },
     {
       "call_address": "00524462",
       "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
+      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
       "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "prologue_offset": 20,
       "return_address": "00524467",
       "target_address": "0x506f10",
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00524462",
-      "type": "call_variadic"
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00524462 (no EBP frame)",
+      "type": "variadic_preserve"
     },
     {
       "call_address": "00524520",
       "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
+      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
       "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "prologue_offset": 20,
       "return_address": "00524525",
       "target_address": "0x506f10",
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00524520",
-      "type": "call_variadic"
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00524520 (no EBP frame)",
+      "type": "variadic_preserve"
     }
   ]
 }

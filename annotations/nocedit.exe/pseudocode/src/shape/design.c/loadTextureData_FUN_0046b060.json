@@ -1,24 +1,21 @@
 {
   "complexity": {
     "assembly_lines": 535,
-    "complexity_score": 418,
+    "complexity_score": 319,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 22,
-    "pseudocode_lines": 163,
-    "suspect_count": 21,
+    "pseudocode_lines": 169,
+    "suspect_count": 12,
     "suspect_types": [
       "badspacebase",
-      "call_variadic",
-      "concat_artifact",
       "param_count_too_few",
       "pointer_cast",
       "register_param",
       "stack_param",
-      "stack_ref",
-      "sub_artifact"
+      "stack_ref"
     ],
-    "total_lines": 698
+    "total_lines": 704
   },
   "cross_references": [
     {
@@ -258,6 +255,20 @@
     "declared_params": 5,
     "estimated_params": 6
   },
+  "pcode_overrides": {
+    "0046b0d9": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe8c,4)"
+    ],
+    "0046b183": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe8c,4)"
+    ],
+    "0046b264": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe8c,4)"
+    ],
+    "0046b29e": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe8c,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.488986784140969,
     "instruction_count": 454,
@@ -296,6 +307,72 @@
     },
     "pcode_op_count": 2492
   },
+  "resolved_suspects": [
+    {
+      "add_esp_value": 4,
+      "call_address": "0046b0d4",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "0046b0d9",
+      "frame_offset": 372,
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0046b0d9",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0046b0d4 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "0046b17e",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "0046b183",
+      "frame_offset": 372,
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0046b183",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0046b17e (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "0046b25f",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "0046b264",
+      "frame_offset": 372,
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "0046b264",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0046b25f (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "0046b299",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "0046b29e",
+      "frame_offset": 372,
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0046b29e",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0046b299 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 460,
     "local_size": 440,
@@ -567,93 +644,58 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 88,
+      "line": 94,
       "match": "(char *)((int)",
       "text": "iVar1 - local_44 != 0 && local_44 <= iVar1 && (*(char *)((int)local_24 + local_44) == '\\0'));",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 102,
+      "line": 110,
       "match": "in_stack_00000018",
       "text": "(double)in_stack_00000018 + 0.5);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 112,
+      "line": 122,
       "match": "in_stack_00000018",
       "text": "(double)in_stack_00000018 + 0.5);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 135,
-      "match": "&stack0xfffffe80",
-      "text": "atlas_height_00 = &stack0xfffffe80;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 136,
+      "line": 153,
       "match": "&stack0xfffffe7c",
-      "text": "atlas_width_00 = &stack0xfffffe7c;",
+      "text": "local_168,local_170,local_178,(int)&stack0xfffffe7c,(int)&local_180,local_154,",
       "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 147,
-      "match": "&stack0xfffffe84",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(blue_out,&stack0xfffffe84),(int)atlas_width_00,",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 147,
-      "match": "CONCAT44",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(blue_out,&stack0xfffffe84),(int)atlas_width_00,",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 148,
-      "match": "&stack0xfffffe84",
-      "text": "(int)atlas_height_00,red_out,&stack0xfffffe84,blue_out,SUB84 /* extract 2-byte value */(dVar2,0));",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 148,
-      "match": "SUB84",
-      "text": "(int)atlas_height_00,red_out,&stack0xfffffe84,blue_out,SUB84 /* extract 2-byte value */(dVar2,0));",
-      "type": "sub_artifact"
     },
     {
       "description": "Complex pointer cast",
-      "line": 157,
+      "line": 163,
       "match": "(char *)((int)",
-      "text": "*(char *)((int)rgb_buffer + local_14c) = (char)atlas_width_00;",
+      "text": "*(char *)((int)rgb_buffer + local_14c) = (char)uVar3;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 158,
-      "match": "(char *)((int)",
-      "text": "*(char *)((int)rgb_buffer + local_14c + 1) = (char)atlas_height_00;",
+      "line": 164,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)rgb_buffer + local_14c + 1) = (byte)local_180;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 159,
+      "line": 165,
       "match": "(byte *)((int)",
       "text": "*(byte *)((int)rgb_buffer + local_14c + 2) = local_154[0];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 160,
+      "line": 166,
       "match": "(byte *)((int)",
-      "text": "*(byte *)((int)alpha_buffer + local_150) = (byte)red_out;",
+      "text": "*(byte *)((int)alpha_buffer + local_150) = local_17c[0];",
       "type": "pointer_cast"
     },
     {
@@ -666,58 +708,6 @@
       "param_delta": 1,
       "text": "Function declares 5 params but call sites push 6 (1 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "call_address": "0046b0d4",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "0046b0d9",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0046b0d4",
-      "type": "call_variadic"
-    },
-    {
-      "call_address": "0046b17e",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "0046b183",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0046b17e",
-      "type": "call_variadic"
-    },
-    {
-      "call_address": "0046b25f",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
-      "return_address": "0046b264",
-      "target_address": "0x5fdbd0",
-      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
-      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0046b25f",
-      "type": "call_variadic"
-    },
-    {
-      "call_address": "0046b299",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "0046b29e",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0046b299",
-      "type": "call_variadic"
     }
   ]
 }

@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 185,
-    "complexity_score": 593,
+    "complexity_score": 607,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 10,
-    "pseudocode_lines": 73,
-    "suspect_count": 48,
+    "pseudocode_lines": 72,
+    "suspect_count": 50,
     "suspect_types": [
       "badspacebase",
-      "call_variadic",
       "extra_output",
       "pointer_cast",
       "register_param",
@@ -17,7 +16,7 @@
       "stack_ref",
       "unaffected_reg"
     ],
-    "total_lines": 258
+    "total_lines": 257
   },
   "cross_references": [
     {
@@ -143,6 +142,11 @@
       "value": null
     }
   ],
+  "pcode_overrides": {
+    "0055ff7e": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffe8,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.75,
     "instruction_count": 148,
@@ -183,6 +187,24 @@
     },
     "pcode_op_count": 703
   },
+  "resolved_suspects": [
+    {
+      "add_esp_value": 12,
+      "call_address": "0055ff79",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "0055ff7e",
+      "frame_offset": 24,
+      "match": "CALL crt_stdio.c_sscanf_FUN_0060013c",
+      "return_address": "0055ff7e",
+      "target_address": "0x60013c",
+      "target_function": "crt_stdio.c_sscanf_FUN_0060013c",
+      "text": "Call to variadic function crt_stdio.c_sscanf_FUN_0060013c at 0055ff79 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 44,
     "local_size": 44,
@@ -269,8 +291,8 @@
     {
       "description": "Unaffected register variable",
       "line": 14,
-      "match": "unaff_ESI",
-      "text": "int unaff_ESI;",
+      "match": "unaff_EDI",
+      "text": "int unaff_EDI;",
       "type": "unaffected_reg"
     },
     {
@@ -296,296 +318,304 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
+      "line": 20,
+      "match": "in_stack_ffffffe4",
+      "text": "int in_stack_ffffffe4;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 23,
       "match": "in_stack_00000004",
       "text": "if (((*(float *)((int)in_stack_00000004 + 0x454) < 0.0) &&",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 24,
+      "line": 23,
       "match": "(float *)((int)",
       "text": "if (((*(float *)((int)in_stack_00000004 + 0x454) < 0.0) &&",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 25,
+      "line": 24,
       "match": "in_stack_0000000c",
       "text": "(iVar2 = crt_stdio_c_sscanf_FUN_0060013c(in_stack_0000000c,&DAT_006431a0,&stack0xffffffd8),",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 25,
+      "line": 24,
       "match": "&stack0xffffffd8",
       "text": "(iVar2 = crt_stdio_c_sscanf_FUN_0060013c(in_stack_0000000c,&DAT_006431a0,&stack0xffffffd8),",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 27,
+      "line": 26,
       "match": "in_stack_0000000c",
       "text": "(fVar3 = core_sound_cpp_CSound_getSoundDuration_FUN_005b3ba0(g_CSoundPtr,in_stack_0000000c),",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 29,
+      "line": 28,
       "match": "in_stack_0000000c",
       "text": "shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&DAT_0310f4b0,in_stack_0000000c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 31,
+      "line": 30,
       "match": "in_stack_00000010",
       "text": "pcVar5 = in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 41,
+      "line": 37,
+      "match": "in_stack_ffffffe4",
+      "text": "in_stack_ffffffe4 = ~uVar4 - 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 40,
       "match": "in_stack_00000004",
       "text": "*(int *)((int)in_stack_00000004 + 4) = iVar2;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 40,
       "match": "(int *)((int)",
       "text": "*(int *)((int)in_stack_00000004 + 4) = iVar2;",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 48,
+      "line": 47,
       "match": "in_stack_00000004",
       "text": "*(int *)((int)in_stack_00000004 + 8) = iVar2;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 48,
+      "line": 47,
       "match": "(int *)((int)",
       "text": "*(int *)((int)in_stack_00000004 + 8) = iVar2;",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 49,
+      "line": 48,
       "match": "in_stack_00000004",
       "text": "if ((*(int *)((int)in_stack_00000004 + 0x14) == 0) &&",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 49,
+      "line": 48,
       "match": "(int *)((int)",
       "text": "if ((*(int *)((int)in_stack_00000004 + 0x14) == 0) &&",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 50,
+      "line": 49,
       "match": "in_stack_00000004",
       "text": "(*(int *)((int)in_stack_00000004 + 4) != *(int *)((int)in_stack_00000004 + 0xc))) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 50,
+      "line": 49,
       "match": "in_stack_00000004",
       "text": "(*(int *)((int)in_stack_00000004 + 4) != *(int *)((int)in_stack_00000004 + 0xc))) {",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 50,
+      "line": 49,
       "match": "(int *)((int)",
       "text": "(*(int *)((int)in_stack_00000004 + 4) != *(int *)((int)in_stack_00000004 + 0xc))) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 50,
+      "line": 49,
       "match": "(int *)((int)",
       "text": "(*(int *)((int)in_stack_00000004 + 4) != *(int *)((int)in_stack_00000004 + 0xc))) {",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 51,
+      "line": 50,
       "match": "in_stack_00000004",
       "text": "*(uint *)((int)in_stack_00000004 + 0x10) = 1;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 51,
+      "line": 50,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)in_stack_00000004 + 0x10) = 1;",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 52,
+      "line": 51,
       "match": "in_stack_00000004",
       "text": "*(uint *)((int)in_stack_00000004 + 0xc) = *(uint *)((int)in_stack_00000004 + 4);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 52,
+      "line": 51,
       "match": "in_stack_00000004",
       "text": "*(uint *)((int)in_stack_00000004 + 0xc) = *(uint *)((int)in_stack_00000004 + 4);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 52,
+      "line": 51,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)in_stack_00000004 + 0xc) = *(uint *)((int)in_stack_00000004 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 52,
+      "line": 51,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)in_stack_00000004 + 0xc) = *(uint *)((int)in_stack_00000004 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 55,
+      "line": 54,
       "match": "in_stack_00000004",
       "text": "pcVar5 = (char *)((int)in_stack_00000004 + 0x54);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 55,
+      "line": 54,
       "match": "(char *)((int)",
       "text": "pcVar5 = (char *)((int)in_stack_00000004 + 0x54);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 57,
+      "line": 56,
       "match": "in_stack_00000010",
       "text": "cVar1 = *in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 60,
+      "line": 59,
       "match": "in_stack_00000010",
       "text": "cVar1 = in_stack_00000010[1];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 61,
+      "line": 60,
       "match": "in_stack_00000010",
       "text": "in_stack_00000010 = in_stack_00000010 + 2;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 61,
+      "line": 60,
       "match": "in_stack_00000010",
       "text": "in_stack_00000010 = in_stack_00000010 + 2;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 65,
+      "line": 64,
       "match": "in_stack_00000004",
       "text": "if (*(int *)((int)in_stack_00000004 + 4) != 0) {",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 65,
+      "line": 64,
       "match": "(int *)((int)",
       "text": "if (*(int *)((int)in_stack_00000004 + 4) != 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 66,
+      "line": 65,
       "match": "in_stack_00000004",
-      "text": "*(int *)(*(int *)((int)in_stack_00000004 + 4) + 0x2618) = iVar7;",
+      "text": "*(int *)(*(int *)((int)in_stack_00000004 + 4) + 0x2618) = in_stack_ffffffe4;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 65,
+      "match": "in_stack_ffffffe4",
+      "text": "*(int *)(*(int *)((int)in_stack_00000004 + 4) + 0x2618) = in_stack_ffffffe4;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 66,
+      "line": 65,
       "match": "(int *)((int)",
-      "text": "*(int *)(*(int *)((int)in_stack_00000004 + 4) + 0x2618) = iVar7;",
+      "text": "*(int *)(*(int *)((int)in_stack_00000004 + 4) + 0x2618) = in_stack_ffffffe4;",
       "type": "pointer_cast"
     },
     {
       "description": "Unaffected register variable",
-      "line": 68,
-      "match": "unaff_ESI",
-      "text": "if (unaff_ESI != 0) {",
+      "line": 67,
+      "match": "unaff_EDI",
+      "text": "if (unaff_EDI != 0) {",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 71,
+      "line": 70,
       "match": "in_stack_00000004",
       "text": "core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,in_stack_00000004,in_stack_0000000c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 71,
+      "line": 70,
       "match": "in_stack_0000000c",
       "text": "core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,in_stack_00000004,in_stack_0000000c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 72,
+      "line": 71,
       "match": "in_stack_00000004",
       "text": "*(uint *)((int)in_stack_00000004 + 0x24) = extraout_EAX;",
       "type": "stack_param"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 72,
+      "line": 71,
       "match": "extraout_EAX",
       "text": "*(uint *)((int)in_stack_00000004 + 0x24) = extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Complex pointer cast",
-      "line": 72,
+      "line": 71,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)in_stack_00000004 + 0x24) = extraout_EAX;",
       "type": "pointer_cast"
     },
     {
       "description": "Unaffected register variable",
-      "line": 76,
-      "match": "unaff_ESI",
-      "text": "return unaff_ESI;",
+      "line": 75,
+      "match": "unaff_EDI",
+      "text": "return unaff_EDI;",
       "type": "unaffected_reg"
-    },
-    {
-      "call_address": "0055ff79",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL crt_stdio.c_sscanf_FUN_0060013c",
-      "return_address": "0055ff7e",
-      "target_address": "0x60013c",
-      "target_function": "crt_stdio.c_sscanf_FUN_0060013c",
-      "text": "Call to variadic function crt_stdio.c_sscanf_FUN_0060013c at 0055ff79",
-      "type": "call_variadic"
     }
   ]
 }

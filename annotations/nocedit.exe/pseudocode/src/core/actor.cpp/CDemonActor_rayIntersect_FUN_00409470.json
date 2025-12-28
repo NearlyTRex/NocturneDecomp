@@ -1,16 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 343,
-    "complexity_score": 315,
+    "complexity_score": 295,
     "cross_reference_count": 3,
     "function_call_count": 14,
     "global_count": 12,
     "pseudocode_lines": 160,
-    "suspect_count": 13,
+    "suspect_count": 11,
     "suspect_types": [
       "badspacebase",
-      "call_variadic",
       "register_param",
+      "stack_param",
       "stack_ref",
       "unknown_field"
     ],
@@ -197,6 +197,9 @@
   "pcode_overrides": {
     "004095ab": [
       "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff58,4)"
+    ],
+    "004096f1": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff58,4)"
     ]
   },
   "pcode_summary": {
@@ -246,7 +249,23 @@
       "frame_offset": 168,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 004095a8, ADD ESP at 004095ab",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "004096ec",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "004096f1",
+      "frame_offset": 168,
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "004096f1",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 004096ec (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
     }
   ],
   "stack_frame": {
@@ -466,87 +485,67 @@
       "type": "register_param"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_ffffff50",
+      "text": "CVector3f *in_stack_ffffff50;",
+      "type": "stack_param"
+    },
+    {
       "description": "Unknown/mangled field access",
-      "line": 41,
+      "line": 39,
       "match": "._12_4_",
-      "text": "local_6c._12_4_ = ray_origin->x;",
+      "text": "auStack_7c._12_4_ = ray_origin->x;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 99,
-      "match": "._4_4_",
-      "text": "auStack_94._4_4_ = fVar3;",
+      "line": 71,
+      "match": "._8_4_",
+      "text": "auStack_7c._8_4_ =",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 73,
+      "match": "in_stack_ffffff50",
+      "text": "(this_ptr_00,pCVar3,(CVector3f *)out_normal,in_stack_ffffff50);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 81,
+      "match": "._8_4_",
+      "text": "auStack_7c._8_4_ =",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 89,
+      "match": "._8_4_",
+      "text": "auStack_7c._8_4_ =",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 101,
-      "match": "._0_8_",
-      "text": "local_a0._0_8_ = (ulonglong)(float)auStack_94._4_4_;",
+      "match": "._4_4_",
+      "text": "if (((float)auStack_a4._4_4_ < 0.0) || (1.0 < (float)auStack_a4._4_4_)) {",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 101,
       "match": "._4_4_",
-      "text": "local_a0._0_8_ = (ulonglong)(float)auStack_94._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 102,
-      "match": "._0_8_",
-      "text": "if (((double)local_a0._0_8_ < 0.0) || (1.0 < (double)local_a0._0_8_)) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 102,
-      "match": "._0_8_",
-      "text": "if (((double)local_a0._0_8_ < 0.0) || (1.0 < (double)local_a0._0_8_)) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 121,
-      "match": "._0_8_",
-      "text": "local_a0._0_8_ = (ulonglong)CStack_8c.min.y;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 122,
-      "match": "._0_8_",
-      "text": "if ((double)local_a0._0_8_ < 0.0) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 125,
-      "match": "._0_8_",
-      "text": "if (1.0 < (double)local_a0._0_8_) {",
+      "text": "if (((float)auStack_a4._4_4_ < 0.0) || (1.0 < (float)auStack_a4._4_4_)) {",
       "type": "unknown_field"
     },
     {
       "description": "Direct stack address reference",
-      "line": 150,
+      "line": 148,
       "match": "&stack0x00000000",
-      "text": "if ((int *)&stack0x00000000 != &g_DeformableModelCount) {",
+      "text": "if ((SLod *)&stack0x00000000 != g_DeformableModelPool[0].lod_info + 1) {",
       "type": "stack_ref"
-    },
-    {
-      "call_address": "004096ec",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "004096f1",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 004096ec",
-      "type": "call_variadic"
     }
   ]
 }

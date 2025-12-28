@@ -1,20 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 266,
-    "complexity_score": 199,
+    "complexity_score": 163,
     "cross_reference_count": 3,
     "function_call_count": 8,
     "global_count": 37,
-    "pseudocode_lines": 104,
-    "suspect_count": 7,
+    "pseudocode_lines": 108,
+    "suspect_count": 4,
     "suspect_types": [
       "badspacebase",
-      "call_variadic",
       "register_param",
-      "stack_param",
-      "stack_ref"
+      "stack_param"
     ],
-    "total_lines": 370
+    "total_lines": 374
   },
   "cross_references": [
     {
@@ -314,6 +312,11 @@
       "value": null
     }
   ],
+  "pcode_overrides": {
+    "0044801c": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff10,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.886877828054299,
     "instruction_count": 221,
@@ -355,6 +358,24 @@
     },
     "pcode_op_count": 1080
   },
+  "resolved_suspects": [
+    {
+      "add_esp_value": 48,
+      "call_address": "00448017",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "fix_address": "0044801c",
+      "frame_offset": 240,
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "0044801c",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00448017 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 300,
     "local_size": 284,
@@ -486,58 +507,31 @@
   "suspects": [
     {
       "description": "Ghidra failed to resolve stack frame",
-      "line": 20,
+      "line": 15,
       "match": "BADSPACEBASE",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "badspacebase"
     },
     {
       "description": "Inferred register parameter",
-      "line": 20,
+      "line": 15,
       "match": "in_ESP",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "register_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
-      "match": "in_stack_ffffff1c",
-      "text": "int in_stack_ffffff1c;",
+      "line": 17,
+      "match": "in_stack_fffffe9e",
+      "text": "int in_stack_fffffe9e;",
       "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 51,
-      "match": "&stack0xffffff08",
-      "text": "(&stack0xffffff08,\"CramTex II %s:  N=%d  Map %d/%d  Coverage: %4.1f%%  Shrink: %4.1f%%  Size: %u (%u)\\n\",pcVar6,g_CramTextureCount,",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 58,
-      "match": "&stack0xffffff08",
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff08,0,0);",
-      "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 81,
-      "match": "in_stack_ffffff1c",
-      "text": "((SCramWorkingEntry *)completion_mode,10,0x36,draw_y,draw_width,in_stack_ffffff1c)",
+      "line": 86,
+      "match": "in_stack_fffffe9e",
+      "text": "in_stack_fffffe9e);",
       "type": "stack_param"
-    },
-    {
-      "call_address": "00448017",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
-      "return_address": "0044801c",
-      "target_address": "0x5fdbd0",
-      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
-      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00448017",
-      "type": "call_variadic"
     }
   ]
 }

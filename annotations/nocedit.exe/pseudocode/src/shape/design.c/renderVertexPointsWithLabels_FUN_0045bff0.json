@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 299,
-    "complexity_score": 145,
+    "complexity_score": 130,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 23,
     "pseudocode_lines": 75,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
       "badspacebase",
-      "call_variadic",
       "register_param",
       "stack_ref"
     ],
@@ -234,6 +233,11 @@
     "declared_params": 0,
     "estimated_params": 0
   },
+  "pcode_overrides": {
+    "0045c2bd": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff88,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.725961538461538,
     "instruction_count": 208,
@@ -277,6 +281,24 @@
     },
     "pcode_op_count": 1399
   },
+  "resolved_suspects": [
+    {
+      "add_esp_value": 12,
+      "call_address": "0045c2b8",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "0045c2bd",
+      "frame_offset": 120,
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "0045c2bd",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0045c2b8 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 140,
     "local_size": 140,
@@ -382,7 +404,7 @@
       "description": "Direct stack address reference",
       "line": 59,
       "match": "&stack0xffffff78",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff78,\"%d\",local_20);",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff78,\"%d\");",
       "type": "stack_ref"
     },
     {
@@ -391,19 +413,6 @@
       "match": "&stack0xffffff78",
       "text": "engine_2d_c_drawTextColor_FUN_00402430(&stack0xffffff78,local_1c + 1,local_18 + 1);",
       "type": "stack_ref"
-    },
-    {
-      "call_address": "0045c2b8",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
-      "return_address": "0045c2bd",
-      "target_address": "0x5fdbd0",
-      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
-      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0045c2b8",
-      "type": "call_variadic"
     }
   ]
 }

@@ -4,58 +4,60 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  stack_param                    36773 ( 54.8%)
-  pointer_cast                    5276 (  7.9%)
-  call_variadic                   4149 (  6.2%)
-  stack_ref                       3983 (  5.9%)
-  unknown_field                   2955 (  4.4%)
-  unaffected_reg                  2778 (  4.1%)
-  register_param                  1834 (  2.7%)
-  concat_artifact                 1831 (  2.7%)
-  badspacebase                    1622 (  2.4%)
-  extra_output                    1443 (  2.2%)
-  callind_esp_no_frame            1078 (  1.6%)
-  suspect_float                    859 (  1.3%)
-  param_count_too_few              631 (  0.9%)
-  unresolved_funcptr               474 (  0.7%)
-  negative_offset                  416 (  0.6%)
-  sub_artifact                     322 (  0.5%)
+  stack_param                    36328 ( 55.7%)
+  pointer_cast                    5330 (  8.2%)
+  stack_ref                       3865 (  5.9%)
+  unknown_field                   3025 (  4.6%)
+  variadic_preserve               2788 (  4.3%)
+  unaffected_reg                  2690 (  4.1%)
+  register_param                  1837 (  2.8%)
+  concat_artifact                 1833 (  2.8%)
+  badspacebase                    1625 (  2.5%)
+  extra_output                    1441 (  2.2%)
+  callind_preserve                1078 (  1.7%)
+  suspect_float                    844 (  1.3%)
+  param_count_too_few              631 (  1.0%)
+  unresolved_funcptr               479 (  0.7%)
+  negative_offset                  421 (  0.6%)
+  sub_artifact                     376 (  0.6%)
   warning_overlapping_globals      219 (  0.3%)
-  warning_unreachable              134 (  0.2%)
-  undefined_type                   110 (  0.2%)
+  warning_unreachable              133 (  0.2%)
+  undefined_type                   108 (  0.2%)
   param_count_too_many              89 (  0.1%)
+  variadic_preserve_ebp             38 (  0.1%)
   sborrow_artifact                  26 (  0.0%)
-  callind_esp_no_frame_lost         19 (  0.0%)
+  callind_preserve_lost             19 (  0.0%)
   warning_jumptable                 12 (  0.0%)
   warning_indirect_jump             12 (  0.0%)
   undefined_ptr_cast                 5 (  0.0%)
   warning_noreturn                   4 (  0.0%)
+  variadic_anchor                    2 (  0.0%)
 
 ====================================================================================================
-TYPE: stack_param (36773 occurrences)
+TYPE: stack_param (36328 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  15483x  in_stack_00000004
-  6599x  in_stack_00000008
-  3142x  in_stack_0000000c
-  1526x  in_stack_00000010
-   980x  in_stack_00000014
-   720x  in_stack_00000018
-   529x  in_stack_0000001c
-   377x  in_stack_00000020
-   344x  in_stack_00000024
-   268x  in_stack_00000028
-   192x  in_stack_00000030
-   183x  in_stack_0000002c
-   169x  in_stack_0000003c
-   163x  in_stack_00000034
-   147x  in_stack_00000038
-   100x  in_stack_00000048
-    96x  in_stack_00000040
-    88x  in_stack_0000005c
-    82x  in_stack_0000004c
-    73x  in_stack_00000044
+  15529x  in_stack_00000004
+  6636x  in_stack_00000008
+  3157x  in_stack_0000000c
+  1559x  in_stack_00000010
+   968x  in_stack_00000014
+   702x  in_stack_00000018
+   518x  in_stack_0000001c
+   368x  in_stack_00000020
+   335x  in_stack_00000024
+   258x  in_stack_00000028
+   186x  in_stack_00000030
+   181x  in_stack_0000002c
+   154x  in_stack_00000034
+   136x  in_stack_0000003c
+   121x  in_stack_00000038
+    91x  in_stack_00000048
+    86x  in_stack_00000040
+    72x  in_stack_0000005c
+    71x  in_stack_00000044
+    57x  in_stack_fffeeba6
 
 Example functions:
   cockpit_ckptutil.c_rotateBitmap_FUN_00434870
@@ -70,30 +72,30 @@ Example functions:
     int in_stack_0000001c;...
 
 ====================================================================================================
-TYPE: pointer_cast (5276 occurrences)
+TYPE: pointer_cast (5330 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  1806x  (uint *)((int)
-  1197x  (int *)((int)
-   487x  (float *)((int)
+  1803x  (uint *)((int)
+  1214x  (int *)((int)
+   484x  (float *)((int)
    256x  (SRenderVertex *)((int)
    224x  (double *)((int)
-   216x  (byte *)((int)
-   214x  (void *)((int)
-   150x  (char *)((int)
+   218x  (byte *)((int)
+   212x  (void *)((int)
+   163x  (char *)((int)
     71x  (ushort *)((int)
-    63x  (CMatrix3x4f *)((int)
-    48x  (CVector3f *)((int)
-    47x  (short *)((int)
+    64x  (CMatrix3x4f *)((int)
+    50x  (short *)((int)
+    49x  (CVector3f *)((int)
     34x  (SShapeEditorPolygon *)((int)
-    27x  (FILE *)((int)
-    17x  (CDemonActor *)((int)
+    34x  (FILE *)((int)
+    19x  (CDemonActor *)((int)
+    18x  (CStrList_vtable *)((int)
     15x  (SMRGLHeaderExtended *)((int)
     14x  (HGLOBAL *)((int)
     14x  (CVector3i *)((int)
     13x  (CMatrix3x3f *)((int)
-    13x  (CQuaternion4f *)((int)
 
 Example functions:
   entry
@@ -106,70 +108,30 @@ Example functions:
     pvVar2 = (void *)((int)g_ScreenBufferArray[width] + dest_y);...
 
 ====================================================================================================
-TYPE: call_variadic (4149 occurrences)
+TYPE: stack_ref (3865 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  1244x  CALL core_main.c_displayErrorAndQuit_FUN_00506f10
-   935x  CALL crt_stdio.c_sprintf_FUN_005fdbd0
-   693x  CALL crt_stdio.c_fprintf_FUN_005fe6d0
-   378x  CALL crt_stdio.c_fscanf_FUN_005fe7c0
-   288x  CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
-   185x  CALL crt_stdio.c_sscanf_FUN_0060013c
-   162x  CALL engine_console.cpp_CConsole_printf_FUN_00441890
-    75x  CALL sound_sndmain.cpp_logSoundError_FUN_005adba0
-    47x  CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0
-    23x  CALL shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
-    23x  CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
-    22x  CALL shape_superopt.cpp_logToFile_FUN_005c7910
-    19x  CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0
-    12x  CALL shape_memdbg.cpp_traceMemory_FUN_0050f150
-     7x  CALL shape_memdbg.cpp_traceFile_FUN_0050f180
-     4x  CALL shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870
-     3x  CALL engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30
-     2x  CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_00489450
-     2x  CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_00489520
-     2x  CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredPrintf_FUN_004895f0
-
-Example functions:
-  cockpit_ckptutil.c_rotateBitmap_FUN_00434870
-    Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00434980...
-  cockpit_ckptutil.c_loadEdgeListFile_FUN_004331f0
-    Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0043322e...
-  cockpit_ckptutil.c_readBitmapFile_FUN_00431870
-    Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 004318af...
-  cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690
-    Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0043471b...
-  cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0
-    Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00431b92...
-  cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730
-    Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00435857...
-
-====================================================================================================
-TYPE: stack_ref (3983 occurrences)
-====================================================================================================
-
-Unique patterns:
-   115x  &stack0xfffffff0
+   109x  &stack0xfffffff0
     94x  &stack0xfffffff4
-    91x  &stack0xfffffff8
+    88x  &stack0xfffffff8
     76x  &stack0x00000000
     72x  &stack0xfffffffc
-    59x  &stack0xffffff48
-    57x  &stack0xffffffec
-    55x  &stack0xffffffc0
-    53x  &stack0xffffffd0
+    58x  &stack0xffffffec
+    54x  &stack0xffffff48
+    53x  &stack0xffffffc0
+    52x  &stack0xffffffd0
     51x  &stack0xffffffe8
     47x  &stack0xffffffd8
     46x  &stack0xffffffe4
     45x  &stack0xffffff9c
     44x  &stack0xffffff90
     44x  &stack0xffffff78
-    40x  &stack0xffffffe0
-    36x  &stack0xfffffee4
-    36x  &stack0x00000034
+    39x  &stack0xffffffe0
+    35x  &stack0x00000034
     34x  &stack0xffffffdc
     34x  &stack0xffffffd4
+    33x  &stack0xffffff84
 
 Example functions:
   entry
@@ -186,58 +148,96 @@ Example functions:
     pcVar7 = &stack0xffffff54;...
 
 ====================================================================================================
-TYPE: unknown_field (2955 occurrences)
+TYPE: unknown_field (3025 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  1126x  ._0_4_
-  1044x  ._4_4_
-   339x  ._8_4_
+  1167x  ._0_4_
+  1101x  ._4_4_
+   345x  ._8_4_
    100x  ._12_4_
-    52x  ._16_4_
-    33x  ._20_4_
-    28x  ._2_2_
-    28x  ._28_4_
+    50x  ._16_4_
+    32x  ._24_4_
+    31x  ._2_2_
+    31x  ._20_4_
     27x  ._0_1_
-    27x  ._32_4_
-    23x  ._24_4_
-    22x  ._0_2_
-    18x  ._3_1_
-    14x  ._36_4_
-    12x  ._1_1_
-     9x  ._2_1_
-     8x  ._80_4_
-     7x  ._0_8_
-     6x  ._40_4_
+    26x  ._0_2_
+    20x  ._28_4_
+    15x  ._3_1_
+    14x  ._32_4_
+    11x  ._1_1_
+     9x  ._36_4_
+     8x  ._2_1_
      5x  ._4_8_
+     3x  ._20_8_
+     3x  ._1032_4_
+     2x  ._4_1_
 
 Example functions:
-  shape_meshlod.cpp_CLodMesh_buildSpatialGrid_FUN_00516620
-    local_24._0_1_ = '\0';...
   shape_meshlod.cpp_CLodMesh_eqLoad_FUN_0051cdf0
-    dVar6 = (double)CONCAT44 /* combine 2-byte values */(9.9999999999999997e+34._4_4...
+    (local_38._4_4_,0xf0,"..\\shape\\meshlod.cpp",0x13e4);...
   shape_meshlod.cpp_CLodMesh_processGridCell_FUN_0051a030
     ((int)this_ptr->tri_data->attribute_indices + uStack_2c._4_4_),...
   shape_meshlod.cpp_CLodMesh_findMinimumCostEdge_FUN_00519680
     local_20 = 9.9999999999999997e+34._0_4_;...
   shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
-    local_44[3] = local_fc._4_4_;...
+    local_54[3] = uStack_10c._4_4_;...
   shape_meshlod.cpp_CLodMesh_evaluateEdgeCollapse_FUN_00516000
     local_5c * (float)local_6c._4_4_ + local_58 * (float)local_6c._8_4_ <=...
   shape_meshlod.cpp_CLodMesh_transformVerticesForPreview_FUN_0051e6b0
     local_18._0_4_ = (uint)ROUND(local_8 * 256f);...
   shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990
-    local_94._16_4_ = pCVar5->x;...
+    local_94._16_4_ = pCVar4->x;...
 
 ====================================================================================================
-TYPE: unaffected_reg (2778 occurrences)
+TYPE: variadic_preserve (2788 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   839x  unaff_ESI
-   673x  unaff_EBX
-   639x  unaff_EBP
-   604x  unaff_EDI
+  1023x  CALL core_main.c_displayErrorAndQuit_FUN_00506f10
+   535x  CALL crt_stdio.c_fprintf_FUN_005fe6d0
+   472x  CALL crt_stdio.c_sprintf_FUN_005fdbd0
+   336x  CALL crt_stdio.c_fscanf_FUN_005fe7c0
+   153x  CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
+    63x  CALL sound_sndmain.cpp_logSoundError_FUN_005adba0
+    43x  CALL engine_console.cpp_CConsole_printf_FUN_00441890
+    38x  CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0
+    26x  CALL crt_stdio.c_sscanf_FUN_0060013c
+    19x  CALL shape_superopt.cpp_logToFile_FUN_005c7910
+    14x  CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
+    12x  CALL shape_memdbg.cpp_traceMemory_FUN_0050f150
+    11x  CALL shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
+     7x  CALL shape_memdbg.cpp_traceFile_FUN_0050f180
+     6x  CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0
+     4x  CALL shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870
+     2x  CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_00489450
+     2x  CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_00489520
+     2x  CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredPrintf_FUN_004895f0
+     2x  CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCenteredPrintf_FUN_004896c0
+
+Example functions:
+  cockpit_ckptutil.c_rotateBitmap_FUN_00434870
+    Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00434980 (no EBP f...
+  cockpit_ckptutil.c_loadEdgeListFile_FUN_004331f0
+    Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0043322e (no EBP f...
+  cockpit_ckptutil.c_readBitmapFile_FUN_00431870
+    Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 004318af (no EBP f...
+  cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690
+    Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0043471b (no EBP f...
+  cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0
+    Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00431b92 (no EBP f...
+  cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730
+    Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00435857 (no EBP f...
+
+====================================================================================================
+TYPE: unaffected_reg (2690 occurrences)
+====================================================================================================
+
+Unique patterns:
+   825x  unaff_ESI
+   645x  unaff_EBX
+   615x  unaff_EBP
+   582x  unaff_EDI
      9x  unaff_BP
      9x  unaff_DI
      3x  unaff_SI
@@ -260,11 +260,11 @@ Example functions:
     int unaff_ESI;...
 
 ====================================================================================================
-TYPE: register_param (1834 occurrences)
+TYPE: register_param (1837 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  1624x  in_ESP
+  1627x  in_ESP
     86x  in_EAX
     39x  in_ECX
     20x  in_EDX
@@ -348,18 +348,18 @@ Example functions:
     BADSPACEBASE *in_ESP;...
 
 ====================================================================================================
-TYPE: concat_artifact (1831 occurrences)
+TYPE: concat_artifact (1833 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   641x  CONCAT44
+   640x  CONCAT44
    152x  CONCAT11
-   117x  CONCAT22
+   121x  CONCAT22
    103x  CONCAT31
     96x  CONCAT12
     82x  CONCAT14
     68x  CONCAT21
-    66x  CONCAT13
+    65x  CONCAT13
     63x  CONCAT26
     63x  CONCAT24
     55x  CONCAT25
@@ -379,26 +379,24 @@ Example functions:
   shape_meshlod.cpp_CLodMesh_findClosestPointOnMesh_FUN_0051a300
     dVar4 = (double)CONCAT44 /* combine 2-byte values */(local_38,uStack_3c);...
   shape_meshlod.cpp_CLodMesh_eqLoad_FUN_0051cdf0
-    dVar6 = (double)CONCAT44 /* combine 2-byte values */(9.9999999999999997e+34._4_4...
+    local_38 = (double)CONCAT44 /* combine 2-byte values */(9.9999999999999997e+34._...
   shape_meshlod.cpp_CLodMesh_findMinimumCostEdge_FUN_00519680
     (double)CONCAT44 /* combine 2-byte values */(uStack_1c,local_20)) {...
   shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
-    local_78 = (double)CONCAT44 /* combine 2-byte values */(iVar3,(uint)local_78);...
+    uStack_88 = (double)CONCAT44 /* combine 2-byte values */(iVar2,(uint)uStack_88);...
   shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520
     g_ActiveRenderColor = CONCAT31 /* combine 2-byte values */(extraout_var,uVar2);...
   shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0
     fVar22 = (float10)(double)CONCAT44 /* combine 2-byte values */(local_e0,uStack_e...
   shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990
-    g_ActiveRenderColor = CONCAT31 /* combine 2-byte values */(extraout_var,uVar3);...
-  shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0
-    if ((local_1c->position).x <= (double)CONCAT44 /* combine 2-byte values */(uVar1...
+    g_ActiveRenderColor = CONCAT31 /* combine 2-byte values */(extraout_var,uVar2);...
 
 ====================================================================================================
-TYPE: badspacebase (1622 occurrences)
+TYPE: badspacebase (1625 occurrences)
 ====================================================================================================
 
 Unique patterns:
-  1622x  BADSPACEBASE
+  1625x  BADSPACEBASE
 
 Example functions:
   entry
@@ -463,12 +461,12 @@ Example functions:
     BADSPACEBASE *in_ESP;...
 
 ====================================================================================================
-TYPE: extra_output (1443 occurrences)
+TYPE: extra_output (1441 occurrences)
 ====================================================================================================
 
 Unique patterns:
    409x  extraout_EAX
-   220x  extraout_EDX
+   218x  extraout_EDX
    126x  extraout_EAX_00
    108x  extraout_ECX
     87x  extraout_EBX
@@ -503,7 +501,7 @@ Example functions:
     int extraout_EAX;...
 
 ====================================================================================================
-TYPE: callind_esp_no_frame (1078 occurrences)
+TYPE: callind_preserve (1078 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -540,17 +538,17 @@ Example functions:
     CALLIND at 0051d7de, ADD ESP at 0051d7e1 (no EBP frame)...
 
 ====================================================================================================
-TYPE: suspect_float (859 occurrences)
+TYPE: suspect_float (844 occurrences)
 ====================================================================================================
 
 Unique patterns:
    133x  9.18341e-41
    114x  7.34684e-40
    107x  2.2775203e-38
-   102x  1.4013e-45
+    98x  1.4013e-45
     46x  2.8026e-45
     27x  4.2039e-45
-    17x  5.60519e-45
+    16x  5.60519e-45
     12x  1.14794e-41
      9x  1.83671e-40
      8x  9.18355e-41
@@ -570,14 +568,16 @@ Example functions:
     fStack_98 = 7.495988e-39;...
   shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520
     local_20 = 7.516394e-39;...
+  shape_meshlod.cpp_CLodMesh_generateLOD_FUN_00516ba0
+    fVar6 = 7.477486e-39;...
   shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990
-    local_34 = 1.4013e-45;...
+    *in_stack_00000008 = 1.401297e-39;...
   shape_design.c_configureSpatialSplittingPlane_FUN_004617c0
     if (local_28 == 1.12104e-43) {...
   shape_design.c_complexPolygonReduction_FUN_00463b30
     3.58732e-43,8);...
-  shape_design.c_tileTextureMaps_FUN_0046a180
-    fVar11 = 6.487317e-39;...
+  sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40
+    in_stack_ffff9f40 = 5.73972e-42;...
   engine_3d.c_renderPolygonTexturePerspectiveCorrect_FUN_00406290
     fVar3 = 3.67342e-40;...
   engine_3d.c_renderPolygonLitDetailed_FUN_00404220
@@ -674,11 +674,11 @@ Example functions:
     Function declares 0 params but call sites push 5 (5 missing)...
 
 ====================================================================================================
-TYPE: unresolved_funcptr (474 occurrences)
+TYPE: unresolved_funcptr (479 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   474x  code *
+   479x  code *
 
 Example functions:
   shape_superopt.cpp_CObj_copyFrom_FUN_005d2650
@@ -705,25 +705,17 @@ Example functions:
     (**(code **)(*(int *)((int)(this_ptr->poly_array->uv_coords + 5) + iVar1) + 0x40...
   shape_superopt.cpp_CObj_hasPolyWithMaterial_FUN_005d4110
     iVar1 = (**(code **)(*(int *)((int)(this_ptr->poly_array->uv_coords + 5) + iVar2...
+  shape_cramtex.cpp_runInteractiveAtlasGeneration_FUN_00446160
+    code *in_stack_ffffff5c;...
   sound_snddx.cpp_CDirectSoundDevice_startSfx_FUN_005afe80
     iVar2 = (**(code **)((slot->options).channel_index + 0x40))((CSoundDevice *)slot...
   sound_snddx.cpp_CDirectSoundDevice_setMode_FUN_005ae830
     (**(code **)*piStack_1c)();...
   sound_snddx.cpp_CDirectSoundDevice_initPropertySet_FUN_005ae660
     (**(code **)(*(int *)local_2c._8_4_ + 8))();...
-  sound_snddx.cpp_CDirectSoundDevice_reset_FUN_005ae4b0
-    uVar1 = (**(code **)(**(int **)((int)g_DirectSoundHardwareSfxBuffers + iVar4) + ...
-  sound_snddx.cpp_CDirectSoundDevice_setSfxPos_FUN_005af750
-    uVar2 = (**(code **)(*local_2c + 0x44))();...
-  sound_sndwav.cpp_CWavInDevice_setMode_FUN_005b0f70
-    iVar7 = (*(code *)**(uint **)bits_per_sample)();...
-  wincore_winrun.cpp_mainWindowProc_FUN_005f3150
-    iVar1 = (**(code **)((int)g_WindowMessageHandlers + iVar5))();...
-  crt_unknown.c_FUN_00600ee4
-    iVar1 = (**(code **)(*(int *)(*(int *)((int)&in_stack_00000004->_cnt +...
 
 ====================================================================================================
-TYPE: negative_offset (416 occurrences)
+TYPE: negative_offset (421 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -762,7 +754,7 @@ Example functions:
   shape_edittool.cpp_CPickList_dtor_FUN_004a3c80
     ((CEdScrollBar *)(pCVar1[-1].button_text + 0x90));...
   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40
-    local_48 = (byte *)((int)&pSVar4[-1].sblimit + 3);...
+    local_6c = (CFileBitStream *)((int)&pSVar4[-1].sblimit + 3);...
   sound_sndwav.cpp_enumerateWavOutDevice_FUN_005b1470
     pcVar6 = (char *)((int)&pSVar5[-1].device_value2 + 3);...
   sound_sndwav.cpp_enumerateWavInDevice_FUN_005b1560
@@ -787,15 +779,15 @@ Example functions:
     pfVar4 = (fstreambase *)&piVar3[-2].__enabled_exceptions;...
 
 ====================================================================================================
-TYPE: sub_artifact (322 occurrences)
+TYPE: sub_artifact (376 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   271x  SUB84
-    32x  SUB41
-    10x  SUB82
-     4x  SUB42
+   325x  SUB84
+    34x  SUB41
+     9x  SUB82
      3x  SUB104
+     3x  SUB42
      1x  SUB86
      1x  SUB81
 
@@ -807,7 +799,7 @@ Example functions:
   shape_meshlod.cpp_CLodMesh_processGridCell_FUN_0051a030
     SUB84 /* extract 2-byte value */(in_stack_ffffffc8,0));...
   shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
-    SUB84 /* extract 2-byte value */(in_stack_fffffeec,0));...
+    SUB84 /* extract 2-byte value */(in_stack_fffffedc,0));...
   shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0
     local_c8 = SUB84 /* extract 2-byte value */(dVar7,0);...
   shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0
@@ -823,7 +815,9 @@ Example functions:
   shape_superopt.cpp_CPoly_containsPoint2D_FUN_005d0340
     (&local_178,(CVector2d *)(local_190 + 8),SUB84 /* extract 2-byte value */(dVar4,...
   shape_superopt.cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590
-    uStack_304 = SUB84 /* extract 2-byte value */(dVar2,0);...
+    local_308 = SUB84 /* extract 2-byte value */(dVar2,0);...
+  shape_superopt.cpp_FUN_005cbf90
+    (&local_e8,&local_d8,SUB84 /* extract 2-byte value */(dVar4,0));...
 
 ====================================================================================================
 TYPE: warning_overlapping_globals (219 occurrences)
@@ -895,11 +889,11 @@ Example functions:
     /* WARNING: Globals starting with '_' overlap smaller symbols at the same addres...
 
 ====================================================================================================
-TYPE: warning_unreachable (134 occurrences)
+TYPE: warning_unreachable (133 occurrences)
 ====================================================================================================
 
 Unique patterns:
-   134x  WARNING: Removing unreachable block
+   133x  WARNING: Removing unreachable block
 
 Example functions:
   cockpit_ckptutil.c_buildHardwarePalettes_FUN_00431c00
@@ -910,8 +904,6 @@ Example functions:
     /* WARNING: Removing unreachable block (ram,0x004871be) */...
   shape_superopt.cpp_CObj_findCoplanarPolygon_FUN_005d5800
     /* WARNING: Removing unreachable block (ram,0x005d5b52) */...
-  shape_superopt.cpp_TriListSomething_FUN_005d77a0
-    /* WARNING: Removing unreachable block (ram,0x005d7ac1) */...
   shape_design.c_createBoxPrimitive_FUN_0045e520
     /* WARNING: Removing unreachable block (ram,0x0045e5b1) */...
   shape_design.c_showPointEditor_FUN_0045c6c0
@@ -928,9 +920,11 @@ Example functions:
     /* WARNING: Removing unreachable block (ram,0x005a3fc6) */...
   wincore_wddvmem.cpp_convertPaletteToDirectColor_FUN_004f41c0
     /* WARNING: Removing unreachable block (ram,0x004f4365) */...
+  crt_stdlib.c_qsort_FUN_005fdf38
+    /* WARNING: Removing unreachable block (ram,0x005fe232) */...
 
 ====================================================================================================
-TYPE: undefined_type (110 occurrences)
+TYPE: undefined_type (108 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -953,7 +947,7 @@ Unique patterns:
      1x  undefined3 extraout_var_02
      1x  undefined3 extraout_var_03
      1x  undefined3 uVar3
-     1x  undefined3 uStack_53
+     1x  undefined3 uStack_b
 
 Example functions:
   shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520
@@ -1100,6 +1094,72 @@ Example functions:
     Function declares 4 params but call sites push 2 (2 extra)...
 
 ====================================================================================================
+TYPE: variadic_preserve_ebp (38 occurrences)
+====================================================================================================
+
+Unique patterns:
+    28x  CALL engine_console.cpp_CConsole_printf_FUN_00441890
+     5x  CALL crt_stdio.c_sprintf_FUN_005fdbd0
+     2x  CALL crt_stdio.c_fprintf_FUN_005fe6d0
+     1x  CALL engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30
+     1x  CALL crt_stdio.c_sscanf_FUN_0060013c
+     1x  CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0
+
+Example functions:
+  shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530
+    Call to variadic function engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_...
+  core_npc.cpp_CNPC_process_FUN_005448b0
+    Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 005...
+  core_dracbrid.cpp_FUN_00484410
+    Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 004...
+  core_dog.cpp_CZombieDog_process_FUN_0047f140
+    Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 004...
+  core_setedit.cpp_RelatedToDemonLightEditor_FUN_0057bbe0
+    Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0057be06 (EBP fram...
+  core_icepick.cpp_FUN_004f80b0
+    Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 004...
+  core_event.cpp_CEventList_FUN_004aacc0
+    Call to variadic function crt_stdio.c_sscanf_FUN_0060013c at 004abcab (EBP frame...
+  core_smiley.cpp_FUN_005a2800
+    Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 005...
+  core_gabriela.cpp_FUN_004d2ea0
+    Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 004...
+  core_batcreat.cpp_CBatCreature_process_FUN_00415470
+    Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 004...
+  core_succubus.cpp_CSuccubus_process_FUN_005c6e90
+    Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 005...
+  core_batman.cpp_CBatman_process_FUN_00416870
+    Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 004...
+  core_werewolf.cpp_CWerewolf_process_FUN_005efde0
+    Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 005...
+  core_imp.cpp_FUN_004f9c30
+    Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 004...
+  core_ghoul.cpp_CGhoul_FUN_004e6600
+    Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 004...
+  core_svetlana.cpp_CSvetlana_process_FUN_005d8ba0
+    Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 005...
+  core_moloch.cpp_CMoloch_process_FUN_00528d20
+    Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 005...
+  core_hotdemon.cpp_FUN_004f6f20
+    Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 004...
+  core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0
+    Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 005393df (EBP fram...
+  core_boneguy.cpp_FUN_0041bf90
+    Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 004...
+  core_biggs.cpp_CBiggs_FUN_00418700
+    Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 004...
+  core_zombie.cpp_CZombie_process_FUN_005f9470
+    Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 005...
+  core_mobster.cpp_FUN_00525840
+    Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 005...
+  core_skeledit.cpp_CDeformableModel_exportModelToS3D_FUN_00595fc0
+    Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 0059665a (EBP fram...
+  core_larva.cpp_FUN_00503080
+    Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 005...
+  core_sentinel.cpp_FUN_00568030
+    Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 005...
+
+====================================================================================================
 TYPE: sborrow_artifact (26 occurrences)
 ====================================================================================================
 
@@ -1130,14 +1190,14 @@ Example functions:
   core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
     bVar7 = SBORROW /* signed borrow */4(local_94,iVar2);...
   core_skeledit.cpp_FUN_00592690
-    while (bVar24 || SBORROW /* signed borrow */4((int)fVar15,local_8c._0_4_) != iVa...
+    while (bVar21 || SBORROW /* signed borrow */4((int)fVar13,(int)local_8c) != iVar...
   core_water.cpp_CWater_calculateVisibleTiles_FUN_005e9e70
     if (SBORROW /* signed borrow */4(iVar7,(int)local_18) != (int)local_18 * -2 < 0)...
   core_script.cpp_FUN_005675a0
     bVar6 = SBORROW /* signed borrow */4(iVar2,iVar4);...
 
 ====================================================================================================
-TYPE: callind_esp_no_frame_lost (19 occurrences)
+TYPE: callind_preserve_lost (19 occurrences)
 ====================================================================================================
 
 Unique patterns:
@@ -1254,3 +1314,14 @@ Example functions:
     /* WARNING: Subroutine does not return */...
   core_main.c_displayErrorAndQuit_FUN_00506f10
     /* WARNING: Subroutine does not return */...
+
+====================================================================================================
+TYPE: variadic_anchor (2 occurrences)
+====================================================================================================
+
+Unique patterns:
+     2x  CALL crt_stdio.c_fprintf_FUN_005fe6d0
+
+Example functions:
+  shape_design.c_writeBinaryTreeNode_FUN_00457fd0
+    Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 00458009 (EBP fram...

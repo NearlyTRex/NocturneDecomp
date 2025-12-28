@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 2005,
-    "complexity_score": 2319,
+    "complexity_score": 2305,
     "cross_reference_count": 1,
     "function_call_count": 41,
     "global_count": 52,
-    "pseudocode_lines": 894,
-    "suspect_count": 138,
+    "pseudocode_lines": 895,
+    "suspect_count": 137,
     "suspect_types": [
       "badspacebase",
-      "call_variadic",
       "concat_artifact",
       "pointer_cast",
       "register_param",
@@ -18,7 +17,7 @@
       "undefined_type",
       "unknown_field"
     ],
-    "total_lines": 2899
+    "total_lines": 2900
   },
   "cross_references": [
     {
@@ -602,7 +601,13 @@
     "00583c3c": [
       "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
     ],
+    "00583c6c": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
+    ],
     "00583c7c": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
+    ],
+    "00583cb1": [
       "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
     ],
     "00583d16": [
@@ -657,6 +662,9 @@
       "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
     ],
     "00584678": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
+    ],
+    "005847a1": [
       "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
     ]
   },
@@ -719,7 +727,7 @@
       "frame_offset": 604,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 00583b14, ADD ESP at 00583b17",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -730,7 +738,7 @@
       "frame_offset": 604,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 00583b45, ADD ESP at 00583b48",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -741,7 +749,7 @@
       "frame_offset": 604,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 00583b59, ADD ESP at 00583b5b",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -752,7 +760,7 @@
       "frame_offset": 604,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 00583b7f, ADD ESP at 00583b82",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -763,7 +771,7 @@
       "frame_offset": 604,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 00583c39, ADD ESP at 00583c3c",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -774,7 +782,7 @@
       "frame_offset": 604,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 00583c79, ADD ESP at 00583c7c",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -785,7 +793,7 @@
       "frame_offset": 604,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 00583d13, ADD ESP at 00583d16",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -796,7 +804,7 @@
       "frame_offset": 604,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 00583d2e, ADD ESP at 00583d31",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -807,7 +815,7 @@
       "frame_offset": 604,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 005843c6, ADD ESP at 005843c8",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -818,7 +826,7 @@
       "frame_offset": 604,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 00584409, ADD ESP at 0058440b",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -829,7 +837,7 @@
       "frame_offset": 604,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 00584425, ADD ESP at 00584427",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -840,7 +848,7 @@
       "frame_offset": 604,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 00584441, ADD ESP at 00584443",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -851,7 +859,7 @@
       "frame_offset": 604,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 0058445d, ADD ESP at 0058445f",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -862,7 +870,7 @@
       "frame_offset": 604,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 00584479, ADD ESP at 0058447c",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -873,7 +881,7 @@
       "frame_offset": 604,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 00584496, ADD ESP at 00584499",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -884,7 +892,7 @@
       "frame_offset": 604,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 00584526, ADD ESP at 00584528",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -895,7 +903,7 @@
       "frame_offset": 604,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 00584551, ADD ESP at 00584553",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -906,7 +914,7 @@
       "frame_offset": 604,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 00584570, ADD ESP at 00584572",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -917,7 +925,7 @@
       "frame_offset": 604,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 0058458f, ADD ESP at 00584591",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -928,7 +936,7 @@
       "frame_offset": 604,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 005845ae, ADD ESP at 005845b0",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -939,7 +947,7 @@
       "frame_offset": 604,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 005845cd, ADD ESP at 005845cf",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -950,7 +958,7 @@
       "frame_offset": 604,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 005845ec, ADD ESP at 005845ee",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -961,7 +969,7 @@
       "frame_offset": 604,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 0058460b, ADD ESP at 0058460d",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -972,7 +980,55 @@
       "frame_offset": 604,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 00584676, ADD ESP at 00584678",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "00583c67",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "00583c6c",
+      "frame_offset": 604,
+      "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "return_address": "00583c6c",
+      "target_address": "0x49e740",
+      "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 00583c67 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "00583cac",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "00583cb1",
+      "frame_offset": 604,
+      "match": "CALL shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060",
+      "return_address": "00583cb1",
+      "target_address": "0x49f060",
+      "target_function": "shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060",
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060 at 00583cac (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "0058479c",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "005847a1",
+      "frame_offset": 604,
+      "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "return_address": "005847a1",
+      "target_address": "0x49e740",
+      "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 0058479c (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
     }
   ],
   "stack_frame": {
@@ -2795,225 +2851,200 @@
       "type": "unknown_field"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 638,
+      "match": "in_stack_fffffd1a",
+      "text": "in_stack_fffffd1a = (SRenderVertex *)&local_3c->rotation_matrix;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 640,
+      "match": "in_stack_fffffd1a",
+      "text": "((CMatrix3x3f *)in_stack_fffffd1a,&local_17c);",
+      "type": "stack_param"
+    },
+    {
       "description": "Unknown/mangled field access",
-      "line": 642,
+      "line": 643,
       "match": "._12_4_",
       "text": "local_228._12_4_ = pCVar5->x;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 648,
+      "line": 649,
       "match": "._0_4_",
       "text": "(pSVar8->position).x = (float)local_228._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 649,
+      "line": 650,
       "match": "._4_4_",
       "text": "(pSVar8->position).y = (float)local_228._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 650,
+      "line": 651,
       "match": "._8_4_",
       "text": "(pSVar8->position).z = (float)local_228._8_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 652,
+      "line": 653,
       "match": "in_stack_fffffd1e",
       "text": "in_stack_fffffd1e = (SRenderVertex *)0x584750;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 698,
+      "line": 699,
       "match": "in_stack_fffffd22",
       "text": "in_stack_fffffd22 = (SRenderVertex *)0x583b48;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 699,
+      "line": 700,
       "match": "in_stack_fffffd26",
       "text": "in_stack_fffffd26 = (SRenderVertex *)g_CKeysPtr;",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 722,
+      "line": 723,
       "match": "._0_4_",
       "text": "(pSVar8->position).x = (float)local_244._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 723,
+      "line": 724,
       "match": "._4_4_",
       "text": "(pSVar8->position).y = (float)local_244._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 724,
+      "line": 725,
       "match": "._8_4_",
       "text": "(pSVar8->position).z = (float)local_244._8_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 776,
+      "line": 777,
       "match": "in_stack_fffffd06",
       "text": "in_stack_fffffd06 = (SRenderVertex *)0x584892;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 805,
-      "match": "in_stack_fffffd1a",
-      "text": "in_stack_fffffd1a = (SRenderVertex *)0x31;",
+      "line": 800,
+      "match": "in_stack_fffffd06",
+      "text": "in_stack_fffffd06 = (SRenderVertex *)0x583cef;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 806,
+      "line": 807,
       "match": "in_stack_fffffd16",
-      "text": "in_stack_fffffd16 = (SRenderVertex *)g_CKeysPtr;",
+      "text": "in_stack_fffffd16 = (SRenderVertex *)0x31;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 811,
+      "line": 812,
       "match": "in_stack_fffffd12",
       "text": "in_stack_fffffd12 = (SRenderVertex *)0x3b;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 812,
+      "line": 813,
       "match": "in_stack_fffffd0a",
       "text": "in_stack_fffffd0a = (SRenderVertex *)0x583d31;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 813,
+      "line": 814,
       "match": "in_stack_fffffd0e",
       "text": "in_stack_fffffd0e = (SRenderVertex *)g_CKeysPtr;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 817,
+      "line": 818,
       "match": "in_stack_fffffd0a",
       "text": "in_stack_fffffd0a = (SRenderVertex *)0x583d62;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 819,
+      "line": 820,
       "match": "in_stack_fffffd0e",
       "text": "in_stack_fffffd0e = (SRenderVertex *)0x583d85;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 821,
+      "line": 822,
       "match": "in_stack_fffffd12",
       "text": "in_stack_fffffd12 = (SRenderVertex *)0x583da9;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 823,
+      "line": 824,
       "match": "in_stack_fffffd16",
       "text": "in_stack_fffffd16 = (SRenderVertex *)0x583dc7;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 825,
+      "line": 826,
       "match": "in_stack_fffffd1a",
       "text": "in_stack_fffffd1a = (SRenderVertex *)0x583deb;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 827,
+      "line": 828,
       "match": "in_stack_fffffd1e",
       "text": "in_stack_fffffd1e = (SRenderVertex *)0x583e0e;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 829,
+      "line": 830,
       "match": "in_stack_fffffd22",
       "text": "in_stack_fffffd22 = (SRenderVertex *)0x583e32;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 831,
+      "line": 832,
       "match": "in_stack_fffffd26",
       "text": "in_stack_fffffd26 = (SRenderVertex *)0x583e50;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 889,
+      "line": 890,
       "match": "(CVector3f *)((int)",
       "text": "pCVar5 = (CVector3f *)((int)(pCVar5 + 5) + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 891,
+      "line": 892,
       "match": "(CMatrix3x3f *)((int)",
       "text": "local_1c = (CMatrix3x3f *)((int)(local_1c + 1) + 0x20);",
       "type": "pointer_cast"
-    },
-    {
-      "call_address": "00583c67",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
-      "return_address": "00583c6c",
-      "target_address": "0x49e740",
-      "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
-      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 00583c67",
-      "type": "call_variadic"
-    },
-    {
-      "call_address": "00583cac",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060",
-      "return_address": "00583cb1",
-      "target_address": "0x49f060",
-      "target_function": "shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060",
-      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060 at 00583cac",
-      "type": "call_variadic"
-    },
-    {
-      "call_address": "0058479c",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
-      "return_address": "005847a1",
-      "target_address": "0x49e740",
-      "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
-      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 0058479c",
-      "type": "call_variadic"
     }
   ]
 }

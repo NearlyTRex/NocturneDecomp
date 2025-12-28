@@ -9,13 +9,13 @@
     "suspect_count": 20,
     "suspect_types": [
       "badspacebase",
-      "call_variadic",
-      "callind_esp_no_frame",
-      "callind_esp_no_frame_lost",
+      "callind_preserve",
+      "callind_preserve_lost",
       "pointer_cast",
       "register_param",
       "stack_param",
-      "unknown_field"
+      "unknown_field",
+      "variadic_preserve"
     ],
     "total_lines": 222
   },
@@ -383,7 +383,7 @@
       "prologue_offset": 36,
       "return_address": "005b0a40",
       "text": "CALLIND at 005b0a3e, ADD ESP at 005b0a40 (no EBP frame)",
-      "type": "callind_esp_no_frame"
+      "type": "callind_preserve"
     },
     {
       "add_esp_value": 4,
@@ -397,20 +397,21 @@
       "prologue_offset": 36,
       "return_address": "005b0be1",
       "text": "CALLIND at 005b0bdf, ADD ESP at 005b0be1 (no EBP frame)",
-      "type": "callind_esp_no_frame_lost"
+      "type": "callind_preserve_lost"
     },
     {
       "call_address": "005b0bd4",
       "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
+      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "conflict",
       "esp_certainty_at_call": "conflict",
       "match": "CALL sound_sndmain.cpp_logSoundError_FUN_005adba0",
+      "prologue_offset": 36,
       "return_address": "005b0bd9",
       "target_address": "0x5adba0",
       "target_function": "sound_sndmain.cpp_logSoundError_FUN_005adba0",
-      "text": "Call to variadic function sound_sndmain.cpp_logSoundError_FUN_005adba0 at 005b0bd4",
-      "type": "call_variadic"
+      "text": "Call to variadic function sound_sndmain.cpp_logSoundError_FUN_005adba0 at 005b0bd4 (no EBP frame)",
+      "type": "variadic_preserve"
     }
   ],
   "vtable_info": {

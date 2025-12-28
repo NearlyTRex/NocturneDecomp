@@ -9,10 +9,10 @@
     "suspect_count": 11,
     "suspect_types": [
       "badspacebase",
-      "call_variadic",
       "register_param",
       "stack_param",
-      "stack_ref"
+      "stack_ref",
+      "variadic_preserve_ebp"
     ],
     "total_lines": 389
   },
@@ -268,7 +268,7 @@
       "frame_offset": 72,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 00544931, ADD ESP at 00544937",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     }
   ],
   "stack_frame": {
@@ -385,15 +385,16 @@
     {
       "call_address": "00544b1c",
       "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
+      "description": "Variadic call in EBP-frame function without ADD ESP; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
+      "frame_offset": 72,
       "match": "CALL engine_console.cpp_CConsole_printf_FUN_00441890",
       "return_address": "00544b21",
       "target_address": "0x441890",
       "target_function": "engine_console.cpp_CConsole_printf_FUN_00441890",
-      "text": "Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 00544b1c",
-      "type": "call_variadic"
+      "text": "Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 00544b1c (EBP frame, no ADD ESP)",
+      "type": "variadic_preserve_ebp"
     }
   ],
   "vtable_info": {

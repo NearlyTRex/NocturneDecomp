@@ -1,21 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 432,
-    "complexity_score": 453,
+    "complexity_score": 449,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 10,
-    "pseudocode_lines": 203,
+    "pseudocode_lines": 204,
     "suspect_count": 22,
     "suspect_types": [
       "badspacebase",
-      "call_variadic",
       "pointer_cast",
       "register_param",
       "unaffected_reg",
       "unknown_field"
     ],
-    "total_lines": 635
+    "total_lines": 636
   },
   "cross_references": [
     {
@@ -158,6 +157,11 @@
     "declared_params": 3,
     "estimated_params": 3
   },
+  "pcode_overrides": {
+    "0044df37": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff94,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.027397260273973,
     "instruction_count": 365,
@@ -201,6 +205,24 @@
     },
     "pcode_op_count": 2200
   },
+  "resolved_suspects": [
+    {
+      "add_esp_value": 8,
+      "call_address": "0044df32",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "fix_address": "0044df37",
+      "frame_offset": 108,
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0044df37",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0044df32 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 144,
     "local_size": 132,
@@ -433,164 +455,158 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 14,
-      "match": "unaff_EBX",
-      "text": "CVector3i *unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Ghidra failed to resolve stack frame",
-      "line": 15,
+      "line": 12,
       "match": "BADSPACEBASE",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "badspacebase"
     },
     {
       "description": "Inferred register parameter",
-      "line": 15,
+      "line": 12,
       "match": "in_ESP",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "register_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 16,
+      "line": 13,
       "match": "unaff_ESI",
-      "text": "uint *unaff_ESI;",
+      "text": "CVector3i *unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 18,
+      "match": "unaff_EDI",
+      "text": "uint *unaff_EDI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 52,
+      "line": 54,
       "match": "._0_4_",
       "text": "g_LightBufferPool[0x18]._0_4_ = rect;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 91,
+      "line": 93,
       "match": "(int *)((int)",
       "text": "piVar7 = (int *)((int)rect + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 129,
+      "line": 131,
       "match": "(CVector3i *)((int)",
-      "text": "local_24 = (CVector3i *)((int)&local_44->x + local_54.z);",
+      "text": "local_28 = (CVector3i *)((int)&local_48->x + local_58.z);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 131,
+      "line": 133,
       "match": "(CVector3i *)((int)",
-      "text": "local_1c = (CVector3i *)((int)&local_48->x + local_54.z);",
+      "text": "local_20 = (CVector3i *)((int)&local_4c->x + local_58.z);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 134,
-      "match": "(int *)((int)",
-      "text": "piVar7 = (int *)((int)light_source->corona_depth_buffer + local_40 + local_38);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 136,
-      "match": "(int *)((int)",
-      "text": "local_18 = (int *)((int)light_source->corona_lightmap_indices + local_40 + local_38);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 161,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&local_54 + (uint)bVar10 * -8) = local_5c[(uint)bVar10 * -2];",
+      "text": "local_18 = (uint *)((int)light_source->corona_visibility_buffers + local_44 + local_3c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 135,
+      "match": "(int *)((int)",
+      "text": "piStack_14 = (int *)((int)light_source->corona_depth_buffer + local_44 + local_3c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 137,
+      "match": "(int *)((int)",
+      "text": "local_1c = (int *)((int)light_source->corona_lightmap_indices + local_44 + local_3c);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 162,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&local_54 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 4) =",
+      "text": "*(uint *)((int)&local_58 + (uint)bVar10 * -8) = local_60[(uint)bVar10 * -2];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 163,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&local_58 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Unaffected register variable",
-      "line": 168,
-      "match": "unaff_ESI",
-      "text": "(light_source,&local_54,(uchar)unaff_ESI,(uchar)local_1c);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
       "line": 169,
-      "match": "unaff_ESI",
-      "text": "*unaff_ESI = puVar5;",
+      "match": "unaff_EDI",
+      "text": "(light_source,&local_58,(uchar)unaff_EDI,(uchar)local_20);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 172,
-      "match": "unaff_ESI",
-      "text": "*unaff_ESI = 0;",
+      "line": 170,
+      "match": "unaff_EDI",
+      "text": "*unaff_EDI = puVar4;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 181,
-      "match": "unaff_EBX",
-      "text": "if ((int)local_24 < (int)unaff_EBX) {",
+      "line": 173,
+      "match": "unaff_EDI",
+      "text": "*unaff_EDI = 0;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
       "line": 182,
-      "match": "unaff_EBX",
-      "text": "local_24 = unaff_EBX;",
+      "match": "unaff_ESI",
+      "text": "if ((int)local_28 < (int)unaff_ESI) {",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 184,
-      "match": "unaff_EBX",
-      "text": "if ((int)unaff_EBX < (int)local_20) {",
+      "line": 183,
+      "match": "unaff_ESI",
+      "text": "local_28 = unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
       "line": 185,
-      "match": "unaff_EBX",
-      "text": "local_20 = unaff_EBX;",
+      "match": "unaff_ESI",
+      "text": "if ((int)unaff_ESI < (int)local_24) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 186,
+      "match": "unaff_ESI",
+      "text": "local_24 = unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Complex pointer cast",
-      "line": 193,
+      "line": 194,
       "match": "(CVector3i *)((int)",
       "text": "pCVar11 = (CVector3i *)((int)&pCVar11->x + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 202,
+      "line": 203,
       "match": "(CVector3i *)((int)",
-      "text": "local_20 = (CVector3i *)((int)&local_20->x + 1);",
+      "text": "local_24 = (CVector3i *)((int)&local_24->x + 1);",
       "type": "pointer_cast"
-    },
-    {
-      "call_address": "0044df32",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "0044df37",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0044df32",
-      "type": "call_variadic"
     }
   ]
 }

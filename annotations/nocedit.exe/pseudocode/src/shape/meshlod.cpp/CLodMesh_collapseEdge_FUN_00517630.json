@@ -1,21 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 1009,
-    "complexity_score": 858,
+    "complexity_score": 796,
     "cross_reference_count": 3,
     "function_call_count": 12,
     "global_count": 9,
-    "pseudocode_lines": 448,
-    "suspect_count": 38,
+    "pseudocode_lines": 461,
+    "suspect_count": 31,
     "suspect_types": [
       "badspacebase",
-      "call_variadic",
       "extra_output",
       "pointer_cast",
       "register_param",
       "stack_param"
     ],
-    "total_lines": 1457
+    "total_lines": 1470
   },
   "cross_references": [
     {
@@ -167,6 +166,14 @@
       "value": null
     }
   ],
+  "pcode_overrides": {
+    "00517a60": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffb20,4)"
+    ],
+    "0051818e": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffb20,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.841019417475728,
     "instruction_count": 824,
@@ -211,6 +218,40 @@
     },
     "pcode_op_count": 4813
   },
+  "resolved_suspects": [
+    {
+      "add_esp_value": 4,
+      "call_address": "00517a5b",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "00517a60",
+      "frame_offset": 1248,
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "00517a60",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00517a5b (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "00518189",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "0051818e",
+      "frame_offset": 1248,
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0051818e",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00518189 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 1284,
     "local_size": 1268,
@@ -702,7 +743,7 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 14,
+      "line": 15,
       "match": "extraout_EAX",
       "text": "int extraout_EAX;",
       "type": "extra_output"
@@ -724,259 +765,198 @@
     {
       "description": "Unresolved stack parameter",
       "line": 22,
-      "match": "in_stack_fffffb20",
-      "text": "float in_stack_fffffb20;",
+      "match": "in_stack_fffffb10",
+      "text": "float in_stack_fffffb10;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 113,
+      "line": 118,
       "match": "(int *)((int)",
-      "text": "if (*(int *)((int)aiStack_4d8 + iVar4) == local_9c->attribute_indices[0]) break;",
+      "text": "if (*(int *)((int)aiStack_4e8 + iVar5) == local_ac->attribute_indices[0]) break;",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 134,
-      "match": "in_stack_fffffb20",
-      "text": "(fVar1 = in_stack_fffffb20, pCVar7->vertex_idx_0 == vertex_idx_2)) {",
+      "line": 139,
+      "match": "in_stack_fffffb10",
+      "text": "(fVar2 = in_stack_fffffb10, pCVar8->vertex_idx_0 == vertex_idx_2)) {",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 155,
-      "match": "(int *)((int)",
-      "text": "iVar9 = *(int *)((int)aiStack_4d8 + iVar8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 156,
-      "match": "(float *)((int)",
-      "text": "fVar1 = *(float *)((int)afStack_4d0 + iVar8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 157,
-      "match": "(int *)((int)",
-      "text": "iVar6 = *(int *)((int)aiStack_4d8 + iVar8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 159,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)aiStack_4d8 + iVar8 + 4) = 1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 160,
-      "match": "(float *)((int)",
-      "text": "*(float *)((int)afStack_4d0 + iVar8) = fVar1 / (float)iVar9;",
+      "match": "(int *)((int)",
+      "text": "iVar7 = *(int *)((int)aiStack_4e8 + iVar9 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 161,
       "match": "(float *)((int)",
-      "text": "*(float *)((int)afStack_4d0 + iVar8 + 4) =",
+      "text": "fVar2 = *(float *)((int)afStack_4e0 + iVar9);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 162,
-      "match": "(float *)((int)",
-      "text": "*(float *)((int)afStack_4d0 + iVar8 + 4) / (float)iVar6;",
+      "match": "(int *)((int)",
+      "text": "iVar1 = *(int *)((int)aiStack_4e8 + iVar9 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Complex pointer cast",
+      "line": 164,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)aiStack_4e8 + iVar9 + 4) = 1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 165,
+      "match": "(float *)((int)",
+      "text": "*(float *)((int)afStack_4e0 + iVar9) = fVar2 / (float)iVar7;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 166,
+      "match": "(float *)((int)",
+      "text": "*(float *)((int)afStack_4e0 + iVar9 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 167,
-      "match": "in_stack_fffffb20",
-      "text": "if (0.0 < in_stack_fffffb20) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 171,
-      "match": "(int *)((int)",
-      "text": "iVar8 < *(int *)((int)this_ptr->vertex_data->adjacent_edge_indices + local_4c + -4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 174,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)this_ptr->vertex_data->adjacent_edge_indices + local_2c + local_4c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 197,
-      "match": "(int *)((int)",
-      "text": "if (*(int *)((int)aiStack_4d8 + iVar6) == pCVar7->attribute_indices[0]) break;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 232,
-      "match": "(int *)((int)",
-      "text": "iVar8 < *(int *)((int)this_ptr->vertex_data->adjacent_edge_indices + local_48 + -4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 235,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)this_ptr->vertex_data->adjacent_edge_indices + local_20 + local_48);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 258,
-      "match": "(int *)((int)",
-      "text": "if (*(int *)((int)aiStack_4d8 + iVar6) == pCVar7->attribute_indices[0]) break;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 292,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)afStack_1b8 + iVar4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 293,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)this_ptr->vertex_data[vertex_idx_2].adjacent_edge_indices + iVar4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 302,
       "match": "(float *)((int)",
-      "text": "local_78 = *(float *)((int)afStack_1b8 + local_18);",
+      "text": "*(float *)((int)afStack_4e0 + iVar9 + 4) / (float)iVar1;",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 358,
-      "match": "in_stack_fffffb20",
-      "text": "in_stack_fffffb20 = (float)pCVar13->adjacent_tri_indices[0];",
+      "line": 172,
+      "match": "in_stack_fffffb10",
+      "text": "if (0.0 < in_stack_fffffb10) {",
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 359,
-      "match": "in_stack_fffffb20",
-      "text": "local_70 = this_ptr->tri_data + (int)in_stack_fffffb20;",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 176,
+      "match": "(int *)((int)",
+      "text": "local_14 < *(int *)((int)this_ptr->vertex_data->adjacent_edge_indices + local_5c + -4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 361,
-      "match": "in_stack_fffffb20",
-      "text": "(this_ptr,(int)in_stack_fffffb20,(int)local_78);",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 179,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)this_ptr->vertex_data->adjacent_edge_indices + local_3c + local_5c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 202,
+      "match": "(int *)((int)",
+      "text": "if (*(int *)((int)aiStack_4e8 + iVar7) == pCVar8->attribute_indices[0]) break;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 237,
+      "match": "(int *)((int)",
+      "text": "local_18 < *(int *)((int)this_ptr->vertex_data->adjacent_edge_indices + local_58 + -4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 240,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)this_ptr->vertex_data->adjacent_edge_indices + local_30 + local_58);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 263,
+      "match": "(int *)((int)",
+      "text": "if (*(int *)((int)aiStack_4e8 + iVar7) == pCVar8->attribute_indices[0]) break;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 297,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)afStack_1c8 + iVar5) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 298,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)this_ptr->vertex_data[vertex_idx_2].adjacent_edge_indices + iVar5);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 307,
+      "match": "(float *)((int)",
+      "text": "local_88 = *(float *)((int)afStack_1c8 + local_28);",
+      "type": "pointer_cast"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 362,
+      "line": 368,
       "match": "extraout_EAX",
-      "text": "*(CLodFace **)(extraout_EAX * 4 + local_6c + 0x34) = local_70;",
+      "text": "*(float *)(extraout_EAX * 4 + local_84 + 0x34) = local_88;",
       "type": "extra_output"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 364,
-      "match": "(CLodEdge *)((int)",
-      "text": "((CLodEdge *)((int)this_ptr->edges_ptr->adjacent_tri_indices + local_68 + -0x28)",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 365,
-      "match": "in_stack_fffffb20",
-      "text": ",(int)in_stack_fffffb20);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 388,
-      "match": "in_stack_fffffb20",
-      "text": "*(float *)(pCVar10[vertex_idx_2].lod_workspace + iVar4 + -4) * in_stack_fffffb20 +",
+      "line": 395,
+      "match": "in_stack_fffffb10",
+      "text": "*(float *)(pCVar10[vertex_idx_2].lod_workspace + iVar5 + -4) * in_stack_fffffb10 +",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 397,
+      "line": 407,
       "match": "(int *)((int)",
-      "text": "while (0 < *(int *)((int)local_50[4].adjacent_tri_indices +",
+      "text": "*(int *)((int)local_60[4].adjacent_tri_indices + (int)this_ptr->vertex_data->lod_workspace)",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 405,
+      "line": 416,
       "match": "(int *)((int)",
-      "text": "if (*(int *)((int)pCVar10->adjacent_edge_indices + (int)(local_40->attribute_indices + -1)) <=",
+      "text": "if (*(int *)((int)pCVar10->adjacent_edge_indices + (int)(local_50->attribute_indices + -1)) <=",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 410,
+      "line": 421,
       "match": "(int *)((int)",
-      "text": "this_ptr->edges_ptr[*(int *)((int)pCVar10->adjacent_edge_indices + (int)puVar2)].",
+      "text": "this_ptr->edges_ptr[*(int *)((int)pCVar10->adjacent_edge_indices + (int)puVar3)].",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 413,
+      "line": 424,
       "match": "(int *)((int)",
-      "text": "local_54 = *(int *)((int)pCVar10->adjacent_edge_indices + local_4c);",
+      "text": "local_64 = *(int *)((int)pCVar10->adjacent_edge_indices + local_1c + local_5c);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 435,
+      "line": 448,
       "match": "(int *)((int)",
-      "text": "[*(int *)((int)&this_ptr->sample_points_ptr->closest_triangle_idx + iVar4)].",
+      "text": "[*(int *)((int)&this_ptr->sample_points_ptr->closest_triangle_idx + iVar5)].",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 439,
+      "line": 452,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&this_ptr->sample_points_ptr->closest_triangle_idx +",
       "type": "pointer_cast"
-    },
-    {
-      "call_address": "00517a5b",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "00517a60",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00517a5b",
-      "type": "call_variadic"
-    },
-    {
-      "call_address": "00518189",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "0051818e",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00518189",
-      "type": "call_variadic"
     }
   ]
 }

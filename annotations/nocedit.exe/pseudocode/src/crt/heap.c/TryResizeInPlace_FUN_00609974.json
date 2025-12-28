@@ -8,7 +8,7 @@
     "pseudocode_lines": 15,
     "suspect_count": 8,
     "suspect_types": [
-      "callind_esp_no_frame",
+      "callind_preserve",
       "concat_artifact",
       "register_param"
     ],
@@ -198,7 +198,7 @@
       "prologue_offset": 8,
       "return_address": "006099aa",
       "text": "CALLIND at 006099a4, ADD ESP at 006099ac (no EBP frame)",
-      "type": "callind_esp_no_frame"
+      "type": "callind_preserve"
     },
     {
       "add_esp_value": 4,
@@ -214,7 +214,7 @@
       "prologue_offset": 8,
       "return_address": "006099b7",
       "text": "CALLIND at 006099b1, ADD ESP at 006099b9 (no EBP frame)",
-      "type": "callind_esp_no_frame"
+      "type": "callind_preserve"
     }
   ]
 }

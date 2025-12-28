@@ -1,22 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 791,
-    "complexity_score": 633,
+    "complexity_score": 592,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 29,
-    "pseudocode_lines": 358,
-    "suspect_count": 24,
+    "pseudocode_lines": 357,
+    "suspect_count": 21,
     "suspect_types": [
       "badspacebase",
-      "call_variadic",
       "extra_output",
       "register_param",
       "stack_param",
-      "unknown_field",
       "unresolved_funcptr"
     ],
-    "total_lines": 1149
+    "total_lines": 1148
   },
   "cross_references": [],
   "function": {
@@ -277,6 +275,9 @@
     "estimated_params": 1
   },
   "pcode_overrides": {
+    "005e4469": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe9c,4)"
+    ],
     "005e46af": [
       "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe9c,4)"
     ],
@@ -345,7 +346,7 @@
       "frame_offset": 356,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 005e46a9, ADD ESP at 005e46af",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -356,7 +357,23 @@
       "frame_offset": 356,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 005e4d2a, ADD ESP at 005e4d2d",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "005e4464",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "005e4469",
+      "frame_offset": 356,
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "005e4469",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005e4464 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
     }
   ],
   "stack_frame": {
@@ -780,149 +797,122 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 108,
+      "line": 107,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008 * (float)-32 + *(float *)(this_ptr->field11_0xc068 + 8);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 109,
+      "line": 108,
       "match": "in_stack_00000008",
       "text": "local_94 = *(float *)(this_ptr->field11_0xc068 + 4) * in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 110,
+      "line": 109,
       "match": "in_stack_00000008",
       "text": "local_90 = *(float *)(this_ptr->field11_0xc068 + 8) * in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 111,
+      "line": 110,
       "match": "in_stack_00000008",
       "text": "local_8c = *(float *)(this_ptr->field11_0xc068 + 0xc) * in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 118,
+      "line": 117,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008 * this_ptr->rot_speed * 2f +",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 202,
+      "line": 201,
       "match": "in_stack_00000008",
       "text": "fVar13 = *(float *)this_ptr->field11_0xc068 - in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 238,
+      "line": 237,
       "match": "extraout_ST1",
-      "text": "local_24 = (float)extraout_ST1;",
+      "text": "local_18 = (float)extraout_ST1;",
       "type": "extra_output"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 242,
+      "line": 241,
       "match": "code *",
       "text": "(**(code **)(*(int *)(*(int *)((this_ptr->base_enemy).field6_0xbe38 + 4) + 0x154) + 0x34))();",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 258,
-      "match": "._4_4_",
-      "text": "auStack_160._4_4_ = 1.0;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 261,
+      "line": 260,
       "match": "code *",
       "text": "(**(code **)(*(int *)(*(int *)((this_ptr->base_enemy).field6_0xbe38 + 4) + 0x154) + 0x11c))();",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 262,
-      "match": "._4_4_",
-      "text": "if (0.0 < (float)auStack_160._4_4_) {",
-      "type": "unknown_field"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 280,
+      "line": 279,
       "match": "in_stack_00000008",
       "text": "local_18 * in_stack_00000008 * this_ptr->rot_speed +",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 299,
+      "line": 298,
       "match": "in_stack_00000008",
       "text": "local_30 * fVar3 * in_stack_00000008 +",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 302,
+      "line": 301,
       "match": "in_stack_00000008",
       "text": "fStack_2c * fVar4 * in_stack_00000008 + fVar13;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 304,
+      "line": 303,
       "match": "in_stack_00000008",
       "text": "fStack_38 * fVar5 * in_stack_00000008 + fVar7;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 306,
+      "line": 305,
       "match": "in_stack_00000008",
       "text": "local_1c * in_stack_00000008 * fVar6 + fVar8;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 310,
+      "line": 309,
       "match": "in_stack_00000008",
       "text": "fStack_164 = (fStack_bc * (float)4) / in_stack_00000008 + (float)35;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 321,
+      "line": 320,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008 * *(float *)this_ptr->field3_0xc040 * this_ptr->speed +",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 340,
+      "line": 339,
       "match": "in_stack_00000008",
       "text": "(fVar13 = *(float *)(this_ptr->field16_0xc0e8 + 4) - in_stack_00000008,",
       "type": "stack_param"
-    },
-    {
-      "call_address": "005e4464",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "005e4469",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005e4464",
-      "type": "call_variadic"
     }
   ],
   "vtable_info": {

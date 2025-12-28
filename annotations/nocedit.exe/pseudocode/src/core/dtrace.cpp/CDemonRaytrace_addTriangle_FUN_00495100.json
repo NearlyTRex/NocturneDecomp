@@ -8,8 +8,8 @@
     "pseudocode_lines": 74,
     "suspect_count": 3,
     "suspect_types": [
-      "call_variadic",
-      "stack_param"
+      "stack_param",
+      "variadic_preserve"
     ],
     "total_lines": 292
   },
@@ -168,15 +168,16 @@
     {
       "call_address": "00495297",
       "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
+      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
       "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "prologue_offset": 32,
       "return_address": "0049529c",
       "target_address": "0x506f10",
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00495297",
-      "type": "call_variadic"
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00495297 (no EBP frame)",
+      "type": "variadic_preserve"
     }
   ]
 }

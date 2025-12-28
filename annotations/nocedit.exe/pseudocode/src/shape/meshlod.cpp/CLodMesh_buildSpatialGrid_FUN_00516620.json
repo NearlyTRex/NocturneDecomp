@@ -1,21 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 355,
-    "complexity_score": 406,
+    "complexity_score": 233,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 16,
-    "pseudocode_lines": 156,
-    "suspect_count": 22,
+    "pseudocode_lines": 158,
+    "suspect_count": 6,
     "suspect_types": [
       "badspacebase",
-      "call_variadic",
       "pointer_cast",
-      "register_param",
-      "unaffected_reg",
-      "unknown_field"
+      "register_param"
     ],
-    "total_lines": 511
+    "total_lines": 513
   },
   "cross_references": [
     {
@@ -179,6 +176,17 @@
     "declared_params": 1,
     "estimated_params": 1
   },
+  "pcode_overrides": {
+    "0051692b": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff98,4)"
+    ],
+    "005169e7": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff98,4)"
+    ],
+    "00516a35": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff98,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.757575757575758,
     "instruction_count": 297,
@@ -220,6 +228,56 @@
     },
     "pcode_op_count": 1710
   },
+  "resolved_suspects": [
+    {
+      "add_esp_value": 4,
+      "call_address": "00516926",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "0051692b",
+      "frame_offset": 104,
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0051692b",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00516926 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "005169e2",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "005169e7",
+      "frame_offset": 104,
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "005169e7",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005169e2 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "00516a30",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "00516a35",
+      "frame_offset": 104,
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "00516a35",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00516a30 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 136,
     "local_size": 132,
@@ -444,176 +502,46 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 16,
-      "match": "unaff_EBX",
-      "text": "int unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Ghidra failed to resolve stack frame",
-      "line": 17,
+      "line": 16,
       "match": "BADSPACEBASE",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "badspacebase"
     },
     {
       "description": "Inferred register parameter",
-      "line": 17,
+      "line": 16,
       "match": "in_ESP",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "register_param"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 18,
-      "match": "unaff_EBP",
-      "text": "int unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 41,
-      "match": "._0_1_",
-      "text": "local_24._0_1_ = '\\0';",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 42,
-      "match": "._1_1_",
-      "text": "local_24._1_1_ = '\\0';",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 43,
-      "match": "._2_1_",
-      "text": "local_24._2_1_ = '\\0';",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 44,
-      "match": "._3_1_",
-      "text": "local_24._3_1_ = '\\0';",
-      "type": "unknown_field"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 73,
+      "line": 72,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)this_ptr->spatial_grid_ptr->cell_start_indices[0][0] + local_1c) = local_18;",
+      "text": "*(int *)((int)this_ptr->spatial_grid_ptr->cell_start_indices[0][0] + local_28) = local_24;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 76,
-      "match": "unaff_EBP",
-      "text": "unaff_EBP = local_18 * 4 + 4;",
-      "type": "unaffected_reg"
     },
     {
       "description": "Complex pointer cast",
       "line": 80,
       "match": "(int *)((int)",
-      "text": "pCVar10 = this_ptr->vertex_data + *(int *)((int)(pCVar1->uv_coords + -2) + local_14 + 4)",
+      "text": "pCVar10 = this_ptr->vertex_data + *(int *)((int)(pCVar1->uv_coords + -2) + local_20 + 4)",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 123,
-      "match": "unaff_EBP",
-      "text": "(this_ptr->spatial_grid_data,unaff_EBP,\"..\\\\shape\\\\meshlod.cpp\"",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 132,
-      "match": "unaff_EBX",
-      "text": "*(int *)((int)this_ptr->spatial_grid_data + unaff_EBX) = iVar12;",
-      "type": "unaffected_reg"
     },
     {
       "description": "Complex pointer cast",
-      "line": 132,
+      "line": 133,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)this_ptr->spatial_grid_data + unaff_EBX) = iVar12;",
+      "text": "*(int *)((int)this_ptr->spatial_grid_data + (int)local_14) = iVar12;",
       "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 133,
-      "match": "unaff_EBX",
-      "text": "unaff_EBX = unaff_EBX + 4;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 133,
-      "match": "unaff_EBX",
-      "text": "unaff_EBX = unaff_EBX + 4;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
+      "description": "Complex pointer cast",
       "line": 134,
-      "match": "unaff_EBP",
-      "text": "unaff_EBP = unaff_EBP + 1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 134,
-      "match": "unaff_EBP",
-      "text": "unaff_EBP = unaff_EBP + 1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 156,
-      "match": "unaff_EBP",
-      "text": "this_ptr->spatial_grid_ptr->triangle_count = unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "call_address": "00516926",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "0051692b",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00516926",
-      "type": "call_variadic"
-    },
-    {
-      "call_address": "005169e2",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "005169e7",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005169e2",
-      "type": "call_variadic"
-    },
-    {
-      "call_address": "00516a30",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "00516a35",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00516a30",
-      "type": "call_variadic"
+      "match": "(char *)((int)",
+      "text": "local_14 = (char *)((int)local_14 + 4);",
+      "type": "pointer_cast"
     }
   ]
 }

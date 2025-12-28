@@ -1,21 +1,21 @@
 {
   "complexity": {
     "assembly_lines": 640,
-    "complexity_score": 622,
+    "complexity_score": 414,
     "cross_reference_count": 1,
     "function_call_count": 26,
     "global_count": 68,
-    "pseudocode_lines": 262,
-    "suspect_count": 33,
+    "pseudocode_lines": 264,
+    "suspect_count": 12,
     "suspect_types": [
       "badspacebase",
-      "call_variadic",
       "extra_output",
       "pointer_cast",
       "register_param",
-      "stack_param"
+      "stack_param",
+      "stack_ref"
     ],
-    "total_lines": 902
+    "total_lines": 904
   },
   "cross_references": [
     {
@@ -596,6 +596,14 @@
     "declared_params": 1,
     "estimated_params": 1
   },
+  "pcode_overrides": {
+    "005b36c2": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffed0,4)"
+    ],
+    "005b3749": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffed0,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.40748031496063,
     "instruction_count": 508,
@@ -646,6 +654,40 @@
     },
     "pcode_op_count": 2747
   },
+  "resolved_suspects": [
+    {
+      "add_esp_value": 12,
+      "call_address": "005b36bd",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "005b36c2",
+      "frame_offset": 304,
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "005b36c2",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 005b36bd (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 20,
+      "call_address": "005b3744",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "005b3749",
+      "frame_offset": 304,
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "005b3749",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 005b3744 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 336,
     "local_size": 332,
@@ -892,28 +934,28 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 8,
+      "line": 7,
       "match": "extraout_EAX",
       "text": "int extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
+      "line": 9,
       "match": "extraout_EAX_00",
       "text": "int extraout_EAX_00;",
       "type": "extra_output"
     },
     {
       "description": "Ghidra failed to resolve stack frame",
-      "line": 14,
+      "line": 13,
       "match": "BADSPACEBASE",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "badspacebase"
     },
     {
       "description": "Inferred register parameter",
-      "line": 14,
+      "line": 13,
       "match": "in_ESP",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "register_param"
@@ -921,217 +963,58 @@
     {
       "description": "Unresolved stack parameter",
       "line": 20,
-      "match": "in_stack_00000040",
-      "text": "float in_stack_00000040;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_00000048",
-      "text": "STrainNoise *in_stack_00000048;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_0000004c",
-      "text": "uint *in_stack_0000004c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_00000060",
-      "text": "CVector3f *in_stack_00000060;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_00000064",
-      "text": "int in_stack_00000064;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 29,
-      "match": "in_stack_ffffff14",
-      "text": "float in_stack_ffffff14;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_ffffff1c",
-      "text": "float in_stack_ffffff1c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_ffffff2c",
-      "text": "float in_stack_ffffff2c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_ffffff38",
-      "text": "float in_stack_ffffff38;",
+      "match": "in_stack_fffffec4",
+      "text": "float in_stack_fffffec4;",
       "type": "stack_param"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 68,
+      "line": 67,
       "match": "extraout_EAX",
       "text": "if (extraout_EAX == 0) {",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 96,
+      "line": 95,
       "match": "extraout_EAX_00",
       "text": "if (extraout_EAX_00 == 0) {",
       "type": "extra_output"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 171,
-      "match": "in_stack_ffffff14",
-      "text": "sound_sndmain_cpp_setNextSfxVolume_FUN_005a8a60(in_stack_ffffff14 * (float)1.5);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 179,
-      "match": "in_stack_ffffff1c",
-      "text": "(g_TrainRailNoiseHandle,in_stack_ffffff1c * (float)1.5);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 194,
-      "match": "in_stack_0000004c",
-      "text": "fVar12 = g_TrainVelocityVector.y * (float)in_stack_0000004c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 195,
-      "match": "in_stack_0000004c",
-      "text": "fVar2 = g_TrainVelocityVector.z * (float)in_stack_0000004c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 197,
-      "match": "in_stack_0000004c",
-      "text": "(pSVar7->position).x + g_TrainVelocityVector.x * (float)in_stack_0000004c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 200,
-      "match": "in_stack_00000048",
-      "text": "pSVar3 = in_stack_00000048;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 205,
-      "match": "in_stack_00000048",
-      "text": "in_stack_00000048 = pSVar3;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 209,
-      "match": "in_stack_00000048",
-      "text": "g_TrainNoiseCooldown = g_TrainNoiseCooldown - (float)in_stack_00000048;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 227,
-      "match": "in_stack_ffffff2c",
-      "text": "in_stack_ffffff2c * (float)0.59999999999999998);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 246,
-      "match": "in_stack_0000004c",
-      "text": "*in_stack_0000004c = 0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 248,
-      "match": "in_stack_00000040",
-      "text": "fVar12 = fStack00000058 * in_stack_00000040 + g_SoundListenerPrev.z;",
+      "line": 229,
+      "match": "in_stack_fffffec4",
+      "text": "in_stack_fffffec4 * (float)0.59999999999999998);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 249,
+      "line": 252,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)fStack00000050 + 4) = 0;",
+      "text": "*(uint *)((int)local_18 + 4) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 250,
+      "line": 253,
       "match": "(float *)((int)",
-      "text": "*(float *)((int)fStack00000050 + 8) = fVar12;",
+      "text": "*(float *)((int)local_18 + 8) = fVar11;",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 254,
-      "match": "in_stack_ffffff38",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_bc,\"%s @ %g\",local_58,(double)in_stack_ffffff38)",
-      "type": "stack_param"
+      "description": "Direct stack address reference",
+      "line": 259,
+      "match": "&stack0xfffffecc",
+      "text": "(g_CSoundPtr,(CDemonActor *)0x0,&stack0xfffffecc,local_1c);",
+      "type": "stack_ref"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 257,
-      "match": "in_stack_00000060",
-      "text": "(g_CSoundPtr,(CDemonActor *)0x0,acStack_b8,in_stack_00000060);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 258,
-      "match": "in_stack_00000064",
-      "text": "*(uint *)(in_stack_00000064 + 0xc) = uVar6;",
-      "type": "stack_param"
-    },
-    {
-      "call_address": "005b36bd",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
-      "return_address": "005b36c2",
-      "target_address": "0x5fdbd0",
-      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
-      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 005b36bd",
-      "type": "call_variadic"
-    },
-    {
-      "call_address": "005b3744",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
-      "return_address": "005b3749",
-      "target_address": "0x5fdbd0",
-      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
-      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 005b3744",
-      "type": "call_variadic"
+      "description": "Complex pointer cast",
+      "line": 260,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)local_18 + 0xc) = uVar5;",
+      "type": "pointer_cast"
     }
   ]
 }

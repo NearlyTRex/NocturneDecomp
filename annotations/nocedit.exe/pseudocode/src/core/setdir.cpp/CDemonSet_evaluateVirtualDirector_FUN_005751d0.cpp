@@ -36,10 +36,10 @@ core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
   CBoundingBox3D CStack_fc;
   CBoundingBox3D CStack_e4;
   byte local_cc [12];
-  CVector3f CStack_c0;
-  CVector3f aCStack_b4 [2];
+  float fStack_c0;
+  CVector3f CStack_bc;
+  CVector3f CStack_b0;
   CVector3f CStack_9c;
-  float fStack_90;
   float fStack_8c;
   float fStack_88;
   float fStack_84;
@@ -49,8 +49,8 @@ core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
   int iStack_64;
   int iStack_60;
   int local_48;
-  float local_44;
-  int local_40;
+  int local_44;
+  float local_40;
   float fStack_3c;
   float fStack_38;
   uint uStack_34;
@@ -63,7 +63,7 @@ core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
   CDemonActor *pCStack_18;
   CDemonActor *pCStack_14;
   
-  local_40 = 0;
+  local_40 = 0.0;
   if (actor == (CDemonActor *)0x0) {
     if (this_ptr->selected_camera_index < 0) {
       core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(this_ptr,0);
@@ -92,7 +92,7 @@ LAB_0057523f:
   this_ptr->camera_switch_cooldown = 0.0;
   local_48 = g_UseExternalRenderer;
   g_UseExternalRenderer = 0;
-  local_40 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(this_ptr_00);
+  local_40 = (float)engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(this_ptr_00);
   engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_0048cac0(g_CDemonRendererPtr,0);
   (*actor->vtable->getBoundingBox)(actor,(CBoundingBox3D *)(local_cc + 8));
   uVar12 = 0;
@@ -106,12 +106,12 @@ LAB_0057523f:
     piVar4[5] = (int)ROUND(pCVar5->z * 256f);
     piVar4 = piVar4 + 3;
   } while ((int)uVar12 < 8);
-  fStack_74 = (float)local_cc._4_4_ + CStack_c0.y;
-  fStack_8c = ((float)local_cc._4_4_ + CStack_c0.y) * 0.5f;
-  fStack_70 = (float)local_cc._8_4_ + CStack_c0.z;
-  fStack_88 = ((float)local_cc._8_4_ + CStack_c0.z) * 0.5f;
-  fStack_6c = CStack_c0.x + aCStack_b4[0].x;
-  fStack_84 = (CStack_c0.x + aCStack_b4[0].x) * 0.5f;
+  fStack_74 = (float)local_cc._4_4_ + CStack_bc.x;
+  fStack_8c = ((float)local_cc._4_4_ + CStack_bc.x) * 0.5f;
+  fStack_70 = (float)local_cc._8_4_ + CStack_bc.y;
+  fStack_88 = ((float)local_cc._8_4_ + CStack_bc.y) * 0.5f;
+  fStack_6c = fStack_c0 + CStack_bc.z;
+  fStack_84 = (fStack_c0 + CStack_bc.z) * 0.5f;
   iStack_104 = (int)ROUND(fStack_8c * 256f);
   iStack_100 = (int)ROUND(fStack_88 * 256f);
   CStack_fc.min.x = (float)(int)ROUND(fStack_84 * 256f);
@@ -150,18 +150,18 @@ LAB_0057523f:
     this_ptr->previous_best_camera_timer = 0.0;
   }
   (*actor->vtable->getBoundingBox)(actor,&CStack_e4);
-  pCStack_20 = (CDemonActor *)core_box_cpp_CBoundingBox3D_getMaximumBound_FUN_00421060(&CStack_e4);
-  fStack_90 = CStack_fc.max.x + CStack_e4.min.x;
-  CStack_c0.x = fStack_90 * 0.5f;
+  pCStack_1c = (CDemonActor *)core_box_cpp_CBoundingBox3D_getMaximumBound_FUN_00421060(&CStack_e4);
   fStack_8c = CStack_fc.max.y + CStack_e4.min.y;
+  CStack_bc.x = fStack_8c * 0.5f;
   fStack_88 = CStack_fc.max.z + CStack_e4.min.z;
-  CStack_c0.y = fStack_8c * 0.5f;
-  CStack_c0.z = fStack_88 * 0.5f;
-  local_44 = (float)pCStack_20 * (float)1.5 + 1.0;
-  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(actor,aCStack_b4,&CStack_c0);
-  fStack_38 = (float)core_setdir_cpp_CDemonSet_FUN_00576870(this_ptr);
+  fStack_84 = CStack_e4.min.x + CStack_e4.max.x;
+  CStack_bc.y = fStack_88 * 0.5f;
+  CStack_bc.z = fStack_84 * 0.5f;
+  local_40 = (float)pCStack_1c * (float)1.5 + 1.0;
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(actor,&CStack_b0,&CStack_bc);
+  uStack_34 = core_setdir_cpp_CDemonSet_FUN_00576870(this_ptr);
   iVar13 = g_WindowHeight;
-  g_VDIsActorAreaInvalid = (int)(fStack_38 == -NAN);
+  g_VDIsActorAreaInvalid = (int)(uStack_34 == 0xffffffff);
   if (g_ZBufferScanlineArrayBackup[0] != (uint *)0x0) {
     g_CurrentFilename = "..\\core\\setdir.cpp";
     g_CurrentLineNumber = 0x67;
@@ -290,8 +290,8 @@ LAB_0057523f:
     } while (iVar8 < iVar13 * 4);
   }
   g_ZBufferScanlineArrayBackup[0] = (uint *)0x0;
-  engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_0048cac0(g_CDemonRendererPtr,(int)local_44);
-  g_UseExternalRenderer = (int)local_44;
+  engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_0048cac0(g_CDemonRendererPtr,local_44);
+  g_UseExternalRenderer = local_44;
   if (this_ptr->camera_count <= g_VDCameraIndex) {
     iVar13 = -1;
     iVar11 = 0;

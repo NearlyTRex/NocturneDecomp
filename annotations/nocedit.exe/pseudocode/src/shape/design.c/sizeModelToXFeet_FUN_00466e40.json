@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 190,
-    "complexity_score": 148,
+    "complexity_score": 133,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 8,
     "pseudocode_lines": 68,
-    "suspect_count": 6,
+    "suspect_count": 5,
     "suspect_types": [
       "badspacebase",
-      "call_variadic",
       "register_param",
       "stack_ref"
     ],
@@ -134,6 +133,11 @@
     "declared_params": 0,
     "estimated_params": 0
   },
+  "pcode_overrides": {
+    "00466ea8": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff94,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.514084507042254,
     "instruction_count": 142,
@@ -176,6 +180,24 @@
     },
     "pcode_op_count": 783
   },
+  "resolved_suspects": [
+    {
+      "add_esp_value": 20,
+      "call_address": "00466ea3",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "00466ea8",
+      "frame_offset": 108,
+      "match": "CALL crt_stdio.c_sscanf_FUN_0060013c",
+      "return_address": "00466ea8",
+      "target_address": "0x60013c",
+      "target_function": "crt_stdio.c_sscanf_FUN_0060013c",
+      "text": "Call to variadic function crt_stdio.c_sscanf_FUN_0060013c at 00466ea3 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 128,
     "local_size": 128,
@@ -276,19 +298,6 @@
       "match": "&stack0xffffff84",
       "text": "iVar3 = crt_stdio_c_sscanf_FUN_0060013c(&stack0xffffff84,\"%f,%d,%d\",local_20);",
       "type": "stack_ref"
-    },
-    {
-      "call_address": "00466ea3",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL crt_stdio.c_sscanf_FUN_0060013c",
-      "return_address": "00466ea8",
-      "target_address": "0x60013c",
-      "target_function": "crt_stdio.c_sscanf_FUN_0060013c",
-      "text": "Call to variadic function crt_stdio.c_sscanf_FUN_0060013c at 00466ea3",
-      "type": "call_variadic"
     }
   ]
 }

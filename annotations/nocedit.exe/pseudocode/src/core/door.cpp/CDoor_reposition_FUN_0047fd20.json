@@ -1,18 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 281,
-    "complexity_score": 180,
+    "complexity_score": 198,
     "cross_reference_count": 4,
     "function_call_count": 6,
     "global_count": 9,
-    "pseudocode_lines": 135,
-    "suspect_count": 3,
+    "pseudocode_lines": 133,
+    "suspect_count": 5,
     "suspect_types": [
       "badspacebase",
-      "call_variadic",
-      "register_param"
+      "register_param",
+      "unknown_field"
     ],
-    "total_lines": 416
+    "total_lines": 414
   },
   "cross_references": [
     {
@@ -143,6 +143,9 @@
   "pcode_overrides": {
     "0047fd47": [
       "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff38,4)"
+    ],
+    "0047fff9": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff38,4)"
     ]
   },
   "pcode_summary": {
@@ -199,7 +202,23 @@
       "frame_offset": 200,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 0047fd3e, ADD ESP at 0047fd47",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "0047fff4",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "0047fff9",
+      "frame_offset": 200,
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0047fff9",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0047fff4 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
     }
   ],
   "stack_frame": {
@@ -258,17 +277,25 @@
       "type": "register_param"
     },
     {
-      "call_address": "0047fff4",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "0047fff9",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0047fff4",
-      "type": "call_variadic"
+      "description": "Unknown/mangled field access",
+      "line": 62,
+      "match": "._4_4_",
+      "text": "auStack_44._4_4_ = 3.5;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 63,
+      "match": "._0_4_",
+      "text": "auStack_44._0_4_ = 0.0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 64,
+      "match": "._8_4_",
+      "text": "auStack_44._8_4_ = 0.0;",
+      "type": "unknown_field"
     }
   ]
 }

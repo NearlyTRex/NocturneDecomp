@@ -8,8 +8,8 @@
     "pseudocode_lines": 39,
     "suspect_count": 10,
     "suspect_types": [
-      "call_variadic",
-      "stack_param"
+      "stack_param",
+      "variadic_preserve"
     ],
     "total_lines": 145
   },
@@ -504,54 +504,58 @@
     {
       "call_address": "0050f293",
       "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
+      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
       "match": "CALL shape_memdbg.cpp_traceMemory_FUN_0050f150",
+      "prologue_offset": 32,
       "return_address": "0050f298",
       "target_address": "0x50f150",
       "target_function": "shape_memdbg.cpp_traceMemory_FUN_0050f150",
-      "text": "Call to variadic function shape_memdbg.cpp_traceMemory_FUN_0050f150 at 0050f293",
-      "type": "call_variadic"
+      "text": "Call to variadic function shape_memdbg.cpp_traceMemory_FUN_0050f150 at 0050f293 (no EBP frame)",
+      "type": "variadic_preserve"
     },
     {
       "call_address": "0050f2b6",
       "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
+      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
       "match": "CALL shape_memdbg.cpp_traceMemory_FUN_0050f150",
+      "prologue_offset": 32,
       "return_address": "0050f2bb",
       "target_address": "0x50f150",
       "target_function": "shape_memdbg.cpp_traceMemory_FUN_0050f150",
-      "text": "Call to variadic function shape_memdbg.cpp_traceMemory_FUN_0050f150 at 0050f2b6",
-      "type": "call_variadic"
+      "text": "Call to variadic function shape_memdbg.cpp_traceMemory_FUN_0050f150 at 0050f2b6 (no EBP frame)",
+      "type": "variadic_preserve"
     },
     {
       "call_address": "0050f2d9",
       "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
+      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
       "match": "CALL shape_memdbg.cpp_traceMemory_FUN_0050f150",
+      "prologue_offset": 32,
       "return_address": "0050f2de",
       "target_address": "0x50f150",
       "target_function": "shape_memdbg.cpp_traceMemory_FUN_0050f150",
-      "text": "Call to variadic function shape_memdbg.cpp_traceMemory_FUN_0050f150 at 0050f2d9",
-      "type": "call_variadic"
+      "text": "Call to variadic function shape_memdbg.cpp_traceMemory_FUN_0050f150 at 0050f2d9 (no EBP frame)",
+      "type": "variadic_preserve"
     },
     {
       "call_address": "0050f32a",
       "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
+      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
       "match": "CALL shape_memdbg.cpp_traceMemory_FUN_0050f150",
+      "prologue_offset": 32,
       "return_address": "0050f32f",
       "target_address": "0x50f150",
       "target_function": "shape_memdbg.cpp_traceMemory_FUN_0050f150",
-      "text": "Call to variadic function shape_memdbg.cpp_traceMemory_FUN_0050f150 at 0050f32a",
-      "type": "call_variadic"
+      "text": "Call to variadic function shape_memdbg.cpp_traceMemory_FUN_0050f150 at 0050f32a (no EBP frame)",
+      "type": "variadic_preserve"
     }
   ]
 }

@@ -9,14 +9,14 @@
     "suspect_count": 32,
     "suspect_types": [
       "badspacebase",
-      "call_variadic",
-      "callind_esp_no_frame",
+      "callind_preserve",
       "concat_artifact",
       "register_param",
       "stack_param",
       "stack_ref",
       "suspect_float",
-      "undefined_type"
+      "undefined_type",
+      "variadic_preserve"
     ],
     "total_lines": 577
   },
@@ -716,7 +716,7 @@
       "prologue_offset": 188,
       "return_address": "0051d7e1",
       "text": "CALLIND at 0051d7de, ADD ESP at 0051d7e1 (no EBP frame)",
-      "type": "callind_esp_no_frame"
+      "type": "callind_preserve"
     },
     {
       "add_esp_value": 8,
@@ -732,7 +732,7 @@
       "prologue_offset": 188,
       "return_address": "0051d81e",
       "text": "CALLIND at 0051d81c, ADD ESP at 0051d81e (no EBP frame)",
-      "type": "callind_esp_no_frame"
+      "type": "callind_preserve"
     },
     {
       "add_esp_value": 8,
@@ -751,7 +751,7 @@
       "prologue_offset": 188,
       "return_address": "0051d861",
       "text": "CALLIND at 0051d85e, ADD ESP at 0051d861 (no EBP frame)",
-      "type": "callind_esp_no_frame"
+      "type": "callind_preserve"
     },
     {
       "add_esp_value": 8,
@@ -770,7 +770,7 @@
       "prologue_offset": 188,
       "return_address": "0051d87e",
       "text": "CALLIND at 0051d87b, ADD ESP at 0051d87e (no EBP frame)",
-      "type": "callind_esp_no_frame"
+      "type": "callind_preserve"
     },
     {
       "add_esp_value": 8,
@@ -789,7 +789,7 @@
       "prologue_offset": 188,
       "return_address": "0051d8a6",
       "text": "CALLIND at 0051d8a3, ADD ESP at 0051d8a6 (no EBP frame)",
-      "type": "callind_esp_no_frame"
+      "type": "callind_preserve"
     },
     {
       "add_esp_value": 8,
@@ -808,7 +808,7 @@
       "prologue_offset": 188,
       "return_address": "0051d8ce",
       "text": "CALLIND at 0051d8cb, ADD ESP at 0051d8ce (no EBP frame)",
-      "type": "callind_esp_no_frame"
+      "type": "callind_preserve"
     },
     {
       "add_esp_value": 8,
@@ -827,7 +827,7 @@
       "prologue_offset": 188,
       "return_address": "0051d8f6",
       "text": "CALLIND at 0051d8f3, ADD ESP at 0051d8f6 (no EBP frame)",
-      "type": "callind_esp_no_frame"
+      "type": "callind_preserve"
     },
     {
       "add_esp_value": 8,
@@ -846,59 +846,63 @@
       "prologue_offset": 188,
       "return_address": "0051d90a",
       "text": "CALLIND at 0051d907, ADD ESP at 0051d90a (no EBP frame)",
-      "type": "callind_esp_no_frame"
+      "type": "callind_preserve"
     },
     {
       "call_address": "0051d6be",
       "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
+      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
       "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "prologue_offset": 188,
       "return_address": "0051d6c3",
       "target_address": "0x5fdbd0",
       "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
-      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0051d6be",
-      "type": "call_variadic"
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0051d6be (no EBP frame)",
+      "type": "variadic_preserve"
     },
     {
       "call_address": "0051d797",
       "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
+      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
       "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "prologue_offset": 188,
       "return_address": "0051d79c",
       "target_address": "0x5fdbd0",
       "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
-      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0051d797",
-      "type": "call_variadic"
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0051d797 (no EBP frame)",
+      "type": "variadic_preserve"
     },
     {
       "call_address": "0051d805",
       "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
+      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
       "match": "CALL shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870",
+      "prologue_offset": 188,
       "return_address": "0051d80a",
       "target_address": "0x49e870",
       "target_function": "shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870",
-      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870 at 0051d805",
-      "type": "call_variadic"
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870 at 0051d805 (no EBP frame)",
+      "type": "variadic_preserve"
     },
     {
       "call_address": "0051d844",
       "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
+      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
       "match": "CALL shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060",
+      "prologue_offset": 188,
       "return_address": "0051d849",
       "target_address": "0x49f060",
       "target_function": "shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060",
-      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060 at 0051d844",
-      "type": "call_variadic"
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060 at 0051d844 (no EBP frame)",
+      "type": "variadic_preserve"
     }
   ]
 }

@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 798,
-    "complexity_score": 799,
+    "complexity_score": 724,
     "cross_reference_count": 1,
     "function_call_count": 39,
     "global_count": 96,
     "pseudocode_lines": 519,
-    "suspect_count": 25,
+    "suspect_count": 18,
     "suspect_types": [
       "badspacebase",
-      "call_variadic",
       "param_count_too_few",
       "pointer_cast",
       "register_param",
@@ -829,6 +828,29 @@
     "declared_params": 0,
     "estimated_params": 2
   },
+  "pcode_overrides": {
+    "00507b17": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff8e8,4)"
+    ],
+    "00507bbe": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff8e8,4)"
+    ],
+    "00507c1a": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff8e8,4)"
+    ],
+    "00507c86": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff8e8,4)"
+    ],
+    "00507e9d": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff8e8,4)"
+    ],
+    "00507eff": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff8e8,4)"
+    ],
+    "00508027": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff8e8,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.925233644859813,
     "instruction_count": 642,
@@ -862,6 +884,120 @@
     },
     "pcode_op_count": 3162
   },
+  "resolved_suspects": [
+    {
+      "add_esp_value": 4,
+      "call_address": "00507b12",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "fix_address": "00507b17",
+      "frame_offset": 1816,
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "00507b17",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00507b12 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "00507bb9",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "fix_address": "00507bbe",
+      "frame_offset": 1816,
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "00507bbe",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00507bb9 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "00507c15",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "fix_address": "00507c1a",
+      "frame_offset": 1816,
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "00507c1a",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00507c15 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 16,
+      "call_address": "00507c81",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "fix_address": "00507c86",
+      "frame_offset": 1816,
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "00507c86",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00507c81 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "00507e98",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "fix_address": "00507e9d",
+      "frame_offset": 1816,
+      "match": "CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0",
+      "return_address": "00507e9d",
+      "target_address": "0x49e6f0",
+      "target_function": "shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0",
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0 at 00507e98 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 16,
+      "call_address": "00507efa",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "fix_address": "00507eff",
+      "frame_offset": 1816,
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "00507eff",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00507efa (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "00508022",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "fix_address": "00508027",
+      "frame_offset": 1816,
+      "match": "CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0",
+      "return_address": "00508027",
+      "target_address": "0x49e6f0",
+      "target_function": "shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0",
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0 at 00508022 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 1324,
     "local_size": 1324,
@@ -991,85 +1127,85 @@
     {
       "description": "Direct stack address reference",
       "line": 314,
-      "match": "&stack0xfffff940",
-      "text": "pcVar8 = &stack0xfffff940;",
+      "match": "&stack0xfffff8dc",
+      "text": "pcVar8 = &stack0xfffff8dc;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 329,
-      "match": "&stack0xfffff944",
-      "text": "pcVar8 = &stack0xfffff944;",
+      "match": "&stack0xfffff8d8",
+      "text": "pcVar8 = &stack0xfffff8d8;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 351,
-      "match": "&stack0xfffff948",
-      "text": "pcVar5 = &stack0xfffff948;",
+      "match": "&stack0xfffff8dc",
+      "text": "pcVar5 = &stack0xfffff8dc;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 372,
-      "match": "&stack0xfffff948",
-      "text": "pcVar5 = &stack0xfffff948;",
+      "match": "&stack0xfffff8dc",
+      "text": "pcVar5 = &stack0xfffff8dc;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 394,
-      "match": "&stack0xfffff94c",
-      "text": "pcVar5 = &stack0xfffff94c;",
+      "match": "&stack0xfffff8e0",
+      "text": "pcVar5 = &stack0xfffff8e0;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 415,
-      "match": "&stack0xfffff94c",
-      "text": "pcVar5 = &stack0xfffff94c;",
+      "match": "&stack0xfffff8e0",
+      "text": "pcVar5 = &stack0xfffff8e0;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 437,
-      "match": "&stack0xfffff950",
-      "text": "pcVar5 = &stack0xfffff950;",
+      "match": "&stack0xfffff8e4",
+      "text": "pcVar5 = &stack0xfffff8e4;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 456,
-      "match": "&stack0xfffff950",
-      "text": "shape_edittool_cpp_CEditorTools_showWarning_FUN_0049e6f0(g_CEditorToolsPtr,&stack0xfffff950);",
+      "match": "&stack0xfffff8e4",
+      "text": "shape_edittool_cpp_CEditorTools_showWarning_FUN_0049e6f0(g_CEditorToolsPtr,&stack0xfffff8e4);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 482,
-      "match": "&stack0x00000068",
-      "text": "engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520((CAlphaBitmap *)&stack0x00000068);",
+      "match": "&stack0xffffffec",
+      "text": "engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520((CAlphaBitmap *)&stack0xffffffec);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 484,
-      "match": "&stack0x0000006c",
-      "text": "((CAlphaBitmap *)&stack0x0000006c,\"fangs\",0x280,0x1e0);",
+      "match": "&stack0xfffffff0",
+      "text": "((CAlphaBitmap *)&stack0xfffffff0,\"fangs\",0x280,0x1e0);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 485,
-      "match": "&stack0x00000070",
-      "text": "engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950((CAlphaBitmap *)&stack0x00000070,0,0,0x8000)",
+      "match": "&stack0xfffffff4",
+      "text": "engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950((CAlphaBitmap *)&stack0xfffffff4,0,0,0x8000)",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 488,
-      "match": "&stack0x00000078",
-      "text": "engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540((CAlphaBitmap *)&stack0x00000078);",
+      "match": "&stack0xfffffffc",
+      "text": "engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540((CAlphaBitmap *)&stack0xfffffffc);",
       "type": "stack_ref"
     },
     {
@@ -1103,97 +1239,6 @@
       "param_delta": 2,
       "text": "Function declares 0 params but call sites push 2 (2 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "call_address": "00507b12",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "00507b17",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00507b12",
-      "type": "call_variadic"
-    },
-    {
-      "call_address": "00507bb9",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "00507bbe",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00507bb9",
-      "type": "call_variadic"
-    },
-    {
-      "call_address": "00507c15",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "00507c1a",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00507c15",
-      "type": "call_variadic"
-    },
-    {
-      "call_address": "00507c81",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
-      "return_address": "00507c86",
-      "target_address": "0x5fdbd0",
-      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
-      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00507c81",
-      "type": "call_variadic"
-    },
-    {
-      "call_address": "00507e98",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "match": "CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0",
-      "return_address": "00507e9d",
-      "target_address": "0x49e6f0",
-      "target_function": "shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0",
-      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0 at 00507e98",
-      "type": "call_variadic"
-    },
-    {
-      "call_address": "00507efa",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
-      "return_address": "00507eff",
-      "target_address": "0x5fdbd0",
-      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
-      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00507efa",
-      "type": "call_variadic"
-    },
-    {
-      "call_address": "00508022",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "match": "CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0",
-      "return_address": "00508027",
-      "target_address": "0x49e6f0",
-      "target_function": "shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0",
-      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0 at 00508022",
-      "type": "call_variadic"
     }
   ]
 }

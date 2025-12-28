@@ -8,8 +8,8 @@
     "pseudocode_lines": 32,
     "suspect_count": 2,
     "suspect_types": [
-      "call_variadic",
-      "callind_esp_no_frame"
+      "callind_preserve",
+      "variadic_preserve"
     ],
     "total_lines": 105
   },
@@ -187,20 +187,21 @@
       "prologue_offset": 36,
       "return_address": "005a564c",
       "text": "CALLIND at 005a5649, ADD ESP at 005a564c (no EBP frame)",
-      "type": "callind_esp_no_frame"
+      "type": "callind_preserve"
     },
     {
       "call_address": "005a5681",
       "caller_has_stack_issues": false,
-      "description": "Variadic function call may destabilize ESP tracking",
+      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
       "match": "CALL sound_sndmain.cpp_logSoundError_FUN_005adba0",
+      "prologue_offset": 36,
       "return_address": "005a5686",
       "target_address": "0x5adba0",
       "target_function": "sound_sndmain.cpp_logSoundError_FUN_005adba0",
-      "text": "Call to variadic function sound_sndmain.cpp_logSoundError_FUN_005adba0 at 005a5681",
-      "type": "call_variadic"
+      "text": "Call to variadic function sound_sndmain.cpp_logSoundError_FUN_005adba0 at 005a5681 (no EBP frame)",
+      "type": "variadic_preserve"
     }
   ]
 }

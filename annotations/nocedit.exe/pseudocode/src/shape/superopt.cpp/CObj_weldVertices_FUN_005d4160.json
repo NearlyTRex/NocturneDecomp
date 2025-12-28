@@ -1,21 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 310,
-    "complexity_score": 433,
+    "complexity_score": 405,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 1,
-    "pseudocode_lines": 133,
-    "suspect_count": 27,
+    "pseudocode_lines": 130,
+    "suspect_count": 25,
     "suspect_types": [
       "badspacebase",
-      "call_variadic",
       "concat_artifact",
       "pointer_cast",
       "register_param",
-      "stack_param"
+      "unknown_field"
     ],
-    "total_lines": 443
+    "total_lines": 440
   },
   "cross_references": [
     {
@@ -81,6 +80,9 @@
   },
   "pcode_overrides": {
     "005d4191": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff0c,4)"
+    ],
+    "005d4282": [
       "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff0c,4)"
     ],
     "005d44c3": [
@@ -160,7 +162,7 @@
       "frame_offset": 244,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 005d418b, ADD ESP at 005d4191",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 4,
@@ -171,7 +173,23 @@
       "frame_offset": 244,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 005d44bd, ADD ESP at 005d44c3",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "005d427d",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "005d4282",
+      "frame_offset": 244,
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "005d4282",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 005d427d (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
     }
   ],
   "stack_frame": {
@@ -251,50 +269,57 @@
       "type": "register_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_ffffff00",
-      "text": "int in_stack_ffffff00;",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 55,
+      "line": 52,
       "match": "(double *)((int)",
-      "text": "pdVar4 = (double *)((int)&(this_ptr->vertex_data->position).x + iStack_1c);",
+      "text": "pdVar4 = (double *)((int)&(this_ptr->vertex_data->position).x + iStack_20);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 57,
+      "line": 54,
       "match": "(byte *)((int)",
       "text": "if ((*(byte *)((int)pdVar4 + 0x35) & 0x80) == 0) {",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 58,
-      "match": "in_stack_ffffff00",
-      "text": "dVar2 = (double)CONCAT44 /* combine 2-byte values */(uStack_fc,in_stack_ffffff00);",
-      "type": "stack_param"
+      "description": "Unknown/mangled field access",
+      "line": 55,
+      "match": "._4_4_",
+      "text": "dVar2 = (double)CONCAT44 /* combine 2-byte values */(uStack_100,weld_tolerance._4_4_);",
+      "type": "unknown_field"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 58,
+      "line": 55,
       "match": "CONCAT44",
-      "text": "dVar2 = (double)CONCAT44 /* combine 2-byte values */(uStack_fc,in_stack_ffffff00);",
+      "text": "dVar2 = (double)CONCAT44 /* combine 2-byte values */(uStack_100,weld_tolerance._4_4_);",
       "type": "concat_artifact"
     },
     {
       "description": "Complex pointer cast",
-      "line": 66,
+      "line": 63,
       "match": "(double *)((int)",
       "text": "pdVar7 = (double *)((int)pdVar7 + (uint)bVar9 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 67,
+      "line": 64,
+      "match": "(double *)((int)",
+      "text": "pdVar8 = (double *)((int)pdVar8 + (uint)bVar9 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 73,
+      "match": "(double *)((int)",
+      "text": "pdVar7 = (double *)((int)pdVar7 + (uint)bVar9 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 74,
       "match": "(double *)((int)",
       "text": "pdVar8 = (double *)((int)pdVar8 + (uint)bVar9 * -8 + 4);",
       "type": "pointer_cast"
@@ -302,134 +327,107 @@
     {
       "description": "Complex pointer cast",
       "line": 76,
-      "match": "(double *)((int)",
-      "text": "pdVar7 = (double *)((int)pdVar7 + (uint)bVar9 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 77,
-      "match": "(double *)((int)",
-      "text": "pdVar8 = (double *)((int)pdVar8 + (uint)bVar9 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 79,
       "match": "(byte *)((int)",
       "text": "*(byte *)((int)pdVar4 + 0x35) = *(byte *)((int)pdVar4 + 0x35) | 0x80;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 79,
+      "line": 76,
       "match": "(byte *)((int)",
       "text": "*(byte *)((int)pdVar4 + 0x35) = *(byte *)((int)pdVar4 + 0x35) | 0x80;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 84,
+      "line": 81,
       "match": "(double *)((int)",
-      "text": "pdVar4 = (double *)((int)&(this_ptr->vertex_data->position).x + iStack_24);",
+      "text": "pdVar4 = (double *)((int)&(this_ptr->vertex_data->position).x + iStack_28);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 85,
+      "line": 82,
       "match": "(byte *)((int)",
       "text": "if ((*(byte *)((int)pdVar4 + 0x35) & 0x80) == 0) {",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 86,
-      "match": "in_stack_ffffff00",
-      "text": "if (((uStack_fc & 0x7fffffff) == 0) && (in_stack_ffffff00 == 0)) {",
-      "type": "stack_param"
+      "description": "Unknown/mangled field access",
+      "line": 83,
+      "match": "._4_4_",
+      "text": "if (((uStack_100 & 0x7fffffff) == 0) && (weld_tolerance._4_4_ == 0)) {",
+      "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 95,
+      "line": 92,
       "match": "(uint *)((int)",
       "text": "if (uVar5 == *(uint *)((int)pCVar1->uv_coords + iVar3 + -0xc)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 96,
+      "line": 93,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pCVar1->uv_coords + iVar3 + -0xc) = uVar10;",
+      "text": "*(uint *)((int)pCVar1->uv_coords + iVar3 + -0xc) = uStack_14;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 98,
+      "line": 95,
       "match": "(uint *)((int)",
       "text": "if (uVar5 == *(uint *)((int)pCVar1->uv_coords + iVar3 + -8)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 99,
+      "line": 96,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pCVar1->uv_coords + iVar3 + -8) = uVar10;",
+      "text": "*(uint *)((int)pCVar1->uv_coords + iVar3 + -8) = uStack_14;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 101,
+      "line": 98,
       "match": "(uint *)((int)",
       "text": "if (uVar5 == *(uint *)((int)pCVar1->uv_coords + iVar3 + -4)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 102,
+      "line": 99,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pCVar1->uv_coords + iVar3 + -4) = uVar10;",
+      "text": "*(uint *)((int)pCVar1->uv_coords + iVar3 + -4) = uStack_14;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 109,
+      "line": 106,
       "match": "(byte *)((int)",
       "text": "*(byte *)((int)pdVar4 + 0x35) = *(byte *)((int)pdVar4 + 0x35) | 0x80;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 109,
+      "line": 106,
       "match": "(byte *)((int)",
       "text": "*(byte *)((int)pdVar4 + 0x35) = *(byte *)((int)pdVar4 + 0x35) | 0x80;",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 119,
-      "match": "in_stack_ffffff00",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(uStack_fc,in_stack_ffffff00))) goto LAB_005d43a8;",
-      "type": "stack_param"
+      "description": "Unknown/mangled field access",
+      "line": 116,
+      "match": "._4_4_",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(uStack_100,weld_tolerance._4_4_))) goto LAB_005d43a8;",
+      "type": "unknown_field"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 119,
+      "line": 116,
       "match": "CONCAT44",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(uStack_fc,in_stack_ffffff00))) goto LAB_005d43a8;",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(uStack_100,weld_tolerance._4_4_))) goto LAB_005d43a8;",
       "type": "concat_artifact"
-    },
-    {
-      "call_address": "005d427d",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
-      "return_address": "005d4282",
-      "target_address": "0x5fdbd0",
-      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
-      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 005d427d",
-      "type": "call_variadic"
     }
   ],
   "vtable_info": {

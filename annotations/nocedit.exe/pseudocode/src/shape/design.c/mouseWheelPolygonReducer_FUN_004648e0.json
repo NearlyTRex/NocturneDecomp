@@ -1,17 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 306,
-    "complexity_score": 351,
+    "complexity_score": 320,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 39,
-    "pseudocode_lines": 161,
-    "suspect_count": 18,
+    "pseudocode_lines": 155,
+    "suspect_count": 16,
     "suspect_types": [
-      "call_variadic",
       "pointer_cast"
     ],
-    "total_lines": 467
+    "total_lines": 461
   },
   "cross_references": [
     {
@@ -348,6 +347,14 @@
     "declared_params": 1,
     "estimated_params": 1
   },
+  "pcode_overrides": {
+    "00464995": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff8,4)"
+    ],
+    "004649e7": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff8,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.694915254237288,
     "instruction_count": 236,
@@ -382,6 +389,40 @@
     },
     "pcode_op_count": 1108
   },
+  "resolved_suspects": [
+    {
+      "add_esp_value": 4,
+      "call_address": "00464990",
+      "caller_has_stack_issues": false,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "00464995",
+      "frame_offset": 8,
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "00464995",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00464990 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "004649e2",
+      "caller_has_stack_issues": false,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "004649e7",
+      "frame_offset": 8,
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "004649e7",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 004649e2 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 32,
     "local_size": 28,
@@ -415,141 +456,115 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 87,
+      "line": 83,
       "match": "(SVertexData *)((int)",
       "text": "pSVar5 = (SVertexData *)((int)pSVar5 + ((uint)bVar10 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 88,
+      "line": 84,
       "match": "(SVertexData *)((int)",
       "text": "pSVar8 = (SVertexData *)((int)pSVar8 + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 92,
+      "line": 88,
       "match": "(SVertexData *)((int)",
       "text": "pSVar5 = (SVertexData *)((int)pSVar5 + (uint)bVar10 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 93,
+      "line": 89,
       "match": "(SVertexData *)((int)",
       "text": "pSVar8 = (SVertexData *)((int)pSVar8 + (uint)bVar10 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 99,
+      "line": 95,
       "match": "(SShapeEditorPolygon *)((int)",
       "text": "pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + ((uint)bVar10 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 100,
+      "line": 96,
       "match": "(SShapeEditorPolygon *)((int)",
       "text": "pSVar9 = (SShapeEditorPolygon *)((int)pSVar9 + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 104,
+      "line": 100,
       "match": "(SShapeEditorPolygon *)((int)",
       "text": "pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + (uint)bVar10 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 105,
+      "line": 101,
       "match": "(SShapeEditorPolygon *)((int)",
       "text": "pSVar9 = (SShapeEditorPolygon *)((int)pSVar9 + (uint)bVar10 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 125,
+      "line": 118,
       "match": "(SVertexData *)((int)",
       "text": "pSVar5 = (SVertexData *)((int)pSVar5 + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 126,
+      "line": 119,
       "match": "(SVertexData *)((int)",
       "text": "pSVar8 = (SVertexData *)((int)pSVar8 + ((uint)bVar10 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 130,
+      "line": 123,
       "match": "(SVertexData *)((int)",
       "text": "pSVar5 = (SVertexData *)((int)pSVar5 + (uint)bVar10 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 131,
+      "line": 124,
       "match": "(SVertexData *)((int)",
       "text": "pSVar8 = (SVertexData *)((int)pSVar8 + (uint)bVar10 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 137,
+      "line": 131,
       "match": "(SShapeEditorPolygon *)((int)",
       "text": "pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 138,
+      "line": 132,
       "match": "(SShapeEditorPolygon *)((int)",
       "text": "pSVar9 = (SShapeEditorPolygon *)((int)pSVar9 + ((uint)bVar10 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 142,
+      "line": 136,
       "match": "(SShapeEditorPolygon *)((int)",
       "text": "pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + (uint)bVar10 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 143,
+      "line": 137,
       "match": "(SShapeEditorPolygon *)((int)",
       "text": "pSVar9 = (SShapeEditorPolygon *)((int)pSVar9 + (uint)bVar10 * -2 + 1);",
       "type": "pointer_cast"
-    },
-    {
-      "call_address": "00464990",
-      "caller_has_stack_issues": false,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "00464995",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00464990",
-      "type": "call_variadic"
-    },
-    {
-      "call_address": "004649e2",
-      "caller_has_stack_issues": false,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "004649e7",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 004649e2",
-      "type": "call_variadic"
     }
   ]
 }

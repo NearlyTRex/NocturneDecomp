@@ -16,10 +16,11 @@ void __cdecl shape_design_c_createKeyframeModel_FUN_00468320(void)
   BADSPACEBASE *in_ESP;
   byte *pbVar5;
   char *pcVar6;
-  SMRGLKeyframe *pSVar7;
+  byte *pbVar7;
   byte bVar8;
   double dVar9;
-  SMRGLKeyframe *in_stack_fffffdb0;
+  char *str;
+  byte local_24c [320];
   char local_10c [80];
   char local_bc [80];
   byte local_6c [80];
@@ -28,6 +29,7 @@ void __cdecl shape_design_c_createKeyframeModel_FUN_00468320(void)
   float local_14;
   
   bVar8 = 0;
+  str = (char *)0x158;
   crt_memory_c_memset_FUN_005fde40(&stack0xfffffd9c,0,0x158);
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_getInputWithPrompt_FUN_004032c0
@@ -55,9 +57,9 @@ void __cdecl shape_design_c_createKeyframeModel_FUN_00468320(void)
        (iVar3 < 0x11)) {
       for (local_18 = 0; local_18 < iVar3; local_18 = local_18 + 1) {
         wincore_windll_cpp_clearScreen_FUN_005b3e70();
-        crt_stdio_c_sprintf_FUN_005fdbd0(local_bc,"Enter key frame of object %d : ");
-        iVar3 = 0;
-        engine_2d_c_getInputWithPrompt_FUN_004032c0((char *)local_6c,0x14,0,0,local_bc);
+        crt_stdio_c_sprintf_FUN_005fdbd0(local_bc,"Enter key frame of object %d : ",local_18 + 1);
+        str = local_bc;
+        engine_2d_c_getInputWithPrompt_FUN_004032c0((char *)local_6c,0x14,0,0,str);
         iVar4 = -1;
         pbVar5 = local_6c;
         do {
@@ -70,16 +72,15 @@ void __cdecl shape_design_c_createKeyframeModel_FUN_00468320(void)
           return;
         }
         pbVar5 = local_6c;
-        in_stack_fffffdb0 = (SMRGLKeyframe *)(&stack0xfffffdb4 + local_18 * 0x10);
-        pSVar7 = in_stack_fffffdb0;
+        pbVar7 = local_24c + local_18 * 0x10;
         do {
           bVar2 = *pbVar5;
-          *(byte *)&(pSVar7->header).base.type = bVar2;
+          *pbVar7 = bVar2;
           if (bVar2 == 0) break;
           bVar2 = pbVar5[1];
           pbVar5 = pbVar5 + 2;
-          *(byte *)((int)&(pSVar7->header).base.type + 1) = bVar2;
-          pSVar7 = (SMRGLKeyframe *)((int)&(pSVar7->header).base.type + 2);
+          pbVar7[1] = bVar2;
+          pbVar7 = pbVar7 + 2;
         } while (bVar2 != 0);
       }
       wincore_windll_cpp_clearScreen_FUN_005b3e70();
@@ -94,7 +95,7 @@ void __cdecl shape_design_c_createKeyframeModel_FUN_00468320(void)
         pbVar5 = pbVar5 + (uint)bVar8 * -2 + 1;
       } while (bVar2 != 0);
       if (iVar3 != -2) {
-        dVar9 = crt_string_c_strtod_FUN_005ff0f3((char *)in_stack_fffffdb0);
+        dVar9 = crt_string_c_strtod_FUN_005ff0f3(str);
         local_14 = (float)dVar9;
         if ((0.0 < local_14) && (local_14 < (float)127)) {
           crt_math_c_round_FUN_005fe6b0((double)(local_14 * (float)65536));

@@ -8,10 +8,10 @@
     "pseudocode_lines": 23,
     "suspect_count": 7,
     "suspect_types": [
-      "call_variadic",
-      "callind_esp_no_frame",
+      "callind_preserve",
       "stack_param",
-      "unresolved_funcptr"
+      "unresolved_funcptr",
+      "variadic_preserve"
     ],
     "total_lines": 79
   },
@@ -189,20 +189,21 @@
       "prologue_offset": 32,
       "return_address": "0053c11d",
       "text": "CALLIND at 0053c11b, ADD ESP at 0053c11d (no EBP frame)",
-      "type": "callind_esp_no_frame"
+      "type": "callind_preserve"
     },
     {
       "call_address": "0053c0f9",
       "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
+      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
       "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "prologue_offset": 32,
       "return_address": "0053c0fe",
       "target_address": "0x49e740",
       "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
-      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 0053c0f9",
-      "type": "call_variadic"
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 0053c0f9 (no EBP frame)",
+      "type": "variadic_preserve"
     }
   ]
 }

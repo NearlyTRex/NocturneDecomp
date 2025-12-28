@@ -8,7 +8,7 @@
     "pseudocode_lines": 67,
     "suspect_count": 6,
     "suspect_types": [
-      "callind_esp_no_frame",
+      "callind_preserve",
       "pointer_cast"
     ],
     "total_lines": 217
@@ -263,7 +263,7 @@
       "prologue_offset": 64,
       "return_address": "00432c3c",
       "text": "CALLIND at 00432c3a, ADD ESP at 00432c3c (no EBP frame)",
-      "type": "callind_esp_no_frame"
+      "type": "callind_preserve"
     },
     {
       "add_esp_value": 12,
@@ -279,7 +279,7 @@
       "prologue_offset": 64,
       "return_address": "00432cf2",
       "text": "CALLIND at 00432cf0, ADD ESP at 00432cf2 (no EBP frame)",
-      "type": "callind_esp_no_frame"
+      "type": "callind_preserve"
     }
   ]
 }

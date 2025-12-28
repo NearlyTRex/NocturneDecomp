@@ -20,8 +20,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056c1a0(CDemonSet *this_ptr)
   int iVar6;
   int in_stack_00000008;
   CDemonSet *pCVar7;
-  longlong lVar8;
-  ulonglong uVar9;
+  ulonglong uVar8;
   
   if (g_CGamePtr->profile_mode != 0) {
     wincore_winrun_cpp_getTime_FUN_005f2dc0();
@@ -57,20 +56,18 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056c1a0(CDemonSet *this_ptr)
         iVar6 = iVar6 + 4;
       } while (iVar3 < g_ActiveLightCount);
     }
-    lVar8 = 0;
+    iVar3 = 0;
     if (0 < g_DynamicLightCount) {
-      uVar9 = 0;
+      uVar8 = 0;
       do {
-        iVar6 = (int)((ulonglong)lVar8 >> 0x20);
-        iVar3 = (int)uVar9;
-        pCVar2 = *(CDemonLight **)((int)g_DynamicLights + iVar3);
+        iVar6 = (int)uVar8;
+        pCVar2 = *(CDemonLight **)((int)g_DynamicLights + iVar6);
         if ((pCVar2->light_enabled_flag != 0) && (pCVar2->antialiasing_enabled != 0)) {
           iVar4 = 0;
           core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0
                     (&g_CDemonCameraInstance,pCVar2);
-          iVar6 = (int)((ulonglong)lVar8 >> 0x20);
-          iVar5 = (int)uVar9;
-          iVar3 = iVar5;
+          iVar5 = (int)uVar8;
+          iVar6 = iVar5;
           if (0 < this_ptr->mirror_glass_count) {
             do {
               core_set_cpp_CDemonSet_setupMirrorRendering_FUN_005709e0(this_ptr,iVar4,0);
@@ -78,14 +75,13 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056c1a0(CDemonSet *this_ptr)
                         (&g_CDemonCameraInstance,*(CDemonLight **)((int)g_DynamicLights + iVar5));
               iVar4 = iVar4 + 1;
               core_set_cpp_FUN_00570af0();
-              iVar6 = (int)((ulonglong)lVar8 >> 0x20);
-              iVar3 = (int)uVar9;
+              iVar6 = (int)uVar8;
             } while (iVar4 < this_ptr->mirror_glass_count);
           }
         }
-        uVar9 = (ulonglong)(iVar3 + 4);
-        lVar8 = (ulonglong)(iVar6 + 1U) << 0x20;
-      } while ((int)(iVar6 + 1U) < g_DynamicLightCount);
+        iVar3 = iVar3 + 1;
+        uVar8 = (ulonglong)(iVar6 + 4);
+      } while (iVar3 < g_DynamicLightCount);
     }
     iVar3 = 0;
     if (0 < g_CoronaGlobeCount) {

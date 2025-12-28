@@ -16,10 +16,7 @@ void __cdecl shape_design_c_configureSpatialSplittingPlane_FUN_004617c0(STreeNod
   BADSPACEBASE *in_ESP;
   byte *pbVar5;
   byte bVar6;
-  float local_16c;
-  float local_168;
-  float local_164;
-  float local_160;
+  SShapeEditorPolygon local_214;
   byte local_90 [80];
   float local_40;
   float local_3c;
@@ -27,6 +24,9 @@ void __cdecl shape_design_c_configureSpatialSplittingPlane_FUN_004617c0(STreeNod
   float local_34;
   STreeNode *local_30;
   float local_28;
+  uint local_24;
+  uint local_20;
+  uint local_1c;
   float local_18;
   int local_14;
   
@@ -60,13 +60,17 @@ LAB_0046186a:
         if (local_28 == 1.12104e-43) {
           engine_2d_c_getInputWithPrompt_FUN_004032c0
                     ((char *)local_90,0x46,0,0x16,"Enter in 3 points : ");
-          crt_stdio_c_sscanf_FUN_0060013c((char *)local_90,"%d,%d,%d");
-          shape_design_c_calculatePolygonNormal_FUN_0045caa0
-                    ((SShapeEditorPolygon *)&stack0xfffffdec);
-          local_40 = local_16c;
-          local_3c = local_168;
-          local_38 = local_164;
-          local_34 = local_160;
+          crt_stdio_c_sscanf_FUN_0060013c
+                    ((char *)local_90,"%d,%d,%d",&local_24,&local_20,&local_1c);
+          local_214.vertex_indices_count = 3;
+          local_214.vertex_indices[0] = local_24;
+          local_214.vertex_indices[1] = local_20;
+          local_214.vertex_indices[2] = local_1c;
+          shape_design_c_calculatePolygonNormal_FUN_0045caa0(&local_214);
+          local_40 = local_214.normal.x;
+          local_3c = local_214.normal.y;
+          local_38 = local_214.normal.z;
+          local_34 = local_214.plane_distance;
         }
         else {
           engine_2d_c_getInputWithPrompt_FUN_004032c0
@@ -96,6 +100,7 @@ LAB_0046186a:
         local_30->right_child = (STreeNode *)0x0;
         local_30->node_type = 0;
         local_30->data1 = node->data1;
+        local_214.polygon_type = 0x461a2b;
         pSVar3 = shape_design_c_allocateSpatialTreeNode_FUN_00457ed0();
         pSVar3->left_child = (STreeNode *)0x0;
         pSVar3->right_child = (STreeNode *)0x0;

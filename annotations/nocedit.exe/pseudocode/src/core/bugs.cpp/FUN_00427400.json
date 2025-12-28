@@ -8,11 +8,11 @@
     "pseudocode_lines": 110,
     "suspect_count": 51,
     "suspect_types": [
-      "call_variadic",
       "concat_artifact",
       "param_count_too_few",
       "pointer_cast",
-      "stack_param"
+      "stack_param",
+      "variadic_preserve"
     ],
     "total_lines": 348
   },
@@ -554,15 +554,16 @@
     {
       "call_address": "004274f1",
       "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
+      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
       "match": "CALL engine_console.cpp_CConsole_printf_FUN_00441890",
+      "prologue_offset": 24,
       "return_address": "004274f6",
       "target_address": "0x441890",
       "target_function": "engine_console.cpp_CConsole_printf_FUN_00441890",
-      "text": "Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 004274f1",
-      "type": "call_variadic"
+      "text": "Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 004274f1 (no EBP frame)",
+      "type": "variadic_preserve"
     }
   ]
 }

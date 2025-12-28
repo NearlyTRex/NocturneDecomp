@@ -1,21 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 805,
-    "complexity_score": 698,
+    "complexity_score": 404,
     "cross_reference_count": 1,
     "function_call_count": 15,
     "global_count": 13,
-    "pseudocode_lines": 368,
-    "suspect_count": 30,
+    "pseudocode_lines": 359,
+    "suspect_count": 3,
     "suspect_types": [
       "badspacebase",
-      "call_variadic",
       "pointer_cast",
-      "register_param",
-      "stack_param",
-      "stack_ref"
+      "register_param"
     ],
-    "total_lines": 1173
+    "total_lines": 1164
   },
   "cross_references": [
     {
@@ -211,6 +208,11 @@
     "declared_params": 2,
     "estimated_params": 2
   },
+  "pcode_overrides": {
+    "00495442": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff24,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.4031791907514455,
     "instruction_count": 692,
@@ -256,6 +258,24 @@
     },
     "pcode_op_count": 3739
   },
+  "resolved_suspects": [
+    {
+      "add_esp_value": 4,
+      "call_address": "0049543d",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "fix_address": "00495442",
+      "frame_offset": 220,
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "00495442",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0049543d (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 256,
     "local_size": 248,
@@ -688,219 +708,24 @@
   "suspects": [
     {
       "description": "Ghidra failed to resolve stack frame",
-      "line": 15,
+      "line": 13,
       "match": "BADSPACEBASE",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "badspacebase"
     },
     {
       "description": "Inferred register parameter",
-      "line": 15,
+      "line": 13,
       "match": "in_ESP",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "register_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_ffffff18",
-      "text": "int in_stack_ffffff18;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_ffffff1c",
-      "text": "CDemonCube *in_stack_ffffff1c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 24,
-      "match": "in_stack_ffffff20",
-      "text": "int in_stack_ffffff20;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_ffffff24",
-      "text": "CCharacter *in_stack_ffffff24;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_ffffff28",
-      "text": "char **in_stack_ffffff28;",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 126,
+      "line": 124,
       "match": "(float *)((int)",
-      "text": "pfVar8 = (float *)((int)&(this_ptr->triangle_list->vertex1).x + (int)local_68);",
+      "text": "pfVar7 = (float *)((int)&(this_ptr->triangle_list->vertex1).x + (int)local_68);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 207,
-      "match": "&stack0xffffff18",
-      "text": "((CCharacter *)&stack0xffffff18,ppcVar9);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 209,
-      "match": "&stack0xffffff1c",
-      "text": "((CCharacter *)&stack0xffffff1c,(char **)(piVar4 + 2));",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 211,
-      "match": "&stack0xffffff20",
-      "text": "((CCharacter *)&stack0xffffff20,(char **)(piVar4 + 3));",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 214,
-      "match": "&stack0xffffff24",
-      "text": "((CCharacter *)&stack0xffffff24,local_14);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 216,
-      "match": "&stack0xffffff28",
-      "text": "((CCharacter *)&stack0xffffff28,local_14 + 1);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 232,
-      "match": "&stack0xffffff18",
-      "text": "if (local_54 + 1 != (int *)&stack0xffffff18) {",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 233,
-      "match": "in_stack_ffffff18",
-      "text": "local_54[1] = in_stack_ffffff18;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 234,
-      "match": "in_stack_ffffff1c",
-      "text": "local_54[2] = (int)in_stack_ffffff1c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 235,
-      "match": "in_stack_ffffff20",
-      "text": "local_54[3] = in_stack_ffffff20;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 237,
-      "match": "&stack0xffffff24",
-      "text": "if (local_54 + 4 != (int *)&stack0xffffff24) {",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 238,
-      "match": "in_stack_ffffff24",
-      "text": "local_54[4] = (int)in_stack_ffffff24;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 239,
-      "match": "in_stack_ffffff28",
-      "text": "local_54[5] = (int)in_stack_ffffff28;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 279,
-      "match": "in_stack_ffffff18",
-      "text": "in_stack_ffffff18 = 0x4959c8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 282,
-      "match": "in_stack_ffffff1c",
-      "text": "in_stack_ffffff1c = (CDemonCube *)0x4959db;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 285,
-      "match": "in_stack_ffffff28",
-      "text": "in_stack_ffffff28 = local_14 + 2;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 286,
-      "match": "in_stack_ffffff24",
-      "text": "in_stack_ffffff24 = (CCharacter *)&local_b8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 287,
-      "match": "in_stack_ffffff20",
-      "text": "in_stack_ffffff20 = 0x4959ee;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 289,
-      "match": "in_stack_ffffff24",
-      "text": "(in_stack_ffffff24,in_stack_ffffff28);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 289,
-      "match": "in_stack_ffffff28",
-      "text": "(in_stack_ffffff24,in_stack_ffffff28);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 350,
-      "match": "in_stack_ffffff18",
-      "text": "in_stack_ffffff18 = 0x4957e9;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 351,
-      "match": "in_stack_ffffff1c",
-      "text": "in_stack_ffffff1c = local_1c;",
-      "type": "stack_param"
-    },
-    {
-      "call_address": "0049543d",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "00495442",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0049543d",
-      "type": "call_variadic"
     }
   ]
 }

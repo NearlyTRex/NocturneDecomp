@@ -12,12 +12,14 @@ void __cdecl shape_design_c_showShapeEditorMenu_FUN_0046f290(void)
   uint uVar1;
   int iVar2;
   BADSPACEBASE *in_ESP;
-  uint uStack0000004c;
+  char *pcStack0000000c;
+  char *pcStack00000020;
   
   engine_2d_c_setupViewportAndClipping_FUN_00401800(0,0,g_WindowWidth + -1,g_WindowHeight + -1);
   engine_2d_c_loadPaletteFile_FUN_004015a0("vga.act");
   engine_2d_c_doNothing_FUN_00402860();
   engine_2d_c_loadOrBuildColorMap_FUN_00402930("vga.act");
+  pcStack0000000c = "vga.act";
   engine_2d_c_doNothing_FUN_00401590();
   wincore_wddvmem_cpp_setupColorPalette_FUN_005ed8f0();
   g_ModelCount = 8;
@@ -44,7 +46,9 @@ void __cdecl shape_design_c_showShapeEditorMenu_FUN_0046f290(void)
   g_LightDirectionY2 = -0xb4fd;
   g_LightDirectionZ2 = 0;
   do {
+    pcStack00000020 = (char *)0x46f3cf;
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
+    pcStack00000020 = "Jan 10 2000";
     crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff9c,"Demented Shape Editor    Build date: %s %s");
     engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff9c,0,0);
     engine_2d_c_drawText_FUN_00401fd0("1. Point Editor",0,0x16);
@@ -77,7 +81,9 @@ void __cdecl shape_design_c_showShapeEditorMenu_FUN_0046f290(void)
     engine_2d_c_drawText_FUN_00401fd0("T. Mesh smooth",0,0x14a);
     engine_2d_c_drawText_FUN_00401fd0("U. Bisect mesh",0,0x155);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
+    pcStack0000000c = (char *)0x46f64d;
     uVar1 = wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
+    pcStack0000000c = (char *)0x46f658;
     iVar2 = crt_ctype_c_toupper_FUN_005ff9e0(uVar1 & 0xff);
     if (iVar2 == 0x48) {
       shape_design_c_showHelpFile_FUN_00457f00("editmain.hlp");
@@ -105,6 +111,7 @@ void __cdecl shape_design_c_showShapeEditorMenu_FUN_0046f290(void)
       shape_design_c_scaleModel_FUN_00467e70();
       break;
     case 0x38:
+      pcStack0000000c = (char *)0x46f6d4;
       shape_design_c_vertexReducer_FUN_00467850(0.1,-1.0,1);
       break;
     case 0x39:
@@ -175,7 +182,7 @@ void __cdecl shape_design_c_showShapeEditorMenu_FUN_0046f290(void)
     engine_2d_c_clearInputAndWait_FUN_00403260();
     shape_design_c_handleEditorHotkeys_FUN_0045b990();
   } while (iVar2 != 0x1b);
-  uStack0000004c = 0x46f889;
+  pcStack00000020 = (char *)0x46f889;
   engine_2d_c_clearInputAndWait_FUN_00403260();
   return;
 }

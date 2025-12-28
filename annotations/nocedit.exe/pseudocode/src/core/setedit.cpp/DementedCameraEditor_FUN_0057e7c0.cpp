@@ -9,135 +9,121 @@
 void __cdecl core_setedit_cpp_DementedCameraEditor_FUN_0057e7c0(CDemonSet *this_ptr)
 
 {
-  char cVar1;
-  byte bVar2;
+  CVector3f *pCVar1;
+  char cVar2;
+  byte bVar3;
   int *ptr;
   CEditorTools *this_ptr_00;
-  bool bVar3;
+  bool bVar4;
   undefined3 extraout_var;
-  byte *pbVar4;
-  FILE *pFVar5;
+  byte *pbVar5;
   FILE *pFVar6;
-  uint uVar7;
-  uint *puVar8;
-  float *pfVar9;
-  FILE *unaff_EBX;
+  FILE *pFVar7;
+  C3DSCamera *pCVar8;
+  CVector3f *pCVar9;
   int iVar10;
-  C3DSCamera *string_data;
-  uint *puVar11;
+  C3DSCamera *pCVar11;
   CDemonSet *pCVar12;
   BADSPACEBASE *in_ESP;
-  FILE *unaff_EBP;
   FILE *unaff_ESI;
   int iVar13;
-  char *pcVar14;
-  uint *puVar15;
-  FILE *unaff_EDI;
   int y_pos;
-  char *pcVar16;
-  char *pcVar17;
-  uint *puVar18;
-  FILE **ppFVar19;
-  byte bVar20;
-  int in_stack_00000008;
-  int in_stack_0000000c;
+  char *pcVar14;
+  char *pcVar15;
+  C3DSCamera *pCVar16;
+  C3DSCamera *pCVar17;
+  byte bVar18;
+  int unaff_retaddr;
   int in_stack_00000014;
-  FILE *in_stack_00000018;
-  FILE *in_stack_00000020;
-  int in_stack_00000024;
-  FILE *in_stack_00000028;
-  FILE *in_stack_00000030;
-  FILE *in_stack_00000038;
-  FILE *in_stack_00000040;
-  FILE *pFVar21;
-  char *in_stack_ffffb8cc;
-  char *in_stack_ffffb8d0;
-  uint in_stack_ffffb8d4;
-  uint in_stack_ffffb8d8;
-  uint in_stack_ffffb8dc;
-  FILE *in_stack_ffffb8e0;
-  FILE *in_stack_ffffb900;
-  byte auStack_2ea4 [6292];
-  byte auStack_1610 [12];
-  byte auStack_1604 [912];
-  byte auStack_1274 [24];
-  byte auStack_125c [924];
-  byte auStack_ec0 [12];
-  byte auStack_eb4 [936];
-  byte auStack_b0c [260];
-  float fStack_a08;
-  float fStack_a04;
-  float fStack_a00;
-  float fStack_9fc;
-  float fStack_9f8;
-  float fStack_9f4;
-  char acStack_990 [36];
-  byte auStack_96c [216];
-  char acStack_894 [16];
-  char acStack_884 [8];
-  char acStack_87c [20];
-  char acStack_868 [248];
-  char acStack_770 [268];
-  char acStack_664 [4];
-  char acStack_660 [28];
-  char acStack_644 [4];
-  char acStack_640 [228];
-  char acStack_55c [4];
-  char acStack_558 [28];
-  char acStack_53c [4];
-  char acStack_538 [132];
-  char acStack_4b4 [4];
-  char acStack_4b0 [40];
-  char acStack_488 [10];
-  byte abStack_47e [10];
-  char acStack_474 [4];
-  char acStack_470 [9];
-  char acStack_467 [243];
-  char acStack_374 [16];
-  char acStack_364 [212];
-  char acStack_290 [36];
-  byte auStack_26c [212];
-  char acStack_198 [8];
-  char acStack_190 [16];
-  char acStack_180 [8];
-  char acStack_178 [240];
-  byte local_88 [8];
+  FILE *pFVar19;
+  uint uVar20;
+  uint d3;
+  uint d4;
+  uint d5;
+  uint d6;
+  uint d5_00;
+  char *pcVar21;
+  byte auStack_2ef8 [6308];
+  byte auStack_1654 [16];
+  byte auStack_1644 [924];
+  byte auStack_12a8 [932];
+  byte auStack_f04 [16];
+  byte auStack_ef4 [916];
+  byte local_b60 [260];
+  float local_a5c;
+  float local_a58;
+  float local_a54;
+  float local_a50;
+  float local_a4c;
+  float fStack_a48;
+  char acStack_9b8 [252];
+  char local_8bc [24];
+  char acStack_8a4 [236];
+  char acStack_7b8 [252];
+  char local_6bc [4];
+  char acStack_6b8 [16];
+  char acStack_6a8 [236];
+  char local_5bc [4];
+  char acStack_5b8 [244];
+  char acStack_4c4 [4];
+  char acStack_4c0 [4];
+  char local_4bc [10];
+  byte abStack_4b2 [242];
+  char acStack_3c0 [4];
+  char local_3bc [260];
+  char acStack_2b8 [252];
+  char local_1bc [4];
+  char acStack_1b8 [256];
+  char acStack_b8 [16];
+  char acStack_a8 [4];
+  char acStack_a4 [12];
+  float local_98;
+  float local_94;
+  float local_90;
+  float local_8c;
+  float local_88;
+  float local_84;
   int local_80;
   C3DSCamera *local_7c;
   C3DSCamera *local_78;
-  FILE *local_74;
+  C3DSCamera *local_74;
   char *local_70;
-  FILE *local_6c;
-  char local_68 [12];
+  C3DSCamera *local_6c;
+  int local_68;
+  int local_64;
+  FILE *local_60;
   FILE *local_5c;
-  FILE *local_58 [5];
-  float local_44;
+  FILE *local_58;
+  FILE *local_54;
+  FILE *local_50;
+  FILE *local_4c;
+  int local_48;
+  FILE *local_44;
   C3DSCamera *local_40;
-  C3DSCamera *local_3c;
-  C3DSCamera *local_38;
-  FILE *local_34;
-  C3DSCamera *local_30;
-  FILE *local_28;
-  FILE *local_24;
-  byte local_20 [4];
-  char *local_1c;
+  FILE *local_3c;
+  FILE *local_38;
+  C3DSCamera *local_34;
+  FILE *local_30;
+  int local_28;
+  C3DSCamera *local_24;
+  FILE *local_20;
+  C3DSCamera *local_1c;
   FILE *local_18;
-  FILE *local_14;
   
-  bVar20 = 0;
+  bVar18 = 0;
   core_setedit_cpp_CDemonSet_BuildingThumbnailImages_FUN_00576da0(this_ptr);
   local_7c = this_ptr->cameras;
   local_70 = this_ptr->geometry_filename;
   local_78 = local_7c;
-  local_74 = (FILE *)local_7c;
-  local_6c = (FILE *)local_7c;
+  local_74 = local_7c;
+  local_6c = local_7c;
   local_5c = (FILE *)local_7c;
-  local_58[0] = (FILE *)local_7c;
+  local_58 = (FILE *)local_7c;
   local_40 = local_7c;
-  local_3c = local_7c;
-  local_38 = local_7c;
-  local_34 = (FILE *)local_7c;
-  local_30 = local_7c;
+  local_3c = (FILE *)local_7c;
+  local_38 = (FILE *)local_7c;
+  local_34 = local_7c;
+  local_30 = (FILE *)local_7c;
   do {
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
     engine_2d_c_drawText_FUN_00401fd0("Demented Camera Editor",0,0);
@@ -147,15 +133,14 @@ void __cdecl core_setedit_cpp_DementedCameraEditor_FUN_0057e7c0(CDemonSet *this_
     if (0 < this_ptr->camera_count) {
       local_24 = local_74;
       do {
-        crt_stdio_c_sprintf_FUN_005fdbd0(acStack_4b0,"%s",acStack_4b0,"%s",local_24)
-        ;
-        engine_2d_c_drawText_FUN_00401fd0(acStack_4b4,iVar13,y_pos);
+        crt_stdio_c_sprintf_FUN_005fdbd0((char *)(abStack_4b2 + 2),"%s");
+        engine_2d_c_drawText_FUN_00401fd0(local_4bc,iVar13,y_pos);
         y_pos = y_pos + 0xb;
         if (g_WindowHeight / 2 + -0xb < y_pos) {
           y_pos = 0x16;
           iVar13 = iVar13 + g_WindowWidth / 7;
         }
-        local_24 = local_24 + 0xf;
+        local_24 = local_24 + 1;
         iVar10 = iVar10 + 1;
       } while (iVar10 < this_ptr->camera_count);
     }
@@ -165,13 +150,21 @@ void __cdecl core_setedit_cpp_DementedCameraEditor_FUN_0057e7c0(CDemonSet *this_
     engine_2d_c_drawText_FUN_00401fd0("2.  Delete existing camera",0,iVar10);
     engine_2d_c_drawText_FUN_00401fd0("3.  Edit existing camera",0,iVar13 + 0x16);
     this_ptr = (CDemonSet *)(iVar13 + 0x21);
+    pFVar19 = (FILE *)0x57e94a;
     engine_2d_c_drawText_FUN_00401fd0("4.  Save set",0,(int)this_ptr);
+    uVar20 = 0x57e96a;
     engine_2d_c_drawText_FUN_00401fd0("5.  Rename all cameras",g_WindowWidth / 3,iVar13);
+    d3 = 0x57e98a;
     engine_2d_c_drawText_FUN_00401fd0("6.  Clone a camera",g_WindowWidth / 3,iVar10);
+    d4 = 0x57e9aa;
     engine_2d_c_drawText_FUN_00401fd0("7.  Merge .LC file",g_WindowWidth / 3,iVar13 + 0x16);
+    d5 = 0x57e9d1;
     engine_2d_c_drawText_FUN_00401fd0
               ("8.  Precompute all PVS",g_WindowWidth / 3,in_stack_00000014);
+    d6 = 0x57e9f4;
     engine_2d_c_drawText_FUN_00401fd0("9.  Merge2",(g_WindowWidth * 2) / 3,iVar13);
+    pcVar21 = "A.  Rename2";
+    d5_00 = 0x57ea17;
     engine_2d_c_drawText_FUN_00401fd0("A.  Rename2",(g_WindowWidth * 2) / 3,iVar10);
     iVar10 = core_setedit_cpp_CDemonSet_FUN_00577af0(this_ptr);
     if ((iVar10 != -1) && (iVar10 = core_setedit_cpp_UserInputCreate_FUN_0057d660(), iVar10 != 0)) {
@@ -181,37 +174,36 @@ void __cdecl core_setedit_cpp_DementedCameraEditor_FUN_0057e7c0(CDemonSet *this_
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     iVar10 = wincore_winrun_cpp_wasKeyPressed_FUN_005f2f00();
     if (iVar10 == 0) {
-      local_38 = (C3DSCamera *)0xffffffff;
+      local_38 = (FILE *)0xffffffff;
     }
     else {
-      local_34 = (FILE *)engine_keys_cpp_CKeys_getUppercasedInputKey_FUN_00502470(g_CKeysPtr);
+      local_34 = (C3DSCamera *)engine_keys_cpp_CKeys_getUppercasedInputKey_FUN_00502470(g_CKeysPtr);
     }
-    switch(local_34) {
-    case (FILE *)0x31:
+    switch(local_80) {
+    case 0x31:
       if (this_ptr->camera_count < 0xfa) {
-        core_setutil_cpp_C3DSCamera_reset_FUN_005853b0
-                  ((C3DSCamera *)(this_ptr->camera_count * 0x1a4 + in_stack_0000000c));
+        core_setutil_cpp_C3DSCamera_reset_FUN_005853b0(local_40 + this_ptr->camera_count);
         engine_2d_c_getInputWithPrompt_FUN_004032c0
-                  (acStack_470,8,0,0,"Name this new camera : ");
-        pcVar14 = acStack_470 + 4;
-        pcVar17 = (char *)(this_ptr->camera_count * 0x1a4 + in_stack_0000000c);
+                  (acStack_4c0,8,0,0,"Name this new camera : ");
+        pcVar21 = local_4bc;
+        pFVar19 = local_44 + this_ptr->camera_count * 0xf;
         do {
-          cVar1 = *pcVar14;
-          *pcVar17 = cVar1;
-          if (cVar1 == '\0') break;
-          cVar1 = pcVar14[1];
-          pcVar14 = pcVar14 + 2;
-          pcVar17[1] = cVar1;
-          pcVar17 = pcVar17 + 2;
-        } while (cVar1 != '\0');
+          cVar2 = *pcVar21;
+          *(char *)&pFVar19->_ptr = cVar2;
+          if (cVar2 == '\0') break;
+          cVar2 = pcVar21[1];
+          pcVar21 = pcVar21 + 2;
+          *(char *)((int)&pFVar19->_ptr + 1) = cVar2;
+          pFVar19 = (FILE *)((int)&pFVar19->_ptr + 2);
+        } while (cVar2 != '\0');
         iVar10 = -1;
-        pcVar14 = acStack_470 + 4;
+        pcVar21 = local_4bc;
         do {
           if (iVar10 == 0) break;
           iVar10 = iVar10 + -1;
-          cVar1 = *pcVar14;
-          pcVar14 = pcVar14 + (uint)bVar20 * -2 + 1;
-        } while (cVar1 != '\0');
+          cVar2 = *pcVar21;
+          pcVar21 = pcVar21 + (uint)bVar18 * -2 + 1;
+        } while (cVar2 != '\0');
         if ((iVar10 != -2) &&
            (iVar10 = core_setedit_cpp_UserInputCreate_FUN_0057d660(), iVar10 != 0)) {
           this_ptr->camera_count = this_ptr->camera_count + 1;
@@ -219,259 +211,256 @@ void __cdecl core_setedit_cpp_DementedCameraEditor_FUN_0057e7c0(CDemonSet *this_
         }
       }
       break;
-    case (FILE *)0x32:
-      shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)(auStack_ec0 + 8));
+    case 0x32:
+      shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)auStack_f04);
       iVar10 = 0;
-      pFVar5 = local_34;
+      pCVar17 = local_74;
       if (0 < this_ptr->camera_count) {
         do {
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)auStack_ec0,(char *)pFVar5);
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)(auStack_f04 + 4),pCVar17->name);
           iVar10 = iVar10 + 1;
-          pFVar5 = pFVar5 + 0xf;
+          pCVar17 = pCVar17 + 1;
         } while (iVar10 < this_ptr->camera_count);
       }
       iVar10 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                         ((CPickList *)auStack_ec0,"Delete which camera",-1,0);
+                         ((CPickList *)(auStack_f04 + 4),"Delete which camera",-1,0);
       if (-1 < iVar10) {
         core_setedit_cpp_FUN_0057e430();
         core_setedit_cpp_CDemonSet_BuildingThumbnailImages_FUN_00576da0(this_ptr);
       }
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                ((CPickList *)auStack_eb4,0,(uint)in_stack_ffffb8cc,(uint)in_stack_ffffb8d0,
-                 in_stack_ffffb8d4,in_stack_ffffb8d8,in_stack_ffffb8dc);
+                ((CPickList *)auStack_ef4,0,d4,d5,d6,d5_00,(uint)pcVar21);
       break;
-    case (FILE *)0x33:
-      shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)(auStack_1610 + 8));
+    case 0x33:
+      shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)auStack_1654);
       iVar10 = 0;
-      string_data = local_30;
+      pcVar15 = local_70;
       if (0 < this_ptr->camera_count) {
         do {
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)auStack_1610,string_data->name);
+          shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)(auStack_1654 + 4),pcVar15);
           iVar10 = iVar10 + 1;
-          string_data = string_data + 1;
+          pcVar15 = pcVar15 + 0x1a4;
         } while (iVar10 < this_ptr->camera_count);
       }
       iVar10 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                         ((CPickList *)auStack_1610,"Move which camera",-1,0);
+                         ((CPickList *)(auStack_1654 + 4),"Move which camera",-1,0);
       if ((-1 < iVar10) && (iVar10 = core_setedit_cpp_UserInputCreate_FUN_0057d660(), iVar10 != 0))
       {
         core_setedit_cpp_CDemonSet_BuildingThumbnailImages_FUN_00576da0(this_ptr);
       }
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                ((CPickList *)auStack_1604,0,(uint)in_stack_ffffb8cc,(uint)in_stack_ffffb8d0,
-                 in_stack_ffffb8d4,in_stack_ffffb8d8,in_stack_ffffb8dc);
+                ((CPickList *)auStack_1644,0,d4,d5,d6,d5_00,(uint)pcVar21);
       break;
-    case (FILE *)0x34:
+    case 0x34:
       if (*(char *)(iVar13 + 0x14d111) == '\0') {
-        acStack_470[4] = 0;
+        local_4bc[4] = 0;
       }
       else {
         engine_dosio_c_splitPath_FUN_00481f20
-                  ((char *)local_24,(char *)0x0,(char *)0x0,acStack_470 + 4,(char *)0x0);
-        pcVar17 = ".set";
+                  (local_70,(char *)0x0,(char *)0x0,local_4bc + 4,(char *)0x0);
+        pcVar15 = ".set";
         iVar10 = -1;
-        pcVar14 = acStack_470;
+        pcVar21 = acStack_4c0;
         do {
-          pcVar16 = pcVar14;
+          pcVar14 = pcVar21;
           if (iVar10 == 0) break;
           iVar10 = iVar10 + -1;
-          pcVar16 = pcVar14 + (uint)bVar20 * -2 + 1;
-          cVar1 = *pcVar14;
-          pcVar14 = pcVar16;
-        } while (cVar1 != '\0');
-        pcVar16 = pcVar16 + -1;
+          pcVar14 = pcVar21 + (uint)bVar18 * -2 + 1;
+          cVar2 = *pcVar21;
+          pcVar21 = pcVar14;
+        } while (cVar2 != '\0');
+        pcVar14 = pcVar14 + -1;
         do {
-          cVar1 = *pcVar17;
-          *pcVar16 = cVar1;
-          if (cVar1 == '\0') break;
-          cVar1 = pcVar17[1];
-          pcVar17 = pcVar17 + 2;
-          pcVar16[1] = cVar1;
-          pcVar16 = pcVar16 + 2;
-        } while (cVar1 != '\0');
-        crt_string_c_strupr_FUN_00600770(acStack_470);
+          cVar2 = *pcVar15;
+          *pcVar14 = cVar2;
+          if (cVar2 == '\0') break;
+          cVar2 = pcVar15[1];
+          pcVar15 = pcVar15 + 2;
+          pcVar14[1] = cVar2;
+          pcVar14 = pcVar14 + 2;
+        } while (cVar2 != '\0');
+        crt_string_c_strupr_FUN_00600770(acStack_4c0);
       }
-      bVar3 = shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
+      bVar4 = shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
                         (g_CEditorToolsPtr,"Save set","models",0x6481d1,
-                         (bool)((char)acStack_470 + '\x04'));
-      if (CONCAT31 /* combine 2-byte values */(extraout_var,bVar3) != 0) {
-        core_setedit_cpp_CDemonSet_save_FUN_0057a2a0(this_ptr,acStack_470 + 8);
+                         SUB41 /* extract 2-byte value */(local_4bc,0));
+      if (CONCAT31 /* combine 2-byte values */(extraout_var,bVar4) != 0) {
+        core_setedit_cpp_CDemonSet_save_FUN_0057a2a0(this_ptr,local_4bc + 4);
       }
       break;
-    case (FILE *)0x35:
-      local_6c = (FILE *)((uint)local_6c & 0xffffff00);
-      engine_2d_c_getInputWithPrompt_FUN_004032c0
-                ((char *)&local_6c,5,0,0,"Enter new base name : ");
+    case 0x35:
+      acStack_b8[0] = '\0';
+      engine_2d_c_getInputWithPrompt_FUN_004032c0(acStack_b8,5,0,0,"Enter new base name : ");
       iVar10 = -1;
-      pcVar14 = local_68;
+      pcVar21 = acStack_b8;
       do {
         if (iVar10 == 0) break;
         iVar10 = iVar10 + -1;
-        cVar1 = *pcVar14;
-        pcVar14 = pcVar14 + (uint)bVar20 * -2 + 1;
-      } while (cVar1 != '\0');
+        cVar2 = *pcVar21;
+        pcVar21 = pcVar21 + (uint)bVar18 * -2 + 1;
+      } while (cVar2 != '\0');
       if (iVar10 != -2) {
         iVar10 = 0;
-        pcVar14 = local_1c;
+        pCVar17 = local_6c;
         if (0 < this_ptr->camera_count) {
           do {
-            crt_stdio_c_sprintf_FUN_005fdbd0(pcVar14,"%s%d");
-            in_stack_ffffb8cc = pcVar14;
+            crt_stdio_c_sprintf_FUN_005fdbd0(pCVar17->name,"%s%d");
             core_setedit_cpp_FUN_0057d340();
             iVar10 = iVar10 + 1;
-            pcVar14 = pcVar14 + 0x1a4;
+            pCVar17 = pCVar17 + 1;
           } while (iVar10 < this_ptr->camera_count);
         }
 LAB_0057eb3b:
         core_setedit_cpp_CDemonSet_BuildingThumbnailImages_FUN_00576da0(this_ptr);
       }
       break;
-    case (FILE *)0x36:
+    case 0x36:
       if (this_ptr->camera_count < 0xfa) {
-        shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)(auStack_1274 + 0x14));
+        shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)(auStack_1644 + 0x398));
         iVar10 = 0;
-        pFVar5 = unaff_ESI;
+        pFVar19 = local_3c;
         if (0 < this_ptr->camera_count) {
           do {
-            shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)auStack_1274,(char *)pFVar5);
+            shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)auStack_12a8,(char *)pFVar19);
             iVar10 = iVar10 + 1;
-            pFVar5 = pFVar5 + 0xf;
+            pFVar19 = pFVar19 + 0xf;
           } while (iVar10 < this_ptr->camera_count);
         }
-        in_stack_00000024 =
-             shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                       ((CPickList *)auStack_1274,"Clone which camera",-1,0);
-        if (-1 < in_stack_00000024) {
-          pbVar4 = abStack_47e;
-          pFVar5 = unaff_EBX + in_stack_00000024 * 0xf;
+        iVar10 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
+                           ((CPickList *)auStack_12a8,"Clone which camera",-1,0);
+        if (-1 < iVar10) {
+          pbVar5 = abStack_4b2;
+          pFVar19 = local_38 + iVar10 * 0xf;
           do {
-            pbVar4 = pbVar4 + 2;
-            bVar2 = *(byte *)&pFVar5->_ptr;
-            *pbVar4 = bVar2;
-            if (bVar2 == 0) break;
-            bVar2 = *(byte *)((int)&pFVar5->_ptr + 1);
-            pFVar5 = (FILE *)((int)&pFVar5->_ptr + 2);
-            pbVar4[1] = bVar2;
-          } while (bVar2 != 0);
-          uVar7 = 0xffffffff;
-          pbVar4 = abStack_47e + 2;
+            pbVar5 = pbVar5 + 2;
+            bVar3 = *(byte *)&pFVar19->_ptr;
+            *pbVar5 = bVar3;
+            if (bVar3 == 0) break;
+            bVar3 = *(byte *)((int)&pFVar19->_ptr + 1);
+            pFVar19 = (FILE *)((int)&pFVar19->_ptr + 2);
+            pbVar5[1] = bVar3;
+          } while (bVar3 != 0);
+          uVar20 = 0xffffffff;
+          pbVar5 = abStack_4b2 + 2;
           do {
-            if (uVar7 == 0) break;
-            uVar7 = uVar7 - 1;
-            bVar2 = *pbVar4;
-            pbVar4 = pbVar4 + (uint)bVar20 * -2 + 1;
-          } while (bVar2 != 0);
-          iVar10 = ~uVar7 - 2;
+            if (uVar20 == 0) break;
+            uVar20 = uVar20 - 1;
+            bVar3 = *pbVar5;
+            pbVar5 = pbVar5 + (uint)bVar18 * -2 + 1;
+          } while (bVar3 != 0);
+          iVar10 = ~uVar20 - 2;
           if (0 < iVar10) {
-            pbVar4 = abStack_47e + ~uVar7;
+            pbVar5 = abStack_4b2 + ~uVar20;
             do {
-              if ((*pbVar4 < 0x30) || (0x39 < *pbVar4)) break;
+              if ((*pbVar5 < 0x30) || (0x39 < *pbVar5)) break;
               iVar10 = iVar10 + -1;
-              pbVar4 = pbVar4 + -1;
+              pbVar5 = pbVar5 + -1;
             } while (0 < iVar10);
           }
-          iVar13 = crt_stdlib_c_atoi_FUN_005ffef0(acStack_467 + iVar10);
-          crt_stdio_c_sprintf_FUN_005fdbd0(acStack_467 + iVar10,"%d",iVar13 + 1);
+          iVar13 = crt_stdlib_c_atoi_FUN_005ffef0((char *)(abStack_4b2 + iVar10 + 3));
+          uVar20 = iVar13 + 1;
+          crt_stdio_c_sprintf_FUN_005fdbd0((char *)(abStack_4b2 + iVar10 + 3),"%d");
           iVar10 = 0;
           if (0 < this_ptr->camera_count) {
             do {
-              iVar13 = crt_string_c_strcmp_FUN_005fef20
-                                 ((char *)&this_ptr->cameras[iVar10 + -1].field17_0x1a0,acStack_474)
+              iVar13 = crt_string_c_strcmp_FUN_005fef20((char *)(local_44 + iVar10 * 0xf),local_4bc)
               ;
               if (iVar13 == 0) {
-                pcVar14 = acStack_470;
-                pcVar17 = acStack_770;
+                pcVar21 = local_4bc + 4;
+                pcVar15 = acStack_7b8;
                 do {
-                  cVar1 = *pcVar14;
-                  *pcVar17 = cVar1;
-                  if (cVar1 == '\0') break;
-                  cVar1 = pcVar14[1];
-                  pcVar14 = pcVar14 + 2;
-                  pcVar17[1] = cVar1;
-                  pcVar17 = pcVar17 + 2;
-                } while (cVar1 != '\0');
+                  cVar2 = *pcVar21;
+                  *pcVar15 = cVar2;
+                  if (cVar2 == '\0') break;
+                  cVar2 = pcVar21[1];
+                  pcVar21 = pcVar21 + 2;
+                  pcVar15[1] = cVar2;
+                  pcVar15 = pcVar15 + 2;
+                } while (cVar2 != '\0');
                 iVar10 = -1;
-                crt_stdio_c_sprintf_FUN_005fdbd0(acStack_470,"%s1",acStack_770);
+                crt_stdio_c_sprintf_FUN_005fdbd0(local_4bc + 4,"%s1");
               }
               iVar10 = iVar10 + 1;
             } while (iVar10 < this_ptr->camera_count);
           }
           iVar10 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
-                             (g_CEditorToolsPtr,"Enter name of clone",acStack_474,0x1f,1);
+                             (g_CEditorToolsPtr,"Enter name of clone",local_4bc,0x1f,1);
           if (iVar10 != 0) {
-            puVar8 = (uint *)(in_stack_00000008 + (int)in_stack_00000030 * 0x1a4);
-            puVar11 = (uint *)(this_ptr->camera_count * 0x1a4 + in_stack_00000008);
-            puVar15 = puVar8;
-            puVar18 = puVar11;
+            pCVar8 = local_40 + (int)local_18;
+            pCVar11 = local_40 + this_ptr->camera_count;
+            pCVar17 = pCVar8;
+            pCVar16 = pCVar11;
             for (iVar10 = 0x40; iVar10 != 0; iVar10 = iVar10 + -1) {
-              *puVar18 = *puVar15;
-              puVar15 = puVar15 + (uint)bVar20 * -2 + 1;
-              puVar18 = puVar18 + (uint)bVar20 * -2 + 1;
+              *(uint *)pCVar16->name = *(uint *)pCVar17->name;
+              pCVar17 = (C3DSCamera *)((int)pCVar17 + (uint)bVar18 * -8 + 4);
+              pCVar16 = (C3DSCamera *)((int)pCVar16 + (uint)bVar18 * -8 + 4);
             }
-            if (puVar11 + 0x40 != puVar8 + 0x40) {
-              puVar11[0x40] = puVar8[0x40];
-              puVar11[0x41] = puVar8[0x41];
-              puVar11[0x42] = puVar8[0x42];
+            if (&pCVar11->position != &pCVar8->position) {
+              (pCVar11->position).x = (pCVar8->position).x;
+              (pCVar11->position).y = (pCVar8->position).y;
+              (pCVar11->position).z = (pCVar8->position).z;
             }
-            if (puVar11 + 0x43 != puVar8 + 0x43) {
-              puVar11[0x43] = puVar8[0x43];
-              puVar11[0x44] = puVar8[0x44];
-              puVar11[0x45] = puVar8[0x45];
+            if (&pCVar11->orientation != &pCVar8->orientation) {
+              (pCVar11->orientation).x = (pCVar8->orientation).x;
+              (pCVar11->orientation).y = (pCVar8->orientation).y;
+              (pCVar11->orientation).z = (pCVar8->orientation).z;
             }
-            puVar11[0x46] = puVar8[0x46];
-            puVar11[0x47] = puVar8[0x47];
-            puVar11[0x48] = puVar8[0x48];
-            puVar11[0x49] = puVar8[0x49];
-            puVar11[0x4a] = puVar8[0x4a];
-            puVar11[0x4b] = puVar8[0x4b];
-            puVar11[0x4c] = puVar8[0x4c];
-            puVar11[0x4d] = puVar8[0x4d];
-            puVar11[0x4e] = puVar8[0x4e];
-            puVar11[0x4f] = puVar8[0x4f];
-            puVar11[0x50] = puVar8[0x50];
-            puVar11[0x51] = puVar8[0x51];
-            puVar11[0x52] = puVar8[0x52];
-            puVar11[0x53] = puVar8[0x53];
-            puVar11[0x54] = puVar8[0x54];
-            puVar11[0x55] = puVar8[0x55];
-            puVar11[0x56] = puVar8[0x56];
-            puVar11[0x57] = puVar8[0x57];
-            if (puVar11 + 0x58 != puVar8 + 0x58) {
-              puVar11[0x58] = puVar8[0x58];
-              puVar11[0x59] = puVar8[0x59];
-              puVar11[0x5a] = puVar8[0x5a];
+            (pCVar11->rotation_matrix).m[0].x = (pCVar8->rotation_matrix).m[0].x;
+            (pCVar11->rotation_matrix).m[0].y = (pCVar8->rotation_matrix).m[0].y;
+            (pCVar11->rotation_matrix).m[0].z = (pCVar8->rotation_matrix).m[0].z;
+            (pCVar11->rotation_matrix).m[1].x = (pCVar8->rotation_matrix).m[1].x;
+            (pCVar11->rotation_matrix).m[1].y = (pCVar8->rotation_matrix).m[1].y;
+            (pCVar11->rotation_matrix).m[1].z = (pCVar8->rotation_matrix).m[1].z;
+            (pCVar11->rotation_matrix).m[2].x = (pCVar8->rotation_matrix).m[2].x;
+            (pCVar11->rotation_matrix).m[2].y = (pCVar8->rotation_matrix).m[2].y;
+            (pCVar11->rotation_matrix).m[2].z = (pCVar8->rotation_matrix).m[2].z;
+            pCVar11->field4_0x13c = pCVar8->field4_0x13c;
+            pCVar11->is_panning = pCVar8->is_panning;
+            pCVar11->projection_scale = pCVar8->projection_scale;
+            pCVar11->ambient_value = pCVar8->ambient_value;
+            pCVar11->field8_0x14c = pCVar8->field8_0x14c;
+            pCVar11->fog_enabled = pCVar8->fog_enabled;
+            (pCVar11->fog).color_index.r = (pCVar8->fog).color_index.r;
+            (pCVar11->fog).color_index.g = (pCVar8->fog).color_index.g;
+            pCVar9 = &(pCVar11->fog).scroll;
+            pCVar1 = &(pCVar8->fog).scroll;
+            (pCVar11->fog).color_index.b = (pCVar8->fog).color_index.b;
+            if (pCVar9 != pCVar1) {
+              pCVar9->x = pCVar1->x;
+              (pCVar11->fog).scroll.y = (pCVar8->fog).scroll.y;
+              (pCVar11->fog).scroll.z = (pCVar8->fog).scroll.z;
             }
-            puVar11[0x5b] = puVar8[0x5b];
-            puVar11[0x5c] = puVar8[0x5c];
-            puVar11[0x5d] = puVar8[0x5d];
-            puVar11[0x5e] = puVar8[0x5e];
-            if (puVar11 + 0x5f != puVar8 + 0x5f) {
-              puVar11[0x5f] = puVar8[0x5f];
-              puVar11[0x60] = puVar8[0x60];
-              puVar11[0x61] = puVar8[0x61];
+            (pCVar11->fog).height_threshold = (pCVar8->fog).height_threshold;
+            (pCVar11->fog).density_multiplier = (pCVar8->fog).density_multiplier;
+            (pCVar11->fog).reserved = (pCVar8->fog).reserved;
+            pCVar11->reverb_preset = pCVar8->reverb_preset;
+            if (&pCVar11->box_min != &pCVar8->box_min) {
+              (pCVar11->box_min).x = (pCVar8->box_min).x;
+              (pCVar11->box_min).y = (pCVar8->box_min).y;
+              (pCVar11->box_min).z = (pCVar8->box_min).z;
             }
-            if (puVar11 + 0x62 != puVar8 + 0x62) {
-              puVar11[0x62] = puVar8[0x62];
-              puVar11[99] = puVar8[99];
-              puVar11[100] = puVar8[100];
+            if (&pCVar11->box_max != &pCVar8->box_max) {
+              (pCVar11->box_max).x = (pCVar8->box_max).x;
+              (pCVar11->box_max).y = (pCVar8->box_max).y;
+              (pCVar11->box_max).z = (pCVar8->box_max).z;
             }
-            puVar11[0x65] = puVar8[0x65];
-            puVar11[0x66] = puVar8[0x66];
-            puVar11[0x67] = puVar8[0x67];
-            puVar11[0x68] = puVar8[0x68];
+            pCVar11->pvs_count = pCVar8->pvs_count;
+            pCVar11->pvs_list = pCVar8->pvs_list;
+            pCVar11->field16_0x19c = pCVar8->field16_0x19c;
+            pCVar11->field17_0x1a0 = pCVar8->field17_0x1a0;
             this_ptr->cameras[this_ptr->camera_count].pvs_count = 0;
             this_ptr->cameras[this_ptr->camera_count].pvs_list = (int *)0x0;
-            pcVar14 = acStack_470;
-            pcVar17 = (char *)(this_ptr->camera_count * 0x1a4 + in_stack_00000008);
+            pcVar21 = local_4bc + 4;
+            pCVar17 = local_40 + this_ptr->camera_count;
             do {
-              cVar1 = *pcVar14;
-              *pcVar17 = cVar1;
-              if (cVar1 == '\0') break;
-              cVar1 = pcVar14[1];
-              pcVar14 = pcVar14 + 2;
-              pcVar17[1] = cVar1;
-              pcVar17 = pcVar17 + 2;
-            } while (cVar1 != '\0');
+              cVar2 = *pcVar21;
+              pCVar17->name[0] = cVar2;
+              if (cVar2 == '\0') break;
+              cVar2 = pcVar21[1];
+              pcVar21 = pcVar21 + 2;
+              pCVar17->name[1] = cVar2;
+              pCVar17 = (C3DSCamera *)(pCVar17->name + 2);
+            } while (cVar2 != '\0');
             iVar10 = core_setedit_cpp_UserInputCreate_FUN_0057d660();
             if (iVar10 != 0) {
               this_ptr->camera_count = this_ptr->camera_count + 1;
@@ -480,63 +469,61 @@ LAB_0057eb3b:
           }
         }
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                  ((CPickList *)auStack_125c,0,(uint)in_stack_ffffb8cc,(uint)in_stack_ffffb8d0,
-                   in_stack_ffffb8d4,in_stack_ffffb8d8,in_stack_ffffb8dc);
+                  ((CPickList *)(auStack_12a8 + 4),0,uVar20,d3,d4,d5,d6);
       }
       break;
-    case (FILE *)0x37:
+    case 0x37:
       iVar10 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                          (g_CEditorToolsPtr,"Merge .LC","models","*.lc",
-                          SUB41 /* extract 2-byte value */(auStack_96c,0));
+                          SUB41 /* extract 2-byte value */(acStack_9b8,0));
       if (iVar10 != 0) {
-        pFVar5 = engine_dosio_c_getFile_FUN_00481a50("models",acStack_990,"rt");
-        if (pFVar5 == (FILE *)0x0) {
+        pFVar19 = engine_dosio_c_getFile_FUN_00481a50("models",acStack_9b8,"rt");
+        if (pFVar19 == (FILE *)0x0) {
           g_CurrentFilename = "..\\core\\setedit.cpp";
           g_CurrentLineNumber = 0xe68;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Can't open LC file");
         }
-        crt_stdio_c_fgets_FUN_005fefd0(acStack_488,0xff,pFVar5);
-        local_34 = (FILE *)0xffffffff;
-        crt_stdio_c_fscanf_FUN_005fe7c0(pFVar5,"%d\n",&local_34);
-        if (local_30 != (C3DSCamera *)&DAT_00000001) {
+        crt_stdio_c_fgets_FUN_005fefd0(local_4bc + 8,0xff,pFVar19);
+        local_60 = (FILE *)0xffffffff;
+        crt_stdio_c_fscanf_FUN_005fe7c0(pFVar19,"%d\n");
+        if (local_6c != (C3DSCamera *)&DAT_00000001) {
           g_CurrentFilename = "..\\core\\setedit.cpp";
           g_CurrentLineNumber = 0xe6c;
-          core_main_c_displayErrorAndQuit_FUN_00506f10("Can't merge version %d LC file",local_30)
-          ;
+          core_main_c_displayErrorAndQuit_FUN_00506f10("Can't merge version %d LC file");
         }
-        crt_stdio_c_fgets_FUN_005fefd0((char *)(abStack_47e + 2),0xff,pFVar5);
-        crt_stdio_c_fscanf_FUN_005fe7c0(pFVar5,"%d,%d\n",&local_24,local_20);
-        crt_stdio_c_fgets_FUN_005fefd0(acStack_474,0xff,pFVar5);
+        crt_stdio_c_fgets_FUN_005fefd0(local_4bc,0xff,pFVar19);
+        crt_stdio_c_fscanf_FUN_005fe7c0(pFVar19,"%d,%d\n");
+        crt_stdio_c_fgets_FUN_005fefd0(local_4bc,0xff,pFVar19);
         iVar10 = 0;
-        if (0 < (int)local_1c) {
+        if (0 < (int)local_70) {
           do {
-            core_setutil_cpp_C3DSLight_ctor_FUN_005862f0((C3DSLight *)auStack_2ea4);
+            core_setutil_cpp_C3DSLight_ctor_FUN_005862f0((C3DSLight *)auStack_2ef8);
             core_setutil_cpp_C3DSLight_importS3D_FUN_00587710
-                      ((C3DSLight *)(auStack_2ea4 + 4),pFVar5);
+                      ((C3DSLight *)(auStack_2ef8 + 4),pFVar19);
             iVar10 = iVar10 + 1;
-          } while (iVar10 < (int)local_1c);
+          } while (iVar10 < (int)local_70);
         }
-        crt_stdio_c_fgets_FUN_005fefd0(acStack_470,0xff,pFVar5);
+        crt_stdio_c_fgets_FUN_005fefd0(acStack_4c4,0xff,pFVar19);
         iVar10 = this_ptr->camera_count;
-        for (; (iVar10 < 0xfa && (0 < (int)local_14)); local_14 = (FILE *)((int)local_14 + -1)) {
+        while ((iVar10 < 0xfa && (0 < local_68))) {
           core_setutil_cpp_C3DSCamera_importS3D_FUN_00585ff0
-                    ((C3DSCamera *)(unaff_EBP + this_ptr->camera_count * 0xf),pFVar5);
+                    ((C3DSCamera *)(this_ptr->camera_count * 0x1a4 + local_64),pFVar19);
           crt_stdio_c_sprintf_FUN_005fdbd0
-                    (local_1c + this_ptr->camera_count * 0x1a4,"ncam%d",
-                     this_ptr->camera_count);
+                    ((char *)(local_60 + this_ptr->camera_count * 0xf),"ncam%d");
           core_setedit_cpp_FUN_0057d340();
           iVar10 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
                              (g_CEditorToolsPtr,"Import this camera?");
           if (iVar10 != 0) {
             this_ptr->camera_count = this_ptr->camera_count + 1;
           }
+          local_64 = local_64 + -1;
           iVar10 = this_ptr->camera_count;
         }
-        shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar5,"..\\core\\setedit.cpp",0xe7f);
+        shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar19,"..\\core\\setedit.cpp",0xe7f);
         goto LAB_0057eb3b;
       }
       break;
-    case (FILE *)0x38:
+    case 0x38:
       core_set_cpp_CDemonSet_initScene_FUN_0056aa10(this_ptr);
       *(uint *)(iVar13 + 0x15acad) = 1;
       this_ptr_00 = g_CEditorToolsPtr;
@@ -544,186 +531,183 @@ LAB_0057eb3b:
       *(uint *)(iVar13 + 0x15aca5) = 1;
       shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
                 (this_ptr_00,"Recomputing all PVS");
-      pFVar5 = (FILE *)0x0;
-      pCVar12 = this_ptr;
+      pCVar17 = (C3DSCamera *)0x0;
       if (0 < this_ptr->camera_count) {
+        local_30 = local_60;
+        pCVar12 = this_ptr;
         do {
-          crt_stdio_c_sprintf_FUN_005fdbd0(acStack_364,"backdrop\\%s.pvs");
-          crt_io_c_deleteFile_FUN_005ff9d0(acStack_374);
+          crt_stdio_c_sprintf_FUN_005fdbd0(acStack_3c0,"backdrop\\%s.pvs");
+          crt_io_c_deleteFile_FUN_005ff9d0(local_3bc);
           ptr = pCVar12->cameras[0].pvs_list;
           pCVar12->cameras[0].pvs_count = 0;
           if (ptr != (int *)0x0) {
             shape_memdbg_cpp_debugFree_FUN_0050f460(ptr,"..\\core\\setedit.cpp",0xe97);
             pCVar12->cameras[0].pvs_list = (int *)0x0;
           }
-          core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(this_ptr,(int)pFVar5);
-          pFVar5 = (FILE *)((int)&pFVar5->_ptr + 1);
+          core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(this_ptr,(int)pCVar17);
+          pCVar17 = (C3DSCamera *)(pCVar17->name + 1);
+          local_1c = pCVar17;
           shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
-                    (g_CEditorToolsPtr,(float)(int)pFVar5,(float)this_ptr->camera_count);
+                    (g_CEditorToolsPtr,(float)(int)pCVar17,(float)this_ptr->camera_count);
           pCVar12 = (CDemonSet *)&pCVar12->cameras[0].field17_0x1a0;
-          in_stack_00000040 = pFVar5;
-        } while ((int)pFVar5 < this_ptr->camera_count);
+          local_30 = local_30 + 0xf;
+        } while ((int)pCVar17 < this_ptr->camera_count);
       }
       shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
       *(uint *)(iVar13 + 0x15aca5) = 0;
       *(uint *)(iVar13 + 0x15acad) = 0;
       *(uint *)(iVar13 + 0x15acb1) = 0;
-      in_stack_ffffb8cc = (char *)0x57f5c6;
-      in_stack_ffffb8d0 = (char *)this_ptr;
       core_set_cpp_CDemonSet_FUN_0056d2d0(this_ptr);
       break;
-    case (FILE *)0x39:
+    case 0x39:
       iVar10 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                          (g_CEditorToolsPtr,"Merge2 .LC","models","*.lc",
-                          SUB41 /* extract 2-byte value */(auStack_26c,0));
+                          SUB41 /* extract 2-byte value */(acStack_2b8,0));
       if (iVar10 != 0) {
-        local_28 = engine_dosio_c_getFile_FUN_00481a50("models",acStack_290,"rt");
-        if (local_28 == (FILE *)0x0) {
+        local_50 = engine_dosio_c_getFile_FUN_00481a50("models",acStack_2b8,"rt");
+        if (local_50 == (FILE *)0x0) {
           g_CurrentFilename = "..\\core\\setedit.cpp";
           g_CurrentLineNumber = 0xeae;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Can't open LC file");
         }
-        pFVar5 = local_24;
-        crt_stdio_c_fgets_FUN_005fefd0(acStack_488,0xff,local_24);
-        local_1c = (char *)0xffffffff;
-        crt_stdio_c_fscanf_FUN_005fe7c0(pFVar5,"%d\n",&local_1c);
-        if (local_18 != (FILE *)&DAT_00000001) {
+        pFVar19 = local_50;
+        crt_stdio_c_fgets_FUN_005fefd0(local_4bc + 8,0xff,local_50);
+        local_48 = -1;
+        pcVar21 = "%d\n";
+        crt_stdio_c_fscanf_FUN_005fe7c0(pFVar19,"%d\n");
+        if (local_54 != (FILE *)&DAT_00000001) {
           g_CurrentFilename = "..\\core\\setedit.cpp";
           g_CurrentLineNumber = 0xeb2;
-          core_main_c_displayErrorAndQuit_FUN_00506f10("Can't merge version %d LC file",local_18)
-          ;
+          core_main_c_displayErrorAndQuit_FUN_00506f10("Can't merge version %d LC file");
         }
-        crt_stdio_c_fgets_FUN_005fefd0((char *)(abStack_47e + 2),0xff,local_18);
-        crt_stdio_c_fscanf_FUN_005fe7c0(local_14,"%d,%d\n",&stack0xfffffff4,&stack0xfffffff8);
-        crt_stdio_c_fgets_FUN_005fefd0(acStack_474,0xff,unaff_EBP);
+        crt_stdio_c_fgets_FUN_005fefd0(local_4bc,0xff,local_58);
+        crt_stdio_c_fscanf_FUN_005fe7c0(local_54,"%d,%d\n");
+        crt_stdio_c_fgets_FUN_005fefd0(local_4bc,0xff,local_58);
+        pFVar19 = local_60;
         iVar10 = 0;
-        if (0 < (int)unaff_EBX) {
+        if (0 < (int)local_58) {
           do {
-            core_setutil_cpp_C3DSLight_ctor_FUN_005862f0((C3DSLight *)&stack0xffffb8c4);
-            core_setutil_cpp_C3DSLight_importS3D_FUN_00587710
-                      ((C3DSLight *)&stack0xffffb8c8,unaff_EDI);
+            core_setutil_cpp_C3DSLight_ctor_FUN_005862f0((C3DSLight *)&stack0xffffb870);
+            core_setutil_cpp_C3DSLight_importS3D_FUN_00587710((C3DSLight *)&stack0xffffb874,pFVar19)
+            ;
             iVar10 = iVar10 + 1;
-          } while (iVar10 < (int)unaff_EBX);
+          } while (iVar10 < (int)local_58);
         }
-        crt_stdio_c_fgets_FUN_005fefd0(acStack_470,0xff,unaff_EDI);
-        while (0 < (int)this_ptr) {
-          core_setutil_cpp_C3DSCamera_ctor_FUN_00585310((C3DSCamera *)(auStack_eb4 + 0x3a4));
-          core_setutil_cpp_C3DSCamera_importS3D_FUN_00585ff0((C3DSCamera *)auStack_b0c,unaff_EBX);
+        crt_stdio_c_fgets_FUN_005fefd0(acStack_4c4,0xff,local_60);
+        while (0 < (int)local_50) {
+          core_setutil_cpp_C3DSCamera_ctor_FUN_00585310((C3DSCamera *)(auStack_ef4 + 0x390));
+          core_setutil_cpp_C3DSCamera_importS3D_FUN_00585ff0((C3DSCamera *)local_b60,local_58);
           iVar10 = 0;
           if (0 < this_ptr->camera_count) {
-            pfVar9 = (float *)(in_stack_00000024 + 0x100);
+            pCVar9 = (CVector3f *)&local_30[9]._cnt;
 LAB_0057f7c1:
-            local_38 = (C3DSCamera *)(fStack_a08 - *pfVar9);
-            local_34 = (FILE *)(fStack_a04 - pfVar9[1]);
-            local_30 = (C3DSCamera *)(fStack_a00 - pfVar9[2]);
-            iVar13 = iVar10 * 0x1a4 + in_stack_00000024;
+            local_8c = local_a5c - pCVar9->x;
+            local_88 = local_a58 - pCVar9->y;
+            local_84 = local_a54 - pCVar9->z;
             if ((float)0.10000000000000001 <=
-                SQRT((float)local_30 * (float)local_30 +
-                     (float)local_38 * (float)local_38 + (float)local_34 * (float)local_34))
+                SQRT(local_84 * local_84 + local_8c * local_8c + local_88 * local_88))
             goto LAB_0057fa69;
-            local_44 = fStack_9fc - *(float *)(iVar13 + 0x10c);
-            local_40 = (C3DSCamera *)(fStack_9f8 - *(float *)(iVar13 + 0x110));
-            local_3c = (C3DSCamera *)(fStack_9f4 - *(float *)(iVar13 + 0x114));
+            local_98 = local_a50 - (float)local_30[iVar10 * 0xf + 9]._handle;
+            local_94 = local_a4c - (float)local_30[iVar10 * 0xf + 9]._bufsize;
+            local_90 = fStack_a48 - *(float *)&local_30[iVar10 * 0xf + 9]._ungotten;
             if ((float)0.10000000000000001 <=
-                SQRT((float)local_3c * (float)local_3c +
-                     local_44 * local_44 + (float)local_40 * (float)local_40)) goto LAB_0057fa69;
-            crt_stdio_c_sprintf_FUN_005fdbd0(acStack_664,"%s.raw");
-            in_stack_00000018 =
-                 engine_dosio_c_getFile_FUN_00481a50("backdrop",acStack_660,"rb");
-            crt_stdio_c_sprintf_FUN_005fdbd0(acStack_55c,"%s.raw");
-            in_stack_ffffb8d0 = "backdrop";
+                SQRT(local_90 * local_90 + local_98 * local_98 + local_94 * local_94))
+            goto LAB_0057fa69;
+            crt_stdio_c_sprintf_FUN_005fdbd0(acStack_6b8,"%s.raw");
+            local_44 = engine_dosio_c_getFile_FUN_00481a50
+                                 ("backdrop",local_6bc,"rb");
+            crt_stdio_c_sprintf_FUN_005fdbd0(acStack_5b8,"%s.raw");
             iVar10 = 0;
-            in_stack_ffffb8cc = (char *)0x57f900;
-            pFVar6 = engine_dosio_c_getFile_FUN_00481a50
-                               ("backdrop",acStack_558,"wb");
-            pFVar5 = in_stack_ffffb900;
+            pFVar19 = engine_dosio_c_getFile_FUN_00481a50
+                                ("backdrop",local_5bc,"wb");
             do {
-              in_stack_ffffb8d4 = 0x57f913;
-              iVar13 = crt_stdio_c_fgetc_FUN_005fe840(in_stack_00000020);
+              iVar13 = crt_stdio_c_fgetc_FUN_005fe840(local_44);
               iVar10 = iVar10 + 1;
-              crt_stdio_c_fputc_FUN_006007a0(iVar13,in_stack_ffffb8e0);
+              crt_stdio_c_fputc_FUN_006007a0(iVar13,(FILE *)pcVar21);
             } while (iVar10 < 0x4b000);
-            in_stack_ffffb8d8 = 0x57f945;
-            shape_memdbg_cpp_closeFile_FUN_0050f9b0
-                      (in_stack_00000028,"..\\core\\setedit.cpp",0xecd);
-            in_stack_ffffb8dc = 0x57f958;
-            shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar6,"..\\core\\setedit.cpp",0xece);
-            in_stack_ffffb8e0 = (FILE *)0x57f975;
-            crt_stdio_c_sprintf_FUN_005fdbd0(acStack_644,"%s.act");
-            in_stack_00000038 =
-                 engine_dosio_c_getFile_FUN_00481a50("backdrop",acStack_640,"rb");
-            crt_stdio_c_sprintf_FUN_005fdbd0(acStack_53c,"%s.act");
+            shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_3c,"..\\core\\setedit.cpp",0xecd);
+            shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar19,"..\\core\\setedit.cpp",0xece);
+            pcVar21 = (char *)0x57f975;
+            crt_stdio_c_sprintf_FUN_005fdbd0(acStack_6a8,"%s.act");
+            local_44 = engine_dosio_c_getFile_FUN_00481a50
+                                 ("backdrop",local_6bc,"rb");
+            crt_stdio_c_sprintf_FUN_005fdbd0(acStack_5b8,"%s.act");
             iVar10 = 0;
-            in_stack_ffffb900 =
-                 engine_dosio_c_getFile_FUN_00481a50("backdrop",acStack_538,"wb");
+            pFVar6 = engine_dosio_c_getFile_FUN_00481a50
+                               ("backdrop",local_5bc,"wb");
+            pFVar19 = local_4c;
             do {
-              iVar13 = crt_stdio_c_fgetc_FUN_005fe840(in_stack_00000040);
+              pFVar7 = pFVar19;
+              iVar13 = crt_stdio_c_fgetc_FUN_005fe840(pFVar19);
               iVar10 = iVar10 + 1;
-              crt_stdio_c_fputc_FUN_006007a0(iVar13,pFVar5);
+              crt_stdio_c_fputc_FUN_006007a0(iVar13,pFVar7);
             } while (iVar10 < 0x300);
-            shape_memdbg_cpp_closeFile_FUN_0050f9b0
-                      (in_stack_00000040,"..\\core\\setedit.cpp",0xed6);
-            shape_memdbg_cpp_closeFile_FUN_0050f9b0
-                      (in_stack_ffffb900,"..\\core\\setedit.cpp",0xed7);
+            shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar19,"..\\core\\setedit.cpp",0xed6);
+            shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar6,"..\\core\\setedit.cpp",0xed7);
           }
 LAB_0057fa1d:
-          core_setutil_cpp_C3DSCamera_dtor_FUN_00585340((C3DSCamera *)(auStack_b0c + 0x44));
+          local_48 = local_48 + -1;
+          core_setutil_cpp_C3DSCamera_dtor_FUN_00585340((C3DSCamera *)(local_b60 + 4));
         }
-        shape_memdbg_cpp_closeFile_FUN_0050f9b0(unaff_ESI,"..\\core\\setedit.cpp",0xede);
+        shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_5c,"..\\core\\setedit.cpp",0xede);
         goto LAB_0057eb3b;
       }
       break;
-    case (FILE *)0x41:
-      local_5c = (FILE *)((uint)local_5c & 0xffffff00);
+    case 0x41:
+      acStack_a8[0] = '\0';
       engine_2d_c_getInputWithPrompt_FUN_004032c0
-                ((char *)&local_5c,5,0,0,"Enter new unique base name : ");
+                (acStack_a8,5,0,0,"Enter new unique base name : ");
       iVar10 = -1;
-      ppFVar19 = local_58;
+      pcVar21 = acStack_a4;
       do {
         if (iVar10 == 0) break;
         iVar10 = iVar10 + -1;
-        cVar1 = *(char *)ppFVar19;
-        ppFVar19 = (FILE **)((int)ppFVar19 + (uint)bVar20 * -2 + 1);
-      } while (cVar1 != '\0');
+        cVar2 = *pcVar21;
+        pcVar21 = pcVar21 + (uint)bVar18 * -2 + 1;
+      } while (cVar2 != '\0');
       if (iVar10 != -2) {
         if (0 < this_ptr->camera_count) {
-          in_stack_00000030 = in_stack_00000018;
+          local_20 = local_38;
+          local_1c = local_34;
+          local_18 = local_30;
           do {
-            crt_stdio_c_sprintf_FUN_005fdbd0(acStack_868,"%s.raw");
-            crt_stdio_c_sprintf_FUN_005fdbd0
-                      (acStack_198,"%s%d.raw",local_88,in_stack_0000000c + 1);
-            pFVar5 = engine_dosio_c_getFile_FUN_00481a50
-                               ("backdrop",acStack_894,"rb");
-            iVar10 = 0;
+            crt_stdio_c_sprintf_FUN_005fdbd0(local_8bc,"%s.raw");
+            crt_stdio_c_sprintf_FUN_005fdbd0(local_1bc,"%s%d.raw");
             pFVar6 = engine_dosio_c_getFile_FUN_00481a50
-                               ("backdrop",acStack_190,"wb");
+                               ("backdrop",local_8bc,"rb");
+            iVar10 = 0;
+            pFVar7 = engine_dosio_c_getFile_FUN_00481a50
+                               ("backdrop",acStack_1b8,"wb");
             do {
-              pFVar21 = pFVar5;
-              iVar13 = crt_stdio_c_fgetc_FUN_005fe840(pFVar5);
+              iVar13 = crt_stdio_c_fgetc_FUN_005fe840(pFVar6);
               iVar10 = iVar10 + 1;
-              crt_stdio_c_fputc_FUN_006007a0(iVar13,pFVar21);
+              crt_stdio_c_fputc_FUN_006007a0(iVar13,pFVar19);
             } while (iVar10 < 0x4b000);
-            shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar5,"..\\core\\setedit.cpp",0xef5);
-            shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar6,"..\\core\\setedit.cpp",0xef6);
-            crt_stdio_c_sprintf_FUN_005fdbd0(acStack_884,"%s.act",in_stack_00000014);
-            crt_stdio_c_sprintf_FUN_005fdbd0
-                      (acStack_180,"%s%d.act",&local_70,in_stack_00000024 + 1);
-            pFVar5 = engine_dosio_c_getFile_FUN_00481a50
-                               ("backdrop",acStack_87c,"rb");
+            shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar6,"..\\core\\setedit.cpp",0xef5);
+            shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar7,"..\\core\\setedit.cpp",0xef6);
+            pFVar7 = (FILE *)0x57fbd5;
+            crt_stdio_c_sprintf_FUN_005fdbd0(acStack_8a4,"%s.act");
+            crt_stdio_c_sprintf_FUN_005fdbd0(local_1bc,"%s%d.act");
+            pFVar19 = engine_dosio_c_getFile_FUN_00481a50
+                                ("backdrop",local_8bc,"rb");
             iVar10 = 0;
             pFVar6 = engine_dosio_c_getFile_FUN_00481a50
-                               ("backdrop",acStack_178,"wb");
+                               ("backdrop",acStack_1b8,"wb");
             do {
-              pFVar21 = pFVar5;
-              iVar13 = crt_stdio_c_fgetc_FUN_005fe840(pFVar5);
+              iVar13 = crt_stdio_c_fgetc_FUN_005fe840(pFVar19);
               iVar10 = iVar10 + 1;
-              crt_stdio_c_fputc_FUN_006007a0(iVar13,pFVar21);
+              crt_stdio_c_fputc_FUN_006007a0(iVar13,pFVar7);
             } while (iVar10 < 0x300);
-            shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar5,"..\\core\\setedit.cpp",0xefe);
+            shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar19,"..\\core\\setedit.cpp",0xefe);
             shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar6,"..\\core\\setedit.cpp",0xeff);
-            crt_stdio_c_sprintf_FUN_005fdbd0((char *)in_stack_00000030,"%s%d",&local_5c);
-            in_stack_00000030 = in_stack_00000030 + 0xf;
-          } while ((int)((int)&in_stack_00000038->_ptr + 1) < this_ptr->camera_count);
+            pFVar6 = (FILE *)(unaff_retaddr + 1);
+            pFVar19 = unaff_ESI;
+            crt_stdio_c_sprintf_FUN_005fdbd0((char *)unaff_ESI,"%s%d");
+            local_20 = unaff_ESI + 0xf;
+            local_24 = local_24 + 1;
+            local_28 = local_28 + 0x1a4;
+            local_18 = pFVar6;
+          } while ((int)pFVar6 < this_ptr->camera_count);
         }
         goto LAB_0057eb3b;
       }
@@ -736,7 +720,7 @@ LAB_0057fa1d:
   } while( true );
 LAB_0057fa69:
   iVar10 = iVar10 + 1;
-  pfVar9 = pfVar9 + 0x69;
+  pCVar9 = pCVar9 + 0x23;
   if (this_ptr->camera_count <= iVar10) goto LAB_0057fa1d;
   goto LAB_0057f7c1;
 }

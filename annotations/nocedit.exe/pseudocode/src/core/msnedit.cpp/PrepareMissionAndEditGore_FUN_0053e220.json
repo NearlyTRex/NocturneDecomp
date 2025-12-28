@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 625,
-    "complexity_score": 1010,
+    "complexity_score": 1135,
     "cross_reference_count": 1,
     "function_call_count": 43,
     "global_count": 43,
-    "pseudocode_lines": 245,
-    "suspect_count": 71,
+    "pseudocode_lines": 255,
+    "suspect_count": 83,
     "suspect_types": [
       "badspacebase",
-      "call_variadic",
       "param_count_too_few",
       "pointer_cast",
       "register_param",
@@ -20,7 +19,7 @@
       "unknown_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 870
+    "total_lines": 880
   },
   "cross_references": [
     {
@@ -554,6 +553,12 @@
     ],
     "0053e8ab": [
       "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff44,4)"
+    ],
+    "0053e8c7": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff44,4)"
+    ],
+    "0053e929": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff44,4)"
     ]
   },
   "pcode_summary": {
@@ -607,7 +612,7 @@
       "frame_offset": 188,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 0053e3f3, ADD ESP at 0053e3f5",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -618,7 +623,7 @@
       "frame_offset": 188,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 0053e56b, ADD ESP at 0053e56e",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -629,7 +634,7 @@
       "frame_offset": 188,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 0053e687, ADD ESP at 0053e689",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -640,7 +645,7 @@
       "frame_offset": 188,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 0053e6e0, ADD ESP at 0053e6e2",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -651,7 +656,7 @@
       "frame_offset": 188,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 0053e765, ADD ESP at 0053e768",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -662,7 +667,39 @@
       "frame_offset": 188,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 0053e8a8, ADD ESP at 0053e8ab",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "0053e8c2",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "fix_address": "0053e8c7",
+      "frame_offset": 188,
+      "match": "CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0",
+      "return_address": "0053e8c7",
+      "target_address": "0x49f0f0",
+      "target_function": "shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0",
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 at 0053e8c2 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "0053e924",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "0053e929",
+      "frame_offset": 188,
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0053e929",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0053e924 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
     }
   ],
   "stack_frame": {
@@ -724,28 +761,35 @@
       "description": "Unaffected register variable",
       "line": 6,
       "match": "unaff_EBX",
-      "text": "(uint param_1,uint param_2,CDemonActor *unaff_EBX,uint param_4,",
+      "text": "(uint param_1,uint param_2,int unaff_EBX,uint param_4,",
       "type": "unaffected_reg"
     },
     {
       "description": "Ghidra failed to resolve stack frame",
-      "line": 14,
+      "line": 13,
       "match": "BADSPACEBASE",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "badspacebase"
     },
     {
       "description": "Inferred register parameter",
-      "line": 14,
+      "line": 13,
       "match": "in_ESP",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "register_param"
     },
     {
       "description": "Unaffected register variable",
+      "line": 14,
+      "match": "unaff_EBP",
+      "text": "CDemonActor *unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
       "line": 15,
       "match": "unaff_ESI",
-      "text": "float *unaff_ESI;",
+      "text": "CDemonActor *unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
@@ -757,436 +801,527 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_00000038",
-      "text": "float in_stack_00000038;",
+      "line": 22,
+      "match": "in_stack_ffffff1c",
+      "text": "CGame *in_stack_ffffff1c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_0000003c",
-      "text": "CDemonActor *in_stack_0000003c;",
+      "line": 30,
+      "match": "in_stack_ffffff58",
+      "text": "CEditorTools *in_stack_ffffff58;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 31,
+      "match": "in_stack_ffffff5c",
+      "text": "float in_stack_ffffff5c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 33,
-      "match": "in_stack_ffffff68",
-      "text": "CGame *in_stack_ffffff68;",
+      "match": "in_stack_ffffff64",
+      "text": "float in_stack_ffffff64;",
       "type": "stack_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 87,
-      "match": "7.703863e-39",
-      "text": "fVar10 = 7.703863e-39;",
-      "type": "suspect_float"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 88,
+      "line": 34,
       "match": "in_stack_ffffff68",
-      "text": "core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_ffffff68);",
+      "text": "CKeys *in_stack_ffffff68;",
       "type": "stack_param"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 89,
-      "match": "7.703881e-39",
-      "text": "fVar11 = 7.703881e-39;",
-      "type": "suspect_float"
+      "description": "Unresolved stack parameter",
+      "line": 35,
+      "match": "in_stack_ffffff6c",
+      "text": "float in_stack_ffffff6c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 96,
+      "match": "in_stack_ffffff1c",
+      "text": "core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_ffffff1c);",
+      "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 90,
-      "match": "&stack0xffffff80",
-      "text": "core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)&stack0xffffff80);",
+      "line": 97,
+      "match": "&stack0xffffff34",
+      "text": "core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)&stack0xffffff34);",
       "type": "stack_ref"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 93,
-      "match": "7.70393e-39",
-      "text": "fVar12 = 7.70393e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 104,
-      "match": "7.703998e-39",
-      "text": "fVar15 = 7.703998e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 107,
-      "match": "in_stack_00000038",
-      "text": "fStack_80 = in_stack_00000038;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 109,
-      "match": "in_stack_00000038",
-      "text": "*(uint *)((int)in_stack_00000038 + 0x28) = 0;",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 109,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)in_stack_00000038 + 0x28) = 0;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 110,
-      "match": "in_stack_00000038",
-      "text": "*(uint *)((int)in_stack_00000038 + 0x24) = *(uint *)((int)in_stack_00000038 + 0x28);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 110,
-      "match": "in_stack_00000038",
-      "text": "*(uint *)((int)in_stack_00000038 + 0x24) = *(uint *)((int)in_stack_00000038 + 0x28);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 110,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)in_stack_00000038 + 0x24) = *(uint *)((int)in_stack_00000038 + 0x28);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 110,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)in_stack_00000038 + 0x24) = *(uint *)((int)in_stack_00000038 + 0x28);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 111,
-      "match": "in_stack_00000038",
-      "text": "*(uint *)((int)in_stack_00000038 + 0x20) = *(uint *)((int)in_stack_00000038 + 0x28);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 111,
-      "match": "in_stack_00000038",
-      "text": "*(uint *)((int)in_stack_00000038 + 0x20) = *(uint *)((int)in_stack_00000038 + 0x28);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 111,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)in_stack_00000038 + 0x20) = *(uint *)((int)in_stack_00000038 + 0x28);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 111,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)in_stack_00000038 + 0x20) = *(uint *)((int)in_stack_00000038 + 0x28);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 112,
-      "match": "in_stack_0000003c",
-      "text": "(in_stack_0000003c->orient).heading = 0.0;",
-      "type": "stack_param"
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)pCStack_14 + 0x28) = 0;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Complex pointer cast",
       "line": 113,
-      "match": "in_stack_0000003c",
-      "text": "(in_stack_0000003c->orient).bank = (in_stack_0000003c->orient).heading;",
-      "type": "stack_param"
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)pCStack_14 + 0x24) = *(uint *)((int)pCStack_14 + 0x28);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Complex pointer cast",
       "line": 113,
-      "match": "in_stack_0000003c",
-      "text": "(in_stack_0000003c->orient).bank = (in_stack_0000003c->orient).heading;",
-      "type": "stack_param"
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)pCStack_14 + 0x24) = *(uint *)((int)pCStack_14 + 0x28);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Complex pointer cast",
       "line": 114,
-      "match": "in_stack_0000003c",
-      "text": "(in_stack_0000003c->orient).pitch = (in_stack_0000003c->orient).bank;",
-      "type": "stack_param"
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)pCStack_14 + 0x20) = *(uint *)((int)pCStack_14 + 0x28);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Complex pointer cast",
       "line": 114,
-      "match": "in_stack_0000003c",
-      "text": "(in_stack_0000003c->orient).pitch = (in_stack_0000003c->orient).bank;",
-      "type": "stack_param"
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)pCStack_14 + 0x20) = *(uint *)((int)pCStack_14 + 0x28);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Likely misinterpreted integer as float",
+      "description": "Unaffected register variable",
       "line": 115,
-      "match": "7.704122e-39",
-      "text": "fStack_80 = 7.704122e-39;",
-      "type": "suspect_float"
+      "match": "unaff_EBP",
+      "text": "(unaff_EBP->orient).heading = 0.0;",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unaffected register variable",
       "line": 116,
-      "match": "in_stack_0000003c",
-      "text": "(*in_stack_0000003c->vtable->setup)(in_stack_0000003c);",
-      "type": "stack_param"
+      "match": "unaff_EBP",
+      "text": "(unaff_EBP->orient).bank = (unaff_EBP->orient).heading;",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unaffected register variable",
       "line": 116,
-      "match": "in_stack_0000003c",
-      "text": "(*in_stack_0000003c->vtable->setup)(in_stack_0000003c);",
-      "type": "stack_param"
+      "match": "unaff_EBP",
+      "text": "(unaff_EBP->orient).bank = (unaff_EBP->orient).heading;",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unaffected register variable",
+      "line": 117,
+      "match": "unaff_EBP",
+      "text": "(unaff_EBP->orient).pitch = (unaff_EBP->orient).bank;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 117,
+      "match": "unaff_EBP",
+      "text": "(unaff_EBP->orient).pitch = (unaff_EBP->orient).bank;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
       "line": 118,
-      "match": "in_stack_00000038",
-      "text": "iStack_14 = (int)in_stack_00000038 + 0x20;",
+      "match": "unaff_EBP",
+      "text": "(*unaff_EBP->vtable->setup)(unaff_EBP);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 118,
+      "match": "unaff_EBP",
+      "text": "(*unaff_EBP->vtable->setup)(unaff_EBP);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 121,
+      "match": "unaff_EBP",
+      "text": "pCStack_14 = &unaff_EBP->orient;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 126,
+      "match": "in_stack_ffffff58",
+      "text": "*(CEditorTools **)unaff_EBP->actor_name = in_stack_ffffff58;",
       "type": "stack_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 123,
-      "match": "unaff_EDI",
-      "text": "*unaff_EDI = (float)pCVar9;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 124,
-      "match": "unaff_EDI",
-      "text": "unaff_EDI[1] = fVar10;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 125,
-      "match": "unaff_EDI",
-      "text": "unaff_EDI[2] = fVar11;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Direct stack address reference",
       "line": 126,
-      "match": "&stack0xffffff68",
-      "text": "if ((float *)&stack0xffffff68 != unaff_ESI) {",
-      "type": "stack_ref"
+      "match": "unaff_EBP",
+      "text": "*(CEditorTools **)unaff_EBP->actor_name = in_stack_ffffff58;",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 126,
-      "match": "unaff_ESI",
-      "text": "if ((float *)&stack0xffffff68 != unaff_ESI) {",
-      "type": "unaffected_reg"
+      "description": "Unresolved stack parameter",
+      "line": 127,
+      "match": "in_stack_ffffff5c",
+      "text": "*(float *)(unaff_EBP->actor_name + 4) = in_stack_ffffff5c;",
+      "type": "stack_param"
     },
     {
       "description": "Unaffected register variable",
       "line": 127,
-      "match": "unaff_ESI",
-      "text": "*unaff_ESI = fVar12;",
+      "match": "unaff_EBP",
+      "text": "*(float *)(unaff_EBP->actor_name + 4) = in_stack_ffffff5c;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
       "line": 128,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI[1] = (float)pCVar13;",
+      "match": "unaff_EBP",
+      "text": "*(float *)(unaff_EBP->actor_name + 8) = fStack_a0;",
       "type": "unaffected_reg"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 129,
+      "match": "&stack0xffffff64",
+      "text": "if ((float *)&stack0xffffff64 != unaff_EDI) {",
+      "type": "stack_ref"
     },
     {
       "description": "Unaffected register variable",
       "line": 129,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI[2] = (float)pcVar14;",
+      "match": "unaff_EDI",
+      "text": "if ((float *)&stack0xffffff64 != unaff_EDI) {",
       "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 130,
+      "match": "in_stack_ffffff64",
+      "text": "*unaff_EDI = in_stack_ffffff64;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 130,
+      "match": "unaff_EDI",
+      "text": "*unaff_EDI = in_stack_ffffff64;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 131,
+      "match": "in_stack_ffffff68",
+      "text": "unaff_EDI[1] = (float)in_stack_ffffff68;",
+      "type": "stack_param"
     },
     {
       "description": "Unaffected register variable",
       "line": 131,
-      "match": "unaff_EBX",
-      "text": "core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(unaff_EBX);",
+      "match": "unaff_EDI",
+      "text": "unaff_EDI[1] = (float)in_stack_ffffff68;",
       "type": "unaffected_reg"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 132,
+      "match": "in_stack_ffffff6c",
+      "text": "unaff_EDI[2] = in_stack_ffffff6c;",
+      "type": "stack_param"
+    },
+    {
       "description": "Unaffected register variable",
-      "line": 133,
-      "match": "unaff_EBX",
-      "text": "pCVar6 = unaff_EBX;",
+      "line": 132,
+      "match": "unaff_EDI",
+      "text": "unaff_EDI[2] = in_stack_ffffff6c;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
       "line": 134,
-      "match": "unaff_EBX",
-      "text": "core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0(g_CDemonSetPtr,unaff_EBX,0);",
+      "match": "unaff_ESI",
+      "text": "core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(unaff_ESI);",
       "type": "unaffected_reg"
     },
     {
       "description": "Likely misinterpreted integer as float",
       "line": 135,
+      "match": "7.704338e-39",
+      "text": "fVar3 = 7.704338e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 137,
+      "match": "unaff_ESI",
+      "text": "core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0(g_CDemonSetPtr,unaff_ESI,0);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 138,
       "match": "7.704354e-39",
-      "text": "fVar7 = 7.704354e-39;",
+      "text": "fVar4 = 7.704354e-39;",
       "type": "suspect_float"
     },
     {
+      "description": "Unaffected register variable",
+      "line": 143,
+      "match": "unaff_EBX",
+      "text": "g_CDemonCameraInstance.corona_blend_factor = unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
       "description": "Likely misinterpreted integer as float",
-      "line": 152,
+      "line": 156,
       "match": "7.704514e-39",
-      "text": "fVar8 = 7.704514e-39;",
+      "text": "fVar5 = 7.704514e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 160,
-      "match": "7.704607e-39",
-      "text": "fVar11 = 7.704607e-39;",
+      "line": 158,
+      "match": "7.704534e-39",
+      "text": "fStack_b0 = 7.704534e-39;",
       "type": "suspect_float"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 161,
+      "match": "in_stack_ffffff5c",
+      "text": "in_stack_ffffff5c = 0.0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 162,
+      "match": "in_stack_ffffff58",
+      "text": "in_stack_ffffff58 = g_CEditorToolsPtr;",
+      "type": "stack_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
       "line": 164,
-      "match": "7.70465e-39",
-      "text": "fVar12 = 7.70465e-39;",
+      "match": "7.70459e-39",
+      "text": "fStack_a0 = 7.70459e-39;",
       "type": "suspect_float"
     },
     {
+      "description": "Likely misinterpreted integer as float",
+      "line": 166,
+      "match": "7.704607e-39",
+      "text": "fStack_a0 = 7.704607e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 169,
+      "match": "in_stack_ffffff6c",
+      "text": "in_stack_ffffff6c = 1.4013e-45;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 169,
+      "match": "1.4013e-45",
+      "text": "in_stack_ffffff6c = 1.4013e-45;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 170,
+      "match": "in_stack_ffffff64",
+      "text": "in_stack_ffffff64 = 7.70465e-39;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 170,
+      "match": "7.70465e-39",
+      "text": "in_stack_ffffff64 = 7.70465e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 171,
+      "match": "in_stack_ffffff68",
+      "text": "in_stack_ffffff68 = g_CKeysPtr;",
+      "type": "stack_param"
+    },
+    {
       "description": "Direct stack address reference",
-      "line": 168,
+      "line": 174,
       "match": "&stack0xffffff48",
       "text": "core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)&stack0xffffff48);",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 176,
-      "match": "(float *)((int)",
-      "text": "*(float *)((int)&CStack_28 + (uint)bVar3 * -8) = afStack_44[(uint)bVar3 * -2 + 2];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 177,
-      "match": "(float *)((int)",
-      "text": "*(float *)((int)&CStack_28 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 182,
       "match": "(float *)((int)",
-      "text": "*(float *)((int)&CStack_28 + (uint)bVar3 * -8 + 4) = afStack_44[(uint)bVar3 * -2];",
+      "text": "*(float *)((int)&CStack_28 + (uint)bVar2 * -8) = afStack_44[(uint)bVar2 * -2 + 2];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 183,
       "match": "(float *)((int)",
-      "text": "*(float *)((int)&CStack_28 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =",
+      "text": "*(float *)((int)&CStack_28 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 188,
+      "match": "(float *)((int)",
+      "text": "*(float *)((int)&CStack_28 + (uint)bVar2 * -8 + 4) = afStack_44[(uint)bVar2 * -2];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 189,
+      "match": "(float *)((int)",
+      "text": "*(float *)((int)&CStack_28 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 186,
+      "line": 194,
       "match": "&stack0xffffff54",
-      "text": "if (&stack0xffffff54 != &stack0xffffff7c) {",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 186,
-      "match": "&stack0xffffff7c",
-      "text": "if (&stack0xffffff54 != &stack0xffffff7c) {",
+      "text": "if ((float *)&stack0xffffff54 != &fStack_84) {",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 187,
-      "match": "in_stack_0000003c",
-      "text": "pCVar9 = in_stack_0000003c;",
+      "line": 195,
+      "match": "in_stack_ffffff58",
+      "text": "in_stack_ffffff58 = pCStack_80;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 196,
+      "match": "in_stack_ffffff5c",
+      "text": "in_stack_ffffff5c = fStack_7c;",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 190,
+      "line": 199,
       "match": "._0_1_",
       "text": "g_MouseButtonFlags._0_1_ = (byte)g_MouseButtonFlags & 0xfe;",
       "type": "unknown_field"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 192,
+      "line": 201,
       "match": "7.9874e-44",
-      "text": "fVar5 = 7.9874e-44;",
+      "text": "fVar3 = 7.9874e-44;",
       "type": "suspect_float"
     },
     {
-      "description": "Unaffected register variable",
+      "description": "Complex pointer cast",
+      "line": 209,
+      "match": "(float *)((int)",
+      "text": "fStack_60 = *(float *)((int)pCStack_18 + 0x44) * fStack_58;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 210,
+      "match": "(float *)((int)",
+      "text": "fStack_5c = *(float *)((int)pCStack_18 + 0x50) * fStack_58;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 211,
+      "match": "(float *)((int)",
+      "text": "fStack_58 = fStack_58 * *(float *)((int)pCStack_18 + 0x5c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 217,
+      "match": "in_stack_ffffff68",
+      "text": "in_stack_ffffff68 = (CKeys *)((float)pCVar6 + -100f);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 218,
+      "match": "in_stack_ffffff6c",
+      "text": "in_stack_ffffff6c = fStack_b0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 222,
       "match": "unaff_EDI",
       "text": "unaff_EDI = (float *)core_setcolid_cpp_CDemonSet_raycast_FUN_00572530",
       "type": "unaffected_reg"
     },
     {
       "description": "Direct stack address reference",
-      "line": 212,
+      "line": 223,
       "match": "&stack0xffffff68",
       "text": "(g_CDemonSetPtr,&CStack_74,(CVector3f *)&stack0xffffff68);",
       "type": "stack_ref"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 224,
+      "match": "in_stack_ffffff64",
+      "text": "in_stack_ffffff64 = fVar5;",
+      "type": "stack_param"
+    },
+    {
       "description": "Unaffected register variable",
-      "line": 215,
+      "line": 225,
       "match": "unaff_EDI",
       "text": "if ((0.0 < (float)unaff_EDI) && ((float)unaff_EDI < 1.0)) {",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 215,
+      "line": 225,
       "match": "unaff_EDI",
       "text": "if ((0.0 < (float)unaff_EDI) && ((float)unaff_EDI < 1.0)) {",
       "type": "unaffected_reg"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 226,
+      "match": "in_stack_ffffff6c",
+      "text": "fStack_34 = in_stack_ffffff6c - CStack_74.y;",
+      "type": "stack_param"
+    },
+    {
       "description": "Unaffected register variable",
-      "line": 217,
+      "line": 227,
       "match": "unaff_EDI",
       "text": "fStack_64 = fStack_34 * (float)unaff_EDI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 220,
+      "line": 230,
       "match": "unaff_EDI",
       "text": "fStack_60 = fStack_30 * (float)unaff_EDI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 221,
+      "line": 231,
       "match": "unaff_EDI",
       "text": "fStack_5c = fStack_2c * (float)unaff_EDI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 222,
-      "match": "in_stack_0000003c",
-      "text": "in_stack_0000003c = (CDemonActor *)(CStack_74.y + fStack_64);",
+      "line": 236,
+      "match": "in_stack_ffffff64",
+      "text": "in_stack_ffffff64 = fVar5;",
       "type": "stack_param"
     },
     {
@@ -1199,32 +1334,6 @@
       "param_delta": 1,
       "text": "Function declares 0 params but call sites push 1 (1 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "call_address": "0053e8c2",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "match": "CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0",
-      "return_address": "0053e8c7",
-      "target_address": "0x49f0f0",
-      "target_function": "shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0",
-      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 at 0053e8c2",
-      "type": "call_variadic"
-    },
-    {
-      "call_address": "0053e924",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "0053e929",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0053e924",
-      "type": "call_variadic"
     }
   ]
 }

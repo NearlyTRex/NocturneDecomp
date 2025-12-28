@@ -1,23 +1,21 @@
 {
   "complexity": {
     "assembly_lines": 505,
-    "complexity_score": 1188,
+    "complexity_score": 1140,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 10,
-    "pseudocode_lines": 248,
-    "suspect_count": 90,
+    "pseudocode_lines": 250,
+    "suspect_count": 86,
     "suspect_types": [
       "badspacebase",
-      "call_variadic",
       "extra_output",
       "pointer_cast",
       "register_param",
       "stack_param",
-      "stack_ref",
-      "unaffected_reg"
+      "stack_ref"
     ],
-    "total_lines": 753
+    "total_lines": 755
   },
   "cross_references": [
     {
@@ -143,6 +141,17 @@
       "value": null
     }
   ],
+  "pcode_overrides": {
+    "0058d9ec": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffad0,4)"
+    ],
+    "0058dc4a": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffad0,4)"
+    ],
+    "0058dcd1": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffad0,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.582159624413146,
     "instruction_count": 426,
@@ -188,6 +197,56 @@
     },
     "pcode_op_count": 2378
   },
+  "resolved_suspects": [
+    {
+      "add_esp_value": 4,
+      "call_address": "0058d9e7",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "0058d9ec",
+      "frame_offset": 1328,
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0058d9ec",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0058d9e7 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "0058dc45",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "0058dc4a",
+      "frame_offset": 1328,
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0058dc4a",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0058dc45 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "0058dccc",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "0058dcd1",
+      "frame_offset": 1328,
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0058dcd1",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0058dccc (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 1348,
     "local_size": 1348,
@@ -468,36 +527,29 @@
       "type": "register_param"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 23,
-      "match": "unaff_EBP",
-      "text": "int unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 34,
+      "line": 32,
       "match": "in_stack_0000000c",
       "text": "CDeformableModel *in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 35,
+      "line": 33,
       "match": "in_stack_00000010",
       "text": "int in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 36,
+      "line": 34,
       "match": "in_stack_00000014",
       "text": "CLodMesh *in_stack_00000014;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 37,
+      "line": 35,
       "match": "in_stack_00000018",
       "text": "int in_stack_00000018;",
       "type": "stack_param"
@@ -541,21 +593,21 @@
       "description": "Unresolved stack parameter",
       "line": 67,
       "match": "in_stack_00000010",
-      "text": "local_48 = in_stack_00000010 * 4;",
+      "text": "iStack_60 = in_stack_00000010 * 4;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 70,
       "match": "in_stack_0000000c",
-      "text": "if (*(int *)((int)in_stack_0000000c->vertex_count + local_48) <= local_28) {",
+      "text": "if (*(int *)((int)in_stack_0000000c->vertex_count + iStack_60) <= local_40) {",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
       "line": 70,
       "match": "(int *)((int)",
-      "text": "if (*(int *)((int)in_stack_0000000c->vertex_count + local_48) <= local_28) {",
+      "text": "if (*(int *)((int)in_stack_0000000c->vertex_count + iStack_60) <= local_40) {",
       "type": "pointer_cast"
     },
     {
@@ -646,425 +698,386 @@
       "description": "Unresolved stack parameter",
       "line": 88,
       "match": "in_stack_00000010",
-      "text": "iStack_10 = in_stack_00000010 * 4;",
+      "text": "local_28 = in_stack_00000010 * 4;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 91,
       "match": "in_stack_0000000c",
-      "text": "local_38 = (int)in_stack_0000000c->lod_info + iStack_10 + -4;",
+      "text": "local_50 = (int)in_stack_0000000c->lod_info + local_28 + -4;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 94,
       "match": "in_stack_00000014",
-      "text": "puVar18 = (uint *)((int)in_stack_00000014->tri_data->attribute_indices + local_34);",
+      "text": "puVar18 = (uint *)((int)in_stack_00000014->tri_data->attribute_indices + local_4c);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
       "line": 94,
       "match": "(uint *)((int)",
-      "text": "puVar18 = (uint *)((int)in_stack_00000014->tri_data->attribute_indices + local_34);",
+      "text": "puVar18 = (uint *)((int)in_stack_00000014->tri_data->attribute_indices + local_4c);",
       "type": "pointer_cast"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 104,
+      "line": 105,
       "match": "extraout_EAX",
-      "text": "*(short *)(extraout_EAX + 6) = (short)(int)ROUND(dVar21);",
+      "text": "*(short *)(extraout_EAX + 6) = (short)local_14;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 106,
+      "line": 107,
       "match": "extraout_EDX",
       "text": "((double)((float10)*(float *)(extraout_EDX + 0x20) * fVar20));",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 107,
+      "line": 109,
       "match": "extraout_ECX",
       "text": "puVar8 = (uint *)(extraout_ECX + 4);",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 108,
-      "match": "extraout_EAX_00",
-      "text": "extraout_EAX_00[5] = (short)(int)ROUND(dVar21);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 109,
-      "match": "extraout_EAX_00",
-      "text": "puVar15 = extraout_EAX_00;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
       "line": 110,
-      "match": "extraout_EDX_00",
-      "text": "puVar11 = extraout_EDX_00;",
+      "match": "extraout_EAX_00",
+      "text": "extraout_EAX_00[5] = (short)iStack_10;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 111,
       "match": "extraout_EAX_00",
+      "text": "puVar15 = extraout_EAX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 112,
+      "match": "extraout_EDX_00",
+      "text": "puVar11 = extraout_EDX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 113,
+      "match": "extraout_EAX_00",
       "text": "} while (extraout_EAX_00 != puVar16);",
       "type": "extra_output"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 113,
-      "match": "in_stack_0000000c",
-      "text": "piVar5 = (int *)((int)in_stack_0000000c->parts[puVar18[1]].tri_counts + iStack_10);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 113,
-      "match": "(int *)((int)",
-      "text": "piVar5 = (int *)((int)in_stack_0000000c->parts[puVar18[1]].tri_counts + iStack_10);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 115,
       "match": "in_stack_0000000c",
-      "text": "piVar5 = (int *)((int)in_stack_0000000c->tri_count + iStack_10);",
+      "text": "piVar5 = (int *)((int)in_stack_0000000c->parts[puVar18[1]].tri_counts + local_28);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
       "line": 115,
       "match": "(int *)((int)",
-      "text": "piVar5 = (int *)((int)in_stack_0000000c->tri_count + iStack_10);",
+      "text": "piVar5 = (int *)((int)in_stack_0000000c->parts[puVar18[1]].tri_counts + local_28);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 119,
+      "line": 117,
       "match": "in_stack_0000000c",
-      "text": "piVar5 = (int *)((int)in_stack_0000000c->parts[puVar18[1]].cap_tri_counts + iStack_10);",
+      "text": "piVar5 = (int *)((int)in_stack_0000000c->tri_count + local_28);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 119,
+      "line": 117,
       "match": "(int *)((int)",
-      "text": "piVar5 = (int *)((int)in_stack_0000000c->parts[puVar18[1]].cap_tri_counts + iStack_10);",
+      "text": "piVar5 = (int *)((int)in_stack_0000000c->tri_count + local_28);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 121,
       "match": "in_stack_0000000c",
-      "text": "piVar5 = (int *)((int)in_stack_0000000c->cap_tri_count + iStack_10);",
+      "text": "piVar5 = (int *)((int)in_stack_0000000c->parts[puVar18[1]].cap_tri_counts + local_28);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
       "line": 121,
       "match": "(int *)((int)",
-      "text": "piVar5 = (int *)((int)in_stack_0000000c->cap_tri_count + iStack_10);",
+      "text": "piVar5 = (int *)((int)in_stack_0000000c->parts[puVar18[1]].cap_tri_counts + local_28);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 123,
+      "match": "in_stack_0000000c",
+      "text": "piVar5 = (int *)((int)in_stack_0000000c->cap_tri_count + local_28);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 123,
+      "match": "(int *)((int)",
+      "text": "piVar5 = (int *)((int)in_stack_0000000c->cap_tri_count + local_28);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 127,
+      "match": "(CDeformableModel *)((int)",
+      "text": "local_3c = (CDeformableModel *)((int)local_3c + 0x12);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 129,
       "match": "(float *)((int)",
-      "text": "local_14 = (float *)((int)local_14 + 1);",
+      "text": "local_2c = (float *)((int)local_2c + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 128,
+      "line": 130,
       "match": "in_stack_00000014",
-      "text": "} while ((int)local_14 < in_stack_00000014->tri_count);",
+      "text": "} while ((int)local_2c < in_stack_00000014->tri_count);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 133,
+      "line": 135,
       "match": "in_stack_0000000c",
       "text": "iVar12 = (int)in_stack_0000000c->lod_info + in_stack_00000010 * 4 + -4;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 133,
+      "line": 135,
       "match": "in_stack_00000010",
       "text": "iVar12 = (int)in_stack_0000000c->lod_info + in_stack_00000010 * 4 + -4;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 134,
+      "line": 136,
       "match": "in_stack_0000000c",
       "text": "if (0 < in_stack_0000000c->num_parts) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 140,
+      "line": 142,
       "match": "in_stack_0000000c",
       "text": "} while (iVar7 < in_stack_0000000c->num_parts);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 142,
+      "line": 144,
       "match": "in_stack_0000000c",
       "text": "if ((iVar6 != in_stack_0000000c->tri_count[in_stack_00000010]) ||",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 142,
+      "line": 144,
       "match": "in_stack_00000010",
       "text": "if ((iVar6 != in_stack_0000000c->tri_count[in_stack_00000010]) ||",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 143,
+      "line": 145,
       "match": "in_stack_0000000c",
       "text": "(iVar17 != in_stack_0000000c->cap_tri_count[in_stack_00000010])) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 143,
+      "line": 145,
       "match": "in_stack_00000010",
       "text": "(iVar17 != in_stack_0000000c->cap_tri_count[in_stack_00000010])) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 148,
+      "line": 150,
       "match": "in_stack_0000000c",
       "text": "if (0 < in_stack_0000000c->cap_tri_count[in_stack_00000010]) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 148,
+      "line": 150,
       "match": "in_stack_00000010",
       "text": "if (0 < in_stack_0000000c->cap_tri_count[in_stack_00000010]) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 150,
+      "line": 152,
       "match": "in_stack_0000000c",
       "text": "(in_stack_0000000c->cap_tri_count[in_stack_00000010] * 4,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 150,
+      "line": 152,
       "match": "in_stack_00000010",
       "text": "(in_stack_0000000c->cap_tri_count[in_stack_00000010] * 4,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 152,
+      "line": 154,
       "match": "in_stack_0000000c",
       "text": "in_stack_0000000c->cap_index_ptr[in_stack_00000010] = piVar5;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 152,
+      "line": 154,
       "match": "in_stack_00000010",
       "text": "in_stack_0000000c->cap_index_ptr[in_stack_00000010] = piVar5;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 160,
-      "match": "in_stack_0000000c",
-      "text": "iVar12 = in_stack_0000000c->tri_count[in_stack_00000010];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 160,
-      "match": "in_stack_00000010",
-      "text": "iVar12 = in_stack_0000000c->tri_count[in_stack_00000010];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 161,
-      "match": "in_stack_0000000c",
-      "text": "if (0 < in_stack_0000000c->num_parts) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 162,
       "match": "in_stack_0000000c",
-      "text": "local_20 = in_stack_0000000c;",
+      "text": "iVar12 = in_stack_0000000c->tri_count[in_stack_00000010];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 166,
+      "line": 162,
       "match": "in_stack_00000010",
-      "text": "for (iVar7 = 0; iVar7 < local_20->parts[0].cap_tri_counts[in_stack_00000010];",
+      "text": "iVar12 = in_stack_0000000c->tri_count[in_stack_00000010];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 169,
+      "line": 163,
+      "match": "in_stack_0000000c",
+      "text": "if (0 < in_stack_0000000c->num_parts) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 164,
+      "match": "in_stack_0000000c",
+      "text": "local_3c = in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 168,
+      "match": "in_stack_00000010",
+      "text": "for (iVar7 = 0; iVar7 < local_3c->parts[0].cap_tri_counts[in_stack_00000010];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 171,
       "match": "in_stack_0000000c",
       "text": "*(uint *)((int)in_stack_0000000c->cap_index_ptr[in_stack_00000010] + iVar17) =",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 169,
+      "line": 171,
       "match": "in_stack_00000010",
       "text": "*(uint *)((int)in_stack_0000000c->cap_index_ptr[in_stack_00000010] + iVar17) =",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 169,
+      "line": 171,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)in_stack_0000000c->cap_index_ptr[in_stack_00000010] + iVar17) =",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 171,
+      "line": 173,
       "match": "in_stack_00000014",
       "text": "((int)in_stack_00000014->tri_data->attribute_indices + iVar6 + 0xc);",
       "type": "stack_param"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 179,
+      "match": "(float *)((int)",
+      "text": "local_2c = (float *)((int)local_2c + 1);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Unresolved stack parameter",
-      "line": 178,
+      "line": 180,
       "match": "in_stack_0000000c",
-      "text": "} while (iStack_10 < in_stack_0000000c->num_parts);",
+      "text": "} while ((int)local_2c < in_stack_0000000c->num_parts);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 183,
+      "line": 185,
       "match": "in_stack_00000014",
-      "text": "pcVar9 = in_stack_00000014->vertex_data->lod_workspace + local_2c + -0x10;",
+      "text": "pcVar9 = in_stack_00000014->vertex_data->lod_workspace + local_44 + -0x10;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 201,
+      "line": 203,
       "match": "in_stack_0000000c",
-      "text": "pfVar14 = (float *)(*(int *)((int)in_stack_0000000c->vertex_data_ptr + iVar12) + local_3c);",
+      "text": "pfVar14 = (float *)(*(int *)((int)in_stack_0000000c->vertex_data_ptr + iVar12) + local_54);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 201,
+      "line": 203,
       "match": "(int *)((int)",
-      "text": "pfVar14 = (float *)(*(int *)((int)in_stack_0000000c->vertex_data_ptr + iVar12) + local_3c);",
+      "text": "pfVar14 = (float *)(*(int *)((int)in_stack_0000000c->vertex_data_ptr + iVar12) + local_54);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 209,
-      "match": "unaff_EBP",
-      "text": "if (0 < unaff_EBP) {",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 212,
+      "line": 214,
       "match": "(float *)((int)",
-      "text": "if (fVar22 < *(float *)((int)afStack_518 + iVar7)) {",
+      "text": "if (fVar22 < *(float *)((int)local_530 + iVar7)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 213,
+      "line": 215,
       "match": "(float *)((int)",
-      "text": "fVar22 = *(float *)((int)afStack_518 + iVar7);",
+      "text": "fVar22 = *(float *)((int)local_530 + iVar7);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 218,
-      "match": "unaff_EBP",
-      "text": "} while (iVar6 < unaff_EBP);",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 221,
+      "line": 223,
       "match": "(byte *)((int)",
       "text": "*(byte *)((int)pfVar14 + *(byte *)pfVar14 + 1) = (byte)iVar12;",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 224,
-      "match": "&stack0xfffffadc",
-      "text": "(aCStack_60,(CVector3f *)&stack0xfffffadc,",
+      "line": 226,
+      "match": "&stack0xfffffac4",
+      "text": "(aCStack_78,(CVector3f *)&stack0xfffffac4,",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 225,
+      "line": 227,
       "match": "in_stack_00000018",
       "text": "(CMatrix3x4f *)(iVar12 * 0x30 + in_stack_00000018));",
       "type": "stack_param"
-    },
-    {
-      "call_address": "0058d9e7",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "0058d9ec",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0058d9e7",
-      "type": "call_variadic"
-    },
-    {
-      "call_address": "0058dc45",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "0058dc4a",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0058dc45",
-      "type": "call_variadic"
-    },
-    {
-      "call_address": "0058dccc",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "0058dcd1",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0058dccc",
-      "type": "call_variadic"
     }
   ]
 }

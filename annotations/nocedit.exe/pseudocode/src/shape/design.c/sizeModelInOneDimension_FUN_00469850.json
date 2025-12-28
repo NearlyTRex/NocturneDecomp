@@ -1,19 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 361,
-    "complexity_score": 201,
+    "complexity_score": 161,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 9,
-    "pseudocode_lines": 121,
-    "suspect_count": 6,
+    "pseudocode_lines": 131,
+    "suspect_count": 2,
     "suspect_types": [
       "badspacebase",
-      "call_variadic",
-      "register_param",
-      "stack_ref"
+      "register_param"
     ],
-    "total_lines": 482
+    "total_lines": 492
   },
   "cross_references": [
     {
@@ -155,6 +153,14 @@
     "declared_params": 0,
     "estimated_params": 0
   },
+  "pcode_overrides": {
+    "00469994": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff14,4)"
+    ],
+    "004699ea": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff14,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.592307692307692,
     "instruction_count": 260,
@@ -197,6 +203,40 @@
     },
     "pcode_op_count": 1454
   },
+  "resolved_suspects": [
+    {
+      "add_esp_value": 12,
+      "call_address": "0046998f",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "00469994",
+      "frame_offset": 236,
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "00469994",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0046998f (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 20,
+      "call_address": "004699e5",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "004699ea",
+      "frame_offset": 236,
+      "match": "CALL crt_stdio.c_sscanf_FUN_0060013c",
+      "return_address": "004699ea",
+      "target_address": "0x60013c",
+      "target_function": "crt_stdio.c_sscanf_FUN_0060013c",
+      "text": "Call to variadic function crt_stdio.c_sscanf_FUN_0060013c at 004699e5 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 256,
     "local_size": 256,
@@ -367,46 +407,6 @@
       "match": "in_ESP",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "register_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 64,
-      "match": "&stack0xffffff0c",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff0c,\"Enter %c distance in feet (,min,max for user-defined min/max points) : \");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 65,
-      "match": "&stack0xffffff0c",
-      "text": "engine_2d_c_getInputWithPrompt_FUN_004032c0(local_a4,0x14,0,0x16,&stack0xffffff0c);",
-      "type": "stack_ref"
-    },
-    {
-      "call_address": "0046998f",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
-      "return_address": "00469994",
-      "target_address": "0x5fdbd0",
-      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
-      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0046998f",
-      "type": "call_variadic"
-    },
-    {
-      "call_address": "004699e5",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL crt_stdio.c_sscanf_FUN_0060013c",
-      "return_address": "004699ea",
-      "target_address": "0x60013c",
-      "target_function": "crt_stdio.c_sscanf_FUN_0060013c",
-      "text": "Call to variadic function crt_stdio.c_sscanf_FUN_0060013c at 004699e5",
-      "type": "call_variadic"
     }
   ]
 }

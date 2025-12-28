@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 326,
-    "complexity_score": 402,
+    "complexity_score": 387,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 11,
     "pseudocode_lines": 137,
-    "suspect_count": 24,
+    "suspect_count": 23,
     "suspect_types": [
       "badspacebase",
-      "call_variadic",
       "register_param",
       "stack_param",
       "unknown_field"
@@ -137,6 +136,9 @@
     ],
     "004d5b2f": [
       "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff50,4)"
+    ],
+    "004d5c01": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff50,4)"
     ]
   },
   "pcode_summary": {
@@ -195,7 +197,7 @@
       "frame_offset": 176,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 004d59b2, ADD ESP at 004d59b8",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -206,7 +208,23 @@
       "frame_offset": 176,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 004d5b2c, ADD ESP at 004d5b2f",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "004d5bfc",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "004d5c01",
+      "frame_offset": 176,
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "004d5c01",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 004d5bfc (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
     }
   ],
   "stack_frame": {
@@ -578,19 +596,6 @@
       "match": "in_stack_00000004",
       "text": "((CMotionController *)(in_stack_00000004 + 1),iVar5,1);",
       "type": "stack_param"
-    },
-    {
-      "call_address": "004d5bfc",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "004d5c01",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 004d5bfc",
-      "type": "call_variadic"
     }
   ]
 }

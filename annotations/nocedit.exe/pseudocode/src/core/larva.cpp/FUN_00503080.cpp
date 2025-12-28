@@ -228,7 +228,7 @@ void core_larva_cpp_FUN_00503080(void)
                           (&in_stack_00000004->base_character);
         if (iVar7 < 0) {
           engine_console_cpp_CConsole_printf_FUN_00441890
-                    (g_CConsolePtr,"%s gave up chase - I'm confused\n");
+                    (g_CConsolePtr,"%s gave up chase - I'm confused\n",in_stack_00000004);
           core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                     (&this_ptr->motion_controller,0,1);
         }

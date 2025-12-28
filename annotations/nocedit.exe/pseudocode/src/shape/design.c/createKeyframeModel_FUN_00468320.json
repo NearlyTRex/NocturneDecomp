@@ -1,21 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 286,
-    "complexity_score": 284,
+    "complexity_score": 180,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 14,
-    "pseudocode_lines": 114,
-    "suspect_count": 14,
+    "pseudocode_lines": 115,
+    "suspect_count": 5,
     "suspect_types": [
       "badspacebase",
-      "call_variadic",
-      "pointer_cast",
       "register_param",
-      "stack_param",
       "stack_ref"
     ],
-    "total_lines": 400
+    "total_lines": 401
   },
   "cross_references": [
     {
@@ -207,6 +204,14 @@
     "declared_params": 0,
     "estimated_params": 0
   },
+  "pcode_overrides": {
+    "0046840c": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
+    ],
+    "00468542": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.057017543859649,
     "instruction_count": 228,
@@ -248,6 +253,40 @@
     },
     "pcode_op_count": 1153
   },
+  "resolved_suspects": [
+    {
+      "add_esp_value": 12,
+      "call_address": "00468407",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "0046840c",
+      "frame_offset": 604,
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "0046840c",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00468407 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "0046853d",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "00468542",
+      "frame_offset": 604,
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "00468542",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0046853d (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 624,
     "local_size": 624,
@@ -357,100 +396,25 @@
       "type": "register_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_fffffdb0",
-      "text": "SMRGLKeyframe *in_stack_fffffdb0;",
-      "type": "stack_param"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 24,
+      "line": 26,
       "match": "&stack0xfffffd9c",
       "text": "crt_memory_c_memset_FUN_005fde40(&stack0xfffffd9c,0,0x158);",
       "type": "stack_ref"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 66,
-      "match": "in_stack_fffffdb0",
-      "text": "in_stack_fffffdb0 = (SMRGLKeyframe *)(&stack0xfffffdb4 + local_18 * 0x10);",
-      "type": "stack_param"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 66,
-      "match": "&stack0xfffffdb4",
-      "text": "in_stack_fffffdb0 = (SMRGLKeyframe *)(&stack0xfffffdb4 + local_18 * 0x10);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 67,
-      "match": "in_stack_fffffdb0",
-      "text": "pSVar7 = in_stack_fffffdb0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 74,
-      "match": "(byte *)((int)",
-      "text": "*(byte *)((int)&(pSVar7->header).base.type + 1) = bVar2;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 75,
-      "match": "(SMRGLKeyframe *)((int)",
-      "text": "pSVar7 = (SMRGLKeyframe *)((int)&(pSVar7->header).base.type + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 90,
-      "match": "in_stack_fffffdb0",
-      "text": "dVar9 = crt_string_c_strtod_FUN_005ff0f3((char *)in_stack_fffffdb0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 100,
+      "line": 101,
       "match": "&stack0xfffffd9c",
       "text": "crt_stdio_c_fwrite_FUN_005fdc00(&stack0xfffffd9c,1,0x158,local_1c);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 109,
+      "line": 110,
       "match": "&stack0xfffffd9c",
       "text": "shape_design_c_centerKeyframeModels_FUN_004681a0((SMRGLKeyframeModel *)&stack0xfffffd9c)",
       "type": "stack_ref"
-    },
-    {
-      "call_address": "00468407",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
-      "return_address": "0046840c",
-      "target_address": "0x5fdbd0",
-      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
-      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00468407",
-      "type": "call_variadic"
-    },
-    {
-      "call_address": "0046853d",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "00468542",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0046853d",
-      "type": "call_variadic"
     }
   ]
 }

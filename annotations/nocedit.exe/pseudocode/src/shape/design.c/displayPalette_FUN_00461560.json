@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 131,
-    "complexity_score": 129,
+    "complexity_score": 114,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 6,
     "pseudocode_lines": 39,
-    "suspect_count": 7,
+    "suspect_count": 6,
     "suspect_types": [
       "badspacebase",
-      "call_variadic",
       "register_param",
       "stack_ref"
     ],
@@ -110,6 +109,11 @@
     "declared_params": 0,
     "estimated_params": 0
   },
+  "pcode_overrides": {
+    "004615e7": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff94,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.486238532110092,
     "instruction_count": 109,
@@ -146,6 +150,24 @@
     },
     "pcode_op_count": 598
   },
+  "resolved_suspects": [
+    {
+      "add_esp_value": 12,
+      "call_address": "004615e2",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "004615e7",
+      "frame_offset": 108,
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "004615e7",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 004615e2 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 128,
     "local_size": 128,
@@ -253,19 +275,6 @@
       "match": "&stack0xffffff84",
       "text": "engine_2d_c_drawTextColor_FUN_00402430(&stack0xffffff84,0,g_WindowHeight + -0xb);",
       "type": "stack_ref"
-    },
-    {
-      "call_address": "004615e2",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
-      "return_address": "004615e7",
-      "target_address": "0x5fdbd0",
-      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
-      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 004615e2",
-      "type": "call_variadic"
     }
   ]
 }

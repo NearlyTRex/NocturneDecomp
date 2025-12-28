@@ -19,10 +19,10 @@ void core_larva_cpp_FUN_00503a20(void)
   BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000004;
   int in_stack_00000008;
-  char acStack_d8 [4];
-  char acStack_d4 [84];
-  char acStack_80 [4];
-  char acStack_7c [108];
+  char acStack_e4 [8];
+  float fStack_dc;
+  char acStack_d8 [88];
+  char acStack_80 [112];
   
   pCVar1 = (CDemonActor *)
            ((float)in_stack_00000004[0x1a].next_actor - *(float *)(in_stack_00000008 + 4));
@@ -43,7 +43,7 @@ void core_larva_cpp_FUN_00503a20(void)
         pcVar3 = "sml";
       }
       crt_stdio_c_sprintf_FUN_005fdbd0(acStack_80,"l%s-shot?.wav",pcVar3);
-      iVar4 = (*in_stack_00000004->vtable->playSound)(in_stack_00000004,acStack_7c);
+      iVar4 = (*in_stack_00000004->vtable->playSound)(in_stack_00000004,acStack_80);
       in_stack_00000004[0x8d].field26_0x148 = iVar4;
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
@@ -59,8 +59,9 @@ void core_larva_cpp_FUN_00503a20(void)
     }
     sound_sndmain_cpp_killSfx_FUN_005a9c40(in_stack_00000004[0x8d].field26_0x148);
     sound_sndmain_cpp_killSfx_FUN_005a9c40((uint)in_stack_00000004[0x8d].next_actor);
-    if ((float)0.29999999999999999 <= *(float *)(in_stack_00000004[0x1c].create_event + 4)) {
-      if (0.69999999999999996 <= (double)*(float *)(in_stack_00000004[0x1c].create_event + 4)) {
+    fStack_dc = *(float *)(in_stack_00000004[0x1c].create_event + 4);
+    if ((float)0.29999999999999999 <= fStack_dc) {
+      if (0.69999999999999996 <= (double)fStack_dc) {
         pcVar3 = "big";
       }
       else {
@@ -71,11 +72,11 @@ void core_larva_cpp_FUN_00503a20(void)
       pcVar3 = "sml";
     }
     crt_stdio_c_sprintf_FUN_005fdbd0(acStack_d8,"l%s-die?.wav",pcVar3);
-    iVar4 = (*in_stack_00000004->vtable->playSound)(in_stack_00000004,acStack_d4);
+    iVar4 = (*in_stack_00000004->vtable->playSound)(in_stack_00000004,acStack_e4);
     in_stack_00000004[0x8d].field26_0x148 = iVar4;
   }
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-            (in_stack_00000004,(CVector3f *)(acStack_7c + 100),
+            (in_stack_00000004,(CVector3f *)(acStack_80 + 0x68),
              (CVector3f *)(in_stack_00000008 + 0x1c));
   core_gore_cpp_FUN_004edbb0();
   core_enemy_cpp_FUN_004a9f10();

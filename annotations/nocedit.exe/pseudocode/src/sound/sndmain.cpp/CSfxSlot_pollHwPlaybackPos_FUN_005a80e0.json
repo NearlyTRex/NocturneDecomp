@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 120,
+    "complexity_score": 105,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 2,
     "pseudocode_lines": 20,
-    "suspect_count": 8,
+    "suspect_count": 7,
     "suspect_types": [
-      "call_variadic",
       "concat_artifact",
       "extra_output",
       "stack_param"
@@ -76,6 +75,9 @@
   "pcode_overrides": {
     "005a811f": [
       "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
+    ],
+    "005a813f": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
     ]
   },
   "pcode_summary": {
@@ -124,7 +126,23 @@
       "frame_offset": 16,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 005a8110, ADD ESP at 005a811f",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "005a813a",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "005a813f",
+      "frame_offset": 16,
+      "match": "CALL sound_sndmain.cpp_logSoundError_FUN_005adba0",
+      "return_address": "005a813f",
+      "target_address": "0x5adba0",
+      "target_function": "sound_sndmain.cpp_logSoundError_FUN_005adba0",
+      "text": "Call to variadic function sound_sndmain.cpp_logSoundError_FUN_005adba0 at 005a813a (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
     }
   ],
   "stack_frame": {
@@ -209,19 +227,6 @@
       "match": "CONCAT44",
       "text": "(this_ptr,(double)CONCAT44 /* combine 2-byte values */(extraout_EDX,pdVar1));",
       "type": "concat_artifact"
-    },
-    {
-      "call_address": "005a813a",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL sound_sndmain.cpp_logSoundError_FUN_005adba0",
-      "return_address": "005a813f",
-      "target_address": "0x5adba0",
-      "target_function": "sound_sndmain.cpp_logSoundError_FUN_005adba0",
-      "text": "Call to variadic function sound_sndmain.cpp_logSoundError_FUN_005adba0 at 005a813a",
-      "type": "call_variadic"
     }
   ]
 }

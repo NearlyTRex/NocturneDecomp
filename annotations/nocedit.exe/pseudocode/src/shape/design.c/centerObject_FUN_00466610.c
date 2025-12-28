@@ -9,16 +9,16 @@
 void __cdecl shape_design_c_centerObject_FUN_00466610(void)
 
 {
-  double dVar1;
-  double dVar2;
-  double dVar3;
-  int iVar4;
-  uint uVar5;
+  int iVar1;
+  uint uVar2;
   BADSPACEBASE *in_ESP;
-  char local_b8 [8];
+  char local_b8 [80];
   double local_68;
   double local_60;
   double local_58;
+  double local_50;
+  double local_48;
+  double local_40;
   double local_38;
   double local_30;
   double local_28;
@@ -33,83 +33,64 @@ void __cdecl shape_design_c_centerObject_FUN_00466610(void)
   local_30 = -999999.9;
   local_28 = -999999.9;
   for (local_1c = 0; local_1c < g_VertexCount; local_1c = local_1c + 1) {
-    dVar1 = (double)g_LoadedVertices[local_1c].vertex.x;
-    dVar2 = (double)g_LoadedVertices[local_1c].vertex.y;
-    dVar3 = (double)g_LoadedVertices[local_1c].vertex.z;
-    if (local_38 < dVar1) {
-      local_38 = dVar1;
+    local_48 = (double)g_LoadedVertices[local_1c].vertex.x;
+    local_40 = (double)g_LoadedVertices[local_1c].vertex.y;
+    local_50 = (double)g_LoadedVertices[local_1c].vertex.z;
+    if (local_38 < local_48) {
+      local_38 = local_48;
     }
-    if (dVar1 < local_68) {
-      local_68 = dVar1;
+    if (local_48 < local_68) {
+      local_68 = local_48;
     }
-    if (local_30 < dVar2) {
-      local_30 = dVar2;
+    if (local_30 < local_40) {
+      local_30 = local_40;
     }
-    if (dVar2 < local_60) {
-      local_60 = dVar2;
+    if (local_40 < local_60) {
+      local_60 = local_40;
     }
-    if (local_28 < dVar3) {
-      local_28 = dVar3;
+    if (local_28 < local_50) {
+      local_28 = local_50;
     }
-    if (dVar3 < local_58) {
-      local_58 = dVar3;
+    if (local_50 < local_58) {
+      local_58 = local_50;
     }
   }
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
-  iVar4 = engine_2d_c_getInputWithPrompt_FUN_004032c0
+  iVar1 = engine_2d_c_getInputWithPrompt_FUN_004032c0
                     (local_b8,0x14,0,0,"Press <Enter> or enter min,max points : ");
-  if (iVar4 == 0x1b) {
+  if (iVar1 == 0x1b) {
     return;
   }
-  iVar4 = crt_stdio_c_sscanf_FUN_0060013c(local_b8,"%d,%d",&local_14);
-  if (0 < iVar4) {
-    if (iVar4 != 2) {
+  local_1c = crt_stdio_c_sscanf_FUN_0060013c(local_b8,"%d,%d",&local_14,&local_20);
+  if (0 < local_1c) {
+    if (local_1c != 2) {
       engine_2d_c_drawText_FUN_00401fd0("Need two points.",0,0x16);
-      local_b8[0] = -0x4b;
-      local_b8[1] = 'g';
-      local_b8[2] = 'F';
-      local_b8[3] = '\0';
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-      local_b8[4] = -0x46;
-      local_b8[5] = 'g';
-      local_b8[6] = 'F';
-      local_b8[7] = '\0';
       wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
       return;
     }
     if ((((local_14 < 0) || (local_20 < 0)) || (g_VertexCount + -1 < local_14)) ||
        (g_VertexCount + -1 < local_20)) {
       engine_2d_c_drawText_FUN_00401fd0("Invalid point.",0,0x16);
-      local_b8[0] = -4;
-      local_b8[1] = 'g';
-      local_b8[2] = 'F';
-      local_b8[3] = '\0';
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-      local_b8[4] = '\x01';
-      local_b8[5] = 'h';
-      local_b8[6] = 'F';
-      local_b8[7] = '\0';
       wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
       return;
     }
     engine_2d_c_drawText_FUN_00401fd0("Which axis to center - X, Y, or Z? : ",0,0x16);
-    builtin_strncpy(local_b8,"\x1dhF",4);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-    builtin_strncpy(local_b8 + 4,"\"hF",4);
-    uVar5 = wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
-    builtin_strncpy(local_b8 + 4,"-hF",4);
-    uVar5 = crt_ctype_c_toupper_FUN_005ff9e0(uVar5 & 0xff);
-    if (uVar5 < 0x59) {
-      if (uVar5 == 0x58) {
+    uVar2 = wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
+    uVar2 = crt_ctype_c_toupper_FUN_005ff9e0(uVar2 & 0xff);
+    if (uVar2 < 0x59) {
+      if (uVar2 == 0x58) {
         local_38 = (double)g_LoadedVertices[local_20].vertex.x;
         local_68 = (double)g_LoadedVertices[local_14].vertex.x;
       }
     }
-    else if (uVar5 < 0x5a) {
+    else if (uVar2 < 0x5a) {
       local_30 = (double)g_LoadedVertices[local_20].vertex.y;
       local_60 = (double)g_LoadedVertices[local_14].vertex.y;
     }
-    else if (uVar5 == 0x5a) {
+    else if (uVar2 == 0x5a) {
       local_28 = (double)g_LoadedVertices[local_20].vertex.z;
       local_58 = (double)g_LoadedVertices[local_14].vertex.z;
     }

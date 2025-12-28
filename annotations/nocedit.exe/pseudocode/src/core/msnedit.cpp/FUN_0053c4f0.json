@@ -9,13 +9,13 @@
     "suspect_count": 14,
     "suspect_types": [
       "badspacebase",
-      "call_variadic",
-      "callind_esp_no_frame",
+      "callind_preserve",
       "param_count_too_few",
       "register_param",
       "stack_param",
       "unaffected_reg",
       "unresolved_funcptr",
+      "variadic_preserve",
       "warning_overlapping_globals"
     ],
     "total_lines": 255
@@ -397,7 +397,7 @@
       "prologue_offset": 316,
       "return_address": "0053c543",
       "text": "CALLIND at 0053c53d, ADD ESP at 0053c549 (no EBP frame)",
-      "type": "callind_esp_no_frame"
+      "type": "callind_preserve"
     },
     {
       "call_site_count": 1,
@@ -413,15 +413,16 @@
     {
       "call_address": "0053c6ef",
       "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
+      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
       "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "prologue_offset": 316,
       "return_address": "0053c6f4",
       "target_address": "0x5fdbd0",
       "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
-      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0053c6ef",
-      "type": "call_variadic"
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0053c6ef (no EBP frame)",
+      "type": "variadic_preserve"
     }
   ]
 }

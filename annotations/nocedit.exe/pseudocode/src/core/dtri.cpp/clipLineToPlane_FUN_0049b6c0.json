@@ -1,19 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 176,
-    "complexity_score": 185,
+    "complexity_score": 153,
     "cross_reference_count": 7,
     "function_call_count": 1,
     "global_count": 4,
-    "pseudocode_lines": 45,
-    "suspect_count": 12,
+    "pseudocode_lines": 43,
+    "suspect_count": 10,
     "suspect_types": [
-      "call_variadic",
-      "concat_artifact",
       "sub_artifact",
       "unknown_field"
     ],
-    "total_lines": 221
+    "total_lines": 219
   },
   "cross_references": [
     {
@@ -104,6 +102,11 @@
       "value": null
     }
   ],
+  "pcode_overrides": {
+    "0049b835": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffe8,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.496551724137931,
     "instruction_count": 145,
@@ -135,6 +138,24 @@
     },
     "pcode_op_count": 797
   },
+  "resolved_suspects": [
+    {
+      "add_esp_value": 4,
+      "call_address": "0049b830",
+      "caller_has_stack_issues": false,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "0049b835",
+      "frame_offset": 24,
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0049b835",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0049b830 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 88,
     "local_size": 44,
@@ -220,93 +241,73 @@
   "suspects": [
     {
       "description": "Decompiler double/longlong extraction artifact",
-      "line": 17,
+      "line": 16,
       "match": "SUB84",
       "text": "local_28 = SUB84 /* extract 2-byte value */(dVar1,0);",
       "type": "sub_artifact"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 26,
-      "match": "CONCAT44",
-      "text": "(float)(double)CONCAT44 /* combine 2-byte values */(uStack_20,uStack_24);",
-      "type": "concat_artifact"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 30,
+      "line": 28,
       "match": "._0_4_",
       "text": "if ((((((ulonglong)plane_nx & 0x7fffffff00000000) != 0) || (plane_nx._0_4_ != 0)) &&",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 32,
+      "line": 30,
       "match": "._0_4_",
       "text": "(((plane_ny._0_4_ == 0 && (((ulonglong)plane_nz & 0x7fffffff00000000) == 0)) &&",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 33,
+      "line": 31,
       "match": "._0_4_",
       "text": "(plane_nz._0_4_ == 0)))) {",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 36,
+      "line": 34,
       "match": "._0_4_",
       "text": "if (((((ulonglong)plane_nx & 0x7fffffff00000000) == 0) && (plane_nx._0_4_ == 0)) &&",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 37,
+      "line": 35,
       "match": "._0_4_",
       "text": "(((((ulonglong)plane_ny & 0x7fffffff00000000) != 0 || (plane_ny._0_4_ != 0)) &&",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 38,
+      "line": 36,
       "match": "._0_4_",
       "text": "((((ulonglong)plane_nz & 0x7fffffff00000000) == 0 && (plane_nz._0_4_ == 0)))))) {",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 41,
+      "line": 39,
       "match": "._0_4_",
       "text": "if (((((((ulonglong)plane_nx & 0x7fffffff00000000) == 0) && (plane_nx._0_4_ == 0)) &&",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 42,
+      "line": 40,
       "match": "._0_4_",
       "text": "(((ulonglong)plane_ny & 0x7fffffff00000000) == 0)) && (plane_ny._0_4_ == 0)) &&",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 43,
+      "line": 41,
       "match": "._0_4_",
       "text": "((((ulonglong)plane_nz & 0x7fffffff00000000) != 0 || (plane_nz._0_4_ != 0)))) {",
       "type": "unknown_field"
-    },
-    {
-      "call_address": "0049b830",
-      "caller_has_stack_issues": false,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "0049b835",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0049b830",
-      "type": "call_variadic"
     }
   ]
 }

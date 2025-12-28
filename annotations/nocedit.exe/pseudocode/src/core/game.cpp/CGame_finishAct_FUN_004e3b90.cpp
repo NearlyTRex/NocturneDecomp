@@ -12,6 +12,7 @@ void core_game_cpp_CGame_finishAct_FUN_004e3b90(void)
 
 {
   char cVar1;
+  CBitFont *this_ptr;
   int iVar2;
   char *pcVar3;
   char *pcVar4;
@@ -19,27 +20,24 @@ void core_game_cpp_CGame_finishAct_FUN_004e3b90(void)
   uint uVar6;
   BADSPACEBASE *in_ESP;
   uint uVar7;
-  int y_pos;
   CBitFont *pCVar8;
   char *pcVar9;
   int iVar10;
   byte bVar11;
   float10 fVar12;
   double dVar13;
-  CBitFont *unaff_retaddr;
   CGame *in_stack_00000004;
   CGame *in_stack_fffffab4;
   float fVar14;
-  char acStack_148 [4];
-  char acStack_144 [8];
-  char acStack_13c [240];
+  char local_14c [256];
   byte local_4c [12];
-  CAlphaBitmap CStack_40;
+  byte auStack_40 [20];
   int local_2c;
   int local_28;
   uint local_24;
   CBitFont *local_1c;
-  int local_14;
+  CBitFont *local_18;
+  CBitFont *local_14;
   
   bVar11 = 0;
   if (in_stack_00000004->field87_0x258 == 2) {
@@ -70,22 +68,22 @@ void core_game_cpp_CGame_finishAct_FUN_004e3b90(void)
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0
             ((CAlphaBitmap *)(local_4c + 4),"stats",0x280,0x1e0);
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
-  engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(&CStack_40,0,0,0xffff);
+  engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950((CAlphaBitmap *)auStack_40,0,0,0xffff);
   fVar12 = (float10)in_stack_00000004->player_pos_y;
   dVar13 = crt_math_c_round_FUN_005fe6b0((double)(fVar12 * (float10)0.00027777777777777799));
-  pCVar8 = (CBitFont *)(int)ROUND(dVar13);
-  fVar12 = fVar12 - (float10)(int)pCVar8 * (float10)3600;
+  local_1c = (CBitFont *)(int)ROUND(dVar13);
+  fVar12 = fVar12 - (float10)(int)local_1c * (float10)3600;
   in_stack_00000004->player_pos_y = (float)fVar12;
-  local_1c = pCVar8;
   dVar13 = crt_math_c_round_FUN_005fe6b0((double)(fVar12 * (float10)0.016666666666666701));
   local_28 = (int)ROUND(dVar13);
   fVar12 = fVar12 - (float10)local_28 * (float10)60;
   in_stack_00000004->player_pos_y = (float)fVar12;
   dVar13 = crt_math_c_round_FUN_005fe6b0((double)fVar12);
-  local_14 = (int)ROUND(dVar13);
-  fVar14 = in_stack_00000004->player_pos_y - (float)local_14;
+  pCVar8 = (CBitFont *)(int)ROUND(dVar13);
+  fVar14 = in_stack_00000004->player_pos_y - (float)(int)pCVar8;
   in_stack_00000004->player_pos_y = fVar14;
   pcVar3 = (char *)0x4e3d9f;
+  local_14 = pCVar8;
   dVar13 = crt_math_c_round_FUN_005fe6b0((double)(fVar14 * (float)100));
   local_2c = (int)ROUND(dVar13);
   pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(pcVar3);
@@ -123,10 +121,10 @@ void core_game_cpp_CGame_finishAct_FUN_004e3b90(void)
   } while (cVar1 != '\0');
   uVar7 = 0;
   crt_stdio_c_sprintf_FUN_005fdbd0
-            (acStack_148,"%2d:%2d:%2d.%2d\n\n",local_24,local_2c,local_14,iVar2);
+            (local_14c + 4,"%2d:%2d:%2d.%2d\n\n",local_24,local_2c,local_14,iVar2);
   do {
     uVar6 = 0xffffffff;
-    pcVar3 = acStack_144;
+    pcVar3 = local_14c;
     do {
       if (uVar6 == 0) break;
       uVar6 = uVar6 - 1;
@@ -134,14 +132,14 @@ void core_game_cpp_CGame_finishAct_FUN_004e3b90(void)
       pcVar3 = pcVar3 + (uint)bVar11 * -2 + 1;
     } while (cVar1 != '\0');
     if (~uVar6 - 1 <= uVar7) break;
-    if (acStack_144[uVar7] == ' ') {
-      acStack_144[uVar7] = '0';
+    if (local_14c[uVar7] == ' ') {
+      local_14c[uVar7] = '0';
     }
     uVar7 = uVar7 + 1;
   } while( true );
-  pcVar3 = acStack_144;
+  pcVar3 = local_14c;
   iVar2 = -1;
-  pcVar4 = &stack0xfffffabc;
+  pcVar4 = &stack0xfffffab4;
   do {
     pcVar9 = pcVar4;
     if (iVar2 == 0) break;
@@ -162,7 +160,7 @@ void core_game_cpp_CGame_finishAct_FUN_004e3b90(void)
   } while (cVar1 != '\0');
   pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Total body count");
   iVar2 = -1;
-  pcVar3 = &stack0xfffffac0;
+  pcVar3 = &stack0xfffffab8;
   do {
     pcVar9 = pcVar3;
     if (iVar2 == 0) break;
@@ -183,7 +181,7 @@ void core_game_cpp_CGame_finishAct_FUN_004e3b90(void)
   } while (cVar1 != '\0');
   pcVar4 = "\n\n";
   iVar2 = -1;
-  pcVar3 = &stack0xfffffac0;
+  pcVar3 = &stack0xfffffab8;
   do {
     pcVar9 = pcVar3;
     if (iVar2 == 0) break;
@@ -202,10 +200,10 @@ void core_game_cpp_CGame_finishAct_FUN_004e3b90(void)
     pcVar9[1] = cVar1;
     pcVar9 = pcVar9 + 2;
   } while (cVar1 != '\0');
-  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_144 + 4,"%d\n\n");
-  pcVar3 = acStack_13c;
+  crt_stdio_c_sprintf_FUN_005fdbd0(local_14c + 4,"%d\n\n",in_stack_00000004->game_state_flags);
+  pcVar3 = local_14c;
   iVar2 = -1;
-  pcVar4 = &stack0xfffffac4;
+  pcVar4 = &stack0xfffffab4;
   do {
     pcVar9 = pcVar4;
     if (iVar2 == 0) break;
@@ -224,26 +222,29 @@ void core_game_cpp_CGame_finishAct_FUN_004e3b90(void)
     pcVar9[1] = cVar1;
     pcVar9 = pcVar9 + 2;
   } while (cVar1 != '\0');
+  local_1c = g_ThemeFont;
   engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
+  this_ptr = local_18;
   iVar2 = engine_font_cpp_CBitFont_wrapText_FUN_004d0010
-                    (pCVar8,&stack0xfffffac8,&DAT_02d7d6f0,0x14,0x100,0xc0);
+                    (local_18,&stack0xfffffab8,&DAT_02d7d6f0,0x14,0x100,0xc0);
   iVar10 = 0;
-  iVar5 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(pCVar8,0x58);
-  y_pos = 0xf0;
+  local_1c = (CBitFont *)iVar2;
+  local_14 = (CBitFont *)engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(this_ptr,0x58);
+  iVar5 = 0xf0;
   if (0 < iVar2) {
     pcVar3 = &DAT_02d7d6f0;
     do {
       iVar10 = iVar10 + 1;
       engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_004cdee0
-                (unaff_retaddr,0x1c0,0x27f,y_pos,0xf8,0,pcVar3);
+                (pCVar8,0x1c0,0x27f,iVar5,0xf8,0,pcVar3);
       pcVar3 = pcVar3 + 0x100;
-      y_pos = y_pos + iVar5;
-    } while (iVar10 < (int)pCVar8);
+      iVar5 = iVar5 + (int)local_14;
+    } while (iVar10 < (int)local_18);
   }
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
   engine_2d_c_clearInputAndWait_FUN_00403260();
   wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
   engine_2d_c_clearInputAndWait_FUN_00403260();
-  engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540((CAlphaBitmap *)&stack0xffffffe0);
+  engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540((CAlphaBitmap *)(auStack_40 + 0x10));
   return;
 }

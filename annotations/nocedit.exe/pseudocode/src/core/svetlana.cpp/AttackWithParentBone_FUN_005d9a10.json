@@ -9,14 +9,14 @@
     "suspect_count": 28,
     "suspect_types": [
       "badspacebase",
-      "call_variadic",
-      "callind_esp_no_frame",
+      "callind_preserve",
       "register_param",
       "stack_param",
       "stack_ref",
       "suspect_float",
       "unaffected_reg",
       "unknown_field",
+      "variadic_preserve",
       "warning_unreachable"
     ],
     "total_lines": 230
@@ -445,7 +445,7 @@
       "prologue_offset": 132,
       "return_address": "005d9b5f",
       "text": "CALLIND at 005d9b59, ADD ESP at 005d9b5f (no EBP frame)",
-      "type": "callind_esp_no_frame"
+      "type": "callind_preserve"
     },
     {
       "add_esp_value": 8,
@@ -464,20 +464,21 @@
       "prologue_offset": 132,
       "return_address": "005d9b91",
       "text": "CALLIND at 005d9b8e, ADD ESP at 005d9b91 (no EBP frame)",
-      "type": "callind_esp_no_frame"
+      "type": "callind_preserve"
     },
     {
       "call_address": "005d9b05",
       "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
+      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
       "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "prologue_offset": 132,
       "return_address": "005d9b0a",
       "target_address": "0x506f10",
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005d9b05",
-      "type": "call_variadic"
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005d9b05 (no EBP frame)",
+      "type": "variadic_preserve"
     }
   ]
 }

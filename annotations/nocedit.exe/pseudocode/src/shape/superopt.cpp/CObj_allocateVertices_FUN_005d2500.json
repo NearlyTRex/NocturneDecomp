@@ -8,7 +8,7 @@
     "pseudocode_lines": 18,
     "suspect_count": 1,
     "suspect_types": [
-      "call_variadic"
+      "variadic_preserve"
     ],
     "total_lines": 71
   },
@@ -137,15 +137,16 @@
     {
       "call_address": "005d2541",
       "caller_has_stack_issues": false,
-      "description": "Variadic function call may destabilize ESP tracking",
+      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
       "match": "CALL shape_superopt.cpp_logToFile_FUN_005c7910",
+      "prologue_offset": 12,
       "return_address": "005d2546",
       "target_address": "0x5c7910",
       "target_function": "shape_superopt.cpp_logToFile_FUN_005c7910",
-      "text": "Call to variadic function shape_superopt.cpp_logToFile_FUN_005c7910 at 005d2541",
-      "type": "call_variadic"
+      "text": "Call to variadic function shape_superopt.cpp_logToFile_FUN_005c7910 at 005d2541 (no EBP frame)",
+      "type": "variadic_preserve"
     }
   ],
   "vtable_info": {

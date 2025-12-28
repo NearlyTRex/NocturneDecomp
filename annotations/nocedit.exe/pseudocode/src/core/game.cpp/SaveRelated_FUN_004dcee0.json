@@ -1,21 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 864,
-    "complexity_score": 384,
+    "complexity_score": 333,
     "cross_reference_count": 1,
     "function_call_count": 19,
     "global_count": 38,
-    "pseudocode_lines": 254,
-    "suspect_count": 10,
+    "pseudocode_lines": 253,
+    "suspect_count": 6,
     "suspect_types": [
       "badspacebase",
-      "call_variadic",
       "pointer_cast",
       "register_param",
-      "stack_ref",
-      "suspect_float"
+      "stack_ref"
     ],
-    "total_lines": 1118
+    "total_lines": 1117
   },
   "cross_references": [
     {
@@ -436,7 +434,13 @@
     "004dd1dd": [
       "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffdf4,4)"
     ],
+    "004dd22c": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffdf4,4)"
+    ],
     "004dd268": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffdf4,4)"
+    ],
+    "004dd2b4": [
       "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffdf4,4)"
     ],
     "004dd2f4": [
@@ -467,6 +471,9 @@
       "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffdf4,4)"
     ],
     "004dd56b": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffdf4,4)"
+    ],
+    "004dd5be": [
       "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffdf4,4)"
     ],
     "004dd650": [
@@ -540,7 +547,7 @@
       "frame_offset": 524,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 004dcf1f, ADD ESP at 004dcf21",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -551,7 +558,7 @@
       "frame_offset": 524,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 004dcf32, ADD ESP at 004dcf35",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -562,7 +569,7 @@
       "frame_offset": 524,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 004dcf82, ADD ESP at 004dcf84",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -573,7 +580,7 @@
       "frame_offset": 524,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 004dcf95, ADD ESP at 004dcf98",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -584,7 +591,7 @@
       "frame_offset": 524,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 004dcfbc, ADD ESP at 004dcfbe",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -595,7 +602,7 @@
       "frame_offset": 524,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 004dcfcf, ADD ESP at 004dcfd2",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -606,7 +613,7 @@
       "frame_offset": 524,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 004dd004, ADD ESP at 004dd006",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -617,7 +624,7 @@
       "frame_offset": 524,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 004dd017, ADD ESP at 004dd01a",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -628,7 +635,7 @@
       "frame_offset": 524,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 004dd05a, ADD ESP at 004dd05c",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -639,7 +646,7 @@
       "frame_offset": 524,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 004dd06d, ADD ESP at 004dd070",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -650,7 +657,7 @@
       "frame_offset": 524,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 004dd0cf, ADD ESP at 004dd0d1",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -661,7 +668,7 @@
       "frame_offset": 524,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 004dd0e2, ADD ESP at 004dd0e5",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -672,7 +679,7 @@
       "frame_offset": 524,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 004dd104, ADD ESP at 004dd106",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -683,7 +690,7 @@
       "frame_offset": 524,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 004dd125, ADD ESP at 004dd127",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -694,7 +701,7 @@
       "frame_offset": 524,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 004dd141, ADD ESP at 004dd143",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -705,7 +712,7 @@
       "frame_offset": 524,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 004dd16e, ADD ESP at 004dd171",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -716,7 +723,7 @@
       "frame_offset": 524,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 004dd1a4, ADD ESP at 004dd1a7",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -727,7 +734,7 @@
       "frame_offset": 524,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 004dd1da, ADD ESP at 004dd1dd",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -738,7 +745,7 @@
       "frame_offset": 524,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 004dd265, ADD ESP at 004dd268",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -749,7 +756,7 @@
       "frame_offset": 524,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 004dd2f2, ADD ESP at 004dd2f4",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -760,7 +767,7 @@
       "frame_offset": 524,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 004dd305, ADD ESP at 004dd308",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -771,7 +778,7 @@
       "frame_offset": 524,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 004dd359, ADD ESP at 004dd35b",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -782,7 +789,7 @@
       "frame_offset": 524,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 004dd36c, ADD ESP at 004dd36f",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -793,7 +800,7 @@
       "frame_offset": 524,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 004dd3c9, ADD ESP at 004dd3cc",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -804,7 +811,7 @@
       "frame_offset": 524,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 004dd3e1, ADD ESP at 004dd3e3",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -815,7 +822,7 @@
       "frame_offset": 524,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 004dd476, ADD ESP at 004dd479",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -826,7 +833,7 @@
       "frame_offset": 524,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 004dd4c3, ADD ESP at 004dd4c5",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -837,7 +844,7 @@
       "frame_offset": 524,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 004dd4da, ADD ESP at 004dd4dd",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -848,7 +855,7 @@
       "frame_offset": 524,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 004dd569, ADD ESP at 004dd56b",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -859,7 +866,7 @@
       "frame_offset": 524,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 004dd64d, ADD ESP at 004dd650",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -870,7 +877,7 @@
       "frame_offset": 524,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 004dd6b9, ADD ESP at 004dd6bc",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -881,7 +888,7 @@
       "frame_offset": 524,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 004dd6d9, ADD ESP at 004dd6dc",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -892,7 +899,7 @@
       "frame_offset": 524,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 004dd70e, ADD ESP at 004dd711",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -903,7 +910,7 @@
       "frame_offset": 524,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 004dd730, ADD ESP at 004dd732",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -914,7 +921,7 @@
       "frame_offset": 524,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 004dd747, ADD ESP at 004dd74a",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -925,7 +932,55 @@
       "frame_offset": 524,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 004dd76b, ADD ESP at 004dd76d",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
+    },
+    {
+      "add_esp_value": 16,
+      "call_address": "004dd227",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "fix_address": "004dd22c",
+      "frame_offset": 524,
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "004dd22c",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 004dd227 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 16,
+      "call_address": "004dd2af",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "fix_address": "004dd2b4",
+      "frame_offset": 524,
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "004dd2b4",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 004dd2af (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "004dd5b9",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "004dd5be",
+      "frame_offset": 524,
+      "match": "CALL shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060",
+      "return_address": "004dd5be",
+      "target_address": "0x49f060",
+      "target_function": "shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060",
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060 at 004dd5b9 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
     }
   ],
   "stack_frame": {
@@ -964,91 +1019,45 @@
   "suspects": [
     {
       "description": "Ghidra failed to resolve stack frame",
-      "line": 13,
+      "line": 14,
       "match": "BADSPACEBASE",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "badspacebase"
     },
     {
       "description": "Inferred register parameter",
-      "line": 13,
+      "line": 14,
       "match": "in_ESP",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "register_param"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 77,
-      "match": "7.84727e-44",
-      "text": "duration = 7.84727e-44;",
-      "type": "suspect_float"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 156,
+      "line": 155,
       "match": "(char *)((int)",
       "text": "*(char *)((int)piVar6 + 1) = cVar1;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 157,
+      "line": 156,
       "match": "(int *)((int)",
       "text": "piVar6 = (int *)((int)piVar6 + 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 234,
+      "line": 233,
       "match": "&stack0xfffffde8",
       "text": "(&stack0xfffffde8,\"Gamma : %f\",(double)this_ptr->gamma * 1.52587890625e-05);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 235,
-      "match": "&stack0xfffffde0",
-      "text": "core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,&stack0xfffffde0,1.0);",
+      "line": 234,
+      "match": "&stack0xfffffde8",
+      "text": "core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,&stack0xfffffde8,1.0);",
       "type": "stack_ref"
-    },
-    {
-      "call_address": "004dd227",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
-      "return_address": "004dd22c",
-      "target_address": "0x5fdbd0",
-      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
-      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 004dd227",
-      "type": "call_variadic"
-    },
-    {
-      "call_address": "004dd2af",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
-      "return_address": "004dd2b4",
-      "target_address": "0x5fdbd0",
-      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
-      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 004dd2af",
-      "type": "call_variadic"
-    },
-    {
-      "call_address": "004dd5b9",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060",
-      "return_address": "004dd5be",
-      "target_address": "0x49f060",
-      "target_function": "shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060",
-      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060 at 004dd5b9",
-      "type": "call_variadic"
     }
   ]
 }

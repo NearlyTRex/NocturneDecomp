@@ -25,11 +25,9 @@ void core_stranger_cpp_CStranger_FUN_005c48b0(void)
   int unaff_EBP;
   CCharacter *in_stack_00000004;
   int in_stack_00000008;
-  uint in_stack_ffffffe0;
-  ulonglong uVar8;
-  CCharacter *pCVar9;
   CMotionController *this_ptr_01;
-  float in_stack_ffffffec;
+  ulonglong in_stack_ffffffe8;
+  double dVar8;
   
   if (g_CGamePtr->field53_0x1d0 != 0) {
     *(uint *)(in_stack_00000008 + 4) = 0;
@@ -37,8 +35,7 @@ void core_stranger_cpp_CStranger_FUN_005c48b0(void)
   if (g_CGamePtr->allow_damage_flag == 0) {
     *(uint *)(in_stack_00000008 + 4) = 0;
   }
-  uVar8 = CONCAT44 /* combine 2-byte values */(0x5c48e9,in_stack_ffffffe0);
-  pCVar9 = in_stack_00000004;
+  fVar6 = (float)((ulonglong)in_stack_ffffffe8 >> 0x20);
   core_hero_cpp_FUN_004f3580();
   if ((0.0 < *(float *)in_stack_00000004[1].base_actor.actor_name) &&
      (0xb < *(int *)(in_stack_00000008 + 0x30))) {
@@ -60,17 +57,18 @@ void core_stranger_cpp_CStranger_FUN_005c48b0(void)
   if (((pCVar2->auto_use_health != 0) && (0xb < *(int *)(in_stack_00000008 + 0x30))) &&
      (in_stack_00000004->hit_points <= 0.0)) {
     in_stack_00000004->hit_points = 0.0;
-    engine_console_cpp_CConsole_printf_FUN_00441890
-              (this_ptr_00,"Using auto health\n",uVar8,pCVar9);
+    engine_console_cpp_CConsole_printf_FUN_00441890(this_ptr_00,"Using auto health\n");
     core_inv_cpp_CInventory_autoUseHealthItem_FUN_00501570
               ((CInventory *)(in_stack_00000004[2].cloth_data + 0x5058));
-    engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"hit points: %3.2f\n");
+    dVar8 = (double)in_stack_00000004->hit_points;
+    engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"hit points: %3.2f\n",dVar8);
+    fVar6 = (float)((ulonglong)dVar8 >> 0x20);
   }
   this_ptr = &in_stack_00000004->model;
   if (in_stack_00000004->hit_points <= 0.0) {
     pCVar1 = (in_stack_00000004->base_actor).vtable;
     in_stack_00000004->hit_points = 0.0;
-    (*pCVar1[1].processFootstep)(&in_stack_00000004->base_actor,in_stack_ffffffec);
+    (*pCVar1[1].processFootstep)(&in_stack_00000004->base_actor,fVar6);
     pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        (&this_ptr->motion_controller);
     if (pSVar4->state_index != 0x29) {

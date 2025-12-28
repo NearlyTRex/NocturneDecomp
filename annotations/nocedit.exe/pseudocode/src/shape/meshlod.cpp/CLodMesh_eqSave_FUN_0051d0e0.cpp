@@ -16,7 +16,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_eqSave_FUN_0051d0e0(CLodMesh *this_ptr,F
   
   if (file_handle != (FILE *)0x0) {
     iVar3 = 0;
-    crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%d\n",this_ptr->edge_count);
+    crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%d\n");
     if (0 < this_ptr->edge_count) {
       dVar1 = 9.9999999999999997e+34 * 0.98999999999999999;
       iVar4 = 0;

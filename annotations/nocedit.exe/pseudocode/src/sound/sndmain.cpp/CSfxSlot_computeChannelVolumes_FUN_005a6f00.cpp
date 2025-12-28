@@ -16,9 +16,9 @@ float __cdecl sound_sndmain_cpp_CSfxSlot_computeChannelVolumes_FUN_005a6f00(CSfx
   float fVar5;
   int iVar6;
   CSfxSlot *pCVar7;
-  float local_28;
-  float local_20;
-  float local_18;
+  float local_2c;
+  float local_24;
+  float local_1c;
   
   if (g_SoundLockCount < 1) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
@@ -26,7 +26,7 @@ float __cdecl sound_sndmain_cpp_CSfxSlot_computeChannelVolumes_FUN_005a6f00(CSfx
     core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSlot::kill - must be locked!");
   }
   fVar4 = sound_sndmain_cpp_getSfxChannelVol_FUN_005a9d90((this_ptr->options).channel_index);
-  fVar3 = (fVar4 * (this_ptr->options).current_volume) / local_20;
+  fVar3 = (fVar4 * (this_ptr->options).current_volume) / local_24;
   bVar1 = (byte)(this_ptr->options).flags;
   fVar4 = (float)CONCAT22 /* combine 2-byte values */((short)((uint)fVar4 >> 0x10),CONCAT11 /* combine 2-byte values */(bVar1,SUB41 /* extract 2-byte value */(fVar4,0)));
   if ((bVar1 & 1) == 0) {
@@ -34,32 +34,32 @@ float __cdecl sound_sndmain_cpp_CSfxSlot_computeChannelVolumes_FUN_005a6f00(CSfx
     pCVar7 = this_ptr;
     if (0 < g_AudioChannelCount) {
       do {
-        local_28 = pCVar7->distance_to_speakers[0];
+        local_2c = pCVar7->distance_to_speakers[0];
         fVar4 = this_ptr->min_distance;
         fVar2 = this_ptr->max_distance;
-        fVar5 = (float)((uint)CONCAT21 /* combine 2-byte values */((short)((uint)fVar2 >> 0x10),local_28 < fVar4) << 8);
-        if (local_28 < fVar4) {
+        fVar5 = (float)((uint)CONCAT21 /* combine 2-byte values */((short)((uint)fVar2 >> 0x10),local_2c < fVar4) << 8);
+        if (local_2c < fVar4) {
           fVar5 = fVar4;
-          local_28 = fVar4;
+          local_2c = fVar4;
         }
         fVar4 = (float)((uint)fVar5 & 0xffff0000);
-        if (fVar2 < local_28) {
+        if (fVar2 < local_2c) {
           fVar4 = fVar2;
-          local_28 = fVar2;
+          local_2c = fVar2;
         }
         fVar2 = this_ptr->reference_distance * (float)0.050000000000000003;
-        if (local_28 < fVar2 || (local_28 == fVar2) != 0) {
-          local_18 = 20.0;
+        if (local_2c < fVar2 || (local_2c == fVar2) != 0) {
+          local_1c = 20.0;
         }
         else {
-          local_18 = this_ptr->reference_distance / local_28;
+          local_1c = this_ptr->reference_distance / local_2c;
         }
         iVar6 = iVar6 + 1;
-        pCVar7->channel_volumes[0] = fVar3 * local_18;
+        pCVar7->channel_volumes[0] = fVar3 * local_1c;
         fVar4 = (float)CONCAT22 /* combine 2-byte values */((short)((uint)fVar4 >> 0x10),
-                                (ushort)(local_28 < fVar2) << 8 |
-                                (ushort)(NAN(local_28) || NAN(fVar2)) << 10 |
-                                (ushort)(local_28 == fVar2) << 0xe);
+                                (ushort)(local_2c < fVar2) << 8 |
+                                (ushort)(NAN(local_2c) || NAN(fVar2)) << 10 |
+                                (ushort)(local_2c == fVar2) << 0xe);
         pCVar7 = (CSfxSlot *)&(pCVar7->options).position;
       } while (iVar6 < g_AudioChannelCount);
     }

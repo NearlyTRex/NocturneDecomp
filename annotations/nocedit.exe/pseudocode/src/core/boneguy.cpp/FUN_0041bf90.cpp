@@ -34,7 +34,7 @@ void core_boneguy_cpp_FUN_0041bf90(void)
   byte bVar15;
   CBoneGuy *in_stack_00000004;
   float in_stack_00000008;
-  float afStackY_1908 [1455];
+  float afStackY_1908 [1452];
   CQuaternion4f *quat_ptr;
   float in_stack_fffffe44;
   SDamageInfo local_180;

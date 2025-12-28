@@ -9,13 +9,13 @@
     "suspect_count": 60,
     "suspect_types": [
       "badspacebase",
-      "call_variadic",
-      "callind_esp_no_frame",
+      "callind_preserve",
       "pointer_cast",
       "register_param",
       "stack_param",
       "stack_ref",
-      "unaffected_reg"
+      "unaffected_reg",
+      "variadic_preserve"
     ],
     "total_lines": 1275
   },
@@ -1056,7 +1056,7 @@
       "prologue_offset": 272,
       "return_address": "00536a00",
       "text": "CALLIND at 005369fa, ADD ESP at 00536a00 (no EBP frame)",
-      "type": "callind_esp_no_frame"
+      "type": "callind_preserve"
     },
     {
       "add_esp_value": 8,
@@ -1075,7 +1075,7 @@
       "prologue_offset": 272,
       "return_address": "00536ab1",
       "text": "CALLIND at 00536aae, ADD ESP at 00536ab1 (no EBP frame)",
-      "type": "callind_esp_no_frame"
+      "type": "callind_preserve"
     },
     {
       "add_esp_value": 8,
@@ -1094,7 +1094,7 @@
       "prologue_offset": 272,
       "return_address": "00536ac9",
       "text": "CALLIND at 00536ac6, ADD ESP at 00536ac9 (no EBP frame)",
-      "type": "callind_esp_no_frame"
+      "type": "callind_preserve"
     },
     {
       "add_esp_value": 8,
@@ -1113,7 +1113,7 @@
       "prologue_offset": 272,
       "return_address": "00536ae4",
       "text": "CALLIND at 00536ae1, ADD ESP at 00536ae4 (no EBP frame)",
-      "type": "callind_esp_no_frame"
+      "type": "callind_preserve"
     },
     {
       "add_esp_value": 8,
@@ -1132,7 +1132,7 @@
       "prologue_offset": 272,
       "return_address": "00536b00",
       "text": "CALLIND at 00536afd, ADD ESP at 00536b00 (no EBP frame)",
-      "type": "callind_esp_no_frame"
+      "type": "callind_preserve"
     },
     {
       "add_esp_value": 8,
@@ -1151,7 +1151,7 @@
       "prologue_offset": 272,
       "return_address": "00536b22",
       "text": "CALLIND at 00536b1f, ADD ESP at 00536b22 (no EBP frame)",
-      "type": "callind_esp_no_frame"
+      "type": "callind_preserve"
     },
     {
       "add_esp_value": 8,
@@ -1170,20 +1170,21 @@
       "prologue_offset": 272,
       "return_address": "00536b44",
       "text": "CALLIND at 00536b41, ADD ESP at 00536b44 (no EBP frame)",
-      "type": "callind_esp_no_frame"
+      "type": "callind_preserve"
     },
     {
       "call_address": "005369b6",
       "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
+      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
       "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "prologue_offset": 272,
       "return_address": "005369bb",
       "target_address": "0x5fdbd0",
       "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
-      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 005369b6",
-      "type": "call_variadic"
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 005369b6 (no EBP frame)",
+      "type": "variadic_preserve"
     }
   ]
 }

@@ -22,7 +22,7 @@ int core_setedit_cpp_CDemonSet_unk201_FUN_0057ae50(void)
   int in_stack_00000008;
   CDemonLight *pCVar7;
   CDemonLight *intensity;
-  char acStack_170 [8];
+  char acStack_178 [244];
   char acStack_84 [8];
   char acStack_7c [92];
   uint local_20;
@@ -118,37 +118,20 @@ LAB_0057af67:
   }
   engine_2d_c_drawText_FUN_00401fd0("Position light.  Press SPACE when done",0,0);
   engine_2d_c_drawText_FUN_00401fd0(acStack_7c,0,0xb);
+  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_178,"%f");
+  engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe7c,0,g_WindowHeight + -0xb);
   crt_stdio_c_sprintf_FUN_005fdbd0
-            (&stack0xfffffe88,"%f",(double)(1.0 / g_CGamePtr->delta_time_float));
-  engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe8c,0,g_WindowHeight + -0xb);
-  crt_stdio_c_sprintf_FUN_005fdbd0
-            (acStack_170,"pos: %4.1f %4.1f %4.1f   pbh: %3.1f %3.1f %6.3f   fov : %2.1f",(double)*(float *)PTR_DAT_00681ab8,
-             (double)*(float *)((int)PTR_DAT_00681ab8 + 4),
+            (&stack0xfffffe80,"pos: %4.1f %4.1f %4.1f   pbh: %3.1f %3.1f %6.3f   fov : %2.1f",(double)*(float *)PTR_DAT_00681ab8
+             ,(double)*(float *)((int)PTR_DAT_00681ab8 + 4),
              (double)*(float *)((int)PTR_DAT_00681ab8 + 8),
              180 * (double)*(float *)((int)PTR_DAT_00681ab8 + 0xc) * 0.31830988619288902,
              (double)*(float *)((int)PTR_DAT_00681ab8 + 0x14) * 0.31830988619288902 * 180,
              (double)*(float *)((int)PTR_DAT_00681ab8 + 0x10) * 0.31830988619288902 * 180,
              (double)*(float *)((int)PTR_DAT_00681ab8 + 0x18));
-  engine_2d_c_drawText_FUN_00401fd0(acStack_170 + 4,0,0x16);
-  acStack_170[0] = -0x11;
-  acStack_170[1] = -0x4f;
-  acStack_170[2] = 'W';
-  acStack_170[3] = '\0';
+  engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe7c,0,0x16);
   wincore_winrun_cpp_drawCrosshair_FUN_005f2fd0();
-  acStack_170[4] = -0xc;
-  acStack_170[5] = -0x4f;
-  acStack_170[6] = 'W';
-  acStack_170[7] = '\0';
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-  acStack_170[4] = -1;
-  acStack_170[5] = -0x4f;
-  acStack_170[6] = 'W';
-  acStack_170[7] = '\0';
   core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
-  acStack_170[4] = '\x0e';
-  acStack_170[5] = -0x4e;
-  acStack_170[6] = 'W';
-  acStack_170[7] = '\0';
   iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,1);
   if (iVar3 != 0) goto LAB_0057b3c9;
   iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x39);

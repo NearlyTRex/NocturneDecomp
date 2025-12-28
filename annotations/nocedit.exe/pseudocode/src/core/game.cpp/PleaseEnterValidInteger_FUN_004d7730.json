@@ -8,9 +8,9 @@
     "pseudocode_lines": 37,
     "suspect_count": 8,
     "suspect_types": [
-      "call_variadic",
       "concat_artifact",
       "undefined_type",
+      "variadic_preserve",
       "warning_overlapping_globals"
     ],
     "total_lines": 121
@@ -222,15 +222,16 @@
     {
       "call_address": "004d77f5",
       "caller_has_stack_issues": false,
-      "description": "Variadic function call may destabilize ESP tracking",
+      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
       "match": "CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0",
+      "prologue_offset": 44,
       "return_address": "004d77fa",
       "target_address": "0x49e6a0",
       "target_function": "shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0",
-      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 at 004d77f5",
-      "type": "call_variadic"
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 at 004d77f5 (no EBP frame)",
+      "type": "variadic_preserve"
     }
   ]
 }

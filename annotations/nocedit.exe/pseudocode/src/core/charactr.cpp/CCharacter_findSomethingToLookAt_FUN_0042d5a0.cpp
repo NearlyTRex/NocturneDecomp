@@ -26,7 +26,7 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCh
   float in_stack_ffffff0c;
   float in_stack_ffffff10;
   float in_stack_ffffff14;
-  SCollisionInfo *in_stack_ffffff1c;
+  SCollisionInfo *in_stack_ffffff18;
   byte auStack_d8 [12];
   byte auStack_cc [8];
   CVector3f CStack_c4;
@@ -78,8 +78,9 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCh
               pCVar1 = &(this_ptr_00->base_actor).location;
               if ((CLocation *)&stack0xffffff14 != pCVar1) {
                 in_stack_ffffff14 = (pCVar1->position).x;
-                in_stack_ffffff1c = (SCollisionInfo *)(this_ptr_00->base_actor).location.position.z;
+                in_stack_ffffff18 = (SCollisionInfo *)(this_ptr_00->base_actor).location.position.y;
               }
+              in_stack_ffffff18 = (SCollisionInfo *)((float)in_stack_ffffff18 + 5.5f);
             }
             else {
               pCVar5 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
@@ -176,7 +177,7 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCh
       g_CurrentLineNumber = 0xda0;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CCharacter::findSomethingToLookAt - Should be a character");
     }
-    iVar2 = (*pCVar4->vtable[1].hasCollision)(pCVar4,in_stack_ffffff1c);
+    iVar2 = (*pCVar4->vtable[1].hasCollision)(pCVar4,in_stack_ffffff18);
     if ((iVar2 == 0) || (pCVar4[0x1a].create_event[0x50] == '\0')) {
       if ((CLocation *)auStack_74 != &pCVar4->location) {
         auStack_74._0_4_ = (pCVar4->location).position.x;

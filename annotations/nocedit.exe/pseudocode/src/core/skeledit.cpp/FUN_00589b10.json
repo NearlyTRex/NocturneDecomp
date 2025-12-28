@@ -8,8 +8,8 @@
     "pseudocode_lines": 32,
     "suspect_count": 4,
     "suspect_types": [
-      "call_variadic",
-      "stack_param"
+      "stack_param",
+      "variadic_preserve"
     ],
     "total_lines": 101
   },
@@ -165,28 +165,30 @@
     {
       "call_address": "00589b53",
       "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
+      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
       "match": "CALL shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870",
+      "prologue_offset": 36,
       "return_address": "00589b58",
       "target_address": "0x49e870",
       "target_function": "shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870",
-      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870 at 00589b53",
-      "type": "call_variadic"
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870 at 00589b53 (no EBP frame)",
+      "type": "variadic_preserve"
     },
     {
       "call_address": "00589ba1",
       "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
+      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
       "match": "CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0",
+      "prologue_offset": 36,
       "return_address": "00589ba6",
       "target_address": "0x49e6a0",
       "target_function": "shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0",
-      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 at 00589ba1",
-      "type": "call_variadic"
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 at 00589ba1 (no EBP frame)",
+      "type": "variadic_preserve"
     }
   ]
 }

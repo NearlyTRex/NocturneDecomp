@@ -20,37 +20,37 @@ void __cdecl core_setedit_cpp_CDemonSet_ViewerVisitSet_FUN_0057a940(CDemonSet *t
   float unaff_EDI;
   int unaff_retaddr;
   int in_stack_00000014;
-  CGame *in_stack_fffffac4;
-  char acStack_110 [4];
-  char acStack_10c [4];
-  char acStack_108 [4];
-  char acStack_104 [4];
-  char acStack_100 [4];
-  char acStack_fc [192];
+  ulonglong in_stack_fffffac4;
+  CGame *n2;
+  int aiStack_4fc [240];
+  char acStack_13c [4];
+  char acStack_138 [40];
+  char acStack_110 [212];
   uint uStack_3c;
   uint uStack_38;
   uint uStack_34;
   uint uStack_30;
   uint uStack_2c;
   uint uStack_28;
-  void *pvStack_24;
+  uint uStack_24;
   void *pvStack_20;
   float local_1c;
   float local_18;
   C3DSCamera *pCStack_14;
   
+  n2 = (CGame *)((ulonglong)in_stack_fffffac4 >> 0x20);
   local_18 = 0.0;
   local_1c = 0.0;
   core_set_cpp_CDemonSet_initScene_FUN_0056aa10(this_ptr);
   this_ptr_00 = PTR_DAT_00681ab8;
   this_ptr->actor_list_ptr = (void *)0x0;
   core_slew_cpp_CSlew_init_FUN_005a2060(this_ptr_00);
-  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_fffffac4);
+  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,n2);
   core_setedit_cpp_CallToFreeSomeMemory_FUN_00580560(this_ptr);
   core_setedit_cpp_SomethingMemoryConstructorMaybe_FUN_00580310();
-  pvStack_24 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+  pvStack_20 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
                          (g_WindowWidth * g_WindowHeight,"..\\core\\setedit.cpp",0x786);
-  if (pvStack_24 == (void *)0x0) {
+  if (pvStack_20 == (void *)0x0) {
     g_CurrentFilename = "..\\core\\setedit.cpp";
     g_CurrentLineNumber = 0x787;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory!");
@@ -64,7 +64,7 @@ void __cdecl core_setedit_cpp_CDemonSet_ViewerVisitSet_FUN_0057a940(CDemonSet *t
     uStack_30 = *(uint *)((int)PTR_DAT_00681ab8 + 0xc);
     uStack_2c = *(uint *)((int)PTR_DAT_00681ab8 + 0x10);
     uStack_28 = *(uint *)((int)PTR_DAT_00681ab8 + 0x14);
-    pvStack_24 = *(void **)((int)PTR_DAT_00681ab8 + 0x18);
+    uStack_24 = *(uint *)((int)PTR_DAT_00681ab8 + 0x18);
     core_slew_cpp_CSlew_processInput_FUN_005a20b0(PTR_DAT_00681ab8);
     if (PTR_DAT_00681ab8 != &g_CDemonCameraInstance.base.position) {
       g_CDemonCameraInstance.base.position.x = *(int *)PTR_DAT_00681ab8;
@@ -103,7 +103,7 @@ void __cdecl core_setedit_cpp_CDemonSet_ViewerVisitSet_FUN_0057a940(CDemonSet *t
         y_pos = 0x21;
         iVar3 = 0;
         do {
-          piVar1 = (int *)(&stack0xfffffb04 + iVar3);
+          piVar1 = (int *)((int)aiStack_4fc + iVar3);
           iVar3 = iVar3 + 4;
           engine_2d_c_drawTextXY_FUN_00402130(0,y_pos,(char *)(*piVar1 * 0x1a4 + in_stack_00000014))
           ;
@@ -115,16 +115,18 @@ void __cdecl core_setedit_cpp_CDemonSet_ViewerVisitSet_FUN_0057a940(CDemonSet *t
     crt_stdio_c_sprintf_FUN_005fdbd0
               (acStack_110,"Visit %d, rotate: %d, zcheck %d, render %d",g_CubesTestedCount,
                g_CubesWithVoxelsCount,g_CubesVisibleCount);
-    engine_2d_c_drawText_FUN_00401fd0(acStack_10c,0,0x16);
+    engine_2d_c_drawText_FUN_00401fd0(acStack_13c,0,0x16);
     crt_stdio_c_sprintf_FUN_005fdbd0
-              (acStack_108,"Viewer pos: %8.4f,%8.4f,%8.4f pbh: %6.3f,%6.3f,%6.3f",(double)*(float *)PTR_DAT_00681ab8,
+              (acStack_138,"Viewer pos: %8.4f,%8.4f,%8.4f pbh: %6.3f,%6.3f,%6.3f",(double)*(float *)PTR_DAT_00681ab8,
                (double)*(float *)((int)PTR_DAT_00681ab8 + 4),
                (double)*(float *)((int)PTR_DAT_00681ab8 + 8),
                (double)*(float *)((int)PTR_DAT_00681ab8 + 0xc),
-               (double)*(float *)((int)PTR_DAT_00681ab8 + 0x14));
-    engine_2d_c_drawText_FUN_00401fd0(acStack_104,0,g_WindowHeight + -0x2c);
-    crt_stdio_c_sprintf_FUN_005fdbd0(acStack_100,"%f");
-    engine_2d_c_drawText_FUN_00401fd0(acStack_fc,0,g_WindowHeight + -0xb);
+               (double)*(float *)((int)PTR_DAT_00681ab8 + 0x14),
+               (double)*(float *)((int)PTR_DAT_00681ab8 + 0x10));
+    engine_2d_c_drawText_FUN_00401fd0(acStack_13c,0,g_WindowHeight + -0x2c);
+    crt_stdio_c_sprintf_FUN_005fdbd0
+              (acStack_138,"%f",(double)(1.0 / g_CGamePtr->delta_time_float));
+    engine_2d_c_drawText_FUN_00401fd0(acStack_13c,0,g_WindowHeight + -0xb);
     wincore_windll_cpp_unlockFrame_FUN_005b7250(0);
     wincore_wddvmem_cpp_closeScreenDevice_FUN_005ed630();
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();

@@ -1,19 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 470,
-    "complexity_score": 1379,
+    "complexity_score": 1369,
     "cross_reference_count": 0,
     "function_call_count": 23,
     "global_count": 18,
     "pseudocode_lines": 239,
-    "suspect_count": 111,
+    "suspect_count": 110,
     "suspect_types": [
       "badspacebase",
-      "call_variadic",
       "extra_output",
       "register_param",
       "stack_param",
-      "unresolved_funcptr"
+      "unresolved_funcptr",
+      "variadic_preserve_ebp"
     ],
     "total_lines": 709
   },
@@ -279,6 +279,9 @@
     ],
     "004447ad": [
       "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff50,4)"
+    ],
+    "0044480f": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff50,4)"
     ]
   },
   "pcode_summary": {
@@ -333,7 +336,7 @@
       "frame_offset": 176,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 0044444e, ADD ESP at 00444454",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -344,7 +347,7 @@
       "frame_offset": 176,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 004446b6, ADD ESP at 004446c2",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -355,7 +358,7 @@
       "frame_offset": 176,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 004446f2, ADD ESP at 004446f5",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -366,7 +369,7 @@
       "frame_offset": 176,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 00444723, ADD ESP at 0044472f",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 4,
@@ -377,7 +380,23 @@
       "frame_offset": 176,
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 004447a7, ADD ESP at 004447ad",
-      "type": "callind_esp_uncertain"
+      "type": "callind_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "0044480a",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "0044480f",
+      "frame_offset": 176,
+      "match": "CALL engine_console.cpp_CConsole_printf_FUN_00441890",
+      "return_address": "0044480f",
+      "target_address": "0x441890",
+      "target_function": "engine_console.cpp_CConsole_printf_FUN_00441890",
+      "text": "Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 0044480a (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
     }
   ],
   "stack_frame": {
@@ -1324,28 +1343,16 @@
     {
       "call_address": "0044458b",
       "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
+      "description": "Variadic call in EBP-frame function without ADD ESP; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
+      "frame_offset": 176,
       "match": "CALL engine_console.cpp_CConsole_printf_FUN_00441890",
       "return_address": "00444590",
       "target_address": "0x441890",
       "target_function": "engine_console.cpp_CConsole_printf_FUN_00441890",
-      "text": "Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 0044458b",
-      "type": "call_variadic"
-    },
-    {
-      "call_address": "0044480a",
-      "caller_has_stack_issues": true,
-      "description": "Variadic function call may destabilize ESP tracking",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "match": "CALL engine_console.cpp_CConsole_printf_FUN_00441890",
-      "return_address": "0044480f",
-      "target_address": "0x441890",
-      "target_function": "engine_console.cpp_CConsole_printf_FUN_00441890",
-      "text": "Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 0044480a",
-      "type": "call_variadic"
+      "text": "Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 0044458b (EBP frame, no ADD ESP)",
+      "type": "variadic_preserve_ebp"
     }
   ],
   "vtable_info": {

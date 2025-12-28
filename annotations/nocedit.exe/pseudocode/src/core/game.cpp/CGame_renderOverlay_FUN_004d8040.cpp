@@ -19,9 +19,8 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004d8040(CGame *this_ptr)
   char *text_string;
   double dVar6;
   CGame *pCVar7;
-  char acStack_158 [8];
-  float fStack_150;
   float fStack_14c;
+  char acStack_140 [220];
   int local_64;
   int local_60;
   int local_5c;
@@ -96,9 +95,9 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004d8040(CGame *this_ptr)
     iVar4 = core_script_cpp_FUN_00559ac0();
     iVar4 = g_WindowHeight - iVar4;
     engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
-    crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffea4,"%d - %s",g_CurrentDisplayText);
+    crt_stdio_c_sprintf_FUN_005fdbd0(acStack_140,"%d - %s");
     engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
-              (pCVar5,acStack_158,iVar3 * 2,(iVar4 - iVar2) - iVar3,0xf8,0);
+              (pCVar5,&stack0xfffffe9c,iVar3 * 2,(iVar4 - iVar2) - iVar3,0xf8,0);
   }
   if ((this_ptr->letterbox_mode == 0) && (0 < this_ptr->status_display_count)) {
     local_34 = (CBitFont *)(local_4c / 0x28);
@@ -126,19 +125,14 @@ void __cdecl core_game_cpp_CGame_renderOverlay_FUN_004d8040(CGame *this_ptr)
         pCVar5 = local_24;
         local_1c = iVar2 - (int)local_2c;
         iVar3 = 2;
-        fStack_150 = *(float *)(pCVar7->field101_0x38c + 0x500);
-        if (fStack_150 < (float)0.59999999999999998) {
+        if (*(float *)(pCVar7->field101_0x38c + 0x500) < (float)0.59999999999999998) {
           iVar3 = 0xfb;
         }
-        if (fStack_150 < (float)0.34999999999999998) {
+        if (*(float *)(pCVar7->field101_0x38c + 0x500) < (float)0.34999999999999998) {
           iVar3 = 1;
         }
         local_18 = local_1c;
         engine_2d_c_fillRectWithBorder_FUN_00403200((int)local_24,local_1c,local_40,iVar2,0,0);
-        acStack_158[0] = 'Q';
-        acStack_158[1] = -0x7d;
-        acStack_158[2] = 'M';
-        acStack_158[3] = '\0';
         dVar6 = crt_math_c_round_FUN_005fe6b0
                           ((double)((float)((iVar2 - (int)pCVar5) + 1) * fStack_14c));
         local_14 = (int)ROUND(dVar6);

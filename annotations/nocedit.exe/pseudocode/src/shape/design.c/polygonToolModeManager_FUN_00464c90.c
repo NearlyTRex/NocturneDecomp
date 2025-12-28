@@ -18,8 +18,9 @@ int __cdecl shape_design_c_polygonToolModeManager_FUN_00464c90(int input_paramet
   char *pcVar6;
   byte bVar7;
   double dVar8;
-  ulonglong uVar9;
+  ulonglong in_stack_ffffff28;
   SShapeEditorPolygon *normal2_ptr;
+  char local_b8 [80];
   char local_68 [80];
   int local_18;
   float local_14;
@@ -67,20 +68,19 @@ int __cdecl shape_design_c_polygonToolModeManager_FUN_00464c90(int input_paramet
             g_PolygonToolMode = 0;
           }
         }
-        uVar9 = CONCAT44 /* combine 2-byte values */(g_PolygonToolMode,g_PolygonToolMode + -1);
-        switch(g_PolygonToolMode + -1) {
-        case 0:
+        switch(g_PolygonToolMode) {
+        case 1:
           local_14 = 0.2;
           break;
-        case 1:
-          local_14 = 0.01;
-          break;
         case 2:
+          local_14 = 0.01;
           break;
         case 3:
-          local_14 = 0.01;
           break;
         case 4:
+          local_14 = 0.01;
+          break;
+        case 5:
           local_14 = 0.01;
         }
         iVar3 = shape_design_c_detectMouseButtonClick_FUN_00464870(1);
@@ -111,7 +111,7 @@ int __cdecl shape_design_c_polygonToolModeManager_FUN_00464c90(int input_paramet
           }
         }
         pcVar4 = "Mouse polygon selection on";
-        pcVar5 = &stack0xffffff48;
+        pcVar5 = local_b8;
         do {
           cVar1 = *pcVar4;
           *pcVar5 = cVar1;
@@ -154,7 +154,7 @@ int __cdecl shape_design_c_polygonToolModeManager_FUN_00464c90(int input_paramet
         }
         pcVar5 = local_68;
         iVar3 = -1;
-        pcVar4 = &stack0xffffff48;
+        pcVar4 = local_b8;
         do {
           pcVar6 = pcVar4;
           if (iVar3 == 0) break;
@@ -167,22 +167,21 @@ int __cdecl shape_design_c_polygonToolModeManager_FUN_00464c90(int input_paramet
         do {
           cVar1 = *pcVar5;
           *pcVar6 = cVar1;
-          normal2_ptr = (SShapeEditorPolygon *)((ulonglong)uVar9 >> 0x20);
+          normal2_ptr = (SShapeEditorPolygon *)((ulonglong)in_stack_ffffff28 >> 0x20);
           if (cVar1 == '\0') break;
           cVar1 = pcVar5[1];
           pcVar5 = pcVar5 + 2;
           pcVar6[1] = cVar1;
-          normal2_ptr = (SShapeEditorPolygon *)((ulonglong)uVar9 >> 0x20);
+          normal2_ptr = (SShapeEditorPolygon *)((ulonglong)in_stack_ffffff28 >> 0x20);
           pcVar6 = pcVar6 + 2;
         } while (cVar1 != '\0');
-        engine_2d_c_drawTextColor_FUN_00402430(&stack0xffffff48,0,g_WindowHeight + -0x42);
+        engine_2d_c_drawTextColor_FUN_00402430(local_b8,0,g_WindowHeight + -0x42);
         local_18 = iVar2;
         if ((g_PolygonToolMode == 1) && (g_SecondaryPolygonIndex != -1)) {
           dVar8 = shape_design_c_calculateAngleBetweenPolygonNormals_FUN_00461cb0
                             (g_ModelPolygonData + iVar2,normal2_ptr);
-          crt_stdio_c_sprintf_FUN_005fdbd0
-                    (&stack0xffffff48,"Angle between polygon normals : %8.6lf",dVar8);
-          engine_2d_c_drawTextColor_FUN_00402430(&stack0xffffff48,0,g_WindowHeight + -0x58);
+          crt_stdio_c_sprintf_FUN_005fdbd0(local_b8,"Angle between polygon normals : %8.6lf",dVar8);
+          engine_2d_c_drawTextColor_FUN_00402430(local_b8,0,g_WindowHeight + -0x58);
         }
       }
     }
