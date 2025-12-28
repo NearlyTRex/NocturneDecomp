@@ -173,10 +173,15 @@ def identify_pcode_suspects(pcode_data, assembly_code=None, existing_overrides=N
     # Separate into unfixed and resolved based on existing overrides
     if fixed_addresses:
         for suspect in all_suspects:
-            fix_addr = suspect.get('fix_address', '')
+            suspect_type = suspect.get('type', '')
+            # For no-frame CALLIND, override is at callind_address, not fix_address
+            if suspect_type in ('callind_esp_no_frame', 'callind_esp_no_frame_lost'):
+                check_addr = suspect.get('callind_address', '')
+            else:
+                check_addr = suspect.get('fix_address', '')
             # Normalize for comparison
-            normalized_fix = fix_addr.lower().replace('0x', '').lstrip('0') or '0'
-            if normalized_fix in fixed_addresses:
+            normalized_addr = check_addr.lower().replace('0x', '').lstrip('0') or '0'
+            if normalized_addr in fixed_addresses:
                 resolved_suspects.append(suspect)
             else:
                 suspects.append(suspect)
