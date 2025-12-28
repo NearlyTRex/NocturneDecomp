@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 372,
-    "complexity_score": 139,
+    "complexity_score": 194,
     "cross_reference_count": 1,
     "function_call_count": 20,
     "global_count": 28,
     "pseudocode_lines": 94,
-    "suspect_count": 3,
+    "suspect_count": 8,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "register_param",
       "warning_unreachable"
     ],
@@ -602,6 +603,61 @@
       "match": "in_ESP",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "register_param"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Move point : %d\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Move point : %d",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 42,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_84,\"Move point : %d\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%c\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%c",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 63,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_84,\"%c\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%c\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%c",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 65,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_84,\"%c\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%c\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%c",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 67,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_84,\"%c\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d,%d,%d\" has 3 specifiers but 0 arguments after it",
+      "expected_args": 3,
+      "format_string": "%d,%d,%d",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 69,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_84,\"%d,%d,%d\");",
+      "text": "Format string expects 3 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 102,
-    "complexity_score": 193,
+    "complexity_score": 208,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 11,
     "pseudocode_lines": 43,
-    "suspect_count": 12,
+    "suspect_count": 13,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -305,6 +306,17 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005507da (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"CPodFile::getDependencyRecord - error reading %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "CPodFile::getDependencyRecord - error reading %s",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 36,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"CPodFile::getDependencyRecord - error reading %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

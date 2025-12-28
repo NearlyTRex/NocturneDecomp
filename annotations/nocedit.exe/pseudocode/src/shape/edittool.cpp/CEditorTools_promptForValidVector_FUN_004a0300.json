@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 90,
-    "complexity_score": 208,
+    "complexity_score": 223,
     "cross_reference_count": 4,
     "function_call_count": 4,
     "global_count": 3,
     "pseudocode_lines": 33,
-    "suspect_count": 15,
+    "suspect_count": 16,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "register_param",
       "stack_ref",
       "unaffected_reg",
@@ -335,6 +336,17 @@
       "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
       "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 004a03be (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%f%*[ ,]%f%*[ ,]%f\" has 5 specifiers but 0 arguments after it",
+      "expected_args": 5,
+      "format_string": "%f%*[ ,]%f%*[ ,]%f",
+      "function_name": "crt_stdio_c_sscanf_FUN_0060013c",
+      "line_number": 25,
+      "match": "iVar1 = crt_stdio_c_sscanf_FUN_0060013c(&stack0xffffffc8,\"%f%*[ ,]%f%*[ ,]%f\");",
+      "text": "Format string expects 5 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

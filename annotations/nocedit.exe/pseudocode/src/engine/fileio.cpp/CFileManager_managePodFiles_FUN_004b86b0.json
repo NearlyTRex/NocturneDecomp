@@ -1,16 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 2078,
-    "complexity_score": 3584,
+    "complexity_score": 3779,
     "cross_reference_count": 0,
     "function_call_count": 51,
     "global_count": 109,
     "pseudocode_lines": 939,
-    "suspect_count": 259,
+    "suspect_count": 278,
     "suspect_types": [
       "badspacebase",
       "callind_preserve",
       "concat_artifact",
+      "format_string_mismatch",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -3546,6 +3547,215 @@
       "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
       "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 004b9f16 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s\\t%s\\t%s\" has 3 specifiers but 0 arguments after it",
+      "expected_args": 3,
+      "format_string": "%s\\t%s\\t%s",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 473,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffdd04,\"%s\\t%s\\t%s\");",
+      "text": "Format string expects 3 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Select action for %s\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Select action for %s\\n",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 505,
+      "match": "iVar5 = crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffdd0c,\"Select action for %s\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Your pod %s is newer than %s\\n\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "Your pod %s is newer than %s\\n",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 509,
+      "match": "iVar5 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar13,\"Your pod %s is newer than %s\\n\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Your pod %s is older than %s\\n\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "Your pod %s is older than %s\\n",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 512,
+      "match": "iVar5 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar13,\"Your pod %s is older than %s\\n\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Your pod %s is different than %s\\n\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "Your pod %s is different than %s\\n",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 515,
+      "match": "iVar5 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar13,\"Your pod %s is different than %s\\n\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Your pod %s is the same as %s\\n\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "Your pod %s is the same as %s\\n",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 518,
+      "match": "iVar5 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar13,\"Your pod %s is the same as %s\\n\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"You don't have the pod %s\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "You don't have the pod %s\\n",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 521,
+      "match": "iVar5 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar13,\"You don't have the pod %s\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s is mounted, but %s does not exist\\n\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "%s is mounted, but %s does not exist\\n",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 524,
+      "match": "iVar5 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar13,\"%s is mounted, but %s does not exist\\n\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d files don't exist locally\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d files don't exist locally\\n",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 542,
+      "match": "iVar5 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar13,\"%d files don't exist locally\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d local files are newer\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d local files are newer\\n",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 546,
+      "match": "iVar5 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar13,\"%d local files are newer\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d local files are older\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d local files are older\\n",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 550,
+      "match": "iVar5 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar13,\"%d local files are older\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d local files are different\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d local files are different\\n",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 554,
+      "match": "iVar5 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar13,\"%d local files are different\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d local files are in sync\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d local files are in sync\\n",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 558,
+      "match": "iVar5 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar13,\"%d local files are in sync\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s currently has this pod checked out\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%s currently has this pod checked out\\n",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 571,
+      "match": "iVar5 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar13,\"%s currently has this pod checked out\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d pods copied\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d pods copied\\n",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 868,
+      "match": "iVar3 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar13,\"%d pods copied\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d pods extracted\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d pods extracted\\n",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 872,
+      "match": "iVar3 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar13,\"%d pods extracted\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d pods mounted\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d pods mounted\\n",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 876,
+      "match": "iVar3 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar13,\"%d pods mounted\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d pods dismounted\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d pods dismounted\\n",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 880,
+      "match": "iVar3 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar13,\"%d pods dismounted\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d local pods deleted\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d local pods deleted\\n",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 884,
+      "match": "iVar3 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar13,\"%d local pods deleted\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

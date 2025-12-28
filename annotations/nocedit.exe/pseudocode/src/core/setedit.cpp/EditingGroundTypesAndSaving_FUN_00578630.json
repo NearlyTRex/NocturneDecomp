@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 353,
-    "complexity_score": 630,
+    "complexity_score": 655,
     "cross_reference_count": 2,
     "function_call_count": 20,
     "global_count": 26,
     "pseudocode_lines": 145,
-    "suspect_count": 46,
+    "suspect_count": 48,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -745,6 +746,28 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005789e9 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Can't create %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Can't create %s",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 87,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Can't create %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s, %s\\n\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "%s, %s\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 94,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%s, %s\\n\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

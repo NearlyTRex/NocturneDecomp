@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 1208,
-    "complexity_score": 1035,
+    "complexity_score": 1080,
     "cross_reference_count": 1,
     "function_call_count": 29,
     "global_count": 57,
     "pseudocode_lines": 490,
-    "suspect_count": 52,
+    "suspect_count": 56,
     "suspect_types": [
       "badspacebase",
       "extra_output",
+      "format_string_mismatch",
       "register_param",
       "stack_param",
       "stack_ref"
@@ -1496,6 +1497,50 @@
       "match": "in_stack_fffff31e",
       "text": "in_stack_fffff316,in_stack_fffff31a,in_stack_fffff31e);",
       "type": "stack_param"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Can't open %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Can't open %s",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 115,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Can't open %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d\\n",
+      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
+      "line_number": 123,
+      "match": "iVar9 = crt_stdio_c_fscanf_FUN_005fe7c0(local_20,\"%d\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d,%d,%d,%d,%d,%d,%d\\n\" has 7 specifiers but 0 arguments after it",
+      "expected_args": 7,
+      "format_string": "%d,%d,%d,%d,%d,%d,%d\\n",
+      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
+      "line_number": 150,
+      "match": "iVar9 = crt_stdio_c_fscanf_FUN_005fe7c0(local_20,\"%d,%d,%d,%d,%d,%d,%d\\n\");",
+      "text": "Format string expects 7 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 2,
+      "description": "Format \"%f, %*f, %*f\\n\" has 5 specifiers but 2 arguments after it",
+      "expected_args": 5,
+      "format_string": "%f, %*f, %*f\\n",
+      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
+      "line_number": 446,
+      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(local_20,\"%f, %*f, %*f\\n\",&local_2c,pcVar11);",
+      "text": "Format string expects 5 args but got 2",
+      "type": "format_string_mismatch"
     }
   ]
 }

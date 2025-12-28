@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 156,
-    "complexity_score": 283,
+    "complexity_score": 318,
     "cross_reference_count": 2,
     "function_call_count": 15,
     "global_count": 12,
     "pseudocode_lines": 58,
-    "suspect_count": 20,
+    "suspect_count": 23,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -412,6 +413,39 @@
       "target_function": "shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0",
       "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 at 005806e4 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"backdrop\\\\%s.fog\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "backdrop\\\\%s.fog",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 21,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffe8c,\"backdrop\\\\%s.fog\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"backdrop\\\\%s.pvs\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "backdrop\\\\%s.pvs",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 23,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffe80,\"backdrop\\\\%s.pvs\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Computing fog/pvs %d of %d.  Press ESC to cancel.\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "Computing fog/pvs %d of %d.  Press ESC to cancel.",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 43,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_70,\"Computing fog/pvs %d of %d.  Press ESC to cancel.\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

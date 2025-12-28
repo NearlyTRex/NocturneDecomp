@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 70,
-    "complexity_score": 142,
+    "complexity_score": 187,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 4,
     "pseudocode_lines": 17,
-    "suspect_count": 10,
+    "suspect_count": 14,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -238,6 +239,50 @@
       "target_function": "crt_stdio.c_fscanf_FUN_005fe7c0",
       "text": "Call to variadic function crt_stdio.c_fscanf_FUN_005fe7c0 at 00453ef7 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 2,
+      "description": "Format \"%d,%d,%d\\n\" has 3 specifiers but 2 arguments after it",
+      "expected_args": 3,
+      "format_string": "%d,%d,%d\\n",
+      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
+      "line_number": 10,
+      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,\"%d,%d,%d\\n\",fog,&(fog->color_index).g);",
+      "text": "Format string expects 3 args but got 2",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%f,%f,%f\\n\" has 3 specifiers but 0 arguments after it",
+      "expected_args": 3,
+      "format_string": "%f,%f,%f\\n",
+      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
+      "line_number": 12,
+      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,\"%f,%f,%f\\n\");",
+      "text": "Format string expects 3 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%f,%f\\n\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "%f,%f\\n",
+      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
+      "line_number": 13,
+      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,\"%f,%f\\n\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%f\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%f\\n",
+      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
+      "line_number": 18,
+      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,\"%f\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

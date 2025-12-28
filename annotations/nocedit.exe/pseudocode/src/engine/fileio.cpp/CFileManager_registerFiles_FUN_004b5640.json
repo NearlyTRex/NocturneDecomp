@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 286,
-    "complexity_score": 251,
+    "complexity_score": 266,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 11,
     "pseudocode_lines": 136,
-    "suspect_count": 9,
+    "suspect_count": 10,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -372,6 +373,17 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 004b58df (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s is not the same size as %s\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "%s is not the same size as %s",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 132,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_15c,\"%s is not the same size as %s\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

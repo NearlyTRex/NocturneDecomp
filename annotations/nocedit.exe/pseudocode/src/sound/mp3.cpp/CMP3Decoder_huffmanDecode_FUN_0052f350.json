@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 255,
-    "complexity_score": 231,
+    "complexity_score": 246,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 6,
     "pseudocode_lines": 91,
-    "suspect_count": 13,
+    "suspect_count": 14,
     "suspect_types": [
       "extra_output",
+      "format_string_mismatch",
       "variadic_preserve"
     ],
     "total_lines": 346
@@ -276,6 +277,17 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0052f50d (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Illegal Huffman code in data.  File: %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Illegal Huffman code in data.  File: %s",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 54,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Illegal Huffman code in data.  File: %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

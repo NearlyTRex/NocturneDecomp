@@ -896,3 +896,262 @@ def identify_variadic_calls(pcode_data, func_calls=None, has_stack_issues=False,
                     suspects.append(suspect)
 
     return suspects, resolved_suspects
+
+
+def count_format_specifiers(format_string):
+    """Count the number of format specifiers in a printf/scanf format string.
+
+    Handles:
+    - Basic specifiers: %d, %s, %x, %f, etc.
+    - Width/precision with *: %*d, %.*f, %*.*s (each * consumes an argument)
+    - %% is a literal percent (doesn't consume argument)
+    - Length modifiers: %ld, %lld, %hd, %zu, etc.
+
+    Args:
+        format_string: The format string to parse
+
+    Returns:
+        Number of arguments the format string expects
+    """
+    if not format_string:
+        return 0
+
+    count = 0
+    i = 0
+    while i < len(format_string):
+        if format_string[i] == '%':
+            if i + 1 < len(format_string):
+                next_char = format_string[i + 1]
+                if next_char == '%':
+                    # %% - literal percent, skip both
+                    i += 2
+                    continue
+
+                # Parse the format specifier
+                i += 1  # Skip the %
+
+                # Count * for width (consumes an argument)
+                if i < len(format_string) and format_string[i] == '*':
+                    count += 1
+                    i += 1
+
+                # Skip flags (-, +, space, #, 0)
+                while i < len(format_string) and format_string[i] in '-+ #0':
+                    i += 1
+
+                # Skip width digits
+                while i < len(format_string) and format_string[i].isdigit():
+                    i += 1
+
+                # Check for precision
+                if i < len(format_string) and format_string[i] == '.':
+                    i += 1
+                    # Count * for precision (consumes an argument)
+                    if i < len(format_string) and format_string[i] == '*':
+                        count += 1
+                        i += 1
+                    # Skip precision digits
+                    while i < len(format_string) and format_string[i].isdigit():
+                        i += 1
+
+                # Skip length modifiers (h, hh, l, ll, L, z, j, t, q)
+                while i < len(format_string) and format_string[i] in 'hlLzjtq':
+                    i += 1
+
+                # The actual conversion specifier
+                if i < len(format_string) and format_string[i] in 'diouxXeEfFgGaAcspn':
+                    count += 1
+                    i += 1
+                continue
+        i += 1
+
+    return count
+
+
+def _parse_call_arguments(line, start_pos):
+    """Parse function call arguments from a line starting after the opening paren.
+
+    Args:
+        line: The full line of code
+        start_pos: Position after the opening parenthesis
+
+    Returns:
+        List of argument strings, or None if parsing failed
+    """
+    paren_depth = 1
+    args_str = ''
+    i = start_pos
+
+    while i < len(line) and paren_depth > 0:
+        char = line[i]
+        if char == '(':
+            paren_depth += 1
+        elif char == ')':
+            paren_depth -= 1
+        if paren_depth > 0:
+            args_str += char
+        i += 1
+
+    if paren_depth != 0:
+        return None  # Unbalanced parens
+
+    if not args_str.strip():
+        return []
+
+    # Split arguments (respecting parentheses and quotes)
+    args = []
+    current_arg = ''
+    paren_depth = 0
+    in_string = False
+    escape_next = False
+
+    for char in args_str:
+        if escape_next:
+            current_arg += char
+            escape_next = False
+            continue
+        if char == '\\':
+            current_arg += char
+            escape_next = True
+            continue
+        if char == '"' and not in_string:
+            in_string = True
+            current_arg += char
+        elif char == '"' and in_string:
+            in_string = False
+            current_arg += char
+        elif char == '(' and not in_string:
+            paren_depth += 1
+            current_arg += char
+        elif char == ')' and not in_string:
+            paren_depth -= 1
+            current_arg += char
+        elif char == ',' and paren_depth == 0 and not in_string:
+            args.append(current_arg.strip())
+            current_arg = ''
+        else:
+            current_arg += char
+
+    if current_arg.strip():
+        args.append(current_arg.strip())
+
+    return args
+
+
+def _find_format_string_index(args):
+    """Find the index of the format string argument.
+
+    The format string is the first string literal that contains at least one
+    format specifier (% followed by a conversion character).
+
+    Args:
+        args: List of argument strings
+
+    Returns:
+        Tuple of (index, format_string) or (None, None) if not found
+    """
+    format_spec_pattern = re.compile(r'%[-+ #0]*\*?\d*\.?\*?\d*[hlLzjtq]*[diouxXeEfFgGaAcspn]')
+
+    for i, arg in enumerate(args):
+        # Check if this argument is or contains a string literal
+        string_match = re.search(r'"((?:[^"\\]|\\.)*)"', arg)
+        if string_match:
+            string_content = string_match.group(1)
+            # Check if it has format specifiers
+            if format_spec_pattern.search(string_content):
+                return i, string_content
+
+    return None, None
+
+
+def identify_format_string_mismatch(decompiled_code, func_calls=None):
+    """Identify variadic calls where format string args don't match specifier count.
+
+    For any function marked as variadic in func_calls, finds calls in the
+    decompiled code and checks if the format string specifier count matches
+    the number of arguments provided after it.
+
+    Args:
+        decompiled_code: The decompiled C code as a string
+        func_calls: List of function call dicts with 'name' and 'is_variadic' keys
+
+    Returns:
+        List of suspect dictionaries for format string mismatches
+    """
+    suspects = []
+
+    if not decompiled_code or not func_calls:
+        return suspects
+
+    # Build set of variadic function address suffixes (FUN_XXXXX)
+    # This is more reliable than name matching since names can have dots vs underscores
+    variadic_addrs = set()
+    for call in func_calls:
+        if call.get('is_variadic', False):
+            # Use address if available
+            addr = call.get('addr', '')
+            if addr:
+                variadic_addrs.add(addr.lower())
+            # Also extract FUN_XXXXX suffix from name as fallback
+            name = call.get('name', '')
+            addr_match = re.search(r'FUN_([0-9a-fA-F]+)', name)
+            if addr_match:
+                variadic_addrs.add(addr_match.group(1).lower())
+
+    if not variadic_addrs:
+        return suspects
+
+    # Pattern to match function calls - capture function name with potential FUN_XXXXX suffix
+    call_pattern = re.compile(r'(\w+)\s*\(')
+
+    lines = decompiled_code.split('\n')
+    for line_num, line in enumerate(lines, 1):
+        # Find function calls in this line
+        for match in call_pattern.finditer(line):
+            func_name = match.group(1)
+
+            # Extract address suffix from function name (FUN_XXXXX)
+            addr_match = re.search(r'FUN_([0-9a-fA-F]+)', func_name)
+            if not addr_match:
+                continue
+            func_addr = addr_match.group(1).lower()
+
+            # Check if this is a variadic function by address
+            if func_addr not in variadic_addrs:
+                continue
+
+            # Parse arguments
+            args = _parse_call_arguments(line, match.end())
+            if args is None or len(args) == 0:
+                continue
+
+            # Find the format string argument
+            format_idx, format_string = _find_format_string_index(args)
+            if format_idx is None:
+                continue
+
+            # Count expected arguments from format string
+            expected_args = count_format_specifiers(format_string)
+
+            # Count actual arguments after the format string
+            actual_args = len(args) - format_idx - 1
+
+            if expected_args != actual_args:
+                suspect = {
+                    'type': 'format_string_mismatch',
+                    'match': line.strip()[:100],
+                    'text': 'Format string expects %d args but got %d' % (expected_args, actual_args),
+                    'description': 'Format "%s" has %d specifiers but %d arguments after it' % (
+                        format_string[:50] + ('...' if len(format_string) > 50 else ''),
+                        expected_args,
+                        actual_args
+                    ),
+                    'line_number': line_num,
+                    'function_name': func_name,
+                    'format_string': format_string,
+                    'expected_args': expected_args,
+                    'actual_args': actual_args,
+                }
+                suspects.append(suspect)
+
+    return suspects

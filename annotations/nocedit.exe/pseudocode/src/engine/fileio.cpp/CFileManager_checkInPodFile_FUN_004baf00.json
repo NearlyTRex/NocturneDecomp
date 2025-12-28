@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 1775,
-    "complexity_score": 1285,
+    "complexity_score": 1350,
     "cross_reference_count": 0,
     "function_call_count": 56,
     "global_count": 80,
     "pseudocode_lines": 730,
-    "suspect_count": 51,
+    "suspect_count": 57,
     "suspect_types": [
       "badspacebase",
       "concat_artifact",
+      "format_string_mismatch",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -2143,6 +2144,72 @@
       "match": "&stack0xffffda0c",
       "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xffffda0c);",
       "type": "stack_ref"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"WARNING!\\n\\nYou are about to check in %s, which is...\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "WARNING!\\n\\nYou are about to check in %s, which is not in sync\\nwith your extracted files.  (Perhaps you forget to rebuild the\\npod after making changes?)",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 178,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(pcVar9,\"WARNING!\\n\\nYou are about to check in %s, which is not in s",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"history\\\\%s.%s\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "history\\\\%s.%s",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 307,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_b88,\"history\\\\%s.%s\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"$$$.%s.$$$\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "$$$.%s.$$$",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 355,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_560,\"$$$.%s.$$$\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Waiting for %s to become available.\\nPress ESC to ...\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Waiting for %s to become available.\\nPress ESC to cancel check in.",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 507,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_d28,\"Waiting for %s to become available.\\nPress ESC to canc",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%4d: %04d/%02d/%02d %02d:%02d:%02d \\\"%s\\\"\\n\" has 8 specifiers but 0 arguments after it",
+      "expected_args": 8,
+      "format_string": "%4d: %04d/%02d/%02d %02d:%02d:%02d \\\"%s\\\"\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 568,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(pFVar5,\"%4d: %04d/%02d/%02d %02d:%02d:%02d \\\"%s\\\"\\n\");",
+      "text": "Format string expects 8 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s checked in\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%s checked in",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 633,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(pcVar9,\"%s checked in\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 625,
-    "complexity_score": 491,
+    "complexity_score": 506,
     "cross_reference_count": 4,
     "function_call_count": 14,
     "global_count": 25,
     "pseudocode_lines": 206,
-    "suspect_count": 26,
+    "suspect_count": 27,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -707,6 +708,17 @@
       "match": "&stack0xfffffecc",
       "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffecc,0,0);",
       "type": "stack_ref"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Original vertices: %d    New total: %d\\n\\nTotal pa...\" has 4 specifiers but 0 arguments after it",
+      "expected_args": 4,
+      "format_string": "Original vertices: %d    New total: %d\\n\\nTotal passes: %d\\n\\nPolys removed: %d",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 176,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffecc,\"Original vertices: %d    New total: %d\\n\\nTotal p",
+      "text": "Format string expects 4 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

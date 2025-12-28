@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 2421,
-    "complexity_score": 3059,
+    "complexity_score": 3104,
     "cross_reference_count": 1,
     "function_call_count": 33,
     "global_count": 85,
     "pseudocode_lines": 869,
-    "suspect_count": 214,
+    "suspect_count": 218,
     "suspect_types": [
       "badspacebase",
       "concat_artifact",
+      "format_string_mismatch",
       "negative_offset",
       "pointer_cast",
       "register_param",
@@ -2748,6 +2749,50 @@
       "match": "in_stack_ffffc8c0",
       "text": "in_stack_ffffc8c0 = param_5;",
       "type": "stack_param"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 127,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0((char *)param_5,\"%d\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s\\t%s\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "%s\\t%s",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 572,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_698,\"%s\\t%s\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 2,
+      "description": "Format \"%s\\t%s\\t%s\" has 3 specifiers but 2 arguments after it",
+      "expected_args": 3,
+      "format_string": "%s\\t%s\\t%s",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 648,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_031099e8,\"%s\\t%s\\t%s\",iVar5,iVar5 + 0x78);",
+      "text": "Format string expects 3 args but got 2",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s\\t%s\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "%s\\t%s",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 769,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_164,\"%s\\t%s\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

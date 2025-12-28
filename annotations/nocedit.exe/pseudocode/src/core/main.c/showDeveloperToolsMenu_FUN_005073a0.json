@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 609,
-    "complexity_score": 464,
+    "complexity_score": 479,
     "cross_reference_count": 1,
     "function_call_count": 49,
     "global_count": 58,
     "pseudocode_lines": 219,
-    "suspect_count": 21,
+    "suspect_count": 22,
     "suspect_types": [
       "badspacebase",
       "callind_preserve",
+      "format_string_mismatch",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -943,6 +944,17 @@
       "target_function": "shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0",
       "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 at 005079b8 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Can't createpen %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Can't createpen %s",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 163,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Can't createpen %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

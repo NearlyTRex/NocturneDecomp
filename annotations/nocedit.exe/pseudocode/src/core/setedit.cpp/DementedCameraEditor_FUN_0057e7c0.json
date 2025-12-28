@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 1759,
-    "complexity_score": 971,
+    "complexity_score": 1176,
     "cross_reference_count": 1,
     "function_call_count": 49,
     "global_count": 101,
     "pseudocode_lines": 716,
-    "suspect_count": 21,
+    "suspect_count": 41,
     "suspect_types": [
       "badspacebase",
       "concat_artifact",
+      "format_string_mismatch",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -2042,6 +2043,226 @@
       "match": "unaff_ESI",
       "text": "local_20 = unaff_ESI + 0xf;",
       "type": "unaffected_reg"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%s",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 129,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0((char *)(abStack_4b2 + 2),\"%s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s%d\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "%s%d",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 300,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(pCVar17->name,\"%s%d\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 355,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0((char *)(abStack_4b2 + iVar10 + 3),\"%d\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s1\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%s1",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 374,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_4bc + 4,\"%s1\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d\\n",
+      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
+      "line_number": 481,
+      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(pFVar19,\"%d\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Can't merge version %d LC file\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Can't merge version %d LC file",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 485,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Can't merge version %d LC file\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d,%d\\n\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "%d,%d\\n",
+      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
+      "line_number": 488,
+      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(pFVar19,\"%d,%d\\n\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"backdrop\\\\%s.pvs\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "backdrop\\\\%s.pvs",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 532,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_3c0,\"backdrop\\\\%s.pvs\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d\\n",
+      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
+      "line_number": 570,
+      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(pFVar19,\"%d\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Can't merge version %d LC file\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Can't merge version %d LC file",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 574,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Can't merge version %d LC file\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d,%d\\n\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "%d,%d\\n",
+      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
+      "line_number": 577,
+      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(local_54,\"%d,%d\\n\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s.raw\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%s.raw",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 609,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_6b8,\"%s.raw\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s.raw\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%s.raw",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 612,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_5b8,\"%s.raw\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s.act\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%s.act",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 624,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_6a8,\"%s.act\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s.act\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%s.act",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 627,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_5b8,\"%s.act\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s.raw\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%s.raw",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 667,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_8bc,\"%s.raw\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s%d.raw\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "%s%d.raw",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 668,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_1bc,\"%s%d.raw\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s.act\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%s.act",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 682,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_8a4,\"%s.act\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s%d.act\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "%s%d.act",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 683,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_1bc,\"%s%d.act\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s%d\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "%s%d",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 698,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0((char *)unaff_ESI,\"%s%d\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

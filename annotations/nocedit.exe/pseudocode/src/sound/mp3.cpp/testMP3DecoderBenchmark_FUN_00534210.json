@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 250,
-    "complexity_score": 202,
+    "complexity_score": 217,
     "cross_reference_count": 0,
     "function_call_count": 14,
     "global_count": 31,
     "pseudocode_lines": 87,
-    "suspect_count": 9,
+    "suspect_count": 10,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -582,6 +583,17 @@
       "match": "unaff_EBP",
       "text": "iVar5 = iVar5 + unaff_EBP * size;",
       "type": "unaffected_reg"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d bytes / %d seconds = %.1f kbytes/sec\" has 3 specifiers but 0 arguments after it",
+      "expected_args": 3,
+      "format_string": "%d bytes / %d seconds = %.1f kbytes/sec",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 88,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"%d bytes / %d seconds = %.1f kbytes/sec\");",
+      "text": "Format string expects 3 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

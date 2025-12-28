@@ -59,7 +59,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 00433f59: AND ESP,0xfffffff8
 
   cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0
-    File: cockpit/ckptutil.c, Suspects: 10
+    File: cockpit/ckptutil.c, Suspects: 11
     - [alt_frame_pointer] at 00431ad7: MOV EDI,ESP
     - [alt_frame_pointer] at 00431af5: MOV ESI,ESP
     - [alt_frame_pointer] at 00431b15: MOV ESI,ESP
@@ -165,7 +165,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 0051e7e4: MOV EDI,ESP
 
   shape_meshlod.cpp_CLodMesh_eqSave_FUN_0051d0e0
-    File: shape/meshlod.cpp, Suspects: 1
+    File: shape/meshlod.cpp, Suspects: 2
     - [stack_alignment] at 0051d0e9: AND ESP,0xfffffff8
 
   shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630
@@ -185,7 +185,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 00516ba9: AND ESP,0xfffffff8
 
   shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990
-    File: shape/meshlod.cpp, Suspects: 111
+    File: shape/meshlod.cpp, Suspects: 115
     - [stack_alignment] at 0051d99c: AND ESP,0xfffffff8
 
   shape_superopt.cpp_distancePointToSegmentXY_FUN_005d64a0
@@ -246,7 +246,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 005c9aac: AND ESP,0xfffffff8
 
   shape_superopt.cpp_TriListSomething_FUN_005d77a0
-    File: shape/superopt.cpp, Suspects: 43
+    File: shape/superopt.cpp, Suspects: 45
     - [stack_alignment] at 005d77ac: AND ESP,0xfffffff8
 
   shape_superopt.cpp_CPoly_intersectPoly_FUN_005ce580
@@ -269,5 +269,5 @@ CORRELATION: Stack patterns vs suspect counts
 
 Functions with stack patterns tend to have more suspects:
 
-  With stack patterns:    avg 26.8 suspects/function
-  Without stack patterns: avg 7.2 suspects/function
+  With stack patterns:    avg 27.1 suspects/function
+  Without stack patterns: avg 7.3 suspects/function

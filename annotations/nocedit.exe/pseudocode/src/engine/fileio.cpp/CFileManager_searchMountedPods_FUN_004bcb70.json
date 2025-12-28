@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 142,
-    "complexity_score": 371,
+    "complexity_score": 386,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 9,
     "pseudocode_lines": 66,
-    "suspect_count": 28,
+    "suspect_count": 29,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -461,6 +462,17 @@
       "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
       "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 004bcc86 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 1,
+      "description": "Format \"%s\\t%s\" has 2 specifiers but 1 arguments after it",
+      "expected_args": 2,
+      "format_string": "%s\\t%s",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 48,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_2fc,\"%s\\t%s\",auStack_61c + 4);",
+      "text": "Format string expects 2 args but got 1",
+      "type": "format_string_mismatch"
     }
   ]
 }

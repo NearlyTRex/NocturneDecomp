@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 88,
-    "complexity_score": 87,
+    "complexity_score": 102,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 9,
     "pseudocode_lines": 22,
-    "suspect_count": 6,
+    "suspect_count": 7,
     "suspect_types": [
+      "format_string_mismatch",
       "variadic_preserve"
     ],
     "total_lines": 110
@@ -252,6 +253,17 @@
       "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
       "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 0050f776 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Total %d blocks, %d bytes\\n\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "Total %d blocks, %d bytes\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 22,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(output_file,\"Total %d blocks, %d bytes\\n\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

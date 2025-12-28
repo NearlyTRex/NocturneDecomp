@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 419,
-    "complexity_score": 663,
+    "complexity_score": 678,
     "cross_reference_count": 3,
     "function_call_count": 6,
     "global_count": 17,
     "pseudocode_lines": 238,
-    "suspect_count": 40,
+    "suspect_count": 41,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -872,6 +873,17 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0058a9f5 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 3,
+      "description": "Format \"\\\"%[^\\\"]\\\",%d\\n\" has 1 specifiers but 3 arguments after it",
+      "expected_args": 1,
+      "format_string": "\\\"%[^\\\"]\\\",%d\\n",
+      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
+      "line_number": 89,
+      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_0000001c,\"\\\"%[^\\\"]\\\",%d\\n\",\"\\\"%[^\\\"]\\\",%d\\n\",pcVar10,local_",
+      "text": "Format string expects 1 args but got 3",
+      "type": "format_string_mismatch"
     }
   ]
 }

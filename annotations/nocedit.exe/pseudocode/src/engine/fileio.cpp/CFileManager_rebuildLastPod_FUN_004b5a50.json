@@ -1,16 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 1448,
-    "complexity_score": 2531,
+    "complexity_score": 2566,
     "cross_reference_count": 4,
     "function_call_count": 43,
     "global_count": 73,
     "pseudocode_lines": 701,
-    "suspect_count": 177,
+    "suspect_count": 180,
     "suspect_types": [
       "badspacebase",
       "callind_preserve",
       "concat_artifact",
+      "format_string_mismatch",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -2541,6 +2542,39 @@
       "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
       "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 004b6a8c (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Building %s...\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Building %s...",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 446,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_a58,\"Building %s...\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Successfully built %s\\n\\n%d files totaling %d byte...\" has 7 specifiers but 0 arguments after it",
+      "expected_args": 7,
+      "format_string": "Successfully built %s\\n\\n%d files totaling %d bytes\\n\\n%d files added\\n%d files removed\\n%d files changed\\n\\nTotal pod size %d bytes",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 627,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_a0c,\"Successfully built %s\\n\\n%d files totaling %d bytes\\n\\",
+      "text": "Format string expects 7 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Couldn't build %s because the following files don'...\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Couldn't build %s because the following files don't exist on the hard disk",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 675,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_150,\"Couldn't build %s because the following files don't ex",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

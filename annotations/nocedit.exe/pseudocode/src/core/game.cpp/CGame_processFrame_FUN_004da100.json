@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 1136,
-    "complexity_score": 766,
+    "complexity_score": 791,
     "cross_reference_count": 1,
     "function_call_count": 53,
     "global_count": 77,
     "pseudocode_lines": 391,
-    "suspect_count": 34,
+    "suspect_count": 36,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -1652,6 +1653,28 @@
       "match": "(int *)((int)",
       "text": "piVar16 = (int *)((int)piVar16 + 2);",
       "type": "pointer_cast"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"SFX: %d Samples: Active: %d/%.1fk Avail: %d/%.1fk ...\" has 7 specifiers but 0 arguments after it",
+      "expected_args": 7,
+      "format_string": "SFX: %d Samples: Active: %d/%.1fk Avail: %d/%.1fk Total alloc: %.1fk Free: %.1fk",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 300,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_3dc,\"SFX: %d Samples: Active: %d/%.1fk Avail: %d/%.1fk Total ",
+      "text": "Format string expects 7 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"32:%d,64:%d,128:%d,256:%d,512:%d,1024:%d\" has 6 specifiers but 0 arguments after it",
+      "expected_args": 6,
+      "format_string": "32:%d,64:%d,128:%d,256:%d,512:%d,1024:%d",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 314,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_3dc,\"32:%d,64:%d,128:%d,256:%d,512:%d,1024:%d\");",
+      "text": "Format string expects 6 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

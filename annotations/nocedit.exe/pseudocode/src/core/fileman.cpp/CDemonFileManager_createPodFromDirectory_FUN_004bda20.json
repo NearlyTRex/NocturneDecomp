@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 634,
-    "complexity_score": 632,
+    "complexity_score": 667,
     "cross_reference_count": 1,
     "function_call_count": 28,
     "global_count": 48,
     "pseudocode_lines": 292,
-    "suspect_count": 30,
+    "suspect_count": 33,
     "suspect_types": [
       "badspacebase",
       "concat_artifact",
+      "format_string_mismatch",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -945,6 +946,39 @@
       "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
       "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 004be000 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \" %[^:]:%s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": " %[^:]:%s",
+      "function_name": "crt_stdio_c_sscanf_FUN_0060013c",
+      "line_number": 108,
+      "match": "iVar3 = crt_stdio_c_sscanf_FUN_0060013c(&stack0xfffff884,\" %[^:]:%s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%s\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 181,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0((this_ptr->base_filemanager).file_ptr,\"%s\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"WORLD\\\\%s\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "WORLD\\\\%s\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 248,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)in_stack_fffff88c,\"WORLD\\\\%s\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

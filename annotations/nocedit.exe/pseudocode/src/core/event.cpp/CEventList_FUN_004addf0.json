@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 266,
-    "complexity_score": 272,
+    "complexity_score": 327,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 6,
     "pseudocode_lines": 107,
-    "suspect_count": 14,
+    "suspect_count": 19,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "register_param",
       "stack_ref",
       "unaffected_reg",
@@ -358,6 +359,61 @@
       "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
       "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 004ae0b9 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Game Flag: %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Game Flag: %s",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 31,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_218,\"Game Flag: %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Persistent: %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Persistent: %s",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 42,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffc58,\"Persistent: %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s=%d\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "%s=%d",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 78,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_88,\"%s=%d\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s=%s\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "%s=%s",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 89,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_ec,\"%s=%s\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 2,
+      "description": "Format \"%s=%s %.1f\" has 3 specifiers but 2 arguments after it",
+      "expected_args": 3,
+      "format_string": "%s=%s %.1f",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 101,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_14c,\"%s=%s %.1f\",local_1c,pCVar4);",
+      "text": "Format string expects 3 args but got 2",
+      "type": "format_string_mismatch"
     }
   ]
 }

@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 228,
-    "complexity_score": 176,
+    "complexity_score": 201,
     "cross_reference_count": 50,
     "function_call_count": 2,
     "global_count": 17,
     "pseudocode_lines": 111,
-    "suspect_count": 6,
+    "suspect_count": 8,
     "suspect_types": [
+      "format_string_mismatch",
       "pointer_cast"
     ],
     "total_lines": 339
@@ -688,6 +689,28 @@
       "match": "(CDemonActor *)((int)",
       "text": "pCVar7 = (CDemonActor *)((int)pCVar7 + (uint)bVar9 * -2 + 1);",
       "type": "pointer_cast"
+    },
+    {
+      "actual_args": 1,
+      "description": "Format \"NULL actor pointer detected, %s line %d\" has 2 specifiers but 1 arguments after it",
+      "expected_args": 2,
+      "format_string": "NULL actor pointer detected, %s line %d",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 26,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"NULL actor pointer detected, %s line %d\",context_file)",
+      "text": "Format string expects 2 args but got 1",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Invalid actor pointer %08X detected at %s, line %d\" has 3 specifiers but 0 arguments after it",
+      "expected_args": 3,
+      "format_string": "Invalid actor pointer %08X detected at %s, line %d",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 31,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Invalid actor pointer %08X detected at %s, line %d\");",
+      "text": "Format string expects 3 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

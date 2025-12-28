@@ -1,16 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 3337,
-    "complexity_score": 3481,
+    "complexity_score": 3516,
     "cross_reference_count": 2,
     "function_call_count": 91,
     "global_count": 146,
     "pseudocode_lines": 1276,
-    "suspect_count": 215,
+    "suspect_count": 218,
     "suspect_types": [
       "badspacebase",
       "concat_artifact",
       "extra_output",
+      "format_string_mismatch",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -5348,6 +5349,39 @@
       "match": "CONCAT31",
       "text": "if (CONCAT31 /* combine 2-byte values */(extraout_var_01,bVar7) != 0) {",
       "type": "concat_artifact"
+    },
+    {
+      "actual_args": 2,
+      "description": "Format \" [L] Loop mode: %s \" has 1 specifiers but 2 arguments after it",
+      "expected_args": 1,
+      "format_string": " [L] Loop mode: %s ",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 649,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_464,\" [L] Loop mode: %s \",pcVar11,uVar24);",
+      "text": "Format string expects 1 args but got 2",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 2,
+      "description": "Format \" [C] Use canceled: %s \" has 1 specifiers but 2 arguments after it",
+      "expected_args": 1,
+      "format_string": " [C] Use canceled: %s ",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 658,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_464,\" [C] Use canceled: %s \",pcVar11,uVar24);",
+      "text": "Format string expects 1 args but got 2",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 2,
+      "description": "Format \" Selected part: %d \\\"%s\\\" Dominant bone: \\\"%s\\\"\" has 3 specifiers but 2 arguments after it",
+      "expected_args": 3,
+      "format_string": " Selected part: %d \\\"%s\\\" Dominant bone: \\\"%s\\\"",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 663,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_464,\" Selected part: %d \\\"%s\\\" Dominant bone: \\\"%s\\\"\",iVar8",
+      "text": "Format string expects 3 args but got 2",
+      "type": "format_string_mismatch"
     }
   ]
 }

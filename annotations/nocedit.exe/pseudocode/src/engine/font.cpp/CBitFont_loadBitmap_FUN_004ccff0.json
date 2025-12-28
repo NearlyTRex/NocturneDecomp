@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 227,
-    "complexity_score": 341,
+    "complexity_score": 356,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 14,
     "pseudocode_lines": 86,
-    "suspect_count": 23,
+    "suspect_count": 24,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -506,6 +507,17 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 004cd271 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Unable to allocate memory for font bitmap (%s).\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Unable to allocate memory for font bitmap (%s).",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 58,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffbdc,\"Unable to allocate memory for font bitmap (%s).\")",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

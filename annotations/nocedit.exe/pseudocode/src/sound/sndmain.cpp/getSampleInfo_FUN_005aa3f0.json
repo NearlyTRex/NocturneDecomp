@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 234,
-    "complexity_score": 297,
+    "complexity_score": 322,
     "cross_reference_count": 2,
     "function_call_count": 16,
     "global_count": 23,
     "pseudocode_lines": 97,
-    "suspect_count": 17,
+    "suspect_count": 19,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -485,6 +486,28 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005aa63b (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Unknown sample file format extension: %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Unknown sample file format extension: %s",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 72,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Unknown sample file format extension: %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"getSampleInfo - can't determine length for %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "getSampleInfo - can't determine length for %s",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 79,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"getSampleInfo - can't determine length for %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

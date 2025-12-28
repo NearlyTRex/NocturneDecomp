@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 93,
-    "complexity_score": 158,
+    "complexity_score": 173,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 6,
     "pseudocode_lines": 48,
-    "suspect_count": 10,
+    "suspect_count": 11,
     "suspect_types": [
+      "format_string_mismatch",
       "stack_param",
       "variadic_preserve"
     ],
@@ -220,6 +221,17 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 004b0d54 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"CEventList::setSfxHandle - sfx handle name %s is t...\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "CEventList::setSfxHandle - sfx handle name %s is too long - max %d characters",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 36,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"CEventList::setSfxHandle - sfx handle name %s is too l",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

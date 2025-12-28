@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 511,
-    "complexity_score": 682,
+    "complexity_score": 707,
     "cross_reference_count": 1,
     "function_call_count": 27,
     "global_count": 51,
     "pseudocode_lines": 212,
-    "suspect_count": 43,
+    "suspect_count": 45,
     "suspect_types": [
       "badspacebase",
       "concat_artifact",
+      "format_string_mismatch",
       "param_count_too_few",
       "pointer_cast",
       "register_param",
@@ -1288,6 +1289,28 @@
       "param_delta": 4,
       "text": "Function declares 0 params but call sites push 4 (4 missing)",
       "type": "param_count_too_few"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"reduce\\\\cube%04d.txt\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "reduce\\\\cube%04d.txt",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 47,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_fc,\"reduce\\\\cube%04d.txt\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d %d\\n\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "%d %d\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 63,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)local_2c.flags,\"%d %d\\n\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

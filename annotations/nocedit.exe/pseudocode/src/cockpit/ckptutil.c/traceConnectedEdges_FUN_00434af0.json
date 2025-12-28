@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 702,
-    "complexity_score": 820,
+    "complexity_score": 835,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 19,
     "pseudocode_lines": 360,
-    "suspect_count": 43,
+    "suspect_count": 44,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -1013,6 +1014,17 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00435568 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Unable to allocate %u bytes for edge list.\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Unable to allocate %u bytes for edge list.",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 344,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffe10,\"Unable to allocate %u bytes for edge list.\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

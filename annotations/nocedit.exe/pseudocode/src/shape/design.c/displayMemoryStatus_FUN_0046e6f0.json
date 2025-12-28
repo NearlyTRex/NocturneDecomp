@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 86,
+    "complexity_score": 111,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 2,
     "pseudocode_lines": 11,
-    "suspect_count": 6,
+    "suspect_count": 8,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "register_param",
       "stack_ref"
     ],
@@ -203,6 +204,28 @@
       "match": "&stack0xffffffa0",
       "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffffa0,0,(line_number + 1) * 0xb);",
       "type": "stack_ref"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Memory available: %d\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Memory available: %d",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 8,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffa0,\"Memory available: %d\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Largest block: %d\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Largest block: %d",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 11,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffa0,\"Largest block: %d\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 184,
-    "complexity_score": 430,
+    "complexity_score": 455,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 33,
     "pseudocode_lines": 110,
-    "suspect_count": 29,
+    "suspect_count": 31,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "pointer_cast",
       "register_param",
       "stack_ref",
@@ -557,6 +558,28 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00533f50 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 1,
+      "description": "Format \"wrong table number %u.  File: %s\" has 2 specifiers but 1 arguments after it",
+      "expected_args": 2,
+      "format_string": "wrong table number %u.  File: %s",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 42,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"wrong table number %u.  File: %s\",pSVar4);",
+      "text": "Format string expects 2 args but got 1",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"MP3 Huffman tree overflow!  File: %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "MP3 Huffman tree overflow!  File: %s",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 63,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"MP3 Huffman tree overflow!  File: %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

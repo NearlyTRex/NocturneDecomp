@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 39,
-    "complexity_score": 32,
+    "complexity_score": 47,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 2,
     "pseudocode_lines": 17,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "format_string_mismatch",
       "variadic_preserve"
     ],
     "total_lines": 56
@@ -153,6 +154,17 @@
       "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
       "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 004ff3e4 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 2,
+      "description": "Format \"%s%s \\\"%s\\\"\\n\" has 3 specifiers but 2 arguments after it",
+      "expected_args": 3,
+      "format_string": "%s%s \\\"%s\\\"\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 15,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%s%s \\\"%s\\\"\\n\",g_PropertyNamePrefix,pcVar1);",
+      "text": "Format string expects 3 args but got 2",
+      "type": "format_string_mismatch"
     }
   ]
 }

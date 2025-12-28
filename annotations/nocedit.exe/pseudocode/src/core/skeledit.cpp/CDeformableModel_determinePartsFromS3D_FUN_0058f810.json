@@ -1,16 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 3291,
-    "complexity_score": 4937,
+    "complexity_score": 4962,
     "cross_reference_count": 1,
     "function_call_count": 24,
     "global_count": 125,
     "pseudocode_lines": 1447,
-    "suspect_count": 343,
+    "suspect_count": 345,
     "suspect_types": [
       "badspacebase",
       "concat_artifact",
       "extra_output",
+      "format_string_mismatch",
       "negative_offset",
       "param_count_too_few",
       "pointer_cast",
@@ -5668,6 +5669,28 @@
       "param_delta": 1,
       "text": "Function declares 1 params but call sites push 2 (1 missing)",
       "type": "param_count_too_few"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"There are %d triangles I couldn't match.\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "There are %d triangles I couldn't match.",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 969,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_554,\"There are %d triangles I couldn't match.\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Determined parts using %s OK!\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Determined parts using %s OK!\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 1403,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(local_168,\"Determined parts using %s OK!\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

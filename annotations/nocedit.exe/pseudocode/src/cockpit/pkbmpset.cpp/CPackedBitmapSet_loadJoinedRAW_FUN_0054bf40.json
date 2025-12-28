@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 221,
-    "complexity_score": 365,
+    "complexity_score": 390,
     "cross_reference_count": 0,
     "function_call_count": 13,
     "global_count": 16,
     "pseudocode_lines": 80,
-    "suspect_count": 26,
+    "suspect_count": 28,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -569,6 +570,28 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0054c1b1 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Can't allocate %u bytes for RAW buffer in CPackedB...\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Can't allocate %u bytes for RAW buffer in CPackedBitmapSet::loadJoinedRAW",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 51,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_c4,\"Can't allocate %u bytes for RAW buffer in CPackedBitmap",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Error reading from %s in CPackedBitmapSet::loadJoi...\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Error reading from %s in CPackedBitmapSet::loadJoinedRAW",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 62,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_64,\"Error reading from %s in CPackedBitmapSet::loadJoinedRA",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

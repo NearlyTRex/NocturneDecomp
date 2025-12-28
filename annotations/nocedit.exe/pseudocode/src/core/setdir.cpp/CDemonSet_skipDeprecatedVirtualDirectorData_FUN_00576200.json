@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 174,
+    "complexity_score": 199,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
     "pseudocode_lines": 29,
-    "suspect_count": 12,
+    "suspect_count": 14,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "register_param",
       "stack_ref",
       "unaffected_reg",
@@ -230,6 +231,28 @@
       "target_function": "crt_stdio.c_fscanf_FUN_005fe7c0",
       "text": "Call to variadic function crt_stdio.c_fscanf_FUN_005fe7c0 at 00576255 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d\\n",
+      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
+      "line_number": 16,
+      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,\"%d\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"\\\"%*[^\\\"]\\\", %d\\n\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "\\\"%*[^\\\"]\\\", %d\\n",
+      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
+      "line_number": 20,
+      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,\"\\\"%*[^\\\"]\\\", %d\\n\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

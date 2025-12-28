@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 1620,
-    "complexity_score": 1255,
+    "complexity_score": 1310,
     "cross_reference_count": 1,
     "function_call_count": 39,
     "global_count": 135,
     "pseudocode_lines": 630,
-    "suspect_count": 60,
+    "suspect_count": 65,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "pointer_cast",
       "register_param",
       "stack_ref",
@@ -2279,6 +2280,61 @@
       "match": "(SShapeEditorPolygon *)((int)",
       "text": "pSVar8 = (SShapeEditorPolygon *)((int)pSVar8 + ((uint)bVar9 * -2 + 1) * 4);",
       "type": "pointer_cast"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Detail : %04x / %05d\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "Detail : %04x / %05d",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 235,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff48,\"Detail : %04x / %05d\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Renderer : %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Renderer : %s",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 242,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff48,\"Renderer : %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"P: %x B: %x H: %x\" has 3 specifiers but 0 arguments after it",
+      "expected_args": 3,
+      "format_string": "P: %x B: %x H: %x",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 396,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff48,\"P: %x B: %x H: %x\");",
+      "text": "Format string expects 3 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 2,
+      "description": "Format \"Texture : %s\" has 1 specifiers but 2 arguments after it",
+      "expected_args": 1,
+      "format_string": "Texture : %s",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 458,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff48,\"Texture : %s\",pcVar6,uVar12);",
+      "text": "Format string expects 1 args but got 2",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%03d : %+011.6f %+011.6f %+011.6f\" has 4 specifiers but 0 arguments after it",
+      "expected_args": 4,
+      "format_string": "%03d : %+011.6f %+011.6f %+011.6f",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 495,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff48,\"%03d : %+011.6f %+011.6f %+011.6f\");",
+      "text": "Format string expects 4 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 327,
-    "complexity_score": 452,
+    "complexity_score": 467,
     "cross_reference_count": 2,
     "function_call_count": 16,
     "global_count": 19,
     "pseudocode_lines": 122,
-    "suspect_count": 30,
+    "suspect_count": 31,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -557,6 +558,17 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00550582 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Invalid pod version for %s: %d\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "Invalid pod version for %s: %d",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 81,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Invalid pod version for %s: %d\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

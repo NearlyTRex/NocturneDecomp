@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 191,
-    "complexity_score": 139,
+    "complexity_score": 154,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 10,
     "pseudocode_lines": 59,
-    "suspect_count": 6,
+    "suspect_count": 7,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "param_count_too_many",
       "register_param",
       "stack_ref"
@@ -319,6 +320,17 @@
       "param_delta": -1,
       "text": "Function declares 2 params but call sites push 1 (1 extra)",
       "type": "param_count_too_many"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d,%d\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "%d,%d",
+      "function_name": "crt_stdio_c_sscanf_FUN_0060013c",
+      "line_number": 28,
+      "match": "(iVar2 = crt_stdio_c_sscanf_FUN_0060013c(&stack0xffffff90,\"%d,%d\"), iVar2 == 2)) {",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

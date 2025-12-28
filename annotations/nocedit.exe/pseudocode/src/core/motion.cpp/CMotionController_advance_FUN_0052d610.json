@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 338,
-    "complexity_score": 419,
+    "complexity_score": 434,
     "cross_reference_count": 40,
     "function_call_count": 9,
     "global_count": 12,
     "pseudocode_lines": 144,
-    "suspect_count": 24,
+    "suspect_count": 25,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -783,6 +784,17 @@
       "match": "in_stack_00000008",
       "text": "*in_stack_00000008 = 0.0;",
       "type": "stack_param"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Invalid transition command returned by CMotionCont...\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Invalid transition command returned by CMotionControler::advanceComplex: %d",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 59,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Invalid transition command returned by CMotionControle",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

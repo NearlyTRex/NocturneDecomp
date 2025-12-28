@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 80,
-    "complexity_score": 267,
+    "complexity_score": 282,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 3,
     "pseudocode_lines": 37,
-    "suspect_count": 20,
+    "suspect_count": 21,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -295,6 +296,17 @@
       "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
       "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 005597db (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Character %s model %s does not have a part '%s'\" has 3 specifiers but 0 arguments after it",
+      "expected_args": 3,
+      "format_string": "Character %s model %s does not have a part '%s'",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 39,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_0310eca0,\"Character %s model %s does not have a part '%s'\");",
+      "text": "Format string expects 3 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 351,
-    "complexity_score": 525,
+    "complexity_score": 560,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 37,
     "pseudocode_lines": 140,
-    "suspect_count": 35,
+    "suspect_count": 38,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -739,6 +740,39 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00576d84 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s%s.raw\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "%s%s.raw",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 30,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffa8,\"%s%s.raw\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s%s.act\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "%s%s.act",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 31,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffbc,\"%s%s.act\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Can't open %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Can't open %s",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 53,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Can't open %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 146,
-    "complexity_score": 239,
+    "complexity_score": 264,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 15,
     "pseudocode_lines": 64,
-    "suspect_count": 15,
+    "suspect_count": 17,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "register_param",
       "stack_ref",
       "unaffected_reg",
@@ -386,6 +387,28 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005dc220 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 58,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(unaff_ESI,\"%d\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s,%d\\n\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "%s,%d\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 62,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(unaff_EBX,\"%s,%d\\n\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

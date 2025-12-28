@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 1019,
-    "complexity_score": 1606,
+    "complexity_score": 1641,
     "cross_reference_count": 1,
     "function_call_count": 36,
     "global_count": 55,
     "pseudocode_lines": 426,
-    "suspect_count": 113,
+    "suspect_count": 116,
     "suspect_types": [
       "badspacebase",
       "concat_artifact",
+      "format_string_mismatch",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -1781,6 +1782,39 @@
       "match": "._4_4_",
       "text": "if (local_2c._4_4_ == 0x1b) {",
       "type": "unknown_field"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"1.  Fog settings for camera %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "1.  Fog settings for camera %s",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 70,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_234,\"1.  Fog settings for camera %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"R.  Reverb for camera %s : %s\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "R.  Reverb for camera %s : %s",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 111,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(pcVar10,\"R.  Reverb for camera %s : %s\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"R.  Default set reverb : %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "R.  Default set reverb : %s",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 117,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_120,\"R.  Default set reverb : %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

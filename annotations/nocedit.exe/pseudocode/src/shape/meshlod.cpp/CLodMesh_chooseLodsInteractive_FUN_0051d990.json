@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 1088,
-    "complexity_score": 1601,
+    "complexity_score": 1646,
     "cross_reference_count": 1,
     "function_call_count": 35,
     "global_count": 36,
     "pseudocode_lines": 441,
-    "suspect_count": 111,
+    "suspect_count": 115,
     "suspect_types": [
       "badspacebase",
       "concat_artifact",
+      "format_string_mismatch",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -1986,6 +1987,50 @@
       "match": "._8_4_",
       "text": "local_94._8_4_ = afStack_3cc[(int)fVar9 + 3];",
       "type": "unknown_field"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Editing LOD %d of %d.\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "Editing LOD %d of %d.",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 221,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_208,\"Editing LOD %d of %d.\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"LOD%d: F=%d\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "LOD%d: F=%d",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 237,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_1f8,\"LOD%d: F=%d\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"LOD%d: P=%d F=%d\" has 3 specifiers but 0 arguments after it",
+      "expected_args": 3,
+      "format_string": "LOD%d: P=%d F=%d",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 240,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_1f8,\"LOD%d: P=%d F=%d\");",
+      "text": "Format string expects 3 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Current: %d pixelHeight, %d faces\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "Current: %d pixelHeight, %d faces",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 291,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_1ec,\"Current: %d pixelHeight, %d faces\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

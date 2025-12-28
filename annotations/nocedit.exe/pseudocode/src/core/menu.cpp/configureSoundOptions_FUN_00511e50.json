@@ -1,16 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 1482,
-    "complexity_score": 1783,
+    "complexity_score": 1808,
     "cross_reference_count": 1,
     "function_call_count": 45,
     "global_count": 63,
     "pseudocode_lines": 778,
-    "suspect_count": 95,
+    "suspect_count": 97,
     "suspect_types": [
       "badspacebase",
       "concat_artifact",
       "extra_output",
+      "format_string_mismatch",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -1854,6 +1855,28 @@
       "match": "in_stack_fffff5f0",
       "text": "in_stack_fffff5f0 = 1;",
       "type": "stack_param"
+    },
+    {
+      "actual_args": 2,
+      "description": "Format \"%d\" has 1 specifiers but 2 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 131,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_348,\"%d\",local_14,uVar22);",
+      "text": "Format string expects 1 args but got 2",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 2,
+      "description": "Format \"%d\" has 1 specifiers but 2 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 200,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_140,\"%d\",(int)ROUND(dVar20),uVar22);",
+      "text": "Format string expects 1 args but got 2",
+      "type": "format_string_mismatch"
     }
   ]
 }

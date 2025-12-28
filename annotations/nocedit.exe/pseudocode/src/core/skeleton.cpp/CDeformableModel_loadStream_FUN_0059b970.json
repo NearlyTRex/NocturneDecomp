@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 909,
-    "complexity_score": 845,
+    "complexity_score": 870,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 30,
     "pseudocode_lines": 290,
-    "suspect_count": 52,
+    "suspect_count": 54,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -1063,6 +1064,28 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0059c1d8 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 2,
+      "description": "Format \"\\\"%[^\\\"]\\\", %d\\n\" has 1 specifiers but 2 arguments after it",
+      "expected_args": 1,
+      "format_string": "\\\"%[^\\\"]\\\", %d\\n",
+      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
+      "line_number": 143,
+      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,\"\\\"%[^\\\"]\\\", %d\\n\",pSVar3,&pSVar3->adj_part_count);",
+      "text": "Format string expects 1 args but got 2",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d\\n",
+      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
+      "line_number": 152,
+      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,\"%d\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

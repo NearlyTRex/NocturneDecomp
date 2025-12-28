@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 287,
-    "complexity_score": 608,
+    "complexity_score": 633,
     "cross_reference_count": 1,
     "function_call_count": 20,
     "global_count": 8,
     "pseudocode_lines": 123,
-    "suspect_count": 46,
+    "suspect_count": 48,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -679,6 +680,28 @@
       "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
       "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 004b533b (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s\\t\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%s\\t",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 76,
+      "match": "iVar2 = crt_stdio_c_sprintf_FUN_005fdbd0(acStack_4a4,\"%s\\t\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Checked out by %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Checked out by %s",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 80,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_4b4 + iVar2,\"Checked out by %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

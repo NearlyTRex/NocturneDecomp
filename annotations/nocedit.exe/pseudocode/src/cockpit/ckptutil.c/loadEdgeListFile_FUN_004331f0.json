@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 218,
-    "complexity_score": 417,
+    "complexity_score": 462,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 19,
     "pseudocode_lines": 77,
-    "suspect_count": 31,
+    "suspect_count": 35,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -586,6 +587,50 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00433431 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Unable to read number of edge lists (%s).\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Unable to read number of edge lists (%s).",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 28,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffa8,\"Unable to read number of edge lists (%s).\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Invalid number of edge lists in file (%s).\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Invalid number of edge lists in file (%s).",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 34,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_50,\"Invalid number of edge lists in file (%s).\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Unable to read number of edges (%s).\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Unable to read number of edges (%s).",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 45,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffa8,\"Unable to read number of edges (%s).\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Unable to read edge list (%s).\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Unable to read edge list (%s).",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 67,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffa8,\"Unable to read edge list (%s).\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

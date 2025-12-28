@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 409,
-    "complexity_score": 761,
+    "complexity_score": 856,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 20,
     "pseudocode_lines": 121,
-    "suspect_count": 62,
+    "suspect_count": 71,
     "suspect_types": [
+      "format_string_mismatch",
       "pointer_cast",
       "stack_param",
       "unaffected_reg",
@@ -797,6 +798,105 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00599fa7 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d\\n",
+      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
+      "line_number": 24,
+      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000010,\"%d\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Old skeleton version %d not supported\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Old skeleton version %d not supported",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 33,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Old skeleton version %d not supported\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Skeleton version %d is newer than .EXE, which can ...\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "Skeleton version %d is newer than .EXE, which can only process up to version %d",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 38,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Skeleton version %d is newer than .EXE, which can only",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d,%d\\n\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "%d,%d\\n",
+      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
+      "line_number": 44,
+      "match": "crt_stdio_c_fscanf_FUN_005fe7c0((FILE *)in_stack_0000001c,\"%d,%d\\n\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"\\\"%[^\\\"]\\\",%d\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "\\\"%[^\\\"]\\\",%d\\n",
+      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
+      "line_number": 53,
+      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000024,\"\\\"%[^\\\"]\\\",%d\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%f,%f,%f,%f\\n\" has 4 specifiers but 0 arguments after it",
+      "expected_args": 4,
+      "format_string": "%f,%f,%f,%f\\n",
+      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
+      "line_number": 67,
+      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000024,\"%f,%f,%f,%f\\n\");",
+      "text": "Format string expects 4 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%f,%f,%f\\n\" has 3 specifiers but 0 arguments after it",
+      "expected_args": 3,
+      "format_string": "%f,%f,%f\\n",
+      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
+      "line_number": 80,
+      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000024,\"%f,%f,%f\\n\");",
+      "text": "Format string expects 3 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%f,%f,%f\\n\" has 3 specifiers but 0 arguments after it",
+      "expected_args": 3,
+      "format_string": "%f,%f,%f\\n",
+      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
+      "line_number": 91,
+      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000024,\"%f,%f,%f\\n\");",
+      "text": "Format string expects 3 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%f,%f,%f\\n\" has 3 specifiers but 0 arguments after it",
+      "expected_args": 3,
+      "format_string": "%f,%f,%f\\n",
+      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
+      "line_number": 112,
+      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000028,\"%f,%f,%f\\n\");",
+      "text": "Format string expects 3 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

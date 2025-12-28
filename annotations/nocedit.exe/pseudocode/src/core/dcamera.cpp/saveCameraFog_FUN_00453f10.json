@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 129,
+    "complexity_score": 154,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 6,
     "pseudocode_lines": 19,
-    "suspect_count": 10,
+    "suspect_count": 12,
     "suspect_types": [
+      "format_string_mismatch",
       "sub_artifact",
       "variadic_preserve"
     ],
@@ -289,6 +290,28 @@
       "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
       "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 00453fa8 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d,%d,%d\\n\" has 3 specifiers but 0 arguments after it",
+      "expected_args": 3,
+      "format_string": "%d,%d,%d\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 9,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%d,%d,%d\\n\");",
+      "text": "Format string expects 3 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%f\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%f\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 20,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%f\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

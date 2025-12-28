@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 1125,
-    "complexity_score": 1550,
+    "complexity_score": 1585,
     "cross_reference_count": 3,
     "function_call_count": 29,
     "global_count": 13,
     "pseudocode_lines": 550,
-    "suspect_count": 95,
+    "suspect_count": 98,
     "suspect_types": [
       "badspacebase",
       "extra_output",
+      "format_string_mismatch",
       "negative_offset",
       "pointer_cast",
       "register_param",
@@ -1641,6 +1642,39 @@
       "match": "in_stack_ffff9f30",
       "text": "local_60 = local_60 * (int)in_stack_ffff9f30 -",
       "type": "stack_param"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"MPEG Layer 2 - pick_table - can't load tables!  Fi...\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "MPEG Layer 2 - pick_table - can't load tables!  File: %s",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 177,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"MPEG Layer 2 - pick_table - can't load tables!  File: ",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"js_bound bad layer/modext (%d/%d)  File: %s\" has 3 specifiers but 0 arguments after it",
+      "expected_args": 3,
+      "format_string": "js_bound bad layer/modext (%d/%d)  File: %s",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 191,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"js_bound bad layer/modext (%d/%d)  File: %s\");",
+      "text": "Format string expects 3 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Not enough main data to decode frame %d.\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Not enough main data to decode frame %d.",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 392,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Not enough main data to decode frame %d.\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

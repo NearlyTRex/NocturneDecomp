@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 123,
-    "complexity_score": 120,
+    "complexity_score": 145,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 7,
     "pseudocode_lines": 60,
-    "suspect_count": 5,
+    "suspect_count": 7,
     "suspect_types": [
       "callind_preserve",
+      "format_string_mismatch",
       "variadic_preserve"
     ],
     "total_lines": 183
@@ -222,6 +223,28 @@
       "target_function": "sound_sndmain.cpp_logSoundError_FUN_005adba0",
       "text": "Call to variadic function sound_sndmain.cpp_logSoundError_FUN_005adba0 at 005a80bc (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Killing looped sfx %s, which died??\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Killing looped sfx %s, which died??\\n",
+      "function_name": "sound_sndmain_cpp_logSoundError_FUN_005adba0",
+      "line_number": 29,
+      "match": "sound_sndmain_cpp_logSoundError_FUN_005adba0(\"Killing looped sfx %s, which died??\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Error setting hw sfx %d options (sample %s), killi...\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "Error setting hw sfx %d options (sample %s), killing.\\n",
+      "function_name": "sound_sndmain_cpp_logSoundError_FUN_005adba0",
+      "line_number": 59,
+      "match": "sound_sndmain_cpp_logSoundError_FUN_005adba0(\"Error setting hw sfx %d options (sample %s), killing.\\",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

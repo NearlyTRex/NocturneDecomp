@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 121,
-    "complexity_score": 189,
+    "complexity_score": 204,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 4,
     "pseudocode_lines": 54,
-    "suspect_count": 10,
+    "suspect_count": 11,
     "suspect_types": [
       "badspacebase",
       "concat_artifact",
+      "format_string_mismatch",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -374,6 +375,17 @@
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)result_ptr + 4) = uStack_44;",
       "type": "pointer_cast"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%lf\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%lf",
+      "function_name": "crt_stdio_c_sscanf_FUN_0060013c",
+      "line_number": 38,
+      "match": "iVar1 = crt_stdio_c_sscanf_FUN_0060013c(acStack_2c,\"%lf\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

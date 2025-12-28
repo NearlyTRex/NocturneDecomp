@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 1081,
-    "complexity_score": 1159,
+    "complexity_score": 1194,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 91,
     "pseudocode_lines": 469,
-    "suspect_count": 66,
+    "suspect_count": 69,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -1527,6 +1528,39 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0044fc56 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Hell froze loading %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Hell froze loading %s",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 176,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Hell froze loading %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s too big to fit in decompress buffer\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%s too big to fit in decompress buffer",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 181,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"%s too big to fit in decompress buffer\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Error decompressing %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Error decompressing %s",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 192,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Error decompressing %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

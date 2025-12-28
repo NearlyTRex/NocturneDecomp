@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 80,
+    "complexity_score": 105,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 2,
     "pseudocode_lines": 10,
-    "suspect_count": 5,
+    "suspect_count": 7,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "register_param",
       "stack_ref",
       "variadic_preserve"
@@ -169,6 +170,28 @@
       "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
       "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 004bca3e (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"ART\\\\%s.RAW\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "ART\\\\%s.RAW\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 10,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(*raw_file,\"ART\\\\%s.RAW\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"ART\\\\%s.ACT\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "ART\\\\%s.ACT\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 11,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(*act_file,\"ART\\\\%s.ACT\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

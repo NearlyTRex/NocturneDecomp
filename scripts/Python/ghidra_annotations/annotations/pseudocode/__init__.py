@@ -24,7 +24,8 @@ from ghidra_annotations.annotations.pseudocode.strings import (
 from ghidra_annotations.annotations.pseudocode.suspects import (
     SUSPECT_PATTERNS,
     identify_suspect_lines,
-    calculate_complexity_metrics
+    calculate_complexity_metrics,
+    identify_format_string_mismatch
 )
 from ghidra_annotations.annotations.pseudocode.decompiler import (
     decompile_function_raw,

@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 511,
-    "complexity_score": 844,
+    "complexity_score": 859,
     "cross_reference_count": 3,
     "function_call_count": 23,
     "global_count": 35,
     "pseudocode_lines": 179,
-    "suspect_count": 64,
+    "suspect_count": 65,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -1068,6 +1069,17 @@
       "match": "in_stack_00000008",
       "text": "*(int *)(in_stack_00000008 + 0x11e0) = local_18;",
       "type": "stack_param"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%f\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%f",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 114,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_178,\"%f\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

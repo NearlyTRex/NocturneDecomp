@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 200,
-    "complexity_score": 225,
+    "complexity_score": 240,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 6,
     "pseudocode_lines": 85,
-    "suspect_count": 11,
+    "suspect_count": 12,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -316,6 +317,17 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00476fb4 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"KFM file is invalid version %d\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "KFM file is invalid version %d",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 31,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"KFM file is invalid version %d\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

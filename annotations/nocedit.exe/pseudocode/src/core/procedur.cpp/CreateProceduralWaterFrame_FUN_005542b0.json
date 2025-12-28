@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 259,
-    "complexity_score": 448,
+    "complexity_score": 463,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 19,
     "pseudocode_lines": 103,
-    "suspect_count": 31,
+    "suspect_count": 32,
     "suspect_types": [
       "badspacebase",
       "concat_artifact",
+      "format_string_mismatch",
       "param_count_too_few",
       "register_param",
       "stack_param",
@@ -589,6 +590,17 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00554604 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"water%d.act\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "water%d.act",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 72,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffef0,\"water%d.act\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

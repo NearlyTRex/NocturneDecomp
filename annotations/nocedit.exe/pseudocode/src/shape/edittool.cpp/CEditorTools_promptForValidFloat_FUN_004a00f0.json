@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 112,
-    "complexity_score": 154,
+    "complexity_score": 169,
     "cross_reference_count": 15,
     "function_call_count": 4,
     "global_count": 4,
     "pseudocode_lines": 44,
-    "suspect_count": 8,
+    "suspect_count": 9,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -457,6 +458,17 @@
       "match": "SUB84",
       "text": "(int)((ulonglong)(double)(float)puVar2 >> 0x20),SUB84 /* extract 2-byte value */((double)local_38,0),",
       "type": "sub_artifact"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%f\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%f",
+      "function_name": "crt_stdio_c_sscanf_FUN_0060013c",
+      "line_number": 33,
+      "match": "iVar1 = crt_stdio_c_sscanf_FUN_0060013c(acStack_30,\"%f\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

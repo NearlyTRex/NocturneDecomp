@@ -15,7 +15,7 @@ PRIORITY 1: Files with 1-2 functions remaining
 
   shape/multicrm.cpp (1 remaining of 6)
     - shape_multicrm.cpp_CMultiCram_run_FUN_0053ee70
-      Suspects: badspacebase, register_param, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, param_count_too_few
+      Suspects: badspacebase, register_param, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, param_count_too_few, format_string_mismatch, format_string_mismatch, format_string_mismatch
 
   crt/ioinit.c (1 remaining of 1)
     - crt_ioinit.c_staticInit_FUN_00608f20
@@ -67,7 +67,7 @@ PRIORITY 1: Files with 1-2 functions remaining
 
   engine/console.cpp (2 remaining of 8)
     - engine_console.cpp_CConsole_printf_FUN_00441890
-      Suspects: badspacebase, register_param, stack_ref, stack_ref, stack_ref, stack_ref, variadic_preserve
+      Suspects: badspacebase, register_param, stack_ref, stack_ref, stack_ref, stack_ref, variadic_preserve, format_string_mismatch
     - engine_console.cpp_CConsole_render_FUN_00441b00
       Suspects: badspacebase, register_param, pointer_cast
 
@@ -123,7 +123,7 @@ PRIORITY 1: Files with 1-2 functions remaining
     - core_podmain.cpp_CDemonPod_dtor_FUN_00551b20
       Suspects: unaffected_reg, unaffected_reg
     - core_podmain.cpp_CDemonPod_load_FUN_005519c0
-      Suspects: unaffected_reg, badspacebase, register_param, stack_param, stack_ref, stack_ref, stack_param, stack_ref, stack_ref, stack_param, stack_ref, stack_ref, stack_ref, unaffected_reg, unaffected_reg, callind_preserve, callind_preserve, variadic_preserve, variadic_preserve
+      Suspects: unaffected_reg, badspacebase, register_param, stack_param, stack_ref, stack_ref, stack_param, stack_ref, stack_ref, stack_param, stack_ref, stack_ref, stack_ref, unaffected_reg, unaffected_reg, callind_preserve, callind_preserve, variadic_preserve, variadic_preserve, format_string_mismatch
 
 ====================================================================================================
 PRIORITY 2: Small functions with 1 suspect (<50 lines)
@@ -142,7 +142,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_water.cpp_CWater_process_FUN_005e9ed0              (  4 lines)
     ... and 119 more
 
-  [variadic_preserve] - 114 functions
+  [variadic_preserve] - 110 functions
     shape_meshlod.cpp_CLodMesh_importFromUnknown_FUN_0051b2 (  7 lines)
     shape_quantize.cpp_showError_FUN_00556ce0               (  7 lines)
     shape_quantize.cpp_showError_FUN_00556cb0               (  7 lines)
@@ -153,7 +153,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     engine_3d.c_oldFunction_FUN_00404690                    (  7 lines)
     engine_3d.c_oldFunction_FUN_00403e00                    (  7 lines)
     engine_3d.c_oldFunction_FUN_00403ef0                    (  7 lines)
-    ... and 104 more
+    ... and 100 more
 
   [callind_preserve] - 85 functions
     shape_edittool.cpp_CStrList_sort_FUN_004a2ec0           (  5 lines)
@@ -168,7 +168,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     shape_superopt.cpp_CPoly_init_FUN_005cc670              (  8 lines)
     ... and 75 more
 
-  [pointer_cast] - 56 functions
+  [pointer_cast] - 55 functions
     crt_heap.c_GetBlockSize_FUN_00609790                    (  4 lines)
     crt_stdio.c_string_ungetc_FUN_006000f8                  (  5 lines)
     core_dlight.cpp_drawGrayscalePixel_FUN_00473360         (  5 lines)
@@ -179,7 +179,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_dracbrid.cpp_ctor_FUN_00486d30                     (  7 lines)
     core_flies.cpp_FUN_004ccd20                             (  7 lines)
     core_mirror.cpp_CMirror_ctor_FUN_005213c0               (  7 lines)
-    ... and 46 more
+    ... and 45 more
 
   [negative_offset] - 55 functions
     core_fire.cpp_CStake_dtor_FUN_004c9760                  (  6 lines)

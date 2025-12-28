@@ -1,16 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 427,
-    "complexity_score": 515,
+    "complexity_score": 540,
     "cross_reference_count": 3,
     "function_call_count": 30,
     "global_count": 25,
     "pseudocode_lines": 150,
-    "suspect_count": 32,
+    "suspect_count": 34,
     "suspect_types": [
       "badspacebase",
       "callind_preserve",
       "concat_artifact",
+      "format_string_mismatch",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -903,6 +904,28 @@
       "target_function": "shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060",
       "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060 at 0051d844 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 1,
+      "description": "Format \"%d faces, %d original\" has 2 specifiers but 1 arguments after it",
+      "expected_args": 2,
+      "format_string": "%d faces, %d original",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 74,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff6c,\"%d faces, %d original\",iVar3);",
+      "text": "Format string expects 2 args but got 1",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Pixel Height: %d\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Pixel Height: %d",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 87,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff84,\"Pixel Height: %d\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

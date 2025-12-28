@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 94,
-    "complexity_score": 140,
+    "complexity_score": 165,
     "cross_reference_count": 4,
     "function_call_count": 5,
     "global_count": 12,
     "pseudocode_lines": 35,
-    "suspect_count": 9,
+    "suspect_count": 11,
     "suspect_types": [
       "callind_preserve",
+      "format_string_mismatch",
       "stack_param",
       "variadic_preserve"
     ],
@@ -319,6 +320,28 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0040b038 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s} %s \\\"%s\\\"\\n\" has 3 specifiers but 0 arguments after it",
+      "expected_args": 3,
+      "format_string": "%s} %s \\\"%s\\\"\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 27,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%s} %s \\\"%s\\\"\\n\");",
+      "text": "Format string expects 3 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"IO Error after writing actor of type %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "IO Error after writing actor of type %s",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 32,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"IO Error after writing actor of type %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

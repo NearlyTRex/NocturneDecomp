@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 395,
-    "complexity_score": 1431,
+    "complexity_score": 1456,
     "cross_reference_count": 1,
     "function_call_count": 28,
     "global_count": 32,
     "pseudocode_lines": 366,
-    "suspect_count": 101,
+    "suspect_count": 103,
     "suspect_types": [
       "badspacebase",
       "concat_artifact",
+      "format_string_mismatch",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -1343,6 +1344,28 @@
       "match": "in_stack_00000004",
       "text": "if (*(int *)(in_stack_00000004 + 0x3ce8c) <= iStack00000100) {",
       "type": "stack_param"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%f\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%f",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 238,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0((char *)in_stack_fffffae8,\"%f\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Editing cylinder %d, on bone %s\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "Editing cylinder %d, on bone %s",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 279,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_154,\"Editing cylinder %d, on bone %s\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

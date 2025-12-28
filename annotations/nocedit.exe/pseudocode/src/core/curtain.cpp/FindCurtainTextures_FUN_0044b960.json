@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 99,
-    "complexity_score": 146,
+    "complexity_score": 161,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 10,
     "pseudocode_lines": 56,
-    "suspect_count": 7,
+    "suspect_count": 8,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "register_param",
       "unaffected_reg",
       "variadic_preserve"
@@ -265,6 +266,17 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0044ba25 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"ART\\\\%s\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "ART\\\\%s\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 58,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(param_8,\"ART\\\\%s\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ],
   "vtable_info": {

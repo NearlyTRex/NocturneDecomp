@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 356,
-    "complexity_score": 383,
+    "complexity_score": 398,
     "cross_reference_count": 0,
     "function_call_count": 11,
     "global_count": 16,
     "pseudocode_lines": 158,
-    "suspect_count": 20,
+    "suspect_count": 21,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -615,6 +616,17 @@
       "match": "(FILE *)((int)",
       "text": "local_24 = (FILE *)((int)local_24 + 1);",
       "type": "pointer_cast"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"vertex %d is influenced by bone %s, but this bone ...\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "vertex %d is influenced by bone %s, but this bone isn't in the .BON file!",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 105,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"vertex %d is influenced by bone %s, but this bone isn'",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

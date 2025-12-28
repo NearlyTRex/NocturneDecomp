@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 1011,
-    "complexity_score": 904,
+    "complexity_score": 919,
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 82,
     "pseudocode_lines": 264,
-    "suspect_count": 60,
+    "suspect_count": 61,
     "suspect_types": [
       "badspacebase",
       "callind_preserve",
+      "format_string_mismatch",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -1185,6 +1186,17 @@
       "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
       "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 005369b6 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Actor-specific help for selected actor %s (type %s...\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "Actor-specific help for selected actor %s (type %s):",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 182,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(param_5,\"Actor-specific help for selected actor %s (type %s):\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

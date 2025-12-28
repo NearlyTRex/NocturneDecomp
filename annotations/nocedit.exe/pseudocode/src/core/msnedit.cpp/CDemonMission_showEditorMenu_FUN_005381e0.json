@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 897,
-    "complexity_score": 847,
+    "complexity_score": 872,
     "cross_reference_count": 1,
     "function_call_count": 51,
     "global_count": 76,
     "pseudocode_lines": 312,
-    "suspect_count": 50,
+    "suspect_count": 52,
     "suspect_types": [
       "badspacebase",
       "concat_artifact",
+      "format_string_mismatch",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -1299,6 +1300,28 @@
       "target_function": "shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0",
       "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 at 00538a7c (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s.msn\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%s.msn",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 123,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0((char *)&CStack_3b0.has_results,\"%s.msn\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s.msn\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%s.msn",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 204,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0((char *)&CStack_3b0.search_handle,\"%s.msn\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

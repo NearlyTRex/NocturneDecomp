@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 479,
-    "complexity_score": 508,
+    "complexity_score": 523,
     "cross_reference_count": 1,
     "function_call_count": 22,
     "global_count": 17,
     "pseudocode_lines": 193,
-    "suspect_count": 28,
+    "suspect_count": 29,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "param_count_too_few",
       "pointer_cast",
       "register_param",
@@ -968,6 +969,17 @@
       "param_delta": 2,
       "text": "Function declares 0 params but call sites push 2 (2 missing)",
       "type": "param_count_too_few"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"t=%7.3f, Pos: %7.2f,%7.2f,%7.2f, PBH: %7.4f %7.4f ...\" has 7 specifiers but 0 arguments after it",
+      "expected_args": 7,
+      "format_string": "t=%7.3f, Pos: %7.2f,%7.2f,%7.2f, PBH: %7.4f %7.4f %7.4f",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 158,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_130,\"t=%7.3f, Pos: %7.2f,%7.2f,%7.2f, PBH: %7.4f %7.4f %7.4f\"",
+      "text": "Format string expects 7 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

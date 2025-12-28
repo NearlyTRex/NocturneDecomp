@@ -1,16 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 2429,
-    "complexity_score": 1355,
+    "complexity_score": 1380,
     "cross_reference_count": 2,
     "function_call_count": 71,
     "global_count": 126,
     "pseudocode_lines": 935,
-    "suspect_count": 37,
+    "suspect_count": 39,
     "suspect_types": [
       "badspacebase",
       "concat_artifact",
       "extra_output",
+      "format_string_mismatch",
       "negative_offset",
       "pointer_cast",
       "register_param",
@@ -3205,6 +3206,28 @@
       "match": "CONCAT31",
       "text": "if (CONCAT31 /* combine 2-byte values */(extraout_var_02,bVar6) == 0) goto LAB_0047d6c7;",
       "type": "concat_artifact"
+    },
+    {
+      "actual_args": 3,
+      "description": "Format \"%d\" has 1 specifiers but 3 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 209,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_2dc,\"%d\",local_2dc,\"%d\",iVar8);",
+      "text": "Format string expects 1 args but got 3",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%f,%f,%f\" has 3 specifiers but 0 arguments after it",
+      "expected_args": 3,
+      "format_string": "%f,%f,%f",
+      "function_name": "crt_stdio_c_sscanf_FUN_0060013c",
+      "line_number": 885,
+      "match": "iVar8 = crt_stdio_c_sscanf_FUN_0060013c(local_278,\"%f,%f,%f\");",
+      "text": "Format string expects 3 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

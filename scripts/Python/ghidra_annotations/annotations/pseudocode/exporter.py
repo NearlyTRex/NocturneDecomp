@@ -46,7 +46,7 @@ from ghidra_annotations.annotations.pseudocode.transforms import (
 )
 from ghidra_annotations.annotations.pseudocode.suspects import (
     identify_suspect_lines, calculate_complexity_metrics, identify_pcode_suspects,
-    identify_param_count_mismatch, identify_variadic_calls
+    identify_param_count_mismatch, identify_variadic_calls, identify_format_string_mismatch
 )
 from ghidra_annotations.annotations.pseudocode.stack_patterns import (
     summarize_stack_patterns
@@ -266,6 +266,11 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map):
         result.pcode_data, result.func_calls, has_stack_issues, pcode_overrides)
     suspects.extend(variadic_suspects)
     resolved_suspects.extend(variadic_resolved)
+
+    # Identify format string mismatches in variadic calls
+    format_mismatch_suspects = identify_format_string_mismatch(
+        decompiled_code, result.func_calls)
+    suspects.extend(format_mismatch_suspects)
 
     # Calculate complexity metrics (Python-only)
     complexity = calculate_complexity_metrics(

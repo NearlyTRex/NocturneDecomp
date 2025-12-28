@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 223,
-    "complexity_score": 323,
+    "complexity_score": 338,
     "cross_reference_count": 2,
     "function_call_count": 10,
     "global_count": 14,
     "pseudocode_lines": 103,
-    "suspect_count": 19,
+    "suspect_count": 20,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "param_count_too_few",
       "register_param",
       "stack_param",
@@ -449,6 +450,17 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005785e1 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 2,
+      "description": "Format \"%[^,], %s\" has 1 specifiers but 2 arguments after it",
+      "expected_args": 1,
+      "format_string": "%[^,], %s",
+      "function_name": "crt_stdio_c_sscanf_FUN_0060013c",
+      "line_number": 66,
+      "match": "iVar2 = crt_stdio_c_sscanf_FUN_0060013c(pcVar1,\"%[^,], %s\",auStack_64,auStack_c8);",
+      "text": "Format string expects 1 args but got 2",
+      "type": "format_string_mismatch"
     }
   ]
 }

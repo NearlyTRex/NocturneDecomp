@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 226,
-    "complexity_score": 351,
+    "complexity_score": 396,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 22,
     "pseudocode_lines": 81,
-    "suspect_count": 24,
+    "suspect_count": 28,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "param_count_too_few",
       "register_param",
       "stack_param",
@@ -546,6 +547,50 @@
       "target_function": "shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0",
       "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 at 005381cc (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Can't open world\\\\%s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Can't open world\\\\%s",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 53,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Can't open world\\\\%s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Can't create world\\\\%s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Can't create world\\\\%s",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 60,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Can't create world\\\\%s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Error reading world\\\\%s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Error reading world\\\\%s",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 69,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Error reading world\\\\%s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Error writing world\\\\%s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Error writing world\\\\%s",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 74,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Error writing world\\\\%s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

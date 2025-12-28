@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 540,
-    "complexity_score": 924,
+    "complexity_score": 1009,
     "cross_reference_count": 2,
     "function_call_count": 31,
     "global_count": 53,
     "pseudocode_lines": 194,
-    "suspect_count": 69,
+    "suspect_count": 77,
     "suspect_types": [
       "badspacebase",
       "concat_artifact",
+      "format_string_mismatch",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -1319,6 +1320,94 @@
       "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
       "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 004e127b (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s.noc\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%s.noc",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 80,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffac4,\"%s.noc\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 103,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d, %d\\n\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "%d, %d\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 107,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d, %d\\n\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%s\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 111,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%s\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 120,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 124,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%f,%f,%d,%d\\n\" has 4 specifiers but 0 arguments after it",
+      "expected_args": 4,
+      "format_string": "%f,%f,%d,%d\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 128,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%f,%f,%d,%d\\n\");",
+      "text": "Format string expects 4 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s\\\\%s\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "%s\\\\%s",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 152,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_2e8,\"%s\\\\%s\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

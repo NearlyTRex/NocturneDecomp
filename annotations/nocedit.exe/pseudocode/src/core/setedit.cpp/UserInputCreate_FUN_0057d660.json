@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 1112,
-    "complexity_score": 1613,
+    "complexity_score": 1648,
     "cross_reference_count": 1,
     "function_call_count": 42,
     "global_count": 75,
     "pseudocode_lines": 438,
-    "suspect_count": 114,
+    "suspect_count": 117,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -1892,6 +1893,39 @@
       "match": "(float *)((int)",
       "text": "(g_CEditorToolsPtr,\"Enter FOV\",(float *)((int)PTR_DAT_00681ab8 + 0x18),",
       "type": "pointer_cast"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s.raw\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%s.raw",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 127,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_e0,\"%s.raw\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s.act\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%s.act",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 137,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_ec,\"%s.act\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%f\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%f",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 311,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_1d8,\"%f\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

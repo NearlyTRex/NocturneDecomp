@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 154,
-    "complexity_score": 313,
+    "complexity_score": 338,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 18,
     "pseudocode_lines": 53,
-    "suspect_count": 25,
+    "suspect_count": 27,
     "suspect_types": [
+      "format_string_mismatch",
       "stack_param",
       "variadic_preserve"
     ],
@@ -436,6 +437,28 @@
       "target_function": "shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0",
       "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 at 00537f49 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Error reading world\\\\%s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Error reading world\\\\%s",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 39,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Error reading world\\\\%s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Error writing world\\\\%s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Error writing world\\\\%s",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 44,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Error writing world\\\\%s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

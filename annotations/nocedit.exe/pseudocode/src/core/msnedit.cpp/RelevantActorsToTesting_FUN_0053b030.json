@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 424,
-    "complexity_score": 778,
+    "complexity_score": 813,
     "cross_reference_count": 1,
     "function_call_count": 16,
     "global_count": 9,
     "pseudocode_lines": 183,
-    "suspect_count": 55,
+    "suspect_count": 58,
     "suspect_types": [
       "badspacebase",
       "callind_preserve",
+      "format_string_mismatch",
       "param_count_too_few",
       "register_param",
       "stack_param",
@@ -708,6 +709,39 @@
       "target_function": "shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0",
       "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 at 0053b4fe (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Actors relevent to \\\"%s\\\"\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Actors relevent to \\\"%s\\\"",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 87,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(auStack_69c + 0x3a0,\"Actors relevent to \\\"%s\\\"\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s\\tReferenced by name\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%s\\tReferenced by name",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 113,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_2f0,\"%s\\tReferenced by name\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s\\tRaises \\\"%s\\\" in \\\"%s\\\"\" has 3 specifiers but 0 arguments after it",
+      "expected_args": 3,
+      "format_string": "%s\\tRaises \\\"%s\\\" in \\\"%s\\\"",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 166,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(auStack_69c + 0x3a0,\"%s\\tRaises \\\"%s\\\" in \\\"%s\\\"\")",
+      "text": "Format string expects 3 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

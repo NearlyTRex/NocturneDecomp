@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 240,
-    "complexity_score": 378,
+    "complexity_score": 393,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 9,
     "pseudocode_lines": 83,
-    "suspect_count": 26,
+    "suspect_count": 27,
     "suspect_types": [
       "badspacebase",
       "callind_preserve",
+      "format_string_mismatch",
       "register_param",
       "stack_ref",
       "unaffected_reg",
@@ -403,6 +404,17 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005e0f4e (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"CTrigger::containsActor - invalid trigger shape %d...\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "CTrigger::containsActor - invalid trigger shape %d for %s",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 68,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"CTrigger::containsActor - invalid trigger shape %d for",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

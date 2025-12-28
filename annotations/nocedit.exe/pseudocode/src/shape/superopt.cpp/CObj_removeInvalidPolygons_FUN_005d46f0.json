@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 100,
-    "complexity_score": 129,
+    "complexity_score": 144,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 1,
     "pseudocode_lines": 34,
-    "suspect_count": 7,
+    "suspect_count": 8,
     "suspect_types": [
       "badspacebase",
       "callind_preserve",
+      "format_string_mismatch",
       "register_param",
       "stack_ref",
       "variadic_preserve"
@@ -208,6 +209,17 @@
       "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
       "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 005d4772 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Deleting invalid polygons (%d deleted so far)\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Deleting invalid polygons (%d deleted so far)",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 19,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff98,\"Deleting invalid polygons (%d deleted so far)\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

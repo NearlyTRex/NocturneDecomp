@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 365,
-    "complexity_score": 669,
+    "complexity_score": 794,
     "cross_reference_count": 3,
     "function_call_count": 12,
     "global_count": 19,
     "pseudocode_lines": 139,
-    "suspect_count": 49,
+    "suspect_count": 61,
     "suspect_types": [
       "badspacebase",
       "concat_artifact",
+      "format_string_mismatch",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -858,6 +859,138 @@
       "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
       "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 004b8661 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s\\tNo local file\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%s\\tNo local file",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 83,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffee00,\"%s\\tNo local file\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s\\tLocal file is newer\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%s\\tLocal file is newer",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 88,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffee00,\"%s\\tLocal file is newer\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s\\tLocal file is older\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%s\\tLocal file is older",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 93,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffee00,\"%s\\tLocal file is older\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s\\tsame\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%s\\tsame",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 97,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffee00,\"%s\\tsame\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s\\tLocal file has different size\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%s\\tLocal file has different size",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 102,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffee00,\"%s\\tLocal file has different size\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Comparing files in:\\n%s\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Comparing files in:\\n%s\\n",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 109,
+      "match": "iVar5 = crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffee08,\"Comparing files in:\\n%s\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d files in sync with local files\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d files in sync with local files\\n",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 113,
+      "match": "iVar5 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar7,\"%d files in sync with local files\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d files in pod don't exist locally\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d files in pod don't exist locally\\n",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 117,
+      "match": "iVar9 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar7,\"%d files in pod don't exist locally\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d files with local file newer than file in pod\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d files with local file newer than file in pod\\n",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 121,
+      "match": "iVar9 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar7,\"%d files with local file newer than file in pod\\n\")",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d files with local file older than file in pod\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d files with local file older than file in pod\\n",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 125,
+      "match": "iVar9 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar7,\"%d files with local file older than file in pod\\n\")",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d sizeMismatch\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d sizeMismatch\\n",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 129,
+      "match": "iVar3 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar7,\"%d sizeMismatch\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d total files in pod\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d total files in pod",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 133,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(pcVar7 + iVar3,\"%d total files in pod\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 165,
-    "complexity_score": 470,
+    "complexity_score": 485,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 12,
     "pseudocode_lines": 65,
-    "suspect_count": 38,
+    "suspect_count": 39,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -500,6 +501,17 @@
       "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
       "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0054e6b9 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Change course setting for platform %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Change course setting for platform %s",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 44,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_188,\"Change course setting for platform %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

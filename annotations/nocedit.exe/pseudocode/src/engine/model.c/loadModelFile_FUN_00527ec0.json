@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 196,
-    "complexity_score": 282,
+    "complexity_score": 327,
     "cross_reference_count": 8,
     "function_call_count": 9,
     "global_count": 18,
     "pseudocode_lines": 72,
-    "suspect_count": 19,
+    "suspect_count": 23,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "register_param",
       "stack_ref",
       "variadic_preserve"
@@ -485,6 +486,50 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00528069 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Unable to open model: %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Unable to open model: %s",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 45,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffb8,\"Unable to open model: %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Out of model memory: %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Out of model memory: %s",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 52,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffc4,\"Out of model memory: %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Model file read error: %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Model file read error: %s",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 59,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffd0,\"Model file read error: %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Invalid model: %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Invalid model: %s",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 68,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_24,\"Invalid model: %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

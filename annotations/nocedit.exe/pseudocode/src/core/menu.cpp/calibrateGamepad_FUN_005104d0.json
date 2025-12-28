@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 252,
-    "complexity_score": 319,
+    "complexity_score": 334,
     "cross_reference_count": 3,
     "function_call_count": 9,
     "global_count": 19,
     "pseudocode_lines": 89,
-    "suspect_count": 20,
+    "suspect_count": 21,
     "suspect_types": [
       "badspacebase",
       "callind_preserve",
+      "format_string_mismatch",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -475,6 +476,17 @@
       "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
       "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0051066e (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d,%d,%x\" has 3 specifiers but 0 arguments after it",
+      "expected_args": 3,
+      "format_string": "%d,%d,%x",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 61,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_d8,\"%d,%d,%x\");",
+      "text": "Format string expects 3 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

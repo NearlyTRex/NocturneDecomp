@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 3947,
-    "complexity_score": 2248,
+    "complexity_score": 2263,
     "cross_reference_count": 1,
     "function_call_count": 39,
     "global_count": 200,
     "pseudocode_lines": 2058,
-    "suspect_count": 15,
+    "suspect_count": 16,
     "suspect_types": [
       "badspacebase",
       "concat_artifact",
+      "format_string_mismatch",
       "register_param",
       "sub_artifact",
       "undefined_type",
@@ -2043,6 +2044,17 @@
       "match": "code *",
       "text": "(**(code **)(*(int *)(iVar18 + 0x154) + 0x11c))();",
       "type": "unresolved_funcptr"
+    },
+    {
+      "actual_args": 2,
+      "description": "Format \"FPS: %3.2lf\" has 1 specifiers but 2 arguments after it",
+      "expected_args": 1,
+      "format_string": "FPS: %3.2lf",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 338,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_45c,\"FPS: %3.2lf\",uVar9,uVar8);",
+      "text": "Format string expects 1 args but got 2",
+      "type": "format_string_mismatch"
     }
   ]
 }

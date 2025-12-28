@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 61,
+    "complexity_score": 76,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 6,
     "pseudocode_lines": 21,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
+      "format_string_mismatch",
       "param_count_too_few",
       "stack_param"
     ],
@@ -246,6 +247,17 @@
       "param_delta": 1,
       "text": "Function declares 2 params but call sites push 3 (1 missing)",
       "type": "param_count_too_few"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s\\\"%s\\\",%g // current motion name, curFrameNumber...\" has 3 specifiers but 0 arguments after it",
+      "expected_args": 3,
+      "format_string": "%s\\\"%s\\\",%g // current motion name, curFrameNumber\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 22,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%s\\\"%s\\\",%g // current motion name, curFrameNumber\\n\")",
+      "text": "Format string expects 3 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

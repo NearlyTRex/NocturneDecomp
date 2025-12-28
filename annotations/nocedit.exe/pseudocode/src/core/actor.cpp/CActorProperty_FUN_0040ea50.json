@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 555,
-    "complexity_score": 1249,
+    "complexity_score": 1284,
     "cross_reference_count": 6,
     "function_call_count": 5,
     "global_count": 44,
     "pseudocode_lines": 274,
-    "suspect_count": 95,
+    "suspect_count": 98,
     "suspect_types": [
       "callind_preserve",
+      "format_string_mismatch",
       "pointer_cast",
       "stack_param",
       "unresolved_funcptr",
@@ -1156,6 +1157,39 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0040ee1f (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 20,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(in_stack_0000000c,\"%d\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%s",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 264,
+      "match": "iVar5 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar9,\"%s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Unknown CActorProperty type: %d\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Unknown CActorProperty type: %d",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 273,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Unknown CActorProperty type: %d\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 73,
-    "complexity_score": 42,
+    "complexity_score": 57,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 4,
     "pseudocode_lines": 27,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "format_string_mismatch",
       "pointer_cast"
     ],
     "total_lines": 100
@@ -221,6 +222,17 @@
       "match": "(uint *)((int)",
       "text": "puVar2 = (uint *)((int)this_ptr->edges_ptr->adjacent_tri_indices + iVar4 + -0x28);",
       "type": "pointer_cast"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 12,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%d\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

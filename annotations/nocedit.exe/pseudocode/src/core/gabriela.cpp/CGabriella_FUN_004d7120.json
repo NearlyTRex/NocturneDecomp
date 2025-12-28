@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 302,
-    "complexity_score": 540,
+    "complexity_score": 555,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 8,
     "pseudocode_lines": 170,
-    "suspect_count": 33,
+    "suspect_count": 34,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -648,6 +649,17 @@
       "match": "unaff_ESI",
       "text": "unaff_ESI = unaff_ESI + (uint)bVar8 * -2 + 1;",
       "type": "unaffected_reg"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Don't know how to carry light %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Don't know how to carry light %s",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 81,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Don't know how to carry light %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ],
   "vtable_info": {

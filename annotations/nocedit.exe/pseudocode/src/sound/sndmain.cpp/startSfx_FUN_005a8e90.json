@@ -1,16 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 556,
-    "complexity_score": 704,
+    "complexity_score": 719,
     "cross_reference_count": 23,
     "function_call_count": 27,
     "global_count": 49,
     "pseudocode_lines": 279,
-    "suspect_count": 38,
+    "suspect_count": 39,
     "suspect_types": [
       "badspacebase",
       "callind_preserve",
       "extra_output",
+      "format_string_mismatch",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -1059,6 +1060,17 @@
       "target_function": "sound_sndmain.cpp_logSoundError_FUN_005adba0",
       "text": "Call to variadic function sound_sndmain.cpp_logSoundError_FUN_005adba0 at 005a951b (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"startSfx - can't get sample %s\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "startSfx - can't get sample %s\\n",
+      "function_name": "sound_sndmain_cpp_logSoundError_FUN_005adba0",
+      "line_number": 232,
+      "match": "sound_sndmain_cpp_logSoundError_FUN_005adba0(\"startSfx - can't get sample %s\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

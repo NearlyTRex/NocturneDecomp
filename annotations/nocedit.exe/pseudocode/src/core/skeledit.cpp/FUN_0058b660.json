@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 267,
-    "complexity_score": 470,
+    "complexity_score": 505,
     "cross_reference_count": 0,
     "function_call_count": 15,
     "global_count": 17,
     "pseudocode_lines": 90,
-    "suspect_count": 35,
+    "suspect_count": 38,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -626,6 +627,39 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0058b845 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d\\n",
+      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
+      "line_number": 37,
+      "match": "crt_stdio_c_fscanf_FUN_005fe7c0((FILE *)file,\"%d\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s has incorrect S3D version %d in CDeformableMode...\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "%s has incorrect S3D version %d in CDeformableModel::importGeometryS3D",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 41,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"%s has incorrect S3D version %d in CDeformableModel::i",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s is corrupt!\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%s is corrupt!",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 55,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"%s is corrupt!\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 383,
-    "complexity_score": 947,
+    "complexity_score": 962,
     "cross_reference_count": 1,
     "function_call_count": 24,
     "global_count": 26,
     "pseudocode_lines": 177,
-    "suspect_count": 74,
+    "suspect_count": 75,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "param_count_too_few",
       "register_param",
       "stack_param",
@@ -991,6 +992,17 @@
       "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
       "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 0055a2d0 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"start notepad world\\\\%s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "start notepad world\\\\%s",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 166,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_8c,\"start notepad world\\\\%s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

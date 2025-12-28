@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 445,
-    "complexity_score": 696,
+    "complexity_score": 751,
     "cross_reference_count": 1,
     "function_call_count": 18,
     "global_count": 41,
     "pseudocode_lines": 226,
-    "suspect_count": 43,
+    "suspect_count": 48,
     "suspect_types": [
       "badspacebase",
       "extra_output",
+      "format_string_mismatch",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -959,6 +960,61 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00453004 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"backdrop\\\\%s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "backdrop\\\\%s",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 69,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_ec,\"backdrop\\\\%s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Can't create %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Can't create %s",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 76,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Can't create %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Error compressing %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Error compressing %s",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 201,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Error compressing %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Not all bytes consumed compressing %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Not all bytes consumed compressing %s",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 208,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Not all bytes consumed compressing %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Error writing compressed file %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Error writing compressed file %s",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 213,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Error writing compressed file %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

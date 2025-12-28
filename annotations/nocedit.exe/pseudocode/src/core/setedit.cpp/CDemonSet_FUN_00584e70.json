@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 309,
-    "complexity_score": 778,
+    "complexity_score": 803,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 37,
     "pseudocode_lines": 118,
-    "suspect_count": 63,
+    "suspect_count": 65,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "param_count_too_few",
       "register_param",
       "stack_param",
@@ -1024,6 +1025,28 @@
       "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
       "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 0058514c (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 1,
+      "description": "Format \"%s\\\\%s.act\\n\" has 2 specifiers but 1 arguments after it",
+      "expected_args": 2,
+      "format_string": "%s\\\\%s.act\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 96,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"%s\\\\%s.act\\n\",apiStack_1cc);",
+      "text": "Format string expects 2 args but got 1",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"backdrop\\\\%sd.act\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "backdrop\\\\%sd.act\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 111,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"backdrop\\\\%sd.act\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

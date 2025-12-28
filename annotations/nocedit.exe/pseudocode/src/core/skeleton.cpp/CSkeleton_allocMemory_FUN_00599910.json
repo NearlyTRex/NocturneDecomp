@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 105,
-    "complexity_score": 98,
+    "complexity_score": 113,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 9,
     "pseudocode_lines": 48,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
+      "format_string_mismatch",
       "stack_param",
       "variadic_preserve"
     ],
@@ -217,6 +218,17 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00599a42 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Out of hunk in CSkeleton::allocMemory.  boneCount=...\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "Out of hunk in CSkeleton::allocMemory.  boneCount=%d, frameCount=%d",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 49,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Out of hunk in CSkeleton::allocMemory.  boneCount=%d, ",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

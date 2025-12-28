@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 373,
-    "complexity_score": 833,
+    "complexity_score": 878,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 25,
     "pseudocode_lines": 173,
-    "suspect_count": 62,
+    "suspect_count": 66,
     "suspect_types": [
       "badspacebase",
       "extra_output",
+      "format_string_mismatch",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -886,6 +887,50 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005568d5 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Unable to allocate %d-bit bitmap for color quantiz...\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Unable to allocate %d-bit bitmap for color quantization",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 41,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff2c,\"Unable to allocate %d-bit bitmap for color quanti",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Invalid bit depth [%d] for bitmap\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Invalid bit depth [%d] for bitmap",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 72,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff2c,\"Invalid bit depth [%d] for bitmap\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d-bit color                                      ...\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d-bit color                                                                  ",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 90,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff2c,\"%d-bit color                                     ",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d-color palette created                          ...\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d-color palette created                                                       ",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 116,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff3c,\"%d-color palette created                         ",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 158,
-    "complexity_score": 172,
+    "complexity_score": 217,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 18,
     "pseudocode_lines": 42,
-    "suspect_count": 11,
+    "suspect_count": 15,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "register_param",
       "stack_ref",
       "variadic_preserve"
@@ -399,6 +400,50 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 004708b6 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Can't open movie %s.txt\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Can't open movie %s.txt",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 18,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Can't open movie %s.txt\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d\\n",
+      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
+      "line_number": 20,
+      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(pFVar1,\"%d\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s.mov\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%s.mov",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 25,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff10,\"%s.mov\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Can't open movie %s.mov\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Can't open movie %s.mov",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 30,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Can't open movie %s.mov\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

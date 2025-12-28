@@ -1,16 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 5080,
-    "complexity_score": 5457,
+    "complexity_score": 5542,
     "cross_reference_count": 0,
     "function_call_count": 58,
     "global_count": 186,
     "pseudocode_lines": 2077,
-    "suspect_count": 333,
+    "suspect_count": 341,
     "suspect_types": [
       "badspacebase",
       "concat_artifact",
       "extra_output",
+      "format_string_mismatch",
       "pointer_cast",
       "register_param",
       "sborrow_artifact",
@@ -7188,6 +7189,94 @@
       "match": "in_stack_fffeeba6",
       "text": "in_stack_fffeeba6);",
       "type": "stack_param"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d\\n",
+      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
+      "line_number": 228,
+      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(local_114,\"%d\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"\\\"%[^\\\"]\\\"%n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "\\\"%[^\\\"]\\\"%n",
+      "function_name": "crt_stdio_c_sscanf_FUN_0060013c",
+      "line_number": 637,
+      "match": "crt_stdio_c_sscanf_FUN_0060013c(pcVar25,\"\\\"%[^\\\"]\\\"%n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 1,
+      "description": "Format \"%*s%f%n\" has 4 specifiers but 1 arguments after it",
+      "expected_args": 4,
+      "format_string": "%*s%f%n",
+      "function_name": "crt_stdio_c_sscanf_FUN_0060013c",
+      "line_number": 706,
+      "match": "crt_stdio_c_sscanf_FUN_0060013c(pcVar25,\"%*s%f%n\",&dest->tween_time);",
+      "text": "Format string expects 4 args but got 1",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"[ %[^]] ]%n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "[ %[^]] ]%n",
+      "function_name": "crt_stdio_c_sscanf_FUN_0060013c",
+      "line_number": 818,
+      "match": "crt_stdio_c_sscanf_FUN_0060013c(pcVar16,\"[ %[^]] ]%n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s%n\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "%s%n",
+      "function_name": "crt_stdio_c_sscanf_FUN_0060013c",
+      "line_number": 853,
+      "match": "crt_stdio_c_sscanf_FUN_0060013c(pcVar16,\"%s%n\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d%n\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "%d%n",
+      "function_name": "crt_stdio_c_sscanf_FUN_0060013c",
+      "line_number": 1163,
+      "match": "crt_stdio_c_sscanf_FUN_0060013c(pcVar25,\"%d%n\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d\\n",
+      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
+      "line_number": 1450,
+      "match": "crt_stdio_c_fscanf_FUN_005fe7c0((FILE *)local_b8,\"%d\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 1,
+      "description": "Format \" %[^-] - %s%n\" has 2 specifiers but 1 arguments after it",
+      "expected_args": 2,
+      "format_string": " %[^-] - %s%n",
+      "function_name": "crt_stdio_c_sscanf_FUN_0060013c",
+      "line_number": 1981,
+      "match": "crt_stdio_c_sscanf_FUN_0060013c(pcVar25,\" %[^-] - %s%n\",auStack_23c);",
+      "text": "Format string expects 2 args but got 1",
+      "type": "format_string_mismatch"
     }
   ]
 }

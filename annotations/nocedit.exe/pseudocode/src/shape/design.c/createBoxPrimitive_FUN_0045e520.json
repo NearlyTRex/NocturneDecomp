@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 503,
-    "complexity_score": 260,
+    "complexity_score": 275,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 10,
     "pseudocode_lines": 40,
-    "suspect_count": 20,
+    "suspect_count": 21,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "register_param",
       "stack_ref",
       "warning_unreachable"
@@ -448,6 +449,17 @@
       "match": "&stack0xffffff78",
       "text": "crt_stdio_c_sscanf_FUN_0060013c(&stack0xffffff78,\"%f,%f,%f\");",
       "type": "stack_ref"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%f,%f,%f\" has 3 specifiers but 0 arguments after it",
+      "expected_args": 3,
+      "format_string": "%f,%f,%f",
+      "function_name": "crt_stdio_c_sscanf_FUN_0060013c",
+      "line_number": 41,
+      "match": "crt_stdio_c_sscanf_FUN_0060013c(&stack0xffffff78,\"%f,%f,%f\");",
+      "text": "Format string expects 3 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

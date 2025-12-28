@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 618,
-    "complexity_score": 1247,
+    "complexity_score": 1262,
     "cross_reference_count": 11,
     "function_call_count": 24,
     "global_count": 19,
     "pseudocode_lines": 302,
-    "suspect_count": 91,
+    "suspect_count": 92,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "negative_offset",
       "register_param",
       "stack_param",
@@ -1328,6 +1329,17 @@
       "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
       "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 0049f9e2 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s\\t%s\\t(DIR)\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "%s\\t%s\\t(DIR)",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 223,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_18c,\"%s\\t%s\\t(DIR)\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

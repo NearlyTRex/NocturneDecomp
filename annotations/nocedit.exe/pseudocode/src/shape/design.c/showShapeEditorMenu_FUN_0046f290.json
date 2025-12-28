@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 498,
-    "complexity_score": 233,
+    "complexity_score": 248,
     "cross_reference_count": 2,
     "function_call_count": 44,
     "global_count": 60,
     "pseudocode_lines": 178,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "register_param",
       "stack_ref"
     ],
@@ -773,6 +774,17 @@
       "match": "&stack0xffffff9c",
       "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff9c,0,0);",
       "type": "stack_ref"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Demented Shape Editor    Build date: %s %s\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "Demented Shape Editor    Build date: %s %s",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 45,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff9c,\"Demented Shape Editor    Build date: %s %s\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

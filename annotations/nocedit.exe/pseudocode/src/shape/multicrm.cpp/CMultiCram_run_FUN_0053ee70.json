@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 422,
-    "complexity_score": 349,
+    "complexity_score": 384,
     "cross_reference_count": 1,
     "function_call_count": 16,
     "global_count": 24,
     "pseudocode_lines": 99,
-    "suspect_count": 23,
+    "suspect_count": 26,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "param_count_too_few",
       "register_param",
       "stack_ref"
@@ -746,6 +747,39 @@
       "param_delta": 4,
       "text": "Function declares 1 params but call sites push 5 (4 missing)",
       "type": "param_count_too_few"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Found model : %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Found model : %s",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 25,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffee4,\"Found model : %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s.mdl\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%s.mdl",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 57,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffee4,\"%s.mdl\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s%c.mdl\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "%s%c.mdl",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 83,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffee4,\"%s%c.mdl\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

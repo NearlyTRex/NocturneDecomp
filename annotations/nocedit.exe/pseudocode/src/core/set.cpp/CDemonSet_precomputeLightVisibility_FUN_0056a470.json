@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 398,
-    "complexity_score": 618,
+    "complexity_score": 643,
     "cross_reference_count": 6,
     "function_call_count": 17,
     "global_count": 15,
     "pseudocode_lines": 203,
-    "suspect_count": 38,
+    "suspect_count": 40,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -758,6 +759,28 @@
       "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
       "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0056a91e (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Light %d, Box : %d,%d,%d,%d\" has 5 specifiers but 0 arguments after it",
+      "expected_args": 5,
+      "format_string": "Light %d, Box : %d,%d,%d,%d",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 143,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffe7c,\"Light %d, Box : %d,%d,%d,%d\");",
+      "text": "Format string expects 5 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Precomputing lights from camera : %d\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Precomputing lights from camera : %d",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 189,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffe84,\"Precomputing lights from camera : %d\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

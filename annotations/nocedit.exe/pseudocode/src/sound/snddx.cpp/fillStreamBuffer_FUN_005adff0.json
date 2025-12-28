@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 170,
-    "complexity_score": 297,
+    "complexity_score": 312,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 11,
     "pseudocode_lines": 67,
-    "suspect_count": 20,
+    "suspect_count": 21,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -374,6 +375,17 @@
       "target_function": "sound_sndmain.cpp_logSoundError_FUN_005adba0",
       "text": "Call to variadic function sound_sndmain.cpp_logSoundError_FUN_005adba0 at 005ae1a2 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"DirectSux: Unable to %s.  (%s)\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "DirectSux: Unable to %s.  (%s)",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 62,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_18c,\"DirectSux: Unable to %s.  (%s)\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

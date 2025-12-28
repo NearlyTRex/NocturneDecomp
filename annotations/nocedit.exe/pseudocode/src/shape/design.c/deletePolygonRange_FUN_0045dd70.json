@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 130,
-    "complexity_score": 140,
+    "complexity_score": 155,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 6,
     "pseudocode_lines": 50,
-    "suspect_count": 7,
+    "suspect_count": 8,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "pointer_cast",
       "register_param",
       "stack_ref"
@@ -255,6 +256,17 @@
       "match": "(SShapeEditorPolygon *)((int)",
       "text": "pSVar5 = (SShapeEditorPolygon *)((int)pSVar5 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d,%d\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "%d,%d",
+      "function_name": "crt_stdio_c_sscanf_FUN_0060013c",
+      "line_number": 30,
+      "match": "(iVar2 = crt_stdio_c_sscanf_FUN_0060013c(&stack0xffffff90,\"%d,%d\"), iVar2 == 2)) {",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 1765,
-    "complexity_score": 3133,
+    "complexity_score": 3258,
     "cross_reference_count": 0,
     "function_call_count": 65,
     "global_count": 65,
     "pseudocode_lines": 733,
-    "suspect_count": 235,
+    "suspect_count": 247,
     "suspect_types": [
       "badspacebase",
       "concat_artifact",
+      "format_string_mismatch",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -3228,6 +3229,138 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0058d50a (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Heirarchy in %s does not match that in skeleton %s\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "Heirarchy in %s does not match that in skeleton %s",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 163,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_03670650,\"Heirarchy in %s does not match that in skeleton %s\")",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Display %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Display %s",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 166,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_3e4,\"Display %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Display %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Display %s",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 168,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_3dc,\"Display %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d,%d,%d\\n\" has 3 specifiers but 0 arguments after it",
+      "expected_args": 3,
+      "format_string": "%d,%d,%d\\n",
+      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
+      "line_number": 193,
+      "match": "iVar17 = crt_stdio_c_fscanf_FUN_005fe7c0((FILE *)in_stack_0000000c,\"%d,%d,%d\\n\");",
+      "text": "Format string expects 3 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s is corrupt!\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%s is corrupt!",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 196,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_03670650,\"%s is corrupt!\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Can't open %s.  Keep going anyway?\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Can't open %s.  Keep going anyway?",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 285,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_e2c,\"Can't open %s.  Keep going anyway?\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Can't create %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Can't create %s",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 301,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Can't create %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Error reading %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Error reading %s",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 309,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Error reading %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Error writing %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Error writing %s",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 314,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Error writing %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d\\n",
+      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
+      "line_number": 408,
+      "match": "iVar9 = crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000068,\"%d\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d,%f\\n\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "%d,%f\\n",
+      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
+      "line_number": 417,
+      "match": "iVar12 = crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000068,\"%d,%f\\n\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s%d\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "%s%d",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 695,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0((char *)&CStack_114.precompute_file,\"%s%d\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 656,
-    "complexity_score": 316,
+    "complexity_score": 331,
     "cross_reference_count": 1,
     "function_call_count": 15,
     "global_count": 65,
     "pseudocode_lines": 246,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "pointer_cast",
       "register_param",
       "stack_ref"
@@ -935,6 +936,17 @@
       "match": "(char *)((int)",
       "text": "pcVar4 = (char *)((int)puVar8 * 0x50 + (int)local_38);",
       "type": "pointer_cast"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d\\n",
+      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
+      "line_number": 56,
+      "match": "iVar2 = crt_stdio_c_fscanf_FUN_005fe7c0(local_34,\"%d\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

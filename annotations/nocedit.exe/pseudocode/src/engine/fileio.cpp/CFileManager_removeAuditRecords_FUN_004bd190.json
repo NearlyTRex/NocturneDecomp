@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 484,
-    "complexity_score": 646,
+    "complexity_score": 661,
     "cross_reference_count": 0,
     "function_call_count": 21,
     "global_count": 28,
     "pseudocode_lines": 236,
-    "suspect_count": 36,
+    "suspect_count": 37,
     "suspect_types": [
       "badspacebase",
       "concat_artifact",
+      "format_string_mismatch",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -856,6 +857,17 @@
       "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
       "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 004bd6bb (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 1,
+      "description": "Format \"%d %*c %d %*c %d\" has 7 specifiers but 1 arguments after it",
+      "expected_args": 7,
+      "format_string": "%d %*c %d %*c %d",
+      "function_name": "crt_stdio_c_sscanf_FUN_0060013c",
+      "line_number": 218,
+      "match": "iVar3 = crt_stdio_c_sscanf_FUN_0060013c(acStack_f8,\"%d %*c %d %*c %d\",&stack0xfffffff0);",
+      "text": "Format string expects 7 args but got 1",
+      "type": "format_string_mismatch"
     }
   ]
 }

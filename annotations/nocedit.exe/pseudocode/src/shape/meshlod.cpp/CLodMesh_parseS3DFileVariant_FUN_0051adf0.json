@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 298,
-    "complexity_score": 296,
+    "complexity_score": 311,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 6,
     "pseudocode_lines": 101,
-    "suspect_count": 17,
+    "suspect_count": 18,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "register_param",
       "stack_ref",
       "unaffected_reg",
@@ -355,6 +356,17 @@
       "target_function": "crt_stdio.c_fscanf_FUN_005fe7c0",
       "text": "Call to variadic function crt_stdio.c_fscanf_FUN_005fe7c0 at 0051b033 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 1,
+      "description": "Format \"%d,%*d\\n\" has 3 specifiers but 1 arguments after it",
+      "expected_args": 3,
+      "format_string": "%d,%*d\\n",
+      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
+      "line_number": 29,
+      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,\"%d,%*d\\n\",local_1c);",
+      "text": "Format string expects 3 args but got 1",
+      "type": "format_string_mismatch"
     }
   ]
 }

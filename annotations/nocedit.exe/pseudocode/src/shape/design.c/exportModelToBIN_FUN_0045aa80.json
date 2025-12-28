@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 1273,
-    "complexity_score": 499,
+    "complexity_score": 524,
     "cross_reference_count": 2,
     "function_call_count": 14,
     "global_count": 75,
     "pseudocode_lines": 454,
-    "suspect_count": 3,
+    "suspect_count": 5,
     "suspect_types": [
       "badspacebase",
       "concat_artifact",
+      "format_string_mismatch",
       "register_param"
     ],
     "total_lines": 1727
@@ -1475,6 +1476,28 @@
       "match": "CONCAT44",
       "text": "dVar6 = crt_math_c_ldexp_FUN_00600002((double)CONCAT44 /* combine 2-byte values */(local_18,0x3ff00000),iVar7);",
       "type": "concat_artifact"
+    },
+    {
+      "actual_args": 2,
+      "description": "Format \"\\tMAGNIFY\\t%d\\n\\n\" has 1 specifiers but 2 arguments after it",
+      "expected_args": 1,
+      "format_string": "\\tMAGNIFY\\t%d\\n\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 129,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(local_1c,\"\\tMAGNIFY\\t%d\\n\\n\",local_34,uVar8);",
+      "text": "Format string expects 1 args but got 2",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 3,
+      "description": "Format \"\\tCOLOR\\t%d\\n\" has 1 specifiers but 3 arguments after it",
+      "expected_args": 1,
+      "format_string": "\\tCOLOR\\t%d\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 231,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(local_1c,\"\\tCOLOR\\t%d\\n\",local_2c,uVar8,uVar9);",
+      "text": "Format string expects 1 args but got 3",
+      "type": "format_string_mismatch"
     }
   ]
 }

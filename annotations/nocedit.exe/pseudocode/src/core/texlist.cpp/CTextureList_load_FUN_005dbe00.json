@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 265,
-    "complexity_score": 263,
+    "complexity_score": 288,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 15,
     "pseudocode_lines": 143,
-    "suspect_count": 10,
+    "suspect_count": 12,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "register_param",
       "stack_ref",
       "variadic_preserve"
@@ -436,6 +437,28 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005dbff1 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d\\n",
+      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
+      "line_number": 68,
+      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(local_20,\"%d\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%s\\n",
+      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
+      "line_number": 89,
+      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(local_1c,\"%s\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 464,
-    "complexity_score": 325,
+    "complexity_score": 350,
     "cross_reference_count": 12,
     "function_call_count": 8,
     "global_count": 33,
     "pseudocode_lines": 145,
-    "suspect_count": 16,
+    "suspect_count": 18,
     "suspect_types": [
       "concat_artifact",
+      "format_string_mismatch",
       "sub_artifact",
       "unaffected_reg",
       "unknown_field"
@@ -900,6 +901,28 @@
       "match": "unaff_EDI",
       "text": "(*g_CSoundDevicePtr->vtable->setSfxPos)(g_CSoundDevicePtr,this_ptr,unaff_EDI);",
       "type": "unaffected_reg"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"SFXDBG: sample = %s\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "SFXDBG: sample = %s\\n",
+      "function_name": "engine_console_cpp_CConsole_printf_FUN_00441890",
+      "line_number": 31,
+      "match": "engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,\"SFXDBG: sample = %s\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Killing %s in compute()\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Killing %s in compute()\\n",
+      "function_name": "engine_console_cpp_CConsole_printf_FUN_00441890",
+      "line_number": 144,
+      "match": "engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,\"Killing %s in compute()\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

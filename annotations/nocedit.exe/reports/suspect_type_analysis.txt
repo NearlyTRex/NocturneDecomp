@@ -4,17 +4,18 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  stack_param                    36328 ( 55.7%)
-  pointer_cast                    5330 (  8.2%)
-  stack_ref                       3865 (  5.9%)
+  stack_param                    36328 ( 54.9%)
+  pointer_cast                    5330 (  8.1%)
+  stack_ref                       3865 (  5.8%)
   unknown_field                   3025 (  4.6%)
-  variadic_preserve               2788 (  4.3%)
+  variadic_preserve               2788 (  4.2%)
   unaffected_reg                  2690 (  4.1%)
   register_param                  1837 (  2.8%)
   concat_artifact                 1833 (  2.8%)
   badspacebase                    1625 (  2.5%)
   extra_output                    1441 (  2.2%)
-  callind_preserve                1078 (  1.7%)
+  callind_preserve                1078 (  1.6%)
+  format_string_mismatch           912 (  1.4%)
   suspect_float                    844 (  1.3%)
   param_count_too_few              631 (  1.0%)
   unresolved_funcptr               479 (  0.7%)
@@ -536,6 +537,64 @@ Example functions:
     CALLIND at 0054af25, ADD ESP at 0054af29 (no EBP frame)...
   shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520
     CALLIND at 0051d7de, ADD ESP at 0051d7e1 (no EBP frame)...
+
+====================================================================================================
+TYPE: format_string_mismatch (912 occurrences)
+====================================================================================================
+
+Unique patterns:
+    23x  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%d\n");
+    22x  crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n");
+    11x  crt_stdio_c_fscanf_FUN_005fe7c0(pFVar4,"%d\n");
+    10x  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%f,%f,%f\n");
+     9x  crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%d\n");
+     8x  sound_sndmain_cpp_logSoundError_FUN_005adba0("WAV file is invalid: %s\n");
+     8x  crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,"%d\n");
+     7x  crt_stdio_c_fscanf_FUN_005fe7c0(pFVar4,"%f,%f,%f\n");
+     6x  crt_stdio_c_fscanf_FUN_005fe7c0(file,"%d\n");
+     6x  crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000010,"%d\n");
+     6x  crt_stdio_c_fprintf_FUN_005fe6d0(param_6,"%d\n");
+     6x  crt_stdio_c_fscanf_FUN_005fe7c0(param_6,"%d\n");
+     5x  core_main_c_displayErrorAndQuit_FUN_00506f10("Can't open %s");
+     5x  core_main_c_displayErrorAndQuit_FUN_00506f10("Can't create %s");
+     5x  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%f\n");
+     5x  crt_stdio_c_fprintf_FUN_005fe6d0(file_ptr,"%d\n");
+     5x  engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"%s : %3.2f ms\n");
+     5x  crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%s%f,%f,%f\n");
+     5x  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle," %f,%f,%f\n");
+     4x  crt_stdio_c_fprintf_FUN_005fe6d0(file,"%s\n");
+
+Example functions:
+  cockpit_ckptutil.c_loadEdgeListFile_FUN_004331f0
+    Format string expects 1 args but got 0...
+  cockpit_ckptutil.c_readBitmapFile_FUN_00431870
+    Format string expects 1 args but got 0...
+  cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690
+    Format string expects 1 args but got 0...
+  cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0
+    Format string expects 1 args but got 0...
+  cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af0
+    Format string expects 1 args but got 0...
+  cockpit_ckptutil.c_rasterizeEdgeEndpoints_FUN_004336e0
+    Format string expects 1 args but got 0...
+  cockpit_ckptutil.c_saveEdgeListFile_FUN_00433480
+    Format string expects 1 args but got 0...
+  cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40
+    Format string expects 1 args but got 0...
+  shape_meshlod.cpp_CLodMesh_parseS3DFileVariant_FUN_0051adf0
+    Format string expects 3 args but got 1...
+  shape_meshlod.cpp_CLodMesh_saveReplayData_FUN_0051d250
+    Format string expects 1 args but got 0...
+  shape_meshlod.cpp_CLodMesh_gridLoad_FUN_0051d2d0
+    Format string expects 1 args but got 0...
+  shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520
+    Format string expects 2 args but got 1...
+  shape_meshlod.cpp_CLodMesh_eqSave_FUN_0051d0e0
+    Format string expects 1 args but got 0...
+  shape_meshlod.cpp_CLodMesh_exportToS3D_FUN_0051c100
+    Format string expects 2 args but got 1...
+  shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990
+    Format string expects 2 args but got 0...
 
 ====================================================================================================
 TYPE: suspect_float (844 occurrences)

@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 393,
-    "complexity_score": 320,
+    "complexity_score": 335,
     "cross_reference_count": 0,
     "function_call_count": 18,
     "global_count": 47,
     "pseudocode_lines": 175,
-    "suspect_count": 12,
+    "suspect_count": 13,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -765,6 +766,17 @@
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)local_18 + 0xc) = uVar6;",
       "type": "pointer_cast"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s @ %g\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "%s @ %g",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 169,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_a4,\"%s @ %g\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 119,
-    "complexity_score": 193,
+    "complexity_score": 218,
     "cross_reference_count": 5,
     "function_call_count": 6,
     "global_count": 13,
     "pseudocode_lines": 33,
-    "suspect_count": 14,
+    "suspect_count": 16,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "register_param",
       "stack_ref",
       "variadic_preserve"
@@ -373,6 +374,28 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0043199c (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Unable to open bitmap file (%s).\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Unable to open bitmap file (%s).",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 21,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffb0,\"Unable to open bitmap file (%s).\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Unable to read bitmap file (%s).\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Unable to read bitmap file (%s).",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 28,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffbc,\"Unable to read bitmap file (%s).\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

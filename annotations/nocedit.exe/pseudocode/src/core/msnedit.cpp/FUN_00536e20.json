@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 359,
-    "complexity_score": 272,
+    "complexity_score": 297,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 26,
     "pseudocode_lines": 87,
-    "suspect_count": 16,
+    "suspect_count": 18,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -559,6 +560,28 @@
       "match": "in_stack_ffffff1c",
       "text": "(&this_ptr->motion_controller,motion_name->motion_name,in_stack_ffffff1c);",
       "type": "stack_param"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s (%s)\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "%s (%s)",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 32,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff18,\"%s (%s)\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%6.2f\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%6.2f",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 43,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff18,\"%6.2f\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

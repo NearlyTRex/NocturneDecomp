@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 285,
-    "complexity_score": 263,
+    "complexity_score": 278,
     "cross_reference_count": 1,
     "function_call_count": 15,
     "global_count": 14,
     "pseudocode_lines": 113,
-    "suspect_count": 13,
+    "suspect_count": 14,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "register_param",
       "stack_param",
       "stack_ref"
@@ -427,6 +428,17 @@
       "match": "&stack0xffffff8c",
       "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff8c,0,0);",
       "type": "stack_ref"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Original polygons: %d    New total: %d\\n\\nTotal pa...\" has 3 specifiers but 0 arguments after it",
+      "expected_args": 3,
+      "format_string": "Original polygons: %d    New total: %d\\n\\nTotal passes: %d",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 84,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff8c,\"Original polygons: %d    New total: %d\\n\\nTotal p",
+      "text": "Format string expects 3 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

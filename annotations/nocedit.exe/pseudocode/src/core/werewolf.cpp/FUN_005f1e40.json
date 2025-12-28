@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 182,
-    "complexity_score": 259,
+    "complexity_score": 274,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 4,
     "pseudocode_lines": 69,
-    "suspect_count": 16,
+    "suspect_count": 17,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "param_count_too_few",
       "register_param",
       "stack_param",
@@ -466,6 +467,17 @@
       "param_delta": 1,
       "text": "Function declares 0 params but call sites push 1 (1 missing)",
       "type": "param_count_too_few"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Chain stretched to %f\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Chain stretched to %f\\n",
+      "function_name": "engine_console_cpp_CConsole_printf_FUN_00441890",
+      "line_number": 54,
+      "match": "engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,\"Chain stretched to %f\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

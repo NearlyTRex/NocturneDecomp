@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 130,
-    "complexity_score": 292,
+    "complexity_score": 307,
     "cross_reference_count": 6,
     "function_call_count": 7,
     "global_count": 12,
     "pseudocode_lines": 72,
-    "suspect_count": 20,
+    "suspect_count": 21,
     "suspect_types": [
+      "format_string_mismatch",
       "param_count_too_few",
       "stack_param",
       "unaffected_reg",
@@ -453,6 +454,17 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0055a474 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Out of memory loading script at line %d\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Out of memory loading script at line %d",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 58,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Out of memory loading script at line %d\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 195,
-    "complexity_score": 107,
+    "complexity_score": 122,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 18,
     "pseudocode_lines": 52,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "register_param",
       "stack_ref"
     ],
@@ -349,6 +350,17 @@
       "match": "&stack0xffffff84",
       "text": "engine_2d_c_drawTextColor_FUN_00402430(&stack0xffffff84,local_1c + 1,local_18 + 1);",
       "type": "stack_ref"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 48,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff84,\"%d\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

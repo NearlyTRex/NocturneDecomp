@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 100,
-    "complexity_score": 209,
+    "complexity_score": 224,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 7,
     "pseudocode_lines": 39,
-    "suspect_count": 16,
+    "suspect_count": 17,
     "suspect_types": [
+      "format_string_mismatch",
       "sub_artifact",
       "variadic_preserve"
     ],
@@ -331,6 +332,17 @@
       "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
       "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 005862e0 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"\\\"%s\\\",%g,%g,%g,%g,%g,%g,%g\\n\" has 8 specifiers but 0 arguments after it",
+      "expected_args": 8,
+      "format_string": "\\\"%s\\\",%g,%g,%g,%g,%g,%g,%g\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 15,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"\\\"%s\\\",%g,%g,%g,%g,%g,%g,%g\\n\");",
+      "text": "Format string expects 8 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

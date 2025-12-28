@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 294,
-    "complexity_score": 457,
+    "complexity_score": 612,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 25,
     "pseudocode_lines": 82,
-    "suspect_count": 35,
+    "suspect_count": 50,
     "suspect_types": [
       "concat_artifact",
+      "format_string_mismatch",
       "pointer_cast",
       "stack_param",
       "unaffected_reg",
@@ -693,6 +694,171 @@
       "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
       "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 0052d41b (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%s\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 25,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%s\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"// motion %d: exitForwardFromFrameNumber,exitForwa...\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "// motion %d: exitForwardFromFrameNumber,exitForwardToMotionNumber,exitForwardToFrameNumber\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 42,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"// motion %d: exitForwardFromFrameNumber,exitForwardTo",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"// motion %d: exitForwardCmd,exitForwardTweenTime,...\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "// motion %d: exitForwardCmd,exitForwardTweenTime,exitForwardsetNewStateAsDesired\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 45,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"// motion %d: exitForwardCmd,exitForwardTweenTime,exit",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d,%g,%d\\n\" has 3 specifiers but 0 arguments after it",
+      "expected_args": 3,
+      "format_string": "%d,%g,%d\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 47,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%d,%g,%d\\n\");",
+      "text": "Format string expects 3 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"// motion %d: exitBackwardToMotionNumber,exitBackw...\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "// motion %d: exitBackwardToMotionNumber,exitBackwardToFrameNumber\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 48,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"// motion %d: exitBackwardToMotionNumber,exitBackwardT",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d,%g\\n\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "%d,%g\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 50,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%d,%g\\n\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"// motion %d transition count, list: desiredState,...\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "// motion %d transition count, list: desiredState, cmd, toMotionNumber, toFrameNumber, tweenTime, setNewStateAsDesired\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 51,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"// motion %d transition count, list: desiredState, cmd",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 53,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%d\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d,%d,%d,%g,%g,%d\\n\" has 6 specifiers but 0 arguments after it",
+      "expected_args": 6,
+      "format_string": "%d,%d,%d,%g,%g,%d\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 59,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%d,%d,%d,%g,%g,%d\\n\");",
+      "text": "Format string expects 6 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"// motion %d signal count, list: frameNumber, valu...\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "// motion %d signal count, list: frameNumber, value\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 62,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"// motion %d signal count, list: frameNumber, value\\n\"",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 64,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%d\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d,%d\\n\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "%d,%d\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 68,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%d,%d\\n\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"// motion %d marker count, list\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "// motion %d marker count, list\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 71,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"// motion %d marker count, list\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 73,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%d\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \" %d\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": " %d",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 77,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\" %d\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

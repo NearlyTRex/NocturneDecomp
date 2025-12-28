@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 350,
-    "complexity_score": 858,
+    "complexity_score": 883,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 36,
     "pseudocode_lines": 148,
-    "suspect_count": 67,
+    "suspect_count": 69,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "param_count_too_few",
       "pointer_cast",
       "register_param",
@@ -1060,6 +1061,28 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0057d1d9 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s.raw\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%s.raw",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 90,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_c4,\"%s.raw\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s.act\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%s.act",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 124,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_64,\"%s.act\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

@@ -1,16 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 555,
-    "complexity_score": 739,
+    "complexity_score": 764,
     "cross_reference_count": 0,
     "function_call_count": 28,
     "global_count": 30,
     "pseudocode_lines": 229,
-    "suspect_count": 46,
+    "suspect_count": 48,
     "suspect_types": [
       "badspacebase",
       "callind_preserve",
       "concat_artifact",
+      "format_string_mismatch",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -1019,6 +1020,28 @@
       "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
       "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 004b743c (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s already exists on disk.\\n\\nWould you like to re...\" has 5 specifiers but 0 arguments after it",
+      "expected_args": 5,
+      "format_string": "%s already exists on disk.\\n\\nWould you like to replace the existing file\\n\\n%d bytes\\nmodified on %s\\n\\nwith this one?\\n\\n%d bytes\\nmodified on %s\\n",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 144,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_a3c,\"%s already exists on disk.\\n\\nWould you like to replac",
+      "text": "Format string expects 5 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 181,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0((char *)&pCStack_a4c,\"%d\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

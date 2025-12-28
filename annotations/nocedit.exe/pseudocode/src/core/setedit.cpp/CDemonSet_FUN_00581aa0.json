@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 1363,
-    "complexity_score": 1295,
+    "complexity_score": 1310,
     "cross_reference_count": 0,
     "function_call_count": 36,
     "global_count": 58,
     "pseudocode_lines": 485,
-    "suspect_count": 77,
+    "suspect_count": 78,
     "suspect_types": [
       "badspacebase",
       "concat_artifact",
+      "format_string_mismatch",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -1643,6 +1644,17 @@
       "match": "in_stack_fffff35e",
       "text": "in_stack_fffff35e = 0x5822b4;",
       "type": "stack_param"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Room size: %d\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Room size: %d",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 193,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_194,\"Room size: %d\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 2746,
-    "complexity_score": 6704,
+    "complexity_score": 6729,
     "cross_reference_count": 1,
     "function_call_count": 50,
     "global_count": 68,
     "pseudocode_lines": 1319,
-    "suspect_count": 535,
+    "suspect_count": 537,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "register_param",
       "stack_param",
       "sub_artifact",
@@ -4957,6 +4958,28 @@
       "target_function": "engine_console.cpp_CConsole_printf_FUN_00441890",
       "text": "Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 005bd1dd (EBP frame, no ADD ESP)",
       "type": "variadic_preserve_ebp"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"grabbedBy=%s\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "grabbedBy=%s\\n",
+      "function_name": "engine_console_cpp_CConsole_printf_FUN_00441890",
+      "line_number": 217,
+      "match": "engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,\"grabbedBy=%s\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"pushedObject=%s\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "pushedObject=%s\\n",
+      "function_name": "engine_console_cpp_CConsole_printf_FUN_00441890",
+      "line_number": 225,
+      "match": "engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,\"pushedObject=%s\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

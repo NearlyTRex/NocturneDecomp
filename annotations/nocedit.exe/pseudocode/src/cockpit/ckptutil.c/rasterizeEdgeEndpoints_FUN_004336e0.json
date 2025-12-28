@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 105,
-    "complexity_score": 143,
+    "complexity_score": 168,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 6,
     "pseudocode_lines": 43,
-    "suspect_count": 8,
+    "suspect_count": 10,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "register_param",
       "stack_ref",
       "variadic_preserve"
@@ -257,6 +258,28 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 004337e0 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Edge out of range: edge %d\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Edge out of range: edge %d",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 24,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffeec,\"Edge out of range: edge %d\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Edge out of range: edge %d\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Edge out of range: edge %d",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 33,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffeec,\"Edge out of range: edge %d\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 78,
-    "complexity_score": 223,
+    "complexity_score": 238,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 4,
     "pseudocode_lines": 33,
-    "suspect_count": 18,
+    "suspect_count": 19,
     "suspect_types": [
+      "format_string_mismatch",
       "stack_param",
       "variadic_preserve"
     ],
@@ -248,6 +249,17 @@
       "target_function": "crt_stdio.c_sscanf_FUN_0060013c",
       "text": "Call to variadic function crt_stdio.c_sscanf_FUN_0060013c at 00592582 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d",
+      "function_name": "crt_stdio_c_sscanf_FUN_0060013c",
+      "line_number": 30,
+      "match": "iVar1 = crt_stdio_c_sscanf_FUN_0060013c(in_stack_0000000c,\"%d\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

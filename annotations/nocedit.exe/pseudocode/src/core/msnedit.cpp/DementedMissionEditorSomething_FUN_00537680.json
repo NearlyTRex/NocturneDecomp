@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 335,
-    "complexity_score": 416,
+    "complexity_score": 471,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 25,
     "pseudocode_lines": 111,
-    "suspect_count": 28,
+    "suspect_count": 33,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "register_param",
       "stack_ref",
       "unaffected_reg",
@@ -557,6 +558,61 @@
       "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
       "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 005378db (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"1. Draw sky in dynamic views: %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "1. Draw sky in dynamic views: %s",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 39,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff04,\"1. Draw sky in dynamic views: %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"2. Draw water in dynamic views: %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "2. Draw water in dynamic views: %s",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 41,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff0c,\"2. Draw water in dynamic views: %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"3. Force full lighting in static view: %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "3. Force full lighting in static view: %s",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 43,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff14,\"3. Force full lighting in static view: %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"4. Disable mouse selection of CBarriers: %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "4. Disable mouse selection of CBarriers: %s",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 45,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff1c,\"4. Disable mouse selection of CBarriers: %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"6. Confirm new actor names: %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "6. Confirm new actor names: %s",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 61,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff2c,\"6. Confirm new actor names: %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

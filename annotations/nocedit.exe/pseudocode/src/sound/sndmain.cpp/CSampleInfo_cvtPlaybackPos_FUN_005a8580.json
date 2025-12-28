@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 134,
-    "complexity_score": 512,
+    "complexity_score": 537,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 10,
     "pseudocode_lines": 72,
-    "suspect_count": 42,
+    "suspect_count": 44,
     "suspect_types": [
       "concat_artifact",
+      "format_string_mismatch",
       "stack_param",
       "sub_artifact",
       "unknown_field"
@@ -589,6 +590,28 @@
       "match": "CONCAT44",
       "text": "return (double)CONCAT44 /* combine 2-byte values */(position._0_4_,this_ptr);",
       "type": "concat_artifact"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"SampleInfo::cvtPlaybackPos - can't use relative sa...\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "SampleInfo::cvtPlaybackPos - can't use relative sample position when length of %s is not known.",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 22,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"SampleInfo::cvtPlaybackPos - can't use relative sample",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"SampleInfo::cvtPlaybackPos - can't use relative sa...\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "SampleInfo::cvtPlaybackPos - can't use relative sample position when length of %s is not known.",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 54,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"SampleInfo::cvtPlaybackPos - can't use relative sample",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

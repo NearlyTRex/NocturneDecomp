@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 106,
-    "complexity_score": 201,
+    "complexity_score": 216,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 15,
     "pseudocode_lines": 46,
-    "suspect_count": 13,
+    "suspect_count": 14,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "pointer_cast",
       "register_param",
       "stack_ref",
@@ -300,6 +301,17 @@
       "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
       "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0056d284 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d spot lights\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d spot lights",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 45,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffef8,\"%d spot lights\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

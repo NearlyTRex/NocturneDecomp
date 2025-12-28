@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 717,
-    "complexity_score": 1315,
+    "complexity_score": 1330,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 108,
     "pseudocode_lines": 390,
-    "suspect_count": 91,
+    "suspect_count": 92,
     "suspect_types": [
+      "format_string_mismatch",
       "param_count_too_few",
       "stack_param",
       "variadic_preserve"
@@ -1458,6 +1459,17 @@
       "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
       "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 005615f7 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Missing closing ' in template string: %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Missing closing ' in template string: %s",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 380,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Missing closing ' in template string: %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 513,
-    "complexity_score": 940,
+    "complexity_score": 1005,
     "cross_reference_count": 1,
     "function_call_count": 23,
     "global_count": 30,
     "pseudocode_lines": 215,
-    "suspect_count": 69,
+    "suspect_count": 75,
     "suspect_types": [
       "badspacebase",
       "callind_preserve",
+      "format_string_mismatch",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -980,6 +981,72 @@
       "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
       "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 005adaa5 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Orphaned sfx file %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Orphaned sfx file %s",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 80,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_748,\"Orphaned sfx file %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"sound\\\\%s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "sound\\\\%s",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 109,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(auStack_b58 + 500,\"sound\\\\%s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Can't get file info for %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Can't get file info for %s",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 113,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_744,\"Can't get file info for %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s found in both wav and mp3 format\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%s found in both wav and mp3 format",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 123,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_73c,\"%s found in both wav and mp3 format\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"No sfx file for %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "No sfx file for %s",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 134,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(in_stack_fffff0f8,\"No sfx file for %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s older than %s\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "%s older than %s",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 145,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0((char *)this_ptr,\"%s older than %s\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

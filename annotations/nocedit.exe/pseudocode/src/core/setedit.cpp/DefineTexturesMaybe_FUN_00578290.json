@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 150,
-    "complexity_score": 262,
+    "complexity_score": 287,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 16,
     "pseudocode_lines": 77,
-    "suspect_count": 16,
+    "suspect_count": 18,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -352,6 +353,28 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0057840c (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Ground type list is full!  (Max is %d)\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Ground type list is full!  (Max is %d)",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 50,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Ground type list is full!  (Max is %d)\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Texture filename %s is too long to add to CGroundT...\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Texture filename %s is too long to add to CGroundTypeList!",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 64,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Texture filename %s is too long to add to CGroundTypeL",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

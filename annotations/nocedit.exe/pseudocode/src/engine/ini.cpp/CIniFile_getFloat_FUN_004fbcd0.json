@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 116,
+    "complexity_score": 131,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
     "pseudocode_lines": 11,
-    "suspect_count": 8,
+    "suspect_count": 9,
     "suspect_types": [
       "badspacebase",
+      "format_string_mismatch",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -230,6 +231,17 @@
       "target_function": "crt_stdio.c_sscanf_FUN_0060013c",
       "text": "Call to variadic function crt_stdio.c_sscanf_FUN_0060013c at 004fbd1a (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%f\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%f",
+      "function_name": "crt_stdio_c_sscanf_FUN_0060013c",
+      "line_number": 12,
+      "match": "crt_stdio_c_sscanf_FUN_0060013c(acStack_60,\"%f\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

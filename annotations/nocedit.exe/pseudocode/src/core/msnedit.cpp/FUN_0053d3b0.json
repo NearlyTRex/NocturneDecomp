@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 364,
-    "complexity_score": 634,
+    "complexity_score": 679,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 20,
     "pseudocode_lines": 134,
-    "suspect_count": 46,
+    "suspect_count": 50,
     "suspect_types": [
       "badspacebase",
       "concat_artifact",
+      "format_string_mismatch",
       "param_count_too_few",
       "register_param",
       "stack_param",
@@ -861,6 +862,50 @@
       "param_delta": 1,
       "text": "Function declares 0 params but call sites push 1 (1 missing)",
       "type": "param_count_too_few"
+    },
+    {
+      "actual_args": 1,
+      "description": "Format \"%s\\t%s\\t%s\\t%d\" has 4 specifiers but 1 arguments after it",
+      "expected_args": 4,
+      "format_string": "%s\\t%s\\t%s\\t%d",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 68,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_224,\"%s\\t%s\\t%s\\t%d\",pCVar2);",
+      "text": "Format string expects 4 args but got 1",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Total enemy HP\\t%g\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Total enemy HP\\t%g",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 89,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_224,\"Total enemy HP\\t%g\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Total ammo\\t%d\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Total ammo\\t%d",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 93,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_224,\"Total ammo\\t%d\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Total\\t\\t\\t%d\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Total\\t\\t\\t%d",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 95,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_224,\"Total\\t\\t\\t%d\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

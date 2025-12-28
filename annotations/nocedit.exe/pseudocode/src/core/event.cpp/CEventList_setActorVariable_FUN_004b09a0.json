@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 215,
-    "complexity_score": 368,
+    "complexity_score": 383,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 6,
     "pseudocode_lines": 83,
-    "suspect_count": 27,
+    "suspect_count": 28,
     "suspect_types": [
+      "format_string_mismatch",
       "stack_param",
       "unaffected_reg",
       "variadic_preserve"
@@ -356,6 +357,17 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 004b0a99 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Tried to assign actor var %s an actor of type %s w...\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "Tried to assign actor var %s an actor of type %s with no name",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 18,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Tried to assign actor var %s an actor of type %s with ",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 183,
-    "complexity_score": 318,
+    "complexity_score": 373,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 11,
     "pseudocode_lines": 73,
-    "suspect_count": 23,
+    "suspect_count": 28,
     "suspect_types": [
+      "format_string_mismatch",
       "pointer_cast",
       "stack_param",
       "variadic_preserve"
@@ -418,6 +419,61 @@
       "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
       "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 005a8e7a (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \" channel=%d%s\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": " channel=%d%s",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 18,
+      "match": "iVar1 = crt_stdio_c_sprintf_FUN_005fdbd0(output_buffer,\" channel=%d%s\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \" posPtrFloat=%p\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": " posPtrFloat=%p",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 32,
+      "match": "iVar1 = crt_stdio_c_sprintf_FUN_005fdbd0(output_buffer,\" posPtrFloat=%p\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \" posPtrDouble=%p\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": " posPtrDouble=%p",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 36,
+      "match": "iVar1 = crt_stdio_c_sprintf_FUN_005fdbd0(output_buffer,\" posPtrDouble=%p\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \" velPtrFloat=%p\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": " velPtrFloat=%p",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 51,
+      "match": "iVar1 = crt_stdio_c_sprintf_FUN_005fdbd0(output_buffer,\" velPtrFloat=%p\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \" velPtrDouble=%p\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": " velPtrDouble=%p",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 55,
+      "match": "iVar1 = crt_stdio_c_sprintf_FUN_005fdbd0(output_buffer,\" velPtrDouble=%p\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }
