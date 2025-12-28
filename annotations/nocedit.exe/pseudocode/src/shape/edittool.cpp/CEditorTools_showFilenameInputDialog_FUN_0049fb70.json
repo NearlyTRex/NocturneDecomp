@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 438,
-    "complexity_score": 668,
+    "complexity_score": 683,
     "cross_reference_count": 12,
     "function_call_count": 21,
     "global_count": 23,
     "pseudocode_lines": 223,
-    "suspect_count": 42,
+    "suspect_count": 43,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -105,86 +106,107 @@
   "function_calls": [
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
       "addr": "00600770",
+      "is_variadic": false,
       "name": "crt_string.c_strupr_FUN_00600770"
     },
     {
       "addr": "00403260",
+      "is_variadic": false,
       "name": "engine_2d.c_clearInputAndWait_FUN_00403260"
     },
     {
       "addr": "00406d80",
+      "is_variadic": false,
       "name": "engine_3d.c_setRenderAlpha_FUN_00406d80"
     },
     {
       "addr": "004cda80",
+      "is_variadic": false,
       "name": "engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80"
     },
     {
       "addr": "004d01d0",
+      "is_variadic": false,
       "name": "engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0"
     },
     {
       "addr": "004cfe80",
+      "is_variadic": false,
       "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80"
     },
     {
       "addr": "00502460",
+      "is_variadic": false,
       "name": "engine_keys.cpp_CKeys_getInputKey_FUN_00502460"
     },
     {
       "addr": "004a0890",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_004a0890"
     },
     {
       "addr": "004a0f80",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80"
     },
     {
       "addr": "004a0dd0",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0"
     },
     {
       "addr": "0049d5d0",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CInputString_backspace_FUN_0049d5d0"
     },
     {
       "addr": "0049d580",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CInputString_deleteSelection_FUN_0049d580"
     },
     {
       "addr": "0049d9b0",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CInputString_draw_FUN_0049d9b0"
     },
     {
       "addr": "0049d6c0",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CInputString_handleKeyboardInput_FUN_0049d6c0"
     },
     {
       "addr": "0049d3d0",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CInputString_init_FUN_0049d3d0"
     },
     {
       "addr": "0049d480",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CInputString_insertChar_FUN_0049d480"
     },
     {
       "addr": "0049d460",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CInputString_setSelectionToCursor_FUN_0049d460"
     },
     {
       "addr": "005441f0",
+      "is_variadic": false,
       "name": "support_newmsg.cpp_getLocalizedString_FUN_005441f0"
     },
     {
       "addr": "005eda20",
+      "is_variadic": false,
       "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20"
     },
     {
       "addr": "005f2f00",
+      "is_variadic": false,
       "name": "wincore_winrun.cpp_wasKeyPressed_FUN_005f2f00"
     }
   ],
@@ -778,6 +800,19 @@
       "match": "in_stack_0000002c",
       "text": "g_InputKeyMask = in_stack_0000002c;",
       "type": "stack_param"
+    },
+    {
+      "call_address": "0049fbb3",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0049fbb8",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0049fbb3",
+      "type": "call_variadic"
     }
   ]
 }

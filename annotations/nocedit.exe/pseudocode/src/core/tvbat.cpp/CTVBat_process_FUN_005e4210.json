@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 791,
-    "complexity_score": 618,
+    "complexity_score": 633,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 29,
     "pseudocode_lines": 358,
-    "suspect_count": 23,
+    "suspect_count": 24,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "extra_output",
       "register_param",
       "stack_param",
@@ -33,50 +34,62 @@
   "function_calls": [
     {
       "addr": "0040cc10",
+      "is_variadic": false,
       "name": "core_actor.cpp_getRandomFloat_FUN_0040cc10"
     },
     {
       "addr": "0040c6d0",
+      "is_variadic": false,
       "name": "core_actor.cpp_isOfClass_FUN_0040c6d0"
     },
     {
       "addr": "0040cd70",
+      "is_variadic": false,
       "name": "core_actor.cpp_normalizeAngleToPi_FUN_0040cd70"
     },
     {
       "addr": "00427db0",
+      "is_variadic": false,
       "name": "core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0"
     },
     {
       "addr": "00478d80",
+      "is_variadic": false,
       "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80"
     },
     {
       "addr": "00495b70",
+      "is_variadic": false,
       "name": "core_dtrace.cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70"
     },
     {
       "addr": "004edbb0",
+      "is_variadic": false,
       "name": "core_gore.cpp_FUN_004edbb0"
     },
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
       "addr": "005743c0",
+      "is_variadic": false,
       "name": "core_setcolid.cpp_SCollisionInfo_ctor_FUN_005743c0"
     },
     {
       "addr": "006013b1",
+      "is_variadic": false,
       "name": "crt_math.c_atan2_FUN_006013b1"
     },
     {
       "addr": "005a9660",
+      "is_variadic": false,
       "name": "sound_sndmain.cpp_isSfxPlaying_FUN_005a9660"
     },
     {
       "addr": "005aa290",
+      "is_variadic": false,
       "name": "sound_sndmain.cpp_isWithinListenerRadius_FUN_005aa290"
     }
   ],
@@ -897,6 +910,19 @@
       "match": "in_stack_00000008",
       "text": "(fVar13 = *(float *)(this_ptr->field16_0xc0e8 + 4) - in_stack_00000008,",
       "type": "stack_param"
+    },
+    {
+      "call_address": "005e4464",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "005e4469",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005e4464",
+      "type": "call_variadic"
     }
   ],
   "vtable_info": {

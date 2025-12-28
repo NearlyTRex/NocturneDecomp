@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 488,
-    "complexity_score": 564,
+    "complexity_score": 589,
     "cross_reference_count": 1,
     "function_call_count": 29,
     "global_count": 39,
     "pseudocode_lines": 199,
-    "suspect_count": 33,
+    "suspect_count": 35,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "concat_artifact",
       "register_param",
       "stack_param",
@@ -41,118 +42,147 @@
   "function_calls": [
     {
       "addr": "004eed80",
+      "is_variadic": false,
       "name": "core_ground.cpp_getGroundTypeName_FUN_004eed80"
     },
     {
       "addr": "00569410",
+      "is_variadic": false,
       "name": "core_set.cpp_CDemonSet_load_FUN_00569410"
     },
     {
       "addr": "00576da0",
+      "is_variadic": false,
       "name": "core_setedit.cpp_CDemonSet_BuildingThumbnailImages_FUN_00576da0"
     },
     {
       "addr": "0057a0c0",
+      "is_variadic": false,
       "name": "core_setedit.cpp_CDemonSet_ExportSomething_FUN_0057a0c0"
     },
     {
       "addr": "00583170",
+      "is_variadic": false,
       "name": "core_setedit.cpp_CDemonSet_FUN_00583170"
     },
     {
       "addr": "00578a20",
+      "is_variadic": false,
       "name": "core_setedit.cpp_CDemonSet_OpenAndProcessFileMaybe_FUN_00578a20"
     },
     {
       "addr": "0057a2a0",
+      "is_variadic": false,
       "name": "core_setedit.cpp_CDemonSet_save_FUN_0057a2a0"
     },
     {
       "addr": "0057a940",
+      "is_variadic": false,
       "name": "core_setedit.cpp_CDemonSet_ViewerVisitSet_FUN_0057a940"
     },
     {
       "addr": "0057e7c0",
+      "is_variadic": false,
       "name": "core_setedit.cpp_DementedCameraEditor_FUN_0057e7c0"
     },
     {
       "addr": "00580730",
+      "is_variadic": false,
       "name": "core_setedit.cpp_DementedFogEditor_FUN_00580730"
     },
     {
       "addr": "00578630",
+      "is_variadic": false,
       "name": "core_setedit.cpp_EditingGroundTypesAndSaving_FUN_00578630"
     },
     {
       "addr": "0057c5d0",
+      "is_variadic": false,
       "name": "core_setedit.cpp_showDementedLightEditor_FUN_0057c5d0"
     },
     {
       "addr": "005fdbd0",
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "00600770",
+      "is_variadic": false,
       "name": "crt_string.c_strupr_FUN_00600770"
     },
     {
       "addr": "00403260",
+      "is_variadic": false,
       "name": "engine_2d.c_clearInputAndWait_FUN_00403260"
     },
     {
       "addr": "00401fd0",
+      "is_variadic": false,
       "name": "engine_2d.c_drawText_FUN_00401fd0"
     },
     {
       "addr": "00481f80",
+      "is_variadic": false,
       "name": "engine_dosio.c_ensureTrailingSlash_FUN_00481f80"
     },
     {
       "addr": "00481f50",
+      "is_variadic": false,
       "name": "engine_dosio.c_makePath_FUN_00481f50"
     },
     {
       "addr": "00481f20",
+      "is_variadic": false,
       "name": "engine_dosio.c_splitPath_FUN_00481f20"
     },
     {
       "addr": "00502470",
+      "is_variadic": false,
       "name": "engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_00502470"
     },
     {
       "addr": "0049f420",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420"
     },
     {
       "addr": "0049fb70",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70"
     },
     {
       "addr": "0049f270",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270"
     },
     {
       "addr": "004a3b90",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CPickList_ctor_FUN_004a3b90"
     },
     {
       "addr": "004a3e20",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20"
     },
     {
       "addr": "004a3c80",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CPickList_dtor_FUN_004a3c80"
     },
     {
       "addr": "004a2b80",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CStrList_add_FUN_004a2b80"
     },
     {
       "addr": "005eda20",
+      "is_variadic": false,
       "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20"
     },
     {
       "addr": "005b3e70",
+      "is_variadic": false,
       "name": "wincore_windll.cpp_clearScreen_FUN_005b3e70"
     }
   ],
@@ -749,6 +779,32 @@
       "match": "CONCAT31",
       "text": "if (CONCAT31 /* combine 2-byte values */(extraout_var,bVar2) != 0) {",
       "type": "concat_artifact"
+    },
+    {
+      "call_address": "00584a39",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "00584a3e",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00584a39",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "00584a9b",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "00584aa0",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00584a9b",
+      "type": "call_variadic"
     }
   ]
 }

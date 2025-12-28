@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 883,
-    "complexity_score": 2068,
+    "complexity_score": 2093,
     "cross_reference_count": 7,
     "function_call_count": 17,
     "global_count": 11,
     "pseudocode_lines": 403,
-    "suspect_count": 163,
+    "suspect_count": 165,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "callind_esp_no_frame",
       "pointer_cast",
       "register_param",
@@ -77,70 +78,87 @@
   "function_calls": [
     {
       "addr": "0040c790",
+      "is_variadic": false,
       "name": "core_actor.cpp_castToClassHash_FUN_0040c790"
     },
     {
       "addr": "00409270",
+      "is_variadic": false,
       "name": "core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_00409270"
     },
     {
       "addr": "00408ec0",
+      "is_variadic": false,
       "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0"
     },
     {
       "addr": "00408e80",
+      "is_variadic": false,
       "name": "core_actor.cpp_CDemonActor_transformVector_FUN_00408e80"
     },
     {
       "addr": "00408f10",
+      "is_variadic": false,
       "name": "core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10"
     },
     {
       "addr": "00421010",
+      "is_variadic": false,
       "name": "core_box.cpp_CBoundingBox3D_doesBoxIntersect_FUN_00421010"
     },
     {
       "addr": "004202b0",
+      "is_variadic": false,
       "name": "core_box.cpp_CBoundingBox3D_getCorner_FUN_004202b0"
     },
     {
       "addr": "00478740",
+      "is_variadic": false,
       "name": "core_dmodel.cpp_CKeyFramedModel_getFloorHeight_FUN_00478740"
     },
     {
       "addr": "00478d80",
+      "is_variadic": false,
       "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80"
     },
     {
       "addr": "00496950",
+      "is_variadic": false,
       "name": "core_dtrace.cpp_CDemonRaytrace_cylinderGroundCheck_FUN_00496950"
     },
     {
       "addr": "004966f0",
+      "is_variadic": false,
       "name": "core_dtrace.cpp_CDemonRaytrace_getGroundHeight_FUN_004966f0"
     },
     {
       "addr": "0049a790",
+      "is_variadic": false,
       "name": "core_dtri.cpp_CDemonTriangle_buildCollision_FUN_0049a790"
     },
     {
       "addr": "0049b2f0",
+      "is_variadic": false,
       "name": "core_dtri.cpp_rayTriangleFloorTest_FUN_0049b2f0"
     },
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
       "addr": "00572e20",
+      "is_variadic": false,
       "name": "core_setcolid.cpp_CDemonSet_isActorIgnored_FUN_00572e20"
     },
     {
       "addr": "005743c0",
+      "is_variadic": false,
       "name": "core_setcolid.cpp_SCollisionInfo_ctor_FUN_005743c0"
     },
     {
       "addr": "005fe667",
+      "is_variadic": false,
       "name": "crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667"
     }
   ],
@@ -1583,6 +1601,32 @@
       "return_address": "0057231e",
       "text": "CALLIND at 0057231b, ADD ESP at 0057231e (no EBP frame)",
       "type": "callind_esp_no_frame"
+    },
+    {
+      "call_address": "00572138",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0057213d",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00572138",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "00572307",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0057230c",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00572307",
+      "type": "call_variadic"
     }
   ]
 }

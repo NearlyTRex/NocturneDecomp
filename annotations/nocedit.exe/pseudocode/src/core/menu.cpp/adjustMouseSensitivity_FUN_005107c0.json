@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 240,
-    "complexity_score": 133,
+    "complexity_score": 148,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 14,
     "pseudocode_lines": 83,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
+      "call_variadic",
       "stack_param",
       "sub_artifact"
     ],
@@ -36,42 +37,52 @@
   "function_calls": [
     {
       "addr": "00403260",
+      "is_variadic": false,
       "name": "engine_2d.c_clearInputAndWait_FUN_00403260"
     },
     {
       "addr": "00403170",
+      "is_variadic": false,
       "name": "engine_2d.c_fillRectColor_FUN_00403170"
     },
     {
       "addr": "00403200",
+      "is_variadic": false,
       "name": "engine_2d.c_fillRectWithBorder_FUN_00403200"
     },
     {
       "addr": "004cdf30",
+      "is_variadic": true,
       "name": "engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30"
     },
     {
       "addr": "004d01d0",
+      "is_variadic": false,
       "name": "engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0"
     },
     {
       "addr": "004a0890",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_004a0890"
     },
     {
       "addr": "004a0f80",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80"
     },
     {
       "addr": "004a0dd0",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0"
     },
     {
       "addr": "005eda20",
+      "is_variadic": false,
       "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20"
     },
     {
       "addr": "005f30d0",
+      "is_variadic": false,
       "name": "wincore_winrun.cpp_setCursorPosition_FUN_005f30d0"
     }
   ],
@@ -378,6 +389,19 @@
       "match": "in_stack_ffffffec",
       "text": "in_stack_ffffffec = g_CKeysPtr;",
       "type": "stack_param"
+    },
+    {
+      "call_address": "0051099e",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30",
+      "return_address": "005109a3",
+      "target_address": "0x4cdf30",
+      "target_function": "engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30",
+      "text": "Call to variadic function engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30 at 0051099e",
+      "type": "call_variadic"
     }
   ]
 }

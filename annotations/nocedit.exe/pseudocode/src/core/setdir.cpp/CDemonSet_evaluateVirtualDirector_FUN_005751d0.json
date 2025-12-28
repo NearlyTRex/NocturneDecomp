@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 745,
-    "complexity_score": 522,
+    "complexity_score": 547,
     "cross_reference_count": 8,
     "function_call_count": 11,
     "global_count": 53,
     "pseudocode_lines": 312,
-    "suspect_count": 18,
+    "suspect_count": 20,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "pointer_cast",
       "register_param",
       "stack_ref",
@@ -82,46 +83,57 @@
   "function_calls": [
     {
       "addr": "00408ec0",
+      "is_variadic": false,
       "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0"
     },
     {
       "addr": "004202b0",
+      "is_variadic": false,
       "name": "core_box.cpp_CBoundingBox3D_getCorner_FUN_004202b0"
     },
     {
       "addr": "00421060",
+      "is_variadic": false,
       "name": "core_box.cpp_CBoundingBox3D_getMaximumBound_FUN_00421060"
     },
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
       "addr": "0056ae50",
+      "is_variadic": false,
       "name": "core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50"
     },
     {
       "addr": "00576870",
+      "is_variadic": false,
       "name": "core_setdir.cpp_CDemonSet_FUN_00576870"
     },
     {
       "addr": "00574ba0",
+      "is_variadic": false,
       "name": "core_setdir.cpp_CZThumb_calculateActorVisibility_FUN_00574ba0"
     },
     {
       "addr": "00585970",
+      "is_variadic": false,
       "name": "core_setutil.cpp_C3DSCamera_testSphereInFrustum_FUN_00585970"
     },
     {
       "addr": "005fe6b0",
+      "is_variadic": false,
       "name": "crt_math.c_round_FUN_005fe6b0"
     },
     {
       "addr": "0048cae0",
+      "is_variadic": false,
       "name": "engine_drender.cpp_CDemonRenderer_getFaceCount_FUN_0048cae0"
     },
     {
       "addr": "0048cac0",
+      "is_variadic": false,
       "name": "engine_drender.cpp_CDemonRenderer_setFaceCount_FUN_0048cac0"
     }
   ],
@@ -773,6 +785,32 @@
       "match": "1.4013e-45",
       "text": "fStack_38 = 1.4013e-45;",
       "type": "suspect_float"
+    },
+    {
+      "call_address": "00575527",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0057552c",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00575527",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "005755f4",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "005755f9",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005755f4",
+      "type": "call_variadic"
     }
   ]
 }

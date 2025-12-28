@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 47,
+    "complexity_score": 62,
     "cross_reference_count": 6,
     "function_call_count": 5,
     "global_count": 8,
     "pseudocode_lines": 32,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "call_variadic",
       "pointer_cast"
     ],
     "total_lines": 107
@@ -65,22 +66,27 @@
   "function_calls": [
     {
       "addr": "00474770",
+      "is_variadic": false,
       "name": "core_dlight.cpp_CDemonLight_applyFilter_FUN_00474770"
     },
     {
       "addr": "004728b0",
+      "is_variadic": false,
       "name": "core_dlight.cpp_CDemonLight_free_FUN_004728b0"
     },
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
       "addr": "005fe6b0",
+      "is_variadic": false,
       "name": "crt_math.c_round_FUN_005fe6b0"
     },
     {
       "addr": "0050f250",
+      "is_variadic": false,
       "name": "shape_memdbg.cpp_debugMalloc_FUN_0050f250"
     }
   ],
@@ -204,6 +210,19 @@
       "match": "(ushort *)((int)",
       "text": "this_ptr->shadow_depth_buffer = (ushort *)((int)this_ptr->shadow_buffer_raw + 0x10U & 0xfffffff0);",
       "type": "pointer_cast"
+    },
+    {
+      "call_address": "00472896",
+      "caller_has_stack_issues": false,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0047289b",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00472896",
+      "type": "call_variadic"
     }
   ]
 }

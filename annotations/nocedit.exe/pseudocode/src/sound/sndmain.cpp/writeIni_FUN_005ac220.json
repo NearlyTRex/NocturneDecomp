@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 170,
-    "complexity_score": 213,
+    "complexity_score": 238,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 13,
     "pseudocode_lines": 73,
-    "suspect_count": 12,
+    "suspect_count": 14,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "register_param",
       "stack_ref",
       "unaffected_reg"
@@ -38,50 +39,62 @@
   "function_calls": [
     {
       "addr": "005fdbd0",
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "004fbd30",
+      "is_variadic": false,
       "name": "engine_ini.cpp_CIniFile_setFloatValue_FUN_004fbd30"
     },
     {
       "addr": "004fbc90",
+      "is_variadic": false,
       "name": "engine_ini.cpp_CIniFile_setInteger_FUN_004fbc90"
     },
     {
       "addr": "004fbbb0",
+      "is_variadic": false,
       "name": "engine_ini.cpp_CIniFile_setString_FUN_004fbbb0"
     },
     {
       "addr": "005ab210",
+      "is_variadic": false,
       "name": "sound_sndmain.cpp_getAudioFormat_FUN_005ab210"
     },
     {
       "addr": "005abea0",
+      "is_variadic": false,
       "name": "sound_sndmain.cpp_getMaxSwLatency_FUN_005abea0"
     },
     {
       "addr": "005a9d90",
+      "is_variadic": false,
       "name": "sound_sndmain.cpp_getSfxChannelVol_FUN_005a9d90"
     },
     {
       "addr": "005ab2e0",
+      "is_variadic": false,
       "name": "sound_sndmain.cpp_getSoundDeviceCount_FUN_005ab2e0"
     },
     {
       "addr": "005ab370",
+      "is_variadic": false,
       "name": "sound_sndmain.cpp_getSoundDeviceInfo_FUN_005ab370"
     },
     {
       "addr": "005ab590",
+      "is_variadic": false,
       "name": "sound_sndmain.cpp_isHardwareMixingEnabled_FUN_005ab590"
     },
     {
       "addr": "005a9ea0",
+      "is_variadic": false,
       "name": "sound_sndmain.cpp_isSfxChannelEnabled_FUN_005a9ea0"
     },
     {
       "addr": "005a96b0",
+      "is_variadic": false,
       "name": "sound_sndmain.cpp_isSoundEnabled_FUN_005a96b0"
     }
   ],
@@ -400,6 +413,32 @@
       "match": "unaff_EBX",
       "text": "engine_ini_cpp_CIniFile_setInteger_FUN_004fbc90(ini_file,\"Hz\",unaff_EBX);",
       "type": "unaffected_reg"
+    },
+    {
+      "call_address": "005ac371",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "005ac376",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 005ac371",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "005ac3a2",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "005ac3a7",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 005ac3a2",
+      "type": "call_variadic"
     }
   ]
 }

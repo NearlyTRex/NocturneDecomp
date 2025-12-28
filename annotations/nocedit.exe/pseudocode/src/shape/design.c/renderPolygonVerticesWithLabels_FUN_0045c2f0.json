@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 195,
-    "complexity_score": 109,
+    "complexity_score": 124,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 18,
     "pseudocode_lines": 54,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "register_param",
       "stack_ref"
     ],
@@ -37,22 +38,27 @@
   "function_calls": [
     {
       "addr": "005fe6b0",
+      "is_variadic": false,
       "name": "crt_math.c_round_FUN_005fe6b0"
     },
     {
       "addr": "005fdbd0",
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "00402430",
+      "is_variadic": false,
       "name": "engine_2d.c_drawTextColor_FUN_00402430"
     },
     {
       "addr": "00401140",
+      "is_variadic": false,
       "name": "engine_2d.c_plotPixel_FUN_00401140"
     },
     {
       "addr": "0050cd70",
+      "is_variadic": false,
       "name": "engine_matrix.c_transformToCache_FUN_0050cd70"
     }
   ],
@@ -321,6 +327,19 @@
       "match": "&stack0xffffff84",
       "text": "engine_2d_c_drawTextColor_FUN_00402430(&stack0xffffff84,local_1c + 1,local_18 + 1);",
       "type": "stack_ref"
+    },
+    {
+      "call_address": "0045c4bc",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "0045c4c1",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0045c4bc",
+      "type": "call_variadic"
     }
   ]
 }

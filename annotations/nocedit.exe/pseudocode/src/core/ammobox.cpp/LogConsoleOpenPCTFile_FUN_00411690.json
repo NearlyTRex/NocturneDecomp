@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 35,
-    "complexity_score": 86,
+    "complexity_score": 101,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 3,
     "pseudocode_lines": 16,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
+      "call_variadic",
       "callind_esp_no_frame",
       "param_count_too_few",
       "unaffected_reg",
@@ -44,6 +45,7 @@
   "function_calls": [
     {
       "addr": "00441890",
+      "is_variadic": true,
       "name": "engine_console.cpp_CConsole_printf_FUN_00441890"
     }
   ],
@@ -191,6 +193,19 @@
       "param_delta": 3,
       "text": "Function declares 0 params but call sites push 3 (3 missing)",
       "type": "param_count_too_few"
+    },
+    {
+      "call_address": "004116b5",
+      "caller_has_stack_issues": false,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "unknown",
+      "esp_certainty_at_call": "known",
+      "match": "CALL engine_console.cpp_CConsole_printf_FUN_00441890",
+      "return_address": "004116ba",
+      "target_address": "0x441890",
+      "target_function": "engine_console.cpp_CConsole_printf_FUN_00441890",
+      "text": "Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 004116b5",
+      "type": "call_variadic"
     }
   ]
 }

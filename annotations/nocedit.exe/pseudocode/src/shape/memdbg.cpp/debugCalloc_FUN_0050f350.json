@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 116,
-    "complexity_score": 90,
+    "complexity_score": 135,
     "cross_reference_count": 9,
     "function_call_count": 8,
     "global_count": 6,
     "pseudocode_lines": 45,
-    "suspect_count": 4,
+    "suspect_count": 8,
     "suspect_types": [
+      "call_variadic",
       "stack_param"
     ],
     "total_lines": 161
@@ -83,34 +84,42 @@
   "function_calls": [
     {
       "addr": "00601bb0",
+      "is_variadic": false,
       "name": "crt_memory.c_malloc_FUN_00601bb0"
     },
     {
       "addr": "005fde40",
+      "is_variadic": false,
       "name": "crt_memory.c_memset_FUN_005fde40"
     },
     {
       "addr": "0050eef0",
+      "is_variadic": false,
       "name": "shape_memdbg.cpp_SMemHead_add_FUN_0050eef0"
     },
     {
       "addr": "0050eea0",
+      "is_variadic": false,
       "name": "shape_memdbg.cpp_SMemHead_recordSourceFile_FUN_0050eea0"
     },
     {
       "addr": "0050f150",
+      "is_variadic": true,
       "name": "shape_memdbg.cpp_traceMemory_FUN_0050f150"
     },
     {
       "addr": "005f3fe0",
+      "is_variadic": false,
       "name": "wincore_winrun.cpp_createMutex_FUN_005f3fe0"
     },
     {
       "addr": "005f4050",
+      "is_variadic": false,
       "name": "wincore_winrun.cpp_releaseMutex_FUN_005f4050"
     },
     {
       "addr": "005f3ff0",
+      "is_variadic": false,
       "name": "wincore_winrun.cpp_waitForMutex_FUN_005f3ff0"
     }
   ],
@@ -246,6 +255,58 @@
       "match": "in_stack_00000024",
       "text": "header->source_line = in_stack_00000024;",
       "type": "stack_param"
+    },
+    {
+      "call_address": "0050f39b",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL shape_memdbg.cpp_traceMemory_FUN_0050f150",
+      "return_address": "0050f3a0",
+      "target_address": "0x50f150",
+      "target_function": "shape_memdbg.cpp_traceMemory_FUN_0050f150",
+      "text": "Call to variadic function shape_memdbg.cpp_traceMemory_FUN_0050f150 at 0050f39b",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "0050f3be",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL shape_memdbg.cpp_traceMemory_FUN_0050f150",
+      "return_address": "0050f3c3",
+      "target_address": "0x50f150",
+      "target_function": "shape_memdbg.cpp_traceMemory_FUN_0050f150",
+      "text": "Call to variadic function shape_memdbg.cpp_traceMemory_FUN_0050f150 at 0050f3be",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "0050f3e1",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL shape_memdbg.cpp_traceMemory_FUN_0050f150",
+      "return_address": "0050f3e6",
+      "target_address": "0x50f150",
+      "target_function": "shape_memdbg.cpp_traceMemory_FUN_0050f150",
+      "text": "Call to variadic function shape_memdbg.cpp_traceMemory_FUN_0050f150 at 0050f3e1",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "0050f442",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL shape_memdbg.cpp_traceMemory_FUN_0050f150",
+      "return_address": "0050f447",
+      "target_address": "0x50f150",
+      "target_function": "shape_memdbg.cpp_traceMemory_FUN_0050f150",
+      "text": "Call to variadic function shape_memdbg.cpp_traceMemory_FUN_0050f150 at 0050f442",
+      "type": "call_variadic"
     }
   ]
 }

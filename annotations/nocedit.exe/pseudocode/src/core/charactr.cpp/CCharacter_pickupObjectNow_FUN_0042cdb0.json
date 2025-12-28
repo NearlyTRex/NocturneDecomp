@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 83,
-    "complexity_score": 138,
+    "complexity_score": 163,
     "cross_reference_count": 9,
     "function_call_count": 2,
     "global_count": 6,
     "pseudocode_lines": 28,
-    "suspect_count": 10,
+    "suspect_count": 12,
     "suspect_types": [
+      "call_variadic",
       "callind_esp_no_frame",
       "stack_param"
     ],
@@ -84,10 +85,12 @@
   "function_calls": [
     {
       "addr": "0042ce80",
+      "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_computePickup_FUN_0042ce80"
     },
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     }
   ],
@@ -257,6 +260,32 @@
       "return_address": "0042ce60",
       "text": "CALLIND at 0042ce5a, ADD ESP at 0042ce60 (no EBP frame)",
       "type": "callind_esp_no_frame"
+    },
+    {
+      "call_address": "0042cde4",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0042cde9",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0042cde4",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "0042ce4a",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0042ce4f",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0042ce4a",
+      "type": "call_variadic"
     }
   ]
 }

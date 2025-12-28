@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 723,
-    "complexity_score": 513,
+    "complexity_score": 528,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 14,
     "pseudocode_lines": 338,
-    "suspect_count": 15,
+    "suspect_count": 16,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -39,46 +40,57 @@
   "function_calls": [
     {
       "addr": "00477e60",
+      "is_variadic": false,
       "name": "core_dmodel.cpp_CKeyFramedModel_calcNormals_FUN_00477e60"
     },
     {
       "addr": "0047c080",
+      "is_variadic": false,
       "name": "core_dmodel.cpp_CKeyFramedModel_calculateTriangleNormal_FUN_0047c080"
     },
     {
       "addr": "0047bdb0",
+      "is_variadic": false,
       "name": "core_dmodel.cpp_CKeyFramedModel_removeDegeneratePolygons_FUN_0047bdb0"
     },
     {
       "addr": "0047bbc0",
+      "is_variadic": false,
       "name": "core_dmodel.cpp_CKeyFramedModel_removeDuplicatePolygons_FUN_0047bbc0"
     },
     {
       "addr": "0047aa30",
+      "is_variadic": false,
       "name": "core_dmodel.cpp_CKeyFramedModel_removeUnusedVertices_FUN_0047aa30"
     },
     {
       "addr": "0047bf40",
+      "is_variadic": false,
       "name": "core_dmodel.cpp_CKeyFramedModel_validatePartList_FUN_0047bf40"
     },
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
       "addr": "00600162",
+      "is_variadic": false,
       "name": "crt_math.c_acos_FUN_00600162"
     },
     {
       "addr": "004a0dd0",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0"
     },
     {
       "addr": "004a0430",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430"
     },
     {
       "addr": "004a0530",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530"
     }
   ],
@@ -727,6 +739,19 @@
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)this_ptr->poly_texture_index_list + iVar12) =",
       "type": "pointer_cast"
+    },
+    {
+      "call_address": "0047b2ce",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0047b2d3",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0047b2ce",
+      "type": "call_variadic"
     }
   ]
 }

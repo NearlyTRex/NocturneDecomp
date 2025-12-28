@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 96,
-    "complexity_score": 97,
+    "complexity_score": 122,
     "cross_reference_count": 10,
     "function_call_count": 1,
     "global_count": 2,
     "pseudocode_lines": 52,
-    "suspect_count": 3,
+    "suspect_count": 5,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "param_count_too_many",
       "register_param"
     ],
@@ -91,6 +92,7 @@
   "function_calls": [
     {
       "addr": "005fe6d0",
+      "is_variadic": true,
       "name": "crt_stdio.c_fprintf_FUN_005fe6d0"
     }
   ],
@@ -341,6 +343,32 @@
       "param_delta": -2,
       "text": "Function declares 3 params but call sites push 1 (2 extra)",
       "type": "param_count_too_many"
+    },
+    {
+      "call_address": "0047ed7f",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
+      "return_address": "0047ed84",
+      "target_address": "0x5fe6d0",
+      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
+      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 0047ed7f",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "0047ed97",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
+      "return_address": "0047ed9c",
+      "target_address": "0x5fe6d0",
+      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
+      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 0047ed97",
+      "type": "call_variadic"
     }
   ]
 }

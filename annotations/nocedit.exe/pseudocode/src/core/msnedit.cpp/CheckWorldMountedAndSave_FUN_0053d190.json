@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 120,
+    "complexity_score": 135,
     "cross_reference_count": 3,
     "function_call_count": 5,
     "global_count": 9,
     "pseudocode_lines": 25,
-    "suspect_count": 8,
+    "suspect_count": 9,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "register_param",
       "stack_param"
     ],
@@ -49,22 +50,27 @@
   "function_calls": [
     {
       "addr": "00522e30",
+      "is_variadic": false,
       "name": "core_mission.cpp_CDemonMission_save_FUN_00522e30"
     },
     {
       "addr": "00566180",
+      "is_variadic": false,
       "name": "core_script.cpp_FUN_00566180"
     },
     {
       "addr": "005febfc",
+      "is_variadic": false,
       "name": "crt_file.c_makepath_FUN_005febfc"
     },
     {
       "addr": "005512f0",
+      "is_variadic": false,
       "name": "engine_pod.cpp_CPod_locateFile_FUN_005512f0"
     },
     {
       "addr": "0049e6a0",
+      "is_variadic": true,
       "name": "shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0"
     }
   ],
@@ -221,6 +227,19 @@
       "match": "in_stack_0000000c",
       "text": "((char *)&puStack_100,(char *)0x0,(char *)0x0,in_stack_0000000c->field2_0xc + 0x38,",
       "type": "stack_param"
+    },
+    {
+      "call_address": "0053d211",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0",
+      "return_address": "0053d216",
+      "target_address": "0x49e6a0",
+      "target_function": "shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0",
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 at 0053d211",
+      "type": "call_variadic"
     }
   ]
 }

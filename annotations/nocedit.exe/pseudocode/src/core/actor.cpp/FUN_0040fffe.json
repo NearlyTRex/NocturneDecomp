@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 103,
-    "complexity_score": 543,
+    "complexity_score": 558,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 4,
     "pseudocode_lines": 143,
-    "suspect_count": 37,
+    "suspect_count": 38,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -40,14 +41,17 @@
   "function_calls": [
     {
       "addr": "004add40",
+      "is_variadic": false,
       "name": "core_event.cpp_CEventList_FUN_004add40"
     },
     {
       "addr": "004b1680",
+      "is_variadic": false,
       "name": "core_event.cpp_CRuleList_insert_FUN_004b1680"
     },
     {
       "addr": "0049e740",
+      "is_variadic": true,
       "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740"
     }
   ],
@@ -381,6 +385,19 @@
       "match": "unaff_EBX",
       "text": "pcVar9 = (char *)(*(int *)(unaff_EBX + 0x68) + 0x1f8 + *(int *)(unaff_EBX + 0x5c) * 100);",
       "type": "unaffected_reg"
+    },
+    {
+      "call_address": "00410059",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "return_address": "0041005e",
+      "target_address": "0x49e740",
+      "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 00410059",
+      "type": "call_variadic"
     }
   ]
 }

@@ -4,20 +4,21 @@ SUSPECT TYPE ANALYSIS
 
 SUSPECT TYPE COUNTS
 --------------------------------------------------
-  stack_param                    36773 ( 58.5%)
-  pointer_cast                    5276 (  8.4%)
-  stack_ref                       3983 (  6.3%)
-  unknown_field                   2955 (  4.7%)
-  unaffected_reg                  2778 (  4.4%)
-  register_param                  1834 (  2.9%)
-  concat_artifact                 1831 (  2.9%)
-  badspacebase                    1622 (  2.6%)
-  extra_output                    1443 (  2.3%)
-  callind_esp_no_frame            1078 (  1.7%)
-  suspect_float                    859 (  1.4%)
-  param_count_too_few              631 (  1.0%)
-  unresolved_funcptr               474 (  0.8%)
-  negative_offset                  416 (  0.7%)
+  stack_param                    36773 ( 54.8%)
+  pointer_cast                    5276 (  7.9%)
+  call_variadic                   4149 (  6.2%)
+  stack_ref                       3983 (  5.9%)
+  unknown_field                   2955 (  4.4%)
+  unaffected_reg                  2778 (  4.1%)
+  register_param                  1834 (  2.7%)
+  concat_artifact                 1831 (  2.7%)
+  badspacebase                    1622 (  2.4%)
+  extra_output                    1443 (  2.2%)
+  callind_esp_no_frame            1078 (  1.6%)
+  suspect_float                    859 (  1.3%)
+  param_count_too_few              631 (  0.9%)
+  unresolved_funcptr               474 (  0.7%)
+  negative_offset                  416 (  0.6%)
   sub_artifact                     322 (  0.5%)
   warning_overlapping_globals      219 (  0.3%)
   warning_unreachable              134 (  0.2%)
@@ -103,6 +104,46 @@ Example functions:
     src_buffer = (uint *)((int)src_buffer + 1);...
   cockpit_ckptutil.c_blitSimpleSprite_FUN_00432540
     pvVar2 = (void *)((int)g_ScreenBufferArray[width] + dest_y);...
+
+====================================================================================================
+TYPE: call_variadic (4149 occurrences)
+====================================================================================================
+
+Unique patterns:
+  1244x  CALL core_main.c_displayErrorAndQuit_FUN_00506f10
+   935x  CALL crt_stdio.c_sprintf_FUN_005fdbd0
+   693x  CALL crt_stdio.c_fprintf_FUN_005fe6d0
+   378x  CALL crt_stdio.c_fscanf_FUN_005fe7c0
+   288x  CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740
+   185x  CALL crt_stdio.c_sscanf_FUN_0060013c
+   162x  CALL engine_console.cpp_CConsole_printf_FUN_00441890
+    75x  CALL sound_sndmain.cpp_logSoundError_FUN_005adba0
+    47x  CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0
+    23x  CALL shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
+    23x  CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
+    22x  CALL shape_superopt.cpp_logToFile_FUN_005c7910
+    19x  CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0
+    12x  CALL shape_memdbg.cpp_traceMemory_FUN_0050f150
+     7x  CALL shape_memdbg.cpp_traceFile_FUN_0050f180
+     4x  CALL shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870
+     3x  CALL engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30
+     2x  CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_00489450
+     2x  CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_00489520
+     2x  CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredPrintf_FUN_004895f0
+
+Example functions:
+  cockpit_ckptutil.c_rotateBitmap_FUN_00434870
+    Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00434980...
+  cockpit_ckptutil.c_loadEdgeListFile_FUN_004331f0
+    Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0043322e...
+  cockpit_ckptutil.c_readBitmapFile_FUN_00431870
+    Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 004318af...
+  cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690
+    Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0043471b...
+  cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0
+    Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00431b92...
+  cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730
+    Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00435857...
 
 ====================================================================================================
 TYPE: stack_ref (3983 occurrences)

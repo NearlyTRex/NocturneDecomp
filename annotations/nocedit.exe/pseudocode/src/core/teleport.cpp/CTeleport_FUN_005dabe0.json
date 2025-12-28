@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 194,
-    "complexity_score": 297,
+    "complexity_score": 322,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 11,
     "pseudocode_lines": 87,
-    "suspect_count": 20,
+    "suspect_count": 22,
     "suspect_types": [
+      "call_variadic",
       "callind_esp_no_frame",
       "stack_param"
     ],
@@ -29,18 +30,22 @@
   "function_calls": [
     {
       "addr": "0040d040",
+      "is_variadic": false,
       "name": "core_actor.cpp_CDemonActor_processInEditor_FUN_0040d040"
     },
     {
       "addr": "0053c140",
+      "is_variadic": false,
       "name": "core_msnedit.cpp_UndoTmp_BuildActorList_CreateTmp_FUN_0053c140"
     },
     {
       "addr": "0049f060",
+      "is_variadic": true,
       "name": "shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060"
     },
     {
       "addr": "0049e740",
+      "is_variadic": true,
       "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740"
     }
   ],
@@ -387,6 +392,32 @@
       "return_address": "005dad49",
       "text": "CALLIND at 005dad46, ADD ESP at 005dad49 (no EBP frame)",
       "type": "callind_esp_no_frame"
+    },
+    {
+      "call_address": "005dad67",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060",
+      "return_address": "005dad6c",
+      "target_address": "0x49f060",
+      "target_function": "shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060",
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060 at 005dad67",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "005dad9d",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "return_address": "005dada2",
+      "target_address": "0x49e740",
+      "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 005dad9d",
+      "type": "call_variadic"
     }
   ],
   "vtable_info": {

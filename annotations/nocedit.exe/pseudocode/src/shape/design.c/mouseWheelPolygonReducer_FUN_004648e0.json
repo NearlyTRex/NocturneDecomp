@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 306,
-    "complexity_score": 326,
+    "complexity_score": 351,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 39,
     "pseudocode_lines": 161,
-    "suspect_count": 16,
+    "suspect_count": 18,
     "suspect_types": [
+      "call_variadic",
       "pointer_cast"
     ],
     "total_lines": 467
@@ -35,50 +36,62 @@
   "function_calls": [
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
       "addr": "005fef20",
+      "is_variadic": false,
       "name": "crt_string.c_strcmp_FUN_005fef20"
     },
     {
       "addr": "00402430",
+      "is_variadic": false,
       "name": "engine_2d.c_drawTextColor_FUN_00402430"
     },
     {
       "addr": "00463b30",
+      "is_variadic": false,
       "name": "shape_design.c_complexPolygonReduction_FUN_00463b30"
     },
     {
       "addr": "00464870",
+      "is_variadic": false,
       "name": "shape_design.c_detectMouseButtonClick_FUN_00464870"
     },
     {
       "addr": "00466250",
+      "is_variadic": false,
       "name": "shape_design.c_findClosestPolygonToMouse_FUN_00466250"
     },
     {
       "addr": "0050f460",
+      "is_variadic": false,
       "name": "shape_memdbg.cpp_debugFree_FUN_0050f460"
     },
     {
       "addr": "0050f250",
+      "is_variadic": false,
       "name": "shape_memdbg.cpp_debugMalloc_FUN_0050f250"
     },
     {
       "addr": "005ed630",
+      "is_variadic": false,
       "name": "wincore_wddvmem.cpp_closeScreenDevice_FUN_005ed630"
     },
     {
       "addr": "005ed580",
+      "is_variadic": false,
       "name": "wincore_wddvmem.cpp_openScreenDevice_FUN_005ed580"
     },
     {
       "addr": "005b7210",
+      "is_variadic": false,
       "name": "wincore_windll.cpp_lockFrame_FUN_005b7210"
     },
     {
       "addr": "005b7250",
+      "is_variadic": false,
       "name": "wincore_windll.cpp_unlockFrame_FUN_005b7250"
     }
   ],
@@ -511,6 +524,32 @@
       "match": "(SShapeEditorPolygon *)((int)",
       "text": "pSVar9 = (SShapeEditorPolygon *)((int)pSVar9 + (uint)bVar10 * -2 + 1);",
       "type": "pointer_cast"
+    },
+    {
+      "call_address": "00464990",
+      "caller_has_stack_issues": false,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "00464995",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00464990",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "004649e2",
+      "caller_has_stack_issues": false,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "004649e7",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 004649e2",
+      "type": "call_variadic"
     }
   ]
 }

@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 176,
-    "complexity_score": 68,
+    "complexity_score": 83,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 23,
     "pseudocode_lines": 53,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "call_variadic",
       "warning_unreachable"
     ],
     "total_lines": 229
@@ -41,6 +42,7 @@
   "function_calls": [
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     }
   ],
@@ -251,6 +253,19 @@
       "match": "WARNING: Removing unreachable block",
       "text": "/* WARNING: Removing unreachable block (ram,0x004871be) */",
       "type": "warning_unreachable"
+    },
+    {
+      "call_address": "00487209",
+      "caller_has_stack_issues": false,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0048720e",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00487209",
+      "type": "call_variadic"
     }
   ]
 }

@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 194,
-    "complexity_score": 180,
+    "complexity_score": 205,
     "cross_reference_count": 4,
     "function_call_count": 20,
     "global_count": 20,
     "pseudocode_lines": 70,
-    "suspect_count": 10,
+    "suspect_count": 12,
     "suspect_types": [
+      "call_variadic",
       "callind_esp_no_frame",
       "stack_param"
     ],
@@ -54,82 +55,102 @@
   "function_calls": [
     {
       "addr": "004e3800",
+      "is_variadic": false,
       "name": "core_game.cpp_CGame_displayActStats_FUN_004e3800"
     },
     {
       "addr": "004e3b90",
+      "is_variadic": false,
       "name": "core_game.cpp_CGame_finishAct_FUN_004e3b90"
     },
     {
       "addr": "004daf80",
+      "is_variadic": false,
       "name": "core_game.cpp_CGame_runGameSession_FUN_004daf80"
     },
     {
       "addr": "00503dc0",
+      "is_variadic": false,
       "name": "core_level.cpp_CLevelLoader_show_FUN_00503dc0"
     },
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
       "addr": "00524120",
+      "is_variadic": false,
       "name": "core_mission.cpp_CDemonMission_buildActiveSetActorList_FUN_00524120"
     },
     {
       "addr": "00522d30",
+      "is_variadic": false,
       "name": "core_mission.cpp_CDemonMission_checkMemory2_FUN_00522d30"
     },
     {
       "addr": "00524a80",
+      "is_variadic": false,
       "name": "core_mission.cpp_CDemonMission_createHeros_FUN_00524a80"
     },
     {
       "addr": "00523f20",
+      "is_variadic": false,
       "name": "core_mission.cpp_CDemonMission_FUN_00523f20"
     },
     {
       "addr": "00523fb0",
+      "is_variadic": false,
       "name": "core_mission.cpp_CDemonMission_FUN_00523fb0"
     },
     {
       "addr": "00524760",
+      "is_variadic": false,
       "name": "core_mission.cpp_CDemonMission_FUN_00524760"
     },
     {
       "addr": "00522d90",
+      "is_variadic": false,
       "name": "core_mission.cpp_CDemonMission_load_FUN_00522d90"
     },
     {
       "addr": "00523be0",
+      "is_variadic": false,
       "name": "core_mission.cpp_CDemonMission_setupActorMaybe_FUN_00523be0"
     },
     {
       "addr": "006020fc",
+      "is_variadic": false,
       "name": "crt_string.c_stricmp_FUN_005fe7f0"
     },
     {
       "addr": "00403260",
+      "is_variadic": false,
       "name": "engine_2d.c_clearInputAndWait_FUN_00403260"
     },
     {
       "addr": "004cdce0",
+      "is_variadic": false,
       "name": "engine_font.cpp_CBitFont_drawTextRight_FUN_004cdce0"
     },
     {
       "addr": "004d01d0",
+      "is_variadic": false,
       "name": "engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0"
     },
     {
       "addr": "005441f0",
+      "is_variadic": false,
       "name": "support_newmsg.cpp_getLocalizedString_FUN_005441f0"
     },
     {
       "addr": "005eda20",
+      "is_variadic": false,
       "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20"
     },
     {
       "addr": "005f2e90",
+      "is_variadic": false,
       "name": "wincore_winrun.cpp_getNextKeypress_FUN_005f2e90"
     }
   ],
@@ -382,6 +403,32 @@
       "return_address": "005244c9",
       "text": "CALLIND at 005244c3, ADD ESP at 005244c9 (no EBP frame)",
       "type": "callind_esp_no_frame"
+    },
+    {
+      "call_address": "00524462",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "00524467",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00524462",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "00524520",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "00524525",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00524520",
+      "type": "call_variadic"
     }
   ]
 }

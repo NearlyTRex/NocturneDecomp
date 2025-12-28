@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 462,
-    "complexity_score": 803,
+    "complexity_score": 868,
     "cross_reference_count": 1,
     "function_call_count": 26,
     "global_count": 26,
     "pseudocode_lines": 198,
-    "suspect_count": 58,
+    "suspect_count": 64,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -39,106 +40,132 @@
   "function_calls": [
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
       "addr": "0060128c",
+      "is_variadic": false,
       "name": "crt_io.c_getcwd_wrapper_FUN_00608d20"
     },
     {
       "addr": "00601272",
+      "is_variadic": false,
       "name": "crt_memory.c_constructTypedObjectArray_FUN_00601272"
     },
     {
       "addr": "005fe659",
+      "is_variadic": false,
       "name": "crt_memory.c_free_FUN_005fe659"
     },
     {
       "addr": "005fe632",
+      "is_variadic": false,
       "name": "crt_memory.c_freeSingleInstance_FUN_005fe632"
     },
     {
       "addr": "005fdbd0",
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "00550140",
+      "is_variadic": false,
       "name": "engine_pod.cpp_CPodFile_findFileIndex_FUN_00550140"
     },
     {
       "addr": "0054f650",
+      "is_variadic": false,
       "name": "engine_pod.cpp_CPodFile_mountFromFile_FUN_0054f650"
     },
     {
       "addr": "0049e790",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790"
     },
     {
       "addr": "004a0dd0",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0"
     },
     {
       "addr": "004a0430",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430"
     },
     {
       "addr": "0049e740",
+      "is_variadic": true,
       "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740"
     },
     {
       "addr": "0049e6a0",
+      "is_variadic": true,
       "name": "shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0"
     },
     {
       "addr": "004a03d0",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_004a03d0"
     },
     {
       "addr": "004a0530",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530"
     },
     {
       "addr": "004a3b90",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CPickList_ctor_FUN_004a3b90"
     },
     {
       "addr": "004a3e20",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20"
     },
     {
       "addr": "004a3c80",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CPickList_dtor_FUN_004a3c80"
     },
     {
       "addr": "004a3d90",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CPickList_setCancelButtonText_FUN_004a3d90"
     },
     {
       "addr": "004a3e10",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CPickList_setSelectedResult_FUN_004a3e10"
     },
     {
       "addr": "004a2b80",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CStrList_add_FUN_004a2b80"
     },
     {
       "addr": "004a2a20",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CStrList_ctor_FUN_004a2a20"
     },
     {
       "addr": "004a2a40",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CStrList_dtor_FUN_004a2a40"
     },
     {
       "addr": "004a2f70",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70"
     },
     {
       "addr": "004a39e0",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CStrList_populateWithFullPaths_FUN_004a39e0"
     },
     {
       "addr": "0050f1f0",
+      "is_variadic": false,
       "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1f0"
     }
   ],
@@ -906,6 +933,84 @@
       "match": "&stack0xfffffff0",
       "text": "((CStrList *)&stack0xfffffff0,0,(uint)in_stack_fffffb44);",
       "type": "stack_ref"
+    },
+    {
+      "call_address": "004ba07c",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "004ba081",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 004ba07c",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "004ba2bb",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0",
+      "return_address": "004ba2c0",
+      "target_address": "0x49e6a0",
+      "target_function": "shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0",
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 at 004ba2bb",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "004ba303",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "return_address": "004ba308",
+      "target_address": "0x49e740",
+      "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 004ba303",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "004ba354",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "return_address": "004ba359",
+      "target_address": "0x49e740",
+      "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 004ba354",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "004ba421",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "004ba426",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 004ba421",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "004ba46b",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "004ba470",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 004ba46b",
+      "type": "call_variadic"
     }
   ]
 }

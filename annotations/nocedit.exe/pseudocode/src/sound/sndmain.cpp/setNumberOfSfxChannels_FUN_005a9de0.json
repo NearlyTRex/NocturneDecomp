@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 21,
-    "complexity_score": 53,
+    "complexity_score": 68,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 5,
     "pseudocode_lines": 13,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
+      "call_variadic",
       "param_count_too_few",
       "stack_param"
     ],
@@ -36,6 +37,7 @@
   "function_calls": [
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     }
   ],
@@ -154,6 +156,19 @@
       "param_delta": 1,
       "text": "Function declares 1 params but call sites push 2 (1 missing)",
       "type": "param_count_too_few"
+    },
+    {
+      "call_address": "005a9e0d",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "005a9e12",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005a9e0d",
+      "type": "call_variadic"
     }
   ]
 }

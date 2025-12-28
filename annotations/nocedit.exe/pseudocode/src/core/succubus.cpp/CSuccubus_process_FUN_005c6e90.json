@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 628,
-    "complexity_score": 451,
+    "complexity_score": 466,
     "cross_reference_count": 0,
     "function_call_count": 25,
     "global_count": 20,
     "pseudocode_lines": 291,
-    "suspect_count": 14,
+    "suspect_count": 15,
     "suspect_types": [
+      "call_variadic",
       "extra_output",
       "stack_param",
       "unresolved_funcptr",
@@ -31,102 +32,127 @@
   "function_calls": [
     {
       "addr": "0040cc10",
+      "is_variadic": false,
       "name": "core_actor.cpp_getRandomFloat_FUN_0040cc10"
     },
     {
       "addr": "0042dfc0",
+      "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0"
     },
     {
       "addr": "00428f40",
+      "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_FUN_00428f40"
     },
     {
       "addr": "004297e0",
+      "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_FUN_004297e0"
     },
     {
       "addr": "00429820",
+      "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_FUN_00429820"
     },
     {
       "addr": "00429870",
+      "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_FUN_00429870"
     },
     {
       "addr": "0042ca70",
+      "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_FUN_0042ca70"
     },
     {
       "addr": "0042ec40",
+      "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_FUN_0042ec40"
     },
     {
       "addr": "004286e0",
+      "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_walkToPoint_FUN_004286e0"
     },
     {
       "addr": "0043c2d0",
+      "is_variadic": false,
       "name": "core_cloth.cpp_FUN_0043c2d0"
     },
     {
       "addr": "004a9fd0",
+      "is_variadic": false,
       "name": "core_enemy.cpp_CEnemy_FUN_004a9fd0"
     },
     {
       "addr": "004adca0",
+      "is_variadic": false,
       "name": "core_event.cpp_CEventList_evaluateCondition_FUN_004adca0"
     },
     {
       "addr": "004f6ca0",
+      "is_variadic": false,
       "name": "core_hotdemon.cpp_CHotDemon_ctor_FUN_004f6ca0"
     },
     {
       "addr": "00523b70",
+      "is_variadic": false,
       "name": "core_mission.cpp_CDemonMission_FUN_00523b70"
     },
     {
       "addr": "00524700",
+      "is_variadic": false,
       "name": "core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700"
     },
     {
       "addr": "0052d610",
+      "is_variadic": false,
       "name": "core_motion.cpp_CMotionController_advance_FUN_0052d610"
     },
     {
       "addr": "0052dab0",
+      "is_variadic": false,
       "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0"
     },
     {
       "addr": "0052ddb0",
+      "is_variadic": false,
       "name": "core_motion.cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0"
     },
     {
       "addr": "0052db00",
+      "is_variadic": false,
       "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00"
     },
     {
       "addr": "0059e020",
+      "is_variadic": false,
       "name": "core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020"
     },
     {
       "addr": "0059e000",
+      "is_variadic": false,
       "name": "core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000"
     },
     {
       "addr": "00441890",
+      "is_variadic": true,
       "name": "engine_console.cpp_CConsole_printf_FUN_00441890"
     },
     {
       "addr": "0050f1b0",
+      "is_variadic": false,
       "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1b0"
     },
     {
       "addr": "005a9660",
+      "is_variadic": false,
       "name": "sound_sndmain.cpp_isSfxPlaying_FUN_005a9660"
     },
     {
       "addr": "005a9c40",
+      "is_variadic": false,
       "name": "sound_sndmain.cpp_killSfx_FUN_005a9c40"
     }
   ],
@@ -649,6 +675,19 @@
       "match": "in_stack_00000008",
       "text": "(fVar11 = *(float *)(this_ptr->field1_0xbeb4 + 0x247c) - in_stack_00000008,",
       "type": "stack_param"
+    },
+    {
+      "call_address": "005c7305",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL engine_console.cpp_CConsole_printf_FUN_00441890",
+      "return_address": "005c730a",
+      "target_address": "0x441890",
+      "target_function": "engine_console.cpp_CConsole_printf_FUN_00441890",
+      "text": "Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 005c7305",
+      "type": "call_variadic"
     }
   ],
   "vtable_info": {

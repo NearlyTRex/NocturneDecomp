@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 77,
+    "complexity_score": 102,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 5,
     "pseudocode_lines": 32,
-    "suspect_count": 3,
+    "suspect_count": 5,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "register_param",
       "stack_ref"
     ],
@@ -30,18 +31,22 @@
   "function_calls": [
     {
       "addr": "005fdbd0",
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "005fe7f0",
+      "is_variadic": false,
       "name": "crt_string.c_stricmp_FUN_005fe7f0"
     },
     {
       "addr": "00481960",
+      "is_variadic": false,
       "name": "engine_dosio.c_getFileTimestamp_FUN_00481960"
     },
     {
       "addr": "004b2f90",
+      "is_variadic": false,
       "name": "engine_fileio.cpp_showOverwriteConfirmationDialog_FUN_004b2f90"
     }
   ],
@@ -167,6 +172,32 @@
       "match": "&stack0xfffffc14",
       "text": "(&stack0xfffffc14,\"You currently have %s checked out.  Replace local copy with network copy?\",target_filename);",
       "type": "stack_ref"
+    },
+    {
+      "call_address": "004b3182",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "004b3187",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 004b3182",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "004b31ac",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "004b31b1",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 004b31ac",
+      "type": "call_variadic"
     }
   ]
 }

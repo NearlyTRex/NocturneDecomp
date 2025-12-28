@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 223,
-    "complexity_score": 480,
+    "complexity_score": 495,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 7,
     "pseudocode_lines": 105,
-    "suspect_count": 35,
+    "suspect_count": 36,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "param_count_too_few",
       "register_param",
       "stack_param",
@@ -45,22 +46,27 @@
   "function_calls": [
     {
       "addr": "004702f0",
+      "is_variadic": false,
       "name": "core_dfilter.cpp_CDemonFilter_load_FUN_004702f0"
     },
     {
       "addr": "00474770",
+      "is_variadic": false,
       "name": "core_dlight.cpp_CDemonLight_applyFilter_FUN_00474770"
     },
     {
       "addr": "00478d60",
+      "is_variadic": false,
       "name": "core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00478d60"
     },
     {
       "addr": "00478dd0",
+      "is_variadic": false,
       "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0"
     },
     {
       "addr": "005fdbd0",
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     }
   ],
@@ -495,6 +501,19 @@
       "param_delta": 3,
       "text": "Function declares 0 params but call sites push 3 (3 missing)",
       "type": "param_count_too_few"
+    },
+    {
+      "call_address": "00423020",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "00423025",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00423020",
+      "type": "call_variadic"
     }
   ]
 }

@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 818,
-    "complexity_score": 841,
+    "complexity_score": 866,
     "cross_reference_count": 1,
     "function_call_count": 32,
     "global_count": 41,
     "pseudocode_lines": 326,
-    "suspect_count": 48,
+    "suspect_count": 50,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "concat_artifact",
       "pointer_cast",
       "register_param",
@@ -41,130 +42,162 @@
   "function_calls": [
     {
       "addr": "00473390",
+      "is_variadic": false,
       "name": "core_dlight.cpp_CDemonLight_renderShadowMapDebugView_FUN_00473390"
     },
     {
       "addr": "004dade0",
+      "is_variadic": false,
       "name": "core_game.cpp_CGame_setGameRes_FUN_004dade0"
     },
     {
       "addr": "004daed0",
+      "is_variadic": false,
       "name": "core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004daed0"
     },
     {
       "addr": "0056d2d0",
+      "is_variadic": false,
       "name": "core_set.cpp_CDemonSet_FUN_0056d2d0"
     },
     {
       "addr": "0056aa10",
+      "is_variadic": false,
       "name": "core_set.cpp_CDemonSet_initScene_FUN_0056aa10"
     },
     {
       "addr": "0056a470",
+      "is_variadic": false,
       "name": "core_set.cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470"
     },
     {
       "addr": "00576da0",
+      "is_variadic": false,
       "name": "core_setedit.cpp_CDemonSet_BuildingThumbnailImages_FUN_00576da0"
     },
     {
       "addr": "0057a2a0",
+      "is_variadic": false,
       "name": "core_setedit.cpp_CDemonSet_save_FUN_0057a2a0"
     },
     {
       "addr": "0057b410",
+      "is_variadic": false,
       "name": "core_setedit.cpp_FUN_0057b410"
     },
     {
       "addr": "0057b500",
+      "is_variadic": false,
       "name": "core_setedit.cpp_FUN_0057b500"
     },
     {
       "addr": "0057b600",
+      "is_variadic": false,
       "name": "core_setedit.cpp_FUN_0057b600"
     },
     {
       "addr": "0057b910",
+      "is_variadic": false,
       "name": "core_setedit.cpp_FUN_0057b910"
     },
     {
       "addr": "0057bbe0",
+      "is_variadic": false,
       "name": "core_setedit.cpp_RelatedToDemonLightEditor_FUN_0057bbe0"
     },
     {
       "addr": "0057c550",
+      "is_variadic": false,
       "name": "core_setedit.cpp_ResolveMasterLights_FUN_0057c550"
     },
     {
       "addr": "005fdbd0",
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "00600770",
+      "is_variadic": false,
       "name": "crt_string.c_strupr_FUN_00600770"
     },
     {
       "addr": "00403260",
+      "is_variadic": false,
       "name": "engine_2d.c_clearInputAndWait_FUN_00403260"
     },
     {
       "addr": "004011b0",
+      "is_variadic": false,
       "name": "engine_2d.c_drawLine_FUN_004011b0"
     },
     {
       "addr": "00401fd0",
+      "is_variadic": false,
       "name": "engine_2d.c_drawText_FUN_00401fd0"
     },
     {
       "addr": "00481f20",
+      "is_variadic": false,
       "name": "engine_dosio.c_splitPath_FUN_00481f20"
     },
     {
       "addr": "00502470",
+      "is_variadic": false,
       "name": "engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_00502470"
     },
     {
       "addr": "004a00f0",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0"
     },
     {
       "addr": "0049fb70",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70"
     },
     {
       "addr": "0049f0f0",
+      "is_variadic": true,
       "name": "shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0"
     },
     {
       "addr": "004a3b90",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CPickList_ctor_FUN_004a3b90"
     },
     {
       "addr": "004a3e20",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20"
     },
     {
       "addr": "004a3c80",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CPickList_dtor_FUN_004a3c80"
     },
     {
       "addr": "004a2b80",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CStrList_add_FUN_004a2b80"
     },
     {
       "addr": "005eda20",
+      "is_variadic": false,
       "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20"
     },
     {
       "addr": "005b3e70",
+      "is_variadic": false,
       "name": "wincore_windll.cpp_clearScreen_FUN_005b3e70"
     },
     {
       "addr": "005f2fd0",
+      "is_variadic": false,
       "name": "wincore_winrun.cpp_drawCrosshair_FUN_005f2fd0"
     },
     {
       "addr": "005f2f00",
+      "is_variadic": false,
       "name": "wincore_winrun.cpp_wasKeyPressed_FUN_005f2f00"
     }
   ],
@@ -948,6 +981,32 @@
       "match": "in_stack_fffff07c",
       "text": "in_stack_fffff07c = this_ptr;",
       "type": "stack_param"
+    },
+    {
+      "call_address": "0057c7e8",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "0057c7ed",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0057c7e8",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "0057cb03",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0",
+      "return_address": "0057cb08",
+      "target_address": "0x49f0f0",
+      "target_function": "shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0",
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 at 0057cb03",
+      "type": "call_variadic"
     }
   ]
 }

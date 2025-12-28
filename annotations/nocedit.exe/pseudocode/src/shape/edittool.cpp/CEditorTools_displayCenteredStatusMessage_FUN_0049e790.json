@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 93,
+    "complexity_score": 108,
     "cross_reference_count": 63,
     "function_call_count": 7,
     "global_count": 11,
     "pseudocode_lines": 23,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "register_param",
       "stack_param",
       "stack_ref"
@@ -410,30 +411,37 @@
   "function_calls": [
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
       "addr": "005fdba8",
+      "is_variadic": false,
       "name": "crt_stdio.c_vsprintf_FUN_005fdba8"
     },
     {
       "addr": "00406d80",
+      "is_variadic": false,
       "name": "engine_3d.c_setRenderAlpha_FUN_00406d80"
     },
     {
       "addr": "004cdde0",
+      "is_variadic": false,
       "name": "engine_font.cpp_CBitFont_drawTextCenter_FUN_004cdde0"
     },
     {
       "addr": "004d01d0",
+      "is_variadic": false,
       "name": "engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0"
     },
     {
       "addr": "005eda20",
+      "is_variadic": false,
       "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20"
     },
     {
       "addr": "005b3e70",
+      "is_variadic": false,
       "name": "wincore_windll.cpp_clearScreen_FUN_005b3e70"
     }
   ],
@@ -599,6 +607,19 @@
       "match": "&stack0xfffffff4",
       "text": "(g_StatusMessageBuffer,in_stack_00000010,(va_list_t *)&stack0xfffffff4);",
       "type": "stack_ref"
+    },
+    {
+      "call_address": "0049e85a",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0049e85f",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0049e85a",
+      "type": "call_variadic"
     }
   ]
 }

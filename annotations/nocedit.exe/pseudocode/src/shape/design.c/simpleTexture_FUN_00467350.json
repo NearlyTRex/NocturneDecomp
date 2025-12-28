@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 274,
-    "complexity_score": 138,
+    "complexity_score": 153,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 23,
     "pseudocode_lines": 108,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "register_param"
     ],
     "total_lines": 382
@@ -36,42 +37,52 @@
   "function_calls": [
     {
       "addr": "005ff9e0",
+      "is_variadic": false,
       "name": "crt_ctype.c_toupper_FUN_005ff9e0"
     },
     {
       "addr": "005fdbd0",
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "00403260",
+      "is_variadic": false,
       "name": "engine_2d.c_clearInputAndWait_FUN_00403260"
     },
     {
       "addr": "00401fd0",
+      "is_variadic": false,
       "name": "engine_2d.c_drawText_FUN_00401fd0"
     },
     {
       "addr": "004032c0",
+      "is_variadic": false,
       "name": "engine_2d.c_getInputWithPrompt_FUN_004032c0"
     },
     {
       "addr": "00481a50",
+      "is_variadic": false,
       "name": "engine_dosio.c_getFile_FUN_00481a50"
     },
     {
       "addr": "0050f9b0",
+      "is_variadic": false,
       "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0"
     },
     {
       "addr": "005eda20",
+      "is_variadic": false,
       "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20"
     },
     {
       "addr": "005b3e70",
+      "is_variadic": false,
       "name": "wincore_windll.cpp_clearScreen_FUN_005b3e70"
     },
     {
       "addr": "005f2e90",
+      "is_variadic": false,
       "name": "wincore_winrun.cpp_getNextKeypress_FUN_005f2e90"
     }
   ],
@@ -369,6 +380,19 @@
       "match": "in_ESP",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "register_param"
+    },
+    {
+      "call_address": "00467695",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "0046769a",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00467695",
+      "type": "call_variadic"
     }
   ]
 }

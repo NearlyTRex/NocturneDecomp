@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 261,
-    "complexity_score": 318,
+    "complexity_score": 373,
     "cross_reference_count": 2,
     "function_call_count": 7,
     "global_count": 15,
     "pseudocode_lines": 103,
-    "suspect_count": 18,
+    "suspect_count": 23,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "concat_artifact",
       "pointer_cast",
       "register_param",
@@ -47,30 +48,37 @@
   "function_calls": [
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
       "addr": "005fe840",
+      "is_variadic": false,
       "name": "crt_stdio.c_fgetc_FUN_005fe840"
     },
     {
       "addr": "005fe7c0",
+      "is_variadic": true,
       "name": "crt_stdio.c_fscanf_FUN_005fe7c0"
     },
     {
       "addr": "0050f350",
+      "is_variadic": false,
       "name": "shape_memdbg.cpp_debugCalloc_FUN_0050f350"
     },
     {
       "addr": "0050f460",
+      "is_variadic": false,
       "name": "shape_memdbg.cpp_debugFree_FUN_0050f460"
     },
     {
       "addr": "00519710",
+      "is_variadic": false,
       "name": "shape_meshlod.cpp_CLodMesh_computeAllEdgeCollapseCosts_FUN_00519710"
     },
     {
       "addr": "00516000",
+      "is_variadic": false,
       "name": "shape_meshlod.cpp_CLodMesh_evaluateEdgeCollapse_FUN_00516000"
     }
   ],
@@ -468,6 +476,71 @@
       "match": "(void *)((int)",
       "text": "pvVar2 = (void *)((int)pvVar2 + 0xf0);",
       "type": "pointer_cast"
+    },
+    {
+      "call_address": "0051ce16",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL crt_stdio.c_fscanf_FUN_005fe7c0",
+      "return_address": "0051ce1b",
+      "target_address": "0x5fe7c0",
+      "target_function": "crt_stdio.c_fscanf_FUN_005fe7c0",
+      "text": "Call to variadic function crt_stdio.c_fscanf_FUN_005fe7c0 at 0051ce16",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "0051cec6",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "unknown",
+      "esp_certainty_at_call": "known",
+      "match": "CALL crt_stdio.c_fscanf_FUN_005fe7c0",
+      "return_address": "0051cecb",
+      "target_address": "0x5fe7c0",
+      "target_function": "crt_stdio.c_fscanf_FUN_005fe7c0",
+      "text": "Call to variadic function crt_stdio.c_fscanf_FUN_005fe7c0 at 0051cec6",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "0051d068",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0051d06d",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0051d068",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "0051d098",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0051d09d",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0051d098",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "0051d0c0",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0051d0c5",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0051d0c0",
+      "type": "call_variadic"
     }
   ]
 }

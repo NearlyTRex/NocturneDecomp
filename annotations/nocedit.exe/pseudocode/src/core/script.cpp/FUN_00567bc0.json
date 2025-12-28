@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 161,
+    "complexity_score": 176,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 3,
     "pseudocode_lines": 46,
-    "suspect_count": 9,
+    "suspect_count": 10,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "param_count_too_few",
       "pointer_cast",
       "register_param",
@@ -39,18 +40,22 @@
   "function_calls": [
     {
       "addr": "0055a370",
+      "is_variadic": false,
       "name": "core_script.cpp_CScript_LoadingScriptFile_FUN_0055a370"
     },
     {
       "addr": "00561fd0",
+      "is_variadic": false,
       "name": "core_script.cpp_SCmdParse_parse_FUN_00561fd0"
     },
     {
       "addr": "005fdbd0",
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "004a2b80",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CStrList_add_FUN_004a2b80"
     }
   ],
@@ -254,6 +259,19 @@
       "param_delta": 4,
       "text": "Function declares 0 params but call sites push 4 (4 missing)",
       "type": "param_count_too_few"
+    },
+    {
+      "call_address": "00567c76",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "00567c7b",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00567c76",
+      "type": "call_variadic"
     }
   ]
 }

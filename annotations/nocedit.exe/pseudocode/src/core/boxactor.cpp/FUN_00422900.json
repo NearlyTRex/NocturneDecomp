@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 28,
-    "complexity_score": 83,
+    "complexity_score": 98,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 1,
     "pseudocode_lines": 18,
-    "suspect_count": 6,
+    "suspect_count": 7,
     "suspect_types": [
+      "call_variadic",
       "stack_param"
     ],
     "total_lines": 46
@@ -28,14 +29,17 @@
   "function_calls": [
     {
       "addr": "0047ed00",
+      "is_variadic": false,
       "name": "core_dmodel.cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00"
     },
     {
       "addr": "00478d80",
+      "is_variadic": false,
       "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80"
     },
     {
       "addr": "005fe6d0",
+      "is_variadic": true,
       "name": "crt_stdio.c_fprintf_FUN_005fe6d0"
     }
   ],
@@ -124,6 +128,19 @@
       "match": "in_stack_00000004",
       "text": "(pCVar1,dependency_file,in_stack_00000004);",
       "type": "stack_param"
+    },
+    {
+      "call_address": "0042291f",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
+      "return_address": "00422924",
+      "target_address": "0x5fe6d0",
+      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
+      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 0042291f",
+      "type": "call_variadic"
     }
   ],
   "vtable_info": {

@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 184,
-    "complexity_score": 335,
+    "complexity_score": 350,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 2,
     "pseudocode_lines": 75,
-    "suspect_count": 24,
+    "suspect_count": 25,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "register_param",
       "stack_param",
       "stack_ref"
@@ -38,46 +39,57 @@
   "function_calls": [
     {
       "addr": "00486ea0",
+      "is_variadic": false,
       "name": "cockpit_drawsurf.cpp_CDrawSurface_ctor_FUN_00486ea0"
     },
     {
       "addr": "00488530",
+      "is_variadic": false,
       "name": "cockpit_drawsurf.cpp_CDrawSurface_drawSurfaceBorder_FUN_00488530"
     },
     {
       "addr": "00489c20",
+      "is_variadic": false,
       "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurface_FUN_00489c20"
     },
     {
       "addr": "004893f0",
+      "is_variadic": false,
       "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAligned_FUN_004893f0"
     },
     {
       "addr": "00488c70",
+      "is_variadic": false,
       "name": "cockpit_drawsurf.cpp_CDrawSurface_fillFullSurface_FUN_00488c70"
     },
     {
       "addr": "00489ce0",
+      "is_variadic": false,
       "name": "cockpit_drawsurf.cpp_CDrawSurface_getCurrentFontMaxWidth_FUN_00489ce0"
     },
     {
       "addr": "00487010",
+      "is_variadic": false,
       "name": "cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_00487010"
     },
     {
       "addr": "004874c0",
+      "is_variadic": false,
       "name": "cockpit_drawsurf.cpp_setCurrentFont_FUN_004874c0"
     },
     {
       "addr": "005fdbd0",
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "004a2f70",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70"
     },
     {
       "addr": "004a6ed0",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0"
     }
   ],
@@ -351,6 +363,19 @@
       "match": "in_stack_00000004",
       "text": "} while ((int)text < (int)(in_stack_00000004->bitmap_files[0] + 0x34));",
       "type": "stack_param"
+    },
+    {
+      "call_address": "00559eae",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "conflict",
+      "esp_certainty_at_call": "conflict",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "00559eb3",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00559eae",
+      "type": "call_variadic"
     }
   ]
 }

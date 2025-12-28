@@ -1,13 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 24,
+    "complexity_score": 39,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 12,
     "pseudocode_lines": 24,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "call_variadic"
+    ],
     "total_lines": 99
   },
   "cross_references": [],
@@ -26,26 +28,32 @@
   "function_calls": [
     {
       "addr": "00524420",
+      "is_variadic": false,
       "name": "core_mission.cpp_CDemonMission_run_FUN_00524420"
     },
     {
       "addr": "0053fd00",
+      "is_variadic": false,
       "name": "core_netgame.cpp_CNetGame_FUN_0053fd00"
     },
     {
       "addr": "00541390",
+      "is_variadic": false,
       "name": "core_netgame.cpp_FUN_00541390"
     },
     {
       "addr": "0053f860",
+      "is_variadic": false,
       "name": "core_netgame.cpp_initializeNetworkToHost_FUN_0053f860"
     },
     {
       "addr": "0049e740",
+      "is_variadic": true,
       "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740"
     },
     {
       "addr": "0049f270",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270"
     }
   ],
@@ -161,5 +169,19 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": []
+  "suspects": [
+    {
+      "call_address": "004e2f9e",
+      "caller_has_stack_issues": false,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "return_address": "004e2fa3",
+      "target_address": "0x49e740",
+      "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 004e2f9e",
+      "type": "call_variadic"
+    }
+  ]
 }

@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 282,
-    "complexity_score": 179,
+    "complexity_score": 294,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 23,
     "pseudocode_lines": 119,
-    "suspect_count": 4,
+    "suspect_count": 15,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "callind_esp_no_frame_lost",
       "register_param",
       "stack_ref"
@@ -31,22 +32,27 @@
   "function_calls": [
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
       "addr": "005fdbd0",
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "00441890",
+      "is_variadic": true,
       "name": "engine_console.cpp_CConsole_printf_FUN_00441890"
     },
     {
       "addr": "005ade70",
+      "is_variadic": false,
       "name": "sound_snddx.cpp_getDirectSoundErrorString_FUN_005ade70"
     },
     {
       "addr": "005adba0",
+      "is_variadic": true,
       "name": "sound_sndmain.cpp_logSoundError_FUN_005adba0"
     }
   ],
@@ -288,6 +294,149 @@
       "return_address": "005af5a0",
       "text": "CALLIND at 005af59d, ADD ESP at 005af5a8 (no EBP frame)",
       "type": "callind_esp_no_frame_lost"
+    },
+    {
+      "call_address": "005af44a",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "005af44f",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005af44a",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "005af475",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "005af47a",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005af475",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "005af5e9",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL engine_console.cpp_CConsole_printf_FUN_00441890",
+      "return_address": "005af5ee",
+      "target_address": "0x441890",
+      "target_function": "engine_console.cpp_CConsole_printf_FUN_00441890",
+      "text": "Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 005af5e9",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "005af61a",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "005af61f",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 005af61a",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "005af62a",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL sound_sndmain.cpp_logSoundError_FUN_005adba0",
+      "return_address": "005af62f",
+      "target_address": "0x5adba0",
+      "target_function": "sound_sndmain.cpp_logSoundError_FUN_005adba0",
+      "text": "Call to variadic function sound_sndmain.cpp_logSoundError_FUN_005adba0 at 005af62a",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "005af653",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "conflict",
+      "esp_certainty_at_call": "conflict",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "005af658",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 005af653",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "005af663",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "conflict",
+      "esp_certainty_at_call": "conflict",
+      "match": "CALL sound_sndmain.cpp_logSoundError_FUN_005adba0",
+      "return_address": "005af668",
+      "target_address": "0x5adba0",
+      "target_function": "sound_sndmain.cpp_logSoundError_FUN_005adba0",
+      "text": "Call to variadic function sound_sndmain.cpp_logSoundError_FUN_005adba0 at 005af663",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "005af689",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "conflict",
+      "esp_certainty_at_call": "conflict",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "005af68e",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 005af689",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "005af694",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "conflict",
+      "esp_certainty_at_call": "conflict",
+      "match": "CALL sound_sndmain.cpp_logSoundError_FUN_005adba0",
+      "return_address": "005af699",
+      "target_address": "0x5adba0",
+      "target_function": "sound_sndmain.cpp_logSoundError_FUN_005adba0",
+      "text": "Call to variadic function sound_sndmain.cpp_logSoundError_FUN_005adba0 at 005af694",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "005af6f5",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "conflict",
+      "esp_certainty_at_call": "conflict",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "005af6fa",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 005af6f5",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "005af705",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "conflict",
+      "esp_certainty_at_call": "conflict",
+      "match": "CALL sound_sndmain.cpp_logSoundError_FUN_005adba0",
+      "return_address": "005af70a",
+      "target_address": "0x5adba0",
+      "target_function": "sound_sndmain.cpp_logSoundError_FUN_005adba0",
+      "text": "Call to variadic function sound_sndmain.cpp_logSoundError_FUN_005adba0 at 005af705",
+      "type": "call_variadic"
     }
   ],
   "vtable_info": {

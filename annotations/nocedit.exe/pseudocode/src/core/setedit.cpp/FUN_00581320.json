@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 123,
-    "complexity_score": 346,
+    "complexity_score": 361,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 10,
     "pseudocode_lines": 46,
-    "suspect_count": 27,
+    "suspect_count": 28,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "callind_esp_no_frame",
       "param_count_too_few",
       "register_param",
@@ -40,46 +41,57 @@
   "function_calls": [
     {
       "addr": "004dade0",
+      "is_variadic": false,
       "name": "core_game.cpp_CGame_setGameRes_FUN_004dade0"
     },
     {
       "addr": "004daed0",
+      "is_variadic": false,
       "name": "core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004daed0"
     },
     {
       "addr": "0056c1a0",
+      "is_variadic": false,
       "name": "core_set.cpp_CDemonSet_FUN_0056c1a0"
     },
     {
       "addr": "0056d2d0",
+      "is_variadic": false,
       "name": "core_set.cpp_CDemonSet_FUN_0056d2d0"
     },
     {
       "addr": "0056aa10",
+      "is_variadic": false,
       "name": "core_set.cpp_CDemonSet_initScene_FUN_0056aa10"
     },
     {
       "addr": "0056ae50",
+      "is_variadic": false,
       "name": "core_set.cpp_CDemonSet_setCameraView_FUN_0056ae50"
     },
     {
       "addr": "005ff9d0",
+      "is_variadic": false,
       "name": "crt_io.c_deleteFile_FUN_005ff9d0"
     },
     {
       "addr": "005fdbd0",
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "00403260",
+      "is_variadic": false,
       "name": "engine_2d.c_clearInputAndWait_FUN_00403260"
     },
     {
       "addr": "0049e790",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790"
     },
     {
       "addr": "005eda20",
+      "is_variadic": false,
       "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20"
     }
   ],
@@ -449,6 +461,19 @@
       "param_delta": 3,
       "text": "Function declares 0 params but call sites push 3 (3 missing)",
       "type": "param_count_too_few"
+    },
+    {
+      "call_address": "00581396",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "0058139b",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00581396",
+      "type": "call_variadic"
     }
   ]
 }

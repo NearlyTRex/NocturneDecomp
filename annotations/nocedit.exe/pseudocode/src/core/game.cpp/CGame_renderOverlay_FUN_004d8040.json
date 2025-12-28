@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 405,
-    "complexity_score": 195,
+    "complexity_score": 210,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 18,
     "pseudocode_lines": 150,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "register_param",
       "stack_ref"
     ],
@@ -37,46 +38,57 @@
   "function_calls": [
     {
       "addr": "00559ac0",
+      "is_variadic": false,
       "name": "core_script.cpp_FUN_00559ac0"
     },
     {
       "addr": "005fe6b0",
+      "is_variadic": false,
       "name": "crt_math.c_round_FUN_005fe6b0"
     },
     {
       "addr": "005fdbd0",
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "00403170",
+      "is_variadic": false,
       "name": "engine_2d.c_fillRectColor_FUN_00403170"
     },
     {
       "addr": "00403200",
+      "is_variadic": false,
       "name": "engine_2d.c_fillRectWithBorder_FUN_00403200"
     },
     {
       "addr": "00406d80",
+      "is_variadic": false,
       "name": "engine_3d.c_setRenderAlpha_FUN_00406d80"
     },
     {
       "addr": "004cda80",
+      "is_variadic": false,
       "name": "engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80"
     },
     {
       "addr": "004d01a0",
+      "is_variadic": false,
       "name": "engine_font.cpp_CBitFont_getCharWidth_FUN_004d01a0"
     },
     {
       "addr": "004d01d0",
+      "is_variadic": false,
       "name": "engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0"
     },
     {
       "addr": "004cfe80",
+      "is_variadic": false,
       "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80"
     },
     {
       "addr": "004d0010",
+      "is_variadic": false,
       "name": "engine_font.cpp_CBitFont_wrapText_FUN_004d0010"
     }
   ],
@@ -476,6 +488,19 @@
       "match": "&stack0xfffffea4",
       "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffea4,\"%d - %s\",g_CurrentDisplayText);",
       "type": "stack_ref"
+    },
+    {
+      "call_address": "004d8133",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "004d8138",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 004d8133",
+      "type": "call_variadic"
     }
   ]
 }

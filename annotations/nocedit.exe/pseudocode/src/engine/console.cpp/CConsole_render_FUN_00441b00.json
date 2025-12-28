@@ -33,10 +33,12 @@
   "function_calls": [
     {
       "addr": "004011b0",
+      "is_variadic": false,
       "name": "engine_2d.c_drawLine_FUN_004011b0"
     },
     {
       "addr": "00402080",
+      "is_variadic": false,
       "name": "engine_2d.c_drawString_FUN_00402080"
     }
   ],
@@ -49,7 +51,7 @@
     }
   ],
   "pcode_summary": {
-    "avg_pcode_per_instr": 5.0,
+    "avg_pcode_per_instr": 5,
     "instruction_count": 106,
     "opcode_distribution": {
       "BOOL_NEGATE": 5,
@@ -78,25 +80,6 @@
     },
     "pcode_op_count": 530
   },
-  "replacements": [
-    {
-      "description": "Remove unused BADSPACEBASE variable",
-      "find": "  BADSPACEBASE *in_ESP;\n",
-      "replace": ""
-    },
-    {
-      "description": "Simplify pointer increment to valid C++",
-      "find": "(\\w+) = \\(CConsole \\*\\)\\(\\(int\\)&\\1->file_logging_enabled \\+ 1\\);",
-      "regex": true,
-      "replace": "\\1 = (CConsole *)((char *)\\1 + 1);"
-    },
-    {
-      "description": "Clarify row stride pointer arithmetic",
-      "find": "(\\w+) = \\(CConsole \\*\\)\\((\\w+)->console_buffer \\+ 0x4c\\);",
-      "regex": true,
-      "replace": "\\1 = (CConsole *)((char *)\\2 + 0x50);  // next row (80 byte stride)"
-    }
-  ],
   "stack_frame": {
     "frame_size": 44,
     "local_size": 40,

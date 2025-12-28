@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 89,
-    "complexity_score": 85,
+    "complexity_score": 100,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 4,
     "pseudocode_lines": 45,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
+      "call_variadic",
       "pointer_cast",
       "sub_artifact"
     ],
@@ -42,10 +43,12 @@
   "function_calls": [
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
       "addr": "0051a400",
+      "is_variadic": false,
       "name": "shape_meshlod.cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400"
     }
   ],
@@ -192,6 +195,19 @@
       "match": "(CLodFace *)((int)",
       "text": "pCVar1 = (CLodFace *)((int)pCVar1->attribute_indices + 1);",
       "type": "pointer_cast"
+    },
+    {
+      "call_address": "005183c4",
+      "caller_has_stack_issues": false,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "005183c9",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005183c4",
+      "type": "call_variadic"
     }
   ]
 }

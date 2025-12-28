@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 172,
-    "complexity_score": 275,
+    "complexity_score": 290,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 15,
     "pseudocode_lines": 70,
-    "suspect_count": 19,
+    "suspect_count": 20,
     "suspect_types": [
+      "call_variadic",
       "param_count_too_few",
       "pointer_cast",
       "stack_param"
@@ -37,22 +38,27 @@
   "function_calls": [
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
       "addr": "0056e5d0",
+      "is_variadic": false,
       "name": "core_set.cpp_CDemonSet_FUN_0056e5d0"
     },
     {
       "addr": "0056eac0",
+      "is_variadic": false,
       "name": "core_set.cpp_CDemonSet_lightVerticies_FUN_0056eac0"
     },
     {
       "addr": "0048caa0",
+      "is_variadic": false,
       "name": "engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0"
     },
     {
       "addr": "005b575c",
+      "is_variadic": false,
       "name": "wincore_windll.cpp_transformAndProjectPoint_FUN_005b575c"
     }
   ],
@@ -448,6 +454,19 @@
       "param_delta": 3,
       "text": "Function declares 1 params but call sites push 4 (3 missing)",
       "type": "param_count_too_few"
+    },
+    {
+      "call_address": "0052b0e5",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0052b0ea",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0052b0e5",
+      "type": "call_variadic"
     }
   ]
 }

@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 138,
-    "complexity_score": 315,
+    "complexity_score": 330,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 9,
     "pseudocode_lines": 55,
-    "suspect_count": 23,
+    "suspect_count": 24,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "callind_esp_no_frame",
       "param_count_too_few",
       "register_param",
@@ -40,46 +41,57 @@
   "function_calls": [
     {
       "addr": "0040ea50",
+      "is_variadic": false,
       "name": "core_actor.cpp_CActorProperty_FUN_0040ea50"
     },
     {
       "addr": "0040e130",
+      "is_variadic": false,
       "name": "core_actor.cpp_FUN_0040e130"
     },
     {
       "addr": "00523cf0",
+      "is_variadic": false,
       "name": "core_mission.cpp_CDemonMission_FUN_00523cf0"
     },
     {
       "addr": "00567bc0",
+      "is_variadic": false,
       "name": "core_script.cpp_FUN_00567bc0"
     },
     {
       "addr": "005fdbd0",
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "0049e790",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790"
     },
     {
       "addr": "004a3b90",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CPickList_ctor_FUN_004a3b90"
     },
     {
       "addr": "004a3e20",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20"
     },
     {
       "addr": "004a3c80",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CPickList_dtor_FUN_004a3c80"
     },
     {
       "addr": "004a2b80",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CStrList_add_FUN_004a2b80"
     },
     {
       "addr": "004a2ec0",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CStrList_sort_FUN_004a2ec0"
     }
   ],
@@ -377,6 +389,19 @@
       "param_delta": 1,
       "text": "Function declares 0 params but call sites push 1 (1 missing)",
       "type": "param_count_too_few"
+    },
+    {
+      "call_address": "0053ed51",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "0053ed56",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0053ed51",
+      "type": "call_variadic"
     }
   ]
 }

@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 149,
-    "complexity_score": 86,
+    "complexity_score": 111,
     "cross_reference_count": 5,
     "function_call_count": 1,
     "global_count": 12,
     "pseudocode_lines": 61,
-    "suspect_count": 2,
+    "suspect_count": 4,
     "suspect_types": [
+      "call_variadic",
       "pointer_cast"
     ],
     "total_lines": 210
@@ -59,6 +60,7 @@
   "function_calls": [
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     }
   ],
@@ -213,6 +215,32 @@
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_ScreenBufferArray[iVar4] + iVar1) >> ((byte)g_OriginalColorValue & 0x1f)",
       "type": "pointer_cast"
+    },
+    {
+      "call_address": "00487585",
+      "caller_has_stack_issues": false,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0048758a",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00487585",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "00487618",
+      "caller_has_stack_issues": false,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0048761d",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00487618",
+      "type": "call_variadic"
     }
   ]
 }

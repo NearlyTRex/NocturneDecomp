@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 137,
-    "complexity_score": 124,
+    "complexity_score": 159,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 3,
     "pseudocode_lines": 54,
-    "suspect_count": 6,
+    "suspect_count": 9,
     "suspect_types": [
+      "call_variadic",
       "callind_esp_no_frame",
       "pointer_cast"
     ],
@@ -29,18 +30,22 @@
   "function_calls": [
     {
       "addr": "005d35e0",
+      "is_variadic": false,
       "name": "shape_superopt.cpp_CObj_clearStateFlags_FUN_005d35e0"
     },
     {
       "addr": "005c7a90",
+      "is_variadic": false,
       "name": "shape_superopt.cpp_FUN_005c7a90"
     },
     {
       "addr": "005c7b20",
+      "is_variadic": false,
       "name": "shape_superopt.cpp_FUN_005c7b20"
     },
     {
       "addr": "005c7910",
+      "is_variadic": true,
       "name": "shape_superopt.cpp_logToFile_FUN_005c7910"
     }
   ],
@@ -185,6 +190,45 @@
       "return_address": "005d73c2",
       "text": "CALLIND at 005d73bf, ADD ESP at 005d73c5 (no EBP frame)",
       "type": "callind_esp_no_frame"
+    },
+    {
+      "call_address": "005d7420",
+      "caller_has_stack_issues": false,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL shape_superopt.cpp_logToFile_FUN_005c7910",
+      "return_address": "005d7425",
+      "target_address": "0x5c7910",
+      "target_function": "shape_superopt.cpp_logToFile_FUN_005c7910",
+      "text": "Call to variadic function shape_superopt.cpp_logToFile_FUN_005c7910 at 005d7420",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "005d7437",
+      "caller_has_stack_issues": false,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL shape_superopt.cpp_logToFile_FUN_005c7910",
+      "return_address": "005d743c",
+      "target_address": "0x5c7910",
+      "target_function": "shape_superopt.cpp_logToFile_FUN_005c7910",
+      "text": "Call to variadic function shape_superopt.cpp_logToFile_FUN_005c7910 at 005d7437",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "005d744e",
+      "caller_has_stack_issues": false,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL shape_superopt.cpp_logToFile_FUN_005c7910",
+      "return_address": "005d7453",
+      "target_address": "0x5c7910",
+      "target_function": "shape_superopt.cpp_logToFile_FUN_005c7910",
+      "text": "Call to variadic function shape_superopt.cpp_logToFile_FUN_005c7910 at 005d744e",
+      "type": "call_variadic"
     }
   ],
   "vtable_info": {

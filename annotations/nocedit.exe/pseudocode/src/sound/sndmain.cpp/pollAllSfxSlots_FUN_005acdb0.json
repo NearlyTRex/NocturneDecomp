@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 120,
+    "complexity_score": 135,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 11,
     "pseudocode_lines": 35,
-    "suspect_count": 8,
+    "suspect_count": 9,
     "suspect_types": [
+      "call_variadic",
       "unaffected_reg"
     ],
     "total_lines": 120
@@ -35,26 +36,32 @@
   "function_calls": [
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
       "addr": "005a5530",
+      "is_variadic": false,
       "name": "sound_sndmain.cpp_calculateVirtualSpeakerPositions_FUN_005a5530"
     },
     {
       "addr": "005a7100",
+      "is_variadic": false,
       "name": "sound_sndmain.cpp_CSfxSlot_compute_FUN_005a7100"
     },
     {
       "addr": "005a7fe0",
+      "is_variadic": false,
       "name": "sound_sndmain.cpp_CSfxSlot_pollHwHandle_FUN_005a7fe0"
     },
     {
       "addr": "005ab5a0",
+      "is_variadic": false,
       "name": "sound_sndmain.cpp_hasHardware3DSound_FUN_005ab5a0"
     },
     {
       "addr": "005f2dc0",
+      "is_variadic": false,
       "name": "wincore_winrun.cpp_getTime_FUN_005f2dc0"
     }
   ],
@@ -276,6 +283,19 @@
       "match": "unaff_ESI",
       "text": "unaff_ESI = this_ptr;",
       "type": "unaffected_reg"
+    },
+    {
+      "call_address": "005ace36",
+      "caller_has_stack_issues": false,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "005ace3b",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005ace36",
+      "type": "call_variadic"
     }
   ]
 }

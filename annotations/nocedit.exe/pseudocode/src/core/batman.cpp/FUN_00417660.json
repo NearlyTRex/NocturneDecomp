@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 324,
-    "complexity_score": 773,
+    "complexity_score": 788,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 13,
     "pseudocode_lines": 118,
-    "suspect_count": 63,
+    "suspect_count": 64,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "param_count_too_few",
       "register_param",
       "stack_param",
@@ -39,42 +40,52 @@
   "function_calls": [
     {
       "addr": "00408e80",
+      "is_variadic": false,
       "name": "core_actor.cpp_CDemonActor_transformVector_FUN_00408e80"
     },
     {
       "addr": "0040cd10",
+      "is_variadic": false,
       "name": "core_actor.cpp_randomChance_FUN_0040cd10"
     },
     {
       "addr": "00418e10",
+      "is_variadic": false,
       "name": "core_bodypart.cpp_CreateBodyPart_FUN_00418e10"
     },
     {
       "addr": "0041a050",
+      "is_variadic": false,
       "name": "core_bodypart.cpp_FUN_0041a050"
     },
     {
       "addr": "0042b9e0",
+      "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_FUN_0042b9e0"
     },
     {
       "addr": "0042bcc0",
+      "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_FUN_0042bcc0"
     },
     {
       "addr": "0042bd30",
+      "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_FUN_0042bd30"
     },
     {
       "addr": "0042f300",
+      "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_FUN_0042f300"
     },
     {
       "addr": "005feb5c",
+      "is_variadic": false,
       "name": "crt_stdlib.c_rand_FUN_005feb5c"
     },
     {
       "addr": "00441890",
+      "is_variadic": true,
       "name": "engine_console.cpp_CConsole_printf_FUN_00441890"
     }
   ],
@@ -708,6 +719,19 @@
       "param_delta": 2,
       "text": "Function declares 0 params but call sites push 2 (2 missing)",
       "type": "param_count_too_few"
+    },
+    {
+      "call_address": "00417938",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL engine_console.cpp_CConsole_printf_FUN_00441890",
+      "return_address": "0041793d",
+      "target_address": "0x441890",
+      "target_function": "engine_console.cpp_CConsole_printf_FUN_00441890",
+      "text": "Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 00417938",
+      "type": "call_variadic"
     }
   ]
 }

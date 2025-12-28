@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 391,
-    "complexity_score": 421,
+    "complexity_score": 436,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 15,
     "pseudocode_lines": 191,
-    "suspect_count": 19,
+    "suspect_count": 20,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "param_count_too_many",
       "pointer_cast",
       "register_param",
@@ -42,22 +43,27 @@
   "function_calls": [
     {
       "addr": "00471d30",
+      "is_variadic": false,
       "name": "core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30"
     },
     {
       "addr": "00471fd0",
+      "is_variadic": false,
       "name": "core_dirmat.cpp_CMatrix3x3f_transformVector_FUN_00471fd0"
     },
     {
       "addr": "004c7d00",
+      "is_variadic": false,
       "name": "core_fire.cpp_CFireEffect_createGlassParticle_FUN_004c7d00"
     },
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
       "addr": "005fe667",
+      "is_variadic": false,
       "name": "crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667"
     }
   ],
@@ -626,6 +632,19 @@
       "param_delta": -7,
       "text": "Function declares 8 params but call sites push 1 (7 extra)",
       "type": "param_count_too_many"
+    },
+    {
+      "call_address": "0059cf31",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0059cf36",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0059cf31",
+      "type": "call_variadic"
     }
   ]
 }

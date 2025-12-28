@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 42,
-    "complexity_score": 39,
+    "complexity_score": 54,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 8,
     "pseudocode_lines": 24,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "call_variadic",
       "pointer_cast"
     ],
     "total_lines": 66
@@ -28,6 +29,7 @@
   "function_calls": [
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     }
   ],
@@ -131,6 +133,19 @@
       "match": "(int *)((int)",
       "text": "iVar1 = *(int *)((int)g_SfxSlots[1].distance_to_speakers + iVar2 + -0xc);",
       "type": "pointer_cast"
+    },
+    {
+      "call_address": "005a43ee",
+      "caller_has_stack_issues": false,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "005a43f3",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005a43ee",
+      "type": "call_variadic"
     }
   ]
 }

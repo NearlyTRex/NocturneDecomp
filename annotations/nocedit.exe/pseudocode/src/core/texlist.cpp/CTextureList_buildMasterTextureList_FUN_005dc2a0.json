@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 291,
-    "complexity_score": 411,
+    "complexity_score": 446,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 11,
     "pseudocode_lines": 136,
-    "suspect_count": 25,
+    "suspect_count": 28,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -32,38 +33,47 @@
   "function_calls": [
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
       "addr": "005ff9e0",
+      "is_variadic": false,
       "name": "crt_ctype.c_toupper_FUN_005ff9e0"
     },
     {
       "addr": "00602380",
+      "is_variadic": false,
       "name": "crt_io.c_findCloseWrapper_FUN_00602380"
     },
     {
       "addr": "006021f0",
+      "is_variadic": false,
       "name": "crt_io.c_findFirstFileWrapper_FUN_006021f0"
     },
     {
       "addr": "00602300",
+      "is_variadic": false,
       "name": "crt_io.c_findNextFileWrapper_FUN_00602300"
     },
     {
       "addr": "005fef20",
+      "is_variadic": false,
       "name": "crt_string.c_strcmp_FUN_005fef20"
     },
     {
       "addr": "0049e940",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_createCenteredDialog_FUN_0049e940"
     },
     {
       "addr": "0049e870",
+      "is_variadic": true,
       "name": "shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870"
     },
     {
       "addr": "004a0dd0",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0"
     }
   ],
@@ -454,6 +464,45 @@
       "match": "unaff_EDI",
       "text": "} while (unaff_EDI < *(int *)(in_stack_00000020 + 0x6d64));",
       "type": "unaffected_reg"
+    },
+    {
+      "call_address": "005dc3d5",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870",
+      "return_address": "005dc3da",
+      "target_address": "0x49e870",
+      "target_function": "shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870",
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870 at 005dc3d5",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "005dc413",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "005dc418",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005dc413",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "005dc4f1",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "005dc4f6",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005dc4f1",
+      "type": "call_variadic"
     }
   ]
 }

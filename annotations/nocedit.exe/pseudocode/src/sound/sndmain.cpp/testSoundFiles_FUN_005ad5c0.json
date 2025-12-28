@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 513,
-    "complexity_score": 855,
+    "complexity_score": 940,
     "cross_reference_count": 1,
     "function_call_count": 23,
     "global_count": 30,
     "pseudocode_lines": 215,
-    "suspect_count": 61,
+    "suspect_count": 69,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "callind_esp_no_frame",
       "register_param",
       "stack_param",
@@ -40,94 +41,117 @@
   "function_calls": [
     {
       "addr": "005febfc",
+      "is_variadic": false,
       "name": "crt_file.c_makepath_FUN_005febfc"
     },
     {
       "addr": "005fdbd0",
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "005ff178",
+      "is_variadic": false,
       "name": "crt_string.c_splitpath_FUN_005ff178"
     },
     {
       "addr": "00481760",
+      "is_variadic": false,
       "name": "engine_dosio.c_findFile_FUN_00481760"
     },
     {
       "addr": "00481880",
+      "is_variadic": false,
       "name": "engine_dosio.c_getFileSize_FUN_00481880"
     },
     {
       "addr": "0049e790",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790"
     },
     {
       "addr": "004a0dd0",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0"
     },
     {
       "addr": "004a0430",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430"
     },
     {
       "addr": "0049e740",
+      "is_variadic": true,
       "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740"
     },
     {
       "addr": "0049e6a0",
+      "is_variadic": true,
       "name": "shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0"
     },
     {
       "addr": "004a0530",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_updatePercentage_FUN_004a0530"
     },
     {
       "addr": "004a3b90",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CPickList_ctor_FUN_004a3b90"
     },
     {
       "addr": "004a3e20",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20"
     },
     {
       "addr": "004a3c80",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CPickList_dtor_FUN_004a3c80"
     },
     {
       "addr": "004a2b80",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CStrList_add_FUN_004a2b80"
     },
     {
       "addr": "004a2a20",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CStrList_ctor_FUN_004a2a20"
     },
     {
       "addr": "004a2a40",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CStrList_dtor_FUN_004a2a40"
     },
     {
       "addr": "004a2f70",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70"
     },
     {
       "addr": "004a37b0",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_004a37b0"
     },
     {
       "addr": "005aaef0",
+      "is_variadic": false,
       "name": "sound_sndmain.cpp_enableSoundSystem_FUN_005aaef0"
     },
     {
       "addr": "005ab540",
+      "is_variadic": false,
       "name": "sound_sndmain.cpp_isSoundBusy_FUN_005ab540"
     },
     {
       "addr": "005ab130",
+      "is_variadic": false,
       "name": "sound_sndmain.cpp_resetSoundDevice_FUN_005ab130"
     },
     {
       "addr": "005ad3b0",
+      "is_variadic": false,
       "name": "sound_sndmain.cpp_testSoundFile_FUN_005ad3b0"
     }
   ],
@@ -844,6 +868,110 @@
       "return_address": "005ad7d7",
       "text": "CALLIND at 005ad7d4, ADD ESP at 005ad7d7 (no EBP frame)",
       "type": "callind_esp_no_frame"
+    },
+    {
+      "call_address": "005ad7f0",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0",
+      "return_address": "005ad7f5",
+      "target_address": "0x49e6a0",
+      "target_function": "shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0",
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 at 005ad7f0",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "005ad884",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "005ad889",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 005ad884",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "005ad8b2",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "return_address": "005ad8b7",
+      "target_address": "0x49e740",
+      "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 005ad8b2",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "005ad919",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "005ad91e",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 005ad919",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "005ad9a6",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "005ad9ab",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 005ad9a6",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "005ada30",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "005ada35",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 005ada30",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "005ada71",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "005ada76",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 005ada71",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "005adaa5",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "005adaaa",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 005adaa5",
+      "type": "call_variadic"
     }
   ]
 }

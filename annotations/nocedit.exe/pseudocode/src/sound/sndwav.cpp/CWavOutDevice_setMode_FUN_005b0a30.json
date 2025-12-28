@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 153,
-    "complexity_score": 294,
+    "complexity_score": 309,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 15,
     "pseudocode_lines": 69,
-    "suspect_count": 19,
+    "suspect_count": 20,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "callind_esp_no_frame",
       "callind_esp_no_frame_lost",
       "pointer_cast",
@@ -34,26 +35,32 @@
   "function_calls": [
     {
       "addr": "005fe6b0",
+      "is_variadic": false,
       "name": "crt_math.c_round_FUN_005fe6b0"
     },
     {
       "addr": "EXTERNAL:0000007e",
+      "is_variadic": false,
       "name": "GlobalAlloc"
     },
     {
       "addr": "EXTERNAL:00000080",
+      "is_variadic": false,
       "name": "GlobalLock"
     },
     {
       "addr": "005abea0",
+      "is_variadic": false,
       "name": "sound_sndmain.cpp_getMaxSwLatency_FUN_005abea0"
     },
     {
       "addr": "005adba0",
+      "is_variadic": true,
       "name": "sound_sndmain.cpp_logSoundError_FUN_005adba0"
     },
     {
       "addr": "EXTERNAL:00000020",
+      "is_variadic": false,
       "name": "waveOutOpen"
     }
   ],
@@ -391,6 +398,19 @@
       "return_address": "005b0be1",
       "text": "CALLIND at 005b0bdf, ADD ESP at 005b0be1 (no EBP frame)",
       "type": "callind_esp_no_frame_lost"
+    },
+    {
+      "call_address": "005b0bd4",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "conflict",
+      "esp_certainty_at_call": "conflict",
+      "match": "CALL sound_sndmain.cpp_logSoundError_FUN_005adba0",
+      "return_address": "005b0bd9",
+      "target_address": "0x5adba0",
+      "target_function": "sound_sndmain.cpp_logSoundError_FUN_005adba0",
+      "text": "Call to variadic function sound_sndmain.cpp_logSoundError_FUN_005adba0 at 005b0bd4",
+      "type": "call_variadic"
     }
   ],
   "vtable_info": {

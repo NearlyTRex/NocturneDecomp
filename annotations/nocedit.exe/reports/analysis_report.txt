@@ -5,23 +5,24 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 7154
-Functions with zero suspects: 2599 (36.3%)
-Functions with suspects: 4555 (63.7%)
+Functions with zero suspects: 2422 (33.9%)
+Functions with suspects: 4732 (66.1%)
 
-Total suspect patterns: 62905
-Average suspects per function: 8.79
+Total suspect patterns: 67054
+Average suspects per function: 9.37
 
-Virtual files: 258 total, 19 at 100%, 20 at 90%+
+Virtual files: 258 total, 18 at 100%, 19 at 90%+
 
 Pseudocode lines:
   Min: 1, Max: 3059, Average: 48.0
 
-Average complexity score: 144.4
+Average complexity score: 151.0
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
   stack_param               36773
   pointer_cast              5276
+  call_variadic             4149
   stack_ref                 3983
   unknown_field             2955
   unaffected_reg            2778
@@ -98,40 +99,40 @@ EASIEST FUNCTIONS (Zero Suspects, Sorted by Size)
   005abea0: sound_sndmain.cpp_getMaxSwLatency_FUN_005abea0 (4 lines)
   005ab590: sound_sndmain.cpp_isHardwareMixingEnabled_FUN_005ab590 (4 lines)
   005addd0: sound_sndmain.cpp_CSampleInfo_getBitDepth_FUN_005addd0 (4 lines)
-  ... and 2549 more
+  ... and 2372 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
-  00592690: core_skeledit.cpp_FUN_00592690 (score: 6749, suspects: 456, lines: 2144)
-  005bb960: core_stranger.cpp_CStranger_FUN_005bb960 (score: 6689, suspects: 534, lines: 1319)
-  004e6600: core_ghoul.cpp_CGhoul_FUN_004e6600 (score: 4867, suspects: 378, lines: 1057)
-  004f4bd0: core_hostage.cpp_RelatedToRescuedTownsfolk_FUN_004f4bd0 (score: 4602, suspects: 378, lines: 787)
-  0055a810: core_script.cpp_CScript_step_FUN_0055a810 (score: 3984, suspects: 89, lines: 3059)
-  004d2ea0: core_gabriela.cpp_FUN_004d2ea0 (score: 3930, suspects: 312, lines: 780)
-  00484410: core_dracbrid.cpp_FUN_00484410 (score: 3778, suspects: 289, lines: 853)
-  0058f810: core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (score: 3652, suspects: 216, lines: 1432)
-  004aacc0: core_event.cpp_CEventList_FUN_004aacc0 (score: 3300, suspects: 114, lines: 2135)
-  005968b0: core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (score: 3283, suspects: 195, lines: 1278)
+  00592690: core_skeledit.cpp_FUN_00592690 (score: 7744, suspects: 555, lines: 2144)
+  005bb960: core_stranger.cpp_CStranger_FUN_005bb960 (score: 6834, suspects: 548, lines: 1319)
+  0055a810: core_script.cpp_CScript_step_FUN_0055a810 (score: 5309, suspects: 221, lines: 3059)
+  004e6600: core_ghoul.cpp_CGhoul_FUN_004e6600 (score: 4892, suspects: 380, lines: 1057)
+  004f4bd0: core_hostage.cpp_RelatedToRescuedTownsfolk_FUN_004f4bd0 (score: 4707, suspects: 388, lines: 787)
+  0058f810: core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (score: 4077, suspects: 258, lines: 1432)
+  004aacc0: core_event.cpp_CEventList_FUN_004aacc0 (score: 3985, suspects: 182, lines: 2135)
+  004d2ea0: core_gabriela.cpp_FUN_004d2ea0 (score: 3945, suspects: 313, lines: 780)
+  00484410: core_dracbrid.cpp_FUN_00484410 (score: 3853, suspects: 296, lines: 853)
+  004b86b0: engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0 (score: 3584, suspects: 259, lines: 939)
+  005968b0: core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (score: 3558, suspects: 222, lines: 1278)
+  004ae140: core_event.cpp_CEventList_FUN_004ae140 (score: 3397, suspects: 187, lines: 1497)
   005ce580: shape_superopt.cpp_CPoly_intersectPoly_FUN_005ce580 (score: 3211, suspects: 223, lines: 951)
-  00525840: core_mobster.cpp_FUN_00525840 (score: 3175, suspects: 249, lines: 640)
-  004b86b0: engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0 (score: 3139, suspects: 215, lines: 939)
-  004ae140: core_event.cpp_CEventList_FUN_004ae140 (score: 3112, suspects: 159, lines: 1497)
-  0058c190: core_skeledit.cpp_FUN_0058c190 (score: 2928, suspects: 215, lines: 733)
-  00562920: core_script.cpp_FUN_00562920 (score: 2784, suspects: 187, lines: 869)
-  005390f0: core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0 (score: 2607, suspects: 154, lines: 1012)
+  00525840: core_mobster.cpp_FUN_00525840 (score: 3190, suspects: 250, lines: 640)
+  0058c190: core_skeledit.cpp_FUN_0058c190 (score: 3133, suspects: 235, lines: 733)
+  00562920: core_script.cpp_FUN_00562920 (score: 2919, suspects: 200, lines: 869)
+  005390f0: core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0 (score: 2742, suspects: 167, lines: 1012)
   004e1cb0: core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0 (score: 2593, suspects: 205, lines: 508)
-  004f9c30: core_imp.cpp_FUN_004f9c30 (score: 2521, suspects: 196, lines: 526)
-  00568030: core_sentinel.cpp_FUN_00568030 (score: 2437, suspects: 192, lines: 487)
+  004baf00: engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00 (score: 2563, suspects: 176, lines: 753)
+  004f9c30: core_imp.cpp_FUN_004f9c30 (score: 2536, suspects: 197, lines: 526)
+  004b5a50: engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50 (score: 2531, suspects: 177, lines: 701)
+  00568030: core_sentinel.cpp_FUN_00568030 (score: 2452, suspects: 193, lines: 487)
   0043abb0: core_cloth.cpp_FUN_0043abb0 (score: 2433, suspects: 200, lines: 393)
   005d1390: shape_superopt.cpp_CPoly_hasEdgeIntersection_FUN_005d1390 (score: 2411, suspects: 200, lines: 386)
-  004b5a50: engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50 (score: 2396, suspects: 164, lines: 701)
-  004e4a00: core_gargoyle.cpp_CGargoyle_unk6_FUN_004e4a00 (score: 2340, suspects: 186, lines: 440)
-  004baf00: engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00 (score: 2318, suspects: 152, lines: 753)
-  00583170: core_setedit.cpp_CDemonSet_FUN_00583170 (score: 2284, suspects: 135, lines: 894)
-  004fd600: core_inv.cpp_CInventory_addItem_FUN_004fd600 (score: 2281, suspects: 108, lines: 1171)
-  004ddaf0: core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 (score: 2248, suspects: 15, lines: 2058)
-  005d0340: shape_superopt.cpp_CPoly_containsPoint2D_FUN_005d0340 (score: 2223, suspects: 186, lines: 338)
-  0040eed0: core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 (score: 2136, suspects: 130, lines: 781)
+  004fd600: core_inv.cpp_CInventory_addItem_FUN_004fd600 (score: 2356, suspects: 115, lines: 1171)
+  004e4a00: core_gargoyle.cpp_CGargoyle_unk6_FUN_004e4a00 (score: 2355, suspects: 187, lines: 440)
+  00578d80: core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 (score: 2327, suspects: 153, lines: 752)
+  00583170: core_setedit.cpp_CDemonSet_FUN_00583170 (score: 2319, suspects: 138, lines: 894)
+  004ddaf0: core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 (score: 2283, suspects: 18, lines: 2058)
+  0040eed0: core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 (score: 2271, suspects: 143, lines: 781)
 
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
@@ -161,6 +162,19 @@ FUNCTIONS BY SUSPECT TYPE
     00432300: cockpit_ckptutil.c_blitUnifiedSprite_FUN_00432300
     00431f40: cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_00431f40
     ... and 1038 more
+
+  call_variadic (1210 functions):
+    00434870: cockpit_ckptutil.c_rotateBitmap_FUN_00434870
+    004331f0: cockpit_ckptutil.c_loadEdgeListFile_FUN_004331f0
+    00431870: cockpit_ckptutil.c_readBitmapFile_FUN_00431870
+    00434690: cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690
+    00431ac0: cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0
+    00435730: cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730
+    00434af0: cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af0
+    00432df0: cockpit_ckptutil.c_generateScrollHeightMap_FUN_00432df0
+    004336e0: cockpit_ckptutil.c_rasterizeEdgeEndpoints_FUN_004336e0
+    00433480: cockpit_ckptutil.c_saveEdgeListFile_FUN_00433480
+    ... and 1200 more
 
   stack_ref (1055 functions):
     0060239a: entry

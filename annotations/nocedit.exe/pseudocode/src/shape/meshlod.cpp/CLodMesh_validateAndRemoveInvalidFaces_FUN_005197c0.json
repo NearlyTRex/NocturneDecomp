@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 60,
-    "complexity_score": 46,
+    "complexity_score": 61,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 3,
     "pseudocode_lines": 31,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "call_variadic",
       "pointer_cast"
     ],
     "total_lines": 91
@@ -47,10 +48,12 @@
   "function_calls": [
     {
       "addr": "0049e740",
+      "is_variadic": true,
       "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740"
     },
     {
       "addr": "00519830",
+      "is_variadic": false,
       "name": "shape_meshlod.cpp_CLodMesh_validateFace_FUN_00519830"
     }
   ],
@@ -126,6 +129,19 @@
       "match": "(CLodFace *)((int)",
       "text": "face = (CLodFace *)((int)this_ptr->tri_data->attribute_indices + iVar2);",
       "type": "pointer_cast"
+    },
+    {
+      "call_address": "00519815",
+      "caller_has_stack_issues": false,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "return_address": "0051981a",
+      "target_address": "0x49e740",
+      "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 00519815",
+      "type": "call_variadic"
     }
   ]
 }

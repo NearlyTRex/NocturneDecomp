@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 527,
-    "complexity_score": 600,
+    "complexity_score": 615,
     "cross_reference_count": 27,
     "function_call_count": 8,
     "global_count": 10,
     "pseudocode_lines": 170,
-    "suspect_count": 41,
+    "suspect_count": 42,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "register_param",
       "stack_param",
       "unknown_field"
@@ -194,34 +195,42 @@
   "function_calls": [
     {
       "addr": "00408ec0",
+      "is_variadic": false,
       "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0"
     },
     {
       "addr": "00408e80",
+      "is_variadic": false,
       "name": "core_actor.cpp_CDemonActor_transformVector_FUN_00408e80"
     },
     {
       "addr": "00408f10",
+      "is_variadic": false,
       "name": "core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10"
     },
     {
       "addr": "0040cd70",
+      "is_variadic": false,
       "name": "core_actor.cpp_normalizeAngleToPi_FUN_0040cd70"
     },
     {
       "addr": "00547d00",
+      "is_variadic": false,
       "name": "core_path.cpp_CPathMap_findPathWithRetry_FUN_00547d00"
     },
     {
       "addr": "00548500",
+      "is_variadic": false,
       "name": "core_path.cpp_FUN_00548500"
     },
     {
       "addr": "005e7830",
+      "is_variadic": false,
       "name": "core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830"
     },
     {
       "addr": "00441890",
+      "is_variadic": true,
       "name": "engine_console.cpp_CConsole_printf_FUN_00441890"
     }
   ],
@@ -1028,6 +1037,19 @@
       "match": "._8_4_",
       "text": "*(float *)(this_ptr->field2_0x240c + 0x14) + (float)local_d4._8_4_;",
       "type": "unknown_field"
+    },
+    {
+      "call_address": "00428a7e",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL engine_console.cpp_CConsole_printf_FUN_00441890",
+      "return_address": "00428a83",
+      "target_address": "0x441890",
+      "target_function": "engine_console.cpp_CConsole_printf_FUN_00441890",
+      "text": "Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 00428a7e",
+      "type": "call_variadic"
     }
   ]
 }

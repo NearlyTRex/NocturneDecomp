@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 707,
-    "complexity_score": 401,
+    "complexity_score": 416,
     "cross_reference_count": 1,
     "function_call_count": 19,
     "global_count": 49,
     "pseudocode_lines": 331,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "register_param",
       "stack_ref",
       "suspect_float"
@@ -38,78 +39,97 @@
   "function_calls": [
     {
       "addr": "005fe6b0",
+      "is_variadic": false,
       "name": "crt_math.c_round_FUN_005fe6b0"
     },
     {
       "addr": "005fdbd0",
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "00401fd0",
+      "is_variadic": false,
       "name": "engine_2d.c_drawText_FUN_00401fd0"
     },
     {
       "addr": "004032c0",
+      "is_variadic": false,
       "name": "engine_2d.c_getInputWithPrompt_FUN_004032c0"
     },
     {
       "addr": "005dd8e0",
+      "is_variadic": false,
       "name": "engine_texture.cpp_clearTextureCache_FUN_005dd8e0"
     },
     {
       "addr": "0046bb80",
+      "is_variadic": false,
       "name": "shape_design.c_cramTextureList_FUN_0046bb80"
     },
     {
       "addr": "0046a970",
+      "is_variadic": false,
       "name": "shape_design.c_cramTextures_FUN_0046a970"
     },
     {
       "addr": "00459e80",
+      "is_variadic": false,
       "name": "shape_design.c_exportModelToMDL_FUN_00459e80"
     },
     {
       "addr": "0046dfc0",
+      "is_variadic": false,
       "name": "shape_design.c_findTextureByFilename_FUN_0046dfc0"
     },
     {
       "addr": "0046e090",
+      "is_variadic": false,
       "name": "shape_design.c_fixupCramUV_FUN_0046e090"
     },
     {
       "addr": "0046e030",
+      "is_variadic": false,
       "name": "shape_design.c_getAtlasMapIndex_FUN_0046e030"
     },
     {
       "addr": "0046e060",
+      "is_variadic": false,
       "name": "shape_design.c_getTextureName_FUN_0046e060"
     },
     {
       "addr": "0046a880",
+      "is_variadic": false,
       "name": "shape_design.c_initializeTextureManager_FUN_0046a880"
     },
     {
       "addr": "0046e340",
+      "is_variadic": false,
       "name": "shape_design.c_normalizeUVCoordinates_FUN_0046e340"
     },
     {
       "addr": "00458a10",
+      "is_variadic": false,
       "name": "shape_design.c_promptForModelNameAndLoad_FUN_00458a10"
     },
     {
       "addr": "00459a20",
+      "is_variadic": false,
       "name": "shape_design.c_validateModelTextures_FUN_00459a20"
     },
     {
       "addr": "005eda20",
+      "is_variadic": false,
       "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20"
     },
     {
       "addr": "005b3e70",
+      "is_variadic": false,
       "name": "wincore_windll.cpp_clearScreen_FUN_005b3e70"
     },
     {
       "addr": "005f2e90",
+      "is_variadic": false,
       "name": "wincore_winrun.cpp_getNextKeypress_FUN_005f2e90"
     }
   ],
@@ -624,6 +644,19 @@
       "match": "&stack0xfffffe54",
       "text": "(g_LoadedModelName,0x27,0,0,&stack0xfffffe54);",
       "type": "stack_ref"
+    },
+    {
+      "call_address": "0046a6d9",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "0046a6de",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0046a6d9",
+      "type": "call_variadic"
     }
   ]
 }

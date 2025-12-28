@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 72,
-    "complexity_score": 112,
+    "complexity_score": 127,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 8,
     "pseudocode_lines": 27,
-    "suspect_count": 8,
+    "suspect_count": 9,
     "suspect_types": [
+      "call_variadic",
       "stack_param"
     ],
     "total_lines": 99
@@ -41,26 +42,32 @@
   "function_calls": [
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
       "addr": "0050f1b0",
+      "is_variadic": false,
       "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1b0"
     },
     {
       "addr": "0050f210",
+      "is_variadic": false,
       "name": "shape_memdbg.cpp_debugFree_FUN_0050f210"
     },
     {
       "addr": "0051a8c0",
+      "is_variadic": false,
       "name": "shape_meshlod.cpp_CLodMesh_copyFrom_FUN_0051a8c0"
     },
     {
       "addr": "00515840",
+      "is_variadic": false,
       "name": "shape_meshlod.cpp_CLodMesh_ctor_FUN_00515840"
     },
     {
       "addr": "00515950",
+      "is_variadic": false,
       "name": "shape_meshlod.cpp_CLodMesh_dtor_FUN_00515950"
     }
   ],
@@ -235,6 +242,19 @@
       "match": "in_stack_00000004",
       "text": "shape_meshlod_cpp_CLodMesh_copyFrom_FUN_0051a8c0(in_stack_00000004->next_lod,in_stack_00000004);",
       "type": "stack_param"
+    },
+    {
+      "call_address": "00516fdd",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "00516fe2",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00516fdd",
+      "type": "call_variadic"
     }
   ]
 }

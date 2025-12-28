@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 266,
-    "complexity_score": 184,
+    "complexity_score": 199,
     "cross_reference_count": 3,
     "function_call_count": 8,
     "global_count": 37,
     "pseudocode_lines": 104,
-    "suspect_count": 6,
+    "suspect_count": 7,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "register_param",
       "stack_param",
       "stack_ref"
@@ -50,34 +51,42 @@
   "function_calls": [
     {
       "addr": "005ff9f3",
+      "is_variadic": false,
       "name": "crt_stack.c_stack_probe_FUN_005ff9f3"
     },
     {
       "addr": "005fdbd0",
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "00401fd0",
+      "is_variadic": false,
       "name": "engine_2d.c_drawText_FUN_00401fd0"
     },
     {
       "addr": "00403170",
+      "is_variadic": false,
       "name": "engine_2d.c_fillRectColor_FUN_00403170"
     },
     {
       "addr": "00401140",
+      "is_variadic": false,
       "name": "engine_2d.c_plotPixel_FUN_00401140"
     },
     {
       "addr": "00447c20",
+      "is_variadic": false,
       "name": "shape_cramtex.cpp_renderTextureEntry_FUN_00447c20"
     },
     {
       "addr": "005eda20",
+      "is_variadic": false,
       "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20"
     },
     {
       "addr": "005b3e70",
+      "is_variadic": false,
       "name": "wincore_windll.cpp_clearScreen_FUN_005b3e70"
     }
   ],
@@ -516,6 +525,19 @@
       "match": "in_stack_ffffff1c",
       "text": "((SCramWorkingEntry *)completion_mode,10,0x36,draw_y,draw_width,in_stack_ffffff1c)",
       "type": "stack_param"
+    },
+    {
+      "call_address": "00448017",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "0044801c",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00448017",
+      "type": "call_variadic"
     }
   ]
 }

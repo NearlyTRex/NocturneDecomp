@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 152,
-    "complexity_score": 129,
+    "complexity_score": 144,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 5,
     "pseudocode_lines": 59,
-    "suspect_count": 6,
+    "suspect_count": 7,
     "suspect_types": [
+      "call_variadic",
       "param_count_too_few",
       "stack_param"
     ],
@@ -36,30 +37,37 @@
   "function_calls": [
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
       "addr": "00509b20",
+      "is_variadic": false,
       "name": "core_manpuz.cpp_FUN_00509b20"
     },
     {
       "addr": "0050aef0",
+      "is_variadic": false,
       "name": "core_manpuz.cpp_FUN_0050aef0"
     },
     {
       "addr": "005a8cb0",
+      "is_variadic": false,
       "name": "sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0"
     },
     {
       "addr": "005a8c30",
+      "is_variadic": false,
       "name": "sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30"
     },
     {
       "addr": "005a8940",
+      "is_variadic": false,
       "name": "sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_005a8940"
     },
     {
       "addr": "005a8e90",
+      "is_variadic": false,
       "name": "sound_sndmain.cpp_startSfx_FUN_005a8e90"
     }
   ],
@@ -205,6 +213,19 @@
       "param_delta": 2,
       "text": "Function declares 0 params but call sites push 2 (2 missing)",
       "type": "param_count_too_few"
+    },
+    {
+      "call_address": "0050ac15",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0050ac1a",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0050ac15",
+      "type": "call_variadic"
     }
   ]
 }

@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 425,
-    "complexity_score": 567,
+    "complexity_score": 612,
     "cross_reference_count": 2,
     "function_call_count": 23,
     "global_count": 30,
     "pseudocode_lines": 192,
-    "suspect_count": 35,
+    "suspect_count": 39,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -45,94 +46,117 @@
   "function_calls": [
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
       "addr": "005fd990",
+      "is_variadic": false,
       "name": "crt_stdio.c_fread_FUN_005fd990"
     },
     {
       "addr": "005ffacc",
+      "is_variadic": false,
       "name": "crt_stdio.c_fseek_FUN_005ffacc"
     },
     {
       "addr": "00601560",
+      "is_variadic": false,
       "name": "crt_stdio.c_ftell_FUN_00601560"
     },
     {
       "addr": "005ff060",
+      "is_variadic": false,
       "name": "crt_stdlib.c_atexit_FUN_005ff060"
     },
     {
       "addr": "005fe5e0",
+      "is_variadic": false,
       "name": "crt_string.c_memmove_FUN_005fe5e0"
     },
     {
       "addr": "005fe7f0",
+      "is_variadic": false,
       "name": "crt_string.c_stricmp_FUN_005fe7f0"
     },
     {
       "addr": "00481a50",
+      "is_variadic": false,
       "name": "engine_dosio.c_getFile_FUN_00481a50"
     },
     {
       "addr": "00481880",
+      "is_variadic": false,
       "name": "engine_dosio.c_getFileSize_FUN_00481880"
     },
     {
       "addr": "00481f20",
+      "is_variadic": false,
       "name": "engine_dosio.c_splitPath_FUN_00481f20"
     },
     {
       "addr": "0050f9b0",
+      "is_variadic": false,
       "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0"
     },
     {
       "addr": "005344f0",
+      "is_variadic": false,
       "name": "sound_mp3.cpp_CMP3Decoder_ctor_FUN_005344f0"
     },
     {
       "addr": "005349e0",
+      "is_variadic": false,
       "name": "sound_mp3.cpp_CMP3Decoder_free_FUN_005349e0"
     },
     {
       "addr": "00534550",
+      "is_variadic": false,
       "name": "sound_mp3.cpp_CMP3Decoder_openFile_FUN_00534550"
     },
     {
       "addr": "00534a60",
+      "is_variadic": false,
       "name": "sound_mp3.cpp_CMP3Decoder_read_FUN_00534a60"
     },
     {
       "addr": "005a6170",
+      "is_variadic": false,
       "name": "sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_005a6170"
     },
     {
       "addr": "005a62c0",
+      "is_variadic": false,
       "name": "sound_sndmain.cpp_CSfxSample_freeMemory_FUN_005a62c0"
     },
     {
       "addr": "005a8550",
+      "is_variadic": false,
       "name": "sound_sndmain.cpp_CSfxSample_getBytesPerFrame_FUN_005a8550"
     },
     {
       "addr": "005a6430",
+      "is_variadic": false,
       "name": "sound_sndmain.cpp_CSfxSample_lock_FUN_005a6430"
     },
     {
       "addr": "005a45c0",
+      "is_variadic": false,
       "name": "sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_005a45c0"
     },
     {
       "addr": "005a6540",
+      "is_variadic": false,
       "name": "sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_005a6540"
     },
     {
       "addr": "005adba0",
+      "is_variadic": true,
       "name": "sound_sndmain.cpp_logSoundError_FUN_005adba0"
     },
     {
       "addr": "005a3fe0",
+      "is_variadic": false,
       "name": "sound_sndmain.cpp_parseWavFile_FUN_005a3fe0"
     }
   ],
@@ -651,6 +675,58 @@
       "match": "in_stack_00000030",
       "text": "shape_memdbg_cpp_closeFile_FUN_0050f9b0(in_stack_00000030,\"..\\\\sound\\\\sndmain.cpp\",0x2eb);",
       "type": "stack_param"
+    },
+    {
+      "call_address": "005a4e1a",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "005a4e1f",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005a4e1a",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "005a4ef0",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "conflict",
+      "esp_certainty_at_call": "conflict",
+      "match": "CALL sound_sndmain.cpp_logSoundError_FUN_005adba0",
+      "return_address": "005a4ef5",
+      "target_address": "0x5adba0",
+      "target_function": "sound_sndmain.cpp_logSoundError_FUN_005adba0",
+      "text": "Call to variadic function sound_sndmain.cpp_logSoundError_FUN_005adba0 at 005a4ef0",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "005a508a",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "005a508f",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005a508a",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "005a516d",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "005a5172",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005a516d",
+      "type": "call_variadic"
     }
   ]
 }

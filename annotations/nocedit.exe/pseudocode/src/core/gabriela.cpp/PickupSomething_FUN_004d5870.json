@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 326,
-    "complexity_score": 387,
+    "complexity_score": 402,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 11,
     "pseudocode_lines": 137,
-    "suspect_count": 23,
+    "suspect_count": 24,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "register_param",
       "stack_param",
       "unknown_field"
@@ -38,22 +39,27 @@
   "function_calls": [
     {
       "addr": "00408ec0",
+      "is_variadic": false,
       "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0"
     },
     {
       "addr": "00408f10",
+      "is_variadic": false,
       "name": "core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10"
     },
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
       "addr": "0052db00",
+      "is_variadic": false,
       "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00"
     },
     {
       "addr": "005fe667",
+      "is_variadic": false,
       "name": "crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667"
     }
   ],
@@ -572,6 +578,19 @@
       "match": "in_stack_00000004",
       "text": "((CMotionController *)(in_stack_00000004 + 1),iVar5,1);",
       "type": "stack_param"
+    },
+    {
+      "call_address": "004d5bfc",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "004d5c01",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 004d5bfc",
+      "type": "call_variadic"
     }
   ]
 }

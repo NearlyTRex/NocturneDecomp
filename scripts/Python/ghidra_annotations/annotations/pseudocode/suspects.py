@@ -712,3 +712,102 @@ def identify_param_count_mismatch(param_estimates, vtable_info):
                 'param_delta': delta
             }
     return None
+
+
+def identify_variadic_calls(pcode_data, func_calls=None, has_stack_issues=False, existing_overrides=None):
+    """Identify calls to variadic functions that may need ESP stabilization.
+
+    Variadic functions (sprintf, fscanf, etc.) can have internal stack frame issues
+    that confuse Ghidra's ESP tracking in calling functions.
+
+    Args:
+        pcode_data: List of instruction dicts from extract_function_pcode()
+        func_calls: List of function call dicts with 'addr', 'name', 'is_variadic' keys
+        has_stack_issues: If True, the calling function has badspacebase/stack_param issues
+        existing_overrides: Optional dict of address -> pcode_lines from JSON
+
+    Returns:
+        Tuple of (suspects, resolved_suspects) where:
+        - suspects: List of unfixed suspect dictionaries
+        - resolved_suspects: List of suspects that have been fixed by overrides
+    """
+    suspects = []
+    resolved_suspects = []
+
+    if not pcode_data:
+        return suspects, resolved_suspects
+
+    # Build set of variadic function addresses from func_calls
+    variadic_funcs = {}  # addr (normalized) -> name
+    if func_calls:
+        for call in func_calls:
+            if call.get('is_variadic', False):
+                # Normalize address for matching
+                addr = call.get('addr', '').lower().replace('0x', '').lstrip('0') or '0'
+                variadic_funcs[addr] = call.get('name', 'unknown')
+
+    if not variadic_funcs:
+        return suspects, resolved_suspects
+
+    # Normalize existing override addresses for comparison
+    fixed_addresses = set()
+    if existing_overrides:
+        for addr in existing_overrides.keys():
+            normalized = addr.lower().replace('0x', '').lstrip('0') or '0'
+            fixed_addresses.add(normalized)
+
+    # Scan for CALL instructions to variadic functions
+    for i, entry in enumerate(pcode_data):
+        pcode_lines = entry.get('pcode', [])
+        call_addr = entry.get('address', '')
+
+        # Look for CALL (ram,ADDR,4) in pcode
+        for line in pcode_lines:
+            if 'CALL (ram,' not in line:
+                continue
+
+            # Extract target address from CALL (ram,0xADDR,4)
+            match = re.search(r'CALL \(ram,0x([0-9a-fA-F]+),4\)', line)
+            if not match:
+                continue
+
+            target_addr = match.group(1).lower().lstrip('0') or '0'
+
+            # Check if this is a variadic function
+            if target_addr not in variadic_funcs:
+                continue
+
+            func_name = variadic_funcs[target_addr]
+
+            # Get return address (next instruction)
+            return_address = None
+            if i + 1 < len(pcode_data):
+                return_address = pcode_data[i + 1].get('address', '')
+
+            # Check ESP certainty after the call
+            esp_certainty = entry.get('esp_certainty', 'unknown')
+            next_certainty = pcode_data[i + 1].get('esp_certainty', 'unknown') if i + 1 < len(pcode_data) else 'unknown'
+
+            # Create suspect
+            suspect = {
+                'type': 'call_variadic',
+                'match': 'CALL %s' % func_name,
+                'text': 'Call to variadic function %s at %s' % (func_name, call_addr),
+                'description': 'Variadic function call may destabilize ESP tracking',
+                'call_address': call_addr,
+                'return_address': return_address,
+                'target_address': '0x%s' % target_addr,
+                'target_function': func_name,
+                'esp_certainty_at_call': esp_certainty,
+                'esp_certainty_after': next_certainty,
+                'caller_has_stack_issues': has_stack_issues,
+            }
+
+            # Check if already fixed
+            norm_call = call_addr.lower().replace('0x', '').lstrip('0') or '0'
+            if norm_call in fixed_addresses:
+                resolved_suspects.append(suspect)
+            else:
+                suspects.append(suspect)
+
+    return suspects, resolved_suspects

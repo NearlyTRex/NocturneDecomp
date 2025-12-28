@@ -46,7 +46,7 @@ from ghidra_annotations.annotations.pseudocode.transforms import (
 )
 from ghidra_annotations.annotations.pseudocode.suspects import (
     identify_suspect_lines, calculate_complexity_metrics, identify_pcode_suspects,
-    identify_param_count_mismatch
+    identify_param_count_mismatch, identify_variadic_calls
 )
 from ghidra_annotations.annotations.pseudocode.stack_patterns import (
     summarize_stack_patterns
@@ -258,6 +258,14 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map):
         result.param_estimates, result.vtable_info)
     if param_mismatch:
         suspects.append(param_mismatch)
+
+    # Identify variadic function calls that may need ESP stabilization
+    # Check if this function has stack issues (badspacebase or stack_param)
+    has_stack_issues = any(s.get('type') in ('badspacebase', 'stack_param') for s in suspects)
+    variadic_suspects, variadic_resolved = identify_variadic_calls(
+        result.pcode_data, result.func_calls, has_stack_issues, pcode_overrides)
+    suspects.extend(variadic_suspects)
+    resolved_suspects.extend(variadic_resolved)
 
     # Calculate complexity metrics (Python-only)
     complexity = calculate_complexity_metrics(

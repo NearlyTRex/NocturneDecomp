@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 129,
+    "complexity_score": 144,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 2,
     "pseudocode_lines": 19,
-    "suspect_count": 9,
+    "suspect_count": 10,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "register_param",
       "stack_param",
       "warning_overlapping_globals"
@@ -31,18 +32,22 @@
   "function_calls": [
     {
       "addr": "0040e160",
+      "is_variadic": false,
       "name": "core_actor.cpp_CActorPropertyList_FUN_0040e160"
     },
     {
       "addr": "0040d290",
+      "is_variadic": false,
       "name": "core_actor.cpp_CDemonActor_getPropertyList_FUN_0040d290"
     },
     {
       "addr": "004d2330",
+      "is_variadic": false,
       "name": "core_frankgen.cpp_CFrankenstienMachine_findLeader_FUN_004d2330"
     },
     {
       "addr": "005fdbd0",
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     }
   ],
@@ -176,6 +181,19 @@
       "match": "in_stack_00000014",
       "text": "core_actor_cpp_CActorPropertyList_FUN_0040e160(in_stack_00000014);",
       "type": "stack_param"
+    },
+    {
+      "call_address": "004d252c",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "004d2531",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 004d252c",
+      "type": "call_variadic"
     }
   ],
   "vtable_info": {

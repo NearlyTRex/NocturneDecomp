@@ -1,13 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 250,
-    "complexity_score": 116,
+    "complexity_score": 141,
     "cross_reference_count": 11,
     "function_call_count": 13,
     "global_count": 30,
     "pseudocode_lines": 116,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 2,
+    "suspect_types": [
+      "call_variadic"
+    ],
     "total_lines": 366
   },
   "cross_references": [
@@ -93,54 +95,67 @@
   "function_calls": [
     {
       "addr": "0044c3e0",
+      "is_variadic": false,
       "name": "core_dcamera.cpp_CDemonCamera_setSceneCamera_FUN_0044c3e0"
     },
     {
       "addr": "0044d1c0",
+      "is_variadic": false,
       "name": "core_dcamera.cpp_CDemonCamera_updateTransformMatrices_FUN_0044d1c0"
     },
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
       "addr": "00441890",
+      "is_variadic": true,
       "name": "engine_console.cpp_CConsole_printf_FUN_00441890"
     },
     {
       "addr": "0048c890",
+      "is_variadic": false,
       "name": "engine_drender.cpp_CDemonRenderer_pushViewport_FUN_0048c890"
     },
     {
       "addr": "0048c150",
+      "is_variadic": false,
       "name": "engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150"
     },
     {
       "addr": "0048c650",
+      "is_variadic": false,
       "name": "engine_drender.cpp_CDemonRenderer_setProjectionScale_FUN_0048c650"
     },
     {
       "addr": "0048c200",
+      "is_variadic": false,
       "name": "engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200"
     },
     {
       "addr": "005b7280",
+      "is_variadic": false,
       "name": "wincore_windll.cpp_beginScene_FUN_005b7280"
     },
     {
       "addr": "005b7a30",
+      "is_variadic": false,
       "name": "wincore_windll.cpp_clear_FUN_005b7a30"
     },
     {
       "addr": "005b3e70",
+      "is_variadic": false,
       "name": "wincore_windll.cpp_clearScreen_FUN_005b3e70"
     },
     {
       "addr": "005b3ed4",
+      "is_variadic": false,
       "name": "wincore_windll.cpp_clearZBuffer_FUN_005b3ed4"
     },
     {
       "addr": "005b7be0",
+      "is_variadic": false,
       "name": "wincore_windll.cpp_clearZBuffer_FUN_005b7be0"
     }
   ],
@@ -486,5 +501,32 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "call_address": "0044c4ae",
+      "caller_has_stack_issues": false,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL engine_console.cpp_CConsole_printf_FUN_00441890",
+      "return_address": "0044c4b3",
+      "target_address": "0x441890",
+      "target_function": "engine_console.cpp_CConsole_printf_FUN_00441890",
+      "text": "Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 0044c4ae",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "0044c56d",
+      "caller_has_stack_issues": false,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0044c572",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0044c56d",
+      "type": "call_variadic"
+    }
+  ]
 }

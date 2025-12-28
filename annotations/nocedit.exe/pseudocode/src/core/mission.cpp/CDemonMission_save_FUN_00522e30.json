@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 48,
-    "complexity_score": 61,
+    "complexity_score": 76,
     "cross_reference_count": 4,
     "function_call_count": 5,
     "global_count": 8,
     "pseudocode_lines": 16,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
+      "call_variadic",
       "stack_param"
     ],
     "total_lines": 64
@@ -53,22 +54,27 @@
   "function_calls": [
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
       "addr": "00523600",
+      "is_variadic": false,
       "name": "core_mission.cpp_CDemonMission_writeFile_FUN_00523600"
     },
     {
       "addr": "00481a50",
+      "is_variadic": false,
       "name": "engine_dosio.c_getFile_FUN_00481a50"
     },
     {
       "addr": "0050f9b0",
+      "is_variadic": false,
       "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0"
     },
     {
       "addr": "0050efe0",
+      "is_variadic": false,
       "name": "shape_memdbg.cpp_SMemHead_checkAllMemory_FUN_0050efe0"
     }
   ],
@@ -188,6 +194,19 @@
       "match": "in_stack_00000010",
       "text": "core_mission_cpp_CDemonMission_writeFile_FUN_00523600(in_stack_00000010);",
       "type": "stack_param"
+    },
+    {
+      "call_address": "00522ea1",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "00522ea6",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00522ea1",
+      "type": "call_variadic"
     }
   ]
 }

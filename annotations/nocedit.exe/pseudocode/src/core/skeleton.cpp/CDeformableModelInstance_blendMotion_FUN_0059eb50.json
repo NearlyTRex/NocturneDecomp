@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 465,
-    "complexity_score": 863,
+    "complexity_score": 878,
     "cross_reference_count": 14,
     "function_call_count": 8,
     "global_count": 5,
     "pseudocode_lines": 273,
-    "suspect_count": 56,
+    "suspect_count": 57,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -118,34 +119,42 @@
   "function_calls": [
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
       "addr": "0052e4c0",
+      "is_variadic": false,
       "name": "core_motion.cpp_CMotionController_getFramesForInterpolation_FUN_0052e4c0"
     },
     {
       "addr": "005a0820",
+      "is_variadic": false,
       "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820"
     },
     {
       "addr": "0059a070",
+      "is_variadic": false,
       "name": "core_skeleton.cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070"
     },
     {
       "addr": "0059a100",
+      "is_variadic": false,
       "name": "core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_0059a100"
     },
     {
       "addr": "005f7640",
+      "is_variadic": false,
       "name": "core_xform.cpp_multiplyQuaternion_FUN_005f7640"
     },
     {
       "addr": "005f75e0",
+      "is_variadic": false,
       "name": "core_xform.cpp_negateFirstComponent_FUN_005f75e0"
     },
     {
       "addr": "005f77e0",
+      "is_variadic": false,
       "name": "core_xform.cpp_slerpQuaternion_FUN_005f77e0"
     }
   ],
@@ -903,6 +912,19 @@
       "match": "in_stack_fffff6d4",
       "text": "(fVar4 * fVar11 + fVar2 * (float)in_stack_fffff6d4) * fVar6 * blend_weight;",
       "type": "stack_param"
+    },
+    {
+      "call_address": "0059f215",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0059f21a",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0059f215",
+      "type": "call_variadic"
     }
   ]
 }

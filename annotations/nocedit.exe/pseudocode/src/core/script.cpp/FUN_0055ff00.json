@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 185,
-    "complexity_score": 578,
+    "complexity_score": 593,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 10,
     "pseudocode_lines": 73,
-    "suspect_count": 47,
+    "suspect_count": 48,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "extra_output",
       "pointer_cast",
       "register_param",
@@ -41,34 +42,42 @@
   "function_calls": [
     {
       "addr": "005594e0",
+      "is_variadic": false,
       "name": "core_script.cpp_GetDemonActor_FUN_005594e0"
     },
     {
       "addr": "005b3ba0",
+      "is_variadic": false,
       "name": "core_sound.cpp_CSound_getSoundDuration_FUN_005b3ba0"
     },
     {
       "addr": "005b3a20",
+      "is_variadic": false,
       "name": "core_sound.cpp_CSound_playSound_FUN_005b3a20"
     },
     {
       "addr": "0060013c",
+      "is_variadic": true,
       "name": "crt_stdio.c_sscanf_FUN_0060013c"
     },
     {
       "addr": "004a2b80",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CStrList_add_FUN_004a2b80"
     },
     {
       "addr": "005a8cb0",
+      "is_variadic": false,
       "name": "sound_sndmain.cpp_popSfxOptions_FUN_005a8cb0"
     },
     {
       "addr": "005a8c30",
+      "is_variadic": false,
       "name": "sound_sndmain.cpp_pushSfxOptions_FUN_005a8c30"
     },
     {
       "addr": "005a8af0",
+      "is_variadic": false,
       "name": "sound_sndmain.cpp_setNextSfxChannel_FUN_005a8af0"
     }
   ],
@@ -564,6 +573,19 @@
       "match": "unaff_ESI",
       "text": "return unaff_ESI;",
       "type": "unaffected_reg"
+    },
+    {
+      "call_address": "0055ff79",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL crt_stdio.c_sscanf_FUN_0060013c",
+      "return_address": "0055ff7e",
+      "target_address": "0x60013c",
+      "target_function": "crt_stdio.c_sscanf_FUN_0060013c",
+      "text": "Call to variadic function crt_stdio.c_sscanf_FUN_0060013c at 0055ff79",
+      "type": "call_variadic"
     }
   ]
 }

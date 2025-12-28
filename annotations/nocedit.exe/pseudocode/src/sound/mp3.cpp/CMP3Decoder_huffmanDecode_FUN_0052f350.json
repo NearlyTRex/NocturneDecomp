@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 255,
-    "complexity_score": 216,
+    "complexity_score": 231,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 6,
     "pseudocode_lines": 91,
-    "suspect_count": 12,
+    "suspect_count": 13,
     "suspect_types": [
+      "call_variadic",
       "extra_output"
     ],
     "total_lines": 346
@@ -35,14 +36,17 @@
   "function_calls": [
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
       "addr": "0052f250",
+      "is_variadic": false,
       "name": "sound_mp3.cpp_CMP3Decoder_readBit_FUN_0052f250"
     },
     {
       "addr": "0052f170",
+      "is_variadic": false,
       "name": "sound_mp3.cpp_CMP3Decoder_readBits_FUN_0052f170"
     }
   ],
@@ -258,6 +262,19 @@
       "match": "extraout_EAX_02",
       "text": "(sound_mp3_cpp_CMP3Decoder_readBit_FUN_0052f250(this_ptr), extraout_EAX_02 == 1)) {",
       "type": "extra_output"
+    },
+    {
+      "call_address": "0052f50d",
+      "caller_has_stack_issues": false,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0052f512",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0052f50d",
+      "type": "call_variadic"
     }
   ]
 }

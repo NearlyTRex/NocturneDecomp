@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 82,
-    "complexity_score": 118,
+    "complexity_score": 133,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
     "pseudocode_lines": 48,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "register_param",
       "stack_ref",
       "unaffected_reg"
@@ -38,6 +39,7 @@
   "function_calls": [
     {
       "addr": "0060013c",
+      "is_variadic": true,
       "name": "crt_stdio.c_sscanf_FUN_0060013c"
     }
   ],
@@ -219,6 +221,19 @@
       "match": "unaff_EBX",
       "text": "if (unaff_EBX < 0) {",
       "type": "unaffected_reg"
+    },
+    {
+      "call_address": "004b22dd",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL crt_stdio.c_sscanf_FUN_0060013c",
+      "return_address": "004b22e2",
+      "target_address": "0x60013c",
+      "target_function": "crt_stdio.c_sscanf_FUN_0060013c",
+      "text": "Call to variadic function crt_stdio.c_sscanf_FUN_0060013c at 004b22dd",
+      "type": "call_variadic"
     }
   ]
 }

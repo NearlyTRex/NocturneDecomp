@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 33,
-    "complexity_score": 82,
+    "complexity_score": 97,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 12,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "register_param",
       "stack_param",
       "stack_ref"
@@ -31,6 +32,7 @@
   "function_calls": [
     {
       "addr": "004cdd70",
+      "is_variadic": true,
       "name": "engine_font.cpp_CBitFont_printfRight_FUN_004cdd70"
     }
   ],
@@ -151,6 +153,19 @@
       "match": "in_stack_00000018",
       "text": "(font_ptr,x,y,color,format,in_stack_00000018,&local_14);",
       "type": "stack_param"
+    },
+    {
+      "call_address": "004cdd4f",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL engine_font.cpp_CBitFont_printfRight_FUN_004cdd70",
+      "return_address": "004cdd54",
+      "target_address": "0x4cdd70",
+      "target_function": "engine_font.cpp_CBitFont_printfRight_FUN_004cdd70",
+      "text": "Call to variadic function engine_font.cpp_CBitFont_printfRight_FUN_004cdd70 at 004cdd4f",
+      "type": "call_variadic"
     }
   ]
 }

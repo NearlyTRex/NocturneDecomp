@@ -1,13 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 250,
-    "complexity_score": 66,
+    "complexity_score": 81,
     "cross_reference_count": 3,
     "function_call_count": 6,
     "global_count": 47,
     "pseudocode_lines": 66,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "call_variadic"
+    ],
     "total_lines": 316
   },
   "cross_references": [
@@ -45,26 +47,32 @@
   "function_calls": [
     {
       "addr": "004fcfe0",
+      "is_variadic": false,
       "name": "core_inv.cpp_loadItem_FUN_004fcfe0"
     },
     {
       "addr": "005fe7c0",
+      "is_variadic": true,
       "name": "crt_stdio.c_fscanf_FUN_005fe7c0"
     },
     {
       "addr": "004105d0",
+      "is_variadic": false,
       "name": "engine_alphabit.cpp_CAlphaBitmap_load_FUN_004105d0"
     },
     {
       "addr": "00410c20",
+      "is_variadic": false,
       "name": "engine_alphabit.cpp_CAlphaBitmap_scale_FUN_00410c20"
     },
     {
       "addr": "00481a50",
+      "is_variadic": false,
       "name": "engine_dosio.c_getFile_FUN_00481a50"
     },
     {
       "addr": "0050f9b0",
+      "is_variadic": false,
       "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0"
     }
   ],
@@ -425,5 +433,19 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": []
+  "suspects": [
+    {
+      "call_address": "004fd4cd",
+      "caller_has_stack_issues": false,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL crt_stdio.c_fscanf_FUN_005fe7c0",
+      "return_address": "004fd4d2",
+      "target_address": "0x5fe7c0",
+      "target_function": "crt_stdio.c_fscanf_FUN_005fe7c0",
+      "text": "Call to variadic function crt_stdio.c_fscanf_FUN_005fe7c0 at 004fd4cd",
+      "type": "call_variadic"
+    }
+  ]
 }

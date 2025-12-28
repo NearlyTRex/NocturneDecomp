@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 248,
-    "complexity_score": 415,
+    "complexity_score": 430,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 13,
     "pseudocode_lines": 80,
-    "suspect_count": 31,
+    "suspect_count": 32,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "callind_esp_no_frame",
       "register_param",
       "stack_param",
@@ -32,14 +33,17 @@
   "function_calls": [
     {
       "addr": "005fdbd0",
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "005ffef0",
+      "is_variadic": false,
       "name": "crt_stdlib.c_atoi_FUN_005ffef0"
     },
     {
       "addr": "005f46b0",
+      "is_variadic": false,
       "name": "wincore_winvideo.cpp_closeMovie_FUN_005f46b0"
     }
   ],
@@ -430,6 +434,19 @@
       "return_address": "005f4973",
       "text": "CALLIND at 005f496c, ADD ESP at 005f4979 (no EBP frame)",
       "type": "callind_esp_no_frame"
+    },
+    {
+      "call_address": "005f4736",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "005f473b",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 005f4736",
+      "type": "call_variadic"
     }
   ]
 }

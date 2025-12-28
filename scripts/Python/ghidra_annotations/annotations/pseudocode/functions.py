@@ -138,7 +138,7 @@ def get_function_calls(currentProgram, function):
         function: The function to analyze
 
     Returns:
-        A list of dictionaries with called function info (name, addr)
+        A list of dictionaries with called function info (name, addr, is_variadic)
     """
     function_calls = []
     seen_functions = set()
@@ -165,7 +165,8 @@ def get_function_calls(currentProgram, function):
                 if func_name != function_name and func_name not in seen_functions:
                     function_calls.append({
                         'name': func_name,
-                        'addr': str(to_addr)
+                        'addr': str(to_addr),
+                        'is_variadic': target_function.hasVarArgs()
                     })
                     seen_functions.add(func_name)
             else:
@@ -175,7 +176,8 @@ def get_function_calls(currentProgram, function):
                     if func_name not in seen_functions:
                         function_calls.append({
                             'name': func_name,
-                            'addr': str(to_addr)
+                            'addr': str(to_addr),
+                            'is_variadic': False  # Can't determine for externals
                         })
                         seen_functions.add(func_name)
 

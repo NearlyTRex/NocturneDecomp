@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 84,
-    "complexity_score": 122,
+    "complexity_score": 137,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 14,
     "pseudocode_lines": 37,
-    "suspect_count": 7,
+    "suspect_count": 8,
     "suspect_types": [
+      "call_variadic",
       "concat_artifact",
       "undefined_type",
       "warning_overlapping_globals"
@@ -30,14 +31,17 @@
   "function_calls": [
     {
       "addr": "004a00f0",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0"
     },
     {
       "addr": "004a0020",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_promptForValidInteger_FUN_004a0020"
     },
     {
       "addr": "0049e6a0",
+      "is_variadic": true,
       "name": "shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0"
     }
   ],
@@ -214,6 +218,19 @@
       "match": "CONCAT31",
       "text": "if (CONCAT31 /* combine 2-byte values */(extraout_var_01,bVar1) != 0) {",
       "type": "concat_artifact"
+    },
+    {
+      "call_address": "004d77f5",
+      "caller_has_stack_issues": false,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0",
+      "return_address": "004d77fa",
+      "target_address": "0x49e6a0",
+      "target_function": "shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0",
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 at 004d77f5",
+      "type": "call_variadic"
     }
   ]
 }

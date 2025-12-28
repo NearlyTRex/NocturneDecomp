@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 40,
+    "complexity_score": 85,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 4,
     "pseudocode_lines": 15,
-    "suspect_count": 2,
+    "suspect_count": 6,
     "suspect_types": [
+      "call_variadic",
       "unaffected_reg"
     ],
     "total_lines": 74
@@ -35,6 +36,7 @@
   "function_calls": [
     {
       "addr": "005fe7c0",
+      "is_variadic": true,
       "name": "crt_stdio.c_fscanf_FUN_005fe7c0"
     }
   ],
@@ -106,6 +108,58 @@
       "match": "unaff_EBX",
       "text": "(param_6,\"%d,%d,%d\\n\",param_5 + 0x10,param_5 + 0x14,param_5,unaff_EBX);",
       "type": "unaffected_reg"
+    },
+    {
+      "call_address": "004ecb1c",
+      "caller_has_stack_issues": false,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL crt_stdio.c_fscanf_FUN_005fe7c0",
+      "return_address": "004ecb21",
+      "target_address": "0x5fe7c0",
+      "target_function": "crt_stdio.c_fscanf_FUN_005fe7c0",
+      "text": "Call to variadic function crt_stdio.c_fscanf_FUN_005fe7c0 at 004ecb1c",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "004ecb33",
+      "caller_has_stack_issues": false,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL crt_stdio.c_fscanf_FUN_005fe7c0",
+      "return_address": "004ecb38",
+      "target_address": "0x5fe7c0",
+      "target_function": "crt_stdio.c_fscanf_FUN_005fe7c0",
+      "text": "Call to variadic function crt_stdio.c_fscanf_FUN_005fe7c0 at 004ecb33",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "004ecb4d",
+      "caller_has_stack_issues": false,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL crt_stdio.c_fscanf_FUN_005fe7c0",
+      "return_address": "004ecb52",
+      "target_address": "0x5fe7c0",
+      "target_function": "crt_stdio.c_fscanf_FUN_005fe7c0",
+      "text": "Call to variadic function crt_stdio.c_fscanf_FUN_005fe7c0 at 004ecb4d",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "004ecb77",
+      "caller_has_stack_issues": false,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL crt_stdio.c_fscanf_FUN_005fe7c0",
+      "return_address": "004ecb7c",
+      "target_address": "0x5fe7c0",
+      "target_function": "crt_stdio.c_fscanf_FUN_005fe7c0",
+      "text": "Call to variadic function crt_stdio.c_fscanf_FUN_005fe7c0 at 004ecb77",
+      "type": "call_variadic"
     }
   ]
 }

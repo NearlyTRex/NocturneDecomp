@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 106,
-    "complexity_score": 43,
+    "complexity_score": 58,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 5,
     "pseudocode_lines": 28,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "call_variadic",
       "pointer_cast"
     ],
     "total_lines": 134
@@ -41,14 +42,17 @@
   "function_calls": [
     {
       "addr": "00457430",
+      "is_variadic": false,
       "name": "core_dcube.cpp_CDemonCube_save_FUN_00457430"
     },
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
       "addr": "005fdc00",
+      "is_variadic": false,
       "name": "crt_stdio.c_fwrite_FUN_005fdc00"
     }
   ],
@@ -144,6 +148,19 @@
       "match": "(CDemonCube *)((int)",
       "text": "((CDemonCube *)((int)&this_ptr->cube_data->voxel_buffer1 + iVar1),file_handle);",
       "type": "pointer_cast"
+    },
+    {
+      "call_address": "00495024",
+      "caller_has_stack_issues": false,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "00495029",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00495024",
+      "type": "call_variadic"
     }
   ]
 }

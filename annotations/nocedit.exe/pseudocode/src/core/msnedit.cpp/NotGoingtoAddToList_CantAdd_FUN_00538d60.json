@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 58,
+    "complexity_score": 83,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 4,
     "pseudocode_lines": 33,
-    "suspect_count": 2,
+    "suspect_count": 4,
     "suspect_types": [
+      "call_variadic",
       "unaffected_reg"
     ],
     "total_lines": 99
@@ -35,10 +36,12 @@
   "function_calls": [
     {
       "addr": "00538f40",
+      "is_variadic": false,
       "name": "core_msnedit.cpp_FUN_00538f40"
     },
     {
       "addr": "0049e740",
+      "is_variadic": true,
       "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740"
     }
   ],
@@ -118,6 +121,32 @@
       "match": "unaff_EBX",
       "text": "(g_CEditorToolsPtr,\"I'm not going to add %s into the set list because it's already there!\",param_6,unaff_EBX);",
       "type": "unaffected_reg"
+    },
+    {
+      "call_address": "00538d92",
+      "caller_has_stack_issues": false,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "return_address": "00538d97",
+      "target_address": "0x49e740",
+      "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 00538d92",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "00538daa",
+      "caller_has_stack_issues": false,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "return_address": "00538daf",
+      "target_address": "0x49e740",
+      "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 00538daa",
+      "type": "call_variadic"
     }
   ]
 }

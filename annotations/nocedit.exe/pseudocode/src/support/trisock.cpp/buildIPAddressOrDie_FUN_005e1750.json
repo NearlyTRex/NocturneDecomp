@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 48,
-    "complexity_score": 41,
+    "complexity_score": 56,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 4,
     "pseudocode_lines": 16,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
+      "call_variadic",
       "stack_param"
     ],
     "total_lines": 64
@@ -35,10 +36,12 @@
   "function_calls": [
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
       "addr": "005e1870",
+      "is_variadic": false,
       "name": "support_trisock.cpp_buildIPAddress_FUN_005e1870"
     }
   ],
@@ -173,6 +176,19 @@
       "match": "in_stack_00000018",
       "text": "(\"Invalid IP values: %d, %d, %d, %d\",octet1,octet2,octet4,in_stack_00000018);",
       "type": "stack_param"
+    },
+    {
+      "call_address": "005e17a6",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "005e17ab",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005e17a6",
+      "type": "call_variadic"
     }
   ]
 }

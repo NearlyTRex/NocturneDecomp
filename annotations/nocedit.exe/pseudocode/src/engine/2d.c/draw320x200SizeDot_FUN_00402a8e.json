@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 164,
-    "complexity_score": 285,
+    "complexity_score": 300,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 9,
     "pseudocode_lines": 50,
-    "suspect_count": 23,
+    "suspect_count": 24,
     "suspect_types": [
+      "call_variadic",
       "stack_param"
     ],
     "total_lines": 214
@@ -28,14 +29,17 @@
   "function_calls": [
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
       "addr": "00401140",
+      "is_variadic": false,
       "name": "engine_2d.c_plotPixel_FUN_00401140"
     },
     {
       "addr": "00401770",
+      "is_variadic": false,
       "name": "engine_2d.c_project3DPointToScreen_FUN_00401770"
     }
   ],
@@ -308,6 +312,19 @@
       "match": "in_stack_0000000c",
       "text": "(longlong)in_stack_0000000c) + g_ViewportBottomFixed >> 0x10;",
       "type": "stack_param"
+    },
+    {
+      "call_address": "00402c01",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "00402c06",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00402c01",
+      "type": "call_variadic"
     }
   ]
 }

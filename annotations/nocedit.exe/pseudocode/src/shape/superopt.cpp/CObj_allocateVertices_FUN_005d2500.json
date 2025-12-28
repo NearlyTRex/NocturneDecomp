@@ -1,13 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 18,
+    "complexity_score": 33,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 1,
     "pseudocode_lines": 18,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "call_variadic"
+    ],
     "total_lines": 71
   },
   "cross_references": [],
@@ -26,18 +28,22 @@
   "function_calls": [
     {
       "addr": "00601cd0",
+      "is_variadic": false,
       "name": "crt_memory.c_free_FUN_00601cd0"
     },
     {
       "addr": "00601bb0",
+      "is_variadic": false,
       "name": "crt_memory.c_malloc_FUN_00601bb0"
     },
     {
       "addr": "005fde40",
+      "is_variadic": false,
       "name": "crt_memory.c_memset_FUN_005fde40"
     },
     {
       "addr": "005c7910",
+      "is_variadic": true,
       "name": "shape_superopt.cpp_logToFile_FUN_005c7910"
     }
   ],
@@ -127,7 +133,21 @@
       }
     ]
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "call_address": "005d2541",
+      "caller_has_stack_issues": false,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL shape_superopt.cpp_logToFile_FUN_005c7910",
+      "return_address": "005d2546",
+      "target_address": "0x5c7910",
+      "target_function": "shape_superopt.cpp_logToFile_FUN_005c7910",
+      "text": "Call to variadic function shape_superopt.cpp_logToFile_FUN_005c7910 at 005d2541",
+      "type": "call_variadic"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 822,
-    "complexity_score": 1392,
+    "complexity_score": 1577,
     "cross_reference_count": 0,
     "function_call_count": 26,
     "global_count": 33,
     "pseudocode_lines": 232,
-    "suspect_count": 114,
+    "suspect_count": 132,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "register_param",
       "stack_param",
       "stack_ref"
@@ -31,106 +32,132 @@
   "function_calls": [
     {
       "addr": "00486ea0",
+      "is_variadic": false,
       "name": "cockpit_drawsurf.cpp_CDrawSurface_ctor_FUN_00486ea0"
     },
     {
       "addr": "00488990",
+      "is_variadic": false,
       "name": "cockpit_drawsurf.cpp_CDrawSurface_drawAnimatedFullSurface_FUN_00488990"
     },
     {
       "addr": "00487730",
+      "is_variadic": false,
       "name": "cockpit_drawsurf.cpp_CDrawSurface_drawCircle_FUN_00487730"
     },
     {
       "addr": "00487880",
+      "is_variadic": false,
       "name": "cockpit_drawsurf.cpp_CDrawSurface_drawCircleFromBottomLeft_FUN_00487880"
     },
     {
       "addr": "004878b0",
+      "is_variadic": false,
       "name": "cockpit_drawsurf.cpp_CDrawSurface_drawCircleFromBottomRight_FUN_004878b0"
     },
     {
       "addr": "00487820",
+      "is_variadic": false,
       "name": "cockpit_drawsurf.cpp_CDrawSurface_drawCircleFromTopLeft_FUN_00487820"
     },
     {
       "addr": "00487850",
+      "is_variadic": false,
       "name": "cockpit_drawsurf.cpp_CDrawSurface_drawCircleFromTopRight_FUN_00487850"
     },
     {
       "addr": "00487990",
+      "is_variadic": false,
       "name": "cockpit_drawsurf.cpp_CDrawSurface_drawClippedLine_FUN_00487990"
     },
     {
       "addr": "00488530",
+      "is_variadic": false,
       "name": "cockpit_drawsurf.cpp_CDrawSurface_drawSurfaceBorder_FUN_00488530"
     },
     {
       "addr": "00489790",
+      "is_variadic": true,
       "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredBothPrintf_FUN_00489790"
     },
     {
       "addr": "00489c40",
+      "is_variadic": true,
       "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_00489c40"
     },
     {
       "addr": "00489940",
+      "is_variadic": true,
       "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_00489940"
     },
     {
       "addr": "00489a30",
+      "is_variadic": true,
       "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_00489a30"
     },
     {
       "addr": "00489860",
+      "is_variadic": true,
       "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_00489860"
     },
     {
       "addr": "00489830",
+      "is_variadic": false,
       "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBoundsWrapper_FUN_00489830"
     },
     {
       "addr": "004895f0",
+      "is_variadic": true,
       "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredPrintf_FUN_004895f0"
     },
     {
       "addr": "004895c0",
+      "is_variadic": false,
       "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredWrapper_FUN_004895c0"
     },
     {
       "addr": "00489450",
+      "is_variadic": true,
       "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_00489450"
     },
     {
       "addr": "00489520",
+      "is_variadic": true,
       "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_00489520"
     },
     {
       "addr": "004896c0",
+      "is_variadic": true,
       "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCenteredPrintf_FUN_004896c0"
     },
     {
       "addr": "00489420",
+      "is_variadic": false,
       "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedWrapper_FUN_00489420"
     },
     {
       "addr": "00488c70",
+      "is_variadic": false,
       "name": "cockpit_drawsurf.cpp_CDrawSurface_fillFullSurface_FUN_00488c70"
     },
     {
       "addr": "004874d0",
+      "is_variadic": false,
       "name": "cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_004874d0"
     },
     {
       "addr": "00487010",
+      "is_variadic": false,
       "name": "cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_00487010"
     },
     {
       "addr": "00487220",
+      "is_variadic": false,
       "name": "cockpit_drawsurf.cpp_CDrawSurface_setColorRGB_FUN_00487220"
     },
     {
       "addr": "004874c0",
+      "is_variadic": false,
       "name": "cockpit_drawsurf.cpp_setCurrentFont_FUN_004874c0"
     }
   ],
@@ -1267,6 +1294,240 @@
       "match": "&stack0x000000fc",
       "text": "((CDrawSurface *)&stack0x000000fc);",
       "type": "stack_ref"
+    },
+    {
+      "call_address": "0048a1b0",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_00489450",
+      "return_address": "0048a1b5",
+      "target_address": "0x489450",
+      "target_function": "cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_00489450",
+      "text": "Call to variadic function cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_00489450 at 0048a1b0",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "0048a1d4",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_00489520",
+      "return_address": "0048a1d9",
+      "target_address": "0x489520",
+      "target_function": "cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_00489520",
+      "text": "Call to variadic function cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_00489520 at 0048a1d4",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "0048a1f5",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredPrintf_FUN_004895f0",
+      "return_address": "0048a1fa",
+      "target_address": "0x4895f0",
+      "target_function": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredPrintf_FUN_004895f0",
+      "text": "Call to variadic function cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredPrintf_FUN_004895f0 at 0048a1f5",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "0048a218",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCenteredPrintf_FUN_004896c0",
+      "return_address": "0048a21d",
+      "target_address": "0x4896c0",
+      "target_function": "cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCenteredPrintf_FUN_004896c0",
+      "text": "Call to variadic function cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCenteredPrintf_FUN_004896c0 at 0048a218",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "0048a24a",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredBothPrintf_FUN_00489790",
+      "return_address": "0048a24f",
+      "target_address": "0x489790",
+      "target_function": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredBothPrintf_FUN_00489790",
+      "text": "Call to variadic function cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredBothPrintf_FUN_00489790 at 0048a24a",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "0048a291",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_00489860",
+      "return_address": "0048a296",
+      "target_address": "0x489860",
+      "target_function": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_00489860",
+      "text": "Call to variadic function cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_00489860 at 0048a291",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "0048a2d1",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_00489940",
+      "return_address": "0048a2d6",
+      "target_address": "0x489940",
+      "target_function": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_00489940",
+      "text": "Call to variadic function cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_00489940 at 0048a2d1",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "0048a2ff",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_00489a30",
+      "return_address": "0048a304",
+      "target_address": "0x489a30",
+      "target_function": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_00489a30",
+      "text": "Call to variadic function cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_00489a30 at 0048a2ff",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "0048a31c",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_00489c40",
+      "return_address": "0048a321",
+      "target_address": "0x489c40",
+      "target_function": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_00489c40",
+      "text": "Call to variadic function cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_00489c40 at 0048a31c",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "0048a49e",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_00489450",
+      "return_address": "0048a4a3",
+      "target_address": "0x489450",
+      "target_function": "cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_00489450",
+      "text": "Call to variadic function cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedPrintf_FUN_00489450 at 0048a49e",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "0048a4bf",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_00489520",
+      "return_address": "0048a4c4",
+      "target_address": "0x489520",
+      "target_function": "cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_00489520",
+      "text": "Call to variadic function cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariantPrintf_FUN_00489520 at 0048a4bf",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "0048a4dd",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredPrintf_FUN_004895f0",
+      "return_address": "0048a4e2",
+      "target_address": "0x4895f0",
+      "target_function": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredPrintf_FUN_004895f0",
+      "text": "Call to variadic function cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredPrintf_FUN_004895f0 at 0048a4dd",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "0048a4fa",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCenteredPrintf_FUN_004896c0",
+      "return_address": "0048a4ff",
+      "target_address": "0x4896c0",
+      "target_function": "cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCenteredPrintf_FUN_004896c0",
+      "text": "Call to variadic function cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCenteredPrintf_FUN_004896c0 at 0048a4fa",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "0048a51e",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredBothPrintf_FUN_00489790",
+      "return_address": "0048a523",
+      "target_address": "0x489790",
+      "target_function": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredBothPrintf_FUN_00489790",
+      "text": "Call to variadic function cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredBothPrintf_FUN_00489790 at 0048a51e",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "0048a554",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_00489860",
+      "return_address": "0048a559",
+      "target_address": "0x489860",
+      "target_function": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_00489860",
+      "text": "Call to variadic function cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBoundsPrintf_FUN_00489860 at 0048a554",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "0048a581",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_00489940",
+      "return_address": "0048a586",
+      "target_address": "0x489940",
+      "target_function": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_00489940",
+      "text": "Call to variadic function cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaPrintf_FUN_00489940 at 0048a581",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "0048a5ac",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_00489a30",
+      "return_address": "0048a5b1",
+      "target_address": "0x489a30",
+      "target_function": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_00489a30",
+      "text": "Call to variadic function cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_00489a30 at 0048a5ac",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "0048a5c6",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_00489c40",
+      "return_address": "0048a5cb",
+      "target_address": "0x489c40",
+      "target_function": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_00489c40",
+      "text": "Call to variadic function cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_00489c40 at 0048a5c6",
+      "type": "call_variadic"
     }
   ]
 }

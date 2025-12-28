@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 1078,
-    "complexity_score": 538,
+    "complexity_score": 623,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 53,
     "pseudocode_lines": 388,
-    "suspect_count": 13,
+    "suspect_count": 21,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "register_param",
       "stack_param",
       "unaffected_reg"
@@ -38,70 +39,87 @@
   "function_calls": [
     {
       "addr": "0040c790",
+      "is_variadic": false,
       "name": "core_actor.cpp_castToClassHash_FUN_0040c790"
     },
     {
       "addr": "0040c6d0",
+      "is_variadic": false,
       "name": "core_actor.cpp_isOfClass_FUN_0040c6d0"
     },
     {
       "addr": "004ffe70",
+      "is_variadic": false,
       "name": "core_inv.cpp_CInventory_isWeaponInCategory_FUN_004ffe70"
     },
     {
       "addr": "004fcf00",
+      "is_variadic": false,
       "name": "core_inv.cpp_getItemDisplayName_FUN_004fcf00"
     },
     {
       "addr": "004fcf70",
+      "is_variadic": false,
       "name": "core_inv.cpp_getItemIconName_FUN_004fcf70"
     },
     {
       "addr": "004fd220",
+      "is_variadic": false,
       "name": "core_inv.cpp_loadInventory_FUN_004fd220"
     },
     {
       "addr": "005fe6b0",
+      "is_variadic": false,
       "name": "crt_math.c_round_FUN_005fe6b0"
     },
     {
       "addr": "005fdbd0",
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "00403170",
+      "is_variadic": false,
       "name": "engine_2d.c_fillRectColor_FUN_00403170"
     },
     {
       "addr": "00406d80",
+      "is_variadic": false,
       "name": "engine_3d.c_setRenderAlpha_FUN_00406d80"
     },
     {
       "addr": "00410950",
+      "is_variadic": false,
       "name": "engine_alphabit.cpp_CAlphaBitmap_display_FUN_00410950"
     },
     {
       "addr": "00410b00",
+      "is_variadic": false,
       "name": "engine_alphabit.cpp_CAlphaBitmap_render_FUN_00410b00"
     },
     {
       "addr": "004cda80",
+      "is_variadic": false,
       "name": "engine_font.cpp_CBitFont_drawTextLeft_FUN_004cda80"
     },
     {
       "addr": "004d01d0",
+      "is_variadic": false,
       "name": "engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0"
     },
     {
       "addr": "004cfe80",
+      "is_variadic": false,
       "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80"
     },
     {
       "addr": "004d0010",
+      "is_variadic": false,
       "name": "engine_font.cpp_CBitFont_wrapText_FUN_004d0010"
     },
     {
       "addr": "005441f0",
+      "is_variadic": false,
       "name": "support_newmsg.cpp_getLocalizedString_FUN_005441f0"
     }
   ],
@@ -870,6 +888,110 @@
       "match": "in_stack_fffff968",
       "text": "engine_2d_c_fillRectColor_FUN_00403170(6,iStack_7c,(int)in_stack_fffff968,iVar3,iVar7);",
       "type": "stack_param"
+    },
+    {
+      "call_address": "00500816",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "0050081b",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00500816",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "005008d5",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "ebp_frame_conflict",
+      "esp_certainty_at_call": "ebp_frame_conflict",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "005008da",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 005008d5",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "00500a65",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "00500a6a",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00500a65",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "00500b0d",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "00500b12",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00500b0d",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "00500bbd",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "00500bc2",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00500bbd",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "005011b7",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "005011bc",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 005011b7",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "00501269",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "0050126e",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00501269",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "005012f1",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "005012f6",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 005012f1",
+      "type": "call_variadic"
     }
   ]
 }

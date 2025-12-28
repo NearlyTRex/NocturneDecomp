@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 157,
-    "complexity_score": 85,
+    "complexity_score": 120,
     "cross_reference_count": 3,
     "function_call_count": 6,
     "global_count": 21,
     "pseudocode_lines": 60,
-    "suspect_count": 2,
+    "suspect_count": 5,
     "suspect_types": [
+      "call_variadic",
       "unaffected_reg"
     ],
     "total_lines": 217
@@ -47,26 +48,32 @@
   "function_calls": [
     {
       "addr": "00408b90",
+      "is_variadic": false,
       "name": "core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90"
     },
     {
       "addr": "0040c760",
+      "is_variadic": false,
       "name": "core_actor.cpp_isOfClassHash_FUN_0040c760"
     },
     {
       "addr": "004b0b80",
+      "is_variadic": false,
       "name": "core_event.cpp_CEventList_FUN_004b0b80"
     },
     {
       "addr": "00524030",
+      "is_variadic": false,
       "name": "core_mission.cpp_CDemonMission_FUN_00524030"
     },
     {
       "addr": "005fdbd0",
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "005fe7f0",
+      "is_variadic": false,
       "name": "crt_string.c_stricmp_FUN_005fe7f0"
     }
   ],
@@ -246,6 +253,45 @@
       "match": "unaff_EBX",
       "text": "(&DAT_02d0a460,\"Actor \\\"%s\\\" is of type %s, this command requires an actor of type %s.\",param_5,pcVar3,unaff_EBX);",
       "type": "unaffected_reg"
+    },
+    {
+      "call_address": "004aa4be",
+      "caller_has_stack_issues": false,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "004aa4c3",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 004aa4be",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "004aa4ee",
+      "caller_has_stack_issues": false,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "004aa4f3",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 004aa4ee",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "004aa517",
+      "caller_has_stack_issues": false,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "004aa51c",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 004aa517",
+      "type": "call_variadic"
     }
   ]
 }

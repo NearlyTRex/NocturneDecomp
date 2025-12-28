@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 142,
-    "complexity_score": 99,
+    "complexity_score": 114,
     "cross_reference_count": 5,
     "function_call_count": 5,
     "global_count": 20,
     "pseudocode_lines": 64,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
+      "call_variadic",
       "pointer_cast"
     ],
     "total_lines": 206
@@ -59,22 +60,27 @@
   "function_calls": [
     {
       "addr": "0040c6d0",
+      "is_variadic": false,
       "name": "core_actor.cpp_isOfClass_FUN_0040c6d0"
     },
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
       "addr": "00523e60",
+      "is_variadic": false,
       "name": "core_mission.cpp_CDemonMission_buildSetActorList_FUN_00523e60"
     },
     {
       "addr": "00524920",
+      "is_variadic": false,
       "name": "core_mission.cpp_CDemonMission_createOneHero_FUN_00524920"
     },
     {
       "addr": "00523f20",
+      "is_variadic": false,
       "name": "core_mission.cpp_CDemonMission_FUN_00523f20"
     }
   ],
@@ -335,6 +341,19 @@
       "match": "(int *)((int)",
       "text": "*(uint *)(*(int *)((int)g_HeroActors + iVar2) + 0x1f734) =",
       "type": "pointer_cast"
+    },
+    {
+      "call_address": "00524bfb",
+      "caller_has_stack_issues": false,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "00524c00",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00524bfb",
+      "type": "call_variadic"
     }
   ]
 }

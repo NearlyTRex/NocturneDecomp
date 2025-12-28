@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 156,
+    "complexity_score": 171,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 6,
     "pseudocode_lines": 56,
-    "suspect_count": 8,
+    "suspect_count": 9,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "register_param",
       "stack_ref",
       "unaffected_reg"
@@ -44,26 +45,32 @@
   "function_calls": [
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
       "addr": "005fde40",
+      "is_variadic": false,
       "name": "crt_memory.c_memset_FUN_005fde40"
     },
     {
       "addr": "00600f40",
+      "is_variadic": false,
       "name": "crt_string.c_strncpy_FUN_00600f40"
     },
     {
       "addr": "00600f80",
+      "is_variadic": false,
       "name": "crt_time.c_mktime_FUN_00600f80"
     },
     {
       "addr": "EXTERNAL:0000005b",
+      "is_variadic": false,
       "name": "FileTimeToLocalFileTime"
     },
     {
       "addr": "EXTERNAL:0000005c",
+      "is_variadic": false,
       "name": "FileTimeToSystemTime"
     }
   ],
@@ -220,6 +227,19 @@
       "match": "unaff_EBX",
       "text": "iStack_14 = (unaff_EBX & 0xffff) - 0x76c;",
       "type": "unaffected_reg"
+    },
+    {
+      "call_address": "00481e4d",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "00481e52",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00481e4d",
+      "type": "call_variadic"
     }
   ]
 }

@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 347,
-    "complexity_score": 142,
+    "complexity_score": 167,
     "cross_reference_count": 1,
     "function_call_count": 19,
     "global_count": 25,
     "pseudocode_lines": 112,
-    "suspect_count": 2,
+    "suspect_count": 4,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "register_param"
     ],
     "total_lines": 459
@@ -36,78 +37,97 @@
   "function_calls": [
     {
       "addr": "005fdbd0",
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "005ffef0",
+      "is_variadic": false,
       "name": "crt_stdlib.c_atoi_FUN_005ffef0"
     },
     {
       "addr": "00403260",
+      "is_variadic": false,
       "name": "engine_2d.c_clearInputAndWait_FUN_00403260"
     },
     {
       "addr": "EXTERNAL:00000035",
+      "is_variadic": false,
       "name": "GetClientRect"
     },
     {
       "addr": "EXTERNAL:0000006a",
+      "is_variadic": false,
       "name": "GetCurrentProcess"
     },
     {
       "addr": "EXTERNAL:00000011",
+      "is_variadic": false,
       "name": "mciGetErrorStringA"
     },
     {
       "addr": "EXTERNAL:00000012",
+      "is_variadic": false,
       "name": "mciSendStringA"
     },
     {
       "addr": "EXTERNAL:0000003d",
+      "is_variadic": false,
       "name": "MessageBoxA"
     },
     {
       "addr": "EXTERNAL:0000003e",
+      "is_variadic": false,
       "name": "MoveWindow"
     },
     {
       "addr": "EXTERNAL:00000048",
+      "is_variadic": false,
       "name": "SetRectEmpty"
     },
     {
       "addr": "EXTERNAL:0000009a",
+      "is_variadic": false,
       "name": "SetThreadPriority"
     },
     {
       "addr": "0050f9b0",
+      "is_variadic": false,
       "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0"
     },
     {
       "addr": "0050f7a0",
+      "is_variadic": false,
       "name": "shape_memdbg.cpp_openFile_FUN_0050f7a0"
     },
     {
       "addr": "EXTERNAL:0000009c",
+      "is_variadic": false,
       "name": "Sleep"
     },
     {
       "addr": "005eda20",
+      "is_variadic": false,
       "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20"
     },
     {
       "addr": "005b3e70",
+      "is_variadic": false,
       "name": "wincore_windll.cpp_clearScreen_FUN_005b3e70"
     },
     {
       "addr": "005f35e0",
+      "is_variadic": false,
       "name": "wincore_winrun.cpp_processWindowMessages_FUN_005f35e0"
     },
     {
       "addr": "005f2f00",
+      "is_variadic": false,
       "name": "wincore_winrun.cpp_wasKeyPressed_FUN_005f2f00"
     },
     {
       "addr": "005f46b0",
+      "is_variadic": false,
       "name": "wincore_winvideo.cpp_closeMovie_FUN_005f46b0"
     }
   ],
@@ -349,6 +369,32 @@
       "match": "in_ESP",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "register_param"
+    },
+    {
+      "call_address": "005f4a24",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "005f4a29",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 005f4a24",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "005f4aa5",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "005f4aaa",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 005f4aa5",
+      "type": "call_variadic"
     }
   ]
 }

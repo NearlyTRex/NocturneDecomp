@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 108,
-    "complexity_score": 108,
+    "complexity_score": 123,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 5,
     "pseudocode_lines": 43,
-    "suspect_count": 6,
+    "suspect_count": 7,
     "suspect_types": [
+      "call_variadic",
       "stack_param"
     ],
     "total_lines": 151
@@ -41,10 +42,12 @@
   "function_calls": [
     {
       "addr": "00478d80",
+      "is_variadic": false,
       "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80"
     },
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     }
   ],
@@ -217,6 +220,19 @@
       "match": "in_stack_00000004",
       "text": "this_ptr = (CKeyFramedModelInstance *)(in_stack_00000004 + 0x584);",
       "type": "stack_param"
+    },
+    {
+      "call_address": "005e2bc5",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "005e2bca",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005e2bc5",
+      "type": "call_variadic"
     }
   ]
 }

@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 541,
-    "complexity_score": 501,
+    "complexity_score": 516,
     "cross_reference_count": 3,
     "function_call_count": 26,
     "global_count": 10,
     "pseudocode_lines": 211,
-    "suspect_count": 25,
+    "suspect_count": 26,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "concat_artifact",
       "extra_output",
       "param_count_too_few",
@@ -54,106 +55,132 @@
   "function_calls": [
     {
       "addr": "006013f0",
+      "is_variadic": false,
       "name": "crt_env.c_getenv_FUN_006013f0"
     },
     {
       "addr": "00602790",
+      "is_variadic": false,
       "name": "crt_errno.c_setErrno_FUN_00602790"
     },
     {
       "addr": "006027c8",
+      "is_variadic": false,
       "name": "crt_errno.c_SetWindowsError_FUN_006027c8"
     },
     {
       "addr": "005febfc",
+      "is_variadic": false,
       "name": "crt_file.c_makepath_FUN_005febfc"
     },
     {
       "addr": "00610460",
+      "is_variadic": false,
       "name": "crt_file.c_splitpath_s_FUN_00610460"
     },
     {
       "addr": "00601bc0",
+      "is_variadic": false,
       "name": "crt_heap.c_InternalHeapAlloc_FUN_00601bc0"
     },
     {
       "addr": "00601ce0",
+      "is_variadic": false,
       "name": "crt_heap.c_ValidateHeapIntegrity_FUN_00601ce0"
     },
     {
       "addr": "0060f380",
+      "is_variadic": false,
       "name": "crt_io.c_file_exists_FUN_0060f380"
     },
     {
       "addr": "00601cd0",
+      "is_variadic": false,
       "name": "crt_memory.c_free_FUN_00601cd0"
     },
     {
       "addr": "00601bb0",
+      "is_variadic": false,
       "name": "crt_memory.c_malloc_FUN_00601bb0"
     },
     {
       "addr": "00610258",
+      "is_variadic": false,
       "name": "crt_process.c_build_cmdline_FUN_00610258"
     },
     {
       "addr": "006103a4",
+      "is_variadic": false,
       "name": "crt_process.c_build_command_line_FUN_006103a4"
     },
     {
       "addr": "0060ffd0",
+      "is_variadic": false,
       "name": "crt_process.c_build_file_info_env_FUN_0060ffd0"
     },
     {
       "addr": "006101f0",
+      "is_variadic": false,
       "name": "crt_process.c_execv_FUN_006101f0"
     },
     {
       "addr": "00610790",
+      "is_variadic": true,
       "name": "crt_process.c_execvp_FUN_00610790"
     },
     {
       "addr": "00609c80",
+      "is_variadic": false,
       "name": "crt_process.c_set_shell_execute_flag_FUN_00609c80"
     },
     {
       "addr": "006105a0",
+      "is_variadic": false,
       "name": "crt_process.c_spawn_FUN_006105a0"
     },
     {
       "addr": "0060c260",
+      "is_variadic": false,
       "name": "crt_stack.c_GetStackUsage_FUN_0060c260"
     },
     {
       "addr": "005ffa2f",
+      "is_variadic": false,
       "name": "crt_stack.c_ProbeStackSpace_FUN_005ffa2f"
     },
     {
       "addr": "005ff9f3",
+      "is_variadic": false,
       "name": "crt_stack.c_stack_probe_FUN_005ff9f3"
     },
     {
       "addr": "0060cd60",
+      "is_variadic": false,
       "name": "crt_string.c_memcpy_FUN_0060cd60"
     },
     {
       "addr": "00610760",
+      "is_variadic": false,
       "name": "crt_string.c_strcpy_FUN_00610760"
     },
     {
       "addr": "005fe7f0",
+      "is_variadic": false,
       "name": "crt_string.c_stricmp_FUN_005fe7f0"
     },
     {
       "addr": "0060f870",
+      "is_variadic": false,
       "name": "crt_string.c_strlen_FUN_0060f870"
     },
     {
       "addr": "0060242c",
+      "is_variadic": false,
       "name": "crt_thread.c_GetTLS_FUN_0060242c"
     },
     {
       "addr": "0060b180",
+      "is_variadic": false,
       "name": "crt_thread.c_noop_lock_FUN_0060b180"
     }
   ],
@@ -697,6 +724,19 @@
       "param_delta": 2,
       "text": "Function declares 3 params but call sites push 5 (2 missing)",
       "type": "param_count_too_few"
+    },
+    {
+      "call_address": "0060f804",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL crt_process.c_execvp_FUN_00610790",
+      "return_address": "0060f809",
+      "target_address": "0x610790",
+      "target_function": "crt_process.c_execvp_FUN_00610790",
+      "text": "Call to variadic function crt_process.c_execvp_FUN_00610790 at 0060f804",
+      "type": "call_variadic"
     }
   ]
 }

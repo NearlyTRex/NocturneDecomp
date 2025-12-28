@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 840,
-    "complexity_score": 1901,
+    "complexity_score": 1916,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 16,
     "pseudocode_lines": 396,
-    "suspect_count": 147,
+    "suspect_count": 148,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "concat_artifact",
       "register_param",
       "stack_param",
@@ -41,70 +42,87 @@
   "function_calls": [
     {
       "addr": "0040c790",
+      "is_variadic": false,
       "name": "core_actor.cpp_castToClassHash_FUN_0040c790"
     },
     {
       "addr": "00408e80",
+      "is_variadic": false,
       "name": "core_actor.cpp_CDemonActor_transformVector_FUN_00408e80"
     },
     {
       "addr": "0040c6d0",
+      "is_variadic": false,
       "name": "core_actor.cpp_isOfClass_FUN_0040c6d0"
     },
     {
       "addr": "0042e370",
+      "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_advanceLayerAction_FUN_0042e370"
     },
     {
       "addr": "0042e8c0",
+      "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_chooseNextLayerAction_FUN_0042e8c0"
     },
     {
       "addr": "0042e840",
+      "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_FUN_0042e840"
     },
     {
       "addr": "0042cdb0",
+      "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_pickupObjectNow_FUN_0042cdb0"
     },
     {
       "addr": "0049cf20",
+      "is_variadic": false,
       "name": "core_dynamite.cpp_FUN_0049cf20"
     },
     {
       "addr": "0049cf70",
+      "is_variadic": false,
       "name": "core_dynamite.cpp_FUN_0049cf70"
     },
     {
       "addr": "004f38d0",
+      "is_variadic": false,
       "name": "core_hero.cpp_FUN_004f38d0"
     },
     {
       "addr": "004ffab0",
+      "is_variadic": false,
       "name": "core_inv.cpp_CInventory_getActiveLightGun_FUN_004ffab0"
     },
     {
       "addr": "004fea70",
+      "is_variadic": false,
       "name": "core_inv.cpp_CInventory_removeItem_FUN_004fea70"
     },
     {
       "addr": "00523b70",
+      "is_variadic": false,
       "name": "core_mission.cpp_CDemonMission_FUN_00523b70"
     },
     {
       "addr": "0052dce0",
+      "is_variadic": false,
       "name": "core_motion.cpp_CMotionController_getMotionList_FUN_0052dce0"
     },
     {
       "addr": "0052db00",
+      "is_variadic": false,
       "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00"
     },
     {
       "addr": "005c51c0",
+      "is_variadic": false,
       "name": "core_stranger.cpp_CStranger_FUN_005c51c0"
     },
     {
       "addr": "0049e6f0",
+      "is_variadic": true,
       "name": "shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0"
     }
   ],
@@ -1514,6 +1532,19 @@
       "match": "in_stack_00000004",
       "text": "core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042e8c0(in_stack_00000004);",
       "type": "stack_param"
+    },
+    {
+      "call_address": "005c5aff",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0",
+      "return_address": "005c5b04",
+      "target_address": "0x49e6f0",
+      "target_function": "shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0",
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showWarning_FUN_0049e6f0 at 005c5aff",
+      "type": "call_variadic"
     }
   ]
 }

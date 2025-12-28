@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 1138,
-    "complexity_score": 469,
+    "complexity_score": 494,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 26,
     "pseudocode_lines": 324,
-    "suspect_count": 12,
+    "suspect_count": 14,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "pointer_cast",
       "register_param",
       "stack_ref",
@@ -39,54 +40,67 @@
   "function_calls": [
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
       "addr": "00403260",
+      "is_variadic": false,
       "name": "engine_2d.c_clearInputAndWait_FUN_00403260"
     },
     {
       "addr": "00401fd0",
+      "is_variadic": false,
       "name": "engine_2d.c_drawText_FUN_00401fd0"
     },
     {
       "addr": "00461b70",
+      "is_variadic": false,
       "name": "shape_design.c_arePolygonsCoplanar_FUN_00461b70"
     },
     {
       "addr": "00461ee0",
+      "is_variadic": false,
       "name": "shape_design.c_calculatePolygonAngularArea_FUN_00461ee0"
     },
     {
       "addr": "00463800",
+      "is_variadic": false,
       "name": "shape_design.c_comparePolygonIndices_FUN_00463800"
     },
     {
       "addr": "004635b0",
+      "is_variadic": false,
       "name": "shape_design.c_findSharedEdge_FUN_004635b0"
     },
     {
       "addr": "00463830",
+      "is_variadic": false,
       "name": "shape_design.c_removeUnusedVertices_FUN_00463830"
     },
     {
       "addr": "0050f460",
+      "is_variadic": false,
       "name": "shape_memdbg.cpp_debugFree_FUN_0050f460"
     },
     {
       "addr": "0050f250",
+      "is_variadic": false,
       "name": "shape_memdbg.cpp_debugMalloc_FUN_0050f250"
     },
     {
       "addr": "005eda20",
+      "is_variadic": false,
       "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005eda20"
     },
     {
       "addr": "005b3e70",
+      "is_variadic": false,
       "name": "wincore_windll.cpp_clearScreen_FUN_005b3e70"
     },
     {
       "addr": "005f2e90",
+      "is_variadic": false,
       "name": "wincore_winrun.cpp_getNextKeypress_FUN_005f2e90"
     }
   ],
@@ -566,6 +580,32 @@
       "match": "(int *)((int)",
       "text": "selected_polygon_index = *(int *)((int)local_20 + local_48 * 4 + -8);",
       "type": "pointer_cast"
+    },
+    {
+      "call_address": "00463ba1",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "00463ba6",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00463ba1",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "004646a1",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "004646a6",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 004646a1",
+      "type": "call_variadic"
     }
   ]
 }

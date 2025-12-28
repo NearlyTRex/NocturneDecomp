@@ -1,13 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 172,
-    "complexity_score": 55,
+    "complexity_score": 70,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 7,
     "pseudocode_lines": 55,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "call_variadic"
+    ],
     "total_lines": 227
   },
   "cross_references": [],
@@ -30,42 +32,52 @@
   "function_calls": [
     {
       "addr": "00478d80",
+      "is_variadic": false,
       "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80"
     },
     {
       "addr": "00478d20",
+      "is_variadic": false,
       "name": "core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20"
     },
     {
       "addr": "004ca110",
+      "is_variadic": false,
       "name": "core_flame.cpp_FUN_004ca110"
     },
     {
       "addr": "005fe6b0",
+      "is_variadic": false,
       "name": "crt_math.c_round_FUN_005fe6b0"
     },
     {
       "addr": "005fdbd0",
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "0048c4f0",
+      "is_variadic": false,
       "name": "engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0"
     },
     {
       "addr": "0048c640",
+      "is_variadic": false,
       "name": "engine_drender.cpp_CDemonRenderer_matrixPop_FUN_0050d720"
     },
     {
       "addr": "0048c450",
+      "is_variadic": false,
       "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450"
     },
     {
       "addr": "0048ca50",
+      "is_variadic": false,
       "name": "engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0048ca50"
     },
     {
       "addr": "0048ca60",
+      "is_variadic": false,
       "name": "engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60"
     }
   ],
@@ -214,7 +226,21 @@
       }
     ]
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "call_address": "005e9a5c",
+      "caller_has_stack_issues": false,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "005e9a61",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 005e9a5c",
+      "type": "call_variadic"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

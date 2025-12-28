@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 80,
+    "complexity_score": 95,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 9,
     "pseudocode_lines": 40,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
+      "call_variadic",
       "callind_esp_no_frame",
       "stack_param"
     ],
@@ -29,26 +30,32 @@
   "function_calls": [
     {
       "addr": "00408b90",
+      "is_variadic": false,
       "name": "core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b90"
     },
     {
       "addr": "00410dc0",
+      "is_variadic": false,
       "name": "core_ammo.cpp_CAmmo_ctor_FUN_00410dc0"
     },
     {
       "addr": "00410fd0",
+      "is_variadic": false,
       "name": "core_ammo.cpp_CAmmo_FUN_00410fd0"
     },
     {
       "addr": "004fd600",
+      "is_variadic": false,
       "name": "core_inv.cpp_CInventory_addItem_FUN_004fd600"
     },
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
       "addr": "0050f1b0",
+      "is_variadic": false,
       "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1b0"
     }
   ],
@@ -193,6 +200,19 @@
       "return_address": "004fe995",
       "text": "CALLIND at 004fe993, ADD ESP at 004fe995 (no EBP frame)",
       "type": "callind_esp_no_frame"
+    },
+    {
+      "call_address": "004fe959",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "004fe95e",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 004fe959",
+      "type": "call_variadic"
     }
   ]
 }

@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 215,
+    "complexity_score": 230,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
     "pseudocode_lines": 45,
-    "suspect_count": 15,
+    "suspect_count": 16,
     "suspect_types": [
+      "call_variadic",
       "callind_esp_no_frame",
       "pointer_cast",
       "stack_param",
@@ -38,6 +39,7 @@
   "function_calls": [
     {
       "addr": "005c7910",
+      "is_variadic": true,
       "name": "shape_superopt.cpp_logToFile_FUN_005c7910"
     }
   ],
@@ -256,6 +258,19 @@
       "return_address": "005d26d7",
       "text": "CALLIND at 005d26d4, ADD ESP at 005d26da (no EBP frame)",
       "type": "callind_esp_no_frame"
+    },
+    {
+      "call_address": "005d2709",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL shape_superopt.cpp_logToFile_FUN_005c7910",
+      "return_address": "005d270e",
+      "target_address": "0x5c7910",
+      "target_function": "shape_superopt.cpp_logToFile_FUN_005c7910",
+      "text": "Call to variadic function shape_superopt.cpp_logToFile_FUN_005c7910 at 005d2709",
+      "type": "call_variadic"
     }
   ]
 }

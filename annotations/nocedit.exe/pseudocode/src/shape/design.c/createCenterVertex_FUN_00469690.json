@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 161,
-    "complexity_score": 183,
+    "complexity_score": 198,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 7,
     "pseudocode_lines": 68,
-    "suspect_count": 10,
+    "suspect_count": 11,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "register_param",
       "stack_ref"
     ],
@@ -37,30 +38,37 @@
   "function_calls": [
     {
       "addr": "005fdbd0",
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "005ffef0",
+      "is_variadic": false,
       "name": "crt_stdlib.c_atoi_FUN_005ffef0"
     },
     {
       "addr": "00403260",
+      "is_variadic": false,
       "name": "engine_2d.c_clearInputAndWait_FUN_00403260"
     },
     {
       "addr": "00401fd0",
+      "is_variadic": false,
       "name": "engine_2d.c_drawText_FUN_00401fd0"
     },
     {
       "addr": "004032c0",
+      "is_variadic": false,
       "name": "engine_2d.c_getInputWithPrompt_FUN_004032c0"
     },
     {
       "addr": "005b3e70",
+      "is_variadic": false,
       "name": "wincore_windll.cpp_clearScreen_FUN_005b3e70"
     },
     {
       "addr": "005f2e90",
+      "is_variadic": false,
       "name": "wincore_winrun.cpp_getNextKeypress_FUN_005f2e90"
     }
   ],
@@ -297,6 +305,19 @@
       "match": "&stack0xffffff64",
       "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff64,0,local_28 + 0xb);",
       "type": "stack_ref"
+    },
+    {
+      "call_address": "00469816",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "0046981b",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00469816",
+      "type": "call_variadic"
     }
   ]
 }

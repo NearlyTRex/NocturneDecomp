@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 187,
-    "complexity_score": 170,
+    "complexity_score": 195,
     "cross_reference_count": 2,
     "function_call_count": 11,
     "global_count": 8,
     "pseudocode_lines": 60,
-    "suspect_count": 9,
+    "suspect_count": 11,
     "suspect_types": [
+      "call_variadic",
       "extra_output",
       "pointer_cast",
       "stack_param",
@@ -44,46 +45,57 @@
   "function_calls": [
     {
       "addr": "005fe6b0",
+      "is_variadic": false,
       "name": "crt_math.c_round_FUN_005fe6b0"
     },
     {
       "addr": "005fdbd0",
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "0051b870",
+      "is_variadic": false,
       "name": "shape_meshlod.cpp_CLodMesh_closePrecomputeFile_FUN_0051b870"
     },
     {
       "addr": "00517630",
+      "is_variadic": false,
       "name": "shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630"
     },
     {
       "addr": "005164d0",
+      "is_variadic": false,
       "name": "shape_meshlod.cpp_CLodMesh_countUnprocessedFaces_FUN_005164d0"
     },
     {
       "addr": "00519680",
+      "is_variadic": false,
       "name": "shape_meshlod.cpp_CLodMesh_findMinimumCostEdge_FUN_00519680"
     },
     {
       "addr": "00516d50",
+      "is_variadic": false,
       "name": "shape_meshlod.cpp_CLodMesh_initializeLodGeneration_FUN_00516d50"
     },
     {
       "addr": "0051d520",
+      "is_variadic": false,
       "name": "shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520"
     },
     {
       "addr": "0051d4a0",
+      "is_variadic": false,
       "name": "shape_meshlod.cpp_CLodMesh_recordEdgeCollapse_FUN_0051d4a0"
     },
     {
       "addr": "0051d250",
+      "is_variadic": false,
       "name": "shape_meshlod.cpp_CLodMesh_saveReplayData_FUN_0051d250"
     },
     {
       "addr": "005f2dc0",
+      "is_variadic": false,
       "name": "wincore_winrun.cpp_getTime_FUN_005f2dc0"
     }
   ],
@@ -326,6 +338,32 @@
       "match": "in_stack_ffffffe0",
       "text": "in_stack_ffffffe0 = edge_data;",
       "type": "stack_param"
+    },
+    {
+      "call_address": "00516c2b",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "00516c30",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00516c2b",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "00516cb4",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "00516cb9",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00516cb4",
+      "type": "call_variadic"
     }
   ]
 }

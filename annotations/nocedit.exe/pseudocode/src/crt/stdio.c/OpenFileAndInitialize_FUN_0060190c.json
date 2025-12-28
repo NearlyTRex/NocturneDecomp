@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 125,
-    "complexity_score": 132,
+    "complexity_score": 147,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 0,
     "pseudocode_lines": 62,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
+      "call_variadic",
       "concat_artifact",
       "pointer_cast",
       "stack_param",
@@ -44,22 +45,27 @@
   "function_calls": [
     {
       "addr": "005feb30",
+      "is_variadic": false,
       "name": "crt_ctype.c_tolower_FUN_005feb30"
     },
     {
       "addr": "00609074",
+      "is_variadic": true,
       "name": "crt_stdio.c_CreateFileVariadic_FUN_00609074"
     },
     {
       "addr": "006093b0",
+      "is_variadic": false,
       "name": "crt_stdio.c_DeallocateFileStruct_FUN_006093b0"
     },
     {
       "addr": "00608ee0",
+      "is_variadic": false,
       "name": "crt_stdio.c_DetectDeviceAndSetBuffering_FUN_00608ee0"
     },
     {
       "addr": "005ffacc",
+      "is_variadic": false,
       "name": "crt_stdio.c_fseek_FUN_005ffacc"
     }
   ],
@@ -177,6 +183,19 @@
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&file_struct->_link->__get_ptr + 1) = 0;",
       "type": "pointer_cast"
+    },
+    {
+      "call_address": "006019a1",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL crt_stdio.c_CreateFileVariadic_FUN_00609074",
+      "return_address": "006019a6",
+      "target_address": "0x609074",
+      "target_function": "crt_stdio.c_CreateFileVariadic_FUN_00609074",
+      "text": "Call to variadic function crt_stdio.c_CreateFileVariadic_FUN_00609074 at 006019a1",
+      "type": "call_variadic"
     }
   ]
 }

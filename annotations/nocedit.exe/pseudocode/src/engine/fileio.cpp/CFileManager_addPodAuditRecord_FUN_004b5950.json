@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 108,
+    "complexity_score": 123,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 7,
     "pseudocode_lines": 48,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "pointer_cast",
       "register_param",
       "stack_ref"
@@ -31,14 +32,17 @@
   "function_calls": [
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
       "addr": "005fde40",
+      "is_variadic": false,
       "name": "crt_memory.c_memset_FUN_005fde40"
     },
     {
       "addr": "0050f540",
+      "is_variadic": false,
       "name": "shape_memdbg.cpp_debugRealloc_FUN_0050f540"
     }
   ],
@@ -182,6 +186,19 @@
       "match": "&stack0x00000038",
       "text": "pcVar5 = &stack0x00000038;",
       "type": "stack_ref"
+    },
+    {
+      "call_address": "004b5a37",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "004b5a3c",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 004b5a37",
+      "type": "call_variadic"
     }
   ]
 }

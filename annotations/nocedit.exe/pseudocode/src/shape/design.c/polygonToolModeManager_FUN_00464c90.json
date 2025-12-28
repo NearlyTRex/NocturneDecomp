@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 466,
-    "complexity_score": 286,
+    "complexity_score": 351,
     "cross_reference_count": 1,
     "function_call_count": 15,
     "global_count": 36,
     "pseudocode_lines": 186,
-    "suspect_count": 8,
+    "suspect_count": 14,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "concat_artifact",
       "register_param",
       "stack_ref"
@@ -50,62 +51,77 @@
   "function_calls": [
     {
       "addr": "005fdbd0",
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "005fef20",
+      "is_variadic": false,
       "name": "crt_string.c_strcmp_FUN_005fef20"
     },
     {
       "addr": "00402430",
+      "is_variadic": false,
       "name": "engine_2d.c_drawTextColor_FUN_00402430"
     },
     {
       "addr": "00461cb0",
+      "is_variadic": false,
       "name": "shape_design.c_calculateAngleBetweenPolygonNormals_FUN_00461cb0"
     },
     {
       "addr": "00464870",
+      "is_variadic": false,
       "name": "shape_design.c_detectMouseButtonClick_FUN_00464870"
     },
     {
       "addr": "00465d50",
+      "is_variadic": false,
       "name": "shape_design.c_duplicateSharedVertices_FUN_00465d50"
     },
     {
       "addr": "00466250",
+      "is_variadic": false,
       "name": "shape_design.c_findClosestPolygonToMouse_FUN_00466250"
     },
     {
       "addr": "00466040",
+      "is_variadic": false,
       "name": "shape_design.c_interactiveGlobalWeld_FUN_00466040"
     },
     {
       "addr": "00465e90",
+      "is_variadic": false,
       "name": "shape_design.c_interactiveWeldVertices_FUN_00465e90"
     },
     {
       "addr": "00465160",
+      "is_variadic": false,
       "name": "shape_design.c_polygonMergerSelectAndProcess_FUN_00465160"
     },
     {
       "addr": "00465c50",
+      "is_variadic": false,
       "name": "shape_design.c_weldNearbyVertices_FUN_00465c50"
     },
     {
       "addr": "005ed630",
+      "is_variadic": false,
       "name": "wincore_wddvmem.cpp_closeScreenDevice_FUN_005ed630"
     },
     {
       "addr": "005ed580",
+      "is_variadic": false,
       "name": "wincore_wddvmem.cpp_openScreenDevice_FUN_005ed580"
     },
     {
       "addr": "005b7210",
+      "is_variadic": false,
       "name": "wincore_windll.cpp_lockFrame_FUN_005b7210"
     },
     {
       "addr": "005b7250",
+      "is_variadic": false,
       "name": "wincore_windll.cpp_unlockFrame_FUN_005b7250"
     }
   ],
@@ -550,6 +566,84 @@
       "match": "&stack0xffffff48",
       "text": "engine_2d_c_drawTextColor_FUN_00402430(&stack0xffffff48,0,g_WindowHeight + -0x58);",
       "type": "stack_ref"
+    },
+    {
+      "call_address": "00464fc2",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "00464fc7",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00464fc2",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "00464fe2",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "00464fe7",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00464fe2",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "00464ff9",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "00464ffe",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00464ff9",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "00465019",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "0046501e",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00465019",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "00465036",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "0046503b",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00465036",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "00465125",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "0046512a",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00465125",
+      "type": "call_variadic"
     }
   ]
 }

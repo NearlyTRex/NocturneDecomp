@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 366,
-    "complexity_score": 418,
+    "complexity_score": 433,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 29,
     "pseudocode_lines": 128,
-    "suspect_count": 25,
+    "suspect_count": 26,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "callind_esp_no_frame",
       "register_param",
       "stack_param",
@@ -35,38 +36,47 @@
   "function_calls": [
     {
       "addr": "00408ec0",
+      "is_variadic": false,
       "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0"
     },
     {
       "addr": "0040cc10",
+      "is_variadic": false,
       "name": "core_actor.cpp_getRandomFloat_FUN_0040cc10"
     },
     {
       "addr": "004c7b20",
+      "is_variadic": false,
       "name": "core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004c7b20"
     },
     {
       "addr": "004c79d0",
+      "is_variadic": false,
       "name": "core_fire.cpp_CFireEffect_FUN_004c79d0"
     },
     {
       "addr": "004d2330",
+      "is_variadic": false,
       "name": "core_frankgen.cpp_CFrankenstienMachine_findLeader_FUN_004d2330"
     },
     {
       "addr": "004d1ec0",
+      "is_variadic": false,
       "name": "core_frankgen.cpp_FUN_004d1ec0"
     },
     {
       "addr": "004d2190",
+      "is_variadic": false,
       "name": "core_frankgen.cpp_LoadModel_FUN_004d2190"
     },
     {
       "addr": "004d1f20",
+      "is_variadic": false,
       "name": "core_frankgen.cpp_SoundPushPlayPopAgain_FUN_004d1f20"
     },
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     }
   ],
@@ -524,6 +534,19 @@
       "return_address": "004d1c62",
       "text": "CALLIND at 004d1c5f, ADD ESP at 004d1c62 (no EBP frame)",
       "type": "callind_esp_no_frame"
+    },
+    {
+      "call_address": "004d1ea3",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "004d1ea8",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 004d1ea3",
+      "type": "call_variadic"
     }
   ],
   "vtable_info": {

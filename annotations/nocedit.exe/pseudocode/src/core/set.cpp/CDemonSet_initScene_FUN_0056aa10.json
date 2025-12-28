@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 226,
-    "complexity_score": 143,
+    "complexity_score": 168,
     "cross_reference_count": 16,
     "function_call_count": 17,
     "global_count": 22,
     "pseudocode_lines": 103,
-    "suspect_count": 3,
+    "suspect_count": 5,
     "suspect_types": [
+      "call_variadic",
       "pointer_cast",
       "stack_param"
     ],
@@ -126,70 +127,87 @@
   "function_calls": [
     {
       "addr": "00453640",
+      "is_variadic": false,
       "name": "core_dcamera.cpp_CDemonCamera_initCameraFog_FUN_00453640"
     },
     {
       "addr": "0044c0f0",
+      "is_variadic": false,
       "name": "core_dcamera.cpp_CDemonCamera_initLookupTable_FUN_0044c0f0"
     },
     {
       "addr": "004528e0",
+      "is_variadic": false,
       "name": "core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_004528e0"
     },
     {
       "addr": "00470000",
+      "is_variadic": false,
       "name": "core_dfilter.cpp_CFilterCache_free_FUN_00470000"
     },
     {
       "addr": "00472a80",
+      "is_variadic": false,
       "name": "core_dlight.cpp_CDemonLight_beginScene_FUN_00472a80"
     },
     {
       "addr": "004735c0",
+      "is_variadic": false,
       "name": "core_dlight.cpp_CDemonLight_clearCircularShadowMapEdges_FUN_004735c0"
     },
     {
       "addr": "00472d30",
+      "is_variadic": false,
       "name": "core_dlight.cpp_CDemonLight_endScene_FUN_00472d30"
     },
     {
       "addr": "004729c0",
+      "is_variadic": false,
       "name": "core_dlight.cpp_resetRestoreMemoryAllocator_FUN_004729c0"
     },
     {
       "addr": "00504160",
+      "is_variadic": false,
       "name": "core_level.cpp_CLevelLoader_update_FUN_00504160"
     },
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
       "addr": "0056a190",
+      "is_variadic": false,
       "name": "core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0056a190"
     },
     {
       "addr": "00576710",
+      "is_variadic": false,
       "name": "core_setdir.cpp_CDemonSet_FUN_00576710"
     },
     {
       "addr": "00576870",
+      "is_variadic": false,
       "name": "core_setdir.cpp_CDemonSet_FUN_00576870"
     },
     {
       "addr": "00586bf0",
+      "is_variadic": false,
       "name": "core_setutil.cpp_C3DSLight_apply_FUN_00586bf0"
     },
     {
       "addr": "00586a90",
+      "is_variadic": false,
       "name": "core_setutil.cpp_C3DSLight_create_FUN_00586a90"
     },
     {
       "addr": "005ef8c0",
+      "is_variadic": false,
       "name": "core_weather.cpp_CWeather_FUN_005ef8c0"
     },
     {
       "addr": "005441f0",
+      "is_variadic": false,
       "name": "support_newmsg.cpp_getLocalizedString_FUN_005441f0"
     }
   ],
@@ -402,6 +420,32 @@
       "match": "(int *)((int)",
       "text": "if (*(int *)((int)g_MasterLightList + iVar3) != 0) {",
       "type": "pointer_cast"
+    },
+    {
+      "call_address": "0056aaff",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0056ab04",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0056aaff",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "0056ac91",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0056ac96",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0056ac91",
+      "type": "call_variadic"
     }
   ]
 }

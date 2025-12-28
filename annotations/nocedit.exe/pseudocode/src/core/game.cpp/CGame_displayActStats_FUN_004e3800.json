@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 326,
-    "complexity_score": 480,
+    "complexity_score": 505,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 19,
     "pseudocode_lines": 215,
-    "suspect_count": 24,
+    "suspect_count": 26,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "extra_output",
       "register_param",
       "stack_param",
@@ -39,50 +40,62 @@
   "function_calls": [
     {
       "addr": "005fe6b0",
+      "is_variadic": false,
       "name": "crt_math.c_round_FUN_005fe6b0"
     },
     {
       "addr": "005fdbd0",
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "00406d80",
+      "is_variadic": false,
       "name": "engine_3d.c_setRenderAlpha_FUN_00406d80"
     },
     {
       "addr": "00410520",
+      "is_variadic": false,
       "name": "engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_00410520"
     },
     {
       "addr": "00410950",
+      "is_variadic": false,
       "name": "engine_alphabit.cpp_CAlphaBitmap_display_FUN_00410950"
     },
     {
       "addr": "00410540",
+      "is_variadic": false,
       "name": "engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_00410540"
     },
     {
       "addr": "004105d0",
+      "is_variadic": false,
       "name": "engine_alphabit.cpp_CAlphaBitmap_load_FUN_004105d0"
     },
     {
       "addr": "004cdee0",
+      "is_variadic": false,
       "name": "engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_004cdee0"
     },
     {
       "addr": "004d01d0",
+      "is_variadic": false,
       "name": "engine_font.cpp_CBitFont_getCharWidth_FUN_004d01d0"
     },
     {
       "addr": "004d0010",
+      "is_variadic": false,
       "name": "engine_font.cpp_CBitFont_wrapText_FUN_004d0010"
     },
     {
       "addr": "005441f0",
+      "is_variadic": false,
       "name": "support_newmsg.cpp_getLocalizedString_FUN_005441f0"
     },
     {
       "addr": "005b3e70",
+      "is_variadic": false,
       "name": "wincore_windll.cpp_clearScreen_FUN_005b3e70"
     }
   ],
@@ -577,6 +590,32 @@
       "match": "in_stack_00000020",
       "text": "*(uint *)(in_stack_00000020 + 0x250) = 0;",
       "type": "stack_param"
+    },
+    {
+      "call_address": "004e39bb",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "unknown",
+      "esp_certainty_at_call": "known",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "004e39c0",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 004e39bb",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "004e3a92",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "004e3a97",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 004e3a92",
+      "type": "call_variadic"
     }
   ]
 }

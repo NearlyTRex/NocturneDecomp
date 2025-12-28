@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 160,
-    "complexity_score": 413,
+    "complexity_score": 428,
     "cross_reference_count": 2,
     "function_call_count": 13,
     "global_count": 6,
     "pseudocode_lines": 73,
-    "suspect_count": 31,
+    "suspect_count": 32,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -46,54 +47,67 @@
   "function_calls": [
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
       "addr": "00515ba0",
+      "is_variadic": false,
       "name": "shape_meshlod.cpp_CLodMesh_buildEdges_FUN_00515ba0"
     },
     {
       "addr": "00517630",
+      "is_variadic": false,
       "name": "shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630"
     },
     {
       "addr": "0051b570",
+      "is_variadic": false,
       "name": "shape_meshlod.cpp_CLodMesh_compactFaces_FUN_0051b570"
     },
     {
       "addr": "00516500",
+      "is_variadic": false,
       "name": "shape_meshlod.cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500"
     },
     {
       "addr": "0051a8c0",
+      "is_variadic": false,
       "name": "shape_meshlod.cpp_CLodMesh_copyFrom_FUN_0051a8c0"
     },
     {
       "addr": "005164d0",
+      "is_variadic": false,
       "name": "shape_meshlod.cpp_CLodMesh_countUnprocessedFaces_FUN_005164d0"
     },
     {
       "addr": "00516b40",
+      "is_variadic": false,
       "name": "shape_meshlod.cpp_CLodMesh_markDegenerateFaces_FUN_00516b40"
     },
     {
       "addr": "00516a40",
+      "is_variadic": false,
       "name": "shape_meshlod.cpp_CLodMesh_markDuplicateFaces_FUN_00516a40"
     },
     {
       "addr": "0051b3e0",
+      "is_variadic": false,
       "name": "shape_meshlod.cpp_CLodMesh_removeUnusedVertices_FUN_0051b3e0"
     },
     {
       "addr": "005165c0",
+      "is_variadic": false,
       "name": "shape_meshlod.cpp_CLodMesh_scaleVertices_FUN_005165c0"
     },
     {
       "addr": "00516570",
+      "is_variadic": false,
       "name": "shape_meshlod.cpp_CLodMesh_translateVertices_FUN_00516570"
     },
     {
       "addr": "0051a150",
+      "is_variadic": false,
       "name": "shape_meshlod.cpp_CLodMesh_weldVertices_FUN_0051a150"
     }
   ],
@@ -488,6 +502,19 @@
       "match": "in_stack_0000000c",
       "text": "in_stack_0000000c = (CLodMesh *)-(pCVar7->center_offset).z;",
       "type": "stack_param"
+    },
+    {
+      "call_address": "0051b9ba",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0051b9bf",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0051b9ba",
+      "type": "call_variadic"
     }
   ]
 }

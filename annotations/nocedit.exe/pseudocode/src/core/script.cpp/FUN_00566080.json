@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 114,
-    "complexity_score": 95,
+    "complexity_score": 110,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 13,
     "pseudocode_lines": 55,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
+      "call_variadic",
       "param_count_too_few",
       "unaffected_reg"
     ],
@@ -36,38 +37,47 @@
   "function_calls": [
     {
       "addr": "00566910",
+      "is_variadic": false,
       "name": "core_script.cpp_CScript_CallingScriptEditorX2_2_FUN_00566910"
     },
     {
       "addr": "0055a370",
+      "is_variadic": false,
       "name": "core_script.cpp_CScript_LoadingScriptFile_FUN_0055a370"
     },
     {
       "addr": "0055a4b0",
+      "is_variadic": false,
       "name": "core_script.cpp_CScript_StepThroughWholeScript_FUN_0055a4b0"
     },
     {
       "addr": "005669a0",
+      "is_variadic": false,
       "name": "core_script.cpp_CScript_Unk18_FUN_005669a0"
     },
     {
       "addr": "005644e0",
+      "is_variadic": false,
       "name": "core_script.cpp_FUN_005644e0"
     },
     {
       "addr": "005fdbd0",
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "004a5770",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CPickList_clear_FUN_004a5770"
     },
     {
       "addr": "004a3e20",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20"
     },
     {
       "addr": "004a6ed0",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_getFontBitmapCount_FUN_004a6ed0"
     }
   ],
@@ -230,6 +240,19 @@
       "param_delta": 2,
       "text": "Function declares 0 params but call sites push 2 (2 missing)",
       "type": "param_count_too_few"
+    },
+    {
+      "call_address": "005660d2",
+      "caller_has_stack_issues": false,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "005660d7",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 005660d2",
+      "type": "call_variadic"
     }
   ]
 }

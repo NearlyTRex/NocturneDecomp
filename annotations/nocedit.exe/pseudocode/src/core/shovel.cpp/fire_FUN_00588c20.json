@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 11,
-    "complexity_score": 33,
+    "complexity_score": 48,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 3,
     "pseudocode_lines": 8,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
+      "call_variadic",
       "stack_param"
     ],
     "total_lines": 19
@@ -28,6 +29,7 @@
   "function_calls": [
     {
       "addr": "00441890",
+      "is_variadic": true,
       "name": "engine_console.cpp_CConsole_printf_FUN_00441890"
     }
   ],
@@ -101,6 +103,19 @@
       "match": "in_stack_00000004",
       "text": "(g_CConsolePtr,\"Warning: called fire() for melee weapon %s\\n\",in_stack_00000004);",
       "type": "stack_param"
+    },
+    {
+      "call_address": "00588c31",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL engine_console.cpp_CConsole_printf_FUN_00441890",
+      "return_address": "00588c36",
+      "target_address": "0x441890",
+      "target_function": "engine_console.cpp_CConsole_printf_FUN_00441890",
+      "text": "Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 00588c31",
+      "type": "call_variadic"
     }
   ],
   "vtable_info": {

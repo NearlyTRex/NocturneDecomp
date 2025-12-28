@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 686,
-    "complexity_score": 391,
+    "complexity_score": 406,
     "cross_reference_count": 0,
     "function_call_count": 18,
     "global_count": 33,
     "pseudocode_lines": 281,
-    "suspect_count": 9,
+    "suspect_count": 10,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "register_param",
       "stack_param",
       "unresolved_funcptr"
@@ -31,74 +32,92 @@
   "function_calls": [
     {
       "addr": "0040c790",
+      "is_variadic": false,
       "name": "core_actor.cpp_castToClassHash_FUN_0040c790"
     },
     {
       "addr": "00408ea0",
+      "is_variadic": false,
       "name": "core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0"
     },
     {
       "addr": "00408f10",
+      "is_variadic": false,
       "name": "core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10"
     },
     {
       "addr": "0040cd10",
+      "is_variadic": false,
       "name": "core_actor.cpp_randomChance_FUN_0040cd10"
     },
     {
       "addr": "0042cdb0",
+      "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_pickupObjectNow_FUN_0042cdb0"
     },
     {
       "addr": "00427db0",
+      "is_variadic": false,
       "name": "core_charactr.cpp_SDamageInfo_ctor_FUN_00427db0"
     },
     {
       "addr": "00442710",
+      "is_variadic": false,
       "name": "core_course.cpp_CCourse_FUN_00442710"
     },
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
       "addr": "00523b70",
+      "is_variadic": false,
       "name": "core_mission.cpp_CDemonMission_FUN_00523b70"
     },
     {
       "addr": "00524700",
+      "is_variadic": false,
       "name": "core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700"
     },
     {
       "addr": "00525200",
+      "is_variadic": false,
       "name": "core_mobster.cpp_CMobster_ctor_FUN_00525200"
     },
     {
       "addr": "005743c0",
+      "is_variadic": false,
       "name": "core_setcolid.cpp_SCollisionInfo_ctor_FUN_005743c0"
     },
     {
       "addr": "005a0840",
+      "is_variadic": false,
       "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840"
     },
     {
       "addr": "005dda90",
+      "is_variadic": false,
       "name": "core_tommygun.cpp_CTommyGun_ctor_FUN_005dda90"
     },
     {
       "addr": "005e8b50",
+      "is_variadic": false,
       "name": "core_vehicle.cpp_FUN_005e8b50"
     },
     {
       "addr": "0050f1b0",
+      "is_variadic": false,
       "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1b0"
     },
     {
       "addr": "005a9660",
+      "is_variadic": false,
       "name": "sound_sndmain.cpp_isSfxPlaying_FUN_005a9660"
     },
     {
       "addr": "005a9b40",
+      "is_variadic": false,
       "name": "sound_sndmain.cpp_setSfxBaseFrequency_FUN_005a9b40"
     }
   ],
@@ -677,6 +696,19 @@
       "match": "code *",
       "text": "(*(code *)**(uint **)(iVar12 + 0x154))();",
       "type": "unresolved_funcptr"
+    },
+    {
+      "call_address": "005e847f",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "005e8484",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005e847f",
+      "type": "call_variadic"
     }
   ],
   "vtable_info": {

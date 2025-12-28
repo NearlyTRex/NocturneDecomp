@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 55,
-    "complexity_score": 43,
+    "complexity_score": 58,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 10,
     "pseudocode_lines": 18,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
+      "call_variadic",
       "stack_param"
     ],
     "total_lines": 73
@@ -28,22 +29,27 @@
   "function_calls": [
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
       "addr": "0049e790",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790"
     },
     {
       "addr": "0050f9b0",
+      "is_variadic": false,
       "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0"
     },
     {
       "addr": "0050f7a0",
+      "is_variadic": false,
       "name": "shape_memdbg.cpp_openFile_FUN_0050f7a0"
     },
     {
       "addr": "0051aa60",
+      "is_variadic": false,
       "name": "shape_meshlod.cpp_CLodMesh_parseS3DFile_FUN_0051aa60"
     }
   ],
@@ -175,6 +181,19 @@
       "match": "in_stack_00000010",
       "text": "shape_meshlod_cpp_CLodMesh_parseS3DFile_FUN_0051aa60(in_stack_00000010,file_handle);",
       "type": "stack_param"
+    },
+    {
+      "call_address": "0051aa4e",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0051aa53",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0051aa4e",
+      "type": "call_variadic"
     }
   ]
 }

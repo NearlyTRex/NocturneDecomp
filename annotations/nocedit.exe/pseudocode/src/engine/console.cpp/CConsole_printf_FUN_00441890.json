@@ -1,13 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 94,
-    "complexity_score": 42,
+    "complexity_score": 57,
     "cross_reference_count": 79,
     "function_call_count": 5,
     "global_count": 5,
     "pseudocode_lines": 42,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "call_variadic"
+    ],
     "total_lines": 136
   },
   "cross_references": [
@@ -501,22 +503,27 @@
   "function_calls": [
     {
       "addr": "005fe6d0",
+      "is_variadic": true,
       "name": "crt_stdio.c_fprintf_FUN_005fe6d0"
     },
     {
       "addr": "005fdba8",
+      "is_variadic": false,
       "name": "crt_stdio.c_vsprintf_FUN_005fdba8"
     },
     {
       "addr": "00441970",
+      "is_variadic": false,
       "name": "engine_console.cpp_CConsole_writeChar_FUN_00441970"
     },
     {
       "addr": "0050f9b0",
+      "is_variadic": false,
       "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0"
     },
     {
       "addr": "0050f7a0",
+      "is_variadic": false,
       "name": "shape_memdbg.cpp_openFile_FUN_0050f7a0"
     }
   ],
@@ -582,39 +589,6 @@
     },
     "pcode_op_count": 369
   },
-  "replacements": [
-    {
-      "description": "Remove unused BADSPACEBASE variable",
-      "find": "  BADSPACEBASE *in_ESP;\n",
-      "replace": ""
-    },
-    {
-      "description": "Add buffer declaration and fix va_list type",
-      "find": "  va_list_t local_14;",
-      "replace": "  char buffer[4096];\n  va_list local_14;"
-    },
-    {
-      "description": "Use proper va_start macro",
-      "find": "local_14 = &stack0x0000000c;",
-      "replace": "va_start(local_14, format);"
-    },
-    {
-      "description": "Replace stack reference with buffer",
-      "find": "&stack0xffffefec",
-      "replace": "buffer"
-    },
-    {
-      "description": "Replace stack reference with buffer",
-      "find": "&stack0xffffeff0",
-      "replace": "buffer"
-    },
-    {
-      "description": "Add buffer argument to fprintf",
-      "find": "FUN_005fe6d0\\(([^,]+),([^)]+)\\)",
-      "regex": true,
-      "replace": "FUN_005fe6d0(\\1,\\2,buffer)"
-    }
-  ],
   "stack_frame": {
     "frame_size": 4128,
     "local_size": 4120,
@@ -652,5 +626,19 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "call_address": "00441947",
+      "caller_has_stack_issues": false,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
+      "return_address": "0044194c",
+      "target_address": "0x5fe6d0",
+      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
+      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 00441947",
+      "type": "call_variadic"
+    }
+  ]
 }

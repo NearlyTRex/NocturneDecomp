@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 576,
-    "complexity_score": 889,
+    "complexity_score": 904,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 22,
     "pseudocode_lines": 249,
-    "suspect_count": 61,
+    "suspect_count": 62,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -44,54 +45,67 @@
   "function_calls": [
     {
       "addr": "0040c790",
+      "is_variadic": false,
       "name": "core_actor.cpp_castToClassHash_FUN_0040c790"
     },
     {
       "addr": "00408ea0",
+      "is_variadic": false,
       "name": "core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0"
     },
     {
       "addr": "00408ec0",
+      "is_variadic": false,
       "name": "core_actor.cpp_CDemonActor_localToWorldPoint_FUN_00408ec0"
     },
     {
       "addr": "0040cc10",
+      "is_variadic": false,
       "name": "core_actor.cpp_getRandomFloat_FUN_0040cc10"
     },
     {
       "addr": "0040c6d0",
+      "is_variadic": false,
       "name": "core_actor.cpp_isOfClass_FUN_0040c6d0"
     },
     {
       "addr": "0040cd70",
+      "is_variadic": false,
       "name": "core_actor.cpp_normalizeAngleToPi_FUN_0040cd70"
     },
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
       "addr": "005741b0",
+      "is_variadic": false,
       "name": "core_setcolid.cpp_CDemonSet_ignore_FUN_005741b0"
     },
     {
       "addr": "00574180",
+      "is_variadic": false,
       "name": "core_setcolid.cpp_CDemonSet_initMaybe_FUN_00574180"
     },
     {
       "addr": "00574230",
+      "is_variadic": false,
       "name": "core_setcolid.cpp_CDemonSet_setRayType_FUN_00574230"
     },
     {
       "addr": "00572460",
+      "is_variadic": false,
       "name": "core_setcolid.cpp_CDemonSet_testLineOcclusion_FUN_00572460"
     },
     {
       "addr": "0059fb00",
+      "is_variadic": false,
       "name": "core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00"
     },
     {
       "addr": "005e7830",
+      "is_variadic": false,
       "name": "core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830"
     }
   ],
@@ -793,6 +807,19 @@
       "match": "in_stack_00000008",
       "text": "fVar6 = *(float *)(this_ptr->field11_0x25a0 + 0x40) - in_stack_00000008 / 0.5f;",
       "type": "stack_param"
+    },
+    {
+      "call_address": "0042da7a",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0042da7f",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0042da7a",
+      "type": "call_variadic"
     }
   ]
 }

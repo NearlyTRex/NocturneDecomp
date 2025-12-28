@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 180,
-    "complexity_score": 152,
+    "complexity_score": 197,
     "cross_reference_count": 181,
     "function_call_count": 7,
     "global_count": 23,
     "pseudocode_lines": 62,
-    "suspect_count": 8,
+    "suspect_count": 12,
     "suspect_types": [
+      "call_variadic",
       "pointer_cast",
       "stack_param"
     ],
@@ -1116,30 +1117,37 @@
   "function_calls": [
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
       "addr": "00601ea0",
+      "is_variadic": false,
       "name": "crt_stdio.c_closeTrackedFile_FUN_00601ea0"
     },
     {
       "addr": "005fe5e0",
+      "is_variadic": false,
       "name": "crt_string.c_memmove_FUN_005fe5e0"
     },
     {
       "addr": "0050f180",
+      "is_variadic": true,
       "name": "shape_memdbg.cpp_traceFile_FUN_0050f180"
     },
     {
       "addr": "005f3fe0",
+      "is_variadic": false,
       "name": "wincore_winrun.cpp_createMutex_FUN_005f3fe0"
     },
     {
       "addr": "005f4050",
+      "is_variadic": false,
       "name": "wincore_winrun.cpp_releaseMutex_FUN_005f4050"
     },
     {
       "addr": "005f3ff0",
+      "is_variadic": false,
       "name": "wincore_winrun.cpp_waitForMutex_FUN_005f3ff0"
     }
   ],
@@ -1407,6 +1415,58 @@
       "match": "in_stack_00000014",
       "text": "(\"Tried to close file which which was never opened.  (Possibly closing a file twice?)\\n%s line %d\",in_stack_00000014,line_number);",
       "type": "stack_param"
+    },
+    {
+      "call_address": "0050fa34",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL shape_memdbg.cpp_traceFile_FUN_0050f180",
+      "return_address": "0050fa39",
+      "target_address": "0x50f180",
+      "target_function": "shape_memdbg.cpp_traceFile_FUN_0050f180",
+      "text": "Call to variadic function shape_memdbg.cpp_traceFile_FUN_0050f180 at 0050fa34",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "0050fb02",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0050fb07",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0050fb02",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "0050fb56",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0050fb5b",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0050fb56",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "0050fb88",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL shape_memdbg.cpp_traceFile_FUN_0050f180",
+      "return_address": "0050fb8d",
+      "target_address": "0x50f180",
+      "target_function": "shape_memdbg.cpp_traceFile_FUN_0050f180",
+      "text": "Call to variadic function shape_memdbg.cpp_traceFile_FUN_0050f180 at 0050fb88",
+      "type": "call_variadic"
     }
   ]
 }

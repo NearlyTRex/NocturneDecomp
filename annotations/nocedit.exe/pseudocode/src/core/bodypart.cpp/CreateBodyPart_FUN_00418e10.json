@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 120,
-    "complexity_score": 333,
+    "complexity_score": 348,
     "cross_reference_count": 14,
     "function_call_count": 7,
     "global_count": 7,
     "pseudocode_lines": 68,
-    "suspect_count": 26,
+    "suspect_count": 27,
     "suspect_types": [
+      "call_variadic",
       "stack_param"
     ],
     "total_lines": 188
@@ -117,30 +118,37 @@
   "function_calls": [
     {
       "addr": "00408c10",
+      "is_variadic": false,
       "name": "core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10"
     },
     {
       "addr": "0040cc10",
+      "is_variadic": false,
       "name": "core_actor.cpp_getRandomFloat_FUN_0040cc10"
     },
     {
       "addr": "00419010",
+      "is_variadic": false,
       "name": "core_bodypart.cpp_CBodyPart_ctor_FUN_00419010"
     },
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
       "addr": "00523b70",
+      "is_variadic": false,
       "name": "core_mission.cpp_CDemonMission_FUN_00523b70"
     },
     {
       "addr": "00524700",
+      "is_variadic": false,
       "name": "core_mission.cpp_CDemonMission_initNewActorMaybe_FUN_00524700"
     },
     {
       "addr": "0050f1b0",
+      "is_variadic": false,
       "name": "shape_memdbg.cpp_debugAlloc_FUN_0050f1b0"
     }
   ],
@@ -418,6 +426,19 @@
       "match": "in_stack_00000038",
       "text": "*(uint *)(this_ptr_00->field1_0x158 + 0xb60) = in_stack_00000038;",
       "type": "stack_param"
+    },
+    {
+      "call_address": "00418e60",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "00418e65",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00418e60",
+      "type": "call_variadic"
     }
   ]
 }

@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 37,
+    "complexity_score": 72,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 3,
     "pseudocode_lines": 22,
-    "suspect_count": 1,
+    "suspect_count": 4,
     "suspect_types": [
+      "call_variadic",
       "pointer_cast"
     ],
     "total_lines": 78
@@ -35,6 +36,7 @@
   "function_calls": [
     {
       "addr": "005fe6d0",
+      "is_variadic": true,
       "name": "crt_stdio.c_fprintf_FUN_005fe6d0"
     }
   ],
@@ -132,6 +134,45 @@
       "match": "(uint *)((int)",
       "text": "puVar1 = (uint *)((int)this_ptr->spatial_grid_ptr->cell_start_indices[0][0] + iVar2);",
       "type": "pointer_cast"
+    },
+    {
+      "call_address": "0051d43f",
+      "caller_has_stack_issues": false,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
+      "return_address": "0051d444",
+      "target_address": "0x5fe6d0",
+      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
+      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 0051d43f",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "0051d457",
+      "caller_has_stack_issues": false,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
+      "return_address": "0051d45c",
+      "target_address": "0x5fe6d0",
+      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
+      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 0051d457",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "0051d487",
+      "caller_has_stack_issues": false,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
+      "return_address": "0051d48c",
+      "target_address": "0x5fe6d0",
+      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
+      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 0051d487",
+      "type": "call_variadic"
     }
   ]
 }

@@ -1,13 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 99,
-    "complexity_score": 34,
+    "complexity_score": 49,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 4,
     "pseudocode_lines": 34,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "call_variadic"
+    ],
     "total_lines": 133
   },
   "cross_references": [
@@ -33,14 +35,17 @@
   "function_calls": [
     {
       "addr": "00478950",
+      "is_variadic": false,
       "name": "core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00478950"
     },
     {
       "addr": "0049ad80",
+      "is_variadic": false,
       "name": "core_dtri.cpp_cylinderTriangleTest_FUN_0049ad80"
     },
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     }
   ],
@@ -162,5 +167,19 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "call_address": "004786ba",
+      "caller_has_stack_issues": false,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "004786bf",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 004786ba",
+      "type": "call_variadic"
+    }
+  ]
 }

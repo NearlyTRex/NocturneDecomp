@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 130,
+    "complexity_score": 145,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 3,
     "pseudocode_lines": 25,
-    "suspect_count": 10,
+    "suspect_count": 11,
     "suspect_types": [
+      "call_variadic",
       "stack_param"
     ],
     "total_lines": 78
@@ -41,22 +42,27 @@
   "function_calls": [
     {
       "addr": "00523e60",
+      "is_variadic": false,
       "name": "core_mission.cpp_CDemonMission_buildSetActorList_FUN_00523e60"
     },
     {
       "addr": "00523f20",
+      "is_variadic": false,
       "name": "core_mission.cpp_CDemonMission_FUN_00523f20"
     },
     {
       "addr": "00538ea0",
+      "is_variadic": false,
       "name": "core_msnedit.cpp_FUN_00538ea0"
     },
     {
       "addr": "0053bcf0",
+      "is_variadic": false,
       "name": "core_msnedit.cpp_FUN_0053bcf0"
     },
     {
       "addr": "0049f060",
+      "is_variadic": true,
       "name": "shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060"
     }
   ],
@@ -182,6 +188,19 @@
       "match": "in_stack_00000004",
       "text": "core_mission_cpp_CDemonMission_buildSetActorList_FUN_00523e60(in_stack_00000004);",
       "type": "stack_param"
+    },
+    {
+      "call_address": "0053bcd2",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060",
+      "return_address": "0053bcd7",
+      "target_address": "0x49f060",
+      "target_function": "shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060",
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showConfirmationDialog_FUN_0049f060 at 0053bcd2",
+      "type": "call_variadic"
     }
   ]
 }

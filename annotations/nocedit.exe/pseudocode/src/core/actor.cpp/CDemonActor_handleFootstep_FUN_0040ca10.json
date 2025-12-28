@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 138,
-    "complexity_score": 151,
+    "complexity_score": 166,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 11,
     "pseudocode_lines": 56,
-    "suspect_count": 7,
+    "suspect_count": 8,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "extra_output",
       "register_param",
       "stack_param",
@@ -32,26 +33,32 @@
   "function_calls": [
     {
       "addr": "004ee070",
+      "is_variadic": false,
       "name": "core_gore.cpp_CGore_FUN_004ee070"
     },
     {
       "addr": "004ee0f0",
+      "is_variadic": false,
       "name": "core_gore.cpp_CGore_FUN_004ee0f0"
     },
     {
       "addr": "004eece0",
+      "is_variadic": false,
       "name": "core_ground.cpp_getGroundTypeCode_FUN_004eece0"
     },
     {
       "addr": "00574580",
+      "is_variadic": false,
       "name": "core_setcolid.cpp_CDemonSet_FUN_00574580"
     },
     {
       "addr": "005b3a40",
+      "is_variadic": false,
       "name": "core_sound.cpp_CSound_playActorSound_FUN_005b3a40"
     },
     {
       "addr": "005fdbd0",
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     }
   ],
@@ -315,6 +322,19 @@
       "match": "extraout_EAX",
       "text": "return extraout_EAX;",
       "type": "extra_output"
+    },
+    {
+      "call_address": "0040cb2f",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "0040cb34",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0040cb2f",
+      "type": "call_variadic"
     }
   ],
   "vtable_info": {

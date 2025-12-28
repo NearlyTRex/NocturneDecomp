@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 520,
-    "complexity_score": 938,
+    "complexity_score": 963,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 7,
     "pseudocode_lines": 243,
-    "suspect_count": 68,
+    "suspect_count": 70,
     "suspect_types": [
+      "call_variadic",
       "pointer_cast",
       "stack_param",
       "unaffected_reg"
@@ -37,14 +38,17 @@
   "function_calls": [
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
       "addr": "0052ee50",
+      "is_variadic": false,
       "name": "sound_mp3.cpp_CFileBitStream_readBit_FUN_0052ee50"
     },
     {
       "addr": "0052ef40",
+      "is_variadic": false,
       "name": "sound_mp3.cpp_CFileBitStream_readBits_FUN_0052ef40"
     }
   ],
@@ -769,6 +773,32 @@
       "match": "unaff_ESI",
       "text": "unaff_ESI = unaff_ESI + 0xa0;",
       "type": "unaffected_reg"
+    },
+    {
+      "call_address": "00530982",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "00530987",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00530982",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "00530cd5",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "00530cda",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00530cd5",
+      "type": "call_variadic"
     }
   ]
 }

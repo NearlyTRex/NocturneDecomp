@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 73,
-    "complexity_score": 54,
+    "complexity_score": 79,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 7,
     "pseudocode_lines": 29,
-    "suspect_count": 2,
+    "suspect_count": 4,
     "suspect_types": [
+      "call_variadic",
       "stack_param"
     ],
     "total_lines": 102
@@ -41,10 +42,12 @@
   "function_calls": [
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
       "addr": "0050f540",
+      "is_variadic": false,
       "name": "shape_memdbg.cpp_debugRealloc_FUN_0050f540"
     }
   ],
@@ -228,6 +231,32 @@
       "match": "in_stack_00000010",
       "text": "this_ptr->hotkey_array[item_index] = in_stack_00000010;",
       "type": "stack_param"
+    },
+    {
+      "call_address": "004a556f",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "004a5574",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 004a556f",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "004a55f8",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "004a55fd",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 004a55f8",
+      "type": "call_variadic"
     }
   ]
 }

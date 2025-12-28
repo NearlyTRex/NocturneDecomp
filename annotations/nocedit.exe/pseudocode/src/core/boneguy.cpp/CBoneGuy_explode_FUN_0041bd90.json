@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 161,
-    "complexity_score": 78,
+    "complexity_score": 93,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 31,
     "pseudocode_lines": 63,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "call_variadic",
       "warning_overlapping_globals"
     ],
     "total_lines": 224
@@ -28,26 +29,32 @@
   "function_calls": [
     {
       "addr": "004a9650",
+      "is_variadic": false,
       "name": "core_enemy.cpp_CEnemy_FUN_004a9650"
     },
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
       "addr": "005a07a0",
+      "is_variadic": false,
       "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0"
     },
     {
       "addr": "005a0820",
+      "is_variadic": false,
       "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820"
     },
     {
       "addr": "005a0450",
+      "is_variadic": false,
       "name": "core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450"
     },
     {
       "addr": "00599fc0",
+      "is_variadic": false,
       "name": "core_skeleton.cpp_CSkeleton_findBone_FUN_00599fc0"
     }
   ],
@@ -295,6 +302,19 @@
       "match": "WARNING: Globals starting with",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
+    },
+    {
+      "call_address": "0041bf63",
+      "caller_has_stack_issues": false,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0041bf68",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0041bf63",
+      "type": "call_variadic"
     }
   ],
   "vtable_info": {

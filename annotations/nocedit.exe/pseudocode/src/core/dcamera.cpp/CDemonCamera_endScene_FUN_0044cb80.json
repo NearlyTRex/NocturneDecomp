@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 57,
+    "complexity_score": 72,
     "cross_reference_count": 11,
     "function_call_count": 6,
     "global_count": 10,
     "pseudocode_lines": 32,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
+      "call_variadic",
       "stack_param"
     ],
     "total_lines": 117
@@ -95,26 +96,32 @@
   "function_calls": [
     {
       "addr": "0044c410",
+      "is_variadic": false,
       "name": "core_dcamera.cpp_CDemonCamera_resetSceneCamera_FUN_0044c410"
     },
     {
       "addr": "004b1a78",
+      "is_variadic": false,
       "name": "core_event.cpp_FUN_004b1a78"
     },
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
       "addr": "0048c8c0",
+      "is_variadic": false,
       "name": "engine_drender.cpp_CDemonRenderer_popViewport_FUN_0050e480"
     },
     {
       "addr": "005b72a0",
+      "is_variadic": false,
       "name": "wincore_windll.cpp_endScene_FUN_005b72a0"
     },
     {
       "addr": "005b7d00",
+      "is_variadic": false,
       "name": "wincore_windll.cpp_masterZBuffer_FUN_005b7d00"
     }
   ],
@@ -250,6 +257,19 @@
       "match": "in_stack_0000000c",
       "text": "if ((this_ptr->skip_clear_buffer_flag == 0) && (in_stack_0000000c == 0)) {",
       "type": "stack_param"
+    },
+    {
+      "call_address": "0044cc47",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0044cc4c",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0044cc47",
+      "type": "call_variadic"
     }
   ]
 }

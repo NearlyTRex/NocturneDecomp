@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 319,
-    "complexity_score": 431,
+    "complexity_score": 476,
     "cross_reference_count": 3,
     "function_call_count": 9,
     "global_count": 23,
     "pseudocode_lines": 146,
-    "suspect_count": 26,
+    "suspect_count": 30,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "param_count_too_few",
       "register_param",
       "stack_param",
@@ -55,38 +56,47 @@
   "function_calls": [
     {
       "addr": "0040cd10",
+      "is_variadic": false,
       "name": "core_actor.cpp_randomChance_FUN_0040cd10"
     },
     {
       "addr": "00452730",
+      "is_variadic": false,
       "name": "core_dcamera.cpp_CDemonCamera_isSphereVisible_FUN_00452730"
     },
     {
       "addr": "004c6c10",
+      "is_variadic": false,
       "name": "core_fire.cpp_allocateBulletHole_FUN_004c6c10"
     },
     {
       "addr": "004bf7f0",
+      "is_variadic": false,
       "name": "core_fire.cpp_CBulletHole_ctor_FUN_004bf7f0"
     },
     {
       "addr": "004c79d0",
+      "is_variadic": false,
       "name": "core_fire.cpp_CFireEffect_FUN_004c79d0"
     },
     {
       "addr": "004bf2f0",
+      "is_variadic": false,
       "name": "core_fire.cpp_CSmokeParticle_init_FUN_004bf2f0"
     },
     {
       "addr": "004eece0",
+      "is_variadic": false,
       "name": "core_ground.cpp_getGroundTypeCode_FUN_004eece0"
     },
     {
       "addr": "005b3ae0",
+      "is_variadic": false,
       "name": "core_sound.cpp_CSound_playActorPositionalSoundWithDelay_FUN_005b3ae0"
     },
     {
       "addr": "005fdbd0",
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     }
   ],
@@ -587,6 +597,58 @@
       "param_delta": 4,
       "text": "Function declares 1 params but call sites push 5 (4 missing)",
       "type": "param_count_too_few"
+    },
+    {
+      "call_address": "004c78c2",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "004c78c7",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 004c78c2",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "004c7906",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "004c790b",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 004c7906",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "004c794a",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "004c794f",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 004c794a",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "004c798a",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "004c798f",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 004c798a",
+      "type": "call_variadic"
     }
   ]
 }

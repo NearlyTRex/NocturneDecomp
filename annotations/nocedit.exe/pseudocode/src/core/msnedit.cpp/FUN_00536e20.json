@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 359,
-    "complexity_score": 362,
+    "complexity_score": 387,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 26,
     "pseudocode_lines": 102,
-    "suspect_count": 23,
+    "suspect_count": 25,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -40,46 +41,57 @@
   "function_calls": [
     {
       "addr": "0040eed0",
+      "is_variadic": false,
       "name": "core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0"
     },
     {
       "addr": "0052dab0",
+      "is_variadic": false,
       "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0"
     },
     {
       "addr": "0052dcf0",
+      "is_variadic": false,
       "name": "core_motion.cpp_CMotionController_getCurrentStateName_FUN_0052dcf0"
     },
     {
       "addr": "0052ddb0",
+      "is_variadic": false,
       "name": "core_motion.cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0"
     },
     {
       "addr": "00536cd0",
+      "is_variadic": false,
       "name": "core_msnedit.cpp_FUN_00536cd0"
     },
     {
       "addr": "0059e000",
+      "is_variadic": false,
       "name": "core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000"
     },
     {
       "addr": "006001b2",
+      "is_variadic": false,
       "name": "crt_math.c_ceil_FUN_006001b2"
     },
     {
       "addr": "005feb90",
+      "is_variadic": false,
       "name": "crt_math.c_floor_FUN_005feb90"
     },
     {
       "addr": "005fdbd0",
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "00403200",
+      "is_variadic": false,
       "name": "engine_2d.c_fillRectWithBorder_FUN_00403200"
     },
     {
       "addr": "004a00f0",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0"
     }
   ],
@@ -556,6 +568,32 @@
       "match": "in_stack_ffffff3c",
       "text": "(&this_ptr->motion_controller,motion_name->motion_name,in_stack_ffffff3c);",
       "type": "stack_param"
+    },
+    {
+      "call_address": "00536f2a",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "00536f2f",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00536f2a",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "00536fc8",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "00536fcd",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00536fc8",
+      "type": "call_variadic"
     }
   ]
 }

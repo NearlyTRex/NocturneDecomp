@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 227,
-    "complexity_score": 191,
+    "complexity_score": 206,
     "cross_reference_count": 2,
     "function_call_count": 9,
     "global_count": 6,
     "pseudocode_lines": 101,
-    "suspect_count": 7,
+    "suspect_count": 8,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "pointer_cast",
       "register_param",
       "stack_ref"
@@ -44,38 +45,47 @@
   "function_calls": [
     {
       "addr": "005ff9e0",
+      "is_variadic": false,
       "name": "crt_ctype.c_toupper_FUN_005ff9e0"
     },
     {
       "addr": "00600e10",
+      "is_variadic": false,
       "name": "crt_file.c_create_directory_FUN_00600e10"
     },
     {
       "addr": "005fe840",
+      "is_variadic": false,
       "name": "crt_stdio.c_fgetc_FUN_005fe840"
     },
     {
       "addr": "006007a0",
+      "is_variadic": false,
       "name": "crt_stdio.c_fputc_FUN_006007a0"
     },
     {
       "addr": "005ffacc",
+      "is_variadic": false,
       "name": "crt_stdio.c_fseek_FUN_005ffacc"
     },
     {
       "addr": "00481910",
+      "is_variadic": false,
       "name": "engine_dosio.c_copyFileTimestamp_FUN_00481910"
     },
     {
       "addr": "0049e740",
+      "is_variadic": true,
       "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740"
     },
     {
       "addr": "0050f9b0",
+      "is_variadic": false,
       "name": "shape_memdbg.cpp_closeFile_FUN_0050f9b0"
     },
     {
       "addr": "0050f7a0",
+      "is_variadic": false,
       "name": "shape_memdbg.cpp_openFile_FUN_0050f7a0"
     }
   ],
@@ -270,6 +280,19 @@
       "match": "(byte *)((int)",
       "text": "*(byte *)((int)&file_ptr->_flag + 1) = *(byte *)((int)&file_ptr->_flag + 1) | 0x10;",
       "type": "pointer_cast"
+    },
+    {
+      "call_address": "004b7e90",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "return_address": "004b7e95",
+      "target_address": "0x49e740",
+      "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 004b7e90",
+      "type": "call_variadic"
     }
   ]
 }

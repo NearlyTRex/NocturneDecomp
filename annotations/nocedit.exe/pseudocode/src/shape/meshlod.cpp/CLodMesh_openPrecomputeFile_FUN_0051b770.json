@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 71,
-    "complexity_score": 157,
+    "complexity_score": 172,
     "cross_reference_count": 6,
     "function_call_count": 5,
     "global_count": 4,
     "pseudocode_lines": 32,
-    "suspect_count": 10,
+    "suspect_count": 11,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -69,22 +70,27 @@
   "function_calls": [
     {
       "addr": "005febfc",
+      "is_variadic": false,
       "name": "crt_file.c_makepath_FUN_005febfc"
     },
     {
       "addr": "005fdbd0",
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "005ff178",
+      "is_variadic": false,
       "name": "crt_string.c_splitpath_FUN_005ff178"
     },
     {
       "addr": "0050f7a0",
+      "is_variadic": false,
       "name": "shape_memdbg.cpp_openFile_FUN_0050f7a0"
     },
     {
       "addr": "0051c6f0",
+      "is_variadic": false,
       "name": "shape_meshlod.cpp_CLodMesh_computeMeshCRC32_FUN_0051c6f0"
     }
   ],
@@ -279,6 +285,19 @@
       "match": "in_stack_0000001c",
       "text": "(acStack_500,(char *)0x0,in_stack_0000001c,\"..\\\\shape\\\\meshlod.cpp\",0x1239)",
       "type": "stack_param"
+    },
+    {
+      "call_address": "0051b805",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "0051b80a",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0051b805",
+      "type": "call_variadic"
     }
   ]
 }

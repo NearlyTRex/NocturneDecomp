@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 250,
-    "complexity_score": 117,
+    "complexity_score": 142,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 21,
     "pseudocode_lines": 62,
-    "suspect_count": 4,
+    "suspect_count": 6,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "register_param",
       "stack_ref"
     ],
@@ -55,10 +56,12 @@
   "function_calls": [
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
       "addr": "005fdbd0",
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     }
   ],
@@ -346,6 +349,32 @@
       "match": "&stack0xffffff6c",
       "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xffffff6c);",
       "type": "stack_ref"
+    },
+    {
+      "call_address": "0046e2ad",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "0046e2b2",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0046e2ad",
+      "type": "call_variadic"
+    },
+    {
+      "call_address": "0046e2d0",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0046e2d5",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0046e2d0",
+      "type": "call_variadic"
     }
   ]
 }

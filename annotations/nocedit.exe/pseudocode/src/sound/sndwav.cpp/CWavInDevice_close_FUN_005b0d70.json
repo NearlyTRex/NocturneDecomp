@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 134,
+    "complexity_score": 149,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 12,
     "pseudocode_lines": 34,
-    "suspect_count": 9,
+    "suspect_count": 10,
     "suspect_types": [
+      "call_variadic",
       "callind_esp_no_frame",
       "pointer_cast"
     ],
@@ -36,14 +37,17 @@
   "function_calls": [
     {
       "addr": "EXTERNAL:0000007f",
+      "is_variadic": false,
       "name": "GlobalFree"
     },
     {
       "addr": "005adba0",
+      "is_variadic": true,
       "name": "sound_sndmain.cpp_logSoundError_FUN_005adba0"
     },
     {
       "addr": "EXTERNAL:00000017",
+      "is_variadic": false,
       "name": "waveInClose"
     }
   ],
@@ -256,6 +260,19 @@
       "return_address": "005b0d83",
       "text": "CALLIND at 005b0d80, ADD ESP at 005b0d83 (no EBP frame)",
       "type": "callind_esp_no_frame"
+    },
+    {
+      "call_address": "005b0df8",
+      "caller_has_stack_issues": false,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL sound_sndmain.cpp_logSoundError_FUN_005adba0",
+      "return_address": "005b0dfd",
+      "target_address": "0x5adba0",
+      "target_function": "sound_sndmain.cpp_logSoundError_FUN_005adba0",
+      "text": "Call to variadic function sound_sndmain.cpp_logSoundError_FUN_005adba0 at 005b0df8",
+      "type": "call_variadic"
     }
   ],
   "vtable_info": {

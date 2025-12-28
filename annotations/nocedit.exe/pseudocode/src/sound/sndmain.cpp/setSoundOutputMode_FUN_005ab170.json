@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 70,
-    "complexity_score": 188,
+    "complexity_score": 203,
     "cross_reference_count": 7,
     "function_call_count": 3,
     "global_count": 8,
     "pseudocode_lines": 33,
-    "suspect_count": 13,
+    "suspect_count": 14,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "callind_esp_no_frame",
       "register_param",
       "stack_param",
@@ -75,14 +76,17 @@
   "function_calls": [
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
       "addr": "005a5730",
+      "is_variadic": false,
       "name": "sound_sndmain.cpp_allocMixBuffers_FUN_005a5730"
     },
     {
       "addr": "005ab540",
+      "is_variadic": false,
       "name": "sound_sndmain.cpp_isSoundBusy_FUN_005ab540"
     }
   ],
@@ -297,6 +301,19 @@
       "return_address": "005ab1e9",
       "text": "CALLIND at 005ab1e6, ADD ESP at 005ab1e9 (no EBP frame)",
       "type": "callind_esp_no_frame"
+    },
+    {
+      "call_address": "005ab1cb",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "005ab1d0",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005ab1cb",
+      "type": "call_variadic"
     }
   ]
 }

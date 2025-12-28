@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 91,
+    "complexity_score": 106,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 16,
     "pseudocode_lines": 51,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
+      "call_variadic",
       "unaffected_reg",
       "warning_unreachable"
     ],
@@ -36,26 +37,32 @@
   "function_calls": [
     {
       "addr": "004dc230",
+      "is_variadic": false,
       "name": "core_game.cpp_CallToJoystickStuff_FUN_004dc230"
     },
     {
       "addr": "004dce70",
+      "is_variadic": false,
       "name": "core_game.cpp_CGame_resetInputAndCenterCursor_FUN_004dce70"
     },
     {
       "addr": "004dc3e0",
+      "is_variadic": false,
       "name": "core_game.cpp_KeypressesAndCGame_FUN_004dc3e0"
     },
     {
       "addr": "004dccc0",
+      "is_variadic": false,
       "name": "core_game.cpp_SettingCursorPos_FUN_004dccc0"
     },
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
       "addr": "005438c0",
+      "is_variadic": false,
       "name": "core_netgame.cpp_CNetGame_getMyControls_FUN_005438c0"
     }
   ],
@@ -242,6 +249,19 @@
       "match": "unaff_EBP",
       "text": "core_game_cpp_CallToJoystickStuff_FUN_004dc230(this_ptr,(int)ctrl,unaff_EBP);",
       "type": "unaffected_reg"
+    },
+    {
+      "call_address": "004dbe51",
+      "caller_has_stack_issues": false,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "004dbe56",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 004dbe51",
+      "type": "call_variadic"
     }
   ]
 }

@@ -1,13 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 48,
-    "complexity_score": 16,
+    "complexity_score": 31,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 3,
     "pseudocode_lines": 16,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "call_variadic"
+    ],
     "total_lines": 64
   },
   "cross_references": [
@@ -45,10 +47,12 @@
   "function_calls": [
     {
       "addr": "005adba0",
+      "is_variadic": true,
       "name": "sound_sndmain.cpp_logSoundError_FUN_005adba0"
     },
     {
       "addr": "005f40e0",
+      "is_variadic": false,
       "name": "wincore_winrun.cpp_sleep_FUN_005f40e0"
     }
   ],
@@ -122,5 +126,19 @@
     ],
     "severity": "medium"
   },
-  "suspects": []
+  "suspects": [
+    {
+      "call_address": "005abd11",
+      "caller_has_stack_issues": false,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL sound_sndmain.cpp_logSoundError_FUN_005adba0",
+      "return_address": "005abd16",
+      "target_address": "0x5adba0",
+      "target_function": "sound_sndmain.cpp_logSoundError_FUN_005adba0",
+      "text": "Call to variadic function sound_sndmain.cpp_logSoundError_FUN_005adba0 at 005abd11",
+      "type": "call_variadic"
+    }
+  ]
 }

@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 343,
-    "complexity_score": 300,
+    "complexity_score": 315,
     "cross_reference_count": 3,
     "function_call_count": 14,
     "global_count": 12,
     "pseudocode_lines": 160,
-    "suspect_count": 12,
+    "suspect_count": 13,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "register_param",
       "stack_ref",
       "unknown_field"
@@ -50,58 +51,72 @@
   "function_calls": [
     {
       "addr": "00409270",
+      "is_variadic": false,
       "name": "core_actor.cpp_CDemonActor_getWorldBoundingBox_FUN_00409270"
     },
     {
       "addr": "00408ea0",
+      "is_variadic": false,
       "name": "core_actor.cpp_CDemonActor_inverseTransformVector_FUN_00408ea0"
     },
     {
       "addr": "00408e80",
+      "is_variadic": false,
       "name": "core_actor.cpp_CDemonActor_transformVector_FUN_00408e80"
     },
     {
       "addr": "00408f10",
+      "is_variadic": false,
       "name": "core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10"
     },
     {
       "addr": "00408340",
+      "is_variadic": false,
       "name": "core_actor.cpp_rayCylinderIntersect_FUN_00408340"
     },
     {
       "addr": "00421010",
+      "is_variadic": false,
       "name": "core_box.cpp_CBoundingBox3D_doesBoxIntersect_FUN_00421010"
     },
     {
       "addr": "00420940",
+      "is_variadic": false,
       "name": "core_box.cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940"
     },
     {
       "addr": "00420240",
+      "is_variadic": false,
       "name": "core_box.cpp_CBoundingBox3D_expand_FUN_00420240"
     },
     {
       "addr": "004781d0",
+      "is_variadic": false,
       "name": "core_dmodel.cpp_CKeyFramedModel_intersectRay_FUN_004781d0"
     },
     {
       "addr": "00478d80",
+      "is_variadic": false,
       "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80"
     },
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
       "addr": "0059dca0",
+      "is_variadic": false,
       "name": "core_skeleton.cpp_CDeformableModel_findMinWeightBone_FUN_0059dca0"
     },
     {
       "addr": "005a07a0",
+      "is_variadic": false,
       "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0"
     },
     {
       "addr": "005a10e0",
+      "is_variadic": false,
       "name": "core_skeleton.cpp_CDeformableModelInstance_rayIntersect_FUN_005a10e0"
     }
   ],
@@ -519,6 +534,19 @@
       "match": "&stack0x00000000",
       "text": "if ((int *)&stack0x00000000 != &g_DeformableModelCount) {",
       "type": "stack_ref"
+    },
+    {
+      "call_address": "004096ec",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "004096f1",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 004096ec",
+      "type": "call_variadic"
     }
   ]
 }

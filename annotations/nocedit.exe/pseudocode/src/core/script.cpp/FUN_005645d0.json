@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 181,
-    "complexity_score": 162,
+    "complexity_score": 177,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 24,
     "pseudocode_lines": 47,
-    "suspect_count": 9,
+    "suspect_count": 10,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -39,46 +40,57 @@
   "function_calls": [
     {
       "addr": "00564500",
+      "is_variadic": false,
       "name": "core_script.cpp_FUN_00564500"
     },
     {
       "addr": "005664d0",
+      "is_variadic": false,
       "name": "core_script.cpp_FUN_005664d0"
     },
     {
       "addr": "005fdbd0",
+      "is_variadic": true,
       "name": "crt_stdio.c_sprintf_FUN_005fdbd0"
     },
     {
       "addr": "00402ee0",
+      "is_variadic": false,
       "name": "engine_2d.c_drawHLine_FUN_00402ee0"
     },
     {
       "addr": "00402ff0",
+      "is_variadic": false,
       "name": "engine_2d.c_drawVLine_FUN_00402ff0"
     },
     {
       "addr": "00403170",
+      "is_variadic": false,
       "name": "engine_2d.c_fillRectColor_FUN_00403170"
     },
     {
       "addr": "004cdbf0",
+      "is_variadic": false,
       "name": "engine_font.cpp_CBitFont_drawTextRight_FUN_004cdbf0"
     },
     {
       "addr": "004cdce0",
+      "is_variadic": false,
       "name": "engine_font.cpp_CBitFont_drawTextRight_FUN_004cdce0"
     },
     {
       "addr": "0050e480",
+      "is_variadic": false,
       "name": "engine_matrix.c_popViewport_FUN_0050e480"
     },
     {
       "addr": "0050e320",
+      "is_variadic": false,
       "name": "engine_matrix.c_pushViewport_FUN_0050e320"
     },
     {
       "addr": "004a5c10",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CEdScrollBar_render_FUN_004a5c10"
     }
   ],
@@ -337,6 +349,19 @@
       "match": "in_stack_fffffe28",
       "text": "engine_matrix_c_popViewport_FUN_0050e480(in_stack_fffffe28);",
       "type": "stack_param"
+    },
+    {
+      "call_address": "00564742",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "00564747",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00564742",
+      "type": "call_variadic"
     }
   ]
 }

@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 558,
-    "complexity_score": 866,
+    "complexity_score": 881,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 16,
     "pseudocode_lines": 236,
-    "suspect_count": 60,
+    "suspect_count": 61,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "param_count_too_few",
       "register_param",
       "stack_param",
@@ -40,50 +41,62 @@
   "function_calls": [
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
       "addr": "005fde40",
+      "is_variadic": false,
       "name": "crt_memory.c_memset_FUN_005fde40"
     },
     {
       "addr": "00403260",
+      "is_variadic": false,
       "name": "engine_2d.c_clearInputAndWait_FUN_00403260"
     },
     {
       "addr": "004cfe80",
+      "is_variadic": false,
       "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004cfe80"
     },
     {
       "addr": "004a6970",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_calculateButtonHeight_FUN_004a6970"
     },
     {
       "addr": "004a68e0",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_calculateButtonWidth_FUN_004a68e0"
     },
     {
       "addr": "004a64b0",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_calculateGridHeight_FUN_004a64b0"
     },
     {
       "addr": "004a6490",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_calculateGridWidth_FUN_004a6490"
     },
     {
       "addr": "004a6590",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CEdButton_setBoundsAndText_FUN_004a6590"
     },
     {
       "addr": "004a0890",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_004a0890"
     },
     {
       "addr": "004a5b60",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CEdScrollBar_setPosition_FUN_004a5b60"
     },
     {
       "addr": "004a2f70",
+      "is_variadic": false,
       "name": "shape_edittool.cpp_CStrList_getStringAt_FUN_004a2f70"
     }
   ],
@@ -764,6 +777,19 @@
       "param_delta": 1,
       "text": "Function declares 3 params but call sites push 4 (1 missing)",
       "type": "param_count_too_few"
+    },
+    {
+      "call_address": "004a46b3",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "004a46b8",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 004a46b3",
+      "type": "call_variadic"
     }
   ]
 }

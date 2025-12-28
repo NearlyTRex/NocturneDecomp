@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 582,
-    "complexity_score": 500,
+    "complexity_score": 515,
     "cross_reference_count": 0,
     "function_call_count": 26,
     "global_count": 21,
     "pseudocode_lines": 250,
-    "suspect_count": 22,
+    "suspect_count": 23,
     "suspect_types": [
       "badspacebase",
+      "call_variadic",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -33,106 +34,132 @@
   "function_calls": [
     {
       "addr": "00408c10",
+      "is_variadic": false,
       "name": "core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10"
     },
     {
       "addr": "00408f10",
+      "is_variadic": false,
       "name": "core_actor.cpp_CDemonActor_worldToLocalPoint_FUN_00408f10"
     },
     {
       "addr": "0040cd70",
+      "is_variadic": false,
       "name": "core_actor.cpp_normalizeAngleToPi_FUN_0040cd70"
     },
     {
       "addr": "0042dfc0",
+      "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0"
     },
     {
       "addr": "00428f40",
+      "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_FUN_00428f40"
     },
     {
       "addr": "00429820",
+      "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_FUN_00429820"
     },
     {
       "addr": "00429870",
+      "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_FUN_00429870"
     },
     {
       "addr": "0042ca70",
+      "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_FUN_0042ca70"
     },
     {
       "addr": "0042ec40",
+      "is_variadic": false,
       "name": "core_charactr.cpp_CCharacter_FUN_0042ec40"
     },
     {
       "addr": "004adca0",
+      "is_variadic": false,
       "name": "core_event.cpp_CEventList_evaluateCondition_FUN_004adca0"
     },
     {
       "addr": "005293b0",
+      "is_variadic": false,
       "name": "core_moloch.cpp_FUN_005293b0"
     },
     {
       "addr": "00529900",
+      "is_variadic": false,
       "name": "core_moloch.cpp_PlaySoundAbtMolochMorphing_FUN_00529900"
     },
     {
       "addr": "0052b680",
+      "is_variadic": false,
       "name": "core_morph.cpp_CMorph_getReady_FUN_0052b680"
     },
     {
       "addr": "0052b430",
+      "is_variadic": false,
       "name": "core_morph.cpp_FUN_0052b430"
     },
     {
       "addr": "0052d610",
+      "is_variadic": false,
       "name": "core_motion.cpp_CMotionController_advance_FUN_0052d610"
     },
     {
       "addr": "0052dab0",
+      "is_variadic": false,
       "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_0052dab0"
     },
     {
       "addr": "0052ddb0",
+      "is_variadic": false,
       "name": "core_motion.cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0"
     },
     {
       "addr": "0052db00",
+      "is_variadic": false,
       "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_0052db00"
     },
     {
       "addr": "0059fb00",
+      "is_variadic": false,
       "name": "core_skeleton.cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00"
     },
     {
       "addr": "005a1510",
+      "is_variadic": false,
       "name": "core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510"
     },
     {
       "addr": "005a0840",
+      "is_variadic": false,
       "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_005a0840"
     },
     {
       "addr": "005a0450",
+      "is_variadic": false,
       "name": "core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_005a0450"
     },
     {
       "addr": "0059e020",
+      "is_variadic": false,
       "name": "core_skeleton.cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020"
     },
     {
       "addr": "0059e000",
+      "is_variadic": false,
       "name": "core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059e000"
     },
     {
       "addr": "005e7830",
+      "is_variadic": false,
       "name": "core_vehicle.cpp_convertDirectionVectorToEulerAngles_FUN_005e7830"
     },
     {
       "addr": "00441890",
+      "is_variadic": true,
       "name": "engine_console.cpp_CConsole_printf_FUN_00441890"
     }
   ],
@@ -650,6 +677,19 @@
       "match": "unaff_EBX",
       "text": "(&pCVar1->motion_controller,in_stack_0000000c,unaff_EBX);",
       "type": "unaffected_reg"
+    },
+    {
+      "call_address": "00529024",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL engine_console.cpp_CConsole_printf_FUN_00441890",
+      "return_address": "00529029",
+      "target_address": "0x441890",
+      "target_function": "engine_console.cpp_CConsole_printf_FUN_00441890",
+      "text": "Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 00529024",
+      "type": "call_variadic"
     }
   ],
   "vtable_info": {

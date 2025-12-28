@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 105,
+    "complexity_score": 120,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 2,
     "pseudocode_lines": 20,
-    "suspect_count": 7,
+    "suspect_count": 8,
     "suspect_types": [
+      "call_variadic",
       "concat_artifact",
       "extra_output",
       "stack_param"
@@ -49,10 +50,12 @@
   "function_calls": [
     {
       "addr": "005a8170",
+      "is_variadic": false,
       "name": "sound_sndmain.cpp_CSfxSlot_updatePlaybackPos_FUN_005a8170"
     },
     {
       "addr": "005adba0",
+      "is_variadic": true,
       "name": "sound_sndmain.cpp_logSoundError_FUN_005adba0"
     }
   ],
@@ -206,6 +209,19 @@
       "match": "CONCAT44",
       "text": "(this_ptr,(double)CONCAT44 /* combine 2-byte values */(extraout_EDX,pdVar1));",
       "type": "concat_artifact"
+    },
+    {
+      "call_address": "005a813a",
+      "caller_has_stack_issues": true,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL sound_sndmain.cpp_logSoundError_FUN_005adba0",
+      "return_address": "005a813f",
+      "target_address": "0x5adba0",
+      "target_function": "sound_sndmain.cpp_logSoundError_FUN_005adba0",
+      "text": "Call to variadic function sound_sndmain.cpp_logSoundError_FUN_005adba0 at 005a813a",
+      "type": "call_variadic"
     }
   ]
 }

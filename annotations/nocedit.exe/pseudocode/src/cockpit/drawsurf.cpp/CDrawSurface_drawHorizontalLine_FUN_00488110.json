@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 131,
-    "complexity_score": 76,
+    "complexity_score": 91,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 8,
     "pseudocode_lines": 61,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "call_variadic",
       "pointer_cast"
     ],
     "total_lines": 192
@@ -41,14 +42,17 @@
   "function_calls": [
     {
       "addr": "00487630",
+      "is_variadic": false,
       "name": "cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLineWithEffect_FUN_00487630"
     },
     {
       "addr": "00506f10",
+      "is_variadic": true,
       "name": "core_main.c_displayErrorAndQuit_FUN_00506f10"
     },
     {
       "addr": "005fde40",
+      "is_variadic": false,
       "name": "crt_memory.c_memset_FUN_005fde40"
     }
   ],
@@ -177,6 +181,19 @@
       "match": "(void *)((int)",
       "text": "((void *)((int)g_ScreenBufferArray[y_00] + start_x_00),g_CurrentDrawColor,",
       "type": "pointer_cast"
+    },
+    {
+      "call_address": "0048821e",
+      "caller_has_stack_issues": false,
+      "description": "Variadic function call may destabilize ESP tracking",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "00488223",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0048821e",
+      "type": "call_variadic"
     }
   ]
 }
