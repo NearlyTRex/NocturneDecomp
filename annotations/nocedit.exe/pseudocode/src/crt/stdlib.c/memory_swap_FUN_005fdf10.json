@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 31,
-    "complexity_score": 288,
+    "complexity_score": 303,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 33,
-    "suspect_count": 24,
+    "suspect_count": 25,
     "suspect_types": [
       "pointer_cast",
       "register_param",
+      "special_crt_function",
       "unaffected_reg"
     ],
     "total_lines": 64
@@ -240,6 +241,15 @@
       "match": "(uint *)((int)",
       "text": "unaff_EDI = (uint *)((int)unaff_EDI + 1);",
       "type": "pointer_cast"
+    },
+    {
+      "address": "005fdf10",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_stdlib.c_memory_swap_FUN_005fdf10",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 005fdf10",
+      "type": "special_crt_function"
     }
   ]
 }

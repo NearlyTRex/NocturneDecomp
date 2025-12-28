@@ -1,13 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 7,
-    "complexity_score": 5,
+    "complexity_score": 35,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 1,
     "pseudocode_lines": 5,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 2,
+    "suspect_types": [
+      "call_esp_preserve",
+      "special_crt_function"
+    ],
     "total_lines": 12
   },
   "cross_references": [],
@@ -73,7 +76,30 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "add_esp_value": 8,
+      "call_address": "005feea6",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "005feeab",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 8,
+      "return_address": "005feeab",
+      "target_address": "0x605b23",
+      "text": "Direct CALL at 005feea6, ADD ESP at 005feeab (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "address": "005fee9f",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_cpp.c_pureVirtualStub_FUN_005fee9f",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 005fee9f",
+      "type": "special_crt_function"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

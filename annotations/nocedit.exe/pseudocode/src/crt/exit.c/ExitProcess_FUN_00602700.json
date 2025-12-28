@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 26,
-    "complexity_score": 44,
+    "complexity_score": 59,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 4,
     "pseudocode_lines": 14,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
       "callind_preserve",
+      "special_crt_function",
       "unresolved_funcptr"
     ],
     "total_lines": 40
@@ -184,6 +185,15 @@
       "return_address": "0060271f",
       "text": "CALLIND at 00602719, ADD ESP at 0060271f (no EBP frame)",
       "type": "callind_preserve"
+    },
+    {
+      "address": "00602700",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_exit.c_ExitProcess_FUN_00602700",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 00602700",
+      "type": "special_crt_function"
     }
   ]
 }

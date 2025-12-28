@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 9,
-    "complexity_score": 54,
+    "complexity_score": 69,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 9,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
+      "call_esp_preserve",
       "stack_param"
     ],
     "total_lines": 18
@@ -96,6 +97,19 @@
       "match": "in_stack_00000008",
       "text": "core_actor_cpp_CDemonActor_onPickup_FUN_0040a010(in_stack_00000004,in_stack_00000008);",
       "type": "stack_param"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "0042257a",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "0042257f",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 8,
+      "return_address": "0042257f",
+      "target_address": "0x40a010",
+      "text": "Direct CALL at 0042257a, ADD ESP at 0042257f (no EBP frame)",
+      "type": "call_esp_preserve"
     }
   ],
   "vtable_info": {

@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 63,
+    "complexity_score": 78,
     "cross_reference_count": 18,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 28,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
-      "concat_artifact"
+      "concat_artifact",
+      "special_crt_function"
     ],
     "total_lines": 89
   },
@@ -213,6 +214,15 @@
       "match": "CONCAT11",
       "text": "uVar1 = (uint)CONCAT11 /* combine 2-byte values */(bVar2 + 0x20,(char)uVar1);",
       "type": "concat_artifact"
+    },
+    {
+      "address": "005ff070",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_string.c_strnicmp_FUN_005ff070",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 005ff070",
+      "type": "special_crt_function"
     }
   ]
 }

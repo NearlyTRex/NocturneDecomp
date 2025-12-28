@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 7,
-    "complexity_score": 19,
+    "complexity_score": 34,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 4,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "special_crt_function"
     ],
     "total_lines": 11
   },
@@ -92,6 +93,15 @@
       "match": "(uint *)((int)",
       "text": "return (*(uint *)((int)ptr + -4) & 0xfffffffe) - 4;",
       "type": "pointer_cast"
+    },
+    {
+      "address": "00609790",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_heap.c_GetBlockSize_FUN_00609790",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 00609790",
+      "type": "special_crt_function"
     }
   ]
 }

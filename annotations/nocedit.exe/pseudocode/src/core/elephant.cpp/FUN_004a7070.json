@@ -1,15 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 258,
+    "complexity_score": 348,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 12,
     "pseudocode_lines": 43,
-    "suspect_count": 18,
+    "suspect_count": 26,
     "suspect_types": [
       "badspacebase",
+      "call_esp_preserve",
       "callind_preserve",
+      "lea_esp_stack_addr",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -321,6 +323,98 @@
       "return_address": "004a70be",
       "text": "CALLIND at 004a70b8, ADD ESP at 004a70be (no EBP frame)",
       "type": "callind_preserve"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "004a7091",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "004a7096",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 32,
+      "return_address": "004a7096",
+      "target_address": "0x5ee110",
+      "text": "Direct CALL at 004a7091, ADD ESP at 004a7096 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "004a70ca",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "004a70d3",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 32,
+      "return_address": "004a70cf",
+      "target_address": "0x408ec0",
+      "text": "Direct CALL at 004a70ca, ADD ESP at 004a70d3 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "004a7107",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "004a710c",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 32,
+      "return_address": "004a710c",
+      "target_address": "0x471d30",
+      "text": "Direct CALL at 004a7107, ADD ESP at 004a710c (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "004a7130",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "004a7135",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 32,
+      "return_address": "004a7135",
+      "target_address": "0x4765e0",
+      "text": "Direct CALL at 004a7130, ADD ESP at 004a7135 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "004a714b",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "004a7150",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 32,
+      "return_address": "004a7150",
+      "target_address": "0x56d090",
+      "text": "Direct CALL at 004a714b, ADD ESP at 004a7150 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "address": "004a70a1",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 20,
+      "instruction": "LEA EAX, [ESP + 0x14]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 004a70a1",
+      "type": "lea_esp_stack_addr"
+    },
+    {
+      "address": "004a70c2",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 12,
+      "instruction": "LEA EAX, [ESP + 0xc]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 004a70c2",
+      "type": "lea_esp_stack_addr"
+    },
+    {
+      "address": "004a70cf",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 20,
+      "instruction": "LEA EAX, [ESP + 0x14]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 004a70cf",
+      "type": "lea_esp_stack_addr"
     }
   ],
   "vtable_info": {

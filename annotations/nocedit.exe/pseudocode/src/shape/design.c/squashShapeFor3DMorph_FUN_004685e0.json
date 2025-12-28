@@ -1,13 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 117,
-    "complexity_score": 29,
+    "complexity_score": 54,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 5,
     "pseudocode_lines": 29,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 2,
+    "suspect_types": [
+      "call_esp_anchor"
+    ],
     "total_lines": 146
   },
   "cross_references": [
@@ -171,5 +173,32 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "add_esp_value": 12,
+      "call_address": "00468600",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "00468605",
+      "frame_offset": 12,
+      "match": "CALL...ADD ESP",
+      "return_address": "00468605",
+      "target_address": "0x401fd0",
+      "text": "Direct CALL at 00468600, ADD ESP at 00468605 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "00468618",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "0046861d",
+      "frame_offset": 12,
+      "match": "CALL...ADD ESP",
+      "return_address": "0046861d",
+      "target_address": "0x5ff9e0",
+      "text": "Direct CALL at 00468618, ADD ESP at 0046861d with uncertain ESP",
+      "type": "call_esp_anchor"
+    }
+  ]
 }

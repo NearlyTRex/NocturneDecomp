@@ -1,14 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 32,
-    "complexity_score": 43,
+    "complexity_score": 73,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
     "pseudocode_lines": 13,
-    "suspect_count": 2,
+    "suspect_count": 4,
     "suspect_types": [
+      "call_esp_preserve",
       "param_count_too_few",
+      "special_crt_function",
       "stack_param"
     ],
     "total_lines": 45
@@ -125,6 +127,28 @@
       "param_delta": 1,
       "text": "Function declares 1 params but call sites push 2 (1 missing)",
       "type": "param_count_too_few"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "00610996",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "0061099b",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 8,
+      "return_address": "0061099b",
+      "target_address": "0x610a20",
+      "text": "Direct CALL at 00610996, ADD ESP at 0061099b (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "address": "00610990",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_locale.c_islower_multibyte_FUN_00610990",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 00610990",
+      "type": "special_crt_function"
     }
   ]
 }

@@ -1,15 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 55,
-    "complexity_score": 83,
+    "complexity_score": 113,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 28,
-    "suspect_count": 4,
+    "suspect_count": 6,
     "suspect_types": [
+      "call_esp_preserve",
       "callind_preserve",
       "pointer_cast",
+      "special_crt_function",
       "unresolved_funcptr"
     ],
     "total_lines": 83
@@ -149,6 +151,28 @@
       "return_address": "00605ff8",
       "text": "CALLIND at 00605ff5, ADD ESP at 00605ff8 (no EBP frame)",
       "type": "callind_preserve"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "0060600c",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00606011",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 8,
+      "return_address": "00606011",
+      "target_address": "0x606020",
+      "text": "Direct CALL at 0060600c, ADD ESP at 00606011 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "address": "00605fad",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_stdio.c_fgetcInternal_FUN_00605fad",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 00605fad",
+      "type": "special_crt_function"
     }
   ]
 }

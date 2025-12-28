@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 28,
-    "complexity_score": 98,
+    "complexity_score": 113,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 3,
     "pseudocode_lines": 13,
-    "suspect_count": 6,
+    "suspect_count": 7,
     "suspect_types": [
       "badspacebase",
+      "call_esp_preserve",
       "register_param",
       "stack_param",
       "stack_ref",
@@ -157,6 +158,19 @@
       "target_function": "crt_stdio.c_sscanf_FUN_0060013c",
       "text": "Call to variadic function crt_stdio.c_sscanf_FUN_0060013c at 004aa3d0 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "004aa3f1",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "004aa3f6",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 4,
+      "return_address": "004aa3f6",
+      "target_address": "0x4b0830",
+      "text": "Direct CALL at 004aa3f1, ADD ESP at 004aa3f6 (no EBP frame)",
+      "type": "call_esp_preserve"
     }
   ]
 }

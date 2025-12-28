@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 24,
-    "complexity_score": 33,
+    "complexity_score": 48,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 0,
     "pseudocode_lines": 8,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
+      "call_esp_preserve",
       "unaffected_reg"
     ],
     "total_lines": 32
@@ -171,6 +172,19 @@
       "match": "unaff_EBX",
       "text": "engine_2d_c_drawTextColor_FUN_00402430((char *)center_x,y_pos - (iVar1 + -1) / 2,unaff_EBX);",
       "type": "unaffected_reg"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "0040261b",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "00402620",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 20,
+      "return_address": "00402620",
+      "target_address": "0x402430",
+      "text": "Direct CALL at 0040261b, ADD ESP at 00402620 (no EBP frame)",
+      "type": "call_esp_preserve"
     }
   ]
 }

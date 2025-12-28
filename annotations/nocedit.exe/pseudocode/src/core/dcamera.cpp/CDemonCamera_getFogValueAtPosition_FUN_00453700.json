@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 51,
+    "complexity_score": 66,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 3,
     "pseudocode_lines": 26,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
-      "extra_output"
+      "extra_output",
+      "lea_esp_stack_addr"
     ],
     "total_lines": 100
   },
@@ -187,6 +188,15 @@
       "match": "extraout_EDX",
       "text": "(&g_CameraFogGrid,(CVector3i *)(extraout_EDX + 0x16c),end_pos,(int)ROUND(dVar5))",
       "type": "extra_output"
+    },
+    {
+      "address": "0045373a",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 12,
+      "instruction": "LEA EAX, [ESP + 0xc]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 0045373a",
+      "type": "lea_esp_stack_addr"
     }
   ],
   "vtable_info": {

@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 135,
-    "complexity_score": 129,
+    "complexity_score": 144,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 7,
     "pseudocode_lines": 69,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
+      "call_esp_anchor",
       "concat_artifact",
       "sub_artifact"
     ],
@@ -166,6 +167,15 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005a6fb8 (EBP frame + ADD ESP)",
       "type": "variadic_anchor"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x20",
+      "fix_address": "005a6f09",
+      "match": "AND ESP",
+      "sub_esp_offset": 32,
+      "text": "Stack alignment at 005a6f09 (SUB ESP, 0x20 before)",
+      "type": "stack_align_anchor"
     }
   ],
   "stack_frame": {
@@ -292,6 +302,19 @@
       "match": "CONCAT22",
       "text": "fVar4 = (float)CONCAT22 /* combine 2-byte values */((short)((uint)fVar4 >> 0x10),",
       "type": "concat_artifact"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "005a6f42",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "005a6f52",
+      "frame_offset": 32,
+      "match": "CALL...ADD ESP",
+      "return_address": "005a6f47",
+      "target_address": "0x5a9d90",
+      "text": "Direct CALL at 005a6f42, ADD ESP at 005a6f52 with uncertain ESP",
+      "type": "call_esp_anchor"
     }
   ]
 }

@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 210,
+    "complexity_score": 245,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 6,
     "pseudocode_lines": 60,
-    "suspect_count": 12,
+    "suspect_count": 15,
     "suspect_types": [
       "badspacebase",
+      "call_esp_anchor",
       "concat_artifact",
       "register_param",
       "stack_param",
@@ -365,6 +366,45 @@
       "match": "CONCAT44",
       "text": "(double)CONCAT44 /* combine 2-byte values */(fStack_80,fVar4) * local_6c +",
       "type": "concat_artifact"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "004620cc",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "004620d1",
+      "frame_offset": 124,
+      "match": "CALL...ADD ESP",
+      "return_address": "004620d1",
+      "target_address": "0x461e60",
+      "text": "Direct CALL at 004620cc, ADD ESP at 004620d1 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "004620d8",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "004620dd",
+      "frame_offset": 124,
+      "match": "CALL...ADD ESP",
+      "return_address": "004620dd",
+      "target_address": "0x461e60",
+      "text": "Direct CALL at 004620d8, ADD ESP at 004620dd with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "004620fc",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "0046210a",
+      "frame_offset": 124,
+      "match": "CALL...ADD ESP",
+      "return_address": "00462101",
+      "target_address": "0x461c50",
+      "text": "Direct CALL at 004620fc, ADD ESP at 0046210a with uncertain ESP",
+      "type": "call_esp_anchor"
     }
   ]
 }

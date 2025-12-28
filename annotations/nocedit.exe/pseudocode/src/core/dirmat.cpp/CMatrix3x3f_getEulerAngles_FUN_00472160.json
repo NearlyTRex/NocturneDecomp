@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 366,
-    "complexity_score": 442,
+    "complexity_score": 457,
     "cross_reference_count": 13,
     "function_call_count": 2,
     "global_count": 7,
     "pseudocode_lines": 157,
-    "suspect_count": 28,
+    "suspect_count": 29,
     "suspect_types": [
-      "extra_output"
+      "extra_output",
+      "stack_align_anchor"
     ],
     "total_lines": 523
   },
@@ -563,6 +564,15 @@
       "match": "extraout_EDX",
       "text": "euler_angles = extraout_EDX;",
       "type": "extra_output"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x84",
+      "fix_address": "0047216b",
+      "match": "AND ESP",
+      "sub_esp_offset": 132,
+      "text": "Stack alignment at 0047216b (SUB ESP, 0x84 before)",
+      "type": "stack_align_anchor"
     }
   ]
 }

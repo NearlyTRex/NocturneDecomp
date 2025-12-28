@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 37,
-    "complexity_score": 108,
+    "complexity_score": 123,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 2,
     "pseudocode_lines": 23,
-    "suspect_count": 6,
+    "suspect_count": 7,
     "suspect_types": [
       "concat_artifact",
       "sborrow_artifact",
+      "special_crt_function",
       "sub_artifact",
       "unaffected_reg",
       "unknown_field"
@@ -177,6 +178,15 @@
       "match": "._0_1_",
       "text": "g_UseSoftwareMath._0_1_ = (byte)g_UseSoftwareMath | 1;",
       "type": "unknown_field"
+    },
+    {
+      "address": "0060be80",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_fpemu.c_staticInit_FUN_0060be80",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 0060be80",
+      "type": "special_crt_function"
     }
   ]
 }

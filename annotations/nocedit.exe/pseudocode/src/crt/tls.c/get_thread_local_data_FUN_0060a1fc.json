@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 31,
-    "complexity_score": 30,
+    "complexity_score": 45,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 4,
     "pseudocode_lines": 15,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "special_crt_function"
     ],
     "total_lines": 46
   },
@@ -131,6 +132,15 @@
       "match": "(char *)((int)",
       "text": "else if (*(char *)((int)pvVar1 + 0x53) != '\\0') {",
       "type": "pointer_cast"
+    },
+    {
+      "address": "0060a1fc",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_tls.c_get_thread_local_data_FUN_0060a1fc",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 0060a1fc",
+      "type": "special_crt_function"
     }
   ]
 }

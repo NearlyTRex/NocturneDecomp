@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 23,
-    "complexity_score": 22,
+    "complexity_score": 37,
     "cross_reference_count": 6,
     "function_call_count": 0,
     "global_count": 2,
     "pseudocode_lines": 7,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
-      "concat_artifact"
+      "concat_artifact",
+      "special_crt_function"
     ],
     "total_lines": 30
   },
@@ -124,6 +125,15 @@
       "match": "CONCAT11",
       "text": "return CONCAT11 /* combine 2-byte values */(*str,str[1]);",
       "type": "concat_artifact"
+    },
+    {
+      "address": "006059e0",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_string.c_mbtowc_peek_FUN_006059e0",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 006059e0",
+      "type": "special_crt_function"
     }
   ]
 }

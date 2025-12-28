@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 145,
-    "complexity_score": 189,
+    "complexity_score": 224,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
     "pseudocode_lines": 69,
-    "suspect_count": 11,
+    "suspect_count": 14,
     "suspect_types": [
+      "call_esp_preserve",
       "pointer_cast",
       "stack_param"
     ],
@@ -239,6 +240,45 @@
       "match": "in_stack_00000008",
       "text": "core_dmodel_cpp_CKeyFramedModel_validatePartList_FUN_0047bf40(in_stack_00000008);",
       "type": "stack_param"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "0047bdbc",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "0047bdc1",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 52,
+      "return_address": "0047bdc1",
+      "target_address": "0x47bf40",
+      "text": "Direct CALL at 0047bdbc, ADD ESP at 0047bdc1 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "0047bebd",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "0047bec2",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 52,
+      "return_address": "0047bec2",
+      "target_address": "0x5fe5e0",
+      "text": "Direct CALL at 0047bebd, ADD ESP at 0047bec2 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "0047befd",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0047bf02",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 52,
+      "return_address": "0047bf02",
+      "target_address": "0x47bf40",
+      "text": "Direct CALL at 0047befd, ADD ESP at 0047bf02 (no EBP frame)",
+      "type": "call_esp_preserve"
     }
   ]
 }

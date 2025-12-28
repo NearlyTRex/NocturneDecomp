@@ -1,15 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 11,
-    "complexity_score": 39,
+    "complexity_score": 69,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 9,
-    "suspect_count": 2,
+    "suspect_count": 4,
     "suspect_types": [
+      "call_esp_preserve",
       "negative_offset",
-      "pointer_cast"
+      "pointer_cast",
+      "special_crt_function"
     ],
     "total_lines": 20
   },
@@ -100,6 +102,28 @@
       "match": "(ifstream *)((int)",
       "text": "((ifstream *)((int)this_ptr - (int)this_ptr[-1].cleanup_vtable),dtor_flags,unaff_retaddr",
       "type": "pointer_cast"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "005ff707",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "005ff70c",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 8,
+      "return_address": "005ff70c",
+      "target_address": "0x5ff856",
+      "text": "Direct CALL at 005ff707, ADD ESP at 005ff70c (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "address": "005ff6f8",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_fstream.cpp_ifstream_destructor_thunk_from_ios_FUN_005ff6f8",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 005ff6f8",
+      "type": "special_crt_function"
     }
   ]
 }

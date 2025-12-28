@@ -1,14 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 113,
-    "complexity_score": 95,
+    "complexity_score": 165,
     "cross_reference_count": 34,
     "function_call_count": 3,
     "global_count": 0,
     "pseudocode_lines": 55,
-    "suspect_count": 3,
+    "suspect_count": 9,
     "suspect_types": [
+      "call_esp_preserve",
       "concat_artifact",
+      "special_crt_function",
       "stack_param"
     ],
     "total_lines": 168
@@ -347,6 +349,80 @@
       "match": "in_stack_0000001c",
       "text": "crt_string_c_strncpy_safe_FUN_005ff130(in_stack_0000001c,src,(int)str - (int)src,0xff);",
       "type": "stack_param"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "005ff1bc",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "005ff1c3",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 20,
+      "return_address": "005ff1c1",
+      "target_address": "0x6059e0",
+      "text": "Direct CALL at 005ff1bc, ADD ESP at 005ff1c3 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "005ff1d1",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "005ff1d8",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 20,
+      "return_address": "005ff1d6",
+      "target_address": "0x605a70",
+      "text": "Direct CALL at 005ff1d1, ADD ESP at 005ff1d8 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 16,
+      "call_address": "005ff201",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "005ff206",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 20,
+      "return_address": "005ff206",
+      "target_address": "0x5ff130",
+      "text": "Direct CALL at 005ff201, ADD ESP at 005ff206 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 16,
+      "call_address": "005ff21f",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "005ff224",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 20,
+      "return_address": "005ff224",
+      "target_address": "0x5ff130",
+      "text": "Direct CALL at 005ff21f, ADD ESP at 005ff224 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 16,
+      "call_address": "005ff235",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "005ff23a",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 20,
+      "return_address": "005ff23a",
+      "target_address": "0x5ff130",
+      "text": "Direct CALL at 005ff235, ADD ESP at 005ff23a (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "address": "005ff178",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_string.c_splitpath_FUN_005ff178",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 005ff178",
+      "type": "special_crt_function"
     }
   ]
 }

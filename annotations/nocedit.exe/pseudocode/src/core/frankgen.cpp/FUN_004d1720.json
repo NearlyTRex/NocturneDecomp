@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 28,
-    "complexity_score": 59,
+    "complexity_score": 94,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 1,
     "pseudocode_lines": 24,
-    "suspect_count": 3,
+    "suspect_count": 6,
     "suspect_types": [
+      "call_esp_preserve",
       "negative_offset"
     ],
     "total_lines": 52
@@ -133,6 +134,45 @@
       "match": "pCVar2[-3].",
       "text": "return (CFrankenstienMachine *)(pCVar2[-3].animation_state + 0x8c);",
       "type": "negative_offset"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "004d1725",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "004d172a",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 16,
+      "return_address": "004d172a",
+      "target_address": "0x4088b0",
+      "text": "Direct CALL at 004d1725, ADD ESP at 004d172a (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "004d1733",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "004d1738",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 16,
+      "return_address": "004d1738",
+      "target_address": "0x478ce0",
+      "text": "Direct CALL at 004d1733, ADD ESP at 004d1738 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "004d1741",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "004d1746",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 16,
+      "return_address": "004d1746",
+      "target_address": "0x4424c0",
+      "text": "Direct CALL at 004d1741, ADD ESP at 004d1746 (no EBP frame)",
+      "type": "call_esp_preserve"
     }
   ],
   "vtable_info": {

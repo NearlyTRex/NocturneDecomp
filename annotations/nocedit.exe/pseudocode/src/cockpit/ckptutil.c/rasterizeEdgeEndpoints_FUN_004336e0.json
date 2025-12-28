@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 105,
-    "complexity_score": 168,
+    "complexity_score": 193,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 6,
     "pseudocode_lines": 43,
-    "suspect_count": 10,
+    "suspect_count": 12,
     "suspect_types": [
       "badspacebase",
       "format_string_mismatch",
+      "lea_esp_stack_addr",
       "register_param",
       "stack_ref",
       "variadic_preserve"
@@ -280,6 +281,24 @@
       "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffeec,\"Edge out of range: edge %d\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
+    },
+    {
+      "address": "00433753",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 8,
+      "instruction": "LEA EAX, [ESP + 0x8]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 00433753",
+      "type": "lea_esp_stack_addr"
+    },
+    {
+      "address": "004337bb",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 8,
+      "instruction": "LEA EAX, [ESP + 0x8]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 004337bb",
+      "type": "lea_esp_stack_addr"
     }
   ]
 }

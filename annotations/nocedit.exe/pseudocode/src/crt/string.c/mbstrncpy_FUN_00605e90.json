@@ -1,13 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 23,
-    "complexity_score": 6,
+    "complexity_score": 46,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
     "pseudocode_lines": 6,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 3,
+    "suspect_types": [
+      "call_esp_preserve",
+      "special_crt_function"
+    ],
     "total_lines": 29
   },
   "cross_references": [
@@ -125,5 +128,41 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "add_esp_value": 8,
+      "call_address": "00605ea0",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "00605ea5",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 28,
+      "return_address": "00605ea5",
+      "target_address": "0x605ec0",
+      "text": "Direct CALL at 00605ea0, ADD ESP at 00605ea5 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "00605eb0",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "00605eb5",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 28,
+      "return_address": "00605eb5",
+      "target_address": "0x60b670",
+      "text": "Direct CALL at 00605eb0, ADD ESP at 00605eb5 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "address": "00605e90",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_string.c_mbstrncpy_FUN_00605e90",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 00605e90",
+      "type": "special_crt_function"
+    }
+  ]
 }

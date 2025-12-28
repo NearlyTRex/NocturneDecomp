@@ -6,577 +6,542 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 258
 Total functions: 7154
-Clean functions: 2432 (34.0%)
-Files at 100%: 18
-Files at 90%+: 19
-Files at 50%+: 74
+Clean functions: 1034 (14.5%)
+Files at 100%: 1
+Files at 90%+: 1
+Files at 50%+: 10
 
 ====================================================================================================
 FILES AT 100% (COMPLETE)
 ====================================================================================================
-  core/camview.cpp: 6 functions, 38 lines
-  core/flashlit.cpp: 2 functions, 18 lines
   core/slew.cpp: 4 functions, 118 lines
-  crt/ctype.c: 2 functions, 14 lines
-  crt/environ.c: 2 functions, 71 lines
-  crt/errno.c: 5 functions, 51 lines
-  crt/fltused.c: 1 functions, 12 lines
-  crt/fpu.c: 2 functions, 17 lines
-  crt/io.c/stat/thunk: 1 functions, 6 lines
-  crt/io.c/utime/thunk: 1 functions, 6 lines
-  crt/mbstring.c: 1 functions, 10 lines
-  crt/operation.c: 1 functions, 4 lines
-  crt/strtod.c: 1 functions, 6 lines
-  crt/stub.c: 3 functions, 12 lines
-  crt/sync.c: 16 functions, 125 lines
-  crt/system.c: 1 functions, 5 lines
-  crt/util.c: 1 functions, 7 lines
-  engine/keys.cpp: 9 functions, 56 lines
-
-Total: 18 files
-
-====================================================================================================
-FILES AT 90-99% (ALMOST COMPLETE)
-====================================================================================================
-   90.0% | engine/light.cpp
-         9/10 clean, 1 remaining
-         Suspects: badspacebase:1, param_count_too_few:1, pointer_cast:2, register_param:1, stack_ref:2, unaffected_reg:3
 
 Total: 1 files
 
 ====================================================================================================
+FILES AT 90-99% (ALMOST COMPLETE)
+====================================================================================================
+Total: 0 files
+
+====================================================================================================
 FILES AT 50-89%
 ====================================================================================================
+   88.9% | engine/keys.cpp
+         8/9 clean, 1 remaining
+         Suspects: call_esp_preserve:1
+   83.3% | core/camview.cpp
+         5/6 clean, 1 remaining
+         Suspects: call_esp_preserve:3
    83.3% | shape/multicrm.cpp
          5/6 clean, 1 remaining
-         Suspects: badspacebase:1, format_string_mismatch:3, param_count_too_few:1, register_param:1, stack_ref:20
+         Suspects: badspacebase:1, call_esp_anchor:17, format_string_mismatch:3, param_count_too_few:1, register_param:1, stack_ref:20
    75.0% | core/mmx.c
          3/4 clean, 1 remaining
          Suspects: register_param:26, warning_overlapping_globals:1, warning_unreachable:2
-   75.0% | core/shovel.cpp
-         6/8 clean, 2 remaining
-         Suspects: stack_param:2, unaffected_reg:2, variadic_preserve:1
-   75.0% | engine/console.cpp
-         6/8 clean, 2 remaining
-         Suspects: badspacebase:2, format_string_mismatch:1, pointer_cast:1, register_param:2, stack_ref:4, variadic_preserve:1
-   71.4% | core/dirmat.cpp
-         5/7 clean, 2 remaining
-         Suspects: badspacebase:1, extra_output:28, register_param:1, unaffected_reg:3
-   71.4% | core/gun.cpp
-         5/7 clean, 2 remaining
-         Suspects: badspacebase:1, extra_output:2, register_param:1, stack_param:25, stack_ref:2, unaffected_reg:4, unknown_field:13
-   71.4% | core/minecar.cpp
-         5/7 clean, 2 remaining
-         Suspects: stack_param:13
-   71.4% | crt/signal.c
-         5/7 clean, 2 remaining
-         Suspects: callind_preserve:2
-   66.7% | crt/cpp.c
-         2/3 clean, 1 remaining
-         Suspects: register_param:2, stack_param:3
-   65.5% | core/dtri.cpp
-         19/29 clean, 10 remaining
-         Suspects: badspacebase:3, concat_artifact:1, param_count_too_few:1, pointer_cast:6, register_param:3, stack_param:5, stack_ref:2, sub_artifact:1, suspect_float:3, unaffected_reg:4, unknown_field:60, variadic_preserve:2
-   64.3% | core/barrier.cpp
-         9/14 clean, 5 remaining
-         Suspects: badspacebase:1, callind_preserve:1, register_param:1, stack_param:24, stack_ref:1
-   62.5% | core/water.cpp
-         5/8 clean, 3 remaining
-         Suspects: badspacebase:2, extra_output:2, param_count_too_few:1, pointer_cast:2, register_param:2, sborrow_artifact:1, stack_param:7, stack_ref:3, suspect_float:2, unknown_field:7, variadic_preserve:2, warning_overlapping_globals:2
-   62.5% | crt/string.c
-         25/40 clean, 15 remaining
-         Suspects: badspacebase:6, callind_preserve:1, concat_artifact:17, param_count_too_few:3, pointer_cast:29, register_param:10, stack_param:21, stack_ref:9, unknown_field:7
+   70.0% | engine/light.cpp
+         7/10 clean, 3 remaining
+         Suspects: badspacebase:1, call_esp_preserve:3, lea_esp_stack_addr:2, param_count_too_few:1, pointer_cast:2, register_param:1, stack_ref:2, unaffected_reg:3
    61.9% | engine/prim.c
          13/21 clean, 8 remaining
-         Suspects: badspacebase:2, pointer_cast:2, register_param:2, sborrow_artifact:12, stack_param:172, stack_ref:4, unaffected_reg:2
-   61.5% | core/dog.cpp
-         8/13 clean, 5 remaining
-         Suspects: badspacebase:2, callind_preserve:1, extra_output:10, negative_offset:1, register_param:2, stack_param:10, unaffected_reg:3, unresolved_funcptr:2, variadic_preserve_ebp:1, warning_overlapping_globals:2
-   61.1% | core/ammo.cpp
-         11/18 clean, 7 remaining
-         Suspects: badspacebase:1, callind_preserve:1, negative_offset:2, param_count_too_few:1, pointer_cast:8, register_param:1, stack_param:36, stack_ref:1, suspect_float:1
-   60.5% | core/dcube.cpp
-         23/38 clean, 15 remaining
-         Suspects: badspacebase:8, concat_artifact:1, format_string_mismatch:1, negative_offset:1, param_count_too_few:1, pointer_cast:56, register_param:8, stack_param:14, stack_ref:2, sub_artifact:1, unknown_field:58, unresolved_funcptr:1, variadic_preserve:10, warning_indirect_jump:1, warning_jumptable:1
-   60.0% | crt/startup.c
-         6/10 clean, 4 remaining
-         Suspects: badspacebase:2, callind_preserve:1, pointer_cast:2, register_param:4, stack_param:11, unaffected_reg:2, warning_noreturn:1
-   58.3% | core/glass.cpp
-         14/24 clean, 10 remaining
-         Suspects: badspacebase:8, callind_preserve:5, extra_output:8, format_string_mismatch:3, negative_offset:1, pointer_cast:24, register_param:8, stack_param:39, stack_ref:22, suspect_float:4, unaffected_reg:2, unknown_field:94, variadic_preserve:6
-   57.1% | core/moon.cpp
-         8/14 clean, 6 remaining
-         Suspects: badspacebase:2, concat_artifact:2, extra_output:2, negative_offset:3, param_count_too_many:1, pointer_cast:21, register_param:2, stack_param:2, stack_ref:8, suspect_float:3
-   57.1% | crt/thread.c
+         Suspects: badspacebase:2, call_esp_preserve:35, lea_esp_stack_addr:2, pointer_cast:2, register_param:2, sborrow_artifact:12, stack_param:172, stack_ref:4, unaffected_reg:2
+   57.1% | core/dirmat.cpp
          4/7 clean, 3 remaining
-         Suspects: badspacebase:2, callind_preserve_lost:1, param_count_too_few:1, pointer_cast:5, register_param:2, stack_ref:6, unresolved_funcptr:1
-   56.2% | core/tbplayer.cpp
-         9/16 clean, 7 remaining
-         Suspects: badspacebase:2, negative_offset:4, register_param:2, stack_param:50, unaffected_reg:8
-   56.1% | core/sound.cpp
-         23/41 clean, 18 remaining
-         Suspects: badspacebase:8, concat_artifact:2, extra_output:8, format_string_mismatch:7, param_count_too_few:1, pointer_cast:13, register_param:8, stack_param:56, stack_ref:20, sub_artifact:1, unaffected_reg:6, unknown_field:27, variadic_preserve:1
-   54.5% | engine/texture.cpp
-         12/22 clean, 10 remaining
-         Suspects: badspacebase:2, extra_output:2, param_count_too_few:2, param_count_too_many:2, pointer_cast:3, register_param:2, stack_param:18, stack_ref:14, unaffected_reg:16, unknown_field:24, variadic_preserve:10, warning_unreachable:1
-   54.3% | core/baron.cpp
-         19/35 clean, 16 remaining
-         Suspects: badspacebase:5, callind_preserve:4, param_count_too_few:4, register_param:5, stack_param:102, stack_ref:8, suspect_float:4, unaffected_reg:8, unknown_field:8, unresolved_funcptr:4, variadic_preserve:2, warning_overlapping_globals:1
+         Suspects: badspacebase:1, extra_output:28, register_param:1, stack_align_anchor:2, unaffected_reg:3
    54.3% | sound/sndwav.cpp
          19/35 clean, 16 remaining
-         Suspects: badspacebase:7, callind_preserve:7, callind_preserve_lost:2, negative_offset:2, pointer_cast:54, register_param:7, stack_param:31, stack_ref:6, unknown_field:8, unresolved_funcptr:1, variadic_preserve:15
-   53.6% | core/door.cpp
-         15/28 clean, 13 remaining
-         Suspects: badspacebase:6, callind_preserve:6, negative_offset:6, param_count_too_few:1, pointer_cast:4, register_param:6, stack_param:63, stack_ref:6, suspect_float:2, unaffected_reg:12, unknown_field:11, unresolved_funcptr:1
-   53.3% | core/trash.cpp
-         8/15 clean, 7 remaining
-         Suspects: badspacebase:3, callind_preserve:1, negative_offset:2, register_param:3, stack_param:48, stack_ref:4, suspect_float:1
-   52.9% | core/flamegun.cpp
-         9/17 clean, 8 remaining
-         Suspects: badspacebase:1, callind_preserve:1, concat_artifact:1, extra_output:2, register_param:1, stack_param:42, stack_ref:1, suspect_float:1, unaffected_reg:4, warning_overlapping_globals:5
-   52.9% | core/trap.cpp
-         9/17 clean, 8 remaining
-         Suspects: badspacebase:2, callind_preserve:5, negative_offset:2, register_param:2, stack_param:20, stack_ref:4, suspect_float:1, unaffected_reg:8, unknown_field:1, unresolved_funcptr:1
-   52.5% | core/setcolid.cpp
-         21/40 clean, 19 remaining
-         Suspects: badspacebase:13, callind_preserve:8, concat_artifact:5, format_string_mismatch:1, param_count_too_few:2, pointer_cast:5, register_param:13, stack_param:134, stack_ref:76, sub_artifact:1, unaffected_reg:12, unknown_field:94, unresolved_funcptr:3, variadic_preserve:6
-   52.5% | engine/3d.c
-         53/101 clean, 48 remaining
-         Suspects: badspacebase:15, callind_preserve:2, extra_output:12, format_string_mismatch:1, param_count_too_few:1, param_count_too_many:1, pointer_cast:44, register_param:18, sborrow_artifact:2, stack_param:185, stack_ref:82, suspect_float:24, unaffected_reg:7, unresolved_funcptr:2, variadic_preserve:22
-   52.4% | shape/cramtex.cpp
-         11/21 clean, 10 remaining
-         Suspects: badspacebase:1, concat_artifact:1, pointer_cast:47, register_param:1, stack_param:87, unaffected_reg:4, unresolved_funcptr:5, variadic_preserve:18
-   52.2% | cockpit/pkbmpset.cpp
-         12/23 clean, 11 remaining
-         Suspects: badspacebase:6, format_string_mismatch:2, param_count_too_few:2, param_count_too_many:1, register_param:6, stack_param:44, stack_ref:8, variadic_preserve:18
-   51.3% | crt/io.c
-         20/39 clean, 19 remaining
-         Suspects: badspacebase:10, callind_preserve:18, param_count_too_few:1, pointer_cast:5, register_param:10, stack_param:44, stack_ref:45, unaffected_reg:8, unknown_field:4, warning_noreturn:1
-   51.3% | support/codec.cpp
-         20/39 clean, 19 remaining
-         Suspects: badspacebase:9, callind_preserve:9, negative_offset:4, param_count_too_few:2, pointer_cast:7, register_param:9, stack_param:28, stack_ref:14, unaffected_reg:16, unresolved_funcptr:2, variadic_preserve:1
-   51.0% | crt/math.c
-         52/102 clean, 50 remaining
-         Suspects: badspacebase:4, concat_artifact:77, extra_output:8, param_count_too_few:4, param_count_too_many:4, pointer_cast:3, register_param:15, stack_param:87, stack_ref:2, sub_artifact:12, unaffected_reg:8, undefined_type:22, unknown_field:27, unresolved_funcptr:32, warning_indirect_jump:2, warning_jumptable:2, warning_overlapping_globals:1, warning_unreachable:1
-   50.3% | core/fire.cpp
-         93/185 clean, 92 remaining
-         Suspects: badspacebase:41, callind_preserve:21, concat_artifact:1, extra_output:41, format_string_mismatch:1, negative_offset:4, param_count_too_few:18, pointer_cast:50, register_param:41, stack_param:492, stack_ref:37, sub_artifact:19, suspect_float:172, unaffected_reg:15, unknown_field:123, unresolved_funcptr:2, variadic_preserve:21, warning_overlapping_globals:1, warning_unreachable:3
-   50.0% | cockpit/drawsurf.cpp
-         46/92 clean, 46 remaining
-         Suspects: badspacebase:16, extra_output:12, param_count_too_few:12, param_count_too_many:2, pointer_cast:32, register_param:34, stack_param:70, stack_ref:109, unaffected_reg:24, variadic_preserve:28, warning_indirect_jump:2, warning_jumptable:2, warning_unreachable:2
-   50.0% | core/backgnd.cpp
-         10/20 clean, 10 remaining
-         Suspects: badspacebase:2, callind_preserve:2, concat_artifact:1, negative_offset:2, param_count_too_few:2, register_param:2, stack_param:24, stack_ref:2, suspect_float:2
-   50.0% | core/box.cpp
-         15/30 clean, 15 remaining
-         Suspects: badspacebase:12, callind_preserve:1, format_string_mismatch:18, param_count_too_few:4, param_count_too_many:3, pointer_cast:49, register_param:12, stack_param:8, stack_ref:8, suspect_float:22, unaffected_reg:8, unknown_field:18, variadic_preserve:19, warning_unreachable:1
-   50.0% | core/conveyor.cpp
-         10/20 clean, 10 remaining
-         Suspects: badspacebase:3, callind_preserve:6, concat_artifact:2, register_param:3, stack_param:124, stack_ref:3, sub_artifact:1, suspect_float:1
-   50.0% | core/dimage.cpp
-         3/6 clean, 3 remaining
-         Suspects: badspacebase:1, param_count_too_few:1, register_param:1, stack_param:20, stack_ref:4, variadic_preserve:4
-   50.0% | core/dskybox.cpp
-         2/4 clean, 2 remaining
-         Suspects: badspacebase:1, extra_output:10, pointer_cast:1, register_param:1, stack_ref:1, suspect_float:5, unaffected_reg:9, unknown_field:24
-   50.0% | core/level.cpp
-         3/6 clean, 3 remaining
-         Suspects: badspacebase:2, negative_offset:1, param_count_too_many:1, pointer_cast:3, register_param:2, stack_param:7, stack_ref:3, suspect_float:5, unaffected_reg:4, unknown_field:1, variadic_preserve:1
-   50.0% | core/litecone.cpp
-         6/12 clean, 6 remaining
-         Suspects: badspacebase:1, callind_preserve:1, register_param:1, stack_param:45, suspect_float:1
-   50.0% | core/npc.cpp
-         7/14 clean, 7 remaining
-         Suspects: badspacebase:2, callind_preserve:2, format_string_mismatch:1, negative_offset:10, register_param:2, stack_param:27, stack_ref:4, variadic_preserve:2, variadic_preserve_ebp:1
+         Suspects: badspacebase:7, call_esp_preserve:10, callind_preserve:7, callind_preserve_lost:2, lea_esp_stack_addr:10, negative_offset:2, pointer_cast:54, register_param:7, stack_param:31, stack_ref:6, unknown_field:8, unresolved_funcptr:1, variadic_preserve:15
    50.0% | core/particle.cpp
          3/6 clean, 3 remaining
-         Suspects: badspacebase:1, param_count_too_few:1, pointer_cast:2, register_param:1, stack_param:2, unknown_field:4, variadic_preserve:1
-   50.0% | core/podmain.cpp
-         2/4 clean, 2 remaining
-         Suspects: badspacebase:1, callind_preserve:2, format_string_mismatch:1, register_param:1, stack_param:3, stack_ref:7, unaffected_reg:5, variadic_preserve:2
-   50.0% | core/stone.cpp
-         4/8 clean, 4 remaining
-         Suspects: negative_offset:1, stack_param:10
-   50.0% | core/succubus.cpp
-         7/14 clean, 7 remaining
-         Suspects: badspacebase:1, callind_preserve:2, extra_output:4, negative_offset:2, register_param:1, stack_param:17, stack_ref:1, unresolved_funcptr:1, variadic_preserve_ebp:1, warning_overlapping_globals:1, warning_unreachable:1
-   50.0% | core/terrain.cpp
-         2/4 clean, 2 remaining
-         Suspects: badspacebase:1, extra_output:6, register_param:1, stack_ref:1, suspect_float:1, unknown_field:2
-   50.0% | shape/memdbg.cpp
-         12/24 clean, 12 remaining
-         Suspects: badspacebase:1, format_string_mismatch:3, pointer_cast:5, register_param:1, stack_param:40, variadic_preserve:44
-   50.0% | shape/spotview.cpp
-         3/6 clean, 3 remaining
-         Suspects: badspacebase:1, param_count_too_few:1, register_param:1, stack_param:12, stack_ref:2, unknown_field:3
-   50.0% | wincore/wddvmem.cpp
-         14/28 clean, 14 remaining
-         Suspects: badspacebase:4, callind_preserve:1, concat_artifact:2, param_count_too_few:2, pointer_cast:15, register_param:4, stack_param:36, stack_ref:7, unknown_field:12, variadic_preserve:14, warning_unreachable:1
+         Suspects: badspacebase:1, call_esp_anchor:3, param_count_too_few:1, pointer_cast:2, register_param:1, stack_param:2, unknown_field:4, variadic_preserve:1
 
-Total: 55 files
+Total: 9 files
 
 ====================================================================================================
 FILES BELOW 50%
 ====================================================================================================
-   48.5% | wincore/winrun.cpp
-         16/33 clean, 17 remaining
-   47.8% | core/teleport.cpp
-         11/23 clean, 12 remaining
-   47.4% | core/svetlana.cpp
-         9/19 clean, 10 remaining
-   47.2% | core/setdir.cpp
-         17/36 clean, 19 remaining
-   47.1% | crt/stdlib.c
-         8/17 clean, 9 remaining
-   47.1% | engine/pod.cpp
-         16/34 clean, 18 remaining
-   46.7% | core/moloch.cpp
-         7/15 clean, 8 remaining
-   46.2% | core/anvil.cpp
-         6/13 clean, 7 remaining
-   46.2% | core/armour.cpp
-         6/13 clean, 7 remaining
-   46.2% | core/dest.cpp
-         6/13 clean, 7 remaining
-   45.9% | core/dlight.cpp
-         17/37 clean, 20 remaining
-   45.5% | core/mirror.cpp
-         10/22 clean, 12 remaining
-   45.5% | core/vehicle.cpp
-         10/22 clean, 12 remaining
-   45.5% | engine/palette.cpp
-         5/11 clean, 6 remaining
-   45.5% | shape/quantize.cpp
-         15/33 clean, 18 remaining
-   45.0% | core/ground.cpp
-         9/20 clean, 11 remaining
-   44.4% | core/ammobox.cpp
-         8/18 clean, 10 remaining
-   44.4% | core/hpriest.cpp
-         4/9 clean, 5 remaining
-   44.4% | core/tommygun.cpp
-         4/9 clean, 5 remaining
-   44.4% | engine/alphabit.cpp
-         4/9 clean, 5 remaining
-   44.3% | engine/drender.cpp
-         39/88 clean, 49 remaining
-   43.5% | crt/iostream.cpp
-         10/23 clean, 13 remaining
-   43.4% | engine/2d.c
-         33/76 clean, 43 remaining
-   42.9% | core/gasmask.cpp
-         6/14 clean, 8 remaining
-   42.9% | core/texlist.cpp
-         6/14 clean, 8 remaining
-   42.4% | core/actor.cpp
-         78/184 clean, 106 remaining
-   42.1% | core/dfilter.cpp
-         8/19 clean, 11 remaining
-   41.7% | core/crossbow.cpp
-         5/12 clean, 7 remaining
-   41.7% | core/dynamite.cpp
-         5/12 clean, 7 remaining
-   41.7% | crt/tls.c
-         5/12 clean, 7 remaining
-   40.3% | wincore/windll.cpp
-         29/72 clean, 43 remaining
-   40.0% | core/hiram.cpp
-         4/10 clean, 6 remaining
-   40.0% | core/simbox.cpp
-         6/15 clean, 9 remaining
-   40.0% | core/spike.cpp
-         6/15 clean, 9 remaining
-   40.0% | core/vessel.cpp
-         8/20 clean, 12 remaining
-   40.0% | crt/exception.c
-         2/5 clean, 3 remaining
-   40.0% | engine/dosio.c
-         10/25 clean, 15 remaining
-   39.4% | core/motion.cpp
-         13/33 clean, 20 remaining
-   39.1% | core/wateract.cpp
-         9/23 clean, 14 remaining
-   38.1% | core/chain.cpp
-         8/21 clean, 13 remaining
-   37.5% | core/flame.cpp
-         6/16 clean, 10 remaining
-   37.5% | core/health.cpp
-         6/16 clean, 10 remaining
-   37.5% | crt/locale.c
+   47.6% | shape/cramtex.cpp
+         10/21 clean, 11 remaining
+   42.4% | wincore/winrun.cpp
+         14/33 clean, 19 remaining
+   41.2% | core/flamegun.cpp
+         7/17 clean, 10 remaining
+   37.5% | core/shovel.cpp
          3/8 clean, 5 remaining
-   37.2% | core/inv.cpp
-         16/43 clean, 27 remaining
-   36.8% | core/bat.cpp
-         7/19 clean, 12 remaining
-   36.8% | crt/time.c
-         7/19 clean, 12 remaining
-   36.4% | core/passngr.cpp
+   37.5% | core/water.cpp
+         3/8 clean, 5 remaining
+   37.5% | wincore/windll.cpp
+         27/72 clean, 45 remaining
+   36.7% | core/box.cpp
+         11/30 clean, 19 remaining
+   36.4% | engine/palette.cpp
          4/11 clean, 7 remaining
-   35.9% | shape/edittool.cpp
-         56/156 clean, 100 remaining
-   35.7% | core/batcreat.cpp
-         5/14 clean, 9 remaining
-   35.3% | core/battery.cpp
-         6/17 clean, 11 remaining
-   35.2% | sound/sndmain.cpp
-         68/193 clean, 125 remaining
-   35.0% | core/emitter.cpp
-         7/20 clean, 13 remaining
-   35.0% | core/tvbat.cpp
-         7/20 clean, 13 remaining
-   35.0% | shape/design.c
-         57/163 clean, 106 remaining
-   34.8% | core/trigger.cpp
-         8/23 clean, 15 remaining
-   34.7% | engine/font.cpp
-         17/49 clean, 32 remaining
-   33.9% | shape/meshlod.cpp
-         42/124 clean, 82 remaining
-   33.7% | core/dcamera.cpp
-         29/86 clean, 57 remaining
-   33.3% | core/dfont.cpp
-         1/3 clean, 2 remaining
-   33.3% | core/hostage.cpp
-         6/18 clean, 12 remaining
-   33.3% | core/tentacle.cpp
-         5/15 clean, 10 remaining
-   33.3% | core/weapon.cpp
-         9/27 clean, 18 remaining
-   33.3% | crt/strstream.cpp
-         7/21 clean, 14 remaining
-   33.3% | crt/watcom.c
-         1/3 clean, 2 remaining
-   33.3% | engine/ini.cpp
-         6/18 clean, 12 remaining
-   33.3% | engine/winfont.cpp
-         3/9 clean, 6 remaining
-   32.1% | core/filmreel.cpp
-         9/28 clean, 19 remaining
-   31.9% | core/dmodel.cpp
-         22/69 clean, 47 remaining
-   31.7% | core/setutil.cpp
-         13/41 clean, 28 remaining
-   31.6% | core/skeleton.cpp
-         37/117 clean, 80 remaining
-   31.6% | core/waypoint.cpp
-         6/19 clean, 13 remaining
-   31.6% | sound/mp3.cpp
-         18/57 clean, 39 remaining
-   31.2% | core/batman.cpp
-         5/16 clean, 11 remaining
-   31.2% | core/marquee.cpp
-         5/16 clean, 11 remaining
-   31.1% | core/bodypart.cpp
-         14/45 clean, 31 remaining
-   30.8% | core/curtain.cpp
-         8/26 clean, 18 remaining
-   30.4% | core/vampboss.cpp
-         7/23 clean, 16 remaining
-   30.4% | crt/stdio.c
-         31/102 clean, 71 remaining
-   30.0% | core/elephant.cpp
-         3/10 clean, 7 remaining
-   30.0% | core/shotgun.cpp
-         3/10 clean, 7 remaining
-   30.0% | core/weather.cpp
-         3/10 clean, 7 remaining
+   35.7% | wincore/wddvmem.cpp
+         10/28 clean, 18 remaining
+   35.0% | core/setcolid.cpp
+         14/40 clean, 26 remaining
+   33.3% | core/dimage.cpp
+         2/6 clean, 4 remaining
+   33.3% | core/level.cpp
+         2/6 clean, 4 remaining
    30.0% | shape/dsemodel.cpp
          3/10 clean, 7 remaining
-   29.4% | core/drip.cpp
+   29.7% | core/dlight.cpp
+         11/37 clean, 26 remaining
+   29.6% | core/weapon.cpp
+         8/27 clean, 19 remaining
+   29.4% | core/trap.cpp
          5/17 clean, 12 remaining
-   29.4% | core/dtrace.cpp
-         15/51 clean, 36 remaining
-   29.4% | core/grave.cpp
-         5/17 clean, 12 remaining
-   29.2% | core/turret.cpp
-         7/24 clean, 17 remaining
-   29.0% | cockpit/pkbitmap.cpp
-         9/31 clean, 22 remaining
-   28.6% | core/beast.cpp
-         4/14 clean, 10 remaining
-   28.6% | core/lightgun.cpp
-         4/14 clean, 10 remaining
-   28.6% | crt/file.c
+   28.6% | core/gun.cpp
          2/7 clean, 5 remaining
-   28.6% | crt/memory.c
-         6/21 clean, 15 remaining
-   28.1% | support/trisock.cpp
-         9/32 clean, 23 remaining
-   28.0% | core/path.cpp
-         7/25 clean, 18 remaining
-   27.9% | core/xform.cpp
-         17/61 clean, 44 remaining
-   27.8% | crt/heap.c
-         5/18 clean, 13 remaining
-   27.3% | core/flies.cpp
+   28.6% | engine/font.cpp
+         14/49 clean, 35 remaining
+   27.3% | core/vehicle.cpp
          6/22 clean, 16 remaining
-   27.3% | core/menu.cpp
-         6/22 clean, 16 remaining
-   26.8% | core/mission.cpp
-         11/41 clean, 30 remaining
-   26.7% | core/dpart.cpp
-         4/15 clean, 11 remaining
-   26.7% | core/keyactor.cpp
-         4/15 clean, 11 remaining
-   26.7% | engine/matrix.c
-         8/30 clean, 22 remaining
-   26.3% | core/ladder.cpp
-         5/19 clean, 14 remaining
-   26.1% | core/game.cpp
-         18/69 clean, 51 remaining
-   25.9% | core/gore.cpp
-         14/54 clean, 40 remaining
-   25.5% | cockpit/ckptutil.c
-         14/55 clean, 41 remaining
-   25.0% | core/boneguy.cpp
-         7/28 clean, 21 remaining
-   25.0% | core/crate.cpp
+   25.0% | core/conveyor.cpp
          5/20 clean, 15 remaining
-   25.0% | core/enemy.cpp
-         5/20 clean, 15 remaining
-   25.0% | core/event.cpp
-         17/68 clean, 51 remaining
-   25.0% | core/fileman.cpp
-         3/12 clean, 9 remaining
-   25.0% | core/mimic.cpp
-         6/24 clean, 18 remaining
-   25.0% | core/pendulum.cpp
-         5/20 clean, 15 remaining
-   25.0% | core/smiley.cpp
-         4/16 clean, 12 remaining
-   25.0% | crt/env.c
+   25.0% | core/dskybox.cpp
          1/4 clean, 3 remaining
-   25.0% | crt/exit.c
-         1/4 clean, 3 remaining
-   25.0% | crt/process.c
+   25.0% | core/dynamite.cpp
          3/12 clean, 9 remaining
-   25.0% | crt/unknown.c
-         22/88 clean, 66 remaining
-   25.0% | engine/model.c
-         2/8 clean, 6 remaining
+   25.0% | core/ground.cpp
+         5/20 clean, 15 remaining
+   25.0% | core/litecone.cpp
+         3/12 clean, 9 remaining
+   25.0% | core/terrain.cpp
+         1/4 clean, 3 remaining
+   25.0% | core/vessel.cpp
+         5/20 clean, 15 remaining
    25.0% | sound/snddx.cpp
          8/32 clean, 24 remaining
-   23.8% | core/manpuz.cpp
-         15/63 clean, 48 remaining
-   23.8% | core/stairs.cpp
-         5/21 clean, 16 remaining
-   23.5% | core/flamecan.cpp
-         4/17 clean, 13 remaining
-   23.5% | core/melee.cpp
-         4/17 clean, 13 remaining
-   23.1% | core/drone.cpp
-         3/13 clean, 10 remaining
-   23.1% | core/larva.cpp
-         3/13 clean, 10 remaining
-   22.9% | core/hero.cpp
-         11/48 clean, 37 remaining
-   22.2% | core/colonel.cpp
+   24.4% | core/sound.cpp
+         10/41 clean, 31 remaining
+   24.2% | core/motion.cpp
+         8/33 clean, 25 remaining
+   24.2% | shape/quantize.cpp
+         8/33 clean, 25 remaining
+   23.3% | sound/sndmain.cpp
+         45/193 clean, 148 remaining
+   23.1% | support/codec.cpp
+         9/39 clean, 30 remaining
+   22.9% | core/baron.cpp
+         8/35 clean, 27 remaining
+   22.7% | engine/texture.cpp
+         5/22 clean, 17 remaining
+   22.2% | core/ammo.cpp
          4/18 clean, 14 remaining
-   22.2% | core/haystack.cpp
+   22.2% | core/ammobox.cpp
          4/18 clean, 14 remaining
-   21.7% | core/stranger.cpp
-         15/69 clean, 54 remaining
-   21.4% | core/biggs.cpp
+   22.2% | core/tommygun.cpp
+         2/9 clean, 7 remaining
+   22.2% | engine/alphabit.cpp
+         2/9 clean, 7 remaining
+   22.2% | engine/ini.cpp
+         4/18 clean, 14 remaining
+   22.2% | engine/winfont.cpp
+         2/9 clean, 7 remaining
+   22.0% | core/setutil.cpp
+         9/41 clean, 32 remaining
+   21.7% | core/wateract.cpp
+         5/23 clean, 18 remaining
+   21.4% | core/barrier.cpp
          3/14 clean, 11 remaining
-   21.4% | core/cow.cpp
+   21.4% | core/gasmask.cpp
          3/14 clean, 11 remaining
-   21.4% | core/hotdemon.cpp
+   21.4% | core/moon.cpp
          3/14 clean, 11 remaining
-   21.4% | core/sentinel.cpp
+   21.4% | core/npc.cpp
          3/14 clean, 11 remaining
-   21.1% | engine/fileio.cpp
-         15/71 clean, 56 remaining
-   21.0% | shape/superopt.cpp
-         39/186 clean, 147 remaining
-   20.8% | core/frankgen.cpp
-         5/24 clean, 19 remaining
-   20.0% | core/course.cpp
+   21.4% | core/texlist.cpp
+         3/14 clean, 11 remaining
+   21.3% | core/xform.cpp
+         13/61 clean, 48 remaining
+   20.9% | core/dcamera.cpp
+         18/86 clean, 68 remaining
+   20.9% | shape/design.c
+         34/163 clean, 129 remaining
+   20.5% | engine/drender.cpp
+         18/88 clean, 70 remaining
+   20.0% | core/backgnd.cpp
+         4/20 clean, 16 remaining
+   20.0% | core/dpart.cpp
+         3/15 clean, 12 remaining
+   20.0% | core/emitter.cpp
+         4/20 clean, 16 remaining
+   20.0% | core/moloch.cpp
+         3/15 clean, 12 remaining
+   20.0% | core/trash.cpp
          3/15 clean, 12 remaining
    20.0% | engine/keyframe.c
          1/5 clean, 4 remaining
    20.0% | wincore/winvideo.cpp
          1/5 clean, 4 remaining
-   19.3% | core/charactr.cpp
-         21/109 clean, 88 remaining
-   19.0% | core/werewolf.cpp
+   19.6% | core/dtrace.cpp
+         10/51 clean, 41 remaining
+   19.5% | core/fire.cpp
+         36/185 clean, 149 remaining
+   19.4% | core/setdir.cpp
+         7/36 clean, 29 remaining
+   19.2% | core/curtain.cpp
+         5/26 clean, 21 remaining
+   19.0% | core/chain.cpp
          4/21 clean, 17 remaining
-   18.8% | core/gargoyle.cpp
+   18.8% | core/flame.cpp
          3/16 clean, 13 remaining
-   18.8% | core/netgame.cpp
-         12/64 clean, 52 remaining
-   18.2% | core/lever.cpp
-         4/22 clean, 18 remaining
-   17.9% | engine/clipper.c
+   18.8% | core/health.cpp
+         3/16 clean, 13 remaining
+   18.8% | support/trisock.cpp
+         6/32 clean, 26 remaining
+   17.9% | core/door.cpp
          5/28 clean, 23 remaining
-   17.6% | core/imp.cpp
+   17.8% | core/bodypart.cpp
+         8/45 clean, 37 remaining
+   17.6% | core/battery.cpp
          3/17 clean, 14 remaining
-   17.4% | core/icepick.cpp
+   17.4% | cockpit/pkbmpset.cpp
          4/23 clean, 19 remaining
-   17.2% | core/set.cpp
-         15/87 clean, 72 remaining
-   17.1% | core/zombie.cpp
-         6/35 clean, 29 remaining
+   17.4% | core/teleport.cpp
+         4/23 clean, 19 remaining
+   17.4% | core/trigger.cpp
+         4/23 clean, 19 remaining
+   16.7% | core/crossbow.cpp
+         2/12 clean, 10 remaining
+   16.7% | core/glass.cpp
+         4/24 clean, 20 remaining
+   16.7% | shape/edittool.cpp
+         26/156 clean, 130 remaining
+   16.7% | shape/spotview.cpp
+         1/6 clean, 5 remaining
+   16.4% | cockpit/ckptutil.c
+         9/55 clean, 46 remaining
    16.1% | core/dstrender.cpp
          5/31 clean, 26 remaining
-   16.0% | core/scat.cpp
-         4/25 clean, 21 remaining
-   15.9% | core/bugs.cpp
-         7/44 clean, 37 remaining
-   15.4% | core/mobster.cpp
-         4/26 clean, 22 remaining
-   13.3% | core/bride.cpp
+   15.9% | core/dmodel.cpp
+         11/69 clean, 58 remaining
+   15.9% | core/game.cpp
+         11/69 clean, 58 remaining
+   15.8% | core/dfilter.cpp
+         3/19 clean, 16 remaining
+   15.6% | shape/superopt.cpp
+         29/186 clean, 157 remaining
+   15.4% | core/anvil.cpp
+         2/13 clean, 11 remaining
+   15.4% | core/armour.cpp
+         2/13 clean, 11 remaining
+   15.4% | core/dest.cpp
+         2/13 clean, 11 remaining
+   15.3% | shape/meshlod.cpp
+         19/124 clean, 105 remaining
+   15.2% | core/actor.cpp
+         28/184 clean, 156 remaining
+   15.0% | core/tvbat.cpp
+         3/20 clean, 17 remaining
+   14.7% | engine/pod.cpp
+         5/34 clean, 29 remaining
+   14.3% | core/beast.cpp
+         2/14 clean, 12 remaining
+   14.3% | core/boneguy.cpp
+         4/28 clean, 24 remaining
+   14.3% | core/filmreel.cpp
+         4/28 clean, 24 remaining
+   14.3% | core/lightgun.cpp
+         2/14 clean, 12 remaining
+   14.3% | core/manpuz.cpp
+         9/63 clean, 54 remaining
+   14.3% | core/minecar.cpp
+         1/7 clean, 6 remaining
+   14.3% | core/succubus.cpp
+         2/14 clean, 12 remaining
+   14.3% | engine/clipper.c
+         4/28 clean, 24 remaining
+   13.9% | engine/3d.c
+         14/101 clean, 87 remaining
+   13.8% | core/charactr.cpp
+         15/109 clean, 94 remaining
+   13.6% | core/mirror.cpp
+         3/22 clean, 19 remaining
+   13.3% | core/keyactor.cpp
          2/15 clean, 13 remaining
-   13.3% | core/platfrm.cpp
+   13.3% | core/simbox.cpp
+         2/15 clean, 13 remaining
+   13.3% | core/spike.cpp
+         2/15 clean, 13 remaining
+   13.3% | engine/matrix.c
          4/30 clean, 26 remaining
-   13.3% | support/newmsg.cpp
-         2/15 clean, 13 remaining
-   13.0% | core/boxactor.cpp
-         6/46 clean, 40 remaining
-   11.5% | core/dracbrid.cpp
-         3/26 clean, 23 remaining
-   11.5% | crt/fstream.cpp
-         3/26 clean, 23 remaining
-   11.1% | core/ghoul.cpp
+   13.2% | core/event.cpp
+         9/68 clean, 59 remaining
+   13.2% | engine/2d.c
+         10/76 clean, 66 remaining
+   13.0% | core/stranger.cpp
+         9/69 clean, 60 remaining
+   12.5% | core/marquee.cpp
+         2/16 clean, 14 remaining
+   12.5% | core/mimic.cpp
+         3/24 clean, 21 remaining
+   12.5% | core/netgame.cpp
+         8/64 clean, 56 remaining
+   12.5% | core/smiley.cpp
+         2/16 clean, 14 remaining
+   12.5% | core/stone.cpp
+         1/8 clean, 7 remaining
+   12.5% | core/tbplayer.cpp
+         2/16 clean, 14 remaining
+   12.5% | engine/console.cpp
+         1/8 clean, 7 remaining
+   12.3% | sound/mp3.cpp
+         7/57 clean, 50 remaining
+   12.2% | core/mission.cpp
+         5/41 clean, 36 remaining
+   12.0% | core/path.cpp
+         3/25 clean, 22 remaining
+   11.8% | core/drip.cpp
+         2/17 clean, 15 remaining
+   11.8% | core/flamecan.cpp
+         2/17 clean, 15 remaining
+   11.8% | core/grave.cpp
+         2/17 clean, 15 remaining
+   11.8% | core/melee.cpp
+         2/17 clean, 15 remaining
+   11.6% | core/inv.cpp
+         5/43 clean, 38 remaining
+   11.1% | core/gore.cpp
+         6/54 clean, 48 remaining
+   11.1% | core/hostage.cpp
          2/18 clean, 16 remaining
-   11.1% | core/msnedit.cpp
-         7/63 clean, 56 remaining
-   10.3% | core/setedit.cpp
-         6/58 clean, 52 remaining
-   10.0% | core/main.c
+   11.1% | core/hpriest.cpp
+         1/9 clean, 8 remaining
+   10.5% | core/svetlana.cpp
+         2/19 clean, 17 remaining
+   10.5% | core/waypoint.cpp
+         2/19 clean, 17 remaining
+   10.3% | core/dtri.cpp
+         3/29 clean, 26 remaining
+   10.3% | core/skeleton.cpp
+         12/117 clean, 105 remaining
+   10.0% | core/crate.cpp
+         2/20 clean, 18 remaining
+   10.0% | core/elephant.cpp
          1/10 clean, 9 remaining
-    8.9% | core/cloth.cpp
-         5/56 clean, 51 remaining
-    8.2% | core/morph.cpp
-         4/49 clean, 45 remaining
-    7.9% | core/gabriela.cpp
+   10.0% | core/hiram.cpp
+         1/10 clean, 9 remaining
+   10.0% | core/pendulum.cpp
+         2/20 clean, 18 remaining
+   10.0% | core/shotgun.cpp
+         1/10 clean, 9 remaining
+   10.0% | core/weather.cpp
+         1/10 clean, 9 remaining
+    9.5% | core/stairs.cpp
+         2/21 clean, 19 remaining
+    9.1% | core/bugs.cpp
+         4/44 clean, 40 remaining
+    9.1% | core/flies.cpp
+         2/22 clean, 20 remaining
+    9.1% | core/menu.cpp
+         2/22 clean, 20 remaining
+    9.1% | core/passngr.cpp
+         1/11 clean, 10 remaining
+    8.7% | cockpit/drawsurf.cpp
+         8/92 clean, 84 remaining
+    8.7% | core/vampboss.cpp
+         2/23 clean, 21 remaining
+    8.5% | engine/fileio.cpp
+         6/71 clean, 65 remaining
+    8.3% | core/frankgen.cpp
+         2/24 clean, 22 remaining
+    8.3% | core/hero.cpp
+         4/48 clean, 44 remaining
+    8.3% | core/turret.cpp
+         2/24 clean, 22 remaining
+    8.0% | core/set.cpp
+         7/87 clean, 80 remaining
+    7.9% | core/dcube.cpp
          3/38 clean, 35 remaining
-    4.2% | core/script.cpp
-         4/96 clean, 92 remaining
+    7.7% | core/dog.cpp
+         1/13 clean, 12 remaining
+    7.7% | core/drone.cpp
+         1/13 clean, 12 remaining
+    7.7% | core/larva.cpp
+         1/13 clean, 12 remaining
+    7.7% | core/mobster.cpp
+         2/26 clean, 24 remaining
+    7.1% | core/batcreat.cpp
+         1/14 clean, 13 remaining
+    7.1% | core/biggs.cpp
+         1/14 clean, 13 remaining
+    7.1% | core/cow.cpp
+         1/14 clean, 13 remaining
+    7.1% | core/hotdemon.cpp
+         1/14 clean, 13 remaining
+    7.1% | core/sentinel.cpp
+         1/14 clean, 13 remaining
+    6.7% | core/bride.cpp
+         1/15 clean, 14 remaining
+    6.7% | core/course.cpp
+         1/15 clean, 14 remaining
+    6.7% | core/platfrm.cpp
+         2/30 clean, 28 remaining
+    6.7% | core/tentacle.cpp
+         1/15 clean, 14 remaining
+    6.2% | core/batman.cpp
+         1/16 clean, 15 remaining
+    6.2% | core/gargoyle.cpp
+         1/16 clean, 15 remaining
+    5.9% | core/imp.cpp
+         1/17 clean, 16 remaining
+    5.6% | core/colonel.cpp
+         1/18 clean, 17 remaining
+    5.6% | core/ghoul.cpp
+         1/18 clean, 17 remaining
+    5.6% | core/haystack.cpp
+         1/18 clean, 17 remaining
+    5.3% | core/bat.cpp
+         1/19 clean, 18 remaining
+    5.3% | core/gabriela.cpp
+         2/38 clean, 36 remaining
+    5.3% | core/ladder.cpp
+         1/19 clean, 18 remaining
+    5.0% | core/enemy.cpp
+         1/20 clean, 19 remaining
+    4.8% | core/werewolf.cpp
+         1/21 clean, 20 remaining
+    4.5% | core/lever.cpp
+         1/22 clean, 21 remaining
+    4.3% | core/boxactor.cpp
+         2/46 clean, 44 remaining
+    4.3% | core/icepick.cpp
+         1/23 clean, 22 remaining
+    4.2% | shape/memdbg.cpp
+         1/24 clean, 23 remaining
+    4.0% | core/scat.cpp
+         1/25 clean, 24 remaining
+    4.0% | engine/dosio.c
+         1/25 clean, 24 remaining
+    3.8% | core/dracbrid.cpp
+         1/26 clean, 25 remaining
+    3.6% | core/cloth.cpp
+         2/56 clean, 54 remaining
+    3.2% | cockpit/pkbitmap.cpp
+         1/31 clean, 30 remaining
+    2.9% | core/zombie.cpp
+         1/35 clean, 34 remaining
     2.7% | core/skeledit.cpp
          2/74 clean, 72 remaining
+    2.0% | core/morph.cpp
+         1/49 clean, 48 remaining
+    1.6% | core/msnedit.cpp
+         1/63 clean, 62 remaining
+    1.0% | core/script.cpp
+         1/96 clean, 95 remaining
     0.0% | .
          0/1 clean, 1 remaining
     0.0% | core/dcube.cpp/CDemonCube
          0/1 clean, 1 remaining
+    0.0% | core/dfont.cpp
+         0/3 clean, 3 remaining
     0.0% | core/dglobe.cpp
          0/6 clean, 6 remaining
+    0.0% | core/fileman.cpp
+         0/12 clean, 12 remaining
+    0.0% | core/flashlit.cpp
+         0/2 clean, 2 remaining
     0.0% | core/inivar.cpp
          0/2 clean, 2 remaining
+    0.0% | core/main.c
+         0/10 clean, 10 remaining
+    0.0% | core/podmain.cpp
+         0/4 clean, 4 remaining
     0.0% | core/procedur.cpp
          0/4 clean, 4 remaining
+    0.0% | core/setedit.cpp
+         0/58 clean, 58 remaining
     0.0% | core/spline.cpp
          0/7 clean, 7 remaining
+    0.0% | crt/cpp.c
+         0/3 clean, 3 remaining
+    0.0% | crt/ctype.c
+         0/2 clean, 2 remaining
     0.0% | crt/debug.c
+         0/1 clean, 1 remaining
+    0.0% | crt/env.c
+         0/4 clean, 4 remaining
+    0.0% | crt/environ.c
+         0/2 clean, 2 remaining
+    0.0% | crt/errno.c
+         0/5 clean, 5 remaining
+    0.0% | crt/exception.c
+         0/5 clean, 5 remaining
+    0.0% | crt/exit.c
+         0/4 clean, 4 remaining
+    0.0% | crt/file.c
+         0/7 clean, 7 remaining
+    0.0% | crt/fltused.c
          0/1 clean, 1 remaining
     0.0% | crt/fpemu.c
          0/1 clean, 1 remaining
+    0.0% | crt/fpu.c
+         0/2 clean, 2 remaining
+    0.0% | crt/fstream.cpp
+         0/26 clean, 26 remaining
+    0.0% | crt/heap.c
+         0/18 clean, 18 remaining
     0.0% | crt/init.c
+         0/1 clean, 1 remaining
+    0.0% | crt/io.c
+         0/39 clean, 39 remaining
+    0.0% | crt/io.c/stat/thunk
+         0/1 clean, 1 remaining
+    0.0% | crt/io.c/utime/thunk
          0/1 clean, 1 remaining
     0.0% | crt/ioinit.c
          0/1 clean, 1 remaining
+    0.0% | crt/iostream.cpp
+         0/23 clean, 23 remaining
+    0.0% | crt/locale.c
+         0/8 clean, 8 remaining
+    0.0% | crt/math.c
+         0/102 clean, 102 remaining
+    0.0% | crt/mbstring.c
+         0/1 clean, 1 remaining
+    0.0% | crt/memory.c
+         0/21 clean, 21 remaining
+    0.0% | crt/operation.c
+         0/1 clean, 1 remaining
+    0.0% | crt/process.c
+         0/12 clean, 12 remaining
+    0.0% | crt/signal.c
+         0/7 clean, 7 remaining
     0.0% | crt/stack.c
          0/5 clean, 5 remaining
+    0.0% | crt/startup.c
+         0/10 clean, 10 remaining
     0.0% | crt/startup.cpp
+         0/3 clean, 3 remaining
+    0.0% | crt/stdio.c
+         0/102 clean, 102 remaining
+    0.0% | crt/stdlib.c
+         0/17 clean, 17 remaining
+    0.0% | crt/string.c
+         0/40 clean, 40 remaining
+    0.0% | crt/strstream.cpp
+         0/21 clean, 21 remaining
+    0.0% | crt/strtod.c
+         0/1 clean, 1 remaining
+    0.0% | crt/stub.c
+         0/3 clean, 3 remaining
+    0.0% | crt/sync.c
+         0/16 clean, 16 remaining
+    0.0% | crt/system.c
+         0/1 clean, 1 remaining
+    0.0% | crt/thread.c
+         0/7 clean, 7 remaining
+    0.0% | crt/time.c
+         0/19 clean, 19 remaining
+    0.0% | crt/tls.c
+         0/12 clean, 12 remaining
+    0.0% | crt/unknown.c
+         0/88 clean, 88 remaining
+    0.0% | crt/util.c
+         0/1 clean, 1 remaining
+    0.0% | crt/watcom.c
          0/3 clean, 3 remaining
     0.0% | crt/windows.c
          0/1 clean, 1 remaining
@@ -584,7 +549,11 @@ FILES BELOW 50%
          0/5 clean, 5 remaining
     0.0% | engine/colquant.c
          0/9 clean, 9 remaining
+    0.0% | engine/model.c
+         0/8 clean, 8 remaining
     0.0% | engine/pcx.c
          0/4 clean, 4 remaining
+    0.0% | support/newmsg.cpp
+         0/15 clean, 15 remaining
 
-Total: 184 files
+Total: 248 files

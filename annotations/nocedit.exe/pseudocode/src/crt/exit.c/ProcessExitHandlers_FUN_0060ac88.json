@@ -1,14 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 40,
+    "complexity_score": 70,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 9,
     "pseudocode_lines": 25,
-    "suspect_count": 1,
+    "suspect_count": 3,
     "suspect_types": [
-      "pointer_cast"
+      "call_esp_preserve",
+      "pointer_cast",
+      "special_crt_function"
     ],
     "total_lines": 78
   },
@@ -157,6 +159,28 @@
       "match": "(BYTE *)((int)",
       "text": "pBVar1 = (BYTE *)((int)pBVar1 + 6);",
       "type": "pointer_cast"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "0060acd7",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "0060acdc",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 20,
+      "return_address": "0060acdc",
+      "target_address": "0x60ac20",
+      "text": "Direct CALL at 0060acd7, ADD ESP at 0060acdc (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "address": "0060ac88",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_exit.c_ProcessExitHandlers_FUN_0060ac88",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 0060ac88",
+      "type": "special_crt_function"
     }
   ]
 }

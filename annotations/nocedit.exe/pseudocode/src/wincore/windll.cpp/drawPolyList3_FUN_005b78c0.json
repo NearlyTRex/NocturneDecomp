@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 84,
-    "complexity_score": 150,
+    "complexity_score": 165,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 4,
     "pseudocode_lines": 30,
-    "suspect_count": 10,
+    "suspect_count": 11,
     "suspect_types": [
       "badspacebase",
       "callind_preserve",
+      "lea_esp_stack_addr",
       "pointer_cast",
       "register_param"
     ],
@@ -238,6 +239,15 @@
       "return_address": "005b797a",
       "text": "CALLIND at 005b7974, ADD ESP at 005b797a (no EBP frame)",
       "type": "callind_preserve"
+    },
+    {
+      "address": "005b7931",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 8,
+      "instruction": "LEA EAX, [ESP + 0x8]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 005b7931",
+      "type": "lea_esp_stack_addr"
     }
   ]
 }

@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 131,
-    "complexity_score": 129,
+    "complexity_score": 164,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 6,
     "pseudocode_lines": 39,
-    "suspect_count": 7,
+    "suspect_count": 10,
     "suspect_types": [
       "badspacebase",
+      "call_esp_anchor",
       "format_string_mismatch",
       "register_param",
       "stack_ref"
@@ -288,6 +289,45 @@
       "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff84,\"%3d\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "004615fe",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00461603",
+      "frame_offset": 108,
+      "match": "CALL...ADD ESP",
+      "return_address": "00461603",
+      "target_address": "0x402430",
+      "text": "Direct CALL at 004615fe, ADD ESP at 00461603 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 20,
+      "call_address": "00461622",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00461627",
+      "frame_offset": 108,
+      "match": "CALL...ADD ESP",
+      "return_address": "00461627",
+      "target_address": "0x403170",
+      "text": "Direct CALL at 00461622, ADD ESP at 00461627 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "0046167b",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00461680",
+      "frame_offset": 108,
+      "match": "CALL...ADD ESP",
+      "return_address": "00461680",
+      "target_address": "0x402430",
+      "text": "Direct CALL at 0046167b, ADD ESP at 00461680 with uncertain ESP",
+      "type": "call_esp_anchor"
     }
   ]
 }

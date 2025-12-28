@@ -1,13 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 31,
-    "complexity_score": 13,
+    "complexity_score": 28,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 3,
     "pseudocode_lines": 13,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "special_crt_function"
+    ],
     "total_lines": 44
   },
   "cross_references": [],
@@ -96,5 +98,15 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "address": "006047e0",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_fpu.c_staticInit_FUN_006047e0",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 006047e0",
+      "type": "special_crt_function"
+    }
+  ]
 }

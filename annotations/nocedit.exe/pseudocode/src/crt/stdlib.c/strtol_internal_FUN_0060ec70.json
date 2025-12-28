@@ -1,15 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 205,
-    "complexity_score": 292,
+    "complexity_score": 342,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 2,
     "pseudocode_lines": 82,
-    "suspect_count": 19,
+    "suspect_count": 23,
     "suspect_types": [
+      "call_esp_preserve",
       "param_count_too_few",
       "pointer_cast",
+      "special_crt_function",
       "stack_param",
       "unaffected_reg"
     ],
@@ -320,6 +322,54 @@
       "param_delta": 1,
       "text": "Function declares 4 params but call sites push 5 (1 missing)",
       "type": "param_count_too_few"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "0060eceb",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0060ecf0",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 28,
+      "return_address": "0060ecf0",
+      "target_address": "0x602790",
+      "text": "Direct CALL at 0060eceb, ADD ESP at 0060ecf0 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "0060ed2b",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0060ed30",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 28,
+      "return_address": "0060ed30",
+      "target_address": "0x60ee18",
+      "text": "Direct CALL at 0060ed2b, ADD ESP at 0060ed30 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "0060ed8e",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0060ed93",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 28,
+      "return_address": "0060ed93",
+      "target_address": "0x602790",
+      "text": "Direct CALL at 0060ed8e, ADD ESP at 0060ed93 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "address": "0060ec70",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_stdlib.c_strtol_internal_FUN_0060ec70",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 0060ec70",
+      "type": "special_crt_function"
     }
   ]
 }

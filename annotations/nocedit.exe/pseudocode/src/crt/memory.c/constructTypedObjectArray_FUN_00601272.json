@@ -1,14 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 13,
-    "complexity_score": 24,
+    "complexity_score": 54,
     "cross_reference_count": 6,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 9,
-    "suspect_count": 1,
+    "suspect_count": 3,
     "suspect_types": [
-      "param_count_too_many"
+      "call_esp_preserve",
+      "param_count_too_many",
+      "special_crt_function"
     ],
     "total_lines": 22
   },
@@ -193,6 +195,28 @@
       "param_delta": -2,
       "text": "Function declares 3 params but call sites push 1 (2 extra)",
       "type": "param_count_too_many"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "00601282",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "00601287",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 16,
+      "return_address": "00601287",
+      "target_address": "0x601232",
+      "text": "Direct CALL at 00601282, ADD ESP at 00601287 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "address": "00601272",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_memory.c_constructTypedObjectArray_FUN_00601272",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 00601272",
+      "type": "special_crt_function"
     }
   ]
 }

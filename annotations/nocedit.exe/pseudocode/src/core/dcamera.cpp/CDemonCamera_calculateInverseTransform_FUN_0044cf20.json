@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 196,
-    "complexity_score": 225,
+    "complexity_score": 240,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "pseudocode_lines": 75,
-    "suspect_count": 14,
+    "suspect_count": 15,
     "suspect_types": [
       "extra_output",
+      "stack_align_anchor",
       "suspect_float"
     ],
     "total_lines": 271
@@ -379,6 +380,15 @@
       "match": "extraout_EAX_01",
       "text": "*(int *)(extraout_EAX_01 + 0x1bc) = (int)ROUND(dVar21);",
       "type": "extra_output"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x54",
+      "fix_address": "0044cf26",
+      "match": "AND ESP",
+      "sub_esp_offset": 84,
+      "text": "Stack alignment at 0044cf26 (SUB ESP, 0x54 before)",
+      "type": "stack_align_anchor"
     }
   ]
 }

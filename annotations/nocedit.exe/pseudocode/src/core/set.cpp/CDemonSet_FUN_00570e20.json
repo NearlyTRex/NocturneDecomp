@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 20,
-    "complexity_score": 77,
+    "complexity_score": 92,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 1,
     "pseudocode_lines": 12,
-    "suspect_count": 6,
+    "suspect_count": 7,
     "suspect_types": [
+      "call_esp_preserve",
       "stack_param"
     ],
     "total_lines": 32
@@ -144,6 +145,19 @@
       "match": "in_stack_0000000c",
       "text": "(&g_CDemonCameraInstance,in_stack_0000000c);",
       "type": "stack_param"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "00570e4d",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00570e52",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 12,
+      "return_address": "00570e52",
+      "target_address": "0x4528e0",
+      "text": "Direct CALL at 00570e4d, ADD ESP at 00570e52 (no EBP frame)",
+      "type": "call_esp_preserve"
     }
   ]
 }

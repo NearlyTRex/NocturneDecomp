@@ -1,15 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 50,
-    "complexity_score": 161,
+    "complexity_score": 211,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 26,
-    "suspect_count": 11,
+    "suspect_count": 15,
     "suspect_types": [
       "badspacebase",
+      "call_esp_preserve",
       "callind_preserve",
+      "lea_esp_stack_addr",
       "register_param",
       "stack_param",
       "stack_ref"
@@ -206,6 +208,46 @@
       "return_address": "0042d04e",
       "text": "CALLIND at 0042d048, ADD ESP at 0042d04e (no EBP frame)",
       "type": "callind_preserve"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "0042d013",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "0042d01e",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 28,
+      "return_address": "0042d018",
+      "target_address": "0x408e80",
+      "text": "Direct CALL at 0042d013, ADD ESP at 0042d01e (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "address": "0042d00d",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 4,
+      "instruction": "LEA EAX, [ESP + 0x4]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 0042d00d",
+      "type": "lea_esp_stack_addr"
+    },
+    {
+      "address": "0042d01a",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 24,
+      "instruction": "LEA EAX, [ESP + 0x18]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 0042d01a",
+      "type": "lea_esp_stack_addr"
+    },
+    {
+      "address": "0042d039",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 12,
+      "instruction": "LEA EDX, [ESP + 0xc]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 0042d039",
+      "type": "lea_esp_stack_addr"
     }
   ]
 }

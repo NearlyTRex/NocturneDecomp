@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 48,
-    "complexity_score": 31,
+    "complexity_score": 46,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 3,
     "pseudocode_lines": 16,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "call_esp_preserve",
       "variadic_preserve"
     ],
     "total_lines": 64
@@ -141,6 +142,19 @@
       "target_function": "sound_sndmain.cpp_logSoundError_FUN_005adba0",
       "text": "Call to variadic function sound_sndmain.cpp_logSoundError_FUN_005adba0 at 005abd11 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "005abcd9",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "005abcde",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 16,
+      "return_address": "005abcde",
+      "target_address": "0x5f40e0",
+      "text": "Direct CALL at 005abcd9, ADD ESP at 005abcde (no EBP frame)",
+      "type": "call_esp_preserve"
     }
   ]
 }

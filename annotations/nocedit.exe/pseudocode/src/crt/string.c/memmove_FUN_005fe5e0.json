@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 127,
+    "complexity_score": 142,
     "cross_reference_count": 78,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 42,
-    "suspect_count": 8,
+    "suspect_count": 9,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "special_crt_function"
     ],
     "total_lines": 93
   },
@@ -613,6 +614,15 @@
       "match": "(uint *)((int)",
       "text": "puVar4 = (uint *)((int)puVar4 + 1);",
       "type": "pointer_cast"
+    },
+    {
+      "address": "005fe5e0",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_string.c_memmove_FUN_005fe5e0",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 005fe5e0",
+      "type": "special_crt_function"
     }
   ]
 }

@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 40,
-    "complexity_score": 38,
+    "complexity_score": 53,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 3,
     "pseudocode_lines": 13,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
+      "stack_align_anchor",
       "stack_param"
     ],
     "total_lines": 53
@@ -142,6 +143,15 @@
       "match": "in_stack_00000004",
       "text": "local_10 = (float)(int)(g_CurrentGameTime - in_stack_00000004) * (float)1.52587890625e-05;",
       "type": "stack_param"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x8",
+      "fix_address": "0053f446",
+      "match": "AND ESP",
+      "sub_esp_offset": 8,
+      "text": "Stack alignment at 0053f446 (SUB ESP, 0x8 before)",
+      "type": "stack_align_anchor"
     }
   ]
 }

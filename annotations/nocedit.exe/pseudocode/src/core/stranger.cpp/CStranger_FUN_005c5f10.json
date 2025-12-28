@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 285,
-    "complexity_score": 624,
+    "complexity_score": 659,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
     "pseudocode_lines": 124,
-    "suspect_count": 48,
+    "suspect_count": 51,
     "suspect_types": [
+      "call_esp_preserve",
       "callind_preserve",
       "param_count_too_few",
       "stack_param",
@@ -509,6 +510,45 @@
       "param_delta": 2,
       "text": "Function declares 0 params but call sites push 2 (2 missing)",
       "type": "param_count_too_few"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "005c600b",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "005c6018",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 20,
+      "return_address": "005c6010",
+      "target_address": "0x42e840",
+      "text": "Direct CALL at 005c600b, ADD ESP at 005c6018 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "005c61b2",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "005c61c3",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 20,
+      "return_address": "005c61b7",
+      "target_address": "0x5c06b0",
+      "text": "Direct CALL at 005c61b2, ADD ESP at 005c61c3 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "005c61f3",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "005c61fe",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 20,
+      "return_address": "005c61f8",
+      "target_address": "0x5c06b0",
+      "text": "Direct CALL at 005c61f3, ADD ESP at 005c61fe (no EBP frame)",
+      "type": "call_esp_preserve"
     }
   ]
 }

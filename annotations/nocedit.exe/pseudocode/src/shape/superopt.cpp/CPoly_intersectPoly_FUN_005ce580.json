@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 1738,
-    "complexity_score": 3211,
+    "complexity_score": 3236,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 4,
     "pseudocode_lines": 951,
-    "suspect_count": 223,
+    "suspect_count": 225,
     "suspect_types": [
       "badspacebase",
+      "call_esp_anchor",
       "concat_artifact",
       "pointer_cast",
       "register_param",
@@ -233,6 +234,15 @@
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 005cf272, ADD ESP at 005cf275",
       "type": "callind_anchor"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x5ec",
+      "fix_address": "005ce58c",
+      "match": "AND ESP",
+      "sub_esp_offset": 1516,
+      "text": "Stack alignment at 005ce58c (SUB ESP, 0x5ec before)",
+      "type": "stack_align_anchor"
     }
   ],
   "stack_frame": {
@@ -1857,6 +1867,32 @@
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&uStack_550 + iVar8 + 4);",
       "type": "pointer_cast"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "005ce6de",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "005ce6e3",
+      "frame_offset": 1516,
+      "match": "CALL...ADD ESP",
+      "return_address": "005ce6e3",
+      "target_address": "0x5fde40",
+      "text": "Direct CALL at 005ce6de, ADD ESP at 005ce6e3 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "005ce7b9",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "005ce7c1",
+      "frame_offset": 1516,
+      "match": "CALL...ADD ESP",
+      "return_address": "005ce7be",
+      "target_address": "0x5fe667",
+      "text": "Direct CALL at 005ce7b9, ADD ESP at 005ce7c1 with uncertain ESP",
+      "type": "call_esp_anchor"
     }
   ],
   "vtable_info": {

@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 190,
-    "complexity_score": 89,
+    "complexity_score": 104,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 5,
     "pseudocode_lines": 59,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
+      "call_esp_anchor",
       "concat_artifact",
       "sub_artifact"
     ],
@@ -246,6 +247,19 @@
       "match": "CONCAT44",
       "text": "if (dVar3 < (double)CONCAT44 /* combine 2-byte values */(uStack_28,local_2c)) {",
       "type": "concat_artifact"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "00466c48",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00466c4d",
+      "frame_offset": 84,
+      "match": "CALL...ADD ESP",
+      "return_address": "00466c4d",
+      "target_address": "0x401fd0",
+      "text": "Direct CALL at 00466c48, ADD ESP at 00466c4d with uncertain ESP",
+      "type": "call_esp_anchor"
     }
   ]
 }

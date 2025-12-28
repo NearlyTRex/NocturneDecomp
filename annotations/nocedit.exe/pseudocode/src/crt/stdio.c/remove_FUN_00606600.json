@@ -1,13 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 9,
-    "complexity_score": 13,
+    "complexity_score": 28,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
     "pseudocode_lines": 13,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "special_crt_function"
+    ],
     "total_lines": 22
   },
   "cross_references": [
@@ -98,5 +100,15 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "address": "00606600",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_stdio.c_remove_FUN_00606600",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 00606600",
+      "type": "special_crt_function"
+    }
+  ]
 }

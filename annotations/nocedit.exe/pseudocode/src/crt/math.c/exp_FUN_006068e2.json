@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 57,
-    "complexity_score": 63,
+    "complexity_score": 78,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "pseudocode_lines": 23,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
       "param_count_too_many",
-      "register_param"
+      "register_param",
+      "special_math_intrinsic"
     ],
     "total_lines": 80
   },
@@ -172,6 +173,15 @@
       "param_delta": -1,
       "text": "Function declares 1 params but call sites push 0 (1 extra)",
       "type": "param_count_too_many"
+    },
+    {
+      "address": "006068e2",
+      "description": "Math library function with FPU stack or unusual patterns",
+      "function_name": "crt_math.c_exp_FUN_006068e2",
+      "match": "exp",
+      "math_function": "exp",
+      "text": "Math intrinsic (exp) at 006068e2",
+      "type": "special_math_intrinsic"
     }
   ]
 }

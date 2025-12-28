@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 78,
+    "complexity_score": 103,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 18,
-    "suspect_count": 5,
+    "suspect_count": 7,
     "suspect_types": [
+      "call_esp_anchor",
       "param_count_too_many",
       "pointer_cast"
     ],
@@ -236,6 +237,32 @@
       "param_delta": -1,
       "text": "Function declares 11 params but call sites push 10 (1 extra)",
       "type": "param_count_too_many"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "0046ad14",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "0046ad19",
+      "frame_offset": 12,
+      "match": "CALL...ADD ESP",
+      "return_address": "0046ad19",
+      "target_address": "0x46acc0",
+      "text": "Direct CALL at 0046ad14, ADD ESP at 0046ad19 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "0046ad27",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "0046ad2c",
+      "frame_offset": 12,
+      "match": "CALL...ADD ESP",
+      "return_address": "0046ad2c",
+      "target_address": "0x46acc0",
+      "text": "Direct CALL at 0046ad27, ADD ESP at 0046ad2c with uncertain ESP",
+      "type": "call_esp_anchor"
     }
   ]
 }

@@ -1,14 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 46,
-    "complexity_score": 108,
+    "complexity_score": 198,
     "cross_reference_count": 3,
     "function_call_count": 4,
     "global_count": 0,
     "pseudocode_lines": 18,
-    "suspect_count": 7,
+    "suspect_count": 15,
     "suspect_types": [
       "badspacebase",
+      "call_esp_preserve",
+      "lea_esp_stack_addr",
       "register_param",
       "stack_param",
       "stack_ref"
@@ -173,6 +175,98 @@
       "match": "&stack0xfffffbdc",
       "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xfffffbdc);",
       "type": "stack_ref"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "0055128a",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "0055128f",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 1072,
+      "return_address": "0055128f",
+      "target_address": "0x54f5a0",
+      "text": "Direct CALL at 0055128a, ADD ESP at 0055128f (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "0055129f",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "005512a4",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 1072,
+      "return_address": "005512a4",
+      "target_address": "0x54f650",
+      "text": "Direct CALL at 0055129f, ADD ESP at 005512a4 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "005512ae",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "005512b3",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 1072,
+      "return_address": "005512b3",
+      "target_address": "0x550230",
+      "text": "Direct CALL at 005512ae, ADD ESP at 005512b3 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "005512bf",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "005512c4",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 1072,
+      "return_address": "005512c4",
+      "target_address": "0x54f610",
+      "text": "Direct CALL at 005512bf, ADD ESP at 005512c4 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "005512d9",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "005512de",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 1072,
+      "return_address": "005512de",
+      "target_address": "0x54f610",
+      "text": "Direct CALL at 005512d9, ADD ESP at 005512de (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "address": "0055129a",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 4,
+      "instruction": "LEA EAX, [ESP + 0x4]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 0055129a",
+      "type": "lea_esp_stack_addr"
+    },
+    {
+      "address": "005512ba",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 4,
+      "instruction": "LEA EAX, [ESP + 0x4]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 005512ba",
+      "type": "lea_esp_stack_addr"
+    },
+    {
+      "address": "005512d2",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 4,
+      "instruction": "LEA EAX, [ESP + 0x4]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 005512d2",
+      "type": "lea_esp_stack_addr"
     }
   ]
 }

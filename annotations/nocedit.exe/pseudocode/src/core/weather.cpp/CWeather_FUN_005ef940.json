@@ -1,17 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 55,
-    "complexity_score": 464,
+    "complexity_score": 479,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
     "pseudocode_lines": 74,
-    "suspect_count": 35,
+    "suspect_count": 36,
     "suspect_types": [
       "badspacebase",
       "concat_artifact",
       "pointer_cast",
       "register_param",
+      "stack_align_anchor",
       "stack_param",
       "stack_ref",
       "unaffected_reg",
@@ -454,6 +455,15 @@
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)fVar2 + 0x24) = 0;",
       "type": "pointer_cast"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x40",
+      "fix_address": "005ef949",
+      "match": "AND ESP",
+      "sub_esp_offset": 64,
+      "text": "Stack alignment at 005ef949 (SUB ESP, 0x40 before)",
+      "type": "stack_align_anchor"
     }
   ]
 }

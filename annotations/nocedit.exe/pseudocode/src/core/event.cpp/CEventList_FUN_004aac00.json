@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 96,
-    "complexity_score": 193,
+    "complexity_score": 208,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 6,
     "pseudocode_lines": 43,
-    "suspect_count": 12,
+    "suspect_count": 13,
     "suspect_types": [
       "badspacebase",
+      "call_esp_preserve",
       "format_string_mismatch",
       "param_count_too_few",
       "register_param",
@@ -274,6 +275,19 @@
       "match": "engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,\"%s\\n\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "004aac74",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "004aac79",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 108,
+      "return_address": "004aac79",
+      "target_address": "0x4aacc0",
+      "text": "Direct CALL at 004aac74, ADD ESP at 004aac79 (no EBP frame)",
+      "type": "call_esp_preserve"
     }
   ]
 }

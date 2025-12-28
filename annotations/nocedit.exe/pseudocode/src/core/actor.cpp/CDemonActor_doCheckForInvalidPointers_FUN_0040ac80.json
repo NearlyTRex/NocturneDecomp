@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 228,
-    "complexity_score": 201,
+    "complexity_score": 236,
     "cross_reference_count": 50,
     "function_call_count": 2,
     "global_count": 17,
     "pseudocode_lines": 111,
-    "suspect_count": 8,
+    "suspect_count": 11,
     "suspect_types": [
+      "call_esp_anchor",
       "format_string_mismatch",
       "pointer_cast"
     ],
@@ -712,6 +713,45 @@
       "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Invalid actor pointer %08X detected at %s, line %d\");",
       "text": "Format string expects 3 args but got 0",
       "type": "format_string_mismatch"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "0040acf7",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "0040acfc",
+      "frame_offset": 8,
+      "match": "CALL...ADD ESP",
+      "return_address": "0040acfc",
+      "target_address": "0x5fde40",
+      "text": "Direct CALL at 0040acf7, ADD ESP at 0040acfc with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "0040ad90",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "0040ad95",
+      "frame_offset": 8,
+      "match": "CALL...ADD ESP",
+      "return_address": "0040ad95",
+      "target_address": "0x5fde40",
+      "text": "Direct CALL at 0040ad90, ADD ESP at 0040ad95 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "0040ae1c",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "0040ae21",
+      "frame_offset": 8,
+      "match": "CALL...ADD ESP",
+      "return_address": "0040ae21",
+      "target_address": "0x5fde40",
+      "text": "Direct CALL at 0040ae1c, ADD ESP at 0040ae21 with uncertain ESP",
+      "type": "call_esp_anchor"
     }
   ]
 }

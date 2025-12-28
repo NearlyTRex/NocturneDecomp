@@ -1,16 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 436,
-    "complexity_score": 343,
+    "complexity_score": 393,
     "cross_reference_count": 3,
     "function_call_count": 9,
     "global_count": 8,
     "pseudocode_lines": 183,
-    "suspect_count": 13,
+    "suspect_count": 17,
     "suspect_types": [
       "badspacebase",
+      "call_esp_anchor",
       "pointer_cast",
       "register_param",
+      "special_crt_function",
       "stack_ref",
       "unaffected_reg",
       "warning_noreturn"
@@ -404,6 +406,54 @@
       "match": "&stack0xffffffe0",
       "text": "puVar7 = &stack0xffffffe0;",
       "type": "stack_ref"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "00608522",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00608529",
+      "frame_offset": 20,
+      "match": "CALL...ADD ESP",
+      "return_address": "00608527",
+      "target_address": "0x6088b0",
+      "text": "Direct CALL at 00608522, ADD ESP at 00608529 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "00608535",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0060853f",
+      "frame_offset": 20,
+      "match": "CALL...ADD ESP",
+      "return_address": "0060853a",
+      "target_address": "0x602790",
+      "text": "Direct CALL at 00608535, ADD ESP at 0060853f with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "0060854f",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00608559",
+      "frame_offset": 20,
+      "match": "CALL...ADD ESP",
+      "return_address": "00608554",
+      "target_address": "0x602790",
+      "text": "Direct CALL at 0060854f, ADD ESP at 00608559 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "address": "006084ec",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_io.c_write_FUN_006084ec",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 006084ec",
+      "type": "special_crt_function"
     }
   ]
 }

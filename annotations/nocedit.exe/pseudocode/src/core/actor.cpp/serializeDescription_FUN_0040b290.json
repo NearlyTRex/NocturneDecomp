@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 91,
-    "complexity_score": 56,
+    "complexity_score": 91,
     "cross_reference_count": 9,
     "function_call_count": 3,
     "global_count": 5,
     "pseudocode_lines": 31,
-    "suspect_count": 2,
+    "suspect_count": 5,
     "suspect_types": [
+      "call_esp_preserve",
       "variadic_preserve"
     ],
     "total_lines": 122
@@ -206,6 +207,45 @@
       "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
       "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 0040b318 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "0040b2ab",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "0040b2b0",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 20,
+      "return_address": "0040b2b0",
+      "target_address": "0x5fe840",
+      "text": "Direct CALL at 0040b2ab, ADD ESP at 0040b2b0 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "0040b2d0",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0040b2d5",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 20,
+      "return_address": "0040b2d5",
+      "target_address": "0x40b210",
+      "text": "Direct CALL at 0040b2d0, ADD ESP at 0040b2d5 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "0040b332",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0040b337",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 20,
+      "return_address": "0040b337",
+      "target_address": "0x40b210",
+      "text": "Direct CALL at 0040b332, ADD ESP at 0040b337 (no EBP frame)",
+      "type": "call_esp_preserve"
     }
   ]
 }

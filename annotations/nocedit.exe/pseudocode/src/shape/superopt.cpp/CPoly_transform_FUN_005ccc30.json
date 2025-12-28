@@ -1,16 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 296,
-    "complexity_score": 455,
+    "complexity_score": 470,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 180,
-    "suspect_count": 26,
+    "suspect_count": 27,
     "suspect_types": [
       "badspacebase",
       "pointer_cast",
-      "register_param"
+      "register_param",
+      "stack_align_anchor"
     ],
     "total_lines": 476
   },
@@ -770,6 +771,15 @@
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&(local_1c->position).z + 4) = local_18c;",
       "type": "pointer_cast"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x1bc",
+      "fix_address": "005ccc3c",
+      "match": "AND ESP",
+      "sub_esp_offset": 444,
+      "text": "Stack alignment at 005ccc3c (SUB ESP, 0x1bc before)",
+      "type": "stack_align_anchor"
     }
   ],
   "vtable_info": {

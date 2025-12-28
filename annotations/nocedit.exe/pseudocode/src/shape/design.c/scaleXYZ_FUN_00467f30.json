@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 84,
-    "complexity_score": 114,
+    "complexity_score": 129,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 6,
     "pseudocode_lines": 34,
-    "suspect_count": 6,
+    "suspect_count": 7,
     "suspect_types": [
       "badspacebase",
+      "call_esp_anchor",
       "format_string_mismatch",
       "register_param",
       "stack_ref"
@@ -255,6 +256,19 @@
       "match": "(iVar2 = crt_stdio_c_sscanf_FUN_0060013c(&stack0xffffff90,\"%f,%f,%f\",&local_1c),",
       "text": "Format string expects 3 args but got 1",
       "type": "format_string_mismatch"
+    },
+    {
+      "add_esp_value": 20,
+      "call_address": "00467f51",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "00467f56",
+      "frame_offset": 96,
+      "match": "CALL...ADD ESP",
+      "return_address": "00467f56",
+      "target_address": "0x4032c0",
+      "text": "Direct CALL at 00467f51, ADD ESP at 00467f56 with uncertain ESP",
+      "type": "call_esp_anchor"
     }
   ]
 }

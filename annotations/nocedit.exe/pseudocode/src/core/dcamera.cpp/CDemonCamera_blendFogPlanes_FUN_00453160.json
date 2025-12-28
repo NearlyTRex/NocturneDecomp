@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 96,
-    "complexity_score": 69,
+    "complexity_score": 84,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 4,
     "pseudocode_lines": 39,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
+      "call_esp_preserve",
       "param_count_too_few",
       "pointer_cast"
     ],
@@ -169,6 +170,19 @@
       "param_delta": 2,
       "text": "Function declares 3 params but call sites push 5 (2 missing)",
       "type": "param_count_too_few"
+    },
+    {
+      "add_esp_value": 24,
+      "call_address": "0045321b",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "00453220",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 20,
+      "return_address": "00453220",
+      "target_address": "0x492e8a",
+      "text": "Direct CALL at 0045321b, ADD ESP at 00453220 (no EBP frame)",
+      "type": "call_esp_preserve"
     }
   ]
 }

@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 100,
-    "complexity_score": 91,
+    "complexity_score": 116,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 8,
     "pseudocode_lines": 31,
-    "suspect_count": 4,
+    "suspect_count": 6,
     "suspect_types": [
       "badspacebase",
+      "call_esp_anchor",
       "format_string_mismatch",
       "register_param",
       "stack_ref"
@@ -210,6 +211,15 @@
       "target_function": "sound_sndmain.cpp_logSoundError_FUN_005adba0",
       "text": "Call to variadic function sound_sndmain.cpp_logSoundError_FUN_005adba0 at 005afe56 (EBP frame + ADD ESP)",
       "type": "variadic_anchor"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x1a8",
+      "fix_address": "005afd6c",
+      "match": "AND ESP",
+      "sub_esp_offset": 424,
+      "text": "Stack alignment at 005afd6c (SUB ESP, 0x1a8 before)",
+      "type": "stack_align_anchor"
     }
   ],
   "stack_frame": {
@@ -298,6 +308,32 @@
       "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_19c,\"DirectSux: Unable to %s.  (%s)\");",
       "text": "Format string expects 2 args but got 0",
       "type": "format_string_mismatch"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "005afdcd",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "005afdd4",
+      "frame_offset": 424,
+      "match": "CALL...ADD ESP",
+      "return_address": "005afdd2",
+      "target_address": "0x5a8550",
+      "text": "Direct CALL at 005afdcd, ADD ESP at 005afdd4 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "005afe31",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "005afe36",
+      "frame_offset": 424,
+      "match": "CALL...ADD ESP",
+      "return_address": "005afe36",
+      "target_address": "0x5ade70",
+      "text": "Direct CALL at 005afe31, ADD ESP at 005afe36 with uncertain ESP",
+      "type": "call_esp_anchor"
     }
   ],
   "vtable_info": {

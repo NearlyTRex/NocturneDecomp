@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 213,
+    "complexity_score": 228,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 53,
-    "suspect_count": 15,
+    "suspect_count": 16,
     "suspect_types": [
       "pointer_cast",
-      "register_param"
+      "register_param",
+      "special_crt_function"
     ],
     "total_lines": 119
   },
@@ -172,6 +173,15 @@
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)dest + 8) = replicated_value;",
       "type": "pointer_cast"
+    },
+    {
+      "address": "00603b37",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_memory.c_BulkDwordFill_FUN_00603b37",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 00603b37",
+      "type": "special_crt_function"
     }
   ]
 }

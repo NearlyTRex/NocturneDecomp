@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 30,
-    "complexity_score": 104,
+    "complexity_score": 139,
     "cross_reference_count": 7,
     "function_call_count": 3,
     "global_count": 2,
     "pseudocode_lines": 19,
-    "suspect_count": 8,
+    "suspect_count": 11,
     "suspect_types": [
+      "call_esp_preserve",
       "negative_offset"
     ],
     "total_lines": 49
@@ -262,6 +263,45 @@
       "match": "pCVar2[-1].",
       "text": "return (CNPC *)(pCVar2[-1].height_cache[0x4e] + 0x2a);",
       "type": "negative_offset"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "005447e6",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "005447eb",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 20,
+      "return_address": "005447eb",
+      "target_address": "0x427e20",
+      "text": "Direct CALL at 005447e6, ADD ESP at 005447eb (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "005447f4",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "00544809",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 20,
+      "return_address": "005447f9",
+      "target_address": "0x546450",
+      "text": "Direct CALL at 005447f4, ADD ESP at 00544809 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "00544840",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "0054484f",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 20,
+      "return_address": "00544845",
+      "target_address": "0x5a0840",
+      "text": "Direct CALL at 00544840, ADD ESP at 0054484f (no EBP frame)",
+      "type": "call_esp_preserve"
     }
   ],
   "vtable_info": {

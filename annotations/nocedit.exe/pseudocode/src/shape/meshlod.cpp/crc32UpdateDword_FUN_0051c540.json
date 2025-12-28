@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 123,
-    "complexity_score": 130,
+    "complexity_score": 145,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 75,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
       "badspacebase",
+      "lea_esp_stack_addr",
       "pointer_cast",
       "register_param"
     ],
@@ -115,6 +116,15 @@
       "match": "(uint *)((int)",
       "text": "puVar1 = (uint *)((int)puVar1 + 1);",
       "type": "pointer_cast"
+    },
+    {
+      "address": "0051c549",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 24,
+      "instruction": "LEA ECX, [ESP + 0x18]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 0051c549",
+      "type": "lea_esp_stack_addr"
     }
   ]
 }

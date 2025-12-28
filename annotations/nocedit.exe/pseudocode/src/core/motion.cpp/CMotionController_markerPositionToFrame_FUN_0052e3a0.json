@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 117,
-    "complexity_score": 105,
+    "complexity_score": 120,
     "cross_reference_count": 7,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 40,
-    "suspect_count": 6,
+    "suspect_count": 7,
     "suspect_types": [
-      "extra_output"
+      "extra_output",
+      "stack_align_anchor"
     ],
     "total_lines": 157
   },
@@ -252,6 +253,15 @@
       "match": "extraout_EDX",
       "text": "local_1c = (float)(*(int *)(extraout_EDX + 100) + -1);",
       "type": "extra_output"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x18",
+      "fix_address": "0052e3a8",
+      "match": "AND ESP",
+      "sub_esp_offset": 24,
+      "text": "Stack alignment at 0052e3a8 (SUB ESP, 0x18 before)",
+      "type": "stack_align_anchor"
     }
   ]
 }

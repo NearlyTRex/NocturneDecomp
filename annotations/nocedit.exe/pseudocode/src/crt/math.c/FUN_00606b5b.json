@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 3,
-    "complexity_score": 36,
+    "complexity_score": 51,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 11,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
+      "special_crt_function",
       "unresolved_funcptr"
     ],
     "total_lines": 14
@@ -72,6 +73,15 @@
       "match": "code *",
       "text": "pcVar1 = (code *)swi(6);",
       "type": "unresolved_funcptr"
+    },
+    {
+      "address": "00606b5b",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_math.c_FUN_00606b5b",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 00606b5b",
+      "type": "special_crt_function"
     }
   ],
   "vtable_info": {

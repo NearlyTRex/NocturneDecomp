@@ -1,15 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 106,
-    "complexity_score": 88,
+    "complexity_score": 223,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 0,
     "pseudocode_lines": 43,
-    "suspect_count": 3,
+    "suspect_count": 15,
     "suspect_types": [
       "badspacebase",
+      "call_esp_preserve",
+      "lea_esp_stack_addr",
       "register_param",
+      "special_crt_function",
       "stack_ref"
     ],
     "total_lines": 149
@@ -134,6 +137,150 @@
       "match": "&stack0xfffffe04",
       "text": "crt_memory_c_memset_FUN_005fde40(&stack0xfffffe04,0,0x200);",
       "type": "stack_ref"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "00608425",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "0060842c",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 524,
+      "return_address": "0060842a",
+      "target_address": "0x606690",
+      "text": "Direct CALL at 00608425, ADD ESP at 0060842c (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "0060843d",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "00608442",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 524,
+      "return_address": "00608442",
+      "target_address": "0x606690",
+      "text": "Direct CALL at 0060843d, ADD ESP at 00608442 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "00608455",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "0060845a",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 524,
+      "return_address": "0060845a",
+      "target_address": "0x6088b0",
+      "text": "Direct CALL at 00608455, ADD ESP at 0060845a (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "00608462",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "00608467",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 524,
+      "return_address": "00608467",
+      "target_address": "0x608908",
+      "text": "Direct CALL at 00608462, ADD ESP at 00608467 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "0060847e",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "00608483",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 524,
+      "return_address": "00608483",
+      "target_address": "0x5fde40",
+      "text": "Direct CALL at 0060847e, ADD ESP at 00608483 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "0060849e",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "006084a3",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 524,
+      "return_address": "006084a3",
+      "target_address": "0x6084ec",
+      "text": "Direct CALL at 0060849e, ADD ESP at 006084a3 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "006084b4",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "006084b9",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 524,
+      "return_address": "006084b9",
+      "target_address": "0x606690",
+      "text": "Direct CALL at 006084b4, ADD ESP at 006084b9 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "006084bf",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "006084c4",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 524,
+      "return_address": "006084c4",
+      "target_address": "0x6088b0",
+      "text": "Direct CALL at 006084bf, ADD ESP at 006084c4 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "006084cc",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "006084d1",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 524,
+      "return_address": "006084d1",
+      "target_address": "0x608908",
+      "text": "Direct CALL at 006084cc, ADD ESP at 006084d1 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "address": "00608479",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 8,
+      "instruction": "LEA EAX, [ESP + 0x8]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 00608479",
+      "type": "lea_esp_stack_addr"
+    },
+    {
+      "address": "00608498",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 4,
+      "instruction": "LEA EAX, [ESP + 0x4]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 00608498",
+      "type": "lea_esp_stack_addr"
+    },
+    {
+      "address": "00608410",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_io.c_extend_file_for_append_FUN_00608410",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 00608410",
+      "type": "special_crt_function"
     }
   ]
 }

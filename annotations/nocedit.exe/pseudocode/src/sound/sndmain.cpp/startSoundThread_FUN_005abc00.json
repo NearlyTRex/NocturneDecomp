@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 72,
-    "complexity_score": 170,
+    "complexity_score": 205,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 5,
     "pseudocode_lines": 40,
-    "suspect_count": 11,
+    "suspect_count": 14,
     "suspect_types": [
+      "call_esp_preserve",
       "concat_artifact",
       "extra_output",
       "sub_artifact",
@@ -240,6 +241,45 @@
       "match": "SUB84",
       "text": "g_AudioLatencySeconds._0_4_ = SUB84 /* extract 2-byte value */(dVar1,0);",
       "type": "sub_artifact"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "005abc58",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "005abc5d",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 8,
+      "return_address": "005abc5d",
+      "target_address": "0x5f4070",
+      "text": "Direct CALL at 005abc58, ADD ESP at 005abc5d (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "005abc6c",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "005abc71",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 8,
+      "return_address": "005abc71",
+      "target_address": "0x5f40a0",
+      "text": "Direct CALL at 005abc6c, ADD ESP at 005abc71 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "005abc8c",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "005abc91",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 8,
+      "return_address": "005abc91",
+      "target_address": "0x5f40e0",
+      "text": "Direct CALL at 005abc8c, ADD ESP at 005abc91 (no EBP frame)",
+      "type": "call_esp_preserve"
     }
   ]
 }

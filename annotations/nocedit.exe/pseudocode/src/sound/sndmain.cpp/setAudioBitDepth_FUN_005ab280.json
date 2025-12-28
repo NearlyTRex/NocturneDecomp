@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 13,
-    "complexity_score": 34,
+    "complexity_score": 49,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
     "pseudocode_lines": 9,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
+      "call_esp_preserve",
       "stack_param"
     ],
     "total_lines": 22
@@ -117,6 +118,19 @@
       "match": "in_stack_0000000c",
       "text": "sound_sndmain_cpp_setSoundOutputMode_FUN_005ab170(in_stack_0000000c,channels,bit_depth);",
       "type": "stack_param"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "005ab291",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "005ab296",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 0,
+      "return_address": "005ab296",
+      "target_address": "0x5ab170",
+      "text": "Direct CALL at 005ab291, ADD ESP at 005ab296 (no EBP frame)",
+      "type": "call_esp_preserve"
     }
   ]
 }

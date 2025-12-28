@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 50,
+    "complexity_score": 65,
     "cross_reference_count": 85,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 20,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
       "callind_preserve",
-      "pointer_cast"
+      "pointer_cast",
+      "special_crt_function"
     ],
     "total_lines": 56
   },
@@ -640,6 +641,15 @@
       "return_address": "005fe6a1",
       "text": "CALLIND at 005fe69f, ADD ESP at 005fe6a1 (no EBP frame)",
       "type": "callind_preserve"
+    },
+    {
+      "address": "005fe667",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_memory.c_constructObjectArray_DefaultCtor_FUN_005fe667",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 005fe667",
+      "type": "special_crt_function"
     }
   ]
 }

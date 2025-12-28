@@ -116,6 +116,15 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00471fb6 (EBP frame + ADD ESP)",
       "type": "variadic_anchor"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x28",
+      "fix_address": "00471e18",
+      "match": "AND ESP",
+      "sub_esp_offset": 40,
+      "text": "Stack alignment at 00471e18 (SUB ESP, 0x28 before)",
+      "type": "stack_align_anchor"
     }
   ],
   "stack_frame": {

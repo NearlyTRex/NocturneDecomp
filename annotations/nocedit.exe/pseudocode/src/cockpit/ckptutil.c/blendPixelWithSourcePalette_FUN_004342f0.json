@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 221,
-    "complexity_score": 164,
+    "complexity_score": 179,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 15,
     "pseudocode_lines": 64,
-    "suspect_count": 9,
+    "suspect_count": 10,
     "suspect_types": [
       "extra_output",
-      "pointer_cast"
+      "pointer_cast",
+      "stack_align_anchor"
     ],
     "total_lines": 285
   },
@@ -338,6 +339,15 @@
       "match": "(ushort *)((int)",
       "text": "*(ushort *)((int)g_ScreenBufferArray[y] + extraout_EDX * 2) =",
       "type": "pointer_cast"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x2c",
+      "fix_address": "004342f9",
+      "match": "AND ESP",
+      "sub_esp_offset": 44,
+      "text": "Stack alignment at 004342f9 (SUB ESP, 0x2c before)",
+      "type": "stack_align_anchor"
     }
   ]
 }

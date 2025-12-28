@@ -1,17 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 161,
+    "complexity_score": 206,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
     "pseudocode_lines": 21,
-    "suspect_count": 11,
+    "suspect_count": 14,
     "suspect_types": [
       "badspacebase",
+      "call_esp_preserve",
       "callind_preserve",
+      "lea_esp_stack_addr",
       "param_count_too_few",
       "register_param",
+      "special_crt_function",
       "stack_param",
       "stack_ref"
     ],
@@ -244,6 +247,37 @@
       "param_delta": 1,
       "text": "Function declares 3 params but call sites push 4 (1 missing)",
       "type": "param_count_too_few"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "005fe79c",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "005fe7a1",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 36,
+      "return_address": "005fe7a1",
+      "target_address": "0x604950",
+      "text": "Direct CALL at 005fe79c, ADD ESP at 005fe7a1 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "address": "005fe78a",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 8,
+      "instruction": "LEA EAX, [ESP + 0x8]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 005fe78a",
+      "type": "lea_esp_stack_addr"
+    },
+    {
+      "address": "005fe738",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_stdio.c_vfscanf_FUN_005fe738",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 005fe738",
+      "type": "special_crt_function"
     }
   ]
 }

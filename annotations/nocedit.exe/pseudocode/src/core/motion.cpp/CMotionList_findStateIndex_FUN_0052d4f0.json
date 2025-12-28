@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 102,
+    "complexity_score": 117,
     "cross_reference_count": 13,
     "function_call_count": 2,
     "global_count": 4,
     "pseudocode_lines": 27,
-    "suspect_count": 6,
+    "suspect_count": 7,
     "suspect_types": [
+      "call_esp_preserve",
       "format_string_mismatch",
       "stack_param",
       "variadic_preserve"
@@ -338,6 +339,19 @@
       "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Can't find state \\\"%s\\\" in motion list\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "0052d509",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "0052d50e",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 24,
+      "return_address": "0052d50e",
+      "target_address": "0x5fe7f0",
+      "text": "Direct CALL at 0052d509, ADD ESP at 0052d50e (no EBP frame)",
+      "type": "call_esp_preserve"
     }
   ]
 }

@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 89,
-    "complexity_score": 97,
+    "complexity_score": 112,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 1,
     "pseudocode_lines": 47,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
       "pointer_cast",
-      "register_param"
+      "register_param",
+      "special_crt_function"
     ],
     "total_lines": 136
   },
@@ -125,6 +126,15 @@
       "match": "in_DS",
       "text": "heap_state_ptr->segment_selector = in_DS;",
       "type": "register_param"
+    },
+    {
+      "address": "006012d0",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_heap.c_heapWalk_FUN_006012d0",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 006012d0",
+      "type": "special_crt_function"
     }
   ]
 }

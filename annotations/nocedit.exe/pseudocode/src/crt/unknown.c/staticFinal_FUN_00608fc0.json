@@ -1,13 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 7,
-    "complexity_score": 6,
+    "complexity_score": 36,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
     "pseudocode_lines": 6,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 2,
+    "suspect_types": [
+      "call_esp_preserve",
+      "special_crt_function"
+    ],
     "total_lines": 13
   },
   "cross_references": [],
@@ -70,5 +73,28 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": []
+  "suspects": [
+    {
+      "add_esp_value": 4,
+      "call_address": "00608fc2",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "00608fc7",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 4,
+      "return_address": "00608fc7",
+      "target_address": "0x608fdc",
+      "text": "Direct CALL at 00608fc2, ADD ESP at 00608fc7 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "address": "00608fc0",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_unknown.c_staticFinal_FUN_00608fc0",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 00608fc0",
+      "type": "special_crt_function"
+    }
+  ]
 }

@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 165,
+    "complexity_score": 200,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 6,
     "pseudocode_lines": 80,
-    "suspect_count": 6,
+    "suspect_count": 9,
     "suspect_types": [
       "badspacebase",
+      "call_esp_anchor",
       "concat_artifact",
       "register_param",
       "stack_ref",
@@ -379,6 +380,45 @@
       "match": "CONCAT44",
       "text": "(double)CONCAT44 /* combine 2-byte values */(fStack_90,fVar8) * local_7c +",
       "type": "concat_artifact"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "00461fd8",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00461fdd",
+      "frame_offset": 140,
+      "match": "CALL...ADD ESP",
+      "return_address": "00461fdd",
+      "target_address": "0x461e60",
+      "text": "Direct CALL at 00461fd8, ADD ESP at 00461fdd with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "00461fe4",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00461fe9",
+      "frame_offset": 140,
+      "match": "CALL...ADD ESP",
+      "return_address": "00461fe9",
+      "target_address": "0x461e60",
+      "text": "Direct CALL at 00461fe4, ADD ESP at 00461fe9 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "0046200b",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00462022",
+      "frame_offset": 140,
+      "match": "CALL...ADD ESP",
+      "return_address": "00462010",
+      "target_address": "0x461c50",
+      "text": "Direct CALL at 0046200b, ADD ESP at 00462022 with uncertain ESP",
+      "type": "call_esp_anchor"
     }
   ]
 }

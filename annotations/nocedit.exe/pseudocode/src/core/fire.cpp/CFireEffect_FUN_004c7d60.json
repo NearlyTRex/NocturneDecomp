@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 25,
+    "complexity_score": 40,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 2,
     "pseudocode_lines": 10,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "call_esp_preserve",
       "pointer_cast"
     ],
     "total_lines": 44
@@ -105,6 +106,19 @@
       "match": "(CGlassParticle *)((int)",
       "text": "(CGlassParticle *)((int)&(g_CFireEffectGlassParticlesEnd->base).position.x + 1);",
       "type": "pointer_cast"
+    },
+    {
+      "add_esp_value": 20,
+      "call_address": "004c7da4",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "004c7da9",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 24,
+      "return_address": "004c7da9",
+      "target_address": "0x4c2170",
+      "text": "Direct CALL at 004c7da4, ADD ESP at 004c7da9 (no EBP frame)",
+      "type": "call_esp_preserve"
     }
   ]
 }

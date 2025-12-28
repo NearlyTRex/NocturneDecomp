@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 169,
-    "complexity_score": 388,
+    "complexity_score": 423,
     "cross_reference_count": 3,
     "function_call_count": 6,
     "global_count": 10,
     "pseudocode_lines": 63,
-    "suspect_count": 31,
+    "suspect_count": 34,
     "suspect_types": [
+      "call_esp_preserve",
       "pointer_cast",
       "stack_param",
       "variadic_preserve"
@@ -459,6 +460,45 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0058ab9c (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "0058ab34",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "0058ab39",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 20,
+      "return_address": "0058ab39",
+      "target_address": "0x5f6be0",
+      "text": "Direct CALL at 0058ab34, ADD ESP at 0058ab39 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "0058ab5e",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "0058ab63",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 20,
+      "return_address": "0058ab63",
+      "target_address": "0x5f6690",
+      "text": "Direct CALL at 0058ab5e, ADD ESP at 0058ab63 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "0058ab6c",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0058ab74",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 20,
+      "return_address": "0058ab71",
+      "target_address": "0x58ac80",
+      "text": "Direct CALL at 0058ab6c, ADD ESP at 0058ab74 (no EBP frame)",
+      "type": "call_esp_preserve"
     }
   ]
 }

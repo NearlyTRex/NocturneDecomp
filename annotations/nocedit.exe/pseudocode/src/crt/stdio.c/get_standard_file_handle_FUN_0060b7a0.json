@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 15,
-    "complexity_score": 22,
+    "complexity_score": 37,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 1,
     "pseudocode_lines": 7,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "special_crt_function"
     ],
     "total_lines": 22
   },
@@ -133,6 +134,15 @@
       "match": "(FILE *)((int)",
       "text": "return (FILE *)((int)&g_StaticFilePoolStart + fd * 0x1a);",
       "type": "pointer_cast"
+    },
+    {
+      "address": "0060b7a0",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_stdio.c_get_standard_file_handle_FUN_0060b7a0",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 0060b7a0",
+      "type": "special_crt_function"
     }
   ]
 }

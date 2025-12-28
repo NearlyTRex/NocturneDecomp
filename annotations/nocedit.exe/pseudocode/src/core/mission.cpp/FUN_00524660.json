@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 82,
-    "complexity_score": 192,
+    "complexity_score": 217,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 2,
     "pseudocode_lines": 37,
-    "suspect_count": 13,
+    "suspect_count": 15,
     "suspect_types": [
       "badspacebase",
+      "call_esp_preserve",
       "format_string_mismatch",
       "register_param",
       "stack_param",
@@ -232,6 +233,32 @@
       "match": "crt_stdio_c_sprintf_FUN_005fdbd0(in_stack_00000008,\"%s%d\");",
       "text": "Format string expects 2 args but got 0",
       "type": "format_string_mismatch"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "0052468f",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "00524694",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 20,
+      "return_address": "00524694",
+      "target_address": "0x5ff070",
+      "text": "Direct CALL at 0052468f, ADD ESP at 00524694 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "005246c4",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "005246c9",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 20,
+      "return_address": "005246c9",
+      "target_address": "0x524030",
+      "text": "Direct CALL at 005246c4, ADD ESP at 005246c9 (no EBP frame)",
+      "type": "call_esp_preserve"
     }
   ]
 }

@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 337,
-    "complexity_score": 611,
+    "complexity_score": 686,
     "cross_reference_count": 2,
     "function_call_count": 7,
     "global_count": 13,
     "pseudocode_lines": 166,
-    "suspect_count": 43,
+    "suspect_count": 50,
     "suspect_types": [
+      "call_esp_preserve",
       "stack_param",
       "unaffected_reg",
       "variadic_preserve"
@@ -604,6 +605,97 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0047acd5 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "0047aa42",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "0047aa47",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 40,
+      "return_address": "0047aa47",
+      "target_address": "0x49e790",
+      "text": "Direct CALL at 0047aa42, ADD ESP at 0047aa47 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "0047aa4f",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "0047aa54",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 40,
+      "return_address": "0047aa54",
+      "target_address": "0x47bf40",
+      "text": "Direct CALL at 0047aa4f, ADD ESP at 0047aa54 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "0047aa88",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0047aa8d",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 40,
+      "return_address": "0047aa8d",
+      "target_address": "0x50f1f0",
+      "text": "Direct CALL at 0047aa88, ADD ESP at 0047aa8d (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "0047aadc",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0047aae1",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 40,
+      "return_address": "0047aae1",
+      "target_address": "0x5fde40",
+      "text": "Direct CALL at 0047aadc, ADD ESP at 0047aae1 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "0047ad65",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0047ad6a",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 40,
+      "return_address": "0047ad6a",
+      "target_address": "0x5fe659",
+      "text": "Direct CALL at 0047ad65, ADD ESP at 0047ad6a (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "0047ad72",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0047ad77",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 40,
+      "return_address": "0047ad77",
+      "target_address": "0x47bf40",
+      "text": "Direct CALL at 0047ad72, ADD ESP at 0047ad77 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "0047ad7b",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0047ad80",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 40,
+      "return_address": "0047ad80",
+      "target_address": "0x477e60",
+      "text": "Direct CALL at 0047ad7b, ADD ESP at 0047ad80 (no EBP frame)",
+      "type": "call_esp_preserve"
     }
   ]
 }

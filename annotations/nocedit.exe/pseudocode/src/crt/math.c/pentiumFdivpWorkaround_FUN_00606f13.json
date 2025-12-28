@@ -1,13 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 8,
-    "complexity_score": 6,
+    "complexity_score": 36,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 6,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 2,
+    "suspect_types": [
+      "call_esp_preserve",
+      "special_math_intrinsic"
+    ],
     "total_lines": 14
   },
   "cross_references": [
@@ -83,5 +86,28 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "add_esp_value": 44,
+      "call_address": "00606f1d",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "00606f22",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 44,
+      "return_address": "00606f22",
+      "target_address": "0x606960",
+      "text": "Direct CALL at 00606f1d, ADD ESP at 00606f22 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "address": "00606f13",
+      "description": "Math library function with FPU stack or unusual patterns",
+      "function_name": "crt_math.c_pentiumFdivpWorkaround_FUN_00606f13",
+      "match": "round",
+      "math_function": "round",
+      "text": "Math intrinsic (round) at 00606f13",
+      "type": "special_math_intrinsic"
+    }
+  ]
 }

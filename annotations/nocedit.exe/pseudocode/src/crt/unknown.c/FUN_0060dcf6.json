@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 264,
-    "complexity_score": 466,
+    "complexity_score": 481,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 2,
     "pseudocode_lines": 181,
-    "suspect_count": 27,
+    "suspect_count": 28,
     "suspect_types": [
       "concat_artifact",
+      "special_crt_function",
       "sub_artifact",
       "unaffected_reg"
     ],
@@ -359,6 +360,15 @@
       "match": "SUB84",
       "text": "uVar4 = SUB84 /* extract 2-byte value */((double)fVar20,0);",
       "type": "sub_artifact"
+    },
+    {
+      "address": "0060dcf6",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_unknown.c_FUN_0060dcf6",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 0060dcf6",
+      "type": "special_crt_function"
     }
   ]
 }

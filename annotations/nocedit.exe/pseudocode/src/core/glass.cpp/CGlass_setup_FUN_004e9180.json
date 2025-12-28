@@ -1,17 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 12,
-    "complexity_score": 602,
+    "complexity_score": 617,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 272,
-    "suspect_count": 30,
+    "suspect_count": 31,
     "suspect_types": [
       "badspacebase",
       "extra_output",
       "pointer_cast",
       "register_param",
+      "stack_align_anchor",
       "stack_ref",
       "unknown_field"
     ],
@@ -602,6 +603,15 @@
       "match": "(int *)((int)",
       "text": "*(int *)((int)(this_ptr->broken_quads[0].vertices + -10) +",
       "type": "pointer_cast"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0xc8",
+      "fix_address": "004e918c",
+      "match": "AND ESP",
+      "sub_esp_offset": 200,
+      "text": "Stack alignment at 004e918c (SUB ESP, 0xc8 before)",
+      "type": "stack_align_anchor"
     }
   ],
   "vtable_info": {

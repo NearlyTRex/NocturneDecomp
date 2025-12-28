@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 17,
-    "complexity_score": 24,
+    "complexity_score": 39,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 9,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "special_math_intrinsic",
       "unknown_field"
     ],
     "total_lines": 26
@@ -111,6 +112,15 @@
       "match": "._4_4_",
       "text": "*value._4_4_ = dVar2;",
       "type": "unknown_field"
+    },
+    {
+      "address": "00602102",
+      "description": "Math library function with FPU stack or unusual patterns",
+      "function_name": "crt_math.c_modf_FUN_00602102",
+      "match": "modf",
+      "math_function": "modf",
+      "text": "Math intrinsic (modf) at 00602102",
+      "type": "special_math_intrinsic"
     }
   ]
 }

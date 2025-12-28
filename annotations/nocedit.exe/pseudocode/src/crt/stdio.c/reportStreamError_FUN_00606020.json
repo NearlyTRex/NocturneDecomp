@@ -1,15 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 26,
-    "complexity_score": 45,
+    "complexity_score": 90,
     "cross_reference_count": 12,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 15,
-    "suspect_count": 2,
+    "suspect_count": 5,
     "suspect_types": [
       "badspacebase",
-      "register_param"
+      "call_esp_preserve",
+      "lea_esp_stack_addr",
+      "register_param",
+      "special_crt_function"
     ],
     "total_lines": 41
   },
@@ -176,6 +179,37 @@
       "match": "in_ESP",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "register_param"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "00606048",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0060604d",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 8,
+      "return_address": "0060604d",
+      "target_address": "0x60b78e",
+      "text": "Direct CALL at 00606048, ADD ESP at 0060604d (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "address": "00606043",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 4,
+      "instruction": "LEA EAX, [ESP + 0x4]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 00606043",
+      "type": "lea_esp_stack_addr"
+    },
+    {
+      "address": "00606020",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_stdio.c_reportStreamError_FUN_00606020",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 00606020",
+      "type": "special_crt_function"
     }
   ]
 }

@@ -1,16 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 19,
-    "complexity_score": 108,
+    "complexity_score": 123,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
     "pseudocode_lines": 28,
-    "suspect_count": 6,
+    "suspect_count": 7,
     "suspect_types": [
       "badspacebase",
       "param_count_too_many",
       "register_param",
+      "special_crt_function",
       "stack_ref"
     ],
     "total_lines": 47
@@ -152,6 +153,15 @@
       "param_delta": -1,
       "text": "Function declares 1 params but call sites push 0 (1 extra)",
       "type": "param_count_too_many"
+    },
+    {
+      "address": "005ffa03",
+      "crt_type": "stack manipulation",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_stack.c_check_stack_target_FUN_005ffa03",
+      "match": "crt_",
+      "text": "CRT function (stack manipulation) at 005ffa03",
+      "type": "special_crt_function"
     }
   ]
 }

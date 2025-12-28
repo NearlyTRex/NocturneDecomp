@@ -1,13 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 13,
-    "complexity_score": 11,
+    "complexity_score": 26,
     "cross_reference_count": 12,
     "function_call_count": 1,
     "global_count": 1,
     "pseudocode_lines": 11,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "special_math_intrinsic"
+    ],
     "total_lines": 24
   },
   "cross_references": [
@@ -141,5 +143,15 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": []
+  "suspects": [
+    {
+      "address": "006013b1",
+      "description": "Math library function with FPU stack or unusual patterns",
+      "function_name": "crt_math.c_atan2_FUN_006013b1",
+      "match": "tan",
+      "math_function": "tan",
+      "text": "Math intrinsic (tan) at 006013b1",
+      "type": "special_math_intrinsic"
+    }
+  ]
 }

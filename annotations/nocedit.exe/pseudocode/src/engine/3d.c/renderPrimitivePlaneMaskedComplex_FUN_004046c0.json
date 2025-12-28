@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 124,
-    "complexity_score": 67,
+    "complexity_score": 102,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 11,
     "pseudocode_lines": 52,
-    "suspect_count": 1,
+    "suspect_count": 4,
     "suspect_types": [
+      "call_esp_preserve",
       "pointer_cast"
     ],
     "total_lines": 176
@@ -187,6 +188,45 @@
       "match": "(SMRGLHeaderExtended *)((int)",
       "text": "return (SMRGLHeaderExtended *)((int)&primitive[1].base + (primitive->base).count * 0xc);",
       "type": "pointer_cast"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "004046d4",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "004046d9",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 16,
+      "return_address": "004046d9",
+      "target_address": "0x403950",
+      "text": "Direct CALL at 004046d4, ADD ESP at 004046d9 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "00404703",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0040470e",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 16,
+      "return_address": "00404708",
+      "target_address": "0x403a00",
+      "text": "Direct CALL at 00404703, ADD ESP at 0040470e (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "00404824",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00404829",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 16,
+      "return_address": "00404829",
+      "target_address": "0x4371b0",
+      "text": "Direct CALL at 00404824, ADD ESP at 00404829 (no EBP frame)",
+      "type": "call_esp_preserve"
     }
   ],
   "vtable_info": {

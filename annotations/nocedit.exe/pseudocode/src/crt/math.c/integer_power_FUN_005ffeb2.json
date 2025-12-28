@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 31,
-    "complexity_score": 127,
+    "complexity_score": 142,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 32,
-    "suspect_count": 9,
+    "suspect_count": 10,
     "suspect_types": [
-      "register_param"
+      "register_param",
+      "special_math_intrinsic"
     ],
     "total_lines": 63
   },
@@ -143,6 +144,15 @@
       "match": "in_AX",
       "text": "bVar3 = in_AX == 0;",
       "type": "register_param"
+    },
+    {
+      "address": "005ffeb2",
+      "description": "Math library function with FPU stack or unusual patterns",
+      "function_name": "crt_math.c_integer_power_FUN_005ffeb2",
+      "match": "pow",
+      "math_function": "pow",
+      "text": "Math intrinsic (pow) at 005ffeb2",
+      "type": "special_math_intrinsic"
     }
   ]
 }

@@ -1,15 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 41,
-    "complexity_score": 56,
+    "complexity_score": 96,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 1,
     "pseudocode_lines": 26,
-    "suspect_count": 2,
+    "suspect_count": 5,
     "suspect_types": [
       "badspacebase",
-      "register_param"
+      "lea_esp_stack_addr",
+      "register_param",
+      "special_crt_function"
     ],
     "total_lines": 67
   },
@@ -154,6 +156,33 @@
       "match": "in_ESP",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "register_param"
+    },
+    {
+      "address": "0060ae63",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 1,
+      "instruction": "LEA ECX, [ESP + 0x1]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 0060ae63",
+      "type": "lea_esp_stack_addr"
+    },
+    {
+      "address": "0060ae6e",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 36,
+      "instruction": "LEA EBX, [ESP + 0x24]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 0060ae6e",
+      "type": "lea_esp_stack_addr"
+    },
+    {
+      "address": "0060ae50",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_stdlib.c_utoa_FUN_0060ae50",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 0060ae50",
+      "type": "special_crt_function"
     }
   ]
 }

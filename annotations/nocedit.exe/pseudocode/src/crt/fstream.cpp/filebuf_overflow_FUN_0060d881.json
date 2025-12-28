@@ -1,15 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 239,
-    "complexity_score": 184,
+    "complexity_score": 254,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 0,
     "pseudocode_lines": 94,
-    "suspect_count": 7,
+    "suspect_count": 13,
     "suspect_types": [
       "badspacebase",
+      "call_esp_anchor",
       "register_param",
+      "special_crt_function",
       "stack_ref",
       "unaffected_reg"
     ],
@@ -200,6 +202,80 @@
       "match": "unaff_EDI",
       "text": "(iVar3 = crt_stdio_c_lseek_FUN_00606690(this_ptr->__file_handle,unaff_EDI,0), -1 < iVar3))",
       "type": "unaffected_reg"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "0060d90b",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0060d910",
+      "frame_offset": 4,
+      "match": "CALL...ADD ESP",
+      "return_address": "0060d910",
+      "target_address": "0x6084ec",
+      "text": "Direct CALL at 0060d90b, ADD ESP at 0060d910 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "0060d96c",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0060d971",
+      "frame_offset": 4,
+      "match": "CALL...ADD ESP",
+      "return_address": "0060d971",
+      "target_address": "0x6084ec",
+      "text": "Direct CALL at 0060d96c, ADD ESP at 0060d971 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "0060d9ce",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0060d9d3",
+      "frame_offset": 4,
+      "match": "CALL...ADD ESP",
+      "return_address": "0060d9d3",
+      "target_address": "0x606720",
+      "text": "Direct CALL at 0060d9ce, ADD ESP at 0060d9d3 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "0060d9e4",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0060d9e9",
+      "frame_offset": 4,
+      "match": "CALL...ADD ESP",
+      "return_address": "0060d9e9",
+      "target_address": "0x606690",
+      "text": "Direct CALL at 0060d9e4, ADD ESP at 0060d9e9 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "0060da6b",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0060da70",
+      "frame_offset": 4,
+      "match": "CALL...ADD ESP",
+      "return_address": "0060da70",
+      "target_address": "0x606690",
+      "text": "Direct CALL at 0060da6b, ADD ESP at 0060da70 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "address": "0060d881",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_fstream.cpp_filebuf_overflow_FUN_0060d881",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 0060d881",
+      "type": "special_crt_function"
     }
   ],
   "vtable_info": {

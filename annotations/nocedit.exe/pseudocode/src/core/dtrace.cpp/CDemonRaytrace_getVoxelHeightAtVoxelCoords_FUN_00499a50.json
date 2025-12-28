@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 112,
-    "complexity_score": 66,
+    "complexity_score": 81,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
     "pseudocode_lines": 41,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
+      "call_esp_preserve",
       "unaffected_reg"
     ],
     "total_lines": 153
@@ -147,6 +148,19 @@
       "match": "unaff_EBP",
       "text": "((pCVar2->voxel_buffer1->voxels[0][unaff_EBP + uVar6] & g_VoxelYBitMasks[uVar1 & 7]) != 0",
       "type": "unaffected_reg"
+    },
+    {
+      "add_esp_value": 16,
+      "call_address": "00499ae2",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "00499ae7",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 24,
+      "return_address": "00499ae7",
+      "target_address": "0x4952b0",
+      "text": "Direct CALL at 00499ae2, ADD ESP at 00499ae7 (no EBP frame)",
+      "type": "call_esp_preserve"
     }
   ]
 }

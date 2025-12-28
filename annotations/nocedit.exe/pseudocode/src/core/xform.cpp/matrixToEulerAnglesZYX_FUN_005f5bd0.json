@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 455,
-    "complexity_score": 614,
+    "complexity_score": 629,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 7,
     "pseudocode_lines": 189,
-    "suspect_count": 41,
+    "suspect_count": 42,
     "suspect_types": [
       "concat_artifact",
       "extra_output",
+      "stack_align_anchor",
       "sub_artifact"
     ],
     "total_lines": 644
@@ -624,6 +625,15 @@
       "match": "extraout_ECX",
       "text": "matrix_ptr = (CMatrix3x3f *)extraout_ECX;",
       "type": "extra_output"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x9c",
+      "fix_address": "005f5bdb",
+      "match": "AND ESP",
+      "sub_esp_offset": 156,
+      "text": "Stack alignment at 005f5bdb (SUB ESP, 0x9c before)",
+      "type": "stack_align_anchor"
     }
   ]
 }

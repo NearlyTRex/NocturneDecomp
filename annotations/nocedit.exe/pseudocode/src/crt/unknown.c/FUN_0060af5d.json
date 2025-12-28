@@ -1,16 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 333,
+    "complexity_score": 348,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 43,
-    "suspect_count": 27,
+    "suspect_count": 28,
     "suspect_types": [
       "concat_artifact",
       "extra_output",
       "register_param",
+      "special_crt_function",
       "stack_param"
     ],
     "total_lines": 170
@@ -369,6 +370,15 @@
       "match": "CONCAT22",
       "text": "return CONCAT44 /* combine 2-byte values */(CONCAT22 /* combine 2-byte values */((short)((uint)iVar2 >> 0x10),in_DS),in_stack_00000004);",
       "type": "concat_artifact"
+    },
+    {
+      "address": "0060af5d",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_unknown.c_FUN_0060af5d",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 0060af5d",
+      "type": "special_crt_function"
     }
   ]
 }

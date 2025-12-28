@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 39,
-    "complexity_score": 51,
+    "complexity_score": 66,
     "cross_reference_count": 15,
     "function_call_count": 2,
     "global_count": 1,
     "pseudocode_lines": 26,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
-      "extra_output"
+      "extra_output",
+      "special_math_intrinsic"
     ],
     "total_lines": 65
   },
@@ -193,6 +194,15 @@
       "match": "extraout_AL",
       "text": "if (extraout_AL == '\\0') {",
       "type": "extra_output"
+    },
+    {
+      "address": "00600162",
+      "description": "Math library function with FPU stack or unusual patterns",
+      "function_name": "crt_math.c_acos_FUN_00600162",
+      "match": "cos",
+      "math_function": "cos",
+      "text": "Math intrinsic (cos) at 00600162",
+      "type": "special_math_intrinsic"
     }
   ]
 }

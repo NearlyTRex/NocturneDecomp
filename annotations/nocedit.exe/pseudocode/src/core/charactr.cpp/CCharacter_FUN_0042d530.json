@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 49,
-    "complexity_score": 66,
+    "complexity_score": 81,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 21,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
       "badspacebase",
+      "call_esp_preserve",
       "register_param",
       "stack_ref"
     ],
@@ -115,6 +116,19 @@
       "match": "&stack0xffffffe4",
       "text": "(&this_ptr->model,(CBoundingBox3D *)&stack0xffffffe4);",
       "type": "stack_ref"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "0042d552",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0042d55d",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 28,
+      "return_address": "0042d557",
+      "target_address": "0x5a16c0",
+      "text": "Direct CALL at 0042d552, ADD ESP at 0042d55d (no EBP frame)",
+      "type": "call_esp_preserve"
     }
   ]
 }

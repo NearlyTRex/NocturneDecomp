@@ -1,14 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 60,
+    "complexity_score": 90,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 4,
     "pseudocode_lines": 20,
-    "suspect_count": 3,
+    "suspect_count": 5,
     "suspect_types": [
+      "call_esp_preserve",
       "pointer_cast",
+      "special_crt_function",
       "stack_param"
     ],
     "total_lines": 54
@@ -148,6 +150,28 @@
       "match": "in_stack_0000001c",
       "text": "if ((hObject != (HANDLE)0x0) && (in_stack_0000001c != 0)) {",
       "type": "stack_param"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "0060a35a",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "0060a35f",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 24,
+      "return_address": "0060a35f",
+      "target_address": "0x60cc3c",
+      "text": "Direct CALL at 0060a35a, ADD ESP at 0060a35f (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "address": "0060a334",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_tls.c_cleanup_thread_tls_data_FUN_0060a334",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 0060a334",
+      "type": "special_crt_function"
     }
   ]
 }

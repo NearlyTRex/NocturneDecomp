@@ -1,17 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 179,
+    "complexity_score": 209,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 7,
     "pseudocode_lines": 29,
-    "suspect_count": 12,
+    "suspect_count": 14,
     "suspect_types": [
       "badspacebase",
+      "call_esp_preserve",
       "callind_preserve",
       "param_count_too_few",
       "register_param",
+      "special_crt_function",
       "stack_param",
       "stack_ref"
     ],
@@ -283,6 +285,28 @@
       "param_delta": 2,
       "text": "Function declares 0 params but call sites push 2 (2 missing)",
       "type": "param_count_too_few"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "0060b458",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0060b45d",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 12,
+      "return_address": "0060b45d",
+      "target_address": "0x60b2e0",
+      "text": "Direct CALL at 0060b458, ADD ESP at 0060b45d (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "address": "0060b3f8",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_stdio.c_DrainConsoleInputAndSetup_FUN_0060b3f8",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 0060b3f8",
+      "type": "special_crt_function"
     }
   ]
 }

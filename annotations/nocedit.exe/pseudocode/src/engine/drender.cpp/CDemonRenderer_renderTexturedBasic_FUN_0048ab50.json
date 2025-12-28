@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 51,
+    "complexity_score": 96,
     "cross_reference_count": 5,
     "function_call_count": 3,
     "global_count": 7,
     "pseudocode_lines": 36,
-    "suspect_count": 1,
+    "suspect_count": 5,
     "suspect_types": [
+      "call_esp_preserve",
       "param_count_too_many"
     ],
     "total_lines": 123
@@ -275,6 +276,58 @@
       "param_delta": -1,
       "text": "Function declares 2 params but call sites push 1 (1 extra)",
       "type": "param_count_too_many"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "0048aba6",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "0048abab",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 16,
+      "return_address": "0048abab",
+      "target_address": "0x48cac0",
+      "text": "Direct CALL at 0048aba6, ADD ESP at 0048abab (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "0048abb7",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "0048abc2",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 16,
+      "return_address": "0048abbc",
+      "target_address": "0x48a740",
+      "text": "Direct CALL at 0048abb7, ADD ESP at 0048abc2 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "0048abcb",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "0048abd0",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 16,
+      "return_address": "0048abd0",
+      "target_address": "0x48cac0",
+      "text": "Direct CALL at 0048abcb, ADD ESP at 0048abd0 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "0048abf7",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0048abfc",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 16,
+      "return_address": "0048abfc",
+      "target_address": "0x403950",
+      "text": "Direct CALL at 0048abf7, ADD ESP at 0048abfc (no EBP frame)",
+      "type": "call_esp_preserve"
     }
   ]
 }

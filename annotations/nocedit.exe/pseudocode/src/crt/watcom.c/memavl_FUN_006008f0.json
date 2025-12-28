@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 35,
-    "complexity_score": 31,
+    "complexity_score": 46,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 3,
     "pseudocode_lines": 16,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
-      "param_count_too_few"
+      "param_count_too_few",
+      "special_crt_function"
     ],
     "total_lines": 51
   },
@@ -122,6 +123,15 @@
       "param_delta": 5,
       "text": "Function declares 0 params but call sites push 5 (5 missing)",
       "type": "param_count_too_few"
+    },
+    {
+      "address": "006008f0",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_watcom.c_memavl_FUN_006008f0",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 006008f0",
+      "type": "special_crt_function"
     }
   ]
 }

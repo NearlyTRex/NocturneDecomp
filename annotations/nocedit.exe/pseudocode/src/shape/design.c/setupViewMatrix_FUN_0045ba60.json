@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 103,
-    "complexity_score": 57,
+    "complexity_score": 72,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 8,
     "pseudocode_lines": 42,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "call_esp_anchor",
       "warning_unreachable"
     ],
     "total_lines": 145
@@ -185,6 +186,19 @@
       "match": "WARNING: Removing unreachable block",
       "text": "/* WARNING: Removing unreachable block (ram,0x0045bb46) */",
       "type": "warning_unreachable"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "0045bb54",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0045bb59",
+      "frame_offset": 16,
+      "match": "CALL...ADD ESP",
+      "return_address": "0045bb59",
+      "target_address": "0x50c920",
+      "text": "Direct CALL at 0045bb54, ADD ESP at 0045bb59 with uncertain ESP",
+      "type": "call_esp_anchor"
     }
   ]
 }

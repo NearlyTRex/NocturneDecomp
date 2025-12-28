@@ -1,16 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 32,
-    "complexity_score": 110,
+    "complexity_score": 140,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 3,
     "pseudocode_lines": 15,
-    "suspect_count": 8,
+    "suspect_count": 10,
     "suspect_types": [
+      "call_esp_preserve",
       "callind_preserve",
       "concat_artifact",
-      "register_param"
+      "register_param",
+      "special_crt_function"
     ],
     "total_lines": 47
   },
@@ -215,6 +217,28 @@
       "return_address": "006099b7",
       "text": "CALLIND at 006099b1, ADD ESP at 006099b9 (no EBP frame)",
       "type": "callind_preserve"
+    },
+    {
+      "add_esp_value": 16,
+      "call_address": "00609998",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "0060999d",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 8,
+      "return_address": "0060999d",
+      "target_address": "0x6097b8",
+      "text": "Direct CALL at 00609998, ADD ESP at 0060999d (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "address": "00609974",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_heap.c_TryResizeInPlace_FUN_00609974",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 00609974",
+      "type": "special_crt_function"
     }
   ]
 }

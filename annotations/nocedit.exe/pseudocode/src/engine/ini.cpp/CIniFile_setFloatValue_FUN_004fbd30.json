@@ -1,14 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 22,
-    "complexity_score": 84,
+    "complexity_score": 114,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
     "pseudocode_lines": 9,
-    "suspect_count": 5,
+    "suspect_count": 7,
     "suspect_types": [
       "badspacebase",
+      "call_esp_preserve",
+      "lea_esp_stack_addr",
       "param_count_too_many",
       "register_param",
       "stack_ref",
@@ -202,6 +204,28 @@
       "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
       "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 004fbd47 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "004fbd5c",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "004fbd61",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 100,
+      "return_address": "004fbd61",
+      "target_address": "0x4fbbb0",
+      "text": "Direct CALL at 004fbd5c, ADD ESP at 004fbd61 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "address": "004fbd42",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 12,
+      "instruction": "LEA EAX, [ESP + 0xc]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 004fbd42",
+      "type": "lea_esp_stack_addr"
     }
   ]
 }

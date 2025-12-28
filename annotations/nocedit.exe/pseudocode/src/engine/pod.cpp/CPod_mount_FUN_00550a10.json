@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 83,
-    "complexity_score": 115,
+    "complexity_score": 150,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 9,
     "pseudocode_lines": 35,
-    "suspect_count": 7,
+    "suspect_count": 10,
     "suspect_types": [
+      "call_esp_preserve",
       "stack_param",
       "variadic_preserve"
     ],
@@ -230,6 +231,45 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00550adc (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "00550a2f",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "00550a34",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 28,
+      "return_address": "00550a34",
+      "target_address": "0x50f1b0",
+      "text": "Direct CALL at 00550a2f, ADD ESP at 00550a34 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "00550a3c",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "00550a41",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 28,
+      "return_address": "00550a41",
+      "target_address": "0x54f5a0",
+      "text": "Direct CALL at 00550a3c, ADD ESP at 00550a41 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "00550a81",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "00550a86",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 28,
+      "return_address": "00550a86",
+      "target_address": "0x54f650",
+      "text": "Direct CALL at 00550a81, ADD ESP at 00550a86 (no EBP frame)",
+      "type": "call_esp_preserve"
     }
   ],
   "vtable_info": {

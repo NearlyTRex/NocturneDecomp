@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 4,
-    "complexity_score": 20,
+    "complexity_score": 35,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 5,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "special_crt_function"
     ],
     "total_lines": 9
   },
@@ -89,6 +90,15 @@
       "match": "(void *)((int)",
       "text": "state->input_ptr = (void *)((int)state->input_ptr + -1);",
       "type": "pointer_cast"
+    },
+    {
+      "address": "006000f8",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_stdio.c_string_ungetc_FUN_006000f8",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 006000f8",
+      "type": "special_crt_function"
     }
   ]
 }

@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 163,
-    "complexity_score": 193,
+    "complexity_score": 208,
     "cross_reference_count": 5,
     "function_call_count": 4,
     "global_count": 1,
     "pseudocode_lines": 83,
-    "suspect_count": 9,
+    "suspect_count": 10,
     "suspect_types": [
       "concat_artifact",
       "extra_output",
+      "special_math_intrinsic",
       "sub_artifact",
       "undefined_type"
     ],
@@ -233,6 +234,15 @@
       "match": "extraout_AL",
       "text": "if (extraout_AL == '\\0') {",
       "type": "extra_output"
+    },
+    {
+      "address": "005ffd76",
+      "description": "Math library function with FPU stack or unusual patterns",
+      "function_name": "crt_math.c_pow_FUN_005ffd76",
+      "match": "pow",
+      "math_function": "pow",
+      "text": "Math intrinsic (pow) at 005ffd76",
+      "type": "special_math_intrinsic"
     }
   ]
 }

@@ -1,15 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 25,
-    "complexity_score": 61,
+    "complexity_score": 91,
     "cross_reference_count": 4,
     "function_call_count": 1,
     "global_count": 2,
     "pseudocode_lines": 16,
-    "suspect_count": 3,
+    "suspect_count": 5,
     "suspect_types": [
       "badspacebase",
+      "lea_esp_stack_addr",
       "register_param",
+      "special_crt_function",
       "stack_param"
     ],
     "total_lines": 41
@@ -137,6 +139,24 @@
       "match": "in_stack_00000006",
       "text": "ushort in_stack_00000006;",
       "type": "stack_param"
+    },
+    {
+      "address": "0060ad02",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 28,
+      "instruction": "LEA EAX, [ESP + 0x1c]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 0060ad02",
+      "type": "lea_esp_stack_addr"
+    },
+    {
+      "address": "0060acf0",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_stdio.c_WideCharToSingleByte_FUN_0060acf0",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 0060acf0",
+      "type": "special_crt_function"
     }
   ]
 }

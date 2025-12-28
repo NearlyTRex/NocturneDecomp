@@ -1,13 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 32,
+    "complexity_score": 47,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 1,
     "pseudocode_lines": 32,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "special_crt_function"
+    ],
     "total_lines": 91
   },
   "cross_references": [
@@ -140,5 +142,15 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "address": "0060a748",
+      "crt_type": "exception handling",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_exception.c_FormatHexString_FUN_0060a748",
+      "match": "crt_",
+      "text": "CRT function (exception handling) at 0060a748",
+      "type": "special_crt_function"
+    }
+  ]
 }

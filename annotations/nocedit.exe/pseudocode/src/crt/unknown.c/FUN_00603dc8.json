@@ -1,16 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 246,
-    "complexity_score": 952,
+    "complexity_score": 992,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 1,
     "pseudocode_lines": 247,
-    "suspect_count": 68,
+    "suspect_count": 71,
     "suspect_types": [
       "badspacebase",
+      "call_esp_anchor",
       "concat_artifact",
       "register_param",
+      "special_crt_function",
       "stack_param",
       "sub_artifact"
     ],
@@ -689,6 +691,41 @@
       "match": "in_stack_00000008",
       "text": "((*(byte *)(in_stack_00000008 + 2) & 8) == 0)))))) {",
       "type": "stack_param"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "00603e45",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "00603e4a",
+      "frame_offset": 136,
+      "match": "CALL...ADD ESP",
+      "return_address": "00603e4a",
+      "target_address": "0x60b07a",
+      "text": "Direct CALL at 00603e45, ADD ESP at 00603e4a with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "00603fc8",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00603fcd",
+      "frame_offset": 136,
+      "match": "CALL...ADD ESP",
+      "return_address": "00603fcd",
+      "target_address": "0x603d60",
+      "text": "Direct CALL at 00603fc8, ADD ESP at 00603fcd with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "address": "00603dc8",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_unknown.c_FUN_00603dc8",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 00603dc8",
+      "type": "special_crt_function"
     }
   ]
 }

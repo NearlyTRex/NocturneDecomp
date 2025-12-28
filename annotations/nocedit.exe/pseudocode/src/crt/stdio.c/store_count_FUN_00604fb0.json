@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 48,
+    "complexity_score": 63,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 33,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "special_crt_function",
       "undefined_ptr_cast"
     ],
     "total_lines": 94
@@ -93,6 +94,15 @@
       "match": "(undefined6 *)",
       "text": "piVar3 = (int *)*(undefined6 *)pcVar2;",
       "type": "undefined_ptr_cast"
+    },
+    {
+      "address": "00604fb0",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_stdio.c_store_count_FUN_00604fb0",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 00604fb0",
+      "type": "special_crt_function"
     }
   ]
 }

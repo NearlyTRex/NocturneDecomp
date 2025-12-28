@@ -1,15 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 273,
-    "complexity_score": 892,
+    "complexity_score": 932,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 24,
     "pseudocode_lines": 137,
-    "suspect_count": 72,
+    "suspect_count": 75,
     "suspect_types": [
       "badspacebase",
+      "call_esp_preserve",
       "extra_output",
+      "lea_esp_stack_addr",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -878,6 +880,41 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00482a84 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "00482aac",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "00482ab1",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 308,
+      "return_address": "00482ab1",
+      "target_address": "0x482180",
+      "text": "Direct CALL at 00482aac, ADD ESP at 00482ab1 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "00482e0f",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "00482e14",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 308,
+      "return_address": "00482e14",
+      "target_address": "0x482e40",
+      "text": "Direct CALL at 00482e0f, ADD ESP at 00482e14 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "address": "00482a5f",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 12,
+      "instruction": "LEA EAX, [ESP + 0xc]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 00482a5f",
+      "type": "lea_esp_stack_addr"
     }
   ]
 }

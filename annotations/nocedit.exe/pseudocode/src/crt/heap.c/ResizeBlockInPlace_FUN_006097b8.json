@@ -1,17 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 201,
-    "complexity_score": 461,
+    "complexity_score": 491,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "pseudocode_lines": 96,
-    "suspect_count": 34,
+    "suspect_count": 36,
     "suspect_types": [
+      "call_esp_preserve",
       "negative_offset",
       "param_count_too_few",
       "pointer_cast",
       "register_param",
+      "special_crt_function",
       "stack_param"
     ],
     "total_lines": 297
@@ -379,6 +381,28 @@
       "param_delta": 3,
       "text": "Function declares 4 params but call sites push 7 (3 missing)",
       "type": "param_count_too_few"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "00609960",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00609965",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 28,
+      "return_address": "00609965",
+      "target_address": "0x601ce0",
+      "text": "Direct CALL at 00609960, ADD ESP at 00609965 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "address": "006097b8",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_heap.c_ResizeBlockInPlace_FUN_006097b8",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 006097b8",
+      "type": "special_crt_function"
     }
   ]
 }

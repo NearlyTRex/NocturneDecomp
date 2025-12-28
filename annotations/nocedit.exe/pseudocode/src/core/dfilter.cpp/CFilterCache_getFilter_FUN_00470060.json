@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 131,
-    "complexity_score": 127,
+    "complexity_score": 182,
     "cross_reference_count": 3,
     "function_call_count": 6,
     "global_count": 7,
     "pseudocode_lines": 57,
-    "suspect_count": 6,
+    "suspect_count": 11,
     "suspect_types": [
+      "call_esp_preserve",
       "stack_param",
       "variadic_preserve"
     ],
@@ -245,6 +246,71 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00470193 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "00470079",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "0047007e",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 20,
+      "return_address": "0047007e",
+      "target_address": "0x5fef20",
+      "text": "Direct CALL at 00470079, ADD ESP at 0047007e (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "004700de",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "004700e3",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 20,
+      "return_address": "004700e3",
+      "target_address": "0x50f1b0",
+      "text": "Direct CALL at 004700de, ADD ESP at 004700e3 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "004700eb",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "004700f0",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 20,
+      "return_address": "004700f0",
+      "target_address": "0x4701f0",
+      "text": "Direct CALL at 004700eb, ADD ESP at 004700f0 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "00470138",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "0047013d",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 20,
+      "return_address": "0047013d",
+      "target_address": "0x4702f0",
+      "text": "Direct CALL at 00470138, ADD ESP at 0047013d (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "00470155",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "0047015a",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 20,
+      "return_address": "0047015a",
+      "target_address": "0x4705a0",
+      "text": "Direct CALL at 00470155, ADD ESP at 0047015a (no EBP frame)",
+      "type": "call_esp_preserve"
     }
   ]
 }

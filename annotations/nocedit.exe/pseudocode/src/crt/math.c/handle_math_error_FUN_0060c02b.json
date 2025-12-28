@@ -1,16 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 79,
-    "complexity_score": 217,
+    "complexity_score": 247,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 37,
-    "suspect_count": 15,
+    "suspect_count": 17,
     "suspect_types": [
       "badspacebase",
+      "call_esp_anchor",
       "concat_artifact",
       "register_param",
+      "special_crt_function",
       "stack_param",
       "stack_ref",
       "sub_artifact"
@@ -237,6 +239,28 @@
       "match": "CONCAT44",
       "text": "return (double)CONCAT44 /* combine 2-byte values */(local_14,local_18);",
       "type": "concat_artifact"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "0060c08d",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0060c098",
+      "frame_offset": 16,
+      "match": "CALL...ADD ESP",
+      "return_address": "0060c092",
+      "target_address": "0x60befa",
+      "text": "Direct CALL at 0060c08d, ADD ESP at 0060c098 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "address": "0060c02b",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_math.c_handle_math_error_FUN_0060c02b",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 0060c02b",
+      "type": "special_crt_function"
     }
   ]
 }

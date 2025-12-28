@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 11,
-    "complexity_score": 22,
+    "complexity_score": 37,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 1,
     "pseudocode_lines": 7,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "call_esp_preserve",
       "pointer_cast"
     ],
     "total_lines": 18
@@ -92,6 +93,19 @@
       "match": "(SClothVertex *)((int)",
       "text": "return (SClothVertex *)((int)pvVar1 + -0xec);",
       "type": "pointer_cast"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "0043e431",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "0043e436",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 12,
+      "return_address": "0043e436",
+      "target_address": "0x5fe667",
+      "text": "Direct CALL at 0043e431, ADD ESP at 0043e436 (no EBP frame)",
+      "type": "call_esp_preserve"
     }
   ],
   "vtable_info": {

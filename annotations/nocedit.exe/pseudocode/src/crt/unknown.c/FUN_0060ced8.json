@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 18,
-    "complexity_score": 37,
+    "complexity_score": 52,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "pseudocode_lines": 12,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
+      "special_crt_function",
       "unaffected_reg"
     ],
     "total_lines": 30
@@ -98,6 +99,15 @@
       "match": "unaff_EBX",
       "text": "pTVar1 = (*PTR_crt_thread_c_GetTLS_FUN_0060242c_00684ee4)(unaff_EBX);",
       "type": "unaffected_reg"
+    },
+    {
+      "address": "0060ced8",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_unknown.c_FUN_0060ced8",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 0060ced8",
+      "type": "special_crt_function"
     }
   ]
 }

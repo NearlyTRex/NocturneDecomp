@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 138,
-    "complexity_score": 143,
+    "complexity_score": 158,
     "cross_reference_count": 5,
     "function_call_count": 2,
     "global_count": 7,
     "pseudocode_lines": 43,
-    "suspect_count": 9,
+    "suspect_count": 10,
     "suspect_types": [
       "pointer_cast",
-      "register_param"
+      "register_param",
+      "special_crt_function"
     ],
     "total_lines": 181
   },
@@ -220,6 +221,15 @@
       "match": "in_DS",
       "text": "crt_heap_c_CoalesceAndAddFreeBlock_FUN_006094c0(ptr,(HeapBlock *)(uint)in_DS,(ushort)pHVar2);",
       "type": "register_param"
+    },
+    {
+      "address": "00601ce0",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_heap.c_ValidateHeapIntegrity_FUN_00601ce0",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 00601ce0",
+      "type": "special_crt_function"
     }
   ]
 }

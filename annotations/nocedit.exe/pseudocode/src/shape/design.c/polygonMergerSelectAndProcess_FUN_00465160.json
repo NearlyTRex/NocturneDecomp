@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 32,
-    "complexity_score": 28,
+    "complexity_score": 43,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
     "pseudocode_lines": 13,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "call_esp_anchor",
       "param_count_too_many"
     ],
     "total_lines": 45
@@ -132,6 +133,19 @@
       "param_delta": -1,
       "text": "Function declares 2 params but call sites push 1 (1 extra)",
       "type": "param_count_too_many"
+    },
+    {
+      "add_esp_value": 16,
+      "call_address": "00465194",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00465199",
+      "frame_offset": 0,
+      "match": "CALL...ADD ESP",
+      "return_address": "00465199",
+      "target_address": "0x465b40",
+      "text": "Direct CALL at 00465194, ADD ESP at 00465199 with uncertain ESP",
+      "type": "call_esp_anchor"
     }
   ]
 }

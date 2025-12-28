@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 13,
-    "complexity_score": 189,
+    "complexity_score": 204,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
     "pseudocode_lines": 59,
-    "suspect_count": 11,
+    "suspect_count": 12,
     "suspect_types": [
       "badspacebase",
+      "call_esp_preserve",
       "register_param",
       "stack_ref",
       "unaffected_reg"
@@ -162,6 +163,19 @@
       "match": "&stack0x00000008",
       "text": "(CVector3f *)&(pCVar2->base_actor).orient,(CVector3f *)&stack0x00000008,",
       "type": "stack_ref"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "00588e10",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "00588e15",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 68,
+      "return_address": "00588e15",
+      "target_address": "0x478d60",
+      "text": "Direct CALL at 00588e10, ADD ESP at 00588e15 (no EBP frame)",
+      "type": "call_esp_preserve"
     }
   ],
   "vtable_info": {

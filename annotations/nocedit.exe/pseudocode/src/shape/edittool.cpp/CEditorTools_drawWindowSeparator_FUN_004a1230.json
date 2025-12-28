@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 93,
-    "complexity_score": 88,
+    "complexity_score": 123,
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 14,
     "pseudocode_lines": 38,
-    "suspect_count": 4,
+    "suspect_count": 7,
     "suspect_types": [
+      "call_esp_preserve",
       "stack_param",
       "variadic_preserve"
     ],
@@ -276,6 +277,45 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 004a1258 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "004a12a6",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "004a12ab",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 20,
+      "return_address": "004a12ab",
+      "target_address": "0x4a6970",
+      "text": "Direct CALL at 004a12a6, ADD ESP at 004a12ab (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "004a12da",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "004a12ea",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 20,
+      "return_address": "004a12df",
+      "target_address": "0x402ee0",
+      "text": "Direct CALL at 004a12da, ADD ESP at 004a12ea (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "004a1315",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "004a131a",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 20,
+      "return_address": "004a131a",
+      "target_address": "0x402ee0",
+      "text": "Direct CALL at 004a1315, ADD ESP at 004a131a (no EBP frame)",
+      "type": "call_esp_preserve"
     }
   ]
 }

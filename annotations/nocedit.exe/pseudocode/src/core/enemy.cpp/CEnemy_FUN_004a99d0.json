@@ -92,6 +92,15 @@
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 004a99ea, ADD ESP at 004a99ed",
       "type": "callind_anchor"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x24",
+      "fix_address": "004a99d7",
+      "match": "AND ESP",
+      "sub_esp_offset": 36,
+      "text": "Stack alignment at 004a99d7 (SUB ESP, 0x24 before)",
+      "type": "stack_align_anchor"
     }
   ],
   "stack_frame": {

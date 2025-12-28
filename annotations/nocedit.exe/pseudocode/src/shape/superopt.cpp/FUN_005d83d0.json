@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 26,
-    "complexity_score": 111,
+    "complexity_score": 126,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 11,
-    "suspect_count": 9,
+    "suspect_count": 10,
     "suspect_types": [
+      "stack_align_anchor",
       "stack_param",
       "unaffected_reg"
     ],
@@ -170,6 +171,15 @@
       "match": "unaff_ESI",
       "text": "unaff_ESI[1] = dVar1 * in_stack_00000008;",
       "type": "unaffected_reg"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x10",
+      "fix_address": "005d83d7",
+      "match": "AND ESP",
+      "sub_esp_offset": 16,
+      "text": "Stack alignment at 005d83d7 (SUB ESP, 0x10 before)",
+      "type": "stack_align_anchor"
     }
   ]
 }

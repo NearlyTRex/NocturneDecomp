@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 25,
-    "complexity_score": 222,
+    "complexity_score": 237,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 7,
     "pseudocode_lines": 112,
-    "suspect_count": 9,
+    "suspect_count": 10,
     "suspect_types": [
       "badspacebase",
+      "call_esp_preserve",
       "register_param",
       "stack_param",
       "unaffected_reg"
@@ -239,6 +240,19 @@
       "match": "unaff_EDI",
       "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Hell froze\",unaff_EDI);",
       "type": "unaffected_reg"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "00575bca",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "00575bd1",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 92,
+      "return_address": "00575bcf",
+      "target_address": "0x575df0",
+      "text": "Direct CALL at 00575bca, ADD ESP at 00575bd1 (no EBP frame)",
+      "type": "call_esp_preserve"
     }
   ]
 }

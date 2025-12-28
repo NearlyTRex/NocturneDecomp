@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 272,
-    "complexity_score": 262,
+    "complexity_score": 287,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 26,
     "pseudocode_lines": 117,
-    "suspect_count": 12,
+    "suspect_count": 14,
     "suspect_types": [
       "badspacebase",
+      "call_esp_anchor",
       "param_count_too_few",
       "pointer_cast",
       "register_param",
@@ -298,6 +299,15 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005421d5 (EBP frame + ADD ESP)",
       "type": "variadic_anchor"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x144",
+      "fix_address": "00541ffc",
+      "match": "AND ESP",
+      "sub_esp_offset": 324,
+      "text": "Stack alignment at 00541ffc (SUB ESP, 0x144 before)",
+      "type": "stack_align_anchor"
     }
   ],
   "stack_frame": {
@@ -547,6 +557,32 @@
       "param_delta": 1,
       "text": "Function declares 0 params but call sites push 1 (1 missing)",
       "type": "param_count_too_few"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "00542210",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "00542215",
+      "frame_offset": 324,
+      "match": "CALL...ADD ESP",
+      "return_address": "00542215",
+      "target_address": "0x5fe5e0",
+      "text": "Direct CALL at 00542210, ADD ESP at 00542215 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "00542333",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0054233d",
+      "frame_offset": 324,
+      "match": "CALL...ADD ESP",
+      "return_address": "00542338",
+      "target_address": "0x541230",
+      "text": "Direct CALL at 00542333, ADD ESP at 0054233d with uncertain ESP",
+      "type": "call_esp_anchor"
     }
   ]
 }

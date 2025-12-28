@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 348,
-    "complexity_score": 719,
+    "complexity_score": 824,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 8,
     "pseudocode_lines": 174,
-    "suspect_count": 52,
+    "suspect_count": 62,
     "suspect_types": [
       "badspacebase",
+      "call_esp_anchor",
       "param_count_too_few",
       "register_param",
       "stack_param",
@@ -251,6 +252,15 @@
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 00526f95, ADD ESP at 00526f9d",
       "type": "callind_anchor"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0xa0",
+      "fix_address": "00526d9c",
+      "match": "AND ESP",
+      "sub_esp_offset": 160,
+      "text": "Stack alignment at 00526d9c (SUB ESP, 0xa0 before)",
+      "type": "stack_align_anchor"
     }
   ],
   "stack_frame": {
@@ -675,6 +685,136 @@
       "param_delta": 2,
       "text": "Function declares 0 params but call sites push 2 (2 missing)",
       "type": "param_count_too_few"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "00526fc6",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00526fcb",
+      "frame_offset": 160,
+      "match": "CALL...ADD ESP",
+      "return_address": "00526fcb",
+      "target_address": "0x41b540",
+      "text": "Direct CALL at 00526fc6, ADD ESP at 00526fcb with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "00526fcf",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00526fd4",
+      "frame_offset": 160,
+      "match": "CALL...ADD ESP",
+      "return_address": "00526fd4",
+      "target_address": "0x41b4e0",
+      "text": "Direct CALL at 00526fcf, ADD ESP at 00526fd4 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "00526ff3",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00526ff8",
+      "frame_offset": 160,
+      "match": "CALL...ADD ESP",
+      "return_address": "00526ff8",
+      "target_address": "0x408ec0",
+      "text": "Direct CALL at 00526ff3, ADD ESP at 00526ff8 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 24,
+      "call_address": "00527024",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00527029",
+      "frame_offset": 160,
+      "match": "CALL...ADD ESP",
+      "return_address": "00527029",
+      "target_address": "0x4286e0",
+      "text": "Direct CALL at 00527024, ADD ESP at 00527029 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "0052705c",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00527061",
+      "frame_offset": 160,
+      "match": "CALL...ADD ESP",
+      "return_address": "00527061",
+      "target_address": "0x52db00",
+      "text": "Direct CALL at 0052705c, ADD ESP at 00527061 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "00527089",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0052708e",
+      "frame_offset": 160,
+      "match": "CALL...ADD ESP",
+      "return_address": "0052708e",
+      "target_address": "0x52db00",
+      "text": "Direct CALL at 00527089, ADD ESP at 0052708e with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "0052709f",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "005270a9",
+      "frame_offset": 160,
+      "match": "CALL...ADD ESP",
+      "return_address": "005270a4",
+      "target_address": "0x52db00",
+      "text": "Direct CALL at 0052709f, ADD ESP at 005270a9 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "005270b9",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "005270be",
+      "frame_offset": 160,
+      "match": "CALL...ADD ESP",
+      "return_address": "005270be",
+      "target_address": "0x40c6d0",
+      "text": "Direct CALL at 005270b9, ADD ESP at 005270be with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "0052716d",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00527172",
+      "frame_offset": 160,
+      "match": "CALL...ADD ESP",
+      "return_address": "00527172",
+      "target_address": "0x40cc70",
+      "text": "Direct CALL at 0052716d, ADD ESP at 00527172 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "005271a4",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "005271ae",
+      "frame_offset": 160,
+      "match": "CALL...ADD ESP",
+      "return_address": "005271a9",
+      "target_address": "0x52db00",
+      "text": "Direct CALL at 005271a4, ADD ESP at 005271ae with uncertain ESP",
+      "type": "call_esp_anchor"
     }
   ]
 }

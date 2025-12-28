@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 69,
+    "complexity_score": 84,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 10,
     "pseudocode_lines": 24,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
       "badspacebase",
+      "lea_esp_stack_addr",
       "register_param",
       "stack_ref"
     ],
@@ -174,6 +175,15 @@
       "match": "&stack0xfffffe80",
       "text": "MVar1 = (*joyGetDevCapsA)(0,(LPJOYCAPSA)&stack0xfffffe80,0x194);",
       "type": "stack_ref"
+    },
+    {
+      "address": "005f4342",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 4,
+      "instruction": "LEA EAX, [ESP + 0x4]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 005f4342",
+      "type": "lea_esp_stack_addr"
     }
   ]
 }

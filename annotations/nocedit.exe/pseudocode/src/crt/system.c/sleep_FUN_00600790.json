@@ -1,13 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 5,
-    "complexity_score": 5,
+    "complexity_score": 20,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
     "pseudocode_lines": 5,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "special_crt_function"
+    ],
     "total_lines": 10
   },
   "cross_references": [
@@ -75,5 +77,15 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "address": "00600790",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_system.c_sleep_FUN_00600790",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 00600790",
+      "type": "special_crt_function"
+    }
+  ]
 }

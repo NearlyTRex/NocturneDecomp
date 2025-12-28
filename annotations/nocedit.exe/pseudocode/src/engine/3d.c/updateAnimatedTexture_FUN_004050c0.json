@@ -1,14 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 79,
-    "complexity_score": 100,
+    "complexity_score": 130,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 1,
     "pseudocode_lines": 35,
-    "suspect_count": 5,
+    "suspect_count": 7,
     "suspect_types": [
       "badspacebase",
+      "call_esp_preserve",
+      "lea_esp_stack_addr",
       "pointer_cast",
       "register_param"
     ],
@@ -155,6 +157,28 @@
       "match": "(SMRGLHeaderExtended *)((int)",
       "text": "return (SMRGLHeaderExtended *)((int)anim_texture + anim_texture->frame_count * 0x20 + 0x1c);",
       "type": "pointer_cast"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "0040512d",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "00405135",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 40,
+      "return_address": "00405132",
+      "target_address": "0x5dd800",
+      "text": "Direct CALL at 0040512d, ADD ESP at 00405135 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "address": "0040510a",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 8,
+      "instruction": "LEA EDI, [ESP + 0x8]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 0040510a",
+      "type": "lea_esp_stack_addr"
     }
   ],
   "vtable_info": {

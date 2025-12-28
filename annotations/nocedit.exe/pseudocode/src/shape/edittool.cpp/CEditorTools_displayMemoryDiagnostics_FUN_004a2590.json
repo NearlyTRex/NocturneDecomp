@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 98,
+    "complexity_score": 113,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 10,
     "pseudocode_lines": 53,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
       "badspacebase",
+      "call_esp_anchor",
       "register_param",
       "stack_ref"
     ],
@@ -181,6 +182,15 @@
       "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
       "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 004a2641 (EBP frame + ADD ESP)",
       "type": "variadic_anchor"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x14",
+      "fix_address": "004a2599",
+      "match": "AND ESP",
+      "sub_esp_offset": 20,
+      "text": "Stack alignment at 004a2599 (SUB ESP, 0x14 before)",
+      "type": "stack_align_anchor"
     }
   ],
   "stack_frame": {
@@ -293,6 +303,19 @@
       "match": "&stack0xffffffd8",
       "text": "while (iVar2 = crt_heap_c_heapCheckWrapper_FUN_006012c0(&stack0xffffffd8), iVar2 == 0) {",
       "type": "stack_ref"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "004a25af",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "004a25b4",
+      "frame_offset": 20,
+      "match": "CALL...ADD ESP",
+      "return_address": "004a25b4",
+      "target_address": "0x6012c0",
+      "text": "Direct CALL at 004a25af, ADD ESP at 004a25b4 with uncertain ESP",
+      "type": "call_esp_anchor"
     }
   ]
 }

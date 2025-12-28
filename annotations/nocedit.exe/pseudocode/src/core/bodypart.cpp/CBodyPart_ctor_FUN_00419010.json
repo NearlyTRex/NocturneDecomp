@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 301,
+    "complexity_score": 336,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 3,
     "pseudocode_lines": 36,
-    "suspect_count": 25,
+    "suspect_count": 28,
     "suspect_types": [
+      "call_esp_preserve",
       "negative_offset",
       "pointer_cast",
       "suspect_float"
@@ -316,6 +317,45 @@
       "match": "pCVar3[-6].",
       "text": "return (CBodyPart *)&pCVar3[-6].scrape_points[2].raytrace_normal;",
       "type": "negative_offset"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "00419015",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "0041901a",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 32,
+      "return_address": "0041901a",
+      "target_address": "0x4088b0",
+      "text": "Direct CALL at 00419015, ADD ESP at 0041901a (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "0041902a",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "0041902f",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 32,
+      "return_address": "0041902f",
+      "target_address": "0x5fe667",
+      "text": "Direct CALL at 0041902a, ADD ESP at 0041902f (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "0041903f",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "00419044",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 32,
+      "return_address": "00419044",
+      "target_address": "0x5fe667",
+      "text": "Direct CALL at 0041903f, ADD ESP at 00419044 (no EBP frame)",
+      "type": "call_esp_preserve"
     }
   ],
   "vtable_info": {

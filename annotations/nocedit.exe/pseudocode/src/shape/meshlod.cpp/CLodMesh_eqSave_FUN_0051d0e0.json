@@ -160,6 +160,15 @@
       "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
       "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 0051d168 (EBP frame + ADD ESP)",
       "type": "variadic_anchor"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x8",
+      "fix_address": "0051d0e9",
+      "match": "AND ESP",
+      "sub_esp_offset": 8,
+      "text": "Stack alignment at 0051d0e9 (SUB ESP, 0x8 before)",
+      "type": "stack_align_anchor"
     }
   ],
   "stack_frame": {

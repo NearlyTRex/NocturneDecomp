@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 46,
-    "complexity_score": 86,
+    "complexity_score": 101,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 1,
     "pseudocode_lines": 31,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
+      "call_esp_preserve",
       "format_string_mismatch",
       "unaffected_reg",
       "variadic_preserve"
@@ -132,6 +133,19 @@
       "match": "crt_stdio_c_sprintf_FUN_005fdbd0(param_5 + iVar5 + 1,\"%d\",iVar3 + 1,unaff_EBX);",
       "text": "Format string expects 1 args but got 2",
       "type": "format_string_mismatch"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "00576982",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "00576987",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 8,
+      "return_address": "00576987",
+      "target_address": "0x5ffef0",
+      "text": "Direct CALL at 00576982, ADD ESP at 00576987 (no EBP frame)",
+      "type": "call_esp_preserve"
     }
   ]
 }

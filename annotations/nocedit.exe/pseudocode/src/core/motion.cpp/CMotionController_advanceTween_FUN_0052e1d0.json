@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 93,
-    "complexity_score": 146,
+    "complexity_score": 161,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 1,
     "pseudocode_lines": 36,
-    "suspect_count": 10,
+    "suspect_count": 11,
     "suspect_types": [
       "param_count_too_few",
+      "stack_align_anchor",
       "stack_param"
     ],
     "total_lines": 129
@@ -270,6 +271,15 @@
       "param_delta": 3,
       "text": "Function declares 1 params but call sites push 4 (3 missing)",
       "type": "param_count_too_few"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x18",
+      "fix_address": "0052e1d9",
+      "match": "AND ESP",
+      "sub_esp_offset": 24,
+      "text": "Stack alignment at 0052e1d9 (SUB ESP, 0x18 before)",
+      "type": "stack_align_anchor"
     }
   ]
 }

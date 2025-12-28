@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 62,
+    "complexity_score": 77,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 1,
     "pseudocode_lines": 17,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
+      "stack_align_anchor",
       "stack_param"
     ],
     "total_lines": 55
@@ -150,6 +151,15 @@
       "match": "in_stack_00000004",
       "text": "dVar1 = crt_math_c_acos_FUN_00600162((double)in_stack_00000004);",
       "type": "stack_param"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0xc",
+      "fix_address": "004bf1a6",
+      "match": "AND ESP",
+      "sub_esp_offset": 12,
+      "text": "Stack alignment at 004bf1a6 (SUB ESP, 0xc before)",
+      "type": "stack_align_anchor"
     }
   ]
 }

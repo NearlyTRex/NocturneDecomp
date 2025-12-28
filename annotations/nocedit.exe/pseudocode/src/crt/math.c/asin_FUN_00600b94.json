@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 16,
-    "complexity_score": 37,
+    "complexity_score": 52,
     "cross_reference_count": 5,
     "function_call_count": 2,
     "global_count": 0,
     "pseudocode_lines": 12,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
-      "extra_output"
+      "extra_output",
+      "special_math_intrinsic"
     ],
     "total_lines": 28
   },
@@ -116,6 +117,15 @@
       "match": "extraout_AL",
       "text": "if (extraout_AL == '\\0') {",
       "type": "extra_output"
+    },
+    {
+      "address": "00600b94",
+      "description": "Math library function with FPU stack or unusual patterns",
+      "function_name": "crt_math.c_asin_FUN_00600b94",
+      "match": "sin",
+      "math_function": "sin",
+      "text": "Math intrinsic (sin) at 00600b94",
+      "type": "special_math_intrinsic"
     }
   ]
 }

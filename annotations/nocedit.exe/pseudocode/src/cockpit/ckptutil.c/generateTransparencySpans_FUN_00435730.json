@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 166,
-    "complexity_score": 288,
+    "complexity_score": 313,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 6,
     "pseudocode_lines": 88,
-    "suspect_count": 17,
+    "suspect_count": 19,
     "suspect_types": [
       "badspacebase",
+      "lea_esp_stack_addr",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -382,6 +383,24 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00435955 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "address": "0043584d",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 16,
+      "instruction": "LEA EAX, [ESP + 0x10]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 0043584d",
+      "type": "lea_esp_stack_addr"
+    },
+    {
+      "address": "0043592f",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 8,
+      "instruction": "LEA EAX, [ESP + 0x8]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 0043592f",
+      "type": "lea_esp_stack_addr"
     }
   ]
 }

@@ -1,13 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 16,
-    "complexity_score": 10,
+    "complexity_score": 25,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 2,
     "pseudocode_lines": 10,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "special_crt_function"
+    ],
     "total_lines": 26
   },
   "cross_references": [
@@ -86,5 +88,15 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": []
+  "suspects": [
+    {
+      "address": "00608b88",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_io.c_CreateFallbackHandle_FUN_00608b88",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 00608b88",
+      "type": "special_crt_function"
+    }
+  ]
 }

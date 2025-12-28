@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 32,
-    "complexity_score": 52,
+    "complexity_score": 77,
     "cross_reference_count": 53,
     "function_call_count": 3,
     "global_count": 0,
     "pseudocode_lines": 17,
-    "suspect_count": 3,
+    "suspect_count": 5,
     "suspect_types": [
+      "call_esp_preserve",
       "stack_param"
     ],
     "total_lines": 49
@@ -421,6 +422,32 @@
       "match": "in_stack_00000008",
       "text": "pCVar2 = sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005a5d00(in_stack_00000008,1);",
       "type": "stack_param"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "005a9670",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "005a9675",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 0,
+      "return_address": "005a9675",
+      "target_address": "0x5a5d00",
+      "text": "Direct CALL at 005a9670, ADD ESP at 005a9675 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "005a968e",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "005a9693",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 0,
+      "return_address": "005a9693",
+      "target_address": "0x5a5d00",
+      "text": "Direct CALL at 005a968e, ADD ESP at 005a9693 (no EBP frame)",
+      "type": "call_esp_preserve"
     }
   ]
 }

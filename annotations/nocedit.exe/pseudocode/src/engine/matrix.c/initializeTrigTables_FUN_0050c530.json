@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 46,
-    "complexity_score": 98,
+    "complexity_score": 113,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 5,
     "pseudocode_lines": 28,
-    "suspect_count": 6,
+    "suspect_count": 7,
     "suspect_types": [
       "extra_output",
-      "pointer_cast"
+      "pointer_cast",
+      "stack_align_anchor"
     ],
     "total_lines": 74
   },
@@ -195,6 +196,15 @@
       "match": "(int *)((int)",
       "text": "*(int *)((int)g_SinTable + extraout_EDX + 0x400) = (int)ROUND(dVar7);",
       "type": "pointer_cast"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0xc",
+      "fix_address": "0050c536",
+      "match": "AND ESP",
+      "sub_esp_offset": 12,
+      "text": "Stack alignment at 0050c536 (SUB ESP, 0xc before)",
+      "type": "stack_align_anchor"
     }
   ]
 }

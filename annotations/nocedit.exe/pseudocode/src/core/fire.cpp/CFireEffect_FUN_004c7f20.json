@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 42,
-    "complexity_score": 24,
+    "complexity_score": 39,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 3,
     "pseudocode_lines": 9,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "call_esp_preserve",
       "pointer_cast"
     ],
     "total_lines": 51
@@ -122,6 +123,19 @@
       "match": "(CRock *)((int)",
       "text": "g_CFireEffectRocksEnd = (CRock *)((int)&(g_CFireEffectRocksEnd->base).position.x + 1);",
       "type": "pointer_cast"
+    },
+    {
+      "add_esp_value": 44,
+      "call_address": "004c7f67",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "004c7f72",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 44,
+      "return_address": "004c7f6c",
+      "target_address": "0x4c2420",
+      "text": "Direct CALL at 004c7f67, ADD ESP at 004c7f72 (no EBP frame)",
+      "type": "call_esp_preserve"
     }
   ]
 }

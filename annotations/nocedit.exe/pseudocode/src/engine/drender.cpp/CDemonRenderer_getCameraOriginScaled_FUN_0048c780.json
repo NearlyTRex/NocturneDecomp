@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 33,
-    "complexity_score": 45,
+    "complexity_score": 60,
     "cross_reference_count": 10,
     "function_call_count": 1,
     "global_count": 1,
     "pseudocode_lines": 15,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
       "badspacebase",
-      "register_param"
+      "register_param",
+      "stack_align_anchor"
     ],
     "total_lines": 48
   },
@@ -216,6 +217,15 @@
       "match": "in_ESP",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "register_param"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x10",
+      "fix_address": "0048c788",
+      "match": "AND ESP",
+      "sub_esp_offset": 16,
+      "text": "Stack alignment at 0048c788 (SUB ESP, 0x10 before)",
+      "type": "stack_align_anchor"
     }
   ]
 }

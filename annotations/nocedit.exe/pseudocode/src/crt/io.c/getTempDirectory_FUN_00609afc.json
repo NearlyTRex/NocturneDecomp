@@ -1,13 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 106,
-    "complexity_score": 56,
+    "complexity_score": 106,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 9,
     "pseudocode_lines": 56,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 4,
+    "suspect_types": [
+      "call_esp_preserve",
+      "special_crt_function"
+    ],
     "total_lines": 162
   },
   "cross_references": [
@@ -158,5 +161,54 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": []
+  "suspects": [
+    {
+      "add_esp_value": 4,
+      "call_address": "00609b14",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00609b1b",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 20,
+      "return_address": "00609b19",
+      "target_address": "0x6013f0",
+      "text": "Direct CALL at 00609b14, ADD ESP at 00609b1b (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "00609b47",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00609b4c",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 20,
+      "return_address": "00609b4c",
+      "target_address": "0x601140",
+      "text": "Direct CALL at 00609b47, ADD ESP at 00609b4c (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "00609b68",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00609b6d",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 20,
+      "return_address": "00609b6d",
+      "target_address": "0x608d20",
+      "text": "Direct CALL at 00609b68, ADD ESP at 00609b6d (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "address": "00609afc",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_io.c_getTempDirectory_FUN_00609afc",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 00609afc",
+      "type": "special_crt_function"
+    }
+  ]
 }

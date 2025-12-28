@@ -1,16 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 196,
+    "complexity_score": 246,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 5,
     "pseudocode_lines": 41,
-    "suspect_count": 13,
+    "suspect_count": 17,
     "suspect_types": [
       "badspacebase",
+      "call_esp_anchor",
       "pointer_cast",
       "register_param",
+      "special_crt_function",
       "stack_ref",
       "unresolved_funcptr"
     ],
@@ -294,6 +296,54 @@
       "match": "&stack0xffffffd4",
       "text": "BVar2 = crt_tls_c_initialize_thread_tls_data_FUN_0060a2d8(*(void **)(&stack0xffffffd4 + iVar1));",
       "type": "stack_ref"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "0060f8fa",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "0060f8ff",
+      "frame_offset": 12,
+      "match": "CALL...ADD ESP",
+      "return_address": "0060f8ff",
+      "target_address": "0x5fde40",
+      "text": "Direct CALL at 0060f8fa, ADD ESP at 0060f8ff with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "0060f90e",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "0060f913",
+      "frame_offset": 12,
+      "match": "CALL...ADD ESP",
+      "return_address": "0060f913",
+      "target_address": "0x60a2d8",
+      "text": "Direct CALL at 0060f90e, ADD ESP at 0060f913 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "0060f937",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "0060f93c",
+      "frame_offset": 12,
+      "match": "CALL...ADD ESP",
+      "return_address": "0060f93c",
+      "target_address": "0x60aba8",
+      "text": "Direct CALL at 0060f937, ADD ESP at 0060f93c with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "address": "0060f8c0",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_thread.c_threadStartupWrapper_FUN_0060f8c0",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 0060f8c0",
+      "type": "special_crt_function"
     }
   ]
 }

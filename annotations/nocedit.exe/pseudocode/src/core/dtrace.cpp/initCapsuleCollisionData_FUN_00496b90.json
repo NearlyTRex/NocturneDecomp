@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 43,
+    "complexity_score": 58,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 28,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
-      "param_count_too_many"
+      "param_count_too_many",
+      "stack_align_anchor"
     ],
     "total_lines": 105
   },
@@ -205,6 +206,15 @@
       "param_delta": -2,
       "text": "Function declares 8 params but call sites push 6 (2 extra)",
       "type": "param_count_too_many"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x14",
+      "fix_address": "00496b96",
+      "match": "AND ESP",
+      "sub_esp_offset": 20,
+      "text": "Stack alignment at 00496b96 (SUB ESP, 0x14 before)",
+      "type": "stack_align_anchor"
     }
   ]
 }

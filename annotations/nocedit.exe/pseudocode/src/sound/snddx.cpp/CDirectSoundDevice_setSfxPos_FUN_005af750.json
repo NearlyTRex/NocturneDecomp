@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 482,
-    "complexity_score": 261,
+    "complexity_score": 286,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 20,
     "pseudocode_lines": 191,
-    "suspect_count": 5,
+    "suspect_count": 7,
     "suspect_types": [
       "badspacebase",
+      "call_esp_anchor",
       "extra_output",
       "register_param",
       "unresolved_funcptr"
@@ -600,6 +601,15 @@
       "target_function": "sound_sndmain.cpp_logSoundError_FUN_005adba0",
       "text": "Call to variadic function sound_sndmain.cpp_logSoundError_FUN_005adba0 at 005afca8 (EBP frame + ADD ESP)",
       "type": "variadic_anchor"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0xcac",
+      "fix_address": "005af75c",
+      "match": "AND ESP",
+      "sub_esp_offset": 3244,
+      "text": "Stack alignment at 005af75c (SUB ESP, 0xcac before)",
+      "type": "stack_align_anchor"
     }
   ],
   "stack_frame": {
@@ -747,6 +757,32 @@
       "match": "code *",
       "text": "uVar2 = (**(code **)(*local_20 + 0x44))();",
       "type": "unresolved_funcptr"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "005af7ea",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "005af7fd",
+      "frame_offset": 3244,
+      "match": "CALL...ADD ESP",
+      "return_address": "005af7ef",
+      "target_address": "0x5a9d90",
+      "text": "Direct CALL at 005af7ea, ADD ESP at 005af7fd with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "005afa52",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "005afa57",
+      "frame_offset": 3244,
+      "match": "CALL...ADD ESP",
+      "return_address": "005afa57",
+      "target_address": "0x5ade70",
+      "text": "Direct CALL at 005afa52, ADD ESP at 005afa57 with uncertain ESP",
+      "type": "call_esp_anchor"
     }
   ],
   "vtable_info": {

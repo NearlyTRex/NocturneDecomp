@@ -1,13 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 20,
-    "complexity_score": 82,
+    "complexity_score": 112,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 12,
-    "suspect_count": 6,
+    "suspect_count": 8,
     "suspect_types": [
+      "call_esp_anchor",
+      "special_crt_function",
       "stack_param",
       "sub_artifact"
     ],
@@ -142,6 +144,28 @@
       "match": "in_stack_00000008",
       "text": "in_stack_00000008[1] = local_8;",
       "type": "stack_param"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "00603bd5",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "00603be0",
+      "frame_offset": 8,
+      "match": "CALL...ADD ESP",
+      "return_address": "00603bda",
+      "target_address": "0x605d5d",
+      "text": "Direct CALL at 00603bd5, ADD ESP at 00603be0 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "address": "00603bc9",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_unknown.c_FUN_00603bc9",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 00603bc9",
+      "type": "special_crt_function"
     }
   ]
 }

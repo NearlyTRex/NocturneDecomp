@@ -1,16 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 73,
-    "complexity_score": 85,
+    "complexity_score": 100,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
     "pseudocode_lines": 40,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
       "badspacebase",
       "param_count_too_few",
-      "register_param"
+      "register_param",
+      "special_crt_function"
     ],
     "total_lines": 113
   },
@@ -132,6 +133,15 @@
       "param_delta": 1,
       "text": "Function declares 1 params but call sites push 2 (1 missing)",
       "type": "param_count_too_few"
+    },
+    {
+      "address": "006082e0",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_file.c_get_file_attributes_FUN_006082e0",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 006082e0",
+      "type": "special_crt_function"
     }
   ]
 }

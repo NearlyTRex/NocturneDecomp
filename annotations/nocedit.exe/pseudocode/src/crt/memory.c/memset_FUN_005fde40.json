@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 14,
-    "complexity_score": 70,
+    "complexity_score": 85,
     "cross_reference_count": 138,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 10,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
       "concat_artifact",
+      "special_crt_function",
       "unaffected_reg"
     ],
     "total_lines": 24
@@ -951,6 +952,15 @@
       "match": "CONCAT11",
       "text": "(dest,CONCAT31 /* combine 2-byte values */(CONCAT21 /* combine 2-byte values */(CONCAT11 /* combine 2-byte values */(uVar1,uVar1),uVar1),uVar1),unaff_EBX);",
       "type": "concat_artifact"
+    },
+    {
+      "address": "005fde40",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_memory.c_memset_FUN_005fde40",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 005fde40",
+      "type": "special_crt_function"
     }
   ]
 }

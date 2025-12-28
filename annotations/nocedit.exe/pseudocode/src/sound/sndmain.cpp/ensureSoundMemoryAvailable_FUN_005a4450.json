@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 100,
-    "complexity_score": 71,
+    "complexity_score": 106,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 10,
     "pseudocode_lines": 46,
-    "suspect_count": 2,
+    "suspect_count": 5,
     "suspect_types": [
+      "call_esp_preserve",
       "pointer_cast"
     ],
     "total_lines": 146
@@ -214,6 +215,45 @@
       "match": "(int *)((int)",
       "text": "iVar4 = iVar4 + iVar3 * *(int *)((int)g_SfxSamples[0].loop_markers + iVar2 + 0x24);",
       "type": "pointer_cast"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "005a44be",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "005a44ca",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 16,
+      "return_address": "005a44c3",
+      "target_address": "0x5a8550",
+      "text": "Direct CALL at 005a44be, ADD ESP at 005a44ca (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "005a44f2",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "005a44fe",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 16,
+      "return_address": "005a44f7",
+      "target_address": "0x5a8550",
+      "text": "Direct CALL at 005a44f2, ADD ESP at 005a44fe (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "005a4504",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "005a4509",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 16,
+      "return_address": "005a4509",
+      "target_address": "0x5a62c0",
+      "text": "Direct CALL at 005a4504, ADD ESP at 005a4509 (no EBP frame)",
+      "type": "call_esp_preserve"
     }
   ]
 }

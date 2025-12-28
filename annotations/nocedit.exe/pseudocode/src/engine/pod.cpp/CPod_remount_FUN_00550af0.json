@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 70,
-    "complexity_score": 100,
+    "complexity_score": 115,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 4,
     "pseudocode_lines": 40,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
       "badspacebase",
+      "call_esp_preserve",
       "format_string_mismatch",
       "register_param",
       "variadic_preserve"
@@ -187,6 +188,19 @@
       "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Can't re-mount %s\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "00550b34",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "00550b39",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 272,
+      "return_address": "00550b39",
+      "target_address": "0x54f650",
+      "text": "Direct CALL at 00550b34, ADD ESP at 00550b39 (no EBP frame)",
+      "type": "call_esp_preserve"
     }
   ],
   "vtable_info": {

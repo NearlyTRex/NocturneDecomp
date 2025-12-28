@@ -1,13 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 19,
-    "complexity_score": 11,
+    "complexity_score": 26,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 2,
     "pseudocode_lines": 11,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "special_crt_function"
+    ],
     "total_lines": 30
   },
   "cross_references": [
@@ -93,5 +95,15 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": []
+  "suspects": [
+    {
+      "address": "0060cfe4",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_signal.c_unregisterConsoleHandler_FUN_0060cfe4",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 0060cfe4",
+      "type": "special_crt_function"
+    }
+  ]
 }

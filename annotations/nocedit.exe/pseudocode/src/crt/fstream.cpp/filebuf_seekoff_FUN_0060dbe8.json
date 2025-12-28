@@ -1,14 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 76,
-    "complexity_score": 42,
+    "complexity_score": 72,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 27,
-    "suspect_count": 1,
+    "suspect_count": 3,
     "suspect_types": [
-      "callind_preserve"
+      "call_esp_preserve",
+      "callind_preserve",
+      "special_crt_function"
     ],
     "total_lines": 103
   },
@@ -125,6 +127,28 @@
       "return_address": "0060dc35",
       "text": "CALLIND at 0060dc32, ADD ESP at 0060dc35 (no EBP frame)",
       "type": "callind_preserve"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "0060dc1f",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "0060dc24",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 12,
+      "return_address": "0060dc24",
+      "target_address": "0x606690",
+      "text": "Direct CALL at 0060dc1f, ADD ESP at 0060dc24 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "address": "0060dbe8",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_fstream.cpp_filebuf_seekoff_FUN_0060dbe8",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 0060dbe8",
+      "type": "special_crt_function"
     }
   ],
   "vtable_info": {

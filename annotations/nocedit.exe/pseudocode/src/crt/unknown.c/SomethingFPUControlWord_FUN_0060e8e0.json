@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 78,
+    "complexity_score": 93,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 1,
     "pseudocode_lines": 13,
-    "suspect_count": 6,
+    "suspect_count": 7,
     "suspect_types": [
+      "special_crt_function",
       "stack_param"
     ],
     "total_lines": 51
@@ -155,6 +156,15 @@
       "match": "in_stack_00000008",
       "text": "local_c = ~in_stack_00000008 & local_c | in_stack_00000004 & in_stack_00000008 & 0xffff;",
       "type": "stack_param"
+    },
+    {
+      "address": "0060e8e0",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_unknown.c_SomethingFPUControlWord_FUN_0060e8e0",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 0060e8e0",
+      "type": "special_crt_function"
     }
   ]
 }

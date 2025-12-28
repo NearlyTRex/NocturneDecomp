@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 20,
-    "complexity_score": 26,
+    "complexity_score": 41,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 11,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
-      "pointer_cast"
+      "pointer_cast",
+      "special_crt_function"
     ],
     "total_lines": 31
   },
@@ -85,6 +86,15 @@
       "match": "(byte *)((int)",
       "text": "state->input_ptr = (byte *)((int)state->input_ptr + 1);",
       "type": "pointer_cast"
+    },
+    {
+      "address": "006000d0",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_stdio.c_string_getc_FUN_006000d0",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 006000d0",
+      "type": "special_crt_function"
     }
   ]
 }

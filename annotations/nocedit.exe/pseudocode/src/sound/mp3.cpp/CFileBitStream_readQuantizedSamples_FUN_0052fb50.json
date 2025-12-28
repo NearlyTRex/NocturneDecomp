@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 113,
-    "complexity_score": 94,
+    "complexity_score": 119,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 59,
-    "suspect_count": 3,
+    "suspect_count": 5,
     "suspect_types": [
+      "call_esp_preserve",
       "pointer_cast"
     ],
     "total_lines": 172
@@ -174,6 +175,32 @@
       "match": "(uint *)((int)",
       "text": "puVar3 = (uint *)((int)quantized_samples->codes[0] + iVar6);",
       "type": "pointer_cast"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "0052fc24",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0052fc29",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 32,
+      "return_address": "0052fc29",
+      "target_address": "0x52ef40",
+      "text": "Direct CALL at 0052fc24, ADD ESP at 0052fc29 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "0052fc38",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0052fc3d",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 32,
+      "return_address": "0052fc3d",
+      "target_address": "0x52ef40",
+      "text": "Direct CALL at 0052fc38, ADD ESP at 0052fc3d (no EBP frame)",
+      "type": "call_esp_preserve"
     }
   ]
 }

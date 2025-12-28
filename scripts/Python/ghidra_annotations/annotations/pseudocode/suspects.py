@@ -1064,6 +1064,372 @@ def _find_format_string_index(args):
     return None, None
 
 
+def identify_stack_align_anchor(json_data, pcode_data, existing_overrides=None):
+    """Identify stack alignment instructions that can be fixed with ESP anchor.
+
+    Pattern: AND ESP, 0xFFFFFFF8 (or similar) in EBP-frame function.
+    All stack_alignment functions have EBP frame set BEFORE the AND ESP.
+
+    Fix: Anchor ESP = EBP - (SUB ESP offset) at the AND ESP instruction.
+
+    Args:
+        json_data: The function JSON data containing stack_patterns
+        pcode_data: List of instruction dicts from extract_function_pcode()
+        existing_overrides: Optional dict of address -> pcode_lines from JSON
+
+    Returns:
+        Tuple of (suspects, resolved_suspects)
+    """
+    suspects = []
+    resolved_suspects = []
+
+    if not json_data or not pcode_data:
+        return suspects, resolved_suspects
+
+    # Check if function has stack_alignment pattern
+    stack_patterns = json_data.get('stack_patterns')
+    if not stack_patterns:
+        return suspects, resolved_suspects
+    patterns = stack_patterns.get('patterns', [])
+    align_pattern = None
+    for p in patterns:
+        if p.get('pattern_id') == 'stack_alignment':
+            align_pattern = p
+            break
+
+    if not align_pattern:
+        return suspects, resolved_suspects
+
+    # Must be EBP frame (all stack_alignment functions are in practice)
+    if not json_data.get('function', {}).get('is_ebp_frame', False):
+        return suspects, resolved_suspects
+
+    # Find SUB ESP offset before AND ESP
+    sub_esp_offset = None
+    for entry in pcode_data:
+        if not entry:
+            continue
+        asm = entry.get('assembly', '')
+        if 'SUB' in asm.upper() and 'ESP' in asm.upper():
+            match = re.search(r'SUB\s+ESP\s*,\s*(0x[0-9a-fA-F]+|\d+)', asm, re.IGNORECASE)
+            if match:
+                try:
+                    sub_esp_offset = int(match.group(1), 0)
+                    break
+                except ValueError:
+                    pass
+
+    if sub_esp_offset is None:
+        return suspects, resolved_suspects
+
+    fix_address = align_pattern.get('address', '')
+
+    suspect = {
+        'type': 'stack_align_anchor',
+        'match': 'AND ESP',
+        'text': 'Stack alignment at %s (SUB ESP, 0x%x before)' % (fix_address, sub_esp_offset),
+        'description': 'Stack alignment can be anchored: ESP = EBP - 0x%x' % sub_esp_offset,
+        'fix_address': fix_address,
+        'sub_esp_offset': sub_esp_offset,
+        'align_instruction': align_pattern.get('instruction', 'AND ESP,0xfffffff8'),
+    }
+
+    # Check if already fixed
+    if existing_overrides:
+        normalized = fix_address.lower().replace('0x', '').lstrip('0') or '0'
+        for addr in existing_overrides.keys():
+            if addr.lower().replace('0x', '').lstrip('0') or '0' == normalized:
+                resolved_suspects.append(suspect)
+                return suspects, resolved_suspects
+
+    suspects.append(suspect)
+    return suspects, resolved_suspects
+
+
+def identify_direct_call_esp_uncertainty(pcode_data, func_calls=None, existing_overrides=None):
+    """Identify direct CALL instructions with uncertain ESP after.
+
+    Pattern: Direct CALL (not CALLIND, not variadic) followed by ADD ESP
+    where ESP tracking is uncertain.
+
+    Creates two types of suspects:
+    - call_esp_anchor: Caller has EBP frame, fix by anchoring ESP at ADD ESP
+    - call_esp_preserve: Caller lacks EBP frame, fix by preserving ESP across CALL
+
+    Args:
+        pcode_data: List of instruction dicts from extract_function_pcode()
+        func_calls: Optional list of function call dicts to exclude variadic functions
+        existing_overrides: Optional dict of address -> pcode_lines from JSON
+
+    Returns:
+        Tuple of (suspects, resolved_suspects)
+    """
+    suspects = []
+    resolved_suspects = []
+
+    if not pcode_data:
+        return suspects, resolved_suspects
+
+    # Build set of variadic function addresses to exclude
+    variadic_addrs = set()
+    if func_calls:
+        for call in func_calls:
+            if call.get('is_variadic', False):
+                addr = call.get('addr', '').lower().replace('0x', '').lstrip('0') or '0'
+                variadic_addrs.add(addr)
+
+    # Get prologue info
+    prologue_offset, has_ebp_frame = get_prologue_offset(pcode_data)
+    frame_offset = get_frame_offset_from_pcode(pcode_data) if has_ebp_frame else None
+
+    # Normalize existing override addresses
+    fixed_addresses = set()
+    if existing_overrides:
+        for addr in existing_overrides.keys():
+            normalized = addr.lower().replace('0x', '').lstrip('0') or '0'
+            fixed_addresses.add(normalized)
+
+    # Scan for direct CALL instructions with uncertain ESP after
+    for i, entry in enumerate(pcode_data):
+        if not entry:
+            continue
+        pcode_lines = entry.get('pcode', [])
+        call_addr = entry.get('address', '')
+
+        # Check for direct CALL (ram,ADDR,4) - not CALLIND
+        has_direct_call = any('CALL (ram,' in line for line in pcode_lines)
+        has_callind = any('CALLIND' in line for line in pcode_lines)
+
+        if not has_direct_call or has_callind:
+            continue
+
+        # Extract target address to check if it's variadic
+        target_addr = None
+        for line in pcode_lines:
+            match = re.search(r'CALL \(ram,0x([0-9a-fA-F]+),4\)', line)
+            if match:
+                target_addr = match.group(1).lower().lstrip('0') or '0'
+                break
+
+        # Skip if this is a variadic function (already handled by identify_variadic_calls)
+        if target_addr and target_addr in variadic_addrs:
+            continue
+
+        # Check ESP certainty at and after the call
+        esp_certainty = entry.get('esp_certainty', 'unknown')
+
+        # Look for ADD ESP in next few instructions
+        for j in range(i + 1, min(i + 5, len(pcode_data))):
+            next_entry = pcode_data[j]
+            if not next_entry:
+                continue
+            next_asm = next_entry.get('assembly', '')
+
+            # Check for ADD ESP, N
+            if next_asm.upper().startswith('ADD ') and 'ESP' in next_asm.upper():
+                next_certainty = next_entry.get('esp_certainty', 'unknown')
+
+                # Only flag if ESP is uncertain
+                if next_certainty in ('computed', 'unknown', 'lost', 'cfg_resolved', 'conflict'):
+                    add_esp_value = _parse_add_esp_value(next_asm)
+                    add_esp_address = next_entry.get('address', '')
+
+                    # Get return address
+                    return_address = pcode_data[i + 1].get('address', '') if i + 1 < len(pcode_data) else None
+
+                    if has_ebp_frame and frame_offset is not None:
+                        suspect = {
+                            'type': 'call_esp_anchor',
+                            'match': 'CALL...ADD ESP',
+                            'text': 'Direct CALL at %s, ADD ESP at %s with uncertain ESP' % (call_addr, add_esp_address),
+                            'description': 'Direct CALL makes ESP uncertain; fixable with ESP anchor',
+                            'call_address': call_addr,
+                            'fix_address': add_esp_address,
+                            'return_address': return_address,
+                            'target_address': '0x%s' % target_addr if target_addr else None,
+                            'add_esp_value': add_esp_value,
+                            'frame_offset': frame_offset,
+                            'esp_certainty': next_certainty,
+                        }
+                        # Check if already fixed
+                        norm_fix = add_esp_address.lower().replace('0x', '').lstrip('0') or '0'
+                        if norm_fix in fixed_addresses:
+                            resolved_suspects.append(suspect)
+                        else:
+                            suspects.append(suspect)
+                    else:
+                        suspect = {
+                            'type': 'call_esp_preserve',
+                            'match': 'CALL...ADD ESP',
+                            'text': 'Direct CALL at %s, ADD ESP at %s (no EBP frame)' % (call_addr, add_esp_address),
+                            'description': 'Direct CALL in non-EBP-frame function; fixable with ESP preserve',
+                            'call_address': call_addr,
+                            'fix_address': add_esp_address,
+                            'return_address': return_address,
+                            'target_address': '0x%s' % target_addr if target_addr else None,
+                            'add_esp_value': add_esp_value,
+                            'prologue_offset': prologue_offset,
+                            'esp_certainty': next_certainty,
+                        }
+                        # Check if already fixed
+                        norm_call = call_addr.lower().replace('0x', '').lstrip('0') or '0'
+                        if norm_call in fixed_addresses:
+                            resolved_suspects.append(suspect)
+                        else:
+                            suspects.append(suspect)
+                break  # Only look at first ADD ESP
+
+            # Stop if we hit another call or control flow
+            next_pcode = next_entry.get('pcode', [])
+            if any(op in ' '.join(next_pcode) for op in ['CALL', 'CALLIND', 'RETURN', 'BRANCH']):
+                break
+
+    return suspects, resolved_suspects
+
+
+def identify_lea_esp_stack_addr(pcode_data, json_data=None):
+    """Identify LEA instructions that take the address of ESP-relative stack locations.
+
+    Pattern: LEA REG, [ESP + offset] in non-EBP-frame function.
+    This creates a TypeSpacebase pointer that can't be resolved if ESP is uncertain.
+
+    Args:
+        pcode_data: List of instruction dicts from extract_function_pcode()
+        json_data: Optional JSON data to check EBP frame status
+
+    Returns:
+        List of suspect dictionaries (detection only, no fix yet)
+    """
+    suspects = []
+
+    if not pcode_data:
+        return suspects
+
+    # Check if EBP frame - less concerning if function has EBP frame
+    has_ebp_frame = False
+    if json_data:
+        has_ebp_frame = json_data.get('function', {}).get('is_ebp_frame', False)
+
+    # In EBP-frame functions, LEA ESP is less problematic since EBP provides anchor
+    if has_ebp_frame:
+        return suspects
+
+    # Scan for LEA with ESP-relative addressing
+    for entry in pcode_data:
+        if not entry:
+            continue
+        asm = entry.get('assembly', '')
+        addr = entry.get('address', '')
+
+        # Match LEA REG, [ESP + offset] or [ESP]
+        if re.search(r'LEA\s+\w+\s*,\s*\[ESP', asm, re.IGNORECASE):
+            # Extract the offset if present
+            offset_match = re.search(r'\[ESP\s*\+\s*(0x[0-9a-fA-F]+|\d+)\]', asm, re.IGNORECASE)
+            offset = None
+            if offset_match:
+                try:
+                    offset = int(offset_match.group(1), 0)
+                except ValueError:
+                    pass
+
+            suspects.append({
+                'type': 'lea_esp_stack_addr',
+                'match': 'LEA...ESP',
+                'text': 'LEA takes address of ESP-relative stack location at %s' % addr,
+                'description': 'Takes address of stack variable via ESP in non-EBP-frame function',
+                'address': addr,
+                'instruction': asm,
+                'esp_offset': offset,
+            })
+
+    return suspects
+
+
+def identify_special_functions(json_data, func_addr):
+    """Identify special functions that have expected BADSPACEBASE issues.
+
+    Categories:
+    - Entry point: Program entry has no caller, unusual stack state
+    - CRT functions: C runtime with unusual stack manipulation
+    - Math intrinsics: Math library functions with unusual patterns
+
+    Args:
+        json_data: The function JSON data
+        func_addr: Function entry address
+
+    Returns:
+        List of suspect dictionaries (detection only)
+    """
+    suspects = []
+
+    if not json_data:
+        return suspects
+
+    func_name = json_data.get('function', {}).get('name', '')
+
+    # Check for entry point
+    if func_name == 'entry' or func_name.endswith('_entry'):
+        suspects.append({
+            'type': 'special_entry_point',
+            'match': 'entry',
+            'text': 'Program entry point at %s' % func_addr,
+            'description': 'Entry point has no caller; stack state is OS-provided',
+            'address': func_addr,
+            'function_name': func_name,
+        })
+        return suspects  # Entry point is unique
+
+    # Check for math intrinsics FIRST (before generic CRT check)
+    # Math functions may have crt_math prefix but are distinct
+    math_patterns = [
+        'sin', 'cos', 'tan', 'asin', 'acos', 'atan', 'atan2',
+        'sqrt', 'pow', 'exp', 'log', 'log10', 'log2',
+        'floor', 'ceil', 'round', 'fabs', 'fmod',
+        'sinh', 'cosh', 'tanh', 'ldexp', 'frexp', 'modf'
+    ]
+    func_lower = func_name.lower()
+    for pattern in math_patterns:
+        # Match _pattern_ or ending with _pattern or crt_math containing the pattern
+        if (('_' + pattern + '_') in func_lower or
+            func_lower.endswith('_' + pattern) or
+            ('crt_math' in func_lower and pattern in func_lower)):
+            suspects.append({
+                'type': 'special_math_intrinsic',
+                'match': pattern,
+                'text': 'Math intrinsic (%s) at %s' % (pattern, func_addr),
+                'description': 'Math library function with FPU stack or unusual patterns',
+                'address': func_addr,
+                'function_name': func_name,
+                'math_function': pattern,
+            })
+            return suspects
+
+    # Check for CRT functions by path or name (after math check)
+    if 'crt_' in func_name.lower() or '/crt/' in func_name.lower():
+        # Categorize CRT function type
+        if 'stack' in func_name.lower():
+            crt_type = 'stack manipulation'
+        elif 'except' in func_name.lower() or 'seh' in func_name.lower():
+            crt_type = 'exception handling'
+        elif 'security' in func_name.lower() or 'cookie' in func_name.lower():
+            crt_type = 'security cookie'
+        else:
+            crt_type = 'runtime support'
+
+        suspects.append({
+            'type': 'special_crt_function',
+            'match': 'crt_',
+            'text': 'CRT function (%s) at %s' % (crt_type, func_addr),
+            'description': 'C runtime function with non-standard stack patterns',
+            'address': func_addr,
+            'function_name': func_name,
+            'crt_type': crt_type,
+        })
+        return suspects
+
+    return suspects
+
+
 def identify_format_string_mismatch(decompiled_code, func_calls=None):
     """Identify variadic calls where format string args don't match specifier count.
 

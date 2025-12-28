@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 24,
-    "complexity_score": 107,
+    "complexity_score": 122,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 1,
     "pseudocode_lines": 12,
-    "suspect_count": 8,
+    "suspect_count": 9,
     "suspect_types": [
       "badspacebase",
+      "call_esp_preserve",
       "register_param",
       "stack_param"
     ],
@@ -161,6 +162,19 @@
       "match": "in_stack_00000008",
       "text": "wincore_windll_cpp_transformPoint_FUN_005b5a25(in_stack_00000008,&local_10);",
       "type": "stack_param"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "004c9434",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "004c9439",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 16,
+      "return_address": "004c9439",
+      "target_address": "0x5b5a25",
+      "text": "Direct CALL at 004c9434, ADD ESP at 004c9439 (no EBP frame)",
+      "type": "call_esp_preserve"
     }
   ]
 }

@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 3,
-    "complexity_score": 37,
+    "complexity_score": 52,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 1,
     "pseudocode_lines": 7,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
+      "special_crt_function",
       "warning_indirect_jump",
       "warning_jumptable"
     ],
@@ -88,6 +89,15 @@
       "match": "WARNING: Treating indirect jump as call",
       "text": "/* WARNING: Treating indirect jump as call */",
       "type": "warning_indirect_jump"
+    },
+    {
+      "address": "00606a77",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_math.c_function_dispatch_FUN_00606a77",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 00606a77",
+      "type": "special_crt_function"
     }
   ]
 }

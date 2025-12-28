@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 126,
-    "complexity_score": 117,
+    "complexity_score": 132,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 9,
     "pseudocode_lines": 62,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
       "badspacebase",
+      "call_esp_preserve",
       "pointer_cast",
       "register_param"
     ],
@@ -229,6 +230,19 @@
       "match": "(byte *)((int)",
       "text": "*output_material = (uint)*(byte *)((int)this_ptr->ground_type_memory + iVar7);",
       "type": "pointer_cast"
+    },
+    {
+      "add_esp_value": 16,
+      "call_address": "00457b8f",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "00457b94",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 28,
+      "return_address": "00457b94",
+      "target_address": "0x456040",
+      "text": "Direct CALL at 00457b8f, ADD ESP at 00457b94 (no EBP frame)",
+      "type": "call_esp_preserve"
     }
   ]
 }

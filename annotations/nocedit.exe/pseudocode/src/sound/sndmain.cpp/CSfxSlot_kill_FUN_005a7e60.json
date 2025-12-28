@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 129,
-    "complexity_score": 136,
+    "complexity_score": 161,
     "cross_reference_count": 10,
     "function_call_count": 4,
     "global_count": 17,
     "pseudocode_lines": 51,
-    "suspect_count": 7,
+    "suspect_count": 9,
     "suspect_types": [
+      "call_esp_preserve",
       "callind_preserve",
       "format_string_mismatch",
       "variadic_preserve"
@@ -366,6 +367,32 @@
       "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"streaming sample sfx index mismatch on %s\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "005a7f78",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "005a7f7d",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 24,
+      "return_address": "005a7f7d",
+      "target_address": "0x5a62c0",
+      "text": "Direct CALL at 005a7f78, ADD ESP at 005a7f7d (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "005a7f82",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "005a7f87",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 24,
+      "return_address": "005a7f87",
+      "target_address": "0x5a4450",
+      "text": "Direct CALL at 005a7f82, ADD ESP at 005a7f87 (no EBP frame)",
+      "type": "call_esp_preserve"
     }
   ]
 }

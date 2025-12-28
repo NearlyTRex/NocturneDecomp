@@ -1,16 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 284,
-    "complexity_score": 407,
+    "complexity_score": 432,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 30,
     "pseudocode_lines": 122,
-    "suspect_count": 24,
+    "suspect_count": 26,
     "suspect_types": [
       "badspacebase",
       "callind_preserve",
       "callind_preserve_lost",
+      "lea_esp_stack_addr",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -524,6 +525,24 @@
       "target_function": "sound_sndmain.cpp_logSoundError_FUN_005adba0",
       "text": "Call to variadic function sound_sndmain.cpp_logSoundError_FUN_005adba0 at 005b11c5 (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "address": "005b0fa7",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 4,
+      "instruction": "LEA EAX, [ESP + 0x4]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 005b0fa7",
+      "type": "lea_esp_stack_addr"
+    },
+    {
+      "address": "005b129a",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 60,
+      "instruction": "LEA EAX, [ESP + 0x3c]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 005b129a",
+      "type": "lea_esp_stack_addr"
     }
   ],
   "vtable_info": {

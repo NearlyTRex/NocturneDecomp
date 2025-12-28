@@ -1,16 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 3,
-    "complexity_score": 254,
+    "complexity_score": 269,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 74,
-    "suspect_count": 16,
+    "suspect_count": 17,
     "suspect_types": [
       "badspacebase",
       "pointer_cast",
       "register_param",
+      "special_entry_point",
       "stack_ref"
     ],
     "total_lines": 77
@@ -173,6 +174,14 @@
       "match": "(int *)((int)",
       "text": "crt_startup_c_ExitApplication_FUN_0060b534(*(int *)((int)puVar12 + 0x10));",
       "type": "pointer_cast"
+    },
+    {
+      "address": "0060239a",
+      "description": "Entry point has no caller; stack state is OS-provided",
+      "function_name": "entry",
+      "match": "entry",
+      "text": "Program entry point at 0060239a",
+      "type": "special_entry_point"
     }
   ]
 }

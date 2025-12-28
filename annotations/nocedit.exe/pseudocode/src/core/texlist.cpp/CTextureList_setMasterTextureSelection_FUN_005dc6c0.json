@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 65,
-    "complexity_score": 75,
+    "complexity_score": 90,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 4,
     "pseudocode_lines": 35,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
+      "call_esp_preserve",
       "unaffected_reg",
       "variadic_preserve"
     ],
@@ -156,6 +157,19 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005dc73d (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "005dc6eb",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "005dc6f0",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 20,
+      "return_address": "005dc6f0",
+      "target_address": "0x5fef20",
+      "text": "Direct CALL at 005dc6eb, ADD ESP at 005dc6f0 (no EBP frame)",
+      "type": "call_esp_preserve"
     }
   ]
 }

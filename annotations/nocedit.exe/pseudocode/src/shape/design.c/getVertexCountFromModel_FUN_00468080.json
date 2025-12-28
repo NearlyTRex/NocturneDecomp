@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 29,
+    "complexity_score": 44,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 4,
     "pseudocode_lines": 14,
-    "suspect_count": 1,
+    "suspect_count": 2,
     "suspect_types": [
+      "call_esp_anchor",
       "pointer_cast"
     ],
     "total_lines": 66
@@ -173,6 +174,19 @@
       "match": "(SMRGLHeaderExtended *)((int)",
       "text": "model_ptr = (SMRGLHeaderExtended *)((int)&(model_ptr->base).type + iVar1);",
       "type": "pointer_cast"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "004680a2",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "004680a7",
+      "frame_offset": 8,
+      "match": "CALL...ADD ESP",
+      "return_address": "004680a7",
+      "target_address": "0x528700",
+      "text": "Direct CALL at 004680a2, ADD ESP at 004680a7 with uncertain ESP",
+      "type": "call_esp_anchor"
     }
   ]
 }

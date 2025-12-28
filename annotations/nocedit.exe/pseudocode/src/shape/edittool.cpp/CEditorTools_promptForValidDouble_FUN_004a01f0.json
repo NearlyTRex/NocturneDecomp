@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 121,
-    "complexity_score": 204,
+    "complexity_score": 219,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 4,
     "pseudocode_lines": 54,
-    "suspect_count": 11,
+    "suspect_count": 12,
     "suspect_types": [
       "badspacebase",
+      "call_esp_anchor",
       "concat_artifact",
       "format_string_mismatch",
       "pointer_cast",
@@ -201,6 +202,15 @@
       "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
       "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 004a02e7 (EBP frame + ADD ESP)",
       "type": "variadic_anchor"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x38",
+      "fix_address": "004a01f9",
+      "match": "AND ESP",
+      "sub_esp_offset": 56,
+      "text": "Stack alignment at 004a01f9 (SUB ESP, 0x38 before)",
+      "type": "stack_align_anchor"
     }
   ],
   "stack_frame": {
@@ -387,6 +397,19 @@
       "match": "iVar1 = crt_stdio_c_sscanf_FUN_0060013c(acStack_2c,\"%lf\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
+    },
+    {
+      "add_esp_value": 20,
+      "call_address": "004a0238",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "004a023d",
+      "frame_offset": 56,
+      "match": "CALL...ADD ESP",
+      "return_address": "004a023d",
+      "target_address": "0x4a03d0",
+      "text": "Direct CALL at 004a0238, ADD ESP at 004a023d with uncertain ESP",
+      "type": "call_esp_anchor"
     }
   ]
 }

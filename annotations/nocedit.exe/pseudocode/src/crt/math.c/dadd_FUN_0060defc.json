@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 229,
-    "complexity_score": 331,
+    "complexity_score": 346,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "pseudocode_lines": 166,
-    "suspect_count": 15,
+    "suspect_count": 16,
     "suspect_types": [
       "concat_artifact",
       "param_count_too_few",
+      "special_crt_function",
       "sub_artifact"
     ],
     "total_lines": 395
@@ -245,6 +246,15 @@
       "param_delta": 2,
       "text": "Function declares 2 params but call sites push 4 (2 missing)",
       "type": "param_count_too_few"
+    },
+    {
+      "address": "0060defc",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_math.c_dadd_FUN_0060defc",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 0060defc",
+      "type": "special_crt_function"
     }
   ]
 }

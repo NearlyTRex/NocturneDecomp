@@ -1,16 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 173,
+    "complexity_score": 213,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 5,
     "pseudocode_lines": 53,
-    "suspect_count": 10,
+    "suspect_count": 13,
     "suspect_types": [
+      "call_esp_preserve",
       "negative_offset",
       "param_count_too_few",
       "pointer_cast",
+      "special_crt_function",
       "stack_param"
     ],
     "total_lines": 127
@@ -263,6 +265,41 @@
       "param_delta": 4,
       "text": "Function declares 5 params but call sites push 9 (4 missing)",
       "type": "param_count_too_few"
+    },
+    {
+      "add_esp_value": 20,
+      "call_address": "005ff3c3",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "005ff3c8",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 8,
+      "return_address": "005ff3c8",
+      "target_address": "0x6060fe",
+      "text": "Direct CALL at 005ff3c3, ADD ESP at 005ff3c8 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "005ff417",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "005ff41c",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 8,
+      "return_address": "005ff41c",
+      "target_address": "0x6061fc",
+      "text": "Direct CALL at 005ff417, ADD ESP at 005ff41c (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "address": "005ff384",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_strstream.cpp_ostrstream_ctor_FUN_005ff384",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 005ff384",
+      "type": "special_crt_function"
     }
   ]
 }

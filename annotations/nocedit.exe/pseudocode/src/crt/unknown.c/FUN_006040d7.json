@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 14,
-    "complexity_score": 85,
+    "complexity_score": 100,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 25,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
       "concat_artifact",
+      "special_crt_function",
       "unaffected_reg"
     ],
     "total_lines": 39
@@ -110,6 +111,15 @@
       "match": "unaff_EBX",
       "text": "unaff_EBX[1] = (char)((ushort)uVar1 >> 8) + '0';",
       "type": "unaffected_reg"
+    },
+    {
+      "address": "006040d7",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_unknown.c_FUN_006040d7",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 006040d7",
+      "type": "special_crt_function"
     }
   ]
 }

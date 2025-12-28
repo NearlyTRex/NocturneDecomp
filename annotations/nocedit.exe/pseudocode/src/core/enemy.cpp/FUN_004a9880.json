@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 70,
-    "complexity_score": 110,
+    "complexity_score": 125,
     "cross_reference_count": 14,
     "function_call_count": 2,
     "global_count": 4,
     "pseudocode_lines": 15,
-    "suspect_count": 8,
+    "suspect_count": 9,
     "suspect_types": [
+      "call_esp_anchor",
       "param_count_too_few",
       "stack_param",
       "unresolved_funcptr"
@@ -304,6 +305,15 @@
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 004a98b4, ADD ESP at 004a98ba",
       "type": "callind_anchor"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x18",
+      "fix_address": "004a9888",
+      "match": "AND ESP",
+      "sub_esp_offset": 24,
+      "text": "Stack alignment at 004a9888 (SUB ESP, 0x18 before)",
+      "type": "stack_align_anchor"
     }
   ],
   "stack_frame": {
@@ -391,6 +401,19 @@
       "param_delta": 2,
       "text": "Function declares 0 params but call sites push 2 (2 missing)",
       "type": "param_count_too_few"
+    },
+    {
+      "add_esp_value": 20,
+      "call_address": "004a9915",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "004a991f",
+      "frame_offset": 24,
+      "match": "CALL...ADD ESP",
+      "return_address": "004a991a",
+      "target_address": "0x4edbb0",
+      "text": "Direct CALL at 004a9915, ADD ESP at 004a991f with uncertain ESP",
+      "type": "call_esp_anchor"
     }
   ]
 }

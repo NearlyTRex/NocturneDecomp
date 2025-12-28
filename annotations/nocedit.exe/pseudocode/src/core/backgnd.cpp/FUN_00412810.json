@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 9,
-    "complexity_score": 83,
+    "complexity_score": 98,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 13,
-    "suspect_count": 6,
+    "suspect_count": 7,
     "suspect_types": [
+      "call_esp_preserve",
       "concat_artifact",
       "stack_param"
     ],
@@ -110,6 +111,19 @@
       "match": "CONCAT44",
       "text": "return CONCAT44 /* combine 2-byte values */(fVar1,uVar2);",
       "type": "concat_artifact"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "0041281c",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "00412821",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 12,
+      "return_address": "00412821",
+      "target_address": "0x478d60",
+      "text": "Direct CALL at 0041281c, ADD ESP at 00412821 (no EBP frame)",
+      "type": "call_esp_preserve"
     }
   ],
   "vtable_info": {

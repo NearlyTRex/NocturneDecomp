@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 76,
+    "complexity_score": 91,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 6,
     "pseudocode_lines": 21,
-    "suspect_count": 4,
+    "suspect_count": 5,
     "suspect_types": [
+      "call_esp_anchor",
       "format_string_mismatch",
       "param_count_too_few",
       "stack_param"
@@ -259,6 +260,19 @@
       "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%s\\\"%s\\\",%g // current motion name, curFrameNumber\\n\")",
       "text": "Format string expects 3 args but got 0",
       "type": "format_string_mismatch"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "0052e6af",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "0052e6b4",
+      "frame_offset": 8,
+      "match": "CALL...ADD ESP",
+      "return_address": "0052e6b4",
+      "target_address": "0x52dab0",
+      "text": "Direct CALL at 0052e6af, ADD ESP at 0052e6b4 with uncertain ESP",
+      "type": "call_esp_anchor"
     }
   ]
 }

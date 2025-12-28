@@ -1,14 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 25,
-    "complexity_score": 85,
+    "complexity_score": 115,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "pseudocode_lines": 15,
-    "suspect_count": 5,
+    "suspect_count": 7,
     "suspect_types": [
       "badspacebase",
+      "call_esp_preserve",
+      "lea_esp_stack_addr",
       "register_param",
       "stack_param",
       "stack_ref"
@@ -136,6 +138,28 @@
       "match": "&stack0xfffffff8",
       "text": "iVar1 = crt_wsock32_c_bind(*in_stack_0000000c,(SOCKADDR *)&stack0xfffffff8,0x10);",
       "type": "stack_ref"
+    },
+    {
+      "add_esp_value": 16,
+      "call_address": "005e1bb3",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "005e1bc2",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 16,
+      "return_address": "005e1bb8",
+      "target_address": "0x610f22",
+      "text": "Direct CALL at 005e1bb3, ADD ESP at 005e1bc2 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "address": "005e1ba1",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 4,
+      "instruction": "LEA EAX, [ESP + 0x4]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 005e1ba1",
+      "type": "lea_esp_stack_addr"
     }
   ]
 }

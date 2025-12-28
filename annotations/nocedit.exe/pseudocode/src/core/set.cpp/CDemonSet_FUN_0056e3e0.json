@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 160,
-    "complexity_score": 252,
+    "complexity_score": 267,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 9,
     "pseudocode_lines": 67,
-    "suspect_count": 17,
+    "suspect_count": 18,
     "suspect_types": [
       "extra_output",
       "pointer_cast",
+      "stack_align_anchor",
       "stack_param"
     ],
     "total_lines": 227
@@ -384,6 +385,15 @@
       "match": "in_stack_00000010",
       "text": "g_RenderVertexBuffer[in_stack_00000010].fog = (float)((int)ROUND(dVar9) << 8);",
       "type": "stack_param"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x34",
+      "fix_address": "0056e3e8",
+      "match": "AND ESP",
+      "sub_esp_offset": 52,
+      "text": "Stack alignment at 0056e3e8 (SUB ESP, 0x34 before)",
+      "type": "stack_align_anchor"
     }
   ]
 }

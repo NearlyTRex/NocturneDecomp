@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 88,
-    "complexity_score": 102,
+    "complexity_score": 127,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 9,
     "pseudocode_lines": 22,
-    "suspect_count": 7,
+    "suspect_count": 9,
     "suspect_types": [
+      "call_esp_preserve",
       "format_string_mismatch",
       "variadic_preserve"
     ],
@@ -264,6 +265,32 @@
       "match": "crt_stdio_c_fprintf_FUN_005fe6d0(output_file,\"Total %d blocks, %d bytes\\n\");",
       "text": "Format string expects 2 args but got 0",
       "type": "format_string_mismatch"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "0050f6eb",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "0050f6f0",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 32,
+      "return_address": "0050f6f0",
+      "target_address": "0x5f3ff0",
+      "text": "Direct CALL at 0050f6eb, ADD ESP at 0050f6f0 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "0050f785",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "0050f78a",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 32,
+      "return_address": "0050f78a",
+      "target_address": "0x5f4050",
+      "text": "Direct CALL at 0050f785, ADD ESP at 0050f78a (no EBP frame)",
+      "type": "call_esp_preserve"
     }
   ]
 }

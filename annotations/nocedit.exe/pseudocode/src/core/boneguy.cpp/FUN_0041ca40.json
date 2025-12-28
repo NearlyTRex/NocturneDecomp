@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 178,
-    "complexity_score": 294,
+    "complexity_score": 329,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 3,
     "pseudocode_lines": 94,
-    "suspect_count": 17,
+    "suspect_count": 20,
     "suspect_types": [
       "badspacebase",
+      "call_esp_anchor",
       "pointer_cast",
       "register_param",
       "stack_param",
@@ -514,6 +515,45 @@
       "match": "unaff_ESI",
       "text": "unaff_ESI = unaff_ESI + (uint)bVar6 * -2 + 1;",
       "type": "unaffected_reg"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "0041ca9b",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "0041caa0",
+      "frame_offset": 276,
+      "match": "CALL...ADD ESP",
+      "return_address": "0041caa0",
+      "target_address": "0x5f54c0",
+      "text": "Direct CALL at 0041ca9b, ADD ESP at 0041caa0 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "0041cb6c",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "0041cb76",
+      "frame_offset": 276,
+      "match": "CALL...ADD ESP",
+      "return_address": "0041cb71",
+      "target_address": "0x5f4dc0",
+      "text": "Direct CALL at 0041cb6c, ADD ESP at 0041cb76 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "0041cbb5",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "0041cbba",
+      "frame_offset": 276,
+      "match": "CALL...ADD ESP",
+      "return_address": "0041cbba",
+      "target_address": "0x5f4f10",
+      "text": "Direct CALL at 0041cbb5, ADD ESP at 0041cbba with uncertain ESP",
+      "type": "call_esp_anchor"
     }
   ],
   "vtable_info": {

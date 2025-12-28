@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 101,
+    "complexity_score": 126,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 6,
     "pseudocode_lines": 21,
-    "suspect_count": 6,
+    "suspect_count": 8,
     "suspect_types": [
+      "call_esp_preserve",
       "format_string_mismatch",
       "param_count_too_few",
       "stack_param",
@@ -246,6 +247,32 @@
       "match": "iVar1 = crt_stdio_c_fscanf_FUN_005fe7c0(g_ActorDataFile,\"%d,%f,%f,%f\");",
       "text": "Format string expects 4 args but got 0",
       "type": "format_string_mismatch"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "0040b4c0",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "0040b4c5",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 36,
+      "return_address": "0040b4c5",
+      "target_address": "0x40b290",
+      "text": "Direct CALL at 0040b4c0, ADD ESP at 0040b4c5 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "0040b4d6",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0040b4db",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 36,
+      "return_address": "0040b4db",
+      "target_address": "0x40b210",
+      "text": "Direct CALL at 0040b4d6, ADD ESP at 0040b4db (no EBP frame)",
+      "type": "call_esp_preserve"
     }
   ]
 }

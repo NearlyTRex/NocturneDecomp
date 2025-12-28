@@ -1,14 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 30,
-    "complexity_score": 108,
+    "complexity_score": 138,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 3,
     "pseudocode_lines": 18,
-    "suspect_count": 7,
+    "suspect_count": 9,
     "suspect_types": [
       "badspacebase",
+      "call_esp_preserve",
+      "lea_esp_stack_addr",
       "register_param",
       "stack_param",
       "stack_ref"
@@ -160,6 +162,28 @@
       "match": "in_stack_00000018",
       "text": "g_WaveInDeviceID = in_stack_00000018;",
       "type": "stack_param"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "005b1608",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "005b160d",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 48,
+      "return_address": "005b160d",
+      "target_address": "0x5b0d70",
+      "text": "Direct CALL at 005b1608, ADD ESP at 005b160d (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "address": "005b161a",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 4,
+      "instruction": "LEA EAX, [ESP + 0x4]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 005b161a",
+      "type": "lea_esp_stack_addr"
     }
   ]
 }

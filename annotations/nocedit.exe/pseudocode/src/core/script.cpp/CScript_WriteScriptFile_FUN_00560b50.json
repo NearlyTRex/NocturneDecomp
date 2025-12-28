@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 208,
-    "complexity_score": 500,
+    "complexity_score": 535,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 33,
     "pseudocode_lines": 45,
-    "suspect_count": 43,
+    "suspect_count": 46,
     "suspect_types": [
+      "call_esp_preserve",
       "format_string_mismatch",
       "param_count_too_few",
       "unaffected_reg",
@@ -857,6 +858,45 @@
       "match": "crt_stdio_c_fprintf_FUN_005fe6d0(param_6,\"%u\\n\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "00560cb7",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "00560cbc",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 44,
+      "return_address": "00560cbc",
+      "target_address": "0x5607e0",
+      "text": "Direct CALL at 00560cb7, ADD ESP at 00560cbc (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "00560cd2",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "00560cd7",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 44,
+      "return_address": "00560cd7",
+      "target_address": "0x5607e0",
+      "text": "Direct CALL at 00560cd2, ADD ESP at 00560cd7 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "00560d5f",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "00560d64",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 44,
+      "return_address": "00560d64",
+      "target_address": "0x560d80",
+      "text": "Direct CALL at 00560d5f, ADD ESP at 00560d64 (no EBP frame)",
+      "type": "call_esp_preserve"
     }
   ]
 }

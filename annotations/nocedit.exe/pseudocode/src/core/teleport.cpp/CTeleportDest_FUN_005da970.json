@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 20,
-    "complexity_score": 64,
+    "complexity_score": 89,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 2,
     "pseudocode_lines": 9,
-    "suspect_count": 5,
+    "suspect_count": 7,
     "suspect_types": [
+      "call_esp_preserve",
       "stack_param"
     ],
     "total_lines": 29
@@ -129,6 +130,32 @@
       "match": "in_stack_00000008",
       "text": "(in_stack_00000008,\"T\",\"Show list of teleporters which go to this teleport dest.\");",
       "type": "stack_param"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "005da97b",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "005da980",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 24,
+      "return_address": "005da980",
+      "target_address": "0x40d150",
+      "text": "Direct CALL at 005da97b, ADD ESP at 005da980 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "005da995",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "005da99a",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 24,
+      "return_address": "005da99a",
+      "target_address": "0x40d1e0",
+      "text": "Direct CALL at 005da995, ADD ESP at 005da99a (no EBP frame)",
+      "type": "call_esp_preserve"
     }
   ],
   "vtable_info": {

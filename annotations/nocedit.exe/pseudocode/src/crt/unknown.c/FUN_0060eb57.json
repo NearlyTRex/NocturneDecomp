@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 14,
-    "complexity_score": 32,
+    "complexity_score": 47,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 0,
     "pseudocode_lines": 7,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
+      "special_crt_function",
       "stack_param"
     ],
     "total_lines": 21
@@ -100,6 +101,15 @@
       "match": "in_stack_00000004",
       "text": "return (ulonglong)(in_stack_00000004 & 0x80000000) << 0x20 | 0x7ff0000000000000;",
       "type": "stack_param"
+    },
+    {
+      "address": "0060eb57",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_unknown.c_FUN_0060eb57",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 0060eb57",
+      "type": "special_crt_function"
     }
   ]
 }

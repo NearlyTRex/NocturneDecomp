@@ -1,17 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 539,
-    "complexity_score": 416,
+    "complexity_score": 431,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 211,
-    "suspect_count": 18,
+    "suspect_count": 19,
     "suspect_types": [
       "badspacebase",
       "concat_artifact",
       "pointer_cast",
       "register_param",
+      "stack_align_anchor",
       "unknown_field"
     ],
     "total_lines": 750
@@ -809,6 +810,15 @@
       "match": "CONCAT44",
       "text": "if (local_2a8 < (double)CONCAT44 /* combine 2-byte values */(uStack_2ec,local_2f0)) {",
       "type": "concat_artifact"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x2dc",
+      "fix_address": "005cd7dc",
+      "match": "AND ESP",
+      "sub_esp_offset": 732,
+      "text": "Stack alignment at 005cd7dc (SUB ESP, 0x2dc before)",
+      "type": "stack_align_anchor"
     }
   ],
   "vtable_info": {

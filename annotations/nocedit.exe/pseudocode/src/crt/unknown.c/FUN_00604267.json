@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 246,
-    "complexity_score": 991,
+    "complexity_score": 1006,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 136,
-    "suspect_count": 85,
+    "suspect_count": 86,
     "suspect_types": [
+      "special_crt_function",
       "stack_param"
     ],
     "total_lines": 382
@@ -678,6 +679,15 @@
       "match": "in_stack_00000014",
       "text": "in_stack_00000014[uVar3] = '\\0';",
       "type": "stack_param"
+    },
+    {
+      "address": "00604267",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_unknown.c_FUN_00604267",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 00604267",
+      "type": "special_crt_function"
     }
   ]
 }

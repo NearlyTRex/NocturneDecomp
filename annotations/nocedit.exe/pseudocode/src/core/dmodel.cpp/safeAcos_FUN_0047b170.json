@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 49,
-    "complexity_score": 61,
+    "complexity_score": 76,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 1,
     "pseudocode_lines": 21,
-    "suspect_count": 3,
+    "suspect_count": 4,
     "suspect_types": [
       "concat_artifact",
+      "stack_align_anchor",
       "stack_param"
     ],
     "total_lines": 70
@@ -158,6 +159,15 @@
       "match": "CONCAT44",
       "text": "return (double)CONCAT44 /* combine 2-byte values */(local_c,local_10);",
       "type": "concat_artifact"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x10",
+      "fix_address": "0047b177",
+      "match": "AND ESP",
+      "sub_esp_offset": 16,
+      "text": "Stack alignment at 0047b177 (SUB ESP, 0x10 before)",
+      "type": "stack_align_anchor"
     }
   ]
 }

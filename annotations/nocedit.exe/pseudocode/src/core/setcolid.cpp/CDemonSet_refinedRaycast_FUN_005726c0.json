@@ -1,14 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 103,
-    "complexity_score": 77,
+    "complexity_score": 107,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 47,
-    "suspect_count": 2,
+    "suspect_count": 4,
     "suspect_types": [
       "badspacebase",
+      "call_esp_preserve",
+      "lea_esp_stack_addr",
       "register_param"
     ],
     "total_lines": 150
@@ -185,6 +187,28 @@
       "match": "in_ESP",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "register_param"
+    },
+    {
+      "add_esp_value": 20,
+      "call_address": "00572726",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "00572739",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 48,
+      "return_address": "0057272b",
+      "target_address": "0x572a10",
+      "text": "Direct CALL at 00572726, ADD ESP at 00572739 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "address": "005727a6",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 8,
+      "instruction": "LEA EAX, [ESP + 0x8]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 005727a6",
+      "type": "lea_esp_stack_addr"
     }
   ]
 }

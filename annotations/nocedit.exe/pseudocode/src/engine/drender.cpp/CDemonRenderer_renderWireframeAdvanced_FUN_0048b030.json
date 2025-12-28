@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 109,
-    "complexity_score": 92,
+    "complexity_score": 127,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 7,
     "pseudocode_lines": 47,
-    "suspect_count": 4,
+    "suspect_count": 7,
     "suspect_types": [
+      "call_esp_preserve",
       "pointer_cast"
     ],
     "total_lines": 156
@@ -184,6 +185,45 @@
       "match": "(ushort *)((int)",
       "text": "g_VertexIndexBuffer[1] = (int)*(ushort *)((int)&(primitive->base).type + 2);",
       "type": "pointer_cast"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "0048b09a",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "0048b09f",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 8,
+      "return_address": "0048b09f",
+      "target_address": "0x48a740",
+      "text": "Direct CALL at 0048b09a, ADD ESP at 0048b09f (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "0048b0b6",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0048b0bb",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 8,
+      "return_address": "0048b0bb",
+      "target_address": "0x48d8a0",
+      "text": "Direct CALL at 0048b0b6, ADD ESP at 0048b0bb (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "0048b12f",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0048b134",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 8,
+      "return_address": "0048b134",
+      "target_address": "0x48a740",
+      "text": "Direct CALL at 0048b12f, ADD ESP at 0048b134 (no EBP frame)",
+      "type": "call_esp_preserve"
     }
   ]
 }

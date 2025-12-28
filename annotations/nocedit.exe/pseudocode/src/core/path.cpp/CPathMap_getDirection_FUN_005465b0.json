@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 355,
-    "complexity_score": 227,
+    "complexity_score": 252,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 18,
     "pseudocode_lines": 197,
-    "suspect_count": 2,
+    "suspect_count": 4,
     "suspect_types": [
       "badspacebase",
+      "call_esp_anchor",
       "register_param"
     ],
     "total_lines": 552
@@ -212,6 +213,15 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005468f9 (EBP frame + ADD ESP)",
       "type": "variadic_anchor"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0xe4",
+      "fix_address": "005465bc",
+      "match": "AND ESP",
+      "sub_esp_offset": 228,
+      "text": "Stack alignment at 005465bc (SUB ESP, 0xe4 before)",
+      "type": "stack_align_anchor"
     }
   ],
   "stack_frame": {
@@ -660,6 +670,32 @@
       "match": "in_ESP",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "register_param"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "005465f4",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "00546601",
+      "frame_offset": 228,
+      "match": "CALL...ADD ESP",
+      "return_address": "005465f9",
+      "target_address": "0x5e7830",
+      "text": "Direct CALL at 005465f4, ADD ESP at 00546601 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "00546991",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00546996",
+      "frame_offset": 228,
+      "match": "CALL...ADD ESP",
+      "return_address": "00546996",
+      "target_address": "0x5e7830",
+      "text": "Direct CALL at 00546991, ADD ESP at 00546996 with uncertain ESP",
+      "type": "call_esp_anchor"
     }
   ]
 }

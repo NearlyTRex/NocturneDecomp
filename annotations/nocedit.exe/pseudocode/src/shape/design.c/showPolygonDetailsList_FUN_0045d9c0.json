@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 220,
-    "complexity_score": 230,
+    "complexity_score": 245,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 13,
     "pseudocode_lines": 120,
-    "suspect_count": 9,
+    "suspect_count": 10,
     "suspect_types": [
       "badspacebase",
+      "call_esp_anchor",
       "format_string_mismatch",
       "pointer_cast",
       "register_param"
@@ -411,6 +412,19 @@
       "match": "crt_stdio_c_sprintf_FUN_005fdbd0((char *)local_11c,\"Poly %d :\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "0045dbb1",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0045dbb6",
+      "frame_offset": 268,
+      "match": "CALL...ADD ESP",
+      "return_address": "0045dbb6",
+      "target_address": "0x401fd0",
+      "text": "Direct CALL at 0045dbb1, ADD ESP at 0045dbb6 with uncertain ESP",
+      "type": "call_esp_anchor"
     }
   ]
 }

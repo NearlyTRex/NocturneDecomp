@@ -1,16 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 159,
-    "complexity_score": 120,
+    "complexity_score": 150,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 9,
     "pseudocode_lines": 65,
-    "suspect_count": 4,
+    "suspect_count": 6,
     "suspect_types": [
       "badspacebase",
+      "call_esp_anchor",
       "pointer_cast",
-      "register_param"
+      "register_param",
+      "stack_align_anchor"
     ],
     "total_lines": 224
   },
@@ -293,6 +295,28 @@
       "match": "(byte *)((int)",
       "text": "*hit_material = (uint)*(byte *)((int)this_ptr->ground_type_memory + local_20);",
       "type": "pointer_cast"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x24",
+      "fix_address": "004578f9",
+      "match": "AND ESP",
+      "sub_esp_offset": 36,
+      "text": "Stack alignment at 004578f9 (SUB ESP, 0x24 before)",
+      "type": "stack_align_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "0045792a",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "00457937",
+      "frame_offset": 36,
+      "match": "CALL...ADD ESP",
+      "return_address": "0045792f",
+      "target_address": "0x455460",
+      "text": "Direct CALL at 0045792a, ADD ESP at 00457937 with uncertain ESP",
+      "type": "call_esp_anchor"
     }
   ]
 }

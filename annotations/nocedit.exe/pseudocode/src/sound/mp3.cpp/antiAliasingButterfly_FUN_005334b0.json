@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 169,
-    "complexity_score": 223,
+    "complexity_score": 238,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 9,
     "pseudocode_lines": 103,
-    "suspect_count": 11,
+    "suspect_count": 12,
     "suspect_types": [
       "pointer_cast",
+      "stack_align_anchor",
       "sub_artifact"
     ],
     "total_lines": 272
@@ -339,6 +340,15 @@
       "match": "(double *)((int)",
       "text": "pdVar2 = (double *)((int)g_Mp3AntiAliasCS + iVar11);",
       "type": "pointer_cast"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x38",
+      "fix_address": "005334b9",
+      "match": "AND ESP",
+      "sub_esp_offset": 56,
+      "text": "Stack alignment at 005334b9 (SUB ESP, 0x38 before)",
+      "type": "stack_align_anchor"
     }
   ]
 }

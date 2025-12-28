@@ -1,14 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 177,
-    "complexity_score": 225,
+    "complexity_score": 435,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 6,
     "pseudocode_lines": 110,
-    "suspect_count": 10,
+    "suspect_count": 30,
     "suspect_types": [
       "badspacebase",
+      "call_esp_preserve",
+      "lea_esp_stack_addr",
       "register_param",
       "stack_param"
     ],
@@ -282,6 +284,222 @@
       "match": "in_stack_0000000c",
       "text": "DAT_0310fd48 = in_stack_0000000c;",
       "type": "stack_param"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "00565b09",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00565b0e",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 10808,
+      "return_address": "00565b0e",
+      "target_address": "0x4a6ed0",
+      "text": "Direct CALL at 00565b09, ADD ESP at 00565b0e (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "00565b1f",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00565b24",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 10808,
+      "return_address": "00565b24",
+      "target_address": "0x566a90",
+      "text": "Direct CALL at 00565b1f, ADD ESP at 00565b24 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "00565b4d",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00565b52",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 10808,
+      "return_address": "00565b52",
+      "target_address": "0x4a2f70",
+      "text": "Direct CALL at 00565b4d, ADD ESP at 00565b52 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 28,
+      "call_address": "00565b56",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00565b5b",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 10808,
+      "return_address": "00565b5b",
+      "target_address": "0x561c70",
+      "text": "Direct CALL at 00565b56, ADD ESP at 00565b5b (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 16,
+      "call_address": "00565b76",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00565b7b",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 10808,
+      "return_address": "00565b7b",
+      "target_address": "0x562920",
+      "text": "Direct CALL at 00565b76, ADD ESP at 00565b7b (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "00565c01",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00565c06",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 10808,
+      "return_address": "00565c06",
+      "target_address": "0x5662a0",
+      "text": "Direct CALL at 00565c01, ADD ESP at 00565c06 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "00565c3e",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00565c43",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 10808,
+      "return_address": "00565c43",
+      "target_address": "0x566b30",
+      "text": "Direct CALL at 00565c3e, ADD ESP at 00565c43 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "00565c51",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00565c56",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 10808,
+      "return_address": "00565c56",
+      "target_address": "0x566910",
+      "text": "Direct CALL at 00565c51, ADD ESP at 00565c56 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "00565c5a",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00565c5f",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 10808,
+      "return_address": "00565c5f",
+      "target_address": "0x5669a0",
+      "text": "Direct CALL at 00565c5a, ADD ESP at 00565c5f (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "address": "00565b2a",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 8492,
+      "instruction": "LEA ECX, [ESP + 0x212c]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 00565b2a",
+      "type": "lea_esp_stack_addr"
+    },
+    {
+      "address": "00565b33",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 9308,
+      "instruction": "LEA EAX, [ESP + 0x245c]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 00565b33",
+      "type": "lea_esp_stack_addr"
+    },
+    {
+      "address": "00565b3b",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 9812,
+      "instruction": "LEA EAX, [ESP + 0x2654]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 00565b3b",
+      "type": "lea_esp_stack_addr"
+    },
+    {
+      "address": "00565b43",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 10316,
+      "instruction": "LEA EAX, [ESP + 0x284c]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 00565b43",
+      "type": "lea_esp_stack_addr"
+    },
+    {
+      "address": "00565b65",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 8492,
+      "instruction": "LEA ECX, [ESP + 0x212c]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 00565b65",
+      "type": "lea_esp_stack_addr"
+    },
+    {
+      "address": "00565b6e",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 9808,
+      "instruction": "LEA EAX, [ESP + 0x2650]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 00565b6e",
+      "type": "lea_esp_stack_addr"
+    },
+    {
+      "address": "00565b87",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 10300,
+      "instruction": "LEA ESI, [ESP + 0x283c]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 00565b87",
+      "type": "lea_esp_stack_addr"
+    },
+    {
+      "address": "00565bad",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 9800,
+      "instruction": "LEA ESI, [ESP + 0x2648]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 00565bad",
+      "type": "lea_esp_stack_addr"
+    },
+    {
+      "address": "00565bd6",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 9300,
+      "instruction": "LEA ESI, [ESP + 0x2454]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 00565bd6",
+      "type": "lea_esp_stack_addr"
+    },
+    {
+      "address": "00565c09",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 10300,
+      "instruction": "LEA EDI, [ESP + 0x283c]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 00565c09",
+      "type": "lea_esp_stack_addr"
+    },
+    {
+      "address": "00565c20",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 9800,
+      "instruction": "LEA EDI, [ESP + 0x2648]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 00565c20",
+      "type": "lea_esp_stack_addr"
     }
   ]
 }

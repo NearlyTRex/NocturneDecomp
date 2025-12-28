@@ -1,17 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 92,
-    "complexity_score": 144,
+    "complexity_score": 174,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 49,
-    "suspect_count": 7,
+    "suspect_count": 9,
     "suspect_types": [
       "badspacebase",
+      "call_esp_anchor",
       "concat_artifact",
       "pointer_cast",
       "register_param",
+      "stack_align_anchor",
       "sub_artifact"
     ],
     "total_lines": 141
@@ -222,6 +224,28 @@
       "match": "SUB84",
       "text": "uStack_3c = SUB84 /* extract 2-byte value */(dVar4,0);",
       "type": "sub_artifact"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x2c",
+      "fix_address": "0051a309",
+      "match": "AND ESP",
+      "sub_esp_offset": 44,
+      "text": "Stack alignment at 0051a309 (SUB ESP, 0x2c before)",
+      "type": "stack_align_anchor"
+    },
+    {
+      "add_esp_value": 16,
+      "call_address": "0051a370",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0051a375",
+      "frame_offset": 44,
+      "match": "CALL...ADD ESP",
+      "return_address": "0051a375",
+      "target_address": "0x51a6b0",
+      "text": "Direct CALL at 0051a370, ADD ESP at 0051a375 with uncertain ESP",
+      "type": "call_esp_anchor"
     }
   ]
 }

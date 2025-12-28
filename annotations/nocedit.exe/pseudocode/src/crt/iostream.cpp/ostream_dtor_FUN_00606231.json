@@ -1,14 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 55,
-    "complexity_score": 68,
+    "complexity_score": 118,
     "cross_reference_count": 3,
     "function_call_count": 4,
     "global_count": 3,
     "pseudocode_lines": 28,
-    "suspect_count": 3,
+    "suspect_count": 7,
     "suspect_types": [
+      "call_esp_preserve",
       "negative_offset",
+      "special_crt_function",
       "unaffected_reg"
     ],
     "total_lines": 83
@@ -162,6 +164,54 @@
       "match": "piVar2[-1].",
       "text": "this_ptr = (ostream *)&piVar2[-1].__fill_character;",
       "type": "negative_offset"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "00606276",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0060627b",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 4,
+      "return_address": "0060627b",
+      "target_address": "0x5fe632",
+      "text": "Direct CALL at 00606276, ADD ESP at 0060627b (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "0060627f",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00606284",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 4,
+      "return_address": "00606284",
+      "target_address": "0x5fe659",
+      "text": "Direct CALL at 0060627f, ADD ESP at 00606284 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "00606291",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00606296",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 4,
+      "return_address": "00606296",
+      "target_address": "0x60632c",
+      "text": "Direct CALL at 00606291, ADD ESP at 00606296 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "address": "00606231",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_iostream.cpp_ostream_dtor_FUN_00606231",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 00606231",
+      "type": "special_crt_function"
     }
   ]
 }

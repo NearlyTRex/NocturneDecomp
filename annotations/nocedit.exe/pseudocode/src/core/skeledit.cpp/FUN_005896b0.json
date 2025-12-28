@@ -1,14 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 41,
-    "complexity_score": 153,
+    "complexity_score": 253,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 0,
     "pseudocode_lines": 23,
-    "suspect_count": 11,
+    "suspect_count": 20,
     "suspect_types": [
       "badspacebase",
+      "call_esp_preserve",
+      "lea_esp_stack_addr",
       "register_param",
       "stack_param",
       "stack_ref"
@@ -190,6 +192,95 @@
       "match": "&stack0x00000008",
       "text": "(in_stack_00000010,&stack0x00000008,acStack_f8,acStack_2f8,in_stack_00000014);",
       "type": "stack_ref"
+    },
+    {
+      "add_esp_value": 20,
+      "call_address": "005896e5",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "computed",
+      "fix_address": "005896ea",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 776,
+      "return_address": "005896ea",
+      "target_address": "0x5ff178",
+      "text": "Direct CALL at 005896e5, ADD ESP at 005896ea (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "add_esp_value": 20,
+      "call_address": "00589724",
+      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00589729",
+      "match": "CALL...ADD ESP",
+      "prologue_offset": 776,
+      "return_address": "00589729",
+      "target_address": "0x5febfc",
+      "text": "Direct CALL at 00589724, ADD ESP at 00589729 (no EBP frame)",
+      "type": "call_esp_preserve"
+    },
+    {
+      "address": "005896c0",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 256,
+      "instruction": "LEA EAX, [ESP + 0x100]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 005896c0",
+      "type": "lea_esp_stack_addr"
+    },
+    {
+      "address": "005896c8",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 4,
+      "instruction": "LEA EAX, [ESP + 0x4]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 005896c8",
+      "type": "lea_esp_stack_addr"
+    },
+    {
+      "address": "005896cd",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 520,
+      "instruction": "LEA EAX, [ESP + 0x208]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 005896cd",
+      "type": "lea_esp_stack_addr"
+    },
+    {
+      "address": "005896d5",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 780,
+      "instruction": "LEA EAX, [ESP + 0x30c]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 005896d5",
+      "type": "lea_esp_stack_addr"
+    },
+    {
+      "address": "00589707",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 8,
+      "instruction": "LEA EAX, [ESP + 0x8]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 00589707",
+      "type": "lea_esp_stack_addr"
+    },
+    {
+      "address": "0058970c",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 524,
+      "instruction": "LEA EAX, [ESP + 0x20c]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 0058970c",
+      "type": "lea_esp_stack_addr"
+    },
+    {
+      "address": "00589714",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 784,
+      "instruction": "LEA EAX, [ESP + 0x310]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 00589714",
+      "type": "lea_esp_stack_addr"
     }
   ]
 }

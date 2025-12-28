@@ -46,7 +46,9 @@ from ghidra_annotations.annotations.pseudocode.transforms import (
 )
 from ghidra_annotations.annotations.pseudocode.suspects import (
     identify_suspect_lines, calculate_complexity_metrics, identify_pcode_suspects,
-    identify_param_count_mismatch, identify_variadic_calls, identify_format_string_mismatch
+    identify_param_count_mismatch, identify_variadic_calls, identify_format_string_mismatch,
+    identify_stack_align_anchor, identify_direct_call_esp_uncertainty,
+    identify_lea_esp_stack_addr, identify_special_functions
 )
 from ghidra_annotations.annotations.pseudocode.stack_patterns import (
     summarize_stack_patterns
@@ -271,6 +273,36 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map):
     format_mismatch_suspects = identify_format_string_mismatch(
         decompiled_code, result.func_calls)
     suspects.extend(format_mismatch_suspects)
+
+    # Build partial json_data for new suspect detectors that need it
+    partial_json_data = {
+        'function': {
+            'name': func_name,
+            'address': func_addr,
+            'is_ebp_frame': result.is_ebp_frame,
+        },
+        'stack_patterns': stack_patterns,
+    }
+
+    # Identify stack alignment that can be fixed with ESP anchor
+    stack_align_suspects, stack_align_resolved = identify_stack_align_anchor(
+        partial_json_data, result.pcode_data, pcode_overrides)
+    suspects.extend(stack_align_suspects)
+    resolved_suspects.extend(stack_align_resolved)
+
+    # Identify direct CALL instructions with ESP uncertainty (not CALLIND, not variadic)
+    call_esp_suspects, call_esp_resolved = identify_direct_call_esp_uncertainty(
+        result.pcode_data, result.func_calls, pcode_overrides)
+    suspects.extend(call_esp_suspects)
+    resolved_suspects.extend(call_esp_resolved)
+
+    # Identify LEA ESP (takes address of stack variable in non-EBP-frame function)
+    lea_esp_suspects = identify_lea_esp_stack_addr(result.pcode_data, partial_json_data)
+    suspects.extend(lea_esp_suspects)
+
+    # Identify special functions (entry point, CRT, math intrinsics)
+    special_suspects = identify_special_functions(partial_json_data, func_addr)
+    suspects.extend(special_suspects)
 
     # Calculate complexity metrics (Python-only)
     complexity = calculate_complexity_metrics(

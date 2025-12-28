@@ -1,16 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 40,
-    "complexity_score": 112,
+    "complexity_score": 152,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 5,
     "pseudocode_lines": 22,
-    "suspect_count": 7,
+    "suspect_count": 10,
     "suspect_types": [
       "badspacebase",
       "callind_preserve",
+      "lea_esp_stack_addr",
       "register_param",
+      "special_crt_function",
       "stack_ref"
     ],
     "total_lines": 62
@@ -217,6 +219,33 @@
       "return_address": "0060b4ec",
       "text": "CALLIND at 0060b4e6, ADD ESP at 0060b4ec (no EBP frame)",
       "type": "callind_preserve"
+    },
+    {
+      "address": "0060b4d0",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 4,
+      "instruction": "LEA EDX, [ESP + 0x4]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 0060b4d0",
+      "type": "lea_esp_stack_addr"
+    },
+    {
+      "address": "0060b4d7",
+      "description": "Takes address of stack variable via ESP in non-EBP-frame function",
+      "esp_offset": 16,
+      "instruction": "LEA EDX, [ESP + 0x10]",
+      "match": "LEA...ESP",
+      "text": "LEA takes address of ESP-relative stack location at 0060b4d7",
+      "type": "lea_esp_stack_addr"
+    },
+    {
+      "address": "0060b490",
+      "crt_type": "runtime support",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_stdio.c_WriteConsoleChar_FUN_0060b490",
+      "match": "crt_",
+      "text": "CRT function (runtime support) at 0060b490",
+      "type": "special_crt_function"
     }
   ]
 }

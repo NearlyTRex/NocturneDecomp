@@ -1,16 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 620,
-    "complexity_score": 2223,
+    "complexity_score": 2238,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 338,
-    "suspect_count": 186,
+    "suspect_count": 187,
     "suspect_types": [
       "badspacebase",
       "pointer_cast",
       "register_param",
+      "stack_align_anchor",
       "sub_artifact",
       "unknown_field"
     ],
@@ -2194,6 +2195,15 @@
       "match": "SUB84",
       "text": "((CVector2d *)local_190,(CVector2d *)(local_184 + 4),SUB84 /* extract 2-byte value */(dVar5,0));",
       "type": "sub_artifact"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x1c8",
+      "fix_address": "005d034b",
+      "match": "AND ESP",
+      "sub_esp_offset": 456,
+      "text": "Stack alignment at 005d034b (SUB ESP, 0x1c8 before)",
+      "type": "stack_align_anchor"
     }
   ],
   "vtable_info": {

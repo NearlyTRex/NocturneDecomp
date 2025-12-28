@@ -1,13 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 22,
-    "complexity_score": 43,
+    "complexity_score": 58,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 2,
     "pseudocode_lines": 18,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
+      "special_crt_function",
       "stack_param"
     ],
     "total_lines": 40
@@ -131,6 +132,15 @@
       "match": "in_stack_00000004",
       "text": "pTVar2->seh_frame = in_stack_00000004;",
       "type": "stack_param"
+    },
+    {
+      "address": "0060aba8",
+      "crt_type": "exception handling",
+      "description": "C runtime function with non-standard stack patterns",
+      "function_name": "crt_exception.c_installExceptionHandler_FUN_0060aba8",
+      "match": "crt_",
+      "text": "CRT function (exception handling) at 0060aba8",
+      "type": "special_crt_function"
     }
   ]
 }

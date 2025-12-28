@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 190,
-    "complexity_score": 148,
+    "complexity_score": 183,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 8,
     "pseudocode_lines": 68,
-    "suspect_count": 6,
+    "suspect_count": 9,
     "suspect_types": [
       "badspacebase",
+      "call_esp_anchor",
       "format_string_mismatch",
       "register_param",
       "stack_ref"
@@ -311,6 +312,45 @@
       "match": "iVar3 = crt_stdio_c_sscanf_FUN_0060013c(&stack0xffffff84,\"%f,%d,%d\",local_20);",
       "text": "Format string expects 3 args but got 1",
       "type": "format_string_mismatch"
+    },
+    {
+      "add_esp_value": 20,
+      "call_address": "00466c9f",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "00466ca4",
+      "frame_offset": 108,
+      "match": "CALL...ADD ESP",
+      "return_address": "00466ca4",
+      "target_address": "0x4032c0",
+      "text": "Direct CALL at 00466c9f, ADD ESP at 00466ca4 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "00466cf8",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00466cfd",
+      "frame_offset": 108,
+      "match": "CALL...ADD ESP",
+      "return_address": "00466cfd",
+      "target_address": "0x401fd0",
+      "text": "Direct CALL at 00466cf8, ADD ESP at 00466cfd with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "00466d3f",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00466d44",
+      "frame_offset": 108,
+      "match": "CALL...ADD ESP",
+      "return_address": "00466d44",
+      "target_address": "0x401fd0",
+      "text": "Direct CALL at 00466d3f, ADD ESP at 00466d44 with uncertain ESP",
+      "type": "call_esp_anchor"
     }
   ]
 }
