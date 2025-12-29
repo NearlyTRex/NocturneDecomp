@@ -719,7 +719,7 @@ def identify_param_count_mismatch(param_estimates, vtable_info):
     return None
 
 
-def identify_variadic_calls(pcode_data, func_calls=None, has_stack_issues=False, existing_overrides=None):
+def identify_variadic_calls(pcode_data, func_calls=None, has_stack_issues=False, existing_overrides=None, stack_frame=None):
     """Identify calls to variadic functions that may need ESP stabilization.
 
     Variadic functions (sprintf, fscanf, etc.) can have internal stack frame issues
@@ -734,6 +734,7 @@ def identify_variadic_calls(pcode_data, func_calls=None, has_stack_issues=False,
         func_calls: List of function call dicts with 'addr', 'name', 'is_variadic' keys
         has_stack_issues: If True, the calling function has badspacebase/stack_param issues
         existing_overrides: Optional dict of address -> pcode_lines from JSON
+        stack_frame: Optional stack frame dict with 'local_size' for fallback
 
     Returns:
         Tuple of (suspects, resolved_suspects) where:
@@ -761,6 +762,12 @@ def identify_variadic_calls(pcode_data, func_calls=None, has_stack_issues=False,
     # Get prologue info to determine if caller has EBP frame
     prologue_offset, has_ebp_frame = get_prologue_offset(pcode_data)
     frame_offset = get_frame_offset_from_pcode(pcode_data) if has_ebp_frame else None
+
+    # Fallback: use stack_frame.local_size if frame_offset detection failed
+    if has_ebp_frame and (frame_offset is None or frame_offset == 0) and stack_frame:
+        local_size = stack_frame.get('local_size')
+        if local_size and local_size > 0:
+            frame_offset = local_size
 
     # Normalize existing override addresses for comparison
     fixed_addresses = set()
@@ -1131,6 +1138,7 @@ def identify_stack_align_anchor(json_data, pcode_data, existing_overrides=None):
         'description': 'Stack alignment can be anchored: ESP = EBP - 0x%x' % sub_esp_offset,
         'fix_address': fix_address,
         'sub_esp_offset': sub_esp_offset,
+        'frame_offset': sub_esp_offset,
         'align_instruction': align_pattern.get('instruction', 'AND ESP,0xfffffff8'),
     }
 

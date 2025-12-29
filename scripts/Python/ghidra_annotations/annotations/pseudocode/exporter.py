@@ -265,7 +265,7 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map):
     # Check if this function has stack issues (badspacebase or stack_param)
     has_stack_issues = any(s.get('type') in ('badspacebase', 'stack_param') for s in suspects)
     variadic_suspects, variadic_resolved = identify_variadic_calls(
-        result.pcode_data, result.func_calls, has_stack_issues, pcode_overrides)
+        result.pcode_data, result.func_calls, has_stack_issues, pcode_overrides, result.stack_frame)
     suspects.extend(variadic_suspects)
     resolved_suspects.extend(variadic_resolved)
 
