@@ -19,6 +19,9 @@ int __cdecl shape_design_c_mouseWheelPolygonReducer_FUN_004648e0(int selected_po
   SVertexData *pSVar8;
   SShapeEditorPolygon *pSVar9;
   byte bVar10;
+  uint uStack00000008;
+  uint uStack00000010;
+  uint uStack00000014;
   int iVar11;
   
   bVar10 = 0;
@@ -54,7 +57,8 @@ int __cdecl shape_design_c_mouseWheelPolygonReducer_FUN_004648e0(int selected_po
       }
       g_BackupPolygons =
            shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                     ((g_PolygonCount + iVar11) * 0x184,"..\\shape\\design.c",0x1a9c);
+                     ((int)("..\\shape\\design.c" + g_PolygonCount) * 0x184,
+                      "..\\shape\\design.c",0x1a9c);
       if (g_BackupPolygons == (SShapeEditorPolygon *)0x0) {
         g_CurrentFilename = "..\\shape\\design.c";
         g_CurrentLineNumber = 0x1a9e;
@@ -110,10 +114,13 @@ int __cdecl shape_design_c_mouseWheelPolygonReducer_FUN_004648e0(int selected_po
           g_BackupVertexCount = g_VertexCount;
           g_BackupPolygonCount = g_PolygonCount;
           wincore_windll_cpp_unlockFrame_FUN_005b7250(0);
+          uStack00000008 = 0x464bec;
           wincore_wddvmem_cpp_closeScreenDevice_FUN_005ed630();
-          selected_polygon_index =
-               shape_design_c_complexPolygonReduction_FUN_00463b30(selected_polygon_index);
+          uStack00000008 = 0x464bf5;
+          selected_polygon_index = shape_design_c_complexPolygonReduction_FUN_00463b30(0);
+          uStack00000010 = 0x464c00;
           wincore_wddvmem_cpp_openScreenDevice_FUN_005ed580();
+          uStack00000014 = 0x464c05;
           wincore_windll_cpp_lockFrame_FUN_005b7210();
         }
         if (g_KeyboardState[0x16] != '\0') {
@@ -130,7 +137,6 @@ int __cdecl shape_design_c_mouseWheelPolygonReducer_FUN_004648e0(int selected_po
             pSVar5 = (SVertexData *)((int)pSVar5 + (uint)bVar10 * -2 + 1);
             pSVar8 = (SVertexData *)((int)pSVar8 + (uint)bVar10 * -2 + 1);
           }
-          selected_polygon_index = (int)g_ModelPolygonData;
           pSVar6 = g_BackupPolygons;
           pSVar9 = g_ModelPolygonData;
           for (uVar3 = (uint)(g_BackupPolygonCount * 0x184) >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {

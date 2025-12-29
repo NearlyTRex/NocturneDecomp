@@ -9,67 +9,70 @@
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: byte core_msnedit.cpp_PrepareMissionAndEditGore(uint param_1) */
 
-void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220
-               (uint param_1,uint param_2,int unaff_EBX,uint param_4,
-               CDemonMission *param_5)
+void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
 
 {
+  float fVar1;
+  CEditorTools *pCVar2;
   CGame *this_ptr;
+  CDemonSet *pCVar3;
   CBoxActor *this_ptr_00;
-  int iVar1;
+  int iVar4;
+  CBoxActor *pCVar5;
   BADSPACEBASE *in_ESP;
-  CDemonActor *unaff_EBP;
-  CDemonActor *unaff_ESI;
-  float *unaff_EDI;
-  byte bVar2;
-  float afStackY_1030 [964];
-  uint uStack_110;
-  uint uStack_f4;
-  uint uStack_f0;
-  CGame *in_stack_ffffff1c;
-  float fVar3;
+  byte bVar6;
+  CDemonMission *in_stack_00000004;
+  CGore *in_stack_00000008;
+  CDemonSet *in_stack_00000028;
+  CDemonSet *in_stack_0000002c;
+  CVector3f *in_stack_00000030;
+  CBoxActor *in_stack_00000034;
+  float fStack00000038;
+  CDemonActor *pCStack0000003c;
+  float fStack00000044;
+  COrientation *pCVar7;
+  char *in_stack_0000004c;
+  CDemonSet *in_stack_00000050;
+  CDemonActor *in_stack_00000054;
+  int in_stack_00000058;
+  float in_stack_00000064;
+  char *in_stack_00000068;
+  float in_stack_0000006c;
+  float in_stack_00000070;
+  float in_stack_00000080;
+  float in_stack_00000084;
+  COrientation *in_stack_00000088;
+  char *in_stack_0000008c;
+  float in_stack_00000090;
+  float in_stack_00000094;
+  float in_stack_00000098;
+  float in_stack_0000009c;
+  float in_stack_000000a0;
+  float in_stack_000000c8;
+  float in_stack_000000cc;
+  float in_stack_000000d0;
+  float in_stack_000000f0;
+  uint auStack_f84 [7];
+  uint auStack_f68 [933];
+  CGame *in_stack_ffffff68;
+  float fStack_80;
+  CEditorTools *in_stack_ffffffb4;
+  uint in_stack_ffffffb8;
+  uint uStack_44;
+  int in_stack_ffffffc0;
+  CKeys *in_stack_ffffffc4;
+  uint in_stack_ffffffc8;
+  CKeys *in_stack_ffffffe4;
   CVector3i *output_ptr;
-  CDemonSet *input_ptr;
-  float fVar4;
-  float fVar5;
-  CDemonSet *pCVar6;
-  float fStack_b0;
-  CEditorTools *in_stack_ffffff58;
-  float in_stack_ffffff5c;
-  float fStack_a0;
-  float in_stack_ffffff64;
-  CKeys *in_stack_ffffff68;
-  float in_stack_ffffff6c;
-  float fStack_90;
-  float fStack_8c;
-  float fStack_88;
-  float fStack_84;
-  CEditorTools *pCStack_80;
-  float fStack_7c;
-  float fStack_78;
-  CVector3f CStack_74;
-  float fStack_68;
-  float fStack_64;
-  float fStack_60;
-  float fStack_5c;
-  float fStack_58;
-  int iStack_48;
-  float afStack_44 [4];
-  float fStack_34;
-  float fStack_30;
-  float fStack_2c;
-  CVector3i CStack_28;
-  int iStack_1c;
-  CBoxActor *pCStack_18;
-  COrientation *pCStack_14;
+  CVector3i *in_stack_ffffffe8;
   
   this_ptr = g_CGamePtr;
-  bVar2 = 0;
+  bVar6 = 0;
   DAT_02f7c634 = 0;
-  param_5->field0_0x0[4] = '\x01';
-  param_5->field0_0x0[5] = '\0';
-  param_5->field0_0x0[6] = '\0';
-  param_5->field0_0x0[7] = '\0';
+  in_stack_00000004->field0_0x0[4] = '\x01';
+  in_stack_00000004->field0_0x0[5] = '\0';
+  in_stack_00000004->field0_0x0[6] = '\0';
+  in_stack_00000004->field0_0x0[7] = '\0';
   core_game_cpp_CGame_setGameRes_FUN_004dade0(this_ptr);
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Preparing set.");
@@ -77,190 +80,219 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220
   g_CDemonLightInstance.light_enabled_flag = 0;
   g_CDemonLightInstance.base.max_distance = 64.0;
   core_set_cpp_CDemonSet_initScene_FUN_0056aa10(g_CDemonSetPtr);
-  uStack_110 = 0;
   core_setedit_cpp_CDemonSet_BuildingThumbnailImages_FUN_00576da0(g_CDemonSetPtr);
-  uStack_110 = 0x53e2b8;
   core_setdir_cpp_CDemonSet_clearCameraSwitchCooldown_FUN_00575b20(g_CDemonSetPtr);
-  uStack_110 = 0x53e2cc;
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Preparing actors.");
-  core_mission_cpp_CDemonMission_FUN_00523cf0(param_5);
+  core_mission_cpp_CDemonMission_FUN_00523cf0(in_stack_00000004);
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Setting initial camera view.");
-  param_5->field2_0xc[4] = '\0';
-  param_5->field2_0xc[5] = '\0';
-  param_5->field2_0xc[6] = '\0';
-  param_5->field2_0xc[7] = '\0';
+  in_stack_00000004->field2_0xc[4] = '\0';
+  in_stack_00000004->field2_0xc[5] = '\0';
+  in_stack_00000004->field2_0xc[6] = '\0';
+  in_stack_00000004->field2_0xc[7] = '\0';
   core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50
-            (g_CDemonSetPtr,*(int *)(param_5->field2_0xc + 4));
-  core_mission_cpp_CDemonMission_buildSetActorList_FUN_00523e60(param_5);
-  uStack_f4 = 0x53e31d;
+            (g_CDemonSetPtr,*(int *)(in_stack_00000004->field2_0xc + 4));
+  core_mission_cpp_CDemonMission_buildSetActorList_FUN_00523e60(in_stack_00000004);
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
-  uStack_f0 = 0x53e322;
   engine_2d_c_clearInputAndWait_FUN_00403260();
-  uStack_f0 = 0x53e32e;
   core_fire_cpp_CFireEffect_init_FUN_004c6c80(g_CFireEffectPtr);
-  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_ffffff1c);
-  core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)&stack0xffffff34);
-  fStack_2c = (float)g_CDemonCameraInstance.corona_blend_factor;
+  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_ffffff68);
+  core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)&fStack_80);
   this_ptr_00 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x66c,"..\\core\\msnedit.cpp",0xe7b);
-  pCStack_18 = (CBoxActor *)0x0;
+  pCVar5 = (CBoxActor *)0x0;
   if (this_ptr_00 != (CBoxActor *)0x0) {
-    pCStack_18 = core_boxactor_cpp_CBoxActor_ctor_FUN_00421700(this_ptr_00);
+    pCVar5 = core_boxactor_cpp_CBoxActor_ctor_FUN_00421700(this_ptr_00);
   }
-  if (pCStack_18 == (CBoxActor *)0x0) {
+  in_stack_00000034 = pCVar5;
+  if (pCVar5 == (CBoxActor *)0x0) {
     g_CurrentFilename = "..\\core\\msnedit.cpp";
     g_CurrentLineNumber = 0xe7c;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonMission::editGore - Out of memory");
   }
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
-            ((CKeyFramedModelInstance *)pCStack_18->model_name,"stranger-hat.kfm");
-  core_mission_cpp_CDemonMission_initNewActorMaybe_FUN_00524700(param_5);
-  *(uint *)((int)pCStack_14 + 0x28) = 0;
-  *(uint *)((int)pCStack_14 + 0x24) = *(uint *)((int)pCStack_14 + 0x28);
-  *(uint *)((int)pCStack_14 + 0x20) = *(uint *)((int)pCStack_14 + 0x28);
-  (unaff_EBP->orient).heading = 0.0;
-  (unaff_EBP->orient).bank = (unaff_EBP->orient).heading;
-  (unaff_EBP->orient).pitch = (unaff_EBP->orient).bank;
-  (*unaff_EBP->vtable->setup)(unaff_EBP);
-  iVar1 = (int)pCStack_14 + 0x20;
-  core_mission_cpp_CDemonMission_FUN_00523b70(param_5);
-  pCStack_14 = &unaff_EBP->orient;
-  pCStack_18 = (CBoxActor *)iVar1;
+            ((CKeyFramedModelInstance *)in_stack_00000034->model_name,"stranger-hat.kfm");
+  fStack_80 = fStack00000038;
+  core_mission_cpp_CDemonMission_initNewActorMaybe_FUN_00524700(in_stack_00000004);
+  *(uint *)((int)fStack00000038 + 0x28) = 0;
+  *(uint *)((int)fStack00000038 + 0x24) = *(uint *)((int)fStack00000038 + 0x28);
+  *(uint *)((int)fStack00000038 + 0x20) = *(uint *)((int)fStack00000038 + 0x28);
+  (pCStack0000003c->orient).heading = 0.0;
+  (pCStack0000003c->orient).bank = (pCStack0000003c->orient).heading;
+  (pCStack0000003c->orient).pitch = (pCStack0000003c->orient).bank;
+  fStack_80 = 7.704122e-39;
+  (*pCStack0000003c->vtable->setup)(pCStack0000003c);
+  fStack00000044 = (float)((int)fStack00000038 + 0x20);
+  core_mission_cpp_CDemonMission_FUN_00523b70(in_stack_00000004);
+  pCVar7 = &pCStack0000003c->orient;
   while( true ) {
     wincore_winrun_cpp_doNothing_FUN_005f2f80();
     shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a2920(g_CEditorToolsPtr,0,0,0);
-    *(CEditorTools **)unaff_EBP->actor_name = in_stack_ffffff58;
-    *(float *)(unaff_EBP->actor_name + 4) = in_stack_ffffff5c;
-    *(float *)(unaff_EBP->actor_name + 8) = fStack_a0;
-    if ((float *)&stack0xffffff64 != unaff_EDI) {
-      *unaff_EDI = in_stack_ffffff64;
-      unaff_EDI[1] = (float)in_stack_ffffff68;
-      unaff_EDI[2] = in_stack_ffffff6c;
+    *(CEditorTools **)in_stack_0000004c = in_stack_ffffffb4;
+    *(uint *)(in_stack_0000004c + 4) = in_stack_ffffffb8;
+    *(uint *)(in_stack_0000004c + 8) = uStack_44;
+    if ((CDemonSet *)&stack0xffffffc0 != in_stack_00000050) {
+      in_stack_00000050->camera_count = in_stack_ffffffc0;
+      *(CKeys **)in_stack_00000050->cameras[0].name = in_stack_ffffffc4;
+      *(uint *)(in_stack_00000050->cameras[0].name + 4) = in_stack_ffffffc8;
     }
-    core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(unaff_ESI);
-    fVar3 = 7.704338e-39;
-    input_ptr = g_CDemonSetPtr;
-    core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0(g_CDemonSetPtr,unaff_ESI,0);
-    fVar4 = 7.704354e-39;
-    core_mission_cpp_CDemonMission_buildSetActorList_FUN_00523e60(param_5);
+    core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(in_stack_00000054);
+    core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
+              (g_CDemonSetPtr,in_stack_00000054,0);
+    core_mission_cpp_CDemonMission_buildSetActorList_FUN_00523e60(in_stack_00000004);
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
-    pCVar6 = g_CDemonSetPtr;
-    if (*(int *)(param_5->field2_0xc + 0x2c) == 0) {
-      g_CDemonCameraInstance.corona_blend_factor = unaff_EBX;
+    pCVar3 = g_CDemonSetPtr;
+    if (*(int *)(in_stack_00000004->field2_0xc + 0x2c) == 0) {
+      g_CDemonCameraInstance.corona_blend_factor = in_stack_00000058;
       g_CDemonSetPtr->lighting_quality_mode = 0;
-      pCVar6->unk_lighting_param1 = 0;
+      pCVar3->unk_lighting_param1 = 0;
     }
     else {
       g_CDemonCameraInstance.corona_blend_factor = 0xffff;
       g_CDemonSetPtr->lighting_quality_mode = 1;
-      pCVar6->unk_lighting_param1 = 1;
+      pCVar3->unk_lighting_param1 = 1;
     }
-    pCVar6 = g_CDemonSetPtr;
-    g_CDemonSetPtr->unk_lighting_param3 = (uint)(*(int *)(param_5->field2_0xc + 0x24) == 0);
-    fStack_b0 = 0.0;
-    pCVar6->unk_lighting_param4 = (uint)(*(int *)(param_5->field2_0xc + 0x28) == 0);
-    fVar5 = 7.704514e-39;
-    core_set_cpp_CDemonSet_FUN_0056c1a0(pCVar6);
-    fStack_b0 = 7.704534e-39;
+    pCVar3 = g_CDemonSetPtr;
+    g_CDemonSetPtr->unk_lighting_param3 =
+         (uint)(*(int *)(in_stack_00000004->field2_0xc + 0x24) == 0);
+    pCVar3->unk_lighting_param4 = (uint)(*(int *)(in_stack_00000004->field2_0xc + 0x28) == 0);
+    core_set_cpp_CDemonSet_FUN_0056c1a0(pCVar3);
     core_fire_cpp_CFireEffect_process_FUN_004c6ec0(g_CFireEffectPtr);
     core_gore_cpp_CGore_process_FUN_004ed9e0();
-    in_stack_ffffff5c = 0.0;
-    in_stack_ffffff58 = g_CEditorToolsPtr;
+    in_stack_ffffffb8 = 0;
+    in_stack_ffffffb4 = g_CEditorToolsPtr;
     shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(g_CEditorToolsPtr,false);
-    fStack_a0 = 7.70459e-39;
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-    fStack_a0 = 7.704607e-39;
+    uStack_44 = 0x53e54f;
     core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
     core_setcolid_cpp_CDemonSet_FUN_005743e0(g_CDemonSetPtr);
-    in_stack_ffffff6c = 1.4013e-45;
-    in_stack_ffffff64 = 7.70465e-39;
-    in_stack_ffffff68 = g_CKeysPtr;
-    iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
-    if (iVar1 != 0) break;
-    core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)&stack0xffffff48);
+    in_stack_ffffffc8._0_1_ = '\x01';
+    in_stack_ffffffc8._1_1_ = '\0';
+    in_stack_ffffffc8._2_1_ = '\0';
+    in_stack_ffffffc8._3_1_ = '\0';
+    in_stack_ffffffc0 = 0x53e56e;
+    in_stack_ffffffc4 = g_CKeysPtr;
+    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
+    if (iVar4 != 0) break;
+    core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)&stack0xfffffff4);
     if (((byte)g_MouseButtonFlags & 1) != 0) {
       if ((((0 < g_MouseX) && (g_MouseX < g_WindowWidth + -2)) && (0 < g_MouseY)) &&
          (g_MouseY < g_WindowHeight + -2)) {
         core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0
-                  (&g_CDemonCameraInstance,(CVector3i *)g_MouseX,g_MouseY,(int)fVar3);
-        output_ptr = &CStack_28;
-        fStack_2c = afStack_44[1];
-        *(float *)((int)&CStack_28 + (uint)bVar2 * -8) = afStack_44[(uint)bVar2 * -2 + 2];
-        *(float *)((int)&CStack_28 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 4) =
-             afStack_44[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 3];
+                  (&g_CDemonCameraInstance,(CVector3i *)g_MouseX,g_MouseY,(int)in_stack_ffffffe4);
+        output_ptr = (CVector3i *)&stack0x00000084;
+        in_stack_00000080 = in_stack_0000006c;
+        (&stack0x00000084)[(uint)bVar6 * -2] = (&stack0x00000070)[(uint)bVar6 * -2];
+        (&stack0x00000088)[(uint)bVar6 * -2 + (uint)bVar6 * -2] =
+             (COrientation *)*(uint *)(&stack0x00000074 + (uint)bVar6 * -8 + (uint)bVar6 * -8)
+        ;
         core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370
-                  (&g_CDemonCameraInstance,output_ptr,(CVector3i *)input_ptr);
-        CStack_28.x = iStack_48;
-        *(float *)((int)&CStack_28 + (uint)bVar2 * -8 + 4) = afStack_44[(uint)bVar2 * -2];
-        *(float *)((int)&CStack_28 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
-             afStack_44[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
-        fStack_88 = (float)CStack_28.y * _DAT_00661c30;
-        fStack_84 = (float)CStack_28.z * _DAT_00661c30;
-        pCStack_80 = (CEditorTools *)((float)iStack_1c * _DAT_00661c30);
-        if ((float *)&stack0xffffff54 != &fStack_84) {
-          in_stack_ffffff58 = pCStack_80;
-          in_stack_ffffff5c = fStack_7c;
+                  (&g_CDemonCameraInstance,output_ptr,in_stack_ffffffe8);
+        in_stack_00000084 = in_stack_00000064;
+        (&stack0x00000088)[(uint)bVar6 * -2] = (COrientation *)(&stack0x00000068)[(uint)bVar6 * -2];
+        (&stack0x0000008c)[(uint)bVar6 * -2 + (uint)bVar6 * -2] =
+             (char *)(&stack0x0000006c)[(uint)bVar6 * -2 + (uint)bVar6 * -2];
+        in_stack_00000028 = (CDemonSet *)((float)(int)in_stack_0000008c * _DAT_00661c30);
+        in_stack_0000002c = (CDemonSet *)((float)(int)in_stack_00000090 * _DAT_00661c30);
+        if ((CDemonSet **)&stack0x00000000 != &stack0x00000028) {
+          in_stack_00000008 = (CGore *)in_stack_00000030;
+          in_stack_00000004 = (CDemonMission *)in_stack_0000002c;
         }
       }
       g_MouseButtonFlags._0_1_ = (byte)g_MouseButtonFlags & 0xfe;
     }
-    fVar3 = 7.9874e-44;
-    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x39);
-    if ((iVar1 != 0) && (fVar3 - g_CGamePtr->delta_time_float < 0.0)) {
-      core_gore_cpp_FUN_004edaa0();
+    in_stack_ffffffe8 = (CVector3i *)0x39;
+    in_stack_ffffffe4 = g_CKeysPtr;
+    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x39);
+    if (iVar4 == 0) {
+      in_stack_00000008 = (CGore *)0x0;
     }
-    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1c);
-    if ((iVar1 != 0) && (fVar4 - g_CGamePtr->delta_time_float < 0.0)) {
-      fStack_58 = (float)10;
-      fStack_60 = *(float *)((int)pCStack_18 + 0x44) * fStack_58;
-      fStack_5c = *(float *)((int)pCStack_18 + 0x50) * fStack_58;
-      fStack_58 = fStack_58 * *(float *)((int)pCStack_18 + 0x5c);
-      core_gore_cpp_FUN_004edaa0();
-    }
-    iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x19);
-    if (iVar1 != 0) {
-      CStack_74.y = fStack_b0;
-      in_stack_ffffff68 = (CKeys *)((float)pCVar6 + -100f);
-      in_stack_ffffff6c = fStack_b0;
-      fStack_78 = fVar5;
-      CStack_74.x = (float)pCVar6;
-      core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
-      unaff_EDI = (float *)core_setcolid_cpp_CDemonSet_raycast_FUN_00572530
-                                     (g_CDemonSetPtr,&CStack_74,(CVector3f *)&stack0xffffff68);
-      in_stack_ffffff64 = fVar5;
-      if ((0.0 < (float)unaff_EDI) && ((float)unaff_EDI < 1.0)) {
-        fStack_34 = in_stack_ffffff6c - CStack_74.y;
-        fStack_64 = fStack_34 * (float)unaff_EDI;
-        fStack_30 = fStack_90 - CStack_74.z;
-        fStack_2c = fStack_8c - fStack_68;
-        fStack_60 = fStack_30 * (float)unaff_EDI;
-        fStack_5c = fStack_2c * (float)unaff_EDI;
-        fStack_7c = CStack_74.y + fStack_64;
-        fStack_78 = CStack_74.z + fStack_60;
-        CStack_74.x = fStack_68 + fStack_5c;
-        core_gore_cpp_FUN_004ede30();
-        in_stack_ffffff64 = fVar5;
+    else {
+      in_stack_00000008 = (CGore *)((float)in_stack_00000008 - g_CGamePtr->delta_time_float);
+      if ((float)in_stack_00000008 < 0.0) {
+        in_stack_00000008 = (CGore *)((float)in_stack_00000008 + 0.1f);
+        core_gore_cpp_FUN_004edaa0();
       }
     }
-    iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x13);
-    if ((iVar1 != 0) &&
-       (iVar1 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
-                          (g_CEditorToolsPtr,"Reset gore?"), iVar1 != 0)) {
-      core_gore_cpp_FUN_004ed760();
-      core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50
-                (g_CDemonSetPtr,g_CDemonSetPtr->selected_camera_index);
+    iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1c);
+    if (iVar4 == 0) {
+      in_stack_00000028 = (CDemonSet *)0x0;
+    }
+    else {
+      in_stack_00000028 = (CDemonSet *)((float)in_stack_00000028 - g_CGamePtr->delta_time_float);
+      if ((float)in_stack_00000028 < 0.0) {
+        fVar1 = (float)10;
+        in_stack_00000084 = *(float *)((int)in_stack_000000cc + 0x44) * fVar1;
+        in_stack_00000088 = (COrientation *)(*(float *)((int)in_stack_000000cc + 0x50) * fVar1);
+        in_stack_0000008c = (char *)(fVar1 * *(float *)((int)in_stack_000000cc + 0x5c));
+        in_stack_00000028 = (CDemonSet *)((float)in_stack_00000028 + 0.1f);
+        in_stack_00000008 = g_CGorePtr;
+        in_stack_00000004 = (CDemonMission *)0x53e758;
+        core_gore_cpp_FUN_004edaa0();
+      }
+    }
+    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x19);
+    if (iVar4 != 0) {
+      in_stack_00000084 = fStack00000044;
+      in_stack_0000008c = in_stack_0000004c;
+      in_stack_0000002c = g_CDemonSetPtr;
+      in_stack_00000064 = (float)pCVar7 + -100f;
+      in_stack_00000068 = in_stack_0000004c;
+      in_stack_00000028 = (CDemonSet *)0x53e7bd;
+      in_stack_00000088 = pCVar7;
+      core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
+      in_stack_00000030 = (CVector3f *)&stack0x00000064;
+      in_stack_0000002c = (CDemonSet *)&stack0x00000088;
+      in_stack_00000028 = g_CDemonSetPtr;
+      fStack00000044 =
+           core_setcolid_cpp_CDemonSet_raycast_FUN_00572530
+                     (g_CDemonSetPtr,(CVector3f *)in_stack_0000002c,in_stack_00000030);
+      in_stack_000000f0 = fStack00000044;
+      if ((0.0 < fStack00000044) && (fStack00000044 < 1.0)) {
+        in_stack_000000c8 = (float)in_stack_00000068 - (float)in_stack_0000008c;
+        in_stack_00000098 = in_stack_000000c8 * fStack00000044;
+        in_stack_000000cc = in_stack_0000006c - in_stack_00000090;
+        in_stack_000000d0 = in_stack_00000070 - in_stack_00000094;
+        in_stack_0000009c = in_stack_000000cc * fStack00000044;
+        in_stack_000000a0 = in_stack_000000d0 * fStack00000044;
+        in_stack_00000034 = (CBoxActor *)0x0;
+        in_stack_00000030 = (CVector3f *)&stack0x00000080;
+        in_stack_0000002c = (CDemonSet *)g_CGorePtr;
+        in_stack_00000080 = (float)in_stack_0000008c + in_stack_00000098;
+        in_stack_00000084 = in_stack_00000090 + in_stack_0000009c;
+        in_stack_00000088 = (COrientation *)(in_stack_00000094 + in_stack_000000a0);
+        in_stack_00000028 = (CDemonSet *)0x53e89b;
+        core_gore_cpp_FUN_004ede30();
+      }
+    }
+    in_stack_00000034 = (CBoxActor *)g_CKeysPtr;
+    in_stack_00000030 = (CVector3f *)0x53e8ab;
+    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x13);
+    pCVar2 = g_CEditorToolsPtr;
+    if (iVar4 != 0) {
+      in_stack_0000004c = "Reset gore?";
+      fStack00000044 = 7.705851e-39;
+      iVar4 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
+                        (g_CEditorToolsPtr,"Reset gore?");
+      pCVar7 = (COrientation *)pCVar2;
+      if (iVar4 != 0) {
+        core_gore_cpp_FUN_004ed760();
+        in_stack_00000054 = (CDemonActor *)g_CDemonSetPtr->selected_camera_index;
+        in_stack_00000050 = g_CDemonSetPtr;
+        in_stack_0000004c = (char *)0x53e8f3;
+        core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(g_CDemonSetPtr,(int)in_stack_00000054);
+      }
     }
   }
-  core_mission_cpp_CDemonMission_FUN_00523f20(param_5);
-  core_mission_cpp_CDemonMission_buildSetActorList_FUN_00523e60(param_5);
+  core_mission_cpp_CDemonMission_FUN_00523f20(in_stack_00000004);
+  core_mission_cpp_CDemonMission_buildSetActorList_FUN_00523e60(in_stack_00000004);
   core_set_cpp_CDemonSet_FUN_0056d2d0(g_CDemonSetPtr);
   engine_2d_c_clearInputAndWait_FUN_00403260();
   core_game_cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004daed0(g_CGamePtr);
-  pCVar6 = g_CDemonSetPtr;
+  pCVar3 = g_CDemonSetPtr;
   g_CDemonSetPtr->lighting_quality_mode = 0;
-  pCVar6->unk_lighting_param1 = 0;
-  pCVar6->unk_lighting_param3 = 0;
-  pCVar6->unk_lighting_param4 = 0;
+  pCVar3->unk_lighting_param1 = 0;
+  pCVar3->unk_lighting_param3 = 0;
+  pCVar3->unk_lighting_param4 = 0;
   return;
 }

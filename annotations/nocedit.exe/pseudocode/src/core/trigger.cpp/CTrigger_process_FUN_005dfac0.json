@@ -1,23 +1,24 @@
 {
   "complexity": {
     "assembly_lines": 509,
-    "complexity_score": 544,
+    "complexity_score": 577,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 21,
-    "pseudocode_lines": 244,
-    "suspect_count": 26,
+    "pseudocode_lines": 242,
+    "suspect_count": 29,
     "suspect_types": [
       "badspacebase",
       "call_esp_anchor",
+      "callind_anchor",
       "pointer_cast",
       "register_param",
+      "stack_align_anchor",
       "stack_param",
-      "unknown_field",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 753
+    "total_lines": 751
   },
   "cross_references": [],
   "function": {
@@ -392,31 +393,67 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 55,
+      "line": 54,
       "match": "(uint *)((int)",
       "text": "uVar4 = *(uint *)((int)g_HeroActors + iVar10);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 112,
-      "match": "._0_8_",
-      "text": "auStack_bc._0_8_ = (ulonglong)iStack_14;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 140,
+      "line": 138,
       "match": "in_stack_00000008",
       "text": "fVar1 = *(float *)(this_ptr->field1_0x158 + 0x214) - in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 161,
+      "line": 159,
       "match": "code *",
       "text": "iVar8 = (**(code **)(*(int *)(iVar10 + 0x154) + 0x54))();",
       "type": "unresolved_funcptr"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "005dfb17",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "005dfb1f",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 172,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 005dfb17, ADD ESP at 005dfb1f",
+      "type": "callind_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "005dfcb2",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "005dfcbc",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 172,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 005dfcb2, ADD ESP at 005dfcbc",
+      "type": "callind_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "005dfed9",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "005dfedc",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 172,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 005dfed9, ADD ESP at 005dfedc",
+      "type": "callind_anchor"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0xac",
+      "fix_address": "005dfacc",
+      "frame_offset": 172,
+      "match": "AND ESP",
+      "sub_esp_offset": 172,
+      "text": "Stack alignment at 005dfacc (SUB ESP, 0xac before)",
+      "type": "stack_align_anchor"
     },
     {
       "add_esp_value": 8,
@@ -651,48 +688,6 @@
       "target_address": "0x4aabe0",
       "text": "Direct CALL at 005e008f, ADD ESP at 005e0094 with uncertain ESP",
       "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "005dfb17",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "005dfb1f",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 172,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 005dfb17, ADD ESP at 005dfb1f",
-      "type": "callind_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "005dfcb2",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "005dfcbc",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 172,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 005dfcb2, ADD ESP at 005dfcbc",
-      "type": "callind_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "callind_address": "005dfed9",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "005dfedc",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 172,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 005dfed9, ADD ESP at 005dfedc",
-      "type": "callind_anchor"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0xac",
-      "fix_address": "005dfacc",
-      "match": "AND ESP",
-      "sub_esp_offset": 172,
-      "text": "Stack alignment at 005dfacc (SUB ESP, 0xac before)",
-      "type": "stack_align_anchor"
     }
   ],
   "vtable_info": {

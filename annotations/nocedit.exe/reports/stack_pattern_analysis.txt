@@ -21,14 +21,14 @@ HIGH SEVERITY - Severe decompilation impact
 
   crt_process.c_spawnvp_FUN_0060f39c
     Address: 0060f39c
-    Suspect count: 69
+    Suspect count: 72
     Note: Function contains stack manipulation that severely impacts decompilation quality.
     - [dynamic_alloca] at 0060f51c: SUB ESP,EAX
     - [dynamic_alloca] at 0060f5d6: SUB ESP,EAX
 
   crt_thread.c_threadStartupWrapper_FUN_0060f8c0
     Address: 0060f8c0
-    Suspect count: 17
+    Suspect count: 18
     Note: Function contains stack manipulation that severely impacts decompilation quality.
     - [dynamic_alloca] at 0060f8ed: SUB ESP,EAX
 
@@ -41,7 +41,7 @@ HIGH SEVERITY - Severe decompilation impact
 
   crt_io.c_write_FUN_006084ec
     Address: 006084ec
-    Suspect count: 17
+    Suspect count: 31
     Note: Function contains stack manipulation that severely impacts decompilation quality.
     - [dynamic_alloca] at 0060868e: SUB ESP,EAX
     - [alt_frame_pointer] at 0060869e: MOV ESI,ESP
@@ -102,7 +102,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 0051a309: AND ESP,0xfffffff8
 
   shape_meshlod.cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400
-    File: shape/meshlod.cpp, Suspects: 12
+    File: shape/meshlod.cpp, Suspects: 14
     - [stack_alignment] at 0051a40c: AND ESP,0xfffffff8
 
   shape_meshlod.cpp_CLodMesh_sortFacesByAttribute_FUN_0051bd30
@@ -111,7 +111,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 0051bfaa: MOV ESI,ESP
 
   shape_meshlod.cpp_CLodMesh_buildSpatialGrid_FUN_00516620
-    File: shape/meshlod.cpp, Suspects: 11
+    File: shape/meshlod.cpp, Suspects: 28
     - [stack_alignment] at 00516629: AND ESP,0xfffffff8
 
   shape_meshlod.cpp_CLodMesh_computeVertexNormal_FUN_005172c0
@@ -119,11 +119,11 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 005172c9: AND ESP,0xfffffff8
 
   shape_meshlod.cpp_CLodMesh_eqLoad_FUN_0051cdf0
-    File: shape/meshlod.cpp, Suspects: 22
+    File: shape/meshlod.cpp, Suspects: 29
     - [stack_alignment] at 0051cdf9: AND ESP,0xfffffff8
 
   shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
-    File: shape/meshlod.cpp, Suspects: 35
+    File: shape/meshlod.cpp, Suspects: 37
     - [stack_alignment] at 00519b59: AND ESP,0xfffffff8
 
   shape_meshlod.cpp_CLodMesh_normalizeAndCenterMesh_FUN_00516e10
@@ -131,7 +131,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 00516e17: AND ESP,0xfffffff8
 
   shape_meshlod.cpp_CLodMesh_findClosestFaceToSamplePoint_FUN_00518300
-    File: shape/meshlod.cpp, Suspects: 4
+    File: shape/meshlod.cpp, Suspects: 6
     - [stack_alignment] at 00518309: AND ESP,0xfffffff8
 
   shape_meshlod.cpp_CLodMesh_processGridCell_FUN_0051a030
@@ -143,7 +143,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 00519689: AND ESP,0xfffffff8
 
   shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
-    File: shape/meshlod.cpp, Suspects: 40
+    File: shape/meshlod.cpp, Suspects: 46
     - [stack_alignment] at 0051891c: AND ESP,0xfffffff8
 
   shape_meshlod.cpp_CLodMesh_renderColorCodedEdges_FUN_0051e830
@@ -165,11 +165,11 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 0051e7e4: MOV EDI,ESP
 
   shape_meshlod.cpp_CLodMesh_eqSave_FUN_0051d0e0
-    File: shape/meshlod.cpp, Suspects: 2
+    File: shape/meshlod.cpp, Suspects: 4
     - [stack_alignment] at 0051d0e9: AND ESP,0xfffffff8
 
   shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630
-    File: shape/meshlod.cpp, Suspects: 47
+    File: shape/meshlod.cpp, Suspects: 55
     - [stack_alignment] at 0051763c: AND ESP,0xfffffff8
 
   shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0
@@ -181,11 +181,11 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 00514f99: AND ESP,0xfffffff8
 
   shape_meshlod.cpp_CLodMesh_generateLOD_FUN_00516ba0
-    File: shape/meshlod.cpp, Suspects: 16
+    File: shape/meshlod.cpp, Suspects: 20
     - [stack_alignment] at 00516ba9: AND ESP,0xfffffff8
 
   shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990
-    File: shape/meshlod.cpp, Suspects: 160
+    File: shape/meshlod.cpp, Suspects: 270
     - [stack_alignment] at 0051d99c: AND ESP,0xfffffff8
 
   shape_superopt.cpp_distancePointToSegmentXY_FUN_005d64a0
@@ -193,7 +193,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 005d64a9: AND ESP,0xfffffff8
 
   shape_superopt.cpp_CObj_transform_FUN_005d2c40
-    File: shape/superopt.cpp, Suspects: 10
+    File: shape/superopt.cpp, Suspects: 12
     - [stack_alignment] at 005d2c4c: AND ESP,0xfffffff8
     - [alt_frame_pointer] at 005d2d0d: MOV EDI,ESP
 
@@ -203,7 +203,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 005d85c1: MOV ESI,ESP
 
   shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0
-    File: shape/superopt.cpp, Suspects: 118
+    File: shape/superopt.cpp, Suspects: 137
     - [stack_alignment] at 005d47bc: AND ESP,0xfffffff8
 
   shape_superopt.cpp_CPoly_projectUVPlanar_FUN_005ce0a0
@@ -211,7 +211,7 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 005ce0a9: AND ESP,0xfffffff8
 
   shape_superopt.cpp_CObj_findCoplanarPolygon_FUN_005d5800
-    File: shape/superopt.cpp, Suspects: 21
+    File: shape/superopt.cpp, Suspects: 33
     - [stack_alignment] at 005d5809: AND ESP,0xfffffff8
 
   shape_superopt.cpp_FUN_005d83d0
@@ -246,11 +246,11 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [stack_alignment] at 005c9aac: AND ESP,0xfffffff8
 
   shape_superopt.cpp_TriListSomething_FUN_005d77a0
-    File: shape/superopt.cpp, Suspects: 67
+    File: shape/superopt.cpp, Suspects: 83
     - [stack_alignment] at 005d77ac: AND ESP,0xfffffff8
 
   shape_superopt.cpp_CPoly_intersectPoly_FUN_005ce580
-    File: shape/superopt.cpp, Suspects: 225
+    File: shape/superopt.cpp, Suspects: 268
     - [stack_alignment] at 005ce58c: AND ESP,0xfffffff8
 
   shape_superopt.cpp_CPoly_flipNormal_FUN_005cdfe0
@@ -269,5 +269,5 @@ CORRELATION: Stack patterns vs suspect counts
 
 Functions with stack patterns tend to have more suspects:
 
-  With stack patterns:    avg 38.4 suspects/function
-  Without stack patterns: avg 11.4 suspects/function
+  With stack patterns:    avg 42.7 suspects/function
+  Without stack patterns: avg 11.6 suspects/function

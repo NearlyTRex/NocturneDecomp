@@ -14,11 +14,11 @@ void __cdecl core_bat_cpp_CBat_process_FUN_00414a00(CBat *this_ptr)
   uint uVar3;
   float in_stack_00000008;
   float fVar4;
-  float local_2c;
   
+  fVar4 = (this_ptr->base_actor).location.position.z;
   this_ptr->param = this_ptr->course_speed * in_stack_00000008 + this_ptr->param;
   core_bat_cpp_FUN_00414ce0();
-  fVar4 = (((this_ptr->base_actor).location.position.y - local_2c) * (float)4) /
+  fVar4 = (((this_ptr->base_actor).location.position.y - fVar4) * (float)4) /
           in_stack_00000008 + (float)35;
   if (fVar4 < (float)10) {
     fVar4 = 10.0;

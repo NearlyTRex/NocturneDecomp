@@ -1,20 +1,22 @@
 {
   "complexity": {
     "assembly_lines": 1168,
-    "complexity_score": 1164,
+    "complexity_score": 1211,
     "cross_reference_count": 8,
     "function_call_count": 5,
     "global_count": 64,
-    "pseudocode_lines": 679,
-    "suspect_count": 46,
+    "pseudocode_lines": 676,
+    "suspect_count": 50,
     "suspect_types": [
       "badspacebase",
       "call_esp_anchor",
       "extra_output",
       "pointer_cast",
-      "register_param"
+      "register_param",
+      "stack_align_anchor",
+      "variadic_anchor"
     ],
-    "total_lines": 1847
+    "total_lines": 1844
   },
   "cross_references": [
     {
@@ -1093,213 +1095,271 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 117,
+      "line": 116,
       "match": "(int *)((int)",
-      "text": "CStack_170.z = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.",
+      "text": "local_16c.z = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 127,
+      "line": 126,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)&CStack_158 + (uint)bVar20 * -8) = local_148[(uint)bVar20 * -2];",
+      "text": "*(int *)((int)&local_154 + (uint)bVar20 * -8) = aiStack_144[(uint)bVar20 * -2];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 129,
+      "line": 128,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)&CStack_158 + (uint)bVar20 * -8 + (uint)bVar20 * -8 + 4) =",
+      "text": "*(int *)((int)&local_154 + (uint)bVar20 * -8 + (uint)bVar20 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 133,
+      "line": 132,
       "match": "(float *)((int)",
       "text": "*(float *)((int)&g_RenderVertexBuffer[0].w_recip + iVar16) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 159,
+      "line": 158,
       "match": "(uint *)((int)",
-      "text": "puVar2 = (uint *)((int)&g_TransformedVertexArray[0].x + local_68);",
+      "text": "puVar2 = (uint *)((int)&g_TransformedVertexArray[0].x + local_64);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 343,
+      "match": "(float *)((int)",
+      "text": "*(float *)((int)&g_RenderVertexBuffer[0].w_recip + (int)local_54) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 346,
-      "match": "(float *)((int)",
-      "text": "*(float *)((int)&g_RenderVertexBuffer[0].w_recip + (int)local_58) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 349,
       "match": "(CVector3i *)((int)",
-      "text": "local_58 = (CVector3i *)((int)local_58 + 0x30);",
+      "text": "local_54 = (CVector3i *)((int)local_54 + 0x30);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 385,
+      "line": 382,
       "match": "(float *)((int)",
-      "text": "*(float *)((int)&g_RenderVertexBuffer[0].w_recip + (int)local_4c) =",
+      "text": "*(float *)((int)&g_RenderVertexBuffer[0].w_recip + (int)local_48) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 401,
+      "line": 398,
       "match": "(int *)((int)",
-      "text": "local_ec.z = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_x",
+      "text": "local_e8.z = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_x",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 411,
+      "line": 408,
       "match": "(int *)((int)",
-      "text": "piVar18 = (int *)((int)local_58 + 0x32cd850 + (uint)bVar20 * -8);",
+      "text": "piVar18 = (int *)((int)local_54 + 0x32cd850 + (uint)bVar20 * -8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 412,
+      "line": 409,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&g_TransformedVertexArray[0].x + (int)local_58) = uStack_12c;",
+      "text": "*(uint *)((int)&g_TransformedVertexArray[0].x + (int)local_54) = uStack_128;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 416,
+      "line": 413,
       "match": "(CVector3i *)((int)",
-      "text": "local_58 = (CVector3i *)((int)local_58 + 0xc);",
+      "text": "local_54 = (CVector3i *)((int)local_54 + 0xc);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 525,
+      "line": 522,
       "match": "(CDemonSet *)((int)",
       "text": "pCVar9 = (CDemonSet *)((int)&pCVar9->camera_count + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 544,
+      "line": 541,
       "match": "(float *)((int)",
       "text": "*(float *)((int)&g_RenderVertexBuffer[0].w_recip + iVar22) = g_PerspectiveReciprocal",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 570,
+      "line": 567,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)&CStack_170 + (uint)bVar20 * -8 + 4) = local_148[(uint)bVar20 * -2 + 3];",
+      "text": "*(int *)((int)&local_16c + (uint)bVar20 * -8 + 4) = aiStack_144[(uint)bVar20 * -2 + 3];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 571,
+      "line": 568,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)&CStack_170 + (uint)bVar20 * -8 + (uint)bVar20 * -8 + 8) =",
+      "text": "*(int *)((int)&local_16c + (uint)bVar20 * -8 + (uint)bVar20 * -8 + 8) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 577,
+      "line": 574,
       "match": "(float *)((int)",
       "text": "*(float *)((int)&g_RenderVertexBuffer[0].w_recip + iVar16) = g_PerspectiveReciprocal;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 586,
+      "line": 583,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&g_RenderVertexBuffer[0].light + (int)fVar11) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 585,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)&g_RenderVertexBuffer[0].color + (int)fVar11) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 588,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)&g_RenderVertexBuffer[0].color + (int)fVar11) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 591,
-      "match": "(int *)((int)",
       "text": "*(int *)((int)&g_RenderVertexBuffer[0].fog + (int)fVar11) = this_ptr->mirror_render_param4",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 606,
+      "line": 603,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&g_RenderVertexBuffer[0].w_recip + iVar22) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 611,
+      "line": 608,
       "match": "extraout_EAX",
       "text": "pCVar9 = extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Complex pointer cast",
-      "line": 620,
+      "line": 617,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&g_RenderVertexBuffer[0].light + (int)fVar11) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 622,
+      "line": 619,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&g_RenderVertexBuffer[0].color + (int)fVar11) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 625,
+      "line": 622,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&g_RenderVertexBuffer[0].fog + (int)fVar11) = this_ptr->fog_scale_factor",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 627,
+      "line": 624,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&g_RenderVertexBuffer[0].w_recip + (int)fVar11) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 638,
+      "line": 635,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&g_RenderVertexBuffer[0].light + (int)fVar11) = 0xffff;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 639,
+      "line": 636,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&g_RenderVertexBuffer[0].color + (int)fVar11) = 0xffff;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 640,
+      "line": 637,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&g_RenderVertexBuffer[0].fog + (int)fVar11) = 0xffff;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 641,
+      "line": 638,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&g_RenderVertexBuffer[0].w_recip + (int)fVar11) = 0;",
       "type": "pointer_cast"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "0056eafb",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "fix_address": "0056eb00",
+      "frame_offset": 356,
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0056eb00",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0056eafb (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "0056f4c5",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "0056f4ca",
+      "frame_offset": 356,
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0056f4ca",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0056f4c5 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "0056f4f1",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "0056f4f6",
+      "frame_offset": 356,
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0056f4f6",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0056f4f1 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x164",
+      "fix_address": "0056eacc",
+      "frame_offset": 356,
+      "match": "AND ESP",
+      "sub_esp_offset": 356,
+      "text": "Stack alignment at 0056eacc (SUB ESP, 0x164 before)",
+      "type": "stack_align_anchor"
     },
     {
       "add_esp_value": 4,
@@ -1469,63 +1529,6 @@
       "target_address": "0x56ddb0",
       "text": "Direct CALL at 0056f8fd, ADD ESP at 0056f902 with uncertain ESP",
       "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "0056eafb",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "fix_address": "0056eb00",
-      "frame_offset": 356,
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "0056eb00",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0056eafb (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "0056f4c5",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "0056f4ca",
-      "frame_offset": 356,
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "0056f4ca",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0056f4c5 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "0056f4f1",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "0056f4f6",
-      "frame_offset": 356,
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "0056f4f6",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0056f4f1 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x164",
-      "fix_address": "0056eacc",
-      "match": "AND ESP",
-      "sub_esp_offset": 356,
-      "text": "Stack alignment at 0056eacc (SUB ESP, 0x164 before)",
-      "type": "stack_align_anchor"
     }
   ]
 }

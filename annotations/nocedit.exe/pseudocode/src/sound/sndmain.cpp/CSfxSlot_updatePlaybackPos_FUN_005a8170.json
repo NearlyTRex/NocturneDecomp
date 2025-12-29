@@ -1,21 +1,23 @@
 {
   "complexity": {
     "assembly_lines": 194,
-    "complexity_score": 251,
+    "complexity_score": 300,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 9,
-    "pseudocode_lines": 71,
-    "suspect_count": 15,
+    "pseudocode_lines": 70,
+    "suspect_count": 19,
     "suspect_types": [
       "call_esp_anchor",
       "concat_artifact",
       "extra_output",
       "pointer_cast",
+      "stack_align_anchor",
       "sub_artifact",
-      "unknown_field"
+      "unknown_field",
+      "variadic_anchor"
     ],
-    "total_lines": 265
+    "total_lines": 264
   },
   "cross_references": [
     {
@@ -227,120 +229,94 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
+      "line": 9,
       "match": "extraout_EBX",
       "text": "CSfxSlot *extraout_EBX;",
       "type": "extra_output"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 38,
+      "line": 37,
       "match": "._0_4_",
       "text": "(\"SfxSlot::updatePlaybackPos - stepped too much: %f-%f=%f, sample=%d (%s)\",hardware_playback_pos._0_4_,",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 39,
+      "line": 38,
       "match": "._4_4_",
       "text": "hardware_playback_pos._4_4_,*(uint *)&this_ptr->prev_hardware_playback_pos,",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 40,
+      "line": 39,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&this_ptr->prev_hardware_playback_pos + 4),SUB84 /* extract 2-byte value */(dVar3,0),",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler double/longlong extraction artifact",
-      "line": 40,
+      "line": 39,
       "match": "SUB84",
       "text": "*(uint *)((int)&this_ptr->prev_hardware_playback_pos + 4),SUB84 /* extract 2-byte value */(dVar3,0),",
       "type": "sub_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 47,
+      "line": 46,
       "match": "CONCAT44",
-      "text": "(this_ptr->options).trigger_time + (double)CONCAT44 /* combine 2-byte values */(uStack_24,SUB84 /* extract 2-byte value */(dVar1,0));",
+      "text": "(this_ptr->options).trigger_time + (double)CONCAT44 /* combine 2-byte values */(local_20,SUB84 /* extract 2-byte value */(dVar2,0));",
       "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong extraction artifact",
-      "line": 47,
+      "line": 46,
       "match": "SUB84",
-      "text": "(this_ptr->options).trigger_time + (double)CONCAT44 /* combine 2-byte values */(uStack_24,SUB84 /* extract 2-byte value */(dVar1,0));",
+      "text": "(this_ptr->options).trigger_time + (double)CONCAT44 /* combine 2-byte values */(local_20,SUB84 /* extract 2-byte value */(dVar2,0));",
       "type": "sub_artifact"
     },
     {
       "description": "Complex pointer cast",
-      "line": 54,
+      "line": 53,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&(this_ptr->options).trigger_time + 4) = 0;",
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 65,
-      "match": "SUB84",
-      "text": "uStack_14 = SUB84 /* extract 2-byte value */(dVar3,0);",
-      "type": "sub_artifact"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 67,
+      "line": 65,
       "match": "extraout_EBX",
       "text": "(extraout_EBX->options).trigger_time =",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 68,
+      "line": 66,
       "match": "extraout_EBX",
-      "text": "(extraout_EBX->options).trigger_time - dVar3 * (double)CONCAT44 /* combine 2-byte values */(uStack_14,local_18);",
+      "text": "(extraout_EBX->options).trigger_time - dVar2 * (double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(dVar3,0),uStack_14)",
       "type": "extra_output"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 68,
+      "line": 66,
       "match": "CONCAT44",
-      "text": "(extraout_EBX->options).trigger_time - dVar3 * (double)CONCAT44 /* combine 2-byte values */(uStack_14,local_18);",
+      "text": "(extraout_EBX->options).trigger_time - dVar2 * (double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(dVar3,0),uStack_14)",
       "type": "concat_artifact"
     },
     {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 66,
+      "match": "SUB84",
+      "text": "(extraout_EBX->options).trigger_time - dVar2 * (double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(dVar3,0),uStack_14)",
+      "type": "sub_artifact"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 69,
+      "line": 68,
       "match": "extraout_EBX",
       "text": "this_ptr = extraout_EBX;",
       "type": "extra_output"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "005a8329",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "005a832e",
-      "frame_offset": 24,
-      "match": "CALL...ADD ESP",
-      "return_address": "005a832e",
-      "target_address": "0x5a87d0",
-      "text": "Direct CALL at 005a8329, ADD ESP at 005a832e with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "005a8360",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "005a8371",
-      "frame_offset": 24,
-      "match": "CALL...ADD ESP",
-      "return_address": "005a8365",
-      "target_address": "0x5feb90",
-      "text": "Direct CALL at 005a8360, ADD ESP at 005a8371 with uncertain ESP",
-      "type": "call_esp_anchor"
     },
     {
       "add_esp_value": 4,
@@ -394,10 +370,37 @@
       "align_instruction": "AND ESP,0xfffffff8",
       "description": "Stack alignment can be anchored: ESP = EBP - 0x18",
       "fix_address": "005a8179",
+      "frame_offset": 24,
       "match": "AND ESP",
       "sub_esp_offset": 24,
       "text": "Stack alignment at 005a8179 (SUB ESP, 0x18 before)",
       "type": "stack_align_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "005a8329",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "005a832e",
+      "frame_offset": 24,
+      "match": "CALL...ADD ESP",
+      "return_address": "005a832e",
+      "target_address": "0x5a87d0",
+      "text": "Direct CALL at 005a8329, ADD ESP at 005a832e with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "005a8360",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "005a8371",
+      "frame_offset": 24,
+      "match": "CALL...ADD ESP",
+      "return_address": "005a8365",
+      "target_address": "0x5feb90",
+      "text": "Direct CALL at 005a8360, ADD ESP at 005a8371 with uncertain ESP",
+      "type": "call_esp_anchor"
     }
   ]
 }

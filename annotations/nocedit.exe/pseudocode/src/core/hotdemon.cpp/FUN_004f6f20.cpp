@@ -28,7 +28,6 @@ void core_hotdemon_cpp_FUN_004f6f20(void)
   BADSPACEBASE *in_ESP;
   CEnemy *in_stack_00000004;
   float in_stack_00000008;
-  SDamageInfo local_10c;
   CVector3f local_d0;
   CVector3f local_c4;
   CVector3f local_b8;
@@ -289,11 +288,8 @@ LAB_004f73d5:
     break;
   case 2:
   case 8:
-    core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_10c);
-    local_10c.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
-    local_10c.attacker = (CDemonActor *)in_stack_00000004;
-    local_10c.wielder = (CDemonActor *)in_stack_00000004;
-    local_14 = local_10c.damage_amount;
+    core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffef4);
+    local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
     pCVar9 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                        (&local_4c,&g_ZeroVector,
                         (CMatrix3x4f *)

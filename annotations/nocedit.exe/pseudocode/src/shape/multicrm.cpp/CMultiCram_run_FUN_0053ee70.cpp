@@ -11,7 +11,7 @@ void __cdecl shape_multicrm_cpp_CMultiCram_run_FUN_0053ee70(CMultiCram *this_ptr
 {
   CDSEModel *pCVar1;
   int iVar2;
-  FILE *pFVar3;
+  FILE *file_ptr;
   BADSPACEBASE *in_ESP;
   uint local_1c;
   int local_18;
@@ -44,14 +44,10 @@ void __cdecl shape_multicrm_cpp_CMultiCram_run_FUN_0053ee70(CMultiCram *this_ptr
     iVar2 = shape_dsemodel_cpp_CDSEModel_fitToExistingBIN_FUN_0048fed0
                       (this_ptr->models[local_1c],&stack0xfffffee4);
     if (iVar2 == 0) {
-      crt_stdio_c_sprintf_FUN_005fdbd0
-                (&stack0xfffffee4,"%s is a new model.",this_ptr->models[local_1c]->model_name
-                );
+      crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffee4,"%s is a new model.");
     }
     else {
-      crt_stdio_c_sprintf_FUN_005fdbd0
-                (&stack0xfffffee4,"Sizing %s to existing .BIN file",
-                 this_ptr->models[local_1c]->model_name);
+      crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffee4,"Sizing %s to existing .BIN file");
     }
     engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffee4,0,local_14);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
@@ -63,22 +59,19 @@ void __cdecl shape_multicrm_cpp_CMultiCram_run_FUN_0053ee70(CMultiCram *this_ptr
     shape_dsemodel_cpp_CDSEModel_load_FUN_0048f960(this_ptr->models[local_1c]);
     crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffee4,"%s.mdl");
     shape_design_c_exportModelToMDL_FUN_00459e80(&stack0xfffffee4);
-    crt_stdio_c_sprintf_FUN_005fdbd0
-              (&stack0xfffffee4,"%s.bin",this_ptr->models[local_1c]->model_name);
+    crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffee4,"%s.bin");
     shape_design_c_exportModelToBIN_FUN_0045aa80(&stack0xfffffee4,0x4e,0x35,1,0x59);
     for (local_18 = 0x61; local_18 < 0x7b; local_18 = local_18 + 1) {
       crt_stdio_c_sprintf_FUN_005fdbd0
                 (&stack0xfffffee4,"%s%c.bin",this_ptr->models[local_1c]->model_name,local_18
                 );
-      pFVar3 = engine_dosio_c_getFile_FUN_00481a50("models",&stack0xfffffee4,"rb")
-      ;
-      if (pFVar3 != (FILE *)0x0) {
-        shape_memdbg_cpp_closeFile_FUN_0050f9b0((FILE *)0x80,"..\\shape\\multicrm.cpp",0x80);
+      file_ptr = engine_dosio_c_getFile_FUN_00481a50
+                           ("models",&stack0xfffffee4,"rb");
+      if (file_ptr != (FILE *)0x0) {
+        shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\shape\\multicrm.cpp",0x80);
         shape_dsemodel_cpp_CDSEModel_fitToExistingBIN_FUN_0048fed0
                   (this_ptr->models[local_1c],&stack0xfffffee4);
-        crt_stdio_c_sprintf_FUN_005fdbd0
-                  (&stack0xfffffee4,"Found clone of different size : %s%c",
-                   this_ptr->models[local_1c]->model_name);
+        crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffee4,"Found clone of different size : %s%c");
         engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffee4,0,local_14);
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
         local_14 = local_14 + 0xb;
@@ -89,9 +82,7 @@ void __cdecl shape_multicrm_cpp_CMultiCram_run_FUN_0053ee70(CMultiCram *this_ptr
         shape_dsemodel_cpp_CDSEModel_load_FUN_0048f960(this_ptr->models[local_1c]);
         crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffee4,"%s%c.mdl");
         shape_design_c_exportModelToMDL_FUN_00459e80(&stack0xfffffee4);
-        crt_stdio_c_sprintf_FUN_005fdbd0
-                  (&stack0xfffffee4,"%s%c.bin",this_ptr->models[local_1c]->model_name,
-                   local_18);
+        crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffee4,"%s%c.bin");
         shape_design_c_exportModelToBIN_FUN_0045aa80(&stack0xfffffee4,0x4e,0x35,1,0x59);
       }
     }

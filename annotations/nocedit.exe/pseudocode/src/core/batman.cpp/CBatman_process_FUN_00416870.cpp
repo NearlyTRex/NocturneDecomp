@@ -29,8 +29,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr)
   int extraout_EAX_00;
   BADSPACEBASE *in_ESP;
   float in_stack_00000008;
-  SCollisionInfo *in_stack_fffffdfe;
-  SDamageInfo local_188;
+  SCollisionInfo *in_stack_fffffe7c;
   CVector3f local_14c;
   float local_140;
   float local_13c;
@@ -247,11 +246,8 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr)
       }
       break;
     case 3:
-      core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_188);
-      local_188.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
-      local_188.attacker = (CDemonActor *)this_ptr;
-      local_188.wielder = (CDemonActor *)this_ptr;
-      local_14 = local_188.damage_amount;
+      core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffe78);
+      local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
       pCVar13 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                           (&local_104,&g_ZeroVector,
                            (CMatrix3x4f *)
@@ -339,7 +335,7 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr)
           this_ptr_00 = *(CBatman **)(g_CDemonSetPtr->field19_0x14f0a0 + local_1c + -4);
           if (((this_ptr_00 != (CBatman *)0x0) && (this_ptr_00 != this_ptr)) &&
              (iVar10 = (*(this_ptr_00->base_enemy).base_character.base_actor.vtable[1].hasCollision)
-                                 ((CDemonActor *)this_ptr_00,in_stack_fffffdfe), iVar10 < 1)) {
+                                 ((CDemonActor *)this_ptr_00,in_stack_fffffe7c), iVar10 < 1)) {
             local_50 = (this_ptr_00->base_enemy).base_character.base_actor.location.position.x -
                        (this_ptr->new_pos).x;
             local_4c = (this_ptr_00->base_enemy).base_character.base_actor.location.position.y -

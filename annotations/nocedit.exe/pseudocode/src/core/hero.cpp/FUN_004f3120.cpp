@@ -17,24 +17,21 @@ uint core_hero_cpp_FUN_004f3120(void)
   CVector3f *pCVar4;
   float fVar5;
   BADSPACEBASE *in_ESP;
+  float unaff_EBP;
+  float unaff_EDI;
   int iVar6;
   CCharacter *in_stack_00000004;
-  CDemonActor *pCVar7;
-  CBoundingBox3D *out_box;
-  float fStack_74;
-  float fStack_70;
-  byte auStack_6c [20];
-  byte auStack_58 [12];
-  float fStack_4c;
-  float fStack_48;
-  float fStack_3c;
-  uint uStack_38;
-  byte auStack_34 [8];
-  float fStack_2c;
-  float fStack_28;
-  CVector3f CStack_24;
+  double dStack_64;
+  float fStack_60;
+  float fStack_5c;
+  float fStack_58;
+  float fStack_54;
+  float fStack_50;
+  byte auStack_40 [12];
+  CVector3f CStack_34;
+  float fStack_20;
+  uint uStack_1c;
   float fStack_18;
-  float fStack_14;
   
   iVar1 = core_charactr_cpp_CCharacter_FUN_0042d360(in_stack_00000004);
   if (iVar1 == 0) {
@@ -46,32 +43,26 @@ uint core_hero_cpp_FUN_004f3120(void)
                             g_CBoxActorClassInfo.name_hash);
         if (((pCVar2 != (CDemonActor *)0x0) && (pCVar2[2].field7_0x6c != 0)) &&
            (pCVar2[2].was_created == 0)) {
-          out_box = (CBoundingBox3D *)auStack_6c;
-          fVar5 = 7.27293e-39;
-          pCVar7 = pCVar2;
-          (*pCVar2->vtable->getBoundingBox)(pCVar2,out_box);
-          auStack_6c._4_4_ = fVar5 + fStack_74;
-          auStack_6c._8_4_ = (float)pCVar7 + fStack_70;
-          auStack_58._8_4_ = (float)auStack_6c._4_4_ * 0.5f;
-          fStack_4c = (float)auStack_6c._8_4_ * 0.5f;
-          auStack_6c._12_4_ = (float)out_box + (float)auStack_6c._0_4_;
-          fStack_48 = (float)auStack_6c._12_4_ * 0.5f;
+          (*pCVar2->vtable->getBoundingBox)(pCVar2,(CBoundingBox3D *)&stack0xffffff88);
+          CStack_34.x = (SUB84 /* extract 2-byte value */(dStack_64,0) + fStack_58) * 0.5f;
+          CStack_34.y = (fStack_60 + fStack_54) * 0.5f;
+          CStack_34.z = (fStack_5c + fStack_50) * 0.5f;
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                    (pCVar2,(CVector3f *)(auStack_6c + 0x10),(CVector3f *)(auStack_58 + 8));
+                    (pCVar2,(CVector3f *)auStack_40,&CStack_34);
           core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                    (&in_stack_00000004->base_actor,(CVector3f *)auStack_34,(CVector3f *)auStack_58)
-          ;
-          fStack_18 = (float)auStack_6c._0_4_ - (float)out_box;
-          fStack_3c = fStack_18 * 0.5f;
-          auStack_34._0_4_ = ((float)auStack_6c._8_4_ - fStack_70) * 0.5f;
-          uStack_38 = 0;
-          fStack_14 = (float)auStack_6c._4_4_ - fStack_74;
-          if (((fStack_28 -
-                SQRT((float)auStack_34._0_4_ * (float)auStack_34._0_4_ + fStack_3c * fStack_3c) <=
-                (float)1.2) && (1.0 <= (double)fStack_2c)) &&
-             ((double)fStack_2c <= 5)) {
+                    (&in_stack_00000004->base_actor,(CVector3f *)&fStack_18,
+                     (CVector3f *)(auStack_40 + 4));
+          in_stack_00000004 = (CCharacter *)(fStack_50 - fStack_5c);
+          fStack_20 = (float)in_stack_00000004 * 0.5f;
+          fStack_18 = ((fStack_60 + fStack_54) - fStack_54) * 0.5f;
+          uStack_1c = 0;
+          if (((unaff_EDI - SQRT(fStack_18 * fStack_18 + fStack_20 * fStack_20) <=
+                (float)1.2) && (dStack_64 = (double)unaff_EBP, 1.0 <= dStack_64)) &&
+             (dStack_64 <= 5)) {
             pCVar4 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
-                               (&CStack_24,(CVector3f *)(auStack_34 + 4));
+                               ((CVector3f *)&stack0xfffffff8,(CVector3f *)&stack0xffffffec);
+            fStack_60 = (float)((ulonglong)dStack_64 >> 0x20);
+            dStack_64 = (double)CONCAT44 /* combine 2-byte values */(fStack_60,pCVar4->y);
             fVar5 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(pCVar4->y);
             if (ABS(fVar5) <= (float)0.61086523818055505) {
               *(CDemonActor **)(in_stack_00000004[2].cloth_data + 0x54c4) = pCVar2;

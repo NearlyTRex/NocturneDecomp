@@ -6,17 +6,16 @@ SUMMARY
 --------------------------------------------------
 Total virtual files: 258
 Total functions: 7154
-Clean functions: 1034 (14.5%)
-Files at 100%: 1
-Files at 90%+: 1
-Files at 50%+: 10
+Clean functions: 1023 (14.3%)
+Files at 100%: 0
+Files at 90%+: 0
+Files at 50%+: 9
 
 ====================================================================================================
 FILES AT 100% (COMPLETE)
 ====================================================================================================
-  core/slew.cpp: 4 functions, 118 lines
 
-Total: 1 files
+Total: 0 files
 
 ====================================================================================================
 FILES AT 90-99% (ALMOST COMPLETE)
@@ -34,25 +33,25 @@ FILES AT 50-89%
          Suspects: call_esp_preserve:3
    83.3% | shape/multicrm.cpp
          5/6 clean, 1 remaining
-         Suspects: badspacebase:1, call_esp_anchor:17, format_string_mismatch:3, param_count_too_few:1, register_param:1, stack_ref:20
+         Suspects: badspacebase:1, call_esp_anchor:17, format_string_mismatch:8, param_count_too_few:1, register_param:1, stack_ref:20, variadic_anchor:11
    75.0% | core/mmx.c
          3/4 clean, 1 remaining
          Suspects: register_param:26, warning_overlapping_globals:1, warning_unreachable:2
+   75.0% | core/slew.cpp
+         3/4 clean, 1 remaining
+         Suspects: callind_anchor:17, stack_align_anchor:1, stack_param:32, suspect_float:1, unaffected_reg:4
    70.0% | engine/light.cpp
          7/10 clean, 3 remaining
          Suspects: badspacebase:1, call_esp_preserve:3, lea_esp_stack_addr:2, param_count_too_few:1, pointer_cast:2, register_param:1, stack_ref:2, unaffected_reg:3
    61.9% | engine/prim.c
          13/21 clean, 8 remaining
          Suspects: badspacebase:2, call_esp_preserve:35, lea_esp_stack_addr:2, pointer_cast:2, register_param:2, sborrow_artifact:12, stack_param:172, stack_ref:4, unaffected_reg:2
-   57.1% | core/dirmat.cpp
-         4/7 clean, 3 remaining
-         Suspects: badspacebase:1, extra_output:28, register_param:1, stack_align_anchor:2, unaffected_reg:3
    54.3% | sound/sndwav.cpp
          19/35 clean, 16 remaining
          Suspects: badspacebase:7, call_esp_preserve:10, callind_preserve:7, callind_preserve_lost:2, lea_esp_stack_addr:10, negative_offset:2, pointer_cast:54, register_param:7, stack_param:31, stack_ref:6, unknown_field:8, unresolved_funcptr:1, variadic_preserve:15
    50.0% | core/particle.cpp
          3/6 clean, 3 remaining
-         Suspects: badspacebase:1, call_esp_anchor:3, param_count_too_few:1, pointer_cast:2, register_param:1, stack_param:2, unknown_field:4, variadic_preserve:1
+         Suspects: badspacebase:1, call_esp_anchor:3, callind_anchor:1, param_count_too_few:1, pointer_cast:2, register_param:1, stack_align_anchor:1, stack_param:2, unaffected_reg:6, unknown_field:6, variadic_preserve:1
 
 Total: 9 files
 
@@ -61,6 +60,8 @@ FILES BELOW 50%
 ====================================================================================================
    47.6% | shape/cramtex.cpp
          10/21 clean, 11 remaining
+   42.9% | core/dirmat.cpp
+         3/7 clean, 4 remaining
    42.4% | wincore/winrun.cpp
          14/33 clean, 19 remaining
    41.2% | core/flamegun.cpp
@@ -83,8 +84,6 @@ FILES BELOW 50%
          2/6 clean, 4 remaining
    33.3% | core/level.cpp
          2/6 clean, 4 remaining
-   30.0% | shape/dsemodel.cpp
-         3/10 clean, 7 remaining
    29.7% | core/dlight.cpp
          11/37 clean, 26 remaining
    29.6% | core/weapon.cpp
@@ -115,8 +114,6 @@ FILES BELOW 50%
          8/32 clean, 24 remaining
    24.4% | core/sound.cpp
          10/41 clean, 31 remaining
-   24.2% | core/motion.cpp
-         8/33 clean, 25 remaining
    24.2% | shape/quantize.cpp
          8/33 clean, 25 remaining
    23.3% | sound/sndmain.cpp
@@ -155,10 +152,10 @@ FILES BELOW 50%
          3/14 clean, 11 remaining
    21.3% | core/xform.cpp
          13/61 clean, 48 remaining
+   21.2% | core/motion.cpp
+         7/33 clean, 26 remaining
    20.9% | core/dcamera.cpp
          18/86 clean, 68 remaining
-   20.9% | shape/design.c
-         34/163 clean, 129 remaining
    20.5% | engine/drender.cpp
          18/88 clean, 70 remaining
    20.0% | core/backgnd.cpp
@@ -203,6 +200,8 @@ FILES BELOW 50%
          4/23 clean, 19 remaining
    17.4% | core/trigger.cpp
          4/23 clean, 19 remaining
+   17.2% | shape/design.c
+         28/163 clean, 135 remaining
    16.7% | core/crossbow.cpp
          2/12 clean, 10 remaining
    16.7% | core/glass.cpp
@@ -328,6 +327,8 @@ FILES BELOW 50%
    10.0% | core/shotgun.cpp
          1/10 clean, 9 remaining
    10.0% | core/weather.cpp
+         1/10 clean, 9 remaining
+   10.0% | shape/dsemodel.cpp
          1/10 clean, 9 remaining
     9.5% | core/stairs.cpp
          2/21 clean, 19 remaining
@@ -556,4 +557,4 @@ FILES BELOW 50%
     0.0% | support/newmsg.cpp
          0/15 clean, 15 remaining
 
-Total: 248 files
+Total: 249 files

@@ -26,7 +26,8 @@ void core_ghoul_cpp_FUN_004e87e0(void)
   double dVar9;
   CCharacter *in_stack_00000004;
   int in_stack_00000008;
-  char local_78 [100];
+  CCharacter *local_78;
+  int iStack_74;
   float local_14;
   
   sound_sndmain_cpp_killSfx_FUN_005a9c40((uint)in_stack_00000004[1].base_actor.field12_0xe0.z);
@@ -144,7 +145,7 @@ void core_ghoul_cpp_FUN_004e87e0(void)
     }
     else {
       iVar8 = core_actor_cpp_getRandomInt_FUN_0040cc70(1,2);
-      crt_stdio_c_sprintf_FUN_005fdbd0(local_78,"guul flinch%d",iVar8);
+      crt_stdio_c_sprintf_FUN_005fdbd0((char *)&local_78,"guul flinch%d",iVar8);
       this_ptr = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                            (&(in_stack_00000004->model).motion_controller);
       iVar8 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(this_ptr);
@@ -161,6 +162,8 @@ void core_ghoul_cpp_FUN_004e87e0(void)
       fVar7 = (float)(*((in_stack_00000004->base_actor).vtable)->playSound)
                                (&in_stack_00000004->base_actor,"ghoul-mad-!-?.wav");
       in_stack_00000004[1].base_actor.field13_0xec.x = fVar7;
+      iStack_74 = in_stack_00000008;
+      local_78 = in_stack_00000004;
       core_enemy_cpp_FUN_004a9f10();
       return;
     }

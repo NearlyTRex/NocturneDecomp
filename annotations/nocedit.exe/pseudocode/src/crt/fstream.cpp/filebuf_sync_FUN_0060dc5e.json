@@ -8,7 +8,7 @@
     "pseudocode_lines": 37,
     "suspect_count": 3,
     "suspect_types": [
-      "call_esp_preserve",
+      "call_esp_anchor",
       "callind_preserve",
       "special_crt_function"
     ],
@@ -110,15 +110,15 @@
     {
       "add_esp_value": 12,
       "call_address": "0060dcc7",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
       "esp_certainty": "cfg_resolved",
       "fix_address": "0060dccc",
+      "frame_offset": 4,
       "match": "CALL...ADD ESP",
-      "prologue_offset": 8,
       "return_address": "0060dccc",
       "target_address": "0x606690",
-      "text": "Direct CALL at 0060dcc7, ADD ESP at 0060dccc (no EBP frame)",
-      "type": "call_esp_preserve"
+      "text": "Direct CALL at 0060dcc7, ADD ESP at 0060dccc with uncertain ESP",
+      "type": "call_esp_anchor"
     },
     {
       "address": "0060dc5e",

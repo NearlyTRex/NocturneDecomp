@@ -9,105 +9,117 @@
 int __cdecl core_set_cpp_CDemonSet_FUN_0056b810(CDemonSet *this_ptr)
 
 {
-  uint *puVar1;
-  float fVar2;
-  float fVar3;
-  float fVar4;
-  uint uVar5;
-  double dVar6;
+  uint uVar1;
+  int iVar2;
   CPathMap *this_ptr_00;
-  CDemonActor *pCVar7;
   CGlass *this_ptr_01;
   int extraout_EAX;
-  byte *puVar8;
-  CDemonSet *pCVar9;
-  int iVar10;
+  CDemonActor *pCVar3;
+  CDemonSet *pCVar4;
+  int iVar5;
   BADSPACEBASE *in_ESP;
-  int iVar11;
-  int iVar12;
-  CDemonSet *pCVar13;
-  CVector3f *pCVar14;
-  CDemonActor *in_stack_ffffff5c;
-  SCollisionInfo *in_stack_ffffff60;
-  CLocation *in_stack_ffffff64;
+  int iVar6;
+  CDemonSet *pCVar7;
+  SCollisionInfo *in_stack_fffffefc;
+  float in_stack_ffffff18;
+  char acStack_e4 [4];
+  int iStack_e0;
+  CLocation *pCStack_d8;
+  float fStack_a4;
+  CLocation *apCStack_9c [2];
+  int iStack_94;
+  CDemonActor *pCStack_90;
+  int iStack_8c;
+  CDemonActor *pCStack_74;
+  float local_64;
+  float local_60;
+  float fStack_5c;
+  uint uStack_58;
+  CLocation *local_50;
+  CVector3f *pCStack_48;
+  int local_40;
   int local_3c;
   int local_38;
-  CDemonActor *local_28;
+  int local_34;
+  int local_2c;
+  int local_28;
   int local_24;
   int local_20;
-  CVector3f *local_1c;
+  int local_1c;
   int iStack_18;
   
-  iVar11 = 0;
-  pCVar9 = this_ptr;
+  iVar6 = 0;
+  pCVar4 = this_ptr;
   if (0 < (int)this_ptr->actor_list_ptr) {
     do {
       core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-                (*(CDemonActor **)pCVar9->actor_list_data,"..\\core\\set.cpp",0x593);
-      iVar11 = iVar11 + 1;
-      pCVar9 = (CDemonSet *)pCVar9->cameras;
-    } while (iVar11 < (int)this_ptr->actor_list_ptr);
+                (*(CDemonActor **)pCVar4->actor_list_data,"..\\core\\set.cpp",0x593);
+      iVar6 = iVar6 + 1;
+      pCVar4 = (CDemonSet *)pCVar4->cameras;
+    } while (iVar6 < (int)this_ptr->actor_list_ptr);
   }
   if (g_CGamePtr->profile_mode != 0) {
-    wincore_winrun_cpp_getTime_FUN_005f2dc0();
+    local_3c = wincore_winrun_cpp_getTime_FUN_005f2dc0();
+    local_1c = 0;
   }
   g_DynamicLightCount = 0;
-  fVar2 = g_CGamePtr->delta_time_float;
+  local_50 = (CLocation *)g_CGamePtr->delta_time_float;
   g_CoronaGlobeCount = 0;
-  pCVar9 = (CDemonSet *)
-           CONCAT22 /* combine 2-byte values */((short)((uint)fVar2 >> 0x10),
-                    (ushort)(0.0 < fVar2) << 8 | (ushort)NAN(fVar2) << 10 |
-                    (ushort)(fVar2 == 0.0) << 0xe);
-  if (0.0 < fVar2) {
+  pCVar4 = (CDemonSet *)
+           CONCAT22 /* combine 2-byte values */((short)((uint)local_50 >> 0x10),
+                    (ushort)(0.0 < (float)local_50) << 8 | (ushort)NAN((float)local_50) << 10 |
+                    (ushort)((float)local_50 == 0.0) << 0xe);
+  if (0.0 < (float)local_50) {
     core_setcolid_cpp_CDemonSet_FUN_005743e0(this_ptr);
-    iVar11 = 0;
-    pCVar9 = this_ptr;
+    iVar6 = 0;
+    pCVar4 = this_ptr;
     if (0 < (int)this_ptr->actor_list_ptr) {
       do {
-        *(int *)(*(int *)pCVar9->actor_list_data + 0x6c) = iVar11;
-        iVar11 = iVar11 + 1;
-        pCVar9 = (CDemonSet *)pCVar9->cameras;
-      } while (iVar11 < (int)this_ptr->actor_list_ptr);
+        *(int *)(*(int *)pCVar4->actor_list_data + 0x6c) = iVar6;
+        iVar6 = iVar6 + 1;
+        pCVar4 = (CDemonSet *)pCVar4->cameras;
+      } while (iVar6 < (int)this_ptr->actor_list_ptr);
     }
-    if (0.0 < (float)in_stack_ffffff5c) {
+    if (0.0 < fStack_a4) {
       local_20 = -999999;
+      iVar6 = local_20;
       do {
+        local_20 = iVar6;
         iStack_18 = 999999;
-        iVar11 = 0;
+        iVar6 = 0;
         if (0 < (int)this_ptr->actor_list_ptr) {
-          iVar10 = (int)local_1c << 2;
-          pCVar9 = this_ptr;
+          iVar5 = local_1c << 2;
+          pCVar4 = this_ptr;
           do {
-            pCVar7 = *(CDemonActor **)pCVar9->actor_list_data;
-            if (pCVar7->field17_0x104 == 0) {
-              iVar12 = pCVar7->health;
-              if (iVar12 == local_20) {
-                fVar2 = (pCVar7->orient).pitch;
-                fVar3 = (pCVar7->orient).bank;
-                fVar4 = (pCVar7->orient).heading;
-                DAT_00821ff4 = pCVar7;
+            pCVar3 = *(CDemonActor **)pCVar4->actor_list_data;
+            if (pCVar3->field17_0x104 == 0) {
+              iVar2 = pCVar3->health;
+              if (iVar2 == local_20) {
+                local_64 = (pCVar3->orient).pitch;
+                local_60 = (pCVar3->orient).bank;
+                fStack_5c = (pCVar3->orient).heading;
+                DAT_00821ff4 = pCVar3;
                 if (g_CGamePtr->profile_mode == 2) {
-                  wincore_winrun_cpp_getTime_FUN_005f2dc0();
+                  local_60 = (float)wincore_winrun_cpp_getTime_FUN_005f2dc0();
                 }
                 (*DAT_00821ff4->vtable->process)(DAT_00821ff4);
                 if (g_CGamePtr->profile_mode == 2) {
-                  iVar12 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
-                  *(int *)((int)&DAT_032bd794 + iVar10) = iVar12 - local_3c;
-                  *(CDemonActor **)((int)&DAT_032bf6d4 + iVar10) = DAT_00821ff4;
+                  iVar2 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
+                  *(int *)((int)&DAT_032bd794 + iVar5) = iVar2 - (int)local_50;
+                  *(CDemonActor **)((int)&DAT_032bf6d4 + iVar5) = DAT_00821ff4;
                 }
                 if (g_CGamePtr->profile_mode != 0) {
-                  iStack_18 = iStack_18 + 1;
-                  iVar10 = iVar10 + 4;
+                  local_2c = local_2c + 1;
+                  iVar5 = iVar5 + 4;
                 }
-                in_stack_ffffff5c = DAT_00821ff4;
                 this_ptr_00 = (*DAT_00821ff4->vtable->getPathMap)(DAT_00821ff4);
                 if (this_ptr_00 != (CPathMap *)0x0) {
                   core_path_cpp_CPathMap_updateIfNeeded_FUN_00546a60
                             (this_ptr_00,&(DAT_00821ff4->location).position,0);
                 }
-                if (((fVar3 == (DAT_00821ff4->orient).bank) &&
-                    (fVar2 == (DAT_00821ff4->orient).pitch)) &&
-                   (fVar4 == (DAT_00821ff4->orient).heading)) {
+                if (((local_60 == (DAT_00821ff4->orient).bank) &&
+                    (local_64 == (DAT_00821ff4->orient).pitch)) &&
+                   (fStack_5c == (DAT_00821ff4->orient).heading)) {
                   DAT_00821ff4 = (CDemonActor *)0x0;
                 }
                 else {
@@ -115,140 +127,129 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056b810(CDemonSet *this_ptr)
                   DAT_00821ff4 = (CDemonActor *)0x0;
                 }
               }
-              else if ((local_20 < iVar12) && (iVar12 < iStack_18)) {
-                iStack_18 = iVar12;
+              else if ((local_20 < iVar2) && (iVar2 < iStack_18)) {
+                iStack_18 = iVar2;
               }
             }
-            iVar11 = iVar11 + 1;
-            pCVar9 = (CDemonSet *)pCVar9->cameras;
-          } while (iVar11 < (int)this_ptr->actor_list_ptr);
+            iVar6 = iVar6 + 1;
+            pCVar4 = (CDemonSet *)pCVar4->cameras;
+          } while (iVar6 < (int)this_ptr->actor_list_ptr);
         }
-        local_20 = iStack_18;
+        iVar6 = iStack_18;
       } while (iStack_18 < 999999);
     }
-    iVar11 = 0;
-    pCVar9 = this_ptr;
+    iVar6 = 0;
+    pCVar4 = this_ptr;
     if (0 < (int)this_ptr->actor_list_ptr) {
       do {
-        pCVar7 = core_actor_cpp_castToClassHash_FUN_0040c790
-                           (*(CDemonActor **)pCVar9->actor_list_data,g_CCharacterClassInfo.name_hash
-                           );
-        if (((pCVar7 != (CDemonActor *)0x0) &&
-            (iVar10 = (*pCVar7->vtable[1].hasCollision)(pCVar7,in_stack_ffffff60), iVar10 == 0)) &&
-           (iVar10 = core_fire_cpp_CFireEffect_FUN_004c8c90(g_CFireEffectPtr), iVar10 != 0)) {
-          core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffff64);
-          in_stack_ffffff60 = (SCollisionInfo *)&stack0xffffff68;
-          (*local_28->vtable[1].playAmbientSoundWithVolume)
-                    (local_28,(char *)in_stack_ffffff60,(float)in_stack_ffffff64);
+        pCStack_90 = core_actor_cpp_castToClassHash_FUN_0040c790
+                               (*(CDemonActor **)pCVar4->actor_list_data,
+                                g_CCharacterClassInfo.name_hash);
+        if (((pCStack_90 != (CDemonActor *)0x0) &&
+            (iVar5 = (*pCStack_90->vtable[1].hasCollision)(pCStack_90,in_stack_fffffefc), iVar5 == 0
+            )) && (in_stack_fffffefc = (SCollisionInfo *)g_CFireEffectPtr, iStack_94 = iVar5,
+                  iVar5 = core_fire_cpp_CFireEffect_FUN_004c8c90(g_CFireEffectPtr), iVar5 != 0)) {
+          core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffff18);
+          iStack_e0 = iStack_8c;
+          if (&pCStack_d8 != apCStack_9c) {
+            pCStack_d8 = apCStack_9c[0];
+          }
+          (*pCStack_74->vtable[1].playAmbientSoundWithVolume)
+                    (pCStack_74,acStack_e4,in_stack_ffffff18);
         }
-        in_stack_ffffff5c = (CDemonActor *)g_CGlassClassInfo.name_hash;
+        pCStack_d8 = (CLocation *)0x56bba8;
         this_ptr_01 = (CGlass *)
                       core_actor_cpp_castToClassHash_FUN_0040c790
-                                (*(CDemonActor **)pCVar9->actor_list_data,
+                                (*(CDemonActor **)pCVar4->actor_list_data,
                                  g_CGlassClassInfo.name_hash);
         if (this_ptr_01 != (CGlass *)0x0) {
-          in_stack_ffffff60 = (SCollisionInfo *)0x0;
-          in_stack_ffffff5c = (CDemonActor *)0x0;
-          iVar10 = core_fire_cpp_CFireEffect_FUN_004c8c90(g_CFireEffectPtr);
-          if (iVar10 != 0) {
-            in_stack_ffffff60 = (SCollisionInfo *)0x56bbda;
-            core_glass_cpp_CGlass_checkBreakableCondition_FUN_004eb3a0(this_ptr_01);
-            if (extraout_EAX != 0) {
-              in_stack_ffffff60 = (SCollisionInfo *)0x56bbec;
-              core_glass_cpp_CGlass_shatter_FUN_004eaef0(this_ptr_01,local_1c);
-            }
+          pCStack_d8 = &(this_ptr_01->base).location;
+          iStack_e0 = 0x56bbcd;
+          local_50 = pCStack_d8;
+          iVar5 = core_fire_cpp_CFireEffect_FUN_004c8c90(g_CFireEffectPtr);
+          if ((iVar5 != 0) &&
+             (core_glass_cpp_CGlass_checkBreakableCondition_FUN_004eb3a0(this_ptr_01),
+             extraout_EAX != 0)) {
+            core_glass_cpp_CGlass_shatter_FUN_004eaef0(this_ptr_01,pCStack_48);
           }
         }
-        in_stack_ffffff64 = (CLocation *)0x56bc02;
-        pCVar7 = core_actor_cpp_castToClassHash_FUN_0040c790
-                           (*(CDemonActor **)pCVar9->actor_list_data,g_CTriggerClassInfo.name_hash);
-        if (((pCVar7 != (CDemonActor *)0x0) && (*(int *)(pCVar7[1].actor_name + 0x1c) == 7)) &&
-           (*(char *)&pCVar7[2].orient_matrix.m[2].x == '\0')) {
-          in_stack_ffffff64 = &pCVar7->location;
-          in_stack_ffffff5c = (CDemonActor *)0x56bc3b;
-          in_stack_ffffff60 = (SCollisionInfo *)g_CFireEffectPtr;
-          iVar10 = core_fire_cpp_CFireEffect_FUN_004c8c90(g_CFireEffectPtr);
-          if (iVar10 != 0) {
+        pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790
+                           (*(CDemonActor **)pCVar4->actor_list_data,g_CTriggerClassInfo.name_hash);
+        if (((pCVar3 != (CDemonActor *)0x0) && (*(int *)(pCVar3[1].actor_name + 0x1c) == 7)) &&
+           (*(char *)&pCVar3[2].orient_matrix.m[2].x == '\0')) {
+          uStack_58 = 0;
+          iVar5 = core_fire_cpp_CFireEffect_FUN_004c8c90(g_CFireEffectPtr);
+          if (iVar5 != 0) {
             core_trigger_cpp_SomethingReceivedDamage_FUN_005e0b00();
           }
         }
-        pCVar7 = core_actor_cpp_castToClassHash_FUN_0040c790
-                           (*(CDemonActor **)pCVar9->actor_list_data,g_CFlameCanClassInfo.name_hash)
+        pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790
+                           (*(CDemonActor **)pCVar4->actor_list_data,g_CFlameCanClassInfo.name_hash)
         ;
-        if ((pCVar7 != (CDemonActor *)0x0) &&
-           (iVar10 = core_fire_cpp_CFireEffect_FUN_004c8c90(g_CFireEffectPtr), iVar10 != 0)) {
+        if ((pCVar3 != (CDemonActor *)0x0) &&
+           (iVar5 = core_fire_cpp_CFireEffect_FUN_004c8c90(g_CFireEffectPtr), iVar5 != 0)) {
           core_flamecan_cpp_FUN_004cb340();
         }
-        iVar11 = iVar11 + 1;
-        pCVar9 = (CDemonSet *)pCVar9->cameras;
-      } while (iVar11 < (int)this_ptr->actor_list_ptr);
+        iVar6 = iVar6 + 1;
+        pCVar4 = (CDemonSet *)pCVar4->cameras;
+      } while (iVar6 < (int)this_ptr->actor_list_ptr);
     }
     if (g_CGamePtr->profile_mode != 0) {
       if (g_CGamePtr->profile_mode == 2) {
-        puVar8 = (byte *)((int)&local_1c[-1].z + 3);
-        local_28 = (CDemonActor *)0x0;
+        local_34 = local_1c + -1;
+        local_28 = 0;
         local_24 = 0;
-        if (0 < (int)puVar8) {
-          local_38 = (int)local_1c << 2;
+        if (0 < local_34) {
+          local_38 = local_1c << 2;
           do {
-            if (local_24 + 1 < (int)local_1c) {
-              iVar11 = (local_24 + 1) * 4;
+            if (local_24 + 1 < local_1c) {
+              iVar6 = (local_24 + 1) * 4;
               do {
-                iVar10 = *(int *)((int)&DAT_032bd794 + (int)local_28);
-                if (iVar10 < *(int *)((int)&DAT_032bd794 + iVar11)) {
-                  *(uint *)((int)&DAT_032bd794 + (int)local_28) =
-                       *(uint *)((int)&DAT_032bd794 + iVar11);
-                  *(int *)((int)&DAT_032bd794 + iVar11) = iVar10;
-                  uVar5 = *(uint *)((int)&DAT_032bf6d4 + (int)local_28);
-                  *(uint *)((int)&DAT_032bf6d4 + (int)local_28) =
-                       *(uint *)((int)&DAT_032bf6d4 + iVar11);
-                  *(uint *)((int)&DAT_032bf6d4 + iVar11) = uVar5;
+                iVar5 = *(int *)((int)&DAT_032bd794 + local_28);
+                if (iVar5 < *(int *)((int)&DAT_032bd794 + iVar6)) {
+                  *(uint *)((int)&DAT_032bd794 + local_28) =
+                       *(uint *)((int)&DAT_032bd794 + iVar6);
+                  *(int *)((int)&DAT_032bd794 + iVar6) = iVar5;
+                  uVar1 = *(uint *)((int)&DAT_032bf6d4 + local_28);
+                  *(uint *)((int)&DAT_032bf6d4 + local_28) =
+                       *(uint *)((int)&DAT_032bf6d4 + iVar6);
+                  *(uint *)((int)&DAT_032bf6d4 + iVar6) = uVar1;
                 }
-                iVar11 = iVar11 + 4;
-              } while (iVar11 < local_38);
+                iVar6 = iVar6 + 4;
+              } while (iVar6 < local_38);
             }
-            local_28 = (CDemonActor *)((int)local_28 + 4);
+            local_28 = local_28 + 4;
             local_24 = local_24 + 1;
-          } while (local_24 < (int)puVar8);
+          } while (local_24 < local_34);
         }
-        pCVar14 = (CVector3f *)0x14;
-        if ((int)local_1c < 0x14) {
-          pCVar14 = local_1c;
+        iVar6 = 0x14;
+        if (local_1c < 0x14) {
+          iVar6 = local_1c;
         }
-        if (0 < (int)pCVar14) {
-          iVar10 = 0;
-          iVar11 = 0;
+        iVar5 = 0;
+        if (0 < iVar6) {
           do {
-            dVar6 = ((double)*(int *)((int)&DAT_032bd794 + iVar10) * 0.055555555555555601 *
-                     1.52587890625e-05 * 1000) / (double)(float)in_stack_ffffff5c;
-            puVar1 = (uint *)((int)&DAT_032bf6d4 + iVar10);
-            iVar10 = iVar10 + 4;
-            iVar12 = iVar11 + 1;
-            engine_console_cpp_CConsole_printf_FUN_00441890
-                      (g_CConsolePtr,"%d. %s : %3.2f ms\n",iVar11,*puVar1,SUB84 /* extract 2-byte value */(dVar6,0),
-                       (int)((ulonglong)dVar6 >> 0x20));
-            iVar11 = iVar12;
-          } while (iVar12 < (int)pCVar14);
+            iVar5 = iVar5 + 1;
+            engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"%d. %s : %3.2f ms\n");
+          } while (iVar5 < iVar6);
         }
       }
-      iVar11 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
-      dVar6 = ((double)(iVar11 - local_38) * 0.055555555555555601 * 1.52587890625e-05 * 1000) /
-              (double)(float)in_stack_ffffff60;
+      iStack_18 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
+      iStack_18 = iStack_18 - local_40;
       engine_console_cpp_CConsole_printf_FUN_00441890
-                (g_CConsolePtr,"Process time (%d actors) : %3.2f ms\n",iStack_18,SUB84 /* extract 2-byte value */(dVar6,0),
-                 (int)((ulonglong)dVar6 >> 0x20));
+                (g_CConsolePtr,"Process time (%d actors) : %3.2f ms\n");
     }
-    iVar11 = 0;
-    pCVar9 = this_ptr;
-    pCVar13 = this_ptr;
+    iVar6 = 0;
+    pCVar4 = this_ptr;
+    pCVar7 = this_ptr;
     if (0 < (int)this_ptr->actor_list_ptr) {
       do {
         core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
-                  (*(CDemonActor **)pCVar13->actor_list_data,"..\\core\\set.cpp",0x654);
-        iVar11 = iVar11 + 1;
-        pCVar13 = (CDemonSet *)pCVar13->cameras;
-      } while (iVar11 < (int)this_ptr->actor_list_ptr);
+                  (*(CDemonActor **)pCVar7->actor_list_data,"..\\core\\set.cpp",0x654);
+        iVar6 = iVar6 + 1;
+        pCVar7 = (CDemonSet *)pCVar7->cameras;
+      } while (iVar6 < (int)this_ptr->actor_list_ptr);
     }
   }
-  return (int)pCVar9;
+  return (int)pCVar4;
 }

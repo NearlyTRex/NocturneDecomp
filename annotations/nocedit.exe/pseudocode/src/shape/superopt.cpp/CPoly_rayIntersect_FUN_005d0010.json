@@ -1,16 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 261,
-    "complexity_score": 226,
+    "complexity_score": 256,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 3,
     "pseudocode_lines": 111,
-    "suspect_count": 10,
+    "suspect_count": 12,
     "suspect_types": [
       "badspacebase",
+      "callind_anchor",
       "pointer_cast",
-      "register_param"
+      "register_param",
+      "stack_align_anchor"
     ],
     "total_lines": 372
   },
@@ -489,6 +491,7 @@
       "align_instruction": "AND ESP,0xfffffff8",
       "description": "Stack alignment can be anchored: ESP = EBP - 0xd8",
       "fix_address": "005d001c",
+      "frame_offset": 216,
       "match": "AND ESP",
       "sub_esp_offset": 216,
       "text": "Stack alignment at 005d001c (SUB ESP, 0xd8 before)",

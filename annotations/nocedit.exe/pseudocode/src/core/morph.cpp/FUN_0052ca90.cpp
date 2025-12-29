@@ -15,7 +15,7 @@ void core_morph_cpp_FUN_0052ca90(void)
   CMorphModel *in_stack_00000004;
   CGame *n2;
   
-  n2 = (CGame *)0x1f;
+  n2 = (CGame *)0x0;
   shape_spotview_cpp_CSpotView_FUN_005b9620(g_CSpotViewPtr);
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,n2);
   while( true ) {

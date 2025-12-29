@@ -5,46 +5,48 @@ NOCTURNE DECOMPILATION ANALYSIS REPORT
 SUMMARY
 ----------------------------------------
 Total functions: 7154
-Functions with zero suspects: 1034 (14.5%)
-Functions with suspects: 6120 (85.5%)
+Functions with zero suspects: 1023 (14.3%)
+Functions with suspects: 6131 (85.7%)
 
-Total suspect patterns: 100964
-Average suspects per function: 14.11
+Total suspect patterns: 105425
+Average suspects per function: 14.74
 
-Virtual files: 258 total, 1 at 100%, 1 at 90%+
+Virtual files: 258 total, 0 at 100%, 0 at 90%+
 
 Pseudocode lines:
-  Min: 1, Max: 3059, Average: 48.0
+  Min: 1, Max: 3059, Average: 47.9
 
-Average complexity score: 203.1
+Average complexity score: 209.9
 
 SUSPECT PATTERN BREAKDOWN
 ----------------------------------------
-  stack_param               36328
-  call_esp_preserve         17957
-  call_esp_anchor           9058
+  stack_param               37682
+  call_esp_preserve         17776
+  call_esp_anchor           9239
   lea_esp_stack_addr        6858
-  pointer_cast              5330
-  stack_ref                 3865
-  unknown_field             3025
-  variadic_preserve         2788
-  unaffected_reg            2690
-  register_param            1837
-  concat_artifact           1833
-  badspacebase              1625
-  extra_output              1441
+  pointer_cast              5195
+  stack_ref                 4204
+  unknown_field             3024
+  unaffected_reg            2790
+  variadic_preserve         2780
+  concat_artifact           1885
+  register_param            1835
+  badspacebase              1624
+  extra_output              1440
+  variadic_anchor           1331
   callind_preserve          1078
-  format_string_mismatch    912
-  suspect_float             844
+  callind_anchor            1056
+  format_string_mismatch    1038
+  suspect_float             932
   param_count_too_few       631
   special_crt_function      626
-  unresolved_funcptr        479
-  negative_offset           421
-  sub_artifact              376
-  stack_align_anchor        271
+  stack_align_anchor        529
+  unresolved_funcptr        472
+  negative_offset           416
+  sub_artifact              284
   warning_overlapping_globals 219
-  warning_unreachable       133
-  undefined_type            108
+  warning_unreachable       143
+  undefined_type            109
   param_count_too_many      89
   variadic_preserve_ebp     38
   sborrow_artifact          26
@@ -54,7 +56,6 @@ SUSPECT PATTERN BREAKDOWN
   warning_indirect_jump     12
   undefined_ptr_cast        5
   warning_noreturn          4
-  variadic_anchor           2
   special_entry_point       1
 
 EASIEST FUNCTIONS (Zero Suspects, Sorted by Size)
@@ -109,45 +110,45 @@ EASIEST FUNCTIONS (Zero Suspects, Sorted by Size)
   005ab590: sound_sndmain.cpp_isHardwareMixingEnabled_FUN_005ab590 (4 lines)
   005addd0: sound_sndmain.cpp_CSampleInfo_getBitDepth_FUN_005addd0 (4 lines)
   005ab6d0: sound_sndmain.cpp_getMixBufferCount_FUN_005ab6d0 (4 lines)
-  ... and 984 more
+  ... and 973 more
 
 MOST COMPLEX FUNCTIONS (Highest Complexity Score)
 ----------------------------------------
-  0055a810: core_script.cpp_CScript_step_FUN_0055a810 (score: 7959, suspects: 486, lines: 3059)
-  005bb960: core_stranger.cpp_CStranger_FUN_005bb960 (score: 7834, suspects: 647, lines: 1319)
-  00592690: core_skeledit.cpp_FUN_00592690 (score: 7417, suspects: 528, lines: 2077)
-  004e6600: core_ghoul.cpp_CGhoul_FUN_004e6600 (score: 5897, suspects: 480, lines: 1057)
-  0058f810: core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (score: 5617, suspects: 410, lines: 1447)
+  00592690: core_skeledit.cpp_FUN_00592690 (score: 9864, suspects: 766, lines: 2144)
+  0055a810: core_script.cpp_CScript_step_FUN_0055a810 (score: 9374, suspects: 626, lines: 3059)
+  005bb960: core_stranger.cpp_CStranger_FUN_005bb960 (score: 8363, suspects: 701, lines: 1288)
+  005968b0: core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (score: 6845, suspects: 553, lines: 1245)
+  004e6600: core_ghoul.cpp_CGhoul_FUN_004e6600 (score: 6301, suspects: 519, lines: 1056)
+  004aacc0: core_event.cpp_CEventList_FUN_004aacc0 (score: 5741, suspects: 362, lines: 2066)
   004b86b0: engine_fileio.cpp_CFileManager_managePodFiles_FUN_004b86b0 (score: 5559, suspects: 455, lines: 939)
-  004f4bd0: core_hostage.cpp_RelatedToRescuedTownsfolk_FUN_004f4bd0 (score: 5470, suspects: 463, lines: 790)
-  005968b0: core_skeledit.cpp_CDeformableModelInstance_viewModel_FUN_005968b0 (score: 5431, suspects: 409, lines: 1276)
+  004f4bd0: core_hostage.cpp_RelatedToRescuedTownsfolk_FUN_004f4bd0 (score: 5447, suspects: 464, lines: 747)
   0058c190: core_skeledit.cpp_FUN_0058c190 (score: 5368, suspects: 457, lines: 733)
-  00484410: core_dracbrid.cpp_FUN_00484410 (score: 4898, suspects: 400, lines: 853)
-  004aacc0: core_event.cpp_CEventList_FUN_004aacc0 (score: 4865, suspects: 269, lines: 2130)
-  00562920: core_script.cpp_FUN_00562920 (score: 4769, suspects: 384, lines: 869)
-  004ddaf0: core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 (score: 4688, suspects: 258, lines: 2058)
-  004d2ea0: core_gabriela.cpp_FUN_004d2ea0 (score: 4680, suspects: 386, lines: 780)
+  00484410: core_dracbrid.cpp_FUN_00484410 (score: 5134, suspects: 422, lines: 849)
+  0058f810: core_skeledit.cpp_CDeformableModel_determinePartsFromS3D_FUN_0058f810 (score: 4832, suspects: 332, lines: 1432)
+  004ddaf0: core_game.cpp_CGame_processCheatCodes_FUN_004ddaf0 (score: 4825, suspects: 270, lines: 2055)
+  004d2ea0: core_gabriela.cpp_FUN_004d2ea0 (score: 4657, suspects: 383, lines: 782)
+  00562920: core_script.cpp_FUN_00562920 (score: 4654, suspects: 372, lines: 869)
+  005390f0: core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0 (score: 4529, suspects: 342, lines: 1029)
+  00525840: core_mobster.cpp_FUN_00525840 (score: 4504, suspects: 378, lines: 664)
   0040eed0: core_actor.cpp_CActorProperty_editInteractive_FUN_0040eed0 (score: 4481, suspects: 363, lines: 781)
   004e1cb0: core_game.cpp_CGame_showChapterSelect_FUN_004e1cb0 (score: 4433, suspects: 388, lines: 508)
-  00525840: core_mobster.cpp_FUN_00525840 (score: 3955, suspects: 326, lines: 640)
-  004ae140: core_event.cpp_CEventList_FUN_004ae140 (score: 3903, suspects: 230, lines: 1578)
-  005390f0: core_msnedit.cpp_PrepareMissionMaybe_FUN_005390f0 (score: 3877, suspects: 280, lines: 1012)
+  004ae140: core_event.cpp_CEventList_FUN_004ae140 (score: 4197, suspects: 266, lines: 1497)
   004b5a50: engine_fileio.cpp_CFileManager_rebuildLastPod_FUN_004b5a50 (score: 3866, suspects: 309, lines: 701)
+  004baf00: engine_fileio.cpp_CFileManager_checkInPodFile_FUN_004baf00 (score: 3863, suspects: 306, lines: 728)
   00578d80: core_setedit.cpp_CDemonSet_importS3D_FUN_00578d80 (score: 3782, suspects: 297, lines: 752)
   004fd600: core_inv.cpp_CInventory_addItem_FUN_004fd600 (score: 3756, suspects: 254, lines: 1171)
   005716b0: core_setcolid.cpp_CDemonSet_processCollisionTypes_FUN_005716b0 (score: 3718, suspects: 326, lines: 403)
+  005ce580: shape_superopt.cpp_CPoly_intersectPoly_FUN_005ce580 (score: 3662, suspects: 268, lines: 922)
+  00583170: core_setedit.cpp_CDemonSet_FUN_00583170 (score: 3556, suspects: 271, lines: 791)
+  004f9c30: core_imp.cpp_FUN_004f9c30 (score: 3366, suspects: 279, lines: 526)
   00489d30: cockpit_drawsurf.cpp_testDrawingSurface_FUN_00489d30 (score: 3327, suspects: 306, lines: 232)
-  005ce580: shape_superopt.cpp_CPoly_intersectPoly_FUN_005ce580 (score: 3236, suspects: 225, lines: 951)
-  004f9c30: core_imp.cpp_FUN_004f9c30 (score: 3191, suspects: 262, lines: 526)
-  005138e0: core_menu.cpp_configureCustomKeyBindings_FUN_005138e0 (score: 3119, suspects: 218, lines: 899)
-  00568030: core_sentinel.cpp_FUN_00568030 (score: 3037, suspects: 251, lines: 487)
-  00583170: core_setedit.cpp_CDemonSet_FUN_00583170 (score: 3030, suspects: 209, lines: 895)
-  00569410: core_set.cpp_CDemonSet_load_FUN_00569410 (score: 2962, suspects: 249, lines: 427)
+  0057d660: core_setedit.cpp_UserInputCreate_FUN_0057d660 (score: 3288, suspects: 278, lines: 453)
+  0051d990: shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990 (score: 3239, suspects: 270, lines: 464)
 
 FUNCTIONS BY SUSPECT TYPE
 ----------------------------------------
 
-  stack_param (2812 functions):
+  stack_param (2829 functions):
     00434870: cockpit_ckptutil.c_rotateBitmap_FUN_00434870
     004328d0: cockpit_ckptutil.c_blitHorizontallyClippedSprite_FUN_004328d0
     004331f0: cockpit_ckptutil.c_loadEdgeListFile_FUN_004331f0
@@ -158,9 +159,9 @@ FUNCTIONS BY SUSPECT TYPE
     00434690: cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690
     00435730: cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730
     00433440: cockpit_ckptutil.c_loadSingleEdgeList_FUN_00433440
-    ... and 2802 more
+    ... and 2819 more
 
-  call_esp_preserve (4099 functions):
+  call_esp_preserve (4062 functions):
     00434870: cockpit_ckptutil.c_rotateBitmap_FUN_00434870
     00432b30: cockpit_ckptutil.c_blitFullScreen_FUN_00432b30
     00432af0: cockpit_ckptutil.c_blitSolidSprite_FUN_00432af0
@@ -171,9 +172,9 @@ FUNCTIONS BY SUSPECT TYPE
     004319b0: cockpit_ckptutil.c_applyActPalette_FUN_004319b0
     00434690: cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690
     00431ac0: cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0
-    ... and 4089 more
+    ... and 4052 more
 
-  call_esp_anchor (640 functions):
+  call_esp_anchor (677 functions):
     004339c0: cockpit_ckptutil.c_drawLineAAWithBlending_FUN_004339c0
     00433c90: cockpit_ckptutil.c_drawLineAA_FUN_00433c90
     0051a300: shape_meshlod.cpp_CLodMesh_findClosestPointOnMesh_FUN_0051a300
@@ -184,7 +185,7 @@ FUNCTIONS BY SUSPECT TYPE
     00516e10: shape_meshlod.cpp_CLodMesh_normalizeAndCenterMesh_FUN_00516e10
     00518300: shape_meshlod.cpp_CLodMesh_findClosestFaceToSamplePoint_FUN_00518300
     0051a030: shape_meshlod.cpp_CLodMesh_processGridCell_FUN_0051a030
-    ... and 630 more
+    ... and 667 more
 
   lea_esp_stack_addr (965 functions):
     00434870: cockpit_ckptutil.c_rotateBitmap_FUN_00434870
@@ -199,7 +200,7 @@ FUNCTIONS BY SUSPECT TYPE
     00433480: cockpit_ckptutil.c_saveEdgeListFile_FUN_00433480
     ... and 955 more
 
-  pointer_cast (1048 functions):
+  pointer_cast (1051 functions):
     0060239a: entry
     00432d90: cockpit_ckptutil.c_copyScreenRegion_FUN_00432d90
     00431528: cockpit_ckptutil.c_optimizedMemcpy_FUN_00431528
@@ -210,9 +211,9 @@ FUNCTIONS BY SUSPECT TYPE
     00433f50: cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50
     00432300: cockpit_ckptutil.c_blitUnifiedSprite_FUN_00432300
     00431f40: cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_00431f40
-    ... and 1038 more
+    ... and 1041 more
 
-  stack_ref (1037 functions):
+  stack_ref (1098 functions):
     0060239a: entry
     00434870: cockpit_ckptutil.c_rotateBitmap_FUN_00434870
     004331f0: cockpit_ckptutil.c_loadEdgeListFile_FUN_004331f0
@@ -223,9 +224,10 @@ FUNCTIONS BY SUSPECT TYPE
     00431a30: cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00431a30
     00434af0: cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af0
     004336e0: cockpit_ckptutil.c_rasterizeEdgeEndpoints_FUN_004336e0
-    ... and 1027 more
+    ... and 1088 more
 
-  unknown_field (338 functions):
+  unknown_field (331 functions):
+    00516620: shape_meshlod.cpp_CLodMesh_buildSpatialGrid_FUN_00516620
     0051cdf0: shape_meshlod.cpp_CLodMesh_eqLoad_FUN_0051cdf0
     0051a030: shape_meshlod.cpp_CLodMesh_processGridCell_FUN_0051a030
     00519680: shape_meshlod.cpp_CLodMesh_findMinimumCostEdge_FUN_00519680
@@ -235,23 +237,9 @@ FUNCTIONS BY SUSPECT TYPE
     0051d990: shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990
     005d47b0: shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0
     005c8b50: shape_superopt.cpp_FUN_005c8b50
-    005cb3a0: shape_superopt.cpp_FUN_005cb3a0
-    ... and 328 more
+    ... and 321 more
 
-  variadic_preserve (949 functions):
-    00434870: cockpit_ckptutil.c_rotateBitmap_FUN_00434870
-    004331f0: cockpit_ckptutil.c_loadEdgeListFile_FUN_004331f0
-    00431870: cockpit_ckptutil.c_readBitmapFile_FUN_00431870
-    00434690: cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690
-    00431ac0: cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0
-    00435730: cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730
-    00434af0: cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af0
-    00432df0: cockpit_ckptutil.c_generateScrollHeightMap_FUN_00432df0
-    004336e0: cockpit_ckptutil.c_rasterizeEdgeEndpoints_FUN_004336e0
-    00433480: cockpit_ckptutil.c_saveEdgeListFile_FUN_00433480
-    ... and 939 more
-
-  unaffected_reg (570 functions):
+  unaffected_reg (592 functions):
     00432540: cockpit_ckptutil.c_blitSimpleSprite_FUN_00432540
     00434870: cockpit_ckptutil.c_rotateBitmap_FUN_00434870
     004328d0: cockpit_ckptutil.c_blitHorizontallyClippedSprite_FUN_004328d0
@@ -262,22 +250,22 @@ FUNCTIONS BY SUSPECT TYPE
     0054b690: cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_0054b690
     0054ae70: cockpit_pkbitmap.cpp_CPackedBitmap_copyNoClip_FUN_0054ae70
     0054a840: cockpit_pkbitmap.cpp_CPackedBitmap_init_FUN_0054a840
-    ... and 560 more
+    ... and 582 more
 
-  register_param (1658 functions):
-    0060239a: entry
+  variadic_preserve (943 functions):
     00434870: cockpit_ckptutil.c_rotateBitmap_FUN_00434870
     004331f0: cockpit_ckptutil.c_loadEdgeListFile_FUN_004331f0
     00431870: cockpit_ckptutil.c_readBitmapFile_FUN_00431870
-    004319b0: cockpit_ckptutil.c_applyActPalette_FUN_004319b0
     00434690: cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690
     00431ac0: cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0
     00435730: cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730
-    00433440: cockpit_ckptutil.c_loadSingleEdgeList_FUN_00433440
-    00431a30: cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00431a30
-    ... and 1648 more
+    00434af0: cockpit_ckptutil.c_traceConnectedEdges_FUN_00434af0
+    00432df0: cockpit_ckptutil.c_generateScrollHeightMap_FUN_00432df0
+    004336e0: cockpit_ckptutil.c_rasterizeEdgeEndpoints_FUN_004336e0
+    00433480: cockpit_ckptutil.c_saveEdgeListFile_FUN_00433480
+    ... and 933 more
 
-  concat_artifact (266 functions):
+  concat_artifact (274 functions):
     00431410: cockpit_ckptutil.c_expandIndexedTo16Bit_FUN_00431410
     0051a300: shape_meshlod.cpp_CLodMesh_findClosestPointOnMesh_FUN_0051a300
     0051cdf0: shape_meshlod.cpp_CLodMesh_eqLoad_FUN_0051cdf0
@@ -288,9 +276,9 @@ FUNCTIONS BY SUSPECT TYPE
     0051d990: shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990
     005d47b0: shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0
     005c8b50: shape_superopt.cpp_FUN_005c8b50
-    ... and 256 more
+    ... and 264 more
 
-  badspacebase (1624 functions):
+  register_param (1657 functions):
     0060239a: entry
     00434870: cockpit_ckptutil.c_rotateBitmap_FUN_00434870
     004331f0: cockpit_ckptutil.c_loadEdgeListFile_FUN_004331f0
@@ -301,9 +289,22 @@ FUNCTIONS BY SUSPECT TYPE
     00435730: cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730
     00433440: cockpit_ckptutil.c_loadSingleEdgeList_FUN_00433440
     00431a30: cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00431a30
-    ... and 1614 more
+    ... and 1647 more
 
-  extra_output (261 functions):
+  badspacebase (1623 functions):
+    0060239a: entry
+    00434870: cockpit_ckptutil.c_rotateBitmap_FUN_00434870
+    004331f0: cockpit_ckptutil.c_loadEdgeListFile_FUN_004331f0
+    00431870: cockpit_ckptutil.c_readBitmapFile_FUN_00431870
+    004319b0: cockpit_ckptutil.c_applyActPalette_FUN_004319b0
+    00434690: cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690
+    00431ac0: cockpit_ckptutil.c_loadACTPaletteFile_FUN_00431ac0
+    00435730: cockpit_ckptutil.c_generateTransparencySpans_FUN_00435730
+    00433440: cockpit_ckptutil.c_loadSingleEdgeList_FUN_00433440
+    00431a30: cockpit_ckptutil.c_loadACTToIndexedPalette_FUN_00431a30
+    ... and 1613 more
+
+  extra_output (262 functions):
     00433f50: cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50
     004342f0: cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_004342f0
     00487bc0: cockpit_drawsurf.cpp_CDrawSurface_drawDashedLine_FUN_00487bc0
@@ -314,7 +315,20 @@ FUNCTIONS BY SUSPECT TYPE
     00517630: shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630
     00516ba0: shape_meshlod.cpp_CLodMesh_generateLOD_FUN_00516ba0
     00555090: shape_quantize.cpp_CColorQuantizer_computeBoxStatistics_FUN_00555090
-    ... and 251 more
+    ... and 252 more
+
+  variadic_anchor (250 functions):
+    0051a400: shape_meshlod.cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400
+    00516620: shape_meshlod.cpp_CLodMesh_buildSpatialGrid_FUN_00516620
+    0051cdf0: shape_meshlod.cpp_CLodMesh_eqLoad_FUN_0051cdf0
+    00519b50: shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
+    00518300: shape_meshlod.cpp_CLodMesh_findClosestFaceToSamplePoint_FUN_00518300
+    00518910: shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
+    0051d0e0: shape_meshlod.cpp_CLodMesh_eqSave_FUN_0051d0e0
+    00517630: shape_meshlod.cpp_CLodMesh_collapseEdge_FUN_00517630
+    00516ba0: shape_meshlod.cpp_CLodMesh_generateLOD_FUN_00516ba0
+    0051d990: shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990
+    ... and 240 more
 
   callind_preserve (583 functions):
     00432540: cockpit_ckptutil.c_blitSimpleSprite_FUN_00432540
@@ -329,7 +343,20 @@ FUNCTIONS BY SUSPECT TYPE
     00432860: cockpit_ckptutil.c_copyBitmapRegion_FUN_00432860
     ... and 573 more
 
-  format_string_mismatch (312 functions):
+  callind_anchor (231 functions):
+    0051d990: shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990
+    005d2c40: shape_superopt.cpp_CObj_transform_FUN_005d2c40
+    005d47b0: shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0
+    005d5800: shape_superopt.cpp_CObj_findCoplanarPolygon_FUN_005d5800
+    005ce580: shape_superopt.cpp_CPoly_intersectPoly_FUN_005ce580
+    005d7460: shape_superopt.cpp_COptimize_FUN_005d7460
+    005d2dd0: shape_superopt.cpp_CObj_transformMasked_FUN_005d2dd0
+    005d3960: shape_superopt.cpp_CObj_computeCoplanarAdjacency_FUN_005d3960
+    005d4160: shape_superopt.cpp_CObj_weldVertices_FUN_005d4160
+    005d0010: shape_superopt.cpp_CPoly_rayIntersect_FUN_005d0010
+    ... and 221 more
+
+  format_string_mismatch (320 functions):
     004331f0: cockpit_ckptutil.c_loadEdgeListFile_FUN_004331f0
     00431870: cockpit_ckptutil.c_readBitmapFile_FUN_00431870
     00434690: cockpit_ckptutil.c_loadRotatedBitmapFile_FUN_00434690
@@ -340,20 +367,20 @@ FUNCTIONS BY SUSPECT TYPE
     0054bf40: cockpit_pkbmpset.cpp_CPackedBitmapSet_loadJoinedRAW_FUN_0054bf40
     0051adf0: shape_meshlod.cpp_CLodMesh_parseS3DFileVariant_FUN_0051adf0
     0051d250: shape_meshlod.cpp_CLodMesh_saveReplayData_FUN_0051d250
-    ... and 302 more
+    ... and 310 more
 
-  suspect_float (230 functions):
+  suspect_float (246 functions):
     00519b50: shape_meshlod.cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
     0051d520: shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520
-    00516ba0: shape_meshlod.cpp_CLodMesh_generateLOD_FUN_00516ba0
     0051d990: shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990
     004617c0: shape_design.c_configureSpatialSplittingPlane_FUN_004617c0
     00463b30: shape_design.c_complexPolygonReduction_FUN_00463b30
-    00534d40: sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_00534d40
+    0046a180: shape_design.c_tileTextureMaps_FUN_0046a180
+    005b9670: shape_spotview.cpp_CSpotView_FUN_005b9670
     00406290: engine_3d.c_renderPolygonTexturePerspectiveCorrect_FUN_00406290
     00404220: engine_3d.c_renderPolygonLitDetailed_FUN_00404220
     00406860: engine_3d.c_renderPolygonPlaneMaskedDetailedComplex_FUN_00406860
-    ... and 220 more
+    ... and 236 more
 
   param_count_too_few (631 functions):
     00431f40: cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_00431f40
@@ -381,7 +408,20 @@ FUNCTIONS BY SUSPECT TYPE
     0060f04c: crt_env.c_updateEnvironTable_FUN_0060f04c
     ... and 616 more
 
-  unresolved_funcptr (255 functions):
+  stack_align_anchor (529 functions):
+    004339c0: cockpit_ckptutil.c_drawLineAAWithBlending_FUN_004339c0
+    00433f50: cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50
+    004342f0: cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_004342f0
+    00433c90: cockpit_ckptutil.c_drawLineAA_FUN_00433c90
+    00519480: shape_meshlod.cpp_CLodMesh_checkEdgeCollapseAngle_FUN_00519480
+    0051a300: shape_meshlod.cpp_CLodMesh_findClosestPointOnMesh_FUN_0051a300
+    0051a400: shape_meshlod.cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400
+    00516620: shape_meshlod.cpp_CLodMesh_buildSpatialGrid_FUN_00516620
+    005172c0: shape_meshlod.cpp_CLodMesh_computeVertexNormal_FUN_005172c0
+    0051cdf0: shape_meshlod.cpp_CLodMesh_eqLoad_FUN_0051cdf0
+    ... and 519 more
+
+  unresolved_funcptr (253 functions):
     005d2650: shape_superopt.cpp_CObj_copyFrom_FUN_005d2650
     005d3e40: shape_superopt.cpp_CObj_projectAllPlanarUVs_FUN_005d3e40
     005d1230: shape_superopt.cpp_CPoly_hasCentroidIntersection_FUN_005d1230
@@ -392,9 +432,9 @@ FUNCTIONS BY SUSPECT TYPE
     005d2320: shape_superopt.cpp_CObj_allocatePolygons_FUN_005d2320
     005d2720: shape_superopt.cpp_CObj_appendTo_FUN_005d2720
     005d2410: shape_superopt.cpp_CObj_addPolygons_FUN_005d2410
-    ... and 245 more
+    ... and 243 more
 
-  negative_offset (161 functions):
+  negative_offset (159 functions):
     00515970: shape_meshlod.cpp_CLodMesh_free_FUN_00515970
     005d47b0: shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0
     0049f420: shape_edittool.cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
@@ -405,33 +445,20 @@ FUNCTIONS BY SUSPECT TYPE
     005b1470: sound_sndwav.cpp_enumerateWavOutDevice_FUN_005b1470
     005b1560: sound_sndwav.cpp_enumerateWavInDevice_FUN_005b1560
     005ff7a4: crt_fstream.cpp_ofstream_destructor_thunk_from_ios_FUN_005ff7a4
-    ... and 151 more
+    ... and 149 more
 
-  sub_artifact (125 functions):
+  sub_artifact (121 functions):
     0051a300: shape_meshlod.cpp_CLodMesh_findClosestPointOnMesh_FUN_0051a300
     00518300: shape_meshlod.cpp_CLodMesh_findClosestFaceToSamplePoint_FUN_00518300
     0051a030: shape_meshlod.cpp_CLodMesh_processGridCell_FUN_0051a030
     00518910: shape_meshlod.cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910
     005151e0: shape_meshlod.cpp_fitLeastSquaresPlane_FUN_005151e0
-    005d47b0: shape_superopt.cpp_CObj_removeTJunctions_FUN_005d47b0
     005c84c0: shape_superopt.cpp_EdgeListCheckPlusFreesLarge_FUN_005c84c0
     005cb3a0: shape_superopt.cpp_FUN_005cb3a0
     005ce580: shape_superopt.cpp_CPoly_intersectPoly_FUN_005ce580
     005d63d0: shape_superopt.cpp_projectPointOntoPlane_FUN_005d63d0
-    ... and 115 more
-
-  stack_align_anchor (271 functions):
-    004339c0: cockpit_ckptutil.c_drawLineAAWithBlending_FUN_004339c0
-    00433f50: cockpit_ckptutil.c_blendPixelWithHardwarePalette_FUN_00433f50
-    004342f0: cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_004342f0
-    00433c90: cockpit_ckptutil.c_drawLineAA_FUN_00433c90
-    00519480: shape_meshlod.cpp_CLodMesh_checkEdgeCollapseAngle_FUN_00519480
-    0051a300: shape_meshlod.cpp_CLodMesh_findClosestPointOnMesh_FUN_0051a300
-    005172c0: shape_meshlod.cpp_CLodMesh_computeVertexNormal_FUN_005172c0
-    00516e10: shape_meshlod.cpp_CLodMesh_normalizeAndCenterMesh_FUN_00516e10
-    0051a030: shape_meshlod.cpp_CLodMesh_processGridCell_FUN_0051a030
-    00519680: shape_meshlod.cpp_CLodMesh_findMinimumCostEdge_FUN_00519680
-    ... and 261 more
+    005d0340: shape_superopt.cpp_CPoly_containsPoint2D_FUN_005d0340
+    ... and 111 more
 
   warning_overlapping_globals (219 functions):
     005b55f7: wincore_windll.cpp_renderAlphaRow16_FUN_005b55f7
@@ -446,20 +473,20 @@ FUNCTIONS BY SUSPECT TYPE
     0056d380: core_set.cpp_CDemonSet_FUN_0056d380
     ... and 209 more
 
-  warning_unreachable (55 functions):
+  warning_unreachable (57 functions):
     00431c00: cockpit_ckptutil.c_buildHardwarePalettes_FUN_00431c00
     00487220: cockpit_drawsurf.cpp_CDrawSurface_setColorRGB_FUN_00487220
     00487010: cockpit_drawsurf.cpp_CDrawSurface_setColor_FUN_00487010
     005d5800: shape_superopt.cpp_CObj_findCoplanarPolygon_FUN_005d5800
+    005d77a0: shape_superopt.cpp_TriListSomething_FUN_005d77a0
     0045e520: shape_design.c_createBoxPrimitive_FUN_0045e520
     0045c6c0: shape_design.c_showPointEditor_FUN_0045c6c0
     0045ba60: shape_design.c_setupViewMatrix_FUN_0045ba60
     0045bd10: shape_design.c_convertWorldToScreenCoordinates_FUN_0045bd10
     005ac400: sound_sndmain.cpp_analyzeFrequencyBand_FUN_005ac400
-    005a3fe0: sound_sndmain.cpp_parseWavFile_FUN_005a3fe0
-    ... and 45 more
+    ... and 47 more
 
-  undefined_type (85 functions):
+  undefined_type (86 functions):
     0051d520: shape_meshlod.cpp_CLodMesh_previewLodGeneration_FUN_0051d520
     0051d990: shape_meshlod.cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990
     004a01f0: shape_edittool.cpp_CEditorTools_promptForValidDouble_FUN_004a01f0
@@ -470,7 +497,7 @@ FUNCTIONS BY SUSPECT TYPE
     004a00f0: shape_edittool.cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
     005b55f7: wincore_windll.cpp_renderAlphaRow16_FUN_005b55f7
     005b4031: wincore_windll.cpp_renderMMXPerspectiveScanline32_FUN_005b4031
-    ... and 75 more
+    ... and 76 more
 
   param_count_too_many (89 functions):
     0054b000: cockpit_pkbitmap.cpp_CPackedBitmap_reloadFromBitmapFile_FUN_0054b000
@@ -567,9 +594,6 @@ FUNCTIONS BY SUSPECT TYPE
     006084ec: crt_io.c_write_FUN_006084ec
     0060b560: crt_exit.c_FinalExitHandler_FUN_0060b560
     00506f10: core_main.c_displayErrorAndQuit_FUN_00506f10
-
-  variadic_anchor (1 functions):
-    00457fd0: shape_design.c_writeBinaryTreeNode_FUN_00457fd0
 
   special_entry_point (1 functions):
     0060239a: entry

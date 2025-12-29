@@ -13,72 +13,78 @@ void core_larva_cpp_FUN_00503a20(void)
 
 {
   CDemonActor *pCVar1;
-  SMotion *pSVar2;
-  char *pcVar3;
-  int iVar4;
+  CDemonActor *this_ptr;
+  float fVar2;
+  SMotion *pSVar3;
+  char *pcVar4;
+  int iVar5;
   BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000004;
-  int in_stack_00000008;
-  char acStack_e4 [8];
-  float fStack_dc;
-  char acStack_d8 [88];
-  char acStack_80 [112];
+  float in_stack_00000008;
+  CDemonActor *pCStack_dc;
+  float afStack_d8 [23];
+  char acStack_7c [4];
+  char acStack_78 [104];
   
+  fVar2 = in_stack_00000008;
+  this_ptr = in_stack_00000004;
   pCVar1 = (CDemonActor *)
-           ((float)in_stack_00000004[0x1a].next_actor - *(float *)(in_stack_00000008 + 4));
+           ((float)in_stack_00000004[0x1a].next_actor - *(float *)((int)in_stack_00000008 + 4));
   in_stack_00000004[0x1a].next_actor = pCVar1;
   if (0.0 < (float)pCVar1) {
     sound_sndmain_cpp_killSfx_FUN_005a9c40((uint)in_stack_00000004[0x8d].next_actor);
-    iVar4 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(in_stack_00000004[0x8d].field26_0x148);
-    if (iVar4 == 0) {
-      if ((float)0.29999999999999999 <= *(float *)(in_stack_00000004[0x1c].create_event + 4)) {
-        if (0.69999999999999996 <= (double)*(float *)(in_stack_00000004[0x1c].create_event + 4)) {
-          pcVar3 = "big";
+    iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(this_ptr[0x8d].field26_0x148);
+    if (iVar5 == 0) {
+      if ((float)0.29999999999999999 <= *(float *)(this_ptr[0x1c].create_event + 4)) {
+        if (0.69999999999999996 <= (double)*(float *)(this_ptr[0x1c].create_event + 4)) {
+          pcVar4 = "big";
         }
         else {
-          pcVar3 = "med";
+          pcVar4 = "med";
         }
       }
       else {
-        pcVar3 = "sml";
+        pcVar4 = "sml";
       }
-      crt_stdio_c_sprintf_FUN_005fdbd0(acStack_80,"l%s-shot?.wav",pcVar3);
-      iVar4 = (*in_stack_00000004->vtable->playSound)(in_stack_00000004,acStack_80);
-      in_stack_00000004[0x8d].field26_0x148 = iVar4;
+      crt_stdio_c_sprintf_FUN_005fdbd0(acStack_7c,"l%s-shot?.wav",pcVar4);
+      iVar5 = (*this_ptr->vtable->playSound)(this_ptr,acStack_78);
+      this_ptr[0x8d].field26_0x148 = iVar5;
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              ((CMotionController *)(in_stack_00000004 + 1),3,1);
+              ((CMotionController *)(this_ptr + 1),3,1);
   }
   else {
+    pCVar1 = in_stack_00000004 + 1;
     in_stack_00000004[0x1a].next_actor = (CDemonActor *)0x0;
-    pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                       ((CMotionController *)(in_stack_00000004 + 1));
-    if ((pSVar2->state_index != 5) && (pSVar2->state_index != 4)) {
+    pSVar3 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                       ((CMotionController *)pCVar1);
+    if ((pSVar3->state_index != 5) && (pSVar3->state_index != 4)) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                ((CMotionController *)(in_stack_00000004 + 1),4,1);
+                ((CMotionController *)pCVar1,4,1);
     }
-    sound_sndmain_cpp_killSfx_FUN_005a9c40(in_stack_00000004[0x8d].field26_0x148);
-    sound_sndmain_cpp_killSfx_FUN_005a9c40((uint)in_stack_00000004[0x8d].next_actor);
-    fStack_dc = *(float *)(in_stack_00000004[0x1c].create_event + 4);
-    if ((float)0.29999999999999999 <= fStack_dc) {
-      if (0.69999999999999996 <= (double)fStack_dc) {
-        pcVar3 = "big";
+    sound_sndmain_cpp_killSfx_FUN_005a9c40(this_ptr[0x8d].field26_0x148);
+    sound_sndmain_cpp_killSfx_FUN_005a9c40((uint)this_ptr[0x8d].next_actor);
+    if ((float)0.29999999999999999 <= *(float *)(this_ptr[0x1c].create_event + 4)) {
+      if (0.69999999999999996 <= (double)*(float *)(this_ptr[0x1c].create_event + 4)) {
+        pcVar4 = "big";
       }
       else {
-        pcVar3 = "med";
+        pcVar4 = "med";
       }
     }
     else {
-      pcVar3 = "sml";
+      pcVar4 = "sml";
     }
-    crt_stdio_c_sprintf_FUN_005fdbd0(acStack_d8,"l%s-die?.wav",pcVar3);
-    iVar4 = (*in_stack_00000004->vtable->playSound)(in_stack_00000004,acStack_e4);
-    in_stack_00000004[0x8d].field26_0x148 = iVar4;
+    crt_stdio_c_sprintf_FUN_005fdbd0((char *)&pCStack_dc,"l%s-die?.wav",pcVar4);
+    iVar5 = (*this_ptr->vtable->playSound)(this_ptr,(char *)afStack_d8);
+    this_ptr[0x8d].field26_0x148 = iVar5;
   }
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-            (in_stack_00000004,(CVector3f *)(acStack_80 + 0x68),
-             (CVector3f *)(in_stack_00000008 + 0x1c));
+            (this_ptr,(CVector3f *)&stack0x00000004,(CVector3f *)((int)fVar2 + 0x1c));
+  pCStack_dc = (CDemonActor *)this_ptr[0x1c].was_created;
   core_gore_cpp_FUN_004edbb0();
+  afStack_d8[0] = fVar2;
+  pCStack_dc = this_ptr;
   core_enemy_cpp_FUN_004a9f10();
   return;
 }

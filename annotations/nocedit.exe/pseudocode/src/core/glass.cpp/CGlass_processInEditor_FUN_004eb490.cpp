@@ -10,35 +10,42 @@ void __cdecl core_glass_cpp_CGlass_processInEditor_FUN_004eb490(CGlass *this_ptr
 
 {
   int iVar1;
-  float fVar2;
+  uint uStack00000018;
+  uint uStack0000002c;
+  float in_stack_00000038;
+  uint uStack00000040;
+  float in_stack_0000004c;
+  uint uStack00000054;
+  float in_stack_00000060;
+  uint uStack0000006c;
+  float in_stack_00000074;
+  uint uStack00000080;
   
   iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
   if (iVar1 != 0) {
-    fVar2 = g_CGamePtr->delta_time_float * (float)4;
-    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
-    if (iVar1 != 0) {
-      fVar2 = fVar2 * (float)0.10000000000000001;
-    }
-    iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
-    if (iVar1 != 0) {
-      fVar2 = fVar2 * (float)5;
-    }
+    (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
+    (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+    uStack00000018 = 0x4eb517;
     iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
     if (iVar1 != 0) {
-      (this_ptr->glass_size).x = (this_ptr->glass_size).x - fVar2;
+      (this_ptr->glass_size).x = (this_ptr->glass_size).x - in_stack_00000038;
     }
+    uStack0000002c = 0x4eb539;
     iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4d);
     if (iVar1 != 0) {
-      (this_ptr->glass_size).x = (this_ptr->glass_size).x + fVar2;
+      (this_ptr->glass_size).x = (this_ptr->glass_size).x + in_stack_0000004c;
     }
+    uStack00000040 = 0x4eb55b;
     iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x50);
     if (iVar1 != 0) {
-      (this_ptr->glass_size).y = (this_ptr->glass_size).y - fVar2;
+      (this_ptr->glass_size).y = (this_ptr->glass_size).y - in_stack_00000060;
     }
+    uStack00000054 = 0x4eb57d;
     iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x48);
     if (iVar1 != 0) {
-      (this_ptr->glass_size).y = (this_ptr->glass_size).y + fVar2;
+      (this_ptr->glass_size).y = (this_ptr->glass_size).y + in_stack_00000074;
     }
+    uStack00000080 = 0x3f000000;
     if ((int)(this_ptr->glass_size).x < 0x3f000000) {
       (this_ptr->glass_size).x = 0.5;
     }
@@ -46,6 +53,7 @@ void __cdecl core_glass_cpp_CGlass_processInEditor_FUN_004eb490(CGlass *this_ptr
       (this_ptr->glass_size).y = 0.5;
     }
     (this_ptr->glass_size).z = 0.1;
+    uStack0000006c = 0x4eb5d8;
     (*((this_ptr->base).vtable)->setup)(&this_ptr->base);
     return;
   }

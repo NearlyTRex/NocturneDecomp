@@ -10,16 +10,15 @@ CMatrix3x4f * __cdecl
 core_xform_cpp_inverse_FUN_005f6210(CMatrix3x4f *output_matrix,CMatrix3x4f *input_matrix)
 
 {
-  int iVar1;
+  uint uVar1;
+  int iVar2;
   BADSPACEBASE *in_ESP;
-  CMatrix3x4f *unaff_ESI;
-  float *pfVar2;
-  CMatrix3x4f *pCVar3;
-  byte bVar4;
-  double dVar5;
-  int local_98;
-  float local_90;
-  float local_8c;
+  float *pfVar3;
+  CMatrix3x4f *unaff_EDI;
+  CMatrix3x4f *pCVar4;
+  byte bVar5;
+  double dVar6;
+  uint local_8c;
   float local_88;
   float local_84;
   float local_80;
@@ -30,69 +29,72 @@ core_xform_cpp_inverse_FUN_005f6210(CMatrix3x4f *output_matrix,CMatrix3x4f *inpu
   float local_6c;
   float local_68;
   float local_64;
-  double local_60;
+  float local_60;
+  float fStack_5c;
   double local_58;
   double local_50;
   double local_48;
-  double local_30;
+  double dStack_40;
   double local_28;
-  double local_20;
-  double local_18;
+  uint local_20;
+  int iStack_1c;
+  uint local_18;
   
-  bVar4 = 0;
-  dVar5 = core_xform_cpp_determinant_FUN_005f61c0(output_matrix);
-  local_20 = dVar5;
-  local_98 = SUB84 /* extract 2-byte value */(dVar5,0);
-  if ((((ulonglong)dVar5 & 0x7fffffff00000000) == 0) && (local_98 == 0)) {
+  bVar5 = 0;
+  dVar6 = core_xform_cpp_determinant_FUN_005f61c0(output_matrix);
+  iStack_1c = SUB84 /* extract 2-byte value */(dVar6,0);
+  local_18 = (uint)((ulonglong)dVar6 >> 0x20);
+  uVar1 = local_18;
+  if ((((ulonglong)dVar6 & 0x7fffffff00000000) == 0) && (iStack_1c == 0)) {
     g_CurrentFilename = "..\\core\\xform.cpp";
     g_CurrentLineNumber = 0x23e;
     core_main_c_displayErrorAndQuit_FUN_00506f10("inverse() - Singular matrix");
   }
-  local_90 = output_matrix->m[1].x * output_matrix->m[2].y -
+  local_88 = output_matrix->m[1].x * output_matrix->m[2].y -
              output_matrix->m[1].y * output_matrix->m[2].x;
-  local_60 = (double)local_90;
-  local_80 = -(output_matrix->m[1].w * output_matrix->m[2].y -
+  local_58 = (double)local_88;
+  local_78 = -(output_matrix->m[1].w * output_matrix->m[2].y -
               output_matrix->m[1].y * output_matrix->m[2].w);
-  local_28 = (double)local_80;
-  dVar5 = 1.0 / dVar5;
-  local_70 = output_matrix->m[1].w * output_matrix->m[2].x -
+  dVar6 = (double)local_78;
+  local_20 = SUB84 /* extract 2-byte value */(dVar6,0);
+  iStack_1c = (int)((ulonglong)dVar6 >> 0x20);
+  dVar6 = 1.0 / (double)CONCAT44 /* combine 2-byte values */(local_8c,uVar1);
+  local_68 = output_matrix->m[1].w * output_matrix->m[2].x -
              output_matrix->m[1].x * output_matrix->m[2].w;
-  local_48 = (double)local_70;
-  local_8c = -(output_matrix->m[0].x * output_matrix->m[2].y -
+  dStack_40 = (double)local_68;
+  local_84 = -(output_matrix->m[0].x * output_matrix->m[2].y -
               output_matrix->m[0].y * output_matrix->m[2].x);
-  local_58 = (double)local_8c;
-  local_7c = output_matrix->m[0].w * output_matrix->m[2].y -
+  local_50 = (double)local_84;
+  local_74 = output_matrix->m[0].w * output_matrix->m[2].y -
              output_matrix->m[0].y * output_matrix->m[2].w;
-  local_50 = (double)local_7c;
-  local_6c = -(output_matrix->m[0].w * output_matrix->m[2].x -
-              output_matrix->m[0].x * output_matrix->m[2].w);
-  local_18 = (double)local_6c;
-  local_90 = local_90 * (float)dVar5;
-  local_8c = local_8c * (float)dVar5;
-  local_88 = (output_matrix->m[0].x * output_matrix->m[1].y -
-             output_matrix->m[0].y * output_matrix->m[1].x) * (float)dVar5;
-  local_80 = local_80 * (float)dVar5;
-  local_68 = output_matrix->m[0].w * output_matrix->m[1].x -
+  local_48 = (double)local_74;
+  local_88 = local_88 * (float)dVar6;
+  local_84 = local_84 * (float)dVar6;
+  local_80 = (output_matrix->m[0].x * output_matrix->m[1].y -
+             output_matrix->m[0].y * output_matrix->m[1].x) * (float)dVar6;
+  local_78 = local_78 * (float)dVar6;
+  local_60 = output_matrix->m[0].w * output_matrix->m[1].x -
              output_matrix->m[0].x * output_matrix->m[1].w;
-  local_30 = (double)local_68;
-  local_7c = local_7c * (float)dVar5;
-  local_78 = -(output_matrix->m[0].w * output_matrix->m[1].y -
-              output_matrix->m[0].y * output_matrix->m[1].w) * (float)dVar5;
-  local_70 = local_70 * (float)dVar5;
-  local_6c = local_6c * (float)dVar5;
-  local_68 = local_68 * (float)dVar5;
-  local_84 = -(output_matrix->m[2].z * local_88 +
-              output_matrix->m[0].z * local_90 + output_matrix->m[1].z * local_8c);
-  local_74 = -(output_matrix->m[2].z * local_78 +
-              output_matrix->m[1].z * local_7c + output_matrix->m[0].z * local_80);
-  local_64 = -(output_matrix->m[2].z * local_68 +
-              output_matrix->m[1].z * local_6c + output_matrix->m[0].z * local_70);
-  pfVar2 = &local_90;
-  pCVar3 = unaff_ESI;
-  for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    pCVar3->m[0].w = *pfVar2;
-    pfVar2 = pfVar2 + (uint)bVar4 * -2 + 1;
-    pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
+  local_28 = (double)local_60;
+  local_74 = local_74 * (float)dVar6;
+  local_70 = -(output_matrix->m[0].w * output_matrix->m[1].y -
+              output_matrix->m[0].y * output_matrix->m[1].w) * (float)dVar6;
+  local_68 = local_68 * (float)dVar6;
+  local_64 = -(output_matrix->m[0].w * output_matrix->m[2].x -
+              output_matrix->m[0].x * output_matrix->m[2].w) * (float)dVar6;
+  local_60 = local_60 * (float)dVar6;
+  local_7c = -(output_matrix->m[2].z * local_80 +
+              output_matrix->m[0].z * local_88 + output_matrix->m[1].z * local_84);
+  local_6c = -(output_matrix->m[2].z * local_70 +
+              output_matrix->m[1].z * local_74 + output_matrix->m[0].z * local_78);
+  fStack_5c = -(output_matrix->m[2].z * local_60 +
+               output_matrix->m[1].z * local_64 + output_matrix->m[0].z * local_68);
+  pfVar3 = &local_88;
+  pCVar4 = unaff_EDI;
+  for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
+    pCVar4->m[0].w = *pfVar3;
+    pfVar3 = pfVar3 + (uint)bVar5 * -2 + 1;
+    pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);
   }
-  return unaff_ESI;
+  return unaff_EDI;
 }

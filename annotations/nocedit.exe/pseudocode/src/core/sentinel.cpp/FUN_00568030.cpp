@@ -28,10 +28,9 @@ void core_sentinel_cpp_FUN_00568030(void)
   BADSPACEBASE *in_ESP;
   CEnemy *in_stack_00000004;
   float in_stack_00000008;
-  CVector3f *in_stack_fffffde6;
-  int in_stack_fffffdea;
-  float in_stack_fffffdee;
-  SDamageInfo local_1a0;
+  CVector3f *in_stack_fffffe60;
+  float in_stack_fffffe64;
+  float in_stack_fffffe68;
   SDamageInfo local_164;
   CVector3f local_128;
   float local_11c;
@@ -130,8 +129,8 @@ LAB_00568089:
       break;
     case 0x65:
       (*(in_stack_00000004->base_character).base_actor.vtable[1].handleFootstep)
-                ((CDemonActor *)in_stack_00000004,in_stack_fffffde6,in_stack_fffffdea,
-                 in_stack_fffffdee);
+                ((CDemonActor *)in_stack_00000004,in_stack_fffffe60,(int)in_stack_fffffe64,
+                 in_stack_fffffe68);
       break;
     case 0x66:
       if (*(int *)(in_stack_00000004->field6_0xbe38 + 4) != 0) {
@@ -360,11 +359,8 @@ LAB_0056878f:
                 (&pCVar1->motion_controller,0xf,1);
       break;
     case 4:
-      core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_1a0);
-      local_1a0.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
-      local_1a0.attacker = (CDemonActor *)in_stack_00000004;
-      local_1a0.wielder = (CDemonActor *)in_stack_00000004;
-      local_14 = local_1a0.damage_amount;
+      core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffe60);
+      local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
       pCVar10 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                           (&local_b0,&g_ZeroVector,
                            (CMatrix3x4f *)
@@ -373,10 +369,7 @@ LAB_0056878f:
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                 ((CDemonActor *)in_stack_00000004,&local_a4,pCVar10);
       core_enemy_cpp_FUN_004a9880();
-      local_1a0.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(15.0,30.0);
-      local_1a0.attacker = (CDemonActor *)in_stack_00000004;
-      local_1a0.wielder = (CDemonActor *)in_stack_00000004;
-      local_14 = local_1a0.damage_amount;
+      local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(15.0,30.0);
       pCVar10 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                           (&local_50,&g_ZeroVector,
                            (CMatrix3x4f *)

@@ -24,25 +24,24 @@ void core_gabriela_cpp_FUN_004d6540(void)
   CDemonActor *in_stack_00000004;
   float in_stack_00000008;
   int in_stack_0000000c;
-  byte local_134 [4];
-  CVector3f aCStack_130 [12];
+  CVector3f local_134 [12];
+  float fStack_a4;
   float fStack_a0;
   float fStack_9c;
-  float fStack_98;
-  CVector3f CStack_94;
-  CVector3f CStack_88;
-  CVector3f CStack_7c;
-  CVector3f CStack_70;
-  CVector3f CStack_64;
-  CVector3f CStack_58;
-  CVector3f CStack_4c;
+  CVector3f CStack_98;
+  CVector3f CStack_8c;
+  CVector3f CStack_80;
+  CVector3f CStack_74;
+  CVector3f CStack_68;
+  CVector3f CStack_5c;
+  CVector3f CStack_50;
   uint local_3c;
-  float local_2c;
+  float local_30;
   uint local_28;
   float local_24;
   int local_20;
+  float local_1c;
   float local_18;
-  float fStack_14;
   
   if ((in_stack_0000000c == 0) &&
      (pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
@@ -101,43 +100,43 @@ void core_gabriela_cpp_FUN_004d6540(void)
       if (iVar5 < 1) {
         pfVar7 = (float *)(**(code **)(*(int *)(*(int *)(in_stack_00000004[0x17a].actor_name + 8) +
                                                0x154) + 0x14))();
-        fStack_a0 = *pfVar7 + pfVar7[3];
-        fStack_9c = pfVar7[1] + pfVar7[4];
-        CStack_88.x = fStack_a0 * 0.5f;
-        fStack_98 = pfVar7[2] + pfVar7[5];
-        CStack_88.y = fStack_9c * 0.5f;
-        aCStack_130[0].z = fStack_98 * 0.5f;
-        CStack_88.z = aCStack_130[0].z;
-        fVar2 = CStack_88.x;
-        fVar3 = CStack_88.y;
-        if (&CStack_4c != &CStack_88) goto LAB_004d6841;
+        fStack_a4 = *pfVar7 + pfVar7[3];
+        fStack_a0 = pfVar7[1] + pfVar7[4];
+        CStack_8c.x = fStack_a4 * 0.5f;
+        fStack_9c = pfVar7[2] + pfVar7[5];
+        CStack_8c.y = fStack_a0 * 0.5f;
+        local_134[0].z = fStack_9c * 0.5f;
+        CStack_8c.z = local_134[0].z;
+        fVar2 = CStack_8c.x;
+        fVar3 = CStack_8c.y;
+        if (&CStack_50 != &CStack_8c) goto LAB_004d6841;
       }
-      else if (&CStack_4c != aCStack_130) {
-        CStack_4c.x = aCStack_130[0].x;
-        CStack_4c.y = aCStack_130[0].y;
-        fVar2 = CStack_4c.x;
-        fVar3 = CStack_4c.y;
+      else if (&CStack_50 != local_134) {
+        CStack_50.x = local_134[0].x;
+        CStack_50.y = local_134[0].y;
+        fVar2 = CStack_50.x;
+        fVar3 = CStack_50.y;
 LAB_004d6841:
-        CStack_4c.y = fVar3;
-        CStack_4c.x = fVar2;
-        CStack_4c.z = aCStack_130[0].z;
+        CStack_50.y = fVar3;
+        CStack_50.x = fVar2;
+        CStack_50.z = local_134[0].z;
       }
       pCVar6 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                         (*(CDemonActor **)(in_stack_00000004[0x17a].actor_name + 8),&CStack_64,
-                          &CStack_4c);
-      core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10(in_stack_00000004,&CStack_70,pCVar6)
+                         (*(CDemonActor **)(in_stack_00000004[0x17a].actor_name + 8),&CStack_68,
+                          &CStack_50);
+      core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10(in_stack_00000004,&CStack_74,pCVar6)
       ;
       pCVar6 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
-                         ((CDeformableModelInstance *)(in_stack_00000004 + 1),&CStack_7c,
+                         ((CDeformableModelInstance *)(in_stack_00000004 + 1),&CStack_80,
                           DAT_02d7b860);
-      CStack_94.x = CStack_70.x - pCVar6->x;
-      CStack_94.y = CStack_70.y - pCVar6->y;
-      CStack_94.z = CStack_70.z - pCVar6->z;
-      core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&CStack_58,&CStack_94);
+      CStack_98.x = CStack_74.x - pCVar6->x;
+      CStack_98.y = CStack_74.y - pCVar6->y;
+      CStack_98.z = CStack_74.z - pCVar6->z;
+      core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&CStack_5c,&CStack_98);
       fVar2 = in_stack_00000008 / _DAT_0065e7c0;
-      *(float *)(in_stack_00000004[0x17a].actor_name + 0xc) = CStack_58.x;
+      *(float *)(in_stack_00000004[0x17a].actor_name + 0xc) = CStack_5c.x;
       fVar2 = fVar2 + in_stack_00000004[0x17a].location.position.x;
-      *(float *)(in_stack_00000004[0x17a].actor_name + 0x10) = CStack_58.y;
+      *(float *)(in_stack_00000004[0x17a].actor_name + 0x10) = CStack_5c.y;
     }
   }
   else {
@@ -181,30 +180,30 @@ LAB_004d65dd:
     in_stack_00000004[0x17a].location.position.x = 0.0;
   }
   if (0.0 < in_stack_00000004[0x17a].location.position.x) {
-    local_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
+    local_1c = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                          (*(float *)(in_stack_00000004[0x17a].actor_name + 0x10) -
                           *(float *)(in_stack_00000004[0x17a].actor_name + 0x18));
-    fStack_14 = local_18;
-    local_2c = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
+    local_18 = local_1c;
+    local_30 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                          (*(float *)(in_stack_00000004[0x17a].actor_name + 0xc) -
                           *(float *)(in_stack_00000004[0x17a].actor_name + 0x14));
     fVar2 = in_stack_00000008 * (float)3.1415926535000001 * (float)1.5;
-    if (local_18 < -fVar2) {
-      local_18 = -fVar2;
+    if (local_1c < -fVar2) {
+      local_1c = -fVar2;
     }
-    if (fVar2 < local_18) {
-      local_18 = fVar2;
+    if (fVar2 < local_1c) {
+      local_1c = fVar2;
     }
-    if (local_2c < -fVar2) {
-      local_2c = -fVar2;
+    if (local_30 < -fVar2) {
+      local_30 = -fVar2;
     }
-    if (fVar2 < local_2c) {
-      local_2c = fVar2;
+    if (fVar2 < local_30) {
+      local_30 = fVar2;
     }
     fVar2 = *(float *)(in_stack_00000004[0x17a].actor_name + 0x18);
     *(float *)(in_stack_00000004[0x17a].actor_name + 0x14) =
-         *(float *)(in_stack_00000004[0x17a].actor_name + 0x14) + local_2c;
-    *(float *)(in_stack_00000004[0x17a].actor_name + 0x18) = fVar2 + local_18;
+         *(float *)(in_stack_00000004[0x17a].actor_name + 0x14) + local_30;
+    *(float *)(in_stack_00000004[0x17a].actor_name + 0x18) = fVar2 + local_1c;
     return;
   }
   uVar1 = *(uint *)(in_stack_00000004[0x17a].actor_name + 0x10);

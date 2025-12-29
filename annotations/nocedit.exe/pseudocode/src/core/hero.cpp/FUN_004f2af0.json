@@ -1,20 +1,23 @@
 {
   "complexity": {
     "assembly_lines": 126,
-    "complexity_score": 213,
+    "complexity_score": 276,
     "cross_reference_count": 6,
     "function_call_count": 1,
     "global_count": 4,
-    "pseudocode_lines": 58,
-    "suspect_count": 13,
+    "pseudocode_lines": 56,
+    "suspect_count": 18,
     "suspect_types": [
       "badspacebase",
       "call_esp_anchor",
+      "callind_anchor",
       "register_param",
+      "stack_align_anchor",
       "stack_param",
+      "stack_ref",
       "unresolved_funcptr"
     ],
-    "total_lines": 184
+    "total_lines": 182
   },
   "cross_references": [
     {
@@ -176,100 +179,94 @@
   "suspects": [
     {
       "description": "Ghidra failed to resolve stack frame",
-      "line": 9,
+      "line": 10,
       "match": "BADSPACEBASE",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "badspacebase"
     },
     {
       "description": "Inferred register parameter",
-      "line": 9,
+      "line": 10,
       "match": "in_ESP",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "register_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 13,
       "match": "in_stack_00000004",
       "text": "CDemonActor *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 25,
+      "line": 24,
       "match": "in_stack_00000004",
-      "text": "pCVar1 = (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,&local_64);",
+      "text": "pCVar1 = (*in_stack_00000004->vtable->getBoundingBox)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 25,
       "match": "in_stack_00000004",
-      "text": "pCVar1 = (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,&local_64);",
+      "text": "(in_stack_00000004,(CBoundingBox3D *)&stack0xffffff9c);",
       "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 25,
+      "match": "&stack0xffffff9c",
+      "text": "(in_stack_00000004,(CBoundingBox3D *)&stack0xffffff9c);",
+      "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 36,
       "match": "in_stack_00000004",
-      "text": "core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(in_stack_00000004,&CStack_48,&CStack_3c)",
+      "text": "core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(in_stack_00000004,&CStack_44,&CStack_38)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 42,
+      "line": 41,
       "match": "code *",
-      "text": "(float)(**(code **)(*(int *)(*(int *)(g_CDemonSetPtr->actor_list_data + iVar2) + 0x154) +",
+      "text": "fVar2 = (float)(**(code **)(*(int *)(*(int *)(g_CDemonSetPtr->actor_list_data + iVar3) + 0x154)",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 52,
+      "line": 50,
       "match": "code *",
-      "text": "iVar4 = (**(code **)(*(int *)(iVar4 + 0x154) + 0x5c))();",
+      "text": "iVar5 = (**(code **)(*(int *)(iVar5 + 0x154) + 0x5c))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 54,
+      "line": 52,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[0x8d].create_event[0x48] = '\\0';",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 55,
+      "line": 53,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[0x8d].create_event[0x49] = '\\0';",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 56,
+      "line": 54,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[0x8d].create_event[0x4a] = '\\0';",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 57,
+      "line": 55,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[0x8d].create_event[0x4b] = '\\0';",
       "type": "stack_param"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "004f2b83",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "004f2b88",
-      "frame_offset": 84,
-      "match": "CALL...ADD ESP",
-      "return_address": "004f2b88",
-      "target_address": "0x408ec0",
-      "text": "Direct CALL at 004f2b83, ADD ESP at 004f2b88 with uncertain ESP",
-      "type": "call_esp_anchor"
     },
     {
       "add_esp_value": 8,
@@ -308,10 +305,24 @@
       "align_instruction": "AND ESP,0xfffffff8",
       "description": "Stack alignment can be anchored: ESP = EBP - 0x54",
       "fix_address": "004f2af9",
+      "frame_offset": 84,
       "match": "AND ESP",
       "sub_esp_offset": 84,
       "text": "Stack alignment at 004f2af9 (SUB ESP, 0x54 before)",
       "type": "stack_align_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "004f2b83",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "004f2b88",
+      "frame_offset": 84,
+      "match": "CALL...ADD ESP",
+      "return_address": "004f2b88",
+      "target_address": "0x408ec0",
+      "text": "Direct CALL at 004f2b83, ADD ESP at 004f2b88 with uncertain ESP",
+      "type": "call_esp_anchor"
     }
   ]
 }

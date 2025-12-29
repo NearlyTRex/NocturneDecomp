@@ -1,18 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 190,
-    "complexity_score": 183,
+    "complexity_score": 198,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 8,
     "pseudocode_lines": 68,
-    "suspect_count": 9,
+    "suspect_count": 10,
     "suspect_types": [
       "badspacebase",
       "call_esp_anchor",
       "format_string_mismatch",
       "register_param",
-      "stack_ref"
+      "stack_ref",
+      "variadic_anchor"
     ],
     "total_lines": 258
   },
@@ -280,6 +281,22 @@
       "type": "stack_ref"
     },
     {
+      "add_esp_value": 20,
+      "call_address": "00467073",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "00467078",
+      "frame_offset": 108,
+      "match": "CALL crt_stdio.c_sscanf_FUN_0060013c",
+      "return_address": "00467078",
+      "target_address": "0x60013c",
+      "target_function": "crt_stdio.c_sscanf_FUN_0060013c",
+      "text": "Call to variadic function crt_stdio.c_sscanf_FUN_0060013c at 00467073 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
       "actual_args": 1,
       "description": "Format \"%f,%d,%d\" has 3 specifiers but 1 arguments after it",
       "expected_args": 3,
@@ -328,22 +345,6 @@
       "target_address": "0x401fd0",
       "text": "Direct CALL at 004670df, ADD ESP at 004670e4 with uncertain ESP",
       "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 20,
-      "call_address": "00467073",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "00467078",
-      "frame_offset": 108,
-      "match": "CALL crt_stdio.c_sscanf_FUN_0060013c",
-      "return_address": "00467078",
-      "target_address": "0x60013c",
-      "target_function": "crt_stdio.c_sscanf_FUN_0060013c",
-      "text": "Call to variadic function crt_stdio.c_sscanf_FUN_0060013c at 00467073 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
     }
   ]
 }

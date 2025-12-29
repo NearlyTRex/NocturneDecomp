@@ -8,8 +8,8 @@
     "pseudocode_lines": 29,
     "suspect_count": 4,
     "suspect_types": [
-      "call_esp_preserve",
-      "variadic_preserve"
+      "call_esp_anchor",
+      "variadic_anchor"
     ],
     "total_lines": 93
   },
@@ -159,57 +159,59 @@
   },
   "suspects": [
     {
+      "add_esp_value": 12,
       "call_address": "00478c65",
       "caller_has_stack_issues": false,
-      "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
+      "fix_address": "00478c6a",
+      "frame_offset": 4,
       "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "prologue_offset": 24,
       "return_address": "00478c6a",
       "target_address": "0x506f10",
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00478c65 (no EBP frame)",
-      "type": "variadic_preserve"
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00478c65 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
     },
     {
       "add_esp_value": 8,
       "call_address": "00478c1c",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
       "esp_certainty": "computed",
       "fix_address": "00478c21",
+      "frame_offset": 4,
       "match": "CALL...ADD ESP",
-      "prologue_offset": 24,
       "return_address": "00478c21",
       "target_address": "0x5fe7f0",
-      "text": "Direct CALL at 00478c1c, ADD ESP at 00478c21 (no EBP frame)",
-      "type": "call_esp_preserve"
+      "text": "Direct CALL at 00478c1c, ADD ESP at 00478c21 with uncertain ESP",
+      "type": "call_esp_anchor"
     },
     {
       "add_esp_value": 8,
       "call_address": "00478c8a",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
       "esp_certainty": "computed",
       "fix_address": "00478c8f",
+      "frame_offset": 4,
       "match": "CALL...ADD ESP",
-      "prologue_offset": 24,
       "return_address": "00478c8f",
       "target_address": "0x476db0",
-      "text": "Direct CALL at 00478c8a, ADD ESP at 00478c8f (no EBP frame)",
-      "type": "call_esp_preserve"
+      "text": "Direct CALL at 00478c8a, ADD ESP at 00478c8f with uncertain ESP",
+      "type": "call_esp_anchor"
     },
     {
       "add_esp_value": 4,
       "call_address": "00478c93",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
       "esp_certainty": "computed",
       "fix_address": "00478c98",
+      "frame_offset": 4,
       "match": "CALL...ADD ESP",
-      "prologue_offset": 24,
       "return_address": "00478c98",
       "target_address": "0x478190",
-      "text": "Direct CALL at 00478c93, ADD ESP at 00478c98 (no EBP frame)",
-      "type": "call_esp_preserve"
+      "text": "Direct CALL at 00478c93, ADD ESP at 00478c98 with uncertain ESP",
+      "type": "call_esp_anchor"
     }
   ]
 }

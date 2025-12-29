@@ -6,218 +6,201 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
+/* WARNING: Removing unreachable block (ram,0x005d7ac1) */
 
 void shape_superopt_cpp_TriListSomething_FUN_005d77a0(void)
 
 {
   char cVar1;
-  int iVar2;
-  int *piVar3;
+  uint uVar2;
+  FILE *file;
+  int iVar3;
+  CVert *pCVar4;
+  int *piVar5;
   BADSPACEBASE *in_ESP;
-  int iVar4;
-  char *pcVar5;
   int iVar6;
   char *pcVar7;
-  byte bVar8;
-  float10 fVar9;
-  int aiStackY_1150 [1011];
-  ulonglong uVar10;
-  CObj *in_stack_fffffe9c;
-  CPoly **local_160;
-  uint local_128;
-  uint local_124;
-  uint local_120;
-  uint local_11c;
-  int local_118;
-  int local_114;
-  uint local_110;
+  FILE *unaff_EDI;
+  int iVar8;
+  uint *puVar9;
+  char *pcVar10;
+  byte bVar11;
+  float10 fVar12;
+  FILE *unaff_retaddr;
+  FILE *in_stack_00000004;
+  int in_stack_0000000c;
+  uint auStackY_112c [1006];
+  CObj *pCVar13;
+  uint local_10c;
   uint local_108;
-  char local_100 [4];
-  char acStack_fc [28];
-  char acStack_e0 [72];
-  byte auStack_98 [8];
-  byte auStack_90 [8];
-  byte auStack_88 [8];
-  byte auStack_80 [36];
-  byte auStack_5c [12];
-  CPoly *apCStack_50 [6];
-  int *piStack_38;
-  double local_34;
-  CObj local_2c;
+  uint uStack_104;
+  uint local_100;
+  void *pvStack_fc;
+  void *pvStack_f8;
+  int iStack_f4;
+  int iStack_f0;
+  uint uStack_ec;
+  char acStack_c4 [72];
+  byte auStack_7c [8];
+  byte auStack_74 [8];
+  byte auStack_6c [8];
+  byte auStack_64 [32];
+  byte auStack_44 [16];
+  COptimize_vtable *local_34;
+  CObj_vtable *local_2c;
+  ulonglong local_18;
+  char *str2;
+  CPoly *pCVar14;
   
-  bVar8 = 0;
+  bVar11 = 0;
   shape_design_c_removeDegeneratePolygons_FUN_00465310();
   if ((g_PolygonCount < 1) || (g_VertexCount < 1)) {
     return;
   }
-  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_fc,"reduce\\cube%04d.txt");
-  iVar6 = 0;
-  local_2c.poly_array =
-       (CPoly *)shape_memdbg_cpp_openFile_FUN_0050f7a0
-                          (local_100,(char *)0x0,"wt","..\\shape\\superopt.cpp",0x252f)
-  ;
+  crt_stdio_c_sprintf_FUN_005fdbd0((char *)&pvStack_fc,"reduce\\cube%04d.txt",DAT_03f6bbe4);
+  iVar8 = 0;
+  file = shape_memdbg_cpp_openFile_FUN_0050f7a0
+                   ((char *)&pvStack_f8,(char *)0x0,"wt","..\\shape\\superopt.cpp",
+                    0x252f);
   if (0 < g_PolygonCount) {
-    iVar2 = 0;
+    iVar3 = 0;
     do {
-      iVar4 = iVar2 + -0x14;
-      iVar2 = iVar2 + 0x184;
-      iVar6 = iVar6 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar4) + -2;
-    } while (iVar2 < g_PolygonCount * 0x184);
+      iVar6 = iVar3 + -0x14;
+      iVar3 = iVar3 + 0x184;
+      iVar8 = iVar8 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar6) + -2;
+    } while (iVar3 < g_PolygonCount * 0x184);
   }
-  if (local_2c.poly_array != (CPoly *)0x0) {
-    crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)local_2c.poly_array,"// npoint, ntri\n");
-    crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)local_2c.flags,"%d %d\n");
+  if (file != (FILE *)0x0) {
+    crt_stdio_c_fprintf_FUN_005fe6d0(file,"// npoint, ntri\n");
+    crt_stdio_c_fprintf_FUN_005fe6d0(unaff_EDI,"%d %d\n",g_VertexCount);
   }
-  shape_superopt_cpp_CObj_ctor_FUN_005d2230((CObj *)auStack_5c);
-  shape_superopt_cpp_CObj_init_FUN_005d22d0((CObj *)(auStack_5c + 4),iVar6,g_VertexCount);
-  if ((FILE *)local_2c.is_valid != (FILE *)0x0) {
-    crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)local_2c.is_valid,"// pointList\n");
+  shape_superopt_cpp_CObj_ctor_FUN_005d2230((CObj *)auStack_44);
+  shape_superopt_cpp_CObj_init_FUN_005d22d0((CObj *)(auStack_44 + 4),iVar8,g_VertexCount);
+  if (unaff_retaddr != (FILE *)0x0) {
+    crt_stdio_c_fprintf_FUN_005fe6d0(unaff_retaddr,"// pointList\n");
   }
-  iVar6 = 0;
+  iVar8 = 0;
   if (0 < g_VertexCount) {
-    iVar2 = 0;
-    iVar4 = 0;
+    iVar3 = 0;
+    iVar6 = 0;
     do {
-      *(double *)((int)&((CPoly *)(apCStack_50[0]->uv_coords + -1))->parent_obj + iVar4) =
-           (double)*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar2);
-      *(double *)((int)apCStack_50[0]->uv_coords + iVar4 + -8) =
-           (double)*(float *)((int)&g_LoadedVertices[0].vertex.y + iVar2);
-      *(double *)((int)&apCStack_50[0]->uv_coords[0].x + iVar4) =
-           (double)*(float *)((int)&g_LoadedVertices[0].vertex.z + iVar2);
-      if ((FILE *)local_2c.is_valid != (FILE *)0x0) {
+      *(double *)((int)&local_34->g_COptimizeVTable + iVar6) =
+           (double)*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar3);
+      *(double *)((int)&local_34->field2_0x8 + iVar6) =
+           (double)*(float *)((int)&g_LoadedVertices[0].vertex.y + iVar3);
+      *(double *)((int)&local_34->field4_0x10 + iVar6) =
+           (double)*(float *)((int)&g_LoadedVertices[0].vertex.z + iVar3);
+      if (in_stack_00000004 != (FILE *)0x0) {
         crt_stdio_c_fprintf_FUN_005fe6d0
-                  ((FILE *)local_2c.is_valid,"%g %g %g\n",
-                   (double)*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar2),
-                   (double)*(float *)((int)&g_LoadedVertices[0].vertex.y + iVar2));
+                  (in_stack_00000004,"%g %g %g\n","%g %g %g\n",
+                   (double)*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar3),
+                   (double)*(float *)((int)&g_LoadedVertices[0].vertex.y + iVar3),
+                   (double)*(float *)((int)&g_LoadedVertices[0].vertex.z + iVar3));
       }
-      iVar4 = iVar4 + 0x38;
-      iVar6 = iVar6 + 1;
-      iVar2 = iVar2 + 0x14;
-    } while (iVar6 < g_VertexCount);
+      iVar6 = iVar6 + 0x38;
+      iVar8 = iVar8 + 1;
+      iVar3 = iVar3 + 0x14;
+    } while (iVar8 < g_VertexCount);
   }
-  if ((FILE *)local_2c.is_valid != (FILE *)0x0) {
-    crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)local_2c.is_valid,"// triList\n");
+  if (in_stack_00000004 != (FILE *)0x0) {
+    crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000004,"// triList\n");
   }
-  local_2c.vertex_count = 0;
-  local_2c.flags = 0;
+  str2 = (char *)0x0;
   if (0 < g_PolygonCount) {
-    local_2c.poly_count = 0;
-    local_2c.vertex_data = (CVert *)g_ModelPolygonData[0].texture_name;
+    pCVar14 = (CPoly *)g_ModelPolygonData[0].texture_name;
     do {
-      uVar10 = ZEXT48(&stack0xfffffe9c);
-      shape_superopt_cpp_CPoly_ctor_FUN_005cc620((CPoly *)&stack0xfffffe9c);
-      iVar2 = local_2c.poly_count;
-      local_160 = apCStack_50;
-      iVar6 = 0;
+      shape_superopt_cpp_CPoly_ctor_FUN_005cc620((CPoly *)&stack0xfffffeb8);
+      pCVar13 = (CObj *)pCVar14[0x38666].adjacency_flags;
+      iVar8 = 0;
       if (0 < DAT_03f6bbe8) {
-        pcVar5 = &DAT_03f6bbf0;
+        pcVar7 = &DAT_03f6bbf0;
         do {
-          uVar10 = CONCAT44 /* combine 2-byte values */(pcVar5,(int)uVar10);
-          in_stack_fffffe9c = (CObj *)iVar2;
-          iVar4 = crt_string_c_stricmp_FUN_005fe7f0(pcVar5,(char *)iVar2);
-          if (iVar4 == 0) goto LAB_005d7a1a;
-          iVar6 = iVar6 + 1;
-          pcVar5 = pcVar5 + 0x50;
-        } while (iVar6 < DAT_03f6bbe8);
+          iVar3 = crt_string_c_stricmp_FUN_005fe7f0(pcVar7,str2);
+          if (iVar3 == 0) goto LAB_005d7a1a;
+          iVar8 = iVar8 + 1;
+          pcVar7 = pcVar7 + 0x50;
+        } while (iVar8 < DAT_03f6bbe8);
       }
-      iVar6 = -1;
+      iVar8 = -1;
 LAB_005d7a1a:
-      if (iVar6 < 0) {
+      if (iVar8 < 0) {
         if (0x31 < DAT_03f6bbe8) {
-          uVar10 = uVar10 & 0xffffffff00000000;
           g_CurrentFilename = "..\\shape\\superopt.cpp";
           g_CurrentLineNumber = 0x255b;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Too many textures!");
         }
-        iVar6 = DAT_03f6bbe8;
-        pcVar7 = &DAT_03f6bbf0 + DAT_03f6bbe8 * 0x50;
-        uVar10 = CONCAT44 /* combine 2-byte values */((CObj *)(uVar10 >> 0x20),pcVar7);
-        pcVar5 = (char *)local_2c.vertex_count;
+        iVar8 = DAT_03f6bbe8;
+        pcVar10 = &DAT_03f6bbf0 + DAT_03f6bbe8 * 0x50;
+        pcVar7 = str2;
         do {
-          cVar1 = *pcVar5;
-          *pcVar7 = cVar1;
+          cVar1 = *pcVar7;
+          *pcVar10 = cVar1;
           if (cVar1 == '\0') break;
-          cVar1 = pcVar5[1];
-          pcVar5 = pcVar5 + 2;
-          pcVar7[1] = cVar1;
+          cVar1 = pcVar7[1];
           pcVar7 = pcVar7 + 2;
+          pcVar10[1] = cVar1;
+          pcVar10 = pcVar10 + 2;
         } while (cVar1 != '\0');
         DAT_03f6bbe8 = DAT_03f6bbe8 + 1;
       }
-      local_2c.is_valid = (int)&DAT_00000002;
-      local_2c.poly_count = (int)local_2c.vertex_data;
-      piVar3 = (int *)((int)local_2c.vertex_data + 8);
-      local_2c.vtable = (CObj_vtable *)((int)local_2c.poly_array * 0x68);
-      if (2 < *(int *)((int)&(((CPoly *)((int)local_2c.vertex_data + 0x16e9970))->normal).x + 4)) {
+      in_stack_00000004 = (FILE *)&DAT_00000002;
+      piVar5 = &pCVar14->vertex_idx_1;
+      iStack_f0 = iVar8;
+      if (2 < *(int *)((int)&pCVar14[0x38666].normal.x + 4)) {
         do {
-          local_160 = (CPoly **)piVar3[0x5ba671];
-          if ((CObj_vtable *)local_2c.flags != (CObj_vtable *)0x0) {
-            uVar10 = CONCAT44 /* combine 2-byte values */((CObj *)(uVar10 >> 0x20),piVar3[0x5ba672]);
-            crt_stdio_c_fprintf_FUN_005fe6d0
-                      ((FILE *)local_2c.flags,"%d %d %d\n",in_stack_fffffe9c);
-          }
-          shape_superopt_cpp_CPoly_computeNormal_FUN_005cd7d0((CPoly *)&stack0xfffffe90);
-          piStack_38 = (int *)((int)&((FILE *)(local_2c.is_valid + -0x1c))->_flag +
-                              (int)&((CPoly *)(apCStack_50[0]->uv_coords + -1))->uv_coords[0].x);
-          *piStack_38 = (int)uVar10;
-          piStack_38[1] = (int)(CObj *)(uVar10 >> 0x20);
-          piStack_38[(uint)bVar8 * -2 + 2] = *(int *)(&stack0xfffffe9c + (uint)bVar8 * -8);
-          (piStack_38 + (uint)bVar8 * -2 + 2)[(uint)bVar8 * -2 + 1] =
-               *(int *)((int)&local_160 + ((uint)bVar8 * -2 + (uint)bVar8 * -2) * 4);
+          uVar2 = piVar5[0x5ba671];
+          shape_superopt_cpp_CPoly_computeNormal_FUN_005cd7d0((CPoly *)&stack0xfffffeb4);
+          pCVar4 = (CVert *)((int)&local_2c->reset + in_stack_0000000c);
+          local_18._4_4_ = pCVar4;
+          *(CObj **)&(pCVar4->position).x = pCVar13;
+          puVar9 = (uint *)((int)pCVar4 + (uint)bVar11 * -8 + 8);
+          *(uint *)((int)&(pCVar4->position).x + 4) = uVar2;
+          *puVar9 = *(uint *)(&stack0xfffffec0 + (uint)bVar11 * -8);
+          puVar9[(uint)bVar11 * -2 + 1] =
+               *(uint *)(&stack0xfffffec4 + ((uint)bVar11 * -2 + (uint)bVar11 * -2) * 4);
           crt_memory_c_copyArrayWithFunction_FUN_006020c2
-                    (piStack_38 + 4,&stack0xfffffea4,3,0x10,shape_superopt_cpp_FUN_005d8330);
-          *(uint *)(local_34._0_4_ + 0x40) = local_128;
-          *(uint *)(local_34._0_4_ + 0x44) = local_124;
-          *(uint *)(local_34._0_4_ + 0x48) = local_120;
-          *(uint *)(local_34._0_4_ + 0x4c) = local_11c;
-          *(int *)(local_34._0_4_ + 0x50) = local_118;
-          *(int *)(local_34._0_4_ + 0x54) = local_114;
-          *(uint *)(local_34._0_4_ + 0x58) = local_110;
-          *(int *)(local_34._0_4_ + 0x5c) = iVar6;
-          *(uint *)(local_34._0_4_ + 0x60) = local_108;
-          local_2c.poly_array = (CPoly *)((int)&(local_2c.poly_array)->parent_obj + 1);
-          local_2c.is_valid = (int)(char **)local_2c.is_valid + 1;
-          piVar3 = piVar3 + 1;
-          local_2c.vtable = (CObj_vtable *)&(local_2c.vtable)->containsVertex;
-        } while (local_2c.is_valid <
-                 *(int *)((int)&(((CPoly *)(local_2c.poly_count + 0x16e9970))->normal).x + 4));
+                    (&(pCVar4->position).z,&stack0xfffffec8,3,0x10,shape_superopt_cpp_FUN_005d8330);
+          *(uint *)((int)local_18 + 0x40) = local_10c;
+          *(uint *)((int)local_18 + 0x44) = local_108;
+          *(uint *)((int)local_18 + 0x48) = uStack_104;
+          *(uint *)((int)local_18 + 0x4c) = local_100;
+          *(void **)((int)local_18 + 0x50) = pvStack_fc;
+          *(void **)((int)local_18 + 0x54) = pvStack_f8;
+          *(int *)((int)local_18 + 0x58) = iStack_f4;
+          *(int *)((int)local_18 + 0x5c) = iStack_f0;
+          *(uint *)((int)local_18 + 0x60) = uStack_ec;
+          in_stack_00000004 = (FILE *)((int)&in_stack_00000004->_ptr + 1);
+          piVar5 = piVar5 + 1;
+        } while ((int)in_stack_00000004 < *(int *)((int)&pCVar14[0x38666].normal.x + 4));
       }
-      shape_superopt_cpp_CPoly_dtor_FUN_005cc660((CPoly *)&stack0xfffffe98);
-      local_2c.vertex_data =
-           (CVert *)((int)&(((CPoly *)((int)local_2c.vertex_data + 0x138))->normal).y + 4);
-      local_2c.poly_count = (int)&(((CPoly *)(local_2c.poly_count + 0x138))->normal).y + 4;
-      local_2c.vertex_count = local_2c.vertex_count + 1;
-    } while (local_2c.vertex_count < g_PolygonCount);
+      shape_superopt_cpp_CPoly_dtor_FUN_005cc660((CPoly *)&stack0xfffffeb4);
+      pCVar14 = (CPoly *)((int)&pCVar14[3].normal.y + 4);
+      str2 = str2 + 1;
+    } while ((int)str2 < g_PolygonCount);
   }
-  if ((FILE *)local_2c.is_valid != (FILE *)0x0) {
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0
-              ((FILE *)local_2c.is_valid,"..\\shape\\superopt.cpp",0x2571);
+  if (in_stack_00000004 != (FILE *)0x0) {
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(in_stack_00000004,"..\\shape\\superopt.cpp",0x2571);
   }
-  shape_superopt_cpp_COptimize_ctor_FUN_005d6f90((COptimize *)auStack_98);
-  fVar9 = (float10)fcos((float10)0.069813169999999994);
-  local_34 = (double)((float10)1 - fVar9);
-  shape_superopt_cpp_COptimize_FUN_005d70d0((COptimize *)(auStack_98 + 4));
-  local_160 = (CPoly **)local_2c.vertex_count;
-  shape_superopt_cpp_COptimize_FUN_005d7120((COptimize *)auStack_90);
-  local_160 = (CPoly **)0x47ae147b;
-  shape_superopt_cpp_COptimize_FUN_005d7170((COptimize *)(auStack_90 + 4));
-  local_160 = (CPoly **)0x5d7cb6;
-  shape_superopt_cpp_COptimize_FUN_005d71c0((COptimize *)auStack_88);
-  local_160 = (CPoly **)0x5d7cd0;
-  shape_superopt_cpp_COptimize_FUN_005d71e0((COptimize *)(auStack_88 + 4));
-  iVar6 = shape_superopt_cpp_COptimize_FUN_005d7290((COptimize *)auStack_80);
-  if (iVar6 == 0) {
+  shape_superopt_cpp_COptimize_ctor_FUN_005d6f90((COptimize *)auStack_7c);
+  fVar12 = (float10)fcos((float10)0.069813169999999994);
+  local_18 = (double)((float10)1 - fVar12);
+  shape_superopt_cpp_COptimize_FUN_005d70d0((COptimize *)(auStack_7c + 4));
+  shape_superopt_cpp_COptimize_FUN_005d7120((COptimize *)auStack_74);
+  shape_superopt_cpp_COptimize_FUN_005d7170((COptimize *)(auStack_74 + 4));
+  shape_superopt_cpp_COptimize_FUN_005d71c0((COptimize *)auStack_6c);
+  shape_superopt_cpp_COptimize_FUN_005d71e0((COptimize *)(auStack_6c + 4));
+  iVar8 = shape_superopt_cpp_COptimize_FUN_005d7290((COptimize *)auStack_64);
+  if (iVar8 == 0) {
     shape_design_c_optimizePolygonMesh_FUN_004658e0(1.0,0,-1);
     DAT_03f6bbe4 = DAT_03f6bbe4 + 1;
   }
   else {
     shape_superopt_cpp_BonesAndPointsCheck_FUN_005d7e00();
     shape_design_c_vertexReducer_FUN_00467850(0.01,-1.0,-1);
-    crt_io_c_deleteFile_FUN_005ff9d0(acStack_e0);
+    crt_io_c_deleteFile_FUN_005ff9d0(acStack_c4);
   }
-  shape_superopt_cpp_CObj_free_FUN_005d2600((CObj *)&local_34);
-  shape_superopt_cpp_COptimize_dtor_FUN_005d6fd0((COptimize *)(auStack_80 + 0xc));
-  shape_superopt_cpp_CObj_dtor_FUN_005d2260(&local_2c);
+  shape_superopt_cpp_CObj_free_FUN_005d2600((CObj *)&local_18);
+  shape_superopt_cpp_COptimize_dtor_FUN_005d6fd0((COptimize *)(auStack_64 + 0xc));
+  shape_superopt_cpp_CObj_dtor_FUN_005d2260((CObj *)&stack0xfffffff0);
   return;
 }

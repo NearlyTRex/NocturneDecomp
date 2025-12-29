@@ -1,17 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 346,
-    "complexity_score": 741,
+    "complexity_score": 771,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 20,
     "pseudocode_lines": 136,
-    "suspect_count": 57,
+    "suspect_count": 59,
     "suspect_types": [
       "badspacebase",
       "call_esp_anchor",
+      "callind_anchor",
       "param_count_too_few",
       "register_param",
+      "stack_align_anchor",
       "stack_param",
       "stack_ref",
       "unresolved_funcptr"
@@ -447,6 +449,17 @@
       "type": "stack_ref"
     },
     {
+      "add_esp_value": 4,
+      "callind_address": "005c6248",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "005c624e",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 32,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 005c6248, ADD ESP at 005c624e",
+      "type": "callind_anchor"
+    },
+    {
       "call_site_count": 1,
       "declared_params": 0,
       "description": "Signature has too few params - likely missing this ptr or other params",
@@ -456,6 +469,16 @@
       "param_delta": 1,
       "text": "Function declares 0 params but call sites push 1 (1 missing)",
       "type": "param_count_too_few"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x20",
+      "fix_address": "005c6229",
+      "frame_offset": 32,
+      "match": "AND ESP",
+      "sub_esp_offset": 32,
+      "text": "Stack alignment at 005c6229 (SUB ESP, 0x20 before)",
+      "type": "stack_align_anchor"
     },
     {
       "add_esp_value": 12,
@@ -833,26 +856,6 @@
       "target_address": "0x43e170",
       "text": "Direct CALL at 005c6544, ADD ESP at 005c6549 with uncertain ESP",
       "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "callind_address": "005c6248",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "005c624e",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 32,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 005c6248, ADD ESP at 005c624e",
-      "type": "callind_anchor"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x20",
-      "fix_address": "005c6229",
-      "match": "AND ESP",
-      "sub_esp_offset": 32,
-      "text": "Stack alignment at 005c6229 (SUB ESP, 0x20 before)",
-      "type": "stack_align_anchor"
     }
   ]
 }

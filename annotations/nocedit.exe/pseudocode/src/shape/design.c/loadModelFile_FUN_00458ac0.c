@@ -145,11 +145,9 @@ LAB_00458b67:
     crt_stdio_c_fscanf_FUN_005fe7c0(local_18,"%d\n");
     if (g_VertexCount < 0x4e21) {
       for (local_20 = 0; (int)local_20 < g_VertexCount; local_20 = local_20 + 1) {
-        crt_stdio_c_fscanf_FUN_005fe7c0
-                  (local_18,"%f,%f,%f\n",g_LoadedVertices + local_20,local_20 * 0x14 + 0x1626410
-                   ,local_20 * 0x14 + 0x1626414);
+        crt_stdio_c_fscanf_FUN_005fe7c0(local_18,"%f,%f,%f\n");
       }
-      crt_stdio_c_fscanf_FUN_005fe7c0(local_18,"%d\n",&g_PolygonCount);
+      crt_stdio_c_fscanf_FUN_005fe7c0(local_18,"%d\n");
       if (g_PolygonCount < 0x4e21) {
         for (local_20 = 0; (int)local_20 < g_PolygonCount; local_20 = local_20 + 1) {
           crt_stdio_c_fgets_FUN_005fefd0(&stack0xfffffe90,0x51,local_18);
@@ -194,10 +192,7 @@ LAB_00458b67:
           }
           for (local_1c = 0; local_1c < (int)g_ModelPolygonData[local_20].vertex_indices_count;
               local_1c = local_1c + 1) {
-            crt_stdio_c_fscanf_FUN_005fe7c0
-                      (local_18,"%d,%f,%f\n",local_20 * 0x184 + 0x16e99c8 + local_1c * 4,
-                       local_20 * 0x184 + 0x16e9a08 + local_1c * 4,
-                       local_20 * 0x184 + 0x16e9a48 + local_1c * 4);
+            crt_stdio_c_fscanf_FUN_005fe7c0(local_18,"%d,%f,%f\n");
             if (g_ModelPolygonData[local_20].uv_u[local_1c] < 0.0) {
               g_ModelPolygonData[local_20].uv_u[local_1c] = 0.0;
             }
@@ -213,12 +208,12 @@ LAB_00458b67:
           }
         }
         g_PartsCount = 0;
-        crt_stdio_c_fscanf_FUN_005fe7c0(local_18,"%d\n",&g_PartsCount);
+        crt_stdio_c_fscanf_FUN_005fe7c0(local_18,"%d\n");
         for (local_20 = 0; (int)local_20 < g_PartsCount; local_20 = local_20 + 1) {
-          crt_stdio_c_fscanf_FUN_005fe7c0(local_18,"%s\n",g_ModelPartNames + local_20);
+          crt_stdio_c_fscanf_FUN_005fe7c0(local_18,"%s\n");
         }
         for (local_20 = 0; (int)local_20 < g_PolygonCount; local_20 = local_20 + 1) {
-          crt_stdio_c_fscanf_FUN_005fe7c0(local_18,"%d\n",local_20 * 0x184 + 0x16e9a88);
+          crt_stdio_c_fscanf_FUN_005fe7c0(local_18,"%d\n");
         }
         if (g_PartsCount == 0) {
           for (local_20 = 0; (int)local_20 < g_PolygonCount; local_20 = local_20 + 1) {
@@ -239,7 +234,7 @@ LAB_00458b67:
         }
         for (local_20 = 0; (int)local_20 < g_PolygonCount; local_20 = local_20 + 1) {
           g_ModelPolygonData[local_20].material_id = 0;
-          crt_stdio_c_fscanf_FUN_005fe7c0(local_18,"%d\n",local_20 * 0x184 + 0x16e9a8c);
+          crt_stdio_c_fscanf_FUN_005fe7c0(local_18,"%d\n");
           g_ModelPolygonData[local_20].material_id_backup = g_ModelPolygonData[local_20].material_id
           ;
         }
@@ -249,8 +244,7 @@ LAB_00458b67:
         local_24 = 1;
       }
       else {
-        crt_stdio_c_sprintf_FUN_005fdbd0
-                  (local_11c,"ERROR: Too many polygons! (npoly:%d > MAX_POLYS:%d)",g_PolygonCount,20000);
+        crt_stdio_c_sprintf_FUN_005fdbd0(local_11c,"ERROR: Too many polygons! (npoly:%d > MAX_POLYS:%d)");
         engine_2d_c_drawText_FUN_00401fd0(local_11c,0,0x16);
         wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
         wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
@@ -274,8 +268,7 @@ LAB_00458b67:
       }
     }
     else {
-      crt_stdio_c_sprintf_FUN_005fdbd0
-                (local_cc,"ERROR: Too many vertices! (npoints:%d > MAX_POINTS:%d)",g_VertexCount,20000);
+      crt_stdio_c_sprintf_FUN_005fdbd0(local_cc,"ERROR: Too many vertices! (npoints:%d > MAX_POINTS:%d)");
       engine_2d_c_drawText_FUN_00401fd0(local_cc,0,0x16);
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
       wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();

@@ -1,22 +1,24 @@
 {
   "complexity": {
     "assembly_lines": 376,
-    "complexity_score": 988,
+    "complexity_score": 1161,
     "cross_reference_count": 1,
     "function_call_count": 16,
     "global_count": 13,
-    "pseudocode_lines": 173,
-    "suspect_count": 78,
+    "pseudocode_lines": 176,
+    "suspect_count": 94,
     "suspect_types": [
       "badspacebase",
       "call_esp_anchor",
+      "callind_anchor",
       "param_count_too_few",
       "register_param",
+      "stack_align_anchor",
       "stack_param",
-      "sub_artifact",
+      "unknown_field",
       "unresolved_funcptr"
     ],
-    "total_lines": 549
+    "total_lines": 552
   },
   "cross_references": [
     {
@@ -403,308 +405,336 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 15,
       "match": "in_stack_00000004",
       "text": "CCharacter *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 16,
       "match": "in_stack_00000008",
       "text": "float in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_ffffff5c",
-      "text": "double in_stack_ffffff5c;",
+      "line": 17,
+      "match": "in_stack_ffffff44",
+      "text": "float in_stack_ffffff44;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 29,
+      "line": 18,
+      "match": "in_stack_ffffff58",
+      "text": "CCharacter *in_stack_ffffff58;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 31,
       "match": "in_stack_00000004",
       "text": "this_ptr = &in_stack_00000004->model;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 41,
+      "line": 43,
       "match": "in_stack_00000004",
       "text": "if (*(int *)(in_stack_00000004[2].cloth_data + 0x54cc) == 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 42,
+      "line": 44,
       "match": "in_stack_00000004",
       "text": "if (*(int *)(in_stack_00000004->field2_0x240c + 4) != 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 46,
+      "line": 48,
       "match": "in_stack_00000004",
       "text": "(*((in_stack_00000004->base_actor).vtable)->processFootstepAtOffset)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 47,
+      "line": 49,
       "match": "in_stack_00000004",
-      "text": "(&in_stack_00000004->base_actor,(CVector3f *)auStack_54,1.7);",
+      "text": "(&in_stack_00000004->base_actor,(CVector3f *)(auStack_5c + 4),1.7);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 56,
-      "match": "in_stack_00000004",
-      "text": "(*((in_stack_00000004->base_actor).vtable)->processFootstepAtOffset)",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 57,
-      "match": "in_stack_00000004",
-      "text": "(&in_stack_00000004->base_actor,(CVector3f *)auStack_54,1.0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 61,
+      "line": 58,
       "match": "in_stack_00000004",
       "text": "(*((in_stack_00000004->base_actor).vtable)->processFootstepAtOffset)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 62,
+      "line": 59,
       "match": "in_stack_00000004",
-      "text": "(&in_stack_00000004->base_actor,(CVector3f *)auStack_54,1.0);",
+      "text": "(&in_stack_00000004->base_actor,(CVector3f *)(auStack_5c + 4),1.0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 68,
+      "line": 63,
+      "match": "in_stack_00000004",
+      "text": "(*((in_stack_00000004->base_actor).vtable)->processFootstepAtOffset)",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 64,
+      "match": "in_stack_00000004",
+      "text": "(&in_stack_00000004->base_actor,(CVector3f *)(auStack_5c + 4),1.0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 70,
       "match": "in_stack_00000004",
       "text": "pCVar1 = (in_stack_00000004->base_actor).vtable;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 69,
+      "line": 71,
       "match": "in_stack_00000004",
       "text": "iVar2 = (**(code **)(*(int *)(*(int *)(in_stack_00000004[2].cloth_data + 0x54cc) + 0x154) +",
       "type": "stack_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 69,
+      "line": 71,
       "match": "code *",
       "text": "iVar2 = (**(code **)(*(int *)(*(int *)(in_stack_00000004[2].cloth_data + 0x54cc) + 0x154) +",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 72,
+      "line": 74,
       "match": "in_stack_00000004",
-      "text": "(&in_stack_00000004->base_actor,(CVector3f *)auStack_44,",
+      "text": "(&in_stack_00000004->base_actor,(CVector3f *)auStack_5c,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 75,
+      "line": 76,
       "match": "in_stack_00000004",
-      "text": "(&in_stack_00000004->base_actor,pCVar4,iVar2,SUB84 /* extract 2-byte value */(in_stack_ffffff5c,0));",
+      "text": "(*pCVar1->handleFootstep)(&in_stack_00000004->base_actor,pCVar4,iVar2,in_stack_ffffff44);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 75,
-      "match": "in_stack_ffffff5c",
-      "text": "(&in_stack_00000004->base_actor,pCVar4,iVar2,SUB84 /* extract 2-byte value */(in_stack_ffffff5c,0));",
+      "line": 76,
+      "match": "in_stack_ffffff44",
+      "text": "(*pCVar1->handleFootstep)(&in_stack_00000004->base_actor,pCVar4,iVar2,in_stack_ffffff44);",
       "type": "stack_param"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 75,
-      "match": "SUB84",
-      "text": "(&in_stack_00000004->base_actor,pCVar4,iVar2,SUB84 /* extract 2-byte value */(in_stack_ffffff5c,0));",
-      "type": "sub_artifact"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 80,
+      "line": 81,
       "match": "in_stack_00000004",
       "text": "(*(CDemonActor **)(in_stack_00000004[2].cloth_data + 0x54c0),",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 84,
+      "line": 85,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[2].cloth_data[0x5508] = -0x6e;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 85,
+      "line": 86,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[2].cloth_data[0x5509] = '\\n';",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 86,
+      "line": 87,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[2].cloth_data[0x550a] = '\\x06';",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 87,
+      "line": 88,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[2].cloth_data[0x550b] = -0x41;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 91,
+      "line": 92,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[2].cloth_data[0x5508] = '|';",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 92,
+      "line": 93,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[2].cloth_data[0x5509] = -0x27;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 93,
+      "line": 94,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[2].cloth_data[0x550a] = -0x60;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 94,
+      "line": 95,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[2].cloth_data[0x550b] = '>';",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 100,
+      "line": 101,
       "match": "in_stack_00000004",
       "text": "(*(in_stack_00000004->base_actor).vtable[1].renderTargetPoints)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 101,
+      "line": 102,
       "match": "in_stack_00000004",
       "text": "(&in_stack_00000004->base_actor);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 106,
+      "line": 103,
+      "match": "in_stack_ffffff58",
+      "text": "in_stack_ffffff58 = (CCharacter *)&DAT_00000001;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 108,
       "match": "in_stack_00000004",
       "text": "core_charactr_cpp_CCharacter_FUN_0042ec40(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 110,
+      "line": 112,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->grabbed_by,g_CEnemyClassInfo.name_hash);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 111,
-      "match": "in_stack_ffffff5c",
-      "text": "volume = SUB84 /* extract 2-byte value */(in_stack_ffffff5c,0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 111,
-      "match": "SUB84",
-      "text": "volume = SUB84 /* extract 2-byte value */(in_stack_ffffff5c,0);",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 117,
+      "line": 118,
       "match": "in_stack_00000004",
-      "text": "(&in_stack_00000004->base_actor,&CStack_60,pCVar4);",
+      "text": "(&in_stack_00000004->base_actor,(CVector3f *)(local_68 + 4),pCVar4);",
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 128,
-      "match": "in_stack_00000004",
-      "text": "local_9c.attacker = &in_stack_00000004->base_actor;",
-      "type": "stack_param"
+      "description": "Unknown/mangled field access",
+      "line": 121,
+      "match": "._4_4_",
+      "text": "local_a0._4_4_ = local_18;",
+      "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 129,
       "match": "in_stack_00000004",
-      "text": "local_9c.wielder = &in_stack_00000004->base_actor;",
+      "text": "local_6c = in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 131,
-      "match": "in_stack_ffffff5c",
-      "text": "in_stack_ffffff5c = (double)local_9c.damage_amount;",
+      "line": 130,
+      "match": "in_stack_00000004",
+      "text": "local_68._0_4_ = in_stack_00000004;",
       "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 130,
+      "match": "._0_4_",
+      "text": "local_68._0_4_ = in_stack_00000004;",
+      "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 132,
-      "match": "in_stack_ffffff5c",
-      "text": "if (0.0 < in_stack_ffffff5c) {",
+      "match": "in_stack_ffffff58",
+      "text": "(local_1c,local_a0,(float)in_stack_ffffff58);",
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unknown/mangled field access",
       "line": 133,
-      "match": "in_stack_ffffff5c",
-      "text": "dVar5 = crt_math_c_round_FUN_005fe6b0(in_stack_ffffff5c * 0.20000000000000001);",
-      "type": "stack_param"
+      "match": "._4_8_",
+      "text": "local_a0._4_8_ = (ulonglong)fStack_90;",
+      "type": "unknown_field"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unknown/mangled field access",
+      "line": 134,
+      "match": "._4_8_",
+      "text": "if (0.0 < (double)local_a0._4_8_) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 135,
+      "match": "._0_4_",
+      "text": "local_a0._0_4_ = 0x4d4ba5;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
       "line": 136,
-      "match": "in_stack_00000004",
-      "text": "(*((in_stack_00000004->base_actor).vtable)->playSound)",
-      "type": "stack_param"
+      "match": "._4_8_",
+      "text": "crt_math_c_round_FUN_005fe6b0((double)local_a0._4_8_ * 0.20000000000000001);",
+      "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 137,
-      "match": "in_stack_00000004",
-      "text": "(&in_stack_00000004->base_actor,\"kick1.wav\");",
+      "line": 138,
+      "match": "in_stack_ffffff58",
+      "text": "in_stack_ffffff58 = in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 138,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004->grabbed_by = (CDemonActor *)0x0;",
+      "text": "in_stack_ffffff58 = in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 142,
+      "line": 139,
+      "match": "in_stack_00000004",
+      "text": "(*((in_stack_00000004->base_actor).vtable)->playSound)",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 140,
+      "match": "in_stack_00000004",
+      "text": "(&in_stack_00000004->base_actor,\"kick1.wav\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 141,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->grabbed_by = (CDemonActor *)0x0;",
       "type": "stack_param"
@@ -713,57 +743,174 @@
       "description": "Unresolved stack parameter",
       "line": 145,
       "match": "in_stack_00000004",
-      "text": "if ((in_stack_00000004->grabbed_by != (CDemonActor *)0x0) &&",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 147,
-      "match": "in_stack_00000004",
-      "text": "(&in_stack_00000004->base_actor,&CStack_24,",
+      "text": "in_stack_00000004->grabbed_by = (CDemonActor *)0x0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 148,
       "match": "in_stack_00000004",
-      "text": "&(in_stack_00000004->grabbed_by->location).position), 0.0 < pCVar4->z)",
+      "text": "if ((in_stack_00000004->grabbed_by != (CDemonActor *)0x0) &&",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 150,
       "match": "in_stack_00000004",
-      "text": "(*((in_stack_00000004->base_actor).vtable)->playSound)",
+      "text": "(&in_stack_00000004->base_actor,&local_28,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 151,
       "match": "in_stack_00000004",
-      "text": "(&in_stack_00000004->base_actor,\"hit-gh[4,7].wav\");",
+      "text": "&(in_stack_00000004->grabbed_by->location).position), 0.0 < pCVar4->z)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 155,
+      "line": 153,
       "match": "in_stack_00000004",
       "text": "(*((in_stack_00000004->base_actor).vtable)->playSound)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 156,
+      "line": 154,
+      "match": "in_stack_00000004",
+      "text": "(&in_stack_00000004->base_actor,\"hit-gh[4,7].wav\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 158,
+      "match": "in_stack_00000004",
+      "text": "(*((in_stack_00000004->base_actor).vtable)->playSound)",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 159,
       "match": "in_stack_00000004",
       "text": "(&in_stack_00000004->base_actor,\"gb-fall1.wav\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 173,
+      "line": 176,
       "match": "in_stack_00000008",
       "text": "if (in_stack_00000008 <= 0.0) {",
       "type": "stack_param"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "004d4905",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "004d4908",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 148,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 004d4905, ADD ESP at 004d4908",
+      "type": "callind_anchor"
+    },
+    {
+      "add_esp_value": 16,
+      "callind_address": "004d4921",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "004d4924",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 148,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 004d4921, ADD ESP at 004d4924",
+      "type": "callind_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "callind_address": "004d499a",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "004d49a0",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 148,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 004d499a, ADD ESP at 004d49a0",
+      "type": "callind_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "callind_address": "004d4a35",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "004d4a38",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 148,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 004d4a35, ADD ESP at 004d4a38",
+      "type": "callind_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "callind_address": "004d4a51",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "004d4a54",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 148,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 004d4a51, ADD ESP at 004d4a54",
+      "type": "callind_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "callind_address": "004d4a95",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "004d4a98",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 148,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 004d4a95, ADD ESP at 004d4a98",
+      "type": "callind_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "004d4b79",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "004d4b7f",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 148,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 004d4b79, ADD ESP at 004d4b7f",
+      "type": "callind_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "004d4bd9",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "004d4bdc",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 148,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 004d4bd9, ADD ESP at 004d4bdc",
+      "type": "callind_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "004d4c2b",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "004d4c2e",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 148,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 004d4c2b, ADD ESP at 004d4c2e",
+      "type": "callind_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "004d4c42",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "004d4c45",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 148,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 004d4c42, ADD ESP at 004d4c45",
+      "type": "callind_anchor"
     },
     {
       "call_site_count": 1,
@@ -775,6 +922,16 @@
       "param_delta": 4,
       "text": "Function declares 0 params but call sites push 4 (4 missing)",
       "type": "param_count_too_few"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x94",
+      "fix_address": "004d489c",
+      "frame_offset": 148,
+      "match": "AND ESP",
+      "sub_esp_offset": 148,
+      "text": "Stack alignment at 004d489c (SUB ESP, 0x94 before)",
+      "type": "stack_align_anchor"
     },
     {
       "add_esp_value": 8,
@@ -1074,125 +1231,6 @@
       "target_address": "0x42ec40",
       "text": "Direct CALL at 004d4c7f, ADD ESP at 004d4c84 with uncertain ESP",
       "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "callind_address": "004d4905",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "004d4908",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 148,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 004d4905, ADD ESP at 004d4908",
-      "type": "callind_anchor"
-    },
-    {
-      "add_esp_value": 16,
-      "callind_address": "004d4921",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "004d4924",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 148,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 004d4921, ADD ESP at 004d4924",
-      "type": "callind_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "callind_address": "004d499a",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "004d49a0",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 148,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 004d499a, ADD ESP at 004d49a0",
-      "type": "callind_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "callind_address": "004d4a35",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "004d4a38",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 148,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 004d4a35, ADD ESP at 004d4a38",
-      "type": "callind_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "callind_address": "004d4a51",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "004d4a54",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 148,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 004d4a51, ADD ESP at 004d4a54",
-      "type": "callind_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "callind_address": "004d4a95",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "004d4a98",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 148,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 004d4a95, ADD ESP at 004d4a98",
-      "type": "callind_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "004d4b79",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "004d4b7f",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 148,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 004d4b79, ADD ESP at 004d4b7f",
-      "type": "callind_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "004d4bd9",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "004d4bdc",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 148,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 004d4bd9, ADD ESP at 004d4bdc",
-      "type": "callind_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "004d4c2b",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "004d4c2e",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 148,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 004d4c2b, ADD ESP at 004d4c2e",
-      "type": "callind_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "004d4c42",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "004d4c45",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 148,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 004d4c42, ADD ESP at 004d4c45",
-      "type": "callind_anchor"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x94",
-      "fix_address": "004d489c",
-      "match": "AND ESP",
-      "sub_esp_offset": 148,
-      "text": "Stack alignment at 004d489c (SUB ESP, 0x94 before)",
-      "type": "stack_align_anchor"
     }
   ]
 }

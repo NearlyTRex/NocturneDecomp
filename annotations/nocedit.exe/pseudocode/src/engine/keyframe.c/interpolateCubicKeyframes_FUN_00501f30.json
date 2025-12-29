@@ -1,17 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 361,
-    "complexity_score": 244,
+    "complexity_score": 285,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 15,
-    "pseudocode_lines": 164,
-    "suspect_count": 7,
+    "pseudocode_lines": 165,
+    "suspect_count": 10,
     "suspect_types": [
       "call_esp_anchor",
-      "extra_output"
+      "extra_output",
+      "stack_align_anchor",
+      "variadic_anchor"
     ],
-    "total_lines": 525
+    "total_lines": 526
   },
   "cross_references": [],
   "function": {
@@ -309,23 +311,16 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 12,
+      "line": 13,
       "match": "extraout_ECX",
       "text": "int *extraout_ECX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 16,
+      "line": 17,
       "match": "extraout_EDX",
       "text": "int extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 103,
-      "match": "extraout_ECX",
-      "text": "piVar7 = extraout_ECX;",
       "type": "extra_output"
     },
     {
@@ -338,35 +333,16 @@
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 105,
-      "match": "extraout_EDX",
-      "text": "if (0 < extraout_EDX) {",
+      "match": "extraout_ECX",
+      "text": "piVar9 = extraout_ECX;",
       "type": "extra_output"
     },
     {
-      "add_esp_value": 4,
-      "call_address": "005022b1",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "005022b6",
-      "frame_offset": 48,
-      "match": "CALL...ADD ESP",
-      "return_address": "005022b6",
-      "target_address": "0x407890",
-      "text": "Direct CALL at 005022b1, ADD ESP at 005022b6 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "005022c9",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "005022ce",
-      "frame_offset": 48,
-      "match": "CALL...ADD ESP",
-      "return_address": "005022ce",
-      "target_address": "0x501d40",
-      "text": "Direct CALL at 005022c9, ADD ESP at 005022ce with uncertain ESP",
-      "type": "call_esp_anchor"
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 106,
+      "match": "extraout_EDX",
+      "text": "if (0 < extraout_EDX) {",
+      "type": "extra_output"
     },
     {
       "add_esp_value": 4,
@@ -404,10 +380,37 @@
       "align_instruction": "AND ESP,0xfffffff8",
       "description": "Stack alignment can be anchored: ESP = EBP - 0x30",
       "fix_address": "00501f39",
+      "frame_offset": 48,
       "match": "AND ESP",
       "sub_esp_offset": 48,
       "text": "Stack alignment at 00501f39 (SUB ESP, 0x30 before)",
       "type": "stack_align_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "005022b1",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "005022b6",
+      "frame_offset": 48,
+      "match": "CALL...ADD ESP",
+      "return_address": "005022b6",
+      "target_address": "0x407890",
+      "text": "Direct CALL at 005022b1, ADD ESP at 005022b6 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "005022c9",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "005022ce",
+      "frame_offset": 48,
+      "match": "CALL...ADD ESP",
+      "return_address": "005022ce",
+      "target_address": "0x501d40",
+      "text": "Direct CALL at 005022c9, ADD ESP at 005022ce with uncertain ESP",
+      "type": "call_esp_anchor"
     }
   ],
   "vtable_info": {

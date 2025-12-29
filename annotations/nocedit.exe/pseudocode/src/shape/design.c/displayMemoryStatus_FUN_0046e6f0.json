@@ -1,18 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 136,
+    "complexity_score": 161,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 2,
     "pseudocode_lines": 11,
-    "suspect_count": 10,
+    "suspect_count": 12,
     "suspect_types": [
       "badspacebase",
       "call_esp_anchor",
       "format_string_mismatch",
       "register_param",
-      "stack_ref"
+      "stack_ref",
+      "variadic_anchor"
     ],
     "total_lines": 62
   },
@@ -166,6 +167,38 @@
       "type": "stack_ref"
     },
     {
+      "add_esp_value": 12,
+      "call_address": "0046e70c",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "fix_address": "0046e711",
+      "frame_offset": 80,
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "0046e711",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0046e70c (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "0046e737",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "fix_address": "0046e73c",
+      "frame_offset": 80,
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "0046e73c",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0046e737 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
       "actual_args": 0,
       "description": "Format \"Memory available: %d\" has 1 specifiers but 0 arguments after it",
       "expected_args": 1,
@@ -212,38 +245,6 @@
       "target_address": "0x401fd0",
       "text": "Direct CALL at 0046e74d, ADD ESP at 0046e752 with uncertain ESP",
       "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "0046e70c",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "fix_address": "0046e711",
-      "frame_offset": 80,
-      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
-      "return_address": "0046e711",
-      "target_address": "0x5fdbd0",
-      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
-      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0046e70c (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "0046e737",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "fix_address": "0046e73c",
-      "frame_offset": 80,
-      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
-      "return_address": "0046e73c",
-      "target_address": "0x5fdbd0",
-      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
-      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0046e737 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
     }
   ]
 }

@@ -16,7 +16,7 @@ void core_mobster_cpp_FUN_00527380(void)
   float fVar2;
   CCharacter *in_stack_00000004;
   float *in_stack_00000008;
-  float local_30;
+  float local_18;
   
   if ((0.0 < in_stack_00000008[0xb]) && (*in_stack_00000008 == -NAN)) {
     iVar1 = crt_stdlib_c_rand_FUN_005feb5c();
@@ -64,20 +64,20 @@ switchD_005273b9_default:
     *in_stack_00000008 = fVar2;
   }
 LAB_00527413:
-  local_30 = in_stack_00000008[0xb];
+  local_18 = in_stack_00000008[0xb];
   if ((float)in_stack_00000004[1].model.motion_controller.tween_type == *in_stack_00000008) {
-    local_30 = 0.05;
+    local_18 = 0.05;
   }
   if (in_stack_00000004[1].model.motion_controller.current_frame_number == *in_stack_00000008) {
-    local_30 = 0.06;
+    local_18 = 0.06;
   }
   if (g_CGamePtr->field57_0x1e0 != 0) {
-    local_30 = 1.0;
+    local_18 = 1.0;
   }
   if (g_CGamePtr->blood_flag == 0) {
-    local_30 = 0.0;
+    local_18 = 0.0;
   }
-  iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(local_30);
+  iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(local_18);
   if (iVar1 != 0) {
     core_bodypart_cpp_CreateBodyPart_FUN_00418e10();
     core_charactr_cpp_CCharacter_FUN_0042bd30(in_stack_00000004);

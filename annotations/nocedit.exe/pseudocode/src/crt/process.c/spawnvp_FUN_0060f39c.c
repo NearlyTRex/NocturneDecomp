@@ -28,10 +28,8 @@ int __cdecl crt_process_c_spawnvp_FUN_0060f39c(int mode,char *cmdname,char **arg
   char **in_stack_00000010;
   char *arg2;
   char *pcVar9;
-  uint uVar10;
-  char acStack_136 [82];
-  uint uStack_e4;
   PRTL_CRITICAL_SECTION_DEBUG in_stack_ffffff3c;
+  char acStack_c0 [104];
   char *local_58;
   char *local_54;
   char *local_50;
@@ -88,7 +86,6 @@ int __cdecl crt_process_c_spawnvp_FUN_0060f39c(int mode,char *cmdname,char **arg
     crt_memory_c_free_FUN_00601cd0(local_1c);
     return iVar8;
   }
-  uStack_e4 = 0x60f4a9;
   iVar8 = crt_process_c_build_cmdline_FUN_00610258
                     ((int)argv,in_stack_00000010,(char *)&local_38,&local_3c,&local_40,&local_44,
                      (int *)0x0,(int)in_stack_ffffff3c);
@@ -135,7 +132,7 @@ int __cdecl crt_process_c_spawnvp_FUN_0060f39c(int mode,char *cmdname,char **arg
     uVar6 = crt_stack_c_GetStackUsage_FUN_0060c260();
     if (local_34 < uVar6) {
       crt_stack_c_ProbeStackSpace_FUN_005ffa2f((uint)(local_44 + 3) & 0xfffffffc);
-      local_18 = acStack_136;
+      local_18 = acStack_c0;
     }
     else {
       local_18 = (char *)0x0;
@@ -196,7 +193,6 @@ LAB_0060f687:
   pcVar9 = local_18;
   local_38 = (void *)0x0;
   crt_process_c_build_command_line_FUN_006103a4(pcVar5,argv,local_18,1);
-  uVar10 = 0;
   crt_process_c_set_shell_execute_flag_FUN_00609c80(local_48);
   if (local_14 == '\0') {
     arg1 = "COMMAND";
@@ -206,7 +202,7 @@ LAB_0060f687:
   }
   arg2 = extraout_EAX;
   program = crt_env_c_getenv_FUN_006013f0("COMSPEC");
-  iVar8 = crt_process_c_execvp_FUN_00610790(mode,program,arg1,arg2,pcVar5,pcVar9,uVar10);
+  iVar8 = crt_process_c_execvp_FUN_00610790(mode,program,arg1,arg2,pcVar5,pcVar9);
 LAB_0060f80e:
   if (local_20 != 0) {
     crt_memory_c_free_FUN_00601cd0(in_stack_00000010);

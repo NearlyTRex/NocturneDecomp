@@ -1,17 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 245,
-    "complexity_score": 303,
+    "complexity_score": 284,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 6,
-    "pseudocode_lines": 113,
-    "suspect_count": 18,
+    "pseudocode_lines": 119,
+    "suspect_count": 15,
     "suspect_types": [
       "call_esp_anchor",
+      "callind_anchor",
       "pointer_cast"
     ],
-    "total_lines": 358
+    "total_lines": 364
   },
   "cross_references": [
     {
@@ -219,37 +220,16 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 45,
-      "match": "(CBitmap *)((int)",
-      "text": "pCVar3 = (CBitmap *)((int)pCVar3 + (uint)bVar11 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 50,
-      "match": "(CBitmap *)((int)",
-      "text": "pCVar3 = (CBitmap *)((int)pCVar3 + (uint)bVar11 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 85,
+      "line": 88,
       "match": "(uint *)((int)",
       "text": "puVar7 = (uint *)((int)puVar7 + (uint)bVar11 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 86,
+      "line": 89,
       "match": "(uint *)((int)",
-      "text": "puVar10 = (uint *)((int)puVar10 + (uint)bVar11 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 91,
-      "match": "(uint *)((int)",
-      "text": ",-1,(short)((uint)*(uint *)((int)&this_ptr->current_pixel_index + 2) >> 0x10)",
+      "text": "puVar8 = (uint *)((int)puVar8 + (uint)bVar11 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
@@ -261,17 +241,21 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 105,
-      "match": "(CBitmap *)((int)",
-      "text": "pCVar3 = (CBitmap *)((int)pCVar3 + (uint)bVar11 * -8 + 4);",
+      "line": 104,
+      "match": "(uint *)((int)",
+      "text": "(short)((uint)*(uint *)((int)&this_ptr->current_pixel_index + 2) >> 0x10));",
       "type": "pointer_cast"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 110,
-      "match": "(CBitmap *)((int)",
-      "text": "pCVar3 = (CBitmap *)((int)pCVar3 + (uint)bVar11 * -2 + 1);",
-      "type": "pointer_cast"
+      "add_esp_value": 12,
+      "callind_address": "00556229",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "0055622b",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 16,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 00556229, ADD ESP at 0055622b",
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 8,
@@ -402,17 +386,6 @@
       "target_address": "0x50f210",
       "text": "Direct CALL at 005563a7, ADD ESP at 005563ac with uncertain ESP",
       "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "callind_address": "00556229",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "0055622b",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 16,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 00556229, ADD ESP at 0055622b",
-      "type": "callind_anchor"
     }
   ]
 }

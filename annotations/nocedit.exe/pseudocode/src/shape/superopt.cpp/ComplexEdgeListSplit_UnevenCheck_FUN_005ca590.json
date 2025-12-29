@@ -1,22 +1,24 @@
 {
   "complexity": {
     "assembly_lines": 1007,
-    "complexity_score": 1329,
+    "complexity_score": 1405,
     "cross_reference_count": 4,
     "function_call_count": 4,
     "global_count": 5,
-    "pseudocode_lines": 494,
-    "suspect_count": 80,
+    "pseudocode_lines": 500,
+    "suspect_count": 86,
     "suspect_types": [
       "badspacebase",
       "call_esp_anchor",
       "concat_artifact",
       "pointer_cast",
       "register_param",
+      "stack_align_anchor",
       "stack_param",
-      "sub_artifact"
+      "sub_artifact",
+      "variadic_anchor"
     ],
-    "total_lines": 1501
+    "total_lines": 1507
   },
   "cross_references": [
     {
@@ -744,521 +746,593 @@
   "suspects": [
     {
       "description": "Ghidra failed to resolve stack frame",
-      "line": 20,
+      "line": 21,
       "match": "BADSPACEBASE",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "badspacebase"
     },
     {
       "description": "Inferred register parameter",
-      "line": 20,
+      "line": 21,
       "match": "in_ESP",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "register_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 24,
       "match": "in_stack_00000008",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
+      "line": 25,
       "match": "in_stack_0000000c",
       "text": "uint *in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 25,
+      "line": 26,
       "match": "in_stack_00000010",
       "text": "int in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 128,
+      "line": 131,
       "match": "CONCAT44",
-      "text": "dVar8 = (double)CONCAT44 /* combine 2-byte values */(uStack_30c,local_310);",
+      "text": "dVar8 = (double)CONCAT44 /* combine 2-byte values */(local_308,uStack_30c);",
       "type": "concat_artifact"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 131,
+      "line": 134,
       "match": "in_stack_0000000c",
-      "text": "puVar9 = crt_memory_c_malloc_FUN_006021da(*in_stack_0000000c << 2);",
+      "text": "puVar10 = crt_memory_c_malloc_FUN_006021da(*in_stack_0000000c << 2);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 137,
+      "line": 140,
       "match": "in_stack_0000000c",
       "text": "if (*in_stack_0000000c != 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 139,
+      "line": 142,
       "match": "in_stack_00000008",
-      "text": "pdVar14 = (double *)(in_stack_00000008 + 0x10);",
+      "text": "pdVar15 = (double *)(in_stack_00000008 + 0x10);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 141,
+      "line": 144,
       "match": "in_stack_00000008",
-      "text": "iVar10 = uVar13 * 0x60 + in_stack_00000008;",
+      "text": "iVar11 = uVar14 * 0x60 + in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler double/longlong extraction artifact",
-      "line": 146,
+      "line": 149,
       "match": "SUB84",
-      "text": "local_308 = SUB84 /* extract 2-byte value */(dVar2,0);",
+      "text": "uStack_304 = SUB84 /* extract 2-byte value */(dVar2,0);",
       "type": "sub_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 160,
+      "line": 163,
       "match": "CONCAT44",
-      "text": "if ((double)CONCAT44 /* combine 2-byte values */(uStack_314,local_318) < dVar2) goto LAB_005ca66d;",
+      "text": "if ((double)CONCAT44 /* combine 2-byte values */(local_310,uStack_314) < dVar2) goto LAB_005ca66d;",
       "type": "concat_artifact"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 169,
+      "line": 172,
       "match": "in_stack_0000000c",
-      "text": "} while (uVar13 < *in_stack_0000000c);",
+      "text": "} while (uVar14 < *in_stack_0000000c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 172,
+      "line": 175,
       "match": "in_stack_00000010",
       "text": "if (in_stack_00000010 == 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 179,
+      "line": 182,
       "match": "in_stack_00000008",
-      "text": "iVar15 = *puVar9 * 0x60 + in_stack_00000008;",
+      "text": "iVar16 = *puVar10 * 0x60 + in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 200,
+      "line": 203,
       "match": "in_stack_00000008",
-      "text": "iVar15 = *puVar11 * 0x60 + in_stack_00000008;",
+      "text": "iVar16 = *puVar12 * 0x60 + in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 217,
+      "line": 220,
       "match": "CONCAT44",
-      "text": "dVar3 = (double)CONCAT44 /* combine 2-byte values */(uStack_244,local_248) - (double)CONCAT44 /* combine 2-byte values */(uStack_1cc,local_1d0);",
+      "text": "dVar3 = (double)CONCAT44 /* combine 2-byte values */(local_240,uStack_244) - (double)CONCAT44 /* combine 2-byte values */(local_1c8,uStack_1cc);",
       "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 217,
+      "line": 220,
       "match": "CONCAT44",
-      "text": "dVar3 = (double)CONCAT44 /* combine 2-byte values */(uStack_244,local_248) - (double)CONCAT44 /* combine 2-byte values */(uStack_1cc,local_1d0);",
+      "text": "dVar3 = (double)CONCAT44 /* combine 2-byte values */(local_240,uStack_244) - (double)CONCAT44 /* combine 2-byte values */(local_1c8,uStack_1cc);",
       "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 218,
+      "line": 221,
       "match": "CONCAT44",
-      "text": "dVar5 = (double)CONCAT44 /* combine 2-byte values */(uStack_23c,local_240) - (double)CONCAT44 /* combine 2-byte values */(uStack_1c4,local_1c8);",
+      "text": "dVar5 = (double)CONCAT44 /* combine 2-byte values */(local_238,uStack_23c) - (double)CONCAT44 /* combine 2-byte values */(local_1c0,uStack_1c4);",
       "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 218,
+      "line": 221,
       "match": "CONCAT44",
-      "text": "dVar5 = (double)CONCAT44 /* combine 2-byte values */(uStack_23c,local_240) - (double)CONCAT44 /* combine 2-byte values */(uStack_1c4,local_1c8);",
+      "text": "dVar5 = (double)CONCAT44 /* combine 2-byte values */(local_238,uStack_23c) - (double)CONCAT44 /* combine 2-byte values */(local_1c0,uStack_1c4);",
       "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 219,
+      "line": 222,
       "match": "CONCAT44",
-      "text": "dVar4 = (double)CONCAT44 /* combine 2-byte values */(uStack_234,local_238) - (double)CONCAT44 /* combine 2-byte values */(uStack_1bc,local_1c0);",
+      "text": "dVar4 = (double)CONCAT44 /* combine 2-byte values */(local_230,uStack_234) - (double)CONCAT44 /* combine 2-byte values */(local_1b8,uStack_1bc);",
       "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 219,
+      "line": 222,
       "match": "CONCAT44",
-      "text": "dVar4 = (double)CONCAT44 /* combine 2-byte values */(uStack_234,local_238) - (double)CONCAT44 /* combine 2-byte values */(uStack_1bc,local_1c0);",
+      "text": "dVar4 = (double)CONCAT44 /* combine 2-byte values */(local_230,uStack_234) - (double)CONCAT44 /* combine 2-byte values */(local_1b8,uStack_1bc);",
       "type": "concat_artifact"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 237,
+      "line": 241,
       "match": "in_stack_00000008",
-      "text": "iVar15 = *puVar9 * 0x60 + in_stack_00000008;",
+      "text": "iVar16 = *puVar10 * 0x60 + in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 254,
+      "line": 258,
       "match": "CONCAT44",
-      "text": "dVar3 = (double)CONCAT44 /* combine 2-byte values */(uStack_154,local_158) - (double)CONCAT44 /* combine 2-byte values */(uStack_1e4,local_1e8);",
+      "text": "dVar2 = (double)CONCAT44 /* combine 2-byte values */(local_150,uStack_154) - (double)CONCAT44 /* combine 2-byte values */(local_1e0,uStack_1e4);",
       "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 254,
+      "line": 258,
       "match": "CONCAT44",
-      "text": "dVar3 = (double)CONCAT44 /* combine 2-byte values */(uStack_154,local_158) - (double)CONCAT44 /* combine 2-byte values */(uStack_1e4,local_1e8);",
+      "text": "dVar2 = (double)CONCAT44 /* combine 2-byte values */(local_150,uStack_154) - (double)CONCAT44 /* combine 2-byte values */(local_1e0,uStack_1e4);",
       "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 255,
+      "line": 259,
       "match": "CONCAT44",
-      "text": "dVar5 = (double)CONCAT44 /* combine 2-byte values */(uStack_14c,local_150) - (double)CONCAT44 /* combine 2-byte values */(uStack_1dc,local_1e0);",
+      "text": "dVar4 = (double)CONCAT44 /* combine 2-byte values */(local_148,uStack_14c) - (double)CONCAT44 /* combine 2-byte values */(local_1d8,uStack_1dc);",
       "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 255,
+      "line": 259,
       "match": "CONCAT44",
-      "text": "dVar5 = (double)CONCAT44 /* combine 2-byte values */(uStack_14c,local_150) - (double)CONCAT44 /* combine 2-byte values */(uStack_1dc,local_1e0);",
+      "text": "dVar4 = (double)CONCAT44 /* combine 2-byte values */(local_148,uStack_14c) - (double)CONCAT44 /* combine 2-byte values */(local_1d8,uStack_1dc);",
       "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 256,
+      "line": 260,
       "match": "CONCAT44",
-      "text": "dVar4 = (double)CONCAT44 /* combine 2-byte values */(uStack_144,local_148) - (double)CONCAT44 /* combine 2-byte values */(uStack_1d4,local_1d8);",
+      "text": "dVar3 = (double)CONCAT44 /* combine 2-byte values */(local_140,uStack_144) - (double)CONCAT44 /* combine 2-byte values */(local_1d0,uStack_1d4);",
       "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 256,
+      "line": 260,
       "match": "CONCAT44",
-      "text": "dVar4 = (double)CONCAT44 /* combine 2-byte values */(uStack_144,local_148) - (double)CONCAT44 /* combine 2-byte values */(uStack_1d4,local_1d8);",
+      "text": "dVar3 = (double)CONCAT44 /* combine 2-byte values */(local_140,uStack_144) - (double)CONCAT44 /* combine 2-byte values */(local_1d0,uStack_1d4);",
       "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 270,
+      "line": 262,
       "match": "CONCAT44",
-      "text": "local_200 = (double)CONCAT44 /* combine 2-byte values */(uStack_1b4,local_1b8) - (double)CONCAT44 /* combine 2-byte values */(uStack_154,local_158);",
+      "text": "if ((double)CONCAT44 /* combine 2-byte values */(local_328,uStack_31c) < dVar2) {",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 263,
+      "match": "SUB84",
+      "text": "uStack_31c = SUB84 /* extract 2-byte value */(dVar2,0);",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 276,
+      "match": "CONCAT44",
+      "text": "dStack_1fc = (double)CONCAT44 /* combine 2-byte values */(local_1b0,uStack_1b4) - (double)CONCAT44 /* combine 2-byte values */(local_150,uStack_154);",
       "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 270,
+      "line": 276,
       "match": "CONCAT44",
-      "text": "local_200 = (double)CONCAT44 /* combine 2-byte values */(uStack_1b4,local_1b8) - (double)CONCAT44 /* combine 2-byte values */(uStack_154,local_158);",
+      "text": "dStack_1fc = (double)CONCAT44 /* combine 2-byte values */(local_1b0,uStack_1b4) - (double)CONCAT44 /* combine 2-byte values */(local_150,uStack_154);",
       "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 271,
-      "match": "CONCAT44",
-      "text": "local_1f8 = (double)CONCAT44 /* combine 2-byte values */(uStack_1ac,local_1b0) - (double)CONCAT44 /* combine 2-byte values */(uStack_14c,local_150);",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 271,
-      "match": "CONCAT44",
-      "text": "local_1f8 = (double)CONCAT44 /* combine 2-byte values */(uStack_1ac,local_1b0) - (double)CONCAT44 /* combine 2-byte values */(uStack_14c,local_150);",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 272,
-      "match": "CONCAT44",
-      "text": "local_1f0 = (double)CONCAT44 /* combine 2-byte values */(uStack_1a4,local_1a8) - (double)CONCAT44 /* combine 2-byte values */(uStack_144,local_148);",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 272,
-      "match": "CONCAT44",
-      "text": "local_1f0 = (double)CONCAT44 /* combine 2-byte values */(uStack_1a4,local_1a8) - (double)CONCAT44 /* combine 2-byte values */(uStack_144,local_148);",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 277,
+      "match": "CONCAT44",
+      "text": "dStack_1f4 = (double)CONCAT44 /* combine 2-byte values */(local_1a8,uStack_1ac) - (double)CONCAT44 /* combine 2-byte values */(local_148,uStack_14c);",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 277,
+      "match": "CONCAT44",
+      "text": "dStack_1f4 = (double)CONCAT44 /* combine 2-byte values */(local_1a8,uStack_1ac) - (double)CONCAT44 /* combine 2-byte values */(local_148,uStack_14c);",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 278,
+      "match": "CONCAT44",
+      "text": "dStack_1ec = (double)CONCAT44 /* combine 2-byte values */(local_1a0,uStack_1a4) - (double)CONCAT44 /* combine 2-byte values */(local_140,uStack_144);",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 278,
+      "match": "CONCAT44",
+      "text": "dStack_1ec = (double)CONCAT44 /* combine 2-byte values */(local_1a0,uStack_1a4) - (double)CONCAT44 /* combine 2-byte values */(local_140,uStack_144);",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 283,
       "match": "(double *)((int)",
-      "text": "pdVar14 = (double *)((int)pdVar14 + (uint)bVar17 * -8 + 4);",
+      "text": "pdVar15 = (double *)((int)pdVar15 + (uint)bVar18 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 278,
+      "line": 284,
       "match": "(double *)((int)",
-      "text": "pdVar16 = (double *)((int)pdVar16 + (uint)bVar17 * -8 + 4);",
+      "text": "pdVar17 = (double *)((int)pdVar17 + (uint)bVar18 * -8 + 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 280,
-      "match": "CONCAT44",
-      "text": "dVar2 = ((double)CONCAT44 /* combine 2-byte values */(uStack_314,local_318) * 10) /",
-      "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
       "line": 286,
       "match": "CONCAT44",
-      "text": "local_128 = (double)CONCAT44 /* combine 2-byte values */(uStack_1b4,local_1b8) + local_1a0 * dVar2;",
+      "text": "dVar2 = ((double)CONCAT44 /* combine 2-byte values */(local_310,uStack_314) * 10) /",
       "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 287,
+      "line": 292,
       "match": "CONCAT44",
-      "text": "local_120 = (double)CONCAT44 /* combine 2-byte values */(uStack_1ac,local_1b0) + local_198 * dVar2;",
+      "text": "dStack_124 = (double)CONCAT44 /* combine 2-byte values */(local_1b0,uStack_1b4) + dStack_19c * dVar2;",
       "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 288,
-      "match": "CONCAT44",
-      "text": "local_118 = (double)CONCAT44 /* combine 2-byte values */(uStack_1a4,local_1a8) + local_190 * dVar2;",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 293,
-      "match": "(double *)((int)",
-      "text": "pdVar14 = (double *)((int)pdVar14 + (uint)bVar17 * -8 + 4);",
-      "type": "pointer_cast"
+      "match": "CONCAT44",
+      "text": "dStack_11c = (double)CONCAT44 /* combine 2-byte values */(local_1a8,uStack_1ac) + dStack_194 * dVar2;",
+      "type": "concat_artifact"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler double/longlong composition artifact",
       "line": 294,
-      "match": "(double *)((int)",
-      "text": "pdVar16 = (double *)((int)pdVar16 + (uint)bVar17 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 302,
-      "match": "in_stack_00000008",
-      "text": "iVar15 = *puVar9 * 0x60 + in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 303,
-      "match": "in_stack_00000008",
-      "text": "iVar10 = puVar9[1] * 0x60 + in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 348,
       "match": "CONCAT44",
-      "text": "local_290 = (double)CONCAT44 /* combine 2-byte values */(uStack_2bc,local_2c0) - local_2a8;",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 349,
-      "match": "CONCAT44",
-      "text": "local_288 = (double)CONCAT44 /* combine 2-byte values */(uStack_2b4,local_2b8) - local_2a0;",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 350,
-      "match": "CONCAT44",
-      "text": "local_280 = (double)CONCAT44 /* combine 2-byte values */(uVar12,local_2b0) - local_298;",
+      "text": "dStack_114 = (double)CONCAT44 /* combine 2-byte values */(local_1a0,uStack_1a4) + dStack_18c * dVar2;",
       "type": "concat_artifact"
     },
     {
       "description": "Complex pointer cast",
+      "line": 299,
+      "match": "(double *)((int)",
+      "text": "pdVar15 = (double *)((int)pdVar15 + (uint)bVar18 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 300,
+      "match": "(double *)((int)",
+      "text": "pdVar17 = (double *)((int)pdVar17 + (uint)bVar18 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 308,
+      "match": "in_stack_00000008",
+      "text": "iVar16 = *puVar10 * 0x60 + in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 309,
+      "match": "in_stack_00000008",
+      "text": "iVar11 = puVar10[1] * 0x60 + in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 354,
+      "match": "CONCAT44",
+      "text": "dStack_28c = (double)CONCAT44 /* combine 2-byte values */(local_2b8,uStack_2bc) - dStack_2a4;",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
       "line": 355,
-      "match": "(double *)((int)",
-      "text": "pdVar14 = (double *)((int)pdVar14 + (uint)bVar17 * -8 + 4);",
-      "type": "pointer_cast"
+      "match": "CONCAT44",
+      "text": "dStack_284 = (double)CONCAT44 /* combine 2-byte values */(local_2b0,uStack_2b4) - dStack_29c;",
+      "type": "concat_artifact"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Decompiler double/longlong composition artifact",
       "line": 356,
-      "match": "(double *)((int)",
-      "text": "pdVar16 = (double *)((int)pdVar16 + (uint)bVar17 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 358,
       "match": "CONCAT44",
-      "text": "local_218 = (double)CONCAT44 /* combine 2-byte values */(uStack_f4,local_f8) - local_2d8;",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 359,
-      "match": "CONCAT44",
-      "text": "local_210 = (double)CONCAT44 /* combine 2-byte values */(uStack_ec,local_f0) - local_2d0;",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 360,
-      "match": "CONCAT44",
-      "text": "local_208 = (double)CONCAT44 /* combine 2-byte values */(uStack_e4,local_e8) - local_2c8;",
+      "text": "dStack_27c = (double)CONCAT44 /* combine 2-byte values */(uVar13,uStack_2ac) - dStack_294;",
       "type": "concat_artifact"
     },
     {
       "description": "Complex pointer cast",
+      "line": 361,
+      "match": "(double *)((int)",
+      "text": "pdVar15 = (double *)((int)pdVar15 + (uint)bVar18 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 362,
+      "match": "(double *)((int)",
+      "text": "pdVar17 = (double *)((int)pdVar17 + (uint)bVar18 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 364,
+      "match": "CONCAT44",
+      "text": "dStack_214 = (double)CONCAT44 /* combine 2-byte values */(local_f0,uStack_f4) - dStack_2d4;",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
       "line": 365,
+      "match": "CONCAT44",
+      "text": "dStack_20c = (double)CONCAT44 /* combine 2-byte values */(local_e8,uStack_ec) - dStack_2cc;",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 366,
+      "match": "CONCAT44",
+      "text": "dStack_204 = (double)CONCAT44 /* combine 2-byte values */(uStack_e0,uStack_e4) - dStack_2c4;",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 371,
       "match": "(double *)((int)",
-      "text": "pdVar14 = (double *)((int)pdVar14 + (uint)bVar17 * -8 + 4);",
+      "text": "pdVar15 = (double *)((int)pdVar15 + (uint)bVar18 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 366,
+      "line": 372,
       "match": "(double *)((int)",
-      "text": "pdVar16 = (double *)((int)pdVar16 + (uint)bVar17 * -8 + 4);",
+      "text": "pdVar17 = (double *)((int)pdVar17 + (uint)bVar18 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 392,
+      "line": 398,
       "match": "in_stack_00000008",
-      "text": "if (*(int *)(*local_1c * 0x60 + in_stack_00000008 + 0xc) != 0) {",
+      "text": "if (*(int *)(*local_18 * 0x60 + in_stack_00000008 + 0xc) != 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 401,
+      "line": 407,
       "match": "in_stack_00000008",
-      "text": "if (*(int *)(*local_1c * 0x60 + in_stack_00000008 + 0xc) == 0) {",
+      "text": "if (*(int *)(*local_18 * 0x60 + in_stack_00000008 + 0xc) == 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 406,
+      "line": 412,
       "match": "in_stack_00000008",
-      "text": "iVar15 = *puVar9 * 0x60 + in_stack_00000008;",
+      "text": "iVar16 = *puVar10 * 0x60 + in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 423,
+      "line": 429,
       "match": "in_stack_00000008",
-      "text": "iVar15 = puVar9[1] * 0x60 + in_stack_00000008;",
+      "text": "iVar16 = puVar10[1] * 0x60 + in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 440,
+      "line": 446,
       "match": "CONCAT44",
-      "text": "dVar8 = (double)CONCAT44 /* combine 2-byte values */(uStack_16c,local_170) - (double)CONCAT44 /* combine 2-byte values */(uStack_25c,local_260);",
+      "text": "dVar8 = (double)CONCAT44 /* combine 2-byte values */(local_168,uStack_16c) - (double)CONCAT44 /* combine 2-byte values */(local_258,uStack_25c);",
       "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 440,
+      "line": 446,
       "match": "CONCAT44",
-      "text": "dVar8 = (double)CONCAT44 /* combine 2-byte values */(uStack_16c,local_170) - (double)CONCAT44 /* combine 2-byte values */(uStack_25c,local_260);",
+      "text": "dVar8 = (double)CONCAT44 /* combine 2-byte values */(local_168,uStack_16c) - (double)CONCAT44 /* combine 2-byte values */(local_258,uStack_25c);",
       "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 441,
-      "match": "CONCAT44",
-      "text": "dVar3 = (double)CONCAT44 /* combine 2-byte values */(uStack_164,local_168) - (double)CONCAT44 /* combine 2-byte values */(uStack_254,local_258);",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 441,
-      "match": "CONCAT44",
-      "text": "dVar3 = (double)CONCAT44 /* combine 2-byte values */(uStack_164,local_168) - (double)CONCAT44 /* combine 2-byte values */(uStack_254,local_258);",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 442,
-      "match": "CONCAT44",
-      "text": "dVar2 = (double)CONCAT44 /* combine 2-byte values */(uStack_15c,local_160) - (double)CONCAT44 /* combine 2-byte values */(uStack_24c,local_250);",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 442,
-      "match": "CONCAT44",
-      "text": "dVar2 = (double)CONCAT44 /* combine 2-byte values */(uStack_15c,local_160) - (double)CONCAT44 /* combine 2-byte values */(uStack_24c,local_250);",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 447,
+      "match": "CONCAT44",
+      "text": "dVar3 = (double)CONCAT44 /* combine 2-byte values */(local_160,uStack_164) - (double)CONCAT44 /* combine 2-byte values */(local_250,uStack_254);",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 447,
+      "match": "CONCAT44",
+      "text": "dVar3 = (double)CONCAT44 /* combine 2-byte values */(local_160,uStack_164) - (double)CONCAT44 /* combine 2-byte values */(local_250,uStack_254);",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 448,
+      "match": "CONCAT44",
+      "text": "dVar2 = (double)CONCAT44 /* combine 2-byte values */(local_158,uStack_15c) - (double)CONCAT44 /* combine 2-byte values */(local_248,uStack_24c);",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 448,
+      "match": "CONCAT44",
+      "text": "dVar2 = (double)CONCAT44 /* combine 2-byte values */(local_158,uStack_15c) - (double)CONCAT44 /* combine 2-byte values */(local_248,uStack_24c);",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 453,
       "match": "in_stack_00000008",
       "text": "((void *)((uVar1 + 2) * 0x60 + in_stack_00000008),",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 448,
+      "line": 454,
       "match": "in_stack_00000008",
-      "text": "(void *)(uVar13 * 0x60 + in_stack_00000008),",
+      "text": "(void *)(uVar14 * 0x60 + in_stack_00000008),",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 449,
+      "line": 455,
       "match": "in_stack_0000000c",
-      "text": "(*in_stack_0000000c - uVar13) * 0x60);",
+      "text": "(*in_stack_0000000c - uVar14) * 0x60);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 459,
+      "line": 465,
       "match": "in_stack_00000008",
-      "text": "iVar10 = uVar1 * 0x60 + in_stack_00000008;",
+      "text": "iVar11 = uVar1 * 0x60 + in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 460,
+      "line": 466,
       "match": "in_stack_00000008",
-      "text": "iVar15 = uVar13 * 0x60 + in_stack_00000008;",
+      "text": "iVar16 = uVar14 * 0x60 + in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 471,
+      "line": 477,
       "match": "in_stack_00000008",
-      "text": "iVar10 = puVar9[1] * 0x60 + in_stack_00000008;",
+      "text": "iVar11 = puVar10[1] * 0x60 + in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 478,
+      "line": 484,
       "match": "in_stack_00000008",
-      "text": "iVar10 = puVar9[1] * 0x60 + in_stack_00000008;",
+      "text": "iVar11 = puVar10[1] * 0x60 + in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 482,
+      "line": 488,
+      "match": "in_stack_0000000c",
+      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 488,
       "match": "in_stack_0000000c",
       "text": "*in_stack_0000000c = *in_stack_0000000c + 1;",
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 482,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_0000000c = *in_stack_0000000c + 1;",
-      "type": "stack_param"
+      "add_esp_value": 4,
+      "call_address": "005cb062",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "005cb067",
+      "frame_offset": 800,
+      "match": "CALL shape_superopt.cpp_logToFile_FUN_005c7910",
+      "return_address": "005cb067",
+      "target_address": "0x5c7910",
+      "target_function": "shape_superopt.cpp_logToFile_FUN_005c7910",
+      "text": "Call to variadic function shape_superopt.cpp_logToFile_FUN_005c7910 at 005cb062 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "005cb08a",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "005cb08f",
+      "frame_offset": 800,
+      "match": "CALL shape_superopt.cpp_logToFile_FUN_005c7910",
+      "return_address": "005cb08f",
+      "target_address": "0x5c7910",
+      "target_function": "shape_superopt.cpp_logToFile_FUN_005c7910",
+      "text": "Call to variadic function shape_superopt.cpp_logToFile_FUN_005c7910 at 005cb08a (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "005cb215",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "005cb21a",
+      "frame_offset": 800,
+      "match": "CALL shape_superopt.cpp_logToFile_FUN_005c7910",
+      "return_address": "005cb21a",
+      "target_address": "0x5c7910",
+      "target_function": "shape_superopt.cpp_logToFile_FUN_005c7910",
+      "text": "Call to variadic function shape_superopt.cpp_logToFile_FUN_005c7910 at 005cb215 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x320",
+      "fix_address": "005ca59c",
+      "frame_offset": 800,
+      "match": "AND ESP",
+      "sub_esp_offset": 800,
+      "text": "Stack alignment at 005ca59c (SUB ESP, 0x320 before)",
+      "type": "stack_align_anchor"
     },
     {
       "add_esp_value": 4,
@@ -1337,63 +1411,6 @@
       "target_address": "0x5fe5e0",
       "text": "Direct CALL at 005cb2c0, ADD ESP at 005cb2c5 with uncertain ESP",
       "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "005cb062",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "005cb067",
-      "frame_offset": 800,
-      "match": "CALL shape_superopt.cpp_logToFile_FUN_005c7910",
-      "return_address": "005cb067",
-      "target_address": "0x5c7910",
-      "target_function": "shape_superopt.cpp_logToFile_FUN_005c7910",
-      "text": "Call to variadic function shape_superopt.cpp_logToFile_FUN_005c7910 at 005cb062 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "005cb08a",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "005cb08f",
-      "frame_offset": 800,
-      "match": "CALL shape_superopt.cpp_logToFile_FUN_005c7910",
-      "return_address": "005cb08f",
-      "target_address": "0x5c7910",
-      "target_function": "shape_superopt.cpp_logToFile_FUN_005c7910",
-      "text": "Call to variadic function shape_superopt.cpp_logToFile_FUN_005c7910 at 005cb08a (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "005cb215",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "005cb21a",
-      "frame_offset": 800,
-      "match": "CALL shape_superopt.cpp_logToFile_FUN_005c7910",
-      "return_address": "005cb21a",
-      "target_address": "0x5c7910",
-      "target_function": "shape_superopt.cpp_logToFile_FUN_005c7910",
-      "text": "Call to variadic function shape_superopt.cpp_logToFile_FUN_005c7910 at 005cb215 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x320",
-      "fix_address": "005ca59c",
-      "match": "AND ESP",
-      "sub_esp_offset": 800,
-      "text": "Stack alignment at 005ca59c (SUB ESP, 0x320 before)",
-      "type": "stack_align_anchor"
     }
   ]
 }

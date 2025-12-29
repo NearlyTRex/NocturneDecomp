@@ -13,17 +13,16 @@ shape_design_c_exportModelToBIN_FUN_0045aa80
 {
   char cVar1;
   uint uVar2;
-  bool bVar3;
   BADSPACEBASE *in_ESP;
+  char *pcVar3;
   char *pcVar4;
-  char *pcVar5;
-  double dVar6;
+  double dVar5;
+  bool bVar6;
   int iVar7;
   uint uVar8;
   uint uVar9;
   uint uVar10;
   uint uVar11;
-  int local_f8;
   uint local_98;
   uint local_94;
   char local_90 [16];
@@ -121,17 +120,17 @@ shape_design_c_exportModelToBIN_FUN_0045aa80
         }
       }
       iVar7 = 0x45adb0;
-      dVar6 = crt_math_c_round_FUN_005fe6b0
+      dVar5 = crt_math_c_round_FUN_005fe6b0
                         (((double)local_14 * 0.6931471805599453) /
                          (2 * 0.6931471805599453));
-      local_18 = (int)ROUND(dVar6) + 1;
-      dVar6 = crt_math_c_ldexp_FUN_00600002((double)CONCAT44 /* combine 2-byte values */(local_18,0x3ff00000),iVar7);
-      local_14 = (float)64 / (float)dVar6;
+      local_18 = (int)ROUND(dVar5) + 1;
+      dVar5 = crt_math_c_ldexp_FUN_00600002((double)CONCAT44 /* combine 2-byte values */(local_18,0x3ff00000),iVar7);
+      local_14 = (float)64 / (float)dVar5;
     }
     local_38 = 0x14;
     uVar8 = 0x45ae02;
-    dVar6 = crt_math_c_round_FUN_005fe6b0((double)(local_14 * (float)65536));
-    local_34 = (int)ROUND(dVar6);
+    dVar5 = crt_math_c_round_FUN_005fe6b0((double)(local_14 * (float)65536));
+    local_34 = (int)ROUND(dVar5);
     if (export_format == 0) {
       crt_stdio_c_fprintf_FUN_005fe6d0(local_1c,"\tMAGNIFY\t%d\n\n",local_34,uVar8);
     }
@@ -149,23 +148,23 @@ shape_design_c_exportModelToBIN_FUN_0045aa80
     }
     for (local_28 = 0; local_28 < g_VertexCount; local_28 = local_28 + 1) {
       uVar10 = 0x45aeb7;
-      dVar6 = crt_math_c_round_FUN_005fe6b0
+      dVar5 = crt_math_c_round_FUN_005fe6b0
                         ((double)(local_14 *
                                  g_LoadedVertices[local_28].vertex.x * (float)256
                                  ));
-      local_68 = (int)ROUND(dVar6);
+      local_68 = (int)ROUND(dVar5);
       uVar9 = 0x45aed4;
-      dVar6 = crt_math_c_round_FUN_005fe6b0
+      dVar5 = crt_math_c_round_FUN_005fe6b0
                         ((double)(local_14 *
                                  g_LoadedVertices[local_28].vertex.y * (float)256
                                  ));
-      local_64 = (int)ROUND(dVar6);
+      local_64 = (int)ROUND(dVar5);
       uVar8 = 0x45aef1;
-      dVar6 = crt_math_c_round_FUN_005fe6b0
+      dVar5 = crt_math_c_round_FUN_005fe6b0
                         ((double)(local_14 *
                                  g_LoadedVertices[local_28].vertex.z * (float)256
                                  ));
-      local_60 = (int)ROUND(dVar6);
+      local_60 = (int)ROUND(dVar5);
       if (export_format == 0) {
         crt_stdio_c_fprintf_FUN_005fe6d0
                   (local_1c,"\tVERTEX\t%d,%d,%d\n",local_68,local_64,local_60,uVar8,uVar9,uVar10);
@@ -180,15 +179,15 @@ shape_design_c_exportModelToBIN_FUN_0045aa80
       local_54 = g_VertexCount;
       crt_stdio_c_fwrite_FUN_005fdc00(&local_5c,1,0xc,local_1c);
       for (local_28 = 0; local_28 < g_VertexCount; local_28 = local_28 + 1) {
-        dVar6 = crt_math_c_round_FUN_005fe6b0
+        dVar5 = crt_math_c_round_FUN_005fe6b0
                           ((double)(g_VertexNormals[local_28].vertex.x * 65535f));
-        local_68 = (int)ROUND(dVar6);
-        dVar6 = crt_math_c_round_FUN_005fe6b0
+        local_68 = (int)ROUND(dVar5);
+        dVar5 = crt_math_c_round_FUN_005fe6b0
                           ((double)(g_VertexNormals[local_28].vertex.y * 65535f));
-        local_64 = (int)ROUND(dVar6);
-        dVar6 = crt_math_c_round_FUN_005fe6b0
+        local_64 = (int)ROUND(dVar5);
+        dVar5 = crt_math_c_round_FUN_005fe6b0
                           ((double)(g_VertexNormals[local_28].vertex.z * 65535f));
-        local_60 = (int)ROUND(dVar6);
+        local_60 = (int)ROUND(dVar5);
         crt_stdio_c_fwrite_FUN_005fdc00(&local_68,1,0xc,local_1c);
       }
     }
@@ -209,27 +208,27 @@ shape_design_c_exportModelToBIN_FUN_0045aa80
       shape_design_c_calculatePolygonNormal_FUN_0045caa0(g_ModelPolygonData + local_28);
       local_7c = g_ModelPolygonData[local_28].vertex_indices_count;
       uVar11 = 0x45b0a4;
-      dVar6 = crt_math_c_round_FUN_005fe6b0
+      dVar5 = crt_math_c_round_FUN_005fe6b0
                         ((double)(g_ModelPolygonData[local_28].normal.x *
                                  (float)65535));
-      local_78 = (int)ROUND(dVar6);
+      local_78 = (int)ROUND(dVar5);
       uVar10 = 0x45b0bf;
-      dVar6 = crt_math_c_round_FUN_005fe6b0
+      dVar5 = crt_math_c_round_FUN_005fe6b0
                         ((double)(g_ModelPolygonData[local_28].normal.y *
                                  (float)65535));
-      local_74 = (int)ROUND(dVar6);
+      local_74 = (int)ROUND(dVar5);
       uVar9 = 0x45b0da;
-      dVar6 = crt_math_c_round_FUN_005fe6b0
+      dVar5 = crt_math_c_round_FUN_005fe6b0
                         ((double)(g_ModelPolygonData[local_28].normal.z *
                                  (float)65535));
-      local_70 = (int)ROUND(dVar6);
+      local_70 = (int)ROUND(dVar5);
       uVar8 = 0x45b100;
-      dVar6 = crt_math_c_round_FUN_005fe6b0
+      dVar5 = crt_math_c_round_FUN_005fe6b0
                         ((double)(local_14 *
                                  g_ModelPolygonData[local_28].plane_distance *
                                  (float)65535 * (float)256)
                         );
-      local_6c = (int)ROUND(dVar6);
+      local_6c = (int)ROUND(dVar5);
       if (g_ModelPolygonData[local_28].polygon_type == 1) {
         if (g_EditorColorIndex != g_ModelPolygonData[local_28].material_id) {
           local_30 = 10;
@@ -281,27 +280,27 @@ shape_design_c_exportModelToBIN_FUN_0045aa80
         iVar7 = crt_string_c_strcmp_FUN_005fef20
                           (g_TempTextureName,g_ModelPolygonData[local_28].texture_name);
         if (iVar7 != 0) {
-          pcVar4 = g_ModelPolygonData[local_28].texture_name;
-          pcVar5 = g_TempTextureName;
+          pcVar3 = g_ModelPolygonData[local_28].texture_name;
+          pcVar4 = g_TempTextureName;
+          do {
+            cVar1 = *pcVar3;
+            *pcVar4 = cVar1;
+            if (cVar1 == '\0') break;
+            cVar1 = pcVar3[1];
+            pcVar3 = pcVar3 + 2;
+            pcVar4[1] = cVar1;
+            pcVar4 = pcVar4 + 2;
+          } while (cVar1 != '\0');
+          pcVar4 = g_TempTextureName;
+          pcVar3 = local_90;
           do {
             cVar1 = *pcVar4;
-            *pcVar5 = cVar1;
+            *pcVar3 = cVar1;
             if (cVar1 == '\0') break;
             cVar1 = pcVar4[1];
             pcVar4 = pcVar4 + 2;
-            pcVar5[1] = cVar1;
-            pcVar5 = pcVar5 + 2;
-          } while (cVar1 != '\0');
-          pcVar5 = g_TempTextureName;
-          pcVar4 = local_90;
-          do {
-            cVar1 = *pcVar5;
-            *pcVar4 = cVar1;
-            if (cVar1 == '\0') break;
-            cVar1 = pcVar5[1];
-            pcVar5 = pcVar5 + 2;
-            pcVar4[1] = cVar1;
-            pcVar4 = pcVar4 + 2;
+            pcVar3[1] = cVar1;
+            pcVar3 = pcVar3 + 2;
           } while (cVar1 != '\0');
           local_94 = 0;
           local_98 = 0xd;
@@ -325,49 +324,49 @@ shape_design_c_exportModelToBIN_FUN_0045aa80
         }
         else if (depth_mode == 0x47) {
           local_80 = 0x34;
-          dVar6 = crt_math_c_round_FUN_005fe6b0
+          dVar5 = crt_math_c_round_FUN_005fe6b0
                             ((double)(g_ModelPolygonData[local_28].normal.x *
                                      (float)2048));
-          local_78 = (int)ROUND(dVar6);
-          dVar6 = crt_math_c_round_FUN_005fe6b0
+          local_78 = (int)ROUND(dVar5);
+          dVar5 = crt_math_c_round_FUN_005fe6b0
                             ((double)(g_ModelPolygonData[local_28].normal.y *
                                      (float)2048));
-          local_74 = (int)ROUND(dVar6);
+          local_74 = (int)ROUND(dVar5);
           uVar11 = 0x45b410;
-          dVar6 = crt_math_c_round_FUN_005fe6b0
+          dVar5 = crt_math_c_round_FUN_005fe6b0
                             ((double)(g_ModelPolygonData[local_28].normal.z *
                                      (float)2048));
-          local_70 = (int)ROUND(dVar6);
+          local_70 = (int)ROUND(dVar5);
           uVar10 = 0x45b436;
-          dVar6 = crt_math_c_round_FUN_005fe6b0
+          dVar5 = crt_math_c_round_FUN_005fe6b0
                             ((double)(local_14 *
                                      g_ModelPolygonData[local_28].plane_distance *
                                      (float)2048 *
                                      (float)256));
-          local_6c = (int)ROUND(dVar6);
+          local_6c = (int)ROUND(dVar5);
         }
         else if (depth_mode == 0x48) {
           local_80 = 0xe;
-          dVar6 = crt_math_c_round_FUN_005fe6b0
+          dVar5 = crt_math_c_round_FUN_005fe6b0
                             ((double)(g_ModelPolygonData[local_28].normal.x *
                                      (float)2048));
-          local_78 = (int)ROUND(dVar6);
-          dVar6 = crt_math_c_round_FUN_005fe6b0
+          local_78 = (int)ROUND(dVar5);
+          dVar5 = crt_math_c_round_FUN_005fe6b0
                             ((double)(g_ModelPolygonData[local_28].normal.y *
                                      (float)2048));
-          local_74 = (int)ROUND(dVar6);
+          local_74 = (int)ROUND(dVar5);
           uVar11 = 0x45b49d;
-          dVar6 = crt_math_c_round_FUN_005fe6b0
+          dVar5 = crt_math_c_round_FUN_005fe6b0
                             ((double)(g_ModelPolygonData[local_28].normal.z *
                                      (float)2048));
-          local_70 = (int)ROUND(dVar6);
+          local_70 = (int)ROUND(dVar5);
           uVar10 = 0x45b4c3;
-          dVar6 = crt_math_c_round_FUN_005fe6b0
+          dVar5 = crt_math_c_round_FUN_005fe6b0
                             ((double)(local_14 *
                                      g_ModelPolygonData[local_28].plane_distance *
                                      (float)2048 *
                                      (float)256));
-          local_6c = (int)ROUND(dVar6);
+          local_6c = (int)ROUND(dVar5);
         }
         else if (depth_mode == 0x5a) {
           local_80 = 0x22;
@@ -379,20 +378,20 @@ shape_design_c_exportModelToBIN_FUN_0045aa80
           local_80 = 0x29;
         }
         if (local_80 == 0x29) {
-          bVar3 = false;
-          for (local_f8 = 0; local_f8 < (int)local_7c; local_f8 = local_f8 + 1) {
-            uVar2 = g_ModelPolygonData[local_28].vertex_indices[local_f8];
+          bVar6 = false;
+          for (iVar7 = 0; iVar7 < (int)local_7c; iVar7 = iVar7 + 1) {
+            uVar2 = g_ModelPolygonData[local_28].vertex_indices[iVar7];
             if (ABS(g_VertexNormals[uVar2].vertex.x) != 0.0) {
-              bVar3 = true;
+              bVar6 = true;
             }
             if (ABS(g_VertexNormals[uVar2].vertex.y) != 0.0) {
-              bVar3 = true;
+              bVar6 = true;
             }
             if (ABS(g_VertexNormals[uVar2].vertex.z) != 0.0) {
-              bVar3 = true;
+              bVar6 = true;
             }
           }
-          if (!bVar3) {
+          if (!bVar6) {
             local_80 = 0x18;
           }
         }
@@ -416,17 +415,9 @@ shape_design_c_exportModelToBIN_FUN_0045aa80
                     (local_1c,"%dTMAP\t%d,%d,%d,%d",local_7c,local_78,local_74,local_70,local_6c)
           ;
           for (local_24 = 0; local_24 < (int)local_7c; local_24 = local_24 + 1) {
-            uVar9 = 0x45b761;
-            dVar6 = crt_math_c_round_FUN_005fe6b0
-                              ((double)g_ModelPolygonData[local_28].uv_v[local_24]);
-            iVar7 = (int)ROUND(dVar6);
-            uVar8 = 0x45b787;
-            dVar6 = crt_math_c_round_FUN_005fe6b0
-                              ((double)g_ModelPolygonData[local_28].uv_u[local_24]);
-            crt_stdio_c_fprintf_FUN_005fe6d0
-                      (local_1c,",%d,%d,%d",
-                       g_ModelPolygonData[local_28].vertex_indices[local_24],(int)ROUND(dVar6),uVar8
-                       ,iVar7,uVar9);
+            crt_math_c_round_FUN_005fe6b0((double)g_ModelPolygonData[local_28].uv_v[local_24]);
+            crt_math_c_round_FUN_005fe6b0((double)g_ModelPolygonData[local_28].uv_u[local_24]);
+            crt_stdio_c_fprintf_FUN_005fe6d0(local_1c,",%d,%d,%d");
           }
           crt_stdio_c_fprintf_FUN_005fe6d0(local_1c,"\n");
         }
@@ -435,15 +426,15 @@ shape_design_c_exportModelToBIN_FUN_0045aa80
           for (local_24 = 0; local_24 < (int)local_7c; local_24 = local_24 + 1) {
             crt_stdio_c_fwrite_FUN_005fdc00
                       ((void *)(local_28 * 0x184 + 0x16e99c8 + local_24 * 4),1,4,local_1c);
-            dVar6 = crt_math_c_round_FUN_005fe6b0
+            dVar5 = crt_math_c_round_FUN_005fe6b0
                               ((double)(g_ModelPolygonData[local_28].uv_u[local_24] *
                                        (float)65536));
-            local_20 = (int)ROUND(dVar6);
+            local_20 = (int)ROUND(dVar5);
             crt_stdio_c_fwrite_FUN_005fdc00(&local_20,1,4,local_1c);
-            dVar6 = crt_math_c_round_FUN_005fe6b0
+            dVar5 = crt_math_c_round_FUN_005fe6b0
                               ((double)(g_ModelPolygonData[local_28].uv_v[local_24] *
                                        (float)65536));
-            local_20 = (int)ROUND(dVar6);
+            local_20 = (int)ROUND(dVar5);
             crt_stdio_c_fwrite_FUN_005fdc00(&local_20,1,4,local_1c);
           }
         }

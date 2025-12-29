@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 73,
-    "complexity_score": 57,
+    "complexity_score": 82,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 4,
     "pseudocode_lines": 27,
-    "suspect_count": 2,
+    "suspect_count": 4,
     "suspect_types": [
-      "format_string_mismatch",
-      "pointer_cast"
+      "pointer_cast",
+      "stack_align_anchor",
+      "variadic_anchor"
     ],
     "total_lines": 100
   },
@@ -183,17 +184,6 @@
       "type": "pointer_cast"
     },
     {
-      "actual_args": 0,
-      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 12,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
       "add_esp_value": 12,
       "call_address": "0051d109",
       "caller_has_stack_issues": false,
@@ -229,6 +219,7 @@
       "align_instruction": "AND ESP,0xfffffff8",
       "description": "Stack alignment can be anchored: ESP = EBP - 0x8",
       "fix_address": "0051d0e9",
+      "frame_offset": 8,
       "match": "AND ESP",
       "sub_esp_offset": 8,
       "text": "Stack alignment at 0051d0e9 (SUB ESP, 0x8 before)",

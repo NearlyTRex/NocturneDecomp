@@ -22,8 +22,7 @@ void core_boneguy_cpp_FUN_0041ca40(void)
   byte bVar6;
   int in_stack_00000004;
   int in_stack_00000008;
-  CMatrix3x4f *in_stack_fffffe66;
-  CMatrix3x4f local_120;
+  CMatrix3x4f *in_stack_fffffee0;
   CMatrix3x4f local_f0;
   float local_c0 [12];
   float local_90;
@@ -52,7 +51,7 @@ void core_boneguy_cpp_FUN_0041ca40(void)
   local_60.x = -0.771;
   local_60.y = -2.536;
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
-            (&local_120,&g_ZeroVector,&local_60);
+            ((CMatrix3x4f *)&stack0xfffffee0,&g_ZeroVector,&local_60);
   (**(code **)(*(int *)(iVar3 + 0x154) + 0x14))();
   core_actor_cpp_CVector_ctor_FUN_00410340(&local_54);
   local_54.x = local_90 + local_84;
@@ -79,8 +78,8 @@ void core_boneguy_cpp_FUN_0041ca40(void)
     local_18.z = pCVar2->z;
   }
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
-            (&local_120,(CMatrix3x4f *)(in_stack_00000004 + 0xfd8 + iVar1 * 0x30),in_stack_fffffe66)
-  ;
+            ((CMatrix3x4f *)&stack0xfffffee0,
+             (CMatrix3x4f *)(in_stack_00000004 + 0xfd8 + iVar1 * 0x30),in_stack_fffffee0);
   pfVar4 = local_c0;
   pCVar5 = &local_f0;
   for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {

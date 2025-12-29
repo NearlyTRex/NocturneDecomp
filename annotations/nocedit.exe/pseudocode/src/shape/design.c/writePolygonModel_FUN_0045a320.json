@@ -1,17 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 247,
-    "complexity_score": 132,
+    "complexity_score": 273,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 32,
-    "pseudocode_lines": 72,
-    "suspect_count": 5,
+    "pseudocode_lines": 93,
+    "suspect_count": 16,
     "suspect_types": [
       "call_esp_anchor",
-      "format_string_mismatch"
+      "concat_artifact",
+      "sub_artifact",
+      "variadic_anchor"
     ],
-    "total_lines": 319
+    "total_lines": 340
   },
   "cross_references": [],
   "function": {
@@ -360,63 +362,32 @@
   },
   "suspects": [
     {
-      "actual_args": 0,
-      "description": "Format \",%d\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": ",%d",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 39,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(output_file,\",%d\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 77,
+      "match": "CONCAT44",
+      "text": "dVar5 = (double)CONCAT44 /* combine 2-byte values */(iVar11,iVar10);",
+      "type": "concat_artifact"
     },
     {
-      "actual_args": 0,
-      "description": "Format \"\\tTEXTURE\\t'%s'\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "\\tTEXTURE\\t'%s'\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 58,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(output_file,\"\\tTEXTURE\\t'%s'\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 85,
+      "match": "SUB84",
+      "text": "SUB84 /* extract 2-byte value */((double)g_ModelPolygonData[polygon_index].uv_u[local_14],0),",
+      "type": "sub_artifact"
     },
     {
-      "actual_args": 0,
-      "description": "Format \",%d\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": ",%d",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 66,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(output_file,\",%d\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 90,
+      "match": "SUB84",
+      "text": "(output_file,\",%f\",SUB84 /* extract 2-byte value */(dVar5,0),(int)((ulonglong)dVar5 >> 0x20));",
+      "type": "sub_artifact"
     },
     {
-      "add_esp_value": 4,
-      "call_address": "0045a33b",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "0045a340",
-      "frame_offset": 20,
-      "match": "CALL...ADD ESP",
-      "return_address": "0045a340",
-      "target_address": "0x45caa0",
-      "text": "Direct CALL at 0045a33b, ADD ESP at 0045a340 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "0045a4bb",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0045a4c0",
-      "frame_offset": 20,
-      "match": "CALL...ADD ESP",
-      "return_address": "0045a4c0",
-      "target_address": "0x5fef20",
-      "text": "Direct CALL at 0045a4bb, ADD ESP at 0045a4c0 with uncertain ESP",
-      "type": "call_esp_anchor"
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 93,
+      "match": "SUB84",
+      "text": "(output_file,\"\\n\",SUB84 /* extract 2-byte value */(dVar5,0),(int)((ulonglong)dVar5 >> 0x20));",
+      "type": "sub_artifact"
     },
     {
       "add_esp_value": 12,
@@ -577,6 +548,32 @@
       "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
       "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 0045a5f3 (EBP frame + ADD ESP)",
       "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "0045a33b",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "0045a340",
+      "frame_offset": 20,
+      "match": "CALL...ADD ESP",
+      "return_address": "0045a340",
+      "target_address": "0x45caa0",
+      "text": "Direct CALL at 0045a33b, ADD ESP at 0045a340 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "0045a4bb",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0045a4c0",
+      "frame_offset": 20,
+      "match": "CALL...ADD ESP",
+      "return_address": "0045a4c0",
+      "target_address": "0x5fef20",
+      "text": "Direct CALL at 0045a4bb, ADD ESP at 0045a4c0 with uncertain ESP",
+      "type": "call_esp_anchor"
     }
   ]
 }

@@ -8,7 +8,7 @@
     "pseudocode_lines": 20,
     "suspect_count": 12,
     "suspect_types": [
-      "call_esp_preserve",
+      "call_esp_anchor",
       "stack_param"
     ],
     "total_lines": 75
@@ -174,41 +174,41 @@
     {
       "add_esp_value": 8,
       "call_address": "00440446",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
       "esp_certainty": "computed",
       "fix_address": "0044044b",
+      "frame_offset": 4,
       "match": "CALL...ADD ESP",
-      "prologue_offset": 20,
       "return_address": "0044044b",
       "target_address": "0x52d610",
-      "text": "Direct CALL at 00440446, ADD ESP at 0044044b (no EBP frame)",
-      "type": "call_esp_preserve"
+      "text": "Direct CALL at 00440446, ADD ESP at 0044044b with uncertain ESP",
+      "type": "call_esp_anchor"
     },
     {
       "add_esp_value": 8,
       "call_address": "00440473",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
       "esp_certainty": "cfg_resolved",
       "fix_address": "00440478",
+      "frame_offset": 4,
       "match": "CALL...ADD ESP",
-      "prologue_offset": 20,
       "return_address": "00440478",
       "target_address": "0x42ec40",
-      "text": "Direct CALL at 00440473, ADD ESP at 00440478 (no EBP frame)",
-      "type": "call_esp_preserve"
+      "text": "Direct CALL at 00440473, ADD ESP at 00440478 with uncertain ESP",
+      "type": "call_esp_anchor"
     },
     {
       "add_esp_value": 8,
       "call_address": "00440484",
-      "description": "Direct CALL in non-EBP-frame function; fixable with ESP preserve",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
       "esp_certainty": "cfg_resolved",
       "fix_address": "00440489",
+      "frame_offset": 4,
       "match": "CALL...ADD ESP",
-      "prologue_offset": 20,
       "return_address": "00440489",
       "target_address": "0x42ec40",
-      "text": "Direct CALL at 00440484, ADD ESP at 00440489 (no EBP frame)",
-      "type": "call_esp_preserve"
+      "text": "Direct CALL at 00440484, ADD ESP at 00440489 with uncertain ESP",
+      "type": "call_esp_anchor"
     }
   ]
 }

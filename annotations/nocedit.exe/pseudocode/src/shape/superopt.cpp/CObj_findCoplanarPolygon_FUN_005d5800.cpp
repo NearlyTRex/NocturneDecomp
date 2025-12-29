@@ -26,9 +26,8 @@ shape_superopt_cpp_CObj_findCoplanarPolygon_FUN_005d5800
   int *piVar7;
   uint *puVar8;
   byte bVar9;
-  uint local_58;
-  uint local_54;
-  uint local_50;
+  uint in_stack_ffffffac;
+  uint in_stack_ffffffb0;
   uint local_4c;
   uint local_48;
   uint local_44;
@@ -78,14 +77,14 @@ LAB_005d59af:
                     (&point->position,&this_ptr->vertex_data[search_polygon->vertex_idx_0].position,
                      (CVector3d *)local_14);
           puVar6 = auStack_3c;
-          puVar8 = &local_58;
+          puVar8 = (uint *)&stack0xffffffa8;
           for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
             *puVar8 = *puVar6;
             puVar6 = puVar6 + (uint)bVar9 * -2 + 1;
             puVar8 = puVar8 + (uint)bVar9 * -2 + 1;
           }
-          *(uint *)&(point->position).x = local_54;
-          *(uint *)((int)&(point->position).x + 4) = local_50;
+          *(uint *)&(point->position).x = in_stack_ffffffac;
+          *(uint *)((int)&(point->position).x + 4) = in_stack_ffffffb0;
           *(uint *)&(point->position).y = local_4c;
           *(uint *)((int)&(point->position).y + 4) = local_48;
           *(uint *)&(point->position).z = local_44;

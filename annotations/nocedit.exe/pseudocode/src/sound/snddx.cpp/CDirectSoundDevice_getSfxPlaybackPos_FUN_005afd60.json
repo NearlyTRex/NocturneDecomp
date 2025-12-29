@@ -1,20 +1,22 @@
 {
   "complexity": {
     "assembly_lines": 100,
-    "complexity_score": 116,
+    "complexity_score": 180,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 8,
-    "pseudocode_lines": 31,
-    "suspect_count": 6,
+    "pseudocode_lines": 35,
+    "suspect_count": 11,
     "suspect_types": [
       "badspacebase",
       "call_esp_anchor",
-      "format_string_mismatch",
       "register_param",
-      "stack_ref"
+      "stack_align_anchor",
+      "stack_param",
+      "stack_ref",
+      "variadic_anchor"
     ],
-    "total_lines": 131
+    "total_lines": 135
   },
   "cross_references": [],
   "function": {
@@ -209,61 +211,38 @@
   "suspects": [
     {
       "description": "Ghidra failed to resolve stack frame",
-      "line": 9,
+      "line": 10,
       "match": "BADSPACEBASE",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "badspacebase"
     },
     {
       "description": "Inferred register parameter",
-      "line": 9,
+      "line": 10,
       "match": "in_ESP",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "register_param"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000004",
+      "text": "uint in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
       "description": "Direct stack address reference",
-      "line": 28,
-      "match": "&stack0xfffffe50",
-      "text": "sound_sndmain_cpp_logSoundError_FUN_005adba0(&stack0xfffffe50);",
+      "line": 25,
+      "match": "&stack0xfffffff0",
+      "text": "(g_DirectSoundHardwareSfxBuffers[(int)pCVar1],(LPDWORD)&stack0xfffffff0,",
       "type": "stack_ref"
     },
     {
-      "actual_args": 0,
-      "description": "Format \"DirectSux: Unable to %s.  (%s)\" has 2 specifiers but 0 arguments after it",
-      "expected_args": 2,
-      "format_string": "DirectSux: Unable to %s.  (%s)",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 27,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_19c,\"DirectSux: Unable to %s.  (%s)\");",
-      "text": "Format string expects 2 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "005afdcd",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "005afdd4",
-      "frame_offset": 424,
-      "match": "CALL...ADD ESP",
-      "return_address": "005afdd2",
-      "target_address": "0x5a8550",
-      "text": "Direct CALL at 005afdcd, ADD ESP at 005afdd4 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "005afe31",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "005afe36",
-      "frame_offset": 424,
-      "match": "CALL...ADD ESP",
-      "return_address": "005afe36",
-      "target_address": "0x5ade70",
-      "text": "Direct CALL at 005afe31, ADD ESP at 005afe36 with uncertain ESP",
-      "type": "call_esp_anchor"
+      "description": "Unresolved stack parameter",
+      "line": 37,
+      "match": "in_stack_00000004",
+      "text": "return (double)(in_stack_00000004 / uVar2);",
+      "type": "stack_param"
     },
     {
       "add_esp_value": 4,
@@ -317,10 +296,37 @@
       "align_instruction": "AND ESP,0xfffffff8",
       "description": "Stack alignment can be anchored: ESP = EBP - 0x1a8",
       "fix_address": "005afd6c",
+      "frame_offset": 424,
       "match": "AND ESP",
       "sub_esp_offset": 424,
       "text": "Stack alignment at 005afd6c (SUB ESP, 0x1a8 before)",
       "type": "stack_align_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "005afdcd",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "005afdd4",
+      "frame_offset": 424,
+      "match": "CALL...ADD ESP",
+      "return_address": "005afdd2",
+      "target_address": "0x5a8550",
+      "text": "Direct CALL at 005afdcd, ADD ESP at 005afdd4 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "005afe31",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "005afe36",
+      "frame_offset": 424,
+      "match": "CALL...ADD ESP",
+      "return_address": "005afe36",
+      "target_address": "0x5ade70",
+      "text": "Direct CALL at 005afe31, ADD ESP at 005afe36 with uncertain ESP",
+      "type": "call_esp_anchor"
     }
   ],
   "vtable_info": {

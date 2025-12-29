@@ -22,8 +22,8 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_calcNormals_FUN_00477e60(CKeyFramed
   float10 fVar8;
   float10 fVar9;
   double dVar10;
-  int local_14;
   int iVar11;
+  int iVar12;
   
   if (this_ptr->frame_count == 1) {
     if (this_ptr->vertex_normal_list == (CVector3i **)0x0) {
@@ -32,11 +32,11 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_calcNormals_FUN_00477e60(CKeyFramed
       core_main_c_displayErrorAndQuit_FUN_00506f10("CKeyFramedModel::calcNormals() - vertexNormalList not allocated!");
     }
     crt_memory_c_memset_FUN_005fde40(this_ptr->vertex_normal_list,0,this_ptr->vertex_count * 0xc);
-    iVar11 = 0;
+    iVar12 = 0;
     if (0 < this_ptr->poly_count) {
-      local_14 = 0;
+      iVar11 = 0;
       do {
-        output = (SSurfaceNormal *)((int)this_ptr->poly_vert_list + local_14);
+        output = (SSurfaceNormal *)((int)this_ptr->poly_vert_list + iVar11);
         engine_keyframe_c_calculateSurfaceNormal_FUN_00501bc0
                   ((CVector3i *)this_ptr->vertex_list,output);
         iVar5 = 0;
@@ -51,15 +51,15 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_calcNormals_FUN_00477e60(CKeyFramed
             pSVar4 = (SSurfaceNormal *)&pSVar4->normal_y;
           } while (iVar5 < output->vertex_count);
         }
-        local_14 = local_14 + 0x48;
-        iVar11 = iVar11 + 1;
-      } while (iVar11 < this_ptr->poly_count);
+        iVar11 = iVar11 + 0x48;
+        iVar12 = iVar12 + 1;
+      } while (iVar12 < this_ptr->poly_count);
     }
-    iVar11 = 0;
+    iVar12 = 0;
     if (0 < this_ptr->vertex_count) {
-      iVar5 = 0;
+      iVar11 = 0;
       do {
-        piVar6 = (int *)((int)this_ptr->vertex_normal_list + iVar5);
+        piVar6 = (int *)((int)this_ptr->vertex_normal_list + iVar11);
         dVar10 = (double)*piVar6;
         dVar2 = (double)piVar6[1];
         dVar1 = (double)piVar6[2];
@@ -76,16 +76,16 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_calcNormals_FUN_00477e60(CKeyFramed
           *extraout_EDX = (int)ROUND(fVar7);
           extraout_EDX[1] = (int)ROUND(fVar8);
           extraout_EDX[2] = (int)ROUND(dVar10);
-          iVar5 = extraout_ECX;
+          iVar11 = extraout_ECX;
         }
         else {
           piVar6[2] = 0;
           piVar6[1] = piVar6[2];
           *piVar6 = piVar6[2];
         }
-        iVar11 = iVar11 + 1;
-        iVar5 = iVar5 + 0xc;
-      } while (iVar11 < this_ptr->vertex_count);
+        iVar12 = iVar12 + 1;
+        iVar11 = iVar11 + 0xc;
+      } while (iVar12 < this_ptr->vertex_count);
     }
   }
   return;

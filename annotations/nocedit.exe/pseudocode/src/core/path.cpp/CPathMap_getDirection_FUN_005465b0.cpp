@@ -13,16 +13,15 @@ core_path_cpp_CPathMap_getDirection_FUN_005465b0
 
 {
   CVector3f *pCVar1;
+  int iVar2;
   BADSPACEBASE *in_ESP;
-  CVector3f local_dc;
-  uint local_d0;
+  CVector3f local_d8;
   uint local_cc;
   uint local_c8;
   uint local_c4;
   uint local_c0;
   uint local_bc;
-  CVector3f CStack_b8;
-  uint local_ac;
+  CVector3f CStack_b4;
   uint local_a8;
   uint local_a4;
   float local_a0;
@@ -37,23 +36,20 @@ core_path_cpp_CPathMap_getDirection_FUN_005465b0
   uint local_70;
   uint local_6c;
   CVector3f local_68;
-  uint local_58;
   uint local_54;
   uint local_50;
   float local_4c;
   float local_48;
   float local_44;
-  uint local_40;
+  float local_40;
   uint local_3c;
   uint local_38;
-  uint local_34;
   uint local_30;
   uint local_2c;
   uint local_28;
   uint local_24;
   uint local_20;
-  float local_1c;
-  int iStack_14;
+  float local_18;
   
   local_98.x = (this_ptr->current_position).x - dest_position->x;
   local_98.y = (this_ptr->current_position).y - dest_position->y;
@@ -61,7 +57,7 @@ core_path_cpp_CPathMap_getDirection_FUN_005465b0
   pCVar1 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_68,&local_98);
   local_a0 = pCVar1->x / 100f;
   local_98.x = 0.01f * pCVar1->z;
-  iStack_14 = 1;
+  iVar2 = 1;
   local_4c = 0.0;
   local_48 = 0.0;
   local_44 = 0.0;
@@ -70,7 +66,7 @@ core_path_cpp_CPathMap_getDirection_FUN_005465b0
   case 1:
     local_44 = 1.0;
     local_3c = 0;
-    local_40 = 0;
+    local_40 = 0.0;
     local_38 = 0x3f800000;
     break;
   case 2:
@@ -97,7 +93,7 @@ core_path_cpp_CPathMap_getDirection_FUN_005465b0
     local_cc = 0;
     local_c8 = 0;
     local_4c = -1.0;
-    local_d0 = 0xbf800000;
+    local_d8.z = -1.0;
     switch(next_direction) {
     case 1:
       goto switchD_0054667e_caseD_1;
@@ -125,11 +121,11 @@ switchD_0054667e_caseD_2:
     local_44 = local_44 + -1f;
     local_74 = 0xbf800000;
 LAB_005466ab:
-    iStack_14 = 2;
+    iVar2 = 2;
     break;
   case 3:
 switchD_0054667e_caseD_3:
-    iStack_14 = 2;
+    iVar2 = 2;
     local_c4 = 0x3f800000;
     local_c0 = 0;
     local_4c = local_4c + 1.0;
@@ -137,7 +133,7 @@ switchD_0054667e_caseD_3:
     break;
   case 4:
 switchD_0054667e_caseD_4:
-    iStack_14 = 2;
+    iVar2 = 2;
     local_28 = 0xbf800000;
     local_24 = 0;
     local_4c = local_4c + -1f;
@@ -172,36 +168,36 @@ switchD_0054667e_default:
   goto switchD_00546911_default;
   switch(prev_direction) {
   case 1:
-    local_44 = local_44 + 1.0;
+    local_40 = local_40 + 1.0;
     goto LAB_00546935;
   case 2:
-    local_ac = 0;
     local_a8 = 0;
-    local_44 = local_44 + -1f;
-    local_a4 = 0xbf800000;
+    local_a4 = 0;
+    local_40 = local_40 + -1f;
+    local_a0 = -1.0;
 LAB_00546935:
-    iStack_14 = iStack_14 + 1;
+    iVar2 = iVar2 + 1;
     break;
   case 3:
-    iStack_14 = iStack_14 + 1;
-    local_58 = 0x3f800000;
-    local_54 = 0;
-    local_4c = local_4c + 1.0;
+    iVar2 = iVar2 + 1;
+    local_54 = 0x3f800000;
     local_50 = 0;
+    local_48 = local_48 + 1.0;
+    local_4c = 0.0;
     break;
   case 4:
-    iStack_14 = iStack_14 + 1;
-    local_34 = 0xbf800000;
-    local_30 = 0;
-    local_4c = local_4c + -1f;
+    iVar2 = iVar2 + 1;
+    local_30 = 0xbf800000;
     local_2c = 0;
+    local_48 = local_48 + -1f;
+    local_28 = 0;
   }
 switchD_00546911_default:
-  local_1c = (float)iStack_14;
-  local_dc.z = 1.0 / local_1c;
-  local_dc.x = local_4c * local_dc.z;
-  local_dc.y = local_48 * local_dc.z;
-  local_dc.z = local_44 * local_dc.z;
-  pCVar1 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&CStack_b8,&local_dc);
-  return pCVar1->y + local_98.x;
+  local_18 = (float)iVar2;
+  local_d8.z = 1.0 / local_18;
+  local_d8.x = local_48 * local_d8.z;
+  local_d8.y = local_44 * local_d8.z;
+  local_d8.z = local_40 * local_d8.z;
+  pCVar1 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&CStack_b4,&local_d8);
+  return pCVar1->y + local_98.y;
 }

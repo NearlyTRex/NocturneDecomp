@@ -1,19 +1,23 @@
 {
   "complexity": {
     "assembly_lines": 310,
-    "complexity_score": 430,
+    "complexity_score": 580,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 1,
     "pseudocode_lines": 130,
-    "suspect_count": 27,
+    "suspect_count": 40,
     "suspect_types": [
       "badspacebase",
       "call_esp_anchor",
+      "callind_anchor",
       "concat_artifact",
       "pointer_cast",
       "register_param",
-      "unknown_field"
+      "stack_align_anchor",
+      "stack_param",
+      "unaffected_reg",
+      "variadic_anchor"
     ],
     "total_lines": 440
   },
@@ -220,10 +224,52 @@
       "type": "register_param"
     },
     {
+      "description": "Unaffected register variable",
+      "line": 14,
+      "match": "unaff_EBP",
+      "text": "void *unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 15,
+      "match": "unaff_ESI",
+      "text": "int unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_ffffff10",
+      "text": "int in_stack_ffffff10;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 42,
+      "match": "unaff_EBP",
+      "text": "unaff_EBP = shape_memdbg_cpp_debugAlloc_FUN_0050f1d0(4);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 48,
+      "match": "unaff_EBP",
+      "text": "if ((unaff_EBP != (void *)0x0) && ((char)uVar10 == '\\0')) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 51,
+      "match": "unaff_ESI",
+      "text": "\"Welding vertices (%d removed so far)\",unaff_ESI);",
+      "type": "unaffected_reg"
+    },
+    {
       "description": "Complex pointer cast",
-      "line": 52,
+      "line": 53,
       "match": "(double *)((int)",
-      "text": "pdVar4 = (double *)((int)&(this_ptr->vertex_data->position).x + iStack_20);",
+      "text": "pdVar4 = (double *)((int)&(this_ptr->vertex_data->position).x + iVar11);",
       "type": "pointer_cast"
     },
     {
@@ -234,17 +280,17 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Unknown/mangled field access",
+      "description": "Unresolved stack parameter",
       "line": 55,
-      "match": "._4_4_",
-      "text": "dVar2 = (double)CONCAT44 /* combine 2-byte values */(uStack_100,weld_tolerance._4_4_);",
-      "type": "unknown_field"
+      "match": "in_stack_ffffff10",
+      "text": "dVar2 = (double)CONCAT44 /* combine 2-byte values */(uStack_ec,in_stack_ffffff10);",
+      "type": "stack_param"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
       "line": 55,
       "match": "CONCAT44",
-      "text": "dVar2 = (double)CONCAT44 /* combine 2-byte values */(uStack_100,weld_tolerance._4_4_);",
+      "text": "dVar2 = (double)CONCAT44 /* combine 2-byte values */(uStack_ec,in_stack_ffffff10);",
       "type": "concat_artifact"
     },
     {
@@ -293,22 +339,22 @@
       "description": "Complex pointer cast",
       "line": 81,
       "match": "(double *)((int)",
-      "text": "pdVar4 = (double *)((int)&(this_ptr->vertex_data->position).x + iStack_28);",
+      "text": "pdVar7 = (double *)((int)&(this_ptr->vertex_data->position).x + iStack_14);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 82,
       "match": "(byte *)((int)",
-      "text": "if ((*(byte *)((int)pdVar4 + 0x35) & 0x80) == 0) {",
+      "text": "if ((*(byte *)((int)pdVar7 + 0x35) & 0x80) == 0) {",
       "type": "pointer_cast"
     },
     {
-      "description": "Unknown/mangled field access",
+      "description": "Unresolved stack parameter",
       "line": 83,
-      "match": "._4_4_",
-      "text": "if (((uStack_100 & 0x7fffffff) == 0) && (weld_tolerance._4_4_ == 0)) {",
-      "type": "unknown_field"
+      "match": "in_stack_ffffff10",
+      "text": "if (((uStack_ec & 0x7fffffff) == 0) && (in_stack_ffffff10 == 0)) {",
+      "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
@@ -321,7 +367,7 @@
       "description": "Complex pointer cast",
       "line": 93,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pCVar1->uv_coords + iVar3 + -0xc) = uStack_14;",
+      "text": "*(uint *)((int)pCVar1->uv_coords + iVar3 + -0xc) = uVar10;",
       "type": "pointer_cast"
     },
     {
@@ -335,7 +381,7 @@
       "description": "Complex pointer cast",
       "line": 96,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pCVar1->uv_coords + iVar3 + -8) = uStack_14;",
+      "text": "*(uint *)((int)pCVar1->uv_coords + iVar3 + -8) = uVar10;",
       "type": "pointer_cast"
     },
     {
@@ -349,62 +395,57 @@
       "description": "Complex pointer cast",
       "line": 99,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)pCVar1->uv_coords + iVar3 + -4) = uStack_14;",
+      "text": "*(uint *)((int)pCVar1->uv_coords + iVar3 + -4) = uVar10;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 105,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI = unaff_ESI + 1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 105,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI = unaff_ESI + 1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 106,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)pdVar7 + 0x35) = *(byte *)((int)pdVar7 + 0x35) | 0x80;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 106,
       "match": "(byte *)((int)",
-      "text": "*(byte *)((int)pdVar4 + 0x35) = *(byte *)((int)pdVar4 + 0x35) | 0x80;",
+      "text": "*(byte *)((int)pdVar7 + 0x35) = *(byte *)((int)pdVar7 + 0x35) | 0x80;",
       "type": "pointer_cast"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 106,
-      "match": "(byte *)((int)",
-      "text": "*(byte *)((int)pdVar4 + 0x35) = *(byte *)((int)pdVar4 + 0x35) | 0x80;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
+      "description": "Unresolved stack parameter",
       "line": 116,
-      "match": "._4_4_",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(uStack_100,weld_tolerance._4_4_))) goto LAB_005d43a8;",
-      "type": "unknown_field"
+      "match": "in_stack_ffffff10",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(uStack_ec,in_stack_ffffff10))) goto LAB_005d43a8;",
+      "type": "stack_param"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
       "line": 116,
       "match": "CONCAT44",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(uStack_100,weld_tolerance._4_4_))) goto LAB_005d43a8;",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(uStack_ec,in_stack_ffffff10))) goto LAB_005d43a8;",
       "type": "concat_artifact"
     },
     {
-      "add_esp_value": 4,
-      "call_address": "005d4237",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "005d423c",
-      "frame_offset": 244,
-      "match": "CALL...ADD ESP",
-      "return_address": "005d423c",
-      "target_address": "0x50f210",
-      "text": "Direct CALL at 005d4237, ADD ESP at 005d423c with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "005d4257",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "005d425c",
-      "frame_offset": 244,
-      "match": "CALL...ADD ESP",
-      "return_address": "005d425c",
-      "target_address": "0x50f1d0",
-      "text": "Direct CALL at 005d4257, ADD ESP at 005d425c with uncertain ESP",
-      "type": "call_esp_anchor"
+      "description": "Unaffected register variable",
+      "line": 127,
+      "match": "unaff_EBP",
+      "text": "shape_memdbg_cpp_debugFree_FUN_0050f210(unaff_EBP);",
+      "type": "unaffected_reg"
     },
     {
       "add_esp_value": 8,
@@ -448,10 +489,37 @@
       "align_instruction": "AND ESP,0xfffffff8",
       "description": "Stack alignment can be anchored: ESP = EBP - 0xf4",
       "fix_address": "005d416c",
+      "frame_offset": 244,
       "match": "AND ESP",
       "sub_esp_offset": 244,
       "text": "Stack alignment at 005d416c (SUB ESP, 0xf4 before)",
       "type": "stack_align_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "005d4237",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "005d423c",
+      "frame_offset": 244,
+      "match": "CALL...ADD ESP",
+      "return_address": "005d423c",
+      "target_address": "0x50f210",
+      "text": "Direct CALL at 005d4237, ADD ESP at 005d423c with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "005d4257",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "005d425c",
+      "frame_offset": 244,
+      "match": "CALL...ADD ESP",
+      "return_address": "005d425c",
+      "target_address": "0x50f1d0",
+      "text": "Direct CALL at 005d4257, ADD ESP at 005d425c with uncertain ESP",
+      "type": "call_esp_anchor"
     }
   ],
   "vtable_info": {

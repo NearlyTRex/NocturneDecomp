@@ -1,16 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 139,
-    "complexity_score": 60,
+    "complexity_score": 263,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 7,
-    "pseudocode_lines": 45,
-    "suspect_count": 1,
+    "pseudocode_lines": 53,
+    "suspect_count": 19,
     "suspect_types": [
-      "call_esp_anchor"
+      "call_esp_anchor",
+      "callind_anchor",
+      "stack_align_anchor",
+      "stack_param"
     ],
-    "total_lines": 184
+    "total_lines": 192
   },
   "cross_references": [],
   "function": {
@@ -156,17 +159,60 @@
   },
   "suspects": [
     {
-      "add_esp_value": 4,
-      "call_address": "004eb5e1",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "004eb5e6",
-      "frame_offset": 16,
-      "match": "CALL...ADD ESP",
-      "return_address": "004eb5e6",
-      "target_address": "0x40d040",
-      "text": "Direct CALL at 004eb5e1, ADD ESP at 004eb5e6 with uncertain ESP",
-      "type": "call_esp_anchor"
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000038",
+      "text": "float in_stack_00000038;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_0000004c",
+      "text": "float in_stack_0000004c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000060",
+      "text": "float in_stack_00000060;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000074",
+      "text": "float in_stack_00000074;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000038",
+      "text": "(this_ptr->glass_size).x = (this_ptr->glass_size).x - in_stack_00000038;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 29,
+      "match": "in_stack_0000004c",
+      "text": "(this_ptr->glass_size).x = (this_ptr->glass_size).x + in_stack_0000004c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 34,
+      "match": "in_stack_00000060",
+      "text": "(this_ptr->glass_size).y = (this_ptr->glass_size).y - in_stack_00000060;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 39,
+      "match": "in_stack_00000074",
+      "text": "(this_ptr->glass_size).y = (this_ptr->glass_size).y + in_stack_00000074;",
+      "type": "stack_param"
     },
     {
       "add_esp_value": 8,
@@ -271,10 +317,24 @@
       "align_instruction": "AND ESP,0xfffffff8",
       "description": "Stack alignment can be anchored: ESP = EBP - 0x10",
       "fix_address": "004eb497",
+      "frame_offset": 16,
       "match": "AND ESP",
       "sub_esp_offset": 16,
       "text": "Stack alignment at 004eb497 (SUB ESP, 0x10 before)",
       "type": "stack_align_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "004eb5e1",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "004eb5e6",
+      "frame_offset": 16,
+      "match": "CALL...ADD ESP",
+      "return_address": "004eb5e6",
+      "target_address": "0x40d040",
+      "text": "Direct CALL at 004eb5e1, ADD ESP at 004eb5e6 with uncertain ESP",
+      "type": "call_esp_anchor"
     }
   ],
   "vtable_info": {

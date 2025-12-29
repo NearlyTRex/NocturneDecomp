@@ -1,12 +1,12 @@
 {
   "complexity": {
     "assembly_lines": 388,
-    "complexity_score": 985,
+    "complexity_score": 1026,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 6,
-    "pseudocode_lines": 200,
-    "suspect_count": 75,
+    "pseudocode_lines": 201,
+    "suspect_count": 78,
     "suspect_types": [
       "badspacebase",
       "call_esp_anchor",
@@ -14,9 +14,11 @@
       "extra_output",
       "pointer_cast",
       "register_param",
-      "stack_param"
+      "stack_align_anchor",
+      "stack_param",
+      "variadic_anchor"
     ],
-    "total_lines": 588
+    "total_lines": 589
   },
   "cross_references": [
     {
@@ -312,395 +314,437 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 28,
+      "line": 27,
       "match": "in_stack_00000004",
       "text": "int *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 29,
+      "line": 28,
       "match": "in_stack_00000008",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 30,
+      "line": 29,
       "match": "in_stack_0000000c",
       "text": "int in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 31,
+      "line": 30,
       "match": "in_stack_00000010",
       "text": "int in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 41,
+      "line": 39,
       "match": "in_stack_00000004",
       "text": "crt_memory_c_memset_FUN_005fde40(in_stack_00000004 + 1,0,0x2000);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 42,
+      "line": 40,
       "match": "in_stack_00000004",
       "text": "crt_memory_c_memset_FUN_005fde40(in_stack_00000004 + 0x802,0,0x2000);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 43,
+      "line": 41,
       "match": "in_stack_00000004",
       "text": "crt_memory_c_memset_FUN_005fde40(in_stack_00000004 + 0x1002,0,0x4000);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 44,
+      "line": 42,
       "match": "in_stack_00000004",
       "text": "crt_memory_c_memset_FUN_005fde40(in_stack_00000004 + 0x2002,0,0x300);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 45,
+      "line": 43,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[0x801] = in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 45,
+      "line": 43,
       "match": "in_stack_00000008",
       "text": "in_stack_00000004[0x801] = in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 46,
+      "line": 44,
       "match": "in_stack_00000004",
       "text": "*in_stack_00000004 = in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 46,
+      "line": 44,
       "match": "in_stack_00000010",
       "text": "*in_stack_00000004 = in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 47,
+      "line": 45,
       "match": "in_stack_0000000c",
       "text": "if (0 < in_stack_0000000c) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 51,
+      "line": 49,
       "match": "in_stack_00000004",
-      "text": "iVar5 = in_stack_00000004[0x801];",
+      "text": "iVar3 = in_stack_00000004[0x801];",
       "type": "stack_param"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 60,
+      "line": 58,
       "match": "extraout_EDX",
-      "text": "*(char *)(extraout_EDX + -1 + iVar7) = (char)(int)ROUND(dVar16);",
+      "text": "*(char *)(extraout_EDX + -1 + iVar7) = (char)(int)ROUND(dVar15);",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 61,
+      "line": 59,
       "match": "extraout_ECX",
       "text": "} while (iVar7 < extraout_ECX);",
       "type": "extra_output"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 63,
+      "line": 61,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[0x1010] = 0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 64,
+      "line": 62,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[0x1011] = in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 64,
+      "line": 62,
       "match": "in_stack_0000000c",
       "text": "in_stack_00000004[0x1011] = in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 67,
+      "line": 65,
       "match": "in_stack_0000000c",
-      "text": "(acStack_13c,\"Subdividing histogram array for %d palette entries...\\n\\n\",in_stack_0000000c);",
+      "text": "((char *)&iStack_13c,\"Subdividing histogram array for %d palette entries...\\n\\n\",in_stack_0000000c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 75,
+      "line": 73,
       "match": "in_stack_00000004",
       "text": "if (*in_stack_00000004 + -1 <= (int)uVar8) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 77,
+      "line": 75,
       "match": "in_stack_00000004",
       "text": "piVar4 = in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 78,
+      "line": 76,
       "match": "in_stack_00000004",
       "text": "piVar6 = in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 79,
+      "line": 77,
       "match": "in_stack_00000004",
       "text": "if (0 < *in_stack_00000004) {",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 82,
+      "line": 80,
       "match": "(short *)((int)",
       "text": "*(double *)(piVar6 + 0x804) = (double)*(short *)((int)piVar4 + 0x400a);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 99,
+      "line": 97,
       "match": "in_stack_00000004",
       "text": "} while (iVar7 < *in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 102,
+      "line": 100,
       "match": "in_stack_00000004",
       "text": "piVar4 = in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 103,
+      "line": 101,
       "match": "in_stack_00000004",
       "text": "piVar6 = in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 104,
+      "line": 102,
       "match": "in_stack_00000004",
       "text": "if (0 < *in_stack_00000004) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 107,
+      "line": 105,
       "match": "in_stack_00000004",
       "text": "piVar4 = in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 108,
+      "line": 106,
       "match": "in_stack_00000004",
-      "text": "while (iVar7 < *in_stack_00000004 + -1) {",
+      "text": "while (iVar3 < *in_stack_00000004 + -1) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 140,
+      "line": 138,
       "match": "in_stack_00000004",
       "text": "piVar4 = in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 141,
+      "line": 139,
       "match": "in_stack_00000004",
-      "text": "} while (iStack_14 < *in_stack_00000004);",
+      "text": "} while (iVar7 < *in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 147,
+      "line": 144,
       "match": "extraout_EDX_00",
-      "text": "dVar16 = crt_math_c_round_FUN_005fe6b0(*(double *)(extraout_EDX_00 + 0x2010));",
+      "text": "dVar15 = crt_math_c_round_FUN_005fe6b0(*(double *)(extraout_EDX_00 + 0x2010));",
       "type": "extra_output"
     },
     {
       "description": "Complex pointer cast",
-      "line": 149,
-      "match": "(byte *)((int)",
-      "text": "*(byte *)((int)piVar6 + 0x8009) = (byte)local_18;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 150,
-      "match": "extraout_EDX_01",
-      "text": "dVar16 = crt_math_c_round_FUN_005fe6b0(*(double *)(extraout_EDX_01 + 0x2018));",
-      "type": "extra_output"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 151,
+      "line": 145,
       "match": "(char *)((int)",
-      "text": "*(char *)((int)piVar6 + 0x800a) = (char)(int)ROUND(dVar16);",
+      "text": "*(char *)((int)piVar6 + 0x8009) = (char)(int)ROUND(dVar15);",
       "type": "pointer_cast"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 152,
+      "line": 146,
+      "match": "extraout_EDX_01",
+      "text": "dVar15 = crt_math_c_round_FUN_005fe6b0(*(double *)(extraout_EDX_01 + 0x2018));",
+      "type": "extra_output"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 147,
+      "match": "(char *)((int)",
+      "text": "*(char *)((int)piVar6 + 0x800a) = (char)(int)ROUND(dVar15);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 148,
       "match": "extraout_EDX_02",
       "text": "piVar4 = (int *)(extraout_EDX_02 + 0x20);",
       "type": "extra_output"
     },
     {
       "description": "Complex pointer cast",
-      "line": 153,
+      "line": 149,
       "match": "(int *)((int)",
       "text": "piVar6 = (int *)((int)piVar6 + 3);",
       "type": "pointer_cast"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 154,
+      "line": 150,
       "match": "extraout_EDX_02",
       "text": "} while ((int *)(extraout_EDX_02 + 0x20) != extraout_ECX_00);",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 154,
+      "line": 150,
       "match": "extraout_ECX_00",
       "text": "} while ((int *)(extraout_EDX_02 + 0x20) != extraout_ECX_00);",
       "type": "extra_output"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 155,
+      "line": 151,
       "match": "in_stack_00000004",
       "text": "return in_stack_00000004 + 0x2002;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 162,
+      "line": 158,
       "match": "in_stack_00000004",
-      "text": "iVar7 = in_stack_00000004[0x1004];",
+      "text": "iStack_138 = in_stack_00000004[0x1004];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 163,
+      "line": 159,
       "match": "in_stack_00000004",
-      "text": "iVar5 = in_stack_00000004[0x1005];",
+      "text": "iStack_134 = in_stack_00000004[0x1005];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 160,
+      "match": "in_stack_00000004",
+      "text": "iStack_130 = in_stack_00000004[0x100e];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 162,
+      "match": "in_stack_00000004",
+      "text": "iStack_12c = in_stack_00000004[0x100f];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 164,
       "match": "in_stack_00000004",
-      "text": "iStack_14c = in_stack_00000004[0x100e];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 166,
-      "match": "in_stack_00000004",
-      "text": "iStack_148 = in_stack_00000004[0x100f];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 168,
-      "match": "in_stack_00000004",
       "text": "piVar4 = in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 171,
+      "line": 167,
       "match": "CONCAT44",
-      "text": "if ((double)CONCAT44 /* combine 2-byte values */(iVar5,iVar7) < *(double *)(piVar4 + 0x1014)) {",
+      "text": "if ((double)CONCAT44 /* combine 2-byte values */(iStack_134,iStack_138) < *(double *)(piVar4 + 0x1014)) {",
       "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 182,
+      "line": 179,
       "match": "CONCAT44",
-      "text": "if ((double)CONCAT44 /* combine 2-byte values */(iStack_148,iStack_14c) !=",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 183,
-      "match": "in_stack_00000004",
-      "text": "*(double *)(in_stack_00000004 + iVar9 * 0x10 + 0x1006)) break;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 188,
-      "match": "CONCAT44",
-      "text": "if ((double)CONCAT44 /* combine 2-byte values */(iStack_148,iStack_14c) ==",
+      "text": "if ((double)CONCAT44 /* combine 2-byte values */(iStack_12c,iStack_130) !=",
       "type": "concat_artifact"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 189,
+      "line": 180,
       "match": "in_stack_00000004",
-      "text": "*(double *)(in_stack_00000004 + iVar9 * 0x10 + 0x1008)) {",
+      "text": "*(double *)(in_stack_00000004 + iVar7 * 0x10 + 0x1006)) break;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
+      "line": 186,
+      "match": "CONCAT44",
+      "text": "if ((double)CONCAT44 /* combine 2-byte values */(iStack_12c,iStack_130) ==",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 187,
+      "match": "in_stack_00000004",
+      "text": "*(double *)(in_stack_00000004 + iVar7 * 0x10 + 0x1008)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 192,
+      "match": "CONCAT44",
+      "text": "if ((double)CONCAT44 /* combine 2-byte values */(iStack_12c,iStack_130) ==",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Unresolved stack parameter",
       "line": 193,
-      "match": "CONCAT44",
-      "text": "if ((double)CONCAT44 /* combine 2-byte values */(iStack_148,iStack_14c) ==",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 194,
       "match": "in_stack_00000004",
-      "text": "*(double *)(in_stack_00000004 + iVar9 * 0x10 + 0x100a)) {",
+      "text": "*(double *)(in_stack_00000004 + iVar7 * 0x10 + 0x100a)) {",
       "type": "stack_param"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
       "line": 198,
       "match": "CONCAT44",
-      "text": "if ((double)CONCAT44 /* combine 2-byte values */(iStack_148,iStack_14c) !=",
+      "text": "if ((double)CONCAT44 /* combine 2-byte values */(iStack_12c,iStack_130) !=",
       "type": "concat_artifact"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 199,
       "match": "in_stack_00000004",
-      "text": "*(double *)(in_stack_00000004 + iVar9 * 0x10 + 0x100c)) goto LAB_0044091a;",
+      "text": "*(double *)(in_stack_00000004 + iVar7 * 0x10 + 0x100c)) goto LAB_0044091a;",
       "type": "stack_param"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "004407f3",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "fix_address": "004407f8",
+      "frame_offset": 332,
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "004407f8",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 004407f3 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "0044082c",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "fix_address": "00440831",
+      "frame_offset": 332,
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "00440831",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0044082c (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x14c",
+      "fix_address": "004406cc",
+      "frame_offset": 332,
+      "match": "AND ESP",
+      "sub_esp_offset": 332,
+      "text": "Stack alignment at 004406cc (SUB ESP, 0x14c before)",
+      "type": "stack_align_anchor"
     },
     {
       "add_esp_value": 12,
@@ -844,47 +888,6 @@
       "target_address": "0x440f00",
       "text": "Direct CALL at 00440956, ADD ESP at 0044095b with uncertain ESP",
       "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "004407f3",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "fix_address": "004407f8",
-      "frame_offset": 332,
-      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
-      "return_address": "004407f8",
-      "target_address": "0x5fdbd0",
-      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
-      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 004407f3 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "0044082c",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "fix_address": "00440831",
-      "frame_offset": 332,
-      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
-      "return_address": "00440831",
-      "target_address": "0x5fdbd0",
-      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
-      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0044082c (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x14c",
-      "fix_address": "004406cc",
-      "match": "AND ESP",
-      "sub_esp_offset": 332,
-      "text": "Stack alignment at 004406cc (SUB ESP, 0x14c before)",
-      "type": "stack_align_anchor"
     }
   ]
 }

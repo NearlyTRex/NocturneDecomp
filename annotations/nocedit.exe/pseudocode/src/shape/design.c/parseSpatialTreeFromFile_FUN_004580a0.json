@@ -1,19 +1,21 @@
 {
   "complexity": {
     "assembly_lines": 92,
-    "complexity_score": 121,
+    "complexity_score": 153,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 1,
-    "pseudocode_lines": 41,
-    "suspect_count": 6,
+    "pseudocode_lines": 43,
+    "suspect_count": 8,
     "suspect_types": [
       "badspacebase",
       "call_esp_anchor",
       "extra_output",
-      "register_param"
+      "register_param",
+      "stack_ref",
+      "variadic_anchor"
     ],
-    "total_lines": 133
+    "total_lines": 135
   },
   "cross_references": [
     {
@@ -195,24 +197,47 @@
     },
     {
       "description": "Ghidra failed to resolve stack frame",
-      "line": 8,
+      "line": 7,
       "match": "BADSPACEBASE",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "badspacebase"
     },
     {
       "description": "Inferred register parameter",
-      "line": 8,
+      "line": 7,
       "match": "in_ESP",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "register_param"
     },
     {
+      "description": "Direct stack address reference",
+      "line": 19,
+      "match": "&stack0xffffffd4",
+      "text": "(file,\"%d,%d,%f,%f,%f,%f\\n\",&stack0xffffffd4,&local_28,&local_20,&local_1c,",
+      "type": "stack_ref"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 30,
       "match": "extraout_EAX",
-      "text": "*(int *)(extraout_EAX + 0xc) = (int)ROUND(dVar3);",
+      "text": "*(int *)(extraout_EAX + 0xc) = (int)ROUND(dVar2);",
       "type": "extra_output"
+    },
+    {
+      "add_esp_value": 32,
+      "call_address": "004580ce",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "fix_address": "004580d3",
+      "frame_offset": 36,
+      "match": "CALL crt_stdio.c_fscanf_FUN_005fe7c0",
+      "return_address": "004580d3",
+      "target_address": "0x5fe7c0",
+      "target_function": "crt_stdio.c_fscanf_FUN_005fe7c0",
+      "text": "Call to variadic function crt_stdio.c_fscanf_FUN_005fe7c0 at 004580ce (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
     },
     {
       "add_esp_value": 4,
@@ -239,22 +264,6 @@
       "target_address": "0x4580a0",
       "text": "Direct CALL at 0045814e, ADD ESP at 00458153 with uncertain ESP",
       "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 32,
-      "call_address": "004580ce",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "fix_address": "004580d3",
-      "frame_offset": 36,
-      "match": "CALL crt_stdio.c_fscanf_FUN_005fe7c0",
-      "return_address": "004580d3",
-      "target_address": "0x5fe7c0",
-      "target_function": "crt_stdio.c_fscanf_FUN_005fe7c0",
-      "text": "Call to variadic function crt_stdio.c_fscanf_FUN_005fe7c0 at 004580ce (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
     }
   ]
 }

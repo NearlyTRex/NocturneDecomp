@@ -1,16 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 228,
-    "complexity_score": 236,
+    "complexity_score": 291,
     "cross_reference_count": 50,
     "function_call_count": 2,
     "global_count": 17,
     "pseudocode_lines": 111,
-    "suspect_count": 11,
+    "suspect_count": 16,
     "suspect_types": [
       "call_esp_anchor",
       "format_string_mismatch",
-      "pointer_cast"
+      "pointer_cast",
+      "variadic_anchor"
     ],
     "total_lines": 339
   },
@@ -594,67 +595,6 @@
       "type": "pointer_cast"
     },
     {
-      "actual_args": 1,
-      "description": "Format \"NULL actor pointer detected, %s line %d\" has 2 specifiers but 1 arguments after it",
-      "expected_args": 2,
-      "format_string": "NULL actor pointer detected, %s line %d",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 26,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"NULL actor pointer detected, %s line %d\",context_file)",
-      "text": "Format string expects 2 args but got 1",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Invalid actor pointer %08X detected at %s, line %d\" has 3 specifiers but 0 arguments after it",
-      "expected_args": 3,
-      "format_string": "Invalid actor pointer %08X detected at %s, line %d",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 31,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Invalid actor pointer %08X detected at %s, line %d\");",
-      "text": "Format string expects 3 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "0040acf7",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "0040acfc",
-      "frame_offset": 8,
-      "match": "CALL...ADD ESP",
-      "return_address": "0040acfc",
-      "target_address": "0x5fde40",
-      "text": "Direct CALL at 0040acf7, ADD ESP at 0040acfc with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "0040ad90",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "0040ad95",
-      "frame_offset": 8,
-      "match": "CALL...ADD ESP",
-      "return_address": "0040ad95",
-      "target_address": "0x5fde40",
-      "text": "Direct CALL at 0040ad90, ADD ESP at 0040ad95 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "0040ae1c",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "0040ae21",
-      "frame_offset": 8,
-      "match": "CALL...ADD ESP",
-      "return_address": "0040ae21",
-      "target_address": "0x5fde40",
-      "text": "Direct CALL at 0040ae1c, ADD ESP at 0040ae21 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
       "add_esp_value": 16,
       "call_address": "0040acc3",
       "caller_has_stack_issues": false,
@@ -733,6 +673,67 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0040aea1 (EBP frame + ADD ESP)",
       "type": "variadic_anchor"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"NULL actor pointer detected, %s line %d\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "NULL actor pointer detected, %s line %d",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 26,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"NULL actor pointer detected, %s line %d\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Invalid actor pointer %08X detected at %s, line %d\" has 3 specifiers but 0 arguments after it",
+      "expected_args": 3,
+      "format_string": "Invalid actor pointer %08X detected at %s, line %d",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 31,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Invalid actor pointer %08X detected at %s, line %d\");",
+      "text": "Format string expects 3 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "0040acf7",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "0040acfc",
+      "frame_offset": 8,
+      "match": "CALL...ADD ESP",
+      "return_address": "0040acfc",
+      "target_address": "0x5fde40",
+      "text": "Direct CALL at 0040acf7, ADD ESP at 0040acfc with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "0040ad90",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "0040ad95",
+      "frame_offset": 8,
+      "match": "CALL...ADD ESP",
+      "return_address": "0040ad95",
+      "target_address": "0x5fde40",
+      "text": "Direct CALL at 0040ad90, ADD ESP at 0040ad95 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "0040ae1c",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "0040ae21",
+      "frame_offset": 8,
+      "match": "CALL...ADD ESP",
+      "return_address": "0040ae21",
+      "target_address": "0x5fde40",
+      "text": "Direct CALL at 0040ae1c, ADD ESP at 0040ae21 with uncertain ESP",
+      "type": "call_esp_anchor"
     }
   ]
 }

@@ -17,8 +17,8 @@ core_motion_cpp_CMotionController_advanceFrameAndCheckSignals_FUN_0052de70
   SMotion *pSVar3;
   SMotion *pSVar4;
   int iVar5;
+  float in_stack_00000030;
   float local_20;
-  float fStack_18;
   
   pSVar4 = this_ptr->motion_list_ptr->motions + *inout_motion_index;
   iVar5 = 0;
@@ -41,7 +41,7 @@ core_motion_cpp_CMotionController_advanceFrameAndCheckSignals_FUN_0052de70
     (*this_ptr->vtable->accumulateScaledRootMotion)
               (this_ptr,(float)pSVar4->frame_start + *inout_frame_number,
                (float)pSVar4->frame_start + local_20,scale_factor);
-    *inout_frame_number = local_20;
+    *inout_frame_number = (float)this_ptr;
     return iVar5;
   }
   (*this_ptr->vtable->accumulateScaledRootMotion)
@@ -55,14 +55,13 @@ core_motion_cpp_CMotionController_advanceFrameAndCheckSignals_FUN_0052de70
     *inout_frame_number = (float)(pSVar4->frame_count + -1);
     return iVar5;
   }
-  fStack_18 = pSVar4->exit_forward_to_frame;
-  if (fStack_18 == -1f) {
+  if (pSVar4->exit_forward_to_frame == -1f) {
     iVar2 = (*this_ptr->vtable->findPatchToFrame)
                       (this_ptr,*inout_motion_index,(float)(pSVar4->frame_count + -1),
                        pSVar4->exit_forward_to_motion);
-    fStack_18 = (float)iVar2;
+    in_stack_00000030 = (float)iVar2;
   }
   *inout_motion_index = pSVar4->exit_forward_to_motion;
-  *inout_frame_number = fStack_18;
+  *inout_frame_number = in_stack_00000030;
   return iVar5;
 }

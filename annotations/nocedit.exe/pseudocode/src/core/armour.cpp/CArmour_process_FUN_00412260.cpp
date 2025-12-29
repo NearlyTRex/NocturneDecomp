@@ -14,6 +14,9 @@ void __cdecl core_armour_cpp_CArmour_process_FUN_00412260(CArmour *this_ptr)
   float fVar2;
   int iVar3;
   float in_stack_00000008;
+  uint uStack00000010;
+  uint uStack00000014;
+  uint uStack00000018;
   
   iVar3 = core_charactr_cpp_CCharacter_FUN_00429870((CCharacter *)this_ptr);
   if (iVar3 != 0) {
@@ -51,6 +54,9 @@ void __cdecl core_armour_cpp_CArmour_process_FUN_00412260(CArmour *this_ptr)
     if (iVar3 != 0) {
       (*((this_ptr->base_enemy).base_character.base_actor.vtable)->playSound)
                 ((CDemonActor *)this_ptr,"armour.wav");
+      uStack00000010 = 0;
+      uStack00000014 = 0;
+      uStack00000018 = 0x40a00000;
       core_charactr_cpp_CCharacter_FUN_0042b9e0((CCharacter *)this_ptr);
       return;
     }

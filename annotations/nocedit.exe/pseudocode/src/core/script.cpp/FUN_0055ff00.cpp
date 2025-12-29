@@ -18,15 +18,16 @@ int core_script_cpp_FUN_0055ff00(void)
   uint extraout_EAX;
   uint uVar4;
   BADSPACEBASE *in_ESP;
-  int unaff_EDI;
+  int unaff_ESI;
   char *pcVar5;
   byte bVar6;
   void *in_stack_00000004;
   char *in_stack_0000000c;
   char *in_stack_00000010;
-  int in_stack_ffffffe4;
+  int iVar7;
   
   bVar6 = 0;
+  iVar7 = 0;
   if (((*(float *)((int)in_stack_00000004 + 0x454) < 0.0) &&
       (iVar2 = crt_stdio_c_sscanf_FUN_0060013c(in_stack_0000000c,&DAT_006431a0,&stack0xffffffd8),
       iVar2 != 1)) &&
@@ -41,7 +42,7 @@ int core_script_cpp_FUN_0055ff00(void)
       cVar1 = *pcVar5;
       pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
     } while (cVar1 != '\0');
-    in_stack_ffffffe4 = ~uVar4 - 1;
+    iVar7 = ~uVar4 - 1;
   }
   iVar2 = core_script_cpp_GetDemonActor_FUN_005594e0();
   *(int *)((int)in_stack_00000004 + 4) = iVar2;
@@ -69,9 +70,9 @@ int core_script_cpp_FUN_0055ff00(void)
       pcVar5 = pcVar5 + 2;
     } while (cVar1 != '\0');
     if (*(int *)((int)in_stack_00000004 + 4) != 0) {
-      *(int *)(*(int *)((int)in_stack_00000004 + 4) + 0x2618) = in_stack_ffffffe4;
+      *(int *)(*(int *)((int)in_stack_00000004 + 4) + 0x2618) = iVar7;
     }
-    if (unaff_EDI != 0) {
+    if (unaff_ESI != 0) {
       sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
       sound_sndmain_cpp_setNextSfxChannel_FUN_005a8af0(2);
       core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,in_stack_00000004,in_stack_0000000c);
@@ -79,5 +80,5 @@ int core_script_cpp_FUN_0055ff00(void)
       sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
     }
   }
-  return unaff_EDI;
+  return unaff_ESI;
 }

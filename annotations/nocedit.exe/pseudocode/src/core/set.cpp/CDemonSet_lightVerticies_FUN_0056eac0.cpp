@@ -34,68 +34,67 @@ core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
   int *piVar18;
   CVector3f *pCVar19;
   byte bVar20;
-  int aiStackY_1158 [1012];
+  int aiStackY_1154 [1012];
   CVector3i *world_position;
   CVector3i *pCVar21;
   int iVar22;
-  CVector3i CStack_170;
-  uint local_164;
+  CVector3i local_16c;
   uint local_160;
   uint uStack_15c;
-  CVector3i CStack_158;
-  uint uStack_14c;
-  int local_148 [4];
-  uint local_138;
+  uint uStack_158;
+  CVector3i local_154;
+  uint local_148;
+  int aiStack_144 [4];
   uint local_134;
   uint local_130;
   uint uStack_12c;
-  int aiStack_128 [2];
-  float local_120;
-  int local_11c;
-  char *local_118;
-  uint uStack_114;
-  uint local_108;
+  uint uStack_128;
+  int local_124 [2];
+  float local_11c;
+  int local_118;
+  char *pcStack_114;
+  uint uStack_110;
   uint local_104;
   uint local_100;
-  CVector3i local_f8;
-  CVector3i local_ec;
-  uint local_e0;
+  uint local_fc;
+  CVector3i local_f4;
+  CVector3i local_e8;
   uint local_dc;
-  int local_d8;
+  uint local_d8;
   int local_d4;
   int iStack_d0;
-  float fStack_c8;
-  float fStack_c0;
-  float local_b8;
+  int local_cc;
+  float local_c4;
+  float local_bc;
   float fStack_b4;
-  float local_ac;
+  float local_b0;
   float local_a8;
   float fStack_a4;
-  float fStack_9c;
-  uint local_94;
-  float local_90;
+  float local_a0;
+  float local_98;
+  uint local_90;
   float fStack_8c;
-  float fStack_80;
+  float local_88;
   float local_7c;
-  float local_74;
+  float local_78;
   float local_70;
-  int local_6c;
+  float local_6c;
   int local_68;
-  CVector3i *local_60;
+  int local_64;
   CVector3i *local_5c;
   CVector3i *local_58;
-  int local_54;
-  CVector3i *local_50;
-  float local_4c;
+  CVector3i *local_54;
+  int local_50;
+  CVector3i *local_4c;
   float local_48;
   float local_44;
-  uint local_40;
-  int local_3c;
-  float fStack_38;
-  int iStack_34;
+  float local_40;
+  uint local_3c;
+  int iStack_38;
+  float fStack_34;
   int iStack_30;
-  float local_24;
-  int local_20;
+  int iStack_2c;
+  float local_20;
   int local_1c;
   int local_18;
   int iStack_14;
@@ -118,59 +117,59 @@ core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
           if (flags == 0) {
             if (tri_count == 0) {
               if (0 < vertex_count) {
-                local_40 = 0;
+                local_3c = 0;
                 iVar16 = 0;
                 do {
-                  CStack_170.z = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.
-                                                transformed_x + iVar16);
-                  local_164 = *(uint *)
+                  local_16c.z = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.
+                                               transformed_x + iVar16);
+                  local_160 = *(uint *)
                                ((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_y +
                                iVar16);
-                  local_160 = *(uint *)
-                               ((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_z +
-                               iVar16);
+                  uStack_15c = *(uint *)
+                                ((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_z +
+                                iVar16);
                   core_set_cpp_FUN_0056e890();
-                  uStack_15c = uStack_14c;
-                  *(int *)((int)&CStack_158 + (uint)bVar20 * -8) = local_148[(uint)bVar20 * -2];
-                  iVar22 = local_3c;
-                  *(int *)((int)&CStack_158 + (uint)bVar20 * -8 + (uint)bVar20 * -8 + 4) =
-                       local_148[(uint)bVar20 * -2 + (uint)bVar20 * -2 + 1];
+                  uStack_158 = local_148;
+                  *(int *)((int)&local_154 + (uint)bVar20 * -8) = aiStack_144[(uint)bVar20 * -2];
+                  iVar22 = iStack_38;
+                  *(int *)((int)&local_154 + (uint)bVar20 * -8 + (uint)bVar20 * -8 + 4) =
+                       aiStack_144[(uint)bVar20 * -2 + (uint)bVar20 * -2 + 1];
                   core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0
-                            (this_ptr,&CStack_158,(CVector3i *)0x0,local_3c,0);
+                            (this_ptr,&local_154,(CVector3i *)0x0,iStack_38,0);
                   *(float *)((int)&g_RenderVertexBuffer[0].w_recip + iVar16) =
                        g_PerspectiveReciprocal;
-                  fStack_38 = (float)(iVar22 + 1);
+                  fStack_34 = (float)(iVar22 + 1);
                   iVar16 = iVar16 + 0x30;
-                } while ((int)fStack_38 < vertex_count);
-                return fStack_38;
+                } while ((int)fStack_34 < vertex_count);
+                return fStack_34;
               }
             }
             else {
               if (0 < vertex_count) {
-                local_68 = 0;
+                local_64 = 0;
                 iVar22 = 0;
-                local_70 = (float)iVar16;
+                local_6c = (float)iVar16;
                 do {
-                  local_138 = *(uint *)
+                  local_134 = *(uint *)
                                ((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_x +
                                iVar22);
-                  local_134 = *(uint *)
+                  local_130 = *(uint *)
                                ((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_y +
                                iVar22);
-                  local_130 = *(uint *)
-                               ((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_z +
-                               iVar22);
+                  uStack_12c = *(uint *)
+                                ((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_z +
+                                iVar22);
                   core_set_cpp_FUN_0056e890();
-                  iVar16 = local_68;
+                  iVar16 = local_64;
                   iVar22 = iVar22 + 0x30;
-                  puVar2 = (uint *)((int)&g_TransformedVertexArray[0].x + local_68);
-                  local_68 = local_68 + 0xc;
+                  puVar2 = (uint *)((int)&g_TransformedVertexArray[0].x + local_64);
+                  local_64 = local_64 + 0xc;
                   piVar18 = (int *)(iVar16 + 0x32cd850 + (uint)bVar20 * -8);
-                  *puVar2 = uStack_114;
-                  *piVar18 = aiStack_128[(uint)bVar20 * -2 + 6];
+                  *puVar2 = uStack_110;
+                  *piVar18 = local_124[(uint)bVar20 * -2 + 6];
                   piVar18[(uint)bVar20 * -2 + 1] =
-                       aiStack_128[(uint)bVar20 * -2 + (uint)bVar20 * -2 + 7];
-                } while (iVar22 < (int)local_70);
+                       local_124[(uint)bVar20 * -2 + (uint)bVar20 * -2 + 7];
+                } while (iVar22 < (int)local_6c);
               }
               if (lighting_mode < 1) {
                 if (4000 < tri_count) {
@@ -187,34 +186,33 @@ core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
                   pSVar12 = tri_data_ptr;
                   do {
                     uVar3 = (pSVar12->vertex_indices).vertex_index_0;
-                    local_94 = (uint)(pSVar12->vertex_indices).vertex_index_2;
+                    local_90 = (uint)(pSVar12->vertex_indices).vertex_index_2;
                     uVar4 = (pSVar12->vertex_indices).vertex_index_1;
-                    local_20 = g_TransformedVertexArray[uVar4].x - g_TransformedVertexArray[uVar3].x
+                    local_1c = g_TransformedVertexArray[uVar4].x - g_TransformedVertexArray[uVar3].x
                     ;
-                    iStack_14 = g_TransformedVertexArray[uVar4].y -
-                                g_TransformedVertexArray[uVar3].y;
-                    iVar22 = g_TransformedVertexArray[local_94].x -
+                    iVar22 = g_TransformedVertexArray[local_90].x -
                              g_TransformedVertexArray[uVar4].x;
-                    local_a8 = (float)(g_TransformedVertexArray[uVar4].z -
-                                      g_TransformedVertexArray[uVar3].z);
-                    fStack_a4 = (float)iVar22;
-                    local_18 = g_TransformedVertexArray[local_94].y -
-                               g_TransformedVertexArray[uVar4].y;
-                    local_ac = (float)iStack_14;
-                    local_1c = g_TransformedVertexArray[local_94].z -
+                    fStack_a4 = (float)(g_TransformedVertexArray[uVar4].z -
+                                       g_TransformedVertexArray[uVar3].z);
+                    local_a0 = (float)iVar22;
+                    iStack_14 = g_TransformedVertexArray[local_90].y -
+                                g_TransformedVertexArray[uVar4].y;
+                    local_a8 = (float)(g_TransformedVertexArray[uVar4].y -
+                                      g_TransformedVertexArray[uVar3].y);
+                    local_18 = g_TransformedVertexArray[local_90].z -
                                g_TransformedVertexArray[uVar4].z;
-                    fStack_9c = (float)local_1c;
-                    local_48 = local_ac * fStack_9c - (float)local_18 * local_a8;
-                    local_44 = (float)iVar22 * local_a8 - (float)local_20 * fStack_9c;
-                    local_4c = (float)local_20 * (float)local_18 - fStack_a4 * local_ac;
-                    local_90 = local_4c * local_4c + local_44 * local_44 + local_48 * local_48;
-                    fStack_8c = (float)(g_LightAttenuationMax - ((int)local_90 >> 1));
-                    fVar11 = fStack_8c * (float)65535;
+                    local_98 = (float)local_18;
+                    local_44 = local_a8 * local_98 - (float)iStack_14 * fStack_a4;
+                    local_40 = (float)iVar22 * fStack_a4 - (float)local_1c * local_98;
+                    local_48 = (float)local_1c * (float)iStack_14 - local_a0 * local_a8;
+                    fStack_8c = local_48 * local_48 + local_40 * local_40 + local_44 * local_44;
+                    local_88 = (float)(g_LightAttenuationMax - ((int)fStack_8c >> 1));
+                    fVar11 = local_88 * (float)65535;
                     pSVar12 = pSVar12 + 1;
                     iVar16 = iVar16 + 1;
-                    pCVar19->x = local_48 * fVar11;
-                    pCVar19->y = local_44 * fVar11;
-                    pCVar19->z = local_4c * fVar11;
+                    pCVar19->x = local_44 * fVar11;
+                    pCVar19->y = local_40 * fVar11;
+                    pCVar19->z = local_48 * fVar11;
                     pCVar19 = pCVar19 + 1;
                   } while (iVar16 < tri_count);
                 }
@@ -248,7 +246,7 @@ core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
                   do {
                     iVar22 = *(int *)&pSVar12[2].vertex_indices;
                     iVar14 = *(int *)&pSVar12[1].u_coord_0;
-                    local_1c = g_TransformedVertexArray[iVar22].x -
+                    local_18 = g_TransformedVertexArray[iVar22].x -
                                g_TransformedVertexArray[iVar14].x;
                     iVar15 = g_TransformedVertexArray[iVar22].y - g_TransformedVertexArray[iVar14].y
                     ;
@@ -256,19 +254,18 @@ core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
                     iVar13 = g_TransformedVertexArray[iVar5].x - g_TransformedVertexArray[iVar22].x;
                     fVar10 = (float)(g_TransformedVertexArray[iVar22].z -
                                     g_TransformedVertexArray[iVar14].z);
-                    fStack_c8 = (float)iVar13;
-                    local_18 = g_TransformedVertexArray[iVar5].y -
-                               g_TransformedVertexArray[iVar22].y;
-                    iStack_14 = g_TransformedVertexArray[iVar5].z -
-                                g_TransformedVertexArray[iVar22].z;
-                    local_24 = (float)iVar15;
-                    fStack_c0 = (float)iStack_14;
-                    fVar11 = (float)iVar15 * fStack_c0 - (float)local_18 * fVar10;
-                    fVar7 = (float)iVar13 * fVar10 - (float)local_1c * fStack_c0;
-                    fVar6 = (float)local_1c * (float)local_18 - fStack_c8 * local_24;
-                    local_b8 = fVar6 * fVar6 + fVar7 * fVar7 + fVar11 * fVar11;
-                    fStack_b4 = (float)(g_LightAttenuationMax - ((int)local_b8 >> 1));
-                    fVar10 = fStack_b4 * (float)65535;
+                    local_c4 = (float)iVar13;
+                    iStack_14 = g_TransformedVertexArray[iVar5].y -
+                                g_TransformedVertexArray[iVar22].y;
+                    local_20 = (float)iVar15;
+                    local_bc = (float)(g_TransformedVertexArray[iVar5].z -
+                                      g_TransformedVertexArray[iVar22].z);
+                    fVar11 = (float)iVar15 * local_bc - (float)iStack_14 * fVar10;
+                    fVar7 = (float)iVar13 * fVar10 - (float)local_18 * local_bc;
+                    fVar6 = (float)local_18 * (float)iStack_14 - local_c4 * local_20;
+                    fStack_b4 = fVar6 * fVar6 + fVar7 * fVar7 + fVar11 * fVar11;
+                    local_b0 = (float)(g_LightAttenuationMax - ((int)fStack_b4 >> 1));
+                    fVar10 = local_b0 * (float)65535;
                     *(float *)&pSVar12->u_coord_1 = fVar11 * fVar10;
                     *(float *)&pSVar12->v_coord_0 = fVar7 * fVar10;
                     *(float *)&pSVar12->v_coord_2 = fVar6 * fVar10;
@@ -329,71 +326,71 @@ core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
               if (this_ptr->field40_0x15ae84 == 0) {
                 if (0 < vertex_count) {
                   pCVar19 = g_VertexNormalArray;
-                  local_60 = g_TransformedVertexArray;
-                  local_5c = (CVector3i *)0x0;
+                  local_5c = g_TransformedVertexArray;
+                  local_58 = (CVector3i *)0x0;
                   iVar16 = 0;
                   do {
-                    pCVar21 = local_60;
-                    local_74 = pCVar19->z * pCVar19->z +
+                    pCVar21 = local_5c;
+                    local_70 = pCVar19->z * pCVar19->z +
                                pCVar19->x * pCVar19->x + pCVar19->y * pCVar19->y;
-                    local_70 = (float)(g_LightAttenuationMax - ((int)local_74 >> 1));
-                    fVar11 = local_70 * (float)65535;
+                    local_6c = (float)(g_LightAttenuationMax - ((int)local_70 >> 1));
+                    fVar11 = local_6c * (float)65535;
                     pCVar19->x = pCVar19->x * fVar11;
                     pCVar19->y = pCVar19->y * fVar11;
                     pCVar19->z = pCVar19->z * fVar11;
-                    local_f8.x = (int)ROUND(pCVar19->x);
-                    local_f8.y = (int)ROUND(pCVar19->y);
-                    local_f8.z = (int)ROUND(pCVar19->z);
+                    local_f4.x = (int)ROUND(pCVar19->x);
+                    local_f4.y = (int)ROUND(pCVar19->y);
+                    local_f4.z = (int)ROUND(pCVar19->z);
                     pCVar19 = pCVar19 + 1;
                     iVar22 = iVar16 + 1;
                     core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0
-                              (this_ptr,local_60,&local_f8,iVar16,0);
+                              (this_ptr,local_5c,&local_f4,iVar16,0);
                     fVar11 = g_PerspectiveReciprocal;
-                    local_5c = pCVar21 + 1;
-                    *(float *)((int)&g_RenderVertexBuffer[0].w_recip + (int)local_58) =
+                    local_58 = pCVar21 + 1;
+                    *(float *)((int)&g_RenderVertexBuffer[0].w_recip + (int)local_54) =
                          g_PerspectiveReciprocal;
                     iVar16 = iVar22;
-                    local_58 = (CVector3i *)((int)local_58 + 0x30);
+                    local_54 = (CVector3i *)((int)local_54 + 0x30);
                   } while (iVar22 < vertex_count);
                   return fVar11;
                 }
               }
               else {
-                iStack_34 = 0;
+                iStack_30 = 0;
                 if (0 < vertex_count) {
                   pCVar19 = g_VertexNormalArray;
-                  local_50 = (CVector3i *)0x0;
-                  local_58 = g_TransformedVertexArray;
+                  local_4c = (CVector3i *)0x0;
+                  local_54 = g_TransformedVertexArray;
                   do {
                     if (((1.0 <= ABS(pCVar19->x)) || (1.0 <= ABS(pCVar19->y))) ||
                        (1.0 <= ABS(pCVar19->z))) {
-                      fStack_80 = pCVar19->z * pCVar19->z +
-                                  pCVar19->x * pCVar19->x + pCVar19->y * pCVar19->y;
-                      local_7c = (float)(g_LightAttenuationMax - ((int)fStack_80 >> 1));
-                      fVar11 = local_7c * (float)65535;
+                      local_7c = pCVar19->z * pCVar19->z +
+                                 pCVar19->x * pCVar19->x + pCVar19->y * pCVar19->y;
+                      local_78 = (float)(g_LightAttenuationMax - ((int)local_7c >> 1));
+                      fVar11 = local_78 * (float)65535;
                       pCVar19->x = pCVar19->x * fVar11;
                       pCVar19->y = pCVar19->y * fVar11;
                       pCVar19->z = pCVar19->z * fVar11;
-                      local_ec.x = (int)ROUND(pCVar19->x);
-                      local_ec.y = (int)ROUND(pCVar19->y);
-                      local_ec.z = (int)ROUND(pCVar19->z);
-                      pCVar21 = &local_ec;
-                      world_position = local_58;
+                      local_e8.x = (int)ROUND(pCVar19->x);
+                      local_e8.y = (int)ROUND(pCVar19->y);
+                      local_e8.z = (int)ROUND(pCVar19->z);
+                      pCVar21 = &local_e8;
+                      world_position = local_54;
                     }
                     else {
                       pCVar21 = (CVector3i *)0x0;
-                      world_position = g_TransformedVertexArray + iStack_34;
+                      world_position = g_TransformedVertexArray + iStack_30;
                     }
                     core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0
-                              (this_ptr,world_position,pCVar21,iStack_34,0);
+                              (this_ptr,world_position,pCVar21,iStack_30,0);
                     pCVar9 = (CDemonSet *)g_PerspectiveReciprocal;
                     pCVar19 = pCVar19 + 1;
-                    iStack_30 = iStack_30 + 1;
-                    *(float *)((int)&g_RenderVertexBuffer[0].w_recip + (int)local_4c) =
+                    iStack_2c = iStack_2c + 1;
+                    *(float *)((int)&g_RenderVertexBuffer[0].w_recip + (int)local_48) =
                          g_PerspectiveReciprocal;
-                    local_54 = local_54 + 0xc;
-                    local_4c = (float)((int)local_4c + 0x30);
-                  } while (iStack_30 < vertex_count);
+                    local_50 = local_50 + 0xc;
+                    local_48 = (float)((int)local_48 + 0x30);
+                  } while (iStack_2c < vertex_count);
                 }
               }
             }
@@ -401,33 +398,33 @@ core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
           else {
             if (this_ptr->rendering_mode == 0) {
               if (0 < vertex_count) {
-                local_58 = (CVector3i *)0x0;
+                local_54 = (CVector3i *)0x0;
                 iVar22 = 0;
-                local_6c = iVar16;
+                local_68 = iVar16;
                 do {
-                  local_ec.z = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_x
+                  local_e8.z = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_x
                                        + iVar22);
-                  local_e0 = *(uint *)
+                  local_dc = *(uint *)
                               ((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_y + iVar22
                               );
-                  local_dc = *(uint *)
+                  local_d8 = *(uint *)
                               ((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_z + iVar22
                               );
                   pCVar9 = (CDemonSet *)core_set_cpp_FUN_0056e890();
                   iVar22 = iVar22 + 0x30;
-                  piVar18 = (int *)((int)local_58 + 0x32cd850 + (uint)bVar20 * -8);
-                  *(uint *)((int)&g_TransformedVertexArray[0].x + (int)local_58) = uStack_12c;
-                  *piVar18 = aiStack_128[(uint)bVar20 * -2];
+                  piVar18 = (int *)((int)local_54 + 0x32cd850 + (uint)bVar20 * -8);
+                  *(uint *)((int)&g_TransformedVertexArray[0].x + (int)local_54) = uStack_128;
+                  *piVar18 = local_124[(uint)bVar20 * -2];
                   piVar18[(uint)bVar20 * -2 + 1] =
-                       aiStack_128[(uint)bVar20 * -2 + (uint)bVar20 * -2 + 1];
-                  local_58 = (CVector3i *)((int)local_58 + 0xc);
-                } while (iVar22 < local_6c);
+                       local_124[(uint)bVar20 * -2 + (uint)bVar20 * -2 + 1];
+                  local_54 = (CVector3i *)((int)local_54 + 0xc);
+                } while (iVar22 < local_68);
               }
               iVar16 = 0;
               if (0 < vertex_count) {
                 do {
                   iVar22 = iVar16 * 0xc;
-                  local_d8 = ((uint)((longlong)g_TransformMatrix.m[0].x * (longlong)*(int *)flags)
+                  local_d4 = ((uint)((longlong)g_TransformMatrix.m[0].x * (longlong)*(int *)flags)
                               >> 0x10 |
                              (int)((ulonglong)
                                    ((longlong)g_TransformMatrix.m[0].x * (longlong)*(int *)flags) >>
@@ -442,84 +439,84 @@ core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
                              (int)((ulonglong)
                                    ((longlong)g_TransformMatrix.m[2].x *
                                    (longlong)*(int *)(flags + 8)) >> 0x20) << 0x10);
-                  local_d4 = ((uint)((longlong)g_TransformMatrix.m[0].y * (longlong)*(int *)flags)
-                              >> 0x10 |
-                             (int)((ulonglong)
-                                   ((longlong)g_TransformMatrix.m[0].y * (longlong)*(int *)flags) >>
-                                  0x20) << 0x10) +
-                             ((uint)((longlong)g_TransformMatrix.m[1].y *
-                                    (longlong)*(int *)(flags + 4)) >> 0x10 |
-                             (int)((ulonglong)
-                                   ((longlong)g_TransformMatrix.m[1].y *
-                                   (longlong)*(int *)(flags + 4)) >> 0x20) << 0x10) +
-                             ((uint)((longlong)g_TransformMatrix.m[2].y *
-                                    (longlong)*(int *)(flags + 8)) >> 0x10 |
-                             (int)((ulonglong)
-                                   ((longlong)g_TransformMatrix.m[2].y *
-                                   (longlong)*(int *)(flags + 8)) >> 0x20) << 0x10);
-                  iStack_d0 = ((uint)((longlong)g_TransformMatrix.m[0].z * (longlong)*(int *)flags)
+                  iStack_d0 = ((uint)((longlong)g_TransformMatrix.m[0].y * (longlong)*(int *)flags)
                                >> 0x10 |
                               (int)((ulonglong)
-                                    ((longlong)g_TransformMatrix.m[0].z * (longlong)*(int *)flags)
+                                    ((longlong)g_TransformMatrix.m[0].y * (longlong)*(int *)flags)
                                    >> 0x20) << 0x10) +
-                              ((uint)((longlong)g_TransformMatrix.m[1].z *
+                              ((uint)((longlong)g_TransformMatrix.m[1].y *
                                      (longlong)*(int *)(flags + 4)) >> 0x10 |
                               (int)((ulonglong)
-                                    ((longlong)g_TransformMatrix.m[1].z *
+                                    ((longlong)g_TransformMatrix.m[1].y *
                                     (longlong)*(int *)(flags + 4)) >> 0x20) << 0x10) +
-                              ((uint)((longlong)g_TransformMatrix.m[2].z *
+                              ((uint)((longlong)g_TransformMatrix.m[2].y *
                                      (longlong)*(int *)(flags + 8)) >> 0x10 |
                               (int)((ulonglong)
-                                    ((longlong)g_TransformMatrix.m[2].z *
+                                    ((longlong)g_TransformMatrix.m[2].y *
                                     (longlong)*(int *)(flags + 8)) >> 0x20) << 0x10);
-                  local_120 = (float)(((uint)((longlong)g_InverseMatrix.m[0].x * (longlong)local_d8)
+                  local_cc = ((uint)((longlong)g_TransformMatrix.m[0].z * (longlong)*(int *)flags)
+                              >> 0x10 |
+                             (int)((ulonglong)
+                                   ((longlong)g_TransformMatrix.m[0].z * (longlong)*(int *)flags) >>
+                                  0x20) << 0x10) +
+                             ((uint)((longlong)g_TransformMatrix.m[1].z *
+                                    (longlong)*(int *)(flags + 4)) >> 0x10 |
+                             (int)((ulonglong)
+                                   ((longlong)g_TransformMatrix.m[1].z *
+                                   (longlong)*(int *)(flags + 4)) >> 0x20) << 0x10) +
+                             ((uint)((longlong)g_TransformMatrix.m[2].z *
+                                    (longlong)*(int *)(flags + 8)) >> 0x10 |
+                             (int)((ulonglong)
+                                   ((longlong)g_TransformMatrix.m[2].z *
+                                   (longlong)*(int *)(flags + 8)) >> 0x20) << 0x10);
+                  local_11c = (float)(((uint)((longlong)g_InverseMatrix.m[0].x * (longlong)local_d4)
                                        >> 0x10 |
                                       (int)((ulonglong)
-                                            ((longlong)g_InverseMatrix.m[0].x * (longlong)local_d8)
+                                            ((longlong)g_InverseMatrix.m[0].x * (longlong)local_d4)
                                            >> 0x20) << 0x10) +
-                                      ((uint)((longlong)g_InverseMatrix.m[1].x * (longlong)local_d4)
-                                       >> 0x10 |
+                                      ((uint)((longlong)g_InverseMatrix.m[1].x * (longlong)iStack_d0
+                                             ) >> 0x10 |
                                       (int)((ulonglong)
-                                            ((longlong)g_InverseMatrix.m[1].x * (longlong)local_d4)
+                                            ((longlong)g_InverseMatrix.m[1].x * (longlong)iStack_d0)
                                            >> 0x20) << 0x10) +
-                                     ((uint)((longlong)g_InverseMatrix.m[2].x * (longlong)iStack_d0)
+                                     ((uint)((longlong)g_InverseMatrix.m[2].x * (longlong)local_cc)
                                       >> 0x10 |
                                      (int)((ulonglong)
-                                           ((longlong)g_InverseMatrix.m[2].x * (longlong)iStack_d0)
+                                           ((longlong)g_InverseMatrix.m[2].x * (longlong)local_cc)
                                           >> 0x20) << 0x10));
-                  local_11c = ((uint)((longlong)g_InverseMatrix.m[0].y * (longlong)local_d8) >> 0x10
+                  local_118 = ((uint)((longlong)g_InverseMatrix.m[0].y * (longlong)local_d4) >> 0x10
                               | (int)((ulonglong)
-                                      ((longlong)g_InverseMatrix.m[0].y * (longlong)local_d8) >>
+                                      ((longlong)g_InverseMatrix.m[0].y * (longlong)local_d4) >>
                                      0x20) << 0x10) +
-                              ((uint)((longlong)g_InverseMatrix.m[1].y * (longlong)local_d4) >> 0x10
-                              | (int)((ulonglong)
-                                      ((longlong)g_InverseMatrix.m[1].y * (longlong)local_d4) >>
-                                     0x20) << 0x10) +
-                              ((uint)((longlong)g_InverseMatrix.m[2].y * (longlong)iStack_d0) >>
+                              ((uint)((longlong)g_InverseMatrix.m[1].y * (longlong)iStack_d0) >>
                                0x10 | (int)((ulonglong)
-                                            ((longlong)g_InverseMatrix.m[2].y * (longlong)iStack_d0)
-                                           >> 0x20) << 0x10);
+                                            ((longlong)g_InverseMatrix.m[1].y * (longlong)iStack_d0)
+                                           >> 0x20) << 0x10) +
+                              ((uint)((longlong)g_InverseMatrix.m[2].y * (longlong)local_cc) >> 0x10
+                              | (int)((ulonglong)
+                                      ((longlong)g_InverseMatrix.m[2].y * (longlong)local_cc) >>
+                                     0x20) << 0x10);
                   flags = flags + 0xc;
                   pCVar9 = (CDemonSet *)
-                           ((uint)((longlong)g_InverseMatrix.m[2].z * (longlong)iStack_d0) >> 0x10 |
-                           (int)((ulonglong)((longlong)g_InverseMatrix.m[2].z * (longlong)iStack_d0)
+                           ((uint)((longlong)g_InverseMatrix.m[2].z * (longlong)local_cc) >> 0x10 |
+                           (int)((ulonglong)((longlong)g_InverseMatrix.m[2].z * (longlong)local_cc)
                                 >> 0x20) << 0x10);
                   pCVar19 = g_VertexNormalArray + iVar16;
-                  local_118 = pCVar9->cameras[0].name +
-                              ((uint)((longlong)g_InverseMatrix.m[0].z * (longlong)local_d8) >> 0x10
-                              | (int)((ulonglong)
-                                      ((longlong)g_InverseMatrix.m[0].z * (longlong)local_d8) >>
-                                     0x20) << 0x10) +
-                              ((uint)((longlong)g_InverseMatrix.m[1].z * (longlong)local_d4) >> 0x10
-                              | (int)((ulonglong)
-                                      ((longlong)g_InverseMatrix.m[1].z * (longlong)local_d4) >>
-                                     0x20) << 0x10) + -4;
+                  pcStack_114 = pCVar9->cameras[0].name +
+                                ((uint)((longlong)g_InverseMatrix.m[0].z * (longlong)local_d4) >>
+                                 0x10 | (int)((ulonglong)
+                                              ((longlong)g_InverseMatrix.m[0].z * (longlong)local_d4
+                                              ) >> 0x20) << 0x10) +
+                                ((uint)((longlong)g_InverseMatrix.m[1].z * (longlong)iStack_d0) >>
+                                 0x10 | (int)((ulonglong)
+                                              ((longlong)g_InverseMatrix.m[1].z *
+                                              (longlong)iStack_d0) >> 0x20) << 0x10) + -4;
                   iVar16 = iVar16 + 1;
                   piVar18 = (int *)(iVar22 + 0x33081d0 + (uint)bVar20 * -8);
-                  pCVar19->x = local_120;
-                  *piVar18 = aiStack_128[(uint)bVar20 * -2 + 3];
+                  pCVar19->x = local_11c;
+                  *piVar18 = local_124[(uint)bVar20 * -2 + 3];
                   piVar18[(uint)bVar20 * -2 + 1] =
-                       aiStack_128[(uint)bVar20 * -2 + (uint)bVar20 * -2 + 4];
+                       local_124[(uint)bVar20 * -2 + (uint)bVar20 * -2 + 4];
                 } while (iVar16 < vertex_count);
               }
             }
@@ -540,17 +537,17 @@ core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
               }
             }
             if (0 < vertex_count) {
-              local_50 = g_TransformedVertexArray;
+              local_4c = g_TransformedVertexArray;
               iVar16 = 0;
               iVar22 = 0;
               pCVar19 = g_VertexNormalArray;
               do {
                 iVar14 = iVar16 + 1;
                 core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0
-                          (this_ptr,local_50,(CVector3i *)pCVar19,iVar16,0);
+                          (this_ptr,local_4c,(CVector3i *)pCVar19,iVar16,0);
                 *(float *)((int)&g_RenderVertexBuffer[0].w_recip + iVar22) = g_PerspectiveReciprocal
                 ;
-                local_4c = (float)((int)local_4c + 0xc);
+                local_48 = (float)((int)local_48 + 0xc);
                 iVar16 = iVar14;
                 iVar22 = iVar22 + 0x30;
                 pCVar19 = pCVar19 + 1;
@@ -560,30 +557,30 @@ core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
           }
         }
         else if (0 < vertex_count) {
-          local_3c = 0;
+          iStack_38 = 0;
           iVar16 = 0;
           do {
-            local_108 = *(uint *)
-                         ((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_x + iVar16);
             local_104 = *(uint *)
-                         ((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_y + iVar16);
+                         ((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_x + iVar16);
             local_100 = *(uint *)
-                         ((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_z + iVar16);
+                         ((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_y + iVar16);
+            local_fc = *(uint *)
+                        ((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_z + iVar16);
             core_set_cpp_FUN_0056e890();
-            fVar11 = fStack_38;
+            fVar11 = fStack_34;
             iVar22 = 0;
             pCVar21 = (CVector3i *)0x0;
-            CStack_170.x = local_148[2];
-            *(int *)((int)&CStack_170 + (uint)bVar20 * -8 + 4) = local_148[(uint)bVar20 * -2 + 3];
-            *(int *)((int)&CStack_170 + (uint)bVar20 * -8 + (uint)bVar20 * -8 + 8) =
-                 local_148[(uint)bVar20 * -2 + (uint)bVar20 * -2 + 4];
+            local_16c.x = aiStack_144[2];
+            *(int *)((int)&local_16c + (uint)bVar20 * -8 + 4) = aiStack_144[(uint)bVar20 * -2 + 3];
+            *(int *)((int)&local_16c + (uint)bVar20 * -8 + (uint)bVar20 * -8 + 8) =
+                 aiStack_144[(uint)bVar20 * -2 + (uint)bVar20 * -2 + 4];
             core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0
-                      (this_ptr,&CStack_170,pCVar21,(int)fVar11,iVar22);
+                      (this_ptr,&local_16c,pCVar21,(int)fVar11,iVar22);
             fVar11 = g_PerspectiveReciprocal;
-            iStack_34 = iStack_34 + 1;
+            iStack_30 = iStack_30 + 1;
             *(float *)((int)&g_RenderVertexBuffer[0].w_recip + iVar16) = g_PerspectiveReciprocal;
             iVar16 = iVar16 + 0x30;
-          } while (iStack_34 < vertex_count);
+          } while (iStack_30 < vertex_count);
           return fVar11;
         }
       }

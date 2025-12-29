@@ -113,8 +113,8 @@ void core_stranger_cpp_CStranger_FUN_005be520(void)
   CQuaternion4f local_1a4;
   CVector3f local_190;
   CVector3f local_184;
+  float fStack_178;
   float fStack_174;
-  float fStack_170;
   CVector3f local_16c;
   float local_160;
   float local_15c;
@@ -133,8 +133,9 @@ void core_stranger_cpp_CStranger_FUN_005be520(void)
   float local_e8;
   float local_e4;
   CVector3f local_e0;
+  float fStack_d4;
+  float fStack_d0;
   float fStack_cc;
-  float fStack_c8;
   CVector3f local_c4;
   CVector3f local_b8;
   CVector3f local_ac;
@@ -560,16 +561,16 @@ LAB_005be795:
       pCVar16 = local_408;
       pfVar4 = (float *)(**(code **)(*(int *)(in_stack_00000004[0x179].field21_0x11c + 0x154) + 0x14
                                     ))();
-      fStack_cc = *pfVar4 + pfVar4[3];
-      fStack_c8 = pfVar4[1] + pfVar4[4];
+      fStack_d4 = *pfVar4 + pfVar4[3];
+      fStack_d0 = pfVar4[1] + pfVar4[4];
+      local_184.z = fStack_d4 * 0.5f;
+      fStack_cc = pfVar4[2] + pfVar4[5];
+      fStack_178 = fStack_d0 * 0.5f;
       fStack_174 = fStack_cc * 0.5f;
-      local_c4.x = pfVar4[2] + pfVar4[5];
-      fStack_170 = fStack_c8 * 0.5f;
-      local_16c.x = local_c4.x * 0.5f;
-      if (&stack0x00000000 != (byte *)0x3f6bc10) {
-        _DAT_03f6ba9c = fStack_174;
-        _DAT_03f6baa0 = fStack_170;
-        _DAT_03f6baa4 = local_16c.x;
+      if (&stack0x00000000 != (byte *)0x3f6bc18) {
+        _DAT_03f6ba9c = local_184.z;
+        _DAT_03f6baa0 = fStack_178;
+        _DAT_03f6baa4 = fStack_174;
       }
     }
     pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0

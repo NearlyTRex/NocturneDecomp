@@ -12,15 +12,14 @@ uint core_hero_cpp_FUN_004f2af0(void)
 
 {
   CBoundingBox3D *pCVar1;
-  int iVar2;
-  BADSPACEBASE *in_ESP;
+  float fVar2;
   int iVar3;
+  BADSPACEBASE *in_ESP;
   int iVar4;
+  int iVar5;
   CDemonActor *in_stack_00000004;
-  CBoundingBox3D local_64;
-  CVector3f CStack_48;
-  CVector3f CStack_3c;
-  float fStack_30;
+  CVector3f CStack_44;
+  CVector3f CStack_38;
   float fStack_2c;
   float fStack_28;
   float fStack_24;
@@ -29,35 +28,34 @@ uint core_hero_cpp_FUN_004f2af0(void)
   float fStack_18;
   float fStack_14;
   
-  pCVar1 = (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,&local_64);
-  fStack_30 = (pCVar1->min).x + (pCVar1->max).x;
-  fStack_2c = (pCVar1->min).y + (pCVar1->max).y;
-  fStack_24 = fStack_30 * 0.5f;
-  fStack_28 = (pCVar1->min).z + (pCVar1->max).z;
-  CStack_3c.y = fStack_2c * 0.5f;
-  fStack_1c = fStack_28 * 0.5f;
-  CStack_3c.x = 0.0;
-  CStack_3c.z = 1.5;
-  iVar2 = 0;
-  fStack_20 = CStack_3c.y;
-  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(in_stack_00000004,&CStack_48,&CStack_3c)
+  pCVar1 = (*in_stack_00000004->vtable->getBoundingBox)
+                     (in_stack_00000004,(CBoundingBox3D *)&stack0xffffff9c);
+  fStack_2c = (pCVar1->min).x + (pCVar1->max).x;
+  fStack_28 = (pCVar1->min).y + (pCVar1->max).y;
+  fStack_20 = fStack_2c * 0.5f;
+  fStack_24 = (pCVar1->min).z + (pCVar1->max).z;
+  CStack_38.y = fStack_28 * 0.5f;
+  fStack_18 = fStack_24 * 0.5f;
+  CStack_38.x = 0.0;
+  CStack_38.z = 1.5;
+  iVar3 = 0;
+  fStack_1c = CStack_38.y;
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(in_stack_00000004,&CStack_44,&CStack_38)
   ;
-  fStack_18 = 1e+30;
-  iVar4 = 0;
-  for (iVar3 = 0; iVar3 < (int)g_CDemonSetPtr->actor_list_ptr; iVar3 = iVar3 + 1) {
-    local_64.min.x =
-         (float)(**(code **)(*(int *)(*(int *)(g_CDemonSetPtr->actor_list_data + iVar2) + 0x154) +
-                            0x58))();
-    if ((0.0 <= local_64.min.x) && (local_64.min.x < fStack_18)) {
-      iVar4 = *(int *)(g_CDemonSetPtr->actor_list_data + iVar2);
-      fStack_18 = local_64.min.x;
+  fStack_14 = 1e+30;
+  iVar5 = 0;
+  for (iVar4 = 0; iVar4 < (int)g_CDemonSetPtr->actor_list_ptr; iVar4 = iVar4 + 1) {
+    fVar2 = (float)(**(code **)(*(int *)(*(int *)(g_CDemonSetPtr->actor_list_data + iVar3) + 0x154)
+                               + 0x58))();
+    if ((0.0 <= fVar2) && (fVar2 < fStack_14)) {
+      iVar5 = *(int *)(g_CDemonSetPtr->actor_list_data + iVar3);
+      fStack_14 = fVar2;
     }
-    iVar2 = iVar2 + 4;
-    fStack_14 = local_64.min.x;
+    iVar3 = iVar3 + 4;
   }
-  if (iVar4 != 0) {
-    iVar4 = (**(code **)(*(int *)(iVar4 + 0x154) + 0x5c))();
-    if (iVar4 != 0) {
+  if (iVar5 != 0) {
+    iVar5 = (**(code **)(*(int *)(iVar5 + 0x154) + 0x5c))();
+    if (iVar5 != 0) {
       in_stack_00000004[0x8d].create_event[0x48] = '\0';
       in_stack_00000004[0x8d].create_event[0x49] = '\0';
       in_stack_00000004[0x8d].create_event[0x4a] = '\0';

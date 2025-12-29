@@ -25,42 +25,32 @@ void core_gabriela_cpp_FUN_004d4190(void)
   CDemonActor *in_stack_00000004;
   ulonglong uStack_118;
   float fStack_114;
-  CBoundingBox3D CStack_110;
-  byte auStack_ec [24];
-  float fStack_d4;
-  float fStack_d0;
-  float fStack_cc;
-  float fStack_c8;
-  float fStack_c4;
-  float local_c0;
+  CVector3f aCStack_dc [2];
   CVector3f local_bc;
-  float fStack_a8;
-  float fStack_a4;
-  float fStack_a0;
-  float local_9c;
+  float local_b0;
+  float local_ac;
+  float afStack_a8 [5];
+  float local_94;
   float fStack_90;
   float fStack_8c;
   float fStack_88;
   float local_80;
   float local_7c;
   float fStack_78;
-  float fStack_74;
   float fStack_70;
-  byte local_6c [12];
-  float fStack_60;
-  float fStack_5c;
-  float fStack_58;
+  float local_6c;
+  float local_68;
+  CVector3f local_64;
   float fStack_54;
   float fStack_50;
   float fStack_4c;
-  float fStack_48;
-  float fStack_44;
   float fStack_40;
-  CVector3f CStack_3c;
-  float fStack_30;
+  float fStack_3c;
+  CVector3f CStack_38;
   float fStack_2c;
   float fStack_28;
   float local_24;
+  float local_20;
   uint local_1c;
   float fStack_14;
   
@@ -100,7 +90,7 @@ void core_gabriela_cpp_FUN_004d4190(void)
         in_stack_00000004[0x8d].create_event[0x3e] = '\0';
         in_stack_00000004[0x8d].create_event[0x3f] = '\0';
         pCVar1 = g_HeroActors[iVar6];
-        if (&fStack_90 != &fStack_a8) {
+        if (&fStack_90 != afStack_a8) {
           fStack_90 = (in_stack_00000004->location).position.x -
                       (pCVar1->base_character).base_actor.location.position.x;
           fStack_8c = (in_stack_00000004->location).position.y -
@@ -125,35 +115,32 @@ void core_gabriela_cpp_FUN_004d4190(void)
         this_ptr_00 = (CDemonActor *)core_hero_cpp_FUN_004f3960();
       }
       if ((this_ptr_00 == (CDemonActor *)0x0) || ((float)30 <= fStack_114)) {
-        if (in_stack_00000004[0x179].previous_transform_state.orientation.z != 0.0) {
-          pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                             ((CMotionController *)(in_stack_00000004 + 1));
-          if (pSVar2->state_index == 0) {
-            in_stack_00000004[0x8d].create_event[0x54] = '\x01';
-            in_stack_00000004[0x8d].create_event[0x55] = '\0';
-            in_stack_00000004[0x8d].create_event[0x56] = '\0';
-            in_stack_00000004[0x8d].create_event[0x57] = '\0';
-            return;
-          }
+        if ((in_stack_00000004[0x179].previous_transform_state.orientation.z != 0.0) &&
+           (pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                               ((CMotionController *)(in_stack_00000004 + 1)),
+           pSVar2->state_index == 0)) {
+          in_stack_00000004[0x8d].create_event[0x54] = '\x01';
+          in_stack_00000004[0x8d].create_event[0x55] = '\0';
+          in_stack_00000004[0x8d].create_event[0x56] = '\0';
+          in_stack_00000004[0x8d].create_event[0x57] = '\0';
+          return;
         }
       }
       else {
-        if (in_stack_00000004[0x179].previous_transform_state.orientation.z == 0.0) {
-          pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                             ((CMotionController *)(in_stack_00000004 + 1));
-          if (pSVar2->state_index == 0) {
-            in_stack_00000004[0x8d].create_event[0x54] = '\x01';
-            in_stack_00000004[0x8d].create_event[0x55] = '\0';
-            in_stack_00000004[0x8d].create_event[0x56] = '\0';
-            in_stack_00000004[0x8d].create_event[0x57] = '\0';
-          }
+        if ((in_stack_00000004[0x179].previous_transform_state.orientation.z == 0.0) &&
+           (pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                               ((CMotionController *)(in_stack_00000004 + 1)),
+           pSVar2->state_index == 0)) {
+          in_stack_00000004[0x8d].create_event[0x54] = '\x01';
+          in_stack_00000004[0x8d].create_event[0x55] = '\0';
+          in_stack_00000004[0x8d].create_event[0x56] = '\0';
+          in_stack_00000004[0x8d].create_event[0x57] = '\0';
         }
-        local_6c._8_4_ =
-             (this_ptr_00->location).position.x - (in_stack_00000004->location).position.x;
-        fStack_60 = (this_ptr_00->location).position.y - (in_stack_00000004->location).position.y;
-        fStack_5c = (this_ptr_00->location).position.z - (in_stack_00000004->location).position.z;
+        local_64.x = (this_ptr_00->location).position.x - (in_stack_00000004->location).position.x;
+        local_64.y = (this_ptr_00->location).position.y - (in_stack_00000004->location).position.y;
+        local_64.z = (this_ptr_00->location).position.z - (in_stack_00000004->location).position.z;
         pCVar3 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
-                           ((CVector3f *)(auStack_ec + 0x10),(CVector3f *)(local_6c + 8));
+                           (aCStack_dc,&local_64);
         fVar4 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                           (pCVar3->y - (in_stack_00000004->orient).bank);
         fVar4 = fVar4 * (float)0.31830988619288902 * (float)4;
@@ -168,58 +155,49 @@ void core_gabriela_cpp_FUN_004d4190(void)
         if (((float)-0.050000000000000003 < *(float *)(in_stack_00000004[0x8d].create_event + 0x60)) &&
            ((double)*(float *)(in_stack_00000004[0x8d].create_event + 0x60) < 0.050000000000000003)) {
           pCVar5 = (*in_stack_00000004->vtable->getBoundingBox)
-                             (in_stack_00000004,(CBoundingBox3D *)auStack_ec);
-          fStack_d4 = (pCVar5->min).x + (pCVar5->max).x;
-          fStack_d0 = (pCVar5->min).y + (pCVar5->max).y;
-          fStack_50 = fStack_d4 * 0.5f;
-          fStack_cc = (pCVar5->min).z + (pCVar5->max).z;
-          fStack_4c = fStack_d0 * 0.5f;
-          fStack_48 = fStack_cc * 0.5f;
-          fStack_74 = (in_stack_00000004->location).position.x + fStack_50;
-          fStack_70 = (in_stack_00000004->location).position.y + fStack_4c;
-          local_6c._0_4_ = (in_stack_00000004->location).position.z + fStack_48;
-          pCVar5 = (*this_ptr_00->vtable->getBoundingBox)(this_ptr_00,&CStack_110);
-          fStack_2c = (pCVar5->min).x + (pCVar5->max).x;
-          fStack_28 = (pCVar5->min).y + (pCVar5->max).y;
-          fStack_5c = fStack_2c * 0.5f;
-          local_24 = (pCVar5->min).z + (pCVar5->max).z;
-          fStack_58 = fStack_28 * 0.5f;
-          fStack_54 = local_24 * 0.5f;
-          fStack_44 = (this_ptr_00->location).position.x + fStack_5c;
-          fStack_40 = (this_ptr_00->location).position.y + fStack_58;
-          fStack_c8 = fStack_44 - fStack_74;
-          fStack_c4 = fStack_40 - fStack_70;
-          CStack_3c.x = (this_ptr_00->location).position.z + fStack_54;
-          local_c0 = CStack_3c.x - (float)local_6c._0_4_;
-          fVar4 = SQRT(local_c0 * local_c0 + fStack_c8 * fStack_c8 + fStack_c4 * fStack_c4);
-          if (fVar4 <= 0.0) {
-            fStack_c4 = 0.0;
-            fStack_c8 = 0.0;
-            local_c0 = 0.0;
+                             (in_stack_00000004,(CBoundingBox3D *)&stack0xffffff14);
+          local_bc.z = (pCVar5->min).x + (pCVar5->max).x;
+          local_b0 = (pCVar5->min).y + (pCVar5->max).y;
+          CStack_38.z = local_bc.z * 0.5f;
+          local_ac = (pCVar5->min).z + (pCVar5->max).z;
+          fStack_2c = local_b0 * 0.5f;
+          fStack_28 = local_ac * 0.5f;
+          fStack_54 = (in_stack_00000004->location).position.x + CStack_38.z;
+          fStack_50 = (in_stack_00000004->location).position.y + fStack_2c;
+          fStack_4c = (in_stack_00000004->location).position.z + fStack_28;
+          pCVar5 = (*this_ptr_00->vtable->getBoundingBox)
+                             (this_ptr_00,(CBoundingBox3D *)&stack0xffffff10);
+          fStack_28 = ((pCVar5->min).x + (pCVar5->max).x) * 0.5f;
+          local_24 = ((pCVar5->min).y + (pCVar5->max).y) * 0.5f;
+          local_20 = ((pCVar5->min).z + (pCVar5->max).z) * 0.5f;
+          fStack_70 = (this_ptr_00->location).position.x + fStack_28;
+          local_6c = (this_ptr_00->location).position.y + local_24;
+          fStack_40 = fStack_70 - fStack_40;
+          fStack_3c = local_6c - fStack_3c;
+          local_68 = (this_ptr_00->location).position.z + local_20;
+          CStack_38.x = local_68 - CStack_38.x;
+          fStack_8c = SQRT(CStack_38.x * CStack_38.x + fStack_40 * fStack_40 + fStack_3c * fStack_3c
+                          );
+          if (fStack_8c <= 0.0) {
+            fStack_90 = 0.0;
+            local_94 = 0.0;
+            fStack_8c = 0.0;
           }
           else {
-            fVar4 = 1.0 / fVar4;
-            fStack_c8 = fStack_c8 * fVar4;
-            fStack_c4 = fStack_c4 * fVar4;
-            local_c0 = local_c0 * fVar4;
+            fStack_8c = 1.0 / fStack_8c;
+            local_94 = fStack_40 * fStack_8c;
+            fStack_90 = fStack_3c * fStack_8c;
+            fStack_8c = CStack_38.x * fStack_8c;
           }
-          CStack_3c.y = fStack_c8 * 3f;
-          CStack_3c.z = fStack_c4 * 3f;
-          fStack_30 = local_c0 * 3f;
-          fStack_a4 = fStack_44 + CStack_3c.y;
-          fStack_a0 = fStack_40 + CStack_3c.z;
-          local_9c = CStack_3c.x + fStack_30;
-          if (&fStack_44 != &fStack_a4) {
-            fStack_44 = fStack_a4;
-            fStack_40 = fStack_a0;
-            CStack_3c.x = local_9c;
-          }
+          fStack_70 = fStack_70 + local_94 * 3f;
+          local_6c = local_6c + fStack_90 * 3f;
+          local_68 = local_68 + fStack_8c * 3f;
           core_setcolid_cpp_CDemonSet_setRayType_FUN_00574230(g_CDemonSetPtr,1);
           core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,in_stack_00000004);
           this_ptr = g_CDemonSetPtr;
           g_CDemonSetPtr->collision_actor = (CDemonActor *)0x0;
           core_setcolid_cpp_CDemonSet_raycast_FUN_00572530
-                    (this_ptr,(CVector3f *)local_6c,&CStack_3c);
+                    (this_ptr,&CStack_38,(CVector3f *)&stack0xfffffff8);
           core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
           if (this_ptr_00 == g_CDemonSetPtr->collision_actor) {
             in_stack_00000004[0x8d].create_event[0x48] = '\x01';

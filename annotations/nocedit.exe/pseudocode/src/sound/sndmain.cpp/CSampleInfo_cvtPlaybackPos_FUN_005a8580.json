@@ -1,18 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 134,
-    "complexity_score": 537,
+    "complexity_score": 597,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 10,
     "pseudocode_lines": 72,
-    "suspect_count": 44,
+    "suspect_count": 49,
     "suspect_types": [
       "concat_artifact",
       "format_string_mismatch",
+      "stack_align_anchor",
       "stack_param",
       "sub_artifact",
-      "unknown_field"
+      "unknown_field",
+      "variadic_anchor"
     ],
     "total_lines": 206
   },
@@ -513,28 +515,6 @@
       "type": "concat_artifact"
     },
     {
-      "actual_args": 0,
-      "description": "Format \"SampleInfo::cvtPlaybackPos - can't use relative sa...\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "SampleInfo::cvtPlaybackPos - can't use relative sample position when length of %s is not known.",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 22,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"SampleInfo::cvtPlaybackPos - can't use relative sample",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"SampleInfo::cvtPlaybackPos - can't use relative sa...\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "SampleInfo::cvtPlaybackPos - can't use relative sample position when length of %s is not known.",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 54,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"SampleInfo::cvtPlaybackPos - can't use relative sample",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
       "add_esp_value": 4,
       "call_address": "005a85d1",
       "caller_has_stack_issues": true,
@@ -599,9 +579,32 @@
       "type": "variadic_anchor"
     },
     {
+      "actual_args": 0,
+      "description": "Format \"SampleInfo::cvtPlaybackPos - can't use relative sa...\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "SampleInfo::cvtPlaybackPos - can't use relative sample position when length of %s is not known.",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 22,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"SampleInfo::cvtPlaybackPos - can't use relative sample",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"SampleInfo::cvtPlaybackPos - can't use relative sa...\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "SampleInfo::cvtPlaybackPos - can't use relative sample position when length of %s is not known.",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 54,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"SampleInfo::cvtPlaybackPos - can't use relative sample",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
       "align_instruction": "AND ESP,0xfffffff8",
       "description": "Stack alignment can be anchored: ESP = EBP - 0x8",
       "fix_address": "005a8589",
+      "frame_offset": 8,
       "match": "AND ESP",
       "sub_esp_offset": 8,
       "text": "Stack alignment at 005a8589 (SUB ESP, 0x8 before)",

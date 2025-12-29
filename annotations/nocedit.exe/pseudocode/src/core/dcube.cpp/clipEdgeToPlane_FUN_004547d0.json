@@ -1,17 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 176,
-    "complexity_score": 151,
+    "complexity_score": 200,
     "cross_reference_count": 6,
     "function_call_count": 1,
     "global_count": 4,
-    "pseudocode_lines": 41,
-    "suspect_count": 10,
+    "pseudocode_lines": 45,
+    "suspect_count": 13,
     "suspect_types": [
+      "concat_artifact",
+      "stack_align_anchor",
       "sub_artifact",
-      "unknown_field"
+      "unknown_field",
+      "variadic_anchor"
     ],
-    "total_lines": 217
+    "total_lines": 221
   },
   "cross_references": [
     {
@@ -213,70 +216,77 @@
   "suspects": [
     {
       "description": "Decompiler double/longlong extraction artifact",
-      "line": 15,
+      "line": 17,
       "match": "SUB84",
       "text": "local_28 = SUB84 /* extract 2-byte value */(dVar1,0);",
       "type": "sub_artifact"
     },
     {
-      "description": "Unknown/mangled field access",
+      "description": "Decompiler double/longlong composition artifact",
       "line": 26,
+      "match": "CONCAT44",
+      "text": "(float)(double)CONCAT44 /* combine 2-byte values */(uStack_20,uStack_24);",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 30,
       "match": "._0_4_",
       "text": "if ((((((ulonglong)plane_nx & 0x7fffffff00000000) != 0) || (plane_nx._0_4_ != 0)) &&",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 28,
+      "line": 32,
       "match": "._0_4_",
       "text": "(((plane_ny._0_4_ == 0 && (((ulonglong)plane_nz & 0x7fffffff00000000) == 0)) &&",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 29,
+      "line": 33,
       "match": "._0_4_",
       "text": "(plane_nz._0_4_ == 0)))) {",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 32,
+      "line": 36,
       "match": "._0_4_",
       "text": "if (((((ulonglong)plane_nx & 0x7fffffff00000000) == 0) && (plane_nx._0_4_ == 0)) &&",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 33,
+      "line": 37,
       "match": "._0_4_",
       "text": "(((((ulonglong)plane_ny & 0x7fffffff00000000) != 0 || (plane_ny._0_4_ != 0)) &&",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 34,
+      "line": 38,
       "match": "._0_4_",
       "text": "((((ulonglong)plane_nz & 0x7fffffff00000000) == 0 && (plane_nz._0_4_ == 0)))))) {",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 37,
+      "line": 41,
       "match": "._0_4_",
       "text": "if (((((((ulonglong)plane_nx & 0x7fffffff00000000) == 0) && (plane_nx._0_4_ == 0)) &&",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 38,
+      "line": 42,
       "match": "._0_4_",
       "text": "(((ulonglong)plane_ny & 0x7fffffff00000000) == 0)) && (plane_ny._0_4_ == 0)) &&",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 39,
+      "line": 43,
       "match": "._0_4_",
       "text": "((((ulonglong)plane_nz & 0x7fffffff00000000) != 0 || (plane_nz._0_4_ != 0)))) {",
       "type": "unknown_field"
@@ -301,6 +311,7 @@
       "align_instruction": "AND ESP,0xfffffff8",
       "description": "Stack alignment can be anchored: ESP = EBP - 0x18",
       "fix_address": "004547d9",
+      "frame_offset": 24,
       "match": "AND ESP",
       "sub_esp_offset": 24,
       "text": "Stack alignment at 004547d9 (SUB ESP, 0x18 before)",

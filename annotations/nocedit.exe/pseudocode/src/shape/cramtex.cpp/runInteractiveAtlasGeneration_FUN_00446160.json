@@ -1,19 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 1962,
-    "complexity_score": 1473,
+    "complexity_score": 1464,
     "cross_reference_count": 3,
     "function_call_count": 15,
     "global_count": 101,
-    "pseudocode_lines": 843,
-    "suspect_count": 61,
+    "pseudocode_lines": 859,
+    "suspect_count": 58,
     "suspect_types": [
       "call_esp_anchor",
       "pointer_cast",
+      "stack_align_anchor",
       "stack_param",
-      "unresolved_funcptr"
+      "variadic_anchor"
     ],
-    "total_lines": 2805
+    "total_lines": 2821
   },
   "cross_references": [
     {
@@ -1086,283 +1087,373 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 31,
+      "line": 36,
       "match": "in_stack_ffffff5c",
-      "text": "code *in_stack_ffffff5c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 31,
-      "match": "code *",
-      "text": "code *in_stack_ffffff5c;",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_ffffff60",
-      "text": "int in_stack_ffffff60;",
+      "text": "int in_stack_ffffff5c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 35,
-      "match": "in_stack_ffffff74",
-      "text": "SCramWorkingEntry *in_stack_ffffff74;",
+      "line": 40,
+      "match": "in_stack_ffffff70",
+      "text": "int in_stack_ffffff70;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 99,
-      "match": "(SCramWorkingEntry *)((int)",
-      "text": "pSVar25 = (SCramWorkingEntry *)((int)&pSVar25->width + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 107,
-      "match": "(SCramWorkingEntry *)((int)",
-      "text": "pSVar26 = (SCramWorkingEntry *)((int)&pSVar26->width + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 114,
+      "line": 117,
       "match": "(void *)((int)",
-      "text": "pvVar15 = (void *)((int)g_CramAlgorithmState + (int)pSVar25 * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 134,
-      "match": "in_stack_ffffff5c",
-      "text": "in_stack_ffffff5c = shape_cramtex_cpp_qsortRectanglesByActiveFlag_FUN_00446140;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 223,
-      "match": "(int *)((int)",
-      "text": "if (((iVar20 == *(int *)((int)&g_CramRectangles[0].left + iVar12)) &&",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 224,
-      "match": "(int *)((int)",
-      "text": "(iVar21 == *(int *)((int)&g_CramRectangles[0].top + iVar12))) &&",
+      "text": "pvVar14 = (void *)((int)g_CramAlgorithmState + num * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 225,
       "match": "(int *)((int)",
-      "text": "(iVar18 == *(int *)((int)&g_CramRectangles[0].right + iVar12)))",
+      "text": "if (((iVar25 == *(int *)((int)&g_CramRectangles[0].left + iVar11)) &&",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 262,
-      "match": "(SCramWorkingEntry *)((int)",
-      "text": "local_44 = (SCramWorkingEntry *)((int)local_44 + 0x28);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 277,
+      "line": 226,
       "match": "(int *)((int)",
-      "text": "if (((iVar20 == *(int *)((int)&g_CramRectangles[0].left + iVar21)) &&",
+      "text": "(iVar20 == *(int *)((int)&g_CramRectangles[0].top + iVar11))) &&",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 278,
+      "line": 227,
       "match": "(int *)((int)",
-      "text": "(local_70 == *(int *)((int)&g_CramRectangles[0].top + iVar21))) &&",
+      "text": "(iVar17 == *(int *)((int)&g_CramRectangles[0].right + iVar11)))",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 279,
       "match": "(int *)((int)",
-      "text": "(iVar18 == *(int *)((int)&g_CramRectangles[0].right + iVar21)))",
+      "text": "if (((iVar25 == *(int *)((int)&g_CramRectangles[0].left + iVar20)) &&",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 355,
+      "line": 280,
       "match": "(int *)((int)",
-      "text": "if (((iVar20 == *(int *)((int)&g_CramRectangles[0].left + iVar12)) &&",
+      "text": "(local_74 == *(int *)((int)&g_CramRectangles[0].top + iVar20))) &&",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 356,
+      "line": 281,
       "match": "(int *)((int)",
-      "text": "(iVar18 == *(int *)((int)&g_CramRectangles[0].top + iVar12))) &&",
+      "text": "(iVar17 == *(int *)((int)&g_CramRectangles[0].right + iVar20)))",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 357,
       "match": "(int *)((int)",
-      "text": "(iVar21 == *(int *)((int)&g_CramRectangles[0].right + iVar12)))",
+      "text": "if (((iVar25 == *(int *)((int)&g_CramRectangles[0].left + iVar11)) &&",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 409,
+      "line": 358,
       "match": "(int *)((int)",
-      "text": "if (((iVar20 == *(int *)((int)&g_CramRectangles[0].left + iVar21)) &&",
+      "text": "(iVar17 == *(int *)((int)&g_CramRectangles[0].top + iVar11))) &&",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 410,
+      "line": 359,
       "match": "(int *)((int)",
-      "text": "(iVar18 == *(int *)((int)&g_CramRectangles[0].top + iVar21))) &&",
+      "text": "(iVar20 == *(int *)((int)&g_CramRectangles[0].right + iVar11)))",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 411,
       "match": "(int *)((int)",
-      "text": "(local_5c == *(int *)((int)&g_CramRectangles[0].right + iVar21)))",
+      "text": "if (((iVar25 == *(int *)((int)&g_CramRectangles[0].left + iVar20)) &&",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 412,
+      "match": "(int *)((int)",
+      "text": "(iVar17 == *(int *)((int)&g_CramRectangles[0].top + iVar20))) &&",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 414,
+      "match": "(int *)((int)",
+      "text": "(SCramWorkingEntry *)*(int *)((int)&g_CramRectangles[0].right + iVar20)))",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 456,
+      "line": 459,
       "match": "in_stack_ffffff5c",
-      "text": "in_stack_ffffff5c = (code *)0x0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 456,
-      "match": "code *",
-      "text": "in_stack_ffffff5c = (code *)0x0;",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 457,
-      "match": "in_stack_ffffff60",
-      "text": "shape_cramtex_cpp_visualizeTextureAtlas_FUN_00447f20(0,0,in_stack_ffffff60);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 460,
-      "match": "in_stack_ffffff5c",
-      "text": "((SCramWorkingEntry *)in_stack_ffffff5c);",
+      "text": "shape_cramtex_cpp_visualizeTextureAtlas_FUN_00447f20(0,0,in_stack_ffffff5c);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 470,
+      "line": 471,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&g_CramRectangles[0].reserved_0x18 + iVar18) = 0;",
+      "text": "*(uint *)((int)&g_CramRectangles[0].reserved_0x18 + iVar17) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 480,
       "match": "in_stack_ffffff5c",
-      "text": "in_stack_ffffff5c = (code *)0x447402;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 480,
-      "match": "code *",
-      "text": "in_stack_ffffff5c = (code *)0x447402;",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 488,
-      "match": "in_stack_ffffff60",
-      "text": "in_stack_ffffff60 = 0x447439;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 507,
-      "match": "in_stack_ffffff5c",
-      "text": "in_stack_ffffff5c = (code *)0x0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 507,
-      "match": "code *",
-      "text": "in_stack_ffffff5c = (code *)0x0;",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 508,
-      "match": "in_stack_ffffff60",
-      "text": "shape_cramtex_cpp_visualizeTextureAtlas_FUN_00447f20(0,0,in_stack_ffffff60);",
+      "text": "in_stack_ffffff5c = 0x4473fd;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 511,
-      "match": "in_stack_ffffff5c",
-      "text": "in_stack_ffffff5c = (code *)0x0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 511,
-      "match": "code *",
-      "text": "in_stack_ffffff5c = (code *)0x0;",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 512,
-      "match": "in_stack_ffffff60",
-      "text": "shape_cramtex_cpp_visualizeTextureAtlas_FUN_00447f20(0,0,in_stack_ffffff60);",
+      "match": "in_stack_ffffff70",
+      "text": "shape_cramtex_cpp_visualizeTextureAtlas_FUN_00447f20(0,0,in_stack_ffffff70);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 519,
-      "match": "in_stack_ffffff74",
-      "text": "g_CramAlgorithmState = in_stack_ffffff74;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 645,
-      "match": "in_stack_ffffff74",
-      "text": "iVar12 = shape_cramtex_cpp_findLowestOverlappingY_FUN_00447930(in_stack_ffffff74);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 682,
-      "match": "in_stack_ffffff74",
-      "text": "iVar20 = shape_cramtex_cpp_findLowestOverlappingY_FUN_00447930(in_stack_ffffff74);",
+      "line": 516,
+      "match": "in_stack_ffffff70",
+      "text": "shape_cramtex_cpp_visualizeTextureAtlas_FUN_00447f20(0,0,in_stack_ffffff70);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 771,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)&g_CramSortedTextureEntries[0].working_top + iVar18)) ||",
+      "line": 535,
+      "match": "(void *)((int)",
+      "text": "local_7c = (void *)((int)local_7c + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 773,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)&g_CramSortedTextureEntries[0].working_width + iVar18))) {",
+      "line": 700,
+      "match": "(SCramRectangle *)((int)",
+      "text": "local_40 = (SCramRectangle *)((int)local_40 + 1);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 786,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)&g_CramSortedTextureEntries[0].working_top + iVar17)) ||",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 788,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)&g_CramSortedTextureEntries[0].working_width + iVar17))) {",
+      "type": "pointer_cast"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "0044634f",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "fix_address": "00446354",
+      "frame_offset": 156,
+      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
+      "return_address": "00446354",
+      "target_address": "0x5fe6d0",
+      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
+      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 0044634f (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "004463a6",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "fix_address": "004463ab",
+      "frame_offset": 156,
+      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
+      "return_address": "004463ab",
+      "target_address": "0x5fe6d0",
+      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
+      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 004463a6 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 20,
+      "call_address": "004463c3",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "fix_address": "004463c8",
+      "frame_offset": 156,
+      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
+      "return_address": "004463c8",
+      "target_address": "0x5fe6d0",
+      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
+      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 004463c3 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "004463d7",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "fix_address": "004463dc",
+      "frame_offset": 156,
+      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
+      "return_address": "004463dc",
+      "target_address": "0x5fe6d0",
+      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
+      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 004463d7 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "004463ec",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "fix_address": "004463f1",
+      "frame_offset": 156,
+      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
+      "return_address": "004463f1",
+      "target_address": "0x5fe6d0",
+      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
+      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 004463ec (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "00446401",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "fix_address": "00446406",
+      "frame_offset": 156,
+      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
+      "return_address": "00446406",
+      "target_address": "0x5fe6d0",
+      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
+      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 00446401 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "0044640f",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "unknown",
+      "esp_certainty_at_call": "known",
+      "fix_address": "0044641a",
+      "frame_offset": 156,
+      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
+      "return_address": "00446414",
+      "target_address": "0x5fe6d0",
+      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
+      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 0044640f (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 44,
+      "call_address": "00446452",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "unknown",
+      "esp_certainty_at_call": "known",
+      "fix_address": "0044645d",
+      "frame_offset": 156,
+      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
+      "return_address": "00446457",
+      "target_address": "0x5fe6d0",
+      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
+      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 00446452 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "00446478",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "unknown",
+      "esp_certainty_at_call": "known",
+      "fix_address": "00446483",
+      "frame_offset": 156,
+      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
+      "return_address": "0044647d",
+      "target_address": "0x5fe6d0",
+      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
+      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 00446478 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 44,
+      "call_address": "004464b9",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "unknown",
+      "esp_certainty_at_call": "known",
+      "fix_address": "004464c4",
+      "frame_offset": 156,
+      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
+      "return_address": "004464be",
+      "target_address": "0x5fe6d0",
+      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
+      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 004464b9 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "00446978",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "0044697d",
+      "frame_offset": 156,
+      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
+      "return_address": "0044697d",
+      "target_address": "0x5fe6d0",
+      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
+      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 00446978 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 16,
+      "call_address": "00446994",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "00446999",
+      "frame_offset": 156,
+      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
+      "return_address": "00446999",
+      "target_address": "0x5fe6d0",
+      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
+      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 00446994 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x9c",
+      "fix_address": "00446176",
+      "frame_offset": 156,
+      "match": "AND ESP",
+      "sub_esp_offset": 156,
+      "text": "Stack alignment at 00446176 (SUB ESP, 0x9c before)",
+      "type": "stack_align_anchor"
     },
     {
       "add_esp_value": 16,
@@ -1636,207 +1727,6 @@
       "target_address": "0x447f20",
       "text": "Direct CALL at 00447582, ADD ESP at 00447587 with uncertain ESP",
       "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "0044634f",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "fix_address": "00446354",
-      "frame_offset": 156,
-      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
-      "return_address": "00446354",
-      "target_address": "0x5fe6d0",
-      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
-      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 0044634f (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "004463a6",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "fix_address": "004463ab",
-      "frame_offset": 156,
-      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
-      "return_address": "004463ab",
-      "target_address": "0x5fe6d0",
-      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
-      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 004463a6 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "add_esp_value": 20,
-      "call_address": "004463c3",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "fix_address": "004463c8",
-      "frame_offset": 156,
-      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
-      "return_address": "004463c8",
-      "target_address": "0x5fe6d0",
-      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
-      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 004463c3 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "004463d7",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "fix_address": "004463dc",
-      "frame_offset": 156,
-      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
-      "return_address": "004463dc",
-      "target_address": "0x5fe6d0",
-      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
-      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 004463d7 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "004463ec",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "fix_address": "004463f1",
-      "frame_offset": 156,
-      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
-      "return_address": "004463f1",
-      "target_address": "0x5fe6d0",
-      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
-      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 004463ec (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "00446401",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "fix_address": "00446406",
-      "frame_offset": 156,
-      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
-      "return_address": "00446406",
-      "target_address": "0x5fe6d0",
-      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
-      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 00446401 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "0044640f",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "unknown",
-      "esp_certainty_at_call": "known",
-      "fix_address": "0044641a",
-      "frame_offset": 156,
-      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
-      "return_address": "00446414",
-      "target_address": "0x5fe6d0",
-      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
-      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 0044640f (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "add_esp_value": 44,
-      "call_address": "00446452",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "unknown",
-      "esp_certainty_at_call": "known",
-      "fix_address": "0044645d",
-      "frame_offset": 156,
-      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
-      "return_address": "00446457",
-      "target_address": "0x5fe6d0",
-      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
-      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 00446452 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "00446478",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "unknown",
-      "esp_certainty_at_call": "known",
-      "fix_address": "00446483",
-      "frame_offset": 156,
-      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
-      "return_address": "0044647d",
-      "target_address": "0x5fe6d0",
-      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
-      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 00446478 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "add_esp_value": 44,
-      "call_address": "004464b9",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "unknown",
-      "esp_certainty_at_call": "known",
-      "fix_address": "004464c4",
-      "frame_offset": 156,
-      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
-      "return_address": "004464be",
-      "target_address": "0x5fe6d0",
-      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
-      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 004464b9 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "00446978",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "0044697d",
-      "frame_offset": 156,
-      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
-      "return_address": "0044697d",
-      "target_address": "0x5fe6d0",
-      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
-      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 00446978 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "add_esp_value": 16,
-      "call_address": "00446994",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "00446999",
-      "frame_offset": 156,
-      "match": "CALL crt_stdio.c_fprintf_FUN_005fe6d0",
-      "return_address": "00446999",
-      "target_address": "0x5fe6d0",
-      "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
-      "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 00446994 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x9c",
-      "fix_address": "00446176",
-      "match": "AND ESP",
-      "sub_esp_offset": 156,
-      "text": "Stack alignment at 00446176 (SUB ESP, 0x9c before)",
-      "type": "stack_align_anchor"
     }
   ]
 }

@@ -33,13 +33,13 @@ uint core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
   CDemonMission *in_stack_00000004;
   int in_stack_00000008;
   char *pcVar14;
-  void *param5;
-  uint in_stack_fffff5ce;
-  uint in_stack_fffff5d2;
-  uint in_stack_fffff5d6;
-  uint in_stack_fffff5da;
-  uint in_stack_fffff5de;
   CGame *in_stack_fffff64c;
+  void *param5;
+  CKeys *d2;
+  uint d3;
+  CKeys *in_stack_fffff668;
+  uint d5;
+  CKeys *d6;
   char local_4e0 [300];
   char local_3b4 [260];
   char local_2b0 [200];
@@ -210,7 +210,7 @@ uint core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
           core_setdir_cpp_CDemonSet_evaluateVirtualDirector_FUN_005751d0
                     (g_CDemonSetPtr,*(CDemonActor **)(in_stack_00000004->field2_0xc + 0x1c),0);
         }
-        crt_stdio_c_sprintf_FUN_005fdbd0(local_2b0,"Static cam: %s",0x3275924);
+        crt_stdio_c_sprintf_FUN_005fdbd0(local_2b0,"Static cam: %s");
         local_10c = g_CDemonCameraInstance.base.position.x;
         local_108 = (float)*local_54;
         local_104 = (float)*local_58;
@@ -649,6 +649,7 @@ uint core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
       iVar10 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x3c);
       if (iVar10 != 0) {
         iVar10 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+        in_stack_fffff668 = (CKeys *)(g_WindowWidth + -1);
         if (iVar10 == 0) {
           core_script_cpp_CScript_unk50_FUN_00566660();
           DAT_02f7c634 = 1;
@@ -691,24 +692,33 @@ LAB_00539d68:
         goto LAB_00539d68;
       }
     }
+    d3 = 0x1d;
+    d2 = g_CKeysPtr;
     iVar10 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
-    if ((iVar10 != 0) &&
-       (iVar10 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x1f), iVar10 != 0)) {
-      engine_2d_c_clearInputAndWait_FUN_00403260();
-      if (in_stack_00000004->field2_0xc[0x38] == '\0') {
-        shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-                  (g_CEditorToolsPtr,"No mission name!");
-      }
-      else {
-        crt_stdio_c_sprintf_FUN_005fdbd0(local_3b4,"%s.msn",local_4c);
-        iVar10 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
-                           (g_CEditorToolsPtr,"Save mission to %s.msn",local_4c);
-        if (iVar10 != 0) {
-          core_msnedit_cpp_CheckWorldMountedAndSave_FUN_0053d190();
+    if (iVar10 != 0) {
+      d3 = 0x539d95;
+      in_stack_fffff668 = g_CKeysPtr;
+      iVar10 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x1f);
+      if (iVar10 != 0) {
+        engine_2d_c_clearInputAndWait_FUN_00403260();
+        if (in_stack_00000004->field2_0xc[0x38] == '\0') {
+          shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
+                    (g_CEditorToolsPtr,"No mission name!");
         }
+        else {
+          crt_stdio_c_sprintf_FUN_005fdbd0(local_3b4,"%s.msn");
+          in_stack_fffff668 = (CKeys *)0x53a627;
+          iVar10 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
+                             (g_CEditorToolsPtr,"Save mission to %s.msn");
+          if (iVar10 != 0) {
+            core_msnedit_cpp_CheckWorldMountedAndSave_FUN_0053d190();
+          }
+        }
+        engine_2d_c_clearInputAndWait_FUN_00403260();
       }
-      engine_2d_c_clearInputAndWait_FUN_00403260();
     }
+    d5 = 0x539dd6;
+    d6 = g_CKeysPtr;
     iVar10 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
     if ((iVar10 != 0) &&
        (iVar10 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x19), iVar10 != 0)) {
@@ -809,9 +819,10 @@ LAB_00539e00:
       }
       iVar10 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x16);
       if (iVar10 != 0) {
-        iVar10 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
-        if (iVar10 == 0) {
-          iVar10 = -1;
+        iVar10 = 0x53a824;
+        iVar6 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+        if (iVar6 == 0) {
+          iVar6 = -1;
           while( true ) {
             shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff64c);
             for (pCVar4 = in_stack_00000004->first_actor; pCVar4 != (CDemonActor *)0x0;
@@ -821,14 +832,15 @@ LAB_00539e00:
                           ((CStrList *)&stack0xfffff64c,pCVar4->actor_name);
               }
             }
-            if ((int)in_stack_fffff64c < 1) break;
+            if (iVar10 < 1) break;
             shape_edittool_cpp_CStrList_sort_FUN_004a2ec0((CStrList *)&stack0xfffff64c);
-            iVar10 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                               ((CPickList *)&stack0xfffff64c,"Select actor to unhide",
-                                iVar10,0);
-            if (iVar10 < 0) goto LAB_0053a88c;
-            shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
-                      ((CStrList *)&stack0xfffff64c,iVar10);
+            iVar10 = 0x53ac35;
+            iVar6 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
+                              ((CPickList *)&stack0xfffff64c,"Select actor to unhide",iVar6
+                               ,0);
+            if (iVar6 < 0) goto LAB_0053a88c;
+            shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70((CStrList *)&stack0xfffff64c,iVar6)
+            ;
             pcVar14 = core_mission_cpp_CDemonMission_FUN_00524030(in_stack_00000004);
             if (pcVar14 == (char *)0x0) {
               g_CurrentFilename = "..\\core\\msnedit.cpp";
@@ -840,17 +852,17 @@ LAB_00539e00:
             pcVar14[0x14a] = '\0';
             pcVar14[0x14b] = '\0';
             shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                      ((CPickList *)&stack0xfffff64c,0,in_stack_fffff5ce,in_stack_fffff5d2,
-                       in_stack_fffff5d6,in_stack_fffff5da,in_stack_fffff5de);
+                      ((CPickList *)&stack0xfffff64c,0,(uint)d2,d3,(uint)in_stack_fffff668,d5,
+                       (uint)d6);
           }
-          if (iVar10 < 0) {
+          if (iVar6 < 0) {
             shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                       (g_CEditorToolsPtr,"No actors hidden.");
           }
 LAB_0053a88c:
           shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                    ((CPickList *)&stack0xfffff64c,0,in_stack_fffff5ce,in_stack_fffff5d2,
-                     in_stack_fffff5d6,in_stack_fffff5da,in_stack_fffff5de);
+                    ((CPickList *)&stack0xfffff64c,0,(uint)d2,d3,(uint)in_stack_fffff668,d5,(uint)d6
+                    );
         }
         else {
           for (pCVar4 = in_stack_00000004->first_actor; pCVar4 != (CDemonActor *)0x0;
@@ -876,9 +888,14 @@ LAB_0053a88c:
         }
         local_64 = 1;
       }
+      in_stack_fffff668 = g_CKeysPtr;
       iVar10 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x31);
-      if ((iVar10 != 0) && (iVar10 = core_msnedit_cpp_FUN_0053c210(), iVar10 != 0)) {
-        core_msnedit_cpp_UndoTmp_BuildActorList_CreateTmp_FUN_0053c140();
+      if (iVar10 != 0) {
+        in_stack_fffff668 = (CKeys *)0x53a909;
+        iVar10 = core_msnedit_cpp_FUN_0053c210();
+        if (iVar10 != 0) {
+          core_msnedit_cpp_UndoTmp_BuildActorList_CreateTmp_FUN_0053c140();
+        }
       }
       iVar10 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x11);
       if (iVar10 != 0) {

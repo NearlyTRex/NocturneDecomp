@@ -25,40 +25,37 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr)
   CDemonActor *pCVar11;
   BADSPACEBASE *in_ESP;
   int iVar12;
+  int iVar13;
   float in_stack_00000008;
   char *model_name;
-  float fVar13;
-  SDamageInfo SStack_104;
-  SCollisionInfo SStack_c8;
+  float fVar14;
+  byte auStack_f4 [84];
   CBoundingBox3D local_a0;
   float local_88;
   float local_84;
   float local_80;
+  float local_7c;
   float local_70;
   float local_6c;
   float local_68;
-  CVector3f CStack_64;
-  CVector3f local_58;
+  byte local_58 [8];
+  float local_50;
   CVector3f local_4c;
-  float fStack_40;
-  float fStack_3c;
   float fStack_38;
   float local_34;
   float local_30;
   float local_2c;
   float local_28;
   float local_24;
-  int iStack_20;
-  int iStack_1c;
   int iStack_18;
   int local_14;
   
   local_14 = ((CCourse *)(this_ptr->field3_0x93c + 0x6e4))->len;
   local_28 = (this_ptr->cur_time / this_ptr->total_time) * (float)local_14;
   core_course_cpp_CCourse_FUN_00442710((CCourse *)(this_ptr->field3_0x93c + 0x6e4));
-  fVar13 = this_ptr->cur_time + in_stack_00000008;
-  this_ptr->cur_time = fVar13;
-  if (this_ptr->total_time < fVar13) {
+  fVar14 = this_ptr->cur_time + in_stack_00000008;
+  this_ptr->cur_time = fVar14;
+  if (this_ptr->total_time < fVar14) {
     this_ptr->cur_time = this_ptr->cur_time - this_ptr->total_time;
   }
   local_14 = ((CCourse *)(this_ptr->field3_0x93c + 0x6e4))->len;
@@ -77,14 +74,14 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr)
     }
   }
   else {
-    local_58.z = 1.0 / in_stack_00000008;
-    local_58.x = local_88 * local_58.z;
-    local_58.y = local_84 * local_58.z;
-    local_58.z = local_80 * local_58.z;
-    if (pCVar6 != &local_58) {
-      pCVar6->x = local_58.x;
-      *(float *)(this_ptr->field1_0x158 + 0x770) = local_58.y;
-      *(float *)(this_ptr->field1_0x158 + 0x774) = local_58.z;
+    local_50 = 1.0 / in_stack_00000008;
+    local_58._0_4_ = local_88 * local_50;
+    local_58._4_4_ = local_84 * local_50;
+    local_50 = local_80 * local_50;
+    if (pCVar6 != (CVector3f *)local_58) {
+      pCVar6->x = (float)local_58._0_4_;
+      *(uint *)(this_ptr->field1_0x158 + 0x770) = local_58._4_4_;
+      *(float *)(this_ptr->field1_0x158 + 0x774) = local_50;
     }
     local_24 = SQRT(*(float *)(this_ptr->field1_0x158 + 0x774) *
                     *(float *)(this_ptr->field1_0x158 + 0x774) +
@@ -120,40 +117,40 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr)
       pCVar7 = (CVehicle *)(pCVar7->field1_0x158 + 0x5c);
     } while (iVar12 < this_ptr->tire_count);
   }
-  fVar13 = (this_ptr->base_actor).location.position.y;
+  fVar14 = (this_ptr->base_actor).location.position.y;
   fVar3 = (this_ptr->base_actor).orient.bank;
   (this_ptr->base_actor).orient.pitch = 0.0;
   pCVar4 = (this_ptr->base_actor).vtable;
   fVar3 = fVar3 + 1.570796f;
-  (this_ptr->base_actor).location.position.y = fVar13 + 3.7f;
+  (this_ptr->base_actor).location.position.y = fVar14 + 3.7f;
   (this_ptr->base_actor).orient.bank = fVar3;
   (*pCVar4->getBoundingBox)(&this_ptr->base_actor,&local_a0);
-  iStack_18 = 0;
-  for (iVar12 = 0; iVar12 < g_CDemonSetPtr->damage_listener_count; iVar12 = iVar12 + 1) {
-    pCVar11 = *(CDemonActor **)(g_CDemonSetPtr->field19_0x14f0a0 + iStack_18 + -4);
+  iVar12 = 0;
+  for (iVar13 = 0; iVar13 < g_CDemonSetPtr->damage_listener_count; iVar13 = iVar13 + 1) {
+    pCVar11 = *(CDemonActor **)(g_CDemonSetPtr->field19_0x14f0a0 + iVar12 + -4);
     pCVar8 = core_actor_cpp_castToClassHash_FUN_0040c790(pCVar11,g_CMobsterClassInfo.name_hash);
     if ((pCVar8 == (CDemonActor *)0x0) ||
        (this_ptr != *(CVehicle **)(pCVar8[0x8e].actor_name + 0x10))) {
-      core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&SStack_c8);
-      iVar9 = (*pCVar11->vtable->hasCollision)(pCVar11,&SStack_c8);
+      core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0((SCollisionInfo *)(auStack_f4 + 0x34));
+      iVar9 = (*pCVar11->vtable->hasCollision)(pCVar11,(SCollisionInfo *)(auStack_f4 + 0x34));
       if ((iVar9 == 2) &&
-         (((((pCVar11->location).position.y <=
-             (this_ptr->base_actor).location.position.y + local_a0.max.y &&
-            ((this_ptr->base_actor).location.position.y + local_a0.min.y <=
-             (pCVar11->location).position.y + SStack_c8.cylinder_top_y)) &&
+         (((((pCVar11->location).position.y <= (this_ptr->base_actor).location.position.y + local_80
+            && ((this_ptr->base_actor).location.position.y + local_a0.max.z <=
+                (pCVar11->location).position.y + local_a0.min.x)) &&
            (core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                      (&this_ptr->base_actor,&CStack_64,&(pCVar11->location).position),
-           local_a0.min.x <= CStack_64.x + SStack_c8.cylinder_radius)) &&
-          ((CStack_64.x - SStack_c8.cylinder_radius <= local_a0.max.x &&
-           (local_a0.min.z <= CStack_64.z + SStack_c8.cylinder_radius)))))) {
-        fVar13 = CStack_64.z - SStack_c8.cylinder_radius;
-        if (fVar13 <= local_a0.max.z) {
-          core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&SStack_104);
-          SStack_104.damage_type = 4;
-          SStack_104.damage_amount = 999.0;
-          (*pCVar11->vtable[1].playAmbientSoundWithVolume)(pCVar11,(char *)&SStack_104,fVar13);
+                      (&this_ptr->base_actor,(CVector3f *)(local_58 + 4),
+                       &(pCVar11->location).position),
+           local_a0.max.y <= (float)local_58._4_4_ + local_a0.min.y)) &&
+          (((float)local_58._4_4_ - local_a0.min.y <= local_84 &&
+           (local_88 <= local_4c.x + local_a0.min.y)))))) {
+        fVar14 = local_4c.x - local_a0.min.y;
+        if (fVar14 <= local_7c) {
+          core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)auStack_f4);
+          auStack_f4._48_4_ = 4;
+          auStack_f4._4_4_ = 999.0;
+          (*pCVar11->vtable[1].playAmbientSoundWithVolume)(pCVar11,auStack_f4,fVar14);
         }
-        else if ((fVar13 < local_a0.max.z + (float)30) &&
+        else if ((fVar14 < local_7c + (float)30) &&
                 (iVar9 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
                                    (*(uint *)(this_ptr->field6_0x1034 + 0x20)), iVar9 == 0)) {
           uVar10 = core_vehicle_cpp_FUN_005e8b50();
@@ -161,22 +158,23 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr)
         }
       }
     }
-    iStack_18 = iStack_18 + 4;
+    iVar12 = iVar12 + 4;
   }
   if (*(int *)(this_ptr->field6_0x1034 + 0x38) != 0) goto LAB_005e82f4;
   pCVar5 = g_HeroActors[g_LocalHeroIndex];
-  fStack_40 = (this_ptr->base_actor).location.position.x -
+  fStack_38 = (this_ptr->base_actor).location.position.x -
               (pCVar5->base_character).base_actor.location.position.x;
-  fStack_3c = (this_ptr->base_actor).location.position.y -
-              (pCVar5->base_character).base_actor.location.position.y;
-  fStack_38 = (this_ptr->base_actor).location.position.z -
-              (pCVar5->base_character).base_actor.location.position.z;
-  if ((SQRT(fStack_38 * fStack_38 + fStack_40 * fStack_40 + fStack_3c * fStack_3c) <=
+  local_34 = (this_ptr->base_actor).location.position.y -
+             (pCVar5->base_character).base_actor.location.position.y;
+  local_30 = (this_ptr->base_actor).location.position.z -
+             (pCVar5->base_character).base_actor.location.position.z;
+  if ((SQRT(local_30 * local_30 + fStack_38 * fStack_38 + local_34 * local_34) <=
        (float)200) || (0x671 < (int)g_CDemonSetPtr->actor_list_ptr)) goto LAB_005e82f4;
   iVar12 = 0;
-  iStack_20 = 0;
-  iStack_1c = 0;
-  for (iVar9 = 0; iVar9 < *(int *)(g_CDemonSetPtr->field19_0x14f0a0 + 0x1f3c); iVar9 = iVar9 + 1) {
+  iStack_18 = 0;
+  local_14 = 0;
+  for (iVar13 = 0; iVar13 < *(int *)(g_CDemonSetPtr->field19_0x14f0a0 + 0x1f3c); iVar13 = iVar13 + 1
+      ) {
     pCVar11 = core_actor_cpp_castToClassHash_FUN_0040c790
                         (*(CDemonActor **)(g_CDemonSetPtr->field19_0x14f0a0 + iVar12 + 8000),
                          g_CMobsterClassInfo.name_hash);
@@ -184,24 +182,24 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr)
        (pCVar7 = *(CVehicle **)(pCVar11[0x8e].actor_name + 0x10), this_ptr == pCVar7)) {
       if (*(int *)(pCVar11[0x8e].actor_name + 0x14) == 0) {
         *(CDemonActor **)(pCVar7->field6_0x1034 + 0x3c) = pCVar11;
-        iStack_1c = 1;
+        local_14 = 1;
       }
       else {
         *(CDemonActor **)(pCVar7->field6_0x1034 + 0x40) = pCVar11;
-        iStack_20 = 1;
+        iStack_18 = 1;
       }
     }
     iVar12 = iVar12 + 4;
   }
-  if ((iStack_1c != 0) && (iStack_20 != 0)) goto LAB_005e82f4;
-  if (iStack_1c == 0) {
+  if ((local_14 != 0) && (iStack_18 != 0)) goto LAB_005e82f4;
+  if (local_14 == 0) {
     if (*(int *)(this_ptr->field6_0x1034 + 0x3c) != 0) {
       iVar12 = (**(code **)(*(int *)(*(int *)(this_ptr->field6_0x1034 + 0x3c) + 0x154) + 0x120))();
 joined_r0x005e8664:
       if (iVar12 == 0) goto LAB_005e82f4;
     }
   }
-  else if ((iStack_20 == 0) && (*(int *)(this_ptr->field6_0x1034 + 0x40) != 0)) {
+  else if ((iStack_18 == 0) && (*(int *)(this_ptr->field6_0x1034 + 0x40) != 0)) {
     iVar12 = (**(code **)(*(int *)(*(int *)(this_ptr->field6_0x1034 + 0x40) + 0x154) + 0x120))();
     goto joined_r0x005e8664;
   }
@@ -220,8 +218,8 @@ joined_r0x005e8664:
     g_CurrentLineNumber = 0x161;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CMobster::process - Out of memory!");
   }
-  iVar9 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
-  if (iVar9 == 0) {
+  iVar13 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
+  if (iVar13 == 0) {
     model_name = "mobster4.dfm";
   }
   else {
@@ -230,7 +228,7 @@ joined_r0x005e8664:
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             (&(this_ptr_01->base_enemy).base_character.model,model_name);
   *(CVehicle **)(this_ptr_01->field3_0xbedc + 4) = this_ptr;
-  if (iStack_1c == 0) {
+  if (local_14 == 0) {
     this_ptr_01->side_of_car = 0;
     *(CMobster **)(this_ptr->field6_0x1034 + 0x3c) = this_ptr_01;
   }

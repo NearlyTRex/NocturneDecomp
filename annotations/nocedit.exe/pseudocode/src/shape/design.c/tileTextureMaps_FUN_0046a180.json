@@ -1,18 +1,22 @@
 {
   "complexity": {
     "assembly_lines": 707,
-    "complexity_score": 515,
+    "complexity_score": 586,
     "cross_reference_count": 1,
     "function_call_count": 19,
     "global_count": 49,
-    "pseudocode_lines": 330,
-    "suspect_count": 17,
+    "pseudocode_lines": 331,
+    "suspect_count": 22,
     "suspect_types": [
       "badspacebase",
       "call_esp_anchor",
-      "register_param"
+      "format_string_mismatch",
+      "register_param",
+      "stack_ref",
+      "suspect_float",
+      "variadic_anchor"
     ],
-    "total_lines": 1037
+    "total_lines": 1038
   },
   "cross_references": [
     {
@@ -624,6 +628,54 @@
       "type": "register_param"
     },
     {
+      "description": "Likely misinterpreted integer as float",
+      "line": 80,
+      "match": "6.487317e-39",
+      "text": "fVar11 = 6.487317e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 168,
+      "match": "&stack0xfffffe54",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffe54,\"Model name to save [%s] : \");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 170,
+      "match": "&stack0xfffffe54",
+      "text": "(g_LoadedModelName,0x27,0,0,&stack0xfffffe54);",
+      "type": "stack_ref"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "0046a6d9",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "0046a6de",
+      "frame_offset": 444,
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "0046a6de",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0046a6d9 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Model name to save [%s] : \" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Model name to save [%s] : ",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 168,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffe54,\"Model name to save [%s] : \");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
       "add_esp_value": 8,
       "call_address": "0046a19a",
       "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
@@ -817,22 +869,6 @@
       "target_address": "0x459e80",
       "text": "Direct CALL at 0046a7ab, ADD ESP at 0046a7b0 with uncertain ESP",
       "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "0046a6d9",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "0046a6de",
-      "frame_offset": 444,
-      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
-      "return_address": "0046a6de",
-      "target_address": "0x5fdbd0",
-      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
-      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0046a6d9 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
     }
   ]
 }

@@ -1,18 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 227,
-    "complexity_score": 276,
+    "complexity_score": 291,
     "cross_reference_count": 2,
     "function_call_count": 9,
     "global_count": 6,
     "pseudocode_lines": 101,
-    "suspect_count": 15,
+    "suspect_count": 16,
     "suspect_types": [
       "badspacebase",
       "call_esp_anchor",
       "pointer_cast",
       "register_param",
-      "stack_ref"
+      "stack_ref",
+      "variadic_anchor"
     ],
     "total_lines": 328
   },
@@ -283,6 +284,22 @@
       "type": "pointer_cast"
     },
     {
+      "add_esp_value": 12,
+      "call_address": "004b7e90",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "fix_address": "004b7e95",
+      "frame_offset": 260,
+      "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "return_address": "004b7e95",
+      "target_address": "0x49e740",
+      "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 004b7e90 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
       "add_esp_value": 4,
       "call_address": "004b7d7a",
       "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
@@ -385,22 +402,6 @@
       "target_address": "0x5fe840",
       "text": "Direct CALL at 004b7ede, ADD ESP at 004b7ee3 with uncertain ESP",
       "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "004b7e90",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "fix_address": "004b7e95",
-      "frame_offset": 260,
-      "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
-      "return_address": "004b7e95",
-      "target_address": "0x49e740",
-      "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
-      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 004b7e90 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
     }
   ]
 }

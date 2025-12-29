@@ -23,8 +23,8 @@ void core_cloth_cpp_OrientBoneCheck_FUN_0043a110(void)
   int in_stack_00000004;
   int in_stack_00000008;
   CDeformableModelInstance *in_stack_0000000c;
-  CMatrix3x4f *in_stack_ffffff02;
-  CMatrix3x4f local_94;
+  float local_94;
+  CMatrix3x4f *in_stack_ffffff84;
   uint local_64 [12];
   CVector3f local_34;
   CVector3f local_28;
@@ -35,6 +35,7 @@ void core_cloth_cpp_OrientBoneCheck_FUN_0043a110(void)
   bVar5 = 0;
   this_ptr = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
                        (in_stack_0000000c);
+  local_94 = 1.4013e-45;
   bone_name = (char *)(in_stack_00000004 + 0x3ce90 + in_stack_00000008 * 0xac);
   local_1c = this_ptr;
   iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,bone_name);
@@ -62,19 +63,23 @@ void core_cloth_cpp_OrientBoneCheck_FUN_0043a110(void)
   if (local_18 < 0) {
     g_CurrentFilename = "..\\core\\cloth.cpp";
     g_CurrentLineNumber = 0x2bf;
+    local_94 = 6.211016e-39;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't orient bone with no children!");
   }
+  local_94 = 6.21107e-39;
   core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
             (&local_34,in_stack_0000000c->transformed_vertices + local_18);
   local_28.x = 0.0;
   local_28.y = 0.0;
   local_28.z = 0.0;
+  local_94 = 6.211114e-39;
   core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
             ((CMatrix3x4f *)(bone_name + 0x48),&local_28,&local_34);
   core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
-            (&local_94,(CVector3f *)(bone_name + 0x1c),(CVector3f *)(bone_name + 0x28));
+            ((CMatrix3x4f *)&local_94,(CVector3f *)(bone_name + 0x1c),
+             (CVector3f *)(bone_name + 0x28));
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
-            ((CMatrix3x4f *)(bone_name + 0x48),&local_94,in_stack_ffffff02);
+            ((CMatrix3x4f *)(bone_name + 0x48),(CMatrix3x4f *)&local_94,in_stack_ffffff84);
   puVar3 = local_64;
   pcVar4 = bone_name + 0x48;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {

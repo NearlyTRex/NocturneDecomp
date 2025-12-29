@@ -1,18 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 250,
-    "complexity_score": 582,
+    "complexity_score": 567,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 26,
     "pseudocode_lines": 202,
-    "suspect_count": 35,
+    "suspect_count": 33,
     "suspect_types": [
       "badspacebase",
       "call_esp_anchor",
+      "callind_anchor",
       "register_param",
+      "stack_align_anchor",
       "suspect_float",
-      "unknown_field",
       "warning_unreachable"
     ],
     "total_lines": 452
@@ -475,13 +476,6 @@
       "type": "register_param"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 62,
-      "match": "._8_4_",
-      "text": "auStack_54._8_4_ = (uint)ROUND(256f * 0.4);",
-      "type": "unknown_field"
-    },
-    {
       "description": "Likely misinterpreted integer as float",
       "line": 101,
       "match": "9.18341e-41",
@@ -538,27 +532,6 @@
       "type": "suspect_float"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 146,
-      "match": "._0_4_",
-      "text": "auStack_54._0_4_ = (uint)ROUND(local_b4 * 256f);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 147,
-      "match": "._4_4_",
-      "text": "auStack_54._4_4_ = (uint)ROUND(local_b4 * 256f);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 148,
-      "match": "._8_4_",
-      "text": "auStack_54._8_4_ = (uint)ROUND(256f * 0.0);",
-      "type": "unknown_field"
-    },
-    {
       "description": "Likely misinterpreted integer as float",
       "line": 183,
       "match": "9.18341e-41",
@@ -613,6 +586,27 @@
       "match": "9.18341e-41",
       "text": "g_RenderVertexBuffer[3].fog = 9.18341e-41;",
       "type": "suspect_float"
+    },
+    {
+      "add_esp_value": 12,
+      "callind_address": "004c04bb",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "004c04c9",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 196,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 004c04bb, ADD ESP at 004c04c9",
+      "type": "callind_anchor"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0xc4",
+      "fix_address": "004c042c",
+      "frame_offset": 196,
+      "match": "AND ESP",
+      "sub_esp_offset": 196,
+      "text": "Stack alignment at 004c042c (SUB ESP, 0xc4 before)",
+      "type": "stack_align_anchor"
     },
     {
       "add_esp_value": 8,
@@ -769,26 +763,6 @@
       "target_address": "0x5b575c",
       "text": "Direct CALL at 004c0a85, ADD ESP at 004c0a8d with uncertain ESP",
       "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "callind_address": "004c04bb",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "004c04c9",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 196,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 004c04bb, ADD ESP at 004c04c9",
-      "type": "callind_anchor"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0xc4",
-      "fix_address": "004c042c",
-      "match": "AND ESP",
-      "sub_esp_offset": 196,
-      "text": "Stack alignment at 004c042c (SUB ESP, 0xc4 before)",
-      "type": "stack_align_anchor"
     }
   ],
   "vtable_info": {

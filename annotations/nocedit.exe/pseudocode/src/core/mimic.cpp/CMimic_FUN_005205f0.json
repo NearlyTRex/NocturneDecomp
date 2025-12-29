@@ -1,22 +1,23 @@
 {
   "complexity": {
     "assembly_lines": 225,
-    "complexity_score": 379,
+    "complexity_score": 433,
     "cross_reference_count": 1,
     "function_call_count": 20,
     "global_count": 13,
-    "pseudocode_lines": 94,
-    "suspect_count": 25,
+    "pseudocode_lines": 93,
+    "suspect_count": 30,
     "suspect_types": [
       "badspacebase",
       "call_esp_anchor",
+      "callind_anchor",
       "pointer_cast",
       "register_param",
       "stack_param",
       "stack_ref",
       "unknown_field"
     ],
-    "total_lines": 319
+    "total_lines": 318
   },
   "cross_references": [
     {
@@ -427,44 +428,83 @@
     {
       "description": "Unresolved stack parameter",
       "line": 12,
-      "match": "in_stack_fffffeaa",
-      "text": "CMatrix3x4f *in_stack_fffffeaa;",
+      "match": "in_stack_ffffff40",
+      "text": "CMatrix3x4f *in_stack_ffffff40;",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 49,
+      "line": 47,
       "match": "._12_4_",
       "text": "local_4c._12_4_ = 0.0;",
       "type": "unknown_field"
     },
     {
+      "description": "Direct stack address reference",
+      "line": 51,
+      "match": "&stack0xffffff3c",
+      "text": "((CMatrix3x4f *)&stack0xffffff3c,(CVector3f *)(local_4c + 0xc),local_34.m + 1);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 53,
+      "match": "&stack0xffffff3c",
+      "text": "((CMatrix3x4f *)&stack0xffffff3c,",
+      "type": "stack_ref"
+    },
+    {
       "description": "Unresolved stack parameter",
-      "line": 58,
-      "match": "in_stack_fffffeaa",
-      "text": "[DAT_02f33378].m,in_stack_fffffeaa);",
+      "line": 56,
+      "match": "in_stack_ffffff40",
+      "text": "[DAT_02f33378].m,in_stack_ffffff40);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 59,
+      "line": 57,
       "match": "&stack0xffffff0c",
-      "text": "pfVar2 = (float *)&stack0xffffff0c;",
+      "text": "puVar2 = (uint *)&stack0xffffff0c;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 58,
+      "match": "&stack0xffffff6c",
+      "text": "puVar3 = (uint *)&stack0xffffff6c;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 65,
+      "match": "&stack0xffffff6c",
+      "text": "((CVector3f *)&stack0xffffff6c,(CMatrix3x4f *)local_4c);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 66,
+      "match": "&stack0xffffff6c",
+      "text": "core_xform_cpp_matrixToEulerAngles_FUN_005f5690((CVector3f *)&stack0xffffff6c,&local_34);",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 64,
-      "match": "(CVector3f *)((int)",
-      "text": "pCVar3 = (CVector3f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 72,
+      "line": 71,
       "match": "(CDemonActor *)((int)",
       "text": "&(((CDemonActor *)((int)local_34.m[2].z + 0x1fbf0))->field12_0xe0).z,0.0,-1);",
       "type": "pointer_cast"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "0052062c",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "0052062f",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 228,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 0052062c, ADD ESP at 0052062f",
+      "type": "callind_anchor"
     },
     {
       "add_esp_value": 4,
@@ -686,17 +726,6 @@
       "target_address": "0x52dab0",
       "text": "Direct CALL at 00520838, ADD ESP at 0052083d with uncertain ESP",
       "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "0052062c",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "0052062f",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 228,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 0052062c, ADD ESP at 0052062f",
-      "type": "callind_anchor"
     }
   ]
 }

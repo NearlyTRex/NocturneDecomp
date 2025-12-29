@@ -15,7 +15,6 @@ void __cdecl shape_design_c_sizeModelInOneDimension_FUN_00469850(void)
   BADSPACEBASE *in_ESP;
   char *pcVar4;
   byte bVar5;
-  char local_f4 [4];
   char local_a4 [80];
   int local_54;
   int local_50;
@@ -30,7 +29,7 @@ void __cdecl shape_design_c_sizeModelInOneDimension_FUN_00469850(void)
   float local_2c;
   float local_28;
   float local_24;
-  float local_20 [4];
+  float local_20;
   
   bVar5 = 0;
   local_38 = 999999.9;
@@ -65,20 +64,12 @@ void __cdecl shape_design_c_sizeModelInOneDimension_FUN_00469850(void)
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_drawText_FUN_00401fd0("Enter axis to size - X, Y, or Z : ",0,0);
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-  local_f4[0] = 'W';
-  local_f4[1] = -0x67;
-  local_f4[2] = 'F';
-  local_f4[3] = '\0';
   engine_2d_c_clearInputAndWait_FUN_00403260();
   uVar2 = wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
   local_48 = crt_ctype_c_toupper_FUN_005ff9e0(uVar2 & 0xff);
   if ((0x57 < (int)local_48) && ((int)local_48 < 0x5b)) {
-    local_f4[0] = -0x6c;
-    local_f4[1] = -0x67;
-    local_f4[2] = 'F';
-    local_f4[3] = '\0';
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_f4,"Enter %c distance in feet (,min,max for user-defined min/max points) : ");
-    engine_2d_c_getInputWithPrompt_FUN_004032c0(local_a4,0x14,0,0x16,local_f4);
+    crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff0c,"Enter %c distance in feet (,min,max for user-defined min/max points) : ");
+    engine_2d_c_getInputWithPrompt_FUN_004032c0(local_a4,0x14,0,0x16,&stack0xffffff0c);
     iVar3 = -1;
     pcVar4 = local_a4;
     do {
@@ -88,8 +79,7 @@ void __cdecl shape_design_c_sizeModelInOneDimension_FUN_00469850(void)
       pcVar4 = pcVar4 + (uint)bVar5 * -2 + 1;
     } while (cVar1 != '\0');
     if (iVar3 != -2) {
-      local_54 = crt_stdio_c_sscanf_FUN_0060013c
-                           (local_a4,"%f,%d,%d",local_20,&local_4c,&local_50);
+      local_54 = crt_stdio_c_sscanf_FUN_0060013c(local_a4,"%f,%d,%d");
       if (1 < local_54) {
         if (local_54 != 3) {
           engine_2d_c_drawText_FUN_00401fd0("Need distance and two points.",0,0x2c);
@@ -123,16 +113,16 @@ void __cdecl shape_design_c_sizeModelInOneDimension_FUN_00469850(void)
         if (local_48 < 0x59) {
           if (local_48 == 0x58) {
             g_LoadedVertices[local_54].vertex.x =
-                 g_LoadedVertices[local_54].vertex.x * (local_20[0] / (local_2c - local_38));
+                 g_LoadedVertices[local_54].vertex.x * (local_20 / (local_2c - local_38));
           }
         }
         else if (local_48 < 0x5a) {
           g_LoadedVertices[local_54].vertex.y =
-               g_LoadedVertices[local_54].vertex.y * (local_20[0] / (local_28 - local_34));
+               g_LoadedVertices[local_54].vertex.y * (local_20 / (local_28 - local_34));
         }
         else if (local_48 == 0x5a) {
           g_LoadedVertices[local_54].vertex.z =
-               g_LoadedVertices[local_54].vertex.z * (local_20[0] / (local_24 - local_30));
+               g_LoadedVertices[local_54].vertex.z * (local_20 / (local_24 - local_30));
         }
       }
     }

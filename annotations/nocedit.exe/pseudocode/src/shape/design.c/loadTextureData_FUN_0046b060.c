@@ -16,16 +16,10 @@ shape_design_c_loadTextureData_FUN_0046b060
   BADSPACEBASE *in_ESP;
   double dVar2;
   int in_stack_00000018;
+  byte *atlas_width_00;
+  byte *atlas_height_00;
+  byte *red_out;
   byte *blue_out;
-  byte *alpha_out;
-  uint uVar3;
-  uint local_180;
-  byte local_17c [4];
-  double local_178;
-  double local_170;
-  double local_168;
-  double local_160;
-  int local_158;
   byte local_154 [4];
   int local_150;
   int local_14c;
@@ -89,7 +83,7 @@ shape_design_c_loadTextureData_FUN_0046b060
     }
   }
   if ((local_1c->_flag & 0x20) != 0) {
-    crt_stdio_c_sprintf_FUN_005fdbd0(local_148,"Unable to read file (%s).",config_ptr);
+    crt_stdio_c_sprintf_FUN_005fdbd0(local_148,"Unable to read file (%s).");
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_1c,"..\\shape\\design.c",0x27c2);
     g_CurrentFilename = "..\\shape\\design.c";
     g_CurrentLineNumber = 0x27c3;
@@ -106,24 +100,20 @@ shape_design_c_loadTextureData_FUN_0046b060
     crt_memory_c_memset_FUN_005fde40
               (local_24,0xff,config_ptr->source_width * config_ptr->source_height);
   }
-  local_180 = 0x46b349;
   dVar2 = crt_math_c_round_FUN_005fe6b0
                     (((double)g_TextureAtlasDimension * (double)config_ptr->src_x2) /
                      (double)atlas_height + 0.5);
   local_38 = (int)ROUND(dVar2);
-  uVar3 = 0x46b36d;
   dVar2 = crt_math_c_round_FUN_005fe6b0
                     (((double)g_TextureAtlasDimension * (double)config_ptr->src_y2) /
                      (double)in_stack_00000018 + 0.5);
   local_34 = (int)ROUND(dVar2);
   config_ptr->scaled_dest_x = local_38;
   config_ptr->scaled_dest_y = local_34;
-  alpha_out = (byte *)0x46b3a9;
   dVar2 = crt_math_c_round_FUN_005fe6b0
                     (((double)g_TextureAtlasDimension * (double)config_ptr->src_x1) /
                      (double)atlas_height + 0.5);
   local_30 = (int)ROUND(dVar2);
-  blue_out = (byte *)0x46b3cd;
   dVar2 = crt_math_c_round_FUN_005fe6b0
                     (((double)g_TextureAtlasDimension * (double)config_ptr->src_y1) /
                      (double)in_stack_00000018 + 0.5);
@@ -138,27 +128,31 @@ shape_design_c_loadTextureData_FUN_0046b060
   config_ptr->dest_y = local_2c;
   for (local_3c = 0; local_3c < local_34; local_3c = local_3c + 1) {
     for (local_40 = 0; local_40 < local_38; local_40 = local_40 + 1) {
-      local_160 = (double)config_ptr->source_width *
-                  ((double)config_ptr->atlas_x1 +
-                  ((double)local_40 * (double)(config_ptr->atlas_x2 - config_ptr->atlas_x1)) /
-                  (double)local_38) * 5.9604644775390599e-08;
-      local_168 = (double)config_ptr->source_height *
-                  ((double)config_ptr->atlas_y1 +
-                  ((double)local_3c * (double)(config_ptr->atlas_y2 - config_ptr->atlas_y1)) /
-                  (double)local_34) * 5.9604644775390599e-08;
-      local_170 = (double)config_ptr->source_width *
-                  ((double)config_ptr->atlas_x1 +
-                  ((double)(local_40 + 1) * (double)(config_ptr->atlas_x2 - config_ptr->atlas_x1)) /
-                  (double)local_38) * 5.9604644775390599e-08;
-      local_158 = local_3c + 1;
-      local_178 = (double)config_ptr->source_height *
-                  ((double)config_ptr->atlas_y1 +
-                  ((double)local_158 * (double)(config_ptr->atlas_y2 - config_ptr->atlas_y1)) /
-                  (double)local_34) * 5.9604644775390599e-08;
+      dVar2 = (double)config_ptr->source_width *
+              ((double)config_ptr->atlas_x1 +
+              ((double)(local_40 + 1) * (double)(config_ptr->atlas_x2 - config_ptr->atlas_x1)) /
+              (double)local_38) * 5.9604644775390599e-08;
+      blue_out = (byte *)((ulonglong)
+                          ((double)config_ptr->source_height *
+                          ((double)config_ptr->atlas_y1 +
+                          ((double)(local_3c + 1) *
+                          (double)(config_ptr->atlas_y2 - config_ptr->atlas_y1)) / (double)local_34)
+                          * 5.9604644775390599e-08) >> 0x20);
+      red_out = local_154;
+      atlas_height_00 = &stack0xfffffe80;
+      atlas_width_00 = &stack0xfffffe7c;
       shape_design_c_sampleAndFilterPixel_FUN_0046ae20
-                (local_28,local_24,config_ptr->source_width,config_ptr->source_height,local_160,
-                 local_168,local_170,local_178,(int)&stack0xfffffe7c,(int)&local_180,local_154,
-                 local_17c,blue_out,alpha_out);
+                (local_28,local_24,config_ptr->source_width,config_ptr->source_height,
+                 (double)config_ptr->source_width *
+                 ((double)config_ptr->atlas_x1 +
+                 ((double)local_40 * (double)(config_ptr->atlas_x2 - config_ptr->atlas_x1)) /
+                 (double)local_38) * 5.9604644775390599e-08,
+                 (double)config_ptr->source_height *
+                 ((double)config_ptr->atlas_y1 +
+                 ((double)local_3c * (double)(config_ptr->atlas_y2 - config_ptr->atlas_y1)) /
+                 (double)local_34) * 5.9604644775390599e-08,dVar2,
+                 (double)CONCAT44 /* combine 2-byte values */(blue_out,&stack0xfffffe84),(int)atlas_width_00,
+                 (int)atlas_height_00,red_out,&stack0xfffffe84,blue_out,SUB84 /* extract 2-byte value */(dVar2,0));
       if (config_ptr->processing_mode == 0) {
         local_150 = g_TextureAtlasDimension * (local_2c + local_3c) + local_30 + local_40;
       }
@@ -167,10 +161,10 @@ shape_design_c_loadTextureData_FUN_0046b060
                     local_30 + ((local_34 + -1) - local_3c);
       }
       local_14c = local_150 * 3;
-      *(char *)((int)rgb_buffer + local_14c) = (char)uVar3;
-      *(byte *)((int)rgb_buffer + local_14c + 1) = (byte)local_180;
+      *(char *)((int)rgb_buffer + local_14c) = (char)atlas_width_00;
+      *(char *)((int)rgb_buffer + local_14c + 1) = (char)atlas_height_00;
       *(byte *)((int)rgb_buffer + local_14c + 2) = local_154[0];
-      *(byte *)((int)alpha_buffer + local_150) = local_17c[0];
+      *(byte *)((int)alpha_buffer + local_150) = (byte)red_out;
     }
   }
   shape_memdbg_cpp_debugFree_FUN_0050f460(local_28,"..\\shape\\design.c",0x2818);

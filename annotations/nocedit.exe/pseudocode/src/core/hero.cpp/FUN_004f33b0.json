@@ -1,21 +1,24 @@
 {
   "complexity": {
     "assembly_lines": 177,
-    "complexity_score": 320,
+    "complexity_score": 363,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 7,
-    "pseudocode_lines": 70,
-    "suspect_count": 22,
+    "pseudocode_lines": 68,
+    "suspect_count": 25,
     "suspect_types": [
       "badspacebase",
       "call_esp_anchor",
+      "callind_anchor",
       "param_count_too_few",
       "register_param",
+      "stack_align_anchor",
       "stack_param",
+      "stack_ref",
       "unknown_field"
     ],
-    "total_lines": 247
+    "total_lines": 245
   },
   "cross_references": [
     {
@@ -281,94 +284,116 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
+      "line": 21,
       "match": "in_stack_00000004",
-      "text": "iVar3 = core_charactr_cpp_CCharacter_FUN_0042d360(in_stack_00000004);",
+      "text": "iVar2 = core_charactr_cpp_CCharacter_FUN_0042d360(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 26,
+      "line": 23,
       "match": "in_stack_00000004",
       "text": "if (*(int *)(in_stack_00000004[2].cloth_data + 0x54d0) != 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 29,
+      "line": 26,
       "match": "in_stack_00000004",
       "text": "input_world_point = &(in_stack_00000004->base_actor).location;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 35,
+      "line": 33,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->base_actor).location.position.z;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 37,
+      "line": 35,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->base_actor).location.position.y) <= (float)10) &&",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 40,
+      "line": 37,
       "match": "in_stack_00000004",
       "text": "(this_ptr != in_stack_00000004)) {",
       "type": "stack_param"
     },
     {
+      "description": "Direct stack address reference",
+      "line": 39,
+      "match": "&stack0xffffffa4",
+      "text": "((CVector3f *)(local_30 + 4),(CVector3f *)&stack0xffffffa4);",
+      "type": "stack_ref"
+    },
+    {
       "description": "Unresolved stack parameter",
-      "line": 44,
+      "line": 41,
       "match": "in_stack_00000004",
-      "text": "(pCVar4->y - (in_stack_00000004->base_actor).orient.bank);",
+      "text": "(pCVar3->y - (in_stack_00000004->base_actor).orient.bank);",
       "type": "stack_param"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 53,
-      "match": "._8_4_",
-      "text": "auStack_48._8_4_ = SStack_80.distance_min;",
-      "type": "unknown_field"
+      "description": "Direct stack address reference",
+      "line": 48,
+      "match": "&stack0xffffff90",
+      "text": "(&this_ptr->base_actor,(SInteractionInfo *)&stack0xffffff90), fVar5 != 0.0))",
+      "type": "stack_ref"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 54,
-      "match": "._0_4_",
-      "text": "auStack_48._0_4_ = SStack_80.reference_data;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 55,
+      "line": 56,
       "match": "._4_4_",
-      "text": "auStack_48._4_4_ = SStack_80.reference_data;",
+      "text": "fVar5 = (float)local_30._4_4_ - (input_world_point->position).x;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 59,
+      "line": 57,
       "match": "in_stack_00000004",
-      "text": "fVar2 = CStack_54.z - (in_stack_00000004->base_actor).location.position.z;",
+      "text": "fVar1 = CStack_24.x - (in_stack_00000004->base_actor).location.position.z;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 60,
+      "match": "in_stack_00000004",
+      "text": "(&this_ptr->base_actor,&in_stack_00000004->base_actor), iVar2 != 0",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 62,
       "match": "in_stack_00000004",
-      "text": "(&this_ptr->base_actor,&in_stack_00000004->base_actor), iVar3 != 0",
+      "text": "*(CCharacter **)(in_stack_00000004[2].cloth_data + 0x54d0) = this_ptr;",
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 64,
-      "match": "in_stack_00000004",
-      "text": "*(CCharacter **)(in_stack_00000004[2].cloth_data + 0x54d0) = this_ptr;",
-      "type": "stack_param"
+      "add_esp_value": 8,
+      "callind_address": "004f34e6",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "004f34ec",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 112,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 004f34e6, ADD ESP at 004f34ec",
+      "type": "callind_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "004f3554",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "004f355a",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 112,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 004f3554, ADD ESP at 004f355a",
+      "type": "callind_anchor"
     },
     {
       "call_site_count": 1,
@@ -380,6 +405,16 @@
       "param_delta": 1,
       "text": "Function declares 0 params but call sites push 1 (1 missing)",
       "type": "param_count_too_few"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x70",
+      "fix_address": "004f33b9",
+      "frame_offset": 112,
+      "match": "AND ESP",
+      "sub_esp_offset": 112,
+      "text": "Stack alignment at 004f33b9 (SUB ESP, 0x70 before)",
+      "type": "stack_align_anchor"
     },
     {
       "add_esp_value": 4,
@@ -445,37 +480,6 @@
       "target_address": "0x408ec0",
       "text": "Direct CALL at 004f3520, ADD ESP at 004f3525 with uncertain ESP",
       "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "004f34e6",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "004f34ec",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 112,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 004f34e6, ADD ESP at 004f34ec",
-      "type": "callind_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "004f3554",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "004f355a",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 112,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 004f3554, ADD ESP at 004f355a",
-      "type": "callind_anchor"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x70",
-      "fix_address": "004f33b9",
-      "match": "AND ESP",
-      "sub_esp_offset": 112,
-      "text": "Stack alignment at 004f33b9 (SUB ESP, 0x70 before)",
-      "type": "stack_align_anchor"
     }
   ]
 }

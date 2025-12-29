@@ -1,18 +1,21 @@
 {
   "complexity": {
     "assembly_lines": 303,
-    "complexity_score": 199,
+    "complexity_score": 377,
     "cross_reference_count": 25,
     "function_call_count": 11,
     "global_count": 26,
-    "pseudocode_lines": 94,
-    "suspect_count": 9,
+    "pseudocode_lines": 97,
+    "suspect_count": 25,
     "suspect_types": [
       "call_esp_anchor",
-      "concat_artifact",
+      "extra_output",
+      "stack_align_anchor",
+      "unaffected_reg",
+      "variadic_anchor",
       "variadic_preserve_ebp"
     ],
-    "total_lines": 397
+    "total_lines": 400
   },
   "cross_references": [
     {
@@ -568,11 +571,102 @@
   },
   "suspects": [
     {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 76,
-      "match": "CONCAT44",
-      "text": "local_40 = (double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)(double)fVar1 >> 0x20),0x4a077d);",
-      "type": "concat_artifact"
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 13,
+      "match": "extraout_EDX",
+      "text": "int extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 14,
+      "match": "unaff_EBX",
+      "text": "int unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 16,
+      "match": "unaff_EBP",
+      "text": "uint unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 17,
+      "match": "unaff_ESI",
+      "text": "int unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 19,
+      "match": "unaff_EDI",
+      "text": "int unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 50,
+      "match": "unaff_EBP",
+      "text": "\"%d%% complete\",unaff_EBP);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 62,
+      "match": "unaff_ESI",
+      "text": "engine_2d_c_drawVLine_FUN_00402ff0(x,(int)this_ptr,unaff_ESI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 72,
+      "match": "unaff_ESI",
+      "text": "engine_2d_c_fillRectColor_FUN_00403170(x1,y + 1,iVar3,unaff_ESI,g_ProgressBarFillColor);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 74,
+      "match": "unaff_EBX",
+      "text": "if (0 < unaff_EBX) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 75,
+      "match": "unaff_EDI",
+      "text": "fVar1 = (float)(unaff_EDI - g_WindowStack[g_WindowStackCount + -1].progress_start_time) *",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 89,
+      "match": "unaff_EBX",
+      "text": "(int)ROUND(dVar4) / 0x3c,local_14,y / 0x3c,unaff_EBX,uVar6);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 90,
+      "match": "extraout_EDX",
+      "text": "unaff_ESI = extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 90,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI = extraout_EDX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 97,
+      "match": "unaff_ESI",
+      "text": "g_WindowStack[iVar3].progress_timestamp = unaff_ESI;",
+      "type": "unaffected_reg"
     },
     {
       "call_address": "004a0624",
@@ -587,6 +681,48 @@
       "target_function": "engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30",
       "text": "Call to variadic function engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30 at 004a0624 (EBP frame, no ADD ESP)",
       "type": "variadic_preserve_ebp"
+    },
+    {
+      "add_esp_value": 44,
+      "call_address": "004a0826",
+      "caller_has_stack_issues": false,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "fix_address": "004a082b",
+      "frame_offset": 48,
+      "match": "CALL engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30",
+      "return_address": "004a082b",
+      "target_address": "0x4cdf30",
+      "target_function": "engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30",
+      "text": "Call to variadic function engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30 at 004a0826 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "004a0880",
+      "caller_has_stack_issues": false,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "004a0885",
+      "frame_offset": 48,
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "004a0885",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 004a0880 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x30",
+      "fix_address": "004a0539",
+      "frame_offset": 48,
+      "match": "AND ESP",
+      "sub_esp_offset": 48,
+      "text": "Stack alignment at 004a0539 (SUB ESP, 0x30 before)",
+      "type": "stack_align_anchor"
     },
     {
       "add_esp_value": 4,
@@ -678,47 +814,6 @@
       "target_address": "0x406d80",
       "text": "Direct CALL at 004a07e2, ADD ESP at 004a07e7 with uncertain ESP",
       "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 44,
-      "call_address": "004a0826",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "fix_address": "004a082b",
-      "frame_offset": 48,
-      "match": "CALL engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30",
-      "return_address": "004a082b",
-      "target_address": "0x4cdf30",
-      "target_function": "engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30",
-      "text": "Call to variadic function engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30 at 004a0826 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "004a0880",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "004a0885",
-      "frame_offset": 48,
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "004a0885",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 004a0880 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x30",
-      "fix_address": "004a0539",
-      "match": "AND ESP",
-      "sub_esp_offset": 48,
-      "text": "Stack alignment at 004a0539 (SUB ESP, 0x30 before)",
-      "type": "stack_align_anchor"
     }
   ]
 }

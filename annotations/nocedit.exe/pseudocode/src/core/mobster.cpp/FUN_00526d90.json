@@ -1,17 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 348,
-    "complexity_score": 824,
+    "complexity_score": 899,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 8,
     "pseudocode_lines": 174,
-    "suspect_count": 62,
+    "suspect_count": 68,
     "suspect_types": [
       "badspacebase",
       "call_esp_anchor",
+      "callind_anchor",
       "param_count_too_few",
+      "pointer_cast",
       "register_param",
+      "stack_align_anchor",
       "stack_param",
       "unresolved_funcptr"
     ],
@@ -251,233 +254,240 @@
   "suspects": [
     {
       "description": "Ghidra failed to resolve stack frame",
-      "line": 16,
+      "line": 14,
       "match": "BADSPACEBASE",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "badspacebase"
     },
     {
       "description": "Inferred register parameter",
-      "line": 16,
+      "line": 14,
       "match": "in_ESP",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "register_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 17,
       "match": "in_stack_00000004",
       "text": "CCharacter *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 18,
       "match": "in_stack_00000008",
       "text": "float in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 38,
+      "line": 36,
       "match": "in_stack_00000004",
       "text": "if (*(int *)(in_stack_00000004[1].base_actor.actor_name + 0xc) == 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 39,
+      "line": 37,
       "match": "in_stack_00000004",
-      "text": "fVar4 = *(float *)(in_stack_00000004[1].base_actor.create_event + 0x24) - in_stack_00000008;",
+      "text": "fVar9 = *(float *)(in_stack_00000004[1].base_actor.create_event + 0x24) - in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 39,
+      "line": 37,
       "match": "in_stack_00000008",
-      "text": "fVar4 = *(float *)(in_stack_00000004[1].base_actor.create_event + 0x24) - in_stack_00000008;",
+      "text": "fVar9 = *(float *)(in_stack_00000004[1].base_actor.create_event + 0x24) - in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 38,
+      "match": "in_stack_00000004",
+      "text": "*(float *)(in_stack_00000004[1].base_actor.create_event + 0x24) = fVar9;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 40,
       "match": "in_stack_00000004",
-      "text": "*(float *)(in_stack_00000004[1].base_actor.create_event + 0x24) = fVar4;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 42,
-      "match": "in_stack_00000004",
       "text": "*(int *)(in_stack_00000004[1].base_actor.create_event + 0x20) =",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 43,
+      "line": 41,
       "match": "in_stack_00000004",
       "text": "*(int *)(in_stack_00000004[1].base_actor.create_event + 0x20) + 1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 45,
+      "line": 43,
       "match": "in_stack_00000004",
       "text": "*(float *)(in_stack_00000004[1].base_actor.create_event + 0x24) = local_14;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 47,
+      "line": 45,
       "match": "in_stack_00000004",
       "text": "if (((in_stack_00000004->model).part_visibility_flags",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 48,
+      "line": 46,
       "match": "in_stack_00000004",
       "text": "[*(int *)(in_stack_00000004->carry_hands[1].field0_0x0 + 4)] != 0) &&",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 49,
+      "line": 47,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->carry_hands[1].carry_actor == (CDemonActor *)0x0)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 50,
+      "line": 48,
       "match": "in_stack_00000004",
       "text": "if (0.0 < *(float *)(in_stack_00000004[1].base_actor.create_event + 0x28)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 51,
+      "line": 49,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008 =",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 52,
+      "line": 50,
       "match": "in_stack_00000004",
       "text": "*(float *)(in_stack_00000004[1].base_actor.create_event + 0x28) - in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 52,
+      "line": 50,
       "match": "in_stack_00000008",
       "text": "*(float *)(in_stack_00000004[1].base_actor.create_event + 0x28) - in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 53,
+      "line": 51,
       "match": "in_stack_00000004",
       "text": "*(float *)(in_stack_00000004[1].base_actor.create_event + 0x28) = in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 53,
+      "line": 51,
       "match": "in_stack_00000008",
       "text": "*(float *)(in_stack_00000004[1].base_actor.create_event + 0x28) = in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 54,
+      "line": 52,
       "match": "in_stack_00000008",
       "text": "if (in_stack_00000008 < 0.0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 55,
+      "line": 53,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004 = in_stack_00000004 + 1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 55,
+      "line": 53,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004 = in_stack_00000004 + 1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 56,
+      "line": 54,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->base_actor).create_event[0x28] = '\\0';",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 57,
+      "line": 55,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->base_actor).create_event[0x29] = '\\0';",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 58,
+      "line": 56,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->base_actor).create_event[0x2a] = '\\0';",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 59,
+      "line": 57,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004->base_actor).create_event[0x2b] = '\\0';",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 64,
+      "line": 62,
       "match": "in_stack_00000004",
-      "text": "iVar10 = *(int *)(in_stack_00000004[1].base_actor.create_event + 0x2c);",
+      "text": "iVar8 = *(int *)(in_stack_00000004[1].base_actor.create_event + 0x2c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 65,
+      "line": 63,
       "match": "in_stack_00000004",
       "text": "pCVar1 = &(in_stack_00000004->base_actor).location;",
       "type": "stack_param"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 85,
+      "match": "(CLocation *)((int)",
+      "text": "local_20 = (CLocation *)((int)&(local_20->position).x + 1);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 96,
       "match": "in_stack_00000004",
-      "text": "pCVar6 = in_stack_00000004 + 1;",
+      "text": "pCVar4 = in_stack_00000004 + 1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 101,
       "match": "in_stack_00000004",
-      "text": "iVar10 = *(int *)(in_stack_00000004[1].base_actor.create_event + 0x20);",
+      "text": "iVar8 = *(int *)(in_stack_00000004[1].base_actor.create_event + 0x20);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 102,
       "match": "in_stack_00000004",
-      "text": "*(uint *)(in_stack_00000004[1].base_actor.create_event + 0x2c) = uVar3;",
+      "text": "*(float *)(in_stack_00000004[1].base_actor.create_event + 0x2c) = fVar9;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 103,
       "match": "in_stack_00000004",
-      "text": "*(int *)(in_stack_00000004[1].base_actor.create_event + 0x20) = iVar10 + 1;",
+      "text": "*(int *)(in_stack_00000004[1].base_actor.create_event + 0x20) = iVar8 + 1;",
       "type": "stack_param"
     },
     {
@@ -491,21 +501,21 @@
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 110,
       "match": "code *",
-      "text": "iVar10 = (**(code **)(*(int *)(iVar10 + 0x154) + 0x8c))();",
+      "text": "iVar8 = (**(code **)(*(int *)(iVar8 + 0x154) + 0x8c))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 112,
       "match": "in_stack_00000004",
-      "text": "pCVar6 = in_stack_00000004 + 1;",
+      "text": "pCVar4 = in_stack_00000004 + 1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 117,
       "match": "in_stack_00000004",
-      "text": "pCVar6 = in_stack_00000004 + 1;",
+      "text": "pCVar4 = in_stack_00000004 + 1;",
       "type": "stack_param"
     },
     {
@@ -519,21 +529,21 @@
       "description": "Unresolved stack parameter",
       "line": 126,
       "match": "in_stack_00000004",
-      "text": "iVar10 = *(int *)(in_stack_00000004[1].base_actor.create_event + 0x2c);",
+      "text": "iVar8 = *(int *)(in_stack_00000004[1].base_actor.create_event + 0x2c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 128,
       "match": "in_stack_00000004",
-      "text": "fVar5 = (in_stack_00000004->base_actor).location.position.z - *(float *)(iVar10 + 0x28);",
+      "text": "fVar3 = (in_stack_00000004->base_actor).location.position.z - *(float *)(iVar8 + 0x28);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 134,
       "match": "in_stack_00000008",
-      "text": "fVar4 = in_stack_00000008 * fStack_b0 +",
+      "text": "fVar9 = in_stack_00000008 * fVar9 +",
       "type": "stack_param"
     },
     {
@@ -547,21 +557,21 @@
       "description": "Unresolved stack parameter",
       "line": 137,
       "match": "in_stack_00000004",
-      "text": "*(float *)(in_stack_00000004[1].base_actor.create_event + 0x28) = fVar4;",
+      "text": "*(float *)(in_stack_00000004[1].base_actor.create_event + 0x28) = fVar9;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 139,
       "match": "in_stack_00000004",
-      "text": "(iVar9 = (**(code **)(*(int *)(*(int *)(in_stack_00000004[1].base_actor.create_event +",
+      "text": "(iVar7 = (**(code **)(*(int *)(*(int *)(in_stack_00000004[1].base_actor.create_event +",
       "type": "stack_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 139,
       "match": "code *",
-      "text": "(iVar9 = (**(code **)(*(int *)(*(int *)(in_stack_00000004[1].base_actor.create_event +",
+      "text": "(iVar7 = (**(code **)(*(int *)(*(int *)(in_stack_00000004[1].base_actor.create_event +",
       "type": "unresolved_funcptr"
     },
     {
@@ -575,7 +585,7 @@
       "description": "Unresolved stack parameter",
       "line": 151,
       "match": "in_stack_00000004",
-      "text": "iVar10 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0(in_stack_00000004);",
+      "text": "iVar8 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0(in_stack_00000004);",
       "type": "stack_param"
     },
     {
@@ -589,14 +599,14 @@
       "description": "Unresolved stack parameter",
       "line": 161,
       "match": "in_stack_00000004",
-      "text": "pCVar6 = in_stack_00000004 + 1;",
+      "text": "pCVar4 = in_stack_00000004 + 1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 166,
       "match": "in_stack_00000004",
-      "text": "pCVar6 = in_stack_00000004 + 1;",
+      "text": "pCVar4 = in_stack_00000004 + 1;",
       "type": "stack_param"
     },
     {
@@ -605,6 +615,50 @@
       "match": "in_stack_00000004",
       "text": "(&(in_stack_00000004->model).motion_controller,1,1);",
       "type": "stack_param"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "00526e58",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "00526e5e",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 160,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 00526e58, ADD ESP at 00526e5e",
+      "type": "callind_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "00526eed",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "00526ef3",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 160,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 00526eed, ADD ESP at 00526ef3",
+      "type": "callind_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "00526f74",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "00526f77",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 160,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 00526f74, ADD ESP at 00526f77",
+      "type": "callind_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "00526f95",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "00526f9d",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 160,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 00526f95, ADD ESP at 00526f9d",
+      "type": "callind_anchor"
     },
     {
       "call_site_count": 1,
@@ -616,6 +670,16 @@
       "param_delta": 2,
       "text": "Function declares 0 params but call sites push 2 (2 missing)",
       "type": "param_count_too_few"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0xa0",
+      "fix_address": "00526d9c",
+      "frame_offset": 160,
+      "match": "AND ESP",
+      "sub_esp_offset": 160,
+      "text": "Stack alignment at 00526d9c (SUB ESP, 0xa0 before)",
+      "type": "stack_align_anchor"
     },
     {
       "add_esp_value": 12,
@@ -746,59 +810,6 @@
       "target_address": "0x52db00",
       "text": "Direct CALL at 005271a4, ADD ESP at 005271ae with uncertain ESP",
       "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "callind_address": "00526e58",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "00526e5e",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 160,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 00526e58, ADD ESP at 00526e5e",
-      "type": "callind_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "callind_address": "00526eed",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "00526ef3",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 160,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 00526eed, ADD ESP at 00526ef3",
-      "type": "callind_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "00526f74",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "00526f77",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 160,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 00526f74, ADD ESP at 00526f77",
-      "type": "callind_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "00526f95",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "00526f9d",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 160,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 00526f95, ADD ESP at 00526f9d",
-      "type": "callind_anchor"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0xa0",
-      "fix_address": "00526d9c",
-      "match": "AND ESP",
-      "sub_esp_offset": 160,
-      "text": "Stack alignment at 00526d9c (SUB ESP, 0xa0 before)",
-      "type": "stack_align_anchor"
     }
   ]
 }

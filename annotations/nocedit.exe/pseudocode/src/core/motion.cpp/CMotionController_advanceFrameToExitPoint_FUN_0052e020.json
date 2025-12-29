@@ -1,16 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 156,
-    "complexity_score": 84,
+    "complexity_score": 119,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 2,
-    "pseudocode_lines": 69,
-    "suspect_count": 1,
+    "pseudocode_lines": 64,
+    "suspect_count": 4,
     "suspect_types": [
-      "pointer_cast"
+      "callind_anchor",
+      "pointer_cast",
+      "stack_align_anchor"
     ],
-    "total_lines": 225
+    "total_lines": 220
   },
   "cross_references": [
     {
@@ -228,9 +230,9 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 61,
+      "line": 56,
       "match": "(SMotionTransition *)((int)",
-      "text": "pSVar8 = (SMotionTransition *)((int)pSVar8 + (uint)bVar9 * -8 + 4);",
+      "text": "pSVar7 = (SMotionTransition *)((int)pSVar7 + (uint)bVar8 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
@@ -259,6 +261,7 @@
       "align_instruction": "AND ESP,0xfffffff8",
       "description": "Stack alignment can be anchored: ESP = EBP - 0x1c",
       "fix_address": "0052e029",
+      "frame_offset": 28,
       "match": "AND ESP",
       "sub_esp_offset": 28,
       "text": "Stack alignment at 0052e029 (SUB ESP, 0x1c before)",

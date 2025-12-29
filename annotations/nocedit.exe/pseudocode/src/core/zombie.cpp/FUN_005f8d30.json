@@ -1,13 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 39,
-    "complexity_score": 123,
+    "complexity_score": 153,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 2,
     "pseudocode_lines": 18,
-    "suspect_count": 9,
+    "suspect_count": 11,
     "suspect_types": [
+      "callind_anchor",
+      "stack_align_anchor",
       "stack_param",
       "unresolved_funcptr",
       "warning_overlapping_globals"
@@ -140,21 +142,21 @@
       "description": "Unresolved stack parameter",
       "line": 18,
       "match": "in_stack_00000004",
-      "text": "*in_stack_00000004 = (fStack_2c + fStack_20) * _DAT_0065843d;",
+      "text": "*in_stack_00000004 = (fStack_30 + fStack_24) * _DAT_0065843d;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 19,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[1] = fVar1 * (fStack_28 + fStack_1c);",
+      "text": "in_stack_00000004[1] = fVar1 * (fStack_2c + fStack_20);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 20,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[2] = fStack_24 + (float)_DAT_00658445;",
+      "text": "in_stack_00000004[2] = fStack_28 + (float)_DAT_00658445;",
       "type": "stack_param"
     },
     {
@@ -179,6 +181,7 @@
       "align_instruction": "AND ESP,0xfffffff8",
       "description": "Stack alignment can be anchored: ESP = EBP - 0x24",
       "fix_address": "005f8d37",
+      "frame_offset": 36,
       "match": "AND ESP",
       "sub_esp_offset": 36,
       "text": "Stack alignment at 005f8d37 (SUB ESP, 0x24 before)",

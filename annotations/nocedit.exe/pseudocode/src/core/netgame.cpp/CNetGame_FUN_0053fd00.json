@@ -1,17 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 456,
-    "complexity_score": 332,
+    "complexity_score": 371,
     "cross_reference_count": 9,
     "function_call_count": 7,
     "global_count": 16,
-    "pseudocode_lines": 182,
-    "suspect_count": 14,
+    "pseudocode_lines": 181,
+    "suspect_count": 17,
     "suspect_types": [
       "call_esp_anchor",
-      "stack_param"
+      "stack_align_anchor",
+      "stack_param",
+      "variadic_anchor"
     ],
-    "total_lines": 638
+    "total_lines": 637
   },
   "cross_references": [
     {
@@ -367,10 +369,52 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 16,
       "match": "in_stack_00000008",
       "text": "if (in_stack_00000008 != 0) {",
       "type": "stack_param"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "0053fe6c",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "0053fe71",
+      "frame_offset": 32,
+      "match": "CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0",
+      "return_address": "0053fe71",
+      "target_address": "0x49e6a0",
+      "target_function": "shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0",
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 at 0053fe6c (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "0054008f",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "00540094",
+      "frame_offset": 32,
+      "match": "CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0",
+      "return_address": "00540094",
+      "target_address": "0x49e6a0",
+      "target_function": "shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0",
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 at 0054008f (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x20",
+      "fix_address": "0053fd09",
+      "frame_offset": 32,
+      "match": "AND ESP",
+      "sub_esp_offset": 32,
+      "text": "Stack alignment at 0053fd09 (SUB ESP, 0x20 before)",
+      "type": "stack_align_anchor"
     },
     {
       "add_esp_value": 8,
@@ -527,47 +571,6 @@
       "target_address": "0x4a0dd0",
       "text": "Direct CALL at 005401c6, ADD ESP at 005401cb with uncertain ESP",
       "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "0053fe6c",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "0053fe71",
-      "frame_offset": 32,
-      "match": "CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0",
-      "return_address": "0053fe71",
-      "target_address": "0x49e6a0",
-      "target_function": "shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0",
-      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 at 0053fe6c (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "0054008f",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "00540094",
-      "frame_offset": 32,
-      "match": "CALL shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0",
-      "return_address": "00540094",
-      "target_address": "0x49e6a0",
-      "target_function": "shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0",
-      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 at 0054008f (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x20",
-      "fix_address": "0053fd09",
-      "match": "AND ESP",
-      "sub_esp_offset": 32,
-      "text": "Stack alignment at 0053fd09 (SUB ESP, 0x20 before)",
-      "type": "stack_align_anchor"
     }
   ]
 }

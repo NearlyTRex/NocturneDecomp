@@ -11,26 +11,30 @@ void __cdecl core_setedit_cpp_CDemonSet_save_FUN_0057a2a0(CDemonSet *this_ptr,ch
 {
   double dVar1;
   double dVar2;
-  double dVar3;
-  char cVar4;
+  char cVar3;
+  SRoom *pSVar4;
+  SVDBox *pSVar5;
   FILE *file;
   C3DSLight *this_ptr_00;
-  SRoom *pSVar5;
-  SVDBox *pSVar6;
-  C3DSCamera *pCVar7;
+  C3DSCamera *pCVar6;
   BADSPACEBASE *in_ESP;
+  char *pcVar7;
   char *pcVar8;
   char *pcVar9;
-  char *pcVar10;
-  int iVar11;
-  char *pcVar12;
-  char acStack_94 [92];
-  CVector3f local_38;
-  CVector3f local_2c;
-  SVDBox *local_20;
-  SRoom *local_1c;
-  CMatrix3x3f *local_18;
-  CMatrix3x3f *pCStack_14;
+  int iVar10;
+  char *pcVar11;
+  float in_stack_00000038;
+  float in_stack_0000003c;
+  float in_stack_00000040;
+  float in_stack_00000048;
+  CMatrix3x3f *in_stack_0000004c;
+  SRoom *in_stack_00000050;
+  CMatrix3x3f *in_stack_00000058;
+  SVDBox *in_stack_00000064;
+  CMatrix3x3f *in_stack_0000006c;
+  double dVar12;
+  double dVar13;
+  uint uVar14;
   
   this_ptr->set_file_version = 0x1c;
   file = engine_dosio_c_getFile_FUN_00481a50("models",filename,"wt");
@@ -40,9 +44,7 @@ void __cdecl core_setedit_cpp_CDemonSet_save_FUN_0057a2a0(CDemonSet *this_ptr,ch
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonSet::Unable to save output");
   }
   crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n",this_ptr->set_file_version);
-  crt_stdio_c_fprintf_FUN_005fe6d0
-            (file,"%f\n",SUB84 /* extract 2-byte value */((double)this_ptr->set_scale_factor,0),
-             (int)((ulonglong)(double)this_ptr->set_scale_factor >> 0x20));
+  crt_stdio_c_fprintf_FUN_005fe6d0(file,"%f\n",(double)this_ptr->set_scale_factor);
   crt_stdio_c_fprintf_FUN_005fe6d0(file,"unused.act\n");
   crt_stdio_c_fprintf_FUN_005fe6d0(file,"%s\n",this_ptr->geometry_filename);
   crt_stdio_c_fprintf_FUN_005fe6d0
@@ -53,8 +55,7 @@ void __cdecl core_setedit_cpp_CDemonSet_save_FUN_0057a2a0(CDemonSet *this_ptr,ch
   crt_stdio_c_fprintf_FUN_005fe6d0
             (file,"%f,%f\n",SUB84 /* extract 2-byte value */((double)g_CWaterPtr->water_level_y,0),
              (int)((ulonglong)(double)g_CWaterPtr->water_level_y >> 0x20),
-             SUB84 /* extract 2-byte value */((double)g_CWaterPtr->tile_size,0),
-             (int)((ulonglong)(double)g_CWaterPtr->tile_size >> 0x20));
+             (double)g_CWaterPtr->tile_size);
   crt_stdio_c_fprintf_FUN_005fe6d0(file,"useEnviroModel,enviroModelName\n");
   crt_stdio_c_fprintf_FUN_005fe6d0
             (file,"%d,%s\n",this_ptr->use_enviro_model,this_ptr->enviro_model_name);
@@ -77,60 +78,55 @@ void __cdecl core_setedit_cpp_CDemonSet_save_FUN_0057a2a0(CDemonSet *this_ptr,ch
     crt_stdio_c_fprintf_FUN_005fe6d0(file,"1,%s\n",this_ptr->world_geometry_name);
   }
   crt_stdio_c_fprintf_FUN_005fe6d0(file,"weatherType\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n",this_ptr->weather_type);
+  crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n");
   crt_stdio_c_fprintf_FUN_005fe6d0(file,"lightCount\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n",this_ptr->light_count);
-  iVar11 = 0;
+  crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n");
+  iVar10 = 0;
   if (0 < this_ptr->light_count) {
     this_ptr_00 = this_ptr->lights;
     do {
       core_setutil_cpp_C3DSLight_save_FUN_00587090(this_ptr_00,file);
-      iVar11 = iVar11 + 1;
+      iVar10 = iVar10 + 1;
       this_ptr_00 = this_ptr_00 + 1;
-    } while (iVar11 < this_ptr->light_count);
+    } while (iVar10 < this_ptr->light_count);
   }
   crt_stdio_c_fprintf_FUN_005fe6d0(file,"cameraCount\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n",this_ptr->camera_count);
-  iVar11 = 0;
+  crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n");
+  iVar10 = 0;
   if (0 < this_ptr->camera_count) {
-    pCVar7 = this_ptr->cameras;
+    pCVar6 = this_ptr->cameras;
     do {
-      core_setutil_cpp_C3DSCamera_save_FUN_00585a40(pCVar7,file);
-      iVar11 = iVar11 + 1;
-      pCVar7 = pCVar7 + 1;
-    } while (iVar11 < this_ptr->camera_count);
+      core_setutil_cpp_C3DSCamera_save_FUN_00585a40(pCVar6,file);
+      iVar10 = iVar10 + 1;
+      pCVar6 = pCVar6 + 1;
+    } while (iVar10 < this_ptr->camera_count);
   }
   crt_stdio_c_fprintf_FUN_005fe6d0(file,"Room size info\n");
   crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n",this_ptr->room_reverb_type);
   crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n",this_ptr->room_count);
-  iVar11 = 0;
+  iVar10 = 0;
   if (0 < this_ptr->room_count) {
-    local_1c = this_ptr->rooms;
-    pCStack_14 = &this_ptr->rooms[0].rotation_matrix;
+    in_stack_00000050 = this_ptr->rooms;
+    in_stack_00000058 = &this_ptr->rooms[0].rotation_matrix;
     do {
-      pSVar5 = local_1c + iVar11;
-      dVar1 = (double)(pSVar5->position).z;
-      dVar2 = (double)(pSVar5->position).y;
-      dVar3 = (double)(pSVar5->position).x;
+      pSVar4 = in_stack_00000050;
+      dVar13 = (double)in_stack_00000050[iVar10].position.z;
+      dVar12 = (double)in_stack_00000050[iVar10].position.y;
+      crt_stdio_c_fprintf_FUN_005fe6d0(file,"%g,%g,%g\n");
       crt_stdio_c_fprintf_FUN_005fe6d0
-                (file,"%g,%g,%g\n",SUB84 /* extract 2-byte value */(dVar3,0),(int)((ulonglong)dVar3 >> 0x20),SUB84 /* extract 2-byte value */(dVar2,0)
-                 ,(int)((ulonglong)dVar2 >> 0x20),SUB84 /* extract 2-byte value */(dVar1,0),(int)((ulonglong)dVar1 >> 0x20));
-      dVar1 = (double)(pSVar5->extents).z;
-      dVar2 = (double)(pSVar5->extents).y;
-      dVar3 = (double)(pSVar5->extents).x;
+                (file,"%g,%g,%g\n",(double)pSVar4[iVar10].extents.x,
+                 (double)pSVar4[iVar10].extents.y,(double)pSVar4[iVar10].extents.z,SUB84 /* extract 2-byte value */(dVar12,0),
+                 (int)((ulonglong)dVar12 >> 0x20),SUB84 /* extract 2-byte value */(dVar13,0),(int)((ulonglong)dVar13 >> 0x20));
+      core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
+                (in_stack_0000004c,(CVector3f *)&stack0x00000034);
       crt_stdio_c_fprintf_FUN_005fe6d0
-                (file,"%g,%g,%g\n",SUB84 /* extract 2-byte value */(dVar3,0),(int)((ulonglong)dVar3 >> 0x20),SUB84 /* extract 2-byte value */(dVar2,0)
-                 ,(int)((ulonglong)dVar2 >> 0x20),SUB84 /* extract 2-byte value */(dVar1,0),(int)((ulonglong)dVar1 >> 0x20));
-      core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160(pCStack_14,&local_2c);
-      crt_stdio_c_fprintf_FUN_005fe6d0
-                (file,"%g,%g,%g\n",SUB84 /* extract 2-byte value */((double)local_2c.y,0),
-                 (int)((ulonglong)(double)local_2c.y >> 0x20),SUB84 /* extract 2-byte value */((double)(float)local_20,0),
-                 (int)((ulonglong)(double)(float)local_20 >> 0x20),SUB84 /* extract 2-byte value */((double)local_2c.z,0),
-                 (int)((ulonglong)(double)local_2c.z >> 0x20));
-      crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n",pSVar5->field4_0x40);
-      iVar11 = iVar11 + 1;
-      pCStack_14 = (CMatrix3x3f *)((int)(pCStack_14 + 1) + 0x20);
-    } while (iVar11 < this_ptr->room_count);
+                (file,"%g,%g,%g\n",(double)in_stack_00000038,(double)in_stack_00000040,
+                 SUB84 /* extract 2-byte value */((double)in_stack_0000003c,0),
+                 (int)((ulonglong)(double)in_stack_0000003c >> 0x20));
+      crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n",pSVar4[iVar10].field4_0x40);
+      iVar10 = iVar10 + 1;
+      in_stack_00000058 = (CMatrix3x3f *)((int)(in_stack_00000058 + 1) + 0x20);
+    } while (iVar10 < this_ptr->room_count);
   }
   crt_stdio_c_fprintf_FUN_005fe6d0(file,"Default ground type\n");
   crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n",this_ptr->default_ground_type);
@@ -138,92 +134,93 @@ void __cdecl core_setedit_cpp_CDemonSet_save_FUN_0057a2a0(CDemonSet *this_ptr,ch
   crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n",this_ptr->default_master_reverb);
   crt_stdio_c_fprintf_FUN_005fe6d0(file,"Virtual director boxes\n");
   crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n",this_ptr->vdir_box_count);
-  iVar11 = 0;
+  iVar10 = 0;
   if (0 < this_ptr->vdir_box_count) {
-    local_20 = this_ptr->vdir_boxes;
-    local_18 = &this_ptr->vdir_boxes[0].rotation_matrix;
+    in_stack_00000064 = this_ptr->vdir_boxes;
+    in_stack_0000006c = &this_ptr->vdir_boxes[0].rotation_matrix;
     do {
-      pSVar6 = local_20 + iVar11;
-      dVar1 = (double)(pSVar6->position).z;
-      dVar2 = (double)(pSVar6->position).y;
-      dVar3 = (double)(pSVar6->position).x;
+      pSVar5 = in_stack_00000064;
+      dVar13 = (double)in_stack_00000064[iVar10].position.z;
+      uVar14 = (uint)((ulonglong)(double)in_stack_00000064[iVar10].position.y >> 0x20);
+      crt_stdio_c_fprintf_FUN_005fe6d0(file,"%g,%g,%g\n");
+      dVar12 = (double)pSVar5[iVar10].extents.z;
+      dVar1 = (double)pSVar5[iVar10].extents.y;
+      dVar2 = (double)pSVar5[iVar10].extents.x;
       crt_stdio_c_fprintf_FUN_005fe6d0
-                (file,"%g,%g,%g\n",SUB84 /* extract 2-byte value */(dVar3,0),(int)((ulonglong)dVar3 >> 0x20),SUB84 /* extract 2-byte value */(dVar2,0)
-                 ,(int)((ulonglong)dVar2 >> 0x20),SUB84 /* extract 2-byte value */(dVar1,0),(int)((ulonglong)dVar1 >> 0x20));
-      dVar1 = (double)(pSVar6->extents).z;
-      dVar2 = (double)(pSVar6->extents).y;
-      dVar3 = (double)(pSVar6->extents).x;
+                (file,"%g,%g,%g\n",SUB84 /* extract 2-byte value */(dVar2,0),(int)((ulonglong)dVar2 >> 0x20),SUB84 /* extract 2-byte value */(dVar1,0)
+                 ,(int)((ulonglong)dVar1 >> 0x20),SUB84 /* extract 2-byte value */(dVar12,0),(int)((ulonglong)dVar12 >> 0x20),
+                 uVar14,SUB84 /* extract 2-byte value */(dVar13,0),(int)((ulonglong)dVar13 >> 0x20));
+      core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
+                ((CMatrix3x3f *)in_stack_00000064,(CVector3f *)&stack0x00000044);
       crt_stdio_c_fprintf_FUN_005fe6d0
-                (file,"%g,%g,%g\n",SUB84 /* extract 2-byte value */(dVar3,0),(int)((ulonglong)dVar3 >> 0x20),SUB84 /* extract 2-byte value */(dVar2,0)
-                 ,(int)((ulonglong)dVar2 >> 0x20),SUB84 /* extract 2-byte value */(dVar1,0),(int)((ulonglong)dVar1 >> 0x20));
-      core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160(local_18,&local_38);
-      crt_stdio_c_fprintf_FUN_005fe6d0
-                (file,"%g,%g,%g\n",SUB84 /* extract 2-byte value */((double)local_38.y,0),
-                 (int)((ulonglong)(double)local_38.y >> 0x20),SUB84 /* extract 2-byte value */((double)local_2c.x,0),
-                 (int)((ulonglong)(double)local_2c.x >> 0x20),SUB84 /* extract 2-byte value */((double)local_38.z,0),
-                 (int)((ulonglong)(double)local_38.z >> 0x20));
-      iVar11 = iVar11 + 1;
-      local_18 = (CMatrix3x3f *)((int)(local_18 + 1) + 0x20);
-    } while (iVar11 < this_ptr->vdir_box_count);
+                (file,"%g,%g,%g\n",SUB84 /* extract 2-byte value */((double)in_stack_00000048,0),
+                 (int)((ulonglong)(double)in_stack_00000048 >> 0x20),
+                 SUB84 /* extract 2-byte value */((double)(float)in_stack_00000050,0),
+                 (int)((ulonglong)(double)(float)in_stack_00000050 >> 0x20),
+                 SUB84 /* extract 2-byte value */((double)(float)in_stack_0000004c,0),
+                 (int)((ulonglong)(double)(float)in_stack_0000004c >> 0x20));
+      iVar10 = iVar10 + 1;
+      in_stack_0000006c = (CMatrix3x3f *)((int)(in_stack_0000006c + 1) + 0x20);
+    } while (iVar10 < this_ptr->vdir_box_count);
   }
   crt_stdio_c_fprintf_FUN_005fe6d0(file,"PVS list\n");
-  iVar11 = 0;
+  iVar10 = 0;
   if (0 < this_ptr->camera_count) {
-    pCVar7 = this_ptr->cameras;
+    pCVar6 = this_ptr->cameras;
     do {
-      core_setutil_cpp_C3DSCamera_savePVS_FUN_00587450(pCVar7,file);
-      iVar11 = iVar11 + 1;
-      pCVar7 = pCVar7 + 1;
-    } while (iVar11 < this_ptr->camera_count);
+      core_setutil_cpp_C3DSCamera_savePVS_FUN_00587450(pCVar6,file);
+      iVar10 = iVar10 + 1;
+      pCVar6 = pCVar6 + 1;
+    } while (iVar10 < this_ptr->camera_count);
   }
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\setedit.cpp",0x74d);
-  pcVar12 = &stack0xffffff68;
-  pcVar10 = &stack0xffffff68;
-  pcVar8 = this_ptr->geometry_filename;
+  pcVar11 = &stack0xfffffff0;
+  pcVar9 = &stack0xfffffff0;
+  pcVar7 = this_ptr->geometry_filename;
   do {
-    cVar4 = *pcVar8;
-    *pcVar12 = cVar4;
-    pcVar9 = &stack0xffffff68;
-    if (cVar4 == '\0') break;
-    cVar4 = pcVar8[1];
+    cVar3 = *pcVar7;
+    *pcVar11 = cVar3;
+    pcVar8 = &stack0xfffffff0;
+    if (cVar3 == '\0') break;
+    cVar3 = pcVar7[1];
+    pcVar7 = pcVar7 + 2;
+    pcVar11[1] = cVar3;
+    pcVar11 = pcVar11 + 2;
+    pcVar8 = &stack0xfffffff0;
+  } while (cVar3 != '\0');
+  do {
+    pcVar11 = pcVar8;
+    if (*pcVar8 == '.') goto LAB_0057a874;
+    if (*pcVar8 == '\0') break;
+    pcVar11 = pcVar8 + 1;
+    if (*pcVar11 == '.') goto LAB_0057a874;
     pcVar8 = pcVar8 + 2;
-    pcVar12[1] = cVar4;
-    pcVar12 = pcVar12 + 2;
-    pcVar9 = &stack0xffffff68;
-  } while (cVar4 != '\0');
-  do {
-    pcVar12 = pcVar9;
-    if (*pcVar9 == '.') goto LAB_0057a874;
-    if (*pcVar9 == '\0') break;
-    pcVar12 = pcVar9 + 1;
-    if (*pcVar12 == '.') goto LAB_0057a874;
-    pcVar9 = pcVar9 + 2;
-  } while (*pcVar12 != '\0');
-  pcVar12 = (char *)0x0;
+  } while (*pcVar11 != '\0');
+  pcVar11 = (char *)0x0;
 LAB_0057a874:
-  if (pcVar12 == (char *)0x0) {
+  if (pcVar11 == (char *)0x0) {
     do {
-      pcVar12 = pcVar10;
-      if (*pcVar10 == '\0') goto LAB_0057a87e;
-      if (*pcVar10 == '\0') break;
-      pcVar12 = pcVar10 + 1;
-      if (*pcVar12 == '\0') goto LAB_0057a87e;
-      pcVar10 = pcVar10 + 2;
-    } while (*pcVar12 != '\0');
-    pcVar12 = (char *)0x0;
+      pcVar11 = pcVar9;
+      if (*pcVar9 == '\0') goto LAB_0057a87e;
+      if (*pcVar9 == '\0') break;
+      pcVar11 = pcVar9 + 1;
+      if (*pcVar11 == '\0') goto LAB_0057a87e;
+      pcVar9 = pcVar9 + 2;
+    } while (*pcVar11 != '\0');
+    pcVar11 = (char *)0x0;
   }
 LAB_0057a87e:
-  pcVar10 = ".zth";
+  pcVar9 = ".zth";
   do {
-    cVar4 = *pcVar10;
-    *pcVar12 = cVar4;
-    if (cVar4 == '\0') break;
-    cVar4 = pcVar10[1];
-    pcVar10 = pcVar10 + 2;
-    pcVar12[1] = cVar4;
-    pcVar12 = pcVar12 + 2;
-  } while (cVar4 != '\0');
+    cVar3 = *pcVar9;
+    *pcVar11 = cVar3;
+    if (cVar3 == '\0') break;
+    cVar3 = pcVar9[1];
+    pcVar9 = pcVar9 + 2;
+    pcVar11[1] = cVar3;
+    pcVar11 = pcVar11 + 2;
+  } while (cVar3 != '\0');
   core_setdir_cpp_CDemonSet_saveThumbs_FUN_00575f60(this_ptr);
-  core_setdir_cpp_CDemonSet_writeThumbs_FUN_00575e40(this_ptr,acStack_94);
+  core_setdir_cpp_CDemonSet_writeThumbs_FUN_00575e40(this_ptr,&stack0xfffffff4);
   return;
 }

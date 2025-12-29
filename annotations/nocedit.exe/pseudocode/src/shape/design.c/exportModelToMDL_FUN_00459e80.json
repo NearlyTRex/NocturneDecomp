@@ -1,20 +1,22 @@
 {
   "complexity": {
     "assembly_lines": 322,
-    "complexity_score": 254,
+    "complexity_score": 391,
     "cross_reference_count": 3,
     "function_call_count": 8,
     "global_count": 32,
-    "pseudocode_lines": 69,
-    "suspect_count": 16,
+    "pseudocode_lines": 66,
+    "suspect_count": 29,
     "suspect_types": [
       "badspacebase",
       "call_esp_anchor",
       "format_string_mismatch",
       "register_param",
-      "stack_ref"
+      "stack_ref",
+      "sub_artifact",
+      "variadic_anchor"
     ],
-    "total_lines": 391
+    "total_lines": 388
   },
   "cross_references": [
     {
@@ -420,144 +422,11 @@
       "type": "stack_ref"
     },
     {
-      "actual_args": 0,
-      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 30,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 37,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d,%d,%s\\n\" has 3 specifiers but 0 arguments after it",
-      "expected_args": 3,
-      "format_string": "%d,%d,%s\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 45,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d,%d,%s\\n\");",
-      "text": "Format string expects 3 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d,%f,%f\\n\" has 3 specifiers but 0 arguments after it",
-      "expected_args": 3,
-      "format_string": "%d,%f,%f\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 55,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d,%f,%f\\n\");",
-      "text": "Format string expects 3 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 58,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%s\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 60,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%s\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 63,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 66,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "00459ec1",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "00459ec6",
-      "frame_offset": 92,
-      "match": "CALL...ADD ESP",
-      "return_address": "00459ec6",
-      "target_address": "0x481a50",
-      "text": "Direct CALL at 00459ec1, ADD ESP at 00459ec6 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "00459edc",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "00459ee1",
-      "frame_offset": 92,
-      "match": "CALL...ADD ESP",
-      "return_address": "00459ee1",
-      "target_address": "0x401fd0",
-      "text": "Direct CALL at 00459edc, ADD ESP at 00459ee1 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "0045a1d9",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0045a1de",
-      "frame_offset": 92,
-      "match": "CALL...ADD ESP",
-      "return_address": "0045a1de",
-      "target_address": "0x457fd0",
-      "text": "Direct CALL at 0045a1d9, ADD ESP at 0045a1de with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "0045a1f0",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0045a1f5",
-      "frame_offset": 92,
-      "match": "CALL...ADD ESP",
-      "return_address": "0045a1f5",
-      "target_address": "0x50f9b0",
-      "text": "Direct CALL at 0045a1f0, ADD ESP at 0045a1f5 with uncertain ESP",
-      "type": "call_esp_anchor"
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 34,
+      "match": "SUB84",
+      "text": "SUB84 /* extract 2-byte value */((double)g_LoadedVertices[local_1c].vertex.y,0));",
+      "type": "sub_artifact"
     },
     {
       "add_esp_value": 12,
@@ -734,6 +603,157 @@
       "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
       "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 0045a1c3 (EBP frame + ADD ESP)",
       "type": "variadic_anchor"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 30,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 36,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d,%d,x\\n\" has 2 specifiers but 0 arguments after it",
+      "expected_args": 2,
+      "format_string": "%d,%d,x\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 40,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d,%d,x\\n\");",
+      "text": "Format string expects 2 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d,%d,%s\\n\" has 3 specifiers but 0 arguments after it",
+      "expected_args": 3,
+      "format_string": "%d,%d,%s\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 43,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d,%d,%s\\n\");",
+      "text": "Format string expects 3 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d,%d,%s,%s\\n\" has 4 specifiers but 0 arguments after it",
+      "expected_args": 4,
+      "format_string": "%d,%d,%s,%s\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 47,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d,%d,%s,%s\\n\");",
+      "text": "Format string expects 4 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 55,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%s\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 57,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%s\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 60,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 63,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "00459ec1",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "00459ec6",
+      "frame_offset": 92,
+      "match": "CALL...ADD ESP",
+      "return_address": "00459ec6",
+      "target_address": "0x481a50",
+      "text": "Direct CALL at 00459ec1, ADD ESP at 00459ec6 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "00459edc",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "00459ee1",
+      "frame_offset": 92,
+      "match": "CALL...ADD ESP",
+      "return_address": "00459ee1",
+      "target_address": "0x401fd0",
+      "text": "Direct CALL at 00459edc, ADD ESP at 00459ee1 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "0045a1d9",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0045a1de",
+      "frame_offset": 92,
+      "match": "CALL...ADD ESP",
+      "return_address": "0045a1de",
+      "target_address": "0x457fd0",
+      "text": "Direct CALL at 0045a1d9, ADD ESP at 0045a1de with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "0045a1f0",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0045a1f5",
+      "frame_offset": 92,
+      "match": "CALL...ADD ESP",
+      "return_address": "0045a1f5",
+      "target_address": "0x50f9b0",
+      "text": "Direct CALL at 0045a1f0, ADD ESP at 0045a1f5 with uncertain ESP",
+      "type": "call_esp_anchor"
     }
   ]
 }

@@ -35,7 +35,7 @@ void core_werewolf_cpp_FUN_005f1ac0(void)
     iVar5 = 0;
     *(float *)(in_stack_00000008 + 4) = *(float *)(in_stack_00000008 + 4) * (float)_DAT_00657e54;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-              (in_stack_00000004,(CVector3f *)&stack0xffffffd4,
+              (in_stack_00000004,(CVector3f *)&stack0xffffffdc,
                (CVector3f *)(in_stack_00000008 + 0x1c));
     do {
       iVar5 = iVar5 + 1;

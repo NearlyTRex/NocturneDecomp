@@ -25,8 +25,7 @@ void core_gabriela_cpp_FUN_004d5550(void)
   byte bVar8;
   CCharacter *in_stack_00000004;
   CMatrix3x4f *matrix_b;
-  CMatrix3x4f *in_stack_fffffbd6;
-  float local_3ac [12];
+  CMatrix3x4f *in_stack_fffffc54;
   float local_37c [12];
   CMatrix3x4f local_34c;
   CVector3f local_31c [4];
@@ -68,7 +67,7 @@ void core_gabriela_cpp_FUN_004d5550(void)
       pfVar4 = pfVar4 + (uint)bVar8 * -2 + 1;
       pCVar6 = (CMatrix3x4f *)((int)pCVar6 + ((uint)bVar8 * -2 + 1) * 4);
     }
-    core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_1fc,pCVar7,in_stack_fffffbd6);
+    core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_1fc,pCVar7,in_stack_fffffc54);
     pfVar4 = local_dc;
   }
   else {
@@ -87,7 +86,7 @@ void core_gabriela_cpp_FUN_004d5550(void)
       pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar8 * -2 + 1) * 4);
     }
     core_xform_cpp_buildRotationY_FUN_005f6cc0((CMatrix3x4f *)0x3fc90fdb,(float)pCVar6);
-    pfVar4 = local_3ac;
+    pfVar4 = (float *)&stack0xfffffc54;
     pCVar5 = &local_2bc;
     for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
       pCVar5->m[0].w = *pfVar4;
@@ -110,7 +109,7 @@ void core_gabriela_cpp_FUN_004d5550(void)
       pfVar4 = pfVar4 + (uint)bVar8 * -2 + 1;
       pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar8 * -2 + 1) * 4);
     }
-    core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_19c,matrix_b,in_stack_fffffbd6);
+    core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_19c,matrix_b,in_stack_fffffc54);
     fVar1 = local_34.m[2].z;
     pfVar4 = local_7c;
     pCVar7 = &local_2ec;
@@ -130,7 +129,7 @@ void core_gabriela_cpp_FUN_004d5550(void)
       core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
                 (&local_2ec,(CVector3f *)(local_4c + 0xc),local_34.m);
     }
-    core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_2ec,&local_34c,in_stack_fffffbd6);
+    core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_2ec,&local_34c,in_stack_fffffc54);
     pfVar4 = local_10c;
   }
   pCVar2 = local_31c;

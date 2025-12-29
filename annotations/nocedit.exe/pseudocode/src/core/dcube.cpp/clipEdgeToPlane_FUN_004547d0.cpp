@@ -15,18 +15,22 @@ core_dcube_cpp_clipEdgeToPlane_FUN_004547d0
   double dVar1;
   float fVar2;
   int local_28;
+  uint uStack_24;
+  uint uStack_20;
   
-  fVar2 = (vertex2->z - vertex1->z) * (float)plane_nz +
-          (vertex2->x - vertex1->x) * (float)plane_nx + (vertex2->y - vertex1->y) * (float)plane_ny;
-  dVar1 = (double)fVar2;
+  dVar1 = (double)((vertex2->z - vertex1->z) * (float)plane_nz +
+                  (vertex2->x - vertex1->x) * (float)plane_nx +
+                  (vertex2->y - vertex1->y) * (float)plane_ny);
   local_28 = SUB84 /* extract 2-byte value */(dVar1,0);
+  uStack_24 = (uint)((ulonglong)dVar1 >> 0x20);
   if ((((ulonglong)dVar1 & 0x7fffffff00000000) == 0) && (local_28 == 0)) {
     g_CurrentFilename = "..\\core\\dcube.cpp";
     g_CurrentLineNumber = 0x6e;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Bad clip!");
   }
   fVar2 = -(vertex1->z * (float)plane_nz +
-           vertex1->y * (float)plane_ny + (float)plane_nx * vertex1->x + (float)plane_d) / fVar2;
+           vertex1->y * (float)plane_ny + (float)plane_nx * vertex1->x + (float)plane_d) /
+          (float)(double)CONCAT44 /* combine 2-byte values */(uStack_20,uStack_24);
   output_vertex->x = (vertex2->x - vertex1->x) * fVar2 + vertex1->x;
   output_vertex->y = (vertex2->y - vertex1->y) * fVar2 + vertex1->y;
   output_vertex->z = (vertex2->z - vertex1->z) * fVar2 + vertex1->z;

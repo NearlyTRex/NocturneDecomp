@@ -18,6 +18,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042c5f0(CCharacter *this_ptr)
   float in_stack_0000000c;
   float in_stack_00000010;
   int *in_stack_00000014;
+  CVector3f local_50;
   CVector3f local_44;
   CVector3f local_38;
   float local_2c;
@@ -31,18 +32,19 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042c5f0(CCharacter *this_ptr)
     *in_stack_00000014 = 3;
     return;
   }
-  fVar3 = *(float *)(in_stack_00000008 + 0x20) - (this_ptr->base_actor).location.position.x;
-  fVar2 = *(float *)(in_stack_00000008 + 0x28) - (this_ptr->base_actor).location.position.z;
+  local_50.x = *(float *)(in_stack_00000008 + 0x20) - (this_ptr->base_actor).location.position.x;
+  local_50.y = *(float *)(in_stack_00000008 + 0x24) - (this_ptr->base_actor).location.position.y;
+  local_50.z = *(float *)(in_stack_00000008 + 0x28) - (this_ptr->base_actor).location.position.z;
   if (0.0 <= in_stack_0000000c) {
-    if ((((float)20 <
-          ABS(*(float *)(in_stack_00000008 + 0x24) - (this_ptr->base_actor).location.position.y)) ||
-        ((float)40 < ABS(fVar3))) || ((float)40 < ABS(fVar2))) {
+    if ((((float)20 < ABS(local_50.y)) || ((float)40 < ABS(local_50.x)))
+       || ((float)40 < ABS(local_50.z))) {
       engine_console_cpp_CConsole_printf_FUN_00441890
                 (g_CConsolePtr,"%s confused while following %s\n",this_ptr);
       *in_stack_00000014 = 3;
       return;
     }
-    local_2c = SQRT(fVar2 * fVar2 + fVar3 * fVar3);
+    local_2c = SQRT(local_50.z * local_50.z + local_50.x * local_50.x);
+    local_50.y = 0.0;
     if (in_stack_00000010 < 0.0) {
       in_stack_00000010 = 1e+30;
     }
@@ -66,11 +68,11 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042c5f0(CCharacter *this_ptr)
       iVar4 = core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0(this_ptr);
       if (iVar4 < 0) {
         engine_console_cpp_CConsole_printf_FUN_00441890
-                  (g_CConsolePtr,"%s confused after pathmap call while following %s\n");
+                  (g_CConsolePtr,"%s confused after pathmap call while following %s\n",this_ptr);
         *in_stack_00000014 = 3;
         return;
       }
-      if (local_20 <= in_stack_00000010) {
+      if (local_2c <= in_stack_00000010) {
         *in_stack_00000014 = 1;
         return;
       }
@@ -80,8 +82,9 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042c5f0(CCharacter *this_ptr)
     *in_stack_00000014 = 0;
     return;
   }
+  local_50.y = 0.0;
   pCVar1 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
-                     (&this_ptr->base_actor,&local_44,(CVector3f *)&stack0xffffffb0);
+                     (&this_ptr->base_actor,&local_44,&local_50);
   pCVar1 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_38,pCVar1);
   *(float *)(this_ptr->field2_0x240c + 0xc) = pCVar1->y;
   if (*in_stack_00000014 == 0) {

@@ -1,19 +1,21 @@
 {
   "complexity": {
     "assembly_lines": 115,
-    "complexity_score": 109,
+    "complexity_score": 161,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 39,
-    "suspect_count": 5,
+    "pseudocode_lines": 41,
+    "suspect_count": 9,
     "suspect_types": [
       "badspacebase",
       "call_esp_anchor",
+      "callind_anchor",
       "register_param",
-      "unknown_field"
+      "stack_align_anchor",
+      "stack_ref"
     ],
-    "total_lines": 154
+    "total_lines": 156
   },
   "cross_references": [
     {
@@ -169,24 +171,59 @@
   "suspects": [
     {
       "description": "Ghidra failed to resolve stack frame",
-      "line": 12,
+      "line": 16,
       "match": "BADSPACEBASE",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "badspacebase"
     },
     {
       "description": "Inferred register parameter",
-      "line": 12,
+      "line": 16,
       "match": "in_ESP",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "register_param"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 19,
-      "match": "._4_4_",
-      "text": "local_6c._4_4_ = 0.0;",
-      "type": "unknown_field"
+      "description": "Direct stack address reference",
+      "line": 20,
+      "match": "&stack0xffffff94",
+      "text": "core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0((SCollisionInfo *)&stack0xffffff94);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 21,
+      "match": "&stack0xffffff98",
+      "text": "iVar7 = (*this_ptr->vtable->hasCollision)(this_ptr,(SCollisionInfo *)&stack0xffffff98);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 28,
+      "match": "&stack0xfffffff8",
+      "text": "(&SStack_54,line_start,(CVector3f *)&stack0xfffffff8,(CVector3f *)&CStack_1c.z",
+      "type": "stack_ref"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "0040918a",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "0040918d",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 104,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 0040918a, ADD ESP at 0040918d",
+      "type": "callind_anchor"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x68",
+      "fix_address": "00409159",
+      "frame_offset": 104,
+      "match": "AND ESP",
+      "sub_esp_offset": 104,
+      "text": "Stack alignment at 00409159 (SUB ESP, 0x68 before)",
+      "type": "stack_align_anchor"
     },
     {
       "add_esp_value": 4,
@@ -213,26 +250,6 @@
       "target_address": "0x408340",
       "text": "Direct CALL at 004091ca, ADD ESP at 004091d7 with uncertain ESP",
       "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "0040918a",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "0040918d",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 104,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 0040918a, ADD ESP at 0040918d",
-      "type": "callind_anchor"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x68",
-      "fix_address": "00409159",
-      "match": "AND ESP",
-      "sub_esp_offset": 104,
-      "text": "Stack alignment at 00409159 (SUB ESP, 0x68 before)",
-      "type": "stack_align_anchor"
     }
   ],
   "vtable_info": {

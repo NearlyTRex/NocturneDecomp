@@ -22,8 +22,7 @@ shape_meshlod_cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400
   CLodMesh *in_stack_00000004;
   CVector3f local_98;
   CVector3f local_8c;
-  CVector3f local_80;
-  CVector3f local_74 [5];
+  byte auStack_7c [68];
   CLodVert *local_38;
   
   pCVar5 = in_stack_00000004->vertex_data;
@@ -55,8 +54,8 @@ shape_meshlod_cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400
     return (double)(fVar1 * fVar1);
   case 1:
     pCVar4 = shape_meshlod_cpp_computeClosestPointOnEdge_FUN_00514f90
-                       (local_74,(CVector3f *)this_ptr,&edge_vertex_1->position,&local_38->position)
-    ;
+                       ((CVector3f *)(auStack_7c + 8),(CVector3f *)this_ptr,&edge_vertex_1->position
+                        ,&local_38->position);
     fVar1 = (float)this_ptr->vertex_count - pCVar4->x;
     fVar3 = (float)this_ptr->vertex_data - pCVar4->y;
     fVar2 = (float)this_ptr->tri_count - pCVar4->z;
@@ -95,7 +94,7 @@ shape_meshlod_cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400
     g_CurrentLineNumber = 0xec8;
     core_main_c_displayErrorAndQuit_FUN_00506f10("!");
     pCVar4 = shape_meshlod_cpp_CLodMesh_computeFaceCentroid_FUN_00518870
-                       (in_stack_00000004,&local_80,(CLodFace *)sample_point);
+                       (in_stack_00000004,(CVector3f *)auStack_7c,(CLodFace *)sample_point);
     fVar1 = (float)this_ptr->vertex_count - pCVar4->x;
     fVar3 = (float)this_ptr->vertex_data - pCVar4->y;
     fVar2 = (float)this_ptr->tri_count - pCVar4->z;

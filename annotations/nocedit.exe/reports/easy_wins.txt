@@ -15,7 +15,7 @@ PRIORITY 1: Files with 1-2 functions remaining
 
   shape/multicrm.cpp (1 remaining of 6)
     - shape_multicrm.cpp_CMultiCram_run_FUN_0053ee70
-      Suspects: badspacebase, register_param, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, param_count_too_few, format_string_mismatch, format_string_mismatch, format_string_mismatch, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor
+      Suspects: badspacebase, register_param, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, param_count_too_few, variadic_anchor, variadic_anchor, variadic_anchor, variadic_anchor, variadic_anchor, variadic_anchor, variadic_anchor, variadic_anchor, variadic_anchor, variadic_anchor, variadic_anchor, format_string_mismatch, format_string_mismatch, format_string_mismatch, format_string_mismatch, format_string_mismatch, format_string_mismatch, format_string_mismatch, format_string_mismatch, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor
 
   crt/strtod.c (1 remaining of 1)
     - crt_strtod.c_staticInit_FUN_00603bb0
@@ -85,6 +85,10 @@ PRIORITY 1: Files with 1-2 functions remaining
     - core_camview.cpp_CCameraView_dtor_FUN_00427d00
       Suspects: call_esp_preserve, call_esp_preserve, call_esp_preserve
 
+  core/slew.cpp (1 remaining of 4)
+    - core_slew.cpp_CSlew_processInput_FUN_005a20b0
+      Suspects: unaffected_reg, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, unaffected_reg, unaffected_reg, unaffected_reg, stack_param, stack_param, suspect_float, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, callind_anchor, callind_anchor, callind_anchor, callind_anchor, callind_anchor, callind_anchor, callind_anchor, callind_anchor, callind_anchor, callind_anchor, callind_anchor, callind_anchor, callind_anchor, callind_anchor, callind_anchor, callind_anchor, callind_anchor, stack_align_anchor
+
   crt/environ.c (2 remaining of 2)
     - crt_environ.c_staticFinal_FUN_0060c73c
       Suspects: call_esp_preserve, call_esp_preserve, special_crt_function
@@ -119,7 +123,7 @@ PRIORITY 1: Files with 1-2 functions remaining
 PRIORITY 2: Small functions with 1 suspect (<50 lines)
 ====================================================================================================
 
-  [call_esp_preserve] - 555 functions
+  [call_esp_preserve] - 554 functions
     cockpit_pkbitmap.cpp_CPackedBitmap_applyPalette_FUN_005 (  5 lines)
     cockpit_drawsurf.cpp_CDrawSurface_setColorWhite_FUN_004 (  5 lines)
     cockpit_drawsurf.cpp_CDrawSurface_setColorYellow_FUN_00 (  5 lines)
@@ -130,7 +134,7 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     cockpit_drawsurf.cpp_CDrawSurface_setColorBlue_FUN_0048 (  5 lines)
     cockpit_drawsurf.cpp_CDrawSurface_setColorMagenta_FUN_0 (  5 lines)
     cockpit_drawsurf.cpp_CDrawSurface_setColorLightGray_FUN (  5 lines)
-    ... and 545 more
+    ... and 544 more
 
   [special_crt_function] - 108 functions
     crt_unknown.c_FUN_0060eb3a                              (  4 lines)
@@ -197,18 +201,18 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_dcamera.cpp_CDemonCamera_sampleFramebufferPixel_FU ( 24 lines)
     ... and 9 more
 
-  [call_esp_anchor] - 14 functions
+  [call_esp_anchor] - 13 functions
     shape_design.c_multicramTextures_FUN_0046eb80           (  5 lines)
     shape_design.c_qsortCompareByField4Wrapper_FUN_00466210 (  6 lines)
     shape_design.c_allocateSpatialTreeNode_FUN_00457ed0     (  6 lines)
     shape_design.c_showModelEditor_FUN_00461aa0             (  8 lines)
     shape_design.c_renderPolygonsByPart_FUN_004616a0        ( 10 lines)
     shape_design.c_initializeTextureManager_FUN_0046a880    ( 11 lines)
+    core_gore.cpp_CGore_FUN_004ee070                        ( 12 lines)
     shape_design.c_initializeCramConfig_FUN_0046b6e0        ( 15 lines)
     shape_design.c_findTextureByFilename_FUN_0046dfc0       ( 16 lines)
     shape_design.c_skipLines_FUN_00459360                   ( 16 lines)
-    shape_design.c_polygonTextureNameComparator_FUN_0045b85 ( 16 lines)
-    ... and 4 more
+    ... and 3 more
 
   [stack_align_anchor] - 11 functions
     core_fire.cpp_CExplosion_process_FUN_004c3ac0           ( 14 lines)
@@ -223,17 +227,6 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_xform.cpp_normalizeMatrix_FUN_005f51e0             ( 43 lines)
     ... and 1 more
 
-  [param_count_too_many] - 9 functions
-    sound_sndmain.cpp_setNextSfxDelay_FUN_005a8b40          (  5 lines)
-    support_trisock.cpp_cleanupWinsock_FUN_005e1ee0         (  7 lines)
-    sound_sndmain.cpp_setNextSfxStaticPosition_FUN_005a88e0 ( 12 lines)
-    shape_design.c_weldNearbyVertices_FUN_00465c50          ( 21 lines)
-    shape_dsemodel.cpp_CDSEModel_scaleX_FUN_0048fd70        ( 24 lines)
-    shape_dsemodel.cpp_CDSEModel_scaleZ_FUN_0048fcc0        ( 24 lines)
-    shape_dsemodel.cpp_CDSEModel_scaleY_FUN_0048fe20        ( 24 lines)
-    core_dcamera.cpp_CDemonCamera_computeLightExtentBounds_ ( 40 lines)
-    core_game.cpp_adjustFudgePosition_FUN_004d8750          ( 47 lines)
-
   [special_math_intrinsic] - 9 functions
     crt_math.c_atan2_epilogue_FUN_0060c5a0                  (  5 lines)
     crt_math.c_atan2_minus_pi_epilogue_FUN_0060c5cb         (  5 lines)
@@ -244,6 +237,24 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     crt_math.c_atan2_pi_minus_epilogue_FUN_0060c5b8         (  5 lines)
     crt_math.c_atan2_minus_pi_half_minus_epilogue_FUN_0060c (  5 lines)
     crt_math.c_atan2_FUN_006013b1                           ( 11 lines)
+
+  [param_count_too_many] - 8 functions
+    sound_sndmain.cpp_setNextSfxDelay_FUN_005a8b40          (  5 lines)
+    support_trisock.cpp_cleanupWinsock_FUN_005e1ee0         (  7 lines)
+    sound_sndmain.cpp_setNextSfxStaticPosition_FUN_005a88e0 ( 12 lines)
+    shape_design.c_weldNearbyVertices_FUN_00465c50          ( 21 lines)
+    shape_dsemodel.cpp_CDSEModel_scaleX_FUN_0048fd70        ( 24 lines)
+    shape_dsemodel.cpp_CDSEModel_scaleZ_FUN_0048fcc0        ( 24 lines)
+    shape_dsemodel.cpp_CDSEModel_scaleY_FUN_0048fe20        ( 24 lines)
+    core_dcamera.cpp_CDemonCamera_computeLightExtentBounds_ ( 40 lines)
+
+  [variadic_anchor] - 6 functions
+    shape_dsemodel.cpp_CDSEModel_convertVertex_FUN_0048f6f0 ( 17 lines)
+    shape_dsemodel.cpp_CDSEModel_logVertex_FUN_0048f660     ( 18 lines)
+    shape_design.c_qsortByOriginalIndex_FUN_004677c0        ( 22 lines)
+    shape_design.c_addQuadPolygon_FUN_004687c0              ( 26 lines)
+    shape_design.c_qsortByVertexX_FUN_004676f0              ( 40 lines)
+    shape_design.c_addQuadPolygonHalfSphere_FUN_00468d20    ( 47 lines)
 
   [unknown_field] - 3 functions
     shape_design.c_normalizeVertex_FUN_00461e60             ( 14 lines)

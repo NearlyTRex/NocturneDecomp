@@ -1,21 +1,26 @@
 {
   "complexity": {
     "assembly_lines": 1085,
-    "complexity_score": 864,
+    "complexity_score": 966,
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 43,
-    "pseudocode_lines": 404,
-    "suspect_count": 43,
+    "pseudocode_lines": 401,
+    "suspect_count": 51,
     "suspect_types": [
       "badspacebase",
       "call_esp_anchor",
+      "concat_artifact",
       "pointer_cast",
       "register_param",
+      "stack_align_anchor",
+      "unaffected_reg",
+      "undefined_type",
       "unknown_field",
+      "variadic_anchor",
       "warning_unreachable"
     ],
-    "total_lines": 1489
+    "total_lines": 1486
   },
   "cross_references": [
     {
@@ -705,102 +710,188 @@
       "type": "register_param"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Unaffected register variable",
+      "line": 16,
+      "match": "unaff_EBP",
+      "text": "char *unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved type",
+      "line": 33,
+      "match": "undefined3 uStack_53",
+      "text": "undefined3 uStack_53;",
+      "type": "undefined_type"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 56,
+      "match": "._4_4_",
+      "text": "local_28._4_4_ = packet_data;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 59,
+      "match": "CONCAT13",
+      "text": "uStack_57 = CONCAT13 /* combine 2-byte values */(9,(undefined3)uStack_57);",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 68,
+      "match": "unaff_EBP",
+      "text": "if (((iVar5 != 0) || (*(int *)(local_1c + 0x21) != *(int *)(unaff_EBP + 0x14))) ||",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
       "line": 69,
-      "match": "(int *)((int)",
-      "text": "if (((iVar5 != 0) || (*(int *)((int)local_24 + 0x21) != *(int *)(local_18 + 0x14))) ||",
-      "type": "pointer_cast"
+      "match": "unaff_EBP",
+      "text": "(*(int *)(local_1c + 0x25) != *(int *)(unaff_EBP + 0x18))) {",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 70,
-      "match": "(int *)((int)",
-      "text": "(*(int *)((int)local_24 + 0x25) != *(int *)(local_18 + 0x18))) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
+      "description": "Unaffected register variable",
       "line": 71,
-      "match": "(char *)((int)",
-      "text": "pcVar7 = (char *)((int)local_24 + 0xd);",
-      "type": "pointer_cast"
+      "match": "unaff_EBP",
+      "text": "pcVar8 = unaff_EBP;",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Unaffected register variable",
+      "line": 81,
+      "match": "unaff_EBP",
+      "text": "*(uint *)(unaff_EBP + 0x14) = *(uint *)(local_1c + 0x21);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
       "line": 82,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)(local_18 + 0x14) = *(uint *)((int)local_24 + 0x21);",
-      "type": "pointer_cast"
+      "match": "unaff_EBP",
+      "text": "*(uint *)(unaff_EBP + 0x18) = *(uint *)(local_1c + 0x25);",
+      "type": "unaffected_reg"
     },
     {
       "description": "Complex pointer cast",
-      "line": 83,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)(local_18 + 0x18) = *(uint *)((int)local_24 + 0x25);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 115,
+      "line": 113,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)this_ptr + (uint)bVar11 * -8 + iVar5 * 0x78 + 0x40) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 139,
+      "line": 114,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)local_18 + (uint)bVar11 * -8 + 9);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 137,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)this_ptr + (uint)bVar11 * -8 + iVar5 * 0x78 + 0x40) =",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 206,
+      "line": 204,
       "match": "._3_4_",
-      "text": "auStack_73._3_4_ = 9;",
+      "text": "local_6b._3_4_ = 9;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 218,
+      "line": 216,
       "match": "(int *)((int)",
       "text": "while (*(int *)((int)&DAT_02f98ad8 + iVar5) == *(int *)(packet_data + 5)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 338,
-      "match": "._4_4_",
-      "text": "SStack_30._4_4_ = *(uint *)(packet_data + 5);",
+      "line": 337,
+      "match": "._0_4_",
+      "text": "local_28._0_4_ = *(uint *)(packet_data + 5);",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 344,
-      "match": "(int *)((int)",
-      "text": "if (SStack_30._4_4_ == *(int *)((int)&g_SimFrameHistory + iVar5)) {",
+      "line": 342,
+      "match": "(uint *)((int)",
+      "text": "if ((uint)local_28 == *(uint *)((int)&g_SimFrameHistory + iVar5)) {",
       "type": "pointer_cast"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 344,
-      "match": "._4_4_",
-      "text": "if (SStack_30._4_4_ == *(int *)((int)&g_SimFrameHistory + iVar5)) {",
-      "type": "unknown_field"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 346,
+      "line": 344,
       "match": "(int *)((int)",
       "text": "piVar3 = (int *)((int)&g_SimFrameHistory + iVar5);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 363,
-      "match": "._4_4_",
-      "text": "*piVar3 = SStack_30._4_4_;",
-      "type": "unknown_field"
+      "description": "Complex pointer cast",
+      "line": 375,
+      "match": "(int *)((int)",
+      "text": "piVar10 = (int *)((int)local_18 + (iVar5 * 0xb + 3) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "00541067",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "0054106c",
+      "frame_offset": 224,
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0054106c",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00541067 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "005410df",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "005410e4",
+      "frame_offset": 224,
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "005410e4",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005410df (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "00541144",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "00541149",
+      "frame_offset": 224,
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "00541149",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00541144 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0xe0",
+      "fix_address": "005406ac",
+      "frame_offset": 224,
+      "match": "AND ESP",
+      "sub_esp_offset": 224,
+      "text": "Stack alignment at 005406ac (SUB ESP, 0xe0 before)",
+      "type": "stack_align_anchor"
     },
     {
       "add_esp_value": 8,
@@ -1139,63 +1230,6 @@
       "target_address": "0x543930",
       "text": "Direct CALL at 005411a4, ADD ESP at 005411a9 with uncertain ESP",
       "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "00541067",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "0054106c",
-      "frame_offset": 224,
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "0054106c",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00541067 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "005410df",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "005410e4",
-      "frame_offset": 224,
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "005410e4",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005410df (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "00541144",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "00541149",
-      "frame_offset": 224,
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "00541149",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00541144 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0xe0",
-      "fix_address": "005406ac",
-      "match": "AND ESP",
-      "sub_esp_offset": 224,
-      "text": "Stack alignment at 005406ac (SUB ESP, 0xe0 before)",
-      "type": "stack_align_anchor"
     }
   ]
 }

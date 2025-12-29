@@ -1,17 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 108,
-    "complexity_score": 187,
+    "complexity_score": 153,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 5,
-    "pseudocode_lines": 47,
-    "suspect_count": 13,
+    "pseudocode_lines": 43,
+    "suspect_count": 9,
     "suspect_types": [
       "call_esp_anchor",
-      "stack_param"
+      "stack_align_anchor",
+      "stack_param",
+      "variadic_anchor"
     ],
-    "total_lines": 155
+    "total_lines": 151
   },
   "cross_references": [
     {
@@ -196,86 +198,31 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 15,
       "match": "in_stack_00000004",
       "text": "switch(*(uint *)(in_stack_00000004 + 0x700)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000004",
-      "text": "if (0.0 < *(float *)(in_stack_00000004 + 0x768)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_00000004",
-      "text": "local_18 = 1.0 - *(float *)(in_stack_00000004 + 0x77c) / *(float *)(in_stack_00000004 + 0x768)",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_00000004",
-      "text": "local_18 = 1.0 - *(float *)(in_stack_00000004 + 0x77c) / *(float *)(in_stack_00000004 + 0x768)",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_00000004",
-      "text": "if (0.0 < *(float *)(in_stack_00000004 + 0x770)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_00000004",
-      "text": "local_18 = *(float *)(in_stack_00000004 + 0x77c) / *(float *)(in_stack_00000004 + 0x770);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_00000004",
-      "text": "local_18 = *(float *)(in_stack_00000004 + 0x77c) / *(float *)(in_stack_00000004 + 0x770);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 41,
+      "line": 37,
       "match": "in_stack_00000008",
       "text": "if (in_stack_00000008 == 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 42,
+      "line": 38,
       "match": "in_stack_00000004",
       "text": "this_ptr = (CKeyFramedModelInstance *)(in_stack_00000004 + 0x158);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 45,
+      "line": 41,
       "match": "in_stack_00000004",
       "text": "this_ptr = (CKeyFramedModelInstance *)(in_stack_00000004 + 0x584);",
       "type": "stack_param"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "005e2bff",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "005e2c0a",
-      "frame_offset": 20,
-      "match": "CALL...ADD ESP",
-      "return_address": "005e2c04",
-      "target_address": "0x478d80",
-      "text": "Direct CALL at 005e2bff, ADD ESP at 005e2c0a with uncertain ESP",
-      "type": "call_esp_anchor"
     },
     {
       "add_esp_value": 4,
@@ -297,10 +244,24 @@
       "align_instruction": "AND ESP,0xfffffff8",
       "description": "Stack alignment can be anchored: ESP = EBP - 0x14",
       "fix_address": "005e2b38",
+      "frame_offset": 20,
       "match": "AND ESP",
       "sub_esp_offset": 20,
       "text": "Stack alignment at 005e2b38 (SUB ESP, 0x14 before)",
       "type": "stack_align_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "005e2bff",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "005e2c0a",
+      "frame_offset": 20,
+      "match": "CALL...ADD ESP",
+      "return_address": "005e2c04",
+      "target_address": "0x478d80",
+      "text": "Direct CALL at 005e2bff, ADD ESP at 005e2c0a with uncertain ESP",
+      "type": "call_esp_anchor"
     }
   ]
 }

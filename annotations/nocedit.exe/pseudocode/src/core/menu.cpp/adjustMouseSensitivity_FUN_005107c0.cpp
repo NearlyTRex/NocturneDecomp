@@ -14,9 +14,9 @@ core_menu_cpp_adjustMouseSensitivity_FUN_005107c0(int *sensitivity_value_ptr,cha
   int iVar2;
   int iVar3;
   int iVar4;
+  int unaff_ESI;
   int iVar5;
-  char *color_value;
-  int iStack_14;
+  int in_stack_00000020;
   
   iVar3 = g_WindowWidth * 3 >> 0x1f;
   shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_004a0890
@@ -43,14 +43,14 @@ LAB_00510823:
              g_MouseY);
   do {
     shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(g_CEditorToolsPtr);
-    if (g_MouseX != iStack_14) {
+    if (g_MouseX != unaff_ESI) {
       iVar3 = (int)(((longlong)g_MouseX * 0x3c000) / (longlong)(g_WindowWidth + -1)) + 0x4000;
-      iStack_14 = g_MouseX;
     }
     iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x4b);
     if (iVar2 != 0) {
       iVar3 = iVar3 + -700;
     }
+    unaff_ESI = 0x5108bb;
     iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x4d);
     if (iVar2 != 0) {
       iVar3 = iVar3 + 700;
@@ -67,23 +67,22 @@ LAB_00510823:
     engine_2d_c_fillRectWithBorder_FUN_00403200(iVar5,g_ClipTop + 1,iVar4,iVar2,0,0xff);
     engine_2d_c_fillRectColor_FUN_00403170
               (iVar5,iVar2,
-               (int)(((longlong)(iVar4 - iVar5) * (longlong)(iVar3 + -0x4000)) / 0x3c000) + iVar5,0,
-               4);
+               (int)(((longlong)(iVar4 - iVar5) * (longlong)(iVar3 + -0x4000)) / 0x3c000) + iVar5,
+               in_stack_00000020,4);
     dVar1 = (double)iVar3 * 1.52587890625e-05;
-    color_value = "%4.2f";
-    iVar5 = 0;
-    iVar4 = g_ClipBottom + g_ClipTop;
-    iVar2 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(g_EditorFont,0x41);
+    iVar5 = g_ClipBottom + g_ClipTop;
+    iVar4 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(g_EditorFont,0x41);
+    iVar2 = g_ClipLeft;
     engine_font_cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30
-              (g_EditorFont,g_ClipLeft,g_ClipRight,(iVar4 - iVar2) / 2,iVar5,(int)color_value,
-               SUB84 /* extract 2-byte value */(dVar1,0));
+              (g_EditorFont,g_ClipLeft,g_ClipRight,(iVar5 - iVar4) / 2,0,0x636649,SUB84 /* extract 2-byte value */(dVar1,0));
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
-    if (iVar2 != 0) goto LAB_005109f5;
-    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x1c);
-  } while ((iVar2 == 0) &&
-          (iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x200), iVar2 == 0));
-  *sensitivity_value_ptr = iVar3;
+    in_stack_00000020 = 0x5109b8;
+    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
+    if (iVar4 != 0) goto LAB_005109f5;
+    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x1c);
+  } while ((iVar4 == 0) &&
+          (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x200), iVar4 == 0));
+  *(int *)iVar2 = iVar3;
 LAB_005109f5:
   shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
   return;
