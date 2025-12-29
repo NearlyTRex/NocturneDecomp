@@ -1146,7 +1146,7 @@ def identify_stack_align_anchor(json_data, pcode_data, existing_overrides=None):
     return suspects, resolved_suspects
 
 
-def identify_direct_call_esp_uncertainty(pcode_data, func_calls=None, existing_overrides=None):
+def identify_direct_call_esp_uncertainty(pcode_data, func_calls=None, existing_overrides=None, json_data=None):
     """Identify direct CALL instructions with uncertain ESP after.
 
     Pattern: Direct CALL (not CALLIND, not variadic) followed by ADD ESP
@@ -1160,6 +1160,7 @@ def identify_direct_call_esp_uncertainty(pcode_data, func_calls=None, existing_o
         pcode_data: List of instruction dicts from extract_function_pcode()
         func_calls: Optional list of function call dicts to exclude variadic functions
         existing_overrides: Optional dict of address -> pcode_lines from JSON
+        json_data: Optional JSON data to get stack_frame.local_size as fallback
 
     Returns:
         Tuple of (suspects, resolved_suspects)
@@ -1181,6 +1182,12 @@ def identify_direct_call_esp_uncertainty(pcode_data, func_calls=None, existing_o
     # Get prologue info
     prologue_offset, has_ebp_frame = get_prologue_offset(pcode_data)
     frame_offset = get_frame_offset_from_pcode(pcode_data) if has_ebp_frame else None
+
+    # Fallback: use stack_frame.local_size if frame_offset detection failed
+    if has_ebp_frame and (frame_offset is None or frame_offset == 0) and json_data:
+        local_size = json_data.get('stack_frame', {}).get('local_size', 0)
+        if local_size > 0:
+            frame_offset = local_size
 
     # Normalize existing override addresses
     fixed_addresses = set()

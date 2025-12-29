@@ -282,6 +282,7 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map):
             'is_ebp_frame': result.is_ebp_frame,
         },
         'stack_patterns': stack_patterns,
+        'stack_frame': result.stack_frame,
     }
 
     # Identify stack alignment that can be fixed with ESP anchor
@@ -292,7 +293,7 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map):
 
     # Identify direct CALL instructions with ESP uncertainty (not CALLIND, not variadic)
     call_esp_suspects, call_esp_resolved = identify_direct_call_esp_uncertainty(
-        result.pcode_data, result.func_calls, pcode_overrides)
+        result.pcode_data, result.func_calls, pcode_overrides, partial_json_data)
     suspects.extend(call_esp_suspects)
     resolved_suspects.extend(call_esp_resolved)
 
