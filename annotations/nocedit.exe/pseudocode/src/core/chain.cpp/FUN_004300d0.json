@@ -103,11 +103,6 @@
     "declared_params": 0,
     "estimated_params": 0
   },
-  "pcode_overrides": {
-    "0043017f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff24,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.626297577854671,
     "instruction_count": 578,
@@ -154,28 +149,6 @@
     },
     "pcode_op_count": 3252
   },
-  "resolved_suspects": [
-    {
-      "add_esp_value": 12,
-      "callind_address": "00430168",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "0043017f",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 220,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 00430168, ADD ESP at 0043017f",
-      "type": "callind_anchor"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0xdc",
-      "fix_address": "004300dc",
-      "match": "AND ESP",
-      "sub_esp_offset": 220,
-      "text": "Stack alignment at 004300dc (SUB ESP, 0xdc before)",
-      "type": "stack_align_anchor"
-    }
-  ],
   "stack_frame": {
     "frame_size": 244,
     "local_size": 244,
@@ -1484,6 +1457,26 @@
       "target_address": "0x5a9c40",
       "text": "Direct CALL at 004308df, ADD ESP at 004308e4 with uncertain ESP",
       "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "callind_address": "00430168",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "0043017f",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 220,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 00430168, ADD ESP at 0043017f",
+      "type": "callind_anchor"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0xdc",
+      "fix_address": "004300dc",
+      "match": "AND ESP",
+      "sub_esp_offset": 220,
+      "text": "Stack alignment at 004300dc (SUB ESP, 0xdc before)",
+      "type": "stack_align_anchor"
     }
   ],
   "vtable_info": {

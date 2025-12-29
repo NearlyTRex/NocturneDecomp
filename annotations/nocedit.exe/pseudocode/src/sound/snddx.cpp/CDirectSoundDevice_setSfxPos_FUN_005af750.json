@@ -196,65 +196,6 @@
     "declared_params": 3,
     "estimated_params": 3
   },
-  "pcode_overrides": {
-    "005af791": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff354,4)"
-    ],
-    "005af9aa": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff354,4)"
-    ],
-    "005af9ce": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff354,4)"
-    ],
-    "005afa72": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff354,4)"
-    ],
-    "005afa84": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff354,4)"
-    ],
-    "005afaad": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff354,4)"
-    ],
-    "005afabf": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff354,4)"
-    ],
-    "005afb67": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff354,4)"
-    ],
-    "005afb79": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff354,4)"
-    ],
-    "005afba2": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff354,4)"
-    ],
-    "005afbb4": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff354,4)"
-    ],
-    "005afbdd": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff354,4)"
-    ],
-    "005afbef": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff354,4)"
-    ],
-    "005afc18": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff354,4)"
-    ],
-    "005afc2a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff354,4)"
-    ],
-    "005afc50": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff354,4)"
-    ],
-    "005afc5f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff354,4)"
-    ],
-    "005afc9b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff354,4)"
-    ],
-    "005afcad": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff354,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.181081081081081,
     "instruction_count": 370,
@@ -297,7 +238,178 @@
     },
     "pcode_op_count": 1917
   },
-  "resolved_suspects": [
+  "stack_frame": {
+    "frame_size": 3296,
+    "local_size": 3284,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_cd0",
+        "offset": -3280,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_ccc",
+        "offset": -3276,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_cc8",
+        "offset": -3272,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_cb8",
+        "offset": -3256,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDirectSoundDevice *"
+      },
+      {
+        "is_param": true,
+        "name": "slot",
+        "offset": 8,
+        "size": 4,
+        "type": "CSfxSlot *"
+      },
+      {
+        "is_param": true,
+        "name": "update_flags",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005af75c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 11,
+      "match": "extraout_EBX",
+      "text": "CSfxSlot *extraout_EBX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 12,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 12,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 93,
+      "match": "extraout_EBX",
+      "text": "slot = extraout_EBX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 124,
+      "match": "code *",
+      "text": "uVar2 = (**(code **)(*local_20 + 0x44))();",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "005af7ea",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "005af7fd",
+      "frame_offset": 3244,
+      "match": "CALL...ADD ESP",
+      "return_address": "005af7ef",
+      "target_address": "0x5a9d90",
+      "text": "Direct CALL at 005af7ea, ADD ESP at 005af7fd with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "005afa52",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "005afa57",
+      "frame_offset": 3244,
+      "match": "CALL...ADD ESP",
+      "return_address": "005afa57",
+      "target_address": "0x5ade70",
+      "text": "Direct CALL at 005afa52, ADD ESP at 005afa57 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
     {
       "add_esp_value": 4,
       "call_address": "005af78c",
@@ -610,179 +722,6 @@
       "sub_esp_offset": 3244,
       "text": "Stack alignment at 005af75c (SUB ESP, 0xcac before)",
       "type": "stack_align_anchor"
-    }
-  ],
-  "stack_frame": {
-    "frame_size": 3296,
-    "local_size": 3284,
-    "param_offset": 4,
-    "param_size": 12,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_cd0",
-        "offset": -3280,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_ccc",
-        "offset": -3276,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_cc8",
-        "offset": -3272,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_cb8",
-        "offset": -3256,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_2c",
-        "offset": -44,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_28",
-        "offset": -40,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_24",
-        "offset": -36,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_20",
-        "offset": -32,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": true,
-        "name": "this_ptr",
-        "offset": 4,
-        "size": 4,
-        "type": "CDirectSoundDevice *"
-      },
-      {
-        "is_param": true,
-        "name": "slot",
-        "offset": 8,
-        "size": 4,
-        "type": "CSfxSlot *"
-      },
-      {
-        "is_param": true,
-        "name": "update_flags",
-        "offset": 12,
-        "size": 4,
-        "type": "int"
-      }
-    ]
-  },
-  "stack_patterns": {
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
-    "pattern_count": 1,
-    "pattern_types": [
-      "stack_alignment"
-    ],
-    "patterns": [
-      {
-        "address": "005af75c",
-        "description": "Stack alignment (AND ESP, 0xfffffff8)",
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
-        "instruction": "AND ESP,0xfffffff8",
-        "pattern_id": "stack_alignment"
-      }
-    ],
-    "severity": "medium"
-  },
-  "suspects": [
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 11,
-      "match": "extraout_EBX",
-      "text": "CSfxSlot *extraout_EBX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 12,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 12,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 93,
-      "match": "extraout_EBX",
-      "text": "slot = extraout_EBX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 124,
-      "match": "code *",
-      "text": "uVar2 = (**(code **)(*local_20 + 0x44))();",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "005af7ea",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "005af7fd",
-      "frame_offset": 3244,
-      "match": "CALL...ADD ESP",
-      "return_address": "005af7ef",
-      "target_address": "0x5a9d90",
-      "text": "Direct CALL at 005af7ea, ADD ESP at 005af7fd with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "005afa52",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "005afa57",
-      "frame_offset": 3244,
-      "match": "CALL...ADD ESP",
-      "return_address": "005afa57",
-      "target_address": "0x5ade70",
-      "text": "Direct CALL at 005afa52, ADD ESP at 005afa57 with uncertain ESP",
-      "type": "call_esp_anchor"
     }
   ],
   "vtable_info": {

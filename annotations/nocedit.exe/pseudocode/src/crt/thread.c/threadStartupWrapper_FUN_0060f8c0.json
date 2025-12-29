@@ -115,11 +115,6 @@
     "declared_params": 1,
     "estimated_params": 1
   },
-  "pcode_overrides": {
-    "0060f949": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff4,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.8793103448275863,
     "instruction_count": 58,
@@ -145,19 +140,6 @@
     },
     "pcode_op_count": 225
   },
-  "resolved_suspects": [
-    {
-      "add_esp_value": 4,
-      "callind_address": "0060f946",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "0060f949",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 12,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 0060f946, ADD ESP at 0060f949",
-      "type": "callind_anchor"
-    }
-  ],
   "stack_frame": {
     "frame_size": 48,
     "local_size": 44,
@@ -344,6 +326,17 @@
       "match": "crt_",
       "text": "CRT function (runtime support) at 0060f8c0",
       "type": "special_crt_function"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "0060f946",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "0060f949",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 12,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 0060f946, ADD ESP at 0060f949",
+      "type": "callind_anchor"
     }
   ]
 }

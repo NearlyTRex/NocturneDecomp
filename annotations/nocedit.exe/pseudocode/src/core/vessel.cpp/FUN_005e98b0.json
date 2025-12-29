@@ -136,11 +136,6 @@
     "declared_params": 1,
     "estimated_params": 1
   },
-  "pcode_overrides": {
-    "005e9a61": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffe4,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.108695652173913,
     "instruction_count": 138,
@@ -170,24 +165,6 @@
     },
     "pcode_op_count": 567
   },
-  "resolved_suspects": [
-    {
-      "add_esp_value": 12,
-      "call_address": "005e9a5c",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "005e9a61",
-      "frame_offset": 28,
-      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
-      "return_address": "005e9a61",
-      "target_address": "0x5fdbd0",
-      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
-      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 005e9a5c (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    }
-  ],
   "stack_frame": {
     "frame_size": 52,
     "local_size": 48,
@@ -352,6 +329,22 @@
       "target_address": "0x478d80",
       "text": "Direct CALL at 005e9a42, ADD ESP at 005e9a4a with uncertain ESP",
       "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "005e9a5c",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "005e9a61",
+      "frame_offset": 28,
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "005e9a61",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 005e9a5c (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
     }
   ],
   "vtable_info": {

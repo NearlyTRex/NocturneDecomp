@@ -244,11 +244,6 @@
     "declared_params": 0,
     "estimated_params": 0
   },
-  "pcode_overrides": {
-    "0046769a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff8c,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.287037037037037,
     "instruction_count": 216,
@@ -293,24 +288,6 @@
     },
     "pcode_op_count": 1358
   },
-  "resolved_suspects": [
-    {
-      "add_esp_value": 12,
-      "call_address": "00467695",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "0046769a",
-      "frame_offset": 116,
-      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
-      "return_address": "0046769a",
-      "target_address": "0x5fdbd0",
-      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
-      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00467695 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    }
-  ],
   "stack_frame": {
     "frame_size": 136,
     "local_size": 136,
@@ -482,6 +459,22 @@
       "target_address": "0x5ff9e0",
       "text": "Direct CALL at 00467424, ADD ESP at 00467429 with uncertain ESP",
       "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "00467695",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "0046769a",
+      "frame_offset": 116,
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "0046769a",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00467695 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
     }
   ]
 }

@@ -132,11 +132,6 @@
     "declared_params": 0,
     "estimated_params": 0
   },
-  "pcode_overrides": {
-    "004a7187": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.293478260869565,
     "instruction_count": 92,
@@ -169,28 +164,6 @@
     },
     "pcode_op_count": 395
   },
-  "resolved_suspects": [
-    {
-      "add_esp_value": 8,
-      "callind_address": "004a7181",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "004a7187",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 276,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 004a7181, ADD ESP at 004a7187",
-      "type": "callind_anchor"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x114",
-      "fix_address": "004a716c",
-      "match": "AND ESP",
-      "sub_esp_offset": 276,
-      "text": "Stack alignment at 004a716c (SUB ESP, 0x114 before)",
-      "type": "stack_align_anchor"
-    }
-  ],
   "stack_frame": {
     "frame_size": 108,
     "local_size": 108,
@@ -542,6 +515,26 @@
       "target_address": "0x5b3a40",
       "text": "Direct CALL at 004a7494, ADD ESP at 004a7499 with uncertain ESP",
       "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "004a7181",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "004a7187",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 276,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 004a7181, ADD ESP at 004a7187",
+      "type": "callind_anchor"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x114",
+      "fix_address": "004a716c",
+      "match": "AND ESP",
+      "sub_esp_offset": 276,
+      "text": "Stack alignment at 004a716c (SUB ESP, 0x114 before)",
+      "type": "stack_align_anchor"
     }
   ],
   "vtable_info": {

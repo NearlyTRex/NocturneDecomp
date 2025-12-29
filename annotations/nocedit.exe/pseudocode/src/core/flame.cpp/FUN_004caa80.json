@@ -113,11 +113,6 @@
     "declared_params": 0,
     "estimated_params": 0
   },
-  "pcode_overrides": {
-    "004caadc": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd8,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.84251968503937,
     "instruction_count": 127,
@@ -160,28 +155,6 @@
     },
     "pcode_op_count": 742
   },
-  "resolved_suspects": [
-    {
-      "add_esp_value": 8,
-      "callind_address": "004caad9",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "004caadc",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 40,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 004caad9, ADD ESP at 004caadc",
-      "type": "callind_anchor"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x28",
-      "fix_address": "004caa89",
-      "match": "AND ESP",
-      "sub_esp_offset": 40,
-      "text": "Stack alignment at 004caa89 (SUB ESP, 0x28 before)",
-      "type": "stack_align_anchor"
-    }
-  ],
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -447,6 +420,26 @@
       "target_address": "0x40c790",
       "text": "Direct CALL at 004cab94, ADD ESP at 004cab9b with uncertain ESP",
       "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "004caad9",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "004caadc",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 40,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 004caad9, ADD ESP at 004caadc",
+      "type": "callind_anchor"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x28",
+      "fix_address": "004caa89",
+      "match": "AND ESP",
+      "sub_esp_offset": 40,
+      "text": "Stack alignment at 004caa89 (SUB ESP, 0x28 before)",
+      "type": "stack_align_anchor"
     }
   ],
   "vtable_info": {

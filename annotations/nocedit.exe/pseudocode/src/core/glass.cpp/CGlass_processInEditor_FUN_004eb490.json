@@ -84,35 +84,6 @@
     "declared_params": 1,
     "estimated_params": 1
   },
-  "pcode_overrides": {
-    "004eb4a9": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
-    ],
-    "004eb4d5": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
-    ],
-    "004eb4f4": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
-    ],
-    "004eb517": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
-    ],
-    "004eb539": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
-    ],
-    "004eb55b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
-    ],
-    "004eb57d": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
-    ],
-    "004eb5d8": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
-    ],
-    "004eb5f2": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.319327731092437,
     "instruction_count": 119,
@@ -150,7 +121,53 @@
     },
     "pcode_op_count": 633
   },
-  "resolved_suspects": [
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGlass *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004eb497",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "add_esp_value": 4,
+      "call_address": "004eb5e1",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "004eb5e6",
+      "frame_offset": 16,
+      "match": "CALL...ADD ESP",
+      "return_address": "004eb5e6",
+      "target_address": "0x40d040",
+      "text": "Direct CALL at 004eb5e1, ADD ESP at 004eb5e6 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
     {
       "add_esp_value": 8,
       "callind_address": "004eb4a7",
@@ -258,54 +275,6 @@
       "sub_esp_offset": 16,
       "text": "Stack alignment at 004eb497 (SUB ESP, 0x10 before)",
       "type": "stack_align_anchor"
-    }
-  ],
-  "stack_frame": {
-    "frame_size": 8,
-    "local_size": 4,
-    "param_offset": 4,
-    "param_size": 4,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": true,
-        "name": "this_ptr",
-        "offset": 4,
-        "size": 4,
-        "type": "CGlass *"
-      }
-    ]
-  },
-  "stack_patterns": {
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
-    "pattern_count": 1,
-    "pattern_types": [
-      "stack_alignment"
-    ],
-    "patterns": [
-      {
-        "address": "004eb497",
-        "description": "Stack alignment (AND ESP, 0xfffffff8)",
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
-        "instruction": "AND ESP,0xfffffff8",
-        "pattern_id": "stack_alignment"
-      }
-    ],
-    "severity": "medium"
-  },
-  "suspects": [
-    {
-      "add_esp_value": 4,
-      "call_address": "004eb5e1",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "004eb5e6",
-      "frame_offset": 16,
-      "match": "CALL...ADD ESP",
-      "return_address": "004eb5e6",
-      "target_address": "0x40d040",
-      "text": "Direct CALL at 004eb5e1, ADD ESP at 004eb5e6 with uncertain ESP",
-      "type": "call_esp_anchor"
     }
   ],
   "vtable_info": {

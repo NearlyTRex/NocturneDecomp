@@ -50,11 +50,6 @@
     "declared_params": 1,
     "estimated_params": 1
   },
-  "pcode_overrides": {
-    "004a99ed": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffdc,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.093023255813954,
     "instruction_count": 43,
@@ -81,28 +76,6 @@
     },
     "pcode_op_count": 262
   },
-  "resolved_suspects": [
-    {
-      "add_esp_value": 8,
-      "callind_address": "004a99ea",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "004a99ed",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 36,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 004a99ea, ADD ESP at 004a99ed",
-      "type": "callind_anchor"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x24",
-      "fix_address": "004a99d7",
-      "match": "AND ESP",
-      "sub_esp_offset": 36,
-      "text": "Stack alignment at 004a99d7 (SUB ESP, 0x24 before)",
-      "type": "stack_align_anchor"
-    }
-  ],
   "stack_frame": {
     "frame_size": 8,
     "local_size": 4,
@@ -192,6 +165,26 @@
       "match": "in_stack_00000008",
       "text": "return in_stack_00000008;",
       "type": "stack_param"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "004a99ea",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "004a99ed",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 36,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 004a99ea, ADD ESP at 004a99ed",
+      "type": "callind_anchor"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x24",
+      "fix_address": "004a99d7",
+      "match": "AND ESP",
+      "sub_esp_offset": 36,
+      "text": "Stack alignment at 004a99d7 (SUB ESP, 0x24 before)",
+      "type": "stack_align_anchor"
     }
   ],
   "vtable_info": {

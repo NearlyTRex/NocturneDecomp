@@ -121,11 +121,6 @@
     "declared_params": 0,
     "estimated_params": 0
   },
-  "pcode_overrides": {
-    "00545fc9": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.046357615894039,
     "instruction_count": 151,
@@ -164,28 +159,6 @@
     },
     "pcode_op_count": 762
   },
-  "resolved_suspects": [
-    {
-      "add_esp_value": 8,
-      "callind_address": "00545fc6",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "00545fc9",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 16,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 00545fc6, ADD ESP at 00545fc9",
-      "type": "callind_anchor"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x10",
-      "fix_address": "00545ef9",
-      "match": "AND ESP",
-      "sub_esp_offset": 16,
-      "text": "Stack alignment at 00545ef9 (SUB ESP, 0x10 before)",
-      "type": "stack_align_anchor"
-    }
-  ],
   "stack_frame": {
     "frame_size": 36,
     "local_size": 36,
@@ -644,6 +617,26 @@
       "target_address": "0x42dfc0",
       "text": "Direct CALL at 005460a8, ADD ESP at 005460ad with uncertain ESP",
       "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "00545fc6",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "00545fc9",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 16,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 00545fc6, ADD ESP at 00545fc9",
+      "type": "callind_anchor"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x10",
+      "fix_address": "00545ef9",
+      "match": "AND ESP",
+      "sub_esp_offset": 16,
+      "text": "Stack alignment at 00545ef9 (SUB ESP, 0x10 before)",
+      "type": "stack_align_anchor"
     }
   ],
   "vtable_info": {

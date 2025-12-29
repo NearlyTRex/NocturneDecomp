@@ -150,11 +150,6 @@
     "declared_params": 0,
     "estimated_params": 0
   },
-  "pcode_overrides": {
-    "00588087": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.28125,
     "instruction_count": 96,
@@ -187,28 +182,6 @@
     },
     "pcode_op_count": 411
   },
-  "resolved_suspects": [
-    {
-      "add_esp_value": 8,
-      "callind_address": "00588081",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "00588087",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 276,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 00588081, ADD ESP at 00588087",
-      "type": "callind_anchor"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x114",
-      "fix_address": "0058806c",
-      "match": "AND ESP",
-      "sub_esp_offset": 276,
-      "text": "Stack alignment at 0058806c (SUB ESP, 0x114 before)",
-      "type": "stack_align_anchor"
-    }
-  ],
   "stack_frame": {
     "frame_size": 132,
     "local_size": 132,
@@ -714,6 +687,26 @@
       "target_address": "0x5b3a40",
       "text": "Direct CALL at 005883aa, ADD ESP at 005883af with uncertain ESP",
       "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "00588081",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "00588087",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 276,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 00588081, ADD ESP at 00588087",
+      "type": "callind_anchor"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x114",
+      "fix_address": "0058806c",
+      "match": "AND ESP",
+      "sub_esp_offset": 276,
+      "text": "Stack alignment at 0058806c (SUB ESP, 0x114 before)",
+      "type": "stack_align_anchor"
     }
   ],
   "vtable_info": {

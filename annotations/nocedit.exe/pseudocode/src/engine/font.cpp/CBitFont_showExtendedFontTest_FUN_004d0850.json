@@ -139,14 +139,6 @@
     "declared_params": 3,
     "estimated_params": 3
   },
-  "pcode_overrides": {
-    "004d0bc9": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd0,4)"
-    ],
-    "004d0d2e": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd0,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.279894875164257,
     "instruction_count": 761,
@@ -183,40 +175,6 @@
     },
     "pcode_op_count": 3257
   },
-  "resolved_suspects": [
-    {
-      "add_esp_value": 28,
-      "call_address": "004d0bb9",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "unknown",
-      "esp_certainty_at_call": "known",
-      "fix_address": "004d0bc9",
-      "frame_offset": 48,
-      "match": "CALL engine_font.cpp_CBitFont_drawTextFV_FUN_004cdc20",
-      "return_address": "004d0bbe",
-      "target_address": "0x4cdc20",
-      "target_function": "engine_font.cpp_CBitFont_drawTextFV_FUN_004cdc20",
-      "text": "Call to variadic function engine_font.cpp_CBitFont_drawTextFV_FUN_004cdc20 at 004d0bb9 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "add_esp_value": 36,
-      "call_address": "004d0d29",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "fix_address": "004d0d2e",
-      "frame_offset": 48,
-      "match": "CALL engine_font.cpp_CBitFont_drawTextFV_FUN_004cdc20",
-      "return_address": "004d0d2e",
-      "target_address": "0x4cdc20",
-      "target_function": "engine_font.cpp_CBitFont_drawTextFV_FUN_004cdc20",
-      "text": "Call to variadic function engine_font.cpp_CBitFont_drawTextFV_FUN_004cdc20 at 004d0d29 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    }
-  ],
   "stack_frame": {
     "frame_size": 80,
     "local_size": 68,
@@ -1177,6 +1135,38 @@
       "target_address": "0x4011b0",
       "text": "Direct CALL at 004d1103, ADD ESP at 004d1108 with uncertain ESP",
       "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 28,
+      "call_address": "004d0bb9",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "unknown",
+      "esp_certainty_at_call": "known",
+      "fix_address": "004d0bc9",
+      "frame_offset": 48,
+      "match": "CALL engine_font.cpp_CBitFont_drawTextFV_FUN_004cdc20",
+      "return_address": "004d0bbe",
+      "target_address": "0x4cdc20",
+      "target_function": "engine_font.cpp_CBitFont_drawTextFV_FUN_004cdc20",
+      "text": "Call to variadic function engine_font.cpp_CBitFont_drawTextFV_FUN_004cdc20 at 004d0bb9 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 36,
+      "call_address": "004d0d29",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "fix_address": "004d0d2e",
+      "frame_offset": 48,
+      "match": "CALL engine_font.cpp_CBitFont_drawTextFV_FUN_004cdc20",
+      "return_address": "004d0d2e",
+      "target_address": "0x4cdc20",
+      "target_function": "engine_font.cpp_CBitFont_drawTextFV_FUN_004cdc20",
+      "text": "Call to variadic function engine_font.cpp_CBitFont_drawTextFV_FUN_004cdc20 at 004d0d29 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
     }
   ]
 }

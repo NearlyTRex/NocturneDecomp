@@ -111,17 +111,6 @@
       "value": "1.00000000000000E-7"
     }
   ],
-  "pcode_overrides": {
-    "005cb067": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffce0,4)"
-    ],
-    "005cb08f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffce0,4)"
-    ],
-    "005cb21a": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffce0,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.382743362831858,
     "instruction_count": 904,
@@ -166,65 +155,6 @@
     },
     "pcode_op_count": 4866
   },
-  "resolved_suspects": [
-    {
-      "add_esp_value": 4,
-      "call_address": "005cb062",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "005cb067",
-      "frame_offset": 800,
-      "match": "CALL shape_superopt.cpp_logToFile_FUN_005c7910",
-      "return_address": "005cb067",
-      "target_address": "0x5c7910",
-      "target_function": "shape_superopt.cpp_logToFile_FUN_005c7910",
-      "text": "Call to variadic function shape_superopt.cpp_logToFile_FUN_005c7910 at 005cb062 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "005cb08a",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "005cb08f",
-      "frame_offset": 800,
-      "match": "CALL shape_superopt.cpp_logToFile_FUN_005c7910",
-      "return_address": "005cb08f",
-      "target_address": "0x5c7910",
-      "target_function": "shape_superopt.cpp_logToFile_FUN_005c7910",
-      "text": "Call to variadic function shape_superopt.cpp_logToFile_FUN_005c7910 at 005cb08a (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "005cb215",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "005cb21a",
-      "frame_offset": 800,
-      "match": "CALL shape_superopt.cpp_logToFile_FUN_005c7910",
-      "return_address": "005cb21a",
-      "target_address": "0x5c7910",
-      "target_function": "shape_superopt.cpp_logToFile_FUN_005c7910",
-      "text": "Call to variadic function shape_superopt.cpp_logToFile_FUN_005c7910 at 005cb215 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x320",
-      "fix_address": "005ca59c",
-      "match": "AND ESP",
-      "sub_esp_offset": 800,
-      "text": "Stack alignment at 005ca59c (SUB ESP, 0x320 before)",
-      "type": "stack_align_anchor"
-    }
-  ],
   "stack_frame": {
     "frame_size": 820,
     "local_size": 820,
@@ -1407,6 +1337,63 @@
       "target_address": "0x5fe5e0",
       "text": "Direct CALL at 005cb2c0, ADD ESP at 005cb2c5 with uncertain ESP",
       "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "005cb062",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "005cb067",
+      "frame_offset": 800,
+      "match": "CALL shape_superopt.cpp_logToFile_FUN_005c7910",
+      "return_address": "005cb067",
+      "target_address": "0x5c7910",
+      "target_function": "shape_superopt.cpp_logToFile_FUN_005c7910",
+      "text": "Call to variadic function shape_superopt.cpp_logToFile_FUN_005c7910 at 005cb062 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "005cb08a",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "005cb08f",
+      "frame_offset": 800,
+      "match": "CALL shape_superopt.cpp_logToFile_FUN_005c7910",
+      "return_address": "005cb08f",
+      "target_address": "0x5c7910",
+      "target_function": "shape_superopt.cpp_logToFile_FUN_005c7910",
+      "text": "Call to variadic function shape_superopt.cpp_logToFile_FUN_005c7910 at 005cb08a (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "005cb215",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "005cb21a",
+      "frame_offset": 800,
+      "match": "CALL shape_superopt.cpp_logToFile_FUN_005c7910",
+      "return_address": "005cb21a",
+      "target_address": "0x5c7910",
+      "target_function": "shape_superopt.cpp_logToFile_FUN_005c7910",
+      "text": "Call to variadic function shape_superopt.cpp_logToFile_FUN_005c7910 at 005cb215 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x320",
+      "fix_address": "005ca59c",
+      "match": "AND ESP",
+      "sub_esp_offset": 800,
+      "text": "Stack alignment at 005ca59c (SUB ESP, 0x320 before)",
+      "type": "stack_align_anchor"
     }
   ]
 }

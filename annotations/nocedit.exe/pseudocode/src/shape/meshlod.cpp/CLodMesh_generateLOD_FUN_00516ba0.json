@@ -150,14 +150,6 @@
       "value": null
     }
   ],
-  "pcode_overrides": {
-    "00516c30": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffe4,4)"
-    ],
-    "00516cb9": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffe4,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.66887417218543,
     "instruction_count": 151,
@@ -202,49 +194,6 @@
     },
     "pcode_op_count": 856
   },
-  "resolved_suspects": [
-    {
-      "add_esp_value": 16,
-      "call_address": "00516c2b",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "fix_address": "00516c30",
-      "frame_offset": 28,
-      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
-      "return_address": "00516c30",
-      "target_address": "0x5fdbd0",
-      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
-      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00516c2b (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "add_esp_value": 16,
-      "call_address": "00516cb4",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "fix_address": "00516cb9",
-      "frame_offset": 28,
-      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
-      "return_address": "00516cb9",
-      "target_address": "0x5fdbd0",
-      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
-      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00516cb4 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x1c",
-      "fix_address": "00516ba9",
-      "match": "AND ESP",
-      "sub_esp_offset": 28,
-      "text": "Stack alignment at 00516ba9 (SUB ESP, 0x1c before)",
-      "type": "stack_align_anchor"
-    }
-  ],
   "stack_frame": {
     "frame_size": 64,
     "local_size": 52,
@@ -487,6 +436,47 @@
       "target_address": "0x51b870",
       "text": "Direct CALL at 00516d38, ADD ESP at 00516d3d with uncertain ESP",
       "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 16,
+      "call_address": "00516c2b",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "fix_address": "00516c30",
+      "frame_offset": 28,
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "00516c30",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00516c2b (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 16,
+      "call_address": "00516cb4",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "fix_address": "00516cb9",
+      "frame_offset": 28,
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "00516cb9",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00516cb4 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x1c",
+      "fix_address": "00516ba9",
+      "match": "AND ESP",
+      "sub_esp_offset": 28,
+      "text": "Stack alignment at 00516ba9 (SUB ESP, 0x1c before)",
+      "type": "stack_align_anchor"
     }
   ]
 }

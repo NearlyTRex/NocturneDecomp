@@ -370,11 +370,6 @@
       "value": null
     }
   ],
-  "pcode_overrides": {
-    "005bed89": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffe0c4,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.853171155516942,
     "instruction_count": 1151,
@@ -420,28 +415,6 @@
     },
     "pcode_op_count": 6737
   },
-  "resolved_suspects": [
-    {
-      "add_esp_value": 8,
-      "callind_address": "005bed7f",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "005bed89",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 7996,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 005bed7f, ADD ESP at 005bed89",
-      "type": "callind_anchor"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x1f3c",
-      "fix_address": "005be52c",
-      "match": "AND ESP",
-      "sub_esp_offset": 7996,
-      "text": "Stack alignment at 005be52c (SUB ESP, 0x1f3c before)",
-      "type": "stack_align_anchor"
-    }
-  ],
   "stack_frame": {
     "frame_size": 8028,
     "local_size": 8028,
@@ -2947,6 +2920,26 @@
       "target_address": "0x59eb50",
       "text": "Direct CALL at 005bf703, ADD ESP at 005bf708 with uncertain ESP",
       "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "005bed7f",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "005bed89",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 7996,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 005bed7f, ADD ESP at 005bed89",
+      "type": "callind_anchor"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x1f3c",
+      "fix_address": "005be52c",
+      "match": "AND ESP",
+      "sub_esp_offset": 7996,
+      "text": "Stack alignment at 005be52c (SUB ESP, 0x1f3c before)",
+      "type": "stack_align_anchor"
     }
   ]
 }

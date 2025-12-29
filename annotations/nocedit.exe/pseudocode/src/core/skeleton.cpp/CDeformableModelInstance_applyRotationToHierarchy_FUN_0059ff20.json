@@ -211,11 +211,6 @@
     "declared_params": 5,
     "estimated_params": 5
   },
-  "pcode_overrides": {
-    "0059fffe": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff2c,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.223021582733813,
     "instruction_count": 139,
@@ -254,28 +249,6 @@
     },
     "pcode_op_count": 726
   },
-  "resolved_suspects": [
-    {
-      "add_esp_value": 20,
-      "callind_address": "0059ffed",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "0059fffe",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 212,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 0059ffed, ADD ESP at 0059fffe",
-      "type": "callind_anchor"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0xd4",
-      "fix_address": "0059ff2c",
-      "match": "AND ESP",
-      "sub_esp_offset": 212,
-      "text": "Stack alignment at 0059ff2c (SUB ESP, 0xd4 before)",
-      "type": "stack_align_anchor"
-    }
-  ],
   "stack_frame": {
     "frame_size": 264,
     "local_size": 244,
@@ -602,6 +575,26 @@
       "target_address": "0x5f4e20",
       "text": "Direct CALL at 005a00df, ADD ESP at 005a00e4 with uncertain ESP",
       "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 20,
+      "callind_address": "0059ffed",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "0059fffe",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 212,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 0059ffed, ADD ESP at 0059fffe",
+      "type": "callind_anchor"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0xd4",
+      "fix_address": "0059ff2c",
+      "match": "AND ESP",
+      "sub_esp_offset": 212,
+      "text": "Stack alignment at 0059ff2c (SUB ESP, 0xd4 before)",
+      "type": "stack_align_anchor"
     }
   ]
 }

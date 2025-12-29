@@ -172,20 +172,6 @@
       "value": null
     }
   ],
-  "pcode_overrides": {
-    "004a0156": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd4,4)"
-    ],
-    "004a016f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd4,4)"
-    ],
-    "004a01b4": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd4,4)"
-    ],
-    "004a01db": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd4,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.274725274725275,
     "instruction_count": 91,
@@ -221,81 +207,6 @@
     },
     "pcode_op_count": 480
   },
-  "resolved_suspects": [
-    {
-      "add_esp_value": 16,
-      "call_address": "004a0151",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "004a0156",
-      "frame_offset": 44,
-      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
-      "return_address": "004a0156",
-      "target_address": "0x5fdbd0",
-      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
-      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 004a0151 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "004a016a",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "004a016f",
-      "frame_offset": 44,
-      "match": "CALL crt_stdio.c_sscanf_FUN_0060013c",
-      "return_address": "004a016f",
-      "target_address": "0x60013c",
-      "target_function": "crt_stdio.c_sscanf_FUN_0060013c",
-      "text": "Call to variadic function crt_stdio.c_sscanf_FUN_0060013c at 004a016a (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "004a01af",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "004a01b4",
-      "frame_offset": 44,
-      "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
-      "return_address": "004a01b4",
-      "target_address": "0x49e740",
-      "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
-      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 004a01af (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "add_esp_value": 24,
-      "call_address": "004a01d6",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "004a01db",
-      "frame_offset": 44,
-      "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
-      "return_address": "004a01db",
-      "target_address": "0x49e740",
-      "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
-      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 004a01d6 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x2c",
-      "fix_address": "004a00f9",
-      "match": "AND ESP",
-      "sub_esp_offset": 44,
-      "text": "Stack alignment at 004a00f9 (SUB ESP, 0x2c before)",
-      "type": "stack_align_anchor"
-    }
-  ],
   "stack_frame": {
     "frame_size": 109,
     "local_size": 84,
@@ -493,6 +404,79 @@
       "target_address": "0x4a03d0",
       "text": "Direct CALL at 004a0129, ADD ESP at 004a012e with uncertain ESP",
       "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 16,
+      "call_address": "004a0151",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "004a0156",
+      "frame_offset": 44,
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "004a0156",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 004a0151 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "004a016a",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "004a016f",
+      "frame_offset": 44,
+      "match": "CALL crt_stdio.c_sscanf_FUN_0060013c",
+      "return_address": "004a016f",
+      "target_address": "0x60013c",
+      "target_function": "crt_stdio.c_sscanf_FUN_0060013c",
+      "text": "Call to variadic function crt_stdio.c_sscanf_FUN_0060013c at 004a016a (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "004a01af",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "004a01b4",
+      "frame_offset": 44,
+      "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "return_address": "004a01b4",
+      "target_address": "0x49e740",
+      "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 004a01af (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 24,
+      "call_address": "004a01d6",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "004a01db",
+      "frame_offset": 44,
+      "match": "CALL shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "return_address": "004a01db",
+      "target_address": "0x49e740",
+      "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 004a01d6 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x2c",
+      "fix_address": "004a00f9",
+      "match": "AND ESP",
+      "sub_esp_offset": 44,
+      "text": "Stack alignment at 004a00f9 (SUB ESP, 0x2c before)",
+      "type": "stack_align_anchor"
     }
   ]
 }

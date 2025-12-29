@@ -151,11 +151,6 @@
     "declared_params": 0,
     "estimated_params": 0
   },
-  "pcode_overrides": {
-    "00466788": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff4c,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.397849462365591,
     "instruction_count": 279,
@@ -198,24 +193,6 @@
     },
     "pcode_op_count": 1785
   },
-  "resolved_suspects": [
-    {
-      "add_esp_value": 16,
-      "call_address": "00466783",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "00466788",
-      "frame_offset": 180,
-      "match": "CALL crt_stdio.c_sscanf_FUN_0060013c",
-      "return_address": "00466788",
-      "target_address": "0x60013c",
-      "target_function": "crt_stdio.c_sscanf_FUN_0060013c",
-      "text": "Call to variadic function crt_stdio.c_sscanf_FUN_0060013c at 00466783 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    }
-  ],
   "stack_frame": {
     "frame_size": 200,
     "local_size": 200,
@@ -416,6 +393,22 @@
       "target_address": "0x5ff9e0",
       "text": "Direct CALL at 00466828, ADD ESP at 0046682d with uncertain ESP",
       "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 16,
+      "call_address": "00466783",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "00466788",
+      "frame_offset": 180,
+      "match": "CALL crt_stdio.c_sscanf_FUN_0060013c",
+      "return_address": "00466788",
+      "target_address": "0x60013c",
+      "target_function": "crt_stdio.c_sscanf_FUN_0060013c",
+      "text": "Call to variadic function crt_stdio.c_sscanf_FUN_0060013c at 00466783 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
     }
   ]
 }

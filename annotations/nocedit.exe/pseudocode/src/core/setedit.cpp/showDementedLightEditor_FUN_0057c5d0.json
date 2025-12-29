@@ -468,14 +468,6 @@
     "declared_params": 1,
     "estimated_params": 1
   },
-  "pcode_overrides": {
-    "0057c7ed": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff03c,4)"
-    ],
-    "0057cb08": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffff03c,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.371165644171779,
     "instruction_count": 652,
@@ -517,49 +509,6 @@
     },
     "pcode_op_count": 3502
   },
-  "resolved_suspects": [
-    {
-      "add_esp_value": 16,
-      "call_address": "0057c7e8",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "fix_address": "0057c7ed",
-      "frame_offset": 4036,
-      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
-      "return_address": "0057c7ed",
-      "target_address": "0x5fdbd0",
-      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
-      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0057c7e8 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "0057cb03",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "0057cb08",
-      "frame_offset": 4036,
-      "match": "CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0",
-      "return_address": "0057cb08",
-      "target_address": "0x49f0f0",
-      "target_function": "shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0",
-      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 at 0057cb03 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0xfc4",
-      "fix_address": "0057c5dc",
-      "match": "AND ESP",
-      "sub_esp_offset": 4036,
-      "text": "Stack alignment at 0057c5dc (SUB ESP, 0xfc4 before)",
-      "type": "stack_align_anchor"
-    }
-  ],
   "stack_frame": {
     "frame_size": 4064,
     "local_size": 4060,
@@ -1704,6 +1653,47 @@
       "target_address": "0x4a3c80",
       "text": "Direct CALL at 0057ce65, ADD ESP at 0057ce6a with uncertain ESP",
       "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 16,
+      "call_address": "0057c7e8",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "fix_address": "0057c7ed",
+      "frame_offset": 4036,
+      "match": "CALL crt_stdio.c_sprintf_FUN_005fdbd0",
+      "return_address": "0057c7ed",
+      "target_address": "0x5fdbd0",
+      "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
+      "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0057c7e8 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "0057cb03",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "0057cb08",
+      "frame_offset": 4036,
+      "match": "CALL shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0",
+      "return_address": "0057cb08",
+      "target_address": "0x49f0f0",
+      "target_function": "shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0",
+      "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0 at 0057cb03 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0xfc4",
+      "fix_address": "0057c5dc",
+      "match": "AND ESP",
+      "sub_esp_offset": 4036,
+      "text": "Stack alignment at 0057c5dc (SUB ESP, 0xfc4 before)",
+      "type": "stack_align_anchor"
     }
   ]
 }

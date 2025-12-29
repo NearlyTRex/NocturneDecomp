@@ -72,11 +72,6 @@
     "declared_params": 1,
     "estimated_params": 1
   },
-  "pcode_overrides": {
-    "00555b41": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffb4,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.793838862559242,
     "instruction_count": 422,
@@ -119,28 +114,6 @@
     },
     "pcode_op_count": 2445
   },
-  "resolved_suspects": [
-    {
-      "add_esp_value": 12,
-      "callind_address": "00555b3f",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "00555b41",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 76,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 00555b3f, ADD ESP at 00555b41",
-      "type": "callind_anchor"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x4c",
-      "fix_address": "00555a49",
-      "match": "AND ESP",
-      "sub_esp_offset": 76,
-      "text": "Stack alignment at 00555a49 (SUB ESP, 0x4c before)",
-      "type": "stack_align_anchor"
-    }
-  ],
   "stack_frame": {
     "frame_size": 104,
     "local_size": 100,
@@ -624,6 +597,26 @@
       "target_address": "0x554e70",
       "text": "Direct CALL at 00555fcc, ADD ESP at 00555fd1 with uncertain ESP",
       "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "callind_address": "00555b3f",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "00555b41",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 76,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 00555b3f, ADD ESP at 00555b41",
+      "type": "callind_anchor"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x4c",
+      "fix_address": "00555a49",
+      "match": "AND ESP",
+      "sub_esp_offset": 76,
+      "text": "Stack alignment at 00555a49 (SUB ESP, 0x4c before)",
+      "type": "stack_align_anchor"
     }
   ]
 }

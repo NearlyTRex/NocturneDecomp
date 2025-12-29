@@ -292,17 +292,6 @@
     "declared_params": 3,
     "estimated_params": 5
   },
-  "pcode_overrides": {
-    "0060f595": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff4c,4)"
-    ],
-    "0060f809": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff4c,4)"
-    ],
-    "0060f857": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff4c,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.239336492890995,
     "instruction_count": 422,
@@ -332,46 +321,6 @@
     },
     "pcode_op_count": 1789
   },
-  "resolved_suspects": [
-    {
-      "add_esp_value": 4,
-      "callind_address": "0060f58f",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "0060f595",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 180,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 0060f58f, ADD ESP at 0060f595",
-      "type": "callind_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "callind_address": "0060f851",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "0060f857",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 180,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 0060f851, ADD ESP at 0060f857",
-      "type": "callind_anchor"
-    },
-    {
-      "add_esp_value": 28,
-      "call_address": "0060f804",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "0060f809",
-      "frame_offset": 180,
-      "match": "CALL crt_process.c_execvp_FUN_00610790",
-      "return_address": "0060f809",
-      "target_address": "0x610790",
-      "target_function": "crt_process.c_execvp_FUN_00610790",
-      "text": "Call to variadic function crt_process.c_execvp_FUN_00610790 at 0060f804 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    }
-  ],
   "stack_frame": {
     "frame_size": 212,
     "local_size": 200,
@@ -1313,6 +1262,44 @@
       "match": "crt_",
       "text": "CRT function (runtime support) at 0060f39c",
       "type": "special_crt_function"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "0060f58f",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "0060f595",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 180,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 0060f58f, ADD ESP at 0060f595",
+      "type": "callind_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "0060f851",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "0060f857",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 180,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 0060f851, ADD ESP at 0060f857",
+      "type": "callind_anchor"
+    },
+    {
+      "add_esp_value": 28,
+      "call_address": "0060f804",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "0060f809",
+      "frame_offset": 180,
+      "match": "CALL crt_process.c_execvp_FUN_00610790",
+      "return_address": "0060f809",
+      "target_address": "0x610790",
+      "target_function": "crt_process.c_execvp_FUN_00610790",
+      "text": "Call to variadic function crt_process.c_execvp_FUN_00610790 at 0060f804 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
     }
   ]
 }

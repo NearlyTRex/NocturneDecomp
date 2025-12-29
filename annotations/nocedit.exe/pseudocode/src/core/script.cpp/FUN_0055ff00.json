@@ -144,11 +144,6 @@
       "value": null
     }
   ],
-  "pcode_overrides": {
-    "0055ff7e": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffe8,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.75,
     "instruction_count": 148,
@@ -189,33 +184,6 @@
     },
     "pcode_op_count": 703
   },
-  "resolved_suspects": [
-    {
-      "add_esp_value": 12,
-      "call_address": "0055ff79",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "0055ff7e",
-      "frame_offset": 24,
-      "match": "CALL crt_stdio.c_sscanf_FUN_0060013c",
-      "return_address": "0055ff7e",
-      "target_address": "0x60013c",
-      "target_function": "crt_stdio.c_sscanf_FUN_0060013c",
-      "text": "Call to variadic function crt_stdio.c_sscanf_FUN_0060013c at 0055ff79 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x18",
-      "fix_address": "0055ff09",
-      "match": "AND ESP",
-      "sub_esp_offset": 24,
-      "text": "Stack alignment at 0055ff09 (SUB ESP, 0x18 before)",
-      "type": "stack_align_anchor"
-    }
-  ],
   "stack_frame": {
     "frame_size": 44,
     "local_size": 44,
@@ -692,6 +660,31 @@
       "target_address": "0x5b3a20",
       "text": "Direct CALL at 0056007a, ADD ESP at 0056007f with uncertain ESP",
       "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "0055ff79",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "0055ff7e",
+      "frame_offset": 24,
+      "match": "CALL crt_stdio.c_sscanf_FUN_0060013c",
+      "return_address": "0055ff7e",
+      "target_address": "0x60013c",
+      "target_function": "crt_stdio.c_sscanf_FUN_0060013c",
+      "text": "Call to variadic function crt_stdio.c_sscanf_FUN_0060013c at 0055ff79 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x18",
+      "fix_address": "0055ff09",
+      "match": "AND ESP",
+      "sub_esp_offset": 24,
+      "text": "Stack alignment at 0055ff09 (SUB ESP, 0x18 before)",
+      "type": "stack_align_anchor"
     }
   ]
 }

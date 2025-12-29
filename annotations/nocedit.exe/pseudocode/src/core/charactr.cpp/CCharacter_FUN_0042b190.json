@@ -127,11 +127,6 @@
     "declared_params": 1,
     "estimated_params": 1
   },
-  "pcode_overrides": {
-    "0042b57d": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffd20,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.92,
     "instruction_count": 100,
@@ -175,28 +170,6 @@
     },
     "pcode_op_count": 592
   },
-  "resolved_suspects": [
-    {
-      "add_esp_value": 8,
-      "callind_address": "0042b577",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "0042b57d",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 736,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 0042b577, ADD ESP at 0042b57d",
-      "type": "callind_anchor"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x2e0",
-      "fix_address": "0042b19c",
-      "match": "AND ESP",
-      "sub_esp_offset": 736,
-      "text": "Stack alignment at 0042b19c (SUB ESP, 0x2e0 before)",
-      "type": "stack_align_anchor"
-    }
-  ],
   "stack_frame": {
     "frame_size": 772,
     "local_size": 768,
@@ -629,6 +602,26 @@
       "match": "in_stack_0000001c",
       "text": "puVar7 = (uint *)(in_stack_0000001c + 8);",
       "type": "stack_param"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "0042b577",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "0042b57d",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 736,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 0042b577, ADD ESP at 0042b57d",
+      "type": "callind_anchor"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x2e0",
+      "fix_address": "0042b19c",
+      "match": "AND ESP",
+      "sub_esp_offset": 736,
+      "text": "Stack alignment at 0042b19c (SUB ESP, 0x2e0 before)",
+      "type": "stack_align_anchor"
     }
   ]
 }

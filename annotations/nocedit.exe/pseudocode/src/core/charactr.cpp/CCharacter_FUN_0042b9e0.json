@@ -238,11 +238,6 @@
     "declared_params": 1,
     "estimated_params": 4
   },
-  "pcode_overrides": {
-    "0042ba90": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff64,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.206106870229007,
     "instruction_count": 131,
@@ -282,28 +277,6 @@
     },
     "pcode_op_count": 682
   },
-  "resolved_suspects": [
-    {
-      "add_esp_value": 8,
-      "callind_address": "0042ba86",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "0042ba90",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 156,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 0042ba86, ADD ESP at 0042ba90",
-      "type": "callind_anchor"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x9c",
-      "fix_address": "0042b9ec",
-      "match": "AND ESP",
-      "sub_esp_offset": 156,
-      "text": "Stack alignment at 0042b9ec (SUB ESP, 0x9c before)",
-      "type": "stack_align_anchor"
-    }
-  ],
   "stack_frame": {
     "frame_size": 184,
     "local_size": 180,
@@ -671,6 +644,26 @@
       "target_address": "0x4edbb0",
       "text": "Direct CALL at 0042bc0a, ADD ESP at 0042bc0f with uncertain ESP",
       "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "0042ba86",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "0042ba90",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 156,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 0042ba86, ADD ESP at 0042ba90",
+      "type": "callind_anchor"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x9c",
+      "fix_address": "0042b9ec",
+      "match": "AND ESP",
+      "sub_esp_offset": 156,
+      "text": "Stack alignment at 0042b9ec (SUB ESP, 0x9c before)",
+      "type": "stack_align_anchor"
     }
   ]
 }

@@ -155,14 +155,6 @@
       "value": null
     }
   ],
-  "pcode_overrides": {
-    "005c210f": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ],
-    "005c23e9": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff28,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.897887323943662,
     "instruction_count": 284,
@@ -205,44 +197,6 @@
     },
     "pcode_op_count": 1675
   },
-  "resolved_suspects": [
-    {
-      "add_esp_value": 8,
-      "callind_address": "005c210c",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "005c210f",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 216,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 005c210c, ADD ESP at 005c210f",
-      "type": "callind_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "005c23df",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "005c23e9",
-      "frame_offset": 216,
-      "match": "CALL engine_console.cpp_CConsole_printf_FUN_00441890",
-      "return_address": "005c23e4",
-      "target_address": "0x441890",
-      "target_function": "engine_console.cpp_CConsole_printf_FUN_00441890",
-      "text": "Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 005c23df (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0xd8",
-      "fix_address": "005c1fec",
-      "match": "AND ESP",
-      "sub_esp_offset": 216,
-      "text": "Stack alignment at 005c1fec (SUB ESP, 0xd8 before)",
-      "type": "stack_align_anchor"
-    }
-  ],
   "stack_frame": {
     "frame_size": 236,
     "local_size": 236,
@@ -744,6 +698,42 @@
       "target_address": "0x5e7830",
       "text": "Direct CALL at 005c23b7, ADD ESP at 005c23bc with uncertain ESP",
       "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "005c210c",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "005c210f",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 216,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 005c210c, ADD ESP at 005c210f",
+      "type": "callind_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "005c23df",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "005c23e9",
+      "frame_offset": 216,
+      "match": "CALL engine_console.cpp_CConsole_printf_FUN_00441890",
+      "return_address": "005c23e4",
+      "target_address": "0x441890",
+      "target_function": "engine_console.cpp_CConsole_printf_FUN_00441890",
+      "text": "Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 005c23df (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0xd8",
+      "fix_address": "005c1fec",
+      "match": "AND ESP",
+      "sub_esp_offset": 216,
+      "text": "Stack alignment at 005c1fec (SUB ESP, 0xd8 before)",
+      "type": "stack_align_anchor"
     }
   ]
 }

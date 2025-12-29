@@ -195,11 +195,6 @@
     "declared_params": 0,
     "estimated_params": 1
   },
-  "pcode_overrides": {
-    "005c624e": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffe0,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.41970802919708,
     "instruction_count": 274,
@@ -236,28 +231,6 @@
     },
     "pcode_op_count": 1485
   },
-  "resolved_suspects": [
-    {
-      "add_esp_value": 4,
-      "callind_address": "005c6248",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "005c624e",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 32,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 005c6248, ADD ESP at 005c624e",
-      "type": "callind_anchor"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x20",
-      "fix_address": "005c6229",
-      "match": "AND ESP",
-      "sub_esp_offset": 32,
-      "text": "Stack alignment at 005c6229 (SUB ESP, 0x20 before)",
-      "type": "stack_align_anchor"
-    }
-  ],
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -860,6 +833,26 @@
       "target_address": "0x43e170",
       "text": "Direct CALL at 005c6544, ADD ESP at 005c6549 with uncertain ESP",
       "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "callind_address": "005c6248",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "005c624e",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 32,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 005c6248, ADD ESP at 005c624e",
+      "type": "callind_anchor"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x20",
+      "fix_address": "005c6229",
+      "match": "AND ESP",
+      "sub_esp_offset": 32,
+      "text": "Stack alignment at 005c6229 (SUB ESP, 0x20 before)",
+      "type": "stack_align_anchor"
     }
   ]
 }

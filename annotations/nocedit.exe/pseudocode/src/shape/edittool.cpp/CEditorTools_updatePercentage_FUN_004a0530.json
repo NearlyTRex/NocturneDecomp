@@ -394,14 +394,6 @@
       "value": null
     }
   ],
-  "pcode_overrides": {
-    "004a082b": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd0,4)"
-    ],
-    "004a0885": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd0,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.375,
     "instruction_count": 264,
@@ -450,49 +442,6 @@
     },
     "pcode_op_count": 1683
   },
-  "resolved_suspects": [
-    {
-      "add_esp_value": 44,
-      "call_address": "004a0826",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "fix_address": "004a082b",
-      "frame_offset": 48,
-      "match": "CALL engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30",
-      "return_address": "004a082b",
-      "target_address": "0x4cdf30",
-      "target_function": "engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30",
-      "text": "Call to variadic function engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30 at 004a0826 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "004a0880",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "004a0885",
-      "frame_offset": 48,
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "004a0885",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 004a0880 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x30",
-      "fix_address": "004a0539",
-      "match": "AND ESP",
-      "sub_esp_offset": 48,
-      "text": "Stack alignment at 004a0539 (SUB ESP, 0x30 before)",
-      "type": "stack_align_anchor"
-    }
-  ],
   "stack_frame": {
     "frame_size": 80,
     "local_size": 68,
@@ -729,6 +678,47 @@
       "target_address": "0x406d80",
       "text": "Direct CALL at 004a07e2, ADD ESP at 004a07e7 with uncertain ESP",
       "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 44,
+      "call_address": "004a0826",
+      "caller_has_stack_issues": false,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "fix_address": "004a082b",
+      "frame_offset": 48,
+      "match": "CALL engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30",
+      "return_address": "004a082b",
+      "target_address": "0x4cdf30",
+      "target_function": "engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30",
+      "text": "Call to variadic function engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30 at 004a0826 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "004a0880",
+      "caller_has_stack_issues": false,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "004a0885",
+      "frame_offset": 48,
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "004a0885",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 004a0880 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x30",
+      "fix_address": "004a0539",
+      "match": "AND ESP",
+      "sub_esp_offset": 48,
+      "text": "Stack alignment at 004a0539 (SUB ESP, 0x30 before)",
+      "type": "stack_align_anchor"
     }
   ]
 }

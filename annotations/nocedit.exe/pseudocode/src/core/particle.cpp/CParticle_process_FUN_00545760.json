@@ -117,11 +117,6 @@
       "value": null
     }
   ],
-  "pcode_overrides": {
-    "00545946": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff60,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.359504132231405,
     "instruction_count": 242,
@@ -162,28 +157,6 @@
     },
     "pcode_op_count": 1539
   },
-  "resolved_suspects": [
-    {
-      "add_esp_value": 8,
-      "callind_address": "00545943",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "00545946",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 160,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 00545943, ADD ESP at 00545946",
-      "type": "callind_anchor"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0xa0",
-      "fix_address": "0054576c",
-      "match": "AND ESP",
-      "sub_esp_offset": 160,
-      "text": "Stack alignment at 0054576c (SUB ESP, 0xa0 before)",
-      "type": "stack_align_anchor"
-    }
-  ],
   "stack_frame": {
     "frame_size": 184,
     "local_size": 180,
@@ -487,6 +460,26 @@
       "target_address": "0x495b70",
       "text": "Direct CALL at 00545862, ADD ESP at 00545875 with uncertain ESP",
       "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "00545943",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "00545946",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 160,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 00545943, ADD ESP at 00545946",
+      "type": "callind_anchor"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0xa0",
+      "fix_address": "0054576c",
+      "match": "AND ESP",
+      "sub_esp_offset": 160,
+      "text": "Stack alignment at 0054576c (SUB ESP, 0xa0 before)",
+      "type": "stack_align_anchor"
     }
   ]
 }

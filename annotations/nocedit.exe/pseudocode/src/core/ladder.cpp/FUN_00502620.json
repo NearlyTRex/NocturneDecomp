@@ -140,11 +140,6 @@
     "declared_params": 0,
     "estimated_params": 0
   },
-  "pcode_overrides": {
-    "0050264d": [
-      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff90,4)"
-    ]
-  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.527918781725888,
     "instruction_count": 197,
@@ -188,28 +183,6 @@
     },
     "pcode_op_count": 1089
   },
-  "resolved_suspects": [
-    {
-      "add_esp_value": 8,
-      "callind_address": "0050264a",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "0050264d",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 112,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 0050264a, ADD ESP at 0050264d",
-      "type": "callind_anchor"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x70",
-      "fix_address": "00502629",
-      "match": "AND ESP",
-      "sub_esp_offset": 112,
-      "text": "Stack alignment at 00502629 (SUB ESP, 0x70 before)",
-      "type": "stack_align_anchor"
-    }
-  ],
   "stack_frame": {
     "frame_size": 120,
     "local_size": 120,
@@ -702,6 +675,26 @@
       "target_address": "0x478d20",
       "text": "Direct CALL at 005028aa, ADD ESP at 005028af with uncertain ESP",
       "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "callind_address": "0050264a",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "0050264d",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 112,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 0050264a, ADD ESP at 0050264d",
+      "type": "callind_anchor"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x70",
+      "fix_address": "00502629",
+      "match": "AND ESP",
+      "sub_esp_offset": 112,
+      "text": "Stack alignment at 00502629 (SUB ESP, 0x70 before)",
+      "type": "stack_align_anchor"
     }
   ],
   "vtable_info": {
