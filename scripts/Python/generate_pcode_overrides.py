@@ -25,6 +25,18 @@ Suspect Types:
   Fix: Save/restore ESP across the CALL
   Status: EXPERIMENTAL - may break argument detection
 
+- stack_align_anchor (--type=stack-align): Stack alignment (AND ESP) in EBP-frame function
+  Fix: Override instruction after AND ESP to anchor ESP = EBP - frame_offset
+  Status: STABLE - restores ESP tracking after alignment
+
+- call_esp_anchor (--type=call-anchor): Direct CALL in EBP-frame function with uncertain ESP
+  Fix: Override ADD ESP after CALL to anchor ESP = EBP - frame_offset
+  Status: STABLE - restores ESP tracking after call
+
+- call_esp_preserve (--type=call-preserve): Direct CALL in non-EBP-frame function
+  Fix: Save/restore ESP across the CALL
+  Status: EXPERIMENTAL - may break decompilation
+
 Usage:
     # Scan for CALLIND anchor suspects only (default, stable)
     python generate_pcode_overrides.py /path/to/pseudocode/src
@@ -35,7 +47,10 @@ Usage:
     # Scan for variadic anchor suspects (stable)
     python generate_pcode_overrides.py /path/to/pseudocode/src --type=variadic-anchor
 
-    # Scan for all suspect types
+    # Scan for all stable suspect types (recommended)
+    python generate_pcode_overrides.py /path/to/pseudocode/src --type=stable
+
+    # Scan for all suspect types (includes experimental)
     python generate_pcode_overrides.py /path/to/pseudocode/src --type=all
 """
 
@@ -230,6 +245,9 @@ def find_fixable_suspects(json_data, suspect_types=None, verbose=True):
             - 'variadic_anchor' (EBP-frame variadic CALL with ADD ESP, stable)
             - 'variadic_preserve_ebp' (EBP-frame variadic CALL without ADD ESP, experimental)
             - 'variadic_preserve' (no EBP frame variadic CALL, experimental)
+            - 'stack_align_anchor' (stack alignment in EBP-frame, stable)
+            - 'call_esp_anchor' (direct CALL in EBP-frame, stable)
+            - 'call_esp_preserve' (direct CALL in non-EBP-frame, experimental)
             If None, defaults to {'callind_anchor'}
         verbose: If True, print warnings
 
@@ -250,7 +268,8 @@ def find_fixable_suspects(json_data, suspect_types=None, verbose=True):
 
     suspects = json_data.get('suspects', [])
     existing_overrides = json_data.get('pcode_overrides', {})
-    callind_index = 0  # Counter for unique addresses per CALLIND in this function
+    unique_counter = 0  # Counter for unique space addresses to avoid conflicts
+    pending_fix_addrs = set()  # Track addresses we're about to fix to detect conflicts
 
     for suspect in suspects:
         suspect_type = suspect.get('type', '')
@@ -285,6 +304,11 @@ def find_fixable_suspects(json_data, suspect_types=None, verbose=True):
         if already_fixed:
             continue
 
+        # Check for conflict with another suspect targeting the same address
+        if norm_addr in pending_fix_addrs:
+            skipped.append((fix_address, 'CONFLICT: another suspect already targets this address (%s)' % suspect_type))
+            continue
+
         if suspect_type == 'callind_anchor':
             # EBP-frame function: use ESP = EBP - frame_offset
             frame_offset = suspect.get('frame_offset')
@@ -300,6 +324,7 @@ def find_fixable_suspects(json_data, suspect_types=None, verbose=True):
             # Generate the fix
             pcode = generate_esp_anchor_pcode(frame_offset)
             fixes.append((fix_address, [pcode], frame_offset, 'ebp_anchor'))
+            pending_fix_addrs.add(norm_addr)
 
         elif suspect_type == 'callind_preserve':
             # Non-EBP-frame function: override the CALLIND to preserve ESP
@@ -341,14 +366,16 @@ def find_fixable_suspects(json_data, suspect_types=None, verbose=True):
                 continue
 
             # Generate p-code override for the CALLIND with return address push
-            # Use unique_index to get separate unique addresses for each CALLIND
-            pcode_lines = generate_callind_preserve_pcode(target_type, target_value, ret_addr_int, callind_index)
+            # Use unique_counter to get separate unique addresses for each CALLIND
+            pcode_lines = generate_callind_preserve_pcode(target_type, target_value, ret_addr_int, unique_counter)
             if pcode_lines is None:
                 skipped.append((fix_address, 'unsupported target_type: %s' % target_type))
                 continue
 
             fixes.append((callind_address, pcode_lines, ret_addr_int, 'callind_preserve'))
-            callind_index += 1  # Increment for next CALLIND
+            norm_callind = callind_address.lower().replace('0x', '').lstrip('0') or '0'
+            pending_fix_addrs.add(norm_callind)
+            unique_counter += 1  # Increment for next preserve-style fix
 
         elif suspect_type == 'variadic_anchor':
             # EBP-frame variadic call with ADD ESP - anchor ESP at ADD ESP instruction
@@ -367,6 +394,7 @@ def find_fixable_suspects(json_data, suspect_types=None, verbose=True):
             # Generate the fix - same as callind_anchor
             pcode = generate_esp_anchor_pcode(frame_offset)
             fixes.append((fix_address, [pcode], frame_offset, 'variadic_anchor'))
+            pending_fix_addrs.add(norm_addr)
 
         elif suspect_type == 'variadic_preserve_ebp':
             # EBP-frame variadic call without ADD ESP - preserve ESP across CALL
@@ -408,9 +436,11 @@ def find_fixable_suspects(json_data, suspect_types=None, verbose=True):
                 continue
 
             # Generate p-code override for the CALL
-            pcode_lines = generate_call_esp_preserve_pcode(target_addr_int, ret_addr_int, callind_index)
+            pcode_lines = generate_call_esp_preserve_pcode(target_addr_int, ret_addr_int, unique_counter)
             fixes.append((call_address, pcode_lines, target_function, 'variadic_preserve_ebp'))
-            callind_index += 1
+            norm_call = call_address.lower().replace('0x', '').lstrip('0') or '0'
+            pending_fix_addrs.add(norm_call)
+            unique_counter += 1
 
         elif suspect_type == 'variadic_preserve':
             # Non-EBP-frame variadic call - preserve ESP across the CALL
@@ -452,9 +482,94 @@ def find_fixable_suspects(json_data, suspect_types=None, verbose=True):
                 continue
 
             # Generate p-code override for the CALL
-            pcode_lines = generate_call_esp_preserve_pcode(target_addr_int, ret_addr_int, callind_index)
+            pcode_lines = generate_call_esp_preserve_pcode(target_addr_int, ret_addr_int, unique_counter)
             fixes.append((call_address, pcode_lines, target_function, 'variadic_preserve'))
-            callind_index += 1  # Use same counter for unique addresses
+            norm_call = call_address.lower().replace('0x', '').lstrip('0') or '0'
+            pending_fix_addrs.add(norm_call)
+            unique_counter += 1
+
+        elif suspect_type == 'stack_align_anchor':
+            # Stack alignment in EBP-frame function - anchor ESP after AND ESP
+            frame_offset = suspect.get('frame_offset')
+
+            if frame_offset is None:
+                skipped.append((fix_address, 'no frame_offset'))
+                continue
+
+            if frame_offset == 0:
+                skipped.append((fix_address, 'frame_offset=0 (detection may have failed)'))
+                continue
+
+            # Generate the fix
+            pcode = generate_esp_anchor_pcode(frame_offset)
+            fixes.append((fix_address, [pcode], frame_offset, 'stack_align_anchor'))
+            pending_fix_addrs.add(norm_addr)
+
+        elif suspect_type == 'call_esp_anchor':
+            # Direct CALL in EBP-frame function - anchor ESP at ADD ESP
+            frame_offset = suspect.get('frame_offset')
+
+            if frame_offset is None:
+                skipped.append((fix_address, 'no frame_offset'))
+                continue
+
+            if frame_offset == 0:
+                skipped.append((fix_address, 'frame_offset=0 (detection may have failed)'))
+                continue
+
+            # Generate the fix
+            pcode = generate_esp_anchor_pcode(frame_offset)
+            fixes.append((fix_address, [pcode], frame_offset, 'call_esp_anchor'))
+            pending_fix_addrs.add(norm_addr)
+
+        elif suspect_type == 'call_esp_preserve':
+            # Direct CALL in non-EBP-frame function - preserve ESP across CALL
+            call_address = suspect.get('call_address', '')
+            return_address = suspect.get('return_address', '')
+            target_address = suspect.get('target_address', '')
+
+            if not call_address:
+                skipped.append((call_address or 'unknown', 'no call_address'))
+                continue
+
+            if not return_address:
+                skipped.append((call_address, 'no return_address'))
+                continue
+
+            if not target_address:
+                skipped.append((call_address, 'no target_address'))
+                continue
+
+            # Parse addresses to int
+            try:
+                ret_addr_int = int(return_address, 16)
+                target_addr_int = int(target_address.replace('0x', ''), 16)
+            except (ValueError, TypeError):
+                skipped.append((call_address, 'invalid address format'))
+                continue
+
+            # Check if call_address already has an override
+            norm_call = call_address.lower().replace('0x', '').lstrip('0') or '0'
+            call_already_fixed = False
+            for existing_addr in existing_overrides.keys():
+                existing_norm = existing_addr.lower().replace('0x', '').lstrip('0') or '0'
+                if existing_norm == norm_call:
+                    call_already_fixed = True
+                    break
+
+            if call_already_fixed:
+                continue
+
+            # Check for conflict
+            if norm_call in pending_fix_addrs:
+                skipped.append((call_address, 'CONFLICT: another suspect already targets this address (call_esp_preserve)'))
+                continue
+
+            # Generate p-code override for the CALL
+            pcode_lines = generate_call_esp_preserve_pcode(target_addr_int, ret_addr_int, unique_counter)
+            fixes.append((call_address, pcode_lines, target_address, 'call_esp_preserve'))
+            pending_fix_addrs.add(norm_call)
+            unique_counter += 1
 
     return fixes, skipped
 
@@ -498,11 +613,11 @@ def process_json_file(json_path, suspect_types=None, apply=False, verbose=True):
         if fixes:
             print("  Fixes (%d):" % len(fixes))
             for addr, pcode_lines, offset_value, fix_type in fixes:
-                if fix_type in ('ebp_anchor', 'variadic_anchor'):
+                if fix_type in ('ebp_anchor', 'variadic_anchor', 'stack_align_anchor', 'call_esp_anchor'):
                     print("    %s (frame_offset=0x%x, type=%s):" % (addr, offset_value, fix_type))
                 elif fix_type == 'callind_preserve':
                     print("    %s (return_addr=0x%x, type=%s):" % (addr, offset_value, fix_type))
-                elif fix_type in ('variadic_preserve', 'variadic_preserve_ebp'):
+                elif fix_type in ('variadic_preserve', 'variadic_preserve_ebp', 'call_esp_preserve'):
                     print("    %s (target=%s, type=%s):" % (addr, offset_value, fix_type))
                 else:
                     print("    %s (value=%s, type=%s):" % (addr, offset_value, fix_type))
@@ -585,6 +700,13 @@ Suspect Types:
     variadic-preserve  - Variadic CALL in non-EBP-frame function (EXPERIMENTAL)
     variadic           - All variadic types
 
+    stack-align        - Stack alignment (AND ESP) with ESP anchor fix (STABLE)
+
+    call-anchor        - Direct CALL with ESP anchor at ADD ESP (STABLE)
+    call-preserve      - Direct CALL in non-EBP-frame with ESP preserve (EXPERIMENTAL)
+    direct-call        - Both direct CALL types
+
+    stable             - All stable types (recommended)
     all                - All types (includes experimental)
 
 Examples:
@@ -607,7 +729,8 @@ Examples:
     parser.add_argument('path', help='Directory to scan or specific JSON file')
     parser.add_argument('--type', choices=['callind-anchor', 'callind-preserve', 'callind',
                                            'variadic-anchor', 'variadic-ebp-preserve', 'variadic-preserve',
-                                           'variadic', 'all'],
+                                           'variadic', 'stack-align', 'call-anchor', 'call-preserve',
+                                           'direct-call', 'stable', 'all'],
                         default='callind-anchor', help='Suspect type to process (default: callind-anchor)')
     parser.add_argument('--apply', action='store_true',
                         help='Apply fixes to JSON files (default: dry run)')
@@ -638,16 +761,32 @@ Examples:
     elif args.type == 'variadic':
         suspect_types = {'variadic_anchor', 'variadic_preserve_ebp', 'variadic_preserve'}
         type_desc = 'all variadic types'
+    elif args.type == 'stack-align':
+        suspect_types = {'stack_align_anchor'}
+        type_desc = 'stack alignment anchor (stable)'
+    elif args.type == 'call-anchor':
+        suspect_types = {'call_esp_anchor'}
+        type_desc = 'direct CALL anchor (stable)'
+    elif args.type == 'call-preserve':
+        suspect_types = {'call_esp_preserve'}
+        type_desc = 'direct CALL preserve (EXPERIMENTAL)'
+    elif args.type == 'direct-call':
+        suspect_types = {'call_esp_anchor', 'call_esp_preserve'}
+        type_desc = 'all direct CALL types'
+    elif args.type == 'stable':
+        suspect_types = {'callind_anchor', 'variadic_anchor', 'stack_align_anchor', 'call_esp_anchor'}
+        type_desc = 'all stable types (recommended)'
     else:  # all
         suspect_types = {'callind_anchor', 'callind_preserve',
-                         'variadic_anchor', 'variadic_preserve_ebp', 'variadic_preserve'}
+                         'variadic_anchor', 'variadic_preserve_ebp', 'variadic_preserve',
+                         'stack_align_anchor', 'call_esp_anchor', 'call_esp_preserve'}
         type_desc = 'all types (includes EXPERIMENTAL)'
 
     path = Path(args.path)
     verbose = not args.quiet
 
     # Warn about experimental types
-    experimental_types = suspect_types & {'callind_preserve', 'variadic_preserve_ebp', 'variadic_preserve'}
+    experimental_types = suspect_types & {'callind_preserve', 'variadic_preserve_ebp', 'variadic_preserve', 'call_esp_preserve'}
     if experimental_types:
         print("WARNING: Processing EXPERIMENTAL suspect types: %s" % ', '.join(sorted(experimental_types)))
         print("         These overrides may affect decompilation!")
