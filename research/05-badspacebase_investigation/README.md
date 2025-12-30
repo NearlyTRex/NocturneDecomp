@@ -37,6 +37,11 @@ The binary is believed to be compiled with **Watcom C/C++ 11** (released ~1996-1
 | [07_REMAINING_OPTIONS.md](07_REMAINING_OPTIONS.md) | What options remain for fixing this |
 | [08_RUNTIME_PATCHING_APPROACHES.md](08_RUNTIME_PATCHING_APPROACHES.md) | Byte patching, P-code injection, and transformation approaches |
 | [09_MINIMAL_PCODE_PATCHING.md](09_MINIMAL_PCODE_PATCHING.md) | **IMPLEMENTED** - P-code patching via file injection |
+| [10_PCODE_OVERRIDE_PROGRESS.md](10_PCODE_OVERRIDE_PROGRESS.md) | P-code override testing progress and findings |
+| [11_SUSPECT_TYPES_TAXONOMY.md](11_SUSPECT_TYPES_TAXONOMY.md) | Taxonomy of decompilation suspect patterns |
+| [12_PCODE_OVERRIDE_AUTOMATION.md](12_PCODE_OVERRIDE_AUTOMATION.md) | Automation approaches for p-code overrides |
+| [13_ESP_TRACKING_INVESTIGATION.md](13_ESP_TRACKING_INVESTIGATION.md) | ESP tracking and cfg_resolved analysis |
+| [14_GHIDRA_SPACEBASE_ARCHITECTURE_ANALYSIS.md](14_GHIDRA_SPACEBASE_ARCHITECTURE_ANALYSIS.md) | **KEY FINDING** - Why p-code overrides can't fix spacebase resolution |
 | [pcode_patching/](pcode_patching/) | Implementation files: patch, modified Java source, examples |
 
 ## Quick Reference
@@ -80,6 +85,7 @@ Since we use Ghidra 12.1 built from source, any SLEIGH or decompiler changes req
 
 ## Changelog
 
+- 2025-12-29: **KEY FINDING** - Documented architectural incompatibility between Watcom's EBP-frame convention and Ghidra's ESP-based spacebase resolution. P-code overrides cannot fix this.
 - 2025-12-18: **IMPLEMENTED** P-code patching via DecompileCallback.java modification
 - 2025-12-18: Added implementation files to pcode_patching/ directory
 - 2025-12-18: Added minimal P-code patching implementation plan (GhidraCraft-like without UI)
