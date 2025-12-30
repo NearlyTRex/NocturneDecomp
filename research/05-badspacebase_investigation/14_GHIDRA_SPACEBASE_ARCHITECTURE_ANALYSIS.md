@@ -133,6 +133,26 @@ The flow breaks down:
 | ESP at call sites | Deterministic from input | Varies by control flow |
 | Registered spacebase | ESP | ESP (but uses EBP) |
 
+### Frame Type Distribution in nocedit.exe
+
+| Category | Count | Percentage |
+|----------|-------|------------|
+| Total functions | 7,154 | 100% |
+| EBP-frame functions | 926 | 12.9% |
+| ESP-frame functions | 6,228 | 87.1% |
+
+Only 12.9% of functions use the traditional `MOV EBP, ESP` frame pointer setup. The vast majority (87.1%) use ESP-frame convention where EBP is just another general-purpose register.
+
+### badspacebase Distribution by Frame Type
+
+| Category | Count | Percentage |
+|----------|-------|------------|
+| Total badspacebase functions | 1,629 | 100% |
+| EBP-frame (has stable anchor) | 520 | 31.9% |
+| ESP-frame (no stable anchor) | 1,109 | 68.1% |
+
+EBP-frame functions are over-represented in badspacebase issues (32% vs 13% of codebase), likely because these functions tend to be more complex with deeper call stacks.
+
 ### The Fundamental Mismatch
 
 **Ghidra's model**: The stack pointer (ESP) is the authoritative reference for all stack access. It must be traceable back to a function **input** varnode at every instruction.

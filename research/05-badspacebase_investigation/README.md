@@ -42,6 +42,7 @@ The binary is believed to be compiled with **Watcom C/C++ 11** (released ~1996-1
 | [12_PCODE_OVERRIDE_AUTOMATION.md](12_PCODE_OVERRIDE_AUTOMATION.md) | Automation approaches for p-code overrides |
 | [13_ESP_TRACKING_INVESTIGATION.md](13_ESP_TRACKING_INVESTIGATION.md) | ESP tracking and cfg_resolved analysis |
 | [14_GHIDRA_SPACEBASE_ARCHITECTURE_ANALYSIS.md](14_GHIDRA_SPACEBASE_ARCHITECTURE_ANALYSIS.md) | **KEY FINDING** - Why p-code overrides can't fix spacebase resolution |
+| [15_PROPOSED_GHIDRA_PATCH.md](15_PROPOSED_GHIDRA_PATCH.md) | Proposed Ghidra source patch for EBP-frame recognition |
 | [pcode_patching/](pcode_patching/) | Implementation files: patch, modified Java source, examples |
 
 ## Quick Reference
@@ -85,6 +86,8 @@ Since we use Ghidra 12.1 built from source, any SLEIGH or decompiler changes req
 
 ## Changelog
 
+- 2025-12-29: Added proposed Ghidra source patch for EBP-frame recognition (fixes 32% of badspacebase)
+- 2025-12-29: Discovered two distinct Watcom prologue patterns: EBP-frame (520 functions) and ESP-frame (1,109 functions)
 - 2025-12-29: **KEY FINDING** - Documented architectural incompatibility between Watcom's EBP-frame convention and Ghidra's ESP-based spacebase resolution. P-code overrides cannot fix this.
 - 2025-12-18: **IMPLEMENTED** P-code patching via DecompileCallback.java modification
 - 2025-12-18: Added implementation files to pcode_patching/ directory
