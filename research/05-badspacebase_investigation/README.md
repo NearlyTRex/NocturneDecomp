@@ -45,6 +45,7 @@ The binary is believed to be compiled with **Watcom C/C++ 11** (released ~1996-1
 | [15_PROPOSED_GHIDRA_PATCH.md](15_PROPOSED_GHIDRA_PATCH.md) | Proposed Ghidra source patch for EBP-frame recognition |
 | [16_EBP_PATCH_IMPLEMENTATION_FINDINGS.md](16_EBP_PATCH_IMPLEMENTATION_FINDINGS.md) | RuleLoadVarnode patch attempt - **FAILED** (runs too late in pipeline) |
 | [17_GHIDRA_STACK_ANALYSIS_DEEP_DIVE.md](17_GHIDRA_STACK_ANALYSIS_DEEP_DIVE.md) | **KEY** - Complete pipeline analysis, identifies correct fix location |
+| [18_RESOLVESPACEBASERELATIVE_PATCH.md](18_RESOLVESPACEBASERELATIVE_PATCH.md) | **IMPLEMENTED** - EBP-frame tracing in resolveSpacebaseRelative() |
 | [pcode_patching/](pcode_patching/) | Implementation files: patch, modified Java source, examples |
 
 ## Quick Reference
@@ -80,7 +81,7 @@ Since we use Ghidra 12.1 built from source, any SLEIGH or decompiler changes req
 | JSON replacements | Partial | Cosmetic only |
 | Callfixup | Not viable | Wrong part of problem |
 | Decompiler C++ (RuleLoadVarnode) | **FAILED** | Runs too late - heritage analysis already done |
-| Decompiler C++ (resolveSpacebaseRelative) | **NEXT TARGET** | Correct location - runs before heritage analysis |
+| Decompiler C++ (resolveSpacebaseRelative) | **IMPLEMENTED** | Correct location - adds EBP-frame tracing |
 | Binary patching | Not attempted | Can't change instruction sizes |
 | Byte patching in Ghidra | Not attempted | Limited by instruction size constraints |
 | GhidraCraft P-code | Not attempted | Powerful but fork is outdated (Ghidra 9.x) |
@@ -89,6 +90,7 @@ Since we use Ghidra 12.1 built from source, any SLEIGH or decompiler changes req
 
 ## Changelog
 
+- 2025-12-30: **IMPLEMENTED** - EBP-frame tracing in `resolveSpacebaseRelative()` (document 18); cleaned up old RuleLoadVarnode patch
 - 2025-12-30: **BREAKTHROUGH** - Complete pipeline analysis in document 17 identifies `resolveSpacebaseRelative()` as the correct fix location
 - 2025-12-30: Document 16 records why RuleLoadVarnode patch failed (runs after heritage analysis transforms references)
 - 2025-12-30: Deep dive into Ghidra source: heritage.cc, fspec.cc, coreaction.cc - traced complete failure chain
