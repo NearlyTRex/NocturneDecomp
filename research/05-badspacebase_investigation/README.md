@@ -43,6 +43,8 @@ The binary is believed to be compiled with **Watcom C/C++ 11** (released ~1996-1
 | [13_ESP_TRACKING_INVESTIGATION.md](13_ESP_TRACKING_INVESTIGATION.md) | ESP tracking and cfg_resolved analysis |
 | [14_GHIDRA_SPACEBASE_ARCHITECTURE_ANALYSIS.md](14_GHIDRA_SPACEBASE_ARCHITECTURE_ANALYSIS.md) | **KEY FINDING** - Why p-code overrides can't fix spacebase resolution |
 | [15_PROPOSED_GHIDRA_PATCH.md](15_PROPOSED_GHIDRA_PATCH.md) | Proposed Ghidra source patch for EBP-frame recognition |
+| [16_EBP_PATCH_IMPLEMENTATION_FINDINGS.md](16_EBP_PATCH_IMPLEMENTATION_FINDINGS.md) | RuleLoadVarnode patch attempt - **FAILED** (runs too late in pipeline) |
+| [17_GHIDRA_STACK_ANALYSIS_DEEP_DIVE.md](17_GHIDRA_STACK_ANALYSIS_DEEP_DIVE.md) | **KEY** - Complete pipeline analysis, identifies correct fix location |
 | [pcode_patching/](pcode_patching/) | Implementation files: patch, modified Java source, examples |
 
 ## Quick Reference
@@ -77,7 +79,8 @@ Since we use Ghidra 12.1 built from source, any SLEIGH or decompiler changes req
 | SLEIGH patch | Implemented | Minimal impact on BADSPACEBASE |
 | JSON replacements | Partial | Cosmetic only |
 | Callfixup | Not viable | Wrong part of problem |
-| Decompiler C++ | Not attempted | Complex, requires understanding decompiler internals |
+| Decompiler C++ (RuleLoadVarnode) | **FAILED** | Runs too late - heritage analysis already done |
+| Decompiler C++ (resolveSpacebaseRelative) | **NEXT TARGET** | Correct location - runs before heritage analysis |
 | Binary patching | Not attempted | Can't change instruction sizes |
 | Byte patching in Ghidra | Not attempted | Limited by instruction size constraints |
 | GhidraCraft P-code | Not attempted | Powerful but fork is outdated (Ghidra 9.x) |
@@ -86,6 +89,9 @@ Since we use Ghidra 12.1 built from source, any SLEIGH or decompiler changes req
 
 ## Changelog
 
+- 2025-12-30: **BREAKTHROUGH** - Complete pipeline analysis in document 17 identifies `resolveSpacebaseRelative()` as the correct fix location
+- 2025-12-30: Document 16 records why RuleLoadVarnode patch failed (runs after heritage analysis transforms references)
+- 2025-12-30: Deep dive into Ghidra source: heritage.cc, fspec.cc, coreaction.cc - traced complete failure chain
 - 2025-12-29: Added proposed Ghidra source patch for EBP-frame recognition (fixes 32% of badspacebase)
 - 2025-12-29: Discovered two distinct Watcom prologue patterns: EBP-frame (520 functions) and ESP-frame (1,109 functions)
 - 2025-12-29: **KEY FINDING** - Documented architectural incompatibility between Watcom's EBP-frame convention and Ghidra's ESP-based spacebase resolution. P-code overrides cannot fix this.
