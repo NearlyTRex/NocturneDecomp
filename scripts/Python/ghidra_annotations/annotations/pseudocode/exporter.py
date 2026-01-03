@@ -59,6 +59,11 @@ from ghidra_annotations.annotations.pseudocode.vtable_calls import (
 from ghidra_annotations.annotations.pseudocode.pcode import (
     load_switch_table_data, load_noreturn_functions
 )
+from ghidra_annotations.annotations.pseudocode.callfixups import (
+    register_callfixups, clear_callfixups, register_callfixups_from_directory,
+    preload_callfixups, load_callfixups_for_function, generate_callfixups_file,
+    preload_global_callfixups
+)
 
 
 class PhaseTimer:
@@ -240,6 +245,9 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map):
 
     # Load pcode overrides to preserve them in output
     pcode_overrides = load_pcode_overrides(existing_json_path)
+
+    # Load callfixups to preserve them in output
+    callfixups = load_callfixups_for_function(existing_json_path)
     transform_time = time.time() - transform_start
 
     # === PYTHON-ONLY: Analysis using pre-computed data from worker ===
@@ -328,7 +336,7 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map):
         decompiled_code, result.assembly_code, result.func_xrefs, result.func_globals,
         result.func_calls, result.stack_frame, suspects, complexity, custom_replacements,
         stack_patterns, result.param_estimates, result.vtable_info, result.pcode_data,
-        pcode_overrides, resolved_suspects, result.is_ebp_frame)
+        pcode_overrides, resolved_suspects, result.is_ebp_frame, callfixups)
     output_time = time.time() - output_start
 
     total_process_time = time.time() - process_start
@@ -377,6 +385,14 @@ def export_pseudocode(currentProgram, path):
     pseudocode_include_dir = os.path.join(pseudocode_dir, "include")
     pseudocode_src_dir = os.path.join(pseudocode_dir, "src")
 
+    # Pre-load global callfixups.json BEFORE cleanup to preserve user modifications
+    timer.start_phase("Preload callfixups")
+    log_info("Pre-loading global callfixups.json...")
+    preload_global_callfixups(pseudocode_dir)
+    log_info("Pre-loading per-function callfixups from existing JSON files...")
+    preload_callfixups(pseudocode_src_dir)
+    timer.end_phase()
+
     # Pre-load custom replacements BEFORE cleanup to preserve user modifications
     # (pcode overrides are already cached by register_pcode_overrides above)
     timer.start_phase("Preload custom replacements")
@@ -384,7 +400,7 @@ def export_pseudocode(currentProgram, path):
     preload_custom_replacements(pseudocode_src_dir)
     timer.end_phase()
 
-    # Clean up existing pseudocode files (now safe - replacements are cached)
+    # Clean up existing pseudocode files (now safe - all user data is cached)
     timer.start_phase("Cleanup existing files")
     log_info("Cleaning up existing pseudocode files before export")
     delete_pseudocode(currentProgram, path)
@@ -392,6 +408,18 @@ def export_pseudocode(currentProgram, path):
     # Create output directory
     make_dirs(pseudocode_dir)
     timer.end_phase()
+
+    # Generate the global callfixups.json file AFTER cleanup (using cached data)
+    callfixups_json_path = generate_callfixups_file(pseudocode_dir)
+
+    # Register callfixups for CRT functions (e.g., stack_probe)
+    # First register from the global callfixups.json, then any per-function ones
+    callfixup_count = register_callfixups(callfixups_json_path)
+    json_callfixup_count = register_callfixups_from_directory(pseudocode_src_dir)
+    total_callfixups = callfixup_count + json_callfixup_count
+    if total_callfixups > 0:
+        has_callfixups = DecompileCallback.hasCallFixups()
+        log_info("Java hasCallFixups() returns: %s" % has_callfixups)
 
     # Export header files first
     timer.start_phase("Export header files")
@@ -789,7 +817,8 @@ def export_pseudocode(currentProgram, path):
         log_info("  Thread count:             %d" % num_threads)
         log_info("=" * 60)
 
-    # Clear pcode overrides to free memory
+    # Clear pcode overrides and callfixups to free memory
     DecompileCallback.clearPcodeOverrides()
+    DecompileCallback.clearCallFixups()
 
     log_info("Export complete - created %d pseudocode files" % files_created)
