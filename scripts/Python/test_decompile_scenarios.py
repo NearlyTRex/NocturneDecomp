@@ -557,6 +557,18 @@ def main():
     print("Starting PyGhidra...")
     pyghidra.start()
 
+    # Setup logging for ghidra_annotations modules
+    from ghidra_annotations.util.log import setup_logging
+    setup_logging("test_decompile")
+
+    # Register callfixups for decompilation
+    print("Registering callfixups...")
+    try:
+        from ghidra_annotations.annotations.pseudocode.callfixups import register_callfixups
+        register_callfixups()
+    except Exception as e:
+        print(f"Warning: Failed to register callfixups: {e}")
+
     # Open project
     print(f"Opening project: {args.project_path}/{args.project_name}")
     print(f"Opening program: {args.program_name}")
