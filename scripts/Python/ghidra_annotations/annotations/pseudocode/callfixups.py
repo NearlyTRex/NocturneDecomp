@@ -47,15 +47,14 @@ from ghidra_annotations.util.log import log_info
 #   - const: (const, 0x4, 4) for constant 4
 
 DEFAULT_CALLFIXUPS = {
-    # Stack probe functions - these use RET 4 to pop their argument
-    # The net effect is ESP += 4 (cancels the PUSH before the call)
-    # This fixes BADSPACEBASE in functions that call stack_probe before frame setup
+    # Callfixup now INJECTS pcode after the original CALL (like cspec)
+    # Just specify the adjustment - original call pcode is preserved
     "stack_probe": {
-        "type": "pattern",  # Match function names containing this pattern
+        "type": "pattern",
         "pcode": [
-            "INT_ADD (register,0x10,4) = (register,0x10,4), (const,0x4,4)"  # ESP = ESP + 4
+            "INT_ADD (register,0x10,4) = (register,0x10,4), (const,0x4,4)"  # ESP += 4 for RET 4
         ],
-        "description": "Watcom stack probe - pops 4-byte argument via RET 4"
+        "description": "Watcom stack probe - RET 4 pops extra 4 bytes"
     },
     "_STK": {
         "type": "pattern",
