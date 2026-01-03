@@ -39,18 +39,23 @@ TEST_SCENARIOS = [
     ]),
     ("scenario2_ebp_call_anchor", "EBP FRAME + CALL ESP ANCHOR", [
         # EBP frames where ESP becomes uncertain after calls
-        # Should trace EBP back to ESP through prologue
+        # Heritage MULTIEQUAL fix resolves these by tracking ESP through phi nodes
         (0x005c8b50, "superopt_unnamed_1"),
         (0x005c84c0, "EdgeListCheckPlusFreesLarge"),
         (0x005c9500, "superopt_unnamed_2"),
         (0x005c8e70, "superopt_unnamed_3"),
+    ]),
+    ("scenario3_stack_probe_before_frame", "STACK PROBE BEFORE FRAME SETUP", [
+        # Functions that call crt_stack.c_stack_probe BEFORE establishing EBP frame
+        # ESP is already unknown when MOV EBP,ESP executes
+        # Different from scenario2 - heritage MULTIEQUAL fix cannot help
         (0x00447f20, "visualizeTextureAtlas"),
     ]),
-    ("scenario3_ebp_variadic", "EBP FRAME + VARIADIC CALLS", [
+    ("scenario4_ebp_variadic", "EBP FRAME + VARIADIC CALLS", [
         # EBP frame with variadic function calls (printf, sprintf, etc.)
         (0x0046e090, "fixupCramUV"),
     ]),
-    ("scenario4_non_ebp_badspacebase", "NON-EBP FRAME + BADSPACEBASE", [
+    ("scenario5_non_ebp_badspacebase", "NON-EBP FRAME + BADSPACEBASE", [
         # Pure ESP-relative functions without EBP frame
         # Harder to fix - no stable base register
         (0x0060239a, "entry"),
@@ -63,7 +68,7 @@ TEST_SCENARIOS = [
     # ============================================================================
     # PARTIALLY BROKEN - EBP frame, no BADSPACEBASE, but has other issues
     # ============================================================================
-    ("scenario5_ebp_variadic_errors", "EBP FRAME + VARIADIC ERRORS (no BADSPACEBASE)", [
+    ("scenario6_ebp_variadic_errors", "EBP FRAME + VARIADIC ERRORS (no BADSPACEBASE)", [
         # EBP frame, no BADSPACEBASE suspect, but has variadic function issues
         # Output is broken due to variadic call mishandling, not spacebase
         (0x0040ac80, "CDemonActor_doCheckForInvalidPointers"),
@@ -99,17 +104,56 @@ DEFAULT_PROGRAM_NAME = "nocedit.exe"
 DEFAULT_PSEUDOCODE_DIR = Path(__file__).parent.parent.parent / "annotations/nocedit.exe/pseudocode"
 
 
-def find_baseline_file(address_str):
-    """Find existing baseline .cpp or .c file for a function address."""
+def find_baseline_file(address_str, func_name=None):
+    """Find existing baseline .cpp or .c file for a function address.
+
+    Args:
+        address_str: Function address (e.g., "0x004319b0")
+        func_name: Optional function name to verify match
+
+    Returns:
+        Path to baseline file, or None if not found
+    """
     # Normalize address
     addr = address_str.lower().replace('0x', '')
 
     # Search for matching file (.cpp first, then .c)
+    candidates = []
     for cpp_file in DEFAULT_PSEUDOCODE_DIR.rglob(f"*{addr}.cpp"):
-        return cpp_file
+        candidates.append(cpp_file)
     for c_file in DEFAULT_PSEUDOCODE_DIR.rglob(f"*{addr}.c"):
-        return c_file
-    return None
+        candidates.append(c_file)
+
+    if not candidates:
+        return None
+
+    # If function name provided, verify it appears in the filename
+    if func_name:
+        for candidate in candidates:
+            # Check if function name (or a reasonable prefix) appears in filename
+            # Handle cases like "CLodMesh_findClosestPointOnMesh" matching filename
+            filename = candidate.name.lower()
+            func_lower = func_name.lower()
+
+            # Try exact match first
+            if func_lower in filename:
+                return candidate
+
+            # Try matching the main part of the function name (after class prefix)
+            # e.g., "doCheckForInvalidPointers" from "CDemonActor_doCheckForInvalidPointers"
+            parts = func_name.split('_')
+            if len(parts) > 1:
+                # Try the last significant part
+                for part in parts[1:]:
+                    if len(part) > 4 and part.lower() in filename:
+                        return candidate
+
+        # No match with function name - this might be a renamed function
+        # Return None to avoid false matches like applyActPalette -> applyColorPalette
+        return None
+
+    # No function name provided, return first candidate
+    return candidates[0] if candidates else None
 
 
 def analyze_decompilation(code):
@@ -343,7 +387,7 @@ def run_scenarios(currentProgram, output_dir=None, scenarios=None):
                     heritage_multiequal = log_content.count("checkMultiequalStackOffsets")
 
             # Compare with baseline if available
-            baseline_path = find_baseline_file(f"0x{addr:08x}")
+            baseline_path = find_baseline_file(f"0x{addr:08x}", func_name)
             baseline_comparison = None
             if baseline_path and baseline_path.exists():
                 with open(baseline_path, 'r') as f:
@@ -551,7 +595,8 @@ def main():
                 # Find baseline - use provided or auto-detect
                 baseline_path = args.baseline
                 if not baseline_path:
-                    baseline_path = find_baseline_file(args.address)
+                    func_name = func.getName() if func else None
+                    baseline_path = find_baseline_file(args.address, func_name)
                     if baseline_path:
                         print(f"\nAuto-detected baseline: {baseline_path}")
 
