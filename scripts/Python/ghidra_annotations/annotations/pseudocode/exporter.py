@@ -10,6 +10,7 @@ import time
 from java.util import ArrayList
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from ghidra.app.decompiler import DecompileCallback
+from ghidra.program.model.pcode import HighFunction
 from ghidra_annotations.util import make_dirs
 from ghidra_annotations.util.log import log_info
 from ghidra_annotations.annotations import is_function_external
@@ -63,6 +64,11 @@ from ghidra_annotations.annotations.pseudocode.callfixups import (
     register_callfixups, clear_callfixups, register_callfixups_from_directory,
     preload_callfixups, load_callfixups_for_function, generate_callfixups_file,
     preload_global_callfixups
+)
+from ghidra_annotations.annotations.pseudocode.proto import (
+    register_proto_overrides_for_program, register_proto_overrides_from_directory,
+    preload_proto_overrides, load_proto_overrides_for_function,
+    generate_proto_overrides_file, preload_global_proto_overrides
 )
 
 
@@ -248,6 +254,9 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map):
 
     # Load callfixups to preserve them in output
     callfixups = load_callfixups_for_function(existing_json_path)
+
+    # Load proto overrides to preserve them in output
+    proto_overrides = load_proto_overrides_for_function(existing_json_path)
     transform_time = time.time() - transform_start
 
     # === PYTHON-ONLY: Analysis using pre-computed data from worker ===
@@ -336,7 +345,7 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map):
         decompiled_code, result.assembly_code, result.func_xrefs, result.func_globals,
         result.func_calls, result.stack_frame, suspects, complexity, custom_replacements,
         stack_patterns, result.param_estimates, result.vtable_info, result.pcode_data,
-        pcode_overrides, resolved_suspects, result.is_ebp_frame, callfixups)
+        pcode_overrides, resolved_suspects, result.is_ebp_frame, callfixups, proto_overrides)
     output_time = time.time() - output_start
 
     total_process_time = time.time() - process_start
@@ -393,6 +402,14 @@ def export_pseudocode(currentProgram, path):
     preload_callfixups(pseudocode_src_dir)
     timer.end_phase()
 
+    # Pre-load global proto_overrides.json BEFORE cleanup to preserve user modifications
+    timer.start_phase("Preload proto_overrides")
+    log_info("Pre-loading global proto_overrides.json...")
+    preload_global_proto_overrides(pseudocode_dir)
+    log_info("Pre-loading per-function proto_overrides from existing JSON files...")
+    preload_proto_overrides(pseudocode_src_dir)
+    timer.end_phase()
+
     # Pre-load custom replacements BEFORE cleanup to preserve user modifications
     # (pcode overrides are already cached by register_pcode_overrides above)
     timer.start_phase("Preload custom replacements")
@@ -420,6 +437,19 @@ def export_pseudocode(currentProgram, path):
     if total_callfixups > 0:
         has_callfixups = DecompileCallback.hasCallFixups()
         log_info("Java hasCallFixups() returns: %s" % has_callfixups)
+
+    # Generate the global proto_overrides.json file AFTER cleanup (using cached data)
+    proto_overrides_json_path = generate_proto_overrides_file(pseudocode_dir)
+
+    # Register proto overrides for variadic/ambiguous calls
+    # First register from the global proto_overrides.json, then any per-function ones
+    proto_override_count = register_proto_overrides_for_program(currentProgram, proto_overrides_json_path)
+    json_proto_override_count = register_proto_overrides_from_directory(currentProgram, pseudocode_src_dir)
+    total_proto_overrides = proto_override_count + json_proto_override_count
+    if total_proto_overrides > 0:
+        from ghidra.program.model.pcode import HighFunction
+        has_proto_overrides = HighFunction.hasRegisteredProtoOverrides()
+        log_info("Java hasRegisteredProtoOverrides() returns: %s" % has_proto_overrides)
 
     # Export header files first
     timer.start_phase("Export header files")
@@ -817,8 +847,9 @@ def export_pseudocode(currentProgram, path):
         log_info("  Thread count:             %d" % num_threads)
         log_info("=" * 60)
 
-    # Clear pcode overrides and callfixups to free memory
+    # Clear pcode overrides, callfixups, and proto_overrides to free memory
     DecompileCallback.clearPcodeOverrides()
     DecompileCallback.clearCallFixups()
+    HighFunction.clearProtoOverrides()
 
     log_info("Export complete - created %d pseudocode files" % files_created)

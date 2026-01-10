@@ -46,23 +46,8 @@ from ghidra_annotations.util.log import log_info
 #   - register: (register, 0x10, 4) for ESP (x86)
 #   - const: (const, 0x4, 4) for constant 4
 
+# Default callfixups - define in annotations/<program>/pseudocode/callfixups.json
 DEFAULT_CALLFIXUPS = {
-    # Callfixup now INJECTS pcode after the original CALL (like cspec)
-    # Just specify the adjustment - original call pcode is preserved
-    "stack_probe": {
-        "type": "pattern",
-        "pcode": [
-            "INT_ADD (register,0x10,4) = (register,0x10,4), (const,0x4,4)"  # ESP += 4 for RET 4
-        ],
-        "description": "Watcom stack probe - RET 4 pops extra 4 bytes"
-    },
-    "_STK": {
-        "type": "pattern",
-        "pcode": [
-            "INT_ADD (register,0x10,4) = (register,0x10,4), (const,0x4,4)"
-        ],
-        "description": "Watcom _STK stack probe variant"
-    },
 }
 
 # Filename for the callfixups JSON file
@@ -148,11 +133,8 @@ def generate_callfixups_file(pseudocode_dir):
 
     # Write the merged callfixups
     output_data = {
-        "_comment": "Callfixups replace calls to specific functions with custom pcode at decompile time",
-        "_format": "type: 'pattern' matches function names containing the key, 'exact' requires exact match",
         "callfixups": merged_callfixups
     }
-
     try:
         with open(callfixups_path, 'w') as f:
             json.dump(output_data, f, indent=2, sort_keys=True)

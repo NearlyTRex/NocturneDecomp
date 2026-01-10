@@ -303,7 +303,7 @@ def create_function_json(func_name, func_addr, func_addr_range, func_convention,
                          func_xrefs, func_globals, func_calls, stack_frame, suspects, complexity,
                          existing_replacements=None, stack_patterns=None, param_estimates=None,
                          vtable_info=None, existing_pcode_overrides=None, resolved_suspects=None,
-                         is_ebp_frame=False, existing_callfixups=None):
+                         is_ebp_frame=False, existing_callfixups=None, existing_proto_overrides=None):
     """Create function metadata JSON.
 
     Args:
@@ -328,6 +328,7 @@ def create_function_json(func_name, func_addr, func_addr_range, func_convention,
         resolved_suspects: Optional list of suspects fixed by pcode overrides
         is_ebp_frame: Whether function uses standard EBP frame prologue
         existing_callfixups: Optional dict of callfixups to preserve
+        existing_proto_overrides: Optional list of proto overrides to preserve
 
     Returns:
         Dictionary for JSON serialization
@@ -366,6 +367,9 @@ def create_function_json(func_name, func_addr, func_addr_range, func_convention,
     # Preserve callfixups if they exist
     if existing_callfixups:
         function_json["callfixups"] = existing_callfixups
+    # Preserve proto_overrides if they exist
+    if existing_proto_overrides:
+        function_json["proto_overrides"] = existing_proto_overrides
     # Preserve custom replacements if they exist
     if existing_replacements:
         function_json["replacements"] = existing_replacements
@@ -391,7 +395,8 @@ def generate_function_file_contents(output_base_path, source_filename, func_name
                                      existing_replacements=None, stack_patterns=None,
                                      param_estimates=None, vtable_info=None, pcode_data=None,
                                      existing_pcode_overrides=None, resolved_suspects=None,
-                                     is_ebp_frame=False, existing_callfixups=None):
+                                     is_ebp_frame=False, existing_callfixups=None,
+                                     existing_proto_overrides=None):
     """Generate file contents for a function without writing to disk.
 
     Args:
@@ -419,6 +424,7 @@ def generate_function_file_contents(output_base_path, source_filename, func_name
         resolved_suspects: Optional list of suspects that were fixed by pcode overrides
         is_ebp_frame: Whether function uses standard EBP frame prologue
         existing_callfixups: Optional dict of callfixups to preserve in JSON
+        existing_proto_overrides: Optional list of proto overrides to preserve in JSON
 
     Returns:
         Dictionary with paths and contents: {cpp_path, cpp_content, asm_path, asm_content,
@@ -474,7 +480,8 @@ def generate_function_file_contents(output_base_path, source_filename, func_name
             func_signature, decompiled_code, assembly_code,
             func_xrefs, func_globals, func_calls, stack_frame, suspects, complexity,
             existing_replacements, stack_patterns, param_estimates, vtable_info,
-            existing_pcode_overrides, resolved_suspects, is_ebp_frame, existing_callfixups)
+            existing_pcode_overrides, resolved_suspects, is_ebp_frame, existing_callfixups,
+            existing_proto_overrides)
         # Add P-code summary to JSON if available
         if pcode_data:
             function_json['pcode_summary'] = create_pcode_summary(pcode_data)
