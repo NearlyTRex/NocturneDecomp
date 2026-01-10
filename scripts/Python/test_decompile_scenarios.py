@@ -352,10 +352,10 @@ def run_scenarios(currentProgram, output_dir=None, scenarios=None):
             print(f"\n  [{func_name}] @ 0x{addr:08x}")
 
             # Set environment variable for this function
-            os.environ['SPACEBASE_TARGET_FUNC'] = f"0x{addr:x}"
+            os.environ['DECOMP_TARGET_FUNC'] = f"0x{addr:x}"
 
             # Clear debug log
-            debug_log = Path("/tmp/spacebase_debug.log")
+            debug_log = Path("/tmp/decomp_debug.log")
             if debug_log.exists():
                 debug_log.unlink()
 
@@ -540,7 +540,7 @@ def main():
         parser.error("Either provide an address or use --scenarios")
 
     # Clear debug log if requested
-    debug_log = Path("/tmp/spacebase_debug.log")
+    debug_log = Path("/tmp/decomp_debug.log")
     if args.clear_log and debug_log.exists():
         debug_log.unlink()
         print("Cleared debug log")
@@ -648,7 +648,7 @@ def main():
                     print(code)
 
                 # Check for debug log
-                debug_log = Path("/tmp/spacebase_debug.log")
+                debug_log = Path("/tmp/decomp_debug.log")
                 if debug_log.exists():
                     print("\n" + "=" * 60)
                     print("DEBUG LOG (last 50 lines):")
