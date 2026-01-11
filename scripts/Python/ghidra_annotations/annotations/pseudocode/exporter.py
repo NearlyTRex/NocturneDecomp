@@ -70,6 +70,10 @@ from ghidra_annotations.annotations.pseudocode.proto import (
     preload_proto_overrides, load_proto_overrides_for_function,
     generate_proto_overrides_file, preload_global_proto_overrides
 )
+from ghidra_annotations.annotations.pseudocode.decompiler_fixes import (
+    preload_decompiler_fixes, generate_decompiler_fixes_file,
+    register_decompiler_fixes, clear_decompiler_fixes
+)
 
 
 class PhaseTimer:
@@ -410,6 +414,12 @@ def export_pseudocode(currentProgram, path):
     preload_proto_overrides(pseudocode_src_dir)
     timer.end_phase()
 
+    # Pre-load decompiler fixes configuration BEFORE cleanup to preserve user modifications
+    timer.start_phase("Preload decompiler_fixes")
+    log_info("Pre-loading decompiler_fixes.json...")
+    preload_decompiler_fixes(pseudocode_dir)
+    timer.end_phase()
+
     # Pre-load custom replacements BEFORE cleanup to preserve user modifications
     # (pcode overrides are already cached by register_pcode_overrides above)
     timer.start_phase("Preload custom replacements")
@@ -444,6 +454,9 @@ def export_pseudocode(currentProgram, path):
     if proto_override_count > 0:
         has_proto_overrides = HighFunction.hasRegisteredProtoOverrides()
         log_info("Java hasRegisteredProtoOverrides() returns: %s" % has_proto_overrides)
+
+    # Generate the decompiler_fixes.json file AFTER cleanup (using cached data)
+    decompiler_fixes_json_path = generate_decompiler_fixes_file(pseudocode_dir)
 
     # Export header files first
     timer.start_phase("Export header files")
@@ -608,6 +621,13 @@ def export_pseudocode(currentProgram, path):
     # Create thread-local decompiler storage
     decompiler_tls = DecompilerThreadLocal(currentProgram)
 
+    # Register per-function decompiler fixes (e.g., MULTIEQUAL stack trace fix)
+    # This uses the C++ global registry, so we only need to call it once
+    fixes_interface = decompiler_tls.get()  # Get/create an interface for registration
+    decompiler_fixes_count = register_decompiler_fixes(fixes_interface)
+    if decompiler_fixes_count > 0:
+        log_info("Registered decompiler fixes for %d functions" % decompiler_fixes_count)
+
     # Create Python thread pool executor
     executor = ThreadPoolExecutor(max_workers=num_threads)
 
@@ -662,6 +682,10 @@ def export_pseudocode(currentProgram, path):
 
     executor.shutdown(wait=True)
     timer.end_phase()
+
+    # Clear decompiler fixes registry now that decompilation is done
+    if decompiler_fixes_count > 0:
+        clear_decompiler_fixes(fixes_interface)
 
     log_info("Decompilation complete: %d succeeded, %d failed" % (
         len(decompile_results), len(decompile_errors)))
