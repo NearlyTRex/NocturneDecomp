@@ -13,49 +13,9 @@ PRIORITY 1: Files with 1-2 functions remaining
     - entry
       Suspects: badspacebase, register_param, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, stack_ref, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, pointer_cast, special_entry_point
 
-  shape/multicrm.cpp (1 remaining of 6)
-    - shape_multicrm.cpp_CMultiCram_run_FUN_0053ee70
-      Suspects: badspacebase, register_param, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, param_count_too_few, variadic_anchor, variadic_anchor, variadic_anchor, variadic_anchor, variadic_anchor, variadic_anchor, variadic_anchor, variadic_anchor, variadic_anchor, variadic_anchor, variadic_anchor, format_string_mismatch, format_string_mismatch, format_string_mismatch, format_string_mismatch, format_string_mismatch, format_string_mismatch, format_string_mismatch, format_string_mismatch, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor
-
-  crt/strtod.c (1 remaining of 1)
-    - crt_strtod.c_staticInit_FUN_00603bb0
-      Suspects: special_crt_function
-
-  crt/system.c (1 remaining of 1)
-    - crt_system.c_sleep_FUN_00600790
-      Suspects: special_crt_function
-
-  crt/fltused.c (1 remaining of 1)
-    - crt_fltused.c_staticInit_FUN_005fde60
-      Suspects: special_crt_function
-
-  crt/operation.c (1 remaining of 1)
-    - crt_operation.c_always_zero_FUN_0060fa8b
-      Suspects: special_crt_function
-
-  crt/ioinit.c (1 remaining of 1)
-    - crt_ioinit.c_staticInit_FUN_00608f20
-      Suspects: pointer_cast, pointer_cast, call_esp_preserve, call_esp_preserve, call_esp_preserve, special_crt_function
-
-  crt/util.c (1 remaining of 1)
-    - crt_util.c_invokeRuntimeHandler_FUN_0060ac20
-      Suspects: special_crt_function
-
   crt/fpemu.c (1 remaining of 1)
     - crt_fpemu.c_staticInit_FUN_0060be80
       Suspects: unaffected_reg, sborrow_artifact, unaffected_reg, concat_artifact, sub_artifact, unknown_field, special_crt_function
-
-  crt/debug.c (1 remaining of 1)
-    - crt_debug.c_TriggerDebuggerBreak_FUN_0060b500
-      Suspects: unresolved_funcptr, unresolved_funcptr, param_count_too_few, special_crt_function
-
-  crt/init.c (1 remaining of 1)
-    - crt_init.c_ProcessInitTermHandlers_FUN_0060ac30
-      Suspects: param_count_too_many, call_esp_preserve, special_crt_function
-
-  crt/windows.c (1 remaining of 1)
-    - crt_windows.c_has_active_window_FUN_0060a710
-      Suspects: param_count_too_few, special_crt_function
 
   crt/io.c/stat/thunk (1 remaining of 1)
     - crt_io.c_stat_thunk_00600c18
@@ -65,17 +25,49 @@ PRIORITY 1: Files with 1-2 functions remaining
     - crt_io.c_utime_thunk_00600c1e
       Suspects: special_crt_function
 
+  crt/windows.c (1 remaining of 1)
+    - crt_windows.c_has_active_window_FUN_0060a710
+      Suspects: param_count_too_few, special_crt_function
+
+  crt/system.c (1 remaining of 1)
+    - crt_system.c_sleep_FUN_00600790
+      Suspects: special_crt_function
+
+  crt/operation.c (1 remaining of 1)
+    - crt_operation.c_always_zero_FUN_0060fa8b
+      Suspects: special_crt_function
+
   crt/mbstring.c (1 remaining of 1)
     - crt_mbstring.c_copyMbChar_FUN_0060e590
       Suspects: special_crt_function
 
+  crt/fltused.c (1 remaining of 1)
+    - crt_fltused.c_staticInit_FUN_005fde60
+      Suspects: special_crt_function
+
+  crt/ioinit.c (1 remaining of 1)
+    - crt_ioinit.c_staticInit_FUN_00608f20
+      Suspects: pointer_cast, pointer_cast, call_esp_preserve, call_esp_preserve, call_esp_preserve, special_crt_function
+
+  crt/init.c (1 remaining of 1)
+    - crt_init.c_ProcessInitTermHandlers_FUN_0060ac30
+      Suspects: param_count_too_many, call_esp_preserve, special_crt_function
+
+  crt/util.c (1 remaining of 1)
+    - crt_util.c_invokeRuntimeHandler_FUN_0060ac20
+      Suspects: special_crt_function
+
+  crt/strtod.c (1 remaining of 1)
+    - crt_strtod.c_staticInit_FUN_00603bb0
+      Suspects: special_crt_function
+
+  crt/debug.c (1 remaining of 1)
+    - crt_debug.c_TriggerDebuggerBreak_FUN_0060b500
+      Suspects: unresolved_funcptr, unresolved_funcptr, param_count_too_few, special_crt_function
+
   engine/keys.cpp (1 remaining of 9)
     - engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_00502470
       Suspects: call_esp_preserve
-
-  core/mmx.c (1 remaining of 4)
-    - core_mmx.c_detectIntelProcessor_FUN_00524f4c
-      Suspects: warning_unreachable, warning_unreachable, warning_overlapping_globals, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param
 
   core/dcube.cpp/CDemonCube (1 remaining of 1)
     - core_dcube.cpp_CDemonCube_buildGeometryFromPolygonData
@@ -85,21 +77,29 @@ PRIORITY 1: Files with 1-2 functions remaining
     - core_camview.cpp_CCameraView_dtor_FUN_00427d00
       Suspects: call_esp_preserve, call_esp_preserve, call_esp_preserve
 
+  core/mmx.c (1 remaining of 4)
+    - core_mmx.c_detectIntelProcessor_FUN_00524f4c
+      Suspects: warning_unreachable, warning_unreachable, warning_overlapping_globals, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param, register_param
+
   core/slew.cpp (1 remaining of 4)
     - core_slew.cpp_CSlew_processInput_FUN_005a20b0
       Suspects: unaffected_reg, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, unaffected_reg, unaffected_reg, unaffected_reg, stack_param, stack_param, suspect_float, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, stack_param, callind_anchor, callind_anchor, callind_anchor, callind_anchor, callind_anchor, callind_anchor, callind_anchor, callind_anchor, callind_anchor, callind_anchor, callind_anchor, callind_anchor, callind_anchor, callind_anchor, callind_anchor, callind_anchor, callind_anchor, stack_align_anchor
 
-  crt/environ.c (2 remaining of 2)
-    - crt_environ.c_staticFinal_FUN_0060c73c
-      Suspects: call_esp_preserve, call_esp_preserve, special_crt_function
-    - crt_environ.c_staticInit_FUN_0060c650
-      Suspects: call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, special_crt_function
+  shape/multicrm.cpp (1 remaining of 6)
+    - shape_multicrm.cpp_CMultiCram_run_FUN_0053ee70
+      Suspects: badspacebase, register_param, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, param_count_too_few, variadic_anchor, variadic_anchor, variadic_anchor, variadic_anchor, variadic_anchor, variadic_anchor, variadic_anchor, variadic_anchor, variadic_anchor, variadic_anchor, variadic_anchor, format_string_mismatch, format_string_mismatch, format_string_mismatch, format_string_mismatch, format_string_mismatch, format_string_mismatch, format_string_mismatch, format_string_mismatch, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor, call_esp_anchor
 
   crt/ctype.c (2 remaining of 2)
     - crt_ctype.c_toupper_FUN_005ff9e0
       Suspects: special_crt_function
     - crt_ctype.c_tolower_FUN_005feb30
       Suspects: special_crt_function
+
+  crt/environ.c (2 remaining of 2)
+    - crt_environ.c_staticInit_FUN_0060c650
+      Suspects: call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, special_crt_function
+    - crt_environ.c_staticFinal_FUN_0060c73c
+      Suspects: call_esp_preserve, call_esp_preserve, special_crt_function
 
   crt/fpu.c (2 remaining of 2)
     - crt_fpu.c_staticInit_FUN_006047e0
@@ -114,39 +114,39 @@ PRIORITY 1: Files with 1-2 functions remaining
       Suspects: call_esp_preserve
 
   core/inivar.cpp (2 remaining of 2)
-    - core_inivar.cpp_writeIniData_FUN_004fc510
-      Suspects: badspacebase, register_param, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr
     - core_inivar.cpp_readIniData_FUN_004fbd90
       Suspects: badspacebase, register_param, stack_param, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_param, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, variadic_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr
+    - core_inivar.cpp_writeIniData_FUN_004fc510
+      Suspects: badspacebase, register_param, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, stack_ref, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, call_esp_preserve, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr, lea_esp_stack_addr
 
 ====================================================================================================
 PRIORITY 2: Small functions with 1 suspect (<50 lines)
 ====================================================================================================
 
   [call_esp_preserve] - 554 functions
-    cockpit_pkbitmap.cpp_CPackedBitmap_applyPalette_FUN_005 (  5 lines)
-    cockpit_drawsurf.cpp_CDrawSurface_setColorWhite_FUN_004 (  5 lines)
-    cockpit_drawsurf.cpp_CDrawSurface_setColorYellow_FUN_00 (  5 lines)
-    cockpit_drawsurf.cpp_CDrawSurface_setColorGray_FUN_0048 (  5 lines)
-    cockpit_drawsurf.cpp_CDrawSurface_setColorDarkGray_FUN_ (  5 lines)
-    cockpit_drawsurf.cpp_CDrawSurface_setColorBlack_FUN_004 (  5 lines)
+    cockpit_drawsurf.cpp_CDrawSurface_setColorGreen_FUN_004 (  5 lines)
+    cockpit_drawsurf.cpp_CDrawSurface_setColorLightGray_FUN (  5 lines)
     cockpit_drawsurf.cpp_CDrawSurface_setColorCyan_FUN_0048 (  5 lines)
     cockpit_drawsurf.cpp_CDrawSurface_setColorBlue_FUN_0048 (  5 lines)
+    cockpit_drawsurf.cpp_CDrawSurface_setColorYellow_FUN_00 (  5 lines)
+    cockpit_drawsurf.cpp_CDrawSurface_setColorDarkGray_FUN_ (  5 lines)
+    cockpit_drawsurf.cpp_CDrawSurface_setColorBlack_FUN_004 (  5 lines)
+    cockpit_drawsurf.cpp_CDrawSurface_setColorRed_FUN_00487 (  5 lines)
     cockpit_drawsurf.cpp_CDrawSurface_setColorMagenta_FUN_0 (  5 lines)
-    cockpit_drawsurf.cpp_CDrawSurface_setColorLightGray_FUN (  5 lines)
+    cockpit_drawsurf.cpp_CDrawSurface_setColorWhite_FUN_004 (  5 lines)
     ... and 544 more
 
   [special_crt_function] - 108 functions
-    crt_unknown.c_FUN_0060eb3a                              (  4 lines)
-    crt_startup.c_PlaceholderStub_FUN_0060ca80              (  4 lines)
-    crt_operation.c_always_zero_FUN_0060fa8b                (  4 lines)
-    crt_heap.c_AllocatorFallbackStub_FUN_00609780           (  4 lines)
-    crt_thread.c_GetTLS_FUN_0060242c                        (  4 lines)
-    crt_stdio.c_closeUnsupported_FUN_0060b9b7               (  4 lines)
-    crt_stub.c_staticFinal_FUN_005fde93                     (  4 lines)
     crt_stub.c_staticInit_FUN_005fde92                      (  4 lines)
+    crt_stub.c_staticFinal_FUN_005fde93                     (  4 lines)
     crt_stub.c_staticInit_FUN_005ff9f2                      (  4 lines)
-    crt_strstream.cpp_strstreambuf_sync_FUN_0060bb7c        (  4 lines)
+    crt_sync.c_criticalSectionStub_FUN_00609f20             (  4 lines)
+    crt_sync.c_CriticalSectionStub_FUN_00602434             (  4 lines)
+    crt_operation.c_always_zero_FUN_0060fa8b                (  4 lines)
+    crt_startup.c_PlaceholderStub_FUN_0060ca80              (  4 lines)
+    crt_thread.c_GetTLS_FUN_0060242c                        (  4 lines)
+    crt_unknown.c_FUN_0060eb3a                              (  4 lines)
+    crt_heap.c_AllocatorFallbackStub_FUN_00609780           (  4 lines)
     ... and 98 more
 
   [callind_preserve] - 54 functions
@@ -156,43 +156,43 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     core_actor.cpp_CDemonActor_getActorClassName_FUN_00408b (  6 lines)
     engine_palette.cpp_CFont_drawText_FUN_00544ed0          (  7 lines)
     shape_superopt.cpp_CPoly_init_FUN_005cc670              (  8 lines)
-    wincore_windll.cpp_addParticle_FUN_005b7985             (  9 lines)
-    wincore_windll.cpp_lockTexture_FUN_005b7e23             (  9 lines)
-    wincore_windll.cpp_selectCard_FUN_005b7d90              (  9 lines)
+    engine_pod.cpp_findFileInPod_FUN_00551960               (  9 lines)
     wincore_windll.cpp_masterZBuffer_FUN_005b7d00           (  9 lines)
+    wincore_windll.cpp_setMipMapLevel_FUN_005b7436          (  9 lines)
+    wincore_windll.cpp_getTextureInfo_FUN_005b7e70          (  9 lines)
     ... and 44 more
 
   [variadic_preserve] - 53 functions
-    shape_meshlod.cpp_CLodMesh_importFromUnknown_FUN_0051b2 (  7 lines)
-    shape_quantize.cpp_showError_FUN_00556ce0               (  7 lines)
-    shape_quantize.cpp_showError_FUN_00556cb0               (  7 lines)
     support_trisock.cpp_shouldNeverBeCalled_FUN_005e1a80    (  7 lines)
     support_trisock.cpp_shouldNeverBeCalled_FUN_005e1ab0    (  7 lines)
     engine_3d.c_oldFunction_FUN_00403ec0                    (  7 lines)
-    engine_3d.c_oldFunction_FUN_00404420                    (  7 lines)
-    engine_3d.c_oldFunction_FUN_00404690                    (  7 lines)
-    engine_3d.c_oldFunction_FUN_00403e00                    (  7 lines)
     engine_3d.c_oldFunction_FUN_00403ef0                    (  7 lines)
+    engine_3d.c_oldFunction_FUN_00403e00                    (  7 lines)
+    engine_3d.c_oldFunction_FUN_00404690                    (  7 lines)
+    engine_3d.c_oldFunction_FUN_00404420                    (  7 lines)
+    core_inv.cpp_loadItem_FUN_004fcfe0                      (  7 lines)
+    core_dpart.cpp_CDemonPart_save_FUN_004824c0             (  7 lines)
+    core_dpart.cpp_CDemonPart_load_FUN_00482490             (  7 lines)
     ... and 43 more
 
   [param_count_too_few] - 44 functions
     cockpit_ckptutil.c_isLineClippingDisabled_FUN_00434660  (  4 lines)
-    sound_sndmain.cpp_isRecordingSystemActive_FUN_005ab970  (  4 lines)
     support_newmsg.cpp_doNothing_FUN_00544500               (  4 lines)
-    engine_2d.c_doNothing_FUN_00402860                      (  4 lines)
     engine_2d.c_getTextWrapEnabled_FUN_004027f0             (  4 lines)
     engine_2d.c_doNothing_FUN_00401590                      (  4 lines)
+    engine_2d.c_doNothing_FUN_00402860                      (  4 lines)
     engine_drender.cpp_CDemonRenderer_getAlphaMask_FUN_0048 (  4 lines)
+    sound_sndmain.cpp_isRecordingSystemActive_FUN_005ab970  (  4 lines)
     core_water.cpp_CWater_process_FUN_005e9ed0              (  4 lines)
-    engine_fileio.cpp_CFileManager_dtor_FUN_004b53d0        (  5 lines)
+    engine_palette.cpp_CFont_ctor_FUN_00544eb0              (  5 lines)
     engine_drender.cpp_CDemonRenderer_matrixPush_FUN_0050d6 (  5 lines)
     ... and 34 more
 
   [pointer_cast] - 19 functions
     core_dlight.cpp_drawGrayscalePixel_FUN_00473360         (  5 lines)
     core_setdir.cpp_setPixelGrayscale_FUN_005748a0          (  5 lines)
-    core_actor.cpp_resetActorTypeInfo_FUN_0040c7f0          ( 17 lines)
     core_actor.cpp_syncActorTypeIDs_FUN_0040c7c0            ( 17 lines)
+    core_actor.cpp_resetActorTypeInfo_FUN_0040c7f0          ( 17 lines)
     shape_meshlod.cpp_CLodMesh_hasVertexBoundaryEdge_FUN_00 ( 19 lines)
     shape_meshlod.cpp_CLodMesh_countNonCollapsibleEdgesForV ( 20 lines)
     engine_2d.c_plotPixelWithDepth_FUN_00401290             ( 21 lines)
@@ -210,32 +210,32 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     shape_design.c_initializeTextureManager_FUN_0046a880    ( 11 lines)
     core_gore.cpp_CGore_FUN_004ee070                        ( 12 lines)
     shape_design.c_initializeCramConfig_FUN_0046b6e0        ( 15 lines)
-    shape_design.c_findTextureByFilename_FUN_0046dfc0       ( 16 lines)
     shape_design.c_skipLines_FUN_00459360                   ( 16 lines)
+    shape_design.c_findTextureByFilename_FUN_0046dfc0       ( 16 lines)
     ... and 3 more
 
   [stack_align_anchor] - 11 functions
     core_fire.cpp_CExplosion_process_FUN_004c3ac0           ( 14 lines)
     core_motion.cpp_CMotionController_getStateBlendWeight_F ( 25 lines)
-    core_xform.cpp_atan2Approximation_FUN_005f55c0          ( 29 lines)
     core_dirmat.cpp_atan2Custom_FUN_00472090                ( 29 lines)
+    core_xform.cpp_atan2Approximation_FUN_005f55c0          ( 29 lines)
     core_dtri.cpp_rayEdgeHeightTest_FUN_0049b180            ( 36 lines)
     core_dcamera.cpp_CDemonCamera_screenToWorldDirection_FU ( 39 lines)
-    shape_meshlod.cpp_computeClosestPointOnEdge_FUN_00514f9 ( 40 lines)
     core_dcube.cpp_intersectVerticalCylinderSegment_FUN_004 ( 40 lines)
+    shape_meshlod.cpp_computeClosestPointOnEdge_FUN_00514f9 ( 40 lines)
     core_skeleton.cpp_distancePointToLineSegment_FUN_005996 ( 41 lines)
     core_xform.cpp_normalizeMatrix_FUN_005f51e0             ( 43 lines)
     ... and 1 more
 
   [special_math_intrinsic] - 9 functions
+    crt_math.c_atan2_minus_pi_half_epilogue_FUN_0060c5f3    (  5 lines)
     crt_math.c_atan2_epilogue_FUN_0060c5a0                  (  5 lines)
     crt_math.c_atan2_minus_pi_epilogue_FUN_0060c5cb         (  5 lines)
-    crt_math.c_atan2_minus_pi_half_epilogue_FUN_0060c5f3    (  5 lines)
+    crt_math.c_atan2_minus_pi_half_minus_epilogue_FUN_0060c (  5 lines)
+    crt_math.c_atan2_pi_minus_epilogue_FUN_0060c5b8         (  5 lines)
+    crt_math.c_atan2_pi_half_plus_epilogue_FUN_0060c608     (  5 lines)
     crt_math.c_atan2_negate_epilogue_FUN_0060c5ab           (  5 lines)
     crt_math.c_atan2_pi_half_minus_epilogue_FUN_0060c5e0    (  5 lines)
-    crt_math.c_atan2_pi_half_plus_epilogue_FUN_0060c608     (  5 lines)
-    crt_math.c_atan2_pi_minus_epilogue_FUN_0060c5b8         (  5 lines)
-    crt_math.c_atan2_minus_pi_half_minus_epilogue_FUN_0060c (  5 lines)
     crt_math.c_atan2_FUN_006013b1                           ( 11 lines)
 
   [param_count_too_many] - 8 functions
@@ -244,8 +244,8 @@ PRIORITY 2: Small functions with 1 suspect (<50 lines)
     sound_sndmain.cpp_setNextSfxStaticPosition_FUN_005a88e0 ( 12 lines)
     shape_design.c_weldNearbyVertices_FUN_00465c50          ( 21 lines)
     shape_dsemodel.cpp_CDSEModel_scaleX_FUN_0048fd70        ( 24 lines)
-    shape_dsemodel.cpp_CDSEModel_scaleZ_FUN_0048fcc0        ( 24 lines)
     shape_dsemodel.cpp_CDSEModel_scaleY_FUN_0048fe20        ( 24 lines)
+    shape_dsemodel.cpp_CDSEModel_scaleZ_FUN_0048fcc0        ( 24 lines)
     core_dcamera.cpp_CDemonCamera_computeLightExtentBounds_ ( 40 lines)
 
   [variadic_anchor] - 6 functions
