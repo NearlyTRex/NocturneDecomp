@@ -36,7 +36,16 @@ Archived snapshots of previous annotation exports. Preserves earlier analysis st
 AI/LLM prompt templates for assisted reverse engineering. Includes prompts for disassembly analysis, code generation, and maintaining coding standards during the decompilation process.
 
 ### `/research`
-Research notes, findings, and documentation about the Nocturne engine. Contains insights, theories, and documented discoveries about how various systems work.
+Technical research documentation. See **[research/README.md](research/README.md)** for full index.
+
+| Folder | Description |
+|--------|-------------|
+| `01-file_structure/` | Class hierarchy and source file mapping |
+| `02-mrgl_initial_investigation/` | MRGL 3D rendering system analysis |
+| `03-rendering_primitives/` | Primitive formats and rendering pipeline |
+| `04-mp3_audio_system/` | MP3 decoder and DirectSound integration |
+| `05-badspacebase_investigation/` | Ghidra decompiler fixes for Watcom code |
+| `06-per_function_decompiler_helpers/` | Per-function decompiler control system |
 
 ### `/scripts`
 Python automation scripts for Ghidra (PyGhidra headless):

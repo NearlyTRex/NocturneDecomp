@@ -46,7 +46,39 @@ The binary is believed to be compiled with **Watcom C/C++ 11** (released ~1996-1
 | [16_EBP_PATCH_IMPLEMENTATION_FINDINGS.md](16_EBP_PATCH_IMPLEMENTATION_FINDINGS.md) | RuleLoadVarnode patch attempt - **FAILED** (runs too late in pipeline) |
 | [17_GHIDRA_STACK_ANALYSIS_DEEP_DIVE.md](17_GHIDRA_STACK_ANALYSIS_DEEP_DIVE.md) | **KEY** - Complete pipeline analysis, identifies correct fix location |
 | [18_RESOLVESPACEBASERELATIVE_PATCH.md](18_RESOLVESPACEBASERELATIVE_PATCH.md) | **IMPLEMENTED** - EBP-frame tracing in resolveSpacebaseRelative() |
+| [19_RULELOADVARNODE_PATCH_FAILURE_ANALYSIS.md](19_RULELOADVARNODE_PATCH_FAILURE_ANALYSIS.md) | Why RuleLoadVarnode approach failed |
+| [20_GHIDRA_FIX_OPTIONS.md](20_GHIDRA_FIX_OPTIONS.md) | Summary of fix options |
+| [21_EBP_AS_OBJECT_POINTER.md](21_EBP_AS_OBJECT_POINTER.md) | EBP usage analysis |
+| [22_LATE_STAGE_TRACING_LIMITATIONS.md](22_LATE_STAGE_TRACING_LIMITATIONS.md) | Why late-stage fixes don't work |
+| [23_HERITAGE_MULTIEQUAL_FIX_RESULTS.md](23_HERITAGE_MULTIEQUAL_FIX_RESULTS.md) | MULTIEQUAL stack tracing fix |
+| [24_STACK_PROBE_CALLFIXUP_FIX.md](24_STACK_PROBE_CALLFIXUP_FIX.md) | **IMPLEMENTED** - Callfixup for _chkstk |
+| [25_STACK_PROBE_CPP_FIX_IMPLEMENTATION.md](25_STACK_PROBE_CPP_FIX_IMPLEMENTATION.md) | C++ implementation of stack probe fix |
+| [26_VARIADIC_ARGUMENT_LOSS_FIX.md](26_VARIADIC_ARGUMENT_LOSS_FIX.md) | **IMPLEMENTED** - Proto overrides for variadics |
 | [pcode_patching/](pcode_patching/) | Implementation files: patch, modified Java source, examples |
+
+## Per-Function Decompiler Helpers
+
+This investigation led to the development of a per-function decompiler helper system.
+See [../06-per_function_decompiler_helpers/](../06-per_function_decompiler_helpers/) for full documentation.
+
+### Implemented Helpers
+
+| Helper | Purpose | Location |
+|--------|---------|----------|
+| **Call Fixups** | Replace calls with custom P-code | `callfixups.py` |
+| **Decompiler Fixes** | Per-function fix flags (MULTIEQUAL tracing) | `decompiler_fixes.py` |
+| **Proto Overrides** | Per-call-site function signatures | `proto.py` |
+| **P-code Overrides** | Per-instruction P-code replacement | `transforms.py` |
+
+### Configuration Files
+
+```
+annotations/nocedit.exe/pseudocode/
+├── callfixups.json           # Global call fixup definitions
+├── decompiler_fixes.json     # Functions needing special fixes
+├── proto_overrides.json      # Call-site signature overrides
+└── src/<function>.json       # Per-function overrides
+```
 
 ## Quick Reference
 
@@ -76,21 +108,27 @@ Since we use Ghidra 12.1 built from source, any SLEIGH or decompiler changes req
 
 | Approach | Status | Verdict |
 |----------|--------|---------|
-| Custom cspec | Implemented | Helps direct calls, not indirect |
-| SLEIGH patch | Implemented | Minimal impact on BADSPACEBASE |
-| JSON replacements | Partial | Cosmetic only |
-| Callfixup | Not viable | Wrong part of problem |
+| Custom cspec | **IMPLEMENTED** | Helps direct calls, not indirect |
+| SLEIGH patch | **IMPLEMENTED** | Minimal impact on BADSPACEBASE |
 | Decompiler C++ (RuleLoadVarnode) | **FAILED** | Runs too late - heritage analysis already done |
 | Decompiler C++ (resolveSpacebaseRelative) | **IMPLEMENTED** | Correct location - adds EBP-frame tracing |
+| Decompiler C++ (MULTIEQUAL tracing) | **IMPLEMENTED** | Per-function fix flag system |
+| **DecompileCallback P-code Patch** | **IMPLEMENTED** | Per-instruction P-code override |
+| **Call Fixups** | **IMPLEMENTED** | Fixes _chkstk/alloca stack probe issues |
+| **Proto Overrides** | **IMPLEMENTED** | Fixes variadic function argument loss |
+| **Decompiler Fix Flags** | **IMPLEMENTED** | Per-function experimental fixes |
 | Binary patching | Not attempted | Can't change instruction sizes |
-| Byte patching in Ghidra | Not attempted | Limited by instruction size constraints |
 | GhidraCraft P-code | Not attempted | Powerful but fork is outdated (Ghidra 9.x) |
-| PcodeInjectLibrary | Investigated | **Not suitable** - designed for custom processors, not x86 override |
-| **DecompileCallback Patch** | **IMPLEMENTED** | **Best option** - Single file change, file-based patches |
+| PcodeInjectLibrary | Investigated | **Not suitable** - designed for custom processors |
 
 ## Changelog
 
-- 2025-12-30: **IMPLEMENTED** - EBP-frame tracing in `resolveSpacebaseRelative()` (document 18); cleaned up old RuleLoadVarnode patch
+- 2026-01-11: **RESEARCH** - Added `06-per_function_decompiler_helpers/` documenting expansion opportunities
+- 2026-01-11: **IMPLEMENTED** - Pseudocode annotation support (callfixups, proto_overrides, decompiler_fixes, transforms)
+- 2026-01-10: **IMPLEMENTED** - Per-function decompiler fix flags (`DFIX_MULTIEQUAL_STACK_TRACE`)
+- 2026-01-10: **IMPLEMENTED** - Proto overrides for variadic function calls (document 26)
+- 2026-01-10: **IMPLEMENTED** - Call fixups for `_chkstk`/`__alloca_probe` (document 24)
+- 2025-12-30: **IMPLEMENTED** - EBP-frame tracing in `resolveSpacebaseRelative()` (document 18)
 - 2025-12-30: **BREAKTHROUGH** - Complete pipeline analysis in document 17 identifies `resolveSpacebaseRelative()` as the correct fix location
 - 2025-12-30: Document 16 records why RuleLoadVarnode patch failed (runs after heritage analysis transforms references)
 - 2025-12-30: Deep dive into Ghidra source: heritage.cc, fspec.cc, coreaction.cc - traced complete failure chain
@@ -102,3 +140,8 @@ Since we use Ghidra 12.1 built from source, any SLEIGH or decompiler changes req
 - 2025-12-18: Added minimal P-code patching implementation plan (GhidraCraft-like without UI)
 - 2025-12-18: Added runtime patching approaches documentation (byte patching, GhidraCraft, PcodeInjectLibrary)
 - 2025-12-18: Restructured into multiple files, added Ghidra version info, Watcom 11 estimate
+
+## Related Documentation
+
+- [../06-per_function_decompiler_helpers/](../06-per_function_decompiler_helpers/) - Expansion opportunities for per-function helpers
+- [../ghidra_suspect_patterns.md](../ghidra_suspect_patterns.md) - Guide to common decompiler artifacts

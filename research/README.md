@@ -1,0 +1,226 @@
+# Nocturne Decompilation Research
+
+This directory contains technical research documentation for the Nocturne reverse engineering project.
+
+## Project Context
+
+| Component | Details |
+|-----------|---------|
+| **Target Binary** | nocedit.exe (Nocturne level editor, 1999) |
+| **Compiler** | Watcom C/C++ 11 |
+| **Architecture** | x86 32-bit, little-endian |
+| **Ghidra Version** | 12.1 (built from source with custom patches) |
+| **Total Functions** | ~7,154 |
+
+## Research Areas
+
+### [01-file_structure/](01-file_structure/)
+
+Initial analysis of the binary's class hierarchy and file organization.
+
+| File | Description |
+|------|-------------|
+| `actor_hierarchy.txt` | Game object inheritance tree |
+| `classes.txt` | Class name enumeration |
+| `files.txt` | Source file mapping |
+| `structures.txt` | Key data structure definitions |
+
+**Status:** Reference material
+
+---
+
+### [02-mrgl_initial_investigation/](02-mrgl_initial_investigation/)
+
+Investigation into Nocturne's MRGL (Model/Rendering Graphics Library) 3D rendering system.
+
+| File | Description |
+|------|-------------|
+| `3d-rendering-system-analysis.md` | Overview of rendering architecture |
+| `MRGL-file-format.md` | MRGL file format specification |
+| `MRGL_DISPATCH_TABLE_ANALYSIS.md` | Vtable and dispatch analysis |
+| `FUNCTION_RENAMING_GUIDE.md` | Naming conventions for render functions |
+| `*.py` | Analysis scripts |
+
+**Status:** Complete - Rendering system documented
+
+---
+
+### [03-rendering_primitives/](03-rendering_primitives/)
+
+Deep dive into rendering primitive structures and data formats. Contains 48 documents
+tracking the progressive understanding of MRGL primitives, keyframe formats, and
+renderer internals.
+
+| Key Documents | Description |
+|---------------|-------------|
+| `00_RESEARCH_PROGRESSION_INDEX.md` | Index of all research documents |
+| `19_ALL_PRIMITIVE_FORMATS_FINAL.md` | Complete primitive format reference |
+| `38_MODEL_FILE_FORMATS_COMPLETE.md` | Model file format specification |
+| `48_GLOBE_RENDERING_FINALIZED.md` | Globe/sphere rendering analysis |
+
+**Status:** Complete - All primitive formats documented
+
+---
+
+### [04-mp3_audio_system/](04-mp3_audio_system/)
+
+Complete analysis of MP3 decoding and DirectSound integration.
+
+| File | Description |
+|------|-------------|
+| `README.md` | Overview and key findings |
+| `mp3_audio_system_analysis.md` | Full technical analysis |
+| `QUICK_REFERENCE.md` | Developer quick reference |
+| `sound_structures_analysis.md` | Audio structure definitions |
+
+**Key Findings:**
+- MP3 decoder outputs 16-bit PCM (standard WAV format)
+- Two playback modes: full decode and streaming
+- Replaceable with modern libraries (dr_mp3, minimp3)
+
+**Status:** Complete
+
+---
+
+### [05-badspacebase_investigation/](05-badspacebase_investigation/)
+
+Investigation into Ghidra's BADSPACEBASE decompilation errors affecting 22.7% of functions.
+Led to custom Ghidra patches and the per-function decompiler helper system.
+
+| Key Documents | Description |
+|---------------|-------------|
+| `README.md` | Complete investigation index |
+| `01_PROBLEM_DESCRIPTION.md` | What BADSPACEBASE looks like |
+| `02_ROOT_CAUSE.md` | Why Ghidra fails with Watcom ESP-relative code |
+| `17_GHIDRA_STACK_ANALYSIS_DEEP_DIVE.md` | Complete pipeline analysis |
+| `18_RESOLVESPACEBASERELATIVE_PATCH.md` | **IMPLEMENTED** - EBP-frame tracing fix |
+| `24_STACK_PROBE_CALLFIXUP_FIX.md` | Stack probe callfixup solution |
+| `26_VARIADIC_ARGUMENT_LOSS_FIX.md` | Proto override for variadic calls |
+
+**Key Outcomes:**
+- Custom `x86watcom.cspec` calling convention
+- `resolveSpacebaseRelative()` C++ patch for EBP-frame tracing
+- P-code override system via `DecompileCallback.java`
+- Call fixup system for `_chkstk`/`__alloca_probe`
+- Proto override system for variadic functions
+
+**Status:** Ongoing - Core fixes implemented, per-function helpers available
+
+---
+
+### [06-per_function_decompiler_helpers/](06-per_function_decompiler_helpers/)
+
+Research into extending Ghidra's decompiler with per-function controls without
+modifying the program database. Builds on solutions from the BADSPACEBASE investigation.
+
+| File | Description |
+|------|-------------|
+| `README.md` | Overview and navigation |
+| `01_OVERVIEW_AND_OPPORTUNITIES.md` | Complete list of opportunities by difficulty tier |
+| `02_GHIDRA_SOURCE_REFERENCE.md` | Source code paths and line numbers |
+| `03_QUICK_IMPLEMENTATION_GUIDE.md` | Copy-paste implementation code |
+
+**Already Implemented:**
+1. **Call Fixups** - Replace function calls with custom P-code
+2. **Decompiler Fixes** - Per-function experimental fix flags (MULTIEQUAL tracing)
+3. **Proto Overrides** - Per-call-site function signatures
+4. **P-code Overrides** - Per-instruction P-code replacement
+
+**Identified Opportunities:**
+- Tier 1 (Trivial): inline, noreturn, varargs, calling convention overrides
+- Tier 2 (Easy): extrapop, flow overrides, indirect call resolution
+- Tier 3 (Moderate): comment injection, symbol name overrides
+- Tier 4 (Speculative): New DFIX flags for pointer inference, loop recovery
+
+**Status:** Active research - Core system implemented, expansion opportunities documented
+
+---
+
+## Standalone Documents
+
+### [ghidra_suspect_patterns.md](ghidra_suspect_patterns.md)
+
+Reference guide for common Ghidra decompiler artifacts and how to fix them:
+
+- BADSPACEBASE - Stack frame resolution failure
+- `in_stack_XXXX` - Unresolved stack parameters
+- `in_EAX`, `in_ECX` - Inferred register parameters
+- `CONCAT44`, `CONCAT22` - Value concatenation artifacts
+- `SUB84`, `SUB42` - Value extraction artifacts
+- `SBORROW` - Signed borrow detection
+
+---
+
+## Implementation Files
+
+The research in this folder has led to implementation code in:
+
+```
+scripts/Python/ghidra_annotations/annotations/pseudocode/
+├── callfixups.py         # Call fixup registration
+├── decompiler_fixes.py   # Per-function fix flags
+├── proto.py              # Prototype overrides
+├── transforms.py         # P-code overrides and text transforms
+├── suspects.py           # Suspect pattern detection
+└── exporter.py           # Main export orchestration
+
+spec/Ghidra/Processors/x86/data/languages/
+├── x86watcom.cspec       # Custom Watcom calling conventions
+├── x86watcom.ldefs       # Language definition
+└── ia.sinc.patch         # SLEIGH customizations
+```
+
+---
+
+## Custom Ghidra Build
+
+This project uses Ghidra 12.1 built from source with custom patches:
+
+| Patch | Location | Purpose |
+|-------|----------|---------|
+| EBP-frame tracing | `varmap.cc:resolveSpacebaseRelative()` | Fix BADSPACEBASE for EBP-frame functions |
+| MULTIEQUAL stack trace | `heritage.cc` | Enhanced stack variable tracing |
+| Call fixup registry | `DecompileCallback.java` | Per-function call replacement |
+| P-code override registry | `DecompileCallback.java` | Per-instruction P-code injection |
+| Proto override registry | `HighFunction.java` | Per-call-site signatures |
+| Decompiler fix flags | `DecompInterface.java` + C++ | Per-function fix flag system |
+
+Ghidra source location: `~/Repositories/Ghidra/`
+
+---
+
+## Quick Links
+
+| Topic | Document |
+|-------|----------|
+| Understand BADSPACEBASE | [05-badspacebase_investigation/02_ROOT_CAUSE.md](05-badspacebase_investigation/02_ROOT_CAUSE.md) |
+| Fix suspect patterns | [ghidra_suspect_patterns.md](ghidra_suspect_patterns.md) |
+| Add per-function helpers | [06-per_function_decompiler_helpers/03_QUICK_IMPLEMENTATION_GUIDE.md](06-per_function_decompiler_helpers/03_QUICK_IMPLEMENTATION_GUIDE.md) |
+| Understand render system | [02-mrgl_initial_investigation/3d-rendering-system-analysis.md](02-mrgl_initial_investigation/3d-rendering-system-analysis.md) |
+| Primitive formats | [03-rendering_primitives/19_ALL_PRIMITIVE_FORMATS_FINAL.md](03-rendering_primitives/19_ALL_PRIMITIVE_FORMATS_FINAL.md) |
+| Audio system | [04-mp3_audio_system/mp3_audio_system_analysis.md](04-mp3_audio_system/mp3_audio_system_analysis.md) |
+
+---
+
+## Changelog
+
+### 2025-01-11
+- Added `06-per_function_decompiler_helpers/` research folder
+- Documented all identified Ghidra per-function helper opportunities
+- Created implementation guides for trivial wins
+
+### 2025-01-10
+- Completed MP3 audio system analysis
+- Added pseudocode annotation support (callfixups, decompiler_fixes, proto, transforms)
+
+### 2025-12-30
+- **BREAKTHROUGH**: Complete Ghidra pipeline analysis, identified `resolveSpacebaseRelative()` as fix location
+- Implemented EBP-frame tracing in custom Ghidra build
+
+### 2025-12-18
+- Implemented P-code override system via `DecompileCallback.java` modification
+- Added call fixup registry for stack probe functions
+
+### Earlier
+- Rendering system analysis complete (02, 03)
+- File structure analysis (01)
