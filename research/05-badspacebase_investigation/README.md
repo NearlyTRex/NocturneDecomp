@@ -45,7 +45,7 @@ The binary is believed to be compiled with **Watcom C/C++ 11** (released ~1996-1
 | [15_PROPOSED_GHIDRA_PATCH.md](15_PROPOSED_GHIDRA_PATCH.md) | Proposed Ghidra source patch for EBP-frame recognition |
 | [16_EBP_PATCH_IMPLEMENTATION_FINDINGS.md](16_EBP_PATCH_IMPLEMENTATION_FINDINGS.md) | RuleLoadVarnode patch attempt - **FAILED** (runs too late in pipeline) |
 | [17_GHIDRA_STACK_ANALYSIS_DEEP_DIVE.md](17_GHIDRA_STACK_ANALYSIS_DEEP_DIVE.md) | **KEY** - Complete pipeline analysis, identifies correct fix location |
-| [18_RESOLVESPACEBASERELATIVE_PATCH.md](18_RESOLVESPACEBASERELATIVE_PATCH.md) | **IMPLEMENTED** - EBP-frame tracing in resolveSpacebaseRelative() |
+| [18_RESOLVESPACEBASERELATIVE_PATCH.md](18_RESOLVESPACEBASERELATIVE_PATCH.md) | **PROPOSED** - EBP-frame tracing design (not committed) |
 | [19_RULELOADVARNODE_PATCH_FAILURE_ANALYSIS.md](19_RULELOADVARNODE_PATCH_FAILURE_ANALYSIS.md) | Why RuleLoadVarnode approach failed |
 | [20_GHIDRA_FIX_OPTIONS.md](20_GHIDRA_FIX_OPTIONS.md) | Summary of fix options |
 | [21_EBP_AS_OBJECT_POINTER.md](21_EBP_AS_OBJECT_POINTER.md) | EBP usage analysis |
@@ -111,7 +111,7 @@ Since we use Ghidra 12.1 built from source, any SLEIGH or decompiler changes req
 | Custom cspec | **IMPLEMENTED** | Helps direct calls, not indirect |
 | SLEIGH patch | **IMPLEMENTED** | Minimal impact on BADSPACEBASE |
 | Decompiler C++ (RuleLoadVarnode) | **FAILED** | Runs too late - heritage analysis already done |
-| Decompiler C++ (resolveSpacebaseRelative) | **IMPLEMENTED** | Correct location - adds EBP-frame tracing |
+| Decompiler C++ (resolveSpacebaseRelative) | **PROPOSED** | Designed but never committed - see doc 18 |
 | Decompiler C++ (MULTIEQUAL tracing) | **IMPLEMENTED** | Per-function fix flag system |
 | **DecompileCallback P-code Patch** | **IMPLEMENTED** | Per-instruction P-code override |
 | **Call Fixups** | **IMPLEMENTED** | Fixes _chkstk/alloca stack probe issues |
@@ -123,6 +123,7 @@ Since we use Ghidra 12.1 built from source, any SLEIGH or decompiler changes req
 
 ## Changelog
 
+- 2026-01-11: **CORRECTED** - Document 18 status changed from "IMPLEMENTED" to "PROPOSED" - `fspec.cc` changes were never committed
 - 2026-01-11: **RESEARCH** - Added `06-per_function_decompiler_helpers/` documenting expansion opportunities
 - 2026-01-11: **IMPLEMENTED** - Pseudocode annotation support (callfixups, proto_overrides, decompiler_fixes, transforms)
 - 2026-01-10: **IMPLEMENTED** - Per-function decompiler fix flags (`DFIX_MULTIEQUAL_STACK_TRACE`)

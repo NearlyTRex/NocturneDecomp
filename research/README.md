@@ -178,7 +178,6 @@ This project uses Ghidra 12.1 built from source with custom patches:
 
 | Patch | Location | Purpose |
 |-------|----------|---------|
-| EBP-frame tracing | `varmap.cc:resolveSpacebaseRelative()` | Fix BADSPACEBASE for EBP-frame functions |
 | MULTIEQUAL stack trace | `heritage.cc` | Enhanced stack variable tracing |
 | Call fixup registry | `DecompileCallback.java` | Per-function call replacement |
 | P-code override registry | `DecompileCallback.java` | Per-instruction P-code injection |
@@ -204,18 +203,19 @@ Ghidra source location: `~/Repositories/Ghidra/`
 
 ## Changelog
 
-### 2025-01-11
+### 2026-01-11
+- **CORRECTED**: Document 18 status - `resolveSpacebaseRelative()` patch was designed but never committed
 - Added `06-per_function_decompiler_helpers/` research folder
 - Documented all identified Ghidra per-function helper opportunities
 - Created implementation guides for trivial wins
 
-### 2025-01-10
+### 2026-01-10
 - Completed MP3 audio system analysis
 - Added pseudocode annotation support (callfixups, decompiler_fixes, proto, transforms)
 
 ### 2025-12-30
 - **BREAKTHROUGH**: Complete Ghidra pipeline analysis, identified `resolveSpacebaseRelative()` as fix location
-- Implemented EBP-frame tracing in custom Ghidra build
+- Designed EBP-frame tracing patch (documented in doc 18, but never committed)
 
 ### 2025-12-18
 - Implemented P-code override system via `DecompileCallback.java` modification

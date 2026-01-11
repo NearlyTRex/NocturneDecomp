@@ -1,18 +1,24 @@
 # resolveSpacebaseRelative() Patch Implementation
 
+> **STATUS: PROPOSED - NOT IMPLEMENTED**
+>
+> This document describes a proposed patch that was designed but **never committed** to the Ghidra source.
+> The actual Ghidra patch (`JoyBox/Scripts/lib/tools/files/ghidra/ghidra.patch`) does NOT contain these `fspec.cc` changes.
+> What was actually implemented is the MULTIEQUAL stack tracing fix in `heritage.cc` (see document 23).
+
 ## Overview
 
-This document records the implementation of the EBP-frame spacebase fix identified in document 17. The fix adds EBP derivation tracing to `resolveSpacebaseRelative()` in `fspec.cc`.
+This document records the **proposed design** of an EBP-frame spacebase fix identified in document 17. The fix would add EBP derivation tracing to `resolveSpacebaseRelative()` in `fspec.cc`.
 
-## Implementation Summary
+## Proposed Implementation Summary
 
-### Files Modified
+### Files That Would Be Modified
 
-| File | Change |
-|------|--------|
-| `fspec.cc` | Added `traceToSpacebase()` helper, modified `resolveSpacebaseRelative()` |
-| `ruleaction.cc` | Cleaned up (removed old failed patch code) |
-| `ruleaction.hh` | Cleaned up (removed `checkDerivedSpacebase` declaration) |
+| File | Proposed Change |
+|------|-----------------|
+| `fspec.cc` | Add `traceToSpacebase()` helper, modify `resolveSpacebaseRelative()` |
+| `ruleaction.cc` | Clean up (remove old failed patch code) |
+| `ruleaction.hh` | Clean up (remove `checkDerivedSpacebase` declaration) |
 
 ### New Helper Function: traceToSpacebase()
 
@@ -202,7 +208,7 @@ After applying this patch and rebuilding Ghidra:
 
 ## Changelog
 
-- 2025-12-30: Implemented `traceToSpacebase()` in fspec.cc
-- 2025-12-30: Modified `resolveSpacebaseRelative()` to use EBP tracing
-- 2025-12-30: Cleaned up old failed patch from ruleaction.cc/ruleaction.hh
-- 2025-12-30: Updated patch file
+- 2026-01-11: **CORRECTED** - Marked as proposed but not implemented. The `fspec.cc` changes were never committed.
+- 2025-12-30: Designed `traceToSpacebase()` helper for fspec.cc (not committed)
+- 2025-12-30: Designed `resolveSpacebaseRelative()` modification (not committed)
+- 2025-12-30: Initial proposal based on pipeline analysis from document 17
