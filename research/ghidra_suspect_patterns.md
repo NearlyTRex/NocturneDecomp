@@ -11,6 +11,7 @@ This document explains common "suspect patterns" that appear in Ghidra's decompi
 5. [SUB84, SUB42](#5-sub84-sub42---value-extraction-artifacts)
 6. [SBORROW](#6-sborrow---signed-borrow-detection)
 7. [Other Patterns](#7-other-patterns)
+8. [Appendix: Ghidra Specification Files](#appendix-ghidra-specification-files)
 
 ---
 
@@ -43,7 +44,13 @@ The decompiler couldn't properly resolve stack-relative addresses. The decompile
    - Right-click → **Clear Flow and Repair**
    - Let Ghidra re-analyze
 
-5. **For custom processors**: Check the `.pspec` file for proper stack pointer and spacebase configurations.
+5. **For custom compilers**: Check the `.cspec` file for proper stack pointer and calling convention configurations. The `<stackpointer>` element defines which register is the stack pointer. Note: `.pspec` files do NOT configure stack pointer or spacebase - those are exclusively in `.cspec`.
+
+6. **For Watcom-compiled code**: BADSPACEBASE often occurs due to:
+   - ESP-relative stack access without frame pointer (Watcom optimization)
+   - Ghidra losing ESP tracking at indirect calls (vtable calls)
+   - Stack probing functions (`_chkstk`, `__alloca_probe`) confusing analysis
+   - See the detailed investigation in `05-badspacebase_investigation/`
 
 ### Sources
 
@@ -343,3 +350,48 @@ The NocturneDecomp project uses Watcom compiler, which has a non-standard callin
 - **Return values**: EAX for 32-bit, EDX:EAX for 64-bit
 
 Many `in_EAX`, `in_EDX` patterns are simply Watcom's normal parameter passing. Consider defining a custom `__watcall` calling convention in Ghidra's `.cspec` file for the x86 processor.
+
+---
+
+## Appendix: Ghidra Specification Files
+
+### .pspec (Processor Specification)
+
+Configures **processor-level** settings. Does NOT configure stack or calling conventions.
+
+| Element | Purpose |
+|---------|---------|
+| `properties` | Key-value language properties |
+| `programcounter` | Which register is the PC |
+| `data_space` | Default data address space |
+| `context_data` | Register context settings |
+| `volatile` | Volatile memory regions |
+| `register_data` | Register metadata (groups, aliases, hidden) |
+| `default_symbols` | Predefined symbol labels |
+| `default_memory_blocks` | Default memory blocks |
+| `incidentalcopy` | Registers freely copied (FPU regs) |
+| `jumpassist` | Jump table assist definitions |
+
+### .cspec (Compiler Specification)
+
+Configures **compiler-level** settings including stack and calling conventions.
+
+| Element | Purpose |
+|---------|---------|
+| `stackpointer` | **Stack pointer register** (e.g., ESP) |
+| `data_organization` | Type sizes, alignment |
+| `prototype` | Calling conventions with extrapop, params |
+| `global` | Global memory ranges |
+| `callfixup` | Call fixup definitions |
+| `returnaddress` | Where return address is stored |
+
+### Key Point
+
+**Stack pointer and spacebase are configured in `.cspec`, NOT `.pspec`.**
+
+Example from `x86watcom.cspec`:
+```xml
+<stackpointer register="ESP" space="ram" />
+```
+
+The `.pspec` file configures processor features like the program counter register and register groupings, but has no control over stack frame analysis or calling conventions.
