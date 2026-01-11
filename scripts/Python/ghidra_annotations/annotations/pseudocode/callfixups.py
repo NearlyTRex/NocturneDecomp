@@ -6,28 +6,128 @@ Callfixups allow replacing calls to specific functions with custom pcode
 during decompilation. This is similar to Ghidra's cspec callfixup mechanism,
 but applies at decompile time rather than analysis time.
 
-Usage:
-    from ghidra_annotations.annotations.pseudocode.callfixups import register_callfixups
+This is useful for:
+- Replacing calls to compiler intrinsics (e.g., __alloca_probe, _chkstk)
+- Fixing stack adjustments that confuse the decompiler
+- Inlining simple helper functions at call sites
 
-    # Call after pyghidra.start() but before decompilation
-    register_callfixups()
+================================================================================
+GLOBAL CALLFIXUPS FILE
+================================================================================
 
-The default callfixups are stored in:
+Location:
     annotations/<program>/pseudocode/callfixups.json
 
-This file is regenerated during export, but user modifications are preserved
-by merging with the defaults.
+This file contains callfixups that apply to ALL functions in the program.
+The file is regenerated during export, but user modifications are preserved.
 
-JSON format:
+JSON Format:
     {
         "callfixups": {
-            "stack_probe": {
-                "type": "pattern",
-                "pcode": ["INT_ADD (register,0x10,4) = (register,0x10,4), (const,0x4,4)"],
-                "description": "optional description"
+            "<target_function_name>": {
+                "type": "exact" | "pattern",
+                "pcode": [
+                    "<pcode_op_1>",
+                    "<pcode_op_2>",
+                    ...
+                ],
+                "description": "optional description of what this fixes"
             }
         }
     }
+
+Fields:
+    - target_function_name: The name of the function whose calls should be replaced
+    - type: "exact" for exact name match, "pattern" for substring/glob match
+    - pcode: List of P-code operations to inject instead of the call
+    - description: Optional human-readable description
+
+Example (global callfixups.json):
+    {
+        "callfixups": {
+            "_chkstk": {
+                "type": "exact",
+                "pcode": [
+                    "INT_SUB (register,0x10,4) = (register,0x10,4), (register,0x0,4)"
+                ],
+                "description": "Replace stack probe with ESP = ESP - EAX"
+            },
+            "__alloca_probe": {
+                "type": "pattern",
+                "pcode": [
+                    "INT_SUB (register,0x10,4) = (register,0x10,4), (register,0x0,4)"
+                ],
+                "description": "Replace alloca probe variants with stack adjustment"
+            }
+        }
+    }
+
+================================================================================
+PER-FUNCTION CALLFIXUPS (in function JSON files)
+================================================================================
+
+Location:
+    annotations/<program>/pseudocode/src/<function_name>.json
+
+Per-function callfixups allow defining callfixups that only apply when
+decompiling a specific function. These are stored in the function's JSON file.
+
+JSON Format (inside function JSON):
+    {
+        "function": { ... },
+        "callfixups": {
+            "<target_function_name>": {
+                "type": "exact" | "pattern",
+                "pcode": ["<pcode_ops>"],
+                "description": "optional description"
+            }
+        },
+        ...other function data...
+    }
+
+Example (FUN_00401000.json):
+    {
+        "function": {
+            "name": "FUN_00401000",
+            "address": "0x00401000"
+        },
+        "callfixups": {
+            "local_helper": {
+                "type": "exact",
+                "pcode": [
+                    "COPY (register,0x0,4) = (const,0x0,4)"
+                ],
+                "description": "Zero EAX for this specific call pattern"
+            }
+        }
+    }
+
+================================================================================
+P-CODE FORMAT
+================================================================================
+
+P-code operations use the format:
+    OPCODE (output_varnode) = (input1), (input2), ...
+
+Varnode format: (space, offset, size)
+    - register: (register, 0x10, 4) for ESP (x86)
+    - const: (const, 0x4, 4) for constant value 4
+    - unique: (unique, 0x1000, 4) for temporary
+
+Common opcodes:
+    - COPY: Copy value
+    - INT_ADD, INT_SUB: Integer arithmetic
+    - INT_AND, INT_OR, INT_XOR: Bitwise operations
+    - LOAD, STORE: Memory operations
+
+================================================================================
+USAGE
+================================================================================
+
+    from ghidra_annotations.annotations.pseudocode.callfixups import register_callfixups
+
+    # Call after pyghidra.start() but before decompilation
+    register_callfixups(annotations_dir)
 """
 
 import os

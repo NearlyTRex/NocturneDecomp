@@ -6,24 +6,140 @@ Proto overrides allow specifying exact function signatures at call sites
 during decompilation. This tells the decompiler exactly what parameters
 a variadic or ambiguous call has, bypassing the parameter inference.
 
+This is useful for:
+- Fixing variadic function calls (printf, sprintf, etc.) where the decompiler
+  can't determine argument count
+- Specifying exact parameter types for indirect calls through function pointers
+- Correcting parameter types when the decompiler makes incorrect inferences
+
 This works like callfixups - overrides are registered and injected as XML
 during decompilation, without modifying the database.
 
-Usage:
-    from ghidra_annotations.annotations.pseudocode.proto import register_proto_overrides
+================================================================================
+GLOBAL PROTO_OVERRIDES FILE
+================================================================================
 
-    # Call after pyghidra.start() but before decompilation
-    register_proto_overrides(proto_overrides_json_path)
+Location:
+    annotations/<program>/pseudocode/proto_overrides.json
 
-JSON format:
+This file contains prototype overrides that apply to ALL functions in the
+program. The file is regenerated during export, but user modifications are
+preserved.
+
+JSON Format:
+    {
+        "proto_overrides": [
+            {
+                "address": "<call_site_address>",
+                "signature": "<C-style function signature>"
+            }
+        ]
+    }
+
+Fields:
+    - address: The address of the CALL instruction (not the target function)
+    - signature: C-style function signature with return type, name, and parameters
+
+Example (global proto_overrides.json):
     {
         "proto_overrides": [
             {
                 "address": "0x40acc3",
                 "signature": "void displayErrorAndQuit(char *fmt, char *file, int line)"
+            },
+            {
+                "address": "0x401234",
+                "signature": "int sprintf(char *buffer, char *format, int value1, int value2)"
+            },
+            {
+                "address": "0x405678",
+                "signature": "void __cdecl callback(void *ctx, int event, void *data)"
             }
         ]
     }
+
+================================================================================
+PER-FUNCTION PROTO_OVERRIDES (in function JSON files)
+================================================================================
+
+Location:
+    annotations/<program>/pseudocode/src/<function_name>.json
+
+Per-function proto overrides allow defining overrides that are specific to
+call sites within a particular function. These are stored in the function's
+JSON file and are preserved across exports.
+
+JSON Format (inside function JSON):
+    {
+        "function": { ... },
+        "proto_overrides": [
+            {
+                "address": "<call_site_address>",
+                "signature": "<C-style function signature>"
+            }
+        ],
+        ...other function data...
+    }
+
+Example (FUN_00401000.json):
+    {
+        "function": {
+            "name": "FUN_00401000",
+            "address": "0x00401000"
+        },
+        "proto_overrides": [
+            {
+                "address": "0x00401050",
+                "signature": "void printf(char *fmt, int arg1, char *arg2)"
+            },
+            {
+                "address": "0x00401080",
+                "signature": "int sscanf(char *str, char *fmt, int *out1, int *out2)"
+            }
+        ]
+    }
+
+================================================================================
+ALTERNATIVE FORMAT (explicit parameters)
+================================================================================
+
+Instead of a signature string, you can specify parameters explicitly:
+
+    {
+        "proto_overrides": [
+            {
+                "address": "0x401234",
+                "return_type": "int",
+                "params": [
+                    {"name": "buffer", "type": "char *"},
+                    {"name": "format", "type": "char *"},
+                    {"name": "value", "type": "int"}
+                ],
+                "calling_convention": "__cdecl",
+                "varargs": false
+            }
+        ]
+    }
+
+Fields for explicit format:
+    - return_type: Return type string (default: "void")
+    - params: List of parameter objects with "name" and "type"
+    - calling_convention: Calling convention (default: "__cdecl")
+    - varargs: Whether function takes variable arguments (default: false)
+
+================================================================================
+USAGE
+================================================================================
+
+    from ghidra_annotations.annotations.pseudocode.proto import (
+        register_proto_overrides, apply_proto_overrides
+    )
+
+    # Load overrides (call after pyghidra.start())
+    register_proto_overrides(proto_overrides_json_path)
+
+    # Apply to program (call inside program context)
+    apply_proto_overrides(currentProgram)
 """
 
 import os

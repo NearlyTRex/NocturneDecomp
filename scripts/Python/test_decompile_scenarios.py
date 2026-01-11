@@ -7,13 +7,114 @@ This script tests multiple function categories:
 - PARTIALLY BROKEN: Functions with other issues (variadic errors)
 - CONTROL: Clean functions that should not regress
 
-Usage:
-    python test_decompile_scenarios.py --scenarios  # Run all test scenarios
-    python test_decompile_scenarios.py <address>    # Test single function
+================================================================================
+PREREQUISITES
+================================================================================
 
-Examples:
-    python test_decompile_scenarios.py --scenarios --output-dir /tmp/scenarios
-    python test_decompile_scenarios.py 0x0051a300 --output /tmp/decompiled.c
+1. Ghidra with modifications: The user will compile and install new Ghidra
+   builds. Build logs are in ~/Logs/.
+
+2. PyGhidra: Must be installed and configured to use the modified Ghidra
+   at ~/Tools/Ghidra.
+
+3. NocturneEdit project: The Ghidra project at projects/NocturneEdit must exist.
+
+================================================================================
+USAGE
+================================================================================
+
+Run all scenarios:
+    cd ~/Repositories/NocturneDecomp
+    python3 scripts/Python/test_decompile_scenarios.py --scenarios
+
+Run all scenarios with output saved:
+    python3 scripts/Python/test_decompile_scenarios.py --scenarios --output-dir /tmp/scenarios
+
+Run a single function by address:
+    python3 scripts/Python/test_decompile_scenarios.py 0x40ac80
+
+NOTE: There is NO --scenario (singular) flag to filter by scenario name. The
+script either runs ALL scenarios with --scenarios, or runs a single function
+when you pass an address directly.
+
+================================================================================
+OUTPUT LOCATIONS
+================================================================================
+
+When using --output-dir:
+    - Decompiled C code: <output_dir>/<scenario>_<func>_<addr>.c
+    - Results JSON:      <output_dir>/results.json
+
+================================================================================
+SCENARIO ADDRESSES (quick reference)
+================================================================================
+
+EBP + Stack Alignment (scenario1):
+    - CLodMesh_findClosestPointOnMesh:     0x51a300
+    - CLodMesh_computePointToFaceDistance: 0x51a400
+    - CLodMesh_buildSpatialGrid:           0x516620
+
+EBP + Call Anchor (scenario2):
+    - superopt_unnamed_1:                  0x5c8b50
+    - EdgeListCheckPlusFreesLarge:         0x5c84c0
+
+Stack Probe Before Frame (scenario3):
+    - visualizeTextureAtlas:               0x447f20
+
+Variadic Issues (scenario6):
+    - CDemonActor_doCheckForInvalidPointers: 0x40ac80
+
+See TEST_SCENARIOS list below for complete function list.
+
+================================================================================
+SUPPORTED DECOMPILER FEATURES
+================================================================================
+
+This test script automatically loads and registers all 4 decompiler features:
+
+1. CALLFIXUPS
+   Replace calls to specific functions with custom pcode at decompile time.
+   - Global: annotations/<program>/pseudocode/callfixups.json
+   - Per-function: In function JSON files under "callfixups" key
+   - See callfixups.py for JSON format documentation.
+
+2. PROTO OVERRIDES
+   Fix variadic argument detection by specifying exact call site signatures.
+   - Global: annotations/<program>/pseudocode/proto_overrides.json
+   - Per-function: In function JSON files under "proto_overrides" key
+   - See proto.py for JSON format documentation.
+
+3. PCODE OVERRIDES
+   Replace pcode for specific instructions within a function.
+   - Per-function only: In function JSON files under "pcode_overrides" key
+   - See transforms.py for JSON format documentation.
+
+4. DECOMPILER FIXES
+   Enable experimental decompiler behavior on specific functions.
+   - Global: annotations/<program>/pseudocode/decompiler_fixes.json
+   - Per-function: In function JSON files under "decompiler_fixes" key
+   - Available fix: DFIX_MULTIEQUAL_STACK_TRACE (traces MULTIEQUAL inputs for
+     precise stack offsets, helps resolve BADSPACEBASE issues)
+   - See decompiler_fixes.py for JSON format documentation.
+
+================================================================================
+RELATED PATHS
+================================================================================
+
+Native decompiler library:
+    ~/Tools/Ghidra/Ghidra/Features/Decompiler/os/linux_x86_64/decompile
+
+Ghidra source (dev-testing branch):
+    ~/Repositories/Ghidra/Ghidra/Features/Decompiler/src/decompile/cpp/
+
+Key C++ files:
+    - decompiler_fixes.hh/cc: Per-function fix registry
+    - multiequal_trace.hh/cc: MULTIEQUAL stack offset tracing
+    - decomp_dbg.hh: Debug logging macros (compile-time)
+    - heritage.cc: Where fixes are applied during analysis
+
+Build logs:
+    ~/Logs/
 """
 
 import os
@@ -259,9 +360,15 @@ def print_issues(issues, prefix=""):
 
 
 def decompile_function(currentProgram, address_str, quiet=False):
-    """Decompile function at given address."""
+    """Decompile function at given address.
+
+    Automatically registers any preloaded decompiler_fixes with the interface.
+    """
     from ghidra.app.decompiler import DecompInterface
     from ghidra.util.task import ConsoleTaskMonitor
+    from ghidra_annotations.annotations.pseudocode.decompiler_fixes import (
+        register_decompiler_fixes, clear_decompiler_fixes
+    )
 
     # Parse address
     if isinstance(address_str, int):
@@ -294,15 +401,21 @@ def decompile_function(currentProgram, address_str, quiet=False):
     # Decompile
     decompiler = DecompInterface()
     decompiler.openProgram(currentProgram)
+
+    # Register any preloaded decompiler fixes
+    register_decompiler_fixes(decompiler)
+
     if not quiet:
         print("Decompiling...")
     result = decompiler.decompileFunction(func, 60, ConsoleTaskMonitor())
     if not result.decompileCompleted():
         if not quiet:
             print("ERROR: Decompilation failed or timed out")
+        clear_decompiler_fixes(decompiler)
         decompiler.dispose()
         return func, None
     code = result.getDecompiledFunction().getC()
+    clear_decompiler_fixes(decompiler)
     decompiler.dispose()
     return func, code
 
@@ -343,25 +456,10 @@ def run_scenarios(currentProgram, output_dir=None, scenarios=None):
 
             # Support both (addr, name) and (addr, name, flags) tuple formats
             if len(func_entry) == 3:
-                addr, func_name, flags = func_entry
+                addr, func_name, _flags = func_entry  # flags reserved for future use
             else:
                 addr, func_name = func_entry
-                flags = {}
             print(f"\n  [{func_name}] @ 0x{addr:08x}")
-
-            # Set environment variable for this function
-            # The C++ code reads this and truncates the log file at decompile start
-            os.environ['DECOMP_TARGET_FUNC'] = f"0x{addr:x}"
-
-            # Set per-function flags as environment variables
-            if flags.get('allow_register_passthrough'):
-                os.environ['DECOMP_ALLOW_REGISTER_PASSTHROUGH'] = '1'
-                print(f"    (allow_register_passthrough enabled)")
-            else:
-                os.environ.pop('DECOMP_ALLOW_REGISTER_PASSTHROUGH', None)
-
-            # Debug log path (C++ handles truncation, we just read it after)
-            debug_log = Path("/tmp/decomp_debug.log")
 
             # Decompile
             func, code = decompile_function(currentProgram, addr, quiet=True)
@@ -380,13 +478,6 @@ def run_scenarios(currentProgram, output_dir=None, scenarios=None):
             in_stack_count = len(issues['in_stack'])
             scenario_badspacebase += badspacebase_count
             scenario_in_stack += in_stack_count
-
-            # Check debug log for heritage MULTIEQUAL hits
-            heritage_multiequal = 0
-            if debug_log.exists():
-                with open(debug_log, 'r') as f:
-                    log_content = f.read()
-                    heritage_multiequal = log_content.count("checkMultiequalStackOffsets")
 
             # Compare with baseline if available
             baseline_path = find_baseline_file(f"0x{addr:08x}", func_name)
@@ -408,8 +499,6 @@ def run_scenarios(currentProgram, output_dir=None, scenarios=None):
             status = "OK" if badspacebase_count == 0 else f"BADSPACEBASE({badspacebase_count})"
             if in_stack_count > 0:
                 status += f" in_stack({in_stack_count})"
-            if heritage_multiequal > 0:
-                status += f" [heritage_meq:{heritage_multiequal}]"
 
             # Show baseline comparison
             if baseline_comparison:
@@ -434,7 +523,6 @@ def run_scenarios(currentProgram, output_dir=None, scenarios=None):
                 'name': func_name,
                 'badspacebase': badspacebase_count,
                 'in_stack': in_stack_count,
-                'heritage_multiequal': heritage_multiequal,
                 'warnings': len(issues['warnings']),
             }
             if baseline_comparison:
@@ -449,14 +537,6 @@ def run_scenarios(currentProgram, output_dir=None, scenarios=None):
                 out_file = output_dir / f"{scenario_name}_{func_name}_0x{addr:08x}.c"
                 with open(out_file, 'w') as f:
                     f.write(code)
-
-                # Save debug log too
-                if debug_log.exists():
-                    log_out = output_dir / f"{scenario_name}_{func_name}_0x{addr:08x}.log"
-                    with open(debug_log, 'r') as f:
-                        log_content = f.read()
-                    with open(log_out, 'w') as f:
-                        f.write(log_content)
 
         # Add scenario result
         results['scenarios'][scenario_name] = {
@@ -529,14 +609,14 @@ def main():
     parser.add_argument("--program-name", default=DEFAULT_PROGRAM_NAME,
                         help=f"Program name (default: {DEFAULT_PROGRAM_NAME})")
     parser.add_argument("--clear-log", "-c", action="store_true",
-                        help="Clear debug log before running")
+                        help="Clear /tmp/decomp_debug.log before running (only useful if DECOMP_DEBUG_ENABLED)")
     args = parser.parse_args()
 
     # Validate arguments
     if not args.scenarios and not args.address:
         parser.error("Either provide an address or use --scenarios")
 
-    # Clear debug log if requested
+    # Clear debug log if requested (only useful if decompiler built with DECOMP_DEBUG_ENABLED)
     debug_log = Path("/tmp/decomp_debug.log")
     if args.clear_log and debug_log.exists():
         debug_log.unlink()
@@ -576,6 +656,27 @@ def main():
         register_proto_overrides(str(annotations_dir))
     except Exception as e:
         print(f"Warning: Failed to load proto overrides: {e}")
+
+    # Preload decompiler fixes (global and per-function)
+    print("Preloading decompiler fixes...")
+    try:
+        from ghidra_annotations.annotations.pseudocode.decompiler_fixes import (
+            preload_decompiler_fixes, preload_per_function_decompiler_fixes
+        )
+        preload_decompiler_fixes(str(annotations_dir))
+        preload_per_function_decompiler_fixes(str(annotations_dir / "src"))
+    except Exception as e:
+        print(f"Warning: Failed to preload decompiler fixes: {e}")
+
+    # Register pcode overrides (per-function, from JSON files)
+    print("Registering pcode overrides...")
+    try:
+        from ghidra_annotations.annotations.pseudocode.exporter import register_pcode_overrides
+        pcode_count = register_pcode_overrides(str(annotations_dir / "src"))
+        if pcode_count > 0:
+            print(f"  Loaded {pcode_count} pcode overrides")
+    except Exception as e:
+        print(f"Warning: Failed to register pcode overrides: {e}")
 
     # Open project
     print(f"Opening project: {args.project_path}/{args.project_name}")
@@ -661,7 +762,7 @@ def main():
                     print("=" * 60)
                     print(code)
 
-                # Check for debug log
+                # Check for debug log (only populated if DECOMP_DEBUG_ENABLED was set at compile time)
                 debug_log = Path("/tmp/decomp_debug.log")
                 if debug_log.exists():
                     print("\n" + "=" * 60)

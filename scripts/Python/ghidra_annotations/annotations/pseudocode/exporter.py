@@ -72,7 +72,8 @@ from ghidra_annotations.annotations.pseudocode.proto import (
 )
 from ghidra_annotations.annotations.pseudocode.decompiler_fixes import (
     preload_decompiler_fixes, generate_decompiler_fixes_file,
-    register_decompiler_fixes, clear_decompiler_fixes
+    register_decompiler_fixes, clear_decompiler_fixes,
+    preload_per_function_decompiler_fixes, load_decompiler_fixes_for_function
 )
 
 
@@ -261,6 +262,9 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map):
 
     # Load proto overrides to preserve them in output
     proto_overrides = load_proto_overrides_for_function(existing_json_path)
+
+    # Load decompiler fixes to preserve them in output
+    decompiler_fixes = load_decompiler_fixes_for_function(existing_json_path)
     transform_time = time.time() - transform_start
 
     # === PYTHON-ONLY: Analysis using pre-computed data from worker ===
@@ -349,7 +353,8 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map):
         decompiled_code, result.assembly_code, result.func_xrefs, result.func_globals,
         result.func_calls, result.stack_frame, suspects, complexity, custom_replacements,
         stack_patterns, result.param_estimates, result.vtable_info, result.pcode_data,
-        pcode_overrides, resolved_suspects, result.is_ebp_frame, callfixups, proto_overrides)
+        pcode_overrides, resolved_suspects, result.is_ebp_frame, callfixups, proto_overrides,
+        decompiler_fixes)
     output_time = time.time() - output_start
 
     total_process_time = time.time() - process_start
@@ -416,8 +421,10 @@ def export_pseudocode(currentProgram, path):
 
     # Pre-load decompiler fixes configuration BEFORE cleanup to preserve user modifications
     timer.start_phase("Preload decompiler_fixes")
-    log_info("Pre-loading decompiler_fixes.json...")
+    log_info("Pre-loading global decompiler_fixes.json...")
     preload_decompiler_fixes(pseudocode_dir)
+    log_info("Pre-loading per-function decompiler_fixes from existing JSON files...")
+    preload_per_function_decompiler_fixes(pseudocode_src_dir)
     timer.end_phase()
 
     # Pre-load custom replacements BEFORE cleanup to preserve user modifications

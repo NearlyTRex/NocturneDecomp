@@ -1,5 +1,162 @@
 # Post-processing transforms for auto-fixable suspect patterns
 # Applies automatic fixes to decompiled code before output
+#
+# This module also handles P-code overrides for manual decompiler fixes.
+
+"""
+================================================================================
+P-CODE OVERRIDES
+================================================================================
+
+P-code overrides allow replacing the P-code generated for specific instructions
+during decompilation. This is the most powerful fix mechanism, allowing you to
+completely change how an instruction is interpreted by the decompiler.
+
+This is useful for:
+- Fixing BADSPACEBASE errors by providing correct stack pointer adjustments
+- Correcting ESP tracking after calls with non-standard calling conventions
+- Replacing problematic instructions with semantically equivalent P-code
+- Working around decompiler bugs or limitations
+
+NOTE: P-code overrides are ONLY per-function. There is no global P-code
+overrides file because overrides are specific to instruction addresses within
+a particular function.
+
+================================================================================
+PER-FUNCTION PCODE_OVERRIDES (in function JSON files)
+================================================================================
+
+Location:
+    annotations/<program>/pseudocode/src/<function_name>.json
+
+P-code overrides are stored in the function's JSON file and specify replacement
+P-code for specific instruction addresses within that function.
+
+JSON Format (inside function JSON):
+    {
+        "function": { ... },
+        "pcode_overrides": {
+            "<instruction_address>": [
+                "<pcode_op_1>",
+                "<pcode_op_2>",
+                ...
+            ]
+        },
+        ...other function data...
+    }
+
+Fields:
+    - instruction_address: Hex address of the instruction to override (e.g., "0x005a20b7")
+    - pcode_ops: List of P-code operations that replace the original instruction's P-code
+
+Example (FUN_005a2000.json):
+    {
+        "function": {
+            "name": "FUN_005a2000",
+            "address": "0x005a2000"
+        },
+        "pcode_overrides": {
+            "0x005a20b7": [
+                "COPY (register,0x200,1) = (const,0x0,1)",
+                "INT_SUB (register,0x10,4) = (register,0x10,4), (const,0x4,4)"
+            ],
+            "0x005a20c0": [
+                "INT_ADD (register,0x10,4) = (register,0x10,4), (const,0x8,4)"
+            ]
+        }
+    }
+
+================================================================================
+P-CODE FORMAT
+================================================================================
+
+P-code operations use the format:
+    OPCODE (output_varnode) = (input1), (input2), ...
+
+For operations without output (like STORE or BRANCH):
+    OPCODE (input1), (input2), ...
+
+Varnode format: (space, offset, size)
+    - register: (register, <offset>, <size>)
+        - ESP: (register, 0x10, 4)
+        - EAX: (register, 0x0, 4)
+        - ECX: (register, 0x4, 4)
+        - EDX: (register, 0x8, 4)
+        - EBX: (register, 0xc, 4)
+        - EBP: (register, 0x14, 4)
+    - const: (const, <value>, <size>)
+        - (const, 0x4, 4) = 4-byte constant with value 4
+    - unique: (unique, <offset>, <size>)
+        - Temporary storage for intermediate values
+    - ram: (ram, <address>, <size>)
+        - Memory at specific address
+
+Common opcodes:
+    - COPY: Copy value between varnodes
+    - INT_ADD: Add two integers
+    - INT_SUB: Subtract two integers
+    - INT_AND, INT_OR, INT_XOR: Bitwise operations
+    - INT_MULT, INT_DIV: Multiplication/division
+    - INT_SEXT, INT_ZEXT: Sign/zero extension
+    - LOAD: Load from memory
+    - STORE: Store to memory
+    - BRANCH, CBRANCH: Control flow
+    - CALL, RETURN: Function calls
+
+Example - Fix ESP after a call that pops extra arguments:
+    "0x00401234": [
+        "INT_ADD (register,0x10,4) = (register,0x10,4), (const,0x8,4)"
+    ]
+    This adds 8 to ESP after the instruction at 0x00401234.
+
+Example - Clear a register:
+    "0x00401234": [
+        "COPY (register,0x0,4) = (const,0x0,4)"
+    ]
+    This sets EAX to 0.
+
+================================================================================
+CUSTOM TEXT REPLACEMENTS
+================================================================================
+
+Custom text replacements allow string substitutions in the decompiled output.
+These are simpler than P-code overrides and work on the final text output.
+
+JSON Format (inside function JSON):
+    {
+        "function": { ... },
+        "replacements": [
+            {
+                "find": "<text to find>",
+                "replace": "<replacement text>",
+                "regex": false,
+                "description": "optional description"
+            }
+        ]
+    }
+
+Fields:
+    - find: The text to search for (or regex pattern if regex=true)
+    - replace: The replacement text
+    - regex: If true, treat "find" as a regex pattern (default: false)
+    - description: Optional human-readable description
+
+Example:
+    {
+        "replacements": [
+            {
+                "find": "CONCAT44(local_18,uStack_1c)",
+                "replace": "dLocalDouble",
+                "description": "Replace split double with combined variable"
+            },
+            {
+                "find": "in_stack_00000008",
+                "replace": "param_2",
+                "description": "Fix missing parameter"
+            }
+        ]
+    }
+"""
 
 import os
 import json as json_module
