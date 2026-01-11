@@ -10,6 +10,7 @@ with per-function control mechanisms that don't modify the program database.
 | [01_OVERVIEW_AND_OPPORTUNITIES.md](01_OVERVIEW_AND_OPPORTUNITIES.md) | Complete list of all identified opportunities, organized by implementation difficulty |
 | [02_GHIDRA_SOURCE_REFERENCE.md](02_GHIDRA_SOURCE_REFERENCE.md) | Detailed source code references with file paths and line numbers |
 | [03_QUICK_IMPLEMENTATION_GUIDE.md](03_QUICK_IMPLEMENTATION_GUIDE.md) | Copy-paste code snippets for implementing the easiest wins |
+| [04_PCODE_OVERRIDE_VALIDITY.md](04_PCODE_OVERRIDE_VALIDITY.md) | Analysis of P-code override stability and validity across Ghidra versions |
 
 ## Background
 
