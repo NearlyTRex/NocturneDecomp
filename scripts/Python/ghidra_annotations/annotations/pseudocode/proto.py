@@ -48,6 +48,8 @@ _proto_overrides_cache_dir = None
 _proto_overrides_json_path = None
 # Cache for the global proto_overrides.json content (to survive cleanup)
 _global_proto_overrides_cache = None
+# Pending overrides loaded by register_proto_overrides(), applied by apply_proto_overrides()
+_pending_proto_overrides = []
 
 
 # ============================================================================
@@ -374,35 +376,42 @@ def build_function_signature(override_def, dtm):
         return None
 
 
-def register_proto_overrides(proto_overrides_json_path=None):
-    """Register proto overrides with HighFunction for XML injection.
+def register_proto_overrides(annotations_dir=None):
+    """Load and cache proto overrides for later application.
 
     This must be called after pyghidra.start() but before any decompilation.
+    Call apply_proto_overrides(program) inside program context to actually register.
 
     Args:
-        proto_overrides_json_path: Path to proto_overrides.json file
+        annotations_dir: Directory containing proto_overrides.json, or direct path to JSON file
 
     Returns:
-        Number of proto overrides registered
+        Number of proto overrides loaded
     """
-    from ghidra.program.model.pcode import HighFunction
+    global _pending_proto_overrides
 
-    # Clear any existing registered overrides
-    HighFunction.clearProtoOverrides()
+    _pending_proto_overrides = []
 
-    if not proto_overrides_json_path or not os.path.exists(proto_overrides_json_path):
-        log_info("No proto_overrides.json found at %s" % proto_overrides_json_path)
+    # Find proto_overrides.json - accept either directory or direct path
+    if annotations_dir:
+        if annotations_dir.endswith('.json'):
+            json_path = annotations_dir
+        else:
+            json_path = os.path.join(annotations_dir, PROTO_OVERRIDES_FILENAME)
+    else:
+        json_path = None
+
+    if not json_path or not os.path.exists(json_path):
+        log_info("No proto_overrides.json found at %s" % json_path)
         return 0
 
-    overrides_list = load_proto_overrides_json(proto_overrides_json_path)
+    overrides_list = load_proto_overrides_json(json_path)
     if not overrides_list:
         return 0
 
-    registered_count = 0
-    log_info("Loading proto overrides from %s" % proto_overrides_json_path)
+    log_info("Loading proto overrides from %s" % json_path)
 
-    # Store overrides to be registered when we have program context
-    # For now, just validate and cache them
+    # Validate and cache overrides
     for override_def in overrides_list:
         addr_str = override_def.get('address')
         if not addr_str:
@@ -414,49 +423,40 @@ def register_proto_overrides(proto_overrides_json_path=None):
             log_info("Proto override at %s missing 'signature' field" % addr_str)
             continue
 
-        log_info("Proto override validated: %s -> %s" % (addr_str, sig_str))
-        registered_count += 1
+        _pending_proto_overrides.append(override_def)
 
-    log_info("Validated %d proto overrides (will be applied with program context)" % registered_count)
-    return registered_count
+    log_info("Loaded %d proto overrides (call apply_proto_overrides to register)" % len(_pending_proto_overrides))
+    return len(_pending_proto_overrides)
 
 
-def register_proto_overrides_for_program(program, proto_overrides_json_path=None):
-    """Register proto overrides for a specific program.
+def apply_proto_overrides(program):
+    """Apply cached proto overrides to the program.
 
-    This is the main entry point when you have a program context.
+    Must be called inside program context after register_proto_overrides().
 
     Args:
         program: The Ghidra Program
-        proto_overrides_json_path: Path to proto_overrides.json file
 
     Returns:
         Number of proto overrides registered
     """
+    global _pending_proto_overrides
     from ghidra.program.model.pcode import HighFunction
 
     # Clear any existing registered overrides
     HighFunction.clearProtoOverrides()
 
-    if not proto_overrides_json_path or not os.path.exists(proto_overrides_json_path):
-        log_info("No proto_overrides.json found at %s" % proto_overrides_json_path)
-        return 0
-
-    overrides_list = load_proto_overrides_json(proto_overrides_json_path)
-    if not overrides_list:
+    if not _pending_proto_overrides:
         return 0
 
     dtm = program.getDataTypeManager()
     addr_factory = program.getAddressFactory()
 
     registered_count = 0
-    log_info("Registering proto overrides from %s" % proto_overrides_json_path)
 
-    for override_def in overrides_list:
+    for override_def in _pending_proto_overrides:
         addr_str = override_def.get('address')
-        if not addr_str:
-            log_info("Proto override missing 'address' field")
-            continue
+        sig_str = override_def.get('signature')
 
         # Parse address
         try:
@@ -469,13 +469,13 @@ def register_proto_overrides_for_program(program, proto_overrides_json_path=None
             log_info("Invalid address '%s': %s" % (addr_str, str(e)))
             continue
 
-        # Build signature (returns FunctionDefinitionDataType which implements FunctionSignature)
+        # Build signature
         signature = build_function_signature(override_def, dtm)
         if not signature:
             log_info("Could not build signature for override at %s" % addr_str)
             continue
 
-        # Register the FunctionSignature directly
+        # Register
         try:
             HighFunction.registerProtoOverride(call_addr, signature)
             log_info("Registered proto override: %s" % addr_str)
@@ -485,68 +485,6 @@ def register_proto_overrides_for_program(program, proto_overrides_json_path=None
 
     log_info("Registered %d proto overrides" % registered_count)
     return registered_count
-
-
-def register_proto_overrides_from_directory(program, base_dir):
-    """Scan directory for JSON files and register any proto_overrides found.
-
-    Args:
-        program: The Ghidra Program
-        base_dir: Directory to scan for JSON files
-
-    Returns:
-        Number of overrides registered
-    """
-    from ghidra.program.model.pcode import HighFunction
-
-    if not base_dir or not os.path.exists(base_dir):
-        return 0
-
-    total_registered = 0
-
-    # Check for dedicated proto_overrides.json first
-    dedicated_path = os.path.join(base_dir, PROTO_OVERRIDES_FILENAME)
-    if os.path.exists(dedicated_path):
-        total_registered += register_proto_overrides_for_program(program, dedicated_path)
-
-    # Also scan function JSON files for embedded proto_overrides
-    try:
-        for root, dirs, files in os.walk(base_dir):
-            for filename in files:
-                if not filename.endswith('.json'):
-                    continue
-                if filename == PROTO_OVERRIDES_FILENAME:
-                    continue  # Already processed
-
-                json_path = os.path.join(root, filename)
-                overrides = load_proto_overrides_json(json_path)
-                if overrides:
-                    # Register these overrides
-                    dtm = program.getDataTypeManager()
-                    addr_factory = program.getAddressFactory()
-
-                    for override_def in overrides:
-                        addr_str = override_def.get('address')
-                        if not addr_str:
-                            continue
-
-                        try:
-                            if addr_str.startswith('0x'):
-                                addr_str_clean = addr_str[2:]
-                            else:
-                                addr_str_clean = addr_str
-                            call_addr = addr_factory.getDefaultAddressSpace().getAddress(int(addr_str_clean, 16))
-
-                            signature = build_function_signature(override_def, dtm)
-                            if signature:
-                                HighFunction.registerProtoOverride(call_addr, signature)
-                                total_registered += 1
-                                log_info("Registered proto override from %s: %s" % (filename, addr_str))
-                        except Exception as e:
-                            log_info("Error registering from %s: %s" % (filename, str(e)))
-    except Exception as e:
-        log_info("Error scanning for proto_overrides: %s" % str(e))
-    return total_registered
 
 
 def clear_proto_overrides():

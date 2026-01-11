@@ -20,9 +20,11 @@ import os
 import sys
 import argparse
 import re
+import json
+import traceback
 from pathlib import Path
 
-# Test scenarios from spacebase_debug.hh
+# Test scenarios for validating decompilation fixes
 # Each scenario has: (name, description, [(address, func_name), ...])
 TEST_SCENARIOS = [
     # ============================================================================
@@ -198,15 +200,15 @@ def analyze_decompilation(code):
     if variadic_pattern.search(code):
         # This might be missing arguments
         issues['variadic_missing'] = True
-
     return issues
 
 
 def compare_decompilations(baseline_code, new_code):
     """Compare baseline and new decompilations."""
+
+    # Setup comparison
     baseline_issues = analyze_decompilation(baseline_code)
     new_issues = analyze_decompilation(new_code)
-
     comparison = {
         'baseline_issues': baseline_issues,
         'new_issues': new_issues,
@@ -218,50 +220,41 @@ def compare_decompilations(baseline_code, new_code):
     for issue_type in ['badspacebase', 'in_stack', 'unaff_', 'extraout_', 'warnings']:
         baseline_count = len(baseline_issues[issue_type])
         new_count = len(new_issues[issue_type])
-
         if new_count < baseline_count:
             comparison['improvements'].append(f"{issue_type}: {baseline_count} -> {new_count} (-{baseline_count - new_count})")
         elif new_count > baseline_count:
             comparison['regressions'].append(f"{issue_type}: {baseline_count} -> {new_count} (+{new_count - baseline_count})")
-
     return comparison
 
 
 def print_issues(issues, prefix=""):
     """Print issues in a readable format."""
     total = 0
-
     if issues['badspacebase']:
         print(f"{prefix}BADSPACEBASE occurrences: {len(issues['badspacebase'])}")
         for line_no, line in issues['badspacebase'][:5]:  # Show first 5
             print(f"{prefix}  Line {line_no}: {line[:80]}...")
         total += len(issues['badspacebase'])
-
     if issues['in_stack']:
         print(f"{prefix}in_stack_ variables: {len(issues['in_stack'])}")
         for line_no, var, line in issues['in_stack'][:5]:
             print(f"{prefix}  Line {line_no}: {var}")
         total += len(issues['in_stack'])
-
     if issues['unaff_']:
         print(f"{prefix}unaff_ variables: {len(issues['unaff_'])}")
         for line_no, var, line in issues['unaff_'][:5]:
             print(f"{prefix}  Line {line_no}: {var}")
         total += len(issues['unaff_'])
-
     if issues['extraout_']:
         print(f"{prefix}extraout_ variables: {len(issues['extraout_'])}")
         total += len(issues['extraout_'])
-
     if issues['warnings']:
         print(f"{prefix}Ghidra warnings: {len(issues['warnings'])}")
         for line_no, warning in issues['warnings'][:3]:
             print(f"{prefix}  Line {line_no}: {warning[:60]}...")
         total += len(issues['warnings'])
-
     if issues['variadic_missing']:
         print(f"{prefix}Possible missing variadic arguments detected")
-
     return total
 
 
@@ -281,16 +274,18 @@ def decompile_function(currentProgram, address_str, quiet=False):
     # Get function at address
     func_mgr = currentProgram.getFunctionManager()
     func = func_mgr.getFunctionAt(addr)
-
     if func is None:
+
         # Try to find function containing this address
         func = func_mgr.getFunctionContaining(addr)
 
+    # No function found
     if func is None:
         if not quiet:
             print(f"ERROR: No function found at address {address_str}")
         return None, None
 
+    # Print function info
     if not quiet:
         print(f"Function: {func.getName()}")
         print(f"Address: {func.getEntryPoint()}")
@@ -299,69 +294,77 @@ def decompile_function(currentProgram, address_str, quiet=False):
     # Decompile
     decompiler = DecompInterface()
     decompiler.openProgram(currentProgram)
-
     if not quiet:
         print("Decompiling...")
     result = decompiler.decompileFunction(func, 60, ConsoleTaskMonitor())
-
     if not result.decompileCompleted():
         if not quiet:
             print("ERROR: Decompilation failed or timed out")
         decompiler.dispose()
         return func, None
-
     code = result.getDecompiledFunction().getC()
     decompiler.dispose()
-
     return func, code
 
 
 def run_scenarios(currentProgram, output_dir=None, scenarios=None):
     """Run all test scenarios and collect results."""
-    import json
 
+    # Get scenario
     if scenarios is None:
         scenarios = TEST_SCENARIOS
 
+    # Make output dir
     if output_dir:
         output_dir = Path(output_dir)
         output_dir.mkdir(parents=True, exist_ok=True)
 
+    # Create result
     results = {
         'summary': {},
         'scenarios': {},
     }
 
+    # Run scenarios
     total_functions = 0
     total_badspacebase = 0
     total_in_stack = 0
     total_badspacebase_delta = 0
     total_in_stack_delta = 0
     functions_with_baseline = 0
-
     for scenario_name, scenario_desc, functions in scenarios:
         print(f"\n{'='*70}")
         print(f"SCENARIO: {scenario_desc}")
         print(f"{'='*70}")
-
         scenario_results = []
         scenario_badspacebase = 0
         scenario_in_stack = 0
+        for func_entry in functions:
 
-        for addr, func_name in functions:
+            # Support both (addr, name) and (addr, name, flags) tuple formats
+            if len(func_entry) == 3:
+                addr, func_name, flags = func_entry
+            else:
+                addr, func_name = func_entry
+                flags = {}
             print(f"\n  [{func_name}] @ 0x{addr:08x}")
 
             # Set environment variable for this function
+            # The C++ code reads this and truncates the log file at decompile start
             os.environ['DECOMP_TARGET_FUNC'] = f"0x{addr:x}"
 
-            # Clear debug log
+            # Set per-function flags as environment variables
+            if flags.get('allow_register_passthrough'):
+                os.environ['DECOMP_ALLOW_REGISTER_PASSTHROUGH'] = '1'
+                print(f"    (allow_register_passthrough enabled)")
+            else:
+                os.environ.pop('DECOMP_ALLOW_REGISTER_PASSTHROUGH', None)
+
+            # Debug log path (C++ handles truncation, we just read it after)
             debug_log = Path("/tmp/decomp_debug.log")
-            if debug_log.exists():
-                debug_log.unlink()
 
             # Decompile
             func, code = decompile_function(currentProgram, addr, quiet=True)
-
             if code is None:
                 print(f"    ERROR: Decompilation failed")
                 scenario_results.append({
@@ -375,7 +378,6 @@ def run_scenarios(currentProgram, output_dir=None, scenarios=None):
             issues = analyze_decompilation(code)
             badspacebase_count = len(issues['badspacebase'])
             in_stack_count = len(issues['in_stack'])
-
             scenario_badspacebase += badspacebase_count
             scenario_in_stack += in_stack_count
 
@@ -426,9 +428,7 @@ def run_scenarios(currentProgram, output_dir=None, scenarios=None):
                     status += f" [vs baseline: {', '.join(delta_parts)}]"
                 else:
                     status += " [no change vs baseline]"
-
             print(f"    {status}")
-
             result = {
                 'address': f"0x{addr:08x}",
                 'name': func_name,
@@ -458,17 +458,16 @@ def run_scenarios(currentProgram, output_dir=None, scenarios=None):
                     with open(log_out, 'w') as f:
                         f.write(log_content)
 
+        # Add scenario result
         results['scenarios'][scenario_name] = {
             'description': scenario_desc,
             'functions': scenario_results,
             'total_badspacebase': scenario_badspacebase,
             'total_in_stack': scenario_in_stack,
         }
-
         total_functions += len(functions)
         total_badspacebase += scenario_badspacebase
         total_in_stack += scenario_in_stack
-
         print(f"\n  Scenario totals: BADSPACEBASE={scenario_badspacebase}, in_stack={scenario_in_stack}")
 
     # Summary
@@ -481,13 +480,13 @@ def run_scenarios(currentProgram, output_dir=None, scenarios=None):
         'total_in_stack_delta': total_in_stack_delta,
     }
 
+    # Overall summary
     print(f"\n{'='*70}")
     print("OVERALL SUMMARY")
     print(f"{'='*70}")
     print(f"Total functions tested: {total_functions}")
     print(f"Total BADSPACEBASE occurrences: {total_badspacebase}")
     print(f"Total in_stack_ variables: {total_in_stack}")
-
     if functions_with_baseline > 0:
         print(f"\nBASELINE COMPARISON ({functions_with_baseline} functions with baselines):")
         if total_badspacebase_delta > 0:
@@ -496,7 +495,6 @@ def run_scenarios(currentProgram, output_dir=None, scenarios=None):
             print(f"  BADSPACEBASE: {total_badspacebase_delta} (IMPROVEMENT)")
         else:
             print(f"  BADSPACEBASE: no change")
-
         if total_in_stack_delta > 0:
             print(f"  in_stack_: +{total_in_stack_delta} (REGRESSION)")
         elif total_in_stack_delta < 0:
@@ -510,7 +508,6 @@ def run_scenarios(currentProgram, output_dir=None, scenarios=None):
         with open(json_file, 'w') as f:
             json.dump(results, f, indent=2)
         print(f"\nResults saved to: {json_file}")
-
     return results
 
 
@@ -561,22 +558,39 @@ def main():
     from ghidra_annotations.util.log import setup_logging
     setup_logging("test_decompile")
 
-    # Register callfixups for decompilation
+    # Annotations directory for this program
+    annotations_dir = Path(__file__).parent.parent.parent / "annotations" / args.program_name / "pseudocode"
+
+    # Register callfixups
     print("Registering callfixups...")
     try:
         from ghidra_annotations.annotations.pseudocode.callfixups import register_callfixups
-        register_callfixups()
+        register_callfixups(str(annotations_dir))
     except Exception as e:
         print(f"Warning: Failed to register callfixups: {e}")
+
+    # Register proto overrides
+    print("Registering proto overrides...")
+    try:
+        from ghidra_annotations.annotations.pseudocode.proto import register_proto_overrides
+        register_proto_overrides(str(annotations_dir))
+    except Exception as e:
+        print(f"Warning: Failed to load proto overrides: {e}")
 
     # Open project
     print(f"Opening project: {args.project_path}/{args.project_name}")
     print(f"Opening program: {args.program_name}")
-
     exit_code = 0
     try:
         project = pyghidra.open_project(args.project_path, args.project_name)
         with pyghidra.program_context(project, "/" + args.program_name) as currentProgram:
+
+            # Apply proto overrides (loaded earlier by register_proto_overrides)
+            try:
+                from ghidra_annotations.annotations.pseudocode.proto import apply_proto_overrides
+                apply_proto_overrides(currentProgram)
+            except Exception as e:
+                print(f"Warning: Failed to apply proto overrides: {e}")
 
             # Scenarios mode
             if args.scenarios:
@@ -661,7 +675,6 @@ def main():
         project.close()
     except Exception as e:
         print(f"ERROR: {str(e)}")
-        import traceback
         traceback.print_exc()
         exit_code = 1
 

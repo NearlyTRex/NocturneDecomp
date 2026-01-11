@@ -260,16 +260,13 @@ def load_callfixups_for_function(json_path):
 # Registration functions
 # ============================================================================
 
-def register_callfixups(callfixups_json_path=None):
+def register_callfixups(annotations_dir=None):
     """Register callfixups with Ghidra's DecompileCallback.
 
     This must be called after pyghidra.start() but before any decompilation.
 
-    If callfixups_json_path is provided, loads callfixups from that file.
-    Otherwise, uses the Python DEFAULT_CALLFIXUPS as a fallback.
-
     Args:
-        callfixups_json_path: Optional path to callfixups.json file
+        annotations_dir: Directory containing callfixups.json, or direct path to JSON file
 
     Returns:
         Number of callfixups registered
@@ -280,10 +277,19 @@ def register_callfixups(callfixups_json_path=None):
     # Clear any existing callfixups
     DecompileCallback.clearCallFixups()
 
+    # Find callfixups.json - accept either directory or direct path
+    if annotations_dir:
+        if annotations_dir.endswith('.json'):
+            json_path = annotations_dir
+        else:
+            json_path = os.path.join(annotations_dir, CALLFIXUPS_FILENAME)
+    else:
+        json_path = None
+
     # Load callfixups from JSON file or use defaults
-    if callfixups_json_path and os.path.exists(callfixups_json_path):
-        callfixups = load_callfixups_json(callfixups_json_path)
-        log_info("Loading callfixups from %s" % callfixups_json_path)
+    if json_path and os.path.exists(json_path):
+        callfixups = load_callfixups_json(json_path)
+        log_info("Loading callfixups from %s" % json_path)
     else:
         callfixups = DEFAULT_CALLFIXUPS
         log_info("Using built-in default callfixups")
@@ -309,74 +315,6 @@ def register_callfixups(callfixups_json_path=None):
 
     log_info("Registered %d callfixups" % registered_count)
     return registered_count
-
-
-def register_callfixups_from_directory(base_dir):
-    """Load and register callfixups from JSON files in a directory.
-
-    Scans JSON files for 'callfixups' key which should be a dict
-    mapping target names to fixup definitions.
-
-    Also populates the cache for preserving callfixups in output JSON.
-
-    Args:
-        base_dir: Directory containing function JSON files
-
-    Returns:
-        Number of callfixups loaded and registered
-    """
-    from ghidra.app.decompiler import DecompileCallback
-    from java.util import Arrays
-
-    if not base_dir or not os.path.exists(base_dir):
-        return 0
-
-    loaded_count = 0
-
-    # Recursively scan for all .json files
-    try:
-        for root, dirs, files in os.walk(base_dir):
-            for filename in files:
-                if not filename.endswith('.json'):
-                    continue
-
-                json_path = os.path.join(root, filename)
-                try:
-                    with open(json_path, 'r') as f:
-                        data = json.load(f)
-
-                    callfixups = data.get('callfixups')
-                    if not callfixups or not isinstance(callfixups, dict):
-                        continue
-
-                    # Cache for preservation in output JSON
-                    set_callfixups_cache(json_path, callfixups)
-
-                    # Register each callfixup
-                    for target_name, fixup_def in callfixups.items():
-                        pcode_lines = fixup_def.get("pcode", [])
-                        if not pcode_lines:
-                            continue
-
-                        fixup_type = fixup_def.get("type", "exact")
-
-                        if fixup_type == "pattern":
-                            DecompileCallback.registerCallFixupPattern(target_name, Arrays.asList(pcode_lines))
-                        else:
-                            DecompileCallback.registerCallFixup(target_name, Arrays.asList(pcode_lines))
-
-                        loaded_count += 1
-                        log_info("Registered callfixup from JSON: %s (%s)" % (target_name, fixup_type))
-
-                except (json.JSONDecodeError, ValueError, IOError):
-                    continue
-    except Exception:
-        pass
-
-    if loaded_count > 0:
-        log_info("Loaded %d callfixups from JSON files" % loaded_count)
-
-    return loaded_count
 
 
 def clear_callfixups():

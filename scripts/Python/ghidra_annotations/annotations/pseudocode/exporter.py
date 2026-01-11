@@ -61,12 +61,12 @@ from ghidra_annotations.annotations.pseudocode.pcode import (
     load_switch_table_data, load_noreturn_functions
 )
 from ghidra_annotations.annotations.pseudocode.callfixups import (
-    register_callfixups, clear_callfixups, register_callfixups_from_directory,
+    register_callfixups, clear_callfixups,
     preload_callfixups, load_callfixups_for_function, generate_callfixups_file,
     preload_global_callfixups
 )
 from ghidra_annotations.annotations.pseudocode.proto import (
-    register_proto_overrides_for_program, register_proto_overrides_from_directory,
+    register_proto_overrides, apply_proto_overrides,
     preload_proto_overrides, load_proto_overrides_for_function,
     generate_proto_overrides_file, preload_global_proto_overrides
 )
@@ -430,11 +430,8 @@ def export_pseudocode(currentProgram, path):
     callfixups_json_path = generate_callfixups_file(pseudocode_dir)
 
     # Register callfixups for CRT functions (e.g., stack_probe)
-    # First register from the global callfixups.json, then any per-function ones
     callfixup_count = register_callfixups(callfixups_json_path)
-    json_callfixup_count = register_callfixups_from_directory(pseudocode_src_dir)
-    total_callfixups = callfixup_count + json_callfixup_count
-    if total_callfixups > 0:
+    if callfixup_count > 0:
         has_callfixups = DecompileCallback.hasCallFixups()
         log_info("Java hasCallFixups() returns: %s" % has_callfixups)
 
@@ -442,12 +439,9 @@ def export_pseudocode(currentProgram, path):
     proto_overrides_json_path = generate_proto_overrides_file(pseudocode_dir)
 
     # Register proto overrides for variadic/ambiguous calls
-    # First register from the global proto_overrides.json, then any per-function ones
-    proto_override_count = register_proto_overrides_for_program(currentProgram, proto_overrides_json_path)
-    json_proto_override_count = register_proto_overrides_from_directory(currentProgram, pseudocode_src_dir)
-    total_proto_overrides = proto_override_count + json_proto_override_count
-    if total_proto_overrides > 0:
-        from ghidra.program.model.pcode import HighFunction
+    proto_override_count = register_proto_overrides(proto_overrides_json_path)
+    apply_proto_overrides(currentProgram)
+    if proto_override_count > 0:
         has_proto_overrides = HighFunction.hasRegisteredProtoOverrides()
         log_info("Java hasRegisteredProtoOverrides() returns: %s" % has_proto_overrides)
 
