@@ -26,14 +26,20 @@ These four mechanisms are already working in the NocturneDecomp annotation syste
 The original call is NOT executed - the pcode entirely replaces it.
 
 **Ghidra Integration:**
-- `DecompileCallback.registerCallFixup(String name, List<String> pcode)`
-- `DecompileCallback.registerCallFixupPattern(String pattern, List<String> pcode)`
+- `DecompileCallback.registerCallFixup(String name, List<String> pcode, int paramshift)`
+- `DecompileCallback.registerCallFixupPattern(String pattern, List<String> pcode, int paramshift)`
+- `DecompileCallback.registerCallFixupTargets(List<String> targets, List<String> pcode, int paramshift)`
 - `DecompileCallback.clearCallFixups()`
 
 **Use Cases:**
 - Replace `_chkstk` / `__alloca_probe` with stack adjustment (function doesn't need to run)
 - Model the net effect of helper functions without actually calling them
 - Fix stack adjustments from non-standard calling conventions
+
+**Features:**
+- `type`: "exact" (exact name), "pattern" (substring match), or "targets" (multiple exact names)
+- `paramshift`: Number of parameters to remove from front of parameter list
+- `targets`: Array of function names (for type="targets")
 
 **Note:** If you need the original call to execute with additional pcode around it,
 use P-code Overrides instead.
@@ -46,6 +52,13 @@ use P-code Overrides instead.
       "type": "exact",
       "pcode": ["INT_SUB (register,0x10,4) = (register,0x10,4), (register,0x0,4)"],
       "description": "Replace stack probe with ESP = ESP - EAX"
+    },
+    "alloca_variants": {
+      "type": "targets",
+      "targets": ["__alloca_probe", "__alloca_probe_16", "_alloca"],
+      "pcode": ["INT_SUB (register,0x10,4) = (register,0x10,4), (register,0x0,4)"],
+      "paramshift": 0,
+      "description": "Replace alloca variants"
     }
   }
 }
@@ -666,6 +679,64 @@ All files are relative to: `~/Repositories/Ghidra/Ghidra/`
 8. **DFIX_DISABLE_POINTER_INFERENCE** - Requires C++ changes but high value
 9. **Jump table overrides** - Complex but useful for switch statements
 10. **Comment injection** - Nice to have for annotations
+
+---
+
+## Future P-code Injection Features
+
+These cspec features are NOT yet implemented but could be added in the future:
+
+### `<callotherfixup>` - Replace CALLOTHER Operations
+
+Replaces `CALLOTHER` pcode operations (user-defined/processor-specific ops), NOT regular
+function calls. Used for modeling processor-specific operations like syscalls.
+
+**cspec syntax:**
+```xml
+<callotherfixup targetop="syscall">
+    <input name="syscall_num" size="4"/>
+    <output name="result" size="4"/>
+    <pcode><body><![CDATA[
+        result = syscall_num;
+    ]]></body></pcode>
+</callotherfixup>
+```
+
+**Key differences from callfixup:**
+- Targets `CALLOTHER` pcode ops, not `CALL` ops
+- Has formal `<input>` and `<output>` parameter bindings with size constraints
+- Used for processor intrinsics, not function calls
+
+**Use cases:**
+- Modeling syscall semantics
+- Processor-specific intrinsics (CPUID, RDTSC, etc.)
+- Custom user-defined operations
+
+### `uponentry` / `uponreturn` - Calling Convention Injection
+
+These inject pcode at function boundaries based on **calling convention**, not function name.
+
+**How they differ from callfixup:**
+- Tied to prototype models (calling conventions), not specific function names
+- `uponentry`: Injected at START of functions using that calling convention
+- `uponreturn`: Injected AFTER calls return (in the caller) for that convention
+
+**cspec syntax (in prototype definition):**
+```xml
+<prototype name="__ppc64_toc" inject="uponreturn">
+    <pcode><body><![CDATA[
+        local saveR2ptr = r1 + 0x28;
+        *:8 saveR2ptr = r2Save;
+    ]]></body></pcode>
+</prototype>
+```
+
+**Use cases:**
+- PPC64 TOC pointer restoration after calls
+- Calling conventions with non-standard prologue/epilogue
+- ABI-specific register save/restore patterns
+
+**Implementation complexity:** High - requires integration with prototype model system
 
 ---
 

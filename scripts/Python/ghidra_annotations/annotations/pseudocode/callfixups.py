@@ -25,22 +25,31 @@ The file is regenerated during export, but user modifications are preserved.
 JSON Format:
     {
         "callfixups": {
-            "<target_function_name>": {
-                "type": "exact" | "pattern",
+            "<key>": {
+                "type": "exact" | "pattern" | "targets",
+                "targets": ["<name1>", "<name2>", ...],  // only for type="targets"
                 "pcode": [
                     "<pcode_op_1>",
                     "<pcode_op_2>",
                     ...
                 ],
+                "paramshift": 0,  // optional, number of params to remove from front
                 "description": "optional description of what this fixes"
             }
         }
     }
 
 Fields:
-    - target_function_name: The name of the function whose calls should be replaced
-    - type: "exact" for exact name match, "pattern" for substring/glob match
+    - key: For "exact" type, this is the function name. For "pattern", the substring.
+           For "targets", this is just an identifier.
+    - type: Match type:
+        - "exact": Exact function name match (key is the function name)
+        - "pattern": Substring match (key is contained in function name)
+        - "targets": Multiple exact targets (use "targets" array for names)
+    - targets: (only for type="targets") Array of exact function names to match
     - pcode: List of P-code operations that replace the call (the call is NOT executed)
+    - paramshift: (optional) Number of parameters to shift/remove from front of param list.
+                  Used when callfixup "consumes" hidden parameters.
     - description: Optional human-readable description
 
 Example (global callfixups.json):
@@ -53,12 +62,21 @@ Example (global callfixups.json):
                 ],
                 "description": "Replace stack probe with ESP = ESP - EAX"
             },
-            "__alloca_probe": {
-                "type": "pattern",
+            "alloca_variants": {
+                "type": "targets",
+                "targets": ["__alloca_probe", "__alloca_probe_16", "_alloca"],
                 "pcode": [
                     "INT_SUB (register,0x10,4) = (register,0x10,4), (register,0x0,4)"
                 ],
                 "description": "Replace alloca probe variants with stack adjustment"
+            },
+            "FUN_00401000": {
+                "type": "pattern",
+                "pcode": [
+                    "COPY (register,0x0,4) = (const,0x0,4)"
+                ],
+                "paramshift": 1,
+                "description": "Function with hidden first parameter"
             }
         }
     }
@@ -401,18 +419,30 @@ def register_callfixups(annotations_dir=None):
     for target_name, fixup_def in callfixups.items():
         fixup_type = fixup_def.get("type", "exact")
         pcode_lines = fixup_def.get("pcode", [])
+        paramshift = fixup_def.get("paramshift", 0)
 
         if not pcode_lines:
             continue
 
+        pcode_list = Arrays.asList(pcode_lines)
+        shift_info = " (paramshift=%d)" % paramshift if paramshift > 0 else ""
+
         if fixup_type == "pattern":
-            DecompileCallback.registerCallFixupPattern(target_name, Arrays.asList(pcode_lines))
+            DecompileCallback.registerCallFixupPattern(target_name, pcode_list, paramshift)
             registered_count += 1
-            log_info("Registered callfixup (pattern): *%s*" % target_name)
+            log_info("Registered callfixup (pattern): *%s*%s" % (target_name, shift_info))
+        elif fixup_type == "targets":
+            # Multiple exact targets specified in "targets" array
+            targets = fixup_def.get("targets", [])
+            if targets:
+                DecompileCallback.registerCallFixupTargets(Arrays.asList(targets), pcode_list, paramshift)
+                registered_count += len(targets)
+                log_info("Registered callfixup (targets): %s%s" % (targets, shift_info))
         else:
-            DecompileCallback.registerCallFixup(target_name, Arrays.asList(pcode_lines))
+            # Default: exact match using the key as target name
+            DecompileCallback.registerCallFixup(target_name, pcode_list, paramshift)
             registered_count += 1
-            log_info("Registered callfixup (exact): %s" % target_name)
+            log_info("Registered callfixup (exact): %s%s" % (target_name, shift_info))
 
     log_info("Registered %d callfixups" % registered_count)
     return registered_count
