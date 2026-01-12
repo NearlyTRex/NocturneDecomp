@@ -22,7 +22,8 @@ These four mechanisms are already working in the NocturneDecomp annotation syste
 
 ### 1. Call Fixups (`callfixups.py`)
 
-**Purpose:** Replace calls to specific functions with custom P-code at decompile time.
+**Purpose:** Completely replace calls to specific functions with custom P-code at decompile time.
+The original call is NOT executed - the pcode entirely replaces it.
 
 **Ghidra Integration:**
 - `DecompileCallback.registerCallFixup(String name, List<String> pcode)`
@@ -30,9 +31,12 @@ These four mechanisms are already working in the NocturneDecomp annotation syste
 - `DecompileCallback.clearCallFixups()`
 
 **Use Cases:**
-- Replace `_chkstk` / `__alloca_probe` with stack adjustment
-- Inline simple helper functions
+- Replace `_chkstk` / `__alloca_probe` with stack adjustment (function doesn't need to run)
+- Model the net effect of helper functions without actually calling them
 - Fix stack adjustments from non-standard calling conventions
+
+**Note:** If you need the original call to execute with additional pcode around it,
+use P-code Overrides instead.
 
 **JSON Format:**
 ```json

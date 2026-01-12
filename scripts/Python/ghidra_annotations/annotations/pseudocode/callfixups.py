@@ -3,13 +3,14 @@
 
 """
 Callfixups allow replacing calls to specific functions with custom pcode
-during decompilation. This is similar to Ghidra's cspec callfixup mechanism,
-but applies at decompile time rather than analysis time.
+during decompilation. This matches Ghidra's cspec callfixup mechanism behavior:
+the entire CALL instruction is replaced with the specified pcode - the original
+call is NOT executed.
 
 This is useful for:
 - Replacing calls to compiler intrinsics (e.g., __alloca_probe, _chkstk)
+- Modeling the net effect of functions that don't need to actually execute
 - Fixing stack adjustments that confuse the decompiler
-- Inlining simple helper functions at call sites
 
 ================================================================================
 GLOBAL CALLFIXUPS FILE
@@ -39,7 +40,7 @@ JSON Format:
 Fields:
     - target_function_name: The name of the function whose calls should be replaced
     - type: "exact" for exact name match, "pattern" for substring/glob match
-    - pcode: List of P-code operations to inject instead of the call
+    - pcode: List of P-code operations that replace the call (the call is NOT executed)
     - description: Optional human-readable description
 
 Example (global callfixups.json):
