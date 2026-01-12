@@ -10,24 +10,38 @@ void shape_design_c_showModelPartsList_FUN_0045dbe0(void)
 
 {
   BADSPACEBASE *in_ESP;
+  char local_cc [172];
   int local_20;
   int local_1c;
   int local_18;
   
   engine_2d_c_clearInputAndWait_FUN_00403260();
   for (local_20 = 0; local_20 < g_PartsCount; local_20 = local_20 + g_WindowHeight / 0xb) {
+    local_cc[4] = '&';
+    local_cc[5] = -0x24;
+    local_cc[6] = 'E';
+    local_cc[7] = '\0';
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
     local_1c = 0;
     for (local_18 = local_20; local_18 < g_WindowHeight / 0xb + local_20; local_18 = local_18 + 1) {
       if (local_18 < g_PartsCount) {
-        crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff34,"Part %d : %s");
-        engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff34,0,local_1c);
+        crt_stdio_c_sprintf_FUN_005fdbd0
+                  (local_cc,"Part %d : %s",local_18,g_ModelPartNames + local_18);
+        engine_2d_c_drawText_FUN_00401fd0(local_cc,0,local_1c);
         local_1c = local_1c + 0xb;
       }
     }
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
+    local_cc[0] = -0x53;
+    local_cc[1] = -0x24;
+    local_cc[2] = 'E';
+    local_cc[3] = '\0';
     wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
   }
+  local_cc[4] = -0x49;
+  local_cc[5] = -0x24;
+  local_cc[6] = 'E';
+  local_cc[7] = '\0';
   engine_2d_c_clearInputAndWait_FUN_00403260();
   return;
 }

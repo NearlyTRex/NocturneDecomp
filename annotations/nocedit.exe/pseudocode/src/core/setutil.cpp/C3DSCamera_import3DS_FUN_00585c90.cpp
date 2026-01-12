@@ -18,7 +18,7 @@ core_setutil_cpp_C3DSCamera_import3DS_FUN_00585c90(C3DSCamera *this_ptr,FILE *fi
   BADSPACEBASE *in_ESP;
   float unaff_ESI;
   char *pcVar4;
-  char *pcVar5;
+  C3DSCamera *pCVar5;
   byte bVar6;
   float10 fVar7;
   float10 x;
@@ -28,14 +28,14 @@ core_setutil_cpp_C3DSCamera_import3DS_FUN_00585c90(C3DSCamera *this_ptr,FILE *fi
   char acStack_120 [248];
   float fStack_28;
   float fStack_24;
-  C3DSCamera *local_20;
-  char *pcStack_1c;
+  float local_20;
+  C3DSCamera *pCStack_1c;
   float fStack_18;
   float fStack_14;
   
   bVar6 = 0;
-  local_20 = this_ptr;
-  crt_stdio_c_fgets_FUN_005fefd0(&stack0xfffffdc4,0xff,file_handle);
+  pCStack_1c = this_ptr;
+  crt_stdio_c_fgets_FUN_005fefd0(&stack0xfffffdc8,0xff,file_handle);
   uVar2 = 0xffffffff;
   pcVar4 = &stack0xfffffdc8;
   do {
@@ -56,20 +56,20 @@ core_setutil_cpp_C3DSCamera_import3DS_FUN_00585c90(C3DSCamera *this_ptr,FILE *fi
     pcVar4 = pcVar4 + (uint)bVar6 * -2 + 1;
   } while (cVar1 != '\0');
   pcVar4 = &stack0xfffffdc8;
-  pcVar5 = pcStack_1c;
+  pCVar5 = pCStack_1c;
   do {
     cVar1 = *pcVar4;
-    *pcVar5 = cVar1;
+    pCVar5->name[0] = cVar1;
     if (cVar1 == '\0') break;
     cVar1 = pcVar4[1];
     pcVar4 = pcVar4 + 2;
-    pcVar5[1] = cVar1;
-    pcVar5 = pcVar5 + 2;
+    pCVar5->name[1] = cVar1;
+    pCVar5 = (C3DSCamera *)(pCVar5->name + 2);
   } while (cVar1 != '\0');
   crt_stdio_c_fscanf_FUN_005fe7c0
             (file_handle,"%f,%f,%f\n",&this_ptr->position,&(this_ptr->position).y,
              &(this_ptr->position).z);
-  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%f,%f,%f\n",&fStack_28,&fStack_24);
+  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%f,%f,%f\n",&fStack_28,&fStack_24,&local_20);
   crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%f\n");
   crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%f\n");
   crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%f\n");
@@ -146,11 +146,11 @@ core_setutil_cpp_C3DSCamera_import3DS_FUN_00585c90(C3DSCamera *this_ptr,FILE *fi
   engine_2d_c_clearInputAndWait_FUN_00403260();
   engine_keys_cpp_CKeys_getInputKey_FUN_00502460(g_CKeysPtr);
 LAB_00585deb:
-  fStack_28 = (float)pcStack_1c - (this_ptr->position).x;
+  fStack_28 = (float)pCStack_1c - (this_ptr->position).x;
   fStack_24 = fStack_18 - (this_ptr->position).y;
-  local_20 = (C3DSCamera *)(fStack_14 - (this_ptr->position).z);
+  local_20 = fStack_14 - (this_ptr->position).z;
   (this_ptr->orientation).z = unaff_ESI;
-  fVar7 = crt_math_c_atan2_FUN_006013b1((float10)fStack_28,(float10)(float)local_20);
+  fVar7 = crt_math_c_atan2_FUN_006013b1((float10)fStack_28,(float10)local_20);
   *(float *)(extraout_ECX + 0x110) = (float)fVar7;
   fVar7 = crt_math_c_atan2_FUN_006013b1((float10)fStack_28,x);
   *(float *)(extraout_ECX_00 + 0x10c) = (float)-fVar7;

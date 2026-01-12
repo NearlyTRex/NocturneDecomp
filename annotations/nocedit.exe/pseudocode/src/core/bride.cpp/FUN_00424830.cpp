@@ -18,11 +18,12 @@ void core_bride_cpp_FUN_00424830(void)
   int iVar2;
   uint uVar3;
   BADSPACEBASE *in_ESP;
-  int unaff_EBP;
   CCharacter *in_stack_00000004;
   int in_stack_00000008;
-  float in_stack_ffffffd0;
   char *sound_name;
+  CDeformableModelInstance *force_immediate;
+  float force_immediate_00;
+  CVector3f local_30;
   CVector3f local_24;
   
   sound_sndmain_cpp_killSfx_FUN_005a9c40
@@ -43,7 +44,7 @@ void core_bride_cpp_FUN_00424830(void)
          core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
                    (&in_stack_00000004->model,&local_24,0);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-              (&in_stack_00000004->base_actor,(CVector3f *)&stack0xffffffd0,input_local_point);
+              (&in_stack_00000004->base_actor,&local_30,input_local_point);
     core_charactr_cpp_CCharacter_FUN_0042b5b0(in_stack_00000004);
   }
   core_bride_cpp_FUN_00424600();
@@ -54,9 +55,10 @@ void core_bride_cpp_FUN_00424830(void)
   }
   this_ptr = &in_stack_00000004->model;
   if (0.0 < in_stack_00000004->hit_points) {
+    force_immediate_00 = 1.4013e-45;
     iVar2 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              (&this_ptr->motion_controller,(iVar2 == 0) + 7,(int)in_stack_ffffffd0);
+              (&this_ptr->motion_controller,(iVar2 == 0) + 7,(int)force_immediate_00);
     iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
                       (*(uint *)(in_stack_00000004[1].base_actor.create_event + 0x48));
     if (iVar2 != 0) goto LAB_00424955;
@@ -64,14 +66,13 @@ void core_bride_cpp_FUN_00424830(void)
   }
   else {
     in_stack_00000004->hit_points = 0.0;
+    force_immediate = this_ptr;
     pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        (&this_ptr->motion_controller);
     if ((pSVar1->state_index == 0xe) || (pSVar1->state_index == 0xd)) goto LAB_00424955;
-    local_24.z = 6.087358e-39;
     iVar2 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
-    local_24.z = 6.08739e-39;
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              (&this_ptr->motion_controller,(iVar2 == 0) + 0xb,unaff_EBP);
+              (&this_ptr->motion_controller,(iVar2 == 0) + 0xb,(int)force_immediate);
     sound_sndmain_cpp_killSfx_FUN_005a9c40
               (*(uint *)(in_stack_00000004[1].base_actor.create_event + 0x48));
     sound_name = "ub-die?.wav";
@@ -80,7 +81,6 @@ void core_bride_cpp_FUN_00424830(void)
                     (&in_stack_00000004->base_actor,sound_name);
   *(uint *)(in_stack_00000004[1].base_actor.create_event + 0x48) = uVar3;
 LAB_00424955:
-  local_24.z = 6.087459e-39;
   core_enemy_cpp_FUN_004a9f10();
   return;
 }

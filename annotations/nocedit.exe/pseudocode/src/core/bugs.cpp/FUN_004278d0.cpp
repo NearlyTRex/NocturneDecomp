@@ -11,37 +11,39 @@
 void core_bugs_cpp_FUN_004278d0(void)
 
 {
-  float fVar1;
+  CLocation *pCVar1;
   float fVar2;
-  int iVar3;
-  uint uVar4;
+  float fVar3;
+  float fVar4;
   int iVar5;
-  ulonglong uVar6;
+  uint uVar6;
+  int iVar7;
+  ulonglong uVar8;
   CCharacter *in_stack_00000004;
-  CCharacter *pCVar7;
   
-  fVar1 = (in_stack_00000004->base_actor).location.position.y;
-  fVar2 = (in_stack_00000004->base_actor).location.position.z;
+  pCVar1 = &(in_stack_00000004->base_actor).location;
+  fVar2 = (pCVar1->position).x;
+  fVar3 = (in_stack_00000004->base_actor).location.position.y;
+  fVar4 = (in_stack_00000004->base_actor).location.position.z;
   core_charactr_cpp_CCharacter_computePickupInLoop_FUN_0042f800(in_stack_00000004);
   (in_stack_00000004->base_actor).orient.heading = 0.0;
   (in_stack_00000004->base_actor).orient.bank = (in_stack_00000004->base_actor).orient.heading;
   (in_stack_00000004->base_actor).orient.pitch = (in_stack_00000004->base_actor).orient.bank;
-  pCVar7 = in_stack_00000004;
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&in_stack_00000004->base_actor);
-  (in_stack_00000004->base_actor).location.position.x = (float)pCVar7;
-  (in_stack_00000004->base_actor).location.position.y = fVar1;
-  (in_stack_00000004->base_actor).location.position.z = fVar2;
+  (pCVar1->position).x = fVar2;
+  (in_stack_00000004->base_actor).location.position.y = fVar3;
+  (in_stack_00000004->base_actor).location.position.z = fVar4;
   core_bugs_cpp_FUN_004276c0();
-  iVar5 = 0;
-  uVar4 = core_bugs_cpp_FUN_004257f0();
-  iVar3 = *(int *)(in_stack_00000004[1].base_actor.create_event + 0x24);
-  uVar6 = CONCAT44 /* combine 2-byte values */(iVar3,uVar4);
-  if (0 < iVar3) {
+  iVar7 = 0;
+  uVar6 = core_bugs_cpp_FUN_004257f0();
+  iVar5 = *(int *)(in_stack_00000004[1].base_actor.create_event + 0x24);
+  uVar8 = CONCAT44 /* combine 2-byte values */(iVar5,uVar6);
+  if (0 < iVar5) {
     do {
-      iVar5 = iVar5 + 1;
-      uVar6 = core_bugs_cpp_FUN_00426420();
-    } while (iVar5 < *(int *)(in_stack_00000004[1].base_actor.create_event + 0x24));
+      iVar7 = iVar7 + 1;
+      uVar8 = core_bugs_cpp_FUN_00426420();
+    } while (iVar7 < *(int *)(in_stack_00000004[1].base_actor.create_event + 0x24));
   }
-  core_bugs_cpp_FUN_004272f0((int)uVar6,(int)((ulonglong)uVar6 >> 0x20));
+  core_bugs_cpp_FUN_004272f0((int)uVar8,(int)((ulonglong)uVar8 >> 0x20));
   return;
 }

@@ -1,16 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 221,
-    "complexity_score": 179,
+    "complexity_score": 164,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 15,
     "pseudocode_lines": 64,
-    "suspect_count": 10,
+    "suspect_count": 9,
     "suspect_types": [
       "extra_output",
-      "pointer_cast",
-      "stack_align_anchor"
+      "pointer_cast"
     ],
     "total_lines": 285
   },
@@ -134,6 +133,11 @@
       "value": null
     }
   ],
+  "pcode_overrides": {
+    "004342f9": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd4,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 8.717073170731707,
     "instruction_count": 205,
@@ -173,6 +177,18 @@
     },
     "pcode_op_count": 1787
   },
+  "resolved_suspects": [
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x2c",
+      "fix_address": "004342f9",
+      "frame_offset": 44,
+      "match": "AND ESP",
+      "sub_esp_offset": 44,
+      "text": "Stack alignment at 004342f9 (SUB ESP, 0x2c before)",
+      "type": "stack_align_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 84,
     "local_size": 68,
@@ -309,7 +325,7 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 50,
       "match": "extraout_CL",
-      "text": "local_3c = local_3c >> (extraout_CL & 0x1f);",
+      "text": "local_38 = local_38 >> (extraout_CL & 0x1f);",
       "type": "extra_output"
     },
     {
@@ -339,16 +355,6 @@
       "match": "(ushort *)((int)",
       "text": "*(ushort *)((int)g_ScreenBufferArray[y] + extraout_EDX * 2) =",
       "type": "pointer_cast"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x2c",
-      "fix_address": "004342f9",
-      "frame_offset": 44,
-      "match": "AND ESP",
-      "sub_esp_offset": 44,
-      "text": "Stack alignment at 004342f9 (SUB ESP, 0x2c before)",
-      "type": "stack_align_anchor"
     }
   ]
 }

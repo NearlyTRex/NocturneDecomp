@@ -15,13 +15,14 @@ void shape_design_c_selectModelPart_FUN_0045de80(void)
   char *pcVar3;
   char *pcVar4;
   byte bVar5;
+  char local_2c [20];
   int local_18;
   int local_14;
   
   bVar5 = 0;
-  engine_2d_c_getInputWithPrompt_FUN_004032c0(&stack0xffffffd4,0x13,0,0xb,"Part name : ");
+  engine_2d_c_getInputWithPrompt_FUN_004032c0(local_2c,0x13,0,0xb,"Part name : ");
   iVar2 = -1;
-  pcVar3 = &stack0xffffffd4;
+  pcVar3 = local_2c;
   do {
     if (iVar2 == 0) break;
     iVar2 = iVar2 + -1;
@@ -31,14 +32,14 @@ void shape_design_c_selectModelPart_FUN_0045de80(void)
   if (iVar2 != -2) {
     local_14 = -1;
     for (local_18 = 0; local_18 < g_PartsCount; local_18 = local_18 + 1) {
-      iVar2 = crt_string_c_strcmp_FUN_005fef20(&stack0xffffffd4,g_ModelPartNames[local_18].name);
+      iVar2 = crt_string_c_strcmp_FUN_005fef20(local_2c,g_ModelPartNames[local_18].name);
       if (iVar2 == 0) {
         local_14 = local_18;
         break;
       }
     }
     if (local_14 == -1) {
-      pcVar3 = &stack0xffffffd4;
+      pcVar3 = local_2c;
       pcVar4 = g_ModelPartNames[g_PartsCount].name;
       do {
         cVar1 = *pcVar3;

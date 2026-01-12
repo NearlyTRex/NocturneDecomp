@@ -16,221 +16,218 @@ core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70
   float fVar2;
   float fVar3;
   float fVar4;
-  int iVar5;
-  int iVar6;
+  float fVar5;
+  float fVar6;
+  float fVar7;
+  float fVar8;
+  int iVar9;
+  int iVar10;
   CDemonCube *this_ptr_00;
-  float *extraout_EBX;
+  CVector3f *extraout_EBX;
   BADSPACEBASE *in_ESP;
-  int iVar7;
-  float10 fVar8;
-  float10 fVar9;
-  float10 fVar10;
-  float10 fVar11;
-  double dVar12;
-  double dVar13;
-  float fVar14;
-  float fVar15;
-  float fVar16;
+  int unaff_EBP;
+  int iVar11;
+  float10 fVar12;
+  float10 fVar13;
+  float10 fVar14;
+  float10 fVar15;
+  double dVar16;
   float fVar17;
-  float fVar18;
-  float fVar19;
-  float fVar20;
-  float fVar21;
-  ulonglong uVar22;
-  CVector3f local_b0;
-  double local_a4;
-  ulonglong local_9c;
-  ulonglong local_94;
-  ulonglong local_8c;
-  ulonglong local_84;
-  ulonglong local_7c;
-  int iStack_74;
-  uint local_70;
-  int iStack_6c;
-  int local_68;
-  float local_64;
+  float local_b0;
+  float local_9c;
+  float local_98;
+  float local_94;
+  CVector3f local_90;
+  CVector3f local_84;
+  uint local_78;
+  uint local_70 [3];
+  int local_64;
   int local_60;
-  int local_5c;
-  int local_58;
+  float local_5c;
+  float local_58;
+  int local_54;
   int local_50;
   int local_4c;
-  uint local_44;
-  float local_40;
-  float local_3c;
-  int local_38;
+  int local_48;
+  int local_44;
+  int local_40;
+  int local_3c;
+  float local_38;
+  float local_34;
+  int local_30;
+  int local_2c;
+  int local_28;
+  int local_20;
+  int local_1c;
+  float local_18;
+  uint local_14;
   
-  local_b0.z = (ray_start->x - (this_ptr->bbox_min).x) / (this_ptr->cell_size).x;
-  local_b0.y = (ray_start->z - (this_ptr->bbox_min).z) / (this_ptr->cell_size).z;
-  local_a4 = (double)CONCAT44 /* combine 2-byte values */(local_a4._4_4_,
-                              (ray_start->y - (this_ptr->bbox_min).y) / (this_ptr->cell_size).y);
-  local_7c = crt_math_c_floor_FUN_005feb90((double)local_b0.z);
-  dVar12 = crt_math_c_round_FUN_005fe6b0(local_7c);
-  local_40 = (float)(int)ROUND(dVar12);
-  dVar12 = (double)local_b0.y;
-  local_84 = crt_math_c_floor_FUN_005feb90(dVar12);
-  fVar18 = (float)((ulonglong)dVar12 >> 0x20);
-  dVar12 = crt_math_c_round_FUN_005fe6b0(local_84);
-  local_4c = (int)ROUND(dVar12);
-  dVar12 = (double)fVar18;
-  local_8c = crt_math_c_floor_FUN_005feb90(dVar12);
-  fVar8 = ((float10)ray_end->x - (float10)(this_ptr->bbox_min).x) / (float10)(this_ptr->cell_size).x
-  ;
-  fVar9 = ((float10)ray_end->y - (float10)(this_ptr->bbox_min).y) / (float10)(this_ptr->cell_size).y
-  ;
-  fVar21 = (float)((ulonglong)dVar12 >> 0x20);
-  dVar12 = crt_math_c_round_FUN_005fe6b0(local_8c);
-  local_4c = (int)ROUND(dVar12);
-  local_b0.y = (float)fVar8;
-  fVar20 = (float)fVar9;
-  dVar12 = (double)local_b0.y;
-  local_94 = crt_math_c_floor_FUN_005feb90(dVar12);
-  fVar19 = (float)((ulonglong)dVar12 >> 0x20);
-  fVar18 = 6.737184e-39;
-  dVar12 = crt_math_c_round_FUN_005fe6b0(local_94);
-  local_7c = (double)CONCAT44 /* combine 2-byte values */((int)ROUND(dVar12),(int)local_7c);
-  dVar12 = (double)fVar18;
-  local_9c = crt_math_c_floor_FUN_005feb90(dVar12);
-  fVar17 = (float)((ulonglong)dVar12 >> 0x20);
-  fVar16 = 6.73724e-39;
-  dVar13 = crt_math_c_round_FUN_005fe6b0(local_9c);
-  dVar12 = (double)fVar21;
-  local_8c._4_4_ = (int)ROUND(dVar13);
-  local_a4 = crt_math_c_floor_FUN_005feb90(dVar12);
-  fVar15 = (float)((ulonglong)dVar12 >> 0x20);
-  fVar14 = 6.737297e-39;
-  dVar12 = crt_math_c_round_FUN_005fe6b0(local_a4);
-  fVar18 = (float)(int)ROUND(dVar12);
-  local_8c = (double)CONCAT44 /* combine 2-byte values */(local_8c._4_4_,fVar18);
-  if ((-1 < local_68) || (-1 < local_8c._4_4_)) {
-    if ((iStack_6c < 0) && ((longlong)local_94 < 0)) {
+  fVar8 = (ray_start->x - (this_ptr->bbox_min).x) / (this_ptr->cell_size).x;
+  fVar1 = ray_start->y;
+  fVar2 = (this_ptr->bbox_min).y;
+  fVar3 = (this_ptr->cell_size).y;
+  fVar4 = ray_start->z;
+  fVar5 = (this_ptr->bbox_min).z;
+  fVar6 = (this_ptr->cell_size).z;
+  dVar16 = crt_math_c_floor_FUN_005feb90((double)fVar8);
+  local_84.z = SUB84 /* extract 2-byte value */(dVar16,0);
+  local_78 = (uint)((ulonglong)dVar16 >> 0x20);
+  dVar16 = crt_math_c_round_FUN_005fe6b0(dVar16);
+  local_3c = (int)ROUND(dVar16);
+  dVar16 = crt_math_c_floor_FUN_005feb90((double)fVar8);
+  local_84.y = SUB84 /* extract 2-byte value */(dVar16,0);
+  local_84.z = (float)((ulonglong)dVar16 >> 0x20);
+  dVar16 = crt_math_c_round_FUN_005fe6b0(dVar16);
+  local_40 = (int)ROUND(dVar16);
+  dVar16 = crt_math_c_floor_FUN_005feb90((double)local_b0);
+  local_84.y = SUB84 /* extract 2-byte value */(dVar16,0);
+  local_84.z = (float)((ulonglong)dVar16 >> 0x20);
+  fVar12 = ((float10)ray_end->x - (float10)(this_ptr->bbox_min).x) /
+           (float10)(this_ptr->cell_size).x;
+  fVar13 = ((float10)ray_end->z - (float10)(this_ptr->bbox_min).z) /
+           (float10)(this_ptr->cell_size).z;
+  dVar16 = crt_math_c_round_FUN_005fe6b0(dVar16);
+  local_38 = (float)(int)ROUND(dVar16);
+  fVar7 = (float)fVar12;
+  dVar16 = crt_math_c_floor_FUN_005feb90((double)fVar7);
+  local_84.y = SUB84 /* extract 2-byte value */(dVar16,0);
+  local_84.z = (float)((ulonglong)dVar16 >> 0x20);
+  fVar17 = 6.737184e-39;
+  dVar16 = crt_math_c_round_FUN_005fe6b0(dVar16);
+  local_5c = (float)(int)ROUND(dVar16);
+  dVar16 = crt_math_c_floor_FUN_005feb90((double)fVar17);
+  local_84.y = SUB84 /* extract 2-byte value */(dVar16,0);
+  local_84.z = (float)((ulonglong)dVar16 >> 0x20);
+  dVar16 = crt_math_c_round_FUN_005fe6b0(dVar16);
+  local_64 = (int)ROUND(dVar16);
+  dVar16 = crt_math_c_floor_FUN_005feb90((double)(float)fVar13);
+  local_84.y = SUB84 /* extract 2-byte value */(dVar16,0);
+  local_84.z = (float)((ulonglong)dVar16 >> 0x20);
+  dVar16 = crt_math_c_round_FUN_005fe6b0(dVar16);
+  local_5c = (float)(int)ROUND(dVar16);
+  if ((-1 < (int)local_38) || (-1 < (int)local_58)) {
+    if ((local_3c < 0) && (local_60 < 0)) {
       return -1.0;
     }
-    if (((int)local_64 < 0) && ((int)fVar18 < 0)) {
+    if (((int)local_34 < 0) && ((int)local_5c < 0)) {
       return -1.0;
     }
-    iVar7 = (this_ptr->grid_coord).x;
-    if ((((local_68 < iVar7) || (local_8c._4_4_ < iVar7)) &&
-        ((iVar7 = (this_ptr->grid_coord).y, iStack_6c < iVar7 || (local_94._4_4_ < iVar7)))) &&
-       ((iVar7 = (this_ptr->grid_coord).z, (int)local_64 < iVar7 || ((int)fVar18 < iVar7)))) {
-      fVar1 = ray_end->x - ray_start->x;
-      fVar2 = ray_end->y - ray_start->y;
-      uVar22 = CONCAT44 /* combine 2-byte values */(fVar2,fVar1);
-      iVar7 = 1;
-      fVar3 = ray_end->z - ray_start->z;
-      if ((local_68 != local_8c._4_4_) ||
-         ((iStack_6c != local_94._4_4_ ||
-          (fVar4 = local_64, iVar5 = local_5c, iVar6 = local_58, local_64 != fVar18)))) {
-        fVar18 = SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2);
-        if (fVar18 <= 0.0) {
+    iVar11 = (this_ptr->grid_coord).x;
+    if (((((int)local_38 < iVar11) || ((int)local_58 < iVar11)) &&
+        ((iVar11 = (this_ptr->grid_coord).y, local_3c < iVar11 || (local_60 < iVar11)))) &&
+       ((iVar11 = (this_ptr->grid_coord).z, (int)local_34 < iVar11 || ((int)local_5c < iVar11)))) {
+      local_90.x = ray_end->x - ray_start->x;
+      local_90.y = ray_end->y - ray_start->y;
+      iVar11 = 1;
+      local_90.z = ray_end->z - ray_start->z;
+      if ((local_38 != local_58) || ((local_3c != local_60 || (local_34 != local_5c)))) {
+        fVar17 = SQRT(local_90.z * local_90.z + local_90.x * local_90.x + local_90.y * local_90.y);
+        if (fVar17 <= 0.0) {
           return -1.0;
         }
-        fVar8 = (float10)2.684355e+08f / (float10)fVar18;
-        fVar9 = ABS((float10)fVar14 - (float10)fVar17) * fVar8;
-        fVar11 = ABS((float10)fVar19 - (float10)fVar15) * fVar8;
-        dVar12 = crt_math_c_round_FUN_005fe6b0
-                           ((double)(ABS((float10)fVar21 - (float10)fVar16) * fVar8));
-        local_64 = (float)(int)ROUND(dVar12);
-        fVar10 = (float10)local_b0.y;
-        fVar18 = 6.737684e-39;
-        dVar12 = crt_math_c_round_FUN_005fe6b0((double)fVar9);
-        local_3c = (float)(int)ROUND(dVar12);
-        fVar8 = (float10)0;
-        dVar12 = crt_math_c_round_FUN_005fe6b0((double)fVar11);
-        local_68 = (int)ROUND(dVar12);
-        if (fVar10 < fVar8) {
-          iVar5 = local_5c - (int)local_7c;
-          fVar19 = fVar19 - (float)local_5c;
-          local_44 = 0xffffffff;
+        fVar12 = (float10)2.684355e+08f / (float10)fVar17;
+        fVar13 = ABS((float10)local_b0 - (float10)((fVar1 - fVar2) / fVar3)) * fVar12;
+        fVar15 = ABS((float10)local_9c - (float10)((fVar4 - fVar5) / fVar6)) * fVar12;
+        dVar16 = crt_math_c_round_FUN_005fe6b0
+                           ((double)(ABS((float10)local_94 - (float10)fVar8) * fVar12));
+        local_34 = (float)(int)ROUND(dVar16);
+        fVar14 = (float10)local_84.z;
+        crt_math_c_round_FUN_005fe6b0((double)fVar13);
+        fVar12 = (float10)0;
+        dVar16 = crt_math_c_round_FUN_005fe6b0((double)fVar15);
+        local_38 = (float)(int)ROUND(dVar16);
+        if (fVar14 < fVar12) {
+          iVar10 = local_2c - local_4c;
+          local_5c = local_9c - (float)local_2c;
+          local_14 = 0xffffffff;
         }
         else {
-          iVar5 = (int)local_7c - local_5c;
-          fVar19 = (float)(local_5c + 1) - fVar19;
+          iVar10 = local_4c - local_2c;
+          local_5c = (float)(local_2c + 1) - local_9c;
+          local_14 = 1;
+        }
+        if (local_84.y < 0.0) {
+          local_44 = -1;
+          local_54 = local_30 - local_54;
+          local_58 = fVar7 - (float)local_30;
+        }
+        else {
+          local_54 = local_54 - local_30;
+          local_58 = (float)(local_30 + 1) - fVar7;
           local_44 = 1;
         }
-        if (local_b0.x < 0.0) {
-          iStack_74 = -1;
-          iVar6 = local_60 - (int)local_84;
-          fVar20 = fVar20 - (float)local_60;
+        if (local_84.z < 0.0) {
+          local_40 = -1;
+          iVar11 = local_28 - local_50;
+          local_34 = 6.737684e-39 - (float)local_28;
         }
         else {
-          iVar6 = (int)local_84 - local_60;
-          fVar20 = (float)(local_60 + 1) - fVar20;
-          iStack_74 = 1;
+          iVar11 = local_50 - local_28;
+          local_34 = (float)(local_28 + 1) - 6.737684e-39;
+          local_40 = 1;
         }
-        local_8c = (double)CONCAT44 /* combine 2-byte values */(fVar20,fVar19);
-        if (local_b0.y < 0.0) {
-          local_70 = 0xffffffff;
-          iVar7 = local_58 - local_84._4_4_;
-          local_64 = fVar18 - (float)local_58;
-        }
-        else {
-          iVar7 = local_84._4_4_ - local_58;
-          local_64 = (float)(local_58 + 1) - fVar18;
-          local_70 = 1;
-        }
-        iVar7 = iVar5 + 1 + iVar6 + iVar7;
-        fVar8 = (float10)(int)local_40 * (float10)local_64;
-        fVar9 = (float10)local_68 * (float10)fVar19;
-        fVar10 = (float10)local_68 * (float10)fVar20;
-        fVar11 = (float10)iStack_6c * (float10)local_64;
-        local_38 = local_68;
-        dVar12 = crt_math_c_round_FUN_005fe6b0
-                           ((double)((float10)(int)local_40 * (float10)fVar19 -
-                                    (float10)iStack_6c * (float10)fVar20));
-        local_58 = (int)ROUND(dVar12);
-        dVar12 = crt_math_c_round_FUN_005fe6b0((double)(fVar8 - fVar10));
-        local_58 = (int)ROUND(dVar12);
-        dVar12 = crt_math_c_round_FUN_005fe6b0((double)(fVar9 - fVar11));
-        fVar4 = local_64;
-        iVar5 = local_5c;
-        iVar6 = (int)ROUND(dVar12);
+        iVar11 = iVar10 + 1 + local_54 + iVar11;
+        fVar12 = (float10)unaff_EBP * (float10)local_34;
+        fVar13 = (float10)(int)local_38 * (float10)local_5c;
+        fVar14 = (float10)(int)local_38 * (float10)local_58;
+        fVar15 = (float10)local_3c * (float10)local_34;
+        dVar16 = crt_math_c_round_FUN_005fe6b0
+                           ((double)((float10)unaff_EBP * (float10)local_5c -
+                                    (float10)local_3c * (float10)local_58));
+        local_28 = (int)ROUND(dVar16);
+        dVar16 = crt_math_c_round_FUN_005fe6b0((double)(fVar12 - fVar14));
+        local_28 = (int)ROUND(dVar16);
+        dVar16 = crt_math_c_round_FUN_005fe6b0((double)(fVar13 - fVar15));
+        local_28 = (int)ROUND(dVar16);
       }
+      local_98 = 1.0001;
+      fVar1 = local_34;
+      iVar10 = local_2c;
+      iVar9 = local_28;
       while( true ) {
-        local_58 = iVar6;
-        local_5c = iVar5;
-        local_64 = fVar4;
+        local_28 = iVar9;
+        local_2c = iVar10;
+        local_34 = fVar1;
         this_ptr_00 = core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_004952b0
-                                (this_ptr,local_68,iStack_6c,(int)local_64);
+                                (this_ptr,(int)local_38,local_3c,(int)local_34);
         if (this_ptr_00 != (CDemonCube *)0x0) {
-          local_40 = core_dcube_cpp_CDemonCube_rayIntersectTriangles_FUN_004578f0
-                               (this_ptr_00,ray_start,(CVector3f *)&stack0xffffff44,&local_b0,
-                                (uint *)&local_9c);
-          if (local_40 < (float)uVar22) {
-            if ((extraout_EBX != (float *)0x0) && (extraout_EBX != &local_b0.y)) {
-              *extraout_EBX = local_b0.y;
-              extraout_EBX[1] = local_b0.z;
-              extraout_EBX[2] = local_a4._0_4_;
+          local_18 = core_dcube_cpp_CDemonCube_rayIntersectTriangles_FUN_004578f0
+                               (this_ptr_00,ray_start,&local_90,&local_84,local_70);
+          if (local_18 < local_98) {
+            if ((extraout_EBX != (CVector3f *)0x0) && (extraout_EBX != &local_84)) {
+              extraout_EBX->x = local_84.x;
+              extraout_EBX->y = local_84.y;
+              extraout_EBX->z = local_84.z;
             }
+            local_98 = local_18;
             if (out_intersection_type != (int *)0x0) {
-              *out_intersection_type = local_9c._4_4_;
+              *out_intersection_type = local_70[0];
             }
-            uVar22 = (ulonglong)(uint)local_40;
           }
-          local_3c = local_40;
-          if ((float)uVar22 <= 1.0) {
-            return (float)uVar22;
+          if (local_98 <= 1.0) {
+            return local_98;
           }
         }
-        iVar7 = iVar7 + -1;
-        if (iVar7 < 1) break;
-        fVar4 = (float)((int)local_64 + (int)local_7c);
-        iVar5 = local_5c + local_4c;
-        iVar6 = local_58 - local_7c._4_4_;
-        if (local_60 < 0) {
-          if (local_58 < 0) {
-            local_68 = local_68 + local_50;
-            local_60 = local_60 + local_4c;
-            fVar4 = local_64;
-            iVar5 = local_5c;
-            iVar6 = local_58 + iStack_74;
+        iVar11 = iVar11 + -1;
+        if (iVar11 < 1) break;
+        fVar1 = (float)((int)local_34 + local_4c);
+        iVar10 = local_2c + local_1c;
+        iVar9 = local_28 - local_48;
+        if (local_30 < 0) {
+          if (local_28 < 0) {
+            local_38 = (float)((int)local_38 + local_20);
+            local_30 = local_30 + local_1c;
+            fVar1 = local_34;
+            iVar10 = local_2c;
+            iVar9 = local_28 + local_44;
           }
         }
-        else if (-1 < local_5c) {
-          iStack_6c = iStack_6c + local_84._4_4_;
-          local_60 = local_60 - local_7c._4_4_;
-          fVar4 = local_64;
-          iVar5 = local_5c - iStack_74;
-          iVar6 = local_58;
+        else if (-1 < local_2c) {
+          local_3c = local_3c + local_50;
+          local_30 = local_30 - local_48;
+          fVar1 = local_34;
+          iVar10 = local_2c - local_44;
+          iVar9 = local_28;
         }
       }
       if (out_intersection_type != (int *)0x0) {

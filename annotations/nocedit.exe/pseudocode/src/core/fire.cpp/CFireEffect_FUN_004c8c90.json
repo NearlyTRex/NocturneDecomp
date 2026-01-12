@@ -1,16 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 130,
-    "complexity_score": 252,
+    "complexity_score": 237,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 14,
     "pseudocode_lines": 52,
-    "suspect_count": 18,
+    "suspect_count": 17,
     "suspect_types": [
       "badspacebase",
       "register_param",
-      "stack_align_anchor",
       "stack_param"
     ],
     "total_lines": 182
@@ -129,6 +128,11 @@
       "value": null
     }
   ],
+  "pcode_overrides": {
+    "004c8c99": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffc4,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.7844827586206895,
     "instruction_count": 116,
@@ -168,6 +172,18 @@
     },
     "pcode_op_count": 671
   },
+  "resolved_suspects": [
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x3c",
+      "fix_address": "004c8c99",
+      "frame_offset": 60,
+      "match": "AND ESP",
+      "sub_esp_offset": 60,
+      "text": "Stack alignment at 004c8c99 (SUB ESP, 0x3c before)",
+      "type": "stack_align_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 88,
     "local_size": 84,
@@ -346,21 +362,21 @@
       "description": "Unresolved stack parameter",
       "line": 26,
       "match": "in_stack_00000008",
-      "text": "local_48 = *in_stack_00000008 - *(float *)pCVar5->field0_0x0;",
+      "text": "local_44 = *in_stack_00000008 - *(float *)pCVar5->field0_0x0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 27,
       "match": "in_stack_00000008",
-      "text": "local_44 = in_stack_00000008[1] - *(float *)(pCVar5->field0_0x0 + 4);",
+      "text": "local_40 = in_stack_00000008[1] - *(float *)(pCVar5->field0_0x0 + 4);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 28,
       "match": "in_stack_00000008",
-      "text": "local_40 = in_stack_00000008[2] - *(float *)(pCVar5->field0_0x0 + 8);",
+      "text": "local_3c = in_stack_00000008[2] - *(float *)(pCVar5->field0_0x0 + 8);",
       "type": "stack_param"
     },
     {
@@ -381,14 +397,14 @@
       "description": "Unresolved stack parameter",
       "line": 37,
       "match": "in_stack_00000010",
-      "text": "if (local_3c != in_stack_00000010) {",
+      "text": "if (local_38 != in_stack_00000010) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 38,
       "match": "in_stack_00000010",
-      "text": "*in_stack_00000010 = local_48 * fVar1 * 40f;",
+      "text": "*in_stack_00000010 = local_44 * fVar1 * 40f;",
       "type": "stack_param"
     },
     {
@@ -418,16 +434,6 @@
       "match": "in_stack_00000014",
       "text": "*in_stack_00000014 = *(uint *)(pCVar5->field0_0x0 + 0x14);",
       "type": "stack_param"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x3c",
-      "fix_address": "004c8c99",
-      "frame_offset": 60,
-      "match": "AND ESP",
-      "sub_esp_offset": 60,
-      "text": "Stack alignment at 004c8c99 (SUB ESP, 0x3c before)",
-      "type": "stack_align_anchor"
     }
   ]
 }

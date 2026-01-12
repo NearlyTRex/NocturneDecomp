@@ -25,57 +25,55 @@ core_skeleton_cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005
   uint *puVar9;
   uint *puVar10;
   byte bVar11;
-  float afStackY_1830 [1519];
-  float fStack_58;
-  float fStack_54;
-  int local_24;
-  float local_20;
-  float local_1c;
-  CSkeleton *local_18;
-  CSkeleton *local_14;
-  SBoneTransformData *pSVar12;
-  SBoneTransformData *pSVar13;
+  float afStackY_1838 [1520];
+  float local_60;
+  float local_5c;
+  float local_28;
+  float local_24 [2];
+  CSkeleton *local_1c;
+  SBoneTransformData *local_18;
+  SBoneTransformData *local_14;
   
   bVar11 = 0;
   pCVar8 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
-  local_18 = pCVar8;
+  local_1c = pCVar8;
   core_motion_cpp_CMotionController_getFramesForInterpolation_FUN_0052e4c0
-            (&this_ptr->motion_controller,motion_index,animation_time,&local_24,(int *)&local_20,
-             (float *)&stack0xffffffa4);
+            (&this_ptr->motion_controller,motion_index,animation_time,(int *)&local_28,
+             (int *)local_24,&stack0xffffffa0);
   bone_index = 0;
-  pSVar12 = output_bone_data;
-  pSVar13 = output_bone_data;
   if (0 < pCVar8->bone_count) {
+    local_14 = output_bone_data;
+    local_18 = output_bone_data;
     do {
       core_skeleton_cpp_CSkeleton_getBoneAngleInterpolated_FUN_0059a070
-                (local_14,bone_index,(int)local_20,(int)local_1c,fStack_58);
+                (local_1c,bone_index,(int)local_28,(int)local_24[0],local_60);
       bone_index = bone_index + 1;
-      puVar9 = (uint *)((int)pSVar12 + (uint)bVar11 * -8 + 0x10);
-      pSVar12->bone_rotations[0].w = fStack_54;
+      puVar9 = (uint *)((int)local_18 + (uint)bVar11 * -8 + 0x10);
+      local_18->bone_rotations[0].w = local_5c;
       puVar10 = puVar9 + (uint)bVar11 * -2 + 1;
-      *puVar9 = *(uint *)(&stack0xffffffb0 + (uint)bVar11 * -8);
-      *puVar10 = *(uint *)(&stack0xffffffb4 + (uint)bVar11 * -8 + (uint)bVar11 * -8);
+      *puVar9 = *(uint *)(&stack0xffffffa8 + (uint)bVar11 * -8);
+      *puVar10 = *(uint *)(&stack0xffffffac + (uint)bVar11 * -8 + (uint)bVar11 * -8);
       puVar10[(uint)bVar11 * -2 + 1] =
            *(uint *)
-            ((int)(&stack0xffffffb4 + (uint)bVar11 * -8 + (uint)bVar11 * -8) +
+            ((int)(&stack0xffffffac + (uint)bVar11 * -8 + (uint)bVar11 * -8) +
             ((uint)bVar11 * -2 + 1) * 4);
-      pSVar13->current_pose_data[0] = 1.0;
-      pSVar12 = (SBoneTransformData *)&pSVar12->bone_rotations[0].x;
-      pSVar13 = (SBoneTransformData *)&(pSVar13->root_position).y;
-    } while (bone_index < local_14->bone_count);
+      local_14->current_pose_data[0] = 1.0;
+      local_18 = (SBoneTransformData *)&local_18->bone_rotations[0].x;
+      local_14 = (SBoneTransformData *)&(local_14->root_position).y;
+    } while (bone_index < local_1c->bone_count);
   }
-  pCVar5 = local_14->frame_positions_1;
-  fVar1 = pCVar5[(int)local_1c].y;
-  fVar2 = pCVar5[(int)local_1c].z;
-  fVar7 = 1.0 - fStack_58;
-  pCVar6 = local_14->frame_positions_1;
-  fVar3 = pCVar6[(int)local_20].y;
-  fVar4 = pCVar6[(int)local_20].z;
-  if ((SBoneTransformData *)&stack0xffffffc8 != output_bone_data) {
+  pCVar5 = local_1c->frame_positions_1;
+  fVar1 = pCVar5[(int)local_24[0]].y;
+  fVar2 = pCVar5[(int)local_24[0]].z;
+  fVar7 = 1.0 - local_60;
+  pCVar6 = local_1c->frame_positions_1;
+  fVar3 = pCVar6[(int)local_28].y;
+  fVar4 = pCVar6[(int)local_28].z;
+  if ((SBoneTransformData *)&stack0xffffffc0 != output_bone_data) {
     (output_bone_data->root_position).x =
-         pCVar6[(int)local_20].x * fVar7 + pCVar5[(int)local_1c].x * fStack_58;
-    (output_bone_data->root_position).y = fVar3 * fVar7 + fVar1 * fStack_58;
-    (output_bone_data->root_position).z = fVar4 * fVar7 + fVar2 * fStack_58;
+         pCVar6[(int)local_28].x * fVar7 + pCVar5[(int)local_24[0]].x * local_60;
+    (output_bone_data->root_position).y = fVar3 * fVar7 + fVar1 * local_60;
+    (output_bone_data->root_position).z = fVar4 * fVar7 + fVar2 * local_60;
   }
   (output_bone_data->root_position).x =
        (this_ptr->scaled_model_dimensions).x * (output_bone_data->root_position).x;

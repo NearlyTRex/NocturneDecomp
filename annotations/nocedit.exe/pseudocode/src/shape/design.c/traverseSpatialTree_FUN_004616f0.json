@@ -1,15 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 80,
-    "complexity_score": 75,
+    "complexity_score": 20,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 4,
     "pseudocode_lines": 20,
-    "suspect_count": 5,
-    "suspect_types": [
-      "call_esp_anchor"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 100
   },
   "cross_references": [],
@@ -66,6 +64,23 @@
     "declared_params": 1,
     "estimated_params": 1
   },
+  "pcode_overrides": {
+    "0046171a": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
+    ],
+    "00461789": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
+    ],
+    "00461797": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
+    ],
+    "004617a7": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
+    ],
+    "004617b4": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.03030303030303,
     "instruction_count": 66,
@@ -103,51 +118,7 @@
     },
     "pcode_op_count": 398
   },
-  "stack_frame": {
-    "frame_size": 40,
-    "local_size": 36,
-    "param_offset": 4,
-    "param_size": 4,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_20",
-        "offset": -32,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c",
-        "offset": -28,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": true,
-        "name": "tree_node",
-        "offset": 4,
-        "size": 4,
-        "type": "SSpatialTreeNode *"
-      }
-    ]
-  },
-  "suspects": [
+  "resolved_suspects": [
     {
       "add_esp_value": 4,
       "call_address": "00461715",
@@ -213,5 +184,50 @@
       "text": "Direct CALL at 004617af, ADD ESP at 004617b4 with uncertain ESP",
       "type": "call_esp_anchor"
     }
-  ]
+  ],
+  "stack_frame": {
+    "frame_size": 40,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "tree_node",
+        "offset": 4,
+        "size": 4,
+        "type": "SSpatialTreeNode *"
+      }
+    ]
+  },
+  "suspects": []
 }

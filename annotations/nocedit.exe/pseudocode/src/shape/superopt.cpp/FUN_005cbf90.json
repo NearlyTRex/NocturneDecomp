@@ -1,23 +1,21 @@
 {
   "complexity": {
     "assembly_lines": 478,
-    "complexity_score": 1305,
+    "complexity_score": 1284,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 245,
-    "suspect_count": 102,
+    "pseudocode_lines": 244,
+    "suspect_count": 101,
     "suspect_types": [
       "badspacebase",
-      "call_esp_anchor",
       "concat_artifact",
       "register_param",
-      "stack_align_anchor",
       "stack_param",
       "sub_artifact",
       "unknown_field"
     ],
-    "total_lines": 723
+    "total_lines": 722
   },
   "cross_references": [
     {
@@ -48,6 +46,14 @@
     }
   ],
   "globals": [],
+  "pcode_overrides": {
+    "005cbf9c": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffedc,4)"
+    ],
+    "005cc2f6": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffedc,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.427848101265822,
     "instruction_count": 395,
@@ -88,6 +94,31 @@
     },
     "pcode_op_count": 2144
   },
+  "resolved_suspects": [
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x124",
+      "fix_address": "005cbf9c",
+      "frame_offset": 292,
+      "match": "AND ESP",
+      "sub_esp_offset": 292,
+      "text": "Stack alignment at 005cbf9c (SUB ESP, 0x124 before)",
+      "type": "stack_align_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "005cc2dc",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "005cc2f6",
+      "frame_offset": 292,
+      "match": "CALL...ADD ESP",
+      "return_address": "005cc2e1",
+      "target_address": "0x5d6640",
+      "text": "Direct CALL at 005cc2dc, ADD ESP at 005cc2f6 with uncertain ESP",
+      "type": "call_esp_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 316,
     "local_size": 316,
@@ -572,677 +603,661 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 72,
+      "line": 71,
       "match": "in_stack_00000008",
       "text": "if (0.0 <= *in_stack_00000008) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 73,
+      "line": 72,
       "match": "in_stack_00000008",
-      "text": "local_128 = *in_stack_00000008;",
+      "text": "dStack_124 = *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 76,
+      "line": 75,
       "match": "in_stack_00000008",
-      "text": "local_128 = -*in_stack_00000008;",
+      "text": "dStack_124 = -*in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 78,
+      "line": 77,
       "match": "in_stack_00000008",
       "text": "if (in_stack_00000008[1] < 0.0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 79,
+      "line": 78,
       "match": "in_stack_00000008",
       "text": "dVar4 = -in_stack_00000008[1];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 82,
+      "line": 81,
       "match": "in_stack_00000008",
       "text": "dVar4 = in_stack_00000008[1];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 84,
+      "line": 83,
       "match": "in_stack_00000008",
       "text": "if (in_stack_00000008[2] < 0.0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 85,
+      "line": 84,
       "match": "in_stack_00000008",
-      "text": "local_120 = -in_stack_00000008[2];",
+      "text": "dStack_11c = -in_stack_00000008[2];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 88,
+      "line": 87,
       "match": "in_stack_00000008",
-      "text": "local_120 = in_stack_00000008[2];",
+      "text": "dStack_11c = in_stack_00000008[2];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 108,
+      "line": 107,
       "match": "in_stack_00000018",
       "text": "if (in_stack_00000018 != 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 109,
+      "line": 108,
       "match": "in_stack_0000000c",
-      "text": "local_2c = in_stack_0000000c + in_stack_00000010 * 0x60;",
+      "text": "local_28 = in_stack_0000000c + in_stack_00000010 * 0x60;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 108,
+      "match": "in_stack_00000010",
+      "text": "local_28 = in_stack_0000000c + in_stack_00000010 * 0x60;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 109,
-      "match": "in_stack_00000010",
-      "text": "local_2c = in_stack_0000000c + in_stack_00000010 * 0x60;",
+      "match": "in_stack_00000014",
+      "text": "local_24 = in_stack_00000014;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 110,
       "match": "in_stack_00000014",
-      "text": "local_28 = in_stack_00000014;",
+      "text": "local_2c = in_stack_00000014 + in_stack_00000018 * 0x60;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 111,
-      "match": "in_stack_00000014",
-      "text": "local_30 = in_stack_00000014 + in_stack_00000018 * 0x60;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 111,
+      "line": 110,
       "match": "in_stack_00000018",
-      "text": "local_30 = in_stack_00000014 + in_stack_00000018 * 0x60;",
+      "text": "local_2c = in_stack_00000014 + in_stack_00000018 * 0x60;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 113,
+      "line": 112,
       "match": "in_stack_0000000c",
-      "text": "if ((local_28 < in_stack_0000000c) || (local_2c <= local_28)) {",
+      "text": "if ((local_24 < in_stack_0000000c) || (local_28 <= local_24)) {",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 117,
+      "line": 116,
       "match": "._0_4_",
-      "text": "local_d8.x._0_4_ = *(uint *)(local_28 + 0x10);",
+      "text": "CStack_d4.x._0_4_ = *(uint *)(local_24 + 0x10);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 117,
+      "match": "._4_4_",
+      "text": "CStack_d4.x._4_4_ = *(uint *)(local_24 + 0x14);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 118,
-      "match": "._4_4_",
-      "text": "local_d8.x._4_4_ = *(uint *)(local_28 + 0x14);",
+      "match": "._0_4_",
+      "text": "CStack_d4.y._0_4_ = *(uint *)(local_24 + 0x18);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 119,
-      "match": "._0_4_",
-      "text": "local_d8.y._0_4_ = *(uint *)(local_28 + 0x18);",
+      "match": "._4_4_",
+      "text": "CStack_d4.y._4_4_ = *(uint *)(local_24 + 0x1c);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 120,
-      "match": "._4_4_",
-      "text": "local_d8.y._4_4_ = *(uint *)(local_28 + 0x1c);",
+      "match": "._0_4_",
+      "text": "local_7c = CStack_d4.y._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 121,
-      "match": "._0_4_",
-      "text": "local_80 = local_d8.y._0_4_;",
+      "match": "._4_4_",
+      "text": "local_78 = CStack_d4.y._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 122,
-      "match": "._4_4_",
-      "text": "local_7c = local_d8.y._4_4_;",
+      "match": "._0_4_",
+      "text": "local_4c = CStack_d4.x._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 123,
-      "match": "._0_4_",
-      "text": "local_50 = local_d8.x._0_4_;",
+      "match": "._4_4_",
+      "text": "local_48 = CStack_d4.x._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 124,
-      "match": "._4_4_",
-      "text": "local_4c = local_d8.x._4_4_;",
+      "line": 127,
+      "match": "._0_4_",
+      "text": "CStack_d4.x._0_4_ = *(uint *)(local_24 + 0x10);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 128,
       "match": "._0_4_",
-      "text": "local_d8.x._0_4_ = *(uint *)(local_28 + 0x10);",
+      "text": "local_98 = (double)CONCAT44 /* combine 2-byte values */(CStack_d4.x._0_4_,(uint)local_98);",
       "type": "unknown_field"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 128,
+      "match": "CONCAT44",
+      "text": "local_98 = (double)CONCAT44 /* combine 2-byte values */(CStack_d4.x._0_4_,(uint)local_98);",
+      "type": "concat_artifact"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 129,
       "match": "._4_4_",
-      "text": "local_d8.x._4_4_ = *(uint *)(local_28 + 0x14);",
+      "text": "CStack_d4.x._4_4_ = *(uint *)(local_24 + 0x14);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 130,
       "match": "._0_4_",
-      "text": "local_d8.y._0_4_ = *(uint *)(local_28 + 0x20);",
+      "text": "CStack_d4.y._0_4_ = *(uint *)(local_24 + 0x20);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 131,
       "match": "._4_4_",
-      "text": "local_d8.y._4_4_ = *(uint *)(local_28 + 0x24);",
+      "text": "CStack_d4.y._4_4_ = *(uint *)(local_24 + 0x24);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 132,
-      "match": "._0_4_",
-      "text": "local_98 = local_d8.x._0_4_;",
+      "match": "._4_4_",
+      "text": "local_90 = CStack_d4.x._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 133,
-      "match": "._4_4_",
-      "text": "local_94 = local_d8.x._4_4_;",
+      "match": "._0_4_",
+      "text": "local_8c = CStack_d4.y._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 134,
-      "match": "._0_4_",
-      "text": "local_90 = local_d8.y._0_4_;",
+      "match": "._4_4_",
+      "text": "local_88 = CStack_d4.y._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 135,
-      "match": "._4_4_",
-      "text": "local_8c = local_d8.y._4_4_;",
+      "line": 138,
+      "match": "._0_4_",
+      "text": "CStack_d4.x._0_4_ = *(uint *)(local_24 + 0x18);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 139,
-      "match": "._0_4_",
-      "text": "local_d8.x._0_4_ = *(uint *)(local_28 + 0x18);",
+      "match": "._4_4_",
+      "text": "CStack_d4.x._4_4_ = *(uint *)(local_24 + 0x1c);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 140,
-      "match": "._4_4_",
-      "text": "local_d8.x._4_4_ = *(uint *)(local_28 + 0x1c);",
+      "match": "._0_4_",
+      "text": "CStack_d4.y._0_4_ = *(uint *)(local_24 + 0x20);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 141,
-      "match": "._0_4_",
-      "text": "local_d8.y._0_4_ = *(uint *)(local_28 + 0x20);",
+      "match": "._4_4_",
+      "text": "CStack_d4.y._4_4_ = *(uint *)(local_24 + 0x24);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 142,
-      "match": "._4_4_",
-      "text": "local_d8.y._4_4_ = *(uint *)(local_28 + 0x24);",
+      "match": "._0_4_",
+      "text": "local_c4 = CStack_d4.x._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 143,
-      "match": "._0_4_",
-      "text": "local_c8 = local_d8.x._0_4_;",
+      "match": "._4_4_",
+      "text": "local_c0 = CStack_d4.x._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 144,
-      "match": "._4_4_",
-      "text": "local_c4 = local_d8.x._4_4_;",
+      "match": "._0_4_",
+      "text": "local_74 = CStack_d4.y._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 145,
-      "match": "._0_4_",
-      "text": "local_78 = local_d8.y._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 146,
       "match": "._4_4_",
-      "text": "local_74 = local_d8.y._4_4_;",
+      "text": "local_70 = CStack_d4.y._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 150,
+      "line": 149,
       "match": "in_stack_00000010",
       "text": "if (in_stack_00000010 != 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 151,
+      "line": 150,
       "match": "in_stack_0000000c",
-      "text": "local_24 = in_stack_0000000c + in_stack_00000010 * 0x60;",
+      "text": "local_20 = in_stack_0000000c + in_stack_00000010 * 0x60;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 150,
+      "match": "in_stack_00000010",
+      "text": "local_20 = in_stack_0000000c + in_stack_00000010 * 0x60;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 151,
-      "match": "in_stack_00000010",
-      "text": "local_24 = in_stack_0000000c + in_stack_00000010 * 0x60;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 152,
       "match": "in_stack_0000000c",
       "text": "uVar2 = in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 161,
+      "line": 160,
       "match": "._0_4_",
-      "text": "local_e8.x._0_4_ = *(uint *)(uVar2 + 0x28);",
+      "text": "CStack_e4.x._0_4_ = *(uint *)(uVar2 + 0x28);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 161,
+      "match": "._4_4_",
+      "text": "CStack_e4.x._4_4_ = *(uint *)(uVar2 + 0x2c);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 162,
-      "match": "._4_4_",
-      "text": "local_e8.x._4_4_ = *(uint *)(uVar2 + 0x2c);",
+      "match": "._0_4_",
+      "text": "CStack_e4.y._0_4_ = *(uint *)(uVar2 + 0x30);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 163,
-      "match": "._0_4_",
-      "text": "local_e8.y._0_4_ = *(uint *)(uVar2 + 0x30);",
+      "match": "._4_4_",
+      "text": "CStack_e4.y._4_4_ = *(uint *)(uVar2 + 0x34);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 164,
-      "match": "._4_4_",
-      "text": "local_e8.y._4_4_ = *(uint *)(uVar2 + 0x34);",
+      "line": 166,
+      "match": "._0_4_",
+      "text": "local_a4 = CStack_e4.y._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 167,
-      "match": "._0_4_",
-      "text": "local_a8 = local_e8.y._0_4_;",
+      "match": "._4_4_",
+      "text": "local_a0 = CStack_e4.y._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 168,
-      "match": "._4_4_",
-      "text": "local_a4 = local_e8.y._4_4_;",
+      "match": "._0_4_",
+      "text": "local_5c = CStack_e4.x._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 169,
-      "match": "._0_4_",
-      "text": "local_60 = local_e8.x._0_4_;",
+      "match": "._4_4_",
+      "text": "local_58 = CStack_e4.x._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 170,
-      "match": "._4_4_",
-      "text": "local_5c = local_e8.x._4_4_;",
+      "line": 179,
+      "match": "._0_4_",
+      "text": "CStack_e4.x._0_4_ = *(uint *)(uVar2 + 0x28);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 180,
-      "match": "._0_4_",
-      "text": "local_e8.x._0_4_ = *(uint *)(uVar2 + 0x28);",
+      "match": "._4_4_",
+      "text": "CStack_e4.x._4_4_ = *(uint *)(uVar2 + 0x2c);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 181,
-      "match": "._4_4_",
-      "text": "local_e8.x._4_4_ = *(uint *)(uVar2 + 0x2c);",
+      "match": "._0_4_",
+      "text": "CStack_e4.y._0_4_ = *(uint *)(uVar2 + 0x38);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 182,
-      "match": "._0_4_",
-      "text": "local_e8.y._0_4_ = *(uint *)(uVar2 + 0x38);",
+      "match": "._4_4_",
+      "text": "CStack_e4.y._4_4_ = *(uint *)(uVar2 + 0x3c);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 183,
-      "match": "._4_4_",
-      "text": "local_e8.y._4_4_ = *(uint *)(uVar2 + 0x3c);",
+      "match": "._0_4_",
+      "text": "local_bc = CStack_e4.x._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 184,
-      "match": "._0_4_",
-      "text": "local_c0 = local_e8.x._0_4_;",
+      "match": "._4_4_",
+      "text": "local_b8 = CStack_e4.x._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 185,
-      "match": "._4_4_",
-      "text": "local_bc = local_e8.x._4_4_;",
+      "line": 187,
+      "match": "._0_4_",
+      "text": "local_84 = CStack_e4.y._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 188,
-      "match": "._0_4_",
-      "text": "local_88 = local_e8.y._0_4_;",
+      "match": "._4_4_",
+      "text": "local_80 = CStack_e4.y._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 189,
-      "match": "._4_4_",
-      "text": "local_84 = local_e8.y._4_4_;",
+      "line": 198,
+      "match": "._0_4_",
+      "text": "CStack_e4.x._0_4_ = *(uint *)(uVar2 + 0x30);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 199,
-      "match": "._0_4_",
-      "text": "local_e8.x._0_4_ = *(uint *)(uVar2 + 0x30);",
+      "match": "._4_4_",
+      "text": "CStack_e4.x._4_4_ = *(uint *)(uVar2 + 0x34);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 200,
-      "match": "._4_4_",
-      "text": "local_e8.x._4_4_ = *(uint *)(uVar2 + 0x34);",
+      "match": "._0_4_",
+      "text": "CStack_e4.y._0_4_ = *(uint *)(uVar2 + 0x38);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 201,
-      "match": "._0_4_",
-      "text": "local_e8.y._0_4_ = *(uint *)(uVar2 + 0x38);",
+      "match": "._4_4_",
+      "text": "CStack_e4.y._4_4_ = *(uint *)(uVar2 + 0x3c);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 202,
-      "match": "._4_4_",
-      "text": "local_e8.y._4_4_ = *(uint *)(uVar2 + 0x3c);",
+      "match": "._0_4_",
+      "text": "local_6c = CStack_e4.y._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 203,
-      "match": "._0_4_",
-      "text": "local_70 = local_e8.y._0_4_;",
+      "match": "._4_4_",
+      "text": "local_68 = CStack_e4.y._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 204,
-      "match": "._4_4_",
-      "text": "local_6c = local_e8.y._4_4_;",
+      "line": 206,
+      "match": "._0_4_",
+      "text": "local_3c = CStack_e4.x._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 207,
-      "match": "._0_4_",
-      "text": "local_40 = local_e8.x._0_4_;",
+      "match": "._4_4_",
+      "text": "local_38 = CStack_e4.x._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 211,
+      "match": "CONCAT44",
+      "text": "if ((((double)CONCAT44 /* combine 2-byte values */(local_f0,uStack_f4) !=",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 212,
+      "match": "._4_4_",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(CStack_d4.x._4_4_,CStack_d4.x._0_4_)) ||",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 208,
-      "match": "._4_4_",
-      "text": "local_3c = local_e8.x._4_4_;",
+      "line": 212,
+      "match": "._0_4_",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(CStack_d4.x._4_4_,CStack_d4.x._0_4_)) ||",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
       "line": 212,
       "match": "CONCAT44",
-      "text": "if ((((double)CONCAT44 /* combine 2-byte values */(uStack_f4,local_f8) !=",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(CStack_d4.x._4_4_,CStack_d4.x._0_4_)) ||",
       "type": "concat_artifact"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 213,
-      "match": "._4_4_",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(local_d8.x._4_4_,local_d8.x._0_4_)) ||",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 213,
-      "match": "._0_4_",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(local_d8.x._4_4_,local_d8.x._0_4_)) ||",
-      "type": "unknown_field"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
       "line": 213,
       "match": "CONCAT44",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(local_d8.x._4_4_,local_d8.x._0_4_)) ||",
+      "text": "((double)CONCAT44 /* combine 2-byte values */(local_e8,uStack_ec) !=",
       "type": "concat_artifact"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 214,
+      "match": "._4_4_",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(CStack_d4.y._4_4_,CStack_d4.y._0_4_))) &&",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 214,
+      "match": "._0_4_",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(CStack_d4.y._4_4_,CStack_d4.y._0_4_))) &&",
+      "type": "unknown_field"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
       "line": 214,
       "match": "CONCAT44",
-      "text": "((double)CONCAT44 /* combine 2-byte values */(uStack_ec,local_f0) !=",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(CStack_d4.y._4_4_,CStack_d4.y._0_4_))) &&",
       "type": "concat_artifact"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 215,
       "match": "._4_4_",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(local_d8.y._4_4_,local_d8.y._0_4_))) &&",
+      "text": "(((double)CONCAT44 /* combine 2-byte values */(CStack_e4.x._4_4_,CStack_e4.x._0_4_) !=",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 215,
       "match": "._0_4_",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(local_d8.y._4_4_,local_d8.y._0_4_))) &&",
+      "text": "(((double)CONCAT44 /* combine 2-byte values */(CStack_e4.x._4_4_,CStack_e4.x._0_4_) !=",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
       "line": 215,
       "match": "CONCAT44",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(local_d8.y._4_4_,local_d8.y._0_4_))) &&",
+      "text": "(((double)CONCAT44 /* combine 2-byte values */(CStack_e4.x._4_4_,CStack_e4.x._0_4_) !=",
       "type": "concat_artifact"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 216,
       "match": "._4_4_",
-      "text": "(((double)CONCAT44 /* combine 2-byte values */(local_e8.x._4_4_,local_e8.x._0_4_) !=",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(CStack_d4.x._4_4_,CStack_d4.x._0_4_) ||",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 216,
       "match": "._0_4_",
-      "text": "(((double)CONCAT44 /* combine 2-byte values */(local_e8.x._4_4_,local_e8.x._0_4_) !=",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(CStack_d4.x._4_4_,CStack_d4.x._0_4_) ||",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
       "line": 216,
       "match": "CONCAT44",
-      "text": "(((double)CONCAT44 /* combine 2-byte values */(local_e8.x._4_4_,local_e8.x._0_4_) !=",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(CStack_d4.x._4_4_,CStack_d4.x._0_4_) ||",
       "type": "concat_artifact"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 217,
       "match": "._4_4_",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(local_d8.x._4_4_,local_d8.x._0_4_) ||",
+      "text": "((double)CONCAT44 /* combine 2-byte values */(CStack_e4.y._4_4_,CStack_e4.y._0_4_) !=",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 217,
       "match": "._0_4_",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(local_d8.x._4_4_,local_d8.x._0_4_) ||",
+      "text": "((double)CONCAT44 /* combine 2-byte values */(CStack_e4.y._4_4_,CStack_e4.y._0_4_) !=",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
       "line": 217,
       "match": "CONCAT44",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(local_d8.x._4_4_,local_d8.x._0_4_) ||",
+      "text": "((double)CONCAT44 /* combine 2-byte values */(CStack_e4.y._4_4_,CStack_e4.y._0_4_) !=",
       "type": "concat_artifact"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 218,
       "match": "._4_4_",
-      "text": "((double)CONCAT44 /* combine 2-byte values */(local_e8.y._4_4_,local_e8.y._0_4_) !=",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(CStack_d4.y._4_4_,CStack_d4.y._0_4_))))) {",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 218,
       "match": "._0_4_",
-      "text": "((double)CONCAT44 /* combine 2-byte values */(local_e8.y._4_4_,local_e8.y._0_4_) !=",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(CStack_d4.y._4_4_,CStack_d4.y._0_4_))))) {",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
       "line": 218,
       "match": "CONCAT44",
-      "text": "((double)CONCAT44 /* combine 2-byte values */(local_e8.y._4_4_,local_e8.y._0_4_) !=",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 219,
-      "match": "._4_4_",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(local_d8.y._4_4_,local_d8.y._0_4_))))) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 219,
-      "match": "._0_4_",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(local_d8.y._4_4_,local_d8.y._0_4_))))) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 219,
-      "match": "CONCAT44",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(local_d8.y._4_4_,local_d8.y._0_4_))))) {",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(CStack_d4.y._4_4_,CStack_d4.y._0_4_))))) {",
       "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong extraction artifact",
-      "line": 221,
+      "line": 220,
       "match": "SUB84",
-      "text": "(&local_e8,&local_d8,SUB84 /* extract 2-byte value */(dVar4,0));",
+      "text": "(&CStack_e4,&CStack_d4,SUB84 /* extract 2-byte value */(dVar4,0));",
       "type": "sub_artifact"
     },
     {
       "description": "Decompiler double/longlong extraction artifact",
-      "line": 223,
+      "line": 222,
       "match": "SUB84",
-      "text": "local_130 = SUB84 /* extract 2-byte value */(local_a0,0);",
+      "text": "iStack_12c = SUB84 /* extract 2-byte value */(local_98,0);",
       "type": "sub_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 225,
+      "match": "CONCAT44",
+      "text": "if ((((double)CONCAT44 /* combine 2-byte values */(local_110,iStack_114) < 0.0) && (0.0 < local_98)) ||",
+      "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
       "line": 226,
       "match": "CONCAT44",
-      "text": "if ((((double)CONCAT44 /* combine 2-byte values */(uStack_114,local_118) < 0.0) && (0.0 < local_a0)) ||",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 227,
-      "match": "CONCAT44",
-      "text": "((0.0 < (double)CONCAT44 /* combine 2-byte values */(uStack_114,local_118) && (local_a0 < 0.0)))) break;",
+      "text": "((0.0 < (double)CONCAT44 /* combine 2-byte values */(local_110,iStack_114) && (local_98 < 0.0)))) break;",
       "type": "concat_artifact"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 240,
+      "line": 239,
       "match": "in_stack_00000010",
       "text": "if (iVar3 == in_stack_00000010) {",
       "type": "stack_param"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x124",
-      "fix_address": "005cbf9c",
-      "frame_offset": 292,
-      "match": "AND ESP",
-      "sub_esp_offset": 292,
-      "text": "Stack alignment at 005cbf9c (SUB ESP, 0x124 before)",
-      "type": "stack_align_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "005cc2dc",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "005cc2f6",
-      "frame_offset": 292,
-      "match": "CALL...ADD ESP",
-      "return_address": "005cc2e1",
-      "target_address": "0x5d6640",
-      "text": "Direct CALL at 005cc2dc, ADD ESP at 005cc2f6 with uncertain ESP",
-      "type": "call_esp_anchor"
     }
   ]
 }

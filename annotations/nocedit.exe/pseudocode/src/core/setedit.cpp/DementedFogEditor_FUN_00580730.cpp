@@ -15,162 +15,133 @@ void __cdecl core_setedit_cpp_DementedFogEditor_FUN_00580730(void *unk)
   char *pcVar4;
   void *pvVar5;
   undefined3 extraout_var;
-  uint uVar6;
+  uint *puVar6;
   int iVar7;
   uint *puVar8;
-  int iVar9;
-  int *piVar10;
   BADSPACEBASE *in_ESP;
+  char *pcVar9;
+  byte bVar10;
   char *pcVar11;
-  char *pcVar12;
-  byte bVar13;
-  int in_stack_0000002c;
-  int *in_stack_0000003c;
-  int *piStack00000040;
-  int *in_stack_0000004c;
-  int *in_stack_00000050;
-  int *in_stack_0000005c;
-  uint *in_stack_00000060;
-  ulonglong uVar14;
-  uint uVar15;
-  ulonglong in_stack_fffffa24;
-  double dVar16;
-  char *in_stack_fffffa94;
-  CStrList_vtable *config_param1;
-  CStrList_vtable *in_stack_fffffad8;
-  CStrList_vtable *in_stack_fffffae0;
-  char **in_stack_fffffae4;
-  CStrList_vtable *in_stack_fffffae8;
-  CStrList_vtable *in_stack_fffffaec;
-  char **in_stack_fffffaf0;
-  CStrList_vtable *in_stack_fffffaf4;
-  CStrList_swap *in_stack_fffffaf8;
-  char **in_stack_fffffafc;
-  CStrList_vtable *in_stack_fffffb00;
-  CStrList_swap *in_stack_fffffb04;
-  char acStack_234 [4];
-  byte auStack_230 [260];
-  char acStack_12c [4];
-  char acStack_128 [4];
-  char acStack_124 [4];
-  char acStack_120 [4];
-  char acStack_11c [4];
-  char acStack_118 [4];
-  char acStack_114 [4];
-  char acStack_110 [4];
-  char acStack_10c [4];
-  char acStack_108 [28];
-  char acStack_ec [4];
-  char acStack_e8 [24];
-  char acStack_d0 [4];
-  char acStack_cc [4];
-  char acStack_c8 [4];
-  char acStack_c4 [144];
-  int local_34;
-  int local_30;
+  uint d2;
+  uint d3;
+  CStrList_vtable *d5;
+  CStrList_vtable *pCVar12;
+  CStrList_vtable *d6;
+  char acStack_23c [256];
+  char acStack_13c [4];
+  char acStack_138 [252];
+  double dStack_3c;
+  int *local_34;
+  char *local_30;
   int local_2c;
-  int local_28;
+  uint local_28;
   int local_24;
-  int local_20;
-  int local_18;
-  int iStack_14;
+  uint *local_20;
+  uint *local_1c;
+  uint *local_18;
+  uint *puStack_14;
   
-  bVar13 = 0;
+  bVar10 = 0;
   core_setedit_cpp_CDemonSet_BuildingThumbnailImages_FUN_00576da0(unk);
   local_2c = (int)unk + 4;
   *(uint *)((int)unk + 0x15aea4) = 0;
-  local_20 = (int)unk + 0x15ac30;
-  iStack_14 = (int)unk + 0x15ac3c;
-  local_34 = (int)unk + 0x15ac7c;
-  local_30 = (int)unk + 0x14d0f0;
+  local_20 = (uint *)((int)unk + 0x15ac30);
+  puStack_14 = (uint *)((int)unk + 0x15ac3c);
+  local_34 = (int *)((int)unk + 0x15ac7c);
+  local_30 = (char *)((int)unk + 0x14d0f0);
   local_24 = local_2c;
   local_18 = local_20;
   do {
     do {
-      iVar9 = (int)in_stack_fffffa24;
       iVar3 = *(int *)((int)unk + 0x15aea4) * 0x1a4;
-      iVar7 = local_20;
+      puVar8 = local_20;
       if (*(int *)((int)unk + iVar3 + 0x154) == 0) {
-        iVar7 = iVar3 + local_24 + 0x154;
+        puVar8 = (uint *)(iVar3 + local_24 + 0x154);
       }
       wincore_windll_cpp_clearScreen_FUN_005b3e70();
       engine_2d_c_drawText_FUN_00401fd0("Demented(R) Fog Editor",0,0);
-      if (*(int *)((int)unk + *(int *)((int)unk + 0x15aea4) * 0x1a4 + 0x154) == 0) {
-        crt_stdio_c_sprintf_FUN_005fdbd0(acStack_234,"1.  Fog settings for camera %s");
-        iVar9 = 0x16;
-        uVar14 = ZEXT48(auStack_230);
+      iVar3 = *(int *)((int)unk + 0x15aea4) * 0x1a4;
+      if (*(int *)((int)unk + iVar3 + 0x154) == 0) {
+        crt_stdio_c_sprintf_FUN_005fdbd0
+                  (acStack_23c,"1.  Fog settings for camera %s",iVar3 + local_24);
+        pcVar11 = acStack_23c;
       }
       else {
-        uVar14 = 0x1600000000;
+        pcVar11 = "1.  Use global fog";
       }
-      engine_2d_c_drawText_FUN_00401fd0((char *)uVar14,(int)(uVar14 >> 0x20),iVar9);
-      crt_stdio_c_sprintf_FUN_005fdbd0(acStack_12c,"2.  Fog color : %d,%d,%d");
-      engine_2d_c_drawText_FUN_00401fd0(acStack_128,0,0x2c);
-      dVar16 = (double)*(float *)(iVar7 + 0x10);
+      engine_2d_c_drawText_FUN_00401fd0(pcVar11,0,0x16);
+      crt_stdio_c_sprintf_FUN_005fdbd0(acStack_138,"2.  Fog color : %d,%d,%d",*puVar8,puVar8[1])
+      ;
+      engine_2d_c_drawText_FUN_00401fd0(acStack_13c,0,0x2c);
       crt_stdio_c_sprintf_FUN_005fdbd0
-                (acStack_124,"3.  Fog velocity : %f,%f,%f",(double)*(float *)(iVar7 + 0xc),
-                 dVar16,(double)*(float *)(iVar7 + 0x14));
-      uVar15 = SUB84 /* extract 2-byte value */(dVar16,0);
-      engine_2d_c_drawText_FUN_00401fd0(acStack_120,0,0x37);
-      in_stack_fffffa24 = CONCAT44 /* combine 2-byte values */(0x5808b9,uVar15);
+                (acStack_138,"3.  Fog velocity : %f,%f,%f",SUB84 /* extract 2-byte value */((double)(float)puVar8[3],0),
+                 (int)((ulonglong)(double)(float)puVar8[3] >> 0x20),
+                 SUB84 /* extract 2-byte value */((double)(float)puVar8[4],0),
+                 (int)((ulonglong)(double)(float)puVar8[4] >> 0x20),
+                 SUB84 /* extract 2-byte value */((double)(float)puVar8[5],0));
+      engine_2d_c_drawText_FUN_00401fd0(acStack_13c,0,0x37);
       crt_stdio_c_sprintf_FUN_005fdbd0
-                (acStack_11c,"4.  Fog taper : %f",(double)*(float *)(iVar7 + 0x18));
-      engine_2d_c_drawText_FUN_00401fd0(acStack_118,0,0x42);
+                (acStack_138,"4.  Fog taper : %f",SUB84 /* extract 2-byte value */((double)(float)puVar8[6],0));
+      engine_2d_c_drawText_FUN_00401fd0(acStack_13c,0,0x42);
       crt_stdio_c_sprintf_FUN_005fdbd0
-                (acStack_114,"5.  Fog density : %f",(double)*(float *)(iVar7 + 0x1c));
-      engine_2d_c_drawText_FUN_00401fd0(acStack_110,0,0x4d);
+                (acStack_138,"5.  Fog density : %f",SUB84 /* extract 2-byte value */((double)(float)puVar8[7],0));
+      engine_2d_c_drawText_FUN_00401fd0(acStack_13c,0,0x4d);
       crt_stdio_c_sprintf_FUN_005fdbd0
-                (acStack_10c,"T.  Temperature (F) : %3.2f",(double)*(float *)(iVar7 + 0x20));
-      engine_2d_c_drawText_FUN_00401fd0(acStack_108,0,0x58);
+                (acStack_138,"T.  Temperature (F) : %3.2f",SUB84 /* extract 2-byte value */((double)(float)puVar8[8],0));
+      engine_2d_c_drawText_FUN_00401fd0(acStack_13c,0,0x58);
       engine_2d_c_drawText_FUN_00401fd0("6.  Reset all cameras to master fog setting",0,99);
       engine_2d_c_drawText_FUN_00401fd0("7.  Precompute fog for selected camera",0,0x6e);
       engine_2d_c_drawText_FUN_00401fd0("S.  Save set",0,0x79);
       engine_2d_c_drawText_FUN_00401fd0("8.  Preview fog settings",0,0x84);
+      pcVar11 = "9.  Precompute fog";
+      d3 = 0x58098c;
       engine_2d_c_drawText_FUN_00401fd0("9.  Precompute fog",0,0x8f);
+      pCVar12 = (CStrList_vtable *)g_CSoundPtr;
       if (*(int *)((int)unk + *(int *)((int)unk + 0x15aea4) * 0x1a4 + 0x154) == 0) {
-        pcVar4 = core_sound_cpp_CSound_getSoundModeName_FUN_005b3c70
-                           (g_CSoundPtr,
-                            *(int *)((int)unk + *(int *)((int)unk + 0x15aea4) * 0x1a4 + 0x17c));
+        d6 = *(CStrList_vtable **)((int)unk + *(int *)((int)unk + 0x15aea4) * 0x1a4 + 0x17c);
+        d5 = (CStrList_vtable *)0x580b4a;
+        pcVar4 = core_sound_cpp_CSound_getSoundModeName_FUN_005b3c70(g_CSoundPtr,(int)d6);
         crt_stdio_c_sprintf_FUN_005fdbd0
-                  (acStack_ec,"R.  Reverb for camera %s : %s",
-                   *(int *)((int)unk + 0x15aea4) * 0x1a4 + in_stack_0000002c,pcVar4);
+                  (acStack_13c,"R.  Reverb for camera %s : %s",
+                   *(int *)((int)unk + 0x15aea4) * 0x1a4 + local_24,pcVar4);
       }
       else {
-        pcVar4 = core_sound_cpp_CSound_getSoundModeName_FUN_005b3c70
-                           (g_CSoundPtr,*(int *)((int)unk + 0x15ac7c));
-        crt_stdio_c_sprintf_FUN_005fdbd0(acStack_ec,"R.  Default set reverb : %s",pcVar4);
+        d6 = *(CStrList_vtable **)((int)unk + 0x15ac7c);
+        d5 = (CStrList_vtable *)0x5809c1;
+        pcVar4 = core_sound_cpp_CSound_getSoundModeName_FUN_005b3c70(g_CSoundPtr,(int)d6);
+        crt_stdio_c_sprintf_FUN_005fdbd0(acStack_13c,"R.  Default set reverb : %s",pcVar4);
       }
-      engine_2d_c_drawText_FUN_00401fd0(acStack_e8,0,0xa5);
+      engine_2d_c_drawText_FUN_00401fd0(acStack_13c,0,0xa5);
       engine_2d_c_drawText_FUN_00401fd0("V.  Test reverb",0,0xb0);
       iVar3 = 0;
       if (0 < *(int *)unk) {
-        iVar9 = 0;
+        iVar7 = 0;
         pvVar5 = unk;
         do {
-          *(uint *)((int)&DAT_03659388 + iVar9) = *(uint *)((int)pvVar5 + 0x154);
-          iVar9 = iVar9 + 4;
+          *(uint *)((int)&DAT_03659388 + iVar7) = *(uint *)((int)pvVar5 + 0x154);
+          iVar7 = iVar7 + 4;
           iVar3 = iVar3 + 1;
           pvVar5 = (void *)((int)pvVar5 + 0x1a4);
         } while (iVar3 < *(int *)unk);
       }
       iVar3 = core_setedit_cpp_CDemonSet_FUN_00577af0(unk);
       if (iVar3 != -1) {
-        iVar9 = *(int *)((int)unk + 0x15aea4);
-        if (iVar3 == iVar9) {
-          *(uint *)((int)unk + iVar9 * 0x1a4 + 0x154) =
-               (uint)(*(int *)((int)unk + iVar9 * 0x1a4 + 0x154) == 0);
-          iVar3 = *(int *)((int)unk + 0x15aea4);
-          in_stack_0000003c[iVar3 * 0x69 + 0x55] = *piStack00000040;
-          in_stack_0000003c[iVar3 * 0x69 + 0x56] = piStack00000040[1];
-          in_stack_0000003c[iVar3 * 0x69 + 0x57] = piStack00000040[2];
-          if (in_stack_0000003c + iVar3 * 0x69 + 0x58 != in_stack_0000004c) {
-            in_stack_0000003c[iVar3 * 0x69 + 0x58] = *in_stack_0000004c;
-            in_stack_0000003c[iVar3 * 0x69 + 0x59] = in_stack_0000004c[1];
-            in_stack_0000003c[iVar3 * 0x69 + 0x5a] = in_stack_0000004c[2];
+        iVar7 = *(int *)((int)unk + 0x15aea4);
+        if (iVar3 == iVar7) {
+          *(uint *)((int)unk + iVar7 * 0x1a4 + 0x154) =
+               (uint)(*(int *)((int)unk + iVar7 * 0x1a4 + 0x154) == 0);
+          iVar3 = *(int *)((int)unk + 0x15aea4) * 0x1a4 + local_24;
+          *(uint *)(iVar3 + 0x154) = *local_20;
+          *(uint *)(iVar3 + 0x158) = local_20[1];
+          *(uint *)(iVar3 + 0x15c) = local_20[2];
+          if ((uint *)(iVar3 + 0x160) != puStack_14) {
+            *(uint *)(iVar3 + 0x160) = *puStack_14;
+            *(uint *)(iVar3 + 0x164) = puStack_14[1];
+            *(uint *)(iVar3 + 0x168) = puStack_14[2];
           }
-          in_stack_0000003c[iVar3 * 0x69 + 0x5b] = piStack00000040[6];
-          in_stack_0000003c[iVar3 * 0x69 + 0x5c] = piStack00000040[7];
-          in_stack_0000003c[iVar3 * 0x69 + 0x5d] = piStack00000040[8];
+          *(uint *)(iVar3 + 0x16c) = local_20[6];
+          *(uint *)(iVar3 + 0x170) = local_20[7];
+          *(uint *)(iVar3 + 0x174) = local_20[8];
         }
         else {
           *(int *)((int)unk + 0x15aea4) = iVar3;
@@ -180,269 +151,264 @@ void __cdecl core_setedit_cpp_DementedFogEditor_FUN_00580730(void *unk)
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
       iVar3 = wincore_winrun_cpp_wasKeyPressed_FUN_005f2f00();
     } while (iVar3 == 0);
-    uVar6 = engine_keys_cpp_CKeys_getUppercasedInputKey_FUN_00502470(g_CKeysPtr);
-    if (uVar6 < 0x37) {
-      if (uVar6 < 0x33) {
-        if (0x30 < uVar6) {
-          if (uVar6 < 0x32) {
+    local_28 = engine_keys_cpp_CKeys_getUppercasedInputKey_FUN_00502470(g_CKeysPtr);
+    iVar3 = local_24;
+    if (local_28 < 0x37) {
+      if (local_28 < 0x33) {
+        if (0x30 < local_28) {
+          if (local_28 < 0x32) {
             *(uint *)((int)unk + *(int *)((int)unk + 0x15aea4) * 0x1a4 + 0x154) =
                  (uint)(*(int *)((int)unk + *(int *)((int)unk + 0x15aea4) * 0x1a4 + 0x154) == 0);
-            iVar7 = *(int *)((int)unk + 0x15aea4);
-            in_stack_0000004c[iVar7 * 0x69 + 0x55] = *in_stack_00000050;
-            in_stack_0000004c[iVar7 * 0x69 + 0x56] = in_stack_00000050[1];
-            in_stack_0000004c[iVar7 * 0x69 + 0x57] = in_stack_00000050[2];
-            if (in_stack_0000004c + iVar7 * 0x69 + 0x58 != in_stack_0000005c) {
-              in_stack_0000004c[iVar7 * 0x69 + 0x58] = *in_stack_0000005c;
-              in_stack_0000004c[iVar7 * 0x69 + 0x59] = in_stack_0000005c[1];
-              in_stack_0000004c[iVar7 * 0x69 + 0x5a] = in_stack_0000005c[2];
+            iVar3 = *(int *)((int)unk + 0x15aea4) * 0x1a4 + local_24;
+            *(uint *)(iVar3 + 0x154) = *local_20;
+            *(uint *)(iVar3 + 0x158) = local_20[1];
+            *(uint *)(iVar3 + 0x15c) = local_20[2];
+            if ((uint *)(iVar3 + 0x160) != puStack_14) {
+              *(uint *)(iVar3 + 0x160) = *puStack_14;
+              *(uint *)(iVar3 + 0x164) = puStack_14[1];
+              *(uint *)(iVar3 + 0x168) = puStack_14[2];
             }
-            in_stack_0000004c[iVar7 * 0x69 + 0x5b] = in_stack_00000050[6];
-            in_stack_0000004c[iVar7 * 0x69 + 0x5c] = in_stack_00000050[7];
-            in_stack_0000004c[iVar7 * 0x69 + 0x5d] = in_stack_00000050[8];
+            *(uint *)(iVar3 + 0x16c) = local_20[6];
+            *(uint *)(iVar3 + 0x170) = local_20[7];
+            *(uint *)(iVar3 + 0x174) = local_20[8];
           }
           else {
             wincore_windll_cpp_clearScreen_FUN_005b3e70();
             engine_2d_c_getInputWithPrompt_FUN_004032c0
-                      (acStack_c8,0x1e,0,0,"Enter fog color r,g,b : ");
+                      (acStack_138,0x1e,0,0,"Enter fog color r,g,b : ");
             iVar3 = -1;
-            pcVar4 = acStack_c4;
+            pcVar11 = acStack_13c;
             do {
               if (iVar3 == 0) break;
               iVar3 = iVar3 + -1;
-              cVar1 = *pcVar4;
-              pcVar4 = pcVar4 + (uint)bVar13 * -2 + 1;
+              cVar1 = *pcVar11;
+              pcVar11 = pcVar11 + (uint)bVar10 * -2 + 1;
             } while (cVar1 != '\0');
             if (iVar3 != -2) {
-              crt_stdio_c_sscanf_FUN_0060013c(acStack_c4,"%d,%d,%d",iVar7,iVar7 + 4,iVar7 + 8)
-              ;
+              crt_stdio_c_sscanf_FUN_0060013c
+                        (acStack_13c,"%d,%d,%d",puVar8,puVar8 + 1,puVar8 + 2);
             }
           }
         }
       }
-      else if (uVar6 < 0x34) {
+      else if (local_28 < 0x34) {
         wincore_windll_cpp_clearScreen_FUN_005b3e70();
         engine_2d_c_getInputWithPrompt_FUN_004032c0
-                  (acStack_c8,0x1e,0,0,"Enter fog velocity x,y,z : ");
+                  (acStack_138,0x1e,0,0,"Enter fog velocity x,y,z : ");
         iVar3 = -1;
-        pcVar4 = acStack_c4;
+        pcVar11 = acStack_13c;
         do {
           if (iVar3 == 0) break;
           iVar3 = iVar3 + -1;
-          cVar1 = *pcVar4;
-          pcVar4 = pcVar4 + (uint)bVar13 * -2 + 1;
+          cVar1 = *pcVar11;
+          pcVar11 = pcVar11 + (uint)bVar10 * -2 + 1;
         } while (cVar1 != '\0');
         if (iVar3 != -2) {
           crt_stdio_c_sscanf_FUN_0060013c
-                    (acStack_c4,"%f,%f,%f",iVar7 + 0xc,iVar7 + 0x10,iVar7 + 0x14);
+                    (acStack_13c,"%f,%f,%f",puVar8 + 3,puVar8 + 4,puVar8 + 5);
         }
       }
-      else if (uVar6 < 0x35) {
+      else if (local_28 < 0x35) {
         wincore_windll_cpp_clearScreen_FUN_005b3e70();
+        pcVar4 = "Enter in fog taper : ";
         engine_2d_c_getInputWithPrompt_FUN_004032c0
-                  (acStack_c8,0x1e,0,0,"Enter in fog taper : ");
+                  (acStack_138,0x1e,0,0,"Enter in fog taper : ");
         iVar3 = -1;
-        pcVar4 = acStack_c4;
+        pcVar11 = acStack_13c;
         do {
           if (iVar3 == 0) break;
           iVar3 = iVar3 + -1;
-          cVar1 = *pcVar4;
-          pcVar4 = pcVar4 + (uint)bVar13 * -2 + 1;
+          cVar1 = *pcVar11;
+          pcVar11 = pcVar11 + (uint)bVar10 * -2 + 1;
         } while (cVar1 != '\0');
         if (iVar3 != -2) {
-          _piStack00000040 = crt_string_c_strtod_FUN_005ff0f3(in_stack_fffffa94);
-          *(float *)(iVar7 + 0x18) = (float)_piStack00000040;
+          dStack_3c = crt_string_c_strtod_FUN_005ff0f3(pcVar4);
+          puVar8[6] = (float)dStack_3c;
         }
       }
-      else if (uVar6 < 0x36) {
+      else if (local_28 < 0x36) {
         wincore_windll_cpp_clearScreen_FUN_005b3e70();
+        pcVar4 = "Enter in fog density : ";
         engine_2d_c_getInputWithPrompt_FUN_004032c0
-                  (acStack_c8,0x1e,0,0,"Enter in fog density : ");
+                  (acStack_138,0x1e,0,0,"Enter in fog density : ");
         iVar3 = -1;
-        pcVar4 = acStack_c4;
+        pcVar11 = acStack_13c;
         do {
           if (iVar3 == 0) break;
           iVar3 = iVar3 + -1;
-          cVar1 = *pcVar4;
-          pcVar4 = pcVar4 + (uint)bVar13 * -2 + 1;
+          cVar1 = *pcVar11;
+          pcVar11 = pcVar11 + (uint)bVar10 * -2 + 1;
         } while (cVar1 != '\0');
         if (iVar3 != -2) {
-          _piStack00000040 = crt_string_c_strtod_FUN_005ff0f3(in_stack_fffffa94);
-          *(float *)(iVar7 + 0x1c) = (float)_piStack00000040;
+          dStack_3c = crt_string_c_strtod_FUN_005ff0f3(pcVar4);
+          puVar8[7] = (float)dStack_3c;
         }
       }
       else {
-        iVar7 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
+        iVar3 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
                           (g_CEditorToolsPtr,"Reset all cameras to master fog setting?");
-        if (iVar7 != 0) {
-          puVar8 = (uint *)(uVar6 + 0x160);
-          piVar10 = (int *)(uVar6 + 0x154);
+        if (iVar3 != 0) {
+          puVar6 = (uint *)(local_2c + 0x160);
+          puVar8 = (uint *)(local_2c + 0x154);
           pvVar5 = unk;
           do {
+            local_1c = local_18;
             *(uint *)((int)pvVar5 + 0x154) = 1;
-            *piVar10 = *in_stack_0000005c;
-            piVar10[1] = in_stack_0000005c[1];
-            piVar10[2] = in_stack_0000005c[2];
-            if (puVar8 != in_stack_00000060) {
-              *puVar8 = *in_stack_00000060;
-              puVar8[1] = in_stack_00000060[1];
-              puVar8[2] = in_stack_00000060[2];
+            *puVar8 = *local_18;
+            puVar8[1] = local_18[1];
+            puVar8[2] = local_18[2];
+            if (puVar6 != puStack_14) {
+              *puVar6 = *puStack_14;
+              puVar6[1] = puStack_14[1];
+              puVar6[2] = puStack_14[2];
             }
-            puVar8 = puVar8 + 0x69;
+            puVar6 = puVar6 + 0x69;
             pvVar5 = (void *)((int)pvVar5 + 0x1a4);
-            piVar10[6] = in_stack_0000005c[6];
-            piVar10[7] = in_stack_0000005c[7];
-            piVar10[8] = in_stack_0000005c[8];
-            piVar10 = piVar10 + 0x69;
+            puVar8[6] = local_18[6];
+            puVar8[7] = local_18[7];
+            puVar8[8] = local_18[8];
+            puVar8 = puVar8 + 0x69;
           } while (pvVar5 != (void *)((int)unk + 0x19a28));
         }
       }
     }
-    else if (uVar6 < 0x38) {
+    else if (local_28 < 0x38) {
       core_setedit_cpp_FUN_00581320();
     }
-    else if (uVar6 < 0x52) {
-      if (uVar6 < 0x39) {
+    else if (local_28 < 0x52) {
+      if (local_28 < 0x39) {
         core_setedit_cpp_FUN_00581320();
       }
-      else if (uVar6 == 0x39) {
+      else if (local_28 == 0x39) {
         core_setedit_cpp_BackdropMaybe_FUN_005805a0();
       }
     }
-    else if (uVar6 < 0x53) {
-      if (*(int *)((int)unk + *(int *)((int)unk + 0x15aea4) * 0x1a4 + 0x154) == 0) {
+    else if (local_28 < 0x53) {
+      iVar7 = *(int *)((int)unk + 0x15aea4) * 0x1a4;
+      if (*(int *)((int)unk + iVar7 + 0x154) == 0) {
         crt_stdio_c_sprintf_FUN_005fdbd0
-                  (acStack_cc,"Edit reverb for camera %s",
-                   in_stack_0000004c + *(int *)((int)unk + 0x15aea4) * 0x69);
+                  (acStack_13c,"Edit reverb for camera %s",iVar7 + local_24);
         core_sound_cpp_CSound_selectReverbPreset_FUN_005b3d20
-                  (g_CSoundPtr,acStack_c8,
-                   in_stack_0000004c + *(int *)((int)unk + 0x15aea4) * 0x69 + 0x5e);
+                  (g_CSoundPtr,acStack_13c,
+                   (int *)(*(int *)((int)unk + 0x15aea4) * 0x1a4 + iVar3 + 0x178));
       }
       else {
         core_sound_cpp_CSound_selectReverbPreset_FUN_005b3d20
-                  (g_CSoundPtr,"Edit default set reverb",in_stack_0000003c);
+                  (g_CSoundPtr,"Edit default set reverb",local_34);
       }
     }
-    else if (uVar6 < 0x54) {
+    else if (local_28 < 0x54) {
       if (*(char *)((int)unk + 0x14d0f0) == '\0') {
-        acStack_cc[0] = '\0';
+        acStack_13c[0] = '\0';
       }
       else {
         engine_dosio_c_splitPath_FUN_00481f20
-                  ((char *)piStack00000040,(char *)0x0,(char *)0x0,acStack_cc,(char *)0x0);
-        pcVar11 = ".set";
-        iVar7 = -1;
-        pcVar4 = acStack_d0;
+                  (local_30,(char *)0x0,(char *)0x0,acStack_13c,(char *)0x0);
+        pcVar4 = ".set";
+        iVar3 = -1;
+        pcVar11 = acStack_13c;
         do {
-          pcVar12 = pcVar4;
-          if (iVar7 == 0) break;
-          iVar7 = iVar7 + -1;
-          pcVar12 = pcVar4 + (uint)bVar13 * -2 + 1;
-          cVar1 = *pcVar4;
-          pcVar4 = pcVar12;
-        } while (cVar1 != '\0');
-        pcVar12 = pcVar12 + -1;
-        do {
+          pcVar9 = pcVar11;
+          if (iVar3 == 0) break;
+          iVar3 = iVar3 + -1;
+          pcVar9 = pcVar11 + (uint)bVar10 * -2 + 1;
           cVar1 = *pcVar11;
-          *pcVar12 = cVar1;
-          if (cVar1 == '\0') break;
-          cVar1 = pcVar11[1];
-          pcVar11 = pcVar11 + 2;
-          pcVar12[1] = cVar1;
-          pcVar12 = pcVar12 + 2;
+          pcVar11 = pcVar9;
         } while (cVar1 != '\0');
-        crt_string_c_strupr_FUN_00600770(acStack_d0);
+        pcVar9 = pcVar9 + -1;
+        do {
+          cVar1 = *pcVar4;
+          *pcVar9 = cVar1;
+          if (cVar1 == '\0') break;
+          cVar1 = pcVar4[1];
+          pcVar4 = pcVar4 + 2;
+          pcVar9[1] = cVar1;
+          pcVar9 = pcVar9 + 2;
+        } while (cVar1 != '\0');
+        crt_string_c_strupr_FUN_00600770(acStack_13c);
       }
       bVar2 = shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
                         (g_CEditorToolsPtr,"Save set","models",0x64888c,
-                         SUB41 /* extract 2-byte value */(acStack_cc,0));
+                         SUB41 /* extract 2-byte value */(acStack_13c,0));
       if (CONCAT31 /* combine 2-byte values */(extraout_var,bVar2) != 0) {
-        core_setedit_cpp_CDemonSet_save_FUN_0057a2a0(unk,acStack_c8);
+        core_setedit_cpp_CDemonSet_save_FUN_0057a2a0(unk,acStack_13c);
       }
     }
-    else if (uVar6 < 0x55) {
+    else if (local_28 < 0x55) {
       wincore_windll_cpp_clearScreen_FUN_005b3e70();
+      pcVar4 = "Enter in temperature : ";
       engine_2d_c_getInputWithPrompt_FUN_004032c0
-                (acStack_c8,0x14,0,0,"Enter in temperature : ");
+                (acStack_138,0x14,0,0,"Enter in temperature : ");
       iVar3 = -1;
-      pcVar4 = acStack_c4;
+      pcVar11 = acStack_13c;
       do {
         if (iVar3 == 0) break;
         iVar3 = iVar3 + -1;
-        cVar1 = *pcVar4;
-        pcVar4 = pcVar4 + (uint)bVar13 * -2 + 1;
+        cVar1 = *pcVar11;
+        pcVar11 = pcVar11 + (uint)bVar10 * -2 + 1;
       } while (cVar1 != '\0');
       if (iVar3 != -2) {
-        _piStack00000040 = crt_string_c_strtod_FUN_005ff0f3(in_stack_fffffa94);
-        *(float *)(iVar7 + 0x20) = (float)_piStack00000040;
+        dStack_3c = crt_string_c_strtod_FUN_005ff0f3(pcVar4);
+        puVar8[8] = (float)dStack_3c;
       }
     }
-    else if (uVar6 == 0x56) {
-      iVar7 = *(int *)((int)unk + 0x15ac7c);
+    else if (local_28 == 0x56) {
+      iVar3 = *(int *)((int)unk + 0x15ac7c);
       if (*(int *)((int)unk + *(int *)((int)unk + 0x15aea4) * 0x1a4 + 0x154) == 0) {
-        iVar7 = *(int *)((int)unk + *(int *)((int)unk + 0x15aea4) * 0x1a4 + 0x17c);
+        iVar3 = *(int *)((int)unk + *(int *)((int)unk + 0x15aea4) * 0x1a4 + 0x17c);
       }
-      core_sound_cpp_CSound_setReverbPreset_FUN_005b3cc0(g_CSoundPtr,iVar7);
+      core_sound_cpp_CSound_setReverbPreset_FUN_005b3cc0(g_CSoundPtr,iVar3);
       sound_sndmain_cpp_enableSoundSystem_FUN_005aaef0();
+      d2 = 0;
       sound_sndmain_cpp_set3DListenerPos_FUN_005aa020(0.0,0.0,0.0);
       sound_sndmain_cpp_set3DListenerOrient_FUN_005aa0a0(1.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,1.0);
       while( true ) {
-        shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffffa9c);
-        in_stack_fffffa94 = (char *)0x580ff0;
+        shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffffa1c);
         shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                  ((CStrList *)&stack0xfffffaa0,"45.wav");
+                  ((CStrList *)&stack0xfffffa1c,"45.wav");
         shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                  ((CStrList *)&stack0xfffffaa4,"cre-fire.wav");
+                  ((CStrList *)&stack0xfffffa1c,"cre-fire.wav");
         shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                  ((CStrList *)&stack0xfffffaa8,"shotgun.wav");
+                  ((CStrList *)&stack0xfffffa1c,"shotgun.wav");
         shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                  ((CStrList *)&stack0xfffffaac,"zom-s04.wav");
+                  ((CStrList *)&stack0xfffffa1c,"zom-s04.wav");
         shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                  ((CStrList *)&stack0xfffffab0,"stranger_hit01.wav");
+                  ((CStrList *)&stack0xfffffa1c,"stranger_hit01.wav");
         shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                  ((CStrList *)&stack0xfffffab4,"xplode1.wav");
+                  ((CStrList *)&stack0xfffffa1c,"xplode1.wav");
         shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                  ((CStrList *)&stack0xfffffab8,"limb1.wav");
+                  ((CStrList *)&stack0xfffffa1c,"limb1.wav");
         shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                  ((CStrList *)&stack0xfffffabc,"footstep-str-0-ct-1.wav");
+                  ((CStrList *)&stack0xfffffa1c,"footstep-str-0-ct-1.wav");
         shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                  ((CStrList *)&stack0xfffffac0,"footstep-str-0-wd-1.wav");
+                  ((CStrList *)&stack0xfffffa1c,"footstep-str-0-wd-1.wav");
         shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                  ((CStrList *)&stack0xfffffac4,"footstep-str-0-mt-1.wav");
+                  ((CStrList *)&stack0xfffffa1c,"footstep-str-0-mt-1.wav");
         shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                  ((CStrList *)&stack0xfffffac8,"footstep-str-0-mb-1.wav");
+                  ((CStrList *)&stack0xfffffa1c,"footstep-str-0-mb-1.wav");
         shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                  ((CStrList *)&stack0xfffffacc,"footstep-str-0-gr-1.wav");
+                  ((CStrList *)&stack0xfffffa1c,"footstep-str-0-gr-1.wav");
         shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                  ((CStrList *)&stack0xfffffad0,"ric-mt0a.wav");
+                  ((CStrList *)&stack0xfffffa1c,"ric-mt0a.wav");
         shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                  ((CStrList *)&stack0xfffffad4,"ric-ct0a.wav");
-        config_param1 = (CStrList_vtable *)0x0;
-        pcVar4 = core_sound_cpp_CSound_getSoundModeName_FUN_005b3c70(g_CSoundPtr,iVar7);
-        iVar3 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                          ((CPickList *)&stack0xfffffadc,pcVar4,(int)config_param1,
-                           (int)in_stack_fffffad8);
-        in_stack_fffffad8 = (CStrList_vtable *)&stack0xfffffae0;
-        if (iVar3 < 0) break;
+                  ((CStrList *)&stack0xfffffa1c,"ric-ct0a.wav");
+        pcVar4 = core_sound_cpp_CSound_getSoundModeName_FUN_005b3c70(g_CSoundPtr,iVar3);
+        iVar7 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
+                          ((CPickList *)&stack0xfffffa24,pcVar4,d2,d3);
+        if (iVar7 < 0) break;
         sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
-        in_stack_fffffad8 = (CStrList_vtable *)0x0;
         sound_sndmain_cpp_setNextSfxStaticPosition_FUN_005a88e0(0.0,0.0,20.0);
-        in_stack_fffffae0 = (CStrList_vtable *)&stack0xfffffae8;
         pcVar4 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
-                           ((CStrList *)&stack0xfffffae8,iVar3);
-        in_stack_fffffae4 = (char **)0x581136;
+                           ((CStrList *)&stack0xfffffa1c,iVar7);
         sound_sndmain_cpp_startSfx_FUN_005a8e90(pcVar4);
         sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
-        in_stack_fffffaec = (CStrList_vtable *)&stack0xfffffaf4;
-        in_stack_fffffaf0 = (char **)0x0;
-        in_stack_fffffae8 = (CStrList_vtable *)0x58114a;
+        d2 = 0;
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                  ((CPickList *)&stack0xfffffaf4,0,(uint)in_stack_fffffaf4,(uint)in_stack_fffffaf8,
-                   (uint)in_stack_fffffafc,(uint)in_stack_fffffb00,(uint)in_stack_fffffb04);
+                  ((CPickList *)&stack0xfffffa20,0,d3,(uint)pcVar11,(uint)d5,(uint)pCVar12,(uint)d6)
+        ;
       }
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                ((CPickList *)&stack0xfffffae0,0,(uint)in_stack_fffffae0,(uint)in_stack_fffffae4,
-                 (uint)in_stack_fffffae8,(uint)in_stack_fffffaec,(uint)in_stack_fffffaf0);
-      in_stack_fffffae0 = (CStrList_vtable *)0x581166;
+                ((CPickList *)&stack0xfffffa1c,0,d2,d3,(uint)pcVar11,(uint)d5,(uint)pCVar12);
       sound_sndmain_cpp_resetSoundDevice_FUN_005ab130();
     }
     if (local_28 == 0x1b) {

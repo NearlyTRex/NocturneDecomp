@@ -1,20 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 338,
-    "complexity_score": 707,
+    "complexity_score": 98,
     "cross_reference_count": 13,
     "function_call_count": 0,
     "global_count": 11,
-    "pseudocode_lines": 132,
-    "suspect_count": 55,
-    "suspect_types": [
-      "callind_anchor",
-      "stack_align_anchor",
-      "stack_param",
-      "suspect_float",
-      "unaffected_reg"
-    ],
-    "total_lines": 470
+    "pseudocode_lines": 98,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 436
   },
   "cross_references": [
     {
@@ -178,6 +172,62 @@
       "value": null
     }
   ],
+  "pcode_overrides": {
+    "005a20b7": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffdc,4)"
+    ],
+    "005a20dc": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffdc,4)"
+    ],
+    "005a212d": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffdc,4)"
+    ],
+    "005a214a": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffdc,4)"
+    ],
+    "005a2167": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffdc,4)"
+    ],
+    "005a21a6": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffdc,4)"
+    ],
+    "005a21e5": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffdc,4)"
+    ],
+    "005a2235": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffdc,4)"
+    ],
+    "005a2285": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffdc,4)"
+    ],
+    "005a22a1": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffdc,4)"
+    ],
+    "005a22bd": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffdc,4)"
+    ],
+    "005a22da": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffdc,4)"
+    ],
+    "005a22f7": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffdc,4)"
+    ],
+    "005a2314": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffdc,4)"
+    ],
+    "005a2331": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffdc,4)"
+    ],
+    "005a234e": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffdc,4)"
+    ],
+    "005a236b": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffdc,4)"
+    ],
+    "005a2383": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffdc,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.681063122923588,
     "instruction_count": 301,
@@ -208,313 +258,7 @@
     },
     "pcode_op_count": 1710
   },
-  "stack_frame": {
-    "frame_size": 52,
-    "local_size": 48,
-    "param_offset": 4,
-    "param_size": 4,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_2c",
-        "offset": -44,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_28",
-        "offset": -40,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": true,
-        "name": "this_ptr",
-        "offset": 4,
-        "size": 4,
-        "type": "CSlew *"
-      }
-    ]
-  },
-  "stack_patterns": {
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
-    "pattern_count": 1,
-    "pattern_types": [
-      "stack_alignment"
-    ],
-    "patterns": [
-      {
-        "address": "005a20b7",
-        "description": "Stack alignment (AND ESP, 0xfffffff8)",
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
-        "instruction": "AND ESP,0xfffffff8",
-        "pattern_id": "stack_alignment"
-      }
-    ],
-    "severity": "medium"
-  },
-  "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 6,
-      "match": "unaff_EBX",
-      "text": "float unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000028",
-      "text": "float in_stack_00000028;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000034",
-      "text": "float in_stack_00000034;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_0000003c",
-      "text": "float in_stack_0000003c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000048",
-      "text": "float in_stack_00000048;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_0000005c",
-      "text": "float in_stack_0000005c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00000070",
-      "text": "float in_stack_00000070;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_00000084",
-      "text": "float in_stack_00000084;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_00000098",
-      "text": "float in_stack_00000098;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_000000c8",
-      "text": "float in_stack_000000c8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_000000dc",
-      "text": "float in_stack_000000dc;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_000000f0",
-      "text": "float in_stack_000000f0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 28,
-      "match": "in_stack_00000104",
-      "text": "float in_stack_00000104;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 29,
-      "match": "in_stack_0000011c",
-      "text": "float in_stack_0000011c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_00000130",
-      "text": "float in_stack_00000130;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 37,
-      "match": "unaff_EBX",
-      "text": "unaff_EBX = unaff_retaddr * (float)10;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 41,
-      "match": "unaff_EBX",
-      "text": "unaff_EBX = fStack_14 * (float)0.050000000000000003;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 43,
-      "match": "unaff_EBX",
-      "text": "fStack00000014 = unaff_EBX * (float)3.1415926535000001;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 46,
-      "match": "in_stack_00000028",
-      "text": "this_ptr->yaw = this_ptr->yaw - in_stack_00000028;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 50,
-      "match": "in_stack_0000003c",
-      "text": "this_ptr->yaw = this_ptr->yaw + in_stack_0000003c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 52,
-      "match": "8.277177e-39",
-      "text": "fStack00000014 = 8.277177e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 58,
-      "match": "in_stack_00000034",
-      "text": "(float)(fVar2 * (float10)in_stack_00000034 + (float10)(this_ptr->position).x);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 60,
-      "match": "in_stack_00000034",
-      "text": "(float)(fVar3 * (float10)in_stack_00000034 + (float10)(this_ptr->position).z);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 67,
-      "match": "in_stack_00000048",
-      "text": "(float)((float10)(this_ptr->position).x - fVar2 * (float10)in_stack_00000048);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 69,
-      "match": "in_stack_00000048",
-      "text": "(float)((float10)(this_ptr->position).z - fVar3 * (float10)in_stack_00000048);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 76,
-      "match": "in_stack_0000005c",
-      "text": "(float)(fVar3 * (float10)in_stack_0000005c + (float10)(this_ptr->position).x);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 78,
-      "match": "in_stack_0000005c",
-      "text": "(float)(fVar2 * (float10)in_stack_0000005c + (float10)(this_ptr->position).z);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 86,
-      "match": "in_stack_00000070",
-      "text": "(float)(fVar3 * (float10)in_stack_00000070 + (float10)(this_ptr->position).x);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 88,
-      "match": "in_stack_00000070",
-      "text": "(float)(fVar2 * (float10)in_stack_00000070 + (float10)(this_ptr->position).z);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 93,
-      "match": "in_stack_00000084",
-      "text": "(this_ptr->position).y = (this_ptr->position).y + in_stack_00000084;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 98,
-      "match": "in_stack_00000098",
-      "text": "(this_ptr->position).y = (this_ptr->position).y - in_stack_00000098;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 103,
-      "match": "in_stack_000000c8",
-      "text": "this_ptr->pitch = this_ptr->pitch - in_stack_000000c8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 108,
-      "match": "in_stack_000000dc",
-      "text": "this_ptr->pitch = this_ptr->pitch + in_stack_000000dc;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 113,
-      "match": "in_stack_000000f0",
-      "text": "this_ptr->roll = this_ptr->roll - in_stack_000000f0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 117,
-      "match": "in_stack_00000104",
-      "text": "this_ptr->roll = this_ptr->roll + in_stack_00000104;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 121,
-      "match": "in_stack_0000011c",
-      "text": "this_ptr->slew_rate = this_ptr->slew_rate - in_stack_0000011c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 125,
-      "match": "in_stack_00000130",
-      "text": "this_ptr->slew_rate = this_ptr->slew_rate + in_stack_00000130;",
-      "type": "stack_param"
-    },
+  "resolved_suspects": [
     {
       "add_esp_value": 8,
       "callind_address": "005a20da",
@@ -712,5 +456,53 @@
       "text": "Stack alignment at 005a20b7 (SUB ESP, 0x24 before)",
       "type": "stack_align_anchor"
     }
-  ]
+  ],
+  "stack_frame": {
+    "frame_size": 52,
+    "local_size": 48,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSlew *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005a20b7",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": []
 }

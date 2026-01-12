@@ -1,17 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 27,
-    "complexity_score": 212,
+    "complexity_score": 197,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 22,
-    "suspect_count": 16,
+    "suspect_count": 15,
     "suspect_types": [
       "badspacebase",
       "pointer_cast",
       "register_param",
-      "stack_align_anchor",
       "stack_param",
       "unaffected_reg"
     ],
@@ -40,6 +39,11 @@
     "declared_params": 0,
     "estimated_params": 0
   },
+  "pcode_overrides": {
+    "005d85f7": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffe8,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.846153846153846,
     "instruction_count": 26,
@@ -65,6 +69,18 @@
     },
     "pcode_op_count": 152
   },
+  "resolved_suspects": [
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x18",
+      "fix_address": "005d85f7",
+      "frame_offset": 24,
+      "match": "AND ESP",
+      "sub_esp_offset": 24,
+      "text": "Stack alignment at 005d85f7 (SUB ESP, 0x18 before)",
+      "type": "stack_align_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 36,
     "local_size": 36,
@@ -225,16 +241,6 @@
       "match": "unaff_ESI",
       "text": "unaff_ESI = unaff_ESI + 1;",
       "type": "unaffected_reg"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x18",
-      "fix_address": "005d85f7",
-      "frame_offset": 24,
-      "match": "AND ESP",
-      "sub_esp_offset": 24,
-      "text": "Stack alignment at 005d85f7 (SUB ESP, 0x18 before)",
-      "type": "stack_align_anchor"
     }
   ]
 }

@@ -1,23 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 625,
-    "complexity_score": 706,
+    "complexity_score": 395,
     "cross_reference_count": 4,
     "function_call_count": 14,
     "global_count": 25,
-    "pseudocode_lines": 206,
-    "suspect_count": 46,
+    "pseudocode_lines": 215,
+    "suspect_count": 16,
     "suspect_types": [
       "badspacebase",
-      "call_esp_anchor",
-      "format_string_mismatch",
       "pointer_cast",
       "register_param",
-      "stack_param",
-      "stack_ref",
-      "variadic_anchor"
+      "stack_param"
     ],
-    "total_lines": 831
+    "total_lines": 840
   },
   "cross_references": [
     {
@@ -326,6 +322,65 @@
     "declared_params": 3,
     "estimated_params": 3
   },
+  "pcode_overrides": {
+    "004678a4": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffecc,4)"
+    ],
+    "004678ec": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffecc,4)"
+    ],
+    "00467914": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffecc,4)"
+    ],
+    "00467925": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffecc,4)"
+    ],
+    "00467952": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffecc,4)"
+    ],
+    "0046798e": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffecc,4)"
+    ],
+    "004679c3": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffecc,4)"
+    ],
+    "004679ec": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffecc,4)"
+    ],
+    "00467a0c": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffecc,4)"
+    ],
+    "00467a6f": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffecc,4)"
+    ],
+    "00467a95": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffecc,4)"
+    ],
+    "00467ab5": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffecc,4)"
+    ],
+    "00467acc": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffecc,4)"
+    ],
+    "00467cc5": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffecc,4)"
+    ],
+    "00467d0c": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffecc,4)"
+    ],
+    "00467d9a": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffecc,4)"
+    ],
+    "00467db1": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffecc,4)"
+    ],
+    "00467dff": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffecc,4)"
+    ],
+    "00467e4b": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffecc,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.523012552301255,
     "instruction_count": 478,
@@ -371,324 +426,7 @@
     },
     "pcode_op_count": 3118
   },
-  "stack_frame": {
-    "frame_size": 348,
-    "local_size": 336,
-    "param_offset": 4,
-    "param_size": 12,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_14c",
-        "offset": -332,
-        "size": 8,
-        "type": "undefined8"
-      },
-      {
-        "is_param": false,
-        "name": "local_144",
-        "offset": -324,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_140",
-        "offset": -320,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_13c",
-        "offset": -316,
-        "size": 8,
-        "type": "undefined8"
-      },
-      {
-        "is_param": false,
-        "name": "local_134",
-        "offset": -308,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_133",
-        "offset": -307,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_34",
-        "offset": -52,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_30",
-        "offset": -48,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_2c",
-        "offset": -44,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_28",
-        "offset": -40,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_24",
-        "offset": -36,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_20",
-        "offset": -32,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c",
-        "offset": -28,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": true,
-        "name": "tolerance",
-        "offset": 4,
-        "size": 4,
-        "type": "float"
-      },
-      {
-        "is_param": true,
-        "name": "angle_tolerance",
-        "offset": 8,
-        "size": 4,
-        "type": "float"
-      },
-      {
-        "is_param": true,
-        "name": "display_progress",
-        "offset": 12,
-        "size": 4,
-        "type": "int"
-      }
-    ]
-  },
-  "suspects": [
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 11,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 11,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_fffffec4",
-      "text": "char *in_stack_fffffec4;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_fffffecc",
-      "text": "uint in_stack_fffffecc;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_fffffecc",
-      "text": "in_stack_fffffecc = 0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 35,
-      "match": "&stack0xfffffecc",
-      "text": "(&stack0xfffffecc,0x14,0,0,\"Enter tolerance [.1] : \");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 41,
-      "match": "&stack0xfffffecc",
-      "text": "pcVar10 = &stack0xfffffecc;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 49,
-      "match": "in_stack_fffffec4",
-      "text": "dVar9 = crt_string_c_strtod_FUN_005ff0f3(in_stack_fffffec4);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 60,
-      "match": "&stack0xfffffecc",
-      "text": "(&stack0xfffffecc,0x14,0,0x16,\"Check normals? [n] : \");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 61,
-      "match": "in_stack_fffffecc",
-      "text": "iVar2 = crt_ctype_c_toupper_FUN_005ff9e0(in_stack_fffffecc & 0xff);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 65,
-      "match": "&stack0xfffffecc",
-      "text": "(&stack0xfffffecc,0x14,0,0x2c,\"Enter angle tolerance [90.0] : \");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 68,
-      "match": "&stack0xfffffecc",
-      "text": "pcVar4 = &stack0xfffffecc;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 98,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)base + local_34 * 8) = local_34;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 99,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)base + local_34 * 8 + 4) = local_34;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 117,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)local_14 + g_ModelPolygonData[local_34].vertex_indices[local_30] * 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 123,
-      "match": "(int *)((int)",
-      "text": "if (*(int *)((int)base + local_34 * 8 + 4) == *(int *)((int)base + local_34 * 8)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 123,
-      "match": "(int *)((int)",
-      "text": "if (*(int *)((int)base + local_34 * 8 + 4) == *(int *)((int)base + local_34 * 8)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 129,
-      "match": "(int *)((int)",
-      "text": "if (*(int *)((int)base + local_30 * 8 + 4) == *(int *)((int)base + local_30 * 8)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 129,
-      "match": "(int *)((int)",
-      "text": "if (*(int *)((int)base + local_30 * 8 + 4) == *(int *)((int)base + local_30 * 8)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 137,
-      "match": "(float *)((int)",
-      "text": "(ABS(*(float *)((int)polygon1->texture_name + 4) - g_LoadedVertices[iVar3].vertex.z",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 150,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)base + local_30 * 8 + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 151,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)base + local_34 * 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 165,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)base + g_ModelPolygonData[local_34].vertex_indices[local_30] * 8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 176,
-      "match": "&stack0xfffffecc",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffecc,\"Original vertices: %d    New total: %d\\n\\nTotal passes: %d\\n\\nPolys removed: %d\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 180,
-      "match": "&stack0xfffffecc",
-      "text": "pcVar10 = &stack0xfffffecc;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 201,
-      "match": "&stack0xfffffecc",
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffecc,0,0);",
-      "type": "stack_ref"
-    },
+  "resolved_suspects": [
     {
       "add_esp_value": 24,
       "call_address": "00467dfa",
@@ -704,17 +442,6 @@
       "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
       "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00467dfa (EBP frame + ADD ESP)",
       "type": "variadic_anchor"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Original vertices: %d    New total: %d\\n\\nTotal pa...\" has 4 specifiers but 0 arguments after it",
-      "expected_args": 4,
-      "format_string": "Original vertices: %d    New total: %d\\n\\nTotal passes: %d\\n\\nPolys removed: %d",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 176,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffecc,\"Original vertices: %d    New total: %d\\n\\nTotal p",
-      "text": "Format string expects 4 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 20,
@@ -949,6 +676,255 @@
       "target_address": "0x401fd0",
       "text": "Direct CALL at 00467e46, ADD ESP at 00467e4b with uncertain ESP",
       "type": "call_esp_anchor"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 348,
+    "local_size": 336,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14c",
+        "offset": -332,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_144",
+        "offset": -324,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_140",
+        "offset": -320,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_13c",
+        "offset": -316,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_134",
+        "offset": -308,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_133",
+        "offset": -307,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "tolerance",
+        "offset": 4,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "angle_tolerance",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "display_progress",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 9,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 9,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_fffffebc",
+      "text": "char *in_stack_fffffebc;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 39,
+      "match": "in_stack_fffffebc",
+      "text": "in_stack_fffffebc = \"Enter tolerance [.1] : \";",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 55,
+      "match": "in_stack_fffffebc",
+      "text": "dVar8 = crt_string_c_strtod_FUN_005ff0f3(in_stack_fffffebc);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 83,
+      "match": "in_stack_fffffebc",
+      "text": "dVar8 = crt_string_c_strtod_FUN_005ff0f3(in_stack_fffffebc);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 105,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)local_18 + local_34 * 8) = local_34;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 106,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)local_18 + local_34 * 8 + 4) = local_34;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 125,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)local_14 + local_2c->vertex_indices[local_30] * 4) = local_34;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 130,
+      "match": "(int *)((int)",
+      "text": "if (*(int *)((int)local_18 + local_34 * 8 + 4) == *(int *)((int)local_18 + local_34 * 8)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 130,
+      "match": "(int *)((int)",
+      "text": "if (*(int *)((int)local_18 + local_34 * 8 + 4) == *(int *)((int)local_18 + local_34 * 8)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 136,
+      "match": "(int *)((int)",
+      "text": "if (*(int *)((int)local_18 + local_30 * 8 + 4) == *(int *)((int)local_18 + local_30 * 8)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 136,
+      "match": "(int *)((int)",
+      "text": "if (*(int *)((int)local_18 + local_30 * 8 + 4) == *(int *)((int)local_18 + local_30 * 8)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 156,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)local_18 + local_30 * 8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 157,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)local_18 + local_34 * 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 172,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)local_18 + local_2c->vertex_indices[local_30] * 8 + 4);",
+      "type": "pointer_cast"
     }
   ]
 }

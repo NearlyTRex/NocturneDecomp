@@ -17,7 +17,9 @@ void core_bodypart_cpp_FUN_00419e10(void)
   int iVar4;
   CDemonActor *in_stack_00000004;
   float in_stack_00000008;
-  CVector3f local_2c [2];
+  float local_30;
+  CVector3f local_2c;
+  float local_18;
   char *local_14;
   
   if (*(int *)(in_stack_00000004[5].create_event + 0x1c) != 0) {
@@ -41,20 +43,19 @@ void core_bodypart_cpp_FUN_00419e10(void)
       do {
         input_local_point = (CVector3f *)(local_14 + iVar4 * 0x2b0);
         pCVar2 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                           (in_stack_00000004,local_2c,input_local_point);
+                           (in_stack_00000004,&local_2c,input_local_point);
         *(float *)pcVar3 = pCVar2->x;
-        local_2c[0].x = 1.0;
+        local_30 = 1.0;
         *(float *)(pcVar3 + 4) = pCVar2->y;
         *(float *)(pcVar3 + 8) = pCVar2->z;
         if (*(float *)(in_stack_00000004[9].create_event + 0x38) < (float)5) {
-          local_2c[0].x =
-               *(float *)(in_stack_00000004[9].create_event + 0x38) * (float)0.20000000000000001;
+          local_30 = *(float *)(in_stack_00000004[9].create_event + 0x38) * (float)0.20000000000000001;
         }
-        local_14 = (char *)(local_2c[0].x * (float)1.5);
+        local_18 = local_30 * (float)1.5;
         fVar1 = (float)3;
-        input_local_point[0x1d].z = (float)local_14;
-        input_local_point[0x1e].x = local_2c[0].x * fVar1;
-        input_local_point[0x1e].y = (float)local_14;
+        input_local_point[0x1d].z = local_18;
+        input_local_point[0x1e].x = local_30 * fVar1;
+        input_local_point[0x1e].y = local_18;
         core_flame_cpp_FUN_004c9c00();
         iVar4 = iVar4 + 1;
         pcVar3 = pcVar3 + 0x2b0;

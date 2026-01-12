@@ -1,15 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 71,
+    "complexity_score": 26,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 26,
-    "suspect_count": 4,
-    "suspect_types": [
-      "call_esp_anchor"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 87
   },
   "cross_references": [
@@ -41,6 +39,20 @@
     }
   ],
   "globals": [],
+  "pcode_overrides": {
+    "0046ac0b": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
+    ],
+    "0046ac1f": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
+    ],
+    "0046ac33": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
+    ],
+    "0046ac4d": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.125,
     "instruction_count": 48,
@@ -68,51 +80,7 @@
     },
     "pcode_op_count": 246
   },
-  "stack_frame": {
-    "frame_size": 24,
-    "local_size": 4,
-    "param_offset": 4,
-    "param_size": 20,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": true,
-        "name": "file_handle",
-        "offset": 4,
-        "size": 4,
-        "type": "FILE *"
-      },
-      {
-        "is_param": true,
-        "name": "rgb_buffer",
-        "offset": 8,
-        "size": 4,
-        "type": "byte *"
-      },
-      {
-        "is_param": true,
-        "name": "alpha_buffer",
-        "offset": 12,
-        "size": 4,
-        "type": "byte *"
-      },
-      {
-        "is_param": true,
-        "name": "pixel_count",
-        "offset": 16,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": true,
-        "name": "file_flags",
-        "offset": 20,
-        "size": 4,
-        "type": "int"
-      }
-    ]
-  },
-  "suspects": [
+  "resolved_suspects": [
     {
       "add_esp_value": 4,
       "call_address": "0046ac06",
@@ -165,5 +133,50 @@
       "text": "Direct CALL at 0046ac48, ADD ESP at 0046ac4d with uncertain ESP",
       "type": "call_esp_anchor"
     }
-  ]
+  ],
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 4,
+        "size": 4,
+        "type": "FILE *"
+      },
+      {
+        "is_param": true,
+        "name": "rgb_buffer",
+        "offset": 8,
+        "size": 4,
+        "type": "byte *"
+      },
+      {
+        "is_param": true,
+        "name": "alpha_buffer",
+        "offset": 12,
+        "size": 4,
+        "type": "byte *"
+      },
+      {
+        "is_param": true,
+        "name": "pixel_count",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "file_flags",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
 }

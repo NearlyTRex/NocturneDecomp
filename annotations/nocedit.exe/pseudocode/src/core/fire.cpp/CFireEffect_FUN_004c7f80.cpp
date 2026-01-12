@@ -9,7 +9,6 @@
 void __cdecl core_fire_cpp_CFireEffect_FUN_004c7f80(CFireEffect *this_ptr)
 
 {
-  float fVar1;
   BADSPACEBASE *in_ESP;
   float *in_stack_00000008;
   float *in_stack_0000000c;
@@ -17,6 +16,7 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c7f80(CFireEffect *this_ptr)
   float local_88;
   float local_84;
   float local_80;
+  float local_70;
   float local_6c;
   float local_68;
   float local_64;
@@ -25,6 +25,7 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c7f80(CFireEffect *this_ptr)
   float local_58;
   float local_54;
   float local_50;
+  float local_4c;
   float local_48;
   float local_44;
   float local_40;
@@ -36,7 +37,6 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c7f80(CFireEffect *this_ptr)
   float local_28;
   float local_24;
   float local_20;
-  float fStack_1c;
   float local_14;
   
   local_80 = in_stack_0000001c;
@@ -44,7 +44,7 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c7f80(CFireEffect *this_ptr)
   if (local_88 < (float)0.050000000000000003) {
     local_88 = 0.05;
   }
-  fVar1 = *in_stack_00000008;
+  local_70 = *in_stack_00000008;
   local_6c = in_stack_00000008[1];
   local_68 = in_stack_00000008[2];
   local_28 = *in_stack_0000000c;
@@ -63,7 +63,7 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c7f80(CFireEffect *this_ptr)
     local_60 = local_14 * -32.0;
     local_5c = local_14 * 0.0;
     local_80 = local_80 - local_84;
-    local_58 = fVar1 + local_34;
+    local_58 = local_70 + local_34;
     local_54 = local_6c + local_30;
     local_50 = local_68 + local_2c;
     local_40 = local_58 + local_64;
@@ -72,14 +72,16 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c7f80(CFireEffect *this_ptr)
     if (local_80 <= 0.0) break;
     core_fire_cpp_CFireEffect_FUN_004c7eb0(this_ptr);
     if (&local_6c != &local_3c) {
+      local_70 = local_40;
       local_6c = local_3c;
       local_68 = local_38;
     }
-    local_48 = local_80 * -32.0;
-    local_44 = local_80 * 0.0;
+    local_4c = local_84 * 0.0;
+    local_48 = local_84 * -32.0;
+    local_44 = local_84 * 0.0;
+    local_28 = local_28 + local_4c;
     local_24 = local_24 + local_48;
     local_20 = local_20 + local_44;
-    fStack_1c = fStack_1c + fVar1 * local_80;
   }
   core_fire_cpp_CFireEffect_FUN_004c7eb0(this_ptr);
   return;

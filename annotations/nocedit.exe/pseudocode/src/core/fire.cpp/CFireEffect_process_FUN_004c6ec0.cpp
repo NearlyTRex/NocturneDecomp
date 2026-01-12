@@ -29,10 +29,11 @@ void __cdecl core_fire_cpp_CFireEffect_process_FUN_004c6ec0(CFireEffect *this_pt
   CRainDrop *this_ptr_16;
   int iVar2;
   CBulletHole *this_ptr_17;
-  CGunFlame *unaff_EDI;
+  CGunFlame *this_ptr_18;
   
   this_ptr_00 = g_SmokeParticlePool;
   g_CFireEffectRocksEnd = (CRock *)0x0;
+  this_ptr_18 = (CGunFlame *)0x4c6edb;
   core_fire_cpp_FUN_004c3870();
   do {
     if (this_ptr_00->active != 0) {
@@ -122,9 +123,10 @@ void __cdecl core_fire_cpp_CFireEffect_process_FUN_004c6ec0(CFireEffect *this_pt
   do {
     if ((*(uint *)this_ptr_11->field0_0x0 & 0x7fffffff) != 0) {
       if (!bVar1) {
-        core_fire_cpp_CGunFlame_initProcess_FUN_004c4b00(unaff_EDI);
+        core_fire_cpp_CGunFlame_initProcess_FUN_004c4b00(this_ptr_18);
         bVar1 = true;
       }
+      this_ptr_18 = this_ptr_11;
       core_fire_cpp_CGunFlame_process_FUN_004c4f60(this_ptr_11);
     }
     this_ptr_11 = this_ptr_11 + 1;

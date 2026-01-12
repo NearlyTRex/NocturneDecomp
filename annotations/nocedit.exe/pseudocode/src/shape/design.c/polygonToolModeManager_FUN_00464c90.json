@@ -1,21 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 466,
-    "complexity_score": 476,
+    "complexity_score": 211,
     "cross_reference_count": 1,
     "function_call_count": 15,
     "global_count": 36,
-    "pseudocode_lines": 186,
-    "suspect_count": 26,
+    "pseudocode_lines": 181,
+    "suspect_count": 2,
     "suspect_types": [
       "badspacebase",
-      "call_esp_anchor",
-      "concat_artifact",
-      "register_param",
-      "stack_ref",
-      "variadic_anchor"
+      "register_param"
     ],
-    "total_lines": 652
+    "total_lines": 647
   },
   "cross_references": [
     {
@@ -362,6 +358,62 @@
     "declared_params": 1,
     "estimated_params": 1
   },
+  "pcode_overrides": {
+    "00464cad": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff38,4)"
+    ],
+    "00464d59": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff38,4)"
+    ],
+    "00464e68": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff38,4)"
+    ],
+    "00464e83": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff38,4)"
+    ],
+    "00464ead": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff38,4)"
+    ],
+    "00464ec7": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff38,4)"
+    ],
+    "00464ed8": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff38,4)"
+    ],
+    "00464eef": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff38,4)"
+    ],
+    "00464f02": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff38,4)"
+    ],
+    "00464fc7": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff38,4)"
+    ],
+    "00464fe7": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff38,4)"
+    ],
+    "00464ffe": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff38,4)"
+    ],
+    "0046501e": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff38,4)"
+    ],
+    "0046503b": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff38,4)"
+    ],
+    "004650c0": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff38,4)"
+    ],
+    "0046510f": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff38,4)"
+    ],
+    "0046512a": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff38,4)"
+    ],
+    "00465144": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff38,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.764525993883792,
     "instruction_count": 327,
@@ -398,177 +450,7 @@
     },
     "pcode_op_count": 1558
   },
-  "stack_frame": {
-    "frame_size": 232,
-    "local_size": 228,
-    "param_offset": 4,
-    "param_size": 4,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_e0",
-        "offset": -224,
-        "size": 8,
-        "type": "undefined8"
-      },
-      {
-        "is_param": false,
-        "name": "local_d8",
-        "offset": -216,
-        "size": 8,
-        "type": "undefined8"
-      },
-      {
-        "is_param": false,
-        "name": "local_d0",
-        "offset": -208,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_cc",
-        "offset": -204,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_c8",
-        "offset": -200,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_c4",
-        "offset": -196,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_c0",
-        "offset": -192,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_bc",
-        "offset": -188,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_b8",
-        "offset": -184,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_b7",
-        "offset": -183,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_68",
-        "offset": -104,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_67",
-        "offset": -103,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": true,
-        "name": "input_parameter",
-        "offset": 4,
-        "size": 4,
-        "type": "int"
-      }
-    ]
-  },
-  "suspects": [
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 8,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 8,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 63,
-      "match": "CONCAT44",
-      "text": "uVar9 = CONCAT44 /* combine 2-byte values */(g_PolygonToolMode,g_PolygonToolMode + -1);",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 107,
-      "match": "&stack0xffffff48",
-      "text": "pcVar5 = &stack0xffffff48;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 150,
-      "match": "&stack0xffffff48",
-      "text": "pcVar4 = &stack0xffffff48;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 171,
-      "match": "&stack0xffffff48",
-      "text": "engine_2d_c_drawTextColor_FUN_00402430(&stack0xffffff48,0,g_WindowHeight + -0x42);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 177,
-      "match": "&stack0xffffff48",
-      "text": "(&stack0xffffff48,\"Angle between polygon normals : %8.6lf\",dVar8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 178,
-      "match": "&stack0xffffff48",
-      "text": "engine_2d_c_drawTextColor_FUN_00402430(&stack0xffffff48,0,g_WindowHeight + -0x58);",
-      "type": "stack_ref"
-    },
+  "resolved_suspects": [
     {
       "add_esp_value": 16,
       "call_address": "00464fc2",
@@ -820,6 +702,136 @@
       "target_address": "0x402430",
       "text": "Direct CALL at 0046513f, ADD ESP at 00465144 with uncertain ESP",
       "type": "call_esp_anchor"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 232,
+    "local_size": 228,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_e0",
+        "offset": -224,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_d8",
+        "offset": -216,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_d0",
+        "offset": -208,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_cc",
+        "offset": -204,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c8",
+        "offset": -200,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c4",
+        "offset": -196,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c0",
+        "offset": -192,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_bc",
+        "offset": -188,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_b8",
+        "offset": -184,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_b7",
+        "offset": -183,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_67",
+        "offset": -103,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "input_parameter",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 8,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 8,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
     }
   ]
 }

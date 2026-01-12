@@ -9,46 +9,53 @@
 void __cdecl shape_meshlod_cpp_CLodMesh_normalizeAndCenterMesh_FUN_00516e10(CLodMesh *this_ptr)
 
 {
-  float fVar1;
   BADSPACEBASE *in_ESP;
-  float local_58;
-  float local_54;
-  float local_50;
-  float local_4c;
-  float local_48;
+  float local_60;
+  CBoundingBox3D local_5c;
   float local_44;
   float local_40;
-  CVector3f local_24;
+  float local_3c;
+  float local_38;
+  float local_34;
+  float local_30;
+  CVector3f local_2c;
+  float local_20;
+  float local_1c;
   float local_18;
   float local_14;
   float local_10;
   float local_c;
   
-  shape_meshlod_cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500
-            (this_ptr,(CBoundingBox3D *)&stack0xffffffa4);
-  local_24.z = local_58 + local_4c;
-  local_18 = local_54 + local_48;
-  local_14 = local_50 + local_44;
-  fVar1 = local_14 * 0.5f;
-  local_10 = -(local_24.z * 0.5f);
-  local_c = -(local_18 * 0.5f);
-  if (&this_ptr->center_offset != (CVector3f *)&local_10) {
-    (this_ptr->center_offset).x = local_10;
-    (this_ptr->center_offset).y = local_c;
-    (this_ptr->center_offset).z = -fVar1;
+  shape_meshlod_cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500(this_ptr,&local_5c);
+  local_20 = local_5c.min.x + local_5c.max.x;
+  local_38 = local_20 * 0.5f;
+  local_1c = local_5c.min.y + local_5c.max.y;
+  local_18 = local_5c.min.z + local_5c.max.z;
+  local_34 = local_1c * 0.5f;
+  local_30 = local_18 * 0.5f;
+  local_14 = -local_38;
+  local_10 = -local_34;
+  local_c = -local_30;
+  if (&this_ptr->center_offset != (CVector3f *)&local_14) {
+    (this_ptr->center_offset).x = local_14;
+    (this_ptr->center_offset).y = local_10;
+    (this_ptr->center_offset).z = local_c;
   }
   shape_meshlod_cpp_CLodMesh_translateVertices_FUN_00516570(this_ptr,&this_ptr->center_offset);
-  local_58 = local_48 - local_54;
-  if (local_48 - local_54 < local_44 - local_50) {
-    local_58 = local_44 - local_50;
+  local_44 = local_5c.max.x - local_5c.min.x;
+  local_40 = local_5c.max.y - local_5c.min.y;
+  local_3c = local_5c.max.z - local_5c.min.z;
+  local_60 = local_44;
+  if (local_44 < local_40) {
+    local_60 = local_40;
   }
-  if (local_58 < local_40 - local_4c) {
-    local_58 = local_40 - local_4c;
+  if (local_60 < local_3c) {
+    local_60 = local_3c;
   }
-  this_ptr->scale_factor = 1.0 / local_58;
-  local_24.x = this_ptr->scale_factor;
-  local_24.y = local_24.x;
-  local_24.z = local_24.x;
-  shape_meshlod_cpp_CLodMesh_scaleVertices_FUN_005165c0(this_ptr,&local_24);
+  this_ptr->scale_factor = 1.0 / local_60;
+  local_2c.x = this_ptr->scale_factor;
+  local_2c.y = local_2c.x;
+  local_2c.z = local_2c.x;
+  shape_meshlod_cpp_CLodMesh_scaleVertices_FUN_005165c0(this_ptr,&local_2c);
   return;
 }

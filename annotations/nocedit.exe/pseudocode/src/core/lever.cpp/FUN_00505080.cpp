@@ -15,15 +15,14 @@ uint core_lever_cpp_FUN_00505080(void)
   BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000004;
   CVector3f *in_stack_00000008;
-  CVector3f local_20;
-  float fStack_14;
+  CVector3f CStack_1c;
   
   if (in_stack_00000004[5].vtable != (CDemonActor_vtable *)&DAT_00000002) {
     core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-              (in_stack_00000004,&local_20,in_stack_00000008);
-    if ((in_stack_00000004[5].vtable != (CDemonActor_vtable *)0x0) || (fStack_14 <= 0.0)) {
-      if ((in_stack_00000004[5].vtable == (CDemonActor_vtable *)&DAT_00000001) && (fStack_14 < 0.0))
-      {
+              (in_stack_00000004,&CStack_1c,in_stack_00000008);
+    if ((in_stack_00000004[5].vtable != (CDemonActor_vtable *)0x0) || (CStack_1c.z <= 0.0)) {
+      if ((in_stack_00000004[5].vtable == (CDemonActor_vtable *)&DAT_00000001) &&
+         (CStack_1c.z < 0.0)) {
         return 1;
       }
       return 0;

@@ -12,21 +12,21 @@ core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0(CDemonLi
 {
   float fVar1;
   float fVar2;
-  CDemonRenderer *pCVar3;
-  CVector3f *pCVar4;
+  CDemonRenderer *this_ptr_00;
+  CVector3f *pCVar3;
   int extraout_EAX;
   BADSPACEBASE *in_ESP;
-  CMatrix3x3i *this_ptr_00;
-  int iVar5;
-  byte bVar6;
+  CMatrix3x3i *this_ptr_01;
+  int iVar4;
+  byte bVar5;
+  float10 fVar6;
   float10 fVar7;
   float10 fVar8;
   float10 fVar9;
-  float10 fVar10;
-  unkbyte10 Var11;
-  float10 fVar12;
-  double dVar13;
-  float afStackY_10d8 [988];
+  unkbyte10 Var10;
+  float10 fVar11;
+  double dVar12;
+  float afStackY_10d8 [955];
   CVector3i *in_stack_fffffea0;
   CVector3f local_138;
   CVector3i local_12c;
@@ -75,16 +75,16 @@ core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0(CDemonLi
   int local_18;
   int local_14;
   
-  bVar6 = 0;
+  bVar5 = 0;
   if (((this_ptr->field17_0x1cbc != 0) &&
       ((float)0.10000000000000001 <= *(float *)(g_CDemonSetPtr->field19_0x14f0a0 + 0xbbd0))) &&
      (g_CGamePtr->halo_mode != 0)) {
     engine_drender_cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760
               (g_CDemonRendererPtr,in_stack_fffffea0);
     local_9c = local_f0;
-    (&local_98)[(uint)bVar6 * -2] = afStack_ec[(uint)bVar6 * -2];
-    (&local_98)[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
-         afStack_ec[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
+    (&local_98)[(uint)bVar5 * -2] = afStack_ec[(uint)bVar5 * -2];
+    (&local_98)[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
+         afStack_ec[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
     local_114 = (float)local_9c * 0.00390625f;
     local_110 = (float)(int)local_98 * 0.00390625f;
     local_10c = (float)local_94 * 0.00390625f;
@@ -100,21 +100,21 @@ core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0(CDemonLi
       local_120.x = 0.0;
       local_120.y = 0.0;
       local_120.z = 1.0;
-      this_ptr_00 = &(this_ptr->base).base.rotation_matrix;
+      this_ptr_01 = &(this_ptr->base).base.rotation_matrix;
       local_dc = local_dc * fVar1;
       core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
-                ((CMatrix3x3f *)this_ptr_00,&local_108,&local_120);
+                ((CMatrix3x3f *)this_ptr_01,&local_108,&local_120);
       engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
                 (g_CDemonRendererPtr,&local_138.x);
       local_138.x = local_138.x - (float)(this_ptr->base).base.position.x;
       local_138.y = local_138.y - (float)(this_ptr->base).base.position.y;
       local_138.z = local_138.z - (float)(this_ptr->base).base.position.z;
-      pCVar4 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
-                         ((CMatrix3x3f *)this_ptr_00,&local_cc,&local_138);
-      if (&local_138 != pCVar4) {
-        local_138.x = pCVar4->x;
-        local_138.y = pCVar4->y;
-        local_138.z = pCVar4->z;
+      pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
+                         ((CMatrix3x3f *)this_ptr_01,&local_cc,&local_138);
+      if (&local_138 != pCVar3) {
+        local_138.x = pCVar3->x;
+        local_138.y = pCVar3->y;
+        local_138.z = pCVar3->z;
       }
       fVar1 = ((local_138.z * (float)18) / (this_ptr->base).base.projection_scale) *
               (float)2;
@@ -130,41 +130,41 @@ core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0(CDemonLi
         engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
                   (g_CDemonRendererPtr,(CVector3i *)&local_b4,(CVector3i *)0x0);
         do {
-          fVar7 = (float10)local_50 *
+          fVar6 = (float10)local_50 *
                   ((float10)18 / (float10)(this_ptr->base).base.projection_scale) *
                   (float10)0.0625;
-          local_4c = (float)fVar7;
-          Var11 = fpatan(fVar7,(float10)1);
-          fVar8 = (float10)fcos(Var11);
+          local_4c = (float)fVar6;
+          Var10 = fpatan(fVar6,(float10)1);
+          fVar7 = (float10)fcos(Var10);
           local_48 = 0;
-          local_44 = (float)((float10)1 - fVar7);
-          local_40 = (float)fVar8;
+          local_44 = (float)((float10)1 - fVar6);
+          local_40 = (float)fVar7;
           do {
-            fVar7 = (float10)local_48 * (float10)0.0625f * (float10)3.1415926535000001 *
+            fVar6 = (float10)local_48 * (float10)0.0625f * (float10)3.1415926535000001 *
                     (float10)2;
-            fVar8 = (float10)fsin(fVar7);
-            fVar12 = (float10)(local_48 + 1) * (float10)0.0625f * (float10)3.1415926535000001 *
+            fVar7 = (float10)fsin(fVar6);
+            fVar11 = (float10)(local_48 + 1) * (float10)0.0625f * (float10)3.1415926535000001 *
                      (float10)2;
-            fVar9 = (float10)fsin(fVar12);
-            fVar7 = (float10)fcos(fVar7);
-            fVar12 = (float10)fcos(fVar12);
+            fVar8 = (float10)fsin(fVar11);
+            fVar6 = (float10)fcos(fVar6);
+            fVar11 = (float10)fcos(fVar11);
             local_18 = this_ptr->shadow_map_width - (this_ptr->shadow_map_width >> 0x1f) >> 1;
             local_14 = this_ptr->shadow_map_height - (this_ptr->shadow_map_height >> 0x1f) >> 1;
-            fVar10 = (float10)local_4c;
-            local_30 = (float)(fVar7 * fVar10);
-            dVar13 = crt_math_c_round_FUN_005fe6b0
+            fVar9 = (float10)local_4c;
+            local_30 = (float)(fVar6 * fVar9);
+            dVar12 = crt_math_c_round_FUN_005fe6b0
                                ((double)((float)local_14 - (float)local_14 * local_30));
-            local_78 = (int)ROUND(dVar13);
-            local_34 = (float)(fVar8 * fVar10);
-            fVar9 = fVar9 * fVar10;
-            dVar13 = crt_math_c_round_FUN_005fe6b0
+            local_78 = (int)ROUND(dVar12);
+            local_34 = (float)(fVar7 * fVar9);
+            fVar8 = fVar8 * fVar9;
+            dVar12 = crt_math_c_round_FUN_005fe6b0
                                ((double)((float)local_18 * local_34 + (float)local_18));
-            local_70 = (int)ROUND(dVar13);
+            local_70 = (int)ROUND(dVar12);
             local_2c = (float)this_ptr->shadow_depth_buffer[extraout_EAX + local_70] *
                        (float)0.00390625;
             local_24 = 0;
-            local_3c = (float)fVar9;
-            local_38 = (float)(fVar10 * fVar12);
+            local_3c = (float)fVar8;
+            local_38 = (float)(fVar9 * fVar11);
             local_28 = local_2c;
             do {
               local_6c = (this_ptr->base).max_distance;
@@ -223,17 +223,17 @@ core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0(CDemonLi
               local_c0.z = (int)ROUND(local_f4 * 256f);
               wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                         (&g_CDemonRendererPtr->vertex_buffer_ptr[3].projected_vertex,&local_c0);
-              pCVar3 = g_CDemonRendererPtr;
+              this_ptr_00 = g_CDemonRendererPtr;
               g_CDemonRendererPtr->vertex_buffer_ptr->light = local_68;
-              pCVar3->vertex_buffer_ptr[1].light = local_68;
-              pCVar3->vertex_buffer_ptr[2].light = local_64;
-              pCVar3->vertex_buffer_ptr[3].light = local_64;
-              iVar5 = local_24 + 1;
-              local_24 = iVar5;
+              this_ptr_00->vertex_buffer_ptr[1].light = local_68;
+              this_ptr_00->vertex_buffer_ptr[2].light = local_64;
+              this_ptr_00->vertex_buffer_ptr[3].light = local_64;
+              iVar4 = local_24 + 1;
+              local_24 = iVar4;
               engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0
-                        ((CDemonRenderer *)0x3,(SMRGLHeaderPrimitive *)&stack0xfffffea0,
-                         (RenderScanlineFunc *)&DAT_00000001);
-            } while (iVar5 < 4);
+                        (this_ptr_00,(SMRGLHeaderPrimitive *)&stack0xfffffea0,
+                         core_dcamera_cpp_renderVolumetricLightScanline_FUN_00450440);
+            } while (iVar4 < 4);
             local_48 = local_48 + 1;
           } while (local_48 < 0x10);
           local_50 = local_50 + 1;

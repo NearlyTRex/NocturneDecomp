@@ -14,531 +14,503 @@ engine_fileio_cpp_CCheckOutItem_processFiles_FUN_004b4220
 
 {
   char cVar1;
-  CCheckOutItem *this_ptr_00;
   bool bVar2;
   FILE *pFVar3;
+  int iVar4;
+  CCheckOutItem *pCVar5;
   undefined3 extraout_var;
-  int *piVar4;
+  int *piVar6;
+  tm *ptVar7;
   undefined3 extraout_var_00;
-  int iVar5;
+  int iVar8;
   BADSPACEBASE *in_ESP;
-  char *pcVar6;
-  char *pcVar7;
-  uint *puVar8;
-  char *pcVar9;
-  byte bVar10;
-  FILE *in_stack_00000010;
-  CCheckOutItem *in_stack_00000014;
-  CCheckOutItem *in_stack_00000018;
-  CCheckOutItem *in_stack_0000001c;
-  CCheckOutItem *in_stack_00000020;
-  time_t in_stack_00000028;
-  FILE *pFStack0000002c;
-  FILE *in_stack_00000030;
-  CCheckOutItem *in_stack_00000034;
-  CCheckOutItem *in_stack_0000003c;
-  FILE *in_stack_00000040;
-  uint in_stack_00000044;
-  CCheckOutItem *in_stack_00000048;
-  uint in_stack_00000054;
-  CStrList_vtable *in_stack_ffffec60;
-  CStrList_vtable *in_stack_ffffec64;
-  CStrList_vtable *in_stack_ffffec68;
-  CStrList_vtable *in_stack_ffffec6c;
-  uint in_stack_ffffec70;
-  char **in_stack_ffffec74;
-  CStrList_vtable *in_stack_ffffec78;
-  uint in_stack_ffffec7c;
-  char acStack_1014 [4];
-  byte auStack_1010 [524];
-  byte auStack_e04 [4];
-  uint uStack_e00;
-  char acStack_dfc [44];
-  char acStack_dd0 [12];
-  char acStack_dc4 [4];
-  char acStack_dc0 [64];
-  char acStack_d80 [4];
-  char acStack_d7c [392];
-  int iStack_bf4;
-  uint uStack_bec;
-  int iStack_bcc;
-  char *pcStack_ba8;
-  char acStack_ba4 [4];
-  char acStack_ba0 [312];
-  uint local_a68 [9];
-  char acStack_a44 [4];
-  char acStack_a40 [4];
-  char acStack_a3c [4];
-  char acStack_a38 [4];
-  char acStack_a34 [28];
-  char acStack_a18 [8];
-  char acStack_a10 [216];
-  char acStack_938 [52];
-  char acStack_904 [220];
-  char acStack_828 [8];
-  char acStack_820 [248];
-  char acStack_728 [12];
-  char acStack_71c [236];
-  char acStack_630 [4];
-  byte auStack_62c [4];
-  char acStack_628 [252];
-  char acStack_52c [48];
-  char acStack_4fc [204];
-  char acStack_430 [4];
-  char acStack_42c [276];
-  char acStack_318 [4];
-  char acStack_314 [204];
-  char acStack_248 [4];
-  char acStack_244 [300];
-  char acStack_118 [4];
-  char acStack_114 [204];
-  uint local_48;
-  uint local_2c;
-  uint local_28;
+  SFoundFileInfo *pSVar9;
+  SFoundFileInfo *pSVar10;
+  char *pcVar12;
+  char *pcVar13;
+  byte bVar14;
+  char *pcVar15;
+  uint in_stack_ffffec38;
+  uint in_stack_ffffec3c;
+  char **in_stack_ffffec40;
+  CStrList_vtable *in_stack_ffffec44;
+  uint in_stack_ffffec48;
+  SFoundFileInfo local_1020;
+  SFoundFileInfo local_e0c;
+  char local_bf8 [400];
+  char local_a68 [260];
+  char local_964 [260];
+  char local_860 [260];
+  char local_75c [260];
+  char local_658 [260];
+  char local_554 [260];
+  char local_450 [256];
+  char local_350 [256];
+  char local_250 [256];
+  char local_150 [256];
+  byte local_50 [8];
+  CCheckOutItem *local_48;
+  time_t local_44;
+  int local_40;
+  int local_3c;
+  char *local_38;
+  CCheckOutItem *local_34;
+  int local_30;
+  FILE *local_2c;
+  FILE *local_28;
+  FILE *local_24;
+  char local_20 [4];
+  char local_1c [4];
   char local_18 [4];
   char local_14 [4];
+  SFoundFileInfo *pSVar11;
   
-  this_ptr_00 = this_ptr;
-  bVar10 = 0;
-  pcVar6 = g_DefaultCheckOutPath;
-  puVar8 = local_a68;
-  for (iVar5 = 0x41; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *puVar8 = *(uint *)pcVar6;
-    pcVar6 = pcVar6 + 4;
-    puVar8 = puVar8 + 1;
+  bVar14 = 0;
+  pcVar12 = g_DefaultCheckOutPath;
+  pcVar15 = local_a68;
+  for (iVar8 = 0x41; iVar8 != 0; iVar8 = iVar8 + -1) {
+    *(uint *)pcVar15 = *(uint *)pcVar12;
+    pcVar12 = pcVar12 + 4;
+    pcVar15 = pcVar15 + 4;
   }
-  local_48 = 0;
-  local_2c = 0;
-  local_28 = 0;
-  iVar5 = engine_fileio_cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50
-                    (this_ptr,(char *)operation_mode,auStack_1010 + 0x204,
+  local_48 = (CCheckOutItem *)0x0;
+  local_2c = (FILE *)0x0;
+  local_28 = (FILE *)0x0;
+  iVar8 = engine_fileio_cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50
+                    (this_ptr,(char *)operation_mode,local_e0c.found_path,
                      "Select file to check in","*");
-  if (iVar5 == 0) {
+  if (iVar8 == 0) {
     return 0;
   }
-  iVar5 = engine_dosio_c_findFileNormally_FUN_004817c0((SFoundFileInfo *)(auStack_1010 + 0x208));
-  if (iVar5 == 0) {
+  iVar8 = engine_dosio_c_findFileNormally_FUN_004817c0(&local_e0c);
+  if (iVar8 == 0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-              (g_CEditorToolsPtr,"Error accessing %s.  File not checked in.",auStack_e04);
+              (g_CEditorToolsPtr,"Error accessing %s.  File not checked in.",&local_e0c);
     return 0;
   }
-  engine_dosio_c_ensureTrailingSlash_FUN_00481f80(this_ptr_00->name,local_18,acStack_248);
-  engine_dosio_c_makePath_FUN_00481f50(acStack_1014,local_14,acStack_244,(char *)0x0,(char *)0x0);
-  pcVar6 = acStack_dfc;
-  iVar5 = -1;
-  pcVar7 = auStack_1010;
+  engine_dosio_c_ensureTrailingSlash_FUN_00481f80(this_ptr->name,local_20,local_250);
+  engine_dosio_c_makePath_FUN_00481f50
+            (local_1020.found_path,local_20,local_250,(char *)0x0,(char *)0x0);
+  pSVar9 = &local_e0c;
+  iVar8 = -1;
+  pSVar11 = &local_1020;
   do {
-    pcVar9 = pcVar7;
-    if (iVar5 == 0) break;
-    iVar5 = iVar5 + -1;
-    pcVar9 = pcVar7 + (uint)bVar10 * -2 + 1;
-    cVar1 = *pcVar7;
-    pcVar7 = pcVar9;
-  } while (cVar1 != '\0');
-  pcVar9 = pcVar9 + -1;
+    pSVar10 = pSVar11;
+    if (iVar8 == 0) break;
+    iVar8 = iVar8 + -1;
+    pSVar10 = (SFoundFileInfo *)((int)pSVar11 + (uint)bVar14 * -2 + 1);
+    pcVar12 = pSVar11->found_path;
+    pSVar11 = pSVar10;
+  } while (*pcVar12 != '\0');
+  pcVar12 = (char *)((int)&pSVar10[-1].container_size + 3);
   do {
-    cVar1 = *pcVar6;
-    *pcVar9 = cVar1;
+    cVar1 = pSVar9->found_path[0];
+    *pcVar12 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar6[1];
-    pcVar6 = pcVar6 + 2;
-    pcVar9[1] = cVar1;
-    pcVar9 = pcVar9 + 2;
+    cVar1 = pSVar9->found_path[1];
+    pSVar9 = (SFoundFileInfo *)(pSVar9->found_path + 2);
+    pcVar12[1] = cVar1;
+    pcVar12 = pcVar12 + 2;
   } while (cVar1 != '\0');
-  iVar5 = engine_dosio_c_findFileNormally_FUN_004817c0((SFoundFileInfo *)auStack_1010);
-  if (iVar5 == 0) {
+  iVar8 = engine_dosio_c_findFileNormally_FUN_004817c0(&local_1020);
+  if (iVar8 == 0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-              (g_CEditorToolsPtr,"Error accessing %s.  File not checked in.",auStack_1010 + 4);
+              (g_CEditorToolsPtr,"Error accessing %s.  File not checked in.",&local_1020);
     return 0;
   }
-  if (((iStack_bf4 == auStack_1010._520_4_) && (uStack_bec < uStack_e00 + 2)) &&
-     (uStack_e00 < uStack_bec + 2)) {
-    shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xffffec4c);
+  if (((local_e0c.file_size == local_1020.file_size) &&
+      (local_e0c.timestamp < (char *)(local_1020.timestamp + 2))) &&
+     (local_1020.timestamp < (char *)(local_e0c.timestamp + 2))) {
+    shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xffffec38);
     shape_edittool_cpp_CStrList_add_FUN_004a2b80
-              ((CStrList *)&stack0xffffec50,"Undo the checkout.");
+              ((CStrList *)&stack0xffffec38,"Undo the checkout.");
     shape_edittool_cpp_CStrList_add_FUN_004a2b80
-              ((CStrList *)&stack0xffffec54,"Yes, I did change the file.  Check it in, like I said to do in the first place.");
+              ((CStrList *)&stack0xffffec38,"Yes, I did change the file.  Check it in, like I said to do in the first place.");
     shape_edittool_cpp_CStrList_add_FUN_004a2b80
-              ((CStrList *)&stack0xffffec58,"Oops.  Keep the file checked out.");
-    iVar5 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                      ((CPickList *)&stack0xffffec5c,"Checking in file that didn't change.",-1,0);
-    if ((iVar5 < 0) || (iVar5 == 2)) {
+              ((CStrList *)&stack0xffffec38,"Oops.  Keep the file checked out.");
+    iVar8 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
+                      ((CPickList *)&stack0xffffec38,"Checking in file that didn't change.",-1,0);
+    if ((iVar8 < 0) || (iVar8 == 2)) {
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                ((CPickList *)&stack0xffffec60,0,(uint)in_stack_ffffec60,(uint)in_stack_ffffec64,
-                 (uint)in_stack_ffffec68,(uint)in_stack_ffffec6c,in_stack_ffffec70);
+                ((CPickList *)&stack0xffffec38,0,in_stack_ffffec38,in_stack_ffffec3c,
+                 (uint)in_stack_ffffec40,(uint)in_stack_ffffec44,in_stack_ffffec48);
       return 0;
     }
-    if (iVar5 == 0) {
-      iVar5 = engine_fileio_cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50
-                        (this_ptr_00,(char *)operation_mode,acStack_630,
+    if (iVar8 == 0) {
+      iVar8 = engine_fileio_cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50
+                        (this_ptr,(char *)operation_mode,local_658,
                          "Select file to undo check out","*");
-      if ((iVar5 == 0) ||
-         (iVar5 = engine_fileio_cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0
-                            (this_ptr_00,auStack_62c), iVar5 == 0)) {
-        iVar5 = 0;
+      if ((iVar8 == 0) ||
+         (iVar8 = engine_fileio_cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0
+                            (this_ptr,local_658), iVar8 == 0)) {
+        iVar8 = 0;
       }
       else {
-        iVar5 = engine_fileio_cpp_getLatestFileFromRepository_FUN_004b3220
-                          (this_ptr_00->name,acStack_628);
+        iVar8 = engine_fileio_cpp_getLatestFileFromRepository_FUN_004b3220(this_ptr->name,local_658)
+        ;
       }
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                ((CPickList *)&stack0xffffec6c,0,(uint)in_stack_ffffec6c,in_stack_ffffec70,
-                 (uint)in_stack_ffffec74,(uint)in_stack_ffffec78,in_stack_ffffec7c);
-      return iVar5;
+                ((CPickList *)&stack0xffffec38,0,in_stack_ffffec38,in_stack_ffffec3c,
+                 (uint)in_stack_ffffec40,(uint)in_stack_ffffec44,in_stack_ffffec48);
+      return iVar8;
     }
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-              ((CPickList *)&stack0xffffec60,0,(uint)in_stack_ffffec60,(uint)in_stack_ffffec64,
-               (uint)in_stack_ffffec68,(uint)in_stack_ffffec6c,in_stack_ffffec70);
+              ((CPickList *)&stack0xffffec38,0,in_stack_ffffec38,in_stack_ffffec3c,
+               (uint)in_stack_ffffec40,(uint)in_stack_ffffec44,in_stack_ffffec48);
   }
-  shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
-            (g_CEditorToolsPtr,"Keep %s checked out after updating to network?");
+  local_34 = (CCheckOutItem *)
+             shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
+                       (g_CEditorToolsPtr,"Keep %s checked out after updating to network?",&local_e0c);
+  local_38 = "history";
   if (g_VersionControlDirectory[0] == '\0') {
     g_CurrentFilename = "..\\engine\\fileio.cpp";
     g_CurrentLineNumber = 0xe7;
     core_main_c_displayErrorAndQuit_FUN_00506f10("versionControlDirectory not set!");
   }
-  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_728,"history\\%s.%s");
-  engine_dosio_c_ensureTrailingSlash_FUN_00481f80
-            (g_VersionControlDirectory,(char *)&stack0x0000001c,acStack_118);
-  engine_dosio_c_makePath_FUN_00481f50
-            (acStack_938,(char *)&stack0x00000020,acStack_114,(char *)0x0,(char *)0x0);
-  pcVar6 = acStack_71c;
-  iVar5 = -1;
-  pcVar7 = acStack_938;
+  crt_stdio_c_sprintf_FUN_005fdbd0(local_75c,"history\\%s.%s",operation_mode,local_38);
+  engine_dosio_c_ensureTrailingSlash_FUN_00481f80(g_VersionControlDirectory,local_1c,local_150);
+  engine_dosio_c_makePath_FUN_00481f50(local_964,local_1c,local_150,(char *)0x0,(char *)0x0);
+  pcVar12 = local_75c;
+  iVar8 = -1;
+  pcVar15 = local_964;
   do {
-    pcVar9 = pcVar7;
-    if (iVar5 == 0) break;
-    iVar5 = iVar5 + -1;
-    pcVar9 = pcVar7 + (uint)bVar10 * -2 + 1;
-    cVar1 = *pcVar7;
-    pcVar7 = pcVar9;
+    pcVar13 = pcVar15;
+    if (iVar8 == 0) break;
+    iVar8 = iVar8 + -1;
+    pcVar13 = pcVar15 + (uint)bVar14 * -2 + 1;
+    cVar1 = *pcVar15;
+    pcVar15 = pcVar13;
   } while (cVar1 != '\0');
-  pcVar9 = pcVar9 + -1;
+  pcVar13 = pcVar13 + -1;
   do {
-    cVar1 = *pcVar6;
-    *pcVar9 = cVar1;
+    cVar1 = *pcVar12;
+    *pcVar13 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar6[1];
-    pcVar6 = pcVar6 + 2;
-    pcVar9[1] = cVar1;
-    pcVar9 = pcVar9 + 2;
+    cVar1 = pcVar12[1];
+    pcVar12 = pcVar12 + 2;
+    pcVar13[1] = cVar1;
+    pcVar13 = pcVar13 + 2;
   } while (cVar1 != '\0');
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Reading %s");
-  filename = (char *)engine_fileio_cpp_findMaxFieldInTimestampFile_FUN_004b2640
-                               ((char *)operation_mode);
-  if ((int)filename < 0) {
+  local_3c = engine_fileio_cpp_findMaxFieldInTimestampFile_FUN_004b2640((char *)operation_mode);
+  if (local_3c < 0) {
     return 0;
   }
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Opening local file %s");
-  pFStack0000002c =
-       shape_memdbg_cpp_openFile_FUN_0050f7a0
-                 (acStack_dc0,(char *)0x0,"rb","..\\engine\\fileio.cpp",0x567);
-  if (pFStack0000002c == (FILE *)0x0) {
+  local_24 = shape_memdbg_cpp_openFile_FUN_0050f7a0
+                       (local_e0c.found_path,(char *)0x0,"rb","..\\engine\\fileio.cpp",
+                        0x567);
+  if (local_24 == (FILE *)0x0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-              (g_CEditorToolsPtr,"Can't open %s");
+              (g_CEditorToolsPtr,"Can't open %s",&local_e0c);
     return 0;
   }
   if (g_VersionControlSession.network_username[0] != '\0') {
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
               (g_CEditorToolsPtr,"Logging on as version control user...");
-    iVar5 = engine_fileio_cpp_logOnAsVersionControlUser_FUN_004b2770();
-    if (iVar5 == 0) goto LAB_004b4768;
+    iVar8 = engine_fileio_cpp_logOnAsVersionControlUser_FUN_004b2770();
+    if (iVar8 == 0) goto LAB_004b4768;
   }
-  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_4fc,"$$$.%s.$$$");
-  engine_dosio_c_ensureTrailingSlash_FUN_00481f80(this_ptr_00->name,(char *)&filename,acStack_430);
-  engine_dosio_c_makePath_FUN_00481f50
-            (acStack_a44,(char *)&stack0x00000010,acStack_42c,(char *)0x0,(char *)0x0);
-  pcVar6 = acStack_52c;
-  iVar5 = -1;
-  pcVar7 = acStack_a40;
+  crt_stdio_c_sprintf_FUN_005fdbd0(local_554,"$$$.%s.$$$",&local_e0c);
+  engine_dosio_c_ensureTrailingSlash_FUN_00481f80(this_ptr->name,local_14,local_450);
+  engine_dosio_c_makePath_FUN_00481f50(local_a68,local_14,local_450,(char *)0x0,(char *)0x0);
+  pcVar12 = local_554;
+  iVar8 = -1;
+  pcVar15 = local_a68;
   do {
-    pcVar9 = pcVar7;
-    if (iVar5 == 0) break;
-    iVar5 = iVar5 + -1;
-    pcVar9 = pcVar7 + (uint)bVar10 * -2 + 1;
-    cVar1 = *pcVar7;
-    pcVar7 = pcVar9;
+    pcVar13 = pcVar15;
+    if (iVar8 == 0) break;
+    iVar8 = iVar8 + -1;
+    pcVar13 = pcVar15 + (uint)bVar14 * -2 + 1;
+    cVar1 = *pcVar15;
+    pcVar15 = pcVar13;
   } while (cVar1 != '\0');
-  pcVar9 = pcVar9 + -1;
+  pcVar13 = pcVar13 + -1;
   do {
-    cVar1 = *pcVar6;
-    *pcVar9 = cVar1;
+    cVar1 = *pcVar12;
+    *pcVar13 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar6[1];
-    pcVar6 = pcVar6 + 2;
-    pcVar9[1] = cVar1;
-    pcVar9 = pcVar9 + 2;
+    cVar1 = pcVar12[1];
+    pcVar12 = pcVar12 + 2;
+    pcVar13[1] = cVar1;
+    pcVar13 = pcVar13 + 2;
   } while (cVar1 != '\0');
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Creating temporary network file %s...");
-  engine_dosio_c_setFileAttributes_FUN_004819f0(acStack_a3c,0);
-  crt_io_c_deleteFile_FUN_005ff9d0(acStack_a38);
+  engine_dosio_c_setFileAttributes_FUN_004819f0(local_a68,0);
+  crt_io_c_deleteFile_FUN_005ff9d0(local_a68);
   pFVar3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                     (acStack_a34,(char *)0x0,"wb","..\\engine\\fileio.cpp",0x591);
-  filename = (char *)pFVar3;
-  if (in_stack_00000014 == (CCheckOutItem *)0x0) {
-    pcVar6 = "Can't create %s.\nGet Fletch.";
+                     (local_a68,(char *)0x0,"wb","..\\engine\\fileio.cpp",0x591);
+  local_2c = pFVar3;
+  if (local_24 == (FILE *)0x0) {
+    pcVar12 = local_a68;
+    pcVar15 = "Can't create %s.\nGet Fletch.";
   }
   else {
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
               (g_CEditorToolsPtr,"Copying file to temporary network file");
-    pcVar6 = engine_fileio_cpp_copyFileWithProgress_FUN_004b2030
-                       ((FILE *)in_stack_00000018,pFVar3,acStack_dd0,"network",iStack_bcc);
-    if (in_stack_0000001c != (CCheckOutItem *)0x0) {
-      shape_memdbg_cpp_closeFile_FUN_0050f9b0
-                ((FILE *)in_stack_0000001c,"..\\engine\\fileio.cpp",0xc4);
-      in_stack_00000020 = (CCheckOutItem *)0x0;
+    pcVar12 = engine_fileio_cpp_copyFileWithProgress_FUN_004b2030
+                        (local_24,pFVar3,local_e0c.found_path,"network",local_e0c.file_size
+                        );
+    if (local_24 != (FILE *)0x0) {
+      shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_24,"..\\engine\\fileio.cpp",0xc4);
+      local_24 = (FILE *)0x0;
     }
-    if (filename != (char *)0x0) {
-      shape_memdbg_cpp_closeFile_FUN_0050f9b0((FILE *)filename,"..\\engine\\fileio.cpp",0xc4);
-      filename = (char *)0x0;
+    if (local_2c != (FILE *)0x0) {
+      shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_2c,"..\\engine\\fileio.cpp",0xc4);
+      local_2c = (FILE *)0x0;
     }
-    if (pcVar6 == (char *)0x0) {
+    if (pcVar12 == (char *)0x0) {
       if (g_VersionControlDirectory[0] == '\0') {
         g_CurrentFilename = "..\\engine\\fileio.cpp";
         g_CurrentLineNumber = 0xdd;
         core_main_c_displayErrorAndQuit_FUN_00506f10("versionControlDirectory not set!");
       }
-      engine_dosio_c_ensureTrailingSlash_FUN_00481f80
-                (g_VersionControlDirectory,(char *)&stack0x00000020,acStack_318);
-      engine_dosio_c_makePath_FUN_00481f50
-                (acStack_828,&stack0x00000024,acStack_314,(char *)0x0,(char *)0x0);
-      pcVar7 = "checkout.txt";
-      iVar5 = -1;
-      pcVar6 = acStack_828;
+      engine_dosio_c_ensureTrailingSlash_FUN_00481f80(g_VersionControlDirectory,local_18,local_350);
+      engine_dosio_c_makePath_FUN_00481f50(local_860,local_18,local_350,(char *)0x0,(char *)0x0);
+      pcVar15 = "checkout.txt";
+      iVar8 = -1;
+      pcVar12 = local_860;
       do {
-        pcVar9 = pcVar6;
-        if (iVar5 == 0) break;
-        iVar5 = iVar5 + -1;
-        pcVar9 = pcVar6 + (uint)bVar10 * -2 + 1;
-        cVar1 = *pcVar6;
-        pcVar6 = pcVar9;
+        pcVar13 = pcVar12;
+        if (iVar8 == 0) break;
+        iVar8 = iVar8 + -1;
+        pcVar13 = pcVar12 + (uint)bVar14 * -2 + 1;
+        cVar1 = *pcVar12;
+        pcVar12 = pcVar13;
       } while (cVar1 != '\0');
-      pcVar9 = pcVar9 + -1;
+      pcVar13 = pcVar13 + -1;
       do {
-        cVar1 = *pcVar7;
-        *pcVar9 = cVar1;
+        cVar1 = *pcVar15;
+        *pcVar13 = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar7[1];
-        pcVar7 = pcVar7 + 2;
-        pcVar9[1] = cVar1;
-        pcVar9 = pcVar9 + 2;
+        cVar1 = pcVar15[1];
+        pcVar15 = pcVar15 + 2;
+        pcVar13[1] = cVar1;
+        pcVar13 = pcVar13 + 2;
       } while (cVar1 != '\0');
-      iVar5 = 0;
-      if (filename == (char *)0x0) {
+      iVar8 = 0;
+      local_50._0_4_ = 0;
+      local_50._4_4_ = (CCheckOutItem *)0x0;
+      if (local_34 == (CCheckOutItem *)0x0) {
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                   (g_CEditorToolsPtr,"Grabbing %s...");
         do {
-          pFVar3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                             (acStack_820,(char *)0x0,"r+t","..\\engine\\fileio.cpp",
+          pCVar5 = (CCheckOutItem *)
+                   shape_memdbg_cpp_openFile_FUN_0050f7a0
+                             (local_860,(char *)0x0,"r+t","..\\engine\\fileio.cpp",
                               0x153);
-          if (pFVar3 != (FILE *)0x0) {
-            crt_stdio_c_setvbuf_FUN_00601490(pFVar3,(char *)0x0,0,0x400);
+          if (pCVar5 != (CCheckOutItem *)0x0) {
+            crt_stdio_c_setvbuf_FUN_00601490((FILE *)pCVar5,(char *)0x0,0,0x400);
             goto LAB_004b4ad9;
           }
-          piVar4 = (int *)crt_errno_c_errno_FUN_00601450();
-          if (*piVar4 != 6) break;
-          iVar5 = iVar5 + 1;
+          piVar6 = (int *)crt_errno_c_errno_FUN_00601450();
+          if (*piVar6 != 6) break;
+          iVar8 = iVar8 + 1;
           (*Sleep)(500);
-        } while (iVar5 < 10);
-        pFVar3 = (FILE *)0x0;
+        } while (iVar8 < 10);
+        pCVar5 = (CCheckOutItem *)0x0;
 LAB_004b4ad9:
-        if (pFVar3 == (FILE *)0x0) {
+        local_48 = pCVar5;
+        if (pCVar5 == (CCheckOutItem *)0x0) {
           shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-                    (g_CEditorToolsPtr,"Can't access %s.  Get Fletch.");
-          engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860((CCheckOutList *)&stack0xfffffff8);
+                    (g_CEditorToolsPtr,"Can't access %s.  Get Fletch.",local_860);
+          engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860((CCheckOutList *)local_50);
           goto LAB_004b4768;
         }
-        iVar5 = engine_fileio_cpp_CCheckOutList_parse_FUN_004b2a60
-                          ((CCheckOutList *)&stack0xfffffff4,(FILE **)&stack0xfffffffc);
-        if (iVar5 != 0) {
-          filename = (char *)engine_fileio_cpp_CCheckOutList_findEntry_FUN_004b2e60
-                                       ((CCheckOutList *)&stack0xfffffff8,acStack_dc4);
-          if (-1 < (int)filename) goto LAB_004b4980;
-          if (this_ptr != (CCheckOutItem *)0x0) {
+        iVar8 = engine_fileio_cpp_CCheckOutList_parse_FUN_004b2a60
+                          ((CCheckOutList *)local_50,(FILE **)&local_48);
+        if (iVar8 != 0) {
+          local_40 = engine_fileio_cpp_CCheckOutList_findEntry_FUN_004b2e60
+                               ((CCheckOutList *)local_50,local_e0c.found_path);
+          if (-1 < local_40) goto LAB_004b4980;
+          if (local_48 != (CCheckOutItem *)0x0) {
             shape_memdbg_cpp_closeFile_FUN_0050f9b0
-                      ((FILE *)this_ptr,"..\\engine\\fileio.cpp",0xc4);
-            operation_mode = 0;
+                      ((FILE *)local_48,"..\\engine\\fileio.cpp",0xc4);
+            local_48 = (CCheckOutItem *)0x0;
           }
           shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                     (g_CEditorToolsPtr,"Hell froze - we no longer have the file checked out!!!!");
         }
-        engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860((CCheckOutList *)&this_ptr);
+        engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860((CCheckOutList *)local_50);
       }
       else {
 LAB_004b4980:
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                   (g_CEditorToolsPtr,"Finalizing %s to network...");
         engine_2d_c_clearInputAndWait_FUN_00403260();
-        pFVar3 = (FILE *)0x0;
+        iVar8 = 0;
         while( true ) {
-          engine_dosio_c_setFileAttributes_FUN_004819f0(auStack_1010 + 0x38,0);
-          crt_io_c_deleteFile_FUN_005ff9d0(auStack_1010 + 0x3c);
-          iVar5 = crt_stdio_c_rename_FUN_006015d0(acStack_a18,auStack_1010 + 0x40);
-          if (iVar5 == 0) break;
-          if (0x27 < (int)pFVar3) {
-            if (filename != (char *)0x0) {
+          engine_dosio_c_setFileAttributes_FUN_004819f0(local_1020.found_path,0);
+          crt_io_c_deleteFile_FUN_005ff9d0(local_1020.found_path);
+          iVar4 = crt_stdio_c_rename_FUN_006015d0(local_a68,local_1020.found_path);
+          if (iVar4 == 0) break;
+          if (0x27 < iVar8) {
+            if (local_48 != (CCheckOutItem *)0x0) {
               shape_memdbg_cpp_closeFile_FUN_0050f9b0
-                        ((FILE *)filename,"..\\engine\\fileio.cpp",0xc4);
-              in_stack_00000010 = (FILE *)0x0;
+                        ((FILE *)local_48,"..\\engine\\fileio.cpp",0xc4);
+              local_48 = (CCheckOutItem *)0x0;
             }
             shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-                      (g_CEditorToolsPtr,"Error renaming %s -> %s.\nThe file was not checked in.\nThe most likely cause is that somebody is currently trying to get\nthe file you are checking in.  No file files have been modified,\nand you still have the file checked out.  Wait a little bit and\ntry again.");
+                      (g_CEditorToolsPtr,"Error renaming %s -> %s.\nThe file was not checked in.\nThe most likely cause is that somebody is currently trying to get\nthe file you are checking in.  No file files have been modified,\nand you still have the file checked out.  Wait a little bit and\ntry again.",local_a68,&local_1020);
             shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
-            engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860((CCheckOutList *)&stack0x00000010);
+            engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860((CCheckOutList *)local_50);
             goto LAB_004b4768;
           }
-          pFVar3 = (FILE *)((int)&pFVar3->_ptr + 1);
-          if (pFVar3 == (FILE *)&DAT_00000001) {
-            crt_stdio_c_sprintf_FUN_005fdbd0(acStack_ba4,"Waiting for %s to become available.\nPress ESC to cancel check in.");
+          iVar8 = iVar8 + 1;
+          if (iVar8 == 1) {
+            crt_stdio_c_sprintf_FUN_005fdbd0
+                      (local_bf8,"Waiting for %s to become available.\nPress ESC to cancel check in.",&local_1020);
             shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
-                      (g_CEditorToolsPtr,acStack_ba0);
+                      (g_CEditorToolsPtr,local_bf8);
           }
           wincore_winrun_cpp_sleep_FUN_005f40e0(0.5);
-          in_stack_00000030 = pFVar3;
+          local_30 = iVar8;
           shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
-                    (g_CEditorToolsPtr,(float)(int)pFVar3,40.0);
-          iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
-          if (iVar5 != 0) {
-            pFVar3 = (FILE *)0x28;
+                    (g_CEditorToolsPtr,(float)iVar8,40.0);
+          iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
+          if (iVar4 != 0) {
+            iVar8 = 0x28;
           }
         }
-        if (0 < (int)pFVar3) {
+        if (0 < iVar8) {
           shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
         }
-        iVar5 = engine_dosio_c_copyFileTimestamp_FUN_00481910(auStack_1010 + 0x48,pcStack_ba8);
-        if (iVar5 == 0) {
-          if (in_stack_00000014 != (CCheckOutItem *)0x0) {
+        iVar8 = engine_dosio_c_copyFileTimestamp_FUN_00481910
+                          (local_1020.found_path,(char *)local_e0c.timestamp);
+        if (iVar8 == 0) {
+          if (local_48 != (CCheckOutItem *)0x0) {
             shape_memdbg_cpp_closeFile_FUN_0050f9b0
-                      ((FILE *)in_stack_00000014,"..\\engine\\fileio.cpp",0xc4);
-            in_stack_00000018 = (CCheckOutItem *)0x0;
+                      ((FILE *)local_48,"..\\engine\\fileio.cpp",0xc4);
+            local_48 = (CCheckOutItem *)0x0;
           }
           shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-                    (g_CEditorToolsPtr,"Error setting file date/time for %s.\nYour version of the file has been updated to the network,\nbut the date on the network file is incorrect.\nYou still have the file checked out.\nThis is probably harmless, and can happen in rare\nsituations when somebody else is trying to get the pod\nwhile you are checking it in.\nAnother possibility is that the time of the file is newer than\nthe current system time on your computer.\nLeave this on your screen and get Fletch.\nIf that isn't an option, simply check the file in again,\nand then make sure the network file is the same as your file.\n");
-          engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860((CCheckOutList *)&stack0x00000014);
+                    (g_CEditorToolsPtr,"Error setting file date/time for %s.\nYour version of the file has been updated to the network,\nbut the date on the network file is incorrect.\nYou still have the file checked out.\nThis is probably harmless, and can happen in rare\nsituations when somebody else is trying to get the pod\nwhile you are checking it in.\nAnother possibility is that the time of the file is newer than\nthe current system time on your computer.\nLeave this on your screen and get Fletch.\nIf that isn't an option, simply check the file in again,\nand then make sure the network file is the same as your file.\n",&local_1020);
+          engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860((CCheckOutList *)local_50);
         }
         else {
-          bVar2 = engine_dosio_c_setFileAttributes_FUN_004819f0(auStack_1010 + 0x4c,8);
+          bVar2 = engine_dosio_c_setFileAttributes_FUN_004819f0(local_1020.found_path,8);
           if (CONCAT31 /* combine 2-byte values */(extraout_var,bVar2) == 0) {
-            if (in_stack_00000018 != (CCheckOutItem *)0x0) {
+            if (local_48 != (CCheckOutItem *)0x0) {
               shape_memdbg_cpp_closeFile_FUN_0050f9b0
-                        ((FILE *)in_stack_00000018,"..\\engine\\fileio.cpp",0xc4);
-              in_stack_0000001c = (CCheckOutItem *)0x0;
+                        ((FILE *)local_48,"..\\engine\\fileio.cpp",0xc4);
+              local_48 = (CCheckOutItem *)0x0;
             }
             shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-                      (g_CEditorToolsPtr,"Error setting file date/time for %s.\nYour version of the file has been updated to the network.\nYou still have the file checked out.\nThis is probably harmless, and can happen in rare\nsituations when somebody else is trying to get the pod\nwhile you are checking it in.\nLeave this on your screen and get Fletch.\nIf that isn't an option, simply check the file in again,\nand then make sure the network file is the same as your file.\n");
-            engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860((CCheckOutList *)&stack0x00000018);
+                      (g_CEditorToolsPtr,"Error setting file date/time for %s.\nYour version of the file has been updated to the network.\nYou still have the file checked out.\nThis is probably harmless, and can happen in rare\nsituations when somebody else is trying to get the pod\nwhile you are checking it in.\nLeave this on your screen and get Fletch.\nIf that isn't an option, simply check the file in again,\nand then make sure the network file is the same as your file.\n",&local_1020);
+            engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860((CCheckOutList *)local_50);
           }
           else {
-            iVar5 = 0;
+            iVar8 = 0;
             do {
               pFVar3 = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                                 (acStack_904,(char *)0x0,"at","..\\engine\\fileio.cpp"
-                                  ,0x153);
+                                 (local_964,(char *)0x0,"at","..\\engine\\fileio.cpp",
+                                  0x153);
               if (pFVar3 != (FILE *)0x0) {
                 crt_stdio_c_setvbuf_FUN_00601490(pFVar3,(char *)0x0,0,0x400);
                 goto LAB_004b4d50;
               }
-              piVar4 = (int *)crt_errno_c_errno_FUN_00601450();
-              if (*piVar4 != 6) break;
-              iVar5 = iVar5 + 1;
+              piVar6 = (int *)crt_errno_c_errno_FUN_00601450();
+              if (*piVar6 != 6) break;
+              iVar8 = iVar8 + 1;
               (*Sleep)(500);
-            } while (iVar5 < 10);
+            } while (iVar8 < 10);
             pFVar3 = (FILE *)0x0;
 LAB_004b4d50:
-            in_stack_00000040 = pFVar3;
+            local_28 = pFVar3;
             if (pFVar3 != (FILE *)0x0) {
-              in_stack_00000028 = crt_time_c_time_with_rounding_FUN_006001f0((time_t *)0x0);
-              crt_time_c_localtime_FUN_00600288(&stack0x00000028);
-              crt_stdio_c_fprintf_FUN_005fe6d0(pFVar3,"%4d: %04d/%02d/%02d %02d:%02d:%02d \"%s\"\n");
+              local_44 = crt_time_c_time_with_rounding_FUN_006001f0((time_t *)0x0);
+              ptVar7 = crt_time_c_localtime_FUN_00600288(&local_44);
+              crt_stdio_c_fprintf_FUN_005fe6d0
+                        (pFVar3,"%4d: %04d/%02d/%02d %02d:%02d:%02d \"%s\"\n",local_3c + 1,
+                         ptVar7->tm_year + 0x76c,ptVar7->tm_mon + 1,ptVar7->tm_mday,ptVar7->tm_hour,
+                         ptVar7->tm_min,ptVar7->tm_sec,&g_VersionControlSession);
               crt_stdio_c_fflush_FUN_00601540(pFVar3);
               if ((pFVar3->_flag & 0x20) == 0) {
                 shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar3,"..\\engine\\fileio.cpp",0xc4);
-                in_stack_00000054 = 0;
+                pCVar5 = local_34;
+                local_28 = (FILE *)0x0;
                 engine_fileio_cpp_logOffVersionControl_FUN_004b2830();
-                if (in_stack_00000048 != (CCheckOutItem *)0x0) {
+                if (pCVar5 != (CCheckOutItem *)0x0) {
                   engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860
-                            ((CCheckOutList *)&stack0x00000030);
+                            ((CCheckOutList *)(local_50 + 4));
                   return 2;
                 }
-                iVar5 = engine_fileio_cpp_CCheckOutList_remove_FUN_004b2d70
-                                  ((CCheckOutList *)&stack0x00000030,(int)in_stack_00000040);
-                if (iVar5 == 0) {
-                  if (in_stack_0000003c != (CCheckOutItem *)0x0) {
+                iVar8 = engine_fileio_cpp_CCheckOutList_remove_FUN_004b2d70
+                                  ((CCheckOutList *)(local_50 + 4),local_3c);
+                if (iVar8 == 0) {
+                  if (local_48 != (CCheckOutItem *)0x0) {
                     shape_memdbg_cpp_closeFile_FUN_0050f9b0
-                              ((FILE *)in_stack_0000003c,"..\\engine\\fileio.cpp",0xc4);
-                    in_stack_0000003c = in_stack_00000048;
+                              ((FILE *)local_48,"..\\engine\\fileio.cpp",0xc4);
+                    local_48 = pCVar5;
                   }
                   shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                             (g_CEditorToolsPtr,"Out of memory...Restart the application NOW.\nBetter yet, reboot the computer.");
                 }
                 else {
-                  iVar5 = engine_fileio_cpp_CCheckOutList_write_FUN_004b2eb0
-                                    ((CCheckOutList *)&stack0x00000034,(FILE **)&stack0x0000003c);
-                  if (iVar5 != 0) {
-                    if (in_stack_00000040 != (FILE *)0x0) {
+                  iVar8 = engine_fileio_cpp_CCheckOutList_write_FUN_004b2eb0
+                                    ((CCheckOutList *)local_50,(FILE **)&local_48);
+                  if (iVar8 != 0) {
+                    if (local_48 != (CCheckOutItem *)0x0) {
                       shape_memdbg_cpp_closeFile_FUN_0050f9b0
-                                (in_stack_00000040,"..\\engine\\fileio.cpp",0xc4);
-                      in_stack_00000044 = 0;
+                                ((FILE *)local_48,"..\\engine\\fileio.cpp",0xc4);
+                      local_48 = (CCheckOutItem *)0x0;
                     }
-                    iVar5 = engine_dosio_c_getFileTimestamp_FUN_00481960((char *)0x0,acStack_d80);
-                    if (((-1 < iVar5) &&
+                    iVar8 = engine_dosio_c_getFileTimestamp_FUN_00481960
+                                      ((char *)0x0,local_e0c.found_path);
+                    if (((-1 < iVar8) &&
                         (bVar2 = engine_dosio_c_setFileAttributes_FUN_004819f0
-                                           (acStack_d7c,(byte)iVar5 | 8),
-                        CONCAT31 /* combine 2-byte values */(extraout_var_00,bVar2) == 0)) || (iVar5 < 0)) {
+                                           (local_e0c.found_path,(byte)iVar8 | 8),
+                        CONCAT31 /* combine 2-byte values */(extraout_var_00,bVar2) == 0)) || (iVar8 < 0)) {
                       shape_edittool_cpp_CEditorTools_showWarning_FUN_0049e6f0
-                                (g_CEditorToolsPtr,"Error marking local file %s as read only.\n(But your check-in did complete to the network successfully.)");
+                                (g_CEditorToolsPtr,"Error marking local file %s as read only.\n(But your check-in did complete to the network successfully.)",&local_e0c);
                     }
-                    engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860
-                              ((CCheckOutList *)&stack0x00000048);
+                    engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860((CCheckOutList *)local_50);
                     return 1;
                   }
                 }
-                engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860
-                          ((CCheckOutList *)&stack0x00000038);
+                engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860((CCheckOutList *)local_50);
                 goto LAB_004b4768;
               }
             }
-            if (in_stack_00000020 != (CCheckOutItem *)0x0) {
+            if (local_48 != (CCheckOutItem *)0x0) {
               shape_memdbg_cpp_closeFile_FUN_0050f9b0
-                        ((FILE *)in_stack_00000020,"..\\engine\\fileio.cpp",0xc4);
-              in_stack_00000020 = (CCheckOutItem *)0x0;
+                        ((FILE *)local_48,"..\\engine\\fileio.cpp",0xc4);
+              local_48 = (CCheckOutItem *)0x0;
             }
-            if (in_stack_00000040 != (FILE *)0x0) {
-              shape_memdbg_cpp_closeFile_FUN_0050f9b0
-                        (in_stack_00000040,"..\\engine\\fileio.cpp",0xc4);
-              in_stack_00000040 = (FILE *)0x0;
+            if (local_28 != (FILE *)0x0) {
+              shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_28,"..\\engine\\fileio.cpp",0xc4);
+              local_28 = (FILE *)0x0;
             }
             shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-                      (g_CEditorToolsPtr,"Error creating history record in %s.\nYour version of the file has been updated to the network.\nYou still have the file checked out.\nThis is probably harmless, and can happen in rare\nsituations when somebody else is trying to get the pod\nwhile you are checking it in.\nLeave this on your screen and get Fletch.\nIf that isn't an option, simply check the file in again,\nand then make sure the network file is the same as your file.\n");
-            engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860((CCheckOutList *)&stack0x0000001c);
+                      (g_CEditorToolsPtr,"Error creating history record in %s.\nYour version of the file has been updated to the network.\nYou still have the file checked out.\nThis is probably harmless, and can happen in rare\nsituations when somebody else is trying to get the pod\nwhile you are checking it in.\nLeave this on your screen and get Fletch.\nIf that isn't an option, simply check the file in again,\nand then make sure the network file is the same as your file.\n",local_964);
+            engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860((CCheckOutList *)local_50);
           }
         }
       }
       goto LAB_004b4768;
     }
-    pcVar6 = "%s\nGet Fletch.";
+    pcVar15 = "%s\nGet Fletch.";
   }
-  shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,pcVar6);
+  shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,pcVar15,pcVar12);
 LAB_004b4768:
-  if (in_stack_00000010 != (FILE *)0x0) {
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(in_stack_00000010,"..\\engine\\fileio.cpp",0xc4);
-    in_stack_00000010 = (FILE *)0x0;
+  if (local_48 != (CCheckOutItem *)0x0) {
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0((FILE *)local_48,"..\\engine\\fileio.cpp",0xc4);
+    local_48 = (CCheckOutItem *)0x0;
   }
-  if (pFStack0000002c != (FILE *)0x0) {
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFStack0000002c,"..\\engine\\fileio.cpp",0xc4);
+  if (local_2c != (FILE *)0x0) {
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_2c,"..\\engine\\fileio.cpp",0xc4);
   }
-  if (in_stack_00000034 != (CCheckOutItem *)0x0) {
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0
-              ((FILE *)in_stack_00000034,"..\\engine\\fileio.cpp",0xc4);
+  if (local_24 != (FILE *)0x0) {
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_24,"..\\engine\\fileio.cpp",0xc4);
   }
-  if (in_stack_00000030 != (FILE *)0x0) {
-    shape_memdbg_cpp_closeFile_FUN_0050f9b0(in_stack_00000030,"..\\engine\\fileio.cpp",0xc4);
+  if (local_28 != (FILE *)0x0) {
+    shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_28,"..\\engine\\fileio.cpp",0xc4);
   }
-  if (acStack_a10[0] != '\0') {
-    crt_io_c_deleteFile_FUN_005ff9d0(acStack_a10);
+  if (local_a68[0] != '\0') {
+    crt_io_c_deleteFile_FUN_005ff9d0(local_a68);
   }
   engine_fileio_cpp_logOffVersionControl_FUN_004b2830();
   return 0;

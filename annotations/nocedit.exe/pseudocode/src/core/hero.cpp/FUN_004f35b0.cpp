@@ -18,6 +18,7 @@ uint core_hero_cpp_FUN_004f35b0(void)
   float *pfVar4;
   int iVar5;
   CDemonActor *in_stack_00000004;
+  CVector3f local_48;
   CVector3f local_3c;
   double local_30;
   double local_28;
@@ -54,7 +55,7 @@ uint core_hero_cpp_FUN_004f35b0(void)
             (local_28 = (double)local_3c.z, (float)0.5 <= local_3c.z)) &&
            ((local_28 <= 3 && (ABS(local_3c.x) <= (float)3)))) {
           pCVar3 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
-                             ((CVector3f *)&stack0xffffffb8,&local_3c);
+                             (&local_48,&local_3c);
           if ((ABS(pCVar3->y) <= (float)60) &&
              (iVar2 = *(int *)pCVar1[1].actor_name, in_stack_00000004[0x179].field21_0x11c = iVar2,
              iVar2 != 0)) {

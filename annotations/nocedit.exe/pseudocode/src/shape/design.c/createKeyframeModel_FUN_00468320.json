@@ -1,21 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 286,
-    "complexity_score": 444,
+    "complexity_score": 144,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 14,
     "pseudocode_lines": 114,
-    "suspect_count": 29,
+    "suspect_count": 2,
     "suspect_types": [
       "badspacebase",
-      "call_esp_anchor",
-      "format_string_mismatch",
-      "pointer_cast",
-      "register_param",
-      "stack_param",
-      "stack_ref",
-      "variadic_anchor"
+      "register_param"
     ],
     "total_lines": 400
   },
@@ -210,6 +204,56 @@
     "declared_params": 0,
     "estimated_params": 0
   },
+  "pcode_overrides": {
+    "0046833f": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
+    ],
+    "0046835f": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
+    ],
+    "00468390": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
+    ],
+    "004683b2": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
+    ],
+    "0046840c": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
+    ],
+    "00468425": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
+    ],
+    "00468488": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
+    ],
+    "004684bc": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
+    ],
+    "00468517": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
+    ],
+    "00468542": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
+    ],
+    "0046855c": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
+    ],
+    "00468577": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
+    ],
+    "0046858e": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
+    ],
+    "004685ab": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
+    ],
+    "004685b9": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
+    ],
+    "004685cd": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffda4,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.057017543859649,
     "instruction_count": 228,
@@ -251,184 +295,7 @@
     },
     "pcode_op_count": 1153
   },
-  "stack_frame": {
-    "frame_size": 624,
-    "local_size": 624,
-    "param_offset": 4,
-    "param_size": 0,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_26c",
-        "offset": -620,
-        "size": 8,
-        "type": "undefined8"
-      },
-      {
-        "is_param": false,
-        "name": "local_264",
-        "offset": -612,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_25c",
-        "offset": -604,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_258",
-        "offset": -600,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_24c",
-        "offset": -588,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_10c",
-        "offset": -268,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_bc",
-        "offset": -188,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_6c",
-        "offset": -108,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_6b",
-        "offset": -107,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c",
-        "offset": -28,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "undefined4"
-      }
-    ]
-  },
-  "suspects": [
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 9,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 9,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_fffffdb0",
-      "text": "SMRGLKeyframe *in_stack_fffffdb0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 24,
-      "match": "&stack0xfffffd9c",
-      "text": "crt_memory_c_memset_FUN_005fde40(&stack0xfffffd9c,0,0x158);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 66,
-      "match": "in_stack_fffffdb0",
-      "text": "in_stack_fffffdb0 = (SMRGLKeyframe *)(&stack0xfffffdb4 + local_18 * 0x10);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 66,
-      "match": "&stack0xfffffdb4",
-      "text": "in_stack_fffffdb0 = (SMRGLKeyframe *)(&stack0xfffffdb4 + local_18 * 0x10);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 67,
-      "match": "in_stack_fffffdb0",
-      "text": "pSVar7 = in_stack_fffffdb0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 74,
-      "match": "(byte *)((int)",
-      "text": "*(byte *)((int)&(pSVar7->header).base.type + 1) = bVar2;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 75,
-      "match": "(SMRGLKeyframe *)((int)",
-      "text": "pSVar7 = (SMRGLKeyframe *)((int)&(pSVar7->header).base.type + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 90,
-      "match": "in_stack_fffffdb0",
-      "text": "dVar9 = crt_string_c_strtod_FUN_005ff0f3((char *)in_stack_fffffdb0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 100,
-      "match": "&stack0xfffffd9c",
-      "text": "crt_stdio_c_fwrite_FUN_005fdc00(&stack0xfffffd9c,1,0x158,local_1c);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 109,
-      "match": "&stack0xfffffd9c",
-      "text": "shape_design_c_centerKeyframeModels_FUN_004681a0((SMRGLKeyframeModel *)&stack0xfffffd9c)",
-      "type": "stack_ref"
-    },
+  "resolved_suspects": [
     {
       "add_esp_value": 12,
       "call_address": "00468407",
@@ -460,17 +327,6 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0046853d (EBP frame + ADD ESP)",
       "type": "variadic_anchor"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Enter key frame of object %d : \" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Enter key frame of object %d : ",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 51,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_bc,\"Enter key frame of object %d : \");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 12,
@@ -653,6 +509,115 @@
       "target_address": "0x4681a0",
       "text": "Direct CALL at 004685c8, ADD ESP at 004685cd with uncertain ESP",
       "type": "call_esp_anchor"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 624,
+    "local_size": 624,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_26c",
+        "offset": -620,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_264",
+        "offset": -612,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_25c",
+        "offset": -604,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_258",
+        "offset": -600,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24c",
+        "offset": -588,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_10c",
+        "offset": -268,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_bc",
+        "offset": -188,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_6b",
+        "offset": -107,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 10,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 10,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
     }
   ]
 }

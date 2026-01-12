@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 35,
-    "complexity_score": 80,
+    "complexity_score": 25,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
     "pseudocode_lines": 10,
-    "suspect_count": 6,
+    "suspect_count": 1,
     "suspect_types": [
-      "call_esp_anchor",
       "special_crt_function"
     ],
     "total_lines": 45
@@ -65,6 +64,23 @@
       "value": null
     }
   ],
+  "pcode_overrides": {
+    "0060e2a3": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
+    ],
+    "0060e2b9": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
+    ],
+    "0060e2c7": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
+    ],
+    "0060e2d4": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
+    ],
+    "0060e2df": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.0,
     "instruction_count": 29,
@@ -86,30 +102,7 @@
     },
     "pcode_op_count": 116
   },
-  "stack_frame": {
-    "frame_size": 12,
-    "local_size": 4,
-    "param_offset": 4,
-    "param_size": 8,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": true,
-        "name": "errorType",
-        "offset": 4,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": true,
-        "name": "errorData",
-        "offset": 8,
-        "size": 4,
-        "type": "char *"
-      }
-    ]
-  },
-  "suspects": [
+  "resolved_suspects": [
     {
       "add_esp_value": 4,
       "call_address": "0060e29e",
@@ -174,7 +167,32 @@
       "target_address": "0x6007a0",
       "text": "Direct CALL at 0060e2da, ADD ESP at 0060e2df with uncertain ESP",
       "type": "call_esp_anchor"
-    },
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "errorType",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "errorData",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
     {
       "address": "0060e298",
       "crt_type": "runtime support",

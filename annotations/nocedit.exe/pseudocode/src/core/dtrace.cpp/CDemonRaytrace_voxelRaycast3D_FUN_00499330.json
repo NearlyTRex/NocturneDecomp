@@ -1,18 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 429,
-    "complexity_score": 249,
+    "complexity_score": 211,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 3,
-    "pseudocode_lines": 114,
-    "suspect_count": 12,
+    "pseudocode_lines": 106,
+    "suspect_count": 10,
     "suspect_types": [
-      "call_esp_anchor",
-      "stack_align_anchor",
       "warning_unreachable"
     ],
-    "total_lines": 543
+    "total_lines": 535
   },
   "cross_references": [
     {
@@ -84,6 +82,14 @@
     "declared_params": 3,
     "estimated_params": 3
   },
+  "pcode_overrides": {
+    "00499339": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff88,4)"
+    ],
+    "00499618": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff88,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 7.052770448548813,
     "instruction_count": 379,
@@ -135,6 +141,31 @@
     },
     "pcode_op_count": 2673
   },
+  "resolved_suspects": [
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x78",
+      "fix_address": "00499339",
+      "frame_offset": 120,
+      "match": "AND ESP",
+      "sub_esp_offset": 120,
+      "text": "Stack alignment at 00499339 (SUB ESP, 0x78 before)",
+      "type": "stack_align_anchor"
+    },
+    {
+      "add_esp_value": 16,
+      "call_address": "00499611",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "00499618",
+      "frame_offset": 120,
+      "match": "CALL...ADD ESP",
+      "return_address": "00499616",
+      "target_address": "0x4952b0",
+      "text": "Direct CALL at 00499611, ADD ESP at 00499618 with uncertain ESP",
+      "type": "call_esp_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 152,
     "local_size": 140,
@@ -397,14 +428,14 @@
       "description": "Unreachable code block removed",
       "line": 6,
       "match": "WARNING: Removing unreachable block",
-      "text": "/* WARNING: Removing unreachable block (ram,0x00499501) */",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00499729) */",
       "type": "warning_unreachable"
     },
     {
       "description": "Unreachable code block removed",
       "line": 7,
       "match": "WARNING: Removing unreachable block",
-      "text": "/* WARNING: Removing unreachable block (ram,0x00499729) */",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00499501) */",
       "type": "warning_unreachable"
     },
     {
@@ -418,14 +449,14 @@
       "description": "Unreachable code block removed",
       "line": 9,
       "match": "WARNING: Removing unreachable block",
-      "text": "/* WARNING: Removing unreachable block (ram,0x00499751) */",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0049953a) */",
       "type": "warning_unreachable"
     },
     {
       "description": "Unreachable code block removed",
       "line": 10,
       "match": "WARNING: Removing unreachable block",
-      "text": "/* WARNING: Removing unreachable block (ram,0x0049953a) */",
+      "text": "/* WARNING: Removing unreachable block (ram,0x00499751) */",
       "type": "warning_unreachable"
     },
     {
@@ -434,29 +465,6 @@
       "match": "WARNING: Removing unreachable block",
       "text": "/* WARNING: Removing unreachable block (ram,0x0049955e) */",
       "type": "warning_unreachable"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x78",
-      "fix_address": "00499339",
-      "frame_offset": 120,
-      "match": "AND ESP",
-      "sub_esp_offset": 120,
-      "text": "Stack alignment at 00499339 (SUB ESP, 0x78 before)",
-      "type": "stack_align_anchor"
-    },
-    {
-      "add_esp_value": 16,
-      "call_address": "00499611",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "00499618",
-      "frame_offset": 120,
-      "match": "CALL...ADD ESP",
-      "return_address": "00499616",
-      "target_address": "0x4952b0",
-      "text": "Direct CALL at 00499611, ADD ESP at 00499618 with uncertain ESP",
-      "type": "call_esp_anchor"
     }
   ]
 }

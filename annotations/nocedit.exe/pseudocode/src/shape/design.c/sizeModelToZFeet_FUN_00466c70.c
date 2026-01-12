@@ -39,7 +39,8 @@ void __cdecl shape_design_c_sizeModelToZFeet_FUN_00466c70(void)
   if (iVar3 == -2) {
     return;
   }
-  iVar3 = crt_stdio_c_sscanf_FUN_0060013c(&stack0xffffff84,"%f,%d,%d",local_20);
+  iVar3 = crt_stdio_c_sscanf_FUN_0060013c
+                    (&stack0xffffff84,"%f,%d,%d",local_20,&local_24,&local_28);
   if (iVar3 < 2) {
     for (local_2c = 0; local_2c < g_VertexCount; local_2c = local_2c + 1) {
       fVar2 = g_LoadedVertices[local_2c].vertex.z;

@@ -13,8 +13,8 @@ void core_manpuz_cpp_FUN_0050a1f0(void)
 
 {
   CKeyFramedModel *pCVar1;
+  int render_flags;
   int iVar2;
-  int unaff_EBP;
   int in_stack_00000004;
   int in_stack_00000008;
   
@@ -26,9 +26,10 @@ void core_manpuz_cpp_FUN_0050a1f0(void)
             (g_CDemonRendererPtr,(CVector3i *)(iVar2 + 0x28),(CVector3i *)(iVar2 + 0x1c));
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
                      ((CKeyFramedModelInstance *)(in_stack_00000004 + 0x450));
+  render_flags = pCVar1->frame_count + -1;
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
             ((CKeyFramedModelInstance *)(in_stack_00000004 + 0x450),
-             (float)(pCVar1->frame_count + -1) * *(float *)(iVar2 + 0x18),unaff_EBP);
+             (float)render_flags * *(float *)(iVar2 + 0x18),render_flags);
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
   return;
 }

@@ -16,8 +16,8 @@ uint shape_superopt_cpp_FUN_005c91e0(void)
   int iVar5;
   uint uVar6;
   double *pdVar7;
+  void *dest;
   uint uVar8;
-  void *unaff_retaddr;
   int in_stack_00000008;
   uint *in_stack_0000000c;
   
@@ -48,6 +48,7 @@ uint shape_superopt_cpp_FUN_005c91e0(void)
       return uVar6 ^ *in_stack_0000000c;
     }
     iVar4 = (uVar6 - uVar8) + 1;
+    dest = (void *)(in_stack_00000008 + uVar8 * 0x60);
     iVar5 = shape_superopt_cpp_FUN_005cb3a0();
     if ((iVar5 == 0) || (iVar5 = shape_superopt_cpp_FUN_005cbf90(), iVar5 != 0)) {
       uVar8 = uVar8 + iVar4;
@@ -58,7 +59,7 @@ uint shape_superopt_cpp_FUN_005c91e0(void)
         return 0;
       }
       crt_string_c_memmove_FUN_005fe5e0
-                (unaff_retaddr,(void *)(iVar4 * 0x60 + (int)unaff_retaddr),
+                (dest,(void *)(iVar4 * 0x60 + (int)dest),
                  (*in_stack_0000000c - (uVar8 + iVar4)) * 0x60);
       *in_stack_0000000c = *in_stack_0000000c - iVar4;
     }

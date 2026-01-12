@@ -11,6 +11,7 @@ void __cdecl shape_design_c_renderVertexPointsWithLabels_FUN_0045bff0(void)
 {
   BADSPACEBASE *in_ESP;
   double dVar1;
+  char local_88 [80];
   CVector3i local_38;
   int local_2c;
   int local_28;
@@ -63,8 +64,8 @@ LAB_0045c20a:
           }
           if (((local_1c + 8 < (uint)g_WindowWidth) && (local_18 + 0xc < (uint)g_WindowHeight)) &&
              (0 < g_RenderVertexBuffer[local_20].projected_vertex.transformed_z)) {
-            crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff78,"%d",local_20);
-            engine_2d_c_drawTextColor_FUN_00402430(&stack0xffffff78,local_1c + 1,local_18 + 1);
+            crt_stdio_c_sprintf_FUN_005fdbd0(local_88,"%d",local_20);
+            engine_2d_c_drawTextColor_FUN_00402430(local_88,local_1c + 1,local_18 + 1);
           }
         }
       }

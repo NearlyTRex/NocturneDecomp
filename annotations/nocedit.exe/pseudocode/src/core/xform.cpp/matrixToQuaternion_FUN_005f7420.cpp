@@ -18,21 +18,21 @@ core_xform_cpp_matrixToQuaternion_FUN_005f7420(CQuaternion4f *quat_out,CMatrix3x
   float fVar6;
   float fVar7;
   CQuaternion4f *unaff_ESI;
-  float local_48;
   float local_44;
+  float local_40;
   
   fVar1 = quat_out->w + quat_out[1].x;
   fVar2 = fVar1 + quat_out[2].y;
   if (0.0 < fVar2) {
-    local_48 = SQRT(fVar2 + 1.0);
-    fVar1 = (float)0.5 / local_48;
-    local_48 = local_48 * (float)0.5;
-    local_44 = (quat_out[2].x - quat_out[1].y) * fVar1;
+    local_44 = SQRT(fVar2 + 1.0);
+    fVar1 = (float)0.5 / local_44;
+    local_44 = local_44 * (float)0.5;
+    local_40 = (quat_out[2].x - quat_out[1].y) * fVar1;
     fVar2 = (quat_out->y - quat_out[2].w) * fVar1;
     fVar1 = (quat_out[1].w - quat_out->x) * fVar1;
 LAB_005f74ae:
-    unaff_ESI->w = local_48;
-    unaff_ESI->x = local_44;
+    unaff_ESI->w = local_44;
+    unaff_ESI->x = local_40;
     unaff_ESI->y = fVar2;
     unaff_ESI->z = fVar1;
     return unaff_ESI;
@@ -54,10 +54,10 @@ LAB_005f74ae:
     }
   }
   else if (quat_out[2].y < quat_out->w) {
-    local_44 = SQRT((quat_out->w - (quat_out[1].x + quat_out[2].y)) + 1.0);
-    fVar1 = (float)0.5 / local_44;
-    local_44 = local_44 * (float)0.5;
-    local_48 = (quat_out[2].x - quat_out[1].y) * fVar1;
+    local_40 = SQRT((quat_out->w - (quat_out[1].x + quat_out[2].y)) + 1.0);
+    fVar1 = (float)0.5 / local_40;
+    local_40 = local_40 * (float)0.5;
+    local_44 = (quat_out[2].x - quat_out[1].y) * fVar1;
     fVar2 = (quat_out[1].w + quat_out->x) * fVar1;
     fVar1 = (quat_out[2].w + quat_out->y) * fVar1;
     goto LAB_005f74ae;

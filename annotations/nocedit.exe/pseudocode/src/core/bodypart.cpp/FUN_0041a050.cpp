@@ -31,6 +31,7 @@ void core_bodypart_cpp_FUN_0041a050(void)
   float10 fVar16;
   double dVar17;
   CBodyPart *in_stack_00000004;
+  CVector3f CStack_74;
   CVector3f local_68;
   float local_5c;
   int local_58;
@@ -41,6 +42,7 @@ void core_bodypart_cpp_FUN_0041a050(void)
   CVector3f CStack_44;
   CVector3f CStack_34;
   char *local_20;
+  int local_1c;
   float local_18;
   int iStack_14;
   
@@ -121,12 +123,11 @@ void core_bodypart_cpp_FUN_0041a050(void)
     crt_memory_c_memset_FUN_005fde40
               (*(void **)(in_stack_00000004->field1_0x158 + 0x24),0,
                *(int *)(in_stack_00000004->field1_0x158 + 0x1c) * 0xc);
-    iStack_14 = 0;
+    local_1c = 0;
     if (0 < *(int *)(in_stack_00000004->field1_0x158 + 0x28)) {
-      local_18 = 0.0;
+      local_20 = (char *)0x0;
       do {
-        output = (SSurfaceNormal *)
-                 (*(int *)(in_stack_00000004->field1_0x158 + 0x2c) + (int)local_18);
+        output = (SSurfaceNormal *)(local_20 + *(int *)(in_stack_00000004->field1_0x158 + 0x2c));
         output->vertex_count = 3;
         engine_keyframe_c_calculateSurfaceNormal_FUN_00501bc0
                   (*(CVector3i **)(in_stack_00000004->field1_0x158 + 0x20),output);
@@ -143,9 +144,9 @@ void core_bodypart_cpp_FUN_0041a050(void)
             pSVar10 = (SSurfaceNormal *)&pSVar10->normal_y;
           } while (iVar9 < output->vertex_count);
         }
-        local_18 = (float)((int)local_18 + 0x3c);
-        iStack_14 = iStack_14 + 1;
-      } while (iStack_14 < *(int *)(in_stack_00000004->field1_0x158 + 0x28));
+        local_20 = local_20 + 0x3c;
+        local_1c = local_1c + 1;
+      } while (local_1c < *(int *)(in_stack_00000004->field1_0x158 + 0x28));
     }
     iVar9 = 0;
     if (0 < *(int *)(in_stack_00000004->field1_0x158 + 0x1c)) {
@@ -189,7 +190,7 @@ void core_bodypart_cpp_FUN_0041a050(void)
            *(uint *)(in_stack_00000004->field1_0x158 + 0x130);
     }
     pCVar5 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
-                       ((CMatrix3x3f *)(in_stack_00000004->field1_0x158 + 0xb8c),&local_68,
+                       ((CMatrix3x3f *)(in_stack_00000004->field1_0x158 + 0xb8c),&CStack_74,
                         (CVector3f *)(in_stack_00000004->field1_0x158 + 0x128));
     if ((CVector3f *)(in_stack_00000004->field1_0x158 + 0xbc0) != pCVar5) {
       ((CVector3f *)(in_stack_00000004->field1_0x158 + 0xbc0))->x = pCVar5->x;

@@ -17,7 +17,7 @@ void core_scat_cpp_FUN_00557d20(void)
   BADSPACEBASE *in_ESP;
   CCharacter *in_stack_00000004;
   float in_stack_00000008;
-  float in_stack_ffffffbc;
+  float in_stack_ffffffb4;
   
   do {
     iVar1 = core_motion_cpp_CMotionController_advance_FUN_0052d610
@@ -26,9 +26,9 @@ void core_scat_cpp_FUN_00557d20(void)
       this_ptr = core_actor_cpp_castToClassHash_FUN_0040c790
                            (in_stack_00000004->grabbed_by,g_CEnemyClassInfo.name_hash);
       if (this_ptr != (CDemonActor *)0x0) {
-        core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffffb8);
+        core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffffb4);
         (*this_ptr->vtable[1].playAmbientSoundWithVolume)
-                  (this_ptr,&stack0xffffffbc,in_stack_ffffffbc);
+                  (this_ptr,&stack0xffffffb4,in_stack_ffffffb4);
       }
     }
     else {

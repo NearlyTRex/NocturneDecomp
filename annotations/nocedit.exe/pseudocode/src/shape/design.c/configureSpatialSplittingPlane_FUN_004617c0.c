@@ -27,6 +27,9 @@ void __cdecl shape_design_c_configureSpatialSplittingPlane_FUN_004617c0(STreeNod
   float local_34;
   STreeNode *local_30;
   float local_28;
+  byte local_24 [4];
+  byte local_20 [4];
+  byte local_1c [4];
   float local_18;
   int local_14;
   
@@ -60,7 +63,8 @@ LAB_0046186a:
         if (local_28 == 1.12104e-43) {
           engine_2d_c_getInputWithPrompt_FUN_004032c0
                     ((char *)local_90,0x46,0,0x16,"Enter in 3 points : ");
-          crt_stdio_c_sscanf_FUN_0060013c((char *)local_90,"%d,%d,%d");
+          crt_stdio_c_sscanf_FUN_0060013c
+                    ((char *)local_90,"%d,%d,%d",local_24,local_20,local_1c);
           shape_design_c_calculatePolygonNormal_FUN_0045caa0
                     ((SShapeEditorPolygon *)&stack0xfffffdec);
           local_40 = local_16c;

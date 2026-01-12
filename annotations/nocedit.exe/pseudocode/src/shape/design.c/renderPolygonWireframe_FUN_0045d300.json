@@ -1,21 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 117,
-    "complexity_score": 327,
+    "complexity_score": 291,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
-    "pseudocode_lines": 117,
-    "suspect_count": 18,
+    "pseudocode_lines": 116,
+    "suspect_count": 15,
     "suspect_types": [
       "badspacebase",
-      "call_esp_anchor",
       "pointer_cast",
       "register_param",
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 234
+    "total_lines": 233
   },
   "cross_references": [
     {
@@ -69,6 +68,17 @@
       "value": null
     }
   ],
+  "pcode_overrides": {
+    "0045d321": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff68,4)"
+    ],
+    "0045d3d2": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff68,4)"
+    ],
+    "0045d459": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff68,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.461538461538462,
     "instruction_count": 104,
@@ -103,6 +113,47 @@
     },
     "pcode_op_count": 672
   },
+  "resolved_suspects": [
+    {
+      "add_esp_value": 4,
+      "call_address": "0045d31c",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "0045d321",
+      "frame_offset": 152,
+      "match": "CALL...ADD ESP",
+      "return_address": "0045d321",
+      "target_address": "0x403950",
+      "text": "Direct CALL at 0045d31c, ADD ESP at 0045d321 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 96,
+      "call_address": "0045d3cd",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0045d3d2",
+      "frame_offset": 152,
+      "match": "CALL...ADD ESP",
+      "return_address": "0045d3d2",
+      "target_address": "0x407d70",
+      "text": "Direct CALL at 0045d3cd, ADD ESP at 0045d3d2 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 96,
+      "call_address": "0045d454",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0045d459",
+      "frame_offset": 152,
+      "match": "CALL...ADD ESP",
+      "return_address": "0045d459",
+      "target_address": "0x407d70",
+      "text": "Direct CALL at 0045d454, ADD ESP at 0045d459 with uncertain ESP",
+      "type": "call_esp_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 176,
     "local_size": 172,
@@ -210,132 +261,93 @@
     {
       "description": "Unresolved stack parameter",
       "line": 13,
-      "match": "in_stack_ffffff00",
-      "text": "SRenderVertex *in_stack_ffffff00;",
+      "match": "in_stack_fffffef8",
+      "text": "SRenderVertex *in_stack_fffffef8;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 14,
-      "match": "in_stack_ffffff04",
-      "text": "SRenderVertex *in_stack_ffffff04;",
+      "match": "in_stack_fffffefc",
+      "text": "SRenderVertex *in_stack_fffffefc;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 35,
+      "line": 34,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar2 = (SRenderVertex *)((int)pSVar2 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 42,
+      "line": 41,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar2 = (SRenderVertex *)((int)pSVar2 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 67,
-      "match": "&stack0xffffff00",
-      "text": "puVar6 = (uint *)&stack0xffffff00;",
+      "line": 66,
+      "match": "&stack0xfffffef8",
+      "text": "puVar6 = (uint *)&stack0xfffffef8;",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 73,
-      "match": "in_stack_ffffff00",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff00,in_stack_ffffff04);",
+      "line": 72,
+      "match": "in_stack_fffffef8",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffef8,in_stack_fffffefc);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 73,
-      "match": "in_stack_ffffff04",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff00,in_stack_ffffff04);",
+      "line": 72,
+      "match": "in_stack_fffffefc",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffef8,in_stack_fffffefc);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 75,
+      "line": 74,
       "match": "(int *)((int)",
       "text": "pSVar2 = g_RenderVertexBuffer + *(int *)((int)local_14 + (polygon_data->base).count * 4 + -4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 79,
+      "line": 78,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar2 = (SRenderVertex *)((int)pSVar2 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 86,
+      "line": 85,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar2 = (SRenderVertex *)((int)pSVar2 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 111,
-      "match": "&stack0xffffff00",
-      "text": "puVar6 = (uint *)&stack0xffffff00;",
+      "line": 110,
+      "match": "&stack0xfffffef8",
+      "text": "puVar6 = (uint *)&stack0xfffffef8;",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 117,
-      "match": "in_stack_ffffff00",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff00,in_stack_ffffff04);",
+      "line": 116,
+      "match": "in_stack_fffffef8",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffef8,in_stack_fffffefc);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 117,
-      "match": "in_stack_ffffff04",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff00,in_stack_ffffff04);",
+      "line": 116,
+      "match": "in_stack_fffffefc",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffef8,in_stack_fffffefc);",
       "type": "stack_param"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "0045d31c",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "0045d321",
-      "frame_offset": 152,
-      "match": "CALL...ADD ESP",
-      "return_address": "0045d321",
-      "target_address": "0x403950",
-      "text": "Direct CALL at 0045d31c, ADD ESP at 0045d321 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 96,
-      "call_address": "0045d3cd",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0045d3d2",
-      "frame_offset": 152,
-      "match": "CALL...ADD ESP",
-      "return_address": "0045d3d2",
-      "target_address": "0x407d70",
-      "text": "Direct CALL at 0045d3cd, ADD ESP at 0045d3d2 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 96,
-      "call_address": "0045d454",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0045d459",
-      "frame_offset": 152,
-      "match": "CALL...ADD ESP",
-      "return_address": "0045d459",
-      "target_address": "0x407d70",
-      "text": "Direct CALL at 0045d454, ADD ESP at 0045d459 with uncertain ESP",
-      "type": "call_esp_anchor"
     }
   ]
 }

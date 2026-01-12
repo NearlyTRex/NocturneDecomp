@@ -1,21 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 303,
-    "complexity_score": 377,
+    "complexity_score": 125,
     "cross_reference_count": 25,
     "function_call_count": 11,
     "global_count": 26,
-    "pseudocode_lines": 97,
-    "suspect_count": 25,
+    "pseudocode_lines": 95,
+    "suspect_count": 2,
     "suspect_types": [
-      "call_esp_anchor",
-      "extra_output",
-      "stack_align_anchor",
-      "unaffected_reg",
-      "variadic_anchor",
+      "concat_artifact",
       "variadic_preserve_ebp"
     ],
-    "total_lines": 400
+    "total_lines": 398
   },
   "cross_references": [
     {
@@ -397,6 +393,38 @@
       "value": null
     }
   ],
+  "pcode_overrides": {
+    "004a0539": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd0,4)"
+    ],
+    "004a05e6": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd0,4)"
+    ],
+    "004a05f3": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd0,4)"
+    ],
+    "004a0680": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd0,4)"
+    ],
+    "004a06a7": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd0,4)"
+    ],
+    "004a06be": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd0,4)"
+    ],
+    "004a070f": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd0,4)"
+    ],
+    "004a07e7": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd0,4)"
+    ],
+    "004a082b": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd0,4)"
+    ],
+    "004a0885": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd0,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.375,
     "instruction_count": 264,
@@ -445,243 +473,7 @@
     },
     "pcode_op_count": 1683
   },
-  "stack_frame": {
-    "frame_size": 80,
-    "local_size": 68,
-    "param_offset": 4,
-    "param_size": 12,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_40",
-        "offset": -64,
-        "size": 8,
-        "type": "undefined8"
-      },
-      {
-        "is_param": false,
-        "name": "local_38",
-        "offset": -56,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_34",
-        "offset": -52,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_30",
-        "offset": -48,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_2c",
-        "offset": -44,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_28",
-        "offset": -40,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_24",
-        "offset": -36,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_20",
-        "offset": -32,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c",
-        "offset": -28,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": true,
-        "name": "this_ptr",
-        "offset": 4,
-        "size": 4,
-        "type": "CEditorTools *"
-      },
-      {
-        "is_param": true,
-        "name": "progress_min",
-        "offset": 8,
-        "size": 4,
-        "type": "float"
-      },
-      {
-        "is_param": true,
-        "name": "progress_max",
-        "offset": 12,
-        "size": 4,
-        "type": "float"
-      }
-    ]
-  },
-  "stack_patterns": {
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
-    "pattern_count": 1,
-    "pattern_types": [
-      "stack_alignment"
-    ],
-    "patterns": [
-      {
-        "address": "004a0539",
-        "description": "Stack alignment (AND ESP, 0xfffffff8)",
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
-        "instruction": "AND ESP,0xfffffff8",
-        "pattern_id": "stack_alignment"
-      }
-    ],
-    "severity": "medium"
-  },
-  "suspects": [
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 13,
-      "match": "extraout_EDX",
-      "text": "int extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 14,
-      "match": "unaff_EBX",
-      "text": "int unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 16,
-      "match": "unaff_EBP",
-      "text": "uint unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 17,
-      "match": "unaff_ESI",
-      "text": "int unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 19,
-      "match": "unaff_EDI",
-      "text": "int unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 50,
-      "match": "unaff_EBP",
-      "text": "\"%d%% complete\",unaff_EBP);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 62,
-      "match": "unaff_ESI",
-      "text": "engine_2d_c_drawVLine_FUN_00402ff0(x,(int)this_ptr,unaff_ESI);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 72,
-      "match": "unaff_ESI",
-      "text": "engine_2d_c_fillRectColor_FUN_00403170(x1,y + 1,iVar3,unaff_ESI,g_ProgressBarFillColor);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 74,
-      "match": "unaff_EBX",
-      "text": "if (0 < unaff_EBX) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 75,
-      "match": "unaff_EDI",
-      "text": "fVar1 = (float)(unaff_EDI - g_WindowStack[g_WindowStackCount + -1].progress_start_time) *",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 89,
-      "match": "unaff_EBX",
-      "text": "(int)ROUND(dVar4) / 0x3c,local_14,y / 0x3c,unaff_EBX,uVar6);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 90,
-      "match": "extraout_EDX",
-      "text": "unaff_ESI = extraout_EDX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 90,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI = extraout_EDX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 97,
-      "match": "unaff_ESI",
-      "text": "g_WindowStack[iVar3].progress_timestamp = unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "call_address": "004a0624",
-      "caller_has_stack_issues": false,
-      "description": "Variadic call in EBP-frame function without ADD ESP; fix by preserving ESP across CALL",
-      "esp_certainty_after": "unknown",
-      "esp_certainty_at_call": "known",
-      "frame_offset": 48,
-      "match": "CALL engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30",
-      "return_address": "004a0629",
-      "target_address": "0x4cdf30",
-      "target_function": "engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30",
-      "text": "Call to variadic function engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30 at 004a0624 (EBP frame, no ADD ESP)",
-      "type": "variadic_preserve_ebp"
-    },
+  "resolved_suspects": [
     {
       "add_esp_value": 44,
       "call_address": "004a0826",
@@ -814,6 +606,153 @@
       "target_address": "0x406d80",
       "text": "Direct CALL at 004a07e2, ADD ESP at 004a07e7 with uncertain ESP",
       "type": "call_esp_anchor"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 80,
+    "local_size": 68,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEditorTools *"
+      },
+      {
+        "is_param": true,
+        "name": "progress_min",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "progress_max",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004a0539",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 77,
+      "match": "CONCAT44",
+      "text": "dVar7 = (double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)(double)fVar1 >> 0x20),0x4a077d);",
+      "type": "concat_artifact"
+    },
+    {
+      "call_address": "004a0624",
+      "caller_has_stack_issues": false,
+      "description": "Variadic call in EBP-frame function without ADD ESP; fix by preserving ESP across CALL",
+      "esp_certainty_after": "unknown",
+      "esp_certainty_at_call": "known",
+      "frame_offset": 48,
+      "match": "CALL engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30",
+      "return_address": "004a0629",
+      "target_address": "0x4cdf30",
+      "target_function": "engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30",
+      "text": "Call to variadic function engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30 at 004a0624 (EBP frame, no ADD ESP)",
+      "type": "variadic_preserve_ebp"
     }
   ]
 }

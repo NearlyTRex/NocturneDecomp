@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 330,
-    "complexity_score": 299,
+    "complexity_score": 164,
     "cross_reference_count": 2,
     "function_call_count": 11,
     "global_count": 29,
     "pseudocode_lines": 109,
-    "suspect_count": 17,
+    "suspect_count": 4,
     "suspect_types": [
       "badspacebase",
-      "call_esp_anchor",
       "register_param",
       "stack_ref"
     ],
@@ -275,6 +274,47 @@
       "value": null
     }
   ],
+  "pcode_overrides": {
+    "0045ce96": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff48,4)"
+    ],
+    "0045cffe": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff48,4)"
+    ],
+    "0045d0cd": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff48,4)"
+    ],
+    "0045d0de": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff48,4)"
+    ],
+    "0045d0ef": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff48,4)"
+    ],
+    "0045d111": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff48,4)"
+    ],
+    "0045d129": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff48,4)"
+    ],
+    "0045d13a": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff48,4)"
+    ],
+    "0045d168": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff48,4)"
+    ],
+    "0045d189": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff48,4)"
+    ],
+    "0045d19a": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff48,4)"
+    ],
+    "0045d1b4": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff48,4)"
+    ],
+    "0045d1c5": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff48,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.883116883116883,
     "instruction_count": 231,
@@ -312,163 +352,7 @@
     },
     "pcode_op_count": 1359
   },
-  "stack_frame": {
-    "frame_size": 208,
-    "local_size": 204,
-    "param_offset": 4,
-    "param_size": 4,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_c8",
-        "offset": -200,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_c4",
-        "offset": -196,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_c0",
-        "offset": -192,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_bc",
-        "offset": -188,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_b8",
-        "offset": -184,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_b4",
-        "offset": -180,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_b0",
-        "offset": -176,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_6c",
-        "offset": -108,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_68",
-        "offset": -104,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_64",
-        "offset": -100,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_63",
-        "offset": -99,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_24",
-        "offset": -36,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_20",
-        "offset": -32,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c",
-        "offset": -28,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": true,
-        "name": "polygon_index",
-        "offset": 4,
-        "size": 4,
-        "type": "int"
-      }
-    ]
-  },
-  "suspects": [
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 6,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 6,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 83,
-      "match": "&stack0xffffffdc",
-      "text": "engine_3d_c_processPolygonColor_FUN_00403e30((SMRGLHeaderPrimitive *)&stack0xffffffdc);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 102,
-      "match": "&stack0xffffffdc",
-      "text": "engine_3d_c_processPolygonColor_FUN_00403e30((SMRGLHeaderPrimitive *)&stack0xffffffdc);",
-      "type": "stack_ref"
-    },
+  "resolved_suspects": [
     {
       "add_esp_value": 4,
       "call_address": "0045ce91",
@@ -637,6 +521,164 @@
       "target_address": "0x403ad0",
       "text": "Direct CALL at 0045d1c0, ADD ESP at 0045d1c5 with uncertain ESP",
       "type": "call_esp_anchor"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 208,
+    "local_size": 204,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_c8",
+        "offset": -200,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c4",
+        "offset": -196,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_c0",
+        "offset": -192,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_bc",
+        "offset": -188,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_b8",
+        "offset": -184,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_b4",
+        "offset": -180,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_b0",
+        "offset": -176,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_64",
+        "offset": -100,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_63",
+        "offset": -99,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "polygon_index",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 6,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 6,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 83,
+      "match": "&stack0xffffffdc",
+      "text": "engine_3d_c_processPolygonColor_FUN_00403e30((SMRGLHeaderPrimitive *)&stack0xffffffdc);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 102,
+      "match": "&stack0xffffffdc",
+      "text": "engine_3d_c_processPolygonColor_FUN_00403e30((SMRGLHeaderPrimitive *)&stack0xffffffdc);",
+      "type": "stack_ref"
     }
   ]
 }

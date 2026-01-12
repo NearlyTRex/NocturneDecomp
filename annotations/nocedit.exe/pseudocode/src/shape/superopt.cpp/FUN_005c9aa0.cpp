@@ -26,188 +26,188 @@ void shape_superopt_cpp_FUN_005c9aa0(void)
   int in_stack_00000014;
   int *in_stack_00000018;
   int *in_stack_0000001c;
-  double local_1e0;
-  double local_1d8;
-  double local_1d0;
-  double local_1c8;
-  double local_1c0;
-  double local_1b8;
-  double local_1b0;
-  double local_1a8;
-  double local_1a0;
-  double local_198;
-  double local_190;
-  double local_188;
-  double local_180;
-  double local_178;
-  double local_170;
-  double local_168;
-  double local_160;
-  double local_158;
-  double local_150;
-  double local_148;
-  double local_140;
-  double local_138;
-  double local_130;
-  double local_128;
-  double local_120;
-  double local_118;
-  double local_110;
-  double local_108;
-  double local_100;
-  uint local_f8 [4];
-  uint local_e8;
+  double dStack_1dc;
+  double dStack_1d4;
+  double dStack_1cc;
+  double dStack_1c4;
+  double dStack_1bc;
+  double dStack_1b4;
+  double dStack_1ac;
+  double dStack_1a4;
+  double dStack_19c;
+  double dStack_194;
+  double dStack_18c;
+  double dStack_184;
+  double dStack_17c;
+  double dStack_174;
+  double dStack_16c;
+  double dStack_164;
+  double dStack_15c;
+  double dStack_154;
+  double dStack_14c;
+  double dStack_144;
+  double dStack_13c;
+  double dStack_134;
+  double dStack_12c;
+  double dStack_124;
+  double dStack_11c;
+  double dStack_114;
+  double dStack_10c;
+  double dStack_104;
+  double dStack_fc;
+  uint local_f4 [4];
   uint local_e4;
-  double local_e0;
-  double local_d8;
-  double local_d0;
-  double local_c8;
-  double local_c0;
-  double local_b8;
-  double local_b0;
-  double local_a8;
-  double local_a0;
-  double local_98;
-  double local_90;
-  double local_88;
-  double local_80;
-  double local_78;
-  double local_70;
-  double local_68;
-  double local_60;
-  double local_58;
-  double *local_40;
-  int local_3c;
-  ulonglong *local_38;
+  uint local_e0;
+  double dStack_dc;
+  double dStack_d4;
+  double dStack_cc;
+  double dStack_c4;
+  double dStack_bc;
+  double dStack_b4;
+  double local_ac;
+  double local_a4;
+  double dStack_9c;
+  double dStack_94;
+  double dStack_8c;
+  double dStack_84;
+  double dStack_7c;
+  double dStack_74;
+  double dStack_6c;
+  double dStack_64;
+  double dStack_5c;
+  double dStack_54;
+  double *local_3c;
+  int local_38;
   ulonglong *local_34;
-  int local_30;
-  double *local_2c;
-  uint local_28;
-  int local_24;
-  double *local_20;
-  int local_1c;
+  ulonglong *local_30;
+  int local_2c;
+  double *local_28;
+  uint local_24;
+  int local_20;
+  double *local_1c;
   int local_18;
+  int iStack_14;
   
-  local_28 = 0;
+  local_24 = 0;
   if (*(int *)(in_stack_00000004 + 0x2c) != 0) {
-    local_1c = 0;
+    local_18 = 0;
     do {
-      puVar7 = (uint *)(*(int *)(in_stack_00000004 + 0x30) + local_1c);
-      local_1a0 = *in_stack_00000008 * *in_stack_0000000c;
-      local_198 = in_stack_00000008[1] * in_stack_0000000c[1];
-      local_190 = in_stack_00000008[2] * in_stack_0000000c[2];
-      pdVar8 = &local_1a0;
-      pdVar9 = &local_c8;
+      puVar7 = (uint *)(*(int *)(in_stack_00000004 + 0x30) + local_18);
+      dStack_19c = *in_stack_00000008 * *in_stack_0000000c;
+      dStack_194 = in_stack_00000008[1] * in_stack_0000000c[1];
+      dStack_18c = in_stack_00000008[2] * in_stack_0000000c[2];
+      pdVar8 = &dStack_19c;
+      pdVar9 = &dStack_c4;
       for (iVar6 = 6; iVar6 != 0; iVar6 = iVar6 + -1) {
         *(uint *)pdVar9 = *(uint *)pdVar8;
         pdVar8 = (double *)((int)pdVar8 + 4);
         pdVar9 = (double *)((int)pdVar9 + 4);
       }
-      local_158 = *in_stack_0000000c * *(double *)(puVar7 + 4);
-      local_150 = in_stack_0000000c[1] * *(double *)(puVar7 + 6);
-      local_148 = in_stack_0000000c[2] * *(double *)(puVar7 + 8);
-      pdVar8 = &local_158;
-      pdVar9 = &local_128;
+      dStack_154 = *in_stack_0000000c * *(double *)(puVar7 + 4);
+      dStack_14c = in_stack_0000000c[1] * *(double *)(puVar7 + 6);
+      dStack_144 = in_stack_0000000c[2] * *(double *)(puVar7 + 8);
+      pdVar8 = &dStack_154;
+      pdVar9 = &dStack_124;
       for (iVar6 = 6; iVar6 != 0; iVar6 = iVar6 + -1) {
         *(uint *)pdVar9 = *(uint *)pdVar8;
         pdVar8 = (double *)((int)pdVar8 + 4);
         pdVar9 = (double *)((int)pdVar9 + 4);
       }
-      local_1e0 = -(local_c8 + local_c0 + local_b8);
-      dVar3 = local_128 + local_120;
-      local_e0 = *in_stack_0000000c * *(double *)(puVar7 + 10);
-      local_d8 = in_stack_0000000c[1] * *(double *)(puVar7 + 0xc);
-      local_d0 = in_stack_0000000c[2] * *(double *)(puVar7 + 0xe);
-      pdVar8 = &local_e0;
-      pdVar9 = &local_188;
+      dStack_1dc = -(dStack_c4 + dStack_bc + dStack_b4);
+      dVar3 = dStack_124 + dStack_11c;
+      dStack_dc = *in_stack_0000000c * *(double *)(puVar7 + 10);
+      dStack_d4 = in_stack_0000000c[1] * *(double *)(puVar7 + 0xc);
+      dStack_cc = in_stack_0000000c[2] * *(double *)(puVar7 + 0xe);
+      pdVar8 = &dStack_dc;
+      pdVar9 = &dStack_184;
       for (iVar6 = 6; iVar6 != 0; iVar6 = iVar6 + -1) {
         *(uint *)pdVar9 = *(uint *)pdVar8;
         pdVar8 = (double *)((int)pdVar8 + 4);
         pdVar9 = (double *)((int)pdVar9 + 4);
       }
-      local_1d8 = dVar3 + local_118 + local_1e0;
-      local_1e0 = local_188 + local_180 + local_178 + local_1e0;
-      if ((local_1d8 < 1e-10) && (-1e-10 < local_1d8)) {
-        local_1d8 = 0.0;
+      dStack_1d4 = dVar3 + dStack_114 + dStack_1dc;
+      dStack_1dc = dStack_184 + dStack_17c + dStack_174 + dStack_1dc;
+      if ((dStack_1d4 < 1e-10) && (-1e-10 < dStack_1d4)) {
+        dStack_1d4 = 0.0;
       }
-      if ((local_1e0 < 1e-10) && (-1e-10 < local_1e0)) {
-        local_1e0 = 0.0;
+      if ((dStack_1dc < 1e-10) && (-1e-10 < dStack_1dc)) {
+        dStack_1dc = 0.0;
       }
-      if ((((((ulonglong)local_1d8 & 0x7fffffff00000000) != 0) || (local_1d8._0_4_ != 0)) ||
-          (((ulonglong)local_1e0 & 0x7fffffff00000000) != 0)) || (local_1e0._0_4_ != 0)) {
-        if ((((ulonglong)local_1d8 & 0x7fffffff00000000) == 0) && (local_1d8._0_4_ == 0)) {
-          local_3c = 0;
+      if ((((((ulonglong)dStack_1d4 & 0x7fffffff00000000) != 0) || (dStack_1d4._0_4_ != 0)) ||
+          (((ulonglong)dStack_1dc & 0x7fffffff00000000) != 0)) || (dStack_1dc._0_4_ != 0)) {
+        if ((((ulonglong)dStack_1d4 & 0x7fffffff00000000) == 0) && (dStack_1d4._0_4_ == 0)) {
+          local_38 = 0;
         }
-        else if (0.0 <= local_1d8) {
-          local_3c = 1;
+        else if (0.0 <= dStack_1d4) {
+          local_38 = 1;
         }
         else {
-          local_3c = -1;
+          local_38 = -1;
         }
-        if ((((ulonglong)local_1e0 & 0x7fffffff00000000) == 0) && (local_1e0._0_4_ == 0)) {
-          local_24 = 0;
+        if ((((ulonglong)dStack_1dc & 0x7fffffff00000000) == 0) && (dStack_1dc._0_4_ == 0)) {
+          local_20 = 0;
         }
-        else if (0.0 <= local_1e0) {
-          local_24 = 1;
+        else if (0.0 <= dStack_1dc) {
+          local_20 = 1;
         }
         else {
-          local_24 = -1;
+          local_20 = -1;
         }
-        local_1d8 = local_1d8 / (local_1e0 - local_1d8);
-        local_30 = local_24;
-        local_2c = (double *)(puVar7 + 4);
-        local_20 = (double *)(puVar7 + 10);
-        local_1d0 = *(double *)(puVar7 + 4) - *(double *)(puVar7 + 10);
-        local_1c8 = *(double *)(puVar7 + 6) - *(double *)(puVar7 + 0xc);
-        local_1c0 = *(double *)(puVar7 + 8) - *(double *)(puVar7 + 0xe);
-        pdVar8 = &local_1d0;
-        pdVar9 = &local_1b8;
-        for (iVar6 = 6; pdVar4 = local_2c, iVar6 != 0; iVar6 = iVar6 + -1) {
+        dStack_1d4 = dStack_1d4 / (dStack_1dc - dStack_1d4);
+        local_2c = local_20;
+        local_28 = (double *)(puVar7 + 4);
+        local_1c = (double *)(puVar7 + 10);
+        dStack_1cc = *(double *)(puVar7 + 4) - *(double *)(puVar7 + 10);
+        dStack_1c4 = *(double *)(puVar7 + 6) - *(double *)(puVar7 + 0xc);
+        dStack_1bc = *(double *)(puVar7 + 8) - *(double *)(puVar7 + 0xe);
+        pdVar8 = &dStack_1cc;
+        pdVar9 = &dStack_1b4;
+        for (iVar6 = 6; pdVar4 = local_28, iVar6 != 0; iVar6 = iVar6 + -1) {
           *(uint *)pdVar9 = *(uint *)pdVar8;
           pdVar8 = (double *)((int)pdVar8 + 4);
           pdVar9 = (double *)((int)pdVar9 + 4);
         }
-        local_110 = local_1b8 * local_1d8;
-        local_108 = local_1b0 * local_1d8;
-        local_100 = local_1a8 * local_1d8;
-        pdVar8 = &local_110;
-        pdVar9 = &local_140;
+        dStack_10c = dStack_1b4 * dStack_1d4;
+        dStack_104 = dStack_1ac * dStack_1d4;
+        dStack_fc = dStack_1a4 * dStack_1d4;
+        pdVar8 = &dStack_10c;
+        pdVar9 = &dStack_13c;
         for (iVar6 = 6; iVar6 != 0; iVar6 = iVar6 + -1) {
           *(uint *)pdVar9 = *(uint *)pdVar8;
           pdVar8 = (double *)((int)pdVar8 + 4);
           pdVar9 = (double *)((int)pdVar9 + 4);
         }
-        local_170 = *pdVar4 + local_140;
-        local_168 = pdVar4[1] + local_138;
-        local_160 = pdVar4[2] + local_130;
-        pdVar8 = &local_170;
-        puVar5 = local_f8;
+        dStack_16c = *pdVar4 + dStack_13c;
+        dStack_164 = pdVar4[1] + dStack_134;
+        dStack_15c = pdVar4[2] + dStack_12c;
+        pdVar8 = &dStack_16c;
+        puVar5 = local_f4;
         for (iVar6 = 6; iVar6 != 0; iVar6 = iVar6 + -1) {
           *puVar5 = *(uint *)pdVar8;
           pdVar8 = (double *)((int)pdVar8 + 4);
           puVar5 = puVar5 + 1;
         }
         pdVar8 = (double *)(puVar7 + 0x10);
-        local_40 = (double *)(puVar7 + 0x14);
-        local_90 = *pdVar8 - *local_40;
-        local_88 = *(double *)(puVar7 + 0x12) - *(double *)(puVar7 + 0x16);
-        local_60 = local_90;
-        local_58 = local_88;
-        local_70 = local_90 * local_1d8;
-        local_68 = local_88 * local_1d8;
-        local_a0 = local_70;
-        local_98 = local_68;
-        local_80 = *pdVar8 + local_70;
-        local_78 = *(double *)(puVar7 + 0x12) + local_68;
-        local_b0 = local_80;
-        local_a8 = local_78;
-        if ((local_3c == 1) || (local_24 == 1)) {
-          if ((local_3c == -1) || (local_30 == -1)) {
-            local_34 = (ulonglong *)(puVar7 + 0x14);
-            local_38 = (ulonglong *)(puVar7 + 0x10);
+        local_3c = (double *)(puVar7 + 0x14);
+        dStack_8c = *pdVar8 - *local_3c;
+        dStack_84 = *(double *)(puVar7 + 0x12) - *(double *)(puVar7 + 0x16);
+        dStack_5c = dStack_8c;
+        dStack_54 = dStack_84;
+        dStack_6c = dStack_8c * dStack_1d4;
+        dStack_64 = dStack_84 * dStack_1d4;
+        dStack_9c = dStack_6c;
+        dStack_94 = dStack_64;
+        dStack_7c = *pdVar8 + dStack_6c;
+        dStack_74 = *(double *)(puVar7 + 0x12) + dStack_64;
+        local_ac = dStack_7c;
+        local_a4 = dStack_74;
+        if ((local_38 == 1) || (local_20 == 1)) {
+          if ((local_38 == -1) || (local_2c == -1)) {
+            local_30 = (ulonglong *)(puVar7 + 0x14);
+            local_34 = (ulonglong *)(puVar7 + 0x10);
             puVar1 = (ulonglong *)(puVar7 + 10);
             puVar2 = (ulonglong *)(puVar7 + 4);
-            if (local_3c == -1) {
+            if (local_38 == -1) {
               puVar5 = (uint *)(*in_stack_00000018 * 0x60 + in_stack_00000010);
               *puVar5 = *puVar7;
               puVar5[1] = puVar7[1];
@@ -219,24 +219,24 @@ void shape_superopt_cpp_FUN_005c9aa0(void)
               *(ulonglong *)(puVar5 + 10) = *puVar1;
               *(ulonglong *)(puVar5 + 0xc) = *(ulonglong *)(puVar7 + 0xc);
               *(ulonglong *)(puVar5 + 0xe) = *(ulonglong *)(puVar7 + 0xe);
-              *(ulonglong *)(puVar5 + 0x10) = *local_38;
+              *(ulonglong *)(puVar5 + 0x10) = *local_34;
               *(ulonglong *)(puVar5 + 0x12) = *(ulonglong *)(puVar7 + 0x12);
-              *(ulonglong *)(puVar5 + 0x14) = *local_34;
+              *(ulonglong *)(puVar5 + 0x14) = *local_30;
               *(ulonglong *)(puVar5 + 0x16) = *(ulonglong *)(puVar7 + 0x16);
               iVar6 = *in_stack_00000018 * 0x60 + in_stack_00000010;
-              *(uint *)(iVar6 + 0x28) = local_f8[0];
-              *(uint *)(iVar6 + 0x2c) = local_f8[1];
-              *(uint *)(iVar6 + 0x30) = local_f8[2];
-              *(uint *)(iVar6 + 0x34) = local_f8[3];
-              *(uint *)(iVar6 + 0x38) = local_e8;
-              *(uint *)(iVar6 + 0x3c) = local_e4;
+              *(uint *)(iVar6 + 0x28) = local_f4[0];
+              *(uint *)(iVar6 + 0x2c) = local_f4[1];
+              *(uint *)(iVar6 + 0x30) = local_f4[2];
+              *(uint *)(iVar6 + 0x34) = local_f4[3];
+              *(uint *)(iVar6 + 0x38) = local_e4;
+              *(uint *)(iVar6 + 0x3c) = local_e0;
               iVar6 = *in_stack_00000018 * 0x60 + in_stack_00000010;
-              *(double *)(iVar6 + 0x50) = local_80;
-              *(double *)(iVar6 + 0x58) = local_78;
+              *(double *)(iVar6 + 0x50) = dStack_7c;
+              *(double *)(iVar6 + 0x58) = dStack_74;
               *(uint *)(*in_stack_00000018 * 0x60 + in_stack_00000010 + 8) = 0xffffffff;
               *(uint *)(*in_stack_00000018 * 0x60 + in_stack_00000010 + 0xc) = 0;
               *in_stack_00000018 = *in_stack_00000018 + 1;
-              local_18 = *in_stack_0000001c * 0x60;
+              iStack_14 = *in_stack_0000001c * 0x60;
               puVar5 = (uint *)(in_stack_00000014 + *in_stack_0000001c * 0x60);
               *puVar5 = *puVar7;
               puVar5[1] = puVar7[1];
@@ -254,24 +254,24 @@ void shape_superopt_cpp_FUN_005c9aa0(void)
               puVar5[0xd] = puVar7[0xd];
               puVar5[0xe] = puVar7[0xe];
               puVar5[0xf] = puVar7[0xf];
-              puVar5[0x10] = *(uint *)local_38;
+              puVar5[0x10] = *(uint *)local_34;
               puVar5[0x11] = puVar7[0x11];
               puVar5[0x12] = puVar7[0x12];
               puVar5[0x13] = puVar7[0x13];
-              puVar5[0x14] = *(uint *)local_34;
+              puVar5[0x14] = *(uint *)local_30;
               puVar5[0x15] = puVar7[0x15];
               puVar5[0x16] = puVar7[0x16];
               puVar5[0x17] = puVar7[0x17];
               iVar6 = *in_stack_0000001c * 0x60 + in_stack_00000014;
-              *(uint *)(iVar6 + 0x10) = local_f8[0];
-              *(uint *)(iVar6 + 0x14) = local_f8[1];
-              *(uint *)(iVar6 + 0x18) = local_f8[2];
-              *(uint *)(iVar6 + 0x1c) = local_f8[3];
-              *(uint *)(iVar6 + 0x20) = local_e8;
-              *(uint *)(iVar6 + 0x24) = local_e4;
+              *(uint *)(iVar6 + 0x10) = local_f4[0];
+              *(uint *)(iVar6 + 0x14) = local_f4[1];
+              *(uint *)(iVar6 + 0x18) = local_f4[2];
+              *(uint *)(iVar6 + 0x1c) = local_f4[3];
+              *(uint *)(iVar6 + 0x20) = local_e4;
+              *(uint *)(iVar6 + 0x24) = local_e0;
               iVar6 = *in_stack_0000001c * 0x60 + in_stack_00000014;
-              *(double *)(iVar6 + 0x40) = local_80;
-              *(double *)(iVar6 + 0x48) = local_78;
+              *(double *)(iVar6 + 0x40) = dStack_7c;
+              *(double *)(iVar6 + 0x48) = dStack_74;
               *(uint *)(*in_stack_0000001c * 0x60 + in_stack_00000014 + 8) = 0;
               *(uint *)(*in_stack_0000001c * 0x60 + in_stack_00000014 + 0xc) = 1;
               *in_stack_0000001c = *in_stack_0000001c + 1;
@@ -288,22 +288,22 @@ void shape_superopt_cpp_FUN_005c9aa0(void)
               *(ulonglong *)(puVar5 + 10) = *puVar1;
               *(ulonglong *)(puVar5 + 0xc) = *(ulonglong *)(puVar7 + 0xc);
               *(ulonglong *)(puVar5 + 0xe) = *(ulonglong *)(puVar7 + 0xe);
-              *(ulonglong *)(puVar5 + 0x10) = *local_38;
+              *(ulonglong *)(puVar5 + 0x10) = *local_34;
               *(ulonglong *)(puVar5 + 0x12) = *(ulonglong *)(puVar7 + 0x12);
-              *(ulonglong *)(puVar5 + 0x14) = *local_34;
+              *(ulonglong *)(puVar5 + 0x14) = *local_30;
               *(ulonglong *)(puVar5 + 0x16) = *(ulonglong *)(puVar7 + 0x16);
               iVar6 = in_stack_00000014 + *in_stack_0000001c * 0x60;
-              *(uint *)(iVar6 + 0x28) = local_f8[0];
-              *(uint *)(iVar6 + 0x2c) = local_f8[1];
-              *(uint *)(iVar6 + 0x30) = local_f8[2];
-              *(uint *)(iVar6 + 0x34) = local_f8[3];
-              *(uint *)(iVar6 + 0x38) = local_e8;
-              *(uint *)(iVar6 + 0x3c) = local_e4;
+              *(uint *)(iVar6 + 0x28) = local_f4[0];
+              *(uint *)(iVar6 + 0x2c) = local_f4[1];
+              *(uint *)(iVar6 + 0x30) = local_f4[2];
+              *(uint *)(iVar6 + 0x34) = local_f4[3];
+              *(uint *)(iVar6 + 0x38) = local_e4;
+              *(uint *)(iVar6 + 0x3c) = local_e0;
               iVar6 = in_stack_00000014 + *in_stack_0000001c * 0x60;
-              *(double *)(iVar6 + 0x50) = local_80;
-              *(double *)(iVar6 + 0x58) = local_78;
+              *(double *)(iVar6 + 0x50) = dStack_7c;
+              *(double *)(iVar6 + 0x58) = dStack_74;
               *(uint *)(in_stack_00000014 + *in_stack_0000001c * 0x60 + 8) = 1;
-              local_18 = *in_stack_0000001c * 0x60;
+              iStack_14 = *in_stack_0000001c * 0x60;
               *(uint *)(in_stack_00000014 + *in_stack_0000001c * 0x60 + 0xc) = 0;
               *in_stack_0000001c = *in_stack_0000001c + 1;
               puVar5 = (uint *)(*in_stack_00000018 * 0x60 + in_stack_00000010);
@@ -323,24 +323,24 @@ void shape_superopt_cpp_FUN_005c9aa0(void)
               puVar5[0xd] = puVar7[0xd];
               puVar5[0xe] = puVar7[0xe];
               puVar5[0xf] = puVar7[0xf];
-              puVar5[0x10] = *(uint *)local_38;
+              puVar5[0x10] = *(uint *)local_34;
               puVar5[0x11] = puVar7[0x11];
               puVar5[0x12] = puVar7[0x12];
               puVar5[0x13] = puVar7[0x13];
-              puVar5[0x14] = *(uint *)local_34;
+              puVar5[0x14] = *(uint *)local_30;
               puVar5[0x15] = puVar7[0x15];
               puVar5[0x16] = puVar7[0x16];
               puVar5[0x17] = puVar7[0x17];
               iVar6 = *in_stack_00000018 * 0x60 + in_stack_00000010;
-              *(uint *)(iVar6 + 0x10) = local_f8[0];
-              *(uint *)(iVar6 + 0x14) = local_f8[1];
-              *(uint *)(iVar6 + 0x18) = local_f8[2];
-              *(uint *)(iVar6 + 0x1c) = local_f8[3];
-              *(uint *)(iVar6 + 0x20) = local_e8;
-              *(uint *)(iVar6 + 0x24) = local_e4;
+              *(uint *)(iVar6 + 0x10) = local_f4[0];
+              *(uint *)(iVar6 + 0x14) = local_f4[1];
+              *(uint *)(iVar6 + 0x18) = local_f4[2];
+              *(uint *)(iVar6 + 0x1c) = local_f4[3];
+              *(uint *)(iVar6 + 0x20) = local_e4;
+              *(uint *)(iVar6 + 0x24) = local_e0;
               iVar6 = *in_stack_00000018 * 0x60 + in_stack_00000010;
-              *(double *)(iVar6 + 0x40) = local_80;
-              *(double *)(iVar6 + 0x48) = local_78;
+              *(double *)(iVar6 + 0x40) = dStack_7c;
+              *(double *)(iVar6 + 0x48) = dStack_74;
               *(uint *)(*in_stack_00000018 * 0x60 + in_stack_00000010 + 8) = 0;
               *(uint *)(*in_stack_00000018 * 0x60 + in_stack_00000010 + 0xc) = 0xffffffff;
               *in_stack_00000018 = *in_stack_00000018 + 1;
@@ -364,8 +364,8 @@ void shape_superopt_cpp_FUN_005c9aa0(void)
             puVar5[0x15] = puVar7[0x15];
             puVar5[0x16] = puVar7[0x16];
             puVar5[0x17] = puVar7[0x17];
-            *(int *)(*in_stack_0000001c * 0x60 + in_stack_00000014 + 8) = local_3c;
-            *(int *)(*in_stack_0000001c * 0x60 + in_stack_00000014 + 0xc) = local_30;
+            *(int *)(*in_stack_0000001c * 0x60 + in_stack_00000014 + 8) = local_38;
+            *(int *)(*in_stack_0000001c * 0x60 + in_stack_00000014 + 0xc) = local_2c;
             *in_stack_0000001c = *in_stack_0000001c + 1;
           }
         }
@@ -375,28 +375,28 @@ void shape_superopt_cpp_FUN_005c9aa0(void)
           puVar5[1] = puVar7[1];
           puVar5[2] = puVar7[2];
           puVar5[3] = puVar7[3];
-          *(double *)(puVar5 + 4) = *local_2c;
-          *(double *)(puVar5 + 6) = local_2c[1];
-          *(double *)(puVar5 + 8) = local_2c[2];
-          *(double *)(puVar5 + 10) = *local_20;
-          *(double *)(puVar5 + 0xc) = local_20[1];
-          *(double *)(puVar5 + 0xe) = local_20[2];
+          *(double *)(puVar5 + 4) = *local_28;
+          *(double *)(puVar5 + 6) = local_28[1];
+          *(double *)(puVar5 + 8) = local_28[2];
+          *(double *)(puVar5 + 10) = *local_1c;
+          *(double *)(puVar5 + 0xc) = local_1c[1];
+          *(double *)(puVar5 + 0xe) = local_1c[2];
           puVar5[0x10] = *(uint *)pdVar8;
           puVar5[0x11] = puVar7[0x11];
           puVar5[0x12] = puVar7[0x12];
           puVar5[0x13] = puVar7[0x13];
-          puVar5[0x14] = *(uint *)local_40;
+          puVar5[0x14] = *(uint *)local_3c;
           puVar5[0x15] = puVar7[0x15];
           puVar5[0x16] = puVar7[0x16];
           puVar5[0x17] = puVar7[0x17];
-          *(int *)(*in_stack_00000018 * 0x60 + in_stack_00000010 + 8) = local_3c;
-          *(int *)(*in_stack_00000018 * 0x60 + in_stack_00000010 + 0xc) = local_24;
+          *(int *)(*in_stack_00000018 * 0x60 + in_stack_00000010 + 8) = local_38;
+          *(int *)(*in_stack_00000018 * 0x60 + in_stack_00000010 + 0xc) = local_20;
           *in_stack_00000018 = *in_stack_00000018 + 1;
         }
       }
-      local_28 = local_28 + 1;
-      local_1c = local_1c + 0x60;
-    } while (local_28 < *(uint *)(in_stack_00000004 + 0x2c));
+      local_24 = local_24 + 1;
+      local_18 = local_18 + 0x60;
+    } while (local_24 < *(uint *)(in_stack_00000004 + 0x2c));
   }
   return;
 }

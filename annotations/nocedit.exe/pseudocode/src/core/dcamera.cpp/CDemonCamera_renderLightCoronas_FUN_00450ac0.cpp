@@ -17,7 +17,6 @@ core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0
   int iVar3;
   CVector3f *pCVar4;
   BADSPACEBASE *in_ESP;
-  char *unaff_EBP;
   CMatrix3x3i *pCVar5;
   int *piVar6;
   byte bVar7;
@@ -27,11 +26,10 @@ core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0
   double dVar11;
   int aiStackY_1044 [1015];
   CVector3i *input_ptr;
-  uint uStack_5c;
-  uint local_54;
+  int iStack_5c;
+  int local_54;
   int local_50;
   int local_4c;
-  int iStack_48;
   char (*local_40) [320];
   int (*local_3c) [320];
   CVector3f *local_38;
@@ -73,7 +71,6 @@ core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0
   core_dlight_cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0(light_source);
   fVar9 = (float10)(light_source->base).max_distance * (float10)256;
   fVar10 = (float10)0.3010299956639812 * fVar9 * (float10)3.3219280948900001;
-  uStack_5c = 0x450b6d;
   dVar11 = crt_math_c_round_FUN_005fe6b0((double)fVar9);
   fVar9 = (float10)dVar11;
   input_ptr = (CVector3i *)0x450b76;
@@ -107,28 +104,28 @@ core_dcamera_cpp_CDemonCamera_renderLightCoronas_FUN_00450ac0
                      pCVar4->y * (float)g_CoronaCameraRotationMatrix.m[1].z)) {
             core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0
                       (&g_CurrentLightForCorona->base,local_1c,input_ptr);
-            local_54 = uStack_5c;
+            local_54 = iStack_5c;
             *(uint *)((int)&stack0xffffffb0 + (uint)bVar7 * -8) =
                  *(uint *)(&stack0xffffffa8 + (uint)bVar7 * -8);
             *(uint *)((int)&stack0xffffffb4 + (uint)bVar7 * -8 + (uint)bVar7 * -8) =
                  *(uint *)((int)&stack0xffffffac + (uint)bVar7 * -8 + (uint)bVar7 * -8);
-            if ((0 < iStack_48) &&
+            if ((0 < local_4c) &&
                ((uVar1 = (uint)g_CurrentLightForCorona->shadow_depth_buffer
-                               [(local_4c >> 0x10) * g_CurrentLightForCorona->shadow_map_width +
-                                (local_50 >> 0x10)], (int)uVar1 < g_CoronaMaxDepth &&
-                (iStack_48 < (int)(uVar1 + 0x80))))) {
-              *unaff_EBP = *unaff_EBP +
-                           (char)((int)((g_CoronaMaxDepth - uVar1) *
-                                       (uint)g_CurrentLightForCorona->precomputed_lighting_textures
-                                             [((g_CurrentLightForCorona->teture_coord_mask &
-                                               local_4c >>
-                                               ((byte)g_CurrentLightForCorona->shadow_y_shift & 0x1f
-                                               )) << ((byte)g_CurrentLightForCorona->
-                                                            texture_row_shift & 0x1f)) +
-                                              (local_50 >>
-                                               ((byte)g_CurrentLightForCorona->shadow_x_shift & 0x1f
-                                               ) & g_CurrentLightForCorona->teture_coord_mask)]) >>
-                                 ((byte)g_CoronaDepthShift & 0x1f));
+                               [(local_50 >> 0x10) * g_CurrentLightForCorona->shadow_map_width +
+                                (local_54 >> 0x10)], (int)uVar1 < g_CoronaMaxDepth &&
+                (local_4c < (int)(uVar1 + 0x80))))) {
+              *local_14 = *local_14 +
+                          (char)((int)((g_CoronaMaxDepth - uVar1) *
+                                      (uint)g_CurrentLightForCorona->precomputed_lighting_textures
+                                            [((g_CurrentLightForCorona->teture_coord_mask &
+                                              local_50 >>
+                                              ((byte)g_CurrentLightForCorona->shadow_y_shift & 0x1f)
+                                              ) << ((byte)g_CurrentLightForCorona->texture_row_shift
+                                                   & 0x1f)) +
+                                             (local_54 >>
+                                              ((byte)g_CurrentLightForCorona->shadow_x_shift & 0x1f)
+                                             & g_CurrentLightForCorona->teture_coord_mask)]) >>
+                                ((byte)g_CoronaDepthShift & 0x1f));
             }
           }
           pCVar4 = pCVar4 + 1;

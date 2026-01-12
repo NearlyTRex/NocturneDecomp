@@ -25,8 +25,8 @@ cockpit_ckptutil_c_blendPixelWithSourcePalette_FUN_004342f0
   float10 fVar9;
   float10 fVar10;
   double dVar11;
-  uint local_3c;
   uint local_38;
+  uint local_34;
   
   if ((((g_ClipLeft <= x) && (x <= g_ClipRight)) && (g_ClipTop <= y)) &&
      ((y <= g_ClipBottom && (g_BitsPerPixel != 8)))) {
@@ -53,22 +53,22 @@ cockpit_ckptutil_c_blendPixelWithSourcePalette_FUN_004342f0
                                        (float10)((float)(uVar3 & 0xff) * blend_factor)));
     fVar9 = (float10)dVar11;
     crt_math_c_round_FUN_005fe6b0((double)fVar7);
-    local_3c = (uint)(longlong)ROUND(fVar9);
-    local_3c = local_3c >> (extraout_CL & 0x1f);
+    local_38 = (uint)(longlong)ROUND(fVar9);
+    local_38 = local_38 >> (extraout_CL & 0x1f);
     dVar11 = crt_math_c_round_FUN_005fe6b0((double)(fVar10 + fVar8));
-    local_38 = (uint)(longlong)ROUND(dVar11);
+    local_34 = (uint)(longlong)ROUND(dVar11);
     uVar4 = extraout_EAX >> ((byte)g_GreenBitCount & 0x1f);
-    local_38 = local_38 >> ((byte)g_BlueBitCount & 0x1f);
+    local_34 = local_34 >> ((byte)g_BlueBitCount & 0x1f);
     if (g_BitsPerPixel != 0x10) {
       *(uint *)(extraout_EDX * 4 + (int)g_ScreenBufferArray[y]) =
-           local_3c << ((byte)g_RedBitPosition & 0x1f) | uVar4 << ((byte)g_GreenBitPosition & 0x1f)
-           | local_38 << ((byte)g_BlueBitPosition & 0x1f);
+           local_38 << ((byte)g_RedBitPosition & 0x1f) | uVar4 << ((byte)g_GreenBitPosition & 0x1f)
+           | local_34 << ((byte)g_BlueBitPosition & 0x1f);
       return;
     }
     *(ushort *)((int)g_ScreenBufferArray[y] + extraout_EDX * 2) =
          (ushort)(uVar4 << ((byte)g_GreenBitPosition & 0x1f)) |
-         (ushort)(local_3c << ((byte)g_RedBitPosition & 0x1f)) |
-         (ushort)(local_38 << ((byte)g_BlueBitPosition & 0x1f));
+         (ushort)(local_38 << ((byte)g_RedBitPosition & 0x1f)) |
+         (ushort)(local_34 << ((byte)g_BlueBitPosition & 0x1f));
   }
   return;
 }

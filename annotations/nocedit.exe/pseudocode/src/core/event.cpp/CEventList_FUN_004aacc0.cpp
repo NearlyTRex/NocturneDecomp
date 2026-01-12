@@ -34,11 +34,10 @@ CDemonActor * __cdecl core_event_cpp_CEventList_FUN_004aacc0(CEventList *this_pt
   uint *puVar19;
   byte bVar20;
   CEvent *in_stack_00000008;
-  ulonglong in_stack_ffffea40;
-  float in_stack_ffffea50;
-  CVector3f *in_stack_ffffea64;
-  int in_stack_ffffea68;
-  float in_stack_ffffea6c;
+  CVector3f *in_stack_ffffe946;
+  int in_stack_ffffe94a;
+  float in_stack_ffffe94e;
+  char local_163c [255];
   char local_153d [200];
   char local_1475 [200];
   char local_13ad [200];
@@ -54,21 +53,25 @@ CDemonActor * __cdecl core_event_cpp_CEventList_FUN_004aacc0(CEventList *this_pt
   uint local_b13 [49];
   char local_a4d [200];
   char local_985 [200];
-  char local_8bd [400];
+  char local_8bd [201];
+  byte local_7f4 [199];
   char local_72d [200];
   char local_665 [200];
   char local_59d [200];
   char local_4d5 [200];
   char local_40d [201];
   uint local_344 [24];
-  char local_2e1 [200];
+  char local_2e1 [101];
+  byte local_27c [99];
   char local_219 [229];
   CVector3f local_134;
   float local_128;
   float local_124;
   float local_120;
   CVector3f local_11c;
-  byte local_110 [20];
+  byte local_110 [4];
+  byte local_10c [4];
+  byte local_108 [12];
   uint local_fc;
   uint uStack_f8;
   CEvent *local_f4;
@@ -76,6 +79,7 @@ CDemonActor * __cdecl core_event_cpp_CEventList_FUN_004aacc0(CEventList *this_pt
   CEvent *local_ec;
   C3DSLight *local_e8;
   int local_e4;
+  byte local_e0 [4];
   uint local_dc;
   int local_d8;
   int local_d4;
@@ -87,20 +91,23 @@ CDemonActor * __cdecl core_event_cpp_CEventList_FUN_004aacc0(CEventList *this_pt
   float local_bc;
   int local_b8;
   int local_b4;
+  byte local_b0 [8];
   int local_a8;
   int local_a4;
   byte *local_a0;
-  float local_9c;
-  int local_94;
+  float local_9c [2];
+  int local_94 [2];
   int local_8c;
   float local_88;
   int local_84;
+  byte local_80 [4];
   int local_7c;
   float local_78;
   int local_74;
   float local_70;
   int local_6c;
   uint local_68;
+  byte local_64 [4];
   float local_60;
   int local_5c;
   int local_58;
@@ -113,6 +120,9 @@ CDemonActor * __cdecl core_event_cpp_CEventList_FUN_004aacc0(CEventList *this_pt
   float local_3c;
   int local_38;
   int local_34;
+  byte local_30 [4];
+  byte local_2c [4];
+  byte local_28 [4];
   int local_24;
   int local_20;
   int local_1c;
@@ -244,16 +254,18 @@ LAB_004aad41:
           local_ec = local_ec + 1;
         }
         local_e4 = -1;
-        crt_stdio_c_sscanf_FUN_0060013c((char *)local_ec,"( %f , %n");
+        crt_stdio_c_sscanf_FUN_0060013c((char *)local_ec,"( %f , %n",local_e0);
         if (local_e4 < 0) {
           pCVar7 = (CDemonActor *)core_event_cpp_FUN_004aa2a0();
           return pCVar7;
         }
         local_ec = local_ec + local_e4;
         local_e4 = -1;
-        crt_stdio_c_sscanf_FUN_0060013c((char *)local_ec,"%f , %f , %f %n");
+        crt_stdio_c_sscanf_FUN_0060013c
+                  ((char *)local_ec,"%f , %f , %f %n",&local_128,&local_124,&local_120);
         if ((local_e4 < 0) &&
-           (crt_stdio_c_sscanf_FUN_0060013c((char *)local_ec," %[^,)] %n"), -1 < local_e4)) {
+           (crt_stdio_c_sscanf_FUN_0060013c((char *)local_ec," %[^,)] %n",local_4d5 + 1),
+           -1 < local_e4)) {
           uVar12 = 0xffffffff;
           pcVar8 = local_4d5 + 1;
           do {
@@ -300,7 +312,7 @@ LAB_004aad41:
         local_dc = 0x40800000;
         if (*local_ec == (CEvent)0x2c) {
           local_e4 = -1;
-          crt_stdio_c_sscanf_FUN_0060013c((char *)local_ec,", %f %n");
+          crt_stdio_c_sscanf_FUN_0060013c((char *)local_ec,", %f %n",&local_dc,&local_e4);
           if (local_e4 < 0) {
             pCVar7 = (CDemonActor *)core_event_cpp_FUN_004aa2a0();
             return pCVar7;
@@ -368,7 +380,8 @@ LAB_004aad41:
               local_ec = local_ec + 1;
             }
             local_d0 = -1;
-            crt_stdio_c_sscanf_FUN_0060013c((char *)local_ec,"( %[^ ,], %d, %d )%n");
+            crt_stdio_c_sscanf_FUN_0060013c
+                      ((char *)local_ec,"( %[^ ,], %d, %d )%n",local_163c,&local_d8,&local_d4);
             if (local_d0 < 0) {
               pCVar7 = (CDemonActor *)core_event_cpp_FUN_004aa2a0();
               return pCVar7;
@@ -377,7 +390,7 @@ LAB_004aad41:
             while ((g_CharacterClassificationTable[(byte)((char)*local_ec + 1)] & 2U) != 0) {
               local_ec = local_ec + 1;
             }
-            iVar5 = engine_dosio_c_getFileSize_FUN_00481880("art",&stack0xffffe9c4);
+            iVar5 = engine_dosio_c_getFileSize_FUN_00481880("art",local_163c);
             if (iVar5 < 0) {
               pCVar7 = (CDemonActor *)core_event_cpp_FUN_004aa2a0();
               return pCVar7;
@@ -401,7 +414,8 @@ LAB_004aad41:
                 local_ec = local_ec + 1;
               }
               local_c4 = -1;
-              crt_stdio_c_sscanf_FUN_0060013c((char *)local_ec,"(%f, %f )%n");
+              crt_stdio_c_sscanf_FUN_0060013c((char *)local_ec,"(%f, %f )%n",&local_cc,&local_c8)
+              ;
               if (local_c4 < 0) {
                 crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_02d0a460,"Error parsing fadeAmbientSound parms");
                 return (CDemonActor *)0x0;
@@ -422,7 +436,8 @@ LAB_004aad41:
                   local_ec = local_ec + 1;
                 }
                 local_b8 = -1;
-                crt_stdio_c_sscanf_FUN_0060013c((char *)local_ec,"(%[^,], %f, %f )%n");
+                crt_stdio_c_sscanf_FUN_0060013c
+                          ((char *)local_ec,"(%[^,], %f, %f )%n",local_108d + 1,&local_c0,&local_bc);
                 if (local_b8 < 0) {
                   crt_stdio_c_sprintf_FUN_005fdbd0
                             (&DAT_02d0a460,"Error parsing fadeSfx parms");
@@ -555,7 +570,9 @@ LAB_004aaf38:
                             local_ec = local_ec + 1;
                           }
                           local_b4 = -1;
-                          crt_stdio_c_sscanf_FUN_0060013c((char *)local_ec," ( %[^,], %[^,],%f)%n");
+                          crt_stdio_c_sscanf_FUN_0060013c
+                                    ((char *)local_ec," ( %[^,], %[^,],%f)%n",local_665 + 1,local_2e1 + 1,
+                                     local_b0);
                           if (local_b4 < 2) {
                             pCVar7 = (CDemonActor *)core_event_cpp_FUN_004aa2a0();
                             return pCVar7;
@@ -641,7 +658,8 @@ LAB_004aaf38:
                               local_ec = local_ec + 1;
                             }
                             local_a8 = -1;
-                            crt_stdio_c_sscanf_FUN_0060013c((char *)local_ec,"( %[^ )] )%n");
+                            crt_stdio_c_sscanf_FUN_0060013c
+                                      ((char *)local_ec,"( %[^ )] )%n",local_121d + 1);
                             if (local_a8 < 5) {
                               crt_stdio_c_sprintf_FUN_005fdbd0
                                         (&DAT_02d0a460,"Error parsing incCounter arguments");
@@ -692,18 +710,22 @@ LAB_004aaf38:
                               }
                               local_a0 = local_110;
                               local_a4 = -1;
-                              local_9c = 0.0;
-                              crt_stdio_c_sscanf_FUN_0060013c((char *)local_ec," ( %[^,], %[^,], %f , %f , %f , %f)%n")
-                              ;
-                              local_9c = local_9c * (float)0.017453292519444399;
+                              local_9c[0] = 0.0;
+                              crt_stdio_c_sscanf_FUN_0060013c
+                                        ((char *)local_ec," ( %[^,], %[^,], %f , %f , %f , %f)%n",local_153d + 1,
+                                         local_219 + 1,local_110,local_10c,local_108,local_9c);
+                              local_9c[0] = local_9c[0] * (float)0.017453292519444399;
                               if (local_a4 < 0) {
-                                local_9c = -1.0;
-                                crt_stdio_c_sscanf_FUN_0060013c((char *)local_ec," ( %[^,], %[^,], %f , %f , %f )%n")
-                                ;
+                                local_9c[0] = -1.0;
+                                crt_stdio_c_sscanf_FUN_0060013c
+                                          ((char *)local_ec," ( %[^,], %[^,], %f , %f , %f )%n",local_153d + 1,
+                                           local_219 + 1,local_110,local_10c,local_108);
                               }
                               if (local_a4 < 0) {
                                 local_a0 = (byte *)0x0;
-                                crt_stdio_c_sscanf_FUN_0060013c((char *)local_ec," ( %[^,], %[^)])%n");
+                                crt_stdio_c_sscanf_FUN_0060013c
+                                          ((char *)local_ec," ( %[^,], %[^)])%n",local_153d + 1,
+                                           local_219 + 1);
                               }
                               if (local_a4 < 0) {
                                 pCVar7 = (CDemonActor *)core_event_cpp_FUN_004aa2a0();
@@ -795,13 +817,14 @@ LAB_004aaf38:
                                   pCVar7 = (CDemonActor *)core_event_cpp_FUN_004aa2a0();
                                   return pCVar7;
                                 }
-                                local_94 = -1;
-                                crt_stdio_c_sscanf_FUN_0060013c((char *)local_ec," ( %[^)])%n");
-                                if (local_94 < 2) {
+                                local_94[0] = -1;
+                                crt_stdio_c_sscanf_FUN_0060013c
+                                          ((char *)local_ec," ( %[^)])%n",local_27c,local_94);
+                                if (local_94[0] < 2) {
                                   pCVar7 = (CDemonActor *)core_event_cpp_FUN_004aa2a0();
                                   return pCVar7;
                                 }
-                                local_ec = local_ec + local_94;
+                                local_ec = local_ec + local_94[0];
                                 while ((g_CharacterClassificationTable[(byte)((char)*local_ec + 1)]
                                        & 2U) != 0) {
                                   local_ec = local_ec + 1;
@@ -830,7 +853,8 @@ LAB_004aaf38:
                                     local_ec = local_ec + 1;
                                   }
                                   local_8c = -1;
-                                  crt_stdio_c_sscanf_FUN_0060013c((char *)local_ec,"(%[^,)]%n");
+                                  crt_stdio_c_sscanf_FUN_0060013c
+                                            ((char *)local_ec,"(%[^,)]%n",local_efd + 1);
                                   if (local_8c < 3) {
                                     crt_stdio_c_sprintf_FUN_005fdbd0
                                               (&DAT_02d0a460,"Error parsing killSfx parms");
@@ -865,8 +889,8 @@ LAB_004aaf38:
                                   local_88 = 0.0;
                                   if (*local_ec == (CEvent)0x2c) {
                                     local_8c = -1;
-                                    crt_stdio_c_sscanf_FUN_0060013c((char *)local_ec,",%f%n")
-                                    ;
+                                    crt_stdio_c_sscanf_FUN_0060013c
+                                              ((char *)local_ec,",%f%n",&local_88);
                                     if (local_8c < 3) {
                                       crt_stdio_c_sprintf_FUN_005fdbd0
                                                 (&DAT_02d0a460,"Error parsing killSfx parms");
@@ -936,8 +960,8 @@ LAB_004aaf38:
                                         local_ec = local_ec + 1;
                                       }
                                       local_7c = -1;
-                                      crt_stdio_c_sscanf_FUN_0060013c((char *)local_ec,"(%[^,)]%n")
-                                      ;
+                                      crt_stdio_c_sscanf_FUN_0060013c
+                                                ((char *)local_ec,"(%[^,)]%n",local_13ad + 1);
                                       if (local_7c < 3) {
                                         crt_stdio_c_sprintf_FUN_005fdbd0
                                                   (&DAT_02d0a460,"Error parsing playSfx parms"
@@ -982,7 +1006,7 @@ LAB_004aaf38:
                                       if (*pCVar16 == (CEvent)0x2c) {
                                         local_7c = -1;
                                         crt_stdio_c_sscanf_FUN_0060013c
-                                                  ((char *)local_ec,",%[^)]%n");
+                                                  ((char *)local_ec,",%[^)]%n",local_b15 + 1);
                                         if (local_7c < 3) {
                                           crt_stdio_c_sprintf_FUN_005fdbd0
                                                     (&DAT_02d0a460,
@@ -1026,7 +1050,8 @@ LAB_004aaf38:
                                         if (0x13 < ~uVar12 - 1) {
                                           crt_stdio_c_sprintf_FUN_005fdbd0
                                                     (&DAT_02d0a460,
-                                                     "handle name %s is too long, max %d chars");
+                                                     "handle name %s is too long, max %d chars",
+                                                     local_b15 + 1,0x13);
                                           return (CDemonActor *)0x0;
                                         }
                                       }
@@ -1085,7 +1110,8 @@ LAB_004aaf38:
                                         }
                                         local_74 = -1;
                                         crt_stdio_c_sscanf_FUN_0060013c
-                                                  ((char *)local_ec,"(%[^,], %f)%n");
+                                                  ((char *)local_ec,"(%[^,], %f)%n",local_12e5 + 1,
+                                                   &local_78);
                                         if (local_74 < 3) {
                                           crt_stdio_c_sprintf_FUN_005fdbd0
                                                     (&DAT_02d0a460,
@@ -1128,7 +1154,8 @@ LAB_004aaf38:
                                         if ((local_78 < 0.0) || (0x42c80000 < (int)local_78)) {
                                           crt_stdio_c_sprintf_FUN_005fdbd0
                                                     (&DAT_02d0a460,
-                                                     "Ambient value %g is out of range (1..100)");
+                                                     "Ambient value %g is out of range (1..100)",
+                                                     (double)local_78);
                                           return (CDemonActor *)0x0;
                                         }
                                         if (local_f0 != 0) {
@@ -1150,7 +1177,7 @@ LAB_004aaf38:
                                           }
                                           local_6c = -1;
                                           crt_stdio_c_sscanf_FUN_0060013c
-                                                    ((char *)local_ec,"( %[^,)]%n");
+                                                    ((char *)local_ec,"( %[^,)]%n",local_ca5 + 1);
                                           if (local_6c < 5) {
                                             crt_stdio_c_sprintf_FUN_005fdbd0
                                                       (&DAT_02d0a460,
@@ -1187,7 +1214,7 @@ LAB_004aaf38:
                                           if (*local_ec == (CEvent)0x2c) {
                                             local_6c = -1;
                                             crt_stdio_c_sscanf_FUN_0060013c
-                                                      ((char *)local_ec,",%d%n");
+                                                      ((char *)local_ec,",%d%n",&local_68);
                                             if (local_6c < 1) {
                                               crt_stdio_c_sprintf_FUN_005fdbd0
                                                         (&DAT_02d0a460,
@@ -1227,7 +1254,8 @@ LAB_004aaf38:
                                             }
                                             local_5c = -1;
                                             crt_stdio_c_sscanf_FUN_0060013c
-                                                      ((char *)local_ec,"(%d, %f)%n");
+                                                      ((char *)local_ec,"(%d, %f)%n",local_64,
+                                                       &local_60);
                                             if (local_5c < 3) {
                                               crt_stdio_c_sprintf_FUN_005fdbd0
                                                         (&DAT_02d0a460,
@@ -1238,7 +1266,8 @@ LAB_004aaf38:
                                             if ((local_60 < 0.0) || (0x42c80000 < (int)local_60)) {
                                               crt_stdio_c_sprintf_FUN_005fdbd0
                                                         (&DAT_02d0a460,
-                                                         "Ambient value %g is out of range (1..100)");
+                                                         "Ambient value %g is out of range (1..100)",
+                                                         (double)local_60);
                                               return (CDemonActor *)0x0;
                                             }
                                             if (local_f0 != 0) {
@@ -1260,7 +1289,8 @@ LAB_004aaf38:
                                               }
                                               local_58 = -1;
                                               crt_stdio_c_sscanf_FUN_0060013c
-                                                        ((char *)local_ec,"( %[^ ,] , %d )%n");
+                                                        ((char *)local_ec,"( %[^ ,] , %d )%n",local_7f4,
+                                                         &local_54);
                                               if (local_58 < 0) {
                                                 pCVar7 = (CDemonActor *)
                                                          core_event_cpp_FUN_004aa2a0();
@@ -1305,7 +1335,8 @@ LAB_004aaf38:
                                                 }
                                                 local_48 = -1;
                                                 crt_stdio_c_sscanf_FUN_0060013c
-                                                          ((char *)local_ec,"(%[^,], %[^)])%n");
+                                                          ((char *)local_ec,"(%[^,], %[^)])%n",
+                                                           local_d6d + 1,local_1475 + 1);
                                                 if (local_48 < 5) {
                                                   crt_stdio_c_sprintf_FUN_005fdbd0
                                                             (&DAT_02d0a460,
@@ -1405,7 +1436,8 @@ LAB_004aaf38:
                                                   }
                                                   local_40 = -1;
                                                   crt_stdio_c_sscanf_FUN_0060013c
-                                                            ((char *)local_ec,"(%[^,], %[^)])%n");
+                                                            ((char *)local_ec,"(%[^,], %[^)])%n",
+                                                             local_985 + 1,local_8bd + 1);
                                                   if (local_40 < 5) {
                                                     crt_stdio_c_sprintf_FUN_005fdbd0
                                                               (&DAT_02d0a460,
@@ -1480,7 +1512,9 @@ LAB_004aaf38:
                                                   if (iVar5 < 0) {
                                                     crt_stdio_c_sprintf_FUN_005fdbd0
                                                               (&DAT_02d0a460,
-                                                               "Model %s does not have state %s");
+                                                               "Model %s does not have state %s",
+                                                               pCVar7[0x1a].create_event + 0x50,
+                                                               local_8bd + 1);
                                                     return (CDemonActor *)0x0;
                                                   }
                                                   if (local_f0 != 0) {
@@ -1507,7 +1541,8 @@ LAB_004aaf38:
                                                     }
                                                     local_38 = -1;
                                                     crt_stdio_c_sscanf_FUN_0060013c
-                                                              ((char *)local_ec,"(%[^,], %f)%n");
+                                                              ((char *)local_ec,"(%[^,], %f)%n",
+                                                               local_a4d + 1,&local_3c);
                                                     if (local_38 < 3) {
                                                       crt_stdio_c_sprintf_FUN_005fdbd0
                                                                 (&DAT_02d0a460,
@@ -1555,7 +1590,7 @@ LAB_004aaf38:
                                                       crt_stdio_c_sprintf_FUN_005fdbd0
                                                                 (&DAT_02d0a460,
                                                                  "Timer name \"%s\" is too long, (max %d chars)"
-                                                                );
+                                                                 ,local_a4d + 1,0x1f);
                                                       return (CDemonActor *)0x0;
                                                     }
                                                     if (local_3c < 0.0) {
@@ -1586,7 +1621,8 @@ LAB_004aaf38:
                                                       }
                                                       local_34 = -1;
                                                       crt_stdio_c_sscanf_FUN_0060013c
-                                                                ((char *)local_ec,"(%[^)])%n");
+                                                                ((char *)local_ec,"(%[^)])%n",
+                                                                 local_e35 + 1);
                                                       if (local_34 < 3) {
                                                         crt_stdio_c_sprintf_FUN_005fdbd0
                                                                   (&DAT_02d0a460,
@@ -1658,7 +1694,8 @@ LAB_004aaf38:
                                                       local_24 = -1;
                                                       crt_stdio_c_sscanf_FUN_0060013c
                                                                 ((char *)local_ec,
-                                                                 "( %f, %f, %f, %f )%n");
+                                                                 "( %f, %f, %f, %f )%n",local_30,
+                                                                 local_2c,local_80,local_28);
                                                       if (local_24 < 5) {
                                                         crt_stdio_c_sprintf_FUN_005fdbd0
                                                                   (&DAT_02d0a460,
@@ -1689,7 +1726,8 @@ LAB_004aaf38:
                                                       }
                                                       local_20 = -1;
                                                       crt_stdio_c_sscanf_FUN_0060013c
-                                                                ((char *)local_ec,"(%[^,], %[^)])%n");
+                                                                ((char *)local_ec,"(%[^,], %[^)])%n",
+                                                                 local_72d + 1,local_40d + 1);
                                                       if (local_20 < 5) {
                                                         crt_stdio_c_sprintf_FUN_005fdbd0
                                                                   (&DAT_02d0a460,
@@ -1744,10 +1782,8 @@ LAB_004aaf38:
                                                     } while (0 < (int)SVar14);
                                                   }
                                                   (local_40d + 1)[SVar14] = '\0';
-                                                  while (iVar5 = (int)((ulonglong)in_stack_ffffea40
-                                                                      >> 0x20),
-                                                        (g_CharacterClassificationTable
-                                                         [(byte)(local_40d[1] + 1)] & 2U) != 0) {
+                                                  while ((g_CharacterClassificationTable
+                                                          [(byte)(local_40d[1] + 1)] & 2U) != 0) {
                                                     crt_string_c_memmove_FUN_005fe5e0
                                                               (local_40d + 1,local_40d + 2,SVar14);
                                                     SVar14 = SVar14 - 1;
@@ -1758,29 +1794,32 @@ LAB_004aaf38:
                                                     return (CDemonActor *)0x0;
                                                   }
                                                   if (pCVar7 != DAT_0065d95c) {
-                                                    pCVar7 = pCVar7 + 1;
+                                                    pCVar9 = pCVar7 + 1;
                                                     pCVar10 = 
                                                   core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
-                                                            ((CMotionController *)pCVar7);
-                                                  iVar6 = 
+                                                            ((CMotionController *)pCVar9);
+                                                  iVar5 = 
                                                   core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460
                                                             (pCVar10);
-                                                  if (iVar6 < 0) {
+                                                  if (iVar5 < 0) {
                                                     crt_stdio_c_sprintf_FUN_005fdbd0
                                                               (&DAT_02d0a460,
-                                                               "Model %s does not have motion %s");
+                                                               "Model %s does not have motion %s",
+                                                               pCVar7[0x1a].create_event + 0x50,
+                                                               local_40d + 1);
                                                     return (CDemonActor *)0x0;
                                                   }
                                                   if (local_f0 != 0) {
                                                                                                         
                                                   core_motion_cpp_CMotionController_jumpToMotion_FUN_0052dde0
-                                                            ((CMotionController *)pCVar7,iVar6,0.0);
+                                                            ((CMotionController *)pCVar9,iVar5,0.0);
                                                   pSVar11 = 
                                                   core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                                                            ((CMotionController *)pCVar7);
+                                                            ((CMotionController *)pCVar9);
                                                   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                                                            ((CMotionController *)pCVar7,
-                                                             pSVar11->state_index,iVar5);
+                                                            ((CMotionController *)pCVar9,
+                                                             pSVar11->state_index,
+                                                             (int)in_stack_ffffe946);
                                                   }
                                                   }
                                                   }
@@ -1809,7 +1848,8 @@ LAB_004aaf38:
                                                       }
                                                       local_ec = pCVar16;
                                                       crt_stdio_c_sscanf_FUN_0060013c
-                                                                ((char *)pCVar16," ( %[^ ,)]%n");
+                                                                ((char *)pCVar16," ( %[^ ,)]%n",
+                                                                 local_344);
                                                       if (local_1c < 2) {
                                                         pCVar7 = (CDemonActor *)
                                                                  core_event_cpp_FUN_004aa2a0();
@@ -1832,7 +1872,8 @@ LAB_004aaf38:
                                                       if (*local_ec == (CEvent)0x2c) {
                                                         local_1c = -1;
                                                         crt_stdio_c_sscanf_FUN_0060013c
-                                                                  ((char *)local_ec,",%f%n");
+                                                                  ((char *)local_ec,",%f%n",
+                                                                   &local_70);
                                                         if (local_1c < 2) {
                                                           pCVar7 = (CDemonActor *)
                                                                    core_event_cpp_FUN_004aa2a0();
@@ -1877,7 +1918,8 @@ LAB_004aaf38:
                                                     }
                                                     local_18 = -1;
                                                     crt_stdio_c_sscanf_FUN_0060013c
-                                                              ((char *)local_ec,"(%[^,], %[^)])%n");
+                                                              ((char *)local_ec,"(%[^,], %[^)])%n",
+                                                               local_bdd + 1,local_59d + 1);
                                                     if (local_18 < 5) {
                                                       pCVar7 = (CDemonActor *)
                                                                core_event_cpp_FUN_004aa2a0();
@@ -1954,7 +1996,9 @@ LAB_004aaf38:
                                                     local_18 = -1;
                                                     crt_stdio_c_sscanf_FUN_0060013c
                                                               (local_59d + 1,
-                                                               "%f,%f,%f,%f,%f,%f%n");
+                                                               "%f,%f,%f,%f,%f,%f%n",&local_11c,
+                                                               &local_11c.y,&local_11c.z,&local_134,
+                                                               &local_134.z,&local_134.y);
                                                     if (local_18 < 0) {
                                                       if ((local_f0 != 0) &&
                                                          ((COrientation *)&local_134 !=
@@ -1964,8 +2008,9 @@ LAB_004aaf38:
                                                         local_134.z = (pCVar7->orient).heading;
                                                       }
                                                       crt_stdio_c_sscanf_FUN_0060013c
-                                                                (local_59d + 1,"%f,%f,%f,%f%n")
-                                                      ;
+                                                                (local_59d + 1,"%f,%f,%f,%f%n",
+                                                                 &local_11c,&local_11c.y,
+                                                                 &local_11c.z,&local_134.y);
                                                     }
                                                     if (local_18 < 0) {
                                                       if ((local_f0 != 0) &&
@@ -1976,7 +2021,9 @@ LAB_004aaf38:
                                                         local_134.z = (pCVar7->orient).heading;
                                                       }
                                                       crt_stdio_c_sscanf_FUN_0060013c
-                                                                (local_59d + 1,"%f,%f,%f%n");
+                                                                (local_59d + 1,"%f,%f,%f%n",
+                                                                 &local_11c,&local_11c.y,
+                                                                 &local_11c.z);
                                                     }
                                                     if (local_18 < 0) {
                                                       pCVar9 = (CDemonActor *)
@@ -2027,10 +2074,10 @@ LAB_004aaf38:
                                                   ;
                                                   if (pCVar9 != (CDemonActor *)0x0) {
                                                     (*pCVar9->vtable[1].processFootstep)
-                                                              (pCVar9,in_stack_ffffea50);
+                                                              (pCVar9,(float)in_stack_ffffe946);
                                                     (*pCVar9->vtable[1].handleFootstep)
-                                                              (pCVar9,in_stack_ffffea64,
-                                                               in_stack_ffffea68,in_stack_ffffea6c);
+                                                              (pCVar9,in_stack_ffffe946,
+                                                               in_stack_ffffe94a,in_stack_ffffe94e);
                                                   }
                                                   (*pCVar7->vtable->setPositionAndOrientation)
                                                             (pCVar7,&local_11c,&local_134);

@@ -10,38 +10,52 @@
 /* Signature: byte core_msnedit.cpp_FUN_00536cd0(uint sSomeString, uint param_2,
    uint param_3, uint param_4, uint param_5) */
 
-uint
-core_msnedit_cpp_FUN_00536cd0
-          (uint param_1,uint param_2,int unaff_EBX,uint param_4,char *param_5,
-          int param_6,int param_7,int param_8)
+uint core_msnedit_cpp_FUN_00536cd0(void)
 
 {
   int y1;
-  int iVar1;
-  uint uVar2;
-  int unaff_EBP;
-  int unaff_ESI;
-  int x1;
-  int unaff_EDI;
+  bool bVar1;
+  int iVar2;
+  uint uVar3;
+  char *in_stack_00000004;
+  int in_stack_00000008;
+  int in_stack_0000000c;
+  int in_stack_00000010;
+  int in_stack_00000014;
+  uint local_18;
   
-  iVar1 = engine_2d_c_getStringWidth_FUN_004018a0(param_5);
-  y1 = param_7 + 0xb;
-  engine_2d_c_drawText_FUN_00401fd0(param_5,param_6,param_7);
-  if (-1 < param_6 + iVar1) {
-    param_7 = param_7 + -2;
-    x1 = param_6 + -2;
-    g_ActiveRenderColor = param_6 + iVar1;
-    engine_2d_c_drawLine_FUN_004011b0(x1,param_7,unaff_EBP,param_7);
-    engine_2d_c_drawLine_FUN_004011b0(x1,y1,unaff_EDI,y1);
-    engine_2d_c_drawLine_FUN_004011b0(x1,param_7,x1,y1);
-    engine_2d_c_drawLine_FUN_004011b0(unaff_EBX,param_7,unaff_EBX,y1);
+  iVar2 = engine_2d_c_getStringWidth_FUN_004018a0(in_stack_00000004);
+  iVar2 = in_stack_00000008 + iVar2;
+  y1 = in_stack_0000000c + 0xb;
+  if (in_stack_00000014 == 0) {
+    local_18 = -1;
   }
-  uVar2 = g_MouseButtonFlags & 1;
-  if (((param_8 == 0) && (0.0 < _DAT_02f7c630)) && (_DAT_02f7c630 < (float)0.29999999999999999)) {
-    uVar2 = 0;
+  else {
+    local_18 = 7;
   }
-  if ((unaff_ESI != 0) && (uVar2 != 0)) {
-    if (param_8 != 0) {
+  bVar1 = false;
+  if ((((g_ActiveButton == (CEdButton *)0x0) && (in_stack_00000008 < g_MouseX)) &&
+      (g_MouseX < iVar2)) && ((in_stack_0000000c <= g_MouseY && (g_MouseY < y1)))) {
+    bVar1 = true;
+    local_18 = 1;
+  }
+  engine_2d_c_drawText_FUN_00401fd0(in_stack_00000004,in_stack_00000008,in_stack_0000000c);
+  if (-1 < local_18) {
+    in_stack_0000000c = in_stack_0000000c + -2;
+    in_stack_00000008 = in_stack_00000008 + -2;
+    g_ActiveRenderColor = local_18;
+    engine_2d_c_drawLine_FUN_004011b0(in_stack_00000008,in_stack_0000000c,iVar2,in_stack_0000000c);
+    engine_2d_c_drawLine_FUN_004011b0(in_stack_00000008,y1,iVar2,y1);
+    engine_2d_c_drawLine_FUN_004011b0(in_stack_00000008,in_stack_0000000c,in_stack_00000008,y1);
+    engine_2d_c_drawLine_FUN_004011b0(iVar2,in_stack_0000000c,iVar2,y1);
+  }
+  uVar3 = g_MouseButtonFlags & 1;
+  if (((in_stack_00000010 == 0) && (0.0 < _DAT_02f7c630)) &&
+     (_DAT_02f7c630 < (float)0.29999999999999999)) {
+    uVar3 = 0;
+  }
+  if ((bVar1) && (uVar3 != 0)) {
+    if (in_stack_00000010 != 0) {
       g_MouseButtonFlags = 0;
     }
     return 1;

@@ -9,9 +9,7 @@
 /* Signature: byte actors_hero_moloch.cpp_FUN_005293b0(uint param_1, uint param_2)
     */
 
-void core_moloch_cpp_FUN_005293b0
-               (uint param_1,uint param_2,float unaff_EBX,uint param_4,
-               CCharacter *param_5,float param_6)
+void core_moloch_cpp_FUN_005293b0(void)
 
 {
   CLocation *pCVar1;
@@ -24,74 +22,75 @@ void core_moloch_cpp_FUN_005293b0
   CVector3f *pCVar7;
   uint uVar8;
   BADSPACEBASE *in_ESP;
-  float unaff_retaddr;
+  CCharacter *in_stack_00000004;
+  float in_stack_00000008;
   int in_stack_ffffff74;
-  float local_70;
-  ulonglong local_6c;
-  uint uStack_5c;
-  byte auStack_58 [8];
-  float fStack_50;
-  float fStack_4c;
+  float local_74;
+  byte local_70 [8];
+  float fStack_68;
+  CVector3f CStack_64;
+  float fStack_54;
+  CVector3f CStack_4c;
   float local_40;
   float local_3c;
   float fStack_38;
-  CVector3f CStack_34;
-  uint local_24;
-  uint local_20;
+  float fStack_34;
+  float fStack_30;
+  float fStack_2c;
+  float local_24;
+  float local_20;
   float fStack_1c;
-  float fStack_18;
-  float fStack_14;
   
-  local_20 = 0x3e800000;
-  local_24 = 0x3f490fdb;
+  fStack_1c = 0.25;
+  local_20 = 0.7853982;
   pCVar2 = g_HeroActors[g_LocalHeroIndex];
-  crt_memory_c_memset_FUN_005fde40(param_5[1].base_actor.actor_name + 8,0,0x2c);
+  crt_memory_c_memset_FUN_005fde40(in_stack_00000004[1].base_actor.actor_name + 8,0,0x2c);
   iVar5 = g_LocalHeroIndex;
-  if ((*(int *)(param_5[2].cloth_data + 0x54f0) != 0) &&
-     (*(int *)(param_5[2].cloth_data + 0x54f0) == 1)) {
+  if ((*(int *)(in_stack_00000004[2].cloth_data + 0x54f0) != 0) &&
+     (*(int *)(in_stack_00000004[2].cloth_data + 0x54f0) == 1)) {
     pCVar3 = g_HeroActors[g_LocalHeroIndex];
-    pCVar1 = &(param_5->base_actor).location;
-    local_6c._0_4_ =
-         (param_5->base_actor).location.position.y -
-         (pCVar3->base_character).base_actor.location.position.y;
-    local_6c._4_4_ =
-         (param_5->base_actor).location.position.z -
-         (pCVar3->base_character).base_actor.location.position.z;
+    pCVar1 = &(in_stack_00000004->base_actor).location;
     local_40 = (pCVar2->base_character).base_actor.location.position.x - (pCVar1->position).x;
     local_3c = (pCVar2->base_character).base_actor.location.position.y -
-               (param_5->base_actor).location.position.y;
+               (in_stack_00000004->base_actor).location.position.y;
     fStack_38 = (pCVar2->base_character).base_actor.location.position.z -
-                (param_5->base_actor).location.position.z;
-    local_70 = (pCVar1->position).x - (pCVar3->base_character).base_actor.location.position.x;
-    if (&local_70 != &local_40) {
-      local_70 = local_40;
-      local_6c._0_4_ = local_3c;
-      local_6c._4_4_ = fStack_38;
+                (in_stack_00000004->base_actor).location.position.z;
+    local_70._0_4_ = (pCVar1->position).x - (pCVar3->base_character).base_actor.location.position.x;
+    local_70._4_4_ =
+         (in_stack_00000004->base_actor).location.position.y -
+         (pCVar3->base_character).base_actor.location.position.y;
+    fStack_68 = (in_stack_00000004->base_actor).location.position.z -
+                (pCVar3->base_character).base_actor.location.position.z;
+    if ((float *)local_70 != &local_40) {
+      local_70._0_4_ = local_40;
+      local_70._4_4_ = local_3c;
+      fStack_68 = fStack_38;
     }
-    param_5->field2_0x240c[0xc] = '\0';
-    param_5->field2_0x240c[0xd] = '\0';
-    param_5->field2_0x240c[0xe] = '\0';
-    param_5->field2_0x240c[0xf] = '\0';
-    if (SQRT(local_6c._4_4_ * local_6c._4_4_ +
-             local_70 * local_70 + (float)local_6c * (float)local_6c) <= (float)6) {
+    in_stack_00000004->field2_0x240c[0xc] = '\0';
+    in_stack_00000004->field2_0x240c[0xd] = '\0';
+    in_stack_00000004->field2_0x240c[0xe] = '\0';
+    in_stack_00000004->field2_0x240c[0xf] = '\0';
+    if (SQRT(fStack_68 * fStack_68 +
+             (float)local_70._0_4_ * (float)local_70._0_4_ +
+             (float)local_70._4_4_ * (float)local_70._4_4_) <= (float)6) {
       iVar5 = (*(g_HeroActors[iVar5]->base_character).base_actor.vtable[1].processMeleeHit)
                         ((CDemonActor *)g_HeroActors[iVar5],in_stack_ffffff74);
-      if ((iVar5 == 0) && (uVar8 = core_charactr_cpp_CCharacter_FUN_0042ede0(param_5), uVar8 != 0))
-      {
+      if ((iVar5 == 0) &&
+         (uVar8 = core_charactr_cpp_CCharacter_FUN_0042ede0(in_stack_00000004), uVar8 != 0)) {
         if (uVar8 < 2) {
-          pCVar4 = param_5 + 1;
+          pCVar4 = in_stack_00000004 + 1;
           (pCVar4->base_actor).actor_name[8] = '\x01';
           (pCVar4->base_actor).actor_name[9] = '\0';
           (pCVar4->base_actor).actor_name[10] = '\0';
           (pCVar4->base_actor).actor_name[0xb] = '\0';
         }
         else if (uVar8 == 2) {
-          pCVar4 = param_5 + 1;
+          pCVar4 = in_stack_00000004 + 1;
           (pCVar4->base_actor).actor_name[0x10] = '\x01';
           (pCVar4->base_actor).actor_name[0x11] = '\0';
           (pCVar4->base_actor).actor_name[0x12] = '\0';
           (pCVar4->base_actor).actor_name[0x13] = '\0';
-          pCVar4 = param_5 + 1;
+          pCVar4 = in_stack_00000004 + 1;
           (pCVar4->base_actor).actor_name[8] = '\x01';
           (pCVar4->base_actor).actor_name[9] = '\0';
           (pCVar4->base_actor).actor_name[10] = '\0';
@@ -103,82 +102,82 @@ void core_moloch_cpp_FUN_005293b0
       this_ptr = (*((g_HeroActors[iVar5]->base_character).base_actor.vtable)->getPathMap)
                            ((CDemonActor *)g_HeroActors[iVar5]);
       iVar5 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00
-                        (this_ptr,&(param_5->base_actor).location.position,
-                         (CVector3f *)(auStack_58 + 4),(param_5->base_actor).field7_0x6c);
+                        (this_ptr,&(in_stack_00000004->base_actor).location.position,&CStack_64,
+                         (in_stack_00000004->base_actor).field7_0x6c);
       if (iVar5 != 0) {
         fVar6 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                          (fStack_4c - (param_5->base_actor).orient.bank);
+                          (CStack_64.y - (in_stack_00000004->base_actor).orient.bank);
         fVar6 = fVar6 * (float)0.31830988619288902 * (float)4;
-        param_5[1].base_actor.location.area_id = (int)fVar6;
-        if (fVar6 < -unaff_EBX) {
-          param_5[1].base_actor.location.area_id = (int)-unaff_EBX;
+        local_24 = -fStack_1c;
+        in_stack_00000004[1].base_actor.location.area_id = (int)fVar6;
+        if (fVar6 < local_24) {
+          in_stack_00000004[1].base_actor.location.area_id = (int)local_24;
         }
-        if (unaff_EBX < (float)param_5[1].base_actor.location.area_id) {
-          param_5[1].base_actor.location.area_id = (int)unaff_EBX;
+        if (fStack_1c < (float)in_stack_00000004[1].base_actor.location.area_id) {
+          in_stack_00000004[1].base_actor.location.area_id = (int)fStack_1c;
         }
-        pCVar4 = param_5 + 1;
+        pCVar4 = in_stack_00000004 + 1;
         (pCVar4->base_actor).actor_name[8] = '\x01';
         (pCVar4->base_actor).actor_name[9] = '\0';
         (pCVar4->base_actor).actor_name[10] = '\0';
         (pCVar4->base_actor).actor_name[0xb] = '\0';
       }
-      param_5->cloth_data[0x32c] = '\0';
-      param_5->cloth_data[0x32d] = '\0';
-      param_5->cloth_data[0x32e] = '\0';
-      param_5->cloth_data[0x32f] = '\0';
+      in_stack_00000004->cloth_data[0x32c] = '\0';
+      in_stack_00000004->cloth_data[0x32d] = '\0';
+      in_stack_00000004->cloth_data[0x32e] = '\0';
+      in_stack_00000004->cloth_data[0x32f] = '\0';
     }
-    local_6c = (double)*(float *)(param_5->field2_0x240c + 0xc);
-    if (local_6c <= 0.0) {
-      if (local_6c < 0.0) {
-        param_5->field2_0x240c[0xc] = '\0';
-        param_5->field2_0x240c[0xd] = '\0';
-        param_5->field2_0x240c[0xe] = '\0';
-        param_5->field2_0x240c[0xf] = '\0';
-        param_5[1].base_actor.location.area_id = (int)-unaff_EBX;
+    if (*(float *)(in_stack_00000004->field2_0x240c + 0xc) <= 0.0) {
+      if (*(float *)(in_stack_00000004->field2_0x240c + 0xc) < 0.0) {
+        in_stack_00000004->field2_0x240c[0xc] = '\0';
+        in_stack_00000004->field2_0x240c[0xd] = '\0';
+        in_stack_00000004->field2_0x240c[0xe] = '\0';
+        in_stack_00000004->field2_0x240c[0xf] = '\0';
+        in_stack_00000004[1].base_actor.location.area_id = (int)-fStack_1c;
       }
     }
     else {
-      param_5->field2_0x240c[0xc] = '\0';
-      param_5->field2_0x240c[0xd] = '\0';
-      param_5->field2_0x240c[0xe] = '\0';
-      param_5->field2_0x240c[0xf] = '\0';
-      param_5[1].base_actor.location.area_id = (int)unaff_EBX;
+      in_stack_00000004->field2_0x240c[0xc] = '\0';
+      in_stack_00000004->field2_0x240c[0xd] = '\0';
+      in_stack_00000004->field2_0x240c[0xe] = '\0';
+      in_stack_00000004->field2_0x240c[0xf] = '\0';
+      in_stack_00000004[1].base_actor.location.area_id = (int)fStack_1c;
     }
-    fStack_1c = (pCVar2->base_character).base_actor.location.position.x -
-                (param_5->base_actor).location.position.x;
-    fStack_18 = (pCVar2->base_character).base_actor.location.position.y -
-                (param_5->base_actor).location.position.y;
-    fStack_14 = (pCVar2->base_character).base_actor.location.position.z -
-                (param_5->base_actor).location.position.z;
-    if ((float *)auStack_58 != &fStack_1c) {
-      auStack_58._0_4_ = fStack_1c;
-      auStack_58._4_4_ = fStack_18;
-      fStack_50 = fStack_14;
+    fStack_34 = (pCVar2->base_character).base_actor.location.position.x -
+                (in_stack_00000004->base_actor).location.position.x;
+    fStack_30 = (pCVar2->base_character).base_actor.location.position.y -
+                (in_stack_00000004->base_actor).location.position.y;
+    fStack_2c = (pCVar2->base_character).base_actor.location.position.z -
+                (in_stack_00000004->base_actor).location.position.z;
+    if ((float *)local_70 != &fStack_34) {
+      local_70._0_4_ = fStack_34;
+      local_70._4_4_ = fStack_30;
+      fStack_68 = fStack_2c;
     }
     pCVar7 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
-                       (&CStack_34,(CVector3f *)auStack_58);
-    if ((CVector3f *)(auStack_58 + 4) != pCVar7) {
-      auStack_58._4_4_ = pCVar7->x;
-      fStack_50 = pCVar7->y;
-      fStack_4c = pCVar7->z;
+                       (&CStack_4c,(CVector3f *)local_70);
+    if ((CVector3f *)(local_70 + 4) != pCVar7) {
+      local_70._0_4_ = pCVar7->x;
+      local_70._4_4_ = pCVar7->y;
+      fStack_68 = pCVar7->z;
     }
-    CStack_34.x = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                            (fStack_50 - (param_5->base_actor).orient.bank);
-    if (unaff_retaddr < CStack_34.x) {
-      CStack_34.x = unaff_retaddr;
+    fStack_54 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
+                          ((float)local_70._4_4_ - (in_stack_00000004->base_actor).orient.bank);
+    if (local_20 < fStack_54) {
+      fStack_54 = local_20;
     }
-    if (CStack_34.x < -unaff_retaddr) {
-      CStack_34.x = -unaff_retaddr;
+    if (fStack_54 < -local_20) {
+      fStack_54 = -local_20;
     }
-    auStack_58._4_4_ = CStack_34.x - *(float *)(param_5[2].cloth_data + 0x84ac);
-    if (param_6 * (float)3.1415926535000001 < (float)auStack_58._4_4_) {
-      auStack_58._4_4_ = param_6 * (float)3.1415926535000001;
+    local_74 = fStack_54 - *(float *)(in_stack_00000004[2].cloth_data + 0x84ac);
+    if (in_stack_00000008 * (float)3.1415926535000001 < local_74) {
+      local_74 = in_stack_00000008 * (float)3.1415926535000001;
     }
-    if ((float)auStack_58._4_4_ < param_6 * (float)-3.1415926535000001) {
-      auStack_58._4_4_ = param_6 * (float)-3.1415926535000001;
+    if (local_74 < in_stack_00000008 * (float)-3.1415926535000001) {
+      local_74 = in_stack_00000008 * (float)-3.1415926535000001;
     }
-    *(float *)(param_5[2].cloth_data + 0x84ac) =
-         *(float *)(param_5[2].cloth_data + 0x84ac) + (float)auStack_58._4_4_;
+    *(float *)(in_stack_00000004[2].cloth_data + 0x84ac) =
+         *(float *)(in_stack_00000004[2].cloth_data + 0x84ac) + local_74;
   }
   return;
 }

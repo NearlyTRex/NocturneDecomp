@@ -1,22 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 39,
-    "complexity_score": 189,
+    "complexity_score": 85,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 2,
-    "pseudocode_lines": 44,
-    "suspect_count": 11,
+    "pseudocode_lines": 40,
+    "suspect_count": 3,
     "suspect_types": [
       "badspacebase",
-      "call_esp_anchor",
-      "callind_anchor",
       "register_param",
-      "stack_align_anchor",
-      "stack_ref",
-      "suspect_float"
+      "stack_ref"
     ],
-    "total_lines": 83
+    "total_lines": 79
   },
   "cross_references": [],
   "function": {
@@ -75,6 +71,23 @@
     "declared_params": 1,
     "estimated_params": 1
   },
+  "pcode_overrides": {
+    "005e9759": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffdc,4)"
+    ],
+    "005e976f": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffdc,4)"
+    ],
+    "005e9784": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffdc,4)"
+    ],
+    "005e9796": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffdc,4)"
+    ],
+    "005e979f": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffdc,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.823529411764706,
     "instruction_count": 34,
@@ -97,89 +110,7 @@
     },
     "pcode_op_count": 130
   },
-  "stack_frame": {
-    "frame_size": 56,
-    "local_size": 52,
-    "param_offset": 4,
-    "param_size": 4,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_30",
-        "offset": -48,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": true,
-        "name": "this_ptr",
-        "offset": 4,
-        "size": 4,
-        "type": "CCryptVessel *"
-      }
-    ]
-  },
-  "stack_patterns": {
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
-    "pattern_count": 1,
-    "pattern_types": [
-      "stack_alignment"
-    ],
-    "patterns": [
-      {
-        "address": "005e9759",
-        "description": "Stack alignment (AND ESP, 0xfffffff8)",
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
-        "instruction": "AND ESP,0xfffffff8",
-        "pattern_id": "stack_alignment"
-      }
-    ],
-    "severity": "medium"
-  },
-  "suspects": [
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 8,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 8,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 18,
-      "match": "&stack0xffffffd8",
-      "text": "(&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffd8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 19,
-      "match": "8.686928e-39",
-      "text": "fStack_24 = 8.686928e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 26,
-      "match": "8.687015e-39",
-      "text": "fStack_24 = 8.687015e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 37,
-      "match": "8.687148e-39",
-      "text": "fStack_24 = 8.687148e-39;",
-      "type": "suspect_float"
-    },
+  "resolved_suspects": [
     {
       "add_esp_value": 8,
       "callind_address": "005e9793",
@@ -239,6 +170,69 @@
       "target_address": "0x4204f0",
       "text": "Direct CALL at 005e979a, ADD ESP at 005e979f with uncertain ESP",
       "type": "call_esp_anchor"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 56,
+    "local_size": 52,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCryptVessel *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005e9759",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 8,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 8,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 17,
+      "match": "&stack0xffffffd4",
+      "text": "(&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffd4);",
+      "type": "stack_ref"
     }
   ],
   "vtable_info": {

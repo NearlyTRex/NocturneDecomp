@@ -49,7 +49,9 @@ void __cdecl shape_design_c_showPointEditor_FUN_0045c6c0(void)
       engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff7c,0,0xb);
       crt_stdio_c_sprintf_FUN_005fdbd0
                 (&stack0xffffff7c,"from %f,%f,%f",
-                 (double)g_LoadedVertices[g_SelectedPointIndex].vertex.x);
+                 (double)g_LoadedVertices[g_SelectedPointIndex].vertex.x,
+                 (double)g_LoadedVertices[g_SelectedPointIndex].vertex.y,
+                 (double)g_LoadedVertices[g_SelectedPointIndex].vertex.z);
       engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff7c,0,0x16);
     }
     if (g_KeyboardState[0x20] != '\0') {

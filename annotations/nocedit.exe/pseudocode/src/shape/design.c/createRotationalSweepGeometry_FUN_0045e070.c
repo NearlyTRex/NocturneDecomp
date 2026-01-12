@@ -14,7 +14,13 @@ void shape_design_c_createRotationalSweepGeometry_FUN_0045e070(void)
   uint uVar1;
   BADSPACEBASE *in_ESP;
   float10 fVar2;
-  int local_74 [8];
+  int local_74 [2];
+  byte local_6c [4];
+  byte local_68 [4];
+  byte local_64 [4];
+  byte local_60 [4];
+  byte local_5c [4];
+  byte local_58 [4];
   int local_54;
   int local_50;
   int local_4c;
@@ -41,7 +47,8 @@ void shape_design_c_createRotationalSweepGeometry_FUN_0045e070(void)
   engine_2d_c_getInputWithPrompt_FUN_004032c0
             (&stack0xffffff3c,0x4f,0,0xb,"Enter in point list : ");
   local_50 = crt_stdio_c_sscanf_FUN_0060013c
-                       (&stack0xffffff3c,"%d,%d,%d,%d,%d,%d,%d,%d",local_74,local_74 + 1);
+                       (&stack0xffffff3c,"%d,%d,%d,%d,%d,%d,%d,%d",local_74,local_74 + 1,local_6c,
+                        local_68,local_64,local_60,local_5c,local_58);
   engine_2d_c_getInputWithPrompt_FUN_004032c0
             (&stack0xffffff3c,10,0,0x16,"Enter in # of sections : ");
   local_4c = crt_stdlib_c_atoi_FUN_005ffef0(&stack0xffffff3c);

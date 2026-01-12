@@ -32,8 +32,8 @@ void core_imp_cpp_FUN_004f9c30(void)
   double dVar14;
   CEnemy *in_stack_00000004;
   float in_stack_00000008;
-  SCollisionInfo *in_stack_fffffe60;
-  SCollisionInfo *in_stack_fffffe68;
+  SCollisionInfo *in_stack_fffffde6;
+  SDamageInfo local_1a0;
   SDamageInfo local_164;
   float local_128;
   float local_124;
@@ -81,7 +81,7 @@ void core_imp_cpp_FUN_004f9c30(void)
   if (((in_stack_00000004->base_character).model.part_visibility_flags
        [(int)in_stack_00000004[1].base_character.base_actor.orient.heading] == 0) &&
      (iVar7 = (*(in_stack_00000004->base_character).base_actor.vtable[1].hasCollision)
-                        ((CDemonActor *)in_stack_00000004,in_stack_fffffe60), iVar7 == 0)) {
+                        ((CDemonActor *)in_stack_00000004,in_stack_fffffde6), iVar7 == 0)) {
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
               (&(in_stack_00000004->base_character).model.motion_controller,6,1);
   }
@@ -184,7 +184,7 @@ LAB_004f9c99:
     switch(iVar7) {
     case 0:
       iVar7 = (*(g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable[1].hasCollision)
-                        ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],in_stack_fffffe68);
+                        ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],in_stack_fffffde6);
       if (iVar7 == 0) {
         (*(in_stack_00000004->base_character).base_actor.vtable[1].getAllowedMeleeAttackTypes)
                   ((CDemonActor *)in_stack_00000004);
@@ -400,8 +400,11 @@ LAB_004f9c99:
       }
       break;
     case 4:
-      core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffe60);
-      local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(3.0,5.0);
+      core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_1a0);
+      local_1a0.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(3.0,5.0);
+      local_1a0.attacker = (CDemonActor *)in_stack_00000004;
+      local_1a0.wielder = (CDemonActor *)in_stack_00000004;
+      local_14 = local_1a0.damage_amount;
       pCVar9 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                          (&local_b0,&g_ZeroVector,
                           (CMatrix3x4f *)
@@ -485,7 +488,7 @@ LAB_004fa163:
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
               (&(in_stack_00000004->base_character).model.motion_controller,0,1);
     engine_console_cpp_CConsole_printf_FUN_00441890
-              (g_CConsolePtr,"%s confused while walking to scriptDest!\n");
+              (g_CConsolePtr,"%s confused while walking to scriptDest!\n",in_stack_00000004);
   }
   (in_stack_00000004->base_character).model.accumulated_root_motion.z = 0.0;
   (in_stack_00000004->base_character).model.accumulated_root_motion.y =

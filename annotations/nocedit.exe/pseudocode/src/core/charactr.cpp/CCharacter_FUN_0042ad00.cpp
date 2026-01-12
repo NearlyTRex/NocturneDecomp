@@ -21,14 +21,14 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ad00(CCharacter *this_ptr)
   int extraout_ECX_00;
   int iVar8;
   CCharacter *pCVar9;
-  int iVar10;
   int extraout_EDX;
+  uchar *puVar10;
   uchar *puVar11;
-  uchar *puVar12;
   CDeformableModelInstance *this_ptr_00;
-  CDeformableModel *pCVar13;
-  double dVar14;
-  float local_24;
+  CDeformableModel *pCVar12;
+  double dVar13;
+  float local_30;
+  int local_1c;
   
   if (*(int *)(this_ptr->cloth_data + 0x478) == 0) {
     return;
@@ -67,17 +67,17 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ad00(CCharacter *this_ptr)
   }
   iVar6 = 0;
   iVar8 = 0;
-  pCVar13 = pCVar5;
+  pCVar12 = pCVar5;
   if (0 < pCVar4->bone_count) {
     do {
       if ((float)65535 <= (float)(&DAT_00823c54)[iVar6]) {
         iVar8 = iVar8 + 1;
       }
-      if (pCVar13->farthest_child_bone[0] == -1) {
+      if (pCVar12->farthest_child_bone[0] == -1) {
         iVar8 = iVar8 + 1;
       }
       iVar6 = iVar6 + 1;
-      pCVar13 = (CDeformableModel *)pCVar13->lod_info;
+      pCVar12 = (CDeformableModel *)pCVar12->lod_info;
     } while (iVar6 < pCVar4->bone_count);
   }
   if (iVar8 == pCVar4->bone_count) {
@@ -90,27 +90,27 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ad00(CCharacter *this_ptr)
     this_ptr->cloth_data[0x8d42] = '\0';
     this_ptr->cloth_data[0x8d43] = '\0';
   }
-  iVar6 = 0;
-  for (iVar8 = 0; iVar8 < pCVar5->vertex_count[iVar1]; iVar8 = iVar8 + 1) {
-    puVar12 = pCVar5->vertex_data_ptr[iVar1]->bone_indices + iVar6 + -1;
-    local_24 = 0.0;
-    iVar10 = 0;
-    puVar7 = puVar12;
-    puVar11 = puVar12;
-    while (iVar10 < (int)(uint)*puVar12) {
-      dVar14 = crt_math_c_round_FUN_005fe6b0
-                         ((double)(*(float *)(puVar7 + 4) * (float)(&DAT_00823c54)[puVar11[1]]));
+  local_1c = 0;
+  for (iVar6 = 0; iVar6 < pCVar5->vertex_count[iVar1]; iVar6 = iVar6 + 1) {
+    puVar11 = pCVar5->vertex_data_ptr[iVar1]->bone_indices + local_1c + -1;
+    local_30 = 0.0;
+    iVar8 = 0;
+    puVar7 = puVar11;
+    puVar10 = puVar11;
+    while (iVar8 < (int)(uint)*puVar11) {
+      dVar13 = crt_math_c_round_FUN_005fe6b0
+                         ((double)(*(float *)(puVar7 + 4) * (float)(&DAT_00823c54)[puVar10[1]]));
       puVar7 = (uchar *)(extraout_ECX + 4);
-      puVar11 = puVar11 + 1;
-      local_24 = (float)(int)ROUND(dVar14) + local_24;
-      iVar10 = extraout_EDX + 1;
+      puVar10 = puVar10 + 1;
+      local_30 = (float)(int)ROUND(dVar13) + local_30;
+      iVar8 = extraout_EDX + 1;
     }
-    if ((float)65535 < local_24) {
-      local_24 = 65535.0;
+    if ((float)65535 < local_30) {
+      local_30 = 65535.0;
     }
-    dVar14 = crt_math_c_round_FUN_005fe6b0((double)local_24);
-    iVar6 = iVar6 + 0x34;
-    *(int *)(*extraout_EAX + extraout_ECX_00 + 0x2c) = (int)ROUND(dVar14);
+    dVar13 = crt_math_c_round_FUN_005fe6b0((double)local_30);
+    local_1c = local_1c + 0x34;
+    *(int *)(*extraout_EAX + extraout_ECX_00 + 0x2c) = (int)ROUND(dVar13);
   }
   core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
             (&this_ptr->model,-1,0x163,0,1);

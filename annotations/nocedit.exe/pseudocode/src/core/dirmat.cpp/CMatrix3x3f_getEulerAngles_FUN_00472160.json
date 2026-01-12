@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 366,
-    "complexity_score": 457,
+    "complexity_score": 442,
     "cross_reference_count": 13,
     "function_call_count": 2,
     "global_count": 7,
     "pseudocode_lines": 157,
-    "suspect_count": 29,
+    "suspect_count": 28,
     "suspect_types": [
-      "extra_output",
-      "stack_align_anchor"
+      "extra_output"
     ],
     "total_lines": 523
   },
@@ -162,6 +161,11 @@
       "value": "-6.283185"
     }
   ],
+  "pcode_overrides": {
+    "0047216b": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff7c,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 8.228956228956228,
     "instruction_count": 297,
@@ -202,6 +206,18 @@
     },
     "pcode_op_count": 2444
   },
+  "resolved_suspects": [
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x84",
+      "fix_address": "0047216b",
+      "frame_offset": 132,
+      "match": "AND ESP",
+      "sub_esp_offset": 132,
+      "text": "Stack alignment at 0047216b (SUB ESP, 0x84 before)",
+      "type": "stack_align_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 164,
     "local_size": 156,
@@ -564,16 +580,6 @@
       "match": "extraout_EDX",
       "text": "euler_angles = extraout_EDX;",
       "type": "extra_output"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x84",
-      "fix_address": "0047216b",
-      "frame_offset": 132,
-      "match": "AND ESP",
-      "sub_esp_offset": 132,
-      "text": "Stack alignment at 0047216b (SUB ESP, 0x84 before)",
-      "type": "stack_align_anchor"
     }
   ]
 }

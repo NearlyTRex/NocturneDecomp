@@ -1,24 +1,21 @@
 {
   "complexity": {
     "assembly_lines": 558,
-    "complexity_score": 698,
+    "complexity_score": 460,
     "cross_reference_count": 7,
     "function_call_count": 4,
     "global_count": 1,
-    "pseudocode_lines": 233,
-    "suspect_count": 42,
+    "pseudocode_lines": 230,
+    "suspect_count": 20,
     "suspect_types": [
       "badspacebase",
-      "call_esp_anchor",
-      "concat_artifact",
       "extra_output",
       "register_param",
-      "stack_align_anchor",
-      "stack_ref",
+      "sub_artifact",
       "suspect_float",
-      "unknown_field"
+      "unaffected_reg"
     ],
-    "total_lines": 791
+    "total_lines": 788
   },
   "cross_references": [
     {
@@ -107,6 +104,35 @@
       "value": "2.684355E+8"
     }
   ],
+  "pcode_overrides": {
+    "00495b7c": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff60,4)"
+    ],
+    "00495bda": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff60,4)"
+    ],
+    "00495c03": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff60,4)"
+    ],
+    "00495c2c": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff60,4)"
+    ],
+    "00495c7f": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff60,4)"
+    ],
+    "00495ca7": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff60,4)"
+    ],
+    "00495cd0": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff60,4)"
+    ],
+    "00495f72": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff60,4)"
+    ],
+    "0049612d": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff60,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.974522292993631,
     "instruction_count": 471,
@@ -151,6 +177,122 @@
     },
     "pcode_op_count": 2814
   },
+  "resolved_suspects": [
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0xa0",
+      "fix_address": "00495b7c",
+      "frame_offset": 160,
+      "match": "AND ESP",
+      "sub_esp_offset": 160,
+      "text": "Stack alignment at 00495b7c (SUB ESP, 0xa0 before)",
+      "type": "stack_align_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "00495bc9",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "00495bda",
+      "frame_offset": 160,
+      "match": "CALL...ADD ESP",
+      "return_address": "00495bce",
+      "target_address": "0x5feb90",
+      "text": "Direct CALL at 00495bc9, ADD ESP at 00495bda with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "00495bf2",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "00495c03",
+      "frame_offset": 160,
+      "match": "CALL...ADD ESP",
+      "return_address": "00495bf7",
+      "target_address": "0x5feb90",
+      "text": "Direct CALL at 00495bf2, ADD ESP at 00495c03 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "00495c1b",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "00495c2c",
+      "frame_offset": 160,
+      "match": "CALL...ADD ESP",
+      "return_address": "00495c20",
+      "target_address": "0x5feb90",
+      "text": "Direct CALL at 00495c1b, ADD ESP at 00495c2c with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "00495c6e",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "00495c7f",
+      "frame_offset": 160,
+      "match": "CALL...ADD ESP",
+      "return_address": "00495c73",
+      "target_address": "0x5feb90",
+      "text": "Direct CALL at 00495c6e, ADD ESP at 00495c7f with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "00495c96",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "00495ca7",
+      "frame_offset": 160,
+      "match": "CALL...ADD ESP",
+      "return_address": "00495c9b",
+      "target_address": "0x5feb90",
+      "text": "Direct CALL at 00495c96, ADD ESP at 00495ca7 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "00495cbf",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "00495cd0",
+      "frame_offset": 160,
+      "match": "CALL...ADD ESP",
+      "return_address": "00495cc4",
+      "target_address": "0x5feb90",
+      "text": "Direct CALL at 00495cbf, ADD ESP at 00495cd0 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 16,
+      "call_address": "00495f6d",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "00495f72",
+      "frame_offset": 160,
+      "match": "CALL...ADD ESP",
+      "return_address": "00495f72",
+      "target_address": "0x4952b0",
+      "text": "Direct CALL at 00495f6d, ADD ESP at 00495f72 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 20,
+      "call_address": "0049611a",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0049612d",
+      "frame_offset": 160,
+      "match": "CALL...ADD ESP",
+      "return_address": "0049611f",
+      "target_address": "0x4578f0",
+      "text": "Direct CALL at 0049611a, ADD ESP at 0049612d with uncertain ESP",
+      "type": "call_esp_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 208,
     "local_size": 188,
@@ -481,348 +623,143 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 15,
+      "line": 19,
       "match": "extraout_EBX",
-      "text": "float *extraout_EBX;",
+      "text": "CVector3f *extraout_EBX;",
       "type": "extra_output"
     },
     {
       "description": "Ghidra failed to resolve stack frame",
-      "line": 16,
+      "line": 20,
       "match": "BADSPACEBASE",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "badspacebase"
     },
     {
       "description": "Inferred register parameter",
-      "line": 16,
+      "line": 20,
       "match": "in_ESP",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "register_param"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 57,
-      "match": "._4_4_",
-      "text": "local_a4 = (double)CONCAT44 /* combine 2-byte values */(local_a4._4_4_,",
-      "type": "unknown_field"
+      "description": "Unaffected register variable",
+      "line": 21,
+      "match": "unaff_EBP",
+      "text": "int unaff_EBP;",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 57,
-      "match": "CONCAT44",
-      "text": "local_a4 = (double)CONCAT44 /* combine 2-byte values */(local_a4._4_4_,",
-      "type": "concat_artifact"
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 66,
+      "match": "SUB84",
+      "text": "local_84.z = SUB84 /* extract 2-byte value */(dVar16,0);",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 71,
+      "match": "SUB84",
+      "text": "local_84.y = SUB84 /* extract 2-byte value */(dVar16,0);",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 76,
+      "match": "SUB84",
+      "text": "local_84.y = SUB84 /* extract 2-byte value */(dVar16,0);",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 86,
+      "match": "SUB84",
+      "text": "local_84.y = SUB84 /* extract 2-byte value */(dVar16,0);",
+      "type": "sub_artifact"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 81,
+      "line": 88,
       "match": "6.737184e-39",
-      "text": "fVar18 = 6.737184e-39;",
+      "text": "fVar17 = 6.737184e-39;",
       "type": "suspect_float"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 83,
-      "match": "CONCAT44",
-      "text": "local_7c = (double)CONCAT44 /* combine 2-byte values */((int)ROUND(dVar12),(int)local_7c);",
-      "type": "concat_artifact"
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 92,
+      "match": "SUB84",
+      "text": "local_84.y = SUB84 /* extract 2-byte value */(dVar16,0);",
+      "type": "sub_artifact"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 87,
-      "match": "6.73724e-39",
-      "text": "fVar16 = 6.73724e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 90,
-      "match": "._4_4_",
-      "text": "local_8c._4_4_ = (int)ROUND(dVar13);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 93,
-      "match": "6.737297e-39",
-      "text": "fVar14 = 6.737297e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 96,
-      "match": "._4_4_",
-      "text": "local_8c = (double)CONCAT44 /* combine 2-byte values */(local_8c._4_4_,fVar18);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 96,
-      "match": "CONCAT44",
-      "text": "local_8c = (double)CONCAT44 /* combine 2-byte values */(local_8c._4_4_,fVar18);",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Unknown/mangled field access",
+      "description": "Decompiler double/longlong extraction artifact",
       "line": 97,
-      "match": "._4_4_",
-      "text": "if ((-1 < local_68) || (-1 < local_8c._4_4_)) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 105,
-      "match": "._4_4_",
-      "text": "if ((((local_68 < iVar7) || (local_8c._4_4_ < iVar7)) &&",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 106,
-      "match": "._4_4_",
-      "text": "((iVar7 = (this_ptr->grid_coord).y, iStack_6c < iVar7 || (local_94._4_4_ < iVar7)))) &&",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 110,
-      "match": "CONCAT44",
-      "text": "uVar22 = CONCAT44 /* combine 2-byte values */(fVar2,fVar1);",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 113,
-      "match": "._4_4_",
-      "text": "if ((local_68 != local_8c._4_4_) ||",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 114,
-      "match": "._4_4_",
-      "text": "((iStack_6c != local_94._4_4_ ||",
-      "type": "unknown_field"
+      "match": "SUB84",
+      "text": "local_84.y = SUB84 /* extract 2-byte value */(dVar16,0);",
+      "type": "sub_artifact"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 127,
+      "line": 155,
       "match": "6.737684e-39",
-      "text": "fVar18 = 6.737684e-39;",
+      "text": "local_34 = 6.737684e-39 - (float)local_28;",
       "type": "suspect_float"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 153,
-      "match": "CONCAT44",
-      "text": "local_8c = (double)CONCAT44 /* combine 2-byte values */(fVar20,fVar19);",
-      "type": "concat_artifact"
+      "description": "Likely misinterpreted integer as float",
+      "line": 159,
+      "match": "6.737684e-39",
+      "text": "local_34 = (float)(local_28 + 1) - 6.737684e-39;",
+      "type": "suspect_float"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 156,
-      "match": "._4_4_",
-      "text": "iVar7 = local_58 - local_84._4_4_;",
-      "type": "unknown_field"
+      "description": "Unaffected register variable",
+      "line": 163,
+      "match": "unaff_EBP",
+      "text": "fVar12 = (float10)unaff_EBP * (float10)local_34;",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 160,
-      "match": "._4_4_",
-      "text": "iVar7 = local_84._4_4_ - local_58;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 189,
-      "match": "&stack0xffffff44",
-      "text": "(this_ptr_00,ray_start,(CVector3f *)&stack0xffffff44,&local_b0,",
-      "type": "stack_ref"
+      "description": "Unaffected register variable",
+      "line": 168,
+      "match": "unaff_EBP",
+      "text": "((double)((float10)unaff_EBP * (float10)local_5c -",
+      "type": "unaffected_reg"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 192,
+      "line": 190,
       "match": "extraout_EBX",
-      "text": "if ((extraout_EBX != (float *)0x0) && (extraout_EBX != &local_b0.y)) {",
+      "text": "if ((extraout_EBX != (CVector3f *)0x0) && (extraout_EBX != &local_84)) {",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 190,
+      "match": "extraout_EBX",
+      "text": "if ((extraout_EBX != (CVector3f *)0x0) && (extraout_EBX != &local_84)) {",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 191,
+      "match": "extraout_EBX",
+      "text": "extraout_EBX->x = local_84.x;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 192,
       "match": "extraout_EBX",
-      "text": "if ((extraout_EBX != (float *)0x0) && (extraout_EBX != &local_b0.y)) {",
+      "text": "extraout_EBX->y = local_84.y;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 193,
       "match": "extraout_EBX",
-      "text": "*extraout_EBX = local_b0.y;",
+      "text": "extraout_EBX->z = local_84.z;",
       "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 194,
-      "match": "extraout_EBX",
-      "text": "extraout_EBX[1] = local_b0.z;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 195,
-      "match": "extraout_EBX",
-      "text": "extraout_EBX[2] = local_a4._0_4_;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 195,
-      "match": "._0_4_",
-      "text": "extraout_EBX[2] = local_a4._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 198,
-      "match": "._4_4_",
-      "text": "*out_intersection_type = local_9c._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 211,
-      "match": "._4_4_",
-      "text": "iVar6 = local_58 - local_7c._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 222,
-      "match": "._4_4_",
-      "text": "iStack_6c = iStack_6c + local_84._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 223,
-      "match": "._4_4_",
-      "text": "local_60 = local_60 - local_7c._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0xa0",
-      "fix_address": "00495b7c",
-      "frame_offset": 160,
-      "match": "AND ESP",
-      "sub_esp_offset": 160,
-      "text": "Stack alignment at 00495b7c (SUB ESP, 0xa0 before)",
-      "type": "stack_align_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "00495bc9",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "00495bda",
-      "frame_offset": 160,
-      "match": "CALL...ADD ESP",
-      "return_address": "00495bce",
-      "target_address": "0x5feb90",
-      "text": "Direct CALL at 00495bc9, ADD ESP at 00495bda with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "00495bf2",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "00495c03",
-      "frame_offset": 160,
-      "match": "CALL...ADD ESP",
-      "return_address": "00495bf7",
-      "target_address": "0x5feb90",
-      "text": "Direct CALL at 00495bf2, ADD ESP at 00495c03 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "00495c1b",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "00495c2c",
-      "frame_offset": 160,
-      "match": "CALL...ADD ESP",
-      "return_address": "00495c20",
-      "target_address": "0x5feb90",
-      "text": "Direct CALL at 00495c1b, ADD ESP at 00495c2c with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "00495c6e",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "00495c7f",
-      "frame_offset": 160,
-      "match": "CALL...ADD ESP",
-      "return_address": "00495c73",
-      "target_address": "0x5feb90",
-      "text": "Direct CALL at 00495c6e, ADD ESP at 00495c7f with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "00495c96",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "00495ca7",
-      "frame_offset": 160,
-      "match": "CALL...ADD ESP",
-      "return_address": "00495c9b",
-      "target_address": "0x5feb90",
-      "text": "Direct CALL at 00495c96, ADD ESP at 00495ca7 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "00495cbf",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "00495cd0",
-      "frame_offset": 160,
-      "match": "CALL...ADD ESP",
-      "return_address": "00495cc4",
-      "target_address": "0x5feb90",
-      "text": "Direct CALL at 00495cbf, ADD ESP at 00495cd0 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 16,
-      "call_address": "00495f6d",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "00495f72",
-      "frame_offset": 160,
-      "match": "CALL...ADD ESP",
-      "return_address": "00495f72",
-      "target_address": "0x4952b0",
-      "text": "Direct CALL at 00495f6d, ADD ESP at 00495f72 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 20,
-      "call_address": "0049611a",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0049612d",
-      "frame_offset": 160,
-      "match": "CALL...ADD ESP",
-      "return_address": "0049611f",
-      "target_address": "0x4578f0",
-      "text": "Direct CALL at 0049611a, ADD ESP at 0049612d with uncertain ESP",
-      "type": "call_esp_anchor"
     }
   ]
 }

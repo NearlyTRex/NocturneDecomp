@@ -11,14 +11,13 @@ int __cdecl core_door_cpp_CDoor_getMoveType_FUN_00481070(CDoor *this_ptr)
 {
   char *message;
   BADSPACEBASE *in_ESP;
-  float unaff_ESI;
   int in_stack_00000008;
+  CVector3f local_18;
   
   core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-            (&this_ptr->base_actor,(CVector3f *)&stack0xffffffe8,
-             (CVector3f *)(in_stack_00000008 + 0x20));
+            (&this_ptr->base_actor,&local_18,(CVector3f *)(in_stack_00000008 + 0x20));
   message = support_newmsg_cpp_getLocalizedString_FUN_005441f0("The door is locked from the other side.");
-  if (unaff_ESI <= 0.0) {
+  if (local_18.z <= 0.0) {
     if ((this_ptr->allowed_sides & 2) != 0) goto LAB_004811fd;
     if (this_ptr->allowed_sides != 0) {
       core_door_cpp_CDoor_FUN_00481210(this_ptr);
@@ -32,12 +31,12 @@ LAB_004811fd:
       switch(this_ptr->door_type) {
       case 0:
         if (this_ptr->door_swing != 0) {
-          unaff_ESI = -unaff_ESI;
+          local_18.z = -local_18.z;
         }
         if (this_ptr->door_state != 0) {
-          unaff_ESI = -unaff_ESI;
+          local_18.z = -local_18.z;
         }
-        if (0.0 <= unaff_ESI) {
+        if (0.0 <= local_18.z) {
           return 2;
         }
         return 3;
@@ -65,12 +64,12 @@ LAB_004811fd:
   return 0;
 switchD_00481208_caseD_2:
   if (this_ptr->door_side != 1) {
-    unaff_ESI = -unaff_ESI;
+    local_18.z = -local_18.z;
   }
   if (this_ptr->door_state != 0) {
-    unaff_ESI = -unaff_ESI;
+    local_18.z = -local_18.z;
   }
-  if (0.0 <= unaff_ESI) {
+  if (0.0 <= local_18.z) {
     return 4;
   }
   return 5;

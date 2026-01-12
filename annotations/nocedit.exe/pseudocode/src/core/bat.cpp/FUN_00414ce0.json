@@ -1,21 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 78,
-    "complexity_score": 215,
+    "complexity_score": 147,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 35,
-    "suspect_count": 15,
+    "pseudocode_lines": 32,
+    "suspect_count": 10,
     "suspect_types": [
-      "call_esp_anchor",
-      "concat_artifact",
       "extra_output",
-      "stack_align_anchor",
       "stack_param",
       "sub_artifact"
     ],
-    "total_lines": 113
+    "total_lines": 110
   },
   "cross_references": [
     {
@@ -57,6 +54,20 @@
     }
   ],
   "globals": [],
+  "pcode_overrides": {
+    "00414ce7": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffe4,4)"
+    ],
+    "00414d3d": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffe4,4)"
+    ],
+    "00414d84": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffe4,4)"
+    ],
+    "00414dab": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffe4,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.529411764705882,
     "instruction_count": 68,
@@ -96,6 +107,57 @@
     },
     "pcode_op_count": 444
   },
+  "resolved_suspects": [
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x1c",
+      "fix_address": "00414ce7",
+      "frame_offset": 28,
+      "match": "AND ESP",
+      "sub_esp_offset": 28,
+      "text": "Stack alignment at 00414ce7 (SUB ESP, 0x1c before)",
+      "type": "stack_align_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "00414d2c",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "00414d3d",
+      "frame_offset": 28,
+      "match": "CALL...ADD ESP",
+      "return_address": "00414d31",
+      "target_address": "0x5feb90",
+      "text": "Direct CALL at 00414d2c, ADD ESP at 00414d3d with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 16,
+      "call_address": "00414d7f",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "00414d84",
+      "frame_offset": 28,
+      "match": "CALL...ADD ESP",
+      "return_address": "00414d84",
+      "target_address": "0x442710",
+      "text": "Direct CALL at 00414d7f, ADD ESP at 00414d84 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "00414d9a",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00414dab",
+      "frame_offset": 28,
+      "match": "CALL...ADD ESP",
+      "return_address": "00414d9f",
+      "target_address": "0x5feb90",
+      "text": "Direct CALL at 00414d9a, ADD ESP at 00414dab with uncertain ESP",
+      "type": "call_esp_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 52,
     "local_size": 52,
@@ -167,129 +229,73 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 8,
+      "line": 7,
       "match": "extraout_EBX",
       "text": "int extraout_EBX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
+      "line": 9,
       "match": "extraout_EBX_00",
       "text": "int extraout_EBX_00;",
       "type": "extra_output"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 11,
       "match": "in_stack_00000004",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 15,
       "match": "in_stack_00000004",
-      "text": "fVar1 = *(float *)(in_stack_00000004 + 0x304);",
+      "text": "local_1c = *(float *)(in_stack_00000004 + 0x304);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000004",
+      "text": "((double)(local_1c / (float)*(int *)(in_stack_00000004 + 0x178)));",
       "type": "stack_param"
     },
     {
       "description": "Decompiler double/longlong extraction artifact",
-      "line": 18,
+      "line": 19,
       "match": "SUB84",
-      "text": "local_28 = SUB84 /* extract 2-byte value */((double)fVar1,0);",
+      "text": "local_18 = SUB84 /* extract 2-byte value */(dVar2,0);",
       "type": "sub_artifact"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_00000004",
-      "text": "dVar3 = (double)(fVar1 / (float)*(int *)(in_stack_00000004 + 0x178));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 23,
-      "match": "CONCAT44",
-      "text": "fStack_24 = (float)(double)CONCAT44 /* combine 2-byte values */(local_28,uVar4) - (float)dVar3 * fVar1;",
-      "type": "concat_artifact"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 24,
+      "line": 21,
       "match": "extraout_EBX_00",
-      "text": "iVar2 = extraout_EBX_00;",
+      "text": "iVar1 = extraout_EBX_00;",
       "type": "extra_output"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 27,
+      "line": 25,
       "match": "in_stack_00000004",
-      "text": "dVar3 = (double)(-fVar1 / (float)*(int *)(in_stack_00000004 + 0x178));",
+      "text": "((double)(-local_1c / (float)*(int *)(in_stack_00000004 + 0x178)));",
       "type": "stack_param"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 30,
-      "match": "CONCAT44",
-      "text": "fStack_24 = (float)dVar3 * fVar1 + (float)(double)CONCAT44 /* combine 2-byte values */(local_28,uVar4);",
-      "type": "concat_artifact"
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 26,
+      "match": "SUB84",
+      "text": "local_18 = SUB84 /* extract 2-byte value */(dVar2,0);",
+      "type": "sub_artifact"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 31,
+      "line": 28,
       "match": "extraout_EBX",
-      "text": "iVar2 = extraout_EBX;",
+      "text": "iVar1 = extraout_EBX;",
       "type": "extra_output"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x1c",
-      "fix_address": "00414ce7",
-      "frame_offset": 28,
-      "match": "AND ESP",
-      "sub_esp_offset": 28,
-      "text": "Stack alignment at 00414ce7 (SUB ESP, 0x1c before)",
-      "type": "stack_align_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "00414d2c",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "00414d3d",
-      "frame_offset": 28,
-      "match": "CALL...ADD ESP",
-      "return_address": "00414d31",
-      "target_address": "0x5feb90",
-      "text": "Direct CALL at 00414d2c, ADD ESP at 00414d3d with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 16,
-      "call_address": "00414d7f",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "00414d84",
-      "frame_offset": 28,
-      "match": "CALL...ADD ESP",
-      "return_address": "00414d84",
-      "target_address": "0x442710",
-      "text": "Direct CALL at 00414d7f, ADD ESP at 00414d84 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "00414d9a",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "00414dab",
-      "frame_offset": 28,
-      "match": "CALL...ADD ESP",
-      "return_address": "00414d9f",
-      "target_address": "0x5feb90",
-      "text": "Direct CALL at 00414d9a, ADD ESP at 00414dab with uncertain ESP",
-      "type": "call_esp_anchor"
     }
   ]
 }

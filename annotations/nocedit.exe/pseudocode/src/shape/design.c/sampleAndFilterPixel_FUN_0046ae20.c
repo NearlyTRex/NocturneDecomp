@@ -20,7 +20,8 @@ shape_design_c_sampleAndFilterPixel_FUN_0046ae20
   BADSPACEBASE *in_ESP;
   double dVar1;
   double dVar2;
-  double *alpha_accumulator;
+  uint in_stack_ffffff98;
+  uint uStack_64;
   int local_60;
   double local_4c;
   double local_44;
@@ -48,7 +49,6 @@ shape_design_c_sampleAndFilterPixel_FUN_0046ae20
   dVar1 = crt_math_c_round_FUN_005fe6b0(dVar1);
   local_1c = (int)ROUND(dVar1);
   dVar1 = crt_math_c_ceil_FUN_006001b2(coord_x2);
-  alpha_accumulator = (double *)0x46aef7;
   dVar1 = crt_math_c_round_FUN_005fe6b0(dVar1);
   local_18 = (int)ROUND(dVar1);
   for (local_14 = local_24; local_14 < local_20; local_14 = local_14 + 1) {
@@ -56,18 +56,20 @@ shape_design_c_sampleAndFilterPixel_FUN_0046ae20
                       ((double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(coord_y1,0),(int)((ulonglong)(double)local_14 >> 0x20)
                                        ),
                        (double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(coord_y2,0),(int)((ulonglong)coord_y1 >> 0x20)),
-                       (double)CONCAT44 /* combine 2-byte values */(alpha_accumulator,(int)((ulonglong)coord_y2 >> 0x20)));
+                       (double)CONCAT44 /* combine 2-byte values */(in_stack_ffffff98,(int)((ulonglong)coord_y2 >> 0x20)));
     for (local_60 = local_1c; local_60 < local_18; local_60 = local_60 + 1) {
       dVar2 = shape_design_c_calculateSamplingWeight_FUN_0046adc0
                         ((double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(coord_x1,0),
                                           (int)((ulonglong)(double)local_60 >> 0x20)),
                          (double)CONCAT44 /* combine 2-byte values */(SUB84 /* extract 2-byte value */(coord_x2,0),(int)((ulonglong)coord_x1 >> 0x20)),
-                         (double)CONCAT44 /* combine 2-byte values */(alpha_accumulator,(int)((ulonglong)coord_x2 >> 0x20)));
-      alpha_accumulator = &local_34;
+                         (double)CONCAT44 /* combine 2-byte values */(in_stack_ffffff98,(int)((ulonglong)coord_x2 >> 0x20)));
+      dVar2 = dVar2 * dVar1;
+      uStack_64 = (uint)((ulonglong)dVar2 >> 0x20);
       shape_design_c_samplePixelAndAccumulate_FUN_0046ad00
-                (rgb_buffer,alpha_buffer,col_coord,row_coord,local_60,local_14,dVar2 * dVar1,
-                 &local_4c,&local_44,&local_3c,alpha_accumulator);
-      local_2c = local_2c + dVar2 * dVar1;
+                (rgb_buffer,alpha_buffer,col_coord,row_coord,local_60,local_14,dVar2,&local_4c,
+                 &local_44,&local_3c,&local_34);
+      in_stack_ffffff98 = SUB84 /* extract 2-byte value */(dVar2,0);
+      local_2c = local_2c + (double)CONCAT44 /* combine 2-byte values */(uStack_64,in_stack_ffffff98);
     }
   }
   if (0.0 < local_2c) {

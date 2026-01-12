@@ -1,22 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 209,
-    "complexity_score": 309,
+    "complexity_score": 120,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 12,
-    "pseudocode_lines": 54,
-    "suspect_count": 22,
+    "pseudocode_lines": 55,
+    "suspect_count": 5,
     "suspect_types": [
       "badspacebase",
-      "call_esp_anchor",
-      "format_string_mismatch",
       "pointer_cast",
-      "register_param",
-      "stack_ref",
-      "variadic_anchor"
+      "register_param"
     ],
-    "total_lines": 263
+    "total_lines": 264
   },
   "cross_references": [
     {
@@ -157,6 +153,50 @@
     "declared_params": 3,
     "estimated_params": 3
   },
+  "pcode_overrides": {
+    "0046b9d2": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffb34,4)"
+    ],
+    "0046b9f2": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffb34,4)"
+    ],
+    "0046ba16": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffb34,4)"
+    ],
+    "0046ba41": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffb34,4)"
+    ],
+    "0046ba61": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffb34,4)"
+    ],
+    "0046ba85": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffb34,4)"
+    ],
+    "0046baad": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffb34,4)"
+    ],
+    "0046bacd": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffb34,4)"
+    ],
+    "0046baf1": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffb34,4)"
+    ],
+    "0046bafd": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffb34,4)"
+    ],
+    "0046bb09": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffb34,4)"
+    ],
+    "0046bb24": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffb34,4)"
+    ],
+    "0046bb46": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffb34,4)"
+    ],
+    "0046bb71": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffb34,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 3.8225806451612905,
     "instruction_count": 186,
@@ -186,107 +226,7 @@
     },
     "pcode_op_count": 711
   },
-  "stack_frame": {
-    "frame_size": 1260,
-    "local_size": 1248,
-    "param_offset": 4,
-    "param_size": 12,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_4dc",
-        "offset": -1244,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_dc",
-        "offset": -220,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": true,
-        "name": "image_buffer",
-        "offset": 4,
-        "size": 4,
-        "type": "void *"
-      },
-      {
-        "is_param": true,
-        "name": "output_filename",
-        "offset": 8,
-        "size": 4,
-        "type": "char *"
-      },
-      {
-        "is_param": true,
-        "name": "texture_size",
-        "offset": 12,
-        "size": 4,
-        "type": "int"
-      }
-    ]
-  },
-  "suspects": [
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 8,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 8,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 22,
-      "match": "(byte *)((int)",
-      "text": "((byte *)((int)image_buffer + texture_size + -1),texture_size,texture_size,",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 34,
-      "match": "(byte *)((int)",
-      "text": "((byte *)((int)image_buffer + texture_size + -1),texture_size,texture_size,",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 46,
-      "match": "(byte *)((int)",
-      "text": "((byte *)((int)image_buffer + texture_size + -1),texture_size,texture_size,",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 52,
-      "match": "&stack0xfffffb24",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffb24,\"%s%s\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 55,
-      "match": "&stack0xfffffb24",
-      "text": "(byte *)-texture_size,(int)output_filename,&stack0xfffffb24);",
-      "type": "stack_ref"
-    },
+  "resolved_suspects": [
     {
       "add_esp_value": 16,
       "call_address": "0046bb41",
@@ -302,17 +242,6 @@
       "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
       "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0046bb41 (EBP frame + ADD ESP)",
       "type": "variadic_anchor"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s%s\" has 2 specifiers but 0 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s%s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 52,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffb24,\"%s%s\");",
-      "text": "Format string expects 2 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 24,
@@ -482,6 +411,94 @@
       "target_address": "0x46b770",
       "text": "Direct CALL at 0046bb6c, ADD ESP at 0046bb71 with uncertain ESP",
       "type": "call_esp_anchor"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 1260,
+    "local_size": 1248,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_4dc",
+        "offset": -1244,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_dc",
+        "offset": -220,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "image_buffer",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "output_filename",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "texture_size",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 8,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 8,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 23,
+      "match": "(byte *)((int)",
+      "text": "((byte *)((int)image_buffer + texture_size + -1),texture_size,texture_size,",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 35,
+      "match": "(byte *)((int)",
+      "text": "((byte *)((int)image_buffer + texture_size + -1),texture_size,texture_size,",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 47,
+      "match": "(byte *)((int)",
+      "text": "((byte *)((int)image_buffer + texture_size + -1),texture_size,texture_size,",
+      "type": "pointer_cast"
     }
   ]
 }

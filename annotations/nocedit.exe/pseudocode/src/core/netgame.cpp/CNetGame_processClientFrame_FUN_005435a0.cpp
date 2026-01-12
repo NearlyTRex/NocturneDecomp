@@ -14,8 +14,8 @@ void __cdecl core_netgame_cpp_CNetGame_processClientFrame_FUN_005435a0(CNetGame 
   int iVar1;
   int iVar2;
   int iVar3;
-  float fVar4;
-  uint *src;
+  float local_20;
+  uint *local_18;
   
   if (((this_ptr->connection_type == 2) && (this_ptr->network_mode == 3)) &&
      (-1 < *(int *)this_ptr->padding)) {
@@ -41,17 +41,17 @@ LAB_00543605:
               iVar2 = *(int *)(this_ptr->players[this_ptr->local_player_index].field5_0x38 + 0x10);
               if (0 < g_SimFrameCount) {
                 iVar3 = 0;
-                src = &DAT_02f9c128;
+                local_18 = &DAT_02f9c128;
                 do {
                   if (*(int *)((int)&g_SimFrameHistory + iVar3) < iVar2) {
                     g_SimFrameCount = g_SimFrameCount + -1;
                     crt_string_c_memmove_FUN_005fe5e0
-                              ((void *)((int)&g_SimFrameHistory + iVar3),src,
+                              ((void *)((int)&g_SimFrameHistory + iVar3),local_18,
                                (g_SimFrameCount - iVar1) * 100);
                   }
                   else {
                     iVar1 = iVar1 + 1;
-                    src = src + 0x19;
+                    local_18 = local_18 + 0x19;
                     iVar3 = iVar3 + 100;
                   }
                 } while (iVar1 < g_SimFrameCount);
@@ -91,14 +91,14 @@ LAB_00543605:
       }
       core_netgame_cpp_CNetGame_receivePackets_FUN_005405b0(this_ptr);
       if (this_ptr->connection_type == 2) {
-        fVar4 = (float)(int)(g_CurrentGameTime - DAT_02f7c8c8) * (float)1.52587890625e-05;
-        if (fVar4 < 0.0) {
-          fVar4 = 0.0;
+        local_20 = (float)(int)(g_CurrentGameTime - DAT_02f7c8c8) * (float)1.52587890625e-05;
+        if (local_20 < 0.0) {
+          local_20 = 0.0;
         }
-        if ((float)30 < fVar4) {
-          fVar4 = 30.0;
+        if ((float)30 < local_20) {
+          local_20 = 30.0;
         }
-        if ((float)0.10000000000000001 < fVar4) {
+        if ((float)0.10000000000000001 < local_20) {
           core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_00543970();
         }
         goto LAB_00543605;

@@ -1,20 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 267,
-    "complexity_score": 466,
+    "complexity_score": 246,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 12,
     "pseudocode_lines": 126,
-    "suspect_count": 30,
+    "suspect_count": 10,
     "suspect_types": [
       "badspacebase",
-      "call_esp_anchor",
-      "callind_anchor",
       "register_param",
-      "stack_align_anchor",
       "stack_param",
-      "stack_ref",
       "variadic_preserve_ebp"
     ],
     "total_lines": 393
@@ -218,6 +214,62 @@
     "declared_params": 1,
     "estimated_params": 3
   },
+  "pcode_overrides": {
+    "005448b9": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffb8,4)"
+    ],
+    "005448c8": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffb8,4)"
+    ],
+    "005448ec": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffb8,4)"
+    ],
+    "0054491b": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffb8,4)"
+    ],
+    "00544925": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffb8,4)"
+    ],
+    "00544937": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffb8,4)"
+    ],
+    "00544965": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffb8,4)"
+    ],
+    "00544974": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffb8,4)"
+    ],
+    "00544988": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffb8,4)"
+    ],
+    "005449bf": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffb8,4)"
+    ],
+    "005449f1": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffb8,4)"
+    ],
+    "00544ad1": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffb8,4)"
+    ],
+    "00544ada": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffb8,4)"
+    ],
+    "00544ae9": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffb8,4)"
+    ],
+    "00544af5": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffb8,4)"
+    ],
+    "00544b0c": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffb8,4)"
+    ],
+    "00544b33": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffb8,4)"
+    ],
+    "00544b3c": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffb8,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.9818181818181815,
     "instruction_count": 220,
@@ -257,124 +309,7 @@
     },
     "pcode_op_count": 1096
   },
-  "stack_frame": {
-    "frame_size": 96,
-    "local_size": 92,
-    "param_offset": 4,
-    "param_size": 4,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_58",
-        "offset": -88,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": true,
-        "name": "this_ptr",
-        "offset": 4,
-        "size": 4,
-        "type": "CNPC *"
-      }
-    ]
-  },
-  "stack_patterns": {
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
-    "pattern_count": 1,
-    "pattern_types": [
-      "stack_alignment"
-    ],
-    "patterns": [
-      {
-        "address": "005448b9",
-        "description": "Stack alignment (AND ESP, 0xfffffff8)",
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
-        "instruction": "AND ESP,0xfffffff8",
-        "pattern_id": "stack_alignment"
-      }
-    ],
-    "severity": "medium"
-  },
-  "suspects": [
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 13,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 13,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000008",
-      "text": "SCollisionInfo *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_00000008",
-      "text": "collision_info = in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 47,
-      "match": "&stack0xfffffff0",
-      "text": "((CDemonActor *)this_ptr,(CVector3f *)&stack0xfffffff0,input_local_point);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 56,
-      "match": "in_stack_00000008",
-      "text": "(float)in_stack_00000008 * fVar4 * fVar3;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 98,
-      "match": "in_stack_00000008",
-      "text": "(float)in_stack_00000008 * (float)32;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 101,
-      "match": "in_stack_00000008",
-      "text": "*(float *)((this_ptr->base_character).field2_0x240c + 0x1c) * (float)in_stack_00000008 +",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 104,
-      "match": "in_stack_00000008",
-      "text": "*(float *)((this_ptr->base_character).field2_0x240c + 0x20) * (float)in_stack_00000008 +",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 107,
-      "match": "in_stack_00000008",
-      "text": "*(float *)((this_ptr->base_character).field2_0x240c + 0x24) * (float)in_stack_00000008 +",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 121,
-      "match": "&stack0xffffffdc",
-      "text": "puStack_2c = &stack0xffffffdc;",
-      "type": "stack_ref"
-    },
+  "resolved_suspects": [
     {
       "add_esp_value": 4,
       "callind_address": "00544931",
@@ -385,20 +320,6 @@
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 00544931, ADD ESP at 00544937",
       "type": "callind_anchor"
-    },
-    {
-      "call_address": "00544b1c",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function without ADD ESP; fix by preserving ESP across CALL",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "frame_offset": 72,
-      "match": "CALL engine_console.cpp_CConsole_printf_FUN_00441890",
-      "return_address": "00544b21",
-      "target_address": "0x441890",
-      "target_function": "engine_console.cpp_CConsole_printf_FUN_00441890",
-      "text": "Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 00544b1c (EBP frame, no ADD ESP)",
-      "type": "variadic_preserve_ebp"
     },
     {
       "align_instruction": "AND ESP,0xfffffff8",
@@ -617,6 +538,125 @@
       "target_address": "0x52d4f0",
       "text": "Direct CALL at 00544b37, ADD ESP at 00544b3c with uncertain ESP",
       "type": "call_esp_anchor"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 96,
+    "local_size": 92,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CNPC *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "005448b9",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 12,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 12,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000008",
+      "text": "SCollisionInfo *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 36,
+      "match": "in_stack_00000008",
+      "text": "collision_info = in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 58,
+      "match": "in_stack_00000008",
+      "text": "(float)in_stack_00000008 * fVar4 * fVar3;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 100,
+      "match": "in_stack_00000008",
+      "text": "(float)in_stack_00000008 * (float)32;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 101,
+      "match": "in_stack_00000008",
+      "text": "fStack_3c = *(float *)((this_ptr->base_character).field2_0x240c + 0x1c) * (float)in_stack_00000008",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 103,
+      "match": "in_stack_00000008",
+      "text": "fStack_38 = *(float *)((this_ptr->base_character).field2_0x240c + 0x20) * (float)in_stack_00000008",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 106,
+      "match": "in_stack_00000008",
+      "text": "fStack_34 = *(float *)((this_ptr->base_character).field2_0x240c + 0x24) * (float)in_stack_00000008",
+      "type": "stack_param"
+    },
+    {
+      "call_address": "00544b1c",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function without ADD ESP; fix by preserving ESP across CALL",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "frame_offset": 72,
+      "match": "CALL engine_console.cpp_CConsole_printf_FUN_00441890",
+      "return_address": "00544b21",
+      "target_address": "0x441890",
+      "target_function": "engine_console.cpp_CConsole_printf_FUN_00441890",
+      "text": "Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 00544b1c (EBP frame, no ADD ESP)",
+      "type": "variadic_preserve_ebp"
     }
   ],
   "vtable_info": {

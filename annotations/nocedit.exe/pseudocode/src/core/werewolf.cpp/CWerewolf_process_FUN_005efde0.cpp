@@ -30,7 +30,8 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_pt
   int iVar14;
   double dVar15;
   float in_stack_00000008;
-  SCollisionInfo *in_stack_fffffce0;
+  SCollisionInfo *in_stack_fffffc66;
+  SDamageInfo local_320;
   SDamageInfo local_2e4;
   SDamageInfo local_2a8;
   SDamageInfo local_26c;
@@ -157,7 +158,7 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_pt
   iVar7 = core_charactr_cpp_CCharacter_FUN_0042ca70((CCharacter *)this_ptr);
   if (iVar7 == 0) {
     iVar7 = (*(this_ptr->base_enemy).base_character.base_actor.vtable[1].hasCollision)
-                      ((CDemonActor *)this_ptr,in_stack_fffffce0);
+                      ((CDemonActor *)this_ptr,in_stack_fffffc66);
     if ((iVar7 == 0) &&
        (*(CHero **)((this_ptr->base_enemy).field6_0xbe38 + 4) == g_HeroActors[g_LocalHeroIndex])) {
       core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_2a8);
@@ -204,8 +205,11 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_pt
         if (2 < local_18) {
           if (g_HeroActors[g_LocalHeroIndex] !=
               *(CHero **)((this_ptr->base_enemy).field6_0xbe38 + 4)) {
-            core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffce0);
-            local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+            core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_320);
+            local_320.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(7.0,15.0);
+            local_320.attacker = (CDemonActor *)this_ptr;
+            local_320.wielder = (CDemonActor *)this_ptr;
+            local_14 = local_320.damage_amount;
             pCVar9 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                                (&local_74,&g_ZeroVector,
                                 (CMatrix3x4f *)
@@ -268,7 +272,9 @@ LAB_005f094d:
             g_CurrentLineNumber = 0x1ad;
             core_main_c_displayErrorAndQuit_FUN_00506f10("Alpha werewolf requires 2 waypoints");
           }
-          engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"Phase: %d, Timer: %f\n");
+          engine_console_cpp_CConsole_printf_FUN_00441890
+                    (g_CConsolePtr,"Phase: %d, Timer: %f\n",this_ptr->phase,
+                     (double)this_ptr->phase_timer);
           if ((this_ptr->phase == 1) || (this_ptr->phase == 3)) {
             pCVar9 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                                (*(CDemonActor **)((this_ptr->base_enemy).field6_0xbe38 + 4),
@@ -646,7 +652,7 @@ LAB_005efff0:
     if (uVar4 != 3) goto LAB_005f028d;
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&pCVar1->motion_controller,0,1);
     engine_console_cpp_CConsole_printf_FUN_00441890
-              (g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr);
+              (g_CConsolePtr,"%s confused while walking to scriptDest!\n");
   }
 LAB_005efff8:
   (this_ptr->base_enemy).base_character.model.accumulated_root_motion.z = 0.0;

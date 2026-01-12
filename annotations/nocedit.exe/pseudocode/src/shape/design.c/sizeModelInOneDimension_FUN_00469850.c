@@ -29,7 +29,7 @@ void __cdecl shape_design_c_sizeModelInOneDimension_FUN_00469850(void)
   float local_2c;
   float local_28;
   float local_24;
-  float local_20;
+  float local_20 [4];
   
   bVar5 = 0;
   local_38 = 999999.9;
@@ -68,7 +68,7 @@ void __cdecl shape_design_c_sizeModelInOneDimension_FUN_00469850(void)
   uVar2 = wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
   local_48 = crt_ctype_c_toupper_FUN_005ff9e0(uVar2 & 0xff);
   if ((0x57 < (int)local_48) && ((int)local_48 < 0x5b)) {
-    crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff0c,"Enter %c distance in feet (,min,max for user-defined min/max points) : ");
+    crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff0c,"Enter %c distance in feet (,min,max for user-defined min/max points) : ",local_48);
     engine_2d_c_getInputWithPrompt_FUN_004032c0(local_a4,0x14,0,0x16,&stack0xffffff0c);
     iVar3 = -1;
     pcVar4 = local_a4;
@@ -79,7 +79,8 @@ void __cdecl shape_design_c_sizeModelInOneDimension_FUN_00469850(void)
       pcVar4 = pcVar4 + (uint)bVar5 * -2 + 1;
     } while (cVar1 != '\0');
     if (iVar3 != -2) {
-      local_54 = crt_stdio_c_sscanf_FUN_0060013c(local_a4,"%f,%d,%d");
+      local_54 = crt_stdio_c_sscanf_FUN_0060013c
+                           (local_a4,"%f,%d,%d",local_20,&local_4c,&local_50);
       if (1 < local_54) {
         if (local_54 != 3) {
           engine_2d_c_drawText_FUN_00401fd0("Need distance and two points.",0,0x2c);
@@ -113,16 +114,16 @@ void __cdecl shape_design_c_sizeModelInOneDimension_FUN_00469850(void)
         if (local_48 < 0x59) {
           if (local_48 == 0x58) {
             g_LoadedVertices[local_54].vertex.x =
-                 g_LoadedVertices[local_54].vertex.x * (local_20 / (local_2c - local_38));
+                 g_LoadedVertices[local_54].vertex.x * (local_20[0] / (local_2c - local_38));
           }
         }
         else if (local_48 < 0x5a) {
           g_LoadedVertices[local_54].vertex.y =
-               g_LoadedVertices[local_54].vertex.y * (local_20 / (local_28 - local_34));
+               g_LoadedVertices[local_54].vertex.y * (local_20[0] / (local_28 - local_34));
         }
         else if (local_48 == 0x5a) {
           g_LoadedVertices[local_54].vertex.z =
-               g_LoadedVertices[local_54].vertex.z * (local_20 / (local_24 - local_30));
+               g_LoadedVertices[local_54].vertex.z * (local_20[0] / (local_24 - local_30));
         }
       }
     }

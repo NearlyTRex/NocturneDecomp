@@ -11,11 +11,12 @@ int __cdecl core_tentacle_cpp_CTentacle_FUN_005dbb30(CTentacle *this_ptr)
 {
   SMotion *str1;
   int iVar1;
-  char *unaff_EBP;
+  char *str2;
   
+  str2 = "wait";
   str1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                    (&(this_ptr->base_enemy).base_character.model.motion_controller);
-  iVar1 = crt_string_c_stricmp_FUN_005fe7f0(str1->motion_name,unaff_EBP);
+  iVar1 = crt_string_c_stricmp_FUN_005fe7f0(str1->motion_name,str2);
   if (iVar1 == 0) {
     return 1;
   }

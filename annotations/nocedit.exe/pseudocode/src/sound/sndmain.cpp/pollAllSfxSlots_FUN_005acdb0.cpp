@@ -12,7 +12,7 @@ void __cdecl sound_sndmain_cpp_pollAllSfxSlots_FUN_005acdb0(void)
   uint uVar1;
   int iVar2;
   CSfxSlot *this_ptr;
-  CSfxSlot *unaff_ESI;
+  float local_14;
   
   if (g_SoundLockCount < 1) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
@@ -24,19 +24,18 @@ void __cdecl sound_sndmain_cpp_pollAllSfxSlots_FUN_005acdb0(void)
   g_SoundStartTime = wincore_winrun_cpp_getTime_FUN_005f2dc0();
   uVar1 = sound_sndmain_cpp_hasHardware3DSound_FUN_005ab5a0();
   if (uVar1 != 0) {
-    unaff_ESI = (CSfxSlot *)((float)(g_SoundStartTime - iVar2) * (float)8.4771050347222196e-07);
-    if ((float)unaff_ESI < 0.0) {
-      unaff_ESI = (CSfxSlot *)0x0;
+    local_14 = (float)(g_SoundStartTime - iVar2) * (float)8.4771050347222196e-07;
+    if (local_14 < 0.0) {
+      local_14 = 0.0;
     }
-    if ((float)0.25 < (float)unaff_ESI) {
-      unaff_ESI = (CSfxSlot *)0x3e800000;
+    if ((float)0.25 < local_14) {
+      local_14 = 0.25;
     }
   }
   this_ptr = g_SfxSlots;
   do {
-    iVar2 = sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(this_ptr,(float)unaff_ESI);
+    iVar2 = sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(this_ptr,local_14);
     if (iVar2 != 0) {
-      unaff_ESI = this_ptr;
       sound_sndmain_cpp_CSfxSlot_pollHwHandle_FUN_005a7fe0(this_ptr);
     }
     this_ptr = this_ptr + 1;

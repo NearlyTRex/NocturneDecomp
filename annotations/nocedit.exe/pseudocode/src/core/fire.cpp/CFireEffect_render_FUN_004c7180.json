@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 347,
-    "complexity_score": 451,
+    "complexity_score": 276,
     "cross_reference_count": 4,
     "function_call_count": 17,
     "global_count": 86,
     "pseudocode_lines": 156,
-    "suspect_count": 28,
+    "suspect_count": 11,
     "suspect_types": [
-      "call_esp_anchor",
       "callind_preserve",
       "pointer_cast"
     ],
@@ -720,6 +719,59 @@
     "declared_params": 1,
     "estimated_params": 1
   },
+  "pcode_overrides": {
+    "004c71ec": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
+    ],
+    "004c723c": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
+    ],
+    "004c7258": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
+    ],
+    "004c726d": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
+    ],
+    "004c728c": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
+    ],
+    "004c72ac": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
+    ],
+    "004c72c1": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
+    ],
+    "004c72e2": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
+    ],
+    "004c730a": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
+    ],
+    "004c732f": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
+    ],
+    "004c7398": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
+    ],
+    "004c73b6": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
+    ],
+    "004c73d4": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
+    ],
+    "004c73ef": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
+    ],
+    "004c740a": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
+    ],
+    "004c7425": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
+    ],
+    "004c7490": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.796934865900383,
     "instruction_count": 261,
@@ -757,201 +809,7 @@
     },
     "pcode_op_count": 1513
   },
-  "stack_frame": {
-    "frame_size": 8,
-    "local_size": 4,
-    "param_offset": 4,
-    "param_size": 4,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": true,
-        "name": "this_ptr",
-        "offset": 4,
-        "size": 4,
-        "type": "CFireEffect *"
-      }
-    ]
-  },
-  "stack_patterns": {
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
-    "pattern_count": 1,
-    "pattern_types": [
-      "stack_alignment"
-    ],
-    "patterns": [
-      {
-        "address": "004c7186",
-        "description": "Stack alignment (AND ESP, 0xfffffff8)",
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
-        "instruction": "AND ESP,0xfffffff8",
-        "pattern_id": "stack_alignment"
-      }
-    ],
-    "severity": "medium"
-  },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 28,
-      "match": "(int *)((int)",
-      "text": "if (*(int *)((int)g_StakePool[0].box.rotation_matrix.m + iVar1 + -0x1c) == 0) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 30,
-      "match": "(CStake *)((int)",
-      "text": "((CStake *)((int)g_StakePool[0].box.rotation_matrix.m + iVar1 + -0x1c));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 64,
-      "match": "(int *)((int)",
-      "text": "if (*(int *)((int)&g_BulletHolePool[0].actor_ptr + iVar1) != 0) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 66,
-      "match": "(CBulletHole *)((int)",
-      "text": "((CBulletHole *)((int)&g_BulletHolePool[0].position.x + iVar1));",
-      "type": "pointer_cast"
-    },
-    {
-      "add_esp_value": 4,
-      "call_target_type": "reg_offset",
-      "call_target_value": {
-        "offset": 8,
-        "reg": "EAX"
-      },
-      "callind_address": "004c71d0",
-      "callind_assembly": "CALL dword ptr [EAX + 0x8]",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
-      "esp_at_callind": -20,
-      "expected_esp_offset": -16,
-      "fix_address": "004c71d3",
-      "match": "CALLIND...ADD ESP",
-      "prologue_offset": 16,
-      "return_address": "004c71d3",
-      "text": "CALLIND at 004c71d0, ADD ESP at 004c71d3 (no EBP frame)",
-      "type": "callind_preserve"
-    },
-    {
-      "add_esp_value": 4,
-      "call_target_type": "reg_offset",
-      "call_target_value": {
-        "offset": 8,
-        "reg": "EAX"
-      },
-      "callind_address": "004c7205",
-      "callind_assembly": "CALL dword ptr [EAX + 0x8]",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
-      "esp_at_callind": -20,
-      "expected_esp_offset": -16,
-      "fix_address": "004c7208",
-      "match": "CALLIND...ADD ESP",
-      "prologue_offset": 16,
-      "return_address": "004c7208",
-      "text": "CALLIND at 004c7205, ADD ESP at 004c7208 (no EBP frame)",
-      "type": "callind_preserve"
-    },
-    {
-      "add_esp_value": 4,
-      "call_target_type": "reg_offset",
-      "call_target_value": {
-        "offset": 8,
-        "reg": "EAX"
-      },
-      "callind_address": "004c7224",
-      "callind_assembly": "CALL dword ptr [EAX + 0x8]",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
-      "esp_at_callind": -20,
-      "expected_esp_offset": -16,
-      "fix_address": "004c722a",
-      "match": "CALLIND...ADD ESP",
-      "prologue_offset": 16,
-      "return_address": "004c7227",
-      "text": "CALLIND at 004c7224, ADD ESP at 004c722a (no EBP frame)",
-      "type": "callind_preserve"
-    },
-    {
-      "add_esp_value": 4,
-      "call_target_type": "reg_offset",
-      "call_target_value": {
-        "offset": 8,
-        "reg": "EAX"
-      },
-      "callind_address": "004c7348",
-      "callind_assembly": "CALL dword ptr [EAX + 0x8]",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
-      "esp_at_callind": -20,
-      "expected_esp_offset": -16,
-      "fix_address": "004c734b",
-      "match": "CALLIND...ADD ESP",
-      "prologue_offset": 16,
-      "return_address": "004c734b",
-      "text": "CALLIND at 004c7348, ADD ESP at 004c734b (no EBP frame)",
-      "type": "callind_preserve"
-    },
-    {
-      "add_esp_value": 4,
-      "call_target_type": "reg_offset",
-      "call_target_value": {
-        "offset": 8,
-        "reg": "EAX"
-      },
-      "callind_address": "004c7370",
-      "callind_assembly": "CALL dword ptr [EAX + 0x8]",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
-      "esp_at_callind": -20,
-      "expected_esp_offset": -16,
-      "fix_address": "004c7373",
-      "match": "CALLIND...ADD ESP",
-      "prologue_offset": 16,
-      "return_address": "004c7373",
-      "text": "CALLIND at 004c7370, ADD ESP at 004c7373 (no EBP frame)",
-      "type": "callind_preserve"
-    },
-    {
-      "add_esp_value": 4,
-      "call_target_type": "reg_offset",
-      "call_target_value": {
-        "offset": 8,
-        "reg": "EAX"
-      },
-      "callind_address": "004c7447",
-      "callind_assembly": "CALL dword ptr [EAX + 0x8]",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
-      "esp_at_callind": -20,
-      "expected_esp_offset": -16,
-      "fix_address": "004c744a",
-      "match": "CALLIND...ADD ESP",
-      "prologue_offset": 16,
-      "return_address": "004c744a",
-      "text": "CALLIND at 004c7447, ADD ESP at 004c744a (no EBP frame)",
-      "type": "callind_preserve"
-    },
-    {
-      "add_esp_value": 4,
-      "call_target_type": "reg_offset",
-      "call_target_value": {
-        "offset": 8,
-        "reg": "EAX"
-      },
-      "callind_address": "004c746f",
-      "callind_assembly": "CALL dword ptr [EAX + 0x8]",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
-      "esp_at_callind": -20,
-      "expected_esp_offset": -16,
-      "fix_address": "004c7472",
-      "match": "CALLIND...ADD ESP",
-      "prologue_offset": 16,
-      "return_address": "004c7472",
-      "text": "CALLIND at 004c746f, ADD ESP at 004c7472 (no EBP frame)",
-      "type": "callind_preserve"
-    },
+  "resolved_suspects": [
     {
       "add_esp_value": 4,
       "call_address": "004c71e7",
@@ -1172,6 +1030,202 @@
       "target_address": "0x4c0140",
       "text": "Direct CALL at 004c748b, ADD ESP at 004c7490 with uncertain ESP",
       "type": "call_esp_anchor"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFireEffect *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004c7186",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 28,
+      "match": "(int *)((int)",
+      "text": "if (*(int *)((int)g_StakePool[0].box.rotation_matrix.m + iVar1 + -0x1c) == 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 30,
+      "match": "(CStake *)((int)",
+      "text": "((CStake *)((int)g_StakePool[0].box.rotation_matrix.m + iVar1 + -0x1c));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 64,
+      "match": "(int *)((int)",
+      "text": "if (*(int *)((int)&g_BulletHolePool[0].actor_ptr + iVar1) != 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 66,
+      "match": "(CBulletHole *)((int)",
+      "text": "((CBulletHole *)((int)&g_BulletHolePool[0].position.x + iVar1));",
+      "type": "pointer_cast"
+    },
+    {
+      "add_esp_value": 4,
+      "call_target_type": "reg_offset",
+      "call_target_value": {
+        "offset": 8,
+        "reg": "EAX"
+      },
+      "callind_address": "004c71d0",
+      "callind_assembly": "CALL dword ptr [EAX + 0x8]",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
+      "esp_at_callind": -20,
+      "expected_esp_offset": -16,
+      "fix_address": "004c71d3",
+      "match": "CALLIND...ADD ESP",
+      "prologue_offset": 16,
+      "return_address": "004c71d3",
+      "text": "CALLIND at 004c71d0, ADD ESP at 004c71d3 (no EBP frame)",
+      "type": "callind_preserve"
+    },
+    {
+      "add_esp_value": 4,
+      "call_target_type": "reg_offset",
+      "call_target_value": {
+        "offset": 8,
+        "reg": "EAX"
+      },
+      "callind_address": "004c7205",
+      "callind_assembly": "CALL dword ptr [EAX + 0x8]",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
+      "esp_at_callind": -20,
+      "expected_esp_offset": -16,
+      "fix_address": "004c7208",
+      "match": "CALLIND...ADD ESP",
+      "prologue_offset": 16,
+      "return_address": "004c7208",
+      "text": "CALLIND at 004c7205, ADD ESP at 004c7208 (no EBP frame)",
+      "type": "callind_preserve"
+    },
+    {
+      "add_esp_value": 4,
+      "call_target_type": "reg_offset",
+      "call_target_value": {
+        "offset": 8,
+        "reg": "EAX"
+      },
+      "callind_address": "004c7224",
+      "callind_assembly": "CALL dword ptr [EAX + 0x8]",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
+      "esp_at_callind": -20,
+      "expected_esp_offset": -16,
+      "fix_address": "004c722a",
+      "match": "CALLIND...ADD ESP",
+      "prologue_offset": 16,
+      "return_address": "004c7227",
+      "text": "CALLIND at 004c7224, ADD ESP at 004c722a (no EBP frame)",
+      "type": "callind_preserve"
+    },
+    {
+      "add_esp_value": 4,
+      "call_target_type": "reg_offset",
+      "call_target_value": {
+        "offset": 8,
+        "reg": "EAX"
+      },
+      "callind_address": "004c7348",
+      "callind_assembly": "CALL dword ptr [EAX + 0x8]",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
+      "esp_at_callind": -20,
+      "expected_esp_offset": -16,
+      "fix_address": "004c734b",
+      "match": "CALLIND...ADD ESP",
+      "prologue_offset": 16,
+      "return_address": "004c734b",
+      "text": "CALLIND at 004c7348, ADD ESP at 004c734b (no EBP frame)",
+      "type": "callind_preserve"
+    },
+    {
+      "add_esp_value": 4,
+      "call_target_type": "reg_offset",
+      "call_target_value": {
+        "offset": 8,
+        "reg": "EAX"
+      },
+      "callind_address": "004c7370",
+      "callind_assembly": "CALL dword ptr [EAX + 0x8]",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
+      "esp_at_callind": -20,
+      "expected_esp_offset": -16,
+      "fix_address": "004c7373",
+      "match": "CALLIND...ADD ESP",
+      "prologue_offset": 16,
+      "return_address": "004c7373",
+      "text": "CALLIND at 004c7370, ADD ESP at 004c7373 (no EBP frame)",
+      "type": "callind_preserve"
+    },
+    {
+      "add_esp_value": 4,
+      "call_target_type": "reg_offset",
+      "call_target_value": {
+        "offset": 8,
+        "reg": "EAX"
+      },
+      "callind_address": "004c7447",
+      "callind_assembly": "CALL dword ptr [EAX + 0x8]",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
+      "esp_at_callind": -20,
+      "expected_esp_offset": -16,
+      "fix_address": "004c744a",
+      "match": "CALLIND...ADD ESP",
+      "prologue_offset": 16,
+      "return_address": "004c744a",
+      "text": "CALLIND at 004c7447, ADD ESP at 004c744a (no EBP frame)",
+      "type": "callind_preserve"
+    },
+    {
+      "add_esp_value": 4,
+      "call_target_type": "reg_offset",
+      "call_target_value": {
+        "offset": 8,
+        "reg": "EAX"
+      },
+      "callind_address": "004c746f",
+      "callind_assembly": "CALL dword ptr [EAX + 0x8]",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP preserve",
+      "esp_at_callind": -20,
+      "expected_esp_offset": -16,
+      "fix_address": "004c7472",
+      "match": "CALLIND...ADD ESP",
+      "prologue_offset": 16,
+      "return_address": "004c7472",
+      "text": "CALLIND at 004c746f, ADD ESP at 004c7472 (no EBP frame)",
+      "type": "callind_preserve"
     }
   ]
 }

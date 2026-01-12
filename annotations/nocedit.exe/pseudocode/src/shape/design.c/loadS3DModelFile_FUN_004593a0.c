@@ -16,15 +16,17 @@ int __cdecl shape_design_c_loadS3DModelFile_FUN_004593a0(char *filename)
   char *pcVar4;
   char *pcVar5;
   byte bVar6;
-  float *pfVar7;
+  int in_stack_fffff61c;
+  byte local_8dc [4];
   int local_8d8 [500];
   char local_108 [200];
   uint local_40;
   void *local_38;
   FILE *local_34;
-  int local_30;
-  uint local_2c;
-  int local_28 [4];
+  int local_30 [3];
+  byte local_24 [4];
+  byte local_20 [4];
+  byte local_1c [4];
   int local_18;
   SShapeEditorPolygon *local_14;
   
@@ -38,58 +40,67 @@ int __cdecl shape_design_c_loadS3DModelFile_FUN_004593a0(char *filename)
     engine_2d_c_clearInputAndWait_FUN_00403260();
     return 0;
   }
-  pcVar3 = g_LoadedModelName;
+  pcVar4 = g_LoadedModelName;
+  pcVar3 = filename;
   do {
-    cVar1 = *filename;
-    *pcVar3 = cVar1;
+    cVar1 = *pcVar3;
+    *pcVar4 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = filename[1];
-    filename = filename + 2;
-    pcVar3[1] = cVar1;
+    cVar1 = pcVar3[1];
     pcVar3 = pcVar3 + 2;
+    pcVar4[1] = cVar1;
+    pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
   g_PolygonOptimizationPasses = 0;
   g_VertexOptimizationPasses = 0;
   g_SelectedPolygonIndex = -1;
   g_SpatialTreeRoot = (STreeNode *)0x0;
   shape_design_c_skipLines_FUN_00459360(local_34,1);
-  iVar2 = crt_stdio_c_fscanf_FUN_005fe7c0(local_34,"%d\n");
+  iVar2 = crt_stdio_c_fscanf_FUN_005fe7c0(local_34,"%d\n",local_30);
   if (iVar2 == 1) {
-    local_2c = 0x67;
-    if (local_30 != 0x67) {
-      crt_stdio_c_sprintf_FUN_005fdbd0(local_108,"Invalid .S3D version: %d, we can only handle files version of %d");
+    local_30[1] = 0x67;
+    if (local_30[0] != 0x67) {
+      crt_stdio_c_sprintf_FUN_005fdbd0
+                (local_108,"Invalid .S3D version: %d, we can only handle files version of %d",local_30[0],0x67);
       goto LAB_00459491;
     }
     shape_design_c_skipLines_FUN_00459360(local_34,1);
     iVar2 = crt_stdio_c_fscanf_FUN_005fe7c0
-                      (local_34,"%d,%d,%d,%d,%d,%d,%d\n",local_28,&g_PolygonCount,&g_VertexCount);
+                      (local_34,"%d,%d,%d,%d,%d,%d,%d\n",local_30 + 2,&g_PolygonCount,&g_VertexCount
+                       ,&g_PartsCount,local_24,local_20,local_1c);
     if (iVar2 == 7) {
       if (20000 < g_PolygonCount) {
-        crt_stdio_c_sprintf_FUN_005fdbd0(local_108,"Too many polygons: %d, max is %d");
+        crt_stdio_c_sprintf_FUN_005fdbd0
+                  (local_108,"Too many polygons: %d, max is %d",g_PolygonCount,20000);
         goto LAB_00459491;
       }
       if (20000 < g_VertexCount) {
-        crt_stdio_c_sprintf_FUN_005fdbd0(local_108,"Too many vertices: %d, max is %d");
+        crt_stdio_c_sprintf_FUN_005fdbd0
+                  (local_108,"Too many vertices: %d, max is %d",g_VertexCount,20000);
         goto LAB_00459491;
       }
       if (500 < g_PartsCount) {
-        crt_stdio_c_sprintf_FUN_005fdbd0(local_108,"Too many parts: %d, max is %d");
+        crt_stdio_c_sprintf_FUN_005fdbd0
+                  (local_108,"Too many parts: %d, max is %d",g_VertexCount,500);
         goto LAB_00459491;
       }
       shape_design_c_skipLines_FUN_00459360(local_34,1);
       for (local_40 = 0; (int)local_40 < g_PartsCount; local_40 = local_40 + 1) {
-        iVar2 = crt_stdio_c_fscanf_FUN_005fe7c0(local_34,"%d,%d,%d,%d,\"%[^\"]\"\n");
+        iVar2 = crt_stdio_c_fscanf_FUN_005fe7c0
+                          (local_34,"%d,%d,%d,%d,\"%[^\"]\"\n",local_8dc,local_8dc,local_8dc,
+                           local_8d8 + local_40,g_ModelPartNames + local_40);
         if (iVar2 != 5) goto LAB_00459478;
       }
       shape_design_c_skipLines_FUN_00459360(local_34,1);
-      if (0 < local_28[0]) {
+      if (0 < local_30[2]) {
         local_38 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                             (local_28[0] * 0x50,"..\\shape\\design.c",0x3ec);
+                             (local_30[2] * 0x50,"..\\shape\\design.c",0x3ec);
         if (local_38 == (void *)0x0) {
-          crt_stdio_c_sprintf_FUN_005fdbd0(local_108,"Out of memory for texture list, numTextures = %d");
+          crt_stdio_c_sprintf_FUN_005fdbd0
+                    (local_108,"Out of memory for texture list, numTextures = %d",local_30[2]);
           goto LAB_00459491;
         }
-        for (local_40 = 0; (int)local_40 < local_28[0]; local_40 = local_40 + 1) {
+        for (local_40 = 0; (int)local_40 < local_30[2]; local_40 = local_40 + 1) {
           pcVar3 = crt_stdio_c_fgets_FUN_005fefd0(&stack0xfffff620,0x104,local_34);
           if (pcVar3 == (char *)0x0) goto LAB_00459478;
           pcVar3 = &stack0xfffff620;
@@ -150,17 +161,18 @@ LAB_00459796:
         for (local_18 = 0; local_18 < local_8d8[local_40]; local_18 = local_18 + 1) {
           local_14->vertex_indices_count = 3;
           local_14->part_assignment = local_40;
-          pfVar7 = local_14->uv_v;
           iVar2 = crt_stdio_c_fscanf_FUN_005fe7c0
                             (local_34,"%d,%d,%f,%f,%d,%f,%f,%d,%f,%f\n",&stack0xfffff61c,
-                             local_14->vertex_indices,local_14->uv_u);
+                             local_14->vertex_indices,local_14->uv_u,local_14->uv_v,
+                             local_14->vertex_indices + 1,local_14->uv_u + 1,local_14->uv_v + 1,
+                             local_14->vertex_indices + 2,local_14->uv_u + 2,local_14->uv_v + 2);
           if (iVar2 != 10) goto LAB_00459478;
-          if ((int)pfVar7 < 0) {
+          if (in_stack_fffff61c < 0) {
             local_14->polygon_type = 1;
           }
           else {
             local_14->polygon_type = 2;
-            pcVar3 = (char *)((int)pfVar7 * 0x50 + (int)local_38);
+            pcVar3 = (char *)(in_stack_fffff61c * 0x50 + (int)local_38);
             pcVar4 = local_14->lightmap_name;
             do {
               cVar1 = *pcVar3;
@@ -171,7 +183,7 @@ LAB_00459796:
               pcVar4[1] = cVar1;
               pcVar4 = pcVar4 + 2;
             } while (cVar1 != '\0');
-            pcVar3 = (char *)((int)pfVar7 * 0x50 + (int)local_38);
+            pcVar3 = (char *)(in_stack_fffff61c * 0x50 + (int)local_38);
             pcVar4 = local_14->texture_name;
             do {
               cVar1 = *pcVar3;
@@ -197,14 +209,16 @@ LAB_00459796:
           shape_design_c_calculateVertexNormals_FUN_0045be40();
           return 1;
         }
-        iVar2 = crt_stdio_c_fscanf_FUN_005fe7c0(local_34,"%f,%f,%f\n");
+        iVar2 = crt_stdio_c_fscanf_FUN_005fe7c0
+                          (local_34,"%f,%f,%f\n",g_LoadedVertices + local_40,
+                           local_40 * 0x14 + 0x1626410,local_40 * 0x14 + 0x1626414);
         if (iVar2 != 3) break;
         local_40 = local_40 + 1;
       }
     }
   }
 LAB_00459478:
-  crt_stdio_c_sprintf_FUN_005fdbd0(local_108,"%s is corrupt.");
+  crt_stdio_c_sprintf_FUN_005fdbd0(local_108,"%s is corrupt.",filename);
 LAB_00459491:
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_34,"..\\shape\\design.c",0x3ae);
   engine_2d_c_drawText_FUN_00401fd0(local_108,0,0x16);

@@ -1,20 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 139,
-    "complexity_score": 230,
+    "complexity_score": 203,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 85,
-    "suspect_count": 12,
+    "pseudocode_lines": 88,
+    "suspect_count": 10,
     "suspect_types": [
       "badspacebase",
-      "callind_anchor",
       "pointer_cast",
-      "register_param",
-      "stack_align_anchor"
+      "register_param"
     ],
-    "total_lines": 224
+    "total_lines": 227
   },
   "cross_references": [],
   "function": {
@@ -38,6 +36,14 @@
     "confidence": "unknown",
     "declared_params": 4,
     "estimated_params": 4
+  },
+  "pcode_overrides": {
+    "005d2ddc": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff6c,4)"
+    ],
+    "005d2def": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff6c,4)"
+    ]
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.9689922480620154,
@@ -71,6 +77,29 @@
     },
     "pcode_op_count": 770
   },
+  "resolved_suspects": [
+    {
+      "add_esp_value": 4,
+      "callind_address": "005d2dec",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "005d2def",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 148,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 005d2dec, ADD ESP at 005d2def",
+      "type": "callind_anchor"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x94",
+      "fix_address": "005d2ddc",
+      "frame_offset": 148,
+      "match": "AND ESP",
+      "sub_esp_offset": 148,
+      "text": "Stack alignment at 005d2ddc (SUB ESP, 0x94 before)",
+      "type": "stack_align_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 20,
     "local_size": 4,
@@ -150,80 +179,59 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 50,
+      "line": 52,
       "match": "(double *)((int)",
       "text": "pdVar3 = (double *)((int)pdVar3 + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 51,
+      "line": 53,
       "match": "(double *)((int)",
       "text": "pdVar4 = (double *)((int)pdVar4 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 63,
+      "line": 65,
       "match": "(double *)((int)",
       "text": "pdVar3 = (double *)((int)pdVar3 + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 64,
+      "line": 66,
       "match": "(double *)((int)",
       "text": "pdVar4 = (double *)((int)pdVar4 + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 72,
+      "line": 75,
       "match": "(double *)((int)",
       "text": "pdVar3 = (double *)((int)pdVar3 + (uint)bVar6 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 76,
+      "line": 79,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&(pCVar2->position).x + 4) = uStack_80;",
+      "text": "*(uint *)((int)&(pCVar2->position).x + 4) = uStack_88;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 78,
+      "line": 81,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&(pCVar2->position).y + 4) = uStack_78;",
+      "text": "*(uint *)((int)&(pCVar2->position).y + 4) = uStack_80;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 80,
+      "line": 83,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&(pCVar2->position).z + 4) = uStack_70;",
+      "text": "*(uint *)((int)&(pCVar2->position).z + 4) = uStack_78;",
       "type": "pointer_cast"
-    },
-    {
-      "add_esp_value": 4,
-      "callind_address": "005d2dec",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "005d2def",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 148,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 005d2dec, ADD ESP at 005d2def",
-      "type": "callind_anchor"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x94",
-      "fix_address": "005d2ddc",
-      "frame_offset": 148,
-      "match": "AND ESP",
-      "sub_esp_offset": 148,
-      "text": "Stack alignment at 005d2ddc (SUB ESP, 0x94 before)",
-      "type": "stack_align_anchor"
     }
   ],
   "vtable_info": {

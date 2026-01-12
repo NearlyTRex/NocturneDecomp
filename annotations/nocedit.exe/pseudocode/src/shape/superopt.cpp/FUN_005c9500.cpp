@@ -11,7 +11,6 @@ int shape_superopt_cpp_FUN_005c9500(void)
 {
   bool bVar1;
   bool bVar2;
-  SIZE_T size;
   void *pvVar3;
   void *pvVar4;
   int iVar5;
@@ -24,12 +23,10 @@ int shape_superopt_cpp_FUN_005c9500(void)
   byte bVar11;
   int in_stack_00000004;
   double *in_stack_00000008;
-  uint in_stack_fffffe78;
-  uint in_stack_fffffe7c;
-  uint in_stack_fffffe80;
-  uint in_stack_fffffe84;
-  uint in_stack_fffffe88;
-  uint in_stack_fffffe8c;
+  uint local_188 [4];
+  uint local_178;
+  uint uStack_174;
+  uint local_170 [6];
   uint local_158 [6];
   uint local_140;
   uint local_13c;
@@ -108,7 +105,7 @@ int shape_superopt_cpp_FUN_005c9500(void)
       puVar10 = puVar10 + 1;
     }
     puVar9 = local_e0;
-    puVar10 = (uint *)&stack0xfffffe78;
+    puVar10 = local_188;
     for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
       *puVar10 = *puVar9;
       puVar9 = puVar9 + 1;
@@ -130,17 +127,17 @@ int shape_superopt_cpp_FUN_005c9500(void)
           local_d0 = *(uint *)(pdVar6 + 2);
           uStack_cc = *(uint *)((int)pdVar6 + 0x14);
         }
-        if ((double)CONCAT44 /* combine 2-byte values */(in_stack_fffffe7c,in_stack_fffffe78) < *pdVar6) {
-          in_stack_fffffe78 = *(uint *)pdVar6;
-          in_stack_fffffe7c = *(uint *)((int)pdVar6 + 4);
+        if ((double)CONCAT44 /* combine 2-byte values */(local_188[1],local_188[0]) < *pdVar6) {
+          local_188[0] = *(uint *)pdVar6;
+          local_188[1] = *(uint *)((int)pdVar6 + 4);
         }
-        if ((double)CONCAT44 /* combine 2-byte values */(in_stack_fffffe84,in_stack_fffffe80) < pdVar6[1]) {
-          in_stack_fffffe80 = *(uint *)(pdVar6 + 1);
-          in_stack_fffffe84 = *(uint *)((int)pdVar6 + 0xc);
+        if ((double)CONCAT44 /* combine 2-byte values */(local_188[3],local_188[2]) < pdVar6[1]) {
+          local_188[2] = *(uint *)(pdVar6 + 1);
+          local_188[3] = *(uint *)((int)pdVar6 + 0xc);
         }
-        if ((double)CONCAT44 /* combine 2-byte values */(in_stack_fffffe8c,in_stack_fffffe88) < pdVar6[2]) {
-          in_stack_fffffe88 = *(uint *)(pdVar6 + 2);
-          in_stack_fffffe8c = *(uint *)((int)pdVar6 + 0x14);
+        if ((double)CONCAT44 /* combine 2-byte values */(uStack_174,local_178) < pdVar6[2]) {
+          local_178 = *(uint *)(pdVar6 + 2);
+          uStack_174 = *(uint *)((int)pdVar6 + 0x14);
         }
         uVar8 = uVar8 + 1;
         pdVar6 = pdVar6 + 0xc;
@@ -149,9 +146,8 @@ int shape_superopt_cpp_FUN_005c9500(void)
     local_1c = crt_memory_c_malloc_FUN_006021da(*(int *)(in_stack_00000004 + 0x2c) * 0xc0);
     local_28 = 0;
     if (local_1c != (void *)0x0) {
-      size = *(int *)(in_stack_00000004 + 0x2c) * 0xc0;
       local_18 = local_1c;
-      local_20 = crt_memory_c_malloc_FUN_006021da(size);
+      local_20 = crt_memory_c_malloc_FUN_006021da(*(int *)(in_stack_00000004 + 0x2c) * 0xc0);
       local_14 = local_20;
       local_24 = 0;
       if (local_20 == (void *)0x0) {
@@ -159,7 +155,7 @@ int shape_superopt_cpp_FUN_005c9500(void)
         return 0;
       }
       if (*in_stack_00000008 + 0.5 <
-          (double)CONCAT44 /* combine 2-byte values */(in_stack_fffffe7c,size) - (double)CONCAT44 /* combine 2-byte values */(local_e0[1],local_e0[0])) {
+          (double)CONCAT44 /* combine 2-byte values */(local_188[1],local_188[0]) - (double)CONCAT44 /* combine 2-byte values */(local_e0[1],local_e0[0])) {
         local_80 = 0;
         local_78 = 0;
         local_74 = 0;
@@ -188,7 +184,7 @@ int shape_superopt_cpp_FUN_005c9500(void)
         local_12c = 0;
       }
       else if (in_stack_00000008[1] + 0.5 <
-               (double)CONCAT44 /* combine 2-byte values */(in_stack_fffffe84,in_stack_fffffe80) -
+               (double)CONCAT44 /* combine 2-byte values */(local_188[3],local_188[2]) -
                (double)CONCAT44 /* combine 2-byte values */(local_e0[3],local_e0[2])) {
         local_50 = 0;
         local_4c = 0;
@@ -205,7 +201,7 @@ int shape_superopt_cpp_FUN_005c9500(void)
         local_28 = 0;
         local_c0 = (double)CONCAT44 /* combine 2-byte values */(local_e0[3],local_e0[2]) + in_stack_00000008[1];
         puVar9 = &local_c8;
-        puVar10 = (uint *)&stack0xfffffe90;
+        puVar10 = local_170;
         for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {
           *puVar10 = *puVar9;
           puVar9 = puVar9 + (uint)bVar11 * -2 + 1;
@@ -219,8 +215,8 @@ int shape_superopt_cpp_FUN_005c9500(void)
         local_11c = 0x3ff00000;
       }
       else {
-        if ((double)CONCAT44 /* combine 2-byte values */(in_stack_fffffe8c,in_stack_fffffe88) -
-            (double)CONCAT44 /* combine 2-byte values */(uStack_cc,local_d0) <= in_stack_00000008[2] + 0.5) {
+        if ((double)CONCAT44 /* combine 2-byte values */(uStack_174,local_178) - (double)CONCAT44 /* combine 2-byte values */(uStack_cc,local_d0) <=
+            in_stack_00000008[2] + 0.5) {
           crt_memory_c_free_FUN_005fe659(local_18);
           crt_memory_c_free_FUN_005fe659(local_20);
           return 0;

@@ -19,19 +19,18 @@ int __cdecl shape_superopt_cpp_FUN_005cbf90(void)
   uint in_stack_00000014;
   int in_stack_00000018;
   double dVar4;
-  int local_130;
-  uint uStack_12c;
-  double local_128;
-  double local_120;
-  int local_118;
-  uint uStack_114;
-  uint local_f8;
+  int iStack_12c;
+  uint local_128;
+  double dStack_124;
+  double dStack_11c;
+  int iStack_114;
+  uint local_110;
   uint uStack_f4;
   uint local_f0;
   uint uStack_ec;
-  CVector2d local_e8;
-  CVector2d local_d8;
-  uint local_c8;
+  uint local_e8;
+  CVector2d CStack_e4;
+  CVector2d CStack_d4;
   uint local_c4;
   uint local_c0;
   uint local_bc;
@@ -41,9 +40,8 @@ int __cdecl shape_superopt_cpp_FUN_005cbf90(void)
   uint local_ac;
   uint local_a8;
   uint local_a4;
-  double local_a0;
-  uint local_98;
-  uint local_94;
+  uint local_a0;
+  ulonglong local_98;
   uint local_90;
   uint local_8c;
   uint local_88;
@@ -72,15 +70,16 @@ int __cdecl shape_superopt_cpp_FUN_005cbf90(void)
   uint local_2c;
   uint local_28;
   uint local_24;
-  int local_20;
+  uint local_20;
   int local_1c;
   int local_18;
+  int iStack_14;
   
   if (0.0 <= *in_stack_00000008) {
-    local_128 = *in_stack_00000008;
+    dStack_124 = *in_stack_00000008;
   }
   else {
-    local_128 = -*in_stack_00000008;
+    dStack_124 = -*in_stack_00000008;
   }
   if (in_stack_00000008[1] < 0.0) {
     dVar4 = -in_stack_00000008[1];
@@ -89,167 +88,167 @@ int __cdecl shape_superopt_cpp_FUN_005cbf90(void)
     dVar4 = in_stack_00000008[1];
   }
   if (in_stack_00000008[2] < 0.0) {
-    local_120 = -in_stack_00000008[2];
+    dStack_11c = -in_stack_00000008[2];
   }
   else {
-    local_120 = in_stack_00000008[2];
+    dStack_11c = in_stack_00000008[2];
   }
-  if ((local_128 < dVar4) || (local_128 < local_120)) {
+  if ((dStack_124 < dVar4) || (dStack_124 < dStack_11c)) {
+    iStack_14 = 0;
+  }
+  else {
+    iStack_14 = 1;
+  }
+  if ((dVar4 < dStack_124) || (dVar4 < dStack_11c)) {
     local_18 = 0;
   }
   else {
     local_18 = 1;
   }
-  if ((dVar4 < local_128) || (dVar4 < local_120)) {
+  if ((dStack_11c < dStack_124) || (dStack_11c < dVar4)) {
     local_1c = 0;
   }
   else {
     local_1c = 1;
   }
-  if ((local_120 < local_128) || (local_120 < dVar4)) {
-    local_20 = 0;
-  }
-  else {
-    local_20 = 1;
-  }
   if (in_stack_00000018 != 0) {
-    local_2c = in_stack_0000000c + in_stack_00000010 * 0x60;
-    local_28 = in_stack_00000014;
-    local_30 = in_stack_00000014 + in_stack_00000018 * 0x60;
+    local_28 = in_stack_0000000c + in_stack_00000010 * 0x60;
+    local_24 = in_stack_00000014;
+    local_2c = in_stack_00000014 + in_stack_00000018 * 0x60;
     do {
-      if ((local_28 < in_stack_0000000c) || (local_2c <= local_28)) {
-        if (local_18 == 0) {
-          if (local_1c == 0) {
-            if (local_20 != 0) {
-              local_d8.x._0_4_ = *(uint *)(local_28 + 0x10);
-              local_d8.x._4_4_ = *(uint *)(local_28 + 0x14);
-              local_d8.y._0_4_ = *(uint *)(local_28 + 0x18);
-              local_d8.y._4_4_ = *(uint *)(local_28 + 0x1c);
-              local_80 = local_d8.y._0_4_;
-              local_7c = local_d8.y._4_4_;
-              local_50 = local_d8.x._0_4_;
-              local_4c = local_d8.x._4_4_;
+      if ((local_24 < in_stack_0000000c) || (local_28 <= local_24)) {
+        if (iStack_14 == 0) {
+          if (local_18 == 0) {
+            if (local_1c != 0) {
+              CStack_d4.x._0_4_ = *(uint *)(local_24 + 0x10);
+              CStack_d4.x._4_4_ = *(uint *)(local_24 + 0x14);
+              CStack_d4.y._0_4_ = *(uint *)(local_24 + 0x18);
+              CStack_d4.y._4_4_ = *(uint *)(local_24 + 0x1c);
+              local_7c = CStack_d4.y._0_4_;
+              local_78 = CStack_d4.y._4_4_;
+              local_4c = CStack_d4.x._0_4_;
+              local_48 = CStack_d4.x._4_4_;
             }
           }
           else {
-            local_d8.x._0_4_ = *(uint *)(local_28 + 0x10);
-            local_d8.x._4_4_ = *(uint *)(local_28 + 0x14);
-            local_d8.y._0_4_ = *(uint *)(local_28 + 0x20);
-            local_d8.y._4_4_ = *(uint *)(local_28 + 0x24);
-            local_98 = local_d8.x._0_4_;
-            local_94 = local_d8.x._4_4_;
-            local_90 = local_d8.y._0_4_;
-            local_8c = local_d8.y._4_4_;
+            CStack_d4.x._0_4_ = *(uint *)(local_24 + 0x10);
+            local_98 = (double)CONCAT44 /* combine 2-byte values */(CStack_d4.x._0_4_,(uint)local_98);
+            CStack_d4.x._4_4_ = *(uint *)(local_24 + 0x14);
+            CStack_d4.y._0_4_ = *(uint *)(local_24 + 0x20);
+            CStack_d4.y._4_4_ = *(uint *)(local_24 + 0x24);
+            local_90 = CStack_d4.x._4_4_;
+            local_8c = CStack_d4.y._0_4_;
+            local_88 = CStack_d4.y._4_4_;
           }
         }
         else {
-          local_d8.x._0_4_ = *(uint *)(local_28 + 0x18);
-          local_d8.x._4_4_ = *(uint *)(local_28 + 0x1c);
-          local_d8.y._0_4_ = *(uint *)(local_28 + 0x20);
-          local_d8.y._4_4_ = *(uint *)(local_28 + 0x24);
-          local_c8 = local_d8.x._0_4_;
-          local_c4 = local_d8.x._4_4_;
-          local_78 = local_d8.y._0_4_;
-          local_74 = local_d8.y._4_4_;
+          CStack_d4.x._0_4_ = *(uint *)(local_24 + 0x18);
+          CStack_d4.x._4_4_ = *(uint *)(local_24 + 0x1c);
+          CStack_d4.y._0_4_ = *(uint *)(local_24 + 0x20);
+          CStack_d4.y._4_4_ = *(uint *)(local_24 + 0x24);
+          local_c4 = CStack_d4.x._0_4_;
+          local_c0 = CStack_d4.x._4_4_;
+          local_74 = CStack_d4.y._0_4_;
+          local_70 = CStack_d4.y._4_4_;
         }
         iVar3 = 0;
         bVar1 = false;
         if (in_stack_00000010 != 0) {
-          local_24 = in_stack_0000000c + in_stack_00000010 * 0x60;
+          local_20 = in_stack_0000000c + in_stack_00000010 * 0x60;
           uVar2 = in_stack_0000000c;
           do {
-            if (local_18 == 0) {
-              if (local_1c == 0) {
-                if (local_20 != 0) {
-                  local_f8 = *(uint *)(uVar2 + 0x10);
-                  uStack_f4 = *(uint *)(uVar2 + 0x14);
-                  local_f0 = *(uint *)(uVar2 + 0x18);
-                  uStack_ec = *(uint *)(uVar2 + 0x1c);
-                  local_e8.x._0_4_ = *(uint *)(uVar2 + 0x28);
-                  local_e8.x._4_4_ = *(uint *)(uVar2 + 0x2c);
-                  local_e8.y._0_4_ = *(uint *)(uVar2 + 0x30);
-                  local_e8.y._4_4_ = *(uint *)(uVar2 + 0x34);
-                  local_b0 = local_f8;
+            if (iStack_14 == 0) {
+              if (local_18 == 0) {
+                if (local_1c != 0) {
+                  uStack_f4 = *(uint *)(uVar2 + 0x10);
+                  local_f0 = *(uint *)(uVar2 + 0x14);
+                  uStack_ec = *(uint *)(uVar2 + 0x18);
+                  local_e8 = *(uint *)(uVar2 + 0x1c);
+                  CStack_e4.x._0_4_ = *(uint *)(uVar2 + 0x28);
+                  CStack_e4.x._4_4_ = *(uint *)(uVar2 + 0x2c);
+                  CStack_e4.y._0_4_ = *(uint *)(uVar2 + 0x30);
+                  CStack_e4.y._4_4_ = *(uint *)(uVar2 + 0x34);
                   local_ac = uStack_f4;
-                  local_a8 = local_e8.y._0_4_;
-                  local_a4 = local_e8.y._4_4_;
-                  local_60 = local_e8.x._0_4_;
-                  local_5c = local_e8.x._4_4_;
-                  local_48 = local_f0;
+                  local_a8 = local_f0;
+                  local_a4 = CStack_e4.y._0_4_;
+                  local_a0 = CStack_e4.y._4_4_;
+                  local_5c = CStack_e4.x._0_4_;
+                  local_58 = CStack_e4.x._4_4_;
                   local_44 = uStack_ec;
+                  local_40 = local_e8;
                 }
               }
               else {
-                local_f8 = *(uint *)(uVar2 + 0x10);
-                uStack_f4 = *(uint *)(uVar2 + 0x14);
-                local_f0 = *(uint *)(uVar2 + 0x20);
-                uStack_ec = *(uint *)(uVar2 + 0x24);
-                local_e8.x._0_4_ = *(uint *)(uVar2 + 0x28);
-                local_e8.x._4_4_ = *(uint *)(uVar2 + 0x2c);
-                local_e8.y._0_4_ = *(uint *)(uVar2 + 0x38);
-                local_e8.y._4_4_ = *(uint *)(uVar2 + 0x3c);
-                local_c0 = local_e8.x._0_4_;
-                local_bc = local_e8.x._4_4_;
-                local_b8 = local_f0;
+                uStack_f4 = *(uint *)(uVar2 + 0x10);
+                local_f0 = *(uint *)(uVar2 + 0x14);
+                uStack_ec = *(uint *)(uVar2 + 0x20);
+                local_e8 = *(uint *)(uVar2 + 0x24);
+                CStack_e4.x._0_4_ = *(uint *)(uVar2 + 0x28);
+                CStack_e4.x._4_4_ = *(uint *)(uVar2 + 0x2c);
+                CStack_e4.y._0_4_ = *(uint *)(uVar2 + 0x38);
+                CStack_e4.y._4_4_ = *(uint *)(uVar2 + 0x3c);
+                local_bc = CStack_e4.x._0_4_;
+                local_b8 = CStack_e4.x._4_4_;
                 local_b4 = uStack_ec;
-                local_88 = local_e8.y._0_4_;
-                local_84 = local_e8.y._4_4_;
-                local_68 = local_f8;
+                local_b0 = local_e8;
+                local_84 = CStack_e4.y._0_4_;
+                local_80 = CStack_e4.y._4_4_;
                 local_64 = uStack_f4;
+                local_60 = local_f0;
               }
             }
             else {
-              local_f8 = *(uint *)(uVar2 + 0x18);
-              uStack_f4 = *(uint *)(uVar2 + 0x1c);
-              local_f0 = *(uint *)(uVar2 + 0x20);
-              uStack_ec = *(uint *)(uVar2 + 0x24);
-              local_e8.x._0_4_ = *(uint *)(uVar2 + 0x30);
-              local_e8.x._4_4_ = *(uint *)(uVar2 + 0x34);
-              local_e8.y._0_4_ = *(uint *)(uVar2 + 0x38);
-              local_e8.y._4_4_ = *(uint *)(uVar2 + 0x3c);
-              local_70 = local_e8.y._0_4_;
-              local_6c = local_e8.y._4_4_;
-              local_58 = local_f8;
+              uStack_f4 = *(uint *)(uVar2 + 0x18);
+              local_f0 = *(uint *)(uVar2 + 0x1c);
+              uStack_ec = *(uint *)(uVar2 + 0x20);
+              local_e8 = *(uint *)(uVar2 + 0x24);
+              CStack_e4.x._0_4_ = *(uint *)(uVar2 + 0x30);
+              CStack_e4.x._4_4_ = *(uint *)(uVar2 + 0x34);
+              CStack_e4.y._0_4_ = *(uint *)(uVar2 + 0x38);
+              CStack_e4.y._4_4_ = *(uint *)(uVar2 + 0x3c);
+              local_6c = CStack_e4.y._0_4_;
+              local_68 = CStack_e4.y._4_4_;
               local_54 = uStack_f4;
-              local_40 = local_e8.x._0_4_;
-              local_3c = local_e8.x._4_4_;
-              local_38 = local_f0;
+              local_50 = local_f0;
+              local_3c = CStack_e4.x._0_4_;
+              local_38 = CStack_e4.x._4_4_;
               local_34 = uStack_ec;
+              local_30 = local_e8;
             }
-            if ((((double)CONCAT44 /* combine 2-byte values */(uStack_f4,local_f8) !=
-                  (double)CONCAT44 /* combine 2-byte values */(local_d8.x._4_4_,local_d8.x._0_4_)) ||
-                ((double)CONCAT44 /* combine 2-byte values */(uStack_ec,local_f0) !=
-                 (double)CONCAT44 /* combine 2-byte values */(local_d8.y._4_4_,local_d8.y._0_4_))) &&
-               (((double)CONCAT44 /* combine 2-byte values */(local_e8.x._4_4_,local_e8.x._0_4_) !=
-                 (double)CONCAT44 /* combine 2-byte values */(local_d8.x._4_4_,local_d8.x._0_4_) ||
-                ((double)CONCAT44 /* combine 2-byte values */(local_e8.y._4_4_,local_e8.y._0_4_) !=
-                 (double)CONCAT44 /* combine 2-byte values */(local_d8.y._4_4_,local_d8.y._0_4_))))) {
-              local_a0 = shape_superopt_cpp_getSignedTriangleArea2D_FUN_005d6640
-                                   (&local_e8,&local_d8,SUB84 /* extract 2-byte value */(dVar4,0));
-              uStack_12c = (uint)((ulonglong)local_a0 >> 0x20);
-              local_130 = SUB84 /* extract 2-byte value */(local_a0,0);
-              if ((((ulonglong)local_a0 & 0x7fffffff00000000) != 0) || (local_130 != 0)) {
+            if ((((double)CONCAT44 /* combine 2-byte values */(local_f0,uStack_f4) !=
+                  (double)CONCAT44 /* combine 2-byte values */(CStack_d4.x._4_4_,CStack_d4.x._0_4_)) ||
+                ((double)CONCAT44 /* combine 2-byte values */(local_e8,uStack_ec) !=
+                 (double)CONCAT44 /* combine 2-byte values */(CStack_d4.y._4_4_,CStack_d4.y._0_4_))) &&
+               (((double)CONCAT44 /* combine 2-byte values */(CStack_e4.x._4_4_,CStack_e4.x._0_4_) !=
+                 (double)CONCAT44 /* combine 2-byte values */(CStack_d4.x._4_4_,CStack_d4.x._0_4_) ||
+                ((double)CONCAT44 /* combine 2-byte values */(CStack_e4.y._4_4_,CStack_e4.y._0_4_) !=
+                 (double)CONCAT44 /* combine 2-byte values */(CStack_d4.y._4_4_,CStack_d4.y._0_4_))))) {
+              local_98 = shape_superopt_cpp_getSignedTriangleArea2D_FUN_005d6640
+                                   (&CStack_e4,&CStack_d4,SUB84 /* extract 2-byte value */(dVar4,0));
+              local_128 = (uint)((ulonglong)local_98 >> 0x20);
+              iStack_12c = SUB84 /* extract 2-byte value */(local_98,0);
+              if ((((ulonglong)local_98 & 0x7fffffff00000000) != 0) || (iStack_12c != 0)) {
                 if (bVar1) {
-                  if ((((double)CONCAT44 /* combine 2-byte values */(uStack_114,local_118) < 0.0) && (0.0 < local_a0)) ||
-                     ((0.0 < (double)CONCAT44 /* combine 2-byte values */(uStack_114,local_118) && (local_a0 < 0.0)))) break;
+                  if ((((double)CONCAT44 /* combine 2-byte values */(local_110,iStack_114) < 0.0) && (0.0 < local_98)) ||
+                     ((0.0 < (double)CONCAT44 /* combine 2-byte values */(local_110,iStack_114) && (local_98 < 0.0)))) break;
                 }
                 else {
-                  local_118 = local_130;
+                  iStack_114 = iStack_12c;
                   bVar1 = true;
-                  uStack_114 = uStack_12c;
+                  local_110 = local_128;
                 }
               }
             }
             uVar2 = uVar2 + 0x60;
             iVar3 = iVar3 + 1;
-          } while (uVar2 < local_24);
+          } while (uVar2 < local_20);
         }
         if (iVar3 == in_stack_00000010) {
           return 1;
         }
       }
-      local_28 = local_28 + 0x60;
-    } while (local_28 < local_30);
+      local_24 = local_24 + 0x60;
+    } while (local_24 < local_2c);
   }
   return 0;
 }

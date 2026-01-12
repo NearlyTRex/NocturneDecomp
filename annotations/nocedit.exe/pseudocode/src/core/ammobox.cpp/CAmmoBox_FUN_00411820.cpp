@@ -13,7 +13,7 @@ int __cdecl core_ammobox_cpp_CAmmoBox_FUN_00411820(CAmmoBox *this_ptr)
   int iVar1;
   CKeyFramedModel *pCVar2;
   BADSPACEBASE *in_ESP;
-  int unaff_EBP;
+  float in_stack_ffffffd4;
   
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base_actor);
   this_ptr_00 = (*((this_ptr->base_actor).vtable)->getBoundingBox)
@@ -27,7 +27,7 @@ int __cdecl core_ammobox_cpp_CAmmoBox_FUN_00411820(CAmmoBox *this_ptr)
                      ((CKeyFramedModelInstance *)this_ptr->model_name);
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
             ((CKeyFramedModelInstance *)this_ptr->model_name,
-             (float)(pCVar2->frame_count + -1) * this_ptr->field5_0x31c,unaff_EBP);
+             (float)(pCVar2->frame_count + -1) * this_ptr->field5_0x31c,(int)in_stack_ffffffd4);
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base_actor);
   return iVar1;
 }

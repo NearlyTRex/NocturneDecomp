@@ -1,24 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 250,
-    "complexity_score": 683,
+    "complexity_score": 119,
     "cross_reference_count": 0,
     "function_call_count": 14,
     "global_count": 31,
-    "pseudocode_lines": 88,
-    "suspect_count": 55,
+    "pseudocode_lines": 89,
+    "suspect_count": 2,
     "suspect_types": [
       "badspacebase",
-      "call_esp_anchor",
-      "format_string_mismatch",
-      "register_param",
-      "stack_align_anchor",
-      "stack_param",
-      "stack_ref",
-      "unaffected_reg",
-      "variadic_anchor"
+      "register_param"
     ],
-    "total_lines": 338
+    "total_lines": 339
   },
   "cross_references": [],
   "function": {
@@ -301,6 +294,83 @@
     "declared_params": 0,
     "estimated_params": 0
   },
+  "pcode_overrides": {
+    "00534219": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd8,4)"
+    ],
+    "00534226": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd8,4)"
+    ],
+    "0053423a": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd8,4)"
+    ],
+    "00534255": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd8,4)"
+    ],
+    "00534278": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd8,4)"
+    ],
+    "00534285": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd8,4)"
+    ],
+    "0053429d": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd8,4)"
+    ],
+    "005342ab": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd8,4)"
+    ],
+    "005342eb": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd8,4)"
+    ],
+    "00534315": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd8,4)"
+    ],
+    "00534333": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd8,4)"
+    ],
+    "0053434c": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd8,4)"
+    ],
+    "0053435f": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd8,4)"
+    ],
+    "00534381": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd8,4)"
+    ],
+    "005343b9": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd8,4)"
+    ],
+    "005343d4": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd8,4)"
+    ],
+    "005343eb": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd8,4)"
+    ],
+    "00534410": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd8,4)"
+    ],
+    "0053441e": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd8,4)"
+    ],
+    "00534448": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd8,4)"
+    ],
+    "00534492": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd8,4)"
+    ],
+    "005344a2": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd8,4)"
+    ],
+    "005344ca": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd8,4)"
+    ],
+    "005344da": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd8,4)"
+    ],
+    "005344e3": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd8,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.280788177339901,
     "instruction_count": 203,
@@ -341,313 +411,7 @@
     },
     "pcode_op_count": 869
   },
-  "stack_frame": {
-    "frame_size": 68,
-    "local_size": 68,
-    "param_offset": 4,
-    "param_size": 0,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_40",
-        "offset": -64,
-        "size": 8,
-        "type": "undefined8"
-      },
-      {
-        "is_param": false,
-        "name": "local_38",
-        "offset": -56,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_34",
-        "offset": -52,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_30",
-        "offset": -48,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_2c",
-        "offset": -44,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_28",
-        "offset": -40,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_24",
-        "offset": -36,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_20",
-        "offset": -32,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c",
-        "offset": -28,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "undefined4"
-      }
-    ]
-  },
-  "stack_patterns": {
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
-    "pattern_count": 1,
-    "pattern_types": [
-      "stack_alignment"
-    ],
-    "patterns": [
-      {
-        "address": "00534219",
-        "description": "Stack alignment (AND ESP, 0xfffffff8)",
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
-        "instruction": "AND ESP,0xfffffff8",
-        "pattern_id": "stack_alignment"
-      }
-    ],
-    "severity": "medium"
-  },
-  "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 10,
-      "match": "unaff_EBX",
-      "text": "int unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 12,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 12,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 13,
-      "match": "unaff_EDI",
-      "text": "CMP3Decoder *unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000008",
-      "text": "FILE *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_0000000c",
-      "text": "FILE *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000010",
-      "text": "CMP3Decoder *in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000018",
-      "text": "CMP3Decoder *in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_0000001c",
-      "text": "SIZE_T in_stack_0000001c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_00000020",
-      "text": "int in_stack_00000020;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_00000024",
-      "text": "int in_stack_00000024;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 37,
-      "match": "unaff_EDI",
-      "text": "sound_mp3_cpp_CMP3Decoder_openFile_FUN_00534550(unaff_EDI,\"pixies.mp3\");",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 39,
-      "match": "unaff_EBX",
-      "text": "samples_requested = (SIZE_T)(0x20000 / (longlong)(*(int *)(unaff_EBX + 0x104) * 2));",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 57,
-      "match": "&stack0xfffffff8",
-      "text": "crt_time_c_time_with_rounding_FUN_006001f0((time_t *)&stack0xfffffff8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 60,
-      "match": "in_stack_00000010",
-      "text": "(in_stack_00000010,(short *)g_MpegPCMDecodeTestBuffer,samples_requested);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 61,
-      "match": "in_stack_00000018",
-      "text": "if (in_stack_00000018 != (CMP3Decoder *)0x0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 63,
-      "match": "in_stack_0000001c",
-      "text": "(g_MpegPCMDecodeTestBuffer,size,in_stack_0000001c,(FILE *)in_stack_00000010);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 63,
-      "match": "in_stack_00000010",
-      "text": "(g_MpegPCMDecodeTestBuffer,size,in_stack_0000001c,(FILE *)in_stack_00000010);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 65,
-      "match": "in_stack_00000020",
-      "text": "iVar4 = iVar4 + in_stack_00000020 * size;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 66,
-      "match": "in_stack_0000001c",
-      "text": "if (in_stack_0000001c != 0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 67,
-      "match": "in_stack_00000024",
-      "text": "in_stack_00000024 = iVar4;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 72,
-      "match": "in_stack_0000000c",
-      "text": "shape_memdbg_cpp_closeFile_FUN_0050f9b0(in_stack_0000000c,\"..\\\\sound\\\\mp3.cpp\",0xde8);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 73,
-      "match": "in_stack_00000008",
-      "text": "shape_memdbg_cpp_closeFile_FUN_0050f9b0(in_stack_00000008,\"..\\\\sound\\\\mp3.cpp\",0xde9);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 76,
-      "match": "in_stack_00000018",
-      "text": "pCVar1 = sound_mp3_cpp_CMP3Decoder_dtor_FUN_00534530(in_stack_00000018);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 80,
-      "match": "in_stack_00000018",
-      "text": "if (in_stack_00000018 != (CMP3Decoder *)0x0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 81,
-      "match": "in_stack_00000018",
-      "text": "pCVar1 = sound_mp3_cpp_CMP3Decoder_dtor_FUN_00534530(in_stack_00000018);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 84,
-      "match": "&stack0x00000018",
-      "text": "crt_time_c_time_with_rounding_FUN_006001f0((time_t *)&stack0x00000018);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 85,
-      "match": "in_stack_0000001c",
-      "text": "iStack0000003c = in_stack_0000001c - (int)in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 85,
-      "match": "in_stack_00000018",
-      "text": "iStack0000003c = in_stack_0000001c - (int)in_stack_00000018;",
-      "type": "stack_param"
-    },
+  "resolved_suspects": [
     {
       "add_esp_value": 8,
       "call_address": "00534235",
@@ -711,17 +475,6 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005344c5 (EBP frame + ADD ESP)",
       "type": "variadic_anchor"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d bytes / %d seconds = %.1f kbytes/sec\" has 3 specifiers but 0 arguments after it",
-      "expected_args": 3,
-      "format_string": "%d bytes / %d seconds = %.1f kbytes/sec",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 89,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"%d bytes / %d seconds = %.1f kbytes/sec\");",
-      "text": "Format string expects 3 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "align_instruction": "AND ESP,0xfffffff8",
@@ -992,6 +745,125 @@
       "target_address": "0x50f210",
       "text": "Direct CALL at 005344de, ADD ESP at 005344e3 with uncertain ESP",
       "type": "call_esp_anchor"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 68,
+    "local_size": 68,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00534219",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 10,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 10,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
     }
   ]
 }

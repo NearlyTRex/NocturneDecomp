@@ -1,14 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 116,
-    "complexity_score": 60,
+    "complexity_score": 120,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 2,
     "pseudocode_lines": 45,
-    "suspect_count": 1,
+    "suspect_count": 7,
     "suspect_types": [
-      "stack_align_anchor"
+      "unaffected_reg"
     ],
     "total_lines": 161
   },
@@ -59,6 +59,11 @@
     "declared_params": 3,
     "estimated_params": 3
   },
+  "pcode_overrides": {
+    "005ac999": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff4,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.966666666666667,
     "instruction_count": 90,
@@ -99,6 +104,18 @@
     },
     "pcode_op_count": 537
   },
+  "resolved_suspects": [
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0xc",
+      "fix_address": "005ac999",
+      "frame_offset": 12,
+      "match": "AND ESP",
+      "sub_esp_offset": 12,
+      "text": "Stack alignment at 005ac999 (SUB ESP, 0xc before)",
+      "type": "stack_align_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 48,
     "local_size": 36,
@@ -169,14 +186,53 @@
   },
   "suspects": [
     {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0xc",
-      "fix_address": "005ac999",
-      "frame_offset": 12,
-      "match": "AND ESP",
-      "sub_esp_offset": 12,
-      "text": "Stack alignment at 005ac999 (SUB ESP, 0xc before)",
-      "type": "stack_align_anchor"
+      "description": "Unaffected register variable",
+      "line": 8,
+      "match": "unaff_EBP",
+      "text": "float unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 24,
+      "match": "unaff_EBP",
+      "text": "unaff_EBP = ABS(*pfVar2);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 26,
+      "match": "unaff_EBP",
+      "text": "if (fStack_14 < unaff_EBP) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 27,
+      "match": "unaff_EBP",
+      "text": "fStack_14 = unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 34,
+      "match": "unaff_EBP",
+      "text": "if (1.0 < unaff_EBP) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 35,
+      "match": "unaff_EBP",
+      "text": "unaff_EBP = 1.0;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 41,
+      "match": "unaff_EBP",
+      "text": "*out_peak = unaff_EBP;",
+      "type": "unaffected_reg"
     }
   ]
 }

@@ -14,29 +14,29 @@ int core_ghoul_cpp_FUN_004e8bc0(void)
 {
   CDeformableModelInstance *this_ptr;
   CVector3f *pCVar1;
-  float *pfVar2;
-  CVector3f *pCVar3;
-  int iVar4;
+  CVector3f *pCVar2;
+  int iVar3;
   BADSPACEBASE *in_ESP;
   int in_stack_00000004;
-  float *in_stack_00000008;
+  CVector3f *in_stack_00000008;
   int bone_index;
   CVector3f CStack_5c;
   CVector3f CStack_50;
-  byte local_40 [16];
-  CVector3f local_30;
-  float local_24;
+  byte local_44 [8];
+  float local_3c;
+  CVector3f CStack_38;
+  CVector3f local_2c;
   CVector3f CStack_20;
   int iStack_14;
   
   core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-            ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),&local_30,DAT_02d83320);
-  if (&local_30.y != in_stack_00000008) {
-    *in_stack_00000008 = local_30.y;
-    in_stack_00000008[1] = local_30.z;
-    in_stack_00000008[2] = local_24;
+            ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),&local_2c,DAT_02d83320);
+  if (&local_2c != in_stack_00000008) {
+    in_stack_00000008->x = local_2c.x;
+    in_stack_00000008->y = local_2c.y;
+    in_stack_00000008->z = local_2c.z;
   }
-  iVar4 = 1;
+  iVar3 = 1;
   iStack_14 = 0;
   this_ptr = (CDeformableModelInstance *)(in_stack_00000004 + 0x158);
   do {
@@ -48,23 +48,23 @@ int core_ghoul_cpp_FUN_004e8bc0(void)
 LAB_004e8c4c:
         pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
                            (this_ptr,pCVar1,bone_index);
-        if ((CVector3f *)local_40 != pCVar1) {
-          local_40._0_4_ = pCVar1->x;
-          local_40._4_4_ = pCVar1->y;
-          local_40._8_4_ = pCVar1->z;
+        if ((CVector3f *)(local_44 + 4) != pCVar1) {
+          local_44._0_4_ = pCVar1->x;
+          local_44._4_4_ = pCVar1->y;
+          local_3c = pCVar1->z;
         }
-        local_40._4_4_ =
-             local_24 * (float)0.29999999999999999 + (float)local_40._4_4_ * (float)0.69999999999999996;
-        local_40._0_4_ =
-             local_30.z * (float)0.5 + (float)local_40._0_4_ * (float)0.5;
-        pfVar2 = in_stack_00000008 + iVar4 * 3;
-        if (pfVar2 != (float *)local_40) {
-          *pfVar2 = (float)local_40._0_4_;
-          pfVar2[1] = (float)local_40._4_4_;
-          pfVar2[2] = (float)local_40._8_4_;
+        local_44._4_4_ =
+             local_2c.y * (float)0.29999999999999999 + (float)local_44._4_4_ * (float)0.69999999999999996;
+        local_44._0_4_ =
+             local_2c.x * (float)0.5 + (float)local_44._0_4_ * (float)0.5;
+        pCVar1 = in_stack_00000008 + iVar3;
+        if (pCVar1 != (CVector3f *)local_44) {
+          pCVar1->x = (float)local_44._0_4_;
+          pCVar1->y = (float)local_44._4_4_;
+          pCVar1->z = local_3c;
         }
 LAB_004e8cce:
-        iVar4 = iVar4 + 1;
+        iVar3 = iVar3 + 1;
       }
       break;
     case 1:
@@ -77,12 +77,12 @@ LAB_004e8cce:
     case 2:
       if (*(int *)(in_stack_00000004 + 0x2298 + *(int *)(in_stack_00000004 + 0xbf08) * 4) != 0) {
         pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-                           (this_ptr,(CVector3f *)(local_40 + 8),DAT_02d832fc);
-        pCVar3 = (CVector3f *)(in_stack_00000008 + iVar4 * 3);
-        if (pCVar3 != pCVar1) {
-          pCVar3->x = pCVar1->x;
-          pCVar3->y = pCVar1->y;
-          pCVar3->z = pCVar1->z;
+                           (this_ptr,&CStack_38,DAT_02d832fc);
+        pCVar2 = in_stack_00000008 + iVar3;
+        if (pCVar2 != pCVar1) {
+          pCVar2->x = pCVar1->x;
+          pCVar2->y = pCVar1->y;
+          pCVar2->z = pCVar1->z;
         }
         goto LAB_004e8cce;
       }
@@ -91,18 +91,18 @@ LAB_004e8cce:
       if (*(int *)(in_stack_00000004 + 0x2298 + *(int *)(in_stack_00000004 + 0xbf04) * 4) != 0) {
         pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
                            (this_ptr,&CStack_5c,DAT_02d83324);
-        pCVar3 = (CVector3f *)(in_stack_00000008 + iVar4 * 3);
-        if (pCVar3 != pCVar1) {
-          pCVar3->x = pCVar1->x;
-          pCVar3->y = pCVar1->y;
-          pCVar3->z = pCVar1->z;
+        pCVar2 = in_stack_00000008 + iVar3;
+        if (pCVar2 != pCVar1) {
+          pCVar2->x = pCVar1->x;
+          pCVar2->y = pCVar1->y;
+          pCVar2->z = pCVar1->z;
         }
         goto LAB_004e8cce;
       }
     }
     iStack_14 = iStack_14 + 1;
     if (3 < iStack_14) {
-      return iVar4;
+      return iVar3;
     }
   } while( true );
 }

@@ -13,16 +13,14 @@ void core_hiram_cpp_FUN_004f4550(void)
 
 {
   CDeformableModelInstance *this_ptr;
-  CCharacter *this_ptr_00;
   int iVar1;
   SMotion *pSVar2;
   CDemonActor *actor_ptr;
-  CGlass *this_ptr_01;
-  uint unaff_ESI;
+  CGlass *this_ptr_00;
   CCharacter *in_stack_00000004;
   float in_stack_00000008;
+  uint in_stack_ffffffec;
   
-  this_ptr_00 = in_stack_00000004;
   iVar1 = core_charactr_cpp_CCharacter_FUN_00429870(in_stack_00000004);
   if (iVar1 == 0) {
     return;
@@ -36,33 +34,32 @@ void core_hiram_cpp_FUN_004f4550(void)
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                 (&(in_stack_00000004->model).motion_controller,1,1);
       actor_ptr = (CDemonActor *)core_mission_cpp_CDemonMission_FUN_00524030(g_CDemonMissionPtr);
-      this_ptr_01 = (CGlass *)core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,unaff_ESI);
-      if (this_ptr_01 != (CGlass *)0x0) {
+      this_ptr_00 = (CGlass *)
+                    core_actor_cpp_castToClassHash_FUN_0040c790(actor_ptr,in_stack_ffffffec);
+      if (this_ptr_00 != (CGlass *)0x0) {
         core_glass_cpp_CGlass_shatter_FUN_004eaef0
-                  (this_ptr_01,&(this_ptr_01->base).location.position);
+                  (this_ptr_00,&(this_ptr_00->base).location.position);
       }
     }
   }
-  in_stack_00000004 = (CCharacter *)in_stack_00000008;
-  (this_ptr_00->model).accumulated_root_motion.z = 0.0;
-  this_ptr = &this_ptr_00->model;
-  (this_ptr_00->model).accumulated_root_motion.y = (this_ptr_00->model).accumulated_root_motion.z;
-  (this_ptr_00->model).accumulated_root_motion.x = (this_ptr_00->model).accumulated_root_motion.y;
-  while (0.0 < (float)in_stack_00000004) {
-    in_stack_00000004 =
-         (CCharacter *)
-         core_motion_cpp_CMotionController_advance_FUN_0052d610(&this_ptr->motion_controller);
-    if (in_stack_00000004 == (CCharacter *)0x29a) {
-      in_stack_00000004 = (CCharacter *)0x1;
+  (in_stack_00000004->model).accumulated_root_motion.z = 0.0;
+  this_ptr = &in_stack_00000004->model;
+  (in_stack_00000004->model).accumulated_root_motion.y =
+       (in_stack_00000004->model).accumulated_root_motion.z;
+  (in_stack_00000004->model).accumulated_root_motion.x =
+       (in_stack_00000004->model).accumulated_root_motion.y;
+  while (0.0 < in_stack_00000008) {
+    iVar1 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&this_ptr->motion_controller);
+    if (iVar1 == 0x29a) {
       core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0(g_CDemonMissionPtr);
     }
     else {
-      core_charactr_cpp_CCharacter_FUN_0042ec40(this_ptr_00);
+      core_charactr_cpp_CCharacter_FUN_0042ec40(in_stack_00000004);
     }
   }
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020(this_ptr);
-  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr_00->base_actor);
+  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&in_stack_00000004->base_actor);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020(this_ptr);
-  core_charactr_cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0(this_ptr_00);
+  core_charactr_cpp_CCharacter_ApplyGestureLookAt_FUN_0042dfc0(in_stack_00000004);
   return;
 }

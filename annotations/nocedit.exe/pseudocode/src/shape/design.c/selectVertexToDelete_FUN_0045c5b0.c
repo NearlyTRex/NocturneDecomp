@@ -18,16 +18,16 @@ void __cdecl shape_design_c_selectVertexToDelete_FUN_0045c5b0(void)
   uint *puVar6;
   uint *puVar7;
   byte bVar8;
+  char local_30 [20];
   int local_1c;
   int local_18;
   int local_14;
   
   bVar8 = 0;
-  engine_2d_c_getInputWithPrompt_FUN_004032c0
-            (&stack0xffffffd0,0x13,0,0xb,"Point to delete : ");
+  engine_2d_c_getInputWithPrompt_FUN_004032c0(local_30,0x13,0,0xb,"Point to delete : ");
   local_18 = -1;
   iVar2 = -1;
-  pcVar5 = &stack0xffffffd0;
+  pcVar5 = local_30;
   do {
     if (iVar2 == 0) break;
     iVar2 = iVar2 + -1;
@@ -35,7 +35,7 @@ void __cdecl shape_design_c_selectVertexToDelete_FUN_0045c5b0(void)
     pcVar5 = pcVar5 + (uint)bVar8 * -2 + 1;
   } while (cVar1 != '\0');
   if (iVar2 != -2) {
-    local_18 = crt_stdlib_c_atoi_FUN_005ffef0(&stack0xffffffd0);
+    local_18 = crt_stdlib_c_atoi_FUN_005ffef0(local_30);
   }
   if ((-1 < local_18) && (local_18 < g_VertexCount)) {
     for (local_14 = local_18; local_14 < g_VertexCount + -1; local_14 = local_14 + 1) {

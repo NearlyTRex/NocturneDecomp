@@ -20,12 +20,8 @@ shape_design_c_mergeTrianglesIntoQuad_FUN_00462190(int first_polygon_index,int s
   byte bVar7;
   float10 fVar8;
   double dVar9;
-  int in_stack_fffffe24;
-  int in_stack_fffffe34;
-  float local_140;
-  float local_13c;
-  float local_138;
-  uint local_130 [51];
+  int in_stack_fffffe0c;
+  SShapeEditorPolygon local_1e8;
   float local_64 [4];
   float local_54;
   float local_50 [4];
@@ -66,11 +62,11 @@ shape_design_c_mergeTrianglesIntoQuad_FUN_00462190(int first_polygon_index,int s
   do {
     if (3 < (int)local_28[3]) {
 LAB_004623f2:
+      local_1e8.vertex_indices_count = 4;
       for (local_28[3] = 0; (int)local_28[3] < 4; local_28[3] = local_28[3] + 1) {
-        local_130[local_28[3]] = local_3c[local_28[3]];
+        local_1e8.vertex_indices[local_28[3]] = local_3c[local_28[3]];
       }
-      dVar9 = shape_design_c_calculatePolygonAngularArea_FUN_00461ee0
-                        ((SShapeEditorPolygon *)&stack0xfffffe18);
+      dVar9 = shape_design_c_calculatePolygonAngularArea_FUN_00461ee0(&local_1e8);
       uVar4 = CONCAT22 /* combine 2-byte values */((short)((ulonglong)dVar9 >> 0x10),
                        (ushort)(dVar9 < 359.5) << 8 |
                        (ushort)(NAN(dVar9) || NAN(359.5)) << 10 |
@@ -87,8 +83,9 @@ LAB_004623f2:
           g_ModelPolygonData[first_polygon_index].uv_u[local_28[3]] = local_64[local_28[3]];
           g_ModelPolygonData[first_polygon_index].uv_v[local_28[3]] = local_50[local_28[3]];
         }
-        shape_design_c_calculatePolygonNormal_FUN_0045caa0((SShapeEditorPolygon *)&stack0xfffffe18);
-        if (((ABS(local_140) == 0.0) && (ABS(local_13c) == 0.0)) && (ABS(local_138) == 0.0)) {
+        shape_design_c_calculatePolygonNormal_FUN_0045caa0(&local_1e8);
+        if (((ABS(local_1e8.normal.x) == 0.0) && (ABS(local_1e8.normal.y) == 0.0)) &&
+           (ABS(local_1e8.normal.z) == 0.0)) {
           local_3c[1] = local_3c[2];
           local_64[1] = local_64[2];
           local_50[1] = local_50[2];
@@ -104,23 +101,23 @@ LAB_004623f2:
             g_ModelPolygonData[first_polygon_index].uv_u[local_28[3]] = local_64[local_28[3]];
             g_ModelPolygonData[first_polygon_index].uv_v[local_28[3]] = local_50[local_28[3]];
           }
+          local_1e8.vertex_indices_count = 3;
           for (local_28[3] = 0; (int)local_28[3] < 3; local_28[3] = local_28[3] + 1) {
-            local_130[local_28[3]] = local_3c[local_28[3]];
+            local_1e8.vertex_indices[local_28[3]] = local_3c[local_28[3]];
           }
-          shape_design_c_calculatePolygonNormal_FUN_0045caa0
-                    ((SShapeEditorPolygon *)&stack0xfffffe18);
+          shape_design_c_calculatePolygonNormal_FUN_0045caa0(&local_1e8);
         }
         else {
           dVar9 = shape_design_c_calculateVertexAngle_FUN_00462050
-                            (local_130[1],local_130[2],in_stack_fffffe24);
+                            (local_1e8.vertex_indices[1],local_1e8.vertex_indices[2],
+                             in_stack_fffffe0c);
           if (170 < dVar9) {
             local_2c = local_3c[0];
-            local_130[0] = local_3c[1];
-            local_130[1] = local_3c[2];
-            local_130[2] = local_3c[3];
-            local_130[3] = local_3c[0];
-            shape_design_c_calculatePolygonNormal_FUN_0045caa0
-                      ((SShapeEditorPolygon *)&stack0xfffffe18);
+            local_1e8.vertex_indices[0] = local_3c[1];
+            local_1e8.vertex_indices[1] = local_3c[2];
+            local_1e8.vertex_indices[2] = local_3c[3];
+            local_1e8.vertex_indices[3] = local_3c[0];
+            shape_design_c_calculatePolygonNormal_FUN_0045caa0(&local_1e8);
             local_2c = local_3c[0];
             local_54 = local_64[0];
             local_40 = local_50[0];
@@ -140,8 +137,7 @@ LAB_004623f2:
         }
         fVar8 = (float10)fcos((float10)0.52359877560000001);
         iVar3 = shape_design_c_validatePolygonNormals_FUN_00461d80
-                          ((SShapeEditorPolygon *)&stack0xfffffe18,
-                           g_ModelPolygonData + first_polygon_index,(double)fVar8);
+                          (&local_1e8,g_ModelPolygonData + first_polygon_index,(double)fVar8);
         if (iVar3 == 0) {
           uVar4 = g_ModelPolygonData[first_polygon_index].vertex_indices_count;
           for (local_28[3] = 0; (int)local_28[3] < (int)uVar4; local_28[3] = local_28[3] + 1) {
@@ -174,8 +170,7 @@ LAB_004623f2:
           else {
             dVar9 = shape_design_c_calculateVertexAngle_FUN_00462050
                               (g_ModelPolygonData[first_polygon_index].vertex_indices[1],
-                               g_ModelPolygonData[first_polygon_index].vertex_indices[2],
-                               in_stack_fffffe34);
+                               g_ModelPolygonData[first_polygon_index].vertex_indices[2],uVar4);
             if (170 < dVar9) {
               uVar4 = g_ModelPolygonData[first_polygon_index].vertex_indices[0];
               fVar1 = g_ModelPolygonData[first_polygon_index].uv_u[0];

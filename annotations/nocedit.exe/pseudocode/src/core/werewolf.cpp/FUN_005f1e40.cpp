@@ -14,10 +14,10 @@ void core_werewolf_cpp_FUN_005f1e40(void)
 {
   float fVar1;
   float fVar2;
+  float fVar3;
+  float fVar4;
   BADSPACEBASE *in_ESP;
   CCharacter *in_stack_00000004;
-  double dVar3;
-  float fVar4;
   CVector3f local_68;
   CVector3f local_5c;
   CVector3f local_50;
@@ -53,24 +53,22 @@ void core_werewolf_cpp_FUN_005f1e40(void)
       core_charactr_cpp_CCharacter_FUN_00428f40(in_stack_00000004);
       return;
     }
-    fVar2 = local_68.z - local_5c.z;
-    local_1c = SQRT(fVar2 * fVar2 +
-                    (local_68.x - local_5c.x) * (local_68.x - local_5c.x) +
-                    (local_68.y - local_5c.y) * (local_68.y - local_5c.y));
-    dVar3 = (double)local_1c;
-    engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"Chain stretched to %f\n");
+    fVar4 = local_68.y - local_5c.y;
+    fVar2 = local_68.x - local_5c.x;
+    fVar3 = local_68.z - local_5c.z;
+    local_1c = SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar4 * fVar4);
+    engine_console_cpp_CConsole_printf_FUN_00441890
+              (g_CConsolePtr,"Chain stretched to %f\n",(double)local_1c);
     if ((*(float *)(in_stack_00000004[1].base_actor.create_event + 0x50) < local_1c) &&
        (fVar1 = *(float *)(in_stack_00000004[1].base_actor.create_event + 0x50),
-       fVar4 = (float)((ulonglong)dVar3 >> 0x20), local_20 = fVar1 * fVar1 - fVar4 * fVar4,
-       local_2c = (double)local_20, 0.0 <= local_2c)) {
+       local_20 = fVar1 * fVar1 - fVar4 * fVar4, local_2c = (double)local_20, 0.0 <= local_2c)) {
       local_20 = SQRT(local_20);
-      local_38 = SUB84 /* extract 2-byte value */(dVar3,0);
-      local_14 = SQRT(fVar2 * fVar2 + local_38 * local_38);
+      local_14 = SQRT(fVar3 * fVar3 + fVar2 * fVar2);
       if ((0.0 < local_14) && (local_18 = local_14 - local_20, 0.0 < local_18)) {
         local_24 = local_18 / local_14;
-        local_38 = local_38 * local_24;
+        local_38 = fVar2 * local_24;
         local_34 = local_24 * 0.0;
-        local_30 = fVar2 * local_24;
+        local_30 = fVar3 * local_24;
         core_charactr_cpp_CCharacter_FUN_00428f40(in_stack_00000004);
         return;
       }

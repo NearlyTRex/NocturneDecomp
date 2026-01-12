@@ -22,6 +22,7 @@ void core_werewolf_cpp_FUN_005f1ac0(void)
   BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000004;
   int in_stack_00000008;
+  CVector3f CStack_24;
   
   sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(in_stack_00000004[0x8e].actor_name + 8));
   if (*(int *)(in_stack_00000008 + 0x30) == 0x6c) {
@@ -35,8 +36,7 @@ void core_werewolf_cpp_FUN_005f1ac0(void)
     iVar5 = 0;
     *(float *)(in_stack_00000008 + 4) = *(float *)(in_stack_00000008 + 4) * (float)_DAT_00657e54;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-              (in_stack_00000004,(CVector3f *)&stack0xffffffdc,
-               (CVector3f *)(in_stack_00000008 + 0x1c));
+              (in_stack_00000004,&CStack_24,(CVector3f *)(in_stack_00000008 + 0x1c));
     do {
       iVar5 = iVar5 + 1;
       core_fire_cpp_CFireEffect_FUN_004c79d0(g_CFireEffectPtr);

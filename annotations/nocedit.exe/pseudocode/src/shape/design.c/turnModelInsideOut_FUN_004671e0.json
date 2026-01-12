@@ -1,17 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 124,
-    "complexity_score": 148,
+    "complexity_score": 25,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 4,
-    "pseudocode_lines": 28,
-    "suspect_count": 11,
-    "suspect_types": [
-      "call_esp_anchor",
-      "pointer_cast"
-    ],
-    "total_lines": 152
+    "pseudocode_lines": 25,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 149
   },
   "cross_references": [
     {
@@ -109,6 +106,20 @@
     "declared_params": 0,
     "estimated_params": 0
   },
+  "pcode_overrides": {
+    "00467286": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff4,4)"
+    ],
+    "004672d0": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff4,4)"
+    ],
+    "0046731a": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff4,4)"
+    ],
+    "0046733b": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff4,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.6923076923076925,
     "instruction_count": 104,
@@ -143,86 +154,7 @@
     },
     "pcode_op_count": 696
   },
-  "stack_frame": {
-    "frame_size": 32,
-    "local_size": 32,
-    "param_offset": 4,
-    "param_size": 0,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_1c",
-        "offset": -28,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "undefined4"
-      }
-    ]
-  },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 10,
-      "match": "(float *)((int)",
-      "text": "for (pfVar2 = (float *)0x0; (int)pfVar2 < g_PolygonCount; pfVar2 = (float *)((int)pfVar2 + 1)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 15,
-      "match": "(uint *)((int)",
-      "text": "((uint *)((int)pfVar2 * 0x184 + 0x16e99c8 + iVar3 * 4),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 16,
-      "match": "(uint *)((int)",
-      "text": "(uint *)((int)pfVar2 * 0x184 + (uVar1 - iVar3) * 4 + 0x16e99c4));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 17,
-      "match": "(float *)((int)",
-      "text": "pfVar2 = (float *)((int)pfVar2 * 0x184 + (uVar1 - iVar3) * 4 + 0x16e9a04);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 19,
-      "match": "(float *)((int)",
-      "text": "((float *)((int)pfVar2 * 0x184 + 0x16e9a08 + iVar3 * 4),pfVar2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 20,
-      "match": "(float *)((int)",
-      "text": "value2_ptr = (float *)((int)pfVar2 * 0x184 + (uVar1 - iVar3) * 4 + 0x16e9a44);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 21,
-      "match": "(float *)((int)",
-      "text": "pfVar2 = (float *)((int)pfVar2 * 0x184 + 0x16e9a48 + (int)value2_ptr * 4);",
-      "type": "pointer_cast"
-    },
+  "resolved_suspects": [
     {
       "add_esp_value": 8,
       "call_address": "00467281",
@@ -275,5 +207,36 @@
       "text": "Direct CALL at 00467336, ADD ESP at 0046733b with uncertain ESP",
       "type": "call_esp_anchor"
     }
-  ]
+  ],
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 32,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": []
 }

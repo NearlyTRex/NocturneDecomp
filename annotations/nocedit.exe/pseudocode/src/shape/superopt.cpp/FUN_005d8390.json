@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 27,
-    "complexity_score": 128,
+    "complexity_score": 113,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 13,
-    "suspect_count": 10,
+    "suspect_count": 9,
     "suspect_types": [
-      "stack_align_anchor",
       "stack_param",
       "unaffected_reg"
     ],
@@ -37,6 +36,11 @@
     "declared_params": 0,
     "estimated_params": 0
   },
+  "pcode_overrides": {
+    "005d8397": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.1923076923076925,
     "instruction_count": 26,
@@ -60,6 +64,18 @@
     },
     "pcode_op_count": 161
   },
+  "resolved_suspects": [
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x10",
+      "fix_address": "005d8397",
+      "frame_offset": 16,
+      "match": "AND ESP",
+      "sub_esp_offset": 16,
+      "text": "Stack alignment at 005d8397 (SUB ESP, 0x10 before)",
+      "type": "stack_align_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 28,
     "local_size": 28,
@@ -171,16 +187,6 @@
       "match": "unaff_ESI",
       "text": "unaff_ESI[1] = dVar1 + dVar2;",
       "type": "unaffected_reg"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x10",
-      "fix_address": "005d8397",
-      "frame_offset": 16,
-      "match": "AND ESP",
-      "sub_esp_offset": 16,
-      "text": "Stack alignment at 005d8397 (SUB ESP, 0x10 before)",
-      "type": "stack_align_anchor"
     }
   ]
 }

@@ -11,13 +11,13 @@ shape_design_c_calculateVertexAngle_FUN_00462050
           (int vertex1_index,int vertex2_index,int vertex3_index)
 
 {
-  float fVar1;
-  float fVar2;
   BADSPACEBASE *in_ESP;
-  double dVar3;
+  double dVar1;
   int in_stack_00000004;
-  float fVar4;
-  float fStack_80;
+  uint in_stack_ffffff74;
+  double local_84;
+  double local_7c;
+  double local_74;
   double local_6c;
   double local_64;
   double local_5c;
@@ -52,19 +52,18 @@ shape_design_c_calculateVertexAngle_FUN_00462050
   local_38 = g_LoadedVertices[vertex2_index].vertex.z;
   fStack_34 = g_LoadedVertices[vertex2_index].u;
   fStack_30 = g_LoadedVertices[vertex2_index].v;
-  fVar4 = SUB84 /* extract 2-byte value */((double)(local_2c - local_54),0);
-  fStack_80 = (float)((ulonglong)(double)(local_2c - local_54) >> 0x20);
-  fVar1 = local_28 - local_50;
-  fVar2 = local_24 - local_4c;
+  local_84 = (double)(local_2c - local_54);
+  local_7c = (double)(local_28 - local_50);
+  local_74 = (double)(local_24 - local_4c);
   local_6c = (double)(local_40 - local_54);
   local_64 = (double)(local_3c - local_50);
   local_5c = (double)(local_38 - local_4c);
-  shape_design_c_normalizeVertex_FUN_00461e60((CVector3f *)&stack0xffffff7c);
+  shape_design_c_normalizeVertex_FUN_00461e60((CVector3f *)&local_84);
   shape_design_c_normalizeVertex_FUN_00461e60((CVector3f *)&local_6c);
-  dVar3 = shape_design_c_clampedArccos_FUN_00461c50
-                    ((double)CONCAT44 /* combine 2-byte values */(fVar4,(int)((ulonglong)
-                                                  ((double)fVar2 * local_5c +
-                                                  (double)CONCAT44 /* combine 2-byte values */(fStack_80,fVar4) * local_6c +
-                                                  (double)fVar1 * local_64) >> 0x20)));
-  return dVar3 * 57.295779513079999;
+  dVar1 = shape_design_c_clampedArccos_FUN_00461c50
+                    ((double)CONCAT44 /* combine 2-byte values */(in_stack_ffffff74,
+                                      (int)((ulonglong)
+                                            (local_74 * local_5c +
+                                            local_84 * local_6c + local_7c * local_64) >> 0x20)));
+  return dVar1 * 57.295779513079999;
 }

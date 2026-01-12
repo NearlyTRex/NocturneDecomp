@@ -16,8 +16,8 @@ uint core_emitter_cpp_FUN_004a8860(void)
   undefined3 extraout_var;
   BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000004;
-  CQuaternion4f *label_offset;
-  void *in_stack_ffffff3c;
+  CQuaternion4f *in_stack_fffffeb2;
+  void *in_stack_fffffeb6;
   byte local_7c [12];
   float local_70;
   float local_6c;
@@ -65,12 +65,11 @@ uint core_emitter_cpp_FUN_004a8860(void)
         if ((((*(int *)in_stack_00000004[1].actor_name == 3) && (DAT_02cf2b5c != 0)) &&
             (in_stack_00000004 == DAT_02cf2b78)) &&
            (DAT_02cf2b78 == *(CDemonActor **)(g_CDemonMissionPtr->field2_0xc + 0x1c))) {
-          label_offset = (CQuaternion4f *)&DAT_02cf2b6c;
           uVar1 = shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330
                             (g_CEditorToolsPtr);
           shape_edittool_cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004a1e90
                     (g_CEditorToolsPtr,0x3f800000,(CQuaternion4f *)CONCAT31 /* combine 2-byte values */(extraout_var,uVar1),
-                     label_offset,in_stack_ffffff3c);
+                     in_stack_fffffeb2,in_stack_fffffeb6);
           return 0;
         }
       }

@@ -1,22 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 707,
-    "complexity_score": 586,
+    "complexity_score": 360,
     "cross_reference_count": 1,
     "function_call_count": 19,
     "global_count": 49,
-    "pseudocode_lines": 331,
-    "suspect_count": 22,
+    "pseudocode_lines": 330,
+    "suspect_count": 2,
     "suspect_types": [
       "badspacebase",
-      "call_esp_anchor",
-      "format_string_mismatch",
-      "register_param",
-      "stack_ref",
-      "suspect_float",
-      "variadic_anchor"
+      "register_param"
     ],
-    "total_lines": 1038
+    "total_lines": 1037
   },
   "cross_references": [
     {
@@ -449,6 +444,56 @@
     "declared_params": 2,
     "estimated_params": 2
   },
+  "pcode_overrides": {
+    "0046a19f": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe44,4)"
+    ],
+    "0046a1ee": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe44,4)"
+    ],
+    "0046a209": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe44,4)"
+    ],
+    "0046a21b": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe44,4)"
+    ],
+    "0046a22f": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe44,4)"
+    ],
+    "0046a45d": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe44,4)"
+    ],
+    "0046a482": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe44,4)"
+    ],
+    "0046a49d": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe44,4)"
+    ],
+    "0046a4be": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe44,4)"
+    ],
+    "0046a500": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe44,4)"
+    ],
+    "0046a57c": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe44,4)"
+    ],
+    "0046a5c9": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe44,4)"
+    ],
+    "0046a5d2": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe44,4)"
+    ],
+    "0046a6de": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe44,4)"
+    ],
+    "0046a6f9": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe44,4)"
+    ],
+    "0046a7b0": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe44,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.900375939849624,
     "instruction_count": 532,
@@ -491,163 +536,7 @@
     },
     "pcode_op_count": 3139
   },
-  "stack_frame": {
-    "frame_size": 472,
-    "local_size": 464,
-    "param_offset": 4,
-    "param_size": 8,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_1cc",
-        "offset": -460,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c8",
-        "offset": -456,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c4",
-        "offset": -452,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c0",
-        "offset": -448,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1bc",
-        "offset": -444,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1b8",
-        "offset": -440,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1b4",
-        "offset": -436,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1b0",
-        "offset": -432,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1ac",
-        "offset": -428,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_e4",
-        "offset": -228,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_e3",
-        "offset": -227,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_e1",
-        "offset": -225,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c",
-        "offset": -28,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": true,
-        "name": "model_name",
-        "offset": 4,
-        "size": 4,
-        "type": "char *"
-      },
-      {
-        "is_param": true,
-        "name": "prompt_for_model",
-        "offset": 8,
-        "size": 4,
-        "type": "int"
-      }
-    ]
-  },
-  "suspects": [
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 8,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 8,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 80,
-      "match": "6.487317e-39",
-      "text": "fVar11 = 6.487317e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 168,
-      "match": "&stack0xfffffe54",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffe54,\"Model name to save [%s] : \");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 170,
-      "match": "&stack0xfffffe54",
-      "text": "(g_LoadedModelName,0x27,0,0,&stack0xfffffe54);",
-      "type": "stack_ref"
-    },
+  "resolved_suspects": [
     {
       "add_esp_value": 12,
       "call_address": "0046a6d9",
@@ -663,17 +552,6 @@
       "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
       "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0046a6d9 (EBP frame + ADD ESP)",
       "type": "variadic_anchor"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Model name to save [%s] : \" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Model name to save [%s] : ",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 168,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffe54,\"Model name to save [%s] : \");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 8,
@@ -869,6 +747,143 @@
       "target_address": "0x459e80",
       "text": "Direct CALL at 0046a7ab, ADD ESP at 0046a7b0 with uncertain ESP",
       "type": "call_esp_anchor"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 472,
+    "local_size": 464,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1cc",
+        "offset": -460,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c8",
+        "offset": -456,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c4",
+        "offset": -452,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c0",
+        "offset": -448,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1bc",
+        "offset": -444,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1b8",
+        "offset": -440,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1b4",
+        "offset": -436,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1b0",
+        "offset": -432,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1ac",
+        "offset": -428,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_e4",
+        "offset": -228,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_e3",
+        "offset": -227,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_e1",
+        "offset": -225,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "model_name",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "prompt_for_model",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 8,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 8,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
     }
   ]
 }

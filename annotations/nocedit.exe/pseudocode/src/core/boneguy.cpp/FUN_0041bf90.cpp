@@ -34,10 +34,10 @@ void core_boneguy_cpp_FUN_0041bf90(void)
   byte bVar15;
   CBoneGuy *in_stack_00000004;
   float in_stack_00000008;
-  float afStackY_1908 [1484];
+  float afStackY_1908 [1452];
   CQuaternion4f *quat_ptr;
-  float in_stack_fffffe44;
-  int iStack_1b4;
+  CVector3f *in_stack_fffffdca;
+  SDamageInfo local_1bc;
   SDamageInfo local_180;
   CBoundingBox3D local_144;
   CQuaternion4f local_12c;
@@ -136,7 +136,8 @@ void core_boneguy_cpp_FUN_0041bf90(void)
         local_a8 = local_18->y + local_b4;
         local_a4 = local_18->z + local_b0;
         core_xform_cpp_slerpQuaternion_FUN_005f77e0
-                  (local_28,local_20,(CQuaternion4f *)in_stack_00000004->param,in_stack_fffffe44);
+                  (local_28,local_20,(CQuaternion4f *)in_stack_00000004->param,
+                   (float)in_stack_fffffdca);
         quat_ptr = &local_12c;
         pCVar13 = &local_88;
         local_12c.w = local_11c;
@@ -349,9 +350,10 @@ void core_boneguy_cpp_FUN_0041bf90(void)
         }
         local_100.z = local_144.min.z;
         local_f4.z = local_144.max.z;
+        in_stack_fffffdca = &local_a0;
         pCVar13 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                             ((in_stack_00000004->base_enemy).base_character.carry_hands[1].
-                             carry_actor,&local_a0,&local_100);
+                             carry_actor,in_stack_fffffdca,&local_100);
         if (&local_100 != pCVar13) {
           local_100.x = pCVar13->x;
           local_100.y = pCVar13->y;
@@ -365,8 +367,12 @@ void core_boneguy_cpp_FUN_0041bf90(void)
           local_f4.y = pCVar13->y;
           local_f4.z = pCVar13->z;
         }
-        core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffe44);
-        local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(15.0,25.0);
+        core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_1bc);
+        local_1bc.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(15.0,25.0);
+        local_1bc.attacker =
+             (in_stack_00000004->base_enemy).base_character.carry_hands[1].carry_actor;
+        local_1bc.wielder = (CDemonActor *)in_stack_00000004;
+        local_14 = local_1bc.damage_amount;
         core_enemy_cpp_FUN_004a9930();
       }
     }
@@ -391,7 +397,7 @@ LAB_0041c60c:
       core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(&pCVar1->motion_controller,0,1)
       ;
       engine_console_cpp_CConsole_printf_FUN_00441890
-                (g_CConsolePtr,"%s confused while walking to scriptDest!\n",in_stack_00000004);
+                (g_CConsolePtr,"%s confused while walking to scriptDest!\n");
     }
     (in_stack_00000004->base_enemy).base_character.model.accumulated_root_motion.z = 0.0;
     (in_stack_00000004->base_enemy).base_character.model.accumulated_root_motion.y =
@@ -467,13 +473,11 @@ LAB_0041c60c:
       return;
     }
     sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
-    iVar8 = 2;
     local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,1.0);
-    sound_sndmain_cpp_setNextSfxTriggerTime_FUN_005a8be0((double)local_14,iVar8);
+    sound_sndmain_cpp_setNextSfxTriggerTime_FUN_005a8be0((double)local_14,(int)in_stack_fffffdca);
     uVar12 = (*((in_stack_00000004->base_enemy).base_character.base_actor.vtable)->playAmbientSound)
                        ((CDemonActor *)in_stack_00000004,"boneGuy-walkloop.wav");
     *(uint *)(in_stack_00000004->field1_0xbeb4 + 0x18) = uVar12;
-    iStack_1b4 = 0x41c5d5;
     sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
     return;
   }

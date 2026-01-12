@@ -1,19 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 137,
-    "complexity_score": 283,
+    "complexity_score": 253,
     "cross_reference_count": 0,
     "function_call_count": 13,
     "global_count": 3,
     "pseudocode_lines": 73,
-    "suspect_count": 16,
+    "suspect_count": 14,
     "suspect_types": [
       "badspacebase",
-      "call_esp_anchor",
       "concat_artifact",
       "extra_output",
       "register_param",
-      "stack_align_anchor",
       "stack_param",
       "sub_artifact",
       "unknown_field",
@@ -133,6 +131,14 @@
     "declared_params": 1,
     "estimated_params": 1
   },
+  "pcode_overrides": {
+    "005de36c": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe24,4)"
+    ],
+    "005de381": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe24,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.175438596491228,
     "instruction_count": 114,
@@ -172,6 +178,31 @@
     },
     "pcode_op_count": 590
   },
+  "resolved_suspects": [
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x1dc",
+      "fix_address": "005de36c",
+      "frame_offset": 476,
+      "match": "AND ESP",
+      "sub_esp_offset": 476,
+      "text": "Stack alignment at 005de36c (SUB ESP, 0x1dc before)",
+      "type": "stack_align_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "005de376",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "005de381",
+      "frame_offset": 476,
+      "match": "CALL...ADD ESP",
+      "return_address": "005de37b",
+      "target_address": "0x5ee110",
+      "text": "Direct CALL at 005de376, ADD ESP at 005de381 with uncertain ESP",
+      "type": "call_esp_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 512,
     "local_size": 508,
@@ -307,50 +338,50 @@
     {
       "description": "Unresolved stack parameter",
       "line": 12,
-      "match": "in_stack_fffffe10",
-      "text": "uint in_stack_fffffe10;",
+      "match": "in_stack_fffffe14",
+      "text": "uint in_stack_fffffe14;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 24,
-      "match": "in_stack_fffffe10",
-      "text": "dVar3 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(2,in_stack_fffffe10);",
+      "match": "in_stack_fffffe14",
+      "text": "dVar3 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(2,in_stack_fffffe14);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler double/longlong extraction artifact",
       "line": 25,
       "match": "SUB84",
-      "text": "local_20 = SUB84 /* extract 2-byte value */(dVar3,0);",
+      "text": "iStack_1c = SUB84 /* extract 2-byte value */(dVar3,0);",
       "type": "sub_artifact"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 33,
       "match": "._4_4_",
-      "text": "local_28._4_4_ = SUB84 /* extract 2-byte value */(dVar4,0);",
+      "text": "uStack_24._4_4_ = SUB84 /* extract 2-byte value */(dVar4,0);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler double/longlong extraction artifact",
       "line": 33,
       "match": "SUB84",
-      "text": "local_28._4_4_ = SUB84 /* extract 2-byte value */(dVar4,0);",
+      "text": "uStack_24._4_4_ = SUB84 /* extract 2-byte value */(dVar4,0);",
       "type": "sub_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
       "line": 35,
       "match": "CONCAT44",
-      "text": "dVar3 = (double)CONCAT44 /* combine 2-byte values */((uint)local_28,uStack_2c);",
+      "text": "dVar3 = (double)CONCAT44 /* combine 2-byte values */((uint)uStack_24,local_28);",
       "type": "concat_artifact"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 38,
       "match": "extraout_EBX",
-      "text": "(*(uint *)(extraout_EBX + 0x57c),(CSfxSample *)local_1e0);",
+      "text": "(*(uint *)(extraout_EBX + 0x57c),(CSfxSample *)local_1dc);",
       "type": "extra_output"
     },
     {
@@ -380,29 +411,6 @@
       "match": "extraout_EBX",
       "text": "sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(extraout_EBX + 0x57c));",
       "type": "extra_output"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x1dc",
-      "fix_address": "005de36c",
-      "frame_offset": 476,
-      "match": "AND ESP",
-      "sub_esp_offset": 476,
-      "text": "Stack alignment at 005de36c (SUB ESP, 0x1dc before)",
-      "type": "stack_align_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "005de376",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "005de381",
-      "frame_offset": 476,
-      "match": "CALL...ADD ESP",
-      "return_address": "005de37b",
-      "target_address": "0x5ee110",
-      "text": "Direct CALL at 005de376, ADD ESP at 005de381 with uncertain ESP",
-      "type": "call_esp_anchor"
     }
   ],
   "vtable_info": {

@@ -25,9 +25,8 @@ void core_gore_cpp_FUN_004ed240(void)
   uint in_stack_00000010;
   uint in_stack_00000014;
   uint in_stack_00000018;
-  CVector3f local_40;
-  CVector3f local_34 [2];
-  float fStack_14;
+  CVector3f local_3c;
+  CVector3f local_30 [2];
   
   iVar2 = 0;
   pfVar4 = (float *)(in_stack_00000004 + 2);
@@ -36,27 +35,26 @@ void core_gore_cpp_FUN_004ed240(void)
     fVar6 = (float10)fcos((float10)*(float *)(in_stack_0000000c + 4));
     fVar5 = fVar5 * (float10)0.5;
     fVar6 = fVar6 * (float10)0.5;
-    local_40.x = (float)(fVar5 * (float10)*(float *)((int)&DAT_0067cb18 + iVar2) +
+    local_3c.x = (float)(fVar5 * (float10)*(float *)((int)&DAT_0067cb18 + iVar2) +
                          -fVar6 * (float10)*(float *)((int)&DAT_0067cb08 + iVar2) +
                         (float10)*in_stack_00000008);
-    local_40.z = (float)(fVar6 * (float10)*(float *)((int)&DAT_0067cb18 + iVar2) +
+    local_3c.z = (float)(fVar6 * (float10)*(float *)((int)&DAT_0067cb18 + iVar2) +
                         fVar5 * (float10)*(float *)((int)&DAT_0067cb08 + iVar2)) +
                  in_stack_00000008[2];
-    if (local_34 != &local_40) {
-      local_34[0].x = local_40.x;
-      local_34[0].y = in_stack_00000008[1];
-      local_34[0].z = local_40.z;
+    if (local_30 != &local_3c) {
+      local_30[0].x = local_3c.x;
+      local_30[0].y = in_stack_00000008[1];
+      local_30[0].z = local_3c.z;
     }
-    local_40.y = in_stack_00000008[1] + 1.0;
-    local_34[0].y = local_34[0].y + -3f;
-    fStack_14 = core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70
-                          (&g_CDemonRaytraceInstance,&local_40,local_34,(CVector3f *)0x0,(int *)0x0)
-    ;
-    fVar1 = (local_40.z - fStack_14 * (float)4) + 0.08333334f;
-    if ((CVector3f *)pfVar4 != &local_40) {
-      *pfVar4 = local_40.x;
+    local_3c.y = in_stack_00000008[1] + 1.0;
+    local_30[0].y = local_30[0].y + -3f;
+    fVar1 = core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70
+                      (&g_CDemonRaytraceInstance,&local_3c,local_30,(CVector3f *)0x0,(int *)0x0);
+    fVar1 = (local_3c.y - fVar1 * (float)4) + 0.08333334f;
+    if ((CVector3f *)pfVar4 != &local_3c) {
+      *pfVar4 = local_3c.x;
       pfVar4[1] = fVar1;
-      pfVar4[2] = local_34[0].x;
+      pfVar4[2] = local_3c.z;
     }
     iVar2 = iVar2 + 4;
     pfVar4 = pfVar4 + 3;

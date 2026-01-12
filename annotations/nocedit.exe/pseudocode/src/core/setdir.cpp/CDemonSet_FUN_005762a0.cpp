@@ -22,8 +22,8 @@ int __cdecl core_setdir_cpp_CDemonSet_FUN_005762a0(CDemonSet *this_ptr)
   local_14.z = in_stack_0000000c[2] - (pSVar1->position).z;
   core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
             (&pSVar1->rotation_matrix,&local_20,&local_14);
-  if (((ABS(local_20.y) <= (pSVar1->extents).x) && (ABS(local_20.z) <= (pSVar1->extents).y)) &&
-     (ABS(local_14.x) <= (pSVar1->extents).z)) {
+  if (((ABS(local_20.x) <= (pSVar1->extents).x) && (ABS(local_20.y) <= (pSVar1->extents).y)) &&
+     (ABS(local_20.z) <= (pSVar1->extents).z)) {
     return 1;
   }
   return 0;

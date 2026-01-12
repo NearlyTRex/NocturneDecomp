@@ -26,12 +26,9 @@ void core_setedit_cpp_FUN_005817d0(void *unk)
   int in_stack_00000014;
   int in_stack_00000018;
   float fVar5;
-  byte local_54 [8];
-  byte local_4c [8];
-  int local_44;
-  int local_40;
-  int local_3c;
-  int local_38;
+  SMRGLHeaderPrimitive local_54;
+  uint local_3c;
+  uint local_38;
   int local_34;
   uint local_30;
   uint local_2c;
@@ -83,46 +80,47 @@ void core_setedit_cpp_FUN_005817d0(void *unk)
       *(int *)((int)&this_ptr->vertex_buffer_ptr->w_recip + iVar2) = local_20;
       if (7 < (int)uVar3) {
         engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(this_ptr,&DAT_006816c0);
-        local_4c._4_4_ = 0;
-        local_4c._0_4_ = 0;
-        local_54._4_4_ = 0;
-        local_54._0_4_ = 0;
-        local_44 = 0;
-        local_3c = 6;
-        local_38 = 4;
-        local_40 = 2;
+        local_54.surface_normal.D = 0;
+        local_54.surface_normal.C = 0;
+        local_54.surface_normal.B = 0;
+        local_54.surface_normal.A = 0;
+        local_3c = 0;
+        local_34 = 6;
+        local_54.base.count = 4;
+        local_30 = 4;
+        local_38 = 2;
         engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-                  (g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)&stack0xffffffa4);
-        local_34 = 5;
-        local_40 = 1;
-        local_3c = 3;
-        local_38 = 7;
+                  (g_CDemonRendererPtr,&local_54);
+        local_30 = 5;
+        local_3c = 1;
+        local_38 = 3;
+        local_34 = 7;
         engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-                  (g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)&stack0xffffffa8);
+                  (g_CDemonRendererPtr,&local_54);
         local_3c = 0;
         local_38 = 1;
         local_34 = 3;
         local_30 = 2;
         engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-                  (g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)local_54);
-        local_38 = 4;
+                  (g_CDemonRendererPtr,&local_54);
+        local_3c = 4;
+        local_38 = 5;
+        local_34 = 7;
+        local_30 = 6;
+        engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
+                  (g_CDemonRendererPtr,&local_54);
+        local_3c = 2;
+        local_30 = 6;
+        local_38 = 3;
+        local_34 = 7;
+        engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
+                  (g_CDemonRendererPtr,&local_54);
+        local_38 = 1;
+        local_3c = 0;
         local_34 = 5;
-        local_30 = 7;
-        local_2c = 6;
+        local_30 = 4;
         engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-                  (g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)(local_54 + 4));
-        local_34 = 2;
-        local_28 = 6;
-        local_30 = 3;
-        local_2c = 7;
-        engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-                  (g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)local_4c);
-        local_2c = 1;
-        local_30 = 0;
-        local_28 = 5;
-        local_24 = 4;
-        engine_drender_cpp_CDemonRenderer_renderMaximumQuality_FUN_0048bad0
-                  (g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)(local_4c + 4));
+                  (g_CDemonRendererPtr,&local_54);
         return;
       }
       if ((uVar3 & 1) == 0) break;

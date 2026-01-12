@@ -1,20 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 194,
-    "complexity_score": 296,
+    "complexity_score": 309,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 8,
-    "pseudocode_lines": 81,
-    "suspect_count": 19,
+    "pseudocode_lines": 84,
+    "suspect_count": 21,
     "suspect_types": [
-      "call_esp_anchor",
       "extra_output",
       "param_count_too_few",
-      "stack_align_anchor",
       "stack_param"
     ],
-    "total_lines": 275
+    "total_lines": 278
   },
   "cross_references": [
     {
@@ -116,6 +114,14 @@
     "declared_params": 0,
     "estimated_params": 3
   },
+  "pcode_overrides": {
+    "00554679": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd0,4)"
+    ],
+    "005546c8": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd0,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.1375,
     "instruction_count": 160,
@@ -161,6 +167,31 @@
     },
     "pcode_op_count": 982
   },
+  "resolved_suspects": [
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x30",
+      "fix_address": "00554679",
+      "frame_offset": 48,
+      "match": "AND ESP",
+      "sub_esp_offset": 48,
+      "text": "Stack alignment at 00554679 (SUB ESP, 0x30 before)",
+      "type": "stack_align_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "005546c3",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "005546c8",
+      "frame_offset": 48,
+      "match": "CALL...ADD ESP",
+      "return_address": "005546c8",
+      "target_address": "0x5fde40",
+      "text": "Direct CALL at 005546c3, ADD ESP at 005546c8 with uncertain ESP",
+      "type": "call_esp_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 68,
     "local_size": 68,
@@ -316,56 +347,84 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 36,
+      "line": 27,
       "match": "in_stack_00000010",
-      "text": "if ((fVar1 <= local_28) && (in_stack_00000010 <= fVar1)) {",
+      "text": "local_40 = in_stack_00000010 + -32f;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 39,
+      "match": "in_stack_00000010",
+      "text": "if ((fVar1 <= in_stack_00000010 * in_stack_00000010) && (local_40 * local_40 <= fVar1)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 39,
+      "match": "in_stack_00000010",
+      "text": "if ((fVar1 <= in_stack_00000010 * in_stack_00000010) && (local_40 * local_40 <= fVar1)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 40,
+      "match": "in_stack_00000010",
+      "text": "fVar6 = (float10)fsin(((float10)in_stack_00000010 - (float10)SQRT(fVar1)) *",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 43,
+      "match": "in_stack_00000010",
+      "text": "((double)(((float10)128 - (float10)in_stack_00000010) *",
       "type": "stack_param"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 43,
+      "line": 46,
       "match": "extraout_ECX_00",
-      "text": "(&DAT_030f6158)[extraout_ECX_00] = local_14;",
+      "text": "(&DAT_030f6158)[extraout_ECX_00] = local_18;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 44,
+      "line": 47,
       "match": "extraout_EDX_00",
       "text": "iVar4 = extraout_EDX_00;",
       "type": "extra_output"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 50,
+      "line": 53,
       "match": "in_stack_00000004",
-      "text": "local_2c = in_stack_00000004;",
+      "text": "local_30 = in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 57,
+      "line": 60,
       "match": "in_stack_00000008",
       "text": "crt_math_c_round_FUN_005fe6b0((double)((float)iVar4 - in_stack_00000008));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 58,
+      "line": 61,
       "match": "in_stack_0000000c",
       "text": "dVar7 = crt_math_c_round_FUN_005fe6b0((double)(fVar6 - (float10)in_stack_0000000c));",
       "type": "stack_param"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 77,
+      "line": 80,
       "match": "extraout_EDX",
       "text": "iVar4 = extraout_EDX + 1;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 78,
+      "line": 81,
       "match": "extraout_ECX",
       "text": "*(char *)(extraout_ECX + 8) = (char)uVar3;",
       "type": "extra_output"
@@ -380,29 +439,6 @@
       "param_delta": 3,
       "text": "Function declares 0 params but call sites push 3 (3 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x30",
-      "fix_address": "00554679",
-      "frame_offset": 48,
-      "match": "AND ESP",
-      "sub_esp_offset": 48,
-      "text": "Stack alignment at 00554679 (SUB ESP, 0x30 before)",
-      "type": "stack_align_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "005546c3",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "005546c8",
-      "frame_offset": 48,
-      "match": "CALL...ADD ESP",
-      "return_address": "005546c8",
-      "target_address": "0x5fde40",
-      "text": "Direct CALL at 005546c3, ADD ESP at 005546c8 with uncertain ESP",
-      "type": "call_esp_anchor"
     }
   ]
 }

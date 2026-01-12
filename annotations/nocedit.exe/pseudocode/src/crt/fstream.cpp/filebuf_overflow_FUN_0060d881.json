@@ -1,16 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 239,
-    "complexity_score": 279,
+    "complexity_score": 199,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 0,
     "pseudocode_lines": 94,
-    "suspect_count": 15,
+    "suspect_count": 8,
     "suspect_types": [
       "badspacebase",
-      "call_esp_anchor",
-      "callind_anchor",
       "register_param",
       "special_crt_function",
       "stack_ref",
@@ -62,6 +60,29 @@
     "declared_params": 2,
     "estimated_params": 2
   },
+  "pcode_overrides": {
+    "0060d8d2": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
+    ],
+    "0060d8ee": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
+    ],
+    "0060d910": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
+    ],
+    "0060d971": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
+    ],
+    "0060d9d3": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
+    ],
+    "0060d9e9": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
+    ],
+    "0060da70": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.325581395348837,
     "instruction_count": 172,
@@ -92,86 +113,7 @@
     },
     "pcode_op_count": 744
   },
-  "stack_frame": {
-    "frame_size": 32,
-    "local_size": 24,
-    "param_offset": 4,
-    "param_size": 8,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": true,
-        "name": "this_ptr",
-        "offset": 4,
-        "size": 4,
-        "type": "filebuf *"
-      },
-      {
-        "is_param": true,
-        "name": "character",
-        "offset": 8,
-        "size": 4,
-        "type": "int"
-      }
-    ]
-  },
-  "suspects": [
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 11,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 11,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 12,
-      "match": "unaff_EDI",
-      "text": "long unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 36,
-      "match": "&stack0xffffffec",
-      "text": "iVar3 = crt_io_c_write_FUN_006084ec(this_ptr->__file_handle,&stack0xffffffec,1);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 48,
-      "match": "unaff_EDI",
-      "text": "((unaff_EDI = crt_io_c_tell_FUN_00606720(this_ptr->__file_handle), -1 < unaff_EDI &&",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 48,
-      "match": "unaff_EDI",
-      "text": "((unaff_EDI = crt_io_c_tell_FUN_00606720(this_ptr->__file_handle), -1 < unaff_EDI &&",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 91,
-      "match": "unaff_EDI",
-      "text": "(iVar3 = crt_stdio_c_lseek_FUN_00606690(this_ptr->__file_handle,unaff_EDI,0), -1 < iVar3))",
-      "type": "unaffected_reg"
-    },
+  "resolved_suspects": [
     {
       "add_esp_value": 4,
       "callind_address": "0060d8cf",
@@ -258,6 +200,87 @@
       "target_address": "0x606690",
       "text": "Direct CALL at 0060da6b, ADD ESP at 0060da70 with uncertain ESP",
       "type": "call_esp_anchor"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "filebuf *"
+      },
+      {
+        "is_param": true,
+        "name": "character",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 11,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 11,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 12,
+      "match": "unaff_EDI",
+      "text": "long unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 36,
+      "match": "&stack0xffffffec",
+      "text": "iVar3 = crt_io_c_write_FUN_006084ec(this_ptr->__file_handle,&stack0xffffffec,1);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 48,
+      "match": "unaff_EDI",
+      "text": "((unaff_EDI = crt_io_c_tell_FUN_00606720(this_ptr->__file_handle), -1 < unaff_EDI &&",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 48,
+      "match": "unaff_EDI",
+      "text": "((unaff_EDI = crt_io_c_tell_FUN_00606720(this_ptr->__file_handle), -1 < unaff_EDI &&",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 91,
+      "match": "unaff_EDI",
+      "text": "(iVar3 = crt_stdio_c_lseek_FUN_00606690(this_ptr->__file_handle,unaff_EDI,0), -1 < iVar3))",
+      "type": "unaffected_reg"
     },
     {
       "address": "0060d881",

@@ -17,14 +17,11 @@ int core_frankgen_cpp_FUN_004d1f70(void)
   CDemonActor *extraout_EBX;
   BADSPACEBASE *in_ESP;
   float10 fVar3;
-  double dVar4;
   CDemonActor *in_stack_00000004;
-  float fStack_24;
-  ulonglong in_stack_ffffffe8;
-  float fVar5;
+  float fVar4;
   double input_value;
+  byte auStack_30 [32];
   
-  fVar5 = SUB84 /* extract 2-byte value */(in_stack_ffffffe8,4);
   if (*(int *)(g_CDemonMissionPtr->field0_0x0 + 4) != 0) {
     iVar2 = core_frankgen_cpp_CFrankenstienMachine_findLeader_FUN_004d2330();
     *(uint *)(in_stack_00000004[1].actor_name + 4) = *(uint *)(iVar2 + 0x15c);
@@ -32,10 +29,10 @@ int core_frankgen_cpp_FUN_004d1f70(void)
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);
   this_ptr = (*in_stack_00000004->vtable->getBoundingBox)
-                       (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffd8);
+                       (in_stack_00000004,(CBoundingBox3D *)auStack_30);
   iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr);
   if (iVar2 != 0) {
-    fStack_24 = 7.082796e-39;
+    fVar4 = -NAN;
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
               ((CKeyFramedModelInstance *)&in_stack_00000004[1].location.area_id,
                in_stack_00000004[1].location.position.z,-1);
@@ -45,19 +42,18 @@ int core_frankgen_cpp_FUN_004d1f70(void)
          (0x44f9ffff < iVar1)) {
         input_value = (double)((*(float *)(in_stack_00000004[1].actor_name + 4) + -2000f) *
                                (float)3 * 0.005f);
-        dVar4 = crt_math_c_floor_FUN_005feb90(input_value);
+        auStack_30._20_8_ = crt_math_c_floor_FUN_005feb90(input_value);
         fVar3 = (float10)(float)((ulonglong)input_value >> 0x20) -
-                (float10)dVar4 * (float10)200;
-        fVar5 = (float)fVar3;
+                (float10)(double)auStack_30._20_8_ * (float10)200;
+        fVar4 = (float)fVar3;
         if ((float10)100f < fVar3) {
-          fVar5 = 200f - fVar5;
+          fVar4 = 200f - fVar4;
         }
-        fVar5 = fVar5 + 99f;
+        fVar4 = fVar4 + 99f;
         in_stack_00000004 = extraout_EBX;
       }
-      fStack_24 = 7.08288e-39;
       core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
-                ((CKeyFramedModelInstance *)&in_stack_00000004[2].orient_matrix.m[2].z,fVar5,-1);
+                ((CKeyFramedModelInstance *)&in_stack_00000004[2].orient_matrix.m[2].z,fVar4,-1);
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_00000004);
       return iVar2;
     }

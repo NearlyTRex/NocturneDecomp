@@ -27,6 +27,7 @@ void core_gargoyle_cpp_CGargoyle_unk6_FUN_004e4a00(void)
   BADSPACEBASE *in_ESP;
   CEnemy *in_stack_00000004;
   float in_stack_00000008;
+  SDamageInfo local_104;
   CVector3f local_c8;
   CVector3f local_bc;
   float local_b0;
@@ -273,8 +274,11 @@ void core_gargoyle_cpp_CGargoyle_unk6_FUN_004e4a00(void)
       }
       break;
     case 3:
-      core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffefc);
-      local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(3.0,5.0);
+      core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_104);
+      local_104.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(3.0,5.0);
+      local_104.attacker = (CDemonActor *)in_stack_00000004;
+      local_104.wielder = (CDemonActor *)in_stack_00000004;
+      local_14 = local_104.damage_amount;
       pCVar8 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
                          (&local_8c,&g_ZeroVector,
                           (CMatrix3x4f *)

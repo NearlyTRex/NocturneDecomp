@@ -1,20 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 94,
-    "complexity_score": 116,
+    "complexity_score": 84,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 4,
-    "pseudocode_lines": 41,
-    "suspect_count": 5,
+    "pseudocode_lines": 39,
+    "suspect_count": 3,
     "suspect_types": [
       "badspacebase",
-      "call_esp_anchor",
       "register_param",
-      "special_crt_function",
-      "stack_ref"
+      "special_crt_function"
     ],
-    "total_lines": 135
+    "total_lines": 133
   },
   "cross_references": [
     {
@@ -87,6 +85,11 @@
       "value": null
     }
   ],
+  "pcode_overrides": {
+    "0060b223": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.082191780821918,
     "instruction_count": 73,
@@ -115,6 +118,21 @@
     },
     "pcode_op_count": 298
   },
+  "resolved_suspects": [
+    {
+      "add_esp_value": 4,
+      "call_address": "0060b21e",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0060b223",
+      "frame_offset": 4,
+      "match": "CALL...ADD ESP",
+      "return_address": "0060b223",
+      "target_address": "0x605a40",
+      "text": "Direct CALL at 0060b21e, ADD ESP at 0060b223 with uncertain ESP",
+      "type": "call_esp_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 36,
     "local_size": 24,
@@ -166,26 +184,6 @@
       "match": "in_ESP",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "register_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 32,
-      "match": "&stack0xffffffec",
-      "text": "(g_CodePage,8,mb_string,cbMultiByte,(LPWSTR)&stack0xffffffec,1);",
-      "type": "stack_ref"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "0060b21e",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0060b223",
-      "frame_offset": 4,
-      "match": "CALL...ADD ESP",
-      "return_address": "0060b223",
-      "target_address": "0x605a40",
-      "text": "Direct CALL at 0060b21e, ADD ESP at 0060b223 with uncertain ESP",
-      "type": "call_esp_anchor"
     },
     {
       "address": "0060b1c0",

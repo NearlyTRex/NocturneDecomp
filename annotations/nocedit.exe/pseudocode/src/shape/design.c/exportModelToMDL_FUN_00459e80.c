@@ -38,25 +38,28 @@ void __cdecl shape_design_c_exportModelToMDL_FUN_00459e80(char *mdl_filename)
     for (local_1c = 0; local_1c < g_VertexCount; local_1c = local_1c + 1) {
       crt_stdio_c_fprintf_FUN_005fe6d0
                 (file,"%f,%f,%f\n",(double)g_LoadedVertices[local_1c].vertex.x,
-                 SUB84 /* extract 2-byte value */((double)g_LoadedVertices[local_1c].vertex.y,0));
+                 (double)g_LoadedVertices[local_1c].vertex.y,
+                 (double)g_LoadedVertices[local_1c].vertex.z);
     }
     crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n");
     for (local_1c = 0; local_1c < g_PolygonCount; local_1c = local_1c + 1) {
       if (g_ModelPolygonData[local_1c].lightmap_name[0] == '\0') {
         if (g_ModelPolygonData[local_1c].texture_name[0] == '\0') {
-          crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d,%d,x\n");
+          crt_stdio_c_fprintf_FUN_005fe6d0
+                    (file,"%d,%d,x\n",g_ModelPolygonData[local_1c].polygon_type);
         }
         else {
           crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d,%d,%s\n");
         }
       }
       else {
-        crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d,%d,%s,%s\n");
+        crt_stdio_c_fprintf_FUN_005fe6d0
+                  (file,"%d,%d,%s,%s\n",g_ModelPolygonData[local_1c].polygon_type,
+                   g_ModelPolygonData[local_1c].vertex_indices_count,local_1c * 0x184 + 0x16e9914);
       }
       for (local_18 = 0; local_18 < (int)g_ModelPolygonData[local_1c].vertex_indices_count;
           local_18 = local_18 + 1) {
-        crt_stdio_c_fprintf_FUN_005fe6d0
-                  (file,"%d,%f,%f\n",g_ModelPolygonData[local_1c].vertex_indices[local_18]);
+        crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d,%f,%f\n");
       }
     }
     crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n");

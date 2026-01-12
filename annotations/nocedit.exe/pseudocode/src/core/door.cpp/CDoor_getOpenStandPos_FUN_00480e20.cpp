@@ -20,25 +20,23 @@ float * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00480e20(CDoor *this_ptr
   CVector3f *in_stack_00000010;
   CVector3f CStack_64;
   CVector3f local_58;
-  float local_48 [3];
-  float local_3c;
-  float local_38;
-  float local_34;
-  float local_30;
-  CVector3f local_2c;
+  float local_4c [3];
+  float local_40 [3];
+  CVector3f local_34;
+  CVector3f CStack_28;
   CVector3f CStack_1c;
   
-  CStack_64.z = *in_stack_0000000c;
-  local_58.x = in_stack_0000000c[1];
-  local_58.y = in_stack_0000000c[2];
-  if (local_58.y < 0.0) {
-    local_38 = -CStack_64.z;
-    local_34 = -local_58.x;
-    local_30 = -local_58.y;
-    if (&CStack_64.z != &local_38) {
-      CStack_64.z = local_38;
-      local_58.x = local_34;
-      local_58.y = local_30;
+  local_58.x = *in_stack_0000000c;
+  local_58.y = in_stack_0000000c[1];
+  local_58.z = in_stack_0000000c[2];
+  if (local_58.z < 0.0) {
+    local_34.x = -local_58.x;
+    local_34.y = -local_58.y;
+    local_34.z = -local_58.z;
+    if (&local_58 != &local_34) {
+      local_58.x = local_34.x;
+      local_58.y = local_34.y;
+      local_58.z = local_34.z;
     }
   }
   switch(this_ptr->door_type) {
@@ -46,7 +44,7 @@ float * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00480e20(CDoor *this_ptr
   case 1:
   case 2:
     pCVar5 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                       (&this_ptr->base_actor,&local_2c,in_stack_00000010);
+                       (&this_ptr->base_actor,&CStack_28,in_stack_00000010);
     if (pCVar5->z <= 0.0) {
       pCVar5 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
                          (&this_ptr->base_actor,&CStack_1c,&local_58);
@@ -54,7 +52,7 @@ float * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00480e20(CDoor *this_ptr
       fVar2 = pCVar5->y;
       fVar3 = *(float *)(this_ptr->field17_0x9bc + 8);
       fVar4 = pCVar5->z;
-      if (in_stack_00000008 != local_48) {
+      if (in_stack_00000008 != local_4c) {
         *in_stack_00000008 = *(float *)this_ptr->field17_0x9bc - pCVar5->x;
         in_stack_00000008[1] = fVar1 - fVar2;
         in_stack_00000008[2] = fVar3 - fVar4;
@@ -69,7 +67,7 @@ float * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00480e20(CDoor *this_ptr
       fVar2 = pCVar5->y;
       fVar3 = *(float *)(this_ptr->field17_0x9bc + 8);
       fVar4 = pCVar5->z;
-      if (in_stack_00000008 != &local_3c) {
+      if (in_stack_00000008 != local_40) {
         *in_stack_00000008 = *(float *)this_ptr->field17_0x9bc + pCVar5->x;
         in_stack_00000008[1] = fVar1 + fVar2;
         in_stack_00000008[2] = fVar3 + fVar4;

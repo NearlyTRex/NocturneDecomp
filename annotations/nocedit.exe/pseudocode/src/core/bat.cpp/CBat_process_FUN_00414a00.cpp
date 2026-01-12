@@ -12,22 +12,23 @@ void __cdecl core_bat_cpp_CBat_process_FUN_00414a00(CBat *this_ptr)
   CKeyFramedModel *pCVar1;
   int iVar2;
   uint uVar3;
-  float in_stack_00000008;
   float fVar4;
+  float in_stack_00000008;
+  float local_34;
   
-  fVar4 = (this_ptr->base_actor).location.position.z;
+  fVar4 = (this_ptr->base_actor).location.position.y;
   this_ptr->param = this_ptr->course_speed * in_stack_00000008 + this_ptr->param;
   core_bat_cpp_FUN_00414ce0();
-  fVar4 = (((this_ptr->base_actor).location.position.y - fVar4) * (float)4) /
-          in_stack_00000008 + (float)35;
-  if (fVar4 < (float)10) {
-    fVar4 = 10.0;
+  local_34 = (((this_ptr->base_actor).location.position.y - fVar4) * (float)4) /
+             in_stack_00000008 + (float)35;
+  if (local_34 < (float)10) {
+    local_34 = 10.0;
   }
-  if ((float)60 < fVar4) {
-    fVar4 = 60.0;
+  if ((float)60 < local_34) {
+    local_34 = 60.0;
   }
   *(float *)this_ptr->field6_0x310 =
-       (fVar4 - *(float *)this_ptr->field6_0x310) * (float)0.69999999999999996 +
+       (local_34 - *(float *)this_ptr->field6_0x310) * (float)0.69999999999999996 +
        *(float *)this_ptr->field6_0x310;
   *(float *)(this_ptr->course_filename + 0x2c) =
        in_stack_00000008 * *(float *)this_ptr->field6_0x310 * this_ptr->speed +

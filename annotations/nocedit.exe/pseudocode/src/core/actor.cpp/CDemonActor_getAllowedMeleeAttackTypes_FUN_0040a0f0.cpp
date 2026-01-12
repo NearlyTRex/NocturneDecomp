@@ -16,11 +16,11 @@ core_actor_cpp_CDemonActor_getAllowedMeleeAttackTypes_FUN_0040a0f0(CDemonActor *
   CBoundingBox3D *pCVar4;
   uint uVar5;
   BADSPACEBASE *in_ESP;
-  CBoundingBox3D CStack_2c;
+  CBoundingBox3D local_30;
   
   core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
             (this_ptr,"..\\core\\actor.cpp",0x5ae);
-  pCVar4 = (*this_ptr->vtable->getBoundingBox)(this_ptr,&CStack_2c);
+  pCVar4 = (*this_ptr->vtable->getBoundingBox)(this_ptr,&local_30);
   fVar1 = (pCVar4->max).x - (pCVar4->min).x;
   uVar5 = 0;
   fVar2 = (pCVar4->max).y - (pCVar4->min).y;

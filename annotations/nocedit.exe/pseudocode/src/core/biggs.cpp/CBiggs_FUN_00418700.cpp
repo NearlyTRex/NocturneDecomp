@@ -14,8 +14,8 @@ void __cdecl core_biggs_cpp_CBiggs_FUN_00418700(CBiggs *this_ptr)
   float fVar2;
   CEnemy *pCVar3;
   int iVar4;
-  float fVar5;
   float in_stack_00000008;
+  float fVar5;
   
   iVar4 = core_charactr_cpp_CCharacter_FUN_00429870((CCharacter *)this_ptr);
   if (iVar4 == 0) {
@@ -29,8 +29,7 @@ void __cdecl core_biggs_cpp_CBiggs_FUN_00418700(CBiggs *this_ptr)
   fVar5 = in_stack_00000008 * (this_ptr->base_enemy).speed;
   this_ptr_00 = &(this_ptr->base_enemy).base_character.model;
   while (0.0 < fVar5) {
-    fVar5 = (float)core_motion_cpp_CMotionController_advance_FUN_0052d610
-                             (&this_ptr_00->motion_controller);
+    core_motion_cpp_CMotionController_advance_FUN_0052d610(&this_ptr_00->motion_controller);
     core_charactr_cpp_CCharacter_FUN_0042ec40((CCharacter *)this_ptr);
   }
   fVar5 = (this_ptr->base_enemy).speed;
@@ -61,7 +60,7 @@ LAB_00418994:
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
               (&this_ptr_00->motion_controller,0,1);
     engine_console_cpp_CConsole_printf_FUN_00441890
-              (g_CConsolePtr,"%s confused while walking to scriptDest!\n");
+              (g_CConsolePtr,"%s confused while walking to scriptDest!\n",this_ptr);
   }
   (this_ptr->base_enemy).base_character.model.accumulated_root_motion.z = 0.0;
   (this_ptr->base_enemy).base_character.model.accumulated_root_motion.y =

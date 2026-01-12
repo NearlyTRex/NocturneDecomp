@@ -12,240 +12,214 @@
 void core_stranger_cpp_CStranger_FUN_005c02b0(void)
 
 {
-  CSkeleton *this_ptr;
+  CDeformableModelInstance *this_ptr;
+  CSkeleton *this_ptr_00;
   int iVar1;
-  float target_frame_number;
   BADSPACEBASE *in_ESP;
-  int unaff_EBP;
-  int unaff_ESI;
-  uint *puVar2;
-  uint *puVar3;
-  CDeformableModelInstance *unaff_EDI;
-  float *pfVar4;
-  float *pfVar5;
+  float *pfVar2;
+  float *pfVar3;
+  uint *puVar4;
+  uint *puVar5;
   byte bVar6;
   int in_stack_00000004;
   int in_stack_00000008;
-  int in_stack_00000010;
-  CQuaternion4f *in_stack_00000018;
-  CDeformableModelInstance *in_stack_0000001c;
-  float afStackY_19b4 [70];
-  int aiStackY_189c [10];
-  float afStackY_1874 [31];
-  CDeformableModelInstance *apCStackY_17f8 [421];
-  float afStackY_1164 [47];
-  int aiStackY_10a8 [10];
-  float afStackY_1080 [31];
-  CDeformableModelInstance *apCStackY_1004 [904];
-  float in_stack_fffffe20;
-  float in_stack_fffffe24;
-  float in_stack_fffffe28;
-  float in_stack_fffffe38;
-  CQuaternion4f *in_stack_fffffe3c;
+  float afStackY_19b0 [1519];
   CQuaternion4f *pCVar7;
-  CQuaternion4f *in_stack_fffffe40;
   CQuaternion4f *pCVar8;
-  float in_stack_fffffe44;
   CQuaternion4f *pCVar9;
-  float in_stack_fffffe4c;
-  CQuaternion4f *in_stack_fffffe50;
-  CQuaternion4f *in_stack_fffffe54;
-  float in_stack_fffffe58;
-  float in_stack_fffffe5c;
-  CQuaternion4f *in_stack_fffffe60;
-  float in_stack_fffffe64;
-  CQuaternion4f local_18c;
-  float local_17c;
-  float afStack_178 [4];
-  float fStack_168;
-  byte auStack_164 [12];
-  float afStack_158 [8];
-  uint uStack_138;
-  CQuaternion4f CStack_134;
-  uint uStack_124;
-  byte auStack_120 [8];
-  float fStack_118;
-  uint auStack_114 [4];
-  byte auStack_104 [16];
-  uint auStack_f4 [4];
-  uint auStack_e4 [6];
-  uint local_cc;
-  byte auStack_c8 [16];
-  int aiStack_b8 [8];
-  uint uStack_98;
-  float afStack_94 [4];
-  float fStack_84;
-  uint uStack_74;
+  float in_stack_fffffe24;
+  CQuaternion4f *in_stack_fffffe28;
+  float fStack_1d4;
+  CQuaternion4f CStack_1c8;
+  CQuaternion4f CStack_1b8;
+  float afStack_1a8 [5];
+  uint uStack_194;
+  float afStack_190 [2];
+  CQuaternion4f CStack_188;
+  uint uStack_178;
+  CQuaternion4f CStack_174;
+  float afStack_164 [3];
+  CQuaternion4f CStack_158;
+  uint uStack_148;
+  byte auStack_144 [16];
+  uint uStack_134;
+  float afStack_130 [3];
+  CQuaternion4f CStack_124;
+  float fStack_114;
+  float afStack_110 [2];
+  CQuaternion4f CStack_108;
+  CQuaternion4f CStack_f8;
+  float afStack_e8 [5];
+  float fStack_d4;
+  uint auStack_d0 [7];
+  uint uStack_b4;
+  float afStack_b0 [6];
+  float fStack_98;
+  uint uStack_84;
+  float afStack_80 [4];
+  uint uStack_70;
+  float local_6c [5];
   float fStack_58;
-  uint auStack_54 [4];
-  uint uStack_44;
-  float afStack_40 [4];
-  uint local_30;
-  uint local_28;
-  uint local_24;
-  float local_20;
-  float local_1c;
-  int local_18;
-  CDeformableModelInstance *pCStack_14;
+  float fStack_48;
+  float local_30;
+  int local_2c;
+  CQuaternion4f *local_28;
+  CQuaternion4f *local_24;
+  int local_20;
+  int local_1c;
+  CDeformableModelInstance *local_18;
   
   bVar6 = 0;
   if (in_stack_00000008 == 0) {
-    local_24 = DAT_03f6bad8;
-    local_28 = DAT_03f6bae0;
-    core_xform_cpp_quaternionFromAngleY_FUN_005f79f0((CQuaternion4f *)0x3fc90fdb,in_stack_fffffe20);
-    *(uint *)(&stack0xfffffe38 + (uint)bVar6 * -8) = auStack_114[(uint)bVar6 * -2];
-    *(uint *)(&stack0xfffffe3c + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
-         auStack_114[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
-    in_stack_fffffe28 = fStack_118;
-    *(uint *)
-     ((int)(&stack0xfffffe3c + (uint)bVar6 * -8 + (uint)bVar6 * -8) + ((uint)bVar6 * -2 + 1) * 4) =
-         (auStack_114 + (uint)bVar6 * -2 + (uint)bVar6 * -2 + 1)[(uint)bVar6 * -2 + 1];
+    local_20 = DAT_03f6bad8;
+    local_24 = (CQuaternion4f *)DAT_03f6bae0;
+    core_xform_cpp_quaternionFromAngleY_FUN_005f79f0((CQuaternion4f *)0x3fc90fdb,in_stack_fffffe24);
+    CStack_1c8.w = fStack_114;
+    pfVar3 = (float *)((int)&CStack_1c8 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
+    *(float *)((int)&CStack_1c8 + (uint)bVar6 * -8 + 4) = afStack_110[(uint)bVar6 * -2];
+    *pfVar3 = afStack_110[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
+    pfVar3[(uint)bVar6 * -2 + 1] =
+         (afStack_110 + (uint)bVar6 * -2 + (uint)bVar6 * -2 + 1)[(uint)bVar6 * -2 + 1];
     core_xform_cpp_quaternionFromAngleZ_FUN_005f7a30((CQuaternion4f *)0x3fc90fdb,in_stack_fffffe24);
-    local_18 = in_stack_00000004 + 0x1fc08;
-    puVar2 = (uint *)&stack0xfffffe5c;
+    local_1c = in_stack_00000004 + 0x1fc08;
+    pfVar3 = afStack_1a8;
   }
   else {
-    local_24 = DAT_03f6badc;
-    local_28 = DAT_03f6bae4;
-    core_xform_cpp_quaternionFromAngleY_FUN_005f79f0((CQuaternion4f *)0xbfc90fdb,in_stack_fffffe20);
-    *(uint *)(&stack0xfffffe38 + (uint)bVar6 * -8) =
-         *(uint *)(&stack0xfffffe2c + (uint)bVar6 * -8);
-    *(uint *)(&stack0xfffffe3c + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
-         *(uint *)(&stack0xfffffe30 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
-    *(uint *)
-     ((int)(&stack0xfffffe3c + (uint)bVar6 * -8 + (uint)bVar6 * -8) + ((uint)bVar6 * -2 + 1) * 4) =
+    local_20 = DAT_03f6badc;
+    local_24 = (CQuaternion4f *)DAT_03f6bae4;
+    core_xform_cpp_quaternionFromAngleY_FUN_005f79f0((CQuaternion4f *)0xbfc90fdb,in_stack_fffffe24);
+    CStack_1c8.w = fStack_1d4;
+    puVar4 = (uint *)((int)&CStack_1c8 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
+    *(uint *)((int)&CStack_1c8 + (uint)bVar6 * -8 + 4) =
+         *(uint *)(&stack0xfffffe30 + (uint)bVar6 * -8);
+    *puVar4 = *(uint *)(&stack0xfffffe34 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
+    puVar4[(uint)bVar6 * -2 + 1] =
          *(uint *)
-          ((int)(&stack0xfffffe30 + (uint)bVar6 * -8 + (uint)bVar6 * -8) +
+          ((int)(&stack0xfffffe34 + (uint)bVar6 * -8 + (uint)bVar6 * -8) +
           ((uint)bVar6 * -2 + 1) * 4);
     core_xform_cpp_quaternionFromAngleZ_FUN_005f7a30((CQuaternion4f *)0xbfc90fdb,in_stack_fffffe24);
-    local_18 = in_stack_00000004 + 0x1fbe8;
-    puVar2 = auStack_e4;
+    local_1c = in_stack_00000004 + 0x1fbe8;
+    pfVar3 = afStack_e8;
   }
-  puVar3 = puVar2 + (uint)bVar6 * -2 + 1;
-  pCVar9 = (CQuaternion4f *)*puVar2;
-  *(uint *)(&stack0xfffffe4c + (uint)bVar6 * -8) = *puVar3;
-  *(uint *)(&stack0xfffffe50 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
-       puVar3[(uint)bVar6 * -2 + 1];
-  *(uint *)
-   ((int)(&stack0xfffffe50 + (uint)bVar6 * -8 + (uint)bVar6 * -8) + ((uint)bVar6 * -2 + 1) * 4) =
-       (puVar3 + (uint)bVar6 * -2 + 1)[(uint)bVar6 * -2 + 1];
-  if (0.0 < (1.0 - (1.0 - *(float *)(local_18 + 0x14)) * *(float *)(in_stack_00000004 + 0x2a90)) *
-            *(float *)(in_stack_00000004 + 0x2a90)) {
-    pCStack_14 = (CDeformableModelInstance *)(in_stack_00000004 + 0x158);
-    this_ptr = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(pCStack_14);
-    iVar1 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(&this_ptr->motion_list);
-    target_frame_number =
-         core_motion_cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0
-                   (&unaff_EDI->motion_controller,iVar1,*(float *)(in_stack_00000004 + 0x2a90));
-    local_20 = target_frame_number;
+  pfVar2 = pfVar3 + (uint)bVar6 * -2 + 1;
+  CStack_1b8.w = *pfVar3;
+  afStack_1a8[(uint)bVar6 * -2 + -3] = *pfVar2;
+  afStack_1a8[(uint)bVar6 * -2 + (uint)bVar6 * -2 + -2] = pfVar2[(uint)bVar6 * -2 + 1];
+  (afStack_1a8 + (uint)bVar6 * -2 + (uint)bVar6 * -2 + -2)[(uint)bVar6 * -2 + 1] =
+       (pfVar2 + (uint)bVar6 * -2 + 1)[(uint)bVar6 * -2 + 1];
+  pCVar9 = (CQuaternion4f *)
+           ((1.0 - (1.0 - *(float *)(local_1c + 0x14)) * *(float *)(in_stack_00000004 + 0x2a90)) *
+           *(float *)(in_stack_00000004 + 0x2a90));
+  if (0.0 < (float)pCVar9) {
+    local_18 = (CDeformableModelInstance *)(in_stack_00000004 + 0x158);
+    this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(local_18);
+    iVar1 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(&this_ptr_00->motion_list);
+    this_ptr = local_18;
+    local_30 = core_motion_cpp_CMotionController_markerPositionToFrame_FUN_0052e3a0
+                         (&local_18->motion_controller,iVar1,*(float *)(in_stack_00000004 + 0x2a90))
+    ;
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
-              (unaff_EDI,iVar1,target_frame_number,in_stack_fffffe28,unaff_EBP,
+              (this_ptr,iVar1,local_30,(float)pCVar9,local_20,
                core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);
     core_xform_cpp_quaternionFromAngleY_FUN_005f79f0
-              (*(CQuaternion4f **)(unaff_ESI + 0xc),in_stack_fffffe38);
-    pfVar4 = afStack_158 + 2;
-    afStack_158[1] = (float)local_30;
-    afStack_158[(uint)bVar6 * -2 + 2] = afStack_40[(uint)bVar6 * -2 + 5];
-    afStack_158[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 3] =
-         afStack_40[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 6];
-    (afStack_158 + (uint)bVar6 * -2 + (uint)bVar6 * -2 + 3)[(uint)bVar6 * -2 + 1] =
-         (afStack_40 + (uint)bVar6 * -2 + (uint)bVar6 * -2 + 6)[(uint)bVar6 * -2 + 1];
+              (*(CQuaternion4f **)(local_1c + 0xc),(float)pCVar9);
+    pfVar3 = &CStack_174.z;
+    CStack_174.z = fStack_48;
+    afStack_164[(uint)bVar6 * -2] = local_6c[(uint)bVar6 * -2 + 10];
+    afStack_164[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
+         local_6c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0xb];
+    (afStack_164 + (uint)bVar6 * -2 + (uint)bVar6 * -2 + 1)[(uint)bVar6 * -2 + 1] =
+         (local_6c + (uint)bVar6 * -2 + (uint)bVar6 * -2 + 0xb)[(uint)bVar6 * -2 + 1];
     core_xform_cpp_quaternionFromAngleX_FUN_005f79b0
-              (*(CQuaternion4f **)((int)target_frame_number + 8),(float)pfVar4);
-    auStack_164._4_4_ = local_17c;
-    afStack_158[(uint)bVar6 * -2 + -1] = afStack_178[(uint)bVar6 * -2];
-    afStack_158[(uint)bVar6 * -2 + (uint)bVar6 * -2] =
-         afStack_178[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
-    (afStack_158 + (uint)bVar6 * -2 + (uint)bVar6 * -2)[(uint)bVar6 * -2 + 1] =
-         (afStack_178 + (uint)bVar6 * -2 + (uint)bVar6 * -2 + 1)[(uint)bVar6 * -2 + 1];
-    core_xform_cpp_multiplyQuaternion_FUN_005f7640
-              ((CQuaternion4f *)(auStack_164 + 8),in_stack_fffffe3c,in_stack_fffffe40);
-    pCVar7 = (CQuaternion4f *)&stack0xfffffe58;
+              (*(CQuaternion4f **)(local_1c + 8),(float)pfVar3);
+    uStack_178 = uStack_194;
+    *(float *)((int)&CStack_174 + (uint)bVar6 * -8) = afStack_190[(uint)bVar6 * -2];
+    afStack_164[(uint)bVar6 * -2 + (uint)bVar6 * -2 + -3] =
+         afStack_190[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
+    (afStack_164 + (uint)bVar6 * -2 + (uint)bVar6 * -2 + -3)[(uint)bVar6 * -2 + 1] =
+         (afStack_190 + (uint)bVar6 * -2 + (uint)bVar6 * -2 + 1)[(uint)bVar6 * -2 + 1];
+    core_xform_cpp_multiplyQuaternion_FUN_005f7640(&CStack_174,pCVar9,in_stack_fffffe28);
+    pCVar7 = &CStack_1c8;
     pCVar8 = (CQuaternion4f *)0x3f733333;
-    afStack_178[3] = afStack_94[3];
-    *(float *)(auStack_164 + (uint)bVar6 * -8 + -4) = afStack_94[(uint)bVar6 * -2 + 4];
-    *(float *)(auStack_164 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
-         afStack_94[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 5];
-    *(float *)((int)(auStack_164 + (uint)bVar6 * -8 + (uint)bVar6 * -8) + ((uint)bVar6 * -2 + 1) * 4
-              ) = (afStack_94 + (uint)bVar6 * -2 + (uint)bVar6 * -2 + 5)[(uint)bVar6 * -2 + 1];
+    CStack_188.x = afStack_b0[2];
+    pfVar3 = (float *)((int)&CStack_188 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 0xc);
+    *(float *)((int)&CStack_188 + (uint)bVar6 * -8 + 8) = afStack_b0[(uint)bVar6 * -2 + 3];
+    *pfVar3 = afStack_b0[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4];
+    pfVar3[(uint)bVar6 * -2 + 1] =
+         (afStack_b0 + (uint)bVar6 * -2 + (uint)bVar6 * -2 + 4)[(uint)bVar6 * -2 + 1];
     core_xform_cpp_slerpQuaternion_FUN_005f77e0
-              ((CQuaternion4f *)&DAT_00665998,pCVar7,pCVar8,in_stack_fffffe44);
-    pCVar7 = (CQuaternion4f *)auStack_164;
-    uStack_138 = uStack_74;
-    pfVar4 = (float *)((int)&CStack_134 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 4);
-    *(float *)((int)&CStack_134 + (uint)bVar6 * -8) = afStack_94[(uint)bVar6 * -2 + 9];
+              ((CQuaternion4f *)&DAT_00665998,pCVar7,pCVar8,(float)pCVar9);
+    pCVar7 = &CStack_188;
+    CStack_158.w = fStack_98;
+    pfVar3 = (float *)((int)&CStack_158 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
+    *(float *)((int)&CStack_158 + (uint)bVar6 * -8 + 4) = afStack_80[(uint)bVar6 * -2 + -5];
     pCVar8 = pCVar9;
-    *pfVar4 = afStack_94[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 10];
-    pfVar4[(uint)bVar6 * -2 + 1] =
-         (afStack_94 + (uint)bVar6 * -2 + (uint)bVar6 * -2 + 10)[(uint)bVar6 * -2 + 1];
-    core_xform_cpp_multiplyQuaternion_FUN_005f7640(&CStack_134,pCVar7,pCVar9);
-    uStack_124 = afStack_94[1];
-    *(float *)(auStack_120 + (uint)bVar6 * -8) = afStack_94[(uint)bVar6 * -2 + 2];
-    *(float *)(auStack_120 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 4) =
-         afStack_94[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 3];
-    *(float *)((int)(auStack_120 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 4) +
+    *pfVar3 = afStack_80[(uint)bVar6 * -2 + (uint)bVar6 * -2 + -4];
+    pfVar3[(uint)bVar6 * -2 + 1] =
+         (afStack_80 + (uint)bVar6 * -2 + (uint)bVar6 * -2 + -4)[(uint)bVar6 * -2 + 1];
+    core_xform_cpp_multiplyQuaternion_FUN_005f7640(&CStack_158,pCVar7,pCVar9);
+    uStack_148 = uStack_b4;
+    *(float *)(auStack_144 + (uint)bVar6 * -8) = afStack_b0[(uint)bVar6 * -2];
+    *(float *)(auStack_144 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 4) =
+         afStack_b0[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
+    *(float *)((int)(auStack_144 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 4) +
               ((uint)bVar6 * -2 + 1) * 4) =
-         (afStack_94 + (uint)bVar6 * -2 + (uint)bVar6 * -2 + 3)[(uint)bVar6 * -2 + 1];
+         (afStack_b0 + (uint)bVar6 * -2 + (uint)bVar6 * -2 + 1)[(uint)bVar6 * -2 + 1];
+    iVar1 = local_1c * 0x10;
+    local_24 = (CQuaternion4f *)(in_stack_00000004 + 0x808 + iVar1);
     core_xform_cpp_slerpQuaternion_FUN_005f77e0
-              ((CQuaternion4f *)(in_stack_00000004 + 0x808 + in_stack_00000008 * 0x10),
-               (CQuaternion4f *)auStack_120,pCVar8,in_stack_fffffe4c);
-    iVar1 = in_stack_00000004 + in_stack_00000008 * 0x10;
-    pfVar4 = (float *)(iVar1 + 0x80c + (uint)bVar6 * -8);
-    *(float *)(iVar1 + 0x808) = afStack_40[1];
-    pfVar5 = pfVar4 + (uint)bVar6 * -2 + 1;
-    *pfVar4 = afStack_40[(uint)bVar6 * -2 + 2];
-    *pfVar5 = afStack_40[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 3];
-    pfVar5[(uint)bVar6 * -2 + 1] =
-         (afStack_40 + (uint)bVar6 * -2 + (uint)bVar6 * -2 + 3)[(uint)bVar6 * -2 + 1];
-    core_xform_cpp_multiplyQuaternion_FUN_005f7640
-              ((CQuaternion4f *)&stack0xfffffe64,&local_18c,(CQuaternion4f *)(auStack_164 + 8));
-    auStack_104._8_4_ = fStack_58;
-    auStack_f4[(uint)bVar6 * -2 + -1] = auStack_54[(uint)bVar6 * -2];
-    auStack_f4[(uint)bVar6 * -2 + (uint)bVar6 * -2] =
-         auStack_54[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
-    (auStack_f4 + (uint)bVar6 * -2 + (uint)bVar6 * -2)[(uint)bVar6 * -2 + 1] =
-         (auStack_54 + (uint)bVar6 * -2 + (uint)bVar6 * -2 + 1)[(uint)bVar6 * -2 + 1];
-    core_xform_cpp_multiplyQuaternion_FUN_005f7640
-              ((CQuaternion4f *)(auStack_104 + 0xc),in_stack_fffffe50,in_stack_fffffe54);
-    auStack_114[3] = uStack_44;
-    *(float *)(auStack_104 + (uint)bVar6 * -8) = afStack_40[(uint)bVar6 * -2];
-    *(float *)(auStack_104 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 4) =
-         afStack_40[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
-    *(float *)((int)(auStack_104 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 4) +
-              ((uint)bVar6 * -2 + 1) * 4) =
-         (afStack_40 + (uint)bVar6 * -2 + (uint)bVar6 * -2 + 1)[(uint)bVar6 * -2 + 1];
+              (local_24,(CQuaternion4f *)auStack_144,pCVar8,(float)in_stack_fffffe28);
+    local_2c = in_stack_00000004 + iVar1;
+    pfVar3 = (float *)(local_2c + 0x80c + (uint)bVar6 * -8);
+    *(float *)(local_2c + 0x808) = local_6c[3];
+    pfVar2 = pfVar3 + (uint)bVar6 * -2 + 1;
+    *pfVar3 = local_6c[(uint)bVar6 * -2 + 4];
+    *pfVar2 = local_6c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 5];
+    pfVar2[(uint)bVar6 * -2 + 1] =
+         (local_6c + (uint)bVar6 * -2 + (uint)bVar6 * -2 + 5)[(uint)bVar6 * -2 + 1];
+    core_xform_cpp_multiplyQuaternion_FUN_005f7640(&CStack_1c8,&CStack_1b8,&CStack_188);
+    afStack_130[2] = (float)uStack_84;
+    pfVar3 = (float *)((int)&CStack_124 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 4);
+    *(float *)((int)&CStack_124 + (uint)bVar6 * -8) = afStack_80[(uint)bVar6 * -2];
+    *pfVar3 = afStack_80[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
+    pfVar3[(uint)bVar6 * -2 + 1] =
+         (afStack_80 + (uint)bVar6 * -2 + (uint)bVar6 * -2 + 1)[(uint)bVar6 * -2 + 1];
+    core_xform_cpp_multiplyQuaternion_FUN_005f7640(&CStack_124,pCVar8,in_stack_fffffe28);
+    uStack_134 = uStack_70;
+    afStack_130[(uint)bVar6 * -2] = local_6c[(uint)bVar6 * -2];
+    afStack_130[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
+         local_6c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
+    (afStack_130 + (uint)bVar6 * -2 + (uint)bVar6 * -2 + 1)[(uint)bVar6 * -2 + 1] =
+         (local_6c + (uint)bVar6 * -2 + (uint)bVar6 * -2 + 1)[(uint)bVar6 * -2 + 1];
     core_skeleton_cpp_CDeformableModelInstance_blendBoneRotations_FUN_0059f750
-              (in_stack_0000001c,(CQuaternion4f *)auStack_104,in_stack_fffffe58,in_stack_00000010,
+              (local_18,(CQuaternion4f *)(auStack_144 + 0xc),(float)pCVar8,(int)local_24,
                core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);
     if ((float)0.0001 < *(float *)(in_stack_00000004 + 0x1fc8c)) {
-      core_xform_cpp_quaternionFromAngleX_FUN_005f79b0
-                ((CQuaternion4f *)0x3fc90fdb,in_stack_fffffe5c);
-      pCVar9 = (CQuaternion4f *)(auStack_c8 + 0xc);
-      auStack_c8._8_4_ = local_1c;
-      aiStack_b8[(uint)bVar6 * -2 + -1] = (&local_18)[(uint)bVar6 * -2];
-      aiStack_b8[(uint)bVar6 * -2 + (uint)bVar6 * -2] =
-           (int)(&pCStack_14)[(uint)bVar6 * -2 + (uint)bVar6 * -2];
-      (aiStack_b8 + (uint)bVar6 * -2 + (uint)bVar6 * -2)[(uint)bVar6 * -2 + 1] =
-           (int)(&pCStack_14 + (uint)bVar6 * -2 + (uint)bVar6 * -2)[(uint)bVar6 * -2 + 1];
-      core_xform_cpp_multiplyQuaternion_FUN_005f7640
-                ((CQuaternion4f *)(auStack_120 + 4),pCVar9,in_stack_fffffe60);
-      local_cc = uStack_98;
-      *(float *)(auStack_c8 + (uint)bVar6 * -8) = afStack_94[(uint)bVar6 * -2];
-      *(float *)(auStack_c8 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 4) =
-           afStack_94[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
-      *(float *)((int)(auStack_c8 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 4) +
-                ((uint)bVar6 * -2 + 1) * 4) =
-           (afStack_94 + (uint)bVar6 * -2 + (uint)bVar6 * -2 + 1)[(uint)bVar6 * -2 + 1];
+      core_xform_cpp_quaternionFromAngleX_FUN_005f79b0((CQuaternion4f *)0x3fc90fdb,(float)pCVar8);
+      pCVar9 = &CStack_f8;
+      CStack_f8.w = fStack_58;
+      afStack_e8[(uint)bVar6 * -2 + -3] = local_6c[(uint)bVar6 * -2 + 6];
+      afStack_e8[(uint)bVar6 * -2 + (uint)bVar6 * -2 + -2] =
+           local_6c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 7];
+      (afStack_e8 + (uint)bVar6 * -2 + (uint)bVar6 * -2 + -2)[(uint)bVar6 * -2 + 1] =
+           (local_6c + (uint)bVar6 * -2 + (uint)bVar6 * -2 + 7)[(uint)bVar6 * -2 + 1];
+      core_xform_cpp_multiplyQuaternion_FUN_005f7640(&CStack_158,pCVar9,pCVar8);
+      CStack_108.w = fStack_d4;
+      puVar4 = (uint *)((int)&CStack_108 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
+      *(uint *)((int)&CStack_108 + (uint)bVar6 * -8 + 4) = auStack_d0[(uint)bVar6 * -2];
+      *puVar4 = auStack_d0[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
+      puVar4[(uint)bVar6 * -2 + 1] =
+           (auStack_d0 + (uint)bVar6 * -2 + (uint)bVar6 * -2 + 1)[(uint)bVar6 * -2 + 1];
       core_xform_cpp_slerpQuaternion_FUN_005f77e0
-                (in_stack_00000018,(CQuaternion4f *)auStack_c8,
-                 *(CQuaternion4f **)(in_stack_00000004 + 0x1fc8c),in_stack_fffffe64);
-      pfVar4 = (float *)((int)in_stack_00000018 + (uint)bVar6 * -8 + 0x80c);
-      in_stack_00000018[0x80].y = fStack_84;
-      pfVar5 = pfVar4 + (uint)bVar6 * -2 + 1;
-      *pfVar4 = afStack_94[(uint)bVar6 * -2 + 5];
-      *pfVar5 = afStack_94[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 6];
-      pfVar5[(uint)bVar6 * -2 + 1] =
-           (afStack_94 + (uint)bVar6 * -2 + (uint)bVar6 * -2 + 6)[(uint)bVar6 * -2 + 1];
+                (local_28,&CStack_108,*(CQuaternion4f **)(in_stack_00000004 + 0x1fc8c),(float)pCVar8
+                );
+      puVar4 = (uint *)(local_2c + 0x80c + (uint)bVar6 * -8);
+      *(uint *)(local_2c + 0x808) = auStack_d0[2];
+      puVar5 = puVar4 + (uint)bVar6 * -2 + 1;
+      *puVar4 = auStack_d0[(uint)bVar6 * -2 + 3];
+      *puVar5 = auStack_d0[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4];
+      puVar5[(uint)bVar6 * -2 + 1] =
+           (auStack_d0 + (uint)bVar6 * -2 + (uint)bVar6 * -2 + 4)[(uint)bVar6 * -2 + 1];
       return;
     }
   }

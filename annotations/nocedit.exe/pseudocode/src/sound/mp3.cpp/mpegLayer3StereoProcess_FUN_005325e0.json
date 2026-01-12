@@ -1,22 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 1031,
-    "complexity_score": 1058,
+    "complexity_score": 984,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 20,
-    "pseudocode_lines": 533,
-    "suspect_count": 49,
+    "pseudocode_lines": 534,
+    "suspect_count": 43,
     "suspect_types": [
       "badspacebase",
-      "call_esp_anchor",
       "concat_artifact",
       "pointer_cast",
-      "register_param",
-      "stack_align_anchor",
-      "variadic_anchor"
+      "register_param"
     ],
-    "total_lines": 1564
+    "total_lines": 1565
   },
   "cross_references": [
     {
@@ -173,6 +170,26 @@
       "value": null
     }
   ],
+  "pcode_overrides": {
+    "005325ec": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffdf94,4)"
+    ],
+    "00532a04": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffdf94,4)"
+    ],
+    "00532cf9": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffdf94,4)"
+    ],
+    "00532eda": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffdf94,4)"
+    ],
+    "00533214": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffdf94,4)"
+    ],
+    "0053344f": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffdf94,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.261737089201878,
     "instruction_count": 852,
@@ -218,6 +235,86 @@
     },
     "pcode_op_count": 5335
   },
+  "resolved_suspects": [
+    {
+      "add_esp_value": 8,
+      "call_address": "0053344a",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "0053344f",
+      "frame_offset": 8300,
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0053344f",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0053344a (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x206c",
+      "fix_address": "005325ec",
+      "frame_offset": 8300,
+      "match": "AND ESP",
+      "sub_esp_offset": 8300,
+      "text": "Stack alignment at 005325ec (SUB ESP, 0x206c before)",
+      "type": "stack_align_anchor"
+    },
+    {
+      "add_esp_value": 20,
+      "call_address": "005329ff",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00532a04",
+      "frame_offset": 8300,
+      "match": "CALL...ADD ESP",
+      "return_address": "00532a04",
+      "target_address": "0x532540",
+      "text": "Direct CALL at 005329ff, ADD ESP at 00532a04 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 20,
+      "call_address": "00532cf4",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00532cf9",
+      "frame_offset": 8300,
+      "match": "CALL...ADD ESP",
+      "return_address": "00532cf9",
+      "target_address": "0x532540",
+      "text": "Direct CALL at 00532cf4, ADD ESP at 00532cf9 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 20,
+      "call_address": "00532ed5",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00532eda",
+      "frame_offset": 8300,
+      "match": "CALL...ADD ESP",
+      "return_address": "00532eda",
+      "target_address": "0x532540",
+      "text": "Direct CALL at 00532ed5, ADD ESP at 00532eda with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 20,
+      "call_address": "0053320f",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "00533214",
+      "frame_offset": 8300,
+      "match": "CALL...ADD ESP",
+      "return_address": "00533214",
+      "target_address": "0x532540",
+      "text": "Direct CALL at 0053320f, ADD ESP at 00533214 with uncertain ESP",
+      "type": "call_esp_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 8344,
     "local_size": 8324,
@@ -718,7 +815,7 @@
       "description": "Complex pointer cast",
       "line": 113,
       "match": "(ushort *)((int)",
-      "text": "*(ushort *)((int)&uStack_57a + iVar9 + 2) = 7;",
+      "text": "*(ushort *)((int)&uStack_576 + iVar9 + 2) = 7;",
       "type": "pointer_cast"
     },
     {
@@ -732,352 +829,274 @@
       "description": "Complex pointer cast",
       "line": 156,
       "match": "(short *)((int)",
-      "text": "*(short *)((int)&uStack_57a + iVar11 + 2) = sVar3;",
+      "text": "*(short *)((int)&uStack_576 + iVar11 + 2) = sVar3;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 159,
       "match": "(short *)((int)",
-      "text": "fVar13 = (float10)fptan((float10)*(short *)((int)&uStack_57a + iVar11 + 2) *",
+      "text": "fVar13 = (float10)fptan((float10)*(short *)((int)&uStack_576 + iVar11 + 2) *",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 161,
       "match": "(float *)((int)",
-      "text": "*(float *)((int)afStack_e78 + local_90) = (float)fVar13;",
+      "text": "*(float *)((int)afStack_e74 + local_8c) = (float)fVar13;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 165,
       "match": "(int *)((int)",
-      "text": "(*(int *)((int)&uStack_57a + iVar11) >> 0x10,",
+      "text": "(*(int *)((int)&uStack_576 + iVar11) >> 0x10,",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
       "line": 166,
       "match": "CONCAT44",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(local_207c,pfVar14),iVar9,(int)local_2078,pfVar14);",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(local_2078,pfVar14),iVar9,(int)afStack_2074,pfVar14);",
       "type": "concat_artifact"
     },
     {
       "description": "Complex pointer cast",
       "line": 191,
       "match": "(float *)((int)",
-      "text": "*(float *)((int)local_2078 + iVar9) = local_2078[iVar6];",
+      "text": "*(float *)((int)afStack_2074 + iVar9) = afStack_2074[iVar6];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 192,
       "match": "(float *)((int)",
-      "text": "*(float *)((int)afStack_e78 + iVar9) = fVar2;",
+      "text": "*(float *)((int)afStack_e74 + iVar9) = fVar2;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 193,
       "match": "(ushort *)((int)",
-      "text": "uVar4 = *(ushort *)((int)&uStack_57a + iVar8 + 2);",
+      "text": "uVar4 = *(ushort *)((int)&uStack_576 + iVar8 + 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 194,
       "match": "(float *)((int)",
-      "text": "*(float *)((int)afStack_1778 + iVar9) = afStack_1778[iVar6];",
+      "text": "*(float *)((int)afStack_1774 + iVar9) = afStack_1774[iVar6];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 196,
       "match": "(ushort *)((int)",
-      "text": "*(ushort *)((int)&uStack_57a + iVar5 + 2) = uVar4;",
+      "text": "*(ushort *)((int)&uStack_576 + iVar5 + 2) = uVar4;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 242,
       "match": "(short *)((int)",
-      "text": "*(short *)((int)&uStack_57a + iVar11 + 2) = sVar3;",
+      "text": "*(short *)((int)&uStack_576 + iVar11 + 2) = sVar3;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 245,
       "match": "(short *)((int)",
-      "text": "fVar13 = (float10)fptan((float10)*(short *)((int)&uStack_57a + iVar11 + 2) *",
+      "text": "fVar13 = (float10)fptan((float10)*(short *)((int)&uStack_576 + iVar11 + 2) *",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 247,
       "match": "(float *)((int)",
-      "text": "*(float *)((int)afStack_e78 + local_80) = (float)fVar13;",
+      "text": "*(float *)((int)afStack_e74 + local_7c) = (float)fVar13;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 251,
       "match": "(int *)((int)",
-      "text": "(*(int *)((int)&uStack_57a + iVar11) >> 0x10,",
+      "text": "(*(int *)((int)&uStack_576 + iVar11) >> 0x10,",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
       "line": 252,
       "match": "CONCAT44",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(local_207c,pfVar14),iVar6,(int)local_2078,pfVar14)",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(local_2078,pfVar14),iVar6,(int)afStack_2074,",
       "type": "concat_artifact"
     },
     {
       "description": "Complex pointer cast",
       "line": 279,
       "match": "(ushort *)((int)",
-      "text": "uVar4 = *(ushort *)((int)&uStack_57a + iVar9 * 2 + 2);",
+      "text": "uVar4 = *(ushort *)((int)&uStack_576 + iVar9 * 2 + 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 280,
       "match": "(float *)((int)",
-      "text": "*(float *)((int)local_2078 + iVar11) = local_2078[iVar9];",
+      "text": "*(float *)((int)afStack_2074 + iVar11) = afStack_2074[iVar9];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 281,
       "match": "(float *)((int)",
-      "text": "*(float *)((int)afStack_e78 + iVar11) = fVar2;",
+      "text": "*(float *)((int)afStack_e74 + iVar11) = fVar2;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 282,
       "match": "(ushort *)((int)",
-      "text": "*(ushort *)((int)&uStack_57a + iVar8 + 2) = uVar4;",
+      "text": "*(ushort *)((int)&uStack_576 + iVar8 + 2) = uVar4;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 283,
       "match": "(float *)((int)",
-      "text": "*(float *)((int)afStack_1778 + iVar11) = afStack_1778[iVar9];",
+      "text": "*(float *)((int)afStack_1774 + iVar11) = afStack_1774[iVar9];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 334,
       "match": "(short *)((int)",
-      "text": "*(short *)((int)&uStack_57a + iVar11 + 2) = sVar3;",
+      "text": "*(short *)((int)&uStack_576 + iVar11 + 2) = sVar3;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 337,
       "match": "(short *)((int)",
-      "text": "fVar13 = (float10)fptan((float10)*(short *)((int)&uStack_57a + iVar11 + 2) *",
+      "text": "fVar13 = (float10)fptan((float10)*(short *)((int)&uStack_576 + iVar11 + 2) *",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 339,
       "match": "(float *)((int)",
-      "text": "*(float *)((int)afStack_e78 + local_70) = (float)fVar13;",
+      "text": "*(float *)((int)afStack_e74 + local_6c) = (float)fVar13;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 343,
       "match": "(int *)((int)",
-      "text": "(*(int *)((int)&uStack_57a + iVar11) >> 0x10,",
+      "text": "(*(int *)((int)&uStack_576 + iVar11) >> 0x10,",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
       "line": 344,
       "match": "CONCAT44",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(local_207c,pfVar14),iVar6,(int)local_2078,pfVar14);",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(local_2078,pfVar14),iVar6,(int)afStack_2074,pfVar14)",
       "type": "concat_artifact"
     },
     {
       "description": "Complex pointer cast",
-      "line": 367,
-      "match": "(ushort *)((int)",
-      "text": "uVar4 = *(ushort *)((int)&uStack_57a + iVar9 * 2 + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 368,
-      "match": "(float *)((int)",
-      "text": "*(float *)((int)local_2078 + iVar11) = local_2078[iVar9];",
+      "match": "(ushort *)((int)",
+      "text": "uVar4 = *(ushort *)((int)&uStack_576 + iVar9 * 2 + 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 369,
       "match": "(float *)((int)",
-      "text": "*(float *)((int)afStack_e78 + iVar11) = fVar2;",
+      "text": "*(float *)((int)afStack_2074 + iVar11) = afStack_2074[iVar9];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 370,
-      "match": "(ushort *)((int)",
-      "text": "*(ushort *)((int)&uStack_57a + iVar8 + 2) = uVar4;",
+      "match": "(float *)((int)",
+      "text": "*(float *)((int)afStack_e74 + iVar11) = fVar2;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 371,
-      "match": "(float *)((int)",
-      "text": "*(float *)((int)afStack_1778 + iVar11) = afStack_1778[iVar9];",
+      "match": "(ushort *)((int)",
+      "text": "*(ushort *)((int)&uStack_576 + iVar8 + 2) = uVar4;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 386,
+      "line": 372,
+      "match": "(float *)((int)",
+      "text": "*(float *)((int)afStack_1774 + iVar11) = afStack_1774[iVar9];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 387,
       "match": "(uint *)((int)",
       "text": "if ((*(uint *)((int)(pafVar12 + 0x20) + iVar6 * 4) & 0x7fffffff) != 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 417,
+      "line": 418,
       "match": "(short *)((int)",
-      "text": "*(short *)((int)&uStack_57a + iVar11 + 2) = sVar3;",
+      "text": "*(short *)((int)&uStack_576 + iVar11 + 2) = sVar3;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 420,
+      "line": 421,
       "match": "(short *)((int)",
-      "text": "fVar13 = (float10)fptan((float10)*(short *)((int)&uStack_57a + iVar11 + 2) *",
+      "text": "fVar13 = (float10)fptan((float10)*(short *)((int)&uStack_576 + iVar11 + 2) *",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 422,
+      "line": 423,
       "match": "(float *)((int)",
-      "text": "*(float *)((int)afStack_e78 + local_64) = (float)fVar13;",
+      "text": "*(float *)((int)afStack_e74 + local_60) = (float)fVar13;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 426,
+      "line": 427,
       "match": "(int *)((int)",
-      "text": "(*(int *)((int)&uStack_57a + iVar11) >> 0x10,",
+      "text": "(*(int *)((int)&uStack_576 + iVar11) >> 0x10,",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 427,
+      "line": 428,
       "match": "CONCAT44",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(local_207c,pfVar14),iVar9,(int)local_2078,pfVar14)",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(local_2078,pfVar14),iVar9,(int)afStack_2074,",
       "type": "concat_artifact"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 475,
-      "match": "(float *)((int)",
-      "text": "pfVar10 = (float *)((int)*local_4c + iVar6);",
-      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 476,
       "match": "(float *)((int)",
-      "text": "pfVar14 = (float *)((int)*local_48 + iVar6);",
+      "text": "pfVar10 = (float *)((int)*local_48 + iVar6);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 477,
-      "match": "(short *)((int)",
-      "text": "if (*(short *)((int)&uStack_57a + local_50 + 2) == 7) {",
+      "match": "(float *)((int)",
+      "text": "pfVar14 = (float *)((int)*local_44 + iVar6);",
       "type": "pointer_cast"
     },
     {
-      "add_esp_value": 8,
-      "call_address": "0053344a",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "0053344f",
-      "frame_offset": 8300,
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "0053344f",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0053344a (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x206c",
-      "fix_address": "005325ec",
-      "frame_offset": 8300,
-      "match": "AND ESP",
-      "sub_esp_offset": 8300,
-      "text": "Stack alignment at 005325ec (SUB ESP, 0x206c before)",
-      "type": "stack_align_anchor"
-    },
-    {
-      "add_esp_value": 20,
-      "call_address": "005329ff",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "00532a04",
-      "frame_offset": 8300,
-      "match": "CALL...ADD ESP",
-      "return_address": "00532a04",
-      "target_address": "0x532540",
-      "text": "Direct CALL at 005329ff, ADD ESP at 00532a04 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 20,
-      "call_address": "00532cf4",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "00532cf9",
-      "frame_offset": 8300,
-      "match": "CALL...ADD ESP",
-      "return_address": "00532cf9",
-      "target_address": "0x532540",
-      "text": "Direct CALL at 00532cf4, ADD ESP at 00532cf9 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 20,
-      "call_address": "00532ed5",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "00532eda",
-      "frame_offset": 8300,
-      "match": "CALL...ADD ESP",
-      "return_address": "00532eda",
-      "target_address": "0x532540",
-      "text": "Direct CALL at 00532ed5, ADD ESP at 00532eda with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 20,
-      "call_address": "0053320f",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "00533214",
-      "frame_offset": 8300,
-      "match": "CALL...ADD ESP",
-      "return_address": "00533214",
-      "target_address": "0x532540",
-      "text": "Direct CALL at 0053320f, ADD ESP at 00533214 with uncertain ESP",
-      "type": "call_esp_anchor"
+      "description": "Complex pointer cast",
+      "line": 478,
+      "match": "(short *)((int)",
+      "text": "if (*(short *)((int)&uStack_576 + local_4c + 2) == 7) {",
+      "type": "pointer_cast"
     }
   ]
 }

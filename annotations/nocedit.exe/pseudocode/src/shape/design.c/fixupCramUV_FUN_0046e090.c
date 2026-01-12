@@ -10,51 +10,57 @@ void __cdecl
 shape_design_c_fixupCramUV_FUN_0046e090(int atlas_texture_index,float *u_coord,float *v_coord)
 
 {
-  float fVar1;
-  float fVar2;
   BADSPACEBASE *in_ESP;
+  char local_94 [100];
+  double local_30;
+  int local_28;
+  double local_24;
+  double local_1c;
+  STextureAtlasEntry *local_14;
   
-  fVar1 = *u_coord * (float)65536;
-  fVar2 = *v_coord * (float)65536;
-  if (fVar1 < (float)g_TextureAtlasEntries[atlas_texture_index].min_u) {
-    fVar1 = (float)g_TextureAtlasEntries[atlas_texture_index].min_u;
+  local_14 = g_TextureAtlasEntries + atlas_texture_index;
+  local_24 = (double)(*u_coord * (float)65536);
+  local_1c = (double)(*v_coord * (float)65536);
+  if (local_24 < (double)g_TextureAtlasEntries[atlas_texture_index].min_u) {
+    local_24 = (double)g_TextureAtlasEntries[atlas_texture_index].min_u;
   }
-  if ((float)g_TextureAtlasEntries[atlas_texture_index].max_u < fVar1) {
-    fVar1 = (float)g_TextureAtlasEntries[atlas_texture_index].max_u;
+  if ((double)g_TextureAtlasEntries[atlas_texture_index].max_u < local_24) {
+    local_24 = (double)g_TextureAtlasEntries[atlas_texture_index].max_u;
   }
-  if (fVar2 < (float)g_TextureAtlasEntries[atlas_texture_index].min_v) {
-    fVar2 = (float)g_TextureAtlasEntries[atlas_texture_index].min_v;
+  if (local_1c < (double)g_TextureAtlasEntries[atlas_texture_index].min_v) {
+    local_1c = (double)g_TextureAtlasEntries[atlas_texture_index].min_v;
   }
-  if ((float)g_TextureAtlasEntries[atlas_texture_index].max_v < fVar2) {
-    fVar2 = (float)g_TextureAtlasEntries[atlas_texture_index].max_v;
+  if ((double)g_TextureAtlasEntries[atlas_texture_index].max_v < local_1c) {
+    local_1c = (double)g_TextureAtlasEntries[atlas_texture_index].max_v;
   }
-  fVar1 = (float)g_TextureAtlasEntries[atlas_texture_index].packed_width *
-          ((fVar1 - (float)g_TextureAtlasEntries[atlas_texture_index].min_u) /
-          (float)(g_TextureAtlasEntries[atlas_texture_index].max_u -
-                 g_TextureAtlasEntries[atlas_texture_index].min_u));
-  fVar2 = (float)g_TextureAtlasEntries[atlas_texture_index].packed_height *
-          ((fVar2 - (float)g_TextureAtlasEntries[atlas_texture_index].min_v) /
-          (float)(g_TextureAtlasEntries[atlas_texture_index].max_v -
-                 g_TextureAtlasEntries[atlas_texture_index].min_v));
+  local_24 = (double)g_TextureAtlasEntries[atlas_texture_index].packed_width *
+             ((local_24 - (double)g_TextureAtlasEntries[atlas_texture_index].min_u) /
+             (double)(g_TextureAtlasEntries[atlas_texture_index].max_u -
+                     g_TextureAtlasEntries[atlas_texture_index].min_u));
+  local_28 = g_TextureAtlasEntries[atlas_texture_index].max_v -
+             g_TextureAtlasEntries[atlas_texture_index].min_v;
+  local_1c = (double)g_TextureAtlasEntries[atlas_texture_index].packed_height *
+             ((local_1c - (double)g_TextureAtlasEntries[atlas_texture_index].min_v) /
+             (double)local_28);
   if (g_TextureAtlasEntries[atlas_texture_index].rotation_flag == 0) {
-    *u_coord = (float)g_TextureAtlasEntries[atlas_texture_index].packed_offset_x + fVar1;
-    *v_coord = (float)g_TextureAtlasEntries[atlas_texture_index].packed_offset_y + fVar2;
+    *u_coord = (float)g_TextureAtlasEntries[atlas_texture_index].packed_offset_x + (float)local_24;
+    *v_coord = (float)g_TextureAtlasEntries[atlas_texture_index].packed_offset_y + (float)local_1c;
   }
   else {
     *u_coord = (float)g_TextureAtlasEntries[atlas_texture_index].packed_offset_x +
-               ((float)g_TextureAtlasEntries[atlas_texture_index].packed_height - fVar2);
-    *v_coord = (float)g_TextureAtlasEntries[atlas_texture_index].packed_offset_y + fVar1;
+               ((float)g_TextureAtlasEntries[atlas_texture_index].packed_height - (float)local_1c);
+    *v_coord = (float)g_TextureAtlasEntries[atlas_texture_index].packed_offset_y + (float)local_24;
   }
   *u_coord = (float)((256 / (double)g_TextureAtlasDimension) * (double)*u_coord);
-  *v_coord = (float)((256 / (double)g_TextureAtlasDimension) * (double)*v_coord);
+  local_30 = (256 / (double)g_TextureAtlasDimension) * (double)*v_coord;
+  *v_coord = (float)local_30;
   if (((((float)256.00999999999999 < *u_coord) || ((float)256.00999999999999 < *v_coord)) ||
       (*u_coord < (float)-0.01)) || (*v_coord < (float)-0.01)) {
     crt_stdio_c_sprintf_FUN_005fdbd0
-              (&stack0xffffff6c,"fixupCramUV - UV out of range: %f, %f",(double)*u_coord,
-               (double)*v_coord);
+              (local_94,"fixupCramUV - UV out of range: %f, %f",(double)*u_coord,(double)*v_coord);
     g_CurrentFilename = "..\\shape\\design.c";
     g_CurrentLineNumber = 0x2c3b;
-    core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xffffff6c);
+    core_main_c_displayErrorAndQuit_FUN_00506f10(local_94);
   }
   if (*u_coord < 0.0) {
     *u_coord = 0.0;

@@ -13,8 +13,7 @@ void __cdecl core_weapon_cpp_CWeapon_FUN_005ee830(CWeapon *this_ptr)
   CVector3f *input_local_point;
   CDemonActor *pCVar2;
   BADSPACEBASE *in_ESP;
-  byte local_94 [28];
-  char local_78 [68];
+  SLaserInfo local_94;
   CVector3f local_34;
   CVector3f local_28;
   CVector3f local_1c;
@@ -38,26 +37,26 @@ void __cdecl core_weapon_cpp_CWeapon_FUN_005ee830(CWeapon *this_ptr)
     core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0
               (g_CDemonSetPtr,*(CDemonActor **)&this_ptr->carried_by_actor);
   }
-  core_fire_cpp_SLaserInfo_ctor_FUN_004c81f0((SLaserInfo *)local_94);
-  local_94[8] = '\x01';
-  local_94[9] = '\0';
-  local_94[10] = '\0';
-  local_94[0xb] = '\0';
-  local_94._12_4_ = *(uint *)this_ptr->field7_0x2f4;
-  local_94._16_4_ = *(uint *)(this_ptr->field7_0x2f4 + 4);
-  local_94._20_4_ = *(uint *)(this_ptr->field7_0x2f4 + 8);
-  local_94[0] = '\0';
-  local_94[1] = '\0';
-  local_94[2] = -0x80;
-  local_94[3] = '?';
+  core_fire_cpp_SLaserInfo_ctor_FUN_004c81f0(&local_94);
+  local_94.field0_0x0[8] = '\x01';
+  local_94.field0_0x0[9] = '\0';
+  local_94.field0_0x0[10] = '\0';
+  local_94.field0_0x0[0xb] = '\0';
+  local_94.field0_0x0._12_4_ = *(uint *)this_ptr->field7_0x2f4;
+  local_94.field0_0x0._16_4_ = *(uint *)(this_ptr->field7_0x2f4 + 4);
+  local_94.field0_0x0._20_4_ = *(uint *)(this_ptr->field7_0x2f4 + 8);
+  local_94.field0_0x0[0] = '\0';
+  local_94.field0_0x0[1] = '\0';
+  local_94.field0_0x0[2] = -0x80;
+  local_94.field0_0x0[3] = '?';
   pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790
                      (*(CDemonActor **)&this_ptr->carried_by_actor,g_CHeroClassInfo.name_hash);
-  local_94._24_4_ = ZEXT14(pCVar2 != (CDemonActor *)0x0);
-  local_78[0] = '\x01';
-  local_78[1] = '\0';
-  local_78[2] = '\0';
-  local_78[3] = '\0';
-  core_fire_cpp_CFireEffect_FUN_004c8230((CFireEffect *)local_94._24_4_);
+  local_94.field0_0x0._24_4_ = ZEXT14(pCVar2 != (CDemonActor *)0x0);
+  local_94.field0_0x0[0x1c] = '\x01';
+  local_94.field0_0x0[0x1d] = '\0';
+  local_94.field0_0x0[0x1e] = '\0';
+  local_94.field0_0x0[0x1f] = '\0';
+  core_fire_cpp_CFireEffect_FUN_004c8230(g_CFireEffectPtr);
   core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
   return;
 }

@@ -1,23 +1,22 @@
 {
   "complexity": {
     "assembly_lines": 180,
-    "complexity_score": 447,
+    "complexity_score": 428,
     "cross_reference_count": 15,
     "function_call_count": 1,
     "global_count": 1,
-    "pseudocode_lines": 107,
-    "suspect_count": 30,
+    "pseudocode_lines": 103,
+    "suspect_count": 29,
     "suspect_types": [
       "badspacebase",
       "concat_artifact",
       "extra_output",
       "pointer_cast",
       "register_param",
-      "stack_align_anchor",
       "sub_artifact",
       "unaffected_reg"
     ],
-    "total_lines": 287
+    "total_lines": 283
   },
   "cross_references": [
     {
@@ -139,6 +138,11 @@
       "value": "0.999990000000000"
     }
   ],
+  "pcode_overrides": {
+    "005f77e8": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff90,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.9447852760736195,
     "instruction_count": 163,
@@ -180,6 +184,18 @@
     },
     "pcode_op_count": 1132
   },
+  "resolved_suspects": [
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x70",
+      "fix_address": "005f77e8",
+      "frame_offset": 112,
+      "match": "AND ESP",
+      "sub_esp_offset": 112,
+      "text": "Stack alignment at 005f77e8 (SUB ESP, 0x70 before)",
+      "type": "stack_align_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 148,
     "local_size": 132,
@@ -379,21 +395,21 @@
       "description": "Decompiler double/longlong extraction artifact",
       "line": 52,
       "match": "SUB84",
-      "text": "afStack_1830[0x5ec] = SUB84 /* extract 2-byte value */(dVar2,0);",
+      "text": "afStack_182c[0x5ec] = SUB84 /* extract 2-byte value */(dVar2,0);",
       "type": "sub_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
       "line": 61,
       "match": "CONCAT44",
-      "text": "if ((double)CONCAT44 /* combine 2-byte values */(uStack_7c,afStack_1830[0x5ec]) <= 0.99999000000000005) {",
+      "text": "if ((double)CONCAT44 /* combine 2-byte values */(local_78,afStack_182c[0x5ec]) <= 0.99999000000000005) {",
       "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
       "line": 62,
       "match": "CONCAT44",
-      "text": "fVar8 = (float10)(double)CONCAT44 /* combine 2-byte values */(uStack_7c,afStack_1830[0x5ec]);",
+      "text": "fVar8 = (float10)(double)CONCAT44 /* combine 2-byte values */(local_78,afStack_182c[0x5ec]);",
       "type": "concat_artifact"
     },
     {
@@ -407,7 +423,7 @@
       "description": "Decompiler double/longlong extraction artifact",
       "line": 67,
       "match": "SUB84",
-      "text": "uStack_74 = SUB84 /* extract 2-byte value */(dVar2,0);",
+      "text": "local_70 = SUB84 /* extract 2-byte value */(dVar2,0);",
       "type": "sub_artifact"
     },
     {
@@ -421,14 +437,14 @@
       "description": "Decompiler double/longlong extraction artifact",
       "line": 70,
       "match": "SUB84",
-      "text": "uStack_7c = SUB84 /* extract 2-byte value */(dVar2,0);",
+      "text": "local_78 = SUB84 /* extract 2-byte value */(dVar2,0);",
       "type": "sub_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
       "line": 72,
       "match": "CONCAT44",
-      "text": "local_18 = (double)CONCAT44 /* combine 2-byte values */(uStack_74,local_78);",
+      "text": "dStack_14 = (double)CONCAT44 /* combine 2-byte values */(local_70,uStack_74);",
       "type": "concat_artifact"
     },
     {
@@ -456,95 +472,85 @@
       "description": "Decompiler double/longlong extraction artifact",
       "line": 78,
       "match": "SUB84",
-      "text": "local_70 = SUB84 /* extract 2-byte value */(1.0 - local_18,0);",
+      "text": "uStack_6c = SUB84 /* extract 2-byte value */(1.0 - dStack_14,0);",
       "type": "sub_artifact"
     },
     {
       "description": "Decompiler double/longlong extraction artifact",
       "line": 81,
       "match": "SUB84",
-      "text": "local_78 = SUB84 /* extract 2-byte value */(local_18,0);",
+      "text": "uStack_74 = SUB84 /* extract 2-byte value */(dStack_14,0);",
       "type": "sub_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
       "line": 82,
       "match": "CONCAT44",
-      "text": "fVar3 = (float)(double)CONCAT44 /* combine 2-byte values */(local_70,uStack_74);",
+      "text": "fVar3 = (float)(double)CONCAT44 /* combine 2-byte values */(uStack_6c,local_70);",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 86,
+      "match": "CONCAT44",
+      "text": "local_40[0].y = local_60 * (float)(double)CONCAT44 /* combine 2-byte values */(uStack_74,local_78) + result_out->y * fVar3;",
       "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
       "line": 87,
       "match": "CONCAT44",
-      "text": "fStack_64 * (float)(double)CONCAT44 /* combine 2-byte values */(local_78,uStack_7c) + result_out->y * fVar3;",
+      "text": "local_40[0].z = local_54 * (float)(double)CONCAT44 /* combine 2-byte values */(uStack_74,local_78) + result_out->z * fVar3;",
       "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
       "line": 88,
       "match": "CONCAT44",
-      "text": "aCStack_44[0].z = local_58 * (float)(double)CONCAT44 /* combine 2-byte values */(local_78,uStack_7c) + result_out->z * fVar3",
+      "text": "local_40[0].w = local_5c * (float)(double)CONCAT44 /* combine 2-byte values */(uStack_74,local_78) + result_out->w * fVar3;",
       "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 90,
+      "line": 89,
       "match": "CONCAT44",
-      "text": "aCStack_44[0].w = local_60 * (float)(double)CONCAT44 /* combine 2-byte values */(local_78,uStack_7c) + result_out->w * fVar3",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 92,
-      "match": "CONCAT44",
-      "text": "aCStack_44[0].x = local_5c * (float)(double)CONCAT44 /* combine 2-byte values */(local_78,uStack_7c) + result_out->x * fVar3",
+      "text": "local_40[0].x = local_58 * (float)(double)CONCAT44 /* combine 2-byte values */(uStack_74,local_78) + result_out->x * fVar3;",
       "type": "concat_artifact"
     },
     {
       "description": "Complex pointer cast",
-      "line": 96,
+      "line": 92,
       "match": "(float *)((int)",
       "text": "pfVar4 = (float *)((int)quat1_ptr + (uint)bVar7 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unaffected register variable",
-      "line": 102,
+      "line": 98,
       "match": "unaff_ESI",
       "text": "pfVar6 = (float *)((int)unaff_ESI + (uint)bVar7 * -8 + 4);",
       "type": "unaffected_reg"
     },
     {
       "description": "Complex pointer cast",
-      "line": 102,
+      "line": 98,
       "match": "(float *)((int)",
       "text": "pfVar6 = (float *)((int)unaff_ESI + (uint)bVar7 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unaffected register variable",
-      "line": 103,
+      "line": 99,
       "match": "unaff_ESI",
-      "text": "unaff_ESI->w = local_54;",
+      "text": "unaff_ESI->w = local_50;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 109,
+      "line": 105,
       "match": "unaff_ESI",
       "text": "return unaff_ESI;",
       "type": "unaffected_reg"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x70",
-      "fix_address": "005f77e8",
-      "frame_offset": 112,
-      "match": "AND ESP",
-      "sub_esp_offset": 112,
-      "text": "Stack alignment at 005f77e8 (SUB ESP, 0x70 before)",
-      "type": "stack_align_anchor"
     }
   ]
 }

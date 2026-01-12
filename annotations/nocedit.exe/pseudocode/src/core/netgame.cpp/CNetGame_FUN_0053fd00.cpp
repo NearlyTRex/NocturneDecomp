@@ -18,7 +18,9 @@ void __cdecl core_netgame_cpp_CNetGame_FUN_0053fd00(CNetGame *this_ptr)
   uint uVar4;
   int in_stack_00000008;
   float fVar5;
-  float local_14;
+  float local_28;
+  float local_20;
+  int local_14;
   
   if (in_stack_00000008 != 0) {
     if (this_ptr->connection_type == 2) {
@@ -53,20 +55,21 @@ LAB_0053fe74:
             iVar2 = 0x20000;
           }
           g_CurrentGameTime = g_CurrentGameTime + iVar2;
-          fVar5 = (float)(int)(g_CurrentGameTime - uVar3) * (float)1.52587890625e-05;
-          if (fVar5 < 0.0) {
-            fVar5 = 0.0;
+          local_20 = (float)(int)(g_CurrentGameTime - uVar3) * (float)1.52587890625e-05;
+          if (local_20 < 0.0) {
+            local_20 = 0.0;
           }
           g_LastPingTime = iVar1;
-          if (((float)30 < fVar5) || (0x40400000 < (int)fVar5)) {
+          if (((float)30 < local_20) || (0x40400000 < (int)local_20)) {
             shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
                       (g_CEditorToolsPtr,"Couldn't contact server to disconnect.");
             goto LAB_0053fe74;
           }
           shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
-                    (g_CEditorToolsPtr,fVar5 * 1000f,3000.0);
+                    (g_CEditorToolsPtr,local_20 * 1000f,3000.0);
           while( true ) {
-            fVar5 = (float)(int)(g_CurrentGameTime - uVar4) * (float)1.52587890625e-05;
+            local_14 = g_CurrentGameTime - uVar4;
+            fVar5 = (float)local_14 * (float)1.52587890625e-05;
             if (fVar5 < 0.0) {
               fVar5 = 0.0;
             }
@@ -123,27 +126,28 @@ LAB_00540097:
             iVar2 = 0x20000;
           }
           g_CurrentGameTime = g_CurrentGameTime + iVar2;
-          fVar5 = (float)(int)(g_CurrentGameTime - (int)this_ptr->players) * (float)1.52587890625e-05;
-          if (fVar5 < 0.0) {
-            fVar5 = 0.0;
+          local_28 = (float)(int)(g_CurrentGameTime - local_14) * (float)1.52587890625e-05;
+          if (local_28 < 0.0) {
+            local_28 = 0.0;
           }
           g_LastPingTime = iVar1;
-          if (((float)30 < fVar5) || (0x40a00000 < (int)fVar5)) {
+          if (((float)30 < local_28) || (0x40a00000 < (int)local_28)) {
             shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
                       (g_CEditorToolsPtr,"Couldn't connect to all clients to disconnect.");
             goto LAB_00540097;
           }
           shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
-                    (g_CEditorToolsPtr,fVar5 * 1000f,5000.0);
+                    (g_CEditorToolsPtr,local_28 * 1000f,5000.0);
           while( true ) {
-            local_14 = (float)(int)(g_CurrentGameTime - uVar4) * (float)1.52587890625e-05;
-            if (local_14 < 0.0) {
-              local_14 = 0.0;
+            local_14 = g_CurrentGameTime - uVar4;
+            local_28 = (float)local_14 * (float)1.52587890625e-05;
+            if (local_28 < 0.0) {
+              local_28 = 0.0;
             }
-            if ((float)30 < local_14) {
-              local_14 = 30.0;
+            if ((float)30 < local_28) {
+              local_28 = 30.0;
             }
-            if ((float)0.10000000000000001 <= local_14) break;
+            if ((float)0.10000000000000001 <= local_28) break;
             iVar2 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
             iVar1 = iVar2 / 0x12 - g_LastPingTime;
             if (iVar1 < 0) {

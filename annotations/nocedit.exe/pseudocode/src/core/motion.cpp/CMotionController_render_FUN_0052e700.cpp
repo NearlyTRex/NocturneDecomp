@@ -19,6 +19,7 @@ core_motion_cpp_CMotionController_render_FUN_0052e700
   int iVar6;
   BADSPACEBASE *in_ESP;
   char *pcVar7;
+  char local_a8 [100];
   CBoundingBox3D local_44;
   CVector3i local_2c;
   float local_20;
@@ -46,7 +47,7 @@ core_motion_cpp_CMotionController_render_FUN_0052e700
          (pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(this_ptr),
          pSVar4->state_index == this_ptr->state_index)) {
         pcVar5 = core_motion_cpp_CMotionController_getCurrentStateName_FUN_0052dcf0(this_ptr);
-        pcVar7 = &stack0xffffff58;
+        pcVar7 = local_a8;
         do {
           cVar1 = *pcVar5;
           *pcVar7 = cVar1;
@@ -60,12 +61,12 @@ core_motion_cpp_CMotionController_render_FUN_0052e700
       else {
         core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0(this_ptr);
         core_motion_cpp_CMotionController_getCurrentStateName_FUN_0052dcf0(this_ptr);
-        crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff58,"%s -> %s");
+        crt_stdio_c_sprintf_FUN_005fdbd0(local_a8,"%s -> %s");
       }
-      engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff58,local_14,iVar6 + -0x16);
+      engine_2d_c_drawText_FUN_00401fd0(local_a8,local_14,iVar6 + -0x16);
       core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(this_ptr);
-      crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff58,"%s : %5.2f");
-      engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff58,local_14,iVar6 + -0xb);
+      crt_stdio_c_sprintf_FUN_005fdbd0(local_a8,"%s : %5.2f");
+      engine_2d_c_drawText_FUN_00401fd0(local_a8,local_14,iVar6 + -0xb);
       return;
     }
   }

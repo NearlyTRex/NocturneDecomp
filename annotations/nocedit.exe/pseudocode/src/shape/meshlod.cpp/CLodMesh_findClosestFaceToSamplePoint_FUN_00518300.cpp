@@ -14,11 +14,10 @@ shape_meshlod_cpp_CLodMesh_findClosestFaceToSamplePoint_FUN_00518300
   SLodSamplePoint *sample_point;
   CLodMesh *this_ptr_00;
   CLodFace *pCVar1;
-  double dVar2;
   CLodFace *face;
-  double local_28;
-  SLodSubmesh *pSStack_24;
-  int local_18;
+  double dStack_24;
+  SLodSubmesh *pSStack_20;
+  ulonglong local_18;
   
   this_ptr_00 = (CLodMesh *)(this_ptr->sample_points_ptr + sample_point_index);
   this_ptr_00->submesh_count = 0x39a08ce9;
@@ -26,23 +25,24 @@ shape_meshlod_cpp_CLodMesh_findClosestFaceToSamplePoint_FUN_00518300
   this_ptr_00->tri_data = (CLodFace *)0xffffffff;
   pCVar1 = (CLodFace *)0x0;
   if (0 < this_ptr->tri_count) {
-    local_18 = 0;
+    local_18 = 0.0;
     do {
-      sample_point = (SLodSamplePoint *)((int)this_ptr->tri_data->attribute_indices + local_18);
+      sample_point = (SLodSamplePoint *)
+                     ((int)this_ptr->tri_data->attribute_indices + local_18._4_4_);
       if (sample_point[2].position.z == 0.0) {
-        dVar2 = shape_meshlod_cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400
-                          (this_ptr_00,sample_point,face);
-        local_28 = dVar2;
-        if (dVar2 < *(double *)&this_ptr_00->submesh_count) {
-          face = SUB84 /* extract 2-byte value */(dVar2,0);
+        local_18 = shape_meshlod_cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400
+                             (this_ptr_00,sample_point,face);
+        dStack_24 = local_18;
+        if (local_18 < *(double *)&this_ptr_00->submesh_count) {
+          face = SUB84 /* extract 2-byte value */(local_18,0);
           this_ptr_00->tri_data = pCVar1;
           this_ptr_00->submesh_count = (int)face;
-          pSStack_24 = (SLodSubmesh *)((ulonglong)dVar2 >> 0x20);
-          this_ptr_00->submesh_data = pSStack_24;
+          pSStack_20 = (SLodSubmesh *)((ulonglong)local_18 >> 0x20);
+          this_ptr_00->submesh_data = pSStack_20;
         }
       }
       pCVar1 = (CLodFace *)((int)pCVar1->attribute_indices + 1);
-      local_18 = local_18 + 0x8c;
+      local_18 = (double)((ulonglong)(local_18._4_4_ + 0x8c) << 0x20);
     } while ((int)pCVar1 < this_ptr->tri_count);
   }
   if (-1 < (int)this_ptr_00->tri_data) {

@@ -24,25 +24,26 @@ void __cdecl core_trigger_cpp_CTrigger_process_FUN_005dfac0(CTrigger *this_ptr)
   int iVar10;
   BADSPACEBASE *in_ESP;
   float in_stack_00000008;
-  double local_b8 [3];
-  CBoundingBox3D local_a0;
+  CBoundingBox3D CStack_b4;
+  CBoundingBox3D CStack_9c;
+  float fStack_84;
   float fStack_80;
   float fStack_7c;
-  float fStack_78;
-  CVector3i CStack_74;
-  CVector3f CStack_68;
-  CVector3f CStack_5c;
-  CVector3f aCStack_50 [2];
-  int local_34;
-  char *local_30;
+  CVector3i CStack_78;
+  CVector3f CStack_6c;
+  CVector3f CStack_60;
+  CVector3f aCStack_54 [3];
+  int local_30;
   char *local_2c;
-  int local_28;
+  char *local_28;
   int local_24;
-  CLocation *local_20;
-  float local_1c;
+  int local_20;
+  CLocation *local_1c;
+  float fStack_18;
+  int iStack_14;
   
   uVar4 = *(uint *)(this_ptr->field1_0x158 + 0x1c);
-  local_34 = 0;
+  local_30 = 0;
   this_ptr->field1_0x158[0x1a4] = '\0';
   this_ptr->field1_0x158[0x1a5] = '\0';
   this_ptr->field1_0x158[0x1a6] = '\0';
@@ -52,14 +53,13 @@ void __cdecl core_trigger_cpp_CTrigger_process_FUN_005dfac0(CTrigger *this_ptr)
     iVar9 = core_hero_cpp_FUN_004f2220();
     if (iVar9 != 0) {
       iVar9 = 0;
-      (*((this_ptr->base_actor).vtable)->getBoundingBox)(&this_ptr->base_actor,&local_a0);
+      (*((this_ptr->base_actor).vtable)->getBoundingBox)(&this_ptr->base_actor,&CStack_9c);
       if (0 < g_HeroCount) {
         iVar10 = 0;
         do {
           iVar8 = core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0();
           if (iVar8 != 0) {
             uVar4 = *(uint *)((int)g_HeroActors + iVar10);
-            local_2c = &DAT_00000001;
             goto LAB_005dfb52;
           }
           iVar9 = iVar9 + 1;
@@ -86,8 +86,8 @@ void __cdecl core_trigger_cpp_CTrigger_process_FUN_005dfac0(CTrigger *this_ptr)
           *(float *)this_ptr->field1_0x158 * *(float *)this_ptr->field1_0x158)) &&
          (iVar9 = core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0(), iVar9 != 0)) {
         uVar4 = *(uint *)(this_ptr->field1_0x158 + 0x210);
-        local_34 = 1;
 LAB_005dfb52:
+        local_30 = 1;
         *(uint *)(this_ptr->field1_0x158 + 0x1a4) = uVar4;
       }
     }
@@ -95,37 +95,36 @@ LAB_005dfb52:
   case 2:
     iVar9 = core_hero_cpp_FUN_004f2220();
     if (iVar9 != 0) {
-      pCVar6 = (*((this_ptr->base_actor).vtable)->getBoundingBox)
-                         (&this_ptr->base_actor,(CBoundingBox3D *)local_b8);
-      fStack_80 = (pCVar6->min).x + (pCVar6->max).x;
-      fStack_7c = (pCVar6->min).y + (pCVar6->max).y;
-      CStack_68.x = fStack_80 * 0.5f;
-      CStack_68.y = fStack_7c * 0.5f;
-      fStack_78 = (pCVar6->min).z + (pCVar6->max).z;
-      CStack_68.z = fStack_78 * 0.5f;
+      pCVar6 = (*((this_ptr->base_actor).vtable)->getBoundingBox)(&this_ptr->base_actor,&CStack_b4);
+      fStack_84 = (pCVar6->min).x + (pCVar6->max).x;
+      fStack_80 = (pCVar6->min).y + (pCVar6->max).y;
+      CStack_6c.x = fStack_84 * 0.5f;
+      CStack_6c.y = fStack_80 * 0.5f;
+      fStack_7c = (pCVar6->min).z + (pCVar6->max).z;
+      CStack_6c.z = fStack_7c * 0.5f;
       pCVar7 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                         (&this_ptr->base_actor,&CStack_5c,&CStack_68);
-      if (aCStack_50 != pCVar7) {
-        aCStack_50[0].x = pCVar7->x;
-        aCStack_50[0].y = pCVar7->y;
-        aCStack_50[0].z = pCVar7->z;
+                         (&this_ptr->base_actor,&CStack_60,&CStack_6c);
+      if (aCStack_54 != pCVar7) {
+        aCStack_54[0].x = pCVar7->x;
+        aCStack_54[0].y = pCVar7->y;
+        aCStack_54[0].z = pCVar7->z;
       }
-      CStack_74.x = (int)ROUND(aCStack_50[0].x * _DAT_00664a00);
-      CStack_74.y = (int)ROUND(aCStack_50[0].y * _DAT_00664a00);
-      CStack_74.z = (int)ROUND(aCStack_50[0].z * _DAT_00664a00);
-      iVar9 = core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80
-                        (g_CDemonSetPtr,&CStack_74,(CVector3i *)0x0);
-      local_b8[0] = (double)iVar9;
-      if ((*(float *)(this_ptr->field1_0x158 + 0xc4) * (float)65536 <= (float)iVar9) &&
-         ((float)iVar9 <= *(float *)(this_ptr->field1_0x158 + 200) * (float)65536)) {
-        local_2c = &DAT_00000001;
+      CStack_78.x = (int)ROUND(aCStack_54[0].x * _DAT_00664a00);
+      CStack_78.y = (int)ROUND(aCStack_54[0].y * _DAT_00664a00);
+      CStack_78.z = (int)ROUND(aCStack_54[0].z * _DAT_00664a00);
+      iStack_14 = core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80
+                            (g_CDemonSetPtr,&CStack_78,(CVector3i *)0x0);
+      if ((*(float *)(this_ptr->field1_0x158 + 0xc4) * (float)65536 <= (float)iStack_14)
+         && ((float)iStack_14 <= *(float *)(this_ptr->field1_0x158 + 200) * (float)65536))
+      {
+        local_30 = 1;
       }
     }
     break;
   case 3:
   case 4:
   case 5:
-    local_34 = *(int *)(this_ptr->field1_0x158 + 0x198);
+    local_30 = *(int *)(this_ptr->field1_0x158 + 0x198);
     this_ptr->field1_0x158[0x198] = '\0';
     this_ptr->field1_0x158[0x199] = '\0';
     this_ptr->field1_0x158[0x19a] = '\0';
@@ -134,11 +133,12 @@ LAB_005dfb52:
   case 6:
     iVar9 = core_hero_cpp_FUN_004f2220();
     if (iVar9 != 0) {
-      local_1c = *(float *)(this_ptr->field1_0x158 + 0x10) *
-                 *(float *)(this_ptr->field1_0x158 + 0x10) +
-                 *(float *)(this_ptr->field1_0x158 + 0xc) * *(float *)(this_ptr->field1_0x158 + 0xc)
-                 + *(float *)(this_ptr->field1_0x158 + 8) * *(float *)(this_ptr->field1_0x158 + 8);
-      local_34 = core_fire_cpp_CFireEffect_FUN_004c8c90(g_CFireEffectPtr);
+      fStack_18 = *(float *)(this_ptr->field1_0x158 + 0x10) *
+                  *(float *)(this_ptr->field1_0x158 + 0x10) +
+                  *(float *)(this_ptr->field1_0x158 + 0xc) *
+                  *(float *)(this_ptr->field1_0x158 + 0xc) +
+                  *(float *)(this_ptr->field1_0x158 + 8) * *(float *)(this_ptr->field1_0x158 + 8);
+      local_30 = core_fire_cpp_CFireEffect_FUN_004c8c90(g_CFireEffectPtr);
     }
     break;
   case 7:
@@ -151,61 +151,61 @@ LAB_005dfb52:
       this_ptr->field1_0x158[0x217] = '\0';
     }
     if (0.0 < *(float *)(this_ptr->field1_0x158 + 0x1a0)) {
-      local_34 = 0;
+      local_30 = 0;
     }
     else {
-      local_34 = 1;
+      local_30 = 1;
     }
     break;
   case 8:
     iVar9 = core_hero_cpp_FUN_004f2220();
     if (iVar9 != 0) {
-      local_28 = 0;
+      local_24 = 0;
       for (iVar9 = 0; iVar9 < (int)g_CDemonSetPtr->actor_list_ptr; iVar9 = iVar9 + 1) {
-        iVar10 = *(int *)(g_CDemonSetPtr->actor_list_data + local_28);
+        iVar10 = *(int *)(g_CDemonSetPtr->actor_list_data + local_24);
         iVar8 = (**(code **)(*(int *)(iVar10 + 0x154) + 0x54))();
         if ((iVar8 != 0) &&
            (iVar8 = core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0(), iVar8 != 0)) {
           *(int *)(this_ptr->field1_0x158 + 0x1a4) = iVar10;
-          local_34 = 1;
+          local_30 = 1;
           break;
         }
-        local_28 = local_28 + 4;
+        local_24 = local_24 + 4;
       }
     }
     break;
   case 9:
     iVar9 = core_hero_cpp_FUN_004f2220();
     if (iVar9 != 0) {
-      local_30 = this_ptr->field1_0x158 + 0x20;
-      local_2c = this_ptr->field1_0x158 + 0x70;
-      local_24 = 0;
-      local_20 = &(this_ptr->base_actor).location;
+      local_2c = this_ptr->field1_0x158 + 0x20;
+      local_28 = this_ptr->field1_0x158 + 0x70;
+      local_20 = 0;
+      local_1c = &(this_ptr->base_actor).location;
       for (iVar9 = 0; iVar9 < (int)g_CDemonSetPtr->actor_list_ptr; iVar9 = iVar9 + 1) {
-        actor_ptr = *(CTrigger **)(g_CDemonSetPtr->actor_list_data + local_24);
-        fVar1 = (actor_ptr->base_actor).location.position.x - (local_20->position).x;
-        fVar3 = (actor_ptr->base_actor).location.position.y - (local_20->position).y;
-        fVar2 = (actor_ptr->base_actor).location.position.z - (local_20->position).z;
+        actor_ptr = *(CTrigger **)(g_CDemonSetPtr->actor_list_data + local_20);
+        fVar1 = (actor_ptr->base_actor).location.position.x - (local_1c->position).x;
+        fVar3 = (actor_ptr->base_actor).location.position.y - (local_1c->position).y;
+        fVar2 = (actor_ptr->base_actor).location.position.z - (local_1c->position).z;
         if ((((fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1 <=
                *(float *)this_ptr->field1_0x158 * *(float *)this_ptr->field1_0x158) &&
              (actor_ptr != this_ptr)) &&
-            (iVar10 = core_actor_cpp_isOfClass_FUN_0040c6d0(&actor_ptr->base_actor,local_2c),
+            (iVar10 = core_actor_cpp_isOfClass_FUN_0040c6d0(&actor_ptr->base_actor,local_28),
             iVar10 != 0)) &&
            ((iVar10 = shape_edittool_cpp_wildcardStringMatch_FUN_004a6e20
-                                (local_30,(char *)actor_ptr,0), iVar10 != 0 &&
+                                (local_2c,(char *)actor_ptr,0), iVar10 != 0 &&
             (iVar10 = core_trigger_cpp_CTrigger_containsActor_FUN_005e0cd0(), iVar10 != 0)))) {
           *(CTrigger **)(this_ptr->field1_0x158 + 0x1a4) = actor_ptr;
-          local_34 = 1;
+          local_30 = 1;
           break;
         }
-        local_24 = local_24 + 4;
+        local_20 = local_20 + 4;
       }
     }
   }
   switch(*(uint *)(this_ptr->field1_0x158 + 4)) {
   case 0:
   case 1:
-    if (local_34 == 0) {
+    if (local_30 == 0) {
       if (*(int *)(this_ptr->field1_0x158 + 4) == 0) {
         this_ptr->field1_0x158[0x14] = '\0';
         this_ptr->field1_0x158[0x15] = '\0';
@@ -216,10 +216,10 @@ LAB_005dfb52:
     }
     break;
   case 2:
-    if ((*(int *)(this_ptr->field1_0x158 + 0x194) != 0) || (local_34 == 0)) goto LAB_005e0053;
+    if ((*(int *)(this_ptr->field1_0x158 + 0x194) != 0) || (local_30 == 0)) goto LAB_005e0053;
     break;
   case 3:
-    if ((*(int *)(this_ptr->field1_0x158 + 0x194) == 1) && (local_34 == 0)) {
+    if ((*(int *)(this_ptr->field1_0x158 + 0x194) == 1) && (local_30 == 0)) {
       this_ptr->field1_0x158[0x14] = '\x01';
       this_ptr->field1_0x158[0x15] = '\0';
       this_ptr->field1_0x158[0x16] = '\0';
@@ -239,7 +239,7 @@ LAB_005e0053:
   this_ptr->field1_0x158[0x16] = '\0';
   this_ptr->field1_0x158[0x17] = '\0';
 switchD_005dfb63_default:
-  *(int *)(this_ptr->field1_0x158 + 0x194) = local_34;
+  *(int *)(this_ptr->field1_0x158 + 0x194) = local_30;
   if (*(int *)(this_ptr->field1_0x158 + 0x14) == 0) {
     core_event_cpp_CEventList_FUN_004aabe0(g_CEventListPtr);
     this_ptr->field1_0x158[0x1a4] = '\0';

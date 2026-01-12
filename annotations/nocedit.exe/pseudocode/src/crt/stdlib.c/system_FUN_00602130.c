@@ -15,7 +15,7 @@ int __watcallStack crt_stdlib_c_system_FUN_00602130(char *command)
   char *args;
   char *cmdName;
   BADSPACEBASE *in_ESP;
-  void *envp;
+  void *in_stack_ffffffe8;
   uint in_stack_ffffffec;
   int *result;
   
@@ -29,7 +29,6 @@ int __watcallStack crt_stdlib_c_system_FUN_00602130(char *command)
     if (cmdPath == (char *)0x0) {
       cmdPath = "CMD.EXE";
     }
-    envp = (void *)0x0;
     g_ProcessSpawnEnabled = 0;
     crt_process_c_set_shell_execute_flag_FUN_00609c80(&stack0xffffffe8);
     if ((char)result == '\0') {
@@ -38,7 +37,8 @@ int __watcallStack crt_stdlib_c_system_FUN_00602130(char *command)
     else {
       cmdName = "CMD";
     }
-    iVar2 = crt_process_c_spawnCommand_FUN_00609c90(0,cmdPath,cmdName,args,envp,result);
+    iVar2 = crt_process_c_spawnCommand_FUN_00609c90(0,cmdPath,cmdName,args,in_stack_ffffffe8,result)
+    ;
   }
   g_ProcessSpawnEnabled = iVar1;
   return iVar2;

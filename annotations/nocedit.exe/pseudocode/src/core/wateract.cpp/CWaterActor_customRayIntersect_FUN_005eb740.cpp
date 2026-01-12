@@ -9,67 +9,71 @@
 float __cdecl core_wateract_cpp_CWaterActor_customRayIntersect_FUN_005eb740(CWaterActor *this_ptr)
 
 {
-  int iVar1;
   CBoundingBox3D *this_ptr_00;
-  float fVar2;
-  char *pcVar3;
+  float fVar1;
+  char *pcVar2;
   BADSPACEBASE *in_ESP;
-  float unaff_EBP;
-  float unaff_EDI;
-  int iVar4;
+  int iVar3;
   CVector3f *in_stack_00000008;
   CVector3f *in_stack_0000000c;
   float *in_stack_00000010;
-  CVector3f *in_stack_ffffff68;
+  ulonglong in_stack_ffffff64;
   CVector3f *in_stack_ffffff6c;
-  CVector3f *in_stack_ffffff70;
-  byte auStack_74 [36];
-  CBoundingBox3D local_50 [2];
+  float fStack_88;
+  CDemonTriangle CStack_84;
+  CBoundingBox3D CStack_4c;
+  float fStack_34;
+  float fStack_30;
+  float fStack_2c;
+  float fStack_28;
+  float fStack_24;
   float fStack_20;
   float fStack_1c;
-  float fStack_18;
-  float fStack_14;
+  int iStack_18;
   
-  this_ptr_00 = (*((this_ptr->base_actor).vtable)->getBoundingBox)(&this_ptr->base_actor,local_50);
-  fVar2 = core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940
-                    (this_ptr_00,in_stack_ffffff68,in_stack_ffffff6c,in_stack_ffffff70);
-  if ((fVar2 < 0.0) || (1.0 < fVar2)) {
-    auStack_74._0_4_ = 2.0;
+  this_ptr_00 = (*((this_ptr->base_actor).vtable)->getBoundingBox)(&this_ptr->base_actor,&CStack_4c)
+  ;
+  fVar1 = core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940
+                    (this_ptr_00,(CVector3f *)in_stack_ffffff64,
+                     (CVector3f *)((ulonglong)in_stack_ffffff64 >> 0x20),in_stack_ffffff6c);
+  if ((fVar1 < 0.0) || (1.0 < fVar1)) {
+    fStack_1c = 2.0;
   }
   else {
-    iVar1 = *(int *)(this_ptr->field21_0x298 + 0x2af9c);
-    iVar4 = 0;
-    auStack_74._0_4_ = 2.0;
-    pcVar3 = this_ptr->field21_0x298 + 0x7d10;
-    if (0 < iVar1) {
+    iStack_18 = *(int *)(this_ptr->field21_0x298 + 0x2af9c);
+    iVar3 = 0;
+    fStack_88 = 2.0;
+    pcVar2 = this_ptr->field21_0x298 + 0x7d10;
+    if (0 < iStack_18) {
       do {
         core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0049a790
-                  ((CDemonTriangle *)(auStack_74 + 4),
-                   (CVector3f *)(this_ptr->field21_0x298 + *(int *)(pcVar3 + 0x18) * 0x20 + 4),
-                   (CVector3f *)(this_ptr->field21_0x298 + *(int *)(pcVar3 + 0x24) * 0x20 + 4),
-                   (CVector3f *)(this_ptr->field21_0x298 + *(int *)(pcVar3 + 0x30) * 0x20 + 4));
-        fVar2 = core_dtri_cpp_rayTriangleIntersection_FUN_0049a800
-                          ((CDemonTriangle *)auStack_74,in_stack_00000008,in_stack_0000000c);
-        if (((fVar2 < (float)auStack_74._0_4_) && (0.0 <= fVar2)) && (fVar2 <= 1.0)) {
-          fStack_20 = -local_50[0].min.y;
-          fStack_1c = -local_50[0].min.z;
-          fStack_18 = -local_50[0].max.x;
-          auStack_74._0_4_ = fVar2;
-          if (&fStack_14 != &fStack_20) {
-            fStack_14 = fStack_20;
-            unaff_EBP = fStack_1c;
-            unaff_EDI = fStack_18;
+                  (&CStack_84,
+                   (CVector3f *)(this_ptr->field21_0x298 + *(int *)(pcVar2 + 0x18) * 0x20 + 4),
+                   (CVector3f *)(this_ptr->field21_0x298 + *(int *)(pcVar2 + 0x24) * 0x20 + 4),
+                   (CVector3f *)(this_ptr->field21_0x298 + *(int *)(pcVar2 + 0x30) * 0x20 + 4));
+        fVar1 = core_dtri_cpp_rayTriangleIntersection_FUN_0049a800
+                          (&CStack_84,in_stack_00000008,in_stack_0000000c);
+        if (((fVar1 < fStack_88) && (0.0 <= fVar1)) && (fVar1 <= 1.0)) {
+          fStack_34 = -CStack_84.normal.x;
+          fStack_30 = -CStack_84.normal.y;
+          fStack_2c = -CStack_84.normal.z;
+          fStack_88 = fVar1;
+          if (&fStack_28 != &fStack_34) {
+            fStack_28 = fStack_34;
+            fStack_24 = fStack_30;
+            fStack_20 = fStack_2c;
           }
         }
-        iVar4 = iVar4 + 1;
-        pcVar3 = pcVar3 + 0x48;
-      } while (iVar4 < iVar1);
+        iVar3 = iVar3 + 1;
+        pcVar2 = pcVar2 + 0x48;
+      } while (iVar3 < iStack_18);
     }
-    if (((float)auStack_74._0_4_ < 1.0) && (&fStack_14 != in_stack_00000010)) {
-      *in_stack_00000010 = fStack_14;
-      in_stack_00000010[1] = unaff_EBP;
-      in_stack_00000010[2] = unaff_EDI;
+    if ((fStack_88 < 1.0) && (&fStack_28 != in_stack_00000010)) {
+      *in_stack_00000010 = fStack_28;
+      in_stack_00000010[1] = fStack_24;
+      in_stack_00000010[2] = fStack_20;
     }
+    fStack_1c = fStack_88;
   }
-  return (float)auStack_74._0_4_;
+  return fStack_1c;
 }

@@ -39,14 +39,14 @@ void __cdecl core_dirmat_cpp_CMatrix3x3f_invert_FUN_00471e10(CMatrix3x3f *this_p
   float fVar28;
   float fVar29;
   float fVar30;
-  float local_34;
   
-  if (ABS((this_ptr->m[1].x * this_ptr->m[2].y - this_ptr->m[1].y * this_ptr->m[2].x) *
-          this_ptr->m[0].z +
-          ((this_ptr->m[1].y * this_ptr->m[2].z - this_ptr->m[1].z * this_ptr->m[2].y) *
-           this_ptr->m[0].x -
-          (this_ptr->m[1].x * this_ptr->m[2].z - this_ptr->m[1].z * this_ptr->m[2].x) *
-          this_ptr->m[0].y)) == 0.0) {
+  fVar30 = (this_ptr->m[1].x * this_ptr->m[2].y - this_ptr->m[1].y * this_ptr->m[2].x) *
+           this_ptr->m[0].z +
+           ((this_ptr->m[1].y * this_ptr->m[2].z - this_ptr->m[1].z * this_ptr->m[2].y) *
+            this_ptr->m[0].x -
+           (this_ptr->m[1].x * this_ptr->m[2].z - this_ptr->m[1].z * this_ptr->m[2].x) *
+           this_ptr->m[0].y);
+  if (ABS(fVar30) == 0.0) {
     g_CurrentFilename = "..\\core\\dirmat.cpp";
     g_CurrentLineNumber = 0x69;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CMatrix::invert - Singular matrix");
@@ -64,7 +64,7 @@ void __cdecl core_dirmat_cpp_CMatrix3x3f_invert_FUN_00471e10(CMatrix3x3f *this_p
   fVar11 = this_ptr->m[2].x;
   fVar12 = this_ptr->m[0].y;
   fVar13 = this_ptr->m[2].x;
-  fVar30 = 1.0 / local_34;
+  fVar30 = 1.0 / fVar30;
   fVar14 = this_ptr->m[2].y;
   fVar15 = this_ptr->m[0].y;
   fVar16 = this_ptr->m[1].z;

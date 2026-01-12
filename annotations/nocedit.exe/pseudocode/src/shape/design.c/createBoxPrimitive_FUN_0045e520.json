@@ -1,22 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 503,
-    "complexity_score": 465,
+    "complexity_score": 197,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 10,
-    "pseudocode_lines": 40,
-    "suspect_count": 39,
+    "pseudocode_lines": 102,
+    "suspect_count": 8,
     "suspect_types": [
       "badspacebase",
-      "call_esp_anchor",
-      "format_string_mismatch",
       "register_param",
-      "stack_ref",
-      "variadic_anchor",
-      "warning_unreachable"
+      "stack_ref"
     ],
-    "total_lines": 543
+    "total_lines": 605
   },
   "cross_references": [],
   "function": {
@@ -148,6 +144,62 @@
     "declared_params": 0,
     "estimated_params": 0
   },
+  "pcode_overrides": {
+    "0045e560": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff88,4)"
+    ],
+    "0045e594": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff88,4)"
+    ],
+    "0045e5d7": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff88,4)"
+    ],
+    "0045e60b": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff88,4)"
+    ],
+    "0045e62b": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff88,4)"
+    ],
+    "0045e643": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff88,4)"
+    ],
+    "0045e8f7": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff88,4)"
+    ],
+    "0045e919": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff88,4)"
+    ],
+    "0045e93d": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff88,4)"
+    ],
+    "0045e95e": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff88,4)"
+    ],
+    "0045e982": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff88,4)"
+    ],
+    "0045e9a1": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff88,4)"
+    ],
+    "0045e9d0": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff88,4)"
+    ],
+    "0045e9f2": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff88,4)"
+    ],
+    "0045ea16": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff88,4)"
+    ],
+    "0045ea37": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff88,4)"
+    ],
+    "0045ea5b": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff88,4)"
+    ],
+    "0045ea7a": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff88,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.977876106194691,
     "instruction_count": 452,
@@ -191,226 +243,7 @@
     },
     "pcode_op_count": 2702
   },
-  "stack_frame": {
-    "frame_size": 140,
-    "local_size": 140,
-    "param_offset": 4,
-    "param_size": 0,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_88",
-        "offset": -136,
-        "size": 1,
-        "type": "undefined"
-      },
-      {
-        "is_param": false,
-        "name": "local_34",
-        "offset": -52,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_30",
-        "offset": -48,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_2c",
-        "offset": -44,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_28",
-        "offset": -40,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_24",
-        "offset": -36,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_20",
-        "offset": -32,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c",
-        "offset": -28,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "undefined4"
-      }
-    ]
-  },
-  "suspects": [
-    {
-      "description": "Unreachable code block removed",
-      "line": 2,
-      "match": "WARNING: Removing unreachable block",
-      "text": "/* WARNING: Removing unreachable block (ram,0x0045e5b1) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 3,
-      "match": "WARNING: Removing unreachable block",
-      "text": "/* WARNING: Removing unreachable block (ram,0x0045e5a3) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 4,
-      "match": "WARNING: Removing unreachable block",
-      "text": "/* WARNING: Removing unreachable block (ram,0x0045e5c2) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 5,
-      "match": "WARNING: Removing unreachable block",
-      "text": "/* WARNING: Removing unreachable block (ram,0x0045e5e2) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 6,
-      "match": "WARNING: Removing unreachable block",
-      "text": "/* WARNING: Removing unreachable block (ram,0x0045e5e4) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 7,
-      "match": "WARNING: Removing unreachable block",
-      "text": "/* WARNING: Removing unreachable block (ram,0x0045e5f0) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 8,
-      "match": "WARNING: Removing unreachable block",
-      "text": "/* WARNING: Removing unreachable block (ram,0x0045e61c) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 9,
-      "match": "WARNING: Removing unreachable block",
-      "text": "/* WARNING: Removing unreachable block (ram,0x0045e8d1) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 10,
-      "match": "WARNING: Removing unreachable block",
-      "text": "/* WARNING: Removing unreachable block (ram,0x0045e8db) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 11,
-      "match": "WARNING: Removing unreachable block",
-      "text": "/* WARNING: Removing unreachable block (ram,0x0045e9a4) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 12,
-      "match": "WARNING: Removing unreachable block",
-      "text": "/* WARNING: Removing unreachable block (ram,0x0045e9aa) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 13,
-      "match": "WARNING: Removing unreachable block",
-      "text": "/* WARNING: Removing unreachable block (ram,0x0045e9b4) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 14,
-      "match": "WARNING: Removing unreachable block",
-      "text": "/* WARNING: Removing unreachable block (ram,0x0045ea7d) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 15,
-      "match": "WARNING: Removing unreachable block",
-      "text": "/* WARNING: Removing unreachable block (ram,0x0045e617) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 16,
-      "match": "WARNING: Removing unreachable block",
-      "text": "/* WARNING: Removing unreachable block (ram,0x0045e5eb) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 23,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 23,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 31,
-      "match": "&stack0xffffff78",
-      "text": "(&stack0xffffff78,0x4f,0,0,\"Enter in X,Y,Z box dimentions : \");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 33,
-      "match": "&stack0xffffff78",
-      "text": "pcVar3 = &stack0xffffff78;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 41,
-      "match": "&stack0xffffff78",
-      "text": "crt_stdio_c_sscanf_FUN_0060013c(&stack0xffffff78,\"%f,%f,%f\");",
-      "type": "stack_ref"
-    },
+  "resolved_suspects": [
     {
       "add_esp_value": 20,
       "call_address": "0045e58f",
@@ -442,17 +275,6 @@
       "target_function": "crt_stdio.c_sscanf_FUN_0060013c",
       "text": "Call to variadic function crt_stdio.c_sscanf_FUN_0060013c at 0045e606 (EBP frame + ADD ESP)",
       "type": "variadic_anchor"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%f,%f,%f\" has 3 specifiers but 0 arguments after it",
-      "expected_args": 3,
-      "format_string": "%f,%f,%f",
-      "function_name": "crt_stdio_c_sscanf_FUN_0060013c",
-      "line_number": 41,
-      "match": "crt_stdio_c_sscanf_FUN_0060013c(&stack0xffffff78,\"%f,%f,%f\");",
-      "text": "Format string expects 3 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 20,
@@ -661,6 +483,143 @@
       "target_address": "0x45df60",
       "text": "Direct CALL at 0045ea75, ADD ESP at 0045ea7a with uncertain ESP",
       "type": "call_esp_anchor"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 140,
+    "local_size": 140,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_88",
+        "offset": -136,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 8,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 8,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 27,
+      "match": "&stack0xffffff78",
+      "text": "(&stack0xffffff78,0x4f,0,0,\"Enter in X,Y,Z box dimentions : \");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 29,
+      "match": "&stack0xffffff78",
+      "text": "pcVar4 = &stack0xffffff78;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 38,
+      "match": "&stack0xffffff78",
+      "text": "(&stack0xffffff78,\"%f,%f,%f\",&local_30,&local_2c,&local_28), 0.0 < local_30)",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 41,
+      "match": "&stack0xffffff78",
+      "text": "(&stack0xffffff78,0x4f,0,0xb,\"Enter in X,Y,Z box center : \");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 43,
+      "match": "&stack0xffffff78",
+      "text": "pcVar4 = &stack0xffffff78;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 52,
+      "match": "&stack0xffffff78",
+      "text": "(&stack0xffffff78,\"%f,%f,%f\",&local_24,&local_20,&local_1c),",
+      "type": "stack_ref"
     }
   ]
 }

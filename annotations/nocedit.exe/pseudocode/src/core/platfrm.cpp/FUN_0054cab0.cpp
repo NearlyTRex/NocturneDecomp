@@ -17,9 +17,9 @@ void core_platfrm_cpp_FUN_0054cab0(void)
   uint *puVar3;
   byte bVar4;
   int in_stack_00000004;
-  CQuaternion4f *apCStackY_1844 [1523];
-  float in_stack_ffffff98;
+  float afStackY_1844 [1523];
   CQuaternion4f *quat_ptr;
+  float in_stack_ffffff98;
   CQuaternion4f local_58;
   float local_48;
   float local_44;
@@ -62,7 +62,7 @@ void core_platfrm_cpp_FUN_0054cab0(void)
                *(CQuaternion4f **)(in_stack_00000004 + 0x2dc),in_stack_ffffff98);
     quat_ptr = &local_58;
     pCVar2 = &local_30;
-    local_58.w = (float)quat_ptr;
+    local_58.w = in_stack_ffffff98;
     puVar3 = (uint *)((int)&local_58 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
     *(uint *)((int)&local_58 + (uint)bVar4 * -8 + 4) =
          *(uint *)(&stack0xffffff9c + (uint)bVar4 * -8);

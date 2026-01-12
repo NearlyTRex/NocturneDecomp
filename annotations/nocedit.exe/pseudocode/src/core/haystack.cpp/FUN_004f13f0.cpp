@@ -19,74 +19,79 @@ void core_haystack_cpp_FUN_004f13f0(void)
   SMotion *pSVar5;
   CPathMap *this_ptr;
   int iVar6;
+  float fVar7;
   BADSPACEBASE *in_ESP;
-  float unaff_ESI;
-  float unaff_EDI;
-  CHero *pCVar7;
+  CHero *pCVar8;
   int in_stack_00000004;
   float in_stack_00000008;
-  float local_80;
-  CVector3f CStack_7c;
+  float local_8c;
+  CVector3f local_84;
+  float local_78;
+  float local_74;
   float local_70;
   float local_6c;
   float local_68;
-  float fStack_5c;
-  CVector3f CStack_58;
-  float local_44;
-  byte local_40 [12];
-  byte auStack_34 [20];
-  uint local_20;
-  uint local_1c;
+  float local_64;
+  CVector3f local_60;
+  float local_50;
+  byte local_48 [8];
+  float local_40;
+  CVector3f local_3c;
+  float local_30;
+  float local_28;
+  float local_24;
+  float local_20;
+  float local_1c;
   float local_18;
-  float local_14;
   
   bVar1 = false;
-  local_1c = 0x3e800000;
-  local_20 = 0x3f490fdb;
-  pCVar7 = g_HeroActors[g_LocalHeroIndex];
+  local_1c = 0.25;
+  local_20 = 0.7853982;
+  pCVar8 = g_HeroActors[g_LocalHeroIndex];
   crt_memory_c_memset_FUN_005fde40((void *)(in_stack_00000004 + 0xbe2c),0,0x2c);
   if (*(int *)(in_stack_00000004 + 130000) != 0) {
     pCVar2 = g_HeroActors[g_LocalHeroIndex];
-    local_44 = *(float *)(in_stack_00000004 + 0x20) -
-               (pCVar2->base_character).base_actor.location.position.x;
-    local_40._0_4_ =
+    local_48._0_4_ =
+         *(float *)(in_stack_00000004 + 0x20) -
+         (pCVar2->base_character).base_actor.location.position.x;
+    local_48._4_4_ =
          *(float *)(in_stack_00000004 + 0x24) -
          (pCVar2->base_character).base_actor.location.position.y;
-    local_40._4_4_ =
-         *(float *)(in_stack_00000004 + 0x28) -
-         (pCVar2->base_character).base_actor.location.position.z;
-    auStack_34._8_4_ =
-         SQRT((float)local_40._4_4_ * (float)local_40._4_4_ +
-              local_44 * local_44 + (float)local_40._0_4_ * (float)local_40._0_4_);
-    if (((*(int *)(in_stack_00000004 + 130000) == 3) || ((float)auStack_34._8_4_ < 20f))
-       && ((*(int *)(in_stack_00000004 + 130000) == 2 || (*(int *)(in_stack_00000004 + 130000) == 3)
-           ))) {
+    local_40 = *(float *)(in_stack_00000004 + 0x28) -
+               (pCVar2->base_character).base_actor.location.position.z;
+    local_30 = SQRT(local_40 * local_40 +
+                    (float)local_48._0_4_ * (float)local_48._0_4_ +
+                    (float)local_48._4_4_ * (float)local_48._4_4_);
+    if (((*(int *)(in_stack_00000004 + 130000) == 3) || (local_30 < 20f)) &&
+       ((*(int *)(in_stack_00000004 + 130000) == 2 || (*(int *)(in_stack_00000004 + 130000) == 3))))
+    {
       pCVar2 = (CHero *)core_hero_cpp_FUN_004f3960();
-      if ((pCVar2 == (CHero *)0x0) || ((float)20 <= local_80)) {
+      if ((pCVar2 == (CHero *)0x0) || ((float)20 <= 9999.9)) {
         if (*(int *)(in_stack_00000004 + 0x1fbd4) != 0) {
           *(uint *)(in_stack_00000004 + 0xbe44) = 1;
         }
       }
       else {
         bVar1 = true;
-        pCVar7 = pCVar2;
+        pCVar8 = pCVar2;
       }
     }
-    local_70 = (pCVar7->base_character).base_actor.location.position.x -
+    local_78 = (pCVar8->base_character).base_actor.location.position.x -
                *(float *)(in_stack_00000004 + 0x20);
-    local_6c = (pCVar7->base_character).base_actor.location.position.y -
+    local_74 = (pCVar8->base_character).base_actor.location.position.y -
                *(float *)(in_stack_00000004 + 0x24);
-    local_68 = (pCVar7->base_character).base_actor.location.position.z -
+    local_70 = (pCVar8->base_character).base_actor.location.position.z -
                *(float *)(in_stack_00000004 + 0x28);
-    if ((float *)local_40 != &local_70) {
-      local_40._0_4_ = local_70;
-      local_40._4_4_ = local_6c;
-      local_40._8_4_ = local_68;
+    if ((float *)local_48 != &local_78) {
+      local_48._0_4_ = local_78;
+      local_48._4_4_ = local_74;
+      local_40 = local_70;
     }
-    if ((float)6 <=
-        SQRT((float)local_40._8_4_ * (float)local_40._8_4_ +
-             (float)local_40._0_4_ * (float)local_40._0_4_ +
-             (float)local_40._4_4_ * (float)local_40._4_4_)) {
+    fVar4 = SQRT(local_40 * local_40 +
+                 (float)local_48._0_4_ * (float)local_48._0_4_ +
+                 (float)local_48._4_4_ * (float)local_48._4_4_);
+    local_18 = fVar4;
+    if ((float)6 <= fVar4) {
       this_ptr = (CPathMap *)0x0;
       if (!bVar1) {
         this_ptr = (*((g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable)->
@@ -96,21 +101,21 @@ void core_haystack_cpp_FUN_004f13f0(void)
         this_ptr = (CPathMap *)core_path_cpp_FUN_00548500();
       }
       iVar6 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00
-                        (this_ptr,(CVector3f *)(in_stack_00000004 + 0x20),&CStack_7c,
+                        (this_ptr,(CVector3f *)(in_stack_00000004 + 0x20),&local_84,
                          *(int *)(in_stack_00000004 + 0x6c));
       if (iVar6 != 0) {
-        fVar4 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                          (CStack_7c.z - *(float *)(in_stack_00000004 + 0x34));
-        fVar4 = fVar4 * (float)0.31830988619288902 * (float)4;
-        local_14 = -unaff_EDI;
-        *(float *)(in_stack_00000004 + 0xbe50) = fVar4;
-        if (fVar4 < local_14) {
-          *(float *)(in_stack_00000004 + 0xbe50) = local_14;
+        fVar7 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
+                          (local_84.y - *(float *)(in_stack_00000004 + 0x34));
+        fVar7 = fVar7 * (float)0.31830988619288902 * (float)4;
+        local_24 = -local_1c;
+        *(float *)(in_stack_00000004 + 0xbe50) = fVar7;
+        if (fVar7 < local_24) {
+          *(float *)(in_stack_00000004 + 0xbe50) = local_24;
         }
-        if (unaff_EDI < *(float *)(in_stack_00000004 + 0xbe50)) {
-          *(float *)(in_stack_00000004 + 0xbe50) = unaff_EDI;
+        if (local_1c < *(float *)(in_stack_00000004 + 0xbe50)) {
+          *(float *)(in_stack_00000004 + 0xbe50) = local_1c;
         }
-        if (((float)10 <= local_80) || (bVar1)) {
+        if (((float)10 <= fVar4) || (bVar1)) {
           *(uint *)(in_stack_00000004 + 0xbe34) = 1;
           *(uint *)(in_stack_00000004 + 0xbe2c) = 1;
         }
@@ -141,17 +146,17 @@ void core_haystack_cpp_FUN_004f13f0(void)
       }
       if (bVar1) {
         pCVar3 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
-                           (&CStack_58,(CVector3f *)local_40);
+                           (&local_60,(CVector3f *)local_48);
         fVar4 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                           (pCVar3->y - *(float *)(in_stack_00000004 + 0x34));
         fVar4 = fVar4 * (float)0.31830988619288902 * (float)4;
-        local_18 = -unaff_EDI;
+        local_28 = -local_1c;
         *(float *)(in_stack_00000004 + 0xbe50) = fVar4;
-        if (fVar4 < local_18) {
-          *(float *)(in_stack_00000004 + 0xbe50) = local_18;
+        if (fVar4 < local_28) {
+          *(float *)(in_stack_00000004 + 0xbe50) = local_28;
         }
-        if (unaff_EDI < *(float *)(in_stack_00000004 + 0xbe50)) {
-          *(float *)(in_stack_00000004 + 0xbe50) = unaff_EDI;
+        if (local_1c < *(float *)(in_stack_00000004 + 0xbe50)) {
+          *(float *)(in_stack_00000004 + 0xbe50) = local_1c;
         }
         if ((((float)-0.25 < *(float *)(in_stack_00000004 + 0xbe50)) &&
             ((double)*(float *)(in_stack_00000004 + 0xbe50) < 0.25)) &&
@@ -160,41 +165,40 @@ void core_haystack_cpp_FUN_004f13f0(void)
         }
       }
     }
-    fStack_5c = (pCVar7->base_character).base_actor.location.position.x -
-                *(float *)(in_stack_00000004 + 0x20);
-    CStack_58.x = (pCVar7->base_character).base_actor.location.position.y -
-                  *(float *)(in_stack_00000004 + 0x24);
-    CStack_58.y = (pCVar7->base_character).base_actor.location.position.z -
-                  *(float *)(in_stack_00000004 + 0x28);
-    if ((float *)(local_40 + 8) != &fStack_5c) {
-      local_40._8_4_ = fStack_5c;
-      auStack_34._0_4_ = CStack_58.x;
-      auStack_34._4_4_ = CStack_58.y;
+    local_6c = (pCVar8->base_character).base_actor.location.position.x -
+               *(float *)(in_stack_00000004 + 0x20);
+    local_68 = (pCVar8->base_character).base_actor.location.position.y -
+               *(float *)(in_stack_00000004 + 0x24);
+    local_64 = (pCVar8->base_character).base_actor.location.position.z -
+               *(float *)(in_stack_00000004 + 0x28);
+    if ((float *)local_48 != &local_6c) {
+      local_48._0_4_ = local_6c;
+      local_48._4_4_ = local_68;
+      local_40 = local_64;
     }
     pCVar3 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
-                       ((CVector3f *)(auStack_34 + 8),(CVector3f *)(local_40 + 8));
-    if ((CVector3f *)auStack_34 != pCVar3) {
-      auStack_34._0_4_ = pCVar3->x;
-      auStack_34._4_4_ = pCVar3->y;
-      auStack_34._8_4_ = pCVar3->z;
+                       (&local_3c,(CVector3f *)local_48);
+    if ((CVector3f *)(local_48 + 4) != pCVar3) {
+      local_48._0_4_ = pCVar3->x;
+      local_48._4_4_ = pCVar3->y;
+      local_40 = pCVar3->z;
     }
-    local_40._8_4_ =
-         core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                   ((float)auStack_34._4_4_ - *(float *)(in_stack_00000004 + 0x34));
-    if (unaff_ESI < (float)local_40._8_4_) {
-      local_40._8_4_ = unaff_ESI;
+    local_50 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
+                         ((float)local_48._4_4_ - *(float *)(in_stack_00000004 + 0x34));
+    if (local_20 < local_50) {
+      local_50 = local_20;
     }
-    if ((float)local_40._8_4_ < -unaff_ESI) {
-      local_40._8_4_ = -unaff_ESI;
+    if (local_50 < -local_20) {
+      local_50 = -local_20;
     }
-    CStack_7c.z = (float)local_40._8_4_ - *(float *)(in_stack_00000004 + 0x1fbe0);
-    if (in_stack_00000008 * (float)3.1415926535000001 < CStack_7c.z) {
-      CStack_7c.z = in_stack_00000008 * (float)3.1415926535000001;
+    local_8c = local_50 - *(float *)(in_stack_00000004 + 0x1fbe0);
+    if (in_stack_00000008 * (float)3.1415926535000001 < local_8c) {
+      local_8c = in_stack_00000008 * (float)3.1415926535000001;
     }
-    if (CStack_7c.z < in_stack_00000008 * (float)-3.1415926535000001) {
-      CStack_7c.z = in_stack_00000008 * (float)-3.1415926535000001;
+    if (local_8c < in_stack_00000008 * (float)-3.1415926535000001) {
+      local_8c = in_stack_00000008 * (float)-3.1415926535000001;
     }
-    *(float *)(in_stack_00000004 + 0x1fbe0) = *(float *)(in_stack_00000004 + 0x1fbe0) + CStack_7c.z;
+    *(float *)(in_stack_00000004 + 0x1fbe0) = *(float *)(in_stack_00000004 + 0x1fbe0) + local_8c;
   }
   return;
 }

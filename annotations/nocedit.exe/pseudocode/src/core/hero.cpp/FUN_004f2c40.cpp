@@ -16,31 +16,35 @@ uint core_hero_cpp_FUN_004f2c40(void)
   BADSPACEBASE *in_ESP;
   int iVar3;
   CDemonActor *in_stack_00000004;
-  byte auStack_3c [20];
-  CVector3f CStack_28;
-  CVector3f local_1c;
-  int iVar4;
+  CVector3f local_50;
+  CVector3f local_44;
+  CVector3f local_38;
+  CVector3f local_2c;
+  CVector3f local_20;
+  int local_14;
   
   iVar3 = 0;
-  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-            (in_stack_00000004,(CVector3f *)(auStack_3c + 4),(CVector3f *)&stack0xffffffb0);
-  iVar4 = 0;
+  local_50.x = 0.0;
+  local_50.y = 0.0;
+  local_50.z = 1.5;
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(in_stack_00000004,&local_38,&local_50);
+  local_14 = 0;
   do {
     if (g_CDemonSetPtr->damage_listener_count <= iVar3) {
       return 0;
     }
-    pCVar1 = *(CDemonActor **)(g_CDemonSetPtr->field19_0x14f0a0 + iVar4 + -4);
+    pCVar1 = *(CDemonActor **)(g_CDemonSetPtr->field19_0x14f0a0 + local_14 + -4);
     if ((*(char *)&pCVar1[0x1b].field13_0xec.x != '\0') && (pCVar1 != in_stack_00000004)) {
-      local_1c.x = (pCVar1->location).position.x - (in_stack_00000004->location).position.x;
-      local_1c.z = (pCVar1->location).position.z - (in_stack_00000004->location).position.z;
+      local_20.x = (pCVar1->location).position.x - (in_stack_00000004->location).position.x;
+      local_20.z = (pCVar1->location).position.z - (in_stack_00000004->location).position.z;
       if (ABS((pCVar1->location).position.y - (in_stack_00000004->location).position.y) <=
           (float)4) {
-        local_1c.y = 0.0;
-        if (SQRT(local_1c.z * local_1c.z + local_1c.x * local_1c.x) <= (float)5) {
+        local_20.y = 0.0;
+        if (SQRT(local_20.z * local_20.z + local_20.x * local_20.x) <= (float)5) {
           pCVar2 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
-                             (in_stack_00000004,&CStack_28,&local_1c);
+                             (in_stack_00000004,&local_2c,&local_20);
           pCVar2 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
-                             ((CVector3f *)auStack_3c,pCVar2);
+                             (&local_44,pCVar2);
           if (ABS(pCVar2->y) <= (float)0.34906585038888899) {
             core_event_cpp_CEventList_FUN_004aabe0(g_CEventListPtr);
             return 1;
@@ -48,7 +52,7 @@ uint core_hero_cpp_FUN_004f2c40(void)
         }
       }
     }
-    iVar4 = iVar4 + 4;
+    local_14 = local_14 + 4;
     iVar3 = iVar3 + 1;
   } while( true );
 }

@@ -1,15 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 39,
-    "complexity_score": 137,
+    "complexity_score": 107,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 2,
     "pseudocode_lines": 17,
-    "suspect_count": 10,
+    "suspect_count": 8,
     "suspect_types": [
-      "callind_anchor",
-      "stack_align_anchor",
       "stack_param",
       "unresolved_funcptr"
     ],
@@ -51,6 +49,14 @@
     "declared_params": 0,
     "estimated_params": 0
   },
+  "pcode_overrides": {
+    "005250a7": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffdc,4)"
+    ],
+    "005250bd": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffdc,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.947368421052632,
     "instruction_count": 38,
@@ -76,6 +82,29 @@
     },
     "pcode_op_count": 226
   },
+  "resolved_suspects": [
+    {
+      "add_esp_value": 8,
+      "callind_address": "005250ba",
+      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
+      "fix_address": "005250bd",
+      "fix_type": "esp_anchor_after_callind",
+      "frame_offset": 36,
+      "match": "CALLIND...ADD ESP",
+      "text": "CALLIND at 005250ba, ADD ESP at 005250bd",
+      "type": "callind_anchor"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x24",
+      "fix_address": "005250a7",
+      "frame_offset": 36,
+      "match": "AND ESP",
+      "sub_esp_offset": 36,
+      "text": "Stack alignment at 005250a7 (SUB ESP, 0x24 before)",
+      "type": "stack_align_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 4,
     "local_size": 4,
@@ -134,21 +163,21 @@
       "description": "Unresolved stack parameter",
       "line": 16,
       "match": "in_stack_00000004",
-      "text": "*in_stack_00000004 = (fStack_30 + fStack_24) * 0.5f;",
+      "text": "*in_stack_00000004 = (fStack_2c + fStack_20) * 0.5f;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 17,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[1] = fVar1 * (fStack_2c + fStack_20);",
+      "text": "in_stack_00000004[1] = fVar1 * (fStack_28 + fStack_1c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 18,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[2] = fStack_28 + (float)0.40000000000000002;",
+      "text": "in_stack_00000004[2] = fStack_24 + (float)0.40000000000000002;",
       "type": "stack_param"
     },
     {
@@ -157,27 +186,6 @@
       "match": "in_stack_00000004",
       "text": "return in_stack_00000004;",
       "type": "stack_param"
-    },
-    {
-      "add_esp_value": 8,
-      "callind_address": "005250ba",
-      "description": "CALLIND makes ESP uncertain; fixable with ESP anchor",
-      "fix_address": "005250bd",
-      "fix_type": "esp_anchor_after_callind",
-      "frame_offset": 36,
-      "match": "CALLIND...ADD ESP",
-      "text": "CALLIND at 005250ba, ADD ESP at 005250bd",
-      "type": "callind_anchor"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x24",
-      "fix_address": "005250a7",
-      "frame_offset": 36,
-      "match": "AND ESP",
-      "sub_esp_offset": 36,
-      "text": "Stack alignment at 005250a7 (SUB ESP, 0x24 before)",
-      "type": "stack_align_anchor"
     }
   ]
 }

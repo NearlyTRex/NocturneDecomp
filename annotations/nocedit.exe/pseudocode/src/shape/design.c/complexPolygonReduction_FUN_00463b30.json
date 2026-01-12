@@ -1,20 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 1138,
-    "complexity_score": 639,
+    "complexity_score": 454,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 26,
     "pseudocode_lines": 324,
-    "suspect_count": 28,
+    "suspect_count": 11,
     "suspect_types": [
       "badspacebase",
-      "call_esp_anchor",
       "pointer_cast",
       "register_param",
-      "stack_ref",
-      "suspect_float",
-      "variadic_anchor"
+      "suspect_float"
     ],
     "total_lines": 1462
   },
@@ -281,6 +278,56 @@
     "declared_params": 1,
     "estimated_params": 1
   },
+  "pcode_overrides": {
+    "00463b7b": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffd14,4)"
+    ],
+    "00463ba6": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffd14,4)"
+    ],
+    "00463bdd": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffd14,4)"
+    ],
+    "00463c50": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffd14,4)"
+    ],
+    "00463d68": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffd14,4)"
+    ],
+    "00463ea3": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffd14,4)"
+    ],
+    "00463ee1": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffd14,4)"
+    ],
+    "00463f1f": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffd14,4)"
+    ],
+    "00463f96": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffd14,4)"
+    ],
+    "0046458d": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffd14,4)"
+    ],
+    "004645af": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffd14,4)"
+    ],
+    "0046467b": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffd14,4)"
+    ],
+    "004646a6": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffd14,4)"
+    ],
+    "00464749": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffd14,4)"
+    ],
+    "0046482e": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffd14,4)"
+    ],
+    "0046485a": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffd14,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 9.149888143176733,
     "instruction_count": 894,
@@ -321,268 +368,7 @@
     },
     "pcode_op_count": 8180
   },
-  "stack_frame": {
-    "frame_size": 772,
-    "local_size": 768,
-    "param_offset": 4,
-    "param_size": 4,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_2fc",
-        "offset": -764,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_2f8",
-        "offset": -760,
-        "size": 8,
-        "type": "undefined8"
-      },
-      {
-        "is_param": false,
-        "name": "local_2f0",
-        "offset": -752,
-        "size": 8,
-        "type": "undefined8"
-      },
-      {
-        "is_param": false,
-        "name": "local_2e8",
-        "offset": -744,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_2e4",
-        "offset": -740,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_240",
-        "offset": -576,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_160",
-        "offset": -352,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_50",
-        "offset": -80,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_4c",
-        "offset": -76,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_48",
-        "offset": -72,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_44",
-        "offset": -68,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_40",
-        "offset": -64,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_3c",
-        "offset": -60,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_38",
-        "offset": -56,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_34",
-        "offset": -52,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_30",
-        "offset": -48,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_2c",
-        "offset": -44,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_28",
-        "offset": -40,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_24",
-        "offset": -36,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_20",
-        "offset": -32,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c",
-        "offset": -28,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": true,
-        "name": "selected_polygon_index",
-        "offset": 4,
-        "size": 4,
-        "type": "int"
-      }
-    ]
-  },
-  "suspects": [
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 8,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 8,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 70,
-      "match": "3.58732e-43",
-      "text": "3.58732e-43,8);",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 236,
-      "match": "&stack0xfffffd1c",
-      "text": "((SShapeEditorPolygon *)&stack0xfffffd1c);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 258,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)local_20 + local_18 * 4) = local_14[local_1c * 3];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 270,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)local_20 + local_1c * 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 271,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)local_20 + local_1c * 4 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 272,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)local_20 + local_1c * 4 + 4) = uVar1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 283,
-      "match": "(SShapeEditorPolygon *)((int)",
-      "text": "pSVar5 = (SShapeEditorPolygon *)((int)pSVar5 + ((uint)bVar8 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 284,
-      "match": "(SShapeEditorPolygon *)((int)",
-      "text": "pSVar7 = (SShapeEditorPolygon *)((int)pSVar7 + ((uint)bVar8 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 288,
-      "match": "(int *)((int)",
-      "text": "if (*(int *)((int)local_20 + local_48 * 4 + -8) < selected_polygon_index) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 289,
-      "match": "(int *)((int)",
-      "text": "selected_polygon_index = *(int *)((int)local_20 + local_48 * 4 + -8);",
-      "type": "pointer_cast"
-    },
+  "resolved_suspects": [
     {
       "add_esp_value": 4,
       "call_address": "00463ba1",
@@ -796,6 +582,262 @@
       "target_address": "0x50f460",
       "text": "Direct CALL at 00464855, ADD ESP at 0046485a with uncertain ESP",
       "type": "call_esp_anchor"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 772,
+    "local_size": 768,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_2fc",
+        "offset": -764,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2f8",
+        "offset": -760,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_2f0",
+        "offset": -752,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_2e8",
+        "offset": -744,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2e4",
+        "offset": -740,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_240",
+        "offset": -576,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_160",
+        "offset": -352,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "selected_polygon_index",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 9,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 9,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 70,
+      "match": "3.58732e-43",
+      "text": "3.58732e-43,8);",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 258,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)local_20 + local_18 * 4) = local_14[local_1c * 3];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 270,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)local_20 + local_1c * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 271,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)local_20 + local_1c * 4 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 272,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)local_20 + local_1c * 4 + 4) = uVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 283,
+      "match": "(SShapeEditorPolygon *)((int)",
+      "text": "pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + ((uint)bVar9 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 284,
+      "match": "(SShapeEditorPolygon *)((int)",
+      "text": "pSVar8 = (SShapeEditorPolygon *)((int)pSVar8 + ((uint)bVar9 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 288,
+      "match": "(int *)((int)",
+      "text": "if (*(int *)((int)local_20 + local_48 * 4 + -8) < selected_polygon_index) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 289,
+      "match": "(int *)((int)",
+      "text": "selected_polygon_index = *(int *)((int)local_20 + local_48 * 4 + -8);",
+      "type": "pointer_cast"
     }
   ]
 }

@@ -19,7 +19,6 @@ shape_design_c_mergeAdjacentPolygons_FUN_00462b70(int polygon1_index,int polygon
   byte bVar6;
   double dVar7;
   double in_stack_fffffde4;
-  int in_stack_fffffdec;
   float local_90 [6];
   float local_78;
   float local_74 [6];
@@ -153,7 +152,7 @@ LAB_00462e72:
         local_3c[3] = local_3c[3] + 1;
       }
       dVar7 = shape_design_c_calculateVertexAngle_FUN_00462050
-                        (local_58[0],local_58[1],(int)((ulonglong)dVar7 >> 0x20));
+                        (local_58[0],local_58[1],SUB84 /* extract 2-byte value */(dVar7,0));
       if ((double)local_14 < dVar7) {
         local_3c[local_3c[3]] = 0;
         local_3c[3] = local_3c[3] + 1;
@@ -169,7 +168,7 @@ LAB_00462e72:
           local_3c[6] = local_3c[6] - 1;
         }
         dVar7 = shape_design_c_calculateVertexAngle_FUN_00462050
-                          (local_58[1],local_58[2],in_stack_fffffdec);
+                          (local_58[1],local_58[2],SUB84 /* extract 2-byte value */(dVar7,0));
         if (170 < dVar7) {
           local_40 = local_58[0];
           local_5c = local_74[0];

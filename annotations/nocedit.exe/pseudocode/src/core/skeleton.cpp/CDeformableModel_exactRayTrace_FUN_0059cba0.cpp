@@ -19,18 +19,15 @@ core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0059cba0
   BADSPACEBASE *in_ESP;
   int iVar5;
   int iVar6;
-  byte auStack_68 [36];
-  float local_44;
-  float local_40;
-  float fStack_3c;
+  CDemonTriangle local_6c;
+  float local_34;
   float local_30;
   float local_2c;
-  float local_28;
-  byte *local_24;
+  byte *local_28;
+  int local_24;
   int local_20;
   int local_1c;
-  int local_18;
-  float local_14;
+  float local_18;
   
   if ((g_FloatVertexArrayInitialized & 1) == 0) {
     g_FloatVertexArrayInitialized = g_FloatVertexArrayInitialized | 1;
@@ -54,51 +51,51 @@ core_skeleton_cpp_CDeformableModel_exactRayTrace_FUN_0059cba0
       skinned_vertices = skinned_vertices + 1;
     } while (iVar5 < this_ptr->vertex_count[lod_index]);
   }
-  local_14 = 1.01;
-  local_18 = 0;
+  local_18 = 1.01;
+  local_1c = 0;
   iVar5 = 0;
   if (0 < this_ptr->num_parts) {
-    local_1c = (int)this_ptr->lod_info + lod_index * 4 + -4;
     local_20 = (int)this_ptr->lod_info + lod_index * 4 + -4;
-    local_24 = part_visibility_flags;
+    local_24 = (int)this_ptr->lod_info + lod_index * 4 + -4;
+    local_28 = part_visibility_flags;
     do {
-      iVar3 = *(int *)(local_20 + 0x7164) + local_18;
-      if (((*local_24 & 1) != 0) && (local_18 < iVar3)) {
-        iVar6 = local_18 * 0x12;
-        iVar4 = local_18;
-        local_18 = iVar3;
+      iVar3 = *(int *)(local_24 + 0x7164) + local_1c;
+      if (((*local_28 & 1) != 0) && (local_1c < iVar3)) {
+        iVar6 = local_1c * 0x12;
+        iVar4 = local_1c;
+        local_1c = iVar3;
         do {
-          iVar3 = *(int *)(local_1c + 0x7c);
+          iVar3 = *(int *)(local_20 + 0x7c);
           core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0049a790
-                    ((CDemonTriangle *)auStack_68,g_FloatVertexArray + *(ushort *)(iVar3 + iVar6),
+                    (&local_6c,g_FloatVertexArray + *(ushort *)(iVar3 + iVar6),
                      g_FloatVertexArray + *(ushort *)(iVar3 + 2 + iVar6),
                      g_FloatVertexArray + *(ushort *)(iVar3 + 4 + iVar6));
           fVar1 = core_dtri_cpp_rayTriangleIntersection_FUN_0049a800
-                            ((CDemonTriangle *)(auStack_68 + 4),ray_origin,ray_direction);
-          if (((fVar1 < local_14) && (0.0 <= fVar1)) && (fVar1 <= 1.0)) {
-            local_30 = -local_44;
-            local_2c = -local_40;
-            local_28 = -fStack_3c;
-            if ((int *)&stack0x00000000 != &g_DeformableModelPool[0].lod_info[2].shadow_only_flag) {
-              g_DeformableModelRayHitNormal.x = local_30;
-              g_DeformableModelRayHitNormal.y = local_2c;
-              g_DeformableModelRayHitNormal.z = local_28;
+                            (&local_6c,ray_origin,ray_direction);
+          if (((fVar1 < local_18) && (0.0 <= fVar1)) && (fVar1 <= 1.0)) {
+            local_34 = -local_6c.normal.x;
+            local_30 = -local_6c.normal.y;
+            local_2c = -local_6c.normal.z;
+            if ((SLod *)&stack0x00000000 != g_DeformableModelPool[0].lod_info + 3) {
+              g_DeformableModelRayHitNormal.x = local_34;
+              g_DeformableModelRayHitNormal.y = local_30;
+              g_DeformableModelRayHitNormal.z = local_2c;
             }
             g_DeformableModelRayHitLodIndex = lod_index;
             g_DeformableModelRayHitPartIndex = iVar5;
             g_DeformableModelRayHitTriangleIndex = iVar4;
-            local_14 = fVar1;
+            local_18 = fVar1;
           }
           iVar4 = iVar4 + 1;
           iVar6 = iVar6 + 0x12;
-          iVar3 = local_18;
-        } while (iVar4 < local_18);
+          iVar3 = local_1c;
+        } while (iVar4 < local_1c);
       }
-      local_18 = iVar3;
+      local_1c = iVar3;
       iVar5 = iVar5 + 1;
-      local_24 = local_24 + 4;
-      local_20 = local_20 + 0x60;
+      local_28 = local_28 + 4;
+      local_24 = local_24 + 0x60;
     } while (iVar5 < this_ptr->num_parts);
   }
-  return local_14;
+  return local_18;
 }

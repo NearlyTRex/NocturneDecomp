@@ -1,22 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 422,
-    "complexity_score": 715,
+    "complexity_score": 144,
     "cross_reference_count": 1,
     "function_call_count": 16,
     "global_count": 24,
-    "pseudocode_lines": 90,
-    "suspect_count": 59,
+    "pseudocode_lines": 99,
+    "suspect_count": 3,
     "suspect_types": [
       "badspacebase",
-      "call_esp_anchor",
-      "format_string_mismatch",
       "param_count_too_few",
-      "register_param",
-      "stack_ref",
-      "variadic_anchor"
+      "register_param"
     ],
-    "total_lines": 512
+    "total_lines": 521
   },
   "cross_references": [
     {
@@ -284,6 +280,92 @@
     "declared_params": 1,
     "estimated_params": 5
   },
+  "pcode_overrides": {
+    "0053eec2": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
+    ],
+    "0053eeff": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
+    ],
+    "0053ef17": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
+    ],
+    "0053ef3e": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
+    ],
+    "0053ef53": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
+    ],
+    "0053efbe": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
+    ],
+    "0053efd9": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
+    ],
+    "0053f00f": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
+    ],
+    "0053f038": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
+    ],
+    "0053f04d": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
+    ],
+    "0053f083": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
+    ],
+    "0053f0aa": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
+    ],
+    "0053f0b9": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
+    ],
+    "0053f0e0": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
+    ],
+    "0053f0f7": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
+    ],
+    "0053f13b": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
+    ],
+    "0053f156": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
+    ],
+    "0053f183": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
+    ],
+    "0053f19e": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
+    ],
+    "0053f1c9": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
+    ],
+    "0053f1de": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
+    ],
+    "0053f214": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
+    ],
+    "0053f23f": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
+    ],
+    "0053f24e": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
+    ],
+    "0053f279": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
+    ],
+    "0053f290": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
+    ],
+    "0053f2db": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
+    ],
+    "0053f2f1": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffeec,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.2956521739130435,
     "instruction_count": 345,
@@ -314,230 +396,7 @@
     },
     "pcode_op_count": 2172
   },
-  "stack_frame": {
-    "frame_size": 300,
-    "local_size": 296,
-    "param_offset": 4,
-    "param_size": 4,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_124",
-        "offset": -292,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_120",
-        "offset": -288,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_11c",
-        "offset": -284,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c",
-        "offset": -28,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": true,
-        "name": "this_ptr",
-        "offset": 4,
-        "size": 4,
-        "type": "CMultiCram *"
-      }
-    ]
-  },
-  "suspects": [
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 8,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 8,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 25,
-      "match": "&stack0xfffffee4",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffee4,\"Found model : %s\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 26,
-      "match": "&stack0xfffffee4",
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffee4,0,local_14);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 36,
-      "match": "&stack0xfffffee4",
-      "text": "(&stack0xfffffee4,\"%s.bin\",this_ptr->models[local_1c]->model_name);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 38,
-      "match": "&stack0xfffffee4",
-      "text": "(this_ptr->models[local_1c],&stack0xfffffee4);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 40,
-      "match": "&stack0xfffffee4",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffee4,\"%s is a new model.\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 43,
-      "match": "&stack0xfffffee4",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffee4,\"Sizing %s to existing .BIN file\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 45,
-      "match": "&stack0xfffffee4",
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffee4,0,local_14);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 53,
-      "match": "&stack0xfffffee4",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffee4,\"%s.mdl\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 54,
-      "match": "&stack0xfffffee4",
-      "text": "shape_design_c_exportModelToMDL_FUN_00459e80(&stack0xfffffee4);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 55,
-      "match": "&stack0xfffffee4",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffee4,\"%s.bin\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 56,
-      "match": "&stack0xfffffee4",
-      "text": "shape_design_c_exportModelToBIN_FUN_0045aa80(&stack0xfffffee4,0x4e,0x35,1,0x59);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 59,
-      "match": "&stack0xfffffee4",
-      "text": "(&stack0xfffffee4,\"%s%c.bin\",this_ptr->models[local_1c]->model_name,local_18",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 62,
-      "match": "&stack0xfffffee4",
-      "text": "(\"models\",&stack0xfffffee4,\"rb\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 66,
-      "match": "&stack0xfffffee4",
-      "text": "(this_ptr->models[local_1c],&stack0xfffffee4);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 67,
-      "match": "&stack0xfffffee4",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffee4,\"Found clone of different size : %s%c\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 68,
-      "match": "&stack0xfffffee4",
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffee4,0,local_14);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 76,
-      "match": "&stack0xfffffee4",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffee4,\"%s%c.mdl\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 77,
-      "match": "&stack0xfffffee4",
-      "text": "shape_design_c_exportModelToMDL_FUN_00459e80(&stack0xfffffee4);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 78,
-      "match": "&stack0xfffffee4",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffee4,\"%s%c.bin\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 79,
-      "match": "&stack0xfffffee4",
-      "text": "shape_design_c_exportModelToBIN_FUN_0045aa80(&stack0xfffffee4,0x4e,0x35,1,0x59);",
-      "type": "stack_ref"
-    },
-    {
-      "call_site_count": 1,
-      "declared_params": 1,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 5,
-      "fix_type": "add_params",
-      "match": "declared:1 vs estimated:5",
-      "param_delta": 4,
-      "text": "Function declares 1 params but call sites push 5 (4 missing)",
-      "type": "param_count_too_few"
-    },
+  "resolved_suspects": [
     {
       "add_esp_value": 4,
       "call_address": "0053eefa",
@@ -713,94 +572,6 @@
       "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
       "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0053f274 (EBP frame + ADD ESP)",
       "type": "variadic_anchor"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Found model : %s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Found model : %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 25,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffee4,\"Found model : %s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s is a new model.\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%s is a new model.",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 40,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffee4,\"%s is a new model.\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Sizing %s to existing .BIN file\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Sizing %s to existing .BIN file",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 43,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffee4,\"Sizing %s to existing .BIN file\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s.mdl\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%s.mdl",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 53,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffee4,\"%s.mdl\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s.bin\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%s.bin",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 55,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffee4,\"%s.bin\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Found clone of different size : %s%c\" has 2 specifiers but 0 arguments after it",
-      "expected_args": 2,
-      "format_string": "Found clone of different size : %s%c",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 67,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffee4,\"Found clone of different size : %s%c\");",
-      "text": "Format string expects 2 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s%c.mdl\" has 2 specifiers but 0 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s%c.mdl",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 76,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffee4,\"%s%c.mdl\");",
-      "text": "Format string expects 2 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s%c.bin\" has 2 specifiers but 0 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s%c.bin",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 78,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffee4,\"%s%c.bin\");",
-      "text": "Format string expects 2 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 12,
@@ -1022,6 +793,91 @@
       "target_address": "0x401fd0",
       "text": "Direct CALL at 0053f2ec, ADD ESP at 0053f2f1 with uncertain ESP",
       "type": "call_esp_anchor"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 300,
+    "local_size": 296,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_124",
+        "offset": -292,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_120",
+        "offset": -288,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_11c",
+        "offset": -284,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMultiCram *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 8,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 8,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 1,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 5,
+      "fix_type": "add_params",
+      "match": "declared:1 vs estimated:5",
+      "param_delta": 4,
+      "text": "Function declares 1 params but call sites push 5 (4 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

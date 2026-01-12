@@ -20,22 +20,21 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr)
   char *pcVar6;
   int iVar7;
   char *pcVar8;
-  CGame *in_stack_fffff390;
-  uint in_stack_fffff4dc;
-  uint in_stack_fffff4e0;
-  uint in_stack_fffff4e4;
-  uint in_stack_fffff4e8;
-  CKeys *in_stack_fffff4ec;
-  uint in_stack_fffff51c;
-  uint in_stack_fffff520;
-  uint in_stack_fffff524;
-  uint in_stack_fffff528;
-  SRoom *in_stack_fffff52c;
-  uint in_stack_fffff580;
-  uint in_stack_fffff584;
-  uint in_stack_fffff588;
-  uint in_stack_fffff58c;
-  uint in_stack_fffff590;
+  CKeys *in_stack_fffff296;
+  uint in_stack_fffff29a;
+  uint in_stack_fffff29e;
+  uint in_stack_fffff2a2;
+  CKeys *in_stack_fffff2a6;
+  CDemonRenderer *d2;
+  CGame *n2;
+  CSlew *this_ptr_00;
+  uint in_stack_fffff2fe;
+  CKeys *in_stack_fffff302;
+  uint in_stack_fffff34e;
+  uint in_stack_fffff352;
+  uint in_stack_fffff356;
+  uint in_stack_fffff35a;
+  uint in_stack_fffff35e;
   CPickList local_8e4;
   CPickList local_53c;
   char local_194 [100];
@@ -86,12 +85,14 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr)
   this_ptr->actor_list_ptr = (void *)0x0;
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_clearInputAndWait_FUN_00403260();
-  core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)local_108);
+  this_ptr_00 = (CSlew *)local_108;
+  n2 = (CGame *)0x581af7;
+  core_slew_cpp_CSlew_init_FUN_005a2060(this_ptr_00);
   local_a0 = 0.0;
   local_9c = 0.0;
   local_98 = 0.0;
   local_28 = 40.0;
-  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_fffff390);
+  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,n2);
   local_20 = this_ptr->rooms;
   this_ptr->unk_lighting_param3 = 1;
   this_ptr->unk_lighting_param4 = 1;
@@ -144,6 +145,7 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr)
     g_CDemonCameraInstance.base.projection_scale = local_f0;
     core_dcamera_cpp_CDemonCamera_beginScene_FUN_0044c430(&g_CDemonCameraInstance,1);
     core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(this_ptr,150.0,0);
+    d2 = (CDemonRenderer *)&DAT_00000001;
     engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr,1);
     iVar7 = 0;
     if (0 < this_ptr->room_count) {
@@ -177,6 +179,7 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr)
           local_bc = -pCVar4->z;
           core_setedit_cpp_FUN_005817d0(&local_c4);
         }
+        d2 = g_CDemonRendererPtr;
         engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
         local_14 = (CMatrix3x3f *)((int)(local_14 + 1) + 0x20);
         pCVar4 = (CVector3f *)&pCVar4[5].z;
@@ -197,7 +200,7 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr)
       } while (cVar1 != '\0');
     }
     else {
-      crt_stdio_c_sprintf_FUN_005fdbd0(local_194,"Room size: %d");
+      crt_stdio_c_sprintf_FUN_005fdbd0(local_194,"Room size: %d",local_18->field4_0x40);
     }
     engine_2d_c_drawText_FUN_00401fd0(local_194,0,0);
     core_dcamera_cpp_CDemonCamera_endScene_FUN_0044cb80(&g_CDemonCameraInstance,0);
@@ -313,10 +316,13 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr)
         if (iVar7 != 0) {
           (local_18->extents).y = (local_18->extents).y - local_24;
         }
+        in_stack_fffff29a = 0x10;
+        in_stack_fffff296 = g_CKeysPtr;
         iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x10);
         if (iVar7 != 0) {
           (local_18->extents).y = (local_18->extents).y + local_24;
         }
+        in_stack_fffff2a6 = (CKeys *)0x58272f;
         iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x50);
         if (iVar7 != 0) {
           (local_18->extents).z = (local_18->extents).z - local_24;
@@ -353,14 +359,14 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr)
         *local_40 = iVar7;
       }
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                (&local_8e4,0,in_stack_fffff4dc,in_stack_fffff4e0,in_stack_fffff4e4,
-                 in_stack_fffff4e8,(uint)in_stack_fffff4ec);
+                (&local_8e4,0,(uint)in_stack_fffff296,in_stack_fffff29a,in_stack_fffff29e,
+                 in_stack_fffff2a2,(uint)in_stack_fffff2a6);
     }
-    in_stack_fffff4dc = 0xf;
+    in_stack_fffff296 = (CKeys *)0xf;
     iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0xf);
     if (iVar7 != 0) {
-      in_stack_fffff4e8 = 0x581f44;
-      in_stack_fffff4ec = g_CKeysPtr;
+      in_stack_fffff2a2 = 0x581f44;
+      in_stack_fffff2a6 = g_CKeysPtr;
       iVar7 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
       if (iVar7 == 0) {
         local_1c = local_1c + 1;
@@ -390,14 +396,14 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr)
                           (&local_53c,"Create new room",DAT_03365cbc,0);
         if (iVar7 < 0) {
           shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                    (&local_53c,0,in_stack_fffff51c,in_stack_fffff520,in_stack_fffff524,
-                     in_stack_fffff528,(uint)in_stack_fffff52c);
+                    (&local_53c,0,(uint)d2,(uint)n2,(uint)this_ptr_00,in_stack_fffff2fe,
+                     (uint)in_stack_fffff302);
         }
         else {
           DAT_03365cbc = iVar7;
           shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                    (&local_53c,0,in_stack_fffff51c,in_stack_fffff520,in_stack_fffff524,
-                     in_stack_fffff528,(uint)in_stack_fffff52c);
+                    (&local_53c,0,(uint)d2,(uint)n2,(uint)this_ptr_00,in_stack_fffff2fe,
+                     (uint)in_stack_fffff302);
           local_1c = this_ptr->room_count;
           local_18 = local_20 + local_1c;
           if ((SRoom *)local_108 != local_18) {
@@ -422,27 +428,22 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr)
                   (g_CEditorToolsPtr,"Max number of rooms has been reached, can't add any more rooms.");
       }
     }
-    in_stack_fffff51c = 0x20;
     iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x20);
     iVar7 = local_1c;
-    if (((iVar5 != 0) && (-1 < local_1c)) && (local_1c < this_ptr->room_count)) {
-      in_stack_fffff528 = 0x58210e;
-      in_stack_fffff52c = (SRoom *)g_CEditorToolsPtr;
-      iVar5 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
-                        (g_CEditorToolsPtr,"Delete the selected room?");
-      if (iVar5 != 0) {
-        iVar5 = this_ptr->room_count + -1;
-        this_ptr->room_count = iVar5;
-        in_stack_fffff52c = local_20 + iVar7;
-        in_stack_fffff528 = 0x582147;
-        crt_string_c_memmove_FUN_005fe5e0
-                  (in_stack_fffff52c,local_20 + iVar7 + 1,(iVar5 - iVar7) * 0x44);
-        if (this_ptr->room_count <= iVar7) {
-          local_1c = 0;
-        }
-        local_18 = (SRoom *)0x0;
+    if ((((iVar5 != 0) && (-1 < local_1c)) && (local_1c < this_ptr->room_count)) &&
+       (iVar5 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
+                          (g_CEditorToolsPtr,"Delete the selected room?"), iVar5 != 0)) {
+      iVar5 = this_ptr->room_count + -1;
+      this_ptr->room_count = iVar5;
+      crt_string_c_memmove_FUN_005fe5e0
+                (local_20 + iVar7,local_20 + iVar7 + 1,(iVar5 - iVar7) * 0x44);
+      if (this_ptr->room_count <= iVar7) {
+        local_1c = 0;
       }
+      local_18 = (SRoom *)0x0;
     }
+    in_stack_fffff2fe = 0x582171;
+    in_stack_fffff302 = g_CKeysPtr;
     iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x31);
     if (iVar7 != 0) {
       local_18 = (SRoom *)0x0;
@@ -467,16 +468,16 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00581aa0(CDemonSet *this_ptr)
         pSVar2->field4_0x40 = iVar7;
       }
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                ((CPickList *)&stack0xfffff374,0,in_stack_fffff580,in_stack_fffff584,
-                 in_stack_fffff588,in_stack_fffff58c,in_stack_fffff590);
+                ((CPickList *)&stack0xfffff374,0,in_stack_fffff34e,in_stack_fffff352,
+                 in_stack_fffff356,in_stack_fffff35a,in_stack_fffff35e);
     }
-    in_stack_fffff580 = 0x3b;
+    in_stack_fffff34e = 0x3b;
     iVar7 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x3b);
     if (iVar7 != 0) {
       wincore_windll_cpp_clearScreen_FUN_005b3e70();
-      in_stack_fffff58c = 0x582291;
+      in_stack_fffff35a = 0x582291;
       engine_2d_c_drawText_FUN_00401fd0("F1",0,0);
-      in_stack_fffff590 = 0x5822b4;
+      in_stack_fffff35e = 0x5822b4;
       engine_2d_c_drawText_FUN_00401fd0("Show this help screen",g_WindowWidth / 10,0);
       engine_2d_c_drawText_FUN_00401fd0("S",0,0xb);
       engine_2d_c_drawText_FUN_00401fd0("Set default room size for set",g_WindowWidth / 10,0xb);

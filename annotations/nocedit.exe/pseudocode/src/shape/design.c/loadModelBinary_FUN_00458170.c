@@ -13,14 +13,19 @@ int __cdecl shape_design_c_loadModelBinary_FUN_00458170(char *filename)
   int iVar2;
   BADSPACEBASE *in_ESP;
   char *pcVar3;
-  uint *puVar4;
+  int *piVar4;
   char *pcVar5;
-  uint *puVar6;
+  int *piVar6;
   byte bVar7;
   SMRGLModelBounds *output;
-  ulonglong in_stack_fffffe84;
-  uint local_110 [13];
-  uint local_dc [13];
+  char local_160 [80];
+  int local_110;
+  int local_10c;
+  int local_108;
+  int local_104;
+  int local_100;
+  int local_fc;
+  int local_dc [13];
   byte local_a8 [4];
   uint local_a4;
   byte local_90 [8];
@@ -53,8 +58,8 @@ int __cdecl shape_design_c_loadModelBinary_FUN_00458170(char *filename)
   if (local_38 == (FILE *)0x0) {
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
     engine_2d_c_clearInputAndWait_FUN_00403260();
-    crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffea0,"loadBinary: Unable to read binary file: (%s)");
-    engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffea0,0,0);
+    crt_stdio_c_sprintf_FUN_005fdbd0(local_160,"loadBinary: Unable to read binary file: (%s)");
+    engine_2d_c_drawText_FUN_00401fd0(local_160,0,0);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
     local_30 = 0;
@@ -64,8 +69,7 @@ int __cdecl shape_design_c_loadModelBinary_FUN_00458170(char *filename)
     g_VertexCount = 0;
     local_14 = crt_stdio_c_fread_FUN_005fd990(&local_18,1,4,local_38);
     crt_stdio_c_fseek_FUN_005ffacc(local_38,-4,1);
-    while ((output = (SMRGLModelBounds *)in_stack_fffffe84, local_18 != 0 &&
-           (local_14 != 0xffffffff))) {
+    while ((local_18 != 0 && (local_14 != 0xffffffff))) {
       if (local_18 < 0x14) {
         if (local_18 < 6) {
           if (local_18 < 3) {
@@ -174,8 +178,8 @@ LAB_00458677:
             shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_38,"..\\shape\\design.c",0x2a4);
             wincore_windll_cpp_clearScreen_FUN_005b3e70();
             engine_2d_c_clearInputAndWait_FUN_00403260();
-            crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffea0,"loadBinary: type %d is not known");
-            engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffea0,0,0);
+            crt_stdio_c_sprintf_FUN_005fdbd0(local_160,"loadBinary: type %d is not known");
+            engine_2d_c_drawText_FUN_00401fd0(local_160,0,0);
             wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
             wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
             return 1;
@@ -219,6 +223,7 @@ LAB_00458835:
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_38,"..\\shape\\design.c",0x2b2);
     shape_design_c_calculateVertexNormals_FUN_0045be40();
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
+    output = (SMRGLModelBounds *)0x45888b;
     local_1c = engine_model_c_loadModelFile_FUN_00527ec0(filename);
     if (local_1c == (SMRGLHeaderExtended *)0x0) {
       g_CurrentFilename = "..\\shape\\design.c";
@@ -226,27 +231,30 @@ LAB_00458835:
       core_main_c_displayErrorAndQuit_FUN_00506f10("loadBinary - Out of mem!");
     }
     engine_model_c_getMRGLBounds_FUN_00528140(local_1c,output);
-    puVar4 = (uint *)&stack0xfffffe68;
-    puVar6 = local_dc;
+    piVar4 = (int *)&stack0xfffffe68;
+    piVar6 = local_dc;
     for (iVar2 = 0xd; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *puVar6 = *puVar4;
-      puVar4 = puVar4 + (uint)bVar7 * -2 + 1;
-      puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
+      *piVar6 = *piVar4;
+      piVar4 = piVar4 + (uint)bVar7 * -2 + 1;
+      piVar6 = piVar6 + (uint)bVar7 * -2 + 1;
     }
-    puVar4 = local_dc;
-    puVar6 = local_110;
+    piVar4 = local_dc;
+    piVar6 = &local_110;
     for (iVar2 = 0xd; iVar2 != 0; iVar2 = iVar2 + -1) {
-      *puVar6 = *puVar4;
-      puVar4 = puVar4 + (uint)bVar7 * -2 + 1;
-      puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
+      *piVar6 = *piVar4;
+      piVar4 = piVar4 + (uint)bVar7 * -2 + 1;
+      piVar6 = piVar6 + (uint)bVar7 * -2 + 1;
     }
     engine_model_c_freeMRGLData_FUN_005280b0(local_1c);
-    crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffea0,"X size : %f");
-    engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffea0,0,0);
-    crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffea0,"Y size : %f");
-    engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffea0,0,0xb);
-    crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffea0,"Z size : %f");
-    engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffea0,0,0x16);
+    crt_stdio_c_sprintf_FUN_005fdbd0
+              (local_160,"X size : %f",(double)(local_104 - local_110) * 0.00390625);
+    engine_2d_c_drawText_FUN_00401fd0(local_160,0,0);
+    crt_stdio_c_sprintf_FUN_005fdbd0
+              (local_160,"Y size : %f",(double)(local_100 - local_10c) * 0.00390625);
+    engine_2d_c_drawText_FUN_00401fd0(local_160,0,0xb);
+    crt_stdio_c_sprintf_FUN_005fdbd0
+              (local_160,"Z size : %f",(double)(local_fc - local_108) * 0.00390625);
+    engine_2d_c_drawText_FUN_00401fd0(local_160,0,0x16);
     engine_2d_c_drawText_FUN_00401fd0("Hit a key...",0,0x2c);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();

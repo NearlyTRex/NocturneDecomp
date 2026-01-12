@@ -32,7 +32,8 @@ void __cdecl shape_design_c_scaleXYZ_FUN_00467f30(void)
     pcVar3 = pcVar3 + (uint)bVar4 * -2 + 1;
   } while (cVar1 != '\0');
   if ((iVar2 != -2) &&
-     (iVar2 = crt_stdio_c_sscanf_FUN_0060013c(&stack0xffffff90,"%f,%f,%f",&local_1c),
+     (iVar2 = crt_stdio_c_sscanf_FUN_0060013c
+                        (&stack0xffffff90,"%f,%f,%f",&local_1c,&local_18,&local_14),
      iVar2 == 3)) {
     for (local_20 = 0; local_20 < g_VertexCount; local_20 = local_20 + 1) {
       g_LoadedVertices[local_20].vertex.x = g_LoadedVertices[local_20].vertex.x * local_1c;

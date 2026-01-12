@@ -10,11 +10,11 @@
 /* WARNING: Removing unreachable block (ram,0x00499701) */
 /* WARNING: Removing unreachable block (ram,0x004994c8) */
 /* WARNING: Removing unreachable block (ram,0x004994ec) */
-/* WARNING: Removing unreachable block (ram,0x00499501) */
 /* WARNING: Removing unreachable block (ram,0x00499729) */
+/* WARNING: Removing unreachable block (ram,0x00499501) */
 /* WARNING: Removing unreachable block (ram,0x00499525) */
-/* WARNING: Removing unreachable block (ram,0x00499751) */
 /* WARNING: Removing unreachable block (ram,0x0049953a) */
+/* WARNING: Removing unreachable block (ram,0x00499751) */
 /* WARNING: Removing unreachable block (ram,0x0049955e) */
 
 int __cdecl
@@ -22,102 +22,94 @@ core_dtrace_cpp_CDemonRaytrace_voxelRaycast3D_FUN_00499330
           (CDemonRaytrace *this_ptr,CVector3f *start_position,CVector3f *end_position)
 
 {
-  float fVar1;
-  float fVar2;
-  float fVar3;
-  float fVar4;
-  float fVar5;
-  float fVar6;
-  float fVar7;
-  int iVar8;
-  int iVar9;
-  CDemonCube *pCVar10;
-  int iVar11;
-  int iVar12;
-  float10 fVar13;
-  float10 fVar14;
-  float10 fVar15;
-  float10 fVar16;
-  double dVar17;
-  float local_6c;
-  float local_5c;
-  float local_58;
-  int local_54;
+  int iVar1;
+  int iVar2;
+  int iVar3;
+  CDemonCube *pCVar4;
+  int iVar5;
+  float10 fVar6;
+  float10 fVar7;
+  float10 fVar8;
+  float10 fVar9;
+  double dVar10;
+  int local_6c;
+  int local_64;
+  float local_54;
+  int local_48;
   float local_44;
-  int local_40;
+  float local_40;
   int local_3c;
   int local_38;
   int local_34;
   int local_30;
+  int local_2c;
+  int local_28;
+  int local_24;
+  int local_20;
+  int local_1c;
   
-  fVar13 = (float10)0.125f;
-  fVar14 = (float10)1 / ((float10)(this_ptr->cell_size).y * fVar13);
-  fVar16 = (float10)1 / ((float10)(this_ptr->cell_size).z * fVar13);
-  fVar2 = (float)(((float10)start_position->y - (float10)(this_ptr->bbox_min).y) * fVar14);
-  fVar14 = fVar14 * ((float10)end_position->y - (float10)(this_ptr->bbox_min).y);
-  fVar3 = end_position->x;
-  fVar4 = start_position->x;
-  fVar15 = ((float10)end_position->z - (float10)(this_ptr->bbox_min).z) * fVar16;
-  fVar5 = end_position->z;
-  fVar6 = start_position->z;
-  iVar12 = 1;
-  fVar7 = (float)(((float10)start_position->z - (float10)(this_ptr->bbox_min).z) * fVar16);
-  dVar17 = crt_math_c_round_FUN_005fe6b0
+  fVar6 = (float10)0.125f;
+  fVar8 = ((float10)1 / ((float10)(this_ptr->cell_size).y * fVar6)) *
+          ((float10)end_position->y - (float10)(this_ptr->bbox_min).y);
+  fVar9 = ((float10)end_position->z - (float10)(this_ptr->bbox_min).z) *
+          ((float10)1 / ((float10)(this_ptr->cell_size).z * fVar6));
+  iVar5 = 1;
+  dVar10 = crt_math_c_round_FUN_005fe6b0
                      ((double)(((float10)end_position->x - (float10)(this_ptr->bbox_min).x) *
-                              ((float10)1 / ((float10)(this_ptr->cell_size).x * fVar13))));
-  fVar13 = (float10)dVar17;
-  crt_math_c_round_FUN_005fe6b0((double)fVar14);
-  crt_math_c_round_FUN_005fe6b0((double)fVar15);
-  fVar14 = (float10)local_5c;
-  fVar15 = (float10)local_58;
-  dVar17 = crt_math_c_round_FUN_005fe6b0((double)local_6c);
-  fVar16 = (float10)dVar17;
-  dVar17 = crt_math_c_round_FUN_005fe6b0((double)fVar14);
-  fVar14 = (float10)dVar17;
-  dVar17 = crt_math_c_round_FUN_005fe6b0((double)fVar15);
-  fVar1 = (float)(int)ROUND(fVar16);
-  local_44 = (float)(int)ROUND(fVar14);
-  local_3c = (int)ROUND(dVar17);
-  if (((fVar1 == fVar5 - fVar6) && (local_44 == fVar3 - fVar4)) &&
-     (iVar8 = local_38, iVar11 = local_34, iVar9 = local_30, local_3c == (int)ROUND(fVar13))) {
+                              ((float10)1 / ((float10)(this_ptr->cell_size).x * fVar6))));
+  fVar6 = (float10)dVar10;
+  crt_math_c_round_FUN_005fe6b0((double)fVar8);
+  crt_math_c_round_FUN_005fe6b0((double)fVar9);
+  fVar9 = (float10)local_44;
+  fVar8 = (float10)local_40;
+  dVar10 = crt_math_c_round_FUN_005fe6b0((double)local_54);
+  fVar7 = (float10)dVar10;
+  dVar10 = crt_math_c_round_FUN_005fe6b0((double)fVar9);
+  fVar9 = (float10)dVar10;
+  dVar10 = crt_math_c_round_FUN_005fe6b0((double)fVar8);
+  local_30 = (int)ROUND(fVar7);
+  local_2c = (int)ROUND(fVar9);
+  if (((local_30 == local_64) && (local_2c == local_6c)) &&
+     (iVar1 = (int)ROUND(dVar10), iVar2 = local_20, iVar3 = local_1c,
+     (int)ROUND(dVar10) == (int)ROUND(fVar6))) {
     while( true ) {
-      local_30 = iVar9;
-      local_34 = iVar11;
-      local_38 = iVar8;
-      pCVar10 = core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_004952b0
-                          (this_ptr,(int)(((int)fVar1 + ((int)fVar1 >> 0x1f) * -8) -
-                                         (uint)(((int)fVar1 >> 0x1f) << 2 < 0)) >> 3,
-                           (int)(((int)local_44 + ((int)local_44 >> 0x1f) * -8) -
-                                (uint)(((int)local_44 >> 0x1f) << 2 < 0)) >> 3,
-                           (int)((local_3c + (local_3c >> 0x1f) * -8) -
-                                (uint)((local_3c >> 0x1f) << 2 < 0)) >> 3);
-      if (pCVar10 != (CDemonCube *)0x0) {
-        if ((pCVar10->voxel_buffer1 != (SVoxelGrid *)0x0) &&
-           ((pCVar10->voxel_buffer1->voxels[local_38 % 8][local_40 % 8] &
-            g_VoxelYBitMasks[(int)local_44 % 8]) != 0)) {
+      local_1c = iVar3;
+      local_20 = iVar2;
+      local_24 = iVar1;
+      pCVar4 = core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_004952b0
+                         (this_ptr,(int)((local_30 + (local_30 >> 0x1f) * -8) -
+                                        (uint)((local_30 >> 0x1f) << 2 < 0)) >> 3,
+                          (int)((local_2c + (local_2c >> 0x1f) * -8) -
+                               (uint)((local_2c >> 0x1f) << 2 < 0)) >> 3,
+                          (int)((local_24 + (local_24 >> 0x1f) * -8) -
+                               (uint)((local_24 >> 0x1f) << 2 < 0)) >> 3);
+      if (pCVar4 != (CDemonCube *)0x0) {
+        if ((pCVar4->voxel_buffer1 != (SVoxelGrid *)0x0) &&
+           ((pCVar4->voxel_buffer1->voxels[local_24 % 8][local_2c % 8] &
+            g_VoxelYBitMasks[local_30 % 8]) != 0)) {
           return 1;
         }
       }
-      iVar12 = iVar12 + -1;
-      if (iVar12 < 1) break;
-      iVar11 = local_34 + (int)fVar7;
-      iVar8 = local_38 + (int)local_58;
-      iVar9 = local_30 - (int)fVar1;
-      if (local_3c < 0) {
-        if (local_30 < 0) {
-          local_44 = (float)((int)local_44 + local_54);
-          local_3c = local_3c + (int)fVar7;
-          iVar8 = local_38;
-          iVar11 = local_34;
-          iVar9 = local_30 + (int)fVar2;
+      iVar5 = iVar5 + -1;
+      if (iVar5 < 1) break;
+      iVar1 = local_24 + (int)local_44;
+      iVar2 = local_20 + local_38;
+      iVar3 = local_1c - local_34;
+      if (local_28 < 0) {
+        if (local_1c < 0) {
+          local_30 = local_30 + (int)local_40;
+          local_28 = local_28 + local_38;
+          iVar1 = local_24;
+          iVar2 = local_20;
+          iVar3 = local_1c + local_3c;
         }
       }
-      else if (-1 < local_34) {
-        local_40 = local_40 + (int)local_5c;
-        local_3c = local_3c - (int)fVar1;
-        iVar8 = local_38;
-        iVar11 = local_34 - (int)fVar2;
-        iVar9 = local_30;
+      else if (-1 < local_20) {
+        local_2c = local_2c + local_48;
+        local_28 = local_28 - local_34;
+        iVar1 = local_24;
+        iVar2 = local_20 - local_3c;
+        iVar3 = local_1c;
       }
     }
   }

@@ -15,18 +15,18 @@ core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
   CVector3f *extraout_ECX_00;
   float *extraout_EDX;
   float10 fVar1;
-  uint uStack_14;
+  uint uStack_10;
   
   out_euler_angles->z = 0.0;
   if ((ABS(in_direction_vector->x) == 0.0) && (ABS(in_direction_vector->z) == 0.0)) {
     out_euler_angles->y = 0.0;
     if (0.0 < in_direction_vector->y) {
-      uStack_14 = 0xbff921fb;
+      uStack_10 = 0xbff921fb;
     }
     else {
-      uStack_14 = 0x3ff921fb;
+      uStack_10 = 0x3ff921fb;
     }
-    out_euler_angles->x = (float)(double)CONCAT44 /* combine 2-byte values */(uStack_14,0x54411744);
+    out_euler_angles->x = (float)(double)CONCAT44 /* combine 2-byte values */(uStack_10,0x54411744);
     return out_euler_angles;
   }
   fVar1 = crt_math_c_atan2_FUN_006013b1

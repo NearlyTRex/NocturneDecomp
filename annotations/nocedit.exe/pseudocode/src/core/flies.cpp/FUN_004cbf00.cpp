@@ -27,49 +27,47 @@ void core_flies_cpp_FUN_004cbf00(void)
   BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000004;
   float in_stack_00000008;
-  float local_40;
-  float local_3c;
-  CVector3f local_38;
-  CVector3f local_2c;
-  double local_20;
+  CVector3f local_40;
+  CVector3f local_34;
+  byte auStack_28 [20];
   int iStack_14;
   
   if (in_stack_00000004[0x1f].create_prob != 0.0) {
     iVar9 = in_stack_00000004[0x1f].runtime_state;
     if (iVar9 != 0) {
-      local_38.x = *(float *)(iVar9 + 0x20) - (in_stack_00000004->location).position.x;
-      local_38.y = *(float *)(iVar9 + 0x24) - (in_stack_00000004->location).position.y;
-      local_38.z = *(float *)(iVar9 + 0x28) - (in_stack_00000004->location).position.z;
-      if (0.0 < SQRT(local_38.z * local_38.z + local_38.x * local_38.x + local_38.y * local_38.y)) {
+      local_34.x = *(float *)(iVar9 + 0x20) - (in_stack_00000004->location).position.x;
+      local_34.y = *(float *)(iVar9 + 0x24) - (in_stack_00000004->location).position.y;
+      local_34.z = *(float *)(iVar9 + 0x28) - (in_stack_00000004->location).position.z;
+      if (0.0 < SQRT(local_34.z * local_34.z + local_34.x * local_34.x + local_34.y * local_34.y)) {
         pCVar4 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
-                           (in_stack_00000004,&local_2c,&local_38);
-        local_40 = pCVar4->x * 0.5f;
-        local_3c = pCVar4->y * 0.5f;
-        local_38.x = 0.5f * pCVar4->z;
-        if (&local_38.y != &local_40) {
-          local_38.y = local_40;
-          local_38.z = local_3c;
-          local_2c.x = local_38.x;
+                           (in_stack_00000004,(CVector3f *)auStack_28,&local_34);
+        local_40.x = pCVar4->x * 0.5f;
+        local_40.y = pCVar4->y * 0.5f;
+        local_40.z = 0.5f * pCVar4->z;
+        if (&local_34 != &local_40) {
+          local_34.x = local_40.x;
+          local_34.y = local_40.y;
+          local_34.z = local_40.z;
         }
         iVar9 = 0;
         if (0 < *(int *)(in_stack_00000004[1].actor_name + 0xc)) {
           pCVar4 = (CVector3f *)(in_stack_00000004[1].actor_name + 0x14);
           piVar5 = &in_stack_00000004[1].location.area_id;
           do {
-            pCVar4->x = pCVar4->x - local_38.y;
-            pCVar4->y = pCVar4->y - local_38.z;
+            pCVar4->x = pCVar4->x - local_34.x;
+            pCVar4->y = pCVar4->y - local_34.y;
             fVar1 = pCVar4[1].x;
-            pCVar4->z = pCVar4->z - local_2c.x;
-            pCVar4[1].x = fVar1 - local_38.y;
-            *(float *)((int)(pCVar4 + 1) + 4) = *(float *)((int)(pCVar4 + 1) + 4) - local_38.z;
-            *(float *)((int)(pCVar4 + 1) + 8) = *(float *)((int)(pCVar4 + 1) + 8) - local_2c.x;
-            *piVar5 = (int)((float)*piVar5 - local_38.y);
-            piVar5[1] = (int)((float)piVar5[1] - local_38.z);
-            piVar5[2] = (int)((float)piVar5[2] - local_2c.x);
-            piVar5[3] = (int)((float)piVar5[3] - local_38.y);
-            piVar5[4] = (int)((float)piVar5[4] - local_38.z);
+            pCVar4->z = pCVar4->z - local_34.z;
+            pCVar4[1].x = fVar1 - local_34.x;
+            *(float *)((int)(pCVar4 + 1) + 4) = *(float *)((int)(pCVar4 + 1) + 4) - local_34.y;
+            *(float *)((int)(pCVar4 + 1) + 8) = *(float *)((int)(pCVar4 + 1) + 8) - local_34.z;
+            *piVar5 = (int)((float)*piVar5 - local_34.x);
+            piVar5[1] = (int)((float)piVar5[1] - local_34.y);
+            piVar5[2] = (int)((float)piVar5[2] - local_34.z);
+            piVar5[3] = (int)((float)piVar5[3] - local_34.x);
+            piVar5[4] = (int)((float)piVar5[4] - local_34.y);
             iVar9 = iVar9 + 1;
-            piVar5[5] = (int)((float)piVar5[5] - local_2c.x);
+            piVar5[5] = (int)((float)piVar5[5] - local_34.z);
             pCVar4 = (CVector3f *)((int)(pCVar4 + 4) + 4);
             piVar5 = piVar5 + 0xd;
           } while (iVar9 < *(int *)(in_stack_00000004[1].actor_name + 0xc));
@@ -107,8 +105,8 @@ void core_flies_cpp_FUN_004cbf00(void)
         input_value = (double)fVar3;
         pfVar7 = pfVar8;
         if (1.0 <= input_value) {
-          local_20 = crt_math_c_floor_FUN_005feb90(input_value);
-          *(float *)extraout_EBX = *(float *)extraout_EBX - (float)local_20;
+          auStack_28._8_8_ = crt_math_c_floor_FUN_005feb90(input_value);
+          *(float *)extraout_EBX = *(float *)extraout_EBX - (float)(double)auStack_28._8_8_;
           if ((CLocation *)(extraout_EBX + 4) != (CLocation *)(extraout_EBX + 0x10)) {
             *(float *)(extraout_EBX + 4) = (((CLocation *)(extraout_EBX + 0x10))->position).x;
             *(float *)(extraout_EBX + 8) = *(float *)(extraout_EBX + 0x14);

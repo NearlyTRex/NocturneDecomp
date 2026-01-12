@@ -20,12 +20,16 @@ uint core_netgame_cpp_initializeNetworkToJoin_FUN_0053f900(void)
   byte bVar7;
   CNetGame *in_stack_00000004;
   uint32_t *in_stack_00000008;
-  float fStack_44;
+  float fVar8;
+  uint local_4f;
+  char acStack_4b [20];
   uint local_37;
-  char acStack_33 [7];
+  uint uStack_33;
   SNetworkAddr SStack_2c;
-  uint uStack_1f;
-  byte auStack_1b [11];
+  SNetworkAddr SStack_24;
+  int local_1c;
+  int local_18;
+  char *pcStack_14;
   
   bVar7 = 0;
   core_netgame_cpp_CNetGame_FUN_0053fd00(in_stack_00000004);
@@ -37,8 +41,7 @@ uint core_netgame_cpp_initializeNetworkToJoin_FUN_0053f900(void)
   if (iVar2 == 0) {
     return 0;
   }
-  support_trisock_cpp_createNetworkAddr_FUN_005e1940
-            ((SNetworkAddr *)(auStack_1b + 3),in_stack_00000008,0x1ddf);
+  support_trisock_cpp_createNetworkAddr_FUN_005e1940(&SStack_24,in_stack_00000008,0x1ddf);
   uVar3 = core_netgame_cpp_CNetGame_addPlayer_FUN_005412b0();
   uVar5 = g_CurrentGameTime;
   in_stack_00000004->connection_type = 2;
@@ -49,75 +52,75 @@ uint core_netgame_cpp_initializeNetworkToJoin_FUN_0053f900(void)
   DAT_02f7c8bc = 0;
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (this_ptr,"Contacting server.  Press ESC to give up...");
-  iVar2 = *(int *)in_stack_00000004->padding;
+  local_18 = g_ForceMessagePump;
   g_ForceMessagePump = 0;
-  do {
-    if (iVar2 < 0) {
-      core_netgame_cpp_CNetGame_FUN_0053fd00(in_stack_00000004);
-      return 0;
-    }
-    iVar2 = g_CurrentGameTime - uVar5;
-    fStack_44 = (float)iVar2 * (float)1.52587890625e-05;
-    if (fStack_44 < 0.0) {
-      fStack_44 = 0.0;
-    }
-    if ((float)30 < fStack_44) {
-      fStack_44 = 30.0;
-    }
-    if ((float)0.20000000000000001 < fStack_44) {
-      (&local_37)[(uint)bVar7 * -2] = *(uint *)(&stack0xfffffff8 + (uint)bVar7 * -8);
-      uStack_1f = *(uint *)
-                   (in_stack_00000004->players[in_stack_00000004->local_player_index].name + 0x14);
-      auStack_1b._0_4_ =
-           *(uint *)
-            (in_stack_00000004->players[in_stack_00000004->local_player_index].name + 0x18);
-      pcVar6 = acStack_33;
-      pcVar4 = in_stack_00000004->network_data;
-      do {
-        cVar1 = *pcVar4;
-        *pcVar6 = cVar1;
-        if (cVar1 == '\0') break;
-        cVar1 = pcVar4[1];
-        pcVar4 = pcVar4 + 2;
-        pcVar6[1] = cVar1;
-        pcVar6 = pcVar6 + 2;
-      } while (cVar1 != '\0');
-      core_netgame_cpp_CNetGame_send_FUN_005411c0();
-      uVar5 = g_CurrentGameTime;
-    }
-    wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-    core_netgame_cpp_CNetGame_receivePackets_FUN_005405b0(in_stack_00000004);
-    if (DAT_02f7c8bc == 1) {
-      g_ForceMessagePump = iVar2;
-      return 1;
-    }
-    if (DAT_02f7c8bc < 3) {
-      if (DAT_02f7c8bc == 2) {
-        shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-                  (g_CEditorToolsPtr,"Connection refused - computer is not a server");
-        core_netgame_cpp_CNetGame_FUN_0053fd00(in_stack_00000004);
-        return 0;
+  if (-1 < *(int *)in_stack_00000004->padding) {
+    pcStack_14 = in_stack_00000004->network_data;
+    do {
+      local_1c = g_CurrentGameTime - uVar5;
+      fVar8 = (float)(int)(g_CurrentGameTime - uVar5) * (float)1.52587890625e-05;
+      if (fVar8 < 0.0) {
+        fVar8 = 0.0;
       }
-    }
-    else {
-      if (DAT_02f7c8bc < 4) {
-        shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-                  (g_CEditorToolsPtr,"Connection refused - game is full");
-        core_netgame_cpp_CNetGame_FUN_0053fd00(in_stack_00000004);
-        return 0;
+      if ((float)30 < fVar8) {
+        fVar8 = 30.0;
       }
-      if (DAT_02f7c8bc == 4) {
-        shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-                  (g_CEditorToolsPtr,"Connection refused - already in the game");
-        goto LAB_0053fb81;
+      if ((float)0.20000000000000001 < fVar8) {
+        (&local_4f)[(uint)bVar7 * -2] = *(uint *)&(&SStack_24)[-(uint)bVar7].port;
+        local_37 = *(uint *)
+                    (in_stack_00000004->players[in_stack_00000004->local_player_index].name + 0x14);
+        uStack_33 = *(uint *)
+                     (in_stack_00000004->players[in_stack_00000004->local_player_index].name + 0x18)
+        ;
+        pcVar6 = acStack_4b;
+        pcVar4 = pcStack_14;
+        do {
+          cVar1 = *pcVar4;
+          *pcVar6 = cVar1;
+          if (cVar1 == '\0') break;
+          cVar1 = pcVar4[1];
+          pcVar4 = pcVar4 + 2;
+          pcVar6[1] = cVar1;
+          pcVar6 = pcVar6 + 2;
+        } while (cVar1 != '\0');
+        core_netgame_cpp_CNetGame_send_FUN_005411c0();
+        uVar5 = g_CurrentGameTime;
       }
-    }
-    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
-    if (iVar2 != 0) {
+      wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
+      core_netgame_cpp_CNetGame_receivePackets_FUN_005405b0(in_stack_00000004);
+      if (DAT_02f7c8bc == 1) {
+        g_ForceMessagePump = local_18;
+        return 1;
+      }
+      if (DAT_02f7c8bc < 3) {
+        if (DAT_02f7c8bc == 2) {
+          shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
+                    (g_CEditorToolsPtr,"Connection refused - computer is not a server");
+          core_netgame_cpp_CNetGame_FUN_0053fd00(in_stack_00000004);
+          return 0;
+        }
+      }
+      else {
+        if (DAT_02f7c8bc < 4) {
+          shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
+                    (g_CEditorToolsPtr,"Connection refused - game is full");
+          core_netgame_cpp_CNetGame_FUN_0053fd00(in_stack_00000004);
+          return 0;
+        }
+        if (DAT_02f7c8bc == 4) {
+          shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
+                    (g_CEditorToolsPtr,"Connection refused - already in the game");
+          goto LAB_0053fb81;
+        }
+      }
+      iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
+      if (iVar2 != 0) {
 LAB_0053fb81:
-      core_netgame_cpp_CNetGame_FUN_0053fd00(in_stack_00000004);
-      return 0;
-    }
-    iVar2 = *(int *)in_stack_00000004->padding;
-  } while( true );
+        core_netgame_cpp_CNetGame_FUN_0053fd00(in_stack_00000004);
+        return 0;
+      }
+    } while (-1 < *(int *)in_stack_00000004->padding);
+  }
+  core_netgame_cpp_CNetGame_FUN_0053fd00(in_stack_00000004);
+  return 0;
 }

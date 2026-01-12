@@ -1,24 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 124,
-    "complexity_score": 338,
+    "complexity_score": 159,
     "cross_reference_count": 2,
     "function_call_count": 12,
     "global_count": 9,
-    "pseudocode_lines": 43,
-    "suspect_count": 25,
+    "pseudocode_lines": 44,
+    "suspect_count": 9,
     "suspect_types": [
       "badspacebase",
-      "call_esp_anchor",
-      "callind_anchor",
       "param_count_too_few",
       "register_param",
-      "stack_align_anchor",
       "stack_param",
-      "stack_ref",
-      "variadic_anchor"
+      "stack_ref"
     ],
-    "total_lines": 167
+    "total_lines": 168
   },
   "cross_references": [
     {
@@ -193,6 +189,47 @@
     "declared_params": 0,
     "estimated_params": 3
   },
+  "pcode_overrides": {
+    "0053eb4c": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffec8,4)"
+    ],
+    "0053eb5e": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffec8,4)"
+    ],
+    "0053eb82": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffec8,4)"
+    ],
+    "0053eb94": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffec8,4)"
+    ],
+    "0053ebaf": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffec8,4)"
+    ],
+    "0053ebc3": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffec8,4)"
+    ],
+    "0053ebe3": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffec8,4)"
+    ],
+    "0053ec06": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffec8,4)"
+    ],
+    "0053ec15": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffec8,4)"
+    ],
+    "0053ec28": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffec8,4)"
+    ],
+    "0053ec37": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffec8,4)"
+    ],
+    "0053ec57": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffec8,4)"
+    ],
+    "0053ec6e": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffec8,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.278350515463917,
     "instruction_count": 97,
@@ -229,131 +266,7 @@
     },
     "pcode_op_count": 415
   },
-  "stack_frame": {
-    "frame_size": 332,
-    "local_size": 332,
-    "param_offset": 4,
-    "param_size": 0,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_148",
-        "offset": -328,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_144",
-        "offset": -324,
-        "size": 1,
-        "type": "undefined1"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 8,
-        "type": "undefined8"
-      }
-    ]
-  },
-  "stack_patterns": {
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
-    "pattern_count": 1,
-    "pattern_types": [
-      "stack_alignment"
-    ],
-    "patterns": [
-      {
-        "address": "0053eb4c",
-        "description": "Stack alignment (AND ESP, 0xfffffff8)",
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
-        "instruction": "AND ESP,0xfffffff8",
-        "pattern_id": "stack_alignment"
-      }
-    ],
-    "severity": "medium"
-  },
-  "suspects": [
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 9,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 9,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000008",
-      "text": "char *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_fffffecc",
-      "text": "CKeys *in_stack_fffffecc;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_00000008",
-      "text": "core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_00000008",
-      "text": "(g_CEditorToolsPtr,\"Failed to play \\\"%s\\\"\",in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_00000008",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffec8,\"Playing %s\",in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 30,
-      "match": "&stack0xfffffec8",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffec8,\"Playing %s\",in_stack_00000008);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 32,
-      "match": "&stack0xfffffecc",
-      "text": "(g_CEditorToolsPtr,&stack0xfffffecc);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 34,
-      "match": "in_stack_fffffecc",
-      "text": "dVar2 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(2,(uint)in_stack_fffffecc);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 38,
-      "match": "in_stack_fffffecc",
-      "text": "in_stack_fffffecc = g_CKeysPtr;",
-      "type": "stack_param"
-    },
+  "resolved_suspects": [
     {
       "add_esp_value": 8,
       "callind_address": "0053ec13",
@@ -364,17 +277,6 @@
       "match": "CALLIND...ADD ESP",
       "text": "CALLIND at 0053ec13, ADD ESP at 0053ec15",
       "type": "callind_anchor"
-    },
-    {
-      "call_site_count": 2,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 3,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:3",
-      "param_delta": 3,
-      "text": "Function declares 0 params but call sites push 3 (3 missing)",
-      "type": "param_count_too_few"
     },
     {
       "add_esp_value": 12,
@@ -537,6 +439,122 @@
       "target_address": "0x5b2f70",
       "text": "Direct CALL at 0053ec32, ADD ESP at 0053ec37 with uncertain ESP",
       "type": "call_esp_anchor"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 332,
+    "local_size": 332,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_148",
+        "offset": -328,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_144",
+        "offset": -324,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 8,
+        "type": "undefined8"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0053eb4c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Ghidra failed to resolve stack frame",
+      "line": 9,
+      "match": "BADSPACEBASE",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "badspacebase"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 9,
+      "match": "in_ESP",
+      "text": "BADSPACEBASE *in_ESP;",
+      "type": "register_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000008",
+      "text": "char *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000008",
+      "text": "core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 28,
+      "match": "in_stack_00000008",
+      "text": "(g_CEditorToolsPtr,\"Failed to play \\\"%s\\\"\",in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 31,
+      "match": "in_stack_00000008",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffebc,\"Playing %s\",in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 31,
+      "match": "&stack0xfffffebc",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffebc,\"Playing %s\",in_stack_00000008);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 33,
+      "match": "&stack0xfffffebc",
+      "text": "(g_CEditorToolsPtr,&stack0xfffffebc);",
+      "type": "stack_ref"
+    },
+    {
+      "call_site_count": 2,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 3,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:3",
+      "param_delta": 3,
+      "text": "Function declares 0 params but call sites push 3 (3 missing)",
+      "type": "param_count_too_few"
     }
   ]
 }

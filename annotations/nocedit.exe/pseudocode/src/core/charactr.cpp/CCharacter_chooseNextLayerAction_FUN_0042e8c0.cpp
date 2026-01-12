@@ -14,7 +14,7 @@ void __cdecl core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042e8c0(CCh
   int iVar3;
   char *pcVar4;
   int in_stack_00000008;
-  float fVar5;
+  float local_14;
   
   if ((*(int *)(this_ptr->field13_0x2620 + 0x46c) < 0) ||
      (*(int *)(this_ptr->field13_0x2620 + 8) <= *(int *)(this_ptr->field13_0x2620 + 0x46c))) {
@@ -34,7 +34,7 @@ void __cdecl core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042e8c0(CCh
                     *(int *)(this_ptr->field13_0x2620 + 0x46c) * 0x38 + 0xc);
   }
   if (in_stack_00000008 != iVar2) {
-    fVar5 = 999.0;
+    local_14 = 999.0;
     iVar3 = 0;
     if (0 < *(int *)(this_ptr->field13_0x2620 + 8)) {
       pcVar4 = this_ptr->field13_0x2620 + 0xc;
@@ -45,26 +45,26 @@ void __cdecl core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042e8c0(CCh
               (fVar1 = *(float *)(pcVar4 + 0x34) +
                        *(float *)(this_ptr->cloth_data +
                                  in_stack_00000008 * 4 + *(int *)pcVar4 * 0x50 + 0x8d4c),
-              fVar1 < fVar5)))) {
+              fVar1 < local_14)))) {
             this_ptr->field13_0x2620[0x470] = '\0';
             this_ptr->field13_0x2620[0x471] = '\0';
             this_ptr->field13_0x2620[0x472] = -0x80;
             this_ptr->field13_0x2620[0x473] = '?';
             *(int *)(this_ptr->field13_0x2620 + 0x46c) = iVar3;
-            fVar5 = fVar1;
+            local_14 = fVar1;
           }
         }
         else {
           fVar1 = *(float *)(pcVar4 + 0x34) +
                   *(float *)(this_ptr->cloth_data +
                             in_stack_00000008 * 4 + *(int *)(pcVar4 + 4) * 0x50 + 0x8d4c);
-          if (fVar1 < fVar5) {
+          if (fVar1 < local_14) {
             this_ptr->field13_0x2620[0x470] = '\0';
             this_ptr->field13_0x2620[0x471] = '\0';
             this_ptr->field13_0x2620[0x472] = '\0';
             this_ptr->field13_0x2620[0x473] = '\0';
             *(int *)(this_ptr->field13_0x2620 + 0x46c) = iVar3;
-            fVar5 = fVar1;
+            local_14 = fVar1;
           }
         }
         iVar3 = iVar3 + 1;

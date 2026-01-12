@@ -1,18 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 245,
-    "complexity_score": 284,
+    "complexity_score": 158,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 6,
-    "pseudocode_lines": 119,
-    "suspect_count": 15,
+    "pseudocode_lines": 113,
+    "suspect_count": 4,
     "suspect_types": [
-      "call_esp_anchor",
-      "callind_anchor",
       "pointer_cast"
     ],
-    "total_lines": 364
+    "total_lines": 358
   },
   "cross_references": [
     {
@@ -127,6 +125,41 @@
     "declared_params": 2,
     "estimated_params": 2
   },
+  "pcode_overrides": {
+    "005561a1": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
+    ],
+    "005561c0": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
+    ],
+    "005561ea": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
+    ],
+    "0055622b": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
+    ],
+    "0055625b": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
+    ],
+    "00556264": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
+    ],
+    "005562d6": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
+    ],
+    "00556301": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
+    ],
+    "00556362": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
+    ],
+    "005563a3": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
+    ],
+    "005563ac": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff0,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.069767441860465,
     "instruction_count": 215,
@@ -166,86 +199,7 @@
     },
     "pcode_op_count": 1090
   },
-  "stack_frame": {
-    "frame_size": 44,
-    "local_size": 36,
-    "param_offset": 4,
-    "param_size": 8,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_20",
-        "offset": -32,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c",
-        "offset": -28,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_14",
-        "offset": -20,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": true,
-        "name": "this_ptr",
-        "offset": 4,
-        "size": 4,
-        "type": "CColorQuantizer *"
-      },
-      {
-        "is_param": true,
-        "name": "bitmap_ptr",
-        "offset": 8,
-        "size": 4,
-        "type": "CBitmap * *"
-      }
-    ]
-  },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 88,
-      "match": "(uint *)((int)",
-      "text": "puVar7 = (uint *)((int)puVar7 + (uint)bVar11 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 89,
-      "match": "(uint *)((int)",
-      "text": "puVar8 = (uint *)((int)puVar8 + (uint)bVar11 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 97,
-      "match": "(uint *)((int)",
-      "text": "(short)((uint)*(uint *)((int)&this_ptr->current_pixel_index + 2) >> 0x10));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 104,
-      "match": "(uint *)((int)",
-      "text": "(short)((uint)*(uint *)((int)&this_ptr->current_pixel_index + 2) >> 0x10));",
-      "type": "pointer_cast"
-    },
+  "resolved_suspects": [
     {
       "add_esp_value": 12,
       "callind_address": "00556229",
@@ -386,6 +340,87 @@
       "target_address": "0x50f210",
       "text": "Direct CALL at 005563a7, ADD ESP at 005563ac with uncertain ESP",
       "type": "call_esp_anchor"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 44,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CColorQuantizer *"
+      },
+      {
+        "is_param": true,
+        "name": "bitmap_ptr",
+        "offset": 8,
+        "size": 4,
+        "type": "CBitmap * *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 85,
+      "match": "(uint *)((int)",
+      "text": "puVar7 = (uint *)((int)puVar7 + (uint)bVar13 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 86,
+      "match": "(uint *)((int)",
+      "text": "puVar10 = (uint *)((int)puVar10 + (uint)bVar13 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 91,
+      "match": "(uint *)((int)",
+      "text": ",-1,(short)((uint)*(uint *)((int)&this_ptr->current_pixel_index + 2) >> 0x10)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 97,
+      "match": "(uint *)((int)",
+      "text": "(short)((uint)*(uint *)((int)&this_ptr->current_pixel_index + 2) >> 0x10));",
+      "type": "pointer_cast"
     }
   ]
 }

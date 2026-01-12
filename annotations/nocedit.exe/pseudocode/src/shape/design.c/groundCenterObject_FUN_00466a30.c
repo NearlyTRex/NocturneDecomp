@@ -24,11 +24,11 @@ void __cdecl shape_design_c_groundCenterObject_FUN_00466a30(void)
   int local_14;
   
   fVar6 = 999999.9;
-  fVar8 = 999999.9;
+  fVar7 = 999999.9;
   local_2c = 0xcccccccd;
   uStack_28 = 0x412e847f;
   fVar5 = -999999.9;
-  fVar7 = -999999.9;
+  fVar8 = -999999.9;
   dVar4 = -999999.9;
   for (local_14 = 0; local_14 < g_VertexCount; local_14 = local_14 + 1) {
     fVar1 = g_LoadedVertices[local_14].vertex.x;
@@ -40,11 +40,11 @@ void __cdecl shape_design_c_groundCenterObject_FUN_00466a30(void)
     if (fVar1 < fVar6) {
       fVar6 = fVar1;
     }
-    if (fVar7 < fVar2) {
-      fVar7 = fVar2;
-    }
-    if (fVar2 < fVar8) {
+    if (fVar8 < fVar2) {
       fVar8 = fVar2;
+    }
+    if (fVar2 < fVar7) {
+      fVar7 = fVar2;
     }
     local_44 = SUB84 /* extract 2-byte value */(dVar3,0);
     uStack_40 = (uint)((ulonglong)dVar3 >> 0x20);
@@ -59,7 +59,7 @@ void __cdecl shape_design_c_groundCenterObject_FUN_00466a30(void)
   for (local_14 = 0; local_14 < g_VertexCount; local_14 = local_14 + 1) {
   }
   for (local_14 = 0; local_14 < g_VertexCount; local_14 = local_14 + 1) {
-    g_LoadedVertices[local_14].vertex.y = g_LoadedVertices[local_14].vertex.y - fVar8;
+    g_LoadedVertices[local_14].vertex.y = g_LoadedVertices[local_14].vertex.y - fVar7;
   }
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_drawText_FUN_00401fd0("Object grounded.  Hit a key...",0,0);

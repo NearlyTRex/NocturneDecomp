@@ -1,22 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 1168,
-    "complexity_score": 1211,
+    "complexity_score": 982,
     "cross_reference_count": 8,
     "function_call_count": 5,
     "global_count": 64,
-    "pseudocode_lines": 676,
-    "suspect_count": 50,
+    "pseudocode_lines": 682,
+    "suspect_count": 28,
     "suspect_types": [
       "badspacebase",
-      "call_esp_anchor",
       "extra_output",
       "pointer_cast",
-      "register_param",
-      "stack_align_anchor",
-      "variadic_anchor"
+      "register_param"
     ],
-    "total_lines": 1844
+    "total_lines": 1850
   },
   "cross_references": [
     {
@@ -494,6 +491,59 @@
       "value": null
     }
   ],
+  "pcode_overrides": {
+    "0056eacc": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe9c,4)"
+    ],
+    "0056eb00": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe9c,4)"
+    ],
+    "0056eb0f": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe9c,4)"
+    ],
+    "0056ebbc": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe9c,4)"
+    ],
+    "0056ed19": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe9c,4)"
+    ],
+    "0056ed44": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe9c,4)"
+    ],
+    "0056edec": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe9c,4)"
+    ],
+    "0056ee69": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe9c,4)"
+    ],
+    "0056f088": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe9c,4)"
+    ],
+    "0056f0b0": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe9c,4)"
+    ],
+    "0056f115": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe9c,4)"
+    ],
+    "0056f2df": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe9c,4)"
+    ],
+    "0056f434": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe9c,4)"
+    ],
+    "0056f4ca": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe9c,4)"
+    ],
+    "0056f4f6": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe9c,4)"
+    ],
+    "0056f726": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe9c,4)"
+    ],
+    "0056f902": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe9c,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.395192307692308,
     "instruction_count": 1040,
@@ -541,6 +591,235 @@
     },
     "pcode_op_count": 6651
   },
+  "resolved_suspects": [
+    {
+      "add_esp_value": 12,
+      "call_address": "0056eafb",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "computed",
+      "esp_certainty_at_call": "known",
+      "fix_address": "0056eb00",
+      "frame_offset": 356,
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0056eb00",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0056eafb (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "0056f4c5",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "0056f4ca",
+      "frame_offset": 356,
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0056f4ca",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0056f4c5 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "0056f4f1",
+      "caller_has_stack_issues": true,
+      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
+      "esp_certainty_after": "cfg_resolved",
+      "esp_certainty_at_call": "cfg_resolved",
+      "fix_address": "0056f4f6",
+      "frame_offset": 356,
+      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "return_address": "0056f4f6",
+      "target_address": "0x506f10",
+      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
+      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0056f4f1 (EBP frame + ADD ESP)",
+      "type": "variadic_anchor"
+    },
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x164",
+      "fix_address": "0056eacc",
+      "frame_offset": 356,
+      "match": "AND ESP",
+      "sub_esp_offset": 356,
+      "text": "Stack alignment at 0056eacc (SUB ESP, 0x164 before)",
+      "type": "stack_align_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "0056eb0a",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "0056eb0f",
+      "frame_offset": 356,
+      "match": "CALL...ADD ESP",
+      "return_address": "0056eb0f",
+      "target_address": "0x48cae0",
+      "text": "Direct CALL at 0056eb0a, ADD ESP at 0056eb0f with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 20,
+      "call_address": "0056ebb7",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0056ebbc",
+      "frame_offset": 356,
+      "match": "CALL...ADD ESP",
+      "return_address": "0056ebbc",
+      "target_address": "0x56ddb0",
+      "text": "Direct CALL at 0056ebb7, ADD ESP at 0056ebbc with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "0056ed14",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0056ed19",
+      "frame_offset": 356,
+      "match": "CALL...ADD ESP",
+      "return_address": "0056ed19",
+      "target_address": "0x56e890",
+      "text": "Direct CALL at 0056ed14, ADD ESP at 0056ed19 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 20,
+      "call_address": "0056ed3f",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0056ed44",
+      "frame_offset": 356,
+      "match": "CALL...ADD ESP",
+      "return_address": "0056ed44",
+      "target_address": "0x56ddb0",
+      "text": "Direct CALL at 0056ed3f, ADD ESP at 0056ed44 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 20,
+      "call_address": "0056ede7",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0056edec",
+      "frame_offset": 356,
+      "match": "CALL...ADD ESP",
+      "return_address": "0056edec",
+      "target_address": "0x56ddb0",
+      "text": "Direct CALL at 0056ede7, ADD ESP at 0056edec with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "0056ee64",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0056ee69",
+      "frame_offset": 356,
+      "match": "CALL...ADD ESP",
+      "return_address": "0056ee69",
+      "target_address": "0x56e890",
+      "text": "Direct CALL at 0056ee64, ADD ESP at 0056ee69 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "0056f07f",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0056f088",
+      "frame_offset": 356,
+      "match": "CALL...ADD ESP",
+      "return_address": "0056f084",
+      "target_address": "0x56e890",
+      "text": "Direct CALL at 0056f07f, ADD ESP at 0056f088 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 20,
+      "call_address": "0056f0a6",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0056f0b0",
+      "frame_offset": 356,
+      "match": "CALL...ADD ESP",
+      "return_address": "0056f0ab",
+      "target_address": "0x56ddb0",
+      "text": "Direct CALL at 0056f0a6, ADD ESP at 0056f0b0 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 4,
+      "call_address": "0056f110",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0056f115",
+      "frame_offset": 356,
+      "match": "CALL...ADD ESP",
+      "return_address": "0056f115",
+      "target_address": "0x56e890",
+      "text": "Direct CALL at 0056f110, ADD ESP at 0056f115 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "0056f2da",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0056f2df",
+      "frame_offset": 356,
+      "match": "CALL...ADD ESP",
+      "return_address": "0056f2df",
+      "target_address": "0x5fde40",
+      "text": "Direct CALL at 0056f2da, ADD ESP at 0056f2df with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 20,
+      "call_address": "0056f42f",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0056f434",
+      "frame_offset": 356,
+      "match": "CALL...ADD ESP",
+      "return_address": "0056f434",
+      "target_address": "0x56ddb0",
+      "text": "Direct CALL at 0056f42f, ADD ESP at 0056f434 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "0056f721",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0056f726",
+      "frame_offset": 356,
+      "match": "CALL...ADD ESP",
+      "return_address": "0056f726",
+      "target_address": "0x5fde40",
+      "text": "Direct CALL at 0056f721, ADD ESP at 0056f726 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 20,
+      "call_address": "0056f8fd",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0056f902",
+      "frame_offset": 356,
+      "match": "CALL...ADD ESP",
+      "return_address": "0056f902",
+      "target_address": "0x56ddb0",
+      "text": "Direct CALL at 0056f8fd, ADD ESP at 0056f902 with uncertain ESP",
+      "type": "call_esp_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 408,
     "local_size": 380,
@@ -1095,440 +1374,178 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 116,
+      "line": 129,
       "match": "(int *)((int)",
-      "text": "local_16c.z = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.",
+      "text": "*(int *)((int)&CStack_15c + (uint)bVar20 * -8 + 4) = local_148[(uint)bVar20 * -2];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 126,
+      "line": 131,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)&local_154 + (uint)bVar20 * -8) = aiStack_144[(uint)bVar20 * -2];",
+      "text": "*(int *)((int)&CStack_15c + (uint)bVar20 * -8 + (uint)bVar20 * -8 + 8) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 128,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)&local_154 + (uint)bVar20 * -8 + (uint)bVar20 * -8 + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 132,
+      "line": 135,
       "match": "(float *)((int)",
       "text": "*(float *)((int)&g_RenderVertexBuffer[0].w_recip + iVar16) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 158,
+      "line": 161,
       "match": "(uint *)((int)",
-      "text": "puVar2 = (uint *)((int)&g_TransformedVertexArray[0].x + local_64);",
+      "text": "puVar2 = (uint *)((int)&g_TransformedVertexArray[0].x + local_68);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 343,
+      "line": 348,
       "match": "(float *)((int)",
-      "text": "*(float *)((int)&g_RenderVertexBuffer[0].w_recip + (int)local_54) =",
+      "text": "*(float *)((int)&g_RenderVertexBuffer[0].w_recip + local_60) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 346,
-      "match": "(CVector3i *)((int)",
-      "text": "local_54 = (CVector3i *)((int)local_54 + 0x30);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 382,
+      "line": 387,
       "match": "(float *)((int)",
-      "text": "*(float *)((int)&g_RenderVertexBuffer[0].w_recip + (int)local_48) =",
+      "text": "*(float *)((int)&g_RenderVertexBuffer[0].w_recip + local_54) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 398,
-      "match": "(int *)((int)",
-      "text": "local_e8.z = *(int *)((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_x",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 408,
-      "match": "(int *)((int)",
-      "text": "piVar18 = (int *)((int)local_54 + 0x32cd850 + (uint)bVar20 * -8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 409,
+      "line": 415,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&g_TransformedVertexArray[0].x + (int)local_54) = uStack_128;",
+      "text": "*(uint *)((int)&g_TransformedVertexArray[0].x + local_58) = uStack_12c;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 413,
-      "match": "(CVector3i *)((int)",
-      "text": "local_54 = (CVector3i *)((int)local_54 + 0xc);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 522,
+      "line": 528,
       "match": "(CDemonSet *)((int)",
       "text": "pCVar9 = (CDemonSet *)((int)&pCVar9->camera_count + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 541,
+      "line": 547,
       "match": "(float *)((int)",
-      "text": "*(float *)((int)&g_RenderVertexBuffer[0].w_recip + iVar22) = g_PerspectiveReciprocal",
+      "text": "*(float *)((int)&g_RenderVertexBuffer[0].w_recip + iVar14) = g_PerspectiveReciprocal",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 567,
+      "line": 573,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)&local_16c + (uint)bVar20 * -8 + 4) = aiStack_144[(uint)bVar20 * -2 + 3];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 568,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)&local_16c + (uint)bVar20 * -8 + (uint)bVar20 * -8 + 8) =",
+      "text": "*(int *)((int)&CStack_174 + (uint)bVar20 * -8 + 4) = local_148[(uint)bVar20 * -2 + 2];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 574,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)&CStack_174 + (uint)bVar20 * -8 + (uint)bVar20 * -8 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 580,
       "match": "(float *)((int)",
       "text": "*(float *)((int)&g_RenderVertexBuffer[0].w_recip + iVar16) = g_PerspectiveReciprocal;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 583,
+      "line": 589,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&g_RenderVertexBuffer[0].light + (int)fVar11) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 585,
+      "line": 591,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&g_RenderVertexBuffer[0].color + (int)fVar11) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 588,
+      "line": 594,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&g_RenderVertexBuffer[0].fog + (int)fVar11) = this_ptr->mirror_render_param4",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 603,
+      "line": 609,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].w_recip + iVar22) = 0;",
+      "text": "*(uint *)((int)&g_RenderVertexBuffer[0].w_recip + iVar14) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 608,
+      "line": 614,
       "match": "extraout_EAX",
       "text": "pCVar9 = extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Complex pointer cast",
-      "line": 617,
+      "line": 623,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&g_RenderVertexBuffer[0].light + (int)fVar11) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 619,
+      "line": 625,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&g_RenderVertexBuffer[0].color + (int)fVar11) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 622,
+      "line": 628,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&g_RenderVertexBuffer[0].fog + (int)fVar11) = this_ptr->fog_scale_factor",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 624,
+      "line": 630,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&g_RenderVertexBuffer[0].w_recip + (int)fVar11) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 635,
+      "line": 641,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&g_RenderVertexBuffer[0].light + (int)fVar11) = 0xffff;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 636,
+      "line": 642,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&g_RenderVertexBuffer[0].color + (int)fVar11) = 0xffff;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 637,
+      "line": 643,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&g_RenderVertexBuffer[0].fog + (int)fVar11) = 0xffff;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 638,
+      "line": 644,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&g_RenderVertexBuffer[0].w_recip + (int)fVar11) = 0;",
       "type": "pointer_cast"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "0056eafb",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "computed",
-      "esp_certainty_at_call": "known",
-      "fix_address": "0056eb00",
-      "frame_offset": 356,
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "0056eb00",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0056eafb (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "0056f4c5",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "0056f4ca",
-      "frame_offset": 356,
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "0056f4ca",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0056f4c5 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "0056f4f1",
-      "caller_has_stack_issues": true,
-      "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
-      "esp_certainty_after": "cfg_resolved",
-      "esp_certainty_at_call": "cfg_resolved",
-      "fix_address": "0056f4f6",
-      "frame_offset": 356,
-      "match": "CALL core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "return_address": "0056f4f6",
-      "target_address": "0x506f10",
-      "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
-      "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0056f4f1 (EBP frame + ADD ESP)",
-      "type": "variadic_anchor"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x164",
-      "fix_address": "0056eacc",
-      "frame_offset": 356,
-      "match": "AND ESP",
-      "sub_esp_offset": 356,
-      "text": "Stack alignment at 0056eacc (SUB ESP, 0x164 before)",
-      "type": "stack_align_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "0056eb0a",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "0056eb0f",
-      "frame_offset": 356,
-      "match": "CALL...ADD ESP",
-      "return_address": "0056eb0f",
-      "target_address": "0x48cae0",
-      "text": "Direct CALL at 0056eb0a, ADD ESP at 0056eb0f with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 20,
-      "call_address": "0056ebb7",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0056ebbc",
-      "frame_offset": 356,
-      "match": "CALL...ADD ESP",
-      "return_address": "0056ebbc",
-      "target_address": "0x56ddb0",
-      "text": "Direct CALL at 0056ebb7, ADD ESP at 0056ebbc with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "0056ed14",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0056ed19",
-      "frame_offset": 356,
-      "match": "CALL...ADD ESP",
-      "return_address": "0056ed19",
-      "target_address": "0x56e890",
-      "text": "Direct CALL at 0056ed14, ADD ESP at 0056ed19 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 20,
-      "call_address": "0056ed3f",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0056ed44",
-      "frame_offset": 356,
-      "match": "CALL...ADD ESP",
-      "return_address": "0056ed44",
-      "target_address": "0x56ddb0",
-      "text": "Direct CALL at 0056ed3f, ADD ESP at 0056ed44 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 20,
-      "call_address": "0056ede7",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0056edec",
-      "frame_offset": 356,
-      "match": "CALL...ADD ESP",
-      "return_address": "0056edec",
-      "target_address": "0x56ddb0",
-      "text": "Direct CALL at 0056ede7, ADD ESP at 0056edec with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "0056ee64",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0056ee69",
-      "frame_offset": 356,
-      "match": "CALL...ADD ESP",
-      "return_address": "0056ee69",
-      "target_address": "0x56e890",
-      "text": "Direct CALL at 0056ee64, ADD ESP at 0056ee69 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "0056f07f",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0056f088",
-      "frame_offset": 356,
-      "match": "CALL...ADD ESP",
-      "return_address": "0056f084",
-      "target_address": "0x56e890",
-      "text": "Direct CALL at 0056f07f, ADD ESP at 0056f088 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 20,
-      "call_address": "0056f0a6",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0056f0b0",
-      "frame_offset": 356,
-      "match": "CALL...ADD ESP",
-      "return_address": "0056f0ab",
-      "target_address": "0x56ddb0",
-      "text": "Direct CALL at 0056f0a6, ADD ESP at 0056f0b0 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 4,
-      "call_address": "0056f110",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0056f115",
-      "frame_offset": 356,
-      "match": "CALL...ADD ESP",
-      "return_address": "0056f115",
-      "target_address": "0x56e890",
-      "text": "Direct CALL at 0056f110, ADD ESP at 0056f115 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "0056f2da",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0056f2df",
-      "frame_offset": 356,
-      "match": "CALL...ADD ESP",
-      "return_address": "0056f2df",
-      "target_address": "0x5fde40",
-      "text": "Direct CALL at 0056f2da, ADD ESP at 0056f2df with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 20,
-      "call_address": "0056f42f",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0056f434",
-      "frame_offset": 356,
-      "match": "CALL...ADD ESP",
-      "return_address": "0056f434",
-      "target_address": "0x56ddb0",
-      "text": "Direct CALL at 0056f42f, ADD ESP at 0056f434 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "0056f721",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0056f726",
-      "frame_offset": 356,
-      "match": "CALL...ADD ESP",
-      "return_address": "0056f726",
-      "target_address": "0x5fde40",
-      "text": "Direct CALL at 0056f721, ADD ESP at 0056f726 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 20,
-      "call_address": "0056f8fd",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0056f902",
-      "frame_offset": 356,
-      "match": "CALL...ADD ESP",
-      "return_address": "0056f902",
-      "target_address": "0x56ddb0",
-      "text": "Direct CALL at 0056f8fd, ADD ESP at 0056f902 with uncertain ESP",
-      "type": "call_esp_anchor"
     }
   ]
 }

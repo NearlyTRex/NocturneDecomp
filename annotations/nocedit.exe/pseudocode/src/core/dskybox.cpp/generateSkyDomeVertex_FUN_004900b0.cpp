@@ -21,20 +21,20 @@ core_dskybox_cpp_generateSkyDomeVertex_FUN_004900b0
   float10 fVar6;
   float10 fVar7;
   CVector3i *input;
-  float local_48;
+  float local_44;
   
   if (v_coord == 0) {
-    local_48 = 0.019634955;
+    local_44 = 0.019634955;
   }
   else {
-    local_48 = (float)v_coord * 0.25f * (float)3.1415926535000001 *
+    local_44 = (float)v_coord * 0.25f * (float)3.1415926535000001 *
                (float)0.5;
   }
-  fVar2 = (float10)fsin((float10)local_48);
+  fVar2 = (float10)fsin((float10)local_44);
   fVar3 = (float10)((float)u_coord * 0.0625f * (float)3.1415926535000001 *
                    (float)2) + (float10)light_color[7];
   fVar4 = (float10)fsin(fVar3);
-  fVar5 = (float10)fcos((float10)local_48);
+  fVar5 = (float10)fcos((float10)local_44);
   fVar3 = (float10)fcos(fVar3);
   fVar6 = (float10)5f;
   fVar7 = (float10)256;

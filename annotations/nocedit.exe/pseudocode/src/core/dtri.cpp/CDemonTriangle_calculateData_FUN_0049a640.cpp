@@ -16,7 +16,7 @@ void __cdecl core_dtri_cpp_CDemonTriangle_calculateData_FUN_0049a640(CDemonTrian
   float fVar5;
   float fVar6;
   float fVar7;
-  float local_c;
+  float fStack_8;
   
   fVar2 = (triangle->vertex2).y - (triangle->vertex1).y;
   fVar1 = (triangle->vertex3).z - (triangle->vertex2).z;
@@ -30,20 +30,20 @@ void __cdecl core_dtri_cpp_CDemonTriangle_calculateData_FUN_0049a640(CDemonTrian
   (triangle->normal).y = fVar4;
   fVar1 = fVar6 * fVar5 - fVar7 * fVar2;
   (triangle->normal).z = fVar1;
-  local_c = SQRT(fVar1 * (triangle->normal).z +
-                 fVar4 * (triangle->normal).y + fVar3 * (triangle->normal).x);
-  if (ABS(local_c) == 0.0) {
-    local_c = 1.0;
+  fStack_8 = SQRT(fVar1 * (triangle->normal).z +
+                  fVar4 * (triangle->normal).y + fVar3 * (triangle->normal).x);
+  if (ABS(fStack_8) == 0.0) {
+    fStack_8 = 1.0;
   }
-  local_c = 1.0 / local_c;
-  fVar4 = -(triangle->normal).y * local_c;
+  fStack_8 = 1.0 / fStack_8;
+  fVar4 = -(triangle->normal).y * fStack_8;
   (triangle->normal).y = fVar4;
-  fVar3 = -(triangle->normal).x * local_c;
+  fVar3 = -(triangle->normal).x * fStack_8;
   (triangle->normal).x = fVar3;
   fVar3 = ABS(fVar3);
   fVar1 = (triangle->vertex1).y;
   fVar2 = (triangle->vertex1).x;
-  (triangle->normal).z = -(triangle->normal).z * local_c;
+  (triangle->normal).z = -(triangle->normal).z * fStack_8;
   triangle->plane_distance =
        (-(fVar2 * (triangle->normal).x) - fVar1 * (triangle->normal).y) -
        (triangle->vertex1).z * (triangle->normal).z;

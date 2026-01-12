@@ -12,25 +12,21 @@ void __cdecl core_charactr_cpp_CCharacter_computePickup_FUN_0042ce80(CCharacter 
   int iVar1;
   SCarryHand *pSVar2;
   BADSPACEBASE *in_ESP;
-  uint *puVar3;
+  float *pfVar3;
   int *piVar4;
-  uint *puVar5;
+  CMatrix3x4f *pCVar5;
   char *pcVar6;
   byte bVar7;
   int in_stack_00000008;
   float in_stack_0000000c;
-  CMatrix3x4f *in_stack_fffffea4;
-  CMatrix3x4f *in_stack_fffffea8;
-  CMatrix3x4f *in_stack_fffffeac;
-  int aiStack_148 [10];
-  uint auStack_120 [9];
-  byte auStack_fc [52];
-  byte auStack_c8 [52];
-  uint uStack_94;
-  CMatrix3x4f CStack_90;
-  uint uStack_60;
-  CMatrix3x4f CStack_5c;
-  uint auStack_2c [7];
+  CMatrix3x4f *in_stack_fffffe98;
+  int aiStack_15c [12];
+  float afStack_12c [11];
+  CMatrix3x4f local_100;
+  CMatrix3x4f local_d0;
+  CMatrix3x4f local_a0;
+  CMatrix3x4f local_70;
+  float afStack_3c [11];
   
   bVar7 = 0;
   pSVar2 = this_ptr->carry_hands + in_stack_00000008;
@@ -40,32 +36,31 @@ void __cdecl core_charactr_cpp_CCharacter_computePickup_FUN_0042ce80(CCharacter 
     core_main_c_displayErrorAndQuit_FUN_00506f10("CCharacter::computePickup - invalid bone!");
   }
   core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
-            ((CMatrix3x4f *)auStack_fc,&(pSVar2->carry_actor->location).position,
+            (&local_100,&(pSVar2->carry_actor->location).position,
              (CVector3f *)&pSVar2->carry_actor->orient);
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
-            ((CMatrix3x4f *)auStack_c8,&(this_ptr->base_actor).location.position,
+            (&local_d0,&(this_ptr->base_actor).location.position,
              (CVector3f *)&(this_ptr->base_actor).orient);
-  core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
-            ((CMatrix3x4f *)(auStack_c8 + 4),(CMatrix3x4f *)(auStack_fc + 8),in_stack_fffffea4);
-  puVar3 = auStack_120;
-  puVar5 = &uStack_94;
+  core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_d0,&local_100,in_stack_fffffe98);
+  pfVar3 = afStack_12c;
+  pCVar5 = &local_a0;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar5 = *puVar3;
-    puVar3 = puVar3 + (uint)bVar7 * -2 + 1;
-    puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
+    pCVar5->m[0].w = *pfVar3;
+    pfVar3 = pfVar3 + (uint)bVar7 * -2 + 1;
+    pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar7 * -2 + 1) * 4);
   }
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
             ((this_ptr->model).bone_transform.bone_world_matrices + *(int *)pSVar2->field0_0x0,
-             &CStack_90,in_stack_fffffea8);
-  puVar3 = auStack_2c;
-  puVar5 = &uStack_60;
+             &local_a0,in_stack_fffffe98);
+  pfVar3 = afStack_3c;
+  pCVar5 = &local_70;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar5 = *puVar3;
-    puVar3 = puVar3 + (uint)bVar7 * -2 + 1;
-    puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
+    pCVar5->m[0].w = *pfVar3;
+    pfVar3 = pfVar3 + (uint)bVar7 * -2 + 1;
+    pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar7 * -2 + 1) * 4);
   }
-  core_xform_cpp_inverse_FUN_005f6210(&CStack_5c,in_stack_fffffeac);
-  piVar4 = aiStack_148;
+  core_xform_cpp_inverse_FUN_005f6210(&local_70,in_stack_fffffe98);
+  piVar4 = aiStack_15c;
   pcVar6 = pSVar2->field2_0xc;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
     *(int *)pcVar6 = *piVar4;

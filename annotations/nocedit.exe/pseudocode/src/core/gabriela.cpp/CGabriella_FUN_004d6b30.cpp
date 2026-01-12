@@ -14,7 +14,7 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d6b30(CGabriella *this_ptr)
   SMotion *pSVar2;
   float fVar3;
   int in_stack_00000008;
-  int in_stack_ffffffc4;
+  int force_immediate;
   
   if (((this_ptr->base_hero).field1_0xbe24 & 0x7fffffffU) != 0) {
     *(uint *)(in_stack_00000008 + 4) = 0;
@@ -50,11 +50,12 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d6b30(CGabriella *this_ptr)
       pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                          (&this_ptr_00->motion_controller);
       if (pSVar2->state_index != 0xb) {
+        force_immediate = 0;
         (this_ptr->base_hero).base_character.grabbed_by = (CDemonActor *)0x0;
         fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,100.0);
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
                   (&(this_ptr->base_hero).base_character.model.motion_controller,
-                   (fVar3 <= 50f) + 9,in_stack_ffffffc4);
+                   (fVar3 <= 50f) + 9,force_immediate);
         if (g_CGamePtr->hero_number != 2) {
           pCVar1 = (this_ptr->base_hero).base_character.base_actor.vtable;
           fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.25,0.4);

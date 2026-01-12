@@ -22,19 +22,18 @@ void shape_superopt_cpp_FUN_005c9340(void)
   byte bVar10;
   int in_stack_00000008;
   uint *in_stack_0000000c;
-  double local_c0;
-  double local_b8;
-  double local_b0;
-  double local_a8;
-  double local_a0;
-  double local_98;
-  double local_90;
-  double local_88;
-  double local_80;
-  double local_78;
-  double local_70;
-  double local_68;
-  uint local_18;
+  double dStack_bc;
+  double dStack_b4;
+  double dStack_ac;
+  double dStack_a4;
+  double dStack_9c;
+  double dStack_94;
+  double dStack_8c;
+  double dStack_84;
+  double dStack_7c;
+  double dStack_74;
+  double dStack_6c;
+  double dStack_64;
   uint uStack_14;
   
   bVar10 = 0;
@@ -55,20 +54,20 @@ void shape_superopt_cpp_FUN_005c9340(void)
       uVar7 = uVar7 + 1;
     } while (uVar7 < *in_stack_0000000c);
   }
-  local_18 = 0;
+  uStack_14 = 0;
   while( true ) {
-    if ((*in_stack_0000000c - 1 <= local_18) || (*in_stack_0000000c < 3)) break;
-    pvVar6 = (void *)(local_18 * 0x60 + in_stack_00000008);
-    iVar4 = local_18 + 1;
+    if ((*in_stack_0000000c - 1 <= uStack_14) || (*in_stack_0000000c < 3)) break;
+    pvVar6 = (void *)(uStack_14 * 0x60 + in_stack_00000008);
+    iVar4 = uStack_14 + 1;
     puVar8 = (uint *)((int)pvVar6 + 0x10);
-    pdVar9 = &local_c0;
+    pdVar9 = &dStack_bc;
     for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
       *(uint *)pdVar9 = *puVar8;
       puVar8 = puVar8 + (uint)bVar10 * -2 + 1;
       pdVar9 = (double *)((int)pdVar9 + ((uint)bVar10 * -2 + 1) * 4);
     }
     puVar8 = (uint *)((int)pvVar6 + 0x28);
-    pdVar9 = &local_78;
+    pdVar9 = &dStack_74;
     for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
       *(uint *)pdVar9 = *puVar8;
       puVar8 = puVar8 + (uint)bVar10 * -2 + 1;
@@ -76,35 +75,35 @@ void shape_superopt_cpp_FUN_005c9340(void)
     }
     iVar4 = iVar4 * 0x60 + in_stack_00000008;
     puVar8 = (uint *)(iVar4 + 0x10);
-    pdVar9 = &local_a8;
+    pdVar9 = &dStack_a4;
     for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
       *(uint *)pdVar9 = *puVar8;
       puVar8 = puVar8 + (uint)bVar10 * -2 + 1;
       pdVar9 = (double *)((int)pdVar9 + (uint)bVar10 * -8 + 4);
     }
-    dVar1 = local_a8 - local_78;
-    dVar3 = local_a0 - local_70;
-    dVar2 = local_98 - local_68;
+    dVar1 = dStack_a4 - dStack_74;
+    dVar3 = dStack_9c - dStack_6c;
+    dVar2 = dStack_94 - dStack_64;
     puVar8 = (uint *)(iVar4 + 0x28);
-    pdVar9 = &local_90;
-    for (iVar5 = 6; uVar7 = local_18, iVar5 != 0; iVar5 = iVar5 + -1) {
+    pdVar9 = &dStack_8c;
+    for (iVar5 = 6; uVar7 = uStack_14, iVar5 != 0; iVar5 = iVar5 + -1) {
       *(uint *)pdVar9 = *puVar8;
       puVar8 = puVar8 + (uint)bVar10 * -2 + 1;
       pdVar9 = (double *)((int)pdVar9 + (uint)bVar10 * -8 + 4);
     }
     if ((1e-10 < SQRT(dVar2 * dVar2 + dVar3 * dVar3 + dVar1 * dVar1)) ||
        (1e-10 <
-        SQRT((local_80 - local_b0) * (local_80 - local_b0) +
-             (local_88 - local_b8) * (local_88 - local_b8) +
-             (local_90 - local_c0) * (local_90 - local_c0)))) {
-      local_18 = local_18 + 1;
+        SQRT((dStack_7c - dStack_ac) * (dStack_7c - dStack_ac) +
+             (dStack_84 - dStack_b4) * (dStack_84 - dStack_b4) +
+             (dStack_8c - dStack_bc) * (dStack_8c - dStack_bc)))) {
+      uStack_14 = uStack_14 + 1;
     }
     else {
       crt_string_c_memmove_FUN_005fe5e0
-                (pvVar6,(void *)((local_18 + 2) * 0x60 + in_stack_00000008),
-                 ((*in_stack_0000000c - local_18) + -2) * 0x60);
-      uStack_14 = uVar7;
+                (pvVar6,(void *)((uStack_14 + 2) * 0x60 + in_stack_00000008),
+                 ((*in_stack_0000000c - uStack_14) + -2) * 0x60);
       *in_stack_0000000c = *in_stack_0000000c - 2;
+      uStack_14 = uVar7;
     }
   }
   if (2 < *in_stack_0000000c) {

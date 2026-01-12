@@ -9,9 +9,9 @@
 uint core_manpuz_cpp_FUN_0050a4f0(void)
 
 {
+  float volume;
   int iVar1;
   uint uVar2;
-  float unaff_EBP;
   uint uVar3;
   float *in_stack_00000004;
   float in_stack_00000008;
@@ -19,13 +19,15 @@ uint core_manpuz_cpp_FUN_0050a4f0(void)
   uint *in_stack_00000010;
   char *in_stack_00000014;
   float *in_stack_00000018;
+  float volume_00;
   
+  volume = in_stack_00000008 - *in_stack_00000004;
   uVar3 = 0;
-  if (in_stack_00000008 - *in_stack_00000004 < -in_stack_0000000c) {
+  if (volume < -in_stack_0000000c) {
     in_stack_0000000c = *in_stack_00000004 - in_stack_0000000c;
   }
   else {
-    if (in_stack_00000008 - *in_stack_00000004 <= in_stack_0000000c) {
+    if (volume <= in_stack_0000000c) {
       uVar3 = 1;
       *in_stack_00000004 = in_stack_00000008;
       goto LAB_0050a537;
@@ -34,7 +36,8 @@ uint core_manpuz_cpp_FUN_0050a4f0(void)
   }
   *in_stack_00000004 = in_stack_0000000c;
 LAB_0050a537:
-  if (*in_stack_00000004 * (float)0.0039215686274509803 <= 0.0) {
+  volume_00 = *in_stack_00000004 * (float)0.0039215686274509803;
+  if (volume_00 <= 0.0) {
     sound_sndmain_cpp_killSfx_FUN_005a9c40(*in_stack_00000010);
     return uVar3;
   }
@@ -43,11 +46,11 @@ LAB_0050a537:
     sound_sndmain_cpp_setSfxPosition_FUN_005a9820
               (*in_stack_00000010,(double)*in_stack_00000018,(double)in_stack_00000018[1],
                (double)in_stack_00000018[2]);
-    sound_sndmain_cpp_setSfxVolume_FUN_005a9ae0(*in_stack_00000010,unaff_EBP);
+    sound_sndmain_cpp_setSfxVolume_FUN_005a9ae0(*in_stack_00000010,volume_00);
     return uVar3;
   }
   sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
-  sound_sndmain_cpp_setNextSfxVolume_FUN_005a8a60(unaff_EBP);
+  sound_sndmain_cpp_setNextSfxVolume_FUN_005a8a60(volume);
   sound_sndmain_cpp_setNextSfxStaticPosition_FUN_005a88e0
             ((double)*in_stack_00000018,(double)in_stack_00000018[1],(double)in_stack_00000018[2]);
   uVar2 = sound_sndmain_cpp_startSfx_FUN_005a8e90(in_stack_00000014);

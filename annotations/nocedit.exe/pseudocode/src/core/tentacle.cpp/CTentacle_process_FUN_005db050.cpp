@@ -25,76 +25,81 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
   uint *puVar9;
   char *pcVar10;
   CMatrix3x4f *pCVar11;
-  CMatrix3x4f *pCVar12;
+  uint *puVar12;
   char *pcVar13;
   byte bVar14;
   float in_stack_00000008;
-  CMatrix3x4f *in_stack_fffffda0;
-  CMatrix3x4f CStack_250;
-  float afStack_220 [12];
-  CMatrix3x4f CStack_1f0;
-  float afStack_1c0 [12];
-  CMatrix3x4f CStack_190;
-  CMatrix3x4f CStack_160;
-  CMatrix3x4f CStack_130;
-  uint auStack_100 [12];
-  float afStack_d0 [12];
-  CVector3f CStack_a0;
-  byte auStack_94 [20];
+  CMatrix3x4f *in_stack_fffffda4;
+  CMatrix3x4f *in_stack_fffffda8;
+  CMatrix3x4f CStack_24c;
+  float afStack_21c [12];
+  CMatrix3x4f CStack_1ec;
+  float afStack_1bc [12];
+  CMatrix3x4f CStack_18c;
+  CMatrix3x4f CStack_15c;
+  uint uStack_12c;
+  CMatrix3x4f CStack_128;
+  uint auStack_f8 [11];
+  uint auStack_cc [12];
+  CVector3f CStack_9c;
+  byte auStack_90 [16];
   float fStack_80;
   float fStack_7c;
   float fStack_78;
   float fStack_74;
-  byte auStack_6c [12];
-  float fStack_60;
-  float fStack_5c;
-  CVector3f CStack_58;
-  float fStack_4c;
+  float fStack_70;
+  CVector3f CStack_6c;
+  CVector3f CStack_60;
+  CVector3f CStack_54;
   float fStack_48;
   float fStack_44;
+  float fStack_40;
   float fStack_34;
   float fStack_30;
-  char *local_28;
-  CVector3f *local_24;
+  float fStack_2c;
+  float local_28;
+  char *local_24;
   CVector3f *local_20;
-  CDeformableModelInstance *local_1c;
-  float fStack_18;
+  CVector3f *local_1c;
+  CDeformableModelInstance *pCStack_18;
   float fStack_14;
   
   bVar14 = 0;
   iVar3 = core_charactr_cpp_CCharacter_FUN_00429870((CCharacter *)this_ptr);
   if (iVar3 != 0) {
-    local_24 = (CVector3f *)&(this_ptr->base_enemy).base_character.base_actor.orient;
+    local_20 = (CVector3f *)&(this_ptr->base_enemy).base_character.base_actor.orient;
     fVar1 = (this_ptr->base_enemy).speed;
-    local_28 = this_ptr->field1_0xbeb4 + 0x48;
-    local_20 = &(this_ptr->base_enemy).base_character.base_actor.location.position;
-    local_1c = &(this_ptr->base_enemy).base_character.model;
+    local_24 = this_ptr->field1_0xbeb4 + 0x48;
+    local_1c = &(this_ptr->base_enemy).base_character.base_actor.location.position;
+    pCStack_18 = &(this_ptr->base_enemy).base_character.model;
     while (0.0 < in_stack_00000008 * fVar1) {
-      uVar6 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&local_1c->motion_controller);
+      uVar6 = core_motion_cpp_CMotionController_advance_FUN_0052d610(&pCStack_18->motion_controller)
+      ;
       if (99 < uVar6) {
         if (uVar6 < 0x65) {
           iVar3 = *(int *)((this_ptr->base_enemy).field6_0xbe38 + 4);
           if ((iVar3 != 0) && (iVar3 = (**(code **)(*(int *)(iVar3 + 0x154) + 0x108))(), iVar3 == 0)
              ) {
-            core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(local_1c);
+            core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
+                      (pCStack_18);
             core_tentacle_cpp_FUN_005dbb70();
-            pfVar8 = afStack_1c0;
-            pCVar11 = &CStack_1f0;
+            pfVar8 = afStack_1bc;
+            pCVar11 = &CStack_1ec;
             for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
               pCVar11->m[0].w = *pfVar8;
               pfVar8 = pfVar8 + (uint)bVar14 * -2 + 1;
               pCVar11 = (CMatrix3x4f *)((int)pCVar11 + ((uint)bVar14 * -2 + 1) * 4);
             }
             core_xform_cpp_getTranslation_FUN_005f6110
-                      ((CVector3f *)&CStack_1f0,(CMatrix3x4f *)auStack_94);
+                      ((CVector3f *)&CStack_1ec,(CMatrix3x4f *)auStack_90);
             core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                      ((CDemonActor *)this_ptr,&CStack_a0,input_local_point);
+                      ((CDemonActor *)this_ptr,&CStack_9c,input_local_point);
             iVar3 = *(int *)((this_ptr->base_enemy).field6_0xbe38 + 4);
-            fStack_4c = CStack_a0.x - *(float *)(iVar3 + 0x20);
-            fStack_48 = CStack_a0.y - *(float *)(iVar3 + 0x24);
-            fStack_44 = CStack_a0.z - *(float *)(iVar3 + 0x28);
-            if (((ABS(fStack_48) <= (float)6) &&
-                (fStack_4c * fStack_4c + fStack_44 * fStack_44 <= (float)16)) &&
+            fStack_48 = CStack_9c.x - *(float *)(iVar3 + 0x20);
+            fStack_44 = CStack_9c.y - *(float *)(iVar3 + 0x24);
+            fStack_40 = CStack_9c.z - *(float *)(iVar3 + 0x28);
+            if (((ABS(fStack_44) <= (float)6) &&
+                (fStack_48 * fStack_48 + fStack_40 * fStack_40 <= (float)16)) &&
                (iVar3 = (**(code **)(*(int *)(*(int *)((this_ptr->base_enemy).field6_0xbe38 + 4) +
                                              0x154) + 0x100))(), iVar3 != 0)) {
               iVar3 = *(int *)((this_ptr->base_enemy).field6_0xbe38 + 4);
@@ -103,28 +108,28 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
               this_ptr->field1_0xbeb4[0x16] = '\0';
               this_ptr->field1_0xbeb4[0x17] = '\0';
               core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
-                        (&CStack_160,(CVector3f *)(iVar3 + 0x20),(CVector3f *)(iVar3 + 0x30));
+                        (&CStack_15c,(CVector3f *)(iVar3 + 0x20),(CVector3f *)(iVar3 + 0x30));
               core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
-                        (&CStack_190,local_20,local_24);
-              core_xform_cpp_inverse_FUN_005f6210(&CStack_1f0,in_stack_fffffda0);
-              pCVar11 = &CStack_250;
-              pfVar8 = afStack_220;
-              pCVar12 = &CStack_250;
+                        (&CStack_18c,local_1c,local_20);
+              core_xform_cpp_inverse_FUN_005f6210(&CStack_1ec,in_stack_fffffda4);
+              pfVar8 = afStack_21c;
+              pCVar11 = &CStack_24c;
               for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-                pCVar12->m[0].w = *pfVar8;
+                pCVar11->m[0].w = *pfVar8;
                 pfVar8 = pfVar8 + (uint)bVar14 * -2 + 1;
-                pCVar12 = (CMatrix3x4f *)((int)pCVar12 + ((uint)bVar14 * -2 + 1) * 4);
+                pCVar11 = (CMatrix3x4f *)((int)pCVar11 + ((uint)bVar14 * -2 + 1) * 4);
               }
-              core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&CStack_160,&CStack_190,pCVar11);
-              pfVar8 = afStack_d0;
-              pCVar12 = &CStack_130;
+              core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&CStack_15c,&CStack_18c,&CStack_24c);
+              puVar9 = auStack_cc;
+              puVar12 = &uStack_12c;
               for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-                pCVar12->m[0].w = *pfVar8;
-                pfVar8 = pfVar8 + (uint)bVar14 * -2 + 1;
-                pCVar12 = (CMatrix3x4f *)((int)pCVar12 + ((uint)bVar14 * -2 + 1) * 4);
+                *puVar12 = *puVar9;
+                puVar9 = puVar9 + (uint)bVar14 * -2 + 1;
+                puVar12 = puVar12 + (uint)bVar14 * -2 + 1;
               }
-              core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&CStack_130,pCVar11,in_stack_fffffda0);
-              puVar9 = auStack_100;
+              core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
+                        (&CStack_128,in_stack_fffffda4,in_stack_fffffda8);
+              puVar9 = auStack_f8;
               pcVar10 = this_ptr->field1_0xbeb4 + 0x18;
               for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
                 *(uint *)pcVar10 = *puVar9;
@@ -138,16 +143,16 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
                 pcVar10 = pcVar10 + (uint)bVar14 * -8 + 4;
                 pcVar13 = pcVar13 + (uint)bVar14 * -8 + 4;
               }
-              core_xform_cpp_clearTranslation_FUN_005f5370((CMatrix3x4f *)local_28);
+              core_xform_cpp_clearTranslation_FUN_005f5370((CMatrix3x4f *)local_24);
               iVar3 = 0;
               do {
-                fStack_7c = core_actor_cpp_getRandomFloat_FUN_0040cc10(-7.0,7.0);
-                fStack_18 = fStack_7c;
-                fStack_74 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-7.0,7.0);
-                fStack_18 = fStack_74;
-                fStack_78 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-1.0,15.0);
+                fStack_78 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-7.0,7.0);
+                fStack_14 = fStack_78;
+                fStack_70 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-7.0,7.0);
+                fStack_14 = fStack_70;
+                fStack_74 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-1.0,15.0);
                 iVar3 = iVar3 + 1;
-                fStack_18 = fStack_78;
+                fStack_14 = fStack_74;
                 core_gore_cpp_FUN_004edaa0();
               } while (iVar3 < 0x46);
             }
@@ -162,7 +167,7 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
       }
     }
     pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                       (&local_1c->motion_controller);
+                       (&pCStack_18->motion_controller);
     uVar6 = pSVar4->state_index;
     if (uVar6 < 2) {
       if (uVar6 == 0) {
@@ -215,27 +220,23 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
                   ((CDemonActor *)this_ptr);
         iVar3 = *(int *)((this_ptr->base_enemy).field6_0xbe38 + 4);
         if (iVar3 != 0) {
-          auStack_94._16_4_ =
-               *(float *)(iVar3 + 0x20) - (float)(local_1c->motion_controller).motion_list_ptr;
-          fStack_80 = *(float *)(iVar3 + 0x24) -
-                      (float)(local_1c->motion_controller).current_motion_index;
-          fStack_7c = *(float *)(iVar3 + 0x28) - (local_1c->motion_controller).current_frame_number;
+          auStack_90._12_4_ = *(float *)(iVar3 + 0x20) - ((CVector3f *)&local_1c->x)->x;
+          fStack_80 = *(float *)(iVar3 + 0x24) - local_1c->y;
+          fStack_7c = *(float *)(iVar3 + 0x28) - local_1c->z;
           pCVar7 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
-                             ((CVector3f *)auStack_6c,(CVector3f *)(auStack_94 + 0x10));
-          CStack_250.m[0].w =
-               core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                         (pCVar7->y - (this_ptr->base_enemy).base_character.base_actor.orient.bank);
-          local_28 = (char *)(in_stack_00000008 * (float)0.78539816337500001);
-          *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0xc) = CStack_250.m[0].w;
-          fStack_34 = -(float)local_28;
+                             (&CStack_6c,(CVector3f *)(auStack_90 + 0xc));
+          fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
+                                (pCVar7->y -
+                                 (this_ptr->base_enemy).base_character.base_actor.orient.bank);
+          local_28 = in_stack_00000008 * (float)0.78539816337500001;
+          *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0xc) = fStack_14;
+          fStack_34 = -local_28;
           if (*(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0xc) < fStack_34) {
             *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0xc) = fStack_34;
           }
-          if ((float)local_28 <
-              *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0xc)) {
-            *(char **)((this_ptr->base_enemy).base_character.field2_0x240c + 0xc) = local_28;
+          if (local_28 < *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0xc)) {
+            *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0xc) = local_28;
           }
-          fStack_14 = CStack_250.m[0].w;
           if ((float)5 < *(float *)(this_ptr->field1_0xbeb4 + 0xc)) {
             iVar3 = *(int *)((this_ptr->base_enemy).field6_0xbe38 + 4);
             fVar1 = (this_ptr->base_enemy).base_character.base_actor.location.position.x -
@@ -243,7 +244,7 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
             fVar2 = (this_ptr->base_enemy).base_character.base_actor.location.position.z -
                     *(float *)(iVar3 + 0x28);
             fVar1 = SQRT(fVar2 * fVar2 + fVar1 * fVar1);
-            if (((CStack_250.m[0].w < (float)0.17453292519444399) &&
+            if (((fStack_14 < (float)0.17453292519444399) &&
                 (ABS((this_ptr->base_enemy).base_character.base_actor.location.position.y -
                      *(float *)(iVar3 + 0x24)) < (float)4)) &&
                ((float)7 < fVar1 && fVar1 < (float)12)) {
@@ -259,7 +260,7 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
       }
       else {
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  (&local_1c->motion_controller,0,1);
+                  (&pCStack_18->motion_controller,0,1);
         this_ptr->field1_0xbeb4[8] = '\0';
         this_ptr->field1_0xbeb4[9] = '\0';
         this_ptr->field1_0xbeb4[10] = -0x38;
@@ -272,22 +273,22 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
             (iVar3 = (**(code **)(*(int *)(*(int *)((this_ptr->base_enemy).field6_0xbe38 + 4) +
                                           0x154) + 0x108))(), iVar3 == 0)) {
       iVar3 = *(int *)((this_ptr->base_enemy).field6_0xbe38 + 4);
-      auStack_6c._8_4_ = *(float *)(iVar3 + 0x20) - ((CVector3f *)&local_20->x)->x;
-      fStack_60 = *(float *)(iVar3 + 0x24) - local_20->y;
-      fStack_5c = *(float *)(iVar3 + 0x28) - local_20->z;
+      CStack_60.x = *(float *)(iVar3 + 0x20) - ((CVector3f *)&local_1c->x)->x;
+      CStack_60.y = *(float *)(iVar3 + 0x24) - local_1c->y;
+      CStack_60.z = *(float *)(iVar3 + 0x28) - local_1c->z;
       pCVar7 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
-                         (&CStack_58,(CVector3f *)(auStack_6c + 8));
-      fStack_18 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
+                         (&CStack_54,&CStack_60);
+      fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                             (pCVar7->y -
                              (this_ptr->base_enemy).base_character.base_actor.orient.bank);
-      fStack_30 = in_stack_00000008 * (float)1.04719755116667;
-      *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0xc) = fStack_18;
-      fStack_34 = -fStack_30;
-      if (fStack_18 < fStack_34) {
-        *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0xc) = fStack_34;
-      }
-      if (fStack_30 < *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0xc)) {
+      fStack_2c = in_stack_00000008 * (float)1.04719755116667;
+      *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0xc) = fStack_14;
+      fStack_30 = -fStack_2c;
+      if (fStack_14 < fStack_30) {
         *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0xc) = fStack_30;
+      }
+      if (fStack_2c < *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0xc)) {
+        *(float *)((this_ptr->base_enemy).base_character.field2_0x240c + 0xc) = fStack_2c;
       }
     }
     fVar1 = in_stack_00000008 / _DAT_00664468 + *(float *)(this_ptr->field1_0xbeb4 + 0x14);

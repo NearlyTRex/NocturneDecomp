@@ -17,7 +17,7 @@ core_xform_cpp_eulerToQuaternionIndirect_FUN_005f7b70
   uint *puVar2;
   byte bVar3;
   float afStackY_1804 [1512];
-  CMatrix3x3f *in_stack_ffffffac;
+  CMatrix3x3f *in_stack_ffffffa8;
   float local_28;
   CVector3f local_18;
   
@@ -28,7 +28,7 @@ core_xform_cpp_eulerToQuaternionIndirect_FUN_005f7b70
   core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
             ((CMatrix3x4f *)&stack0xffffffa8,&local_18,(CVector3f *)quat_out);
   core_xform_cpp_matrixToQuaternion_FUN_005f7420
-            ((CQuaternion4f *)&stack0xffffffa8,in_stack_ffffffac);
+            ((CQuaternion4f *)&stack0xffffffa8,in_stack_ffffffa8);
   puVar1 = (uint *)((int)unaff_ESI + (uint)bVar3 * -8 + 4);
   unaff_ESI->w = local_28;
   puVar2 = puVar1 + (uint)bVar3 * -2 + 1;

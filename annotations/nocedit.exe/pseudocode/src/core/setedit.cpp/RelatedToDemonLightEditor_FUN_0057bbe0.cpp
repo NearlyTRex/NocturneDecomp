@@ -6,159 +6,167 @@
 
 #include "nocturne.h"
 
-void core_setedit_cpp_RelatedToDemonLightEditor_FUN_0057bbe0
-               (uint param_1,uint param_2,int unaff_EBX,uint param_4,
-               CDemonSet *param_5,int param_6,uint param_7,int param_8,uint param_9,
-               double param_10,int param_11,char *param_12,char *param_13,int param_14,uint param_15
-               ,uint param_16,int param_17,uint param_18,int param_19,int param_20,
-               char *param_21,int param_22,uint param_23,int param_24,int param_25,
-               int param_26)
+void core_setedit_cpp_RelatedToDemonLightEditor_FUN_0057bbe0(void)
 
 {
   char cVar1;
+  int iVar2;
   int extraout_EAX;
   int extraout_EAX_00;
-  char *pcVar2;
+  char (*pacVar3) [40];
+  char (*pacVar4) [40];
+  C3DSLight *pCVar5;
   BADSPACEBASE *in_ESP;
-  int iVar3;
-  char *pcVar4;
-  int unaff_EDI;
-  int iVar5;
-  char *pcVar6;
-  double dVar7;
-  char *pcVar8;
-  ulonglong uVar9;
-  float max_value;
-  float in_stack_fffff7c8;
-  CPickList *in_stack_fffff7cc;
-  char **in_stack_fffff7d0;
-  CStrList_vtable *in_stack_fffff7d4;
-  CStrList_vtable *in_stack_fffff7d8;
-  uint in_stack_fffff7dc;
-  char **in_stack_fffff7e0;
-  CStrList_vtable *in_stack_fffff7e4;
-  byte auStack_490 [8];
-  CPickList CStack_488;
-  char (*local_4c) [40];
-  float *local_48;
+  int unaff_EBP;
+  int iVar6;
+  char (*pacVar7) [40];
+  int iVar8;
+  char (*pacVar9) [40];
+  double dVar10;
+  CDemonSet *in_stack_00000004;
+  int in_stack_00000008;
+  float *result_ptr;
+  bool enable_range_check;
+  char *pcVar11;
+  float fVar12;
+  ulonglong uVar13;
+  ulonglong uVar14;
+  char **buffer;
+  ulonglong uVar15;
+  CPickList CStack_4f8;
+  char acStack_150 [4];
+  char acStack_14c [4];
+  char acStack_148 [4];
+  char acStack_144 [4];
+  char acStack_140 [4];
+  char acStack_13c [4];
+  char acStack_138 [4];
+  char *pcStack_134;
+  char acStack_130 [4];
+  char acStack_12c [216];
+  double local_54;
+  char (*local_48) [40];
   float *local_44;
   float *local_40;
   float *local_3c;
-  char *local_38;
-  char (*local_34) [40];
-  int local_30;
-  float *local_2c;
-  char (*local_28) [40];
-  C3DSLight *local_18;
+  float *local_38;
+  char *local_34;
+  char (*local_30) [40];
+  int local_2c;
+  float *local_28;
+  char (*local_24) [40];
+  int local_20;
+  char (*local_1c) [40];
+  int local_18;
+  C3DSLight *pCStack_14;
   
-  local_18 = param_5->lights + param_6;
-  local_4c = local_18->filter_names;
-  local_2c = local_18->filter_durations;
-  local_44 = &local_18->on_time;
-  local_3c = &local_18->cycle_time;
-  local_48 = &local_18->aspect;
-  local_40 = &local_18->intensity;
-  local_38 = local_18->name;
-  local_34 = local_4c;
-  local_28 = local_4c;
+  pCStack_14 = in_stack_00000004->lights + in_stack_00000008;
+  local_48 = pCStack_14->filter_names;
+  local_28 = pCStack_14->filter_durations;
+  local_40 = &pCStack_14->on_time;
+  local_38 = &pCStack_14->cycle_time;
+  local_44 = &pCStack_14->aspect;
+  local_3c = &pCStack_14->intensity;
+  local_34 = pCStack_14->name;
+  local_30 = local_48;
+  local_24 = local_48;
   do {
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
+    crt_stdio_c_sprintf_FUN_005fdbd0(acStack_150,"Current light : %s",local_34);
+    engine_2d_c_drawText_FUN_00401fd0(acStack_150,0,0);
     crt_stdio_c_sprintf_FUN_005fdbd0
-              (CStack_488.cancel_button.button_text + 0x5c,"Current light : %s",local_34);
-    engine_2d_c_drawText_FUN_00401fd0(CStack_488.cancel_button.button_text + 0x60,0,0);
+              (acStack_150,"A.  On time : %f",SUB84 /* extract 2-byte value */((double)pCStack_14->on_time,0),
+               (int)((ulonglong)(double)pCStack_14->on_time >> 0x20));
+    engine_2d_c_drawText_FUN_00401fd0(acStack_150,0,0x16);
     crt_stdio_c_sprintf_FUN_005fdbd0
-              (CStack_488.cancel_button.button_text + 100,"A.  On time : %f",
-               (double)*(float *)(unaff_EDI + 0x11e0));
-    engine_2d_c_drawText_FUN_00401fd0(CStack_488.cancel_button.button_text + 0x68,0,0x16);
-    crt_stdio_c_sprintf_FUN_005fdbd0
-              (CStack_488.cancel_button.button_text + 0x6c,"B.  Total time : %f",
-               (double)*(float *)(unaff_EBX + 0x11e4));
-    engine_2d_c_drawText_FUN_00401fd0(CStack_488.cancel_button.button_text + 0x70,0,0x21);
+              (acStack_150,"B.  Total time : %f",SUB84 /* extract 2-byte value */((double)pCStack_14->cycle_time,0),
+               (int)((ulonglong)(double)pCStack_14->cycle_time >> 0x20));
+    engine_2d_c_drawText_FUN_00401fd0(acStack_150,0,0x21);
     engine_2d_c_drawText_FUN_00401fd0("C.  Add filter",0,0x2c);
     engine_2d_c_drawText_FUN_00401fd0("D.  Delete filter",0,0x37);
     engine_2d_c_drawText_FUN_00401fd0("E.  Edit filter",0,0x42);
-    if (*(int *)(param_8 + 0x11f0) == 0) {
-      pcVar8 = "F.  Blend filter : No";
+    if (pCStack_14->blend_filter == 0) {
+      pcVar11 = "F.  Blend filter : No";
     }
     else {
-      pcVar8 = "F.  Blend filter : Yes";
+      pcVar11 = "F.  Blend filter : Yes";
     }
-    crt_stdio_c_sprintf_FUN_005fdbd0(CStack_488.cancel_button.button_text + 0x80,pcVar8);
-    engine_2d_c_drawText_FUN_00401fd0(CStack_488.cancel_button.button_text + 0x84,0,0x58);
-    if (*(int *)(param_10._0_4_ + 0x17f4) == 0) {
-      pcVar8 = "G. Move filter : No";
+    crt_stdio_c_sprintf_FUN_005fdbd0(acStack_150,pcVar11);
+    engine_2d_c_drawText_FUN_00401fd0(acStack_150,0,0x58);
+    if (*(int *)(unaff_EBP + 0x17f4) == 0) {
+      pcVar11 = "G. Move filter : No";
     }
     else {
-      pcVar8 = "G. Move filter : Yes";
+      pcVar11 = "G. Move filter : Yes";
     }
-    crt_stdio_c_sprintf_FUN_005fdbd0(CStack_488.cancel_button.button_text + 0x88,pcVar8);
-    engine_2d_c_drawText_FUN_00401fd0
-              (CStack_488.cancel_button.button_text + 0x8c,g_WindowWidth / 3,0x16);
+    crt_stdio_c_sprintf_FUN_005fdbd0(acStack_14c,pcVar11);
+    engine_2d_c_drawText_FUN_00401fd0(acStack_150,g_WindowWidth / 3,0x16);
     crt_stdio_c_sprintf_FUN_005fdbd0
-              (CStack_488.cancel_button.button_text + 0x90,"H. Velocity X : %f",
-               (double)*(int *)(param_11 + 0x17f8) * 0.00390625);
-    engine_2d_c_drawText_FUN_00401fd0
-              (CStack_488.cancel_button.button_text + 0x94,g_WindowWidth / 3,0x21);
-    crt_stdio_c_sprintf_FUN_005fdbd0
-              (CStack_488.cancel_button.button_text + 0x98,"I. Velocity Y : %f",
-               (double)*(int *)(param_13 + 0x17fc) * 0.00390625);
-    engine_2d_c_drawText_FUN_00401fd0
-              (CStack_488.cancel_button.button_text + 0x9c,g_WindowWidth / 3,0x2c);
-    crt_stdio_c_sprintf_FUN_005fdbd0
-              (CStack_488.cancel_button.button_text + 0xa0,"J. Aspect (Y/X) : %f",
-               (double)*(float *)(param_15 + 0x120));
-    engine_2d_c_drawText_FUN_00401fd0
-              (CStack_488.cancel_button.button_text + 0xa4,g_WindowWidth / 3,0x37);
-    crt_stdio_c_sprintf_FUN_005fdbd0
-              (CStack_488.cancel_button.button_text + 0xa8,"K. Intensity : %f",
-               (double)*(float *)(param_17 + 0x124));
-    engine_2d_c_drawText_FUN_00401fd0
-              (CStack_488.cancel_button.button_text + 0xac,g_WindowWidth / 3,0x37);
-    crt_stdio_c_sprintf_FUN_005fdbd0
-              (CStack_488.cancel_button.button_text + 0xb0,"Filter count = %d",
-               *(uint *)(param_19 + 0x11ec));
-    engine_2d_c_drawText_FUN_00401fd0(CStack_488.cancel_button.button_text + 0xb4,0,99);
-    iVar5 = 0;
-    if (0 < *(int *)(param_21 + 0x11ec)) {
-      iVar3 = 0x41;
-      param_19 = param_14;
-      pcVar8 = param_21;
+              (acStack_14c,"H. Velocity X : %f",
+               SUB84 /* extract 2-byte value */((double)*(int *)(unaff_EBP + 0x17f8) * 0.00390625,0));
+    engine_2d_c_drawText_FUN_00401fd0(acStack_148,g_WindowWidth / 3,0x21);
+    crt_stdio_c_sprintf_FUN_005fdbd0(acStack_144,"I. Velocity Y : %f");
+    engine_2d_c_drawText_FUN_00401fd0(acStack_140,g_WindowWidth / 3,0x2c);
+    crt_stdio_c_sprintf_FUN_005fdbd0(acStack_13c,"J. Aspect (Y/X) : %f");
+    engine_2d_c_drawText_FUN_00401fd0(acStack_138,g_WindowWidth / 3,0x37);
+    buffer = &pcStack_134;
+    uVar13._0_4_ = 0;
+    uVar13._4_4_ = 0x57bef5;
+    crt_stdio_c_sprintf_FUN_005fdbd0((char *)buffer,"K. Intensity : %f");
+    uVar15._4_4_ = (CStrList_vtable *)0x57bf19;
+    uVar15._0_4_ = buffer;
+    engine_2d_c_drawText_FUN_00401fd0(acStack_130,g_WindowWidth / 3,0x37);
+    crt_stdio_c_sprintf_FUN_005fdbd0(acStack_12c,"Filter count = %d");
+    engine_2d_c_drawText_FUN_00401fd0(acStack_150,0,99);
+    iVar2 = SUB84 /* extract 2-byte value */(uVar13,4);
+    iVar8 = 0;
+    if (0 < pCStack_14->filter_count) {
+      iVar6 = 0x41;
+      local_1c = local_30;
+      local_20 = 0x6e;
+      pCVar5 = pCStack_14;
       do {
-        pcVar2 = CStack_488.cancel_button.button_text + 0xb8;
         crt_stdio_c_sprintf_FUN_005fdbd0
-                  (pcVar2,"%c.  %s for %1.3f seconds",pcVar2,"%c.  %s for %1.3f seconds",
-                   iVar3,param_19,(double)*(float *)(pcVar8 + 0x16f4));
-        pcVar8 = pcVar8 + 4;
-        iVar5 = iVar5 + 1;
-        engine_2d_c_drawText_FUN_00401fd0(CStack_488.cancel_button.button_text + 0xb4,0,param_17);
-        iVar3 = iVar3 + 1;
-        param_19 = param_19 + 0x28;
-      } while (iVar5 < *(int *)(param_21 + 0x11ec));
+                  (acStack_150,"%c.  %s for %1.3f seconds",iVar6,local_1c,
+                   SUB84 /* extract 2-byte value */((double)pCVar5->filter_durations[0],0),
+                   (int)((ulonglong)(double)pCVar5->filter_durations[0] >> 0x20));
+        pCVar5 = (C3DSLight *)pCVar5->name;
+        iVar8 = iVar8 + 1;
+        engine_2d_c_drawText_FUN_00401fd0(acStack_150,0,local_20);
+        iVar2 = SUB84 /* extract 2-byte value */(uVar13,4);
+        iVar6 = iVar6 + 1;
+        local_20 = local_20 + 0xb;
+        local_1c = local_1c + 1;
+      } while (iVar8 < pCStack_14->filter_count);
     }
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     engine_2d_c_clearInputAndWait_FUN_00403260();
-    iVar5 = engine_keys_cpp_CKeys_getUppercasedInputKey_FUN_00502470(g_CKeysPtr);
-    switch(iVar5) {
+    uVar14._4_4_ = iVar2;
+    uVar14._0_4_ = (int)g_CKeysPtr;
+    fVar12 = 8.058612e-39;
+    local_2c = engine_keys_cpp_CKeys_getUppercasedInputKey_FUN_00502470(g_CKeysPtr);
+    switch(local_2c) {
     case 0x41:
-      pcVar8 = "Enter on time";
-      pcVar2 = param_13;
+      pcVar11 = "Enter on time";
+      result_ptr = local_40;
       goto LAB_0057c050;
     case 0x42:
-      max_value = 0.0;
-      uVar9 = (ulonglong)param_15;
-      pcVar8 = "Enter total time";
+      fVar12 = 0.0;
+      enable_range_check = false;
+      pcVar11 = "Enter total time";
+      result_ptr = local_38;
       goto LAB_0057c056;
     case 0x43:
-      if (*(int *)(param_24 + 0x11ec) < 0x20) {
-        iVar5 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
+      if (pCStack_14->filter_count < 0x20) {
+        iVar8 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
                           (g_CEditorToolsPtr,"Enter new filter name",
-                           (char *)(*(int *)(param_24 + 0x11ec) * 0x28 + param_20),0x28,0);
-        if ((iVar5 != 0) &&
-           (iVar5 = shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
+                           local_24[pCStack_14->filter_count],0x28,0);
+        if ((iVar8 != 0) &&
+           (iVar8 = shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
                               (g_CEditorToolsPtr,"Enter new filter time",
-                               (float *)(*(int *)(param_25 + 0x11ec) * 4 + param_20),false,0.0,0.0,
-                               false), iVar5 != 0)) {
-          *(int *)(param_26 + 0x11ec) = *(int *)(param_26 + 0x11ec) + 1;
+                               local_28 + pCStack_14->filter_count,false,0.0,0.0,false), iVar8 != 0)
+           ) {
+          pCStack_14->filter_count = pCStack_14->filter_count + 1;
         }
       }
       else {
@@ -167,136 +175,133 @@ void core_setedit_cpp_RelatedToDemonLightEditor_FUN_0057bbe0
       }
       break;
     case 0x44:
-      if (*(int *)(param_24 + 0x11ec) < 1) {
+      if (pCStack_14->filter_count < 1) {
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                   (g_CEditorToolsPtr,"No filters to delete!");
       }
       else {
-        shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)auStack_490);
-        iVar5 = 0;
-        pcVar8 = param_12;
-        if (0 < *(int *)(param_25 + 0x11ec)) {
+        shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&CStack_4f8);
+        iVar8 = 0;
+        pacVar3 = local_48;
+        if (0 < pCStack_14->filter_count) {
           do {
-            shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)(auStack_490 + 4),pcVar8);
-            iVar5 = iVar5 + 1;
-            pcVar8 = pcVar8 + 0x28;
-          } while (iVar5 < *(int *)(param_25 + 0x11ec));
+            shape_edittool_cpp_CStrList_add_FUN_004a2b80(&CStack_4f8.base_strlist,*pacVar3);
+            iVar8 = iVar8 + 1;
+            pacVar3 = pacVar3 + 1;
+          } while (iVar8 < pCStack_14->filter_count);
         }
-        iVar5 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                          ((CPickList *)(auStack_490 + 4),"Select filter to delete",-1,0);
-        if (-1 < iVar5) {
-          pcVar2 = (char *)(param_22 + iVar5 * 0x28);
-          pcVar8 = (char *)(iVar5 * 0x28 + 0x28 + param_22);
-          iVar3 = iVar5 * 4 + param_26;
-          param_25 = iVar5;
-          while (iVar5 = *(int *)(param_26 + 0x11ec) + -1, param_25 < iVar5) {
-            pcVar4 = pcVar8;
-            pcVar6 = pcVar2;
+        iVar8 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
+                          (&CStack_4f8,"Select filter to delete",-1,0);
+        if (-1 < iVar8) {
+          pacVar4 = local_24 + iVar8;
+          pacVar3 = local_24 + iVar8 + 1;
+          pcVar11 = pCStack_14->name + iVar8 * 4 + -4;
+          local_18 = iVar8;
+          while (iVar8 = pCStack_14->filter_count + -1, local_18 < iVar8) {
+            pacVar7 = pacVar3;
+            pacVar9 = pacVar4;
             do {
-              cVar1 = *pcVar4;
-              *pcVar6 = cVar1;
+              cVar1 = (*pacVar7)[0];
+              (*pacVar9)[0] = cVar1;
               if (cVar1 == '\0') break;
-              cVar1 = pcVar4[1];
-              pcVar4 = pcVar4 + 2;
-              pcVar6[1] = cVar1;
-              pcVar6 = pcVar6 + 2;
+              cVar1 = (*pacVar7)[1];
+              pacVar7 = (char (*) [40])(*pacVar7 + 2);
+              (*pacVar9)[1] = cVar1;
+              pacVar9 = (char (*) [40])(*pacVar9 + 2);
             } while (cVar1 != '\0');
-            pcVar2 = pcVar2 + 0x28;
-            pcVar8 = pcVar8 + 0x28;
-            param_25 = param_25 + 1;
-            *(uint *)(iVar3 + 0x16f4) = *(uint *)(iVar3 + 0x16f8);
-            iVar3 = iVar3 + 4;
+            pacVar4 = pacVar4 + 1;
+            pacVar3 = pacVar3 + 1;
+            local_18 = local_18 + 1;
+            *(float *)(pcVar11 + 0x16f4) = *(float *)(pcVar11 + 0x16f8);
+            pcVar11 = pcVar11 + 4;
           }
-          *(int *)(param_26 + 0x11ec) = iVar5;
+          pCStack_14->filter_count = iVar8;
         }
-        in_stack_fffff7c8 = 0.0;
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                  (&CStack_488,0,(uint)in_stack_fffff7cc,(uint)in_stack_fffff7d0,
-                   (uint)in_stack_fffff7d4,(uint)in_stack_fffff7d8,in_stack_fffff7dc);
+                  (&CStack_4f8,0,(uint)fVar12,(uint)uVar14,SUB84 /* extract 2-byte value */(uVar14,4),(uint)(char **)uVar15,
+                   (uint)SUB84 /* extract 2-byte value */(uVar15,4));
       }
       break;
     case 0x45:
-      if (*(int *)(param_24 + 0x11ec) < 1) {
+      if (pCStack_14->filter_count < 1) {
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                   (g_CEditorToolsPtr,"No filters to edit!");
       }
       else {
-        shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff7c8);
-        iVar5 = 0;
-        pcVar8 = param_21;
-        if (0 < *(int *)(param_25 + 0x11ec)) {
+        shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff760);
+        iVar8 = 0;
+        pacVar3 = local_24;
+        if (0 < pCStack_14->filter_count) {
           do {
-            shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff7cc,pcVar8);
-            iVar5 = iVar5 + 1;
-            pcVar8 = pcVar8 + 0x28;
-          } while (iVar5 < *(int *)(param_25 + 0x11ec));
+            shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff760,*pacVar3);
+            iVar8 = iVar8 + 1;
+            pacVar3 = pacVar3 + 1;
+          } while (iVar8 < pCStack_14->filter_count);
         }
-        iVar5 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                          ((CPickList *)&stack0xfffff7cc,"Select filter to edit",-1,0);
-        if ((-1 < iVar5) &&
-           (iVar3 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
-                              (g_CEditorToolsPtr,"Edit filter name",
-                               (char *)(iVar5 * 0x28 + param_22),0x28,0), iVar3 != 0)) {
+        iVar8 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
+                          ((CPickList *)&stack0xfffff760,"Select filter to edit",-1,0);
+        if ((-1 < iVar8) &&
+           (iVar2 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
+                              (g_CEditorToolsPtr,"Edit filter name",local_24[iVar8],0x28,0)
+           , iVar2 != 0)) {
           shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
-                    (g_CEditorToolsPtr,"Edit filter time",(float *)(iVar5 * 4 + param_22),
-                     false,0.0,0.0,true);
+                    (g_CEditorToolsPtr,"Edit filter time",local_28 + iVar8,false,0.0,0.0,
+                     true);
         }
-        in_stack_fffff7d0 = (char **)0x0;
-        in_stack_fffff7cc = (CPickList *)&stack0xfffff7d8;
-        in_stack_fffff7c8 = 8.059826e-39;
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                  (in_stack_fffff7cc,0,(uint)in_stack_fffff7d4,(uint)in_stack_fffff7d8,
-                   in_stack_fffff7dc,(uint)in_stack_fffff7e0,(uint)in_stack_fffff7e4);
+                  ((CPickList *)&stack0xfffff760,0,(uint)fVar12,(uint)uVar14,SUB84 /* extract 2-byte value */(uVar14,4),
+                   (uint)(char **)uVar15,(uint)SUB84 /* extract 2-byte value */(uVar15,4));
       }
       break;
     case 0x46:
-      *(uint *)(param_24 + 0x11f0) = (uint)(*(int *)(param_24 + 0x11f0) == 0);
+      pCStack_14->blend_filter = (uint)(pCStack_14->blend_filter == 0);
       break;
     case 0x47:
-      *(uint *)(param_24 + 0x17f4) = (uint)(*(int *)(param_24 + 0x17f4) == 0);
+      pCStack_14->move_filter = (uint)(pCStack_14->move_filter == 0);
       break;
     case 0x48:
-      iVar5 = shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
+      fVar12 = (float)(pCStack_14->filter_vel).x * (float)0.00390625;
+      iVar8 = shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
                         (g_CEditorToolsPtr,"Enter light X velocity",
-                         (float *)&stack0xfffff7c4,false,0.0,0.0,true);
-      if (iVar5 != 0) {
-        param_10 = crt_math_c_floor_FUN_005feb90
-                             ((double)(in_stack_fffff7c8 * (float)256 +
-                                      (float)0.5));
-        dVar7 = crt_math_c_round_FUN_005fe6b0(param_10);
-        *(int *)(extraout_EAX + 0x17f8) = (int)ROUND(dVar7);
+                         (float *)&stack0xfffff75c,false,0.0,0.0,true);
+      if (iVar8 != 0) {
+        local_54 = crt_math_c_floor_FUN_005feb90
+                             ((double)(fVar12 * (float)256 + (float)0.5));
+        dVar10 = crt_math_c_round_FUN_005fe6b0(local_54);
+        *(int *)(extraout_EAX + 0x17f8) = (int)ROUND(dVar10);
       }
       break;
     case 0x49:
-      iVar5 = shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
+      fVar12 = (float)(pCStack_14->filter_vel).y * (float)0.00390625;
+      iVar8 = shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
                         (g_CEditorToolsPtr,"Enter light Y velocity",
-                         (float *)&stack0xfffff7c4,false,0.0,0.0,true);
-      if (iVar5 != 0) {
-        param_10 = crt_math_c_floor_FUN_005feb90
-                             ((double)(in_stack_fffff7c8 * (float)256 +
-                                      (float)0.5));
-        dVar7 = crt_math_c_round_FUN_005fe6b0(param_10);
-        *(int *)(extraout_EAX_00 + 0x17fc) = (int)ROUND(dVar7);
+                         (float *)&stack0xfffff75c,false,0.0,0.0,true);
+      if (iVar8 != 0) {
+        local_54 = crt_math_c_floor_FUN_005feb90
+                             ((double)(fVar12 * (float)256 + (float)0.5));
+        dVar10 = crt_math_c_round_FUN_005fe6b0(local_54);
+        *(int *)(extraout_EAX_00 + 0x17fc) = (int)ROUND(dVar10);
       }
       break;
     case 0x4a:
-      pcVar8 = "Enter light aspect ratio (Y/X)";
-      pcVar2 = param_12;
+      pcVar11 = "Enter light aspect ratio (Y/X)";
+      result_ptr = local_44;
 LAB_0057c050:
-      uVar9 = ZEXT48(pcVar2);
-      max_value = 0.0;
+      fVar12 = 0.0;
+      enable_range_check = false;
       goto LAB_0057c056;
     case 0x4b:
-      max_value = 1.0;
-      uVar9 = CONCAT44 /* combine 2-byte values */(1,param_14);
-      pcVar8 = "Enter light intensity (0..1)";
+      fVar12 = 1.0;
+      enable_range_check = true;
+      pcVar11 = "Enter light intensity (0..1)";
+      result_ptr = local_3c;
 LAB_0057c056:
       shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
-                (g_CEditorToolsPtr,pcVar8,(float *)uVar9,SUB81 /* extract 2-byte value */(uVar9 >> 0x20,0),0.0,max_value,true);
+                (g_CEditorToolsPtr,pcVar11,result_ptr,enable_range_check,0.0,fVar12,true);
     }
-    if (local_30 == 0x1b) {
-      core_set_cpp_CDemonSet_FUN_0056d2d0(param_5);
-      core_set_cpp_CDemonSet_initScene_FUN_0056aa10(param_5);
+    if (local_30 == (char (*) [40])0x1b) {
+      core_set_cpp_CDemonSet_FUN_0056d2d0(in_stack_00000004);
+      core_set_cpp_CDemonSet_initScene_FUN_0056aa10(in_stack_00000004);
       return;
     }
   } while( true );

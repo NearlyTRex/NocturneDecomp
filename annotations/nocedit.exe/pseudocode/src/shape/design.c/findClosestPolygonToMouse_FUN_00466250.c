@@ -12,6 +12,7 @@ int __cdecl shape_design_c_findClosestPolygonToMouse_FUN_00466250(void)
   int iVar1;
   BADSPACEBASE *in_ESP;
   double dVar2;
+  CVector3i local_104;
   SClipPlane local_f0 [5];
   char local_a0 [80];
   int local_50;
@@ -35,13 +36,16 @@ int __cdecl shape_design_c_findClosestPolygonToMouse_FUN_00466250(void)
   }
   else {
     for (local_4c = 0; local_4c < g_VertexCount; local_4c = local_4c + 1) {
-      crt_math_c_round_FUN_005fe6b0
-                ((double)(g_LoadedVertices[local_4c].vertex.x * 256f));
-      crt_math_c_round_FUN_005fe6b0
-                ((double)(g_LoadedVertices[local_4c].vertex.y * 256f));
-      crt_math_c_round_FUN_005fe6b0
-                ((double)(g_LoadedVertices[local_4c].vertex.z * 256f));
-      engine_matrix_c_transformToCache_FUN_0050cd70(local_4c,(CVector3i *)&stack0xfffffefc);
+      dVar2 = crt_math_c_round_FUN_005fe6b0
+                        ((double)(g_LoadedVertices[local_4c].vertex.x * 256f));
+      local_104.x = (int)ROUND(dVar2);
+      dVar2 = crt_math_c_round_FUN_005fe6b0
+                        ((double)(g_LoadedVertices[local_4c].vertex.y * 256f));
+      local_104.y = (int)ROUND(dVar2);
+      dVar2 = crt_math_c_round_FUN_005fe6b0
+                        ((double)(g_LoadedVertices[local_4c].vertex.z * 256f));
+      local_104.z = (int)ROUND(dVar2);
+      engine_matrix_c_transformToCache_FUN_0050cd70(local_4c,&local_104);
     }
     for (local_4c = 0; local_4c < g_PolygonCount; local_4c = local_4c + 1) {
       local_38 = local_4c;

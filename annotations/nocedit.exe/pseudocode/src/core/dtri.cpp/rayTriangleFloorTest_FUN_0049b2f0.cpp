@@ -14,138 +14,134 @@ core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0
   float fVar1;
   float fVar2;
   uint uVar3;
-  uint uVar4;
-  uint uVar5;
+  float fVar4;
+  float fVar5;
   uint uVar6;
   uint uVar7;
   uint uVar8;
-  uint uVar9;
-  uint uVar10;
-  float fVar11;
+  float fVar9;
   BADSPACEBASE *in_ESP;
-  ulonglong local_7c;
+  float local_7c;
+  float local_78;
   float local_74;
-  float local_70;
-  byte local_6c [20];
-  byte local_58 [8];
+  CVector3f local_70;
+  byte local_60 [12];
+  float local_54;
   float local_50;
-  byte local_4c [12];
+  CVector3f local_4c;
   float local_40;
   float local_3c;
   float local_38;
-  float local_34;
-  float local_30;
-  float local_2c;
+  CVector3f local_34 [3];
   
   if ((triangle->normal).y <= (float)-0.34000000000000002) {
     fVar1 = (triangle->vertex1).x - *(float *)x;
-    fVar11 = (triangle->vertex1).y;
+    fVar9 = (triangle->vertex1).y;
     fVar2 = (triangle->vertex1).z - *(float *)((int)x + 8);
-    local_58._0_4_ = (triangle->vertex2).x - *(float *)x;
-    local_58._4_4_ = (triangle->vertex2).y;
+    local_60._8_4_ = (triangle->vertex2).x - *(float *)x;
+    local_54 = (triangle->vertex2).y;
     local_50 = (triangle->vertex2).z - *(float *)((int)x + 8);
-    local_70 = (triangle->vertex3).x - *(float *)x;
-    local_6c._0_4_ = (triangle->vertex3).y;
-    local_6c._4_4_ = (triangle->vertex3).z - *(float *)((int)x + 8);
-    local_4c._0_4_ = fVar1;
-    local_4c._4_4_ = fVar11;
-    local_4c._8_4_ = fVar2;
-    if (fVar11 < (float)local_58._4_4_) {
-      if (local_4c != local_58) {
-        local_4c._0_4_ = local_58._0_4_;
-        local_4c._4_4_ = local_58._4_4_;
-        local_4c._8_4_ = local_50;
+    local_70.x = (triangle->vertex3).x - *(float *)x;
+    local_70.y = (triangle->vertex3).y;
+    local_70.z = (triangle->vertex3).z - *(float *)((int)x + 8);
+    local_4c.x = fVar1;
+    local_4c.y = fVar9;
+    local_4c.z = fVar2;
+    if (fVar9 < local_54) {
+      if (&local_4c != (CVector3f *)(local_60 + 8)) {
+        local_4c.x = (float)local_60._8_4_;
+        local_4c.y = local_54;
+        local_4c.z = local_50;
       }
       local_40 = fVar1;
-      local_3c = fVar11;
+      local_3c = fVar9;
       local_38 = fVar2;
-      if ((float *)local_58 != &local_40) {
-        local_58._0_4_ = fVar1;
-        local_58._4_4_ = fVar11;
+      if ((float *)(local_60 + 8) != &local_40) {
+        local_60._8_4_ = fVar1;
+        local_54 = fVar9;
         local_50 = fVar2;
       }
     }
-    uVar7 = local_4c._8_4_;
-    uVar6 = local_4c._4_4_;
-    uVar5 = local_4c._0_4_;
-    fVar11 = local_50;
-    uVar4 = local_58._4_4_;
-    uVar3 = local_58._0_4_;
-    if ((float)local_58._4_4_ < (float)local_6c._0_4_) {
-      local_34 = (float)local_58._0_4_;
-      local_30 = (float)local_58._4_4_;
-      local_2c = local_50;
-      if ((float *)local_58 != &local_70) {
-        local_58._0_4_ = local_70;
-        local_58._4_4_ = local_6c._0_4_;
-        local_50 = (float)local_6c._4_4_;
+    fVar5 = local_4c.z;
+    fVar4 = local_4c.y;
+    fVar2 = local_4c.x;
+    fVar1 = local_50;
+    fVar9 = local_54;
+    uVar3 = local_60._8_4_;
+    if (local_54 < local_70.y) {
+      local_34[0].x = (float)local_60._8_4_;
+      local_34[0].y = local_54;
+      local_34[0].z = local_50;
+      if ((CVector3f *)(local_60 + 8) != &local_70) {
+        local_60._8_4_ = local_70.x;
+        local_54 = local_70.y;
+        local_50 = local_70.z;
       }
-      if (&local_70 != &local_34) {
-        local_70 = (float)uVar3;
-        local_6c._0_4_ = uVar4;
-        local_6c._4_4_ = fVar11;
+      if (&local_70 != local_34) {
+        local_70.x = (float)uVar3;
+        local_70.y = fVar9;
+        local_70.z = fVar1;
       }
     }
-    if ((float)local_6c._0_4_ <= *(float *)((int)x + 4)) {
-      if ((float)local_4c._4_4_ < (float)local_58._4_4_) {
-        local_7c = (double)CONCAT44 /* combine 2-byte values */(local_4c._4_4_,local_4c._0_4_);
-        local_74 = (float)local_4c._8_4_;
-        if (local_4c != local_58) {
-          local_4c._0_4_ = local_58._0_4_;
-          local_4c._4_4_ = local_58._4_4_;
-          local_4c._8_4_ = local_50;
+    if (local_70.y <= *(float *)((int)x + 4)) {
+      if (local_4c.y < local_54) {
+        local_7c = local_4c.x;
+        local_78 = local_4c.y;
+        local_74 = local_4c.z;
+        if (&local_4c != (CVector3f *)(local_60 + 8)) {
+          local_4c.x = (float)local_60._8_4_;
+          local_4c.y = local_54;
+          local_4c.z = local_50;
         }
-        if ((ulonglong *)local_58 != &local_7c) {
-          local_58._0_4_ = uVar5;
-          local_58._4_4_ = uVar6;
-          local_50 = (float)uVar7;
+        if ((float *)(local_60 + 8) != &local_7c) {
+          local_60._8_4_ = fVar2;
+          local_54 = fVar4;
+          local_50 = fVar5;
         }
       }
-      if (*out_height <= (float)local_4c._4_4_) {
-        if ((float)local_4c._0_4_ * (float)local_4c._0_4_ +
-            (float)local_4c._8_4_ * (float)local_4c._8_4_ < z * z) {
-          *out_height = (float)local_4c._4_4_;
+      if (*out_height <= local_4c.y) {
+        if (local_4c.x * local_4c.x + local_4c.z * local_4c.z < z * z) {
+          *out_height = local_4c.y;
           return 1;
         }
-        uVar8 = core_dtri_cpp_rayEdgeHeightTest_FUN_0049b180
-                          ((CVector3f *)local_4c,(CVector3f *)local_58,z,out_height);
-        uVar9 = core_dtri_cpp_rayEdgeHeightTest_FUN_0049b180
-                          ((CVector3f *)(local_58 + 4),(CVector3f *)local_6c,z,out_height);
-        uVar10 = core_dtri_cpp_rayEdgeHeightTest_FUN_0049b180
-                           ((CVector3f *)(local_6c + 4),(CVector3f *)(local_4c + 8),z,out_height);
-        fVar11 = (triangle->normal).x;
+        uVar6 = core_dtri_cpp_rayEdgeHeightTest_FUN_0049b180
+                          (&local_4c,(CVector3f *)(local_60 + 8),z,out_height);
+        uVar7 = core_dtri_cpp_rayEdgeHeightTest_FUN_0049b180
+                          ((CVector3f *)(local_60 + 8),&local_70,z,out_height);
+        uVar8 = core_dtri_cpp_rayEdgeHeightTest_FUN_0049b180(&local_70,&local_4c,z,out_height);
+        fVar9 = (triangle->normal).x;
         fVar1 = (triangle->normal).z;
-        uVar10 = uVar8 | uVar9 | uVar10;
-        fVar11 = SQRT(fVar1 * fVar1 + fVar11 * fVar11);
-        local_7c = (double)fVar11;
+        uVar8 = uVar6 | uVar7 | uVar8;
+        fVar9 = SQRT(fVar1 * fVar1 + fVar9 * fVar9);
         if ((g_FloorCacheValid & 1) == 0) {
           g_FloorCacheValid = g_FloorCacheValid | 1;
           g_FloorRayDirection.y = -100.0;
           g_FloorRayDirection.x = 0.0;
           g_FloorRayDirection.z = 0.0;
         }
-        if (0.01 <= local_7c) {
-          fVar11 = z / fVar11;
-          local_58._0_4_ = (triangle->normal).x * fVar11 + *(float *)x;
-          local_50 = fVar11 * (triangle->normal).z + *(float *)((int)x + 8);
-          local_58._4_4_ = *(float *)((int)x + 4);
-          fVar11 = core_dtri_cpp_rayTriangleIntersection_FUN_0049a800
-                             (triangle,(CVector3f *)local_58,&g_FloorRayDirection);
-          if ((0.0 <= fVar11) &&
-             (local_50 = fVar11 * g_FloorRayDirection.y + local_50, *out_height < local_50)) {
-            *out_height = local_50;
+        if (0.01 <= (double)fVar9) {
+          fVar9 = z / fVar9;
+          local_60._0_4_ = (triangle->normal).x * fVar9 + *(float *)x;
+          local_60._8_4_ = fVar9 * (triangle->normal).z + *(float *)((int)x + 8);
+          local_60._4_4_ = *(float *)((int)x + 4);
+          fVar9 = core_dtri_cpp_rayTriangleIntersection_FUN_0049a800
+                            (triangle,(CVector3f *)local_60,&g_FloorRayDirection);
+          if ((0.0 <= fVar9) &&
+             (local_60._0_4_ = fVar9 * g_FloorRayDirection.y + (float)local_60._0_4_,
+             *out_height < (float)local_60._0_4_)) {
+            *out_height = (float)local_60._0_4_;
             return 1;
           }
         }
-        else if (uVar10 == 0) {
-          fVar11 = core_dtri_cpp_rayTriangleIntersection_FUN_0049a800
-                             (triangle,(CVector3f *)x,&g_FloorRayDirection);
-          if (0.0 <= fVar11) {
-            uVar10 = 1;
-            *out_height = local_38;
+        else if (uVar8 == 0) {
+          fVar9 = core_dtri_cpp_rayTriangleIntersection_FUN_0049a800
+                            (triangle,(CVector3f *)x,&g_FloorRayDirection);
+          if (0.0 <= fVar9) {
+            uVar8 = 1;
+            *out_height = local_4c.y;
           }
         }
-        return uVar10;
+        return uVar8;
       }
     }
   }

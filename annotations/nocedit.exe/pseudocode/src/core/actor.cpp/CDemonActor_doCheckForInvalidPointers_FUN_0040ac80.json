@@ -1,19 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 228,
-    "complexity_score": 291,
+    "complexity_score": 192,
     "cross_reference_count": 50,
     "function_call_count": 2,
     "global_count": 17,
-    "pseudocode_lines": 111,
-    "suspect_count": 16,
+    "pseudocode_lines": 102,
+    "suspect_count": 8,
     "suspect_types": [
-      "call_esp_anchor",
       "format_string_mismatch",
-      "pointer_cast",
-      "variadic_anchor"
+      "pointer_cast"
     ],
-    "total_lines": 339
+    "total_lines": 330
   },
   "cross_references": [
     {
@@ -446,6 +444,32 @@
       "value": null
     }
   ],
+  "pcode_overrides": {
+    "0040acc8": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff8,4)"
+    ],
+    "0040acfc": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff8,4)"
+    ],
+    "0040ad2d": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff8,4)"
+    ],
+    "0040ad95": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff8,4)"
+    ],
+    "0040adc3": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff8,4)"
+    ],
+    "0040ae21": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff8,4)"
+    ],
+    "0040ae5c": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff8,4)"
+    ],
+    "0040aea6": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff8,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.3782383419689115,
     "instruction_count": 193,
@@ -486,114 +510,7 @@
     },
     "pcode_op_count": 1038
   },
-  "stack_frame": {
-    "frame_size": 64,
-    "local_size": 52,
-    "param_offset": 4,
-    "param_size": 12,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "temp_z",
-        "offset": -48,
-        "size": 8,
-        "type": "undefined8"
-      },
-      {
-        "is_param": false,
-        "name": "temp_y",
-        "offset": -40,
-        "size": 8,
-        "type": "undefined8"
-      },
-      {
-        "is_param": false,
-        "name": "temp_x",
-        "offset": -32,
-        "size": 8,
-        "type": "undefined8"
-      },
-      {
-        "is_param": false,
-        "name": "char_index",
-        "offset": -24,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": false,
-        "name": "current_ptr",
-        "offset": -20,
-        "size": 4,
-        "type": "CDemonActor *"
-      },
-      {
-        "is_param": true,
-        "name": "this_ptr",
-        "offset": 4,
-        "size": 4,
-        "type": "CDemonActor *"
-      },
-      {
-        "is_param": true,
-        "name": "context_file",
-        "offset": 8,
-        "size": 4,
-        "type": "char *"
-      },
-      {
-        "is_param": true,
-        "name": "context_line",
-        "offset": 12,
-        "size": 4,
-        "type": "int"
-      }
-    ]
-  },
-  "suspects": [
-    {
-      "description": "Complex pointer cast",
-      "line": 41,
-      "match": "(CDemonActor *)((int)",
-      "text": "pCVar6 = (CDemonActor *)((int)pCVar6 + (uint)bVar9 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 46,
-      "match": "(CDemonActor *)((int)",
-      "text": "pCVar6 = (CDemonActor *)((int)pCVar6 + (uint)bVar9 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 67,
-      "match": "(CDemonActor *)((int)",
-      "text": "pCVar6 = (CDemonActor *)((int)pCVar6 + (uint)bVar9 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 72,
-      "match": "(CDemonActor *)((int)",
-      "text": "pCVar6 = (CDemonActor *)((int)pCVar6 + (uint)bVar9 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 96,
-      "match": "(CDemonActor *)((int)",
-      "text": "pCVar7 = (CDemonActor *)((int)pCVar7 + (uint)bVar9 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 101,
-      "match": "(CDemonActor *)((int)",
-      "text": "pCVar7 = (CDemonActor *)((int)pCVar7 + (uint)bVar9 * -2 + 1);",
-      "type": "pointer_cast"
-    },
+  "resolved_suspects": [
     {
       "add_esp_value": 16,
       "call_address": "0040acc3",
@@ -675,28 +592,6 @@
       "type": "variadic_anchor"
     },
     {
-      "actual_args": 0,
-      "description": "Format \"NULL actor pointer detected, %s line %d\" has 2 specifiers but 0 arguments after it",
-      "expected_args": 2,
-      "format_string": "NULL actor pointer detected, %s line %d",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 26,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"NULL actor pointer detected, %s line %d\");",
-      "text": "Format string expects 2 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Invalid actor pointer %08X detected at %s, line %d\" has 3 specifiers but 0 arguments after it",
-      "expected_args": 3,
-      "format_string": "Invalid actor pointer %08X detected at %s, line %d",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 31,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Invalid actor pointer %08X detected at %s, line %d\");",
-      "text": "Format string expects 3 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
       "add_esp_value": 12,
       "call_address": "0040acf7",
       "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
@@ -734,6 +629,137 @@
       "target_address": "0x5fde40",
       "text": "Direct CALL at 0040ae1c, ADD ESP at 0040ae21 with uncertain ESP",
       "type": "call_esp_anchor"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 64,
+    "local_size": 52,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "temp_z",
+        "offset": -48,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "temp_y",
+        "offset": -40,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "temp_x",
+        "offset": -32,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "char_index",
+        "offset": -24,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": false,
+        "name": "current_ptr",
+        "offset": -20,
+        "size": 4,
+        "type": "CDemonActor *"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonActor *"
+      },
+      {
+        "is_param": true,
+        "name": "context_file",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "context_line",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 38,
+      "match": "(CDemonActor *)((int)",
+      "text": "pCVar6 = (CDemonActor *)((int)pCVar6 + (uint)bVar9 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 43,
+      "match": "(CDemonActor *)((int)",
+      "text": "pCVar6 = (CDemonActor *)((int)pCVar6 + (uint)bVar9 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 61,
+      "match": "(CDemonActor *)((int)",
+      "text": "pCVar6 = (CDemonActor *)((int)pCVar6 + (uint)bVar9 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 66,
+      "match": "(CDemonActor *)((int)",
+      "text": "pCVar6 = (CDemonActor *)((int)pCVar6 + (uint)bVar9 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 87,
+      "match": "(CDemonActor *)((int)",
+      "text": "pCVar7 = (CDemonActor *)((int)pCVar7 + (uint)bVar9 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 92,
+      "match": "(CDemonActor *)((int)",
+      "text": "pCVar7 = (CDemonActor *)((int)pCVar7 + (uint)bVar9 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "actual_args": 1,
+      "description": "Format \"NULL actor pointer detected, %s line %d\" has 2 specifiers but 1 arguments after it",
+      "expected_args": 2,
+      "format_string": "NULL actor pointer detected, %s line %d",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 23,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"NULL actor pointer detected, %s line %d\",context_file)",
+      "text": "Format string expects 2 args but got 1",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Invalid actor pointer %08X detected at %s, line %d\" has 3 specifiers but 0 arguments after it",
+      "expected_args": 3,
+      "format_string": "Invalid actor pointer %08X detected at %s, line %d",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 28,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Invalid actor pointer %08X detected at %s, line %d\");",
+      "text": "Format string expects 3 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 52,
+    "complexity_score": 37,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 15,
     "pseudocode_lines": 22,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "concat_artifact",
-      "stack_align_anchor"
+      "concat_artifact"
     ],
     "total_lines": 78
   },
@@ -133,6 +132,11 @@
     "declared_params": 0,
     "estimated_params": 0
   },
+  "pcode_overrides": {
+    "00447e93": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff4,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.28,
     "instruction_count": 50,
@@ -166,6 +170,18 @@
     },
     "pcode_op_count": 264
   },
+  "resolved_suspects": [
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0xc",
+      "fix_address": "00447e93",
+      "frame_offset": 12,
+      "match": "AND ESP",
+      "sub_esp_offset": 12,
+      "text": "Stack alignment at 00447e93 (SUB ESP, 0xc before)",
+      "type": "stack_align_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 36,
     "local_size": 36,
@@ -220,16 +236,6 @@
       "match": "CONCAT44",
       "text": "return (double)CONCAT44 /* combine 2-byte values */(g_CramTextureCount,",
       "type": "concat_artifact"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0xc",
-      "fix_address": "00447e93",
-      "frame_offset": 12,
-      "match": "AND ESP",
-      "sub_esp_offset": 12,
-      "text": "Stack alignment at 00447e93 (SUB ESP, 0xc before)",
-      "type": "stack_align_anchor"
     }
   ]
 }

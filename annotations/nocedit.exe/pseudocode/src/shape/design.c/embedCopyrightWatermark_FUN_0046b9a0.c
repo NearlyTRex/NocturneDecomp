@@ -13,6 +13,7 @@ shape_design_c_embedCopyrightWatermark_FUN_0046b9a0
 {
   tm *time_ptr;
   BADSPACEBASE *in_ESP;
+  char local_4dc [1024];
   char local_dc [200];
   time_t local_14;
   
@@ -56,9 +57,9 @@ shape_design_c_embedCopyrightWatermark_FUN_0046b9a0
   crt_time_c_time_with_rounding_FUN_006001f0(&local_14);
   time_ptr = crt_time_c_localtime_FUN_00600288(&local_14);
   crt_time_c_strftime_FUN_006002d4(local_dc,200,"%m%d%y",time_ptr);
-  crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffb24,"%s%s");
+  crt_stdio_c_sprintf_FUN_005fdbd0(local_4dc,"%s%s",local_dc,"Jan 10 2000");
   shape_design_c_quantizePaletteColors_FUN_0046b770
             ((byte *)((texture_size + -1) * texture_size + (int)image_buffer),texture_size,1,
-             (byte *)-texture_size,(int)output_filename,&stack0xfffffb24);
+             (byte *)-texture_size,(int)output_filename,local_4dc);
   return;
 }

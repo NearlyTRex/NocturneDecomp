@@ -35,6 +35,7 @@ shape_superopt_cpp_CObj_computeCoplanarAdjacency_FUN_005d3960(CObj *this_ptr,int
   uint uStack_28;
   double *pdStack_18;
   
+  local_64 = (void *)0x0;
   pCVar12 = this_ptr->poly_array;
   if (2000 < (uint)this_ptr->poly_count) {
     local_64 = shape_memdbg_cpp_debugAlloc_FUN_0050f1d0(4);

@@ -16,10 +16,7 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_start_FUN_005ae340(CDirectSoundDe
   int iVar5;
   BADSPACEBASE *in_ESP;
   double latency_seconds;
-  char acStack_31c [4];
-  char acStack_318 [396];
-  char acStack_18c [4];
-  char acStack_188 [376];
+  char acStack_1a0 [400];
   
   if (g_DirectSoundSecondaryBuffer == (IDirectSoundBuffer *)0x0) {
     latency_seconds = 0.05;
@@ -55,16 +52,16 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_start_FUN_005ae340(CDirectSoundDe
       }
       pcVar4 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar3);
       crt_stdio_c_sprintf_FUN_005fdbd0
-                (acStack_31c,"DirectSux: Unable to %s.  (%s)","Play the secondary buffer",
-                 pcVar4);
-      pcVar4 = acStack_318;
+                (&stack0xfffffcd0,"DirectSux: Unable to %s.  (%s)",
+                 "Play the secondary buffer",pcVar4);
+      pcVar4 = &stack0xfffffcd0;
     }
     else {
       pcVar4 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar3);
       crt_stdio_c_sprintf_FUN_005fdbd0
-                (acStack_18c,"DirectSux: Unable to %s.  (%s)","Position secondary buffer to 0",
+                (acStack_1a0,"DirectSux: Unable to %s.  (%s)","Position secondary buffer to 0",
                  pcVar4);
-      pcVar4 = acStack_188;
+      pcVar4 = acStack_1a0;
     }
     sound_sndmain_cpp_logSoundError_FUN_005adba0(pcVar4);
   }

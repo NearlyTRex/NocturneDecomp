@@ -13,39 +13,38 @@
 void core_weather_cpp_CWeather_SomethingWithLightingThunder_FUN_005eeaf0(void)
 
 {
+  float intensity;
   CEventList *this_ptr;
   float fVar1;
   uint extraout_EAX;
   int iVar2;
-  BADSPACEBASE *in_ESP;
   int iVar3;
   int iVar4;
   float10 fVar5;
   float10 fVar6;
   float10 fVar7;
   int *in_stack_00000004;
-  ulonglong local_30;
-  float *pfStack_2c;
-  float local_28;
+  ulonglong local_38;
+  float fStack_34;
   float local_18;
-  float local_14;
   
+  intensity = g_CGamePtr->delta_time_float;
   if (in_stack_00000004[9] != 0) {
-    fVar1 = (float)in_stack_00000004[10] - g_CGamePtr->delta_time_float;
-    in_stack_00000004[10] = (int)fVar1;
-    if (0.0 <= fVar1) {
+    fVar1 = (float)in_stack_00000004[10];
+    in_stack_00000004[10] = (int)(fVar1 - intensity);
+    if (0.0 <= fVar1 - intensity) {
       iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                         (g_CEventListPtr,"noLightningFlash");
       if (iVar2 == 0) {
-        local_14 = (float)g_CDemonCameraInstance.corona_blend_factor * (float)_DAT_00657bb4 -
-                   local_18;
-        if (local_14 < (float)in_stack_00000004[0xc]) {
-          local_14 = (float)in_stack_00000004[0xc];
+        local_18 = (float)g_CDemonCameraInstance.corona_blend_factor * (float)_DAT_00657bb4 -
+                   intensity;
+        if (local_18 < (float)in_stack_00000004[0xc]) {
+          local_18 = (float)in_stack_00000004[0xc];
           in_stack_00000004[9] = 0;
           in_stack_00000004[10] = 0;
         }
         core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_004528e0
-                  (&g_CDemonCameraInstance,local_14);
+                  (&g_CDemonCameraInstance,local_18);
         goto LAB_005eeb1c;
       }
     }
@@ -64,7 +63,7 @@ LAB_005eeb1c:
   iVar2 = 0;
   do {
     (&DAT_03f96a78)[iVar3] = 0;
-    fVar1 = *(float *)((int)&DAT_03f95df8[0].y + iVar2) - (float)in_stack_00000004[1] * local_28;
+    fVar1 = *(float *)((int)&DAT_03f95df8[0].y + iVar2) - (float)in_stack_00000004[1] * intensity;
     *(float *)((int)&DAT_03f95df8[0].y + iVar2) = fVar1;
     if ((fVar1 < *(float *)((int)&DAT_03f96758 + iVar4)) &&
        (*(float *)((int)&DAT_03f95df8[0].y + iVar2) =
@@ -73,8 +72,6 @@ LAB_005eeb1c:
       core_fire_cpp_CFireEffect_FUN_004c9290(g_CFireEffectPtr);
       core_fire_cpp_CFireEffect_FUN_004c9290(g_CFireEffectPtr);
       core_fire_cpp_CFireEffect_FUN_004c9290(g_CFireEffectPtr);
-      local_28 = 0.0;
-      pfStack_2c = &local_14;
       core_fire_cpp_CFireEffect_FUN_004c9290(g_CFireEffectPtr);
     }
     iVar2 = iVar2 + 0xc;
@@ -83,8 +80,8 @@ LAB_005eeb1c:
   } while (iVar3 < 200);
   if (*in_stack_00000004 == 1) {
     fVar1 = (float)in_stack_00000004[8];
-    in_stack_00000004[8] = (int)(fVar1 - local_28);
-    if (fVar1 - local_28 < 0.0) {
+    in_stack_00000004[8] = (int)(fVar1 - intensity);
+    if (fVar1 - intensity < 0.0) {
       iVar2 = core_actor_cpp_randomChance_FUN_0040cd10(0.4);
       if (iVar2 == 0) {
         core_weather_cpp_CWeather_SomethingWithThunder_FUN_005ef140();
@@ -95,8 +92,8 @@ LAB_005eeb1c:
     }
     else {
       fVar1 = (float)in_stack_00000004[0xb];
-      in_stack_00000004[0xb] = (int)(fVar1 - local_28);
-      if (fVar1 - local_28 < 0.0) {
+      in_stack_00000004[0xb] = (int)(fVar1 - intensity);
+      if (fVar1 - intensity < 0.0) {
         fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.1,(float)in_stack_00000004[0xd]);
         this_ptr = g_CEventListPtr;
         in_stack_00000004[0xb] = (int)fVar1;
@@ -106,16 +103,15 @@ LAB_005eeb1c:
           in_stack_00000004[9] = 1;
           in_stack_00000004[0xc] =
                (int)((float)g_CDemonCameraInstance.corona_blend_factor * (float)_DAT_00657bb4);
-          local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.1,0.3);
-          pfStack_2c = (float *)(local_14 + (float)pfStack_2c);
-          if (1.0 < (float)pfStack_2c) {
-            pfStack_2c = (float *)0x3f800000;
+          fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.1,0.3);
+          fStack_34 = fVar1 + fStack_34;
+          if (1.0 < fStack_34) {
+            fStack_34 = 1.0;
           }
-          fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10
-                            (0.01,(float)pfStack_2c * (float)_DAT_00657bbc);
+          fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.01,fStack_34 * (float)_DAT_00657bbc);
           in_stack_00000004[10] = (int)fVar1;
           core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_004528e0
-                    (&g_CDemonCameraInstance,local_28);
+                    (&g_CDemonCameraInstance,intensity);
         }
       }
     }
@@ -125,7 +121,7 @@ LAB_005eeb1c:
     else {
       fVar7 = (float10)1;
       fVar5 = (float10)1.4426950408889634 *
-              ((float10)local_28 * (float10)_DAT_00657bcc +
+              ((float10)intensity * (float10)_DAT_00657bcc +
               (float10)0.6931471805599453 * (float10)(float)in_stack_00000004[0xd]);
       fVar6 = (float10)f2xm1(fVar5 - (fVar5 / fVar7) * fVar7);
       fVar7 = (float10)fscale(fVar6 + fVar7,fVar5);

@@ -10,12 +10,13 @@ void __cdecl shape_design_c_displayMemoryStatus_FUN_0046e6f0(int line_number)
 
 {
   BADSPACEBASE *in_ESP;
+  uint local_60 [20];
   
-  crt_watcom_c_memavl_FUN_006008f0();
-  crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffa0,"Memory available: %d");
-  engine_2d_c_drawText_FUN_00401fd0(&stack0xffffffa0,0,line_number * 0xb);
-  crt_watcom_c_memmax_FUN_00600940();
-  crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffa0,"Largest block: %d");
-  engine_2d_c_drawText_FUN_00401fd0(&stack0xffffffa0,0,(line_number + 1) * 0xb);
+  local_60[0] = crt_watcom_c_memavl_FUN_006008f0();
+  crt_stdio_c_sprintf_FUN_005fdbd0((char *)local_60,"Memory available: %d");
+  engine_2d_c_drawText_FUN_00401fd0((char *)local_60,0,line_number * 0xb);
+  local_60[0] = crt_watcom_c_memmax_FUN_00600940();
+  crt_stdio_c_sprintf_FUN_005fdbd0((char *)local_60,"Largest block: %d");
+  engine_2d_c_drawText_FUN_00401fd0((char *)local_60,0,(line_number + 1) * 0xb);
   return;
 }

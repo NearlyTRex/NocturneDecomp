@@ -13,7 +13,6 @@ core_setcolid_cpp_CDemonSet_iterativeRaycast_FUN_00572800
 {
   int iVar1;
   BADSPACEBASE *in_ESP;
-  float unaff_EBP;
   CVector3f local_70;
   float local_64;
   float local_60;
@@ -58,18 +57,21 @@ core_setcolid_cpp_CDemonSet_iterativeRaycast_FUN_00572800
     local_28.z = local_70.z + local_2c + local_5c;
     local_14 = core_setcolid_cpp_CDemonSet_raycast_FUN_00572530(this_ptr,&local_70,&local_28);
     if ((0.0 <= local_14) && (local_14 <= 1.0)) {
-      return local_14 * 0.1f + local_10;
+      return local_14 * 0.1f + local_14;
     }
-    if (&local_70.y != &local_28.y) {
+    if (&local_70 != &local_28) {
+      local_70.x = local_28.x;
       local_70.y = local_28.y;
       local_70.z = local_28.z;
     }
-    local_3c = local_48 * unaff_EBP;
-    local_38 = local_44 * unaff_EBP;
+    local_40 = local_4c * local_10;
+    local_3c = local_48 * local_10;
+    local_38 = local_44 * local_10;
     iVar1 = iVar1 + 1;
+    local_14 = local_14 + local_10;
+    local_58 = local_58 + local_40;
     local_54 = local_54 + local_3c;
     local_50 = local_50 + local_38;
-    local_4c = local_4c + local_40 * unaff_EBP;
   } while (iVar1 < 100);
   return -1.0;
 }

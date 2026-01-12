@@ -35,12 +35,13 @@ uint core_gargoyle_cpp_CGargoyle_FUN_004e48a0(void)
       pCVar4 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                          (&local_18,(CVector3f *)local_24);
       if ((CVector3f *)(local_24 + 4) != pCVar4) {
-        local_24._4_4_ = pCVar4->x;
-        local_1c = pCVar4->y;
-        local_18.x = pCVar4->z;
+        local_24._0_4_ = pCVar4->x;
+        local_24._4_4_ = pCVar4->y;
+        local_1c = pCVar4->z;
       }
       fVar5 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                        (*(float *)(*(int *)(in_stack_00000004 + 0xbe3c) + 0x34) - local_1c);
+                        (*(float *)(*(int *)(in_stack_00000004 + 0xbe3c) + 0x34) -
+                         (float)local_24._4_4_);
       if ((fVar5 < (float)-0.31415926534999999) || ((float)0.31415926534999999 < fVar5)) {
         return 1;
       }

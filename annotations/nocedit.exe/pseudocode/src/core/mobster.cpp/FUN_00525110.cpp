@@ -12,15 +12,20 @@ CVector3f * core_mobster_cpp_FUN_00525110(void)
   BADSPACEBASE *in_ESP;
   CVector3f *in_stack_00000004;
   CDemonActor *in_stack_00000008;
-  float fStack_34;
+  CBoundingBox3D CStack_3c;
+  CVector3f CStack_24;
+  CVector3f CStack_18;
   
-  (*in_stack_00000008->vtable->getBoundingBox)(in_stack_00000008,(CBoundingBox3D *)&stack0xffffffc0)
-  ;
-  fStack_34 = 7.55965e-39;
-  core_actor_cpp_CVector_ctor_FUN_00410340((CVector3f *)&stack0xfffffff8);
-  core_actor_cpp_CVector_ctor_FUN_00410340((CVector3f *)&stack0xfffffff0);
-  fStack_34 = 7.559815e-39;
+  (*in_stack_00000008->vtable->getBoundingBox)(in_stack_00000008,&CStack_3c);
+  core_actor_cpp_CVector_ctor_FUN_00410340(&CStack_18);
+  CStack_18.x = CStack_3c.min.x + CStack_3c.max.x;
+  CStack_18.y = CStack_3c.min.y + CStack_3c.max.y;
+  CStack_18.z = CStack_3c.min.z + CStack_3c.max.z;
+  core_actor_cpp_CVector_ctor_FUN_00410340(&CStack_24);
+  CStack_24.x = CStack_18.x * 0.5f;
+  CStack_24.y = CStack_18.y * 0.5f;
+  CStack_24.z = CStack_3c.min.z + (float)0.40000000000000002;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-            (in_stack_00000008,in_stack_00000004,(CVector3f *)&stack0xfffffff4);
+            (in_stack_00000008,in_stack_00000004,&CStack_24);
   return in_stack_00000004;
 }

@@ -12,184 +12,193 @@
 void core_svetlana_cpp_FUN_005d9260(void)
 
 {
-  float fVar1;
-  bool bVar2;
-  CCharacter *pCVar3;
-  int iVar4;
-  CHero *pCVar5;
-  CVector3f *pCVar6;
-  float fVar7;
-  SMotion *pSVar8;
-  uint uVar9;
-  CPathMap *this_ptr;
+  bool bVar1;
+  CCharacter *pCVar2;
+  int iVar3;
+  CHero *pCVar4;
+  CVector3f *pCVar5;
+  float fVar6;
+  SMotion *pSVar7;
+  uint uVar8;
+  float fVar9;
   BADSPACEBASE *in_ESP;
-  float unaff_EBP;
-  float unaff_EDI;
   CHero *pCVar10;
   CCharacter *in_stack_00000004;
   float in_stack_00000008;
-  int in_stack_ffffff4c;
-  int in_stack_ffffff54;
+  int in_stack_ffffff48;
+  float fStack_98;
+  float fStack_8c;
+  CVector3f CStack_84;
+  float fStack_78;
+  float fStack_74;
   float fStack_70;
-  float local_6c;
-  CVector3f CStack_60;
-  float fStack_54;
-  float fStack_50;
-  float fStack_4c;
-  byte auStack_48 [8];
-  float fStack_40;
+  byte local_6c [8];
+  float local_64;
+  float fStack_60;
+  float fStack_5c;
+  float fStack_58;
+  CVector3f CStack_54;
+  CVector3f CStack_48;
   float fStack_3c;
   float fStack_38;
   float fStack_34;
-  byte local_30 [12];
+  float local_30;
+  float local_28;
   float local_24;
-  float fStack_20;
-  CPathMap *local_1c;
+  CPathMap *pCStack_20;
+  float local_1c;
   float fStack_18;
-  float fStack_14;
   
-  bVar2 = false;
-  local_1c = (CPathMap *)0x3e800000;
+  bVar1 = false;
+  local_1c = 0.25;
   local_24 = 0.7853982;
   pCVar10 = g_HeroActors[g_LocalHeroIndex];
   crt_memory_c_memset_FUN_005fde40(in_stack_00000004[1].base_actor.actor_name + 8,0,0x2c);
   if (*(int *)(in_stack_00000004[2].cloth_data + 0x54f0) != 0) {
-    pCVar5 = g_HeroActors[g_LocalHeroIndex];
-    fVar7 = (in_stack_00000004->base_actor).location.position.x -
-            (pCVar5->base_character).base_actor.location.position.x;
-    fVar1 = (in_stack_00000004->base_actor).location.position.y -
-            (pCVar5->base_character).base_actor.location.position.y;
-    CStack_60.x = (in_stack_00000004->base_actor).location.position.z -
-                  (pCVar5->base_character).base_actor.location.position.z;
-    local_30._4_4_ = SQRT(CStack_60.x * CStack_60.x + fVar7 * fVar7 + fVar1 * fVar1);
+    pCVar4 = g_HeroActors[g_LocalHeroIndex];
+    local_6c._0_4_ =
+         (in_stack_00000004->base_actor).location.position.x -
+         (pCVar4->base_character).base_actor.location.position.x;
+    local_6c._4_4_ =
+         (in_stack_00000004->base_actor).location.position.y -
+         (pCVar4->base_character).base_actor.location.position.y;
+    local_64 = (in_stack_00000004->base_actor).location.position.z -
+               (pCVar4->base_character).base_actor.location.position.z;
+    local_30 = SQRT(local_64 * local_64 +
+                    (float)local_6c._0_4_ * (float)local_6c._0_4_ +
+                    (float)local_6c._4_4_ * (float)local_6c._4_4_);
     if (*(int *)(in_stack_00000004[2].cloth_data + 0x54f0) == 3) {
-      local_30._4_4_ = 0.0;
+      local_30 = 0.0;
     }
-    local_24 = 20.0;
-    iVar4 = (*(g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable[1].processMeleeHit)
-                      ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],in_stack_ffffff4c);
-    if (iVar4 != 0) {
-      unaff_EBP = 30.0;
+    local_28 = 20.0;
+    iVar3 = (*(g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable[1].processMeleeHit)
+                      ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],in_stack_ffffff48);
+    if (iVar3 != 0) {
+      local_28 = 30.0;
     }
-    if ((fStack_18 < unaff_EBP) &&
+    if ((local_30 < local_28) &&
        ((*(int *)(in_stack_00000004[2].cloth_data + 0x54f0) == 2 ||
         (*(int *)(in_stack_00000004[2].cloth_data + 0x54f0) == 3)))) {
-      local_24 = 9999.9;
-      in_stack_ffffff54 = 0x5d9383;
-      pCVar5 = (CHero *)core_hero_cpp_FUN_004f3960();
-      if ((pCVar5 == (CHero *)0x0) || (unaff_EDI <= fStack_20)) {
+      fStack_3c = 9999.9;
+      pCVar4 = (CHero *)core_hero_cpp_FUN_004f3960();
+      if ((pCVar4 == (CHero *)0x0) || (local_28 <= fStack_3c)) {
         if (*(int *)(in_stack_00000004[2].cloth_data + 0x54f4) != 0) {
           in_stack_00000004[1].base_actor.location.position.x = 1.4013e-45;
         }
       }
       else {
-        bVar2 = true;
-        pCVar10 = pCVar5;
+        bVar1 = true;
+        pCVar10 = pCVar4;
       }
     }
-    CStack_60.y = (pCVar10->base_character).base_actor.location.position.x -
-                  (in_stack_00000004->base_actor).location.position.x;
-    CStack_60.z = (pCVar10->base_character).base_actor.location.position.y -
-                  (in_stack_00000004->base_actor).location.position.y;
-    fStack_54 = (pCVar10->base_character).base_actor.location.position.z -
+    fStack_78 = (pCVar10->base_character).base_actor.location.position.x -
+                (in_stack_00000004->base_actor).location.position.x;
+    fStack_74 = (pCVar10->base_character).base_actor.location.position.y -
+                (in_stack_00000004->base_actor).location.position.y;
+    fStack_70 = (pCVar10->base_character).base_actor.location.position.z -
                 (in_stack_00000004->base_actor).location.position.z;
-    if (&fStack_50 != &CStack_60.y) {
-      fStack_50 = CStack_60.y;
-      fStack_4c = CStack_60.z;
-      auStack_48._0_4_ = fStack_54;
+    if ((float *)local_6c != &fStack_78) {
+      local_6c._0_4_ = fStack_78;
+      local_6c._4_4_ = fStack_74;
+      local_64 = fStack_70;
     }
+    fVar6 = SQRT(local_64 * local_64 +
+                 (float)local_6c._0_4_ * (float)local_6c._0_4_ +
+                 (float)local_6c._4_4_ * (float)local_6c._4_4_);
     in_stack_00000004->field2_0x240c[0xc] = '\0';
     in_stack_00000004->field2_0x240c[0xd] = '\0';
     in_stack_00000004->field2_0x240c[0xe] = '\0';
     in_stack_00000004->field2_0x240c[0xf] = '\0';
-    if ((float)6 <=
-        SQRT((float)auStack_48._0_4_ * (float)auStack_48._0_4_ +
-             fStack_50 * fStack_50 + fStack_4c * fStack_4c)) {
-      if (bVar2) {
+    fStack_18 = fVar6;
+    if ((float)6 <= fVar6) {
+      pCStack_20 = (CPathMap *)0x0;
+      if (bVar1) {
         in_stack_00000004->cloth_data[0x32c] = '\0';
         in_stack_00000004->cloth_data[0x32d] = '\0';
         in_stack_00000004->cloth_data[0x32e] = '\0';
         in_stack_00000004->cloth_data[0x32f] = '\0';
       }
       else {
-        local_1c = (*((g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable)->
-                     getPathMap)((CDemonActor *)g_HeroActors[g_LocalHeroIndex]);
-        iVar4 = (*(g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable[1].
-                  processMeleeHit)((CDemonActor *)g_HeroActors[g_LocalHeroIndex],in_stack_ffffff4c);
-        if ((iVar4 == 0) &&
-           (uVar9 = core_charactr_cpp_CCharacter_FUN_0042ede0(in_stack_00000004), uVar9 != 0)) {
-          if (uVar9 < 2) {
-            pCVar3 = in_stack_00000004 + 1;
-            (pCVar3->base_actor).actor_name[8] = '\x01';
-            (pCVar3->base_actor).actor_name[9] = '\0';
-            (pCVar3->base_actor).actor_name[10] = '\0';
-            (pCVar3->base_actor).actor_name[0xb] = '\0';
+        pCStack_20 = (*((g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable)->
+                       getPathMap)((CDemonActor *)g_HeroActors[g_LocalHeroIndex]);
+        iVar3 = (*(g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable[1].
+                  processMeleeHit)((CDemonActor *)g_HeroActors[g_LocalHeroIndex],in_stack_ffffff48);
+        if ((iVar3 == 0) &&
+           (uVar8 = core_charactr_cpp_CCharacter_FUN_0042ede0(in_stack_00000004), uVar8 != 0)) {
+          if (uVar8 < 2) {
+            pCVar2 = in_stack_00000004 + 1;
+            (pCVar2->base_actor).actor_name[8] = '\x01';
+            (pCVar2->base_actor).actor_name[9] = '\0';
+            (pCVar2->base_actor).actor_name[10] = '\0';
+            (pCVar2->base_actor).actor_name[0xb] = '\0';
           }
-          else if (uVar9 == 2) {
-            pCVar3 = in_stack_00000004 + 1;
-            (pCVar3->base_actor).actor_name[0x10] = '\x01';
-            (pCVar3->base_actor).actor_name[0x11] = '\0';
-            (pCVar3->base_actor).actor_name[0x12] = '\0';
-            (pCVar3->base_actor).actor_name[0x13] = '\0';
-            pCVar3 = in_stack_00000004 + 1;
-            (pCVar3->base_actor).actor_name[8] = '\x01';
-            (pCVar3->base_actor).actor_name[9] = '\0';
-            (pCVar3->base_actor).actor_name[10] = '\0';
-            (pCVar3->base_actor).actor_name[0xb] = '\0';
+          else if (uVar8 == 2) {
+            pCVar2 = in_stack_00000004 + 1;
+            (pCVar2->base_actor).actor_name[0x10] = '\x01';
+            (pCVar2->base_actor).actor_name[0x11] = '\0';
+            (pCVar2->base_actor).actor_name[0x12] = '\0';
+            (pCVar2->base_actor).actor_name[0x13] = '\0';
+            pCVar2 = in_stack_00000004 + 1;
+            (pCVar2->base_actor).actor_name[8] = '\x01';
+            (pCVar2->base_actor).actor_name[9] = '\0';
+            (pCVar2->base_actor).actor_name[10] = '\0';
+            (pCVar2->base_actor).actor_name[0xb] = '\0';
           }
         }
       }
-      this_ptr = (CPathMap *)core_path_cpp_FUN_00548500();
-      iVar4 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00
-                        (this_ptr,&(in_stack_00000004->base_actor).location.position,
-                         (CVector3f *)(local_30 + 4),(in_stack_00000004->base_actor).field7_0x6c);
-      if (iVar4 != 0) {
-        fVar7 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                          (local_24 - (in_stack_00000004->base_actor).orient.bank);
-        fVar7 = fVar7 * (float)0.31830988619288902 * (float)4;
-        fStack_14 = -in_stack_00000008;
-        in_stack_00000004[1].base_actor.location.area_id = (int)fVar7;
-        if (fVar7 < fStack_14) {
-          in_stack_00000004[1].base_actor.location.area_id = (int)fStack_14;
+      if (pCStack_20 == (CPathMap *)0x0) {
+        pCStack_20 = (CPathMap *)core_path_cpp_FUN_00548500();
+      }
+      iVar3 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00
+                        (pCStack_20,&(in_stack_00000004->base_actor).location.position,&CStack_48,
+                         (in_stack_00000004->base_actor).field7_0x6c);
+      if (iVar3 != 0) {
+        fVar9 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
+                          (CStack_48.y - (in_stack_00000004->base_actor).orient.bank);
+        fVar9 = fVar9 * (float)0.31830988619288902 * (float)4;
+        fStack_38 = -local_1c;
+        in_stack_00000004[1].base_actor.location.area_id = (int)fVar9;
+        if (fVar9 < fStack_38) {
+          in_stack_00000004[1].base_actor.location.area_id = (int)fStack_38;
         }
-        if (in_stack_00000008 < (float)in_stack_00000004[1].base_actor.location.area_id) {
-          in_stack_00000004[1].base_actor.location.area_id = (int)in_stack_00000008;
+        if (local_1c < (float)in_stack_00000004[1].base_actor.location.area_id) {
+          in_stack_00000004[1].base_actor.location.area_id = (int)local_1c;
         }
-        if (((float)10 <= fStack_70) || (bVar2)) {
-          pCVar3 = in_stack_00000004 + 1;
-          (pCVar3->base_actor).actor_name[0x10] = '\x01';
-          (pCVar3->base_actor).actor_name[0x11] = '\0';
-          (pCVar3->base_actor).actor_name[0x12] = '\0';
-          (pCVar3->base_actor).actor_name[0x13] = '\0';
-          pCVar3 = in_stack_00000004 + 1;
-          (pCVar3->base_actor).actor_name[8] = '\x01';
-          (pCVar3->base_actor).actor_name[9] = '\0';
-          (pCVar3->base_actor).actor_name[10] = '\0';
-          (pCVar3->base_actor).actor_name[0xb] = '\0';
+        if (((float)10 <= fVar6) || (bVar1)) {
+          pCVar2 = in_stack_00000004 + 1;
+          (pCVar2->base_actor).actor_name[0x10] = '\x01';
+          (pCVar2->base_actor).actor_name[0x11] = '\0';
+          (pCVar2->base_actor).actor_name[0x12] = '\0';
+          (pCVar2->base_actor).actor_name[0x13] = '\0';
+          pCVar2 = in_stack_00000004 + 1;
+          (pCVar2->base_actor).actor_name[8] = '\x01';
+          (pCVar2->base_actor).actor_name[9] = '\0';
+          (pCVar2->base_actor).actor_name[10] = '\0';
+          (pCVar2->base_actor).actor_name[0xb] = '\0';
         }
         else {
-          pCVar3 = in_stack_00000004 + 1;
-          (pCVar3->base_actor).actor_name[8] = '\x01';
-          (pCVar3->base_actor).actor_name[9] = '\0';
-          (pCVar3->base_actor).actor_name[10] = '\0';
-          (pCVar3->base_actor).actor_name[0xb] = '\0';
+          pCVar2 = in_stack_00000004 + 1;
+          (pCVar2->base_actor).actor_name[8] = '\x01';
+          (pCVar2->base_actor).actor_name[9] = '\0';
+          (pCVar2->base_actor).actor_name[10] = '\0';
+          (pCVar2->base_actor).actor_name[0xb] = '\0';
         }
       }
     }
     else {
-      if (bVar2) {
+      if (bVar1) {
         if (*(int *)(in_stack_00000004[2].cloth_data + 0x54f4) == 0) {
           in_stack_00000004[1].base_actor.location.position.x = 1.4013e-45;
         }
         else {
-          pSVar8 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+          pSVar7 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                              (&(in_stack_00000004->model).motion_controller);
-          if ((pSVar8->state_index != 2) && (pSVar8->state_index != 1)) {
-            pCVar3 = in_stack_00000004 + 1;
-            (pCVar3->base_actor).actor_name[0x14] = '\x01';
-            (pCVar3->base_actor).actor_name[0x15] = '\0';
-            (pCVar3->base_actor).actor_name[0x16] = '\0';
-            (pCVar3->base_actor).actor_name[0x17] = '\0';
+          if ((pSVar7->state_index != 2) && (pSVar7->state_index != 1)) {
+            pCVar2 = in_stack_00000004 + 1;
+            (pCVar2->base_actor).actor_name[0x14] = '\x01';
+            (pCVar2->base_actor).actor_name[0x15] = '\0';
+            (pCVar2->base_actor).actor_name[0x16] = '\0';
+            (pCVar2->base_actor).actor_name[0x17] = '\0';
           }
         }
         in_stack_00000004->cloth_data[0x32c] = '\0';
@@ -198,52 +207,53 @@ void core_svetlana_cpp_FUN_005d9260(void)
         in_stack_00000004->cloth_data[0x32f] = '\0';
       }
       else {
-        pSVar8 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+        pSVar7 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                            (&(in_stack_00000004->model).motion_controller);
-        if ((pSVar8->state_index == 10) && (*(int *)(in_stack_00000004[2].cloth_data + 0x54f4) != 0)
+        if ((pSVar7->state_index == 10) && (*(int *)(in_stack_00000004[2].cloth_data + 0x54f4) != 0)
            ) {
           in_stack_00000004[1].base_actor.location.position.x = 1.4013e-45;
         }
-        iVar4 = (*(g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable[1].
-                  processMeleeHit)((CDemonActor *)g_HeroActors[g_LocalHeroIndex],in_stack_ffffff54);
-        if ((iVar4 == 0) &&
-           (uVar9 = core_charactr_cpp_CCharacter_FUN_0042ede0(in_stack_00000004), uVar9 != 0)) {
-          if (uVar9 < 2) {
-            pCVar3 = in_stack_00000004 + 1;
-            (pCVar3->base_actor).actor_name[8] = '\x01';
-            (pCVar3->base_actor).actor_name[9] = '\0';
-            (pCVar3->base_actor).actor_name[10] = '\0';
-            (pCVar3->base_actor).actor_name[0xb] = '\0';
+        iVar3 = (*(g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable[1].
+                  processMeleeHit)((CDemonActor *)g_HeroActors[g_LocalHeroIndex],in_stack_ffffff48);
+        if ((iVar3 == 0) &&
+           (uVar8 = core_charactr_cpp_CCharacter_FUN_0042ede0(in_stack_00000004), uVar8 != 0)) {
+          if (uVar8 < 2) {
+            pCVar2 = in_stack_00000004 + 1;
+            (pCVar2->base_actor).actor_name[8] = '\x01';
+            (pCVar2->base_actor).actor_name[9] = '\0';
+            (pCVar2->base_actor).actor_name[10] = '\0';
+            (pCVar2->base_actor).actor_name[0xb] = '\0';
           }
-          else if (uVar9 == 2) {
-            pCVar3 = in_stack_00000004 + 1;
-            (pCVar3->base_actor).actor_name[0x10] = '\x01';
-            (pCVar3->base_actor).actor_name[0x11] = '\0';
-            (pCVar3->base_actor).actor_name[0x12] = '\0';
-            (pCVar3->base_actor).actor_name[0x13] = '\0';
-            pCVar3 = in_stack_00000004 + 1;
-            (pCVar3->base_actor).actor_name[8] = '\x01';
-            (pCVar3->base_actor).actor_name[9] = '\0';
-            (pCVar3->base_actor).actor_name[10] = '\0';
-            (pCVar3->base_actor).actor_name[0xb] = '\0';
+          else if (uVar8 == 2) {
+            pCVar2 = in_stack_00000004 + 1;
+            (pCVar2->base_actor).actor_name[0x10] = '\x01';
+            (pCVar2->base_actor).actor_name[0x11] = '\0';
+            (pCVar2->base_actor).actor_name[0x12] = '\0';
+            (pCVar2->base_actor).actor_name[0x13] = '\0';
+            pCVar2 = in_stack_00000004 + 1;
+            (pCVar2->base_actor).actor_name[8] = '\x01';
+            (pCVar2->base_actor).actor_name[9] = '\0';
+            (pCVar2->base_actor).actor_name[10] = '\0';
+            (pCVar2->base_actor).actor_name[0xb] = '\0';
           }
         }
       }
-      if (bVar2) {
-        pCVar6 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
-                           ((CVector3f *)local_30,(CVector3f *)auStack_48);
-        fVar7 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                          (pCVar6->y - (in_stack_00000004->base_actor).orient.bank);
-        fVar7 = fVar7 * (float)0.31830988619288902 * (float)4;
-        in_stack_00000004[1].base_actor.location.area_id = (int)fVar7;
-        if (fVar7 < -in_stack_00000008) {
-          in_stack_00000004[1].base_actor.location.area_id = (int)-in_stack_00000008;
+      if (bVar1) {
+        pCVar5 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+                           (&CStack_54,(CVector3f *)local_6c);
+        fVar6 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
+                          (pCVar5->y - (in_stack_00000004->base_actor).orient.bank);
+        fVar6 = fVar6 * (float)0.31830988619288902 * (float)4;
+        fStack_34 = -local_1c;
+        in_stack_00000004[1].base_actor.location.area_id = (int)fVar6;
+        if (fVar6 < fStack_34) {
+          in_stack_00000004[1].base_actor.location.area_id = (int)fStack_34;
         }
-        if (in_stack_00000008 < (float)in_stack_00000004[1].base_actor.location.area_id) {
-          in_stack_00000004[1].base_actor.location.area_id = (int)in_stack_00000008;
+        if (local_1c < (float)in_stack_00000004[1].base_actor.location.area_id) {
+          in_stack_00000004[1].base_actor.location.area_id = (int)local_1c;
         }
-        fVar7 = (float)in_stack_00000004[1].base_actor.location.area_id;
-        if ((((float)-0.25 < fVar7) && ((double)fVar7 < 0.25)) &&
+        fVar6 = (float)in_stack_00000004[1].base_actor.location.area_id;
+        if ((((float)-0.25 < fVar6) && ((double)fVar6 < 0.25)) &&
            (*(int *)(in_stack_00000004[1].base_actor.actor_name + 0x14) != 0)) {
           in_stack_00000004[1].base_actor.location.area_id = 0;
         }
@@ -255,7 +265,7 @@ void core_svetlana_cpp_FUN_005d9260(void)
         in_stack_00000004->field2_0x240c[0xd] = '\0';
         in_stack_00000004->field2_0x240c[0xe] = '\0';
         in_stack_00000004->field2_0x240c[0xf] = '\0';
-        in_stack_00000004[1].base_actor.location.area_id = (int)-in_stack_00000008;
+        in_stack_00000004[1].base_actor.location.area_id = (int)-local_1c;
       }
     }
     else {
@@ -263,43 +273,43 @@ void core_svetlana_cpp_FUN_005d9260(void)
       in_stack_00000004->field2_0x240c[0xd] = '\0';
       in_stack_00000004->field2_0x240c[0xe] = '\0';
       in_stack_00000004->field2_0x240c[0xf] = '\0';
-      in_stack_00000004[1].base_actor.location.area_id = (int)in_stack_00000008;
+      in_stack_00000004[1].base_actor.location.area_id = (int)local_1c;
     }
-    fStack_3c = (pCVar10->base_character).base_actor.location.position.x -
+    fStack_60 = (pCVar10->base_character).base_actor.location.position.x -
                 (in_stack_00000004->base_actor).location.position.x;
-    fStack_38 = (pCVar10->base_character).base_actor.location.position.y -
+    fStack_5c = (pCVar10->base_character).base_actor.location.position.y -
                 (in_stack_00000004->base_actor).location.position.y;
-    fStack_34 = (pCVar10->base_character).base_actor.location.position.z -
+    fStack_58 = (pCVar10->base_character).base_actor.location.position.z -
                 (in_stack_00000004->base_actor).location.position.z;
-    if ((float *)auStack_48 != &fStack_3c) {
-      auStack_48._0_4_ = fStack_3c;
-      auStack_48._4_4_ = fStack_38;
-      fStack_40 = fStack_34;
+    if ((float *)local_6c != &fStack_60) {
+      local_6c._0_4_ = fStack_60;
+      local_6c._4_4_ = fStack_5c;
+      local_64 = fStack_58;
     }
-    pCVar6 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
-                       (&CStack_60,(CVector3f *)auStack_48);
-    if ((CVector3f *)(auStack_48 + 4) != pCVar6) {
-      auStack_48._4_4_ = pCVar6->x;
-      fStack_40 = pCVar6->y;
-      fStack_3c = pCVar6->z;
+    pCVar5 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
+                       (&CStack_84,(CVector3f *)local_6c);
+    if ((CVector3f *)(local_6c + 4) != pCVar5) {
+      local_6c._0_4_ = pCVar5->x;
+      local_6c._4_4_ = pCVar5->y;
+      local_64 = pCVar5->z;
     }
-    CStack_60.x = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                            (fStack_40 - (in_stack_00000004->base_actor).orient.bank);
-    if (in_stack_00000008 < CStack_60.x) {
-      CStack_60.x = in_stack_00000008;
+    fStack_8c = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
+                          ((float)local_6c._4_4_ - (in_stack_00000004->base_actor).orient.bank);
+    if (local_24 < fStack_8c) {
+      fStack_8c = local_24;
     }
-    if (CStack_60.x < -in_stack_00000008) {
-      CStack_60.x = -in_stack_00000008;
+    if (fStack_8c < -local_24) {
+      fStack_8c = -local_24;
     }
-    local_6c = CStack_60.x - *(float *)(in_stack_00000004[0xd].cloth_data + 0x2658);
-    if (in_stack_00000008 * (float)3.1415926535000001 < local_6c) {
-      local_6c = in_stack_00000008 * (float)3.1415926535000001;
+    fStack_98 = fStack_8c - *(float *)(in_stack_00000004[0xd].cloth_data + 0x2658);
+    if (in_stack_00000008 * (float)3.1415926535000001 < fStack_98) {
+      fStack_98 = in_stack_00000008 * (float)3.1415926535000001;
     }
-    if (local_6c < in_stack_00000008 * (float)-3.1415926535000001) {
-      local_6c = in_stack_00000008 * (float)-3.1415926535000001;
+    if (fStack_98 < in_stack_00000008 * (float)-3.1415926535000001) {
+      fStack_98 = in_stack_00000008 * (float)-3.1415926535000001;
     }
     *(float *)(in_stack_00000004[0xd].cloth_data + 0x2658) =
-         *(float *)(in_stack_00000004[0xd].cloth_data + 0x2658) + local_6c;
+         *(float *)(in_stack_00000004[0xd].cloth_data + 0x2658) + fStack_98;
   }
   return;
 }

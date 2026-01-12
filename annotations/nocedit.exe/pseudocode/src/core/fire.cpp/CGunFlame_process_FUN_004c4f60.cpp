@@ -18,7 +18,6 @@ void __cdecl core_fire_cpp_CGunFlame_process_FUN_004c4f60(CGunFlame *this_ptr)
   float fVar4;
   float fVar5;
   int iVar6;
-  float unaff_ESI;
   
   fVar5 = g_CGamePtr->delta_time_float;
   fVar2 = *(float *)this_ptr->field0_0x0 - fVar5;
@@ -47,11 +46,11 @@ void __cdecl core_fire_cpp_CGunFlame_process_FUN_004c4f60(CGunFlame *this_ptr)
                 (g_CFireEffectPtr,position,0.5,(CVector3f *)0x0,0xffff);
     }
     if ((*(int *)(this_ptr->field0_0x0 + 0x20) != 0) &&
-       (iVar6 = core_actor_cpp_randomChance_FUN_0040cd10(unaff_ESI), iVar6 != 0)) {
+       (iVar6 = core_actor_cpp_randomChance_FUN_0040cd10(fVar5), iVar6 != 0)) {
       core_fire_cpp_CGunFlame_FUN_004c4c00(this_ptr);
     }
     *(float *)(this_ptr->field0_0x0 + 0x1c) =
-         unaff_ESI * _DAT_0065dcc8 + *(float *)(this_ptr->field0_0x0 + 0x1c);
+         fVar5 * _DAT_0065dcc8 + *(float *)(this_ptr->field0_0x0 + 0x1c);
     fVar5 = -20f;
     if (0x419fffff < *(int *)(this_ptr->field0_0x0 + 0x1c)) {
       do {

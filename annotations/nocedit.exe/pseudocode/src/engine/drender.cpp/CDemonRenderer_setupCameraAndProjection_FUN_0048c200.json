@@ -1,19 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 161,
-    "complexity_score": 213,
+    "complexity_score": 223,
     "cross_reference_count": 5,
     "function_call_count": 3,
     "global_count": 20,
     "pseudocode_lines": 93,
-    "suspect_count": 9,
+    "suspect_count": 10,
     "suspect_types": [
       "badspacebase",
       "extra_output",
       "param_count_too_many",
       "register_param",
-      "stack_align_anchor",
-      "suspect_float"
+      "suspect_float",
+      "unaffected_reg"
     ],
     "total_lines": 254
   },
@@ -254,6 +254,11 @@
     "declared_params": 3,
     "estimated_params": 2
   },
+  "pcode_overrides": {
+    "0048c209": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff4,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.924657534246576,
     "instruction_count": 146,
@@ -293,6 +298,18 @@
     },
     "pcode_op_count": 1011
   },
+  "resolved_suspects": [
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0xc",
+      "fix_address": "0048c209",
+      "frame_offset": 12,
+      "match": "AND ESP",
+      "sub_esp_offset": 12,
+      "text": "Stack alignment at 0048c209 (SUB ESP, 0xc before)",
+      "type": "stack_align_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 48,
     "local_size": 36,
@@ -391,10 +408,24 @@
       "type": "register_param"
     },
     {
+      "description": "Unaffected register variable",
+      "line": 15,
+      "match": "unaff_EBP",
+      "text": "float unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 32,
+      "match": "unaff_EBP",
+      "text": "fVar10 = (float10)unaff_EBP * (float10)0.31830988619288902 * (float10)32768",
+      "type": "unaffected_reg"
+    },
+    {
       "description": "Likely misinterpreted integer as float",
       "line": 36,
       "match": "6.681925e-39",
-      "text": "local_20.x = 6.681925e-39;",
+      "text": "local_1c.x = 6.681925e-39;",
       "type": "suspect_float"
     },
     {
@@ -421,16 +452,6 @@
       "param_delta": -1,
       "text": "Function declares 3 params but call sites push 2 (1 extra)",
       "type": "param_count_too_many"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0xc",
-      "fix_address": "0048c209",
-      "frame_offset": 12,
-      "match": "AND ESP",
-      "sub_esp_offset": 12,
-      "text": "Stack alignment at 0048c209 (SUB ESP, 0xc before)",
-      "type": "stack_align_anchor"
     }
   ]
 }

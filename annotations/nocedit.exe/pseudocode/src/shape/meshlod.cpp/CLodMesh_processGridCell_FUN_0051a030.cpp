@@ -17,9 +17,11 @@ shape_meshlod_cpp_CLodMesh_processGridCell_FUN_0051a030
   int *piVar4;
   int iVar5;
   int iVar6;
-  double in_stack_ffffffc8;
-  uint local_30;
-  ulonglong uStack_2c;
+  CLodFace *face;
+  double dStack_34;
+  uint uStack_30;
+  ulonglong local_28;
+  CLodMesh *local_18;
   int iStack_14;
   
   piVar4 = this_ptr->spatial_grid_ptr->cell_start_indices[grid_x][grid_y] + grid_z;
@@ -35,22 +37,25 @@ shape_meshlod_cpp_CLodMesh_processGridCell_FUN_0051a030
          (g_LodGenerationStamp != pCVar3[iVar2].visited_stamp)) {
         pCVar3[iVar2].visited_stamp = g_LodGenerationStamp;
         iVar5 = 0;
+        iStack_14 = 0;
         if (0 < g_SamplePointCount) {
-          uStack_2c = (double)((ulonglong)(uint)(iVar2 * 0x8c) << 0x20);
+          local_28 = (double)((ulonglong)(uint)(iVar2 * 0x8c) << 0x20);
+          local_18 = (CLodMesh *)g_SamplePointArray;
           do {
-            in_stack_ffffffc8 =
-                 shape_meshlod_cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400
-                           ((CLodMesh *)g_SamplePointArray,
-                            (SLodSamplePoint *)
-                            ((int)this_ptr->tri_data->attribute_indices + uStack_2c._4_4_),
-                            SUB84 /* extract 2-byte value */(in_stack_ffffffc8,0));
-            if (in_stack_ffffffc8 < *(double *)((int)g_SampleDistances + iVar5)) {
-              *(int *)((int)g_SampleDistances + iVar5) = SUB84 /* extract 2-byte value */(in_stack_ffffffc8,0);
-              *(uint *)((int)g_SampleDistances + iVar5 + 4) = local_30;
+            local_28 = shape_meshlod_cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400
+                                 (local_18,(SLodSamplePoint *)
+                                           ((int)this_ptr->tri_data->attribute_indices +
+                                           local_28._4_4_),face);
+            if (local_28 < *(double *)((int)g_SampleDistances + iVar5)) {
+              face = SUB84 /* extract 2-byte value */(local_28,0);
+              *(CLodFace **)((int)g_SampleDistances + iVar5) = face;
+              uStack_30 = (uint)((ulonglong)local_28 >> 0x20);
+              *(uint *)((int)g_SampleDistances + iVar5 + 4) = uStack_30;
             }
             iVar5 = iVar5 + 8;
+            local_18 = (CLodMesh *)&local_18->tri_data;
             iStack_14 = iStack_14 + 1;
-            uStack_2c = in_stack_ffffffc8;
+            dStack_34 = local_28;
           } while (iStack_14 < g_SamplePointCount);
         }
       }

@@ -14,7 +14,7 @@ crt_locale_c_mbtowc_FUN_0060b1c0(wchar_t *wide_char,char *mb_string,SIZE_T max_b
   uint uVar2;
   uint cbMultiByte;
   BADSPACEBASE *in_ESP;
-  wchar_t wVar3;
+  wchar_t local_14 [2];
   
   if (mb_string == (char *)0x0) {
     iVar1 = 0;
@@ -30,16 +30,14 @@ crt_locale_c_mbtowc_FUN_0060b1c0(wchar_t *wide_char,char *mb_string,SIZE_T max_b
       if (((g_MultibyteLocaleActive == 0) || ((g_LeadByteTable[(byte)*mb_string] & 1U) == 0)) ||
          (mb_string[1] != '\0')) {
         uVar2 = crt_locale_c_mblen_FUN_00605a40(mb_string);
-        wVar3 = L'\x01';
         cbMultiByte = uVar2;
         if (max_bytes < uVar2) {
           cbMultiByte = max_bytes;
         }
-        iVar1 = (*PTR_MultiByteToWideChar_006115f4)
-                          (g_CodePage,8,mb_string,cbMultiByte,(LPWSTR)&stack0xffffffec,1);
+        iVar1 = (*PTR_MultiByteToWideChar_006115f4)(g_CodePage,8,mb_string,cbMultiByte,local_14,1);
         if (iVar1 != 0) {
           if (wide_char != (wchar_t *)0x0) {
-            *wide_char = wVar3;
+            *wide_char = local_14[0];
           }
           return uVar2;
         }

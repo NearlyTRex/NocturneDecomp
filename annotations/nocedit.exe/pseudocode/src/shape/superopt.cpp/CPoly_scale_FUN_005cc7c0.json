@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 283,
-    "complexity_score": 638,
+    "complexity_score": 623,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "pseudocode_lines": 223,
-    "suspect_count": 39,
+    "suspect_count": 38,
     "suspect_types": [
       "badspacebase",
       "concat_artifact",
       "pointer_cast",
-      "register_param",
-      "stack_align_anchor"
+      "register_param"
     ],
     "total_lines": 506
   },
@@ -38,6 +37,11 @@
     "confidence": "unknown",
     "declared_params": 3,
     "estimated_params": 3
+  },
+  "pcode_overrides": {
+    "005cc7cc": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffe04,4)"
+    ]
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.159574468085107,
@@ -73,6 +77,18 @@
     },
     "pcode_op_count": 1737
   },
+  "resolved_suspects": [
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x1fc",
+      "fix_address": "005cc7cc",
+      "frame_offset": 508,
+      "match": "AND ESP",
+      "sub_esp_offset": 508,
+      "text": "Stack alignment at 005cc7cc (SUB ESP, 0x1fc before)",
+      "type": "stack_align_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 544,
     "local_size": 532,
@@ -658,21 +674,21 @@
       "description": "Complex pointer cast",
       "line": 91,
       "match": "(uint *)((int)",
-      "text": "uStack_bc = *(uint *)((int)&scale->x + 4);",
+      "text": "local_b8 = *(uint *)((int)&scale->x + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 93,
       "match": "(uint *)((int)",
-      "text": "uStack_b4 = *(uint *)((int)&scale->y + 4);",
+      "text": "local_b0 = *(uint *)((int)&scale->y + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 95,
       "match": "(uint *)((int)",
-      "text": "uStack_ac = *(uint *)((int)&scale->z + 4);",
+      "text": "local_a8 = *(uint *)((int)&scale->z + 4);",
       "type": "pointer_cast"
     },
     {
@@ -693,21 +709,21 @@
       "description": "Decompiler double/longlong composition artifact",
       "line": 107,
       "match": "CONCAT44",
-      "text": "local_60 = local_210 * (double)CONCAT44 /* combine 2-byte values */(uStack_bc,local_c0);",
+      "text": "dStack_5c = dStack_20c * (double)CONCAT44 /* combine 2-byte values */(local_b8,uStack_bc);",
       "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
       "line": 108,
       "match": "CONCAT44",
-      "text": "local_58 = local_208 * (double)CONCAT44 /* combine 2-byte values */(uStack_b4,local_b8);",
+      "text": "dStack_54 = dStack_204 * (double)CONCAT44 /* combine 2-byte values */(local_b0,uStack_b4);",
       "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
       "line": 109,
       "match": "CONCAT44",
-      "text": "local_50 = local_200 * (double)CONCAT44 /* combine 2-byte values */(uStack_ac,local_b0);",
+      "text": "dStack_4c = dStack_1fc * (double)CONCAT44 /* combine 2-byte values */(local_a8,uStack_ac);",
       "type": "concat_artifact"
     },
     {
@@ -735,42 +751,42 @@
       "description": "Complex pointer cast",
       "line": 128,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&(pCVar5->position).x + 4) = local_90[1];",
+      "text": "*(uint *)((int)&(pCVar5->position).x + 4) = local_8c[1];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 130,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&(pCVar5->position).y + 4) = local_90[3];",
+      "text": "*(uint *)((int)&(pCVar5->position).y + 4) = local_8c[3];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 132,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&(pCVar5->position).z + 4) = local_7c;",
+      "text": "*(uint *)((int)&(pCVar5->position).z + 4) = local_78;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 135,
       "match": "(uint *)((int)",
-      "text": "uStack_17c = *(uint *)((int)&scale->x + 4);",
+      "text": "local_178 = *(uint *)((int)&scale->x + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 138,
       "match": "(uint *)((int)",
-      "text": "uStack_174 = *(uint *)((int)&scale->y + 4);",
+      "text": "local_170 = *(uint *)((int)&scale->y + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 141,
       "match": "(uint *)((int)",
-      "text": "uStack_16c = *(uint *)((int)&scale->z + 4);",
+      "text": "local_168 = *(uint *)((int)&scale->z + 4);",
       "type": "pointer_cast"
     },
     {
@@ -812,42 +828,42 @@
       "description": "Complex pointer cast",
       "line": 174,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&(pCVar5->position).x + 4) = local_150[1];",
+      "text": "*(uint *)((int)&(pCVar5->position).x + 4) = local_14c[1];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 176,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&(pCVar5->position).y + 4) = local_150[3];",
+      "text": "*(uint *)((int)&(pCVar5->position).y + 4) = local_14c[3];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 178,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&(pCVar5->position).z + 4) = local_13c;",
+      "text": "*(uint *)((int)&(pCVar5->position).z + 4) = local_138;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 181,
       "match": "(uint *)((int)",
-      "text": "uStack_1ac = *(uint *)((int)&scale->x + 4);",
+      "text": "local_1a8 = *(uint *)((int)&scale->x + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 184,
       "match": "(uint *)((int)",
-      "text": "uStack_1a4 = *(uint *)((int)&scale->y + 4);",
+      "text": "local_1a0 = *(uint *)((int)&scale->y + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 187,
       "match": "(uint *)((int)",
-      "text": "uStack_19c = *(uint *)((int)&scale->z + 4);",
+      "text": "local_198 = *(uint *)((int)&scale->z + 4);",
       "type": "pointer_cast"
     },
     {
@@ -889,32 +905,22 @@
       "description": "Complex pointer cast",
       "line": 220,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&(pCVar5->position).x + 4) = local_1c8[1];",
+      "text": "*(uint *)((int)&(pCVar5->position).x + 4) = local_1c4[1];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 222,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&(pCVar5->position).y + 4) = local_1c8[3];",
+      "text": "*(uint *)((int)&(pCVar5->position).y + 4) = local_1c4[3];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 224,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&(pCVar5->position).z + 4) = local_1b4;",
+      "text": "*(uint *)((int)&(pCVar5->position).z + 4) = local_1b0;",
       "type": "pointer_cast"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x1fc",
-      "fix_address": "005cc7cc",
-      "frame_offset": 508,
-      "match": "AND ESP",
-      "sub_esp_offset": 508,
-      "text": "Stack alignment at 005cc7cc (SUB ESP, 0x1fc before)",
-      "type": "stack_align_anchor"
     }
   ],
   "vtable_info": {

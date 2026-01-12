@@ -1,21 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 106,
-    "complexity_score": 220,
+    "complexity_score": 110,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 6,
-    "pseudocode_lines": 50,
-    "suspect_count": 14,
+    "pseudocode_lines": 55,
+    "suspect_count": 4,
     "suspect_types": [
-      "call_esp_anchor",
       "pointer_cast",
-      "stack_align_anchor",
-      "stack_param",
       "sub_artifact",
       "unknown_field"
     ],
-    "total_lines": 156
+    "total_lines": 161
   },
   "cross_references": [
     {
@@ -83,6 +80,14 @@
       "value": null
     }
   ],
+  "pcode_overrides": {
+    "0051a039": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffdc,4)"
+    ],
+    "0051a0fc": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffdc,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.855555555555555,
     "instruction_count": 90,
@@ -121,6 +126,31 @@
     },
     "pcode_op_count": 527
   },
+  "resolved_suspects": [
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x24",
+      "fix_address": "0051a039",
+      "frame_offset": 36,
+      "match": "AND ESP",
+      "sub_esp_offset": 36,
+      "text": "Stack alignment at 0051a039 (SUB ESP, 0x24 before)",
+      "type": "stack_align_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "0051a0eb",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0051a0fc",
+      "frame_offset": 36,
+      "match": "CALL...ADD ESP",
+      "return_address": "0051a0f0",
+      "target_address": "0x51a400",
+      "text": "Direct CALL at 0051a0eb, ADD ESP at 0051a0fc with uncertain ESP",
+      "type": "call_esp_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 76,
     "local_size": 60,
@@ -226,111 +256,32 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_ffffffc8",
-      "text": "double in_stack_ffffffc8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 34,
-      "match": "in_stack_ffffffc8",
-      "text": "in_stack_ffffffc8 =",
-      "type": "stack_param"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 38,
+      "line": 41,
       "match": "._4_4_",
-      "text": "((int)this_ptr->tri_data->attribute_indices + uStack_2c._4_4_),",
+      "text": "local_28._4_4_),face);",
       "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 39,
-      "match": "in_stack_ffffffc8",
-      "text": "SUB84 /* extract 2-byte value */(in_stack_ffffffc8,0));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 39,
-      "match": "SUB84",
-      "text": "SUB84 /* extract 2-byte value */(in_stack_ffffffc8,0));",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 40,
-      "match": "in_stack_ffffffc8",
-      "text": "if (in_stack_ffffffc8 < *(double *)((int)g_SampleDistances + iVar5)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 40,
-      "match": "(double *)((int)",
-      "text": "if (in_stack_ffffffc8 < *(double *)((int)g_SampleDistances + iVar5)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 41,
-      "match": "in_stack_ffffffc8",
-      "text": "*(int *)((int)g_SampleDistances + iVar5) = SUB84 /* extract 2-byte value */(in_stack_ffffffc8,0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 41,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)g_SampleDistances + iVar5) = SUB84 /* extract 2-byte value */(in_stack_ffffffc8,0);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 41,
-      "match": "SUB84",
-      "text": "*(int *)((int)g_SampleDistances + iVar5) = SUB84 /* extract 2-byte value */(in_stack_ffffffc8,0);",
-      "type": "sub_artifact"
     },
     {
       "description": "Complex pointer cast",
       "line": 42,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)g_SampleDistances + iVar5 + 4) = local_30;",
+      "match": "(double *)((int)",
+      "text": "if (local_28 < *(double *)((int)g_SampleDistances + iVar5)) {",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 43,
+      "match": "SUB84",
+      "text": "face = SUB84 /* extract 2-byte value */(local_28,0);",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 46,
-      "match": "in_stack_ffffffc8",
-      "text": "uStack_2c = in_stack_ffffffc8;",
-      "type": "stack_param"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x24",
-      "fix_address": "0051a039",
-      "frame_offset": 36,
-      "match": "AND ESP",
-      "sub_esp_offset": 36,
-      "text": "Stack alignment at 0051a039 (SUB ESP, 0x24 before)",
-      "type": "stack_align_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "0051a0eb",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0051a0fc",
-      "frame_offset": 36,
-      "match": "CALL...ADD ESP",
-      "return_address": "0051a0f0",
-      "target_address": "0x51a400",
-      "text": "Direct CALL at 0051a0eb, ADD ESP at 0051a0fc with uncertain ESP",
-      "type": "call_esp_anchor"
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)g_SampleDistances + iVar5 + 4) = uStack_30;",
+      "type": "pointer_cast"
     }
   ]
 }

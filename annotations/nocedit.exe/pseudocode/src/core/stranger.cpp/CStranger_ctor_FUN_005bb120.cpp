@@ -15,10 +15,6 @@ CStranger * __cdecl core_stranger_cpp_CStranger_ctor_FUN_005bb120(CStranger *thi
   uint uVar3;
   int iVar4;
   CKeyFramedModelInstance *pCVar5;
-  char *pcStack00000038;
-  char *pcStack0000003c;
-  char *pcStack00000040;
-  char *pcStack00000048;
   
   iVar4 = core_hero_cpp_FUN_004f2340();
   pCVar5 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0
@@ -201,21 +197,10 @@ CStranger * __cdecl core_stranger_cpp_CStranger_ctor_FUN_005bb120(CStranger *thi
   core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0((CCharacter *)this_ptr_00);
   core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0((CCharacter *)this_ptr_00);
   core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0((CCharacter *)this_ptr_00);
-  pcStack00000038 = (char *)0x1;
   core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0((CCharacter *)this_ptr_00);
-  pcStack0000003c = (char *)0x0;
-  pcStack00000038 = "draw_holdCrate";
   core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0((CCharacter *)this_ptr_00);
-  pcStack00000040 = (char *)0x0;
-  pcStack0000003c = "draw_coatPocket2GasMask";
-  pcStack00000038 = (char *)0xa;
   core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0((CCharacter *)this_ptr_00);
-  pcStack00000040 = "draw_gasMask2Stand";
-  pcStack0000003c = (char *)0x0;
-  pcStack00000038 = (char *)0xa;
   core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0((CCharacter *)this_ptr_00);
-  pcStack00000048 = "strcoat.cth";
-  pcStack00000040 = (char *)0x5bb49c;
   core_cloth_cpp_CClothList_add_FUN_0043c0f0((CClothList *)(pCVar5[-0x13b].animation_state + 0x74));
   pCVar5[1].part_visibility_flags[6] = 0;
   return this_ptr_00;

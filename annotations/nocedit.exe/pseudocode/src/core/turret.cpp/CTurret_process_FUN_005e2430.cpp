@@ -10,43 +10,40 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr)
 
 {
   COrientation *pCVar1;
-  char *pcVar2;
-  uint uVar3;
-  CEventList *pCVar4;
-  float fVar5;
-  int iVar6;
-  CVector3f *pCVar7;
-  uint uVar8;
+  uint uVar2;
+  CEventList *pCVar3;
+  float fVar4;
+  int iVar5;
+  CVector3f *pCVar6;
+  uint uVar7;
   BADSPACEBASE *in_ESP;
-  byte bVar9;
+  uint *puVar8;
+  float *pfVar9;
+  byte bVar10;
   float in_stack_00000008;
-  float afStackY_186c [1496];
-  CVector3f *in_stack_fffffefc;
+  float afStackY_186c [1497];
+  char *pcVar11;
   CQuaternion4f *quat_ptr;
   CVector3f *in_stack_ffffff08;
-  char *in_stack_ffffff0c;
-  float in_stack_ffffff14;
-  char acStack_e8 [4];
-  char acStack_e4 [76];
-  CQuaternion4f CStack_98;
-  float fStack_88;
-  CQuaternion4f CStack_84;
-  float afStack_74 [4];
-  float fStack_64;
-  float local_60 [2];
-  CQuaternion4f CStack_58;
-  float afStack_48 [5];
-  CVector3f CStack_34;
-  CQuaternion4f *pCStack_28;
-  ulonglong local_1c;
+  char local_f4 [100];
+  CQuaternion4f local_90;
+  CQuaternion4f local_80;
+  float fStack_6c;
+  float afStack_68 [6];
+  CQuaternion4f local_50;
+  float fStack_3c;
+  uint auStack_38 [2];
+  CVector3f local_30;
+  ulonglong uStack_20;
+  CVector3f *local_18;
   
-  bVar9 = 0;
-  iVar6 = this_ptr->state;
+  bVar10 = 0;
+  iVar5 = this_ptr->state;
   (this_ptr->base_weapon).field7_0x2f4[0] = -1;
   (this_ptr->base_weapon).field7_0x2f4[1] = -1;
   (this_ptr->base_weapon).field7_0x2f4[2] = -1;
   (this_ptr->base_weapon).field7_0x2f4[3] = -1;
-  switch(iVar6) {
+  switch(iVar5) {
   case 0:
     pCVar1 = &(this_ptr->base_weapon).base_actor.orient;
     if (pCVar1 != (COrientation *)this_ptr->field1_0x578) {
@@ -54,22 +51,22 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr)
       (this_ptr->base_weapon).base_actor.orient.bank = *(float *)(this_ptr->field1_0x578 + 4);
       (this_ptr->base_weapon).base_actor.orient.heading = *(float *)(this_ptr->field1_0x578 + 8);
     }
-    iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
+    iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                       (g_CEventListPtr,this_ptr->field3_0x704);
-    if (iVar6 == 0) {
+    if (iVar5 == 0) {
       this_ptr->timer = 0.0;
       break;
     }
-    uVar3 = *(uint *)(this_ptr->field12_0x85c + 0x5c);
+    uVar2 = *(uint *)(this_ptr->field12_0x85c + 0x5c);
     this_ptr->state = 1;
     this_ptr->timer = this_ptr->charge_time;
-    sound_sndmain_cpp_killSfx_FUN_005a9c40(uVar3);
-    in_stack_ffffff0c = "turret-ani?.wav";
+    sound_sndmain_cpp_killSfx_FUN_005a9c40(uVar2);
+    pcVar11 = "turret-ani?.wav";
     goto LAB_005e24c7;
   case 1:
-    fVar5 = this_ptr->timer - in_stack_00000008;
-    this_ptr->timer = fVar5;
-    if (fVar5 <= 0.0) {
+    fVar4 = this_ptr->timer - in_stack_00000008;
+    this_ptr->timer = fVar4;
+    if (fVar4 <= 0.0) {
       this_ptr->timer = 0.0;
       this_ptr->state = 2;
       (this_ptr->base_weapon).field7_0x2f4[0xc] = '\0';
@@ -80,7 +77,7 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr)
     break;
   case 2:
     (this_ptr->base_weapon).field7_0x2f4[0] = -1;
-    pCVar4 = g_CEventListPtr;
+    pCVar3 = g_CEventListPtr;
     (this_ptr->base_weapon).field7_0x2f4[1] = '\0';
     (this_ptr->base_weapon).field7_0x2f4[2] = '\0';
     (this_ptr->base_weapon).field7_0x2f4[3] = '\0';
@@ -92,8 +89,8 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr)
     (this_ptr->base_weapon).field7_0x2f4[9] = '\0';
     (this_ptr->base_weapon).field7_0x2f4[10] = '\0';
     (this_ptr->base_weapon).field7_0x2f4[0xb] = '\0';
-    iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0(pCVar4,this_ptr->field3_0x704);
-    if (iVar6 == 0) {
+    iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0(pCVar3,this_ptr->field3_0x704);
+    if (iVar5 == 0) {
       this_ptr->state = 3;
       this_ptr->timer = this_ptr->patrol_time;
     }
@@ -104,7 +101,7 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr)
     break;
   case 3:
     (this_ptr->base_weapon).field7_0x2f4[0] = '\0';
-    pCVar4 = g_CEventListPtr;
+    pCVar3 = g_CEventListPtr;
     (this_ptr->base_weapon).field7_0x2f4[1] = '\0';
     (this_ptr->base_weapon).field7_0x2f4[2] = '\0';
     (this_ptr->base_weapon).field7_0x2f4[3] = '\0';
@@ -116,8 +113,8 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr)
     (this_ptr->base_weapon).field7_0x2f4[9] = '\0';
     (this_ptr->base_weapon).field7_0x2f4[10] = '\0';
     (this_ptr->base_weapon).field7_0x2f4[0xb] = '\0';
-    iVar6 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0(pCVar4,this_ptr->field3_0x704);
-    if (iVar6 != 0) {
+    iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0(pCVar3,this_ptr->field3_0x704);
+    if (iVar5 != 0) {
       this_ptr->timer = 0.0;
       this_ptr->state = 2;
       (this_ptr->base_weapon).field7_0x2f4[0xc] = '\0';
@@ -126,69 +123,69 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr)
       (this_ptr->base_weapon).field7_0x2f4[0xf] = '\0';
       break;
     }
-    fVar5 = this_ptr->timer - in_stack_00000008;
-    this_ptr->timer = fVar5;
-    if (0.0 < fVar5) {
+    fVar4 = this_ptr->timer - in_stack_00000008;
+    this_ptr->timer = fVar4;
+    if (0.0 < fVar4) {
       core_turret_cpp_FUN_005e3560();
       break;
     }
-    uVar3 = *(uint *)(this_ptr->field12_0x85c + 0x5c);
+    uVar2 = *(uint *)(this_ptr->field12_0x85c + 0x5c);
     this_ptr->state = 4;
     this_ptr->timer = this_ptr->power_down_time;
-    sound_sndmain_cpp_killSfx_FUN_005a9c40(uVar3);
-    in_stack_ffffff0c = "turret-ani?.wav";
+    sound_sndmain_cpp_killSfx_FUN_005a9c40(uVar2);
+    pcVar11 = "turret-ani?.wav";
 LAB_005e24c7:
-    uVar8 = (*((this_ptr->base_weapon).base_actor.vtable)->playSound)
-                      ((CDemonActor *)this_ptr,in_stack_ffffff0c);
-    *(uint *)(this_ptr->field12_0x85c + 0x5c) = uVar8;
+    uVar7 = (*((this_ptr->base_weapon).base_actor.vtable)->playSound)
+                      ((CDemonActor *)this_ptr,pcVar11);
+    *(uint *)(this_ptr->field12_0x85c + 0x5c) = uVar7;
     break;
   case 4:
-    pcVar2 = this_ptr->field1_0x578;
+    pcVar11 = this_ptr->field1_0x578;
+    uStack_20 = (double)CONCAT44 /* combine 2-byte values */(pcVar11,(uint)uStack_20);
     this_ptr->timer = this_ptr->timer - in_stack_00000008;
-    pCVar1 = &(this_ptr->base_weapon).base_actor.orient;
-    local_1c = (double)CONCAT44 /* combine 2-byte values */(pCVar1,pcVar2);
+    local_18 = (CVector3f *)&(this_ptr->base_weapon).base_actor.orient;
     if (0.0 < this_ptr->timer) {
-      fVar5 = 8.646739e-39;
-      core_xform_cpp_eulerToQuaternion_FUN_005f7b20((CQuaternion4f *)pCVar1,in_stack_ffffff08);
-      CStack_98.y = CStack_58.z;
-      *(float *)((int)&CStack_98 + (uint)bVar9 * -8 + 0xc) = afStack_48[(uint)bVar9 * -2];
-      (&fStack_88)[(uint)bVar9 * -2 + (uint)bVar9 * -2] =
-           afStack_48[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
-      (&fStack_88 + (uint)bVar9 * -2 + (uint)bVar9 * -2)[(uint)bVar9 * -2 + 1] =
-           (afStack_48 + (uint)bVar9 * -2 + (uint)bVar9 * -2 + 1)[(uint)bVar9 * -2 + 1];
-      core_xform_cpp_eulerToQuaternion_FUN_005f7b20(pCStack_28,in_stack_fffffefc);
-      CStack_58.w = CStack_84.z;
-      afStack_48[(uint)bVar9 * -2 + -3] = afStack_74[(uint)bVar9 * -2];
-      afStack_48[(uint)bVar9 * -2 + (uint)bVar9 * -2 + -2] =
-           afStack_74[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
-      (afStack_48 + (uint)bVar9 * -2 + (uint)bVar9 * -2 + -2)[(uint)bVar9 * -2 + 1] =
-           (afStack_74 + (uint)bVar9 * -2 + (uint)bVar9 * -2 + 1)[(uint)bVar9 * -2 + 1];
+      core_xform_cpp_eulerToQuaternion_FUN_005f7b20((CQuaternion4f *)local_18,in_stack_ffffff08);
+      local_90.w = fStack_3c;
+      puVar8 = (uint *)((int)&local_90 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+      *(uint *)((int)&local_90 + (uint)bVar10 * -8 + 4) = auStack_38[(uint)bVar10 * -2];
+      *puVar8 = auStack_38[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
+      puVar8[(uint)bVar10 * -2 + 1] =
+           (auStack_38 + (uint)bVar10 * -2 + (uint)bVar10 * -2 + 1)[(uint)bVar10 * -2 + 1];
+      core_xform_cpp_eulerToQuaternion_FUN_005f7b20
+                ((CQuaternion4f *)((ulonglong)uStack_20 >> 0x20),in_stack_ffffff08);
+      local_50.x = fStack_6c;
+      pfVar9 = (float *)((int)&local_50 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 0xc);
+      *(float *)((int)&local_50 + (uint)bVar10 * -8 + 8) = afStack_68[(uint)bVar10 * -2];
+      *pfVar9 = afStack_68[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
+      pfVar9[(uint)bVar10 * -2 + 1] =
+           (afStack_68 + (uint)bVar10 * -2 + (uint)bVar10 * -2 + 1)[(uint)bVar10 * -2 + 1];
       core_xform_cpp_slerpQuaternion_FUN_005f77e0
-                (&CStack_98,&CStack_58,
+                (&local_90,&local_50,
                  (CQuaternion4f *)
                  ((in_stack_00000008 / (this_ptr->timer + in_stack_00000008)) *
-                 (float)2),fVar5);
-      quat_ptr = &CStack_84;
-      pCVar7 = &CStack_34;
-      CStack_84.w = fStack_64;
-      afStack_74[(uint)bVar9 * -2 + -3] = local_60[(uint)bVar9 * -2];
-      afStack_74[(uint)bVar9 * -2 + (uint)bVar9 * -2 + -2] =
-           local_60[(uint)bVar9 * -2 + (uint)bVar9 * -2 + 1];
-      (afStack_74 + (uint)bVar9 * -2 + (uint)bVar9 * -2 + -2)[(uint)bVar9 * -2 + 1] =
-           (local_60 + (uint)bVar9 * -2 + (uint)bVar9 * -2 + 1)[(uint)bVar9 * -2 + 1];
-      pCVar7 = core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0(pCVar7,quat_ptr);
-      if (pCVar7 != local_1c._4_4_) {
-        (local_1c._4_4_)->x = pCVar7->x;
-        (local_1c._4_4_)->y = pCVar7->y;
-        (local_1c._4_4_)->z = pCVar7->z;
+                 (float)2),(float)in_stack_ffffff08);
+      quat_ptr = &local_80;
+      pCVar6 = &local_30;
+      local_80.w = afStack_68[2];
+      pfVar9 = (float *)((int)&local_80 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+      *(float *)((int)&local_80 + (uint)bVar10 * -8 + 4) = afStack_68[(uint)bVar10 * -2 + 3];
+      *pfVar9 = afStack_68[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4];
+      pfVar9[(uint)bVar10 * -2 + 1] =
+           (afStack_68 + (uint)bVar10 * -2 + (uint)bVar10 * -2 + 4)[(uint)bVar10 * -2 + 1];
+      pCVar6 = core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0(pCVar6,quat_ptr);
+      if (pCVar6 != local_18) {
+        local_18->x = pCVar6->x;
+        local_18->y = pCVar6->y;
+        local_18->z = pCVar6->z;
       }
       core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10((CDemonActor *)this_ptr);
     }
     else {
       this_ptr->state = 0;
       this_ptr->timer = 0.0;
-      if (pCVar1 != (COrientation *)pcVar2) {
-        pCVar1->pitch = *(float *)pcVar2;
+      if (local_18 != (CVector3f *)pcVar11) {
+        ((COrientation *)local_18)->pitch = *(float *)pcVar11;
         (this_ptr->base_weapon).base_actor.orient.bank = *(float *)(this_ptr->field1_0x578 + 4);
         (this_ptr->base_weapon).base_actor.orient.heading = *(float *)(this_ptr->field1_0x578 + 8);
       }
@@ -201,30 +198,29 @@ LAB_005e24c7:
   }
   if (-1 < *(int *)(this_ptr->base_weapon).field7_0x2f4) {
     (*(this_ptr->base_weapon).base_actor.vtable[1].processFootstep)
-              ((CDemonActor *)this_ptr,(float)in_stack_ffffff0c);
+              ((CDemonActor *)this_ptr,(float)in_stack_ffffff08);
   }
-  fVar5 = *(float *)((this_ptr->base_weapon).field7_0x2f4 + 0xc);
-  iVar6 = *(int *)(this_ptr->field12_0x85c + 0x54);
+  fVar4 = *(float *)((this_ptr->base_weapon).field7_0x2f4 + 0xc);
+  iVar5 = *(int *)(this_ptr->field12_0x85c + 0x54);
   *(float *)(this_ptr->field12_0x85c + 0x10) =
        *(float *)(this_ptr->field12_0x85c + 0x10) - in_stack_00000008;
-  *(float *)((this_ptr->base_weapon).field7_0x2f4 + 0xc) = fVar5 - in_stack_00000008;
-  if ((0 < iVar6) || (0.0 < *(float *)(this_ptr->field12_0x85c + 0x10))) {
+  *(float *)((this_ptr->base_weapon).field7_0x2f4 + 0xc) = fVar4 - in_stack_00000008;
+  if ((0 < iVar5) || (0.0 < *(float *)(this_ptr->field12_0x85c + 0x10))) {
     *(int *)(this_ptr->field12_0x85c + 0x54) = *(int *)(this_ptr->field12_0x85c + 0x54) + -1;
-    fVar5 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.9,1.1111112);
-    iVar6 = sound_sndmain_cpp_setSfxBaseFrequency_FUN_005a9b40
-                      (*(uint *)(this_ptr->field12_0x85c + 0x58),fVar5);
-    if (iVar6 == 0) {
-      crt_stdio_c_sprintf_FUN_005fdbd0
-                (acStack_e8,"turret-loop.wav * %f",(double)in_stack_ffffff14);
-      uVar8 = (*((this_ptr->base_weapon).base_actor.vtable)->playAmbientSound)
-                        ((CDemonActor *)this_ptr,acStack_e4);
-      *(uint *)(this_ptr->field12_0x85c + 0x58) = uVar8;
+    fVar4 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.9,1.1111112);
+    iVar5 = sound_sndmain_cpp_setSfxBaseFrequency_FUN_005a9b40
+                      (*(uint *)(this_ptr->field12_0x85c + 0x58),fVar4);
+    if (iVar5 == 0) {
+      crt_stdio_c_sprintf_FUN_005fdbd0(local_f4,"turret-loop.wav * %f",(double)fVar4);
+      uVar7 = (*((this_ptr->base_weapon).base_actor.vtable)->playAmbientSound)
+                        ((CDemonActor *)this_ptr,local_f4);
+      *(uint *)(this_ptr->field12_0x85c + 0x58) = uVar7;
       return;
     }
   }
   else {
-    local_1c = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(2,(uint)in_stack_ffffff0c);
-    if (0.0 <= local_1c) {
+    uStack_20 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(2,(uint)in_stack_ffffff08);
+    if (0.0 <= uStack_20) {
       sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->field12_0x85c + 0x58));
       (*((this_ptr->base_weapon).base_actor.vtable)->playSound)
                 ((CDemonActor *)this_ptr,"turret-tail.wav");

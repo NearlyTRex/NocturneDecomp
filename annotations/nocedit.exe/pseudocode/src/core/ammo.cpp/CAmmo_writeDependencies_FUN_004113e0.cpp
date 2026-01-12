@@ -36,7 +36,7 @@ void __cdecl core_ammo_cpp_CAmmo_writeDependencies_FUN_004113e0(CAmmo *this_ptr,
                       iVar1 = crt_string_c_strcmp_FUN_005fef20(str1,"tommybullet.kfm");
                       if (iVar1 != 0) {
                         core_dmodel_cpp_CKeyFramedModelInstance_writeDependencies_FUN_0047edd0
-                                  (&this_ptr->model,(FILE *)0x411497);
+                                  (&this_ptr->model,file_handle);
                         return;
                       }
                     }

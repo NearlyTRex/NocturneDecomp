@@ -1,17 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 115,
+    "complexity_score": 85,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 5,
     "pseudocode_lines": 25,
-    "suspect_count": 7,
+    "suspect_count": 5,
     "suspect_types": [
-      "call_esp_anchor",
       "extra_output",
-      "pointer_cast",
-      "stack_align_anchor"
+      "pointer_cast"
     ],
     "total_lines": 76
   },
@@ -91,6 +89,14 @@
       "value": null
     }
   ],
+  "pcode_overrides": {
+    "00570d67": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff4,4)"
+    ],
+    "00570d78": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffff4,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.317073170731708,
     "instruction_count": 41,
@@ -122,6 +128,31 @@
     },
     "pcode_op_count": 218
   },
+  "resolved_suspects": [
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0xc",
+      "fix_address": "00570d67",
+      "frame_offset": 12,
+      "match": "AND ESP",
+      "sub_esp_offset": 12,
+      "text": "Stack alignment at 00570d67 (SUB ESP, 0xc before)",
+      "type": "stack_align_anchor"
+    },
+    {
+      "add_esp_value": 8,
+      "call_address": "00570d73",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "00570d78",
+      "frame_offset": 12,
+      "match": "CALL...ADD ESP",
+      "return_address": "00570d78",
+      "target_address": "0x453bd0",
+      "text": "Direct CALL at 00570d73, ADD ESP at 00570d78 with uncertain ESP",
+      "type": "call_esp_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 36,
     "local_size": 28,
@@ -218,29 +249,6 @@
       "match": "(int *)((int)",
       "text": "*(int *)((int)g_IntensityToValueLookupTable + extraout_ECX) = local_10;",
       "type": "pointer_cast"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0xc",
-      "fix_address": "00570d67",
-      "frame_offset": 12,
-      "match": "AND ESP",
-      "sub_esp_offset": 12,
-      "text": "Stack alignment at 00570d67 (SUB ESP, 0xc before)",
-      "type": "stack_align_anchor"
-    },
-    {
-      "add_esp_value": 8,
-      "call_address": "00570d73",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "00570d78",
-      "frame_offset": 12,
-      "match": "CALL...ADD ESP",
-      "return_address": "00570d78",
-      "target_address": "0x453bd0",
-      "text": "Direct CALL at 00570d73, ADD ESP at 00570d78 with uncertain ESP",
-      "type": "call_esp_anchor"
     }
   ]
 }

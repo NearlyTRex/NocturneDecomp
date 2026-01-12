@@ -1,21 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 472,
-    "complexity_score": 574,
+    "complexity_score": 656,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
-    "pseudocode_lines": 244,
-    "suspect_count": 30,
+    "pseudocode_lines": 186,
+    "suspect_count": 45,
     "suspect_types": [
       "badspacebase",
-      "call_esp_anchor",
-      "concat_artifact",
       "register_param",
-      "stack_align_anchor",
-      "sub_artifact"
+      "sub_artifact",
+      "unknown_field"
     ],
-    "total_lines": 716
+    "total_lines": 658
   },
   "cross_references": [
     {
@@ -58,6 +56,17 @@
       "value": "2"
     }
   ],
+  "pcode_overrides": {
+    "005151ec": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff18,4)"
+    ],
+    "00515483": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff18,4)"
+    ],
+    "005157ae": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff18,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.058956916099773,
     "instruction_count": 441,
@@ -100,6 +109,44 @@
     },
     "pcode_op_count": 2672
   },
+  "resolved_suspects": [
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0xe8",
+      "fix_address": "005151ec",
+      "frame_offset": 232,
+      "match": "AND ESP",
+      "sub_esp_offset": 232,
+      "text": "Stack alignment at 005151ec (SUB ESP, 0xe8 before)",
+      "type": "stack_align_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "00515475",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "00515483",
+      "frame_offset": 232,
+      "match": "CALL...ADD ESP",
+      "return_address": "0051547a",
+      "target_address": "0x472030",
+      "text": "Direct CALL at 00515475, ADD ESP at 00515483 with uncertain ESP",
+      "type": "call_esp_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "005157a9",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "005157ae",
+      "frame_offset": 232,
+      "match": "CALL...ADD ESP",
+      "return_address": "005157ae",
+      "target_address": "0x471fd0",
+      "text": "Direct CALL at 005157a9, ADD ESP at 005157ae with uncertain ESP",
+      "type": "call_esp_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 276,
     "local_size": 252,
@@ -451,228 +498,318 @@
   "suspects": [
     {
       "description": "Ghidra failed to resolve stack frame",
-      "line": 28,
+      "line": 14,
       "match": "BADSPACEBASE",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "badspacebase"
     },
     {
       "description": "Inferred register parameter",
-      "line": 28,
+      "line": 14,
       "match": "in_ESP",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "register_param"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 169,
-      "match": "SUB84",
-      "text": "local_c8 = SUB84 /* extract 2-byte value */(dVar7,0);",
-      "type": "sub_artifact"
+      "description": "Unknown/mangled field access",
+      "line": 59,
+      "match": "._0_4_",
+      "text": "local_70._0_4_ = local_68;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 60,
+      "match": "._4_4_",
+      "text": "local_70._4_4_ = fVar2;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 64,
+      "match": "._4_4_",
+      "text": "local_70._4_4_ = (uint)fVar2 ^ 0x80000000;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 65,
+      "match": "._4_4_",
+      "text": "local_28 = (float)local_70._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 66,
+      "match": "._0_4_",
+      "text": "local_70._0_4_ = local_70._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 66,
+      "match": "._4_4_",
+      "text": "local_70._0_4_ = local_70._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 67,
+      "match": "._4_4_",
+      "text": "local_70._4_4_ = fVar1;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 71,
+      "match": "._0_4_",
+      "text": "local_70._0_4_ = (uint)fVar1 ^ 0x80000000;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 72,
+      "match": "._0_4_",
+      "text": "local_20 = (float)local_70._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 73,
+      "match": "._4_4_",
+      "text": "local_70._4_4_ = local_70._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 73,
+      "match": "._0_4_",
+      "text": "local_70._4_4_ = local_70._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 74,
+      "match": "._0_4_",
+      "text": "local_70._0_4_ = fVar2;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 76,
+      "match": "._4_4_",
+      "text": "local_58 = normal->y * local_68 - normal->z * (float)local_70._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 77,
+      "match": "._0_4_",
+      "text": "local_54 = normal->z * (float)local_70._0_4_ - normal->x * local_68;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 78,
+      "match": "._4_4_",
+      "text": "local_50 = normal->x * (float)local_70._4_4_ - normal->y * (float)local_70._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 78,
+      "match": "._0_4_",
+      "text": "local_50 = normal->x * (float)local_70._4_4_ - normal->y * (float)local_70._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 80,
+      "match": "._0_4_",
+      "text": "local_70._0_4_ = local_58;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 81,
+      "match": "._4_4_",
+      "text": "local_70._4_4_ = local_54;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 84,
+      "match": "._0_4_",
+      "text": "local_98.m[0].x = (float)local_70._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 85,
+      "match": "._4_4_",
+      "text": "local_98.m[1].x = (float)local_70._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 87,
+      "match": "._4_4_",
+      "text": "local_64 = normal->y * local_68 - normal->z * (float)local_70._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 88,
+      "match": "._0_4_",
+      "text": "local_60 = normal->z * (float)local_70._0_4_ - normal->x * local_68;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 89,
+      "match": "._4_4_",
+      "text": "local_5c = normal->x * (float)local_70._4_4_ - normal->y * (float)local_70._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 89,
+      "match": "._0_4_",
+      "text": "local_5c = normal->x * (float)local_70._4_4_ - normal->y * (float)local_70._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 91,
+      "match": "._0_4_",
+      "text": "local_70._0_4_ = local_64;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 92,
+      "match": "._4_4_",
+      "text": "local_70._4_4_ = local_60;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 96,
+      "match": "._0_4_",
+      "text": "local_98.m[0].y = (float)local_70._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 104,
+      "match": "._4_4_",
+      "text": "local_98.m[1].y = (float)local_70._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 113,
+      "match": "._0_4_",
+      "text": "local_70._0_4_ = pCVar5->x;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 114,
+      "match": "._4_4_",
+      "text": "local_70._4_4_ = pCVar5->y;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 117,
+      "match": "._0_4_",
+      "text": "local_e0 = (double)((float)local_70._0_4_ + (float)local_e0);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 121,
+      "match": "._4_4_",
+      "text": "local_f0 = (double)((float)local_70._4_4_ + (float)local_f0);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 122,
+      "match": "._0_4_",
+      "text": "fVar1 = *pfVar6 * (float)local_70._0_4_ + fVar1;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 123,
+      "match": "._4_4_",
+      "text": "fVar2 = *pfVar6 * (float)local_70._4_4_ + fVar2;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 124,
+      "match": "._0_4_",
+      "text": "local_c0 = (double)((float)local_70._0_4_ * (float)local_70._0_4_ + (float)local_c0);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 124,
+      "match": "._0_4_",
+      "text": "local_c0 = (double)((float)local_70._0_4_ * (float)local_70._0_4_ + (float)local_c0);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 125,
+      "match": "._4_4_",
+      "text": "local_d0 = (double)((float)local_70._4_4_ * (float)local_70._4_4_ + (float)local_d0);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 125,
+      "match": "._4_4_",
+      "text": "local_d0 = (double)((float)local_70._4_4_ * (float)local_70._4_4_ + (float)local_d0);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 126,
+      "match": "._0_4_",
+      "text": "local_e8 = (double)((float)local_70._0_4_ * (float)local_70._4_4_ + (float)local_e8);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 126,
+      "match": "._4_4_",
+      "text": "local_e8 = (double)((float)local_70._0_4_ * (float)local_70._4_4_ + (float)local_e8);",
+      "type": "unknown_field"
     },
     {
       "description": "Decompiler double/longlong extraction artifact",
-      "line": 171,
+      "line": 136,
       "match": "SUB84",
-      "text": "local_e8 = SUB84 /* extract 2-byte value */(dVar6,0);",
+      "text": "local_a0 = SUB84 /* extract 2-byte value */(dVar4,0);",
       "type": "sub_artifact"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 173,
-      "match": "SUB84",
-      "text": "local_d0 = SUB84 /* extract 2-byte value */(dVar5,0);",
-      "type": "sub_artifact"
+      "description": "Unknown/mangled field access",
+      "line": 160,
+      "match": "._0_4_",
+      "text": "local_70._0_4_ =",
+      "type": "unknown_field"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 175,
-      "match": "SUB84",
-      "text": "local_c0 = SUB84 /* extract 2-byte value */(dVar4,0);",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 177,
-      "match": "SUB84",
-      "text": "local_d8 = SUB84 /* extract 2-byte value */(dVar3,0);",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 179,
-      "match": "SUB84",
-      "text": "local_f0 = SUB84 /* extract 2-byte value */(dVar2,0);",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 181,
-      "match": "SUB84",
-      "text": "local_e0 = SUB84 /* extract 2-byte value */(dVar1,0);",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 183,
-      "match": "SUB84",
-      "text": "local_b8 = SUB84 /* extract 2-byte value */((double)point_count,0);",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 188,
-      "match": "SUB84",
-      "text": "local_a0 = SUB84 /* extract 2-byte value */(dVar11,0);",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 230,
-      "match": "CONCAT44",
-      "text": "fVar22 = (float10)(double)CONCAT44 /* combine 2-byte values */(local_e0,uStack_e4);",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 231,
-      "match": "CONCAT44",
-      "text": "*out_offset = (float)(-((float10)(double)CONCAT44 /* combine 2-byte values */(local_d0,uStack_d4) *",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 232,
-      "match": "CONCAT44",
-      "text": "(float10)(double)CONCAT44 /* combine 2-byte values */(local_c8,uStack_cc) *",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 233,
-      "match": "CONCAT44",
-      "text": "(float10)(double)CONCAT44 /* combine 2-byte values */(local_b8,uStack_bc) +",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 234,
-      "match": "CONCAT44",
-      "text": "((((float10)(double)CONCAT44 /* combine 2-byte values */(local_e8,uStack_ec) * fVar22 *",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 235,
-      "match": "CONCAT44",
-      "text": "(float10)(double)CONCAT44 /* combine 2-byte values */(local_c0,uStack_c4) +",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 236,
-      "match": "CONCAT44",
-      "text": "((float10)(double)CONCAT44 /* combine 2-byte values */(local_d8,uStack_dc) * fVar22 *",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 237,
-      "match": "CONCAT44",
-      "text": "(float10)(double)CONCAT44 /* combine 2-byte values */(local_f0,uStack_f4) -",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 238,
-      "match": "CONCAT44",
-      "text": "(float10)(double)CONCAT44 /* combine 2-byte values */(local_d8,uStack_dc) *",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 239,
-      "match": "CONCAT44",
-      "text": "(float10)(double)CONCAT44 /* combine 2-byte values */(local_c0,uStack_c4) *",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 240,
-      "match": "CONCAT44",
-      "text": "(float10)(double)CONCAT44 /* combine 2-byte values */(local_c8,uStack_cc))) -",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 241,
-      "match": "CONCAT44",
-      "text": "(float10)(double)CONCAT44 /* combine 2-byte values */(local_e8,uStack_ec) *",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 242,
-      "match": "CONCAT44",
-      "text": "(float10)(double)CONCAT44 /* combine 2-byte values */(local_f0,uStack_f4) *",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 243,
-      "match": "CONCAT44",
-      "text": "(float10)(double)CONCAT44 /* combine 2-byte values */(local_b8,uStack_bc)) -",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 244,
-      "match": "CONCAT44",
-      "text": "(float10)(double)CONCAT44 /* combine 2-byte values */(local_d0,uStack_d4) * fVar22 * fVar22)) /",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 245,
-      "match": "CONCAT44",
-      "text": "(float10)(double)CONCAT44 /* combine 2-byte values */(local_98.m[0].x,uStack_9c));",
-      "type": "concat_artifact"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0xe8",
-      "fix_address": "005151ec",
-      "frame_offset": 232,
-      "match": "AND ESP",
-      "sub_esp_offset": 232,
-      "text": "Stack alignment at 005151ec (SUB ESP, 0xe8 before)",
-      "type": "stack_align_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "00515475",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "00515483",
-      "frame_offset": 232,
-      "match": "CALL...ADD ESP",
-      "return_address": "0051547a",
-      "target_address": "0x472030",
-      "text": "Direct CALL at 00515475, ADD ESP at 00515483 with uncertain ESP",
-      "type": "call_esp_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "005157a9",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "005157ae",
-      "frame_offset": 232,
-      "match": "CALL...ADD ESP",
-      "return_address": "005157ae",
-      "target_address": "0x471fd0",
-      "text": "Direct CALL at 005157a9, ADD ESP at 005157ae with uncertain ESP",
-      "type": "call_esp_anchor"
+      "description": "Unknown/mangled field access",
+      "line": 167,
+      "match": "._4_4_",
+      "text": "local_70._4_4_ =",
+      "type": "unknown_field"
     }
   ]
 }

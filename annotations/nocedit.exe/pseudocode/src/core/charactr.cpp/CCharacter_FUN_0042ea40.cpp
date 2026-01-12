@@ -16,6 +16,10 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ea40(CCharacter *this_ptr)
   CVector3f *pCVar5;
   BADSPACEBASE *in_ESP;
   float in_stack_00000008;
+  CVector3f local_70;
+  CVector3f local_64;
+  CVector3f local_58;
+  CVector3f local_4c;
   CVector3f local_40;
   CVector3f local_34;
   CVector3f local_28;
@@ -31,15 +35,21 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ea40(CCharacter *this_ptr)
          *(float *)(this_ptr->cloth_data + 0x1b8) = fVar1, fVar1 < 0.0)) {
         *(float *)(this_ptr->cloth_data + 0x1b8) =
              *(float *)(this_ptr->cloth_data + 0x1b8) + 0.2f;
+        local_4c.y = -0.5;
+        local_4c.x = 0.0;
+        local_4c.z = 1.0;
         core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
-                  (&this_ptr->base_actor,&local_1c,(CVector3f *)&stack0xffffffb4);
+                  (&this_ptr->base_actor,&local_1c,&local_4c);
         pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
                            (&this_ptr->model);
         iVar4 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(pCVar3,"Bip01 head");
         if (iVar4 != -1) {
+          local_64.x = 0.0;
+          local_64.z = 0.5;
+          local_64.y = 0.2;
           pCVar5 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                             ((CVector3f *)&stack0xffffffa8,(CVector3f *)&stack0xffffff9c,
-                              (CMatrix3x4f *)0x0);
+                             (&local_58,&local_64,
+                              (this_ptr->model).bone_transform.bone_world_matrices + iVar4);
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                     (&this_ptr->base_actor,&local_34,pCVar5);
           core_fire_cpp_CFireEffect_createSmokeParticle_FUN_004c7b20
@@ -59,7 +69,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ea40(CCharacter *this_ptr)
           local_40.y = 0.2;
           local_40.z = 0.5;
           pCVar5 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                             ((CVector3f *)&stack0xffffff90,&local_40,
+                             (&local_70,&local_40,
                               (this_ptr->model).bone_transform.bone_world_matrices + iVar4);
           core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                     (&this_ptr->base_actor,&local_28,pCVar5);

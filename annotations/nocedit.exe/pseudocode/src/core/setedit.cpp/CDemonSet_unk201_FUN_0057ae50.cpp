@@ -8,7 +8,7 @@
 
 /* Signature: byte core_setedit.cpp_CDemonSet_unk201(uint pSet, uint param_2) */
 
-uint core_setedit_cpp_CDemonSet_unk201_FUN_0057ae50(void)
+int core_setedit_cpp_CDemonSet_unk201_FUN_0057ae50(void)
 
 {
   char cVar1;
@@ -20,29 +20,18 @@ uint core_setedit_cpp_CDemonSet_unk201_FUN_0057ae50(void)
   double dVar6;
   CDemonSet *in_stack_00000004;
   int in_stack_00000008;
-  int in_stack_00000014;
-  int in_stack_00000034;
-  int in_stack_00000050;
-  int in_stack_00000054;
-  uint in_stack_000000b0;
-  uint in_stack_000000b4;
-  uint in_stack_000000b8;
-  CGame *in_stack_fffffe8c;
   CDemonLight *this_ptr;
   CDemonLight *intensity;
-  char acStack_108 [8];
-  char acStack_6c [76];
+  CGame *in_stack_fffffe78;
+  char acStack_84 [100];
   uint local_20;
   uint local_1c;
-  uint local_18;
-  char local_14 [4];
+  int local_18;
+  int local_14;
   
   local_20 = *(uint *)(in_stack_00000008 + 0x11e0);
   local_18 = 1;
-  local_14[0] = '\0';
-  local_14[1] = '\0';
-  local_14[2] = '\0';
-  local_14[3] = '\0';
+  local_14 = 0;
   local_1c = 0;
   *(uint *)(in_stack_00000008 + 0x11e0) = 0;
   core_dlight_cpp_CDemonLight_init_FUN_004727c0(&g_CDemonLightInstance);
@@ -51,7 +40,7 @@ uint core_setedit_cpp_CDemonSet_unk201_FUN_0057ae50(void)
   pvVar2 = PTR_DAT_00681ab8;
   in_stack_00000004->actor_list_ptr = (void *)0x0;
   core_slew_cpp_CSlew_init_FUN_005a2060(pvVar2);
-  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_fffffe8c);
+  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_fffffe78);
   pvVar2 = PTR_DAT_00681ab8;
   if (PTR_DAT_00681ab8 != (uint *)(in_stack_00000008 + 0x104)) {
     *(uint *)PTR_DAT_00681ab8 = *(uint *)(in_stack_00000008 + 0x104);
@@ -64,7 +53,7 @@ uint core_setedit_cpp_CDemonSet_unk201_FUN_0057ae50(void)
     *(uint *)((int)pvVar2 + 0x10) = *(uint *)(in_stack_00000008 + 0x114);
     *(uint *)((int)pvVar2 + 0x14) = *(uint *)(in_stack_00000008 + 0x118);
   }
-  pcVar5 = acStack_6c;
+  pcVar5 = acStack_84;
   pcVar4 = (char *)(in_stack_00000008 + 4);
   *(uint *)((int)PTR_DAT_00681ab8 + 0x18) = *(uint *)(in_stack_00000008 + 0x11c);
   do {
@@ -85,7 +74,7 @@ LAB_0057af67:
   }
   (*g_CKeysPtr->vtable->clearKeyPresses)(g_CKeysPtr);
   core_slew_cpp_CSlew_processInput_FUN_005a20b0(PTR_DAT_00681ab8);
-  if (in_stack_00000014 != 0) {
+  if (local_18 != 0) {
     if (PTR_DAT_00681ab8 != &g_CDemonLightInstance.base.base.position) {
       g_CDemonLightInstance.base.base.position.x = *(int *)PTR_DAT_00681ab8;
       g_CDemonLightInstance.base.base.position.z = *(int *)((int)PTR_DAT_00681ab8 + 8);
@@ -106,14 +95,14 @@ LAB_0057af67:
     core_set_cpp_CDemonSet_FUN_0056c1a0(in_stack_00000004);
     iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x2e);
     if (iVar3 != 0) {
-      in_stack_00000034 = in_stack_00000034 + 1;
-      if (in_stack_00000004->camera_count <= in_stack_00000034) {
-        in_stack_00000034 = 0;
+      local_14 = local_14 + 1;
+      if (in_stack_00000004->camera_count <= local_14) {
+        local_14 = 0;
       }
-      core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(in_stack_00000004,in_stack_00000034);
+      core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(in_stack_00000004,local_14);
     }
   }
-  if ((in_stack_00000034 == 0) || (0xf0 < g_WindowHeight)) {
+  if ((local_18 == 0) || (0xf0 < g_WindowHeight)) {
     core_dlight_cpp_CDemonLight_renderShadowMapDebugView_FUN_00473390
               (&g_CDemonLightInstance,0x180,0,0x100);
   }
@@ -122,42 +111,26 @@ LAB_0057af67:
     core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(in_stack_00000004,iVar3);
   }
   iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x32);
-  if ((iVar3 != 0) && (in_stack_00000050 = 1 - in_stack_00000050, in_stack_00000050 != 0)) {
-    core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(in_stack_00000004,in_stack_00000054);
+  if ((iVar3 != 0) && (local_18 = 1 - local_18, local_18 != 0)) {
+    core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(in_stack_00000004,local_14);
   }
   engine_2d_c_drawText_FUN_00401fd0("Position light.  Press SPACE when done",0,0);
-  engine_2d_c_drawText_FUN_00401fd0(local_14,0,0xb);
+  engine_2d_c_drawText_FUN_00401fd0(acStack_84,0,0xb);
   crt_stdio_c_sprintf_FUN_005fdbd0
-            (&stack0xfffffef0,"%f",(double)(1.0 / g_CGamePtr->delta_time_float));
-  engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffef4,0,g_WindowHeight + -0xb);
+            (&stack0xfffffe7c,"%f",(double)(1.0 / g_CGamePtr->delta_time_float));
+  engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe7c,0,g_WindowHeight + -0xb);
   crt_stdio_c_sprintf_FUN_005fdbd0
-            (acStack_108,"pos: %4.1f %4.1f %4.1f   pbh: %3.1f %3.1f %6.3f   fov : %2.1f",(double)*(float *)PTR_DAT_00681ab8,
-             (double)*(float *)((int)PTR_DAT_00681ab8 + 4),
+            (&stack0xfffffe7c,"pos: %4.1f %4.1f %4.1f   pbh: %3.1f %3.1f %6.3f   fov : %2.1f",(double)*(float *)PTR_DAT_00681ab8
+             ,(double)*(float *)((int)PTR_DAT_00681ab8 + 4),
              (double)*(float *)((int)PTR_DAT_00681ab8 + 8),
              180 * (double)*(float *)((int)PTR_DAT_00681ab8 + 0xc) * 0.31830988619288902,
              (double)*(float *)((int)PTR_DAT_00681ab8 + 0x14) * 0.31830988619288902 * 180,
              (double)*(float *)((int)PTR_DAT_00681ab8 + 0x10) * 0.31830988619288902 * 180,
              (double)*(float *)((int)PTR_DAT_00681ab8 + 0x18));
-  engine_2d_c_drawText_FUN_00401fd0(acStack_108 + 4,0,0x16);
-  acStack_108[0] = -0x11;
-  acStack_108[1] = -0x4f;
-  acStack_108[2] = 'W';
-  acStack_108[3] = '\0';
+  engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe7c,0,0x16);
   wincore_winrun_cpp_drawCrosshair_FUN_005f2fd0();
-  acStack_108[4] = -0xc;
-  acStack_108[5] = -0x4f;
-  acStack_108[6] = 'W';
-  acStack_108[7] = '\0';
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-  acStack_108[4] = -1;
-  acStack_108[5] = -0x4f;
-  acStack_108[6] = 'W';
-  acStack_108[7] = '\0';
   core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
-  acStack_108[4] = '\x0e';
-  acStack_108[5] = -0x4e;
-  acStack_108[6] = 'W';
-  acStack_108[7] = '\0';
   iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,1);
   if (iVar3 != 0) goto LAB_0057b3c9;
   iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x39);
@@ -179,7 +152,7 @@ LAB_0057af67:
   iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x31);
   if (iVar3 != 0) {
     shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
-              (g_CEditorToolsPtr,"Edit light name",&stack0x00000074,100,1);
+              (g_CEditorToolsPtr,"Edit light name",acStack_84,100,1);
   }
   goto LAB_0057af67;
 LAB_0057b341:
@@ -194,8 +167,8 @@ LAB_0057b341:
     *(uint *)(in_stack_00000008 + 0x114) = *(uint *)((int)pvVar2 + 0x10);
     *(uint *)(in_stack_00000008 + 0x118) = *(uint *)((int)pvVar2 + 0x14);
   }
-  pcVar5 = &stack0x00000048;
-  in_stack_000000b0 = 1;
+  pcVar5 = acStack_84;
+  local_1c = 1;
   pcVar4 = (char *)(in_stack_00000008 + 4);
   *(uint *)(in_stack_00000008 + 0x11c) = *(uint *)((int)PTR_DAT_00681ab8 + 0x18);
   do {
@@ -211,6 +184,6 @@ LAB_0057b3c9:
   core_slew_cpp_CSlew_free_FUN_005a20a0();
   engine_2d_c_clearInputAndWait_FUN_00403260();
   g_CDemonLightInstance.light_enabled_flag = 0;
-  *(uint *)(in_stack_00000008 + 0x11e0) = in_stack_000000b4;
-  return in_stack_000000b8;
+  *(uint *)(in_stack_00000008 + 0x11e0) = local_1c;
+  return local_18;
 }

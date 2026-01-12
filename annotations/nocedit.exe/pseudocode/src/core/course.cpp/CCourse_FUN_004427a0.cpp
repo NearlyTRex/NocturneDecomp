@@ -41,7 +41,8 @@ void core_course_cpp_CCourse_FUN_004427a0(void)
   float local_34;
   float local_30;
   float local_2c;
-  ulonglong local_24;
+  double local_28;
+  float fStack_20;
   int local_1c;
   int local_18;
   int local_14;
@@ -70,13 +71,13 @@ void core_course_cpp_CCourse_FUN_004427a0(void)
   else {
     fVar3 = (float)*in_stack_00000004;
     if (0.0 <= in_stack_00000008) {
-      local_24 = crt_math_c_floor_FUN_005feb90((double)(in_stack_00000008 / fVar3));
-      local_7c = (CQuaternion4f *)(in_stack_00000008 - (float)local_24 * fVar3);
+      local_28 = crt_math_c_floor_FUN_005feb90((double)(in_stack_00000008 / fVar3));
+      local_7c = (CQuaternion4f *)(in_stack_00000008 - (float)local_28 * fVar3);
       in_stack_0000000c = extraout_EBX_00;
     }
     else {
-      local_24 = crt_math_c_floor_FUN_005feb90((double)(-in_stack_00000008 / fVar3));
-      local_7c = (CQuaternion4f *)((float)local_24 * fVar3 + in_stack_00000008);
+      local_28 = crt_math_c_floor_FUN_005feb90((double)(-in_stack_00000008 / fVar3));
+      local_7c = (CQuaternion4f *)((float)local_28 * fVar3 + in_stack_00000008);
       in_stack_0000000c = extraout_EBX;
       if ((float)local_7c < 0.0) {
         local_7c = (CQuaternion4f *)((float)local_7c + fVar3);
@@ -109,12 +110,11 @@ LAB_004427da:
     local_4c = *pfVar5 * (float)local_7c;
     local_48 = pfVar5[1] * (float)local_7c;
     local_44 = (float)local_7c * pfVar5[2];
-    local_50 = 1.0 - (float)local_7c;
+    fStack_20 = 1.0 - (float)local_7c;
     iVar2 = in_stack_00000004[1];
-    local_24 = (double)CONCAT44 /* combine 2-byte values */(local_50,(uint)local_24);
-    fStack_58 = *(float *)(iVar4 + iVar2) * local_50;
-    local_54 = *(float *)(iVar4 + 4 + iVar2) * local_50;
-    local_50 = *(float *)(iVar4 + 8 + iVar2) * local_50;
+    fStack_58 = *(float *)(iVar4 + iVar2) * fStack_20;
+    local_54 = *(float *)(iVar4 + 4 + iVar2) * fStack_20;
+    local_50 = *(float *)(iVar4 + 8 + iVar2) * fStack_20;
     local_34 = fStack_58 + local_4c;
     local_30 = local_54 + local_48;
     local_2c = local_50 + local_44;
@@ -127,7 +127,7 @@ LAB_004427da:
               ((CQuaternion4f *)(local_1c * 0x1c + in_stack_00000004[1] + 0xc),
                (CQuaternion4f *)(iVar8 * 0x1c + in_stack_00000004[1] + 0xc),local_7c,SUB84 /* extract 2-byte value */(dVar11,0)
               );
-    puVar6 = (uint *)&stack0xffffff98;
+    puVar6 = (uint *)&stack0xffffff9c;
   }
   puVar7 = puVar6 + (uint)bVar9 * -2 + 1;
   uVar1 = *puVar6;

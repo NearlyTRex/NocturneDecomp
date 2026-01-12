@@ -19,7 +19,7 @@ core_dcube_cpp_CDemonCubeTriangle_calculateNormalAndPlane_FUN_004552c0(CDemonCub
   float fVar7;
   float fVar8;
   float fVar9;
-  float local_10;
+  float fStack_c;
   
   pCVar2 = this_ptr->vertices[1];
   pCVar3 = this_ptr->vertices[0];
@@ -36,16 +36,16 @@ core_dcube_cpp_CDemonCubeTriangle_calculateNormalAndPlane_FUN_004552c0(CDemonCub
   (this_ptr->normal).y = fVar5;
   fVar1 = fVar1 * fVar8 - fVar6 * fVar7;
   (this_ptr->normal).z = fVar1;
-  local_10 = SQRT(fVar1 * (this_ptr->normal).z +
+  fStack_c = SQRT(fVar1 * (this_ptr->normal).z +
                   fVar5 * (this_ptr->normal).y + fVar4 * (this_ptr->normal).x);
-  if (ABS(local_10) == 0.0) {
-    local_10 = 1.0;
+  if (ABS(fStack_c) == 0.0) {
+    fStack_c = 1.0;
   }
-  local_10 = 1.0 / local_10;
+  fStack_c = 1.0 / fStack_c;
   pCVar2 = this_ptr->vertices[0];
-  (this_ptr->normal).x = -(this_ptr->normal).x * local_10;
-  (this_ptr->normal).y = -(this_ptr->normal).y * local_10;
-  (this_ptr->normal).z = -(this_ptr->normal).z * local_10;
+  (this_ptr->normal).x = -(this_ptr->normal).x * fStack_c;
+  (this_ptr->normal).y = -(this_ptr->normal).y * fStack_c;
+  (this_ptr->normal).z = -(this_ptr->normal).z * fStack_c;
   fVar4 = ABS((this_ptr->normal).x);
   fVar1 = (this_ptr->normal).y;
   this_ptr->plane_distance =

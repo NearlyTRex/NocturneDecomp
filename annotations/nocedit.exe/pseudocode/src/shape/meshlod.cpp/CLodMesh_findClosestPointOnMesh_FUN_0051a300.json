@@ -1,22 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 92,
-    "complexity_score": 174,
+    "complexity_score": 86,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 49,
-    "suspect_count": 9,
+    "pseudocode_lines": 41,
+    "suspect_count": 3,
     "suspect_types": [
       "badspacebase",
-      "call_esp_anchor",
-      "concat_artifact",
       "pointer_cast",
-      "register_param",
-      "stack_align_anchor",
-      "sub_artifact"
+      "register_param"
     ],
-    "total_lines": 141
+    "total_lines": 133
   },
   "cross_references": [],
   "function": {
@@ -46,6 +42,14 @@
     "confidence": "unknown",
     "declared_params": 3,
     "estimated_params": 3
+  },
+  "pcode_overrides": {
+    "0051a309": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd4,4)"
+    ],
+    "0051a375": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffd4,4)"
+    ]
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.5625,
@@ -86,6 +90,31 @@
     },
     "pcode_op_count": 365
   },
+  "resolved_suspects": [
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x2c",
+      "fix_address": "0051a309",
+      "frame_offset": 44,
+      "match": "AND ESP",
+      "sub_esp_offset": 44,
+      "text": "Stack alignment at 0051a309 (SUB ESP, 0x2c before)",
+      "type": "stack_align_anchor"
+    },
+    {
+      "add_esp_value": 16,
+      "call_address": "0051a370",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0051a375",
+      "frame_offset": 44,
+      "match": "CALL...ADD ESP",
+      "return_address": "0051a375",
+      "target_address": "0x51a6b0",
+      "text": "Direct CALL at 0051a370, ADD ESP at 0051a375 with uncertain ESP",
+      "type": "call_esp_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 80,
     "local_size": 68,
@@ -192,61 +221,10 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 25,
+      "line": 22,
       "match": "(CLodFace *)((int)",
       "text": "triangle_ptr = (CLodFace *)((int)this_ptr->tri_data->attribute_indices + iVar5);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 26,
-      "match": "CONCAT44",
-      "text": "dVar4 = (double)CONCAT44 /* combine 2-byte values */(local_38,uStack_3c);",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 35,
-      "match": "CONCAT44",
-      "text": "dVar4 = (double)CONCAT44 /* combine 2-byte values */(local_38,uStack_3c);",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 36,
-      "match": "CONCAT44",
-      "text": "if (fVar1 < (float)(double)CONCAT44 /* combine 2-byte values */(local_38,uStack_3c)) {",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 46,
-      "match": "SUB84",
-      "text": "uStack_3c = SUB84 /* extract 2-byte value */(dVar4,0);",
-      "type": "sub_artifact"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x2c",
-      "fix_address": "0051a309",
-      "frame_offset": 44,
-      "match": "AND ESP",
-      "sub_esp_offset": 44,
-      "text": "Stack alignment at 0051a309 (SUB ESP, 0x2c before)",
-      "type": "stack_align_anchor"
-    },
-    {
-      "add_esp_value": 16,
-      "call_address": "0051a370",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0051a375",
-      "frame_offset": 44,
-      "match": "CALL...ADD ESP",
-      "return_address": "0051a375",
-      "target_address": "0x51a6b0",
-      "text": "Direct CALL at 0051a370, ADD ESP at 0051a375 with uncertain ESP",
-      "type": "call_esp_anchor"
     }
   ]
 }

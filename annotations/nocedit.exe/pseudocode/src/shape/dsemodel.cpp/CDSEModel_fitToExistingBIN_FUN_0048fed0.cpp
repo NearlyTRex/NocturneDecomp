@@ -15,7 +15,8 @@ shape_dsemodel_cpp_CDSEModel_fitToExistingBIN_FUN_0048fed0(CDSEModel *this_ptr,c
   int *piVar2;
   int *piVar3;
   byte bVar4;
-  SMRGLModelBounds *in_stack_ffffff44;
+  SMRGLModelBounds *in_stack_ffffff38;
+  uint local_c4 [13];
   int local_90 [13];
   int local_5c;
   int local_58;
@@ -38,8 +39,8 @@ shape_dsemodel_cpp_CDSEModel_fitToExistingBIN_FUN_0048fed0(CDSEModel *this_ptr,c
   else {
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_24,"..\\shape\\dsemodel.cpp",0x180);
     local_20 = engine_model_c_loadModelFile_FUN_00527ec0(filename);
-    engine_model_c_getMRGLBounds_FUN_00528140(local_20,in_stack_ffffff44);
-    piVar2 = (int *)&stack0xffffff3c;
+    engine_model_c_getMRGLBounds_FUN_00528140(local_20,in_stack_ffffff38);
+    piVar2 = local_c4;
     piVar3 = local_90;
     for (iVar1 = 0xd; iVar1 != 0; iVar1 = iVar1 + -1) {
       *piVar3 = *piVar2;

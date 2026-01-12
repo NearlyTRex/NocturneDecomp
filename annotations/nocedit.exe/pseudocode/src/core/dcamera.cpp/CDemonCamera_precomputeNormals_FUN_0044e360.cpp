@@ -10,114 +10,108 @@ CDemonCamera * __cdecl
 core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044e360(CDemonCamera *this_ptr)
 
 {
-  char cVar1;
-  uint uVar2;
-  float fVar3;
-  CVector3i *alpha_index;
-  CDemonCamera *pCVar4;
+  float fVar1;
+  CDemonCamera *pCVar2;
+  int iVar3;
+  uint uVar4;
   int iVar5;
-  uint uVar6;
-  int iVar7;
-  int iVar8;
+  int iVar6;
   BADSPACEBASE *in_ESP;
-  int iVar9;
-  int *piVar10;
-  uint uVar11;
-  byte bVar12;
+  int iVar7;
+  int *piVar8;
+  uint uVar9;
+  byte bVar10;
   int aiStackY_1068 [1013];
-  CVector3i *output_ptr;
-  CVector3i *in_stack_ffffff7c;
-  uint uStack_80;
-  CVector3i CStack_70;
-  int aiStack_64 [2];
-  byte auStack_5c [8];
-  CVector3i *local_54;
-  int iStack_4c;
-  int local_48 [4];
+  CVector3i *input_ptr;
+  int iStack_80;
+  CVector3i local_78;
+  int local_6c [3];
+  CVector3i local_60;
+  uint local_54;
+  int aiStack_50 [6];
   int local_38;
+  int local_34;
   int local_30;
   int local_2c;
   int local_28;
-  char *local_24;
-  uint *local_1c;
+  uint *local_24;
+  uint local_1c;
   CVector3i *local_18;
   uint local_14;
   
-  bVar12 = 0;
+  bVar10 = 0;
   local_38 = 1;
-  output_ptr = (CVector3i *)0x0;
+  input_ptr = (CVector3i *)0x0;
   if (1 < this_ptr->display_height) {
-    local_48[2] = 0x500;
-    local_48[1] = 0xf00;
+    aiStack_50[4] = 0x500;
+    aiStack_50[3] = 0xf00;
     do {
       local_28 = 1;
       local_24 = g_ScreenBufferArray[local_38 * this_ptr->scale_factor];
       if (1 < this_ptr->display_width) {
-        local_30 = local_48[1] + 0xc;
-        local_2c = local_48[2] + 4;
-        iVar7 = local_30;
+        local_30 = aiStack_50[3] + 0xc;
+        local_2c = aiStack_50[4] + 4;
+        iVar5 = local_30;
         do {
-          local_24 = local_24 + this_ptr->scale_factor * 4;
+          local_24 = local_24 + this_ptr->scale_factor;
           core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0
                     (this_ptr,(CVector3i *)(local_28 * this_ptr->scale_factor),
-                     local_38 * this_ptr->scale_factor,(int)output_ptr);
-          aiStack_64[1] = uStack_80;
-          *(uint *)(auStack_5c + (uint)bVar12 * -8) =
-               *(uint *)(&stack0xffffff84 + (uint)bVar12 * -8);
-          *(uint *)(auStack_5c + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 4) =
-               *(uint *)(&stack0xffffff88 + (uint)bVar12 * -8 + (uint)bVar12 * -8);
-          if ((local_54 != (CVector3i *)0x7fffffff) && ((int)in_stack_ffffff7c < (int)local_54)) {
-            in_stack_ffffff7c = local_54;
+                     local_38 * this_ptr->scale_factor,(int)input_ptr);
+          local_60.x = iStack_80;
+          *(uint *)((int)&local_60 + (uint)bVar10 * -8 + 4) =
+               *(uint *)(&stack0xffffff84 + (uint)bVar10 * -8);
+          *(uint *)((int)&local_60 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
+               *(uint *)((int)&local_78 + (uint)bVar10 * -8 + (uint)bVar10 * -8);
+          if (((CVector3i *)local_60.z != (CVector3i *)0x7fffffff) && ((int)input_ptr < local_60.z))
+          {
+            input_ptr = (CVector3i *)local_60.z;
           }
-          output_ptr = (CVector3i *)auStack_5c;
           core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370
-                    (this_ptr,output_ptr,in_stack_ffffff7c);
-          CStack_70.z = iStack_4c;
-          aiStack_64[(uint)bVar12 * -2] = local_48[(uint)bVar12 * -2];
-          *(int *)(auStack_5c + (uint)bVar12 * -8 + (uint)bVar12 * -8 + -4) =
-               local_48[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1];
-          piVar10 = (int *)(local_28 + 0x9e4e78 + (uint)bVar12 * -8);
-          *(int *)((int)&g_TempWorldPositionRow[0].x + local_28) = iStack_4c;
-          *piVar10 = local_48[(uint)bVar12 * -2];
-          piVar10[(uint)bVar12 * -2 + 1] = local_48[(uint)bVar12 * -2 + (uint)bVar12 * -2 + 1];
-          alpha_index = (CVector3i *)(*local_1c >> 0x18);
-          if (alpha_index != (CVector3i *)0x0) {
-            output_ptr = (CVector3i *)(auStack_5c + 4);
+                    (this_ptr,&local_60,input_ptr);
+          local_6c[0] = aiStack_50[0];
+          local_6c[(uint)bVar10 * -2 + 1] = aiStack_50[(uint)bVar10 * -2 + 1];
+          local_6c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 2] =
+               aiStack_50[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 2];
+          piVar8 = (int *)(local_30 + 0x9e4e78 + (uint)bVar10 * -8);
+          *(uint *)((int)&g_TempWorldPositionRow[0].x + local_30) = local_54;
+          *piVar8 = aiStack_50[(uint)bVar10 * -2];
+          piVar8[(uint)bVar10 * -2 + 1] = aiStack_50[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
+          if (*local_24 >> 0x18 != 0) {
             core_dcamera_cpp_CDemonCamera_restoreAlphaTransform_FUN_00453a70
-                      (this_ptr,output_ptr,(int)alpha_index,&CStack_70);
-            aiStack_64[0] = CStack_70.y;
-            *(int *)(auStack_5c + (uint)bVar12 * -8 + -4) = aiStack_64[(uint)bVar12 * -2 + -1];
-            *(int *)(auStack_5c + (uint)bVar12 * -8 + (uint)bVar12 * -8) =
-                 aiStack_64[(uint)bVar12 * -2 + (uint)bVar12 * -2];
-            in_stack_ffffff7c = alpha_index;
+                      (this_ptr,&local_60,*local_24 >> 0x18,&local_78);
+            local_6c[0] = local_78.y;
+            local_6c[(uint)bVar10 * -2 + 1] = local_6c[(uint)bVar10 * -2 + -1];
+            local_6c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 2] =
+                 local_6c[(uint)bVar10 * -2 + (uint)bVar10 * -2];
           }
-          piVar10 = (int *)(iVar7 + 0x902f78 + (uint)bVar12 * -8);
-          *(int *)((int)&g_PrecomputedWorldPositions[0].x + iVar7) = CStack_70.y;
-          *piVar10 = aiStack_64[(uint)bVar12 * -2 + -1];
-          piVar10[(uint)bVar12 * -2 + 1] = aiStack_64[(uint)bVar12 * -2 + (uint)bVar12 * -2];
-          *(uint *)((int)g_PrecomputedDepthBuffer + local_2c) = auStack_5c._4_4_;
-          uVar2 = *(uint *)local_24;
-          cVar1 = *local_24;
-          fVar3 = (float)0.0078740157480314994;
-          local_14 = (uint)(ushort)(short)cVar1;
+          piVar8 = (int *)(iVar5 + 0x902f78 + (uint)bVar10 * -8);
+          *(int *)((int)&g_PrecomputedWorldPositions[0].x + iVar5) = local_6c[0];
+          *piVar8 = local_6c[(uint)bVar10 * -2 + 1];
+          piVar8[(uint)bVar10 * -2 + 1] = local_6c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 2];
+          *(int *)((int)g_PrecomputedDepthBuffer + local_2c) = local_60.z;
+          uVar9 = *local_24;
+          uVar4 = *local_24;
+          fVar1 = (float)0.0078740157480314994;
+          local_14 = (uint)(ushort)(short)(char)uVar4;
           local_30 = local_30 + 0xc;
           local_28 = local_28 + 1;
           local_2c = local_2c + 4;
-          *(float *)((int)&g_PrecomputedSurfaceNormals[0].x + iVar7) =
-               (float)(short)(char)((uint)*(uint *)local_24 >> 0x10) * fVar3;
-          *(float *)((int)&g_PrecomputedSurfaceNormals[0].y + iVar7) =
-               (float)(short)(char)((uint)uVar2 >> 8) * fVar3;
-          *(float *)((int)&g_PrecomputedSurfaceNormals[0].z + iVar7) = (float)(short)cVar1 * fVar3;
-          iVar7 = iVar7 + 0xc;
+          *(float *)((int)&g_PrecomputedSurfaceNormals[0].x + iVar5) =
+               (float)(short)(char)(*local_24 >> 0x10) * fVar1;
+          *(float *)((int)&g_PrecomputedSurfaceNormals[0].y + iVar5) =
+               (float)(short)(char)(uVar9 >> 8) * fVar1;
+          *(float *)((int)&g_PrecomputedSurfaceNormals[0].z + iVar5) =
+               (float)(short)(char)uVar4 * fVar1;
+          iVar5 = iVar5 + 0xc;
         } while (local_28 < this_ptr->display_width);
       }
-      local_48[1] = local_48[1] + 0xf00;
-      local_48[2] = local_48[2] + 0x500;
+      aiStack_50[3] = aiStack_50[3] + 0xf00;
+      aiStack_50[4] = aiStack_50[4] + 0x500;
       local_38 = local_38 + 1;
     } while (local_38 < this_ptr->display_height);
   }
-  this_ptr->max_distance = (float)(int)output_ptr * (float)0.00390625;
-  local_18 = output_ptr;
+  this_ptr->max_distance = (float)(int)input_ptr * (float)0.00390625;
+  local_18 = input_ptr;
   core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_004529b0(this_ptr);
   g_LightBufferPoolIndex = 0;
   g_LightBufferPool[0x18][0] = '\0';
@@ -125,64 +119,64 @@ core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044e360(CDemonCamera *this_
   g_LightBufferPool[0x18][2] = '\0';
   g_LightBufferPool[0x18][3] = '\0';
   g_CameraEdgeCount = 0;
-  pCVar4 = this_ptr;
+  pCVar2 = this_ptr;
   if (0x1df < this_ptr->framebuffer_height) {
-    local_18 = (CVector3i *)this_ptr->scale_factor;
-    local_48[1] = (int)local_18 << 2;
-    for (; pCVar4 = (CDemonCamera *)(this_ptr->framebuffer_height - this_ptr->scale_factor),
-        (int)local_18 < (int)pCVar4; local_18 = (CVector3i *)((int)local_18 + 1)) {
-      uVar11 = this_ptr->scale_factor;
-      local_30 = uVar11 * 4;
-      for (; (int)uVar11 < this_ptr->framebuffer_width + this_ptr->scale_factor * -2;
-          uVar11 = uVar11 + 1) {
-        if ((g_CameraEdgeCount < 10000) && (((uVar11 & 1) != 0 || (((uint)local_18 & 1) != 0)))) {
-          iVar7 = *(int *)(*(int *)((int)g_ZBufferScanlineArray + local_48[1]) + local_30);
-          iVar9 = 0x7fffffff;
-          if (iVar7 == 0) {
-            iVar7 = 0x7fffffff;
+    local_1c = this_ptr->scale_factor;
+    aiStack_50[2] = local_1c << 2;
+    for (; pCVar2 = (CDemonCamera *)(this_ptr->framebuffer_height - this_ptr->scale_factor),
+        (int)local_1c < (int)pCVar2; local_1c = local_1c + 1) {
+      uVar9 = this_ptr->scale_factor;
+      local_34 = uVar9 * 4;
+      for (; (int)uVar9 < this_ptr->framebuffer_width + this_ptr->scale_factor * -2;
+          uVar9 = uVar9 + 1) {
+        if ((g_CameraEdgeCount < 10000) && (((uVar9 & 1) != 0 || ((local_1c & 1) != 0)))) {
+          iVar5 = *(int *)(*(int *)((int)g_ZBufferScanlineArray + aiStack_50[2]) + local_34);
+          iVar7 = 0x7fffffff;
+          if (iVar5 == 0) {
+            iVar5 = 0x7fffffff;
           }
           else {
-            iVar7 = (int)(0x7fffffff / (longlong)iVar7);
+            iVar5 = (int)(0x7fffffff / (longlong)iVar5);
           }
-          uVar6 = iVar7 - g_PrecomputedDepthBuffer
-                          [((int)local_18 >> ((byte)g_CameraDownscaleIterations & 0x1f)) * 0x140 +
-                           ((int)uVar11 >> ((byte)g_CameraDownscaleIterations & 0x1f))] >> 0x1f;
-          if (0x400 < (int)((iVar7 - g_PrecomputedDepthBuffer
-                                     [((int)local_18 >> ((byte)g_CameraDownscaleIterations & 0x1f))
-                                      * 0x140 + ((int)uVar11 >>
-                                                ((byte)g_CameraDownscaleIterations & 0x1f))] ^ uVar6
-                            ) - uVar6)) {
-            iVar8 = 0;
+          uVar4 = iVar5 - g_PrecomputedDepthBuffer
+                          [((int)local_1c >> ((byte)g_CameraDownscaleIterations & 0x1f)) * 0x140 +
+                           ((int)uVar9 >> ((byte)g_CameraDownscaleIterations & 0x1f))] >> 0x1f;
+          if (0x400 < (int)((iVar5 - g_PrecomputedDepthBuffer
+                                     [((int)local_1c >> ((byte)g_CameraDownscaleIterations & 0x1f))
+                                      * 0x140 + ((int)uVar9 >>
+                                                ((byte)g_CameraDownscaleIterations & 0x1f))] ^ uVar4
+                            ) - uVar4)) {
+            iVar6 = 0;
             do {
-              uVar6 = iVar7 - g_PrecomputedDepthBuffer
-                              [(((int)local_18 >> ((byte)g_CameraDownscaleIterations & 0x1f)) +
-                               *(int *)((int)g_CameraEdgeOffsetY + iVar8)) * 0x140 +
-                               ((int)uVar11 >> ((byte)g_CameraDownscaleIterations & 0x1f)) +
-                               *(int *)((int)g_CameraEdgeOffsetX + iVar8)] >> 0x1f;
-              iVar5 = (iVar7 - g_PrecomputedDepthBuffer
-                               [(((int)local_18 >> ((byte)g_CameraDownscaleIterations & 0x1f)) +
-                                *(int *)((int)g_CameraEdgeOffsetY + iVar8)) * 0x140 +
-                                ((int)uVar11 >> ((byte)g_CameraDownscaleIterations & 0x1f)) +
-                                *(int *)((int)g_CameraEdgeOffsetX + iVar8)] ^ uVar6) - uVar6;
-              if (iVar5 < iVar9) {
+              uVar4 = iVar5 - g_PrecomputedDepthBuffer
+                              [(((int)local_1c >> ((byte)g_CameraDownscaleIterations & 0x1f)) +
+                               *(int *)((int)g_CameraEdgeOffsetY + iVar6)) * 0x140 +
+                               ((int)uVar9 >> ((byte)g_CameraDownscaleIterations & 0x1f)) +
+                               *(int *)((int)g_CameraEdgeOffsetX + iVar6)] >> 0x1f;
+              iVar3 = (iVar5 - g_PrecomputedDepthBuffer
+                               [(((int)local_1c >> ((byte)g_CameraDownscaleIterations & 0x1f)) +
+                                *(int *)((int)g_CameraEdgeOffsetY + iVar6)) * 0x140 +
+                                ((int)uVar9 >> ((byte)g_CameraDownscaleIterations & 0x1f)) +
+                                *(int *)((int)g_CameraEdgeOffsetX + iVar6)] ^ uVar4) - uVar4;
+              if (iVar3 < iVar7) {
                 g_CameraEdgeDetectionResults[g_CameraEdgeCount * 3] =
-                     *(int *)((int)g_CameraEdgeOffsetX + iVar8) +
-                     *(int *)((int)g_CameraEdgeOffsetY + iVar8) * 0x140;
-                iVar9 = iVar5;
+                     *(int *)((int)g_CameraEdgeOffsetX + iVar6) +
+                     *(int *)((int)g_CameraEdgeOffsetY + iVar6) * 0x140;
+                iVar7 = iVar3;
               }
-              iVar8 = iVar8 + 4;
-            } while (iVar8 != 0x20);
+              iVar6 = iVar6 + 4;
+            } while (iVar6 != 0x20);
             if (g_CameraEdgeDetectionResults[g_CameraEdgeCount * 3] != 0) {
-              g_CameraEdgeDetectionResults[g_CameraEdgeCount * 3 + 1] = uVar11;
-              g_CameraEdgeDetectionResults[g_CameraEdgeCount * 3 + 2] = (int)local_18;
+              g_CameraEdgeDetectionResults[g_CameraEdgeCount * 3 + 1] = uVar9;
+              g_CameraEdgeDetectionResults[g_CameraEdgeCount * 3 + 2] = local_1c;
               g_CameraEdgeCount = g_CameraEdgeCount + 1;
             }
           }
         }
-        local_30 = local_30 + 4;
+        local_34 = local_34 + 4;
       }
-      local_48[1] = local_48[1] + 4;
+      aiStack_50[2] = aiStack_50[2] + 4;
     }
   }
-  return pCVar4;
+  return pCVar2;
 }

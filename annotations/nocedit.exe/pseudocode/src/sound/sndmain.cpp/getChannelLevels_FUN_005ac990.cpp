@@ -12,7 +12,7 @@ sound_sndmain_cpp_getChannelLevels_FUN_005ac990(int channel,float *out_peak,floa
 {
   int iVar1;
   float *pfVar2;
-  float local_18;
+  float unaff_EBP;
   float fStack_14;
   
   if ((g_ChannelPrimaryBuffers[channel] == (void *)0x0) || (g_MixBufferSize < 1)) {
@@ -28,27 +28,27 @@ sound_sndmain_cpp_getChannelLevels_FUN_005ac990(int channel,float *out_peak,floa
   iVar1 = 0;
   if (0 < g_MixBufferSize) {
     do {
-      fStack_14 = ABS(*pfVar2);
+      unaff_EBP = ABS(*pfVar2);
       pfVar2 = pfVar2 + 1;
-      if (local_18 < fStack_14) {
-        local_18 = fStack_14;
+      if (fStack_14 < unaff_EBP) {
+        fStack_14 = unaff_EBP;
       }
       iVar1 = iVar1 + 1;
     } while (iVar1 < g_MixBufferSize);
   }
   sound_sndmain_cpp_unlockSound_FUN_005abdc0();
-  local_18 = local_18 / (float)g_MixBufferSize;
+  fStack_14 = fStack_14 / (float)g_MixBufferSize;
+  if (1.0 < unaff_EBP) {
+    unaff_EBP = 1.0;
+  }
   if (1.0 < fStack_14) {
     fStack_14 = 1.0;
   }
-  if (1.0 < local_18) {
-    local_18 = 1.0;
-  }
   if (out_peak != (float *)0x0) {
-    *out_peak = fStack_14;
+    *out_peak = unaff_EBP;
   }
   if (out_average != (float *)0x0) {
-    *out_average = local_18;
+    *out_average = fStack_14;
     return;
   }
   return;

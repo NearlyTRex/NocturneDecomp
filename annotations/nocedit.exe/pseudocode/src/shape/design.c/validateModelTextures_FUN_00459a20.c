@@ -14,6 +14,7 @@ int __cdecl shape_design_c_validateModelTextures_FUN_00459a20(char *directory_pa
   BADSPACEBASE *in_ESP;
   char *pcVar3;
   char *pcVar4;
+  char local_3fcc [16000];
   char local_14c [200];
   char local_84 [80];
   int local_34;
@@ -32,7 +33,7 @@ int __cdecl shape_design_c_validateModelTextures_FUN_00459a20(char *directory_pa
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     local_14 = 0;
     for (local_1c = 0; local_1c < 200; local_1c = local_1c + 1) {
-      (&stack0xffffc034)[local_1c * 0x50] = 0;
+      local_3fcc[local_1c * 0x50] = '\0';
     }
     for (local_1c = 0; local_1c < g_PolygonCount; local_1c = local_1c + 1) {
       pcVar3 = g_ModelPolygonData[local_1c].texture_name;
@@ -101,7 +102,7 @@ LAB_00459b94:
       if ((local_30 == 0xffffffff) || (local_2c != 0)) {
         local_24 = 0;
         for (local_34 = 0; local_34 < local_14; local_34 = local_34 + 1) {
-          iVar2 = crt_string_c_strcmp_FUN_005fef20(local_84,&stack0xffffc034 + local_34 * 0x50);
+          iVar2 = crt_string_c_strcmp_FUN_005fef20(local_84,local_3fcc + local_34 * 0x50);
           if (iVar2 == 0) {
             local_24 = 1;
             break;
@@ -110,7 +111,7 @@ LAB_00459b94:
         if ((local_24 == 0) || (local_28 != 0)) {
           if ((local_14 < 200) && (local_28 == 0)) {
             pcVar4 = local_84;
-            pcVar3 = &stack0xffffc034 + local_14 * 0x50;
+            pcVar3 = local_3fcc + local_14 * 0x50;
             do {
               cVar1 = *pcVar4;
               *pcVar3 = cVar1;
@@ -128,11 +129,13 @@ LAB_00459b94:
           }
           if (local_28 == 0) {
             if (local_30 == 0xffffffff) {
-              crt_stdio_c_sprintf_FUN_005fdbd0(local_14c,"  %-12s  (texture not found)");
+              crt_stdio_c_sprintf_FUN_005fdbd0
+                        (local_14c,"  %-12s  (texture not found)",local_84);
               engine_2d_c_drawText_FUN_00401fd0(local_14c,0,(local_14 + 1) * 0xb);
             }
             else {
-              crt_stdio_c_sprintf_FUN_005fdbd0(local_14c,"  %-12s  (invalid texture size)");
+              crt_stdio_c_sprintf_FUN_005fdbd0
+                        (local_14c,"  %-12s  (invalid texture size)",local_84);
               engine_2d_c_drawText_FUN_00401fd0(local_14c,0,(local_14 + 1) * 0xb);
             }
           }

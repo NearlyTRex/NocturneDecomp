@@ -10,12 +10,13 @@ uint core_setdir_cpp_FUN_005763a0(void)
 
 {
   CVector3f *pCVar1;
-  int iVar2;
+  uint uVar2;
   BADSPACEBASE *in_ESP;
   uint uVar3;
-  float *pfVar4;
+  CVector3f *pCVar4;
   float *in_stack_00000004;
   float *in_stack_00000008;
+  CVector3f local_128 [8];
   CBoundingBox3D local_c8;
   CVector3f local_b0;
   CVector3f local_a4;
@@ -49,13 +50,13 @@ uint core_setdir_cpp_FUN_005763a0(void)
     local_c8.max.y = in_stack_00000008[4];
     local_c8.max.z = in_stack_00000008[5];
   }
-  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(&stack0xfffffed8,8,&g_CVectorTypeInfo);
+  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(local_128,8,&g_CVectorTypeInfo);
   local_28 = (CMatrix3x3f *)(in_stack_00000008 + 6);
   uVar3 = 0;
   local_24 = (CMatrix3x3f *)(in_stack_00000004 + 6);
   do {
     local_20 = in_stack_00000004[3];
-    pfVar4 = (float *)(&stack0xfffffed8 + uVar3 * 0xc);
+    pCVar4 = local_128 + uVar3;
     while( true ) {
       local_74.max.x = local_20;
       if ((uVar3 & 2) == 0) {
@@ -98,48 +99,48 @@ uint core_setdir_cpp_FUN_005763a0(void)
          (local_74.max.z <= local_c8.max.z)) {
         return 1;
       }
-      if ((CVector3f *)pfVar4 != &local_74.max) {
-        *pfVar4 = local_74.max.x;
-        pfVar4[1] = local_74.max.y;
-        pfVar4[2] = local_74.max.z;
+      if (pCVar4 != &local_74.max) {
+        pCVar4->x = local_74.max.x;
+        pCVar4->y = local_74.max.y;
+        pCVar4->z = local_74.max.z;
       }
       uVar3 = uVar3 + 1;
-      pfVar4 = pfVar4 + 3;
+      pCVar4 = pCVar4 + 1;
       if (7 < (int)uVar3) {
-        pCVar1 = (CVector3f *)&stack0xfffffed8;
+        pCVar4 = local_128;
         uVar3 = 0;
         while( true ) {
-          iVar2 = (uVar3 ^ 1) * 0xc;
-          local_50.x = *(float *)(&stack0xfffffed8 + iVar2) - pCVar1->x;
-          local_50.y = *(float *)(&stack0xfffffedc + iVar2) - pCVar1->y;
-          local_50.z = *(float *)(&stack0xfffffee0 + iVar2) - pCVar1->z;
+          uVar2 = uVar3 ^ 1;
+          local_50.x = local_128[uVar2].x - pCVar4->x;
+          local_50.y = local_128[uVar2].y - pCVar4->y;
+          local_50.z = local_128[uVar2].z - pCVar4->z;
           local_14 = core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940
-                               (&local_c8,pCVar1,&local_50,(CVector3f *)0x0);
+                               (&local_c8,pCVar4,&local_50,(CVector3f *)0x0);
           local_2c = local_14;
           local_44 = (double)local_14;
           if ((0.0 <= local_44) && (local_44 <= 1.0)) {
             return 1;
           }
-          iVar2 = (uVar3 ^ 2) * 0xc;
-          local_a4.x = *(float *)(&stack0xfffffed8 + iVar2) - pCVar1->x;
-          local_a4.y = *(float *)(&stack0xfffffedc + iVar2) - pCVar1->y;
-          local_a4.z = *(float *)(&stack0xfffffee0 + iVar2) - pCVar1->z;
+          uVar2 = uVar3 ^ 2;
+          local_a4.x = local_128[uVar2].x - pCVar4->x;
+          local_a4.y = local_128[uVar2].y - pCVar4->y;
+          local_a4.z = local_128[uVar2].z - pCVar4->z;
           local_14 = core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940
-                               (&local_c8,pCVar1,&local_a4,(CVector3f *)0x0);
+                               (&local_c8,pCVar4,&local_a4,(CVector3f *)0x0);
           local_3c = (double)local_14;
           if ((0.0 <= local_3c) && (local_3c <= 1.0)) break;
-          iVar2 = (uVar3 ^ 4) * 0xc;
-          local_b0.x = *(float *)(&stack0xfffffed8 + iVar2) - pCVar1->x;
-          local_b0.y = *(float *)(&stack0xfffffedc + iVar2) - pCVar1->y;
-          local_b0.z = *(float *)(&stack0xfffffee0 + iVar2) - pCVar1->z;
+          uVar2 = uVar3 ^ 4;
+          local_b0.x = local_128[uVar2].x - pCVar4->x;
+          local_b0.y = local_128[uVar2].y - pCVar4->y;
+          local_b0.z = local_128[uVar2].z - pCVar4->z;
           local_14 = core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940
-                               (&local_c8,pCVar1,&local_b0,(CVector3f *)0x0);
+                               (&local_c8,pCVar4,&local_b0,(CVector3f *)0x0);
           local_34 = (double)local_14;
           if ((0.0 <= local_34) && (local_34 <= 1.0)) {
             return 1;
           }
           uVar3 = uVar3 + 1;
-          pCVar1 = pCVar1 + 1;
+          pCVar4 = pCVar4 + 1;
           if (7 < (int)uVar3) {
             return 0;
           }

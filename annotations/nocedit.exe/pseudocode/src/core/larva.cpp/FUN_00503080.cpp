@@ -37,6 +37,7 @@ void core_larva_cpp_FUN_00503080(void)
   unkbyte10 extraout_ST3;
   CEnemy *in_stack_00000004;
   float in_stack_00000008;
+  char local_1f0 [200];
   CVector3f local_128;
   CVector3f local_11c;
   uint local_110;
@@ -321,11 +322,11 @@ LAB_00503184:
       local_68 = (double)fVar14;
       local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.99,1.01);
       crt_stdio_c_sprintf_FUN_005fdbd0
-                (&stack0xfffffe10,"slime.wav @%f *%f",
+                (local_1f0,"slime.wav @%f *%f",
                  (double)(in_stack_00000004->base_character).size_scale,
                  (double)(local_14 * (float)local_68));
       uVar11 = (*((in_stack_00000004->base_character).base_actor.vtable)->playAmbientSound)
-                         ((CDemonActor *)in_stack_00000004,&stack0xfffffe10);
+                         ((CDemonActor *)in_stack_00000004,local_1f0);
       *(uint *)(in_stack_00000004[1].base_character.base_actor.actor_name + 0x10) = uVar11;
     }
   }

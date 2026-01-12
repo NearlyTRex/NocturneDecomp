@@ -23,7 +23,7 @@ void core_passngr_cpp_FUN_00545ef0(void)
   BADSPACEBASE *in_ESP;
   CCharacter *in_stack_00000004;
   float in_stack_00000008;
-  float fStack_14;
+  CVector3f local_1c;
   
   if (1.0 <= *(float *)(in_stack_00000004[2].cloth_data + 0x5d60)) {
     return;
@@ -59,20 +59,19 @@ void core_passngr_cpp_FUN_00545ef0(void)
       }
     }
   }
-  fStack_14 = in_stack_00000008;
   (in_stack_00000004->model).accumulated_root_motion.z = 0.0;
   (in_stack_00000004->model).accumulated_root_motion.y =
        (in_stack_00000004->model).accumulated_root_motion.z;
   (in_stack_00000004->model).accumulated_root_motion.x =
        (in_stack_00000004->model).accumulated_root_motion.y;
-  while (0.0 < fStack_14) {
-    fStack_14 = (float)core_motion_cpp_CMotionController_advance_FUN_0052d610
-                                 (&(in_stack_00000004->model).motion_controller);
+  while (0.0 < in_stack_00000008) {
+    core_motion_cpp_CMotionController_advance_FUN_0052d610
+              (&(in_stack_00000004->model).motion_controller);
     core_charactr_cpp_CCharacter_FUN_0042ec40(in_stack_00000004);
   }
   if (iVar2 != 0) {
     pCVar6 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
-                       (&in_stack_00000004->base_actor,(CVector3f *)&stack0xfffffff0,
+                       (&in_stack_00000004->base_actor,&local_1c,
                         &(in_stack_00000004->model).accumulated_root_motion);
     pCVar1 = &(in_stack_00000004->base_actor).location;
     (pCVar1->position).x = pCVar6->x + (pCVar1->position).x;

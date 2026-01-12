@@ -10,17 +10,17 @@ int __cdecl shape_design_c_complexPolygonReduction_FUN_00463b30(int selected_pol
 
 {
   uint uVar1;
-  uint uVar2;
-  int iVar3;
+  double dVar2;
+  uint uVar3;
+  int iVar4;
   BADSPACEBASE *in_ESP;
-  int *piVar4;
-  SShapeEditorPolygon *pSVar5;
-  int *piVar6;
-  SShapeEditorPolygon *pSVar7;
-  byte bVar8;
-  double dVar9;
+  int *piVar5;
+  SShapeEditorPolygon *pSVar6;
+  int *piVar7;
+  SShapeEditorPolygon *pSVar8;
+  byte bVar9;
   double dVar10;
-  uint auStack_22c [51];
+  SShapeEditorPolygon local_2e4;
   int local_160 [20];
   float afStack_110 [16];
   uint auStack_d0 [16];
@@ -41,15 +41,15 @@ int __cdecl shape_design_c_complexPolygonReduction_FUN_00463b30(int selected_pol
   int local_18;
   int *local_14;
   
-  bVar8 = 0;
+  bVar9 = 0;
   local_28 = 0;
   local_24 = 0;
-  piVar4 = &0x2;
-  piVar6 = local_160;
-  for (iVar3 = 0x14; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *piVar6 = *piVar4;
-    piVar4 = piVar4 + 1;
-    piVar6 = piVar6 + 1;
+  piVar5 = &0x2;
+  piVar7 = local_160;
+  for (iVar4 = 0x14; iVar4 != 0; iVar4 = iVar4 + -1) {
+    *piVar7 = *piVar5;
+    piVar5 = piVar5 + 1;
+    piVar7 = piVar7 + 1;
   }
   local_14 = (int *)0x0;
   local_14 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
@@ -72,10 +72,10 @@ int __cdecl shape_design_c_complexPolygonReduction_FUN_00463b30(int selected_pol
     local_48 = 1;
     *local_14 = selected_polygon_index;
     for (local_4c = 0; local_4c < g_PolygonCount; local_4c = local_4c + 1) {
-      iVar3 = shape_design_c_arePolygonsCoplanar_FUN_00461b70
+      iVar4 = shape_design_c_arePolygonsCoplanar_FUN_00461b70
                         (g_ModelPolygonData + selected_polygon_index,g_ModelPolygonData + local_4c,
                          3.58732e-43,8);
-      if (((iVar3 != 0) &&
+      if (((iVar4 != 0) &&
           (g_ModelPolygonData[selected_polygon_index].vertex_indices_count ==
            g_ModelPolygonData[local_4c].vertex_indices_count)) &&
          (local_4c != selected_polygon_index)) {
@@ -93,11 +93,11 @@ int __cdecl shape_design_c_complexPolygonReduction_FUN_00463b30(int selected_pol
     for (local_4c = 0; local_4c < (int)local_48; local_4c = local_4c + 1) {
       for (local_1c = 0; local_1c < (int)local_48; local_1c = local_1c + 1) {
         if ((local_1c != local_4c) &&
-           (iVar3 = shape_design_c_findSharedEdge_FUN_004635b0
+           (iVar4 = shape_design_c_findSharedEdge_FUN_004635b0
                               ((int *)g_ModelPolygonData[local_14[local_4c * 3]].vertex_indices,
                                (int *)g_ModelPolygonData[local_14[local_1c * 3]].vertex_indices,
                                g_ModelPolygonData[selected_polygon_index].vertex_indices_count,
-                               &local_30), iVar3 != 0)) {
+                               &local_30), iVar4 != 0)) {
           local_14[local_4c * 3 + 2] = local_1c;
           local_14[local_1c * 3 + 1] = local_4c;
           local_3c = local_3c + 1;
@@ -164,7 +164,7 @@ int __cdecl shape_design_c_complexPolygonReduction_FUN_00463b30(int selected_pol
       }
       if ((int)local_44 < 0x11) {
         local_1c = local_38;
-        for (local_4c = 0; uVar2 = local_44, local_4c < (int)local_48; local_4c = local_4c + 1) {
+        for (local_4c = 0; uVar3 = local_44, local_4c < (int)local_48; local_4c = local_4c + 1) {
           if (local_30 == 0) {
             if (g_ModelPolygonData[selected_polygon_index].vertex_indices_count == 4) {
               auStack_d0[local_4c * 2] =
@@ -235,13 +235,13 @@ int __cdecl shape_design_c_complexPolygonReduction_FUN_00463b30(int selected_pol
           afStack_110[local_4c + 1] =
                g_ModelPolygonData[local_14[local_34 * 3]].uv_v[local_160[local_30 * 4 + 3]];
         }
-        for (local_4c = 0; local_4c < (int)uVar2; local_4c = local_4c + 1) {
-          auStack_22c[local_4c] = auStack_d0[local_4c];
+        local_2e4.vertex_indices_count = local_44;
+        for (local_4c = 0; local_4c < (int)uVar3; local_4c = local_4c + 1) {
+          local_2e4.vertex_indices[local_4c] = auStack_d0[local_4c];
         }
-        dVar10 = (double)(int)((uVar2 - 2) * 0xb4) + -0.10000000000000001;
-        dVar9 = shape_design_c_calculatePolygonAngularArea_FUN_00461ee0
-                          ((SShapeEditorPolygon *)&stack0xfffffd1c);
-        if (dVar10 <= dVar9) {
+        dVar2 = (double)(int)((uVar3 - 2) * 0xb4) + -0.10000000000000001;
+        dVar10 = shape_design_c_calculatePolygonAngularArea_FUN_00461ee0(&local_2e4);
+        if (dVar2 <= dVar10) {
           g_ModelPolygonData[selected_polygon_index].vertex_indices_count = local_44;
           for (local_4c = 0;
               local_4c < (int)g_ModelPolygonData[selected_polygon_index].vertex_indices_count;
@@ -269,10 +269,10 @@ int __cdecl shape_design_c_complexPolygonReduction_FUN_00463b30(int selected_pol
           }
           for (local_4c = local_48 - 2; -1 < local_4c; local_4c = local_4c + -1) {
             for (local_1c = 0; local_1c < local_4c; local_1c = local_1c + 1) {
-              iVar3 = shape_design_c_comparePolygonIndices_FUN_00463800
+              iVar4 = shape_design_c_comparePolygonIndices_FUN_00463800
                                 ((int *)(local_1c * 4 + (int)local_20),
                                  (int *)(local_1c * 4 + 4 + (int)local_20));
-              if (0 < iVar3) {
+              if (0 < iVar4) {
                 uVar1 = *(uint *)(local_1c * 4 + (int)local_20);
                 *(uint *)((int)local_20 + local_1c * 4) =
                      *(uint *)((int)local_20 + local_1c * 4 + 4);
@@ -283,12 +283,12 @@ int __cdecl shape_design_c_complexPolygonReduction_FUN_00463b30(int selected_pol
           for (local_4c = 0; local_4c < (int)(local_48 - 1); local_4c = local_4c + 1) {
             for (local_1c = *(int *)(local_4c * 4 + (int)local_20); local_1c < g_PolygonCount + -1;
                 local_1c = local_1c + 1) {
-              pSVar5 = g_ModelPolygonData + local_1c + 1;
-              pSVar7 = g_ModelPolygonData + local_1c;
-              for (iVar3 = 0x61; iVar3 != 0; iVar3 = iVar3 + -1) {
-                pSVar7->polygon_type = pSVar5->polygon_type;
-                pSVar5 = (SShapeEditorPolygon *)((int)pSVar5 + ((uint)bVar8 * -2 + 1) * 4);
-                pSVar7 = (SShapeEditorPolygon *)((int)pSVar7 + ((uint)bVar8 * -2 + 1) * 4);
+              pSVar6 = g_ModelPolygonData + local_1c + 1;
+              pSVar8 = g_ModelPolygonData + local_1c;
+              for (iVar4 = 0x61; iVar4 != 0; iVar4 = iVar4 + -1) {
+                pSVar8->polygon_type = pSVar6->polygon_type;
+                pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + ((uint)bVar9 * -2 + 1) * 4);
+                pSVar8 = (SShapeEditorPolygon *)((int)pSVar8 + ((uint)bVar9 * -2 + 1) * 4);
               }
             }
           }

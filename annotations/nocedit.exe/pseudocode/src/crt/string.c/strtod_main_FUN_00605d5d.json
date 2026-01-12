@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 107,
-    "complexity_score": 367,
+    "complexity_score": 336,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 2,
-    "pseudocode_lines": 67,
-    "suspect_count": 26,
+    "pseudocode_lines": 71,
+    "suspect_count": 23,
     "suspect_types": [
       "badspacebase",
-      "call_esp_anchor",
       "concat_artifact",
       "param_count_too_few",
       "register_param",
@@ -17,7 +16,7 @@
       "stack_param",
       "unknown_field"
     ],
-    "total_lines": 174
+    "total_lines": 178
   },
   "cross_references": [
     {
@@ -98,6 +97,11 @@
     "declared_params": 2,
     "estimated_params": 3
   },
+  "pcode_overrides": {
+    "00605d79": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffdc,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.337662337662338,
     "instruction_count": 77,
@@ -126,6 +130,21 @@
     },
     "pcode_op_count": 334
   },
+  "resolved_suspects": [
+    {
+      "add_esp_value": 12,
+      "call_address": "00605d72",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "00605d79",
+      "frame_offset": 36,
+      "match": "CALL...ADD ESP",
+      "return_address": "00605d77",
+      "target_address": "0x605b9b",
+      "text": "Direct CALL at 00605d72, ADD ESP at 00605d79 with uncertain ESP",
+      "type": "call_esp_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 68,
     "local_size": 56,
@@ -236,119 +255,105 @@
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 33,
+      "line": 35,
       "match": "._4_4_",
       "text": "uVar5 = inf._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 34,
+      "line": 36,
       "match": "._0_4_",
       "text": "uVar1 = inf._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 36,
+      "line": 38,
       "match": "._4_4_",
       "text": "return -(double)CONCAT44 /* combine 2-byte values */(inf._4_4_,inf._0_4_);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 36,
+      "line": 38,
       "match": "._0_4_",
       "text": "return -(double)CONCAT44 /* combine 2-byte values */(inf._4_4_,inf._0_4_);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 36,
+      "line": 38,
       "match": "CONCAT44",
       "text": "return -(double)CONCAT44 /* combine 2-byte values */(inf._4_4_,inf._0_4_);",
       "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 46,
+      "line": 50,
       "match": "CONCAT19",
-      "text": "local_28 = (double)(float10)CONCAT19 /* combine 2-byte values */(bStack_2b,CONCAT18 /* combine 2-byte values */(uStack_2c,CONCAT44 /* combine 2-byte values */(uStack_30,local_34)))",
+      "text": "local_28 = (double)(float10)CONCAT19 /* combine 2-byte values */(bStack_2b,CONCAT18 /* combine 2-byte values */(uStack_2c,local_34));",
       "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 46,
+      "line": 50,
       "match": "CONCAT18",
-      "text": "local_28 = (double)(float10)CONCAT19 /* combine 2-byte values */(bStack_2b,CONCAT18 /* combine 2-byte values */(uStack_2c,CONCAT44 /* combine 2-byte values */(uStack_30,local_34)))",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 46,
-      "match": "CONCAT44",
-      "text": "local_28 = (double)(float10)CONCAT19 /* combine 2-byte values */(bStack_2b,CONCAT18 /* combine 2-byte values */(uStack_2c,CONCAT44 /* combine 2-byte values */(uStack_30,local_34)))",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 48,
-      "match": "._4_4_",
-      "text": "dVar2 = (double)CONCAT44 /* combine 2-byte values */(local_18._4_4_,(uint)local_18);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 48,
-      "match": "CONCAT44",
-      "text": "dVar2 = (double)CONCAT44 /* combine 2-byte values */(local_18._4_4_,(uint)local_18);",
+      "text": "local_28 = (double)(float10)CONCAT19 /* combine 2-byte values */(bStack_2b,CONCAT18 /* combine 2-byte values */(uStack_2c,local_34));",
       "type": "concat_artifact"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 51,
       "match": "._4_4_",
-      "text": "(local_20 = local_28, local_18 = (double)CONCAT44 /* combine 2-byte values */(local_18._4_4_,(uint)local_18),",
+      "text": "dVar2 = (double)CONCAT44 /* combine 2-byte values */(local_18._4_4_,(uint)local_18);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
       "line": 51,
       "match": "CONCAT44",
+      "text": "dVar2 = (double)CONCAT44 /* combine 2-byte values */(local_18._4_4_,(uint)local_18);",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 54,
+      "match": "._4_4_",
+      "text": "(local_20 = local_28, local_18 = (double)CONCAT44 /* combine 2-byte values */(local_18._4_4_,(uint)local_18),",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 54,
+      "match": "CONCAT44",
       "text": "(local_20 = local_28, local_18 = (double)CONCAT44 /* combine 2-byte values */(local_18._4_4_,(uint)local_18),",
       "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 55,
-      "match": "CONCAT19",
-      "text": "local_28 = (double)(float10)CONCAT19 /* combine 2-byte values */(bStack_2b,CONCAT18 /* combine 2-byte values */(uStack_2c,CONCAT44 /* combine 2-byte values */(uStack_30,local_34)))",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 55,
-      "match": "CONCAT18",
-      "text": "local_28 = (double)(float10)CONCAT19 /* combine 2-byte values */(bStack_2b,CONCAT18 /* combine 2-byte values */(uStack_2c,CONCAT44 /* combine 2-byte values */(uStack_30,local_34)))",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 55,
-      "match": "CONCAT44",
-      "text": "local_28 = (double)(float10)CONCAT19 /* combine 2-byte values */(bStack_2b,CONCAT18 /* combine 2-byte values */(uStack_2c,CONCAT44 /* combine 2-byte values */(uStack_30,local_34)))",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Unknown/mangled field access",
       "line": 58,
+      "match": "CONCAT19",
+      "text": "local_28 = (double)(float10)CONCAT19 /* combine 2-byte values */(bStack_2b,CONCAT18 /* combine 2-byte values */(uStack_2c,local_34));",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 58,
+      "match": "CONCAT18",
+      "text": "local_28 = (double)(float10)CONCAT19 /* combine 2-byte values */(bStack_2b,CONCAT18 /* combine 2-byte values */(uStack_2c,local_34));",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 60,
       "match": "._4_4_",
       "text": "dVar3 = (double)CONCAT44 /* combine 2-byte values */(local_20._4_4_,(uint)local_20);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 58,
+      "line": 60,
       "match": "CONCAT44",
       "text": "dVar3 = (double)CONCAT44 /* combine 2-byte values */(local_20._4_4_,(uint)local_20);",
       "type": "concat_artifact"
@@ -363,19 +368,6 @@
       "param_delta": 1,
       "text": "Function declares 2 params but call sites push 3 (1 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "00605d72",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "00605d79",
-      "frame_offset": 36,
-      "match": "CALL...ADD ESP",
-      "return_address": "00605d77",
-      "target_address": "0x605b9b",
-      "text": "Direct CALL at 00605d72, ADD ESP at 00605d79 with uncertain ESP",
-      "type": "call_esp_anchor"
     },
     {
       "address": "00605d5d",

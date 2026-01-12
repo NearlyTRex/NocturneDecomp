@@ -1,22 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 187,
-    "complexity_score": 295,
+    "complexity_score": 109,
     "cross_reference_count": 2,
     "function_call_count": 11,
     "global_count": 8,
-    "pseudocode_lines": 60,
-    "suspect_count": 20,
+    "pseudocode_lines": 69,
+    "suspect_count": 3,
     "suspect_types": [
-      "call_esp_anchor",
       "extra_output",
-      "pointer_cast",
-      "stack_align_anchor",
-      "stack_param",
-      "unaffected_reg",
-      "variadic_anchor"
+      "pointer_cast"
     ],
-    "total_lines": 247
+    "total_lines": 256
   },
   "cross_references": [
     {
@@ -152,6 +147,41 @@
       "value": null
     }
   ],
+  "pcode_overrides": {
+    "00516ba9": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffe4,4)"
+    ],
+    "00516bb5": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffe4,4)"
+    ],
+    "00516bcc": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffe4,4)"
+    ],
+    "00516be2": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffe4,4)"
+    ],
+    "00516c30": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffe4,4)"
+    ],
+    "00516cb9": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffe4,4)"
+    ],
+    "00516cc8": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffe4,4)"
+    ],
+    "00516cdf": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffe4,4)"
+    ],
+    "00516ce9": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffe4,4)"
+    ],
+    "00516d34": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffe4,4)"
+    ],
+    "00516d3d": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffe4,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 5.66887417218543,
     "instruction_count": 151,
@@ -196,156 +226,11 @@
     },
     "pcode_op_count": 856
   },
-  "stack_frame": {
-    "frame_size": 64,
-    "local_size": 52,
-    "param_offset": 4,
-    "param_size": 12,
-    "return_addr_offset": 0,
-    "variables": [
-      {
-        "is_param": false,
-        "name": "local_30",
-        "offset": -48,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_24",
-        "offset": -36,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_20",
-        "offset": -32,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_1c",
-        "offset": -28,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": false,
-        "name": "local_18",
-        "offset": -24,
-        "size": 4,
-        "type": "undefined4"
-      },
-      {
-        "is_param": true,
-        "name": "this_ptr",
-        "offset": 4,
-        "size": 4,
-        "type": "CLodMesh *"
-      },
-      {
-        "is_param": true,
-        "name": "target_tri_count",
-        "offset": 8,
-        "size": 4,
-        "type": "int"
-      },
-      {
-        "is_param": true,
-        "name": "display_mode",
-        "offset": 12,
-        "size": 4,
-        "type": "uint"
-      }
-    ]
-  },
-  "stack_patterns": {
-    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
-    "pattern_count": 1,
-    "pattern_types": [
-      "stack_alignment"
-    ],
-    "patterns": [
-      {
-        "address": "00516ba9",
-        "description": "Stack alignment (AND ESP, 0xfffffff8)",
-        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
-        "instruction": "AND ESP,0xfffffff8",
-        "pattern_id": "stack_alignment"
-      }
-    ],
-    "severity": "medium"
-  },
-  "suspects": [
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 9,
-      "match": "extraout_EAX",
-      "text": "int extraout_EAX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 12,
-      "match": "unaff_EDI",
-      "text": "int unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_ffffffe0",
-      "text": "CLodEdge *in_stack_ffffffe0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_ffffffe0",
-      "text": "dVar4 = crt_math_c_round_FUN_005fe6b0((double)(float)in_stack_ffffffe0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 26,
-      "match": "extraout_EAX",
-      "text": "edge_data = (CLodEdge *)((int)this_ptr->edges_ptr->adjacent_tri_indices + extraout_EAX + -0x28);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 26,
-      "match": "(CLodEdge *)((int)",
-      "text": "edge_data = (CLodEdge *)((int)this_ptr->edges_ptr->adjacent_tri_indices + extraout_EAX + -0x28);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 30,
-      "match": "unaff_EDI",
-      "text": "if ((5 < unaff_EDI) && (iVar2 = this_ptr->next_lod->tri_count - iVar1, 10 < iVar2)) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_ffffffe0",
-      "text": "((double)(((float)(iVar1 - target_tri_count) * (float)in_stack_ffffffe0) /",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 58,
-      "match": "in_stack_ffffffe0",
-      "text": "in_stack_ffffffe0 = edge_data;",
-      "type": "stack_param"
-    },
+  "resolved_suspects": [
     {
       "add_esp_value": 16,
       "call_address": "00516c2b",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -361,7 +246,7 @@
     {
       "add_esp_value": 16,
       "call_address": "00516cb4",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -487,6 +372,111 @@
       "target_address": "0x51b870",
       "text": "Direct CALL at 00516d38, ADD ESP at 00516d3d with uncertain ESP",
       "type": "call_esp_anchor"
+    }
+  ],
+  "stack_frame": {
+    "frame_size": 64,
+    "local_size": 52,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLodMesh *"
+      },
+      {
+        "is_param": true,
+        "name": "target_tri_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "display_mode",
+        "offset": 12,
+        "size": 4,
+        "type": "uint"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00516ba9",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 9,
+      "match": "extraout_EAX",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 32,
+      "match": "extraout_EAX",
+      "text": "edge_data = (CLodEdge *)((int)this_ptr->edges_ptr->adjacent_tri_indices + extraout_EAX + -0x28);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 32,
+      "match": "(CLodEdge *)((int)",
+      "text": "edge_data = (CLodEdge *)((int)this_ptr->edges_ptr->adjacent_tri_indices + extraout_EAX + -0x28);",
+      "type": "pointer_cast"
     }
   ]
 }

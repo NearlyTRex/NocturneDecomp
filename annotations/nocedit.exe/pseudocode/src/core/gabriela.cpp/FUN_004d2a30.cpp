@@ -15,14 +15,14 @@ float core_gabriela_cpp_FUN_004d2a30(void)
 {
   float in_stack_0000000c;
   int in_stack_00000010;
-  uint local_c;
+  uint uStack_8;
   
-  local_c = in_stack_0000000c * _DAT_02d7b844;
+  uStack_8 = in_stack_0000000c * _DAT_02d7b844;
   if (in_stack_00000010 < 1) {
-    local_c = local_c * (float)0.69999999999999996;
+    uStack_8 = uStack_8 * (float)0.69999999999999996;
   }
   else if (in_stack_00000010 != 1) {
     return in_stack_0000000c;
   }
-  return local_c;
+  return uStack_8;
 }

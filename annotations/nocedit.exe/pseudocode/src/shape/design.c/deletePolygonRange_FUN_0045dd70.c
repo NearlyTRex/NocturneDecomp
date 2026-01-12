@@ -34,7 +34,8 @@ void shape_design_c_deletePolygonRange_FUN_0045dd70(void)
     pcVar4 = pcVar4 + (uint)bVar6 * -2 + 1;
   } while (cVar1 != '\0');
   if ((iVar2 != -2) &&
-     (iVar2 = crt_stdio_c_sscanf_FUN_0060013c(&stack0xffffff90,"%d,%d"), iVar2 == 2)) {
+     (local_14 = crt_stdio_c_sscanf_FUN_0060013c
+                           (&stack0xffffff90,"%d,%d",&local_1c,&local_18), local_14 == 2)) {
     if ((local_18 < local_1c) || ((local_1c < 0 || (g_PolygonCount <= local_18)))) {
       engine_2d_c_drawText_FUN_00401fd0("Bad range.  Hit a key...",0,0x16);
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();

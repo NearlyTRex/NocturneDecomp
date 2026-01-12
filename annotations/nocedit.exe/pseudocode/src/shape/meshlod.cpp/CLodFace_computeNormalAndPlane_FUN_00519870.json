@@ -1,20 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 275,
-    "complexity_score": 201,
+    "complexity_score": 207,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
-    "pseudocode_lines": 126,
-    "suspect_count": 5,
+    "pseudocode_lines": 127,
+    "suspect_count": 6,
     "suspect_types": [
       "badspacebase",
-      "call_esp_anchor",
       "param_count_too_few",
       "register_param",
-      "stack_align_anchor"
+      "unknown_field"
     ],
-    "total_lines": 401
+    "total_lines": 402
   },
   "cross_references": [
     {
@@ -75,6 +74,14 @@
     "declared_params": 4,
     "estimated_params": 6
   },
+  "pcode_overrides": {
+    "00519879": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff8c,4)"
+    ],
+    "005199d2": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffff8c,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 6.535714285714286,
     "instruction_count": 252,
@@ -119,6 +126,31 @@
     },
     "pcode_op_count": 1647
   },
+  "resolved_suspects": [
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x74",
+      "fix_address": "00519879",
+      "frame_offset": 116,
+      "match": "AND ESP",
+      "sub_esp_offset": 116,
+      "text": "Stack alignment at 00519879 (SUB ESP, 0x74 before)",
+      "type": "stack_align_anchor"
+    },
+    {
+      "add_esp_value": 12,
+      "call_address": "005199c9",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "computed",
+      "fix_address": "005199d2",
+      "frame_offset": 116,
+      "match": "CALL...ADD ESP",
+      "return_address": "005199ce",
+      "target_address": "0x5fe667",
+      "text": "Direct CALL at 005199c9, ADD ESP at 005199d2 with uncertain ESP",
+      "type": "call_esp_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 156,
     "local_size": 140,
@@ -372,17 +404,38 @@
   "suspects": [
     {
       "description": "Ghidra failed to resolve stack frame",
-      "line": 19,
+      "line": 18,
       "match": "BADSPACEBASE",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "badspacebase"
     },
     {
       "description": "Inferred register parameter",
-      "line": 19,
+      "line": 18,
       "match": "in_ESP",
       "text": "BADSPACEBASE *in_ESP;",
       "type": "register_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 79,
+      "match": "._0_4_",
+      "text": "local_7c._0_4_ = vertex0_pos->y;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 80,
+      "match": "._4_4_",
+      "text": "local_7c._4_4_ = vertex0_pos->z;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 83,
+      "match": "._8_4_",
+      "text": "local_7c._8_4_ = vertex1_pos->x;",
+      "type": "unknown_field"
     },
     {
       "call_site_count": 1,
@@ -394,29 +447,6 @@
       "param_delta": 2,
       "text": "Function declares 4 params but call sites push 6 (2 missing)",
       "type": "param_count_too_few"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x74",
-      "fix_address": "00519879",
-      "frame_offset": 116,
-      "match": "AND ESP",
-      "sub_esp_offset": 116,
-      "text": "Stack alignment at 00519879 (SUB ESP, 0x74 before)",
-      "type": "stack_align_anchor"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "005199c9",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "computed",
-      "fix_address": "005199d2",
-      "frame_offset": 116,
-      "match": "CALL...ADD ESP",
-      "return_address": "005199ce",
-      "target_address": "0x5fe667",
-      "text": "Direct CALL at 005199c9, ADD ESP at 005199d2 with uncertain ESP",
-      "type": "call_esp_anchor"
     }
   ]
 }

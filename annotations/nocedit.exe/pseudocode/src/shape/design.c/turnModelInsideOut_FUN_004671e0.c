@@ -10,24 +10,21 @@ void __cdecl shape_design_c_turnModelInsideOut_FUN_004671e0(void)
 
 {
   uint uVar1;
-  float *value2_ptr;
-  float *pfVar2;
-  int iVar3;
+  int iVar2;
+  int local_18;
   
-  for (pfVar2 = (float *)0x0; (int)pfVar2 < g_PolygonCount; pfVar2 = (float *)((int)pfVar2 + 1)) {
-    uVar1 = g_ModelPolygonData[(int)pfVar2].vertex_indices_count;
-    iVar3 = 0;
-    while (iVar3 < (int)uVar1 / 2) {
+  for (iVar2 = 0; iVar2 < g_PolygonCount; iVar2 = iVar2 + 1) {
+    uVar1 = g_ModelPolygonData[iVar2].vertex_indices_count;
+    for (local_18 = 0; local_18 < (int)uVar1 / 2; local_18 = local_18 + 1) {
       shape_design_c_swapDWords_FUN_00462130
-                ((uint *)((int)pfVar2 * 0x184 + 0x16e99c8 + iVar3 * 4),
-                 (uint *)((int)pfVar2 * 0x184 + (uVar1 - iVar3) * 4 + 0x16e99c4));
-      pfVar2 = (float *)((int)pfVar2 * 0x184 + (uVar1 - iVar3) * 4 + 0x16e9a04);
+                ((uint *)(iVar2 * 0x184 + 0x16e99c8 + local_18 * 4),
+                 (uint *)(iVar2 * 0x184 + (uVar1 - local_18) * 4 + 0x16e99c4));
       shape_design_c_swapFloats_FUN_00462160
-                ((float *)((int)pfVar2 * 0x184 + 0x16e9a08 + iVar3 * 4),pfVar2);
-      value2_ptr = (float *)((int)pfVar2 * 0x184 + (uVar1 - iVar3) * 4 + 0x16e9a44);
-      pfVar2 = (float *)((int)pfVar2 * 0x184 + 0x16e9a48 + (int)value2_ptr * 4);
-      shape_design_c_swapFloats_FUN_00462160(pfVar2,value2_ptr);
-      iVar3 = (int)value2_ptr + 1;
+                ((float *)(iVar2 * 0x184 + 0x16e9a08 + local_18 * 4),
+                 (float *)(iVar2 * 0x184 + (uVar1 - local_18) * 4 + 0x16e9a04));
+      shape_design_c_swapFloats_FUN_00462160
+                ((float *)(iVar2 * 0x184 + 0x16e9a48 + local_18 * 4),
+                 (float *)(iVar2 * 0x184 + (uVar1 - local_18) * 4 + 0x16e9a44));
     }
   }
   wincore_windll_cpp_clearScreen_FUN_005b3e70();

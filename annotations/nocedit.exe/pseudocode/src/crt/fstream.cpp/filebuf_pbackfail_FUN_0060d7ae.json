@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 115,
-    "complexity_score": 119,
+    "complexity_score": 104,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 54,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
-      "call_esp_anchor",
       "callind_preserve",
       "special_crt_function"
     ],
@@ -43,6 +42,11 @@
     "declared_params": 2,
     "estimated_params": 2
   },
+  "pcode_overrides": {
+    "0060d863": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xfffffffc,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.021978021978022,
     "instruction_count": 91,
@@ -72,6 +76,21 @@
     },
     "pcode_op_count": 366
   },
+  "resolved_suspects": [
+    {
+      "add_esp_value": 12,
+      "call_address": "0060d85e",
+      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
+      "esp_certainty": "cfg_resolved",
+      "fix_address": "0060d863",
+      "frame_offset": 4,
+      "match": "CALL...ADD ESP",
+      "return_address": "0060d863",
+      "target_address": "0x606690",
+      "text": "Direct CALL at 0060d85e, ADD ESP at 0060d863 with uncertain ESP",
+      "type": "call_esp_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 12,
     "local_size": 4,
@@ -152,19 +171,6 @@
       "return_address": "0060d83e",
       "text": "CALLIND at 0060d83b, ADD ESP at 0060d83e (no EBP frame)",
       "type": "callind_preserve"
-    },
-    {
-      "add_esp_value": 12,
-      "call_address": "0060d85e",
-      "description": "Direct CALL makes ESP uncertain; fixable with ESP anchor",
-      "esp_certainty": "cfg_resolved",
-      "fix_address": "0060d863",
-      "frame_offset": 4,
-      "match": "CALL...ADD ESP",
-      "return_address": "0060d863",
-      "target_address": "0x606690",
-      "text": "Direct CALL at 0060d85e, ADD ESP at 0060d863 with uncertain ESP",
-      "type": "call_esp_anchor"
     },
     {
       "address": "0060d7ae",

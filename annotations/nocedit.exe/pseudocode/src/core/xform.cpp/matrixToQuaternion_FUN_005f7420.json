@@ -1,14 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 191,
-    "complexity_score": 247,
+    "complexity_score": 232,
     "cross_reference_count": 6,
     "function_call_count": 0,
     "global_count": 1,
     "pseudocode_lines": 67,
-    "suspect_count": 17,
+    "suspect_count": 16,
     "suspect_types": [
-      "stack_align_anchor",
       "unaffected_reg"
     ],
     "total_lines": 258
@@ -73,6 +72,11 @@
       "value": "0.5"
     }
   ],
+  "pcode_overrides": {
+    "005f7427": [
+      "INT_ADD (register,0x10,4) = (register,0x14,4), (const,0xffffffbc,4)"
+    ]
+  },
   "pcode_summary": {
     "avg_pcode_per_instr": 7.348066298342541,
     "instruction_count": 181,
@@ -110,6 +114,18 @@
     },
     "pcode_op_count": 1330
   },
+  "resolved_suspects": [
+    {
+      "align_instruction": "AND ESP,0xfffffff8",
+      "description": "Stack alignment can be anchored: ESP = EBP - 0x44",
+      "fix_address": "005f7427",
+      "frame_offset": 68,
+      "match": "AND ESP",
+      "sub_esp_offset": 68,
+      "text": "Stack alignment at 005f7427 (SUB ESP, 0x44 before)",
+      "type": "stack_align_anchor"
+    }
+  ],
   "stack_frame": {
     "frame_size": 92,
     "local_size": 84,
@@ -204,14 +220,14 @@
       "description": "Unaffected register variable",
       "line": 27,
       "match": "unaff_ESI",
-      "text": "unaff_ESI->w = local_48;",
+      "text": "unaff_ESI->w = local_44;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
       "line": 28,
       "match": "unaff_ESI",
-      "text": "unaff_ESI->x = local_44;",
+      "text": "unaff_ESI->x = local_40;",
       "type": "unaffected_reg"
     },
     {
@@ -304,16 +320,6 @@
       "match": "unaff_ESI",
       "text": "return unaff_ESI;",
       "type": "unaffected_reg"
-    },
-    {
-      "align_instruction": "AND ESP,0xfffffff8",
-      "description": "Stack alignment can be anchored: ESP = EBP - 0x44",
-      "fix_address": "005f7427",
-      "frame_offset": 68,
-      "match": "AND ESP",
-      "sub_esp_offset": 68,
-      "text": "Stack alignment at 005f7427 (SUB ESP, 0x44 before)",
-      "type": "stack_align_anchor"
     }
   ]
 }

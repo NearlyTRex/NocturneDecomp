@@ -11,31 +11,35 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_00529ed0(CMoon *this_ptr)
 {
   CDemonSet *pCVar1;
   char *pcVar2;
-  int iVar3;
-  uint uVar4;
+  uint uVar3;
   int extraout_EDX;
-  int iVar5;
+  int iVar4;
   BADSPACEBASE *in_ESP;
-  ulonglong *puVar6;
-  ulonglong uVar7;
-  double dVar8;
-  float local_5c;
-  float fVar9;
+  ulonglong *puVar5;
+  ulonglong uVar6;
+  double dVar7;
+  int render_flags;
+  CVector3i local_50;
+  CVector3f local_44;
+  double local_38;
+  int local_30;
+  char *local_2c;
   uint local_28;
+  int local_24;
+  ulonglong *local_20;
   int local_1c;
+  float local_18;
+  CKeyFramedModelInstance *local_14;
   
   sound_sndmain_cpp_processAudio_FUN_005abe20();
-  local_5c = 7.587513e-39;
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
-  local_5c = 7.587544e-39;
   engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
             (g_CDemonRendererPtr,(CVector3i *)&g_ZeroVector);
   engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0048c650(g_CDemonRendererPtr,112.0);
   engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(g_CDemonRendererPtr);
-  local_5c = (this_ptr->rotation_phase + (float)-0.5) * (float)48;
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-            (g_CDemonRendererPtr,(CVector3f *)&local_5c);
+            (g_CDemonRendererPtr,(CVector3f *)&stack0xffffffa4);
   pCVar1 = g_CDemonSetPtr;
   g_CDemonSetPtr->rendering_mode = 1;
   (pCVar1->light_direction).x = -37000;
@@ -48,70 +52,80 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_00529ed0(CMoon *this_ptr)
   pCVar1 = g_CDemonSetPtr;
   (g_CDemonSetPtr->light_direction).x = -0x4844;
   (pCVar1->light_direction).y = -0x4844;
-  iVar5 = g_MoonBatsEnabled;
+  iVar4 = g_MoonBatsEnabled;
   (pCVar1->light_direction).z = 0x4844;
   pCVar1->ambient_base_quick = 0x2000;
-  if (iVar5 != 0) {
-    iVar5 = 0;
+  if (iVar4 != 0) {
+    iVar4 = 0;
     do {
-      if (0.0 <= *(float *)((int)&g_MoonBats[0].course_position + iVar5)) {
+      if (0.0 <= *(float *)((int)&g_MoonBats[0].course_position + iVar4)) {
         core_course_cpp_CCourse_FUN_00442710
-                  (g_MoonBatCourses + *(int *)((int)&g_MoonBats[0].course_index + iVar5));
+                  (g_MoonBatCourses + *(int *)((int)&g_MoonBats[0].course_index + iVar4));
+        local_44.x = local_44.x + *(float *)((int)&g_MoonBats[0].random_offset.x + iVar4);
+        local_44.y = local_44.y + *(float *)((int)&g_MoonBats[0].random_offset.y + iVar4);
+        local_44.z = local_44.z + *(float *)((int)&g_MoonBats[0].random_offset.z + iVar4);
+        local_50.y = (int)((float)local_50.y + 1.570796f);
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-                  (g_CDemonRendererPtr,(CVector3f *)&stack0xffffffbc);
+                  (g_CDemonRendererPtr,&local_44);
         engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-                  (g_CDemonRendererPtr,(CVector3i *)&stack0xffffffb0,(CVector3i *)0x0);
-        fVar9 = 7.588145e-39;
-        dVar8 = crt_math_c_round_FUN_005fe6b0
-                          ((double)*(float *)((int)&g_MoonBats[0].animation_frame + iVar5));
+                  (g_CDemonRendererPtr,&local_50,(CVector3i *)0x0);
+        render_flags = 0x52a0a9;
+        dVar7 = crt_math_c_round_FUN_005fe6b0
+                          ((double)*(float *)((int)&g_MoonBats[0].animation_frame + iVar4));
+        local_14 = (CKeyFramedModelInstance *)(int)ROUND(dVar7);
         core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
-                  (&g_MoonBatModel,(CKeyFramedModelInstance *)(int)ROUND(dVar8),0,(int)fVar9);
+                  (&g_MoonBatModel,local_14,0,render_flags);
         engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
-        fVar9 = *(float *)((int)&g_MoonBats[0].course_position + iVar5) /
-                (float)g_MoonBatCourses[*(int *)((int)&g_MoonBats[0].course_index + iVar5)].len;
-        if ((float)0.5 <= fVar9) {
-          dVar8 = ((double)fVar9 + -0.5) * 8192;
+        local_14 = (CKeyFramedModelInstance *)
+                   g_MoonBatCourses[*(int *)((int)&g_MoonBats[0].course_index + iVar4)].len;
+        local_18 = *(float *)((int)&g_MoonBats[0].course_position + iVar4) / (float)(int)local_14;
+        local_38 = (double)local_18;
+        if ((float)0.5 <= local_18) {
+          dVar7 = (local_38 + -0.5) * 8192;
         }
         else {
-          dVar8 = (double)8192f - (double)fVar9 * (double)16384f;
+          dVar7 = (double)8192f - (double)local_18 * (double)16384f;
         }
-        dVar8 = crt_math_c_round_FUN_005fe6b0(dVar8);
-        *(int *)(extraout_EDX + 0x15ae80) = (int)ROUND(dVar8);
+        dVar7 = crt_math_c_round_FUN_005fe6b0(dVar7);
+        local_14 = (CKeyFramedModelInstance *)(int)ROUND(dVar7);
+        *(CKeyFramedModelInstance **)(extraout_EDX + 0x15ae80) = local_14;
       }
-      iVar5 = iVar5 + 0x18;
-    } while (iVar5 != 0x2d0);
+      iVar4 = iVar4 + 0x18;
+    } while (iVar4 != 0x2d0);
   }
   g_CDemonSetPtr->rendering_mode = 0;
   engine_alphabit_cpp_CAlphaBitmap_initPalette_FUN_00410cf0(&g_MoonCloudTexture);
   pcVar2 = g_MoonCloudTexture.ptrRaw;
-  iVar5 = g_MoonCloudScrollX >> 0x10;
-  iVar3 = g_MoonCloudScrollY >> 0x10;
+  local_30 = g_MoonCloudScrollX >> 0x10;
+  local_24 = g_MoonCloudScrollY >> 0x10;
+  local_2c = g_MoonCloudTexture.ptrRaw;
   local_28 = 0;
   do {
-    puVar6 = g_ScreenBufferArray[local_28];
-    uVar4 = 0;
+    local_20 = g_ScreenBufferArray[local_28];
+    uVar3 = 0;
+    puVar5 = local_20;
     do {
-      uVar7 = paddusb(*puVar6,CONCAT44 /* combine 2-byte values */(g_Hardware32BitPalette
-                                       [(byte)pcVar2[((uVar4 >> 1) + iVar5 & 0xff) * 0x100 +
-                                                     ((local_28 >> 1) + iVar3 & 0xff)] >> 2],
+      uVar6 = paddusb(*puVar5,CONCAT44 /* combine 2-byte values */(g_Hardware32BitPalette
+                                       [(byte)pcVar2[((uVar3 >> 1) + local_30 & 0xff) * 0x100 +
+                                                     ((local_28 >> 1) + local_24 & 0xff)] >> 2],
                                        g_Hardware32BitPalette
-                                       [(byte)pcVar2[((uVar4 >> 1) + iVar5 & 0xff) * 0x100 +
-                                                     ((local_28 >> 1) + iVar3 & 0xff)] >> 2]));
-      uVar7 = paddusb(uVar7,CONCAT44 /* combine 2-byte values */(g_Hardware32BitPalette
-                                     [(byte)pcVar2[((uVar4 >> 2) + iVar5 & 0xff) * 0x100 +
-                                                   ((local_28 >> 2) + iVar3 & 0xff)] >> 2],
+                                       [(byte)pcVar2[((uVar3 >> 1) + local_30 & 0xff) * 0x100 +
+                                                     ((local_28 >> 1) + local_24 & 0xff)] >> 2]));
+      uVar6 = paddusb(uVar6,CONCAT44 /* combine 2-byte values */(g_Hardware32BitPalette
+                                     [(byte)pcVar2[((uVar3 >> 2) + local_30 & 0xff) * 0x100 +
+                                                   ((local_28 >> 2) + local_24 & 0xff)] >> 2],
                                      g_Hardware32BitPalette
-                                     [(byte)pcVar2[((uVar4 >> 2) + iVar5 & 0xff) * 0x100 +
-                                                   ((local_28 >> 2) + iVar3 & 0xff)] >> 2]));
-      *puVar6 = uVar7;
-      puVar6 = puVar6 + 1;
-      uVar4 = uVar4 + 2;
-    } while (uVar4 < 0x280);
+                                     [(byte)pcVar2[((uVar3 >> 2) + local_30 & 0xff) * 0x100 +
+                                                   ((local_28 >> 2) + local_24 & 0xff)] >> 2]));
+      *puVar5 = uVar6;
+      puVar5 = puVar5 + 1;
+      uVar3 = uVar3 + 2;
+    } while (uVar3 < 0x280);
     local_28 = local_28 + 1;
   } while ((int)local_28 < 0x1e0);
   engine_3d_c_setBlendMode_FUN_00406dd0(1);
-  dVar8 = crt_math_c_round_FUN_005fe6b0((double)g_MoonAnimationTimer);
-  local_1c = (int)ROUND(dVar8);
+  dVar7 = crt_math_c_round_FUN_005fe6b0((double)g_MoonAnimationTimer);
+  local_1c = (int)ROUND(dVar7);
   if (0x1d < local_1c) {
     local_1c = 0;
   }

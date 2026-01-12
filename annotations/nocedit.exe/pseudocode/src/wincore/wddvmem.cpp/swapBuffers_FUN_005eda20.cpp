@@ -21,8 +21,10 @@ void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_005eda20(void)
   BADSPACEBASE *in_ESP;
   int iVar10;
   int iVar11;
-  DDSURFACEDESC_union1 local_7c;
-  ulonglong *in_stack_ffffff98;
+  DWORD local_8c [3];
+  DWORD DStack_80;
+  DDSURFACEDESC_union1 in_stack_ffffff84;
+  ulonglong *local_68;
   ulonglong *local_20;
   ulonglong *local_18;
   int local_14;
@@ -41,39 +43,40 @@ void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_005eda20(void)
         iVar11 = g_WindowWidth *
                  ((int)((g_BitsPerPixel + (g_BitsPerPixel >> 0x1f) * -8) -
                        (uint)((g_BitsPerPixel >> 0x1f) << 2 < 0)) >> 3);
-        crt_memory_c_memset_FUN_005fde40(&stack0xffffff74,0,0x6c);
+        crt_memory_c_memset_FUN_005fde40(local_8c,0,0x6c);
+        local_8c[0] = 0x6c;
         HVar6 = (*g_DirectDrawSurface->vtable->Lock)
-                          (g_DirectDrawSurface,(RECT *)0x0,(DDSURFACEDESC *)&stack0xffffff74,1,
-                           (void *)0x6c);
-        if ((HVar6 == 0) && (in_stack_ffffff98 != (ulonglong *)0x0)) {
+                          (g_DirectDrawSurface,(RECT *)0x0,(DDSURFACEDESC *)local_8c,1,(void *)0x0);
+        local_18 = local_68;
+        if ((HVar6 == 0) && (local_68 != (ulonglong *)0x0)) {
           local_14 = 0;
           iVar10 = iVar11;
-          local_18 = in_stack_ffffff98;
           if (0 < g_WindowHeight) {
             do {
               do {
                 uVar1 = puVar9[1];
                 uVar2 = puVar9[2];
                 uVar3 = puVar9[3];
-                *in_stack_ffffff98 = *puVar9;
-                in_stack_ffffff98[1] = uVar1;
-                in_stack_ffffff98[2] = uVar2;
-                in_stack_ffffff98[3] = uVar3;
+                *local_68 = *puVar9;
+                local_68[1] = uVar1;
+                local_68[2] = uVar2;
+                local_68[3] = uVar3;
                 puVar9 = puVar9 + 4;
-                in_stack_ffffff98 = in_stack_ffffff98 + 4;
+                local_68 = local_68 + 4;
                 iVar7 = iVar10 + -0x20;
                 bVar4 = 0x1f < iVar10;
                 iVar10 = iVar7;
               } while (iVar7 != 0 && bVar4);
               puVar9 = (ulonglong *)((int)local_20 + iVar11);
-              in_stack_ffffff98 = (ulonglong *)((int)local_18 + local_7c.lPitch);
+              local_68 = (ulonglong *)((int)local_18 + in_stack_ffffff84.lPitch);
               local_14 = local_14 + 1;
               iVar10 = iVar11;
-              local_18 = in_stack_ffffff98;
+              local_18 = local_68;
               local_20 = puVar9;
             } while (local_14 < g_WindowHeight);
           }
                     /* this unlocks the front direct draw buffer */
+          DStack_80 = 0x5edc10;
           HVar6 = (*g_DirectDrawSurface->vtable->Unlock)(g_DirectDrawSurface,(void *)0x0);
           if (HVar6 != 0) {
             g_CurrentFilename = "..\\wincore\\wddvmem.cpp";
@@ -113,11 +116,12 @@ void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_005eda20(void)
       wincore_wddvmem_cpp_closeScreenDevice_FUN_005ed630();
       g_UseSoftwareRendering = 1;
     }
-    if (((g_DirectDrawSurface != (IDirectDrawSurface *)0x0) &&
-        (HVar6 = (*g_DirectDrawSurface->vtable->Flip)
-                           (g_DirectDrawSurface,(IDirectDrawSurface *)0x0,1), HVar6 != 0)) &&
-       (HVar6 == SYSTEM_DDERR_SURFACELOST)) {
-      wincore_wddvmem_cpp_videoRestore_FUN_005edc80();
+    if (g_DirectDrawSurface != (IDirectDrawSurface *)0x0) {
+      local_8c[0] = 0x5edae2;
+      HVar6 = (*g_DirectDrawSurface->vtable->Flip)(g_DirectDrawSurface,(IDirectDrawSurface *)0x0,1);
+      if ((HVar6 != 0) && (HVar6 == SYSTEM_DDERR_SURFACELOST)) {
+        wincore_wddvmem_cpp_videoRestore_FUN_005edc80();
+      }
     }
   }
 LAB_005edaf2:

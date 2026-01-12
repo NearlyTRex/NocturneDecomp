@@ -15,82 +15,74 @@ core_xform_cpp_lerpMatrix3x4_FUN_005f7140(CMatrix3x4f *matrix_a,CMatrix3x4f *mat
   BADSPACEBASE *in_ESP;
   float *unaff_ESI;
   CMatrix3x4f *pCVar3;
-  CQuaternion4f *pCVar4;
+  float *pfVar4;
   uint *puVar5;
   byte bVar6;
-  uint auStackY_184c [1500];
+  float afStackY_184c [1498];
   double dVar7;
-  CMatrix3x3f *matrix_ptr;
-  float in_stack_ffffff30;
-  byte auStack_c8 [8];
-  CMatrix3x4f CStack_c0;
-  CQuaternion4f aCStack_90 [2];
-  float local_70;
-  uint uStack_6c;
-  CQuaternion4f CStack_68;
-  uint uStack_58;
-  uint auStack_54 [4];
-  uint uStack_44;
-  uint local_40 [2];
-  CQuaternion4f CStack_38;
-  uint uStack_28;
-  CQuaternion4f CStack_24;
-  uint auStack_14 [2];
+  CMatrix3x4f local_d0;
+  float local_a0 [12];
+  CQuaternion4f local_70;
+  float fStack_5c;
+  float afStack_58 [6];
+  CQuaternion4f local_40;
+  CQuaternion4f local_30;
+  float local_20;
+  uint auStack_1c [4];
   
   bVar6 = 0;
   dVar7 = (double)t;
   if (dVar7 <= 0.0) {
     iVar2 = 0xc;
-    pCVar4 = CStack_c0.m + 2;
+    pfVar4 = local_a0;
     pCVar3 = matrix_a;
   }
   else if (dVar7 < 1.0) {
     core_xform_cpp_matrixToQuaternion_FUN_005f7420(matrix_a->m,SUB84 /* extract 2-byte value */(dVar7,0));
-    matrix_ptr = (CMatrix3x3f *)((ulonglong)dVar7 >> 0x20);
-    local_70 = CStack_24.y;
-    puVar5 = (uint *)((int)&CStack_68 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
-    (&uStack_6c)[(uint)bVar6 * -2] = auStack_14[(uint)bVar6 * -2 + -1];
-    *puVar5 = auStack_14[(uint)bVar6 * -2 + (uint)bVar6 * -2];
+    local_70.w = local_20;
+    puVar5 = (uint *)((int)&local_70 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
+    *(uint *)((int)&local_70 + (uint)bVar6 * -8 + 4) = auStack_1c[(uint)bVar6 * -2];
+    *puVar5 = auStack_1c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
     puVar5[(uint)bVar6 * -2 + 1] =
-         (auStack_14 + (uint)bVar6 * -2 + (uint)bVar6 * -2)[(uint)bVar6 * -2 + 1];
-    core_xform_cpp_matrixToQuaternion_FUN_005f7420(matrix_b->m,matrix_ptr);
-    local_40[1] = uStack_58;
-    puVar5 = (uint *)((int)&CStack_38 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 4);
-    *(uint *)((int)&CStack_38 + (uint)bVar6 * -8) = auStack_54[(uint)bVar6 * -2];
-    *puVar5 = auStack_54[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
-    puVar5[(uint)bVar6 * -2 + 1] =
-         (auStack_54 + (uint)bVar6 * -2 + (uint)bVar6 * -2 + 1)[(uint)bVar6 * -2 + 1];
+         (auStack_1c + (uint)bVar6 * -2 + (uint)bVar6 * -2 + 1)[(uint)bVar6 * -2 + 1];
+    core_xform_cpp_matrixToQuaternion_FUN_005f7420(matrix_b->m,SUB84 /* extract 2-byte value */(dVar7,0));
+    local_40.w = fStack_5c;
+    pfVar4 = (float *)((int)&local_40 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
+    *(float *)((int)&local_40 + (uint)bVar6 * -8 + 4) = afStack_58[(uint)bVar6 * -2];
+    *pfVar4 = afStack_58[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
+    pfVar4[(uint)bVar6 * -2 + 1] =
+         (afStack_58 + (uint)bVar6 * -2 + (uint)bVar6 * -2 + 1)[(uint)bVar6 * -2 + 1];
     core_xform_cpp_slerpQuaternion_FUN_005f77e0
-              (&CStack_68,&CStack_38,(CQuaternion4f *)t,in_stack_ffffff30);
-    uStack_28 = uStack_44;
-    *(uint *)((int)&CStack_24 + (uint)bVar6 * -8) = local_40[(uint)bVar6 * -2];
-    auStack_14[(uint)bVar6 * -2 + (uint)bVar6 * -2 + -3] =
-         local_40[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
-    (auStack_14 + (uint)bVar6 * -2 + (uint)bVar6 * -2 + -3)[(uint)bVar6 * -2 + 1] =
-         (local_40 + (uint)bVar6 * -2 + (uint)bVar6 * -2 + 1)[(uint)bVar6 * -2 + 1];
-    core_xform_cpp_quaternionToMatrix3x3_FUN_005f7280((CMatrix3x3f *)(auStack_c8 + 4),&CStack_24);
-    fVar1 = 1.0 - (float)(double)auStack_c8;
-    CStack_c0.m[0].z = matrix_b->m[0].z * t + matrix_a->m[0].z * fVar1;
-    CStack_c0.m[1].z = matrix_b->m[1].z * t + matrix_a->m[1].z * fVar1;
-    pCVar4 = aCStack_90;
+              (&local_70,&local_40,(CQuaternion4f *)t,SUB84 /* extract 2-byte value */(dVar7,0));
+    local_30.w = afStack_58[3];
+    pfVar4 = (float *)((int)&local_30 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
+    *(float *)((int)&local_30 + (uint)bVar6 * -8 + 4) = afStack_58[(uint)bVar6 * -2 + 4];
+    *pfVar4 = afStack_58[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 5];
+    pfVar4[(uint)bVar6 * -2 + 1] =
+         (afStack_58 + (uint)bVar6 * -2 + (uint)bVar6 * -2 + 5)[(uint)bVar6 * -2 + 1];
+    core_xform_cpp_quaternionToMatrix3x3_FUN_005f7280((CMatrix3x3f *)&local_d0,&local_30);
+    fVar1 = 1.0 - (float)dVar7;
+    local_d0.m[0].z = matrix_b->m[0].z * t + matrix_a->m[0].z * fVar1;
+    local_d0.m[1].z = matrix_b->m[1].z * t + matrix_a->m[1].z * fVar1;
+    pfVar4 = local_a0;
     iVar2 = 0xc;
-    pCVar3 = &CStack_c0;
-    CStack_c0.m[2].z = matrix_b->m[2].z * t + fVar1 * matrix_a->m[2].z;
+    pCVar3 = &local_d0;
+    local_d0.m[2].z = matrix_b->m[2].z * t + fVar1 * matrix_a->m[2].z;
   }
   else {
     iVar2 = 0xc;
     pCVar3 = matrix_b;
-    pCVar4 = CStack_c0.m + 2;
+    pfVar4 = local_a0;
   }
   for (; iVar2 != 0; iVar2 = iVar2 + -1) {
-    pCVar4->w = pCVar3->m[0].w;
+    *pfVar4 = pCVar3->m[0].w;
     pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar6 * -2 + 1) * 4);
-    pCVar4 = (CQuaternion4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);
+    pfVar4 = pfVar4 + (uint)bVar6 * -2 + 1;
   }
-  pCVar4 = aCStack_90;
+  pfVar4 = local_a0;
   for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *unaff_ESI = pCVar4->w;
-    pCVar4 = (CQuaternion4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);
+    *unaff_ESI = *pfVar4;
+    pfVar4 = pfVar4 + (uint)bVar6 * -2 + 1;
     unaff_ESI = unaff_ESI + (uint)bVar6 * -2 + 1;
   }
   return;

@@ -13,38 +13,43 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
   float fVar2;
   float fVar3;
   float fVar4;
-  int iVar5;
+  float fVar5;
   float fVar6;
   float fVar7;
-  CVector3f *pCVar8;
+  float fVar8;
   CVector3f *pCVar9;
-  float fVar10;
+  CVector3f *pCVar10;
   int iVar11;
   SScrape *pSVar12;
-  CBox *pCVar13;
+  SScrape *pSVar13;
+  CBox *pCVar14;
   BADSPACEBASE *in_ESP;
-  float *pfVar14;
-  CMatrix3x3f *pCVar15;
-  int iVar16;
-  byte bVar17;
-  CMatrix3x3f local_410;
+  float *pfVar15;
+  CMatrix3x3f *pCVar16;
+  int iVar17;
+  byte bVar18;
+  CMatrix3x3f local_41c;
+  float local_3f4;
+  float local_3f0;
   float local_3ec;
+  float local_3e8;
   float local_3e4;
   float local_3e0;
   float local_3dc;
   float local_3d8;
   float fStack_3d4;
-  float local_3d0;
-  float local_3cc;
-  float fStack_3c8;
-  float fStack_3c4;
-  float afStack_3b8 [7];
+  float local_3cc [7];
+  float local_3b0;
+  float local_3ac;
+  float local_3a8;
+  float local_3a4;
+  float local_3a0;
   float local_39c;
-  float local_398;
   float local_394;
   float local_390;
   float local_38c;
   float local_388;
+  float local_384;
   float local_380;
   float local_37c;
   float local_378;
@@ -57,20 +62,21 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
   float local_35c;
   float local_358;
   float local_354;
-  float local_350;
   float local_34c;
   float local_348;
-  CBox local_344;
-  float local_ec;
+  float local_344;
+  CBox local_340;
   float local_e8;
-  CVector3f local_e0;
+  float local_e4;
+  float local_e0;
+  float local_dc;
+  float local_d8;
   float local_d4;
   float local_d0;
   float local_cc;
   float local_c8;
   float local_c4;
   float local_c0;
-  float local_bc;
   float local_b8;
   float local_b4;
   float local_b0;
@@ -81,702 +87,705 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
   float local_9c;
   float local_98;
   float local_94;
+  float local_90;
   float local_8c;
-  float local_88;
-  float local_84;
+  byte local_88 [8];
   float local_80;
   float local_7c;
-  byte local_78 [8];
-  float fStack_70;
-  float local_6c;
-  float local_68;
+  float local_78;
+  float fStack_74;
+  CVector3f *local_68;
   float local_64;
   float local_60;
-  CVector3f *local_54;
-  float local_50;
-  float local_4c;
+  float local_5c;
+  float local_58;
+  SScrape *local_4c;
+  float local_48;
   float local_44;
-  SScrape *local_38;
-  float local_34;
-  CMatrix3x3f *local_2c;
-  SScrape *local_28;
-  int local_24;
-  SScrape *local_20;
-  int local_1c;
-  float local_18;
+  CMatrix3x3f *local_40;
+  SScrape *local_3c;
+  int local_38;
+  SScrape *local_34;
+  int local_30;
+  float local_2c;
+  float local_28;
+  SScrape *local_24;
+  float local_20;
+  float local_1c;
+  int local_18;
   float fStack_14;
-  SScrape *pSVar18;
-  float fVar19;
   
-  bVar17 = 0;
+  bVar18 = 0;
   if (this_ptr->is_valid != 0) {
-    if ((CBox *)&local_344.scrape_points[7].transformed_position.z != this_ptr) {
-      local_344.scrape_points[7].transformed_position.z = (this_ptr->position).x;
-      local_344.scrape_points[7].previous_position.x = (this_ptr->position).y;
-      local_344.scrape_points[7].previous_position.y = (this_ptr->position).z;
+    if ((CBox *)&local_340.scrape_points[7].transformed_position.z != this_ptr) {
+      local_340.scrape_points[7].transformed_position.z = (this_ptr->position).x;
+      local_340.scrape_points[7].previous_position.x = (this_ptr->position).y;
+      local_340.scrape_points[7].previous_position.y = (this_ptr->position).z;
     }
-    if (&local_344 != this_ptr) {
-      local_344.position.x = (this_ptr->position).x;
-      local_344.position.y = (this_ptr->position).y;
-      local_344.position.z = (this_ptr->position).z;
+    if (&local_340 != this_ptr) {
+      local_340.position.x = (this_ptr->position).x;
+      local_340.position.y = (this_ptr->position).y;
+      local_340.position.z = (this_ptr->position).z;
     }
-    local_344.scrape_points[7].previous_position.x =
-         local_344.scrape_points[7].previous_position.x + 1.0;
-    local_344.position.y = local_344.position.y + -100f;
-    fStack_14 = core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70
-                          (&g_CDemonRaytraceInstance,
-                           (CVector3f *)&local_344.scrape_points[7].transformed_position.z,
-                           &local_344.position,&local_344.scrape_points[3].local_position,(int *)0x0
-                          );
-    if ((fStack_14 <= 0.0) || (1.0 <= fStack_14)) {
+    local_340.scrape_points[7].previous_position.x =
+         local_340.scrape_points[7].previous_position.x + 1.0;
+    local_340.position.y = local_340.position.y + -100f;
+    fVar8 = core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70
+                      (&g_CDemonRaytraceInstance,
+                       (CVector3f *)&local_340.scrape_points[7].transformed_position.z,
+                       &local_340.position,&local_340.scrape_points[3].local_position,(int *)0x0);
+    if ((fVar8 <= 0.0) || (1.0 <= fVar8)) {
       this_ptr[1].position.x = -9999.0;
     }
     else {
       this_ptr[1].position.x =
-           (local_344.position.z - local_344.scrape_points[7].previous_position.y) * fStack_14 +
-           local_344.scrape_points[7].previous_position.y;
+           (local_340.position.y - local_340.scrape_points[7].previous_position.x) * fVar8 +
+           local_340.scrape_points[7].previous_position.x;
     }
-    pCVar9 = &this_ptr->scrape_points[0].transformed_position;
-    pCVar8 = &this_ptr->scrape_points[0].previous_position;
+    pCVar10 = &this_ptr->scrape_points[0].transformed_position;
+    pCVar9 = &this_ptr->scrape_points[0].previous_position;
     do {
-      if (pCVar8 != pCVar9) {
-        pCVar8->x = pCVar9->x;
-        pCVar8->y = pCVar9->y;
-        pCVar8->z = pCVar9->z;
+      if (pCVar9 != pCVar10) {
+        pCVar9->x = pCVar10->x;
+        pCVar9->y = pCVar10->y;
+        pCVar9->z = pCVar10->z;
       }
+      pCVar10 = (CVector3f *)((int)(pCVar10 + 4) + 4);
       pCVar9 = (CVector3f *)((int)(pCVar9 + 4) + 4);
-      pCVar8 = (CVector3f *)((int)(pCVar8 + 4) + 4);
-    } while (pCVar9 != (CVector3f *)&this_ptr[1].position.z);
-    local_344.rotation_matrix.m[2].x = 0.0;
-    local_344.rotation_matrix.m[1].y = 0.0;
-    local_344.rotation_matrix.m[1].z = -(float)this_ptr->mass * (float)32;
-    pCVar8 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
-                       (&this_ptr->rotation_matrix,&local_344.linear_velocity_local,
-                        (CVector3f *)&local_344.rotation_matrix.m[1].y);
-    pCVar9 = &this_ptr->linear_momentum;
-    pCVar9->x = pCVar8->x + pCVar9->x;
-    (this_ptr->linear_momentum).y = pCVar8->y + (this_ptr->linear_momentum).y;
+    } while (pCVar10 != (CVector3f *)&this_ptr[1].position.z);
+    local_340.rotation_matrix.m[1].z = 0.0;
+    local_340.rotation_matrix.m[1].x = 0.0;
+    local_340.rotation_matrix.m[1].y = -(float)this_ptr->mass * (float)32;
+    pCVar9 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
+                       (&this_ptr->rotation_matrix,(CVector3f *)&local_340.linear_velocity.z,
+                        local_340.rotation_matrix.m + 1);
+    pCVar10 = &this_ptr->linear_momentum;
+    pCVar10->x = pCVar9->x + pCVar10->x;
+    (this_ptr->linear_momentum).y = pCVar9->y + (this_ptr->linear_momentum).y;
     piVar1 = &this_ptr->mass;
-    (this_ptr->linear_momentum).z = pCVar8->z + (this_ptr->linear_momentum).z;
-    local_344.linear_momentum.y = pCVar9->x / (float)*piVar1;
-    local_344.linear_momentum.z = (this_ptr->linear_momentum).y / (float)*piVar1;
-    local_344.angular_velocity.x = (this_ptr->linear_momentum).z / (float)*piVar1;
-    if (&this_ptr->linear_velocity_temp != (CVector3f *)&local_344.linear_momentum.y) {
-      (this_ptr->linear_velocity_temp).x = local_344.linear_momentum.y;
-      (this_ptr->linear_velocity_temp).y = local_344.linear_momentum.z;
-      (this_ptr->linear_velocity_temp).z = local_344.angular_velocity.x;
+    (this_ptr->linear_momentum).z = pCVar9->z + (this_ptr->linear_momentum).z;
+    local_340.linear_momentum.x = pCVar10->x / (float)*piVar1;
+    local_340.linear_momentum.y = (this_ptr->linear_momentum).y / (float)*piVar1;
+    local_340.linear_momentum.z = (this_ptr->linear_momentum).z / (float)*piVar1;
+    if (&this_ptr->linear_velocity_temp != &local_340.linear_momentum) {
+      (this_ptr->linear_velocity_temp).x = local_340.linear_momentum.x;
+      (this_ptr->linear_velocity_temp).y = local_340.linear_momentum.y;
+      (this_ptr->linear_velocity_temp).z = local_340.linear_momentum.z;
     }
-    fVar19 = (this_ptr->angular_momentum).y;
-    fVar10 = (this_ptr->moment_of_inertia).y;
-    fVar2 = (this_ptr->angular_momentum).z;
-    fVar3 = (this_ptr->moment_of_inertia).z;
+    fVar8 = (this_ptr->angular_momentum).y;
+    fVar2 = (this_ptr->moment_of_inertia).y;
+    fVar3 = (this_ptr->angular_momentum).z;
+    fVar4 = (this_ptr->moment_of_inertia).z;
     (this_ptr->angular_velocity_temp).x =
          (this_ptr->angular_momentum).x / (this_ptr->moment_of_inertia).x;
-    (this_ptr->angular_velocity_temp).y = fVar19 / fVar10;
-    (this_ptr->angular_velocity_temp).z = fVar2 / fVar3;
+    (this_ptr->angular_velocity_temp).y = fVar8 / fVar2;
+    (this_ptr->angular_velocity_temp).z = fVar3 / fVar4;
     (this_ptr->linear_momentum).z = 0.0;
     (this_ptr->linear_momentum).y = (this_ptr->linear_momentum).z;
     (this_ptr->linear_momentum).x = (this_ptr->linear_momentum).y;
     (this_ptr->angular_momentum).z = 0.0;
     (this_ptr->angular_momentum).y = (this_ptr->angular_momentum).z;
     (this_ptr->angular_momentum).x = (this_ptr->angular_momentum).y;
-    pCVar9 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
-                       (&this_ptr->rotation_matrix,(CVector3f *)&local_344.angular_momentum.y,
-                        &this_ptr->linear_velocity_temp);
-    local_344.scrape_points[0].local_position.x = pCVar9->x * delta_time;
-    local_344.scrape_points[0].local_position.y = pCVar9->y * delta_time;
-    local_344.scrape_points[0].local_position.z = delta_time * pCVar9->z;
-    pCVar9 = &this_ptr->linear_velocity;
-    pCVar9->x = pCVar9->x + local_344.scrape_points[0].local_position.x;
-    (this_ptr->linear_velocity).y =
-         (this_ptr->linear_velocity).y + local_344.scrape_points[0].local_position.y;
+    pCVar10 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
+                        (&this_ptr->rotation_matrix,&local_340.angular_momentum,
+                         &this_ptr->linear_velocity_temp);
+    local_340.extents.y = pCVar10->x * delta_time;
+    local_340.extents.z = pCVar10->y * delta_time;
+    local_340.scrape_point_count = (int)(delta_time * pCVar10->z);
+    pCVar10 = &this_ptr->linear_velocity;
+    pCVar10->x = pCVar10->x + local_340.extents.y;
+    (this_ptr->linear_velocity).y = (this_ptr->linear_velocity).y + local_340.extents.z;
     (this_ptr->linear_velocity).z =
-         (this_ptr->linear_velocity).z + local_344.scrape_points[0].local_position.z;
-    pCVar9 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
-                       (&this_ptr->rotation_matrix,&local_344.scrape_points[0].previous_position,
-                        pCVar9);
-    if (&this_ptr->linear_velocity_local != pCVar9) {
-      (this_ptr->linear_velocity_local).x = pCVar9->x;
-      (this_ptr->linear_velocity_local).y = pCVar9->y;
-      (this_ptr->linear_velocity_local).z = pCVar9->z;
+         (this_ptr->linear_velocity).z + (float)local_340.scrape_point_count;
+    pCVar10 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
+                        (&this_ptr->rotation_matrix,&local_340.scrape_points[0].transformed_position
+                         ,pCVar10);
+    if (&this_ptr->linear_velocity_local != pCVar10) {
+      (this_ptr->linear_velocity_local).x = pCVar10->x;
+      (this_ptr->linear_velocity_local).y = pCVar10->y;
+      (this_ptr->linear_velocity_local).z = pCVar10->z;
     }
-    local_344.rotation_matrix.m[1].y = (this_ptr->angular_velocity_temp).x * delta_time;
-    local_344.rotation_matrix.m[1].z = (this_ptr->angular_velocity_temp).y * delta_time;
-    local_344.rotation_matrix.m[2].x = delta_time * (this_ptr->angular_velocity_temp).z;
-    pCVar9 = &this_ptr->angular_velocity;
-    pCVar9->x = pCVar9->x + local_344.rotation_matrix.m[1].y;
-    fVar19 = (this_ptr->angular_velocity).y + local_344.rotation_matrix.m[1].z;
-    (this_ptr->angular_velocity).y = fVar19;
-    fVar10 = (this_ptr->angular_velocity).z + local_344.rotation_matrix.m[2].x;
-    (this_ptr->angular_velocity).z = fVar10;
-    fVar19 = SQRT(fVar10 * (this_ptr->angular_velocity).z +
-                  pCVar9->x * pCVar9->x + fVar19 * (this_ptr->angular_velocity).y);
-    if ((float)25.132741228 < fVar19) {
-      local_50 = (float)25.132741228 / fVar19;
-      pCVar9->x = pCVar9->x * local_50;
-      (this_ptr->angular_velocity).y = (this_ptr->angular_velocity).y * local_50;
-      (this_ptr->angular_velocity).z = (this_ptr->angular_velocity).z * local_50;
+    local_340.rotation_matrix.m[0].x = (this_ptr->angular_velocity_temp).x * delta_time;
+    local_340.rotation_matrix.m[0].y = (this_ptr->angular_velocity_temp).y * delta_time;
+    local_340.rotation_matrix.m[0].z = delta_time * (this_ptr->angular_velocity_temp).z;
+    pCVar10 = &this_ptr->angular_velocity;
+    pCVar10->x = pCVar10->x + local_340.rotation_matrix.m[0].x;
+    fVar8 = (this_ptr->angular_velocity).y + local_340.rotation_matrix.m[0].y;
+    (this_ptr->angular_velocity).y = fVar8;
+    fVar2 = (this_ptr->angular_velocity).z + local_340.rotation_matrix.m[0].z;
+    (this_ptr->angular_velocity).z = fVar2;
+    fVar8 = SQRT(fVar2 * (this_ptr->angular_velocity).z +
+                 pCVar10->x * pCVar10->x + fVar8 * (this_ptr->angular_velocity).y);
+    if ((float)25.132741228 < fVar8) {
+      local_5c = (float)25.132741228 / fVar8;
+      pCVar10->x = pCVar10->x * local_5c;
+      (this_ptr->angular_velocity).y = (this_ptr->angular_velocity).y * local_5c;
+      (this_ptr->angular_velocity).z = (this_ptr->angular_velocity).z * local_5c;
     }
-    local_344.scrape_points[1].raytrace_intersection = (this_ptr->linear_velocity).x * delta_time;
-    local_344.scrape_points[1].raytrace_normal.x = (this_ptr->linear_velocity).y * delta_time;
-    local_344.scrape_points[1].raytrace_normal.y = (this_ptr->linear_velocity).z * delta_time;
+    local_340.scrape_points[1].transformed_position.z = (this_ptr->linear_velocity).x * delta_time;
+    local_340.scrape_points[1].previous_position.x = (this_ptr->linear_velocity).y * delta_time;
+    local_340.scrape_points[1].previous_position.y = (this_ptr->linear_velocity).z * delta_time;
     (this_ptr->position).x =
-         (this_ptr->position).x + local_344.scrape_points[1].raytrace_intersection;
-    (this_ptr->position).y = (this_ptr->position).y + local_344.scrape_points[1].raytrace_normal.x;
-    (this_ptr->position).z = (this_ptr->position).z + local_344.scrape_points[1].raytrace_normal.y;
-    local_344.scrape_points[5].previous_position.z = (this_ptr->angular_velocity).x * delta_time;
-    local_344.scrape_points[5].raytrace_intersection = (this_ptr->angular_velocity).y * delta_time;
-    local_344.scrape_points[5].raytrace_normal.x = (this_ptr->angular_velocity).z * delta_time;
+         (this_ptr->position).x + local_340.scrape_points[1].transformed_position.z;
+    (this_ptr->position).y = (this_ptr->position).y + local_340.scrape_points[1].previous_position.x
+    ;
+    (this_ptr->position).z = (this_ptr->position).z + local_340.scrape_points[1].previous_position.y
+    ;
+    local_340.scrape_points[5].transformed_position.y = (this_ptr->angular_velocity).x * delta_time;
+    local_340.scrape_points[5].transformed_position.z = (this_ptr->angular_velocity).y * delta_time;
+    local_340.scrape_points[5].previous_position.x = (this_ptr->angular_velocity).z * delta_time;
     core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
-              (&local_410,(CVector3f *)&local_344.scrape_points[5].previous_position.z);
-    local_3e4 = (this_ptr->rotation_matrix).m[0].z * local_410.m[2].y +
-                (this_ptr->rotation_matrix).m[0].x * local_410.m[0].y +
-                (this_ptr->rotation_matrix).m[0].y * local_410.m[1].y;
-    local_3e0 = (this_ptr->rotation_matrix).m[0].z * local_410.m[2].z +
-                (this_ptr->rotation_matrix).m[0].y * local_410.m[1].z +
-                (this_ptr->rotation_matrix).m[0].x * local_410.m[0].z;
-    local_3dc = (this_ptr->rotation_matrix).m[0].z * local_3ec +
-                (this_ptr->rotation_matrix).m[0].y * local_410.m[2].x +
-                (this_ptr->rotation_matrix).m[0].x * local_410.m[1].x;
-    local_3d8 = (this_ptr->rotation_matrix).m[1].z * local_410.m[2].y +
-                (this_ptr->rotation_matrix).m[1].x * local_410.m[0].y +
-                (this_ptr->rotation_matrix).m[1].y * local_410.m[1].y;
-    fStack_3d4 = (this_ptr->rotation_matrix).m[1].z * local_410.m[2].z +
-                 (this_ptr->rotation_matrix).m[1].y * local_410.m[1].z +
-                 (this_ptr->rotation_matrix).m[1].x * local_410.m[0].z;
-    local_3d0 = (this_ptr->rotation_matrix).m[1].z * local_3ec +
-                (this_ptr->rotation_matrix).m[1].y * local_410.m[2].x +
-                (this_ptr->rotation_matrix).m[1].x * local_410.m[1].x;
-    local_3cc = (this_ptr->rotation_matrix).m[2].z * local_410.m[2].y +
-                (this_ptr->rotation_matrix).m[2].x * local_410.m[0].y +
-                (this_ptr->rotation_matrix).m[2].y * local_410.m[1].y;
-    fStack_3c8 = (this_ptr->rotation_matrix).m[2].z * local_410.m[2].z +
-                 (this_ptr->rotation_matrix).m[2].y * local_410.m[1].z +
-                 (this_ptr->rotation_matrix).m[2].x * local_410.m[0].z;
-    fStack_3c4 = (this_ptr->rotation_matrix).m[2].z * local_3ec +
-                 (this_ptr->rotation_matrix).m[2].y * local_410.m[2].x +
-                 (this_ptr->rotation_matrix).m[2].x * local_410.m[1].x;
-    pfVar14 = &local_3e4;
-    pCVar15 = &this_ptr->rotation_matrix;
+              (&local_41c,(CVector3f *)&local_340.scrape_points[5].transformed_position.y);
+    local_3f4 = (this_ptr->rotation_matrix).m[0].z * local_41c.m[2].x +
+                (this_ptr->rotation_matrix).m[0].x * local_41c.m[0].x +
+                (this_ptr->rotation_matrix).m[0].y * local_41c.m[1].x;
+    local_3f0 = (this_ptr->rotation_matrix).m[0].z * local_41c.m[2].y +
+                (this_ptr->rotation_matrix).m[0].y * local_41c.m[1].y +
+                (this_ptr->rotation_matrix).m[0].x * local_41c.m[0].y;
+    local_3ec = (this_ptr->rotation_matrix).m[0].z * local_41c.m[2].z +
+                (this_ptr->rotation_matrix).m[0].y * local_41c.m[1].z +
+                (this_ptr->rotation_matrix).m[0].x * local_41c.m[0].z;
+    local_3e8 = (this_ptr->rotation_matrix).m[1].z * local_41c.m[2].x +
+                (this_ptr->rotation_matrix).m[1].x * local_41c.m[0].x +
+                (this_ptr->rotation_matrix).m[1].y * local_41c.m[1].x;
+    local_3e4 = (this_ptr->rotation_matrix).m[1].z * local_41c.m[2].y +
+                (this_ptr->rotation_matrix).m[1].y * local_41c.m[1].y +
+                (this_ptr->rotation_matrix).m[1].x * local_41c.m[0].y;
+    local_3e0 = (this_ptr->rotation_matrix).m[1].z * local_41c.m[2].z +
+                (this_ptr->rotation_matrix).m[1].y * local_41c.m[1].z +
+                (this_ptr->rotation_matrix).m[1].x * local_41c.m[0].z;
+    local_3dc = (this_ptr->rotation_matrix).m[2].z * local_41c.m[2].x +
+                (this_ptr->rotation_matrix).m[2].x * local_41c.m[0].x +
+                (this_ptr->rotation_matrix).m[2].y * local_41c.m[1].x;
+    local_3d8 = (this_ptr->rotation_matrix).m[2].z * local_41c.m[2].y +
+                (this_ptr->rotation_matrix).m[2].y * local_41c.m[1].y +
+                (this_ptr->rotation_matrix).m[2].x * local_41c.m[0].y;
+    fStack_3d4 = (this_ptr->rotation_matrix).m[2].z * local_41c.m[2].z +
+                 (this_ptr->rotation_matrix).m[2].y * local_41c.m[1].z +
+                 (this_ptr->rotation_matrix).m[2].x * local_41c.m[0].z;
+    pfVar15 = &local_3f4;
+    pCVar16 = &this_ptr->rotation_matrix;
     for (iVar11 = 10; iVar11 != 0; iVar11 = iVar11 + -1) {
-      pCVar15->m[0].x = *pfVar14;
-      pfVar14 = pfVar14 + (uint)bVar17 * -2 + 1;
-      pCVar15 = (CMatrix3x3f *)((int)pCVar15 + (uint)bVar17 * -8 + 4);
+      pCVar16->m[0].x = *pfVar15;
+      pfVar15 = pfVar15 + (uint)bVar18 * -2 + 1;
+      pCVar16 = (CMatrix3x3f *)((int)pCVar16 + (uint)bVar18 * -8 + 4);
     }
-    pCVar9 = core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
-                       (&this_ptr->rotation_matrix,
-                        (CVector3f *)&local_344.scrape_points[5].raytrace_normal.z);
-    if (&this_ptr->orientation != pCVar9) {
-      (this_ptr->orientation).x = pCVar9->x;
-      (this_ptr->orientation).y = pCVar9->y;
-      (this_ptr->orientation).z = pCVar9->z;
+    pCVar10 = core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
+                        (&this_ptr->rotation_matrix,
+                         (CVector3f *)&local_340.scrape_points[5].previous_position.y);
+    if (&this_ptr->orientation != pCVar10) {
+      (this_ptr->orientation).x = pCVar10->x;
+      (this_ptr->orientation).y = pCVar10->y;
+      (this_ptr->orientation).z = pCVar10->z;
     }
     iVar11 = 0;
     if (0 < this_ptr->scrape_point_count) {
-      local_28 = this_ptr->scrape_points;
-      local_2c = &this_ptr->rotation_matrix;
-      pCVar9 = &this_ptr->scrape_points[0].transformed_position;
+      local_3c = this_ptr->scrape_points;
+      local_40 = &this_ptr->rotation_matrix;
+      pCVar10 = &this_ptr->scrape_points[0].transformed_position;
       do {
-        pCVar8 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
-                           (local_2c,&local_344.scrape_points[3].local_position,
-                            &local_28[iVar11].local_position);
-        local_c8 = (this_ptr->position).x + pCVar8->x;
-        local_c4 = (this_ptr->position).y + pCVar8->y;
-        local_c0 = (this_ptr->position).z + pCVar8->z;
-        if (pCVar9 != (CVector3f *)&local_c8) {
-          pCVar9->x = local_c8;
-          pCVar9->y = local_c4;
-          pCVar9->z = local_c0;
+        pCVar9 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
+                           (local_40,(CVector3f *)&local_340.scrape_points[2].previous_position.y,
+                            &local_3c[iVar11].local_position);
+        local_dc = (this_ptr->position).x + pCVar9->x;
+        local_d8 = (this_ptr->position).y + pCVar9->y;
+        local_d4 = (this_ptr->position).z + pCVar9->z;
+        if (pCVar10 != (CVector3f *)&local_dc) {
+          pCVar10->x = local_dc;
+          pCVar10->y = local_d8;
+          pCVar10->z = local_d4;
         }
         iVar11 = iVar11 + 1;
-        pCVar9 = (CVector3f *)((int)(pCVar9 + 4) + 4);
+        pCVar10 = (CVector3f *)((int)(pCVar10 + 4) + 4);
       } while (iVar11 < this_ptr->scrape_point_count);
     }
-    pSVar18 = this_ptr->scrape_points;
-    fVar19 = 0.0;
-    local_38 = pSVar18;
-    iVar11 = 0;
-    local_54 = &this_ptr->scrape_points[0].previous_position;
-    pCVar9 = &this_ptr->scrape_points[0].transformed_position;
-    pCVar13 = this_ptr;
-    iVar16 = iVar11;
+    local_1c = 0.0;
+    local_4c = this_ptr->scrape_points;
+    local_18 = 0;
+    local_68 = &this_ptr->scrape_points[0].previous_position;
+    pCVar10 = &this_ptr->scrape_points[0].transformed_position;
+    pCVar14 = this_ptr;
+    pSVar12 = this_ptr->scrape_points;
     if (0 < this_ptr->scrape_point_count) {
       do {
-        if (this_ptr[1].position.x <= pCVar13->scrape_points[0].transformed_position.y) {
-          local_68 = pCVar9->x - local_54->x;
-          local_64 = pCVar9->y - local_54->y;
-          local_60 = pCVar9->z - local_54->z;
-          iVar11 = iVar16;
+        local_24 = pSVar12;
+        if (this_ptr[1].position.x <= pCVar14->scrape_points[0].transformed_position.y) {
+          local_7c = pCVar10->x - local_68->x;
+          local_78 = pCVar10->y - local_68->y;
+          fStack_74 = pCVar10->z - local_68->z;
           if ((float)0.01 <
-              SQRT(local_60 * local_60 + local_68 * local_68 + local_64 * local_64)) {
-            fVar10 = core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70
-                               (&g_CDemonRaytraceInstance,local_54,pCVar9,&pSVar18->raytrace_normal,
-                                (int *)0x0);
-            pCVar13->scrape_points[0].raytrace_intersection = fVar10;
-            local_410.m[0].x = pCVar13->scrape_points[0].raytrace_intersection;
-            if ((0.0 < local_410.m[0].x) && (local_410.m[0].x < 1.0)) {
-              iVar11 = iVar16 + 1;
-              afStack_3b8[iVar16] = fVar19;
+              SQRT(fStack_74 * fStack_74 + local_7c * local_7c + local_78 * local_78)) {
+            fStack_14 = core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70
+                                  (&g_CDemonRaytraceInstance,local_68,pCVar10,
+                                   &local_24->raytrace_normal,(int *)0x0);
+            pCVar14->scrape_points[0].raytrace_intersection = fStack_14;
+            fVar8 = pCVar14->scrape_points[0].raytrace_intersection;
+            if ((0.0 < fVar8) && (fVar8 < 1.0)) {
+              local_3cc[local_18] = local_1c;
+              local_18 = local_18 + 1;
             }
           }
         }
         else {
-          if (pCVar9 != local_54) {
-            local_54->x = pCVar9->x;
-            local_54->y = pCVar9->y;
-            local_54->z = pCVar9->z;
+          if (pCVar10 != local_68) {
+            local_68->x = pCVar10->x;
+            local_68->y = pCVar10->y;
+            local_68->z = pCVar10->z;
           }
-          fVar10 = pCVar13->scrape_points[0].transformed_position.y;
-          pCVar13->scrape_points[0].previous_position.y =
+          fVar8 = pCVar14->scrape_points[0].transformed_position.y;
+          pCVar14->scrape_points[0].previous_position.y =
                this_ptr[1].position.x + (float)0.5;
-          fVar2 = pCVar13->scrape_points[0].previous_position.y;
+          fVar2 = pCVar14->scrape_points[0].previous_position.y;
           fVar3 = this_ptr[1].position.x;
-          fVar4 = pCVar13->scrape_points[0].previous_position.y;
-          pCVar13->scrape_points[0].raytrace_normal.x = 0.0;
-          pCVar13->scrape_points[0].raytrace_normal.y = 1.0;
-          pCVar13->scrape_points[0].raytrace_normal.z = 0.0;
-          pCVar13->scrape_points[0].raytrace_intersection = (fVar3 - fVar4) / (fVar10 - fVar2);
-          afStack_3b8[iVar16] = fVar19;
-          iVar11 = iVar16 + 1;
+          fVar4 = pCVar14->scrape_points[0].previous_position.y;
+          pCVar14->scrape_points[0].raytrace_normal.x = 0.0;
+          pCVar14->scrape_points[0].raytrace_normal.y = 1.0;
+          pCVar14->scrape_points[0].raytrace_normal.z = 0.0;
+          pCVar14->scrape_points[0].raytrace_intersection = (fVar3 - fVar4) / (fVar8 - fVar2);
+          local_3cc[local_18] = local_1c;
+          local_18 = local_18 + 1;
         }
-        pCVar9 = (CVector3f *)&pCVar9[4].y;
-        pSVar18 = pSVar18 + 1;
-        fVar19 = (float)((int)fVar19 + 1);
-        local_54 = (CVector3f *)&local_54[4].y;
-        pCVar13 = (CBox *)&(pCVar13->rotation_matrix).m[2].y;
-        iVar16 = iVar11;
-      } while ((int)fVar19 < this_ptr->scrape_point_count);
+        pCVar10 = (CVector3f *)&pCVar10[4].y;
+        local_1c = (float)((int)local_1c + 1);
+        local_68 = (CVector3f *)&local_68[4].y;
+        local_24 = local_24 + 1;
+        pCVar14 = (CBox *)&(pCVar14->rotation_matrix).m[2].y;
+        pSVar12 = local_24;
+      } while ((int)local_1c < this_ptr->scrape_point_count);
     }
-    fVar19 = afStack_3b8[0];
-    if (iVar11 == 1) {
-      local_344.scrape_points[3].raytrace_normal.z =
-           local_38[(int)afStack_3b8[0]].transformed_position.x -
-           local_38[(int)afStack_3b8[0]].previous_position.x;
-      local_344.scrape_points[4].local_position.x =
-           local_38[(int)afStack_3b8[0]].transformed_position.y -
-           local_38[(int)afStack_3b8[0]].previous_position.y;
-      local_344.scrape_points[4].local_position.y =
-           local_38[(int)afStack_3b8[0]].transformed_position.z -
-           local_38[(int)afStack_3b8[0]].previous_position.z;
-      local_44 = (1.0 - this_ptr->scrape_points[(int)afStack_3b8[0]].raytrace_intersection) *
+    fVar8 = local_3cc[0];
+    if (local_18 == 1) {
+      local_340.scrape_points[3].previous_position.x =
+           local_4c[(int)local_3cc[0]].transformed_position.x -
+           local_4c[(int)local_3cc[0]].previous_position.x;
+      local_340.scrape_points[3].previous_position.y =
+           local_4c[(int)local_3cc[0]].transformed_position.y -
+           local_4c[(int)local_3cc[0]].previous_position.y;
+      local_340.scrape_points[3].previous_position.z =
+           local_4c[(int)local_3cc[0]].transformed_position.z -
+           local_4c[(int)local_3cc[0]].previous_position.z;
+      local_58 = (1.0 - this_ptr->scrape_points[(int)local_3cc[0]].raytrace_intersection) *
                  (float)1.01;
-      local_344.scrape_points[5].local_position.y =
-           local_344.scrape_points[3].raytrace_normal.z * local_44;
-      local_344.scrape_points[5].local_position.z =
-           local_344.scrape_points[4].local_position.x * local_44;
-      local_344.scrape_points[5].transformed_position.x =
-           local_344.scrape_points[4].local_position.y * local_44;
-      (this_ptr->position).x = (this_ptr->position).x - local_344.scrape_points[5].local_position.y;
-      (this_ptr->position).y = (this_ptr->position).y - local_344.scrape_points[5].local_position.z;
-      (this_ptr->position).z =
-           (this_ptr->position).z - local_344.scrape_points[5].transformed_position.x;
+      local_340.scrape_points[4].previous_position.z =
+           local_340.scrape_points[3].previous_position.x * local_58;
+      local_340.scrape_points[4].raytrace_intersection =
+           local_340.scrape_points[3].previous_position.y * local_58;
+      local_340.scrape_points[4].raytrace_normal.x =
+           local_340.scrape_points[3].previous_position.z * local_58;
+      (this_ptr->position).x =
+           (this_ptr->position).x - local_340.scrape_points[4].previous_position.z;
+      (this_ptr->position).y =
+           (this_ptr->position).y - local_340.scrape_points[4].raytrace_intersection;
+      (this_ptr->position).z = (this_ptr->position).z - local_340.scrape_points[4].raytrace_normal.x
+      ;
       core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
                 (&this_ptr->rotation_matrix,
-                 (CVector3f *)&local_344.scrape_points[5].transformed_position.y,
-                 &local_38[(int)afStack_3b8[0]].raytrace_normal);
-      pCVar9 = &this_ptr->linear_velocity_local;
-      local_360 = pCVar9->x;
-      local_35c = (this_ptr->linear_velocity_local).y;
-      local_358 = (this_ptr->linear_velocity_local).z;
-      local_34 = (local_344.scrape_points[5].transformed_position.z *
-                  (this_ptr->linear_velocity_local).z +
-                 local_344.scrape_points[5].transformed_position.x * pCVar9->x +
-                 local_344.scrape_points[5].transformed_position.y *
-                 (this_ptr->linear_velocity_local).y) * 2f;
-      local_344.is_valid = (int)(local_344.scrape_points[5].transformed_position.x * local_34);
-      local_ec = local_344.scrape_points[5].transformed_position.y * local_34;
-      local_e8 = local_344.scrape_points[5].transformed_position.z * local_34;
-      local_344.scrape_points[3].previous_position.z = (float)local_344.is_valid - pCVar9->x;
-      local_344.scrape_points[3].raytrace_intersection =
-           local_ec - (this_ptr->linear_velocity_local).y;
-      local_344.scrape_points[3].raytrace_normal.x = local_e8 - (this_ptr->linear_velocity_local).z;
-      if (&local_344.scrape_points[6].raytrace_normal.y !=
-          &local_344.scrape_points[3].previous_position.z) {
-        local_344.scrape_points[6].raytrace_normal.y =
-             local_344.scrape_points[3].previous_position.z;
-        local_344.scrape_points[6].raytrace_normal.z =
-             local_344.scrape_points[3].raytrace_intersection;
-        local_344.scrape_points[7].local_position.x = local_344.scrape_points[3].raytrace_normal.x;
+                 (CVector3f *)&local_340.scrape_points[4].raytrace_normal.y,
+                 &local_4c[(int)local_3cc[0]].raytrace_normal);
+      pCVar10 = &this_ptr->linear_velocity_local;
+      local_370 = pCVar10->x;
+      local_36c = (this_ptr->linear_velocity_local).y;
+      local_368 = (this_ptr->linear_velocity_local).z;
+      local_44 = (local_340.scrape_points[5].local_position.x * (this_ptr->linear_velocity_local).z
+                 + local_340.scrape_points[4].raytrace_normal.y * pCVar10->x +
+                   local_340.scrape_points[4].raytrace_normal.z *
+                   (this_ptr->linear_velocity_local).y) * 2f;
+      local_340.scrape_points[7].previous_position.z =
+           local_340.scrape_points[4].raytrace_normal.y * local_44;
+      local_340.scrape_points[7].raytrace_intersection =
+           local_340.scrape_points[4].raytrace_normal.z * local_44;
+      local_340.scrape_points[7].raytrace_normal.x =
+           local_340.scrape_points[5].local_position.x * local_44;
+      local_340.scrape_points[3].transformed_position.x =
+           local_340.scrape_points[7].previous_position.z - pCVar10->x;
+      local_340.scrape_points[3].transformed_position.y =
+           local_340.scrape_points[7].raytrace_intersection - (this_ptr->linear_velocity_local).y;
+      local_340.scrape_points[3].transformed_position.z =
+           local_340.scrape_points[7].raytrace_normal.x - (this_ptr->linear_velocity_local).z;
+      if (&local_340.scrape_points[6].previous_position !=
+          &local_340.scrape_points[3].transformed_position) {
+        local_340.scrape_points[6].previous_position.x =
+             local_340.scrape_points[3].transformed_position.x;
+        local_340.scrape_points[6].previous_position.y =
+             local_340.scrape_points[3].transformed_position.y;
+        local_340.scrape_points[6].previous_position.z =
+             local_340.scrape_points[3].transformed_position.z;
       }
-      local_344.scrape_points[6].raytrace_normal.y =
-           local_344.scrape_points[6].raytrace_normal.y * -1f *
+      local_340.scrape_points[6].previous_position.x =
+           local_340.scrape_points[6].previous_position.x * -1f *
            0.5f;
-      local_344.scrape_points[6].raytrace_normal.z =
-           local_344.scrape_points[6].raytrace_normal.z * -1f *
+      local_340.scrape_points[6].previous_position.y =
+           local_340.scrape_points[6].previous_position.y * -1f *
            0.5f;
-      local_344.scrape_points[7].local_position.x =
-           local_344.scrape_points[7].local_position.x * -1f *
+      local_340.scrape_points[6].previous_position.z =
+           local_340.scrape_points[6].previous_position.z * -1f *
            0.5f;
       piVar1 = &this_ptr->mass;
-      local_a8 = local_344.scrape_points[6].raytrace_normal.y - (this_ptr->linear_velocity_local).x;
-      local_a4 = local_344.scrape_points[6].raytrace_normal.z - (this_ptr->linear_velocity_local).y;
-      local_a0 = local_344.scrape_points[7].local_position.x - (this_ptr->linear_velocity_local).z;
-      local_344.scrape_points[6].previous_position.z = local_a8 * (float)*piVar1;
-      local_344.scrape_points[6].raytrace_intersection = local_a4 * (float)*piVar1;
-      local_344.scrape_points[6].raytrace_normal.x = local_a0 * (float)*piVar1;
-      local_344.linear_velocity_temp.x = 1.0 / delta_time;
-      local_344.linear_velocity_local.y =
-           local_344.scrape_points[6].previous_position.z * local_344.linear_velocity_temp.x;
-      local_344.linear_velocity_local.z =
-           local_344.scrape_points[6].raytrace_intersection * local_344.linear_velocity_temp.x;
-      local_344.linear_velocity_temp.x =
-           local_344.scrape_points[6].raytrace_normal.x * local_344.linear_velocity_temp.x;
-      (this_ptr->linear_momentum).x =
-           (this_ptr->linear_momentum).x + local_344.linear_velocity_local.y;
-      (this_ptr->linear_momentum).y =
-           (this_ptr->linear_momentum).y + local_344.linear_velocity_local.z;
-      (this_ptr->linear_momentum).z =
-           (this_ptr->linear_momentum).z + local_344.linear_velocity_temp.x;
+      local_b8 = local_340.scrape_points[6].previous_position.x -
+                 (this_ptr->linear_velocity_local).x;
+      local_b4 = local_340.scrape_points[6].previous_position.y -
+                 (this_ptr->linear_velocity_local).y;
+      local_b0 = local_340.scrape_points[6].previous_position.z -
+                 (this_ptr->linear_velocity_local).z;
+      local_340.scrape_points[6].transformed_position.x = local_b8 * (float)*piVar1;
+      local_340.scrape_points[6].transformed_position.y = local_b4 * (float)*piVar1;
+      local_340.scrape_points[6].transformed_position.z = local_b0 * (float)*piVar1;
+      local_340.linear_velocity.y = 1.0 / delta_time;
+      local_340.field3_0x3c =
+           (int)(local_340.scrape_points[6].transformed_position.x * local_340.linear_velocity.y);
+      local_340.linear_velocity.x =
+           local_340.scrape_points[6].transformed_position.y * local_340.linear_velocity.y;
+      local_340.linear_velocity.y =
+           local_340.scrape_points[6].transformed_position.z * local_340.linear_velocity.y;
+      (this_ptr->linear_momentum).x = (this_ptr->linear_momentum).x + (float)local_340.field3_0x3c;
+      (this_ptr->linear_momentum).y = (this_ptr->linear_momentum).y + local_340.linear_velocity.x;
+      (this_ptr->linear_momentum).z = (this_ptr->linear_momentum).z + local_340.linear_velocity.y;
       (this_ptr->angular_velocity).z = 0.0;
       (this_ptr->angular_velocity).y = (this_ptr->angular_velocity).z;
       (this_ptr->angular_velocity).x = (this_ptr->angular_velocity).y;
-      pSVar18 = this_ptr->scrape_points + (int)fVar19;
-      local_344.scrape_points[7].previous_position.y =
-           (pSVar18->local_position).y * local_344.linear_velocity_temp.x -
-           (pSVar18->local_position).z * local_344.linear_velocity_local.z;
-      local_344.scrape_points[7].previous_position.z =
-           (pSVar18->local_position).z * local_344.linear_velocity_local.y -
-           (pSVar18->local_position).x * local_344.linear_velocity_temp.x;
-      local_9c = local_344.scrape_points[7].previous_position.y * 0.1f;
-      local_344.scrape_points[7].raytrace_intersection =
-           (pSVar18->local_position).x * local_344.linear_velocity_local.z -
-           (pSVar18->local_position).y * local_344.linear_velocity_local.y;
-      local_98 = local_344.scrape_points[7].previous_position.z * 0.1f;
-      local_94 = local_344.scrape_points[7].raytrace_intersection * 0.1f;
-      (this_ptr->angular_momentum).x = (this_ptr->angular_momentum).x + local_9c;
-      (this_ptr->angular_momentum).y = (this_ptr->angular_momentum).y + local_98;
-      (this_ptr->angular_momentum).z = (this_ptr->angular_momentum).z + local_94;
-      local_378 = (pSVar18->local_position).x;
-      local_374 = (pSVar18->local_position).y;
-      local_370 = (pSVar18->local_position).z;
-      local_78._0_4_ = 0.0;
-      fStack_70 = 0.0;
-      local_78._4_4_ = (float)this_ptr->mass * (float)32;
-      pCVar9 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
-                         (&this_ptr->rotation_matrix,&local_344.scrape_points[5].previous_position,
-                          (CVector3f *)local_78);
-      if ((CVector3f *)(local_78 + 4) != pCVar9) {
-        local_78._4_4_ = pCVar9->x;
-        fStack_70 = pCVar9->y;
-        local_6c = pCVar9->z;
+      pSVar12 = this_ptr->scrape_points + (int)fVar8;
+      local_340.scrape_points[7].local_position.z =
+           (pSVar12->local_position).y * local_340.linear_velocity.y -
+           (pSVar12->local_position).z * local_340.linear_velocity.x;
+      local_340.scrape_points[7].transformed_position.x =
+           (pSVar12->local_position).z * (float)local_340.field3_0x3c -
+           (pSVar12->local_position).x * local_340.linear_velocity.y;
+      local_ac = local_340.scrape_points[7].local_position.z * 0.1f;
+      local_340.scrape_points[7].transformed_position.y =
+           (pSVar12->local_position).x * local_340.linear_velocity.x -
+           (pSVar12->local_position).y * (float)local_340.field3_0x3c;
+      local_a8 = local_340.scrape_points[7].transformed_position.x * 0.1f;
+      local_a4 = local_340.scrape_points[7].transformed_position.y * 0.1f;
+      (this_ptr->angular_momentum).x = (this_ptr->angular_momentum).x + local_ac;
+      (this_ptr->angular_momentum).y = (this_ptr->angular_momentum).y + local_a8;
+      (this_ptr->angular_momentum).z = (this_ptr->angular_momentum).z + local_a4;
+      local_388 = (pSVar12->local_position).x;
+      local_384 = (pSVar12->local_position).y;
+      local_380 = (pSVar12->local_position).z;
+      local_88._0_4_ = 0.0;
+      local_80 = 0.0;
+      local_88._4_4_ = (float)this_ptr->mass * (float)32;
+      pCVar10 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
+                          (&this_ptr->rotation_matrix,
+                           (CVector3f *)&local_340.scrape_points[5].local_position.y,
+                           (CVector3f *)local_88);
+      if ((CVector3f *)(local_88 + 4) != pCVar10) {
+        local_88._0_4_ = pCVar10->x;
+        local_88._4_4_ = pCVar10->y;
+        local_80 = pCVar10->z;
       }
-      local_344.orientation.x = local_370 * local_6c - local_36c * fStack_70;
-      local_344.orientation.y = local_36c * (float)local_78._4_4_ - local_374 * local_6c;
-      local_344.orientation.z = local_374 * fStack_70 - local_370 * (float)local_78._4_4_;
-      (this_ptr->angular_momentum).x = (this_ptr->angular_momentum).x + local_344.orientation.x;
-      (this_ptr->angular_momentum).y = (this_ptr->angular_momentum).y + local_344.orientation.y;
-      (this_ptr->angular_momentum).z = (this_ptr->angular_momentum).z + local_344.orientation.z;
+      local_34c = local_384 * local_80 - local_380 * (float)local_88._4_4_;
+      local_348 = local_380 * (float)local_88._0_4_ - local_388 * local_80;
+      local_344 = local_388 * (float)local_88._4_4_ - local_384 * (float)local_88._0_4_;
+      (this_ptr->angular_momentum).x = (this_ptr->angular_momentum).x + local_34c;
+      (this_ptr->angular_momentum).y = (this_ptr->angular_momentum).y + local_348;
+      (this_ptr->angular_momentum).z = (this_ptr->angular_momentum).z + local_344;
     }
-    if (iVar11 == 2) {
-      local_344.scrape_points[2].local_position.y =
-           this_ptr->scrape_points[(int)afStack_3b8[0]].transformed_position.x -
-           this_ptr->scrape_points[(int)afStack_3b8[0]].previous_position.x;
-      local_344.scrape_points[2].local_position.z =
-           this_ptr->scrape_points[(int)afStack_3b8[0]].transformed_position.y -
-           this_ptr->scrape_points[(int)afStack_3b8[0]].previous_position.y;
-      local_344.scrape_points[2].transformed_position.x =
-           this_ptr->scrape_points[(int)afStack_3b8[0]].transformed_position.z -
-           this_ptr->scrape_points[(int)afStack_3b8[0]].previous_position.z;
-      local_34 = (1.0 - this_ptr->scrape_points[(int)afStack_3b8[0]].raytrace_intersection) *
+    if (local_18 == 2) {
+      local_340.scrape_points[1].previous_position.z =
+           this_ptr->scrape_points[(int)local_3cc[0]].transformed_position.x -
+           this_ptr->scrape_points[(int)local_3cc[0]].previous_position.x;
+      local_340.scrape_points[1].raytrace_intersection =
+           this_ptr->scrape_points[(int)local_3cc[0]].transformed_position.y -
+           this_ptr->scrape_points[(int)local_3cc[0]].previous_position.y;
+      local_340.scrape_points[1].raytrace_normal.x =
+           this_ptr->scrape_points[(int)local_3cc[0]].transformed_position.z -
+           this_ptr->scrape_points[(int)local_3cc[0]].previous_position.z;
+      local_48 = (1.0 - this_ptr->scrape_points[(int)local_3cc[0]].raytrace_intersection) *
                  (float)-1.01;
-      local_344.scrape_points[4].raytrace_normal.y =
-           local_344.scrape_points[2].local_position.y * local_34;
-      local_50 = afStack_3b8[1];
-      local_344.scrape_points[4].raytrace_normal.z =
-           local_344.scrape_points[2].local_position.z * local_34;
-      local_344.scrape_points[5].local_position.x =
-           local_344.scrape_points[2].transformed_position.x * local_34;
-      local_344.scrape_points[1].local_position.z =
-           this_ptr->scrape_points[(int)afStack_3b8[1]].transformed_position.x -
-           this_ptr->scrape_points[(int)afStack_3b8[1]].previous_position.x;
-      local_344.scrape_points[1].transformed_position.x =
-           this_ptr->scrape_points[(int)afStack_3b8[1]].transformed_position.y -
-           this_ptr->scrape_points[(int)afStack_3b8[1]].previous_position.y;
-      local_344.scrape_points[1].transformed_position.y =
-           this_ptr->scrape_points[(int)afStack_3b8[1]].transformed_position.z -
-           this_ptr->scrape_points[(int)afStack_3b8[1]].previous_position.z;
-      local_4c = (1.0 - this_ptr->scrape_points[(int)afStack_3b8[1]].raytrace_intersection) *
+      local_340.scrape_points[4].transformed_position.z =
+           local_340.scrape_points[1].previous_position.z * local_48;
+      local_64 = local_3cc[1];
+      local_340.scrape_points[4].previous_position.x =
+           local_340.scrape_points[1].raytrace_intersection * local_48;
+      local_340.scrape_points[4].previous_position.y =
+           local_340.scrape_points[1].raytrace_normal.x * local_48;
+      local_340.scrape_points[0].raytrace_intersection =
+           this_ptr->scrape_points[(int)local_3cc[1]].transformed_position.x -
+           this_ptr->scrape_points[(int)local_3cc[1]].previous_position.x;
+      local_340.scrape_points[0].raytrace_normal.x =
+           this_ptr->scrape_points[(int)local_3cc[1]].transformed_position.y -
+           this_ptr->scrape_points[(int)local_3cc[1]].previous_position.y;
+      local_340.scrape_points[0].raytrace_normal.y =
+           this_ptr->scrape_points[(int)local_3cc[1]].transformed_position.z -
+           this_ptr->scrape_points[(int)local_3cc[1]].previous_position.z;
+      local_60 = (1.0 - this_ptr->scrape_points[(int)local_3cc[1]].raytrace_intersection) *
                  (float)-1.01;
-      local_88 = local_344.scrape_points[1].transformed_position.x * local_4c;
-      local_8c = local_344.scrape_points[1].local_position.z * local_4c;
-      local_84 = local_344.scrape_points[1].transformed_position.y * local_4c;
-      if (SQRT(local_344.scrape_points[5].local_position.x *
-               local_344.scrape_points[5].local_position.x +
-               local_344.scrape_points[4].raytrace_normal.y *
-               local_344.scrape_points[4].raytrace_normal.y +
-               local_344.scrape_points[4].raytrace_normal.z *
-               local_344.scrape_points[4].raytrace_normal.z) <=
-          SQRT(local_84 * local_84 + local_8c * local_8c + local_88 * local_88)) {
-        (this_ptr->position).x = (this_ptr->position).x + local_8c;
-        pCVar9 = &local_e0;
-        (this_ptr->position).y = (this_ptr->position).y + local_88;
-        fVar19 = (this_ptr->position).z + local_84;
+      local_9c = local_340.scrape_points[0].raytrace_normal.x * local_60;
+      local_a0 = local_340.scrape_points[0].raytrace_intersection * local_60;
+      local_98 = local_340.scrape_points[0].raytrace_normal.y * local_60;
+      if (SQRT(local_340.scrape_points[4].previous_position.y *
+               local_340.scrape_points[4].previous_position.y +
+               local_340.scrape_points[4].transformed_position.z *
+               local_340.scrape_points[4].transformed_position.z +
+               local_340.scrape_points[4].previous_position.x *
+               local_340.scrape_points[4].previous_position.x) <=
+          SQRT(local_98 * local_98 + local_a0 * local_a0 + local_9c * local_9c)) {
+        (this_ptr->position).x = (this_ptr->position).x + local_a0;
+        pCVar10 = (CVector3f *)&local_340.scrape_points[7].raytrace_normal.y;
+        (this_ptr->position).y = (this_ptr->position).y + local_9c;
+        fVar8 = (this_ptr->position).z + local_98;
       }
       else {
         (this_ptr->position).x =
-             (this_ptr->position).x + local_344.scrape_points[4].raytrace_normal.y;
-        pCVar9 = (CVector3f *)&local_344.scrape_points[4].transformed_position.z;
+             (this_ptr->position).x + local_340.scrape_points[4].transformed_position.z;
+        pCVar10 = (CVector3f *)&local_340.scrape_points[3].raytrace_normal.z;
         (this_ptr->position).y =
-             (this_ptr->position).y + local_344.scrape_points[4].raytrace_normal.z;
-        fVar19 = (this_ptr->position).z + local_344.scrape_points[5].local_position.x;
-        afStack_3b8[1] = afStack_3b8[0];
+             (this_ptr->position).y + local_340.scrape_points[4].previous_position.x;
+        fVar8 = (this_ptr->position).z + local_340.scrape_points[4].previous_position.y;
+        local_3cc[1] = local_3cc[0];
       }
-      (this_ptr->position).z = fVar19;
-      pCVar9 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
-                         (&this_ptr->rotation_matrix,pCVar9,
-                          &this_ptr->scrape_points[(int)afStack_3b8[1]].raytrace_normal);
-      if ((CVector3f *)&local_344.rotation_matrix.m[0].z != pCVar9) {
-        local_344.rotation_matrix.m[0].z = pCVar9->x;
-        local_344.rotation_matrix.m[1].x = pCVar9->y;
-        local_344.rotation_matrix.m[1].y = pCVar9->z;
+      (this_ptr->position).z = fVar8;
+      pCVar10 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
+                          (&this_ptr->rotation_matrix,pCVar10,
+                           &this_ptr->scrape_points[(int)local_3cc[1]].raytrace_normal);
+      if ((CVector3f *)&local_340.position.z != pCVar10) {
+        local_340.position.z = pCVar10->x;
+        local_340.orientation.x = pCVar10->y;
+        local_340.orientation.y = pCVar10->z;
       }
-      pCVar9 = &this_ptr->linear_velocity_local;
-      local_354 = pCVar9->x;
-      local_350 = (this_ptr->linear_velocity_local).y;
-      local_34c = (this_ptr->linear_velocity_local).z;
-      local_44 = (local_344.rotation_matrix.m[1].y * (this_ptr->linear_velocity_local).z +
-                 local_344.rotation_matrix.m[0].z * pCVar9->x +
-                 local_344.rotation_matrix.m[1].x * (this_ptr->linear_velocity_local).y) *
+      pCVar10 = &this_ptr->linear_velocity_local;
+      local_368 = pCVar10->x;
+      local_364 = (this_ptr->linear_velocity_local).y;
+      local_360 = (this_ptr->linear_velocity_local).z;
+      local_58 = (local_340.orientation.y * (this_ptr->linear_velocity_local).z +
+                 local_340.position.z * pCVar10->x +
+                 local_340.orientation.x * (this_ptr->linear_velocity_local).y) *
                  2f;
-      local_344.angular_velocity_temp.y = local_344.rotation_matrix.m[0].z * local_44;
-      local_344.angular_velocity_temp.z = local_344.rotation_matrix.m[1].x * local_44;
-      local_344.angular_momentum.x = local_344.rotation_matrix.m[1].y * local_44;
-      local_c0 = local_344.angular_velocity_temp.y - pCVar9->x;
-      local_bc = local_344.angular_velocity_temp.z - (this_ptr->linear_velocity_local).y;
-      local_b8 = local_344.angular_momentum.x - (this_ptr->linear_velocity_local).z;
-      if (&local_344.scrape_points[4].local_position.y != &local_c0) {
-        local_344.scrape_points[4].local_position.y = local_c0;
-        local_344.scrape_points[4].local_position.z = local_bc;
-        local_344.scrape_points[4].transformed_position.x = local_b8;
+      local_340.linear_momentum.y = local_340.position.z * local_58;
+      local_340.linear_momentum.z = local_340.orientation.x * local_58;
+      local_340.angular_velocity.x = local_340.orientation.y * local_58;
+      local_d4 = local_340.linear_momentum.y - pCVar10->x;
+      local_d0 = local_340.linear_momentum.z - (this_ptr->linear_velocity_local).y;
+      local_cc = local_340.angular_velocity.x - (this_ptr->linear_velocity_local).z;
+      if (&local_340.scrape_points[3].previous_position.z != &local_d4) {
+        local_340.scrape_points[3].previous_position.z = local_d4;
+        local_340.scrape_points[3].raytrace_intersection = local_d0;
+        local_340.scrape_points[3].raytrace_normal.x = local_cc;
       }
-      local_344.scrape_points[4].local_position.y =
-           local_344.scrape_points[4].local_position.y * -1f *
+      local_340.scrape_points[3].previous_position.z =
+           local_340.scrape_points[3].previous_position.z * -1f *
            0.25f;
-      local_344.scrape_points[4].local_position.z =
-           local_344.scrape_points[4].local_position.z * -1f *
+      local_340.scrape_points[3].raytrace_intersection =
+           local_340.scrape_points[3].raytrace_intersection * -1f *
            0.25f;
-      local_344.scrape_points[4].transformed_position.x =
-           local_344.scrape_points[4].transformed_position.x * -1f *
+      local_340.scrape_points[3].raytrace_normal.x =
+           local_340.scrape_points[3].raytrace_normal.x * -1f *
            0.25f;
       piVar1 = &this_ptr->mass;
-      local_344.scrape_points[1].transformed_position.y =
-           local_344.scrape_points[4].local_position.y - (this_ptr->linear_velocity_local).x;
-      local_344.scrape_points[1].transformed_position.z =
-           local_344.scrape_points[4].local_position.z - (this_ptr->linear_velocity_local).y;
-      local_344.scrape_points[1].previous_position.x =
-           local_344.scrape_points[4].transformed_position.x - (this_ptr->linear_velocity_local).z;
-      local_b4 = local_344.scrape_points[1].transformed_position.y * (float)*piVar1;
-      local_b0 = local_344.scrape_points[1].transformed_position.z * (float)*piVar1;
-      local_ac = local_344.scrape_points[1].previous_position.x * (float)*piVar1;
-      local_344.scrape_points[7].transformed_position.x = 1.0 / delta_time;
-      local_344.scrape_points[7].local_position.y =
-           local_b4 * local_344.scrape_points[7].transformed_position.x;
-      local_344.scrape_points[7].local_position.z =
-           local_b0 * local_344.scrape_points[7].transformed_position.x;
-      local_344.scrape_points[7].transformed_position.x =
-           local_ac * local_344.scrape_points[7].transformed_position.x;
+      local_340.scrape_points[0].raytrace_normal.y =
+           local_340.scrape_points[3].previous_position.z - (this_ptr->linear_velocity_local).x;
+      local_340.scrape_points[0].raytrace_normal.z =
+           local_340.scrape_points[3].raytrace_intersection - (this_ptr->linear_velocity_local).y;
+      local_340.scrape_points[1].local_position.x =
+           local_340.scrape_points[3].raytrace_normal.x - (this_ptr->linear_velocity_local).z;
+      local_c8 = local_340.scrape_points[0].raytrace_normal.y * (float)*piVar1;
+      local_c4 = local_340.scrape_points[0].raytrace_normal.z * (float)*piVar1;
+      local_c0 = local_340.scrape_points[1].local_position.x * (float)*piVar1;
+      local_340.scrape_points[6].raytrace_normal.x = 1.0 / delta_time;
+      local_340.scrape_points[6].previous_position.z =
+           local_c8 * local_340.scrape_points[6].raytrace_normal.x;
+      local_340.scrape_points[6].raytrace_intersection =
+           local_c4 * local_340.scrape_points[6].raytrace_normal.x;
+      local_340.scrape_points[6].raytrace_normal.x =
+           local_c0 * local_340.scrape_points[6].raytrace_normal.x;
       (this_ptr->linear_momentum).x =
-           (this_ptr->linear_momentum).x + local_344.scrape_points[7].local_position.y;
+           (this_ptr->linear_momentum).x + local_340.scrape_points[6].previous_position.z;
       (this_ptr->linear_momentum).y =
-           (this_ptr->linear_momentum).y + local_344.scrape_points[7].local_position.z;
+           (this_ptr->linear_momentum).y + local_340.scrape_points[6].raytrace_intersection;
       (this_ptr->linear_momentum).z =
-           (this_ptr->linear_momentum).z + local_344.scrape_points[7].transformed_position.x;
+           (this_ptr->linear_momentum).z + local_340.scrape_points[6].raytrace_normal.x;
       (this_ptr->angular_velocity).z = 0.0;
       (this_ptr->angular_velocity).y = (this_ptr->angular_velocity).z;
       (this_ptr->angular_velocity).x = (this_ptr->angular_velocity).y;
-      pSVar18 = this_ptr->scrape_points + (int)afStack_3b8[0];
-      local_344.scrape_points[3].local_position.z =
-           (pSVar18->local_position).y * local_344.scrape_points[7].transformed_position.x -
-           (pSVar18->local_position).z * local_344.scrape_points[7].local_position.z;
-      local_344.scrape_points[3].transformed_position.x =
-           (pSVar18->local_position).z * local_344.scrape_points[7].local_position.y -
-           (pSVar18->local_position).x * local_344.scrape_points[7].transformed_position.x;
-      local_390 = local_344.scrape_points[3].local_position.z * 0.1f;
-      local_38c = local_344.scrape_points[3].transformed_position.x * 0.1f;
-      local_344.scrape_points[3].transformed_position.y =
-           (pSVar18->local_position).x * local_344.scrape_points[7].local_position.z -
-           (pSVar18->local_position).y * local_344.scrape_points[7].local_position.y;
-      local_388 = local_344.scrape_points[3].transformed_position.y * 0.1f;
-      pCVar9 = &this_ptr->angular_momentum;
-      pCVar9->x = pCVar9->x + local_390;
-      (this_ptr->angular_momentum).y = (this_ptr->angular_momentum).y + local_38c;
-      pSVar12 = this_ptr->scrape_points + (int)local_54;
-      (this_ptr->angular_momentum).z = (this_ptr->angular_momentum).z + local_388;
-      local_348 = (pSVar12->local_position).y * local_344.scrape_points[7].transformed_position.x -
-                  (pSVar12->local_position).z * local_344.scrape_points[7].local_position.z;
-      local_344.position.x =
-           (pSVar12->local_position).z * local_344.scrape_points[7].local_position.y -
-           (pSVar12->local_position).x * local_344.scrape_points[7].transformed_position.x;
-      local_344.position.y =
-           (pSVar12->local_position).x * local_344.scrape_points[7].local_position.z -
-           (pSVar12->local_position).y * local_344.scrape_points[7].local_position.y;
-      local_39c = local_348 * 0.1f;
-      local_398 = local_344.position.x * 0.1f;
-      local_394 = local_344.position.y * 0.1f;
-      pCVar9->x = pCVar9->x + local_39c;
-      (this_ptr->angular_momentum).y = (this_ptr->angular_momentum).y + local_398;
-      (this_ptr->angular_momentum).z = (this_ptr->angular_momentum).z + local_394;
-      local_344.scrape_points[0].transformed_position.z = (pSVar18->local_position).x;
-      local_344.scrape_points[0].previous_position.x = (pSVar18->local_position).y;
-      local_344.scrape_points[0].previous_position.y = (pSVar18->local_position).z;
-      local_e0.z = (pSVar12->local_position).x;
-      local_d4 = (pSVar12->local_position).y;
-      local_d0 = (pSVar12->local_position).z;
-      local_344.linear_momentum.y = 0.0;
-      local_344.angular_velocity.x = 0.0;
-      local_344.linear_momentum.z = (float)this_ptr->mass * (float)32;
-      pCVar9 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
-                         (&this_ptr->rotation_matrix,(CVector3f *)&local_344.angular_momentum.y,
-                          (CVector3f *)&local_344.linear_momentum.y);
-      local_344.scrape_points[1].raytrace_normal.x = 0.5f;
-      if ((CVector3f *)&local_344.linear_momentum.z != pCVar9) {
-        local_344.linear_momentum.z = pCVar9->x;
-        local_344.angular_velocity.x = pCVar9->y;
-        local_344.angular_velocity.y = pCVar9->z;
+      pSVar12 = this_ptr->scrape_points + (int)local_3cc[0];
+      local_340.scrape_points[2].raytrace_intersection =
+           (pSVar12->local_position).y * local_340.scrape_points[6].raytrace_normal.x -
+           (pSVar12->local_position).z * local_340.scrape_points[6].raytrace_intersection;
+      local_340.scrape_points[2].raytrace_normal.x =
+           (pSVar12->local_position).z * local_340.scrape_points[6].previous_position.z -
+           (pSVar12->local_position).x * local_340.scrape_points[6].raytrace_normal.x;
+      local_3a4 = local_340.scrape_points[2].raytrace_intersection * 0.1f;
+      local_3a0 = local_340.scrape_points[2].raytrace_normal.x * 0.1f;
+      local_340.scrape_points[2].raytrace_normal.y =
+           (pSVar12->local_position).x * local_340.scrape_points[6].raytrace_intersection -
+           (pSVar12->local_position).y * local_340.scrape_points[6].previous_position.z;
+      local_39c = local_340.scrape_points[2].raytrace_normal.y * 0.1f;
+      pCVar10 = &this_ptr->angular_momentum;
+      pCVar10->x = pCVar10->x + local_3a4;
+      (this_ptr->angular_momentum).y = (this_ptr->angular_momentum).y + local_3a0;
+      pSVar13 = this_ptr->scrape_points + (int)local_68;
+      (this_ptr->angular_momentum).z = (this_ptr->angular_momentum).z + local_39c;
+      local_35c = (pSVar13->local_position).y * local_340.scrape_points[6].raytrace_normal.x -
+                  (pSVar13->local_position).z * local_340.scrape_points[6].raytrace_intersection;
+      local_358 = (pSVar13->local_position).z * local_340.scrape_points[6].previous_position.z -
+                  (pSVar13->local_position).x * local_340.scrape_points[6].raytrace_normal.x;
+      local_354 = (pSVar13->local_position).x * local_340.scrape_points[6].raytrace_intersection -
+                  (pSVar13->local_position).y * local_340.scrape_points[6].previous_position.z;
+      local_3b0 = local_35c * 0.1f;
+      local_3ac = local_358 * 0.1f;
+      local_3a8 = local_354 * 0.1f;
+      pCVar10->x = pCVar10->x + local_3b0;
+      (this_ptr->angular_momentum).y = (this_ptr->angular_momentum).y + local_3ac;
+      (this_ptr->angular_momentum).z = (this_ptr->angular_momentum).z + local_3a8;
+      local_340.scrape_point_count = (int)(pSVar12->local_position).x;
+      local_340.scrape_points[0].local_position.x = (pSVar12->local_position).y;
+      local_340.scrape_points[0].local_position.y = (pSVar12->local_position).z;
+      local_340.is_valid = (int)(pSVar13->local_position).x;
+      local_e8 = (pSVar13->local_position).y;
+      local_e4 = (pSVar13->local_position).z;
+      local_340.linear_velocity_local.y = 0.0;
+      local_340.linear_velocity_temp.x = 0.0;
+      local_340.linear_velocity_local.z = (float)this_ptr->mass * (float)32;
+      pCVar10 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
+                          (&this_ptr->rotation_matrix,(CVector3f *)&local_340.angular_velocity.y,
+                           (CVector3f *)&local_340.linear_velocity_local.y);
+      local_340.scrape_points[1].transformed_position.y = 0.5f;
+      if ((CVector3f *)&local_340.linear_velocity_local.z != pCVar10) {
+        local_340.linear_velocity_local.z = pCVar10->x;
+        local_340.linear_velocity_temp.x = pCVar10->y;
+        local_340.linear_velocity_temp.y = pCVar10->z;
       }
-      local_80 = local_344.linear_momentum.z * 0.5f;
-      local_7c = local_344.angular_velocity.x * 0.5f;
-      local_78._0_4_ = local_344.angular_velocity.y * 0.5f;
-      pCVar9 = &this_ptr->angular_momentum;
-      local_344.scrape_points[7].transformed_position.z =
-           local_344.scrape_points[0].previous_position.y * (float)local_78._0_4_ -
-           local_344.scrape_points[0].previous_position.z * local_7c;
-      local_344.scrape_points[7].previous_position.x =
-           local_344.scrape_points[0].previous_position.z * local_80 -
-           local_344.scrape_points[0].previous_position.x * (float)local_78._0_4_;
-      local_344.scrape_points[7].previous_position.y =
-           local_344.scrape_points[0].previous_position.x * local_7c -
-           local_344.scrape_points[0].previous_position.y * local_80;
-      pCVar9->x = pCVar9->x + local_344.scrape_points[7].transformed_position.z;
+      local_94 = local_340.linear_velocity_local.z * 0.5f;
+      local_90 = local_340.linear_velocity_temp.x * 0.5f;
+      local_8c = local_340.linear_velocity_temp.y * 0.5f;
+      pCVar10 = &this_ptr->angular_momentum;
+      local_340.scrape_points[6].raytrace_normal.z =
+           local_340.scrape_points[0].local_position.y * local_8c -
+           local_340.scrape_points[0].local_position.z * local_90;
+      local_340.scrape_points[7].local_position.x =
+           local_340.scrape_points[0].local_position.z * local_94 -
+           local_340.scrape_points[0].local_position.x * local_8c;
+      local_340.scrape_points[7].local_position.y =
+           local_340.scrape_points[0].local_position.x * local_90 -
+           local_340.scrape_points[0].local_position.y * local_94;
+      pCVar10->x = pCVar10->x + local_340.scrape_points[6].raytrace_normal.z;
       (this_ptr->angular_momentum).y =
-           (this_ptr->angular_momentum).y + local_344.scrape_points[7].previous_position.x;
+           (this_ptr->angular_momentum).y + local_340.scrape_points[7].local_position.x;
       (this_ptr->angular_momentum).z =
-           (this_ptr->angular_momentum).z + local_344.scrape_points[7].previous_position.y;
-      local_344.scrape_points[1].previous_position.z =
-           local_344.linear_momentum.z * local_344.scrape_points[1].raytrace_normal.x;
-      local_344.scrape_points[1].raytrace_intersection =
-           local_344.angular_velocity.x * local_344.scrape_points[1].raytrace_normal.x;
-      local_344.scrape_points[1].raytrace_normal.x =
-           local_344.angular_velocity.y * local_344.scrape_points[1].raytrace_normal.x;
-      local_344.scrape_points[2].previous_position.y =
-           local_d0 * local_344.scrape_points[1].raytrace_normal.x -
-           local_cc * local_344.scrape_points[1].raytrace_intersection;
-      local_344.scrape_points[2].previous_position.z =
-           local_cc * local_344.scrape_points[1].previous_position.z -
-           local_d4 * local_344.scrape_points[1].raytrace_normal.x;
-      local_344.scrape_points[2].raytrace_intersection =
-           local_d4 * local_344.scrape_points[1].raytrace_intersection -
-           local_d0 * local_344.scrape_points[1].previous_position.z;
-      pCVar9->x = pCVar9->x + local_344.scrape_points[2].previous_position.y;
+           (this_ptr->angular_momentum).z + local_340.scrape_points[7].local_position.y;
+      local_340.scrape_points[1].local_position.z =
+           local_340.linear_velocity_local.z * local_340.scrape_points[1].transformed_position.y;
+      local_340.scrape_points[1].transformed_position.x =
+           local_340.linear_velocity_temp.x * local_340.scrape_points[1].transformed_position.y;
+      local_340.scrape_points[1].transformed_position.y =
+           local_340.linear_velocity_temp.y * local_340.scrape_points[1].transformed_position.y;
+      local_340.scrape_points[2].local_position.y =
+           local_e4 * local_340.scrape_points[1].transformed_position.y -
+           local_e0 * local_340.scrape_points[1].transformed_position.x;
+      local_340.scrape_points[2].local_position.z =
+           local_e0 * local_340.scrape_points[1].local_position.z -
+           local_e8 * local_340.scrape_points[1].transformed_position.y;
+      local_340.scrape_points[2].transformed_position.x =
+           local_e8 * local_340.scrape_points[1].transformed_position.x -
+           local_e4 * local_340.scrape_points[1].local_position.z;
+      pCVar10->x = pCVar10->x + local_340.scrape_points[2].local_position.y;
       (this_ptr->angular_momentum).y =
-           (this_ptr->angular_momentum).y + local_344.scrape_points[2].previous_position.z;
+           (this_ptr->angular_momentum).y + local_340.scrape_points[2].local_position.z;
       (this_ptr->angular_momentum).z =
-           (this_ptr->angular_momentum).z + local_344.scrape_points[2].raytrace_intersection;
+           (this_ptr->angular_momentum).z + local_340.scrape_points[2].transformed_position.x;
     }
-    if (2 < iVar11) {
-      local_20 = this_ptr->scrape_points;
-      iVar16 = 0;
-      local_24 = 0;
-      local_1c = iVar11 * 4;
-      local_18 = 0.0;
-      if (0 < local_1c) {
+    if (2 < local_18) {
+      local_34 = this_ptr->scrape_points;
+      iVar11 = 0;
+      local_38 = 0;
+      local_30 = local_18 * 4;
+      local_2c = 0.0;
+      if (0 < local_30) {
         do {
-          iVar5 = *(int *)((int)afStack_3b8 + iVar16);
-          local_380 = local_20[iVar5].transformed_position.x - local_20[iVar5].previous_position.x;
-          local_37c = local_20[iVar5].transformed_position.y - local_20[iVar5].previous_position.y;
-          local_378 = local_20[iVar5].transformed_position.z - local_20[iVar5].previous_position.z;
-          local_344.scrape_points[6].previous_position.z =
-               (1.0 - this_ptr->scrape_points[iVar5].raytrace_intersection) *
-               (float)-1.01;
-          local_344.scrape_points[6].previous_position.y =
-               local_37c * local_344.scrape_points[6].previous_position.z;
-          local_344.scrape_points[6].previous_position.x =
-               local_380 * local_344.scrape_points[6].previous_position.z;
-          local_344.scrape_points[6].previous_position.z =
-               local_378 * local_344.scrape_points[6].previous_position.z;
-          fStack_14 = SQRT(local_344.scrape_points[6].previous_position.z *
-                           local_344.scrape_points[6].previous_position.z +
-                           local_344.scrape_points[6].previous_position.x *
-                           local_344.scrape_points[6].previous_position.x +
-                           local_344.scrape_points[6].previous_position.y *
-                           local_344.scrape_points[6].previous_position.y);
-          if (local_18 < fStack_14) {
-            local_24 = iVar5;
-            local_18 = fStack_14;
-            if ((CVector3f *)&local_368 != &local_344.scrape_points[6].previous_position) {
-              local_368 = local_344.scrape_points[6].previous_position.x;
-              local_364 = local_344.scrape_points[6].previous_position.y;
-              local_360 = local_344.scrape_points[6].previous_position.z;
+          iVar17 = *(int *)((int)local_3cc + iVar11);
+          fStack_14 = (float)(iVar17 * 0x34);
+          local_394 = local_34[iVar17].transformed_position.x - local_34[iVar17].previous_position.x
+          ;
+          local_390 = local_34[iVar17].transformed_position.y - local_34[iVar17].previous_position.y
+          ;
+          local_38c = local_34[iVar17].transformed_position.z - local_34[iVar17].previous_position.z
+          ;
+          local_20 = (1.0 - this_ptr->scrape_points[iVar17].raytrace_intersection) *
+                     (float)-1.01;
+          local_340.scrape_points[6].local_position.y = local_390 * local_20;
+          local_340.scrape_points[6].local_position.x = local_394 * local_20;
+          local_340.scrape_points[6].local_position.z = local_38c * local_20;
+          local_28 = SQRT(local_340.scrape_points[6].local_position.z *
+                          local_340.scrape_points[6].local_position.z +
+                          local_340.scrape_points[6].local_position.x *
+                          local_340.scrape_points[6].local_position.x +
+                          local_340.scrape_points[6].local_position.y *
+                          local_340.scrape_points[6].local_position.y);
+          if (local_2c < local_28) {
+            local_38 = iVar17;
+            local_2c = local_28;
+            if ((SScrape *)&local_37c != local_340.scrape_points + 6) {
+              local_37c = local_340.scrape_points[6].local_position.x;
+              local_378 = local_340.scrape_points[6].local_position.y;
+              local_374 = local_340.scrape_points[6].local_position.z;
             }
           }
-          iVar16 = iVar16 + 4;
-        } while (iVar16 < local_1c);
+          iVar11 = iVar11 + 4;
+        } while (iVar11 < local_30);
       }
-      (this_ptr->position).x = (this_ptr->position).x + local_368;
-      (this_ptr->position).y = (this_ptr->position).y + local_364;
-      pCVar9 = &this_ptr->linear_velocity_local;
-      (this_ptr->position).z = (this_ptr->position).z + local_360;
-      local_344.extents.y = pCVar9->x;
-      local_344.extents.z = (this_ptr->linear_velocity_local).y;
-      local_344.scrape_point_count = (int)(this_ptr->linear_velocity_local).z;
+      (this_ptr->position).x = (this_ptr->position).x + local_37c;
+      (this_ptr->position).y = (this_ptr->position).y + local_378;
+      pCVar10 = &this_ptr->linear_velocity_local;
+      (this_ptr->position).z = (this_ptr->position).z + local_374;
+      local_340.angular_momentum.z = pCVar10->x;
+      local_340.mass = (int)(this_ptr->linear_velocity_local).y;
+      local_340.moment_of_inertia.x = (this_ptr->linear_velocity_local).z;
       core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
-                (&this_ptr->rotation_matrix,
-                 (CVector3f *)&local_344.scrape_points[0].raytrace_normal.z,
-                 &local_20[local_24].raytrace_normal);
-      fVar19 = (local_344.scrape_points[1].local_position.y * (this_ptr->linear_velocity_local).z +
-               local_344.scrape_points[0].raytrace_normal.z * pCVar9->x +
-               local_344.scrape_points[1].local_position.x * (this_ptr->linear_velocity_local).y) *
-               2f;
-      if (local_344.scrape_points != (SScrape *)&local_344.scrape_points[2].raytrace_normal) {
-        local_344.scrape_points[0].local_position.x =
-             local_344.scrape_points[0].raytrace_normal.z * fVar19 - pCVar9->x;
-        local_344.scrape_points[0].local_position.y =
-             local_344.scrape_points[1].local_position.x * fVar19 -
+                (&this_ptr->rotation_matrix,&local_340.scrape_points[0].previous_position,
+                 &local_34[local_38].raytrace_normal);
+      fVar8 = (local_340.scrape_points[0].previous_position.z * (this_ptr->linear_velocity_local).z
+              + local_340.scrape_points[0].previous_position.x * pCVar10->x +
+                local_340.scrape_points[0].previous_position.y * (this_ptr->linear_velocity_local).y
+              ) * 2f;
+      if (&local_340.moment_of_inertia.y != &local_340.scrape_points[2].transformed_position.y) {
+        local_340.moment_of_inertia.y =
+             local_340.scrape_points[0].previous_position.x * fVar8 - pCVar10->x;
+        local_340.moment_of_inertia.z =
+             local_340.scrape_points[0].previous_position.y * fVar8 -
              (this_ptr->linear_velocity_local).y;
-        local_344.scrape_points[0].local_position.z =
-             local_344.scrape_points[1].local_position.y * fVar19 -
+        local_340.extents.x =
+             local_340.scrape_points[0].previous_position.z * fVar8 -
              (this_ptr->linear_velocity_local).z;
       }
-      fVar7 = local_344.scrape_points[0].local_position.y * -1f *
-              0.2f;
-      fVar6 = local_344.scrape_points[0].local_position.z * -1f *
-              0.2f;
+      fVar7 = local_340.moment_of_inertia.z * -1f * 0.2f;
+      fVar6 = local_340.extents.x * -1f * 0.2f;
       piVar1 = &this_ptr->mass;
-      fVar19 = (this_ptr->linear_velocity_local).y;
-      fVar10 = (this_ptr->linear_velocity_local).z;
-      fVar2 = (float)*piVar1;
+      fVar8 = (this_ptr->linear_velocity_local).y;
+      fVar2 = (this_ptr->linear_velocity_local).z;
       fVar3 = (float)*piVar1;
-      fVar4 = 1.0 / delta_time;
+      fVar4 = (float)*piVar1;
+      fVar5 = 1.0 / delta_time;
       (this_ptr->linear_momentum).x =
            (this_ptr->linear_momentum).x +
-           (local_344.scrape_points[0].local_position.x * -1f *
-            0.2f - (this_ptr->linear_velocity_local).x) * (float)*piVar1 * fVar4;
+           (local_340.moment_of_inertia.y * -1f * 0.2f -
+           (this_ptr->linear_velocity_local).x) * (float)*piVar1 * fVar5;
       (this_ptr->linear_momentum).y =
-           (this_ptr->linear_momentum).y + (fVar7 - fVar19) * fVar2 * fVar4;
+           (this_ptr->linear_momentum).y + (fVar7 - fVar8) * fVar3 * fVar5;
       (this_ptr->linear_momentum).z =
-           (this_ptr->linear_momentum).z + (fVar6 - fVar10) * fVar3 * fVar4;
+           (this_ptr->linear_momentum).z + (fVar6 - fVar2) * fVar4 * fVar5;
       (this_ptr->angular_velocity).z = 0.0;
       (this_ptr->angular_velocity).y = (this_ptr->angular_velocity).z;
       (this_ptr->angular_velocity).x = (this_ptr->angular_velocity).y;
     }
-    if ((0 < iVar11) &&
-       (fVar19 = (this_ptr->linear_velocity_local).y, fVar10 = (this_ptr->linear_velocity_local).x,
-       fVar2 = (this_ptr->linear_velocity_local).z,
-       SQRT(fVar2 * fVar2 + fVar10 * fVar10 + fVar19 * fVar19) < 1.0)) {
+    if ((0 < local_18) &&
+       (fVar8 = (this_ptr->linear_velocity_local).y, fVar2 = (this_ptr->linear_velocity_local).x,
+       fVar3 = (this_ptr->linear_velocity_local).z,
+       SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar8 * fVar8) < 1.0)) {
       iVar11 = 0;
-      iVar16 = 0;
-      pCVar13 = this_ptr;
+      iVar17 = 0;
+      pCVar14 = this_ptr;
       if (0 < this_ptr->scrape_point_count) {
         do {
-          if (ABS(pCVar13->scrape_points[0].transformed_position.y - this_ptr[1].position.x) <
+          if (ABS(pCVar14->scrape_points[0].transformed_position.y - this_ptr[1].position.x) <
               (float)0.10000000000000001) {
-            iVar16 = iVar16 + 1;
+            iVar17 = iVar17 + 1;
           }
           iVar11 = iVar11 + 1;
-          pCVar13 = (CBox *)&(pCVar13->rotation_matrix).m[2].y;
+          pCVar14 = (CBox *)&(pCVar14->rotation_matrix).m[2].y;
         } while (iVar11 < this_ptr->scrape_point_count);
       }
-      if (this_ptr->scrape_point_count / 2 <= iVar16) {
+      if (this_ptr->scrape_point_count / 2 <= iVar17) {
         this_ptr->is_valid = 0;
         return;
       }
