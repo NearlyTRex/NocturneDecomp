@@ -61,8 +61,7 @@ from ghidra_annotations.annotations.pseudocode.pcode import (
     load_switch_table_data, load_noreturn_functions
 )
 from ghidra_annotations.annotations.pseudocode.callfixups import (
-    register_callfixups, clear_callfixups,
-    preload_callfixups, load_callfixups_for_function, generate_callfixups_file,
+    register_callfixups, clear_callfixups, generate_callfixups_file,
     preload_global_callfixups
 )
 from ghidra_annotations.annotations.pseudocode.proto import (
@@ -257,9 +256,6 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map):
     # Load pcode overrides to preserve them in output
     pcode_overrides = load_pcode_overrides(existing_json_path)
 
-    # Load callfixups to preserve them in output
-    callfixups = load_callfixups_for_function(existing_json_path)
-
     # Load proto overrides to preserve them in output
     proto_overrides = load_proto_overrides_for_function(existing_json_path)
 
@@ -353,7 +349,7 @@ def process_decompile_result(result, pseudocode_src_dir, constants_map):
         decompiled_code, result.assembly_code, result.func_xrefs, result.func_globals,
         result.func_calls, result.stack_frame, suspects, complexity, custom_replacements,
         stack_patterns, result.param_estimates, result.vtable_info, result.pcode_data,
-        pcode_overrides, resolved_suspects, result.is_ebp_frame, callfixups, proto_overrides,
+        pcode_overrides, resolved_suspects, result.is_ebp_frame, proto_overrides,
         decompiler_fixes)
     output_time = time.time() - output_start
 
@@ -407,8 +403,6 @@ def export_pseudocode(currentProgram, path):
     timer.start_phase("Preload callfixups")
     log_info("Pre-loading global callfixups.json...")
     preload_global_callfixups(pseudocode_dir)
-    log_info("Pre-loading per-function callfixups from existing JSON files...")
-    preload_callfixups(pseudocode_src_dir)
     timer.end_phase()
 
     # Pre-load global proto_overrides.json BEFORE cleanup to preserve user modifications

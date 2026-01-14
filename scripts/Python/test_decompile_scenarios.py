@@ -74,8 +74,7 @@ This test script automatically loads and registers all 4 decompiler features:
 
 1. CALLFIXUPS
    Replace calls to specific functions with custom pcode at decompile time.
-   - Global: annotations/<program>/pseudocode/callfixups.json
-   - Per-function: In function JSON files under "callfixups" key
+   - Global only: annotations/<program>/pseudocode/callfixups.json
    - See callfixups.py for JSON format documentation.
 
 2. PROTO OVERRIDES
@@ -645,7 +644,8 @@ def main():
     print("Registering callfixups...")
     try:
         from ghidra_annotations.annotations.pseudocode.callfixups import register_callfixups
-        register_callfixups(str(annotations_dir))
+        callfixups_json = annotations_dir / "callfixups.json"
+        register_callfixups(str(callfixups_json))
     except Exception as e:
         print(f"Warning: Failed to register callfixups: {e}")
 

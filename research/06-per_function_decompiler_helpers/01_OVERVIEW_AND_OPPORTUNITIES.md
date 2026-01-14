@@ -22,46 +22,98 @@ These four mechanisms are already working in the NocturneDecomp annotation syste
 
 ### 1. Call Fixups (`callfixups.py`)
 
-**Purpose:** Completely replace calls to specific functions with custom P-code at decompile time.
-The original call is NOT executed - the pcode entirely replaces it.
+**Purpose:** Replace calls to specific functions with custom P-code, matched by target function name.
+The replacement pcode models the NET effect of the call.
 
-**Ghidra Integration:**
-- `DecompileCallback.registerCallFixup(String name, List<String> pcode, int paramshift)`
-- `DecompileCallback.registerCallFixupPattern(String pattern, List<String> pcode, int paramshift)`
-- `DecompileCallback.registerCallFixupTargets(List<String> targets, List<String> pcode, int paramshift)`
+**Ghidra Native Behavior (cspec):**
+- Applied during flow analysis (C++ `FlowInfo::doInjection()` in `flow.cc:1177-1207`)
+- The original CALL op is destroyed via `opDestroyRaw()`
+- Injected pcode replaces it entirely
+- If the injected pcode contains a CALL op, it is registered as a real call via `setupCallSpecs()`
+
+**Our Implementation:**
+- Registers callfixups with Ghidra's native `PcodeInjectLibrary` via XML/`restoreXmlInject()`
+- Builds XML matching cspec format (with `<callfixup>`, `<target>`, `<pcode>` elements)
+- When target functions are queried, sets `injectName` on `FunctionPrototype`
+- The C++ decompiler handles injection natively (identical to cspec callfixups)
+- Uses `AnnotationPcodeOverride` to intercept `hasCallFixup()`/`getCallFixup()` for target lookup
+
+**Key Files Modified:**
+- `DecompileCallback.java` - Registration, target mapping, and `AnnotationPcodeOverride` class
+- `FunctionPrototype.java` - Added `setInjectName()` method for annotation-based callfixups
+
+**API:**
+- `DecompileCallback.registerCallFixupTargets(String name, List<String> targets, List<String> pcode, int paramshift)`
 - `DecompileCallback.clearCallFixups()`
 
 **Use Cases:**
-- Replace `_chkstk` / `__alloca_probe` with stack adjustment (function doesn't need to run)
-- Model the net effect of helper functions without actually calling them
-- Fix stack adjustments from non-standard calling conventions
+- Model net effect of compiler intrinsics (`_chkstk`, `__alloca_probe`) - NO call needed
+- Skip calls entirely when only the stack effect matters
+- Redirect calls to different targets (rare, see `__rust_try` example)
 
-**Features:**
-- `type`: "exact" (exact name), "pattern" (substring match), or "targets" (multiple exact names)
-- `paramshift`: Number of parameters to remove from front of parameter list
-- `targets`: Array of function names (for type="targets")
+**JSON Fields:**
+- `name`: Identifier for the callfixup (used for logging/reference)
+- `targets`: Array of exact function names to match
+- `pcode.body`: Array of SLEIGH statements (e.g., `"ESP = ESP - EAX;"`)
+- `pcode.paramshift`: (optional) Number of parameters to remove from front
+- `description`: (optional) Human-readable description
 
-**Note:** If you need the original call to execute with additional pcode around it,
-use P-code Overrides instead.
+**Typical Patterns from Ghidra cspec files:**
 
-**JSON Format:**
+Pattern 1 - Model NET effect (most common):
+```xml
+<!-- alloca_probe: ESP = ESP + 4 - EAX (no call, just modeled effect) -->
+<callfixup name="alloca_probe">
+  <target name="__alloca_probe"/>
+  <target name="__chkstk"/>
+  <pcode><body><![CDATA[
+    ESP = ESP + 4 - EAX;
+  ]]></body></pcode>
+</callfixup>
+```
+
+Pattern 2 - No-op (function has no effect worth modeling):
+```xml
+<!-- security_check_cookie: just a no-op -->
+<callfixup name="security_check_cookie">
+  <target name="__security_check_cookie"/>
+  <pcode><body><![CDATA[
+    tmpzero:4 = 0;
+  ]]></body></pcode>
+</callfixup>
+```
+
+Pattern 3 - Redirect to different call (rare):
+```xml
+<!-- __rust_try: redirect to function pointer in RDI -->
+<callfixup name="__rust_try">
+  <target name="__rust_try"/>
+  <pcode><body><![CDATA[
+    call [RDI];
+  ]]></body></pcode>
+</callfixup>
+```
+
+**JSON Format (callfixups.json - top-level array with SLEIGH syntax):**
 ```json
-{
-  "callfixups": {
-    "_chkstk": {
-      "type": "exact",
-      "pcode": ["INT_SUB (register,0x10,4) = (register,0x10,4), (register,0x0,4)"],
-      "description": "Replace stack probe with ESP = ESP - EAX"
+[
+  {
+    "name": "stack_probe",
+    "targets": ["_chkstk", "__alloca_probe", "__alloca_probe_16"],
+    "pcode": {
+      "body": ["ESP = ESP - EAX;"]
     },
-    "alloca_variants": {
-      "type": "targets",
-      "targets": ["__alloca_probe", "__alloca_probe_16", "_alloca"],
-      "pcode": ["INT_SUB (register,0x10,4) = (register,0x10,4), (register,0x0,4)"],
-      "paramshift": 0,
-      "description": "Replace alloca variants"
-    }
+    "description": "Replace stack probe with ESP = ESP - EAX"
+  },
+  {
+    "name": "security_cookie",
+    "targets": ["__security_check_cookie"],
+    "pcode": {
+      "body": ["tmpzero:4 = 0;"]
+    },
+    "description": "No-op - security cookie check has no decompiler-visible effect"
   }
-}
+]
 ```
 
 ### 2. Decompiler Fixes (`decompiler_fixes.py`)
@@ -111,16 +163,23 @@ use P-code Overrides instead.
 
 ### 4. P-code Overrides (`transforms.py`)
 
-**Purpose:** Replace P-code generated for specific instructions.
+**Purpose:** Replace P-code generated for specific instructions at specific addresses within a function.
 
-**Ghidra Integration:**
-- `DecompileCallback.registerPcodeOverride(Address addr, List<String> pcode)`
-- Registered per-instruction within a function
+**Implementation:**
+- Applied during pcode generation (Java `DecompileCallback.getPcode()`)
+- Returns replacement pcode instead of the instruction's normal pcode
+- Decompiler never sees the original instruction's pcode
+- If the override contains a CALL op, the decompiler processes it as a real call
+
+**API:**
+- `DecompileCallback.registerPcodeOverride(long funcAddr, long instrAddr, List<String> pcode)`
+- Registered per-instruction within a specific function
 
 **Use Cases:**
-- Fix BADSPACEBASE by correcting stack pointer adjustments
-- Work around decompiler bugs for specific instructions
-- Correct ESP tracking after non-standard calls
+- Fix BADSPACEBASE by correcting stack pointer adjustments at specific instructions
+- Override any instruction type (not just CALLs) - MOV, ADD, etc.
+- Apply different fixes to the same instruction address in different functions
+- Surgical fixes when you need precision over global scope
 
 **JSON Format:**
 ```json
@@ -133,6 +192,34 @@ use P-code Overrides instead.
   }
 }
 ```
+
+---
+
+### Callfixup vs P-code Override: When to Use Which
+
+Both mechanisms replace pcode and can include CALL ops. The key differences:
+
+| Aspect | Callfixup | P-code Override |
+|--------|-----------|-----------------|
+| **Match by** | Target function name | Instruction address within function |
+| **Scope** | Global (all calls to target) | Per-function + per-instruction |
+| **Instruction types** | CALL instructions only | Any instruction |
+| **Best for** | Compiler intrinsics, library stubs | Surgical fixes, per-site customization |
+
+**Use Callfixup when:**
+- You want to globally handle ALL calls to a function (e.g., `_chkstk`, `__alloca_probe`)
+- The function has multiple name variants you want to match
+- You don't need to know or enumerate every call site
+
+**Use P-code Override when:**
+- You need to fix a specific instruction at a specific address
+- Different call sites to the same function need different treatment
+- You're overriding non-CALL instructions (MOV, ADD, etc.)
+- You need per-function scoping (same address, different functions)
+
+**Note:** Both can include CALL ops in their replacement pcode. When they do, the decompiler
+processes those CALLs normally, including analyzing the target function. If the target has
+decompilation issues (like BADSPACEBASE), those issues will still affect analysis.
 
 ---
 
