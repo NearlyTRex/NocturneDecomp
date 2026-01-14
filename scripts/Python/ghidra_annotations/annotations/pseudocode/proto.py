@@ -27,36 +27,32 @@ program. The file is regenerated during export, but user modifications are
 preserved.
 
 JSON Format:
-    {
-        "proto_overrides": [
-            {
-                "address": "<call_site_address>",
-                "signature": "<C-style function signature>"
-            }
-        ]
-    }
+    [
+        {
+            "address": "<call_site_address>",
+            "signature": "<C-style function signature>"
+        }
+    ]
 
 Fields:
     - address: The address of the CALL instruction (not the target function)
     - signature: C-style function signature with return type, name, and parameters
 
 Example (global proto_overrides.json):
-    {
-        "proto_overrides": [
-            {
-                "address": "0x40acc3",
-                "signature": "void displayErrorAndQuit(char *fmt, char *file, int line)"
-            },
-            {
-                "address": "0x401234",
-                "signature": "int sprintf(char *buffer, char *format, int value1, int value2)"
-            },
-            {
-                "address": "0x405678",
-                "signature": "void __cdecl callback(void *ctx, int event, void *data)"
-            }
-        ]
-    }
+    [
+        {
+            "address": "0x40acc3",
+            "signature": "void displayErrorAndQuit(char *fmt, char *file, int line)"
+        },
+        {
+            "address": "0x401234",
+            "signature": "int sprintf(char *buffer, char *format, int value1, int value2)"
+        },
+        {
+            "address": "0x405678",
+            "signature": "void __cdecl callback(void *ctx, int event, void *data)"
+        }
+    ]
 
 ================================================================================
 PER-FUNCTION PROTO_OVERRIDES (in function JSON files)
@@ -105,21 +101,19 @@ ALTERNATIVE FORMAT (explicit parameters)
 
 Instead of a signature string, you can specify parameters explicitly:
 
-    {
-        "proto_overrides": [
-            {
-                "address": "0x401234",
-                "return_type": "int",
-                "params": [
-                    {"name": "buffer", "type": "char *"},
-                    {"name": "format", "type": "char *"},
-                    {"name": "value", "type": "int"}
-                ],
-                "calling_convention": "__cdecl",
-                "varargs": false
-            }
-        ]
-    }
+    [
+        {
+            "address": "0x401234",
+            "return_type": "int",
+            "params": [
+                {"name": "buffer", "type": "char *"},
+                {"name": "format", "type": "char *"},
+                {"name": "value", "type": "int"}
+            ],
+            "calling_convention": "__cdecl",
+            "varargs": false
+        }
+    ]
 
 Fields for explicit format:
     - return_type: Return type string (default: "void")
@@ -192,8 +186,7 @@ def preload_global_proto_overrides(pseudocode_dir):
     if os.path.exists(proto_overrides_path):
         try:
             with open(proto_overrides_path, 'r') as f:
-                existing_data = json.load(f)
-                _global_proto_overrides_cache = existing_data.get('proto_overrides', [])
+                _global_proto_overrides_cache = json.load(f)
                 log_info("Preloaded %d proto overrides from %s" % (
                     len(_global_proto_overrides_cache), proto_overrides_path))
         except Exception as e:
@@ -311,13 +304,10 @@ def generate_proto_overrides_file(pseudocode_dir):
     if _global_proto_overrides_cache:
         proto_overrides.extend(_global_proto_overrides_cache)
 
-    # Write the merged proto overrides
-    output_data = {
-        "proto_overrides": proto_overrides
-    }
+    # Write the merged proto overrides as a plain array
     try:
         with open(proto_overrides_path, 'w') as f:
-            json.dump(output_data, f, indent=2)
+            json.dump(proto_overrides, f, indent=2)
         log_info("Generated %s with %d proto overrides" % (proto_overrides_path, len(proto_overrides)))
     except Exception as e:
         log_info("Failed to write proto_overrides.json: %s" % str(e))
@@ -341,10 +331,7 @@ def load_proto_overrides_json(json_path):
         return []
     try:
         with open(json_path, 'r') as f:
-            data = json.load(f)
-            overrides = data.get('proto_overrides', [])
-            if isinstance(overrides, list):
-                return overrides
+            return json.load(f)
     except Exception as e:
         log_info("Failed to load proto_overrides from %s: %s" % (json_path, str(e)))
     return []
