@@ -14,11 +14,10 @@ void core_script_cpp_CScript_CallLoadingScriptFile_FUN_00566fa0(void)
 {
   int iVar1;
   int iVar2;
-  BADSPACEBASE *in_ESP;
   int iVar3;
   int in_stack_00000004;
   CStrList *in_stack_00000008;
-  char acStack_d0 [192];
+  char acStack_d8 [200];
   
   core_script_cpp_CScript_LoadingScriptFile_FUN_0055a370();
   iVar2 = 0;
@@ -27,9 +26,9 @@ void core_script_cpp_CScript_CallLoadingScriptFile_FUN_00566fa0(void)
     do {
       iVar1 = crt_stdio_c_sscanf_FUN_0060013c
                         (*(char **)(iVar3 + 4 + *(int *)(in_stack_00000004 + 0x34)),": %s",
-                         &stack0xffffff2c);
+                         acStack_d8);
       if (iVar1 == 1) {
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80(in_stack_00000008,acStack_d0);
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80(in_stack_00000008,acStack_d8);
       }
       iVar2 = iVar2 + 1;
       iVar3 = iVar3 + 8;

@@ -13,27 +13,32 @@ core_ground_cpp_CGround_renderTerrainQuad_FUN_004ef990
 {
   int iVar1;
   uint uVar2;
-  BADSPACEBASE *in_ESP;
+  uint row;
   int iVar3;
-  int row;
-  int unaff_EDI;
+  int row_00;
   uint column;
-  uint in_stack_0000001c;
-  SMRGLHeaderPrimitive local_34;
-  int iStack_1c;
-  int iStack_18;
+  SMRGLHeaderPrimitive SStack_84;
+  int local_6c;
+  int local_68;
+  int local_64;
+  SMRGLHeaderPrimitive local_4c;
+  int local_34;
+  int local_30;
+  int local_2c;
   int local_14;
   
-  row = (world_column - this_ptr->camera_x) + this_ptr->grid_width;
+  row_00 = (world_column - this_ptr->camera_x) + this_ptr->grid_width;
   iVar3 = (world_row - this_ptr->camera_y) + this_ptr->grid_height;
+  row = world_row & this_ptr->height_minus_1;
   column = world_column & this_ptr->width_minus_1;
-  iVar1 = core_ground_cpp_CGround_getVertexIndex_FUN_004ef380(this_ptr,iVar3,row);
+  iVar1 = core_ground_cpp_CGround_getVertexIndex_FUN_004ef380(this_ptr,iVar3,row_00);
   this_ptr->vertex_indices[0] = iVar1;
-  iVar1 = core_ground_cpp_CGround_getVertexIndex_FUN_004ef380(this_ptr,iVar3,row + 1);
+  local_14 = row_00 + 1;
+  iVar1 = core_ground_cpp_CGround_getVertexIndex_FUN_004ef380(this_ptr,iVar3,local_14);
   this_ptr->vertex_indices[1] = iVar1;
-  iVar1 = core_ground_cpp_CGround_getVertexIndex_FUN_004ef380(this_ptr,iVar3 + 1,unaff_EDI);
+  iVar1 = core_ground_cpp_CGround_getVertexIndex_FUN_004ef380(this_ptr,iVar3 + 1,local_14);
   this_ptr->vertex_indices[2] = iVar1;
-  iVar3 = core_ground_cpp_CGround_getVertexIndex_FUN_004ef380(this_ptr,iVar3 + 1,row);
+  iVar3 = core_ground_cpp_CGround_getVertexIndex_FUN_004ef380(this_ptr,iVar3 + 1,row_00);
   iVar1 = this_ptr->vertex_indices[0];
   this_ptr->vertex_indices[3] = iVar3;
   uVar2 = g_RenderVertexBuffer[this_ptr->vertex_indices[3]].projected_vertex.screen_x &
@@ -43,23 +48,29 @@ core_ground_cpp_CGround_renderTerrainQuad_FUN_004ef990
   if (((uVar2 & 0x80000000) != 0) && ((char)uVar2 != '\0')) {
     return;
   }
-  core_ground_cpp_CGround_setQuadTextureCoordinates_FUN_004ef880(this_ptr,column,in_stack_0000001c);
-  if ((column & 1) == (in_stack_0000001c & 1)) {
-    core_ground_cpp_CGround_renderTerrainPrimitive_FUN_004ef970
-              (this_ptr,(SMRGLHeaderPrimitive *)&stack0xffffff90);
-    local_34.base.count = 3;
-    local_14 = this_ptr->vertex_indices[0];
-    iStack_18 = this_ptr->vertex_indices[2];
-    iStack_1c = this_ptr->vertex_indices[3];
-    core_ground_cpp_CGround_renderTerrainPrimitive_FUN_004ef970(this_ptr,&local_34);
+  core_ground_cpp_CGround_setQuadTextureCoordinates_FUN_004ef880(this_ptr,column,row);
+  if ((column & 1) == (row & 1)) {
+    SStack_84.base.count = 3;
+    local_64 = this_ptr->vertex_indices[0];
+    local_68 = this_ptr->vertex_indices[1];
+    local_6c = this_ptr->vertex_indices[2];
+    core_ground_cpp_CGround_renderTerrainPrimitive_FUN_004ef970(this_ptr,&SStack_84);
+    local_4c.base.count = 3;
+    local_2c = this_ptr->vertex_indices[0];
+    local_30 = this_ptr->vertex_indices[2];
+    local_34 = this_ptr->vertex_indices[3];
+    core_ground_cpp_CGround_renderTerrainPrimitive_FUN_004ef970(this_ptr,&local_4c);
     return;
   }
-  core_ground_cpp_CGround_renderTerrainPrimitive_FUN_004ef970
-            (this_ptr,(SMRGLHeaderPrimitive *)&stack0xffffff90);
-  local_34.base.count = 3;
-  local_14 = this_ptr->vertex_indices[1];
-  iStack_18 = this_ptr->vertex_indices[2];
-  iStack_1c = this_ptr->vertex_indices[3];
-  core_ground_cpp_CGround_renderTerrainPrimitive_FUN_004ef970(this_ptr,&local_34);
+  SStack_84.base.count = 3;
+  local_64 = this_ptr->vertex_indices[0];
+  local_68 = this_ptr->vertex_indices[1];
+  local_6c = this_ptr->vertex_indices[3];
+  core_ground_cpp_CGround_renderTerrainPrimitive_FUN_004ef970(this_ptr,&SStack_84);
+  local_4c.base.count = 3;
+  local_2c = this_ptr->vertex_indices[1];
+  local_30 = this_ptr->vertex_indices[2];
+  local_34 = this_ptr->vertex_indices[3];
+  core_ground_cpp_CGround_renderTerrainPrimitive_FUN_004ef970(this_ptr,&local_4c);
   return;
 }

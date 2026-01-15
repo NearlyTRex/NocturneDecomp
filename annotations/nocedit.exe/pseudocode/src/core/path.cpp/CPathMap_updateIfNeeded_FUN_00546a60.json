@@ -1,20 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 131,
-    "complexity_score": 199,
+    "complexity_score": 168,
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 3,
-    "pseudocode_lines": 64,
-    "suspect_count": 11,
+    "pseudocode_lines": 63,
+    "suspect_count": 9,
     "suspect_types": [
-      "badspacebase",
       "pointer_cast",
-      "register_param",
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 195
+    "total_lines": 194
   },
   "cross_references": [
     {
@@ -249,78 +247,64 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 9,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 9,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_ffffffd8",
+      "text": "CVector3i *in_stack_ffffffd8;",
+      "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_ffffffdc",
-      "text": "CVector3i *in_stack_ffffffdc;",
+      "line": 24,
+      "match": "in_stack_ffffffd8",
+      "text": "in_stack_ffffffd8 = (CVector3i *)(source_position->x - (this_ptr->cached_world_position).x);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 25,
-      "match": "in_stack_ffffffdc",
-      "text": "in_stack_ffffffdc = (CVector3i *)(source_position->y - (this_ptr->cached_world_position).y);",
+      "match": "in_stack_ffffffd8",
+      "text": "if (((ABS((float)in_stack_ffffffd8) < (float)4) &&",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 28,
-      "match": "in_stack_ffffffdc",
-      "text": "(ABS((float)in_stack_ffffffdc) < (float)4)) &&",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 45,
-      "match": "in_stack_ffffffdc",
-      "text": "(&g_CDemonRaytraceInstance,&this_ptr->current_position,in_stack_ffffffdc);",
+      "line": 44,
+      "match": "in_stack_ffffffd8",
+      "text": "(&g_CDemonRaytraceInstance,&this_ptr->current_position,in_stack_ffffffd8);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 46,
+      "line": 45,
       "match": "(uint *)((int)",
       "text": "puVar3 = (uint *)((int)this_ptr + (uint)bVar5 * -8 + 0x10);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 48,
-      "match": "&stack0xfffffff0",
-      "text": "*puVar3 = *(uint *)(&stack0xfffffff0 + (uint)bVar5 * -8);",
+      "line": 47,
+      "match": "&stack0xffffffe8",
+      "text": "*puVar3 = *(uint *)(&stack0xffffffe8 + (uint)bVar5 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 50,
-      "match": "&stack0xfffffff4",
-      "text": "*(uint *)(&stack0xfffffff4 + (uint)bVar5 * -8 + (uint)bVar5 * -8);",
+      "line": 49,
+      "match": "&stack0xffffffec",
+      "text": "*(uint *)(&stack0xffffffec + (uint)bVar5 * -8 + (uint)bVar5 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 56,
+      "line": 55,
       "match": "(uint *)((int)",
       "text": "puVar4 = (uint *)((int)this_ptr + (uint)bVar5 * -8 + 0x138b4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 57,
+      "line": 56,
       "match": "(uint *)((int)",
       "text": "puVar3 = (uint *)((int)this_ptr + (uint)bVar5 * -8 + 0x10);",
       "type": "pointer_cast"

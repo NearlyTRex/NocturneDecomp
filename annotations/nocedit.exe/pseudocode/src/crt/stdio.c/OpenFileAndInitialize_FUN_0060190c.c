@@ -16,7 +16,6 @@ crt_stdio_c_OpenFileAndInitialize_FUN_0060190c
   ushort uVar2;
   int iVar3;
   uint uVar4;
-  undefined3 in_stack_00000009;
   uint uVar5;
   
   *(byte *)&file_struct->_flag = (byte)file_struct->_flag & 0xfc;
@@ -24,10 +23,10 @@ crt_stdio_c_OpenFileAndInitialize_FUN_0060190c
   iVar3 = crt_ctype_c_tolower_FUN_005feb30((uint)(byte)mode_char);
   if ((char)iVar3 == 'r') {
     uVar4 = 0;
-    if ((stage1_result & 2U) != 0) {
+    if ((parsed_mode_flags & 2U) != 0) {
       uVar4 = 2;
     }
-    if ((stage1_result & 0x40U) == 0) {
+    if ((parsed_mode_flags & 0x40U) == 0) {
       uVar4 = uVar4 | 0x100;
     }
     else {
@@ -36,14 +35,14 @@ crt_stdio_c_OpenFileAndInitialize_FUN_0060190c
     uVar5 = 0;
   }
   else {
-    bVar1 = ((stage1_result & 1U) != 0) + 0x21;
-    if ((stage1_result & 0x80U) == 0) {
+    bVar1 = ((parsed_mode_flags & 1U) != 0) + 0x21;
+    if ((parsed_mode_flags & 0x80U) == 0) {
       bVar1 = bVar1 | 0x40;
     }
     else {
       bVar1 = bVar1 | 0x10;
     }
-    if ((stage1_result & 0x40U) == 0) {
+    if ((parsed_mode_flags & 0x40U) == 0) {
       uVar2 = CONCAT11 /* combine 2-byte values */(1,bVar1);
     }
     else {
@@ -52,7 +51,7 @@ crt_stdio_c_OpenFileAndInitialize_FUN_0060190c
     uVar4 = (uint)uVar2;
     uVar5 = 0x180;
   }
-  iVar3 = crt_stdio_c_CreateFileVariadic_FUN_00609074(_mode_char,uVar4,(int)file_struct,uVar5);
+  iVar3 = crt_stdio_c_CreateFileVariadic_FUN_00609074(filename,uVar4,additional_flags,uVar5);
   file_struct->_handle = iVar3;
   if (file_struct->_handle == -1) {
     crt_stdio_c_DeallocateFileStruct_FUN_006093b0(file_struct);
@@ -61,10 +60,10 @@ crt_stdio_c_OpenFileAndInitialize_FUN_0060190c
   file_struct->_cnt = 0;
   file_struct->_bufsize = 0;
   file_struct->_link->__get_base = (char *)0x0;
-  file_struct->_link->__get_end = (char *)file_struct;
+  file_struct->_link->__get_end = (char *)stage1_result;
   *(uint *)((int)&file_struct->_link->__get_ptr + 1) = 0;
   file_struct->_link->__reserve_end = (char *)0x0;
-  if ((additional_flags & 0x80U) != 0) {
+  if ((parsed_mode_flags & 0x80U) != 0) {
     crt_stdio_c_fseek_FUN_005ffacc(file_struct,0,2);
   }
   crt_stdio_c_DetectDeviceAndSetBuffering_FUN_00608ee0(file_struct);

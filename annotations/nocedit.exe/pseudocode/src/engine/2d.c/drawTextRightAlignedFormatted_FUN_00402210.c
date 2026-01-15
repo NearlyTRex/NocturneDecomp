@@ -11,12 +11,12 @@ engine_2d_c_drawTextRightAlignedFormatted_FUN_00402210
           (char *format_string,int y_pos,int right_x,...)
 
 {
-  BADSPACEBASE *in_ESP;
-  char acStack_1008 [4092];
+  char local_100c [4096];
   va_list_t local_c;
   
   local_c = &stack0x00000010;
-  crt_stdio_c_vsprintf_FUN_005fdba8(&stack0xffffeff4,(char *)right_x,&local_c);
-  engine_2d_c_drawTextRightAligned_FUN_004021c0(acStack_1008,y_pos,right_x);
+  crt_stdio_c_vsprintf_FUN_005fdba8(local_100c,(char *)right_x,&local_c);
+  local_c = (va_list_t)0x0;
+  engine_2d_c_drawTextRightAligned_FUN_004021c0(local_100c,(int)format_string,y_pos);
   return;
 }

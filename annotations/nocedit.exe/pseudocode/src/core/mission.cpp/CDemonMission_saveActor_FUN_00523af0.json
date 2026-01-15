@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 114,
+    "complexity_score": 78,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 6,
-    "pseudocode_lines": 29,
-    "suspect_count": 7,
+    "pseudocode_lines": 28,
+    "suspect_count": 4,
     "suspect_types": [
       "call_esp_preserve",
-      "stack_param",
       "variadic_preserve"
     ],
-    "total_lines": 83
+    "total_lines": 82
   },
   "cross_references": [
     {
@@ -172,29 +171,8 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000018",
-      "text": "int in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_00000018",
-      "text": "if (in_stack_00000018 != 0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_00000018",
-      "text": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"\\t\\t// %s\\n\",in_stack_00000018);",
-      "type": "stack_param"
-    },
-    {
       "call_address": "00523b27",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "conflict",
       "esp_certainty_at_call": "conflict",
@@ -208,7 +186,7 @@
     },
     {
       "call_address": "00523b3e",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -222,7 +200,7 @@
     },
     {
       "call_address": "00523b57",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

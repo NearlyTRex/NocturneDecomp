@@ -10,86 +10,86 @@ void __cdecl
 core_dmodel_cpp_CKeyFramedModel_removeDuplicatePolygons_FUN_0047bbc0(CKeyFramedModel *this_ptr)
 
 {
-  int iVar1;
-  int iVar2;
+  int *piVar1;
+  bool bVar2;
   int iVar3;
   int iVar4;
   int iVar5;
   int iVar6;
-  CKeyFramedModel *in_stack_00000008;
-  int local_38;
-  CKeyFramedModel *local_34;
-  int local_28;
+  int iVar7;
+  int iVar8;
+  int local_3c;
+  CKeyFramedModel *local_38;
+  int local_2c;
+  int local_24;
   int local_20;
-  int local_1c;
-  SMRGLPrimitiveQuad **local_18;
-  int local_14;
-  bool bVar7;
+  SMRGLPrimitiveQuad **local_1c;
+  int local_18;
   
   core_dmodel_cpp_CKeyFramedModel_validatePartList_FUN_0047bf40(this_ptr);
-  local_1c = 0;
-  local_38 = 0;
-  if (0 < in_stack_00000008->part_count) {
-    local_34 = in_stack_00000008;
+  local_20 = 0;
+  local_3c = 0;
+  if (0 < this_ptr->part_count) {
+    local_38 = this_ptr;
     do {
-      iVar1 = local_1c;
-      local_20 = local_1c * 0x48;
-      local_28 = local_20 + 0x48;
-      while (local_1c < iVar1 + local_34->part_list[0].poly_count) {
-        bVar7 = false;
-        local_14 = iVar1;
-        iVar3 = local_20 + (int)in_stack_00000008->poly_vert_list;
-        if (iVar1 < local_1c) {
-          local_18 = in_stack_00000008->poly_vert_list + iVar1 * 0x12;
+      iVar3 = local_20;
+      local_24 = local_20 * 0x48;
+      local_2c = local_24 + 0x48;
+      while (local_20 < iVar3 + local_38->part_list[0].poly_count) {
+        bVar2 = false;
+        local_18 = iVar3;
+        iVar5 = local_24 + (int)this_ptr->poly_vert_list;
+        if (iVar3 < local_20) {
+          local_1c = this_ptr->poly_vert_list + iVar3 * 0x12;
           do {
-            if (*(SMRGLPrimitiveQuad **)(iVar3 + 4) == local_18[1]) {
-              iVar4 = 0;
-              if (0 < *(int *)(iVar3 + 4)) {
+            if (*(SMRGLPrimitiveQuad **)(iVar5 + 4) == local_1c[1]) {
+              iVar6 = 0;
+              if (0 < *(int *)(iVar5 + 4)) {
                 do {
-                  iVar6 = 0;
-                  bVar7 = true;
-                  iVar2 = iVar4;
-                  iVar5 = iVar3;
-                  if (0 < *(int *)(iVar3 + 4)) {
+                  iVar8 = 0;
+                  bVar2 = true;
+                  iVar4 = iVar6;
+                  iVar7 = iVar5;
+                  if (0 < *(int *)(iVar5 + 4)) {
                     do {
-                      if (*(int *)(iVar5 + 0x18) !=
-                          *(int *)(iVar3 + (iVar2 % *(int *)(iVar3 + 4)) * 0xc + 0x18)) {
-                        bVar7 = false;
+                      if (*(int *)(iVar7 + 0x18) !=
+                          *(int *)(iVar5 + (iVar4 % *(int *)(iVar5 + 4)) * 0xc + 0x18)) {
+                        bVar2 = false;
                         break;
                       }
-                      iVar6 = iVar6 + 1;
-                      iVar2 = iVar2 + 1;
-                      iVar5 = iVar5 + 0xc;
-                    } while (iVar6 < *(int *)(iVar3 + 4));
+                      iVar8 = iVar8 + 1;
+                      iVar4 = iVar4 + 1;
+                      iVar7 = iVar7 + 0xc;
+                    } while (iVar8 < *(int *)(iVar5 + 4));
                   }
-                  iVar4 = iVar4 + 1;
-                } while (iVar4 < *(int *)(iVar3 + 4));
+                  iVar6 = iVar6 + 1;
+                } while (iVar6 < *(int *)(iVar5 + 4));
               }
-              if (bVar7) break;
+              if (bVar2) break;
             }
-            local_18 = local_18 + 0x12;
-            local_14 = local_14 + 1;
-          } while (local_14 < local_1c);
+            local_1c = local_1c + 0x12;
+            local_18 = local_18 + 1;
+          } while (local_18 < local_20);
         }
-        if (bVar7) {
-          iVar3 = in_stack_00000008->poly_count + -1;
-          in_stack_00000008->poly_count = iVar3;
+        if (bVar2) {
+          iVar5 = this_ptr->poly_count + -1;
+          this_ptr->poly_count = iVar5;
           crt_string_c_memmove_FUN_005fe5e0
-                    ((void *)((int)in_stack_00000008->poly_vert_list + local_20),
-                     (void *)(local_28 + (int)in_stack_00000008->poly_vert_list),
-                     (iVar3 - local_1c) * 0x48);
-          *(int *)(local_28 + 0x558c) = *(int *)(local_28 + 0x558c) + -1;
+                    ((void *)((int)this_ptr->poly_vert_list + local_24),
+                     (void *)(local_2c + (int)this_ptr->poly_vert_list),(iVar5 - local_20) * 0x48);
+          piVar1 = &local_38->part_list[0].poly_count;
+          *piVar1 = *piVar1 + -1;
         }
         else {
-          local_28 = local_28 + 0x48;
-          local_1c = local_1c + 1;
-          local_20 = local_20 + 0x48;
+          local_2c = local_2c + 0x48;
+          local_20 = local_20 + 1;
+          local_24 = local_24 + 0x48;
         }
       }
-      local_34 = (CKeyFramedModel *)(local_34->model_filename + 8);
-      local_38 = local_38 + 1;
-    } while (local_38 < in_stack_00000008->part_count);
+      local_38 = (CKeyFramedModel *)(local_38->model_filename + 8);
+      local_3c = local_3c + 1;
+    } while (local_3c < this_ptr->part_count);
   }
-  core_dmodel_cpp_CKeyFramedModel_validatePartList_FUN_0047bf40(in_stack_00000008);
+  core_dmodel_cpp_CKeyFramedModel_validatePartList_FUN_0047bf40(this_ptr);
   return;
 }

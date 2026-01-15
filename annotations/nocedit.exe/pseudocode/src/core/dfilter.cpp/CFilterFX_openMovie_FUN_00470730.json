@@ -1,19 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 158,
-    "complexity_score": 357,
+    "complexity_score": 237,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 18,
     "pseudocode_lines": 42,
-    "suspect_count": 28,
+    "suspect_count": 18,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
-      "format_string_mismatch",
       "lea_esp_stack_addr",
-      "register_param",
-      "stack_ref",
       "variadic_preserve"
     ],
     "total_lines": 200
@@ -292,50 +288,8 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 9,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 9,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 13,
-      "match": "&stack0xfffffef8",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffef8,\"%s.txt\",filename);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 14,
-      "match": "&stack0xfffffefc",
-      "text": "pFVar1 = engine_dosio_c_getFile_FUN_00481a50(filename,&stack0xfffffefc,\"rt\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 25,
-      "match": "&stack0xffffff10",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff10,\"%s.mov\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 26,
-      "match": "&stack0xffffff14",
-      "text": "pFVar1 = engine_dosio_c_getFile_FUN_00481a50(filename,&stack0xffffff14,\"rb\");",
-      "type": "stack_ref"
-    },
-    {
       "call_address": "00470764",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -349,7 +303,7 @@
     },
     {
       "call_address": "004707a1",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -363,7 +317,7 @@
     },
     {
       "call_address": "004707b0",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -377,7 +331,7 @@
     },
     {
       "call_address": "004707f1",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -391,7 +345,7 @@
     },
     {
       "call_address": "004708b6",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -402,50 +356,6 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 004708b6 (no EBP frame)",
       "type": "variadic_preserve"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Can't open movie %s.txt\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Can't open movie %s.txt",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 18,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Can't open movie %s.txt\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 20,
-      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(pFVar1,\"%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s.mov\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%s.mov",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 25,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff10,\"%s.mov\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Can't open movie %s.mov\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Can't open movie %s.mov",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 30,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Can't open movie %s.mov\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 4,

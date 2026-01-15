@@ -1,12 +1,12 @@
 {
   "complexity": {
     "assembly_lines": 88,
-    "complexity_score": 176,
+    "complexity_score": 186,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 3,
     "pseudocode_lines": 31,
-    "suspect_count": 13,
+    "suspect_count": 14,
     "suspect_types": [
       "call_esp_preserve",
       "stack_param",
@@ -180,15 +180,22 @@
     {
       "description": "Unresolved stack parameter",
       "line": 19,
-      "match": "in_stack_0000000c",
-      "text": "dest_obj = (CObj *)(in_stack_0000000c + 0x1c);",
+      "match": "in_stack_00000008",
+      "text": "dest_obj = in_stack_00000008 + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 28,
+      "match": "in_stack_00000008",
+      "text": "} while (dest_obj < in_stack_00000008 + in_stack_0000000c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 28,
       "match": "in_stack_0000000c",
-      "text": "} while (dest_obj < (CObj *)(in_stack_0000000c * 0x1d));",
+      "text": "} while (dest_obj < in_stack_00000008 + in_stack_0000000c);",
       "type": "stack_param"
     },
     {

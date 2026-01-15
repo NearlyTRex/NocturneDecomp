@@ -10,13 +10,12 @@ int core_event_cpp_FUN_004aa3c0(void)
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
-  int unaff_retaddr;
   char *in_stack_00000004;
+  int local_4;
   
-  iVar1 = crt_stdio_c_sscanf_FUN_0060013c(in_stack_00000004,"%d",&stack0xfffffffc);
+  iVar1 = crt_stdio_c_sscanf_FUN_0060013c(in_stack_00000004,"%d",&local_4);
   if (iVar1 == 1) {
-    return unaff_retaddr;
+    return local_4;
   }
   iVar1 = core_event_cpp_CEventList_FUN_004b0830(g_CEventListPtr);
   return iVar1;

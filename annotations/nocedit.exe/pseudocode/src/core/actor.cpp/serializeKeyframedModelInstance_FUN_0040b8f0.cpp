@@ -12,15 +12,15 @@ core_actor_cpp_serializeKeyframedModelInstance_FUN_0040b8f0
 
 {
   char cVar1;
-  BADSPACEBASE *in_ESP;
   char *pcVar2;
   char *pcVar3;
-  char acStack_cc [196];
+  uint model_filename_buffer;
   
-  pcVar3 = &stack0xffffff30;
+  pcVar3 = (char *)&model_filename_buffer;
   if (g_ActorReadingMode == 1) {
-    core_actor_cpp_serializeString_FUN_0040b5c0((char **)&stack0xffffff30,property_name);
-    core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(model_ptr,acStack_cc);
+    core_actor_cpp_serializeString_FUN_0040b5c0((char **)&model_filename_buffer,property_name);
+    core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
+              (model_ptr,(char *)&model_filename_buffer);
     return;
   }
   pcVar2 = model_ptr->model_name;
@@ -33,6 +33,6 @@ core_actor_cpp_serializeKeyframedModelInstance_FUN_0040b8f0
     pcVar3[1] = cVar1;
     pcVar3 = pcVar3 + 2;
   } while (cVar1 != '\0');
-  core_actor_cpp_serializeString_FUN_0040b5c0((char **)&stack0xffffff30,property_name);
+  core_actor_cpp_serializeString_FUN_0040b5c0((char **)&model_filename_buffer,property_name);
   return;
 }

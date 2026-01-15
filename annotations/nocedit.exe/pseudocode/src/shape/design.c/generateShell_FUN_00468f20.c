@@ -11,7 +11,6 @@ void __cdecl shape_design_c_generateShell_FUN_00468f20(void)
 {
   char cVar1;
   int iVar2;
-  BADSPACEBASE *in_ESP;
   char *pcVar3;
   byte bVar4;
   double dVar5;

@@ -13,7 +13,6 @@ void __cdecl shape_edittool_cpp_CEditorTools_restoreScreen_FUN_0049e4d0(CEditorT
   uint uVar2;
   uint uVar3;
   int iVar4;
-  BADSPACEBASE *in_ESP;
   uint *puVar5;
   uint *puVar6;
   byte bVar7;
@@ -37,7 +36,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_restoreScreen_FUN_0049e4d0(CEditorT
     if (0 < g_WindowHeight) {
       iVar1 = 0;
       do {
-        puVar5 = *(uint **)((int)auStack_12c4 + iVar1 + 4);
+        puVar5 = *(uint **)((int)auStack_12c4 + iVar1);
         puVar6 = *(uint **)((int)g_ScreenBufferArray + iVar1);
         for (uVar3 = uVar2 >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
           *puVar6 = *puVar5;

@@ -1,21 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 116,
-    "complexity_score": 401,
+    "complexity_score": 382,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 71,
-    "suspect_count": 30,
+    "pseudocode_lines": 67,
+    "suspect_count": 29,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
-      "register_param",
       "stack_param",
+      "stack_ref",
       "unaffected_reg"
     ],
-    "total_lines": 187
+    "total_lines": 183
   },
   "cross_references": [],
   "function": {
@@ -232,99 +231,92 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 9,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 9,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 10,
+      "line": 9,
       "match": "unaff_ESI",
       "text": "uint *unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 12,
       "match": "in_stack_00000004",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 13,
       "match": "in_stack_00000008",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_ffffff44",
-      "text": "CMatrix3x4f *in_stack_ffffff44;",
+      "line": 14,
+      "match": "in_stack_ffffff40",
+      "text": "CMatrix3x4f *in_stack_ffffff40;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 26,
+      "line": 24,
       "match": "in_stack_00000008",
       "text": "iVar1 = *(int *)(in_stack_00000008 * 0x44 + in_stack_00000004 + 0x24ac);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 26,
+      "line": 24,
       "match": "in_stack_00000004",
       "text": "iVar1 = *(int *)(in_stack_00000008 * 0x44 + in_stack_00000004 + 0x24ac);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 27,
+      "line": 25,
       "match": "in_stack_00000008",
       "text": "if (in_stack_00000008 == 1) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 66,
-      "match": "in_stack_00000008",
-      "text": "((CMatrix3x4f *)(local_90 + 4),(CMatrix3x4f *)(iVar1 * 0x30 + in_stack_00000008 + 0xfd8)",
+      "line": 63,
+      "match": "in_stack_00000004",
+      "text": "(&local_90,(CMatrix3x4f *)(iVar1 * 0x30 + in_stack_00000004 + 0xfd8),in_stack_ffffff40);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 67,
-      "match": "in_stack_ffffff44",
-      "text": ",in_stack_ffffff44);",
+      "line": 63,
+      "match": "in_stack_ffffff40",
+      "text": "(&local_90,(CMatrix3x4f *)(iVar1 * 0x30 + in_stack_00000004 + 0xfd8),in_stack_ffffff40);",
       "type": "stack_param"
     },
     {
+      "description": "Direct stack address reference",
+      "line": 64,
+      "match": "&stack0xffffff40",
+      "text": "puVar2 = (uint *)&stack0xffffff40;",
+      "type": "stack_ref"
+    },
+    {
       "description": "Unaffected register variable",
-      "line": 70,
+      "line": 66,
       "match": "unaff_ESI",
       "text": "*unaff_ESI = *puVar2;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 72,
+      "line": 68,
       "match": "unaff_ESI",
       "text": "unaff_ESI = unaff_ESI + (uint)bVar3 * -2 + 1;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 72,
+      "line": 68,
       "match": "unaff_ESI",
       "text": "unaff_ESI = unaff_ESI + (uint)bVar3 * -2 + 1;",
       "type": "unaffected_reg"

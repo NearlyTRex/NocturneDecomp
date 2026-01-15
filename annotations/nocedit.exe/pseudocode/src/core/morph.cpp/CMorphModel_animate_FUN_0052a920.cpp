@@ -13,7 +13,8 @@ void __cdecl core_morph_cpp_CMorphModel_animate_FUN_0052a920(CMorphModel *this_p
   int iVar2;
   int iVar3;
   int in_stack_00000008;
-  int *in_stack_00000010;
+  int *in_stack_0000000c;
+  int in_stack_00000010;
   int in_stack_00000014;
   
   if ((in_stack_00000008 < 0) || (*(int *)this_ptr->field0_0x0 <= in_stack_00000008)) {
@@ -21,9 +22,9 @@ void __cdecl core_morph_cpp_CMorphModel_animate_FUN_0052a920(CMorphModel *this_p
     g_CurrentLineNumber = 0x112;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CMorphModel::animate - invalid part index");
   }
-  iVar1 = *(int *)(in_stack_00000008 * 0x11 + 0xc);
-  iVar3 = (int)in_stack_00000010 + iVar1;
-  if (iVar1 + *(int *)(in_stack_00000008 * 0x11 + 4) < iVar3 + in_stack_00000014) {
+  iVar3 = in_stack_00000010 + *(int *)(this_ptr->field0_0x0 + in_stack_00000008 * 0x10 + 0xc);
+  if (*(int *)(this_ptr->field0_0x0 + in_stack_00000008 * 0x10 + 0xc) +
+      *(int *)(this_ptr->field0_0x0 + in_stack_00000008 * 0x10 + 4) < iVar3 + in_stack_00000014) {
     g_CurrentFilename = "..\\core\\morph.cpp";
     g_CurrentLineNumber = 0x119;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CMorphModel::animate - invalid vertex range");
@@ -32,13 +33,13 @@ void __cdecl core_morph_cpp_CMorphModel_animate_FUN_0052a920(CMorphModel *this_p
   if (0 < in_stack_00000014) {
     iVar3 = iVar3 * 0x10;
     do {
-      iVar2 = *(int *)(in_stack_00000008 + 0x58) + iVar3;
+      iVar2 = *(int *)this_ptr->field2_0x58 + iVar3;
       iVar1 = iVar1 + 1;
-      *(float *)(iVar2 + 4) = (float)*in_stack_00000010 * 0.00390625f;
-      *(float *)(iVar2 + 8) = (float)in_stack_00000010[1] * 0.00390625f;
-      *(float *)(iVar2 + 0xc) = (float)in_stack_00000010[2] * 0.00390625f;
+      *(float *)(iVar2 + 4) = (float)*in_stack_0000000c * 0.00390625f;
+      *(float *)(iVar2 + 8) = (float)in_stack_0000000c[1] * 0.00390625f;
+      *(float *)(iVar2 + 0xc) = (float)in_stack_0000000c[2] * 0.00390625f;
       iVar3 = iVar3 + 0x10;
-      in_stack_00000010 = in_stack_00000010 + 3;
+      in_stack_0000000c = in_stack_0000000c + 3;
     } while (iVar1 < in_stack_00000014);
   }
   return;

@@ -14,24 +14,23 @@ void __cdecl core_vessel_cpp_CCryptVessel_FUN_005e8fc0(CCryptVessel *this_ptr)
   int iVar3;
   float fVar4;
   float fVar5;
-  float fVar6;
-  BADSPACEBASE *in_ESP;
-  CBoundingBox3D CStack_1c;
+  CBoundingBox3D CStack_28;
+  float fStack_8;
   
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base_actor);
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
             ((CKeyFramedModelInstance *)&this_ptr->model_name);
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
             ((CKeyFramedModelInstance *)(this_ptr->field14_0x3c0 + 0x2ac));
-  (*((this_ptr->base_actor).vtable)->getBoundingBox)(&this_ptr->base_actor,&CStack_1c);
+  (*((this_ptr->base_actor).vtable)->getBoundingBox)(&this_ptr->base_actor,&CStack_28);
   iVar3 = *(int *)this_ptr->start_loc;
   this_ptr->field3_0x2d4 = 0;
   if (iVar3 != 0) {
     pCVar1 = &(this_ptr->base_actor).location;
-    fVar4 = *(float *)(iVar3 + 0x20) - (pCVar1->position).x;
-    fVar5 = *(float *)(iVar3 + 0x24) - (this_ptr->base_actor).location.position.y;
-    fVar6 = *(float *)(iVar3 + 0x28) - (this_ptr->base_actor).location.position.z;
-    if (SQRT(fVar6 * fVar6 + fVar4 * fVar4 + fVar5 * fVar5) < (float)0.5) {
+    fStack_8 = *(float *)(iVar3 + 0x20) - (pCVar1->position).x;
+    fVar4 = *(float *)(iVar3 + 0x24) - (this_ptr->base_actor).location.position.y;
+    fVar5 = *(float *)(iVar3 + 0x28) - (this_ptr->base_actor).location.position.z;
+    if (SQRT(fVar5 * fVar5 + fStack_8 * fStack_8 + fVar4 * fVar4) < (float)0.5) {
       iVar3 = *(int *)this_ptr->start_loc;
       (pCVar1->position).x = *(float *)(iVar3 + 0x20);
       (this_ptr->base_actor).location.position.y = *(float *)(iVar3 + 0x24);
@@ -66,7 +65,7 @@ void __cdecl core_vessel_cpp_CCryptVessel_FUN_005e8fc0(CCryptVessel *this_ptr)
   this_ptr->field14_0x3c0[0x15d] = '\0';
   this_ptr->field14_0x3c0[0x15e] = '\0';
   this_ptr->field14_0x3c0[0x15f] = '?';
-  CStack_1c.max.y = (float)(this_ptr->field14_0x3c0 + 4);
+  CStack_28.min.y = (float)(this_ptr->field14_0x3c0 + 4);
   this_ptr->field14_0x3c0[0x160] = '\0';
   this_ptr->field14_0x3c0[0x161] = '\0';
   this_ptr->field14_0x3c0[0x162] = -0x80;
@@ -75,7 +74,7 @@ void __cdecl core_vessel_cpp_CCryptVessel_FUN_005e8fc0(CCryptVessel *this_ptr)
   this_ptr->field14_0x3c0[0x165] = '\0';
   this_ptr->field14_0x3c0[0x166] = '\0';
   this_ptr->field14_0x3c0[0x167] = '?';
-  CStack_1c.max.x = 8.68452e-39;
+  CStack_28.min.x = 8.68452e-39;
   core_flame_cpp_FUN_004c9b90();
   (this_ptr->base_actor).is_transparent = 1;
   return;

@@ -14,7 +14,6 @@ core_skeleton_cpp_CDeformableModel_load_FUN_0059b8d0(CDeformableModel *this_ptr,
   FILE *file_handle;
   char *pcVar2;
   char *pcVar3;
-  CDeformableModel *in_stack_0000000c;
   
   pcVar3 = this_ptr->model_filename;
   pcVar2 = filename;
@@ -33,7 +32,7 @@ core_skeleton_cpp_CDeformableModel_load_FUN_0059b8d0(CDeformableModel *this_ptr,
     g_CurrentLineNumber = 0x4b2;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDeformableModel::load - Can't open %s",filename);
   }
-  core_skeleton_cpp_CDeformableModel_loadStream_FUN_0059b970(in_stack_0000000c,file_handle);
+  core_skeleton_cpp_CDeformableModel_loadStream_FUN_0059b970(this_ptr,file_handle);
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\core\\skeleton.cpp",0x4b4);
   return;
 }

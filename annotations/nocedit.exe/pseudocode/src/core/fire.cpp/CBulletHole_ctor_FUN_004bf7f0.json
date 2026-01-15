@@ -1,22 +1,21 @@
 {
   "complexity": {
     "assembly_lines": 178,
-    "complexity_score": 468,
+    "complexity_score": 487,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 1,
-    "pseudocode_lines": 93,
-    "suspect_count": 34,
+    "pseudocode_lines": 87,
+    "suspect_count": 37,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "extra_output",
       "lea_esp_stack_addr",
-      "register_param",
-      "stack_param",
-      "stack_ref"
+      "pointer_cast",
+      "stack_ref",
+      "unknown_field"
     ],
-    "total_lines": 271
+    "total_lines": 265
   },
   "cross_references": [
     {
@@ -309,94 +308,115 @@
       "type": "extra_output"
     },
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 11,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
+      "description": "Unknown/mangled field access",
+      "line": 29,
+      "match": "._0_4_",
+      "text": "local_48._0_4_ = surface_normal->y * 0.1f;",
+      "type": "unknown_field"
     },
     {
-      "description": "Inferred register parameter",
-      "line": 11,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
+      "description": "Unknown/mangled field access",
+      "line": 30,
+      "match": "._4_4_",
+      "text": "local_48._4_4_ = 0.1f * surface_normal->z;",
+      "type": "unknown_field"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_fffffef8",
-      "text": "CMatrix3x4f *in_stack_fffffef8;",
-      "type": "stack_param"
+      "description": "Unknown/mangled field access",
+      "line": 31,
+      "match": "._20_4_",
+      "text": "local_48._20_4_ = (this_ptr->position).x + local_4c;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 32,
+      "match": "._24_4_",
+      "text": "local_48._24_4_ = (this_ptr->position).y + (float)local_48._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 32,
+      "match": "._0_4_",
+      "text": "local_48._24_4_ = (this_ptr->position).y + (float)local_48._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 33,
+      "match": "._4_4_",
+      "text": "local_2c = (this_ptr->position).z + (float)local_48._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 35,
+      "match": "._20_4_",
+      "text": "(this_ptr->position).x = (float)local_48._20_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 36,
+      "match": "._24_4_",
+      "text": "(this_ptr->position).y = (float)local_48._24_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 54,
+      "match": "&stack0xfffffeec",
+      "text": "((CMatrix3x4f *)&stack0xfffffeec,&this_ptr->position,&this_ptr->euler_angles);",
+      "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 59,
-      "match": "&stack0xfffffef0",
-      "text": "((CMatrix3x4f *)&stack0xfffffef0,&this_ptr->position,&this_ptr->euler_angles);",
+      "match": "&stack0xfffffeec",
+      "text": "((CMatrix3x4f *)&stack0xfffffeec,&local_e4,matrix_b);",
       "type": "stack_ref"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 64,
-      "match": "in_stack_fffffef8",
-      "text": "((CMatrix3x4f *)&stack0xfffffef8,(CMatrix3x4f *)(local_dc + 4),in_stack_fffffef8);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 64,
-      "match": "&stack0xfffffef8",
-      "text": "((CMatrix3x4f *)&stack0xfffffef8,(CMatrix3x4f *)(local_dc + 4),in_stack_fffffef8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 73,
-      "match": "&stack0xffffffc8",
-      "text": "((CVector3f *)auStack_a4,(CMatrix3x4f *)&stack0xffffffc8);",
-      "type": "stack_ref"
+      "description": "Complex pointer cast",
+      "line": 65,
+      "match": "(CVector3f *)((int)",
+      "text": "pCVar2 = (CVector3f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 74,
+      "line": 68,
       "match": "extraout_EAX",
       "text": "if (&this_ptr->transformed_pos != (CVector3f *)extraout_EAX) {",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 75,
+      "line": 69,
       "match": "extraout_EAX",
       "text": "(this_ptr->transformed_pos).x = *extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 76,
+      "line": 70,
       "match": "extraout_EAX",
       "text": "(this_ptr->transformed_pos).y = extraout_EAX[1];",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 77,
+      "line": 71,
       "match": "extraout_EAX",
       "text": "(this_ptr->transformed_pos).z = extraout_EAX[2];",
       "type": "extra_output"
     },
     {
       "description": "Direct stack address reference",
-      "line": 80,
-      "match": "&stack0xfffffff0",
-      "text": "((CVector3f *)(auStack_a4 + 4),(CMatrix3x3f *)&stack0xfffffff0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 87,
-      "match": "&stack0xffffffe8",
-      "text": "(this_ptr->actor_ptr,(CVector3f *)&stack0xffffffe8,surface_normal);",
+      "line": 74,
+      "match": "&stack0xffffffdc",
+      "text": "(local_b4,(CMatrix3x3f *)&stack0xffffffdc);",
       "type": "stack_ref"
     },
     {

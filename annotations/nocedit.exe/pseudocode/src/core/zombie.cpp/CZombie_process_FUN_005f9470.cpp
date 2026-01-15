@@ -33,7 +33,6 @@ void __cdecl core_zombie_cpp_CZombie_process_FUN_005f9470(CZombie *this_ptr)
   uint uVar18;
   int extraout_EAX_00;
   CDemonActor *pCVar19;
-  BADSPACEBASE *in_ESP;
   char *pcVar20;
   int iVar21;
   char *pcVar22;

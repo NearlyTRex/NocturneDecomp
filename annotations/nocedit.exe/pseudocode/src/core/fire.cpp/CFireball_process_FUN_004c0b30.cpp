@@ -15,7 +15,6 @@ void __cdecl core_fire_cpp_CFireball_process_FUN_004c0b30(CFireball *this_ptr)
   CDemonSet *this_ptr_01;
   int iVar3;
   int iVar4;
-  BADSPACEBASE *in_ESP;
   SDamageInfo SStack_54;
   float local_18;
   uint local_14;

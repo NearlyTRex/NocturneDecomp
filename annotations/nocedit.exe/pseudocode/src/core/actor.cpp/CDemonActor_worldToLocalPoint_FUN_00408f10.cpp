@@ -11,7 +11,6 @@ core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
           (CDemonActor *this_ptr,CVector3f *output_local_point,CVector3f *input_world_point)
 
 {
-  BADSPACEBASE *in_ESP;
   CVector3f local_10;
   
   local_10.x = input_world_point->x - (this_ptr->location).position.x;

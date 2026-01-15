@@ -12,10 +12,8 @@ cockpit_pkbmpset_cpp_CPackedBitmapSet_loadPBMFileRange_FUN_0054c3d0
           char *base_path)
 
 {
-  BADSPACEBASE *in_ESP;
   int iVar1;
-  int in_stack_0000001c;
-  char acStack_68 [88];
+  char local_74 [100];
   
   cockpit_pkbmpset_cpp_CPackedBitmapSet_reset_FUN_0054bd60(this_ptr);
   cockpit_pkbmpset_cpp_CPackedBitmapSet_ctor_FUN_0054bcd0(this_ptr);
@@ -23,11 +21,11 @@ cockpit_pkbmpset_cpp_CPackedBitmapSet_loadPBMFileRange_FUN_0054c3d0
   if (start_index <= end_index) {
     iVar1 = 0;
     do {
-      crt_stdio_c_sprintf_FUN_005fdbd0(acStack_68,base_path);
+      crt_stdio_c_sprintf_FUN_005fdbd0(local_74,filename_format,start_index);
       start_index = start_index + 1;
       cockpit_pkbitmap_cpp_CPackedBitmap_openPBMFile_FUN_0054b860
-                ((CPackedBitmap *)(this_ptr->bitmap_array->filename + iVar1),&stack0xffffff94,
-                 in_stack_0000001c);
+                ((CPackedBitmap *)(this_ptr->bitmap_array->filename + iVar1),local_74,(int)base_path
+                );
       iVar1 = iVar1 + 0x24;
     } while (start_index <= end_index);
   }

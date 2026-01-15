@@ -1,20 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 57,
-    "complexity_score": 179,
+    "complexity_score": 176,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 4,
-    "pseudocode_lines": 34,
+    "pseudocode_lines": 31,
     "suspect_count": 12,
     "suspect_types": [
       "call_esp_preserve",
       "negative_offset",
       "pointer_cast",
       "special_crt_function",
-      "stack_param"
+      "unaffected_reg"
     ],
-    "total_lines": 91
+    "total_lines": 88
   },
   "cross_references": [
     {
@@ -161,60 +161,60 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unaffected register variable",
+      "line": 10,
+      "match": "unaff_EBX",
+      "text": "char *unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
       "line": 12,
-      "match": "in_stack_00000018",
-      "text": "int in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_0000001c",
-      "text": "char *in_stack_0000001c;",
-      "type": "stack_param"
+      "match": "unaff_ESI",
+      "text": "int unaff_ESI;",
+      "type": "unaffected_reg"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 19,
+      "line": 17,
       "match": "piVar2[-2].",
-      "text": "psVar3 = (strstreambase *)&piVar2[-2].__error_state;",
+      "text": "this_ptr = (strstreambase *)&piVar2[-2].__error_state;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 24,
+      "line": 22,
       "match": "this_ptr_00[-1].",
-      "text": "psVar4 = &this_ptr_00[-1].__minbuf_size;",
+      "text": "psVar3 = &this_ptr_00[-1].__minbuf_size;",
       "type": "negative_offset"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_00000018",
-      "text": "(this_ptr_00,pstart,in_stack_00000018,in_stack_0000001c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_0000001c",
-      "text": "(this_ptr_00,pstart,in_stack_00000018,in_stack_0000001c);",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 28,
+      "line": 25,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)psVar4 + *(int *)(*(int *)psVar4 + 4) + -4) = *(int *)(*(int *)psVar4 + 4);",
+      "text": "*(int *)((int)psVar3 + *(int *)(*(int *)psVar3 + 4) + -4) = *(int *)(*(int *)psVar3 + 4);",
       "type": "pointer_cast"
     },
     {
+      "description": "Unaffected register variable",
+      "line": 31,
+      "match": "unaff_ESI",
+      "text": "((streambuf *)((int)psVar3 + *(int *)(*(int *)psVar3 + 4)),(char *)this_ptr_00,unaff_ESI",
+      "type": "unaffected_reg"
+    },
+    {
       "description": "Complex pointer cast",
-      "line": 34,
+      "line": 31,
       "match": "(streambuf *)((int)",
-      "text": "((streambuf *)((int)psVar4 + *(int *)(*(int *)psVar4 + 4)),(char *)this_ptr_00,",
+      "text": "((streambuf *)((int)psVar3 + *(int *)(*(int *)psVar3 + 4)),(char *)this_ptr_00,unaff_ESI",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 32,
+      "match": "unaff_EBX",
+      "text": ",unaff_EBX);",
+      "type": "unaffected_reg"
     },
     {
       "add_esp_value": 4,

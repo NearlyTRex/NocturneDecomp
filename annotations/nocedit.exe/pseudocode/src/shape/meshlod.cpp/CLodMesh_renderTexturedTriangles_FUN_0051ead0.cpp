@@ -14,81 +14,78 @@ shape_meshlod_cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0
   char cVar1;
   int iVar2;
   char *pcVar3;
-  int atlas_texture_index;
-  int *extraout_ECX;
-  BADSPACEBASE *in_ESP;
-  int *piVar4;
-  int *piVar5;
+  float atlas_texture_index;
+  float *extraout_ECX;
+  int unaff_EBX;
+  float *pfVar4;
+  float *pfVar5;
   char *pcVar6;
   float10 fVar7;
   float10 fVar8;
   double dVar9;
+  int unaff_retaddr;
   SMRGLTextureBasic *texture;
-  SMRGLHeaderPrimitive local_74;
-  int aiStack_5c [11];
+  int local_64;
+  float afStack_60 [12];
   float local_30;
-  float local_2c;
-  int local_28;
-  int local_24;
+  float local_2c [2];
+  uint local_24;
   int local_20;
-  uint local_1c;
-  int *local_18;
-  int *local_14;
+  int local_1c;
+  float *local_18;
+  float *local_14;
   
-  local_74.surface_normal.C = 0;
-  local_74.surface_normal.B = 0;
-  local_74.surface_normal.A = 0;
-  local_74.base.count = 0;
-  local_74.base.type = 3;
-  local_24 = -1;
+  local_64 = 0;
+  local_24 = 0xffffffff;
   local_1c = 0;
   if (0 < this_ptr->tri_count) {
     local_20 = 0;
     do {
-      local_18 = (int *)((int)this_ptr->tri_data->attribute_indices + local_20);
-      if (local_18[0x10] == 0) {
+      local_18 = (float *)((int)this_ptr->tri_data->attribute_indices + local_20);
+      if (local_18[0x10] == 0.0) {
         atlas_texture_index = *local_18;
-        if ((-1 < atlas_texture_index) && (enable_texture_lookup != 0)) {
+        if ((-1 < (int)atlas_texture_index) && (enable_texture_lookup != 0)) {
           atlas_texture_index =
-               shape_design_c_findTextureByFilename_FUN_0046dfc0
-                         (this_ptr->submesh_data[atlas_texture_index].texture_filename);
+               (float)shape_design_c_findTextureByFilename_FUN_0046dfc0
+                                (this_ptr->submesh_data[(int)atlas_texture_index].texture_filename);
         }
         local_14 = local_18 + 3;
         iVar2 = 0;
-        piVar4 = local_18;
-        piVar5 = local_18;
+        pfVar4 = local_18;
+        pfVar5 = local_18;
         do {
-          *(int *)((int)aiStack_5c + iVar2 + -4) = piVar4[4];
-          local_30 = (float)piVar5[7];
-          local_2c = (float)piVar5[8];
-          if ((-1 < atlas_texture_index) && (enable_texture_lookup != 0)) {
-            shape_design_c_fixupCramUV_FUN_0046e090(atlas_texture_index,&local_30,&local_2c);
+          *(float *)((int)afStack_60 + iVar2) = pfVar4[4];
+          local_30 = pfVar5[7];
+          local_2c[0] = pfVar5[8];
+          if ((-1 < (int)atlas_texture_index) && (enable_texture_lookup != 0)) {
+            shape_design_c_fixupCramUV_FUN_0046e090((int)atlas_texture_index,&local_30,local_2c);
           }
-          fVar8 = (float10)local_2c * (float10)65535f;
-          piVar5 = piVar5 + 2;
+          fVar8 = (float10)local_2c[0] * (float10)65535f;
+          pfVar5 = pfVar5 + 2;
           dVar9 = crt_math_c_round_FUN_005fe6b0
                             ((double)((float10)local_30 * (float10)65535f));
           fVar7 = (float10)dVar9;
           dVar9 = crt_math_c_round_FUN_005fe6b0((double)fVar8);
-          local_28 = (int)ROUND(dVar9);
-          *(int *)((int)aiStack_5c + iVar2) = (int)ROUND(fVar7);
-          piVar4 = piVar4 + 1;
-          *(int *)((int)aiStack_5c + iVar2 + 4) = local_28;
+          local_30 = (float)(int)ROUND(dVar9);
+          *(int *)((int)afStack_60 + iVar2 + -4) = (int)ROUND(fVar7);
+          pfVar4 = pfVar4 + 1;
+          *(float *)((int)afStack_60 + iVar2) = local_30;
           iVar2 = iVar2 + 0xc;
-        } while (piVar4 != extraout_ECX);
-        if (atlas_texture_index < 0) {
+        } while (pfVar4 != extraout_ECX);
+        if ((int)atlas_texture_index < 0) {
           engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0048c960
-                    (g_CDemonRendererPtr,-((local_1c & 0x7f) + 0x80));
+                    (g_CDemonRendererPtr,-((local_24 & 0x7f) + 0x80));
           engine_drender_cpp_CDemonRenderer_renderBasicTexturedVariant_FUN_0048a8a0
-                    (g_CDemonRendererPtr,&local_74);
+                    (g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)&stack0xffffff80);
         }
         else {
-          if (atlas_texture_index != local_24) {
-            if (enable_texture_lookup == 0) {
-              texture = (SMRGLTextureBasic *)(this_ptr->submesh_data + atlas_texture_index);
+          if (atlas_texture_index != local_2c[0]) {
+            if (unaff_retaddr == 0) {
+              texture = (SMRGLTextureBasic *)
+                        ((int)atlas_texture_index * 0x48 + *(int *)(unaff_EBX + 0x14));
             }
             else {
-              iVar2 = shape_design_c_getAtlasMapIndex_FUN_0046e030(atlas_texture_index);
+              iVar2 = shape_design_c_getAtlasMapIndex_FUN_0046e030((int)atlas_texture_index);
               pcVar3 = shape_design_c_getTextureName_FUN_0046e060(iVar2);
               pcVar6 = g_TempTextureDescriptor.texture_name;
               do {
@@ -103,15 +100,15 @@ shape_meshlod_cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0
               texture = &g_TempTextureDescriptor;
             }
             engine_texture_cpp_ensureTextureLoaded_FUN_005dd800(texture);
-            local_20 = atlas_texture_index;
+            local_2c[0] = atlas_texture_index;
           }
           engine_drender_cpp_CDemonRenderer_renderPremium_FUN_0048b1e0
-                    (g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)&stack0xffffff88);
+                    (g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)&stack0xffffff80);
         }
       }
       local_1c = local_1c + 1;
       local_20 = local_20 + 0x8c;
-    } while ((int)local_1c < this_ptr->tri_count);
+    } while (local_1c < this_ptr->tri_count);
   }
   return;
 }

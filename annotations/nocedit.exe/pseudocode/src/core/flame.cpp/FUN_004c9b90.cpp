@@ -16,7 +16,6 @@ void core_flame_cpp_FUN_004c9b90(void)
   SMRGLTextureBasic *pSVar2;
   int iVar3;
   CDemonActor *in_stack_00000004;
-  int in_stack_0000000c;
   
   iVar3 = 0;
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(in_stack_00000004);
@@ -31,6 +30,6 @@ void core_flame_cpp_FUN_004c9b90(void)
     pSVar2 = pSVar2 + 8;
   } while (iVar3 < 5);
   uVar1 = crt_stdlib_c_rand_FUN_005feb5c();
-  *(uint *)(in_stack_0000000c + 0x294) = uVar1 & 1;
+  in_stack_00000004[1].previous_transform_state.orientation.z = (float)(uVar1 & 1);
   return;
 }

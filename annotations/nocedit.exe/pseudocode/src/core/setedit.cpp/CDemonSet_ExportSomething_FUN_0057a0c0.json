@@ -1,22 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 158,
-    "complexity_score": 335,
+    "complexity_score": 254,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 18,
-    "pseudocode_lines": 50,
-    "suspect_count": 25,
+    "pseudocode_lines": 49,
+    "suspect_count": 19,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
-      "format_string_mismatch",
       "lea_esp_stack_addr",
-      "register_param",
-      "stack_ref",
       "variadic_preserve"
     ],
-    "total_lines": 208
+    "total_lines": 207
   },
   "cross_references": [
     {
@@ -271,36 +267,8 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 8,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 8,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 16,
-      "match": "&stack0xfffffdf0",
-      "text": "(&stack0xfffffdf0,(char *)0x0,(char *)0x0,acStack_10c,\"lc\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 19,
-      "match": "&stack0xfffffdf8",
-      "text": "file = engine_dosio_c_getFile_FUN_00481a50(\"models\",&stack0xfffffdf8,\"wt\");",
-      "type": "stack_ref"
-    },
-    {
       "call_address": "0057a14a",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -314,7 +282,7 @@
     },
     {
       "call_address": "0057a158",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -328,7 +296,7 @@
     },
     {
       "call_address": "0057a166",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -342,7 +310,7 @@
     },
     {
       "call_address": "0057a17f",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -356,7 +324,7 @@
     },
     {
       "call_address": "0057a18f",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "unknown",
       "esp_certainty_at_call": "known",
@@ -370,7 +338,7 @@
     },
     {
       "call_address": "0057a1d8",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "unknown",
       "esp_certainty_at_call": "known",
@@ -384,7 +352,7 @@
     },
     {
       "call_address": "0057a263",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -395,28 +363,6 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0057a263 (no EBP frame)",
       "type": "variadic_preserve"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Can't create models\\\\%s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Can't create models\\\\%s",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 23,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Can't create models\\\\%s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d,%d\\n\" has 2 specifiers but 0 arguments after it",
-      "expected_args": 2,
-      "format_string": "%d,%d\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 28,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d,%d\\n\");",
-      "text": "Format string expects 2 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 20,

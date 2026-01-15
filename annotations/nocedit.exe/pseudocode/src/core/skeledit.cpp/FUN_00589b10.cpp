@@ -6,22 +6,23 @@
 
 #include "nocturne.h"
 
-void core_skeledit_cpp_FUN_00589b10(void)
+void core_skeledit_cpp_FUN_00589b10
+               (uint param_1,uint param_2,uint unaff_EBX,uint param_4,
+               int param_5)
 
 {
   int iVar1;
   int iVar2;
   int iVar3;
-  int in_stack_00000014;
   
   crt_stack_c_stack_probe_FUN_005ff9f3(0x10);
   sound_sndmain_cpp_enableSoundSystem_FUN_005aaef0();
   sound_sndmain_cpp_startSfx_FUN_005a8e90("dixie.wav");
-  if (in_stack_00000014 == 0) {
+  if (param_5 == 0) {
     shape_edittool_cpp_CEditorTools_createCenteredDialog_FUN_0049e940(g_CEditorToolsPtr,(char *)0x0)
     ;
     shape_edittool_cpp_CEditorTools_drawWindowStatusMessage_FUN_0049e870
-              (g_CEditorToolsPtr,"LOD generation complete!");
+              (g_CEditorToolsPtr,"LOD generation complete!",unaff_EBX);
     iVar1 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
     iVar3 = 0;
     do {

@@ -12,7 +12,6 @@ core_actor_cpp_serializeLocalizedString_FUN_0040b6e0(char **string_buffer,char *
 {
   char cVar1;
   int iVar2;
-  BADSPACEBASE *in_ESP;
   char *pcVar3;
   char *pcVar4;
   char *pcVar5;

@@ -10,10 +10,9 @@ int __cdecl sound_sndmain_cpp_isSampleLoaded_FUN_005aa3c0(char *sample_name)
 
 {
   CSfxSample *pCVar1;
-  char *in_stack_00000008;
   
   sound_sndmain_cpp_lockSound_FUN_005abd30();
-  pCVar1 = sound_sndmain_cpp_getSfxSample_FUN_005a4c80(in_stack_00000008);
+  pCVar1 = sound_sndmain_cpp_getSfxSample_FUN_005a4c80(sample_name);
   sound_sndmain_cpp_unlockSound_FUN_005abdc0();
   return (uint)(pCVar1 != (CSfxSample *)0x0);
 }

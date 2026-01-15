@@ -17,65 +17,51 @@ shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_004a3360
   tm *time_ptr;
   int iVar3;
   uint uVar4;
-  BADSPACEBASE *in_ESP;
   int iVar5;
-  uint *puVar6;
-  byte bVar7;
-  char *in_stack_00000014;
-  char *in_stack_00000018;
-  CStrList *in_stack_00000024;
-  char *in_stack_fffff4e4;
-  CStrList *pCVar8;
-  char *pcVar9;
-  char acStack_90c [8];
-  uint local_904 [129];
-  uint auStack_700 [2];
-  char acStack_6f8 [240];
-  char acStack_608 [4];
-  char acStack_604 [272];
-  char acStack_4f4 [4];
-  char acStack_4f0 [260];
-  char acStack_3ec [4];
-  char cStack_3e8;
-  byte auStack_3e7 [251];
-  char acStack_2ec [248];
-  char acStack_1f4 [4];
-  char acStack_1f0 [268];
-  char acStack_e4 [4];
-  char acStack_e0 [4];
-  char acStack_dc [172];
-  char acStack_30 [28];
+  char *pcVar6;
+  char *pcVar7;
+  byte bVar8;
+  char *format;
+  char local_b04 [512];
+  char local_904 [512];
+  char local_704 [260];
+  char local_600 [260];
+  char local_4fc [256];
+  char local_3fc;
+  byte local_3fb [255];
+  char local_2fc [256];
+  char local_1fc [256];
+  char local_fc [200];
+  char local_34 [32];
   int local_14;
   
-  bVar7 = 0;
+  bVar8 = 0;
   iVar5 = this_ptr->item_count + -1;
   local_14 = 0;
   if (-1 < iVar5) {
     do {
       index = (local_14 + iVar5) / 2;
-      pcVar2 = g_Field1ParseBuffer;
-      puVar6 = local_904;
+      pcVar7 = g_Field1ParseBuffer;
+      pcVar6 = local_904;
       for (iVar3 = 0x80; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *puVar6 = *(uint *)pcVar2;
-        pcVar2 = pcVar2 + ((uint)bVar7 * -2 + 1) * 4;
-        puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
+        *(uint *)pcVar6 = *(uint *)pcVar7;
+        pcVar7 = pcVar7 + ((uint)bVar8 * -2 + 1) * 4;
+        pcVar6 = pcVar6 + ((uint)bVar8 * -2 + 1) * 4;
       }
-      pcVar9 = "%[^\t]\t%[^\t]";
-      pcVar2 = g_Field2ParseBuffer;
-      puVar6 = (uint *)&stack0xfffff4fc;
+      pcVar7 = local_904;
+      format = "%[^\t]\t%[^\t]";
+      pcVar6 = g_Field2ParseBuffer;
+      pcVar2 = local_b04;
       for (iVar3 = 0x80; iVar3 != 0; iVar3 = iVar3 + -1) {
-        *puVar6 = *(uint *)pcVar2;
-        pcVar2 = pcVar2 + ((uint)bVar7 * -2 + 1) * 4;
-        puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
+        *(uint *)pcVar2 = *(uint *)pcVar6;
+        pcVar6 = pcVar6 + ((uint)bVar8 * -2 + 1) * 4;
+        pcVar2 = (char *)((int)pcVar2 + ((uint)bVar8 * -2 + 1) * 4);
       }
-      pCVar8 = this_ptr;
-      iVar3 = index;
+      pcVar6 = local_b04;
       pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(this_ptr,index);
-      crt_stdio_c_sscanf_FUN_0060013c(pcVar2,in_stack_fffff4e4,pCVar8,iVar3,pcVar9);
-      in_stack_fffff4e4 = (char *)0x0;
-      engine_dosio_c_makePath_FUN_00481f50
-                (acStack_608,(char *)0x0,(char *)0x0,acStack_90c,&stack0xfffff4f4);
-      iVar3 = crt_string_c_stricmp_FUN_005fe7f0((char *)this_ptr,acStack_604);
+      crt_stdio_c_sscanf_FUN_0060013c(pcVar2,format,pcVar7,pcVar6);
+      engine_dosio_c_makePath_FUN_00481f50(local_600,(char *)0x0,(char *)0x0,local_904,local_b04);
+      iVar3 = crt_string_c_stricmp_FUN_005fe7f0(search_key,local_600);
       if (iVar3 == 0) {
         return;
       }
@@ -88,35 +74,33 @@ shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_004a3360
     } while (local_14 <= iVar5);
   }
   time_ptr = crt_time_c_localtime_FUN_00600288((time_t *)&stack0x00000014);
-  crt_time_c_strftime_FUN_006002d4(acStack_30,0x1e,"%m/%d/%y %I:%M:%S %p",time_ptr);
-  pcVar2 = g_FilePathBuffer;
-  puVar6 = auStack_700;
+  crt_time_c_strftime_FUN_006002d4(local_34,0x1e,"%m/%d/%y %I:%M:%S %p",time_ptr);
+  pcVar7 = g_FilePathBuffer;
+  pcVar6 = local_704;
   for (iVar5 = 0x41; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *puVar6 = *(uint *)pcVar2;
-    pcVar2 = pcVar2 + ((uint)bVar7 * -2 + 1) * 4;
-    puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
+    *(uint *)pcVar6 = *(uint *)pcVar7;
+    pcVar7 = pcVar7 + ((uint)bVar8 * -2 + 1) * 4;
+    pcVar6 = pcVar6 + ((uint)bVar8 * -2 + 1) * 4;
   }
-  if (in_stack_00000014 != (char *)0x0) {
-    engine_dosio_c_splitPath_FUN_00481f20
-              (in_stack_00000014,(char *)0x0,(char *)0x0,acStack_1f4,acStack_4f4);
-    engine_dosio_c_makePath_FUN_00481f50
-              (acStack_6f8,(char *)0x0,(char *)0x0,acStack_1f0,acStack_4f0);
+  if (file_path != (char *)0x0) {
+    engine_dosio_c_splitPath_FUN_00481f20(file_path,(char *)0x0,(char *)0x0,local_1fc,local_4fc);
+    engine_dosio_c_makePath_FUN_00481f50(local_704,(char *)0x0,(char *)0x0,local_1fc,local_4fc);
   }
-  engine_dosio_c_splitPath_FUN_00481f20
-            (in_stack_00000018,(char *)0x0,(char *)0x0,acStack_2ec,acStack_3ec);
-  if (cStack_3e8 == '.') {
+  engine_dosio_c_splitPath_FUN_00481f20(search_key,(char *)0x0,(char *)0x0,local_2fc,&local_3fc);
+  if (local_3fc == '.') {
     uVar4 = 0xffffffff;
-    pcVar2 = &cStack_3e8;
+    pcVar7 = &local_3fc;
     do {
       if (uVar4 == 0) break;
       uVar4 = uVar4 - 1;
-      cVar1 = *pcVar2;
-      pcVar2 = pcVar2 + (uint)bVar7 * -2 + 1;
+      cVar1 = *pcVar7;
+      pcVar7 = pcVar7 + (uint)bVar8 * -2 + 1;
     } while (cVar1 != '\0');
-    crt_string_c_memmove_FUN_005fe5e0(&cStack_3e8,auStack_3e7,~uVar4 - 1);
+    crt_string_c_memmove_FUN_005fe5e0(&local_3fc,local_3fb,~uVar4 - 1);
   }
-  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_e4,"%s\t%s\t%d\t%s\t%s");
-  crt_string_c_strupr_FUN_00600770(acStack_e0);
-  (*in_stack_00000024->vtable->insert)(in_stack_00000024,(int)file_path,acStack_dc);
+  crt_stdio_c_sprintf_FUN_005fdbd0
+            (local_fc,"%s\t%s\t%d\t%s\t%s",local_2fc,&local_3fc,file_size,local_34,local_704);
+  crt_string_c_strupr_FUN_00600770(local_fc);
+  (*this_ptr->vtable->insert)(this_ptr,local_14,local_fc);
   return;
 }

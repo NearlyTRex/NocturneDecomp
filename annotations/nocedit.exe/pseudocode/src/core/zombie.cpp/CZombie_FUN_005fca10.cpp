@@ -15,21 +15,23 @@ void core_zombie_cpp_CZombie_FUN_005fca10(void)
   int iVar1;
   CMotionController *this_ptr_00;
   int in_stack_00000004;
-  int in_stack_0000000c;
+  int force_immediate;
   
   this_ptr_00 = (CMotionController *)(in_stack_00000004 + 0x158);
   this_ptr = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0(this_ptr_00);
   iVar1 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(this_ptr);
   if (iVar1 == 0x16) {
-    if (*(int *)(in_stack_0000000c + 0xbf44) == 0) {
+    if (*(int *)(in_stack_00000004 + 0xbf44) == 0) {
+      force_immediate = 1;
       iVar1 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,2);
       iVar1 = iVar1 + 0x15;
     }
     else {
-      iVar1 = 1;
+      force_immediate = 1;
+      iVar1 = 0x16;
     }
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              (this_ptr_00,iVar1,in_stack_00000004);
+              (this_ptr_00,iVar1,force_immediate);
     return;
   }
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(this_ptr_00,1,1);

@@ -21,7 +21,6 @@ uint core_stranger_cpp_CStranger_FUN_005c1680(void)
   int iVar5;
   uint *puVar6;
   CVector3f *pCVar7;
-  BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000004;
   char *in_stack_00000008;
   char *format;

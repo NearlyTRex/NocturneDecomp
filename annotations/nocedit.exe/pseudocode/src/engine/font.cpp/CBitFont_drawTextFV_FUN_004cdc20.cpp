@@ -13,7 +13,6 @@ engine_font_cpp_CBitFont_drawTextFV_FUN_004cdc20
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   byte *local_14;
   
   local_14 = &stack0x0000001c;

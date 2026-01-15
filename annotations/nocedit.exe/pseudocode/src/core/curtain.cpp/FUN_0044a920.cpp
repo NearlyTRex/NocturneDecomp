@@ -17,7 +17,6 @@ void core_curtain_cpp_FUN_0044a920(void)
   int iVar3;
   int iVar4;
   float *pfVar5;
-  BADSPACEBASE *in_ESP;
   int iVar6;
   SCollisionInfo *pSVar7;
   int in_stack_00000004;

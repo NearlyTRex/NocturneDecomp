@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 142,
-    "complexity_score": 130,
+    "complexity_score": 86,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 2,
-    "pseudocode_lines": 45,
-    "suspect_count": 7,
+    "pseudocode_lines": 46,
+    "suspect_count": 3,
     "suspect_types": [
       "call_esp_preserve",
-      "special_crt_function",
-      "unaffected_reg"
+      "special_crt_function"
     ],
-    "total_lines": 187
+    "total_lines": 188
   },
   "cross_references": [
     {
@@ -137,34 +136,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 11,
-      "match": "unaff_EDI",
-      "text": "short *unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 38,
-      "match": "unaff_EDI",
-      "text": "unaff_EDI = &g_DaysInMonth_Leap;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 41,
-      "match": "unaff_EDI",
-      "text": "if ((uint)(*(int *)(unaff_EDI + uVar2) >> 0x10) <= uVar4) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 45,
-      "match": "unaff_EDI",
-      "text": "param_4[3] = (uVar4 - (int)unaff_EDI[uVar2]) + 1;",
-      "type": "unaffected_reg"
-    },
     {
       "add_esp_value": 4,
       "call_address": "00607748",

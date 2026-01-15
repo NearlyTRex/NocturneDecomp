@@ -12,35 +12,38 @@ sound_sndmain_cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0
 
 {
   int iVar1;
+  double input_value;
   double dVar2;
-  double dVar3;
   CSfxSample *in_stack_00000004;
+  CSfxSample *this_ptr_00;
   uint in_stack_ffffffe0;
-  uint in_stack_ffffffe4;
   
-  dVar2 = sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580
-                    (this_ptr,position,2,in_stack_ffffffe0);
-  position._4_4_ = (uint)((ulonglong)dVar2 >> 0x20);
-  iVar1 = sound_sndmain_cpp_CSfxSample_getLoopMode_FUN_005a87d0(in_stack_00000004);
+  this_ptr_00 = in_stack_00000004;
+  input_value = sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580
+                          (this_ptr,position,2,in_stack_ffffffe0);
+  this_ptr = SUB84 /* extract 2-byte value */(input_value,0);
+  position._0_4_ = (CSfxSample *)((ulonglong)input_value >> 0x20);
+  iVar1 = sound_sndmain_cpp_CSfxSample_getLoopMode_FUN_005a87d0(this_ptr_00);
+  dVar2 = (double)CONCAT44 /* combine 2-byte values */(this_ptr,in_stack_00000004);
   if (iVar1 == 0) {
-    if ((double)CONCAT44 /* combine 2-byte values */(input_type,position._4_4_) < 0.0) {
-      dVar2 = (double)((ulonglong)dVar2 & 0xffffffff);
-      input_type = 0;
+    if (input_value < 0.0) {
+      dVar2 = (double)ZEXT48(in_stack_00000004);
+      position._0_4_ = (CSfxSample *)0x0;
     }
-    else if (1.0 < (double)CONCAT44 /* combine 2-byte values */(input_type,position._4_4_)) {
-      dVar2 = (double)((ulonglong)dVar2 & 0xffffffff);
-      input_type = 0x3ff00000;
+    else if (1.0 < input_value) {
+      dVar2 = (double)ZEXT48(in_stack_00000004);
+      position._0_4_ = (CSfxSample *)0x3ff00000;
     }
   }
   else {
-    in_stack_ffffffe4 = input_type;
-    dVar3 = crt_math_c_floor_FUN_005feb90((double)CONCAT44 /* combine 2-byte values */(input_type,position._4_4_));
-    dVar2 = dVar2 - dVar3;
+    this_ptr_00 = position._0_4_;
+    dVar2 = crt_math_c_floor_FUN_005feb90(input_value);
+    dVar2 = (double)CONCAT44 /* combine 2-byte values */(this_ptr,in_stack_00000004) - dVar2;
   }
-  position._4_4_ = (uint)((ulonglong)dVar2 >> 0x20);
-  position._0_4_ = SUB84 /* extract 2-byte value */(dVar2,0);
+  this_ptr = (CSampleInfo *)((ulonglong)dVar2 >> 0x20);
+  in_stack_00000004 = SUB84 /* extract 2-byte value */(dVar2,0);
   dVar2 = sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580
-                    (position._0_4_,(double)CONCAT44 /* combine 2-byte values */(2,position._4_4_),input_type,in_stack_ffffffe4)
-  ;
+                    (&in_stack_00000004->sample_info,(double)CONCAT44 /* combine 2-byte values */(2,this_ptr),
+                     (uint)position._0_4_,(uint)this_ptr_00);
   return dVar2;
 }

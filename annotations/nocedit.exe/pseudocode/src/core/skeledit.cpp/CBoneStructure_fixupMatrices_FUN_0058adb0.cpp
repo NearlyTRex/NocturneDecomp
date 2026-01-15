@@ -9,36 +9,37 @@
 void __cdecl core_skeledit_cpp_CBoneStructure_fixupMatrices_FUN_0058adb0(CBoneStructure *this_ptr)
 
 {
-  int iVar1;
+  int *piVar1;
+  int iVar2;
   float *matrix;
-  double dVar2;
-  int *in_stack_0000000c;
-  int iStack_1c;
-  uint uStack_c;
+  double dVar3;
+  int *in_stack_00000004;
+  int iStack_24;
   
   crt_stack_c_stack_probe_FUN_005ff9f3(0x30);
-  iVar1 = 0;
-  if (0 < *in_stack_0000000c) {
-    matrix = (float *)(in_stack_0000000c + 0x16);
+  piVar1 = in_stack_00000004;
+  iVar2 = 0;
+  if (0 < *in_stack_00000004) {
+    matrix = (float *)(in_stack_00000004 + 0x16);
     do {
-      dVar2 = core_xform_cpp_determinant_FUN_005f61c0((CMatrix3x4f *)matrix);
-      uStack_c = (uint)((ulonglong)dVar2 >> 0x20);
-      if (dVar2 < 0.0) {
+      dVar3 = core_xform_cpp_determinant_FUN_005f61c0((CMatrix3x4f *)matrix);
+      if (dVar3 < 0.0) {
         g_CurrentFilename = "..\\core\\skeledit.cpp";
         g_CurrentLineNumber = 0x3b2;
-        core_main_c_displayErrorAndQuit_FUN_00506f10("CBoneStructure::fixupMatrices - %s is mirrored.",uStack_c);
+        core_main_c_displayErrorAndQuit_FUN_00506f10
+                  ("CBoneStructure::fixupMatrices - %s is mirrored.",piVar1 + iVar2 * 0x21 + 1);
       }
-      iStack_1c = SUB84 /* extract 2-byte value */(dVar2,0);
-      if ((((ulonglong)dVar2 & 0x7fffffff00000000) == 0) && (iStack_1c == 0)) {
+      iStack_24 = SUB84 /* extract 2-byte value */(dVar3,0);
+      if ((((ulonglong)dVar3 & 0x7fffffff00000000) == 0) && (iStack_24 == 0)) {
         g_CurrentLineNumber = 0x3b6;
         g_CurrentFilename = "..\\core\\skeledit.cpp";
         core_main_c_displayErrorAndQuit_FUN_00506f10
-                  ("CBoneStructure::fixupMatrices - %s is singular.",in_stack_0000000c + iVar1 * 0x21 + 1);
+                  ("CBoneStructure::fixupMatrices - %s is singular.",piVar1 + iVar2 * 0x21 + 1);
       }
       core_xform_cpp_orthonormalizeMatrix3x3_FUN_005f6690((CMatrix3x3f *)matrix,0);
-      iVar1 = iVar1 + 1;
+      iVar2 = iVar2 + 1;
       matrix = matrix + 0x21;
-    } while (iVar1 < *in_stack_0000000c);
+    } while (iVar2 < *in_stack_00000004);
   }
   core_skeledit_cpp_FUN_0058ac80();
   return;

@@ -1,18 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 161,
-    "complexity_score": 277,
+    "complexity_score": 326,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 13,
-    "pseudocode_lines": 42,
-    "suspect_count": 22,
+    "pseudocode_lines": 41,
+    "suspect_count": 27,
     "suspect_types": [
       "call_esp_preserve",
       "format_string_mismatch",
       "variadic_preserve"
     ],
-    "total_lines": 203
+    "total_lines": 202
   },
   "cross_references": [
     {
@@ -396,13 +396,79 @@
       "type": "variadic_preserve"
     },
     {
+      "actual_args": 0,
+      "description": "Format \"%s{ // Inventory\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%s{ // Inventory\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 8,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%s{ // Inventory\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s// fileVersion\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%s// fileVersion\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 11,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%s// fileVersion\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
       "actual_args": 1,
       "description": "Format \"%s%d\\n\" has 2 specifiers but 1 arguments after it",
       "expected_args": 2,
       "format_string": "%s%d\\n",
       "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 27,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%s%d\\n\",file_handle);",
+      "line_number": 12,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%s%d\\n\",g_PropertyNamePrefix);",
+      "text": "Format string expects 2 args but got 1",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s// itemCount\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%s// itemCount\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 13,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%s// itemCount\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 1,
+      "description": "Format \"%s%d\\n\" has 2 specifiers but 1 arguments after it",
+      "expected_args": 2,
+      "format_string": "%s%d\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 14,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%s%d\\n\",g_PropertyNamePrefix);",
+      "text": "Format string expects 2 args but got 1",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s// currentWeapon\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%s// currentWeapon\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 24,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%s// currentWeapon\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 1,
+      "description": "Format \"%s%d\\n\" has 2 specifiers but 1 arguments after it",
+      "expected_args": 2,
+      "format_string": "%s%d\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 25,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%s%d\\n\",g_PropertyNamePrefix);",
       "text": "Format string expects 2 args but got 1",
       "type": "format_string_mismatch"
     },
@@ -412,20 +478,9 @@
       "expected_args": 1,
       "format_string": "%s// battery strength\\n",
       "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 28,
+      "line_number": 26,
       "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%s// battery strength\\n\");",
       "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s%f\\n\" has 2 specifiers but 0 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s%f\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 29,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%s%f\\n\");",
-      "text": "Format string expects 2 args but got 0",
       "type": "format_string_mismatch"
     },
     {
@@ -434,7 +489,7 @@
       "expected_args": 1,
       "format_string": "%s// actor name list\\n",
       "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 30,
+      "line_number": 29,
       "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%s// actor name list\\n\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
@@ -445,7 +500,7 @@
       "expected_args": 1,
       "format_string": "%s// actor data list\\n",
       "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 33,
+      "line_number": 32,
       "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%s// actor data list\\n\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
@@ -456,7 +511,7 @@
       "expected_args": 1,
       "format_string": "%s} // End inventory\\n",
       "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 43,
+      "line_number": 42,
       "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%s} // End inventory\\n\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"

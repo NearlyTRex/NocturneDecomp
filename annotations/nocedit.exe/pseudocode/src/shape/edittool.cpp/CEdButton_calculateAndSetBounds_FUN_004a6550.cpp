@@ -12,14 +12,14 @@ shape_edittool_cpp_CEdButton_calculateAndSetBounds_FUN_004a6550
 
 {
   int iVar1;
-  char *unaff_EBX;
-  int unaff_EDI;
-  int in_stack_00000014;
+  int iVar2;
+  char *button_text_00;
   
-  shape_edittool_cpp_calculateButtonHeight_FUN_004a6970(button_text);
-  iVar1 = shape_edittool_cpp_calculateButtonWidth_FUN_004a68e0(button_text);
+  button_text_00 = button_text;
+  iVar1 = shape_edittool_cpp_calculateButtonHeight_FUN_004a6970(button_text);
+  iVar1 = iVar1 + y_pos + -1;
+  iVar2 = shape_edittool_cpp_calculateButtonWidth_FUN_004a68e0(button_text);
   shape_edittool_cpp_CEdButton_setBoundsAndText_FUN_004a6590
-            ((CEdButton *)y_pos,(int)button_text,in_stack_00000014,(int)(button_text + iVar1 + -1),
-             unaff_EDI,unaff_EBX);
+            (this_ptr,x_pos,y_pos,iVar2 + x_pos + -1,iVar1,button_text_00);
   return;
 }

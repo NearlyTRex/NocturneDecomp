@@ -12,7 +12,6 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042c180(CCharacter *this_ptr)
   float fVar1;
   int iVar2;
   CVector3f *pCVar3;
-  BADSPACEBASE *in_ESP;
   float10 fVar4;
   float10 fVar5;
   float10 fVar6;

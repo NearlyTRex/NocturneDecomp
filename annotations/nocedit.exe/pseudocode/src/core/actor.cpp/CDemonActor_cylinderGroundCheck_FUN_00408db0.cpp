@@ -12,19 +12,19 @@ core_actor_cpp_CDemonActor_cylinderGroundCheck_FUN_00408db0
 
 {
   CDemonSet *pCVar1;
-  CDemonActor *pCVar2;
-  float in_stack_00000018;
+  float fVar2;
+  CDemonActor *pCVar3;
   
   core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
             (this_ptr,"..\\core\\actor.cpp",0x2b6);
   core_setcolid_cpp_CDemonSet_pushRaytraceState_FUN_00573e10(g_CDemonSetPtr);
   core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,this_ptr);
   core_setcolid_cpp_CDemonSet_FUN_00574220(g_CDemonSetPtr);
-  core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
-            (g_CDemonSetPtr,&(this_ptr->location).position,in_stack_00000018);
-  pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790
+  fVar2 = core_setcolid_cpp_CDemonSet_processCollisionTypes_FUN_005716b0
+                    (g_CDemonSetPtr,&(this_ptr->location).position,radius);
+  pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790
                      (g_CDemonSetPtr->collision_actor,g_CPlatformClassInfo.name_hash);
-  this_ptr->field11_0xdc = (int)pCVar2;
+  this_ptr->field11_0xdc = (int)pCVar3;
   pCVar1 = g_CDemonSetPtr;
   if (out_normal != (CVector3f *)0x0) {
     if (out_normal != &g_CDemonSetPtr->collision_normal) {
@@ -34,5 +34,5 @@ core_actor_cpp_CDemonActor_cylinderGroundCheck_FUN_00408db0
     }
   }
   core_setcolid_cpp_CDemonSet_popRaytraceState_FUN_00573fc0(g_CDemonSetPtr);
-  return (float)this_ptr;
+  return fVar2;
 }

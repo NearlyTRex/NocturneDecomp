@@ -13,11 +13,10 @@ void __cdecl shape_edittool_cpp_CEdCheck_render_FUN_004a6c00(CEdCheck *this_ptr)
   int iVar2;
   int iVar3;
   int iVar4;
-  char *unaff_EBX;
   int left;
-  int in_stack_00000008;
   int iVar5;
-  int color_mode;
+  int color_value;
+  int local_14;
   
   iVar2 = this_ptr->y_position;
   iVar5 = this_ptr->right_boundary;
@@ -26,18 +25,19 @@ void __cdecl shape_edittool_cpp_CEdCheck_render_FUN_004a6c00(CEdCheck *this_ptr)
   iVar1 = ((iVar2 + iVar5) - iVar1) / 2;
   iVar2 = shape_edittool_cpp_CEdCheck_calculateScaledWidth_FUN_004a6b70(this_ptr);
   iVar2 = iVar2 + left;
-  iVar3 = shape_edittool_cpp_CEdCheck_calculateBaseWidth_FUN_004a6bb0(this_ptr);
-  iVar3 = iVar1 + iVar3;
-  engine_font_cpp_CBitFont_getCharWidth_FUN_004cff40(g_EditorFont,this_ptr->checkbox_text);
-  color_mode = -1;
+  local_14 = shape_edittool_cpp_CEdCheck_calculateBaseWidth_FUN_004a6bb0(this_ptr);
+  local_14 = iVar1 + local_14;
+  iVar3 = engine_font_cpp_CBitFont_getCharWidth_FUN_004cff40(g_EditorFont,this_ptr->checkbox_text);
+  color_value = -1;
   iVar5 = this_ptr->coord_unk;
+  iVar3 = ((this_ptr->y_position + this_ptr->right_boundary) - iVar3) / 2;
   iVar4 = shape_edittool_cpp_CEdCheck_calculateSpacing_FUN_004a6be0(this_ptr);
   engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
-            (g_EditorFont,unaff_EBX,iVar4 + iVar2,iVar5,color_mode,iVar3);
+            (g_EditorFont,this_ptr->checkbox_text,iVar4 + iVar2,iVar3,iVar5,color_value);
   shape_edittool_cpp_draw3DBorder_FUN_004a58f0
-            (left,iVar1,iVar2,(int)this_ptr,this_ptr->border_style_flag);
+            (left,iVar1,iVar2,local_14,this_ptr->border_style_flag);
   if (this_ptr->border_style_flag == 0) {
-    in_stack_00000008 = in_stack_00000008 + -1;
+    local_14 = local_14 + -1;
     iVar2 = iVar2 + -1;
     if (this_ptr->checked_state != 1) {
       return;
@@ -52,10 +52,8 @@ void __cdecl shape_edittool_cpp_CEdCheck_render_FUN_004a6c00(CEdCheck *this_ptr)
   }
   g_ActiveRenderColor = 0;
   engine_2d_c_clipLineGlobal_FUN_00402c50
-            ((int *)(left + 1),(int *)(iVar1 + 1),(int *)(iVar2 + -2),
-             (int *)(in_stack_00000008 + -2));
+            ((int *)(left + 1),(int *)(iVar1 + 1),(int *)(iVar2 + -2),(int *)(local_14 + -2));
   engine_2d_c_clipLineGlobal_FUN_00402c50
-            ((int *)(iVar2 + -2),(int *)(iVar1 + 1),(int *)(left + 1),
-             (int *)(in_stack_00000008 + -2));
+            ((int *)(iVar2 + -2),(int *)(iVar1 + 1),(int *)(left + 1),(int *)(local_14 + -2));
   return;
 }

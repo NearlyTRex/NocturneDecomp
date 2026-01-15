@@ -15,7 +15,6 @@ void __cdecl core_fire_cpp_CGunFlame_render_FUN_004c50b0(CGunFlame *this_ptr)
   int extraout_EAX;
   int extraout_EAX_00;
   CDemonRenderer *this_ptr_00;
-  BADSPACEBASE *in_ESP;
   float10 fVar4;
   float10 fVar5;
   float10 fVar6;

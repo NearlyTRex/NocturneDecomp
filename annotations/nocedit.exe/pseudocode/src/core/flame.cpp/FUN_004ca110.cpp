@@ -19,7 +19,6 @@ float core_flame_cpp_FUN_004ca110(void)
   CBoundingBox3D *this_ptr_00;
   float fVar4;
   SProjectedVertex *point;
-  BADSPACEBASE *in_ESP;
   int unaff_EBP;
   CVector3i *unaff_ESI;
   byte bVar5;

@@ -12,6 +12,7 @@ int __cdecl shape_cramtex_cpp_findLowestOverlappingY_FUN_00447930(SCramWorkingEn
   SCramWorkingEntry *pSVar1;
   int iVar2;
   int iVar3;
+  int in_stack_00000004;
   
   crt_stack_c_stack_probe_FUN_005ff9f3(0x14);
   iVar2 = 0;
@@ -19,10 +20,10 @@ int __cdecl shape_cramtex_cpp_findLowestOverlappingY_FUN_00447930(SCramWorkingEn
   if (0 < (int)g_CramTextureCount) {
     pSVar1 = g_CramSortedTextureEntries;
     do {
-      if ((((bounds_entry->assigned_map_number == pSVar1->assigned_map_number) &&
-           (pSVar1->final_top < iVar3)) && (bounds_entry->final_bottom <= pSVar1->final_top)) &&
-         ((pSVar1->final_left < bounds_entry->final_right &&
-          (bounds_entry->final_left < pSVar1->final_right)))) {
+      if ((((*(int *)(in_stack_00000004 + 0x10) == pSVar1->assigned_map_number) &&
+           (pSVar1->final_top < iVar3)) && (*(int *)(in_stack_00000004 + 0x3c) <= pSVar1->final_top)
+          ) && ((pSVar1->final_left < *(int *)(in_stack_00000004 + 0x38) &&
+                (*(int *)(in_stack_00000004 + 0x30) < pSVar1->final_right)))) {
         iVar3 = pSVar1->final_top;
       }
       iVar2 = iVar2 + 1;

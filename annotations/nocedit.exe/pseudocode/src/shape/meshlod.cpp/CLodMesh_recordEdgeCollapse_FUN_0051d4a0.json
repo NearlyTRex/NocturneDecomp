@@ -1,19 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 116,
+    "complexity_score": 80,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 5,
-    "pseudocode_lines": 26,
-    "suspect_count": 7,
+    "pseudocode_lines": 25,
+    "suspect_count": 4,
     "suspect_types": [
       "call_esp_preserve",
       "pointer_cast",
-      "stack_param",
       "variadic_preserve"
     ],
-    "total_lines": 79
+    "total_lines": 78
   },
   "cross_references": [
     {
@@ -152,43 +151,22 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000010",
-      "text": "int *in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
+      "description": "Complex pointer cast",
       "line": 24,
-      "match": "in_stack_00000010",
-      "text": "pCVar1->vertex_idx_1 = *in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_00000010",
-      "text": "in_stack_00000010 = in_stack_00000010 + (uint)bVar3 * -2 + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_00000010",
-      "text": "in_stack_00000010 = in_stack_00000010 + (uint)bVar3 * -2 + 1;",
-      "type": "stack_param"
+      "match": "(CLodEdge *)((int)",
+      "text": "edge_data = (CLodEdge *)((int)edge_data + (uint)bVar3 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 26,
+      "line": 25,
       "match": "(CLodEdge *)((int)",
       "text": "pCVar1 = (CLodEdge *)((int)pCVar1 + (uint)bVar3 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "call_address": "0051d515",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

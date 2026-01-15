@@ -1,21 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 130,
-    "complexity_score": 362,
+    "complexity_score": 320,
     "cross_reference_count": 6,
     "function_call_count": 7,
     "global_count": 12,
-    "pseudocode_lines": 72,
-    "suspect_count": 26,
+    "pseudocode_lines": 70,
+    "suspect_count": 23,
     "suspect_types": [
       "call_esp_preserve",
-      "format_string_mismatch",
       "param_count_too_few",
       "stack_param",
-      "unaffected_reg",
       "variadic_preserve"
     ],
-    "total_lines": 202
+    "total_lines": 200
   },
   "cross_references": [
     {
@@ -299,78 +297,71 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 14,
-      "match": "unaff_EDI",
-      "text": "CStrList *unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 15,
       "match": "in_stack_00000004",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 22,
       "match": "in_stack_00000004",
-      "text": "font_ptr = (CBitFont *)(in_stack_00000004 + 0x38);",
+      "text": "((CBitFont *)(in_stack_00000004 + 0x38));",
       "type": "stack_param"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 28,
-      "match": "unaff_EDI",
-      "text": "font_ptr = (CBitFont *)shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(unaff_EDI,index);",
-      "type": "unaffected_reg"
+      "description": "Unresolved stack parameter",
+      "line": 27,
+      "match": "in_stack_00000004",
+      "text": "((CStrList *)(in_stack_00000004 + 0x38),index);",
+      "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 31,
       "match": "in_stack_00000004",
-      "text": "font_ptr = (CBitFont *)((*(int *)(in_stack_00000004 + 0x30) + 1) * 8);",
+      "text": "(*(void **)(in_stack_00000004 + 0x34),",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 33,
+      "line": 32,
       "match": "in_stack_00000004",
-      "text": "(*(void **)(in_stack_00000004 + 0x34),(int)font_ptr,",
+      "text": "(*(int *)(in_stack_00000004 + 0x30) + 1) * 8,\"..\\\\core\\\\script.cpp\",",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 35,
+      "line": 34,
       "match": "in_stack_00000004",
       "text": "*(void **)(in_stack_00000004 + 0x34) = pvVar3;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 41,
+      "line": 40,
       "match": "in_stack_00000004",
       "text": "*(int *)(*(int *)(in_stack_00000004 + 0x34) + *(int *)(in_stack_00000004 + 0x30) * 8) =",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 41,
+      "line": 40,
       "match": "in_stack_00000004",
       "text": "*(int *)(*(int *)(in_stack_00000004 + 0x34) + *(int *)(in_stack_00000004 + 0x30) * 8) =",
       "type": "stack_param"
     },
     {
-      "description": "Unaffected register variable",
+      "description": "Unresolved stack parameter",
       "line": 51,
-      "match": "unaff_EDI",
-      "text": "unaff_EDI = (CStrList *)0x55a445;",
-      "type": "unaffected_reg"
+      "match": "in_stack_00000004",
+      "text": "*(void **)(*(int *)(in_stack_00000004 + 0x34) + 4 + *(int *)(in_stack_00000004 + 0x30) * 8) =",
+      "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 53,
+      "line": 51,
       "match": "in_stack_00000004",
       "text": "*(void **)(*(int *)(in_stack_00000004 + 0x34) + 4 + *(int *)(in_stack_00000004 + 0x30) * 8) =",
       "type": "stack_param"
@@ -378,41 +369,34 @@
     {
       "description": "Unresolved stack parameter",
       "line": 53,
-      "match": "in_stack_00000004",
-      "text": "*(void **)(*(int *)(in_stack_00000004 + 0x34) + 4 + *(int *)(in_stack_00000004 + 0x30) * 8) =",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 55,
       "match": "in_stack_00000004",
       "text": "if (*(int *)(in_stack_00000004 + 0x34) == 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 61,
+      "line": 59,
       "match": "in_stack_00000004",
       "text": "pcVar6 = *(char **)(*(int *)(in_stack_00000004 + 0x34) + 4 +",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 62,
+      "line": 60,
       "match": "in_stack_00000004",
       "text": "*(int *)(in_stack_00000004 + 0x30) * 8);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 72,
+      "line": 70,
       "match": "in_stack_00000004",
       "text": "*(int *)(in_stack_00000004 + 0x30) = *(int *)(in_stack_00000004 + 0x30) + 1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 72,
+      "line": 70,
       "match": "in_stack_00000004",
       "text": "*(int *)(in_stack_00000004 + 0x30) = *(int *)(in_stack_00000004 + 0x30) + 1;",
       "type": "stack_param"
@@ -455,17 +439,6 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0055a474 (no EBP frame)",
       "type": "variadic_preserve"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Out of memory loading script at line %d\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Out of memory loading script at line %d",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 58,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Out of memory loading script at line %d\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 4,

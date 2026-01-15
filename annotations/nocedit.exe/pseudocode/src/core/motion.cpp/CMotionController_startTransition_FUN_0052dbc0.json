@@ -10,7 +10,7 @@
     "suspect_types": [
       "call_esp_preserve",
       "callind_preserve",
-      "stack_param"
+      "unaffected_reg"
     ],
     "total_lines": 120
   },
@@ -155,32 +155,32 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unaffected register variable",
       "line": 10,
-      "match": "in_stack_0000000c",
-      "text": "float in_stack_0000000c;",
-      "type": "stack_param"
+      "match": "unaff_ESI",
+      "text": "float unaff_ESI;",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unaffected register variable",
       "line": 16,
-      "match": "in_stack_0000000c",
-      "text": "in_stack_0000000c = (float)iVar2;",
-      "type": "stack_param"
+      "match": "unaff_ESI",
+      "text": "unaff_ESI = (float)iVar2;",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unaffected register variable",
       "line": 20,
-      "match": "in_stack_0000000c",
-      "text": "(this_ptr,transition->to_motion_number,in_stack_0000000c);",
-      "type": "stack_param"
+      "match": "unaff_ESI",
+      "text": "(this_ptr,transition->to_motion_number,unaff_ESI);",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unaffected register variable",
       "line": 29,
-      "match": "in_stack_0000000c",
-      "text": "this_ptr->tween_target_frame = in_stack_0000000c;",
-      "type": "stack_param"
+      "match": "unaff_ESI",
+      "text": "this_ptr->tween_target_frame = unaff_ESI;",
+      "type": "unaffected_reg"
     },
     {
       "add_esp_value": 16,

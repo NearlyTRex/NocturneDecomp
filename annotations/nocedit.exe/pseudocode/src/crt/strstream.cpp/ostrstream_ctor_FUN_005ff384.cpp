@@ -21,7 +21,6 @@ crt_strstream_cpp_ostrstream_ctor_FUN_005ff384
   uint uVar8;
   int iVar9;
   byte bVar10;
-  byte in_stack_00000018;
   
   bVar10 = 0;
   if ((flags & 1U) == 0) {
@@ -34,7 +33,7 @@ crt_strstream_cpp_ostrstream_ctor_FUN_005ff384
     pcVar4 = (char *)0x0;
   }
   else {
-    if ((in_stack_00000018 & 0xc) == 0) {
+    if ((mode & 0xcU) == 0) {
       iVar9 = 0;
     }
     else {
@@ -51,7 +50,7 @@ crt_strstream_cpp_ostrstream_ctor_FUN_005ff384
     pcVar4 = buffer + iVar9;
   }
   psVar5 = crt_strstream_cpp_strstreambase_constructor_FUN_006060fe
-                     ((strstreambase *)this_ptr,1,buffer,mode,pcVar4);
+                     ((strstreambase *)this_ptr,1,buffer,buffer_size,pcVar4);
   poVar6 = crt_iostream_cpp_ostream_ctor_FUN_006061a2((ostream *)&psVar5->ios,1);
   ppvVar1 = &poVar6[-2].ios.__xalloc_list;
   *(int *)((int)ppvVar1 + *(int *)((int)*ppvVar1 + 4) + -4) = *(int *)((int)*ppvVar1 + 4);

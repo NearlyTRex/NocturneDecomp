@@ -17,7 +17,6 @@ void core_drip_cpp_FUN_0048e2a0(void)
   int iVar2;
   float fVar3;
   float fVar4;
-  BADSPACEBASE *in_ESP;
   int iVar5;
   int iVar6;
   float10 fVar7;

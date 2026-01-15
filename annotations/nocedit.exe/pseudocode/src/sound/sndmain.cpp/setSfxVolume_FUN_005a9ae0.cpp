@@ -11,20 +11,17 @@ int __cdecl sound_sndmain_cpp_setSfxVolume_FUN_005a9ae0(uint sfx_handle,float vo
 {
   CSfxSlot *this_ptr;
   int iVar1;
-  float in_stack_0000000c;
-  uint uStack00000014;
   
   this_ptr = sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005a5d00(sfx_handle,1);
   if (this_ptr == (CSfxSlot *)0x0) {
     return 0;
   }
   iVar1 = 1;
-  (this_ptr->options).current_volume = in_stack_0000000c;
+  (this_ptr->options).current_volume = volume;
   sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(this_ptr,0.0);
   if ((this_ptr->hardware_buffer_handle != 0) && (g_CSoundDevicePtr != (CSoundDevice *)0x0)) {
     iVar1 = (*g_CSoundDevicePtr->vtable->setSfxPos)(g_CSoundDevicePtr,this_ptr,8);
   }
-  uStack00000014 = 0x5a9b35;
   sound_sndmain_cpp_unlockSound_FUN_005abdc0();
   return iVar1;
 }

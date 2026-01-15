@@ -12,7 +12,6 @@ int __cdecl core_ammobox_cpp_CAmmoBox_FUN_00411820(CAmmoBox *this_ptr)
   CBoundingBox3D *this_ptr_00;
   int iVar1;
   CKeyFramedModel *pCVar2;
-  BADSPACEBASE *in_ESP;
   float in_stack_ffffffd4;
   
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base_actor);

@@ -15,7 +15,6 @@ shape_superopt_cpp_CPoly_scale_FUN_005cc7c0(CPoly *this_ptr,CVector3d *scale,CVe
   double dVar3;
   int iVar4;
   CVert *pCVar5;
-  BADSPACEBASE *in_ESP;
   double *pdVar6;
   double *pdVar7;
   uint *puVar8;

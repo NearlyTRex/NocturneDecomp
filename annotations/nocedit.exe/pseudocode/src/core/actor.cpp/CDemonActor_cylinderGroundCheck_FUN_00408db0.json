@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 128,
+    "complexity_score": 103,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 8,
     "pseudocode_lines": 28,
-    "suspect_count": 9,
+    "suspect_count": 7,
     "suspect_types": [
-      "call_esp_preserve",
-      "stack_param"
+      "call_esp_preserve"
     ],
     "total_lines": 105
   },
@@ -189,20 +188,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000018",
-      "text": "float in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000018",
-      "text": "(g_CDemonSetPtr,&(this_ptr->location).position,in_stack_00000018);",
-      "type": "stack_param"
-    },
     {
       "add_esp_value": 12,
       "call_address": "00408dca",

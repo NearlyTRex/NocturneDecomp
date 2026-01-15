@@ -1,20 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 137,
-    "complexity_score": 259,
+    "complexity_score": 255,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 7,
-    "pseudocode_lines": 54,
-    "suspect_count": 18,
+    "pseudocode_lines": 45,
+    "suspect_count": 19,
     "suspect_types": [
       "call_esp_preserve",
       "callind_preserve",
       "special_crt_function",
-      "stack_param",
       "unaffected_reg"
     ],
-    "total_lines": 191
+    "total_lines": 182
   },
   "cross_references": [
     {
@@ -177,34 +176,41 @@
     {
       "description": "Unaffected register variable",
       "line": 8,
+      "match": "unaff_EBP",
+      "text": "HANDLE unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 9,
       "match": "unaff_EDI",
       "text": "int unaff_EDI;",
       "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000014",
-      "text": "HANDLE in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 23,
+      "line": 19,
       "match": "unaff_EDI",
       "text": "unaff_EDI = crt_stdio_c_lseek_FUN_00606690(file_handle,0,2);",
       "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_00000014",
-      "text": "BVar3 = (*SetEndOfFile)(in_stack_00000014);",
-      "type": "stack_param"
+      "description": "Unaffected register variable",
+      "line": 21,
+      "match": "unaff_EBP",
+      "text": "DVar2 = (*SetFilePointer)(unaff_EBP,new_size,(PLONG)0x0,0);",
+      "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 40,
+      "line": 27,
+      "match": "unaff_EBP",
+      "text": "BVar3 = (*SetEndOfFile)(unaff_EBP);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 33,
       "match": "unaff_EDI",
       "text": "if ((0x7fff < g_WindowsPlatformVersion) && (unaff_EDI < new_size)) {",
       "type": "unaffected_reg"

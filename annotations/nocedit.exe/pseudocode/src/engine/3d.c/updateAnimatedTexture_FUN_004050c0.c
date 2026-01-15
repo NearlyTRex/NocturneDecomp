@@ -12,7 +12,6 @@ engine_3d_c_updateAnimatedTexture_FUN_004050c0(SAnimatedTexture *anim_texture)
 {
   char cVar1;
   int iVar2;
-  BADSPACEBASE *in_ESP;
   char *pcVar3;
   char *pcVar4;
   SMRGLTextureBasic SStack_28;

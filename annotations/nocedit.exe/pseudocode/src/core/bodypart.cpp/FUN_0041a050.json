@@ -1,16 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 452,
-    "complexity_score": 964,
+    "complexity_score": 934,
     "cross_reference_count": 16,
     "function_call_count": 10,
     "global_count": 5,
     "pseudocode_lines": 214,
-    "suspect_count": 73,
+    "suspect_count": 71,
     "suspect_types": [
-      "badspacebase",
       "extra_output",
-      "register_param",
       "stack_param"
     ],
     "total_lines": 666
@@ -578,22 +576,8 @@
       "type": "extra_output"
     },
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 20,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 20,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 26,
+      "line": 25,
       "match": "in_stack_00000004",
       "text": "CBodyPart *in_stack_00000004;",
       "type": "stack_param"
@@ -658,7 +642,7 @@
       "description": "Unresolved stack parameter",
       "line": 72,
       "match": "in_stack_00000004",
-      "text": "*(float *)(in_stack_00000004->field1_0x158 + 0x10) = (float)(int)local_5c * local_68.x;",
+      "text": "*(float *)(in_stack_00000004->field1_0x158 + 0x10) = (float)local_5c * local_68.x;",
       "type": "stack_param"
     },
     {
@@ -749,7 +733,7 @@
       "description": "Unresolved stack parameter",
       "line": 100,
       "match": "in_stack_00000004",
-      "text": "local_20 = in_stack_00000004->field1_0x158 + 0x5f8;",
+      "text": "local_24 = in_stack_00000004->field1_0x158 + 0x5f8;",
       "type": "stack_param"
     },
     {
@@ -763,7 +747,7 @@
       "description": "Unresolved stack parameter",
       "line": 109,
       "match": "in_stack_00000004",
-      "text": "(&in_stack_00000004->base_actor,&CStack_34,pCVar5);",
+      "text": "(&in_stack_00000004->base_actor,&CStack_38,pCVar5);",
       "type": "stack_param"
     },
     {
@@ -798,7 +782,7 @@
       "description": "Unresolved stack parameter",
       "line": 123,
       "match": "in_stack_00000004",
-      "text": "output = (SSurfaceNormal *)(local_20 + *(int *)(in_stack_00000004->field1_0x158 + 0x2c));",
+      "text": "output = (SSurfaceNormal *)(*(int *)(in_stack_00000004->field1_0x158 + 0x2c) + local_20);",
       "type": "stack_param"
     },
     {
@@ -980,14 +964,14 @@
       "description": "Unresolved stack parameter",
       "line": 194,
       "match": "in_stack_00000004",
-      "text": "*(float *)(in_stack_00000004->field1_0x158 + 0xbe4) = fVar8;",
+      "text": "*(float *)(in_stack_00000004->field1_0x158 + 0xbe4) = fStack_14;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 196,
       "match": "in_stack_00000004",
-      "text": "*(float *)(in_stack_00000004->field1_0x158 + 0xbec) = fVar8;",
+      "text": "*(float *)(in_stack_00000004->field1_0x158 + 0xbec) = fStack_14;",
       "type": "stack_param"
     },
     {

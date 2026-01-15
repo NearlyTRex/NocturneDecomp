@@ -20,7 +20,7 @@ CChain * __cdecl core_chain_cpp_CChain_dtor_FUN_00431360(CChain *this_ptr,uint d
   }
   iVar1 = core_chain_cpp_FUN_004313f0((SChainVertex **)this_ptr->field7_0x28c);
   ptr = (CChain *)core_actor_cpp_CDemonActor_dtor_FUN_00408a30((CDemonActor *)(iVar1 + -0x28c),1);
-  if ((d3 & 2) == 0) {
+  if ((d1 & 2) == 0) {
     return ptr;
   }
   shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);

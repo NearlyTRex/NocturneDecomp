@@ -15,7 +15,6 @@ shape_memdbg_cpp_CLeakChecker_dtor_FUN_0050fbc0
   FILE *pFVar2;
   int iVar3;
   int iVar4;
-  CLeakChecker *in_stack_00000018;
   
   if ((g_RecursiveCallFlag == 0) && (g_IsDestroyingLeakChecker == 0)) {
     g_IsDestroyingLeakChecker = 1;
@@ -33,14 +32,13 @@ shape_memdbg_cpp_CLeakChecker_dtor_FUN_0050fbc0
         do {
           if (g_FileRegistry[iVar4].directory[0] == '\0') {
             crt_stdio_c_fprintf_FUN_005fe6d0
-                      (pFVar2,"%s, opened %s line %d\n","%s, opened %s line %d\n",
-                       g_FileRegistry + iVar4,iVar3,g_FileRegistry[iVar4].line_number);
+                      (pFVar2,"%s, opened %s line %d\n",g_FileRegistry + iVar4,iVar3,
+                       g_FileRegistry[iVar4].line_number);
           }
           else {
             crt_stdio_c_fprintf_FUN_005fe6d0
-                      (pFVar2,"%s in %s, opened %s line %d\n","%s in %s, opened %s line %d\n",
-                       iVar4 * 0x328 + 0x2f0da50,g_FileRegistry + iVar4,iVar3,
-                       g_FileRegistry[iVar4].line_number);
+                      (pFVar2,"%s in %s, opened %s line %d\n",iVar4 * 0x328 + 0x2f0da50,
+                       g_FileRegistry + iVar4,iVar3,g_FileRegistry[iVar4].line_number);
           }
           iVar4 = iVar4 + 1;
           iVar3 = iVar3 + 0x328;
@@ -74,5 +72,5 @@ shape_memdbg_cpp_CLeakChecker_dtor_FUN_0050fbc0
                 ("Memory leaks detected.  Check %s","memdbg.txt");
     }
   }
-  return in_stack_00000018;
+  return this_ptr;
 }

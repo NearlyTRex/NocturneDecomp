@@ -1,19 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 40,
-    "complexity_score": 125,
+    "complexity_score": 47,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 0,
-    "pseudocode_lines": 15,
-    "suspect_count": 9,
+    "pseudocode_lines": 12,
+    "suspect_count": 3,
     "suspect_types": [
-      "call_esp_preserve",
-      "concat_artifact",
-      "stack_param",
-      "unknown_field"
+      "call_esp_preserve"
     ],
-    "total_lines": 55
+    "total_lines": 52
   },
   "cross_references": [],
   "function": {
@@ -121,48 +118,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_00000020",
-      "text": "uint in_stack_00000020;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000024",
-      "text": "uint in_stack_00000024;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000024",
-      "text": "(pos_y,pos_z,(double)CONCAT44 /* combine 2-byte values */(in_stack_00000024,in_stack_00000020));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000020",
-      "text": "(pos_y,pos_z,(double)CONCAT44 /* combine 2-byte values */(in_stack_00000024,in_stack_00000020));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 14,
-      "match": "CONCAT44",
-      "text": "(pos_y,pos_z,(double)CONCAT44 /* combine 2-byte values */(in_stack_00000024,in_stack_00000020));",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 15,
-      "match": "._0_4_",
-      "text": "uVar1 = sound_sndmain_cpp_startSfx_FUN_005a8e90(pos_y._0_4_);",
-      "type": "unknown_field"
-    },
     {
       "add_esp_value": 4,
       "call_address": "005a958b",

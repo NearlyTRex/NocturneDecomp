@@ -45,6 +45,7 @@ void core_mimic_cpp_CMimic_beginMorph_FUN_00520a80(void)
   this_ptr = g_CConsolePtr;
   *(uint *)(in_stack_00000004 + 0xfc) = 1;
   engine_console_cpp_CConsole_printf_FUN_00441890
-            (this_ptr,"%s morphing into type %s\n",in_stack_00000004);
+            (this_ptr,"%s morphing into type %s\n",in_stack_00000004,
+             in_stack_00000004 + 0x4bdfc);
   return;
 }

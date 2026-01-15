@@ -25,7 +25,7 @@ ostream * __cdecl crt_iostream_cpp_ostream_dtor_FUN_00606231(ostream *this_ptr,u
       piVar2 = crt_iostream_cpp_ios_dtor_FUN_0060632c(&this_ptr->ios,1,unaff_EBX);
       this_ptr = (ostream *)&piVar2[-1].__fill_character;
     }
-    if ((d2 & 2) == 0) {
+    if ((d1 & 2) == 0) {
       return this_ptr;
     }
     shape_memdbg_cpp_debugFree_FUN_0050f210(this_ptr);

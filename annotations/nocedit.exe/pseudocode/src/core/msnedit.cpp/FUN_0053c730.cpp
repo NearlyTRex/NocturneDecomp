@@ -14,7 +14,6 @@ void core_msnedit_cpp_FUN_0053c730(void)
 {
   char cVar1;
   int iVar2;
-  BADSPACEBASE *in_ESP;
   uint unaff_ESI;
   uint *puVar3;
   char *pcVar4;

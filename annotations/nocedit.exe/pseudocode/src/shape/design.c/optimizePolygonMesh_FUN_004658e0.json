@@ -1,19 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 246,
-    "complexity_score": 168,
+    "complexity_score": 95,
     "cross_reference_count": 3,
     "function_call_count": 12,
     "global_count": 12,
-    "pseudocode_lines": 88,
-    "suspect_count": 6,
-    "suspect_types": [
-      "badspacebase",
-      "format_string_mismatch",
-      "register_param",
-      "stack_ref"
-    ],
-    "total_lines": 334
+    "pseudocode_lines": 95,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 341
   },
   "cross_references": [
     {
@@ -251,7 +246,7 @@
     {
       "add_esp_value": 20,
       "call_address": "00465ad9",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -448,52 +443,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 10,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 10,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 59,
-      "match": "&stack0xffffff90",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff90,\"Original polygons: %d    New total: %d\\n\\nTotal passes: %d\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 63,
-      "match": "&stack0xffffff90",
-      "text": "pcVar6 = &stack0xffffff90;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 84,
-      "match": "&stack0xffffff90",
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff90,0,0);",
-      "type": "stack_ref"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Original polygons: %d    New total: %d\\n\\nTotal pa...\" has 3 specifiers but 0 arguments after it",
-      "expected_args": 3,
-      "format_string": "Original polygons: %d    New total: %d\\n\\nTotal passes: %d",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 59,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff90,\"Original polygons: %d    New total: %d\\n\\nTotal p",
-      "text": "Format string expects 3 args but got 0",
-      "type": "format_string_mismatch"
-    }
-  ]
+  "suspects": []
 }

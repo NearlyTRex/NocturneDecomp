@@ -13,10 +13,8 @@ void core_msnedit_cpp_WalkAroundOnSet_FUN_00538ba0(void)
 {
   CEditorTools *this_ptr;
   int iVar1;
-  BADSPACEBASE *in_ESP;
   CDemonMission *in_stack_00000004;
-  char acStack_e0 [4];
-  char acStack_dc [196];
+  char local_11c [260];
   char local_18 [4];
   char acStack_14 [4];
   char acStack_10 [4];
@@ -65,9 +63,9 @@ void core_msnedit_cpp_WalkAroundOnSet_FUN_00538ba0(void)
     in_stack_00000004->field0_0x0[7] = '\0';
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
               (this_ptr,"Reloading mission from %s");
-    core_mission_cpp_CDemonMission_load_FUN_00522d90(in_stack_00000004,&stack0x00000020,1);
-    crt_stdio_c_sprintf_FUN_005fdbd0(acStack_e0,"world\\%s",&stack0x00000024);
-    crt_io_c_deleteFile_FUN_005ff9d0(acStack_dc);
+    core_mission_cpp_CDemonMission_load_FUN_00522d90(in_stack_00000004,local_18,1);
+    crt_stdio_c_sprintf_FUN_005fdbd0(local_11c,"world\\%s",local_18);
+    crt_io_c_deleteFile_FUN_005ff9d0(local_11c);
     core_event_cpp_CEventList_FUN_004b0460(g_CEventListPtr);
     return;
   }

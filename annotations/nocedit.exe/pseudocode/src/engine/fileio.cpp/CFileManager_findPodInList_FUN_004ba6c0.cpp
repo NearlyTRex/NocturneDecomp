@@ -14,10 +14,8 @@ engine_fileio_cpp_CFileManager_findPodInList_FUN_004ba6c0
   char *input_path;
   int iVar1;
   int index;
-  BADSPACEBASE *in_ESP;
-  char acStack_204 [248];
-  char local_10c [12];
-  char acStack_100 [248];
+  char local_210 [260];
+  char local_10c [260];
   
   index = 0;
   engine_dosio_c_getFullPath_FUN_004820c0(local_10c,target_filename);
@@ -26,8 +24,8 @@ engine_fileio_cpp_CFileManager_findPodInList_FUN_004ba6c0
       return -1;
     }
     input_path = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(pod_list,index);
-    engine_dosio_c_getFullPath_FUN_004820c0(&stack0xfffffdf8,input_path);
-    iVar1 = crt_string_c_stricmp_FUN_005fe7f0(acStack_100,acStack_204);
+    engine_dosio_c_getFullPath_FUN_004820c0(local_210,input_path);
+    iVar1 = crt_string_c_stricmp_FUN_005fe7f0(local_10c,local_210);
     if (iVar1 == 0) break;
     index = index + 1;
   }

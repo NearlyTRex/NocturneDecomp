@@ -11,7 +11,6 @@ void __cdecl engine_2d_c_clearInputAndWait_FUN_00403260(void)
 {
   int iVar1;
   int iVar2;
-  uint uStack0000000c;
   
   wincore_winrun_cpp_clearKeypresses_FUN_005f2e70();
   wincore_winrun_cpp_clearMouseClicks_FUN_005f30c0();
@@ -28,7 +27,6 @@ void __cdecl engine_2d_c_clearInputAndWait_FUN_00403260(void)
     wincore_winrun_cpp_clearKeypresses_FUN_005f2e70();
   }
   wincore_winrun_cpp_clearKeypresses_FUN_005f2e70();
-  uStack0000000c = 0x40329d;
   wincore_winrun_cpp_clearMouseClicks_FUN_005f30c0();
   iVar2 = 0;
   do {

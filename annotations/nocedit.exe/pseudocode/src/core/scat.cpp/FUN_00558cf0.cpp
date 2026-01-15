@@ -18,7 +18,6 @@ float core_scat_cpp_FUN_00558cf0(void)
   int iVar3;
   CVector3f *pCVar4;
   CBoundingBox3D *pCVar5;
-  BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000004;
   CDemonActor *in_stack_00000008;
   int in_stack_0000000c;
@@ -37,6 +36,7 @@ float core_scat_cpp_FUN_00558cf0(void)
   float fStack_24;
   float fStack_20;
   float fStack_1c;
+  float fStack_14;
   
   this_ptr = core_actor_cpp_castToClassHash_FUN_0040c790
                        (in_stack_00000008,g_CEnemyClassInfo.name_hash);
@@ -91,6 +91,7 @@ float core_scat_cpp_FUN_00558cf0(void)
     core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,in_stack_00000004);
     fStack_1c = core_setcolid_cpp_CDemonSet_raycast_FUN_00572530
                           (g_CDemonSetPtr,&CStack_5c,&CStack_44);
+    fStack_14 = fStack_1c;
     core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
     if ((fStack_1c <= 1.0) && (in_stack_00000008 == g_CDemonSetPtr->collision_actor)) {
       return fStack_20;

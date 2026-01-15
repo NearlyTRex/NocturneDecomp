@@ -13,11 +13,9 @@ void core_msnedit_cpp_CheckWorldMountedAndSave_FUN_0053d190(void)
 
 {
   CPodFile *pCVar1;
-  BADSPACEBASE *in_ESP;
+  CDemonMission *in_stack_00000004;
   char *in_stack_00000008;
-  CDemonMission *in_stack_0000000c;
-  byte *puStack_100;
-  byte auStack_fc [244];
+  char local_10c [260];
   
   pCVar1 = engine_pod_cpp_CPod_locateFile_FUN_005512f0
                      ((CPod *)g_CDemonPodPtr,"world",in_stack_00000008,(int *)0x0);
@@ -26,11 +24,9 @@ void core_msnedit_cpp_CheckWorldMountedAndSave_FUN_0053d190(void)
               (g_CEditorToolsPtr,"Warning: %s exists in mounted pod %s.\n\nI'm saving the mission to local file, anyway.\n\nJust thought you'd like to know.",in_stack_00000008,
                pCVar1->filename);
   }
-  core_mission_cpp_CDemonMission_save_FUN_00522e30(in_stack_0000000c);
+  core_mission_cpp_CDemonMission_save_FUN_00522e30(in_stack_00000004);
   crt_file_c_makepath_FUN_005febfc
-            ((char *)&puStack_100,(char *)0x0,(char *)0x0,in_stack_0000000c->field2_0xc + 0x38,
-             "scr");
-  puStack_100 = auStack_fc;
+            (local_10c,(char *)0x0,(char *)0x0,in_stack_00000004->field2_0xc + 0x38,"scr");
   core_script_cpp_FUN_00566180();
   return;
 }

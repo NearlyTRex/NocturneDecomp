@@ -10,10 +10,9 @@ void __cdecl
 crt_time_c_filetime_to_dos_datetime_FUN_00609cb0(FILETIME *filetime,WORD *dos_date,WORD *dos_time)
 
 {
-  BADSPACEBASE *in_ESP;
-  LPWORD in_stack_00000014;
+  _FILETIME _Stack_c;
   
-  (*PTR_FileTimeToLocalFileTime_00611540)(filetime,(LPFILETIME)&stack0xfffffff4);
-  (*PTR_FileTimeToDosDateTime_0061153c)((FILETIME *)&stack0x00000000,in_stack_00000014,dos_time);
+  (*PTR_FileTimeToLocalFileTime_00611540)(filetime,&_Stack_c);
+  (*PTR_FileTimeToDosDateTime_0061153c)(&_Stack_c,dos_date,dos_time);
   return;
 }

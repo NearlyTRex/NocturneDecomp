@@ -1,25 +1,23 @@
 {
   "complexity": {
     "assembly_lines": 284,
-    "complexity_score": 432,
+    "complexity_score": 401,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 30,
-    "pseudocode_lines": 122,
-    "suspect_count": 26,
+    "pseudocode_lines": 121,
+    "suspect_count": 24,
     "suspect_types": [
-      "badspacebase",
       "callind_preserve",
       "callind_preserve_lost",
       "lea_esp_stack_addr",
       "pointer_cast",
-      "register_param",
       "stack_param",
       "unknown_field",
       "unresolved_funcptr",
       "variadic_preserve"
     ],
-    "total_lines": 406
+    "total_lines": 405
   },
   "cross_references": [],
   "function": {
@@ -336,148 +334,134 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 16,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 16,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 17,
       "match": "in_stack_00000018",
       "text": "int in_stack_00000018;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 31,
+      "line": 30,
       "match": "in_stack_00000018",
       "text": "g_WaveInStereoRequested = (int)(in_stack_00000018 != 0);",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 32,
+      "line": 31,
       "match": "._16_4_",
       "text": "WStack_24._16_4_ = tStack_54.dwFormats;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 39,
+      "line": 38,
       "match": "(uint *)((int)",
       "text": "if ((*(uint *)((int)&g_WaveInFormatTable[0].format_flags + iVar8) & WStack_24._16_4_) != 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 39,
+      "line": 38,
       "match": "._16_4_",
       "text": "if ((*(uint *)((int)&g_WaveInFormatTable[0].format_flags + iVar8) & WStack_24._16_4_) != 0) {",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 40,
+      "line": 39,
       "match": "(int *)((int)",
       "text": "uVar4 = (uint)(channels < *(int *)((int)&g_WaveInFormatTable[0].bits_per_sample + iVar8));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 40,
       "match": "(int *)((int)",
       "text": "if (*(int *)((int)&g_WaveInFormatTable[0].bits_per_sample + iVar8) < channels) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 45,
+      "line": 44,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&g_WaveInFormatTable[0].sample_rate + iVar8)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 48,
+      "line": 47,
       "match": "(int *)((int)",
       "text": "if (*(int *)((int)&g_WaveInFormatTable[0].sample_rate + iVar8) <",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 52,
+      "line": 51,
       "match": "(int *)((int)",
       "text": "if (sample_rate < *(int *)((int)&g_WaveInFormatTable[0].channels + iVar8)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 55,
+      "line": 54,
       "match": "(int *)((int)",
       "text": "if (*(int *)((int)&g_WaveInFormatTable[0].channels + iVar8) < sample_rate) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 89,
+      "line": 88,
       "match": "(HGLOBAL *)((int)",
       "text": "*(HGLOBAL *)((int)g_WaveInBufferHandles + iVar8) = pvVar5;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 92,
+      "line": 91,
       "match": "(LPVOID *)((int)",
       "text": "*(LPVOID *)((int)g_WaveInBuffers + iVar8) = pvVar6;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 95,
+      "line": 94,
       "match": "(HGLOBAL *)((int)",
       "text": "*(HGLOBAL *)((int)g_WaveInHeaderHandles + iVar8) = pvVar5;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 98,
+      "line": 97,
       "match": "(HGLOBAL *)((int)",
       "text": "pvVar6 = (*GlobalLock)(*(HGLOBAL *)((int)g_WaveInHeaderHandles + iVar8));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 100,
+      "line": 99,
       "match": "(LPVOID *)((int)",
       "text": "*(LPVOID *)((int)g_WaveInHeaders + iVar8) = pvVar6;",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 117,
+      "line": 116,
       "match": "code *",
       "text": "iVar7 = (*(code *)**(uint **)bits_per_sample)();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 121,
+      "line": 120,
       "match": "._16_4_",
       "text": "WStack_24._16_4_ = WStack_24._16_4_ & ~g_WaveInFormatTable[iVar2].format_flags;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 121,
+      "line": 120,
       "match": "._16_4_",
       "text": "WStack_24._16_4_ = WStack_24._16_4_ & ~g_WaveInFormatTable[iVar2].format_flags;",
       "type": "unknown_field"

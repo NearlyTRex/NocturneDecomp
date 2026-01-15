@@ -11,10 +11,11 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042a3f0(CCharacter *this_ptr)
 {
   CDeformableModel *this_ptr_00;
   SPart *pSVar1;
-  int unaff_retaddr;
+  int in_stack_00000008;
   
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
                           (&this_ptr->model);
-  pSVar1 = core_skeleton_cpp_CDeformableModel_getPartPtr_FUN_0059c220(this_ptr_00,unaff_retaddr);
+  pSVar1 = core_skeleton_cpp_CDeformableModel_getPartPtr_FUN_0059c220(this_ptr_00,in_stack_00000008)
+  ;
   return pSVar1->dominant_bone;
 }

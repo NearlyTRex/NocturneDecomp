@@ -24,7 +24,6 @@ uint shape_superopt_cpp_ComplexEdgeListSplit_UnevenCheck_FUN_005ca590(void)
   uint uVar13;
   double *pdVar14;
   int iVar15;
-  BADSPACEBASE *in_ESP;
   double *pdVar16;
   byte bVar17;
   int in_stack_00000008;

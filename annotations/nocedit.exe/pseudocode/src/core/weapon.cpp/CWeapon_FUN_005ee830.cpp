@@ -12,7 +12,6 @@ void __cdecl core_weapon_cpp_CWeapon_FUN_005ee830(CWeapon *this_ptr)
   int iVar1;
   CVector3f *input_local_point;
   CDemonActor *pCVar2;
-  BADSPACEBASE *in_ESP;
   SLaserInfo local_94;
   CVector3f local_34;
   CVector3f local_28;

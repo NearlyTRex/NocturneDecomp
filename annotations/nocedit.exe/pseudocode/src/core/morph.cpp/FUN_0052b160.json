@@ -1,11 +1,11 @@
 {
   "complexity": {
     "assembly_lines": 105,
-    "complexity_score": 274,
+    "complexity_score": 275,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 5,
-    "pseudocode_lines": 44,
+    "pseudocode_lines": 45,
     "suspect_count": 21,
     "suspect_types": [
       "call_esp_preserve",
@@ -13,7 +13,7 @@
       "param_count_too_few",
       "stack_param"
     ],
-    "total_lines": 149
+    "total_lines": 150
   },
   "cross_references": [
     {
@@ -212,22 +212,22 @@
     {
       "description": "Unresolved stack parameter",
       "line": 12,
-      "match": "in_stack_00000010",
-      "text": "float in_stack_00000010;",
+      "match": "in_stack_00000008",
+      "text": "float in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 18,
-      "match": "in_stack_00000010",
-      "text": "((double)(in_stack_00000010 * (float)65535 *",
+      "match": "in_stack_00000008",
+      "text": "((double)(in_stack_00000008 * (float)65535 *",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 19,
-      "match": "in_stack_00000010",
-      "text": "(2f - in_stack_00000010)));",
+      "match": "in_stack_00000008",
+      "text": "(2f - in_stack_00000008)));",
       "type": "stack_param"
     },
     {
@@ -246,16 +246,9 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_00000004",
-      "text": "if (0 < *(int *)(in_stack_00000004 + 0x5c)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 27,
       "match": "in_stack_00000004",
-      "text": "iVar5 = in_stack_00000004 + 0x68;",
+      "text": "if (0 < *(int *)(in_stack_00000004 + 0x5c)) {",
       "type": "stack_param"
     },
     {
@@ -267,14 +260,21 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 36,
+      "line": 34,
+      "match": "in_stack_00000004",
+      "text": "(SMRGLTextureBasic *)(iVar1 * 0x48 + in_stack_00000004 + 0x68));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 37,
       "match": "in_stack_00000004",
       "text": "polygon_info = (SMRGLHeaderPrimitive *)(*(int *)(in_stack_00000004 + 0x60) + iVar2);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 41,
+      "line": 42,
       "match": "in_stack_00000004",
       "text": "} while (iVar3 < *(int *)(in_stack_00000004 + 0x5c));",
       "type": "stack_param"

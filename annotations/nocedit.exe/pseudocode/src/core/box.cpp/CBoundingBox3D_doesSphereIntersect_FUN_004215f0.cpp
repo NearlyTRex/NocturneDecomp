@@ -11,15 +11,12 @@ core_box_cpp_CBoundingBox3D_doesSphereIntersect_FUN_004215f0
           (CBoundingBox3D *this_ptr,CVector3f *sphere_center,float radius)
 
 {
-  BADSPACEBASE *in_ESP;
-  float in_stack_00000010;
-  CVector3f local_20;
-  float fStack_14;
+  CVector3f local_20 [2];
   
-  core_box_cpp_CBoundingBox3D_clampPoint_FUN_00421550(this_ptr,&local_20,sphere_center);
-  local_20.y = local_20.y - sphere_center->x;
-  local_20.z = local_20.z - sphere_center->y;
-  fStack_14 = fStack_14 - sphere_center->z;
-  return (uint)(fStack_14 * fStack_14 + local_20.z * local_20.z + local_20.y * local_20.y <=
-               in_stack_00000010 * in_stack_00000010);
+  core_box_cpp_CBoundingBox3D_clampPoint_FUN_00421550(this_ptr,local_20,sphere_center);
+  local_20[0].x = local_20[0].x - sphere_center->x;
+  local_20[0].y = local_20[0].y - sphere_center->y;
+  local_20[0].z = local_20[0].z - sphere_center->z;
+  return (uint)(local_20[0].z * local_20[0].z +
+                local_20[0].y * local_20[0].y + local_20[0].x * local_20[0].x <= radius * radius);
 }

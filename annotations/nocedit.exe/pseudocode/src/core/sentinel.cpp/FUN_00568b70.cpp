@@ -14,7 +14,6 @@ uint core_sentinel_cpp_FUN_00568b70(void)
 {
   CVector3f *pCVar1;
   CVector3f *pCVar2;
-  BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000004;
   int in_stack_00000008;
   CVector3f local_34;

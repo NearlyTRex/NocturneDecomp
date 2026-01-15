@@ -18,7 +18,7 @@ CStrList * __cdecl shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(CStrList *this_
   }
   this_ptr->vtable = &g_CStrListVTable;
   shape_edittool_cpp_CStrList_clear_FUN_004a2b10(this_ptr);
-  if ((d2 & 2) == 0) {
+  if ((d1 & 2) == 0) {
     return this_ptr;
   }
   shape_memdbg_cpp_debugFree_FUN_0050f210(this_ptr);

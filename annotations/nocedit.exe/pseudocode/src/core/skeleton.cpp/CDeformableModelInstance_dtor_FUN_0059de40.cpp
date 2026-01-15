@@ -27,7 +27,7 @@ core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40
   ptr = (CDeformableModelInstance *)
         core_motion_cpp_CMotionController_dtor_FUN_0052d5a0
                   ((CMotionController *)(extraout_EAX + -0x58),1);
-  if ((d4 & 2) == 0) {
+  if ((d1 & 2) == 0) {
     return ptr;
   }
   shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);

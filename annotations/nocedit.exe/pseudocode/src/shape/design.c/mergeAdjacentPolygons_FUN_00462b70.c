@@ -12,7 +12,6 @@ shape_design_c_mergeAdjacentPolygons_FUN_00462b70(int polygon1_index,int polygon
 {
   uint uVar1;
   int iVar2;
-  BADSPACEBASE *in_ESP;
   SShapeEditorPolygon *pSVar3;
   SShapeEditorPolygon *pSVar4;
   bool bVar5;

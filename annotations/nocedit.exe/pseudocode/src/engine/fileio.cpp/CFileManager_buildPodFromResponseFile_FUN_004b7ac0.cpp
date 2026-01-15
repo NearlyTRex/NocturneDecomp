@@ -16,15 +16,15 @@ engine_fileio_cpp_CFileManager_buildPodFromResponseFile_FUN_004b7ac0(CFileManage
   int iVar4;
   FILE *file;
   uint character;
-  BADSPACEBASE *in_ESP;
+  char local_5c [80];
   
   iVar4 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
-                    (g_CEditorToolsPtr,"Enter response filename",&stack0xffffffa4,0x14,0);
+                    (g_CEditorToolsPtr,"Enter response filename",local_5c,0x14,0);
   if (iVar4 == 0) {
     return;
   }
   file = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                   (&stack0xffffffa8,(char *)0x0,"rt","..\\engine\\fileio.cpp",0xa67);
+                   (local_5c,(char *)0x0,"rt","..\\engine\\fileio.cpp",0xa67);
   if (file != (FILE *)0x0) {
     engine_fileio_cpp_CFileManager_openExtractFileForBuilding_FUN_004b7c10(this_ptr);
     while( true ) {

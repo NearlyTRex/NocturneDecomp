@@ -16,19 +16,19 @@ core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044de10
   CDemonLight *pCVar3;
   ushort *puVar4;
   uint uVar5;
-  BADSPACEBASE *in_ESP;
   uint uVar6;
-  int *piVar7;
-  int *piVar8;
+  uint *puVar7;
+  uint *puVar8;
   int iVar9;
   byte bVar10;
-  void *apvStackY_1858 [1523];
+  void *apvStackY_1858 [513];
+  int aiStackY_1054 [1010];
   CVector3i *input_ptr;
   int local_78;
   void *local_74;
   int local_70;
-  int iStack_68;
-  int local_64;
+  int iStack_6c;
+  int aiStack_68 [2];
   CVector3i local_60;
   int local_54;
   CVector3f *local_50;
@@ -96,13 +96,13 @@ core_dcamera_cpp_CDemonCamera_precomputeLight_FUN_0044de10
     input_ptr = (CVector3i *)0x0;
   }
   else {
-    piVar7 = (int *)((int)rect + (uint)bVar10 * -8 + 4);
+    puVar7 = (uint *)((int)rect + (uint)bVar10 * -8 + 4);
     input_ptr = (CVector3i *)rect->left;
-    piVar8 = piVar7 + (uint)bVar10 * -2 + 1;
-    (&local_78)[(uint)bVar10 * -2] = *piVar7;
-    (&local_74)[(uint)bVar10 * -2 + (uint)bVar10 * -2] = (void *)*piVar8;
+    puVar8 = puVar7 + (uint)bVar10 * -2 + 1;
+    *(uint *)((int)&stack0xffffff88 + (uint)bVar10 * -8) = *puVar7;
+    (&local_74)[(uint)bVar10 * -2 + (uint)bVar10 * -2] = (void *)*puVar8;
     (&local_74 + (uint)bVar10 * -2 + (uint)bVar10 * -2)[(uint)bVar10 * -2 + 1] =
-         (void *)piVar8[(uint)bVar10 * -2 + 1];
+         (void *)puVar8[(uint)bVar10 * -2 + 1];
     iVar1 = 0;
     pCVar3 = light_source;
     if (0 < (int)local_74) {
@@ -163,10 +163,10 @@ LAB_0044e087:
           else {
             core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0
                       (&light_source->base,local_2c,input_ptr);
-            local_60.x = iStack_68;
-            *(int *)((int)&local_60 + (uint)bVar10 * -8 + 4) = (&local_64)[(uint)bVar10 * -2];
-            *(uint *)((int)&local_60 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
-                 *(uint *)((int)&local_60 + (uint)bVar10 * -8 + (uint)bVar10 * -8);
+            local_60.x = iStack_6c;
+            *(int *)((int)&local_60 + (uint)bVar10 * -8 + 4) = aiStack_68[(uint)bVar10 * -2];
+            *(int *)((int)&local_60 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
+                 aiStack_68[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
             if (local_60.z < 1) goto LAB_0044e06f;
             *local_1c = local_60.z - local_3c;
             puVar4 = core_dlight_cpp_CDemonLight_projectLightAndMarkVisibility_FUN_00473270

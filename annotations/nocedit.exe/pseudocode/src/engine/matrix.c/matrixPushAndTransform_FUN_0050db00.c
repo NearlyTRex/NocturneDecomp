@@ -16,26 +16,24 @@ engine_matrix_c_matrixPushAndTransform_FUN_0050db00(int rotation_x,int rotation_
   int iVar4;
   int iVar5;
   int iVar6;
-  uint uVar7;
+  int iVar7;
   uint uVar8;
   uint uVar9;
-  int iVar10;
-  uint uVar11;
-  int iVar12;
+  uint uVar10;
+  int iVar11;
+  uint uVar12;
   int iVar13;
-  ushort angle;
   int iVar14;
-  float10 fVar15;
+  ushort angle;
+  int iVar15;
+  float10 fVar16;
   float10 x;
   float10 extraout_ST1;
-  float10 fVar16;
-  double dVar17;
-  ushort angle_00;
-  ushort local_40;
-  int local_2c;
-  int local_28;
-  int local_1c;
-  int iStack_14;
+  float10 fVar17;
+  double dVar18;
+  int local_4c;
+  int local_48;
+  int local_44;
   
   iVar2 = g_MatrixStackIndex;
   g_MatrixStack_RelX[g_MatrixStackIndex] = g_RelativeX;
@@ -53,194 +51,192 @@ engine_matrix_c_matrixPushAndTransform_FUN_0050db00(int rotation_x,int rotation_
   g_MatrixStack_M20[iVar2] = g_TransformMatrix.m[2].x;
   g_MatrixStack_M21[iVar2] = g_TransformMatrix.m[2].y;
   g_MatrixStack_M22[iVar2] = g_TransformMatrix.m[2].z;
-  iVar2 = g_RelativeZ;
   crt_math_c_atan2_FUN_006013b1((float10)rotation_x,(float10)rotation_z);
-  fVar15 = crt_math_c_atan2_FUN_006013b1((float10)rotation_x,x);
-  fVar16 = extraout_ST1 * (float10)0.31830988619288902 * (float10)65536f;
-  dVar17 = crt_math_c_round_FUN_005fe6b0
-                     ((double)(-fVar15 * (float10)0.31830988619288902 * (float10)65536f));
-  angle_00 = (ushort)(int)ROUND(dVar17);
-  crt_math_c_round_FUN_005fe6b0((double)fVar16);
-  iVar3 = engine_matrix_c_interpolatedSin_FUN_0050c5c0(angle);
-  engine_matrix_c_interpolatedCos_FUN_0050c600(angle_00);
+  fVar16 = crt_math_c_atan2_FUN_006013b1((float10)rotation_x,x);
+  fVar17 = extraout_ST1 * (float10)0.31830988619288902 * (float10)65536f;
+  crt_math_c_round_FUN_005fe6b0
+            ((double)(-fVar16 * (float10)0.31830988619288902 * (float10)65536f));
+  dVar18 = crt_math_c_round_FUN_005fe6b0((double)fVar17);
+  iVar2 = engine_matrix_c_interpolatedSin_FUN_0050c5c0(angle);
+  iVar3 = engine_matrix_c_interpolatedCos_FUN_0050c600(0xdc06);
   iVar4 = engine_matrix_c_interpolatedSin_FUN_0050c5c0(0);
   iVar5 = engine_matrix_c_interpolatedCos_FUN_0050c600(0);
-  engine_matrix_c_interpolatedSin_FUN_0050c5c0(local_40);
-  iVar6 = engine_matrix_c_interpolatedCos_FUN_0050c600(local_40);
+  iVar6 = engine_matrix_c_interpolatedSin_FUN_0050c5c0((ushort)(int)ROUND(dVar18));
+  iVar7 = engine_matrix_c_interpolatedCos_FUN_0050c600((ushort)(int)ROUND(dVar18));
   lVar1 = (longlong)
-          (int)((uint)((longlong)iVar4 * (longlong)local_1c) >> 0x10 |
-               (int)((ulonglong)((longlong)iVar4 * (longlong)local_1c) >> 0x20) << 0x10) *
-          (longlong)iStack_14;
-  iVar12 = ((uint)((longlong)iVar5 * (longlong)iVar6) >> 0x10 |
-           (int)((ulonglong)((longlong)iVar5 * (longlong)iVar6) >> 0x20) << 0x10) +
-           ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-  lVar1 = (longlong)
-          (int)((uint)((longlong)iVar5 * (longlong)local_1c) >> 0x10 |
-               (int)((ulonglong)((longlong)iVar5 * (longlong)local_1c) >> 0x20) << 0x10) *
-          (longlong)iStack_14;
-  iVar13 = ((uint)((longlong)iVar4 * (longlong)-iVar6) >> 0x10 |
-           (int)((ulonglong)((longlong)iVar4 * (longlong)-iVar6) >> 0x20) << 0x10) +
-           ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-  uVar7 = (uint)((longlong)local_28 * (longlong)iStack_14) >> 0x10 |
-          (int)((ulonglong)((longlong)local_28 * (longlong)iStack_14) >> 0x20) << 0x10;
-  uVar8 = (uint)((longlong)local_28 * (longlong)iVar4) >> 0x10 |
-          (int)((ulonglong)((longlong)local_28 * (longlong)iVar4) >> 0x20) << 0x10;
-  uVar9 = (uint)((longlong)local_28 * (longlong)iVar5) >> 0x10 |
-          (int)((ulonglong)((longlong)local_28 * (longlong)iVar5) >> 0x20) << 0x10;
-  iVar10 = -local_1c;
-  lVar1 = (longlong)
-          (int)((uint)((longlong)iVar4 * (longlong)local_1c) >> 0x10 |
-               (int)((ulonglong)((longlong)iVar4 * (longlong)local_1c) >> 0x20) << 0x10) *
+          (int)((uint)((longlong)iVar4 * (longlong)iVar2) >> 0x10 |
+               (int)((ulonglong)((longlong)iVar4 * (longlong)iVar2) >> 0x20) << 0x10) *
           (longlong)iVar6;
-  iVar14 = ((uint)((longlong)iVar5 * (longlong)-iStack_14) >> 0x10 |
-           (int)((ulonglong)((longlong)iVar5 * (longlong)-iStack_14) >> 0x20) << 0x10) +
+  iVar13 = ((uint)((longlong)iVar5 * (longlong)iVar7) >> 0x10 |
+           (int)((ulonglong)((longlong)iVar5 * (longlong)iVar7) >> 0x20) << 0x10) +
            ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
   lVar1 = (longlong)
-          (int)((uint)((longlong)iVar5 * (longlong)local_1c) >> 0x10 |
-               (int)((ulonglong)((longlong)iVar5 * (longlong)local_1c) >> 0x20) << 0x10) *
+          (int)((uint)((longlong)iVar5 * (longlong)iVar2) >> 0x10 |
+               (int)((ulonglong)((longlong)iVar5 * (longlong)iVar2) >> 0x20) << 0x10) *
           (longlong)iVar6;
-  iVar4 = ((uint)((longlong)iStack_14 * (longlong)iVar4) >> 0x10 |
-          (int)((ulonglong)((longlong)iStack_14 * (longlong)iVar4) >> 0x20) << 0x10) +
+  iVar14 = ((uint)((longlong)iVar4 * (longlong)-iVar7) >> 0x10 |
+           (int)((ulonglong)((longlong)iVar4 * (longlong)-iVar7) >> 0x20) << 0x10) +
+           ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+  uVar8 = (uint)((longlong)iVar3 * (longlong)iVar6) >> 0x10 |
+          (int)((ulonglong)((longlong)iVar3 * (longlong)iVar6) >> 0x20) << 0x10;
+  uVar9 = (uint)((longlong)iVar3 * (longlong)iVar4) >> 0x10 |
+          (int)((ulonglong)((longlong)iVar3 * (longlong)iVar4) >> 0x20) << 0x10;
+  uVar10 = (uint)((longlong)iVar3 * (longlong)iVar5) >> 0x10 |
+           (int)((ulonglong)((longlong)iVar3 * (longlong)iVar5) >> 0x20) << 0x10;
+  iVar11 = -iVar2;
+  lVar1 = (longlong)
+          (int)((uint)((longlong)iVar4 * (longlong)iVar2) >> 0x10 |
+               (int)((ulonglong)((longlong)iVar4 * (longlong)iVar2) >> 0x20) << 0x10) *
+          (longlong)iVar7;
+  iVar15 = ((uint)((longlong)iVar5 * (longlong)-iVar6) >> 0x10 |
+           (int)((ulonglong)((longlong)iVar5 * (longlong)-iVar6) >> 0x20) << 0x10) +
+           ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
+  lVar1 = (longlong)
+          (int)((uint)((longlong)iVar5 * (longlong)iVar2) >> 0x10 |
+               (int)((ulonglong)((longlong)iVar5 * (longlong)iVar2) >> 0x20) << 0x10) *
+          (longlong)iVar7;
+  iVar2 = ((uint)((longlong)iVar6 * (longlong)iVar4) >> 0x10 |
+          (int)((ulonglong)((longlong)iVar6 * (longlong)iVar4) >> 0x20) << 0x10) +
           ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-  uVar11 = (uint)((longlong)local_28 * (longlong)iVar6) >> 0x10 |
-           (int)((ulonglong)((longlong)local_28 * (longlong)iVar6) >> 0x20) << 0x10;
-  g_RelativeX = ((uint)((longlong)iVar12 * (longlong)iVar2) >> 0x10 |
-                (int)((ulonglong)((longlong)iVar12 * (longlong)iVar2) >> 0x20) << 0x10) +
-                ((uint)((longlong)(int)uVar8 * (longlong)iVar3) >> 0x10 |
-                (int)((ulonglong)((longlong)(int)uVar8 * (longlong)iVar3) >> 0x20) << 0x10) +
-                ((uint)((longlong)iVar14 * (longlong)local_2c) >> 0x10 |
-                (int)((ulonglong)((longlong)iVar14 * (longlong)local_2c) >> 0x20) << 0x10);
-  g_RelativeY = ((uint)((longlong)iVar13 * (longlong)iVar2) >> 0x10 |
-                (int)((ulonglong)((longlong)iVar13 * (longlong)iVar2) >> 0x20) << 0x10) +
-                ((uint)((longlong)(int)uVar9 * (longlong)iVar3) >> 0x10 |
-                (int)((ulonglong)((longlong)(int)uVar9 * (longlong)iVar3) >> 0x20) << 0x10) +
-                ((uint)((longlong)iVar4 * (longlong)local_2c) >> 0x10 |
-                (int)((ulonglong)((longlong)iVar4 * (longlong)local_2c) >> 0x20) << 0x10);
-  g_RelativeZ = ((uint)((longlong)(int)uVar7 * (longlong)iVar2) >> 0x10 |
-                (int)((ulonglong)((longlong)(int)uVar7 * (longlong)iVar2) >> 0x20) << 0x10) +
-                ((uint)((longlong)iVar10 * (longlong)iVar3) >> 0x10 |
-                (int)((ulonglong)((longlong)iVar10 * (longlong)iVar3) >> 0x20) << 0x10) +
-                ((uint)((longlong)(int)uVar11 * (longlong)local_2c) >> 0x10 |
-                (int)((ulonglong)((longlong)(int)uVar11 * (longlong)local_2c) >> 0x20) << 0x10);
+  uVar12 = (uint)((longlong)iVar3 * (longlong)iVar7) >> 0x10 |
+           (int)((ulonglong)((longlong)iVar3 * (longlong)iVar7) >> 0x20) << 0x10;
+  g_RelativeX = ((uint)((longlong)iVar13 * (longlong)local_4c) >> 0x10 |
+                (int)((ulonglong)((longlong)iVar13 * (longlong)local_4c) >> 0x20) << 0x10) +
+                ((uint)((longlong)(int)uVar9 * (longlong)local_48) >> 0x10 |
+                (int)((ulonglong)((longlong)(int)uVar9 * (longlong)local_48) >> 0x20) << 0x10) +
+                ((uint)((longlong)iVar15 * (longlong)local_44) >> 0x10 |
+                (int)((ulonglong)((longlong)iVar15 * (longlong)local_44) >> 0x20) << 0x10);
+  g_RelativeY = ((uint)((longlong)iVar14 * (longlong)local_4c) >> 0x10 |
+                (int)((ulonglong)((longlong)iVar14 * (longlong)local_4c) >> 0x20) << 0x10) +
+                ((uint)((longlong)(int)uVar10 * (longlong)local_48) >> 0x10 |
+                (int)((ulonglong)((longlong)(int)uVar10 * (longlong)local_48) >> 0x20) << 0x10) +
+                ((uint)((longlong)iVar2 * (longlong)local_44) >> 0x10 |
+                (int)((ulonglong)((longlong)iVar2 * (longlong)local_44) >> 0x20) << 0x10);
+  g_RelativeZ = ((uint)((longlong)(int)uVar8 * (longlong)local_4c) >> 0x10 |
+                (int)((ulonglong)((longlong)(int)uVar8 * (longlong)local_4c) >> 0x20) << 0x10) +
+                ((uint)((longlong)iVar11 * (longlong)local_48) >> 0x10 |
+                (int)((ulonglong)((longlong)iVar11 * (longlong)local_48) >> 0x20) << 0x10) +
+                ((uint)((longlong)(int)uVar12 * (longlong)local_44) >> 0x10 |
+                (int)((ulonglong)((longlong)(int)uVar12 * (longlong)local_44) >> 0x20) << 0x10);
   g_LightDirectionX =
-       ((uint)((longlong)iVar12 * (longlong)g_MatrixStack_Unk1[g_MatrixStackIndex]) >> 0x10 |
-       (int)((ulonglong)((longlong)iVar12 * (longlong)g_MatrixStack_Unk1[g_MatrixStackIndex]) >>
-            0x20) << 0x10) +
-       ((uint)((longlong)(int)uVar8 * (longlong)g_MatrixStack_Unk2[g_MatrixStackIndex]) >> 0x10 |
-       (int)((ulonglong)((longlong)(int)uVar8 * (longlong)g_MatrixStack_Unk2[g_MatrixStackIndex]) >>
-            0x20) << 0x10) +
-       ((uint)((longlong)iVar14 * (longlong)g_MatrixStack_Unk3[g_MatrixStackIndex]) >> 0x10 |
-       (int)((ulonglong)((longlong)iVar14 * (longlong)g_MatrixStack_Unk3[g_MatrixStackIndex]) >>
-            0x20) << 0x10);
-  g_LightDirectionY =
        ((uint)((longlong)iVar13 * (longlong)g_MatrixStack_Unk1[g_MatrixStackIndex]) >> 0x10 |
        (int)((ulonglong)((longlong)iVar13 * (longlong)g_MatrixStack_Unk1[g_MatrixStackIndex]) >>
             0x20) << 0x10) +
        ((uint)((longlong)(int)uVar9 * (longlong)g_MatrixStack_Unk2[g_MatrixStackIndex]) >> 0x10 |
        (int)((ulonglong)((longlong)(int)uVar9 * (longlong)g_MatrixStack_Unk2[g_MatrixStackIndex]) >>
             0x20) << 0x10) +
-       ((uint)((longlong)iVar4 * (longlong)g_MatrixStack_Unk3[g_MatrixStackIndex]) >> 0x10 |
-       (int)((ulonglong)((longlong)iVar4 * (longlong)g_MatrixStack_Unk3[g_MatrixStackIndex]) >> 0x20
+       ((uint)((longlong)iVar15 * (longlong)g_MatrixStack_Unk3[g_MatrixStackIndex]) >> 0x10 |
+       (int)((ulonglong)((longlong)iVar15 * (longlong)g_MatrixStack_Unk3[g_MatrixStackIndex]) >>
+            0x20) << 0x10);
+  g_LightDirectionY =
+       ((uint)((longlong)iVar14 * (longlong)g_MatrixStack_Unk1[g_MatrixStackIndex]) >> 0x10 |
+       (int)((ulonglong)((longlong)iVar14 * (longlong)g_MatrixStack_Unk1[g_MatrixStackIndex]) >>
+            0x20) << 0x10) +
+       ((uint)((longlong)(int)uVar10 * (longlong)g_MatrixStack_Unk2[g_MatrixStackIndex]) >> 0x10 |
+       (int)((ulonglong)((longlong)(int)uVar10 * (longlong)g_MatrixStack_Unk2[g_MatrixStackIndex])
+            >> 0x20) << 0x10) +
+       ((uint)((longlong)iVar2 * (longlong)g_MatrixStack_Unk3[g_MatrixStackIndex]) >> 0x10 |
+       (int)((ulonglong)((longlong)iVar2 * (longlong)g_MatrixStack_Unk3[g_MatrixStackIndex]) >> 0x20
             ) << 0x10);
   g_LightDirectionZ =
-       ((uint)((longlong)(int)uVar7 * (longlong)g_MatrixStack_Unk1[g_MatrixStackIndex]) >> 0x10 |
-       (int)((ulonglong)((longlong)(int)uVar7 * (longlong)g_MatrixStack_Unk1[g_MatrixStackIndex]) >>
+       ((uint)((longlong)(int)uVar8 * (longlong)g_MatrixStack_Unk1[g_MatrixStackIndex]) >> 0x10 |
+       (int)((ulonglong)((longlong)(int)uVar8 * (longlong)g_MatrixStack_Unk1[g_MatrixStackIndex]) >>
             0x20) << 0x10) +
-       ((uint)((longlong)iVar10 * (longlong)g_MatrixStack_Unk2[g_MatrixStackIndex]) >> 0x10 |
-       (int)((ulonglong)((longlong)iVar10 * (longlong)g_MatrixStack_Unk2[g_MatrixStackIndex]) >>
+       ((uint)((longlong)iVar11 * (longlong)g_MatrixStack_Unk2[g_MatrixStackIndex]) >> 0x10 |
+       (int)((ulonglong)((longlong)iVar11 * (longlong)g_MatrixStack_Unk2[g_MatrixStackIndex]) >>
             0x20) << 0x10) +
-       ((uint)((longlong)(int)uVar11 * (longlong)g_MatrixStack_Unk3[g_MatrixStackIndex]) >> 0x10 |
-       (int)((ulonglong)((longlong)(int)uVar11 * (longlong)g_MatrixStack_Unk3[g_MatrixStackIndex])
+       ((uint)((longlong)(int)uVar12 * (longlong)g_MatrixStack_Unk3[g_MatrixStackIndex]) >> 0x10 |
+       (int)((ulonglong)((longlong)(int)uVar12 * (longlong)g_MatrixStack_Unk3[g_MatrixStackIndex])
             >> 0x20) << 0x10);
   g_TransformMatrix.m[0].x =
-       ((uint)((longlong)g_MatrixStack_M00[g_MatrixStackIndex] * (longlong)iVar12) >> 0x10 |
-       (int)((ulonglong)((longlong)g_MatrixStack_M00[g_MatrixStackIndex] * (longlong)iVar12) >> 0x20
-            ) << 0x10) +
-       ((uint)((longlong)g_MatrixStack_M10[g_MatrixStackIndex] * (longlong)(int)uVar8) >> 0x10 |
-       (int)((ulonglong)((longlong)g_MatrixStack_M10[g_MatrixStackIndex] * (longlong)(int)uVar8) >>
-            0x20) << 0x10) +
-       ((uint)((longlong)g_MatrixStack_M20[g_MatrixStackIndex] * (longlong)iVar14) >> 0x10 |
-       (int)((ulonglong)((longlong)g_MatrixStack_M20[g_MatrixStackIndex] * (longlong)iVar14) >> 0x20
-            ) << 0x10);
-  g_TransformMatrix.m[0].y =
-       ((uint)((longlong)g_MatrixStack_M01[g_MatrixStackIndex] * (longlong)iVar12) >> 0x10 |
-       (int)((ulonglong)((longlong)g_MatrixStack_M01[g_MatrixStackIndex] * (longlong)iVar12) >> 0x20
-            ) << 0x10) +
-       ((uint)((longlong)g_MatrixStack_M11[g_MatrixStackIndex] * (longlong)(int)uVar8) >> 0x10 |
-       (int)((ulonglong)((longlong)g_MatrixStack_M11[g_MatrixStackIndex] * (longlong)(int)uVar8) >>
-            0x20) << 0x10) +
-       ((uint)((longlong)g_MatrixStack_M21[g_MatrixStackIndex] * (longlong)iVar14) >> 0x10 |
-       (int)((ulonglong)((longlong)g_MatrixStack_M21[g_MatrixStackIndex] * (longlong)iVar14) >> 0x20
-            ) << 0x10);
-  g_TransformMatrix.m[0].z =
-       ((uint)((longlong)g_MatrixStack_M02[g_MatrixStackIndex] * (longlong)iVar12) >> 0x10 |
-       (int)((ulonglong)((longlong)g_MatrixStack_M02[g_MatrixStackIndex] * (longlong)iVar12) >> 0x20
-            ) << 0x10) +
-       ((uint)((longlong)g_MatrixStack_M12[g_MatrixStackIndex] * (longlong)(int)uVar8) >> 0x10 |
-       (int)((ulonglong)((longlong)g_MatrixStack_M12[g_MatrixStackIndex] * (longlong)(int)uVar8) >>
-            0x20) << 0x10) +
-       ((uint)((longlong)g_MatrixStack_M22[g_MatrixStackIndex] * (longlong)iVar14) >> 0x10 |
-       (int)((ulonglong)((longlong)g_MatrixStack_M22[g_MatrixStackIndex] * (longlong)iVar14) >> 0x20
-            ) << 0x10);
-  g_TransformMatrix.m[1].x =
        ((uint)((longlong)g_MatrixStack_M00[g_MatrixStackIndex] * (longlong)iVar13) >> 0x10 |
        (int)((ulonglong)((longlong)g_MatrixStack_M00[g_MatrixStackIndex] * (longlong)iVar13) >> 0x20
             ) << 0x10) +
        ((uint)((longlong)g_MatrixStack_M10[g_MatrixStackIndex] * (longlong)(int)uVar9) >> 0x10 |
        (int)((ulonglong)((longlong)g_MatrixStack_M10[g_MatrixStackIndex] * (longlong)(int)uVar9) >>
             0x20) << 0x10) +
-       ((uint)((longlong)g_MatrixStack_M20[g_MatrixStackIndex] * (longlong)iVar4) >> 0x10 |
-       (int)((ulonglong)((longlong)g_MatrixStack_M20[g_MatrixStackIndex] * (longlong)iVar4) >> 0x20)
-       << 0x10);
-  g_TransformMatrix.m[1].y =
+       ((uint)((longlong)g_MatrixStack_M20[g_MatrixStackIndex] * (longlong)iVar15) >> 0x10 |
+       (int)((ulonglong)((longlong)g_MatrixStack_M20[g_MatrixStackIndex] * (longlong)iVar15) >> 0x20
+            ) << 0x10);
+  g_TransformMatrix.m[0].y =
        ((uint)((longlong)g_MatrixStack_M01[g_MatrixStackIndex] * (longlong)iVar13) >> 0x10 |
        (int)((ulonglong)((longlong)g_MatrixStack_M01[g_MatrixStackIndex] * (longlong)iVar13) >> 0x20
             ) << 0x10) +
        ((uint)((longlong)g_MatrixStack_M11[g_MatrixStackIndex] * (longlong)(int)uVar9) >> 0x10 |
        (int)((ulonglong)((longlong)g_MatrixStack_M11[g_MatrixStackIndex] * (longlong)(int)uVar9) >>
             0x20) << 0x10) +
-       ((uint)((longlong)g_MatrixStack_M21[g_MatrixStackIndex] * (longlong)iVar4) >> 0x10 |
-       (int)((ulonglong)((longlong)g_MatrixStack_M21[g_MatrixStackIndex] * (longlong)iVar4) >> 0x20)
-       << 0x10);
-  g_TransformMatrix.m[1].z =
+       ((uint)((longlong)g_MatrixStack_M21[g_MatrixStackIndex] * (longlong)iVar15) >> 0x10 |
+       (int)((ulonglong)((longlong)g_MatrixStack_M21[g_MatrixStackIndex] * (longlong)iVar15) >> 0x20
+            ) << 0x10);
+  g_TransformMatrix.m[0].z =
        ((uint)((longlong)g_MatrixStack_M02[g_MatrixStackIndex] * (longlong)iVar13) >> 0x10 |
        (int)((ulonglong)((longlong)g_MatrixStack_M02[g_MatrixStackIndex] * (longlong)iVar13) >> 0x20
             ) << 0x10) +
        ((uint)((longlong)g_MatrixStack_M12[g_MatrixStackIndex] * (longlong)(int)uVar9) >> 0x10 |
        (int)((ulonglong)((longlong)g_MatrixStack_M12[g_MatrixStackIndex] * (longlong)(int)uVar9) >>
             0x20) << 0x10) +
-       ((uint)((longlong)g_MatrixStack_M22[g_MatrixStackIndex] * (longlong)iVar4) >> 0x10 |
-       (int)((ulonglong)((longlong)g_MatrixStack_M22[g_MatrixStackIndex] * (longlong)iVar4) >> 0x20)
+       ((uint)((longlong)g_MatrixStack_M22[g_MatrixStackIndex] * (longlong)iVar15) >> 0x10 |
+       (int)((ulonglong)((longlong)g_MatrixStack_M22[g_MatrixStackIndex] * (longlong)iVar15) >> 0x20
+            ) << 0x10);
+  g_TransformMatrix.m[1].x =
+       ((uint)((longlong)g_MatrixStack_M00[g_MatrixStackIndex] * (longlong)iVar14) >> 0x10 |
+       (int)((ulonglong)((longlong)g_MatrixStack_M00[g_MatrixStackIndex] * (longlong)iVar14) >> 0x20
+            ) << 0x10) +
+       ((uint)((longlong)g_MatrixStack_M10[g_MatrixStackIndex] * (longlong)(int)uVar10) >> 0x10 |
+       (int)((ulonglong)((longlong)g_MatrixStack_M10[g_MatrixStackIndex] * (longlong)(int)uVar10) >>
+            0x20) << 0x10) +
+       ((uint)((longlong)g_MatrixStack_M20[g_MatrixStackIndex] * (longlong)iVar2) >> 0x10 |
+       (int)((ulonglong)((longlong)g_MatrixStack_M20[g_MatrixStackIndex] * (longlong)iVar2) >> 0x20)
+       << 0x10);
+  g_TransformMatrix.m[1].y =
+       ((uint)((longlong)g_MatrixStack_M01[g_MatrixStackIndex] * (longlong)iVar14) >> 0x10 |
+       (int)((ulonglong)((longlong)g_MatrixStack_M01[g_MatrixStackIndex] * (longlong)iVar14) >> 0x20
+            ) << 0x10) +
+       ((uint)((longlong)g_MatrixStack_M11[g_MatrixStackIndex] * (longlong)(int)uVar10) >> 0x10 |
+       (int)((ulonglong)((longlong)g_MatrixStack_M11[g_MatrixStackIndex] * (longlong)(int)uVar10) >>
+            0x20) << 0x10) +
+       ((uint)((longlong)g_MatrixStack_M21[g_MatrixStackIndex] * (longlong)iVar2) >> 0x10 |
+       (int)((ulonglong)((longlong)g_MatrixStack_M21[g_MatrixStackIndex] * (longlong)iVar2) >> 0x20)
+       << 0x10);
+  g_TransformMatrix.m[1].z =
+       ((uint)((longlong)g_MatrixStack_M02[g_MatrixStackIndex] * (longlong)iVar14) >> 0x10 |
+       (int)((ulonglong)((longlong)g_MatrixStack_M02[g_MatrixStackIndex] * (longlong)iVar14) >> 0x20
+            ) << 0x10) +
+       ((uint)((longlong)g_MatrixStack_M12[g_MatrixStackIndex] * (longlong)(int)uVar10) >> 0x10 |
+       (int)((ulonglong)((longlong)g_MatrixStack_M12[g_MatrixStackIndex] * (longlong)(int)uVar10) >>
+            0x20) << 0x10) +
+       ((uint)((longlong)g_MatrixStack_M22[g_MatrixStackIndex] * (longlong)iVar2) >> 0x10 |
+       (int)((ulonglong)((longlong)g_MatrixStack_M22[g_MatrixStackIndex] * (longlong)iVar2) >> 0x20)
        << 0x10);
   g_TransformMatrix.m[2].x =
-       ((uint)((longlong)g_MatrixStack_M00[g_MatrixStackIndex] * (longlong)(int)uVar7) >> 0x10 |
-       (int)((ulonglong)((longlong)g_MatrixStack_M00[g_MatrixStackIndex] * (longlong)(int)uVar7) >>
+       ((uint)((longlong)g_MatrixStack_M00[g_MatrixStackIndex] * (longlong)(int)uVar8) >> 0x10 |
+       (int)((ulonglong)((longlong)g_MatrixStack_M00[g_MatrixStackIndex] * (longlong)(int)uVar8) >>
             0x20) << 0x10) +
-       ((uint)((longlong)g_MatrixStack_M10[g_MatrixStackIndex] * (longlong)iVar10) >> 0x10 |
-       (int)((ulonglong)((longlong)g_MatrixStack_M10[g_MatrixStackIndex] * (longlong)iVar10) >> 0x20
+       ((uint)((longlong)g_MatrixStack_M10[g_MatrixStackIndex] * (longlong)iVar11) >> 0x10 |
+       (int)((ulonglong)((longlong)g_MatrixStack_M10[g_MatrixStackIndex] * (longlong)iVar11) >> 0x20
             ) << 0x10) +
-       ((uint)((longlong)g_MatrixStack_M20[g_MatrixStackIndex] * (longlong)(int)uVar11) >> 0x10 |
-       (int)((ulonglong)((longlong)g_MatrixStack_M20[g_MatrixStackIndex] * (longlong)(int)uVar11) >>
+       ((uint)((longlong)g_MatrixStack_M20[g_MatrixStackIndex] * (longlong)(int)uVar12) >> 0x10 |
+       (int)((ulonglong)((longlong)g_MatrixStack_M20[g_MatrixStackIndex] * (longlong)(int)uVar12) >>
             0x20) << 0x10);
   g_TransformMatrix.m[2].y =
-       ((uint)((longlong)g_MatrixStack_M01[g_MatrixStackIndex] * (longlong)(int)uVar7) >> 0x10 |
-       (int)((ulonglong)((longlong)g_MatrixStack_M01[g_MatrixStackIndex] * (longlong)(int)uVar7) >>
+       ((uint)((longlong)g_MatrixStack_M01[g_MatrixStackIndex] * (longlong)(int)uVar8) >> 0x10 |
+       (int)((ulonglong)((longlong)g_MatrixStack_M01[g_MatrixStackIndex] * (longlong)(int)uVar8) >>
             0x20) << 0x10) +
-       ((uint)((longlong)g_MatrixStack_M11[g_MatrixStackIndex] * (longlong)iVar10) >> 0x10 |
-       (int)((ulonglong)((longlong)g_MatrixStack_M11[g_MatrixStackIndex] * (longlong)iVar10) >> 0x20
+       ((uint)((longlong)g_MatrixStack_M11[g_MatrixStackIndex] * (longlong)iVar11) >> 0x10 |
+       (int)((ulonglong)((longlong)g_MatrixStack_M11[g_MatrixStackIndex] * (longlong)iVar11) >> 0x20
             ) << 0x10) +
-       ((uint)((longlong)g_MatrixStack_M21[g_MatrixStackIndex] * (longlong)(int)uVar11) >> 0x10 |
-       (int)((ulonglong)((longlong)g_MatrixStack_M21[g_MatrixStackIndex] * (longlong)(int)uVar11) >>
+       ((uint)((longlong)g_MatrixStack_M21[g_MatrixStackIndex] * (longlong)(int)uVar12) >> 0x10 |
+       (int)((ulonglong)((longlong)g_MatrixStack_M21[g_MatrixStackIndex] * (longlong)(int)uVar12) >>
             0x20) << 0x10);
   g_TransformMatrix.m[2].z =
-       ((uint)((longlong)g_MatrixStack_M02[g_MatrixStackIndex] * (longlong)(int)uVar7) >> 0x10 |
-       (int)((ulonglong)((longlong)g_MatrixStack_M02[g_MatrixStackIndex] * (longlong)(int)uVar7) >>
+       ((uint)((longlong)g_MatrixStack_M02[g_MatrixStackIndex] * (longlong)(int)uVar8) >> 0x10 |
+       (int)((ulonglong)((longlong)g_MatrixStack_M02[g_MatrixStackIndex] * (longlong)(int)uVar8) >>
             0x20) << 0x10) +
-       ((uint)((longlong)g_MatrixStack_M12[g_MatrixStackIndex] * (longlong)iVar10) >> 0x10 |
-       (int)((ulonglong)((longlong)g_MatrixStack_M12[g_MatrixStackIndex] * (longlong)iVar10) >> 0x20
+       ((uint)((longlong)g_MatrixStack_M12[g_MatrixStackIndex] * (longlong)iVar11) >> 0x10 |
+       (int)((ulonglong)((longlong)g_MatrixStack_M12[g_MatrixStackIndex] * (longlong)iVar11) >> 0x20
             ) << 0x10) +
-       ((uint)((longlong)g_MatrixStack_M22[g_MatrixStackIndex] * (longlong)(int)uVar11) >> 0x10 |
-       (int)((ulonglong)((longlong)g_MatrixStack_M22[g_MatrixStackIndex] * (longlong)(int)uVar11) >>
+       ((uint)((longlong)g_MatrixStack_M22[g_MatrixStackIndex] * (longlong)(int)uVar12) >> 0x10 |
+       (int)((ulonglong)((longlong)g_MatrixStack_M22[g_MatrixStackIndex] * (longlong)(int)uVar12) >>
             0x20) << 0x10);
   g_MatrixStackIndex = g_MatrixStackIndex + 1;
   if (g_MatrixStackIndex < 10) {

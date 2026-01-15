@@ -11,55 +11,55 @@ engine_palette_cpp_CPaletteManager_FUN_00545060(CPaletteManager *this_ptr,SMRGLH
 
 {
   SMRGLHeaderExtended *in_EAX;
+  uint uVar1;
   SMRGLHeaderExtended *unk_00;
-  SMRGLHeaderExtended *pSVar1;
-  int iVar2;
+  SMRGLHeaderExtended *pSVar2;
+  int iVar3;
+  SMRGLHeaderExtended *local_14;
   
-  iVar2 = (unk->base).type;
-  if (iVar2 == 0x20) {
-    iVar2 = 0;
+  iVar3 = (unk->base).type;
+  local_14 = unk;
+  if (iVar3 == 0x20) {
+    iVar3 = 0;
+    local_14 = in_EAX;
     if (0 < unk->child_count) {
-      pSVar1 = unk + 2;
+      pSVar2 = unk + 2;
       do {
-        unk_00 = engine_model_c_loadModelFile_FUN_00527ec0((char *)pSVar1);
+        unk_00 = engine_model_c_loadModelFile_FUN_00527ec0((char *)pSVar2);
         engine_palette_cpp_CPaletteManager_FUN_00545060(this_ptr,unk_00);
-        in_EAX = (SMRGLHeaderExtended *)0x545122;
         engine_model_c_freeMRGLData_FUN_005280b0(unk_00);
-        iVar2 = iVar2 + 1;
-        pSVar1 = (SMRGLHeaderExtended *)&pSVar1[1].base.count;
-      } while (iVar2 < in_EAX->child_count);
+        iVar3 = iVar3 + 1;
+        pSVar2 = (SMRGLHeaderExtended *)&pSVar2[1].base.count;
+        local_14 = unk;
+      } while (iVar3 < unk->child_count);
+    }
+  }
+  else if (iVar3 == 0x26) {
+    local_14 = (SMRGLHeaderExtended *)unk[2].base.type;
+    iVar3 = 0;
+    if (0 < (int)local_14) {
+      do {
+        iVar3 = iVar3 + 1;
+        pSVar2 = (SMRGLHeaderExtended *)engine_palette_cpp_CPaletteManager_addTexture_FUN_00544fc0()
+        ;
+      } while (iVar3 < unk[2].base.type);
+      return pSVar2;
     }
   }
   else {
-    in_EAX = unk;
-    if (iVar2 == 0x26) {
-      in_EAX = (SMRGLHeaderExtended *)unk[2].base.type;
-      iVar2 = 0;
-      if (0 < (int)in_EAX) {
+    for (; iVar3 = (local_14->base).type, iVar3 != 0;
+        local_14 = (SMRGLHeaderExtended *)((int)&(local_14->base).type + (uVar1 & 0xfffffffc))) {
+      if ((iVar3 == 0xd) || (iVar3 == 0x40)) {
+        engine_palette_cpp_CPaletteManager_addTexture_FUN_00544fc0();
+      }
+      if (((local_14->base).type == 0x1d) && (iVar3 = 0, 0 < local_14->child_count)) {
         do {
-          iVar2 = iVar2 + 1;
-          pSVar1 = (SMRGLHeaderExtended *)
-                   engine_palette_cpp_CPaletteManager_addTexture_FUN_00544fc0();
-        } while (iVar2 < unk[2].base.type);
-        return pSVar1;
-      }
-    }
-    else {
-      while (iVar2 = (in_EAX->base).type, iVar2 != 0) {
-        if ((iVar2 == 0xd) || (pSVar1 = in_EAX, iVar2 == 0x40)) {
+          iVar3 = iVar3 + 1;
           engine_palette_cpp_CPaletteManager_addTexture_FUN_00544fc0();
-          pSVar1 = in_EAX;
-        }
-        in_EAX = pSVar1;
-        if (((pSVar1->base).type == 0x1d) && (iVar2 = 0, 0 < pSVar1->child_count)) {
-          do {
-            iVar2 = iVar2 + 1;
-            engine_palette_cpp_CPaletteManager_addTexture_FUN_00544fc0();
-          } while (iVar2 < pSVar1->child_count);
-        }
-        engine_model_c_getMRGLSize_FUN_00528700(in_EAX);
+        } while (iVar3 < local_14->child_count);
       }
+      uVar1 = engine_model_c_getMRGLSize_FUN_00528700(local_14);
     }
   }
-  return in_EAX;
+  return local_14;
 }

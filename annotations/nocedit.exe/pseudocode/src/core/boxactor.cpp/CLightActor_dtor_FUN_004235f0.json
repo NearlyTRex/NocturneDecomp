@@ -1,19 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 167,
+    "complexity_score": 141,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 1,
-    "pseudocode_lines": 27,
-    "suspect_count": 12,
+    "pseudocode_lines": 26,
+    "suspect_count": 10,
     "suspect_types": [
       "call_esp_preserve",
       "negative_offset",
-      "stack_param",
       "unaffected_reg"
     ],
-    "total_lines": 80
+    "total_lines": 79
   },
   "cross_references": [],
   "function": {
@@ -131,39 +130,25 @@
       "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000014",
-      "text": "byte in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 19,
+      "line": 18,
       "match": "unaff_EBX",
       "text": "((CDemonLight *)(this_ptr->field1_0x66c + 4),0,unaff_EBX,unaff_retaddr);",
       "type": "unaffected_reg"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 21,
+      "line": 20,
       "match": "pCVar1[-1].",
       "text": "((CBox *)(pCVar1[-1].saved_screen_buffer_rows + 0x3ff));",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 24,
+      "line": 23,
       "match": "pCVar2[-2].",
       "text": "((CDemonActor *)(pCVar2[-2].scrape_points + 2),1);",
       "type": "negative_offset"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_00000014",
-      "text": "if ((in_stack_00000014 & 2) == 0) {",
-      "type": "stack_param"
     },
     {
       "add_esp_value": 8,

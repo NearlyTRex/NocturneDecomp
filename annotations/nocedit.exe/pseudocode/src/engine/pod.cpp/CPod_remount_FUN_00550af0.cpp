@@ -12,19 +12,17 @@ void __cdecl engine_pod_cpp_CPod_remount_FUN_00550af0(CPod *this_ptr)
   char cVar1;
   int iVar2;
   CPod *pCVar3;
-  BADSPACEBASE *in_ESP;
   int iVar4;
   char *pcVar5;
   char *pcVar6;
-  uint local_110;
-  byte auStack_10c [252];
+  char local_110 [256];
   
   iVar4 = 0;
   pCVar3 = this_ptr;
   if (0 < this_ptr->pod_file_count) {
     do {
-      pcVar6 = (char *)&local_110;
       pcVar5 = pCVar3->pod_files[0]->filename;
+      pcVar6 = local_110;
       do {
         cVar1 = *pcVar5;
         *pcVar6 = cVar1;
@@ -34,13 +32,11 @@ void __cdecl engine_pod_cpp_CPod_remount_FUN_00550af0(CPod *this_ptr)
         pcVar6[1] = cVar1;
         pcVar6 = pcVar6 + 2;
       } while (cVar1 != '\0');
-      iVar2 = engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650
-                        (pCVar3->pod_files[0],(char *)&local_110);
+      iVar2 = engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650(pCVar3->pod_files[0],local_110);
       if (iVar2 == 0) {
         g_CurrentLineNumber = 0x3b3;
         g_CurrentFilename = "..\\engine\\pod.cpp";
-        local_110 = auStack_10c;
-        core_main_c_displayErrorAndQuit_FUN_00506f10("Can't re-mount %s");
+        core_main_c_displayErrorAndQuit_FUN_00506f10("Can't re-mount %s",local_110);
       }
       iVar4 = iVar4 + 1;
       pCVar3 = (CPod *)pCVar3->pod_files;

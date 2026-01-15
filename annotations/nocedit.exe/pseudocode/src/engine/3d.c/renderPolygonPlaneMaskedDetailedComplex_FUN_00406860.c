@@ -17,9 +17,6 @@ engine_3d_c_renderPolygonPlaneMaskedDetailedComplex_FUN_00406860(SMRGLHeaderPrim
   float fVar5;
   int iVar6;
   int vertex_count;
-  SMRGLHeaderPrimitive *in_stack_00000008;
-  int in_stack_0000000c;
-  int in_stack_00000010;
   
   pSVar4 = polygon_info + 1;
   iVar2 = engine_3d_c_isVisiblePlane_FUN_00403950(&polygon_info->surface_normal);
@@ -39,14 +36,14 @@ engine_3d_c_renderPolygonPlaneMaskedDetailedComplex_FUN_00406860(SMRGLHeaderPrim
       g_ScanlineRenderFunc = wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
     }
     g_RenderStateFlags = RENDER_PLANE_MASKED_COMPLEX;
-    engine_3d_c_calculatePolygonLighting_FUN_00403a00(in_stack_00000008);
+    engine_3d_c_calculatePolygonLighting_FUN_00403a00(polygon_info);
     if (g_CurrentAlphaValue < 0xff) {
       g_RenderStateFlags = g_RenderStateFlags | 0x20;
     }
     iVar6 = 0;
     g_RenderStateFlag2 = PREPROCESS_DEPTH_BUFFER_PREP;
     vertex_count = 0;
-    for (iVar2 = 0; iVar2 < *(int *)(in_stack_0000000c + 4) * 3; iVar2 = iVar2 + 3) {
+    for (iVar2 = 0; iVar2 < (polygon_info->base).count * 3; iVar2 = iVar2 + 3) {
       *(int *)((int)g_ProcessedVertexIndices + iVar6) = (pSVar4->base).type;
       fVar3 = (float)(pSVar4->base).count;
       fVar5 = (float)(pSVar4->surface_normal).A;
@@ -87,5 +84,5 @@ engine_3d_c_renderPolygonPlaneMaskedDetailedComplex_FUN_00406860(SMRGLHeaderPrim
     }
     engine_clipper_c_clipAndRasterize_FUN_004371b0(vertex_count,g_ProcessedVertexIndices);
   }
-  return (SMRGLHeaderExtended *)(in_stack_00000010 + 0x18 + *(int *)(in_stack_00000010 + 4) * 0xc);
+  return (SMRGLHeaderExtended *)((int)&polygon_info[1].base + (polygon_info->base).count * 0xc);
 }

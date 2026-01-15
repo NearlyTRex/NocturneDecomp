@@ -17,8 +17,7 @@ core_dfilter_cpp_CFilterCache_getFilter_FUN_00470060
   CDemonFilter *pCVar3;
   int iVar4;
   char (*pacVar5) [40];
-  char *in_stack_00000014;
-  int in_stack_0000001c;
+  char *pcVar6;
   
   iVar4 = 0;
   if (0 < this_ptr->filter_count) {
@@ -39,12 +38,13 @@ core_dfilter_cpp_CFilterCache_getFilter_FUN_00470060
   }
   pacVar5 = this_ptr->filter_names + iVar4;
   this_ptr->filter_count = this_ptr->filter_count + 1;
+  pcVar6 = filter_name;
   do {
-    cVar1 = *filter_filename;
+    cVar1 = *pcVar6;
     (*pacVar5)[0] = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = filter_filename[1];
-    filter_filename = filter_filename + 2;
+    cVar1 = pcVar6[1];
+    pcVar6 = pcVar6 + 2;
     (*pacVar5)[1] = cVar1;
     pacVar5 = (char (*) [40])(*pacVar5 + 2);
   } while (cVar1 != '\0');
@@ -59,8 +59,8 @@ core_dfilter_cpp_CFilterCache_getFilter_FUN_00470060
     g_CurrentLineNumber = 0x59;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CFilterCache::getFilter - Out of memory");
   }
-  core_dfilter_cpp_CDemonFilter_load_FUN_004702f0(this_ptr->filters[iVar4],in_stack_00000014);
-  if (in_stack_0000001c != 0) {
+  core_dfilter_cpp_CDemonFilter_load_FUN_004702f0(this_ptr->filters[iVar4],filter_name);
+  if (filter_filename != (char *)0x0) {
     core_dfilter_cpp_CDemonFilter_init_FUN_004705a0(this_ptr->filters[iVar4],1.333,1);
   }
   return this_ptr->filters[iVar4];

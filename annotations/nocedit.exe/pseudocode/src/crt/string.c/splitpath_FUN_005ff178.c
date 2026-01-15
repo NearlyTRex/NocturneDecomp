@@ -16,7 +16,6 @@ crt_string_c_splitpath_FUN_005ff178(char *path,char *drive,char *dir,char *fname
   ushort extraout_var;
   char *pcVar4;
   char *src;
-  char *in_stack_0000001c;
   char *src_00;
   int iVar3;
   
@@ -34,32 +33,32 @@ crt_string_c_splitpath_FUN_005ff178(char *path,char *drive,char *dir,char *fname
     }
     path = path + 2;
   }
-  src = (char *)0x0;
+  src_00 = (char *)0x0;
   cVar1 = *path;
   str = path;
-  src_00 = path;
+  src = path;
   while (cVar1 != '\0') {
     wVar2 = crt_string_c_mbtowc_peek_FUN_006059e0(str);
     iVar3 = CONCAT22 /* combine 2-byte values */(extraout_var,wVar2);
     if (iVar3 == 0x2e) {
       pcVar4 = str + 1;
-      src = str;
+      src_00 = str;
     }
     else {
       pcVar4 = crt_string_c_mbtowc_next_FUN_00605a70(str);
       if ((iVar3 == 0x5c) || (iVar3 == 0x2f)) {
-        src = (char *)0x0;
-        path = pcVar4;
+        src_00 = (char *)0x0;
+        src = pcVar4;
       }
     }
     str = pcVar4;
     cVar1 = *pcVar4;
   }
-  crt_string_c_strncpy_safe_FUN_005ff130(dir,src_00,(int)path - (int)src_00,0xff);
-  if (src == (char *)0x0) {
-    src = str;
+  crt_string_c_strncpy_safe_FUN_005ff130(dir,path,(int)src - (int)path,0xff);
+  if (src_00 == (char *)0x0) {
+    src_00 = str;
   }
-  crt_string_c_strncpy_safe_FUN_005ff130(ext,path,(int)src - (int)path,0xff);
-  crt_string_c_strncpy_safe_FUN_005ff130(in_stack_0000001c,src,(int)str - (int)src,0xff);
+  crt_string_c_strncpy_safe_FUN_005ff130(fname,src,(int)src_00 - (int)src,0xff);
+  crt_string_c_strncpy_safe_FUN_005ff130(ext,src_00,(int)str - (int)src_00,0xff);
   return;
 }

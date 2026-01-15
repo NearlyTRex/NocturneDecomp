@@ -27,7 +27,6 @@ void core_drone_cpp_FUN_0048ec70(void)
   int extraout_EAX;
   int extraout_EAX_00;
   uint uVar12;
-  BADSPACEBASE *in_ESP;
   CEnemy *in_stack_00000004;
   float in_stack_00000008;
   int in_stack_fffffeaa;

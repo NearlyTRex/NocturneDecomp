@@ -15,6 +15,6 @@ core_dcube_cpp_CDemonCubeTriangle_writeToFile_FUN_00455250
   g_TempTriangleIndices[1] = (uint)((int)this_ptr->vertices[1] - (int)vertex_buffer_base) / 0xc;
   g_TempTriangleIndices[2] = (uint)((int)this_ptr->vertices[2] - (int)vertex_buffer_base) / 0xc;
   crt_stdio_c_fwrite_FUN_005fdc00(g_TempTriangleIndices,3,4,file_handle);
-  crt_stdio_c_fwrite_FUN_005fdc00(&this_ptr->normal,0x14,1,(FILE *)vertex_buffer_base);
+  crt_stdio_c_fwrite_FUN_005fdc00(&this_ptr->normal,0x14,1,file_handle);
   return;
 }

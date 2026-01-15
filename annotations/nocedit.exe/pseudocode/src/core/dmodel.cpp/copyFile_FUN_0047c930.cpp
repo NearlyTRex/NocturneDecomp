@@ -14,7 +14,6 @@ core_dmodel_cpp_copyFile_FUN_0047c930
   FILE *file_ptr;
   FILE *file_ptr_00;
   int character;
-  int in_stack_00000010;
   
   file_ptr = shape_memdbg_cpp_openFile_FUN_0050f7a0
                        (source_filename,(char *)0x0,"rb","..\\core\\dmodel.cpp",0xb7c);
@@ -39,10 +38,10 @@ core_dmodel_cpp_copyFile_FUN_0047c930
               (g_CEditorToolsPtr,"Can't create %s",destination_filename);
     return 0;
   }
-  if (in_stack_00000010 == 0) {
+  if (show_error_if_missing == 0) {
     return 1;
   }
   shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-            (g_CEditorToolsPtr,"Can't open %s",destination_filename);
+            (g_CEditorToolsPtr,"Can't open %s",source_filename);
   return 0;
 }

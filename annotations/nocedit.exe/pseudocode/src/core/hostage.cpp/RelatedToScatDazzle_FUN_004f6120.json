@@ -1,19 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 35,
-    "complexity_score": 114,
+    "complexity_score": 88,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 1,
-    "pseudocode_lines": 24,
-    "suspect_count": 7,
+    "pseudocode_lines": 23,
+    "suspect_count": 5,
     "suspect_types": [
       "call_esp_preserve",
       "callind_preserve",
-      "stack_param",
       "unaffected_reg"
     ],
-    "total_lines": 59
+    "total_lines": 58
   },
   "cross_references": [],
   "function": {
@@ -96,25 +95,11 @@
       "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000020",
-      "text": "int in_stack_00000020;",
-      "type": "stack_param"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 13,
+      "line": 12,
       "match": "unaff_EBX",
       "text": "((CDemonActor *)param_5,unaff_EBX);",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000020",
-      "text": "if (in_stack_00000020 != 0) {",
-      "type": "stack_param"
     },
     {
       "add_esp_value": 4,

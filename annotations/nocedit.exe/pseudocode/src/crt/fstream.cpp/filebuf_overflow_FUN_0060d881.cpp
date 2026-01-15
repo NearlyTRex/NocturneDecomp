@@ -15,8 +15,8 @@ int __watcallStack crt_fstream_cpp_filebuf_overflow_FUN_0060d881(filebuf *this_p
   char *pcVar4;
   uint n;
   SIZE_T count;
-  BADSPACEBASE *in_ESP;
   long unaff_EDI;
+  char local_14 [4];
   
   pcVar4 = (this_ptr->streambuf).__get_end;
   pcVar2 = (this_ptr->streambuf).__get_ptr;
@@ -40,7 +40,8 @@ int __watcallStack crt_fstream_cpp_filebuf_overflow_FUN_0060d881(filebuf *this_p
     pcVar4 = (this_ptr->streambuf).__reserve_base;
     if (pcVar4 == (char *)0x0) {
       if (character != -1) {
-        iVar3 = crt_io_c_write_FUN_006084ec(this_ptr->__file_handle,&stack0xffffffec,1);
+        local_14[0] = (char)character;
+        iVar3 = crt_io_c_write_FUN_006084ec(this_ptr->__file_handle,local_14,1);
         return (iVar3 == 1) - 1;
       }
       return 0;

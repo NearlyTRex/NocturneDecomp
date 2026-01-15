@@ -16,7 +16,6 @@ sound_snddx_cpp_CDirectSoundDevice_setMode_FUN_005ae830
 {
   uint uVar1;
   char *pcVar2;
-  BADSPACEBASE *in_ESP;
   double dVar3;
   char acStack_520 [400];
   char acStack_390 [400];

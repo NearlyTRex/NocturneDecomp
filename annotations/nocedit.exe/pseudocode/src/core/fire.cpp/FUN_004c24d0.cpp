@@ -12,13 +12,13 @@ float core_fire_cpp_FUN_004c24d0(void)
   float fVar1;
   float fVar2;
   float fVar3;
-  BADSPACEBASE *in_ESP;
   float in_stack_00000004;
-  float in_stack_0000000c;
+  float in_stack_00000008;
   CVector3i local_34;
   uint local_28;
   uint local_24;
   float local_20;
+  float local_8;
   
   local_28 = 0;
   local_24 = 0;
@@ -31,13 +31,14 @@ float core_fire_cpp_FUN_004c24d0(void)
   fVar2 = (float)1.52587890625e-05;
   fVar1 = (((float)(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).transformed_z *
            (float)0.00390625) / ((float)g_ProjectionScale * fVar2)) * 0.2f;
+  local_8 = in_stack_00000008;
   fVar3 = ABS(fVar1 / ((float)g_ViewportCenterXFixed * fVar2));
   fVar1 = ABS(fVar1 / ((float)g_ViewportCenterYFixed * fVar2));
-  if (in_stack_0000000c < fVar3) {
-    in_stack_0000000c = fVar3;
+  if (in_stack_00000008 < fVar3) {
+    local_8 = fVar3;
   }
-  if (fVar1 <= in_stack_0000000c) {
-    return in_stack_0000000c;
+  if (fVar1 <= local_8) {
+    return local_8;
   }
   return fVar1;
 }

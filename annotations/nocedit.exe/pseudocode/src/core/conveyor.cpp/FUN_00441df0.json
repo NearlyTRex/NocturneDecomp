@@ -1,17 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 118,
-    "complexity_score": 314,
+    "complexity_score": 284,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 8,
     "pseudocode_lines": 69,
-    "suspect_count": 22,
+    "suspect_count": 20,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
-      "register_param",
       "stack_param"
     ],
     "total_lines": 187
@@ -199,31 +197,17 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 11,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 11,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 12,
       "match": "in_stack_00000004",
       "text": "CDemonActor *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000014",
-      "text": "float in_stack_00000014;",
+      "line": 13,
+      "match": "in_stack_00000008",
+      "text": "float in_stack_00000008;",
       "type": "stack_param"
     },
     {
@@ -258,49 +242,49 @@
       "description": "Unresolved stack parameter",
       "line": 30,
       "match": "in_stack_00000004",
-      "text": "input = (CVector3f *)(in_stack_00000004[5].create_event + 8);",
+      "text": "local_18 = (CVector3f *)(in_stack_00000004[5].create_event + 8);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 35,
+      "line": 32,
+      "match": "in_stack_00000004",
+      "text": "local_14 = in_stack_00000004 + 6;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 36,
       "match": "in_stack_00000004",
       "text": "if (in_stack_00000004 == (CDemonActor *)actor_ptr->field11_0xdc) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 39,
-      "match": "in_stack_00000004",
-      "text": "(in_stack_00000004,&local_28,input);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 40,
-      "match": "in_stack_00000014",
-      "text": "local_18 = local_28.x * in_stack_00000014;",
+      "match": "in_stack_00000004",
+      "text": "(in_stack_00000004,&local_30,local_18);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 41,
-      "match": "in_stack_00000014",
-      "text": "local_14 = local_28.z * in_stack_00000014;",
+      "match": "in_stack_00000008",
+      "text": "local_24 = local_30.x * in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 42,
-      "match": "in_stack_00000014",
-      "text": "input = (CVector3f *)(local_1c * in_stack_00000014);",
+      "match": "in_stack_00000008",
+      "text": "local_20 = local_30.y * in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 55,
-      "match": "in_stack_00000004",
-      "text": "iVar2 = core_actor_cpp_isOfClass_FUN_0040c6d0(actor_ptr,in_stack_00000004[6].actor_name)",
+      "line": 43,
+      "match": "in_stack_00000008",
+      "text": "local_1c = local_30.z * in_stack_00000008;",
       "type": "stack_param"
     },
     {

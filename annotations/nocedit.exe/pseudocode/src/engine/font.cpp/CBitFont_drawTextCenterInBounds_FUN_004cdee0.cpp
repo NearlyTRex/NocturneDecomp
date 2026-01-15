@@ -13,11 +13,10 @@ engine_font_cpp_CBitFont_drawTextCenterInBounds_FUN_004cdee0
 
 {
   int iVar1;
-  int unaff_EDI;
   
   iVar1 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(this_ptr,text_string);
   iVar1 = engine_font_cpp_CBitFont_drawTextRight_FUN_004cdbf0
-                    (this_ptr,(char *)(((left_x + right_x + 1) - iVar1) / 2),color_mode,color_value,
-                     (int)text_string,unaff_EDI);
+                    (this_ptr,(char *)(((left_x + right_x + 1) - iVar1) / 2),y_pos,color_mode,
+                     color_value,(int)text_string);
   return iVar1;
 }

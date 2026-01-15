@@ -11,7 +11,6 @@ core_dmodel_cpp_CKeyFramedModel_scaleUniform_FUN_0047c4a0
           (CKeyFramedModel *this_ptr,float uniform_scale)
 
 {
-  BADSPACEBASE *in_ESP;
   CVector3f local_c;
   
   local_c.z = uniform_scale;

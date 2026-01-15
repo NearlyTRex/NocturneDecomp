@@ -13,7 +13,6 @@ int __cdecl shape_design_c_complexPolygonReduction_FUN_00463b30(int selected_pol
   double dVar2;
   uint uVar3;
   int iVar4;
-  BADSPACEBASE *in_ESP;
   int *piVar5;
   SShapeEditorPolygon *pSVar6;
   int *piVar7;

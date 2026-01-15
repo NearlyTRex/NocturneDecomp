@@ -17,7 +17,6 @@ void core_pendulum_cpp_FUN_005495c0(void)
   float *pfVar2;
   CVector3f *pCVar3;
   CKeyFramedModel *pCVar4;
-  BADSPACEBASE *in_ESP;
   CVector3i **ppCVar5;
   int in_stack_00000004;
   int in_stack_00000008;

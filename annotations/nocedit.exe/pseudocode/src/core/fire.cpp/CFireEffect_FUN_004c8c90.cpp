@@ -14,7 +14,6 @@ int __cdecl core_fire_cpp_CFireEffect_FUN_004c8c90(CFireEffect *this_ptr)
   float fVar3;
   int iVar4;
   CExplosion *pCVar5;
-  BADSPACEBASE *in_ESP;
   float *in_stack_00000008;
   float in_stack_0000000c;
   float *in_stack_00000010;

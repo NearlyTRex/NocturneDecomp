@@ -1,23 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 239,
-    "complexity_score": 485,
+    "complexity_score": 288,
     "cross_reference_count": 23,
     "function_call_count": 6,
     "global_count": 0,
-    "pseudocode_lines": 105,
-    "suspect_count": 34,
+    "pseudocode_lines": 103,
+    "suspect_count": 17,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "concat_artifact",
-      "register_param",
-      "special_crt_function",
-      "stack_param",
-      "stack_ref",
-      "unaffected_reg"
+      "special_crt_function"
     ],
-    "total_lines": 344
+    "total_lines": 342
   },
   "cross_references": [
     {
@@ -293,130 +288,11 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 16,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 16,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 17,
-      "match": "unaff_EBP",
-      "text": "wchar_t *unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_00000018",
-      "text": "char *in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_ffffffcc",
-      "text": "wchar_t *in_stack_ffffffcc;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 54,
-      "match": "in_stack_ffffffcc",
-      "text": "wVar2 = crt_file_c_normalize_path_separator_FUN_005febe0(wVar2,in_stack_ffffffcc);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 55,
-      "match": "in_stack_ffffffcc",
-      "text": "in_stack_ffffffcc = (wchar_t *)CONCAT22 /* combine 2-byte values */(extraout_var,wVar2);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 55,
-      "match": "CONCAT22",
-      "text": "in_stack_ffffffcc = (wchar_t *)CONCAT22 /* combine 2-byte values */(extraout_var,wVar2);",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 80,
-      "match": "&stack0xffffffec",
-      "text": "wVar2 = crt_file_c_normalize_path_separator_FUN_005febe0(wVar2,(wchar_t *)&stack0xffffffec);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 81,
-      "match": "unaff_EBP",
-      "text": "if (((wchar_t *)CONCAT22 /* combine 2-byte values */(extraout_var_00,wVar2) != unaff_EBP) &&",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Decompiler double/longlong composition artifact",
       "line": 81,
       "match": "CONCAT22",
-      "text": "if (((wchar_t *)CONCAT22 /* combine 2-byte values */(extraout_var_00,wVar2) != unaff_EBP) &&",
+      "text": "if ((CONCAT22 /* combine 2-byte values */(extraout_var,wVar2) != local_18) && ((byte)*path_buffer == local_18)) {",
       "type": "concat_artifact"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 82,
-      "match": "unaff_EBP",
-      "text": "((wchar_t *)(uint)(byte)*path_buffer == unaff_EBP)) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 85,
-      "match": "in_stack_00000018",
-      "text": "while (*in_stack_00000018 != '\\0') {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 86,
-      "match": "in_stack_00000018",
-      "text": "wVar2 = crt_string_c_mbtowc_peek_FUN_006059e0(in_stack_00000018);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 87,
-      "match": "unaff_EBP",
-      "text": "wVar2 = crt_file_c_normalize_path_separator_FUN_005febe0(wVar2,unaff_EBP);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 88,
-      "match": "unaff_EBP",
-      "text": "unaff_EBP = (wchar_t *)CONCAT22 /* combine 2-byte values */(extraout_var_01,wVar2);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 88,
-      "match": "CONCAT22",
-      "text": "unaff_EBP = (wchar_t *)CONCAT22 /* combine 2-byte values */(extraout_var_01,wVar2);",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 93,
-      "match": "in_stack_00000018",
-      "text": "crt_string_c_mbtowc_next_FUN_00605a70(in_stack_00000018);",
-      "type": "stack_param"
     },
     {
       "add_esp_value": 4,

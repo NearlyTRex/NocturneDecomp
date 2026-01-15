@@ -9,7 +9,6 @@
 void __cdecl core_mission_cpp_CDemonMission_FUN_005235b0(CDemonMission *this_ptr)
 
 {
-  BADSPACEBASE *in_ESP;
   char local_104 [260];
   
   crt_file_c_makepath_FUN_005febfc

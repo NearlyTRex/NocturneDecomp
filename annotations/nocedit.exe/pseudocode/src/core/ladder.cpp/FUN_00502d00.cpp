@@ -16,10 +16,9 @@ void core_ladder_cpp_FUN_00502d00(void)
   int extraout_EBX;
   double dVar3;
   CDemonActor *in_stack_00000004;
-  float fStack_2c;
-  CKeys *pCVar4;
+  float in_stack_00000008;
+  float in_stack_00000010;
   
-  pCVar4 = g_CKeysPtr;
   iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
   if (iVar2 == 0) {
     core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(in_stack_00000004);
@@ -28,12 +27,12 @@ void core_ladder_cpp_FUN_00502d00(void)
     iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
     if (iVar2 != 0) {
       in_stack_00000004[2].location.position.y =
-           in_stack_00000004[2].location.position.y - fStack_2c;
+           in_stack_00000004[2].location.position.y - in_stack_00000008;
     }
     iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4d);
     if (iVar2 != 0) {
       in_stack_00000004[2].location.position.y =
-           in_stack_00000004[2].location.position.y + (float)pCVar4;
+           in_stack_00000004[2].location.position.y + in_stack_00000010;
     }
     iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x1e);
     if (iVar2 != 0) {

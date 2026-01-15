@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 133,
-    "complexity_score": 262,
+    "complexity_score": 138,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 7,
-    "pseudocode_lines": 67,
-    "suspect_count": 18,
+    "pseudocode_lines": 68,
+    "suspect_count": 6,
     "suspect_types": [
       "call_esp_preserve",
-      "unaffected_reg",
       "variadic_preserve"
     ],
-    "total_lines": 200
+    "total_lines": 201
   },
   "cross_references": [
     {
@@ -179,90 +178,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 9,
-      "match": "unaff_EBX",
-      "text": "CDemonLight *unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 11,
-      "match": "unaff_ESI",
-      "text": "int unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 34,
-      "match": "unaff_ESI",
-      "text": "if ((CVector3f *)(unaff_ESI + 4) != &this_ptr->pos) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 35,
-      "match": "unaff_ESI",
-      "text": "*(float *)(unaff_ESI + 4) = (this_ptr->pos).x;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 36,
-      "match": "unaff_ESI",
-      "text": "*(float *)(unaff_ESI + 8) = (this_ptr->pos).y;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 37,
-      "match": "unaff_ESI",
-      "text": "*(float *)(unaff_ESI + 0xc) = (this_ptr->pos).z;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 40,
-      "match": "unaff_ESI",
-      "text": "((CMatrix3x3f *)(unaff_ESI + 0x10),&this_ptr->orient);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 41,
-      "match": "unaff_EBX",
-      "text": "(unaff_EBX->base).base.projection_scale = this_ptr->fov;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 50,
-      "match": "unaff_EBX",
-      "text": "(int)unaff_EBX);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 57,
-      "match": "unaff_EBX",
-      "text": "pcVar6 = (unaff_EBX->base).camera_name;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 62,
-      "match": "unaff_EBX",
-      "text": "return unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 69,
-      "match": "unaff_EBX",
-      "text": "return unaff_EBX;",
-      "type": "unaffected_reg"
-    },
     {
       "call_address": "00586adc",
       "caller_has_stack_issues": false,

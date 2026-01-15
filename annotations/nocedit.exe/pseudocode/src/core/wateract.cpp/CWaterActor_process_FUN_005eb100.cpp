@@ -16,7 +16,6 @@ void __cdecl core_wateract_cpp_CWaterActor_process_FUN_005eb100(CWaterActor *thi
   int iVar3;
   double dVar4;
   float in_stack_00000008;
-  float in_stack_0000000c;
   
   dVar4 = crt_math_c_round_FUN_005fe6b0
                     ((double)(in_stack_00000008 * (float)65536 * (float)8));
@@ -47,7 +46,7 @@ void __cdecl core_wateract_cpp_CWaterActor_process_FUN_005eb100(CWaterActor *thi
   }
   switch(this_ptr->state) {
   case 1:
-    fVar1 = in_stack_0000000c / this_ptr->time_to_move + this_ptr->param;
+    fVar1 = (float)this_ptr / this_ptr->time_to_move + this_ptr->param;
     this_ptr->param = fVar1;
     if (fVar1 <= 1.0) break;
     this_ptr->state = 2;
@@ -55,7 +54,7 @@ void __cdecl core_wateract_cpp_CWaterActor_process_FUN_005eb100(CWaterActor *thi
     this_ptr->param = 1.0;
     break;
   case 3:
-    fVar1 = this_ptr->param - in_stack_0000000c / this_ptr->time_to_move_down;
+    fVar1 = this_ptr->param - (float)this_ptr / this_ptr->time_to_move_down;
     this_ptr->param = fVar1;
     if (0.0 <= fVar1) break;
     this_ptr->state = 0;

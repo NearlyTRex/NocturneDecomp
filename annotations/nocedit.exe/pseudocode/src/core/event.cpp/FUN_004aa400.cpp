@@ -6,9 +6,7 @@
 
 #include "nocturne.h"
 
-CHero * core_event_cpp_FUN_004aa400
-                  (uint param_1,uint param_2,uint unaff_EBX,uint param_4,
-                  char *param_5,uint param_6,uint param_7,uint param_8)
+CHero * core_event_cpp_FUN_004aa400(void)
 
 {
   char cVar1;
@@ -16,8 +14,11 @@ CHero * core_event_cpp_FUN_004aa400
   int iVar2;
   char *pcVar3;
   char *pcVar4;
+  char *in_stack_00000004;
+  uint in_stack_00000008;
+  uint in_stack_0000000c;
   
-  if ((param_5 == (char *)0x0) || (*param_5 == '\0')) {
+  if ((in_stack_00000004 == (char *)0x0) || (*in_stack_00000004 == '\0')) {
     pcVar3 = "Must specify actor name";
     pcVar4 = &DAT_02d0a460;
     do {
@@ -33,15 +34,16 @@ CHero * core_event_cpp_FUN_004aa400
     } while (cVar1 != '\0');
     return (CHero *)0x0;
   }
-  if (*param_5 == '@') {
+  if (*in_stack_00000004 == '@') {
     actor_ptr = (CHero *)core_event_cpp_CEventList_FUN_004b0b80(g_CEventListPtr);
   }
   else {
-    iVar2 = crt_string_c_stricmp_FUN_005fe7f0(param_5,"$");
+    iVar2 = crt_string_c_stricmp_FUN_005fe7f0(in_stack_00000004,"$");
     if (iVar2 != 0) {
       actor_ptr = (CHero *)core_mission_cpp_CDemonMission_FUN_00524030(g_CDemonMissionPtr);
       if (actor_ptr == (CHero *)0x0) {
-        crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_02d0a460,"Actor \"%s\" does not exist.",param_5);
+        crt_stdio_c_sprintf_FUN_005fdbd0
+                  (&DAT_02d0a460,"Actor \"%s\" does not exist.",in_stack_00000004);
         return (CHero *)0x0;
       }
       goto LAB_004aa48f;
@@ -56,15 +58,16 @@ CHero * core_event_cpp_FUN_004aa400
     return DAT_0065d95c;
   }
 LAB_004aa48f:
-  iVar2 = core_actor_cpp_isOfClassHash_FUN_0040c760((CDemonActor *)actor_ptr,param_8);
+  iVar2 = core_actor_cpp_isOfClassHash_FUN_0040c760((CDemonActor *)actor_ptr,in_stack_00000008);
   if (iVar2 != 0) {
     return actor_ptr;
   }
-  if (*param_5 == '@') {
+  if (*in_stack_00000004 == '@') {
     return DAT_0065d95c;
   }
   pcVar3 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90((CDemonActor *)actor_ptr);
   crt_stdio_c_sprintf_FUN_005fdbd0
-            (&DAT_02d0a460,"Actor \"%s\" is of type %s, this command requires an actor of type %s.",param_5,pcVar3,unaff_EBX);
+            (&DAT_02d0a460,"Actor \"%s\" is of type %s, this command requires an actor of type %s.",in_stack_00000004,pcVar3,
+             in_stack_0000000c);
   return (CHero *)0x0;
 }

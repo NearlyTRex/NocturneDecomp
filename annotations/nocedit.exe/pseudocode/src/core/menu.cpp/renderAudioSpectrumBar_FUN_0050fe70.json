@@ -1,20 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 125,
-    "complexity_score": 238,
+    "complexity_score": 212,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 5,
-    "pseudocode_lines": 53,
-    "suspect_count": 16,
+    "pseudocode_lines": 57,
+    "suspect_count": 14,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
-      "register_param",
       "suspect_float"
     ],
-    "total_lines": 178
+    "total_lines": 182
   },
   "cross_references": [
     {
@@ -257,71 +255,57 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 9,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 9,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Likely misinterpreted integer as float",
-      "line": 26,
+      "line": 28,
       "match": "7.34684e-40",
       "text": "this_ptr->vertex_buffer_ptr->u = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 27,
+      "line": 29,
       "match": "2.2775203e-38",
       "text": "this_ptr->vertex_buffer_ptr->v = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 28,
+      "line": 30,
       "match": "2.2775203e-38",
       "text": "this_ptr->vertex_buffer_ptr[1].u = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 29,
+      "line": 31,
       "match": "2.2775203e-38",
       "text": "this_ptr->vertex_buffer_ptr[1].v = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 30,
+      "line": 32,
       "match": "2.2775203e-38",
       "text": "this_ptr->vertex_buffer_ptr[2].u = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 31,
+      "line": 33,
       "match": "7.34684e-40",
       "text": "this_ptr->vertex_buffer_ptr[2].v = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 32,
+      "line": 34,
       "match": "7.34684e-40",
       "text": "this_ptr->vertex_buffer_ptr[3].u = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 33,
+      "line": 35,
       "match": "7.34684e-40",
       "text": "this_ptr->vertex_buffer_ptr[3].v = 7.34684e-40;",
       "type": "suspect_float"

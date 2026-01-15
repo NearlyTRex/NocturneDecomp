@@ -12,9 +12,6 @@ void __cdecl core_sound_cpp_CSound_init_FUN_005b2dd0(CSound *this_ptr)
   int iVar1;
   float fVar2;
   int extraout_EAX;
-  BADSPACEBASE *in_ESP;
-  uint uStack00000008;
-  CSound *in_stack_00000028;
   
   CVector3f_03f6af7c.x = 0.0;
   CVector3f_03f6af7c.y = 0.0;
@@ -46,20 +43,17 @@ void __cdecl core_sound_cpp_CSound_init_FUN_005b2dd0(CSound *this_ptr)
   }
   sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
   sound_sndmain_cpp_setNextSfxChannel_FUN_005a8af0(3);
-  core_sound_cpp_CSound_playSound_FUN_005b3a20
-            (in_stack_00000028,g_CDemonSetPtr,g_SoundAmbientSoundName);
-  uStack00000008 = 0x5b2ed7;
+  core_sound_cpp_CSound_playSound_FUN_005b3a20(this_ptr,g_CDemonSetPtr,g_SoundAmbientSoundName);
   g_SoundAmbientSfxHandle = extraout_EAX;
   sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
   if (g_CDemonSetPtr->player_on_train != 0) {
-    if ((float *)&stack0x00000000 != &g_TrainNoiseArray[8].position.z) {
+    if ((uint *)&stack0x00000000 != &g_TrainRailNoiseHandle) {
       g_TrainVelocityVector.x = -*(float *)(g_CDemonSetPtr->field19_0x14f0a0 + 0xbbc0);
       g_TrainVelocityVector.y = -*(float *)(g_CDemonSetPtr->field19_0x14f0a0 + 0xbbc4);
       g_TrainVelocityVector.z = -*(float *)(g_CDemonSetPtr->field19_0x14f0a0 + 0xbbc8);
     }
     g_TrainLastCameraIndex = -1;
   }
-  uStack00000008 = 0x5b2f45;
   core_event_cpp_CEventList_FUN_004b0f00(g_CEventListPtr);
   g_SoundAudioInitialized = 1;
   return;

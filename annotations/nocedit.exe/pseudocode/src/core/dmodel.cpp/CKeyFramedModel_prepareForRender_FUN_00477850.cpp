@@ -12,8 +12,7 @@ core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
           int render_flags)
 
 {
-  CKeyFramedModelInstance *unaff_EDI;
-  int in_stack_00000014;
+  CKeyFramedModelInstance *unaff_ESI;
   
   if (this_ptr->poly_count < 1) {
     return;
@@ -21,6 +20,6 @@ core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
   core_dmodel_cpp_CKeyFramedModel_rotateAndLightVertices_FUN_004778d0(this_ptr,instance,frame_index)
   ;
   core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_00477980
-            (this_ptr,render_flags,in_stack_00000014,unaff_EDI);
+            (this_ptr,frame_index,render_flags,unaff_ESI);
   return;
 }

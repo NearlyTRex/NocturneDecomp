@@ -1,23 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 200,
-    "complexity_score": 523,
+    "complexity_score": 356,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 13,
-    "pseudocode_lines": 83,
-    "suspect_count": 40,
+    "pseudocode_lines": 76,
+    "suspect_count": 26,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "callind_preserve",
       "lea_esp_stack_addr",
-      "register_param",
-      "stack_param",
-      "stack_ref",
       "variadic_preserve"
     ],
-    "total_lines": 283
+    "total_lines": 276
   },
   "cross_references": [
     {
@@ -217,104 +213,6 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 9,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 9,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_0000000c",
-      "text": "DWORD in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000010",
-      "text": "DWORD in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000018",
-      "text": "byte in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 33,
-      "match": "&stack0x00000008",
-      "text": "crt_memory_c_memset_FUN_005fde40(&stack0x00000008,0,0x14);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 34,
-      "match": "in_stack_0000000c",
-      "text": "in_stack_0000000c = 0x14;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 35,
-      "match": "in_stack_00000010",
-      "text": "in_stack_00000010 = 0x11;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 37,
-      "match": "&stack0x0000000c",
-      "text": "(g_DirectSound,(LPDSBUFFERDESC)&stack0x0000000c,",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 42,
-      "match": "&stack0xfffff8b4",
-      "text": "(&stack0xfffff8b4,\"DirectSux: Unable to %s.  (%s)\",",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 44,
-      "match": "&stack0xfffff8b8",
-      "text": "sound_sndmain_cpp_logSoundError_FUN_005adba0(&stack0xfffff8b8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 45,
-      "match": "in_stack_00000018",
-      "text": "in_stack_00000018 = in_stack_00000018 & 0xef;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 45,
-      "match": "in_stack_00000018",
-      "text": "in_stack_00000018 = in_stack_00000018 & 0xef;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 47,
-      "match": "&stack0x00000014",
-      "text": "(g_DirectSound,(LPDSBUFFERDESC)&stack0x00000014,",
-      "type": "stack_ref"
-    },
-    {
       "add_esp_value": 1900,
       "call_target_type": "reg_deref",
       "call_target_value": "EDX",
@@ -332,7 +230,7 @@
     },
     {
       "call_address": "005b04d2",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -346,7 +244,7 @@
     },
     {
       "call_address": "005b04e2",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -360,7 +258,7 @@
     },
     {
       "call_address": "005b05c8",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -374,7 +272,7 @@
     },
     {
       "call_address": "005b05f5",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -388,7 +286,7 @@
     },
     {
       "call_address": "005b0600",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -402,7 +300,7 @@
     },
     {
       "call_address": "005b0657",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

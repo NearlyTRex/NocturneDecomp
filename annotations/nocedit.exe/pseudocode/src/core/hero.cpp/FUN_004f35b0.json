@@ -1,19 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 171,
-    "complexity_score": 252,
+    "complexity_score": 221,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 10,
-    "pseudocode_lines": 72,
-    "suspect_count": 16,
+    "pseudocode_lines": 71,
+    "suspect_count": 14,
     "suspect_types": [
-      "badspacebase",
       "param_count_too_few",
-      "register_param",
       "stack_param"
     ],
-    "total_lines": 243
+    "total_lines": 242
   },
   "cross_references": [
     {
@@ -345,106 +343,92 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 10,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 10,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 12,
       "match": "in_stack_00000004",
       "text": "CDemonActor *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 22,
       "match": "in_stack_00000004",
       "text": "local_20 = in_stack_00000004[0x176].create_event + 0x30;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
+      "line": 23,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[0x179].field21_0x11c = 0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 32,
+      "line": 31,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[0x179].field21_0x11c = *(int *)(local_20 + 0x334);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 45,
+      "line": 44,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004,&local_3c,&local_1c->position);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 53,
+      "line": 52,
       "match": "in_stack_00000004",
       "text": "(iVar2 = *(int *)pCVar1[1].actor_name, in_stack_00000004[0x179].field21_0x11c = iVar2,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 55,
+      "line": 54,
       "match": "in_stack_00000004",
       "text": "if ((CLocation *)&in_stack_00000004[0x179].field22_0x120 != local_1c) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 56,
+      "line": 55,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[0x179].field22_0x120 = (int)(local_1c->position).x;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 57,
+      "line": 56,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[0x179].field23_0x124 = (int)(local_1c->position).y;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 58,
+      "line": 57,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[0x179].previous_transform_state.position.x = (local_1c->position).z;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 60,
+      "line": 59,
       "match": "in_stack_00000004",
       "text": "pfVar4 = &in_stack_00000004[0x179].previous_transform_state.position.y;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 63,
+      "line": 62,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[0x179].previous_transform_state.position.z = (local_14->orient).bank",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 65,
+      "line": 64,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[0x179].previous_transform_state.orientation.x =",
       "type": "stack_param"

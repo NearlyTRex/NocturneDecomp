@@ -14,12 +14,12 @@ void core_scat_cpp_FUN_00557d20(void)
 {
   int iVar1;
   CDemonActor *this_ptr;
-  BADSPACEBASE *in_ESP;
   CCharacter *in_stack_00000004;
   float in_stack_00000008;
-  float in_stack_ffffffb4;
+  float volume;
   
   do {
+    volume = 7.850947e-39;
     iVar1 = core_motion_cpp_CMotionController_advance_FUN_0052d610
                       (&(in_stack_00000004->model).motion_controller);
     if (iVar1 == 100) {
@@ -27,8 +27,7 @@ void core_scat_cpp_FUN_00557d20(void)
                            (in_stack_00000004->grabbed_by,g_CEnemyClassInfo.name_hash);
       if (this_ptr != (CDemonActor *)0x0) {
         core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffffb4);
-        (*this_ptr->vtable[1].playAmbientSoundWithVolume)
-                  (this_ptr,&stack0xffffffb4,in_stack_ffffffb4);
+        (*this_ptr->vtable[1].playAmbientSoundWithVolume)(this_ptr,&stack0xffffffb4,volume);
       }
     }
     else {

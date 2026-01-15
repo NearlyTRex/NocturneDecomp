@@ -1,17 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 136,
-    "complexity_score": 400,
+    "complexity_score": 418,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 1,
-    "pseudocode_lines": 50,
-    "suspect_count": 34,
+    "pseudocode_lines": 48,
+    "suspect_count": 36,
     "suspect_types": [
       "param_count_too_few",
       "stack_param"
     ],
-    "total_lines": 186
+    "total_lines": 184
   },
   "cross_references": [
     {
@@ -408,68 +408,96 @@
       "description": "Unresolved stack parameter",
       "line": 17,
       "match": "in_stack_00000008",
-      "text": "volume = in_stack_00000008 - *in_stack_00000004;",
+      "text": "if (in_stack_00000008 - *in_stack_00000004 < -in_stack_0000000c) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 17,
       "match": "in_stack_00000004",
-      "text": "volume = in_stack_00000008 - *in_stack_00000004;",
+      "text": "if (in_stack_00000008 - *in_stack_00000004 < -in_stack_0000000c) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 17,
       "match": "in_stack_0000000c",
-      "text": "if (volume < -in_stack_0000000c) {",
+      "text": "if (in_stack_00000008 - *in_stack_00000004 < -in_stack_0000000c) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 18,
       "match": "in_stack_0000000c",
       "text": "in_stack_0000000c = *in_stack_00000004 - in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 18,
       "match": "in_stack_00000004",
       "text": "in_stack_0000000c = *in_stack_00000004 - in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 18,
       "match": "in_stack_0000000c",
       "text": "in_stack_0000000c = *in_stack_00000004 - in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_0000000c",
-      "text": "if (volume <= in_stack_0000000c) {",
+      "line": 21,
+      "match": "in_stack_00000008",
+      "text": "if (in_stack_00000008 - *in_stack_00000004 <= in_stack_0000000c) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 25,
+      "line": 21,
+      "match": "in_stack_00000004",
+      "text": "if (in_stack_00000008 - *in_stack_00000004 <= in_stack_0000000c) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_0000000c",
+      "text": "if (in_stack_00000008 - *in_stack_00000004 <= in_stack_0000000c) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 23,
       "match": "in_stack_00000004",
       "text": "*in_stack_00000004 = in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 25,
+      "line": 23,
       "match": "in_stack_00000008",
       "text": "*in_stack_00000004 = in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 28,
+      "line": 26,
+      "match": "in_stack_0000000c",
+      "text": "in_stack_0000000c = *in_stack_00000004 + in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_00000004",
+      "text": "in_stack_0000000c = *in_stack_00000004 + in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 26,
       "match": "in_stack_0000000c",
       "text": "in_stack_0000000c = *in_stack_00000004 + in_stack_0000000c;",
       "type": "stack_param"
@@ -478,117 +506,103 @@
       "description": "Unresolved stack parameter",
       "line": 28,
       "match": "in_stack_00000004",
-      "text": "in_stack_0000000c = *in_stack_00000004 + in_stack_0000000c;",
+      "text": "*in_stack_00000004 = in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 28,
       "match": "in_stack_0000000c",
-      "text": "in_stack_0000000c = *in_stack_00000004 + in_stack_0000000c;",
+      "text": "*in_stack_00000004 = in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 30,
       "match": "in_stack_00000004",
-      "text": "*in_stack_00000004 = in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_0000000c",
-      "text": "*in_stack_00000004 = in_stack_0000000c;",
+      "text": "volume = *in_stack_00000004 * (float)0.0039215686274509803;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 32,
-      "match": "in_stack_00000004",
-      "text": "volume_00 = *in_stack_00000004 * (float)0.0039215686274509803;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 34,
       "match": "in_stack_00000010",
       "text": "sound_sndmain_cpp_killSfx_FUN_005a9c40(*in_stack_00000010);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 37,
+      "line": 35,
       "match": "in_stack_00000010",
       "text": "iVar1 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*in_stack_00000010);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 40,
+      "line": 38,
       "match": "in_stack_00000010",
       "text": "(*in_stack_00000010,(double)*in_stack_00000018,(double)in_stack_00000018[1],",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 40,
+      "line": 38,
       "match": "in_stack_00000018",
       "text": "(*in_stack_00000010,(double)*in_stack_00000018,(double)in_stack_00000018[1],",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 40,
+      "line": 38,
       "match": "in_stack_00000018",
       "text": "(*in_stack_00000010,(double)*in_stack_00000018,(double)in_stack_00000018[1],",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 41,
+      "line": 39,
       "match": "in_stack_00000018",
       "text": "(double)in_stack_00000018[2]);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 42,
+      "line": 40,
       "match": "in_stack_00000010",
-      "text": "sound_sndmain_cpp_setSfxVolume_FUN_005a9ae0(*in_stack_00000010,volume_00);",
+      "text": "sound_sndmain_cpp_setSfxVolume_FUN_005a9ae0(*in_stack_00000010,volume);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 48,
+      "line": 46,
       "match": "in_stack_00000018",
       "text": "((double)*in_stack_00000018,(double)in_stack_00000018[1],(double)in_stack_00000018[2]);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 48,
+      "line": 46,
       "match": "in_stack_00000018",
       "text": "((double)*in_stack_00000018,(double)in_stack_00000018[1],(double)in_stack_00000018[2]);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 48,
+      "line": 46,
       "match": "in_stack_00000018",
       "text": "((double)*in_stack_00000018,(double)in_stack_00000018[1],(double)in_stack_00000018[2]);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 49,
+      "line": 47,
       "match": "in_stack_00000014",
       "text": "uVar2 = sound_sndmain_cpp_startSfx_FUN_005a8e90(in_stack_00000014);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 50,
+      "line": 48,
       "match": "in_stack_00000010",
       "text": "*in_stack_00000010 = uVar2;",
       "type": "stack_param"

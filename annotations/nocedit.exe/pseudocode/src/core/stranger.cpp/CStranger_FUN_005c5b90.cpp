@@ -12,19 +12,19 @@ void core_stranger_cpp_CStranger_FUN_005c5b90(void)
   CMotionController *this_ptr;
   int iVar1;
   float fVar2;
-  uint uVar3;
-  float unaff_ESI;
+  float fVar3;
+  uint uVar4;
   int in_stack_00000004;
   
   if ((((*(int *)(in_stack_00000004 + 0xbe38) != 0) && (*(int *)(in_stack_00000004 + 0x1fc38) == 0))
       && (iVar1 = core_stranger_cpp_CStranger_FUN_005c5e80(), iVar1 == 0)) &&
      (*(int *)(in_stack_00000004 + 0x1fbd4) == 0)) {
     this_ptr = (CMotionController *)(in_stack_00000004 + 0x158);
-    core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20(this_ptr,0);
-    fVar2 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20(this_ptr,1);
-    if ((float)0.99990000000000001 < fVar2 + unaff_ESI) {
-      uVar3 = core_hero_cpp_FUN_004f2d70();
-      switch(uVar3) {
+    fVar2 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20(this_ptr,0);
+    fVar3 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20(this_ptr,1);
+    if ((float)0.99990000000000001 < fVar3 + fVar2) {
+      uVar4 = core_hero_cpp_FUN_004f2d70();
+      switch(uVar4) {
       case 0:
         if (*(int *)(in_stack_00000004 + 0x1fb9c) != 0) {
           shape_edittool_cpp_CEditorTools_showError_FUN_0049e740

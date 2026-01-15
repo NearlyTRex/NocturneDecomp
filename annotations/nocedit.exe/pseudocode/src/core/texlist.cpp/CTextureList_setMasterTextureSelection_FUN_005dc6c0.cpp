@@ -14,7 +14,6 @@ core_texlist_cpp_CTextureList_setMasterTextureSelection_FUN_005dc6c0
   int iVar1;
   int iVar2;
   int iVar3;
-  int unaff_EBP;
   char (*str2) [16];
   int local_14;
   
@@ -37,7 +36,7 @@ core_texlist_cpp_CTextureList_setMasterTextureSelection_FUN_005dc6c0
     g_CurrentFilename = "..\\core\\texlist.cpp";
     g_CurrentLineNumber = 399;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CTextureList::setMasterTextureSelection - Texture %s not found!",filename);
-    this_ptr->current_master_selection = unaff_EBP;
+    this_ptr->current_master_selection = -1;
     return;
   }
   this_ptr->current_master_selection = local_14;

@@ -1,22 +1,21 @@
 {
   "complexity": {
     "assembly_lines": 1395,
-    "complexity_score": 1025,
+    "complexity_score": 1037,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 22,
-    "pseudocode_lines": 730,
-    "suspect_count": 26,
+    "pseudocode_lines": 757,
+    "suspect_count": 25,
     "suspect_types": [
-      "badspacebase",
+      "concat_artifact",
       "extra_output",
       "pointer_cast",
-      "register_param",
       "sborrow_artifact",
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 2125
+    "total_lines": 2152
   },
   "cross_references": [
     {
@@ -1436,22 +1435,8 @@
       "type": "extra_output"
     },
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 12,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 12,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 27,
+      "line": 28,
       "match": "in_stack_fffffe54",
       "text": "CVector3i *in_stack_fffffe54;",
       "type": "stack_param"
@@ -1495,14 +1480,14 @@
       "description": "Direct stack address reference",
       "line": 268,
       "match": "&stack0xfffffe60",
-      "text": "(float10)*(int *)((int)&stack0xfffffe60 + iVar2) / (float10)dVar14;",
+      "text": "(float10)*(int *)((int)&stack0xfffffe60 + iVar2) / (float10)dVar15;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
       "line": 268,
       "match": "(int *)((int)",
-      "text": "(float10)*(int *)((int)&stack0xfffffe60 + iVar2) / (float10)dVar14;",
+      "text": "(float10)*(int *)((int)&stack0xfffffe60 + iVar2) / (float10)dVar15;",
       "type": "pointer_cast"
     },
     {
@@ -1534,57 +1519,64 @@
       "type": "pointer_cast"
     },
     {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 279,
+      "match": "CONCAT44",
+      "text": "dVar13 = (double)CONCAT44 /* combine 2-byte values */(uVar14,0x4982ca);",
+      "type": "concat_artifact"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 290,
+      "line": 293,
       "match": "extraout_ECX",
       "text": "iVar3 = extraout_ECX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 291,
+      "line": 294,
       "match": "extraout_ECX",
-      "text": "if (extraout_ECX < iStack_120) {",
+      "text": "if (extraout_ECX < local_130[1]) {",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 294,
+      "line": 297,
       "match": "extraout_EDX_00",
       "text": "iVar4 = extraout_EDX_00;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 295,
+      "line": 298,
       "match": "extraout_EDX_00",
-      "text": "if (extraout_EDX_00 < iStack_11c) {",
+      "text": "if (extraout_EDX_00 < local_130[2]) {",
       "type": "extra_output"
     },
     {
       "description": "Decompiler signed borrow artifact",
-      "line": 429,
+      "line": 437,
       "match": "SBORROW",
       "text": "bVar7 = SBORROW /* signed borrow */4(local_8c,iVar2);",
       "type": "sborrow_artifact"
     },
     {
       "description": "Decompiler signed borrow artifact",
-      "line": 437,
+      "line": 446,
       "match": "SBORROW",
       "text": "bVar7 = SBORROW /* signed borrow */4(iVar4,iVar2);",
       "type": "sborrow_artifact"
     },
     {
       "description": "Decompiler signed borrow artifact",
-      "line": 559,
+      "line": 575,
       "match": "SBORROW",
       "text": "bVar7 = SBORROW /* signed borrow */4(local_7c,iVar2);",
       "type": "sborrow_artifact"
     },
     {
       "description": "Decompiler signed borrow artifact",
-      "line": 567,
+      "line": 584,
       "match": "SBORROW",
       "text": "bVar7 = SBORROW /* signed borrow */4(iVar4,iVar2);",
       "type": "sborrow_artifact"

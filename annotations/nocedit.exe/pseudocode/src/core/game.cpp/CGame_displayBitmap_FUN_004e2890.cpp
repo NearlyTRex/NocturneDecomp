@@ -16,8 +16,8 @@ void core_game_cpp_CGame_displayBitmap_FUN_004e2890(void)
   char *pcVar2;
   int in_stack_00000004;
   char *in_stack_00000008;
+  uint in_stack_0000000c;
   uint in_stack_00000010;
-  uint in_stack_00000014;
   
   if (*(char *)(in_stack_00000004 + 0x8b4) != '\0') {
     g_CurrentFilename = "..\\core\\game.cpp";
@@ -35,7 +35,7 @@ void core_game_cpp_CGame_displayBitmap_FUN_004e2890(void)
     pcVar2[1] = cVar1;
     pcVar2 = pcVar2 + 2;
   } while (cVar1 != '\0');
-  *(uint *)(in_stack_00000004 + 0x9b4) = in_stack_00000010;
-  *(uint *)(in_stack_00000004 + 0x9b8) = in_stack_00000014;
+  *(uint *)(in_stack_00000004 + 0x9b4) = in_stack_0000000c;
+  *(uint *)(in_stack_00000004 + 0x9b8) = in_stack_00000010;
   return;
 }

@@ -11,10 +11,10 @@ void core_fire_cpp_FUN_004c1940(void)
 {
   CDemonSet *this_ptr;
   CVector3f *pCVar1;
-  BADSPACEBASE *in_ESP;
   uint *in_stack_00000004;
   CColor3f *in_stack_00000008;
-  CMatrix3x3f *in_stack_00000018;
+  CMatrix3x3f *in_stack_0000000c;
+  CVector3f local_18;
   
   core_dglobe_cpp_CDemonGlobe_setColor_FUN_00471310
             ((CDemonGlobe *)(in_stack_00000004 + 7),in_stack_00000008);
@@ -30,8 +30,7 @@ void core_fire_cpp_FUN_004c1940(void)
     in_stack_00000004[2] = in_stack_00000008->g;
     in_stack_00000004[3] = in_stack_00000008->b;
   }
-  pCVar1 = core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160
-                     (in_stack_00000018,(CVector3f *)&stack0xfffffff4);
+  pCVar1 = core_dirmat_cpp_CMatrix3x3f_getEulerAngles_FUN_00472160(in_stack_0000000c,&local_18);
   if ((CVector3f *)(in_stack_00000004 + 4) == pCVar1) {
     *in_stack_00000004 = 2;
     return;

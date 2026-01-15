@@ -1,20 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 131,
-    "complexity_score": 372,
+    "complexity_score": 124,
     "cross_reference_count": 5,
     "function_call_count": 6,
     "global_count": 0,
-    "pseudocode_lines": 67,
-    "suspect_count": 28,
+    "pseudocode_lines": 59,
+    "suspect_count": 6,
     "suspect_types": [
-      "badspacebase",
-      "call_esp_preserve",
-      "register_param",
-      "stack_param",
-      "stack_ref"
+      "call_esp_preserve"
     ],
-    "total_lines": 198
+    "total_lines": 190
   },
   "cross_references": [
     {
@@ -235,160 +231,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 16,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 16,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_0000000c",
-      "text": "CDeformableModelInstance *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_00000010",
-      "text": "CDeformableModelInstance *in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000014",
-      "text": "CDeformableModelInstance *in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 29,
-      "match": "in_stack_0000000c",
-      "text": "pCVar6 = in_stack_0000000c->model_ptr;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_0000000c",
-      "text": "fVar2 = in_stack_0000000c->scale_factor;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_0000000c",
-      "text": "fVar4 = in_stack_0000000c->scale_factor;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 34,
-      "match": "in_stack_0000000c",
-      "text": "if (&in_stack_0000000c->scaled_model_dimensions != (CVector3f *)&stack0xffffffe4) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 34,
-      "match": "&stack0xffffffe4",
-      "text": "if (&in_stack_0000000c->scaled_model_dimensions != (CVector3f *)&stack0xffffffe4) {",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 35,
-      "match": "in_stack_0000000c",
-      "text": "(in_stack_0000000c->scaled_model_dimensions).x =",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 36,
-      "match": "in_stack_0000000c",
-      "text": "(pCVar6->model_scale).x * in_stack_0000000c->scale_factor;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 37,
-      "match": "in_stack_0000000c",
-      "text": "(in_stack_0000000c->scaled_model_dimensions).y = fVar1 * fVar2;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 38,
-      "match": "in_stack_0000000c",
-      "text": "(in_stack_0000000c->scaled_model_dimensions).z = fVar3 * fVar4;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 42,
-      "match": "in_stack_0000000c",
-      "text": "pfVar9 = &in_stack_0000000c->scale_factor;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 43,
-      "match": "in_stack_0000000c",
-      "text": "pCVar8 = in_stack_0000000c->transformed_vertices;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 44,
-      "match": "in_stack_0000000c",
-      "text": "pCVar10 = in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 47,
-      "match": "in_stack_0000000c",
-      "text": "(in_stack_0000000c->model_ptr,index);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 53,
-      "match": "in_stack_0000000c",
-      "text": "pCVar10->rest_pose_data[0] = in_stack_0000000c->scale_factor;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 65,
-      "match": "in_stack_0000000c",
-      "text": "core_skeleton_cpp_CDeformableModelInstance_allocPointList_FUN_0059deb0(in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 66,
-      "match": "in_stack_00000010",
-      "text": "core_skeleton_cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a05e0(in_stack_00000010);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 68,
-      "match": "in_stack_00000014",
-      "text": "(in_stack_00000014);",
-      "type": "stack_param"
-    },
     {
       "add_esp_value": 4,
       "call_address": "005a0496",

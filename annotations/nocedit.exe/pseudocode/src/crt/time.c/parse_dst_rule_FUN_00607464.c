@@ -10,11 +10,10 @@ char * __cdecl crt_time_c_parse_dst_rule_FUN_00607464(char *rule_string,dst_rule
 
 {
   char *pcVar1;
-  int unaff_EBX;
-  BADSPACEBASE *in_ESP;
-  int unaff_ESI;
   int iVar2;
-  int unaff_retaddr;
+  int local_18;
+  int local_14;
+  int local_10;
   int local_c;
   
   iVar2 = -1;
@@ -29,32 +28,34 @@ char * __cdecl crt_time_c_parse_dst_rule_FUN_00607464(char *rule_string,dst_rule
   rule[1].seconds = iVar2;
   pcVar1 = crt_string_c_parse_uint_FUN_00607318(rule_string,&local_c);
   if (iVar2 == 0) {
-    rule->month = unaff_ESI + -1;
+    rule->month = local_c + -1;
     if (*pcVar1 == '.') {
-      pcVar1 = crt_string_c_parse_uint_FUN_00607318(pcVar1 + 1,(int *)&stack0xfffffff8);
-      rule->day = unaff_EBX;
+      pcVar1 = crt_string_c_parse_uint_FUN_00607318(pcVar1 + 1,&local_c);
+      rule->day = local_c;
       if (*pcVar1 == '.') {
-        pcVar1 = crt_string_c_parse_uint_FUN_00607318(pcVar1 + 1,(int *)&stack0xfffffffc);
-        rule->day_of_year = unaff_retaddr;
+        pcVar1 = crt_string_c_parse_uint_FUN_00607318(pcVar1 + 1,&local_c);
+        rule->day_of_year = local_c;
       }
     }
     rule->rule_type = 0;
   }
   else {
-    rule->rule_type = unaff_ESI;
+    rule->rule_type = local_c;
   }
-  local_c = 0;
+  local_10 = 2;
+  local_18 = 0;
+  local_14 = 0;
   if (*pcVar1 == '/') {
-    pcVar1 = crt_string_c_parse_uint_FUN_00607318(pcVar1 + 1,(int *)&stack0xfffffffc);
+    pcVar1 = crt_string_c_parse_uint_FUN_00607318(pcVar1 + 1,&local_10);
     if (*pcVar1 == ':') {
-      pcVar1 = crt_string_c_parse_uint_FUN_00607318(pcVar1 + 1,(int *)&stack0xfffffff0);
+      pcVar1 = crt_string_c_parse_uint_FUN_00607318(pcVar1 + 1,&local_14);
       if (*pcVar1 == ':') {
-        pcVar1 = crt_string_c_parse_uint_FUN_00607318(pcVar1 + 1,&local_c);
+        pcVar1 = crt_string_c_parse_uint_FUN_00607318(pcVar1 + 1,&local_18);
       }
     }
   }
-  rule->seconds = local_c;
-  rule->minutes = 0;
-  rule->hours = 2;
+  rule->seconds = local_18;
+  rule->minutes = local_14;
+  rule->hours = local_10;
   return pcVar1;
 }

@@ -11,9 +11,8 @@ int __cdecl core_succubus_cpp_CSuccubus_renderOpaque_FUN_005c7590(CSuccubus *thi
 {
   int iVar1;
   CBoundingBox3D *this_ptr_00;
-  BADSPACEBASE *in_ESP;
-  int iStack00000014;
-  int in_stack_0000001c;
+  int iVar2;
+  int unaff_retaddr;
   
   iVar1 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00(g_CDemonRendererPtr);
   if (iVar1 == 0) {
@@ -25,9 +24,9 @@ int __cdecl core_succubus_cpp_CSuccubus_renderOpaque_FUN_005c7590(CSuccubus *thi
   if (*(int *)(this_ptr->base_enemy).base_character.field2_0x240c == 0) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
     this_ptr_00 = (*((this_ptr->base_enemy).base_character.base_actor.vtable)->getBoundingBox)
-                            ((CDemonActor *)this_ptr,(CBoundingBox3D *)&stack0xffffffe4);
-    iStack00000014 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
-    if (iStack00000014 != 0) {
+                            ((CDemonActor *)this_ptr,(CBoundingBox3D *)&stack0xffffffdc);
+    iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
+    if (iVar2 != 0) {
       (this_ptr->base_enemy).base_character.field13_0x2620[0] = '\x01';
       (this_ptr->base_enemy).base_character.field13_0x2620[1] = '\0';
       (this_ptr->base_enemy).base_character.field13_0x2620[2] = '\0';
@@ -61,7 +60,7 @@ int __cdecl core_succubus_cpp_CSuccubus_renderOpaque_FUN_005c7590(CSuccubus *thi
       }
     }
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);
-    return in_stack_0000001c;
+    return unaff_retaddr;
   }
   return 0;
 }

@@ -9,7 +9,6 @@
 void __cdecl shape_design_c_renderVertexPointsWithLabels_FUN_0045bff0(void)
 
 {
-  BADSPACEBASE *in_ESP;
   double dVar1;
   char local_88 [80];
   CVector3i local_38;

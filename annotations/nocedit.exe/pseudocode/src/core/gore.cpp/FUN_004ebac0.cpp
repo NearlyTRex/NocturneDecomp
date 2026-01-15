@@ -18,7 +18,6 @@ void core_gore_cpp_FUN_004ebac0(void)
   int iVar3;
   int iVar4;
   int iVar5;
-  BADSPACEBASE *in_ESP;
   CVector3f *in_stack_00000004;
   float fStack_ec;
   float fStack_e8;

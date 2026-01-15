@@ -14,13 +14,8 @@ wincore_winrun_cpp_setRegistryStringValue_FUN_005f4290
   char cVar1;
   LSTATUS LVar2;
   uint uVar3;
-  BADSPACEBASE *in_ESP;
   char *pcVar4;
   byte bVar5;
-  HKEY in_stack_0000001c;
-  uint uStack00000028;
-  LPCSTR in_stack_00000030;
-  HKEY in_stack_00000038;
   HKEY local_c;
   DWORD local_8;
   
@@ -38,9 +33,7 @@ wincore_winrun_cpp_setRegistryStringValue_FUN_005f4290
     cVar1 = *pcVar4;
     pcVar4 = pcVar4 + (uint)bVar5 * -2 + 1;
   } while (cVar1 != '\0');
-  local_8 = 0x5f42f2;
-  (*RegSetValueExA)(in_stack_0000001c,in_stack_00000030,0,1,(BYTE *)value_data,~uVar3);
-  uStack00000028 = 0x5f42fe;
-  (*RegCloseKey)(in_stack_00000038);
+  (*RegSetValueExA)(local_c,value_name,0,1,(BYTE *)value_data,~uVar3);
+  (*RegCloseKey)(local_c);
   return;
 }

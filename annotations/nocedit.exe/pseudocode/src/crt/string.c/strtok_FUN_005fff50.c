@@ -13,7 +13,6 @@ char * __cdecl crt_string_c_strtok_FUN_005fff50(char *str,char *delimiters)
   ThreadData *pTVar2;
   byte *pbVar3;
   byte *pbVar4;
-  BADSPACEBASE *in_ESP;
   byte local_28 [32];
   
   if (str == (char *)0x0) {

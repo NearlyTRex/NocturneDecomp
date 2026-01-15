@@ -17,21 +17,18 @@ cockpit_ckptutil_c_copyBitmapRegion_FUN_00432860
   int iVar2;
   int in_stack_00000020;
   int in_stack_00000024;
-  int in_stack_00000028;
-  int in_stack_00000038;
   
   if ((copy_width != 0) && (src_buffer != (void *)0x0)) {
     pOVar1 = cockpit_ckptutil_c_getOptimizedMemcpyFunction_FUN_00431780();
-    dest_buffer_00 =
-         (void *)((int)src_buffer + in_stack_00000024 * (int)dest_buffer + in_stack_00000020);
+    dest_buffer_00 = (void *)((int)src_buffer + in_stack_00000020 * src_stride + src_y);
     iVar2 = 0;
-    if (0 < src_y) {
+    if (0 < src_x) {
       do {
         iVar2 = iVar2 + 1;
         (*pOVar1)(dest_buffer_00,(void *)copy_width,copy_height);
         copy_width = copy_width + copy_height;
-        dest_buffer_00 = (void *)((int)dest_buffer_00 + in_stack_00000028);
-      } while (iVar2 < in_stack_00000038);
+        dest_buffer_00 = (void *)((int)dest_buffer_00 + copy_height);
+      } while (iVar2 < in_stack_00000024);
       return;
     }
   }

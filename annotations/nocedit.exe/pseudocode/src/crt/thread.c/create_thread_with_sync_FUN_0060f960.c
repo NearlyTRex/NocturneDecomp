@@ -14,7 +14,6 @@ crt_thread_c_create_thread_with_sync_FUN_0060f960
   BOOL BVar1;
   DWORD value;
   HANDLE hObject;
-  BADSPACEBASE *in_ESP;
   byte bVar2;
   char acStackY_1034 [4048];
   char *buffer;

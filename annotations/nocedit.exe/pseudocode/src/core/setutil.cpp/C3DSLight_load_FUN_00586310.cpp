@@ -10,98 +10,113 @@ void __cdecl core_setutil_cpp_C3DSLight_load_FUN_00586310(C3DSLight *this_ptr,FI
 
 {
   char *pcVar1;
-  BADSPACEBASE *in_ESP;
-  C3DSLight *pCVar2;
-  int iVar3;
+  float *pfVar2;
+  C3DSLight *pCVar3;
   int iVar4;
-  char in_stack_0000001c;
-  char cStack00000020;
-  int in_stack_0000002c;
-  C3DSLight *in_stack_00000030;
-  char (*in_stack_00000034) [40];
-  uint in_stack_00000038;
-  uint in_stack_0000003c;
+  char local_148 [256];
+  int local_48;
+  char local_44 [4];
+  char local_40 [4];
+  int local_3c;
+  uint local_38;
+  uint local_34;
+  uint local_30;
+  uint local_2c;
+  int *local_28;
+  char *local_24;
+  int local_20;
+  int local_1c;
+  C3DSLight *local_18;
+  char (*local_14) [40];
   
   if (10 < g_CDemonSetPtr->set_file_version) {
-    crt_stdio_c_fgets_FUN_005fefd0(&stack0xfffffeb8,0xff,file_handle);
+    crt_stdio_c_fgets_FUN_005fefd0(local_148,0xff,file_handle);
   }
-  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%[^\n]\n");
+  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%[^\n]\n",this_ptr->name);
   if (10 < g_CDemonSetPtr->set_file_version) {
-    crt_stdio_c_fgets_FUN_005fefd0(&stack0xfffffec0,0xff,file_handle);
+    crt_stdio_c_fgets_FUN_005fefd0(local_148,0xff,file_handle);
   }
-  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%f,%f,%f\n");
+  crt_stdio_c_fscanf_FUN_005fe7c0
+            (file_handle,"%f,%f,%f\n",&this_ptr->pos,&(this_ptr->pos).y,&(this_ptr->pos).z);
   if (10 < g_CDemonSetPtr->set_file_version) {
-    crt_stdio_c_fgets_FUN_005fefd0(&stack0xfffffec8,0xff,file_handle);
+    crt_stdio_c_fgets_FUN_005fefd0(local_148,0xff,file_handle);
   }
-  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%f,%f,%f\n");
+  crt_stdio_c_fscanf_FUN_005fe7c0
+            (file_handle,"%f,%f,%f\n",&this_ptr->orient,&(this_ptr->orient).z,
+             &(this_ptr->orient).y);
   if (10 < g_CDemonSetPtr->set_file_version) {
-    crt_stdio_c_fgets_FUN_005fefd0(&stack0xfffffed0,0xff,file_handle);
+    crt_stdio_c_fgets_FUN_005fefd0(local_148,0xff,file_handle);
   }
-  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%f\n");
+  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%f\n",&this_ptr->fov);
   if (g_CDemonSetPtr->set_file_version < 0x15) {
     this_ptr->aspect = 1.0;
   }
   else {
-    crt_stdio_c_fgets_FUN_005fefd0(&stack0xfffffed8,0xff,file_handle);
-    crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%f\n");
+    crt_stdio_c_fgets_FUN_005fefd0(local_148,0xff,file_handle);
+    crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%f\n",&this_ptr->aspect);
   }
   if (g_CDemonSetPtr->set_file_version < 0x16) {
     this_ptr->intensity = 1.0;
   }
   else {
-    crt_stdio_c_fgets_FUN_005fefd0(&stack0xfffffee0,0xff,file_handle);
-    crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%f\n");
+    crt_stdio_c_fgets_FUN_005fefd0(local_148,0xff,file_handle);
+    crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%f\n",&this_ptr->intensity);
   }
   if (10 < g_CDemonSetPtr->set_file_version) {
-    crt_stdio_c_fgets_FUN_005fefd0(&stack0xfffffee0,0xff,file_handle);
+    crt_stdio_c_fgets_FUN_005fefd0(local_148,0xff,file_handle);
   }
-  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%d\n");
+  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%d\n",this_ptr);
   if (10 < g_CDemonSetPtr->set_file_version) {
-    crt_stdio_c_fgets_FUN_005fefd0(&stack0xfffffee4,0xff,file_handle);
+    crt_stdio_c_fgets_FUN_005fefd0(local_148,0xff,file_handle);
   }
-  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%f,%f,%f,%f,%f\n");
+  crt_stdio_c_fscanf_FUN_005fe7c0
+            (file_handle,"%f,%f,%f,%f,%f\n",&this_ptr->color,&(this_ptr->color).g,
+             &(this_ptr->color).b,&this_ptr->atten_start,&this_ptr->atten_end);
   if (10 < g_CDemonSetPtr->set_file_version) {
-    crt_stdio_c_fgets_FUN_005fefd0(&stack0xfffffeec,0xff,file_handle);
+    crt_stdio_c_fgets_FUN_005fefd0(local_148,0xff,file_handle);
   }
-  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%d,%d\n");
+  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%d,%d\n",&this_ptr->size,&(this_ptr->size).y);
   if (10 < g_CDemonSetPtr->set_file_version) {
-    crt_stdio_c_fgets_FUN_005fefd0(&stack0xfffffef4,0xff,file_handle);
+    crt_stdio_c_fgets_FUN_005fefd0(local_148,0xff,file_handle);
   }
-  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%d\n");
+  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%d\n",&this_ptr->filter_count);
   if (10 < g_CDemonSetPtr->set_file_version) {
-    crt_stdio_c_fgets_FUN_005fefd0(&stack0xfffffefc,0xff,file_handle);
+    crt_stdio_c_fgets_FUN_005fefd0(local_148,0xff,file_handle);
   }
   if (g_CDemonSetPtr->set_file_version < 9) {
     this_ptr->blend_filter = 1;
   }
   else {
-    crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%d\n");
+    crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%d\n",&this_ptr->blend_filter);
   }
-  iVar3 = 0;
+  iVar4 = 0;
   if (0 < this_ptr->filter_count) {
-    _cStack00000020 = this_ptr->filter_indices;
-    in_stack_00000034 = this_ptr->filter_names;
-    in_stack_00000030 = this_ptr;
+    local_28 = this_ptr->filter_indices;
+    pfVar2 = this_ptr->filter_durations;
+    local_14 = this_ptr->filter_names;
+    local_18 = this_ptr;
     do {
-      in_stack_0000002c = iVar3 * 4;
+      local_1c = iVar4 * 4;
       if (g_CDemonSetPtr->set_file_version < 0x10) {
-        crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%f,%s\n");
-        this_ptr->filter_indices[iVar3] = 0;
+        crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%f,%s\n",pfVar2,local_14);
+        *(uint *)((int)this_ptr->filter_indices + local_1c) = 0;
       }
       else {
-        crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%f,%d,%s\n");
+        crt_stdio_c_fscanf_FUN_005fe7c0
+                  (file_handle,"%f,%d,%s\n",pfVar2,local_28 + iVar4,local_14);
       }
-      iVar3 = iVar3 + 1;
-      in_stack_00000034 = in_stack_00000034 + 1;
-      pcVar1 = in_stack_00000030->name;
-      in_stack_00000030->filters[0] = (CDemonFilter *)0x0;
-      in_stack_00000030 = (C3DSLight *)pcVar1;
-    } while (iVar3 < this_ptr->filter_count);
+      pfVar2 = pfVar2 + 1;
+      iVar4 = iVar4 + 1;
+      local_14 = local_14 + 1;
+      pcVar1 = local_18->name;
+      local_18->filters[0] = (CDemonFilter *)0x0;
+      local_18 = (C3DSLight *)pcVar1;
+    } while (iVar4 < this_ptr->filter_count);
   }
   if (10 < g_CDemonSetPtr->set_file_version) {
-    crt_stdio_c_fgets_FUN_005fefd0(&stack0xffffff00,0xff,file_handle);
+    crt_stdio_c_fgets_FUN_005fefd0(local_148,0xff,file_handle);
   }
-  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%d\n");
+  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%d\n",&this_ptr->current_filter_frame);
   if (g_CDemonSetPtr->set_file_version < 0x13) {
     (this_ptr->filter_vel).x = 0;
     (this_ptr->filter_vel).y = 0;
@@ -110,31 +125,36 @@ void __cdecl core_setutil_cpp_C3DSLight_load_FUN_00586310(C3DSLight *this_ptr,FI
     this_ptr->move_filter = 0;
   }
   else {
-    crt_stdio_c_fgets_FUN_005fefd0(&stack0xffffff04,0xff,file_handle);
-    crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%d,%d,%d,%d,%d\n");
+    crt_stdio_c_fgets_FUN_005fefd0(local_148,0xff,file_handle);
+    crt_stdio_c_fscanf_FUN_005fe7c0
+              (file_handle,"%d,%d,%d,%d,%d\n",&this_ptr->move_filter,&this_ptr->filter_vel,
+               &(this_ptr->filter_vel).y,&this_ptr->filter_pos,&(this_ptr->filter_pos).y);
   }
   if (10 < g_CDemonSetPtr->set_file_version) {
-    crt_stdio_c_fgets_FUN_005fefd0(&stack0xffffff0c,0xff,file_handle);
+    crt_stdio_c_fgets_FUN_005fefd0(local_148,0xff,file_handle);
   }
-  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%f,%f\n");
-  crt_stdio_c_fgets_FUN_005fefd0(&stack0xffffff10,0xff,file_handle);
+  crt_stdio_c_fscanf_FUN_005fe7c0
+            (file_handle,"%f,%f\n",&this_ptr->on_time,&this_ptr->cycle_time);
+  crt_stdio_c_fgets_FUN_005fefd0(local_148,0xff,file_handle);
   if (g_CDemonSetPtr->set_file_version < 0xb) {
-    iVar3 = 100;
+    local_20 = 100;
     if (6 < g_CDemonSetPtr->set_file_version) {
       if (g_CDemonSetPtr->set_file_version < 0x1a) {
-        iVar3 = 200;
+        local_20 = 200;
       }
       else {
-        iVar3 = 0xfa;
+        local_20 = 0xfa;
       }
     }
-    if (iVar3 != 0) {
+    if (local_20 != 0) {
+      local_24 = this_ptr->field8_0x21e + 6;
+      local_20 = local_20 << 4;
       iVar4 = 0;
-      pCVar2 = this_ptr;
+      pCVar3 = this_ptr;
       do {
         if (g_CDemonSetPtr->set_file_version < 2) {
-          crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%d\n");
-          pCVar2->visible_flags[0] = in_stack_0000001c;
+          crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%d\n",local_44);
+          pCVar3->visible_flags[0] = local_44[0];
           pcVar1 = this_ptr->field8_0x21e + iVar4 + 6;
           pcVar1[0] = '\x01';
           pcVar1[1] = '\0';
@@ -157,36 +177,39 @@ void __cdecl core_setutil_cpp_C3DSLight_load_FUN_00586310(C3DSLight *this_ptr,FI
           pcVar1[3] = '\0';
         }
         else {
-          crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%d,%d,%d,%d,%d\n");
-          pCVar2->visible_flags[0] = cStack00000020;
+          pcVar1 = local_24 + iVar4;
+          crt_stdio_c_fscanf_FUN_005fe7c0
+                    (file_handle,"%d,%d,%d,%d,%d\n",local_40,pcVar1,pcVar1 + 4,pcVar1 + 8,
+                     pcVar1 + 0xc);
+          pCVar3->visible_flags[0] = local_40[0];
         }
         iVar4 = iVar4 + 0x10;
-        pCVar2 = (C3DSLight *)((int)&pCVar2->light_type + 1);
-      } while (iVar4 < iVar3 << 4);
+        pCVar3 = (C3DSLight *)((int)&pCVar3->light_type + 1);
+      } while (iVar4 < local_20);
     }
   }
   else {
     crt_memory_c_memset_FUN_005fde40(this_ptr->visible_flags,0,0xfa);
     crt_memory_c_memset_FUN_005fde40(this_ptr->field8_0x21e + 6,0,4000);
-    crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%d\n");
-    iVar3 = 0;
-    if (0 < (int)_cStack00000020) {
+    crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%d\n",&local_48);
+    iVar4 = 0;
+    if (0 < local_48) {
       do {
-        crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%d,%d,%d,%d,%d\n");
-        if (0xf9 < (int)in_stack_00000030) {
+        crt_stdio_c_fscanf_FUN_005fe7c0
+                  (file_handle,"%d,%d,%d,%d,%d\n",&local_3c,&local_38,&local_30,&local_34,
+                   &local_2c);
+        if (0xf9 < local_3c) {
           g_CurrentFilename = "..\\core\\setutil.cpp";
           g_CurrentLineNumber = 0x2d8;
           core_main_c_displayErrorAndQuit_FUN_00506f10("Invalid camera number in visiblilty list!");
         }
-        this_ptr->visible_flags[in_stack_0000002c] = '\x01';
-        *(C3DSLight **)(this_ptr->field8_0x21e + in_stack_0000002c * 0x10 + 6) = in_stack_00000030;
-        *(uint *)(this_ptr->field8_0x21e + in_stack_0000002c * 0x10 + 10) = in_stack_00000038;
-        *(char (**) [40])(this_ptr->field8_0x21e + in_stack_0000002c * 0x10 + 0xe) =
-             in_stack_00000034;
-        *(uint *)(this_ptr->field8_0x21e + in_stack_0000002c * 0x10 + 0x12) =
-             in_stack_0000003c;
-        iVar3 = iVar3 + 1;
-      } while (iVar3 < (int)_cStack00000020);
+        this_ptr->visible_flags[local_3c] = '\x01';
+        *(uint *)(this_ptr->field8_0x21e + local_3c * 0x10 + 6) = local_38;
+        *(uint *)(this_ptr->field8_0x21e + local_3c * 0x10 + 10) = local_30;
+        *(uint *)(this_ptr->field8_0x21e + local_3c * 0x10 + 0xe) = local_34;
+        *(uint *)(this_ptr->field8_0x21e + local_3c * 0x10 + 0x12) = local_2c;
+        iVar4 = iVar4 + 1;
+      } while (iVar4 < local_48);
     }
   }
   *(float *)this_ptr->field12_0x11d8 = this_ptr->atten_end * this_ptr->atten_end;

@@ -14,11 +14,11 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_00529ed0(CMoon *this_ptr)
   uint uVar3;
   int extraout_EDX;
   int iVar4;
-  BADSPACEBASE *in_ESP;
   ulonglong *puVar5;
   ulonglong uVar6;
   double dVar7;
   int render_flags;
+  CVector3f local_5c;
   CVector3i local_50;
   CVector3f local_44;
   double local_38;
@@ -38,8 +38,11 @@ void __cdecl core_moon_cpp_CMoon_render_FUN_00529ed0(CMoon *this_ptr)
             (g_CDemonRendererPtr,(CVector3i *)&g_ZeroVector);
   engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0048c650(g_CDemonRendererPtr,112.0);
   engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(g_CDemonRendererPtr);
+  local_5c.x = (this_ptr->rotation_phase + (float)-0.5) * (float)48;
+  local_5c.y = (float)48 * (this_ptr->rotation_phase + (float)-0.5);
+  local_5c.z = 72.0;
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-            (g_CDemonRendererPtr,(CVector3f *)&stack0xffffffa4);
+            (g_CDemonRendererPtr,&local_5c);
   pCVar1 = g_CDemonSetPtr;
   g_CDemonSetPtr->rendering_mode = 1;
   (pCVar1->light_direction).x = -37000;

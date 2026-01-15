@@ -14,16 +14,16 @@ core_skeleton_cpp_CDeformableModel_captureTextures_FUN_0059a780(CDeformableModel
   int iVar1;
   int iVar2;
   SMRGLTextureBasic *texture;
-  SMRGLTextureBasic *pSVar3;
+  SMRGLTextureBasic *local_14;
   
   skeleton_ptr = core_skeleton_cpp_loadSkeleton_FUN_005a1df0(this_ptr->model_name);
   iVar2 = 0;
   core_skeleton_cpp_CDeformableModel_bindSkeleton_FUN_0059c1f0(this_ptr,skeleton_ptr);
   if (0 < this_ptr->num_texture_sets) {
-    pSVar3 = (SMRGLTextureBasic *)this_ptr->texture_sets;
+    local_14 = (SMRGLTextureBasic *)this_ptr->texture_sets;
     do {
       iVar1 = 0;
-      texture = pSVar3;
+      texture = local_14;
       if (0 < this_ptr->num_textures) {
         do {
           iVar1 = iVar1 + 1;
@@ -33,7 +33,7 @@ core_skeleton_cpp_CDeformableModel_captureTextures_FUN_0059a780(CDeformableModel
         } while (iVar1 < this_ptr->num_textures);
       }
       iVar2 = iVar2 + 1;
-      pSVar3 = pSVar3 + 0xf0;
+      local_14 = local_14 + 0xf0;
     } while (iVar2 < this_ptr->num_texture_sets);
   }
   return;

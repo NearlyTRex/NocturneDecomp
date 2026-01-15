@@ -16,28 +16,18 @@ void __cdecl core_setedit_cpp_CDemonSet_showEditorMenu_FUN_00584940(CDemonSet *t
   undefined3 extraout_var;
   undefined3 extraout_var_00;
   int iVar5;
-  BADSPACEBASE *in_ESP;
   char *pcVar6;
   char *pcVar7;
   byte bVar8;
-  char *in_stack_0000003c;
-  char *in_stack_00000040;
-  char **in_stack_fffff950;
-  CStrList_vtable *in_stack_fffff954;
-  CStrList_vtable *in_stack_fffff958;
-  CStrList_vtable *in_stack_fffff95c;
-  uint in_stack_fffff960;
-  char acStack_318 [8];
-  char acStack_310 [4];
-  char acStack_30c [252];
-  char acStack_210 [4];
-  char acStack_20c [248];
-  char acStack_114 [8];
-  char acStack_10c [208];
-  char acStack_3c [4];
-  char acStack_38 [12];
-  char acStack_2c [4];
-  char acStack_28 [16];
+  uint in_stack_fffff8ec;
+  uint in_stack_fffff8f0;
+  char **in_stack_fffff8f4;
+  CStrList_vtable *in_stack_fffff8f8;
+  uint in_stack_fffff8fc;
+  char local_36c [260];
+  char local_268 [256];
+  char local_168 [256];
+  char local_68 [80];
   char *local_18;
   char local_14 [4];
   
@@ -58,13 +48,13 @@ void __cdecl core_setedit_cpp_CDemonSet_showEditorMenu_FUN_00584940(CDemonSet *t
     engine_2d_c_drawText_FUN_00401fd0("A.  Fog editor",0,0x79);
     engine_2d_c_drawText_FUN_00401fd0("C.  Rebuild thumbs",0,0x8f);
     pcVar3 = core_ground_cpp_getGroundTypeName_FUN_004eed80(this_ptr->default_ground_type);
-    crt_stdio_c_sprintf_FUN_005fdbd0(acStack_3c,"D.  Default ground type: %s",pcVar3);
-    engine_2d_c_drawText_FUN_00401fd0(acStack_38,0,0x9a);
+    crt_stdio_c_sprintf_FUN_005fdbd0(local_68,"D.  Default ground type: %s",pcVar3);
+    engine_2d_c_drawText_FUN_00401fd0(local_68,0,0x9a);
     engine_2d_c_drawText_FUN_00401fd0("F.  Export lights/cameras to .LC file",0,0xb0);
     engine_2d_c_drawText_FUN_00401fd0("G.  Virtual director box editor",0,0xbb);
     crt_stdio_c_sprintf_FUN_005fdbd0
-              (acStack_2c,"H.  Weather: %s",(&PTR_s_None_006817f0)[this_ptr->weather_type]);
-    engine_2d_c_drawText_FUN_00401fd0(acStack_28,0,0xc6);
+              (local_68,"H.  Weather: %s",(&PTR_s_None_006817f0)[this_ptr->weather_type]);
+    engine_2d_c_drawText_FUN_00401fd0(local_68,0,0xc6);
     engine_2d_c_drawText_FUN_00401fd0("I.  Edit ground types",0,0xd1);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     engine_2d_c_clearInputAndWait_FUN_00403260();
@@ -75,21 +65,21 @@ void __cdecl core_setedit_cpp_CDemonSet_showEditorMenu_FUN_00584940(CDemonSet *t
           if (uVar4 < 0x32) {
             iVar5 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                               (g_CEditorToolsPtr,"Load set","models",
-                               "*.set",SUB41 /* extract 2-byte value */(local_14,0));
+                               "*.set",SUB41 /* extract 2-byte value */(local_68,0));
             if (iVar5 != 0) {
-              core_set_cpp_CDemonSet_load_FUN_00569410(this_ptr,&stack0xfffffff0);
+              core_set_cpp_CDemonSet_load_FUN_00569410(this_ptr,local_68);
             }
           }
           else {
             if (this_ptr->geometry_filename[0] == '\0') {
-              local_14[0] = '\0';
+              local_68[0] = '\0';
             }
             else {
               engine_dosio_c_splitPath_FUN_00481f20
-                        (in_stack_0000003c,(char *)0x0,(char *)0x0,local_14,(char *)0x0);
+                        (local_18,(char *)0x0,(char *)0x0,local_68,(char *)0x0);
               pcVar6 = ".set";
               iVar5 = -1;
-              pcVar3 = &stack0xfffffff0;
+              pcVar3 = local_68;
               do {
                 pcVar7 = pcVar3;
                 if (iVar5 == 0) break;
@@ -108,13 +98,13 @@ void __cdecl core_setedit_cpp_CDemonSet_showEditorMenu_FUN_00584940(CDemonSet *t
                 pcVar7[1] = cVar1;
                 pcVar7 = pcVar7 + 2;
               } while (cVar1 != '\0');
-              crt_string_c_strupr_FUN_00600770(&stack0xfffffff0);
+              crt_string_c_strupr_FUN_00600770(local_68);
             }
             bVar2 = shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
                               (g_CEditorToolsPtr,"Save set","models",0x648fa3,
-                               SUB41 /* extract 2-byte value */(&stack0xfffffff4,0));
+                               SUB41 /* extract 2-byte value */(local_68,0));
             if (CONCAT31 /* combine 2-byte values */(extraout_var_00,bVar2) != 0) {
-              core_setedit_cpp_CDemonSet_save_FUN_0057a2a0(this_ptr,&stack0xfffffff8);
+              core_setedit_cpp_CDemonSet_save_FUN_0057a2a0(this_ptr,local_68);
             }
           }
         }
@@ -144,21 +134,21 @@ void __cdecl core_setedit_cpp_CDemonSet_showEditorMenu_FUN_00584940(CDemonSet *t
         }
         else if (uVar4 == 0x44) {
           iVar5 = 2;
-          shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff940);
+          shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff8ec);
           do {
             pcVar3 = core_ground_cpp_getGroundTypeName_FUN_004eed80(iVar5);
             iVar5 = iVar5 + 1;
-            shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff948,pcVar3);
+            shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff8ec,pcVar3);
           } while (iVar5 < 0xe);
           uVar4 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                            ((CPickList *)&stack0xfffff94c,"Select default ground type.",
+                            ((CPickList *)&stack0xfffff8ec,"Select default ground type.",
                              this_ptr->default_ground_type + -2,0);
           if (-1 < (int)uVar4) {
             this_ptr->default_ground_type = uVar4 + 2;
           }
           shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                    ((CPickList *)&stack0xfffff950,0,(uint)in_stack_fffff950,(uint)in_stack_fffff954
-                     ,(uint)in_stack_fffff958,(uint)in_stack_fffff95c,in_stack_fffff960);
+                    ((CPickList *)&stack0xfffff8ec,0,in_stack_fffff8ec,in_stack_fffff8f0,
+                     (uint)in_stack_fffff8f4,(uint)in_stack_fffff8f8,in_stack_fffff8fc);
         }
       }
     }
@@ -177,7 +167,7 @@ void __cdecl core_setedit_cpp_CDemonSet_showEditorMenu_FUN_00584940(CDemonSet *t
     }
     else if (uVar4 == 0x49) {
       pcVar6 = ".\\GroundTypes";
-      pcVar3 = acStack_318;
+      pcVar3 = local_36c;
       do {
         cVar1 = *pcVar6;
         *pcVar3 = cVar1;
@@ -188,15 +178,13 @@ void __cdecl core_setedit_cpp_CDemonSet_showEditorMenu_FUN_00584940(CDemonSet *t
         pcVar3 = pcVar3 + 2;
       } while (cVar1 != '\0');
       if (this_ptr->geometry_filename[0] != '\0') {
-        engine_dosio_c_ensureTrailingSlash_FUN_00481f80
-                  (".\\GroundTypes",(char *)&stack0x00000040,acStack_114);
+        engine_dosio_c_ensureTrailingSlash_FUN_00481f80(".\\GroundTypes",local_14,local_168);
         engine_dosio_c_splitPath_FUN_00481f20
-                  (in_stack_00000040,(char *)0x0,(char *)0x0,acStack_210,(char *)0x0);
-        engine_dosio_c_makePath_FUN_00481f50
-                  (acStack_310,&stack0x00000048,acStack_10c,acStack_20c,".txt");
+                  (local_18,(char *)0x0,(char *)0x0,local_268,(char *)0x0);
+        engine_dosio_c_makePath_FUN_00481f50(local_36c,local_14,local_168,local_268,".txt");
       }
       bVar2 = shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
-                        (g_CEditorToolsPtr,"Select ground type file to edit",true,acStack_30c);
+                        (g_CEditorToolsPtr,"Select ground type file to edit",true,local_36c);
       if (CONCAT31 /* combine 2-byte values */(extraout_var,bVar2) != 0) {
         core_setedit_cpp_EditingGroundTypesAndSaving_FUN_00578630();
       }

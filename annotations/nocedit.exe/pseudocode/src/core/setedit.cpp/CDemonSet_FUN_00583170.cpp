@@ -19,7 +19,6 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
   int iVar7;
   int iVar8;
   SVDBox *pSVar9;
-  BADSPACEBASE *in_ESP;
   int iVar10;
   SRenderVertex *pSVar11;
   SRenderVertex *pSVar12;
@@ -31,8 +30,9 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
   int aiStack_31a [5];
   uint uStack_306;
   float *pfStack_302;
+  CVector3f *pCStack_2fe;
   char *format;
-  CGame *n2;
+  CGame *in_stack_fffffd16;
   CMatrix3x3f local_26c;
   byte local_244 [16];
   float local_234;
@@ -119,13 +119,12 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
   this_ptr->actor_list_ptr = (void *)0x0;
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_clearInputAndWait_FUN_00403260();
-  n2 = (CGame *)0x5831ca;
   core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)local_244);
   local_c8 = 0.0;
   local_c4 = 0.0;
   local_c0 = 0.0;
   local_4c = 40.0;
-  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,n2);
+  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_fffffd16);
   local_44 = this_ptr->vdir_boxes;
   this_ptr->unk_lighting_param3 = 1;
   this_ptr->unk_lighting_param4 = 1;
@@ -212,6 +211,7 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
           local_154 = -pCVar6[1].y;
           local_150 = -pCVar6[1].z;
           uStack_306 = 0x583519;
+          pCStack_2fe = pCVar1;
           core_setedit_cpp_FUN_005817d0(pfStack_302);
           uVar5 = shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_004a1330
                             (g_CEditorToolsPtr);
@@ -220,6 +220,7 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
           local_128.x = -pCVar1->x;
           local_128.y = -pCVar6[1].y;
           local_128.z = -pCVar6[1].z;
+          pCStack_2fe = (CVector3f *)0x583576;
           shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050
                     (g_CEditorToolsPtr,&local_128,pCVar1,CONCAT31 /* combine 2-byte values */(extraout_var,uVar5));
         }
@@ -229,6 +230,7 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
             iVar7 = *(int *)(this_ptr->vdir_boxes[iVar8].field3_0x3c + 4);
           } while (-1 < iVar7);
           pCVar1 = pCVar6 + 1;
+          pCStack_2fe = pCVar1;
           if (iVar8 == local_28) {
             pfStack_302 = &local_f8;
             local_f8 = -pCVar1->x;
@@ -239,6 +241,7 @@ void __cdecl core_setedit_cpp_CDemonSet_FUN_00583170(CDemonSet *this_ptr)
             local_8c.x = -pCVar1->x;
             local_8c.y = -pCVar6[1].y;
             local_8c.z = -pCVar6[1].z;
+            pCStack_2fe = (CVector3f *)0x5835e1;
             shape_edittool_cpp_CEditorTools_draw3DWireframeCube_FUN_004a2050
                       (g_CEditorToolsPtr,&local_8c,pCVar1,2);
           }
@@ -818,7 +821,7 @@ LAB_00583c6f:
       local_188 = (float)g_CDemonCameraInstance.base.position.x;
       local_184 = (float)*local_6c;
       local_180 = (float)*local_70;
-      pfStack_302 = (float *)0x583fab;
+      pCStack_2fe = (CVector3f *)0x583fab;
       pCVar6 = core_dcamera_cpp_CDemonCamera_screenToWorldDirection_FUN_0044d480
                          (&g_CDemonCameraInstance,&local_d4,g_MouseX,g_MouseY);
       local_1e8.x = pCVar6->x * 1000f;
@@ -851,6 +854,7 @@ LAB_00583c6f:
             local_20c.max.y = (pSVar9->extents).y;
             local_20c.max.z = (pSVar9->extents).z;
           }
+          pCStack_2fe = (CVector3f *)0x5840fa;
           local_24 = core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940
                                (&local_20c,&local_11c.max,&local_98,(CVector3f *)0x0);
           local_78 = (double)local_24;

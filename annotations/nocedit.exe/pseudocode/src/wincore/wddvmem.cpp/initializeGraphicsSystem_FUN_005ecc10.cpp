@@ -10,7 +10,6 @@ int __cdecl wincore_wddvmem_cpp_initializeGraphicsSystem_FUN_005ecc10(void)
 
 {
   HRESULT HVar1;
-  uint uStack00000018;
   
   g_BackBuffer = shape_memdbg_cpp_debugMalloc_FUN_0050f250
                            (((int)((g_BitsPerPixel + (g_BitsPerPixel >> 0x1f) * -8) -
@@ -51,7 +50,6 @@ int __cdecl wincore_wddvmem_cpp_initializeGraphicsSystem_FUN_005ecc10(void)
   if (HVar1 == 0) {
     (*g_DirectDrawObject->vtable->SetCooperativeLevel)(g_DirectDrawObject,g_MainWindowHandle,0x11);
   }
-  uStack00000018 = 0x5ecd3e;
   wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(g_MainWindowHandle);
   return 1;
 }

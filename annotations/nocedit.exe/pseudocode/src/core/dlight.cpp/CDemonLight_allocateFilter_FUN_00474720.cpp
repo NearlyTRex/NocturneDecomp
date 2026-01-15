@@ -9,12 +9,11 @@
 void __cdecl core_dlight_cpp_CDemonLight_allocateFilter_FUN_00474720(CDemonLight *this_ptr)
 
 {
-  void *pvVar1;
-  int in_stack_00000008;
+  uchar *puVar1;
   
-  pvVar1 = shape_memdbg_cpp_debugMalloc_FUN_0050f250(0x10000,"..\\core\\dlight.cpp",0x53f);
-  *(void **)(in_stack_00000008 + 0x1c6c) = pvVar1;
-  if (pvVar1 != (void *)0x0) {
+  puVar1 = shape_memdbg_cpp_debugMalloc_FUN_0050f250(0x10000,"..\\core\\dlight.cpp",0x53f);
+  this_ptr->filter_buffer = puVar1;
+  if (puVar1 != (uchar *)0x0) {
     return;
   }
   g_CurrentFilename = "..\\core\\dlight.cpp";

@@ -12,11 +12,10 @@ core_motion_cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0
 
 {
   int target_motion_index;
-  float in_stack_00000010;
   
   target_motion_index =
        core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(this_ptr->motion_list_ptr);
   core_motion_cpp_CMotionController_jumpToMotion_FUN_0052dde0
-            ((CMotionController *)motion_name,target_motion_index,in_stack_00000010);
+            (this_ptr,target_motion_index,frame_number);
   return;
 }

@@ -11,8 +11,6 @@ void __cdecl core_teleport_cpp_CTeleport_process_FUN_005daa20(CTeleport *this_pt
 {
   CVector3f *pCVar1;
   CBoundingBox3D *pCVar2;
-  BADSPACEBASE *in_ESP;
-  float fStack_20;
   CVector3f local_14;
   
   if (*(int *)(this_ptr->field1_0x158 + 0xc) != 0) {
@@ -21,12 +19,11 @@ void __cdecl core_teleport_cpp_CTeleport_process_FUN_005daa20(CTeleport *this_pt
                         &(g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.location.
                          position);
     pCVar2 = (*((this_ptr->base_actor).vtable)->getBoundingBox)
-                       (&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffd8);
+                       (&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffd4);
     if (((((pCVar2->min).x <= pCVar1->x) && ((pCVar2->min).y <= pCVar1->y)) &&
         ((pCVar2->min).z <= pCVar1->z)) &&
        (((pCVar1->x <= (pCVar2->max).x && (pCVar1->y <= (pCVar2->max).y)) &&
         (pCVar1->z <= (pCVar2->max).z)))) {
-      fStack_20 = 8.601955e-39;
       core_mission_cpp_CDemonMission_FUN_00524070(g_CDemonMissionPtr);
       return;
     }

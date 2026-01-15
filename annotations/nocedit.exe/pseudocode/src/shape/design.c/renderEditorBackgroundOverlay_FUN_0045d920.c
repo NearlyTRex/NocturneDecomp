@@ -9,7 +9,6 @@
 void __cdecl shape_design_c_renderEditorBackgroundOverlay_FUN_0045d920(void)
 
 {
-  BADSPACEBASE *in_ESP;
   int local_1c;
   int local_18;
   int *local_14;

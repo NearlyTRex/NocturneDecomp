@@ -1,22 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 243,
-    "complexity_score": 465,
+    "complexity_score": 310,
     "cross_reference_count": 3,
     "function_call_count": 21,
     "global_count": 17,
-    "pseudocode_lines": 60,
-    "suspect_count": 37,
+    "pseudocode_lines": 65,
+    "suspect_count": 23,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
-      "register_param",
-      "stack_param",
-      "stack_ref",
       "variadic_preserve"
     ],
-    "total_lines": 303
+    "total_lines": 308
   },
   "cross_references": [
     {
@@ -407,106 +403,8 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 10,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 10,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000010",
-      "text": "int in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000014",
-      "text": "char *in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000020",
-      "text": "char *in_stack_00000020;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000054",
-      "text": "int in_stack_00000054;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 28,
-      "match": "in_stack_00000014",
-      "text": "engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_EditorFont,in_stack_00000014);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_00000020",
-      "text": "iVar4 + g_FontCharacterWidth * 2 + iVar2,in_stack_00000020,0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 37,
-      "match": "&stack0xffffff20",
-      "text": "shape_edittool_cpp_CEdButton_ctor_FUN_004a64e0((CEdButton *)&stack0xffffff20);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 39,
-      "match": "in_stack_00000010",
-      "text": "((CEdButton *)&iStack_dc,iVar1,color,iVar1 + in_stack_00000010 + -1,g_ClipBottom,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 46,
-      "match": "&stack0xffffff30",
-      "text": "(iVar1 = shape_edittool_cpp_CEdButton_wasClicked_FUN_004a6830((CEdButton *)&stack0xffffff30),",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 54,
-      "match": "in_stack_00000054",
-      "text": "(((g_ClipTop + g_ClipBottom) - iVar4) - iVar2) / 2,in_stack_00000054,-1);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 55,
-      "match": "&stack0xffffff44",
-      "text": "shape_edittool_cpp_CEdButton_paint_FUN_004a65e0((CEdButton *)&stack0xffffff44,1);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 61,
-      "match": "&stack0xffffff3c",
-      "text": "shape_edittool_cpp_CEdButton_dtor_FUN_004a6510((CEdButton *)&stack0xffffff3c);",
-      "type": "stack_ref"
-    },
-    {
       "call_address": "0049e3be",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

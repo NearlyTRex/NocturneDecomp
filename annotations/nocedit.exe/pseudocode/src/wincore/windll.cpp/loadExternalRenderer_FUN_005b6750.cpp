@@ -14,7 +14,6 @@ int __cdecl wincore_windll_cpp_loadExternalRenderer_FUN_005b6750(HWND window_han
   FARPROC pFVar3;
   undefined3 extraout_var;
   int iVar4;
-  BADSPACEBASE *in_ESP;
   char acStack_3c2c [4];
   byte auStack_1e64 [7624];
   CExternalRendererBridge CStack_9c;

@@ -14,13 +14,13 @@ void core_msnedit_cpp_UndoTmp_BuildActorList_CreateTmp_FUN_0053c140(void)
 {
   FILE *file_handle;
   CDemonMission *in_stack_00000004;
-  int in_stack_0000000c;
+  int in_stack_00000008;
   
   crt_io_c_deleteFile_FUN_005ff9d0("$$UNDO$$.TMP");
   DAT_02f7c52c = 0xffffffff;
-  *(int *)(in_stack_00000004->field2_0xc + 0x1c) = in_stack_0000000c;
-  if (in_stack_0000000c != 0) {
-    *(uint *)(in_stack_0000000c + 0x148) = 0;
+  *(int *)(in_stack_00000004->field2_0xc + 0x1c) = in_stack_00000008;
+  if (in_stack_00000008 != 0) {
+    *(uint *)(in_stack_00000008 + 0x148) = 0;
     if (*(int *)(*(int *)(in_stack_00000004->field2_0xc + 0x1c) + 0x2c) !=
         *(int *)in_stack_00000004->field0_0x0) {
       core_mission_cpp_CDemonMission_FUN_00523fb0(in_stack_00000004);

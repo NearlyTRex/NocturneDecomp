@@ -11,7 +11,6 @@ void shape_design_c_selectModelPart_FUN_0045de80(void)
 {
   char cVar1;
   int iVar2;
-  BADSPACEBASE *in_ESP;
   char *pcVar3;
   char *pcVar4;
   byte bVar5;

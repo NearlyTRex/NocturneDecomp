@@ -17,7 +17,6 @@ core_dmodel_cpp_CKeyFramedModel_packTexturesToAtlases_FUN_0047a3e0
   int iVar4;
   int iVar5;
   int iVar6;
-  BADSPACEBASE *in_ESP;
   int iVar7;
   int max_u;
   SCramConfig *pSVar8;

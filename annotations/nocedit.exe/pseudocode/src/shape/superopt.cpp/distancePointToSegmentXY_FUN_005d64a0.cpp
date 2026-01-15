@@ -12,25 +12,24 @@ shape_superopt_cpp_distancePointToSegmentXY_FUN_005d64a0
 
 {
   double dVar1;
-  BADSPACEBASE *in_ESP;
   byte bVar2;
   CVector3d *in_stack_00000004;
-  uint auStackY_1820 [1523];
-  uint uStack_44;
+  uint auStackY_1824 [1524];
+  uint local_48;
   uint local_38;
   uint uStack_34;
   double local_30 [4];
   
   bVar2 = 0;
   shape_superopt_cpp_closestPointOnSegment3D_FUN_005d6020(in_stack_00000004,segStart,segEnd);
-  local_38 = uStack_44;
+  local_38 = local_48;
   *(uint *)((int)&stack0xffffffcc + (uint)bVar2 * -8) =
-       *(uint *)(&stack0xffffffc0 + (uint)bVar2 * -8);
+       *(uint *)(&stack0xffffffbc + (uint)bVar2 * -8);
   *(uint *)(local_30 + (-(uint)bVar2 - (uint)bVar2)) =
-       *(uint *)(&stack0xffffffc4 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
+       *(uint *)(&stack0xffffffc0 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
   *(uint *)((int)(local_30 + (-(uint)bVar2 - (uint)bVar2)) + ((uint)bVar2 * -2 + 1) * 4) =
        *(uint *)
-        ((int)(&stack0xffffffc4 + (uint)bVar2 * -8 + (uint)bVar2 * -8) + ((uint)bVar2 * -2 + 1) * 4)
+        ((int)(&stack0xffffffc0 + (uint)bVar2 * -8 + (uint)bVar2 * -8) + ((uint)bVar2 * -2 + 1) * 4)
   ;
   dVar1 = segEnd->x - (double)CONCAT44 /* combine 2-byte values */(uStack_34,local_38);
   local_30[0] = segEnd->y - local_30[0];

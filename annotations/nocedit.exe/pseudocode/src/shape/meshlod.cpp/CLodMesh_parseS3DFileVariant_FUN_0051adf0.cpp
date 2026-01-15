@@ -11,97 +11,90 @@ shape_meshlod_cpp_CLodMesh_parseS3DFileVariant_FUN_0051adf0(CLodMesh *this_ptr,F
 
 {
   int iVar1;
-  char *path_buffer;
-  int iVar2;
-  int unaff_EBX;
+  char *pcVar2;
   int iVar3;
-  BADSPACEBASE *in_ESP;
-  int unaff_ESI;
-  int unaff_EDI;
-  char acStack_114 [4];
-  char acStack_110 [244];
-  byte local_1c [4];
+  int iVar4;
+  char local_224 [260];
+  char local_120 [256];
+  int local_20;
+  int local_1c;
   int local_18;
+  int local_14;
   
-  iVar3 = 2;
+  iVar4 = 2;
   do {
     iVar1 = crt_stdio_c_fgetc_FUN_005fe840(file_handle);
     if (iVar1 < 0) break;
-  } while ((iVar1 != 10) || (iVar3 = iVar3 + -1, 0 < iVar3));
-  iVar3 = 1;
+  } while ((iVar1 != 10) || (iVar4 = iVar4 + -1, 0 < iVar4));
+  iVar4 = 1;
   do {
     iVar1 = crt_stdio_c_fgetc_FUN_005fe840(file_handle);
     if (iVar1 < 0) break;
-  } while ((iVar1 != 10) || (iVar3 = iVar3 + -1, 0 < iVar3));
-  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%d,%*d\n",local_1c);
-  for (iVar3 = local_18 * 5 + 2; 0 < iVar3; iVar3 = iVar3 + -1) {
+  } while ((iVar1 != 10) || (iVar4 = iVar4 + -1, 0 < iVar4));
+  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%d,%*d\n",&local_20);
+  for (iVar4 = local_20 * 5 + 2; 0 < iVar4; iVar4 = iVar4 + -1) {
     do {
       iVar1 = crt_stdio_c_fgetc_FUN_005fe840(file_handle);
       if (iVar1 < 0) goto LAB_0051ae8f;
     } while (iVar1 != 10);
   }
 LAB_0051ae8f:
-  iVar3 = 1;
+  iVar4 = 1;
   do {
     iVar1 = crt_stdio_c_fgetc_FUN_005fe840(file_handle);
     if (iVar1 < 0) break;
-  } while ((iVar1 != 10) || (iVar3 = iVar3 + -1, 0 < iVar3));
-  crt_stdio_c_fscanf_FUN_005fe7c0
-            (file_handle,"%d,%d,%d\n",&stack0xfffffff0,&stack0xfffffff4,&stack0xfffffff8);
-  iVar3 = 1;
-  shape_meshlod_cpp_CLodMesh_allocate_FUN_00515ac0(this_ptr,unaff_ESI,unaff_EBX,unaff_EDI);
+  } while ((iVar1 != 10) || (iVar4 = iVar4 + -1, 0 < iVar4));
+  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%d,%d,%d\n",&local_1c,&local_18,&local_14);
+  iVar4 = 1;
+  shape_meshlod_cpp_CLodMesh_allocate_FUN_00515ac0(this_ptr,local_18,local_14,local_1c);
   do {
     iVar1 = crt_stdio_c_fgetc_FUN_005fe840(file_handle);
     if (iVar1 < 0) break;
-  } while ((iVar1 != 10) || (iVar3 = iVar3 + -1, 0 < iVar3));
-  iVar3 = 0;
+  } while ((iVar1 != 10) || (iVar4 = iVar4 + -1, 0 < iVar4));
+  iVar4 = 0;
   if (0 < this_ptr->submesh_count) {
     iVar1 = 0;
     do {
-      crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%[^\n]\n");
-      crt_string_c_splitpath_FUN_005ff178
-                (&stack0xfffffde8,(char *)0x0,(char *)0x0,acStack_114,(char *)0x0);
-      path_buffer = this_ptr->submesh_data->texture_filename + iVar1;
-      iVar3 = iVar3 + 1;
+      crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%[^\n]\n",local_224);
+      crt_string_c_splitpath_FUN_005ff178(local_224,(char *)0x0,(char *)0x0,local_120,(char *)0x0);
+      pcVar2 = this_ptr->submesh_data->texture_filename + iVar1;
+      iVar4 = iVar4 + 1;
       iVar1 = iVar1 + 0x48;
-      crt_file_c_makepath_FUN_005febfc
-                (path_buffer,(char *)0x0,(char *)0x0,acStack_110,"raw");
-    } while (iVar3 < this_ptr->submesh_count);
+      crt_file_c_makepath_FUN_005febfc(pcVar2,(char *)0x0,(char *)0x0,local_120,"raw");
+    } while (iVar4 < this_ptr->submesh_count);
   }
-  iVar3 = 1;
+  iVar4 = 1;
   do {
     iVar1 = crt_stdio_c_fgetc_FUN_005fe840(file_handle);
     if (iVar1 < 0) break;
-  } while ((iVar1 != 10) || (iVar3 = iVar3 + -1, 0 < iVar3));
-  iVar3 = 0;
+  } while ((iVar1 != 10) || (iVar4 = iVar4 + -1, 0 < iVar4));
+  iVar4 = 0;
   if (0 < this_ptr->tri_count) {
     iVar1 = 0;
     do {
-      iVar2 = (int)this_ptr->tri_data->attribute_indices + iVar1;
-      iVar3 = iVar3 + 1;
+      iVar3 = (int)this_ptr->tri_data->attribute_indices + iVar1;
+      iVar4 = iVar4 + 1;
       iVar1 = iVar1 + 0x8c;
       crt_stdio_c_fscanf_FUN_005fe7c0
-                (file_handle,"%d, %d,%f,%f, %d,%f,%f, %d,%f,%f\n","%d, %d,%f,%f, %d,%f,%f, %d,%f,%f\n",iVar2,
-                 iVar2 + 0x10,iVar2 + 0x1c,iVar2 + 0x20,iVar2 + 0x14,iVar2 + 0x24,iVar2 + 0x28,
-                 iVar2 + 0x18);
-    } while (iVar3 < this_ptr->tri_count);
+                (file_handle,"%d, %d,%f,%f, %d,%f,%f, %d,%f,%f\n",iVar3,iVar3 + 0x10,iVar3 + 0x1c,
+                 iVar3 + 0x20,iVar3 + 0x14,iVar3 + 0x24,iVar3 + 0x28,iVar3 + 0x18,iVar3 + 0x2c,
+                 iVar3 + 0x30);
+    } while (iVar4 < this_ptr->tri_count);
   }
-  iVar3 = 1;
+  iVar4 = 1;
   do {
     iVar1 = crt_stdio_c_fgetc_FUN_005fe840(file_handle);
     if (iVar1 < 0) break;
-  } while ((iVar1 != 10) || (iVar3 = iVar3 + -1, 0 < iVar3));
-  iVar3 = 0;
+  } while ((iVar1 != 10) || (iVar4 = iVar4 + -1, 0 < iVar4));
+  iVar4 = 0;
   if (0 < this_ptr->vertex_count) {
     iVar1 = 0;
     do {
-      iVar2 = iVar1 + -0x10;
-      iVar3 = iVar3 + 1;
+      pcVar2 = this_ptr->vertex_data->lod_workspace + iVar1 + -0x10;
+      iVar4 = iVar4 + 1;
       iVar1 = iVar1 + 0x4c4;
-      crt_stdio_c_fscanf_FUN_005fe7c0
-                (file_handle,"%f,%f,%f\n","%f,%f,%f\n",
-                 this_ptr->vertex_data->lod_workspace + iVar2);
-    } while (iVar3 < this_ptr->vertex_count);
+      crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%f,%f,%f\n",pcVar2,pcVar2 + 4,pcVar2 + 8);
+    } while (iVar4 < this_ptr->vertex_count);
   }
   this_ptr->active_attribute_count = 1;
   this_ptr->sort_attribute_count = 2;

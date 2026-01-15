@@ -17,7 +17,6 @@ void core_gabriela_cpp_FUN_004d5550(void)
   uint *extraout_EAX;
   CVector3f *pCVar2;
   int iVar3;
-  BADSPACEBASE *in_ESP;
   uint *puVar4;
   float *pfVar5;
   uint *puVar6;

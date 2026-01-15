@@ -10,9 +10,7 @@
 /* Signature: byte actors_other_frankgen.cpp_PlaySounds(uint param_1, uint
    param_2) */
 
-void core_frankgen_cpp_PlaySounds_FUN_004d1a40
-               (uint param_1,uint param_2,CFireEffect *unaff_EBX,uint param_4,
-               CDemonActor *param_5,uint param_6,float param_7)
+void core_frankgen_cpp_PlaySounds_FUN_004d1a40(void)
 
 {
   CDemonActor *pCVar1;
@@ -20,83 +18,91 @@ void core_frankgen_cpp_PlaySounds_FUN_004d1a40
   float fVar3;
   CVector3f *pCVar4;
   int iVar5;
-  BADSPACEBASE *in_ESP;
-  float *unaff_EDI;
-  float in_stack_ffffff90;
-  float fStack_60;
-  float fStack_54;
+  CDemonActor *in_stack_00000004;
+  float in_stack_00000008;
+  int alpha_value;
+  CBoundingBox3D local_80;
+  CBoundingBox3D local_68;
   float fStack_50;
-  float fStack_48;
-  float fStack_44;
-  byte auStack_3c [8];
-  CVector3f CStack_34;
-  byte auStack_20 [12];
-  CVector3f CStack_14;
+  float fStack_4c;
+  CVector3f CStack_48;
+  uint uStack_3c;
+  uint uStack_38;
+  uint uStack_34;
+  CVector3f CStack_30;
+  CVector3f CStack_24;
+  CVector3f CStack_18;
   
-  _DAT_02d7b7f0 = *(float *)(param_5[1].actor_name + 4);
+  _DAT_02d7b7f0 = *(float *)(in_stack_00000004[1].actor_name + 4);
   pCVar1 = (CDemonActor *)core_frankgen_cpp_CFrankenstienMachine_findLeader_FUN_004d2330();
-  if (pCVar1 == param_5) {
-    fVar3 = param_7 * _DAT_0065e66c + *(float *)(param_5[1].actor_name + 4);
-    *(float *)(param_5[1].actor_name + 4) = fVar3;
+  if (pCVar1 == in_stack_00000004) {
+    fVar3 = in_stack_00000008 * _DAT_0065e66c + *(float *)(in_stack_00000004[1].actor_name + 4);
+    *(float *)(in_stack_00000004[1].actor_name + 4) = fVar3;
     if (_DAT_0065e670 <= fVar3) {
-      *(float *)(param_5[1].actor_name + 4) = *(float *)(param_5[1].actor_name + 4) - _DAT_0065e670;
+      *(float *)(in_stack_00000004[1].actor_name + 4) =
+           *(float *)(in_stack_00000004[1].actor_name + 4) - _DAT_0065e670;
     }
   }
   else {
-    *(uint *)(param_5[1].actor_name + 4) = *(uint *)(pCVar1[1].actor_name + 4);
+    *(uint *)(in_stack_00000004[1].actor_name + 4) = *(uint *)(pCVar1[1].actor_name + 4)
+    ;
   }
-  if (*(float *)(param_5[1].actor_name + 4) < _DAT_02d7b7f0) {
+  if (*(float *)(in_stack_00000004[1].actor_name + 4) < _DAT_02d7b7f0) {
     _DAT_02d7b7f0 = _DAT_02d7b7f0 - _DAT_0065e670;
   }
   core_frankgen_cpp_LoadModel_FUN_004d2190();
-  switch(*(uint *)param_5[1].actor_name) {
+  switch(*(uint *)in_stack_00000004[1].actor_name) {
   case 0:
-    if ((0x44ac8000 < *(int *)(param_5[1].actor_name + 4)) &&
-       (*(int *)(param_5[1].actor_name + 4) < 0x44c58000)) {
+    iVar2 = *(int *)(in_stack_00000004[1].actor_name + 4);
+    if ((0x44ac8000 < iVar2) && (iVar2 < 0x44c58000)) {
+      if (iVar2 < 0x44b90000) {
+        CStack_18.z = (*(float *)(in_stack_00000004[1].actor_name + 4) + -1380f) *
+                      (float)0.01 * (float)30 + 20f;
+      }
+      else {
+        CStack_18.z = (1580f - *(float *)(in_stack_00000004[1].actor_name + 4)) *
+                      (float)0.01 * (float)50;
+      }
       iVar2 = core_frankgen_cpp_FUN_004d1ec0();
       iVar5 = 0;
-      (*param_5->vtable->getBoundingBox)(param_5,(CBoundingBox3D *)&stack0xffffff8c);
-      auStack_3c._0_4_ = 0.0;
-      auStack_3c._4_4_ = (CFireEffect *)0x40800000;
-      CStack_34.x = 0.0;
+      (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,&local_68);
+      uStack_3c = 0;
+      uStack_38 = 0x40800000;
+      uStack_34 = 0;
       if (0 < iVar2) {
         do {
-          auStack_20._0_4_ = core_actor_cpp_getRandomFloat_FUN_0040cc10(fStack_60,fStack_54);
+          CStack_24.x = core_actor_cpp_getRandomFloat_FUN_0040cc10(local_68.min.z,local_68.max.z);
           fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,0.4);
-          auStack_20._8_4_ = (1.0 - fVar3) * fStack_54 + fStack_48 * fVar3;
-          CStack_14.y = core_actor_cpp_getRandomFloat_FUN_0040cc10(fStack_50,fStack_44);
+          CStack_24.y = (1.0 - fVar3) * local_68.max.x + fStack_50 * fVar3;
+          CStack_24.z = core_actor_cpp_getRandomFloat_FUN_0040cc10(local_68.max.y,fStack_4c);
           pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                             (param_5,(CVector3f *)auStack_3c,(CVector3f *)(auStack_20 + 8));
-          if (&CStack_14 != pCVar4) {
-            CStack_14.x = pCVar4->x;
-            CStack_14.y = pCVar4->y;
-            CStack_14.z = pCVar4->z;
+                             (in_stack_00000004,&CStack_48,&CStack_24);
+          if (&CStack_24 != pCVar4) {
+            CStack_24.x = pCVar4->x;
+            CStack_24.y = pCVar4->y;
+            CStack_24.z = pCVar4->z;
           }
-          pCVar4 = (CVector3f *)0xffff;
+          alpha_value = 0xffff;
+          pCVar4 = (CVector3f *)0x0;
           fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.5,1.5);
-          unaff_EDI = &CStack_14.y;
           iVar5 = iVar5 + 1;
-          unaff_EBX = g_CFireEffectPtr;
           core_fire_cpp_CFireEffect_createSmokeParticle_FUN_004c7b20
-                    (g_CFireEffectPtr,(CVector3f *)unaff_EDI,fVar3,pCVar4,(int)in_stack_ffffff90);
+                    (g_CFireEffectPtr,&CStack_24,fVar3,pCVar4,alpha_value);
         } while (iVar5 < iVar2);
       }
     }
-    if ((0x44e10000 < *(int *)(param_5[1].actor_name + 4)) &&
-       (*(int *)(param_5[1].actor_name + 4) < 0x44ed8000)) {
-      pCVar1 = param_5;
-      (*param_5->vtable->getBoundingBox)(param_5,(CBoundingBox3D *)&stack0xffffff88);
-      auStack_3c._0_4_ = core_actor_cpp_getRandomFloat_FUN_0040cc10((float)pCVar1,(float)unaff_EDI);
-      auStack_3c._4_4_ = unaff_EBX;
-      CStack_14.y = (float)auStack_3c._0_4_;
-      CStack_34.y = core_actor_cpp_getRandomFloat_FUN_0040cc10((float)unaff_EDI,in_stack_ffffff90);
-      CStack_14.z = CStack_34.y;
+    if ((0x44e10000 < *(int *)(in_stack_00000004[1].actor_name + 4)) &&
+       (*(int *)(in_stack_00000004[1].actor_name + 4) < 0x44ed8000)) {
+      (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,&local_80);
+      CStack_30.x = core_actor_cpp_getRandomFloat_FUN_0040cc10(local_80.min.z,local_80.max.z);
+      CStack_30.y = local_80.max.x;
+      CStack_30.z = core_actor_cpp_getRandomFloat_FUN_0040cc10(local_80.max.y,local_68.min.y);
       pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                         (param_5,(CVector3f *)auStack_20,(CVector3f *)(auStack_3c + 4));
-      if (&CStack_34 != pCVar4) {
-        CStack_34.x = pCVar4->x;
-        CStack_34.y = pCVar4->y;
-        CStack_34.z = pCVar4->z;
+                         (in_stack_00000004,&CStack_18,&CStack_30);
+      if (&CStack_30 != pCVar4) {
+        CStack_30.x = pCVar4->x;
+        CStack_30.y = pCVar4->y;
+        CStack_30.z = pCVar4->z;
       }
       core_fire_cpp_CFireEffect_FUN_004c79d0(g_CFireEffectPtr);
     }

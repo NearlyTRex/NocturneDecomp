@@ -16,7 +16,6 @@ core_xform_cpp_slerpQuaternion_FUN_005f77e0
   float fVar3;
   CQuaternion4f *extraout_ECX;
   CQuaternion4f *extraout_EDX;
-  BADSPACEBASE *in_ESP;
   CQuaternion4f *unaff_ESI;
   float *pfVar4;
   float *pfVar5;

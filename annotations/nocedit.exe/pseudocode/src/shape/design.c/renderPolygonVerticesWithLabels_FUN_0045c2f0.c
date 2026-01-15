@@ -9,7 +9,6 @@
 void __cdecl shape_design_c_renderPolygonVerticesWithLabels_FUN_0045c2f0(int polygon_index)
 
 {
-  BADSPACEBASE *in_ESP;
   double dVar1;
   char local_7c [80];
   CVector3i local_2c;

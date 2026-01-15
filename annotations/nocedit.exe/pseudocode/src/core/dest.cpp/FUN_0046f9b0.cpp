@@ -13,7 +13,6 @@ void core_dest_cpp_FUN_0046f9b0(void)
 {
   int iVar1;
   int iVar2;
-  BADSPACEBASE *in_ESP;
   int iVar3;
   int in_stack_00000004;
   float local_34;

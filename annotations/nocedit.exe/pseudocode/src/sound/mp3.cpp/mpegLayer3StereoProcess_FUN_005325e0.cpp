@@ -25,7 +25,6 @@ sound_mp3_cpp_mpegLayer3StereoProcess_FUN_005325e0
   float *pfVar10;
   int iVar11;
   float (*pafVar12) [18];
-  BADSPACEBASE *in_ESP;
   float10 fVar13;
   float *pfVar14;
   uint local_2078;

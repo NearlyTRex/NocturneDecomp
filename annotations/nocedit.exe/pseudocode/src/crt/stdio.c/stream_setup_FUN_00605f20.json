@@ -11,7 +11,7 @@
       "call_esp_preserve",
       "pointer_cast",
       "special_crt_function",
-      "stack_param"
+      "unaffected_reg"
     ],
     "total_lines": 95
   },
@@ -111,11 +111,11 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_0000000c",
-      "text": "int in_stack_0000000c;",
-      "type": "stack_param"
+      "description": "Unaffected register variable",
+      "line": 7,
+      "match": "unaff_EBX",
+      "text": "char *unaff_EBX;",
+      "type": "unaffected_reg"
     },
     {
       "description": "Complex pointer cast",
@@ -125,18 +125,18 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_0000000c",
-      "text": "if ((in_stack_0000000c == 0) &&",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 17,
       "match": "(uint *)((int)",
       "text": "((*(uint *)((int)&stream->_flag + *(int *)(stream->_ptr + 4)) & 1) != 0)) {",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 18,
+      "match": "unaff_EBX",
+      "text": "crt_string_c_mbstrncpy_core_FUN_0060b670((char *)stream,unaff_EBX,unaff_retaddr);",
+      "type": "unaffected_reg"
     },
     {
       "description": "Complex pointer cast",

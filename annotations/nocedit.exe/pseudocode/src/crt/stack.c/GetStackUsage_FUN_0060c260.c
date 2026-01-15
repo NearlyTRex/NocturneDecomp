@@ -10,7 +10,6 @@ int __cdecl crt_stack_c_GetStackUsage_FUN_0060c260(void)
 
 {
   ThreadData *pTVar1;
-  BADSPACEBASE *in_ESP;
   
   pTVar1 = (*PTR_crt_thread_c_GetTLS_FUN_0060242c_00684ee4)();
   return (int)(&stack0xfffffffc + -pTVar1->stack_limit);

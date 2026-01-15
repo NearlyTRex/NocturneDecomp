@@ -11,44 +11,37 @@ void core_game_cpp_FUN_004dd9d0(void)
 {
   byte bVar1;
   uint uVar2;
-  int iVar3;
+  uint uVar3;
   int iVar4;
-  byte *pbVar5;
+  int iVar5;
+  byte *pbVar6;
   byte *in_stack_00000004;
   char *in_stack_00000008;
-  char *in_stack_00000010;
-  int iVar6;
-  int iVar7;
+  char *in_stack_0000000c;
   
-  uVar2 = 0xffffffff;
-  pbVar5 = in_stack_00000004;
+  uVar3 = 0xffffffff;
+  pbVar6 = in_stack_00000004;
   do {
-    if (uVar2 == 0) break;
-    uVar2 = uVar2 - 1;
-    bVar1 = *pbVar5;
-    pbVar5 = pbVar5 + 1;
+    if (uVar3 == 0) break;
+    uVar3 = uVar3 - 1;
+    bVar1 = *pbVar6;
+    pbVar6 = pbVar6 + 1;
   } while (bVar1 != 0);
-  iVar3 = ~uVar2 - 1;
-  iVar4 = 0;
-  iVar6 = iVar3;
-  if (0 < iVar3) {
-    iVar7 = 0;
-    do {
-      bVar1 = g_InputHistory[iVar3];
-      uVar2 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*in_stack_00000004);
-      if (bVar1 == uVar2) {
-        iVar4 = iVar4 + 1;
-      }
-      iVar3 = iVar3 + -1;
-      in_stack_00000004 = in_stack_00000004 + 1;
-    } while (iVar7 < iVar3);
+  iVar5 = 0;
+  for (iVar4 = ~uVar3 - 1; 0 < iVar4; iVar4 = iVar4 + -1) {
+    bVar1 = g_InputHistory[iVar4];
+    uVar2 = crt_ctype_c_toupper_FUN_005ff9e0((uint)*in_stack_00000004);
+    if (bVar1 == uVar2) {
+      iVar5 = iVar5 + 1;
+    }
+    in_stack_00000004 = in_stack_00000004 + 1;
   }
-  if (iVar4 != iVar6) {
+  if (iVar5 != ~uVar3 - 1) {
     return;
   }
   g_InputHistory[1] = '\0';
   core_game_cpp_giveHeroWeapon_FUN_004dd870(in_stack_00000008);
-  core_game_cpp_CGame_displayMessage_FUN_004d7f20(g_CGamePtr,in_stack_00000010,5.0);
+  core_game_cpp_CGame_displayMessage_FUN_004d7f20(g_CGamePtr,in_stack_0000000c,5.0);
   core_sound_cpp_CSound_playSound_FUN_005b3a20(g_CSoundPtr,(void *)0x0,"cheat-1.wav");
   return;
 }

@@ -15,7 +15,6 @@ core_actor_cpp_CDemonActor_processFootstep_FUN_0040c830(CDemonActor *this_ptr,fl
   float fVar2;
   float fVar3;
   int iVar4;
-  float in_stack_00000014;
   
   position = &this_ptr->location;
   fVar1 = (position->position).x - (float)g_CDemonCameraInstance.base.position.x;
@@ -29,6 +28,6 @@ core_actor_cpp_CDemonActor_processFootstep_FUN_0040c830(CDemonActor *this_ptr,fl
             (g_CDemonSetPtr,&position->position,0.0);
   core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
   iVar4 = (*this_ptr->vtable->handleFootstep)
-                    (this_ptr,&position->position,g_CDemonSetPtr->ground_type,in_stack_00000014);
+                    (this_ptr,&position->position,g_CDemonSetPtr->ground_type,volume);
   return iVar4;
 }

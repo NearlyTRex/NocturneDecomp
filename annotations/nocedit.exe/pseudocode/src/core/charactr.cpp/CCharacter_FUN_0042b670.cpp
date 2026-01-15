@@ -11,7 +11,6 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042b670(CCharacter *this_ptr)
 {
   int iVar1;
   CVector3f *input_vector;
-  BADSPACEBASE *in_ESP;
   char *pcVar2;
   int iVar3;
   CMatrix3x4f *in_stack_ffffffa4;

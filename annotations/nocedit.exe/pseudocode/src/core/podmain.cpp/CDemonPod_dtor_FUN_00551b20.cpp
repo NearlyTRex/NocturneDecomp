@@ -20,7 +20,7 @@ core_podmain_cpp_CDemonPod_dtor_FUN_00551b20(CDemonPod *this_ptr,uint d1,uint d2
     return this_ptr;
   }
   ptr = engine_pod_cpp_CPod_dtor_FUN_005509b0((CPod *)this_ptr,1,unaff_EBX);
-  if ((d2 & 2) == 0) {
+  if ((d1 & 2) == 0) {
     return (CDemonPod *)ptr;
   }
   shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);

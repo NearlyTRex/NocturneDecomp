@@ -1,17 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 85,
+    "complexity_score": 101,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 5,
-    "pseudocode_lines": 25,
-    "suspect_count": 5,
+    "pseudocode_lines": 26,
+    "suspect_count": 6,
     "suspect_types": [
       "extra_output",
-      "pointer_cast"
+      "pointer_cast",
+      "suspect_float"
     ],
-    "total_lines": 76
+    "total_lines": 77
   },
   "cross_references": [
     {
@@ -217,37 +218,44 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 6,
+      "line": 5,
       "match": "extraout_ECX",
       "text": "int extraout_ECX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 8,
+      "line": 7,
       "match": "extraout_EDX",
       "text": "int extraout_EDX;",
       "type": "extra_output"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 24,
-      "match": "extraout_EDX",
-      "text": "iVar2 = extraout_EDX + 1;",
-      "type": "extra_output"
+      "description": "Likely misinterpreted integer as float",
+      "line": 19,
+      "match": "7.994614e-39",
+      "text": "local_14 = 7.994614e-39;",
+      "type": "suspect_float"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 25,
+      "match": "extraout_EDX",
+      "text": "iVar1 = extraout_EDX + 1;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 26,
       "match": "extraout_ECX",
-      "text": "*(int *)((int)g_IntensityToValueLookupTable + extraout_ECX) = local_10;",
+      "text": "*(int *)((int)g_IntensityToValueLookupTable + extraout_ECX) = iVar4;",
       "type": "extra_output"
     },
     {
       "description": "Complex pointer cast",
-      "line": 25,
+      "line": 26,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)g_IntensityToValueLookupTable + extraout_ECX) = local_10;",
+      "text": "*(int *)((int)g_IntensityToValueLookupTable + extraout_ECX) = iVar4;",
       "type": "pointer_cast"
     }
   ]

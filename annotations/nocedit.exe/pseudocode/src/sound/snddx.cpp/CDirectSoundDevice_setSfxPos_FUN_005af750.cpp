@@ -16,7 +16,6 @@ sound_snddx_cpp_CDirectSoundDevice_setSfxPos_FUN_005af750
   uint uVar2;
   DWORD dwMode;
   CSfxSlot *extraout_EBX;
-  BADSPACEBASE *in_ESP;
   uint uVar3;
   double dVar4;
   float fStack_cb4;

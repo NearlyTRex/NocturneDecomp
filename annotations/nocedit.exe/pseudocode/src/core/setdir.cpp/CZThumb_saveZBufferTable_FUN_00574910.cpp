@@ -17,7 +17,6 @@ core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00574910
   int value;
   int iVar3;
   int iVar4;
-  FILE *in_stack_00000028;
   
   core_setdir_cpp_CZThumb_free_FUN_00574b50(this_ptr);
   if (&this_ptr->camera_position != camera_pos) {
@@ -30,9 +29,9 @@ core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00574910
     (this_ptr->look_at_position).y = look_at_pos->y;
     (this_ptr->look_at_position).z = look_at_pos->z;
   }
-  this_ptr->width = height;
-  this_ptr->height = (int)unknown_scale;
-  this_ptr->projection_scale = (int)file_handle;
+  this_ptr->width = width;
+  this_ptr->height = height;
+  this_ptr->projection_scale = (int)unknown_scale;
   pvVar2 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
                      (this_ptr->width * this_ptr->height * 4,"..\\core\\setdir.cpp",0x9e);
   this_ptr->zbuffer_data = pvVar2;
@@ -41,9 +40,9 @@ core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00574910
     g_CurrentLineNumber = 0x9f;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory");
   }
-  if (in_stack_00000028 != (FILE *)0x0) {
+  if (file_handle != (FILE *)0x0) {
     crt_stdio_c_fread_FUN_005fd990
-              (this_ptr->zbuffer_data,this_ptr->width * this_ptr->height,4,in_stack_00000028);
+              (this_ptr->zbuffer_data,this_ptr->width * this_ptr->height,4,file_handle);
     return;
   }
   value = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);

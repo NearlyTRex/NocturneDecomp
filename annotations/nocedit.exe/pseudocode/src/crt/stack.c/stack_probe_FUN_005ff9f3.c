@@ -9,10 +9,10 @@
 uint __stdcall crt_stack_c_stack_probe_FUN_005ff9f3(uint stack_size)
 
 {
-  uint in_stack_00000008;
+  uint in_EAX;
   
   LOCK();
   UNLOCK();
   crt_stack_c_check_stack_target_FUN_005ffa03((void *)stack_size);
-  return in_stack_00000008;
+  return in_EAX;
 }

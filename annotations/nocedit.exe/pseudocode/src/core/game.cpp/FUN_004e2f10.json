@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 104,
+    "complexity_score": 129,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 12,
     "pseudocode_lines": 24,
-    "suspect_count": 7,
+    "suspect_count": 9,
     "suspect_types": [
       "call_esp_preserve",
+      "unaffected_reg",
       "variadic_preserve"
     ],
     "total_lines": 99
@@ -171,6 +172,20 @@
     "variables": []
   },
   "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 2,
+      "match": "unaff_EBX",
+      "text": "void core_game_cpp_FUN_004e2f10(uint param_1,uint param_2,uint unaff_EBX)",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 25,
+      "match": "unaff_EBX",
+      "text": "(g_CEditorToolsPtr,\"Can't init network to host game.\",unaff_EBX);",
+      "type": "unaffected_reg"
+    },
     {
       "call_address": "004e2f9e",
       "caller_has_stack_issues": false,

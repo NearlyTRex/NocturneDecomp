@@ -23,13 +23,12 @@ core_dpart_cpp_CDemonPart_processAndFinalize_FUN_00482e40
   int iVar4;
   float10 fVar5;
   double dVar6;
-  int in_stack_00000014;
   
   shape_design_c_calculateVertexNormals_FUN_0045be40();
-  if (enable_polygon_optimize != 0) {
+  if (enable_vertex_reduction != 0) {
     shape_design_c_vertexReducer_FUN_00467850(0.01,-1.0,-1);
   }
-  if (in_stack_00000014 != 0) {
+  if (enable_polygon_optimize != 0) {
     shape_design_c_optimizePolygonMesh_FUN_004658e0(1.0,0,-1);
   }
   shape_design_c_calculateVertexNormals_FUN_0045be40();

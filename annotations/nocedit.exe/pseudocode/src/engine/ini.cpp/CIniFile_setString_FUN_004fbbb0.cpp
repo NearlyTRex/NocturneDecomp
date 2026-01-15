@@ -9,8 +9,6 @@
 void __cdecl engine_ini_cpp_CIniFile_setString_FUN_004fbbb0(CIniFile *this,char *key,char *value)
 
 {
-  char *in_stack_00000010;
-  
   if (this->filename[0] == '\0') {
     g_CurrentFilename = "..\\engine\\ini.cpp";
     g_CurrentLineNumber = 0x275;
@@ -21,7 +19,6 @@ void __cdecl engine_ini_cpp_CIniFile_setString_FUN_004fbbb0(CIniFile *this,char 
     g_CurrentLineNumber = 0x276;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CIniFile::setString - section not write!");
   }
-  engine_ini_cpp_writeProfileString_FUN_004fba40
-            (this->section,value,in_stack_00000010,this->filename);
+  engine_ini_cpp_writeProfileString_FUN_004fba40(this->section,key,value,this->filename);
   return;
 }

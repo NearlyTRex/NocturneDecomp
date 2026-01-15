@@ -13,26 +13,24 @@ shape_meshlod_cpp_CLodMesh_parseS3DFile_FUN_0051aa60(CLodMesh *this_ptr,FILE *fi
   int iVar1;
   CLodFace *pCVar2;
   CLodVert *pCVar3;
-  int unaff_EBX;
-  BADSPACEBASE *in_ESP;
-  int unaff_EBP;
-  int unaff_ESI;
   int iVar4;
-  char acStack_118 [4];
-  char acStack_114 [232];
-  byte local_2c [4];
-  int local_28;
+  char local_234 [260];
+  char local_130 [256];
+  int local_30;
+  int local_2c;
+  byte local_28 [4];
+  int local_24;
   byte local_20 [4];
-  int local_1c;
-  byte local_18 [4];
-  byte local_14 [4];
+  byte local_1c [4];
+  int local_18;
+  int local_14;
   
   iVar4 = 1;
   do {
     iVar1 = crt_stdio_c_fgetc_FUN_005fe840(file_handle);
     if (iVar1 < 0) break;
   } while ((iVar1 != 10) || (iVar4 = iVar4 + -1, 0 < iVar4));
-  iVar4 = crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%d\n",local_2c);
+  iVar4 = crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%d\n",&local_30);
   if (iVar4 == 1) goto LAB_0051aad4;
 LAB_0051aab1:
   do {
@@ -41,11 +39,11 @@ LAB_0051aab1:
       g_CurrentLineNumber = 0x1080;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Corruption in S3D detected!");
 LAB_0051aad4:
-      if ((local_28 < 0x66) || (0x67 < local_28)) {
+      if ((local_30 < 0x66) || (0x67 < local_30)) {
         g_CurrentFilename = "..\\shape\\meshlod.cpp";
         g_CurrentLineNumber = 0x1084;
         core_main_c_displayErrorAndQuit_FUN_00506f10
-                  ("Can't import S3D file version %d, I can only do up to version %d.",local_28,0x67);
+                  ("Can't import S3D file version %d, I can only do up to version %d.",local_30,0x67);
       }
       iVar4 = 1;
       do {
@@ -53,11 +51,11 @@ LAB_0051aad4:
         if (iVar1 < 0) break;
       } while ((iVar1 != 10) || (iVar4 = iVar4 + -1, 0 < iVar4));
       iVar4 = crt_stdio_c_fscanf_FUN_005fe7c0
-                        (file_handle,"%d,%d,%d,%d,%d,%d,%d\n",&stack0xfffffff4,&stack0xfffffff8,
-                         local_20,local_18,&local_1c,local_14,&stack0xfffffff0);
+                        (file_handle,"%d,%d,%d,%d,%d,%d,%d\n",&local_18,&local_14,&local_2c,
+                         &local_24,local_28,local_20,local_1c);
     } while (iVar4 != 7);
-    shape_meshlod_cpp_CLodMesh_allocate_FUN_00515ac0(this_ptr,local_1c,unaff_EBX,unaff_ESI);
-    for (iVar4 = unaff_EBP + 1; 0 < iVar4; iVar4 = iVar4 + -1) {
+    shape_meshlod_cpp_CLodMesh_allocate_FUN_00515ac0(this_ptr,local_2c,local_14,local_18);
+    for (iVar4 = local_24 + 1; 0 < iVar4; iVar4 = iVar4 + -1) {
       do {
         iVar1 = crt_stdio_c_fgetc_FUN_005fe840(file_handle);
         if (iVar1 < 0) goto LAB_0051abcf;
@@ -70,12 +68,11 @@ LAB_0051abcf:
       if (iVar1 < 0) break;
     } while ((iVar1 != 10) || (iVar4 = iVar4 + -1, 0 < iVar4));
     for (iVar4 = 0; iVar4 < this_ptr->submesh_count; iVar4 = iVar4 + 1) {
-      iVar1 = crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%[^\n]\n",&stack0xfffffde0);
+      iVar1 = crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%[^\n]\n",local_234);
       if (iVar1 != 1) goto LAB_0051aab1;
-      crt_string_c_splitpath_FUN_005ff178
-                (&stack0xfffffde4,(char *)0x0,(char *)0x0,acStack_118,(char *)0x0);
+      crt_string_c_splitpath_FUN_005ff178(local_234,(char *)0x0,(char *)0x0,local_130,(char *)0x0);
       crt_file_c_makepath_FUN_005febfc
-                (this_ptr->submesh_data[iVar4].texture_filename,(char *)0x0,(char *)0x0,acStack_114,
+                (this_ptr->submesh_data[iVar4].texture_filename,(char *)0x0,(char *)0x0,local_130,
                  "raw");
     }
     iVar4 = 1;

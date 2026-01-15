@@ -19,10 +19,10 @@ bool core_setedit_cpp_FUN_005801b0(void)
   int iVar5;
   int iVar6;
   int *in_stack_00000008;
-  int in_stack_00000010;
+  int in_stack_0000000c;
   
   core_setedit_cpp_SomethingMemoryConstructorMaybe_FUN_00580310();
-  piVar2 = (int *)(DAT_03659384 + in_stack_00000010 * 0x4b030);
+  piVar2 = (int *)(DAT_03659384 + in_stack_0000000c * 0x4b030);
   iVar1 = in_stack_00000008[1] - piVar2[1];
   iVar3 = *in_stack_00000008 - *piVar2;
   iVar6 = in_stack_00000008[2] - piVar2[2];

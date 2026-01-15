@@ -1,25 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 388,
-    "complexity_score": 821,
+    "complexity_score": 518,
     "cross_reference_count": 7,
     "function_call_count": 9,
     "global_count": 28,
-    "pseudocode_lines": 131,
-    "suspect_count": 64,
+    "pseudocode_lines": 158,
+    "suspect_count": 34,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
-      "format_string_mismatch",
       "lea_esp_stack_addr",
-      "register_param",
-      "stack_param",
-      "stack_ref",
-      "unaffected_reg",
       "variadic_preserve",
       "warning_overlapping_globals"
     ],
-    "total_lines": 519
+    "total_lines": 546
   },
   "cross_references": [
     {
@@ -436,176 +430,8 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 17,
-      "match": "unaff_EBX",
-      "text": "FILE *unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 19,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 19,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 21,
-      "match": "unaff_ESI",
-      "text": "FILE *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_0000000c",
-      "text": "FILE *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_0000001c",
-      "text": "FILE *in_stack_0000001c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 24,
-      "match": "in_stack_00000020",
-      "text": "FILE *in_stack_00000020;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_00000028",
-      "text": "FILE *in_stack_00000028;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 53,
-      "match": "&stack0xfffffde0",
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(local_1c,\"%s\\n\",&stack0xfffffde0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 54,
-      "match": "&stack0xfffffde4",
-      "text": "core_dmodel_cpp_CKeyFramedModel_load_FUN_00476db0((CKeyFramedModel *)this_ptr,&stack0xfffffde4);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 59,
-      "match": "unaff_ESI",
-      "text": "(unaff_ESI,\"%f,%f,%f,%f,%f,%f\\n\",this_ptr->padding_0x0 + 0x3ce58,",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 79,
-      "match": "unaff_ESI",
-      "text": "(unaff_ESI,\"%f,%f,%f,%f,%f,%f,%f,%f\\n\",this_ptr->padding_0x0 + 0x3ce58,",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 83,
-      "match": "unaff_EBX",
-      "text": "crt_stdio_c_fgets_FUN_005fefd0(acStack_10c,0xff,unaff_EBX);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 84,
-      "match": "unaff_EBX",
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(unaff_EBX,\"%f\\n\");",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 92,
-      "match": "unaff_EBX",
-      "text": "crt_stdio_c_fgets_FUN_005fefd0(acStack_104,0xff,unaff_EBX);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 93,
-      "match": "unaff_EBX",
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(unaff_EBX,\"%d\\n\");",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 95,
-      "match": "in_stack_0000000c",
-      "text": "crt_stdio_c_fgets_FUN_005fefd0(acStack_fc,0xff,in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 96,
-      "match": "in_stack_0000000c",
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_0000000c,\"%d\\n\");",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 99,
-      "match": "in_stack_0000000c",
-      "text": "crt_stdio_c_fgets_FUN_005fefd0(acStack_f0,0xff,in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 104,
-      "match": "in_stack_0000001c",
-      "text": "iVar8 = crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_0000001c,\"%d\\n\");",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 108,
-      "match": "in_stack_00000020",
-      "text": "crt_stdio_c_fgets_FUN_005fefd0(acStack_e8,0xff,in_stack_00000020);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 109,
-      "match": "in_stack_00000020",
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000020,\"%d\\n\");",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 114,
-      "match": "in_stack_00000028",
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000028,\"\\\"%[^\\\"]\\\",%f,%f, %f,%f,%f, %f,%f,%f, %f\\n\");",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 118,
-      "match": "in_stack_00000028",
-      "text": "iVar8 = shape_memdbg_cpp_closeFile_FUN_0050f9b0(in_stack_00000028,\"..\\\\core\\\\cloth.cpp\",0x112)",
-      "type": "stack_param"
-    },
-    {
       "call_address": "00438d54",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "unknown",
       "esp_certainty_at_call": "known",
@@ -619,7 +445,7 @@
     },
     {
       "call_address": "00438d86",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -633,7 +459,7 @@
     },
     {
       "call_address": "00438db4",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -647,7 +473,7 @@
     },
     {
       "call_address": "00438e39",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "unknown",
       "esp_certainty_at_call": "known",
@@ -661,7 +487,7 @@
     },
     {
       "call_address": "00438ed5",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "unknown",
       "esp_certainty_at_call": "known",
@@ -675,7 +501,7 @@
     },
     {
       "call_address": "00438f0f",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -689,7 +515,7 @@
     },
     {
       "call_address": "00438f41",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -703,7 +529,7 @@
     },
     {
       "call_address": "00438f8c",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "unknown",
       "esp_certainty_at_call": "known",
@@ -717,7 +543,7 @@
     },
     {
       "call_address": "00438fd3",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -731,7 +557,7 @@
     },
     {
       "call_address": "004390bd",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -745,7 +571,7 @@
     },
     {
       "call_address": "00439207",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -759,7 +585,7 @@
     },
     {
       "call_address": "0043923c",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -770,72 +596,6 @@
       "target_function": "crt_stdio.c_fscanf_FUN_005fe7c0",
       "text": "Call to variadic function crt_stdio.c_fscanf_FUN_005fe7c0 at 0043923c (no EBP frame)",
       "type": "variadic_preserve"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%f\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%f\\n",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 84,
-      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(unaff_EBX,\"%f\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 93,
-      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(unaff_EBX,\"%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 96,
-      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_0000000c,\"%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 104,
-      "match": "iVar8 = crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_0000001c,\"%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 109,
-      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000020,\"%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"\\\"%[^\\\"]\\\",%f,%f, %f,%f,%f, %f,%f,%f, %f\\n\" has 9 specifiers but 0 arguments after it",
-      "expected_args": 9,
-      "format_string": "\\\"%[^\\\"]\\\",%f,%f, %f,%f,%f, %f,%f,%f, %f\\n",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 114,
-      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000028,\"\\\"%[^\\\"]\\\",%f,%f, %f,%f,%f, %f,%f,%f, %f\\n\");",
-      "text": "Format string expects 9 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 12,

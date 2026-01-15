@@ -1,25 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 909,
-    "complexity_score": 1390,
+    "complexity_score": 1065,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 30,
-    "pseudocode_lines": 290,
-    "suspect_count": 105,
+    "pseudocode_lines": 285,
+    "suspect_count": 76,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "format_string_mismatch",
       "lea_esp_stack_addr",
-      "pointer_cast",
-      "register_param",
-      "stack_param",
-      "stack_ref",
-      "unaffected_reg",
       "variadic_preserve"
     ],
-    "total_lines": 1199
+    "total_lines": 1194
   },
   "cross_references": [
     {
@@ -536,204 +530,8 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 14,
-      "match": "unaff_EBX",
-      "text": "int unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 15,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 15,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 16,
-      "match": "unaff_BP",
-      "text": "uchar unaff_BP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 19,
-      "match": "unaff_ESI",
-      "text": "int unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 20,
-      "match": "unaff_DI",
-      "text": "uchar unaff_DI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_0000000c",
-      "text": "int in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 165,
-      "match": "unaff_EBX",
-      "text": "for (; unaff_EBX < this_ptr_00->num_lods; unaff_EBX = unaff_EBX + 1) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 165,
-      "match": "unaff_EBX",
-      "text": "for (; unaff_EBX < this_ptr_00->num_lods; unaff_EBX = unaff_EBX + 1) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 165,
-      "match": "unaff_EBX",
-      "text": "for (; unaff_EBX < this_ptr_00->num_lods; unaff_EBX = unaff_EBX + 1) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 166,
-      "match": "unaff_EBX",
-      "text": "for (this_ptr = (CDeformableModel *)0x0; (int)this_ptr < this_ptr_00->vertex_count[unaff_EBX];",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 167,
-      "match": "(CDeformableModel *)((int)",
-      "text": "this_ptr = (CDeformableModel *)((int)&this_ptr->num_lods + 1)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 168,
-      "match": "unaff_EBX",
-      "text": "pSVar7 = this_ptr_00->vertex_data_ptr[unaff_EBX] + (int)this_ptr;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 171,
-      "match": "unaff_BP",
-      "text": "pSVar7->num_bone_influences = unaff_BP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 175,
-      "match": "&stack0xfffffff0",
-      "text": "(file_handle,\"%d,%f,%f,%f,%f\\n\",&stack0xfffffff0,",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 178,
-      "match": "unaff_DI",
-      "text": "pSVar7->bone_indices[iVar1] = unaff_DI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 186,
-      "match": "in_stack_0000000c",
-      "text": "for (; in_stack_0000000c < this_ptr_00->num_lods; in_stack_0000000c = in_stack_0000000c + 1) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 186,
-      "match": "in_stack_0000000c",
-      "text": "for (; in_stack_0000000c < this_ptr_00->num_lods; in_stack_0000000c = in_stack_0000000c + 1) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 186,
-      "match": "in_stack_0000000c",
-      "text": "for (; in_stack_0000000c < this_ptr_00->num_lods; in_stack_0000000c = in_stack_0000000c + 1) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 189,
-      "match": "in_stack_0000000c",
-      "text": "if (this_ptr_00->tri_count[in_stack_0000000c] +",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 190,
-      "match": "in_stack_0000000c",
-      "text": "this_ptr_00->cap_tri_count[in_stack_0000000c] <= iVar1) break;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 192,
-      "match": "&stack0xfffffff4",
-      "text": "(file_handle,\"%d,%d,%d,%d,%d,%d,%d,%d,%d,%d\\n\",&stack0xfffffff4,&local_58,",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 196,
-      "match": "in_stack_0000000c",
-      "text": "this_ptr_00->index_data_ptr[in_stack_0000000c][iVar1] = unaff_ESI;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 196,
-      "match": "unaff_ESI",
-      "text": "this_ptr_00->index_data_ptr[in_stack_0000000c][iVar1] = unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 199,
-      "match": "(ushort *)((int)",
-      "text": "puVar8 = (ushort *)((int)this_ptr->lod_info + iVar2 * 2 + -4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 201,
-      "match": "unaff_EBX",
-      "text": "unaff_EBX = *(int *)(local_5c + iVar2 * 4 + -4) >> 8;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 232,
-      "match": "in_stack_0000000c",
-      "text": "in_stack_0000000c = in_stack_0000000c + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 232,
-      "match": "in_stack_0000000c",
-      "text": "in_stack_0000000c = in_stack_0000000c + 1;",
-      "type": "stack_param"
-    },
-    {
       "call_address": "0059b9a7",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -747,7 +545,7 @@
     },
     {
       "call_address": "0059b9cf",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -761,7 +559,7 @@
     },
     {
       "call_address": "0059ba05",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -775,7 +573,7 @@
     },
     {
       "call_address": "0059ba56",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -789,7 +587,7 @@
     },
     {
       "call_address": "0059bac8",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -803,7 +601,7 @@
     },
     {
       "call_address": "0059bb23",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -817,7 +615,7 @@
     },
     {
       "call_address": "0059bb79",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -831,7 +629,7 @@
     },
     {
       "call_address": "0059bbdc",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -845,7 +643,7 @@
     },
     {
       "call_address": "0059bc42",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -859,7 +657,7 @@
     },
     {
       "call_address": "0059bc7f",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -873,7 +671,7 @@
     },
     {
       "call_address": "0059bc98",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -887,7 +685,7 @@
     },
     {
       "call_address": "0059bcd6",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -901,7 +699,7 @@
     },
     {
       "call_address": "0059bd15",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -915,7 +713,7 @@
     },
     {
       "call_address": "0059bd5a",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -929,7 +727,7 @@
     },
     {
       "call_address": "0059bdd6",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -943,7 +741,7 @@
     },
     {
       "call_address": "0059be2b",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -957,7 +755,7 @@
     },
     {
       "call_address": "0059beea",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -971,7 +769,7 @@
     },
     {
       "call_address": "0059bf96",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -985,7 +783,7 @@
     },
     {
       "call_address": "0059c016",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -999,7 +797,7 @@
     },
     {
       "call_address": "0059c06f",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1013,7 +811,7 @@
     },
     {
       "call_address": "0059c0bd",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1027,7 +825,7 @@
     },
     {
       "call_address": "0059c108",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1041,7 +839,7 @@
     },
     {
       "call_address": "0059c14e",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1055,7 +853,7 @@
     },
     {
       "call_address": "0059c1d8",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1076,17 +874,6 @@
       "line_number": 143,
       "match": "crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,\"\\\"%[^\\\"]\\\", %d\\n\",pSVar3,&pSVar3->adj_part_count);",
       "text": "Format string expects 1 args but got 2",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 152,
-      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,\"%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
     },
     {

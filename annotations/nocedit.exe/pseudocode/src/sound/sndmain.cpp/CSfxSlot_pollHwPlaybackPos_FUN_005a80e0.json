@@ -1,18 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 106,
+    "complexity_score": 105,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 2,
-    "pseudocode_lines": 21,
+    "pseudocode_lines": 20,
     "suspect_count": 7,
     "suspect_types": [
       "concat_artifact",
       "extra_output",
       "stack_param"
     ],
-    "total_lines": 90
+    "total_lines": 89
   },
   "cross_references": [
     {
@@ -211,7 +211,7 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 5,
+      "line": 6,
       "match": "extraout_EDX",
       "text": "uint extraout_EDX;",
       "type": "extra_output"
@@ -225,37 +225,37 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 12,
       "match": "in_stack_ffffffe4",
       "text": "((double *)g_CSoundDevicePtr,(CSoundDevice *)this_ptr,in_stack_ffffffe4);",
       "type": "stack_param"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 14,
+      "line": 13,
       "match": "extraout_EDX",
-      "text": "if ((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,pdStack00000008) < 0.0) {",
+      "text": "if ((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,pdVar1) < 0.0) {",
       "type": "extra_output"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 14,
+      "line": 13,
       "match": "CONCAT44",
-      "text": "if ((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,pdStack00000008) < 0.0) {",
+      "text": "if ((double)CONCAT44 /* combine 2-byte values */(extraout_EDX,pdVar1) < 0.0) {",
       "type": "concat_artifact"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 20,
+      "line": 19,
       "match": "extraout_EDX",
-      "text": "(this_ptr,(double)CONCAT44 /* combine 2-byte values */(extraout_EDX,pdStack00000008));",
+      "text": "(this_ptr,(double)CONCAT44 /* combine 2-byte values */(extraout_EDX,pdVar1));",
       "type": "extra_output"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 20,
+      "line": 19,
       "match": "CONCAT44",
-      "text": "(this_ptr,(double)CONCAT44 /* combine 2-byte values */(extraout_EDX,pdStack00000008));",
+      "text": "(this_ptr,(double)CONCAT44 /* combine 2-byte values */(extraout_EDX,pdVar1));",
       "type": "concat_artifact"
     }
   ]

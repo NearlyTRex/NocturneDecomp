@@ -1,23 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 504,
-    "complexity_score": 807,
+    "complexity_score": 700,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 47,
-    "pseudocode_lines": 237,
-    "suspect_count": 53,
+    "pseudocode_lines": 235,
+    "suspect_count": 44,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
       "pointer_cast",
-      "register_param",
       "stack_param",
-      "stack_ref",
       "variadic_preserve"
     ],
-    "total_lines": 741
+    "total_lines": 739
   },
   "cross_references": [],
   "function": {
@@ -477,199 +474,136 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 15,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 15,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 20,
       "match": "in_stack_00000004",
-      "text": "int in_stack_00000004;",
+      "text": "int *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
-      "match": "in_stack_0000000c",
-      "text": "void *in_stack_0000000c;",
+      "line": 21,
+      "match": "in_stack_00000008",
+      "text": "char *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_00000010",
-      "text": "int *in_stack_00000010;",
+      "line": 38,
+      "match": "in_stack_00000004",
+      "text": "(in_stack_00000004[2],4,\"..\\\\engine\\\\palette.cpp\",0xbb);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_00000018",
-      "text": "char *in_stack_00000018;",
+      "line": 42,
+      "match": "in_stack_00000004",
+      "text": "if (0 < *in_stack_00000004) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 40,
-      "match": "in_stack_0000000c",
-      "text": "(*(SIZE_T *)((int)in_stack_0000000c + 8),4,\"..\\\\engine\\\\palette.cpp\",0xbb);",
+      "line": 46,
+      "match": "in_stack_00000004",
+      "text": "pcVar10 = (char *)(in_stack_00000004[1] + local_10);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 120,
+      "match": "in_stack_00000004",
+      "text": "pcVar12 = (char *)(in_stack_00000004[1] + local_10);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 132,
+      "match": "in_stack_00000004",
+      "text": "iVar6 = in_stack_00000004[1];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 136,
+      "match": "in_stack_00000004",
+      "text": "iVar6 = in_stack_00000004[1];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 140,
+      "match": "in_stack_00000004",
+      "text": "pcVar12 = (char *)(in_stack_00000004[1] + local_10);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 152,
+      "match": "in_stack_00000004",
+      "text": "iVar3 = in_stack_00000004[1];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 157,
+      "match": "in_stack_00000004",
+      "text": "iVar3 = in_stack_00000004[1];",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 40,
-      "match": "(SIZE_T *)((int)",
-      "text": "(*(SIZE_T *)((int)in_stack_0000000c + 8),4,\"..\\\\engine\\\\palette.cpp\",0xbb);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 44,
-      "match": "in_stack_00000010",
-      "text": "if (0 < *in_stack_00000010) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 47,
-      "match": "&stack0xffffffa0",
-      "text": "pcVar14 = &stack0xffffffa0;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 48,
-      "match": "in_stack_00000010",
-      "text": "pcVar12 = (char *)(in_stack_00000010[1] + uVar17);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 58,
-      "match": "&stack0xffffffa0",
-      "text": "pcVar14 = &stack0xffffffa0;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 84,
-      "match": "&stack0xffffff8c",
-      "text": "pcVar14 = &stack0xffffff8c;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 103,
-      "match": "&stack0xffffff8c",
-      "text": "pFVar7 = engine_dosio_c_getFile_FUN_00481a50(pcVar14,&stack0xffffff8c,pcVar12);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 142,
-      "match": "in_stack_00000004",
-      "text": "pcVar14 = (char *)(*(int *)(in_stack_00000004 + 4) + local_10);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 154,
-      "match": "in_stack_00000004",
-      "text": "iVar3 = *(int *)(in_stack_00000004 + 4);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 159,
-      "match": "in_stack_00000004",
-      "text": "iVar3 = *(int *)(in_stack_00000004 + 4);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 182,
+      "line": 180,
       "match": "(byte *)((int)",
       "text": "bVar2 = *(byte *)((int)&DAT_02fd8d20 + iVar3 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 184,
+      "line": 182,
       "match": "(char *)((int)",
       "text": "cVar1 = *(char *)((int)&DAT_02fd8d20 + iVar3 + 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
+      "line": 183,
+      "match": "(char *)((int)",
+      "text": "if (((*(char *)((int)&DAT_02fd8d20 + iVar3) != '\\0') || (local_c != 0)) || (cVar1 != '\\0')",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 185,
       "match": "(char *)((int)",
-      "text": "if (((*(char *)((int)&DAT_02fd8d20 + iVar3) != '\\0') || (uVar17 != 0)) || (cVar1 != '\\0'))",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 187,
-      "match": "(char *)((int)",
-      "text": "*pcVar14 = *(char *)((int)&DAT_02fd8d20 + iVar3);",
+      "text": "*pcVar12 = *(char *)((int)&DAT_02fd8d20 + iVar3);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 194,
-      "match": "in_stack_0000000c",
-      "text": "if (*(uint *)((int)in_stack_0000000c + 8) < uVar11) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 194,
-      "match": "(uint *)((int)",
-      "text": "if (*(uint *)((int)in_stack_0000000c + 8) < uVar11) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 203,
-      "match": "in_stack_00000010",
-      "text": "} while (local_10 < *in_stack_00000010);",
+      "line": 192,
+      "match": "in_stack_00000004",
+      "text": "if ((uint)in_stack_00000004[2] < uVar9) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 206,
-      "match": "in_stack_00000018",
-      "text": "pcVar14 = in_stack_00000018;",
+      "line": 201,
+      "match": "in_stack_00000004",
+      "text": "} while (local_1c < *in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 225,
-      "match": "in_stack_00000018",
-      "text": "pFVar7 = engine_dosio_c_getFile_FUN_00481a50(pcVar14,in_stack_00000018,pcVar12);",
+      "line": 204,
+      "match": "in_stack_00000008",
+      "text": "pcVar12 = in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 233,
-      "match": "in_stack_0000000c",
-      "text": "shape_memdbg_cpp_debugFree_FUN_0050f460(in_stack_0000000c,\"..\\\\engine\\\\palette.cpp\",0x129);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 236,
-      "match": "in_stack_0000000c",
-      "text": "shape_memdbg_cpp_debugFree_FUN_0050f210(in_stack_0000000c);",
+      "line": 223,
+      "match": "in_stack_00000008",
+      "text": "pFVar5 = engine_dosio_c_getFile_FUN_00481a50(pcVar12,in_stack_00000008,pcVar10);",
       "type": "stack_param"
     },
     {

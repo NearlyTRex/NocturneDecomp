@@ -10,7 +10,6 @@ CScat * __cdecl core_scat_cpp_CScat_ctor_FUN_00556ed0(CScat *this_ptr)
 
 {
   CScat *this_ptr_00;
-  uint uStack00000008;
   
   this_ptr_00 = (CScat *)core_hero_cpp_FUN_004f2340();
   (this_ptr_00->base_hero).base_character.base_actor.vtable = &PTR_core_scat_cpp_FUN_00662464;
@@ -52,7 +51,6 @@ CScat * __cdecl core_scat_cpp_CScat_ctor_FUN_00556ed0(CScat *this_ptr)
   *(uint *)(this_ptr_00->field1_0x1fbd4 + 0x18) =
        *(uint *)(this_ptr_00->field1_0x1fbd4 + 0x1c);
   core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0((CCharacter *)this_ptr_00);
-  uStack00000008 = 0;
   core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0((CCharacter *)this_ptr_00);
   return this_ptr_00;
 }

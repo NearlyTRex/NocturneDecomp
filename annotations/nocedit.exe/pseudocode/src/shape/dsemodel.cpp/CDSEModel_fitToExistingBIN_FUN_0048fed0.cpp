@@ -11,7 +11,6 @@ shape_dsemodel_cpp_CDSEModel_fitToExistingBIN_FUN_0048fed0(CDSEModel *this_ptr,c
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   int *piVar2;
   int *piVar3;
   byte bVar4;

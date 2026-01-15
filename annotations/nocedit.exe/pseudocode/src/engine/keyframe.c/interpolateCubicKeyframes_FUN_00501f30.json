@@ -395,16 +395,23 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 14,
+      "line": 13,
       "match": "extraout_ECX",
       "text": "int *extraout_ECX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 18,
+      "line": 17,
       "match": "extraout_EDX",
       "text": "int extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 104,
+      "match": "extraout_ECX",
+      "text": "piVar8 = extraout_ECX;",
       "type": "extra_output"
     },
     {
@@ -417,13 +424,6 @@
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 106,
-      "match": "extraout_ECX",
-      "text": "piVar10 = extraout_ECX;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 107,
       "match": "extraout_EDX",
       "text": "if (0 < extraout_EDX) {",
       "type": "extra_output"

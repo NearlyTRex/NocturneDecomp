@@ -10,14 +10,13 @@ void __cdecl core_trigger_cpp_CTrigger_FUN_005e1180(CTrigger *this_ptr)
 
 {
   int iVar1;
+  float in_stack_00000008;
+  float in_stack_00000010;
+  float in_stack_00000018;
+  CTrigger *pCStack0000001c;
   float in_stack_00000020;
-  float in_stack_00000034;
-  float in_stack_00000048;
-  float in_stack_0000005c;
-  uint uStack0000006c;
-  float in_stack_00000070;
-  float in_stack_00000074;
-  float in_stack_00000084;
+  float in_stack_00000028;
+  float in_stack_00000030;
   
   this_ptr->field1_0x158[0x14] = '\0';
   this_ptr->field1_0x158[0x15] = '\0';
@@ -31,32 +30,32 @@ void __cdecl core_trigger_cpp_CTrigger_FUN_005e1180(CTrigger *this_ptr)
     iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
     if (iVar1 != 0) {
       *(float *)(this_ptr->field1_0x158 + 8) =
-           *(float *)(this_ptr->field1_0x158 + 8) - in_stack_00000020;
+           *(float *)(this_ptr->field1_0x158 + 8) - in_stack_00000008;
     }
     iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4d);
     if (iVar1 != 0) {
       *(float *)(this_ptr->field1_0x158 + 8) =
-           *(float *)(this_ptr->field1_0x158 + 8) + in_stack_00000034;
+           *(float *)(this_ptr->field1_0x158 + 8) + in_stack_00000010;
     }
     iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1e);
     if (iVar1 != 0) {
       *(float *)(this_ptr->field1_0x158 + 0xc) =
-           *(float *)(this_ptr->field1_0x158 + 0xc) - in_stack_00000048;
+           *(float *)(this_ptr->field1_0x158 + 0xc) - in_stack_00000018;
     }
     iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x10);
     if (iVar1 != 0) {
       *(float *)(this_ptr->field1_0x158 + 0xc) =
-           *(float *)(this_ptr->field1_0x158 + 0xc) + in_stack_0000005c;
+           *(float *)(this_ptr->field1_0x158 + 0xc) + in_stack_00000020;
     }
     iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x50);
     if (iVar1 != 0) {
       *(float *)(this_ptr->field1_0x158 + 0x10) =
-           *(float *)(this_ptr->field1_0x158 + 0x10) - in_stack_00000070;
+           *(float *)(this_ptr->field1_0x158 + 0x10) - in_stack_00000028;
     }
     iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x48);
     if (iVar1 != 0) {
       *(float *)(this_ptr->field1_0x158 + 0x10) =
-           *(float *)(this_ptr->field1_0x158 + 0x10) + in_stack_00000084;
+           *(float *)(this_ptr->field1_0x158 + 0x10) + in_stack_00000030;
     }
     if (*(int *)(this_ptr->field1_0x158 + 8) < 0x3c23d70a) {
       this_ptr->field1_0x158[8] = '\n';
@@ -78,12 +77,12 @@ void __cdecl core_trigger_cpp_CTrigger_FUN_005e1180(CTrigger *this_ptr)
     }
   }
   if (*(int *)(this_ptr->field1_0x158 + 0x18) == 1) {
-    if (in_stack_00000074 != *(float *)(this_ptr->field1_0x158 + 8)) {
+    if (in_stack_00000020 != *(float *)(this_ptr->field1_0x158 + 8)) {
       *(uint *)(this_ptr->field1_0x158 + 0x10) = *(uint *)(this_ptr->field1_0x158 + 8);
     }
     *(uint *)(this_ptr->field1_0x158 + 8) = *(uint *)(this_ptr->field1_0x158 + 0x10);
   }
-  uStack0000006c = 0x5e1200;
+  pCStack0000001c = this_ptr;
   core_trigger_cpp_FUN_005e0ba0();
   return;
 }

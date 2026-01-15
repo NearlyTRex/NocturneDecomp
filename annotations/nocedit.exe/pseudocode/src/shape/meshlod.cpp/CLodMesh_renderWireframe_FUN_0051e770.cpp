@@ -11,7 +11,6 @@ void __cdecl shape_meshlod_cpp_CLodMesh_renderWireframe_FUN_0051e770(CLodMesh *t
 {
   int iVar1;
   int iVar2;
-  BADSPACEBASE *in_ESP;
   int iVar3;
   SRenderVertex *pSVar4;
   SRenderVertex *pSVar5;

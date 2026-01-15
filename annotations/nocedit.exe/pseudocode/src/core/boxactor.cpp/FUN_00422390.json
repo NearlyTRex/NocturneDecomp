@@ -1,15 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 116,
-    "complexity_score": 259,
+    "complexity_score": 229,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 1,
     "pseudocode_lines": 44,
-    "suspect_count": 20,
+    "suspect_count": 18,
     "suspect_types": [
-      "badspacebase",
-      "register_param",
       "stack_param"
     ],
     "total_lines": 160
@@ -302,36 +300,22 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 10,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 10,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 11,
+      "line": 10,
       "match": "in_stack_00000004",
       "text": "CDemonActor *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 11,
       "match": "in_stack_00000008",
       "text": "CVector3f *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 12,
       "match": "in_stack_0000000c",
       "text": "CVector3f *in_stack_0000000c;",
       "type": "stack_param"

@@ -24,7 +24,7 @@ support_codec_cpp_CLZWCompress_dtor_FUN_0043f710
   ptr = (CLZWCompress *)
         support_codec_cpp_CCodec_dtor_FUN_0043e9b0
                   ((CCodec *)&pCVar1[-1].bit_state.accumulated_bits,1);
-  if ((d3 & 2) == 0) {
+  if ((d1 & 2) == 0) {
     return ptr;
   }
   shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);

@@ -38,8 +38,7 @@ core_dmodel_cpp_CKeyFramedModel_getFloorHeight_FUN_00478740
   iVar2 = 0;
   if (0 < this_ptr->collision_triangle_count) {
     do {
-      iVar1 = core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0
-                        (triangle,z,(float)out_height,&transform_vector->x);
+      iVar1 = core_dtri_cpp_rayTriangleFloorTest_FUN_0049b2f0(triangle,x,z,out_height);
       if (iVar1 != 0) {
         iVar3 = 1;
       }

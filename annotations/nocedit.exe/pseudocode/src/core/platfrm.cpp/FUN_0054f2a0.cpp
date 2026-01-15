@@ -9,18 +9,16 @@
 /* Signature: byte actors_other_platform.cpp_FUN_0054f2a0(uint param_1, uint
    param_2) */
 
-void core_platfrm_cpp_FUN_0054f2a0(void)
+void core_platfrm_cpp_FUN_0054f2a0
+               (uint param_1,uint param_2,uint unaff_EBX,uint param_4,
+               int param_5,FILE *param_6)
 
 {
-  int in_stack_00000004;
-  FILE *in_stack_00000008;
-  FILE *in_stack_0000000c;
-  
   core_dmodel_cpp_CKeyFramedModelInstance_writeDependencies_FUN_0047edd0
-            ((CKeyFramedModelInstance *)(in_stack_00000004 + 0x158),in_stack_00000008);
-  if (*(char *)(in_stack_00000004 + 0x2f0) == '\0') {
+            ((CKeyFramedModelInstance *)(param_5 + 0x158),param_6);
+  if (*(char *)(param_5 + 0x2f0) == '\0') {
     return;
   }
-  crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_0000000c,"data\\%s\n",in_stack_00000004 + 0x2f0);
+  crt_stdio_c_fprintf_FUN_005fe6d0(param_6,"data\\%s\n",param_5 + 0x2f0,unaff_EBX);
   return;
 }

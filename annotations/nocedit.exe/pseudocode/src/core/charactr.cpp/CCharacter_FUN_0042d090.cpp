@@ -15,7 +15,6 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042d090(CCharacter *this_ptr)
   CVector3f *pCVar3;
   int iVar4;
   SCarryHand *pSVar5;
-  BADSPACEBASE *in_ESP;
   uint *puVar6;
   float *pfVar7;
   float *pfVar8;
@@ -26,11 +25,11 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042d090(CCharacter *this_ptr)
   CMatrix3x4f *in_stack_fffffd84;
   float afStack_24c [12];
   CMatrix3x4f CStack_21c;
-  float afStack_1e8 [14];
-  float afStack_1b0 [9];
+  float afStack_1ec [13];
+  float afStack_1b8 [11];
   CMatrix3x4f CStack_18c;
-  float afStack_158 [12];
-  float afStack_128 [11];
+  float afStack_15c [12];
+  float afStack_12c [12];
   uint auStack_fc [12];
   CMatrix3x4f CStack_cc;
   CMatrix3x4f CStack_9c;
@@ -49,8 +48,8 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042d090(CCharacter *this_ptr)
     if (pSVar5->carry_actor != (CDemonActor *)0x0) {
       local_18 = pSVar5;
       (*(this_ptr->base_actor).vtable[1].isActiveTarget)(&this_ptr->base_actor);
-      pfVar7 = afStack_1b0;
-      pfVar8 = &CStack_21c.m[0].z;
+      pfVar7 = afStack_1b8;
+      pfVar8 = &CStack_21c.m[0].x;
       for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
         *pfVar8 = *pfVar7;
         pfVar7 = pfVar7 + (uint)bVar11 * -2 + 1;
@@ -72,7 +71,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042d090(CCharacter *this_ptr)
             pCVar10 = (CMatrix3x4f *)((int)pCVar10 + ((uint)bVar11 * -2 + 1) * 4);
           }
           core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&CStack_21c,&CStack_6c,in_stack_fffffd84);
-          pfVar7 = afStack_1e8;
+          pfVar7 = afStack_1ec;
           pCVar10 = &CStack_9c;
           for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
             pCVar10->m[0].w = *pfVar7;
@@ -82,7 +81,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042d090(CCharacter *this_ptr)
           core_xform_cpp_lerpMatrix3x4_FUN_005f7140
                     ((CMatrix3x4f *)pSVar5->field2_0xc,&CStack_9c,
                      *(float *)(pSVar5->field2_0xc + 0x34));
-          pfVar7 = afStack_158;
+          pfVar7 = afStack_15c;
           pCVar10 = &CStack_18c;
           for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
             pCVar10->m[0].w = *pfVar7;
@@ -93,7 +92,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042d090(CCharacter *this_ptr)
                     (&CStack_18c,
                      (CMatrix3x4f *)((int)CStack_3c.m[2].z + *(int *)pSVar5->field0_0x0 * 0x30),
                      in_stack_fffffd84);
-          pfVar7 = afStack_128;
+          pfVar7 = afStack_12c;
           pCVar10 = &CStack_21c;
           for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
             pCVar10->m[0].w = *pfVar7;

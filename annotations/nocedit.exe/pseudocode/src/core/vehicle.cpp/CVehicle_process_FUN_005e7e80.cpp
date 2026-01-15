@@ -23,7 +23,6 @@ void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005e7e80(CVehicle *this_ptr)
   CMobster *this_ptr_01;
   CTommyGun *this_ptr_02;
   CDemonActor *pCVar11;
-  BADSPACEBASE *in_ESP;
   int iVar12;
   float in_stack_00000008;
   char *model_name;

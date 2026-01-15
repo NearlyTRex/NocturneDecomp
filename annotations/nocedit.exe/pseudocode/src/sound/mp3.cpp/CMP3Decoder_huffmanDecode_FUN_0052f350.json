@@ -1,19 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 255,
-    "complexity_score": 331,
+    "complexity_score": 317,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 6,
-    "pseudocode_lines": 91,
-    "suspect_count": 22,
+    "pseudocode_lines": 92,
+    "suspect_count": 21,
     "suspect_types": [
       "call_esp_preserve",
       "extra_output",
-      "format_string_mismatch",
       "variadic_preserve"
     ],
-    "total_lines": 346
+    "total_lines": 347
   },
   "cross_references": [
     {
@@ -225,42 +224,42 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 37,
+      "line": 38,
       "match": "extraout_EAX_03",
       "text": "if (extraout_EAX_03 == 0) {",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 63,
+      "line": 64,
       "match": "extraout_EAX",
       "text": "(sound_mp3_cpp_CMP3Decoder_readBit_FUN_0052f250(this_ptr), extraout_EAX == 1)) {",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 67,
+      "line": 68,
       "match": "extraout_EAX_00",
       "text": "(sound_mp3_cpp_CMP3Decoder_readBit_FUN_0052f250(this_ptr), extraout_EAX_00 == 1)) {",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 71,
+      "line": 72,
       "match": "extraout_EAX_01",
       "text": "(sound_mp3_cpp_CMP3Decoder_readBit_FUN_0052f250(this_ptr), extraout_EAX_01 == 1)) {",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 81,
+      "line": 82,
       "match": "extraout_EAX_04",
       "text": "(sound_mp3_cpp_CMP3Decoder_readBit_FUN_0052f250(this_ptr), extraout_EAX_04 == 1)) {",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 90,
+      "line": 91,
       "match": "extraout_EAX_02",
       "text": "(sound_mp3_cpp_CMP3Decoder_readBit_FUN_0052f250(this_ptr), extraout_EAX_02 == 1)) {",
       "type": "extra_output"
@@ -278,17 +277,6 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0052f50d (no EBP frame)",
       "type": "variadic_preserve"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Illegal Huffman code in data.  File: %s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Illegal Huffman code in data.  File: %s",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 54,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Illegal Huffman code in data.  File: %s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 4,

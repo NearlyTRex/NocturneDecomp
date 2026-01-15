@@ -19,7 +19,6 @@ void core_werewolf_cpp_FUN_005f1ac0(void)
   SMotion *pSVar3;
   uint uVar4;
   int iVar5;
-  BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000004;
   int in_stack_00000008;
   CVector3f CStack_24;

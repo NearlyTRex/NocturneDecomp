@@ -11,7 +11,6 @@ core_setutil_cpp_C3DSLight_advanceFilter_FUN_00586e70(C3DSLight *this_ptr,CDemon
 
 {
   int iVar1;
-  CDemonLight *in_stack_0000000c;
   
   if (light == (CDemonLight *)0x0) {
     g_CurrentFilename = "..\\core\\setutil.cpp";
@@ -25,7 +24,7 @@ core_setutil_cpp_C3DSLight_advanceFilter_FUN_00586e70(C3DSLight *this_ptr,CDemon
       this_ptr->current_filter_frame = 0;
     }
     core_dlight_cpp_CDemonLight_applyFilter_FUN_00474770
-              (in_stack_0000000c,this_ptr->filters[this_ptr->current_filter_frame],
+              (light,this_ptr->filters[this_ptr->current_filter_frame],
                this_ptr->filter_indices[this_ptr->current_filter_frame],0,0);
   }
   return;

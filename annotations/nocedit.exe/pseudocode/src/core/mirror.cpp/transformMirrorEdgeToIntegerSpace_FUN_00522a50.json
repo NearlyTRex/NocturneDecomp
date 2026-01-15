@@ -1,22 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 144,
-    "complexity_score": 548,
+    "complexity_score": 308,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 3,
     "pseudocode_lines": 63,
-    "suspect_count": 44,
+    "suspect_count": 22,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
       "param_count_too_many",
       "pointer_cast",
-      "register_param",
-      "stack_ref",
-      "unaffected_reg",
-      "unknown_field"
+      "unaffected_reg"
     ],
     "total_lines": 207
   },
@@ -274,158 +270,11 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 8,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 8,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 9,
+      "line": 8,
       "match": "unaff_ESI",
       "text": "CVector3i *unaff_ESI;",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 25,
-      "match": "._0_4_",
-      "text": "local_24._0_4_ = (float)(int)(reflection->corner1).x * 0.00390625f;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 26,
-      "match": "._4_4_",
-      "text": "local_24._4_4_ = (float)(int)(reflection->corner1).y * 0.00390625f;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 29,
-      "match": "._0_4_",
-      "text": "local_50._0_4_ = (float)point_a->y * 1.525879e-05f;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 30,
-      "match": "._4_4_",
-      "text": "local_50._4_4_ = (float)point_a->z * 1.525879e-05f;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 31,
-      "match": "&stack0xffffffa0",
-      "text": "if (&local_54 != (float *)&stack0xffffffa0) {",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 32,
-      "match": "._0_4_",
-      "text": "local_54 = local_54 + (float)local_24._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 33,
-      "match": "._0_4_",
-      "text": "local_50._0_4_ = (float)local_50._0_4_ + (float)local_24._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 33,
-      "match": "._0_4_",
-      "text": "local_50._0_4_ = (float)local_50._0_4_ + (float)local_24._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 33,
-      "match": "._4_4_",
-      "text": "local_50._0_4_ = (float)local_50._0_4_ + (float)local_24._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 34,
-      "match": "._4_4_",
-      "text": "local_50._4_4_ = (float)local_50._4_4_ + local_1c;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 34,
-      "match": "._4_4_",
-      "text": "local_50._4_4_ = (float)local_50._4_4_ + local_1c;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 39,
-      "match": "._4_4_",
-      "text": "local_24._4_4_ = pCVar1->x;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 46,
-      "match": "._4_4_",
-      "text": "local_50._4_4_ = pCVar1->x;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 50,
-      "match": "._0_4_",
-      "text": "local_24._0_4_ = local_48.x - local_18;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 51,
-      "match": "._4_4_",
-      "text": "local_24._4_4_ = local_48.y - fStack_14;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 52,
-      "match": "._4_4_",
-      "text": "local_28 = (float)local_50._4_4_ - local_1c;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 54,
-      "match": "._4_4_",
-      "text": "local_50._4_4_ = (float)local_50._4_4_ - local_1c;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 54,
-      "match": "._4_4_",
-      "text": "local_50._4_4_ = (float)local_50._4_4_ - local_1c;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 58,
-      "match": "._4_4_",
-      "text": "local_34 = (int)ROUND((float)local_50._4_4_ * 65536f);",
-      "type": "unknown_field"
     },
     {
       "description": "Unaffected register variable",
@@ -445,15 +294,8 @@
       "description": "Unaffected register variable",
       "line": 62,
       "match": "unaff_ESI",
-      "text": "unaff_ESI->x = (int)ROUND((float)local_50._4_4_ * 65536f);",
+      "text": "unaff_ESI->x = (int)ROUND(local_54.x * 65536f);",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 62,
-      "match": "._4_4_",
-      "text": "unaff_ESI->x = (int)ROUND((float)local_50._4_4_ * 65536f);",
-      "type": "unknown_field"
     },
     {
       "description": "Unaffected register variable",

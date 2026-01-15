@@ -11,7 +11,6 @@ shape_edittool_cpp_CEditorTools_drawCenteredWireframeCube_FUN_004a2510
           (CEditorTools *this_ptr,CVector3f *dimensions,int color_value)
 
 {
-  BADSPACEBASE *in_ESP;
   CVector3f local_1c;
   CVector3f local_10;
   

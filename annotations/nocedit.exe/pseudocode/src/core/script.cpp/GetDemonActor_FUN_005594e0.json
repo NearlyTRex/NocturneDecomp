@@ -1,18 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 183,
-    "complexity_score": 216,
+    "complexity_score": 320,
     "cross_reference_count": 3,
     "function_call_count": 7,
     "global_count": 23,
-    "pseudocode_lines": 71,
-    "suspect_count": 13,
+    "pseudocode_lines": 75,
+    "suspect_count": 23,
     "suspect_types": [
       "call_esp_preserve",
-      "unaffected_reg",
+      "stack_param",
       "variadic_preserve"
     ],
-    "total_lines": 254
+    "total_lines": 258
   },
   "cross_references": [
     {
@@ -259,22 +259,92 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 6,
-      "match": "unaff_EBX",
-      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,",
-      "type": "unaffected_reg"
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000004",
+      "text": "char *in_stack_00000004;",
+      "type": "stack_param"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 71,
-      "match": "unaff_EBX",
-      "text": "(&DAT_0310eca0,\"Actor \\\"%s\\\" is of type %s, this command requires an actor of type %s.\",param_5,pcVar3,unaff_EBX);",
-      "type": "unaffected_reg"
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000008",
+      "text": "uint in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_0000000c",
+      "text": "uint in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000004",
+      "text": "if ((in_stack_00000004 == (char *)0x0) || (*in_stack_00000004 == '\\0')) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000004",
+      "text": "if ((in_stack_00000004 == (char *)0x0) || (*in_stack_00000004 == '\\0')) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 34,
+      "match": "in_stack_00000004",
+      "text": "if (*in_stack_00000004 == '@') {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 43,
+      "match": "in_stack_00000004",
+      "text": "(&DAT_0310eca0,\"Actor variable %s not defined, or doesn't reference an existing actor\",in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 48,
+      "match": "in_stack_00000004",
+      "text": "iVar2 = crt_string_c_stricmp_FUN_005fe7f0(in_stack_00000004,\"$\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 65,
+      "match": "in_stack_00000004",
+      "text": "(&DAT_0310eca0,\"Actor \\\"%s\\\" does not exist.\",in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 70,
+      "match": "in_stack_00000008",
+      "text": "iVar2 = core_actor_cpp_isOfClassHash_FUN_0040c760((CDemonActor *)actor_ptr,in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 74,
+      "match": "in_stack_00000004",
+      "text": "(&DAT_0310eca0,\"Actor \\\"%s\\\" is of type %s, this command requires an actor of type %s.\",in_stack_00000004,pcVar3,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 75,
+      "match": "in_stack_0000000c",
+      "text": "in_stack_0000000c);",
+      "type": "stack_param"
     },
     {
       "call_address": "00559588",
-      "caller_has_stack_issues": false,
+      "caller_has_stack_issues": true,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -288,7 +358,7 @@
     },
     {
       "call_address": "005595d9",
-      "caller_has_stack_issues": false,
+      "caller_has_stack_issues": true,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -302,7 +372,7 @@
     },
     {
       "call_address": "005595f2",
-      "caller_has_stack_issues": false,
+      "caller_has_stack_issues": true,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -316,7 +386,7 @@
     },
     {
       "call_address": "00559626",
-      "caller_has_stack_issues": false,
+      "caller_has_stack_issues": true,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -330,7 +400,7 @@
     },
     {
       "call_address": "0055964f",
-      "caller_has_stack_issues": false,
+      "caller_has_stack_issues": true,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

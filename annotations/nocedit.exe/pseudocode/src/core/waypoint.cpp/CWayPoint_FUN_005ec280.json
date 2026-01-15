@@ -1,20 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 131,
+    "complexity_score": 100,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 3,
-    "pseudocode_lines": 26,
-    "suspect_count": 8,
+    "pseudocode_lines": 25,
+    "suspect_count": 6,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
-      "register_param",
       "stack_ref"
     ],
-    "total_lines": 94
+    "total_lines": 93
   },
   "cross_references": [],
   "function": {
@@ -125,24 +123,10 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 6,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 6,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 12,
-      "match": "&stack0xfffffff0",
-      "text": "((CDemonActor *)&stack0xfffffff0,\"nextWayPoint\");",
+      "line": 11,
+      "match": "&stack0xffffffec",
+      "text": "((CDemonActor *)&stack0xffffffec,\"nextWayPoint\");",
       "type": "stack_ref"
     },
     {

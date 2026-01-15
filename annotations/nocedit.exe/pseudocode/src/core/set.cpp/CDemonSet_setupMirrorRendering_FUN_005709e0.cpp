@@ -12,7 +12,6 @@ core_set_cpp_CDemonSet_setupMirrorRendering_FUN_005709e0
 
 {
   CVector3f *pCVar1;
-  BADSPACEBASE *in_ESP;
   float afStack_2c [3];
   float local_20 [3];
   float local_14;

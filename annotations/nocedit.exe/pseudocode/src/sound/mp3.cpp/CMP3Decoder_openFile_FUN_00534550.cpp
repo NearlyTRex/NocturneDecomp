@@ -29,7 +29,7 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_openFile_FUN_00534550(CMP3Decoder *this_p
   if (iVar2 == 0) {
     g_CurrentFilename = "..\\sound\\mp3.cpp";
     g_CurrentLineNumber = 0xe1e;
-    core_main_c_displayErrorAndQuit_FUN_00506f10("Error preparing to decode %s");
+    core_main_c_displayErrorAndQuit_FUN_00506f10("Error preparing to decode %s",filename);
   }
   do {
     cVar1 = *filename;

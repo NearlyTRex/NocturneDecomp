@@ -12,7 +12,6 @@ void __cdecl core_fire_cpp_CSmokeParticle_render_FUN_004bf4c0(CSmokeParticle *th
   SRenderVertex *vertex_ptr;
   longlong lVar1;
   int iVar2;
-  BADSPACEBASE *in_ESP;
   double dVar3;
   CVector3i local_64;
   float local_58;

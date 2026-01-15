@@ -11,87 +11,83 @@ void __cdecl core_dcamera_cpp_generateFogGrid_FUN_0044bba0(SFogGrid *fog)
 {
   byte bVar1;
   int iVar2;
-  char *pcVar3;
-  uint uVar4;
-  byte *puVar5;
-  uint uVar7;
-  char *pcVar8;
+  uint uVar3;
+  char *pcVar4;
+  char *pcVar5;
+  int iVar6;
+  char *pcVar7;
+  uint uVar8;
   int iVar9;
-  char *pcVar10;
-  byte *puVar11;
-  uint uVar12;
-  int iVar13;
-  uint uVar14;
-  int in_stack_00000008;
-  SFogGrid *in_stack_0000000c;
+  uint uVar10;
+  char *local_4c;
+  char *local_48;
   char *local_40;
-  char *local_38;
-  int local_34;
-  uint local_28;
-  uint local_1c;
-  int local_18;
-  int local_14;
-  byte *puVar6;
+  int local_3c;
+  uint local_30;
+  uint local_24;
+  int local_20;
+  int local_1c;
+  uint local_14;
   
-  iVar9 = 0;
+  iVar6 = 0;
   crt_memory_c_memset_FUN_005fde40(fog,0,0x1000);
-  local_34 = in_stack_00000008;
+  local_3c = 0x1000;
   do {
-    iVar13 = 0;
+    iVar9 = 0;
     do {
-      puVar11 = (byte *)(local_34 + iVar13 * 0x10 + 0x1000);
-      puVar6 = (byte *)(iVar13 * 0x10 + iVar9 + in_stack_00000008);
+      pcVar7 = fog->planes[0].grid[iVar9] + local_3c;
+      pcVar5 = fog->planes[0].grid[iVar9] + iVar6;
       do {
-        puVar5 = puVar6 + 0x100;
+        pcVar4 = pcVar5 + 0x100;
         iVar2 = crt_stdlib_c_rand_FUN_005feb5c();
-        *puVar6 = (char)iVar2;
-        puVar6 = puVar5;
-      } while (puVar5 != puVar11);
-      iVar13 = iVar13 + 1;
-    } while (iVar13 < 0x10);
-    local_34 = local_34 + 1;
-    iVar9 = iVar9 + 1;
-  } while (iVar9 < 0x10);
-  uVar7 = (uint)puVar5 ^ (uint)puVar11;
-  local_28 = 0xffffffff;
+        *pcVar5 = (char)iVar2;
+        pcVar5 = pcVar4;
+      } while (pcVar4 != pcVar7);
+      iVar9 = iVar9 + 1;
+    } while (iVar9 < 0x10);
+    local_3c = local_3c + 1;
+    iVar6 = iVar6 + 1;
+  } while (iVar6 < 0x10);
+  local_14 = (uint)pcVar4 ^ (uint)pcVar7;
+  local_30 = 0xffffffff;
   do {
-    local_1c = 0xffffffff;
-    local_14 = 0;
-    local_18 = 0;
+    local_24 = 0xffffffff;
+    local_1c = 0;
+    local_20 = 0;
     do {
-      uVar12 = 0;
-      local_38 = in_stack_0000000c->planes[0].grid[0] + (uVar7 + 1 & 0xf) + local_14;
-      pcVar10 = in_stack_0000000c->planes[0].grid[0] + (local_28 & 0xf) + local_14;
-      pcVar3 = in_stack_0000000c->planes[0].grid[local_18 + 1U & 0xf] + uVar7;
-      local_40 = in_stack_0000000c->planes[0].grid[local_1c & 0xf] + uVar7;
-      uVar14 = 0xffffffff;
-      pcVar8 = in_stack_0000000c->planes[0].grid[0] + uVar7 + local_14;
+      uVar8 = 0;
+      local_40 = fog->planes[0].grid[0] + (local_14 + 1 & 0xf) + local_1c;
+      pcVar7 = fog->planes[0].grid[0] + (local_30 & 0xf) + local_1c;
+      local_4c = fog->planes[0].grid[local_20 + 1U & 0xf] + local_14;
+      local_48 = fog->planes[0].grid[local_24 & 0xf] + local_14;
+      uVar10 = 0xffffffff;
+      pcVar5 = fog->planes[0].grid[0] + local_14 + local_1c;
       do {
-        uVar4 = uVar14 & 0xf;
-        uVar12 = uVar12 + 1;
-        bVar1 = *pcVar10;
-        pcVar10 = pcVar10 + 0x100;
-        uVar14 = uVar14 + 1;
-        *pcVar8 = (byte)((ulonglong)
-                         ((uint)(byte)*local_38 +
+        uVar3 = uVar10 & 0xf;
+        uVar8 = uVar8 + 1;
+        bVar1 = *pcVar7;
+        pcVar7 = pcVar7 + 0x100;
+        uVar10 = uVar10 + 1;
+        *pcVar5 = (byte)((ulonglong)
+                         ((uint)(byte)*local_40 +
                          (uint)bVar1 +
-                         (uint)(byte)*pcVar3 +
-                         (uint)(byte)*pcVar8 +
-                         (uint)(byte)in_stack_0000000c->planes[uVar4].grid[0][uVar7 + local_14] +
-                         (uint)(byte)in_stack_0000000c->planes[uVar12 & 0xf].grid[0]
-                                     [uVar7 + local_14] + (uint)(byte)*local_40) / 7);
-        local_38 = local_38 + 0x100;
+                         (uint)(byte)*local_4c +
+                         (uint)(byte)*pcVar5 +
+                         (uint)(byte)fog->planes[uVar3].grid[0][local_14 + local_1c] +
+                         (uint)(byte)fog->planes[uVar8 & 0xf].grid[0][local_14 + local_1c] +
+                         (uint)(byte)*local_48) / 7);
         local_40 = local_40 + 0x100;
-        pcVar3 = pcVar3 + 0x100;
-        pcVar8 = pcVar8 + 0x100;
-      } while ((int)uVar12 < 0x10);
-      local_14 = local_14 + 0x10;
-      local_18 = local_18 + 1;
-      local_1c = local_1c + 1;
-    } while (local_18 < 0x10);
-    uVar7 = uVar7 + 1;
-    local_28 = local_28 + 1;
-  } while ((int)uVar7 < 0x10);
-  core_dcamera_cpp_resetFogSamplingOffset_FUN_0044bb70(in_stack_0000000c);
+        local_48 = local_48 + 0x100;
+        local_4c = local_4c + 0x100;
+        pcVar5 = pcVar5 + 0x100;
+      } while ((int)uVar8 < 0x10);
+      local_1c = local_1c + 0x10;
+      local_20 = local_20 + 1;
+      local_24 = local_24 + 1;
+    } while (local_20 < 0x10);
+    local_14 = local_14 + 1;
+    local_30 = local_30 + 1;
+  } while ((int)local_14 < 0x10);
+  core_dcamera_cpp_resetFogSamplingOffset_FUN_0044bb70(fog);
   return;
 }

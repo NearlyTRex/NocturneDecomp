@@ -1,20 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 62,
-    "complexity_score": 216,
+    "complexity_score": 143,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
-    "pseudocode_lines": 31,
-    "suspect_count": 16,
+    "pseudocode_lines": 28,
+    "suspect_count": 10,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
-      "register_param",
-      "stack_ref"
+      "pointer_cast"
     ],
-    "total_lines": 93
+    "total_lines": 90
   },
   "cross_references": [
     {
@@ -150,74 +148,32 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 8,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 8,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 19,
-      "match": "&stack0xffffffd4",
-      "text": "support_trisock_cpp_buildSockaddrIn_FUN_005e19d0(dest_addr,(SOCKADDR_IN *)&stack0xffffffd4);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 21,
-      "match": "&stack0xffffffe8",
-      "text": "*(uint *)(&stack0xffffffe8 + (uint)bVar2 * -8) =",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 22,
-      "match": "&stack0xffffffdc",
-      "text": "*(uint *)(&stack0xffffffdc + (uint)bVar2 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
+      "description": "Complex pointer cast",
       "line": 23,
-      "match": "&stack0xffffffec",
-      "text": "*(uint *)(&stack0xffffffec + (uint)bVar2 * -8 + (uint)bVar2 * -8) =",
-      "type": "stack_ref"
+      "match": "(uint *)((int)",
+      "text": "puVar3 = (uint *)((int)&local_1c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
+      "description": "Complex pointer cast",
       "line": 24,
-      "match": "&stack0xffffffe0",
-      "text": "*(uint *)(&stack0xffffffe0 + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
-      "type": "stack_ref"
+      "match": "(uint *)((int)",
+      "text": "puVar2 = (uint *)((int)&local_2c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
+      "description": "Complex pointer cast",
+      "line": 25,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&local_1c + (uint)bVar4 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 26,
-      "match": "&stack0xffffffec",
-      "text": "((int)(&stack0xffffffec + (uint)bVar2 * -8 + (uint)bVar2 * -8) + ((uint)bVar2 * -2 + 1) * 4) =",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 28,
-      "match": "&stack0xffffffe0",
-      "text": "((int)(&stack0xffffffe0 + (uint)bVar2 * -8 + (uint)bVar2 * -8) + ((uint)bVar2 * -2 + 1) * 4)",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 31,
-      "match": "&stack0xffffffe8",
-      "text": "(*(SOCKET *)buffer,(char *)length,(int)dest_addr,0,(SOCKADDR *)&stack0xffffffe8,",
-      "type": "stack_ref"
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&local_2c + (uint)bVar4 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
       "add_esp_value": 4,

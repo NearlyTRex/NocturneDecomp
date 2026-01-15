@@ -15,6 +15,6 @@ engine_light_cpp_calculateAndStoreVertexLight_FUN_00505850
   
   fVar1 = (float)engine_light_cpp_calculatePhongLighting_FUN_00505530
                            (vertex_position->x,vertex_position->y,vertex_position->z);
-  g_RenderVertexBuffer[(int)vertex_position].light = fVar1;
+  g_RenderVertexBuffer[vertex_index].light = fVar1;
   return;
 }

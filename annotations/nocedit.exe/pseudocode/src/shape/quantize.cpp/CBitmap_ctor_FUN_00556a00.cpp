@@ -13,48 +13,47 @@ CBitmap * __cdecl shape_quantize_cpp_CBitmap_ctor_FUN_00556a00(CBitmap *this_ptr
   void **ppvVar2;
   int iVar3;
   int iVar4;
-  BADSPACEBASE *in_ESP;
   ushort uVar5;
   short in_stack_00000008;
-  byte in_stack_00000014;
-  short in_stack_00000018;
-  char in_stack_0000001c;
+  short in_stack_0000000c;
+  byte in_stack_00000010;
+  char local_68 [92];
   
   crt_memory_c_memset_FUN_005fde40(this_ptr,0,0x28);
-  if (in_stack_00000014 < 0x10) {
-    if (7 < in_stack_00000014) {
-      if (in_stack_00000014 < 9) {
+  if (in_stack_00000010 < 0x10) {
+    if (7 < in_stack_00000010) {
+      if (in_stack_00000010 < 9) {
         this_ptr->bytes_per_pixel = '\x01';
         goto LAB_00556a6b;
       }
-      if (in_stack_00000014 == 0xf) goto LAB_00556b15;
+      if (in_stack_00000010 == 0xf) goto LAB_00556b15;
     }
   }
   else {
-    if (in_stack_00000014 < 0x11) {
+    if (in_stack_00000010 < 0x11) {
 LAB_00556b15:
       this_ptr->bytes_per_pixel = '\x02';
       goto LAB_00556a6b;
     }
-    if (0x17 < in_stack_00000014) {
-      if (in_stack_00000014 < 0x19) {
+    if (0x17 < in_stack_00000010) {
+      if (in_stack_00000010 < 0x19) {
         this_ptr->bytes_per_pixel = '\x03';
         goto LAB_00556a6b;
       }
-      if (in_stack_00000014 == 0x20) {
+      if (in_stack_00000010 == 0x20) {
         this_ptr->bytes_per_pixel = '\x04';
         goto LAB_00556a6b;
       }
     }
   }
   crt_stdio_c_sprintf_FUN_005fdbd0
-            (&stack0xffffff9c,"Invalid bit depth [%d] for bitmap",(uint)in_stack_00000014);
+            (local_68,"Invalid bit depth [%d] for bitmap",(uint)in_stack_00000010);
   g_CurrentFilename = "..\\shape\\quantize.cpp";
   g_CurrentLineNumber = 0x67;
-  core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xffffffa0);
+  core_main_c_displayErrorAndQuit_FUN_00506f10(local_68);
 LAB_00556a6b:
-  this_ptr->height = in_stack_00000018;
-  this_ptr->bit_depth = in_stack_0000001c;
+  this_ptr->height = in_stack_0000000c;
+  this_ptr->bit_depth = in_stack_00000010;
   this_ptr->width = in_stack_00000008;
   uVar5 = in_stack_00000008 * (ushort)(byte)this_ptr->bytes_per_pixel;
   this_ptr->bytes_per_row = uVar5;

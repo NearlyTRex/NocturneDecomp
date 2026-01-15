@@ -1,21 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 213,
+    "complexity_score": 187,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 5,
-    "pseudocode_lines": 53,
-    "suspect_count": 13,
+    "pseudocode_lines": 52,
+    "suspect_count": 11,
     "suspect_types": [
       "call_esp_preserve",
       "negative_offset",
       "param_count_too_few",
       "pointer_cast",
-      "special_crt_function",
-      "stack_param"
+      "special_crt_function"
     ],
-    "total_lines": 127
+    "total_lines": 126
   },
   "cross_references": [
     {
@@ -193,64 +192,50 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000018",
-      "text": "byte in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 24,
+      "line": 23,
       "match": "piVar7[-2].",
       "text": "this_ptr = (ostrstream *)&piVar7[-2].__tied_stream;",
       "type": "negative_offset"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_00000018",
-      "text": "if ((in_stack_00000018 & 0xc) == 0) {",
-      "type": "stack_param"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 49,
+      "line": 48,
       "match": "poVar6[-2].",
       "text": "ppvVar1 = &poVar6[-2].ios.__xalloc_list;",
       "type": "negative_offset"
     },
     {
       "description": "Complex pointer cast",
-      "line": 50,
+      "line": 49,
       "match": "(int *)((int)",
       "text": "*(int *)((int)ppvVar1 + *(int *)((int)*ppvVar1 + 4) + -4) = *(int *)((int)*ppvVar1 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 50,
+      "line": 49,
       "match": "(int *)((int)",
       "text": "*(int *)((int)ppvVar1 + *(int *)((int)*ppvVar1 + 4) + -4) = *(int *)((int)*ppvVar1 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 50,
+      "line": 49,
       "match": "(int *)((int)",
       "text": "*(int *)((int)ppvVar1 + *(int *)((int)*ppvVar1 + 4) + -4) = *(int *)((int)*ppvVar1 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 51,
+      "line": 50,
       "match": "poVar6[-1].",
       "text": "poVar6[-1].ios.cleanup_vtable = &PTR_FUN_00665b7c;",
       "type": "negative_offset"
     },
     {
       "description": "Complex pointer cast",
-      "line": 54,
+      "line": 53,
       "match": "(int *)((int)",
       "text": "*(void ***)((int)(&poVar6->ios + -1) + *(int *)((int)pvVar3 + 4)) = &PTR_FUN_00665b8c;",
       "type": "pointer_cast"

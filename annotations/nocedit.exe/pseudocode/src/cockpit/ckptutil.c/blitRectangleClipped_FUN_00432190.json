@@ -1,19 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 161,
-    "complexity_score": 283,
+    "complexity_score": 235,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 5,
-    "pseudocode_lines": 53,
-    "suspect_count": 21,
+    "pseudocode_lines": 55,
+    "suspect_count": 16,
     "suspect_types": [
       "callind_preserve",
       "pointer_cast",
       "stack_param",
       "unaffected_reg"
     ],
-    "total_lines": 214
+    "total_lines": 216
   },
   "cross_references": [],
   "function": {
@@ -203,135 +203,100 @@
   "suspects": [
     {
       "description": "Unaffected register variable",
-      "line": 9,
-      "match": "unaff_EBX",
-      "text": "int unaff_EBX;",
+      "line": 12,
+      "match": "unaff_EDI",
+      "text": "int unaff_EDI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000018",
-      "text": "int in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000030",
-      "text": "int in_stack_00000030;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 15,
-      "match": "in_stack_00000034",
-      "text": "int in_stack_00000034;",
+      "match": "in_stack_0000001c",
+      "text": "int in_stack_0000001c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_00000018",
-      "text": "(iVar4 = 0, 0 < in_stack_00000018)))) {",
+      "line": 16,
+      "match": "in_stack_00000020",
+      "text": "int in_stack_00000020;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 29,
+      "line": 30,
       "match": "(void *)((int)",
-      "text": "pvVar5 = (void *)((int)pvVar5 + dest_x);",
+      "text": "(*pCVar3)((void *)(iVar6 + iVar2),(void *)((int)sprite_data + iVar2),(iVar4 - iVar2) + 1);",
       "type": "pointer_cast"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 30,
-      "match": "(void *)((int)",
-      "text": "(*pCVar1)((void *)((int)pvVar5 + iVar3),(void *)((int)sprite_data + iVar3),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 30,
-      "match": "(void *)((int)",
-      "text": "(*pCVar1)((void *)((int)pvVar5 + iVar3),(void *)((int)sprite_data + iVar3),",
-      "type": "pointer_cast"
+      "description": "Unaffected register variable",
+      "line": 32,
+      "match": "unaff_EDI",
+      "text": "iVar6 = iVar6 + unaff_EDI;",
+      "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 33,
-      "match": "in_stack_00000030",
-      "text": "sprite_data = (void *)((int)sprite_data + in_stack_00000030);",
+      "match": "in_stack_0000001c",
+      "text": "sprite_data = (void *)((int)sprite_data + in_stack_0000001c);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
       "line": 33,
       "match": "(void *)((int)",
-      "text": "sprite_data = (void *)((int)sprite_data + in_stack_00000030);",
+      "text": "sprite_data = (void *)((int)sprite_data + in_stack_0000001c);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 34,
-      "match": "in_stack_00000034",
-      "text": "} while (iVar4 < in_stack_00000034);",
+      "match": "in_stack_00000020",
+      "text": "} while (iVar1 < in_stack_00000020);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
       "line": 39,
       "match": "(void *)((int)",
-      "text": "pvVar5 = (void *)((int)g_ScreenBufferArray[width] + dest_x * 2);",
+      "text": "pvVar7 = (void *)((int)g_ScreenBufferArray[dest_y] + dest_x * 2);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 43,
-      "match": "in_stack_00000018",
-      "text": "(iVar4 = 0, 0 < in_stack_00000018)) {",
-      "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 45,
+      "line": 46,
       "match": "(void *)((int)",
-      "text": "(*pCVar1)((void *)(iVar3 * 2 + (int)pvVar5),(void *)((int)sprite_data + iVar3),",
+      "text": "(*pCVar3)((void *)(iVar6 * 2 + (int)pvVar7),(void *)((int)sprite_data + iVar6),",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 48,
-      "match": "unaff_EBX",
-      "text": "pvVar5 = (void *)((int)pvVar5 + unaff_EBX);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 48,
-      "match": "(void *)((int)",
-      "text": "pvVar5 = (void *)((int)pvVar5 + unaff_EBX);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 49,
-      "match": "in_stack_00000030",
-      "text": "sprite_data = (void *)((int)sprite_data + in_stack_00000030);",
-      "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
       "line": 49,
       "match": "(void *)((int)",
-      "text": "sprite_data = (void *)((int)sprite_data + in_stack_00000030);",
+      "text": "pvVar7 = (void *)((int)pvVar7 + iVar2 / 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 50,
-      "match": "in_stack_00000034",
-      "text": "} while (iVar4 < in_stack_00000034);",
+      "match": "in_stack_0000001c",
+      "text": "sprite_data = (void *)((int)sprite_data + in_stack_0000001c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 50,
+      "match": "(void *)((int)",
+      "text": "sprite_data = (void *)((int)sprite_data + in_stack_0000001c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 51,
+      "match": "in_stack_00000020",
+      "text": "} while (iVar1 < in_stack_00000020);",
       "type": "stack_param"
     },
     {

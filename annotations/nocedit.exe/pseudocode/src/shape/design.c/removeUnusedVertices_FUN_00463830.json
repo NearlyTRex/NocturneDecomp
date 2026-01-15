@@ -1,16 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 199,
-    "complexity_score": 90,
+    "complexity_score": 91,
     "cross_reference_count": 8,
     "function_call_count": 7,
     "global_count": 14,
-    "pseudocode_lines": 65,
+    "pseudocode_lines": 66,
     "suspect_count": 2,
     "suspect_types": [
       "pointer_cast"
     ],
-    "total_lines": 264
+    "total_lines": 265
   },
   "cross_references": [
     {
@@ -440,16 +440,16 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 53,
+      "line": 54,
       "match": "(int *)((int)",
       "text": "*(int *)((int)dest + local_1c * 4) = g_VertexCount;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 61,
+      "line": 62,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)dest + g_ModelPolygonData[local_1c].vertex_indices[iVar6] * 4);",
+      "text": "*(uint *)((int)dest + g_ModelPolygonData[local_1c].vertex_indices[local_2c] * 4);",
       "type": "pointer_cast"
     }
   ]

@@ -11,8 +11,6 @@ core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
           (CMotionController *this_ptr,int desired_state_index,int force_immediate)
 
 {
-  int in_stack_00000010;
-  
   if (desired_state_index < 0) {
     this_ptr->state_index = -1;
     return;
@@ -32,7 +30,7 @@ core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
     this_ptr->tween_set_new_state = 0;
     this_ptr->state_index = desired_state_index;
   }
-  if (in_stack_00000010 == 0) {
+  if (force_immediate == 0) {
     return;
   }
   core_motion_cpp_CMotionController_findAndStartTransition_FUN_0052d950(this_ptr);

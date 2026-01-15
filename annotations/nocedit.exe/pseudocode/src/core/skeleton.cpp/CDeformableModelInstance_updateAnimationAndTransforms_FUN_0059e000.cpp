@@ -11,9 +11,7 @@ core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_0059
           (CDeformableModelInstance *this_ptr)
 
 {
-  CDeformableModelInstance *in_stack_00000008;
-  
   core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0059e020(this_ptr);
-  core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(in_stack_00000008);
+  core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(this_ptr);
   return;
 }

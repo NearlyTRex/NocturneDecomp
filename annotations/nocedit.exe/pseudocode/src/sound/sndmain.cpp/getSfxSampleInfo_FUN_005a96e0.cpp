@@ -14,7 +14,6 @@ sound_sndmain_cpp_getSfxSampleInfo_FUN_005a96e0(uint sfx_handle,CSfxSample *outp
   int iVar2;
   CSfxSample *pCVar3;
   byte bVar4;
-  uint *in_stack_0000000c;
   
   bVar4 = 0;
   pCVar1 = sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005a5d00(sfx_handle,1);
@@ -23,9 +22,9 @@ sound_sndmain_cpp_getSfxSampleInfo_FUN_005a96e0(uint sfx_handle,CSfxSample *outp
   }
   pCVar3 = pCVar1->sample;
   for (iVar2 = 0x54; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *in_stack_0000000c = *(uint *)(pCVar3->sample_info).name;
+    *(uint *)(output_buffer->sample_info).name = *(uint *)(pCVar3->sample_info).name;
     pCVar3 = (CSfxSample *)((int)pCVar3 + (uint)bVar4 * -8 + 4);
-    in_stack_0000000c = in_stack_0000000c + (uint)bVar4 * -2 + 1;
+    output_buffer = (CSfxSample *)((int)output_buffer + (uint)bVar4 * -8 + 4);
   }
   sound_sndmain_cpp_unlockSound_FUN_005abdc0();
   return 1;

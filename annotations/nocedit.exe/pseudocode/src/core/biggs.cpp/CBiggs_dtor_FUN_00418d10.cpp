@@ -14,10 +14,8 @@ CBiggs * __cdecl core_biggs_cpp_CBiggs_dtor_FUN_00418d10(CBiggs *this_ptr,uint d
   CDeformableModelInstance *pCVar2;
   CBiggs *ptr;
   void *ptr_00;
-  uint in_stack_00000014;
-  uint in_stack_00000018;
-  uint in_stack_0000001c;
-  byte in_stack_00000028;
+  uint unaff_EBX;
+  uint unaff_retaddr;
   
   if ((d1 & 4) != 0) {
     ptr_00 = crt_memory_c_freeSingleInstance_FUN_005fe632(this_ptr,&g_CBiggsTypeInfo);
@@ -31,12 +29,12 @@ CBiggs * __cdecl core_biggs_cpp_CBiggs_dtor_FUN_00418d10(CBiggs *this_ptr,uint d
   core_backgnd_cpp_cleanupVector_FUN_004126e0((CVector3f **)(iVar1 + -0xb4));
   iVar1 = core_cloth_cpp_FUN_0043bf80();
   pCVar2 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40
-                     ((CDeformableModelInstance *)(iVar1 + -0x293c),0,in_stack_00000014,
-                      in_stack_00000018,in_stack_0000001c);
+                     ((CDeformableModelInstance *)(iVar1 + -0x293c),0,unaff_EBX,unaff_retaddr,
+                      (uint)this_ptr);
   ptr = (CBiggs *)
         core_actor_cpp_CDemonActor_dtor_FUN_00408a30
                   ((CDemonActor *)(pCVar2[-1].part_visibility_flags + 7),1);
-  if ((in_stack_00000028 & 2) == 0) {
+  if ((d1 & 2) == 0) {
     return ptr;
   }
   shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);

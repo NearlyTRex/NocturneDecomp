@@ -1,17 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 105,
-    "complexity_score": 220,
+    "complexity_score": 219,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
-    "pseudocode_lines": 30,
+    "pseudocode_lines": 29,
     "suspect_count": 18,
     "suspect_types": [
       "extra_output",
       "stack_param"
     ],
-    "total_lines": 135
+    "total_lines": 134
   },
   "cross_references": [
     {
@@ -214,28 +214,28 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 6,
+      "line": 5,
       "match": "extraout_EAX",
       "text": "int extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 10,
+      "line": 9,
       "match": "in_stack_00000008",
       "text": "float *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 11,
+      "line": 10,
       "match": "in_stack_0000000c",
       "text": "float *in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 11,
       "match": "in_stack_00000010",
       "text": "float in_stack_00000010;",
       "type": "stack_param"
@@ -333,9 +333,9 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 29,
+      "line": 28,
       "match": "extraout_EAX",
-      "text": "iVar2 = extraout_EAX;",
+      "text": "iVar1 = extraout_EAX;",
       "type": "extra_output"
     }
   ]

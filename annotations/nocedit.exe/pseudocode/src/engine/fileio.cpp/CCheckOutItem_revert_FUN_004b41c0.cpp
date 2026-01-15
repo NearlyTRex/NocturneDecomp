@@ -11,17 +11,16 @@ engine_fileio_cpp_CCheckOutItem_revert_FUN_004b41c0(CCheckOutItem *this_ptr,char
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
-  char acStack_100 [252];
+  char local_108 [260];
   
   iVar1 = engine_fileio_cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50
-                    (this_ptr,output_buffer,&stack0xfffffef8,"Select file to undo check out",
+                    (this_ptr,output_buffer,local_108,"Select file to undo check out",
                      "*");
   if (iVar1 != 0) {
     iVar1 = engine_fileio_cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0
-                      (this_ptr,&stack0xfffffefc);
+                      (this_ptr,local_108);
     if (iVar1 != 0) {
-      engine_fileio_cpp_getLatestFileFromRepository_FUN_004b3220(this_ptr->name,acStack_100);
+      engine_fileio_cpp_getLatestFileFromRepository_FUN_004b3220(this_ptr->name,local_108);
       return;
     }
   }

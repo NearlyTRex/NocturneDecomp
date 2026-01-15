@@ -14,7 +14,6 @@ int __watcallStack crt_stdlib_c_system_FUN_00602130(char *command)
   int iVar2;
   char *args;
   char *cmdName;
-  BADSPACEBASE *in_ESP;
   void *in_stack_ffffffe8;
   uint in_stack_ffffffec;
   int *result;

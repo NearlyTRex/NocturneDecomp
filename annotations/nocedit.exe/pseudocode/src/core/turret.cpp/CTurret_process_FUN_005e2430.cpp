@@ -16,26 +16,27 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr)
   int iVar5;
   CVector3f *pCVar6;
   uint uVar7;
-  BADSPACEBASE *in_ESP;
   uint *puVar8;
   float *pfVar9;
   byte bVar10;
   float in_stack_00000008;
   float afStackY_186c [1497];
-  char *pcVar11;
+  char *sound_name;
   CQuaternion4f *quat_ptr;
   CVector3f *in_stack_ffffff08;
   char local_f4 [100];
   CQuaternion4f local_90;
   CQuaternion4f local_80;
-  float fStack_6c;
-  float afStack_68 [6];
+  float local_70;
+  float afStack_6c [7];
   CQuaternion4f local_50;
-  float fStack_3c;
-  uint auStack_38 [2];
+  float local_40;
+  uint auStack_3c [3];
   CVector3f local_30;
-  ulonglong uStack_20;
+  double local_24;
+  CQuaternion4f *local_1c;
   CVector3f *local_18;
+  float local_14;
   
   bVar10 = 0;
   iVar5 = this_ptr->state;
@@ -61,7 +62,7 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr)
     this_ptr->state = 1;
     this_ptr->timer = this_ptr->charge_time;
     sound_sndmain_cpp_killSfx_FUN_005a9c40(uVar2);
-    pcVar11 = "turret-ani?.wav";
+    sound_name = "turret-ani?.wav";
     goto LAB_005e24c7;
   case 1:
     fVar4 = this_ptr->timer - in_stack_00000008;
@@ -133,33 +134,31 @@ void __cdecl core_turret_cpp_CTurret_process_FUN_005e2430(CTurret *this_ptr)
     this_ptr->state = 4;
     this_ptr->timer = this_ptr->power_down_time;
     sound_sndmain_cpp_killSfx_FUN_005a9c40(uVar2);
-    pcVar11 = "turret-ani?.wav";
+    sound_name = "turret-ani?.wav";
 LAB_005e24c7:
     uVar7 = (*((this_ptr->base_weapon).base_actor.vtable)->playSound)
-                      ((CDemonActor *)this_ptr,pcVar11);
+                      ((CDemonActor *)this_ptr,sound_name);
     *(uint *)(this_ptr->field12_0x85c + 0x5c) = uVar7;
     break;
   case 4:
-    pcVar11 = this_ptr->field1_0x578;
-    uStack_20 = (double)CONCAT44 /* combine 2-byte values */(pcVar11,(uint)uStack_20);
+    local_1c = (CQuaternion4f *)this_ptr->field1_0x578;
     this_ptr->timer = this_ptr->timer - in_stack_00000008;
     local_18 = (CVector3f *)&(this_ptr->base_weapon).base_actor.orient;
     if (0.0 < this_ptr->timer) {
       core_xform_cpp_eulerToQuaternion_FUN_005f7b20((CQuaternion4f *)local_18,in_stack_ffffff08);
-      local_90.w = fStack_3c;
+      local_90.w = local_40;
       puVar8 = (uint *)((int)&local_90 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
-      *(uint *)((int)&local_90 + (uint)bVar10 * -8 + 4) = auStack_38[(uint)bVar10 * -2];
-      *puVar8 = auStack_38[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
+      *(uint *)((int)&local_90 + (uint)bVar10 * -8 + 4) = auStack_3c[(uint)bVar10 * -2];
+      *puVar8 = auStack_3c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
       puVar8[(uint)bVar10 * -2 + 1] =
-           (auStack_38 + (uint)bVar10 * -2 + (uint)bVar10 * -2 + 1)[(uint)bVar10 * -2 + 1];
-      core_xform_cpp_eulerToQuaternion_FUN_005f7b20
-                ((CQuaternion4f *)((ulonglong)uStack_20 >> 0x20),in_stack_ffffff08);
-      local_50.x = fStack_6c;
-      pfVar9 = (float *)((int)&local_50 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 0xc);
-      *(float *)((int)&local_50 + (uint)bVar10 * -8 + 8) = afStack_68[(uint)bVar10 * -2];
-      *pfVar9 = afStack_68[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
+           (auStack_3c + (uint)bVar10 * -2 + (uint)bVar10 * -2 + 1)[(uint)bVar10 * -2 + 1];
+      core_xform_cpp_eulerToQuaternion_FUN_005f7b20(local_1c,in_stack_ffffff08);
+      local_50.w = local_70;
+      pfVar9 = (float *)((int)&local_50 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
+      *(float *)((int)&local_50 + (uint)bVar10 * -8 + 4) = afStack_6c[(uint)bVar10 * -2];
+      *pfVar9 = afStack_6c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
       pfVar9[(uint)bVar10 * -2 + 1] =
-           (afStack_68 + (uint)bVar10 * -2 + (uint)bVar10 * -2 + 1)[(uint)bVar10 * -2 + 1];
+           (afStack_6c + (uint)bVar10 * -2 + (uint)bVar10 * -2 + 1)[(uint)bVar10 * -2 + 1];
       core_xform_cpp_slerpQuaternion_FUN_005f77e0
                 (&local_90,&local_50,
                  (CQuaternion4f *)
@@ -167,12 +166,12 @@ LAB_005e24c7:
                  (float)2),(float)in_stack_ffffff08);
       quat_ptr = &local_80;
       pCVar6 = &local_30;
-      local_80.w = afStack_68[2];
+      local_80.w = afStack_6c[3];
       pfVar9 = (float *)((int)&local_80 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
-      *(float *)((int)&local_80 + (uint)bVar10 * -8 + 4) = afStack_68[(uint)bVar10 * -2 + 3];
-      *pfVar9 = afStack_68[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4];
+      *(float *)((int)&local_80 + (uint)bVar10 * -8 + 4) = afStack_6c[(uint)bVar10 * -2 + 4];
+      *pfVar9 = afStack_6c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 5];
       pfVar9[(uint)bVar10 * -2 + 1] =
-           (afStack_68 + (uint)bVar10 * -2 + (uint)bVar10 * -2 + 4)[(uint)bVar10 * -2 + 1];
+           (afStack_6c + (uint)bVar10 * -2 + (uint)bVar10 * -2 + 5)[(uint)bVar10 * -2 + 1];
       pCVar6 = core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0(pCVar6,quat_ptr);
       if (pCVar6 != local_18) {
         local_18->x = pCVar6->x;
@@ -184,8 +183,8 @@ LAB_005e24c7:
     else {
       this_ptr->state = 0;
       this_ptr->timer = 0.0;
-      if (local_18 != (CVector3f *)pcVar11) {
-        ((COrientation *)local_18)->pitch = *(float *)pcVar11;
+      if ((CQuaternion4f *)local_18 != local_1c) {
+        ((COrientation *)local_18)->pitch = *(float *)local_1c;
         (this_ptr->base_weapon).base_actor.orient.bank = *(float *)(this_ptr->field1_0x578 + 4);
         (this_ptr->base_weapon).base_actor.orient.heading = *(float *)(this_ptr->field1_0x578 + 8);
       }
@@ -208,6 +207,7 @@ LAB_005e24c7:
   if ((0 < iVar5) || (0.0 < *(float *)(this_ptr->field12_0x85c + 0x10))) {
     *(int *)(this_ptr->field12_0x85c + 0x54) = *(int *)(this_ptr->field12_0x85c + 0x54) + -1;
     fVar4 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.9,1.1111112);
+    local_14 = fVar4;
     iVar5 = sound_sndmain_cpp_setSfxBaseFrequency_FUN_005a9b40
                       (*(uint *)(this_ptr->field12_0x85c + 0x58),fVar4);
     if (iVar5 == 0) {
@@ -219,8 +219,8 @@ LAB_005e24c7:
     }
   }
   else {
-    uStack_20 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(2,(uint)in_stack_ffffff08);
-    if (0.0 <= uStack_20) {
+    local_24 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(2,(uint)in_stack_ffffff08);
+    if (0.0 <= local_24) {
       sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(this_ptr->field12_0x85c + 0x58));
       (*((this_ptr->base_weapon).base_actor.vtable)->playSound)
                 ((CDemonActor *)this_ptr,"turret-tail.wav");

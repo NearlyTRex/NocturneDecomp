@@ -21,7 +21,6 @@ core_skeleton_cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005
   float fVar7;
   CSkeleton *pCVar8;
   int bone_index;
-  BADSPACEBASE *in_ESP;
   uint *puVar9;
   uint *puVar10;
   byte bVar11;

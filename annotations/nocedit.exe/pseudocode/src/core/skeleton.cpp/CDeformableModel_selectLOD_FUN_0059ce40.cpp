@@ -16,13 +16,12 @@ core_skeleton_cpp_CDeformableModel_selectLOD_FUN_0059ce40
   int extraout_ECX;
   int *piVar3;
   double dVar4;
-  CBoundingBox3D *in_stack_0000000c;
   
   iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
   if (iVar1 == 0) {
     iVar1 = 0;
     if (1 < this_ptr->num_lods) {
-      fVar2 = core_box_cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_00420840(in_stack_0000000c);
+      fVar2 = core_box_cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_00420840(bounding_box);
       dVar4 = crt_math_c_round_FUN_005fe6b0((double)fVar2);
       iVar1 = extraout_ECX + -1;
       if (0 < iVar1) {

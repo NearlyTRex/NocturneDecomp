@@ -9,10 +9,8 @@
 void __cdecl core_armour_cpp_CArmour_FUN_00412240(CArmour *this_ptr)
 
 {
-  int in_stack_00000008;
-  
   core_enemy_cpp_CEnemy_FUN_004a9650(&this_ptr->base_enemy);
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450
-            ((CDeformableModelInstance *)(in_stack_00000008 + 0x158));
+            (&(this_ptr->base_enemy).base_character.model);
   return;
 }

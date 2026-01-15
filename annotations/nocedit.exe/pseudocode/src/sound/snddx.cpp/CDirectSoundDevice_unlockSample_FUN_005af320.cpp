@@ -13,8 +13,7 @@ sound_snddx_cpp_CDirectSoundDevice_unlockSample_FUN_005af320
 {
   uint error_code;
   char *pcVar1;
-  BADSPACEBASE *in_ESP;
-  char acStack_17c [364];
+  char acStack_1a0 [400];
   
   if ((((buffer_id < 1) || (0x18 < buffer_id)) ||
       (g_DirectSoundSampleBuffers[buffer_id] == (IDirectSoundBuffer *)0x0)) ||
@@ -33,9 +32,9 @@ sound_snddx_cpp_CDirectSoundDevice_unlockSample_FUN_005af320
     if (error_code != 0) {
       pcVar1 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(error_code);
       crt_stdio_c_sprintf_FUN_005fdbd0
-                (&stack0xfffffe80,"DirectSux: Unable to %s.  (%s)",
-                 "Unlock hw sample buffer",pcVar1);
-      sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_17c);
+                (acStack_1a0,"DirectSux: Unable to %s.  (%s)","Unlock hw sample buffer",
+                 pcVar1);
+      sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_1a0);
     }
     g_DirectSoundBufferMetadata[buffer_id].field1_0x4 = 0;
   }

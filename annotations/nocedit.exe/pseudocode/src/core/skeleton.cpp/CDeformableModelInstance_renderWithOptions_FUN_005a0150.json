@@ -1,18 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 171,
+    "complexity_score": 90,
     "cross_reference_count": 11,
     "function_call_count": 6,
     "global_count": 0,
-    "pseudocode_lines": 26,
-    "suspect_count": 13,
+    "pseudocode_lines": 25,
+    "suspect_count": 6,
     "suspect_types": [
-      "call_esp_preserve",
-      "stack_param",
-      "unaffected_reg"
+      "call_esp_preserve"
     ],
-    "total_lines": 94
+    "total_lines": 93
   },
   "cross_references": [
     {
@@ -198,55 +196,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 9,
-      "match": "unaff_EDI",
-      "text": "CBoundingBox3D *unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000018",
-      "text": "uint in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_0000001c",
-      "text": "int in_stack_0000001c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 15,
-      "match": "unaff_EDI",
-      "text": "lod_index = core_skeleton_cpp_CDeformableModel_selectLOD_FUN_0059ce40(this_ptr_00,unaff_EDI);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_0000001c",
-      "text": "if (in_stack_0000001c == 0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_00000018",
-      "text": "if (((int)in_stack_00000018 < 0) || ((in_stack_00000018 & 0x100) == 0)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_00000018",
-      "text": "if (((int)in_stack_00000018 < 0) || ((in_stack_00000018 & 0x100) == 0)) {",
-      "type": "stack_param"
-    },
     {
       "add_esp_value": 8,
       "call_address": "005a0163",

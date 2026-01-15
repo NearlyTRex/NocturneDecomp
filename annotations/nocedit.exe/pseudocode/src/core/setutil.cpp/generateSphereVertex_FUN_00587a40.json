@@ -1,19 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 114,
+    "complexity_score": 83,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 9,
-    "pseudocode_lines": 34,
-    "suspect_count": 6,
+    "pseudocode_lines": 33,
+    "suspect_count": 4,
     "suspect_types": [
-      "badspacebase",
       "lea_esp_stack_addr",
-      "register_param",
       "suspect_float"
     ],
-    "total_lines": 109
+    "total_lines": 108
   },
   "cross_references": [],
   "function": {
@@ -220,29 +218,15 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 8,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 8,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Likely misinterpreted integer as float",
-      "line": 34,
+      "line": 33,
       "match": "1.1754944e-38",
       "text": "g_CDemonRendererPtr->vertex_buffer_ptr[vertex_buffer_index].u = 1.1754944e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 35,
+      "line": 34,
       "match": "1.1754944e-38",
       "text": "pCVar1->vertex_buffer_ptr[vertex_buffer_index].v = 1.1754944e-38;",
       "type": "suspect_float"

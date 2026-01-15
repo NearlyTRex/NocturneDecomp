@@ -25,7 +25,6 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this
   uint uVar8;
   int *piVar9;
   ushort *puVar10;
-  BADSPACEBASE *in_ESP;
   SMpegSubbandScalefactors *subband_samples;
   SMpegFrameHeader *pSVar11;
   SMpegFrameHeader *pSVar12;
@@ -141,14 +140,14 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this
         dVar16 = crt_math_c_round_FUN_005fe6b0
                            (g_MpegSampleRateTable[local_8c][*(int *)(local_e0.mpeg_version + 0x10)])
         ;
-        local_90 = (int)ROUND(dVar16);
-        if (local_8c == 1) {
-          if (((local_90 == 0x30) && (0x37 < extraout_EAX)) ||
+        local_94 = (int)ROUND(dVar16);
+        if (local_90 == 1) {
+          if (((local_94 == 0x30) && (0x37 < extraout_EAX)) ||
              ((0x37 < extraout_EAX && (extraout_EAX < 0x51)))) {
             iVar3 = 0;
           }
-          else if ((local_90 == 0x30) || (extraout_EAX < 0x60)) {
-            if ((local_90 == 0x20) || (0x30 < extraout_EAX)) {
+          else if ((local_94 == 0x30) || (extraout_EAX < 0x60)) {
+            if ((local_94 == 0x20) || (0x30 < extraout_EAX)) {
               iVar3 = 3;
             }
             else {
@@ -162,7 +161,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this
         else {
           iVar3 = 4;
         }
-        if (iVar3 != local_a0->bitrate_index) {
+        if (iVar3 != *(int *)(local_a4 + 0xc)) {
           g_CurrentFilename = "..\\sound\\mp3.cpp";
           g_CurrentLineNumber = 0x1a2;
           core_main_c_displayErrorAndQuit_FUN_00506f10("MPEG Layer 2 - pick_table - can't load tables!  File: %s");
@@ -504,19 +503,21 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00534d40(CMP3Decoder *this
       }
       if (0 < local_104) {
         local_e0.mode_extension = 0;
+        iVar6 = 0x53528b;
         local_e0.channel_mode = in_stack_ffff9f30;
         dVar16 = crt_math_c_round_FUN_005fe6b0
                            ((((double)local_60cc / g_MpegSampleRateTable[local_110][local_100]) *
                             (double)g_MpegBitrateTable[local_110 + -1][local_10c + 2][local_104]) /
                             (double)in_stack_ffff9f30);
-        local_60 = (int)ROUND(dVar16);
+        local_64 = (SMpegFrame *)(int)ROUND(dVar16);
         if (local_fc != 0) {
-          local_60 = local_60 + 1;
+          local_64 = (SMpegFrame *)((int)local_64 + 1);
         }
-        local_60 = local_60 * in_stack_ffff9f30 -
-                   (((this_ptr->file_bitstream).total_bits_read - local_b0) + 0xc);
+        local_64 = (SMpegFrame *)
+                   ((int)local_64 * iVar6 -
+                   (((this_ptr->file_bitstream).total_bits_read - local_e0.emphasis) + 0xc));
         iVar6 = 0;
-        if (0 < local_60) {
+        if (0 < (int)local_64) {
           do {
             sound_mp3_cpp_CFileBitStream_readBit_FUN_0052ee50(&this_ptr->file_bitstream);
             iVar6 = iVar6 + 1;

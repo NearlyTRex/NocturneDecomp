@@ -10,8 +10,6 @@ void __cdecl core_ammobox_cpp_CAmmoBox_getPropertyList_FUN_00411b30(CAmmoBox *th
 
 {
   CActorPropertyList *in_stack_00000008;
-  char *pcStack0000000c;
-  char *pcStack00000010;
   
   core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290(&this_ptr->base_actor,in_stack_00000008);
   core_actor_cpp_CActorPropertyList_FUN_0040e3b0(in_stack_00000008);
@@ -21,10 +19,7 @@ void __cdecl core_ammobox_cpp_CAmmoBox_getPropertyList_FUN_00411b30(CAmmoBox *th
     core_actor_cpp_CActorPropertyList_FUN_0040e670(in_stack_00000008);
   }
   core_actor_cpp_CActorPropertyList_FUN_0040e350(in_stack_00000008);
-  pcStack0000000c = (char *)&this_ptr->has_collision;
   core_actor_cpp_CActorPropertyList_FUN_0040e330(in_stack_00000008);
-  pcStack00000010 = this_ptr->open_sound;
-  pcStack0000000c = "Open sound";
   core_actor_cpp_CActorPropertyList_FUN_0040e2d0(in_stack_00000008);
   return;
 }

@@ -13,10 +13,9 @@ core_set_cpp_CDemonSet_renderPrimitiveBatch_FUN_00570770
 
 {
   SMRGLPrimitiveQuad *pSVar1;
-  BADSPACEBASE *in_ESP;
   int iVar2;
-  int in_stack_00000014;
-  SMRGLHeaderPrimitive local_34;
+  SMRGLHeaderPrimitive local_38;
+  int local_20;
   int local_1c;
   int local_18;
   int local_14;
@@ -31,23 +30,24 @@ core_set_cpp_CDemonSet_renderPrimitiveBatch_FUN_00570770
     if ((this_ptr->per_pixel_lighting_enabled != 0) &&
        (iVar2 = 0, pSVar1 = primitive_array, 0 < primitive_count)) {
       do {
-        local_34.base.count = (pSVar1->base).base.count;
-        local_34.surface_normal.A = (pSVar1->base).surface_normal.A;
-        local_34.surface_normal.B = (pSVar1->base).surface_normal.B;
-        local_34.surface_normal.C = (pSVar1->base).surface_normal.C;
-        local_34.surface_normal.D = (pSVar1->base).surface_normal.D;
-        local_1c = pSVar1->vertices[0].vertex_index;
-        local_18 = pSVar1->vertices[1].vertex_index;
-        local_14 = pSVar1->vertices[2].vertex_index;
+        local_38.base.count = (pSVar1->base).base.count;
+        local_38.surface_normal.A = (pSVar1->base).surface_normal.A;
+        local_38.surface_normal.B = (pSVar1->base).surface_normal.B;
+        local_38.surface_normal.C = (pSVar1->base).surface_normal.C;
+        local_38.surface_normal.D = (pSVar1->base).surface_normal.D;
+        local_20 = pSVar1->vertices[0].vertex_index;
+        local_1c = pSVar1->vertices[1].vertex_index;
+        local_18 = pSVar1->vertices[2].vertex_index;
+        local_14 = pSVar1->vertices[3].vertex_index;
         pSVar1 = pSVar1 + 1;
         iVar2 = iVar2 + 1;
         engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0
-                  (g_CDemonRendererPtr,&local_34,
+                  (g_CDemonRendererPtr,&local_38,
                    core_dcamera_cpp_renderFlatColorScanline_FUN_004505e0);
       } while (iVar2 < primitive_count);
     }
     engine_drender_cpp_CDemonRenderer_renderPrimitiveBatch_FUN_0048ce90
-              (g_CDemonRendererPtr,&primitive_array->base,primitive_count,in_stack_00000014);
+              (g_CDemonRendererPtr,&primitive_array->base,primitive_count,render_flags);
   }
   return;
 }

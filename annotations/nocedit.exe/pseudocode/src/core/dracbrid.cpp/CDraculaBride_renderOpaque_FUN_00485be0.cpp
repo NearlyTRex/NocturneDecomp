@@ -12,7 +12,6 @@ int __cdecl core_dracbrid_cpp_CDraculaBride_renderOpaque_FUN_00485be0(CDraculaBr
   int iVar1;
   int iVar2;
   CBoundingBox3D *this_ptr_00;
-  BADSPACEBASE *in_ESP;
   uint render_flags;
   float local_2c;
   CBoundingBox3D CStack_28;

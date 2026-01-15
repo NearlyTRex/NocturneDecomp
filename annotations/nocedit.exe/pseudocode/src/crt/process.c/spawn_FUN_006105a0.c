@@ -13,7 +13,6 @@ int __cdecl crt_process_c_spawn_FUN_006105a0(int mode,char *cmdline,char *envblo
   DWORD DVar2;
   HANDLE hTargetProcessHandle;
   HANDLE hSourceProcessHandle;
-  BADSPACEBASE *in_ESP;
   char **in_stack_00000014;
   HANDLE hSourceHandle;
   HANDLE *lpTargetHandle;

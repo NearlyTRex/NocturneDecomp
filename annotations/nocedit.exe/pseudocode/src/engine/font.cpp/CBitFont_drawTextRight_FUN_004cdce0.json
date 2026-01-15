@@ -1,17 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 28,
-    "complexity_score": 63,
+    "complexity_score": 37,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 13,
-    "suspect_count": 4,
+    "pseudocode_lines": 12,
+    "suspect_count": 2,
     "suspect_types": [
-      "call_esp_preserve",
-      "unaffected_reg"
+      "call_esp_preserve"
     ],
-    "total_lines": 41
+    "total_lines": 40
   },
   "cross_references": [
     {
@@ -182,20 +181,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 9,
-      "match": "unaff_ESI",
-      "text": "int unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 14,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI);",
-      "type": "unaffected_reg"
-    },
     {
       "add_esp_value": 8,
       "call_address": "004cdcfc",

@@ -10,48 +10,48 @@ void __cdecl core_charactr_cpp_CCharacter_serialize_FUN_004283a0(CCharacter *thi
 
 {
   CCharacter *pCVar1;
-  BADSPACEBASE *in_ESP;
-  int unaff_EBP;
-  int unaff_ESI;
-  char *pcVar2;
-  int iVar3;
+  int local_20;
+  int local_1c;
+  int local_18;
+  int local_14;
   
   core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(&this_ptr->base_actor);
   core_actor_cpp_serializeFloat_FUN_0040b770(&this_ptr->hit_points,"hitPoints");
   if (1 < g_CCharacterClassVersion) {
     if (g_ActorReadingMode == 1) {
-      core_actor_cpp_serializeInteger_FUN_0040b7f0((int *)&stack0xffffffec,"numCarryHands")
-      ;
-      if (0 < unaff_EBP) {
+      core_actor_cpp_serializeInteger_FUN_0040b7f0(&local_1c,"numCarryHands");
+      local_20 = 0;
+      if (0 < local_1c) {
         do {
-          core_actor_cpp_serializeInteger_FUN_0040b7f0
-                    ((int *)&stack0xfffffff4,"carry hand");
-          pcVar2 = "carry actor";
+          core_actor_cpp_serializeInteger_FUN_0040b7f0(&local_18,"carry hand");
           core_actor_cpp_serializeActor_FUN_0040b870
-                    ((CDemonActor *)&this_ptr->carry_hands[unaff_ESI].carry_actor,
+                    ((CDemonActor *)&this_ptr->carry_hands[local_18].carry_actor,
                      "carry actor");
-        } while ((int)(pcVar2 + 1) < unaff_ESI);
+          local_20 = local_20 + 1;
+        } while (local_20 < local_1c);
       }
     }
     else {
+      local_14 = 0;
       pCVar1 = this_ptr;
       do {
+        if (pCVar1->carry_hands[0].carry_actor != (CDemonActor *)0x0) {
+          local_14 = local_14 + 1;
+        }
         pCVar1 = (CCharacter *)&(pCVar1->base_actor).orient_matrix.m[0].z;
       } while (pCVar1 != (CCharacter *)((this_ptr->base_actor).create_event + 0x10));
-      core_actor_cpp_serializeInteger_FUN_0040b7f0((int *)&stack0xfffffff4,"numCarryHands")
-      ;
-      iVar3 = 0;
+      local_20 = 2;
+      core_actor_cpp_serializeInteger_FUN_0040b7f0(&local_14,"numCarryHands");
+      local_20 = 0;
       do {
-        if (this_ptr->carry_hands[iVar3].carry_actor != (CDemonActor *)0x0) {
-          pcVar2 = "carry hand";
-          core_actor_cpp_serializeInteger_FUN_0040b7f0
-                    ((int *)&stack0xffffffec,"carry hand");
+        if (this_ptr->carry_hands[local_20].carry_actor != (CDemonActor *)0x0) {
+          core_actor_cpp_serializeInteger_FUN_0040b7f0(&local_20,"carry hand");
           core_actor_cpp_serializeActor_FUN_0040b870
-                    ((CDemonActor *)&this_ptr->carry_hands[(int)pcVar2].carry_actor,
+                    ((CDemonActor *)&this_ptr->carry_hands[local_20].carry_actor,
                      "carry actor");
         }
-        iVar3 = iVar3 + 1;
-      } while (iVar3 < 2);
+        local_20 = local_20 + 1;
+      } while (local_20 < 2);
     }
   }
   if (2 < g_CCharacterClassVersion) {
@@ -68,13 +68,14 @@ void __cdecl core_charactr_cpp_CCharacter_serialize_FUN_004283a0(CCharacter *thi
   if (4 < g_CCharacterClassVersion) {
     core_actor_cpp_serializeFloat_FUN_0040b770(&this_ptr->size_scale,"sizeScale");
   }
-  if (g_CCharacterClassVersion < 6) {
-    this_ptr->max_hit_points = this_ptr->hit_points;
+  if (5 < g_CCharacterClassVersion) {
+    core_actor_cpp_serializeInteger_FUN_0040b7f0
+              (&this_ptr->health_bar_mode,"healthBarMode");
+    core_actor_cpp_serializeLocalizedString_FUN_0040b6e0
+              ((char **)this_ptr->descriptive_name,"descriptiveName");
+    core_actor_cpp_serializeFloat_FUN_0040b770(&this_ptr->max_hit_points,"maxHitPoints");
     return;
   }
-  core_actor_cpp_serializeInteger_FUN_0040b7f0(&this_ptr->health_bar_mode,"healthBarMode");
-  core_actor_cpp_serializeLocalizedString_FUN_0040b6e0
-            ((char **)this_ptr->descriptive_name,"descriptiveName");
-  core_actor_cpp_serializeFloat_FUN_0040b770(&this_ptr->max_hit_points,"maxHitPoints");
+  this_ptr->max_hit_points = this_ptr->hit_points;
   return;
 }

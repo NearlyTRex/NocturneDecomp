@@ -26,7 +26,7 @@ cockpit_ckptutil_c_renderEdgeArrayWithBufferLookup_FUN_00433820
                  (uint)((ushort)edge_array->y1 >> 0xf));
       iVar2 = iVar2 + 1;
       edge_array = edge_array + 1;
-    } while (iVar2 < offset_x);
+    } while (iVar2 < edge_count);
   }
   return;
 }

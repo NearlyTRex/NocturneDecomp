@@ -1,12 +1,12 @@
 {
   "complexity": {
     "assembly_lines": 188,
-    "complexity_score": 513,
+    "complexity_score": 292,
     "cross_reference_count": 3,
     "function_call_count": 9,
     "global_count": 23,
-    "pseudocode_lines": 78,
-    "suspect_count": 41,
+    "pseudocode_lines": 77,
+    "suspect_count": 19,
     "suspect_types": [
       "call_esp_preserve",
       "param_count_too_few",
@@ -14,7 +14,7 @@
       "stack_param",
       "variadic_preserve"
     ],
-    "total_lines": 266
+    "total_lines": 265
   },
   "cross_references": [
     {
@@ -366,219 +366,65 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000004",
-      "text": "int *in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_0000000c",
-      "text": "int *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 13,
-      "match": "in_stack_00000020",
-      "text": "CDemonSet *in_stack_00000020;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000028",
-      "text": "int *in_stack_00000028;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
       "match": "in_stack_00000004",
-      "text": "if ((DAT_03659384 == (void *)0x0) && (0 < *in_stack_00000004)) {",
+      "text": "CDemonSet *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 18,
       "match": "in_stack_00000004",
-      "text": "(*in_stack_00000004 * 0x4b030,\"..\\\\core\\\\setedit.cpp\",0x1007);",
+      "text": "if ((DAT_03659384 == (void *)0x0) && (0 < in_stack_00000004->camera_count)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_00000004",
+      "text": "(in_stack_00000004->camera_count * 0x4b030,\"..\\\\core\\\\setedit.cpp\",",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 28,
-      "match": "in_stack_0000000c",
-      "text": "if (0 < *in_stack_0000000c) {",
+      "match": "in_stack_00000004",
+      "text": "if (0 < in_stack_00000004->camera_count) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 29,
-      "match": "in_stack_0000000c",
-      "text": "piVar4 = in_stack_0000000c + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_0000000c",
-      "text": "point_ptr = (CVector3i *)(in_stack_0000000c + 0x44);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 40,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[3] = g_TransformMatrix.m[0].x;",
+      "text": "local_20 = (CVector3i *)&in_stack_00000004->cameras[0].position;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 41,
+      "line": 38,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[4] = g_TransformMatrix.m[0].y;",
+      "text": "(g_CDemonRendererPtr,in_stack_00000004->cameras[local_18].projection_scale);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 42,
+      "line": 55,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[5] = g_TransformMatrix.m[0].z;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 43,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[6] = g_TransformMatrix.m[1].x;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 44,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[7] = g_TransformMatrix.m[1].y;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 45,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[8] = g_TransformMatrix.m[1].z;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 46,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[9] = g_TransformMatrix.m[2].x;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 47,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[10] = g_TransformMatrix.m[2].y;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 48,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[0xb] = g_TransformMatrix.m[2].z;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 50,
-      "match": "in_stack_00000004",
-      "text": "*in_stack_00000004 = g_CameraOriginX;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 51,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[1] = g_CameraOriginY;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 52,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[2] = g_CameraOriginZ;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 56,
-      "match": "in_stack_00000020",
-      "text": "core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(in_stack_00000020,9999.9,0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 60,
-      "match": "in_stack_0000000c",
-      "text": "iVar2 = (int)in_stack_0000000c + iVar5;",
+      "text": "core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(in_stack_00000004,9999.9,0);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 62,
+      "line": 61,
       "match": "(int *)((int)",
-      "text": "iVar1 = *(int *)(iVar3 + *(int *)((int)g_ZBufferScanlineArray + iVar5));",
+      "text": "iVar1 = *(int *)(iVar4 + *(int *)((int)g_ZBufferScanlineArray + iVar5));",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 76,
+      "line": 77,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004 = in_stack_00000004 + 0x69;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 76,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004 = in_stack_00000004 + 0x69;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 77,
-      "match": "in_stack_0000000c",
-      "text": "in_stack_0000000c = (int *)((int)in_stack_0000000c + 1);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 77,
-      "match": "in_stack_0000000c",
-      "text": "in_stack_0000000c = (int *)((int)in_stack_0000000c + 1);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 77,
-      "match": "(int *)((int)",
-      "text": "in_stack_0000000c = (int *)((int)in_stack_0000000c + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 78,
-      "match": "in_stack_0000000c",
-      "text": "} while ((int)in_stack_0000000c < *in_stack_00000028);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 78,
-      "match": "in_stack_00000028",
-      "text": "} while ((int)in_stack_0000000c < *in_stack_00000028);",
+      "text": "} while (local_18 < in_stack_00000004->camera_count);",
       "type": "stack_param"
     },
     {

@@ -15,11 +15,9 @@ engine_light_cpp_calculatePhongLighting_FUN_00505530(int world_x,int world_y,int
   int iVar3;
   int iVar4;
   uint uVar5;
-  BADSPACEBASE *in_ESP;
-  int unaff_EBP;
   byte bVar6;
-  int aiStackY_1008 [1016];
-  int iStack_20;
+  int aiStackY_100c [1017];
+  int local_24;
   int local_18;
   int local_14;
   
@@ -66,19 +64,19 @@ engine_light_cpp_calculatePhongLighting_FUN_00505530(int world_x,int world_y,int
     g_CachedViewPosition.y = g_RelativeY;
     g_CachedViewPosition.z = g_RelativeZ;
     engine_matrix_c_normalizeVector3DFloat_FUN_0050d9f0(&g_CachedViewPosition);
-    g_NormalizedViewVector.x = iStack_20;
+    g_NormalizedViewVector.x = local_24;
     *(uint *)((int)&g_NormalizedViewVector + (uint)bVar6 * -8 + 4) =
-         *(uint *)(&stack0xffffffe4 + (uint)bVar6 * -8);
+         *(uint *)(&stack0xffffffe0 + (uint)bVar6 * -8);
     *(uint *)((uint)bVar6 * -8 + 0x2dd30b4 + (uint)bVar6 * -8) =
-         *(uint *)((int)&stack0xffffffe8 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
+         *(uint *)(&stack0xffffffe4 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
   }
   lVar1 = (longlong)iVar4 * (longlong)g_NormalizedViewVector.x;
   iVar3 = ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +
-          ((uint)((longlong)local_14 * (longlong)g_NormalizedViewVector.y) >> 0x10 |
-          (int)((ulonglong)((longlong)local_14 * (longlong)g_NormalizedViewVector.y) >> 0x20) <<
-          0x10) + ((uint)((longlong)unaff_EBP * (longlong)g_NormalizedViewVector.z) >> 0x10 |
-                  (int)((ulonglong)((longlong)unaff_EBP * (longlong)g_NormalizedViewVector.z) >>
-                       0x20) << 0x10);
+          ((uint)((longlong)local_18 * (longlong)g_NormalizedViewVector.y) >> 0x10 |
+          (int)((ulonglong)((longlong)local_18 * (longlong)g_NormalizedViewVector.y) >> 0x20) <<
+          0x10) + ((uint)((longlong)local_14 * (longlong)g_NormalizedViewVector.z) >> 0x10 |
+                  (int)((ulonglong)((longlong)local_14 * (longlong)g_NormalizedViewVector.z) >> 0x20
+                       ) << 0x10);
   iVar4 = -iVar3;
   if (iVar4 < 0) goto LAB_005056f8;
   if (iVar3 == -0xffff || iVar4 < 0xffff) {

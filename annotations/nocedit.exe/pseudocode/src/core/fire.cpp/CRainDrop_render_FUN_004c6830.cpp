@@ -12,7 +12,6 @@ void __cdecl core_fire_cpp_CRainDrop_render_FUN_004c6830(CRainDrop *this_ptr)
   SRenderVertex *vertex_ptr;
   int iVar1;
   float extraout_EDX;
-  BADSPACEBASE *in_ESP;
   CVector3i *unaff_EDI;
   byte bVar2;
   double dVar3;

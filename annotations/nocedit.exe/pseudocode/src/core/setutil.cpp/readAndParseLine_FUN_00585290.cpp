@@ -13,19 +13,16 @@ core_setutil_cpp_readAndParseLine_FUN_00585290(FILE *file_handle,char *output_bu
   char cVar1;
   uint uVar2;
   int iVar3;
-  BADSPACEBASE *in_ESP;
   char *pcVar4;
   char *pcVar5;
   byte bVar6;
-  int in_stack_00000010;
-  char local_108 [2];
-  char acStack_106 [254];
+  char local_108 [256];
   
   bVar6 = 0;
   crt_stdio_c_fgets_FUN_005fefd0(local_108,0xff,file_handle);
-  pcVar4 = acStack_106 + 2;
+  pcVar4 = local_108;
   uVar2 = 0xffffffff;
-  pcVar5 = acStack_106 + 2;
+  pcVar5 = local_108;
   do {
     if (uVar2 == 0) break;
     uVar2 = uVar2 - 1;
@@ -33,27 +30,27 @@ core_setutil_cpp_readAndParseLine_FUN_00585290(FILE *file_handle,char *output_bu
     pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
   } while (cVar1 != '\0');
   if (0 < (int)(~uVar2 - 1)) {
-    acStack_106[~uVar2] = '\0';
+    local_108[~uVar2 - 2] = '\0';
   }
   iVar3 = -1;
-  pcVar5 = acStack_106 + 2;
+  pcVar5 = local_108;
   do {
     if (iVar3 == 0) break;
     iVar3 = iVar3 + -1;
     cVar1 = *pcVar5;
     pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
   } while (cVar1 != '\0');
-  acStack_106[in_stack_00000010 + 2] = '\0';
+  local_108[max_length] = '\0';
   do {
     cVar1 = *pcVar4;
-    *(char *)max_length = cVar1;
+    *output_buffer = cVar1;
     if (cVar1 == '\0') {
       return;
     }
     cVar1 = pcVar4[1];
     pcVar4 = pcVar4 + 2;
-    *(char *)(max_length + 1) = cVar1;
-    max_length = max_length + 2;
+    output_buffer[1] = cVar1;
+    output_buffer = output_buffer + 2;
   } while (cVar1 != '\0');
   return;
 }

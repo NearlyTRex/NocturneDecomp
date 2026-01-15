@@ -10,26 +10,24 @@ void __cdecl crt_memory_c_GetMemoryBounds_FUN_0060a6a0(ThreadData *pStackBound,u
 
 {
   uint uVar1;
-  BADSPACEBASE *in_ESP;
-  int *in_stack_00000018;
   _MEMORY_BASIC_INFORMATION local_28;
-  int local_c;
+  byte local_c [4];
   
-  (*PTR_VirtualQuery_00611668)(&local_c,&local_28,0x1c);
+  (*PTR_VirtualQuery_00611668)(local_c,&local_28,0x1c);
   if (g_WindowsPlatformVersion < SYSTEM_WINDOWS_NT_4_0) {
-    uVar1 = local_28.Protect + 0x3000;
+    uVar1 = (int)local_28.AllocationBase + 0x3000;
   }
   else if ((g_WindowsPlatformVersion < SYSTEM_WINDOWS_NT_4_0) || (3 < g_WindowsMinorVersion)) {
-    uVar1 = local_28.Protect + 0x13000;
+    uVar1 = (int)local_28.AllocationBase + 0x13000;
   }
   else {
-    uVar1 = local_28.Protect + 0x12000;
+    uVar1 = (int)local_28.AllocationBase + 0x12000;
   }
   if (pStackBound != (ThreadData *)0x0) {
     pStackBound->stack_limit = uVar1;
   }
-  if (in_stack_00000018 != (int *)0x0) {
-    *in_stack_00000018 = local_28.State + local_c;
+  if (pHeapBound != (uint *)0x0) {
+    *pHeapBound = (int)local_28.BaseAddress + local_28.RegionSize;
   }
   return;
 }

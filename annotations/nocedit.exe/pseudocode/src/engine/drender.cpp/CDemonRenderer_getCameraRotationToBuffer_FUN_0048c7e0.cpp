@@ -11,17 +11,16 @@ engine_drender_cpp_CDemonRenderer_getCameraRotationToBuffer_FUN_0048c7e0
           (CDemonRenderer *this_ptr,CVector3i *output)
 
 {
-  BADSPACEBASE *in_ESP;
   int *unaff_ESI;
   byte bVar1;
-  int aiStack_ff8 [1017];
+  int aiStack_ffc [1018];
   CVector3i CStack_14;
   
   bVar1 = 0;
   engine_matrix_c_getCameraRotation_FUN_0050e2f0(&CStack_14);
-  *unaff_ESI = CStack_14.y;
-  unaff_ESI[(uint)bVar1 * -2 + 1] = *(int *)((int)&CStack_14 + (uint)bVar1 * -8 + 8);
+  *unaff_ESI = CStack_14.x;
+  unaff_ESI[(uint)bVar1 * -2 + 1] = *(int *)((int)&CStack_14 + (uint)bVar1 * -8 + 4);
   (unaff_ESI + (uint)bVar1 * -2 + 1)[(uint)bVar1 * -2 + 1] =
-       *(int *)(&stack0xfffffff8 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
+       *(int *)((int)&CStack_14 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8);
   return;
 }

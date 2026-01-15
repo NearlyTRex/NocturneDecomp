@@ -10,18 +10,16 @@ void __cdecl shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(CEd
 
 {
   char *text;
-  int y_pos;
   int iVar1;
   int iVar2;
+  int y_pos;
   int iVar3;
   int iVar4;
   int iVar5;
   SWindow *pSVar6;
-  CDemonRenderer *in_stack_0000000c;
-  int in_stack_00000010;
   int color_mode;
-  int in_stack_00000018;
-  int in_stack_00000030;
+  int color_value;
+  CDemonRenderer *this_ptr_00;
   
   if (g_EditorFont == (CBitFont *)0x0) {
     g_CurrentFilename = "..\\shape\\edittool.cpp";
@@ -37,6 +35,7 @@ void __cdecl shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(CEd
   }
   iVar2 = g_WindowStackCount + -1;
   pSVar6 = g_WindowStack + iVar2;
+  this_ptr_00 = (CDemonRenderer *)g_ActiveRenderColor;
   shape_edittool_cpp_paintWindowBackground_FUN_0049e590();
   engine_matrix_c_pushViewport_FUN_0050e320
             (pSVar6->left,g_WindowStack[iVar2].top,(g_WindowStack[iVar2].right - pSVar6->left) + 1,
@@ -50,10 +49,10 @@ void __cdecl shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(CEd
   engine_2d_c_drawVLine_FUN_00402ff0
             (g_WindowStack[iVar2].right + -1,g_WindowStack[iVar2].top,
              g_WindowStack[iVar2].bottom + -1);
-  engine_matrix_c_popViewport_FUN_0050e480(in_stack_0000000c);
+  engine_matrix_c_popViewport_FUN_0050e480(this_ptr_00);
   iVar1 = g_ClipTop;
   if (g_WindowStack[iVar2].text_buffer[0] == '\0') {
-    g_ActiveRenderColor = in_stack_00000010;
+    g_ActiveRenderColor = (int)this_ptr_00;
     return;
   }
   g_ClipTop = g_WindowStack[iVar2].top;
@@ -64,14 +63,15 @@ void __cdecl shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(CEd
              ((int)((g_FontCharacterWidth * 5 + iVar5 * -4) - (uint)(iVar5 << 1 < 0)) >> 2) + iVar4
              + -1,g_WindowFillColor);
   engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
-  y_pos = g_TitleBarColor;
-  color_mode = -1;
+  color_value = -1;
+  y_pos = g_FontCharacterWidth / 2 + g_WindowStack[iVar2].top;
   text = g_WindowStack[iVar2].text_buffer;
   iVar4 = pSVar6->left;
   iVar5 = g_WindowStack[iVar2].right;
+  color_mode = g_TitleBarColor;
   iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_EditorFont,text);
   engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
-            (g_EditorFont,text,((iVar4 + iVar5) - iVar3) / 2,y_pos,color_mode,in_stack_00000018);
+            (g_EditorFont,text,((iVar4 + iVar5) - iVar3) / 2,y_pos,color_mode,color_value);
   iVar4 = engine_font_cpp_CBitFont_getCharWidth_FUN_004cff40(g_EditorFont,text);
   iVar4 = g_FontCharacterWidth + iVar4;
   iVar5 = engine_font_cpp_CBitFont_getCharWidth_FUN_004cff40(g_EditorFont,"j");
@@ -86,6 +86,6 @@ void __cdecl shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(CEd
     engine_2d_c_drawHLine_FUN_00402ee0(pSVar6->left + 1,iVar4 + -1,g_WindowStack[iVar2].right + -2);
   }
   g_ClipTop = iVar1;
-  g_ActiveRenderColor = in_stack_00000030;
+  g_ActiveRenderColor = (int)this_ptr_00;
   return;
 }

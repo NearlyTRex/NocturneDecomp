@@ -15,7 +15,6 @@ void core_shotgun_cpp_FUN_005888f0(void)
   float fVar1;
   int iVar2;
   CVector3f *input_local_point;
-  BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000004;
   CVector3f CStack_70;
   CVector3f aCStack_64 [2];
@@ -47,7 +46,7 @@ void core_shotgun_cpp_FUN_005888f0(void)
   fStack_28 = aCStack_64[0].x + CStack_70.x;
   fStack_24 = aCStack_64[0].y + CStack_70.y;
   fStack_20 = aCStack_64[0].z + CStack_70.z;
-  if (&fStack_4c != &fStack_30) {
+  if (&fStack_4c != &fStack_34) {
     fStack_4c = fStack_34;
     fStack_48 = fStack_30;
     local_44 = fStack_2c;

@@ -11,7 +11,6 @@ core_actor_cpp_serializeQuaternion_FUN_0040b520(CQuaternion4f *quat_ptr,char *pr
 
 {
   int iVar1;
-  char *in_stack_0000000c;
   
   if (g_ActorReadingMode == 1) {
     iVar1 = crt_stdio_c_fscanf_FUN_005fe7c0
@@ -26,6 +25,6 @@ core_actor_cpp_serializeQuaternion_FUN_0040b520(CQuaternion4f *quat_ptr,char *pr
               (g_ActorDataFile,"%s%g,%g,%g,%g",g_PropertyNamePrefix,(double)quat_ptr->w,
                (double)quat_ptr->x,(double)quat_ptr->y,(double)quat_ptr->z);
   }
-  core_actor_cpp_serializeDescription_FUN_0040b290("Quaternion",in_stack_0000000c);
+  core_actor_cpp_serializeDescription_FUN_0040b290("Quaternion",property_type);
   return;
 }

@@ -1,12 +1,12 @@
 {
   "complexity": {
     "assembly_lines": 35,
-    "complexity_score": 170,
+    "complexity_score": 179,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 25,
-    "suspect_count": 12,
+    "pseudocode_lines": 24,
+    "suspect_count": 13,
     "suspect_types": [
       "extra_output",
       "param_count_too_few",
@@ -14,7 +14,7 @@
       "register_param",
       "special_crt_function"
     ],
-    "total_lines": 60
+    "total_lines": 59
   },
   "cross_references": [
     {
@@ -113,61 +113,68 @@
       "description": "Inferred register parameter",
       "line": 6,
       "match": "in_ECX",
-      "text": "int in_ECX;",
+      "text": "uint in_ECX;",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 10,
+      "line": 9,
       "match": "in_ECX",
       "text": "if (in_ECX != 0) {",
       "type": "register_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 14,
+      "line": 13,
       "match": "(void *)((int)",
       "text": "dest = (void *)((int)dest + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Inferred register parameter",
-      "line": 16,
+      "line": 15,
       "match": "in_ECX",
-      "text": "in_ECX = in_ECX + -1;",
+      "text": "in_ECX = in_ECX - 1;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 15,
+      "match": "in_ECX",
+      "text": "in_ECX = in_ECX - 1;",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
       "line": 16,
-      "match": "in_ECX",
-      "text": "in_ECX = in_ECX + -1;",
-      "type": "register_param"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 17,
       "match": "in_ECX",
       "text": "} while (in_ECX != 0);",
       "type": "register_param"
     },
     {
+      "description": "Inferred register parameter",
+      "line": 18,
+      "match": "in_ECX",
+      "text": "uVar1 = in_ECX & 3;",
+      "type": "register_param"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 21,
+      "line": 20,
       "match": "extraout_EAX",
       "text": "*extraout_EAX = (char)replicated_value;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 22,
+      "line": 21,
       "match": "extraout_EAX",
       "text": "if ((uVar1 != 1) && (extraout_EAX[1] = (char)(replicated_value >> 8), uVar1 != 2)) {",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 23,
+      "line": 22,
       "match": "extraout_EAX",
       "text": "extraout_EAX[2] = (char)replicated_value;",
       "type": "extra_output"

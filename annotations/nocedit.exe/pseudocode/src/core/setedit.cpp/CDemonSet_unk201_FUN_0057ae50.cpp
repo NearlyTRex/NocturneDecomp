@@ -8,13 +8,12 @@
 
 /* Signature: byte core_setedit.cpp_CDemonSet_unk201(uint pSet, uint param_2) */
 
-int core_setedit_cpp_CDemonSet_unk201_FUN_0057ae50(void)
+uint core_setedit_cpp_CDemonSet_unk201_FUN_0057ae50(void)
 
 {
   char cVar1;
   void *pvVar2;
   int iVar3;
-  BADSPACEBASE *in_ESP;
   char *pcVar4;
   char *pcVar5;
   double dVar6;
@@ -23,6 +22,7 @@ int core_setedit_cpp_CDemonSet_unk201_FUN_0057ae50(void)
   CDemonLight *this_ptr;
   CDemonLight *intensity;
   CGame *in_stack_fffffe78;
+  char acStack_184 [256];
   char acStack_84 [100];
   uint local_20;
   uint local_1c;
@@ -117,17 +117,17 @@ LAB_0057af67:
   engine_2d_c_drawText_FUN_00401fd0("Position light.  Press SPACE when done",0,0);
   engine_2d_c_drawText_FUN_00401fd0(acStack_84,0,0xb);
   crt_stdio_c_sprintf_FUN_005fdbd0
-            (&stack0xfffffe7c,"%f",(double)(1.0 / g_CGamePtr->delta_time_float));
-  engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe7c,0,g_WindowHeight + -0xb);
+            (acStack_184,"%f",(double)(1.0 / g_CGamePtr->delta_time_float));
+  engine_2d_c_drawText_FUN_00401fd0(acStack_184,0,g_WindowHeight + -0xb);
   crt_stdio_c_sprintf_FUN_005fdbd0
-            (&stack0xfffffe7c,"pos: %4.1f %4.1f %4.1f   pbh: %3.1f %3.1f %6.3f   fov : %2.1f",(double)*(float *)PTR_DAT_00681ab8
-             ,(double)*(float *)((int)PTR_DAT_00681ab8 + 4),
+            (acStack_184,"pos: %4.1f %4.1f %4.1f   pbh: %3.1f %3.1f %6.3f   fov : %2.1f",(double)*(float *)PTR_DAT_00681ab8,
+             (double)*(float *)((int)PTR_DAT_00681ab8 + 4),
              (double)*(float *)((int)PTR_DAT_00681ab8 + 8),
              180 * (double)*(float *)((int)PTR_DAT_00681ab8 + 0xc) * 0.31830988619288902,
              (double)*(float *)((int)PTR_DAT_00681ab8 + 0x14) * 0.31830988619288902 * 180,
              (double)*(float *)((int)PTR_DAT_00681ab8 + 0x10) * 0.31830988619288902 * 180,
              (double)*(float *)((int)PTR_DAT_00681ab8 + 0x18));
-  engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe7c,0,0x16);
+  engine_2d_c_drawText_FUN_00401fd0(acStack_184,0,0x16);
   wincore_winrun_cpp_drawCrosshair_FUN_005f2fd0();
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
   core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
@@ -184,6 +184,6 @@ LAB_0057b3c9:
   core_slew_cpp_CSlew_free_FUN_005a20a0();
   engine_2d_c_clearInputAndWait_FUN_00403260();
   g_CDemonLightInstance.light_enabled_flag = 0;
-  *(uint *)(in_stack_00000008 + 0x11e0) = local_1c;
-  return local_18;
+  *(uint *)(in_stack_00000008 + 0x11e0) = local_20;
+  return local_1c;
 }

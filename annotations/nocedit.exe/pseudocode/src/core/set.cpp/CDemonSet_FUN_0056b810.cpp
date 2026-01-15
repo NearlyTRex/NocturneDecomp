@@ -9,9 +9,9 @@
 int __cdecl core_set_cpp_CDemonSet_FUN_0056b810(CDemonSet *this_ptr)
 
 {
-  uint *puVar1;
-  uint uVar2;
-  double dVar3;
+  int *piVar1;
+  uint *puVar2;
+  uint uVar3;
   CPathMap *this_ptr_00;
   float fVar4;
   CGlass *this_ptr_01;
@@ -20,10 +20,10 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056b810(CDemonSet *this_ptr)
   CDemonSet *pCVar6;
   int iVar7;
   int iVar8;
-  BADSPACEBASE *in_ESP;
   int iVar9;
   int iVar10;
   CDemonSet *pCVar11;
+  SCollisionInfo *collision_info;
   SDamageInfo SStack_a0;
   float local_64;
   float local_60;
@@ -31,8 +31,10 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056b810(CDemonSet *this_ptr)
   float fStack_58;
   float fStack_54;
   float local_50;
+  SCollisionInfo *pSStack_4c;
   float fStack_48;
   uint local_44;
+  int local_40;
   int local_3c;
   int local_38;
   int local_34;
@@ -43,6 +45,7 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056b810(CDemonSet *this_ptr)
   int local_20;
   int local_1c;
   int iStack_18;
+  int iStack_14;
   
   iVar9 = 0;
   pCVar6 = this_ptr;
@@ -55,20 +58,19 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056b810(CDemonSet *this_ptr)
     } while (iVar9 < (int)this_ptr->actor_list_ptr);
   }
   if (g_CGamePtr->profile_mode != 0) {
-    local_38 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
-    iStack_18 = 0;
+    local_3c = wincore_winrun_cpp_getTime_FUN_005f2dc0();
+    local_1c = 0;
   }
   g_DynamicLightCount = 0;
-  SStack_a0.field0_0x0 = (int)g_CGamePtr->delta_time_float;
+  collision_info = (SCollisionInfo *)g_CGamePtr->delta_time_float;
   g_CoronaGlobeCount = 0;
   pCVar6 = (CDemonSet *)
-           CONCAT22 /* combine 2-byte values */((short)((uint)SStack_a0.field0_0x0 >> 0x10),
-                    (ushort)(0.0 < (float)SStack_a0.field0_0x0) << 8 |
-                    (ushort)NAN((float)SStack_a0.field0_0x0) << 10 |
-                    (ushort)((float)SStack_a0.field0_0x0 == 0.0) << 0xe);
-  if (0.0 < (float)SStack_a0.field0_0x0) {
-    pCVar11 = this_ptr;
-    fStack_48 = (float)SStack_a0.field0_0x0;
+           CONCAT22 /* combine 2-byte values */((short)((uint)collision_info >> 0x10),
+                    (ushort)(0.0 < (float)collision_info) << 8 |
+                    (ushort)NAN((float)collision_info) << 10 |
+                    (ushort)((float)collision_info == 0.0) << 0xe);
+  if (0.0 < (float)collision_info) {
+    pSStack_4c = collision_info;
     core_setcolid_cpp_CDemonSet_FUN_005743e0(this_ptr);
     iVar9 = 0;
     pCVar6 = this_ptr;
@@ -79,7 +81,7 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056b810(CDemonSet *this_ptr)
         pCVar6 = (CDemonSet *)pCVar6->cameras;
       } while (iVar9 < (int)this_ptr->actor_list_ptr);
     }
-    if (0.0 < (float)pCVar11) {
+    if (0.0 < (float)collision_info) {
       local_20 = -999999;
       iVar9 = local_20;
       do {
@@ -99,19 +101,18 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056b810(CDemonSet *this_ptr)
                 fStack_5c = (pCVar5->orient).heading;
                 DAT_00821ff4 = pCVar5;
                 if (g_CGamePtr->profile_mode == 2) {
-                  local_3c = wincore_winrun_cpp_getTime_FUN_005f2dc0();
+                  local_40 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
                 }
                 (*DAT_00821ff4->vtable->process)(DAT_00821ff4);
                 if (g_CGamePtr->profile_mode == 2) {
                   iVar8 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
-                  *(int *)((int)&DAT_032bd794 + iVar7) = iVar8 - local_3c;
+                  *(int *)((int)&DAT_032bd794 + iVar7) = iVar8 - local_40;
                   *(CDemonActor **)((int)&DAT_032bf6d4 + iVar7) = DAT_00821ff4;
                 }
                 if (g_CGamePtr->profile_mode != 0) {
-                  iStack_18 = iStack_18 + 1;
+                  local_1c = local_1c + 1;
                   iVar7 = iVar7 + 4;
                 }
-                pCVar11 = (CDemonSet *)DAT_00821ff4;
                 this_ptr_00 = (*DAT_00821ff4->vtable->getPathMap)(DAT_00821ff4);
                 if (this_ptr_00 != (CPathMap *)0x0) {
                   core_path_cpp_CPathMap_updateIfNeeded_FUN_00546a60
@@ -146,8 +147,8 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056b810(CDemonSet *this_ptr)
                                (*(CDemonActor **)pCVar6->actor_list_data,
                                 g_CCharacterClassInfo.name_hash);
         if (((pCStack_30 != (CDemonActor *)0x0) &&
-            (fVar4 = (float)(*pCStack_30->vtable[1].hasCollision)
-                                      (pCStack_30,(SCollisionInfo *)pCVar11), fVar4 == 0.0)) &&
+            (fVar4 = (float)(*pCStack_30->vtable[1].hasCollision)(pCStack_30,collision_info),
+            fVar4 == 0.0)) &&
            (fStack_48 = fVar4, iVar7 = core_fire_cpp_CFireEffect_FUN_004c8c90(g_CFireEffectPtr),
            iVar7 != 0)) {
           core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&SStack_a0);
@@ -159,7 +160,7 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056b810(CDemonSet *this_ptr)
             SStack_a0.impact_point.z = local_50;
           }
           (*pCStack_30->vtable[1].playAmbientSoundWithVolume)
-                    (pCStack_30,(char *)&SStack_a0,(float)pCVar11);
+                    (pCStack_30,(char *)&SStack_a0,(float)collision_info);
         }
         this_ptr_01 = (CGlass *)
                       core_actor_cpp_castToClassHash_FUN_0040c790
@@ -211,10 +212,10 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056b810(CDemonSet *this_ptr)
                   *(uint *)((int)&DAT_032bd794 + local_28) =
                        *(uint *)((int)&DAT_032bd794 + iVar9);
                   *(int *)((int)&DAT_032bd794 + iVar9) = iVar7;
-                  uVar2 = *(uint *)((int)&DAT_032bf6d4 + local_28);
+                  uVar3 = *(uint *)((int)&DAT_032bf6d4 + local_28);
                   *(uint *)((int)&DAT_032bf6d4 + local_28) =
                        *(uint *)((int)&DAT_032bf6d4 + iVar9);
-                  *(uint *)((int)&DAT_032bf6d4 + iVar9) = uVar2;
+                  *(uint *)((int)&DAT_032bf6d4 + iVar9) = uVar3;
                 }
                 iVar9 = iVar9 + 4;
               } while (iVar9 < local_38);
@@ -231,24 +232,24 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056b810(CDemonSet *this_ptr)
           iVar8 = 0;
           iVar7 = 0;
           do {
-            dVar3 = ((double)*(int *)((int)&DAT_032bd794 + iVar8) * 0.055555555555555601 *
-                     1.52587890625e-05 * 1000) / (double)(float)pCVar11;
-            puVar1 = (uint *)((int)&DAT_032bf6d4 + iVar8);
+            piVar1 = (int *)((int)&DAT_032bd794 + iVar8);
+            puVar2 = (uint *)((int)&DAT_032bf6d4 + iVar8);
             iVar8 = iVar8 + 4;
             iVar10 = iVar7 + 1;
             engine_console_cpp_CConsole_printf_FUN_00441890
-                      (g_CConsolePtr,"%d. %s : %3.2f ms\n",iVar7,*puVar1,SUB84 /* extract 2-byte value */(dVar3,0),
-                       (int)((ulonglong)dVar3 >> 0x20));
+                      (g_CConsolePtr,"%d. %s : %3.2f ms\n",iVar7,*puVar2,
+                       ((double)*piVar1 * 0.055555555555555601 * 1.52587890625e-05 * 1000) /
+                       (double)(float)collision_info);
             iVar7 = iVar10;
           } while (iVar10 < iVar9);
         }
       }
-      iVar9 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
-      dVar3 = ((double)(iVar9 - local_38) * 0.055555555555555601 * 1.52587890625e-05 * 1000) /
-              (double)(float)SStack_a0.field0_0x0;
+      iStack_14 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
+      iStack_14 = iStack_14 - local_3c;
       engine_console_cpp_CConsole_printf_FUN_00441890
-                (g_CConsolePtr,"Process time (%d actors) : %3.2f ms\n",iStack_18,SUB84 /* extract 2-byte value */(dVar3,0),
-                 (int)((ulonglong)dVar3 >> 0x20));
+                (g_CConsolePtr,"Process time (%d actors) : %3.2f ms\n",local_1c,
+                 ((double)iStack_14 * 0.055555555555555601 * 1.52587890625e-05 * 1000) /
+                 (double)(float)collision_info);
     }
     iVar9 = 0;
     pCVar6 = this_ptr;

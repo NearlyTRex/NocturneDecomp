@@ -12,17 +12,16 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ded0(CCharacter *this_ptr)
   COrientation *pCVar1;
   CVector3f *pCVar2;
   CVector3f *pCVar3;
-  BADSPACEBASE *in_ESP;
   float *in_stack_00000008;
-  byte local_20 [12];
+  CVector3f local_38;
+  CVector3f local_2c;
+  CVector3f local_20;
   CVector3f local_14;
   
   core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
-            (&this_ptr->base_actor,(CVector3f *)local_20,&(this_ptr->model).accumulated_root_motion)
-  ;
+            (&this_ptr->base_actor,&local_20,&(this_ptr->model).accumulated_root_motion);
   core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
-            (&this_ptr->base_actor,(CVector3f *)&local_14.y,
-             (CVector3f *)(this_ptr->field2_0x240c + 0x10));
+            (&this_ptr->base_actor,&local_14,(CVector3f *)(this_ptr->field2_0x240c + 0x10));
   pCVar1 = &(this_ptr->base_actor).orient;
   if (pCVar1 != (COrientation *)in_stack_00000008) {
     pCVar1->pitch = *in_stack_00000008;
@@ -31,7 +30,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ded0(CCharacter *this_ptr)
   }
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10(&this_ptr->base_actor);
   pCVar2 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
-                     (&this_ptr->base_actor,(CVector3f *)&stack0xffffffd4,&local_14);
+                     (&this_ptr->base_actor,&local_38,&local_20);
   pCVar3 = &(this_ptr->model).accumulated_root_motion;
   if (pCVar3 != pCVar2) {
     pCVar3->x = pCVar2->x;
@@ -39,8 +38,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ded0(CCharacter *this_ptr)
     (this_ptr->model).accumulated_root_motion.z = pCVar2->z;
   }
   pCVar3 = core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
-                     (&this_ptr->base_actor,(CVector3f *)(local_20 + 4),
-                      (CVector3f *)&stack0xfffffffc);
+                     (&this_ptr->base_actor,&local_2c,&local_14);
   if ((CVector3f *)(this_ptr->field2_0x240c + 0x10) == pCVar3) {
     return;
   }

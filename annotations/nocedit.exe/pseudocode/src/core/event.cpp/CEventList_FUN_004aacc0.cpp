@@ -26,7 +26,6 @@ CDemonActor * __cdecl core_event_cpp_CEventList_FUN_004aacc0(CEventList *this_pt
   uint uVar12;
   uint uVar13;
   SIZE_T SVar14;
-  BADSPACEBASE *in_ESP;
   CEvent *pCVar15;
   CEvent *pCVar16;
   uint *puVar17;

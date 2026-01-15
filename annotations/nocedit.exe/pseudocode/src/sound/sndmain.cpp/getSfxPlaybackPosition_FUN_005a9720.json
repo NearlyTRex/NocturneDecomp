@@ -1,16 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 110,
+    "complexity_score": 125,
     "cross_reference_count": 5,
     "function_call_count": 4,
     "global_count": 1,
     "pseudocode_lines": 35,
-    "suspect_count": 6,
+    "suspect_count": 7,
     "suspect_types": [
       "concat_artifact",
       "pointer_cast",
-      "stack_param"
+      "stack_param",
+      "sub_artifact"
     ],
     "total_lines": 120
   },
@@ -265,7 +266,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 15,
       "match": "in_stack_00000004",
       "text": "this_ptr = sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005a5d00(in_stack_00000004,1);",
       "type": "stack_param"
@@ -285,10 +286,17 @@
       "type": "stack_param"
     },
     {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 33,
+      "match": "SUB84",
+      "text": "local_20 = SUB84 /* extract 2-byte value */(dVar2,0);",
+      "type": "sub_artifact"
+    },
+    {
       "description": "Decompiler double/longlong composition artifact",
       "line": 37,
       "match": "CONCAT44",
-      "text": "return (double)CONCAT44 /* combine 2-byte values */(local_20,local_24);",
+      "text": "return (double)CONCAT44 /* combine 2-byte values */(local_24,local_20);",
       "type": "concat_artifact"
     }
   ]

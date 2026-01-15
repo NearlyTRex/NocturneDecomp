@@ -20,7 +20,6 @@ uint core_mobster_cpp_FUN_00526d90(void)
   CCharacter *pCVar6;
   CDemonActor *pCVar7;
   int iVar8;
-  BADSPACEBASE *in_ESP;
   int iVar9;
   int iVar10;
   CCharacter *in_stack_00000004;

@@ -18,7 +18,6 @@ core_skeleton_cpp_CDeformableModel_findMinWeightBone_FUN_0059dca0
   int iVar5;
   SVert *pSVar6;
   int iVar7;
-  BADSPACEBASE *in_ESP;
   SVert *pSVar8;
   SInputFace *pSVar9;
   float local_1a4 [100];

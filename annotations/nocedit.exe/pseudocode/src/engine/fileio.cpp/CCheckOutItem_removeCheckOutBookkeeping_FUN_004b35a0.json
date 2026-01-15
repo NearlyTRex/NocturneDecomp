@@ -1,23 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 319,
-    "complexity_score": 799,
+    "complexity_score": 538,
     "cross_reference_count": 6,
     "function_call_count": 17,
     "global_count": 24,
-    "pseudocode_lines": 139,
-    "suspect_count": 62,
+    "pseudocode_lines": 133,
+    "suspect_count": 39,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
-      "register_param",
-      "stack_param",
-      "stack_ref",
-      "variadic_preserve",
-      "warning_unreachable"
+      "variadic_preserve"
     ],
-    "total_lines": 458
+    "total_lines": 452
   },
   "cross_references": [
     {
@@ -423,169 +418,8 @@
   },
   "suspects": [
     {
-      "description": "Unreachable code block removed",
-      "line": 2,
-      "match": "WARNING: Removing unreachable block",
-      "text": "/* WARNING: Removing unreachable block (ram,0x004b38da) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 14,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 14,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_0000000c",
-      "text": "FILE *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_00000010",
-      "text": "int in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 47,
-      "match": "&stack0xfffffff8",
-      "text": "(g_VersionControlDirectory,&stack0xfffffff8,acStack_114);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 49,
-      "match": "&stack0xfffffde4",
-      "text": "(&stack0xfffffde4,&stack0xfffffffc,acStack_110,(char *)0x0,(char *)0x0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 49,
-      "match": "&stack0xfffffffc",
-      "text": "(&stack0xfffffde4,&stack0xfffffffc,acStack_110,(char *)0x0,(char *)0x0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 52,
-      "match": "&stack0xfffffde4",
-      "text": "pcVar6 = &stack0xfffffde4;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 75,
-      "match": "&stack0xfffffdf0",
-      "text": "(&stack0xfffffdf0,(char *)0x0,\"r+t\",\"..\\\\engine\\\\fileio.cpp\"",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 95,
-      "match": "&stack0xfffffffc",
-      "text": "((CCheckOutList *)&stack0xfffffffc,(FILE **)&this_ptr);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 97,
-      "match": "&stack0x00000000",
-      "text": "engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860((CCheckOutList *)&stack0x00000000);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 101,
-      "match": "&stack0x00000000",
-      "text": "((CCheckOutList *)&stack0x00000000,filename);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 103,
-      "match": "in_stack_0000000c",
-      "text": "if (in_stack_0000000c != (FILE *)0x0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 105,
-      "match": "in_stack_0000000c",
-      "text": "(in_stack_0000000c,\"..\\\\engine\\\\fileio.cpp\",0xc4);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 106,
-      "match": "in_stack_00000010",
-      "text": "in_stack_00000010 = 0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 111,
-      "match": "&stack0x00000010",
-      "text": "engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860((CCheckOutList *)&stack0x00000010);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 121,
-      "match": "&stack0xfffffff8",
-      "text": "((CCheckOutList *)&stack0xfffffff8,(FILE **)&stack0x00000000);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 121,
-      "match": "&stack0x00000000",
-      "text": "((CCheckOutList *)&stack0xfffffff8,(FILE **)&stack0x00000000);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 133,
-      "match": "&stack0x00000000",
-      "text": "engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860((CCheckOutList *)&stack0x00000000);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 137,
-      "match": "in_stack_0000000c",
-      "text": "if (in_stack_0000000c != (FILE *)0x0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 138,
-      "match": "in_stack_0000000c",
-      "text": "shape_memdbg_cpp_closeFile_FUN_0050f9b0(in_stack_0000000c,\"..\\\\engine\\\\fileio.cpp\",0xc4);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 139,
-      "match": "in_stack_0000000c",
-      "text": "in_stack_0000000c = (FILE *)0x0;",
-      "type": "stack_param"
-    },
-    {
       "call_address": "004b36d2",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -599,7 +433,7 @@
     },
     {
       "call_address": "004b3730",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -613,7 +447,7 @@
     },
     {
       "call_address": "004b3757",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -627,7 +461,7 @@
     },
     {
       "call_address": "004b38a5",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -641,7 +475,7 @@
     },
     {
       "call_address": "004b3900",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

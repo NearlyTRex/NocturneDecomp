@@ -11,16 +11,14 @@
 void core_conveyor_cpp_FUN_00441d60(void)
 
 {
-  BADSPACEBASE *in_ESP;
   uint *puVar1;
   uint *puVar2;
   uint *puVar3;
   uint *puVar4;
   byte bVar5;
   int in_stack_00000004;
-  uint auStackY_17f4 [1525];
+  uint auStackY_17f8 [1526];
   CVector3f *in_stack_ffffffe4;
-  uint uStack_18;
   
   bVar5 = 0;
   puVar1 = (uint *)(in_stack_00000004 + 0x328);
@@ -37,13 +35,13 @@ void core_conveyor_cpp_FUN_00441d60(void)
   core_xform_cpp_eulerToQuaternion_FUN_005f7b20
             ((CQuaternion4f *)(in_stack_00000004 + 0x30),in_stack_ffffffe4);
   puVar1 = (uint *)(in_stack_00000004 + 0x348 + (uint)bVar5 * -8);
-  *(uint *)(in_stack_00000004 + 0x344) = uStack_18;
+  *(CVector3f **)(in_stack_00000004 + 0x344) = in_stack_ffffffe4;
   puVar2 = puVar1 + (uint)bVar5 * -2 + 1;
-  *puVar1 = *(uint *)(&stack0xffffffec + (uint)bVar5 * -8);
-  *puVar2 = *(uint *)(&stack0xfffffff0 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
+  *puVar1 = *(uint *)(&stack0xffffffe8 + (uint)bVar5 * -8);
+  *puVar2 = *(uint *)(&stack0xffffffec + (uint)bVar5 * -8 + (uint)bVar5 * -8);
   puVar2[(uint)bVar5 * -2 + 1] =
        *(uint *)
-        ((int)(&stack0xfffffff0 + (uint)bVar5 * -8 + (uint)bVar5 * -8) + ((uint)bVar5 * -2 + 1) * 4)
+        ((int)(&stack0xffffffec + (uint)bVar5 * -8 + (uint)bVar5 * -8) + ((uint)bVar5 * -2 + 1) * 4)
   ;
   puVar3 = (uint *)(in_stack_00000004 + 0x338 + (uint)bVar5 * -8);
   puVar1 = (uint *)(in_stack_00000004 + 0x348 + (uint)bVar5 * -8);

@@ -1,22 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 265,
-    "complexity_score": 348,
+    "complexity_score": 249,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 15,
-    "pseudocode_lines": 143,
-    "suspect_count": 17,
+    "pseudocode_lines": 144,
+    "suspect_count": 9,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
-      "format_string_mismatch",
       "lea_esp_stack_addr",
-      "register_param",
-      "stack_ref",
       "variadic_preserve"
     ],
-    "total_lines": 408
+    "total_lines": 409
   },
   "cross_references": [
     {
@@ -343,50 +339,8 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 10,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 10,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 25,
-      "match": "&stack0xfffffed4",
-      "text": "pcVar8 = &stack0xfffffed4;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 29,
-      "match": "&stack0xfffffed4",
-      "text": "pcVar6 = &stack0xfffffed4;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 35,
-      "match": "&stack0xfffffed4",
-      "text": "pcVar6 = &stack0xfffffed4;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 62,
-      "match": "&stack0xfffffed8",
-      "text": "local_24 = engine_dosio_c_getFile_FUN_00481a50(\"data\",&stack0xfffffed8,\"rt\");",
-      "type": "stack_ref"
-    },
-    {
       "call_address": "005dbeb6",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -400,7 +354,7 @@
     },
     {
       "call_address": "005dbecc",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -414,7 +368,7 @@
     },
     {
       "call_address": "005dbf23",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -428,7 +382,7 @@
     },
     {
       "call_address": "005dbff1",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -439,28 +393,6 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005dbff1 (no EBP frame)",
       "type": "variadic_preserve"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 68,
-      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(local_20,\"%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%s\\n",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 89,
-      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(local_1c,\"%s\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 12,

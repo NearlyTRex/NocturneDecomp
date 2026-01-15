@@ -1,26 +1,24 @@
 {
   "complexity": {
     "assembly_lines": 199,
-    "complexity_score": 431,
+    "complexity_score": 400,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 18,
-    "pseudocode_lines": 56,
-    "suspect_count": 32,
+    "pseudocode_lines": 55,
+    "suspect_count": 30,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "callind_preserve",
       "lea_esp_stack_addr",
       "param_count_too_few",
-      "register_param",
       "stack_param",
       "unaffected_reg",
       "unresolved_funcptr",
       "variadic_preserve",
       "warning_overlapping_globals"
     ],
-    "total_lines": 255
+    "total_lines": 254
   },
   "cross_references": [
     {
@@ -313,71 +311,57 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 8,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 8,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 9,
+      "line": 8,
       "match": "unaff_EDI",
       "text": "CDemonRenderer *unaff_EDI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 11,
+      "line": 10,
       "match": "in_stack_00000004",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 17,
       "match": "in_stack_00000004",
       "text": "if (*(int *)(in_stack_00000004 + 0x28) == 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 20,
       "match": "in_stack_00000004",
       "text": "(**(code **)(*(int *)(*(int *)(in_stack_00000004 + 0x28) + 0x154) + 0xd4))();",
       "type": "stack_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 21,
+      "line": 20,
       "match": "code *",
       "text": "(**(code **)(*(int *)(*(int *)(in_stack_00000004 + 0x28) + 0x154) + 0xd4))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 28,
+      "line": 27,
       "match": "in_stack_00000004",
       "text": "if (*(int *)(in_stack_00000004 + 0x24) != 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 44,
+      "line": 43,
       "match": "unaff_EDI",
       "text": "engine_matrix_c_popViewport_FUN_0050e480(unaff_EDI);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 54,
+      "line": 53,
       "match": "in_stack_00000004",
       "text": "(acStack_13c,\"Selected: %s\",*(uint *)(in_stack_00000004 + 0x28));",
       "type": "stack_param"

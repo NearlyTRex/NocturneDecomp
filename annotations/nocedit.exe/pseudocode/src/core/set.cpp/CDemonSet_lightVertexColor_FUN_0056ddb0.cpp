@@ -20,11 +20,10 @@ core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0
   uint uVar6;
   uint uVar7;
   int iVar8;
-  int unaff_EBP;
   uint uVar9;
   int iVar10;
-  int in_stack_00000018;
-  uint local_14;
+  uint local_18;
+  int local_14;
   
   if (this_ptr->rendering_mode != 0) {
     if (surface_normal == (CVector3i *)0x0) {
@@ -46,21 +45,21 @@ core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0
       iVar8 = 0xffff;
     }
     lVar1 = (longlong)this_ptr->light_scale_factor * (longlong)iVar8;
-    g_RenderVertexBuffer[skip_lighting_calculation].light =
+    g_RenderVertexBuffer[vertex_index].light =
          (float)((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
     lVar1 = (longlong)this_ptr->color_scale_factor * (longlong)iVar8;
-    g_RenderVertexBuffer[skip_lighting_calculation].color =
+    g_RenderVertexBuffer[vertex_index].color =
          (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
     lVar1 = (longlong)this_ptr->fog_scale_factor * (longlong)iVar8;
-    g_RenderVertexBuffer[skip_lighting_calculation].fog =
+    g_RenderVertexBuffer[vertex_index].fog =
          (float)((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
-    g_RenderVertexBuffer[skip_lighting_calculation].w_recip = g_PerspectiveReciprocal;
+    g_RenderVertexBuffer[vertex_index].w_recip = g_PerspectiveReciprocal;
     return;
   }
   if (skip_lighting_calculation == 0) {
     iVar8 = core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80
                       (this_ptr,world_position,surface_normal);
-    unaff_EBP = g_CDemonCameraInstance.corona_blend_factor;
+    local_14 = g_CDemonCameraInstance.corona_blend_factor;
     if ((0 < g_CDemonCameraInstance.corona_blend_factor) && (surface_normal != (CVector3i *)0x0)) {
       iVar10 = g_CDemonCameraInstance.corona_blend_factor;
       if (0x1000 < g_CDemonCameraInstance.corona_blend_factor) {
@@ -92,11 +91,12 @@ core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0
   }
   else {
     iVar8 = 0xffff;
+    local_14 = 0;
   }
   if (g_ColorCorrectionEnabled < 1) {
-    iVar8 = iVar8 + unaff_EBP;
+    iVar8 = iVar8 + local_14;
     lVar1 = (longlong)iVar8 * (longlong)this_ptr->light_scale_factor;
-    local_14 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
+    local_18 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
     lVar1 = (longlong)iVar8 * (longlong)this_ptr->color_scale_factor;
     uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
     iVar10 = this_ptr->fog_scale_factor;
@@ -105,32 +105,32 @@ core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0
     lVar1 = (longlong)
             (int)(((uint)((longlong)iVar8 * (longlong)g_ColorCorrectionLightMultiplier) >> 0x10 |
                   (int)((ulonglong)((longlong)iVar8 * (longlong)g_ColorCorrectionLightMultiplier) >>
-                       0x20) << 0x10) + unaff_EBP) * (longlong)this_ptr->light_scale_factor;
-    local_14 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
+                       0x20) << 0x10) + local_14) * (longlong)this_ptr->light_scale_factor;
+    local_18 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
     lVar1 = (longlong)
             (int)(((uint)((longlong)iVar8 * (longlong)g_ColorCorrectionColorMultiplier) >> 0x10 |
                   (int)((ulonglong)((longlong)iVar8 * (longlong)g_ColorCorrectionColorMultiplier) >>
-                       0x20) << 0x10) + unaff_EBP) * (longlong)this_ptr->color_scale_factor;
+                       0x20) << 0x10) + local_14) * (longlong)this_ptr->color_scale_factor;
     uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
     iVar10 = this_ptr->fog_scale_factor;
     iVar8 = ((uint)((longlong)iVar8 * (longlong)g_ColorCorrectionFogMultiplier) >> 0x10 |
             (int)((ulonglong)((longlong)iVar8 * (longlong)g_ColorCorrectionFogMultiplier) >> 0x20)
-            << 0x10) + unaff_EBP;
+            << 0x10) + local_14;
   }
   uVar5 = (uint)((longlong)iVar8 * (longlong)iVar10) >> 0x10 |
           (int)((ulonglong)((longlong)iVar8 * (longlong)iVar10) >> 0x20) << 0x10;
-  if ((this_ptr->rendering_flags_ptr != (int *)0x0) && (in_stack_00000018 == 0)) {
+  if ((this_ptr->rendering_flags_ptr != (int *)0x0) && (skip_lighting_calculation == 0)) {
     iVar8 = core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_0056db80
-                      (this_ptr,surface_normal,(CVector3i *)0x0);
-    uVar9 = unaff_EBP + iVar8;
+                      (this_ptr,world_position,(CVector3i *)0x0);
+    uVar9 = local_14 + iVar8;
     if (0 < (int)uVar9) {
-      uVar6 = local_14 ^ (int)local_14 >> 0x1f;
+      uVar6 = local_18 ^ (int)local_18 >> 0x1f;
       uVar7 = uVar6 / uVar9;
       if (0x7ffe < uVar7) {
         uVar7 = 0x7fff;
       }
-      local_14 = ((uint)(((ulonglong)uVar6 % (ulonglong)uVar9 << 0x20) / (ulonglong)uVar9) >> 0x10 |
-                 uVar7 << 0x10) ^ (int)local_14 >> 0x1f;
+      local_18 = ((uint)(((ulonglong)uVar6 % (ulonglong)uVar9 << 0x20) / (ulonglong)uVar9) >> 0x10 |
+                 uVar7 << 0x10) ^ (int)local_18 >> 0x1f;
       uVar6 = uVar4 ^ (int)uVar4 >> 0x1f;
       uVar7 = uVar6 / uVar9;
       if (0x7ffe < uVar7) {
@@ -147,8 +147,8 @@ core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0
               uVar7 << 0x10) ^ (int)uVar5 >> 0x1f;
     }
   }
-  if (0xffff < (int)local_14) {
-    local_14 = 0xffff;
+  if (0xffff < (int)local_18) {
+    local_18 = 0xffff;
   }
   if (0xffff < (int)uVar4) {
     uVar4 = 0xffff;
@@ -156,9 +156,8 @@ core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0
   if (0xffff < (int)uVar5) {
     uVar5 = 0xffff;
   }
-  g_RenderVertexBuffer[skip_lighting_calculation].light =
-       (float)g_IntensityToValueLookupTable[local_14];
-  g_RenderVertexBuffer[skip_lighting_calculation].color = g_IntensityToValueLookupTable[uVar4];
-  g_RenderVertexBuffer[skip_lighting_calculation].fog = (float)g_IntensityToValueLookupTable[uVar5];
+  g_RenderVertexBuffer[vertex_index].light = (float)g_IntensityToValueLookupTable[local_18];
+  g_RenderVertexBuffer[vertex_index].color = g_IntensityToValueLookupTable[uVar4];
+  g_RenderVertexBuffer[vertex_index].fog = (float)g_IntensityToValueLookupTable[uVar5];
   return;
 }

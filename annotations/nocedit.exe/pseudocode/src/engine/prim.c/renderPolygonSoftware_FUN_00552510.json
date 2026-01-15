@@ -1,12 +1,12 @@
 {
   "complexity": {
     "assembly_lines": 514,
-    "complexity_score": 829,
+    "complexity_score": 738,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 30,
-    "pseudocode_lines": 234,
-    "suspect_count": 57,
+    "pseudocode_lines": 223,
+    "suspect_count": 49,
     "suspect_types": [
       "call_esp_preserve",
       "pointer_cast",
@@ -14,7 +14,7 @@
       "stack_param",
       "unaffected_reg"
     ],
-    "total_lines": 748
+    "total_lines": 737
   },
   "cross_references": [
     {
@@ -380,316 +380,260 @@
     {
       "description": "Unaffected register variable",
       "line": 16,
-      "match": "unaff_EBP",
-      "text": "int unaff_EBP;",
+      "match": "unaff_ESI",
+      "text": "int unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 19,
+      "match": "unaff_EDI",
+      "text": "int unaff_EDI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 22,
-      "match": "in_stack_0000000c",
-      "text": "int in_stack_0000000c;",
+      "match": "in_stack_ffffffdc",
+      "text": "void *in_stack_ffffffdc;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 23,
-      "match": "in_stack_00000010",
-      "text": "int in_stack_00000010;",
+      "match": "in_stack_ffffffe0",
+      "text": "void *in_stack_ffffffe0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
-      "match": "in_stack_00000014",
-      "text": "int in_stack_00000014;",
+      "line": 54,
+      "match": "in_stack_ffffffe0",
+      "text": "in_stack_ffffffe0 = (void *)(vertex_count + -2);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_ffffffe4",
-      "text": "int in_stack_ffffffe4;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_ffffffec",
-      "text": "void *in_stack_ffffffec;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 69,
-      "match": "in_stack_ffffffe4",
-      "text": "} while (iVar10 < in_stack_ffffffe4);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 71,
-      "match": "in_stack_ffffffe4",
-      "text": "if (iVar9 == in_stack_ffffffe4) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 77,
-      "match": "in_stack_0000000c",
-      "text": "g_RenderedTriangleCount = g_RenderedTriangleCount + in_stack_0000000c + -2;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 79,
-      "match": "in_stack_0000000c",
-      "text": "((SRenderVertex *)vertex_count,in_stack_0000000c,g_RenderStateFlags);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 85,
-      "match": "in_stack_0000000c",
-      "text": "engine_prim_c_prepareDepthBuffer_FUN_00551fb0((SRenderVertex *)vertex_count,in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 89,
-      "match": "in_stack_0000000c",
-      "text": "((SRenderVertex *)vertex_count,in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 93,
-      "match": "in_stack_0000000c",
-      "text": "((SRenderVertex *)vertex_count,in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 97,
-      "match": "in_stack_0000000c",
-      "text": "((SRenderVertex *)vertex_count,in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 100,
-      "match": "in_stack_0000000c",
-      "text": "engine_prim_c_replaceWWithDepth_FUN_00552110((SRenderVertex *)vertex_count,in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 106,
-      "match": "in_stack_0000000c",
-      "text": "if (0 < in_stack_0000000c) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 110,
-      "match": "in_stack_0000000c",
-      "text": "if (in_stack_0000000c <= iVar9) {",
+      "line": 57,
+      "match": "in_stack_ffffffe0",
+      "text": "if (0 < (int)in_stack_ffffffe0) {",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 186,
+      "line": 61,
       "match": "(void *)((int)",
-      "text": "left_data = (void *)((int)left_data + 1);",
+      "text": "pvVar9 = (void *)((int)pvVar9 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 187,
-      "match": "in_stack_0000000c",
-      "text": "} while ((int)left_data < in_stack_0000000c);",
+      "line": 66,
+      "match": "in_stack_ffffffe0",
+      "text": "} while (iVar10 < (int)in_stack_ffffffe0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 68,
+      "match": "in_stack_ffffffe0",
+      "text": "if (pvVar9 == in_stack_ffffffe0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 155,
+      "match": "in_stack_ffffffdc",
+      "text": "in_stack_ffffffdc = (void *)((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 156,
+      "match": "in_stack_ffffffdc",
+      "text": "g_SoftwareEdgeBuffer[iVar2].v_current = (int)pSVar8->v + (int)in_stack_ffffffdc;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler signed borrow artifact",
-      "line": 195,
+      "line": 190,
       "match": "SBORROW",
-      "text": "bVar12 = SBORROW /* signed borrow */4(g_SoftwareMinScanline,g_MaxViewportScanline);",
+      "text": "bVar13 = SBORROW /* signed borrow */4(g_SoftwareMinScanline,g_MaxViewportScanline);",
       "type": "sborrow_artifact"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 211,
-      "match": "in_stack_ffffffec",
-      "text": "wincore_windll_cpp_renderScanline_FUN_005b5710(left_data,in_stack_ffffffec,unaff_EBP);",
+      "line": 206,
+      "match": "in_stack_ffffffdc",
+      "text": "wincore_windll_cpp_renderScanline_FUN_005b5710(in_stack_ffffffdc,in_stack_ffffffe0,iVar10);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 206,
+      "match": "in_stack_ffffffe0",
+      "text": "wincore_windll_cpp_renderScanline_FUN_005b5710(in_stack_ffffffdc,in_stack_ffffffe0,iVar10);",
       "type": "stack_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 211,
-      "match": "unaff_EBP",
-      "text": "wincore_windll_cpp_renderScanline_FUN_005b5710(left_data,in_stack_ffffffec,unaff_EBP);",
+      "line": 213,
+      "match": "unaff_ESI",
+      "text": "*(int *)(unaff_ESI + 8) = *(int *)(unaff_ESI + 8) + *(int *)(unaff_ESI + 0xc);",
       "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 218,
-      "match": "in_stack_00000014",
-      "text": "*(int *)(in_stack_00000014 + 8) =",
-      "type": "stack_param"
+      "description": "Unaffected register variable",
+      "line": 213,
+      "match": "unaff_ESI",
+      "text": "*(int *)(unaff_ESI + 8) = *(int *)(unaff_ESI + 8) + *(int *)(unaff_ESI + 0xc);",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unaffected register variable",
+      "line": 213,
+      "match": "unaff_ESI",
+      "text": "*(int *)(unaff_ESI + 8) = *(int *)(unaff_ESI + 8) + *(int *)(unaff_ESI + 0xc);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 214,
+      "match": "unaff_ESI",
+      "text": "*(int *)(unaff_ESI + 0x18) = *(int *)(unaff_ESI + 0x18) + *(int *)(unaff_ESI + 0x1c);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 214,
+      "match": "unaff_ESI",
+      "text": "*(int *)(unaff_ESI + 0x18) = *(int *)(unaff_ESI + 0x18) + *(int *)(unaff_ESI + 0x1c);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 214,
+      "match": "unaff_ESI",
+      "text": "*(int *)(unaff_ESI + 0x18) = *(int *)(unaff_ESI + 0x18) + *(int *)(unaff_ESI + 0x1c);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 215,
+      "match": "unaff_ESI",
+      "text": "*(int *)(unaff_ESI + 0x20) = *(int *)(unaff_ESI + 0x20) + *(int *)(unaff_ESI + 0x24);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 215,
+      "match": "unaff_ESI",
+      "text": "*(int *)(unaff_ESI + 0x20) = *(int *)(unaff_ESI + 0x20) + *(int *)(unaff_ESI + 0x24);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 215,
+      "match": "unaff_ESI",
+      "text": "*(int *)(unaff_ESI + 0x20) = *(int *)(unaff_ESI + 0x20) + *(int *)(unaff_ESI + 0x24);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 216,
+      "match": "unaff_EDI",
+      "text": "unaff_EDI = unaff_EDI + 1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 216,
+      "match": "unaff_EDI",
+      "text": "unaff_EDI = unaff_EDI + 1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 217,
+      "match": "unaff_ESI",
+      "text": "*(int *)(unaff_ESI + 0x10) = *(int *)(unaff_ESI + 0x10) + *(int *)(unaff_ESI + 0x14);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 217,
+      "match": "unaff_ESI",
+      "text": "*(int *)(unaff_ESI + 0x10) = *(int *)(unaff_ESI + 0x10) + *(int *)(unaff_ESI + 0x14);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 217,
+      "match": "unaff_ESI",
+      "text": "*(int *)(unaff_ESI + 0x10) = *(int *)(unaff_ESI + 0x10) + *(int *)(unaff_ESI + 0x14);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
       "line": 219,
-      "match": "in_stack_00000014",
-      "text": "*(int *)(in_stack_00000014 + 8) + *(int *)(in_stack_00000014 + 0xc);",
-      "type": "stack_param"
+      "match": "unaff_ESI",
+      "text": "*(int *)(unaff_ESI + 0x28) = *(int *)(unaff_ESI + 0x28) + *(int *)(unaff_ESI + 0x2c);",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unaffected register variable",
       "line": 219,
-      "match": "in_stack_00000014",
-      "text": "*(int *)(in_stack_00000014 + 8) + *(int *)(in_stack_00000014 + 0xc);",
-      "type": "stack_param"
+      "match": "unaff_ESI",
+      "text": "*(int *)(unaff_ESI + 0x28) = *(int *)(unaff_ESI + 0x28) + *(int *)(unaff_ESI + 0x2c);",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unaffected register variable",
+      "line": 219,
+      "match": "unaff_ESI",
+      "text": "*(int *)(unaff_ESI + 0x28) = *(int *)(unaff_ESI + 0x28) + *(int *)(unaff_ESI + 0x2c);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
       "line": 220,
-      "match": "in_stack_00000014",
-      "text": "*(int *)(in_stack_00000014 + 0x18) =",
-      "type": "stack_param"
+      "match": "unaff_ESI",
+      "text": "*(int *)(unaff_ESI + 0x30) = *(int *)(unaff_ESI + 0x30) + *(int *)(unaff_ESI + 0x34);",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unaffected register variable",
+      "line": 220,
+      "match": "unaff_ESI",
+      "text": "*(int *)(unaff_ESI + 0x30) = *(int *)(unaff_ESI + 0x30) + *(int *)(unaff_ESI + 0x34);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 220,
+      "match": "unaff_ESI",
+      "text": "*(int *)(unaff_ESI + 0x30) = *(int *)(unaff_ESI + 0x30) + *(int *)(unaff_ESI + 0x34);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
       "line": 221,
-      "match": "in_stack_00000014",
-      "text": "*(int *)(in_stack_00000014 + 0x18) + *(int *)(in_stack_00000014 + 0x1c);",
-      "type": "stack_param"
+      "match": "unaff_EDI",
+      "text": "iVar3 = unaff_EDI - iVar5;",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 221,
-      "match": "in_stack_00000014",
-      "text": "*(int *)(in_stack_00000014 + 0x18) + *(int *)(in_stack_00000014 + 0x1c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
+      "description": "Unaffected register variable",
       "line": 222,
-      "match": "in_stack_00000014",
-      "text": "*(int *)(in_stack_00000014 + 0x20) =",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 223,
-      "match": "in_stack_00000014",
-      "text": "*(int *)(in_stack_00000014 + 0x20) + *(int *)(in_stack_00000014 + 0x24);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 223,
-      "match": "in_stack_00000014",
-      "text": "*(int *)(in_stack_00000014 + 0x20) + *(int *)(in_stack_00000014 + 0x24);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 224,
-      "match": "in_stack_00000010",
-      "text": "in_stack_00000010 = in_stack_00000010 + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 224,
-      "match": "in_stack_00000010",
-      "text": "in_stack_00000010 = in_stack_00000010 + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 225,
-      "match": "in_stack_00000014",
-      "text": "*(int *)(in_stack_00000014 + 0x10) =",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 226,
-      "match": "in_stack_00000014",
-      "text": "*(int *)(in_stack_00000014 + 0x10) + *(int *)(in_stack_00000014 + 0x14);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 226,
-      "match": "in_stack_00000014",
-      "text": "*(int *)(in_stack_00000014 + 0x10) + *(int *)(in_stack_00000014 + 0x14);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 228,
-      "match": "in_stack_00000014",
-      "text": "*(int *)(in_stack_00000014 + 0x28) =",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 229,
-      "match": "in_stack_00000014",
-      "text": "*(int *)(in_stack_00000014 + 0x28) + *(int *)(in_stack_00000014 + 0x2c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 229,
-      "match": "in_stack_00000014",
-      "text": "*(int *)(in_stack_00000014 + 0x28) + *(int *)(in_stack_00000014 + 0x2c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 230,
-      "match": "in_stack_00000014",
-      "text": "*(int *)(in_stack_00000014 + 0x30) =",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 231,
-      "match": "in_stack_00000014",
-      "text": "*(int *)(in_stack_00000014 + 0x30) + *(int *)(in_stack_00000014 + 0x34);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 231,
-      "match": "in_stack_00000014",
-      "text": "*(int *)(in_stack_00000014 + 0x30) + *(int *)(in_stack_00000014 + 0x34);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 232,
-      "match": "in_stack_00000010",
-      "text": "iVar9 = in_stack_00000010 - iVar2;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 233,
-      "match": "in_stack_00000010",
-      "text": "bVar12 = SBORROW /* signed borrow */4(in_stack_00000010,iVar2);",
-      "type": "stack_param"
+      "match": "unaff_EDI",
+      "text": "bVar13 = SBORROW /* signed borrow */4(unaff_EDI,iVar5);",
+      "type": "unaffected_reg"
     },
     {
       "description": "Decompiler signed borrow artifact",
-      "line": 233,
+      "line": 222,
       "match": "SBORROW",
-      "text": "bVar12 = SBORROW /* signed borrow */4(in_stack_00000010,iVar2);",
+      "text": "bVar13 = SBORROW /* signed borrow */4(unaff_EDI,iVar5);",
       "type": "sborrow_artifact"
     },
     {

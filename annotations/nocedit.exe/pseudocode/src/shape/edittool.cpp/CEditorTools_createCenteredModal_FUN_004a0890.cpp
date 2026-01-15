@@ -13,8 +13,6 @@ shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_004a0890
 {
   int iVar1;
   int iVar2;
-  int in_stack_00000018;
-  int in_stack_00000020;
   
   if (g_EditorFont == (CBitFont *)0x0) {
     g_CurrentFilename = "..\\shape\\edittool.cpp";
@@ -32,9 +30,9 @@ shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_004a0890
     }
   }
   iVar1 = (g_WindowWidth - min_width) / 2;
-  iVar2 = (g_WindowHeight - in_stack_00000018) / 2;
+  iVar2 = (g_WindowHeight - min_height) / 2;
   shape_edittool_cpp_CEditorTools_createModalWindow_FUN_004a0970
-            ((CEditorTools *)text_content,iVar1,iVar2,g_WindowWidth - iVar1,g_WindowHeight - iVar2,
-             text_content,in_stack_00000020);
+            (this_ptr,iVar1,iVar2,g_WindowWidth - iVar1,g_WindowHeight - iVar2,text_content,
+             modal_flags);
   return;
 }

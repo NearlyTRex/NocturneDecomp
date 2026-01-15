@@ -14,8 +14,8 @@ core_dcube_cpp_clipTriangleToAABB_FUN_00456400
   byte bVar1;
   CVector3f *pCVar2;
   int iVar3;
-  uint uVar4;
-  uint uVar5;
+  uint local_18;
+  uint local_14;
   
   g_CubeInputTriangleCount = 3;
   pCVar2 = *triangle_vertices;
@@ -37,8 +37,8 @@ core_dcube_cpp_clipTriangleToAABB_FUN_00456400
     g_CubeInputTriangleBuffer[2].y = pCVar2->y;
   }
   iVar3 = 0;
-  uVar4 = 0;
-  uVar5 = 0xffffffff;
+  local_18 = 0;
+  local_14 = 0xffffffff;
   pCVar2 = g_CubeInputTriangleBuffer;
   do {
     bVar1 = aabb_max->x < pCVar2->x;
@@ -59,10 +59,10 @@ core_dcube_cpp_clipTriangleToAABB_FUN_00456400
     }
     pCVar2 = pCVar2 + 1;
     iVar3 = iVar3 + 1;
-    uVar5 = uVar5 & bVar1;
-    uVar4 = uVar4 | bVar1;
+    local_14 = local_14 & bVar1;
+    local_18 = local_18 | bVar1;
   } while (iVar3 < 3);
-  if (uVar4 == 0) {
+  if (local_18 == 0) {
     pCVar2 = *triangle_vertices;
     g_CubeClippedTriangleCount = 3;
     if (pCVar2 != g_CubeClippedTriangleBuffer) {
@@ -84,15 +84,15 @@ core_dcube_cpp_clipTriangleToAABB_FUN_00456400
     }
   }
   else {
-    if (uVar5 != 0) {
+    if (local_14 != 0) {
       return 0;
     }
-    g_CubeClipStage1Count = uVar5;
-    g_CubeClipStage2Count = uVar5;
-    g_CubeClipStage3Count = uVar5;
-    g_CubeClipStage4Count = uVar5;
-    g_CubeClipStage5Count = uVar5;
-    g_CubeClippedTriangleCount = uVar5;
+    g_CubeClipStage1Count = local_14;
+    g_CubeClipStage2Count = local_14;
+    g_CubeClipStage3Count = local_14;
+    g_CubeClipStage4Count = local_14;
+    g_CubeClipStage5Count = local_14;
+    g_CubeClippedTriangleCount = local_14;
     core_dcube_cpp_clipPolygonAgainstMaxY_FUN_00454970(aabb_max->y);
     if ((int)g_CubeClipStage1Count < 3) {
       return 0;

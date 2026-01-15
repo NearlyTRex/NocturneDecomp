@@ -9,7 +9,6 @@
 void __cdecl shape_meshlod_cpp_CLodMesh_normalizeAndCenterMesh_FUN_00516e10(CLodMesh *this_ptr)
 
 {
-  BADSPACEBASE *in_ESP;
   float local_60;
   CBoundingBox3D local_5c;
   float local_44;

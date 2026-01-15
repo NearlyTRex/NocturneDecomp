@@ -10,7 +10,6 @@ DWORD __cdecl crt_file_c_get_file_attributes_FUN_006082e0(char *filename)
 
 {
   HANDLE pvVar1;
-  BADSPACEBASE *in_ESP;
   char *pcVar2;
   char *pcVar3;
   _WIN32_FIND_DATAA _Stack_148;
@@ -43,7 +42,7 @@ LAB_0060832b:
       if (pvVar1 == (HANDLE)0xffffffff) {
         return 0xffffffff;
       }
-      return _Stack_148.ftLastAccessTime.dwLowDateTime;
+      return _Stack_148.dwFileAttributes;
     }
   }
   return 0xffffffff;

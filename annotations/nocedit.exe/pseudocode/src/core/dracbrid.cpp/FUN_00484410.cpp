@@ -35,7 +35,6 @@ void core_dracbrid_cpp_FUN_00484410(uint param_1)
   int extraout_EAX_02;
   CDemonActor *pCVar17;
   int extraout_EAX_03;
-  BADSPACEBASE *in_ESP;
   float10 fVar18;
   float10 fVar19;
   double dVar20;

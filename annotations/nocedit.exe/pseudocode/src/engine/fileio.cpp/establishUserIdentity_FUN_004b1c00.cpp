@@ -13,15 +13,14 @@ int __cdecl engine_fileio_cpp_establishUserIdentity_FUN_004b1c00(void)
   char *pcVar2;
   int iVar3;
   SVersionControlSession *pSVar4;
-  BADSPACEBASE *in_ESP;
-  char in_stack_fffffe00;
+  char local_204 [512];
   
   if (g_VersionControlSession.primary_username[0] != '\0') {
     return 1;
   }
-  wincore_winrun_cpp_getComputerAndUserName_FUN_005f4140(&stack0xfffffdfc);
-  if (in_stack_fffffe00 != '\0') {
-    pcVar2 = &stack0xfffffe00;
+  wincore_winrun_cpp_getComputerAndUserName_FUN_005f4140(local_204);
+  if (local_204[0] != '\0') {
+    pcVar2 = local_204;
     pSVar4 = &g_VersionControlSession;
     do {
       cVar1 = *pcVar2;

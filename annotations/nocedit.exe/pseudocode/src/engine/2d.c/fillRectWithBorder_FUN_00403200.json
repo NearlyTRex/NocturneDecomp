@@ -1,17 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 63,
+    "complexity_score": 37,
     "cross_reference_count": 8,
     "function_call_count": 2,
     "global_count": 1,
-    "pseudocode_lines": 13,
-    "suspect_count": 4,
+    "pseudocode_lines": 12,
+    "suspect_count": 2,
     "suspect_types": [
-      "call_esp_preserve",
-      "stack_param"
+      "call_esp_preserve"
     ],
-    "total_lines": 51
+    "total_lines": 50
   },
   "cross_references": [
     {
@@ -167,20 +166,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_0000001c",
-      "text": "int in_stack_0000001c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_0000001c",
-      "text": "g_ActiveRenderColor = in_stack_0000001c;",
-      "type": "stack_param"
-    },
     {
       "add_esp_value": 20,
       "call_address": "0040321c",

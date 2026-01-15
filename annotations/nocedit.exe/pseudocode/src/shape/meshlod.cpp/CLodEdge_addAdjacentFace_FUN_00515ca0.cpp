@@ -10,8 +10,6 @@ void __cdecl
 shape_meshlod_cpp_CLodEdge_addAdjacentFace_FUN_00515ca0(CLodEdge *this_ptr,int tri_index)
 
 {
-  int in_stack_00000010;
-  
   if (this_ptr->adjacent_tri_count < 0x32) {
     this_ptr->adjacent_tri_indices[this_ptr->adjacent_tri_count] = tri_index;
     this_ptr->adjacent_tri_count = this_ptr->adjacent_tri_count + 1;
@@ -22,7 +20,7 @@ shape_meshlod_cpp_CLodEdge_addAdjacentFace_FUN_00515ca0(CLodEdge *this_ptr,int t
   g_CurrentFilename = "..\\shape\\meshlod.cpp";
   g_CurrentLineNumber = 0x281;
   core_main_c_displayErrorAndQuit_FUN_00506f10("Too many adj faces!");
-  this_ptr->adjacent_tri_indices[this_ptr->adjacent_tri_count] = in_stack_00000010;
+  this_ptr->adjacent_tri_indices[this_ptr->adjacent_tri_count] = tri_index;
   this_ptr->adjacent_tri_count = this_ptr->adjacent_tri_count + 1;
   return;
 }

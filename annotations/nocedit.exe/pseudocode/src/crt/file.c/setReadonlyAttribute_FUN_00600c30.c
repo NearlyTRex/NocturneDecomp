@@ -11,7 +11,6 @@ DWORD __cdecl crt_file_c_setReadonlyAttribute_FUN_00600c30(char *filename,DWORD 
 {
   DWORD DVar1;
   BOOL BVar2;
-  byte in_stack_0000000c;
   
   DVar1 = crt_file_c_get_file_attributes_FUN_006082e0(filename);
   if (DVar1 == 0xffffffff) {
@@ -19,10 +18,10 @@ DWORD __cdecl crt_file_c_setReadonlyAttribute_FUN_00600c30(char *filename,DWORD 
     return DVar1;
   }
   DVar1 = DVar1 & 0xfffffffe;
-  if ((in_stack_0000000c & 0x80) == 0) {
+  if ((file_attributes & 0x80) == 0) {
     DVar1 = DVar1 | 1;
   }
-  BVar2 = (*SetFileAttributesA)((LPCSTR)file_attributes,DVar1);
+  BVar2 = (*SetFileAttributesA)(filename,DVar1);
   if (BVar2 == 0) {
     DVar1 = crt_errno_c_getLastErrorAndSetErrno_FUN_006083fc();
     return DVar1;

@@ -10,13 +10,12 @@ int __cdecl engine_dosio_c_getFileSize_FUN_00481880(char *directory,char *filena
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
-  int iStack_8;
+  SFoundFileInfo local_214;
   
-  engine_dosio_c_getRelativeFilePath_FUN_004816c0(&stack0xfffffdec,directory,filename);
-  iVar1 = engine_dosio_c_findFile_FUN_00481760((SFoundFileInfo *)&stack0xfffffdf0);
+  engine_dosio_c_getRelativeFilePath_FUN_004816c0(local_214.found_path,directory,filename);
+  iVar1 = engine_dosio_c_findFile_FUN_00481760(&local_214);
   if (iVar1 != 0) {
-    return iStack_8;
+    return local_214.file_size;
   }
   return -1;
 }

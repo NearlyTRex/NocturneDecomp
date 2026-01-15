@@ -18,41 +18,41 @@ uint shape_superopt_cpp_FUN_005c8280(void)
   double *pdVar6;
   int iVar7;
   byte bVar8;
-  int *in_stack_0000000c;
-  int in_stack_00000010;
+  int *in_stack_00000008;
+  int in_stack_0000000c;
   
   bVar8 = 0;
-  ptr = crt_memory_c_malloc_FUN_006021da((int)in_stack_0000000c * 0x60);
+  ptr = crt_memory_c_malloc_FUN_006021da(in_stack_0000000c * 0x60);
   iVar7 = 0;
   if (ptr == (int *)0x0) {
     return 0;
   }
   do {
     iVar5 = 0;
-    if (in_stack_00000010 != 0) {
-      piVar2 = in_stack_0000000c;
+    if (in_stack_0000000c != 0) {
+      piVar2 = in_stack_00000008;
       do {
         if (*piVar2 != -1) break;
         piVar2 = piVar2 + 0x18;
         iVar5 = iVar5 + 1;
-      } while (piVar2 < in_stack_0000000c + in_stack_00000010 * 0x18);
+      } while (piVar2 < in_stack_00000008 + in_stack_0000000c * 0x18);
     }
-    if (iVar5 == in_stack_00000010) {
+    if (iVar5 == in_stack_0000000c) {
       piVar2 = ptr;
-      for (uVar4 = (uint)(in_stack_00000010 * 0x60) >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
-        *in_stack_0000000c = *piVar2;
+      for (uVar4 = (uint)(in_stack_0000000c * 0x60) >> 2; uVar4 != 0; uVar4 = uVar4 - 1) {
+        *in_stack_00000008 = *piVar2;
         piVar2 = piVar2 + (uint)bVar8 * -2 + 1;
-        in_stack_0000000c = in_stack_0000000c + (uint)bVar8 * -2 + 1;
+        in_stack_00000008 = in_stack_00000008 + (uint)bVar8 * -2 + 1;
       }
       for (iVar7 = 0; iVar7 != 0; iVar7 = iVar7 + -1) {
-        *(char *)in_stack_0000000c = (char)*piVar2;
+        *(char *)in_stack_00000008 = (char)*piVar2;
         piVar2 = (int *)((int)piVar2 + (uint)bVar8 * -2 + 1);
-        in_stack_0000000c = (int *)((int)in_stack_0000000c + (uint)bVar8 * -2 + 1);
+        in_stack_00000008 = (int *)((int)in_stack_00000008 + (uint)bVar8 * -2 + 1);
       }
       crt_memory_c_free_FUN_005fe659(ptr);
       return 1;
     }
-    piVar2 = in_stack_0000000c + iVar5 * 0x18;
+    piVar2 = in_stack_00000008 + iVar5 * 0x18;
     piVar3 = ptr + iVar7 * 0x18;
     *piVar3 = *piVar2;
     piVar3[1] = piVar2[1];
@@ -82,10 +82,10 @@ uint shape_superopt_cpp_FUN_005c8280(void)
     *piVar2 = -1;
     do {
       bVar1 = true;
-      if (in_stack_00000010 != 0) {
+      if (in_stack_0000000c != 0) {
         iVar5 = iVar7 * 0x60;
         pdVar6 = (double *)(ptr + iVar7 * 0x18 + -0xe);
-        piVar2 = in_stack_0000000c;
+        piVar2 = in_stack_00000008;
         do {
           if (!bVar1) break;
           if ((((*piVar2 != -1) && (*(double *)(piVar2 + 4) == *pdVar6)) &&
@@ -112,7 +112,7 @@ uint shape_superopt_cpp_FUN_005c8280(void)
             *piVar2 = -1;
           }
           piVar2 = piVar2 + 0x18;
-        } while (piVar2 < in_stack_0000000c + in_stack_00000010 * 0x18);
+        } while (piVar2 < in_stack_00000008 + in_stack_0000000c * 0x18);
       }
     } while (!bVar1);
   } while( true );

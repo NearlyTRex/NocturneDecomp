@@ -1,21 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 368,
-    "complexity_score": 469,
+    "complexity_score": 430,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 3,
-    "pseudocode_lines": 199,
-    "suspect_count": 24,
+    "pseudocode_lines": 190,
+    "suspect_count": 22,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "param_count_too_few",
       "pointer_cast",
-      "register_param",
       "stack_param"
     ],
-    "total_lines": 567
+    "total_lines": 558
   },
   "cross_references": [
     {
@@ -345,78 +343,64 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 10,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 10,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 12,
       "match": "in_stack_00000004",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 13,
       "match": "in_stack_00000008",
       "text": "uint *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 28,
+      "line": 19,
       "match": "in_stack_00000008",
-      "text": "*(uint *)pcVar13 = *in_stack_00000008;",
+      "text": "*(uint *)pcVar4 = *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 29,
+      "line": 20,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008 = in_stack_00000008 + 1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 29,
+      "line": 20,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008 = in_stack_00000008 + 1;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 21,
       "match": "(char *)((int)",
-      "text": "pcVar13 = (char *)((int)pcVar13 + 4);",
+      "text": "pcVar4 = (char *)((int)pcVar4 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 33,
+      "line": 24,
       "match": "in_stack_00000004",
       "text": "if (0 < *(int *)(in_stack_00000004 + 0xcc)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 34,
+      "line": 25,
       "match": "in_stack_00000004",
       "text": "iVar3 = in_stack_00000004 + 0xd0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 200,
+      "line": 191,
       "match": "in_stack_00000004",
       "text": "} while (iVar2 < *(int *)(in_stack_00000004 + 0xcc));",
       "type": "stack_param"

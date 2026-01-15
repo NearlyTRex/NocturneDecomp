@@ -1,19 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 139,
-    "complexity_score": 451,
+    "complexity_score": 425,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 17,
-    "pseudocode_lines": 81,
-    "suspect_count": 35,
+    "pseudocode_lines": 80,
+    "suspect_count": 33,
     "suspect_types": [
       "call_esp_preserve",
       "extra_output",
-      "pointer_cast",
-      "stack_param"
+      "pointer_cast"
     ],
-    "total_lines": 220
+    "total_lines": 219
   },
   "cross_references": [
     {
@@ -290,169 +289,155 @@
       "type": "extra_output"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_00000014",
-      "text": "int in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_00000014",
-      "text": "if (in_stack_00000014 != 0) {",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 40,
       "match": "(float *)((int)",
       "text": "((double)((float10)*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar2) *",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 43,
+      "line": 42,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&pCVar1->x + iVar3) = (int)ROUND(dVar6);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 46,
+      "line": 45,
       "match": "(float *)((int)",
       "text": "((double)((float10)*(float *)((int)&g_LoadedVertices[0].vertex.y +",
       "type": "pointer_cast"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 47,
+      "line": 46,
       "match": "extraout_ECX",
       "text": "extraout_ECX) * fVar5));",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 48,
+      "line": 47,
       "match": "extraout_EDX",
       "text": "*(int *)((int)&pCVar1->y + extraout_EDX) = (int)ROUND(dVar6);",
       "type": "extra_output"
     },
     {
       "description": "Complex pointer cast",
-      "line": 48,
+      "line": 47,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&pCVar1->y + extraout_EDX) = (int)ROUND(dVar6);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 51,
+      "line": 50,
       "match": "(float *)((int)",
       "text": "((double)((float10)*(float *)((int)&g_LoadedVertices[0].vertex.z +",
       "type": "pointer_cast"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 52,
+      "line": 51,
       "match": "extraout_ECX_00",
       "text": "extraout_ECX_00) * fVar5));",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 53,
+      "line": 52,
       "match": "extraout_ECX_01",
       "text": "iVar2 = extraout_ECX_01 + 0x14;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 54,
+      "line": 53,
       "match": "extraout_EDX_00",
       "text": "*(int *)((int)&pCVar1->z + extraout_EDX_00) = (int)ROUND(dVar6);",
       "type": "extra_output"
     },
     {
       "description": "Complex pointer cast",
-      "line": 54,
+      "line": 53,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&pCVar1->z + extraout_EDX_00) = (int)ROUND(dVar6);",
       "type": "pointer_cast"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 56,
+      "line": 55,
       "match": "extraout_EDX_01",
       "text": "iVar3 = extraout_EDX_01 + 0xc;",
       "type": "extra_output"
     },
     {
       "description": "Complex pointer cast",
-      "line": 64,
+      "line": 63,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&this_ptr->face_data->vertex_index_1 + iVar2) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 65,
+      "line": 64,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar3);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 66,
+      "line": 65,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&this_ptr->face_data->vertex_index_2 + iVar2) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 67,
+      "line": 66,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar3 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 68,
+      "line": 67,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&this_ptr->face_data->vertex_index_3 + iVar2) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 69,
+      "line": 68,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar3 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 70,
+      "line": 69,
       "match": "(int *)((int)",
       "text": "if (*(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar3 + -0x14) == 4) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 71,
+      "line": 70,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&this_ptr->face_data->material + iVar2) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 72,
+      "line": 71,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar3 + 0xc);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 75,
+      "line": 74,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&this_ptr->face_data->material + iVar2) = 0xffffffff;",
       "type": "pointer_cast"

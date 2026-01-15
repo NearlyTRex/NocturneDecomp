@@ -9,11 +9,11 @@
 void core_skeledit_cpp_FUN_00589500(void)
 
 {
-  char *in_stack_0000000c;
+  char *in_stack_00000004;
   
   crt_stack_c_stack_probe_FUN_005ff9f3(4);
-  while ((g_CharacterClassificationTable[(byte)(*in_stack_0000000c + 1)] & 2U) != 0) {
-    in_stack_0000000c = in_stack_0000000c + 1;
+  while ((g_CharacterClassificationTable[(byte)(*in_stack_00000004 + 1)] & 2U) != 0) {
+    in_stack_00000004 = in_stack_00000004 + 1;
   }
   return;
 }

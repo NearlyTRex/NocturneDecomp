@@ -23,7 +23,6 @@ int * engine_colquant_c_FUN_004406c0(void)
   int extraout_EDX_02;
   int iVar7;
   uint uVar8;
-  BADSPACEBASE *in_ESP;
   int *piVar9;
   int *piVar10;
   byte bVar11;
@@ -40,10 +39,10 @@ int * engine_colquant_c_FUN_004406c0(void)
   int iStack_154;
   int local_150;
   char acStack_14c [256];
-  int aiStack_4c [10];
+  int aiStack_4c [9];
+  int iStack_28;
   int local_24;
   int local_20;
-  int local_1c;
   uint local_18;
   uint uStack_14;
   
@@ -70,9 +69,9 @@ int * engine_colquant_c_FUN_004406c0(void)
                                         (float10)*(byte *)(iVar4 + iVar7) *
                                         (float10)*(byte *)(iVar4 + iVar7) + fVar13 * fVar13) *
                                   fVar12));
-      local_1c = (int)ROUND(dVar15);
+      local_20 = (int)ROUND(dVar15);
       iVar7 = iVar7 + 4;
-      *(byte *)(extraout_EDX + -1 + iVar7) = (byte)local_1c;
+      *(byte *)(extraout_EDX + -1 + iVar7) = (byte)local_20;
     } while (iVar7 < extraout_ECX);
   }
   in_stack_00000004[0x1010] = 0;
@@ -163,8 +162,8 @@ int * engine_colquant_c_FUN_004406c0(void)
           local_24 = (int)ROUND(dVar15);
           *(byte *)((int)piVar6 + 0x8009) = (byte)local_24;
           dVar15 = crt_math_c_round_FUN_005fe6b0(*(double *)(extraout_EDX_01 + 0x2018));
-          local_1c = (int)ROUND(dVar15);
-          *(byte *)((int)piVar6 + 0x800a) = (byte)local_1c;
+          iStack_28 = (int)ROUND(dVar15);
+          *(byte *)((int)piVar6 + 0x800a) = (byte)iStack_28;
           piVar5 = (int *)(extraout_EDX_02 + 0x20);
           piVar6 = (int *)((int)piVar6 + 3);
         } while ((int *)(extraout_EDX_02 + 0x20) != extraout_ECX_00);

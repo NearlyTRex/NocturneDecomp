@@ -1,25 +1,23 @@
 {
   "complexity": {
     "assembly_lines": 329,
-    "complexity_score": 899,
+    "complexity_score": 868,
     "cross_reference_count": 0,
     "function_call_count": 15,
     "global_count": 47,
-    "pseudocode_lines": 149,
-    "suspect_count": 70,
+    "pseudocode_lines": 148,
+    "suspect_count": 68,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "callind_preserve",
       "lea_esp_stack_addr",
-      "register_param",
       "stack_param",
       "stack_ref",
       "unresolved_funcptr",
       "variadic_preserve",
       "warning_overlapping_globals"
     ],
-    "total_lines": 478
+    "total_lines": 477
   },
   "cross_references": [],
   "function": {
@@ -478,211 +476,197 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 15,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 15,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 17,
       "match": "in_stack_00000004",
       "text": "CEnemy *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 38,
+      "line": 37,
       "match": "in_stack_00000004",
       "text": "(&(in_stack_00000004->base_character).model,model_name);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 39,
+      "line": 38,
       "match": "in_stack_00000004",
       "text": "pCVar1 = &(in_stack_00000004->base_character).model;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 75,
+      "line": 74,
       "match": "in_stack_00000004",
       "text": "core_enemy_cpp_CEnemy_FUN_004a9650(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 77,
+      "line": 76,
       "match": "in_stack_00000004",
       "text": "((CCloth *)(in_stack_00000004[1].base_character.base_actor.create_event + 0x58),",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 82,
+      "line": 81,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004[6].base_character.cloth_data + 0x1b2c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 84,
+      "line": 83,
       "match": "in_stack_00000004",
       "text": "*(CDemonActor **)(in_stack_00000004[6].base_character.cloth_data + 0x2784) = pCVar4;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 90,
+      "line": 89,
       "match": "code *",
       "text": "(*(code *)**(uint **)",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 91,
+      "line": 90,
       "match": "in_stack_00000004",
       "text": "(*(int *)(in_stack_00000004[6].base_character.cloth_data + 0x2784) + 0x154))();",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 92,
+      "line": 91,
       "match": "in_stack_00000004",
       "text": "pCVar1 = &(in_stack_00000004->base_character).model;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 98,
+      "line": 97,
       "match": "in_stack_00000004",
       "text": "if (0 < *(int *)(in_stack_00000004[6].base_character.cloth_data + 0x1ba8)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 101,
+      "line": 100,
       "match": "in_stack_00000004",
       "text": "iVar3 = *(int *)(in_stack_00000004[6].base_character.cloth_data + 0x1bac);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 105,
+      "line": 104,
       "match": "in_stack_00000004",
       "text": "} while (iVar6 < *(int *)(in_stack_00000004[6].base_character.cloth_data + 0x1ba8));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 108,
+      "line": 107,
       "match": "in_stack_00000004",
       "text": "if (0 < *(int *)(in_stack_00000004[6].base_character.cloth_data + 0x1bb0)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 111,
+      "line": 110,
       "match": "in_stack_00000004",
       "text": "iVar3 = *(int *)(in_stack_00000004[6].base_character.cloth_data + 0x1bb4);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 115,
+      "line": 114,
       "match": "&stack0xffffffe8",
       "text": "*(uint *)(&stack0xffffffe8 + (uint)bVar8 * -8) = *puVar7;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 116,
+      "line": 115,
       "match": "&stack0xffffffec",
       "text": "*(uint *)(&stack0xffffffec + (uint)bVar8 * -8 + (uint)bVar8 * -8) =",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 121,
+      "line": 120,
       "match": "&stack0xffffffdc",
       "text": "*(uint *)(&stack0xffffffdc + (uint)bVar8 * -8) = *puVar7;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 122,
+      "line": 121,
       "match": "&stack0xffffffe0",
       "text": "*(uint *)(&stack0xffffffe0 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 127,
+      "line": 126,
       "match": "&stack0xffffffe8",
       "text": "*puVar7 = *(uint *)(&stack0xffffffe8 + (uint)bVar8 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 129,
+      "line": 128,
       "match": "&stack0xffffffec",
       "text": "*(uint *)(&stack0xffffffec + (uint)bVar8 * -8 + (uint)bVar8 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 133,
+      "line": 132,
       "match": "&stack0xffffffdc",
       "text": "*puVar7 = *(uint *)(&stack0xffffffdc + (uint)bVar8 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 135,
+      "line": 134,
       "match": "&stack0xffffffe0",
       "text": "*(uint *)(&stack0xffffffe0 + (uint)bVar8 * -8 + (uint)bVar8 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 138,
+      "line": 137,
       "match": "in_stack_00000004",
       "text": "} while (iVar6 < *(int *)(in_stack_00000004[6].base_character.cloth_data + 0x1bb0));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 142,
+      "line": 141,
       "match": "in_stack_00000004",
       "text": "(*(int *)(in_stack_00000004[6].base_character.cloth_data + 0x2784) + 0x158));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 145,
+      "line": 144,
       "match": "in_stack_00000004",
       "text": "(*(int *)(in_stack_00000004[6].base_character.cloth_data + 0x2784) + 0x158));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 149,
+      "line": 148,
       "match": "in_stack_00000004",
       "text": "(*(int *)(in_stack_00000004[6].base_character.cloth_data + 0x2784) + 0x158));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 151,
+      "line": 150,
       "match": "in_stack_00000004",
       "text": "((CMorph *)(in_stack_00000004[6].base_character.cloth_data + 0x1b54));",
       "type": "stack_param"

@@ -11,13 +11,10 @@ void __cdecl core_texlist_cpp_CTextureList_previewTexture_FUN_005dc760(CTextureL
 {
   char cVar1;
   int iVar2;
-  BADSPACEBASE *in_ESP;
   char (*pacVar3) [16];
   char *pcVar4;
-  int local_40;
-  CDemonRenderer *this_ptr_00;
-  int iStack_18;
-  char acStack_14 [4];
+  CDemonRenderer *in_stack_ffffffb0;
+  SMRGLTextureBasic local_28;
   
   if ((g_KeyboardState[0x1d] != '\0') && (g_KeyboardState[0x2c] != '\0')) {
     g_KeyboardState[0x2c] = '\0';
@@ -54,17 +51,15 @@ void __cdecl core_texlist_cpp_CTextureList_previewTexture_FUN_005dc760(CTextureL
     g_RenderVertexBuffer[1].projected_vertex.transformed_y = 0xa00;
     g_RenderVertexBuffer[1].projected_vertex.transformed_z = 0xa00;
     g_RenderVertexBuffer[2].projected_vertex.transformed_z = 0xa00;
-    iStack_18 = 0;
+    local_28.base.count = 0;
     g_RenderVertexBuffer[1].projected_vertex.transformed_x = -0xa00;
     g_RenderVertexBuffer[2].projected_vertex.transformed_x = -0xa00;
     g_RenderVertexBuffer[2].projected_vertex.transformed_y = -0xa00;
     g_RenderVertexBuffer[3].projected_vertex.transformed_y = -0xa00;
     g_RenderVertexBuffer[3].projected_vertex.transformed_x = 0xa00;
     g_RenderVertexBuffer[3].projected_vertex.transformed_z = 0xa00;
-    this_ptr_00 = (CDemonRenderer *)0x0;
-    local_40 = 4;
     g_RenderVertexBuffer[2].u = 7.34684e-40;
-    pcVar4 = acStack_14;
+    pcVar4 = local_28.texture_name;
     pacVar3 = this_ptr->master_texture_names + this_ptr->current_master_selection;
     g_RenderVertexBuffer[3].v = 2.2775203e-38;
     do {
@@ -76,9 +71,8 @@ void __cdecl core_texlist_cpp_CTextureList_previewTexture_FUN_005dc760(CTextureL
       pcVar4[1] = cVar1;
       pcVar4 = pcVar4 + 2;
     } while (cVar1 != '\0');
-    engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-              (g_CDemonRendererPtr,(SMRGLTextureBasic *)&stack0xffffffe4);
-    engine_3d_c_renderPolygonTextureEnable_FUN_00403cc0((SMRGLHeaderPrimitive *)&local_40);
+    engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(g_CDemonRendererPtr,&local_28);
+    engine_3d_c_renderPolygonTextureEnable_FUN_00403cc0((SMRGLHeaderPrimitive *)&stack0xffffffb0);
     if (g_KeyboardState[0x1b] != '\0') {
       g_KeyboardState[0x1b] = '\0';
       iVar2 = this_ptr->current_master_selection + (uint)(byte)g_KeyboardState[0x2a] * 9 + 1;
@@ -96,8 +90,7 @@ void __cdecl core_texlist_cpp_CTextureList_previewTexture_FUN_005dc760(CTextureL
       }
     }
     if (g_TexturePreviewFullscreen == 0) {
-      local_40 = 0x5dca1d;
-      engine_matrix_c_popViewport_FUN_0050e480(this_ptr_00);
+      engine_matrix_c_popViewport_FUN_0050e480(in_stack_ffffffb0);
       return;
     }
   }

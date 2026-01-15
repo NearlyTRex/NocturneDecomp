@@ -17,7 +17,6 @@ core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940
   float fVar1;
   float fVar2;
   bool bVar3;
-  BADSPACEBASE *in_ESP;
   CVector3f local_58 [2];
   float local_40;
   float local_3c;

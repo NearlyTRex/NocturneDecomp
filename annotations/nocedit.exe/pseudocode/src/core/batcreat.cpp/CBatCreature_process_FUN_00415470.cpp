@@ -25,7 +25,6 @@ void __cdecl core_batcreat_cpp_CBatCreature_process_FUN_00415470(CBatCreature *t
   int extraout_EAX;
   int extraout_EAX_00;
   uint uVar11;
-  BADSPACEBASE *in_ESP;
   float in_stack_00000008;
   SDamageInfo local_13c;
   CVector3f local_100;

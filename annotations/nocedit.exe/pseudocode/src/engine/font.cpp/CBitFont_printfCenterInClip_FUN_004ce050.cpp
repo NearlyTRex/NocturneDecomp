@@ -11,7 +11,6 @@ engine_font_cpp_CBitFont_printfCenterInClip_FUN_004ce050
           (CBitFont *this_ptr,int x,int y,int color,char *format,...)
 
 {
-  BADSPACEBASE *in_ESP;
   va_list_t local_14;
   
   local_14 = &stack0x00000018;

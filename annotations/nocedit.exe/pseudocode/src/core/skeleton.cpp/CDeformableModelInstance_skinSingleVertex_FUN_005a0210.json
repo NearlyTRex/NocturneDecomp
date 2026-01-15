@@ -1,17 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 24,
-    "complexity_score": 63,
+    "complexity_score": 39,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 13,
-    "suspect_count": 4,
+    "pseudocode_lines": 14,
+    "suspect_count": 2,
     "suspect_types": [
-      "call_esp_preserve",
-      "unaffected_reg"
+      "call_esp_preserve"
     ],
-    "total_lines": 37
+    "total_lines": 38
   },
   "cross_references": [],
   "function": {
@@ -104,20 +103,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 8,
-      "match": "unaff_ESI",
-      "text": "CMatrix3x4f *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 14,
-      "match": "unaff_ESI",
-      "text": "(this_ptr_00,(CVector3f *)lod_index,vertex_index,(int)vertex_index_00,unaff_ESI);",
-      "type": "unaffected_reg"
-    },
     {
       "add_esp_value": 4,
       "call_address": "005a022d",

@@ -12,8 +12,7 @@ support_codec_cpp_CCodec_process_FUN_0043ea10
 
 {
   uint uVar1;
-  BADSPACEBASE *in_ESP;
-  uint unaff_EBP;
+  byte local_14 [4];
   
   do {
     if (*(int *)byte_count < 1) {
@@ -21,11 +20,11 @@ LAB_0043ea2c:
       uVar1 = 0xffffffff;
     }
     else {
-      crt_stdio_c_fgetc_outptr_FUN_005ff245(input_file,&stack0xffffffec);
+      crt_stdio_c_fgetc_outptr_FUN_005ff245(input_file,local_14);
       if (*(int *)((int)&input_file->_handle + *(int *)(input_file->_ptr + 4)) != 0)
       goto LAB_0043ea2c;
       *(int *)byte_count = *(int *)byte_count + -1;
-      uVar1 = unaff_EBP & 0xff;
+      uVar1 = (uint)local_14[0];
     }
     if ((int)uVar1 < 0) {
       return 1;

@@ -16,7 +16,6 @@ core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0
   int iVar2;
   CActorProperty *pCVar3;
   char *pcVar4;
-  void *in_stack_00000018;
   
   if (0x28 < this_ptr->property_count) {
     g_CurrentFilename = "..\\core\\actor.cpp";
@@ -27,20 +26,20 @@ core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0
   this_ptr->property_count = this_ptr->property_count + 1;
   pCVar3 = this_ptr->properties + iVar2;
   pcVar4 = pCVar3->name;
-  pCVar3->type = (int)property_name;
+  pCVar3->type = property_type;
   do {
-    cVar1 = *(char *)data_ptr;
+    cVar1 = *property_name;
     *pcVar4 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = *(char *)((int)data_ptr + 1);
-    data_ptr = (void *)((int)data_ptr + 2);
+    cVar1 = property_name[1];
+    property_name = property_name + 2;
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
   pCVar3->auto_update_flag = 0;
   pCVar3->enabled_flag = 1;
   pCVar3->field8_0x6c[0x18] = '\0';
-  pCVar3->data_ptr = callback_or_extra;
-  pCVar3->validator_or_callback = in_stack_00000018;
+  pCVar3->data_ptr = data_ptr;
+  pCVar3->validator_or_callback = callback_or_extra;
   return (int)pCVar3;
 }

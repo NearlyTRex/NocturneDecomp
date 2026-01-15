@@ -9,7 +9,6 @@
 int __cdecl engine_matrix_c_projectToScreen_FUN_0050e5b0(int input_value)
 
 {
-  BADSPACEBASE *in_ESP;
   byte bVar1;
   double dVar2;
   int aiStackY_1034 [1017];
@@ -23,9 +22,9 @@ int __cdecl engine_matrix_c_projectToScreen_FUN_0050e5b0(int input_value)
   local_44 = 0;
   engine_matrix_c_transformWorldToView_FUN_0050cc40((int *)&stack0xffffffb4,(int *)0x0);
   *(uint *)((int)&stack0xffffffb8 + (uint)bVar1 * -8) =
-       *(uint *)(&stack0xffffffc8 + (uint)bVar1 * -8);
+       *(uint *)(&stack0xffffffc4 + (uint)bVar1 * -8);
   *(uint *)((int)&stack0xffffffbc + (uint)bVar1 * -8 + (uint)bVar1 * -8) =
-       *(uint *)(&stack0xffffffcc + (uint)bVar1 * -8 + (uint)bVar1 * -8);
+       *(uint *)(&stack0xffffffc8 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
   if (0 < local_44) {
     local_18 = input_value;
     iStack_14 = local_44;

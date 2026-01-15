@@ -10,7 +10,6 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042bd30(CCharacter *this_ptr)
 
 {
   char *pcVar1;
-  BADSPACEBASE *in_ESP;
   int iVar2;
   CCharacter *pCVar3;
   float *pfVar4;

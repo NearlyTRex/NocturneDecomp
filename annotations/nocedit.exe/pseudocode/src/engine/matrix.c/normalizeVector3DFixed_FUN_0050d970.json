@@ -1,22 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 167,
+    "complexity_score": 148,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 22,
-    "suspect_count": 11,
+    "pseudocode_lines": 23,
+    "suspect_count": 10,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "param_count_too_few",
       "pointer_cast",
-      "register_param",
       "stack_ref",
       "unaffected_reg"
     ],
-    "total_lines": 74
+    "total_lines": 75
   },
   "cross_references": [
     {
@@ -180,67 +178,60 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 6,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 6,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 7,
+      "line": 6,
       "match": "unaff_ESI",
       "text": "int *unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 20,
+      "line": 21,
       "match": "unaff_ESI",
-      "text": "*unaff_ESI = local_14;",
+      "text": "*unaff_ESI = local_18;",
       "type": "unaffected_reg"
     },
     {
       "description": "Direct stack address reference",
-      "line": 21,
-      "match": "&stack0xfffffff0",
-      "text": "unaff_ESI[(uint)bVar2 * -2 + 1] = *(int *)((int)&stack0xfffffff0 + (uint)bVar2 * -8);",
+      "line": 22,
+      "match": "&stack0xffffffec",
+      "text": "unaff_ESI[(uint)bVar2 * -2 + 1] = *(int *)((int)&stack0xffffffec + (uint)bVar2 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Unaffected register variable",
-      "line": 21,
+      "line": 22,
       "match": "unaff_ESI",
-      "text": "unaff_ESI[(uint)bVar2 * -2 + 1] = *(int *)((int)&stack0xfffffff0 + (uint)bVar2 * -8);",
+      "text": "unaff_ESI[(uint)bVar2 * -2 + 1] = *(int *)((int)&stack0xffffffec + (uint)bVar2 * -8);",
       "type": "unaffected_reg"
     },
     {
       "description": "Complex pointer cast",
-      "line": 21,
+      "line": 22,
       "match": "(int *)((int)",
-      "text": "unaff_ESI[(uint)bVar2 * -2 + 1] = *(int *)((int)&stack0xfffffff0 + (uint)bVar2 * -8);",
+      "text": "unaff_ESI[(uint)bVar2 * -2 + 1] = *(int *)((int)&stack0xffffffec + (uint)bVar2 * -8);",
       "type": "pointer_cast"
     },
     {
       "description": "Unaffected register variable",
-      "line": 22,
+      "line": 23,
       "match": "unaff_ESI",
       "text": "(unaff_ESI + (uint)bVar2 * -2 + 1)[(uint)bVar2 * -2 + 1] =",
       "type": "unaffected_reg"
     },
     {
       "description": "Direct stack address reference",
-      "line": 23,
-      "match": "&stack0xfffffff4",
-      "text": "*(int *)(&stack0xfffffff4 + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
+      "line": 24,
+      "match": "&stack0xfffffff0",
+      "text": "*(int *)((int)&stack0xfffffff0 + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
       "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 24,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)&stack0xfffffff0 + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
+      "type": "pointer_cast"
     },
     {
       "call_site_count": 3,

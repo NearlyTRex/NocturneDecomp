@@ -1,22 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 152,
+    "complexity_score": 79,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 5,
-    "pseudocode_lines": 17,
-    "suspect_count": 10,
+    "pseudocode_lines": 14,
+    "suspect_count": 5,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
-      "register_param",
-      "stack_param",
-      "stack_ref",
       "variadic_preserve"
     ],
-    "total_lines": 84
+    "total_lines": 81
   },
   "cross_references": [],
   "function": {
@@ -155,43 +151,8 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 8,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 8,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_0000000c",
-      "text": "char *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_0000000c",
-      "text": "(g_MediumFont,in_stack_0000000c,0x140 - iVar1 / 2,0xf0 - iVar2 / 2,7,0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 17,
-      "match": "&stack0xfffffefc",
-      "text": "(&stack0xfffffefc,\"%d,%d,%x\",g_JoyXPos,g_JoyYPos,g_JoyButtons);",
-      "type": "stack_ref"
-    },
-    {
       "call_address": "0051049d",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",

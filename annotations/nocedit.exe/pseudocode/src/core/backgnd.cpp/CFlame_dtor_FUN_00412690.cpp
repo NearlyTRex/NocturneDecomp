@@ -18,7 +18,7 @@ CFlame * __cdecl core_backgnd_cpp_CFlame_dtor_FUN_00412690(CFlame *this_ptr,uint
     return this_ptr;
   }
   ptr = (CFlame *)core_actor_cpp_CDemonActor_dtor_FUN_00408a30(&this_ptr->base_actor,1);
-  if ((d2 & 2) == 0) {
+  if ((d1 & 2) == 0) {
     return ptr;
   }
   shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);

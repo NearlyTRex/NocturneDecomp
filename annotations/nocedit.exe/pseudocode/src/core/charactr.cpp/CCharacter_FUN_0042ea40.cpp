@@ -14,7 +14,6 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042ea40(CCharacter *this_ptr)
   CSkeleton *pCVar3;
   int iVar4;
   CVector3f *pCVar5;
-  BADSPACEBASE *in_ESP;
   float in_stack_00000008;
   CVector3f local_70;
   CVector3f local_64;

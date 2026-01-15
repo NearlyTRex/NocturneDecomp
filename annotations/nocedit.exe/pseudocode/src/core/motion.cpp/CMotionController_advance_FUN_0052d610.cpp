@@ -14,7 +14,6 @@ int __cdecl core_motion_cpp_CMotionController_advance_FUN_0052d610(CMotionContro
   int iVar3;
   int iVar4;
   SMotion *pSVar5;
-  BADSPACEBASE *in_ESP;
   float *in_stack_00000008;
   float local_48;
   float local_44;

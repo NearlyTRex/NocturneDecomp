@@ -12,7 +12,6 @@ shape_design_c_applyVertexCentering_FUN_004680f0
           int reference_vertex_id)
 
 {
-  BADSPACEBASE *in_ESP;
   uint *puVar1;
   byte bVar2;
   int aiStackY_1010 [1017];

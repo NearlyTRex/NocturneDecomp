@@ -11,7 +11,6 @@ core_xform_cpp_eulerToQuaternionIndirect_FUN_005f7b70
           (CQuaternion4f *quat_out,CVector3f *euler_angles)
 
 {
-  BADSPACEBASE *in_ESP;
   CQuaternion4f *unaff_ESI;
   uint *puVar1;
   uint *puVar2;

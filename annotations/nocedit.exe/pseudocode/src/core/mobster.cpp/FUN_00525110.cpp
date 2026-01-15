@@ -9,7 +9,6 @@
 CVector3f * core_mobster_cpp_FUN_00525110(void)
 
 {
-  BADSPACEBASE *in_ESP;
   CVector3f *in_stack_00000004;
   CDemonActor *in_stack_00000008;
   CBoundingBox3D CStack_3c;

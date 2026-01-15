@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 108,
-    "complexity_score": 220,
+    "complexity_score": 133,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 11,
-    "pseudocode_lines": 55,
-    "suspect_count": 15,
+    "pseudocode_lines": 53,
+    "suspect_count": 7,
     "suspect_types": [
       "call_esp_preserve",
-      "unaffected_reg",
       "variadic_preserve"
     ],
-    "total_lines": 163
+    "total_lines": 161
   },
   "cross_references": [
     {
@@ -188,62 +187,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 12,
-      "match": "unaff_ESI",
-      "text": "void *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 14,
-      "match": "unaff_EDI",
-      "text": "char *unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 42,
-      "match": "unaff_EDI",
-      "text": "pcVar2 = unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 47,
-      "match": "unaff_EDI",
-      "text": "iVar7 = crt_stdio_c_sprintf_FUN_005fdbd0(unaff_EDI,\"%s\\n\",pcVar4);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 48,
-      "match": "unaff_EDI",
-      "text": "unaff_EDI = unaff_EDI + iVar7;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 48,
-      "match": "unaff_EDI",
-      "text": "unaff_EDI = unaff_EDI + iVar7;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 52,
-      "match": "unaff_EDI",
-      "text": "*unaff_EDI = '\\0';",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 56,
-      "match": "unaff_ESI",
-      "text": "crt_memory_c_free_FUN_005fe659(unaff_ESI);",
-      "type": "unaffected_reg"
-    },
     {
       "call_address": "004a32ea",
       "caller_has_stack_issues": false,

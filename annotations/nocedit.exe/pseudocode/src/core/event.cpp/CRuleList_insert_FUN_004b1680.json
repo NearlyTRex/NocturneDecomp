@@ -1,20 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 130,
-    "complexity_score": 355,
+    "complexity_score": 329,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 6,
-    "pseudocode_lines": 50,
-    "suspect_count": 28,
+    "pseudocode_lines": 49,
+    "suspect_count": 26,
     "suspect_types": [
       "call_esp_preserve",
       "pointer_cast",
       "stack_param",
-      "unaffected_reg",
       "variadic_preserve"
     ],
-    "total_lines": 180
+    "total_lines": 179
   },
   "cross_references": [
     {
@@ -149,176 +148,162 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 6,
-      "match": "unaff_EDI",
-      "text": "int unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 9,
+      "line": 8,
       "match": "in_stack_00000008",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
+      "line": 9,
+      "match": "in_stack_0000000c",
+      "text": "char *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
       "line": 10,
-      "match": "in_stack_00000018",
-      "text": "char *in_stack_00000018;",
+      "match": "in_stack_00000010",
+      "text": "char *in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_0000001c",
-      "text": "char *in_stack_0000001c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 12,
       "match": "in_stack_00000008",
       "text": "if ((in_stack_00000008 < 0) || (this_ptr->list_size < in_stack_00000008)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 12,
       "match": "in_stack_00000008",
       "text": "if ((in_stack_00000008 < 0) || (this_ptr->list_size < in_stack_00000008)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 22,
       "match": "in_stack_00000008",
       "text": "src = this_ptr + in_stack_00000008 * 0x19 + 1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 25,
+      "line": 24,
       "match": "in_stack_00000008",
       "text": "(this_ptr + (in_stack_00000008 + 1) * 0x19 + 1,src,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_00000008",
+      "text": "(this_ptr->list_size - in_stack_00000008) * 100);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
       "line": 26,
       "match": "in_stack_00000008",
-      "text": "(this_ptr->list_size - in_stack_00000008) * 100);",
+      "text": "src_00 = this_ptr + in_stack_00000008 * 0x19 + 0x7e;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 27,
+      "line": 28,
       "match": "in_stack_00000008",
-      "text": "src_00 = this_ptr + (in_stack_00000008 + 1) * 0x19 + 0x7e;",
+      "text": "(this_ptr + (in_stack_00000008 + 1) * 0x19 + 0x7e,src_00,",
       "type": "stack_param"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 29,
-      "match": "unaff_EDI",
-      "text": "((void *)((int)&this_ptr[0x7e].list_size + unaff_EDI),src_00,",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 29,
-      "match": "(void *)((int)",
-      "text": "((void *)((int)&this_ptr[0x7e].list_size + unaff_EDI),src_00,",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 30,
+      "line": 29,
       "match": "in_stack_00000008",
       "text": "(this_ptr->list_size - in_stack_00000008) * 100);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_00000018",
-      "text": "cVar1 = *in_stack_00000018;",
+      "line": 32,
+      "match": "in_stack_0000000c",
+      "text": "cVar1 = *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 35,
+      "match": "in_stack_0000000c",
+      "text": "cVar1 = in_stack_0000000c[1];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 36,
-      "match": "in_stack_00000018",
-      "text": "cVar1 = in_stack_00000018[1];",
+      "match": "in_stack_0000000c",
+      "text": "in_stack_0000000c = in_stack_0000000c + 2;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 37,
-      "match": "in_stack_00000018",
-      "text": "in_stack_00000018 = in_stack_00000018 + 2;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 37,
-      "match": "in_stack_00000018",
-      "text": "in_stack_00000018 = in_stack_00000018 + 2;",
+      "line": 36,
+      "match": "in_stack_0000000c",
+      "text": "in_stack_0000000c = in_stack_0000000c + 2;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 38,
+      "line": 37,
       "match": "(char *)((int)",
       "text": "*(char *)((int)&src->list_size + 1) = cVar1;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 39,
+      "line": 38,
       "match": "(CRuleList *)((int)",
       "text": "src = (CRuleList *)((int)&src->list_size + 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 42,
-      "match": "in_stack_0000001c",
-      "text": "cVar1 = *in_stack_0000001c;",
+      "line": 41,
+      "match": "in_stack_00000010",
+      "text": "cVar1 = *in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 46,
+      "match": "in_stack_00000010",
+      "text": "cVar1 = in_stack_00000010[1];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 47,
-      "match": "in_stack_0000001c",
-      "text": "cVar1 = in_stack_0000001c[1];",
+      "match": "in_stack_00000010",
+      "text": "in_stack_00000010 = in_stack_00000010 + 2;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 48,
-      "match": "in_stack_0000001c",
-      "text": "in_stack_0000001c = in_stack_0000001c + 2;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 48,
-      "match": "in_stack_0000001c",
-      "text": "in_stack_0000001c = in_stack_0000001c + 2;",
+      "line": 47,
+      "match": "in_stack_00000010",
+      "text": "in_stack_00000010 = in_stack_00000010 + 2;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 49,
+      "line": 48,
       "match": "(char *)((int)",
       "text": "*(char *)((int)&src_00->list_size + 1) = cVar1;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 50,
+      "line": 49,
       "match": "(CRuleList *)((int)",
       "text": "src_00 = (CRuleList *)((int)&src_00->list_size + 2);",
       "type": "pointer_cast"

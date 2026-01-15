@@ -14,19 +14,18 @@ core_skeleton_cpp_getRootMotionDeltaForMotion_FUN_005a0f50
 {
   float fVar1;
   CMotionList *pCVar2;
-  float in_stack_00000018;
   
   pCVar2 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0(motion_controller);
-  if (end_frame < 0.0) {
-    end_frame = 0.0;
+  if (start_frame < 0.0) {
+    start_frame = 0.0;
   }
-  fVar1 = (float)pCVar2->motions[(int)start_frame].frame_count;
-  if (fVar1 < in_stack_00000018) {
-    in_stack_00000018 = fVar1;
+  fVar1 = (float)pCVar2->motions[motion_index].frame_count;
+  if (fVar1 < end_frame) {
+    end_frame = fVar1;
   }
-  fVar1 = (float)pCVar2->motions[(int)start_frame].frame_start;
+  fVar1 = (float)pCVar2->motions[motion_index].frame_start;
   core_skeleton_cpp_CDeformableModelInstance_getRootMotionDelta_FUN_005a0d10
-            (deformable_model,(CVector3f *)deformable_model,end_frame + fVar1,
-             in_stack_00000018 + fVar1);
+            ((CDeformableModelInstance *)motion_controller,(CVector3f *)deformable_model,
+             start_frame + fVar1,end_frame + fVar1);
   return deformable_model;
 }

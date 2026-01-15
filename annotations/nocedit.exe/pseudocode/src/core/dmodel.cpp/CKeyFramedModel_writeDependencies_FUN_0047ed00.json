@@ -1,19 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 96,
-    "complexity_score": 122,
+    "complexity_score": 94,
     "cross_reference_count": 10,
     "function_call_count": 1,
     "global_count": 2,
-    "pseudocode_lines": 52,
-    "suspect_count": 5,
+    "pseudocode_lines": 54,
+    "suspect_count": 3,
     "suspect_types": [
-      "badspacebase",
       "param_count_too_many",
-      "register_param",
       "variadic_preserve"
     ],
-    "total_lines": 148
+    "total_lines": 150
   },
   "cross_references": [
     {
@@ -320,20 +318,6 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 9,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 9,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "call_site_count": 10,
       "declared_params": 3,
       "description": "Signature has too many params - likely wrong calling convention",
@@ -346,7 +330,7 @@
     },
     {
       "call_address": "0047ed7f",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -360,7 +344,7 @@
     },
     {
       "call_address": "0047ed97",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",

@@ -13,7 +13,6 @@ void core_platfrm_cpp_FUN_0054e320(void)
 {
   int iVar1;
   int iVar2;
-  BADSPACEBASE *in_ESP;
   uint *puVar3;
   uint *puVar4;
   byte bVar5;

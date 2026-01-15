@@ -29,7 +29,6 @@ void core_boneguy_cpp_FUN_0041bf90(void)
   CVector3f *pCVar13;
   int extraout_EAX;
   int extraout_EAX_00;
-  BADSPACEBASE *in_ESP;
   float *pfVar14;
   byte bVar15;
   CBoneGuy *in_stack_00000004;

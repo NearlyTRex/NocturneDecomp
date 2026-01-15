@@ -13,13 +13,13 @@ int core_zombie_cpp_CZombie_FUN_005fc920(void)
 
 {
   int iVar1;
-  CCharacter *in_stack_00000008;
+  CCharacter *in_stack_00000004;
+  CDemonActor *in_stack_00000008;
   
-  iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0
-                    (&in_stack_00000008->base_actor,"?CTentacle" + 1);
+  iVar1 = core_actor_cpp_isOfClass_FUN_0040c6d0(in_stack_00000008,"?CTentacle" + 1);
   if (iVar1 != 0) {
     return 1;
   }
-  iVar1 = core_charactr_cpp_CCharacter_FUN_0042bf30(in_stack_00000008);
+  iVar1 = core_charactr_cpp_CCharacter_FUN_0042bf30(in_stack_00000004);
   return iVar1;
 }

@@ -13,10 +13,10 @@ void core_gabriela_cpp_FUN_004d75e0(void)
 
 {
   CCharacter *in_stack_00000004;
-  int in_stack_0000000c;
+  int in_stack_00000008;
   
   core_charactr_cpp_CCharacter_FUN_0042f8a0(in_stack_00000004);
-  if (*(int *)(in_stack_00000004[2].cloth_data + 0x5518) != in_stack_0000000c) {
+  if (*(int *)(in_stack_00000004[2].cloth_data + 0x5518) != in_stack_00000008) {
     return;
   }
   in_stack_00000004[2].cloth_data[0x5518] = '\0';

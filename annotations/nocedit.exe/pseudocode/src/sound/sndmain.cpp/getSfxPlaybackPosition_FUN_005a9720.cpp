@@ -18,11 +18,11 @@ sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(uint sfx_handle,uint outpu
   uint local_24;
   uint local_20;
   uint uStack_1c;
-  uint local_18;
   
   this_ptr = sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005a5d00(in_stack_00000004,1);
   if (this_ptr == (CSfxSlot *)0x0) {
     local_24 = 0xbff00000;
+    local_20 = 0;
   }
   else {
     if ((this_ptr->hardware_buffer_handle != 0) && (g_CSoundDevicePtr != (CSoundDevice *)0x0)) {
@@ -36,10 +36,10 @@ sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(uint sfx_handle,uint outpu
                       (*(CSampleInfo **)&(this_ptr->options).trigger_time,
                        *(double *)((int)&(this_ptr->options).trigger_time + 4),sfx_handle,
                        in_stack_ffffffd8);
-    uStack_1c = (uint)((ulonglong)dVar2 >> 0x20);
     sound_sndmain_cpp_unlockSound_FUN_005abdc0();
+    local_20 = SUB84 /* extract 2-byte value */(dVar2,0);
+    uStack_1c = (uint)((ulonglong)dVar2 >> 0x20);
     local_24 = uStack_1c;
-    local_20 = local_18;
   }
-  return (double)CONCAT44 /* combine 2-byte values */(local_20,local_24);
+  return (double)CONCAT44 /* combine 2-byte values */(local_24,local_20);
 }

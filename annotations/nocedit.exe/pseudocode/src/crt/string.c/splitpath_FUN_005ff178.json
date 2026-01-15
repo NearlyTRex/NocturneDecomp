@@ -1,19 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 113,
-    "complexity_score": 165,
+    "complexity_score": 139,
     "cross_reference_count": 34,
     "function_call_count": 3,
     "global_count": 0,
-    "pseudocode_lines": 55,
-    "suspect_count": 9,
+    "pseudocode_lines": 54,
+    "suspect_count": 7,
     "suspect_types": [
       "call_esp_preserve",
       "concat_artifact",
-      "special_crt_function",
-      "stack_param"
+      "special_crt_function"
     ],
-    "total_lines": 168
+    "total_lines": 167
   },
   "cross_references": [
     {
@@ -330,25 +329,11 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_0000001c",
-      "text": "char *in_stack_0000001c;",
-      "type": "stack_param"
-    },
-    {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 36,
+      "line": 35,
       "match": "CONCAT22",
       "text": "iVar3 = CONCAT22 /* combine 2-byte values */(extraout_var,wVar2);",
       "type": "concat_artifact"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 56,
-      "match": "in_stack_0000001c",
-      "text": "crt_string_c_strncpy_safe_FUN_005ff130(in_stack_0000001c,src,(int)str - (int)src,0xff);",
-      "type": "stack_param"
     },
     {
       "add_esp_value": 4,

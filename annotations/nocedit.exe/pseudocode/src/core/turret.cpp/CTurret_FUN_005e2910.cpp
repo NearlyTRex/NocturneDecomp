@@ -9,77 +9,87 @@
 int * __cdecl core_turret_cpp_CTurret_FUN_005e2910(CTurret *this_ptr)
 
 {
-  float fVar1;
   CKeyFramedModelInstance *this_ptr_00;
-  CKeyFramedModel *pCVar2;
-  CVector3f *pCVar3;
-  int iVar4;
+  CKeyFramedModelInstance *this_ptr_01;
+  CKeyFramedModel *pCVar1;
+  CVector3f *pCVar2;
+  int iVar3;
   uint corner_index;
-  BADSPACEBASE *in_ESP;
+  CMatrix3x4f *unaff_ESI;
+  uint *puVar4;
   uint *puVar5;
-  uint *puVar6;
-  byte bVar7;
-  double dVar8;
-  CKeyFramedModelInstance *in_stack_00000008;
-  float fStack0000000c;
-  CMatrix3x4f *in_stack_ffffff08;
-  CKeyFramedModelInstance *in_stack_ffffff18;
-  uint auStack_bc [12];
-  uint auStack_8c [9];
-  byte auStack_68 [64];
-  CBoundingBox3D local_28;
-  CKeyFramedModelInstance *local_c;
+  byte bVar6;
+  double dVar7;
+  CBoundingBox3D *in_stack_00000008;
+  CMatrix3x4f *matrix;
+  byte auStack_104 [48];
+  uint auStack_d4 [12];
+  uint auStack_a4 [12];
+  byte auStack_74 [48];
+  float fStack_44;
+  float local_40;
+  float local_3c;
+  float local_38;
+  float local_34;
+  CVector3f local_30;
+  CVector3f CStack_24;
+  CKeyFramedModelInstance *pCStack_14;
+  float local_10;
+  float local_c;
   
-  bVar7 = 0;
-  fVar1 = (float)core_turret_cpp_CTurret_getCurFrame_FUN_005e2b30();
-  dVar8 = crt_math_c_round_FUN_005fe6b0((double)fVar1);
-  local_c = (CKeyFramedModelInstance *)(int)ROUND(dVar8);
-  pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(this_ptr_00);
-  pCVar3 = pCVar2->frame_bounds + (int)fVar1 * 2;
-  in_stack_00000008->part_visibility_flags[0] = (int)pCVar3->x;
-  in_stack_00000008->part_visibility_flags[1] = (int)pCVar3->y;
-  in_stack_00000008->part_visibility_flags[2] = (int)pCVar3->z;
-  in_stack_00000008->part_visibility_flags[3] = (int)pCVar3[1].x;
-  in_stack_00000008->part_visibility_flags[4] = (int)pCVar3[1].y;
-  in_stack_00000008->part_visibility_flags[5] = (int)pCVar3[1].z;
-  local_c = (CKeyFramedModelInstance *)(this_ptr->field1_0x578 + 0xc);
-  pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(local_c);
-  if (pCVar2->poly_count < 1) {
-    return in_stack_00000008->part_visibility_flags;
+  bVar6 = 0;
+  auStack_104._0_4_ = 0.0;
+  local_c = (float)core_turret_cpp_CTurret_getCurFrame_FUN_005e2b30();
+  auStack_104._0_4_ = 8.647348e-39;
+  dVar7 = crt_math_c_round_FUN_005fe6b0((double)local_c);
+  local_10 = (float)(int)ROUND(dVar7);
+  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(this_ptr_01);
+  pCVar2 = pCVar1->frame_bounds + (int)local_10 * 2;
+  (in_stack_00000008->min).x = pCVar2->x;
+  (in_stack_00000008->min).y = pCVar2->y;
+  (in_stack_00000008->min).z = pCVar2->z;
+  (in_stack_00000008->max).x = pCVar2[1].x;
+  (in_stack_00000008->max).y = pCVar2[1].y;
+  (in_stack_00000008->max).z = pCVar2[1].z;
+  pCStack_14 = (CKeyFramedModelInstance *)(this_ptr->field1_0x578 + 0xc);
+  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(pCStack_14);
+  if (pCVar1->poly_count < 1) {
+    return (int *)in_stack_00000008;
   }
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
-            ((CMatrix3x4f *)auStack_68,&g_ZeroVector,(CVector3f *)this_ptr->field1_0x578);
+            ((CMatrix3x4f *)auStack_74,&g_ZeroVector,(CVector3f *)this_ptr->field1_0x578);
   core_xform_cpp_buildMatrixFromEulerAndPosition_FUN_005f5390
-            ((CMatrix3x4f *)&stack0xffffff0c,&g_ZeroVector,
+            ((CMatrix3x4f *)auStack_104,&g_ZeroVector,
              (CVector3f *)&(this_ptr->base_weapon).base_actor.orient);
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
-            ((CMatrix3x4f *)(auStack_68 + 8),(CMatrix3x4f *)&stack0xffffff10,in_stack_ffffff08);
-  puVar5 = auStack_8c;
-  puVar6 = auStack_bc;
-  for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *puVar6 = *puVar5;
-    puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
-    puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
+            ((CMatrix3x4f *)auStack_74,(CMatrix3x4f *)auStack_104,unaff_ESI);
+  puVar4 = auStack_a4;
+  puVar5 = auStack_d4;
+  for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
+    *puVar5 = *puVar4;
+    puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
+    puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
   }
-  fStack0000000c = (float)core_turret_cpp_CTurret_getCurFrame_FUN_005e2b30();
-  crt_math_c_round_FUN_005fe6b0((double)fStack0000000c);
-  pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(in_stack_00000008);
-  pCVar3 = pCVar2->frame_bounds + (int)fStack0000000c * 2;
-  local_28.min.x = pCVar3->x;
-  local_28.min.y = pCVar3->y;
-  local_28.min.z = pCVar3->z;
-  local_28.max.x = pCVar3[1].x;
-  local_28.max.y = pCVar3[1].y;
-  local_28.max.z = pCVar3[1].z;
+  local_10 = (float)core_turret_cpp_CTurret_getCurFrame_FUN_005e2b30();
+  this_ptr_00 = pCStack_14;
+  dVar7 = crt_math_c_round_FUN_005fe6b0((double)local_10);
+  pCStack_14 = (CKeyFramedModelInstance *)(int)ROUND(dVar7);
+  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(this_ptr_00);
+  pCVar2 = pCVar1->frame_bounds + (int)pCStack_14 * 2;
+  auStack_74._44_4_ = pCVar2->x;
+  fStack_44 = pCVar2->y;
+  local_40 = pCVar2->z;
+  local_3c = pCVar2[1].x;
+  local_38 = pCVar2[1].y;
+  local_34 = pCVar2[1].z;
   corner_index = 0;
   do {
-    pCVar3 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
-                       (&local_28,(CVector3f *)&stack0xfffffffc,corner_index);
-    pCVar3 = core_xform_cpp_transformVector3x4_FUN_005f4dc0
-                       ((CVector3f *)&local_c,pCVar3,(CMatrix3x4f *)in_stack_ffffff18);
+    matrix = (CMatrix3x4f *)(auStack_104 + 0x2c);
+    pCVar2 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
+                       ((CBoundingBox3D *)(auStack_74 + 0x2c),&CStack_24,corner_index);
+    pCVar2 = core_xform_cpp_transformVector3x4_FUN_005f4dc0(&local_30,pCVar2,matrix);
     corner_index = corner_index + 1;
-    in_stack_ffffff18 = in_stack_00000008;
-    core_box_cpp_CBoundingBox3D_expand_FUN_00420240((CBoundingBox3D *)in_stack_00000008,pCVar3);
+    core_box_cpp_CBoundingBox3D_expand_FUN_00420240(in_stack_00000008,pCVar2);
   } while ((int)corner_index < 8);
-  return in_stack_00000008->part_visibility_flags;
+  return (int *)in_stack_00000008;
 }

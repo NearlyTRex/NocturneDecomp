@@ -15,11 +15,6 @@ void __cdecl core_succubus_cpp_CSuccubus_FUN_005c6b60(CSuccubus *this_ptr)
   CDeformableModelInstance *pCVar1;
   CDeformableModelInstance *this_ptr_00;
   CSkeleton *this_ptr_01;
-  uint uStack00000048;
-  CMorph *pCStack0000005c;
-  CDeformableModelInstance *pCStack00000060;
-  uint uStack00000064;
-  uint uStack00000068;
   char *model_name;
   
   pCVar1 = &(this_ptr->base_enemy).base_character.model;
@@ -74,38 +69,25 @@ void __cdecl core_succubus_cpp_CSuccubus_FUN_005c6b60(CSuccubus *this_ptr)
        core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 R UpperArm");
   _DAT_03f6bb8c =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 Spine");
-  uStack00000048 = 1;
   _DAT_03f6bb94 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 Spine2");
-  uStack00000048 = 0x5c6d8f;
   core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80(this_ptr_00);
   core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0059df80(pCVar1);
   (this_ptr->base_enemy).base_character.model.bone_transform.root_position.z =
        (this_ptr->base_enemy).base_character.model.bone_transform.root_position.z + 0.4f;
   core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(pCVar1);
   core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(this_ptr_00);
-  pCStack0000005c = (CMorph *)pCVar1;
   core_morph_cpp_FUN_0052b430();
-  pCStack0000005c = (CMorph *)0x1;
-  pCStack00000060 = this_ptr_00;
   core_morph_cpp_FUN_0052b430();
-  uStack00000064 = 0;
-  pCStack00000060 = *(CDeformableModelInstance **)(this_ptr->field1_0xbeb4 + 0x2450);
-  pCStack0000005c = (CMorph *)0x1;
   DAT_02f43974 = 0;
   core_morph_cpp_FUN_0052b580();
-  uStack00000068 = 0;
-  uStack00000064 = *(uint *)(this_ptr->field1_0xbeb4 + 0x2450);
-  pCStack00000060 = (CDeformableModelInstance *)0x1;
   DAT_02f43974 = 1;
-  pCStack0000005c = (CMorph *)(this_ptr->field1_0xbeb4 + 0x2488);
   core_morph_cpp_FUN_0052b580();
   DAT_02f43974 = 0;
   this_ptr->field1_0xbeb4[0x30b0] = '\0';
   this_ptr->field1_0xbeb4[0x30b1] = '\0';
   this_ptr->field1_0xbeb4[0x30b2] = '\0';
   this_ptr->field1_0xbeb4[0x30b3] = '\0';
-  uStack00000068 = 0x5c6e29;
   core_morph_cpp_CMorph_getReady_FUN_0052b680((CMorph *)(this_ptr->field1_0xbeb4 + 0x2488));
   this_ptr->field1_0xbeb4[0x2480] = '\0';
   this_ptr->field1_0xbeb4[0x2481] = '\0';

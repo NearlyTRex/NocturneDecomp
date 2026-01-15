@@ -1,24 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 425,
-    "complexity_score": 977,
+    "complexity_score": 555,
     "cross_reference_count": 2,
     "function_call_count": 23,
     "global_count": 30,
-    "pseudocode_lines": 192,
-    "suspect_count": 74,
+    "pseudocode_lines": 180,
+    "suspect_count": 36,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
-      "format_string_mismatch",
       "lea_esp_stack_addr",
-      "pointer_cast",
-      "register_param",
-      "stack_param",
-      "stack_ref",
       "variadic_preserve"
     ],
-    "total_lines": 617
+    "total_lines": 605
   },
   "cross_references": [
     {
@@ -435,253 +429,8 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 13,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 13,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_00000014",
-      "text": "char *in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_00000018",
-      "text": "FILE *in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_0000001c",
-      "text": "FILE *in_stack_0000001c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_00000024",
-      "text": "char *in_stack_00000024;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_00000028",
-      "text": "FILE *in_stack_00000028;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 24,
-      "match": "in_stack_00000030",
-      "text": "FILE *in_stack_00000030;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_00000038",
-      "text": "int in_stack_00000038;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_0000003c",
-      "text": "FILE *in_stack_0000003c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 28,
-      "match": "in_stack_ffffff04",
-      "text": "uint in_stack_ffffff04;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_ffffff30",
-      "text": "FILE *in_stack_ffffff30;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 37,
-      "match": "in_stack_ffffff04",
-      "text": "cVar12 = (char)in_stack_ffffff04;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 70,
-      "match": "in_stack_00000014",
-      "text": "iVar8 = engine_dosio_c_getFileSize_FUN_00481880(\"sound\",in_stack_00000014);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 71,
-      "match": "in_stack_00000018",
-      "text": "pFVar3 = in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 78,
-      "match": "(char *)((int)",
-      "text": "cVar1 = *(char *)((int)&pFVar3->_ptr + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 80,
-      "match": "(FILE *)((int)",
-      "text": "pFVar3 = (FILE *)((int)&pFVar3->_ptr + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 84,
-      "match": "in_stack_00000018",
-      "text": "((char *)in_stack_00000018,(char *)0x0,(char *)0x0,(char *)0x0,&stack0xffffff00);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 84,
-      "match": "&stack0xffffff00",
-      "text": "((char *)in_stack_00000018,(char *)0x0,(char *)0x0,(char *)0x0,&stack0xffffff00);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 87,
-      "match": "&stack0xffffff04",
-      "text": "pcVar13 = &stack0xffffff04;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 94,
-      "match": "&stack0xffffff04",
-      "text": "crt_string_c_memmove_FUN_005fe5e0(&stack0xffffff04,&stack0xffffff05,~uVar6 - 1);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 94,
-      "match": "&stack0xffffff05",
-      "text": "crt_string_c_memmove_FUN_005fe5e0(&stack0xffffff04,&stack0xffffff05,~uVar6 - 1);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 96,
-      "match": "&stack0xffffff08",
-      "text": "iVar8 = crt_string_c_stricmp_FUN_005fe7f0(&stack0xffffff08,\"wav\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 98,
-      "match": "in_stack_00000024",
-      "text": "pFVar3 = engine_dosio_c_getFile_FUN_00481a50(\"sound\",in_stack_00000024,\"rb\");",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 104,
-      "match": "in_stack_00000018",
-      "text": "lVar4 = crt_stdio_c_ftell_FUN_00601560(in_stack_00000018);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 107,
-      "match": "in_stack_0000001c",
-      "text": "(in_stack_0000001c,&pCVar7->file_offset,pCVar7);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 120,
-      "match": "in_stack_00000028",
-      "text": "crt_stdio_c_fseek_FUN_005ffacc(in_stack_00000028,pCVar7->file_offset,0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 127,
-      "match": "in_stack_00000030",
-      "text": "pFVar3 = in_stack_00000030;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 129,
-      "match": "in_stack_ffffff30",
-      "text": "SVar5 = crt_stdio_c_fread_FUN_005fd990(buffer,SVar5,(SIZE_T)pFVar3,in_stack_ffffff30);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 131,
-      "match": "in_stack_00000038",
-      "text": "((*(byte *)(in_stack_00000038 + 0xc) & 0x20) == 0)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 134,
-      "match": "in_stack_0000003c",
-      "text": "(in_stack_0000003c,\"..\\\\sound\\\\sndmain.cpp\",0x337);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 141,
-      "match": "&stack0xffffff0c",
-      "text": "iVar8 = crt_string_c_stricmp_FUN_005fe7f0(&stack0xffffff0c,\"mp3\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 149,
-      "match": "in_stack_00000028",
-      "text": "(&g_CMP3DecoderInstance,(char *)in_stack_00000028);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 191,
-      "match": "in_stack_00000030",
-      "text": "if (in_stack_00000030 != (FILE *)0x0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 192,
-      "match": "in_stack_00000030",
-      "text": "shape_memdbg_cpp_closeFile_FUN_0050f9b0(in_stack_00000030,\"..\\\\sound\\\\sndmain.cpp\",0x2eb);",
-      "type": "stack_param"
-    },
-    {
       "call_address": "005a4e1a",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -695,7 +444,7 @@
     },
     {
       "call_address": "005a4ef0",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "conflict",
       "esp_certainty_at_call": "conflict",
@@ -709,7 +458,7 @@
     },
     {
       "call_address": "005a508a",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -723,7 +472,7 @@
     },
     {
       "call_address": "005a516d",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -734,39 +483,6 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005a516d (no EBP frame)",
       "type": "variadic_preserve"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Can't open %s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Can't open %s",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 102,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Can't open %s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Unknown sample file format extension: %s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Unknown sample file format extension: %s",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 145,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Unknown sample file format extension: %s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Don't know length of sample %s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Don't know length of sample %s",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 159,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Don't know length of sample %s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 8,

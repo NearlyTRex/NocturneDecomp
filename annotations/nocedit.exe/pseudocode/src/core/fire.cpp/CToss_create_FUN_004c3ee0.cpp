@@ -10,15 +10,18 @@ void __cdecl core_fire_cpp_CToss_create_FUN_004c3ee0(CToss *this_ptr)
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
-  float unaff_ESI;
+  CKeyFramedModel *pCVar2;
   uint in_stack_00000008;
-  CVector3f *in_stack_00000018;
-  CVector3f *in_stack_0000001c;
-  CVector3f *in_stack_00000024;
+  CVector3f *in_stack_0000000c;
+  CVector3f *in_stack_00000010;
+  CVector3f *in_stack_00000014;
+  uint in_stack_00000018;
+  CVector3f local_2c;
+  CVector3f local_20;
+  float local_14;
   
   *(uint *)this_ptr->field0_0x0 = in_stack_00000008;
-  *(CVector3f **)(this_ptr->field0_0x0 + 0x3dc) = in_stack_00000018;
+  *(uint *)(this_ptr->field0_0x0 + 0x3dc) = in_stack_00000018;
   iVar1 = *(int *)this_ptr->field0_0x0;
   this_ptr->field0_0x0[0x3e0] = '\0';
   this_ptr->field0_0x0[0x3e1] = '\0';
@@ -27,6 +30,7 @@ void __cdecl core_fire_cpp_CToss_create_FUN_004c3ee0(CToss *this_ptr)
   if (iVar1 == 0) {
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
               ((CKeyFramedModelInstance *)(this_ptr->field0_0x0 + 4),"dynamitestick.kfm");
+    local_14 = 1.0;
   }
   else {
     g_CurrentFilename = "..\\core\\fire.cpp";
@@ -41,13 +45,18 @@ void __cdecl core_fire_cpp_CToss_create_FUN_004c3ee0(CToss *this_ptr)
   }
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
             ((CKeyFramedModelInstance *)(this_ptr->field0_0x0 + 4));
-  core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
-            ((CKeyFramedModelInstance *)(this_ptr->field0_0x0 + 4));
+  pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
+                     ((CKeyFramedModelInstance *)(this_ptr->field0_0x0 + 4));
+  local_2c.x = (pCVar2->bounds_max).x - (pCVar2->bounds_min).x;
+  local_2c.y = (pCVar2->bounds_max).y - (pCVar2->bounds_min).y;
+  local_2c.z = (pCVar2->bounds_max).z - (pCVar2->bounds_min).z;
   core_box_cpp_CBox_setupCorners_FUN_0041dd20
-            ((CBox *)(this_ptr->field0_0x0 + 0x180),in_stack_00000018,in_stack_0000001c,
-             (CVector3f *)&stack0xffffffe0,unaff_ESI);
+            ((CBox *)(this_ptr->field0_0x0 + 0x180),in_stack_0000000c,in_stack_00000010,&local_2c,
+             local_14);
+  local_20.z = 0.0;
+  local_20.y = 0.0;
+  local_20.x = 9.424778;
   core_box_cpp_CBox_setupVelocities_FUN_00420180
-            ((CBox *)(this_ptr->field0_0x0 + 0x180),in_stack_00000024,(CVector3f *)&stack0xfffffff0)
-  ;
+            ((CBox *)(this_ptr->field0_0x0 + 0x180),in_stack_00000014,&local_20);
   return;
 }

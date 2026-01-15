@@ -11,15 +11,15 @@ cockpit_drawsurf_cpp_CDrawSurface_drawSolidRectangle_FUN_00488630
           (CDrawSurface *this_ptr,int x1,int y1,int x2,int y2)
 
 {
-  float fVar1;
+  int iVar1;
   float extraout_EAX;
   double dVar2;
   
-  fVar1 = 0.1f;
+  iVar1 = g_DashLength;
   g_DashLength = 1;
   0.1f = 0.0;
   cockpit_drawsurf_cpp_CDrawSurface_drawAnimatedDashedLine_FUN_004887a0(this_ptr,x1,y1,x2,y2);
-  dVar2 = crt_math_c_round_FUN_005fe6b0((double)fVar1);
+  dVar2 = crt_math_c_round_FUN_005fe6b0((double)iVar1);
   g_DashLength = (int)ROUND(dVar2);
   0.1f = extraout_EAX;
   return;

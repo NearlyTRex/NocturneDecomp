@@ -14,27 +14,28 @@ core_skeleton_cpp_CDeformableModelInstance_copyBoneRotations_FUN_0059f6e0
   CSkeleton *this_ptr_00;
   int iVar1;
   int start_bone_index;
-  float *pfVar2;
-  float *pfVar3;
-  float *pfVar4;
-  byte bVar5;
-  float *in_stack_00000010;
+  uint *puVar2;
+  uint *puVar3;
+  uint *puVar4;
+  uint *puVar5;
+  byte bVar6;
   
-  bVar5 = 0;
+  bVar6 = 0;
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
   start_bone_index = 0;
   if (0 < this_ptr_00->bone_count) {
     do {
       iVar1 = core_skeleton_cpp_CSkeleton_getHierarchyDistance_FUN_0059a100
-                        (this_ptr_00,start_bone_index,(int)in_stack_00000010);
+                        (this_ptr_00,start_bone_index,bone_index);
       if (-1 < iVar1) {
-        pfVar3 = (float *)((int)this_ptr + (uint)bVar5 * -8 + 0x6b4);
-        pfVar2 = in_stack_00000010 + (uint)bVar5 * -2 + 1;
-        (this_ptr->bone_transform).bone_rotations[0].w = *in_stack_00000010;
-        pfVar4 = pfVar3 + (uint)bVar5 * -2 + 1;
-        *pfVar3 = *pfVar2;
-        *pfVar4 = pfVar2[(uint)bVar5 * -2 + 1];
-        pfVar4[(uint)bVar5 * -2 + 1] = (pfVar2 + (uint)bVar5 * -2 + 1)[(uint)bVar5 * -2 + 1];
+        puVar4 = (uint *)((int)this_ptr + (uint)bVar6 * -8 + 0x6b4);
+        puVar2 = (uint *)((int)source_quaternions + (uint)bVar6 * -8 + 4);
+        (this_ptr->bone_transform).bone_rotations[0].w = source_quaternions->w;
+        puVar5 = puVar4 + (uint)bVar6 * -2 + 1;
+        puVar3 = puVar2 + (uint)bVar6 * -2 + 1;
+        *puVar4 = *puVar2;
+        *puVar5 = *puVar3;
+        puVar5[(uint)bVar6 * -2 + 1] = puVar3[(uint)bVar6 * -2 + 1];
       }
       start_bone_index = start_bone_index + 1;
       this_ptr = (CDeformableModelInstance *)&(this_ptr->motion_controller).tween_speed;

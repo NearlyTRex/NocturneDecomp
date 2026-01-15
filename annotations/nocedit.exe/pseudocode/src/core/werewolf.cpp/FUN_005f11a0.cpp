@@ -13,14 +13,13 @@ void core_werewolf_cpp_FUN_005f11a0(void)
 
 {
   SMotion *pSVar1;
-  int in_stack_00000004;
-  CCharacter *in_stack_00000008;
+  CCharacter *in_stack_00000004;
   
   pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                     ((CMotionController *)(in_stack_00000004 + 0x158));
+                     (&(in_stack_00000004->model).motion_controller);
   if (pSVar1->state_index == 0x13) {
     return;
   }
-  core_charactr_cpp_CCharacter_FUN_0042c920(in_stack_00000008);
+  core_charactr_cpp_CCharacter_FUN_0042c920(in_stack_00000004);
   return;
 }

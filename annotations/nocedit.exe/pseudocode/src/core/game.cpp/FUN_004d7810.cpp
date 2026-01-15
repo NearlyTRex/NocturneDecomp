@@ -12,23 +12,23 @@ void core_game_cpp_FUN_004d7810(void)
 
 {
   uint uVar1;
-  int iVar2;
   FILE *file;
+  int iVar2;
   int iVar3;
   int iVar4;
   int iVar5;
   uint *puVar6;
   int iVar7;
-  BADSPACEBASE *in_ESP;
   int iVar8;
   int iVar9;
-  int iStack00000004;
-  int iStack0000000c;
-  int iStack00000018;
-  int iStack00000020;
-  char acStack_70 [4];
-  byte auStack_6c [4];
-  char acStack_68 [88];
+  char acStack_150 [200];
+  char acStack_88 [100];
+  int iStack_24;
+  int iStack_20;
+  FILE *pFStack_1c;
+  int iStack_18;
+  int iStack_14;
+  int iVar10;
   
   if (g_CheatFlags != 0) {
     iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
@@ -50,56 +50,57 @@ void core_game_cpp_FUN_004d7810(void)
       return;
     }
     if (g_DebugRecording != 0) {
-      crt_stdio_c_sprintf_FUN_005fdbd0(acStack_70,"noc%05d.raw",_DAT_02d831bc);
-      crt_stdio_c_sprintf_FUN_005fdbd0
-                (&stack0xfffffecc,"Movie recording active: movie\\%s",auStack_6c);
-      file = engine_dosio_c_getFile_FUN_00481a50("movie",acStack_68,"wb");
-      if (file != (FILE *)0x0) {
-        iStack00000004 = 0;
+      crt_stdio_c_sprintf_FUN_005fdbd0(acStack_88,"noc%05d.raw",_DAT_02d831bc);
+      crt_stdio_c_sprintf_FUN_005fdbd0(acStack_150,"Movie recording active: movie\\%s",acStack_88);
+      pFStack_1c = engine_dosio_c_getFile_FUN_00481a50("movie",acStack_88,"wb");
+      if (pFStack_1c != (FILE *)0x0) {
+        iStack_20 = 0;
         if (0 < DAT_0067b668) {
           do {
-            iStack0000000c = 0;
+            iStack_18 = 0;
             if (0 < DAT_0067b664) {
+              iStack_24 = iStack_20 + 1;
               do {
-                iVar2 = (iStack0000000c * g_WindowWidth) / DAT_0067b664;
-                iVar3 = ((iStack0000000c + 1) * g_WindowWidth) / DAT_0067b664;
-                iStack00000018 = (iStack00000004 * g_WindowHeight) / DAT_0067b668;
-                iVar4 = ((iStack00000004 + 1) * g_WindowHeight) / DAT_0067b668;
+                file = pFStack_1c;
+                iVar3 = (iStack_18 * g_WindowWidth) / DAT_0067b664;
+                iVar4 = ((iStack_18 + 1) * g_WindowWidth) / DAT_0067b664;
+                iVar2 = (iStack_20 * g_WindowHeight) / DAT_0067b668;
+                iVar5 = (iStack_24 * g_WindowHeight) / DAT_0067b668;
                 iVar9 = 0;
                 iVar7 = 0;
                 iVar8 = 0;
-                iStack00000020 = 0;
-                if (iStack00000018 < iVar4) {
-                  iStack00000018 = iStack00000018 * 4;
+                iVar10 = 0;
+                if (iVar2 < iVar5) {
+                  iVar2 = iVar2 * 4;
+                  iStack_14 = iVar5 << 2;
                   do {
-                    if (iVar2 < iVar3) {
-                      puVar6 = (uint *)(iVar2 * 4 +
-                                       *(int *)((int)g_ScreenBufferArray + iStack00000018));
-                      iVar5 = iVar2;
+                    if (iVar3 < iVar4) {
+                      puVar6 = (uint *)(iVar3 * 4 + *(int *)((int)g_ScreenBufferArray + iVar2));
+                      iVar5 = iVar3;
                       do {
                         uVar1 = *puVar6;
                         puVar6 = puVar6 + 1;
                         iVar7 = iVar7 + (uVar1 >> 0x10 & 0xff);
                         iVar5 = iVar5 + 1;
                         iVar9 = iVar9 + (uVar1 & 0xff);
-                        iStack00000020 = iStack00000020 + 1;
+                        iVar10 = iVar10 + 1;
                         iVar8 = iVar8 + (uVar1 >> 8 & 0xff);
-                      } while (iVar5 < iVar3);
+                      } while (iVar5 < iVar4);
                     }
-                    iStack00000018 = iStack00000018 + 4;
-                  } while (iStack00000018 < iVar4 << 2);
+                    iVar2 = iVar2 + 4;
+                  } while (iVar2 < iStack_14);
                 }
-                crt_stdio_c_fputc_FUN_006007a0(iVar7 / iStack00000020,file);
-                crt_stdio_c_fputc_FUN_006007a0(iVar8 / iStack00000020,file);
-                crt_stdio_c_fputc_FUN_006007a0(iVar9 / iStack00000020,file);
-                iStack0000000c = iStack0000000c + 1;
-              } while (iStack0000000c < DAT_0067b664);
+                crt_stdio_c_fputc_FUN_006007a0(iVar7 / iVar10,pFStack_1c);
+                crt_stdio_c_fputc_FUN_006007a0(iVar8 / iVar10,file);
+                crt_stdio_c_fputc_FUN_006007a0(iVar9 / iVar10,file);
+                iStack_18 = iStack_18 + 1;
+              } while (iStack_18 < DAT_0067b664);
             }
-            iStack00000004 = iStack00000004 + 1;
-          } while (iStack00000004 < DAT_0067b668);
+            iStack_20 = iStack_20 + 1;
+          } while (iStack_20 < DAT_0067b668);
         }
-        shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\game.cpp",0x110);
-        engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffed8,0,0);
+        shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFStack_1c,"..\\core\\game.cpp",0x110);
+        engine_2d_c_drawText_FUN_00401fd0(acStack_150,0,0);
         _DAT_02d831bc = _DAT_02d831bc + 1;
         return;
       }

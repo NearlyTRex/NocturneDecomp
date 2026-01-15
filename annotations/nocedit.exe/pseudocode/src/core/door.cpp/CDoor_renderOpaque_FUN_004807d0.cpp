@@ -14,7 +14,6 @@ int __cdecl core_door_cpp_CDoor_renderOpaque_FUN_004807d0(CDoor *this_ptr)
   int iVar2;
   int iVar3;
   CQuaternion4f *pCVar4;
-  BADSPACEBASE *in_ESP;
   int in_stack_ffffffa4;
   float line_length;
   float in_stack_ffffffa8;

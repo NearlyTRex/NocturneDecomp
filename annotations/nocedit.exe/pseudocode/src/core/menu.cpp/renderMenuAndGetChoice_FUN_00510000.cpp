@@ -12,97 +12,93 @@ core_menu_cpp_renderMenuAndGetChoice_FUN_00510000
           int spacing_flag)
 
 {
+  CBitFont *this_ptr;
   int iVar1;
-  uint uVar2;
+  int iVar2;
   uint uVar3;
-  CBitFont *unaff_EBX;
-  CBitFont *unaff_EBP;
-  int iVar4;
-  uint *unaff_ESI;
-  char *pcVar5;
-  CBitFont *unaff_EDI;
-  int in_stack_0000001c;
-  int in_stack_00000030;
-  int *in_stack_00000038;
-  int in_stack_00000048;
-  int *in_stack_0000004c;
-  int in_stack_0000005c;
-  int *in_stack_00000060;
-  int *in_stack_00000074;
-  int *in_stack_00000088;
-  char *pcVar6;
-  int iVar7;
-  int in_stack_ffffffdc;
-  int in_stack_ffffffe0;
-  CBitFont *in_stack_ffffffe4;
-  CBitFont *pCVar8;
+  uint uVar4;
+  int iVar5;
+  int iVar6;
+  char *pcVar7;
+  int in_stack_00000018;
+  int *in_stack_0000001c;
+  int *in_stack_00000024;
+  int *in_stack_0000002c;
+  char *pcVar8;
+  int x_pos;
+  int color_mode;
+  int iVar9;
+  char **ppcVar10;
+  char **ppcVar11;
+  CBitFont *this_ptr_00;
   
-  pCVar8 = g_ThemeFont;
-  iVar4 = y_position;
+  this_ptr = g_ThemeFont;
+  iVar6 = y_position;
+  this_ptr_00 = g_ThemeFont;
   if (spacing_flag != 0) {
     engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
               (g_ThemeFont,(char *)spacing_flag,0xa0,y_position,7,0);
-    iVar4 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(pCVar8,0x58);
-    iVar4 = y_position + iVar4 * 2;
+    iVar6 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(this_ptr,0x58);
+    iVar6 = y_position + iVar6 * 2;
   }
-  pCVar8 = (CBitFont *)0x0;
-  if (0 < y_position) {
+  iVar9 = 0;
+  ppcVar10 = menu_text_array;
+  if (0 < menu_count) {
     do {
-      engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(unaff_EDI,(char *)*selected_index_ptr);
-      engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(in_stack_ffffffe4,0x58);
-      iVar7 = 0xf8;
-      if (in_stack_ffffffdc == *(int *)menu_count) {
-        iVar1 = core_moon_cpp_CMoon_isAnimationFirstHalf_FUN_0052a3f0(&g_CMoonInstance);
-        if (iVar1 == 0) {
-          in_stack_ffffffdc = 0xff;
+      engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(this_ptr_00,*ppcVar10);
+      iVar1 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(this_ptr_00,0x58);
+      x_pos = 0xa0;
+      color_mode = 0xf8;
+      if (iVar9 == *selected_index_ptr) {
+        iVar2 = core_moon_cpp_CMoon_isAnimationFirstHalf_FUN_0052a3f0(&g_CMoonInstance);
+        color_mode = 7;
+        if (iVar2 == 0) {
+          color_mode = 0xff;
         }
         else {
-          iVar1 = 0;
-          pCVar8 = in_stack_ffffffe4;
+          iVar2 = 0;
+          ppcVar11 = ppcVar10;
           do {
-            uVar2 = crt_stdlib_c_rand_FUN_005feb5c();
             uVar3 = crt_stdlib_c_rand_FUN_005feb5c();
-            iVar7 = crt_stdlib_c_rand_FUN_005feb5c();
+            uVar4 = crt_stdlib_c_rand_FUN_005feb5c();
+            iVar5 = crt_stdlib_c_rand_FUN_005feb5c();
             engine_3d_c_setRenderAlpha_FUN_00406d80
-                      ((uint)((longlong)iVar7 * 48000) >> 0x10 |
-                       (int)((ulonglong)((longlong)iVar7 * 48000) >> 0x20) << 0x10);
-            in_stack_ffffffe0 = -1;
-            in_stack_ffffffdc = 7;
-            iVar7 = ((uVar3 & 3) - 2) + iVar4;
-            iVar1 = iVar1 + 1;
+                      ((uint)((longlong)iVar5 * 48000) >> 0x10 |
+                       (int)((ulonglong)((longlong)iVar5 * 48000) >> 0x20) << 0x10);
+            iVar2 = iVar2 + 1;
             engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
-                      (unaff_EBX,(char *)*unaff_ESI,(uVar2 & 3) + 0x9e,iVar7,7,-1);
-          } while (iVar1 < 5);
+                      (this_ptr_00,*ppcVar11,(uVar3 & 3) + 0x9e,((uVar4 & 3) - 2) + iVar6,7,-1);
+          } while (iVar2 < 5);
         }
       }
       engine_3d_c_setRenderAlpha_FUN_00406d80(48000);
       engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
-                (unaff_EBP,(char *)pCVar8->bitmap_count,iVar7,iVar4,in_stack_ffffffe0,-1);
-      iVar4 = iVar4 + in_stack_ffffffe0;
-      if (in_stack_0000001c == 0) {
-        iVar4 = iVar4 + in_stack_ffffffe0;
+                (this_ptr_00,*ppcVar10,x_pos,iVar6,color_mode,-1);
+      iVar6 = iVar6 + iVar1;
+      if (spacing_flag == 0) {
+        iVar6 = iVar6 + iVar1;
       }
-      selected_index_ptr = selected_index_ptr + 1;
-      pCVar8 = (CBitFont *)((int)&pCVar8->bitmap_count + 1);
-    } while ((int)pCVar8 < y_position);
+      iVar9 = iVar9 + 1;
+      ppcVar10 = ppcVar10 + 1;
+    } while (iVar9 < menu_count);
   }
   engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
   if (g_MessageCount == 0) {
-    iVar7 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80
+    iVar9 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80
                       (g_SmallEditorFont,"Nocturne 1999 Terminal Reality Inc.  Patent Pending.");
-    iVar4 = engine_font_cpp_CBitFont_getCharWidth_FUN_004cff40
+    iVar6 = engine_font_cpp_CBitFont_getCharWidth_FUN_004cff40
                       (g_SmallEditorFont,"Nocturne 1999 Terminal Reality Inc.  Patent Pending.");
-    pcVar6 = "Nocturne 1999 Terminal Reality Inc.  Patent Pending.";
+    pcVar8 = "Nocturne 1999 Terminal Reality Inc.  Patent Pending.";
   }
   else {
-    iVar7 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80
+    iVar9 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80
                       (g_SmallEditorFont,"Nocturne (c) 1999 Terminal Reality Inc.  Patent Pending.");
-    iVar4 = engine_font_cpp_CBitFont_getCharWidth_FUN_004cff40
+    iVar6 = engine_font_cpp_CBitFont_getCharWidth_FUN_004cff40
                       (g_SmallEditorFont,"Nocturne (c) 1999 Terminal Reality Inc.  Patent Pending.");
-    pcVar6 = "Nocturne (c) 1999 Terminal Reality Inc.  Patent Pending.";
+    pcVar8 = "Nocturne (c) 1999 Terminal Reality Inc.  Patent Pending.";
   }
   engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
-            (g_SmallEditorFont,pcVar6,0x27f - iVar7,0x1df - iVar4,0xf8,0);
+            (g_SmallEditorFont,pcVar8,0x27f - iVar9,0x1df - iVar6,0xf8,0);
   engine_3d_c_setRenderAlpha_FUN_00406d80(0x8000);
   engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
             (g_SmallEditorFont,g_MenuVersionText,0x206,99,0xf8,0);
@@ -111,50 +107,50 @@ core_menu_cpp_renderMenuAndGetChoice_FUN_00510000
             (g_SmallEditorFont,"NON-RELEASE EDITOR BUILD",0,0,0xf8,0);
   engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
             (g_SmallEditorFont,"Press CTRL+D to access the editor menu",0,0x14,0xf8,0);
-  pcVar6 = *(char **)(*in_stack_00000038 * 4 + in_stack_00000030);
+  pcVar8 = menu_text_array[*selected_index_ptr];
   do {
-    pcVar5 = pcVar6;
-    if (*pcVar6 == ':') goto LAB_00510279;
-    if (*pcVar6 == '\0') break;
-    pcVar5 = pcVar6 + 1;
-    if (*pcVar5 == ':') goto LAB_00510279;
-    pcVar6 = pcVar6 + 2;
-  } while (*pcVar5 != '\0');
-  pcVar5 = (char *)0x0;
+    pcVar7 = pcVar8;
+    if (*pcVar8 == ':') goto LAB_00510279;
+    if (*pcVar8 == '\0') break;
+    pcVar7 = pcVar8 + 1;
+    if (*pcVar7 == ':') goto LAB_00510279;
+    pcVar8 = pcVar8 + 2;
+  } while (*pcVar7 != '\0');
+  pcVar7 = (char *)0x0;
 LAB_00510279:
   g_MenuInputHappened = 0;
-  iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x48);
-  if (iVar4 != 0) {
-    iVar4 = *in_stack_0000004c;
+  iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x48);
+  if (iVar6 != 0) {
+    iVar6 = *(int *)spacing_flag;
     g_MenuInputHappened = 1;
-    *in_stack_0000004c = iVar4 + -1;
-    if (iVar4 + -1 < 0) {
-      *in_stack_0000004c = in_stack_00000048 + -1;
+    *(int *)spacing_flag = iVar6 + -1;
+    if (iVar6 + -1 < 0) {
+      *(int *)spacing_flag = y_position + -1;
     }
   }
-  iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x50);
-  if (iVar4 != 0) {
+  iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x50);
+  if (iVar6 != 0) {
     g_MenuInputHappened = 1;
-    iVar4 = *in_stack_00000060;
-    *in_stack_00000060 = iVar4 + 1;
-    if (in_stack_0000005c <= iVar4 + 1) {
-      *in_stack_00000060 = 0;
+    iVar6 = *in_stack_0000001c;
+    *in_stack_0000001c = iVar6 + 1;
+    if (in_stack_00000018 <= iVar6 + 1) {
+      *in_stack_0000001c = 0;
     }
   }
-  if (pcVar5 != (char *)0x0) {
+  if (pcVar7 != (char *)0x0) {
     g_MenuLeftRightPressed = 0;
-    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x4b);
-    if (iVar4 != 0) {
+    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x4b);
+    if (iVar6 != 0) {
       g_MenuLeftRightPressed = 1;
-      return *in_stack_00000074;
+      return *in_stack_00000024;
     }
-    iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x4d);
-    if (iVar4 != 0) goto LAB_00510340;
+    iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x4d);
+    if (iVar6 != 0) goto LAB_00510340;
   }
-  iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x1c);
-  if (iVar4 == 0) {
+  iVar6 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x1c);
+  if (iVar6 == 0) {
     return -1;
   }
 LAB_00510340:
-  return *in_stack_00000088;
+  return *in_stack_0000002c;
 }

@@ -11,13 +11,14 @@ int __cdecl shape_design_c_loadModelBinary_FUN_00458170(char *filename)
 {
   char cVar1;
   int iVar2;
-  BADSPACEBASE *in_ESP;
   char *pcVar3;
   int *piVar4;
   char *pcVar5;
   int *piVar6;
   byte bVar7;
-  SMRGLModelBounds *output;
+  SMRGLModelBounds *in_stack_fffffe64;
+  int local_198 [13];
+  uint local_164;
   char local_160 [80];
   int local_110;
   int local_10c;
@@ -70,6 +71,7 @@ int __cdecl shape_design_c_loadModelBinary_FUN_00458170(char *filename)
     local_14 = crt_stdio_c_fread_FUN_005fd990(&local_18,1,4,local_38);
     crt_stdio_c_fseek_FUN_005ffacc(local_38,-4,1);
     while ((local_18 != 0 && (local_14 != 0xffffffff))) {
+      local_164 = local_18;
       if (local_18 < 0x14) {
         if (local_18 < 6) {
           if (local_18 < 3) {
@@ -223,15 +225,14 @@ LAB_00458835:
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_38,"..\\shape\\design.c",0x2b2);
     shape_design_c_calculateVertexNormals_FUN_0045be40();
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
-    output = (SMRGLModelBounds *)0x45888b;
     local_1c = engine_model_c_loadModelFile_FUN_00527ec0(filename);
     if (local_1c == (SMRGLHeaderExtended *)0x0) {
       g_CurrentFilename = "..\\shape\\design.c";
       g_CurrentLineNumber = 699;
       core_main_c_displayErrorAndQuit_FUN_00506f10("loadBinary - Out of mem!");
     }
-    engine_model_c_getMRGLBounds_FUN_00528140(local_1c,output);
-    piVar4 = (int *)&stack0xfffffe68;
+    engine_model_c_getMRGLBounds_FUN_00528140(local_1c,in_stack_fffffe64);
+    piVar4 = local_198;
     piVar6 = local_dc;
     for (iVar2 = 0xd; iVar2 != 0; iVar2 = iVar2 + -1) {
       *piVar6 = *piVar4;

@@ -14,7 +14,6 @@ void core_boxactor_cpp_FUN_00422390(void)
 {
   float fVar1;
   float fVar2;
-  BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000004;
   CVector3f *in_stack_00000008;
   CVector3f *in_stack_0000000c;
@@ -26,6 +25,7 @@ void core_boxactor_cpp_FUN_00422390(void)
   float local_24;
   CVector3f local_20;
   float fStack_14;
+  float fStack_10;
   
   core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
             (in_stack_00000004,&local_44,in_stack_00000008);
@@ -33,10 +33,10 @@ void core_boxactor_cpp_FUN_00422390(void)
             (in_stack_00000004,&local_20,in_stack_0000000c);
   if (local_20.z * local_44.z + local_20.x * local_44.x + local_20.y * local_44.y < 0.0) {
     (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,&CStack_5c);
-    fStack_14 = core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940
+    fStack_10 = core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940
                           (&CStack_5c,&local_44,&local_20,&CStack_38);
-    if ((0.0 <= fStack_14) && (fStack_14 < 1.0)) {
-      fStack_14 = (float)1.01 - fStack_14;
+    if ((0.0 <= fStack_10) && (fStack_10 < 1.0)) {
+      fStack_14 = (float)1.01 - fStack_10;
       fStack_2c = in_stack_0000000c->x * fStack_14;
       fStack_28 = in_stack_0000000c->y * fStack_14;
       local_24 = in_stack_0000000c->z * fStack_14;

@@ -13,9 +13,10 @@ CTurret * __cdecl core_turret_cpp_CTurret_ctor_FUN_005e20f0(CTurret *this_ptr)
   CWeapon *pCVar2;
   CKeyFramedModelInstance *this_ptr_00;
   CVector3f *pCVar3;
-  BADSPACEBASE *in_ESP;
   char *pcVar4;
   char *pcVar5;
+  CVector3f local_24;
+  CVector3f local_18;
   
   pCVar2 = core_weapon_cpp_CWeapon_ctor_FUN_005ede70(&this_ptr->base_weapon);
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0
@@ -56,9 +57,12 @@ CTurret * __cdecl core_turret_cpp_CTurret_ctor_FUN_005e20f0(CTurret *this_ptr)
     pcVar5[1] = cVar1;
     pcVar5 = pcVar5 + 2;
   } while (cVar1 != '\0');
+  local_18.x = 0.0;
+  local_18.y = 0.0;
+  local_18.z = 1.0;
   pCVar3 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                     ((CDemonActor *)(this_ptr_00[-4].part_visibility_flags + 0x1b),
-                      (CVector3f *)&stack0xffffffec,(CVector3f *)&stack0xfffffff8);
+                     ((CDemonActor *)(this_ptr_00[-4].part_visibility_flags + 0x1b),&local_24,
+                      &local_18);
   if ((CVector3f *)(this_ptr_00[1].animation_state + 0x70) != pCVar3) {
     ((CVector3f *)(this_ptr_00[1].animation_state + 0x70))->x = pCVar3->x;
     *(float *)(this_ptr_00[1].animation_state + 0x74) = pCVar3->y;

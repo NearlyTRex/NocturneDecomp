@@ -12,26 +12,25 @@ void __cdecl engine_pod_cpp_CPod_dismount_FUN_00550b90(CPod *this_ptr,char *file
   char cVar1;
   int iVar2;
   int iVar3;
-  BADSPACEBASE *in_ESP;
   CPod *pCVar4;
-  char *pcVar5;
-  char acStack_120 [272];
+  SFoundFileInfo *pSVar5;
+  SFoundFileInfo local_224;
   
-  pcVar5 = &stack0xfffffddc;
+  pSVar5 = &local_224;
   do {
     cVar1 = *filename;
-    *pcVar5 = cVar1;
+    pSVar5->found_path[0] = cVar1;
     if (cVar1 == '\0') break;
     cVar1 = filename[1];
     filename = filename + 2;
-    pcVar5[1] = cVar1;
-    pcVar5 = pcVar5 + 2;
+    *(char *)((int)pSVar5 + 1) = cVar1;
+    pSVar5 = (SFoundFileInfo *)((int)pSVar5 + 2);
   } while (cVar1 != '\0');
-  iVar2 = engine_dosio_c_findFileNormally_FUN_004817c0((SFoundFileInfo *)&stack0xfffffddc);
+  iVar2 = engine_dosio_c_findFileNormally_FUN_004817c0(&local_224);
   if ((iVar2 != 0) && (iVar2 = 0, pCVar4 = this_ptr, 0 < this_ptr->pod_file_count)) {
     do {
-      while (iVar3 = crt_string_c_stricmp_FUN_005fe7f0(pCVar4->pod_files[0]->filename,acStack_120),
-            iVar3 == 0) {
+      while (iVar3 = crt_string_c_stricmp_FUN_005fe7f0
+                               (pCVar4->pod_files[0]->filename,local_224.target_path), iVar3 == 0) {
         engine_pod_cpp_CPod_dismountPod_FUN_005518c0(this_ptr,iVar2);
         if (this_ptr->pod_file_count <= iVar2) {
           return;

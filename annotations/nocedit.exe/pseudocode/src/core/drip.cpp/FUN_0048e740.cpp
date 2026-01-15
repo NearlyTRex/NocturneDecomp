@@ -14,7 +14,6 @@ float * core_drip_cpp_FUN_0048e740(void)
 {
   CVector3f *pCVar1;
   CKeyFramedModel *pCVar2;
-  float *unaff_EBP;
   int in_stack_00000004;
   float *in_stack_00000008;
   
@@ -32,8 +31,8 @@ float * core_drip_cpp_FUN_0048e740(void)
   pCVar1 = pCVar2->frame_bounds;
   *in_stack_00000008 = pCVar1->x;
   in_stack_00000008[1] = pCVar1->y;
-  in_stack_00000008[3] = pCVar1->z;
-  *unaff_EBP = pCVar1[1].x;
+  in_stack_00000008[2] = pCVar1->z;
+  in_stack_00000008[3] = pCVar1[1].x;
   in_stack_00000008[4] = pCVar1[1].y;
   in_stack_00000008[5] = pCVar1[1].z;
   return in_stack_00000008;

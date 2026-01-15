@@ -6,14 +6,13 @@
 
 #include "nocturne.h"
 
-uint * core_netgame_cpp_allocSimFrame_FUN_0053f5a0(void)
+int * core_netgame_cpp_allocSimFrame_FUN_0053f5a0(void)
 
 {
   int iVar1;
   int iVar2;
-  uint *dest;
+  int *dest;
   int in_stack_00000004;
-  uint in_stack_0000000c;
   
   iVar2 = 0;
   if (0 < g_SimFrameCount) {
@@ -21,7 +20,7 @@ uint * core_netgame_cpp_allocSimFrame_FUN_0053f5a0(void)
     do {
       if (in_stack_00000004 == *(int *)((int)&g_SimFrameHistory + iVar1)) {
         if (-1 < iVar2) {
-          return (uint *)((int)&g_SimFrameHistory + iVar1);
+          return (int *)((int)&g_SimFrameHistory + iVar1);
         }
         break;
       }
@@ -37,6 +36,6 @@ uint * core_netgame_cpp_allocSimFrame_FUN_0053f5a0(void)
   dest = &g_SimFrameHistory + g_SimFrameCount * 0x19;
   g_SimFrameCount = g_SimFrameCount + 1;
   crt_memory_c_memset_FUN_005fde40(dest,0,100);
-  *dest = in_stack_0000000c;
+  *dest = in_stack_00000004;
   return dest;
 }

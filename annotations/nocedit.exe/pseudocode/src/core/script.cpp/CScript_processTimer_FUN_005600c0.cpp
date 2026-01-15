@@ -22,7 +22,7 @@ uint core_script_cpp_CScript_processTimer_FUN_005600c0(void)
     core_main_c_displayErrorAndQuit_FUN_00506f10("CScript::processTimer - invalidTimeToWait");
   }
   if (*(float *)(in_stack_00000004 + 0x4c) < 0.0) {
-    *(float **)(in_stack_00000004 + 0x4c) = in_stack_0000000c;
+    *(float *)(in_stack_00000004 + 0x4c) = in_stack_00000008;
   }
   if (*(float *)(in_stack_00000004 + 0x4c) <= *in_stack_0000000c) {
     *in_stack_0000000c = *in_stack_0000000c - *(float *)(in_stack_00000004 + 0x4c);

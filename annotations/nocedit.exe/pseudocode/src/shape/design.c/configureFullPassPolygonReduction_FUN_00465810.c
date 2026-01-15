@@ -11,7 +11,6 @@ void __cdecl shape_design_c_configureFullPassPolygonReduction_FUN_00465810(int u
 {
   byte bVar1;
   int iVar2;
-  BADSPACEBASE *in_ESP;
   byte *pbVar3;
   byte bVar4;
   double dVar5;
@@ -29,7 +28,6 @@ void __cdecl shape_design_c_configureFullPassPolygonReduction_FUN_00465810(int u
   }
   else {
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
-    in_stack_ffffff8c = "Enter tolerance angle [8.5] : ";
     engine_2d_c_getInputWithPrompt_FUN_004032c0
               ((char *)local_6c,0x14,0,0,"Enter tolerance angle [8.5] : ");
   }

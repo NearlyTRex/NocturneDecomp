@@ -10,7 +10,6 @@ int __cdecl crt_stdio_c_WideCharToSingleByte_FUN_0060acf0(wchar_t wide_char,char
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   ushort in_stack_00000006;
   
   if (_wide_char == (LPSTR)0x0) {

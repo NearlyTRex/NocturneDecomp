@@ -14,7 +14,6 @@ CDemonActor * core_msnedit_cpp_FUN_0053c340(void)
 {
   CDemonActor *actor_ptr;
   int iVar1;
-  BADSPACEBASE *in_ESP;
   CDemonActor *pCVar2;
   int *in_stack_00000004;
   int in_stack_00000008;
@@ -24,6 +23,7 @@ CDemonActor * core_msnedit_cpp_FUN_0053c340(void)
   CVector3f CStack_40;
   CVector3f CStack_34;
   CVector3f local_28;
+  float fStack_1c;
   float local_18;
   float local_14;
   
@@ -52,11 +52,11 @@ CDemonActor * core_msnedit_cpp_FUN_0053c340(void)
         core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10(actor_ptr,&CStack_40,&local_28);
         core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
                   (actor_ptr,&CStack_34,&local_4c);
-        local_18 = core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940
-                             (&local_64,&CStack_40,&CStack_34,(CVector3f *)0x0);
-        if (((0.0 < local_18) && (local_18 <= local_14)) && (local_18 <= 1.0)) {
+        fStack_1c = core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940
+                              (&local_64,&CStack_40,&CStack_34,(CVector3f *)0x0);
+        if (((0.0 < fStack_1c) && (fStack_1c <= local_14)) && (fStack_1c <= 1.0)) {
           pCVar2 = actor_ptr;
-          local_14 = local_18;
+          local_14 = fStack_1c;
         }
       }
     }

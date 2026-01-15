@@ -13,9 +13,7 @@ int core_drip_cpp_FUN_0048e6c0(void)
 {
   CBoundingBox3D *this_ptr;
   int iVar1;
-  BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000004;
-  float fStack_14;
   
   in_stack_00000004[2].create_event[0x10] = '\0';
   in_stack_00000004[2].create_event[0x11] = '\0';
@@ -23,13 +21,12 @@ int core_drip_cpp_FUN_0048e6c0(void)
   in_stack_00000004[2].create_event[0x13] = '\0';
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);
   this_ptr = (*in_stack_00000004->vtable->getBoundingBox)
-                       (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffe4);
+                       (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffe0);
   iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr);
   if (iVar1 == 0) {
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_00000004);
     return 0;
   }
-  fStack_14 = 6.695062e-39;
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
             ((CKeyFramedModelInstance *)(in_stack_00000004 + 1),0.0,-1);
   in_stack_00000004[2].create_event[0x10] = '\x01';

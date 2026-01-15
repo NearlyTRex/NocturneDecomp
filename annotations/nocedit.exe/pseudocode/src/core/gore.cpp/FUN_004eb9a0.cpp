@@ -14,13 +14,14 @@ void core_gore_cpp_FUN_004eb9a0(void)
 {
   float fVar1;
   CParticle *in_stack_00000004;
+  CVector3f *in_stack_00000008;
   CVector3f *in_stack_0000000c;
-  CVector3f *in_stack_00000010;
+  float in_stack_00000010;
   
-  in_stack_00000004[1].position.x = (float)in_stack_00000010;
+  in_stack_00000004[1].position.x = in_stack_00000010;
   fVar1 = (float)core_actor_cpp_getRandomInt_FUN_0040cc70(0,0xf);
   in_stack_00000004[1].position.y = fVar1;
   core_particle_cpp_CParticle_setup_FUN_00545680
-            (in_stack_00000004,in_stack_0000000c,in_stack_00000010);
+            (in_stack_00000004,in_stack_00000008,in_stack_0000000c);
   return;
 }

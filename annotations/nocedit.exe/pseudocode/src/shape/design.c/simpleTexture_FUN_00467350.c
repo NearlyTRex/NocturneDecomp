@@ -12,11 +12,10 @@ void __cdecl shape_design_c_simpleTexture_FUN_00467350(void)
   char cVar1;
   uint uVar2;
   int iVar3;
-  BADSPACEBASE *in_ESP;
   char *pcVar4;
   byte bVar5;
   float local_80;
-  float fVar6;
+  float local_7c;
   float local_78;
   float local_74;
   char local_70 [80];
@@ -57,7 +56,7 @@ void __cdecl shape_design_c_simpleTexture_FUN_00467350(void)
       if (iVar3 == 0x59) {
         local_74 = 99999.9;
         local_78 = 99999.9;
-        fVar6 = -99999.9;
+        local_7c = -99999.9;
         local_80 = -99999.9;
         for (local_1c = 0; local_1c < g_VertexCount; local_1c = local_1c + 1) {
           if (g_LoadedVertices[local_1c].vertex.x < local_74) {
@@ -66,8 +65,8 @@ void __cdecl shape_design_c_simpleTexture_FUN_00467350(void)
           if (g_LoadedVertices[local_1c].vertex.y < local_78) {
             local_78 = g_LoadedVertices[local_1c].vertex.y;
           }
-          if (fVar6 < g_LoadedVertices[local_1c].vertex.x) {
-            fVar6 = g_LoadedVertices[local_1c].vertex.x;
+          if (local_7c < g_LoadedVertices[local_1c].vertex.x) {
+            local_7c = g_LoadedVertices[local_1c].vertex.x;
           }
           if (local_80 < g_LoadedVertices[local_1c].vertex.y) {
             local_80 = g_LoadedVertices[local_1c].vertex.y;
@@ -79,7 +78,7 @@ void __cdecl shape_design_c_simpleTexture_FUN_00467350(void)
             uVar2 = g_ModelPolygonData[local_1c].vertex_indices[local_20];
             g_ModelPolygonData[local_1c].uv_u[local_20] =
                  ((g_LoadedVertices[uVar2].vertex.x - local_74) * (float)5.9604644775390599e-08) /
-                 (fVar6 - local_74) + 1.0;
+                 (local_7c - local_74) + 1.0;
             g_ModelPolygonData[local_1c].uv_v[local_20] =
                  ((g_LoadedVertices[uVar2].vertex.y - local_78) * (float)5.9604644775390599e-08) /
                  (local_80 - local_78) + 1.0;

@@ -1,19 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 22,
-    "complexity_score": 92,
+    "complexity_score": 65,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 12,
-    "suspect_count": 6,
+    "pseudocode_lines": 10,
+    "suspect_count": 4,
     "suspect_types": [
       "call_esp_preserve",
       "pointer_cast",
-      "special_crt_function",
-      "stack_param"
+      "special_crt_function"
     ],
-    "total_lines": 34
+    "total_lines": 32
   },
   "cross_references": [],
   "function": {
@@ -89,24 +88,10 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 6,
-      "match": "in_stack_00000008",
-      "text": "streambuf *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000008",
-      "text": "(in_stack_00000008,new_buffer,(void *)((int)new_buffer + 0x204),1);",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 13,
+      "line": 11,
       "match": "(void *)((int)",
-      "text": "(in_stack_00000008,new_buffer,(void *)((int)new_buffer + 0x204),1);",
+      "text": "crt_iostream_cpp_setBuffer_FUN_0060d6a8(this_ptr,new_buffer,(void *)((int)new_buffer + 0x204),1);",
       "type": "pointer_cast"
     },
     {

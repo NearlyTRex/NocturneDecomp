@@ -9,72 +9,69 @@
 int crt_unknown_c_FUN_0060fb40(void)
 
 {
-  SIZE_T count;
-  LPWSTR pWVar1;
-  int iVar2;
+  SIZE_T SVar1;
+  LPWSTR pWVar2;
+  int iVar3;
   void *dest;
-  ulong uVar3;
+  ulong uVar4;
   void *dest_00;
   char *dest_01;
-  void *unaff_retaddr;
   LPWSTR in_stack_00000004;
-  int in_stack_0000000c;
-  int in_stack_00000014;
   
-  pWVar1 = (LPWSTR)crt_unknown_c_FUN_006107c0();
-  if (pWVar1 == (LPWSTR)0x0) {
-    iVar2 = -1;
+  pWVar2 = (LPWSTR)crt_unknown_c_FUN_006107c0();
+  if (pWVar2 == (LPWSTR)0x0) {
+    iVar3 = -1;
   }
   else {
-    if (pWVar1 == in_stack_00000004) {
+    if (pWVar2 == in_stack_00000004) {
       return -1;
     }
-    count = ((int)pWVar1 - (int)in_stack_00000004 >> 1) * 2;
-    dest = crt_memory_c_malloc_FUN_00601bb0(count + 2);
+    SVar1 = ((int)pWVar2 - (int)in_stack_00000004 >> 1) * 2;
+    dest = crt_memory_c_malloc_FUN_00601bb0(SVar1 + 2);
     if (dest == (void *)0x0) {
       return -1;
     }
-    crt_string_c_memcpy_FUN_0060cd60(dest,in_stack_00000004,count);
-    *(ushort *)((int)dest + count) = 0;
-    uVar3 = crt_string_c_wcslen_FUN_0060cd30(pWVar1 + 1);
-    if (uVar3 == 0) {
+    crt_string_c_memcpy_FUN_0060cd60(dest,in_stack_00000004,SVar1);
+    *(ushort *)((int)dest + SVar1) = 0;
+    uVar4 = crt_string_c_wcslen_FUN_0060cd30(pWVar2 + 1);
+    if (uVar4 == 0) {
       dest_00 = (void *)0x0;
     }
     else {
-      dest_00 = crt_memory_c_malloc_FUN_00601bb0((int)(uVar3 * 2) + 2);
+      SVar1 = uVar4 * 2;
+      dest_00 = crt_memory_c_malloc_FUN_00601bb0(SVar1 + 2);
       if (dest_00 == (void *)0x0) {
         crt_memory_c_free_FUN_00601cd0(dest);
         return -1;
       }
-      crt_string_c_memcpy_FUN_0060cd60(dest_00,(void *)(uVar3 * 2),(SIZE_T)unaff_retaddr);
-      *(ushort *)((int)dest_00 + (int)in_stack_00000004) = 0;
+      crt_string_c_memcpy_FUN_0060cd60(dest_00,pWVar2 + 1,SVar1);
+      *(ushort *)((int)dest_00 + SVar1) = 0;
     }
-    iVar2 = crt_unknown_c_FUN_006107f0();
-    crt_memory_c_free_FUN_00601cd0(unaff_retaddr);
+    iVar3 = crt_unknown_c_FUN_006107f0();
+    crt_memory_c_free_FUN_00601cd0(dest);
     crt_memory_c_free_FUN_00601cd0(dest_00);
-    if (iVar2 == 0) {
+    if (iVar3 == 0) {
       return -1;
     }
     if (g_EnvironInitialized == 0) {
       crt_unknown_c_FUN_00610900();
     }
-    iVar2 = crt_unknown_c_FUN_0060fcf4();
-    if (iVar2 != 0) {
+    iVar3 = crt_unknown_c_FUN_0060fcf4();
+    if (iVar3 != 0) {
       return -1;
     }
-    uVar3 = crt_string_c_wcslen_FUN_0060cd30(in_stack_00000004);
-    dest_01 = crt_memory_c_malloc_FUN_00601bb0(in_stack_0000000c * (uVar3 + 1));
+    uVar4 = crt_string_c_wcslen_FUN_0060cd30(in_stack_00000004);
+    dest_01 = crt_memory_c_malloc_FUN_00601bb0((uVar4 + 1) * 2);
     if (dest_01 == (char *)0x0) {
       crt_errno_c_convertWindowsErrorToErrno_FUN_00608390(5);
       return -1;
     }
-    iVar2 = crt_string_c_wcstombs_FUN_0060c0c0
-                      (dest_01,in_stack_00000004,(uVar3 + 1) * in_stack_00000014);
-    if (iVar2 == -1) {
+    iVar3 = crt_string_c_wcstombs_FUN_0060c0c0(dest_01,in_stack_00000004,(uVar4 + 1) * 2);
+    if (iVar3 == -1) {
       crt_memory_c_free_FUN_00601cd0(dest_01);
       return -1;
     }
-    iVar2 = crt_env_c_updateEnvironTable_FUN_0060f04c(dest_01);
+    iVar3 = crt_env_c_updateEnvironTable_FUN_0060f04c(dest_01);
   }
-  return iVar2;
+  return iVar3;
 }

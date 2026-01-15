@@ -22,6 +22,7 @@ void __cdecl sound_sndmain_cpp_pollAllSfxSlots_FUN_005acdb0(void)
   sound_sndmain_cpp_calculateVirtualSpeakerPositions_FUN_005a5530();
   iVar2 = g_SoundStartTime;
   g_SoundStartTime = wincore_winrun_cpp_getTime_FUN_005f2dc0();
+  local_14 = 0.0;
   uVar1 = sound_sndmain_cpp_hasHardware3DSound_FUN_005ab5a0();
   if (uVar1 != 0) {
     local_14 = (float)(g_SoundStartTime - iVar2) * (float)8.4771050347222196e-07;

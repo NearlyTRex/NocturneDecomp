@@ -13,7 +13,6 @@ shape_edittool_cpp_CEditorTools_promptForValidDouble_FUN_004a01f0
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   undefined3 in_stack_00000011;
   uint local_48;
   uint uStack_44;

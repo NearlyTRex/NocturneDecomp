@@ -17,7 +17,6 @@ sound_mp3_cpp_CMP3Decoder_decodeScalefacCompress_FUN_005310f0
   uint uVar3;
   short sVar4;
   int iVar5;
-  BADSPACEBASE *in_ESP;
   short sVar6;
   uint local_34 [5];
   ushort uStack_20;
@@ -132,10 +131,10 @@ sound_mp3_cpp_CMP3Decoder_decodeScalefacCompress_FUN_005310f0
   sVar4 = 0;
   local_16 = (uint)(ushort)local_16;
   while ((int)local_16 >> 0x10 < 4) {
-    sVar6 = 0;
-    while( true ) {
-      if ((uint)g_Layer3ScalefactorBandCounts[(int)local_1a >> 0x10][sStack_1c]
-                [(int)local_16 >> 0x10] <= (uint)(int)sVar6) break;
+    for (sVar6 = 0;
+        (uint)(int)sVar6 <
+        (uint)g_Layer3ScalefactorBandCounts[(int)local_1a >> 0x10][sStack_1c][(int)local_16 >> 0x10]
+        ; sVar6 = sVar6 + 1) {
       if (local_34[(int)local_16 >> 0x10] == 0) {
         this_ptr->layer3_scalefactors[sVar4] = 0;
       }
@@ -144,7 +143,6 @@ sound_mp3_cpp_CMP3Decoder_decodeScalefacCompress_FUN_005310f0
                           (this_ptr,local_34[(int)local_16 >> 0x10]);
         this_ptr->layer3_scalefactors[sVar4] = uVar3;
       }
-      sVar6 = sVar6 + 1;
       sVar4 = sVar4 + 1;
     }
     local_16 = CONCAT22 /* combine 2-byte values */(local_16._2_2_ + 1,(ushort)local_16);

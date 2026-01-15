@@ -11,7 +11,6 @@ core_xform_cpp_buildZFlipMatrix_FUN_005f6fa0(CMatrix3x4f *matrix_out,float z_off
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   float *unaff_ESI;
   float *pfVar2;
   float *pfVar3;

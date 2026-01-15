@@ -11,10 +11,10 @@ int __cdecl core_batman_cpp_CBatman_FUN_00417bb0(CBatman *this_ptr)
 {
   CVector3f *pCVar1;
   int iVar2;
-  BADSPACEBASE *in_ESP;
   CVector3f *pCVar3;
   CVector3f *in_stack_00000008;
-  byte auStack_2c [16];
+  CVector3f local_34;
+  CVector3f local_28;
   CVector3f local_1c;
   
   iVar2 = 1;
@@ -28,8 +28,7 @@ int __cdecl core_batman_cpp_CBatman_FUN_00417bb0(CBatman *this_ptr)
   if ((this_ptr->base_enemy).base_character.model.part_visibility_flags
       [*(int *)(this_ptr->field1_0xbeb4 + 0x84)] != 0) {
     pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-                       (&(this_ptr->base_enemy).base_character.model,(CVector3f *)(auStack_2c + 8),
-                        DAT_008227dc);
+                       (&(this_ptr->base_enemy).base_character.model,&local_28,DAT_008227dc);
     if (in_stack_00000008 + 1 != pCVar1) {
       in_stack_00000008[1].x = pCVar1->x;
       in_stack_00000008[1].y = pCVar1->y;
@@ -42,8 +41,7 @@ int __cdecl core_batman_cpp_CBatman_FUN_00417bb0(CBatman *this_ptr)
     return iVar2;
   }
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-                     (&(this_ptr->base_enemy).base_character.model,(CVector3f *)auStack_2c,
-                      DAT_008227e4);
+                     (&(this_ptr->base_enemy).base_character.model,&local_34,DAT_008227e4);
   pCVar3 = in_stack_00000008 + iVar2;
   if (pCVar3 != pCVar1) {
     pCVar3->x = pCVar1->x;

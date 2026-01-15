@@ -22,7 +22,6 @@ void core_curtain_cpp_FUN_00449fc0(void)
   float fVar8;
   float fVar9;
   int iVar10;
-  BADSPACEBASE *in_ESP;
   int iVar11;
   float *pfVar12;
   float *pfVar13;

@@ -21,7 +21,6 @@ sound_mp3_cpp_applyPolyphaseWindow_FUN_00533690
   int iVar8;
   float *pfVar9;
   int iVar10;
-  BADSPACEBASE *in_ESP;
   int iVar11;
   float10 fVar12;
   float10 fVar13;

@@ -37,7 +37,6 @@ void __cdecl core_game_cpp_CGame_processCheatCodes_FUN_004ddaf0(CGame *this_ptr)
   CGasMask *this_ptr_03;
   int iVar18;
   int iVar19;
-  BADSPACEBASE *in_ESP;
   CSkeleton *pCVar20;
   byte *pbVar21;
   byte bVar22;

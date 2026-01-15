@@ -16,7 +16,6 @@ shape_superopt_cpp_CPoly_rayIntersect_FUN_005d0010
   CVert *pCVar3;
   int iVar4;
   CVert *pCVar5;
-  BADSPACEBASE *in_ESP;
   double *pdVar6;
   double *pdVar7;
   uint *puVar8;

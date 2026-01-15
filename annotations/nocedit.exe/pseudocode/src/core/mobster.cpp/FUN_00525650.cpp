@@ -13,7 +13,6 @@ void core_mobster_cpp_FUN_00525650(void)
 {
   float fVar1;
   CVector3f *pCVar2;
-  BADSPACEBASE *in_ESP;
   int in_stack_00000004;
   CVector3f local_3c;
   CVector3f local_30;

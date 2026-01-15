@@ -9,7 +9,6 @@
 int __cdecl crt_env_c_updateEnvironTable_FUN_0060f04c(char *envstr)
 
 {
-  ulong count;
   char cVar1;
   char *in_EAX;
   char **ptr;
@@ -19,11 +18,9 @@ int __cdecl crt_env_c_updateEnvironTable_FUN_0060f04c(char *envstr)
   uint uVar3;
   int iVar4;
   char **ppcVar5;
-  int unaff_EDI;
   char **ppcVar6;
   bool bVar7;
   byte bVar8;
-  char *in_stack_00000010;
   
   ptr = g_EnvironmentBlock;
   bVar8 = 0;
@@ -62,8 +59,7 @@ int __cdecl crt_env_c_updateEnvironTable_FUN_0060f04c(char *envstr)
     }
     if (iVar2 < 1) {
       n = -iVar2;
-      count = iVar2 * -4 + 8;
-      new_size = count + n + 1;
+      new_size = iVar2 * -4 + 8U + n + 1;
       if (g_EnvironStringArea == (char **)0x0) {
         ptr = crt_memory_c_malloc_FUN_00601bb0(new_size);
         if (ptr == (char **)0x0) {
@@ -81,16 +77,16 @@ int __cdecl crt_env_c_updateEnvironTable_FUN_0060f04c(char *envstr)
           ppcVar5 = (char **)((int)ppcVar5 + (uint)bVar8 * -2 + 1);
           ppcVar6 = (char **)((int)ppcVar6 + (uint)bVar8 * -2 + 1);
         }
-        g_EnvironStringArea = (char **)(unaff_EDI + (int)ptr);
-        crt_memory_c_memset_FUN_005fde40(g_EnvironStringArea,0,count);
+        g_EnvironStringArea = ptr + (2 - iVar2);
+        crt_memory_c_memset_FUN_005fde40(g_EnvironStringArea,0,n + 1);
       }
       else {
         ptr = crt_memory_c_realloc_FUN_00601df0(ptr,new_size);
         if (ptr == (char **)0x0) {
           return -1;
         }
-        crt_string_c_memmove_FUN_005fe5e0((char **)(unaff_EDI + (int)ptr),g_EnvironStringArea,n);
-        g_EnvironStringArea = (char **)(unaff_EDI + (int)ptr);
+        crt_string_c_memmove_FUN_005fe5e0(ptr + (2 - iVar2),g_EnvironStringArea,n);
+        g_EnvironStringArea = ptr + (2 - iVar2);
       }
       ptr[1 - iVar2] = (char *)0x0;
       g_EnvironmentBlock = ptr;
@@ -99,7 +95,7 @@ int __cdecl crt_env_c_updateEnvironTable_FUN_0060f04c(char *envstr)
       n = iVar2 - 1;
     }
   }
-  ptr[n] = in_stack_00000010;
+  ptr[n] = envstr;
   *(byte *)((int)g_EnvironStringArea + n) = 0;
   return 0;
 }

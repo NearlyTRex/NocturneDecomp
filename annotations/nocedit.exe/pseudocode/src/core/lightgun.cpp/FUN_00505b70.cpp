@@ -16,27 +16,26 @@ uint core_lightgun_cpp_FUN_00505b70(void)
   CBoundingBox3D *pCVar1;
   int iVar2;
   int iVar3;
-  BADSPACEBASE *in_ESP;
   uint uVar4;
   CVector3f *in_stack_00000004;
   CDemonActor *in_stack_00000008;
-  float fStack_44;
-  CVector3f CStack_1c;
+  CVector3f CStack_2c;
+  CVector3f CStack_20;
+  float fStack_14;
   
   core_setcolid_cpp_CDemonSet_pushRaytraceState_FUN_00573e10(g_CDemonSetPtr);
   pCVar1 = (*in_stack_00000008->vtable->getBoundingBox)
-                     (in_stack_00000008,(CBoundingBox3D *)&stack0xffffffb8);
-  CStack_1c.x = ((pCVar1->min).x + (pCVar1->max).x) * 0.5f;
-  CStack_1c.y = ((pCVar1->min).y + (pCVar1->max).y) * 0.5f;
-  CStack_1c.z = ((pCVar1->min).z + (pCVar1->max).z) * 0.5f;
+                     (in_stack_00000008,(CBoundingBox3D *)&stack0xffffffb4);
+  fStack_14 = (pCVar1->min).x + (pCVar1->max).x;
+  CStack_2c.x = fStack_14 * 0.5f;
+  CStack_2c.y = ((pCVar1->min).y + (pCVar1->max).y) * 0.5f;
+  CStack_2c.z = ((pCVar1->min).z + (pCVar1->max).z) * 0.5f;
   uVar4 = 0;
   iVar3 = 0;
-  fStack_44 = 7.37983e-39;
-  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-            (in_stack_00000008,(CVector3f *)&stack0xfffffff0,&CStack_1c);
+  core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(in_stack_00000008,&CStack_20,&CStack_2c)
+  ;
   do {
-    core_setcolid_cpp_CDemonSet_raycast_FUN_00572530
-              (g_CDemonSetPtr,in_stack_00000004,(CVector3f *)&stack0xfffffff4);
+    core_setcolid_cpp_CDemonSet_raycast_FUN_00572530(g_CDemonSetPtr,in_stack_00000004,&CStack_20);
     actor_ptr = g_CDemonSetPtr->collision_actor;
     if (actor_ptr == (CDemonActor *)0x0) break;
     if (in_stack_00000008 == actor_ptr) {

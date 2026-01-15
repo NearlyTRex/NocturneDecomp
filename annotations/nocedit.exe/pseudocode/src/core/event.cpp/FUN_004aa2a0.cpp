@@ -11,7 +11,6 @@
 uint core_event_cpp_FUN_004aa2a0(void)
 
 {
-  BADSPACEBASE *in_ESP;
   char *in_stack_00000004;
   va_list_t local_4;
   

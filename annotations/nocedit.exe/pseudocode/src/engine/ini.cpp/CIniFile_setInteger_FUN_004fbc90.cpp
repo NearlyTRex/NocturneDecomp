@@ -9,11 +9,10 @@
 void __cdecl engine_ini_cpp_CIniFile_setInteger_FUN_004fbc90(CIniFile *this_ptr,char *key,int value)
 
 {
-  BADSPACEBASE *in_ESP;
-  char acStack_64 [8];
+  char local_68 [12];
   char local_5c;
   
-  crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff98,"%d",value);
-  engine_ini_cpp_CIniFile_setString_FUN_004fbbb0((CIniFile *)key,(char *)value,acStack_64);
+  crt_stdio_c_sprintf_FUN_005fdbd0(local_68,"%d",value);
+  engine_ini_cpp_CIniFile_setString_FUN_004fbbb0(this_ptr,key,local_68);
   return;
 }

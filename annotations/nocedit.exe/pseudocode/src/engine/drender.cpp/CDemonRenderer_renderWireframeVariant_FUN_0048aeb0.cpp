@@ -12,10 +12,9 @@ engine_drender_cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0
 
 {
   int iVar1;
-  int iVar2;
+  SMRGLHeaderPrimitive *pSVar2;
   int iVar3;
   int iVar4;
-  int in_stack_00000010;
   
   if (render_flags == -1) {
     render_flags = RENDER_ENGINE_CORE_PREMIUM;
@@ -26,33 +25,33 @@ engine_drender_cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0
     {
       if (this_ptr->face_count == 0) {
         iVar3 = 0;
-        if (0 < *(int *)(render_flags + 4)) {
+        if (0 < (polygon_info->base).count) {
           iVar4 = 0;
-          iVar2 = render_flags;
+          pSVar2 = polygon_info;
           do {
-            iVar1 = *(int *)(iVar2 + 0x18);
+            iVar1 = pSVar2[1].base.type;
             if (this_ptr->field8_0x20 == 0) {
-              this_ptr->vertex_buffer_ptr[iVar1].u = *(float *)(iVar2 + 0x1c);
-              this_ptr->vertex_buffer_ptr[iVar1].v = *(float *)(iVar2 + 0x20);
+              this_ptr->vertex_buffer_ptr[iVar1].u = (float)pSVar2[1].base.count;
+              this_ptr->vertex_buffer_ptr[iVar1].v = (float)pSVar2[1].surface_normal.A;
             }
             *(int *)((int)g_VertexIndexBuffer + iVar4) = iVar1;
-            iVar2 = iVar2 + 0xc;
+            pSVar2 = (SMRGLHeaderPrimitive *)&(pSVar2->surface_normal).B;
             iVar3 = iVar3 + 1;
             iVar4 = iVar4 + 4;
-          } while (iVar3 < *(int *)(render_flags + 4));
+          } while (iVar3 < (polygon_info->base).count);
         }
       }
       else {
         iVar3 = 0;
-        if (0 < *(int *)(render_flags + 4)) {
+        if (0 < (polygon_info->base).count) {
           iVar4 = 0;
-          iVar2 = render_flags;
+          pSVar2 = polygon_info;
           do {
-            *(uint *)((int)g_VertexIndexBuffer + iVar4) = *(uint *)(iVar2 + 0x18);
+            *(int *)((int)g_VertexIndexBuffer + iVar4) = pSVar2[1].base.type;
             iVar4 = iVar4 + 4;
             iVar3 = iVar3 + 1;
-            iVar2 = iVar2 + 0xc;
-          } while (iVar3 < *(int *)(render_flags + 4));
+            pSVar2 = (SMRGLHeaderPrimitive *)&(pSVar2->surface_normal).B;
+          } while (iVar3 < (polygon_info->base).count);
         }
       }
       if (this_ptr->face_count == 0) {
@@ -62,7 +61,7 @@ engine_drender_cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0
         else {
           g_ScanlineRenderFunc = wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
         }
-        g_RenderStateFlags = in_stack_00000010;
+        g_RenderStateFlags = render_flags;
         g_RenderStateFlag2 = PREPROCESS_W_DEPTH_REPLACEMENT;
       }
       else {
@@ -71,7 +70,7 @@ engine_drender_cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0
         g_ScanlineRenderFunc = core_dstrender_cpp_renderDepthOnlyStandard_FUN_0049072f;
       }
       engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740
-                (this_ptr,*(int *)(render_flags + 4),g_VertexIndexBuffer);
+                (this_ptr,(polygon_info->base).count,g_VertexIndexBuffer);
     }
     return;
   }

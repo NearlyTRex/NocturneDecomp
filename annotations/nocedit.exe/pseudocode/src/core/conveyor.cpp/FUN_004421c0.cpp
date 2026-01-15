@@ -14,10 +14,10 @@ void core_conveyor_cpp_FUN_004421c0(void)
   CKeys *this_ptr;
   int iVar1;
   int in_stack_00000004;
+  float in_stack_00000008;
+  float in_stack_00000010;
+  float in_stack_00000018;
   float in_stack_00000020;
-  float in_stack_00000034;
-  float in_stack_00000048;
-  float in_stack_0000005c;
   
   this_ptr = g_CKeysPtr;
   *(uint *)(in_stack_00000004 + 0x724) = 4;
@@ -29,22 +29,22 @@ void core_conveyor_cpp_FUN_004421c0(void)
   iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
   if (iVar1 != 0) {
     *(float *)(in_stack_00000004 + 0x72c) =
-         *(float *)(in_stack_00000004 + 0x72c) - in_stack_00000020;
+         *(float *)(in_stack_00000004 + 0x72c) - in_stack_00000008;
   }
   iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4d);
   if (iVar1 != 0) {
     *(float *)(in_stack_00000004 + 0x72c) =
-         *(float *)(in_stack_00000004 + 0x72c) + in_stack_00000034;
+         *(float *)(in_stack_00000004 + 0x72c) + in_stack_00000010;
   }
   iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x50);
   if (iVar1 != 0) {
     *(float *)(in_stack_00000004 + 0x734) =
-         *(float *)(in_stack_00000004 + 0x734) - in_stack_00000048;
+         *(float *)(in_stack_00000004 + 0x734) - in_stack_00000018;
   }
   iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x48);
   if (iVar1 != 0) {
     *(float *)(in_stack_00000004 + 0x734) =
-         *(float *)(in_stack_00000004 + 0x734) + in_stack_0000005c;
+         *(float *)(in_stack_00000004 + 0x734) + in_stack_00000020;
   }
   if (*(int *)(in_stack_00000004 + 0x72c) < 0x3f000000) {
     *(uint *)(in_stack_00000004 + 0x72c) = 0x3f000000;

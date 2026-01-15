@@ -13,7 +13,6 @@ void core_dynamite_cpp_FUN_0049cf20(void)
 
 {
   uint uVar1;
-  BADSPACEBASE *in_ESP;
   int in_stack_00000004;
   char local_68 [100];
   

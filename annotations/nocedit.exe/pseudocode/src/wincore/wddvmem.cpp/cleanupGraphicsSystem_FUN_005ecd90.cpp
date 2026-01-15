@@ -9,8 +9,6 @@
 void __cdecl wincore_wddvmem_cpp_cleanupGraphicsSystem_FUN_005ecd90(void)
 
 {
-  uint uStack00000004;
-  
   if (g_BackBuffer != (void *)0x0) {
     shape_memdbg_cpp_debugFree_FUN_0050f460(g_BackBuffer,"..\\wincore\\wddvmem.cpp",0xff);
     g_BackBuffer = (void *)0x0;
@@ -37,7 +35,6 @@ void __cdecl wincore_wddvmem_cpp_cleanupGraphicsSystem_FUN_005ecd90(void)
     return;
   }
   (*g_DirectDrawObject->vtable->RestoreDisplayMode)(g_DirectDrawObject);
-  uStack00000004 = 0x5ece54;
   (*g_DirectDrawObject->vtable->Release)((IUnknown *)g_DirectDrawObject);
   g_DirectDrawObject = (IDirectDraw *)0x0;
   return;

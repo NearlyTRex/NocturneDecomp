@@ -13,15 +13,14 @@ cockpit_pkbmpset_cpp_CPackedBitmapSet_loadPBGFileComplete_FUN_0054c480
 
 {
   CPackedBitmap *pCVar1;
-  int in_stack_00000020;
   
   cockpit_pkbmpset_cpp_CPackedBitmapSet_reset_FUN_0054bd60(this_ptr);
   pCVar1 = (CPackedBitmap *)
            cockpit_pkbitmap_cpp_loadPBGFile_FUN_0054bb40
-                     (this_ptr,palette_filename,(char *)param3,param4,additional_param,-1);
+                     (this_ptr,pbg_filename,palette_filename,param3,param4,-1);
   this_ptr->bitmap_array = pCVar1;
-  cockpit_pkbmpset_cpp_CPackedBitmapSet_setFilename_FUN_0054c6f0(this_ptr,palette_filename);
+  cockpit_pkbmpset_cpp_CPackedBitmapSet_setFilename_FUN_0054c6f0(this_ptr,pbg_filename);
   cockpit_pkbmpset_cpp_CPackedBitmapSet_init_FUN_0054bd00(this_ptr);
-  this_ptr->config_param = in_stack_00000020;
+  this_ptr->config_param = param3;
   return;
 }

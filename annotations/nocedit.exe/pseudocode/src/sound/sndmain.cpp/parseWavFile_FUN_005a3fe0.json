@@ -1,25 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 371,
-    "complexity_score": 934,
+    "complexity_score": 528,
     "cross_reference_count": 4,
     "function_call_count": 5,
     "global_count": 11,
-    "pseudocode_lines": 114,
-    "suspect_count": 77,
+    "pseudocode_lines": 128,
+    "suspect_count": 38,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
-      "format_string_mismatch",
       "lea_esp_stack_addr",
-      "register_param",
-      "stack_param",
-      "stack_ref",
-      "unaffected_reg",
-      "variadic_preserve",
-      "warning_unreachable"
+      "unknown_field",
+      "variadic_preserve"
     ],
-    "total_lines": 485
+    "total_lines": 499
   },
   "cross_references": [
     {
@@ -353,267 +347,50 @@
   },
   "suspects": [
     {
-      "description": "Unreachable code block removed",
-      "line": 2,
-      "match": "WARNING: Removing unreachable block",
-      "text": "/* WARNING: Removing unreachable block (ram,0x005a4237) */",
-      "type": "warning_unreachable"
+      "description": "Unknown/mangled field access",
+      "line": 63,
+      "match": "._2_2_",
+      "text": "if ((local_24._2_2_ == 0) || (2 < local_24._2_2_)) {",
+      "type": "unknown_field"
     },
     {
-      "description": "Unreachable code block removed",
-      "line": 3,
-      "match": "WARNING: Removing unreachable block",
-      "text": "/* WARNING: Removing unreachable block (ram,0x005a4240) */",
-      "type": "warning_unreachable"
+      "description": "Unknown/mangled field access",
+      "line": 63,
+      "match": "._2_2_",
+      "text": "if ((local_24._2_2_ == 0) || (2 < local_24._2_2_)) {",
+      "type": "unknown_field"
     },
     {
-      "description": "Unreachable code block removed",
-      "line": 4,
-      "match": "WARNING: Removing unreachable block",
-      "text": "/* WARNING: Removing unreachable block (ram,0x005a4247) */",
-      "type": "warning_unreachable"
+      "description": "Unknown/mangled field access",
+      "line": 65,
+      "match": "._2_2_",
+      "text": "(&local_88,\"Invalid number of channels: %u  (must be 1 or 2)\",(uint)local_24._2_2_);",
+      "type": "unknown_field"
     },
     {
-      "description": "Unreachable code block removed",
-      "line": 5,
-      "match": "WARNING: Removing unreachable block",
-      "text": "/* WARNING: Removing unreachable block (ram,0x005a431e) */",
-      "type": "warning_unreachable"
+      "description": "Unknown/mangled field access",
+      "line": 70,
+      "match": "._2_2_",
+      "text": "sVar1 = local_24._2_2_ * (short)local_20;",
+      "type": "unknown_field"
     },
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 16,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
+      "description": "Unknown/mangled field access",
+      "line": 108,
+      "match": "._2_2_",
+      "text": "(sfx_sample->sample_info).num_channels = (uint)local_24._2_2_;",
+      "type": "unknown_field"
     },
     {
-      "description": "Inferred register parameter",
-      "line": 16,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 17,
-      "match": "unaff_EBP",
-      "text": "uint unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 18,
-      "match": "unaff_ESI",
-      "text": "uint unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 19,
-      "match": "unaff_EDI",
-      "text": "int unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_0000001c",
-      "text": "int in_stack_0000001c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_ffffff84",
-      "text": "uint in_stack_ffffff84;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 33,
-      "match": "unaff_EBP",
-      "text": "if (((char)unaff_EBP == 'R') &&",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 34,
-      "match": "unaff_EBP",
-      "text": "((((char)((uint)unaff_EBP >> 8) == 'I' && ((char)((uint)unaff_EBP >> 0x10) == 'F')) &&",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 34,
-      "match": "unaff_EBP",
-      "text": "((((char)((uint)unaff_EBP >> 8) == 'I' && ((char)((uint)unaff_EBP >> 0x10) == 'F')) &&",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 35,
-      "match": "unaff_EBP",
-      "text": "((char)((uint)unaff_EBP >> 0x18) == 'F')))) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 36,
-      "match": "&stack0xffffff80",
-      "text": "SVar3 = crt_stdio_c_fread_FUN_005fd990(&stack0xffffff80,4,1,file_handle);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 38,
-      "match": "in_stack_ffffff84",
-      "text": "if ((((char)in_stack_ffffff84 == 'W') && ((char)((uint)in_stack_ffffff84 >> 8) == 'A')) &&",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 38,
-      "match": "in_stack_ffffff84",
-      "text": "if ((((char)in_stack_ffffff84 == 'W') && ((char)((uint)in_stack_ffffff84 >> 8) == 'A')) &&",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 39,
-      "match": "in_stack_ffffff84",
-      "text": "(((char)((uint)in_stack_ffffff84 >> 0x10) == 'V' &&",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 40,
-      "match": "in_stack_ffffff84",
-      "text": "((char)((uint)in_stack_ffffff84 >> 0x18) == 'E')))) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 45,
-      "match": "&stack0xfffffff0",
-      "text": "(SVar3 = crt_stdio_c_fread_FUN_005fd990(&stack0xfffffff0,8,1,file_handle), SVar3 != 1",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 47,
-      "match": "unaff_ESI",
-      "text": "iVar2 = iVar2 + unaff_ESI + 8;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 48,
-      "match": "unaff_EDI",
-      "text": "cVar5 = (char)((uint)unaff_EDI >> 8);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 49,
-      "match": "unaff_EDI",
-      "text": "cVar6 = (char)((uint)unaff_EDI >> 0x10);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 50,
-      "match": "unaff_EDI",
-      "text": "if (((char)unaff_EDI == 'd') &&",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 51,
-      "match": "unaff_EDI",
-      "text": "(((cVar5 == 'a' && (cVar6 == 't')) && ((char)((uint)unaff_EDI >> 0x18) == 'a')))) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 55,
-      "match": "unaff_EDI",
-      "text": "if ((((char)unaff_EDI == 'f') && (cVar5 == 'm')) && (cVar6 == 't')) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 56,
-      "match": "unaff_ESI",
-      "text": "if (unaff_ESI < 10) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 76,
-      "match": "unaff_EBP",
-      "text": "sVar1 = uStack_12 * (short)unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 77,
-      "match": "unaff_EDI",
-      "text": "if (sVar1 == (short)unaff_EDI) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 78,
-      "match": "in_stack_0000001c",
-      "text": "*(uint *)(in_stack_0000001c + 0x104) = 8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 81,
-      "match": "unaff_EDI",
-      "text": "if ((short)(sVar1 * 2) != (short)unaff_EDI) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 88,
-      "match": "in_stack_0000001c",
-      "text": "*(uint *)(in_stack_0000001c + 0x104) = 0x10;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 91,
-      "match": "unaff_EDI",
-      "text": "} while (iVar2 <= unaff_EDI + 8);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 105,
-      "match": "unaff_ESI",
-      "text": "while (iVar2 = iVar2 + 8 + unaff_ESI, iVar2 <= unaff_EDI + 8) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 105,
-      "match": "unaff_EDI",
-      "text": "while (iVar2 = iVar2 + 8 + unaff_ESI, iVar2 <= unaff_EDI + 8) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 109,
-      "match": "&stack0xfffffff0",
-      "text": "(SVar3 = crt_stdio_c_fread_FUN_005fd990(&stack0xfffffff0,8,1,file_handle), SVar3 != 1))",
-      "type": "stack_ref"
+      "description": "Unknown/mangled field access",
+      "line": 111,
+      "match": "._2_2_",
+      "text": "(int)(((ulonglong)local_14 / (ulonglong)local_24._2_2_) /",
+      "type": "unknown_field"
     },
     {
       "call_address": "005a4051",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -627,7 +404,7 @@
     },
     {
       "call_address": "005a40a7",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -641,7 +418,7 @@
     },
     {
       "call_address": "005a4132",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -655,7 +432,7 @@
     },
     {
       "call_address": "005a4166",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -669,7 +446,7 @@
     },
     {
       "call_address": "005a4186",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -683,7 +460,7 @@
     },
     {
       "call_address": "005a4264",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -697,7 +474,7 @@
     },
     {
       "call_address": "005a4281",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -711,7 +488,7 @@
     },
     {
       "call_address": "005a4293",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -725,7 +502,7 @@
     },
     {
       "call_address": "005a42b2",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -739,7 +516,7 @@
     },
     {
       "call_address": "005a42c4",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -753,7 +530,7 @@
     },
     {
       "call_address": "005a42ff",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -767,7 +544,7 @@
     },
     {
       "call_address": "005a4311",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -778,94 +555,6 @@
       "target_function": "sound_sndmain.cpp_logSoundError_FUN_005adba0",
       "text": "Call to variadic function sound_sndmain.cpp_logSoundError_FUN_005adba0 at 005a4311 (no EBP frame)",
       "type": "variadic_preserve"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"WAV file is invalid: %s\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "WAV file is invalid: %s\\n",
-      "function_name": "sound_sndmain_cpp_logSoundError_FUN_005adba0",
-      "line_number": 52,
-      "match": "sound_sndmain_cpp_logSoundError_FUN_005adba0(\"WAV file is invalid: %s\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"WAV file is invalid: %s\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "WAV file is invalid: %s\\n",
-      "function_name": "sound_sndmain_cpp_logSoundError_FUN_005adba0",
-      "line_number": 57,
-      "match": "sound_sndmain_cpp_logSoundError_FUN_005adba0(\"WAV file is invalid: %s\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"WAV file is invalid: %s\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "WAV file is invalid: %s\\n",
-      "function_name": "sound_sndmain_cpp_logSoundError_FUN_005adba0",
-      "line_number": 66,
-      "match": "sound_sndmain_cpp_logSoundError_FUN_005adba0(\"WAV file is invalid: %s\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"WAV file is invalid: %s\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "WAV file is invalid: %s\\n",
-      "function_name": "sound_sndmain_cpp_logSoundError_FUN_005adba0",
-      "line_number": 73,
-      "match": "sound_sndmain_cpp_logSoundError_FUN_005adba0(\"WAV file is invalid: %s\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"WAV file is invalid: %s\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "WAV file is invalid: %s\\n",
-      "function_name": "sound_sndmain_cpp_logSoundError_FUN_005adba0",
-      "line_number": 85,
-      "match": "sound_sndmain_cpp_logSoundError_FUN_005adba0(\"WAV file is invalid: %s\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"WAV file is invalid: %s\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "WAV file is invalid: %s\\n",
-      "function_name": "sound_sndmain_cpp_logSoundError_FUN_005adba0",
-      "line_number": 92,
-      "match": "sound_sndmain_cpp_logSoundError_FUN_005adba0(\"WAV file is invalid: %s\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"WAV file is invalid: %s\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "WAV file is invalid: %s\\n",
-      "function_name": "sound_sndmain_cpp_logSoundError_FUN_005adba0",
-      "line_number": 95,
-      "match": "sound_sndmain_cpp_logSoundError_FUN_005adba0(\"WAV file is invalid: %s\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"WAV file is invalid: %s\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "WAV file is invalid: %s\\n",
-      "function_name": "sound_sndmain_cpp_logSoundError_FUN_005adba0",
-      "line_number": 112,
-      "match": "sound_sndmain_cpp_logSoundError_FUN_005adba0(\"WAV file is invalid: %s\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 12,

@@ -1,18 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 84,
-    "complexity_score": 337,
+    "complexity_score": 232,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 8,
-    "pseudocode_lines": 42,
-    "suspect_count": 28,
+    "pseudocode_lines": 37,
+    "suspect_count": 18,
     "suspect_types": [
       "call_esp_preserve",
       "pointer_cast",
       "stack_param"
     ],
-    "total_lines": 126
+    "total_lines": 121
   },
   "cross_references": [],
   "function": {
@@ -156,138 +156,68 @@
       "description": "Unresolved stack parameter",
       "line": 12,
       "match": "in_stack_00000004",
-      "text": "char *in_stack_00000004;",
+      "text": "CDemonActor *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 14,
       "match": "in_stack_00000004",
-      "text": "core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0((CDemonActor *)in_stack_00000004);",
+      "text": "core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 17,
       "match": "in_stack_00000004",
-      "text": "((CVector3f *)&((CDemonActor *)((int)in_stack_00000004 + 0x560))->field7_0x6c,",
+      "text": "((CVector3f *)&in_stack_00000004[4].field7_0x6c,\"pGemPos\");",
       "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 17,
-      "match": "(CDemonActor *)((int)",
-      "text": "((CVector3f *)&((CDemonActor *)((int)in_stack_00000004 + 0x560))->field7_0x6c,",
-      "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 19,
       "match": "in_stack_00000004",
-      "text": "((COrientation *)((CDemonActor *)((int)in_stack_00000004 + 0x560))->create_event,",
+      "text": "((COrientation *)in_stack_00000004[4].create_event,\"pGemOrient\");",
       "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 20,
-      "match": "(CDemonActor *)((int)",
-      "text": "((COrientation *)((CDemonActor *)((int)in_stack_00000004 + 0x560))->create_event,",
-      "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 21,
       "match": "in_stack_00000004",
-      "text": "((CVector3f *)(((CDemonActor *)((int)in_stack_00000004 + 0x560))->create_event + 0xc),",
+      "text": "((CVector3f *)(in_stack_00000004[4].create_event + 0xc),\"pEmitterPos\");",
       "type": "stack_param"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 23,
-      "match": "(CDemonActor *)((int)",
-      "text": "((CVector3f *)(((CDemonActor *)((int)in_stack_00000004 + 0x560))->create_event + 0xc),",
-      "type": "pointer_cast"
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000004",
+      "text": "int_ptr = &in_stack_00000004[4].field12_0xe0.y;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_00000004",
+      "text": "int_ptr_01 = &in_stack_00000004[4].field12_0xe0;",
+      "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 27,
       "match": "in_stack_00000004",
-      "text": "int_ptr = &(((CDemonActor *)((int)in_stack_00000004 + 0x560))->field12_0xe0).y;",
+      "text": "int_ptr_00 = &in_stack_00000004[4].field11_0xdc;",
       "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 27,
-      "match": "(CDemonActor *)((int)",
-      "text": "int_ptr = &(((CDemonActor *)((int)in_stack_00000004 + 0x560))->field12_0xe0).y;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 29,
-      "match": "in_stack_00000004",
-      "text": "int_ptr_01 = &((CDemonActor *)((int)in_stack_00000004 + 0x560))->field12_0xe0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 29,
-      "match": "(CDemonActor *)((int)",
-      "text": "int_ptr_01 = &((CDemonActor *)((int)in_stack_00000004 + 0x560))->field12_0xe0;",
-      "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 30,
       "match": "in_stack_00000004",
-      "text": "int_ptr_00 = &((CDemonActor *)((int)in_stack_00000004 + 0x560))->field11_0xdc;",
+      "text": "((int *)(in_stack_00000004[4].create_event + iVar1 * 100 + 0x18),\"exists\");",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 30,
-      "match": "(CDemonActor *)((int)",
-      "text": "int_ptr_00 = &((CDemonActor *)((int)in_stack_00000004 + 0x560))->field11_0xdc;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004 = ((CDemonActor *)((int)in_stack_00000004 + 0x560))->create_event + 0x18;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004 = ((CDemonActor *)((int)in_stack_00000004 + 0x560))->create_event + 0x18;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 31,
-      "match": "(CDemonActor *)((int)",
-      "text": "in_stack_00000004 = ((CDemonActor *)((int)in_stack_00000004 + 0x560))->create_event + 0x18;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 34,
-      "match": "in_stack_00000004",
-      "text": "((int *)(in_stack_00000004 + iVar1 * 100),\"exists\");",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 37,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004 = \"b\";",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 40,
+      "line": 35,
       "match": "(CVector3f *)((int)",
       "text": "int_ptr_01 = (CVector3f *)((int)(int_ptr_01 + 8) + 4);",
       "type": "pointer_cast"

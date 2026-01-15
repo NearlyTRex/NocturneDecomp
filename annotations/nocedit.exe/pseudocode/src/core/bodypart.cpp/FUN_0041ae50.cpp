@@ -14,7 +14,6 @@ void core_bodypart_cpp_FUN_0041ae50(void)
   int iVar3;
   float fVar4;
   int iVar5;
-  BADSPACEBASE *in_ESP;
   CVector3f *input_local_point;
   char *pcVar6;
   float *pfVar7;

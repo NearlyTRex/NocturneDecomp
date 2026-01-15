@@ -13,9 +13,9 @@ void __cdecl core_setedit_cpp_CDemonSet_ViewerVisitSet_FUN_0057a940(CDemonSet *t
   void *this_ptr_00;
   int iVar2;
   int iVar3;
-  BADSPACEBASE *in_ESP;
   int y_pos;
   CGame *in_stack_fffffad8;
+  int aiStack_524 [250];
   char acStack_13c [256];
   float fStack_3c;
   float fStack_38;
@@ -93,7 +93,7 @@ void __cdecl core_setedit_cpp_CDemonSet_ViewerVisitSet_FUN_0057a940(CDemonSet *t
         y_pos = 0x21;
         iVar3 = 0;
         do {
-          piVar1 = (int *)(&stack0xfffffadc + iVar3);
+          piVar1 = (int *)((int)aiStack_524 + iVar3);
           iVar3 = iVar3 + 4;
           engine_2d_c_drawTextXY_FUN_00402130(0,y_pos,pCStack_14[*piVar1].name);
           y_pos = y_pos + 0xb;

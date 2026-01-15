@@ -11,11 +11,11 @@ void shape_design_c_deletePolygonRange_FUN_0045dd70(void)
 {
   char cVar1;
   int iVar2;
-  BADSPACEBASE *in_ESP;
   SShapeEditorPolygon *pSVar3;
   char *pcVar4;
   SShapeEditorPolygon *pSVar5;
   byte bVar6;
+  char local_70 [80];
   int local_20;
   int local_1c;
   int local_18;
@@ -23,10 +23,10 @@ void shape_design_c_deletePolygonRange_FUN_0045dd70(void)
   
   bVar6 = 0;
   engine_2d_c_clearInputAndWait_FUN_00403260();
-  engine_2d_c_getInputWithPrompt_FUN_004032c0
-            (&stack0xffffff90,0x32,0,0,"Polygon range #s to delete (a,b) : ");
+  engine_2d_c_getInputWithPrompt_FUN_004032c0(local_70,0x32,0,0,"Polygon range #s to delete (a,b) : ")
+  ;
   iVar2 = -1;
-  pcVar4 = &stack0xffffff90;
+  pcVar4 = local_70;
   do {
     if (iVar2 == 0) break;
     iVar2 = iVar2 + -1;
@@ -34,8 +34,8 @@ void shape_design_c_deletePolygonRange_FUN_0045dd70(void)
     pcVar4 = pcVar4 + (uint)bVar6 * -2 + 1;
   } while (cVar1 != '\0');
   if ((iVar2 != -2) &&
-     (local_14 = crt_stdio_c_sscanf_FUN_0060013c
-                           (&stack0xffffff90,"%d,%d",&local_1c,&local_18), local_14 == 2)) {
+     (local_14 = crt_stdio_c_sscanf_FUN_0060013c(local_70,"%d,%d",&local_1c,&local_18),
+     local_14 == 2)) {
     if ((local_18 < local_1c) || ((local_1c < 0 || (g_PolygonCount <= local_18)))) {
       engine_2d_c_drawText_FUN_00401fd0("Bad range.  Hit a key...",0,0x16);
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();

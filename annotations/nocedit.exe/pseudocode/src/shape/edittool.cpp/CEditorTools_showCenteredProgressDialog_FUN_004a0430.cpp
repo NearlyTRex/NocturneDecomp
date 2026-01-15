@@ -13,8 +13,6 @@ shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
 {
   int iVar1;
   int iVar2;
-  CEditorTools *in_stack_00000014;
-  CEditorTools *in_stack_0000001c;
   
   if (g_EditorFont == (CBitFont *)0x0) {
     g_CurrentFilename = "..\\shape\\edittool.cpp";
@@ -31,11 +29,11 @@ shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
     }
   }
   shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_004a0890
-            (in_stack_00000014,iVar1,g_FontCharacterWidth * 6,message_text,0);
+            (this_ptr,iVar1,g_FontCharacterWidth * 6,message_text,0);
   iVar1 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
   iVar2 = g_WindowStackCount + -1;
   g_WindowStack[iVar2].progress_start_time = iVar1;
   g_WindowStack[iVar2].progress_percentage = -1;
-  shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530(in_stack_0000001c,0.0,1.0);
+  shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530(this_ptr,0.0,1.0);
   return;
 }

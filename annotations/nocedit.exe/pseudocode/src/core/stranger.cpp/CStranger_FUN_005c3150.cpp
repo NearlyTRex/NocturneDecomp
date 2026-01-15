@@ -15,7 +15,6 @@ int __cdecl core_stranger_cpp_CStranger_FUN_005c3150(CStranger *this_ptr)
   bool bVar2;
   int iVar3;
   CVector3f *input;
-  BADSPACEBASE *in_ESP;
   CVector3f *pCVar4;
   float *pfVar5;
   byte bVar6;

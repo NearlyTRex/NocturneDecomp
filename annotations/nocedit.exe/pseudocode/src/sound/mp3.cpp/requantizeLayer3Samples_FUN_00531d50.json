@@ -1,17 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 394,
-    "complexity_score": 433,
+    "complexity_score": 461,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 17,
-    "pseudocode_lines": 193,
-    "suspect_count": 23,
+    "pseudocode_lines": 191,
+    "suspect_count": 26,
     "suspect_types": [
       "extra_output",
       "pointer_cast"
     ],
-    "total_lines": 587
+    "total_lines": 585
   },
   "cross_references": [
     {
@@ -460,56 +460,56 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 11,
+      "line": 12,
       "match": "extraout_ECX",
       "text": "SMpegLayer3Granule *extraout_ECX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 12,
+      "line": 13,
       "match": "extraout_ECX_00",
       "text": "SMpegLayer3Granule *extraout_ECX_00;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 13,
+      "line": 14,
       "match": "extraout_ECX_01",
       "text": "SMpegLayer3Granule *extraout_ECX_01;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 15,
+      "line": 16,
       "match": "extraout_EDX",
       "text": "int extraout_EDX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 16,
+      "line": 17,
       "match": "extraout_EDX_00",
       "text": "int extraout_EDX_00;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 23,
+      "line": 24,
       "match": "extraout_ST1",
       "text": "float10 extraout_ST1;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 24,
+      "line": 25,
       "match": "extraout_ST1_00",
       "text": "float10 extraout_ST1_00;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 25,
+      "line": 26,
       "match": "extraout_ST2",
       "text": "float10 extraout_ST2;",
       "type": "extra_output"
@@ -518,42 +518,42 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 64,
       "match": "extraout_EDX",
-      "text": "iVar3 = extraout_EDX + 1;",
+      "text": "iVar4 = extraout_EDX + 1;",
       "type": "extra_output"
     },
     {
       "description": "Complex pointer cast",
       "line": 65,
       "match": "(double *)((int)",
-      "text": "*(double *)((int)g_MpegRequantPowerTable + iVar5) = (double)fVar8;",
+      "text": "*(double *)((int)g_MpegRequantPowerTable + iVar6) = (double)fVar9;",
       "type": "pointer_cast"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 67,
       "match": "extraout_ST1",
-      "text": "fVar8 = extraout_ST1;",
+      "text": "fVar9 = extraout_ST1;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 75,
       "match": "extraout_EDX_00",
-      "text": "iVar5 = extraout_EDX_00 + 1;",
+      "text": "iVar6 = extraout_EDX_00 + 1;",
       "type": "extra_output"
     },
     {
       "description": "Complex pointer cast",
       "line": 76,
       "match": "(double *)((int)",
-      "text": "*(double *)((int)g_MpegRequantGainTable + iVar3) = (double)fVar8;",
+      "text": "*(double *)((int)g_MpegRequantGainTable + iVar4) = (double)fVar9;",
       "type": "pointer_cast"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 78,
       "match": "extraout_ST1_00",
-      "text": "fVar8 = extraout_ST1_00;",
+      "text": "fVar9 = extraout_ST1_00;",
       "type": "extra_output"
     },
     {
@@ -572,51 +572,72 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 132,
+      "line": 131,
       "match": "(int *)((int)",
-      "text": "if (*(int *)((int)quantized_samples->samples[0] + iVar3 + local_68) == 0) {",
+      "text": "if (*(int *)((int)quantized_samples->samples[0] + iVar4 + local_68) == 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 133,
+      "line": 132,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)output_samples->samples[0] + iVar3 + local_68) = 0;",
+      "text": "*(uint *)((int)output_samples->samples[0] + iVar4 + local_68) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 161,
+      "line": 160,
       "match": "extraout_ECX_00",
       "text": "granule_info = extraout_ECX_00;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 172,
+      "line": 171,
       "match": "extraout_ECX_01",
       "text": "granule_info = extraout_ECX_01;",
       "type": "extra_output"
     },
     {
       "description": "Complex pointer cast",
-      "line": 174,
+      "line": 173,
       "match": "(int *)((int)",
-      "text": "if (*(int *)((int)quantized_samples->samples[0] + iVar3 + local_68) < 0) {",
+      "text": "if (*(int *)((int)quantized_samples->samples[0] + iVar4 + local_68) < 0) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 174,
+      "match": "(float *)((int)",
+      "text": "*(float *)((int)output_samples->samples[0] + iVar4 + local_68) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 175,
       "match": "(float *)((int)",
-      "text": "*(float *)((int)output_samples->samples[0] + iVar3 + local_68) =",
+      "text": "-*(float *)((int)output_samples->samples[0] + iVar4 + local_68);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 176,
+      "line": 179,
       "match": "(float *)((int)",
-      "text": "-*(float *)((int)output_samples->samples[0] + iVar3 + local_68);",
+      "text": "local_20 = (float *)((int)local_20 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 180,
+      "match": "(float *)((int)",
+      "text": "local_38 = (float *)((int)local_38 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 185,
+      "match": "(float *)((int)",
+      "text": "local_6c = (float *)((int)local_6c + 0x12);",
       "type": "pointer_cast"
     }
   ]

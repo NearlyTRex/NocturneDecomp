@@ -16,29 +16,24 @@ engine_fileio_cpp_CFileManager_compareLocalVsPod_FUN_004b82a0
   undefined3 extraout_var;
   int iVar3;
   int iVar4;
+  uint unaff_EBX;
   int iVar5;
-  BADSPACEBASE *in_ESP;
-  int iVar6;
-  char *pcVar7;
-  SFoundFileInfo *pSVar8;
-  int in_stack_0000000c;
-  uint in_stack_ffffee20;
-  uint in_stack_ffffee24;
-  uint in_stack_ffffee28;
-  uint in_stack_ffffee2c;
-  uint in_stack_ffffee30;
-  byte local_a04 [12];
-  byte auStack_9f8 [1036];
-  char *pcStack_5ec;
-  uint uStack_5e8;
-  CPodDirectoryEntry *pCStack_5e4;
-  byte auStack_5d0 [28];
-  byte auStack_5b4 [912];
-  SFoundFileInfo SStack_224;
+  char *pcVar6;
+  SFoundFileInfo *pSVar7;
+  uint in_stack_ffffedf8;
+  uint in_stack_ffffedfc;
+  uint in_stack_ffffee00;
+  uint in_stack_ffffee04;
+  CPodFile local_a08;
+  CPickList local_5dc;
+  SFoundFileInfo local_234;
+  int local_20;
+  int local_1c;
+  int local_18;
+  int local_14;
   int local_10;
-  int iVar9;
   
-  pcVar7 = &stack0xffffedf8;
+  pcVar6 = &stack0xffffedf8;
   if (pod_filename == (char *)0x0) {
     bVar2 = shape_edittool_cpp_CEditorTools_showDirectoryBrowser_FUN_0049f420
                       (g_CEditorToolsPtr,"Select POD file to compare with local files",true,&stack0xffffedf8);
@@ -49,101 +44,112 @@ engine_fileio_cpp_CFileManager_compareLocalVsPod_FUN_004b82a0
   else {
     do {
       cVar1 = *pod_filename;
-      *pcVar7 = cVar1;
+      *pcVar6 = cVar1;
       if (cVar1 == '\0') break;
       cVar1 = pod_filename[1];
       pod_filename = pod_filename + 2;
-      pcVar7[1] = cVar1;
-      pcVar7 = pcVar7 + 2;
+      pcVar6[1] = cVar1;
+      pcVar6 = pcVar6 + 2;
     } while (cVar1 != '\0');
   }
-  engine_pod_cpp_CPodFile_ctor_FUN_0054f5a0((CPodFile *)local_a04);
-  iVar3 = engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650
-                    ((CPodFile *)(local_a04 + 4),&stack0xffffee00);
+  engine_pod_cpp_CPodFile_ctor_FUN_0054f5a0(&local_a08);
+  iVar3 = engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650(&local_a08,&stack0xffffedf8);
   if (iVar3 == 0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-              (g_CEditorToolsPtr,"Can't mount %s to compare!");
-    engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)auStack_9f8);
+              (g_CEditorToolsPtr,"Can't mount %s to compare!",&stack0xffffedf8);
+    engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_a08);
     return;
   }
-  iVar5 = 0;
-  shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)auStack_5d0);
-  iVar6 = 0;
-  iVar9 = 0;
-  local_10 = 0;
   iVar3 = 0;
-  if (0 < (int)uStack_5e8) {
+  shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_5dc);
+  iVar5 = 0;
+  local_14 = 0;
+  local_20 = 0;
+  local_10 = 0;
+  local_18 = 0;
+  local_1c = 0;
+  if (0 < local_a08.file_count) {
     do {
-      pSVar8 = &SStack_224;
-      pcVar7 = *(char **)((int)&pCStack_5e4->name_or_offset + iVar5);
+      pSVar7 = &local_234;
+      pcVar6 = *(char **)((int)&(local_a08.directory_entries)->name_or_offset + iVar3);
       do {
-        cVar1 = *pcVar7;
-        pSVar8->found_path[0] = cVar1;
+        cVar1 = *pcVar6;
+        pSVar7->found_path[0] = cVar1;
         if (cVar1 == '\0') break;
-        cVar1 = pcVar7[1];
-        pcVar7 = pcVar7 + 2;
-        pSVar8->found_path[1] = cVar1;
-        pSVar8 = (SFoundFileInfo *)(pSVar8->found_path + 2);
+        cVar1 = pcVar6[1];
+        pcVar6 = pcVar6 + 2;
+        pSVar7->found_path[1] = cVar1;
+        pSVar7 = (SFoundFileInfo *)(pSVar7->found_path + 2);
       } while (cVar1 != '\0');
-      iVar4 = engine_dosio_c_findFileNormally_FUN_004817c0(&SStack_224);
+      iVar4 = engine_dosio_c_findFileNormally_FUN_004817c0(&local_234);
       if (iVar4 == 0) {
-        crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffee00,"%s\tNo local file");
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)auStack_5d0,&stack0xffffee04);
+        crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffedf8,"%s\tNo local file",&local_234);
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_5dc.base_strlist,&stack0xffffedf8);
+        local_20 = local_20 + 1;
+      }
+      else if (*(int *)((int)&(local_a08.directory_entries)->timestamp + iVar3) + 2U <
+               local_234.timestamp) {
+        crt_stdio_c_sprintf_FUN_005fdbd0
+                  (&stack0xffffedf8,"%s\tLocal file is newer",&local_234);
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_5dc.base_strlist,&stack0xffffedf8);
         local_10 = local_10 + 1;
       }
-      else if (*(int *)(pcStack_5ec + iVar5 + 0xc) + 2U < SStack_224.file_size) {
-        crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffee00,"%s\tLocal file is newer");
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)auStack_5d0,&stack0xffffee04);
-        iVar3 = iVar3 + 1;
+      else if (local_234.timestamp <
+               *(int *)((int)&(local_a08.directory_entries)->timestamp + iVar3) - 2U) {
+        crt_stdio_c_sprintf_FUN_005fdbd0
+                  (&stack0xffffedf8,"%s\tLocal file is older",&local_234);
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_5dc.base_strlist,&stack0xffffedf8);
+        local_18 = local_18 + 1;
       }
-      else if (SStack_224.file_size < *(int *)(pcStack_5ec + iVar5 + 0xc) - 2U) {
-        crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffee00,"%s\tLocal file is older");
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)auStack_5d0,&stack0xffffee04);
-      }
-      else if (SStack_224.target_path._252_4_ == *(int *)(pcStack_5ec + iVar5 + 4)) {
-        crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffee00,"%s\tsame");
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)auStack_5d0,&stack0xffffee04);
-        iVar9 = iVar9 + 1;
+      else if (local_234.file_size == *(uint *)((int)&(local_a08.directory_entries)->size + iVar3))
+      {
+        crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffedf8,"%s\tsame",&local_234);
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_5dc.base_strlist,&stack0xffffedf8);
+        local_14 = local_14 + 1;
       }
       else {
-        crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffee00,"%s\tLocal file has different size");
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)auStack_5d0,&stack0xffffee04);
+        crt_stdio_c_sprintf_FUN_005fdbd0
+                  (&stack0xffffedf8,"%s\tLocal file has different size",&local_234);
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_5dc.base_strlist,&stack0xffffedf8);
+        local_1c = local_1c + 1;
       }
-      iVar6 = iVar6 + 1;
-      iVar5 = iVar5 + 0x14;
-    } while (iVar6 < (int)uStack_5e8);
+      iVar5 = iVar5 + 1;
+      iVar3 = iVar3 + 0x14;
+    } while (iVar5 < local_a08.file_count);
   }
-  iVar5 = crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffee08,"Comparing files in:\n%s\n");
-  iVar6 = crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffee0c + iVar5,"-----------------------\n");
-  pcVar7 = &stack0xffffee0c + iVar5 + iVar6;
-  if (0 < (int)this_ptr) {
-    iVar5 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar7,"%d files in sync with local files\n");
-    pcVar7 = pcVar7 + iVar5;
+  iVar3 = crt_stdio_c_sprintf_FUN_005fdbd0
+                    (&stack0xffffedf8,"Comparing files in:\n%s\n",local_a08.filename);
+  iVar5 = crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffedf8 + iVar3,"-----------------------\n");
+  pcVar6 = &stack0xffffedf8 + iVar3 + iVar5;
+  if (0 < local_14) {
+    iVar3 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar6,"%d files in sync with local files\n",local_14);
+    pcVar6 = pcVar6 + iVar3;
   }
-  if (0 < iVar9) {
-    iVar9 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar7,"%d files in pod don't exist locally\n");
-    pcVar7 = pcVar7 + iVar9;
+  if (0 < local_20) {
+    iVar3 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar6,"%d files in pod don't exist locally\n",local_20);
+    pcVar6 = pcVar6 + iVar3;
   }
-  if (0 < in_stack_0000000c) {
-    iVar9 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar7,"%d files with local file newer than file in pod\n");
-    pcVar7 = pcVar7 + iVar9;
+  if (0 < local_10) {
+    iVar3 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar6,"%d files with local file newer than file in pod\n",local_10);
+    pcVar6 = pcVar6 + iVar3;
   }
-  if (0 < (int)this_ptr) {
-    iVar9 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar7,"%d files with local file older than file in pod\n");
-    pcVar7 = pcVar7 + iVar9;
+  if (0 < local_18) {
+    iVar3 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar6,"%d files with local file older than file in pod\n",local_18);
+    pcVar6 = pcVar6 + iVar3;
   }
-  if (0 < iVar3) {
-    iVar3 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar7,"%d sizeMismatch\n");
-    pcVar7 = pcVar7 + iVar3;
+  if (0 < local_1c) {
+    iVar3 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar6,"%d sizeMismatch\n",local_1c);
+    pcVar6 = pcVar6 + iVar3;
   }
-  iVar3 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar7,"-----------------------\n");
-  crt_stdio_c_sprintf_FUN_005fdbd0(pcVar7 + iVar3,"%d total files in pod");
-  shape_edittool_cpp_CPickList_setSelectedResult_FUN_004a3e10((CPickList *)(auStack_5d0 + 0x18),1);
+  iVar3 = crt_stdio_c_sprintf_FUN_005fdbd0(pcVar6,"-----------------------\n");
+  crt_stdio_c_sprintf_FUN_005fdbd0
+            (pcVar6 + iVar3,"%d total files in pod",local_a08.file_count);
+  shape_edittool_cpp_CPickList_setSelectedResult_FUN_004a3e10(&local_5dc,1);
   shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-            ((CPickList *)auStack_5b4,&stack0xffffee20,-1,0);
+            (&local_5dc,&stack0xffffedf8,-1,0);
   shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-            ((CPickList *)(auStack_5b4 + 4),0,in_stack_ffffee20,in_stack_ffffee24,in_stack_ffffee28,
-             in_stack_ffffee2c,in_stack_ffffee30);
-  engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)(auStack_9f8 + 0x20));
+            (&local_5dc,0,unaff_EBX,in_stack_ffffedf8,in_stack_ffffedfc,in_stack_ffffee00,
+             in_stack_ffffee04);
+  engine_pod_cpp_CPodFile_dtor_FUN_0054f610(&local_a08);
   return;
 }

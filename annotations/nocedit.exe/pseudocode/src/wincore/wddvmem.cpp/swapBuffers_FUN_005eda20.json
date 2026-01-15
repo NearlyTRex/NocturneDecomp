@@ -1,19 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 212,
-    "complexity_score": 201,
+    "complexity_score": 167,
     "cross_reference_count": 132,
     "function_call_count": 7,
     "global_count": 15,
-    "pseudocode_lines": 121,
-    "suspect_count": 6,
+    "pseudocode_lines": 122,
+    "suspect_count": 4,
     "suspect_types": [
-      "badspacebase",
-      "pointer_cast",
-      "register_param",
-      "stack_param"
+      "pointer_cast"
     ],
-    "total_lines": 333
+    "total_lines": 334
   },
   "cross_references": [
     {
@@ -1003,7 +1000,7 @@
     {
       "add_esp_value": 4,
       "call_address": "005edc33",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1103,45 +1100,31 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 14,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 14,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_ffffff84",
-      "text": "DDSURFACEDESC_union1 in_stack_ffffff84;",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 63,
+      "line": 55,
       "match": "(ulonglong *)((int)",
-      "text": "puVar9 = (ulonglong *)((int)local_20 + iVar11);",
+      "text": "*(ulonglong *)((int)local_8c.lpSurface + 8) = uVar1;",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 64,
-      "match": "in_stack_ffffff84",
-      "text": "local_68 = (ulonglong *)((int)local_18 + in_stack_ffffff84.lPitch);",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 56,
+      "match": "(ulonglong *)((int)",
+      "text": "*(ulonglong *)((int)local_8c.lpSurface + 0x10) = uVar2;",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 64,
+      "line": 57,
       "match": "(ulonglong *)((int)",
-      "text": "local_68 = (ulonglong *)((int)local_18 + in_stack_ffffff84.lPitch);",
+      "text": "*(ulonglong *)((int)local_8c.lpSurface + 0x18) = uVar3;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 65,
+      "match": "(ulonglong *)((int)",
+      "text": "puVar11 = (ulonglong *)((int)local_20 + local_1c);",
       "type": "pointer_cast"
     }
   ]

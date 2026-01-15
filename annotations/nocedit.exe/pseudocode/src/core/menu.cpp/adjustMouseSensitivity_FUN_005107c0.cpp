@@ -14,9 +14,9 @@ core_menu_cpp_adjustMouseSensitivity_FUN_005107c0(int *sensitivity_value_ptr,cha
   int iVar2;
   int iVar3;
   int iVar4;
-  int x1;
-  char *color_value;
+  int iVar5;
   char *format_string;
+  double dVar6;
   int local_18;
   
   iVar3 = g_WindowWidth * 3 >> 0x1f;
@@ -66,19 +66,21 @@ LAB_00510823:
     iVar1 = g_ClipTop + 1;
     iVar2 = g_ClipBottom + -1;
     iVar4 = g_ClipRight + -1;
-    x1 = g_ClipLeft + 1;
-    engine_2d_c_fillRectWithBorder_FUN_00403200(x1,iVar1,iVar4,iVar2,0,0xff);
+    iVar5 = g_ClipLeft + 1;
+    engine_2d_c_fillRectWithBorder_FUN_00403200(iVar5,iVar1,iVar4,iVar2,0,0xff);
     engine_2d_c_fillRectColor_FUN_00403170
-              (x1,iVar1,(int)(((longlong)(iVar4 - x1) * (longlong)(iVar3 + -0x4000)) / 0x3c000) + x1
-               ,iVar2,4);
-    format_string = SUB84 /* extract 2-byte value */((double)iVar3 * 1.52587890625e-05,0);
-    color_value = "%4.2f";
-    iVar4 = 0;
+              (iVar5,iVar1,
+               (int)(((longlong)(iVar4 - iVar5) * (longlong)(iVar3 + -0x4000)) / 0x3c000) + iVar5,
+               iVar2,4);
+    dVar6 = (double)iVar3 * 1.52587890625e-05;
+    format_string = "%4.2f";
+    iVar5 = 0;
+    iVar4 = 0xff;
     iVar2 = g_ClipBottom + g_ClipTop;
     iVar1 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(g_EditorFont,0x41);
     engine_font_cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30
-              (g_EditorFont,g_ClipLeft,g_ClipRight,(iVar2 - iVar1) / 2,iVar4,(int)color_value,
-               format_string);
+              (g_EditorFont,g_ClipLeft,g_ClipRight,(iVar2 - iVar1) / 2,iVar4,iVar5,format_string,
+               dVar6);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
     if (iVar1 != 0) goto LAB_005109f5;

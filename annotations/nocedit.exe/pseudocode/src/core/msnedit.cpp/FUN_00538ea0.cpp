@@ -14,7 +14,6 @@ void core_msnedit_cpp_FUN_00538ea0(void)
   int iVar1;
   int iVar2;
   int iVar3;
-  BADSPACEBASE *in_ESP;
   int in_stack_00000004;
   int in_stack_00000008;
   int iStack_250c;

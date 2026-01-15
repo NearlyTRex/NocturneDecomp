@@ -1,21 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 60,
-    "complexity_score": 157,
+    "complexity_score": 109,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 2,
-    "pseudocode_lines": 27,
-    "suspect_count": 10,
+    "pseudocode_lines": 24,
+    "suspect_count": 7,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "callind_preserve",
-      "register_param",
-      "stack_ref",
-      "suspect_float"
+      "stack_ref"
     ],
-    "total_lines": 87
+    "total_lines": 84
   },
   "cross_references": [
     {
@@ -138,32 +135,11 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 9,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 9,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 14,
-      "match": "&stack0xffffffe4",
-      "text": "(&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffe4);",
+      "line": 12,
+      "match": "&stack0xffffffe0",
+      "text": "(&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffe0);",
       "type": "stack_ref"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 17,
-      "match": "8.713051e-39",
-      "text": "fStack_14 = 8.713051e-39;",
-      "type": "suspect_float"
     },
     {
       "add_esp_value": 8,

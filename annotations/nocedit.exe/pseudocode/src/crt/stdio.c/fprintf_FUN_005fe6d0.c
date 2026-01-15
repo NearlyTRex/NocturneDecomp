@@ -10,7 +10,6 @@ int __cdecl crt_stdio_c_fprintf_FUN_005fe6d0(FILE *file,char *format,...)
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   byte *local_8;
   
   local_8 = &stack0x0000000c;

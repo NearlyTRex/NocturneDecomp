@@ -12,7 +12,6 @@ int __cdecl core_actor_cpp_randomChance_FUN_0040cd10(float probability_threshold
   float fVar1;
   uint uVar2;
   int iVar3;
-  float in_stack_00000008;
   
   if (g_CGamePtr->is_processing == 0) {
     iVar3 = crt_stdlib_c_rand_FUN_005feb5c();
@@ -22,5 +21,5 @@ int __cdecl core_actor_cpp_randomChance_FUN_0040cd10(float probability_threshold
     uVar2 = core_actor_cpp_generateRandomValue_FUN_0040cba0();
     fVar1 = (float)(int)uVar2 * (float)INT_0061430c;
   }
-  return (uint)(fVar1 < in_stack_00000008);
+  return (uint)(fVar1 < probability_threshold);
 }

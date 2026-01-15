@@ -1,19 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 141,
-    "complexity_score": 267,
+    "complexity_score": 220,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 12,
-    "pseudocode_lines": 77,
-    "suspect_count": 17,
+    "pseudocode_lines": 75,
+    "suspect_count": 13,
     "suspect_types": [
       "call_esp_preserve",
       "pointer_cast",
-      "stack_param",
       "suspect_float"
     ],
-    "total_lines": 218
+    "total_lines": 216
   },
   "cross_references": [],
   "function": {
@@ -178,102 +177,74 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_0000000c",
-      "text": "int in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000010",
-      "text": "int in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 38,
-      "match": "in_stack_0000000c",
-      "text": "for (iVar6 = 0; iVar6 < *(int *)(in_stack_0000000c + 4) * 3; iVar6 = iVar6 + 3) {",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 39,
+      "line": 37,
       "match": "(int *)((int)",
       "text": "*(int *)((int)g_ProcessedVertexIndices + iVar2) = (pSVar4->base).type;",
       "type": "pointer_cast"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 44,
+      "line": 42,
       "match": "3.67342e-40",
       "text": "fVar3 = 3.67342e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 47,
+      "line": 45,
       "match": "3.67342e-40",
       "text": "fVar5 = 3.67342e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 50,
+      "line": 48,
       "match": "2.3142544e-38",
       "text": "fVar3 = 2.3142544e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 53,
+      "line": 51,
       "match": "2.3142544e-38",
       "text": "fVar5 = 2.3142544e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 58,
+      "line": 56,
       "match": "9.18355e-41",
       "text": "fVar3 = 9.18355e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 61,
+      "line": 59,
       "match": "9.18355e-41",
       "text": "fVar5 = 9.18355e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 64,
+      "line": 62,
       "match": "2.341805e-38",
       "text": "fVar3 = 2.341805e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 67,
+      "line": 65,
       "match": "2.341805e-38",
       "text": "fVar5 = 2.341805e-38;",
       "type": "suspect_float"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 79,
-      "match": "in_stack_00000010",
-      "text": "return (SMRGLHeaderExtended *)(*(int *)(in_stack_00000010 + 4) * 0xc + in_stack_00000010 + 0x18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 79,
-      "match": "in_stack_00000010",
-      "text": "return (SMRGLHeaderExtended *)(*(int *)(in_stack_00000010 + 4) * 0xc + in_stack_00000010 + 0x18);",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 77,
+      "match": "(SMRGLHeaderExtended *)((int)",
+      "text": "return (SMRGLHeaderExtended *)((int)&polygon_info[1].base + (polygon_info->base).count * 0xc);",
+      "type": "pointer_cast"
     },
     {
       "add_esp_value": 4,

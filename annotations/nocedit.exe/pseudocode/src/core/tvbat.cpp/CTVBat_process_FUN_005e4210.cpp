@@ -22,7 +22,6 @@ void __cdecl core_tvbat_cpp_CTVBat_process_FUN_005e4210(CTVBat *this_ptr)
   CKeyFramedModel *pCVar11;
   uint uVar12;
   float fVar13;
-  BADSPACEBASE *in_ESP;
   int iVar14;
   CLocation *pCVar15;
   int iVar16;

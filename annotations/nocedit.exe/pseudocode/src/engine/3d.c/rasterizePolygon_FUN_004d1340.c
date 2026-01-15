@@ -16,7 +16,9 @@ void __cdecl engine_3d_c_rasterizePolygon_FUN_004d1340(SRenderVertex **vertices,
   int iVar5;
   int iVar6;
   SRenderVertex *pSVar7;
+  int unaff_ESI;
   uint uVar8;
+  int unaff_EDI;
   SRenderVertex *pSVar9;
   SRenderVertex **in_stack_ffffffdc;
   SRenderVertex **ppSVar10;
@@ -164,20 +166,12 @@ LAB_004d14c2:
           }
         }
         wincore_windll_cpp_renderScanline_FUN_005b5710(in_stack_ffffffdc,right_data,iVar6);
-        vertices[2] = (SRenderVertex *)
-                      ((int)&(vertices[2]->projected_vertex).transformed_x +
-                      (int)&(vertices[3]->projected_vertex).transformed_x);
-        vertices[6] = (SRenderVertex *)
-                      ((int)&(vertices[6]->projected_vertex).transformed_x +
-                      (int)&(vertices[7]->projected_vertex).transformed_x);
-        vertices[8] = (SRenderVertex *)
-                      ((int)&(vertices[8]->projected_vertex).transformed_x +
-                      (int)&(vertices[9]->projected_vertex).transformed_x);
-        *(int *)(vertex_count + 8) = *(int *)(vertex_count + 8) + *(int *)(vertex_count + 0xc);
-        *(int *)(vertex_count + 0x18) =
-             *(int *)(vertex_count + 0x18) + *(int *)(vertex_count + 0x1c);
-        *(int *)(vertex_count + 0x20) =
-             *(int *)(vertex_count + 0x20) + *(int *)(vertex_count + 0x24);
+        *(int *)(unaff_EDI + 8) = *(int *)(unaff_EDI + 8) + *(int *)(unaff_EDI + 0xc);
+        *(int *)(unaff_EDI + 0x18) = *(int *)(unaff_EDI + 0x18) + *(int *)(unaff_EDI + 0x1c);
+        *(int *)(unaff_EDI + 0x20) = *(int *)(unaff_EDI + 0x20) + *(int *)(unaff_EDI + 0x24);
+        *(int *)(unaff_ESI + 8) = *(int *)(unaff_ESI + 8) + *(int *)(unaff_ESI + 0xc);
+        *(int *)(unaff_ESI + 0x18) = *(int *)(unaff_ESI + 0x18) + *(int *)(unaff_ESI + 0x1c);
+        *(int *)(unaff_ESI + 0x20) = *(int *)(unaff_ESI + 0x20) + *(int *)(unaff_ESI + 0x24);
       } while( true );
     }
   }

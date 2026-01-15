@@ -9,22 +9,22 @@
 int __cdecl core_vampboss_cpp_CVampireBoss_FUN_005e7280(CVampireBoss *this_ptr)
 
 {
-  CVampireBoss *pCVar1;
-  CVampireBoss *pCVar2;
+  float fVar1;
+  float fVar2;
   CBoundingBox3D *pCVar3;
-  BADSPACEBASE *in_ESP;
-  CVampireBoss **in_stack_00000008;
-  CBoundingBox3D aCStack_34 [2];
+  float *in_stack_00000008;
+  CBoundingBox3D CStack_34;
+  float fStack_8;
   
   pCVar3 = (*((this_ptr->base_enemy).base_character.base_actor.vtable)->getBoundingBox)
-                     ((CDemonActor *)this_ptr,aCStack_34);
-  pCVar1 = (CVampireBoss *)(((pCVar3->min).y + (pCVar3->max).y) * 0.5f);
-  pCVar2 = (CVampireBoss *)(((pCVar3->min).z + (pCVar3->max).z) * 0.5f);
-  if (in_stack_00000008 == &this_ptr) {
+                     ((CDemonActor *)this_ptr,&CStack_34);
+  fVar1 = ((pCVar3->min).y + (pCVar3->max).y) * 0.5f;
+  fVar2 = ((pCVar3->min).z + (pCVar3->max).z) * 0.5f;
+  if (in_stack_00000008 == &fStack_8) {
     return 1;
   }
-  *in_stack_00000008 = (CVampireBoss *)(((pCVar3->min).x + (pCVar3->max).x) * 0.5f);
-  in_stack_00000008[1] = pCVar1;
-  in_stack_00000008[2] = pCVar2;
+  *in_stack_00000008 = ((pCVar3->min).x + (pCVar3->max).x) * 0.5f;
+  in_stack_00000008[1] = fVar1;
+  in_stack_00000008[2] = fVar2;
   return 1;
 }

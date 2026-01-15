@@ -11,18 +11,17 @@ shape_superopt_cpp_CObj_init_FUN_005d22d0(CObj *this_ptr,int poly_count,int vert
 
 {
   int iVar1;
-  int in_stack_00000014;
-  int in_stack_0000002c;
+  int in_stack_00000018;
   
   (*this_ptr->vtable->free)(this_ptr);
-  if (in_stack_00000014 != 0) {
-    iVar1 = (*this_ptr->vtable->allocatePolygons)(this_ptr,in_stack_00000014);
+  if (vertex_count != 0) {
+    iVar1 = (*this_ptr->vtable->allocatePolygons)(this_ptr,vertex_count);
     if (iVar1 == 0) {
       return 0;
     }
   }
-  if (in_stack_0000002c != 0) {
-    iVar1 = (*this_ptr->vtable->allocateVertices)(this_ptr,in_stack_0000002c);
+  if (in_stack_00000018 != 0) {
+    iVar1 = (*this_ptr->vtable->allocateVertices)(this_ptr,in_stack_00000018);
     if (iVar1 == 0) {
       return 0;
     }

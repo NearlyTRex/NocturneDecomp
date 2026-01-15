@@ -12,43 +12,35 @@ shape_quantize_cpp_quantizeRawPixelData_FUN_00556490
           ,uint bit_depth,int line_number,int show_progress)
 
 {
-  CBitmap *this_ptr;
-  void *pvVar1;
-  CColorQuantizer *pCVar2;
+  CBitmap *pCVar1;
+  void *pvVar2;
+  CColorQuantizer *pCVar3;
   int extraout_EAX;
-  CBitmap *pCVar3;
-  uint uVar4;
+  uchar *puVar4;
   uint uVar5;
-  int iVar6;
-  BADSPACEBASE *in_ESP;
+  uint uVar6;
+  int iVar7;
   int unaff_ESI;
-  uint *puVar7;
   uchar *puVar8;
-  uint *puVar9;
-  byte bVar10;
-  int in_stack_00000024;
-  int in_stack_00000028;
-  CBitmap *in_stack_0000002c;
-  int in_stack_00000030;
-  uint *in_stack_00000034;
-  uint *in_stack_00000038;
-  int in_stack_0000003c;
-  uint *in_stack_00000040;
-  uint *in_stack_00000044;
-  CColorQuantizer *in_stack_ffffff30;
+  byte bVar9;
+  ushort in_stack_00000012;
+  ushort in_stack_00000016;
+  CColorQuantizer *in_stack_ffffff24;
+  CBitmap *local_14;
   
-  bVar10 = 0;
+  bVar9 = 0;
   g_QuantizeCurrentLineNumber = line_number;
-  this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x28,"..\\shape\\quantize.cpp",0x3ec);
-  pCVar3 = (CBitmap *)0x0;
-  if (this_ptr != (CBitmap *)0x0) {
-    pCVar3 = shape_quantize_cpp_CBitmap_ctor_FUN_00556a00(this_ptr);
+  pCVar1 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x28,"..\\shape\\quantize.cpp",0x3ec);
+  local_14 = (CBitmap *)0x0;
+  if (pCVar1 != (CBitmap *)0x0) {
+    local_14 = shape_quantize_cpp_CBitmap_ctor_FUN_00556a00(pCVar1);
   }
-  if (pCVar3 == (CBitmap *)0x0) {
-    crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff2c,"Unable to allocate %d-bit bitmap for color quantization");
+  if (local_14 == (CBitmap *)0x0) {
+    crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff24,"Unable to allocate %d-bit bitmap for color quantization",bit_depth)
+    ;
     g_CurrentFilename = "..\\shape\\quantize.cpp";
     g_CurrentLineNumber = 0x3f0;
-    core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xffffff30);
+    core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xffffff24);
   }
   if (bit_depth < 0x10) {
     if (7 < bit_depth) {
@@ -76,108 +68,104 @@ LAB_00556829:
       }
     }
   }
-  crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff2c,"Invalid bit depth [%d] for bitmap");
+  crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff24,"Invalid bit depth [%d] for bitmap",bit_depth);
   g_CurrentLineNumber = 0x40a;
   g_CurrentFilename = "..\\shape\\quantize.cpp";
-  core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xffffff28);
+  core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xffffff24);
 LAB_00556524:
-  uVar4 = bit_depth * line_number * unaff_ESI;
-  puVar8 = *pCVar3->row_table;
-  for (uVar5 = uVar4 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-    *(uint *)puVar8 = *(uint *)src_pixel_data;
-    src_pixel_data = src_pixel_data + (uint)bVar10 * -8 + 4;
-    puVar8 = puVar8 + (uint)bVar10 * -8 + 4;
+  uVar5 = _width * _height * unaff_ESI;
+  puVar4 = *local_14->row_table;
+  for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
+    *(uint *)puVar4 = *(uint *)src_pixel_data;
+    src_pixel_data = src_pixel_data + (uint)bVar9 * -8 + 4;
+    puVar4 = puVar4 + (uint)bVar9 * -8 + 4;
   }
-  for (uVar4 = uVar4 & 3; uVar4 != 0; uVar4 = uVar4 - 1) {
-    *puVar8 = *src_pixel_data;
-    src_pixel_data = src_pixel_data + (uint)bVar10 * -2 + 1;
-    puVar8 = puVar8 + (uint)bVar10 * -2 + 1;
+  for (uVar5 = uVar5 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
+    *puVar4 = *src_pixel_data;
+    src_pixel_data = src_pixel_data + (uint)bVar9 * -2 + 1;
+    puVar4 = puVar4 + (uint)bVar9 * -2 + 1;
   }
-  if (in_stack_00000028 != 0) {
-    crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff2c,"%d-bit color                                                                  ");
-    engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff28,0,show_progress * 0xb);
+  if (show_progress != 0) {
+    crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff24,"%d-bit color                                                                  ",bit_depth);
+    engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff24,0,line_number * 0xb);
   }
-  pvVar1 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x4b44,"..\\shape\\quantize.cpp",0x417);
-  pCVar2 = (CColorQuantizer *)0x0;
-  if (pvVar1 != (void *)0x0) {
-    pCVar2 = shape_quantize_cpp_CColorQuantizer_ctor_FUN_00554900(in_stack_ffffff30);
+  pvVar2 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x4b44,"..\\shape\\quantize.cpp",0x417);
+  pCVar3 = (CColorQuantizer *)0x0;
+  if (pvVar2 != (void *)0x0) {
+    pCVar3 = shape_quantize_cpp_CColorQuantizer_ctor_FUN_00554900(in_stack_ffffff24);
   }
-  if (pCVar2 == (CColorQuantizer *)0x0) {
+  if (pCVar3 == (CColorQuantizer *)0x0) {
     g_CurrentFilename = "..\\shape\\quantize.cpp";
     g_CurrentLineNumber = 0x41a;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to allocate object for color quantization");
   }
-  if (in_stack_00000030 != 0) {
-    engine_2d_c_drawText_FUN_00401fd0
-              ("Performing color quantization...",0,(int)(in_stack_0000002c->field0_0x0 + 2) * 0xb)
+  if (show_progress != 0) {
+    engine_2d_c_drawText_FUN_00401fd0("Performing color quantization...",0,(line_number + 2) * 0xb)
     ;
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
   }
   engine_2d_c_clearInputAndWait_FUN_00403260();
-  pCVar2->progress_callback = (CColorQuantizer_ProgressCallback *)0x0;
-  shape_quantize_cpp_CColorQuantizer_quantizeBitmap_FUN_00556470
-            (pCVar2,(CBitmap **)&stack0x00000000);
-  iVar6 = 0;
+  pCVar3->progress_callback = (CColorQuantizer_ProgressCallback *)0x0;
+  shape_quantize_cpp_CColorQuantizer_quantizeBitmap_FUN_00556470(pCVar3,&local_14);
+  iVar7 = 0;
   if (extraout_EAX != 0) {
-    if (in_stack_00000038 != (uint *)0x0) {
-      crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff3c,"%d-color palette created                                                       ");
-      engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff40,0,((int)in_stack_00000038 + 2) * 0xb);
-      engine_2d_c_drawText_FUN_00401fd0("                                    ",0,(in_stack_0000003c + 4) * 0xb);
+    if (show_progress != 0) {
+      crt_stdio_c_sprintf_FUN_005fdbd0
+                (&stack0xffffff24,"%d-color palette created                                                       ",pCVar3->num_colors);
+      engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff24,0,(line_number + 2) * 0xb);
+      engine_2d_c_drawText_FUN_00401fd0("                                    ",0,(line_number + 4) * 0xb);
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     }
-    pvVar1 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                       ((int)in_stack_00000038 * in_stack_0000003c,"..\\shape\\quantize.cpp",
-                        0x431);
-    *in_stack_00000034 = pvVar1;
-    if (pvVar1 == (void *)0x0) {
+    puVar4 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
+                       (_width * _height,"..\\shape\\quantize.cpp",0x431);
+    *out_pixel_data = puVar4;
+    if (puVar4 == (uchar *)0x0) {
       g_CurrentFilename = "..\\shape\\quantize.cpp";
       g_CurrentLineNumber = 0x434;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to allocate quantized bitmap!");
     }
-    puVar7 = (uint *)**(uint **)(line_number + 0x20);
-    puVar9 = (uint *)*in_stack_00000038;
-    for (uVar5 = (uint)((int)in_stack_00000040 * (int)in_stack_00000044) >> 2; uVar5 != 0;
-        uVar5 = uVar5 - 1) {
-      *puVar9 = *puVar7;
-      puVar7 = puVar7 + (uint)bVar10 * -2 + 1;
-      puVar9 = puVar9 + (uint)bVar10 * -2 + 1;
+    puVar4 = *local_14->row_table;
+    puVar8 = *out_pixel_data;
+    for (uVar6 = (uint)(_width * _height) >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
+      *(uint *)puVar8 = *(uint *)puVar4;
+      puVar4 = puVar4 + (uint)bVar9 * -8 + 4;
+      puVar8 = puVar8 + (uint)bVar9 * -8 + 4;
     }
-    for (uVar5 = (int)in_stack_00000040 * (int)in_stack_00000044 & 3; uVar5 != 0; uVar5 = uVar5 - 1)
-    {
-      *(byte *)puVar9 = *(byte *)puVar7;
-      puVar7 = (uint *)((int)puVar7 + (uint)bVar10 * -2 + 1);
-      puVar9 = (uint *)((int)puVar9 + (uint)bVar10 * -2 + 1);
+    for (uVar6 = _width * _height & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
+      *puVar8 = *puVar4;
+      puVar4 = puVar4 + (uint)bVar9 * -2 + 1;
+      puVar8 = puVar8 + (uint)bVar9 * -2 + 1;
     }
-    pvVar1 = shape_memdbg_cpp_debugMalloc_FUN_0050f250(0x300,"..\\shape\\quantize.cpp",0x43a);
-    *in_stack_00000040 = pvVar1;
-    if (pvVar1 == (void *)0x0) {
+    puVar4 = shape_memdbg_cpp_debugMalloc_FUN_0050f250(0x300,"..\\shape\\quantize.cpp",0x43a);
+    *out_palette = puVar4;
+    if (puVar4 == (uchar *)0x0) {
       g_CurrentFilename = "..\\shape\\quantize.cpp";
       g_CurrentLineNumber = 0x43d;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to allocate quantized palette!");
     }
-    puVar7 = *(uint **)(in_stack_00000024 + 0x24);
-    puVar9 = (uint *)*in_stack_00000044;
-    for (iVar6 = 0xc0; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *puVar9 = *puVar7;
-      puVar7 = puVar7 + (uint)bVar10 * -2 + 1;
-      puVar9 = puVar9 + (uint)bVar10 * -2 + 1;
+    puVar4 = local_14->palette;
+    puVar8 = *out_palette;
+    for (iVar7 = 0xc0; iVar7 != 0; iVar7 = iVar7 + -1) {
+      *(uint *)puVar8 = *(uint *)puVar4;
+      puVar4 = puVar4 + (uint)bVar9 * -8 + 4;
+      puVar8 = puVar8 + (uint)bVar9 * -8 + 4;
     }
-    for (iVar6 = 0; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *(byte *)puVar9 = *(byte *)puVar7;
-      puVar7 = (uint *)((int)puVar7 + (uint)bVar10 * -2 + 1);
-      puVar9 = (uint *)((int)puVar9 + (uint)bVar10 * -2 + 1);
+    for (iVar7 = 0; iVar7 != 0; iVar7 = iVar7 + -1) {
+      *puVar8 = *puVar4;
+      puVar4 = puVar4 + (uint)bVar9 * -2 + 1;
+      puVar8 = puVar8 + (uint)bVar9 * -2 + 1;
     }
     g_CurrentDebugFilename = "..\\shape\\quantize.cpp";
     g_CurrentDebugLine = 0x443;
-    pCVar2 = shape_quantize_cpp_CColorQuantizer_dtor_FUN_00554940(pCVar2);
-    shape_memdbg_cpp_debugFree_FUN_0050f210(pCVar2);
+    pCVar3 = shape_quantize_cpp_CColorQuantizer_dtor_FUN_00554940(pCVar3);
+    shape_memdbg_cpp_debugFree_FUN_0050f210(pCVar3);
     g_CurrentDebugFilename = "..\\shape\\quantize.cpp";
     g_CurrentDebugLine = 0x444;
-    if (in_stack_0000002c != (CBitmap *)0x0) {
-      pCVar3 = shape_quantize_cpp_CBitmap_dtor_FUN_00556c20(in_stack_0000002c);
-      shape_memdbg_cpp_debugFree_FUN_0050f210(pCVar3);
+    if (local_14 != (CBitmap *)0x0) {
+      pCVar1 = shape_quantize_cpp_CBitmap_dtor_FUN_00556c20(local_14);
+      shape_memdbg_cpp_debugFree_FUN_0050f210(pCVar1);
     }
-    iVar6 = 1;
+    iVar7 = 1;
   }
-  return iVar6;
+  return iVar7;
 }

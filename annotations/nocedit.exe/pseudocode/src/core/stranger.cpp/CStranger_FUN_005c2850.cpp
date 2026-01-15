@@ -20,7 +20,6 @@ uint core_stranger_cpp_CStranger_FUN_005c2850(void)
   CVector3f *pCVar7;
   CVector3f *pCVar8;
   float *pfVar9;
-  BADSPACEBASE *in_ESP;
   CLocation *input_world_point;
   int iVar10;
   CDemonActor *in_stack_00000004;

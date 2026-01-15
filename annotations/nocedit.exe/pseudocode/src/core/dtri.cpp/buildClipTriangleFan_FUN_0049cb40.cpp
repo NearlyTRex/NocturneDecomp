@@ -14,7 +14,6 @@ CDemonTriangle * __cdecl core_dtri_cpp_buildClipTriangleFan_FUN_0049cb40(void)
   int iVar2;
   CVector3f *vertex2;
   CVector3f *vertex3;
-  int unaff_retaddr;
   
   iVar1 = core_dtri_cpp_getClippedTriangleCount_FUN_0049cb30();
   iVar2 = 0;
@@ -29,7 +28,7 @@ CDemonTriangle * __cdecl core_dtri_cpp_buildClipTriangleFan_FUN_0049cb40(void)
                 (this_ptr,g_ClipOutputVertices,vertex2,vertex3);
       this_ptr = this_ptr + 1;
       vertex3 = vertex3 + 1;
-    } while (iVar2 < unaff_retaddr);
+    } while (iVar2 < iVar1);
   }
   return g_ClippedTriangleBuffer;
 }

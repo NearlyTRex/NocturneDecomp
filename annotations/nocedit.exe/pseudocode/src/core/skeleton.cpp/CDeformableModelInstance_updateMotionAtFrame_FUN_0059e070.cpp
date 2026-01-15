@@ -13,7 +13,6 @@ core_skeleton_cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_0059e070
 {
   core_skeleton_cpp_CDeformableModelInstance_updateMotion_FUN_0059e0a0
             (this_ptr,motion_index,frame_number,-1);
-  core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40
-            ((CDeformableModelInstance *)motion_index);
+  core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0059fb40(this_ptr);
   return;
 }

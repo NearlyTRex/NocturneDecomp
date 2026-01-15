@@ -20,7 +20,6 @@ core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470
   CKeyFramedModel *this_ptr_01;
   CDeformableModel *this_ptr_02;
   float fVar4;
-  BADSPACEBASE *in_ESP;
   ulonglong in_stack_ffffff48;
   CVector3f *in_stack_ffffff50;
   double dVar5;
@@ -33,6 +32,7 @@ core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470
   CVector3f local_3c;
   CVector3f local_30;
   CVector3f CStack_24;
+  float local_14;
   
   if (bbox_type == 0) {
     return 2.0;
@@ -126,13 +126,14 @@ LAB_004095c9:
       out_hit_normal[1].x = (float)g_DeformableModelRayHitPartIndex;
       out_hit_normal[1].y = (float)g_DeformableModelRayHitLodIndex;
       out_hit_normal[1].z = (float)g_DeformableModelRayHitTriangleIndex;
+      local_14 = local_a0;
       this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
                               (collision_info->result_ptr);
       fVar4 = (float)core_skeleton_cpp_CDeformableModel_findMinWeightBone_FUN_0059dca0
                                (this_ptr_02,(int)in_stack_ffffff48,
                                 (int)((ulonglong)in_stack_ffffff48 >> 0x20));
       out_hit_normal[2].x = fVar4;
-      if ((SLod *)&stack0x00000000 != g_DeformableModelPool[0].lod_info + 1) {
+      if ((int *)&stack0x00000000 != &g_DeformableModelPool[0].lod_info[1].shadow_only_flag) {
         local_30.x = g_DeformableModelRayHitNormal.x;
         local_30.y = g_DeformableModelRayHitNormal.y;
         local_30.z = g_DeformableModelRayHitNormal.z;

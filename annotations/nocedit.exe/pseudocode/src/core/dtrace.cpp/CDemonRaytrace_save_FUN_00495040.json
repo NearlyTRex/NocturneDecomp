@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 43,
-    "complexity_score": 90,
+    "complexity_score": 64,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 7,
-    "pseudocode_lines": 15,
-    "suspect_count": 6,
+    "pseudocode_lines": 14,
+    "suspect_count": 4,
     "suspect_types": [
       "call_esp_preserve",
-      "stack_param",
       "variadic_preserve"
     ],
-    "total_lines": 58
+    "total_lines": 57
   },
   "cross_references": [
     {
@@ -179,22 +178,8 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 7,
-      "match": "in_stack_0000000c",
-      "text": "CDemonRaytrace *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_0000000c",
-      "text": "core_dtrace_cpp_CDemonRaytrace_saveBinary_FUN_00494f50(in_stack_0000000c,file_handle);",
-      "type": "stack_param"
-    },
-    {
       "call_address": "0049509f",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

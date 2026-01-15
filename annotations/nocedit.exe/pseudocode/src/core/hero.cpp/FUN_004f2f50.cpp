@@ -15,7 +15,6 @@ uint core_hero_cpp_FUN_004f2f50(void)
   CDemonActor *pCVar1;
   CVector3f *pCVar2;
   int iVar3;
-  BADSPACEBASE *in_ESP;
   int iVar4;
   int iVar5;
   CDemonActor *in_stack_00000004;

@@ -27,7 +27,6 @@ void core_larva_cpp_FUN_00503080(void)
   int extraout_EAX;
   int extraout_EAX_00;
   uint uVar11;
-  BADSPACEBASE *in_ESP;
   float10 fVar12;
   float10 fVar13;
   float10 fVar14;

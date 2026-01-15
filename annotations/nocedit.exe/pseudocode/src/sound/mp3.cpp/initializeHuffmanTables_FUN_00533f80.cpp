@@ -13,14 +13,12 @@ void __cdecl sound_mp3_cpp_initializeHuffmanTables_FUN_00533f80(void)
   int iVar1;
   int iVar2;
   int iVar3;
-  BADSPACEBASE *in_ESP;
-  int unaff_EBP;
   int iVar4;
   uint uVar5;
   char *pcVar6;
   byte bVar7;
-  int in_stack_00000004;
   char *pcVar8;
+  int local_10;
   SHuffmanTable *local_c;
   int local_8;
   
@@ -34,23 +32,23 @@ void __cdecl sound_mp3_cpp_initializeHuffmanTables_FUN_00533f80(void)
       str = local_c;
       crt_stdio_c_sprintf_FUN_005fdbd0(local_c->table_id,"%d",iVar4);
       *(uint *)((int)&g_HuffmanTables[0].table_size + iVar3) =
-           *(uint *)((int)&g_HuffmanTableSources[0].table_size + unaff_EBP);
+           *(uint *)((int)&g_HuffmanTableSources[0].table_size + local_8);
       *(uint *)(g_HuffmanTables[0].table_id + iVar3 + 4) =
-           *(uint *)((int)&g_HuffmanTableSources[0].field1_0x4 + unaff_EBP);
+           *(uint *)((int)&g_HuffmanTableSources[0].field1_0x4 + local_8);
       *(uint *)(g_HuffmanTables[0].table_id + iVar3 + 8) =
-           *(uint *)((int)&g_HuffmanTableSources[0].field2_0x8 + unaff_EBP);
+           *(uint *)((int)&g_HuffmanTableSources[0].field2_0x8 + local_8);
       *(uint *)(g_HuffmanTables[0].table_id + iVar3 + 0xc) =
-           *(uint *)((int)&g_HuffmanTableSources[0].bits + unaff_EBP);
+           *(uint *)((int)&g_HuffmanTableSources[0].bits + local_8);
       *(int *)(g_HuffmanTables[0].table_id + iVar3 + 0x10) =
            (1 << (g_HuffmanTables[0].table_id[iVar3 + 0xc] & 0x1fU)) + -1;
-      crt_stdio_c_sscanf_FUN_0060013c(str->table_id,"%u",&local_c);
-      if (iVar4 != local_8) {
+      crt_stdio_c_sscanf_FUN_0060013c(str->table_id,"%u",&local_10);
+      if (iVar4 != local_10) {
         g_CurrentFilename = "..\\sound\\mp3.cpp";
         g_CurrentLineNumber = 0xd72;
         core_main_c_displayErrorAndQuit_FUN_00506f10
                   ("wrong table number %u.  File: %s",iVar4,g_CurrentMp3Filename);
       }
-      iVar2 = *(int *)((int)&g_HuffmanTableSources[0].reference_index + in_stack_00000004);
+      iVar2 = *(int *)((int)&g_HuffmanTableSources[0].reference_index + local_8);
       if (iVar2 < 0) {
         if (iVar2 != -1) {
           g_CurrentFilename = "..\\sound\\mp3.cpp";
@@ -71,7 +69,7 @@ void __cdecl sound_mp3_cpp_initializeHuffmanTables_FUN_00533f80(void)
                     ("MP3 Huffman tree overflow!  File: %s",g_CurrentMp3Filename);
         }
         uVar5 = 0;
-        pcVar8 = *(char **)((int)&g_HuffmanTableSources[0].huffman_data_ptr + in_stack_00000004);
+        pcVar8 = *(char **)((int)&g_HuffmanTableSources[0].huffman_data_ptr + local_8);
         iVar2 = iVar3;
         if (*(int *)((int)&g_HuffmanTables[0].table_size + iVar3) != 0) {
           do {

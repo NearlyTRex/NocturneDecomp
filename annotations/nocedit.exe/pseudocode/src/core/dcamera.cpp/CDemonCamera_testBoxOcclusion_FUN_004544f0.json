@@ -1,21 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 174,
-    "complexity_score": 413,
+    "complexity_score": 359,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 8,
-    "pseudocode_lines": 53,
-    "suspect_count": 33,
+    "pseudocode_lines": 84,
+    "suspect_count": 26,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "extra_output",
-      "lea_esp_stack_addr",
-      "register_param",
-      "stack_ref"
+      "lea_esp_stack_addr"
     ],
-    "total_lines": 227
+    "total_lines": 258
   },
   "cross_references": [],
   "function": {
@@ -277,101 +274,52 @@
       "type": "extra_output"
     },
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 13,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 13,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 31,
-      "match": "&stack0xffffffd8",
-      "text": "core_set_cpp_CDemonSet_FUN_00570df0(g_CDemonSetPtr,(SMRGLHeaderPrimitive *)&stack0xffffffd8);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 32,
+      "line": 45,
       "match": "extraout_EAX",
       "text": "if (extraout_EAX == 0) {",
       "type": "extra_output"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 33,
-      "match": "&stack0xffffffdc",
-      "text": "core_set_cpp_CDemonSet_FUN_00570df0(g_CDemonSetPtr,(SMRGLHeaderPrimitive *)&stack0xffffffdc);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 34,
+      "line": 51,
       "match": "extraout_EAX_00",
       "text": "if (extraout_EAX_00 == 0) {",
       "type": "extra_output"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 35,
-      "match": "&stack0xffffffe0",
-      "text": "core_set_cpp_CDemonSet_FUN_00570df0(g_CDemonSetPtr,(SMRGLHeaderPrimitive *)&stack0xffffffe0);",
-      "type": "stack_ref"
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 55,
+      "match": "extraout_EAX_00",
+      "text": "local_20 = extraout_EAX_00;",
+      "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 36,
+      "line": 57,
       "match": "extraout_EAX_01",
       "text": "if (extraout_EAX_01 == 0) {",
       "type": "extra_output"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 37,
-      "match": "&stack0xffffffe4",
-      "text": "core_set_cpp_CDemonSet_FUN_00570df0(g_CDemonSetPtr,(SMRGLHeaderPrimitive *)&stack0xffffffe4)",
-      "type": "stack_ref"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 39,
+      "line": 63,
       "match": "extraout_EAX_02",
       "text": "if (extraout_EAX_02 == 0) {",
       "type": "extra_output"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 41,
-      "match": "&stack0xffffffe8",
-      "text": "(g_CDemonSetPtr,(SMRGLHeaderPrimitive *)&stack0xffffffe8);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 42,
+      "line": 69,
       "match": "extraout_EAX_03",
-      "text": "if ((extraout_EAX_03 == 0) &&",
+      "text": "if (extraout_EAX_03 == 0) {",
       "type": "extra_output"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 44,
-      "match": "&stack0xffffffec",
-      "text": "(g_CDemonSetPtr,(SMRGLHeaderPrimitive *)&stack0xffffffec),",
-      "type": "stack_ref"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 45,
+      "line": 75,
       "match": "extraout_EAX_04",
-      "text": "extraout_EAX_04 == 0)) goto LAB_004545a7;",
+      "text": "if (extraout_EAX_04 == 0) goto LAB_004545a7;",
       "type": "extra_output"
     },
     {

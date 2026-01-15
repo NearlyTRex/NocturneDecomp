@@ -18,7 +18,6 @@ shape_superopt_cpp_CObj_findCoplanarPolygon_FUN_005d5800
   int *piVar2;
   CPoly *other;
   CPoly *pCVar3;
-  BADSPACEBASE *in_ESP;
   CVector3d *pCVar4;
   uint uVar5;
   uint *puVar6;
@@ -31,7 +30,7 @@ shape_superopt_cpp_CObj_findCoplanarPolygon_FUN_005d5800
   uint local_4c;
   uint local_48;
   uint local_44;
-  uint auStack_3c [5];
+  uint local_40 [6];
   int local_28;
   CVector3d *local_24;
   uint local_20;
@@ -75,7 +74,7 @@ LAB_005d59af:
           shape_superopt_cpp_projectPointOntoPlane_FUN_005d63d0
                     (&point->position,&this_ptr->vertex_data[search_polygon->vertex_idx_0].position,
                      local_14);
-          puVar6 = auStack_3c;
+          puVar6 = local_40;
           puVar8 = &local_58;
           for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
             *puVar8 = *puVar6;

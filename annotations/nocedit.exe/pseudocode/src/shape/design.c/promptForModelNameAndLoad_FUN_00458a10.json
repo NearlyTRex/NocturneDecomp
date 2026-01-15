@@ -1,18 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 95,
-    "complexity_score": 146,
+    "complexity_score": 60,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 5,
-    "pseudocode_lines": 61,
-    "suspect_count": 7,
-    "suspect_types": [
-      "badspacebase",
-      "register_param",
-      "stack_ref"
-    ],
-    "total_lines": 156
+    "pseudocode_lines": 60,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 155
   },
   "cross_references": [
     {
@@ -186,55 +182,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 8,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 8,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 17,
-      "match": "&stack0xffffff9c",
-      "text": "(&stack0xffffff9c,0x28,0,0,\"Model name to load : \");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 18,
-      "match": "&stack0xffffff9c",
-      "text": "pcVar5 = &stack0xffffff9c;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 31,
-      "match": "&stack0xffffff9c",
-      "text": "pcVar5 = &stack0xffffff9c;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 41,
-      "match": "&stack0xffffff9c",
-      "text": "pcVar5 = &stack0xffffff9c;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 62,
-      "match": "&stack0xffffff9c",
-      "text": "iVar2 = shape_design_c_loadModelFile_FUN_00458ac0(&stack0xffffff9c);",
-      "type": "stack_ref"
-    }
-  ]
+  "suspects": []
 }

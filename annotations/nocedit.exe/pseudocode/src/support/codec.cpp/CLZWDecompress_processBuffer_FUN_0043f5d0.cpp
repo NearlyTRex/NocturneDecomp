@@ -13,7 +13,6 @@ support_codec_cpp_CLZWDecompress_processBuffer_FUN_0043f5d0
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   byte *local_14;
   
   local_14 = output;

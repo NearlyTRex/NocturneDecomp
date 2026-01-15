@@ -1,23 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 118,
-    "complexity_score": 246,
+    "complexity_score": 130,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 13,
-    "pseudocode_lines": 56,
-    "suspect_count": 15,
+    "pseudocode_lines": 55,
+    "suspect_count": 6,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
-      "format_string_mismatch",
       "lea_esp_stack_addr",
-      "register_param",
-      "stack_param",
-      "stack_ref",
       "variadic_preserve"
     ],
-    "total_lines": 174
+    "total_lines": 173
   },
   "cross_references": [
     {
@@ -228,64 +223,8 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 9,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 9,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000014",
-      "text": "uint *in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 15,
-      "match": "&stack0xffffffac",
-      "text": "pcVar3 = &stack0xffffffac;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 19,
-      "match": "&stack0xffffffac",
-      "text": "pcVar2 = &stack0xffffffac;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 25,
-      "match": "&stack0xffffffac",
-      "text": "pcVar2 = &stack0xffffffac;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 52,
-      "match": "&stack0xffffffb0",
-      "text": "file_ptr = engine_dosio_c_getFile_FUN_00481a50(\"art\",&stack0xffffffb0,\"rb\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 55,
-      "match": "in_stack_00000014",
-      "text": "crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)*in_stack_00000014,\"ART\\\\%s\\n\");",
-      "type": "stack_param"
-    },
-    {
       "call_address": "004b53f6",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -299,7 +238,7 @@
     },
     {
       "call_address": "004b5458",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -313,7 +252,7 @@
     },
     {
       "call_address": "004b54c3",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -324,17 +263,6 @@
       "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
       "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 004b54c3 (no EBP frame)",
       "type": "variadic_preserve"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"ART\\\\%s\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "ART\\\\%s\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 55,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)*in_stack_00000014,\"ART\\\\%s\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 12,

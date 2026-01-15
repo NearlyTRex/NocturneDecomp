@@ -8,27 +8,27 @@
 
 /* Signature: byte core_msnedit.cpp_DementedMissionEditorSomething(uint param_1) */
 
-void core_msnedit_cpp_DementedMissionEditorSomething_FUN_00537680
-               (uint param_1,uint param_2,uint unaff_EBX,uint param_4,
-               int param_5)
+void core_msnedit_cpp_DementedMissionEditorSomething_FUN_00537680(void)
 
 {
   char cVar1;
   uint uVar2;
   int iVar3;
-  BADSPACEBASE *in_ESP;
   char *pcVar4;
   char *pcVar5;
-  char acStack_c8 [8];
+  int in_stack_00000004;
+  char local_114 [256];
+  int local_14;
   
   core_inivar_cpp_readIniData_FUN_004fbd90();
   engine_2d_c_clearInputAndWait_FUN_00403260();
+  local_14 = in_stack_00000004 + 0x44;
   do {
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
     engine_2d_c_drawText_FUN_00401fd0("Demented(R) Mission editor options menu",0,0);
-    pcVar5 = &stack0xfffffefc;
-    if (*(char *)(param_5 + 0x44) == '\0') {
+    if (*(char *)(in_stack_00000004 + 0x44) == '\0') {
       pcVar4 = "No mission loaded";
+      pcVar5 = local_114;
       do {
         cVar1 = *pcVar4;
         *pcVar5 = cVar1;
@@ -40,17 +40,41 @@ void core_msnedit_cpp_DementedMissionEditorSomething_FUN_00537680
       } while (cVar1 != '\0');
     }
     else {
-      crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffefc,"Current mission: %s.msn",unaff_EBX);
+      crt_stdio_c_sprintf_FUN_005fdbd0(local_114,"Current mission: %s.msn",local_14);
     }
-    engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff00,0,0x16);
-    crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff04,"1. Draw sky in dynamic views: %s");
-    engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff08,0,0x2c);
-    crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff0c,"2. Draw water in dynamic views: %s");
-    engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff10,0,0x37);
-    crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff14,"3. Force full lighting in static view: %s");
-    engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff18,0,0x42);
-    crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff1c,"4. Disable mouse selection of CBarriers: %s");
-    engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff20,0,0x4d);
+    engine_2d_c_drawText_FUN_00401fd0(local_114,0,0x16);
+    if (*(int *)(in_stack_00000004 + 0x30) == 0) {
+      pcVar5 = "OFF";
+    }
+    else {
+      pcVar5 = "ON";
+    }
+    crt_stdio_c_sprintf_FUN_005fdbd0(local_114,"1. Draw sky in dynamic views: %s",pcVar5);
+    engine_2d_c_drawText_FUN_00401fd0(local_114,0,0x2c);
+    if (*(int *)(in_stack_00000004 + 0x34) == 0) {
+      pcVar5 = "OFF";
+    }
+    else {
+      pcVar5 = "ON";
+    }
+    crt_stdio_c_sprintf_FUN_005fdbd0(local_114,"2. Draw water in dynamic views: %s",pcVar5);
+    engine_2d_c_drawText_FUN_00401fd0(local_114,0,0x37);
+    if (*(int *)(in_stack_00000004 + 0x38) == 0) {
+      pcVar5 = "OFF";
+    }
+    else {
+      pcVar5 = "ON";
+    }
+    crt_stdio_c_sprintf_FUN_005fdbd0(local_114,"3. Force full lighting in static view: %s",pcVar5);
+    engine_2d_c_drawText_FUN_00401fd0(local_114,0,0x42);
+    if (g_DisableMouseHitOnBarrier == 0) {
+      pcVar5 = "OFF";
+    }
+    else {
+      pcVar5 = "ON";
+    }
+    crt_stdio_c_sprintf_FUN_005fdbd0(local_114,"4. Disable mouse selection of CBarriers: %s",pcVar5);
+    engine_2d_c_drawText_FUN_00401fd0(local_114,0,0x4d);
     if (g_DynamicRenderMode < 2) {
 LAB_005377d8:
       pcVar5 = "5. Dynamic render mode: flat shade";
@@ -63,15 +87,21 @@ LAB_005377d8:
       if (g_DynamicRenderMode != 3) goto LAB_005377d8;
       pcVar5 = "5. Dynamic render mode: ground types";
     }
-    crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff24,pcVar5);
-    engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff28,0,0x58);
-    crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff2c,"6. Confirm new actor names: %s");
-    engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff30,0,99);
-    uVar2 = *(uint *)(param_5 + 0x40);
+    crt_stdio_c_sprintf_FUN_005fdbd0(local_114,pcVar5);
+    engine_2d_c_drawText_FUN_00401fd0(local_114,0,0x58);
+    if (g_ConfirmNewActorNames == 0) {
+      pcVar5 = "OFF";
+    }
+    else {
+      pcVar5 = "ON";
+    }
+    crt_stdio_c_sprintf_FUN_005fdbd0(local_114,"6. Confirm new actor names: %s",pcVar5);
+    engine_2d_c_drawText_FUN_00401fd0(local_114,0,99);
+    uVar2 = *(uint *)(in_stack_00000004 + 0x40);
     if (uVar2 == 0) {
 LAB_00537848:
       pcVar5 = "7. Show waypoint coverage: off";
-      *(uint *)(param_5 + 0x40) = 0;
+      *(uint *)(in_stack_00000004 + 0x40) = 0;
     }
     else if (uVar2 < 2) {
       pcVar5 = "7. Show waypoint coverage: selected only";
@@ -80,26 +110,20 @@ LAB_00537848:
       if (uVar2 != 2) goto LAB_00537848;
       pcVar5 = "7. Show waypoint coverage: all";
     }
-    crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff34,pcVar5);
-    engine_2d_c_drawText_FUN_00401fd0(acStack_c8,0,0x6e);
-    builtin_strncpy(acStack_c8,"wxS",4);
+    crt_stdio_c_sprintf_FUN_005fdbd0(local_114,pcVar5);
+    engine_2d_c_drawText_FUN_00401fd0(local_114,0,0x6e);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-    builtin_strncpy(acStack_c8 + 4,"|xS",4);
     engine_2d_c_clearInputAndWait_FUN_00403260();
-    acStack_c8[4] = -0x78;
-    acStack_c8[5] = 'x';
-    acStack_c8[6] = 'S';
-    acStack_c8[7] = '\0';
     iVar3 = engine_keys_cpp_CKeys_getUppercasedInputKey_FUN_00502470(g_CKeysPtr);
     switch(iVar3) {
     case 0x31:
-      *(uint *)(param_5 + 0x30) = (uint)(*(int *)(param_5 + 0x30) == 0);
+      *(uint *)(in_stack_00000004 + 0x30) = (uint)(*(int *)(in_stack_00000004 + 0x30) == 0);
       break;
     case 0x32:
-      *(uint *)(param_5 + 0x34) = (uint)(*(int *)(param_5 + 0x34) == 0);
+      *(uint *)(in_stack_00000004 + 0x34) = (uint)(*(int *)(in_stack_00000004 + 0x34) == 0);
       break;
     case 0x33:
-      *(uint *)(param_5 + 0x38) = (uint)(*(int *)(param_5 + 0x38) == 0);
+      *(uint *)(in_stack_00000004 + 0x38) = (uint)(*(int *)(in_stack_00000004 + 0x38) == 0);
       break;
     case 0x34:
       g_DisableMouseHitOnBarrier = (int)(g_DisableMouseHitOnBarrier == 0);
@@ -111,7 +135,7 @@ LAB_00537848:
       g_ConfirmNewActorNames = (int)(g_ConfirmNewActorNames == 0);
       break;
     case 0x37:
-      *(int *)(param_5 + 0x40) = *(int *)(param_5 + 0x40) + 1;
+      *(int *)(in_stack_00000004 + 0x40) = *(int *)(in_stack_00000004 + 0x40) + 1;
     }
     if (iVar3 == 0x1b) {
       core_inivar_cpp_writeIniData_FUN_004fc510();

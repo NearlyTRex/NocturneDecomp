@@ -15,7 +15,7 @@ void __cdecl core_sound_cpp_CSound_setReverbPreset_FUN_005b3cc0(CSound *this_ptr
     core_main_c_displayErrorAndQuit_FUN_00506f10("CSound::setReverbPreset - invalid index");
   }
   core_sound_cpp_CSound_set3DListenerOrientRight_FUN_005b3c90
-            ((CSound *)index,g_SoundModeTable[index].listener_orient.x,
+            (this_ptr,g_SoundModeTable[index].listener_orient.x,
              g_SoundModeTable[index].listener_orient.y,g_SoundModeTable[index].listener_orient.z);
   return;
 }

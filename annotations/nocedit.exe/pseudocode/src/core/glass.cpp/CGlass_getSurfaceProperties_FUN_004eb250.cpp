@@ -12,11 +12,14 @@ core_glass_cpp_CGlass_getSurfaceProperties_FUN_004eb250(CGlass *this_ptr,SSurfac
 {
   float fVar1;
   float fVar2;
-  float10 fVar3;
-  float10 fVar4;
-  double dVar5;
-  int local_18;
-  float local_14;
+  float fVar3;
+  float fVar4;
+  float fVar5;
+  float10 fVar6;
+  float10 fVar7;
+  double dVar8;
+  int local_20;
+  int local_1c;
   
   core_actor_cpp_CDemonActor_getSurfaceProperties_FUN_00409840(&this_ptr->base,surface_info);
   if (this_ptr->mirror_flag == 0) {
@@ -29,30 +32,33 @@ core_glass_cpp_CGlass_getSurfaceProperties_FUN_004eb250(CGlass *this_ptr,SSurfac
   else {
     fVar1 = (surface_info->hit_position).y;
     fVar2 = (this_ptr->glass_size).y;
+    fVar3 = (surface_info->hit_position).x;
+    fVar4 = (this_ptr->glass_size).x;
+    fVar5 = (float)0.5;
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
               (g_CDemonRendererPtr,&this_ptr->broken_texture);
-    fVar4 = (float10)local_14 * (float10)g_CurrentTextureDimension;
-    dVar5 = crt_math_c_round_FUN_005fe6b0
-                      ((double)((float10)(1.0 - fVar1 / fVar2) * (float10)g_CurrentTextureDimension)
-                      );
-    fVar3 = (float10)dVar5;
-    dVar5 = crt_math_c_round_FUN_005fe6b0((double)fVar4);
-    local_18 = (int)ROUND(fVar3);
-    local_14 = (float)(int)ROUND(dVar5);
-    if (local_18 < 0) {
-      local_18 = 0;
+    fVar7 = (float10)(1.0 - fVar1 / fVar2) * (float10)g_CurrentTextureDimension;
+    dVar8 = crt_math_c_round_FUN_005fe6b0
+                      ((double)((float10)(fVar3 / fVar4 + fVar5) *
+                               (float10)g_CurrentTextureDimension));
+    fVar6 = (float10)dVar8;
+    dVar8 = crt_math_c_round_FUN_005fe6b0((double)fVar7);
+    local_20 = (int)ROUND(fVar6);
+    local_1c = (int)ROUND(dVar8);
+    if (local_20 < 0) {
+      local_20 = 0;
     }
-    if (g_CurrentTextureDimension <= local_18) {
-      local_18 = g_CurrentTextureDimension + -1;
+    if (g_CurrentTextureDimension <= local_20) {
+      local_20 = g_CurrentTextureDimension + -1;
     }
-    if ((int)local_14 < 0) {
-      local_14 = 0.0;
+    if (local_1c < 0) {
+      local_1c = 0;
     }
-    if (g_CurrentTextureDimension <= (int)local_14) {
-      local_14 = (float)(g_CurrentTextureDimension + -1);
+    if (g_CurrentTextureDimension <= local_1c) {
+      local_1c = g_CurrentTextureDimension + -1;
     }
-    if (*(char *)(local_18 + (int)local_14 * g_CurrentTextureDimension + (int)g_CurrentTextureData)
-        == '\0') {
+    if (*(char *)(local_20 + local_1c * g_CurrentTextureDimension + (int)g_CurrentTextureData) ==
+        '\0') {
       surface_info->alpha_or_wetness = 1.0;
       return;
     }

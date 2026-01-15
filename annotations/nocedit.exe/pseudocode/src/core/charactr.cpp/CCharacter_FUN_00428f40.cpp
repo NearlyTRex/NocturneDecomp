@@ -19,7 +19,6 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00428f40(CCharacter *this_ptr)
   SMotion *str1;
   uint uVar8;
   char *pcVar9;
-  BADSPACEBASE *in_ESP;
   int iVar10;
   CVector3f *pCVar11;
   CVector3f *pCVar12;
@@ -59,6 +58,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00428f40(CCharacter *this_ptr)
   int local_20;
   char *local_1c;
   float fStack_18;
+  float local_14;
   
   bVar15 = 0;
   core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
@@ -189,7 +189,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00428f40(CCharacter *this_ptr)
     if (local_34 < fVar7) {
       local_34 = this_ptr->size_scale * (float)0.5 + fVar7;
     }
-    local_c0 = core_setcolid_cpp_CDemonSet_testCapsuleCollision_FUN_00573470
+    local_14 = core_setcolid_cpp_CDemonSet_testCapsuleCollision_FUN_00573470
                          (g_CDemonSetPtr,(this_ptr->base_actor).location.position.x,
                           (this_ptr->base_actor).location.position.z,local_a8.x,local_a8.z,
                           *(float *)(this_ptr->cloth_data + 0x348) * this_ptr->size_scale,
@@ -215,8 +215,9 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00428f40(CCharacter *this_ptr)
       pCVar12->y = g_TempNormal2.y;
       pCVar12->z = g_TempNormal2.z;
     }
-    if (0.0 <= local_c0) {
-      if (1.0 < local_c0) {
+    if (0.0 <= local_14) {
+      local_c0 = local_14;
+      if (1.0 < local_14) {
         local_c0 = 1.0;
       }
       local_60 = local_a8.x * local_c0;
@@ -277,7 +278,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00428f40(CCharacter *this_ptr)
       local_a8.z = local_a8.z - fStack_64;
     }
     else {
-      local_40 = local_c0 + (float)-0.01;
+      local_40 = local_14 + (float)-0.01;
       local_90 = (g_CDemonSetPtr->collision_normal).x * local_40;
       local_8c = (g_CDemonSetPtr->collision_normal).y * local_40;
       local_88 = (g_CDemonSetPtr->collision_normal).z * local_40;

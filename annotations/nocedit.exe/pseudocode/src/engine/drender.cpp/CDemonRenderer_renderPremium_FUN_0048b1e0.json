@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 197,
+    "complexity_score": 111,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 6,
-    "pseudocode_lines": 62,
-    "suspect_count": 12,
+    "pseudocode_lines": 61,
+    "suspect_count": 4,
     "suspect_types": [
       "call_esp_preserve",
-      "pointer_cast",
-      "stack_param"
+      "pointer_cast"
     ],
-    "total_lines": 189
+    "total_lines": 188
   },
   "cross_references": [
     {
@@ -165,74 +164,18 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_0000000c",
-      "text": "int in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_0000000c",
-      "text": "if (0 < *(int *)(in_stack_0000000c + 4)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_0000000c",
-      "text": "iVar3 = in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 26,
+      "line": 25,
       "match": "(int *)((int)",
       "text": "*(int *)((int)g_VertexIndexBuffer + iVar2) = iVar1;",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_0000000c",
-      "text": "} while (iVar4 < *(int *)(in_stack_0000000c + 4));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 35,
-      "match": "in_stack_0000000c",
-      "text": "if (0 < *(int *)(in_stack_0000000c + 4)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 37,
-      "match": "in_stack_0000000c",
-      "text": "iVar3 = in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 39,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)g_VertexIndexBuffer + iVar2) = *(uint *)(iVar3 + 0x18);",
+      "line": 38,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)g_VertexIndexBuffer + iVar2) = pSVar3[1].base.type;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 43,
-      "match": "in_stack_0000000c",
-      "text": "} while (iVar4 < *(int *)(in_stack_0000000c + 4));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 62,
-      "match": "in_stack_0000000c",
-      "text": "(this_ptr,*(int *)(in_stack_0000000c + 4),g_VertexIndexBuffer);",
-      "type": "stack_param"
     },
     {
       "add_esp_value": 12,

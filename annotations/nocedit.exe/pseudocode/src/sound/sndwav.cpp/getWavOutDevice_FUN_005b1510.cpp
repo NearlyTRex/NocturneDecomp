@@ -11,18 +11,16 @@ CWavOutDevice * __cdecl sound_sndwav_cpp_getWavOutDevice_FUN_005b1510(UINT devic
 {
   int iVar1;
   MMRESULT MVar2;
-  BADSPACEBASE *in_ESP;
-  UINT in_stack_00000008;
-  UINT in_stack_00000018;
+  tagWAVEOUTCAPSA local_34;
   
   iVar1 = sound_sndwav_cpp_CWavOutDevice_close_FUN_005b0840(&g_CWavOutDeviceInstance);
   if (iVar1 == 0) {
     return (CWavOutDevice *)0x0;
   }
-  MVar2 = (*waveOutGetDevCapsA)(in_stack_00000008,(LPWAVEOUTCAPSA)&stack0xffffffd0,0x34);
+  MVar2 = (*waveOutGetDevCapsA)(device_id,&local_34,0x34);
   if (MVar2 != 0) {
     return (CWavOutDevice *)0x0;
   }
-  g_WaveOutDeviceID = in_stack_00000018;
+  g_WaveOutDeviceID = device_id;
   return &g_CWavOutDeviceInstance;
 }

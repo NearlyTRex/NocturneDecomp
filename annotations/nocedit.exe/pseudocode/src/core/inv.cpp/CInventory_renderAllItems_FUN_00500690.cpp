@@ -17,14 +17,13 @@ void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_00500690(CInventory *thi
   char *pcVar5;
   int iVar6;
   CAlphaBitmap *this_ptr_00;
-  BADSPACEBASE *in_ESP;
   char *pcVar7;
   int iVar8;
   char *pcVar9;
   byte bVar10;
   double dVar11;
   CBitFont *pCVar12;
-  float local_680;
+  float fStack_684;
   float local_67c;
   char local_678 [4];
   char acStack_674 [252];
@@ -43,7 +42,7 @@ void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_00500690(CInventory *thi
   int local_6c;
   int local_68;
   int local_64;
-  int local_60;
+  uint local_60;
   int local_5c;
   int local_58;
   int local_54;
@@ -98,7 +97,7 @@ void __cdecl core_inv_cpp_CInventory_renderAllItems_FUN_00500690(CInventory *thi
   if (this_ptr->weapon_highlight_timer < 1.0) {
     dVar11 = crt_math_c_round_FUN_005fe6b0
                        ((double)(this_ptr->weapon_highlight_timer * 65535f));
-    local_68 = (int)ROUND(dVar11);
+    local_6c = (int)ROUND(dVar11);
   }
   pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790
                      (&this_ptr->selected_weapon->base_actor,g_CLightGunClassInfo.name_hash);
@@ -282,6 +281,7 @@ LAB_005009c0:
       local_24 = (CBitFont *)local_44;
       local_40 = engine_font_cpp_CBitFont_wrapText_FUN_004d0010
                            ((CBitFont *)local_44,local_578,DAT_02db9670,10,0x100,iVar6 - local_5c);
+      local_14 = local_40;
       local_3c = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0((CBitFont *)local_44,0x58);
       iVar3 = (g_WindowHeight - iVar3) + local_4c;
       local_38 = local_4c + (g_WindowWidth - iVar6);
@@ -321,28 +321,29 @@ LAB_005009c0:
     local_64 = 0xffff;
     if (local_67c < 1.0) {
       dVar11 = crt_math_c_round_FUN_005fe6b0((double)(local_67c * 65535f));
-      local_64 = (int)ROUND(dVar11);
+      local_68 = (int)ROUND(dVar11);
     }
-    local_680 = (g_HeroActors[g_LocalHeroIndex]->base_character).hit_points * (float)0.01
-    ;
-    if (local_680 < 0.0) {
-      local_680 = 0.0;
+    fStack_684 = (g_HeroActors[g_LocalHeroIndex]->base_character).hit_points *
+                 (float)0.01;
+    if (fStack_684 < 0.0) {
+      fStack_684 = 0.0;
     }
-    if (1.0 < local_680) {
-      local_680 = 1.0;
+    if (1.0 < fStack_684) {
+      fStack_684 = 1.0;
     }
-    local_14 = 0x3f;
+    local_18 = (CBitFont *)0x3f;
     iVar6 = 0x1b;
     if (g_WindowHeight < 0x180) {
-      local_14 = 0x1f;
+      local_18 = (CBitFont *)0x1f;
       iVar6 = 0xd;
     }
-    local_74 = (g_WindowWidth + -4) - iVar6;
+    local_78 = (g_WindowWidth + -4) - iVar6;
     iVar3 = 0x500e4e;
-    dVar11 = crt_math_c_round_FUN_005fe6b0((double)((float)local_14 - (float)local_14 * local_680));
-    local_74 = (int)ROUND(dVar11);
+    dVar11 = crt_math_c_round_FUN_005fe6b0
+                       ((double)((float)(int)local_18 - (float)(int)local_18 * fStack_684));
+    local_78 = (int)ROUND(dVar11);
     engine_alphabit_cpp_CAlphaBitmap_render_FUN_00410b00
-              (&g_HealthBar1Bitmap,local_78,local_74 + 4,0,local_74,iVar6 + -1,iVar3);
+              (&g_HealthBar1Bitmap,iStack_7c,local_78 + 4,0,local_78,iVar6 + -1,iVar3);
     engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(&g_HealthBar2Bitmap,local_74,4,alpha);
   }
   dVar11 = (double)this_ptr->message_display_timer;
@@ -350,9 +351,9 @@ LAB_005009c0:
     local_60 = 0xffff;
     if (dVar11 < 1.0) {
       dVar11 = crt_math_c_round_FUN_005fe6b0(dVar11 * 65535);
-      local_60 = (int)ROUND(dVar11);
+      local_64 = (int)ROUND(dVar11);
     }
-    engine_3d_c_setRenderAlpha_FUN_00406d80(local_60);
+    engine_3d_c_setRenderAlpha_FUN_00406d80(local_64);
     local_18 = g_SmallEditorFont;
     iVar6 = g_InventoryHeight;
     if (g_WindowHeight < 0x180) {

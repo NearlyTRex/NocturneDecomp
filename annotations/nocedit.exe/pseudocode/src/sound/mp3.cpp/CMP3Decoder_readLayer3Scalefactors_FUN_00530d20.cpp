@@ -13,13 +13,12 @@ sound_mp3_cpp_CMP3Decoder_readLayer3Scalefactors_FUN_00530d20
 
 {
   uint uVar1;
-  int iVar2;
-  uint *puVar3;
-  int iVar4;
-  uint *puVar5;
-  int *piVar6;
-  uint *puVar8;
-  int local_60;
+  int *piVar2;
+  int iVar3;
+  uint *puVar4;
+  int *piVar5;
+  uint *puVar6;
+  uint *puVar7;
   int local_54;
   SMpegLayer3Granule *local_50;
   int local_4c;
@@ -29,91 +28,95 @@ sound_mp3_cpp_CMP3Decoder_readLayer3Scalefactors_FUN_00530d20
   int local_3c;
   int local_38;
   int local_34;
-  int local_2c;
+  uint *local_24;
   int local_20;
-  int local_18;
-  int *piVar7;
+  int local_1c;
   
   if ((granule_info[granule_index].table_select[channel * 0x12 + -3] != 0) &&
      (granule_info[granule_index].table_select[channel * 0x12 + -2] == 2)) {
-    puVar8 = (uint *)(scalefactor_dest + granule_index * 0x3e);
+    puVar7 = (uint *)(scalefactor_dest + granule_index * 0x3e);
     if (granule_info[granule_index].table_select[channel * 0x12 + -1] == 0) {
       local_48 = 0;
       local_34 = 0;
       do {
-        iVar2 = *(int *)((int)g_Layer3ShortBandBoundaries + local_34);
-        local_18 = local_48;
-        local_20 = iVar2 * 4;
-        if (iVar2 < *(int *)((int)g_Layer3ShortBandBoundaries + local_34 + 4)) {
+        local_1c = *(int *)((int)g_Layer3ShortBandBoundaries + local_34);
+        local_20 = local_1c * 4;
+        if (local_1c < *(int *)((int)g_Layer3ShortBandBoundaries + local_34 + 4)) {
+          local_24 = puVar7 + local_1c + 0x27;
           do {
-            puVar5 = (uint *)(local_20 + (int)puVar8);
+            puVar6 = (uint *)(local_20 + (int)puVar7);
             do {
-              puVar3 = puVar5 + 0xd;
+              puVar4 = puVar6 + 0xd;
               uVar1 = sound_mp3_cpp_CMP3Decoder_readBits_FUN_0052f170
                                 (this_ptr,*(uint *)((int)g_Layer3ScalefacLengths1 +
                                                    granule_info[granule_index].table_select
-                                                   [channel * 0x12 + -4] * 4 + local_18));
-              puVar5[0x17] = uVar1;
-              puVar5 = puVar3;
-            } while (puVar3 != puVar8 + iVar2 + 0x27);
+                                                   [channel * 0x12 + -4] * 4 + local_48));
+              puVar6[0x17] = uVar1;
+              puVar6 = puVar4;
+            } while (puVar4 != local_24);
+            local_24 = local_24 + 1;
             local_20 = local_20 + 4;
-            local_18 = local_18 + 1;
-          } while (local_18 < (int)puVar8[0x19f990]);
+            local_1c = local_1c + 1;
+          } while (local_1c < *(int *)((int)g_Layer3ShortBandBoundaries + local_34 + 4));
         }
         local_48 = local_48 + 0x40;
         local_34 = local_34 + 4;
       } while (local_48 != 0x80);
-      piVar6 = scalefactor_dest + granule_index * 0x3e + 0xc;
+      piVar2 = scalefactor_dest + granule_index * 0x3e + 0xc;
       do {
-        piVar7 = piVar6 + 0xd;
-        piVar6[0x17] = 0;
-        piVar6 = piVar7;
-      } while (piVar7 != scalefactor_dest + granule_index * 0x3e + 0x33);
+        piVar5 = piVar2 + 0xd;
+        piVar2[0x17] = 0;
+        piVar2 = piVar5;
+      } while (piVar5 != scalefactor_dest + granule_index * 0x3e + 0x33);
       return;
     }
-    puVar5 = puVar8;
+    puVar6 = puVar7;
     do {
-      puVar3 = puVar5 + 1;
+      puVar4 = puVar6 + 1;
       uVar1 = sound_mp3_cpp_CMP3Decoder_readBits_FUN_0052f170
                         (this_ptr,g_Layer3ScalefacLengths1
                                   [granule_info[granule_index].table_select[channel * 0x12 + -4]]);
-      *puVar5 = uVar1;
-      puVar5 = puVar3;
-    } while (puVar3 != puVar8 + 8);
-    local_38 = 3;
+      *puVar6 = uVar1;
+      puVar6 = puVar4;
+    } while (puVar4 != puVar7 + 8);
+    local_54 = 0xa8;
+    local_3c = 3;
     do {
-      iVar2 = (int)granule_info + local_3c * 4 + (int)frame * 0xf8;
+      piVar2 = scalefactor_dest + granule_index * 0x3e + local_3c;
       do {
-        iVar4 = iVar2 + 0x34;
+        piVar5 = piVar2 + 0xd;
         uVar1 = sound_mp3_cpp_CMP3Decoder_readBits_FUN_0052f170
                           (this_ptr,g_Layer3ScalefacLengths1
                                     [granule_info[granule_index].table_select[channel * 0x12 + -4]])
         ;
-        *(uint *)(iVar2 + 0x5c) = uVar1;
-        iVar2 = iVar4;
-      } while (iVar4 != local_60 + local_54);
-      local_38 = local_38 + 1;
-    } while (local_38 < 6);
-    local_3c = 6;
+        piVar2[0x17] = uVar1;
+        piVar2 = piVar5;
+      } while (piVar5 != (int *)((int)scalefactor_dest + local_54 + granule_index * 0xf8));
+      local_3c = local_3c + 1;
+      local_54 = local_54 + 4;
+    } while (local_3c < 6);
+    local_40 = 6;
+    local_4c = 0xb4;
     do {
-      iVar2 = (int)granule_info + local_40 * 4 + (int)frame * 0xf8;
+      piVar2 = scalefactor_dest + granule_index * 0x3e + local_40;
       do {
-        iVar4 = iVar2 + 0x34;
+        piVar5 = piVar2 + 0xd;
         uVar1 = sound_mp3_cpp_CMP3Decoder_readBits_FUN_0052f170
                           (this_ptr,g_Layer3ScalefacLengths2
                                     [granule_info[granule_index].table_select[channel * 0x12 + -4]])
         ;
-        *(uint *)(iVar2 + 0x5c) = uVar1;
-        iVar2 = iVar4;
-      } while (iVar4 != (int)granule_info + local_4c + (int)frame * 0xf8);
-      local_3c = local_3c + 1;
-    } while (local_3c < 0xc);
-    iVar2 = (int)granule_info + (int)frame * 0xf8 + 0x30;
+        piVar2[0x17] = uVar1;
+        piVar2 = piVar5;
+      } while (piVar5 != (int *)((int)scalefactor_dest + local_4c + granule_index * 0xf8));
+      local_40 = local_40 + 1;
+      local_4c = local_4c + 4;
+    } while (local_40 < 0xc);
+    piVar2 = scalefactor_dest + granule_index * 0x3e + 0xc;
     do {
-      iVar4 = iVar2 + 0x34;
-      *(uint *)(iVar2 + 0x5c) = 0;
-      iVar2 = iVar4;
-    } while (iVar4 != (int)granule_info + (int)frame * 0xf8 + 0xcc);
+      piVar5 = piVar2 + 0xd;
+      piVar2[0x17] = 0;
+      piVar2 = piVar5;
+    } while (piVar5 != scalefactor_dest + granule_index * 0x3e + 0x33);
     return;
   }
   local_38 = 0;
@@ -121,19 +124,19 @@ sound_mp3_cpp_CMP3Decoder_readLayer3Scalefactors_FUN_00530d20
   local_44 = 0;
   do {
     if ((*(int *)local_50->field2_0x8 == 0) || (channel == 0)) {
-      iVar2 = *(int *)((int)g_Layer3LongBandBoundaries + local_38);
-      puVar8 = (uint *)(scalefactor_dest + granule_index * 0x3e + iVar2);
-      if (iVar2 < *(int *)((int)g_Layer3LongBandBoundaries + local_38 + 4)) {
+      iVar3 = *(int *)((int)g_Layer3LongBandBoundaries + local_38);
+      puVar7 = (uint *)(scalefactor_dest + granule_index * 0x3e + iVar3);
+      if (iVar3 < *(int *)((int)g_Layer3LongBandBoundaries + local_38 + 4)) {
         do {
           uVar1 = sound_mp3_cpp_CMP3Decoder_readBits_FUN_0052f170
                             (this_ptr,g_Layer3ScalefacLengths1
                                       [(uint)(1 < local_44) * 0x10 +
                                        granule_info[granule_index].table_select[channel * 0x12 + -4]
                                       ]);
-          *puVar8 = uVar1;
-          iVar2 = iVar2 + 1;
-          puVar8 = puVar8 + 1;
-        } while (iVar2 < *(int *)((int)g_Layer3LongBandBoundaries + local_2c + 4));
+          *puVar7 = uVar1;
+          iVar3 = iVar3 + 1;
+          puVar7 = puVar7 + 1;
+        } while (iVar3 < *(int *)((int)g_Layer3LongBandBoundaries + local_38 + 4));
       }
     }
     local_38 = local_38 + 4;

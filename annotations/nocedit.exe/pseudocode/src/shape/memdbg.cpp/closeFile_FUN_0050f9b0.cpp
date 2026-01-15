@@ -12,8 +12,6 @@ shape_memdbg_cpp_closeFile_FUN_0050f9b0(FILE *file_ptr,char *source_file,int lin
 {
   int iVar1;
   int iVar2;
-  uint in_stack_00000010;
-  uint in_stack_00000014;
   
   if (g_RecursiveCallFlag == 0) {
     if (g_FileMutex == (HANDLE)0x0) {
@@ -29,7 +27,7 @@ shape_memdbg_cpp_closeFile_FUN_0050f9b0(FILE *file_ptr,char *source_file,int lin
     g_CurrentFilename = "..\\shape\\memdbg.cpp";
     g_CurrentLineNumber = 0x216;
     core_main_c_displayErrorAndQuit_FUN_00506f10
-              ("Tried to close NULL file pointer at %s line %d",in_stack_00000014,line_number);
+              ("Tried to close NULL file pointer at %s line %d",source_file,line_number);
   }
   iVar2 = 0;
   if (0 < g_OpenFileCount) {
@@ -39,15 +37,15 @@ shape_memdbg_cpp_closeFile_FUN_0050f9b0(FILE *file_ptr,char *source_file,int lin
         if (g_FileRegistry[0].directory[iVar1] == '\0') {
           shape_memdbg_cpp_traceFile_FUN_0050f180
                     ("Closing %s at %s line %d, originally opened for %s at %s line %d",g_FileRegistry[0].filename + iVar1,
-                     in_stack_00000010,line_number,iVar1 + 0x2f0db54,iVar1 + 0x2f0db68,
+                     source_file,line_number,iVar1 + 0x2f0db54,iVar1 + 0x2f0db68,
                      *(uint *)((int)&g_FileRegistry[0].line_number + iVar1));
         }
         else {
           shape_memdbg_cpp_traceFile_FUN_0050f180
                     ("Closing %s in %s at %s line %d, originally opened for %s in %s line %d",iVar1 + 0x2f0da50,
-                     g_FileRegistry[0].filename + iVar1,in_stack_00000010,line_number,
-                     iVar1 + 0x2f0db54,iVar1 + 0x2f0db68,
-                     *(uint *)((int)&g_FileRegistry[0].line_number + iVar1));
+                     g_FileRegistry[0].filename + iVar1,source_file,line_number,iVar1 + 0x2f0db54,
+                     iVar1 + 0x2f0db68,*(uint *)((int)&g_FileRegistry[0].line_number + iVar1))
+          ;
         }
         g_OpenFileCount = g_OpenFileCount + -1;
         crt_string_c_memmove_FUN_005fe5e0
@@ -66,7 +64,7 @@ shape_memdbg_cpp_closeFile_FUN_0050f9b0(FILE *file_ptr,char *source_file,int lin
     g_CurrentFilename = "..\\shape\\memdbg.cpp";
     g_CurrentLineNumber = 0x235;
     core_main_c_displayErrorAndQuit_FUN_00506f10
-              ("Tried to close file which which was never opened.  (Possibly closing a file twice?)\n%s line %d",in_stack_00000014,line_number);
+              ("Tried to close file which which was never opened.  (Possibly closing a file twice?)\n%s line %d",source_file,line_number);
   }
   return 0;
 }

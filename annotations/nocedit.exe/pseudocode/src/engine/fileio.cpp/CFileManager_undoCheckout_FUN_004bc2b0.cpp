@@ -11,109 +11,86 @@ engine_fileio_cpp_CFileManager_undoCheckout_FUN_004bc2b0
           (CFileManager *this_ptr,CCheckOutItem *checkout_item)
 
 {
-  CFileManager *this_ptr_00;
-  CCheckOutItem *this_ptr_01;
   int iVar1;
   int iVar2;
-  BADSPACEBASE *in_ESP;
-  CStrList_vtable *in_stack_00000010;
-  char **in_stack_fffff880;
-  CStrList_vtable *in_stack_fffff884;
-  char **in_stack_fffff888;
-  CStrList_vtable *in_stack_fffff88c;
-  char **in_stack_fffff890;
-  CStrList_vtable *in_stack_fffff894;
-  uint in_stack_fffff898;
-  char acStack_3e4 [4];
-  char acStack_3e0 [456];
-  char acStack_218 [4];
-  byte auStack_214 [4];
-  char acStack_210 [248];
-  char acStack_118 [4];
-  char acStack_114 [20];
-  char acStack_100 [28];
-  char acStack_e4 [4];
-  char acStack_e0 [8];
-  char acStack_d8 [208];
+  char *in_stack_0000000c;
+  uint in_stack_fffff844;
+  uint in_stack_fffff848;
+  char **in_stack_fffff84c;
+  CStrList_vtable *in_stack_fffff850;
+  uint in_stack_fffff854;
+  char local_414 [500];
+  char local_220 [260];
+  char local_11c [260];
+  CStrList local_18;
   
-  this_ptr_01 = checkout_item;
-  this_ptr_00 = this_ptr;
   iVar1 = engine_fileio_cpp_CFileManager_createPodConfigWizard_FUN_004bccf0(this_ptr);
   if (iVar1 != 0) {
     iVar1 = engine_fileio_cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50
-                      (this_ptr_01,(char *)in_stack_00000010,acStack_118,
-                       "Select file to undo check out","*.pod");
+                      (checkout_item,in_stack_0000000c,local_11c,"Select file to undo check out"
+                       ,"*.pod");
     if (iVar1 != 0) {
       iVar1 = engine_fileio_cpp_CCheckOutItem_selectCheckedOutFile_FUN_004b3f50
-                        (this_ptr_01,acStack_114,acStack_218,"Select file to undo check out",
+                        (checkout_item,local_11c,local_220,"Select file to undo check out",
                          "*");
       if (iVar1 != 0) {
         iVar1 = engine_fileio_cpp_CCheckOutItem_removeCheckOutBookkeeping_FUN_004b35a0
-                          (this_ptr_01,auStack_214);
+                          (checkout_item,local_220);
         if (iVar1 != 0) {
           iVar1 = engine_fileio_cpp_getLatestFileFromRepository_FUN_004b3220
-                            (this_ptr_01->name,acStack_210);
+                            (checkout_item->name,local_220);
           if (iVar1 != 0) {
-            shape_edittool_cpp_CStrList_ctor_FUN_004a2a20((CStrList *)&stack0xfffffffc);
-            engine_fileio_cpp_CFileManager_parsePodConfigFile_FUN_004ba4f0
-                      (this_ptr_00,(CStrList *)&stack0x00000000);
+            shape_edittool_cpp_CStrList_ctor_FUN_004a2a20(&local_18);
+            engine_fileio_cpp_CFileManager_parsePodConfigFile_FUN_004ba4f0(this_ptr,&local_18);
             iVar1 = engine_fileio_cpp_CFileManager_findPodInList_FUN_004ba6c0
-                              (this_ptr_00,(CStrList *)&this_ptr,acStack_100);
+                              (this_ptr,&local_18,local_11c);
             if (iVar1 < 0) {
-              shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff864);
+              shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff844);
               shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                        ((CStrList *)&stack0xfffff868,"Delete local files and mount");
+                        ((CStrList *)&stack0xfffff844,"Delete local files and mount");
               shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                        ((CStrList *)&stack0xfffff86c,"Delete local files but don't mount");
+                        ((CStrList *)&stack0xfffff844,"Delete local files but don't mount");
               shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                        ((CStrList *)&stack0xfffff870,"Keep files extracted and pod dismounted");
-              crt_stdio_c_sprintf_FUN_005fdbd0(acStack_3e4,"Undo checkout on %s");
+                        ((CStrList *)&stack0xfffff844,"Keep files extracted and pod dismounted");
+              crt_stdio_c_sprintf_FUN_005fdbd0(local_414,"Undo checkout on %s",local_11c);
               iVar1 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                                ((CPickList *)&stack0xfffff878,acStack_3e0,-1,0);
+                                ((CPickList *)&stack0xfffff844,local_414,-1,0);
               if (iVar1 == 0) {
                 iVar2 = engine_fileio_cpp_CFileManager_deleteLocalFilesFromPod_FUN_004bca50
-                                  (this_ptr_00,acStack_e4);
+                                  (this_ptr,local_11c);
                 if (iVar2 == 0) {
                   shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                            ((CPickList *)&stack0xfffff880,0,(uint)in_stack_fffff880,
-                             (uint)in_stack_fffff884,(uint)in_stack_fffff888,(uint)in_stack_fffff88c
-                             ,(uint)in_stack_fffff890);
-                  shape_edittool_cpp_CStrList_dtor_FUN_004a2a40
-                            ((CStrList *)&stack0x00000028,0,(uint)in_stack_fffff884);
+                            ((CPickList *)&stack0xfffff844,0,in_stack_fffff844,in_stack_fffff848,
+                             (uint)in_stack_fffff84c,(uint)in_stack_fffff850,in_stack_fffff854);
+                  shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_18,0,in_stack_fffff844);
                   return 0;
                 }
-                shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                          ((CStrList *)&stack0x00000024,acStack_e0);
-                engine_fileio_cpp_CFileManager_writePodConfigFile_FUN_004ba620
-                          (this_ptr_00,(CStrList *)&stack0x00000028);
+                shape_edittool_cpp_CStrList_add_FUN_004a2b80(&local_18,local_11c);
+                engine_fileio_cpp_CFileManager_writePodConfigFile_FUN_004ba620(this_ptr,&local_18);
               }
               if (iVar1 == 1) {
                 iVar1 = engine_fileio_cpp_CFileManager_deleteLocalFilesFromPod_FUN_004bca50
-                                  (this_ptr_00,acStack_d8);
+                                  (this_ptr,local_11c);
                 if (iVar1 == 0) {
                   shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                            ((CPickList *)&stack0xfffff888,0,(uint)in_stack_fffff888,
-                             (uint)in_stack_fffff88c,(uint)in_stack_fffff890,(uint)in_stack_fffff894
-                             ,in_stack_fffff898);
-                  shape_edittool_cpp_CStrList_dtor_FUN_004a2a40
-                            ((CStrList *)&stack0x00000030,0,(uint)in_stack_fffff88c);
+                            ((CPickList *)&stack0xfffff844,0,in_stack_fffff844,in_stack_fffff848,
+                             (uint)in_stack_fffff84c,(uint)in_stack_fffff850,in_stack_fffff854);
+                  shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_18,0,in_stack_fffff844);
                   return 0;
                 }
               }
               shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                        ((CPickList *)&stack0xfffff888,0,(uint)in_stack_fffff888,
-                         (uint)in_stack_fffff88c,(uint)in_stack_fffff890,(uint)in_stack_fffff894,
-                         in_stack_fffff898);
+                        ((CPickList *)&stack0xfffff844,0,in_stack_fffff844,in_stack_fffff848,
+                         (uint)in_stack_fffff84c,(uint)in_stack_fffff850,in_stack_fffff854);
             }
             else {
               iVar1 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
                                 (g_CEditorToolsPtr,"Delete local files?");
               if (iVar1 != 0) {
                 iVar1 = engine_fileio_cpp_CFileManager_deleteLocalFilesFromPod_FUN_004bca50
-                                  (this_ptr_00,acStack_d8);
+                                  (this_ptr,local_11c);
                 if (iVar1 == 0) {
-                  shape_edittool_cpp_CStrList_dtor_FUN_004a2a40
-                            ((CStrList *)&stack0x00000030,0,(uint)in_stack_fffff88c);
+                  shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_18,0,in_stack_fffff844);
                   return 0;
                 }
               }
@@ -125,7 +102,7 @@ engine_fileio_cpp_CFileManager_undoCheckout_FUN_004bc2b0
               (*g_CDemonPodPtr->vtable->load)((CPod *)g_CDemonPodPtr);
             }
             shape_edittool_cpp_CStrList_dtor_FUN_004a2a40
-                      ((CStrList *)&stack0x00000030,0,(uint)in_stack_fffff88c);
+                      ((CStrList *)&local_18.capacity,0,in_stack_fffff848);
             return 0;
           }
         }

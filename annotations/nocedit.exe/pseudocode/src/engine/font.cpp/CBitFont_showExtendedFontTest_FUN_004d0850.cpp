@@ -37,9 +37,8 @@ engine_font_cpp_CBitFont_showExtendedFontTest_FUN_004d0850
     iVar5 = iVar5 + iVar1 + 1;
     if ((uint)screen_width < this_ptr->char_spacing + iVar5 + this_ptr->max_char_height + 1U) {
       if ((uint)(this_ptr->max_char_width + iVar4) < (uint)screen_height) {
-        iVar2 = iVar4 + -1;
         g_ActiveRenderColor = 4;
-        engine_2d_c_drawLine_FUN_004011b0(3,iVar2,screen_width + -1,iVar2);
+        engine_2d_c_drawLine_FUN_004011b0(3,iVar4 + -1,screen_width + -1,iVar4 + -1);
         g_ActiveRenderColor = 4;
         engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(this_ptr,0xc5);
         iVar5 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(this_ptr,0xc5);
@@ -72,19 +71,18 @@ engine_font_cpp_CBitFont_showExtendedFontTest_FUN_004d0850
     engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(this_ptr,0xc5);
     iVar5 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(this_ptr,0xc5);
     engine_2d_c_drawLine_FUN_004011b0(3,iVar5 + iVar4,iVar2,iVar3);
-    iVar2 = this_ptr->max_char_width + iVar4;
+    iVar5 = this_ptr->max_char_width + iVar4;
     g_ActiveRenderColor = 4;
-    engine_2d_c_drawLine_FUN_004011b0(3,iVar2,screen_width + -1,iVar2);
+    engine_2d_c_drawLine_FUN_004011b0(3,iVar5,screen_width + -1,iVar5);
   }
-  iVar2 = 0x7f;
+  iVar5 = 0x7f;
   local_1c = 10;
   do {
-    iVar5 = engine_font_cpp_CBitFont_drawCharacter_FUN_004ce7a0(this_ptr,iVar2,local_1c,iVar4,6,-1);
-    iVar2 = iVar2 + 1;
-    local_1c = local_1c + iVar5 + 1;
-  } while (iVar2 < 0x90);
+    iVar1 = engine_font_cpp_CBitFont_drawCharacter_FUN_004ce7a0(this_ptr,iVar5,local_1c,iVar4,6,-1);
+    iVar5 = iVar5 + 1;
+    local_1c = local_1c + iVar1 + 1;
+  } while (iVar5 < 0x90);
   iVar4 = iVar4 + iVar3;
-  iVar2 = -1;
   engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
             (this_ptr,s_A_a_0062a86f,(uint)screen_width >> 1,iVar4 - iVar3,6,-1);
   if ((uint)(this_ptr->max_char_width + iVar4) < (uint)screen_height) {
@@ -94,19 +92,18 @@ engine_font_cpp_CBitFont_showExtendedFontTest_FUN_004d0850
     engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(this_ptr,0xc5);
     iVar5 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(this_ptr,0xc5);
     engine_2d_c_drawLine_FUN_004011b0(3,iVar5 + iVar4,iVar2,iVar3);
-    iVar2 = this_ptr->max_char_width + iVar4;
+    iVar5 = this_ptr->max_char_width + iVar4;
     g_ActiveRenderColor = 4;
-    engine_2d_c_drawLine_FUN_004011b0(3,iVar2,screen_width + -1,iVar2);
+    engine_2d_c_drawLine_FUN_004011b0(3,iVar5,screen_width + -1,iVar5);
   }
-  iVar2 = 0x90;
+  iVar5 = 0x90;
   local_20 = 10;
   do {
-    iVar5 = engine_font_cpp_CBitFont_drawCharacter_FUN_004ce7a0(this_ptr,iVar2,local_20,iVar4,6,-1);
-    iVar2 = iVar2 + 1;
-    local_20 = local_20 + iVar5 + 1;
-  } while (iVar2 < 0xa0);
+    iVar1 = engine_font_cpp_CBitFont_drawCharacter_FUN_004ce7a0(this_ptr,iVar5,local_20,iVar4,6,-1);
+    iVar5 = iVar5 + 1;
+    local_20 = local_20 + iVar1 + 1;
+  } while (iVar5 < 0xa0);
   iVar4 = iVar4 + iVar3;
-  iVar2 = -1;
   engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
             (this_ptr,s_____0062a87d,(uint)screen_width >> 1,iVar4 - iVar3,6,-1);
   if ((uint)(this_ptr->max_char_width + iVar4) < (uint)screen_height) {
@@ -116,19 +113,18 @@ engine_font_cpp_CBitFont_showExtendedFontTest_FUN_004d0850
     engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(this_ptr,0xc5);
     iVar5 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(this_ptr,0xc5);
     engine_2d_c_drawLine_FUN_004011b0(3,iVar5 + iVar4,iVar2,iVar3);
-    iVar2 = this_ptr->max_char_width + iVar4;
+    iVar5 = this_ptr->max_char_width + iVar4;
     g_ActiveRenderColor = 4;
-    engine_2d_c_drawLine_FUN_004011b0(3,iVar2,screen_width + -1,iVar2);
+    engine_2d_c_drawLine_FUN_004011b0(3,iVar5,screen_width + -1,iVar5);
   }
-  iVar2 = 0xa0;
+  iVar5 = 0xa0;
   local_24 = 10;
   do {
-    iVar5 = engine_font_cpp_CBitFont_drawCharacter_FUN_004ce7a0(this_ptr,iVar2,local_24,iVar4,6,-1);
-    iVar2 = iVar2 + 1;
-    local_24 = local_24 + iVar5 + 1;
-  } while (iVar2 < 0xb0);
+    iVar1 = engine_font_cpp_CBitFont_drawCharacter_FUN_004ce7a0(this_ptr,iVar5,local_24,iVar4,6,-1);
+    iVar5 = iVar5 + 1;
+    local_24 = local_24 + iVar1 + 1;
+  } while (iVar5 < 0xb0);
   iVar4 = iVar4 + iVar3;
-  iVar2 = -1;
   engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
             (this_ptr,s__0062a892,(uint)screen_width >> 1,iVar4 - iVar3,6,-1);
   if ((uint)(this_ptr->max_char_width + iVar4) < (uint)screen_height) {
@@ -138,21 +134,21 @@ engine_font_cpp_CBitFont_showExtendedFontTest_FUN_004d0850
     engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(this_ptr,0xc5);
     iVar5 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(this_ptr,0xc5);
     engine_2d_c_drawLine_FUN_004011b0(3,iVar5 + iVar4,iVar2,iVar3);
-    iVar2 = this_ptr->max_char_width + iVar4;
+    iVar5 = this_ptr->max_char_width + iVar4;
     g_ActiveRenderColor = 4;
-    engine_2d_c_drawLine_FUN_004011b0(3,iVar2,screen_width + -1,iVar2);
+    engine_2d_c_drawLine_FUN_004011b0(3,iVar5,screen_width + -1,iVar5);
   }
-  iVar2 = 0xb0;
+  iVar5 = 0xb0;
   local_28 = 10;
   do {
-    iVar5 = engine_font_cpp_CBitFont_drawCharacter_FUN_004ce7a0(this_ptr,iVar2,local_28,iVar4,6,-1);
-    iVar2 = iVar2 + 1;
-    local_28 = local_28 + iVar5 + 1;
-  } while (iVar2 < 0xc0);
-  iVar2 = this_ptr->max_char_width;
+    iVar1 = engine_font_cpp_CBitFont_drawCharacter_FUN_004ce7a0(this_ptr,iVar5,local_28,iVar4,6,-1);
+    iVar5 = iVar5 + 1;
+    local_28 = local_28 + iVar1 + 1;
+  } while (iVar5 < 0xc0);
   iVar4 = iVar4 + iVar3;
   engine_font_cpp_CBitFont_drawTextFV_FUN_004cdc20
-            (this_ptr,(uint)screen_width >> 1,iVar4 - iVar3,1,6,"maxCharHght: %d");
+            (this_ptr,(uint)screen_width >> 1,iVar4 - iVar3,1,6,"maxCharHght: %d",
+             this_ptr->max_char_width);
   if ((uint)(this_ptr->max_char_width + iVar4) < (uint)screen_height) {
     g_ActiveRenderColor = 4;
     engine_2d_c_drawLine_FUN_004011b0(3,iVar4 + -1,screen_width + -1,iVar4 + -1);

@@ -28,7 +28,6 @@ void core_imp_cpp_FUN_004f9c30(void)
   int extraout_EAX;
   int extraout_EAX_00;
   uint uVar13;
-  BADSPACEBASE *in_ESP;
   double dVar14;
   CEnemy *in_stack_00000004;
   float in_stack_00000008;

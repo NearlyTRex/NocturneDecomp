@@ -1,23 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 335,
-    "complexity_score": 791,
+    "complexity_score": 705,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 25,
-    "pseudocode_lines": 111,
-    "suspect_count": 64,
+    "pseudocode_lines": 135,
+    "suspect_count": 55,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
-      "format_string_mismatch",
       "lea_esp_stack_addr",
-      "register_param",
-      "stack_ref",
-      "unaffected_reg",
+      "stack_param",
       "variadic_preserve"
     ],
-    "total_lines": 446
+    "total_lines": 470
   },
   "cross_references": [
     {
@@ -310,144 +306,116 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 5,
-      "match": "unaff_EBX",
-      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Ghidra failed to resolve stack frame",
+      "description": "Unresolved stack parameter",
       "line": 12,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
     },
     {
-      "description": "Inferred register parameter",
-      "line": 12,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000004",
+      "text": "local_14 = in_stack_00000004 + 0x44;",
+      "type": "stack_param"
     },
     {
-      "description": "Direct stack address reference",
+      "description": "Unresolved stack parameter",
       "line": 22,
-      "match": "&stack0xfffffefc",
-      "text": "pcVar5 = &stack0xfffffefc;",
-      "type": "stack_ref"
+      "match": "in_stack_00000004",
+      "text": "if (*(char *)(in_stack_00000004 + 0x44) == '\\0') {",
+      "type": "stack_param"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 36,
-      "match": "&stack0xfffffefc",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffefc,\"Current mission: %s.msn\",unaff_EBX);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 36,
-      "match": "unaff_EBX",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffefc,\"Current mission: %s.msn\",unaff_EBX);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 38,
-      "match": "&stack0xffffff00",
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff00,0,0x16);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
+      "description": "Unresolved stack parameter",
       "line": 39,
-      "match": "&stack0xffffff04",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff04,\"1. Draw sky in dynamic views: %s\");",
-      "type": "stack_ref"
+      "match": "in_stack_00000004",
+      "text": "if (*(int *)(in_stack_00000004 + 0x30) == 0) {",
+      "type": "stack_param"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 40,
-      "match": "&stack0xffffff08",
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff08,0,0x2c);",
-      "type": "stack_ref"
+      "description": "Unresolved stack parameter",
+      "line": 47,
+      "match": "in_stack_00000004",
+      "text": "if (*(int *)(in_stack_00000004 + 0x34) == 0) {",
+      "type": "stack_param"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 41,
-      "match": "&stack0xffffff0c",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff0c,\"2. Draw water in dynamic views: %s\");",
-      "type": "stack_ref"
+      "description": "Unresolved stack parameter",
+      "line": 55,
+      "match": "in_stack_00000004",
+      "text": "if (*(int *)(in_stack_00000004 + 0x38) == 0) {",
+      "type": "stack_param"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 42,
-      "match": "&stack0xffffff10",
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff10,0,0x37);",
-      "type": "stack_ref"
+      "description": "Unresolved stack parameter",
+      "line": 93,
+      "match": "in_stack_00000004",
+      "text": "uVar2 = *(uint *)(in_stack_00000004 + 0x40);",
+      "type": "stack_param"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 43,
-      "match": "&stack0xffffff14",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff14,\"3. Force full lighting in static view: %s\");",
-      "type": "stack_ref"
+      "description": "Unresolved stack parameter",
+      "line": 97,
+      "match": "in_stack_00000004",
+      "text": "*(uint *)(in_stack_00000004 + 0x40) = 0;",
+      "type": "stack_param"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 44,
-      "match": "&stack0xffffff18",
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff18,0,0x42);",
-      "type": "stack_ref"
+      "description": "Unresolved stack parameter",
+      "line": 113,
+      "match": "in_stack_00000004",
+      "text": "*(uint *)(in_stack_00000004 + 0x30) = (uint)(*(int *)(in_stack_00000004 + 0x30) == 0);",
+      "type": "stack_param"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 45,
-      "match": "&stack0xffffff1c",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff1c,\"4. Disable mouse selection of CBarriers: %s\");",
-      "type": "stack_ref"
+      "description": "Unresolved stack parameter",
+      "line": 113,
+      "match": "in_stack_00000004",
+      "text": "*(uint *)(in_stack_00000004 + 0x30) = (uint)(*(int *)(in_stack_00000004 + 0x30) == 0);",
+      "type": "stack_param"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 46,
-      "match": "&stack0xffffff20",
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff20,0,0x4d);",
-      "type": "stack_ref"
+      "description": "Unresolved stack parameter",
+      "line": 116,
+      "match": "in_stack_00000004",
+      "text": "*(uint *)(in_stack_00000004 + 0x34) = (uint)(*(int *)(in_stack_00000004 + 0x34) == 0);",
+      "type": "stack_param"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 59,
-      "match": "&stack0xffffff24",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff24,pcVar5);",
-      "type": "stack_ref"
+      "description": "Unresolved stack parameter",
+      "line": 116,
+      "match": "in_stack_00000004",
+      "text": "*(uint *)(in_stack_00000004 + 0x34) = (uint)(*(int *)(in_stack_00000004 + 0x34) == 0);",
+      "type": "stack_param"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 60,
-      "match": "&stack0xffffff28",
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff28,0,0x58);",
-      "type": "stack_ref"
+      "description": "Unresolved stack parameter",
+      "line": 119,
+      "match": "in_stack_00000004",
+      "text": "*(uint *)(in_stack_00000004 + 0x38) = (uint)(*(int *)(in_stack_00000004 + 0x38) == 0);",
+      "type": "stack_param"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 61,
-      "match": "&stack0xffffff2c",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff2c,\"6. Confirm new actor names: %s\");",
-      "type": "stack_ref"
+      "description": "Unresolved stack parameter",
+      "line": 119,
+      "match": "in_stack_00000004",
+      "text": "*(uint *)(in_stack_00000004 + 0x38) = (uint)(*(int *)(in_stack_00000004 + 0x38) == 0);",
+      "type": "stack_param"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 62,
-      "match": "&stack0xffffff30",
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff30,0,99);",
-      "type": "stack_ref"
+      "description": "Unresolved stack parameter",
+      "line": 131,
+      "match": "in_stack_00000004",
+      "text": "*(int *)(in_stack_00000004 + 0x40) = *(int *)(in_stack_00000004 + 0x40) + 1;",
+      "type": "stack_param"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 76,
-      "match": "&stack0xffffff34",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff34,pcVar5);",
-      "type": "stack_ref"
+      "description": "Unresolved stack parameter",
+      "line": 131,
+      "match": "in_stack_00000004",
+      "text": "*(int *)(in_stack_00000004 + 0x40) = *(int *)(in_stack_00000004 + 0x40) + 1;",
+      "type": "stack_param"
     },
     {
       "call_address": "00537713",
@@ -560,61 +528,6 @@
       "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
       "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 005378db (no EBP frame)",
       "type": "variadic_preserve"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"1. Draw sky in dynamic views: %s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "1. Draw sky in dynamic views: %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 39,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff04,\"1. Draw sky in dynamic views: %s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"2. Draw water in dynamic views: %s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "2. Draw water in dynamic views: %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 41,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff0c,\"2. Draw water in dynamic views: %s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"3. Force full lighting in static view: %s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "3. Force full lighting in static view: %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 43,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff14,\"3. Force full lighting in static view: %s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"4. Disable mouse selection of CBarriers: %s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "4. Disable mouse selection of CBarriers: %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 45,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff1c,\"4. Disable mouse selection of CBarriers: %s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"6. Confirm new actor names: %s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "6. Confirm new actor names: %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 61,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff2c,\"6. Confirm new actor names: %s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 12,

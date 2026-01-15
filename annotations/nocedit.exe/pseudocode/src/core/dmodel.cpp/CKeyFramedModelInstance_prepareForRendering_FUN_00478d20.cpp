@@ -15,15 +15,15 @@ core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
   CKeyFramedModel *this_ptr_01;
   double dVar1;
   CKeyFramedModelInstance *instance;
-  int frame_index;
+  CKeyFramedModelInstance *frame_index;
   int render_flags_00;
   
-  frame_index = 0x478d35;
+  render_flags_00 = 0x478d35;
   dVar1 = crt_math_c_round_FUN_005fe6b0((double)animation_frame);
-  render_flags_00 = (int)ROUND(dVar1);
-  instance = this_ptr_00;
+  instance = (CKeyFramedModelInstance *)(int)ROUND(dVar1);
+  frame_index = this_ptr_00;
   this_ptr_01 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(this_ptr_00);
   core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
-            (this_ptr_01,instance,frame_index,render_flags_00);
+            (this_ptr_01,instance,(int)frame_index,render_flags_00);
   return;
 }

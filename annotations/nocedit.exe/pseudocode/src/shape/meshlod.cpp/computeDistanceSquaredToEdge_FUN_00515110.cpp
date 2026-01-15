@@ -15,7 +15,6 @@ shape_meshlod_cpp_computeDistanceSquaredToEdge_FUN_00515110
   float fVar2;
   float fVar3;
   CVector3f *pCVar4;
-  BADSPACEBASE *in_ESP;
   CVector3f *in_stack_00000004;
   CVector3f local_24 [2];
   

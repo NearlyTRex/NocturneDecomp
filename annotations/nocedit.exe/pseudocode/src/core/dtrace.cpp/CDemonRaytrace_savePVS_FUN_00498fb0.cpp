@@ -13,14 +13,12 @@ core_dtrace_cpp_CDemonRaytrace_savePVS_FUN_00498fb0
 
 {
   int iVar1;
-  void *pvVar2;
-  int *piVar3;
+  int *piVar2;
+  CDemonCube *pCVar3;
   int iVar4;
   int iVar5;
   int iVar6;
   int iVar7;
-  uint *in_stack_00000014;
-  int *in_stack_00000018;
   
   if (g_PVSReadyFlag == 0) {
     g_CurrentFilename = "..\\core\\dtrace.cpp";
@@ -29,32 +27,31 @@ core_dtrace_cpp_CDemonRaytrace_savePVS_FUN_00498fb0
   }
   iVar5 = g_PVSDrawnCubeCount;
   *output_count = g_PVSDrawnCubeCount;
-  pvVar2 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                     (*output_indices_array,iVar5 << 2,"..\\core\\dtrace.cpp",0x8f2);
-  *in_stack_00000014 = pvVar2;
+  piVar2 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
+                     (*input_indices_array,iVar5 << 2,"..\\core\\dtrace.cpp",0x8f2);
+  *input_indices_array = piVar2;
   if (*output_count < 1) {
     g_CurrentFilename = "..\\core\\dtrace.cpp";
     g_CurrentLineNumber = 0x8f6;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonRaytrace::getPVS - no cubes rendered???");
   }
-  if (*in_stack_00000018 == 0) {
+  if (*input_indices_array == (int *)0x0) {
     g_CurrentFilename = "..\\core\\dtrace.cpp";
     g_CurrentLineNumber = 0x8fa;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonRaytrace::getPVS - out of memory");
   }
-  iVar6 = (int)output_indices_array[0x12] *
-          (int)output_indices_array[0x10] * (int)output_indices_array[0x11];
+  iVar6 = (this_ptr->grid_coord).z * (this_ptr->grid_coord).x * (this_ptr->grid_coord).y;
   iVar5 = 0;
   if (0 < g_PVSDrawnCubeCount) {
     iVar7 = 0;
     do {
       iVar4 = 0;
       if (0 < iVar6) {
-        piVar3 = output_indices_array[0x14];
+        pCVar3 = this_ptr->cube_data;
         do {
-          if (piVar3 == *(int **)((int)g_PVSCubePointers + iVar7)) break;
+          if (pCVar3 == *(CDemonCube **)((int)g_PVSCubePointers + iVar7)) break;
           iVar4 = iVar4 + 1;
-          piVar3 = piVar3 + 0xd;
+          pCVar3 = pCVar3 + 1;
         } while (iVar4 < iVar6);
       }
       if (iVar6 <= iVar4) {
@@ -64,7 +61,7 @@ core_dtrace_cpp_CDemonRaytrace_savePVS_FUN_00498fb0
       }
       iVar1 = g_PVSDrawnCubeCount;
       iVar5 = iVar5 + 1;
-      *(int *)(iVar7 + *in_stack_00000018) = iVar4;
+      *(int *)(iVar7 + (int)*input_indices_array) = iVar4;
       iVar7 = iVar7 + 4;
     } while (iVar5 < iVar1);
   }

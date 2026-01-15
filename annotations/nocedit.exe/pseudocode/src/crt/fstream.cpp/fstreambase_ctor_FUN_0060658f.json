@@ -1,19 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 43,
-    "complexity_score": 128,
+    "complexity_score": 154,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 3,
-    "pseudocode_lines": 28,
-    "suspect_count": 8,
+    "pseudocode_lines": 29,
+    "suspect_count": 10,
     "suspect_types": [
       "call_esp_preserve",
       "negative_offset",
       "pointer_cast",
-      "special_crt_function"
+      "special_crt_function",
+      "unaffected_reg"
     ],
-    "total_lines": 71
+    "total_lines": 72
   },
   "cross_references": [
     {
@@ -126,38 +127,52 @@
   },
   "suspects": [
     {
+      "description": "Unaffected register variable",
+      "line": 10,
+      "match": "unaff_EBX",
+      "text": "int unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 15,
-      "match": "piVar3[-2].",
-      "text": "pfVar4 = (fstreambase *)&piVar3[-2].__enabled_exceptions;",
+      "line": 16,
+      "match": "piVar4[-2].",
+      "text": "this_ptr = (fstreambase *)&piVar4[-2].__enabled_exceptions;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 18,
-      "match": "buffer_ptr[-1].",
-      "text": "pfVar4 = (fstreambase *)(buffer_ptr[-1].__unbuffered_get_area + 4);",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 19,
+      "match": "buffer_ptr[-1].",
+      "text": "pfVar1 = (fstreambase *)(buffer_ptr[-1].__unbuffered_get_area + 4);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 20,
       "match": "(int *)((int)",
-      "text": "iVar1 = *(int *)((int)(pfVar4->base).layout_info + 4);",
+      "text": "iVar2 = *(int *)((int)(pfVar1->base).layout_info + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 23,
+      "line": 24,
       "match": "(int *)((int)",
-      "text": "*(void ***)(buffer_ptr->__unbuffered_get_area + *(int *)((int)pvVar2 + 4) + -0x10) =",
+      "text": "*(void ***)(buffer_ptr->__unbuffered_get_area + *(int *)((int)pvVar3 + 4) + -0x10) =",
       "type": "pointer_cast"
     },
     {
+      "description": "Unaffected register variable",
+      "line": 29,
+      "match": "unaff_EBX",
+      "text": "*(int *)((int)(pfVar1->base).layout_info + 4) + -0x38),(char *)buffer_ptr,unaff_EBX,",
+      "type": "unaffected_reg"
+    },
+    {
       "description": "Complex pointer cast",
-      "line": 28,
+      "line": 29,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)(pfVar4->base).layout_info + 4) + -0x38),(char *)buffer_ptr,(int)this_ptr",
+      "text": "*(int *)((int)(pfVar1->base).layout_info + 4) + -0x38),(char *)buffer_ptr,unaff_EBX,",
       "type": "pointer_cast"
     },
     {

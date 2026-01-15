@@ -1,17 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 159,
-    "complexity_score": 368,
+    "complexity_score": 176,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 4,
-    "pseudocode_lines": 48,
-    "suspect_count": 31,
+    "pseudocode_lines": 41,
+    "suspect_count": 13,
     "suspect_types": [
-      "call_esp_preserve",
-      "stack_param"
+      "call_esp_preserve"
     ],
-    "total_lines": 207
+    "total_lines": 200
   },
   "cross_references": [],
   "function": {
@@ -117,132 +116,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_0000000c",
-      "text": "FILE *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000010",
-      "text": "FILE *in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000014",
-      "text": "FILE *in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000028",
-      "text": "FILE *in_stack_00000028;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_0000002c",
-      "text": "FILE *in_stack_0000002c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000030",
-      "text": "FILE *in_stack_00000030;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 28,
-      "match": "in_stack_0000000c",
-      "text": "crt_stdio_c_fwrite_FUN_005fdc00(&this_ptr->vertex_count,4,1,in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 29,
-      "match": "in_stack_00000010",
-      "text": "crt_stdio_c_fwrite_FUN_005fdc00(&this_ptr->face_count,4,1,in_stack_00000010);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_00000014",
-      "text": "crt_stdio_c_fwrite_FUN_005fdc00(&this_ptr->bbox1,0xc,1,in_stack_00000014);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_00000014",
-      "text": "crt_stdio_c_fwrite_FUN_005fdc00(&this_ptr->bbox2,0xc,1,in_stack_00000014);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_00000014",
-      "text": "crt_stdio_c_fwrite_FUN_005fdc00(&this_ptr->bbox3,0xc,1,in_stack_00000014);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_00000014",
-      "text": "crt_stdio_c_fwrite_FUN_005fdc00(&this_ptr->bbox4,0xc,1,in_stack_00000014);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 35,
-      "match": "in_stack_00000014",
-      "text": "crt_stdio_c_fwrite_FUN_005fdc00(&this_ptr->mystery_array_size,4,1,in_stack_00000014);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 40,
-      "match": "in_stack_00000028",
-      "text": "crt_stdio_c_fwrite_FUN_005fdc00(pcVar2,0x10,1,in_stack_00000028);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 44,
-      "match": "in_stack_00000028",
-      "text": "crt_stdio_c_fwrite_FUN_005fdc00(&this_ptr->vertex_group_size,4,1,in_stack_00000028);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 46,
-      "match": "in_stack_0000002c",
-      "text": "(this_ptr->vertex_positions,0xc,this_ptr->vertex_count,in_stack_0000002c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 48,
-      "match": "in_stack_00000030",
-      "text": "(this_ptr->vertex_normals,0xc,this_ptr->vertex_count,in_stack_00000030);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 49,
-      "match": "in_stack_00000030",
-      "text": "crt_stdio_c_fwrite_FUN_005fdc00(this_ptr->face_data,0x20,this_ptr->face_count,in_stack_00000030);",
-      "type": "stack_param"
-    },
     {
       "add_esp_value": 16,
       "call_address": "00482363",

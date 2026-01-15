@@ -15,7 +15,6 @@ core_inv_cpp_CInventory_removeItem_FUN_004fea70
   int iVar1;
   CInventory *pCVar2;
   int iVar3;
-  int in_stack_00000010;
   
   if ((CWeapon *)item_to_remove == this_ptr->selected_weapon) {
     this_ptr->selected_weapon = (CWeapon *)0x0;
@@ -33,7 +32,7 @@ core_inv_cpp_CInventory_removeItem_FUN_004fea70
         this_ptr->item_count = iVar3;
         crt_string_c_memmove_FUN_005fe5e0
                   (this_ptr->items + iVar1,this_ptr->items + iVar1 + 1,(iVar3 - iVar1) * 4);
-        if (in_stack_00000010 == 0) {
+        if (should_delete_actor == 0) {
           return;
         }
         core_actor_cpp_deleteActor_FUN_00408820(actor_ptr);

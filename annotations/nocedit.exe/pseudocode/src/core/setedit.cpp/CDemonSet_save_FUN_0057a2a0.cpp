@@ -15,7 +15,6 @@ void __cdecl core_setedit_cpp_CDemonSet_save_FUN_0057a2a0(CDemonSet *this_ptr,ch
   SRoom *pSVar2;
   SVDBox *pSVar3;
   C3DSCamera *pCVar4;
-  BADSPACEBASE *in_ESP;
   char *pcVar5;
   char *pcVar6;
   char *pcVar7;

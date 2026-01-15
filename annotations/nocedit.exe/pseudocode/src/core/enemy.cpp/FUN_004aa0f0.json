@@ -1,19 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 122,
+    "complexity_score": 96,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 5,
-    "pseudocode_lines": 32,
-    "suspect_count": 7,
+    "pseudocode_lines": 31,
+    "suspect_count": 5,
     "suspect_types": [
       "call_esp_preserve",
       "callind_preserve",
-      "stack_param",
-      "unaffected_reg"
+      "stack_param"
     ],
-    "total_lines": 88
+    "total_lines": 87
   },
   "cross_references": [],
   "function": {
@@ -126,15 +125,8 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 10,
-      "match": "unaff_EDI",
-      "text": "SCollisionInfo *unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 11,
       "match": "in_stack_00000004",
       "text": "CDemonActor *in_stack_00000004;",
       "type": "stack_param"
@@ -145,13 +137,6 @@
       "match": "in_stack_00000004",
       "text": "core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(in_stack_00000004);",
       "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 25,
-      "match": "unaff_EDI",
-      "text": "iVar1 = (*actor_ptr->vtable[1].hasCollision)(actor_ptr,unaff_EDI);",
-      "type": "unaffected_reg"
     },
     {
       "add_esp_value": 4,

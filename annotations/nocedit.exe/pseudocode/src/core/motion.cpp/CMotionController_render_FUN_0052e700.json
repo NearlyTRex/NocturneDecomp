@@ -1,18 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 182,
-    "complexity_score": 119,
+    "complexity_score": 88,
     "cross_reference_count": 9,
     "function_call_count": 7,
     "global_count": 6,
-    "pseudocode_lines": 64,
-    "suspect_count": 4,
+    "pseudocode_lines": 63,
+    "suspect_count": 2,
     "suspect_types": [
-      "badspacebase",
-      "format_string_mismatch",
-      "register_param"
+      "format_string_mismatch"
     ],
-    "total_lines": 246
+    "total_lines": 245
   },
   "cross_references": [
     {
@@ -250,7 +248,7 @@
     {
       "add_esp_value": 16,
       "call_address": "0052e836",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -266,7 +264,7 @@
     {
       "add_esp_value": 20,
       "call_address": "0052e874",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -512,26 +510,12 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 13,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 13,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "actual_args": 0,
       "description": "Format \"%s -> %s\" has 2 specifiers but 0 arguments after it",
       "expected_args": 2,
       "format_string": "%s -> %s",
       "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 57,
+      "line_number": 56,
       "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_a8,\"%s -> %s\");",
       "text": "Format string expects 2 args but got 0",
       "type": "format_string_mismatch"
@@ -542,7 +526,7 @@
       "expected_args": 2,
       "format_string": "%s : %5.2f",
       "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 61,
+      "line_number": 60,
       "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_a8,\"%s : %5.2f\");",
       "text": "Format string expects 2 args but got 0",
       "type": "format_string_mismatch"

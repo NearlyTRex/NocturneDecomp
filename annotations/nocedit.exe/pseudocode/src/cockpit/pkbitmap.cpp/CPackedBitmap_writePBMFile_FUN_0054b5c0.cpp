@@ -12,23 +12,30 @@ cockpit_pkbitmap_cpp_CPackedBitmap_writePBMFile_FUN_0054b5c0
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   char *pcVar2;
-  char *pcVar3;
+  int *piVar3;
+  int local_2c [6];
+  int local_14;
   
   pcVar2 = "PBM\032PBG\032";
-  pcVar3 = &stack0xffffffd4;
+  piVar3 = local_2c;
   for (iVar1 = 1; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *(uint *)pcVar3 = *(uint *)pcVar2;
+    *piVar3 = *(uint *)pcVar2;
     pcVar2 = pcVar2 + 4;
-    pcVar3 = pcVar3 + 4;
+    piVar3 = (int *)((int)piVar3 + 4);
   }
   for (iVar1 = 0; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *pcVar3 = *pcVar2;
+    *(char *)piVar3 = *pcVar2;
     pcVar2 = pcVar2 + 1;
-    pcVar3 = pcVar3 + 1;
+    piVar3 = (int *)((int)piVar3 + 1);
   }
-  crt_stdio_c_fwrite_FUN_005fdc00(&stack0xffffffd4,0x1c,1,file_handle);
+  local_2c[1] = this_ptr->width;
+  local_2c[2] = this_ptr->height;
+  local_2c[3] = 0;
+  local_2c[4] = 0;
+  local_2c[5] = this_ptr->width + -1;
+  local_14 = this_ptr->height + -1;
+  crt_stdio_c_fwrite_FUN_005fdc00(local_2c,0x1c,1,file_handle);
   crt_stdio_c_fwrite_FUN_005fdc00(this_ptr->row_pointers,4,this_ptr->height + 1,file_handle);
   crt_stdio_c_fwrite_FUN_005fdc00
             (this_ptr->packed_data,(SIZE_T)this_ptr->row_pointers[this_ptr->height],1,file_handle);

@@ -15,7 +15,6 @@ void __cdecl core_fire_cpp_CSpark_render_FUN_004c0420(CSpark *this_ptr)
   uint uVar1;
   longlong lVar2;
   int iVar3;
-  BADSPACEBASE *in_ESP;
   SMRGLTextureBasic *texture;
   float fStack_d4;
   float local_d0;

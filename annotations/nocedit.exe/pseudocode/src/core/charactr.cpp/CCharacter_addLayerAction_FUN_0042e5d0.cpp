@@ -13,10 +13,10 @@ void __cdecl core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0(CCharacter
   int iVar2;
   char *pcVar3;
   char *pcVar4;
+  uint in_stack_00000008;
   uint in_stack_0000000c;
-  uint in_stack_00000010;
-  char *in_stack_00000014;
-  uint in_stack_00000018;
+  char *in_stack_00000010;
+  uint in_stack_00000014;
   
   if (0x13 < *(int *)(this_ptr->field13_0x2620 + 8)) {
     g_CurrentFilename = "..\\core\\charactr.cpp";
@@ -26,18 +26,18 @@ void __cdecl core_charactr_cpp_CCharacter_addLayerAction_FUN_0042e5d0(CCharacter
   iVar2 = *(int *)(this_ptr->field13_0x2620 + 8);
   *(int *)(this_ptr->field13_0x2620 + 8) = *(int *)(this_ptr->field13_0x2620 + 8) + 1;
   pcVar3 = this_ptr->field13_0x2620 + iVar2 * 0x38 + 0xc;
-  *(uint *)pcVar3 = in_stack_0000000c;
+  *(uint *)pcVar3 = in_stack_00000008;
   pcVar4 = pcVar3 + 8;
-  *(uint *)(pcVar3 + 4) = in_stack_00000010;
+  *(uint *)(pcVar3 + 4) = in_stack_0000000c;
   do {
-    cVar1 = *in_stack_00000014;
+    cVar1 = *in_stack_00000010;
     *pcVar4 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = in_stack_00000014[1];
-    in_stack_00000014 = in_stack_00000014 + 2;
+    cVar1 = in_stack_00000010[1];
+    in_stack_00000010 = in_stack_00000010 + 2;
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  *(uint *)(pcVar3 + 0x28) = in_stack_00000018;
+  *(uint *)(pcVar3 + 0x28) = in_stack_00000014;
   return;
 }

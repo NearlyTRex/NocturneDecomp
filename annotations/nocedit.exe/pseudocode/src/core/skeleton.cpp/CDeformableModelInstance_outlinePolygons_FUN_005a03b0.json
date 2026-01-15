@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 80,
+    "complexity_score": 56,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 4,
-    "pseudocode_lines": 15,
-    "suspect_count": 5,
+    "pseudocode_lines": 16,
+    "suspect_count": 3,
     "suspect_types": [
       "call_esp_preserve",
-      "unaffected_reg",
       "variadic_preserve"
     ],
-    "total_lines": 49
+    "total_lines": 50
   },
   "cross_references": [
     {
@@ -119,20 +118,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 8,
-      "match": "unaff_EBX",
-      "text": "int unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 16,
-      "match": "unaff_EBX",
-      "text": "core_skeleton_cpp_CDeformableModel_renderWireframe_FUN_0059b5a0(this_ptr_00,unaff_EBX);",
-      "type": "unaffected_reg"
-    },
     {
       "call_address": "005a03f7",
       "caller_has_stack_issues": false,

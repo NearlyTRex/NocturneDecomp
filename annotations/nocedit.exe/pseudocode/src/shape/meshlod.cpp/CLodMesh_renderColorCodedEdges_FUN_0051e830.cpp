@@ -14,7 +14,6 @@ shape_meshlod_cpp_CLodMesh_renderColorCodedEdges_FUN_0051e830
   CLodFace *pCVar1;
   int iVar2;
   int iVar3;
-  BADSPACEBASE *in_ESP;
   int *piVar4;
   SRenderVertex *pSVar5;
   SRenderVertex *pSVar6;
@@ -22,8 +21,8 @@ shape_meshlod_cpp_CLodMesh_renderColorCodedEdges_FUN_0051e830
   byte bVar8;
   SRenderVertex *in_stack_ffffff88;
   SRenderVertex *in_stack_ffffff8c;
-  int aiStack_48 [7];
-  uint uStack_2c;
+  int aiStack_48 [8];
+  uint uStack_28;
   int local_18;
   int local_14;
   
@@ -42,7 +41,7 @@ shape_meshlod_cpp_CLodMesh_renderColorCodedEdges_FUN_0051e830
               iVar2 = piVar4[10];
               pCVar1 = this_ptr->tri_data;
               pSVar6 = g_CDemonRendererPtr->vertex_buffer_ptr;
-              uStack_2c = 0x51e8ca;
+              uStack_28 = 0x51e8ca;
               iVar2 = engine_prim_c_calculateTriangleWindingOrder_FUN_00552150
                                 (pSVar6 + pCVar1[iVar2].vertex_idx_0,
                                  pSVar6 + pCVar1[iVar2].vertex_idx_1,

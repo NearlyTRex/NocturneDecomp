@@ -1,19 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 22,
-    "complexity_score": 218,
+    "complexity_score": 166,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 48,
-    "suspect_count": 15,
+    "pseudocode_lines": 51,
+    "suspect_count": 11,
     "suspect_types": [
-      "badspacebase",
-      "register_param",
-      "stack_param",
-      "stack_ref"
+      "stack_param"
     ],
-    "total_lines": 70
+    "total_lines": 73
   },
   "cross_references": [
     {
@@ -179,108 +176,80 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 7,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 7,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 8,
+      "line": 7,
       "match": "in_stack_00000008",
       "text": "uint *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 9,
+      "line": 8,
       "match": "in_stack_0000000c",
       "text": "float *in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000030",
-      "text": "uint in_stack_00000030;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000008",
-      "text": "if (this_ptr->field0_0x0 + 4 != (char *)in_stack_00000008) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_00000008",
-      "text": "*(uint *)(this_ptr->field0_0x0 + 4) = *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000008",
-      "text": "*(uint *)(this_ptr->field0_0x0 + 8) = in_stack_00000008[1];",
+      "line": 9,
+      "match": "in_stack_00000010",
+      "text": "uint in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 17,
       "match": "in_stack_00000008",
+      "text": "if (this_ptr->field0_0x0 + 4 != (char *)in_stack_00000008) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000008",
+      "text": "*(uint *)(this_ptr->field0_0x0 + 4) = *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000008",
+      "text": "*(uint *)(this_ptr->field0_0x0 + 8) = in_stack_00000008[1];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_00000008",
       "text": "*(uint *)(this_ptr->field0_0x0 + 0xc) = in_stack_00000008[2];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 26,
       "match": "in_stack_0000000c",
-      "text": "local_20.z = *in_stack_0000000c;",
+      "text": "local_20.x = *in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
+      "line": 27,
       "match": "in_stack_0000000c",
-      "text": "local_14.x = in_stack_0000000c[1];",
+      "text": "local_20.y = in_stack_0000000c[1];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 25,
+      "line": 28,
       "match": "in_stack_0000000c",
-      "text": "local_14.y = in_stack_0000000c[2];",
+      "text": "local_20.z = in_stack_0000000c[2];",
       "type": "stack_param"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 31,
-      "match": "&stack0xffffffa4",
-      "text": "((CMatrix3x3f *)&stack0xffffffa4,(CVector3f *)&local_14.y);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 36,
-      "match": "&stack0xffffffac",
-      "text": "((CMatrix3x3f *)&stack0xffffffac,&local_14,&local_20);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 49,
-      "match": "in_stack_00000030",
-      "text": "*(uint *)(this_ptr->field0_0x0 + 0x20) = in_stack_00000030;",
+      "line": 52,
+      "match": "in_stack_00000010",
+      "text": "*(uint *)(this_ptr->field0_0x0 + 0x20) = in_stack_00000010;",
       "type": "stack_param"
     }
   ]

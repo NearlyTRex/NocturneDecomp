@@ -11,10 +11,9 @@
 void core_boxactor_cpp_CBoxActor_load_FUN_00422060(void)
 
 {
-  BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000004;
-  int in_stack_00000014;
-  char *apcStack_e0 [54];
+  char *local_10c [64];
+  int local_c;
   
   core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(in_stack_00000004);
   core_actor_cpp_serializeKeyframedModelInstance_FUN_0040b8f0
@@ -30,8 +29,8 @@ void core_boxactor_cpp_CBoxActor_load_FUN_00422060(void)
   core_actor_cpp_serializeString_FUN_0040b5c0
             ((char **)&in_stack_00000004[2].orient.heading,"collisionWavName");
   if (g_CBoxActorClassVersion < 7) {
-    core_actor_cpp_serializeInteger_FUN_0040b7f0((int *)&stack0x00000010,"canBeCarried");
-    if (in_stack_00000014 == 0) {
+    core_actor_cpp_serializeInteger_FUN_0040b7f0(&local_c,"canBeCarried");
+    if (local_c == 0) {
       in_stack_00000004[2].health = 0;
     }
     else {
@@ -91,7 +90,7 @@ void core_boxactor_cpp_CBoxActor_load_FUN_00422060(void)
               ((int *)(in_stack_00000004[4].create_event + 0x24),"dontUseNormals");
   }
   if (g_CBoxActorClassVersion == 9) {
-    core_actor_cpp_serializeString_FUN_0040b5c0(apcStack_e0,"descriptiveName");
+    core_actor_cpp_serializeString_FUN_0040b5c0(local_10c,"descriptiveName");
   }
   if (10 < g_CBoxActorClassVersion) {
     core_actor_cpp_serializeActor_FUN_0040b870

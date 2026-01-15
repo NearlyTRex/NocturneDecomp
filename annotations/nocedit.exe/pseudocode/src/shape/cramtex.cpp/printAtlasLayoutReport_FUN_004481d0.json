@@ -1,16 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 64,
+    "complexity_score": 100,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 21,
-    "pseudocode_lines": 39,
-    "suspect_count": 2,
+    "pseudocode_lines": 40,
+    "suspect_count": 5,
     "suspect_types": [
+      "stack_param",
       "variadic_preserve"
     ],
-    "total_lines": 100
+    "total_lines": 101
   },
   "cross_references": [],
   "function": {
@@ -216,8 +217,29 @@
   },
   "suspects": [
     {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000004",
+      "text": "FILE *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 34,
+      "match": "in_stack_00000004",
+      "text": "(in_stack_00000004,\"%2d: %5dx%-5d  Page %d (%5d,%-5d)-(%5d,%-5d)    Rotated: %d\\n\",iVar10,*piVar8,*piVar7,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 40,
+      "match": "in_stack_00000004",
+      "text": "(in_stack_00000004,\"%ux%u square found using %u padding.\\n\",g_CramCurrentAcceptableSize,",
+      "type": "stack_param"
+    },
+    {
       "call_address": "0044821d",
-      "caller_has_stack_issues": false,
+      "caller_has_stack_issues": true,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "unknown",
       "esp_certainty_at_call": "known",
@@ -231,7 +253,7 @@
     },
     {
       "call_address": "00448245",
-      "caller_has_stack_issues": false,
+      "caller_has_stack_issues": true,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",

@@ -1,19 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 169,
+    "complexity_score": 123,
     "cross_reference_count": 11,
     "function_call_count": 6,
     "global_count": 5,
-    "pseudocode_lines": 29,
-    "suspect_count": 12,
+    "pseudocode_lines": 23,
+    "suspect_count": 8,
     "suspect_types": [
       "call_esp_preserve",
       "callind_preserve",
       "special_crt_function",
       "stack_param"
     ],
-    "total_lines": 95
+    "total_lines": 89
   },
   "cross_references": [
     {
@@ -221,44 +221,16 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000018",
-      "text": "int in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_0000001c",
-      "text": "long in_stack_0000001c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000020",
-      "text": "DWORD in_stack_00000020;",
+      "line": 8,
+      "match": "in_stack_00000010",
+      "text": "DWORD in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 17,
-      "match": "in_stack_00000018",
-      "text": "if ((0 < in_stack_00000018) && ((uVar1 & 0x80) == 0)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_0000001c",
-      "text": "in_stack_0000001c,(PLONG)0x0,in_stack_00000020);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000020",
-      "text": "in_stack_0000001c,(PLONG)0x0,in_stack_00000020);",
+      "match": "in_stack_00000010",
+      "text": "(PLONG)0x0,in_stack_00000010);",
       "type": "stack_param"
     },
     {

@@ -12,9 +12,8 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_poll_FUN_005aed50(CDirectSoundDev
   int iVar1;
   uint uVar2;
   char *pcVar3;
-  BADSPACEBASE *in_ESP;
-  char acStack_184 [376];
-  DWORD local_c;
+  char acStack_19c [400];
+  uint local_c;
   DWORD local_8;
   
   if (g_DirectSound3DListener == (IDirectSound3DListener *)0x0) {
@@ -24,12 +23,12 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_poll_FUN_005aed50(CDirectSoundDev
       if (uVar2 != 0) {
         pcVar3 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar2);
         crt_stdio_c_sprintf_FUN_005fdbd0
-                  (&stack0xfffffe78,"DirectSux: Unable to %s.  (%s)",
+                  (acStack_19c,"DirectSux: Unable to %s.  (%s)",
                    "Get position of secondary buffer",pcVar3);
-        sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_184);
+        sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_19c);
         return 0;
       }
-      uVar2 = (uint)this_ptr / (uint)g_StreamBlockSizeBytes;
+      uVar2 = local_c / (uint)g_StreamBlockSizeBytes;
       if (g_StreamBlockCount <= (int)uVar2) {
         uVar2 = g_StreamBlockCount - 1;
       }

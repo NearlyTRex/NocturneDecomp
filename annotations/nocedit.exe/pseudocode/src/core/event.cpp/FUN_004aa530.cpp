@@ -10,27 +10,23 @@ uint core_event_cpp_FUN_004aa530(void)
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
-  int unaff_EBP;
-  int unaff_ESI;
-  int unaff_EDI;
   int in_stack_00000004;
   int *in_stack_00000008;
   uint *in_stack_0000000c;
-  uint local_14;
+  byte local_78 [100];
+  int local_14;
   
-  local_14 = 0xffffffff;
+  local_14 = -1;
   crt_stdio_c_sscanf_FUN_0060013c
             ((char *)(in_stack_00000004 + *in_stack_00000008)," { %f, %f, %f }%n",in_stack_0000000c,
              in_stack_0000000c + 1,in_stack_0000000c + 2,&local_14);
-  if (6 < unaff_EBP) {
-    *in_stack_00000008 = *in_stack_00000008 + unaff_EBP;
+  if (6 < local_14) {
+    *in_stack_00000008 = *in_stack_00000008 + local_14;
     return 1;
   }
   crt_stdio_c_sscanf_FUN_0060013c
-            ((char *)((int)in_stack_00000008 + *in_stack_00000008)," %[^ ,(){}]%n",&stack0xffffff8c,
-             &stack0xfffffff0);
-  if (unaff_EDI < 0) {
+            ((char *)(in_stack_00000004 + *in_stack_00000008)," %[^ ,(){}]%n",local_78,&local_14);
+  if (local_14 < 0) {
     crt_stdio_c_sprintf_FUN_005fdbd0(&DAT_02d0a460,"Error parsing vector location");
     return 0xffffffff;
   }
@@ -38,7 +34,7 @@ uint core_event_cpp_FUN_004aa530(void)
   if (iVar1 == 0) {
     return 0xffffffff;
   }
-  *in_stack_00000008 = *in_stack_00000008 + unaff_ESI;
+  *in_stack_00000008 = *in_stack_00000008 + local_14;
   if (iVar1 != DAT_0065d95c) {
     if (in_stack_0000000c != (uint *)(iVar1 + 0x20)) {
       *in_stack_0000000c = *(uint *)(iVar1 + 0x20);

@@ -11,11 +11,10 @@ void __cdecl crt_startup_c_HandleRuntimeError_FUN_00606660(char *error_message,i
 {
   int iVar1;
   ushort in_DS;
-  int in_stack_0000000c;
   
   iVar1 = crt_debug_c_TriggerDebuggerBreak_FUN_0060b500(error_message,in_DS);
   if (iVar1 == 0) {
-    crt_startup_c_WriteErrorAndExit_FUN_00606620((char *)error_level,in_stack_0000000c);
+    crt_startup_c_WriteErrorAndExit_FUN_00606620(error_message,error_level);
   }
   return;
 }

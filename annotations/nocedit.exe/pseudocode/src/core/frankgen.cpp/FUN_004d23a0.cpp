@@ -16,14 +16,14 @@ void core_frankgen_cpp_FUN_004d23a0(void)
   float fVar2;
   CKeyFramedModel *pCVar3;
   int in_stack_00000004;
+  float in_stack_00000008;
   float in_stack_0000000c;
-  float in_stack_00000010;
   
   pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
                      ((CKeyFramedModelInstance *)(in_stack_00000004 + 0x184));
   iVar1 = pCVar3->frame_count;
-  fVar2 = ((float)iVar1 * (*(float *)(in_stack_00000004 + 0x15c) - in_stack_0000000c)) /
-          (in_stack_00000010 - in_stack_0000000c);
+  fVar2 = ((float)iVar1 * (*(float *)(in_stack_00000004 + 0x15c) - in_stack_00000008)) /
+          (in_stack_0000000c - in_stack_00000008);
   *(float *)(in_stack_00000004 + 0x180) = fVar2;
   if (fVar2 < 0.0) {
     *(uint *)(in_stack_00000004 + 0x180) = 0;

@@ -11,10 +11,10 @@
 void core_stone_cpp_FUN_005bad40(void)
 
 {
-  int in_stack_00000008;
+  int in_stack_00000004;
   
   core_boxactor_cpp_CBoxActor_load_FUN_00422060();
   core_actor_cpp_serializeActor_FUN_0040b870
-            ((CDemonActor *)(in_stack_00000008 + 0x66c),"destActor");
+            ((CDemonActor *)(in_stack_00000004 + 0x66c),"destActor");
   return;
 }

@@ -13,7 +13,6 @@ int __cdecl core_tvbat_cpp_CTVBat_FUN_005e4d80(CTVBat *this_ptr)
 {
   CBoundingBox3D *this_ptr_00;
   int iVar1;
-  BADSPACEBASE *in_ESP;
   float10 fVar2;
   float10 fVar3;
   CBoundingBox3D CStack_78;

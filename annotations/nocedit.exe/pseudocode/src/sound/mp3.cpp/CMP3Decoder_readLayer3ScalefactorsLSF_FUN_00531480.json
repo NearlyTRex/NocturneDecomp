@@ -1,17 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 196,
-    "complexity_score": 151,
+    "complexity_score": 140,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 91,
-    "suspect_count": 5,
+    "pseudocode_lines": 90,
+    "suspect_count": 4,
     "suspect_types": [
       "call_esp_preserve",
       "pointer_cast"
     ],
-    "total_lines": 287
+    "total_lines": 286
   },
   "cross_references": [
     {
@@ -169,30 +169,23 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 24,
+      "line": 47,
       "match": "(int *)((int)",
-      "text": "piVar9 = (int *)((int)granule_info + granule * 0xf8);",
+      "text": "} while (piVar2 != (int *)((int)scalefactor_dest + iVar8 + granule * 0xf8));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 72,
+      "line": 71,
       "match": "(int *)((int)",
-      "text": "} while (piVar2 != (int *)((int)piVar9 + iVar8));",
+      "text": "} while (piVar1 != (int *)((int)piVar3 + iVar8));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 90,
+      "line": 89,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)granule_info + iVar8) = *piVar9;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 92,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)granule_info + (int)frame * 0xf8 + 0x58) = 0;",
+      "text": "*(int *)((int)scalefactor_dest + iVar8) = *piVar3;",
       "type": "pointer_cast"
     },
     {

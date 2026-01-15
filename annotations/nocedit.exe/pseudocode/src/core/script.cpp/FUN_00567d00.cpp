@@ -10,13 +10,13 @@ CVector3f * core_script_cpp_FUN_00567d00(void)
 
 {
   CVector3f *in_stack_00000004;
+  float in_stack_00000008;
   float in_stack_0000000c;
   float in_stack_00000010;
-  float in_stack_00000014;
   
   core_actor_cpp_CVector_ctor_FUN_00410340(in_stack_00000004);
-  in_stack_00000004->x = in_stack_0000000c;
-  in_stack_00000004->z = in_stack_00000010;
-  in_stack_00000004->y = in_stack_00000014;
+  in_stack_00000004->x = in_stack_00000008;
+  in_stack_00000004->z = in_stack_0000000c;
+  in_stack_00000004->y = in_stack_00000010;
   return in_stack_00000004;
 }

@@ -14,12 +14,13 @@ void core_platfrm_cpp_FUN_0054f060(void)
 {
   int iVar1;
   int iVar2;
+  int in_stack_00000004;
   int *in_stack_00000008;
   
   core_actor_cpp_drawTwoColumnPropertyLine_FUN_0040d1e0
             (in_stack_00000008,"</>","Move platform forward/back on course.");
   *in_stack_00000008 = *in_stack_00000008 + 0xb;
-  if ((char)in_stack_00000008[0xbc] == '\0') {
+  if (*(char *)(in_stack_00000004 + 0x2f0) == '\0') {
     engine_2d_c_drawText_FUN_00401fd0
               ("You are using a manual course for this platform.",g_ClipLeft,*in_stack_00000008);
     iVar2 = g_ClipLeft;

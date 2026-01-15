@@ -9,54 +9,55 @@
 void core_script_cpp_CScript_RelatedToSubtitles_FUN_00559d80(void)
 
 {
-  int iVar1;
   char *x;
   int index;
-  BADSPACEBASE *in_ESP;
   char *text;
-  int iVar2;
-  CBitFont *in_stack_00000004;
+  int iVar1;
+  int in_stack_00000004;
   int in_stack_00000008;
   int in_stack_0000000c;
   int in_stack_00000010;
-  CStrList *in_stack_00000014;
-  char *y;
-  char *in_stack_ffffff84;
-  byte local_40 [16];
-  CDrawSurface CStack_30;
+  int in_stack_00000014;
+  char *text_00;
+  char local_a4 [100];
+  CDrawSurface local_40;
+  int local_20;
+  int local_1c;
+  int local_18;
+  CBitFont *local_14;
   
-  iVar2 = (int)in_stack_00000014 + (1 - in_stack_0000000c);
+  iVar1 = (in_stack_00000014 - in_stack_0000000c) + 1;
   cockpit_drawsurf_cpp_CDrawSurface_ctor_FUN_00486ea0
-            ((CDrawSurface *)local_40,in_stack_00000008,in_stack_0000000c,
-             (in_stack_00000010 - in_stack_00000008) + 1,iVar2,(CDrawSurface *)0x0);
+            (&local_40,in_stack_00000008,in_stack_0000000c,
+             (in_stack_00000010 - in_stack_00000008) + 1,iVar1,(CDrawSurface *)0x0);
   cockpit_drawsurf_cpp_CDrawSurface_setColor_FUN_00487010(0);
-  cockpit_drawsurf_cpp_CDrawSurface_fillFullSurface_FUN_00488c70((CDrawSurface *)(local_40 + 8));
+  cockpit_drawsurf_cpp_CDrawSurface_fillFullSurface_FUN_00488c70(&local_40);
   cockpit_drawsurf_cpp_setCurrentFont_FUN_004874c0((CBitFont *)0x0);
-  if (*(int *)(in_stack_00000004->bitmap_files[0] + 0x2c) < 1) {
+  if (*(int *)(in_stack_00000004 + 0x30) < 1) {
     cockpit_drawsurf_cpp_CDrawSurface_setColor_FUN_00487010(0xf9);
     cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullSurface_FUN_00489c20
-              ((CDrawSurface *)&CStack_30.height,"(No script loaded.)");
+              (&local_40,"(No script loaded.)");
   }
   else {
-    iVar1 = cockpit_drawsurf_cpp_CDrawSurface_getCurrentFontMaxWidth_FUN_00489ce0(&CStack_30);
-    index = (*(int *)(*(int *)(in_stack_00000004->bitmap_files[0] + 0x30) +
-                     *(int *)(in_stack_00000004->bitmap_files[0] + 0x44) * 8) + -1) -
-            (iVar2 / iVar1) / 2;
+    local_1c = cockpit_drawsurf_cpp_CDrawSurface_getCurrentFontMaxWidth_FUN_00489ce0(&local_40);
+    local_20 = *(int *)(*(int *)(in_stack_00000004 + 0x34) + *(int *)(in_stack_00000004 + 0x48) * 8)
+               + -1;
+    index = local_20 - (iVar1 / local_1c) / 2;
     if (index < 0) {
       index = 0;
     }
     text = &DAT_00000002;
-    iVar2 = iVar2 - iVar1;
-    if (2 < iVar2) {
+    local_14 = (CBitFont *)(in_stack_00000004 + 0x38);
+    local_18 = iVar1 - local_1c;
+    if (2 < local_18) {
       do {
-        iVar1 = shape_edittool_cpp_getFontBitmapCount_FUN_004a6ed0(in_stack_00000004);
+        iVar1 = shape_edittool_cpp_getFontBitmapCount_FUN_004a6ed0(local_14);
         if (iVar1 <= index) break;
-        if (index == iVar2) {
-          iVar1 = *(int *)(in_stack_00000004->bitmap_files[0] + 0x14);
-          if (iVar1 == 0) {
+        if (index == local_20) {
+          if (*(int *)(in_stack_00000004 + 0x18) == 0) {
             iVar1 = 0xfa;
           }
-          else if (iVar1 == 1) {
+          else if (*(int *)(in_stack_00000004 + 0x18) == 1) {
             iVar1 = 0xfb;
           }
           else {
@@ -67,19 +68,20 @@ void core_script_cpp_CScript_RelatedToSubtitles_FUN_00559d80(void)
           iVar1 = 0xff;
         }
         cockpit_drawsurf_cpp_CDrawSurface_setColor_FUN_00487010(iVar1);
-        crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff7c,"%d",index + 1);
+        crt_stdio_c_sprintf_FUN_005fdbd0(local_a4,"%d",index + 1);
         cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAligned_FUN_004893f0
-                  ((CDrawSurface *)&CStack_30.clip_top,(int)&stack0xffffff80,2,text);
-        y = text;
-        x = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(in_stack_00000014,index);
+                  (&local_40,(int)local_a4,2,text);
+        iVar1 = 0x1e;
+        text_00 = text;
+        x = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70((CStrList *)local_14,index);
         cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAligned_FUN_004893f0
-                  ((CDrawSurface *)&CStack_30.clip_bottom,(int)x,(int)y,in_stack_ffffff84);
-        text = text + iVar2;
+                  (&local_40,(int)x,iVar1,text_00);
+        text = text + local_1c;
         index = index + 1;
-      } while ((int)text < (int)(in_stack_00000004->bitmap_files[0] + 0x34));
+      } while ((int)text < local_18);
     }
   }
   cockpit_drawsurf_cpp_CDrawSurface_setColor_FUN_00487010(0xff);
-  cockpit_drawsurf_cpp_CDrawSurface_drawSurfaceBorder_FUN_00488530((CDrawSurface *)&CStack_30.y);
+  cockpit_drawsurf_cpp_CDrawSurface_drawSurfaceBorder_FUN_00488530(&local_40);
   return;
 }

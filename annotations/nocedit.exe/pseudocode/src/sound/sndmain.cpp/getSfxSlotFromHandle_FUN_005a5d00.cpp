@@ -14,7 +14,6 @@ sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005a5d00(uint sfx_handle,int check_ha
   uint uVar2;
   CSfxSlot *slot;
   uint uVar3;
-  uint uStack00000010;
   
   uVar3 = sfx_handle >> 6;
   uVar2 = sfx_handle & 0x3f;
@@ -35,7 +34,6 @@ sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005a5d00(uint sfx_handle,int check_ha
             return slot;
           }
           sound_sndmain_cpp_CSfxSlot_kill_FUN_005a7e60(slot);
-          uStack00000010 = 0x5a5d9d;
           sound_sndmain_cpp_unlockSound_FUN_005abdc0();
           return (CSfxSlot *)0x0;
         }

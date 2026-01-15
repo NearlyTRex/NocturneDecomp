@@ -12,7 +12,7 @@ int __cdecl core_msnedit_cpp_FUN_0053d220(CDemonMission *this_ptr)
   int iVar1;
   char *pcVar2;
   char *pcVar3;
-  CDemonMission *in_stack_00000008;
+  char *in_stack_00000008;
   char *in_stack_0000000c;
   
   pcVar3 = in_stack_0000000c;
@@ -111,10 +111,9 @@ LAB_0053d316:
                 pcVar2 = (char *)0x0;
 LAB_0053d336:
                 if (pcVar2 == (char *)0x0) {
-                  iVar1 = crt_string_c_stricmp_FUN_005fe7f0
-                                    (in_stack_00000008->field0_0x0,in_stack_0000000c);
+                  iVar1 = crt_string_c_stricmp_FUN_005fe7f0(in_stack_00000008,in_stack_0000000c);
                   if ((iVar1 != 0) &&
-                     (pcVar3 = core_mission_cpp_CDemonMission_FUN_00524030(in_stack_00000008),
+                     (pcVar3 = core_mission_cpp_CDemonMission_FUN_00524030(this_ptr),
                      pcVar3 != (char *)0x0)) {
                     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                               (g_CEditorToolsPtr,"Already an actor named %s in this mission!");

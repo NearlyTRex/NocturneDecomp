@@ -1,22 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 249,
-    "complexity_score": 463,
+    "complexity_score": 432,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 108,
-    "suspect_count": 32,
+    "pseudocode_lines": 107,
+    "suspect_count": 30,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
       "pointer_cast",
-      "register_param",
       "stack_ref",
       "unaffected_reg"
     ],
-    "total_lines": 357
+    "total_lines": 356
   },
   "cross_references": [],
   "function": {
@@ -214,99 +212,85 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 12,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 12,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 13,
+      "line": 12,
       "match": "unaff_ESI",
       "text": "int *unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 40,
       "match": "(short *)((int)",
       "text": "local_30[3] = (int)*(short *)((int)pvVar2 + ((int)local_1c + uVar7) * 4) *",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 43,
+      "line": 42,
       "match": "(short *)((int)",
       "text": "local_3c.z = (int)*(short *)((int)pvVar2 +",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 50,
+      "line": 49,
       "match": "(short *)((int)",
       "text": "(int)*(short *)((int)pvVar2 +",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 54,
-      "match": "&stack0xffffffb0",
-      "text": "piVar6 = (int *)&stack0xffffffb0;",
+      "line": 53,
+      "match": "&stack0xffffffac",
+      "text": "piVar6 = (int *)&stack0xffffffac;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 85,
-      "match": "&stack0xffffffa4",
-      "text": "piVar6 = (int *)&stack0xffffffa4;",
+      "line": 84,
+      "match": "&stack0xffffffa0",
+      "text": "piVar6 = (int *)&stack0xffffffa0;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 93,
+      "line": 92,
       "match": "(short *)((int)",
       "text": "local_3c.z = (int)*(short *)((int)pvVar2 + ((int)local_18 + iVar5) * 4) * this_ptr->height_scale",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 95,
+      "line": 94,
       "match": "(short *)((int)",
       "text": "local_3c.x = (int)*(short *)((int)pvVar2 + (iVar5 + uVar7) * 4) * this_ptr->height_scale -",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 100,
-      "match": "&stack0xffffffbc",
-      "text": "piVar6 = (int *)&stack0xffffffbc;",
+      "line": 99,
+      "match": "&stack0xffffffb8",
+      "text": "piVar6 = (int *)&stack0xffffffb8;",
       "type": "stack_ref"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 105,
+      "match": "unaff_ESI",
+      "text": "*unaff_ESI = local_3c.x;",
+      "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
       "line": 106,
       "match": "unaff_ESI",
-      "text": "*unaff_ESI = local_3c.y;",
+      "text": "unaff_ESI[(uint)bVar8 * -2 + 1] = local_30[(uint)bVar8 * -2 + -2];",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
       "line": 107,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI[(uint)bVar8 * -2 + 1] = local_30[(uint)bVar8 * -2 + -1];",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 108,
       "match": "unaff_ESI",
       "text": "(unaff_ESI + (uint)bVar8 * -2 + 1)[(uint)bVar8 * -2 + 1] =",
       "type": "unaffected_reg"

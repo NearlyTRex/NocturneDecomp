@@ -13,7 +13,6 @@ void core_stranger_cpp_CStranger_FUN_005c06b0(void)
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   CMatrix3x4f *unaff_ESI;
   float *pfVar2;
   CMatrix3x4f *pCVar3;

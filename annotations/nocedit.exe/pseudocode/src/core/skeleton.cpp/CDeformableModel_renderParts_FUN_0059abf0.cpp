@@ -23,7 +23,6 @@ core_skeleton_cpp_CDeformableModel_renderParts_FUN_0059abf0
   SRenderVertex *pSVar9;
   int green_component;
   int iVar10;
-  BADSPACEBASE *in_ESP;
   ushort *puVar11;
   int iVar12;
   float10 fVar13;

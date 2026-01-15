@@ -12,14 +12,17 @@ void __cdecl core_inv_cpp_CInventory_saveItems_FUN_004ff3b0(CInventory *this_ptr
   char *pcVar1;
   CInventory *pCVar2;
   int iVar3;
+  CDemonActor *this_ptr_00;
   
   iVar3 = 0;
   pCVar2 = this_ptr;
   if (0 < this_ptr->item_count) {
     do {
-      pcVar1 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(pCVar2->items[0]);
+      this_ptr_00 = pCVar2->items[0];
+      pcVar1 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(this_ptr_00);
       iVar3 = iVar3 + 1;
-      crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%s%s \"%s\"\n",g_PropertyNamePrefix,pcVar1);
+      crt_stdio_c_fprintf_FUN_005fe6d0
+                (file_handle,"%s%s \"%s\"\n",g_PropertyNamePrefix,pcVar1,this_ptr_00);
       pCVar2 = (CInventory *)&pCVar2->owner;
     } while (iVar3 < this_ptr->item_count);
   }

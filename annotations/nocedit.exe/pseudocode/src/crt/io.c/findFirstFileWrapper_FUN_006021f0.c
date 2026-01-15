@@ -12,25 +12,21 @@ crt_io_c_findFirstFileWrapper_FUN_006021f0(char *filespec,LPWIN32_FIND_DATAA fin
 {
   HANDLE hFindFile;
   int iVar1;
-  BADSPACEBASE *in_ESP;
-  find_t *in_stack_00000018;
-  DWORD DStack_134;
+  _WIN32_FIND_DATAA _Stack_144;
   
-  hFindFile = (*PTR_FindFirstFileA_0061154c)(filespec,(LPWIN32_FIND_DATAA)&stack0xfffffebc);
+  hFindFile = (*PTR_FindFirstFileA_0061154c)(filespec,&_Stack_144);
   if (hFindFile == (HANDLE)0xffffffff) {
     crt_errno_c_getLastErrorAndSetErrno_FUN_006083fc();
   }
   else {
-    iVar1 = crt_io_c_findNextWithAttributes_FUN_00609d5c
-                      (hFindFile,0x37,(LPWIN32_FIND_DATAA)&stack0xfffffec8);
+    iVar1 = crt_io_c_findNextWithAttributes_FUN_00609d5c(hFindFile,0x37,&_Stack_144);
     if (iVar1 == 0) {
       (*PTR_FindClose_00611548)(hFindFile);
-      DStack_134 = 0x602238;
       crt_errno_c_convertWindowsErrorToErrno_FUN_00608390(2);
       hFindFile = (HANDLE)0xffffffff;
     }
     else {
-      crt_io_c_convertFileInfo_FUN_00602264((LPWIN32_FIND_DATAA)&DStack_134,in_stack_00000018);
+      crt_io_c_convertFileInfo_FUN_00602264(&_Stack_144,(find_t *)find_data);
     }
   }
   return hFindFile;

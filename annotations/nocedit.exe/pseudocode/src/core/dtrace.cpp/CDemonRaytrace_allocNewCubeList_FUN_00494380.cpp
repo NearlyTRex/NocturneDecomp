@@ -11,16 +11,15 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_allocNewCubeList_FUN_00494380(CDemon
 {
   void *array_memory;
   CDemonCube *pCVar1;
-  WatcomTypeInfo *unaff_EBX;
-  WatcomTypeInfo *element_count;
+  int element_count;
+  WatcomTypeInfo *type_info;
   
-  element_count = &g_CDemonCubeTypeInfo;
+  element_count = (this_ptr->grid_coord).z * (this_ptr->grid_coord).x * (this_ptr->grid_coord).y;
+  type_info = &g_CDemonCubeTypeInfo;
   array_memory = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
-                           ((this_ptr->grid_coord).z *
-                            (this_ptr->grid_coord).x * (this_ptr->grid_coord).y * 0x34 + 4,
-                            "..\\core\\dtrace.cpp",0xad);
-  pCVar1 = crt_memory_c_constructTypedObjectArray_FUN_00601272
-                     (array_memory,(int)element_count,unaff_EBX);
+                           (element_count * 0x34 + 4,"..\\core\\dtrace.cpp",0xad);
+  pCVar1 = crt_memory_c_constructTypedObjectArray_FUN_00601272(array_memory,element_count,type_info)
+  ;
   this_ptr->cube_data = pCVar1;
   if (pCVar1 != (CDemonCube *)0x0) {
     return;

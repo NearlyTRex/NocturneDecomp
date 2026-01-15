@@ -18,8 +18,8 @@ void core_dracbrid_cpp_DraculaBrideModels_FUN_004840b0(void)
   CSkeleton *this_ptr;
   CDeformableModel *this_ptr_00;
   float fVar4;
-  char *pcVar5;
   CEnemy *in_stack_00000004;
+  char *pcVar5;
   
   pcVar5 = (in_stack_00000004->base_character).model.model_name;
   pCVar1 = &(in_stack_00000004->base_character).model;

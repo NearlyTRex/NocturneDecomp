@@ -13,15 +13,12 @@ crt_stdio_c_WideStringToMultiByteLen_FUN_00602f7c
 {
   wchar_t wVar1;
   int iVar2;
-  BADSPACEBASE *in_ESP;
   int iVar3;
   byte local_14 [8];
   
   iVar3 = 0;
   if (max_chars == -1) {
-    while( true ) {
-      wVar1 = *wide_string_offset;
-      if (wVar1 == L'\0') break;
+    while (wVar1 = *wide_string_offset, wVar1 != L'\0') {
       wide_string_offset = wide_string_offset + 1;
       iVar2 = crt_stdio_c_WideCharToSingleByte_FUN_0060acf0
                         ((wchar_t)local_14,(char *)(uint)(ushort)wVar1);
@@ -31,9 +28,7 @@ crt_stdio_c_WideStringToMultiByteLen_FUN_00602f7c
     }
   }
   else {
-    while( true ) {
-      wVar1 = *wide_string_offset;
-      if ((wVar1 == L'\0') || (max_chars < iVar3)) break;
+    while ((wVar1 = *wide_string_offset, wVar1 != L'\0' && (iVar3 <= max_chars))) {
       wide_string_offset = wide_string_offset + 1;
       iVar2 = crt_stdio_c_WideCharToSingleByte_FUN_0060acf0
                         ((wchar_t)local_14,(char *)(uint)(ushort)wVar1);

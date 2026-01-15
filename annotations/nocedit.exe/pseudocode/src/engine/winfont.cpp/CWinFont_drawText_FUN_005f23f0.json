@@ -1,17 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 41,
-    "complexity_score": 66,
+    "complexity_score": 40,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 16,
-    "suspect_count": 4,
+    "pseudocode_lines": 15,
+    "suspect_count": 2,
     "suspect_types": [
-      "call_esp_preserve",
-      "stack_param"
+      "call_esp_preserve"
     ],
-    "total_lines": 57
+    "total_lines": 56
   },
   "cross_references": [],
   "function": {
@@ -121,20 +120,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_0000001c",
-      "text": "int in_stack_0000001c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_0000001c",
-      "text": "draw_flags,in_stack_0000001c);",
-      "type": "stack_param"
-    },
     {
       "add_esp_value": 12,
       "call_address": "005f23fb",

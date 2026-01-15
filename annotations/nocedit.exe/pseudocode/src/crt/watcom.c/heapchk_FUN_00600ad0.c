@@ -10,7 +10,6 @@ int __cdecl crt_watcom_c_heapchk_FUN_00600ad0(void)
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   HeapState HStack_18;
   int iStack_8;
   

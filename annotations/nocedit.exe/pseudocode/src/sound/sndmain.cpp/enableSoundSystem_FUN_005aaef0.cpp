@@ -13,6 +13,7 @@ int __cdecl sound_sndmain_cpp_enableSoundSystem_FUN_005aaef0(void)
   uint uVar2;
   int iVar3;
   int iVar4;
+  uint uStack0000006c;
   
   uVar2 = sound_sndmain_cpp_isSoundSystemActive_FUN_005ab530();
   if (uVar2 == 0) {
@@ -76,10 +77,12 @@ int __cdecl sound_sndmain_cpp_enableSoundSystem_FUN_005aaef0(void)
     iVar3 = (*g_CSoundDevicePtr->vtable->start)(g_CSoundDevicePtr);
     if (iVar3 != 0) {
       g_SoundBusyFlag = 1;
+      uStack0000006c = 0x5ab112;
       sound_sndmain_cpp_unlockSound_FUN_005abdc0();
       return 1;
     }
   }
+  uStack0000006c = 0x5ab11e;
   sound_sndmain_cpp_unlockSound_FUN_005abdc0();
   return 0;
 }

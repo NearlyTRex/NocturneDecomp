@@ -12,26 +12,22 @@ void __cdecl wincore_winvideo_cpp_positionMovieWindow_FUN_005f4500(HWND parent_w
   byte *pbVar1;
   byte bVar2;
   byte *pbVar3;
-  BADSPACEBASE *in_ESP;
-  int in_stack_0000000c;
-  int in_stack_00000010;
-  int in_stack_0000001c;
-  int in_stack_00000020;
-  byte bStack_7c;
-  byte abStack_7b [87];
-  tagRECT local_24 [2];
+  byte bStack_a4;
+  byte abStack_a3 [127];
+  tagRECT local_24;
+  tagRECT tStack_14;
   
   if (g_MoviePlaying == 0) {
     return;
   }
-  (*GetClientRect)(parent_window,local_24);
-  (*mciSendStringA)("where mov source",&stack0xffffff68,0x80,(HWND)0x0);
-  (*SetRectEmpty)((LPRECT)&stack0x0000000c);
-  pbVar3 = &bStack_7c;
-  while (bStack_7c == 0x20) {
+  (*GetClientRect)(parent_window,&local_24);
+  (*mciSendStringA)("where mov source",(LPSTR)&bStack_a4,0x80,(HWND)0x0);
+  (*SetRectEmpty)(&tStack_14);
+  pbVar3 = &bStack_a4;
+  while (bStack_a4 == 0x20) {
     pbVar1 = pbVar3 + 1;
     pbVar3 = pbVar3 + 1;
-    bStack_7c = *pbVar1;
+    bStack_a4 = *pbVar1;
   }
   for (; *pbVar3 != 0x20; pbVar3 = pbVar3 + 1) {
   }
@@ -42,19 +38,18 @@ void __cdecl wincore_winvideo_cpp_positionMovieWindow_FUN_005f4500(HWND parent_w
   for (; *pbVar3 == 0x20; pbVar3 = pbVar3 + 1) {
   }
   for (; (0x2f < *pbVar3 && (*pbVar3 < 0x3a)); pbVar3 = pbVar3 + 1) {
-    in_stack_0000001c = in_stack_0000001c * 10 + (*pbVar3 - 0x30);
+    tStack_14.right = tStack_14.right * 10 + (*pbVar3 - 0x30);
   }
   for (; *pbVar3 == 0x20; pbVar3 = pbVar3 + 1) {
   }
   for (; (bVar2 = *pbVar3, 0x2f < bVar2 && (bVar2 < 0x3a)); pbVar3 = pbVar3 + 1) {
-    in_stack_00000020 = in_stack_00000020 * 10 + (bVar2 - 0x30);
+    tStack_14.bottom = tStack_14.bottom * 10 + (bVar2 - 0x30);
   }
-  if ((400 < in_stack_0000000c) || (300 < in_stack_00000010)) {
-    in_stack_0000001c = in_stack_0000001c * 2;
-    in_stack_00000020 = in_stack_00000020 * 2;
+  if ((400 < local_24.right) || (300 < local_24.bottom)) {
+    tStack_14.right = tStack_14.right * 2;
+    tStack_14.bottom = tStack_14.bottom * 2;
   }
-  (*MoveWindow)(g_MovieWindowHandle,in_stack_0000000c / 2 - in_stack_0000001c / 2,
-                in_stack_00000010 / 2 - in_stack_00000020 / 2,in_stack_0000001c,in_stack_00000020,1)
-  ;
+  (*MoveWindow)(g_MovieWindowHandle,local_24.right / 2 - tStack_14.right / 2,
+                local_24.bottom / 2 - tStack_14.bottom / 2,tStack_14.right,tStack_14.bottom,1);
   return;
 }

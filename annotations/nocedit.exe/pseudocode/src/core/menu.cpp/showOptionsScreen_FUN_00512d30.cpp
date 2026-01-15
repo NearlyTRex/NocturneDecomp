@@ -12,13 +12,11 @@ void __cdecl core_menu_cpp_showOptionsScreen_FUN_00512d30(int initialize_systems
   int iVar1;
   char *pcVar2;
   char (*pacVar3) [256];
-  BADSPACEBASE *in_ESP;
   CGame *unaff_ESI;
-  int in_stack_0000002c;
-  uint uStack00000048;
-  uint uStack00000054;
-  int in_stack_00000064;
+  int in_stack_0000000c;
+  int local_10;
   
+  local_10 = 0;
   if (initialize_systems != 0) {
     core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
     core_moon_cpp_CMoon_init_FUN_00529ae0(&g_CMoonInstance);
@@ -46,8 +44,7 @@ void __cdecl core_menu_cpp_showOptionsScreen_FUN_00512d30(int initialize_systems
     g_CGamePtr->hero_number = 2;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Option Menu");
     iVar1 = core_menu_cpp_renderMenuAndGetChoice_FUN_00510000
-                      (g_OptionsMenuPointers,4,&stack0x0000002c,0xfa,(int)pcVar2);
-    in_stack_0000002c = 0x512e51;
+                      (g_OptionsMenuPointers,4,&local_10,0xfa,(int)pcVar2);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     switch(iVar1) {
     case 0:
@@ -64,17 +61,16 @@ void __cdecl core_menu_cpp_showOptionsScreen_FUN_00512d30(int initialize_systems
       }
       break;
     case 3:
-      in_stack_0000002c = 0x512ee9;
       core_game_cpp_CGame_rollCredits_FUN_004e4010(g_CGamePtr);
       core_sound_cpp_CSound_configure_FUN_005b3830(g_CSoundPtr);
     }
     iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
   } while (iVar1 == 0);
-  if (in_stack_00000064 != 0) {
-    uStack00000048 = 0x512f09;
+  if (in_stack_0000000c != 0) {
+    local_10 = 0x512f09;
     core_moon_cpp_CMoon_free_FUN_00529ce0(&g_CMoonInstance);
+    local_10 = 0x512f18;
     core_sound_cpp_CSound_reset_FUN_005b39a0(g_CSoundPtr);
-    uStack00000054 = 0x512f20;
     core_inivar_cpp_writeIniData_FUN_004fc510();
     return;
   }

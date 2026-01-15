@@ -12,7 +12,6 @@ float __cdecl core_wateract_cpp_CWaterActor_customRayIntersect_FUN_005eb740(CWat
   CBoundingBox3D *this_ptr_00;
   float fVar1;
   char *pcVar2;
-  BADSPACEBASE *in_ESP;
   int iVar3;
   CVector3f *in_stack_00000008;
   CVector3f *in_stack_0000000c;
@@ -30,6 +29,7 @@ float __cdecl core_wateract_cpp_CWaterActor_customRayIntersect_FUN_005eb740(CWat
   float fStack_20;
   float fStack_1c;
   int iStack_18;
+  float fStack_14;
   
   this_ptr_00 = (*((this_ptr->base_actor).vtable)->getBoundingBox)(&this_ptr->base_actor,&CStack_4c)
   ;
@@ -51,13 +51,13 @@ float __cdecl core_wateract_cpp_CWaterActor_customRayIntersect_FUN_005eb740(CWat
                    (CVector3f *)(this_ptr->field21_0x298 + *(int *)(pcVar2 + 0x18) * 0x20 + 4),
                    (CVector3f *)(this_ptr->field21_0x298 + *(int *)(pcVar2 + 0x24) * 0x20 + 4),
                    (CVector3f *)(this_ptr->field21_0x298 + *(int *)(pcVar2 + 0x30) * 0x20 + 4));
-        fVar1 = core_dtri_cpp_rayTriangleIntersection_FUN_0049a800
-                          (&CStack_84,in_stack_00000008,in_stack_0000000c);
-        if (((fVar1 < fStack_88) && (0.0 <= fVar1)) && (fVar1 <= 1.0)) {
+        fStack_14 = core_dtri_cpp_rayTriangleIntersection_FUN_0049a800
+                              (&CStack_84,in_stack_00000008,in_stack_0000000c);
+        if (((fStack_14 < fStack_88) && (0.0 <= fStack_14)) && (fStack_14 <= 1.0)) {
           fStack_34 = -CStack_84.normal.x;
           fStack_30 = -CStack_84.normal.y;
           fStack_2c = -CStack_84.normal.z;
-          fStack_88 = fVar1;
+          fStack_88 = fStack_14;
           if (&fStack_28 != &fStack_34) {
             fStack_28 = fStack_34;
             fStack_24 = fStack_30;

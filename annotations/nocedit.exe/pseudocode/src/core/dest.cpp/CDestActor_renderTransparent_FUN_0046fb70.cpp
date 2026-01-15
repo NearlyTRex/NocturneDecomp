@@ -14,9 +14,8 @@ uint core_dest_cpp_CDestActor_renderTransparent_FUN_0046fb70(void)
   int iVar1;
   CBoundingBox3D *pCVar2;
   CDemonActor *pCVar3;
-  BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000004;
-  float fStack_2c;
+  CBoundingBox3D local_24;
   
   if (*(int *)(g_CDemonMissionPtr->field0_0x0 + 4) != 0) {
     iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
@@ -27,7 +26,7 @@ uint core_dest_cpp_CDestActor_renderTransparent_FUN_0046fb70(void)
         if (iVar1 != 0) {
           core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);
           pCVar2 = (*in_stack_00000004->vtable->getBoundingBox)
-                             (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffd0);
+                             (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffc4);
           iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(pCVar2);
           if (iVar1 != 0) {
             pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790
@@ -48,12 +47,10 @@ uint core_dest_cpp_CDestActor_renderTransparent_FUN_0046fb70(void)
         }
       }
       core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);
-      pCVar2 = (*in_stack_00000004->vtable->getBoundingBox)
-                         (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffe8);
+      pCVar2 = (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,&local_24);
       iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(pCVar2);
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_00000004);
       if (iVar1 != 0) {
-        fStack_2c = 6.518866e-39;
         core_actor_cpp_CDemonActor_FUN_0040dec0(in_stack_00000004);
         return 1;
       }

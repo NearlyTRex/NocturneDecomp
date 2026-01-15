@@ -1,17 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 28,
-    "complexity_score": 49,
+    "complexity_score": 23,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 9,
-    "suspect_count": 3,
+    "pseudocode_lines": 8,
+    "suspect_count": 1,
     "suspect_types": [
-      "call_esp_preserve",
-      "unaffected_reg"
+      "call_esp_preserve"
     ],
-    "total_lines": 37
+    "total_lines": 36
   },
   "cross_references": [
     {
@@ -166,20 +165,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 7,
-      "match": "unaff_ESI",
-      "text": "int unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 10,
-      "match": "unaff_ESI",
-      "text": "engine_2d_c_drawTextColor_FUN_00402430(text,(((left_x + right_x) - iVar1) + 2) / 2,unaff_ESI);",
-      "type": "unaffected_reg"
-    },
     {
       "add_esp_value": 12,
       "call_address": "004026ef",

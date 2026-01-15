@@ -11,13 +11,10 @@ cockpit_ckptutil_c_applyColorPalette_FUN_004319b0
           (char *filename,void *bitmap_buffer,int bitmap_size,int palette_index)
 
 {
-  int in_stack_00000014;
-  
   if (bitmap_buffer == (void *)0x0) {
     return;
   }
   cockpit_ckptutil_c_readBitmapFile_FUN_00431870(filename,bitmap_buffer,bitmap_size);
-  cockpit_ckptutil_c_applyActPalette_FUN_004319b0
-            (bitmap_buffer,bitmap_buffer,palette_index,in_stack_00000014);
+  cockpit_ckptutil_c_applyActPalette_FUN_004319b0(filename,bitmap_buffer,bitmap_size,palette_index);
   return;
 }

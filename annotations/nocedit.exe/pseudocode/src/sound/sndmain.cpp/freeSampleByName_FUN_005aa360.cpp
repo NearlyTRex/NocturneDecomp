@@ -13,10 +13,9 @@ sound_sndmain_cpp_freeSampleByName_FUN_005aa360(char *sample_name,int kill_activ
   int iVar1;
   int iVar2;
   CSfxSample *this_ptr;
-  int in_stack_0000000c;
   
   sound_sndmain_cpp_lockSound_FUN_005abd30();
-  if (in_stack_0000000c != 0) {
+  if (kill_active_slots != 0) {
     sound_sndmain_cpp_killSfxByName_FUN_005aa2f0(sample_name);
   }
   iVar2 = 0;

@@ -1,21 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 132,
-    "complexity_score": 634,
+    "complexity_score": 461,
     "cross_reference_count": 4,
     "function_call_count": 9,
     "global_count": 0,
-    "pseudocode_lines": 54,
-    "suspect_count": 55,
+    "pseudocode_lines": 31,
+    "suspect_count": 42,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
-      "lea_esp_stack_addr",
-      "register_param",
-      "stack_param",
-      "stack_ref"
+      "lea_esp_stack_addr"
     ],
-    "total_lines": 186
+    "total_lines": 163
   },
   "cross_references": [
     {
@@ -265,97 +261,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 8,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 8,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000014",
-      "text": "char *in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_fffff7f0",
-      "text": "uint in_stack_fffff7f0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 38,
-      "match": "in_stack_00000014",
-      "text": "(in_stack_00000014,(char *)0x0,(char *)0x0,acStack_200,acStack_400);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 41,
-      "match": "&stack0xfffff7e8",
-      "text": "engine_dosio_c_CFileFinder_ctor_FUN_00481c30((CFileFinder *)&stack0xfffff7e8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 42,
-      "match": "&stack0xfffff7ec",
-      "text": "engine_dosio_c_CFileFinder_openSearch_FUN_00481c70((CFileFinder *)&stack0xfffff7ec,acStack_4f8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 43,
-      "match": "in_stack_fffff7f0",
-      "text": "cVar1 = (char)in_stack_fffff7f0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 46,
-      "match": "&stack0xfffff7f0",
-      "text": "(&stack0xfffff7f0,(char *)0x0,(char *)0x0,acStack_1f0,acStack_3f0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 48,
-      "match": "&stack0x00000000",
-      "text": "(acStack_608,&stack0x00000000,acStack_300,acStack_200,acStack_400);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 51,
-      "match": "&stack0xfffff7ec",
-      "text": "engine_dosio_c_CFileFinder_findNext_FUN_00481cf0((CFileFinder *)&stack0xfffff7ec);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 52,
-      "match": "in_stack_fffff7f0",
-      "text": "cVar1 = (char)in_stack_fffff7f0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 54,
-      "match": "&stack0xfffff7f0",
-      "text": "engine_dosio_c_CFileFinder_closeSearch_FUN_00481d70((CFileFinder *)&stack0xfffff7f0);",
-      "type": "stack_ref"
-    },
     {
       "add_esp_value": 20,
       "call_address": "004a3a16",

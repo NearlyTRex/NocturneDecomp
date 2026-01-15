@@ -15,15 +15,14 @@ void core_script_cpp_FUN_00567080(void)
   char cVar1;
   int iVar2;
   int iVar3;
-  BADSPACEBASE *in_ESP;
   char *pcVar4;
   char *pcVar5;
   byte bVar6;
   char *in_stack_00000008;
   uint *in_stack_0000000c;
-  char acStack_248 [300];
-  char acStack_11c [256];
-  uint uStack_1c;
+  char local_24c [300];
+  char local_120 [256];
+  uint local_20;
   
   bVar6 = 0;
   iVar3 = 0;
@@ -38,7 +37,7 @@ void core_script_cpp_FUN_00567080(void)
   while ((g_CharacterClassificationTable[(byte)(*in_stack_00000008 + 1)] & 2U) != 0) {
     in_stack_00000008 = in_stack_00000008 + 1;
   }
-  pcVar4 = acStack_248;
+  pcVar4 = local_24c;
   while (iVar3 = core_event_cpp_FUN_004b0f90(), iVar3 != 0) {
     cVar1 = *in_stack_00000008;
     in_stack_00000008 = in_stack_00000008 + 1;
@@ -49,17 +48,17 @@ void core_script_cpp_FUN_00567080(void)
   while ((g_CharacterClassificationTable[(byte)(*in_stack_00000008 + 1)] & 2U) != 0) {
     in_stack_00000008 = in_stack_00000008 + 1;
   }
-  if ((*in_stack_00000008 != '\0') || (acStack_248[0] == '\0')) {
+  if ((*in_stack_00000008 != '\0') || (local_24c[0] == '\0')) {
     return;
   }
-  pcVar4 = acStack_11c;
+  pcVar4 = local_120;
   for (iVar3 = 0x45; iVar3 != 0; iVar3 = iVar3 + -1) {
     *(uint *)pcVar4 = *in_stack_0000000c;
     in_stack_0000000c = in_stack_0000000c + (uint)bVar6 * -2 + 1;
     pcVar4 = pcVar4 + ((uint)bVar6 * -2 + 1) * 4;
   }
-  pcVar4 = acStack_248;
-  pcVar5 = acStack_11c;
+  pcVar4 = local_24c;
+  pcVar5 = local_120;
   do {
     cVar1 = *pcVar4;
     *pcVar5 = cVar1;
@@ -69,7 +68,7 @@ void core_script_cpp_FUN_00567080(void)
     pcVar5[1] = cVar1;
     pcVar5 = pcVar5 + 2;
   } while (cVar1 != '\0');
-  uStack_1c = 1;
+  local_20 = 1;
   core_script_cpp_CScript_ReallocSomething_FUN_00567510();
   return;
 }

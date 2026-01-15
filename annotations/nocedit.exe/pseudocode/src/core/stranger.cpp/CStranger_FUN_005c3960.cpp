@@ -22,7 +22,6 @@ void core_stranger_cpp_CStranger_FUN_005c3960(void)
   int iVar7;
   int iVar8;
   float fVar9;
-  BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000004;
   int in_stack_00000008;
   float in_stack_0000000c;

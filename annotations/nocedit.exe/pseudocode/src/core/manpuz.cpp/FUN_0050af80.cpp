@@ -15,7 +15,6 @@ void core_manpuz_cpp_FUN_0050af80(void)
   float *pfVar1;
   float fVar2;
   float *pfVar3;
-  BADSPACEBASE *in_ESP;
   int in_stack_00000004;
   int in_stack_00000008;
   float local_1c [7];

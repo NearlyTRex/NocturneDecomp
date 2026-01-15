@@ -15,7 +15,6 @@ cockpit_ckptutil_c_rotateCircularBitmap_FUN_00433030
   uint uVar2;
   byte *puVar3;
   uint *puVar4;
-  BADSPACEBASE *in_ESP;
   byte *puVar5;
   uint *puVar6;
   int iVar7;

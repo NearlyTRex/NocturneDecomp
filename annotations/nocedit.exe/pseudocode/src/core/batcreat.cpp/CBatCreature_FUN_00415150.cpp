@@ -15,7 +15,6 @@ void __cdecl core_batcreat_cpp_CBatCreature_FUN_00415150(CBatCreature *this_ptr)
   CSkeleton *this_ptr_01;
   CDeformableModel *this_ptr_02;
   int iVar1;
-  uint uStack0000003c;
   
   core_enemy_cpp_CEnemy_FUN_004a9650(&this_ptr->base_enemy);
   this_ptr_00 = &(this_ptr->base_enemy).base_character.model;
@@ -53,12 +52,9 @@ void __cdecl core_batcreat_cpp_CBatCreature_FUN_00415150(CBatCreature *this_ptr)
        core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 R UpperArm");
   _DAT_00822770 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 Spine");
-  uStack0000003c = 1;
   _DAT_00822778 =
        core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 Spine2");
-  uStack0000003c = 0x4152e5;
   this_ptr_02 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr_00);
-  uStack0000003c = 0x4152f8;
   iVar1 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_0059c240
                     (this_ptr_02,"head01",1);
   *(int *)(this_ptr->field1_0xbeb4 + 8) = iVar1;

@@ -24,7 +24,6 @@ cockpit_ckptutil_c_traceConnectedEdges_FUN_00434af0
   ushort uVar10;
   int iVar11;
   int iVar12;
-  BADSPACEBASE *in_ESP;
   int iVar13;
   int iVar14;
   int iVar15;
@@ -32,7 +31,7 @@ cockpit_ckptutil_c_traceConnectedEdges_FUN_00434af0
   byte bVar17;
   int in_stack_00000020;
   int in_stack_00000024;
-  char acStack_1ec [248];
+  char local_1f4 [256];
   int local_f4;
   int local_f0;
   int local_ec;
@@ -106,24 +105,22 @@ cockpit_ckptutil_c_traceConnectedEdges_FUN_00434af0
       local_cc = iVar13 * 0x84;
       local_e0 = 0;
       local_34 = (int *)((int)output_buffer + local_dc * 0x84);
-      local_20 = 0;
       local_e4 = local_e8;
       local_80 = local_dc;
       local_70 = local_dc;
       local_68 = local_dc;
       local_2c = local_dc;
-      while( true ) {
-        piVar2 = (int *)((int)output_buffer + local_cc);
-        if (*piVar2 <= local_20) break;
+      for (local_20 = 0; piVar2 = (int *)((int)output_buffer + local_cc), local_20 < *piVar2;
+          local_20 = local_20 + 1) {
         iVar1 = *(int *)((int)piVar2 + local_e0 + 4);
         iVar14 = *(int *)((int)piVar2 + local_e0 + 0x44) + iVar1;
         iVar15 = iVar14 + -1;
         if (0x1ff < iVar11) {
           crt_stdio_c_sprintf_FUN_005fdbd0
-                    (&stack0xfffffe0c,"Reached max trace edges: edges %d, scanline %d",iVar11);
+                    (local_1f4,"Reached max trace edges: edges %d, scanline %d",iVar11,iVar13);
           g_CurrentFilename = "..\\cockpit\\ckptutil.c";
           g_CurrentLineNumber = 0x886;
-          core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xfffffe08);
+          core_main_c_displayErrorAndQuit_FUN_00506f10(local_1f4);
         }
         uVar6 = (ushort)iVar13;
         if (0 < iVar1) {
@@ -254,10 +251,10 @@ LAB_00434df6:
         }
         if (0x1ff < iVar11) {
           crt_stdio_c_sprintf_FUN_005fdbd0
-                    (&stack0xfffffe0c,"Reached max trace edges: edges %d, scanline %d",iVar11);
+                    (local_1f4,"Reached max trace edges: edges %d, scanline %d",iVar11,iVar13);
           g_CurrentFilename = "..\\cockpit\\ckptutil.c";
           g_CurrentLineNumber = 0x8c0;
-          core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xfffffe10);
+          core_main_c_displayErrorAndQuit_FUN_00506f10(local_1f4);
         }
         if (iVar15 < local_48) {
           local_30 = iVar14 + -2;
@@ -328,7 +325,6 @@ LAB_00434df6:
           }
         }
         local_e0 = local_e0 + 4;
-        local_20 = local_20 + 1;
         local_e4 = local_e4 + 1;
       }
       local_e8 = local_e8 + 0x21;
@@ -344,17 +340,17 @@ LAB_00434df6:
   if (output_count == (int *)0x0) {
     *(uint *)max_x = 0;
   }
+  iVar13 = *(int *)max_x * 8 + iVar11 * 8;
   pvVar5 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                     (output_count,*(int *)max_x * 8 + iVar11 * 8,"..\\cockpit\\ckptutil.c",
-                      0x8fc);
+                     (output_count,iVar13,"..\\cockpit\\ckptutil.c",0x8fc);
   if (pvVar5 == (void *)0x0) {
-    crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffe10,"Unable to allocate %u bytes for edge list.");
+    crt_stdio_c_sprintf_FUN_005fdbd0(local_1f4,"Unable to allocate %u bytes for edge list.",iVar13);
     g_CurrentFilename = "..\\cockpit\\ckptutil.c";
     g_CurrentLineNumber = 0x8ff;
-    core_main_c_displayErrorAndQuit_FUN_00506f10(acStack_1ec);
+    core_main_c_displayErrorAndQuit_FUN_00506f10(local_1f4);
   }
   pSVar3 = g_TracedEdgeBuffer;
-  puVar16 = (uint *)(*(int *)gap_tolerance_y * 8 + gap_tolerance_x);
+  puVar16 = (uint *)(*(int *)max_x * 8 + (int)pvVar5);
   for (uVar8 = (uint)(iVar11 * 8) >> 2; uVar8 != 0; uVar8 = uVar8 - 1) {
     *puVar16 = *(uint *)pSVar3;
     pSVar3 = (SEdge *)&pSVar3[-(uint)bVar17].x1;
@@ -365,6 +361,6 @@ LAB_00434df6:
     pSVar3 = (SEdge *)((int)pSVar3 + (uint)bVar17 * -2 + 1);
     puVar16 = (uint *)((int)puVar16 + (uint)bVar17 * -2 + 1);
   }
-  *(int *)gap_tolerance_y = *(int *)gap_tolerance_y + iVar11;
-  return (void *)gap_tolerance_x;
+  *(int *)max_x = *(int *)max_x + iVar11;
+  return pvVar5;
 }

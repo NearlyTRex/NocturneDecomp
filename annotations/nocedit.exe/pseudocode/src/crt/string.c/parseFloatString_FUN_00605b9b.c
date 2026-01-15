@@ -14,11 +14,10 @@ int __cdecl crt_string_c_parseFloatString_FUN_00605b9b(char *str,void *result,ch
   byte *pbVar3;
   byte bVar4;
   int iVar5;
-  BADSPACEBASE *in_ESP;
   int iVar6;
   int iVar7;
   uint uStack_44;
-  int local_40 [5];
+  byte local_40 [20];
   uint local_2c;
   uint local_28;
   ushort local_24;
@@ -56,7 +55,7 @@ int __cdecl crt_string_c_parseFloatString_FUN_00605b9b(char *str,void *result,ch
     bVar4 = bVar4 | bVar1;
     if (bVar4 != 0x30) {
       if (iVar5 < 0x13) {
-        *(byte *)((int)local_40 + iVar5) = bVar1;
+        local_40[iVar5] = bVar1;
       }
       iVar5 = iVar5 + 1;
     }
@@ -95,7 +94,7 @@ LAB_00605c23:
     iVar6 = iVar6 + iVar5 + -0x13;
     iVar5 = 0x13;
   }
-  for (; (0 < iVar5 && (*(char *)((int)local_40 + iVar5 + -1) == '0')); iVar5 = iVar5 + -1) {
+  for (; (0 < iVar5 && (local_40[iVar5 + -1] == 0x30)); iVar5 = iVar5 + -1) {
     iVar6 = iVar6 + 1;
   }
   if (iVar5 == 0) {
@@ -105,12 +104,11 @@ LAB_00605c23:
     iVar5 = 0;
   }
   else {
-    *(byte *)((int)local_40 + iVar5) = 0;
-    uStack_44 = (uint *)0x605d00;
+    local_40[iVar5] = 0;
+    uStack_44 = 0x605d00;
     crt_unknown_c_FUN_0060b586(local_40,&local_2c);
     if (iVar6 != 0) {
-      uStack_44 = &local_2c;
-      local_40[0] = iVar6;
+      uStack_44 = iVar6;
       crt_unknown_c_FUN_00603d60();
     }
     if ((local_14 & 1) != 0) {

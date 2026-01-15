@@ -14,23 +14,17 @@ void __cdecl core_setedit_cpp_CDemonSet_OpenAndProcessFileMaybe_FUN_00578a20(CDe
   undefined3 extraout_var;
   FILE *file_ptr;
   int iVar3;
-  BADSPACEBASE *in_ESP;
   char *pcVar4;
+  char *str1;
   char *pcVar5;
-  char in_stack_fffffb38;
-  char local_3d8 [8];
-  char acStack_3d0 [256];
-  char acStack_2d0 [4];
-  char acStack_2cc [20];
-  char acStack_2b8 [8];
-  char acStack_2b0 [248];
-  char acStack_1b8 [4];
-  char acStack_1b4 [4];
-  char acStack_1b0 [4];
-  char acStack_1ac [220];
-  char acStack_d0 [8];
-  char acStack_c8 [184];
+  char local_4d8;
+  char acStack_4d7 [255];
+  char local_3d8 [256];
+  char local_2d8 [256];
+  char local_1d8 [256];
+  char local_d8 [200];
   
+  str1 = &local_4d8;
   pcVar4 = "models";
   pcVar5 = local_3d8;
   do {
@@ -48,22 +42,20 @@ void __cdecl core_setedit_cpp_CDemonSet_OpenAndProcessFileMaybe_FUN_00578a20(CDe
     return;
   }
   file_ptr = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                       (local_3d8 + 4,(char *)0x0,"rt","..\\core\\setedit.cpp",0x36c);
+                       (local_3d8,(char *)0x0,"rt","..\\core\\setedit.cpp",0x36c);
   if (file_ptr != (FILE *)0x0) {
-    engine_dosio_c_splitPath_FUN_00481f20
-              (acStack_3d0,(char *)0x0,(char *)0x0,acStack_2d0,&stack0xfffffb30);
+    engine_dosio_c_splitPath_FUN_00481f20(local_3d8,(char *)0x0,(char *)0x0,local_2d8,&local_4d8);
     engine_dosio_c_makePath_FUN_00481f50
-              (this_ptr->geometry_filename,(char *)0x0,(char *)0x0,acStack_2cc,"geo");
-    pcVar5 = &stack0xfffffb38;
-    if (in_stack_fffffb38 == '.') {
-      pcVar5 = &stack0xfffffb39;
+              (this_ptr->geometry_filename,(char *)0x0,(char *)0x0,local_2d8,"geo");
+    if (local_4d8 == '.') {
+      str1 = acStack_4d7;
     }
-    iVar3 = crt_string_c_stricmp_FUN_005fe7f0(pcVar5,"a3d");
+    iVar3 = crt_string_c_stricmp_FUN_005fe7f0(str1,"a3d");
     if (iVar3 == 0) {
       core_setedit_cpp_ImportA3DBroken_FUN_00578c60();
     }
     else {
-      iVar3 = crt_string_c_stricmp_FUN_005fe7f0(pcVar5,"s3d");
+      iVar3 = crt_string_c_stricmp_FUN_005fe7f0(str1,"s3d");
       if (iVar3 != 0) {
         shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\setedit.cpp",0x38f);
         wincore_windll_cpp_clearScreen_FUN_005b3e70();
@@ -76,16 +68,16 @@ void __cdecl core_setedit_cpp_CDemonSet_OpenAndProcessFileMaybe_FUN_00578a20(CDe
     }
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\setedit.cpp",0x399);
     engine_dosio_c_makePath_FUN_00481f50
-              (acStack_1b8,(char *)0x0,"data",acStack_2b8,"zth");
-    crt_io_c_deleteFile_FUN_005ff9d0(acStack_1b4);
+              (local_1d8,(char *)0x0,"data",local_2d8,"zth");
+    crt_io_c_deleteFile_FUN_005ff9d0(local_1d8);
     engine_dosio_c_makePath_FUN_00481f50
-              (acStack_1b0,(char *)0x0,"data",acStack_2b0,"thm");
-    crt_io_c_deleteFile_FUN_005ff9d0(acStack_1ac);
+              (local_1d8,(char *)0x0,"data",local_2d8,"thm");
+    crt_io_c_deleteFile_FUN_005ff9d0(local_1d8);
     return;
   }
-  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_d0,"Can't open %s",acStack_3d0);
+  crt_stdio_c_sprintf_FUN_005fdbd0(local_d8,"Can't open %s",local_3d8);
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
-  engine_2d_c_drawText_FUN_00401fd0(acStack_c8,0,0);
+  engine_2d_c_drawText_FUN_00401fd0(local_d8,0,0);
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
   engine_keys_cpp_CKeys_getInputKey_FUN_00502460(g_CKeysPtr);
   return;

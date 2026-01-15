@@ -15,7 +15,6 @@ void core_boneguy_cpp_FUN_0041ca40(void)
   int iVar1;
   CVector3f *pCVar2;
   int iVar3;
-  BADSPACEBASE *in_ESP;
   float *unaff_ESI;
   float *pfVar4;
   CMatrix3x4f *pCVar5;

@@ -15,7 +15,6 @@ void core_cloth_cpp_OrientBoneCheck_FUN_0043a110(void)
   CSkeleton *this_ptr;
   int iVar1;
   char *bone_name;
-  BADSPACEBASE *in_ESP;
   CVector3f *pCVar2;
   uint *puVar3;
   char *pcVar4;
@@ -35,7 +34,6 @@ void core_cloth_cpp_OrientBoneCheck_FUN_0043a110(void)
   bVar5 = 0;
   this_ptr = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
                        (in_stack_0000000c);
-  local_94.m[0].w = 1.4013e-45;
   bone_name = (char *)(in_stack_00000004 + 0x3ce90 + in_stack_00000008 * 0xac);
   local_1c = this_ptr;
   iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr,bone_name);

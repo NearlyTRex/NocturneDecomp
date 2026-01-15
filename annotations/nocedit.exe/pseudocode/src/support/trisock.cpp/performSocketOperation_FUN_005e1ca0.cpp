@@ -12,30 +12,27 @@ support_trisock_cpp_performSocketOperation_FUN_005e1ca0
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
-  byte bVar2;
-  uint auStackY_1804 [1521];
-  uint uStack_28;
-  uint local_1c;
+  uint *puVar2;
+  uint *puVar3;
+  byte bVar4;
+  uint auStackY_1808 [1521];
+  SOCKADDR_IN local_2c;
+  SOCKADDR_IN local_1c;
   
-  bVar2 = 0;
+  bVar4 = 0;
   if (dest_addr == (SNetworkAddr *)0x0) {
     iVar1 = crt_wsock32_c_send(socket_ctx->socket,buffer,length,0);
     return iVar1;
   }
-  support_trisock_cpp_buildSockaddrIn_FUN_005e19d0(dest_addr,(SOCKADDR_IN *)&stack0xffffffd4);
-  local_1c = uStack_28;
-  *(uint *)(&stack0xffffffe8 + (uint)bVar2 * -8) =
-       *(uint *)(&stack0xffffffdc + (uint)bVar2 * -8);
-  *(uint *)(&stack0xffffffec + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
-       *(uint *)(&stack0xffffffe0 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
-  *(uint *)
-   ((int)(&stack0xffffffec + (uint)bVar2 * -8 + (uint)bVar2 * -8) + ((uint)bVar2 * -2 + 1) * 4) =
-       *(uint *)
-        ((int)(&stack0xffffffe0 + (uint)bVar2 * -8 + (uint)bVar2 * -8) + ((uint)bVar2 * -2 + 1) * 4)
-  ;
-  iVar1 = crt_wsock32_c_sendto
-                    (*(SOCKET *)buffer,(char *)length,(int)dest_addr,0,(SOCKADDR *)&stack0xffffffe8,
-                     0x10);
+  support_trisock_cpp_buildSockaddrIn_FUN_005e19d0(dest_addr,&local_2c);
+  local_1c.sin_family = local_2c.sin_family;
+  local_1c.sin_port = local_2c.sin_port;
+  puVar3 = (uint *)((int)&local_1c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+  puVar2 = (uint *)((int)&local_2c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+  *(uint *)((int)&local_1c + (uint)bVar4 * -8 + 4) =
+       *(uint *)((int)&local_2c + (uint)bVar4 * -8 + 4);
+  *puVar3 = *puVar2;
+  puVar3[(uint)bVar4 * -2 + 1] = puVar2[(uint)bVar4 * -2 + 1];
+  iVar1 = crt_wsock32_c_sendto(socket_ctx->socket,buffer,length,0,(SOCKADDR *)&local_1c,0x10);
   return iVar1;
 }

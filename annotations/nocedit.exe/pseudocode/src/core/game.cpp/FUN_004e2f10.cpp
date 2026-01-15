@@ -6,7 +6,7 @@
 
 #include "nocturne.h"
 
-void core_game_cpp_FUN_004e2f10(void)
+void core_game_cpp_FUN_004e2f10(uint param_1,uint param_2,uint unaff_EBX)
 
 {
   int iVar1;
@@ -29,6 +29,6 @@ void core_game_cpp_FUN_004e2f10(void)
   }
   core_netgame_cpp_CNetGame_FUN_0053fd00(g_CNetGameInstance);
   shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-            (g_CEditorToolsPtr,"Can't init network to host game.");
+            (g_CEditorToolsPtr,"Can't init network to host game.",unaff_EBX);
   return;
 }

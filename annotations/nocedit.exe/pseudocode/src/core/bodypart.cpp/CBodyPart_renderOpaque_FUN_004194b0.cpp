@@ -11,15 +11,15 @@ int __cdecl core_bodypart_cpp_CBodyPart_renderOpaque_FUN_004194b0(CBodyPart *thi
 {
   CBoundingBox3D *this_ptr_00;
   int iVar1;
-  BADSPACEBASE *in_ESP;
   CKeyFramedModelInstance *this_ptr_01;
   CVector3i *position;
+  CBoundingBox3D local_20;
   
   if (*(int *)this_ptr->field1_0x158 < 2) {
     g_CDemonSetPtr->unk_lighting_param2 = *(int *)(this_ptr->field1_0x158 + 0xb58);
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base_actor);
     this_ptr_00 = (*((this_ptr->base_actor).vtable)->getBoundingBox)
-                            (&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffe4);
+                            (&this_ptr->base_actor,&local_20);
     iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
     *(int *)(this_ptr->field1_0x158 + 0xdd4) = iVar1;
     if (iVar1 != 0) {

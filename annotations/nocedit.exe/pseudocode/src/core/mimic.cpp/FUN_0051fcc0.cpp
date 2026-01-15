@@ -21,7 +21,6 @@ void core_mimic_cpp_FUN_0051fcc0(void)
   int iVar7;
   uint uVar8;
   CBoundingBox3D *pCVar9;
-  BADSPACEBASE *in_ESP;
   float *pfVar10;
   CMatrix3x4f *pCVar11;
   bool bVar12;
@@ -29,7 +28,7 @@ void core_mimic_cpp_FUN_0051fcc0(void)
   CCharacter *in_stack_00000004;
   float in_stack_00000008;
   CDeformableModelInstance *pCVar14;
-  SCollisionInfo *this_ptr;
+  SCollisionInfo *in_stack_fffffda2;
   SDamageInfo local_1e4;
   float local_1a8 [12];
   CMatrix3x4f local_178;
@@ -83,16 +82,15 @@ void core_mimic_cpp_FUN_0051fcc0(void)
   local_1c = -1.0;
   local_70.x = local_88.x;
   local_70.z = local_88.z;
-  this_ptr = (SCollisionInfo *)&in_stack_00000004->model;
+  local_18 = &in_stack_00000004->model;
   local_70.y = 0.0;
-  local_18 = (CDeformableModelInstance *)this_ptr;
   pSVar6 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                     ((CMotionController *)this_ptr);
+                     (&local_18->motion_controller);
   uVar8 = pSVar6->state_index;
   if (uVar8 < 2) {
     if (uVar8 == 0) {
       iVar7 = (*(g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable[1].hasCollision)
-                        ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],this_ptr);
+                        ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],in_stack_fffffda2);
       if (((iVar7 == 0) && (g_CGamePtr->field54_0x1d4 == 0)) &&
          (ABS((in_stack_00000004->base_actor).location.position.y -
               (g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.location.position.y) <=
@@ -104,7 +102,7 @@ void core_mimic_cpp_FUN_0051fcc0(void)
             (1.0 - ABS(local_14) * (float)0.63661977238577705) * (float)25 +
             (float)30) {
           core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820
-                    (local_18,DAT_02f33378,(CMatrix3x4f *)this_ptr);
+                    (local_18,DAT_02f33378,(CMatrix3x4f *)in_stack_fffffda2);
           local_4c.y = 0.7;
           pfVar10 = local_1a8;
           pCVar11 = &local_178;
@@ -132,7 +130,7 @@ void core_mimic_cpp_FUN_0051fcc0(void)
     }
 LAB_0051fd7d:
     iVar7 = (*(g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable[1].hasCollision)
-                      ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],this_ptr);
+                      ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],in_stack_fffffda2);
     if ((iVar7 != 0) || (g_CGamePtr->field54_0x1d4 != 0)) {
       iVar7 = 0;
       goto LAB_0051fda5;

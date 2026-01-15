@@ -1,20 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 158,
+    "complexity_score": 280,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 8,
-    "pseudocode_lines": 43,
-    "suspect_count": 9,
+    "pseudocode_lines": 45,
+    "suspect_count": 21,
     "suspect_types": [
       "call_esp_preserve",
       "callind_preserve",
       "param_count_too_few",
-      "unaffected_reg",
+      "stack_param",
       "variadic_preserve"
     ],
-    "total_lines": 130
+    "total_lines": 132
   },
   "cross_references": [
     {
@@ -173,18 +173,102 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 6,
-      "match": "unaff_EBX",
-      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,",
-      "type": "unaffected_reg"
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000008",
+      "text": "float *in_stack_00000008;",
+      "type": "stack_param"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 24,
-      "match": "unaff_EBX",
-      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Can't create flies!\",unaff_EBX);",
-      "type": "unaffected_reg"
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_0000000c",
+      "text": "uint in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000010",
+      "text": "float in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000014",
+      "text": "uint *in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 28,
+      "match": "in_stack_00000008",
+      "text": "(this_ptr_00->base_actor).location.position.x = *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 29,
+      "match": "in_stack_00000008",
+      "text": "(this_ptr_00->base_actor).location.position.y = in_stack_00000008[1];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 30,
+      "match": "in_stack_00000008",
+      "text": "(this_ptr_00->base_actor).location.position.z = in_stack_00000008[2];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 37,
+      "match": "in_stack_0000000c",
+      "text": "*(uint *)(this_ptr_00->field1_0x158 + 0x28b4) = in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 38,
+      "match": "in_stack_00000010",
+      "text": "*(float *)(this_ptr_00->field1_0x158 + 0x28bc) = fVar2 / in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 39,
+      "match": "in_stack_00000014",
+      "text": "if ((in_stack_00000014 != (uint *)0x0) &&",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 40,
+      "match": "in_stack_00000014",
+      "text": "(this_ptr_00->field1_0x158 != (char *)in_stack_00000014)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 41,
+      "match": "in_stack_00000014",
+      "text": "*(uint *)this_ptr_00->field1_0x158 = *in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 42,
+      "match": "in_stack_00000014",
+      "text": "*(uint *)(this_ptr_00->field1_0x158 + 4) = in_stack_00000014[1];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 43,
+      "match": "in_stack_00000014",
+      "text": "*(uint *)(this_ptr_00->field1_0x158 + 8) = in_stack_00000014[2];",
+      "type": "stack_param"
     },
     {
       "add_esp_value": 4,
@@ -215,7 +299,7 @@
     },
     {
       "call_address": "004edf7b",
-      "caller_has_stack_issues": false,
+      "caller_has_stack_issues": true,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",

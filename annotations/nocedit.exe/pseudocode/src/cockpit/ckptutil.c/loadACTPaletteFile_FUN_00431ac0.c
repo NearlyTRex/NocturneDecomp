@@ -14,28 +14,27 @@ cockpit_ckptutil_c_loadACTPaletteFile_FUN_00431ac0(char *base_filename,char *out
   FILE *file;
   SIZE_T SVar2;
   int iVar3;
-  BADSPACEBASE *in_ESP;
   char *pcVar4;
   char *pcVar5;
   uchar *puVar6;
   char *pcVar7;
   byte bVar8;
-  char acStack_54 [4];
-  char acStack_50 [68];
+  char local_ac [80];
+  char local_5c [80];
   
   bVar8 = 0;
-  pcVar7 = &stack0xffffff54;
-  pcVar5 = &stack0xffffff54;
+  pcVar7 = local_ac;
+  pcVar5 = local_ac;
   do {
     cVar1 = *base_filename;
     *pcVar7 = cVar1;
-    pcVar4 = &stack0xffffff54;
+    pcVar4 = local_ac;
     if (cVar1 == '\0') break;
     cVar1 = base_filename[1];
     base_filename = base_filename + 2;
     pcVar7[1] = cVar1;
     pcVar7 = pcVar7 + 2;
-    pcVar4 = &stack0xffffff54;
+    pcVar4 = local_ac;
   } while (cVar1 != '\0');
   do {
     pcVar7 = pcVar4;
@@ -69,7 +68,7 @@ LAB_00431b33:
     pcVar7[1] = cVar1;
     pcVar7 = pcVar7 + 2;
   } while (cVar1 != '\0');
-  file = engine_dosio_c_getFile_FUN_00481a50("art",&stack0xffffff54,"rb");
+  file = engine_dosio_c_getFile_FUN_00481a50("art",local_ac,"rb");
   if (file == (FILE *)0x0) {
     puVar6 = g_DefaultPalette;
     for (iVar3 = 0xc0; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -86,10 +85,10 @@ LAB_00431b33:
   }
   SVar2 = crt_stdio_c_fread_FUN_005fd990(output_buffer,0x100,3,file);
   if (SVar2 != 3) {
-    crt_stdio_c_sprintf_FUN_005fdbd0(acStack_54,"Error reading %s.");
+    crt_stdio_c_sprintf_FUN_005fdbd0(local_5c,"Error reading %s.",local_ac);
     g_CurrentFilename = "..\\cockpit\\ckptutil.c";
     g_CurrentLineNumber = 0x13d;
-    core_main_c_displayErrorAndQuit_FUN_00506f10(acStack_50);
+    core_main_c_displayErrorAndQuit_FUN_00506f10(local_5c);
   }
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\cockpit\\ckptutil.c",0x140);
   return;

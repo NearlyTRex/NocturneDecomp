@@ -15,10 +15,9 @@ void core_flies_cpp_FUN_004ccaa0(void)
   int extraout_EAX;
   CDemonActor *in_stack_00000004;
   CActorPropertyList *in_stack_00000008;
-  CActorPropertyList *in_stack_0000000c;
   
   core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290(in_stack_00000004,in_stack_00000008);
-  core_actor_cpp_CActorPropertyList_FUN_0040e220(in_stack_0000000c);
+  core_actor_cpp_CActorPropertyList_FUN_0040e220(in_stack_00000008);
   *(uint *)(extraout_EAX + 0x58) = 1;
   return;
 }

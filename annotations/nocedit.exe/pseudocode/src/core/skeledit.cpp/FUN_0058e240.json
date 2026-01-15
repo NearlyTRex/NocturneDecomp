@@ -1,18 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 153,
-    "complexity_score": 292,
+    "complexity_score": 262,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 112,
-    "suspect_count": 15,
+    "suspect_count": 13,
     "suspect_types": [
-      "badspacebase",
       "lea_esp_stack_addr",
       "param_count_too_few",
       "pointer_cast",
-      "register_param",
       "stack_param"
     ],
     "total_lines": 265
@@ -215,71 +213,57 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 12,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 12,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000004",
+      "text": "int *in_stack_00000004;",
+      "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_0000000c",
-      "text": "int *in_stack_0000000c;",
+      "line": 39,
+      "match": "in_stack_00000004",
+      "text": "if (0 < *in_stack_00000004) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 40,
-      "match": "in_stack_0000000c",
-      "text": "if (0 < *in_stack_0000000c) {",
+      "match": "in_stack_00000004",
+      "text": "local_38 = in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 41,
-      "match": "in_stack_0000000c",
-      "text": "local_30 = in_stack_0000000c;",
+      "line": 45,
+      "match": "in_stack_00000004",
+      "text": "if (0 < in_stack_00000004[0x1c50]) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 46,
-      "match": "in_stack_0000000c",
-      "text": "if (0 < in_stack_0000000c[0x1c50]) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 48,
-      "match": "in_stack_0000000c",
-      "text": "local_20 = local_28 + (int)in_stack_0000000c;",
+      "line": 47,
+      "match": "in_stack_00000004",
+      "text": "local_28 = local_30 + (int)in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 72,
+      "line": 71,
       "match": "(uint *)((int)",
-      "text": "stack0xffffffc2 = *(uint *)((int)puVar5 + 6);",
+      "text": "stack0xffffffba = *(uint *)((int)puVar5 + 6);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 72,
+      "match": "(ushort *)((int)",
+      "text": "*(ushort *)((int)&uStackY_44 + (uint)bVar13 * -8 + 2) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 73,
-      "match": "(ushort *)((int)",
-      "text": "*(ushort *)((int)&uStackY_3c + (uint)bVar13 * -8 + 2) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 74,
       "match": "(ushort *)((int)",
       "text": "*(ushort *)((int)puVar5 + (uint)bVar13 * -8 + 10);",
       "type": "pointer_cast"
@@ -287,15 +271,15 @@
     {
       "description": "Unresolved stack parameter",
       "line": 107,
-      "match": "in_stack_0000000c",
-      "text": "} while (local_1c < in_stack_0000000c[0x1c50]);",
+      "match": "in_stack_00000004",
+      "text": "} while (local_24 < in_stack_00000004[0x1c50]);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 112,
-      "match": "in_stack_0000000c",
-      "text": "} while (local_2c < *in_stack_0000000c);",
+      "match": "in_stack_00000004",
+      "text": "} while (local_34 < *in_stack_00000004);",
       "type": "stack_param"
     },
     {

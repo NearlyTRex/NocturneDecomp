@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 89,
-    "complexity_score": 147,
+    "complexity_score": 114,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 6,
-    "pseudocode_lines": 42,
-    "suspect_count": 9,
+    "pseudocode_lines": 44,
+    "suspect_count": 6,
     "suspect_types": [
       "call_esp_preserve",
-      "callind_preserve",
-      "unaffected_reg"
+      "callind_preserve"
     ],
-    "total_lines": 131
+    "total_lines": 133
   },
   "cross_references": [
     {
@@ -153,27 +152,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 10,
-      "match": "unaff_EBP",
-      "text": "float unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 28,
-      "match": "unaff_EBP",
-      "text": "core_game_cpp_CGame_displayMessage_FUN_004d7f20(g_CGamePtr,pcVar2,unaff_EBP);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 42,
-      "match": "unaff_EBP",
-      "text": "core_game_cpp_CGame_displayMessage_FUN_004d7f20(g_CGamePtr,pcVar2,unaff_EBP);",
-      "type": "unaffected_reg"
-    },
     {
       "add_esp_value": 8,
       "call_target_type": "reg_offset",

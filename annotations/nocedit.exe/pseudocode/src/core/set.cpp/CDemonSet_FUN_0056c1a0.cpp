@@ -15,10 +15,10 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056c1a0(CDemonSet *this_ptr)
   double dVar3;
   CDemonActor *this_ptr_00;
   CDemonSet *pCVar4;
-  BADSPACEBASE *in_ESP;
   int iVar5;
   int iVar6;
   int in_stack_00000008;
+  CVector3f local_64;
   CVector3f local_58;
   int local_44;
   int local_40;
@@ -183,8 +183,11 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056c1a0(CDemonSet *this_ptr)
     do {
       pCVar2 = *(CDemonLight **)((int)g_DynamicLights + local_34);
       if (pCVar2->light_enabled_flag != 0) {
+        local_64.x = (float)(pCVar2->base).base.position.x;
+        local_64.y = (float)(pCVar2->base).base.position.y;
+        local_64.z = (float)(pCVar2->base).base.position.z;
         core_dcamera_cpp_CDemonCamera_setupPerspectiveAndFog_FUN_004537d0
-                  (&g_CDemonCameraInstance,(CVector3f *)&stack0xffffff9c,0.0);
+                  (&g_CDemonCameraInstance,&local_64,0.0);
         iVar5 = 0;
         core_dlight_cpp_CDemonLight_renderLightBloomQuad_FUN_00473a20(pCVar2);
         if (0 < this_ptr->mirror_glass_count) {

@@ -14,6 +14,6 @@ core_game_cpp_CallToJoystickStuff_FUN_004dc230(CGame *this_ptr,int unk1,SPlayerC
 
 {
   core_game_cpp_CGame_resetKeyState_FUN_004dbe60();
-  core_game_cpp_KeypressesAndCGame_FUN_004dc3e0((CGame *)unk1,unk);
+  core_game_cpp_KeypressesAndCGame_FUN_004dc3e0(this_ptr,(SPlayerControl *)unk1);
   return;
 }

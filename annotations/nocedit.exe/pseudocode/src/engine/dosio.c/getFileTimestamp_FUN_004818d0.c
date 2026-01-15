@@ -11,14 +11,13 @@ uint __cdecl engine_dosio_c_getFileTimestamp_FUN_004818d0(char *directory_path,c
 {
   int iVar1;
   uint uVar2;
-  BADSPACEBASE *in_ESP;
-  uint unaff_retaddr;
+  SFoundFileInfo local_214;
   
-  engine_dosio_c_getRelativeFilePath_FUN_004816c0(&stack0xfffffdec,directory_path,filename);
-  iVar1 = engine_dosio_c_findFile_FUN_00481760((SFoundFileInfo *)&stack0xfffffdf0);
+  engine_dosio_c_getRelativeFilePath_FUN_004816c0(local_214.found_path,directory_path,filename);
+  iVar1 = engine_dosio_c_findFile_FUN_00481760(&local_214);
   uVar2 = 0;
   if (iVar1 != 0) {
-    uVar2 = unaff_retaddr;
+    uVar2 = local_214.timestamp;
   }
   return uVar2;
 }

@@ -1,20 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 144,
+    "complexity_score": 96,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 29,
-    "suspect_count": 9,
+    "pseudocode_lines": 26,
+    "suspect_count": 6,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
-      "lea_esp_stack_addr",
-      "register_param",
-      "stack_ref"
+      "lea_esp_stack_addr"
     ],
-    "total_lines": 96
+    "total_lines": 93
   },
   "cross_references": [
     {
@@ -113,27 +110,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 8,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 8,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 21,
-      "match": "&stack0xfffffdf4",
-      "text": "(pCVar3->pod_files[0]->filename,(char *)0x0,(char *)0x0,&stack0xfffffdf4,(char *)0x0",
-      "type": "stack_ref"
-    },
     {
       "add_esp_value": 20,
       "call_address": "00551849",

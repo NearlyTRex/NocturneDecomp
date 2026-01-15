@@ -18,7 +18,6 @@ core_dtrace_cpp_CDemonRaytrace_renderVoxelGrid_FUN_004973b0
   float fVar5;
   float fVar6;
   int iVar7;
-  BADSPACEBASE *in_ESP;
   int iVar8;
   CVector3f local_34;
   int local_28;

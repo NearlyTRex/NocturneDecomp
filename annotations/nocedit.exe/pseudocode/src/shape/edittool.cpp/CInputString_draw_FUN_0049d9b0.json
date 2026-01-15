@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 139,
-    "complexity_score": 173,
+    "complexity_score": 149,
     "cross_reference_count": 2,
     "function_call_count": 8,
     "global_count": 11,
-    "pseudocode_lines": 48,
-    "suspect_count": 11,
+    "pseudocode_lines": 49,
+    "suspect_count": 9,
     "suspect_types": [
       "call_esp_preserve",
-      "unaffected_reg",
       "variadic_preserve"
     ],
-    "total_lines": 187
+    "total_lines": 188
   },
   "cross_references": [
     {
@@ -243,20 +242,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 10,
-      "match": "unaff_EDI",
-      "text": "int unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 24,
-      "match": "unaff_EDI",
-      "text": "engine_2d_c_fillRectColor_FUN_00403170(iVar3,y_pos,x2,unaff_EDI,g_SelectionColor);",
-      "type": "unaffected_reg"
-    },
     {
       "call_address": "0049da22",
       "caller_has_stack_issues": false,

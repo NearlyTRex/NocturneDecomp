@@ -10,17 +10,16 @@ void __cdecl core_mission_cpp_CDemonMission_save_FUN_00522e30(CDemonMission *thi
 
 {
   FILE *file_ptr;
-  char *in_stack_0000000c;
-  CDemonMission *in_stack_00000010;
+  char *in_stack_00000008;
   
   shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0("..\\core\\mission.cpp",0xb0);
-  file_ptr = engine_dosio_c_getFile_FUN_00481a50("world",in_stack_0000000c,"wt");
+  file_ptr = engine_dosio_c_getFile_FUN_00481a50("world",in_stack_00000008,"wt");
   if (file_ptr == (FILE *)0x0) {
     g_CurrentFilename = "..\\core\\mission.cpp";
     g_CurrentLineNumber = 0xb6;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonMission::save - Unable to open file");
   }
-  core_mission_cpp_CDemonMission_writeFile_FUN_00523600(in_stack_00000010);
+  core_mission_cpp_CDemonMission_writeFile_FUN_00523600(this_ptr);
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\mission.cpp",0xb8);
   return;
 }

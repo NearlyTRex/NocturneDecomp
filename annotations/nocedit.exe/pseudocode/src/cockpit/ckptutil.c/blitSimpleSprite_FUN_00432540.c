@@ -12,48 +12,46 @@ cockpit_ckptutil_c_blitSimpleSprite_FUN_00432540
 
 {
   ColorConversionFunc *pCVar1;
-  int unaff_EBX;
-  void *pvVar2;
-  void *dest_buffer;
+  int unaff_EBP;
+  int iVar2;
+  void *pvVar3;
   int unaff_ESI;
-  int local_20;
+  int unaff_EDI;
   
+  iVar2 = (int)g_ScreenBufferArray[1] - (int)g_ScreenBufferArray[0];
   if (sprite_data != (void *)0x0) {
     pCVar1 = cockpit_ckptutil_c_getColorConversionFunction_FUN_00431760();
     if (g_BitsPerPixel == 8) {
-      pvVar2 = (void *)((int)g_ScreenBufferArray[width] + dest_y);
+      pvVar3 = g_ScreenBufferArray[dest_y];
       if (0 < height) {
         do {
-          (*pCVar1)(pvVar2,sprite_data,width);
+          (*pCVar1)((void *)((int)pvVar3 + dest_x),sprite_data,width);
           sprite_data = (void *)((int)sprite_data + width);
-          dest_x = dest_x + 1;
-          pvVar2 = (void *)((int)pvVar2 + unaff_EBX);
-        } while (dest_x < height);
+          unaff_EDI = unaff_EDI + 1;
+        } while (unaff_EDI < height);
         return;
       }
     }
     else if (g_BitsPerPixel == 0x10) {
-      pvVar2 = (void *)((int)g_ScreenBufferArray[width] + dest_y * 2);
+      pvVar3 = (void *)((int)g_ScreenBufferArray[dest_y] + dest_x * 2);
       if (0 < height) {
         do {
-          (*pCVar1)(pvVar2,sprite_data,width);
+          (*pCVar1)(pvVar3,sprite_data,width);
           sprite_data = (void *)((int)sprite_data + width);
-          dest_y = dest_y + 1;
-          pvVar2 = (void *)((int)pvVar2 + (local_20 / 2) * 2);
-        } while (dest_y < height);
+          unaff_ESI = unaff_ESI + 1;
+          pvVar3 = (void *)((int)pvVar3 + (iVar2 / 2) * 2);
+        } while (unaff_ESI < height);
         return;
       }
     }
     else {
-      dest_buffer = (void *)((int)g_ScreenBufferArray[width] + dest_y * 4);
-      pvVar2 = sprite_data;
+      pvVar3 = g_ScreenBufferArray[dest_y];
       if (0 < height) {
         do {
-          (*pCVar1)(dest_buffer,pvVar2,width);
-          sprite_data = (void *)((int)sprite_data + 1);
-          dest_buffer = (void *)((int)dest_buffer + unaff_ESI);
-          pvVar2 = (void *)((int)pvVar2 + width);
-        } while ((int)sprite_data < height);
+          (*pCVar1)((void *)((int)pvVar3 + dest_x * 4),sprite_data,width);
+          sprite_data = (void *)((int)sprite_data + width);
+          unaff_EBP = unaff_EBP + 1;
+        } while (unaff_EBP < height);
         return;
       }
     }

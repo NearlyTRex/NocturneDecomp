@@ -1,21 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 178,
-    "complexity_score": 294,
+    "complexity_score": 263,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 3,
-    "pseudocode_lines": 94,
-    "suspect_count": 17,
+    "pseudocode_lines": 93,
+    "suspect_count": 15,
     "suspect_types": [
-      "badspacebase",
       "pointer_cast",
-      "register_param",
       "stack_param",
       "unaffected_reg",
       "unresolved_funcptr"
     ],
-    "total_lines": 272
+    "total_lines": 271
   },
   "cross_references": [],
   "function": {
@@ -445,120 +443,106 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 11,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 11,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 12,
+      "line": 11,
       "match": "unaff_ESI",
       "text": "float *unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 15,
       "match": "in_stack_00000004",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 16,
       "match": "in_stack_00000008",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 17,
       "match": "in_stack_fffffe66",
       "text": "CMatrix3x4f *in_stack_fffffe66;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 41,
+      "line": 40,
       "match": "in_stack_00000008",
       "text": "iVar1 = in_stack_00000008 * 0x44 + in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 41,
+      "line": 40,
       "match": "in_stack_00000004",
       "text": "iVar1 = in_stack_00000008 * 0x44 + in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 49,
+      "line": 48,
       "match": "code *",
       "text": "(**(code **)(*(int *)(iVar3 + 0x154) + 0x14))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 67,
+      "line": 66,
       "match": "in_stack_00000004",
       "text": "(&local_78,&local_6c,(CMatrix3x4f *)(in_stack_00000004 + 0xfd8 + iVar1 * 0x30))",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 75,
+      "line": 74,
       "match": "in_stack_00000004",
       "text": "(&local_120,(CMatrix3x4f *)(in_stack_00000004 + 0xfd8 + iVar1 * 0x30),in_stack_fffffe66)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 75,
+      "line": 74,
       "match": "in_stack_fffffe66",
       "text": "(&local_120,(CMatrix3x4f *)(in_stack_00000004 + 0xfd8 + iVar1 * 0x30),in_stack_fffffe66)",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 82,
+      "line": 81,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unaffected register variable",
-      "line": 93,
+      "line": 92,
       "match": "unaff_ESI",
       "text": "*unaff_ESI = pCVar5->m[0].w;",
       "type": "unaffected_reg"
     },
     {
       "description": "Complex pointer cast",
-      "line": 94,
+      "line": 93,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unaffected register variable",
-      "line": 95,
+      "line": 94,
       "match": "unaff_ESI",
       "text": "unaff_ESI = unaff_ESI + (uint)bVar6 * -2 + 1;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 95,
+      "line": 94,
       "match": "unaff_ESI",
       "text": "unaff_ESI = unaff_ESI + (uint)bVar6 * -2 + 1;",
       "type": "unaffected_reg"

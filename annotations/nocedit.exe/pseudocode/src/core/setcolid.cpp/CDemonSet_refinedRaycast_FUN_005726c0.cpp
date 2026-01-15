@@ -19,8 +19,7 @@ float __cdecl core_setcolid_cpp_CDemonSet_refinedRaycast_FUN_005726c0(CDemonSet 
   float fVar7;
   float fVar8;
   float fVar9;
-  BADSPACEBASE *in_ESP;
-  float local_2c [10];
+  float local_30 [11];
   
   if (this_ptr->raycast_distance < (float)this_ptr->voxel_distance) {
     if (&this_ptr->collision_normal != &this_ptr->voxel_hit_point) {
@@ -44,7 +43,7 @@ float __cdecl core_setcolid_cpp_CDemonSet_refinedRaycast_FUN_005726c0(CDemonSet 
       fVar6 = *pfVar1;
       fVar7 = (this_ptr->collision_result_vec1).y;
       fVar8 = (this_ptr->collision_result_vec1).z;
-      if (&this_ptr->collision_impact_position != (CVector3f *)local_2c) {
+      if (&this_ptr->collision_impact_position != (CVector3f *)local_30) {
         (this_ptr->collision_impact_position).x =
              ray_origin->x + ((this_ptr->collision_result_vec2).x - ray_origin->x) * *pfVar1;
         (this_ptr->collision_impact_position).y = fVar7 + (fVar9 - fVar2) * fVar5;

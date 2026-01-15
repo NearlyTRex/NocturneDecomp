@@ -18,7 +18,6 @@ int __cdecl core_trigger_cpp_CTrigger_FUN_005e00d0(CTrigger *this_ptr)
   int extraout_ECX;
   CDemonRenderer *this_ptr_01;
   int iVar4;
-  BADSPACEBASE *in_ESP;
   SRenderVertex *pSVar5;
   int iVar6;
   SRenderVertex *pSVar7;

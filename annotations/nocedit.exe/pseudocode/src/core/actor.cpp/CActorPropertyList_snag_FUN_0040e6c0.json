@@ -1,19 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 116,
+    "complexity_score": 65,
     "cross_reference_count": 21,
     "function_call_count": 1,
     "global_count": 4,
-    "pseudocode_lines": 36,
-    "suspect_count": 6,
+    "pseudocode_lines": 35,
+    "suspect_count": 2,
     "suspect_types": [
       "param_count_too_few",
-      "pointer_cast",
-      "stack_param",
       "variadic_preserve"
     ],
-    "total_lines": 100
+    "total_lines": 99
   },
   "cross_references": [
     {
@@ -362,34 +360,6 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000018",
-      "text": "void *in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 28,
-      "match": "(char *)((int)",
-      "text": "cVar1 = *(char *)((int)data_ptr + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 29,
-      "match": "(void *)((int)",
-      "text": "data_ptr = (void *)((int)data_ptr + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 37,
-      "match": "in_stack_00000018",
-      "text": "pCVar3->validator_or_callback = in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
       "call_site_count": 21,
       "declared_params": 5,
       "description": "Signature has too few params - likely missing this ptr or other params",
@@ -402,7 +372,7 @@
     },
     {
       "call_address": "0040e759",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

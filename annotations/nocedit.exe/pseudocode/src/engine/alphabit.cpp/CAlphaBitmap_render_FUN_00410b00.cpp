@@ -12,41 +12,45 @@ engine_alphabit_cpp_CAlphaBitmap_render_FUN_00410b00
           int bottom_y)
 
 {
+  int pixelCount;
   int iVar1;
-  int unaff_EBP;
   int iVar2;
   uchar *srcAlpha;
-  int unaff_EDI;
   uchar *srcIndices;
-  int in_stack_00000024;
+  int in_stack_00000020;
   int local_18;
+  int local_14;
   
+  pixelCount = (right_x - left_x) + 1;
   engine_alphabit_cpp_CAlphaBitmap_initPalette_FUN_00410cf0(this_ptr);
   iVar1 = (bottom_y - top_y) + 1;
   iVar2 = top_y * this_ptr->width + left_x;
   srcIndices = (uchar *)(this_ptr->ptrRaw + iVar2);
   srcAlpha = (uchar *)(this_ptr->ptrOpa + iVar2);
+  local_18 = dest_x * 4;
+  iVar2 = iVar1 * 4 + local_18;
   if (g_BitsPerPixel == 0x20) {
     if (0 < iVar1) {
       do {
         wincore_windll_cpp_renderAlphaRow32_FUN_005b555c
-                  ((uint *)((int)g_ScreenBufferArray[left_x] + dest_x * 4),srcIndices,srcAlpha,
-                   in_stack_00000024,local_18);
+                  ((uint *)(*(int *)((int)g_ScreenBufferArray + local_18) + dest_y * 4),srcIndices,
+                   srcAlpha,in_stack_00000020,pixelCount);
         srcIndices = srcIndices + this_ptr->width;
-        unaff_EBP = unaff_EBP + 4;
+        local_18 = local_18 + 4;
         srcAlpha = srcAlpha + this_ptr->width;
-      } while (unaff_EBP < iVar1 * 4 + left_x * 4);
+      } while (local_18 < iVar2);
     }
   }
   else if (0 < iVar1) {
+    local_14 = local_18;
     do {
       wincore_windll_cpp_renderAlphaRow16_FUN_005b55f7
-                ((ushort *)((int)g_ScreenBufferArray[left_x] + dest_x * 2),srcIndices,srcAlpha,
-                 in_stack_00000024,local_18);
+                ((ushort *)(*(int *)((int)g_ScreenBufferArray + local_14) + dest_y * 2),srcIndices,
+                 srcAlpha,in_stack_00000020,pixelCount);
       srcIndices = srcIndices + this_ptr->width;
-      unaff_EDI = unaff_EDI + 4;
+      local_14 = local_14 + 4;
       srcAlpha = srcAlpha + this_ptr->width;
-    } while (unaff_EDI < local_18);
+    } while (local_14 < iVar2);
     return;
   }
   return;

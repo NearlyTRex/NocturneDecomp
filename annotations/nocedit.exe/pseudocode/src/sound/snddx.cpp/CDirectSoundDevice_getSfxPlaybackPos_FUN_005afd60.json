@@ -1,17 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 100,
-    "complexity_score": 71,
+    "complexity_score": 32,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 8,
-    "pseudocode_lines": 41,
-    "suspect_count": 2,
-    "suspect_types": [
-      "badspacebase",
-      "register_param"
-    ],
-    "total_lines": 141
+    "pseudocode_lines": 32,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 132
   },
   "cross_references": [],
   "function": {
@@ -173,7 +170,7 @@
     {
       "add_esp_value": 4,
       "call_address": "005afd9d",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -189,7 +186,7 @@
     {
       "add_esp_value": 16,
       "call_address": "005afe49",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -205,7 +202,7 @@
     {
       "add_esp_value": 4,
       "call_address": "005afe56",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -309,22 +306,7 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 10,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 10,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

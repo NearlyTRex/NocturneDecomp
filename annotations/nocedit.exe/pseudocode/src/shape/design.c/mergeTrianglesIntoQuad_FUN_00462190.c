@@ -14,7 +14,6 @@ shape_design_c_mergeTrianglesIntoQuad_FUN_00462190(int first_polygon_index,int s
   float fVar2;
   int iVar3;
   uint uVar4;
-  BADSPACEBASE *in_ESP;
   SShapeEditorPolygon *pSVar5;
   SShapeEditorPolygon *pSVar6;
   byte bVar7;

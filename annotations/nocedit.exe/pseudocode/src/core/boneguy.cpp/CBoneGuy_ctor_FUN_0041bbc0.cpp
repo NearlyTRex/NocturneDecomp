@@ -17,16 +17,12 @@ CBoneGuy * __cdecl core_boneguy_cpp_CBoneGuy_ctor_FUN_0041bbc0(CBoneGuy *this_pt
   CEnemy *pCVar4;
   void *dest;
   int iVar5;
-  float fVar6;
   CBoneGuy *extraout_EAX;
+  char *pcVar6;
   char *pcVar7;
-  char *pcVar8;
-  float10 fVar9;
-  double dVar10;
-  float fStack0000000c;
-  float fStack00000010;
-  float fStack00000014;
-  float fStack00000018;
+  float10 fVar8;
+  double dVar9;
+  float local_20;
   
   pCVar4 = core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base_enemy);
   dest = crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
@@ -37,9 +33,9 @@ CBoneGuy * __cdecl core_boneguy_cpp_CBoneGuy_ctor_FUN_0041bbc0(CBoneGuy *this_pt
             ((CDeformableModelInstance *)((int)dest + -0xbde4),"boneguy.dfm");
   *(uint *)((int)dest + -0x9160) = 0x3f19999a;
   *(uint *)((int)dest + -0x915c) = 0x3f666666;
-  pcVar7 = "boneguydie";
+  pcVar6 = "boneguydie";
   *(uint *)((int)dest + -0xbe40) = 1;
-  pcVar8 = (char *)((int)dest + -0x6c);
+  pcVar7 = (char *)((int)dest + -0x6c);
   *(uint *)((int)dest + 0x5a0) = 0;
   uVar2 = _DAT_0065af60;
   *(uint *)((int)dest + -0x992c) = 2;
@@ -48,13 +44,13 @@ CBoneGuy * __cdecl core_boneguy_cpp_CBoneGuy_ctor_FUN_0041bbc0(CBoneGuy *this_pt
   *(uint *)((int)dest + -0x9158) = uVar2;
   *(uint *)((int)dest + -0x9154) = uVar3;
   do {
-    cVar1 = *pcVar7;
-    *pcVar8 = cVar1;
+    cVar1 = *pcVar6;
+    *pcVar7 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar7[1];
+    cVar1 = pcVar6[1];
+    pcVar6 = pcVar6 + 2;
+    pcVar7[1] = cVar1;
     pcVar7 = pcVar7 + 2;
-    pcVar8[1] = cVar1;
-    pcVar8 = pcVar8 + 2;
   } while (cVar1 != '\0');
   *(uint *)((int)dest + -4) = 0;
   crt_memory_c_memset_FUN_005fde40(dest,0,0x5a0);
@@ -64,19 +60,16 @@ CBoneGuy * __cdecl core_boneguy_cpp_CBoneGuy_ctor_FUN_0041bbc0(CBoneGuy *this_pt
   *(uint *)((int)dest + -0x74) = 0;
   *(uint *)((int)dest + -0x8c) = 0x40c00000;
   *(int *)((int)dest + -0x80) = iVar5;
-  fVar6 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,255.0);
-  fStack00000010 = fVar6;
-  fStack0000000c = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,40.0);
-  fStack00000014 = fStack0000000c;
-  fStack00000014 = core_actor_cpp_getRandomFloat_FUN_0040cc10(106.0,256.0);
-  fStack00000018 = fStack00000014;
+  core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,255.0);
+  core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,40.0);
+  core_actor_cpp_getRandomFloat_FUN_0040cc10(106.0,256.0);
   core_boneguy_cpp_FUN_0041ba10();
-  fVar9 = (float10)256f;
-  dVar10 = crt_math_c_round_FUN_005fe6b0((double)((float10)fVar6 * fVar9));
-  *(int *)((int)dest + -0xbe34) = (int)ROUND(dVar10);
-  dVar10 = crt_math_c_round_FUN_005fe6b0((double)((float10)fVar6 * fVar9));
-  *(int *)((int)dest + -0xbe30) = (int)ROUND(dVar10);
-  dVar10 = crt_math_c_round_FUN_005fe6b0((double)(fVar9 * (float10)fVar6));
-  *(int *)((int)dest + -0xbe2c) = (int)ROUND(dVar10);
+  fVar8 = (float10)256f;
+  dVar9 = crt_math_c_round_FUN_005fe6b0((double)((float10)local_20 * fVar8));
+  *(int *)((int)dest + -0xbe34) = (int)ROUND(dVar9);
+  dVar9 = crt_math_c_round_FUN_005fe6b0((double)((float10)local_20 * fVar8));
+  *(int *)((int)dest + -0xbe30) = (int)ROUND(dVar9);
+  dVar9 = crt_math_c_round_FUN_005fe6b0((double)(fVar8 * (float10)local_20));
+  *(int *)((int)dest + -0xbe2c) = (int)ROUND(dVar9);
   return extraout_EAX;
 }

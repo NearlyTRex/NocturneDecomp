@@ -16,7 +16,6 @@ void core_larva_cpp_FUN_00503a20(void)
   SMotion *pSVar2;
   char *pcVar3;
   int iVar4;
-  BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000004;
   int in_stack_00000008;
   char acStack_e4 [100];

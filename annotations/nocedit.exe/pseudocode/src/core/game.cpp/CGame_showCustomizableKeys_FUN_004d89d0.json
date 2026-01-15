@@ -1,23 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 1827,
-    "complexity_score": 2314,
+    "complexity_score": 1930,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 46,
-    "pseudocode_lines": 414,
-    "suspect_count": 186,
+    "pseudocode_lines": 390,
+    "suspect_count": 152,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
-      "format_string_mismatch",
       "lea_esp_stack_addr",
-      "register_param",
-      "stack_ref",
       "variadic_preserve",
       "warning_overlapping_globals"
     ],
-    "total_lines": 2241
+    "total_lines": 2217
   },
   "cross_references": [
     {
@@ -611,50 +607,8 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 9,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 9,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 358,
-      "match": "&stack0xffffe594",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffe594,\"%s = %s\",pcVar1);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 360,
-      "match": "&stack0xffffe598",
-      "text": "(g_ThemeFont,&stack0xffffe598,DAT_02d831c4,DAT_02d831c8,7,-1);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 408,
-      "match": "&stack0x000000e4",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0x000000e4,\"%s = %s\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 410,
-      "match": "&stack0x000000e8",
-      "text": "(g_ThemeFont,&stack0x000000e8,DAT_02d831c4,DAT_02d831c8,7,-1);",
-      "type": "stack_ref"
-    },
-    {
       "call_address": "004d8e83",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -668,7 +622,7 @@
     },
     {
       "call_address": "004d8f2b",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -682,7 +636,7 @@
     },
     {
       "call_address": "004d8fe7",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -696,7 +650,7 @@
     },
     {
       "call_address": "004d9091",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -710,7 +664,7 @@
     },
     {
       "call_address": "004d913b",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -724,7 +678,7 @@
     },
     {
       "call_address": "004d91e4",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -738,7 +692,7 @@
     },
     {
       "call_address": "004d928e",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -752,7 +706,7 @@
     },
     {
       "call_address": "004d9338",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -766,7 +720,7 @@
     },
     {
       "call_address": "004d93e1",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -780,7 +734,7 @@
     },
     {
       "call_address": "004d948b",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -794,7 +748,7 @@
     },
     {
       "call_address": "004d9535",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -808,7 +762,7 @@
     },
     {
       "call_address": "004d95de",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -822,7 +776,7 @@
     },
     {
       "call_address": "004d9688",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -836,7 +790,7 @@
     },
     {
       "call_address": "004d9732",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -850,7 +804,7 @@
     },
     {
       "call_address": "004d97db",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -864,7 +818,7 @@
     },
     {
       "call_address": "004d9885",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -878,7 +832,7 @@
     },
     {
       "call_address": "004d992f",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -892,7 +846,7 @@
     },
     {
       "call_address": "004d99d8",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -906,7 +860,7 @@
     },
     {
       "call_address": "004d9a82",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -920,7 +874,7 @@
     },
     {
       "call_address": "004d9b2c",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -934,7 +888,7 @@
     },
     {
       "call_address": "004d9bd5",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -948,7 +902,7 @@
     },
     {
       "call_address": "004d9c7c",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -962,7 +916,7 @@
     },
     {
       "call_address": "004d9d26",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -976,7 +930,7 @@
     },
     {
       "call_address": "004d9dd2",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -990,7 +944,7 @@
     },
     {
       "call_address": "004d9e7f",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -1004,7 +958,7 @@
     },
     {
       "call_address": "004d9f2c",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -1018,7 +972,7 @@
     },
     {
       "call_address": "004d9fd8",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -1032,7 +986,7 @@
     },
     {
       "call_address": "004da067",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1043,314 +997,6 @@
       "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
       "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 004da067 (no EBP frame)",
       "type": "variadic_preserve"
-    },
-    {
-      "actual_args": 1,
-      "description": "Format \"%s = %s\" has 2 specifiers but 1 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s = %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 136,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_17bc,\"%s = %s\",pcVar1);",
-      "text": "Format string expects 2 args but got 1",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 1,
-      "description": "Format \"%s = %s\" has 2 specifiers but 1 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s = %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 146,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_10ac,\"%s = %s\",pcVar1);",
-      "text": "Format string expects 2 args but got 1",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 1,
-      "description": "Format \"%s = %s\" has 2 specifiers but 1 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s = %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 157,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_59c,\"%s = %s\",pcVar1);",
-      "text": "Format string expects 2 args but got 1",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 1,
-      "description": "Format \"%s = %s\" has 2 specifiers but 1 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s = %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 166,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_89c,\"%s = %s\",pcVar1);",
-      "text": "Format string expects 2 args but got 1",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 1,
-      "description": "Format \"%s = %s\" has 2 specifiers but 1 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s = %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 178,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_198c,\"%s = %s\",pcVar1);",
-      "text": "Format string expects 2 args but got 1",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 1,
-      "description": "Format \"%s = %s\" has 2 specifiers but 1 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s = %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 188,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_127c,\"%s = %s\",pcVar1);",
-      "text": "Format string expects 2 args but got 1",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 1,
-      "description": "Format \"%s = %s\" has 2 specifiers but 1 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s = %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 198,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_b6c,\"%s = %s\",pcVar1);",
-      "text": "Format string expects 2 args but got 1",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 1,
-      "description": "Format \"%s = %s\" has 2 specifiers but 1 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s = %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 208,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_45c,\"%s = %s\",pcVar1);",
-      "text": "Format string expects 2 args but got 1",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 1,
-      "description": "Format \"%s = %s\" has 2 specifiers but 1 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s = %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 218,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_64c,\"%s = %s\",pcVar1);",
-      "text": "Format string expects 2 args but got 1",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 1,
-      "description": "Format \"%s = %s\" has 2 specifiers but 1 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s = %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 228,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_73c,\"%s = %s\",pcVar1);",
-      "text": "Format string expects 2 args but got 1",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 1,
-      "description": "Format \"%s = %s\" has 2 specifiers but 1 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s = %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 238,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_12c,\"%s = %s\",pcVar1);",
-      "text": "Format string expects 2 args but got 1",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 1,
-      "description": "Format \"%s = %s\" has 2 specifiers but 1 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s = %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 248,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_91c,\"%s = %s\",pcVar1);",
-      "text": "Format string expects 2 args but got 1",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 1,
-      "description": "Format \"%s = %s\" has 2 specifiers but 1 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s = %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 258,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_20c,\"%s = %s\",pcVar1);",
-      "text": "Format string expects 2 args but got 1",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 1,
-      "description": "Format \"%s = %s\" has 2 specifiers but 1 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s = %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 268,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_19fc,\"%s = %s\",pcVar1);",
-      "text": "Format string expects 2 args but got 1",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 1,
-      "description": "Format \"%s = %s\" has 2 specifiers but 1 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s = %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 278,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_12ec,\"%s = %s\",pcVar1);",
-      "text": "Format string expects 2 args but got 1",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 1,
-      "description": "Format \"%s = %s\" has 2 specifiers but 1 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s = %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 288,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_bdc,\"%s = %s\",pcVar1);",
-      "text": "Format string expects 2 args but got 1",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 1,
-      "description": "Format \"%s = %s\" has 2 specifiers but 1 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s = %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 298,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_14cc,\"%s = %s\",pcVar1);",
-      "text": "Format string expects 2 args but got 1",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 1,
-      "description": "Format \"%s = %s\" has 2 specifiers but 1 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s = %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 308,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_dbc,\"%s = %s\",pcVar1);",
-      "text": "Format string expects 2 args but got 1",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 1,
-      "description": "Format \"%s = %s\" has 2 specifiers but 1 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s = %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 318,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_17ac,\"%s = %s\",pcVar1);",
-      "text": "Format string expects 2 args but got 1",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 1,
-      "description": "Format \"%s = %s\" has 2 specifiers but 1 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s = %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 328,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_109c,\"%s = %s\",pcVar1);",
-      "text": "Format string expects 2 args but got 1",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 1,
-      "description": "Format \"%s = %s\" has 2 specifiers but 1 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s = %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 338,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_98c,\"%s = %s\",pcVar1);",
-      "text": "Format string expects 2 args but got 1",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 1,
-      "description": "Format \"%s = %s\" has 2 specifiers but 1 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s = %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 348,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_27c,\"%s = %s\",pcVar1);",
-      "text": "Format string expects 2 args but got 1",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 1,
-      "description": "Format \"%s = %s\" has 2 specifiers but 1 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s = %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 358,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffe594,\"%s = %s\",pcVar1);",
-      "text": "Format string expects 2 args but got 1",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s = %s\" has 2 specifiers but 0 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s = %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 368,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_135c,\"%s = %s\");",
-      "text": "Format string expects 2 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s = %s\" has 2 specifiers but 0 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s = %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 378,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_c4c,\"%s = %s\");",
-      "text": "Format string expects 2 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s = %s\" has 2 specifiers but 0 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s = %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 388,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_153c,\"%s = %s\");",
-      "text": "Format string expects 2 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s = %s\" has 2 specifiers but 0 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s = %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 398,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_e2c,\"%s = %s\");",
-      "text": "Format string expects 2 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s = %s\" has 2 specifiers but 0 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s = %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 408,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0x000000e4,\"%s = %s\");",
-      "text": "Format string expects 2 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 4,

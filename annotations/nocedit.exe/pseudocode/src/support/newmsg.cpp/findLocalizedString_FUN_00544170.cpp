@@ -13,7 +13,6 @@ support_newmsg_cpp_findLocalizedString_FUN_00544170(char *key,int lower_bound,in
   int iVar1;
   int iVar2;
   char *pcVar3;
-  int in_stack_00000010;
   
   if (upper_bound < lower_bound) {
     return key;
@@ -24,7 +23,7 @@ support_newmsg_cpp_findLocalizedString_FUN_00544170(char *key,int lower_bound,in
     if (iVar2 < 1) {
       return g_MessageTexts[iVar1];
     }
-    pcVar3 = support_newmsg_cpp_findLocalizedString_FUN_00544170(key,iVar1 + 1,in_stack_00000010);
+    pcVar3 = support_newmsg_cpp_findLocalizedString_FUN_00544170(key,iVar1 + 1,upper_bound);
     return pcVar3;
   }
   pcVar3 = support_newmsg_cpp_findLocalizedString_FUN_00544170(key,lower_bound,iVar1 + -1);

@@ -1,24 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 376,
+    "complexity_score": 161,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 0,
-    "pseudocode_lines": 41,
-    "suspect_count": 29,
+    "pseudocode_lines": 36,
+    "suspect_count": 10,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
       "param_count_too_few",
       "pointer_cast",
-      "register_param",
-      "stack_param",
-      "suspect_float",
       "unaffected_reg"
     ],
-    "total_lines": 99
+    "total_lines": 94
   },
   "cross_references": [
     {
@@ -159,157 +155,24 @@
   "suspects": [
     {
       "description": "Unaffected register variable",
-      "line": 2,
+      "line": 3,
       "match": "unaff_EBX",
-      "text": "void core_skeledit_cpp_FUN_0058aeb0(uint param_1,uint param_2,CMatrix3x4f *unaff_EBX)",
+      "text": "(uint param_1,uint param_2,CMatrix3x4f *unaff_EBX,uint param_4,",
       "type": "unaffected_reg"
     },
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 6,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 6,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_0000000c",
-      "text": "int *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000010",
-      "text": "CMatrix3x4f *in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000018",
-      "text": "int *in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_0000000c",
-      "text": "if (0 < *in_stack_0000000c) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_0000000c",
-      "text": "output_matrix = (float *)(in_stack_0000000c + 0x16);",
-      "type": "stack_param"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 24,
+      "line": 22,
       "match": "unaff_EBX",
       "text": "core_xform_cpp_inverse_FUN_005f6210((CMatrix3x4f *)output_matrix,unaff_EBX);",
       "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_00000010",
-      "text": "pCVar3 = in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 28,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_00000010",
-      "text": "core_xform_cpp_clearTranslation_FUN_005f5370(in_stack_00000010);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 33,
-      "match": "unaff_EBX",
-      "text": "unaff_EBX = (CMatrix3x4f *)0x58af01;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 35,
-      "match": "in_stack_00000010",
-      "text": "in_stack_00000010 = in_stack_00000010 + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 35,
-      "match": "in_stack_00000010",
-      "text": "in_stack_00000010 = in_stack_00000010 + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 37,
-      "match": "in_stack_0000000c",
-      "text": "in_stack_0000000c = (int *)((int)in_stack_0000000c + 1);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 37,
-      "match": "in_stack_0000000c",
-      "text": "in_stack_0000000c = (int *)((int)in_stack_0000000c + 1);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 37,
-      "match": "(int *)((int)",
-      "text": "in_stack_0000000c = (int *)((int)in_stack_0000000c + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 38,
-      "match": "in_stack_0000000c",
-      "text": "} while ((int)in_stack_0000000c < *in_stack_00000018);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 38,
-      "match": "in_stack_00000018",
-      "text": "} while ((int)in_stack_0000000c < *in_stack_00000018);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 40,
-      "match": "in_stack_00000018",
-      "text": "piStack_28 = in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 41,
-      "match": "8.144365e-39",
-      "text": "fStack_2c = 8.144365e-39;",
-      "type": "suspect_float"
     },
     {
       "call_site_count": 2,

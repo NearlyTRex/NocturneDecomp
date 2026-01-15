@@ -15,7 +15,6 @@ uint core_platfrm_cpp_FUN_0054df80(void)
   int iVar1;
   CKeyFramedModel *pCVar2;
   float fVar3;
-  BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000004;
   int in_stack_00000008;
   ulonglong in_stack_ffffff74;

@@ -1,21 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 329,
-    "complexity_score": 499,
+    "complexity_score": 467,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 13,
-    "pseudocode_lines": 199,
-    "suspect_count": 27,
+    "pseudocode_lines": 197,
+    "suspect_count": 25,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
       "pointer_cast",
-      "register_param",
       "variadic_preserve"
     ],
-    "total_lines": 528
+    "total_lines": 526
   },
   "cross_references": [],
   "function": {
@@ -267,148 +265,134 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 13,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 13,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 96,
+      "line": 95,
       "match": "(int *)((int)",
       "text": "if (*(int *)((int)&g_GlobalEdgeTable[1].x_start + iVar7) <",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 97,
+      "line": 96,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&g_GlobalEdgeTable[0].x_start + iVar7)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 99,
+      "line": 98,
       "match": "(uint *)((int)",
       "text": "local_3c = *(uint *)((int)&g_GlobalEdgeTable[0].x_start + iVar7);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 107,
+      "line": 106,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&g_GlobalEdgeTable[0].x_start + iVar7) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 108,
+      "line": 107,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&g_GlobalEdgeTable[1].x_start + iVar7);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 115,
+      "line": 114,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&g_GlobalEdgeTable[1].x_start + iVar7) = local_3c;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 135,
+      "line": 133,
       "match": "(int *)((int)",
-      "text": "(local_14 < *(int *)((int)&g_GlobalEdgeTable[0].x_start + local_18))) break;",
+      "text": "(*(int *)((int)&g_GlobalEdgeTable[0].x_start + local_18) <= local_14));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 148,
+      "line": 146,
       "match": "(int *)((int)",
       "text": "if (g_GlobalEdgeTable[*(int *)((int)aiStack_d8 + iVar4)].x_fixed_point <",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 149,
+      "line": 147,
       "match": "(int *)((int)",
       "text": "g_GlobalEdgeTable[*(int *)((int)aiStack_d8 + iVar4 + -4)].x_fixed_point) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 150,
+      "line": 148,
       "match": "(uint *)((int)",
       "text": "uVar1 = *(uint *)((int)aiStack_d8 + iVar4 + -4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 151,
+      "line": 149,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)aiStack_d8 + iVar4 + -4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 152,
+      "line": 150,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)aiStack_d8 + iVar4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 154,
+      "line": 152,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)aiStack_d8 + iVar4) = uVar1;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
+      "line": 165,
+      "match": "(int *)((int)",
+      "text": "(this_ptr,(g_GlobalEdgeTable[*(int *)((int)aiStack_d8 + iVar6)].",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 167,
       "match": "(int *)((int)",
-      "text": "(this_ptr,(g_GlobalEdgeTable[*(int *)((int)aiStack_d8 + iVar5)].",
+      "text": "(g_GlobalEdgeTable[*(int *)((int)aiStack_d8 + iVar5)].x_fixed_point >>",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 169,
-      "match": "(int *)((int)",
-      "text": "(g_GlobalEdgeTable[*(int *)((int)aiStack_d8 + iVar6)].x_fixed_point >>",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 178,
+      "line": 176,
       "match": "(int *)((int)",
       "text": "iVar2 = *(int *)((int)aiStack_d8 + iVar5 + -4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 189,
+      "line": 187,
       "match": "(void *)((int)",
       "text": "((void *)((int)aiStack_d8 + iVar5 + -4),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 190,
+      "line": 188,
       "match": "(void *)((int)",
       "text": "(void *)((int)aiStack_d8 + iVar5),(iVar7 - iVar4) * 4);",
       "type": "pointer_cast"
     },
     {
       "call_address": "00488fbb",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

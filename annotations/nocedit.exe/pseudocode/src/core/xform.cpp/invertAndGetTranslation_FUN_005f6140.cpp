@@ -12,24 +12,21 @@ core_xform_cpp_invertAndGetTranslation_FUN_005f6140
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
-  uint *puVar2;
-  uint *puVar3;
+  float *pfVar2;
+  CVector3f *pCVar3;
   byte bVar4;
   CMatrix3x4f *in_stack_ffffff94;
-  uint auStack_68 [11];
-  uint local_3c;
-  CVector3f aCStack_38 [3];
+  CVector3f local_3c [4];
   
   bVar4 = 0;
   core_xform_cpp_inverse_FUN_005f6210((CMatrix3x4f *)output_vector,in_stack_ffffff94);
-  puVar2 = auStack_68;
-  puVar3 = &local_3c;
+  pfVar2 = (float *)&stack0xffffff94;
+  pCVar3 = local_3c;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *puVar3 = *puVar2;
-    puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
-    puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
+    pCVar3->x = *pfVar2;
+    pfVar2 = pfVar2 + (uint)bVar4 * -2 + 1;
+    pCVar3 = (CVector3f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
   }
-  core_xform_cpp_getTranslation_FUN_005f6110(aCStack_38,input_matrix);
+  core_xform_cpp_getTranslation_FUN_005f6110(local_3c,input_matrix);
   return (CVector3f *)input_matrix;
 }

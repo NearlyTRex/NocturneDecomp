@@ -11,9 +11,8 @@ engine_2d_c_drawTextCenteredColor_FUN_004026c0(char *text,int left_x,int right_x
 
 {
   int iVar1;
-  int unaff_ESI;
   
   iVar1 = engine_2d_c_getStringWidth_FUN_004018a0(text);
-  engine_2d_c_drawTextColor_FUN_00402430(text,(((left_x + right_x) - iVar1) + 2) / 2,unaff_ESI);
+  engine_2d_c_drawTextColor_FUN_00402430(text,(((left_x + right_x) - iVar1) + 2) / 2,y_pos);
   return;
 }

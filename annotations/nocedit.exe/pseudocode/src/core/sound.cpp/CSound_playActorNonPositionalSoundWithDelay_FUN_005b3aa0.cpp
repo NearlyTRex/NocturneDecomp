@@ -12,12 +12,11 @@ core_sound_cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_005b3aa0
 
 {
   uint uVar1;
-  char *in_stack_00000014;
   
   sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
-  sound_sndmain_cpp_setNextSfxDelay_FUN_005a8b40((double)(float)in_stack_00000014);
+  sound_sndmain_cpp_setNextSfxDelay_FUN_005a8b40((double)delay);
   uVar1 = core_sound_cpp_playSfxInternal_FUN_005b1fd0
-                    ((void *)delay,in_stack_00000014,0.0,0.0,0.0,(CVector3f *)0x0,1);
+                    (actor,sound_name,0.0,0.0,0.0,(CVector3f *)0x0,1);
   sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
   return uVar1;
 }

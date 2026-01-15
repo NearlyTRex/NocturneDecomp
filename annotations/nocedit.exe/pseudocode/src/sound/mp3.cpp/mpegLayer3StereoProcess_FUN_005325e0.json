@@ -1,19 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 1031,
-    "complexity_score": 984,
+    "complexity_score": 953,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 20,
-    "pseudocode_lines": 534,
-    "suspect_count": 43,
+    "pseudocode_lines": 533,
+    "suspect_count": 41,
     "suspect_types": [
-      "badspacebase",
       "concat_artifact",
-      "pointer_cast",
-      "register_param"
+      "pointer_cast"
     ],
-    "total_lines": 1565
+    "total_lines": 1564
   },
   "cross_references": [
     {
@@ -239,7 +237,7 @@
     {
       "add_esp_value": 8,
       "call_address": "0053344a",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -798,302 +796,288 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 21,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 21,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 113,
+      "line": 112,
       "match": "(ushort *)((int)",
       "text": "*(ushort *)((int)&uStack_576 + iVar9 + 2) = 7;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 123,
+      "line": 122,
       "match": "(uint *)((int)",
       "text": "if ((*(uint *)((int)(pafVar12 + 0x20) + iVar11 * 4) & 0x7fffffff) != 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 156,
+      "line": 155,
       "match": "(short *)((int)",
       "text": "*(short *)((int)&uStack_576 + iVar11 + 2) = sVar3;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 159,
+      "line": 158,
       "match": "(short *)((int)",
       "text": "fVar13 = (float10)fptan((float10)*(short *)((int)&uStack_576 + iVar11 + 2) *",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 161,
+      "line": 160,
       "match": "(float *)((int)",
       "text": "*(float *)((int)afStack_e74 + local_8c) = (float)fVar13;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 165,
+      "line": 164,
       "match": "(int *)((int)",
       "text": "(*(int *)((int)&uStack_576 + iVar11) >> 0x10,",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 166,
+      "line": 165,
       "match": "CONCAT44",
       "text": "(double)CONCAT44 /* combine 2-byte values */(local_2078,pfVar14),iVar9,(int)afStack_2074,pfVar14);",
       "type": "concat_artifact"
     },
     {
       "description": "Complex pointer cast",
-      "line": 191,
+      "line": 190,
       "match": "(float *)((int)",
       "text": "*(float *)((int)afStack_2074 + iVar9) = afStack_2074[iVar6];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 192,
+      "line": 191,
       "match": "(float *)((int)",
       "text": "*(float *)((int)afStack_e74 + iVar9) = fVar2;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 193,
+      "line": 192,
       "match": "(ushort *)((int)",
       "text": "uVar4 = *(ushort *)((int)&uStack_576 + iVar8 + 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 194,
+      "line": 193,
       "match": "(float *)((int)",
       "text": "*(float *)((int)afStack_1774 + iVar9) = afStack_1774[iVar6];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 196,
+      "line": 195,
       "match": "(ushort *)((int)",
       "text": "*(ushort *)((int)&uStack_576 + iVar5 + 2) = uVar4;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 242,
+      "line": 241,
       "match": "(short *)((int)",
       "text": "*(short *)((int)&uStack_576 + iVar11 + 2) = sVar3;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 245,
+      "line": 244,
       "match": "(short *)((int)",
       "text": "fVar13 = (float10)fptan((float10)*(short *)((int)&uStack_576 + iVar11 + 2) *",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 247,
+      "line": 246,
       "match": "(float *)((int)",
       "text": "*(float *)((int)afStack_e74 + local_7c) = (float)fVar13;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 251,
+      "line": 250,
       "match": "(int *)((int)",
       "text": "(*(int *)((int)&uStack_576 + iVar11) >> 0x10,",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 252,
+      "line": 251,
       "match": "CONCAT44",
       "text": "(double)CONCAT44 /* combine 2-byte values */(local_2078,pfVar14),iVar6,(int)afStack_2074,",
       "type": "concat_artifact"
     },
     {
       "description": "Complex pointer cast",
-      "line": 279,
+      "line": 278,
       "match": "(ushort *)((int)",
       "text": "uVar4 = *(ushort *)((int)&uStack_576 + iVar9 * 2 + 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 279,
+      "match": "(float *)((int)",
+      "text": "*(float *)((int)afStack_2074 + iVar11) = afStack_2074[iVar9];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 280,
       "match": "(float *)((int)",
-      "text": "*(float *)((int)afStack_2074 + iVar11) = afStack_2074[iVar9];",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 281,
-      "match": "(float *)((int)",
       "text": "*(float *)((int)afStack_e74 + iVar11) = fVar2;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 282,
+      "line": 281,
       "match": "(ushort *)((int)",
       "text": "*(ushort *)((int)&uStack_576 + iVar8 + 2) = uVar4;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 283,
+      "line": 282,
       "match": "(float *)((int)",
       "text": "*(float *)((int)afStack_1774 + iVar11) = afStack_1774[iVar9];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 334,
+      "line": 333,
       "match": "(short *)((int)",
       "text": "*(short *)((int)&uStack_576 + iVar11 + 2) = sVar3;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 337,
+      "line": 336,
       "match": "(short *)((int)",
       "text": "fVar13 = (float10)fptan((float10)*(short *)((int)&uStack_576 + iVar11 + 2) *",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 339,
+      "line": 338,
       "match": "(float *)((int)",
       "text": "*(float *)((int)afStack_e74 + local_6c) = (float)fVar13;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 343,
+      "line": 342,
       "match": "(int *)((int)",
       "text": "(*(int *)((int)&uStack_576 + iVar11) >> 0x10,",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 344,
+      "line": 343,
       "match": "CONCAT44",
       "text": "(double)CONCAT44 /* combine 2-byte values */(local_2078,pfVar14),iVar6,(int)afStack_2074,pfVar14)",
       "type": "concat_artifact"
     },
     {
       "description": "Complex pointer cast",
-      "line": 368,
+      "line": 367,
       "match": "(ushort *)((int)",
       "text": "uVar4 = *(ushort *)((int)&uStack_576 + iVar9 * 2 + 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 369,
+      "line": 368,
       "match": "(float *)((int)",
       "text": "*(float *)((int)afStack_2074 + iVar11) = afStack_2074[iVar9];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 370,
+      "line": 369,
       "match": "(float *)((int)",
       "text": "*(float *)((int)afStack_e74 + iVar11) = fVar2;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 371,
+      "line": 370,
       "match": "(ushort *)((int)",
       "text": "*(ushort *)((int)&uStack_576 + iVar8 + 2) = uVar4;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 372,
+      "line": 371,
       "match": "(float *)((int)",
       "text": "*(float *)((int)afStack_1774 + iVar11) = afStack_1774[iVar9];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 387,
+      "line": 386,
       "match": "(uint *)((int)",
       "text": "if ((*(uint *)((int)(pafVar12 + 0x20) + iVar6 * 4) & 0x7fffffff) != 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 418,
+      "line": 417,
       "match": "(short *)((int)",
       "text": "*(short *)((int)&uStack_576 + iVar11 + 2) = sVar3;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 421,
+      "line": 420,
       "match": "(short *)((int)",
       "text": "fVar13 = (float10)fptan((float10)*(short *)((int)&uStack_576 + iVar11 + 2) *",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 423,
+      "line": 422,
       "match": "(float *)((int)",
       "text": "*(float *)((int)afStack_e74 + local_60) = (float)fVar13;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 427,
+      "line": 426,
       "match": "(int *)((int)",
       "text": "(*(int *)((int)&uStack_576 + iVar11) >> 0x10,",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 428,
+      "line": 427,
       "match": "CONCAT44",
       "text": "(double)CONCAT44 /* combine 2-byte values */(local_2078,pfVar14),iVar9,(int)afStack_2074,",
       "type": "concat_artifact"
     },
     {
       "description": "Complex pointer cast",
-      "line": 476,
+      "line": 475,
       "match": "(float *)((int)",
       "text": "pfVar10 = (float *)((int)*local_48 + iVar6);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 477,
+      "line": 476,
       "match": "(float *)((int)",
       "text": "pfVar14 = (float *)((int)*local_44 + iVar6);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 478,
+      "line": 477,
       "match": "(short *)((int)",
       "text": "if (*(short *)((int)&uStack_576 + local_4c + 2) == 7) {",
       "type": "pointer_cast"

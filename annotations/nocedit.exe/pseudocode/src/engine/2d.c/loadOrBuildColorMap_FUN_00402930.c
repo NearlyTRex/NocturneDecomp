@@ -11,21 +11,21 @@ void __cdecl engine_2d_c_loadOrBuildColorMap_FUN_00402930(char *palette_filename
 {
   char cVar1;
   FILE *pFVar2;
-  BADSPACEBASE *in_ESP;
   char *pcVar3;
   char *pcVar4;
+  char local_5c [80];
   
-  pcVar4 = &stack0xffffffa4;
+  pcVar4 = local_5c;
   do {
     cVar1 = *palette_filename;
     *pcVar4 = cVar1;
-    pcVar3 = &stack0xffffffa4;
+    pcVar3 = local_5c;
     if (cVar1 == '\0') break;
     cVar1 = palette_filename[1];
     palette_filename = palette_filename + 2;
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
-    pcVar3 = &stack0xffffffa4;
+    pcVar3 = local_5c;
   } while (cVar1 != '\0');
   do {
     pcVar4 = pcVar3;
@@ -43,14 +43,14 @@ LAB_00402972:
     core_main_c_displayErrorAndQuit_FUN_00506f10("hose!");
   }
   crt_stdio_c_sprintf_FUN_005fdbd0(pcVar4,".map");
-  pFVar2 = engine_dosio_c_getFile_FUN_00481a50("fog",&stack0xffffffac,"rb");
+  pFVar2 = engine_dosio_c_getFile_FUN_00481a50("fog",local_5c,"rb");
   if (pFVar2 != (FILE *)0x0) {
     crt_stdio_c_fread_FUN_005fd990(g_ColorCubeLookup,1,0x8000,pFVar2);
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar2,"..\\engine\\2d.c",0x77c);
     return;
   }
   engine_2d_c_buildColorLookupTable_FUN_00402870();
-  pFVar2 = engine_dosio_c_getFile_FUN_00481a50("fog",&stack0xffffffb4,"wb");
+  pFVar2 = engine_dosio_c_getFile_FUN_00481a50("fog",local_5c,"wb");
   if (pFVar2 == (FILE *)0x0) {
     g_CurrentFilename = "..\\engine\\2d.c";
     g_CurrentLineNumber = 0x777;

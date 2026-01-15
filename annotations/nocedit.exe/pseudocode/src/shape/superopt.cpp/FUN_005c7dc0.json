@@ -1,20 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 190,
-    "complexity_score": 466,
+    "complexity_score": 361,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 71,
-    "suspect_count": 37,
+    "pseudocode_lines": 81,
+    "suspect_count": 26,
     "suspect_types": [
       "call_esp_preserve",
       "param_count_too_few",
       "pointer_cast",
-      "stack_param",
-      "unaffected_reg"
+      "stack_param"
     ],
-    "total_lines": 261
+    "total_lines": 271
   },
   "cross_references": [
     {
@@ -185,239 +184,162 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 10,
-      "match": "unaff_EBP",
-      "text": "uint *unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 11,
       "match": "in_stack_00000004",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 19,
       "match": "in_stack_00000004",
       "text": "iVar1 = *(int *)(in_stack_00000004 + 0x30);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 22,
       "match": "in_stack_00000004",
       "text": "if (*(int *)(in_stack_00000004 + 0x2c) != 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 26,
+      "line": 28,
       "match": "in_stack_00000004",
-      "text": "if (local_18 < *(double **)(in_stack_00000004 + 0x2c)) {",
+      "text": "if (local_18 < *(uint *)(in_stack_00000004 + 0x2c)) {",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 27,
-      "match": "(uint *)((int)",
-      "text": "puVar4 = (uint *)((int)local_18 * 0x60 + 0x10 + iVar1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 33,
-      "match": "(double *)((int)",
-      "text": "if (((*local_18 == *(double *)((int)dest + 0x10)) &&",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 34,
-      "match": "(double *)((int)",
-      "text": "(local_18[1] == *(double *)((int)dest + 0x18))) &&",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 35,
-      "match": "(double *)((int)",
-      "text": "(local_18[2] == *(double *)((int)dest + 0x20))) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 36,
-      "match": "unaff_EBP",
-      "text": "*unaff_EBP = *(uint *)((int)dest + 0x28);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 36,
-      "match": "(uint *)((int)",
-      "text": "*unaff_EBP = *(uint *)((int)dest + 0x28);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 37,
-      "match": "unaff_EBP",
-      "text": "unaff_EBP[1] = *(uint *)((int)dest + 0x2c);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 37,
-      "match": "(uint *)((int)",
-      "text": "unaff_EBP[1] = *(uint *)((int)dest + 0x2c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unaffected register variable",
       "line": 38,
-      "match": "unaff_EBP",
-      "text": "unaff_EBP[2] = *(uint *)((int)dest + 0x30);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 38,
-      "match": "(uint *)((int)",
-      "text": "unaff_EBP[2] = *(uint *)((int)dest + 0x30);",
+      "match": "(double *)((int)",
+      "text": "if (((*(double *)(iVar3 + 0x28) == *(double *)((int)dest + 0x10)) &&",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 39,
-      "match": "unaff_EBP",
-      "text": "unaff_EBP[3] = *(uint *)((int)dest + 0x34);",
-      "type": "unaffected_reg"
     },
     {
       "description": "Complex pointer cast",
       "line": 39,
-      "match": "(uint *)((int)",
-      "text": "unaff_EBP[3] = *(uint *)((int)dest + 0x34);",
+      "match": "(double *)((int)",
+      "text": "(*(double *)(iVar3 + 0x30) == *(double *)((int)dest + 0x18))) &&",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 40,
-      "match": "unaff_EBP",
-      "text": "*(ulonglong *)(unaff_EBP + 4) = *(ulonglong *)((int)dest + 0x38);",
-      "type": "unaffected_reg"
     },
     {
       "description": "Complex pointer cast",
       "line": 40,
+      "match": "(double *)((int)",
+      "text": "(*(double *)(iVar3 + 0x38) == *(double *)((int)dest + 0x20))) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 41,
+      "match": "(uint *)((int)",
+      "text": "*local_34 = *(uint *)((int)dest + 0x28);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 42,
+      "match": "(uint *)((int)",
+      "text": "local_34[1] = *(uint *)((int)dest + 0x2c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 43,
+      "match": "(uint *)((int)",
+      "text": "local_34[2] = *(uint *)((int)dest + 0x30);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 44,
+      "match": "(uint *)((int)",
+      "text": "local_34[3] = *(uint *)((int)dest + 0x34);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 45,
       "match": "(ulonglong *)((int)",
-      "text": "*(ulonglong *)(unaff_EBP + 4) = *(ulonglong *)((int)dest + 0x38);",
+      "text": "*(ulonglong *)(local_34 + 4) = *(ulonglong *)((int)dest + 0x38);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 41,
-      "match": "unaff_EBP",
-      "text": "unaff_EBP[10] = *(uint *)((int)dest + 0x50);",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 41,
+      "line": 46,
       "match": "(uint *)((int)",
-      "text": "unaff_EBP[10] = *(uint *)((int)dest + 0x50);",
+      "text": "local_34[10] = *(uint *)((int)dest + 0x50);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 42,
-      "match": "unaff_EBP",
-      "text": "unaff_EBP[0xb] = *(uint *)((int)dest + 0x54);",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 42,
+      "line": 47,
       "match": "(uint *)((int)",
-      "text": "unaff_EBP[0xb] = *(uint *)((int)dest + 0x54);",
+      "text": "local_34[0xb] = *(uint *)((int)dest + 0x54);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 43,
-      "match": "unaff_EBP",
-      "text": "unaff_EBP[0xc] = *(uint *)((int)dest + 0x58);",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 43,
+      "line": 48,
       "match": "(uint *)((int)",
-      "text": "unaff_EBP[0xc] = *(uint *)((int)dest + 0x58);",
+      "text": "local_34[0xc] = *(uint *)((int)dest + 0x58);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 44,
-      "match": "unaff_EBP",
-      "text": "unaff_EBP[0xd] = *(uint *)((int)dest + 0x5c);",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 44,
+      "line": 49,
       "match": "(uint *)((int)",
-      "text": "unaff_EBP[0xd] = *(uint *)((int)dest + 0x5c);",
+      "text": "local_34[0xd] = *(uint *)((int)dest + 0x5c);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 58,
-      "match": "in_stack_00000004",
-      "text": "n = (uint *)(((*(int *)(in_stack_00000004 + 0x2c) - local_34) + -1) * 0x60);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 61,
-      "match": "in_stack_00000004",
-      "text": "*(int *)(in_stack_00000004 + 0x2c) = *(int *)(in_stack_00000004 + 0x2c) + -1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 61,
-      "match": "in_stack_00000004",
-      "text": "*(int *)(in_stack_00000004 + 0x2c) = *(int *)(in_stack_00000004 + 0x2c) + -1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 64,
+      "match": "in_stack_00000004",
+      "text": "(dest,local_20,((*(int *)(in_stack_00000004 + 0x2c) - local_18) + -1) * 0x60",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 67,
+      "match": "in_stack_00000004",
+      "text": "*(int *)(in_stack_00000004 + 0x2c) = *(int *)(in_stack_00000004 + 0x2c) + -1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 67,
+      "match": "in_stack_00000004",
+      "text": "*(int *)(in_stack_00000004 + 0x2c) = *(int *)(in_stack_00000004 + 0x2c) + -1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 70,
       "match": "(void *)((int)",
       "text": "dest = (void *)((int)dest + 0x60);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 65,
-      "match": "(double *)((int)",
-      "text": "local_18 = (double *)((int)local_18 + 1);",
+      "line": 71,
+      "match": "(void *)((int)",
+      "text": "local_20 = (void *)((int)local_20 + 0x60);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 66,
+      "line": 73,
       "match": "in_stack_00000004",
-      "text": "} while (local_18 < *(double **)(in_stack_00000004 + 0x2c));",
+      "text": "} while (local_18 < *(uint *)(in_stack_00000004 + 0x2c));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 71,
+      "line": 78,
       "match": "in_stack_00000004",
       "text": "} while (local_2c < *(uint *)(in_stack_00000004 + 0x2c));",
       "type": "stack_param"

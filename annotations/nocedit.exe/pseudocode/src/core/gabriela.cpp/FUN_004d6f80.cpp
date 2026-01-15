@@ -17,7 +17,6 @@ void core_gabriela_cpp_FUN_004d6f80(void)
   CVector3f *input_local_point;
   int iVar1;
   int iVar2;
-  BADSPACEBASE *in_ESP;
   float *pfVar3;
   CMatrix3x4f *pCVar4;
   byte bVar5;
@@ -30,7 +29,7 @@ void core_gabriela_cpp_FUN_004d6f80(void)
   CMatrix3x4f *out_matrix;
   SBoneTransformData local_1b44;
   CMatrix3x4f local_a8;
-  float afStack_74 [11];
+  float local_78 [12];
   CVector3f local_48;
   CVector3f local_3c;
   CVector3f local_30;
@@ -60,7 +59,7 @@ void core_gabriela_cpp_FUN_004d6f80(void)
                core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);
     core_skeleton_cpp_CDeformableModelInstance_getBoneWorldMatrix_FUN_0059f820
               (this_ptr,in_stack_00000010,out_matrix);
-    pfVar3 = afStack_74;
+    pfVar3 = local_78;
     pCVar4 = &local_a8;
     for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
       pCVar4->m[0].w = *pfVar3;

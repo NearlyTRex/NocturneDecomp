@@ -26,7 +26,6 @@ void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005efde0(CWerewolf *this_pt
   CDemonActor *pCVar12;
   int extraout_EAX_00;
   uint uVar13;
-  BADSPACEBASE *in_ESP;
   int iVar14;
   double dVar15;
   float in_stack_00000008;

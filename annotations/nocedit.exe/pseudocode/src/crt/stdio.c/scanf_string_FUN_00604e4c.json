@@ -1,20 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 179,
-    "complexity_score": 385,
+    "complexity_score": 315,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 3,
     "pseudocode_lines": 90,
-    "suspect_count": 25,
+    "suspect_count": 20,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
-      "concat_artifact",
       "lea_esp_stack_addr",
-      "register_param",
       "special_crt_function",
-      "stack_ref",
       "unaffected_reg",
       "undefined_ptr_cast"
     ],
@@ -181,122 +177,87 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 9,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 9,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unaffected register variable",
       "line": 11,
       "match": "unaff_EDI",
-      "text": "byte *unaff_EDI;",
+      "text": "char *unaff_EDI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 28,
+      "line": 29,
       "match": "unaff_EDI",
-      "text": "unaff_EDI = *(byte **)pcVar2;",
+      "text": "unaff_EDI = *(char **)pcVar2;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 33,
+      "line": 34,
       "match": "unaff_EDI",
-      "text": "unaff_EDI = *(byte **)pcVar2;",
+      "text": "unaff_EDI = *(char **)pcVar2;",
       "type": "unaffected_reg"
     },
     {
       "description": "Cast to undefined pointer type",
-      "line": 39,
+      "line": 40,
       "match": "(undefined6 *)",
-      "text": "unaff_EDI = (byte *)*(undefined6 *)pcVar2;",
+      "text": "unaff_EDI = (char *)*(undefined6 *)pcVar2;",
       "type": "undefined_ptr_cast"
     },
     {
       "description": "Unaffected register variable",
-      "line": 39,
+      "line": 40,
       "match": "unaff_EDI",
-      "text": "unaff_EDI = (byte *)*(undefined6 *)pcVar2;",
+      "text": "unaff_EDI = (char *)*(undefined6 *)pcVar2;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 55,
+      "line": 57,
       "match": "unaff_EDI",
-      "text": "*unaff_EDI = (byte)character;",
+      "text": "*unaff_EDI = cVar4;",
       "type": "unaffected_reg"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 61,
-      "match": "CONCAT11",
-      "text": "psVar5 = (scanf_state_t *)(uint)CONCAT11 /* combine 2-byte values */((char)iVar3,(char)psVar5);",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 63,
-      "match": "&stack0xffffffd8",
-      "text": "iVar3 = crt_locale_c_mbtowc_FUN_0060b1c0((wchar_t *)&stack0xffffffd8,&stack0xffffffdc,2)",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 63,
-      "match": "&stack0xffffffdc",
-      "text": "iVar3 = crt_locale_c_mbtowc_FUN_0060b1c0((wchar_t *)&stack0xffffffd8,&stack0xffffffdc,2)",
-      "type": "stack_ref"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 68,
+      "line": 69,
       "match": "unaff_EDI",
-      "text": "*(short *)unaff_EDI = (short)psVar5;",
+      "text": "*(short *)unaff_EDI = local_20[0];",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
       "line": 71,
       "match": "unaff_EDI",
-      "text": "unaff_EDI = unaff_EDI + local_1c;",
+      "text": "unaff_EDI = unaff_EDI + local_18;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
       "line": 71,
       "match": "unaff_EDI",
-      "text": "unaff_EDI = unaff_EDI + local_1c;",
+      "text": "unaff_EDI = unaff_EDI + local_18;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
       "line": 85,
       "match": "unaff_EDI",
-      "text": "*unaff_EDI = 0;",
+      "text": "*unaff_EDI = '\\0';",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
       "line": 88,
       "match": "unaff_EDI",
-      "text": "unaff_EDI[0] = 0;",
+      "text": "unaff_EDI[0] = '\\0';",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
       "line": 89,
       "match": "unaff_EDI",
-      "text": "unaff_EDI[1] = 0;",
+      "text": "unaff_EDI[1] = '\\0';",
       "type": "unaffected_reg"
     },
     {

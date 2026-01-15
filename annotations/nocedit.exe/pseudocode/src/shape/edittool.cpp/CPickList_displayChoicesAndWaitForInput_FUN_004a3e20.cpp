@@ -13,8 +13,6 @@ shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
 {
   int iVar1;
   int iVar2;
-  int in_stack_00000014;
-  int in_stack_00000018;
   
   if (g_EditorFont == (CBitFont *)0x0) {
     g_CurrentFilename = "..\\shape\\edittool.cpp";
@@ -27,7 +25,7 @@ shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
   if (0 < (this_ptr->base_strlist).item_count) {
     g_InputKeyMask = 0x7f;
     shape_edittool_cpp_CPickList_initializeDialog_FUN_004a3ef0
-              (this_ptr,(char *)config_param2,in_stack_00000014,in_stack_00000018);
+              (this_ptr,dialog_title,config_param1,config_param2);
     do {
       iVar2 = shape_edittool_cpp_CPickList_handleDialogInput_FUN_004a4340(this_ptr);
       shape_edittool_cpp_CPickList_renderDialog_FUN_004a4d40(this_ptr);

@@ -12,7 +12,6 @@ core_dirmat_cpp_CMatrix3x3f_multiply_FUN_00472540
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   float *unaff_ESI;
   float *pfVar2;
   float *pfVar3;

@@ -11,7 +11,7 @@ void __cdecl core_netgame_cpp_CNetGame_receivePackets_FUN_005405b0(CNetGame *thi
 {
   int iVar1;
   int iVar2;
-  BADSPACEBASE *in_ESP;
+  SNetworkAddr local_10;
   
   iVar1 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
   iVar2 = iVar1 / 0x12 - g_LastPingTime;
@@ -31,11 +31,11 @@ void __cdecl core_netgame_cpp_CNetGame_receivePackets_FUN_005405b0(CNetGame *thi
     }
     iVar1 = support_trisock_cpp_receiveSocketData_FUN_005e1c20
                       ((SSocketContext *)(this_ptr->field7_0x118 + 0x58),g_NetworkReceiveBuffer,
-                       0x404,(SNetworkAddr *)&stack0xfffffff8);
+                       0x404,&local_10);
     if (iVar1 < 1) break;
     g_NetworkPacketSize = iVar1 + 1;
     core_netgame_cpp_CNetGame_allocSimFrame_FUN_005406a0
-              (this_ptr,(SNetworkAddr *)&stack0xfffffffc,(char *)&g_NetworkPacketSize);
+              (this_ptr,&local_10,(char *)&g_NetworkPacketSize);
   }
   core_netgame_cpp_CNetGame_removeChatOut_FUN_00541ff0();
   return;

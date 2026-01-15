@@ -1,19 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 350,
-    "complexity_score": 334,
+    "complexity_score": 296,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 16,
-    "pseudocode_lines": 144,
-    "suspect_count": 17,
+    "pseudocode_lines": 141,
+    "suspect_count": 14,
     "suspect_types": [
       "call_esp_preserve",
       "pointer_cast",
-      "stack_param",
       "variadic_preserve"
     ],
-    "total_lines": 494
+    "total_lines": 491
   },
   "cross_references": [
     {
@@ -375,36 +374,15 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000018",
-      "text": "float in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 80,
+      "line": 77,
       "match": "(int *)((int)",
-      "text": "piVar5 = (int *)((int)this_ptr->vertex_list + local_24);",
+      "text": "piVar4 = (int *)((int)this_ptr->vertex_list + local_34);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 84,
-      "match": "in_stack_00000018",
-      "text": "if (in_stack_00000018 * in_stack_00000018 * fVar2 <",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 84,
-      "match": "in_stack_00000018",
-      "text": "if (in_stack_00000018 * in_stack_00000018 * fVar2 <",
-      "type": "stack_param"
-    },
-    {
       "call_address": "0047ae1f",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -418,7 +396,7 @@
     },
     {
       "call_address": "0047aede",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -432,7 +410,7 @@
     },
     {
       "call_address": "0047af9c",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

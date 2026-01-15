@@ -1,21 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 46,
-    "complexity_score": 228,
+    "complexity_score": 102,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 18,
-    "suspect_count": 18,
+    "pseudocode_lines": 12,
+    "suspect_count": 8,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
-      "lea_esp_stack_addr",
-      "register_param",
-      "stack_param",
-      "stack_ref"
+      "lea_esp_stack_addr"
     ],
-    "total_lines": 64
+    "total_lines": 58
   },
   "cross_references": [],
   "function": {
@@ -124,76 +120,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 8,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 8,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000018",
-      "text": "CVector3f *in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_0000001c",
-      "text": "CVector3f *in_stack_0000001c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 13,
-      "match": "&stack0xffffffb8",
-      "text": "((CDemonTriangle *)&stack0xffffffb8,vertex1,vertex2,vertex3);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 15,
-      "match": "&stack0xffffffbc",
-      "text": "((CDemonTriangle *)&stack0xffffffbc,(SIntersectXZCylinder *)vertex1);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000018",
-      "text": "((CDemonTriangle *)&stack0xffffffc0,vertex1,in_stack_00000018,in_stack_0000001c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_0000001c",
-      "text": "((CDemonTriangle *)&stack0xffffffc0,vertex1,in_stack_00000018,in_stack_0000001c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 17,
-      "match": "&stack0xffffffc0",
-      "text": "((CDemonTriangle *)&stack0xffffffc0,vertex1,in_stack_00000018,in_stack_0000001c);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 19,
-      "match": "&stack0xffffffc4",
-      "text": "((CDemonTriangle *)&stack0xffffffc4,(SIntersectXZCylinder *)vertex1);",
-      "type": "stack_ref"
-    },
     {
       "add_esp_value": 16,
       "call_address": "005730eb",

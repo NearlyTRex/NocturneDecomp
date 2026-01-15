@@ -13,13 +13,12 @@ engine_fileio_cpp_buildHistoryFilePath_FUN_004b1f10
 {
   char cVar1;
   int iVar2;
-  BADSPACEBASE *in_ESP;
   char *pcVar3;
   char *pcVar4;
   byte bVar5;
-  char acStack_204 [252];
-  char acStack_108 [4];
-  char acStack_104 [248];
+  char local_214 [260];
+  char local_110 [256];
+  char local_10 [4];
   
   bVar5 = 0;
   if (g_VersionControlDirectory[0] == '\0') {
@@ -27,12 +26,10 @@ engine_fileio_cpp_buildHistoryFilePath_FUN_004b1f10
     g_CurrentLineNumber = 0xe7;
     core_main_c_displayErrorAndQuit_FUN_00506f10("versionControlDirectory not set!");
   }
-  crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffdf0,"history\\%s.%s",extension,dest_buffer);
-  engine_dosio_c_ensureTrailingSlash_FUN_00481f80
-            (g_VersionControlDirectory,&stack0xfffffff8,acStack_108);
-  engine_dosio_c_makePath_FUN_00481f50
-            (dest_buffer,&stack0xfffffffc,acStack_104,(char *)0x0,(char *)0x0);
-  pcVar3 = acStack_204;
+  pcVar3 = local_214;
+  crt_stdio_c_sprintf_FUN_005fdbd0(local_214,"history\\%s.%s",filename,extension);
+  engine_dosio_c_ensureTrailingSlash_FUN_00481f80(g_VersionControlDirectory,local_10,local_110);
+  engine_dosio_c_makePath_FUN_00481f50(dest_buffer,local_10,local_110,(char *)0x0,(char *)0x0);
   iVar2 = -1;
   do {
     pcVar4 = dest_buffer;

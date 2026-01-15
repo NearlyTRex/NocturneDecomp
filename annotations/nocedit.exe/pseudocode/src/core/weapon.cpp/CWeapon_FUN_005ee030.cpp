@@ -13,15 +13,12 @@ int __cdecl core_weapon_cpp_CWeapon_FUN_005ee030(CWeapon *this_ptr)
   CBoundingBox3D *this_ptr_01;
   int iVar1;
   int iVar2;
-  BADSPACEBASE *in_ESP;
-  float fStack_14;
   
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base_actor);
   this_ptr_01 = (*((this_ptr->base_actor).vtable)->getBoundingBox)
-                          (&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffe4);
+                          (&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffe0);
   iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_01);
   if (iVar1 != 0) {
-    fStack_14 = 8.713051e-39;
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
               (&this_ptr->model,0.0,-1);
   }

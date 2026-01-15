@@ -1,20 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 247,
-    "complexity_score": 261,
+    "complexity_score": 199,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 126,
-    "suspect_count": 11,
+    "pseudocode_lines": 124,
+    "suspect_count": 6,
     "suspect_types": [
-      "badspacebase",
       "param_count_too_few",
       "pointer_cast",
-      "register_param",
       "special_crt_function"
     ],
-    "total_lines": 373
+    "total_lines": 371
   },
   "cross_references": [
     {
@@ -216,64 +214,29 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 10,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 10,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 52,
-      "match": "(byte *)((int)",
-      "text": "*(byte *)((int)local_40 + iVar5) = bVar1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 91,
-      "match": "(char *)((int)",
-      "text": "for (; (0 < iVar5 && (*(char *)((int)local_40 + iVar5 + -1) == '0')); iVar5 = iVar5 + -1) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 95,
+      "line": 94,
       "match": "(ushort *)((int)",
       "text": "*(ushort *)((int)result + 8) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 96,
+      "line": 95,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)result + 4) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 101,
-      "match": "(byte *)((int)",
-      "text": "*(byte *)((int)local_40 + iVar5) = 0;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 112,
+      "line": 110,
       "match": "(ushort *)((int)",
       "text": "*(ushort *)((int)result + 8) = local_24;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 113,
+      "line": 111,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)result + 4) = local_28;",
       "type": "pointer_cast"

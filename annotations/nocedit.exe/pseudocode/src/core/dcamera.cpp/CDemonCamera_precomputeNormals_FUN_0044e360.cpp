@@ -16,18 +16,18 @@ core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044e360(CDemonCamera *this_
   uint uVar4;
   int iVar5;
   int iVar6;
-  BADSPACEBASE *in_ESP;
   int iVar7;
   int *piVar8;
   uint uVar9;
   byte bVar10;
-  int aiStackY_1068 [1013];
+  int aiStackY_106c [1014];
   CVector3i *input_ptr;
-  int iStack_80;
+  int local_84;
   CVector3i local_78;
-  int local_6c [3];
+  int local_6c;
+  int aiStack_68 [2];
   CVector3i local_60;
-  uint local_54;
+  int local_54;
   int aiStack_50 [6];
   int local_38;
   int local_34;
@@ -57,37 +57,37 @@ core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044e360(CDemonCamera *this_
           core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0
                     (this_ptr,(CVector3i *)(local_28 * this_ptr->scale_factor),
                      local_38 * this_ptr->scale_factor,(int)input_ptr);
-          local_60.x = iStack_80;
+          local_60.x = local_84;
           *(uint *)((int)&local_60 + (uint)bVar10 * -8 + 4) =
-               *(uint *)(&stack0xffffff84 + (uint)bVar10 * -8);
+               *(uint *)(&stack0xffffff80 + (uint)bVar10 * -8);
           *(uint *)((int)&local_60 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =
-               *(uint *)((int)&local_78 + (uint)bVar10 * -8 + (uint)bVar10 * -8);
+               *(uint *)(&stack0xffffff84 + (uint)bVar10 * -8 + (uint)bVar10 * -8);
           if (((CVector3i *)local_60.z != (CVector3i *)0x7fffffff) && ((int)input_ptr < local_60.z))
           {
             input_ptr = (CVector3i *)local_60.z;
           }
           core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370
                     (this_ptr,&local_60,input_ptr);
-          local_6c[0] = aiStack_50[0];
-          local_6c[(uint)bVar10 * -2 + 1] = aiStack_50[(uint)bVar10 * -2 + 1];
-          local_6c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 2] =
-               aiStack_50[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 2];
+          local_6c = local_54;
+          aiStack_68[(uint)bVar10 * -2] = aiStack_50[(uint)bVar10 * -2];
+          aiStack_68[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
+               aiStack_50[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
           piVar8 = (int *)(local_30 + 0x9e4e78 + (uint)bVar10 * -8);
-          *(uint *)((int)&g_TempWorldPositionRow[0].x + local_30) = local_54;
+          *(int *)((int)&g_TempWorldPositionRow[0].x + local_30) = local_54;
           *piVar8 = aiStack_50[(uint)bVar10 * -2];
           piVar8[(uint)bVar10 * -2 + 1] = aiStack_50[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
           if (*local_24 >> 0x18 != 0) {
             core_dcamera_cpp_CDemonCamera_restoreAlphaTransform_FUN_00453a70
                       (this_ptr,&local_60,*local_24 >> 0x18,&local_78);
-            local_6c[0] = local_78.y;
-            local_6c[(uint)bVar10 * -2 + 1] = local_6c[(uint)bVar10 * -2 + -1];
-            local_6c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 2] =
-                 local_6c[(uint)bVar10 * -2 + (uint)bVar10 * -2];
+            local_6c = local_78.x;
+            aiStack_68[(uint)bVar10 * -2] = *(int *)((int)&local_78 + (uint)bVar10 * -8 + 4);
+            aiStack_68[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
+                 *(int *)((int)&local_78 + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8);
           }
           piVar8 = (int *)(iVar5 + 0x902f78 + (uint)bVar10 * -8);
-          *(int *)((int)&g_PrecomputedWorldPositions[0].x + iVar5) = local_6c[0];
-          *piVar8 = local_6c[(uint)bVar10 * -2 + 1];
-          piVar8[(uint)bVar10 * -2 + 1] = local_6c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 2];
+          *(int *)((int)&g_PrecomputedWorldPositions[0].x + iVar5) = local_6c;
+          *piVar8 = aiStack_68[(uint)bVar10 * -2];
+          piVar8[(uint)bVar10 * -2 + 1] = aiStack_68[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
           *(int *)((int)g_PrecomputedDepthBuffer + local_2c) = local_60.z;
           uVar9 = *local_24;
           uVar4 = *local_24;

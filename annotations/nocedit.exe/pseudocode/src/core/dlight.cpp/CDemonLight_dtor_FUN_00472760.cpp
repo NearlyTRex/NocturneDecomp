@@ -12,6 +12,7 @@ core_dlight_cpp_CDemonLight_dtor_FUN_00472760(CDemonLight *this_ptr,uint d1,uint
 {
   CDemonLight *ptr;
   void *ptr_00;
+  uint unaff_EBX;
   uint unaff_retaddr;
   
   if ((d1 & 4) != 0) {
@@ -22,9 +23,8 @@ core_dlight_cpp_CDemonLight_dtor_FUN_00472760(CDemonLight *this_ptr,uint d1,uint
   (this_ptr->base).base.vtable = &g_CDemonLightVTable;
   core_dlight_cpp_CDemonLight_free_FUN_004728b0(this_ptr);
   ptr = (CDemonLight *)
-        core_dcamera_cpp_CDemonCamera_dtor_FUN_0044c090
-                  (&this_ptr->base,1,unaff_retaddr,(uint)this_ptr);
-  if ((d3 & 2) == 0) {
+        core_dcamera_cpp_CDemonCamera_dtor_FUN_0044c090(&this_ptr->base,1,unaff_EBX,unaff_retaddr);
+  if ((d1 & 2) == 0) {
     return ptr;
   }
   shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);

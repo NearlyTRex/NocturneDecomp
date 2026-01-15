@@ -10,7 +10,6 @@ void __cdecl core_fire_cpp_CCrater_process_FUN_004c4550(CCrater *this_ptr)
 
 {
   CVector3f *position;
-  BADSPACEBASE *in_ESP;
   CVector3f local_18;
   
   if (*(int *)this_ptr->field0_0x0 != 0) {

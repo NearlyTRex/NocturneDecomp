@@ -14,7 +14,6 @@ uint core_flamegun_cpp_FUN_004cb920(void)
 {
   float fVar1;
   CVector3f *input_local_point;
-  BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000004;
   
   if (*(int *)(in_stack_00000004[4].actor_name + 8) < 1) {
@@ -22,7 +21,7 @@ uint core_flamegun_cpp_FUN_004cb920(void)
   }
   input_local_point = (CVector3f *)(*in_stack_00000004->vtable[1].renderOpaque)(in_stack_00000004);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-            (in_stack_00000004,(CVector3f *)&stack0xfffffffc,input_local_point);
+            (in_stack_00000004,(CVector3f *)&stack0xfffffff4,input_local_point);
   core_fire_cpp_CFireEffect_FUN_004c8ef0(g_CFireEffectPtr);
   if (in_stack_00000004[4].location.position.x == 0.0) {
     fVar1 = 1.0 / _DAT_0065e270;

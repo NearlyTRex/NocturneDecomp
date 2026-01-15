@@ -17,11 +17,11 @@ void core_scat_cpp_FUN_005582c0(void)
   float fVar2;
   float fVar3;
   float fVar4;
+  float fVar5;
   CSkeleton *this_ptr_01;
   int motion_index;
   int in_stack_00000004;
   float local_28;
-  float local_18;
   
   local_28 = 1.0;
   if (*(int *)(in_stack_00000004 + 0x262c + *(int *)(in_stack_00000004 + 0x2a8c) * 0x38) == 0) {
@@ -31,12 +31,12 @@ void core_scat_cpp_FUN_005582c0(void)
     local_28 = (1.0 - *(float *)(in_stack_00000004 + 0x2a90)) * local_28;
   }
   this_ptr = (CMotionController *)(in_stack_00000004 + 0x158);
-  core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20(this_ptr,4);
-  fVar1 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20(this_ptr,5);
-  fVar2 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20(this_ptr,0xc);
-  fVar3 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20(this_ptr,0xd);
-  fVar4 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20(this_ptr,0xe);
-  local_28 = (1.0 - (fVar4 + fVar3 + fVar2 + fVar1 + local_18)) * local_28;
+  fVar1 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20(this_ptr,4);
+  fVar2 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20(this_ptr,5);
+  fVar3 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20(this_ptr,0xc);
+  fVar4 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20(this_ptr,0xd);
+  fVar5 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20(this_ptr,0xe);
+  local_28 = (1.0 - (fVar5 + fVar4 + fVar3 + fVar2 + fVar1)) * local_28;
   if (local_28 < 0.0) {
     local_28 = 0.0;
   }

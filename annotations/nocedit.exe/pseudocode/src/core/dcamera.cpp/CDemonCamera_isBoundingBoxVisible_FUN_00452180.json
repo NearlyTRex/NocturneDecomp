@@ -1,24 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 349,
-    "complexity_score": 838,
+    "complexity_score": 744,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 16,
-    "pseudocode_lines": 173,
-    "suspect_count": 62,
+    "pseudocode_lines": 209,
+    "suspect_count": 51,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "extra_output",
       "lea_esp_stack_addr",
       "pointer_cast",
-      "register_param",
-      "stack_param",
-      "stack_ref",
-      "unknown_field"
+      "stack_param"
     ],
-    "total_lines": 522
+    "total_lines": 558
   },
   "cross_references": [
     {
@@ -765,197 +761,120 @@
       "type": "extra_output"
     },
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 13,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 13,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 17,
       "match": "in_stack_00000014",
       "text": "float *in_stack_00000014;",
       "type": "stack_param"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 69,
+      "line": 95,
       "match": "extraout_EAX",
       "text": "g_TransformMatrix.m[1].y = extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 73,
+      "line": 99,
       "match": "extraout_EAX_00",
       "text": "g_TransformMatrix.m[1].z = extraout_EAX_00;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 80,
+      "line": 106,
       "match": "extraout_EAX_01",
       "text": "g_TransformMatrix.m[2].x = extraout_EAX_01;",
       "type": "extra_output"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 83,
+      "line": 109,
       "match": "in_stack_00000014",
-      "text": "local_70 = *in_stack_00000014;",
+      "text": "local_124 = *in_stack_00000014;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 85,
+      "line": 111,
       "match": "in_stack_00000014",
-      "text": "local_58 = in_stack_00000014[2];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 86,
-      "match": "._4_4_",
-      "text": "local_f0._4_4_ = (uint)ROUND(local_70 * 256f);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 94,
-      "match": "in_stack_00000014",
-      "text": "local_d4 = in_stack_00000014[2];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 106,
-      "match": "._0_4_",
-      "text": "local_f0._0_4_ = (uint)ROUND(local_84 * 256f);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 107,
-      "match": "._4_4_",
-      "text": "local_f0._4_4_ = (uint)ROUND(local_80 * 256f);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 116,
-      "match": "in_stack_00000014",
-      "text": "local_104.x = (int)ROUND(*in_stack_00000014 * 256f);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 121,
-      "match": "in_stack_00000014",
-      "text": "local_94 = *in_stack_00000014;",
+      "text": "local_11c = in_stack_00000014[2];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 122,
       "match": "in_stack_00000014",
-      "text": "local_90 = in_stack_00000014[1];",
+      "text": "local_e0 = in_stack_00000014[2];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 123,
-      "match": "in_stack_00000014",
-      "text": "local_8c = in_stack_00000014[2];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 129,
-      "match": "&stack0xfffffedc",
-      "text": "(CVector3i *)&stack0xfffffedc);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 131,
-      "match": "in_stack_00000014",
-      "text": "local_80 = in_stack_00000014[1];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 132,
-      "match": "in_stack_00000014",
-      "text": "local_7c = in_stack_00000014[2];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 133,
-      "match": "._4_4_",
-      "text": "local_a0._4_4_ = (uint)ROUND(local_84 * 256f);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
       "line": 142,
-      "match": "._4_4_",
-      "text": "local_f0._4_4_ = max_corner->x;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 143,
       "match": "in_stack_00000014",
-      "text": "local_e8 = in_stack_00000014[1];",
+      "text": "local_130 = *in_stack_00000014;",
       "type": "stack_param"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 145,
-      "match": "._4_4_",
-      "text": "local_68.x = (int)ROUND((float)local_f0._4_4_ * 256f);",
-      "type": "unknown_field"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 150,
+      "line": 153,
       "match": "in_stack_00000014",
       "text": "local_ac = *in_stack_00000014;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 151,
+      "line": 154,
       "match": "in_stack_00000014",
       "text": "local_a8 = in_stack_00000014[1];",
       "type": "stack_param"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 153,
-      "match": "._0_4_",
-      "text": "local_a0._0_4_ = (uint)ROUND(local_ac * 256f);",
-      "type": "unknown_field"
+      "description": "Unresolved stack parameter",
+      "line": 155,
+      "match": "in_stack_00000014",
+      "text": "local_a4 = in_stack_00000014[2];",
+      "type": "stack_param"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 154,
-      "match": "._4_4_",
-      "text": "local_a0._4_4_ = (uint)ROUND(local_a8 * 256f);",
-      "type": "unknown_field"
+      "description": "Unresolved stack parameter",
+      "line": 165,
+      "match": "in_stack_00000014",
+      "text": "local_9c = in_stack_00000014[1];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 166,
+      "match": "in_stack_00000014",
+      "text": "local_98 = in_stack_00000014[2];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 176,
+      "match": "in_stack_00000014",
+      "text": "local_108 = in_stack_00000014[1];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 186,
+      "match": "in_stack_00000014",
+      "text": "local_d0 = *in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 187,
+      "match": "in_stack_00000014",
+      "text": "local_cc = in_stack_00000014[1];",
+      "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 164,
+      "line": 200,
       "match": "(uint *)((int)",
       "text": "puVar1 = (uint *)((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).screen_x +",
       "type": "pointer_cast"

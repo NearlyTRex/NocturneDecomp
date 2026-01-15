@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 146,
-    "complexity_score": 227,
+    "complexity_score": 149,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 12,
-    "pseudocode_lines": 52,
-    "suspect_count": 16,
+    "pseudocode_lines": 49,
+    "suspect_count": 9,
     "suspect_types": [
       "call_esp_preserve",
-      "unaffected_reg",
       "variadic_preserve"
     ],
-    "total_lines": 198
+    "total_lines": 195
   },
   "cross_references": [
     {
@@ -221,55 +220,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 8,
-      "match": "unaff_EBP",
-      "text": "FILE *unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 10,
-      "match": "unaff_ESI",
-      "text": "FILE *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 12,
-      "match": "unaff_EDI",
-      "text": "FILE *unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 28,
-      "match": "unaff_EBP",
-      "text": "crt_stdio_c_fseek_FUN_005ffacc(unaff_EBP,this_ptr->directory_entries[file_index].offset,0);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 34,
-      "match": "unaff_EDI",
-      "text": "crt_stdio_c_fread_FUN_005fd990(g_FileIOBuffer,0x10000,1,unaff_EDI);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 43,
-      "match": "unaff_EDI",
-      "text": "crt_stdio_c_fread_FUN_005fd990(g_FileIOBuffer,size,1,unaff_EDI);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 53,
-      "match": "unaff_ESI",
-      "text": "shape_memdbg_cpp_closeFile_FUN_0050f9b0(unaff_ESI,\"..\\\\engine\\\\pod.cpp\",0x365);",
-      "type": "unaffected_reg"
-    },
     {
       "call_address": "00550826",
       "caller_has_stack_issues": false,

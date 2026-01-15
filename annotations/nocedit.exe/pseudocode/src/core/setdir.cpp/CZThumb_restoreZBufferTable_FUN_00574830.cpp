@@ -17,14 +17,14 @@ void __cdecl core_setdir_cpp_CZThumb_restoreZBufferTable_FUN_00574830(CZThumb *t
     g_CurrentLineNumber = 0x70;
     core_main_c_displayErrorAndQuit_FUN_00506f10("saveZBufferTable - not saved!");
   }
-  if (0 < count) {
+  if (0 < (int)this_ptr) {
     iVar2 = 0;
     do {
       iVar1 = iVar2 + 4;
       *(uint *)((int)g_ZBufferScanlineArray + iVar2) =
            *(uint *)((int)g_ZBufferScanlineArrayBackup + iVar2);
       iVar2 = iVar1;
-    } while (iVar1 < count * 4);
+    } while (iVar1 < (int)this_ptr * 4);
   }
   g_ZBufferScanlineArrayBackup[0] = (uint *)0x0;
   return;

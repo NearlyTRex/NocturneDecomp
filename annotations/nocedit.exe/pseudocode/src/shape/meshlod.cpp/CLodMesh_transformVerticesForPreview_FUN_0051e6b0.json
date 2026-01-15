@@ -1,23 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 236,
+    "complexity_score": 129,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 3,
-    "pseudocode_lines": 36,
-    "suspect_count": 16,
+    "pseudocode_lines": 34,
+    "suspect_count": 8,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
-      "pointer_cast",
-      "register_param",
-      "stack_param",
-      "unaffected_reg",
-      "unknown_field"
+      "pointer_cast"
     ],
-    "total_lines": 104
+    "total_lines": 102
   },
   "cross_references": [
     {
@@ -168,81 +163,25 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 6,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 6,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 7,
-      "match": "unaff_EBP",
-      "text": "float unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_0000000c",
-      "text": "int *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 23,
-      "match": "._0_4_",
-      "text": "local_18._0_4_ = (uint)ROUND(local_8 * 256f);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 24,
-      "match": "unaff_EBP",
-      "text": "local_18._4_4_ = (uint)ROUND(unaff_EBP * 256f);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 24,
-      "match": "._4_4_",
-      "text": "local_18._4_4_ = (uint)ROUND(unaff_EBP * 256f);",
-      "type": "unknown_field"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 28,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->light + iVar3) = 0xffff;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 31,
+      "line": 29,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->color + iVar3) = 0xffff;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 32,
+      "line": 30,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&pCVar1->vertex_buffer_ptr->fog + iVar3) = 0xffff;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 36,
-      "match": "in_stack_0000000c",
-      "text": "} while (iVar2 < *in_stack_0000000c);",
-      "type": "stack_param"
     },
     {
       "add_esp_value": 12,

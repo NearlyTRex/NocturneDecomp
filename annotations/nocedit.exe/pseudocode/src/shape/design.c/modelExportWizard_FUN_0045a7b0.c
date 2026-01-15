@@ -10,23 +10,24 @@ void __cdecl shape_design_c_modelExportWizard_FUN_0045a7b0(int export_format_typ
 
 {
   char cVar1;
-  int scale_mode;
-  int include_textures;
   int iVar2;
   uint uVar3;
-  BADSPACEBASE *in_ESP;
   char *pcVar4;
   char *pcVar5;
   char *pcVar6;
   byte bVar7;
+  char local_6c [80];
+  int local_1c;
+  int local_18;
+  int local_14;
   
   bVar7 = 0;
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_clearInputAndWait_FUN_00403260();
-  engine_2d_c_getInputWithPrompt_FUN_004032c0
-            (&stack0xffffff94,0x28,0,0,"Binary filename to write : ");
+  engine_2d_c_getInputWithPrompt_FUN_004032c0(local_6c,0x28,0,0,"Binary filename to write : ")
+  ;
   iVar2 = -1;
-  pcVar5 = &stack0xffffff94;
+  pcVar5 = local_6c;
   do {
     if (iVar2 == 0) break;
     iVar2 = iVar2 + -1;
@@ -36,7 +37,7 @@ void __cdecl shape_design_c_modelExportWizard_FUN_0045a7b0(int export_format_typ
   if (iVar2 == -2) {
     return;
   }
-  pcVar5 = &stack0xffffff94;
+  pcVar5 = local_6c;
   do {
     pcVar4 = pcVar5;
     if (*pcVar5 == '.') goto LAB_0045a814;
@@ -49,7 +50,7 @@ void __cdecl shape_design_c_modelExportWizard_FUN_0045a7b0(int export_format_typ
 LAB_0045a814:
   if (pcVar4 == (char *)0x0) {
     uVar3 = 0xffffffff;
-    pcVar5 = &stack0xffffff94;
+    pcVar5 = local_6c;
     do {
       if (uVar3 == 0) break;
       uVar3 = uVar3 - 1;
@@ -60,7 +61,7 @@ LAB_0045a814:
       if (export_format_type == 0) {
         pcVar4 = ".ASM";
         iVar2 = -1;
-        pcVar5 = &stack0xffffff94;
+        pcVar5 = local_6c;
         do {
           pcVar6 = pcVar5;
           if (iVar2 == 0) break;
@@ -83,7 +84,7 @@ LAB_0045a814:
       else if (export_format_type == 1) {
         pcVar4 = ".BIN";
         iVar2 = -1;
-        pcVar5 = &stack0xffffff94;
+        pcVar5 = local_6c;
         do {
           pcVar6 = pcVar5;
           if (iVar2 == 0) break;
@@ -116,9 +117,9 @@ LAB_0045a814:
     engine_2d_c_drawText_FUN_00401fd0("H) Huge flat track",0,99);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     uVar3 = wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
-    iVar2 = crt_ctype_c_toupper_FUN_005ff9e0(uVar3 & 0xff);
-    if ((((iVar2 == 0x4e) || (iVar2 == 0x59)) || (iVar2 == 0x58)) ||
-       ((iVar2 == 0x5a || (iVar2 == 0x54)))) {
+    local_1c = crt_ctype_c_toupper_FUN_005ff9e0(uVar3 & 0xff);
+    if ((((local_1c == 0x4e) || (local_1c == 0x59)) || (local_1c == 0x58)) ||
+       ((local_1c == 0x5a || (local_1c == 0x54)))) {
 LAB_0045a97c:
       do {
         do {
@@ -130,18 +131,18 @@ LAB_0045a97c:
           engine_2d_c_drawText_FUN_00401fd0("6. Animated model scale",0,0xb0);
           wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
           uVar3 = wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
-          scale_mode = crt_ctype_c_toupper_FUN_005ff9e0(uVar3 & 0xff);
-        } while (scale_mode < 0x31);
-      } while (0x36 < scale_mode);
+          local_14 = crt_ctype_c_toupper_FUN_005ff9e0(uVar3 & 0xff);
+        } while (local_14 < 0x31);
+      } while (0x36 < local_14);
       engine_2d_c_drawText_FUN_00401fd0("Include texture maps? (Y/N) ",0,0xd1);
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
       engine_2d_c_clearInputAndWait_FUN_00403260();
       uVar3 = wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
-      include_textures = crt_ctype_c_toupper_FUN_005ff9e0(uVar3 & 0xff);
+      local_18 = crt_ctype_c_toupper_FUN_005ff9e0(uVar3 & 0xff);
       shape_design_c_exportModelToBIN_FUN_0045aa80
-                (&stack0xffffff94,iVar2,scale_mode,export_format_type,include_textures);
+                (local_6c,local_1c,local_14,export_format_type,local_18);
       return;
     }
-    if ((iVar2 == 0x52) || ((iVar2 == 0x47 || (iVar2 == 0x48)))) goto LAB_0045a97c;
+    if ((local_1c == 0x52) || ((local_1c == 0x47 || (local_1c == 0x48)))) goto LAB_0045a97c;
   } while( true );
 }

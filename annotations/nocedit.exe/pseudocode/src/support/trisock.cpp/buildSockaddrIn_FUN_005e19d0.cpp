@@ -10,27 +10,25 @@ SOCKADDR_IN * __cdecl
 support_trisock_cpp_buildSockaddrIn_FUN_005e19d0(SNetworkAddr *net_addr,SOCKADDR_IN *dest_buffer)
 
 {
-  BADSPACEBASE *in_ESP;
-  uint *puVar1;
+  ushort uVar1;
   uint *puVar2;
-  byte bVar3;
-  uint auStackY_17e8 [509];
-  uint auStackY_ff4 [1014];
-  uint uStack_c;
+  uint *puVar3;
+  byte bVar4;
+  uint auStackY_17f4 [1524];
+  uint local_18;
+  uint auStack_10 [2];
   
-  bVar3 = 0;
-  crt_wsock32_c_htons(net_addr->port);
+  bVar4 = 0;
+  uVar1 = crt_wsock32_c_htons(net_addr->port);
   support_trisock_cpp_getIPAddress_FUN_005e1930(net_addr);
-  crt_memory_c_memset_FUN_005fde40(&stack0xfffffffc,0,8);
-  puVar1 = (uint *)((int)dest_buffer + (uint)bVar3 * -8 + 4);
-  dest_buffer->sin_family = (ushort)uStack_c;
-  dest_buffer->sin_port = uStack_c._2_2_;
-  puVar2 = puVar1 + (uint)bVar3 * -2 + 1;
-  *puVar1 = *(uint *)(&stack0xfffffff8 + (uint)bVar3 * -8);
-  *puVar2 = *(uint *)(&stack0xfffffffc + (uint)bVar3 * -8 + (uint)bVar3 * -8);
-  puVar2[(uint)bVar3 * -2 + 1] =
-       *(uint *)
-        ((int)(&stack0xfffffffc + (uint)bVar3 * -8 + (uint)bVar3 * -8) + ((uint)bVar3 * -2 + 1) * 4)
-  ;
+  crt_memory_c_memset_FUN_005fde40(auStack_10,0,8);
+  puVar2 = (uint *)((int)dest_buffer + (uint)bVar4 * -8 + 4);
+  dest_buffer->sin_family = 2;
+  dest_buffer->sin_port = uVar1;
+  puVar3 = puVar2 + (uint)bVar4 * -2 + 1;
+  *puVar2 = auStack_10[(uint)bVar4 * -2 + -1];
+  *puVar3 = auStack_10[(uint)bVar4 * -2 + (uint)bVar4 * -2];
+  puVar3[(uint)bVar4 * -2 + 1] =
+       (auStack_10 + (uint)bVar4 * -2 + (uint)bVar4 * -2)[(uint)bVar4 * -2 + 1];
   return dest_buffer;
 }

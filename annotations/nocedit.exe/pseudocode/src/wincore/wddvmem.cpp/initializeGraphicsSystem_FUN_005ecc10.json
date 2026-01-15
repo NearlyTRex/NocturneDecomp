@@ -1,11 +1,11 @@
 {
   "complexity": {
     "assembly_lines": 137,
-    "complexity_score": 137,
+    "complexity_score": 135,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 19,
-    "pseudocode_lines": 47,
+    "pseudocode_lines": 45,
     "suspect_count": 7,
     "suspect_types": [
       "call_esp_preserve",
@@ -13,7 +13,7 @@
       "pointer_cast",
       "variadic_preserve"
     ],
-    "total_lines": 184
+    "total_lines": 182
   },
   "cross_references": [
     {
@@ -238,7 +238,7 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 25,
+      "line": 24,
       "match": "(void *)((int)",
       "text": "g_SoftwareZBuffer = (void *)((int)g_SoftwareFrameBuffer + 0x10U & 0xfffffff0);",
       "type": "pointer_cast"

@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 106,
-    "complexity_score": 110,
+    "complexity_score": 92,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 6,
-    "pseudocode_lines": 55,
-    "suspect_count": 4,
+    "pseudocode_lines": 52,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
-      "sub_artifact",
-      "unknown_field"
+      "sub_artifact"
     ],
-    "total_lines": 161
+    "total_lines": 158
   },
   "cross_references": [
     {
@@ -256,29 +255,22 @@
   },
   "suspects": [
     {
-      "description": "Unknown/mangled field access",
-      "line": 41,
-      "match": "._4_4_",
-      "text": "local_28._4_4_),face);",
-      "type": "unknown_field"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 42,
+      "line": 39,
       "match": "(double *)((int)",
-      "text": "if (local_28 < *(double *)((int)g_SampleDistances + iVar5)) {",
+      "text": "if (dVar7 < *(double *)((int)g_SampleDistances + iVar5)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler double/longlong extraction artifact",
-      "line": 43,
+      "line": 40,
       "match": "SUB84",
-      "text": "face = SUB84 /* extract 2-byte value */(local_28,0);",
+      "text": "face = SUB84 /* extract 2-byte value */(dVar7,0);",
       "type": "sub_artifact"
     },
     {
       "description": "Complex pointer cast",
-      "line": 46,
+      "line": 43,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_SampleDistances + iVar5 + 4) = uStack_30;",
       "type": "pointer_cast"

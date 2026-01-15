@@ -10,7 +10,6 @@ double __mathinternal crt_math_c_handle_math_error_FUN_0060c02b(void)
 
 {
   uint errorFlags;
-  BADSPACEBASE *in_ESP;
   double dVar1;
   double in_stack_00000004;
   byte in_stack_0000000c;

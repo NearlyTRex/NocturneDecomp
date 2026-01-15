@@ -11,9 +11,9 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042c010(CCharacter *this_ptr)
 {
   int iVar1;
   CVector3f *pCVar2;
-  BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000008;
   CVector3f *in_stack_0000000c;
+  CVector3f local_44;
   CVector3f local_38;
   float local_2c;
   float local_28;
@@ -28,7 +28,7 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042c010(CCharacter *this_ptr)
      (iVar1 = (*(this_ptr->base_actor).vtable[1].getGroundType)(&this_ptr->base_actor), iVar1 != 0))
   {
     pCVar2 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                       (in_stack_00000008,(CVector3f *)&stack0xffffffbc,in_stack_0000000c);
+                       (in_stack_00000008,&local_44,in_stack_0000000c);
     local_2c = local_20 - pCVar2->x;
     local_24 = local_18 - pCVar2->z;
     local_28 = 0.0;

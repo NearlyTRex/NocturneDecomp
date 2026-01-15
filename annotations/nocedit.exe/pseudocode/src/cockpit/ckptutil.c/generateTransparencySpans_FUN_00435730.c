@@ -16,83 +16,77 @@ cockpit_ckptutil_c_generateTransparencySpans_FUN_00435730
   int iVar2;
   int iVar3;
   byte *pbVar4;
-  BADSPACEBASE *in_ESP;
   int iVar5;
   int iVar6;
-  int in_stack_0000001c;
-  uint in_stack_00000020;
-  int iStack_12c;
-  char acStack_124 [252];
+  char local_130 [256];
+  int local_30;
+  int local_2c;
   int local_28;
-  int local_24;
+  byte *local_24;
   int local_20;
-  byte *local_1c;
+  int *local_1c;
   int local_18;
-  int *local_14;
-  int iVar7;
+  int local_14;
   
   if (0xff < (uint)transparent_color_index) {
     crt_stdio_c_sprintf_FUN_005fdbd0
-              (&stack0xfffffed0,"Invalid transparent color index: %d",transparent_color_index);
+              (local_130,"Invalid transparent color index: %d",transparent_color_index);
     g_CurrentFilename = "..\\cockpit\\ckptutil.c";
     g_CurrentLineNumber = 0x942;
-    core_main_c_displayErrorAndQuit_FUN_00506f10((char *)&iStack_12c);
+    core_main_c_displayErrorAndQuit_FUN_00506f10(local_130);
   }
-  local_18 = 0;
-  if (0 < in_stack_0000001c) {
-    local_28 = transparent_color_index + -1;
-    local_24 = transparent_color_index;
-    local_1c = (byte *)width;
-    local_20 = 0;
-    local_14 = span_data_buffer;
+  local_20 = 0;
+  if (0 < (int)span_data_buffer) {
+    local_30 = height + -1;
+    local_2c = height;
+    local_24 = bitmap_buffer;
+    local_28 = 0;
+    local_1c = (int *)width;
     do {
       bVar1 = false;
-      iVar3 = 0;
-      iVar7 = 0;
-      if (0 < transparent_color_index) {
+      iVar2 = 0;
+      local_14 = 0;
+      if (0 < height) {
         iVar5 = -1;
         iVar6 = 0;
-        pbVar4 = local_1c;
+        local_18 = local_28;
+        pbVar4 = local_24;
         do {
-          iVar2 = iVar6 + local_20;
+          iVar3 = width + local_28 + iVar6;
           if (bVar1) {
-            if (*pbVar4 == in_stack_00000020) {
-              *(int *)((int)span_data_buffer + iVar2 + 0x44) =
-                   (iVar5 - *(int *)((int)span_data_buffer + iVar2 + 4)) + 1;
+            if ((uint)*pbVar4 == transparent_color_index) {
+              *(int *)(iVar3 + 0x44) = (iVar5 - *(int *)(iVar3 + 4)) + 1;
               iVar6 = iVar6 + 4;
-              iVar7 = iVar7 + 1;
+              local_14 = local_14 + 1;
               bVar1 = false;
             }
           }
-          else if (*pbVar4 != in_stack_00000020) {
+          else if ((uint)*pbVar4 != transparent_color_index) {
             bVar1 = true;
-            *(int *)((int)span_data_buffer + iVar2 + 4) = iVar3;
+            *(int *)(iVar3 + 4) = iVar2;
           }
           pbVar4 = pbVar4 + 1;
-          iVar3 = iVar3 + 1;
+          iVar2 = iVar2 + 1;
           iVar5 = iVar5 + 1;
-        } while (iVar3 < transparent_color_index);
+        } while (iVar2 < height);
       }
-      if (0xf < iVar7) {
-        iStack_12c = local_18;
+      if (0xf < local_14) {
         crt_stdio_c_sprintf_FUN_005fdbd0
-                  (&stack0xfffffed8,"Too many spans: bitmap %s, spans %d, scanline %d",height);
+                  (local_130,"Too many spans: bitmap %s, spans %d, scanline %d",filename,local_14,local_20);
         g_CurrentFilename = "..\\cockpit\\ckptutil.c";
         g_CurrentLineNumber = 0x972;
-        iStack_12c = 0x435878;
-        core_main_c_displayErrorAndQuit_FUN_00506f10(acStack_124);
+        core_main_c_displayErrorAndQuit_FUN_00506f10(local_130);
       }
-      iVar3 = iVar7;
       if (bVar1) {
-        iVar3 = iVar7 + 1;
-        local_14[iVar7 + 0x11] = (local_28 - local_14[iVar7 + 1]) + 1;
+        local_1c[local_14 + 0x11] = (local_30 - local_1c[local_14 + 1]) + 1;
+        local_14 = local_14 + 1;
       }
-      local_20 = local_20 + 0x84;
-      local_18 = local_18 + 1;
-      *local_14 = iVar3;
-      local_1c = local_1c + local_24;
-      local_14 = local_14 + 0x21;
-    } while (local_18 < in_stack_0000001c);
+      local_28 = local_28 + 0x84;
+      local_20 = local_20 + 1;
+      *local_1c = local_14;
+      local_24 = local_24 + local_2c;
+      local_1c = local_1c + 0x21;
+    } while (local_20 < (int)span_data_buffer);
   }
   return;
 }

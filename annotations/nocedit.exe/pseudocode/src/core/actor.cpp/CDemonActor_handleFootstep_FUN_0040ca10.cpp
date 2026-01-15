@@ -17,10 +17,8 @@ core_actor_cpp_CDemonActor_handleFootstep_FUN_0040ca10
   int iVar4;
   char *pcVar5;
   int extraout_EAX;
-  BADSPACEBASE *in_ESP;
-  float in_stack_0000001c;
-  uint uVar6;
-  char acStack_78 [80];
+  double dVar6;
+  char local_8c [100];
   int local_28;
   int local_24;
   int local_20;
@@ -57,10 +55,10 @@ core_actor_cpp_CDemonActor_handleFootstep_FUN_0040ca10
     this_ptr->field19_0x114 = 0;
   }
 LAB_0040cb07:
-  uVar6 = (uint)((ulonglong)(double)in_stack_0000001c >> 0x20);
+  dVar6 = (double)unknown;
   pcVar5 = core_ground_cpp_getGroundTypeCode_FUN_004eece0(surface_type);
   crt_stdio_c_sprintf_FUN_005fdbd0
-            (&stack0xffffff84,"footstep-%s-!-%s-?.wav @ %f",&this_ptr->field21_0x11c,pcVar5,uVar6);
-  core_sound_cpp_CSound_playActorSound_FUN_005b3a40(g_CSoundPtr,this_ptr,acStack_78,position);
+            (local_8c,"footstep-%s-!-%s-?.wav @ %f",&this_ptr->field21_0x11c,pcVar5,dVar6);
+  core_sound_cpp_CSound_playActorSound_FUN_005b3a40(g_CSoundPtr,this_ptr,local_8c,position);
   return extraout_EAX;
 }

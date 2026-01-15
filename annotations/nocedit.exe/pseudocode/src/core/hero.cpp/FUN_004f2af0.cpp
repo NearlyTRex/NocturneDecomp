@@ -13,7 +13,6 @@ uint core_hero_cpp_FUN_004f2af0(void)
 {
   CBoundingBox3D *pCVar1;
   int iVar2;
-  BADSPACEBASE *in_ESP;
   int iVar3;
   int iVar4;
   CDemonActor *in_stack_00000004;

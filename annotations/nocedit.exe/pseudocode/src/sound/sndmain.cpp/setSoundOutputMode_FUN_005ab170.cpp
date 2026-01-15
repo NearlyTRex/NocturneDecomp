@@ -11,11 +11,7 @@ sound_sndmain_cpp_setSoundOutputMode_FUN_005ab170(int bits_per_sample,int channe
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
-  int in_stack_00000010;
-  int in_stack_00000014;
-  uint uStack00000018;
-  int in_stack_00000024;
+  int iStack_10;
   
   iVar1 = sound_sndmain_cpp_isSoundBusy_FUN_005ab540();
   if (iVar1 != 0) {
@@ -23,19 +19,17 @@ sound_sndmain_cpp_setSoundOutputMode_FUN_005ab170(int bits_per_sample,int channe
     g_CurrentLineNumber = 0x128c;
     core_main_c_displayErrorAndQuit_FUN_00506f10("setSoundOutputMode - can't do this while sound active!");
   }
-  g_AudioBitsPerSample = sample_rate;
-  g_AudioChannelCount = in_stack_00000010;
-  g_AudioSampleRate = in_stack_00000014;
+  g_AudioBitsPerSample = bits_per_sample;
+  g_AudioChannelCount = channels;
+  g_AudioSampleRate = sample_rate;
   if (g_CSoundDevicePtr != (CSoundDevice *)0x0) {
     iVar1 = (*g_CSoundDevicePtr->vtable->setMode)
-                      (g_CSoundDevicePtr,sample_rate,in_stack_00000010,in_stack_00000014,
-                       (int *)&stack0xfffffff8);
+                      (g_CSoundDevicePtr,bits_per_sample,channels,sample_rate,&iStack_10);
     if (iVar1 == 0) {
       return 0;
     }
-    if (0 < in_stack_00000024) {
-      uStack00000018 = 0x5ab1ff;
-      sound_sndmain_cpp_allocMixBuffers_FUN_005a5730(in_stack_00000024,4);
+    if (0 < bits_per_sample) {
+      sound_sndmain_cpp_allocMixBuffers_FUN_005a5730(bits_per_sample,4);
       return 1;
     }
   }

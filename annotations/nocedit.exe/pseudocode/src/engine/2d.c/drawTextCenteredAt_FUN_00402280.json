@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 24,
-    "complexity_score": 63,
+    "complexity_score": 37,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 8,
-    "suspect_count": 4,
+    "pseudocode_lines": 7,
+    "suspect_count": 2,
     "suspect_types": [
       "call_esp_preserve",
-      "param_count_too_few",
-      "unaffected_reg"
+      "param_count_too_few"
     ],
-    "total_lines": 32
+    "total_lines": 31
   },
   "cross_references": [
     {
@@ -136,20 +135,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 6,
-      "match": "unaff_EBX",
-      "text": "int unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 9,
-      "match": "unaff_EBX",
-      "text": "engine_2d_c_drawText_FUN_00401fd0((char *)center_x,y_pos - (iVar1 + -1) / 2,unaff_EBX);",
-      "type": "unaffected_reg"
-    },
     {
       "call_site_count": 2,
       "declared_params": 3,

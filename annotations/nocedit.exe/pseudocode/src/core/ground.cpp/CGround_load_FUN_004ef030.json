@@ -1,24 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 341,
-    "complexity_score": 508,
+    "complexity_score": 372,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 21,
-    "pseudocode_lines": 153,
-    "suspect_count": 31,
+    "pseudocode_lines": 157,
+    "suspect_count": 19,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "extra_output",
       "lea_esp_stack_addr",
       "pointer_cast",
-      "register_param",
-      "stack_param",
-      "stack_ref",
       "variadic_preserve"
     ],
-    "total_lines": 494
+    "total_lines": 498
   },
   "cross_references": [
     {
@@ -384,119 +380,35 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 9,
+      "line": 10,
       "match": "extraout_EAX",
       "text": "int extraout_EAX;",
       "type": "extra_output"
     },
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 10,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 10,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000018",
-      "text": "char *in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_00000028",
-      "text": "char *in_stack_00000028;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 24,
-      "match": "&stack0xffffff34",
-      "text": "pcVar6 = &stack0xffffff34;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 25,
-      "match": "&stack0xffffff34",
-      "text": "pcVar5 = &stack0xffffff34;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 63,
-      "match": "&stack0xffffff38",
-      "text": "pFVar3 = engine_dosio_c_getFile_FUN_00481a50(local_20,&stack0xffffff38,local_1c);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 84,
+      "line": 87,
       "match": "(short *)((int)",
-      "text": "*(short *)((int)this_ptr->terrain_data + (iVar8 * this_ptr->width + iVar7) * 4) =",
+      "text": "*(short *)((int)this_ptr->terrain_data + (local_18 * this_ptr->width + iVar8) * 4) =",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 97,
-      "match": "in_stack_00000018",
-      "text": "cVar1 = *in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 100,
-      "match": "in_stack_00000018",
-      "text": "cVar1 = in_stack_00000018[1];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 101,
-      "match": "in_stack_00000018",
-      "text": "in_stack_00000018 = in_stack_00000018 + 2;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 101,
-      "match": "in_stack_00000018",
-      "text": "in_stack_00000018 = in_stack_00000018 + 2;",
-      "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 147,
+      "line": 151,
       "match": "(void *)((int)",
-      "text": "((void *)((int)this_ptr->terrain_data + iVar7 * 4 + 2),1,2,pFVar3);",
+      "text": "((void *)((int)this_ptr->terrain_data + iVar4 * 4 + 2),1,2,local_1c);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 154,
-      "match": "in_stack_00000028",
-      "text": "core_texlist_cpp_CTextureList_load_FUN_005dbe00(this_ptr->texture_list,in_stack_00000028);",
-      "type": "stack_param"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 155,
+      "line": 159,
       "match": "extraout_EAX",
       "text": "return extraout_EAX;",
       "type": "extra_output"
     },
     {
       "call_address": "004ef102",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -510,7 +422,7 @@
     },
     {
       "call_address": "004ef212",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -524,7 +436,7 @@
     },
     {
       "call_address": "004ef274",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -538,7 +450,7 @@
     },
     {
       "call_address": "004ef34b",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

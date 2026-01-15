@@ -1,21 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 271,
-    "complexity_score": 305,
+    "complexity_score": 263,
     "cross_reference_count": 5,
     "function_call_count": 16,
     "global_count": 35,
-    "pseudocode_lines": 125,
-    "suspect_count": 15,
+    "pseudocode_lines": 128,
+    "suspect_count": 12,
     "suspect_types": [
-      "badspacebase",
       "concat_artifact",
       "extra_output",
-      "pointer_cast",
-      "register_param",
-      "stack_ref"
+      "pointer_cast"
     ],
-    "total_lines": 396
+    "total_lines": 399
   },
   "cross_references": [
     {
@@ -782,99 +779,78 @@
       "type": "extra_output"
     },
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 10,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 10,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 35,
-      "match": "&stack0xffffffa4",
-      "text": "(g_CDemonRendererPtr,(CVector3f *)&stack0xffffffa4);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 54,
+      "line": 57,
       "match": "(float *)((int)",
       "text": "if (0.0 <= *(float *)((int)&g_MoonBats[0].course_position + iVar4)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 56,
+      "line": 59,
       "match": "(int *)((int)",
       "text": "(g_MoonBatCourses + *(int *)((int)&g_MoonBats[0].course_index + iVar4));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 57,
+      "line": 60,
       "match": "(float *)((int)",
       "text": "local_44.x = local_44.x + *(float *)((int)&g_MoonBats[0].random_offset.x + iVar4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 58,
+      "line": 61,
       "match": "(float *)((int)",
       "text": "local_44.y = local_44.y + *(float *)((int)&g_MoonBats[0].random_offset.y + iVar4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 59,
+      "line": 62,
       "match": "(float *)((int)",
       "text": "local_44.z = local_44.z + *(float *)((int)&g_MoonBats[0].random_offset.z + iVar4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 67,
+      "line": 70,
       "match": "(float *)((int)",
       "text": "((double)*(float *)((int)&g_MoonBats[0].animation_frame + iVar4));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 73,
+      "line": 76,
       "match": "(int *)((int)",
       "text": "g_MoonBatCourses[*(int *)((int)&g_MoonBats[0].course_index + iVar4)].len;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 74,
+      "line": 77,
       "match": "(float *)((int)",
       "text": "local_18 = *(float *)((int)&g_MoonBats[0].course_position + iVar4) / (float)(int)local_14;",
       "type": "pointer_cast"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 84,
+      "line": 87,
       "match": "extraout_EDX",
       "text": "*(CKeyFramedModelInstance **)(extraout_EDX + 0x15ae80) = local_14;",
       "type": "extra_output"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 101,
+      "line": 104,
       "match": "CONCAT44",
       "text": "uVar6 = paddusb(*puVar5,CONCAT44 /* combine 2-byte values */(g_Hardware32BitPalette",
       "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 107,
+      "line": 110,
       "match": "CONCAT44",
       "text": "uVar6 = paddusb(uVar6,CONCAT44 /* combine 2-byte values */(g_Hardware32BitPalette",
       "type": "concat_artifact"

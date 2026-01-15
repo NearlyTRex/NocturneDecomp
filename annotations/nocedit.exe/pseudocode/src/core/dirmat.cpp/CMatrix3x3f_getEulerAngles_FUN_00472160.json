@@ -1,16 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 366,
-    "complexity_score": 442,
+    "complexity_score": 510,
     "cross_reference_count": 13,
     "function_call_count": 2,
     "global_count": 7,
-    "pseudocode_lines": 157,
-    "suspect_count": 28,
+    "pseudocode_lines": 155,
+    "suspect_count": 34,
     "suspect_types": [
-      "extra_output"
+      "concat_artifact",
+      "extra_output",
+      "sub_artifact"
     ],
-    "total_lines": 523
+    "total_lines": 521
   },
   "cross_references": [
     {
@@ -464,119 +466,161 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 36,
+      "line": 42,
       "match": "extraout_ST1",
       "text": "fVar7 = SQRT((float10)1 - extraout_ST1 * extraout_ST1);",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 36,
+      "line": 42,
       "match": "extraout_ST1",
       "text": "fVar7 = SQRT((float10)1 - extraout_ST1 * extraout_ST1);",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 37,
+      "line": 43,
       "match": "extraout_EDX_00",
       "text": "extraout_EDX_00->x = (float)fVar6;",
       "type": "extra_output"
     },
     {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 45,
+      "match": "SUB84",
+      "text": "uStack_94 = SUB84 /* extract 2-byte value */(dVar8,0);",
+      "type": "sub_artifact"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 38,
+      "line": 46,
       "match": "extraout_ECX",
       "text": "this_ptr = extraout_ECX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 39,
+      "line": 47,
       "match": "extraout_EDX_00",
       "text": "euler_angles = extraout_EDX_00;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 41,
+      "line": 50,
       "match": "extraout_ECX",
-      "text": "fVar3 = extraout_ECX->m[0].z * (1.0 / (float)fVar7);",
+      "text": "fVar2 = extraout_ECX->m[0].z * fVar3;",
       "type": "extra_output"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 43,
-      "match": "extraout_ECX",
-      "text": "dVar8 = (double)(extraout_ECX->m[2].z * (1.0 / (float)fVar7));",
-      "type": "extra_output"
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 52,
+      "match": "SUB84",
+      "text": "uStack_84 = SUB84 /* extract 2-byte value */(dVar8,0);",
+      "type": "sub_artifact"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 45,
+      "line": 54,
+      "match": "extraout_ECX",
+      "text": "dVar1 = (double)(extraout_ECX->m[2].z * fVar3);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 55,
+      "match": "SUB84",
+      "text": "uStack_5c = SUB84 /* extract 2-byte value */(dVar1,0);",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 57,
       "match": "extraout_ECX",
       "text": "pCVar4 = extraout_ECX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 46,
+      "line": 58,
       "match": "extraout_EDX_00",
       "text": "pCVar5 = extraout_EDX_00;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 51,
+      "line": 63,
       "match": "extraout_ECX_01",
       "text": "pCVar4 = extraout_ECX_01;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 52,
+      "line": 64,
       "match": "extraout_EDX_04",
       "text": "pCVar5 = extraout_EDX_04;",
       "type": "extra_output"
     },
     {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 66,
+      "match": "CONCAT44",
+      "text": "if ((double)CONCAT44 /* combine 2-byte values */(uStack_84,local_68) < 0.0) {",
+      "type": "concat_artifact"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 68,
+      "line": 74,
       "match": "extraout_ECX_00",
       "text": "pCVar4 = extraout_ECX_00;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 69,
+      "line": 75,
       "match": "extraout_EDX_01",
       "text": "pCVar5 = extraout_EDX_01;",
       "type": "extra_output"
     },
     {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 76,
+      "match": "CONCAT44",
+      "text": "if ((double)CONCAT44 /* combine 2-byte values */(uStack_5c,local_80) < 0.0) {",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 87,
+      "match": "CONCAT44",
+      "text": "fVar3 = 1.0 / (float)(double)CONCAT44 /* combine 2-byte values */(uStack_94,local_98);",
+      "type": "concat_artifact"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 88,
+      "line": 95,
       "match": "extraout_EDX_05",
       "text": "pCVar5 = extraout_EDX_05;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 104,
+      "line": 110,
       "match": "extraout_EDX_02",
       "text": "pCVar5 = extraout_EDX_02;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 131,
+      "line": 133,
       "match": "extraout_EDX_03",
       "text": "euler_angles = extraout_EDX_03;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 147,
+      "line": 148,
       "match": "extraout_EDX",
       "text": "euler_angles = extraout_EDX;",
       "type": "extra_output"

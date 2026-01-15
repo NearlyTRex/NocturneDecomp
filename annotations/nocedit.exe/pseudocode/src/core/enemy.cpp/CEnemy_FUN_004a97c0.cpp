@@ -12,7 +12,6 @@ int __cdecl core_enemy_cpp_CEnemy_FUN_004a97c0(CEnemy *this_ptr)
   float fVar1;
   float fVar2;
   float fVar3;
-  BADSPACEBASE *in_ESP;
   float *in_stack_00000008;
   CBoundingBox3D CStack_40;
   float afStack_28 [8];

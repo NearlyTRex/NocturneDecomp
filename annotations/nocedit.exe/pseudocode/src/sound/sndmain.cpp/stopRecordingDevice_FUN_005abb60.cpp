@@ -10,19 +10,16 @@ int __cdecl sound_sndmain_cpp_stopRecordingDevice_FUN_005abb60(void)
 
 {
   DWORD DVar1;
-  uint uStack0000000c;
   
   sound_sndmain_cpp_lockSound_FUN_005abd30();
   if (g_RecordingDeviceInterface != (IDirectSoundCapture *)0x0) {
     DVar1 = (*g_RecordingDeviceInterface->vtable->Release)((IUnknown *)g_RecordingDeviceInterface);
     if (DVar1 == 0) {
-      uStack0000000c = 0x5abb96;
       sound_sndmain_cpp_unlockSound_FUN_005abdc0();
       return 0;
     }
   }
   isRecordingStarted = 0;
-  uStack0000000c = 0x5abb8b;
   sound_sndmain_cpp_unlockSound_FUN_005abdc0();
   return 1;
 }

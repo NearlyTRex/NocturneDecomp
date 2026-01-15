@@ -23,7 +23,7 @@ int __cdecl shape_superopt_cpp_COptimize_FUN_005d71e0(COptimize *this_ptr)
     }
     iVar1 = 1;
     if (1 < in_stack_0000000c) {
-      dest_obj = (CObj *)(in_stack_0000000c + 0x1c);
+      dest_obj = in_stack_00000008 + 1;
       do {
         iVar2 = shape_superopt_cpp_CObj_appendTo_FUN_005d2720(&this_ptr->obj,dest_obj);
         if (iVar2 == 0) {
@@ -32,7 +32,7 @@ int __cdecl shape_superopt_cpp_COptimize_FUN_005d71e0(COptimize *this_ptr)
         }
         dest_obj = dest_obj + 1;
         iVar1 = iVar1 + 1;
-      } while (dest_obj < (CObj *)(in_stack_0000000c * 0x1d));
+      } while (dest_obj < in_stack_00000008 + in_stack_0000000c);
     }
     return 1;
   }

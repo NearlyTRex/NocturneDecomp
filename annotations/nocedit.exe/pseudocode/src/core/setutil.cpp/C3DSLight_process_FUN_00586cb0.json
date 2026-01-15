@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 141,
-    "complexity_score": 118,
+    "complexity_score": 92,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 9,
-    "pseudocode_lines": 63,
-    "suspect_count": 4,
+    "pseudocode_lines": 62,
+    "suspect_count": 2,
     "suspect_types": [
       "call_esp_preserve",
-      "stack_param",
       "variadic_preserve"
     ],
-    "total_lines": 204
+    "total_lines": 203
   },
   "cross_references": [
     {
@@ -176,22 +175,8 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000010",
-      "text": "int in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 42,
-      "match": "in_stack_00000010",
-      "text": "if (in_stack_00000010 != 0) {",
-      "type": "stack_param"
-    },
-    {
       "call_address": "00586e4b",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

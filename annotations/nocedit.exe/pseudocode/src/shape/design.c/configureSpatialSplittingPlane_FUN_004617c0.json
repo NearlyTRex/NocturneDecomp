@@ -1,19 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 269,
-    "complexity_score": 195,
+    "complexity_score": 149,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 10,
-    "pseudocode_lines": 115,
-    "suspect_count": 6,
+    "pseudocode_lines": 114,
+    "suspect_count": 3,
     "suspect_types": [
-      "badspacebase",
-      "register_param",
-      "stack_ref",
       "suspect_float"
     ],
-    "total_lines": 384
+    "total_lines": 383
   },
   "cross_references": [],
   "function": {
@@ -219,7 +216,7 @@
     {
       "add_esp_value": 20,
       "call_address": "004618d9",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -529,43 +526,22 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 9,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 9,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Likely misinterpreted integer as float",
-      "line": 56,
+      "line": 52,
       "match": "1.12104e-43",
       "text": "if (local_28 == 1.12104e-43) {",
       "type": "suspect_float"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 62,
-      "match": "&stack0xfffffdec",
-      "text": "((SShapeEditorPolygon *)&stack0xfffffdec);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Likely misinterpreted integer as float",
-      "line": 77,
+      "line": 76,
       "match": "1.23314e-43",
       "text": "if (local_28 == 1.23314e-43) {",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 86,
+      "line": 85,
       "match": "1.26117e-43",
       "text": "else if (local_28 == 1.26117e-43) {",
       "type": "suspect_float"

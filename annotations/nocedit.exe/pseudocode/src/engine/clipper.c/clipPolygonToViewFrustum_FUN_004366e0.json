@@ -1,25 +1,21 @@
 {
   "complexity": {
     "assembly_lines": 1036,
-    "complexity_score": 1342,
+    "complexity_score": 1171,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 68,
-    "pseudocode_lines": 572,
-    "suspect_count": 72,
+    "pseudocode_lines": 571,
+    "suspect_count": 57,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
       "pointer_cast",
-      "register_param",
-      "stack_param",
-      "stack_ref",
       "unknown_field",
       "variadic_preserve",
       "warning_unreachable"
     ],
-    "total_lines": 1608
+    "total_lines": 1607
   },
   "cross_references": [
     {
@@ -731,253 +727,148 @@
       "type": "warning_unreachable"
     },
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 24,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 24,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 34,
-      "match": "in_stack_00000010",
-      "text": "int *in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 57,
-      "match": "&stack0xfffffdb4",
-      "text": "(&stack0xfffffdb4,\"Too many poly verticies : %d\",vertex_count);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 60,
-      "match": "&stack0xfffffdb8",
-      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xfffffdb8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 66,
-      "match": "in_stack_00000010",
-      "text": "piVar12 = in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 90,
-      "match": "in_stack_00000010",
-      "text": "pSVar17 = g_RenderVertexBuffer + *in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 94,
+      "line": 93,
       "match": "._0_4_",
       "text": "lVar1._0_4_ = (pSVar17->projected_vertex).transformed_x;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 95,
+      "line": 94,
       "match": "._4_4_",
       "text": "lVar1._4_4_ = (pSVar17->projected_vertex).transformed_y;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 106,
+      "line": 105,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pSVar19 + (uint)bVar22 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 107,
+      "line": 106,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pSVar17 + (uint)bVar22 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 110,
-      "match": "in_stack_00000010",
-      "text": "in_stack_00000010 = in_stack_00000010 + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 110,
-      "match": "in_stack_00000010",
-      "text": "in_stack_00000010 = in_stack_00000010 + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 120,
-      "match": "in_stack_00000010",
-      "text": "iVar15 = *in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 122,
-      "match": "in_stack_00000010",
-      "text": "in_stack_00000010 = in_stack_00000010 + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 122,
-      "match": "in_stack_00000010",
-      "text": "in_stack_00000010 = in_stack_00000010 + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 164,
-      "match": "in_stack_00000010",
-      "text": "iVar15 = *in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 166,
-      "match": "in_stack_00000010",
-      "text": "in_stack_00000010 = in_stack_00000010 + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 166,
-      "match": "in_stack_00000010",
-      "text": "in_stack_00000010 = in_stack_00000010 + 1;",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 407,
+      "line": 406,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pSVar19 + (uint)bVar22 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 408,
+      "line": 407,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)plVar18 + (uint)bVar22 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 421,
+      "line": 420,
       "match": "(int *)((int)",
       "text": "iVar16 = *(int *)((int)&g_ClippedVertexBuffer[0].projected_vertex.transformed_z +",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 432,
+      "line": 431,
       "match": "(longlong *)((int)",
       "text": "plVar20 = (longlong *)((int)&DAT_008254ac + (uint)bVar22 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 433,
+      "line": 432,
       "match": "(longlong *)((int)",
       "text": "plVar18 = (longlong *)((int)g_ClippedVertexBuffer + (uint)bVar22 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 434,
+      "line": 433,
       "match": "._0_4_",
       "text": "DAT_008254ac._0_4_ = g_ClippedVertexBuffer[0].projected_vertex.transformed_x;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 447,
+      "line": 446,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)plVar20 + (uint)bVar22 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 448,
+      "line": 447,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)plVar18 + (uint)bVar22 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 470,
+      "line": 469,
       "match": "._0_4_",
       "text": "lVar2._0_4_ = (pSVar19->projected_vertex).transformed_x;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 471,
+      "line": 470,
       "match": "._4_4_",
       "text": "lVar2._4_4_ = (pSVar19->projected_vertex).transformed_y;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 484,
+      "line": 483,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pSVar17 + (uint)bVar22 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 485,
+      "line": 484,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pSVar19 + (uint)bVar22 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 501,
+      "line": 500,
       "match": "._0_4_",
       "text": "lVar3._0_4_ = (pSVar19->projected_vertex).transformed_x;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 502,
+      "line": 501,
       "match": "._4_4_",
       "text": "lVar3._4_4_ = (pSVar19->projected_vertex).transformed_y;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 515,
+      "line": 514,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pSVar17 + (uint)bVar22 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 516,
+      "line": 515,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pSVar19 + (uint)bVar22 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "call_address": "00436705",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "unknown",
       "esp_certainty_at_call": "known",
@@ -991,7 +882,7 @@
     },
     {
       "call_address": "00436726",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -1005,7 +896,7 @@
     },
     {
       "call_address": "00436cbf",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1019,7 +910,7 @@
     },
     {
       "call_address": "00436d36",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1033,7 +924,7 @@
     },
     {
       "call_address": "00436d98",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1047,7 +938,7 @@
     },
     {
       "call_address": "00436df3",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1061,7 +952,7 @@
     },
     {
       "call_address": "00436e47",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1075,7 +966,7 @@
     },
     {
       "call_address": "00436ea2",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1089,7 +980,7 @@
     },
     {
       "call_address": "00436ef6",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1103,7 +994,7 @@
     },
     {
       "call_address": "00436f51",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

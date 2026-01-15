@@ -12,8 +12,6 @@ int __cdecl core_enemy_cpp_CEnemy_FUN_004aa170(CEnemy *this_ptr)
   int extraout_EAX;
   int extraout_EAX_00;
   CActorPropertyList *in_stack_00000008;
-  float *pfStack0000000c;
-  uint uStack00000010;
   
   core_charactr_cpp_CCharacter_FUN_0042f730(&this_ptr->base_character);
   core_actor_cpp_CActorPropertyList_FUN_0040e1a0(in_stack_00000008);
@@ -22,10 +20,7 @@ int __cdecl core_enemy_cpp_CEnemy_FUN_004aa170(CEnemy *this_ptr)
   *(uint *)(extraout_EAX + 0x58) = 1;
   core_actor_cpp_CActorPropertyList_FUN_0040e160(in_stack_00000008);
   core_actor_cpp_CActorPropertyList_FUN_0040e290(in_stack_00000008);
-  pfStack0000000c = (float *)0x0;
   core_actor_cpp_CActorPropertyList_FUN_0040e1a0(in_stack_00000008);
-  uStack00000010 = 0;
-  pfStack0000000c = &this_ptr->victim_height;
   core_actor_cpp_CActorPropertyList_FUN_0040e160(in_stack_00000008);
   return extraout_EAX_00;
 }

@@ -20,7 +20,6 @@ void core_msnedit_cpp_FUN_0053d8b0(void)
   CDemonActor *pCVar7;
   int iVar8;
   int *piVar9;
-  BADSPACEBASE *in_ESP;
   int iVar10;
   char *pcVar11;
   char *pcVar12;

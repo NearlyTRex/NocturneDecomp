@@ -18,7 +18,7 @@ engine_3d_c_renderPolygonAPIAdaptivePreprocessing_FUN_00407720(SMRGLHeaderPrimit
   SMRGLHeaderExtended *extraout_EAX_00;
   int iVar5;
   uint in_stack_00000008;
-  int in_stack_00000014;
+  int in_stack_0000000c;
   
   iVar2 = engine_3d_c_isVisiblePlane_FUN_00403950(&polygon_info->surface_normal);
   pSVar4 = (SMRGLHeaderExtended *)0x0;
@@ -44,8 +44,8 @@ engine_3d_c_renderPolygonAPIAdaptivePreprocessing_FUN_00407720(SMRGLHeaderPrimit
                      ((polygon_info->surface_normal).A,(polygon_info->surface_normal).B,
                       (polygon_info->surface_normal).C);
     }
-    g_RenderStateFlag2 = in_stack_00000014;
-    if (in_stack_00000014 == 0) {
+    g_RenderStateFlag2 = in_stack_0000000c;
+    if (in_stack_0000000c == 0) {
       if ((in_stack_00000008 & 0xc0) != 0) {
         g_RenderStateFlag2 = PREPROCESS_DEPTH_BUFFER_PREP;
       }

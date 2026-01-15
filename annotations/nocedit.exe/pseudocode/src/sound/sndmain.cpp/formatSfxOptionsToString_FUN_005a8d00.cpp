@@ -12,20 +12,19 @@ sound_sndmain_cpp_formatSfxOptionsToString_FUN_005a8d00
 
 {
   int iVar1;
-  byte in_stack_00000014;
   
   if (prefix_string == (char *)0x0) {
     *output_buffer = '\0';
   }
   else {
-    iVar1 = crt_stdio_c_sprintf_FUN_005fdbd0(output_buffer,"%s",prefix_string);
+    iVar1 = crt_stdio_c_sprintf_FUN_005fdbd0(output_buffer,"%s");
     output_buffer = output_buffer + iVar1;
   }
-  if ((in_stack_00000014 & 1) != 0) {
+  if ((format_flags & 1) != 0) {
     iVar1 = crt_stdio_c_sprintf_FUN_005fdbd0(output_buffer," channel=%d%s");
     output_buffer = output_buffer + iVar1;
   }
-  if ((in_stack_00000014 & 2) != 0) {
+  if ((format_flags & 2) != 0) {
     if (options->position_format == 0) {
       iVar1 = crt_stdio_c_sprintf_FUN_005fdbd0
                         (output_buffer," pos=%lg,%lg,%lg",*(uint *)&(options->position).x
@@ -44,7 +43,7 @@ sound_sndmain_cpp_formatSfxOptionsToString_FUN_005a8d00
       output_buffer = output_buffer + iVar1;
     }
   }
-  if ((in_stack_00000014 & 4) != 0) {
+  if ((format_flags & 4) != 0) {
     if (options->velocity_format == 0) {
       iVar1 = crt_stdio_c_sprintf_FUN_005fdbd0
                         (output_buffer," vel=%lg,%lg,%lg",*(uint *)&(options->velocity).x
@@ -63,17 +62,17 @@ sound_sndmain_cpp_formatSfxOptionsToString_FUN_005a8d00
       output_buffer = output_buffer + iVar1;
     }
   }
-  if ((in_stack_00000014 & 8) != 0) {
+  if ((format_flags & 8) != 0) {
     iVar1 = crt_stdio_c_sprintf_FUN_005fdbd0
                       (output_buffer," vol=%g",(double)options->current_volume);
     output_buffer = output_buffer + iVar1;
   }
-  if ((in_stack_00000014 & 0x10) != 0) {
+  if ((format_flags & 0x10) != 0) {
     iVar1 = crt_stdio_c_sprintf_FUN_005fdbd0
                       (output_buffer," freq=%g",(double)options->base_frequency);
     output_buffer = output_buffer + iVar1;
   }
-  if ((in_stack_00000014 & 0x20) == 0) {
+  if ((format_flags & 0x20) == 0) {
     return;
   }
   crt_stdio_c_sprintf_FUN_005fdbd0

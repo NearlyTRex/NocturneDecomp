@@ -12,7 +12,6 @@ shape_superopt_cpp_CPoly_transform_FUN_005ccc30
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   double *pdVar2;
   double *pdVar3;
   uint *puVar4;

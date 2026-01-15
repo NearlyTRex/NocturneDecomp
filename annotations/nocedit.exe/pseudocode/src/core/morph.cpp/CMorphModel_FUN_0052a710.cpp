@@ -11,10 +11,10 @@ void __cdecl core_morph_cpp_CMorphModel_FUN_0052a710(CMorphModel *this_ptr)
 {
   int iVar1;
   void *pvVar2;
-  uint in_stack_0000000c;
-  uint in_stack_00000014;
-  int in_stack_0000001c;
-  int in_stack_00000024;
+  uint in_stack_00000008;
+  int in_stack_0000000c;
+  uint in_stack_00000010;
+  int in_stack_00000014;
   
   if (4 < *(int *)this_ptr->field0_0x0) {
     g_CurrentFilename = "..\\core\\morph.cpp";
@@ -23,11 +23,11 @@ void __cdecl core_morph_cpp_CMorphModel_FUN_0052a710(CMorphModel *this_ptr)
   }
   *(int *)(this_ptr->field0_0x0 + *(int *)this_ptr->field0_0x0 * 0x10 + 0xc) = this_ptr->num_points;
   *(uint *)(this_ptr->field0_0x0 + *(int *)this_ptr->field0_0x0 * 0x10 + 4) =
-       in_stack_0000000c;
+       in_stack_00000008;
   *(uint *)(this_ptr->field0_0x0 + *(int *)this_ptr->field0_0x0 * 0x10 + 0x10) =
        *(uint *)(this_ptr->field2_0x58 + 4);
   *(uint *)(this_ptr->field0_0x0 + *(int *)this_ptr->field0_0x0 * 0x10 + 8) =
-       in_stack_00000014;
+       in_stack_00000010;
   this_ptr->num_points =
        this_ptr->num_points +
        *(int *)(this_ptr->field0_0x0 + *(int *)this_ptr->field0_0x0 * 0x10 + 4);
@@ -50,10 +50,10 @@ void __cdecl core_morph_cpp_CMorphModel_FUN_0052a710(CMorphModel *this_ptr)
     g_CurrentLineNumber = 0xc5;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CMorphModel::setup - out of memory!");
   }
-  if (in_stack_0000001c != 0) {
+  if (in_stack_0000000c != 0) {
     core_morph_cpp_CMorphModel_animate_FUN_0052a920(this_ptr);
   }
-  if (in_stack_00000024 != 0) {
+  if (in_stack_00000014 != 0) {
     core_morph_cpp_CMorphModel_FUN_0052aca0(this_ptr);
     return;
   }

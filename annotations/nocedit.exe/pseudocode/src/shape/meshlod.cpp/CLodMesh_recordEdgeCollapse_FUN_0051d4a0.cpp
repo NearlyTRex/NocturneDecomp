@@ -13,7 +13,6 @@ shape_meshlod_cpp_CLodMesh_recordEdgeCollapse_FUN_0051d4a0(CLodMesh *this_ptr,CL
   CLodEdge *pCVar1;
   int iVar2;
   byte bVar3;
-  int *in_stack_00000010;
   
   bVar3 = 0;
   iVar2 = this_ptr->lod_level_count + 1;
@@ -28,8 +27,8 @@ shape_meshlod_cpp_CLodMesh_recordEdgeCollapse_FUN_0051d4a0(CLodMesh *this_ptr,CL
   }
   pCVar1 = this_ptr->lod_levels_ptr + this_ptr->lod_level_count + -1;
   for (iVar2 = 0x3c; iVar2 != 0; iVar2 = iVar2 + -1) {
-    pCVar1->vertex_idx_1 = *in_stack_00000010;
-    in_stack_00000010 = in_stack_00000010 + (uint)bVar3 * -2 + 1;
+    pCVar1->vertex_idx_1 = edge_data->vertex_idx_1;
+    edge_data = (CLodEdge *)((int)edge_data + (uint)bVar3 * -8 + 4);
     pCVar1 = (CLodEdge *)((int)pCVar1 + (uint)bVar3 * -8 + 4);
   }
   return;

@@ -17,44 +17,32 @@ engine_fileio_cpp_synchronizeFilesToDirectory_FUN_004bc650
   int iVar3;
   FILE *file;
   FILE *file_ptr;
-  BADSPACEBASE *in_ESP;
   char *pcVar4;
   SFoundFileInfo *pSVar5;
   char *pcVar6;
-  uint in_stack_fffff8b8;
-  uint uStack_568;
-  SFoundFileInfo SStack_564;
-  char acStack_350 [4];
-  uint uStack_34c;
-  char acStack_33c [12];
-  char *local_330;
-  char local_328 [208];
-  char acStack_258 [4];
-  char acStack_254 [252];
-  char acStack_158 [4];
-  char acStack_154 [300];
-  uint *puStack_28;
-  byte local_24 [8];
-  char **ppcStack_1c;
-  int index;
+  uint in_stack_fffff8b0;
+  uint local_54c;
+  uint local_544;
+  SFoundFileInfo local_53c;
+  char local_328 [260];
+  char local_224 [256];
+  char local_124 [256];
+  CStrList local_24;
+  int local_14;
   
-  shape_edittool_cpp_CStrList_ctor_FUN_004a2a20((CStrList *)local_24);
+  shape_edittool_cpp_CStrList_ctor_FUN_004a2a20(&local_24);
   shape_edittool_cpp_CStrList_populateWithFullPaths_FUN_004a39e0
-            ((CStrList *)(local_24 + 4),file_pattern,dest_directory);
+            (&local_24,source_directory,file_pattern);
   bVar2 = false;
-  index = 0;
-  if (0 < (int)ppcStack_1c) {
+  local_14 = 0;
+  if (0 < local_24.item_count) {
     do {
-      full_path = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
-                            ((CStrList *)&ppcStack_1c,index);
-      engine_dosio_c_splitPath_FUN_00481f20
-                (full_path,(char *)0x0,(char *)0x0,acStack_258,acStack_158);
-      engine_dosio_c_makePath_FUN_00481f50
-                ((char *)&SStack_564.timestamp,(char *)0x0,(char *)local_24._4_4_,acStack_254,
-                 acStack_154);
-      crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)*puStack_28,"%s\n",&SStack_564.container_size);
-      pcVar6 = &stack0xfffff888;
-      pSVar5 = &SStack_564;
+      full_path = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&local_24,local_14);
+      engine_dosio_c_splitPath_FUN_00481f20(full_path,(char *)0x0,(char *)0x0,local_224,local_124);
+      engine_dosio_c_makePath_FUN_00481f50(local_328,(char *)0x0,dest_directory,local_224,local_124)
+      ;
+      crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)file_list_output->_ptr,"%s\n",local_328);
+      pSVar5 = &local_53c;
       pcVar4 = full_path;
       do {
         cVar1 = *pcVar4;
@@ -65,7 +53,8 @@ engine_fileio_cpp_synchronizeFilesToDirectory_FUN_004bc650
         pSVar5->found_path[1] = cVar1;
         pSVar5 = (SFoundFileInfo *)(pSVar5->found_path + 2);
       } while (cVar1 != '\0');
-      pcVar4 = acStack_350;
+      pcVar4 = local_328;
+      pcVar6 = &stack0xfffff8b0;
       do {
         cVar1 = *pcVar4;
         *pcVar6 = cVar1;
@@ -75,30 +64,29 @@ engine_fileio_cpp_synchronizeFilesToDirectory_FUN_004bc650
         pcVar6[1] = cVar1;
         pcVar6 = pcVar6 + 2;
       } while (cVar1 != '\0');
-      iVar3 = engine_dosio_c_findFileNormally_FUN_004817c0(&SStack_564);
+      iVar3 = engine_dosio_c_findFileNormally_FUN_004817c0(&local_53c);
       if (iVar3 == 0) {
         g_CurrentFilename = "..\\engine\\fileio.cpp";
         g_CurrentLineNumber = 0xfe7;
-        core_main_c_displayErrorAndQuit_FUN_00506f10("Can't get info on %s");
+        core_main_c_displayErrorAndQuit_FUN_00506f10("Can't get info on %s",&local_53c);
       }
-      iVar3 = engine_dosio_c_findFileNormally_FUN_004817c0((SFoundFileInfo *)&stack0xfffff890);
-      if ((((iVar3 == 0) || (uStack_34c < SStack_564.found_path._4_4_ - 1)) ||
-          (SStack_564.found_path._4_4_ + 1 < uStack_34c)) ||
-         (SStack_564.container_size != uStack_568)) {
+      iVar3 = engine_dosio_c_findFileNormally_FUN_004817c0((SFoundFileInfo *)&stack0xfffff8b0);
+      if ((((iVar3 == 0) || (local_53c.timestamp < (char *)(local_544 - 1))) ||
+          ((char *)(local_544 + 1) < local_53c.timestamp)) || (local_53c.file_size != local_54c)) {
         file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                          (full_path,(char *)0x0,"rb","..\\engine\\fileio.cpp",0xff8);
         if (file == (FILE *)0x0) {
           g_CurrentFilename = "..\\engine\\fileio.cpp";
           g_CurrentLineNumber = 0xff9;
-          core_main_c_displayErrorAndQuit_FUN_00506f10("Can't open %s");
+          core_main_c_displayErrorAndQuit_FUN_00506f10("Can't open %s",full_path);
         }
         file_ptr = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                             (acStack_33c,(char *)0x0,"wb","..\\engine\\fileio.cpp",
-                              0xffa);
+                             (local_328,(char *)0x0,"wb","..\\engine\\fileio.cpp",0xffa
+                             );
         if (file_ptr == (FILE *)0x0) {
           g_CurrentFilename = "..\\engine\\fileio.cpp";
           g_CurrentLineNumber = 0xffb;
-          core_main_c_displayErrorAndQuit_FUN_00506f10("Can't create %s");
+          core_main_c_displayErrorAndQuit_FUN_00506f10("Can't create %s",local_328);
         }
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                   (g_CEditorToolsPtr,"Copying %s -> %s");
@@ -110,19 +98,20 @@ engine_fileio_cpp_synchronizeFilesToDirectory_FUN_004bc650
         if ((file->_flag & 0x20) != 0) {
           g_CurrentFilename = "..\\engine\\fileio.cpp";
           g_CurrentLineNumber = 0x1008;
-          core_main_c_displayErrorAndQuit_FUN_00506f10("Error reading %s");
+          core_main_c_displayErrorAndQuit_FUN_00506f10("Error reading %s",full_path);
         }
         if ((file_ptr->_flag & 0x20) != 0) {
           g_CurrentFilename = "..\\engine\\fileio.cpp";
           g_CurrentLineNumber = 0x1009;
-          core_main_c_displayErrorAndQuit_FUN_00506f10("Error writing %s");
+          core_main_c_displayErrorAndQuit_FUN_00506f10("Error writing %s",local_328);
         }
         shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\fileio.cpp",0x100d);
         shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\engine\\fileio.cpp",0x100e);
-        iVar3 = engine_dosio_c_copyFileTimestamp_FUN_00481910(local_328,local_330);
+        iVar3 = engine_dosio_c_copyFileTimestamp_FUN_00481910(local_328,(char *)local_53c.timestamp)
+        ;
         if (iVar3 == 0) {
           shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-                    (g_CEditorToolsPtr,"WARNING: Error setting date/time on %s.\n(Most likely reason: Tried to set the file time to a time\nnewer than the current system time on your computer)");
+                    (g_CEditorToolsPtr,"WARNING: Error setting date/time on %s.\n(Most likely reason: Tried to set the file time to a time\nnewer than the current system time on your computer)",local_328);
           bVar2 = false;
         }
         else {
@@ -134,9 +123,9 @@ engine_fileio_cpp_synchronizeFilesToDirectory_FUN_004bc650
                   (g_CEditorToolsPtr,"Skipping files already in sync...");
         bVar2 = true;
       }
-      index = index + 1;
-    } while (index < (int)ppcStack_1c);
+      local_14 = local_14 + 1;
+    } while (local_14 < local_24.item_count);
   }
-  shape_edittool_cpp_CStrList_dtor_FUN_004a2a40((CStrList *)&ppcStack_1c,0,in_stack_fffff8b8);
+  shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_24,0,in_stack_fffff8b0);
   return;
 }

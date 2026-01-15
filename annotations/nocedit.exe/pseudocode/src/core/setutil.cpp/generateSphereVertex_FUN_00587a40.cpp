@@ -12,7 +12,6 @@ core_setutil_cpp_generateSphereVertex_FUN_00587a40
 
 {
   CDemonRenderer *pCVar1;
-  BADSPACEBASE *in_ESP;
   float10 fVar2;
   float10 fVar3;
   float10 fVar4;

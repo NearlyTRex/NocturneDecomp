@@ -15,8 +15,8 @@ int __cdecl core_charactr_cpp_CCharacter_advanceLayerAction_FUN_0042e370(CCharac
   char *pcVar4;
   int iVar5;
   float *in_stack_00000008;
-  int in_stack_00000010;
-  float local_14;
+  int in_stack_0000000c;
+  float local_18;
   
   if ((*(int *)(this_ptr->field13_0x2620 + 0x46c) < 0) ||
      (*(int *)(this_ptr->field13_0x2620 + 8) <= *(int *)(this_ptr->field13_0x2620 + 0x46c))) {
@@ -38,12 +38,12 @@ int __cdecl core_charactr_cpp_CCharacter_advanceLayerAction_FUN_0042e370(CCharac
     this_ptr->field13_0x2620[0x473] = '?';
   }
   fVar1 = *(float *)(this_ptr->field13_0x2620 + 0x470) * *(float *)(pcVar4 + 0x34);
-  local_14 = *(float *)(pcVar4 + 0x34) * (1.0 - *(float *)(this_ptr->field13_0x2620 + 0x470));
+  local_18 = *(float *)(pcVar4 + 0x34) * (1.0 - *(float *)(this_ptr->field13_0x2620 + 0x470));
   iVar5 = *(int *)(pcVar4 + 0x28);
   if (iVar5 != 0) goto LAB_0042e486;
   fVar2 = *(float *)(this_ptr->cloth_data +
-                    in_stack_00000010 * 4 + *(int *)(pcVar4 + 4) * 0x50 + 0x8d4c) + local_14;
-  fVar3 = *(float *)(this_ptr->cloth_data + in_stack_00000010 * 4 + *(int *)pcVar4 * 0x50 + 0x8d4c)
+                    in_stack_0000000c * 4 + *(int *)(pcVar4 + 4) * 0x50 + 0x8d4c) + local_18;
+  fVar3 = *(float *)(this_ptr->cloth_data + in_stack_0000000c * 4 + *(int *)pcVar4 * 0x50 + 0x8d4c)
           + fVar1;
   if (fVar2 <= fVar3) {
     if (fVar2 < fVar3) {
@@ -51,8 +51,8 @@ int __cdecl core_charactr_cpp_CCharacter_advanceLayerAction_FUN_0042e370(CCharac
       goto LAB_0042e486;
     }
     if (*(float *)(this_ptr->cloth_data +
-                  in_stack_00000010 * 4 + *(int *)(pcVar4 + 4) * 0x50 + 0x8d4c) <=
-        *(float *)(this_ptr->cloth_data + in_stack_00000010 * 4 + *(int *)pcVar4 * 0x50 + 0x8d4c)) {
+                  in_stack_0000000c * 4 + *(int *)(pcVar4 + 4) * 0x50 + 0x8d4c) <=
+        *(float *)(this_ptr->cloth_data + in_stack_0000000c * 4 + *(int *)pcVar4 * 0x50 + 0x8d4c)) {
       iVar5 = 1;
       goto LAB_0042e486;
     }
@@ -60,9 +60,9 @@ int __cdecl core_charactr_cpp_CCharacter_advanceLayerAction_FUN_0042e370(CCharac
   iVar5 = -1;
 LAB_0042e486:
   if (iVar5 < 0) {
-    local_14 = fVar1;
+    local_18 = fVar1;
   }
-  if (*in_stack_00000008 < local_14) {
+  if (*in_stack_00000008 < local_18) {
     fVar1 = ((float)iVar5 * *in_stack_00000008) / *(float *)(pcVar4 + 0x34) +
             *(float *)(this_ptr->field13_0x2620 + 0x470);
     *(float *)(this_ptr->field13_0x2620 + 0x470) = fVar1;
@@ -81,7 +81,7 @@ LAB_0042e486:
     *in_stack_00000008 = 0.0;
     return -1;
   }
-  *in_stack_00000008 = *in_stack_00000008 - local_14;
+  *in_stack_00000008 = *in_stack_00000008 - local_18;
   if (-1 < iVar5) {
     iVar5 = *(int *)(pcVar4 + 4);
     this_ptr->field13_0x2620[0x470] = '\0';

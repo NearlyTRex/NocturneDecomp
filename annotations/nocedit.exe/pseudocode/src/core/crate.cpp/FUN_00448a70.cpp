@@ -11,7 +11,6 @@
 void core_crate_cpp_FUN_00448a70(void)
 
 {
-  BADSPACEBASE *in_ESP;
   int in_stack_00000004;
   float fStack_24;
   float fStack_18;

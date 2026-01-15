@@ -19,7 +19,7 @@ core_filmreel_cpp_dtor_FUN_004beed0(CFilmProjector *this_ptr,uint d1,uint d2)
     return this_ptr;
   }
   ptr = (CFilmProjector *)core_actor_cpp_CDemonActor_dtor_FUN_00408a30((CDemonActor *)this_ptr,1);
-  if ((d2 & 2) == 0) {
+  if ((d1 & 2) == 0) {
     return ptr;
   }
   shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);

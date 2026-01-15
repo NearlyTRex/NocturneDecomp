@@ -13,12 +13,10 @@ engine_font_cpp_CBitFont_drawTextCenterF_FUN_004cde70
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
-  char acStack_100c [4092];
+  char local_1010 [4096];
   
-  crt_stdio_c_vsprintf_FUN_005fdba8(&stack0xffffeff0,format_string,args);
+  crt_stdio_c_vsprintf_FUN_005fdba8(local_1010,format_string,args);
   iVar1 = engine_font_cpp_CBitFont_drawTextCenter_FUN_004cdde0
-                    ((CBitFont *)center_x,y_pos,color_mode,color_value,(int)format_string,
-                     acStack_100c);
+                    (this_ptr,center_x,y_pos,color_mode,color_value,local_1010);
   return iVar1;
 }

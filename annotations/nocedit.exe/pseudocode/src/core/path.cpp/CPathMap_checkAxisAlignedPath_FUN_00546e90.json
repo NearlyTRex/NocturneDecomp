@@ -1,18 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 467,
-    "complexity_score": 818,
+    "complexity_score": 763,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
-    "pseudocode_lines": 143,
-    "suspect_count": 66,
+    "pseudocode_lines": 148,
+    "suspect_count": 60,
     "suspect_types": [
       "call_esp_preserve",
       "param_count_too_many",
       "unaffected_reg"
     ],
-    "total_lines": 610
+    "total_lines": 615
   },
   "cross_references": [
     {
@@ -312,77 +312,56 @@
   "suspects": [
     {
       "description": "Unaffected register variable",
-      "line": 13,
-      "match": "unaff_EBP",
-      "text": "int unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 14,
+      "line": 15,
       "match": "unaff_EDI",
       "text": "int unaff_EDI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 44,
-      "match": "unaff_EBP",
-      "text": "local_58 = unaff_EBP + 1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 47,
+      "line": 48,
       "match": "unaff_EDI",
       "text": "unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 48,
-      "match": "unaff_EBP",
-      "text": "(this_ptr,unaff_EBP,local_20,current_height);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 49,
-      "match": "unaff_EDI",
-      "text": "uVar5 = unaff_EDI - current_height >> 0x1f;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
       "line": 50,
       "match": "unaff_EDI",
-      "text": "if (((g_PathfindingMaxClimbHeight < (int)((unaff_EDI - current_height ^ uVar5) - uVar5)) ||",
+      "text": "uVar7 = unaff_EDI - iVar3 >> 0x1f;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
       "line": 51,
       "match": "unaff_EDI",
-      "text": "(unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0",
+      "text": "if (((g_PathfindingMaxClimbHeight < (int)((unaff_EDI - iVar3 ^ uVar7) - uVar7)) ||",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 53,
+      "line": 52,
       "match": "unaff_EDI",
-      "text": "uVar5 = unaff_EDI - current_height >> 0x1f,",
+      "text": "(unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
       "line": 54,
       "match": "unaff_EDI",
-      "text": "g_PathfindingMaxClimbHeight < (int)((unaff_EDI - current_height ^ uVar5) - uVar5))) ||",
+      "text": "uVar7 = unaff_EDI - iVar3 >> 0x1f,",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
       "line": 55,
+      "match": "unaff_EDI",
+      "text": "g_PathfindingMaxClimbHeight < (int)((unaff_EDI - iVar3 ^ uVar7) - uVar7))) ||",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 56,
       "match": "unaff_EDI",
       "text": "(unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0",
       "type": "unaffected_reg"
@@ -391,96 +370,89 @@
       "description": "Unaffected register variable",
       "line": 57,
       "match": "unaff_EDI",
-      "text": "uVar5 = unaff_EDI - current_height >> 0x1f,",
+      "text": "(this_ptr,end_x + 1,iVar5,iVar3), uVar7 = unaff_EDI - iVar3 >> 0x1f,",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
       "line": 58,
       "match": "unaff_EDI",
-      "text": "g_PathfindingMaxClimbHeight < (int)((unaff_EDI - current_height ^ uVar5) - uVar5))) break;",
+      "text": "g_PathfindingMaxClimbHeight < (int)((unaff_EDI - iVar3 ^ uVar7) - uVar7))) break;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 71,
-      "match": "unaff_EBP",
-      "text": "local_1c = unaff_EBP + local_3c;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 72,
+      "line": 70,
       "match": "unaff_EDI",
       "text": "unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 74,
+      "line": 72,
       "match": "unaff_EDI",
-      "text": "uVar4 = unaff_EDI - current_height >> 0x1f;",
+      "text": "uVar8 = unaff_EDI - iVar3 >> 0x1f;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 75,
+      "line": 73,
       "match": "unaff_EDI",
-      "text": "if (((g_PathfindingMaxClimbHeight < (int)((unaff_EDI - current_height ^ uVar4) - uVar4)) ||",
+      "text": "if (((g_PathfindingMaxClimbHeight < (int)((unaff_EDI - iVar3 ^ uVar8) - uVar8)) ||",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 74,
+      "match": "unaff_EDI",
+      "text": "(unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
       "line": 76,
       "match": "unaff_EDI",
-      "text": "(unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0",
+      "text": "uVar8 = unaff_EDI - iVar3 >> 0x1f,",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 77,
+      "match": "unaff_EDI",
+      "text": "g_PathfindingMaxClimbHeight < (int)((unaff_EDI - iVar3 ^ uVar8) - uVar8))) ||",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
       "line": 78,
       "match": "unaff_EDI",
-      "text": "uVar4 = unaff_EDI - current_height >> 0x1f,",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 79,
-      "match": "unaff_EDI",
-      "text": "g_PathfindingMaxClimbHeight < (int)((unaff_EDI - current_height ^ uVar4) - uVar4))) ||",
+      "text": "(unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
       "line": 80,
       "match": "unaff_EDI",
-      "text": "(unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0",
+      "text": "uVar8 = unaff_EDI - iVar3 >> 0x1f,",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 82,
+      "line": 81,
       "match": "unaff_EDI",
-      "text": "uVar4 = unaff_EDI - current_height >> 0x1f,",
+      "text": "g_PathfindingMaxClimbHeight < (int)((unaff_EDI - iVar3 ^ uVar8) - uVar8))) break;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 83,
+      "line": 90,
       "match": "unaff_EDI",
-      "text": "g_PathfindingMaxClimbHeight < (int)((unaff_EDI - current_height ^ uVar4) - uVar4)))",
+      "text": "(this_ptr,start_z,start_x,(this_ptr->voxel_coords).y), unaff_EDI == iVar5)",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 94,
-      "match": "unaff_EDI",
-      "text": "unaff_EDI == iVar2)) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 103,
+      "line": 102,
       "match": "unaff_EDI",
       "text": "unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0",
       "type": "unaffected_reg"
@@ -488,27 +460,20 @@
     {
       "description": "Unaffected register variable",
       "line": 104,
-      "match": "unaff_EBP",
-      "text": "(this_ptr,local_38 + end_z,unaff_EBP,iVar2);",
+      "match": "unaff_EDI",
+      "text": "uVar2 = unaff_EDI - iVar5 >> 0x1f;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
       "line": 105,
       "match": "unaff_EDI",
-      "text": "uVar1 = unaff_EDI - iVar2 >> 0x1f;",
+      "text": "if (((g_PathfindingMaxClimbHeight < (int)((unaff_EDI - iVar5 ^ uVar2) - uVar2)) ||",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
       "line": 106,
-      "match": "unaff_EDI",
-      "text": "if (((g_PathfindingMaxClimbHeight < (int)((unaff_EDI - iVar2 ^ uVar1) - uVar1)) ||",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 107,
       "match": "unaff_EDI",
       "text": "(unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0",
       "type": "unaffected_reg"
@@ -517,14 +482,14 @@
       "description": "Unaffected register variable",
       "line": 108,
       "match": "unaff_EDI",
-      "text": "(this_ptr,end_z,iVar3,iVar2), uVar1 = unaff_EDI - iVar2 >> 0x1f,",
+      "text": "uVar2 = unaff_EDI - iVar5 >> 0x1f,",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
       "line": 109,
       "match": "unaff_EDI",
-      "text": "g_PathfindingMaxClimbHeight < (int)((unaff_EDI - iVar2 ^ uVar1) - uVar1))) ||",
+      "text": "g_PathfindingMaxClimbHeight < (int)((unaff_EDI - iVar5 ^ uVar2) - uVar2))) ||",
       "type": "unaffected_reg"
     },
     {
@@ -536,93 +501,86 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 111,
-      "match": "unaff_EDI",
-      "text": "(this_ptr,end_z,local_58,iVar2), uVar1 = unaff_EDI - iVar2 >> 0x1f,",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
       "line": 112,
       "match": "unaff_EDI",
-      "text": "g_PathfindingMaxClimbHeight < (int)((unaff_EDI - iVar2 ^ uVar1) - uVar1))) break;",
+      "text": "uVar2 = unaff_EDI - iVar5 >> 0x1f,",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 122,
+      "line": 113,
       "match": "unaff_EDI",
-      "text": "(unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 123,
-      "match": "unaff_EBP",
-      "text": "(this_ptr,end_z,unaff_EBP + local_34,iVar2),",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 124,
-      "match": "unaff_EDI",
-      "text": "uVar1 = unaff_EDI - iVar2 >> 0x1f,",
+      "text": "g_PathfindingMaxClimbHeight < (int)((unaff_EDI - iVar5 ^ uVar2) - uVar2))) break;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
       "line": 125,
       "match": "unaff_EDI",
-      "text": "(int)((unaff_EDI - iVar2 ^ uVar1) - uVar1) <= g_PathfindingMaxClimbHeight)) &&",
+      "text": "unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 126,
+      "line": 127,
       "match": "unaff_EDI",
-      "text": "((unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0",
+      "text": "uVar1 = unaff_EDI - iVar5 >> 0x1f;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
       "line": 128,
       "match": "unaff_EDI",
-      "text": "uVar1 = unaff_EDI - iVar2 >> 0x1f,",
+      "text": "if (((g_PathfindingMaxClimbHeight < (int)((unaff_EDI - iVar5 ^ uVar1) - uVar1)) ||",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
       "line": 129,
       "match": "unaff_EDI",
-      "text": "(int)((unaff_EDI - iVar2 ^ uVar1) - uVar1) <= g_PathfindingMaxClimbHeight &&",
+      "text": "(unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 130,
+      "line": 131,
       "match": "unaff_EDI",
-      "text": "(unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0",
+      "text": "uVar1 = unaff_EDI - iVar5 >> 0x1f,",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
       "line": 132,
       "match": "unaff_EDI",
-      "text": "uVar1 = unaff_EDI - iVar2 >> 0x1f,",
+      "text": "g_PathfindingMaxClimbHeight < (int)((unaff_EDI - iVar5 ^ uVar1) - uVar1))) ||",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
       "line": 133,
       "match": "unaff_EDI",
-      "text": "(int)((unaff_EDI - iVar2 ^ uVar1) - uVar1) <= g_PathfindingMaxClimbHeight))))) {",
+      "text": "(unaff_EDI = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 141,
+      "line": 135,
       "match": "unaff_EDI",
-      "text": "unaff_EDI == iVar2)) {",
+      "text": "uVar1 = unaff_EDI - iVar5 >> 0x1f,",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 136,
+      "match": "unaff_EDI",
+      "text": "g_PathfindingMaxClimbHeight < (int)((unaff_EDI - iVar5 ^ uVar1) - uVar1))) break;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 145,
+      "match": "unaff_EDI",
+      "text": "(this_ptr,start_z,start_x,(this_ptr->voxel_coords).y), unaff_EDI == iVar5)",
       "type": "unaffected_reg"
     },
     {

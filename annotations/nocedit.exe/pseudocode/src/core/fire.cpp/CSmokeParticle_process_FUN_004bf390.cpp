@@ -11,34 +11,33 @@ void __cdecl core_fire_cpp_CSmokeParticle_process_FUN_004bf390(CSmokeParticle *t
 {
   CVector3f *pCVar1;
   float fVar2;
-  CDemonSet *pCVar3;
-  float fVar4;
+  float fVar3;
+  CDemonSet *pCVar4;
   float fVar5;
-  float local_8;
   
-  fVar5 = g_CGamePtr->delta_time_float;
-  this_ptr->age = fVar5 * 30f + this_ptr->age;
+  fVar3 = g_CGamePtr->delta_time_float;
+  this_ptr->age = fVar3 * 30f + this_ptr->age;
   if (0x421fffff < (int)this_ptr->age) {
     this_ptr->active = 0;
     return;
   }
   (this_ptr->position).y =
-       fVar5 * this_ptr->vertical_accel * this_ptr->drag_factor + (this_ptr->position).y;
-  fVar4 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-1.0,1.0);
-  (this_ptr->position).x = fVar4 * local_8 + (this_ptr->position).x;
+       fVar3 * this_ptr->vertical_accel * this_ptr->drag_factor + (this_ptr->position).y;
   fVar5 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-1.0,1.0);
-  (this_ptr->position).z = fVar5 * fVar4 + (this_ptr->position).z;
+  (this_ptr->position).x = fVar5 * fVar3 + (this_ptr->position).x;
+  fVar5 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-1.0,1.0);
+  (this_ptr->position).z = fVar5 * fVar3 + (this_ptr->position).z;
   fVar5 = (this_ptr->wind_influence).y;
   fVar2 = (this_ptr->wind_influence).z;
   pCVar1 = &this_ptr->position;
-  pCVar1->x = pCVar1->x + (this_ptr->wind_influence).x * fVar4;
-  (this_ptr->position).y = (this_ptr->position).y + fVar5 * fVar4;
-  pCVar3 = g_CDemonSetPtr;
-  (this_ptr->position).z = (this_ptr->position).z + fVar2 * fVar4;
-  fVar5 = *(float *)(pCVar3->field19_0x14f0a0 + 0xbbc4);
-  fVar2 = *(float *)(pCVar3->field19_0x14f0a0 + 0xbbc8);
-  pCVar1->x = pCVar1->x + *(float *)(pCVar3->field19_0x14f0a0 + 0xbbc0) * fVar4;
-  (this_ptr->position).y = (this_ptr->position).y + fVar5 * fVar4;
-  (this_ptr->position).z = (this_ptr->position).z + fVar2 * fVar4;
+  pCVar1->x = pCVar1->x + (this_ptr->wind_influence).x * fVar3;
+  (this_ptr->position).y = (this_ptr->position).y + fVar5 * fVar3;
+  pCVar4 = g_CDemonSetPtr;
+  (this_ptr->position).z = (this_ptr->position).z + fVar2 * fVar3;
+  fVar5 = *(float *)(pCVar4->field19_0x14f0a0 + 0xbbc4);
+  fVar2 = *(float *)(pCVar4->field19_0x14f0a0 + 0xbbc8);
+  pCVar1->x = pCVar1->x + *(float *)(pCVar4->field19_0x14f0a0 + 0xbbc0) * fVar3;
+  (this_ptr->position).y = (this_ptr->position).y + fVar5 * fVar3;
+  (this_ptr->position).z = (this_ptr->position).z + fVar2 * fVar3;
   return;
 }

@@ -12,10 +12,10 @@ void core_bodypart_cpp_FUN_00419340(void)
   int iVar1;
   int iVar2;
   int iVar3;
-  int iVar4;
   int in_stack_00000004;
-  int in_stack_00000010;
-  int in_stack_00000014;
+  int in_stack_00000008;
+  int local_18;
+  int local_14;
   
   core_set_cpp_CDemonSet_rotateVertices_FUN_0056e7c0
             (g_CDemonSetPtr,*(int *)(in_stack_00000004 + 0x174),*(int **)(in_stack_00000004 + 0x178)
@@ -34,28 +34,30 @@ void core_bodypart_cpp_FUN_00419340(void)
     }
     engine_drender_cpp_CDemonRenderer_renderFaceBatch_FUN_0048ce20
               (g_CDemonRendererPtr,*(SMRGLHeaderPrimitive **)(in_stack_00000004 + 0x184),
-               *(int *)(in_stack_00000004 + 0x180),in_stack_00000010);
+               *(int *)(in_stack_00000004 + 0x180),in_stack_00000008);
   }
   else {
-    iVar3 = 0;
-    iVar2 = -1;
+    iVar2 = 0;
+    local_18 = -1;
     if (0 < *(int *)(in_stack_00000004 + 0x180)) {
-      iVar4 = 0;
+      local_14 = 0;
+      iVar3 = 0;
       do {
-        iVar1 = **(int **)(in_stack_00000004 + 0x188);
-        if (iVar1 != iVar2) {
+        iVar1 = *(int *)(*(int *)(in_stack_00000004 + 0x188) + local_14);
+        if (iVar1 != local_18) {
           engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
                     (g_CDemonRendererPtr,
                      (SMRGLTextureBasic *)(iVar1 * 0x18 + in_stack_00000004 + 400));
-          iVar2 = iVar1;
+          local_18 = iVar1;
         }
         engine_drender_cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0
                   (g_CDemonRendererPtr,
-                   (SMRGLHeaderPrimitive *)(*(int *)(in_stack_00000004 + 0x184) + iVar4),
-                   in_stack_00000014);
-        iVar3 = iVar3 + 1;
-        iVar4 = iVar4 + 0x3c;
-      } while (iVar3 < *(int *)(in_stack_00000004 + 0x180));
+                   (SMRGLHeaderPrimitive *)(*(int *)(in_stack_00000004 + 0x184) + iVar3),
+                   in_stack_00000008);
+        iVar2 = iVar2 + 1;
+        iVar3 = iVar3 + 0x3c;
+        local_14 = local_14 + 4;
+      } while (iVar2 < *(int *)(in_stack_00000004 + 0x180));
     }
   }
   engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr,1);

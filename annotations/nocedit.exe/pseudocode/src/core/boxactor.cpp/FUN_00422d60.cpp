@@ -13,7 +13,6 @@ void core_boxactor_cpp_FUN_00422d60(void)
   uint uVar1;
   float fVar2;
   int iVar3;
-  BADSPACEBASE *in_ESP;
   CDemonFilter *this_ptr_00;
   int in_stack_00000004;
   char acStack_cc [40];

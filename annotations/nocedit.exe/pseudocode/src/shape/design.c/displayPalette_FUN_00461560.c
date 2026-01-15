@@ -10,7 +10,6 @@ void shape_design_c_displayPalette_FUN_00461560(void)
 
 {
   char cVar1;
-  BADSPACEBASE *in_ESP;
   char *pcVar2;
   char *pcVar3;
   char local_7c [80];
@@ -49,20 +48,8 @@ void shape_design_c_displayPalette_FUN_00461560(void)
   } while (cVar1 != '\0');
   engine_2d_c_drawTextColor_FUN_00402430(local_7c,0,g_WindowHeight + -0xb);
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-  local_7c[0] = -0x73;
-  local_7c[1] = '\x16';
-  local_7c[2] = 'F';
-  local_7c[3] = '\0';
   engine_2d_c_clearInputAndWait_FUN_00403260();
-  local_7c[4] = -0x6e;
-  local_7c[5] = '\x16';
-  local_7c[6] = 'F';
-  local_7c[7] = '\0';
   wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
-  local_7c[8] = -0x69;
-  local_7c[9] = '\x16';
-  local_7c[10] = 'F';
-  local_7c[0xb] = '\0';
   engine_2d_c_clearInputAndWait_FUN_00403260();
   return;
 }

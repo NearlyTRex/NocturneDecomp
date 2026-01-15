@@ -1,20 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 43,
-    "complexity_score": 173,
+    "complexity_score": 142,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 5,
-    "pseudocode_lines": 18,
-    "suspect_count": 13,
+    "pseudocode_lines": 17,
+    "suspect_count": 11,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
-      "register_param",
       "stack_param"
     ],
-    "total_lines": 61
+    "total_lines": 60
   },
   "cross_references": [],
   "function": {
@@ -136,50 +134,36 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 5,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 5,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 6,
+      "line": 5,
       "match": "in_stack_00000004",
       "text": "CDemonActor *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 9,
+      "line": 8,
       "match": "in_stack_00000004",
       "text": "core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 11,
+      "line": 10,
       "match": "in_stack_00000004",
       "text": "((CKeyFramedModelInstance *)(in_stack_00000004 + 1),\"modelName\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 12,
       "match": "in_stack_00000004",
       "text": "((int *)&in_stack_00000004[2].location.position.y,\"useCount\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 14,
       "match": "in_stack_00000004",
       "text": "(&in_stack_00000004[2].location.position.z,\"hpRestored\");",
       "type": "stack_param"

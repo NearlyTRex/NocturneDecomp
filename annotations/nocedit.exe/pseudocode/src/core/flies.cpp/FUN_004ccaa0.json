@@ -1,18 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 24,
-    "complexity_score": 128,
+    "complexity_score": 117,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 1,
-    "pseudocode_lines": 13,
-    "suspect_count": 10,
+    "pseudocode_lines": 12,
+    "suspect_count": 9,
     "suspect_types": [
       "call_esp_preserve",
       "extra_output",
       "stack_param"
     ],
-    "total_lines": 37
+    "total_lines": 36
   },
   "cross_references": [],
   "function": {
@@ -106,15 +106,15 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_0000000c",
-      "text": "CActorPropertyList *in_stack_0000000c;",
+      "line": 12,
+      "match": "in_stack_00000004",
+      "text": "core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290(in_stack_00000004,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000004",
+      "line": 12,
+      "match": "in_stack_00000008",
       "text": "core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290(in_stack_00000004,in_stack_00000008);",
       "type": "stack_param"
     },
@@ -122,19 +122,12 @@
       "description": "Unresolved stack parameter",
       "line": 13,
       "match": "in_stack_00000008",
-      "text": "core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290(in_stack_00000004,in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_0000000c",
-      "text": "core_actor_cpp_CActorPropertyList_FUN_0040e220(in_stack_0000000c);",
+      "text": "core_actor_cpp_CActorPropertyList_FUN_0040e220(in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 15,
+      "line": 14,
       "match": "extraout_EAX",
       "text": "*(uint *)(extraout_EAX + 0x58) = 1;",
       "type": "extra_output"

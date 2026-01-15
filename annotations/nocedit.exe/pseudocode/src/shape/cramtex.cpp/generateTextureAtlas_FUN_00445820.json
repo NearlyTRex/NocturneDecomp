@@ -1,19 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 817,
-    "complexity_score": 811,
+    "complexity_score": 690,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 92,
-    "pseudocode_lines": 361,
-    "suspect_count": 43,
+    "pseudocode_lines": 350,
+    "suspect_count": 32,
     "suspect_types": [
       "call_esp_preserve",
       "pointer_cast",
       "stack_param",
       "variadic_preserve"
     ],
-    "total_lines": 1178
+    "total_lines": 1167
   },
   "cross_references": [],
   "function": {
@@ -771,157 +771,80 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 29,
-      "match": "in_stack_00000014",
-      "text": "int in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_ffffffe8",
-      "text": "uint in_stack_ffffffe8;",
+      "line": 23,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 50,
-      "match": "in_stack_00000014",
-      "text": "iVar16 = (g_CramTotalPixelArea * 100) / in_stack_00000014;",
+      "match": "in_stack_00000004",
+      "text": "iVar13 = (g_CramTotalPixelArea * 100) / in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 93,
-      "match": "(byte *)((int)",
-      "text": "puVar14 = (byte *)((int)ppcVar7 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 102,
-      "match": "in_stack_ffffffe8",
-      "text": "in_stack_ffffffe8 = 0x20b;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 149,
-      "match": "(int *)((int)",
-      "text": "if (((*(int *)((int)&g_CramRectangles[0].left + iVar12) == 0) &&",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 150,
-      "match": "(int *)((int)",
-      "text": "(*(int *)((int)&g_CramRectangles[0].top + iVar12) == 0)) &&",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 152,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)&g_CramRectangles[0].right + iVar12))) goto LAB_00445b8a;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 156,
-      "match": "in_stack_ffffffe8",
-      "text": "in_stack_ffffffe8 = 0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 161,
-      "match": "in_stack_ffffffe8",
-      "text": "if (in_stack_ffffffe8 != 0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 185,
-      "match": "in_stack_ffffffe8",
-      "text": "pSVar21->orientation = in_stack_ffffffe8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 190,
-      "match": "in_stack_ffffffe8",
-      "text": "in_stack_ffffffe8 = in_stack_ffffffe8 + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 190,
-      "match": "in_stack_ffffffe8",
-      "text": "in_stack_ffffffe8 = in_stack_ffffffe8 + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 192,
-      "match": "in_stack_ffffffe8",
-      "text": "} while ((int)in_stack_ffffffe8 < 2);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 199,
+      "line": 146,
       "match": "(int *)((int)",
       "text": "if (((*(int *)((int)&g_CramRectangles[0].left + iVar17) == 0) &&",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 201,
+      "line": 147,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)&g_CramRectangles[0].top + iVar17))) &&",
+      "text": "(*(int *)((int)&g_CramRectangles[0].top + iVar17) == 0)) &&",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 203,
+      "line": 149,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)&g_CramRectangles[0].right + iVar17))) goto LAB_00445bd9;",
+      "text": "*(int *)((int)&g_CramRectangles[0].right + iVar17))) goto LAB_00445b8a;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 251,
+      "line": 194,
       "match": "(int *)((int)",
-      "text": "if (((iStack00000008 == *(int *)((int)&g_CramRectangles[0].left + iVar16)) &&",
+      "text": "if (((*(int *)((int)&g_CramRectangles[0].left + iVar14) == 0) &&",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 252,
+      "line": 196,
       "match": "(int *)((int)",
-      "text": "(*(int *)((int)&g_CramRectangles[0].top + iVar16) == 0)) &&",
+      "text": "*(int *)((int)&g_CramRectangles[0].top + iVar14))) &&",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 253,
+      "line": 198,
       "match": "(int *)((int)",
-      "text": "(*(int *)((int)&g_CramRectangles[0].right + iVar16) == 0)) goto LAB_00445c34;",
+      "text": "*(int *)((int)&g_CramRectangles[0].right + iVar14))) goto LAB_00445bd9;",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 345,
-      "match": "in_stack_ffffffe8",
-      "text": "crt_stdlib_c_srand_FUN_005feb80(in_stack_ffffffe8);",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 244,
+      "match": "(int *)((int)",
+      "text": "if (((local_14 == *(int *)((int)&g_CramRectangles[0].left + iVar11)) &&",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 359,
-      "match": "in_stack_ffffffe8",
-      "text": "in_stack_ffffffe8 = 0x253;",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 245,
+      "match": "(int *)((int)",
+      "text": "(*(int *)((int)&g_CramRectangles[0].top + iVar11) == 0)) &&",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 246,
+      "match": "(int *)((int)",
+      "text": "(*(int *)((int)&g_CramRectangles[0].right + iVar11) == 0)) goto LAB_00445c34;",
+      "type": "pointer_cast"
     },
     {
       "call_address": "00445a09",

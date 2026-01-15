@@ -19,7 +19,7 @@ crt_exception_c_ExceptionHandler_FUN_0060a9d8
   long lVar3;
   EXCEPTION_DISPOSITION EVar4;
   int iVar5;
-  BADSPACEBASE *in_ESP;
+  PEXCEPTION_RECORD local_14;
   
   if ((ExceptionRecord->ExceptionFlags & 6) != 0) {
     return ExceptionContinueSearch;
@@ -78,6 +78,7 @@ switchD_0060aa00_default:
         if (iVar2 != 0) {
           if (((iVar2 == 1) || (iVar2 == 2)) || (iVar2 == 3)) break;
           g_SignalHandlingActive = '\x01';
+          local_14 = (PEXCEPTION_RECORD)0x60ab5f;
           (*g_ExceptionCleanup)(iVar5);
           if (g_SignalHandlingActive != '\0') {
             return ExceptionContinueExecution;
@@ -97,7 +98,8 @@ switchD_0060aa00_default:
     return ExceptionContinueExecution;
   }
 LAB_0060ab7b:
-  lVar3 = (*PTR_SetUnhandledExceptionFilter_0061165c)((_EXCEPTION_POINTERS *)&stack0xfffffff4);
+  local_14 = ExceptionRecord;
+  lVar3 = (*PTR_SetUnhandledExceptionFilter_0061165c)((_EXCEPTION_POINTERS *)&local_14);
   if (lVar3 == 0) {
     return ExceptionContinueSearch;
   }

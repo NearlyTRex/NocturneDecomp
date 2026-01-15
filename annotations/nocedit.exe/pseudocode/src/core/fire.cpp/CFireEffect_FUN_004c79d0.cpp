@@ -15,10 +15,10 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c79d0(CFireEffect *this_ptr)
   CSpark *this_ptr_00;
   CVector3f *in_stack_00000008;
   CVector3f *in_stack_0000000c;
-  int in_stack_00000030;
-  int in_stack_00000034;
-  int in_stack_00000038;
-  int in_stack_0000003c;
+  int in_stack_0000001c;
+  int in_stack_00000020;
+  int in_stack_00000024;
+  int in_stack_00000028;
   
   pCVar1 = g_StakeActiveListHead;
   pCVar3 = (CStake *)((int)&g_StakeActiveListHead->active + 1);
@@ -32,10 +32,10 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c79d0(CFireEffect *this_ptr)
   iVar2 = core_actor_cpp_getRandomInt_FUN_0040cc70(0xc000,0xffff);
   g_SparkPool[(int)pCVar1].first_update_flag = 0;
   g_SparkPool[(int)pCVar1].intensity_current =
-       (uint)((longlong)in_stack_00000034 * (longlong)iVar2) >> 0x10 |
-       (int)((ulonglong)((longlong)in_stack_00000034 * (longlong)iVar2) >> 0x20) << 0x10;
-  g_SparkPool[(int)pCVar1].intensity_target = in_stack_00000030;
-  g_SparkPool[(int)pCVar1].field4_0x44 = in_stack_00000038;
-  g_SparkPool[(int)pCVar1].fade_rate = in_stack_0000003c;
+       (uint)((longlong)in_stack_00000020 * (longlong)iVar2) >> 0x10 |
+       (int)((ulonglong)((longlong)in_stack_00000020 * (longlong)iVar2) >> 0x20) << 0x10;
+  g_SparkPool[(int)pCVar1].intensity_target = in_stack_0000001c;
+  g_SparkPool[(int)pCVar1].field4_0x44 = in_stack_00000024;
+  g_SparkPool[(int)pCVar1].fade_rate = in_stack_00000028;
   return;
 }

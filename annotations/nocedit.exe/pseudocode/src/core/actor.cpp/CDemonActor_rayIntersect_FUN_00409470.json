@@ -1,20 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 343,
-    "complexity_score": 294,
+    "complexity_score": 265,
     "cross_reference_count": 3,
     "function_call_count": 14,
     "global_count": 12,
-    "pseudocode_lines": 139,
-    "suspect_count": 13,
+    "pseudocode_lines": 140,
+    "suspect_count": 11,
     "suspect_types": [
-      "badspacebase",
-      "register_param",
       "stack_param",
       "stack_ref",
       "sub_artifact"
     ],
-    "total_lines": 482
+    "total_lines": 483
   },
   "cross_references": [
     {
@@ -693,29 +691,15 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 16,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 16,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 16,
       "match": "in_stack_ffffff48",
       "text": "ulonglong in_stack_ffffff48;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 17,
       "match": "in_stack_ffffff50",
       "text": "CVector3f *in_stack_ffffff50;",
       "type": "stack_param"
@@ -764,23 +748,23 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 125,
+      "line": 126,
       "match": "in_stack_ffffff48",
       "text": "(this_ptr_02,(int)in_stack_ffffff48,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 126,
+      "line": 127,
       "match": "in_stack_ffffff48",
       "text": "(int)((ulonglong)in_stack_ffffff48 >> 0x20));",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 128,
+      "line": 129,
       "match": "&stack0x00000000",
-      "text": "if ((SLod *)&stack0x00000000 != g_DeformableModelPool[0].lod_info + 1) {",
+      "text": "if ((int *)&stack0x00000000 != &g_DeformableModelPool[0].lod_info[1].shadow_only_flag) {",
       "type": "stack_ref"
     }
   ]

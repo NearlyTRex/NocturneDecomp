@@ -1,18 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 253,
-    "complexity_score": 353,
+    "complexity_score": 175,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
-    "pseudocode_lines": 118,
-    "suspect_count": 22,
+    "pseudocode_lines": 110,
+    "suspect_count": 6,
     "suspect_types": [
-      "call_esp_preserve",
-      "stack_param",
-      "unaffected_reg"
+      "call_esp_preserve"
     ],
-    "total_lines": 371
+    "total_lines": 363
   },
   "cross_references": [
     {
@@ -228,118 +226,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 10,
-      "match": "unaff_EBP",
-      "text": "int unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 11,
-      "match": "unaff_EDI",
-      "text": "int unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000028",
-      "text": "int in_stack_00000028;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_ffffffc8",
-      "text": "int in_stack_ffffffc8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 60,
-      "match": "in_stack_ffffffc8",
-      "text": "in_stack_ffffffc8 =",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 63,
-      "match": "in_stack_ffffffc8",
-      "text": "uVar2 = in_stack_ffffffc8 - start_height >> 0x1f;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 64,
-      "match": "in_stack_ffffffc8",
-      "text": "if (g_PathfindingMaxClimbHeight < (int)((in_stack_ffffffc8 - start_height ^ uVar2) - uVar2))",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 76,
-      "match": "in_stack_ffffffc8",
-      "text": "start_height = in_stack_ffffffc8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 102,
-      "match": "unaff_EDI",
-      "text": "if (0 < unaff_EDI) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 103,
-      "match": "unaff_EDI",
-      "text": "unaff_EDI = unaff_EDI - local_14;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 103,
-      "match": "unaff_EDI",
-      "text": "unaff_EDI = unaff_EDI - local_14;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 106,
-      "match": "unaff_EDI",
-      "text": "unaff_EDI = unaff_EDI + unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 106,
-      "match": "unaff_EDI",
-      "text": "unaff_EDI = unaff_EDI + unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 106,
-      "match": "unaff_EBP",
-      "text": "unaff_EDI = unaff_EDI + unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 111,
-      "match": "in_stack_00000028",
-      "text": "if (iVar3 != in_stack_00000028) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 117,
-      "match": "in_stack_ffffffc8",
-      "text": "if (in_stack_ffffffc8 != end_height) {",
-      "type": "stack_param"
-    },
     {
       "add_esp_value": 16,
       "call_address": "00546cb5",

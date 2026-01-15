@@ -1,19 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 137,
-    "complexity_score": 290,
+    "complexity_score": 148,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 21,
-    "pseudocode_lines": 80,
-    "suspect_count": 19,
+    "pseudocode_lines": 78,
+    "suspect_count": 6,
     "suspect_types": [
       "call_esp_preserve",
-      "pointer_cast",
-      "stack_param",
-      "unaffected_reg"
+      "pointer_cast"
     ],
-    "total_lines": 217
+    "total_lines": 215
   },
   "cross_references": [],
   "function": {
@@ -240,123 +238,32 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 13,
-      "match": "unaff_EDI",
-      "text": "int unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000008",
-      "text": "int in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_0000000c",
-      "text": "int in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 41,
-      "match": "in_stack_00000008",
-      "text": "(4 < *(int *)(in_stack_00000008 + 4))) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 43,
-      "match": "in_stack_00000008",
-      "text": "(*(int *)(in_stack_00000008 + 4),(int *)vertex_indices);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 48,
-      "match": "in_stack_00000008",
-      "text": "pSVar2->vertex_count = *(int *)(in_stack_00000008 + 4);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 51,
-      "match": "in_stack_00000008",
-      "text": "if (0 < *(int *)(in_stack_00000008 + 4)) {",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 57,
+      "line": 55,
       "match": "(SRenderVertex *)((int)",
-      "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar9 * -2 + 1) * 4);",
+      "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar10 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 58,
+      "line": 56,
       "match": "(SRenderVertex *)((int)",
-      "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar9 * -2 + 1) * 4);",
+      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar10 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 67,
-      "match": "in_stack_00000008",
-      "text": "} while (iVar5 < *(int *)(in_stack_00000008 + 4));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 71,
-      "match": "unaff_EDI",
-      "text": "piVar8 = (int *)(unaff_EDI + 0xc4);",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 74,
+      "line": 72,
       "match": "(SMRGLTextureBasic *)((int)",
-      "text": "pSVar3 = (SMRGLTextureBasic *)((int)pSVar3 + (uint)bVar9 * -8 + 4);",
+      "text": "pSVar4 = (SMRGLTextureBasic *)((int)pSVar4 + (uint)bVar10 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 77,
-      "match": "unaff_EDI",
-      "text": "*(int *)(unaff_EDI + 0x10c) = iVar5;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 78,
-      "match": "unaff_EDI",
-      "text": "*(int *)(unaff_EDI + 0x114) = iVar1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 79,
-      "match": "unaff_EDI",
-      "text": "*(int *)(unaff_EDI + 0x110) = g_BlendMode;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 82,
-      "match": "in_stack_0000000c",
-      "text": "return (SMRGLHeaderExtended *)(in_stack_0000000c + 0x18 + *(int *)(in_stack_0000000c + 4) * 0xc);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 82,
-      "match": "in_stack_0000000c",
-      "text": "return (SMRGLHeaderExtended *)(in_stack_0000000c + 0x18 + *(int *)(in_stack_0000000c + 4) * 0xc);",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 80,
+      "match": "(SMRGLHeaderExtended *)((int)",
+      "text": "return (SMRGLHeaderExtended *)((int)&primitive[1].base + (primitive->base).count * 0xc);",
+      "type": "pointer_cast"
     },
     {
       "add_esp_value": 4,

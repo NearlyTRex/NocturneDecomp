@@ -13,7 +13,6 @@ int __cdecl crt_startup_c_FUN_0060d230(UINT cp)
   BOOL BVar2;
   uint uVar3;
   int iVar4;
-  BADSPACEBASE *in_ESP;
   _cpinfo _Stack_20;
   
   if (cp == 0xffffffff) {

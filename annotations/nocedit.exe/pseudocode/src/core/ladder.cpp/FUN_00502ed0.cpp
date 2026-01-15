@@ -18,7 +18,7 @@ CLadder * __cdecl core_ladder_cpp_FUN_00502ed0(CLadder *this_ptr,uint d1,uint d2
     return this_ptr;
   }
   ptr = (CLadder *)core_actor_cpp_CDemonActor_dtor_FUN_00408a30(&this_ptr->base_actor,1);
-  if ((d2 & 2) == 0) {
+  if ((d1 & 2) == 0) {
     return ptr;
   }
   shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);

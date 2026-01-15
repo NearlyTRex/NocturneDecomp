@@ -12,8 +12,8 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_seek_FUN_005a8390(CSfxSlot *this_ptr)
   CSfxSample *pCVar1;
   CSfxSample *this_ptr_00;
   double dVar2;
-  uint in_stack_ffffffe8;
   int dest_buffer_offset;
+  uint in_stack_ffffffe4;
   
   if (this_ptr->sample == (CSfxSample *)0x0) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
@@ -22,7 +22,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_seek_FUN_005a8390(CSfxSlot *this_ptr)
   }
   dVar2 = sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_005a8580
                     (*(CSampleInfo **)&(this_ptr->options).trigger_time,
-                     *(double *)((int)&(this_ptr->options).trigger_time + 4),0,in_stack_ffffffe8);
+                     *(double *)((int)&(this_ptr->options).trigger_time + 4),0,in_stack_ffffffe4);
   (this_ptr->options).trigger_id = 0;
   (this_ptr->options).trigger_time = dVar2;
   dVar2 = sound_sndmain_cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0

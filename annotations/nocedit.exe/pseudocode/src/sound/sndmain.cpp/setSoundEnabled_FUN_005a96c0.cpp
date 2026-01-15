@@ -10,7 +10,6 @@ int __cdecl sound_sndmain_cpp_setSoundEnabled_FUN_005a96c0(int enable)
 
 {
   int iVar1;
-  uint uStack0000000c;
   
   g_SoundEnabled = enable;
   if (enable == 0) {
@@ -24,7 +23,6 @@ int __cdecl sound_sndmain_cpp_setSoundEnabled_FUN_005a96c0(int enable)
     }
   }
   g_SoundBusyFlag = 0;
-  uStack0000000c = 0x5ab15c;
   sound_sndmain_cpp_freeMixBuffers_FUN_005a5900();
   return 1;
 }

@@ -22,9 +22,8 @@ void __cdecl core_vessel_cpp_CCryptVessel_process_FUN_005e91a0(CCryptVessel *thi
   float fVar9;
   int iVar10;
   float in_stack_00000008;
-  float in_stack_0000000c;
+  float local_18;
   float local_14;
-  float fVar11;
   
   if (this_ptr->visual_type == 1) {
     *(float *)(this_ptr->field14_0x3c0 + 0x24) = (this_ptr->base_actor).location.position.x;
@@ -66,7 +65,7 @@ void __cdecl core_vessel_cpp_CCryptVessel_process_FUN_005e91a0(CCryptVessel *thi
     iVar10 = this_ptr->state;
     pCVar2 = &(this_ptr->base_actor).location;
     if (iVar10 == 1) {
-      fVar4 = this_ptr->timer + in_stack_0000000c;
+      fVar4 = this_ptr->timer + in_stack_00000008;
       this_ptr->timer = fVar4;
       if (fVar4 <= 1.0) {
         return;
@@ -116,7 +115,7 @@ void __cdecl core_vessel_cpp_CCryptVessel_process_FUN_005e91a0(CCryptVessel *thi
       }
     }
     else if (iVar10 == 2) {
-      fVar4 = this_ptr->timer - in_stack_0000000c;
+      fVar4 = this_ptr->timer - in_stack_00000008;
       this_ptr->timer = fVar4;
       if (0.0 <= fVar4) {
         return;
@@ -127,7 +126,7 @@ void __cdecl core_vessel_cpp_CCryptVessel_process_FUN_005e91a0(CCryptVessel *thi
     else if (iVar10 == 3) {
       if ((*(int *)(*(int *)this_ptr->start_loc + 0x184) == 0) &&
          (*(int *)(*(int *)this_ptr->end_loc + 0x184) == 0)) {
-        fVar4 = this_ptr->timer - in_stack_0000000c;
+        fVar4 = this_ptr->timer - in_stack_00000008;
         this_ptr->timer = fVar4;
         if (0.0 <= fVar4) {
           return;
@@ -171,25 +170,25 @@ void __cdecl core_vessel_cpp_CCryptVessel_process_FUN_005e91a0(CCryptVessel *thi
               (this_ptr->base_actor).location.position.y;
       fVar6 = (pCVar3->base_character).base_actor.location.position.z -
               (this_ptr->base_actor).location.position.z;
-      local_14 = 999.9;
-      fVar11 = 0.0;
+      local_18 = 999.9;
+      local_14 = 0.0;
       iVar10 = this_ptr->prey;
       if (iVar10 != 0) {
         fVar7 = (pCVar2->position).x - *(float *)(iVar10 + 0x20);
         fVar8 = (this_ptr->base_actor).location.position.y - *(float *)(iVar10 + 0x24);
         fVar9 = (this_ptr->base_actor).location.position.z - *(float *)(iVar10 + 0x28);
-        local_14 = SQRT(fVar9 * fVar9 + fVar7 * fVar7 + fVar8 * fVar8);
+        local_18 = SQRT(fVar9 * fVar9 + fVar7 * fVar7 + fVar8 * fVar8);
       }
       iVar10 = this_ptr->neutral;
       if (iVar10 != 0) {
-        fVar11 = *(float *)(iVar10 + 0x20) - (this_ptr->base_actor).location.position.x;
-        fVar7 = *(float *)(iVar10 + 0x24) - (this_ptr->base_actor).location.position.y;
-        fVar8 = *(float *)(iVar10 + 0x28) - (this_ptr->base_actor).location.position.z;
-        fVar11 = SQRT(fVar8 * fVar8 + fVar11 * fVar11 + fVar7 * fVar7);
+        fVar7 = *(float *)(iVar10 + 0x20) - (this_ptr->base_actor).location.position.x;
+        fVar8 = *(float *)(iVar10 + 0x24) - (this_ptr->base_actor).location.position.y;
+        fVar9 = *(float *)(iVar10 + 0x28) - (this_ptr->base_actor).location.position.z;
+        local_14 = SQRT(fVar9 * fVar9 + fVar7 * fVar7 + fVar8 * fVar8);
       }
-      if ((((local_14 < this_ptr->eat_distance) &&
+      if ((((local_18 < this_ptr->eat_distance) &&
            (this_ptr->eat_distance < SQRT(fVar6 * fVar6 + fVar4 * fVar4 + fVar5 * fVar5))) &&
-          (this_ptr->eat_distance < fVar11)) &&
+          (this_ptr->eat_distance < local_14)) &&
          ((iVar10 = this_ptr->prey, *(int *)(iVar10 + 0x2d4) == 0 && (*(int *)(iVar10 + 0x3b8) == 0)
           ))) {
         *(uint *)(iVar10 + 0x3b8) = 1;

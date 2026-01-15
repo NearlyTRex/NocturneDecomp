@@ -16,43 +16,44 @@ void core_dracbrid_cpp_FUN_004869a0(void)
   CVector3f *pCVar1;
   CVector3f *pCVar2;
   CVector3f *pCVar3;
-  SFreaky *pSVar4;
-  int iVar5;
-  float fVar6;
-  uint *puVar7;
-  BADSPACEBASE *in_ESP;
+  float fVar4;
+  SFreaky *pSVar5;
+  int iVar6;
+  float *pfVar7;
   int in_stack_00000004;
   float in_stack_00000008;
   float local_60;
-  int local_5c;
-  SFreaky *pSStack_58;
-  float local_50;
+  float local_5c [7];
+  float local_40;
+  float local_3c;
+  float local_38;
   SFreaky *local_34;
   SFreaky *local_30;
   float *local_2c;
-  int *local_28;
+  float *local_28;
   int *local_24;
   int *local_20;
   SFreaky *local_1c;
   CVector3f *local_18;
+  float fStack_14;
   
-  fVar6 = *(float *)(in_stack_00000004 + 0xbf50) - in_stack_00000008;
-  *(float *)(in_stack_00000004 + 0xbf50) = fVar6;
-  if (fVar6 < 0.0) {
+  fVar4 = *(float *)(in_stack_00000004 + 0xbf50) - in_stack_00000008;
+  *(float *)(in_stack_00000004 + 0xbf50) = fVar4;
+  if (fVar4 < 0.0) {
     *(uint *)(in_stack_00000004 + 0xbf50) = 0;
   }
   local_20 = &g_CDemonCameraInstance.base.position.y;
   local_24 = &g_CDemonCameraInstance.base.position.z;
   local_2c = &local_60;
-  local_28 = &local_5c;
+  local_28 = local_5c;
   local_30 = SFreaky_ARRAY_02c6d0c0;
   local_34 = (SFreaky *)&g_DashAnimationAccumulator;
   do {
     local_1c = local_30;
     if (in_stack_00000004 == *(int *)local_30->field2_0x50) {
-      iVar5 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)local_30->field0_0x0);
-      pSVar4 = local_30;
-      if (iVar5 == 0) {
+      iVar6 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660((uint)*(float *)local_30->field0_0x0);
+      pSVar5 = local_30;
+      if (iVar6 == 0) {
         local_30->field2_0x50[0] = '\0';
         local_30->field2_0x50[1] = '\0';
         local_30->field2_0x50[2] = '\0';
@@ -69,54 +70,55 @@ void core_dracbrid_cpp_FUN_004869a0(void)
           *(float *)(local_1c->field0_0x0 + 0x1c) =
                *(float *)(local_1c->field0_0x0 + 0x1c) + _DAT_00621c42;
           if (pCVar3 != local_18) {
-            local_18->x = (float)pCVar3->x;
-            local_18->y = pSVar4->field1_0x20[1].y;
-            local_18->z = pSVar4->field1_0x20[1].z;
+            local_18->x = pCVar3->x;
+            local_18->y = pSVar5->field1_0x20[1].y;
+            local_18->z = pSVar5->field1_0x20[1].z;
           }
           if (pCVar3 != pCVar2) {
-            pCVar3->x = (float)pCVar2->x;
-            pSVar4->field1_0x20[1].y = pSVar4->field1_0x20[2].y;
-            pSVar4->field1_0x20[1].z = pSVar4->field1_0x20[2].z;
+            pCVar3->x = pCVar2->x;
+            pSVar5->field1_0x20[1].y = pSVar5->field1_0x20[2].y;
+            pSVar5->field1_0x20[1].z = pSVar5->field1_0x20[2].z;
           }
           if (pCVar2 != pCVar1) {
-            pCVar2->x = (float)pCVar1->x;
-            pSVar4->field1_0x20[2].y = pSVar4->field1_0x20[3].y;
-            pSVar4->field1_0x20[2].z = pSVar4->field1_0x20[3].z;
+            pCVar2->x = pCVar1->x;
+            pSVar5->field1_0x20[2].y = pSVar5->field1_0x20[3].y;
+            pSVar5->field1_0x20[2].z = pSVar5->field1_0x20[3].z;
           }
+          iVar6 = g_CDemonCameraInstance.base.position.x;
           local_60 = (float)*local_20;
-          local_5c = *local_24;
-          fVar6 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-5.0,5.0);
-          local_60 = fVar6 + local_60;
-          fVar6 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-2.0,2.0);
-          pSStack_58 = (SFreaky *)(fVar6 + (float)pSStack_58);
-          fVar6 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-5.0,5.0);
-          local_34 = pSStack_58;
-          local_50 = fVar6 + local_50;
-          local_30 = (SFreaky *)*local_20;
-          local_2c = *(float **)local_1c->field0_0x0;
-          if (pCVar1 != (CVector3f *)&local_34) {
-            pCVar1->x = (float)pSStack_58;
-            pSVar4->field1_0x20[3].y = (float)local_30;
-            pSVar4->field1_0x20[3].z = (float)local_2c;
+          local_5c[0] = (float)*local_24;
+          fStack_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-5.0,5.0);
+          fVar4 = fStack_14 + (float)iVar6;
+          fStack_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-2.0,2.0);
+          local_60 = fStack_14 + local_60;
+          fStack_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-5.0,5.0);
+          local_5c[0] = fStack_14 + local_5c[0];
+          local_3c = *local_2c;
+          local_38 = *local_28;
+          local_40 = fVar4;
+          if (pCVar1 != (CVector3f *)&local_40) {
+            pCVar1->x = fVar4;
+            pSVar5->field1_0x20[3].y = local_3c;
+            pSVar5->field1_0x20[3].z = local_38;
           }
         }
         core_spline_cpp_FUN_005b90a0();
-        puVar7 = (uint *)core_spline_cpp_FUN_005b92d0();
-        if (local_1c->field0_0x0 + 4 != (char *)puVar7) {
-          *(uint *)(local_1c->field0_0x0 + 4) = *puVar7;
-          *(uint *)(local_1c->field0_0x0 + 8) = puVar7[1];
-          *(uint *)(local_1c->field0_0x0 + 0xc) = puVar7[2];
+        pfVar7 = (float *)core_spline_cpp_FUN_005b92d0();
+        if ((float *)(local_1c->field0_0x0 + 4) != pfVar7) {
+          *(float *)(local_1c->field0_0x0 + 4) = *pfVar7;
+          *(float *)(local_1c->field0_0x0 + 8) = pfVar7[1];
+          *(float *)(local_1c->field0_0x0 + 0xc) = pfVar7[2];
         }
         engine_console_cpp_CConsole_printf_FUN_00441890
                   (g_CConsolePtr,"%5.2f %5.2f %5.2f\n",
                    (double)*(float *)(local_1c->field0_0x0 + 4),
                    (double)*(float *)(local_1c->field0_0x0 + 8),
                    (double)*(float *)(local_1c->field0_0x0 + 0xc));
-        puVar7 = (uint *)core_spline_cpp_FUN_005b9490();
-        if (local_1c->field0_0x0 + 0x10 != (char *)puVar7) {
-          *(uint *)(local_1c->field0_0x0 + 0x10) = *puVar7;
-          *(uint *)(local_1c->field0_0x0 + 0x14) = puVar7[1];
-          *(uint *)(local_1c->field0_0x0 + 0x18) = puVar7[2];
+        pfVar7 = (float *)core_spline_cpp_FUN_005b9490();
+        if ((float *)(local_1c->field0_0x0 + 0x10) != pfVar7) {
+          *(float *)(local_1c->field0_0x0 + 0x10) = *pfVar7;
+          *(float *)(local_1c->field0_0x0 + 0x14) = pfVar7[1];
+          *(float *)(local_1c->field0_0x0 + 0x18) = pfVar7[2];
         }
       }
     }

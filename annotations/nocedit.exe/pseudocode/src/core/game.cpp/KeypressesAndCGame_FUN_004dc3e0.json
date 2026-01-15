@@ -1,18 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 761,
-    "complexity_score": 574,
+    "complexity_score": 626,
     "cross_reference_count": 3,
     "function_call_count": 6,
     "global_count": 24,
-    "pseudocode_lines": 259,
-    "suspect_count": 30,
+    "pseudocode_lines": 261,
+    "suspect_count": 35,
     "suspect_types": [
       "call_esp_preserve",
       "callind_preserve",
       "stack_param"
     ],
-    "total_lines": 1020
+    "total_lines": 1022
   },
   "cross_references": [
     {
@@ -362,16 +362,51 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000134",
-      "text": "SCollisionInfo *in_stack_00000134;",
+      "line": 13,
+      "match": "in_stack_00000054",
+      "text": "SCollisionInfo *in_stack_00000054;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 238,
-      "match": "in_stack_00000134",
-      "text": "((CDemonActor *)this_ptr,in_stack_00000134), iVar5 == 0)) {",
+      "line": 14,
+      "match": "in_stack_ffffffec",
+      "text": "SCollisionInfo *in_stack_ffffffec;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 75,
+      "match": "in_stack_ffffffec",
+      "text": "in_stack_ffffffec =",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 79,
+      "match": "in_stack_ffffffec",
+      "text": "*pfVar1 = *pfVar1 - (float)in_stack_ffffffec;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 85,
+      "match": "in_stack_ffffffec",
+      "text": "fVar2 = *pfVar1 + (float)in_stack_ffffffec;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 142,
+      "match": "in_stack_ffffffec",
+      "text": "((CDemonActor *)g_HeroActors[g_LocalHeroIndex],in_stack_ffffffec);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 239,
+      "match": "in_stack_00000054",
+      "text": "((CDemonActor *)this_ptr,in_stack_00000054);",
       "type": "stack_param"
     },
     {

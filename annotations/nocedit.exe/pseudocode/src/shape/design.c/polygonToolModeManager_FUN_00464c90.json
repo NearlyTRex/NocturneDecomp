@@ -1,17 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 466,
-    "complexity_score": 211,
+    "complexity_score": 219,
     "cross_reference_count": 1,
     "function_call_count": 15,
     "global_count": 36,
-    "pseudocode_lines": 181,
-    "suspect_count": 2,
+    "pseudocode_lines": 184,
+    "suspect_count": 3,
     "suspect_types": [
-      "badspacebase",
-      "register_param"
+      "stack_param"
     ],
-    "total_lines": 647
+    "total_lines": 650
   },
   "cross_references": [
     {
@@ -820,18 +819,25 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 8,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_ffffff28",
+      "text": "ulonglong in_stack_ffffff28;",
+      "type": "stack_param"
     },
     {
-      "description": "Inferred register parameter",
-      "line": 8,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
+      "description": "Unresolved stack parameter",
+      "line": 162,
+      "match": "in_stack_ffffff28",
+      "text": "normal2_ptr = (SShapeEditorPolygon *)in_stack_ffffff28;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 167,
+      "match": "in_stack_ffffff28",
+      "text": "normal2_ptr = (SShapeEditorPolygon *)in_stack_ffffff28;",
+      "type": "stack_param"
     }
   ]
 }

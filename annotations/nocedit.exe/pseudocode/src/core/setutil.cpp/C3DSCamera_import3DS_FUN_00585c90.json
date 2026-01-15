@@ -1,21 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 350,
+    "complexity_score": 236,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 150,
-    "suspect_count": 17,
+    "pseudocode_lines": 156,
+    "suspect_count": 7,
     "suspect_types": [
-      "badspacebase",
       "extra_output",
-      "register_param",
-      "stack_param",
-      "stack_ref",
-      "unaffected_reg"
+      "suspect_float"
     ],
-    "total_lines": 218
+    "total_lines": 224
   },
   "cross_references": [],
   "function": {
@@ -185,106 +181,36 @@
       "type": "extra_output"
     },
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 11,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 11,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 12,
-      "match": "unaff_ESI",
-      "text": "float unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_fffffdd8",
-      "text": "float in_stack_fffffdd8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 31,
-      "match": "&stack0xfffffdc8",
-      "text": "crt_stdio_c_fgets_FUN_005fefd0(&stack0xfffffdc8,0xff,file_handle);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 33,
-      "match": "&stack0xfffffdc8",
-      "text": "pcVar4 = &stack0xfffffdc8;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 41,
-      "match": "&stack0xfffffdc6",
-      "text": "(&stack0xfffffdc6)[~uVar2] = 0;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 44,
-      "match": "&stack0xfffffdc8",
-      "text": "pcVar4 = &stack0xfffffdc8;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 51,
-      "match": "&stack0xfffffdc8",
-      "text": "pcVar4 = &stack0xfffffdc8;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 69,
-      "match": "in_stack_fffffdd8",
-      "text": "dVar8 = crt_math_c_round_FUN_005fe6b0((double)in_stack_fffffdd8);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 145,
-      "match": "unaff_ESI",
-      "text": "(this_ptr->orientation).z = unaff_ESI;",
-      "type": "unaffected_reg"
+      "description": "Likely misinterpreted integer as float",
+      "line": 73,
+      "match": "8.115118e-39",
+      "text": "fVar9 = 8.115118e-39;",
+      "type": "suspect_float"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 147,
+      "line": 153,
       "match": "extraout_ECX",
       "text": "*(float *)(extraout_ECX + 0x110) = (float)fVar7;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 149,
+      "line": 155,
       "match": "extraout_ECX_00",
       "text": "*(float *)(extraout_ECX_00 + 0x10c) = (float)-fVar7;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 151,
+      "line": 157,
       "match": "extraout_ECX_00",
       "text": "((CMatrix3x3f *)(extraout_ECX_00 + 0x118),(CVector3f *)(extraout_ECX_00 + 0x10c));",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 151,
+      "line": 157,
       "match": "extraout_ECX_00",
       "text": "((CMatrix3x3f *)(extraout_ECX_00 + 0x118),(CVector3f *)(extraout_ECX_00 + 0x10c));",
       "type": "extra_output"

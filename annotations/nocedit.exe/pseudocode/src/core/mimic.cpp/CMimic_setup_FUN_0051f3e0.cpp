@@ -19,7 +19,6 @@ void core_mimic_cpp_CMimic_setup_FUN_0051f3e0(void)
   CDemonActor *pCVar4;
   int iVar5;
   int iVar6;
-  BADSPACEBASE *in_ESP;
   uint *puVar7;
   byte bVar8;
   CEnemy *in_stack_00000004;

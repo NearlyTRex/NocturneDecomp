@@ -1,19 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 152,
-    "complexity_score": 206,
+    "complexity_score": 150,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
-    "pseudocode_lines": 36,
-    "suspect_count": 15,
+    "pseudocode_lines": 35,
+    "suspect_count": 10,
     "suspect_types": [
       "call_esp_preserve",
       "lea_esp_stack_addr",
-      "stack_param",
       "warning_unreachable"
     ],
-    "total_lines": 188
+    "total_lines": 187
   },
   "cross_references": [
     {
@@ -275,41 +274,6 @@
       "match": "WARNING: Removing unreachable block",
       "text": "/* WARNING: Removing unreachable block (ram,0x0047a965) */",
       "type": "warning_unreachable"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000008",
-      "text": "CKeyFramedModel *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 24,
-      "match": "in_stack_00000008",
-      "text": "if (0 < in_stack_00000008->part_count) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_00000008",
-      "text": "local_28 = in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 36,
-      "match": "in_stack_00000008",
-      "text": "} while (local_24 < in_stack_00000008->part_count);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 38,
-      "match": "in_stack_00000008",
-      "text": "core_dmodel_cpp_CKeyFramedModel_validatePartList_FUN_0047bf40(in_stack_00000008);",
-      "type": "stack_param"
     },
     {
       "add_esp_value": 4,

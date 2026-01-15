@@ -14,7 +14,7 @@ ios * __cdecl crt_iostream_cpp_ios_dtor_FUN_0060632c(ios *this_ptr,uint d1,uint 
   if ((d1 & 4) == 0) {
     this_ptr->cleanup_vtable = &g_IOS_Destructor;
     crt_iostream_cpp_ios_freeBufferChain_FUN_0060bdc0(this_ptr);
-    if ((d2 & 2) == 0) {
+    if ((d1 & 2) == 0) {
       return this_ptr;
     }
     shape_memdbg_cpp_debugFree_FUN_0050f210(this_ptr);

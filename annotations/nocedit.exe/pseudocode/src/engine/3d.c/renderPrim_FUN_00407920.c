@@ -12,9 +12,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPrim_FUN_00407920(SMRGLHeaderPri
   int iVar1;
   SMRGLHeaderExtended *extraout_EAX;
   SMRGLHeaderExtended *pSVar2;
-  BADSPACEBASE *in_ESP;
-  char acStack_100 [4];
-  char acStack_fc [248];
+  char local_104 [256];
   
   if (primitive == (SMRGLHeaderPrimitive *)0x0) {
     g_CurrentFilename = "..\\engine\\3d.c";
@@ -26,9 +24,9 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPrim_FUN_00407920(SMRGLHeaderPri
     pSVar2 = (*g_MRGLBlockHandlerTable[iVar1])((SMRGLHeaderExtended *)primitive);
     return pSVar2;
   }
-  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_100,"Bad prim : %d",iVar1);
+  crt_stdio_c_sprintf_FUN_005fdbd0(local_104,"Bad prim : %d",iVar1);
   g_CurrentFilename = "..\\engine\\3d.c";
   g_CurrentLineNumber = 0xc8b;
-  core_main_c_displayErrorAndQuit_FUN_00506f10(acStack_fc);
+  core_main_c_displayErrorAndQuit_FUN_00506f10(local_104);
   return extraout_EAX;
 }

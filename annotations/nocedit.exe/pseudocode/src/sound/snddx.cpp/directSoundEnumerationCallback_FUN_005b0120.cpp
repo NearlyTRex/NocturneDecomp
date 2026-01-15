@@ -17,7 +17,6 @@ sound_snddx_cpp_directSoundEnumerationCallback_FUN_005b0120
   SDirectSoundDeviceInfo *pSVar2;
   uint uVar3;
   int iVar4;
-  BADSPACEBASE *in_ESP;
   uint *puVar5;
   uint *puVar6;
   uint *puVar7;

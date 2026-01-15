@@ -1,24 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 239,
-    "complexity_score": 803,
+    "complexity_score": 564,
     "cross_reference_count": 0,
     "function_call_count": 21,
     "global_count": 17,
-    "pseudocode_lines": 78,
-    "suspect_count": 68,
+    "pseudocode_lines": 69,
+    "suspect_count": 48,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "callind_preserve",
-      "lea_esp_stack_addr",
-      "register_param",
-      "stack_param",
-      "stack_ref",
-      "unaffected_reg",
-      "unknown_field"
+      "lea_esp_stack_addr"
     ],
-    "total_lines": 317
+    "total_lines": 308
   },
   "cross_references": [],
   "function": {
@@ -338,146 +332,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 9,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 9,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 10,
-      "match": "unaff_ESI",
-      "text": "int unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 11,
-      "match": "unaff_EDI",
-      "text": "int unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_fffffc04",
-      "text": "int in_stack_fffffc04;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 21,
-      "match": "&stack0xfffffbf0",
-      "text": "((CIniFile *)&stack0xfffffbf0,\".\\\\system\\\\nocturne.ini\",0x63169a);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 23,
-      "match": "&stack0xfffffbf4",
-      "text": "((CIniFile *)&stack0xfffffbf4,\"AcceptedLicenseAgreement\",",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 24,
-      "match": "&stack0xfffffff0",
-      "text": "(int *)&stack0xfffffff0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 25,
-      "match": "unaff_EDI",
-      "text": "if (unaff_EDI != 0) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 37,
-      "match": "in_stack_fffffc04",
-      "text": "in_stack_fffffc04);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 39,
-      "match": "._1_1_",
-      "text": "CStack_f4.button_text[0xb5] = g_WindowHeight._1_1_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 40,
-      "match": "._2_1_",
-      "text": "CStack_f4.button_text[0xb6] = g_WindowHeight._2_1_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 41,
-      "match": "._3_1_",
-      "text": "CStack_f4.button_text[0xb7] = g_WindowHeight._3_1_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 42,
-      "match": "._176_4_",
-      "text": "CStack_f4.button_text._176_4_ = iVar1 + 100;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 52,
-      "match": "._192_4_",
-      "text": "((CEdButton *)(auStack_110 + 0x14),0x1e,(iVar1 - CStack_f4.button_text._192_4_) + 10,",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 55,
-      "match": "._196_4_",
-      "text": "((CEdButton *)(auStack_1f0 + 0x14),0x1e,(iVar1 - CStack_f4.button_text._196_4_) + 0x28",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 60,
-      "match": "&stack0xfffffc2c",
-      "text": "((CIniFile *)&stack0xfffffc2c,\"AcceptedLicenseAgreement\",1);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 64,
-      "match": "&stack0x00000004",
-      "text": "shape_edittool_cpp_CEdScrollBar_dtor_FUN_004a5b20((CEdScrollBar *)&stack0x00000004);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 70,
-      "match": "unaff_ESI",
-      "text": "(g_EditorFont,text_string,0x1e,-unaff_ESI,0xff,-1);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 79,
-      "match": "&stack0x00000000",
-      "text": "shape_edittool_cpp_CEdScrollBar_dtor_FUN_004a5b20((CEdScrollBar *)&stack0x00000000);",
-      "type": "stack_ref"
-    },
     {
       "add_esp_value": 8,
       "call_target_type": "reg_offset",

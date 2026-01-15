@@ -1,19 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 817,
-    "complexity_score": 1044,
+    "complexity_score": 1013,
     "cross_reference_count": 3,
     "function_call_count": 11,
     "global_count": 11,
-    "pseudocode_lines": 264,
-    "suspect_count": 76,
+    "pseudocode_lines": 263,
+    "suspect_count": 74,
     "suspect_types": [
-      "badspacebase",
       "param_count_too_few",
-      "register_param",
       "stack_param"
     ],
-    "total_lines": 1081
+    "total_lines": 1080
   },
   "cross_references": [
     {
@@ -1535,134 +1533,127 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 10,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 10,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 11,
       "match": "in_stack_00000008",
       "text": "CVector3f *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 12,
       "match": "in_stack_0000000c",
       "text": "float *in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 13,
       "match": "in_stack_00000010",
       "text": "SSurfaceInfo *in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 14,
       "match": "in_stack_00000014",
       "text": "int in_stack_00000014;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 77,
+      "line": 76,
       "match": "in_stack_00000014",
       "text": "if (in_stack_00000014 < 3) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 78,
+      "line": 77,
       "match": "in_stack_00000010",
       "text": "local_20 = (CVector3f *)in_stack_00000010->field6_0x20;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 79,
+      "line": 78,
       "match": "in_stack_00000010",
       "text": "local_50 = in_stack_00000010->field6_0x20 + 4;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 80,
+      "line": 79,
       "match": "in_stack_00000010",
       "text": "local_4c = in_stack_00000010->field6_0x20 + 8;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 81,
+      "line": 80,
       "match": "in_stack_00000010",
       "text": "local_1c = &in_stack_00000010->hit_position;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 82,
+      "line": 81,
       "match": "in_stack_00000010",
       "text": "local_18 = (CVector3f *)in_stack_00000010->field8_0x38;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 83,
+      "line": 82,
       "match": "in_stack_00000014",
       "text": "local_54 = in_stack_00000014 + 1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 84,
+      "line": 83,
       "match": "in_stack_0000000c",
       "text": "local_60 = in_stack_0000000c + 1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 85,
+      "line": 84,
       "match": "in_stack_0000000c",
       "text": "local_5c = in_stack_0000000c + 2;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 86,
+      "line": 85,
       "match": "in_stack_00000008",
       "text": "local_80 = &in_stack_00000008->y;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 87,
+      "line": 86,
       "match": "in_stack_00000008",
       "text": "local_58 = &in_stack_00000008->z;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 90,
+      "line": 89,
       "match": "in_stack_00000010",
       "text": "(g_CDemonSetPtr,(float)in_stack_00000010->field2_0x8,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 91,
+      "line": 90,
+      "match": "in_stack_00000010",
+      "text": "(float)(in_stack_00000010->color).r,(float)(in_stack_00000010->color).g,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 90,
       "match": "in_stack_00000010",
       "text": "(float)(in_stack_00000010->color).r,(float)(in_stack_00000010->color).g,",
       "type": "stack_param"
@@ -1670,391 +1661,384 @@
     {
       "description": "Unresolved stack parameter",
       "line": 91,
-      "match": "in_stack_00000010",
-      "text": "(float)(in_stack_00000010->color).r,(float)(in_stack_00000010->color).g,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 92,
       "match": "in_stack_00000010",
       "text": "(float)(in_stack_00000010->color).b);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 93,
+      "line": 92,
       "match": "in_stack_00000008",
       "text": "local_e0.x = in_stack_00000008->x;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 96,
+      "line": 95,
       "match": "in_stack_0000000c",
       "text": "local_134.x = local_e0.x + *in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 97,
+      "line": 96,
       "match": "in_stack_0000000c",
       "text": "local_134.y = local_e0.y + in_stack_0000000c[1];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 98,
+      "line": 97,
       "match": "in_stack_0000000c",
       "text": "local_134.z = local_e0.z + in_stack_0000000c[2];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 103,
+      "line": 102,
       "match": "in_stack_0000000c",
       "text": "local_110 = -*in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 104,
+      "line": 103,
       "match": "in_stack_0000000c",
       "text": "local_10c = -in_stack_0000000c[1];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 105,
+      "line": 104,
       "match": "in_stack_0000000c",
       "text": "local_108 = -in_stack_0000000c[2];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 125,
+      "line": 124,
       "match": "in_stack_0000000c",
       "text": "local_128 = *in_stack_0000000c * (float)local_24;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 126,
+      "line": 125,
       "match": "in_stack_0000000c",
       "text": "local_124 = in_stack_0000000c[1] * (float)local_24;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 127,
+      "line": 126,
       "match": "in_stack_0000000c",
       "text": "local_120 = (float)local_24 * in_stack_0000000c[2];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 128,
+      "line": 127,
       "match": "in_stack_00000008",
       "text": "local_140.x = in_stack_00000008->x + local_128;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 129,
+      "line": 128,
       "match": "in_stack_00000008",
       "text": "local_140.y = in_stack_00000008->y + local_124;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 130,
+      "line": 129,
       "match": "in_stack_00000008",
       "text": "local_140.z = in_stack_00000008->z + local_120;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 143,
+      "line": 142,
       "match": "in_stack_00000010",
       "text": "in_stack_00000010->reflectivity = 0.0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 144,
+      "line": 143,
       "match": "in_stack_00000010",
       "text": "in_stack_00000010->angle_copy = 0.0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 145,
+      "line": 144,
       "match": "in_stack_00000010",
       "text": "in_stack_00000010->alpha_or_wetness = 0.0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 149,
+      "line": 148,
       "match": "in_stack_00000008",
       "text": "(this_ptr_00,&local_c8,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 169,
+      "line": 168,
       "match": "in_stack_00000014",
       "text": "if ((((in_stack_00000014 == 0) && (in_stack_00000010->field4_0x18 != 0)) &&",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 169,
+      "line": 168,
       "match": "in_stack_00000010",
       "text": "if ((((in_stack_00000014 == 0) && (in_stack_00000010->field4_0x18 != 0)) &&",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 174,
+      "line": 173,
       "match": "in_stack_00000010",
       "text": "(in_stack_00000010->color).g = 0xff;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 175,
+      "line": 174,
       "match": "in_stack_00000010",
       "text": "(in_stack_00000010->color).b = 0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 176,
+      "line": 175,
       "match": "in_stack_00000010",
       "text": "(in_stack_00000010->color).r = 0xff;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 178,
+      "line": 177,
       "match": "in_stack_0000000c",
       "text": "local_ec = *in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 193,
+      "line": 192,
       "match": "in_stack_0000000c",
       "text": "fVar1 = local_e4 * in_stack_0000000c[2] +",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 194,
+      "line": 193,
       "match": "in_stack_0000000c",
       "text": "local_ec * *in_stack_0000000c + local_e8 * in_stack_0000000c[1];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 194,
+      "line": 193,
       "match": "in_stack_0000000c",
       "text": "local_ec * *in_stack_0000000c + local_e8 * in_stack_0000000c[1];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 208,
+      "line": 207,
       "match": "in_stack_00000010",
       "text": "in_stack_00000010->angle_or_rotation = local_2c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 209,
+      "line": 208,
       "match": "in_stack_00000010",
       "text": "(*this_ptr_00->vtable->getSurfaceProperties)(this_ptr_00,in_stack_00000010);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 212,
+      "line": 211,
       "match": "in_stack_00000010",
       "text": "if (in_stack_00000010->field5_0x1c != 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 213,
+      "line": 212,
       "match": "in_stack_00000010",
       "text": "local_28 = in_stack_00000010->intensity;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 215,
+      "line": 214,
       "match": "in_stack_00000010",
       "text": "if (0.0 < in_stack_00000010->alpha_or_wetness) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 216,
+      "line": 215,
       "match": "in_stack_0000000c",
       "text": "local_30 = (local_9c * in_stack_0000000c[2] +",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 217,
+      "line": 216,
       "match": "in_stack_0000000c",
       "text": "local_a4 * *in_stack_0000000c + local_a0 * in_stack_0000000c[1]) * 2f",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 217,
+      "line": 216,
       "match": "in_stack_0000000c",
       "text": "local_a4 * *in_stack_0000000c + local_a0 * in_stack_0000000c[1]) * 2f",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 222,
+      "line": 221,
       "match": "in_stack_0000000c",
       "text": "local_bc = local_d4 - *in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 223,
+      "line": 222,
       "match": "in_stack_0000000c",
       "text": "local_b8 = local_d0 - in_stack_0000000c[1];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 225,
+      "line": 224,
       "match": "in_stack_0000000c",
       "text": "local_b4 = local_cc - in_stack_0000000c[2];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 241,
+      "line": 240,
       "match": "in_stack_00000010",
       "text": "local_28 = (1.0 - in_stack_00000010->alpha_or_wetness) * (float)0.25 * local_28;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 243,
+      "line": 242,
       "match": "in_stack_00000010",
       "text": "if (in_stack_00000010->reflectivity <= 0.0) goto LAB_004c8ae9;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 244,
+      "line": 243,
       "match": "in_stack_00000010",
       "text": "if ((in_stack_00000010->reflectivity != 1.0) ||",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 245,
+      "line": 244,
       "match": "in_stack_00000010",
       "text": "(in_stack_00000010->angle_copy != in_stack_00000010->angle_or_rotation)) break;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 245,
+      "line": 244,
       "match": "in_stack_00000010",
       "text": "(in_stack_00000010->angle_copy != in_stack_00000010->angle_or_rotation)) break;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 248,
+      "line": 247,
       "match": "in_stack_0000000c",
       "text": "local_104 = *in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 249,
+      "line": 248,
       "match": "in_stack_0000000c",
       "text": "local_100 = in_stack_0000000c[1];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 250,
+      "line": 249,
       "match": "in_stack_0000000c",
       "text": "local_fc = in_stack_0000000c[2];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 251,
+      "line": 250,
       "match": "in_stack_00000010",
       "text": "local_7c = in_stack_00000010->field6_0x20;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 252,
+      "line": 251,
       "match": "in_stack_00000010",
       "text": "local_78 = in_stack_00000010->field6_0x20 + 4;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 253,
+      "line": 252,
       "match": "in_stack_00000010",
       "text": "local_74 = in_stack_00000010->field6_0x20 + 8;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 254,
+      "line": 253,
       "match": "in_stack_00000010",
       "text": "local_64 = &(in_stack_00000010->hit_position).y;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 255,
+      "line": 254,
       "match": "in_stack_00000010",
       "text": "local_70 = &(in_stack_00000010->hit_position).z;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 256,
+      "line": 255,
       "match": "in_stack_00000010",
       "text": "local_6c = in_stack_00000010->field8_0x38;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 257,
+      "line": 256,
       "match": "in_stack_00000010",
       "text": "local_68 = in_stack_00000010->field8_0x38 + 4;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 258,
+      "line": 257,
       "match": "in_stack_00000010",
       "text": "local_14 = in_stack_00000010->field8_0x38 + 8;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 262,
+      "line": 261,
       "match": "in_stack_00000010",
       "text": "local_28 = (1.0 - in_stack_00000010->reflectivity) * (float)0.25 * local_28;",
       "type": "stack_param"

@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Variable defined which should be unmapped: opened_file */
-
 FILE * __cdecl
 shape_memdbg_cpp_openFile_FUN_0050f7a0
           (char *filename,char *directory,char *mode,char *source_file,int line_number)
@@ -16,14 +14,8 @@ shape_memdbg_cpp_openFile_FUN_0050f7a0
   char cVar1;
   int iVar2;
   FILE *pFVar3;
-  char *pcVar4;
+  FileTrackingEntry *pFVar4;
   char *pcVar5;
-  FileTrackingEntry *pFVar6;
-  char *in_stack_00000018;
-  uint in_stack_0000001c;
-  char *in_stack_00000024;
-  uint in_stack_00000028;
-  int in_stack_0000002c;
   FILE *opened_file;
   
   if (g_RecursiveCallFlag == 0) {
@@ -34,15 +26,13 @@ shape_memdbg_cpp_openFile_FUN_0050f7a0
   }
   if (directory == (char *)0x0) {
     shape_memdbg_cpp_traceFile_FUN_0050f180
-              ("Opening %s for %s in %s line %d",filename,line_number,source_file,
-               in_stack_0000001c);
+              ("Opening %s for %s in %s line %d",filename,mode,source_file,line_number);
   }
   else {
     shape_memdbg_cpp_traceFile_FUN_0050f180
-              ("Opening %s in %s for %s in %s line %d",directory,filename,line_number,source_file,
-               in_stack_0000001c);
+              ("Opening %s in %s for %s in %s line %d",directory,filename,mode,source_file,line_number);
   }
-  pFVar3 = crt_stdio_c_fopen_FUN_00601a7c(filename,in_stack_00000018);
+  pFVar3 = crt_stdio_c_fopen_FUN_00601a7c(filename,mode);
   if (pFVar3 == (FILE *)0x0) {
     wincore_winrun_cpp_releaseMutex_FUN_005f4050(g_FileMutex);
     shape_memdbg_cpp_traceFile_FUN_0050f180("  Open failed");
@@ -56,59 +46,57 @@ shape_memdbg_cpp_openFile_FUN_0050f7a0
     g_CurrentFilename = "..\\shape\\memdbg.cpp";
     g_CurrentLineNumber = 0x1f0;
     core_main_c_displayErrorAndQuit_FUN_00506f10
-              ("Too many open files trying to open %s, %s line %d",filename,source_file,in_stack_00000028);
+              ("Too many open files trying to open %s, %s line %d",filename,source_file,line_number);
   }
   iVar2 = g_OpenFileCount;
-  pFVar6 = g_FileRegistry + g_OpenFileCount;
+  pFVar4 = g_FileRegistry + g_OpenFileCount;
   g_OpenFileCount = g_OpenFileCount + 1;
-  pcVar4 = filename;
   do {
-    cVar1 = *pcVar4;
-    pFVar6->filename[0] = cVar1;
+    cVar1 = *filename;
+    pFVar4->filename[0] = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar4[1];
-    pcVar4 = pcVar4 + 2;
-    pFVar6->filename[1] = cVar1;
-    pFVar6 = (FileTrackingEntry *)(pFVar6->filename + 2);
+    cVar1 = filename[1];
+    filename = filename + 2;
+    pFVar4->filename[1] = cVar1;
+    pFVar4 = (FileTrackingEntry *)(pFVar4->filename + 2);
   } while (cVar1 != '\0');
-  pcVar4 = g_FileRegistry[iVar2].mode;
+  pcVar5 = g_FileRegistry[iVar2].mode;
   do {
-    cVar1 = *in_stack_00000024;
-    *pcVar4 = cVar1;
+    cVar1 = *mode;
+    *pcVar5 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = in_stack_00000024[1];
-    in_stack_00000024 = in_stack_00000024 + 2;
-    pcVar4[1] = cVar1;
-    pcVar4 = pcVar4 + 2;
+    cVar1 = mode[1];
+    mode = mode + 2;
+    pcVar5[1] = cVar1;
+    pcVar5 = pcVar5 + 2;
   } while (cVar1 != '\0');
-  pcVar4 = g_FileRegistry[iVar2].source_file;
+  pcVar5 = g_FileRegistry[iVar2].source_file;
   do {
     cVar1 = *source_file;
-    *pcVar4 = cVar1;
+    *pcVar5 = cVar1;
     if (cVar1 == '\0') break;
     cVar1 = source_file[1];
     source_file = source_file + 2;
-    pcVar4[1] = cVar1;
-    pcVar4 = pcVar4 + 2;
+    pcVar5[1] = cVar1;
+    pcVar5 = pcVar5 + 2;
   } while (cVar1 != '\0');
   if (directory == (char *)0x0) {
     g_FileRegistry[iVar2].directory[0] = '\0';
   }
   else {
-    pcVar4 = g_FileRegistry[iVar2].directory;
-    pcVar5 = directory;
+    pcVar5 = g_FileRegistry[iVar2].directory;
     do {
-      cVar1 = *pcVar5;
-      *pcVar4 = cVar1;
+      cVar1 = *directory;
+      *pcVar5 = cVar1;
       if (cVar1 == '\0') break;
-      cVar1 = pcVar5[1];
+      cVar1 = directory[1];
+      directory = directory + 2;
+      pcVar5[1] = cVar1;
       pcVar5 = pcVar5 + 2;
-      pcVar4[1] = cVar1;
-      pcVar4 = pcVar4 + 2;
     } while (cVar1 != '\0');
   }
-  g_FileRegistry[iVar2].line_number = in_stack_0000002c;
-  g_FileRegistry[iVar2].file_ptr = (FILE *)filename;
+  g_FileRegistry[iVar2].line_number = line_number;
+  g_FileRegistry[iVar2].file_ptr = pFVar3;
   wincore_winrun_cpp_releaseMutex_FUN_005f4050(g_FileMutex);
-  return (FILE *)directory;
+  return pFVar3;
 }

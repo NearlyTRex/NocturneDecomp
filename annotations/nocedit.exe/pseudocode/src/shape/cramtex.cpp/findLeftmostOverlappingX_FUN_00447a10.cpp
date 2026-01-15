@@ -12,6 +12,7 @@ int __cdecl shape_cramtex_cpp_findLeftmostOverlappingX_FUN_00447a10(SCramWorking
   SCramWorkingEntry *pSVar1;
   int iVar2;
   int iVar3;
+  int in_stack_00000004;
   
   crt_stack_c_stack_probe_FUN_005ff9f3(0x14);
   iVar2 = 0;
@@ -19,10 +20,11 @@ int __cdecl shape_cramtex_cpp_findLeftmostOverlappingX_FUN_00447a10(SCramWorking
   if (0 < (int)g_CramTextureCount) {
     pSVar1 = g_CramSortedTextureEntries;
     do {
-      if ((((bounds_entry->assigned_map_number == pSVar1->assigned_map_number) &&
-           (pSVar1->final_left < iVar3)) && (bounds_entry->final_right <= pSVar1->final_left)) &&
-         ((pSVar1->final_top < bounds_entry->final_bottom &&
-          (bounds_entry->final_top < pSVar1->final_bottom)))) {
+      if ((((*(int *)(in_stack_00000004 + 0x10) == pSVar1->assigned_map_number) &&
+           (pSVar1->final_left < iVar3)) &&
+          (*(int *)(in_stack_00000004 + 0x38) <= pSVar1->final_left)) &&
+         ((pSVar1->final_top < *(int *)(in_stack_00000004 + 0x3c) &&
+          (*(int *)(in_stack_00000004 + 0x34) < pSVar1->final_bottom)))) {
         iVar3 = pSVar1->final_left;
       }
       iVar2 = iVar2 + 1;

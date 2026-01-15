@@ -1,21 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 180,
-    "complexity_score": 250,
+    "complexity_score": 177,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 23,
-    "pseudocode_lines": 80,
-    "suspect_count": 14,
+    "pseudocode_lines": 82,
+    "suspect_count": 8,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
-      "register_param",
-      "stack_ref",
       "variadic_preserve"
     ],
-    "total_lines": 260
+    "total_lines": 262
   },
   "cross_references": [
     {
@@ -333,50 +330,8 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 8,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 8,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 16,
-      "match": "&stack0xffffff94",
-      "text": "pcVar6 = &stack0xffffff94;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 20,
-      "match": "&stack0xffffff94",
-      "text": "pcVar4 = &stack0xffffff94;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 26,
-      "match": "&stack0xffffff94",
-      "text": "pcVar4 = &stack0xffffff94;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 54,
-      "match": "&stack0xffffff98",
-      "text": "(&stack0xffffff98,(char *)0x0,\"wb\",\"..\\\\engine\\\\pcx.c\",0x9d);",
-      "type": "stack_ref"
-    },
-    {
       "call_address": "00548fab",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -390,7 +345,7 @@
     },
     {
       "call_address": "005490b1",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

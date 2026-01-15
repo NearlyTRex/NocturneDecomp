@@ -11,8 +11,8 @@ int __watcallStack crt_stdio_c_stream_setup_FUN_00605f20(FILE *stream,int operat
 {
   FILE *stream_00;
   FileEmbeddedData *embedded_data;
-  char *unaff_retaddr;
-  int in_stack_0000000c;
+  char *unaff_EBX;
+  int unaff_retaddr;
   
   if (*(int *)((int)&stream->_handle + *(int *)(stream->_ptr + 4)) == 0) {
     stream->_cnt = 0;
@@ -20,9 +20,9 @@ int __watcallStack crt_stdio_c_stream_setup_FUN_00605f20(FILE *stream,int operat
     if (stream_00 != (FILE *)0x0) {
       crt_stdio_c_stream_flush_FUN_006060bb(stream_00);
     }
-    if ((in_stack_0000000c == 0) &&
+    if ((operation_type == 0) &&
        ((*(uint *)((int)&stream->_flag + *(int *)(stream->_ptr + 4)) & 1) != 0)) {
-      crt_string_c_mbstrncpy_core_FUN_0060b670((char *)stream,unaff_retaddr,(int)stream);
+      crt_string_c_mbstrncpy_core_FUN_0060b670((char *)stream,unaff_EBX,unaff_retaddr);
       embedded_data = (FileEmbeddedData *)((int)&stream->_ptr + *(int *)(stream->_ptr + 4));
       if ((embedded_data->state_field & 4) != 0) {
         crt_stdio_c_reportStreamError_FUN_00606020(embedded_data,2);

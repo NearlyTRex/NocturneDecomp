@@ -14,7 +14,6 @@ int core_lever_cpp_FUN_00504cf0(void)
   CBoundingBox3D *this_ptr;
   int iVar1;
   CKeyFramedModel *pCVar2;
-  BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000004;
   float in_stack_ffffffd4;
   

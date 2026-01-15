@@ -1,21 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 133,
-    "complexity_score": 196,
+    "complexity_score": 108,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 66,
-    "suspect_count": 10,
+    "pseudocode_lines": 63,
+    "suspect_count": 3,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
-      "register_param",
       "special_crt_function",
-      "stack_param",
       "variadic_preserve"
     ],
-    "total_lines": 199
+    "total_lines": 196
   },
   "cross_references": [
     {
@@ -110,57 +107,8 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 10,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 10,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000010",
-      "text": "uint in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 47,
-      "match": "in_stack_00000010",
-      "text": "uVar2 = in_stack_00000010 & 0x7000;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 65,
-      "match": "in_stack_00000010",
-      "text": "in_stack_00000010 = in_stack_00000010 & 0xffff8fff;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 65,
-      "match": "in_stack_00000010",
-      "text": "in_stack_00000010 = in_stack_00000010 & 0xffff8fff;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 66,
-      "match": "in_stack_00000010",
-      "text": "sStack_50.st_dev = in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
       "call_address": "0060c424",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

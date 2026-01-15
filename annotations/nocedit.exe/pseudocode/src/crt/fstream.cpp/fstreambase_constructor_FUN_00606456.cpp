@@ -15,10 +15,8 @@ crt_fstream_cpp_fstreambase_constructor_FUN_00606456
   ios *piVar2;
   filebuf *this_ptr_00;
   int iVar3;
-  int unaff_EBX;
-  char *unaff_retaddr;
-  int in_stack_0000001c;
-  int in_stack_00000020;
+  char *unaff_ESI;
+  int unaff_EDI;
   
   if ((ctor_flags & 1U) == 0) {
     (this_ptr->base).layout_info = &g_FStreamBase_VirtualBaseLayout;
@@ -33,10 +31,9 @@ crt_fstream_cpp_fstreambase_constructor_FUN_00606456
   *(void ***)(this_ptr_00->__unbuffered_get_area + *(int *)(iVar3 + 4) + -0x10) =
        &g_FStreamBase_IOSDestructor;
   crt_iostream_cpp_streambuf_initBuffer_FUN_0060b815
-            ((streambuf *)(pcVar1 + *(int *)(*(int *)pcVar1 + 4)),(char *)this_ptr_00,unaff_EBX,
-             unaff_retaddr);
-  iVar3 = crt_fstream_cpp_filebuf_open_FUN_00608c15
-                    (this_ptr_00,(char *)buffer_size,in_stack_0000001c,in_stack_00000020);
+            ((streambuf *)(pcVar1 + *(int *)(*(int *)pcVar1 + 4)),(char *)this_ptr_00,unaff_EDI,
+             unaff_ESI);
+  iVar3 = crt_fstream_cpp_filebuf_open_FUN_00608c15(this_ptr_00,(char *)fd,mode,(int)buffer);
   if (iVar3 == 0) {
     crt_stdio_c_reportStreamError_FUN_00606020
               ((FileEmbeddedData *)(pcVar1 + *(int *)(*(int *)pcVar1 + 4)),3);

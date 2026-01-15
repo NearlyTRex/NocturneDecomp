@@ -11,7 +11,6 @@ support_trisock_cpp_setSocketBlocking_FUN_005e1e50(SOCKET *socket_handle,int blo
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   uint local_4;
   
   local_4 = (uint)(blocking_mode == 0);

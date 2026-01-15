@@ -15,12 +15,9 @@ crt_process_c_build_cmdline_FUN_00610258
   char *pcVar1;
   int iVar2;
   char *pcVar3;
-  int unaff_EBX;
   char **ppcVar4;
-  int unaff_EDI;
   int iVar5;
   uint uVar6;
-  int in_stack_00000024;
   
   if (argv == (char **)0x0) {
     argv = g_EnvironmentBlock;
@@ -41,6 +38,7 @@ crt_process_c_build_cmdline_FUN_00610258
     iVar2 = crt_string_c_strlen_FUN_0060f870(*(char **)argc);
     iVar5 = iVar5 + iVar2 + 3;
   }
+  iVar2 = g_HeapFlags;
   uVar6 = iVar5 + 0xf;
   g_HeapFlags = 0x10;
   pcVar3 = crt_heap_c_InternalHeapAlloc_FUN_00601bc0(uVar6);
@@ -49,13 +47,13 @@ crt_process_c_build_cmdline_FUN_00610258
     crt_errno_c_setErrno_FUN_00602790(5);
     crt_errno_c_SetWindowsError_FUN_006027c8(8);
     uVar6 = 0xffffffff;
-    g_HeapFlags = unaff_EBX;
+    g_HeapFlags = iVar2;
   }
   else {
-    g_HeapFlags = unaff_EDI;
-    *out_environment = pcVar3;
-    *out_bufsize = 0;
-    *out_buffer = pcVar3;
+    g_HeapFlags = iVar2;
+    *(char **)program = pcVar3;
+    *out_environment = (char *)0x0;
+    *out_cmdline = pcVar3;
     if (argv != (char **)0x0) {
       pcVar1 = *argv;
       while (pcVar1 != (char *)0x0) {
@@ -67,7 +65,7 @@ crt_process_c_build_cmdline_FUN_00610258
       }
     }
     *pcVar3 = '\0';
-    if (in_stack_00000024 != 0) {
+    if (out_bufsize != (int *)0x0) {
       crt_string_c_strcpy_FUN_00610760(pcVar3 + 3,*(char **)argc);
     }
     iVar5 = 0;
@@ -82,7 +80,7 @@ crt_process_c_build_cmdline_FUN_00610258
         iVar5 = iVar5 + iVar2;
       }
     }
-    *(int *)copy_program_flag = iVar5 + 0x108;
+    *out_buffer = (char *)(iVar5 + 0x108);
     uVar6 = uVar6 >> 4;
   }
   return uVar6;

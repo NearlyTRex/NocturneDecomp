@@ -11,10 +11,9 @@ void __cdecl core_event_cpp_CEventList_setActorVariable_FUN_004b09a0(CEventList 
 {
   char cVar1;
   int iVar2;
-  void *unaff_EBX;
   char *pcVar3;
-  char *pcVar4;
-  int iVar5;
+  char *dest;
+  int iVar4;
   char *in_stack_00000008;
   CDemonActor *in_stack_0000000c;
   
@@ -57,15 +56,16 @@ void __cdecl core_event_cpp_CEventList_setActorVariable_FUN_004b09a0(CEventList 
     }
   }
   else {
-    pcVar4 = this_ptr->variablesActorName1 + iVar2 * 0x1e;
+    dest = this_ptr->variablesActorName1 + iVar2 * 0x1e;
     pcVar3 = this_ptr->variablesVarName1 + iVar2 * 0x1e;
     if (in_stack_0000000c == (CDemonActor *)0x0) {
-      iVar5 = this_ptr->actor_var_count + -1;
-      this_ptr->actor_var_count = iVar5;
+      iVar4 = this_ptr->actor_var_count + -1;
+      this_ptr->actor_var_count = iVar4;
       crt_string_c_memmove_FUN_005fe5e0
-                (pcVar3,this_ptr->variablesVarName2 + iVar2 * 0x1e,(iVar5 - iVar2) * 0x1e);
+                (pcVar3,this_ptr->variablesVarName2 + iVar2 * 0x1e,(iVar4 - iVar2) * 0x1e);
       crt_string_c_memmove_FUN_005fe5e0
-                (unaff_EBX,pcVar4 + iVar2 * 0x1e + 0x1e,(this_ptr->actor_var_count - iVar2) * 0x1e);
+                (dest,this_ptr->variablesActorName2 + iVar2 * 0x1e,
+                 (this_ptr->actor_var_count - iVar2) * 0x1e);
       return;
     }
     do {
@@ -79,14 +79,14 @@ void __cdecl core_event_cpp_CEventList_setActorVariable_FUN_004b09a0(CEventList 
     } while (cVar1 != '\0');
     do {
       cVar1 = in_stack_0000000c->actor_name[0];
-      *pcVar4 = cVar1;
+      *dest = cVar1;
       if (cVar1 == '\0') {
         return;
       }
       cVar1 = in_stack_0000000c->actor_name[1];
       in_stack_0000000c = (CDemonActor *)(in_stack_0000000c->actor_name + 2);
-      pcVar4[1] = cVar1;
-      pcVar4 = pcVar4 + 2;
+      dest[1] = cVar1;
+      dest = dest + 2;
     } while (cVar1 != '\0');
   }
   return;

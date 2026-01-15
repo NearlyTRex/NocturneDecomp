@@ -1,21 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 117,
-    "complexity_score": 210,
+    "complexity_score": 164,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 12,
-    "pseudocode_lines": 40,
-    "suspect_count": 14,
+    "pseudocode_lines": 39,
+    "suspect_count": 11,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
-      "register_param",
-      "stack_ref",
       "variadic_preserve"
     ],
-    "total_lines": 157
+    "total_lines": 156
   },
   "cross_references": [
     {
@@ -221,29 +218,8 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 9,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 9,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 35,
-      "match": "&stack0x00000000",
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(file,\"%f,%f,%f\\n\",&stack0x00000000,&this_ptr,&file_handle);",
-      "type": "stack_ref"
-    },
-    {
       "call_address": "0058603f",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -257,7 +233,7 @@
     },
     {
       "call_address": "00586067",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -271,7 +247,7 @@
     },
     {
       "call_address": "005860a6",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -285,7 +261,7 @@
     },
     {
       "call_address": "005860c9",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -299,7 +275,7 @@
     },
     {
       "call_address": "005860ec",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -313,7 +289,7 @@
     },
     {
       "call_address": "00586109",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",

@@ -14,19 +14,17 @@ core_actor_cpp_CDemonActor_testRayIntersection_FUN_004093f0
 {
   int bbox_type;
   float fVar1;
-  BADSPACEBASE *in_ESP;
-  CVector3f *in_stack_00000020;
-  CVector3f *in_stack_00000024;
-  CVector3f *in_stack_00000028;
-  CBoundingBox3D *in_stack_00000030;
+  CVector3f *in_stack_00000018;
+  CBoundingBox3D *in_stack_00000020;
+  SCollisionInfo SStack_2c;
   
   core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0((SCollisionInfo *)&stack0xffffffcc);
-  bbox_type = (*this_ptr->vtable->hasCollision)(this_ptr,(SCollisionInfo *)&stack0xffffffd0);
+  bbox_type = (*this_ptr->vtable->hasCollision)(this_ptr,(SCollisionInfo *)&stack0xffffffcc);
   if (bbox_type == 0) {
     return 0x40000000;
   }
   fVar1 = core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470
-                    (this_ptr,in_stack_00000020,in_stack_00000024,in_stack_00000028,
-                     (SCollisionInfo *)&stack0xffffffe4,bbox_type,in_stack_00000030);
+                    (this_ptr,out_hit_normal,unused,in_stack_00000018,&SStack_2c,bbox_type,
+                     in_stack_00000020);
   return (int)fVar1;
 }

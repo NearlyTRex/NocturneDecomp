@@ -14,12 +14,8 @@ core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190
   int visible_cube_count;
   int *visible_cube_indices;
   int iVar1;
-  BADSPACEBASE *in_ESP;
   CDemonSet *pCVar2;
-  int **unaff_EDI;
-  float in_stack_00000014;
-  float in_stack_0000002c;
-  float in_stack_00000030;
+  int **in_stack_ffffffe4;
   
   engine_drender_cpp_CDemonRenderer_setLightDirection_FUN_0048c6c0
             (g_CDemonRendererPtr,&g_GlobalLightDirection);
@@ -45,12 +41,12 @@ LAB_0056a371:
   iVar1 = 0;
 LAB_0056a1fb:
   core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
-            (&g_CDemonRaytraceInstance,in_stack_00000014,iVar1);
+            (&g_CDemonRaytraceInstance,frustum_param,iVar1);
   if (render_mode == 2) {
     core_dtrace_cpp_CDemonRaytrace_savePVS_FUN_00498fb0
               (&g_CDemonRaytraceInstance,
                &this_ptr->cameras[this_ptr->selected_camera_index].pvs_count,
-               &this_ptr->cameras[this_ptr->selected_camera_index].pvs_list,unaff_EDI);
+               &this_ptr->cameras[this_ptr->selected_camera_index].pvs_list,in_stack_ffffffe4);
   }
   iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
   if (iVar1 == 0) {
@@ -60,7 +56,7 @@ LAB_0056a1fb:
     if (g_UseExternalRenderer == 0) {
       if (this_ptr->use_enviro_model != 0) {
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-                  (g_CDemonRendererPtr,(CVector3f *)&stack0x00000000);
+                  (g_CDemonRendererPtr,(CVector3f *)&stack0xffffffe4);
         core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
                   (&g_CKeyFramedModelInstance,(CKeyFramedModelInstance *)0x0,0,-1);
       }
@@ -88,7 +84,7 @@ LAB_0056a1fb:
         }
         core_set_cpp_CDemonSet_setupMirrorRendering_FUN_005709e0(this_ptr,iVar1,1);
         core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
-                  (&g_CDemonRaytraceInstance,in_stack_00000030,0);
+                  (&g_CDemonRaytraceInstance,frustum_param,0);
         iVar1 = iVar1 + 1;
         core_set_cpp_FUN_00570af0();
         pCVar2 = (CDemonSet *)pCVar2->cameras;
@@ -105,7 +101,7 @@ LAB_0056a1fb:
       }
       core_set_cpp_CDemonSet_setupMirrorRendering_FUN_005709e0(this_ptr,iVar1,0);
       core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
-                (&g_CDemonRaytraceInstance,in_stack_0000002c,0);
+                (&g_CDemonRaytraceInstance,frustum_param,0);
       pCVar2 = (CDemonSet *)pCVar2->cameras;
       iVar1 = iVar1 + 1;
       core_set_cpp_FUN_00570af0();

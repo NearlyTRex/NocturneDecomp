@@ -10,7 +10,6 @@ void __cdecl core_actor_cpp_serializeInteger_FUN_0040b7f0(int *int_ptr,char *pro
 
 {
   int iVar1;
-  char *in_stack_0000000c;
   
   if (g_ActorReadingMode == 1) {
     iVar1 = crt_stdio_c_fscanf_FUN_005fe7c0(g_ActorDataFile,"%d",int_ptr);
@@ -22,6 +21,6 @@ void __cdecl core_actor_cpp_serializeInteger_FUN_0040b7f0(int *int_ptr,char *pro
   else {
     crt_stdio_c_fprintf_FUN_005fe6d0(g_ActorDataFile,"%s%d",g_PropertyNamePrefix,*int_ptr);
   }
-  core_actor_cpp_serializeDescription_FUN_0040b290("Integer value",in_stack_0000000c);
+  core_actor_cpp_serializeDescription_FUN_0040b290("Integer value",property_name);
   return;
 }

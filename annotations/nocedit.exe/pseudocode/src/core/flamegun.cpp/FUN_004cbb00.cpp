@@ -21,7 +21,7 @@ CFlameThrower * __cdecl core_flamegun_cpp_FUN_004cbb00(CFlameThrower *this_ptr,u
   }
   ptr = (CFlameThrower *)
         core_weapon_cpp_CWeapon_dtor_FUN_005edf80(&this_ptr->base_weapon,1,unaff_EBX,unaff_retaddr);
-  if ((d2 & 2) == 0) {
+  if ((d1 & 2) == 0) {
     return ptr;
   }
   shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);

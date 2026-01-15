@@ -12,7 +12,6 @@ core_dtrace_cpp_CDemonRaytrace_worldPositionToVoxelCoords_FUN_00499880
 
 {
   uint *extraout_EBX;
-  BADSPACEBASE *in_ESP;
   byte bVar1;
   float10 fVar2;
   double dVar3;

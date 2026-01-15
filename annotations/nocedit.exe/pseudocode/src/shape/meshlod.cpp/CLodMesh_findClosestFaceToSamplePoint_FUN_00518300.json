@@ -1,16 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 89,
-    "complexity_score": 100,
+    "complexity_score": 85,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 4,
     "pseudocode_lines": 45,
-    "suspect_count": 4,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
-      "sub_artifact",
-      "unknown_field"
+      "sub_artifact"
     ],
     "total_lines": 134
   },
@@ -229,17 +228,17 @@
   },
   "suspects": [
     {
-      "description": "Unknown/mangled field access",
+      "description": "Complex pointer cast",
       "line": 24,
-      "match": "._4_4_",
-      "text": "((int)this_ptr->tri_data->attribute_indices + local_18._4_4_);",
-      "type": "unknown_field"
+      "match": "(SLodSamplePoint *)((int)",
+      "text": "sample_point = (SLodSamplePoint *)((int)this_ptr->tri_data->attribute_indices + iStack_14);",
+      "type": "pointer_cast"
     },
     {
       "description": "Decompiler double/longlong extraction artifact",
       "line": 30,
       "match": "SUB84",
-      "text": "face = SUB84 /* extract 2-byte value */(local_18,0);",
+      "text": "face = SUB84 /* extract 2-byte value */(dVar2,0);",
       "type": "sub_artifact"
     },
     {
@@ -248,13 +247,6 @@
       "match": "(CLodFace *)((int)",
       "text": "pCVar1 = (CLodFace *)((int)pCVar1->attribute_indices + 1);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 38,
-      "match": "._4_4_",
-      "text": "local_18 = (double)((ulonglong)(local_18._4_4_ + 0x8c) << 0x20);",
-      "type": "unknown_field"
     }
   ]
 }

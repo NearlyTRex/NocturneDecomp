@@ -12,7 +12,6 @@ shape_superopt_cpp_CObj_transform_FUN_005d2c40(CObj *this_ptr,CMatrix3x3d *matri
 {
   int iVar1;
   CVert *pCVar2;
-  BADSPACEBASE *in_ESP;
   double *pdVar3;
   double *pdVar4;
   uint *puVar5;

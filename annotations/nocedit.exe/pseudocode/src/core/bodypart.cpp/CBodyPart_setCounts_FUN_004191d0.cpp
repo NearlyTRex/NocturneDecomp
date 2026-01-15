@@ -48,7 +48,8 @@ void __cdecl core_bodypart_cpp_CBodyPart_setCounts_FUN_004191d0(CBodyPart *this_
       (*(int *)(this_ptr->field1_0x158 + 0x30) == 0)))) {
     g_CurrentFilename = "..\\core\\bodypart.cpp";
     g_CurrentLineNumber = 0xb7;
-    core_main_c_displayErrorAndQuit_FUN_00506f10("CBodyPart::setCounts - out of memory for triangles - triCount = %d");
+    core_main_c_displayErrorAndQuit_FUN_00506f10
+              ("CBodyPart::setCounts - out of memory for triangles - triCount = %d",*(uint *)(this_ptr->field1_0x158 + 0x28));
     return;
   }
   return;

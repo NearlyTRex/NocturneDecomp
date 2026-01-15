@@ -17,7 +17,6 @@ void core_flame_cpp_FUN_004caa80(void)
   CBoundingBox3D *this_ptr_00;
   float fVar2;
   CDemonActor *pCVar3;
-  BADSPACEBASE *in_ESP;
   int iVar4;
   CDemonActor *in_stack_00000004;
   int in_stack_00000008;

@@ -14,22 +14,22 @@ engine_model_c_loadModelChunk_FUN_00528970(char *filename,int model_size)
   FILE *file;
   SMRGLHeaderExtended *buffer;
   SIZE_T SVar2;
-  BADSPACEBASE *in_ESP;
+  char local_60 [80];
   
   file = engine_dosio_c_getFile_FUN_00481a50("models",filename,"rb");
   if (file == (FILE *)0x0) {
-    crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffa4,"Unable to open model: %s",filename);
+    crt_stdio_c_sprintf_FUN_005fdbd0(local_60,"Unable to open model: %s",filename);
     g_CurrentFilename = "..\\engine\\model.c";
     g_CurrentLineNumber = 0x2e3;
-    core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xffffffa8);
+    core_main_c_displayErrorAndQuit_FUN_00506f10(local_60);
   }
   buffer = shape_memdbg_cpp_debugMalloc_FUN_0050f250(model_size + 4,"..\\engine\\model.c",0x2e6)
   ;
   if (buffer == (SMRGLHeaderExtended *)0x0) {
-    crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffb0,"Out of partial model mem : %s");
+    crt_stdio_c_sprintf_FUN_005fdbd0(local_60,"Out of partial model mem : %s",filename);
     g_CurrentLineNumber = 0x2ee;
     g_CurrentFilename = "..\\engine\\model.c";
-    core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xffffffb4);
+    core_main_c_displayErrorAndQuit_FUN_00506f10(local_60);
   }
   SVar2 = crt_stdio_c_fread_FUN_005fd990(buffer,1,model_size,file);
   if (SVar2 != model_size) {

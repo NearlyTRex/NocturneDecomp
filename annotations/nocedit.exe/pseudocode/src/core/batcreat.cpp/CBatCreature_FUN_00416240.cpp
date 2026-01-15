@@ -10,7 +10,6 @@ int __cdecl core_batcreat_cpp_CBatCreature_FUN_00416240(CBatCreature *this_ptr)
 
 {
   CVector3f *pCVar1;
-  BADSPACEBASE *in_ESP;
   CVector3f *in_stack_00000008;
   CVector3f local_14;
   

@@ -1,20 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 190,
+    "complexity_score": 162,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 3,
-    "pseudocode_lines": 35,
-    "suspect_count": 13,
+    "pseudocode_lines": 32,
+    "suspect_count": 11,
     "suspect_types": [
       "call_esp_preserve",
       "negative_offset",
       "special_crt_function",
-      "stack_param",
       "unaffected_reg"
     ],
-    "total_lines": 104
+    "total_lines": 101
   },
   "cross_references": [
     {
@@ -168,58 +167,44 @@
     {
       "description": "Unaffected register variable",
       "line": 11,
-      "match": "unaff_EBX",
-      "text": "int unaff_EBX;",
+      "match": "unaff_ESI",
+      "text": "char *unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_0000001c",
-      "text": "int in_stack_0000001c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000020",
-      "text": "int in_stack_00000020;",
-      "type": "stack_param"
+      "description": "Unaffected register variable",
+      "line": 12,
+      "match": "unaff_EDI",
+      "text": "int unaff_EDI;",
+      "type": "unaffected_reg"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 19,
+      "line": 17,
       "match": "piVar2[-2].",
       "text": "this_ptr = (fstreambase *)&piVar2[-2].__enabled_exceptions;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 22,
+      "line": 20,
       "match": "this_ptr_00[-1].",
       "text": "pcVar1 = this_ptr_00[-1].__unbuffered_get_area + 4;",
       "type": "negative_offset"
     },
     {
       "description": "Unaffected register variable",
-      "line": 29,
-      "match": "unaff_EBX",
-      "text": "((streambuf *)(pcVar1 + *(int *)(*(int *)pcVar1 + 4)),(char *)this_ptr_00,unaff_EBX,",
+      "line": 27,
+      "match": "unaff_EDI",
+      "text": "((streambuf *)(pcVar1 + *(int *)(*(int *)pcVar1 + 4)),(char *)this_ptr_00,unaff_EDI,",
       "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_0000001c",
-      "text": "(this_ptr_00,(char *)buffer_size,in_stack_0000001c,in_stack_00000020);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_00000020",
-      "text": "(this_ptr_00,(char *)buffer_size,in_stack_0000001c,in_stack_00000020);",
-      "type": "stack_param"
+      "description": "Unaffected register variable",
+      "line": 28,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI);",
+      "type": "unaffected_reg"
     },
     {
       "add_esp_value": 4,

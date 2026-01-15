@@ -11,7 +11,6 @@
 void core_charactr_cpp_FUN_0042f930(void)
 
 {
-  BADSPACEBASE *in_ESP;
   int *in_stack_00000004;
   int in_stack_00000008;
   float *in_stack_0000000c;

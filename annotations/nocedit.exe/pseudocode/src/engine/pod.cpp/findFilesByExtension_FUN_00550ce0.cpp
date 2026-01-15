@@ -13,17 +13,16 @@ engine_pod_cpp_findFilesByExtension_FUN_00550ce0
 
 {
   char cVar1;
-  char *filename;
   int iVar2;
   int iVar3;
   int iVar4;
   uint uVar5;
   int iVar6;
-  BADSPACEBASE *in_ESP;
   char *pcVar7;
   CPod **ppCVar8;
   char *pcVar9;
-  byte bVar10;
+  char *pcVar10;
+  byte bVar11;
   char local_50 [12];
   char local_44 [12];
   int local_38;
@@ -37,7 +36,7 @@ engine_pod_cpp_findFilesByExtension_FUN_00550ce0
   int local_18;
   int local_14;
   
-  bVar10 = 0;
+  bVar11 = 0;
   uVar5 = 0xffffffff;
   pcVar9 = extension;
   do {
@@ -69,29 +68,27 @@ engine_pod_cpp_findFilesByExtension_FUN_00550ce0
       local_28 = result_string_length;
       local_20 = 0;
       local_1c = output_buffer + local_14 * result_string_length;
-      local_18 = 0;
-      while( true ) {
-        pcVar9 = local_50;
-        iVar3 = *(int *)((int)pod_array + local_2c + 4);
-        if (*(int *)(iVar3 + 0x410) <= local_18) break;
-        filename = *(char **)(*(int *)(iVar3 + 0x414) + local_20);
+      for (local_18 = 0; iVar3 = *(int *)((int)pod_array + local_2c + 4),
+          local_18 < *(int *)(iVar3 + 0x410); local_18 = local_18 + 1) {
+        pcVar9 = *(char **)(*(int *)(iVar3 + 0x414) + local_20);
         uVar5 = 0xffffffff;
-        pcVar7 = filename;
+        pcVar7 = pcVar9;
         do {
           if (uVar5 == 0) break;
           uVar5 = uVar5 - 1;
           cVar1 = *pcVar7;
-          pcVar7 = pcVar7 + (uint)bVar10 * -2 + 1;
+          pcVar7 = pcVar7 + (uint)bVar11 * -2 + 1;
         } while (cVar1 != '\0');
-        pcVar7 = filename + ((~uVar5 - 1) - local_24);
+        pcVar7 = pcVar9 + ((~uVar5 - 1) - local_24);
+        pcVar10 = local_50;
         do {
           cVar1 = *pcVar7;
-          *pcVar9 = cVar1;
+          *pcVar10 = cVar1;
           if (cVar1 == '\0') break;
           cVar1 = pcVar7[1];
           pcVar7 = pcVar7 + 2;
-          pcVar9[1] = cVar1;
-          pcVar9 = pcVar9 + 2;
+          pcVar10[1] = cVar1;
+          pcVar10 = pcVar10 + 2;
         } while (cVar1 != '\0');
         iVar3 = crt_string_c_strcmp_FUN_005fef20(local_50,local_44);
         if (iVar3 == 0) {
@@ -100,23 +97,22 @@ engine_pod_cpp_findFilesByExtension_FUN_00550ce0
           if (0 < local_38) {
             do {
               iVar4 = engine_pod_cpp_CPodFile_findFileIndex_FUN_00550140
-                                ((CPodFile *)ppCVar8[1],filename);
+                                ((CPodFile *)ppCVar8[1],pcVar9);
               if (-1 < iVar4) break;
               iVar3 = iVar3 + 1;
               ppCVar8 = ppCVar8 + 1;
             } while (iVar3 < local_38);
           }
-          pcVar9 = local_1c;
+          pcVar7 = local_1c;
           if (iVar3 == local_38) {
-            crt_string_c_strncpy_FUN_00600f40(local_1c,filename,local_30);
-            local_1c = pcVar9 + local_28;
+            crt_string_c_strncpy_FUN_00600f40(local_1c,pcVar9,local_30);
+            local_1c = pcVar7 + local_28;
             local_14 = local_14 + 1;
             if (max_results <= local_14) {
               return local_14;
             }
           }
         }
-        local_18 = local_18 + 1;
         local_20 = local_20 + 0x14;
       }
       local_34 = local_34 + 4;

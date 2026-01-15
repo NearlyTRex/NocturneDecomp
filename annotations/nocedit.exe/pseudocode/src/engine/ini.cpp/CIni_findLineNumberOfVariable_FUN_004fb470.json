@@ -1,24 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 206,
-    "complexity_score": 419,
+    "complexity_score": 266,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 8,
-    "pseudocode_lines": 94,
-    "suspect_count": 28,
+    "pseudocode_lines": 86,
+    "suspect_count": 16,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
       "param_count_too_few",
-      "register_param",
-      "stack_param",
-      "stack_ref",
-      "unaffected_reg",
       "variadic_preserve"
     ],
-    "total_lines": 300
+    "total_lines": 292
   },
   "cross_references": [
     {
@@ -270,90 +265,6 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 13,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 13,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 15,
-      "match": "unaff_EDI",
-      "text": "int unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_0000001c",
-      "text": "char *in_stack_0000001c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 33,
-      "match": "&stack0xfffffdf8",
-      "text": "pcVar3 = crt_stdio_c_fgets_FUN_005fefd0(&stack0xfffffdf8,0xff,stream);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 51,
-      "match": "&stack0xfffffdf8",
-      "text": "pcVar3 = crt_stdio_c_fgets_FUN_005fefd0(&stack0xfffffdf8,0xff,stream);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 52,
-      "match": "&stack0xfffffdf8",
-      "text": "pcVar6 = &stack0xfffffdf8;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 64,
-      "match": "&stack0xfffffdf8",
-      "text": "pcVar6 = &stack0xfffffdf8;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 67,
-      "match": "&stack0xfffffdf8",
-      "text": "pcVar6 = &stack0xfffffdf8;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 82,
-      "match": "&stack0xfffffdf8",
-      "text": "iVar4 = crt_string_c_strcmp_FUN_005fef20(&stack0xfffffdf8,value);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 85,
-      "match": "in_stack_0000001c",
-      "text": "iVar4 = crt_string_c_strcmp_FUN_005fef20((char *)(unaff_EDI + 1),in_stack_0000001c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 85,
-      "match": "unaff_EDI",
-      "text": "iVar4 = crt_string_c_strcmp_FUN_005fef20((char *)(unaff_EDI + 1),in_stack_0000001c);",
-      "type": "unaffected_reg"
-    },
-    {
       "call_site_count": 1,
       "declared_params": 5,
       "description": "Signature has too few params - likely missing this ptr or other params",
@@ -366,7 +277,7 @@
     },
     {
       "call_address": "004fb4ca",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -380,7 +291,7 @@
     },
     {
       "call_address": "004fb5ee",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

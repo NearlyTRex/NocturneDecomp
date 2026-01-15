@@ -13,7 +13,6 @@ void __cdecl core_dfont_cpp_initFonts_FUN_004709a0(void)
   CBitFont *pCVar2;
   CWinFont *pCVar3;
   CWinFont *pCVar4;
-  uint uStack000000a0;
   
   pCVar1 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x3198,"..\\core\\dfont.cpp",0x3f);
   pCVar2 = (CBitFont *)0x0;
@@ -195,14 +194,12 @@ void __cdecl core_dfont_cpp_initFonts_FUN_004709a0(void)
   pCVar3 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x13c,"..\\core\\dfont.cpp",0xb6);
   pCVar4 = (CWinFont *)0x0;
   if (pCVar3 != (CWinFont *)0x0) {
-    uStack000000a0 = 0;
     pCVar4 = engine_winfont_cpp_CWinFont_ctor_FUN_005f22e0(pCVar3,g_OSFontName,10,0);
   }
   g_DebugWinFont = pCVar4;
   if (pCVar4 == (CWinFont *)0x0) {
     g_CurrentFilename = "..\\core\\dfont.cpp";
     g_CurrentLineNumber = 0xb8;
-    uStack000000a0 = 0x471075;
     core_main_c_displayErrorAndQuit_FUN_00506f10("initFonts - Can't allocate gDebugOSFont");
   }
   pCVar4 = g_DebugWinFont;

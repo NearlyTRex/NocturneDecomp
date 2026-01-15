@@ -11,10 +11,6 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_pollHwHandle_FUN_005a7fe0(CSfxSlot *this
 {
   int iVar1;
   uint update_flags;
-  CSfxSample *pCStack0000000c;
-  uint uStack00000018;
-  int iStack00000020;
-  CSfxSample *pCStack00000024;
   
   if (this_ptr->hardware_buffer_handle == 0) {
     return;
@@ -32,10 +28,9 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_pollHwHandle_FUN_005a7fe0(CSfxSlot *this
   if (iVar1 == 0) {
     iVar1 = sound_sndmain_cpp_CSfxSample_getLoopMode_FUN_005a87d0(this_ptr->sample);
     if (iVar1 != 0) {
-      pCStack0000000c = this_ptr->sample;
-      sound_sndmain_cpp_logSoundError_FUN_005adba0("Killing looped sfx %s, which died??\n");
+      sound_sndmain_cpp_logSoundError_FUN_005adba0
+                ("Killing looped sfx %s, which died??\n",this_ptr->sample);
     }
-    pCStack0000000c = (CSfxSample *)0x5a8078;
     sound_sndmain_cpp_CSfxSlot_kill_FUN_005a7e60(this_ptr);
     return;
   }
@@ -60,11 +55,7 @@ LAB_005a809a:
   if (iVar1 != 0) {
     return;
   }
-  pCStack00000024 = this_ptr->sample;
-  iStack00000020 = this_ptr->hardware_buffer_handle;
-  uStack00000018 = 0x5a80c1;
   sound_sndmain_cpp_logSoundError_FUN_005adba0("Error setting hw sfx %d options (sample %s), killing.\n");
-  pCStack00000024 = (CSfxSample *)0x5a80ca;
   sound_sndmain_cpp_CSfxSlot_kill_FUN_005a7e60(this_ptr);
   return;
 }

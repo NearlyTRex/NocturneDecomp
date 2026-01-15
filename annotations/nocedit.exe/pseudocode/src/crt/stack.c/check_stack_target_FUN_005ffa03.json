@@ -1,20 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 19,
-    "complexity_score": 123,
+    "complexity_score": 92,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
-    "pseudocode_lines": 28,
-    "suspect_count": 7,
+    "pseudocode_lines": 27,
+    "suspect_count": 5,
     "suspect_types": [
-      "badspacebase",
       "param_count_too_many",
-      "register_param",
       "special_crt_function",
       "stack_ref"
     ],
-    "total_lines": 47
+    "total_lines": 46
   },
   "cross_references": [
     {
@@ -109,36 +107,22 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 10,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 10,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 12,
+      "line": 11,
       "match": "&stack0xfffffffc",
       "text": "if (target_stack_ptr < &stack0xfffffffc) {",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 13,
+      "line": 12,
       "match": "&stack0xfffffffc",
       "text": "iVar2 = (int)target_stack_ptr - (int)&stack0xfffffffc;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 24,
+      "line": 23,
       "match": "&stack0xfffffff0",
       "text": "*(int *)(&stack0xfffffff0 + iVar5) = iVar5;",
       "type": "stack_ref"

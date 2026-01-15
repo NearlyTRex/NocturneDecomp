@@ -10,7 +10,6 @@ int __cdecl shape_design_c_findClosestPolygonToMouse_FUN_00466250(void)
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   double dVar2;
   CVector3i local_104;
   SClipPlane local_f0 [5];

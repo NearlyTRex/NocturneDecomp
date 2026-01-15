@@ -126,7 +126,6 @@ void __cdecl core_fire_cpp_CFireEffect_process_FUN_004c6ec0(CFireEffect *this_pt
         core_fire_cpp_CGunFlame_initProcess_FUN_004c4b00(this_ptr_18);
         bVar1 = true;
       }
-      this_ptr_18 = this_ptr_11;
       core_fire_cpp_CGunFlame_process_FUN_004c4f60(this_ptr_11);
     }
     this_ptr_11 = this_ptr_11 + 1;

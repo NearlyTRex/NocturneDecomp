@@ -16,13 +16,12 @@ int __cdecl shape_superopt_cpp_CPoly_isValid_FUN_005d1ff0(CPoly *this_ptr)
   int iVar5;
   CVert *pCVar6;
   int iVar7;
-  BADSPACEBASE *in_ESP;
   double *pdVar8;
   ulonglong *puVar9;
   double *pdVar10;
   double local_e0;
   ulonglong local_c8;
-  ulonglong local_c0;
+  double local_c0;
   double local_b8;
   double local_b0;
   double local_a8;
@@ -61,11 +60,9 @@ int __cdecl shape_superopt_cpp_CPoly_isValid_FUN_005d1ff0(CPoly *this_ptr)
     pCVar1 = pCVar6 + this_ptr->vertex_idx_0;
     iVar7 = this_ptr->vertex_idx_1;
     dVar3 = pCVar6[iVar7].position.x - (pCVar1->position).x;
-    dVar4 = pCVar6[iVar7].position.y - (pCVar1->position).y;
     local_c8._0_4_ = SUB84 /* extract 2-byte value */(dVar3,0);
     local_c8._4_4_ = (uint)((ulonglong)dVar3 >> 0x20);
-    local_c0._0_4_ = SUB84 /* extract 2-byte value */(dVar4,0);
-    local_c0._4_4_ = (uint)((ulonglong)dVar4 >> 0x20);
+    local_c0 = pCVar6[iVar7].position.y - (pCVar1->position).y;
     local_b8 = pCVar6[iVar7].position.z - (pCVar1->position).z;
     puVar9 = &local_c8;
     pdVar8 = &local_80;
@@ -85,7 +82,6 @@ int __cdecl shape_superopt_cpp_CPoly_isValid_FUN_005d1ff0(CPoly *this_ptr)
     }
     if (local_e0 <= 0.99999998999999995) {
       local_c8 = dVar3;
-      local_c0 = dVar4;
       (*this_ptr->vtable->computeNormal)(this_ptr);
       dVar2 = (this_ptr->normal).y;
       dVar3 = (this_ptr->normal).x;

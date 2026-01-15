@@ -1,22 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 207,
+    "complexity_score": 104,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 7,
-    "pseudocode_lines": 22,
-    "suspect_count": 15,
+    "pseudocode_lines": 19,
+    "suspect_count": 7,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
-      "register_param",
-      "stack_param",
-      "stack_ref",
       "variadic_preserve"
     ],
-    "total_lines": 80
+    "total_lines": 77
   },
   "cross_references": [],
   "function": {
@@ -165,64 +161,8 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 8,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 8,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_0000000c",
-      "text": "uint in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000010",
-      "text": "CPackedBitmap *in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_0000000c",
-      "text": "(&stack0xffffff98,\"Unable to create PBM file %s\",in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 17,
-      "match": "&stack0xffffff98",
-      "text": "(&stack0xffffff98,\"Unable to create PBM file %s\",in_stack_0000000c);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 20,
-      "match": "&stack0xffffff9c",
-      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xffffff9c);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_00000010",
-      "text": "cockpit_pkbitmap_cpp_CPackedBitmap_writePBMFile_FUN_0054b5c0(in_stack_00000010,file_handle);",
-      "type": "stack_param"
-    },
-    {
       "call_address": "0054b589",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -236,7 +176,7 @@
     },
     {
       "call_address": "0054b5a7",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

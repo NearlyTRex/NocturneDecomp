@@ -1,20 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 25,
-    "complexity_score": 237,
+    "complexity_score": 168,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 7,
-    "pseudocode_lines": 112,
-    "suspect_count": 10,
+    "pseudocode_lines": 108,
+    "suspect_count": 5,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
-      "register_param",
-      "stack_param",
       "unaffected_reg"
     ],
-    "total_lines": 137
+    "total_lines": 133
   },
   "cross_references": [
     {
@@ -179,66 +176,31 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
+      "description": "Unaffected register variable",
       "line": 8,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 8,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
+      "match": "unaff_ESI",
+      "text": "uint unaff_ESI;",
+      "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
       "line": 10,
       "match": "unaff_EDI",
-      "text": "float unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_0000000c",
-      "text": "FILE *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_0000000c",
-      "text": "this_ptr->cameras[iVar2].projection_scale * (float)0.055555555555555601,in_stack_0000000c)",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 35,
-      "match": "unaff_EDI",
-      "text": "unaff_EDI = CStack_58.x;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 103,
-      "match": "in_stack_0000000c",
-      "text": "in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 106,
-      "match": "unaff_EDI",
-      "text": "unaff_EDI = CStack_58.x;",
+      "text": "uint unaff_EDI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 112,
+      "line": 108,
+      "match": "unaff_ESI",
+      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Hell froze\",unaff_ESI,unaff_EDI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 108,
       "match": "unaff_EDI",
-      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Hell froze\",unaff_EDI);",
+      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Hell froze\",unaff_ESI,unaff_EDI);",
       "type": "unaffected_reg"
     },
     {

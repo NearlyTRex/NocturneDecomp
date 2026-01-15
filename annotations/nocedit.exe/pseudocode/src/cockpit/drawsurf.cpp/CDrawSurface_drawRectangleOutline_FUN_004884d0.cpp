@@ -12,8 +12,8 @@ cockpit_drawsurf_cpp_CDrawSurface_drawRectangleOutline_FUN_004884d0
 
 {
   cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLine_FUN_00488110(this_ptr,x,y,width);
-  cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLine_FUN_00488110(this_ptr,y,height,width);
-  cockpit_drawsurf_cpp_CDrawSurface_drawVerticalLine_FUN_00488230(this_ptr,width,y,height);
+  cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLine_FUN_00488110(this_ptr,x,height,width);
+  cockpit_drawsurf_cpp_CDrawSurface_drawVerticalLine_FUN_00488230(this_ptr,x,y,height);
   cockpit_drawsurf_cpp_CDrawSurface_drawVerticalLine_FUN_00488230(this_ptr,width,y,height);
   return;
 }

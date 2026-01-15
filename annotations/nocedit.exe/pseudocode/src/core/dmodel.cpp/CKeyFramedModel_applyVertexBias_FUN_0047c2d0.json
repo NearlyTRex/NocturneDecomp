@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 57,
-    "complexity_score": 121,
+    "complexity_score": 95,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
-    "pseudocode_lines": 26,
-    "suspect_count": 8,
+    "pseudocode_lines": 25,
+    "suspect_count": 6,
     "suspect_types": [
       "call_esp_preserve",
-      "extra_output",
-      "stack_param"
+      "extra_output"
     ],
-    "total_lines": 83
+    "total_lines": 82
   },
   "cross_references": [
     {
@@ -177,29 +176,15 @@
       "type": "extra_output"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_0000000c",
-      "text": "int in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_0000000c",
-      "text": "((double)(this_ptr->frame_bounds[in_stack_0000000c * 2].y *",
-      "type": "stack_param"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 20,
+      "line": 19,
       "match": "extraout_EDX",
       "text": "iVar2 = extraout_EDX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 21,
+      "line": 20,
       "match": "extraout_ECX",
       "text": "for (iVar1 = extraout_ECX; iVar1 < model_ptr->frame_count * model_ptr->vertex_count;",
       "type": "extra_output"

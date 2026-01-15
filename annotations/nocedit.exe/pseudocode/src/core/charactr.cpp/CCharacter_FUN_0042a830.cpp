@@ -22,7 +22,6 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042a830(CCharacter *this_ptr)
   uint uVar8;
   int iVar9;
   CCharacter *pCVar10;
-  BADSPACEBASE *in_ESP;
   char *pcVar11;
   char *pcVar12;
   float in_stack_00000008;

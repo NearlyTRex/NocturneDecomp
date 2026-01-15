@@ -11,7 +11,6 @@ int __cdecl sound_sndmain_cpp_startRecording_FUN_005aba90(void)
 {
   int iVar1;
   DWORD DVar2;
-  uint uStack0000000c;
   
   iVar1 = sound_sndmain_cpp_isRecordingSystemActive_FUN_005ab970();
   if (iVar1 == 0) {
@@ -29,7 +28,6 @@ int __cdecl sound_sndmain_cpp_startRecording_FUN_005aba90(void)
     DVar2 = (*g_RecordingDeviceInterface->vtable->AddRef)((IUnknown *)g_RecordingDeviceInterface);
     if (DVar2 != 0) {
       isRecordingStarted = 1;
-      uStack0000000c = 0x5abaff;
       sound_sndmain_cpp_unlockSound_FUN_005abdc0();
       return 1;
     }

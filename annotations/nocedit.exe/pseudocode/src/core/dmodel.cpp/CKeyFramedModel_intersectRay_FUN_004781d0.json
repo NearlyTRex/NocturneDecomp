@@ -1,19 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 363,
-    "complexity_score": 223,
+    "complexity_score": 147,
     "cross_reference_count": 2,
     "function_call_count": 6,
     "global_count": 1,
-    "pseudocode_lines": 133,
-    "suspect_count": 7,
+    "pseudocode_lines": 132,
+    "suspect_count": 1,
     "suspect_types": [
-      "badspacebase",
-      "param_count_too_many",
-      "register_param",
-      "unknown_field"
+      "param_count_too_many"
     ],
-    "total_lines": 496
+    "total_lines": 495
   },
   "cross_references": [
     {
@@ -608,48 +605,6 @@
     "severity": "medium"
   },
   "suspects": [
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 13,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 13,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 61,
-      "match": "._0_4_",
-      "text": "local_58._0_4_ = (float)pCVar2->x * 0.00390625f;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 62,
-      "match": "._4_4_",
-      "text": "local_58._4_4_ = (float)pCVar2->y * 0.00390625f;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 75,
-      "match": "._0_4_",
-      "text": "local_58._0_4_ = local_40.x;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 76,
-      "match": "._4_4_",
-      "text": "local_58._4_4_ = local_40.y;",
-      "type": "unknown_field"
-    },
     {
       "call_site_count": 2,
       "declared_params": 5,

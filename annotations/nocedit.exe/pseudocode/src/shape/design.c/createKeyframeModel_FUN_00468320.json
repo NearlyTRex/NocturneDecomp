@@ -1,17 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 286,
-    "complexity_score": 144,
+    "complexity_score": 140,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 14,
-    "pseudocode_lines": 114,
+    "pseudocode_lines": 115,
     "suspect_count": 2,
     "suspect_types": [
-      "badspacebase",
-      "register_param"
+      "stack_param"
     ],
-    "total_lines": 400
+    "total_lines": 401
   },
   "cross_references": [
     {
@@ -606,18 +605,18 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 10,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_fffffd94",
+      "text": "ulonglong in_stack_fffffd94;",
+      "type": "stack_param"
     },
     {
-      "description": "Inferred register parameter",
-      "line": 10,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
+      "description": "Unresolved stack parameter",
+      "line": 51,
+      "match": "in_stack_fffffd94",
+      "text": "for (local_18 = 0; pcVar5 = (char *)in_stack_fffffd94, local_18 < local_264.header.child_count",
+      "type": "stack_param"
     }
   ]
 }

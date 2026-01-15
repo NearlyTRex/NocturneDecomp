@@ -19,7 +19,6 @@ shape_meshlod_cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910(CLodMesh *this_p
   int iVar7;
   CLodVert *pCVar8;
   CVector3f *pCVar9;
-  BADSPACEBASE *in_ESP;
   int iVar10;
   CLodFace *pCVar11;
   float *pfVar12;
@@ -45,7 +44,8 @@ shape_meshlod_cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910(CLodMesh *this_p
   float local_9c;
   float local_98;
   CVector3f CStack_94;
-  ulonglong local_84;
+  double dStack_88;
+  int local_80;
   int local_7c;
   CVector3f *local_78;
   CVector3f *local_74;
@@ -83,7 +83,7 @@ shape_meshlod_cpp_CLodMesh_computeEdgeCollapseCost_FUN_00518910(CLodMesh *this_p
   if (iVar3 == edge_index) {
     iVar3 = shape_meshlod_cpp_CLodMesh_checkEdgeCollapseAngle_FUN_00519480
                       (this_ptr,edge_index,local_54->vertex_idx_1);
-    local_84 = (double)CONCAT44 /* combine 2-byte values */(iVar3,(uint)local_84);
+    local_80 = iVar3;
     local_7c = shape_meshlod_cpp_CLodMesh_checkEdgeCollapseAngle_FUN_00519480
                          (this_ptr,edge_index,local_54->vertex_idx_2);
     if ((iVar3 == 0) || (local_7c == 0)) {
@@ -207,7 +207,7 @@ LAB_0051919d:
       local_74 = g_SamplePointArray + 1;
       do {
         if ((g_LodReplayMode != 0) ||
-           (((local_60 == 0 || (local_84._4_4_ == 0)) && ((local_60 == 4 || (local_7c == 0)))))) {
+           (((local_60 == 0 || (local_80 == 0)) && ((local_60 == 4 || (local_7c == 0)))))) {
           iStack_14 = local_60;
           iVar10 = local_54->vertex_idx_2;
           local_64 = (float)local_60 * 0.25f;
@@ -344,13 +344,13 @@ LAB_0051919d:
                     if (0 < iVar3) {
                       pCVar11 = g_TempNeighborFaces;
                       do {
-                        local_84 = shape_meshlod_cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400
-                                             (local_30,(SLodSamplePoint *)pCVar11,
-                                              SUB84 /* extract 2-byte value */(in_stack_fffffedc,0));
-                        if (local_84 < (double)CONCAT44 /* combine 2-byte values */(local_110,uStack_114)) {
-                          uStack_104 = SUB84 /* extract 2-byte value */(local_84,0);
+                        dStack_88 = shape_meshlod_cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400
+                                              (local_30,(SLodSamplePoint *)pCVar11,
+                                               SUB84 /* extract 2-byte value */(in_stack_fffffedc,0));
+                        if (dStack_88 < (double)CONCAT44 /* combine 2-byte values */(local_110,uStack_114)) {
+                          uStack_104 = SUB84 /* extract 2-byte value */(dStack_88,0);
                           uStack_114 = uStack_104;
-                          local_100 = (uint)((ulonglong)local_84 >> 0x20);
+                          local_100 = (uint)((ulonglong)dStack_88 >> 0x20);
                           local_110 = local_100;
                         }
                         iVar10 = iVar10 + 1;

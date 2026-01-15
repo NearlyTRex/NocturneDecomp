@@ -11,25 +11,22 @@
 
 void core_chain_cpp_CChain_addFilesToExtractList_FUN_00431250
                (uint param_1,uint param_2,uint unaff_EBX,uint param_4,
-               int param_5,uint param_6,FILE *param_7,uint param_8,uint param_9,
-               FILE *param_10)
+               int param_5,FILE *param_6)
 
 {
   char cVar1;
   int iVar2;
-  BADSPACEBASE *in_ESP;
   char *pcVar3;
   char *pcVar4;
-  uint uStack_fc;
-  byte auStack_f4 [240];
+  char local_104 [256];
   
   pcVar3 = (char *)(param_5 + 0x174);
   iVar2 = crt_string_c_stricmp_FUN_005fe7f0(pcVar3,"CHAINLINK.RAW");
   if (iVar2 == 0) {
     return;
   }
-  crt_stdio_c_fprintf_FUN_005fe6d0(param_7,"ART\\%s\n",pcVar3);
-  pcVar4 = (char *)&uStack_fc;
+  crt_stdio_c_fprintf_FUN_005fe6d0(param_6,"ART\\%s\n",pcVar3);
+  pcVar4 = local_104;
   do {
     cVar1 = *pcVar3;
     *pcVar4 = cVar1;
@@ -39,7 +36,7 @@ void core_chain_cpp_CChain_addFilesToExtractList_FUN_00431250
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  pcVar3 = (char *)&uStack_fc;
+  pcVar3 = local_104;
   do {
     pcVar4 = pcVar3;
     if (*pcVar3 == '.') goto LAB_004312d1;
@@ -56,7 +53,6 @@ LAB_004312d1:
     core_main_c_displayErrorAndQuit_FUN_00506f10("CChain::addFilesToExtractList - invalid texture",unaff_EBX);
   }
   crt_stdio_c_sprintf_FUN_005fdbd0(pcVar4,".ACT");
-  uStack_fc = auStack_f4;
-  crt_stdio_c_fprintf_FUN_005fe6d0(param_10,"ART\\%s\n");
+  crt_stdio_c_fprintf_FUN_005fe6d0(param_6,"ART\\%s\n",local_104);
   return;
 }

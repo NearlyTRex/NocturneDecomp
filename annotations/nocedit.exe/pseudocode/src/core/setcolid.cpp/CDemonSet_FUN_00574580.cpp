@@ -10,21 +10,16 @@ int __cdecl core_setcolid_cpp_CDemonSet_FUN_00574580(CDemonSet *this_ptr)
 
 {
   CDemonActor *this_ptr_00;
-  float unaff_EBX;
-  BADSPACEBASE *in_ESP;
   float unaff_EBP;
-  float unaff_ESI;
   int iVar1;
   float unaff_EDI;
   CDemonSet *pCVar2;
-  float unaff_retaddr;
-  float in_stack_00000008;
-  CVector3f *in_stack_0000000c;
-  CBoundingBox3D CStack_2c;
-  float fStack_14;
+  CVector3f *in_stack_00000008;
+  CBoundingBox3D CStack_34;
+  CVector3f local_1c;
   
   if ((ABS(g_CWaterPtr->water_level_y) == 0.0) ||
-     (g_CWaterPtr->water_level_y <= *(float *)((int)in_stack_00000008 + 4))) {
+     (g_CWaterPtr->water_level_y <= in_stack_00000008->y)) {
     iVar1 = 0;
     pCVar2 = this_ptr;
     if (0 < (int)this_ptr->actor_list_ptr) {
@@ -34,13 +29,13 @@ int __cdecl core_setcolid_cpp_CDemonSet_FUN_00574580(CDemonSet *this_ptr)
                                  g_CWaterActorClassInfo.name_hash);
         if (this_ptr_00 != (CDemonActor *)0x0) {
           core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                    (this_ptr_00,(CVector3f *)&CStack_2c.max.z,in_stack_0000000c);
-          (*this_ptr_00->vtable->getBoundingBox)(this_ptr_00,&CStack_2c);
-          fStack_14 = fStack_14 + -10f;
-          if ((((CStack_2c.max.z <= unaff_retaddr) && (fStack_14 <= (float)this_ptr)) &&
-              (unaff_EBP <= in_stack_00000008)) &&
-             (((unaff_retaddr <= unaff_EDI && ((float)this_ptr <= unaff_ESI)) &&
-              (in_stack_00000008 <= unaff_EBX)))) {
+                    (this_ptr_00,&local_1c,in_stack_00000008);
+          (*this_ptr_00->vtable->getBoundingBox)(this_ptr_00,&CStack_34);
+          CStack_34.max.x = CStack_34.max.x + -10f;
+          if ((((CStack_34.min.z <= local_1c.z) && (CStack_34.max.x <= unaff_EBP)) &&
+              (CStack_34.max.y <= unaff_EDI)) &&
+             (((local_1c.z <= CStack_34.max.z && (unaff_EBP <= local_1c.x)) &&
+              (unaff_EDI <= local_1c.y)))) {
             return 1;
           }
         }

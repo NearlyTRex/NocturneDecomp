@@ -10,16 +10,15 @@ int __cdecl support_trisock_cpp_bindSocket_FUN_005e1b80(uint16_t port,SOCKET *so
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
-  SOCKET *in_stack_0000000c;
-  ushort uStack_6;
-  char acStack_4 [4];
+  ushort in_stack_00000006;
+  SOCKADDR local_10;
   
-  uStack_6 = crt_wsock32_c_htons((ushort)socket_handle);
-  acStack_4[0] = '\0';
-  acStack_4[1] = '\0';
-  acStack_4[2] = '\0';
-  acStack_4[3] = '\0';
-  iVar1 = crt_wsock32_c_bind(*in_stack_0000000c,(SOCKADDR *)&stack0xfffffff8,0x10);
+  local_10.sa_family = 2;
+  local_10.sa_data._0_2_ = crt_wsock32_c_htons((ushort)socket_handle);
+  local_10.sa_data[2] = '\0';
+  local_10.sa_data[3] = '\0';
+  local_10.sa_data[4] = '\0';
+  local_10.sa_data[5] = '\0';
+  iVar1 = crt_wsock32_c_bind(*_port,&local_10,0x10);
   return (uint)(iVar1 == 0);
 }

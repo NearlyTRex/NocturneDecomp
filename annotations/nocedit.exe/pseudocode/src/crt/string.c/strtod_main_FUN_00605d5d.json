@@ -1,22 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 107,
-    "complexity_score": 336,
+    "complexity_score": 305,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 2,
-    "pseudocode_lines": 71,
-    "suspect_count": 23,
+    "pseudocode_lines": 70,
+    "suspect_count": 21,
     "suspect_types": [
-      "badspacebase",
       "concat_artifact",
       "param_count_too_few",
-      "register_param",
       "special_crt_function",
       "stack_param",
       "unknown_field"
     ],
-    "total_lines": 178
+    "total_lines": 177
   },
   "cross_references": [
     {
@@ -212,148 +210,134 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 11,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 11,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 11,
       "match": "in_stack_00000004",
       "text": "char *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 20,
       "match": "in_stack_00000004",
       "text": "iVar4 = crt_string_c_parseFloatString_FUN_00605b9b(in_stack_00000004,&local_34,(char **)str);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 26,
+      "line": 25,
       "match": "CONCAT44",
       "text": "local_28 = (double)CONCAT44 /* combine 2-byte values */(uVar5,uVar1);",
       "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 29,
+      "line": 28,
       "match": "CONCAT11",
       "text": "uVar6 = (uint)(CONCAT11 /* combine 2-byte values */(bStack_2b,uStack_2c) & 0x7fff);",
       "type": "concat_artifact"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 35,
+      "line": 34,
       "match": "._4_4_",
       "text": "uVar5 = inf._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 36,
+      "line": 35,
       "match": "._0_4_",
       "text": "uVar1 = inf._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 38,
+      "line": 37,
       "match": "._4_4_",
       "text": "return -(double)CONCAT44 /* combine 2-byte values */(inf._4_4_,inf._0_4_);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 38,
+      "line": 37,
       "match": "._0_4_",
       "text": "return -(double)CONCAT44 /* combine 2-byte values */(inf._4_4_,inf._0_4_);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 38,
+      "line": 37,
       "match": "CONCAT44",
       "text": "return -(double)CONCAT44 /* combine 2-byte values */(inf._4_4_,inf._0_4_);",
       "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 50,
+      "line": 49,
       "match": "CONCAT19",
       "text": "local_28 = (double)(float10)CONCAT19 /* combine 2-byte values */(bStack_2b,CONCAT18 /* combine 2-byte values */(uStack_2c,local_34));",
       "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 50,
+      "line": 49,
       "match": "CONCAT18",
       "text": "local_28 = (double)(float10)CONCAT19 /* combine 2-byte values */(bStack_2b,CONCAT18 /* combine 2-byte values */(uStack_2c,local_34));",
       "type": "concat_artifact"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 51,
+      "line": 50,
       "match": "._4_4_",
       "text": "dVar2 = (double)CONCAT44 /* combine 2-byte values */(local_18._4_4_,(uint)local_18);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 51,
+      "line": 50,
       "match": "CONCAT44",
       "text": "dVar2 = (double)CONCAT44 /* combine 2-byte values */(local_18._4_4_,(uint)local_18);",
       "type": "concat_artifact"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 54,
+      "line": 53,
       "match": "._4_4_",
       "text": "(local_20 = local_28, local_18 = (double)CONCAT44 /* combine 2-byte values */(local_18._4_4_,(uint)local_18),",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 54,
+      "line": 53,
       "match": "CONCAT44",
       "text": "(local_20 = local_28, local_18 = (double)CONCAT44 /* combine 2-byte values */(local_18._4_4_,(uint)local_18),",
       "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 58,
+      "line": 57,
       "match": "CONCAT19",
       "text": "local_28 = (double)(float10)CONCAT19 /* combine 2-byte values */(bStack_2b,CONCAT18 /* combine 2-byte values */(uStack_2c,local_34));",
       "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 58,
+      "line": 57,
       "match": "CONCAT18",
       "text": "local_28 = (double)(float10)CONCAT19 /* combine 2-byte values */(bStack_2b,CONCAT18 /* combine 2-byte values */(uStack_2c,local_34));",
       "type": "concat_artifact"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 60,
+      "line": 59,
       "match": "._4_4_",
       "text": "dVar3 = (double)CONCAT44 /* combine 2-byte values */(local_20._4_4_,(uint)local_20);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 60,
+      "line": 59,
       "match": "CONCAT44",
       "text": "dVar3 = (double)CONCAT44 /* combine 2-byte values */(local_20._4_4_,(uint)local_20);",
       "type": "concat_artifact"

@@ -12,7 +12,6 @@
 uint core_lever_cpp_FUN_00505080(void)
 
 {
-  BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000004;
   CVector3f *in_stack_00000008;
   CVector3f CStack_1c;

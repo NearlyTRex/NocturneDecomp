@@ -12,12 +12,12 @@ void __cdecl core_set_cpp_CDemonSet_initScene_FUN_0056aa10(CDemonSet *this_ptr)
   char *text;
   CDemonLight *pCVar1;
   int iVar2;
-  int iVar3;
-  CDemonSet *pCVar4;
-  int in_stack_ffffffec;
+  CDemonSet *pCVar3;
+  int iVar4;
   
+  iVar4 = 0;
   text = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Initializing scene");
-  core_level_cpp_CLevelLoader_update_FUN_00504160(g_CLevelLoaderPtr,text,in_stack_ffffffec);
+  core_level_cpp_CLevelLoader_update_FUN_00504160(g_CLevelLoaderPtr,text,iVar4);
   core_dlight_cpp_resetRestoreMemoryAllocator_FUN_004729c0();
   core_dfilter_cpp_CFilterCache_free_FUN_00470000(g_CFilterCachePtr);
   g_DynamicLightCount = 0;
@@ -45,26 +45,26 @@ void __cdecl core_set_cpp_CDemonSet_initScene_FUN_0056aa10(CDemonSet *this_ptr)
        *(uint *)(this_ptr->field19_0x14f0a0 + 0xbbac);
   *(uint *)(this_ptr->field19_0x14f0a0 + 0xbbd4) =
        *(uint *)(this_ptr->field19_0x14f0a0 + 0xbbb0);
-  iVar3 = 0;
+  iVar4 = 0;
   core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_004528e0
             (&g_CDemonCameraInstance,this_ptr->min_ambient_value);
   do {
-    if (*(int *)((int)g_MasterLightList + iVar3) != 0) {
+    if (*(int *)((int)g_MasterLightList + iVar4) != 0) {
       g_CurrentFilename = "..\\core\\set.cpp";
       g_CurrentLineNumber = 899;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonSet::initScene - Memory leakage detected in masterSpotList");
     }
-    iVar3 = iVar3 + 4;
-  } while (iVar3 != 0x180);
-  iVar3 = 0;
+    iVar4 = iVar4 + 4;
+  } while (iVar4 != 0x180);
+  iVar4 = 0;
   g_MasterLightCount = 0;
-  pCVar4 = this_ptr;
+  pCVar3 = this_ptr;
   if (0 < this_ptr->light_count) {
     do {
-      if (pCVar4->lights[0].light_type == 0) {
-        pCVar1 = core_setutil_cpp_C3DSLight_create_FUN_00586a90(this_ptr->lights + iVar3);
+      if (pCVar3->lights[0].light_type == 0) {
+        pCVar1 = core_setutil_cpp_C3DSLight_create_FUN_00586a90(this_ptr->lights + iVar4);
         g_MasterLightList[g_MasterLightCount] = pCVar1;
-        core_setutil_cpp_C3DSLight_apply_FUN_00586bf0(this_ptr->lights + iVar3,pCVar1);
+        core_setutil_cpp_C3DSLight_apply_FUN_00586bf0(this_ptr->lights + iVar4,pCVar1);
         g_MasterLightCount = g_MasterLightCount + 1;
         if (0x60 < g_MasterLightCount) {
           g_CurrentFilename = "..\\core\\set.cpp";
@@ -72,11 +72,11 @@ void __cdecl core_set_cpp_CDemonSet_initScene_FUN_0056aa10(CDemonSet *this_ptr)
           core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonSet::initScene - Too many spotlights!");
         }
       }
-      iVar3 = iVar3 + 1;
-      pCVar4 = (CDemonSet *)&pCVar4->cameras[0xe].field16_0x19c;
-    } while (iVar3 < this_ptr->light_count);
+      iVar4 = iVar4 + 1;
+      pCVar3 = (CDemonSet *)&pCVar3->cameras[0xe].field16_0x19c;
+    } while (iVar4 < this_ptr->light_count);
   }
-  iVar3 = 0;
+  iVar4 = 0;
   if (0 < g_MasterLightCount) {
     iVar2 = 0;
     do {
@@ -85,9 +85,9 @@ void __cdecl core_set_cpp_CDemonSet_initScene_FUN_0056aa10(CDemonSet *this_ptr)
       core_dlight_cpp_CDemonLight_clearCircularShadowMapEdges_FUN_004735c0(pCVar1);
       core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(this_ptr,9999.9,0);
       iVar2 = iVar2 + 4;
-      iVar3 = iVar3 + 1;
+      iVar4 = iVar4 + 1;
       core_dlight_cpp_CDemonLight_endScene_FUN_00472d30(pCVar1);
-    } while (iVar3 < g_MasterLightCount);
+    } while (iVar4 < g_MasterLightCount);
   }
   this_ptr->selected_camera_index = -1;
   this_ptr->previous_best_camera_index = -1;
@@ -98,16 +98,16 @@ void __cdecl core_set_cpp_CDemonSet_initScene_FUN_0056aa10(CDemonSet *this_ptr)
   DAT_0327785c = 0;
   this_ptr->previous_best_camera_timer = 0.0;
   core_setdir_cpp_CDemonSet_FUN_00576710(this_ptr);
-  iVar3 = this_ptr->camera_count;
-  pCVar4 = this_ptr;
-  if (0 < iVar3) {
+  iVar4 = this_ptr->camera_count;
+  pCVar3 = this_ptr;
+  if (0 < iVar4) {
     do {
       iVar2 = iVar2 + 1;
-      iVar3 = core_setdir_cpp_CDemonSet_FUN_00576870(this_ptr);
-      pCVar4->cameras[0].field16_0x19c = iVar3;
-      pCVar4 = (CDemonSet *)&pCVar4->cameras[0].field17_0x1a0;
+      iVar4 = core_setdir_cpp_CDemonSet_FUN_00576870(this_ptr);
+      pCVar3->cameras[0].field16_0x19c = iVar4;
+      pCVar3 = (CDemonSet *)&pCVar3->cameras[0].field17_0x1a0;
     } while (iVar2 < this_ptr->camera_count);
   }
-  core_weather_cpp_CWeather_FUN_005ef8c0(iVar3);
+  core_weather_cpp_CWeather_FUN_005ef8c0(iVar4);
   return;
 }

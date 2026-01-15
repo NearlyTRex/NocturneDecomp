@@ -17,8 +17,8 @@ void core_netgame_cpp_CNetGame_processChatOut_FUN_00541e40(void)
   uint *puVar6;
   uint *puVar7;
   int in_stack_00000004;
+  char *in_stack_00000008;
   int in_stack_0000000c;
-  char *in_stack_00000018;
   
   if (0x31 < DAT_02f98ad0) {
     g_CurrentFilename = "..\\core\\netgame.cpp";
@@ -63,7 +63,7 @@ void core_netgame_cpp_CNetGame_processChatOut_FUN_00541e40(void)
   }
   *(byte *)(*(int *)(in_stack_00000004 + 0x114) + 8 + (int)puVar7) = 1;
   crt_memory_c_memset_FUN_005fde40(&DAT_02f98ae8 + iVar1,0,0x100);
-  crt_string_c_strncpy_FUN_00600f40(&DAT_02f98ae8 + iVar1,in_stack_00000018,0xff);
+  crt_string_c_strncpy_FUN_00600f40(&DAT_02f98ae8 + iVar1,in_stack_00000008,0xff);
   core_netgame_cpp_CNetGame_FUN_00542370();
   return;
 }

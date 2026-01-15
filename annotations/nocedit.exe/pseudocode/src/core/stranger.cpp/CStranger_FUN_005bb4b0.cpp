@@ -17,7 +17,8 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005bb4b0(CStranger *this_ptr)
   int motion_index;
   CVector3f *pCVar2;
   CDeformableModel *this_ptr_02;
-  BADSPACEBASE *in_ESP;
+  CVector3f local_24;
+  CVector3f local_18;
   
   core_hero_cpp_CHero_FUN_004f2540(&this_ptr->base_hero);
   this_ptr_00 = &(this_ptr->base_hero).base_character.model;
@@ -76,15 +77,14 @@ void __cdecl core_stranger_cpp_CStranger_FUN_005bb4b0(CStranger *this_ptr)
   core_skeleton_cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_0059e070
             (this_ptr_00,motion_index,22.0);
   pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
-                     (this_ptr_00,(CVector3f *)&stack0x0000005c,DAT_03f6bb04);
+                     (this_ptr_00,&local_18,DAT_03f6bb04);
   if ((CVector3f *)(this_ptr->field4_0x1fc3c + 0x80) != pCVar2) {
     ((CVector3f *)(this_ptr->field4_0x1fc3c + 0x80))->x = pCVar2->x;
     *(float *)(this_ptr->field4_0x1fc3c + 0x84) = pCVar2->y;
     *(float *)(this_ptr->field4_0x1fc3c + 0x88) = pCVar2->z;
   }
   pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getBoneWorldPosition_FUN_0059fa20
-                     (&(this_ptr->base_hero).base_character.model,(CVector3f *)&stack0x00000054,
-                      DAT_03f6badc);
+                     (&(this_ptr->base_hero).base_character.model,&local_24,DAT_03f6badc);
   if ((CVector3f *)(this_ptr->field4_0x1fc3c + 0x8c) != pCVar2) {
     ((CVector3f *)(this_ptr->field4_0x1fc3c + 0x8c))->x = pCVar2->x;
     *(float *)(this_ptr->field4_0x1fc3c + 0x90) = pCVar2->y;

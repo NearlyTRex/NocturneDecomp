@@ -11,66 +11,64 @@ void core_skeledit_cpp_FUN_0058a2b0(void)
 {
   char cVar1;
   char *pcVar2;
-  BADSPACEBASE *in_ESP;
-  int iVar3;
-  char *pcVar4;
+  char *pcVar3;
+  int iVar4;
   char *pcVar5;
   char *pcVar6;
-  int in_stack_0000000c;
-  FILE *in_stack_00000010;
-  FILE *in_stack_00000014;
-  FILE *in_stack_00000018;
-  uint uStack_20;
-  byte auStack_1c [16];
-  int iStack_c;
-  ushort *puVar7;
+  int in_stack_00000004;
+  FILE *in_stack_00000008;
+  char local_2c [20];
+  int local_18;
+  int local_14;
   
   crt_stack_c_stack_probe_FUN_005ff9f3(0x3c);
-  crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000010,"DATA\\%s\n",in_stack_0000000c + 0x8f5c);
-  iStack_c = 0;
-  if (0 < in_stack_00000010[6]._handle) {
-    puVar7 = &in_stack_00000010[6]._ungotten;
+  crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"DATA\\%s\n",in_stack_00000004 + 0x8f5c);
+  local_18 = 0;
+  if (0 < *(int *)(in_stack_00000004 + 0xb8)) {
+    local_14 = in_stack_00000004 + 0xc0;
     do {
-      iVar3 = 0;
-      if (0 < (int)in_stack_00000010[6]._bufsize) {
-        pcVar2 = (char *)(puVar7 + 4);
+      iVar4 = 0;
+      if (0 < *(int *)(in_stack_00000004 + 0xbc)) {
+        pcVar2 = (char *)(local_14 + 8);
+        pcVar6 = local_2c;
+        pcVar3 = pcVar2;
+LAB_0058a322:
         do {
-          pcVar6 = (char *)&uStack_20;
-          pcVar4 = pcVar2;
-          do {
-            cVar1 = *pcVar4;
-            *pcVar6 = cVar1;
-            pcVar5 = (char *)&uStack_20;
-            if (cVar1 == '\0') break;
-            cVar1 = pcVar4[1];
-            pcVar4 = pcVar4 + 2;
+          cVar1 = *pcVar2;
+          *pcVar6 = cVar1;
+          pcVar5 = local_2c;
+          if (cVar1 != '\0') {
+            cVar1 = pcVar2[1];
+            pcVar2 = pcVar2 + 2;
             pcVar6[1] = cVar1;
+            pcVar5 = local_2c;
             pcVar6 = pcVar6 + 2;
-            pcVar5 = (char *)&uStack_20;
-          } while (cVar1 != '\0');
+            if (cVar1 != '\0') goto LAB_0058a322;
+          }
           do {
-            pcVar4 = pcVar5;
+            pcVar6 = pcVar5;
             if (*pcVar5 == '.') goto LAB_0058a355;
             if (*pcVar5 == '\0') break;
-            pcVar4 = pcVar5 + 1;
-            if (*pcVar4 == '.') goto LAB_0058a355;
+            pcVar6 = pcVar5 + 1;
+            if (*pcVar6 == '.') goto LAB_0058a355;
             pcVar5 = pcVar5 + 2;
-          } while (*pcVar4 != '\0');
-          pcVar4 = (char *)0x0;
+          } while (*pcVar6 != '\0');
+          pcVar6 = (char *)0x0;
 LAB_0058a355:
-          if (pcVar4 != (char *)0x0) {
-            *pcVar4 = '\0';
+          if (pcVar6 != (char *)0x0) {
+            *pcVar6 = '\0';
           }
-          crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000014,"ART\\%s.RAW\n",&uStack_20);
-          uStack_20 = auStack_1c;
-          crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000018,"ART\\%s.ACT\n");
-          iVar3 = iVar3 + 1;
-          pcVar2 = pcVar2 + 0x48;
-        } while (iVar3 < (int)in_stack_00000018[6]._bufsize);
+          crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"ART\\%s.RAW\n",local_2c);
+          crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,"ART\\%s.ACT\n",local_2c);
+          iVar4 = iVar4 + 1;
+          pcVar2 = pcVar3 + 0x48;
+          pcVar6 = local_2c;
+          pcVar3 = pcVar2;
+        } while (iVar4 < *(int *)(in_stack_00000004 + 0xbc));
       }
-      puVar7 = puVar7 + 0xb40;
-      iStack_c = iStack_c + 1;
-    } while (iStack_c < in_stack_00000010[6]._handle);
+      local_18 = local_18 + 1;
+      local_14 = local_14 + 0x1680;
+    } while (local_18 < *(int *)(in_stack_00000004 + 0xb8));
   }
   return;
 }

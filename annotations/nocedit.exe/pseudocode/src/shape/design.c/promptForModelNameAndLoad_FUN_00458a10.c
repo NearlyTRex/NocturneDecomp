@@ -12,17 +12,16 @@ int __cdecl shape_design_c_promptForModelNameAndLoad_FUN_00458a10(void)
   char cVar1;
   int iVar2;
   uint uVar3;
-  BADSPACEBASE *in_ESP;
   char *pcVar4;
   char *pcVar5;
   char *pcVar6;
   byte bVar7;
+  char local_64 [84];
   
   bVar7 = 0;
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
-  engine_2d_c_getInputWithPrompt_FUN_004032c0
-            (&stack0xffffff9c,0x28,0,0,"Model name to load : ");
-  pcVar5 = &stack0xffffff9c;
+  engine_2d_c_getInputWithPrompt_FUN_004032c0(local_64,0x28,0,0,"Model name to load : ");
+  pcVar5 = local_64;
   do {
     pcVar4 = pcVar5;
     if (*pcVar5 == '.') goto LAB_00458a59;
@@ -35,7 +34,7 @@ int __cdecl shape_design_c_promptForModelNameAndLoad_FUN_00458a10(void)
 LAB_00458a59:
   if (pcVar4 == (char *)0x0) {
     uVar3 = 0xffffffff;
-    pcVar5 = &stack0xffffff9c;
+    pcVar5 = local_64;
     do {
       if (uVar3 == 0) break;
       uVar3 = uVar3 - 1;
@@ -45,7 +44,7 @@ LAB_00458a59:
     if (~uVar3 - 1 < 9) {
       pcVar4 = ".MDL";
       iVar2 = -1;
-      pcVar5 = &stack0xffffff9c;
+      pcVar5 = local_64;
       do {
         pcVar6 = pcVar5;
         if (iVar2 == 0) break;
@@ -66,6 +65,6 @@ LAB_00458a59:
       } while (cVar1 != '\0');
     }
   }
-  iVar2 = shape_design_c_loadModelFile_FUN_00458ac0(&stack0xffffff9c);
+  iVar2 = shape_design_c_loadModelFile_FUN_00458ac0(local_64);
   return iVar2;
 }

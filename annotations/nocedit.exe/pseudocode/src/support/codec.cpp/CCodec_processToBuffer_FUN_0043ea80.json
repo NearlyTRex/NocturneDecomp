@@ -1,22 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 65,
-    "complexity_score": 236,
+    "complexity_score": 187,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 0,
-    "pseudocode_lines": 21,
-    "suspect_count": 18,
+    "pseudocode_lines": 22,
+    "suspect_count": 14,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "callind_preserve",
       "lea_esp_stack_addr",
-      "register_param",
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 86
+    "total_lines": 87
   },
   "cross_references": [],
   "function": {
@@ -167,24 +165,10 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 10,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 10,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000040",
-      "text": "int in_stack_00000040;",
+      "line": 10,
+      "match": "in_stack_00000028",
+      "text": "int in_stack_00000028;",
       "type": "stack_param"
     },
     {
@@ -197,29 +181,15 @@
     {
       "description": "Unresolved stack parameter",
       "line": 17,
-      "match": "in_stack_00000040",
-      "text": "if ((iVar1 != 0) && (in_stack_00000040 != 0)) {",
+      "match": "in_stack_00000028",
+      "text": "if ((iVar1 != 0) && (in_stack_00000028 != 0)) {",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 18,
-      "match": "&stack0xffffffe0",
-      "text": "iVar1 = (*this_ptr->vtable->finalize)(this_ptr,(FILE *)&stack0xffffffe0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 20,
-      "match": "&stack0xfffffff4",
-      "text": "iVar2 = crt_strstream_cpp_ostrstream_tellp_FUN_005ff45d((ostrstream *)&stack0xfffffff4);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 22,
-      "match": "&stack0xffffffb0",
-      "text": "crt_strstream_cpp_ostrstream_dtor_FUN_005ff48a((ostrstream *)&stack0xffffffb0,0);",
+      "line": 23,
+      "match": "&stack0xffffff88",
+      "text": "crt_strstream_cpp_ostrstream_dtor_FUN_005ff48a((ostrstream *)&stack0xffffff88,0);",
       "type": "stack_ref"
     },
     {

@@ -10,7 +10,6 @@ void __cdecl core_setcolid_cpp_CDemonSet_FUN_00574440(CDemonSet *this_ptr)
 
 {
   CVector3f *pCVar1;
-  BADSPACEBASE *in_ESP;
   int in_stack_00000008;
   CVector3f CStack_1c;
   CVector3f CStack_10;

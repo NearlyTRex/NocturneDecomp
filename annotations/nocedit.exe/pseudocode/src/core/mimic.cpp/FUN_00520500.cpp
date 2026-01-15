@@ -18,8 +18,8 @@ void core_mimic_cpp_FUN_00520500(void)
   int *piVar4;
   int *piVar5;
   byte bVar6;
-  float unaff_retaddr;
   int in_stack_00000004;
+  float frame_number;
   
   bVar6 = 0;
   *(uint *)(in_stack_00000004 + 0x4bdf4) = 2;
@@ -42,14 +42,17 @@ void core_mimic_cpp_FUN_00520500(void)
       piVar5 = (int *)((int)piVar5 + (uint)bVar6 * -2 + 1);
     }
   }
+  frame_number = (g_HeroActors[g_LocalHeroIndex]->base_character).model.motion_controller.
+                 current_frame_number;
   motion_name = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                           (&(g_HeroActors[g_LocalHeroIndex]->base_character).model.motion_controller
                           );
   core_motion_cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0
-            ((CMotionController *)(in_stack_00000004 + 0x158),motion_name->motion_name,unaff_retaddr
-            );
+            ((CMotionController *)(in_stack_00000004 + 0x158),motion_name->motion_name,frame_number)
+  ;
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
             ((CMotionController *)(in_stack_00000004 + 0x158),1,1);
-  engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"%s attacking hero\n");
+  engine_console_cpp_CConsole_printf_FUN_00441890
+            (g_CConsolePtr,"%s attacking hero\n",in_stack_00000004);
   return;
 }

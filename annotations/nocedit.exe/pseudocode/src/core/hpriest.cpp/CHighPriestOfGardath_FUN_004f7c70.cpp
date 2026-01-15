@@ -13,9 +13,9 @@ void core_hpriest_cpp_CHighPriestOfGardath_FUN_004f7c70(void)
 
 {
   CNPC *in_stack_00000004;
-  CActorPropertyList *in_stack_0000000c;
+  CActorPropertyList *in_stack_00000008;
   
   core_npc_cpp_CNPC_FUN_00544e40(in_stack_00000004);
-  core_actor_cpp_CActorPropertyList_FUN_0040e460(in_stack_0000000c);
+  core_actor_cpp_CActorPropertyList_FUN_0040e460(in_stack_00000008);
   return;
 }

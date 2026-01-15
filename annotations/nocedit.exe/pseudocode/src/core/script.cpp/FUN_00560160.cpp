@@ -14,17 +14,19 @@ int core_script_cpp_FUN_00560160(void)
   char *str1;
   int iVar1;
   int iVar2;
-  char *unaff_EBP;
   int iVar3;
   int in_stack_00000004;
+  char *in_stack_00000008;
+  char *str2;
   
   iVar2 = 0;
   if (0 < *(int *)(in_stack_00000004 + 0x30)) {
     iVar3 = 0;
     do {
       if (**(char **)(iVar3 + 4 + *(int *)(in_stack_00000004 + 0x34)) == ':') {
+        str2 = in_stack_00000008;
         str1 = (char *)core_script_cpp_FUN_005593d0();
-        iVar1 = crt_string_c_stricmp_FUN_005fe7f0(str1,unaff_EBP);
+        iVar1 = crt_string_c_stricmp_FUN_005fe7f0(str1,str2);
         if (iVar1 == 0) {
           return iVar2;
         }

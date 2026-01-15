@@ -12,7 +12,6 @@ void __cdecl shape_multicrm_cpp_CMultiCram_run_FUN_0053ee70(CMultiCram *this_ptr
   CDSEModel *pCVar1;
   int iVar2;
   FILE *file_ptr;
-  BADSPACEBASE *in_ESP;
   char local_11c [256];
   uint local_1c;
   int local_18;

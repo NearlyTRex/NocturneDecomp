@@ -15,7 +15,6 @@ void core_netgame_cpp_CNetGame_removeChatOut_FUN_00541ff0(void)
   int iVar2;
   int iVar3;
   int *piVar4;
-  BADSPACEBASE *in_ESP;
   int *piVar5;
   char *pcVar6;
   int in_stack_00000004;

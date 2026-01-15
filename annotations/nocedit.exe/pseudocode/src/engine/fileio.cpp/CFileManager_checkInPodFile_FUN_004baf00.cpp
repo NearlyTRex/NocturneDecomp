@@ -23,19 +23,18 @@ engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00
   undefined3 extraout_var_00;
   int iVar7;
   uint *puVar8;
-  BADSPACEBASE *in_ESP;
   char *pcVar9;
   SFoundFileInfo *pSVar10;
   SFoundFileInfo *pSVar11;
   char *pcVar13;
   byte bVar14;
   char *pcVar15;
-  FILE *in_stack_ffffda04;
+  uint in_stack_ffffda04;
   uint in_stack_ffffda08;
   uint in_stack_ffffda0c;
   uint in_stack_ffffda10;
   uint in_stack_ffffda14;
-  uint local_21ec;
+  int local_21ec;
   CPodDirectoryEntry *pCStack_21e8;
   CPickList CStack_21d0;
   CPickList CStack_1e28;
@@ -58,8 +57,8 @@ engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00
   char acStack_26c [256];
   char acStack_16c [256];
   CStrList CStack_6c;
-  byte local_5c [8];
-  CCheckOutItem *local_54;
+  CCheckOutList local_5c;
+  time_t local_54;
   FILE *local_50;
   char *local_4c;
   int local_48;
@@ -69,7 +68,7 @@ engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00
   char *local_38;
   FILE *local_34;
   FILE *local_30;
-  uint local_2c;
+  int local_2c;
   int local_28;
   int local_24;
   char local_20 [4];
@@ -100,7 +99,7 @@ engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00
     return 0;
   }
   local_2c = 0;
-  if (0 < (int)local_21ec) {
+  if (0 < local_21ec) {
     local_28 = 0;
     do {
       puVar8 = (uint *)((int)&pCStack_21e8->name_or_offset + local_28);
@@ -120,7 +119,7 @@ engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00
           (SStack_14c4.timestamp < puVar8[3] - 2)) || (SStack_14c4.file_size != puVar8[1])) break;
       local_28 = local_28 + 0x14;
       local_2c = local_2c + 1;
-    } while ((int)local_2c < (int)local_21ec);
+    } while (local_2c < local_21ec);
   }
   if (local_2c != local_21ec) {
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&CStack_1e28);
@@ -136,7 +135,7 @@ engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00
                         (&CStack_1e28,acStack_ea8,1,0);
       if ((iVar3 < 0) || (iVar3 == 1)) {
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                  (&CStack_1e28,0,(uint)in_stack_ffffda04,in_stack_ffffda08,in_stack_ffffda0c,
+                  (&CStack_1e28,0,in_stack_ffffda04,in_stack_ffffda08,in_stack_ffffda0c,
                    in_stack_ffffda10,in_stack_ffffda14);
         engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xffffda04);
         return 0;
@@ -145,7 +144,7 @@ engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00
       engine_fileio_cpp_CFileManager_compareLocalVsPod_FUN_004b82a0(this_ptr,acStack_778);
     }
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-              (&CStack_1e28,0,(uint)in_stack_ffffda04,in_stack_ffffda08,in_stack_ffffda0c,
+              (&CStack_1e28,0,in_stack_ffffda04,in_stack_ffffda08,in_stack_ffffda0c,
                in_stack_ffffda10,in_stack_ffffda14);
   }
   if ((g_CDemonPodPtr != (CDemonPod *)0x0) &&
@@ -222,7 +221,7 @@ engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00
                       (&CStack_1a80,"Checking in file that didn't change.",-1,0);
     if ((iVar3 < 0) || (iVar3 == 2)) {
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                (&CStack_1a80,0,(uint)in_stack_ffffda04,in_stack_ffffda08,in_stack_ffffda0c,
+                (&CStack_1a80,0,in_stack_ffffda04,in_stack_ffffda08,in_stack_ffffda0c,
                  in_stack_ffffda10,in_stack_ffffda14);
       goto LAB_004bb1fa;
     }
@@ -240,14 +239,14 @@ engine_fileio_cpp_CFileManager_checkInPodFile_FUN_004baf00
                           (checkout_item_name,acStack_a84);
       }
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                (&CStack_1a80,0,(uint)in_stack_ffffda04,in_stack_ffffda08,in_stack_ffffda0c,
+                (&CStack_1a80,0,in_stack_ffffda04,in_stack_ffffda08,in_stack_ffffda0c,
                  in_stack_ffffda10,in_stack_ffffda14);
       if (iVar3 == 0) goto LAB_004bb1fa;
       if (iVar3 == 2) goto LAB_004bbfdd;
       goto LAB_004bb492;
     }
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-              (&CStack_1a80,0,(uint)in_stack_ffffda04,in_stack_ffffda08,in_stack_ffffda0c,
+              (&CStack_1a80,0,in_stack_ffffda04,in_stack_ffffda08,in_stack_ffffda0c,
                in_stack_ffffda10,in_stack_ffffda14);
   }
   local_40 = (FILE *)shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
@@ -390,8 +389,8 @@ LAB_004bb83f:
       pcVar13 = pcVar13 + 2;
     } while (cVar1 != '\0');
     iVar3 = 0;
-    local_5c._0_4_ = 0;
-    local_5c._4_4_ = (CCheckOutItem *)0x0;
+    local_5c.count = 0;
+    local_5c.items = (CCheckOutItem *)0x0;
     if (local_40 == (FILE *)0x0) {
       shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                 (g_CEditorToolsPtr,"Grabbing %s...");
@@ -405,7 +404,6 @@ LAB_004bb83f:
         }
         piVar5 = (int *)crt_errno_c_errno_FUN_00601450();
         if (*piVar5 != 6) break;
-        in_stack_ffffda08 = 500;
         iVar3 = iVar3 + 1;
         (*Sleep)(500);
       } while (iVar3 < 10);
@@ -415,14 +413,13 @@ LAB_004bbc40:
       if (pFVar4 == (FILE *)0x0) {
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                   (g_CEditorToolsPtr,"Can't access %s.  Get Fletch.",acStack_674);
-        engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860((CCheckOutList *)local_5c);
+        engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860(&local_5c);
         goto LAB_004bb847;
       }
-      iVar3 = engine_fileio_cpp_CCheckOutList_parse_FUN_004b2a60
-                        ((CCheckOutList *)local_5c,&local_50);
+      iVar3 = engine_fileio_cpp_CCheckOutList_parse_FUN_004b2a60(&local_5c,&local_50);
       if (iVar3 != 0) {
         local_44 = engine_fileio_cpp_CCheckOutList_findEntry_FUN_004b2e60
-                             ((CCheckOutList *)local_5c,SStack_12b0.found_path);
+                             (&local_5c,SStack_12b0.found_path);
         if (-1 < local_44) goto LAB_004bba53;
         if (local_50 != (FILE *)0x0) {
           shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_50,"..\\engine\\fileio.cpp",0xc4);
@@ -431,7 +428,7 @@ LAB_004bbc40:
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                   (g_CEditorToolsPtr,"Hell froze - we no longer have the file checked out!!!!");
       }
-      engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860((CCheckOutList *)local_5c);
+      engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860(&local_5c);
     }
     else {
 LAB_004bba53:
@@ -453,7 +450,7 @@ LAB_004bba53:
                     (g_CEditorToolsPtr,"Error renaming %s -> %s.\nThe file was not checked in.\nThe most likely cause is that somebody is currently trying to get\nthe file you are checking in.  No file files have been modified,\nand you still have the file checked out.  Wait a little bit and\ntry again.",acStack_87c,&SStack_16d8)
           ;
           shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
-          engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860((CCheckOutList *)local_5c);
+          engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860(&local_5c);
           goto LAB_004bb847;
         }
         iVar3 = iVar3 + 1;
@@ -484,7 +481,7 @@ LAB_004bba53:
         }
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                   (g_CEditorToolsPtr,"Error setting file date/time for %s.\nYour version of the file has been updated to the network,\nbut the date on the network file is incorrect.\nYou still have the file checked out.\nThis is probably harmless, and can happen in rare\nsituations when somebody else is trying to get the pod\nwhile you are checking it in.\nAnother possibility is that the time of the file is newer than\nthe current system time on your computer.\nLeave this on your screen and get Fletch.\nIf that isn't an option, simply check the file in again,\nand then make sure the network file is the same as your file.\n",&SStack_16d8);
-        engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860((CCheckOutList *)local_5c);
+        engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860(&local_5c);
       }
       else {
         bVar2 = engine_dosio_c_setFileAttributes_FUN_004819f0(SStack_16d8.found_path,8);
@@ -495,7 +492,7 @@ LAB_004bba53:
           }
           shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                     (g_CEditorToolsPtr,"Error setting file date/time for %s.\nYour version of the file has been updated to the network.\nYou still have the file checked out.\nThis is probably harmless, and can happen in rare\nsituations when somebody else is trying to get the pod\nwhile you are checking it in.\nLeave this on your screen and get Fletch.\nIf that isn't an option, simply check the file in again,\nand then make sure the network file is the same as your file.\n",&SStack_16d8);
-          engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860((CCheckOutList *)local_5c);
+          engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860(&local_5c);
         }
         else {
           iVar3 = 0;
@@ -509,7 +506,6 @@ LAB_004bba53:
             }
             piVar5 = (int *)crt_errno_c_errno_FUN_00601450();
             if (*piVar5 != 6) break;
-            in_stack_ffffda08 = 500;
             iVar3 = iVar3 + 1;
             (*Sleep)(500);
           } while (iVar3 < 10);
@@ -517,8 +513,8 @@ LAB_004bba53:
 LAB_004bbb45:
           local_30 = pFVar4;
           if (pFVar4 != (FILE *)0x0) {
-            local_54 = (CCheckOutItem *)crt_time_c_time_with_rounding_FUN_006001f0((time_t *)0x0);
-            ptVar6 = crt_time_c_localtime_FUN_00600288((time_t *)&local_54);
+            local_54 = crt_time_c_time_with_rounding_FUN_006001f0((time_t *)0x0);
+            ptVar6 = crt_time_c_localtime_FUN_00600288(&local_54);
             crt_stdio_c_fprintf_FUN_005fe6d0
                       (pFVar4,"%4d: %04d/%02d/%02d %02d:%02d:%02d \"%s\"\n",local_48 + 1,
                        ptVar6->tm_year + 0x76c,ptVar6->tm_mon + 1,ptVar6->tm_mday,ptVar6->tm_hour,
@@ -530,14 +526,12 @@ LAB_004bbb45:
               local_30 = (FILE *)0x0;
               engine_fileio_cpp_logOffVersionControl_FUN_004b2830();
               if (pFVar4 != (FILE *)0x0) {
-                engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860((CCheckOutList *)(local_5c + 4));
+                engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860(&local_5c);
 LAB_004bbfdd:
                 engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xffffda04);
                 return 2;
               }
-              in_stack_ffffda04 = local_40;
-              iVar3 = engine_fileio_cpp_CCheckOutList_remove_FUN_004b2d70
-                                ((CCheckOutList *)(local_5c + 4),(int)local_40);
+              iVar3 = engine_fileio_cpp_CCheckOutList_remove_FUN_004b2d70(&local_5c,local_44);
               if (iVar3 == 0) {
                 if (local_50 != (FILE *)0x0) {
                   shape_memdbg_cpp_closeFile_FUN_0050f9b0
@@ -548,8 +542,7 @@ LAB_004bbfdd:
                           (g_CEditorToolsPtr,"Out of memory...Restart the application NOW.\nBetter yet, reboot the computer.");
               }
               else {
-                iVar3 = engine_fileio_cpp_CCheckOutList_write_FUN_004b2eb0
-                                  ((CCheckOutList *)local_5c,&local_50);
+                iVar3 = engine_fileio_cpp_CCheckOutList_write_FUN_004b2eb0(&local_5c,&local_50);
                 if (iVar3 != 0) {
                   if (local_50 != (FILE *)0x0) {
                     shape_memdbg_cpp_closeFile_FUN_0050f9b0
@@ -565,7 +558,7 @@ LAB_004bbfdd:
                     shape_edittool_cpp_CEditorTools_showWarning_FUN_0049e6f0
                               (g_CEditorToolsPtr,"Error marking local file %s as read only.\n(But your check-in did complete to the network successfully.)",&SStack_12b0);
                   }
-                  engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860((CCheckOutList *)local_5c);
+                  engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860(&local_5c);
 LAB_004bb492:
                   shape_edittool_cpp_CStrList_ctor_FUN_004a2a20(&CStack_6c);
                   engine_fileio_cpp_CFileManager_parsePodConfigFile_FUN_004ba4f0
@@ -589,10 +582,10 @@ LAB_004bb492:
                                         (this_ptr,acStack_778);
                       if (iVar7 == 0) {
                         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                                  (&CStack_21d0,0,(uint)in_stack_ffffda04,in_stack_ffffda08,
+                                  (&CStack_21d0,0,in_stack_ffffda04,in_stack_ffffda08,
                                    in_stack_ffffda0c,in_stack_ffffda10,in_stack_ffffda14);
                         shape_edittool_cpp_CStrList_dtor_FUN_004a2a40
-                                  (&CStack_6c,0,(uint)in_stack_ffffda04);
+                                  (&CStack_6c,0,in_stack_ffffda04);
                         engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xffffda04);
                         return 0;
                       }
@@ -604,16 +597,15 @@ LAB_004bb492:
                        (iVar3 = engine_fileio_cpp_CFileManager_deleteLocalFilesFromPod_FUN_004bca50
                                           (this_ptr,acStack_778), iVar3 == 0)) {
                       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                                (&CStack_21d0,0,(uint)in_stack_ffffda04,in_stack_ffffda08,
+                                (&CStack_21d0,0,in_stack_ffffda04,in_stack_ffffda08,
                                  in_stack_ffffda0c,in_stack_ffffda10,in_stack_ffffda14);
-                      shape_edittool_cpp_CStrList_dtor_FUN_004a2a40
-                                (&CStack_6c,0,(uint)in_stack_ffffda04);
+                      shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&CStack_6c,0,in_stack_ffffda04);
                       engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xffffda04);
                       return 0;
                     }
                     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                              (&CStack_21d0,0,(uint)in_stack_ffffda04,in_stack_ffffda08,
-                               in_stack_ffffda0c,in_stack_ffffda10,in_stack_ffffda14);
+                              (&CStack_21d0,0,in_stack_ffffda04,in_stack_ffffda08,in_stack_ffffda0c,
+                               in_stack_ffffda10,in_stack_ffffda14);
                   }
                   else {
                     iVar3 = shape_edittool_cpp_CEditorTools_showYesNoDialog_FUN_0049f0f0
@@ -621,8 +613,7 @@ LAB_004bb492:
                     if ((iVar3 != 0) &&
                        (iVar3 = engine_fileio_cpp_CFileManager_deleteLocalFilesFromPod_FUN_004bca50
                                           (this_ptr,acStack_778), iVar3 == 0)) {
-                      shape_edittool_cpp_CStrList_dtor_FUN_004a2a40
-                                (&CStack_6c,0,(uint)in_stack_ffffda04);
+                      shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&CStack_6c,0,in_stack_ffffda04);
                       engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xffffda04);
                       return 0;
                     }
@@ -633,13 +624,12 @@ LAB_004bb492:
                     engine_pod_cpp_CPod_cleanup_FUN_00550c80((CPod *)g_CDemonPodPtr);
                     (*g_CDemonPodPtr->vtable->load)((CPod *)g_CDemonPodPtr);
                   }
-                  shape_edittool_cpp_CStrList_dtor_FUN_004a2a40
-                            (&CStack_6c,0,(uint)in_stack_ffffda04);
+                  shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&CStack_6c,0,in_stack_ffffda04);
                   engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xffffda04);
                   return 1;
                 }
               }
-              engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860((CCheckOutList *)local_5c);
+              engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860(&local_5c);
               goto LAB_004bb847;
             }
           }
@@ -653,7 +643,7 @@ LAB_004bb492:
           }
           shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                     (g_CEditorToolsPtr,"Error creating history record in %s.\nYour version of the file has been updated to the network.\nYou still have the file checked out.\nThis is probably harmless, and can happen in rare\nsituations when somebody else is trying to get the pod\nwhile you are checking it in.\nLeave this on your screen and get Fletch.\nIf that isn't an option, simply check the file in again,\nand then make sure the network file is the same as your file.\n",acStack_980);
-          engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860((CCheckOutList *)local_5c);
+          engine_fileio_cpp_CCheckOutList_reset_FUN_004b2860(&local_5c);
         }
       }
     }
@@ -677,6 +667,6 @@ LAB_004bb847:
   }
   engine_fileio_cpp_logOffVersionControl_FUN_004b2830();
 LAB_004bb1fa:
-  engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xffffda08);
+  engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xffffda04);
   return 0;
 }

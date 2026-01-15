@@ -13,7 +13,6 @@ void __cdecl core_particle_cpp_CParticle_process_FUN_00545760(CParticle *this_pt
   float fVar2;
   float fVar3;
   int iVar4;
-  BADSPACEBASE *in_ESP;
   byte bVar5;
   float afStackY_105c [998];
   CDemonRaytrace *this_ptr_00;
@@ -35,6 +34,7 @@ void __cdecl core_particle_cpp_CParticle_process_FUN_00545760(CParticle *this_pt
   CVector3f local_2c;
   float local_20;
   float local_1c;
+  float local_14;
   
   bVar5 = 0;
   if (0.0 < this_ptr->lifetime_remaining) {
@@ -87,6 +87,7 @@ void __cdecl core_particle_cpp_CParticle_process_FUN_00545760(CParticle *this_pt
           (this_ptr->position).y = local_68.position.y;
           (this_ptr->position).z = local_68.position.z;
         }
+        local_14 = local_a8;
         iVar4 = (*this_ptr->vtable->onCollision)(this_ptr,&local_2c);
         if (iVar4 == 0) {
           pCVar1 = &this_ptr->velocity;

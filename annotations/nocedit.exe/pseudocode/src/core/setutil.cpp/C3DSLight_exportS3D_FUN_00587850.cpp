@@ -10,34 +10,20 @@ void __cdecl
 core_setutil_cpp_C3DSLight_exportS3D_FUN_00587850(C3DSLight *this_ptr,FILE *file_handle)
 
 {
-  double dVar1;
-  double dVar2;
-  double dVar3;
-  
-  dVar1 = (double)(this_ptr->color).b;
-  dVar2 = (double)(this_ptr->color).g;
-  dVar3 = (double)(this_ptr->color).r;
   crt_stdio_c_fprintf_FUN_005fe6d0
             (file_handle,"\"%s\",%d,%g,%g,%g,%g,%g,%g ",this_ptr->name,this_ptr->light_type,
              (double)(this_ptr->pos).x,(double)(this_ptr->pos).y,(double)(this_ptr->pos).z,
-             SUB84 /* extract 2-byte value */(dVar3,0),(int)((ulonglong)dVar3 >> 0x20),SUB84 /* extract 2-byte value */(dVar2,0),
-             (int)((ulonglong)dVar2 >> 0x20),SUB84 /* extract 2-byte value */(dVar1,0),(int)((ulonglong)dVar1 >> 0x20));
+             (double)(this_ptr->color).r,(double)(this_ptr->color).g,(double)(this_ptr->color).b);
   if (this_ptr->light_type == 0) {
-    dVar1 = (double)(this_ptr->orient).y;
-    dVar2 = (double)(this_ptr->orient).z;
-    dVar3 = (double)(this_ptr->orient).x;
     crt_stdio_c_fprintf_FUN_005fe6d0
-              (file_handle,",%g,%g,%g\n",SUB84 /* extract 2-byte value */(dVar3,0),(int)((ulonglong)dVar3 >> 0x20),
-               SUB84 /* extract 2-byte value */(dVar2,0),(int)((ulonglong)dVar2 >> 0x20),SUB84 /* extract 2-byte value */(dVar1,0),
-               (int)((ulonglong)dVar1 >> 0x20));
+              (file_handle,",%g,%g,%g\n",(double)(this_ptr->orient).x,
+               (double)(this_ptr->orient).z,(double)(this_ptr->orient).y);
     return;
   }
   if (this_ptr->light_type == 1) {
     crt_stdio_c_fprintf_FUN_005fe6d0
-              (file_handle,",%g,%g\n",SUB84 /* extract 2-byte value */((double)this_ptr->atten_start,0),
-               (int)((ulonglong)(double)this_ptr->atten_start >> 0x20),
-               SUB84 /* extract 2-byte value */((double)this_ptr->atten_end,0),
-               (int)((ulonglong)(double)this_ptr->atten_end >> 0x20));
+              (file_handle,",%g,%g\n",(double)this_ptr->atten_start,(double)this_ptr->atten_end)
+    ;
     return;
   }
   g_CurrentFilename = "..\\core\\setutil.cpp";

@@ -1,24 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 136,
-    "complexity_score": 564,
+    "complexity_score": 290,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 6,
-    "pseudocode_lines": 59,
-    "suspect_count": 46,
+    "pseudocode_lines": 60,
+    "suspect_count": 21,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "callind_preserve",
       "lea_esp_stack_addr",
-      "register_param",
-      "special_crt_function",
-      "stack_param",
-      "stack_ref",
-      "unknown_field"
+      "special_crt_function"
     ],
-    "total_lines": 195
+    "total_lines": 196
   },
   "cross_references": [
     {
@@ -183,181 +178,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 9,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 9,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_0000001c",
-      "text": "DWORD in_stack_0000001c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000020",
-      "text": "DWORD in_stack_00000020;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 23,
-      "match": "&stack0xfffffffc",
-      "text": "(hFile,(LPFILETIME)&stack0xfffffffc,(LPFILETIME)&stack0x0000000c,",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 23,
-      "match": "&stack0x0000000c",
-      "text": "(hFile,(LPFILETIME)&stack0xfffffffc,(LPFILETIME)&stack0x0000000c,",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 24,
-      "match": "&stack0xffffffec",
-      "text": "(LPFILETIME)&stack0xffffffec);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_0000001c",
-      "text": "in_stack_0000001c = crt_time_c_time_with_rounding_FUN_006001f0((time_t *)0x0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 32,
-      "match": "&stack0x0000001c",
-      "text": "timestamps = (utimbuf *)&stack0x0000001c;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_00000020",
-      "text": "in_stack_00000020 = in_stack_0000001c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_0000001c",
-      "text": "in_stack_00000020 = in_stack_0000001c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 36,
-      "match": "._2_2_",
-      "text": "uStack_18._2_2_ = (short)ptVar3->tm_mon + 1;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 37,
-      "match": "._0_2_",
-      "text": "uStack_18._0_2_ = (short)ptVar3->tm_year + 0x76c;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 38,
-      "match": "&stack0x00000010",
-      "text": "(*PTR_SystemTimeToFileTime_00611648)((SYSTEMTIME *)&uStack_18,(LPFILETIME)&stack0x00000010);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 39,
-      "match": "._0_2_",
-      "text": "uStack_18._0_2_ = 0x8274;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 40,
-      "match": "._2_2_",
-      "text": "uStack_18._2_2_ = 0x60;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 42,
-      "match": "&stack0x0000001c",
-      "text": "((FILETIME *)&stack0x0000001c,(LPFILETIME)&stack0x00000014);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 42,
-      "match": "&stack0x00000014",
-      "text": "((FILETIME *)&stack0x0000001c,(LPFILETIME)&stack0x00000014);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 44,
-      "match": "&stack0x00000010",
-      "text": "((SYSTEMTIME *)&stack0x00000010,(LPFILETIME)&stack0x00000028);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 44,
-      "match": "&stack0x00000028",
-      "text": "((SYSTEMTIME *)&stack0x00000010,(LPFILETIME)&stack0x00000028);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 46,
-      "match": "&stack0x00000034",
-      "text": "((FILETIME *)&stack0x00000034,(LPFILETIME)&stack0x0000004c);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 46,
-      "match": "&stack0x0000004c",
-      "text": "((FILETIME *)&stack0x00000034,(LPFILETIME)&stack0x0000004c);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 48,
-      "match": "&stack0x00000048",
-      "text": "(hFile,(FILETIME *)&stack0x00000048,(FILETIME *)&stack0x00000058,",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 48,
-      "match": "&stack0x00000058",
-      "text": "(hFile,(FILETIME *)&stack0x00000048,(FILETIME *)&stack0x00000058,",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 49,
-      "match": "&stack0x00000038",
-      "text": "(FILETIME *)&stack0x00000038);",
-      "type": "stack_ref"
-    },
     {
       "add_esp_value": 72,
       "call_target_type": "mem_absolute",

@@ -15,30 +15,26 @@ void core_cloth_cpp_FUN_0043c430(void)
   char *pcVar4;
   int iVar5;
   SBone *string_data;
-  BADSPACEBASE *in_ESP;
   int iVar6;
   char *pcVar7;
-  double dVar8;
-  int unaff_retaddr;
-  int in_stack_00000018;
-  int in_stack_00000028;
-  CStrList_vtable *in_stack_fffffb4c;
-  char *in_stack_fffffb54;
-  uint in_stack_fffffb5c;
-  uint in_stack_fffffb60;
-  char **in_stack_fffffb64;
-  CStrList_vtable *in_stack_fffffb68;
-  uint in_stack_fffffb6c;
-  char acStack_110 [8];
-  char acStack_108 [244];
-  uint local_14;
+  int in_stack_00000004;
+  char *in_stack_fffffb34;
+  uint in_stack_fffffb38;
+  char **in_stack_fffffb3c;
+  CStrList_vtable *in_stack_fffffb40;
+  uint in_stack_fffffb44;
+  char local_124 [256];
+  double local_24;
+  float local_1c;
+  float local_18;
+  int local_14;
   
   local_14 = 0;
   pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
                      (&g_CDeformableModelInstanceInstance);
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   iVar6 = 0;
-  shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffffb3c);
+  shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffffb34);
   if (0 < pCVar2->bone_count) {
     string_data = pCVar2->bone_list;
     do {
@@ -48,7 +44,7 @@ void core_cloth_cpp_FUN_0043c430(void)
         do {
           if (iVar6 == pCVar3->bone_list[0].parent_index) {
             shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                      ((CStrList *)&stack0xfffffb40,string_data->bone_name);
+                      ((CStrList *)&stack0xfffffb34,string_data->bone_name);
             break;
           }
           iVar5 = iVar5 + 1;
@@ -60,11 +56,12 @@ void core_cloth_cpp_FUN_0043c430(void)
     } while (iVar6 < pCVar2->bone_count);
   }
   iVar6 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                    ((CPickList *)&stack0xfffffb40,"Select bone to add",-1,0);
+                    ((CPickList *)&stack0xfffffb34,"Select bone to add",-1,0);
   if (-1 < iVar6) {
     pcVar4 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
-                       ((CStrList *)&stack0xfffffb44,iVar6);
-    pcVar7 = (char *)(*(int *)(in_stack_00000018 + 0x3ce8c) * 0xac + in_stack_00000018 + 0x3ce90);
+                       ((CStrList *)&stack0xfffffb34,iVar6);
+    iVar6 = local_14;
+    pcVar7 = (char *)(*(int *)(in_stack_00000004 + 0x3ce8c) * 0xac + in_stack_00000004 + 0x3ce90);
     do {
       cVar1 = *pcVar4;
       *pcVar7 = cVar1;
@@ -75,33 +72,36 @@ void core_cloth_cpp_FUN_0043c430(void)
       pcVar7 = pcVar7 + 2;
     } while (cVar1 != '\0');
     engine_2d_c_getInputWithPrompt_FUN_004032c0
-              (acStack_110,10,0,unaff_retaddr,"Enter in X radius : ");
-    crt_string_c_strtod_FUN_005ff0f3((char *)in_stack_fffffb4c);
+              (local_124,10,0,local_14,"Enter in X radius : ");
+    local_24 = crt_string_c_strtod_FUN_005ff0f3(in_stack_fffffb34);
+    local_1c = (float)local_24;
+    local_14 = iVar6 + 0xb;
     engine_2d_c_getInputWithPrompt_FUN_004032c0
-              (acStack_108,10,0,unaff_retaddr + 0xb,"Enter in Y radius : ");
-    dVar8 = crt_string_c_strtod_FUN_005ff0f3(in_stack_fffffb54);
-    *(int *)(*(int *)(in_stack_00000028 + 0x3ce8c) * 0xac + in_stack_00000028 + 0x3cea4) =
-         unaff_retaddr + 0xb;
-    *(float *)(*(int *)(in_stack_00000028 + 0x3ce8c) * 0xac + in_stack_00000028 + 0x3cea8) =
-         (float)dVar8;
-    iVar6 = *(int *)(in_stack_00000028 + 0x3ce8c) * 0xac;
-    *(uint *)(in_stack_00000018 + 0x3ceb4 + iVar6) = 0;
-    *(uint *)(in_stack_00000018 + 0x3ceb0 + iVar6) =
-         *(uint *)(in_stack_00000018 + 0x3ceb4 + iVar6);
-    *(uint *)(in_stack_00000018 + 0x3ceac + iVar6) =
-         *(uint *)(in_stack_00000018 + 0x3ceb0 + iVar6);
-    iVar6 = *(int *)(in_stack_00000028 + 0x3ce8c) * 0xac;
-    *(uint *)(in_stack_00000018 + 0x3cec0 + iVar6) = 0;
-    *(uint *)(in_stack_00000018 + 0x3cebc + iVar6) =
-         *(uint *)(in_stack_00000018 + 0x3cec0 + iVar6);
-    *(uint *)(in_stack_00000018 + 0x3ceb8 + iVar6) =
-         *(uint *)(in_stack_00000018 + 0x3cebc + iVar6);
-    *(uint *)(*(int *)(in_stack_00000028 + 0x3ce8c) * 0xac + in_stack_00000028 + 0x3cec4) = 0;
-    *(int *)(in_stack_00000028 + 0x3ce8c) = *(int *)(in_stack_00000028 + 0x3ce8c) + 1;
+              (local_124,10,0,local_14,"Enter in Y radius : ");
+    local_24 = crt_string_c_strtod_FUN_005ff0f3(in_stack_fffffb34);
+    local_18 = (float)local_24;
+    *(float *)(*(int *)(in_stack_00000004 + 0x3ce8c) * 0xac + in_stack_00000004 + 0x3cea4) =
+         local_1c;
+    *(float *)(*(int *)(in_stack_00000004 + 0x3ce8c) * 0xac + in_stack_00000004 + 0x3cea8) =
+         local_18;
+    iVar6 = *(int *)(in_stack_00000004 + 0x3ce8c) * 0xac;
+    *(uint *)(in_stack_00000004 + 0x3ceb4 + iVar6) = 0;
+    *(uint *)(in_stack_00000004 + 0x3ceb0 + iVar6) =
+         *(uint *)(in_stack_00000004 + 0x3ceb4 + iVar6);
+    *(uint *)(in_stack_00000004 + 0x3ceac + iVar6) =
+         *(uint *)(in_stack_00000004 + 0x3ceb0 + iVar6);
+    iVar6 = *(int *)(in_stack_00000004 + 0x3ce8c) * 0xac;
+    *(uint *)(in_stack_00000004 + 0x3cec0 + iVar6) = 0;
+    *(uint *)(in_stack_00000004 + 0x3cebc + iVar6) =
+         *(uint *)(in_stack_00000004 + 0x3cec0 + iVar6);
+    *(uint *)(in_stack_00000004 + 0x3ceb8 + iVar6) =
+         *(uint *)(in_stack_00000004 + 0x3cebc + iVar6);
+    *(uint *)(*(int *)(in_stack_00000004 + 0x3ce8c) * 0xac + in_stack_00000004 + 0x3cec4) = 0;
+    *(int *)(in_stack_00000004 + 0x3ce8c) = *(int *)(in_stack_00000004 + 0x3ce8c) + 1;
   }
   core_cloth_cpp_FUN_00439710();
   shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-            ((CPickList *)&stack0xfffffb5c,0,in_stack_fffffb5c,in_stack_fffffb60,
-             (uint)in_stack_fffffb64,(uint)in_stack_fffffb68,in_stack_fffffb6c);
+            ((CPickList *)&stack0xfffffb34,0,(uint)in_stack_fffffb34,in_stack_fffffb38,
+             (uint)in_stack_fffffb3c,(uint)in_stack_fffffb40,in_stack_fffffb44);
   return;
 }

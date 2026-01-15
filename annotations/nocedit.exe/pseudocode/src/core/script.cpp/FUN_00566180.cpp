@@ -15,6 +15,7 @@ void core_script_cpp_FUN_00566180(void)
   int iVar1;
   FILE *file_ptr;
   int iVar2;
+  char *pcVar3;
   int in_stack_00000004;
   char *in_stack_00000008;
   
@@ -31,9 +32,9 @@ void core_script_cpp_FUN_00566180(void)
       iVar2 = shape_edittool_cpp_getFontBitmapCount_FUN_004a6ed0(font_ptr);
       if (iVar2 <= iVar1) break;
       core_script_cpp_FUN_00566800();
-      shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70((CStrList *)font_ptr,iVar1);
+      pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70((CStrList *)font_ptr,iVar1);
       iVar1 = iVar1 + 1;
-      crt_stdio_c_fprintf_FUN_005fe6d0(file_ptr,"%s\n");
+      crt_stdio_c_fprintf_FUN_005fe6d0(file_ptr,"%s\n",pcVar3);
     }
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\script.cpp",0x1a65);
     return;

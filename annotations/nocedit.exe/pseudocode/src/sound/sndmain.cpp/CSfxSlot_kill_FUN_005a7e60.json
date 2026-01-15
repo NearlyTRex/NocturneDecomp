@@ -1,16 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 129,
-    "complexity_score": 161,
+    "complexity_score": 146,
     "cross_reference_count": 10,
     "function_call_count": 4,
     "global_count": 17,
     "pseudocode_lines": 51,
-    "suspect_count": 9,
+    "suspect_count": 8,
     "suspect_types": [
       "call_esp_preserve",
       "callind_preserve",
-      "format_string_mismatch",
       "variadic_preserve"
     ],
     "total_lines": 180
@@ -356,17 +355,6 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005a7fd0 (no EBP frame)",
       "type": "variadic_preserve"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"streaming sample sfx index mismatch on %s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "streaming sample sfx index mismatch on %s",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 47,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"streaming sample sfx index mismatch on %s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 4,

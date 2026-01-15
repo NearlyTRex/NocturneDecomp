@@ -1,20 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 206,
+    "complexity_score": 208,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 3,
-    "pseudocode_lines": 51,
+    "pseudocode_lines": 68,
     "suspect_count": 13,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
-      "pointer_cast",
-      "register_param",
-      "stack_ref"
+      "pointer_cast"
     ],
-    "total_lines": 178
+    "total_lines": 195
   },
   "cross_references": [
     {
@@ -217,53 +214,53 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 10,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 10,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 25,
+      "line": 35,
       "match": "(int *)((int)",
       "text": "if (*(int *)((int)pCVar1->edge_perpendiculars + iVar3 + -0x14) == 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 28,
+      "line": 36,
+      "match": "(uint *)((int)",
+      "text": "local_48 = *(uint *)((int)(pCVar1->uv_coords + -2) + iVar3 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(uint *)((int)",
+      "text": "local_3c = *(uint *)((int)(pCVar1->uv_coords + -1) + iVar3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 38,
+      "match": "(uint *)((int)",
+      "text": "local_30 = *(uint *)((int)(pCVar1->uv_coords + -1) + iVar3 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 41,
       "match": "(float *)((int)",
       "text": "fVar5 = (float10)*(float *)((int)(pCVar1->edge_perpendiculars + -1) + iVar3) * fVar4 +",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 43,
       "match": "(float *)((int)",
       "text": "fVar6 = (float10)*(float *)((int)pCVar1->edge_perpendiculars + iVar3 + -0x10) * fVar4 +",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 33,
-      "match": "(float *)((int)",
-      "text": "((double)((float10)*(float *)((int)pCVar1->edge_perpendiculars + iVar3 + -8) *",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
       "line": 46,
-      "match": "&stack0xffffffa4",
-      "text": "(g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)&stack0xffffffa4);",
-      "type": "stack_ref"
+      "match": "(float *)((int)",
+      "text": "((double)((float10)*(float *)((int)pCVar1->edge_perpendiculars +",
+      "type": "pointer_cast"
     },
     {
       "add_esp_value": 8,

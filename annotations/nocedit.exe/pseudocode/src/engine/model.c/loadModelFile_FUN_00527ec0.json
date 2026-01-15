@@ -1,22 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 196,
-    "complexity_score": 507,
+    "complexity_score": 352,
     "cross_reference_count": 8,
     "function_call_count": 9,
     "global_count": 18,
-    "pseudocode_lines": 72,
-    "suspect_count": 40,
+    "pseudocode_lines": 67,
+    "suspect_count": 27,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
-      "format_string_mismatch",
       "lea_esp_stack_addr",
-      "register_param",
-      "stack_ref",
       "variadic_preserve"
     ],
-    "total_lines": 268
+    "total_lines": 263
   },
   "cross_references": [
     {
@@ -287,71 +283,8 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 11,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 11,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 38,
-      "match": "&stack0xffffffac",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffac,\"Unable to get file size: %s\",filename);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 41,
-      "match": "&stack0xffffffb0",
-      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xffffffb0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 45,
-      "match": "&stack0xffffffb8",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffb8,\"Unable to open model: %s\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 48,
-      "match": "&stack0xffffffbc",
-      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xffffffbc);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 52,
-      "match": "&stack0xffffffc4",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffc4,\"Out of model memory: %s\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 55,
-      "match": "&stack0xffffffc8",
-      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xffffffc8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 59,
-      "match": "&stack0xffffffd0",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffd0,\"Model file read error: %s\");",
-      "type": "stack_ref"
-    },
-    {
       "call_address": "00527f0e",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "unknown",
       "esp_certainty_at_call": "known",
@@ -365,7 +298,7 @@
     },
     {
       "call_address": "00527f31",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -379,7 +312,7 @@
     },
     {
       "call_address": "00527f5d",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "unknown",
       "esp_certainty_at_call": "known",
@@ -393,7 +326,7 @@
     },
     {
       "call_address": "00527f7f",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -407,7 +340,7 @@
     },
     {
       "call_address": "00527fab",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "unknown",
       "esp_certainty_at_call": "known",
@@ -421,7 +354,7 @@
     },
     {
       "call_address": "00527fce",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -435,7 +368,7 @@
     },
     {
       "call_address": "00527ff2",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "unknown",
       "esp_certainty_at_call": "known",
@@ -449,7 +382,7 @@
     },
     {
       "call_address": "00528014",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -463,7 +396,7 @@
     },
     {
       "call_address": "00528046",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "unknown",
       "esp_certainty_at_call": "known",
@@ -477,7 +410,7 @@
     },
     {
       "call_address": "00528069",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -488,50 +421,6 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00528069 (no EBP frame)",
       "type": "variadic_preserve"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Unable to open model: %s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Unable to open model: %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 45,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffb8,\"Unable to open model: %s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Out of model memory: %s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Out of model memory: %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 52,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffc4,\"Out of model memory: %s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Model file read error: %s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Model file read error: %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 59,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffd0,\"Model file read error: %s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Invalid model: %s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Invalid model: %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 68,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_24,\"Invalid model: %s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 8,

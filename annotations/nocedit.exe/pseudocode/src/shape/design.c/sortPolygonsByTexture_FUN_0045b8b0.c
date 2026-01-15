@@ -10,7 +10,6 @@ void __cdecl shape_design_c_sortPolygonsByTexture_FUN_0045b8b0(void)
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   SShapeEditorPolygon *pSVar2;
   uint *puVar3;
   SShapeEditorPolygon *pSVar4;

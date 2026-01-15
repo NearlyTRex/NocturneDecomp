@@ -9,7 +9,6 @@
 void __cdecl shape_design_c_setTextureQualityParameter_FUN_0046a8e0(int texture_quality_param)
 
 {
-  BADSPACEBASE *in_ESP;
   SCramConfig local_8c;
   SCramConfig *local_18;
   

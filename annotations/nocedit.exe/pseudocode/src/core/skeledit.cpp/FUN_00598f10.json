@@ -1,7 +1,7 @@
 {
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 158,
+    "complexity_score": 163,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 8,
@@ -11,6 +11,7 @@
       "call_esp_preserve",
       "callind_preserve",
       "stack_param",
+      "unaffected_reg",
       "variadic_preserve"
     ],
     "total_lines": 103
@@ -156,32 +157,32 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unaffected register variable",
       "line": 7,
-      "match": "in_stack_00000008",
-      "text": "CDeformableModelInstance *in_stack_00000008;",
-      "type": "stack_param"
+      "match": "unaff_EBP",
+      "text": "CDeformableModelInstance *unaff_EBP;",
+      "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 8,
-      "match": "in_stack_00000014",
-      "text": "char *in_stack_00000014;",
+      "match": "in_stack_00000004",
+      "text": "char *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 21,
-      "match": "in_stack_00000014",
-      "text": "core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(this_ptr_00,in_stack_00000014);",
+      "match": "in_stack_00000004",
+      "text": "core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(this_ptr_00,in_stack_00000004);",
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unaffected register variable",
       "line": 23,
-      "match": "in_stack_00000008",
-      "text": "core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(in_stack_00000008);",
-      "type": "stack_param"
+      "match": "unaff_EBP",
+      "text": "core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(unaff_EBP);",
+      "type": "unaffected_reg"
     },
     {
       "add_esp_value": 8,

@@ -11,10 +11,9 @@ void __cdecl shape_design_c_interactiveGlobalWeld_FUN_00466040(float tolerance)
 {
   char cVar1;
   int iVar2;
-  BADSPACEBASE *in_ESP;
   char *pcVar3;
   byte bVar4;
-  SShapeEditorPolygon *pSVar5;
+  SShapeEditorPolygon *local_74;
   char local_70 [80];
   uint local_20;
   int local_1c;
@@ -47,15 +46,15 @@ void __cdecl shape_design_c_interactiveGlobalWeld_FUN_00466040(float tolerance)
              tolerance)) &&
            (ABS(g_LoadedVertices[local_14].vertex.z - g_LoadedVertices[local_20].vertex.z) <
             tolerance)) {
-          pSVar5 = g_ModelPolygonData;
+          local_74 = g_ModelPolygonData;
           for (local_1c = 0; local_1c < g_PolygonCount; local_1c = local_1c + 1) {
-            for (local_18 = 0; local_18 < (int)pSVar5->vertex_indices_count; local_18 = local_18 + 1
-                ) {
-              if (pSVar5->vertex_indices[local_18] == local_20) {
-                pSVar5->vertex_indices[local_18] = local_14;
+            for (local_18 = 0; local_18 < (int)local_74->vertex_indices_count;
+                local_18 = local_18 + 1) {
+              if (local_74->vertex_indices[local_18] == local_20) {
+                local_74->vertex_indices[local_18] = local_14;
               }
             }
-            pSVar5 = pSVar5 + 1;
+            local_74 = local_74 + 1;
           }
         }
       }

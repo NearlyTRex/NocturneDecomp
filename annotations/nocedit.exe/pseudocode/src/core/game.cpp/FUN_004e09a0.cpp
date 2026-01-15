@@ -12,7 +12,6 @@ void core_game_cpp_FUN_004e09a0(void)
 
 {
   float *pfVar1;
-  BADSPACEBASE *in_ESP;
   byte bVar2;
   int aiStackY_1018 [1000];
   CVector3i *in_stack_ffffff94;

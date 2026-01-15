@@ -12,11 +12,10 @@ void shape_design_c_centerVerticesAroundPoint_FUN_0045ea90(void)
   char cVar1;
   uint uVar2;
   int iVar3;
-  BADSPACEBASE *in_ESP;
   char *pcVar4;
   byte bVar5;
   double dVar6;
-  char *str;
+  char *in_stack_ffffffa0;
   char local_54 [40];
   int local_2c;
   float local_28;
@@ -27,7 +26,6 @@ void shape_design_c_centerVerticesAroundPoint_FUN_0045ea90(void)
   
   bVar5 = 0;
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
-  str = "Bias around what point? (or -1 for user-defined) : ";
   engine_2d_c_getInputWithPrompt_FUN_004032c0(local_54,10,0,0,"Bias around what point? (or -1 for user-defined) : ");
   iVar3 = -1;
   pcVar4 = local_54;
@@ -58,7 +56,7 @@ void shape_design_c_centerVerticesAroundPoint_FUN_0045ea90(void)
         if (iVar3 == -2) {
           return;
         }
-        dVar6 = crt_string_c_strtod_FUN_005ff0f3(str);
+        dVar6 = crt_string_c_strtod_FUN_005ff0f3(in_stack_ffffffa0);
         local_28 = (float)dVar6;
         local_24 = local_28;
         local_20 = local_28;

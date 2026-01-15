@@ -1,19 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 140,
-    "complexity_score": 248,
+    "complexity_score": 206,
     "cross_reference_count": 13,
     "function_call_count": 4,
     "global_count": 9,
-    "pseudocode_lines": 48,
-    "suspect_count": 18,
+    "pseudocode_lines": 51,
+    "suspect_count": 14,
     "suspect_types": [
       "call_esp_preserve",
       "callind_preserve",
-      "stack_param",
       "unaffected_reg"
     ],
-    "total_lines": 188
+    "total_lines": 191
   },
   "cross_references": [
     {
@@ -245,45 +244,17 @@
   "suspects": [
     {
       "description": "Unaffected register variable",
-      "line": 9,
+      "line": 8,
       "match": "unaff_EBP",
       "text": "int unaff_EBP;",
       "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000010",
-      "text": "int in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 17,
+      "line": 35,
       "match": "unaff_EBP",
-      "text": "core_level_cpp_CLevelLoader_update_FUN_00504160(g_CLevelLoaderPtr,pcVar1,unaff_EBP);",
+      "text": "if (iVar5 == unaff_EBP) {",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00000010",
-      "text": "for (iVar4 = *(int *)(in_stack_00000010 + 0x548); iVar4 != 0; iVar4 = *(int *)(iVar4 + 0x14c)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000010",
-      "text": "this_ptr_00 = *(CDemonActor **)(in_stack_00000010 + 0x548);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 48,
-      "match": "in_stack_00000010",
-      "text": "*(uint *)(in_stack_00000010 + 0x884) = 1;",
-      "type": "stack_param"
     },
     {
       "add_esp_value": 4,

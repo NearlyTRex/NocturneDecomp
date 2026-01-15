@@ -12,15 +12,14 @@ sound_sndmain_cpp_setSfxFade_FUN_005a9c70
 
 {
   CSfxSlot *pCVar1;
-  int in_stack_00000014;
   
   pCVar1 = sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005a5d00(sfx_handle,1);
   if (pCVar1 == (CSfxSlot *)0x0) {
     return 0;
   }
-  pCVar1->fade_target_volume = fade_duration;
-  pCVar1->fade_time_remaining = (float)stop_after_fade;
-  pCVar1->stop_after_fade = (int)(float)in_stack_00000014;
+  pCVar1->fade_target_volume = target_volume;
+  pCVar1->fade_time_remaining = fade_duration;
+  pCVar1->stop_after_fade = (int)(float)stop_after_fade;
   sound_sndmain_cpp_unlockSound_FUN_005abdc0();
   return 1;
 }

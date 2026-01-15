@@ -1,17 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 116,
-    "complexity_score": 146,
+    "complexity_score": 87,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 46,
-    "suspect_count": 9,
+    "pseudocode_lines": 42,
+    "suspect_count": 4,
     "suspect_types": [
-      "call_esp_preserve",
-      "unaffected_reg"
+      "call_esp_preserve"
     ],
-    "total_lines": 162
+    "total_lines": 158
   },
   "cross_references": [
     {
@@ -148,41 +147,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 8,
-      "match": "unaff_ESI",
-      "text": "uint unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 10,
-      "match": "unaff_EDI",
-      "text": "int unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 35,
-      "match": "unaff_EDI",
-      "text": "if ((iVar2 != unaff_EDI) &&",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 38,
-      "match": "unaff_EDI",
-      "text": "*(uint *)(this_ptr->vdir_boxes[unaff_EDI].field3_0x3c + 4) = unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 38,
-      "match": "unaff_ESI",
-      "text": "*(uint *)(this_ptr->vdir_boxes[unaff_EDI].field3_0x3c + 4) = unaff_ESI;",
-      "type": "unaffected_reg"
-    },
     {
       "add_esp_value": 8,
       "call_address": "00576773",

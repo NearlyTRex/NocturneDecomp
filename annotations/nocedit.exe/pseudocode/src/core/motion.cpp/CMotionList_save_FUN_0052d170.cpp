@@ -9,84 +9,98 @@
 void __cdecl core_motion_cpp_CMotionList_save_FUN_0052d170(CMotionList *this_ptr,FILE *file_handle)
 
 {
-  CMotionList *pCVar1;
-  int iVar2;
-  uint unaff_EBP;
-  uint unaff_EDI;
-  char *pcVar3;
-  uint *in_stack_00000010;
-  int *piStack00000014;
-  int iStack00000018;
-  int in_stack_00000058;
-  ulonglong uVar4;
+  int *piVar1;
+  float *pfVar2;
+  float *pfVar3;
+  int *piVar4;
+  int *piVar5;
+  int *piVar6;
+  int iVar7;
+  SMotionTransition *pSVar8;
+  SMotion *pSVar9;
+  char (*pacVar10) [30];
+  int local_18;
+  SMotion *local_14;
   
-  uVar4 = CONCAT44 /* combine 2-byte values */(unaff_EDI,unaff_EBP);
   crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"// motion list version\n");
   crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%d\n",2);
-  crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"// state list\n",uVar4);
-  crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%d\n",*in_stack_00000010);
-  iVar2 = 0;
-  if (0 < *piStack00000014) {
+  crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"// state list\n");
+  crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%d\n",this_ptr->state_count);
+  iVar7 = 0;
+  if (0 < this_ptr->state_count) {
+    pacVar10 = this_ptr->state_names;
     do {
-      iVar2 = iVar2 + 1;
-      crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%s\n");
-    } while (iVar2 < *piStack00000014);
+      iVar7 = iVar7 + 1;
+      crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%s\n",pacVar10);
+      pacVar10 = pacVar10 + 1;
+    } while (iVar7 < this_ptr->state_count);
   }
   crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"// motion count\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%d\n",*(uint *)(iStack00000018 + 0x964))
-  ;
-  pcVar3 = (char *)0x0;
-  if (0 < *(int *)(iStack00000018 + 0x964)) {
-    this_ptr = (CMotionList *)(iStack00000018 + 0x968);
+  crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%d\n",this_ptr->motion_count);
+  local_18 = 0;
+  if (0 < this_ptr->motion_count) {
+    local_14 = this_ptr->motions;
     do {
-      pCVar1 = this_ptr;
-      crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"// motion %d: \"name\",fps,state,frameStart,frameCount\n",pcVar3);
+      crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"// motion %d: \"name\",fps,state,frameStart,frameCount\n",local_18);
       crt_stdio_c_fprintf_FUN_005fe6d0
-                (file_handle,"\"%s\",%g,%d,%d,%d\n",this_ptr,
-                 (double)*(float *)(this_ptr->state_names[0] + 0x1c),
-                 *(uint *)(this_ptr->state_names[1] + 2),
-                 *(uint *)(this_ptr->state_names[3] + 2));
-      crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"// motion %d: exitForwardFromFrameNumber,exitForwardToMotionNumber,exitForwardToFrameNumber\n");
-      crt_stdio_c_fprintf_FUN_005fe6d0
-                (file_handle,"%d,%d,%g\n",*(uint *)(this_ptr->state_names[1] + 6));
-      crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"// motion %d: exitForwardCmd,exitForwardTweenTime,exitForwardsetNewStateAsDesired\n");
-      pcVar3 = "%d,%g,%d\n";
+                (file_handle,"\"%s\",%g,%d,%d,%d\n",local_14,(double)local_14->fps,
+                 local_14->state_index,local_14->frame_start,local_14->frame_count);
+      crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"// motion %d: exitForwardFromFrameNumber,exitForwardToMotionNumber,exitForwardToFrameNumber\n",local_18);
+      crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%d,%d,%g\n");
+      crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"// motion %d: exitForwardCmd,exitForwardTweenTime,exitForwardsetNewStateAsDesired\n",local_18);
       crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%d,%g,%d\n");
-      crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"// motion %d: exitBackwardToMotionNumber,exitBackwardToFrameNumber\n");
-      this_ptr = (CMotionList *)0x52d2f4;
-      crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%d,%g\n");
-      crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"// motion %d transition count, list: desiredState, cmd, toMotionNumber, toFrameNumber, tweenTime, setNewStateAsDesired\n");
-      iVar2 = 0;
-      crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%d\n");
-      if (0 < *(int *)(pCVar1->state_names[3] + 10)) {
+      crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"// motion %d: exitBackwardToMotionNumber,exitBackwardToFrameNumber\n",local_18);
+      crt_stdio_c_fprintf_FUN_005fe6d0
+                (file_handle,"%d,%g\n",local_14->exit_backward_to_motion,
+                 SUB84 /* extract 2-byte value */((double)local_14->exit_backward_to_frame,0),
+                 (int)((ulonglong)(double)local_14->exit_backward_to_frame >> 0x20));
+      crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"// motion %d transition count, list: desiredState, cmd, toMotionNumber, toFrameNumber, tweenTime, setNewStateAsDesired\n",local_18);
+      iVar7 = 0;
+      crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%d\n",local_14->transition_count);
+      if (0 < local_14->transition_count) {
+        pSVar8 = local_14->transitions;
         do {
-          this_ptr = (CMotionList *)"%d,%d,%d,%g,%g,%d\n";
-          iVar2 = iVar2 + 1;
-          pcVar3 = (char *)file_handle;
-          crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%d,%d,%d,%g,%g,%d\n");
-        } while (iVar2 < *(int *)(pCVar1->state_names[3] + 10));
+          piVar1 = &pSVar8->set_new_state_as_desired;
+          pfVar2 = &pSVar8->tween_time;
+          pfVar3 = &pSVar8->to_frame_number;
+          piVar4 = &pSVar8->to_motion_number;
+          piVar5 = &pSVar8->cmd;
+          piVar6 = &pSVar8->desired_state;
+          pSVar8 = pSVar8 + 1;
+          iVar7 = iVar7 + 1;
+          crt_stdio_c_fprintf_FUN_005fe6d0
+                    (file_handle,"%d,%d,%d,%g,%g,%d\n",*piVar6,*piVar5,*piVar4,(double)*pfVar3,
+                     SUB84 /* extract 2-byte value */((double)*pfVar2,0),(int)((ulonglong)(double)*pfVar2 >> 0x20),*piVar1);
+        } while (iVar7 < local_14->transition_count);
       }
-      crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"// motion %d signal count, list: frameNumber, value\n");
-      iVar2 = 0;
-      crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%d\n");
-      if (0 < *(int *)(pCVar1->state_names[0x27] + 0xe)) {
+      crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"// motion %d signal count, list: frameNumber, value\n",local_18);
+      iVar7 = 0;
+      crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%d\n",local_14->signal_count);
+      pSVar9 = local_14;
+      if (0 < local_14->signal_count) {
         do {
-          iVar2 = iVar2 + 1;
-          crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%d,%d\n");
-        } while (iVar2 < *(int *)(pCVar1->state_names[0x27] + 0xe));
+          iVar7 = iVar7 + 1;
+          crt_stdio_c_fprintf_FUN_005fe6d0
+                    (file_handle,"%d,%d\n",pSVar9->signals[0].frame_number,
+                     pSVar9->signals[0].value);
+          pSVar9 = (SMotion *)(pSVar9->motion_name + 8);
+        } while (iVar7 < local_14->signal_count);
       }
-      crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"// motion %d marker count, list\n");
-      iVar2 = 0;
-      crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%d");
-      if (0 < *(int *)(pCVar1->state_names[0x2b] + 0x12)) {
+      crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"// motion %d marker count, list\n",local_18);
+      iVar7 = 0;
+      crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%d",local_14->marker_count);
+      pSVar9 = local_14;
+      if (0 < local_14->marker_count) {
         do {
-          iVar2 = iVar2 + 1;
-          crt_stdio_c_fprintf_FUN_005fe6d0(file_handle," %d");
-        } while (iVar2 < *(int *)(pCVar1->state_names[0x2b] + 0x12));
+          iVar7 = iVar7 + 1;
+          crt_stdio_c_fprintf_FUN_005fe6d0(file_handle," %d",pSVar9->markers[0]);
+          pSVar9 = (SMotion *)(pSVar9->motion_name + 4);
+        } while (iVar7 < local_14->marker_count);
       }
       crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"\n");
-      pcVar3 = (char *)((int)&((FILE *)pcVar3)->_ptr + 1);
-    } while ((int)pcVar3 < *(int *)(in_stack_00000058 + 0x964));
+      local_14 = local_14 + 1;
+      local_18 = local_18 + 1;
+    } while (local_18 < this_ptr->motion_count);
   }
   return;
 }

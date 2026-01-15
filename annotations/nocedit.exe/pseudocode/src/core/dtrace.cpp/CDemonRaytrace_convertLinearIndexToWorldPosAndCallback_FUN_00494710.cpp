@@ -14,7 +14,6 @@ core_dtrace_cpp_CDemonRaytrace_convertLinearIndexToWorldPosAndCallback_FUN_00494
   int iVar1;
   int iVar2;
   int iVar3;
-  BADSPACEBASE *in_ESP;
   CVector3f local_1c;
   int local_10;
   

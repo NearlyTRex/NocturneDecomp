@@ -1,18 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 250,
-    "complexity_score": 310,
+    "complexity_score": 299,
     "cross_reference_count": 4,
     "function_call_count": 3,
     "global_count": 4,
-    "pseudocode_lines": 125,
-    "suspect_count": 17,
+    "pseudocode_lines": 124,
+    "suspect_count": 16,
     "suspect_types": [
       "call_esp_preserve",
       "stack_param",
       "variadic_preserve"
     ],
-    "total_lines": 375
+    "total_lines": 374
   },
   "cross_references": [
     {
@@ -141,7 +141,7 @@
       "description": "Unresolved stack parameter",
       "line": 8,
       "match": "in_stack_00000008",
-      "text": "CDemonMission *in_stack_00000008;",
+      "text": "char *in_stack_00000008;",
       "type": "stack_param"
     },
     {
@@ -209,23 +209,16 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 108,
+      "line": 107,
       "match": "in_stack_00000008",
-      "text": "(in_stack_00000008->field0_0x0,in_stack_0000000c);",
+      "text": "iVar1 = crt_string_c_stricmp_FUN_005fe7f0(in_stack_00000008,in_stack_0000000c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 108,
+      "line": 107,
       "match": "in_stack_0000000c",
-      "text": "(in_stack_00000008->field0_0x0,in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 110,
-      "match": "in_stack_00000008",
-      "text": "(pcVar3 = core_mission_cpp_CDemonMission_FUN_00524030(in_stack_00000008),",
+      "text": "iVar1 = crt_string_c_stricmp_FUN_005fe7f0(in_stack_00000008,in_stack_0000000c);",
       "type": "stack_param"
     },
     {

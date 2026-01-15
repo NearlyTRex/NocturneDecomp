@@ -9,12 +9,12 @@
 void __cdecl core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(CDemonActor *this_ptr)
 
 {
-  BADSPACEBASE *in_ESP;
+  float local_8;
   
   core_actor_cpp_serializeLocation_FUN_0040b480(&this_ptr->location,"location");
   core_actor_cpp_serializeOrientation_FUN_0040b3e0(&this_ptr->orient,"orient");
   if (g_CDemonActorClassVersion < 7) {
-    core_actor_cpp_serializeFloat_FUN_0040b770((float *)&stack0x00000000,"fov");
+    core_actor_cpp_serializeFloat_FUN_0040b770(&local_8,"fov");
     if (g_CDemonActorClassVersion < 6) {
       return;
     }

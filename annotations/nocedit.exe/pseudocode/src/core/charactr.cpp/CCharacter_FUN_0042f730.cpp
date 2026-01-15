@@ -10,28 +10,24 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042f730(CCharacter *this_ptr)
 
 {
   int iVar1;
-  CCharacter *pCVar2;
-  int iVar3;
+  int iVar2;
   CActorPropertyList *in_stack_00000008;
-  int *piStack0000000c;
   
   core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290(&this_ptr->base_actor,in_stack_00000008);
   core_actor_cpp_CActorPropertyList_FUN_0040e500();
-  iVar3 = 0;
+  iVar2 = 0;
   iVar1 = *(int *)this_ptr->carry_hands[0].field0_0x0;
-  pCVar2 = this_ptr;
   while (iVar1 < 0) {
-    iVar3 = iVar3 + 1;
-    if (1 < iVar3) goto LAB_0042f793;
-    iVar1 = *(int *)pCVar2->carry_hands[1].field0_0x0;
-    pCVar2 = (CCharacter *)&(pCVar2->base_actor).orient_matrix.m[0].z;
+    iVar2 = iVar2 + 1;
+    if (1 < iVar2) goto LAB_0042f793;
+    iVar1 = *(int *)this_ptr->carry_hands[1].field0_0x0;
+    this_ptr = (CCharacter *)&(this_ptr->base_actor).orient_matrix.m[0].z;
   }
   core_actor_cpp_CActorPropertyList_FUN_0040e670(in_stack_00000008);
 LAB_0042f793:
   core_actor_cpp_CActorPropertyList_FUN_0040e480(in_stack_00000008);
   core_actor_cpp_CActorPropertyList_FUN_0040e330(in_stack_00000008);
   core_actor_cpp_CActorPropertyList_FUN_0040e290(in_stack_00000008);
-  piStack0000000c = &this_ptr->health_bar_mode;
   core_actor_cpp_CActorPropertyList_FUN_0040e640(in_stack_00000008);
   return;
 }

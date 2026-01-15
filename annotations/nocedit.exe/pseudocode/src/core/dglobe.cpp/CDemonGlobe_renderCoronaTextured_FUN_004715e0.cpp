@@ -12,27 +12,28 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_renderCoronaTextured_FUN_004715e0(CDemo
   CDemonRenderer *pCVar1;
   CDemonRenderer *this_ptr_00;
   int iVar2;
-  BADSPACEBASE *in_ESP;
   int iVar3;
   SMRGLHeaderPrimitive *polygon_info;
-  int local_18;
-  int local_14;
+  CVector3i local_1c;
   
   iVar3 = 0;
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
             (g_CDemonRendererPtr,&this_ptr->position);
   iVar2 = 0;
   do {
-    local_18 = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].x + iVar3) *
-                          (float)0.00390625 * this_ptr->radius *
-                          256f);
-    local_14 = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].y + iVar3) *
-                          (float)0.00390625 * this_ptr->radius *
-                          256f);
+    local_1c.x = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].x + iVar3) *
+                            (float)0.00390625 * this_ptr->radius *
+                            256f);
+    local_1c.y = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].y + iVar3) *
+                            (float)0.00390625 * this_ptr->radius *
+                            256f);
+    local_1c.z = (int)ROUND((float)*(int *)((int)&g_CoronaVertexPositions[0].z + iVar3) *
+                            (float)0.00390625 * this_ptr->radius *
+                            256f);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               ((SProjectedVertex *)
                ((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).transformed_x +
-               iVar2),(CVector3i *)&local_18);
+               iVar2),&local_1c);
     pCVar1 = g_CDemonRendererPtr;
     *(uint *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->u + iVar2) = 0x800000;
     *(uint *)((int)&pCVar1->vertex_buffer_ptr->v + iVar2) = 0x800000;

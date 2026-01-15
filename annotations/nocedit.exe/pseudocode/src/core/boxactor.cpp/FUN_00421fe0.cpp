@@ -15,13 +15,13 @@ float * core_boxactor_cpp_FUN_00421fe0(void)
   CKeyFramedModelInstance *this_ptr;
   CKeyFramedModel *pCVar1;
   CVector3f *pCVar2;
+  double dVar3;
   int in_stack_00000004;
   float *in_stack_00000008;
-  int local_8;
   
-  crt_math_c_round_FUN_005fe6b0((double)*(float *)(in_stack_00000004 + 0x310));
+  dVar3 = crt_math_c_round_FUN_005fe6b0((double)*(float *)(in_stack_00000004 + 0x310));
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(this_ptr);
-  pCVar2 = pCVar1->frame_bounds + local_8 * 2;
+  pCVar2 = pCVar1->frame_bounds + (int)ROUND(dVar3) * 2;
   *in_stack_00000008 = pCVar2->x;
   in_stack_00000008[1] = pCVar2->y;
   in_stack_00000008[2] = pCVar2->z;

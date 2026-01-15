@@ -1,17 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 80,
-    "complexity_score": 153,
+    "complexity_score": 74,
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 4,
-    "pseudocode_lines": 23,
-    "suspect_count": 12,
+    "pseudocode_lines": 19,
+    "suspect_count": 5,
     "suspect_types": [
-      "call_esp_preserve",
-      "stack_param"
+      "call_esp_preserve"
     ],
-    "total_lines": 103
+    "total_lines": 99
   },
   "cross_references": [
     {
@@ -157,55 +156,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 7,
-      "match": "in_stack_00000018",
-      "text": "int in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_0000001c",
-      "text": "int in_stack_0000001c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000020",
-      "text": "int in_stack_00000020;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000018",
-      "text": "engine_2d_c_drawHLine_FUN_00402ee0(left,in_stack_00000018 + -1,border_style_flag + -1);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_00000018",
-      "text": "engine_2d_c_drawVLine_FUN_00402ff0(border_style_flag + -1,top,in_stack_00000018 + -1);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 24,
-      "match": "in_stack_0000001c",
-      "text": "(left + 1,top + 1,in_stack_0000001c + -2,in_stack_00000020 + -2,g_ButtonFaceColor);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 24,
-      "match": "in_stack_00000020",
-      "text": "(left + 1,top + 1,in_stack_0000001c + -2,in_stack_00000020 + -2,g_ButtonFaceColor);",
-      "type": "stack_param"
-    },
     {
       "add_esp_value": 12,
       "call_address": "004a591c",

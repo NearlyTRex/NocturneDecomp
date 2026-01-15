@@ -11,19 +11,19 @@ void core_course_cpp_FUN_00443bc0(void)
 {
   uint uVar1;
   int iVar2;
-  BADSPACEBASE *in_ESP;
   SRenderVertex *pSVar3;
   SRenderVertex *pSVar4;
-  int *piVar5;
-  byte bVar6;
+  double *pdVar5;
+  int *piVar6;
+  byte bVar7;
   CCourse *in_stack_00000004;
   CKeyFramedModel *in_stack_00000008;
   SRenderVertex *in_stack_fffffdf6;
   SRenderVertex *in_stack_fffffdfa;
-  ulonglong uStack_1de;
-  double dStack_1d6;
-  double dStack_1ce;
-  ulonglong uStack_1c6;
+  double dStack_1da;
+  double dStack_1d2;
+  double dStack_1ca;
+  uint uStack_1c2;
   CGame *in_stack_fffffe56;
   char local_130 [100];
   byte local_cc [16];
@@ -55,7 +55,7 @@ void core_course_cpp_FUN_00443bc0(void)
   float local_18;
   int local_14;
   
-  bVar6 = 0;
+  bVar7 = 0;
   local_18 = 0.0;
   g_CDemonSetPtr->lighting_quality_mode = 1;
   local_28 = 0;
@@ -84,7 +84,7 @@ void core_course_cpp_FUN_00443bc0(void)
     }
     uVar1 = local_24;
     local_18 = local_1c;
-    uStack_1c6 = (double)CONCAT44 /* combine 2-byte values */(0x443c8b,(uint)uStack_1c6);
+    _uStack_1c2 = (double)CONCAT44 /* combine 2-byte values */(in_stack_00000004,0x443c8b);
     core_course_cpp_CCourse_FUN_00442710(in_stack_00000004);
     if (uVar1 != 0) {
       if ((CVector3f *)local_cc != &local_80) {
@@ -116,11 +116,13 @@ void core_course_cpp_FUN_00443bc0(void)
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
               (g_CDemonRendererPtr,local_b0);
     local_14 = in_stack_00000004->len + -1;
+    _uStack_1c2 = (double)CONCAT44 /* combine 2-byte values */(0x443d61,uStack_1c2);
     core_course_cpp_CCourse_FUN_00442710(in_stack_00000004);
     g_ActiveRenderColor = 0xfa;
     local_34 = 0;
     while (local_34 < in_stack_00000004->len) {
       local_14 = local_34;
+      _uStack_1c2 = (double)CONCAT44 /* combine 2-byte values */(0x443da7,uStack_1c2);
       core_course_cpp_CCourse_FUN_00442710(in_stack_00000004);
       local_5c.x = (int)ROUND(local_8c * 256f);
       local_5c.y = (int)ROUND(local_88 * 256f);
@@ -135,17 +137,17 @@ void core_course_cpp_FUN_00443bc0(void)
       ;
       pSVar4 = g_CDemonRendererPtr->vertex_buffer_ptr;
       pSVar3 = pSVar4 + 1;
-      piVar5 = (int *)((int)&uStack_1de + 4);
+      pdVar5 = &dStack_1da;
       for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-        *piVar5 = (pSVar3->projected_vertex).transformed_x;
-        pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar6 * -2 + 1) * 4);
-        piVar5 = piVar5 + (uint)bVar6 * -2 + 1;
+        *(int *)pdVar5 = (pSVar3->projected_vertex).transformed_x;
+        pSVar3 = (SRenderVertex *)((int)pSVar3 + ((uint)bVar7 * -2 + 1) * 4);
+        pdVar5 = (double *)((int)pdVar5 + ((uint)bVar7 * -2 + 1) * 4);
       }
-      piVar5 = (int *)&stack0xfffffdf6;
+      piVar6 = (int *)&stack0xfffffdf6;
       for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
-        *piVar5 = (pSVar4->projected_vertex).transformed_x;
-        pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar6 * -2 + 1) * 4);
-        piVar5 = piVar5 + (uint)bVar6 * -2 + 1;
+        *piVar6 = (pSVar4->projected_vertex).transformed_x;
+        pSVar4 = (SRenderVertex *)((int)pSVar4 + ((uint)bVar7 * -2 + 1) * 4);
+        piVar6 = piVar6 + (uint)bVar7 * -2 + 1;
       }
       engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffdf6,in_stack_fffffdfa);
       if (&local_8c == &local_68) {
@@ -163,14 +165,15 @@ void core_course_cpp_FUN_00443bc0(void)
                 (g_CDemonRendererPtr,&local_80);
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
                 (g_CDemonRendererPtr,&local_98,(CVector3i *)0x0);
+      _uStack_1c2 = (double)CONCAT44 /* combine 2-byte values */(0x443f1d,uStack_1c2);
       core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
                 (in_stack_00000008,(CKeyFramedModelInstance *)0x0,0,-1);
       engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
     }
-    uStack_1c6 = (double)local_80.z;
-    dStack_1ce = (double)local_80.y;
-    dStack_1d6 = (double)local_80.x;
-    uStack_1de = (double)local_18;
+    _uStack_1c2 = (double)(float)local_98.x;
+    dStack_1ca = (double)local_80.z;
+    dStack_1d2 = (double)local_80.y;
+    dStack_1da = (double)local_80.x;
     crt_stdio_c_sprintf_FUN_005fdbd0(local_130,"t=%7.3f, Pos: %7.2f,%7.2f,%7.2f, PBH: %7.4f %7.4f %7.4f");
     engine_2d_c_drawText_FUN_00401fd0(local_130,0,0);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();

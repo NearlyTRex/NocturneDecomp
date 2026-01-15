@@ -1,16 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 114,
+    "complexity_score": 79,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 49,
-    "suspect_count": 5,
+    "suspect_count": 2,
     "suspect_types": [
       "param_count_too_few",
-      "special_crt_function",
-      "unaffected_reg"
+      "special_crt_function"
     ],
     "total_lines": 105
   },
@@ -98,27 +97,6 @@
     "variables": []
   },
   "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 4,
-      "match": "unaff_EBX",
-      "text": "void crt_unknown_c_FUN_0060b586(byte *param_1,uint param_2,ulonglong *unaff_EBX)",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 50,
-      "match": "unaff_EBX",
-      "text": "*unaff_EBX = uVar16;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 51,
-      "match": "unaff_EBX",
-      "text": "*(short *)(unaff_EBX + 1) = (short)param_1;",
-      "type": "unaffected_reg"
-    },
     {
       "call_site_count": 1,
       "declared_params": 0,

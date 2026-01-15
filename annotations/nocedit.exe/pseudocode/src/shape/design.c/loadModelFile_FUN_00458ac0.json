@@ -1,17 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 805,
-    "complexity_score": 372,
+    "complexity_score": 317,
     "cross_reference_count": 2,
     "function_call_count": 18,
     "global_count": 66,
     "pseudocode_lines": 292,
-    "suspect_count": 6,
+    "suspect_count": 2,
     "suspect_types": [
-      "badspacebase",
-      "pointer_cast",
-      "register_param",
-      "stack_ref"
+      "pointer_cast"
     ],
     "total_lines": 1097
   },
@@ -671,7 +668,7 @@
     {
       "add_esp_value": 12,
       "call_address": "00458ce6",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -687,7 +684,7 @@
     {
       "add_esp_value": 16,
       "call_address": "00458d16",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -703,7 +700,7 @@
     {
       "add_esp_value": 20,
       "call_address": "00458dfc",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -719,7 +716,7 @@
     {
       "add_esp_value": 12,
       "call_address": "00458e16",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -735,7 +732,7 @@
     {
       "add_esp_value": 16,
       "call_address": "00458e46",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -751,7 +748,7 @@
     {
       "add_esp_value": 20,
       "call_address": "004590b9",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -767,7 +764,7 @@
     {
       "add_esp_value": 12,
       "call_address": "004591c5",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -783,7 +780,7 @@
     {
       "add_esp_value": 12,
       "call_address": "004591fd",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -799,7 +796,7 @@
     {
       "add_esp_value": 12,
       "call_address": "0045923f",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -815,7 +812,7 @@
     {
       "add_esp_value": 12,
       "call_address": "004592f6",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1203,34 +1200,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 9,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 9,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 148,
-      "match": "&stack0xfffffe90",
-      "text": "crt_stdio_c_fgets_FUN_005fefd0(&stack0xfffffe90,0x51,local_18);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 149,
-      "match": "&stack0xfffffe90",
-      "text": "local_14 = (byte *)crt_string_c_strtok_FUN_005fff50(&stack0xfffffe90,\",\");",
-      "type": "stack_ref"
-    },
     {
       "description": "Complex pointer cast",
       "line": 229,

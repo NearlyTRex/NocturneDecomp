@@ -1,23 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 108,
-    "complexity_score": 301,
+    "complexity_score": 161,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 4,
-    "pseudocode_lines": 51,
-    "suspect_count": 21,
+    "pseudocode_lines": 46,
+    "suspect_count": 10,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
-      "format_string_mismatch",
       "lea_esp_stack_addr",
-      "register_param",
-      "stack_param",
-      "stack_ref",
       "variadic_preserve"
     ],
-    "total_lines": 159
+    "total_lines": 154
   },
   "cross_references": [],
   "function": {
@@ -194,78 +189,8 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 6,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 6,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000014",
-      "text": "int in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000018",
-      "text": "int in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 23,
-      "match": "&stack0xffffff88",
-      "text": "pcVar1 = &stack0xffffff88;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 24,
-      "match": "&stack0xffffff88",
-      "text": "pcVar2 = &stack0xffffff88;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 41,
-      "match": "&stack0xffffff8c",
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xffffff8c,0,(g_QuantizeCurrentLineNumber + 4) * 0xb);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 43,
-      "match": "in_stack_00000014",
-      "text": "if (in_stack_00000014 + -1 != in_stack_00000018) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 43,
-      "match": "in_stack_00000018",
-      "text": "if (in_stack_00000014 + -1 != in_stack_00000018) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 46,
-      "match": "&stack0xffffff94",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff94,\"%s [....................]\\n\");",
-      "type": "stack_ref"
-    },
-    {
       "call_address": "00556937",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -279,7 +204,7 @@
     },
     {
       "call_address": "005569c0",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -290,17 +215,6 @@
       "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
       "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 005569c0 (no EBP frame)",
       "type": "variadic_preserve"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s [....................]\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%s [....................]\\n",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 46,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff94,\"%s [....................]\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 12,

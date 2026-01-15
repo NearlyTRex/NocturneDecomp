@@ -13,29 +13,27 @@ void __cdecl core_setdir_cpp_CDemonSet_writeThumbs_FUN_00575e40(CDemonSet *this_
   CZThumb *this_ptr_00;
   int iVar1;
   int iVar2;
-  int *in_stack_0000000c;
-  uint in_stack_00000010;
-  CZThumb *local_14;
-  int *piVar3;
-  int iVar4;
+  CZThumb *local_1c;
+  CDemonSet *local_18;
+  int local_14;
   
   file_handle = engine_dosio_c_getFile_FUN_00481a50("data",filename,"wb");
   if (file_handle == (FILE *)0x0) {
     g_CurrentFilename = "..\\core\\setdir.cpp";
     g_CurrentLineNumber = 0x3bf;
-    core_main_c_displayErrorAndQuit_FUN_00506f10("Can't create %s",in_stack_0000000c);
+    core_main_c_displayErrorAndQuit_FUN_00506f10("Can't create %s",filename);
   }
-  iVar4 = 0;
-  if (0 < *in_stack_0000000c) {
-    local_14 = g_CZThumbPool;
-    piVar3 = in_stack_0000000c;
+  local_14 = 0;
+  if (0 < this_ptr->camera_count) {
+    local_18 = this_ptr;
+    local_1c = g_CZThumbPool;
     do {
       iVar2 = 1;
-      if (piVar3[0x51] != 0) {
+      if (local_18->cameras[0].is_panning != 0) {
         iVar2 = 6;
       }
       iVar1 = 0;
-      this_ptr_00 = local_14;
+      this_ptr_00 = local_1c;
       if (iVar2 != 0) {
         do {
           iVar1 = iVar1 + 1;
@@ -43,15 +41,15 @@ void __cdecl core_setdir_cpp_CDemonSet_writeThumbs_FUN_00575e40(CDemonSet *this_
           this_ptr_00 = this_ptr_00 + 1;
         } while (iVar1 < iVar2);
       }
-      local_14 = local_14 + 6;
-      piVar3 = piVar3 + 0x69;
-      iVar4 = iVar4 + 1;
-    } while (iVar4 < *in_stack_0000000c);
+      local_1c = local_1c + 6;
+      local_18 = (CDemonSet *)&local_18->cameras[0].field17_0x1a0;
+      local_14 = local_14 + 1;
+    } while (local_14 < this_ptr->camera_count);
   }
   if ((file_handle->_flag & 0x20) != 0) {
     g_CurrentFilename = "..\\core\\setdir.cpp";
     g_CurrentLineNumber = 0x3ca;
-    core_main_c_displayErrorAndQuit_FUN_00506f10("Error writing %s",in_stack_00000010);
+    core_main_c_displayErrorAndQuit_FUN_00506f10("Error writing %s",filename);
   }
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\core\\setdir.cpp",0x3cb);
   return;

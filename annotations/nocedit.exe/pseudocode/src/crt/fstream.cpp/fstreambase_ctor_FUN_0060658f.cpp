@@ -9,30 +9,31 @@
 fstreambase * __cdecl crt_fstream_cpp_fstreambase_ctor_FUN_0060658f(fstreambase *this_ptr,uint c1)
 
 {
-  int iVar1;
-  void *pvVar2;
+  fstreambase *pfVar1;
+  int iVar2;
+  void *pvVar3;
   filebuf *buffer_ptr;
-  ios *piVar3;
-  fstreambase *pfVar4;
+  ios *piVar4;
+  int unaff_EBX;
+  char *unaff_retaddr;
   
-  pfVar4 = this_ptr;
   if ((c1 & 1) == 0) {
     (this_ptr->base).layout_info = &g_FStreamBase_VirtualBaseLayout;
-    piVar3 = crt_iostream_cpp_ios_ctor_FUN_006061fc(&this_ptr->ios_base);
-    pfVar4 = (fstreambase *)&piVar3[-2].__enabled_exceptions;
+    piVar4 = crt_iostream_cpp_ios_ctor_FUN_006061fc(&this_ptr->ios_base);
+    this_ptr = (fstreambase *)&piVar4[-2].__enabled_exceptions;
   }
-  buffer_ptr = crt_fstream_cpp_filebuf_ctor_FUN_0060bddd(&(pfVar4->base).filebuf);
-  pfVar4 = (fstreambase *)(buffer_ptr[-1].__unbuffered_get_area + 4);
-  iVar1 = *(int *)((int)(pfVar4->base).layout_info + 4);
-  *(int *)((pfVar4->base).filebuf.__unbuffered_get_area + iVar1 + -0x3c) = iVar1;
-  pvVar2 = (pfVar4->base).layout_info;
+  buffer_ptr = crt_fstream_cpp_filebuf_ctor_FUN_0060bddd(&(this_ptr->base).filebuf);
+  pfVar1 = (fstreambase *)(buffer_ptr[-1].__unbuffered_get_area + 4);
+  iVar2 = *(int *)((int)(pfVar1->base).layout_info + 4);
+  *(int *)((pfVar1->base).filebuf.__unbuffered_get_area + iVar2 + -0x3c) = iVar2;
+  pvVar3 = (pfVar1->base).layout_info;
   buffer_ptr[1].streambuf.__b_lock = &g_FStreamBase_Destructor;
-  *(void ***)(buffer_ptr->__unbuffered_get_area + *(int *)((int)pvVar2 + 4) + -0x10) =
+  *(void ***)(buffer_ptr->__unbuffered_get_area + *(int *)((int)pvVar3 + 4) + -0x10) =
        &g_FStreamBase_IOSDestructor;
   crt_iostream_cpp_streambuf_initBuffer_FUN_0060b815
             ((streambuf *)
-             ((pfVar4->base).filebuf.__unbuffered_get_area +
-             *(int *)((int)(pfVar4->base).layout_info + 4) + -0x38),(char *)buffer_ptr,(int)this_ptr
-             ,(char *)c1);
-  return pfVar4;
+             ((pfVar1->base).filebuf.__unbuffered_get_area +
+             *(int *)((int)(pfVar1->base).layout_info + 4) + -0x38),(char *)buffer_ptr,unaff_EBX,
+             unaff_retaddr);
+  return pfVar1;
 }

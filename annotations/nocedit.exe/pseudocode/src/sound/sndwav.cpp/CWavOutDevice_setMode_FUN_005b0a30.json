@@ -1,21 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 153,
-    "complexity_score": 324,
+    "complexity_score": 184,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 15,
     "pseudocode_lines": 69,
-    "suspect_count": 21,
+    "suspect_count": 9,
     "suspect_types": [
-      "badspacebase",
       "callind_preserve",
       "callind_preserve_lost",
       "lea_esp_stack_addr",
       "pointer_cast",
-      "register_param",
-      "stack_param",
-      "unknown_field",
       "variadic_preserve"
     ],
     "total_lines": 222
@@ -252,123 +248,39 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 14,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 14,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000018",
-      "text": "int in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_0000001c",
-      "text": "int in_stack_0000001c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_0000003c",
-      "text": "int *in_stack_0000003c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_00000018",
-      "text": "g_WaveOutChannels = in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 29,
-      "match": "in_stack_0000001c",
-      "text": "g_WaveOutSampleRate = in_stack_0000001c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 31,
-      "match": "._0_2_",
-      "text": "uStack_18._0_2_ = 0xa97;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 32,
-      "match": "._2_2_",
-      "text": "uStack_18._2_2_ = 0x5b;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 45,
+      "line": 42,
       "match": "(HGLOBAL *)((int)",
       "text": "*(HGLOBAL *)((int)g_WaveOutBufferHandles + iVar6) = pvVar3;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 49,
+      "line": 45,
       "match": "(LPVOID *)((int)",
       "text": "*(LPVOID *)((int)g_WaveOutBuffers + iVar6) = pvVar4;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 52,
+      "line": 48,
       "match": "(HGLOBAL *)((int)",
       "text": "*(HGLOBAL *)((int)g_WaveOutHeaderHandles + iVar6) = pvVar3;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 55,
+      "line": 51,
       "match": "(HGLOBAL *)((int)",
       "text": "pvVar4 = (*GlobalLock)(*(HGLOBAL *)((int)g_WaveOutHeaderHandles + iVar6));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 56,
+      "line": 52,
       "match": "(LPVOID *)((int)",
       "text": "*(LPVOID *)((int)g_WaveOutHeaders + iVar6) = pvVar4;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 60,
-      "match": "._2_2_",
-      "text": "uStack_18._2_2_ = (WORD)g_WaveOutChannels;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 61,
-      "match": "._0_2_",
-      "text": "uStack_18._0_2_ = 1;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 65,
-      "match": "in_stack_0000003c",
-      "text": "*in_stack_0000003c = g_WaveOutBufferSize;",
-      "type": "stack_param"
     },
     {
       "add_esp_value": 4,
@@ -402,7 +314,7 @@
     },
     {
       "call_address": "005b0bd4",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "conflict",
       "esp_certainty_at_call": "conflict",

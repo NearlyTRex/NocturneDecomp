@@ -15,68 +15,67 @@ shape_cramtex_cpp_renderTextureEntry_FUN_00447c20
   int iVar1;
   int iVar2;
   int iVar3;
-  int y1;
   int iVar4;
-  int unaff_EBP;
   int iVar5;
-  int in_stack_00000020;
-  int in_stack_00000024;
-  int in_stack_00000028;
-  int iStack_10;
+  int iVar6;
+  int *in_stack_00000004;
+  int local_18;
   
   crt_stack_c_stack_probe_FUN_005ff9f3(0x48);
-  if (draw_x == 0) {
-    if (g_CramMapNumber != *(int *)(visualization_mode + 0x10)) {
+  if (texture_entry == (SCramWorkingEntry *)0x0) {
+    if (g_CramMapNumber != in_stack_00000004[4]) {
       return;
     }
-    iStack_10 = *(int *)(visualization_mode + 0x24);
-    iVar4 = *(int *)(visualization_mode + 0x20);
-    iVar2 = *(int *)(visualization_mode + 0x28);
-    iVar5 = *(int *)(visualization_mode + 0x1c);
+    local_18 = in_stack_00000004[9];
+    iVar5 = in_stack_00000004[8];
+    iVar4 = in_stack_00000004[10];
+    iVar6 = in_stack_00000004[7];
   }
   else {
-    if (g_CramMapNumber != *(int *)(visualization_mode + 0x2c)) {
+    if (g_CramMapNumber != in_stack_00000004[0xb]) {
       return;
     }
-    iStack_10 = *(int *)(visualization_mode + 0x38);
-    iVar4 = *(int *)(visualization_mode + 0x34);
-    iVar2 = *(int *)(visualization_mode + 0x3c);
-    iVar5 = *(int *)(visualization_mode + 0x30);
+    local_18 = in_stack_00000004[0xe];
+    iVar5 = in_stack_00000004[0xd];
+    iVar4 = in_stack_00000004[0xf];
+    iVar6 = in_stack_00000004[0xc];
   }
-  y1 = draw_width + ((in_stack_00000020 - draw_width) * iVar4) / g_CramCurrentAcceptableSize;
-  iVar3 = (iStack_10 * (draw_height - draw_y)) / g_CramCurrentAcceptableSize + draw_y;
+  iVar1 = draw_y - visualization_mode;
+  iVar2 = draw_width - draw_x;
   engine_2d_c_fillRectColor_FUN_00403170
-            (((draw_height - draw_y) * iVar5) / g_CramCurrentAcceptableSize + draw_y,y1,iVar3 + -1,
-             (iVar2 * (in_stack_00000020 - draw_width)) / g_CramCurrentAcceptableSize + draw_width +
-             -1,0xf8);
-  iVar1 = g_CramPaddingCalculation / 2;
-  iVar5 = (y1 * (iVar5 + iVar1)) / g_CramCurrentAcceptableSize + draw_y;
-  iVar4 = draw_height + (iVar3 * (iVar4 + iVar1)) / g_CramCurrentAcceptableSize;
+            ((iVar1 * iVar6) / g_CramCurrentAcceptableSize + visualization_mode,
+             draw_x + (iVar2 * iVar5) / g_CramCurrentAcceptableSize,
+             (local_18 * iVar1) / g_CramCurrentAcceptableSize + visualization_mode + -1,
+             (iVar4 * iVar2) / g_CramCurrentAcceptableSize + draw_x + -1,0xf8);
+  iVar3 = g_CramPaddingCalculation / 2;
+  iVar6 = (iVar1 * (iVar6 + iVar3)) / g_CramCurrentAcceptableSize + visualization_mode;
+  iVar5 = draw_x + (iVar2 * (iVar5 + iVar3)) / g_CramCurrentAcceptableSize;
   engine_2d_c_fillRectColor_FUN_00403170
-            (iVar5,iVar4,((iVar2 - iVar1) * y1) / g_CramCurrentAcceptableSize + draw_y + -1,
-             ((unaff_EBP - iVar1) * iVar3) / g_CramCurrentAcceptableSize + draw_height + -1,2);
-  if (draw_width != 0) {
-    if (*(int *)(visualization_mode + 0x44) == 0) {
-      iVar2 = *(int *)visualization_mode;
+            (iVar6,iVar5,
+             ((local_18 - iVar3) * iVar1) / g_CramCurrentAcceptableSize + visualization_mode + -1,
+             ((iVar4 - iVar3) * iVar2) / g_CramCurrentAcceptableSize + draw_x + -1,2);
+  if (texture_entry != (SCramWorkingEntry *)0x0) {
+    if (in_stack_00000004[0x11] == 0) {
+      iVar4 = *in_stack_00000004;
     }
     else {
-      iVar2 = *(int *)(visualization_mode + 4);
+      iVar4 = in_stack_00000004[1];
     }
-    if (*(int *)(visualization_mode + 0x44) == 0) {
-      iVar3 = *(int *)(visualization_mode + 4);
+    if (in_stack_00000004[0x11] == 0) {
+      iVar1 = in_stack_00000004[1];
     }
     else {
-      iVar3 = *(int *)visualization_mode;
+      iVar1 = *in_stack_00000004;
     }
     engine_2d_c_fillRectColor_FUN_00403170
-              (iVar5,iVar4,
-               draw_y + ((in_stack_00000024 - draw_y) *
-                        ((g_CramPaddingCalculation + iVar2 + *(int *)(visualization_mode + 0x30)) -
-                        g_CramPaddingCalculation / 2)) / g_CramCurrentAcceptableSize + -1,
-               ((in_stack_00000028 - in_stack_00000020) *
-               ((g_CramPaddingCalculation + iVar3 + *(int *)(visualization_mode + 0x34)) -
-               g_CramPaddingCalculation / 2)) / g_CramCurrentAcceptableSize + in_stack_00000020 + -1
-               ,0xfa);
+              (iVar6,iVar5,
+               visualization_mode +
+               ((draw_y - visualization_mode) *
+               ((g_CramPaddingCalculation + iVar4 + in_stack_00000004[0xc]) -
+               g_CramPaddingCalculation / 2)) / g_CramCurrentAcceptableSize + -1,
+               ((draw_width - draw_x) *
+               ((g_CramPaddingCalculation + iVar1 + in_stack_00000004[0xd]) -
+               g_CramPaddingCalculation / 2)) / g_CramCurrentAcceptableSize + draw_x + -1,0xfa);
   }
   return;
 }

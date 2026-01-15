@@ -14,123 +14,117 @@ void core_msnedit_cpp_RelevantActorsToTesting_FUN_0053b030(void)
 {
   byte *pbVar1;
   char cVar2;
-  int iVar3;
+  CDemonActor *pCVar3;
   int iVar4;
+  CStrList *str1;
   int iVar5;
-  char *pcVar6;
+  int iVar6;
   char *pcVar7;
-  char *pcVar8;
+  float *pfVar8;
   char *pcVar9;
-  BADSPACEBASE *in_ESP;
-  char *unaff_ESI;
-  CDemonMission *in_stack_00000008;
-  int in_stack_0000000c;
-  int in_stack_00000010;
-  CDemonMission *in_stack_00000018;
-  CDemonMission *in_stack_ffffd460;
-  char *in_stack_ffffd464;
-  uint in_stack_ffffd468;
-  uint in_stack_ffffd46c;
-  uint in_stack_ffffd470;
-  uint auStack_2b38 [2341];
-  byte auStack_6a4 [8];
-  byte auStack_69c [936];
-  byte auStack_2f4 [4];
-  char acStack_2f0 [4];
-  char acStack_2ec [284];
-  char acStack_1d0 [8];
-  char acStack_1c8 [180];
-  char acStack_114 [4];
-  char local_110 [4];
-  char acStack_10c [204];
-  byte auStack_40 [8];
-  byte local_38 [12];
-  byte auStack_2c [12];
-  CDemonActor *pCStack_20;
-  byte *local_18;
-  int index;
+  CDemonActor *unaff_EBP;
+  CDemonMission *in_stack_00000004;
+  int in_stack_00000008;
+  CStrList *in_stack_ffffd450;
+  CDemonActor *in_stack_ffffd454;
+  uint in_stack_ffffd458;
+  uint in_stack_ffffd45c;
+  uint in_stack_ffffd460;
+  byte auStack_2b9c [100];
+  uint auStack_2b38 [2339];
+  CPickList local_6ac;
+  char acStack_304 [8];
+  CDemonActor CStack_2fc;
+  char local_110 [208];
+  byte auStack_40 [16];
+  CStrList CStack_30;
+  byte *puStack_1c;
+  CDemonActor *local_18;
+  int iStack_14;
   
-  shape_edittool_cpp_CStrList_ctor_FUN_004a2a20((CStrList *)local_38);
-  pcVar8 = *(char **)(in_stack_0000000c + 0x68);
-  cVar2 = *pcVar8;
+  shape_edittool_cpp_CStrList_ctor_FUN_004a2a20((CStrList *)(auStack_40 + 8));
+  pcVar9 = *(char **)(in_stack_00000008 + 0x68);
+  cVar2 = *pcVar9;
   while (cVar2 != '\0') {
-    cVar2 = *pcVar8;
+    cVar2 = *pcVar9;
     if ((((g_CharacterClassificationTable[(byte)(cVar2 + 1)] & 0xe0U) == 0) && (cVar2 != '-')) &&
        (cVar2 != '_')) {
-      pcVar8 = pcVar8 + 1;
+      pcVar9 = pcVar9 + 1;
     }
     else {
-      pcVar6 = acStack_10c;
+      pcVar7 = local_110;
       do {
         do {
-          *pcVar6 = *pcVar8;
-          pbVar1 = (byte *)(pcVar8 + 1);
-          auStack_2c._8_4_ = ZEXT14(*pbVar1);
-          pcVar8 = pcVar8 + 1;
-          pcVar6 = pcVar6 + 1;
+          *pcVar7 = *pcVar9;
+          pbVar1 = (byte *)(pcVar9 + 1);
+          CStack_30.data_array = (char **)(uint)*pbVar1;
+          pcVar9 = pcVar9 + 1;
+          pcVar7 = pcVar7 + 1;
         } while ((g_CharacterClassificationTable[(byte)(*pbVar1 + 1)] & 0xe0U) != 0);
-      } while (((char **)auStack_2c._8_4_ == (char **)0x2d) ||
-              ((char **)auStack_2c._8_4_ == (char **)0x5f));
-      *pcVar6 = '\0';
-      iVar3 = crt_string_c_stricmp_FUN_005fe7f0(acStack_10c,"none");
-      if ((iVar3 != 0) &&
-         (iVar3 = crt_string_c_stricmp_FUN_005fe7f0(acStack_114,"true"), iVar3 != 0)) {
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)(local_38 + 4),local_110);
+      } while ((CStack_30.data_array == (char **)0x2d) || (CStack_30.data_array == (char **)0x5f));
+      *pcVar7 = '\0';
+      iVar4 = crt_string_c_stricmp_FUN_005fe7f0(local_110,"none");
+      if ((iVar4 != 0) &&
+         (iVar4 = crt_string_c_stricmp_FUN_005fe7f0(local_110,"true"), iVar4 != 0)) {
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)(auStack_40 + 8),local_110);
       }
     }
-    cVar2 = *pcVar8;
+    cVar2 = *pcVar9;
   }
-  core_mission_cpp_CDemonMission_FUN_00523cc0(in_stack_00000008);
-  shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)auStack_6a4);
-  iVar3 = *(int *)(in_stack_00000010 + 0x548);
+  core_mission_cpp_CDemonMission_FUN_00523cc0(in_stack_00000004);
+  shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_6ac);
+  local_18 = in_stack_00000004->first_actor;
+  pCVar3 = local_18;
   do {
-    if (iVar3 == 0) {
-      if ((int)auStack_6a4._4_4_ < 1) {
+    if (pCVar3 == (CDemonActor *)0x0) {
+      if (local_6ac.base_strlist.item_count < 1) {
         shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
                   (g_CEditorToolsPtr,"No actors relevent to the testing of this condition.");
       }
       else {
-        shape_edittool_cpp_CStrList_sort_FUN_004a2ec0((CStrList *)(auStack_6a4 + 4));
-        crt_stdio_c_sprintf_FUN_005fdbd0(auStack_69c + 0x3a0,"Actors relevent to \"%s\"");
-        pcVar8 = (char *)shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                                   ((CPickList *)(auStack_6a4 + 4),auStack_69c + 0x3a4,-1,0);
-        if (-1 < (int)pcVar8) {
+        shape_edittool_cpp_CStrList_sort_FUN_004a2ec0(&local_6ac.base_strlist);
+        crt_stdio_c_sprintf_FUN_005fdbd0
+                  (acStack_304,"Actors relevent to \"%s\"",in_stack_00000008 + 4);
+        pcVar9 = (char *)shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
+                                   (&local_6ac,acStack_304,-1,0);
+        if (-1 < (int)pcVar9) {
           shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80
-                    ((CStrList *)auStack_69c,(int)auStack_2f4,pcVar8,0);
-          in_stack_ffffd464 = core_mission_cpp_CDemonMission_FUN_00524030(in_stack_00000018);
+                    (&local_6ac.base_strlist,(int)acStack_304,pcVar9,0);
+          core_mission_cpp_CDemonMission_FUN_00524030(in_stack_00000004);
           core_msnedit_cpp_UndoTmp_BuildActorList_CreateTmp_FUN_0053c140();
-          in_stack_ffffd460 = in_stack_00000018;
         }
       }
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                ((CPickList *)auStack_69c,0,(uint)in_stack_ffffd460,(uint)in_stack_ffffd464,
-                 in_stack_ffffd468,in_stack_ffffd46c,in_stack_ffffd470);
+                (&local_6ac,0,(uint)in_stack_ffffd450,(uint)in_stack_ffffd454,in_stack_ffffd458,
+                 in_stack_ffffd45c,in_stack_ffffd460);
       shape_edittool_cpp_CStrList_dtor_FUN_004a2a40
-                ((CStrList *)(auStack_2c + 8),0,(uint)in_stack_ffffd464);
+                ((CStrList *)(auStack_40 + 8),0,(uint)in_stack_ffffd450);
       return;
     }
     core_actor_cpp_FUN_0040e130();
-    (*pCStack_20->vtable->getPropertyList)(pCStack_20,(CActorPropertyList *)&stack0xffffd448);
-    index = 0;
-    if (0 < (int)auStack_2c._0_4_) {
+    (*local_18->vtable->getPropertyList)(local_18,(CActorPropertyList *)&stack0xffffd450);
+    iStack_14 = 0;
+    if (0 < CStack_30.item_count) {
       do {
-        pcVar8 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70((CStrList *)auStack_2c,index);
-        iVar4 = crt_string_c_stricmp_FUN_005fe7f0(pcVar8,unaff_ESI);
+        str1 = (CStrList *)
+               shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(&CStack_30,iStack_14);
+        in_stack_ffffd450 = str1;
+        in_stack_ffffd454 = unaff_EBP;
+        iVar4 = crt_string_c_stricmp_FUN_005fe7f0((char *)str1,unaff_EBP->actor_name);
         if (iVar4 == 0) {
-          crt_stdio_c_sprintf_FUN_005fdbd0(acStack_2f0,"%s\tReferenced by name");
-          in_stack_ffffd464 = acStack_2ec;
-          in_stack_ffffd460 = (CDemonMission *)(auStack_69c + 8);
+          crt_stdio_c_sprintf_FUN_005fdbd0(CStack_2fc.actor_name,"%s\tReferenced by name");
+          in_stack_ffffd454 = &CStack_2fc;
+          in_stack_ffffd450 = (CStrList *)&local_6ac.base_strlist.data_array;
           shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                    ((CStrList *)in_stack_ffffd460,in_stack_ffffd464);
+                    (in_stack_ffffd450,in_stack_ffffd454->actor_name);
         }
-        unaff_ESI = (char *)0x0;
-        if (0 < (int)in_stack_ffffd460) {
-          local_18 = &stack0xffffd468;
+        iVar4 = 0;
+        if (0 < (int)in_stack_ffffd45c) {
+          puStack_1c = auStack_2b9c;
           do {
-            if (*(int *)(&stack0xffffd464 + (int)unaff_ESI * 0xec) == 0xc) {
-              pcVar6 = auStack_40 + 4;
-              shape_edittool_cpp_CStrList_ctor_FUN_004a2a20((CStrList *)pcVar6);
-              pcVar9 = (char *)auStack_2b38[(int)unaff_ESI * 0x3b];
+            if (*(int *)(auStack_2b9c + iVar4 * 0xec + -4) == 0xc) {
+              shape_edittool_cpp_CStrList_ctor_FUN_004a2a20((CStrList *)auStack_40);
+              pcVar9 = (char *)auStack_2b38[iVar4 * 0x3b];
               cVar2 = *pcVar9;
               while (cVar2 != '\0') {
                 cVar2 = *pcVar9;
@@ -139,56 +133,61 @@ void core_msnedit_cpp_RelevantActorsToTesting_FUN_0053b030(void)
                   pcVar9 = pcVar9 + 1;
                 }
                 else {
-                  pcVar7 = acStack_1d0;
+                  pfVar8 = &CStack_2fc.previous_transform_state.position.y;
                   do {
                     do {
-                      *pcVar7 = *pcVar9;
+                      *(char *)pfVar8 = *pcVar9;
                       pbVar1 = (byte *)(pcVar9 + 1);
-                      local_18 = (byte *)(uint)*pbVar1;
+                      local_18 = (CDemonActor *)(uint)*pbVar1;
                       pcVar9 = pcVar9 + 1;
-                      pcVar7 = pcVar7 + 1;
+                      pfVar8 = (float *)((int)pfVar8 + 1);
                     } while ((g_CharacterClassificationTable[(byte)(*pbVar1 + 1)] & 0xe0U) != 0);
-                  } while ((local_18 == (byte *)0x2d) || (local_18 == (byte *)0x5f));
-                  *pcVar7 = '\0';
-                  iVar4 = crt_string_c_stricmp_FUN_005fe7f0(acStack_1d0,"none");
-                  if (iVar4 != 0) {
-                    pcVar6 = "true";
-                    iVar4 = crt_string_c_stricmp_FUN_005fe7f0(acStack_1d0 + 4,"true");
-                    if (iVar4 != 0) {
-                      pcVar6 = (char *)auStack_40;
-                      shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                                ((CStrList *)auStack_40,acStack_1c8);
-                    }
+                  } while ((local_18 == (CDemonActor *)0x2d) || (local_18 == (CDemonActor *)0x5f));
+                  *(char *)pfVar8 = '\0';
+                  iVar5 = crt_string_c_stricmp_FUN_005fe7f0
+                                    ((char *)&CStack_2fc.previous_transform_state.position.y,
+                                     "none");
+                  if ((iVar5 != 0) &&
+                     (iVar5 = crt_string_c_stricmp_FUN_005fe7f0
+                                        ((char *)&CStack_2fc.previous_transform_state.position.y,
+                                         "true"), iVar5 != 0)) {
+                    shape_edittool_cpp_CStrList_add_FUN_004a2b80
+                              ((CStrList *)auStack_40,
+                               (char *)&CStack_2fc.previous_transform_state.position.y);
                   }
                 }
                 cVar2 = *pcVar9;
               }
-              iVar4 = 0;
+              iVar5 = 0;
               if (0 < (int)auStack_40._0_4_) {
                 do {
-                  pcVar6 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
-                                     ((CStrList *)auStack_40,iVar4);
-                  iVar5 = crt_string_c_stricmp_FUN_005fe7f0(pcVar8,pcVar6);
-                  if (iVar5 == 0) {
-                    crt_stdio_c_sprintf_FUN_005fdbd0(auStack_69c + 0x3a0,"%s\tRaises \"%s\" in \"%s\"")
-                    ;
-                    pcVar6 = auStack_69c + 0x3a4;
+                  pcVar9 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
+                                     ((CStrList *)auStack_40,iVar5);
+                  iVar6 = crt_string_c_stricmp_FUN_005fe7f0((char *)str1,pcVar9);
+                  if (iVar6 == 0) {
+                    crt_stdio_c_sprintf_FUN_005fdbd0
+                              (CStack_2fc.actor_name,"%s\tRaises \"%s\" in \"%s\"",unaff_EBP);
                     shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                              ((CStrList *)(auStack_6a4 + 4),pcVar6);
+                              ((CStrList *)&local_6ac.base_strlist.data_array,CStack_2fc.actor_name)
+                    ;
                     break;
                   }
-                  iVar4 = iVar4 + 1;
-                } while (iVar4 < (int)auStack_40._0_4_);
+                  iVar5 = iVar5 + 1;
+                } while (iVar5 < (int)auStack_40._0_4_);
               }
-              shape_edittool_cpp_CStrList_dtor_FUN_004a2a40((CStrList *)auStack_40,0,(uint)pcVar6);
+              in_stack_ffffd454 = (CDemonActor *)0x0;
+              in_stack_ffffd450 = (CStrList *)auStack_40;
+              shape_edittool_cpp_CStrList_dtor_FUN_004a2a40
+                        (in_stack_ffffd450,0,(uint)in_stack_ffffd450);
             }
-            local_18 = local_18 + 0xec;
-            unaff_ESI = unaff_ESI + 1;
-          } while ((int)unaff_ESI < (int)in_stack_ffffd460);
+            puStack_1c = puStack_1c + 0xec;
+            iVar4 = iVar4 + 1;
+          } while (iVar4 < (int)in_stack_ffffd45c);
         }
-        index = index + 1;
-      } while (index < (int)auStack_2c._0_4_);
+        iStack_14 = iStack_14 + 1;
+      } while (iStack_14 < CStack_30.item_count);
     }
-    iVar3 = *(int *)(iVar3 + 0x14c);
+    unaff_EBP = unaff_EBP->next_actor;
+    pCVar3 = unaff_EBP;
   } while( true );
 }

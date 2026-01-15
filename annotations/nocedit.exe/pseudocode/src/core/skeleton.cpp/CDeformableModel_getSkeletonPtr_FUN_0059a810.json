@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 22,
-    "complexity_score": 67,
+    "complexity_score": 41,
     "cross_reference_count": 14,
     "function_call_count": 1,
     "global_count": 4,
-    "pseudocode_lines": 12,
-    "suspect_count": 4,
+    "pseudocode_lines": 11,
+    "suspect_count": 2,
     "suspect_types": [
       "param_count_too_few",
-      "stack_param",
       "variadic_preserve"
     ],
-    "total_lines": 34
+    "total_lines": 33
   },
   "cross_references": [
     {
@@ -284,20 +283,6 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 6,
-      "match": "in_stack_00000008",
-      "text": "int in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000008",
-      "text": "return *(CSkeleton **)(in_stack_00000008 + 0x8fac);",
-      "type": "stack_param"
-    },
-    {
       "call_site_count": 14,
       "declared_params": 1,
       "description": "Signature has too few params - likely missing this ptr or other params",
@@ -310,7 +295,7 @@
     },
     {
       "call_address": "0059a844",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

@@ -1,22 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 82,
-    "complexity_score": 235,
+    "complexity_score": 178,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 1,
-    "pseudocode_lines": 40,
-    "suspect_count": 16,
+    "pseudocode_lines": 38,
+    "suspect_count": 12,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
-      "register_param",
       "stack_param",
-      "unaffected_reg",
       "variadic_preserve"
     ],
-    "total_lines": 122
+    "total_lines": 120
   },
   "cross_references": [
     {
@@ -130,80 +127,52 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
+      "description": "Unresolved stack parameter",
       "line": 8,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
     },
     {
-      "description": "Inferred register parameter",
-      "line": 8,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unaffected register variable",
+      "description": "Unresolved stack parameter",
       "line": 9,
-      "match": "unaff_EBP",
-      "text": "uint unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_0000000c",
-      "text": "int in_stack_0000000c;",
+      "match": "in_stack_00000008",
+      "text": "FILE *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000010",
-      "text": "FILE *in_stack_00000010;",
+      "line": 17,
+      "match": "in_stack_00000008",
+      "text": "iVar1 = crt_stdio_c_fgetc_FUN_005fe840(in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_00000010",
-      "text": "iVar1 = crt_stdio_c_fgetc_FUN_005fe840(in_stack_00000010);",
+      "line": 21,
+      "match": "in_stack_00000004",
+      "text": "if (0 < *(int *)(in_stack_00000004 + 0x2c)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_0000000c",
-      "text": "if (0 < *(int *)(in_stack_0000000c + 0x2c)) {",
+      "line": 25,
+      "match": "in_stack_00000008",
+      "text": "(in_stack_00000008,\"%f,%f,%f\\n\",&local_1c,&local_18,&local_14);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_00000010",
-      "text": "(in_stack_00000010,\"%f,%f,%f\\n\",&local_14,auStack_10,&uStack_c);",
+      "line": 29,
+      "match": "in_stack_00000004",
+      "text": "iVar2 = *(int *)(in_stack_00000004 + 0x40);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_0000000c",
-      "text": "iVar2 = *(int *)(in_stack_0000000c + 0x40);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 37,
-      "match": "unaff_EBP",
-      "text": "*(uint *)(iVar2 + 0x18 + iVar1) = unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 40,
-      "match": "in_stack_0000000c",
-      "text": "} while (iVar3 < *(int *)(in_stack_0000000c + 0x2c));",
+      "line": 38,
+      "match": "in_stack_00000004",
+      "text": "} while (iVar3 < *(int *)(in_stack_00000004 + 0x2c));",
       "type": "stack_param"
     },
     {

@@ -15,7 +15,7 @@ crt_strstream_cpp_strstreambuf_overflow_FUN_0060b9bd(strstreambuf *this_ptr,int 
   char *pcVar3;
   void *pvVar4;
   int iVar5;
-  char cStack00000014;
+  char cStack0000000c;
   
   pvVar4 = this_ptr[1].streambuf.__b_lock;
   if (((uint)pvVar4 & 2) == 0) {
@@ -24,8 +24,8 @@ crt_strstream_cpp_strstreambuf_overflow_FUN_0060b9bd(strstreambuf *this_ptr,int 
   if (((uint)pvVar4 & 4) == 0) {
     iVar5 = (*this_ptr->__vtable->doallocate)(&this_ptr->streambuf);
     if (iVar5 != -1) {
-      if (_cStack00000014 != -1) {
-        *(this_ptr->streambuf).__put_ptr = cStack00000014;
+      if (_cStack0000000c != -1) {
+        *(this_ptr->streambuf).__put_ptr = cStack0000000c;
         ppcVar1 = &(this_ptr->streambuf).__put_ptr;
         *ppcVar1 = *ppcVar1 + 1;
       }

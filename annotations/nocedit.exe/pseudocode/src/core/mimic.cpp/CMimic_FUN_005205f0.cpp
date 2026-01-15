@@ -12,11 +12,10 @@ int __cdecl core_mimic_cpp_CMimic_FUN_005205f0(CMimic *this_ptr)
   CDeformableModelInstance *this_ptr_00;
   CBoundingBox3D *this_ptr_01;
   int iVar1;
-  BADSPACEBASE *in_ESP;
   float *pfVar2;
   CVector3f *pCVar3;
   byte bVar4;
-  CMatrix3x4f *in_stack_fffffe92;
+  CMatrix3x4f *in_stack_fffffe8e;
   float local_f4 [12];
   CMatrix3x4f local_c4;
   CVector3f local_94 [4];
@@ -63,7 +62,7 @@ int __cdecl core_mimic_cpp_CMimic_FUN_005205f0(CMimic *this_ptr)
                     (&local_c4,
                      (CMatrix3x4f *)
                      (this_ptr->field0_0x0).base_character.model.bone_transform.bone_world_matrices
-                     [DAT_02f33378].m,in_stack_fffffe92);
+                     [DAT_02f33378].m,in_stack_fffffe8e);
           pfVar2 = local_f4;
           pCVar3 = local_94;
           for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {

@@ -9,38 +9,38 @@
 /* Signature: byte core_course.cpp_OpeningCourseFileMaybe(uint param_1, uint
    param_2) */
 
-uint
-core_course_cpp_OpeningCourseFileMaybe_FUN_00442bc0
-          (uint param_1,uint param_2,int unaff_EBX,uint param_4,uint param_5
-          ,char *param_6)
+uint core_course_cpp_OpeningCourseFileMaybe_FUN_00442bc0(void)
 
 {
   FILE *file;
   int iVar1;
-  BADSPACEBASE *in_ESP;
-  CCourse *in_stack_00000024;
+  CCourse *in_stack_00000004;
+  char *in_stack_00000008;
+  char local_184 [360];
+  byte local_1c [4];
+  int local_18;
   byte local_14 [4];
   
   file = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                   (param_6,(char *)0x0,"rt","..\\core\\course.cpp",0x14b);
+                   (in_stack_00000008,(char *)0x0,"rt","..\\core\\course.cpp",0x14b);
   if (file == (FILE *)0x0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-              (g_CEditorToolsPtr,"Can't open %s",param_6);
+              (g_CEditorToolsPtr,"Can't open %s",in_stack_00000008);
     return 0;
   }
   do {
     iVar1 = crt_stdio_c_fgetc_FUN_005fe840(file);
     if (iVar1 < 0) break;
   } while (iVar1 != 10);
-  crt_stdio_c_fscanf_FUN_005fe7c0(file,"%d\n",local_14);
+  crt_stdio_c_fscanf_FUN_005fe7c0(file,"%d\n",local_1c);
   do {
     iVar1 = crt_stdio_c_fgetc_FUN_005fe840(file);
     if (iVar1 < 0) break;
   } while (iVar1 != 10);
-  crt_stdio_c_fscanf_FUN_005fe7c0(file,"%d,%d\n",&stack0xfffffff8,&stack0xfffffffc);
-  if (unaff_EBX != 1) {
+  crt_stdio_c_fscanf_FUN_005fe7c0(file,"%d,%d\n",&local_18,local_14);
+  if (local_18 != 1) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-              (g_CEditorToolsPtr,"%s contains %d nodes - must only contain 1!",param_6,unaff_EBX);
+              (g_CEditorToolsPtr,"%s contains %d nodes - must only contain 1!",in_stack_00000008,local_18);
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\course.cpp",0x161);
     return 0;
   }
@@ -56,10 +56,10 @@ core_course_cpp_OpeningCourseFileMaybe_FUN_00442bc0
     iVar1 = crt_stdio_c_fgetc_FUN_005fe840(file);
     if (iVar1 < 0) break;
   } while (iVar1 != 10);
-  crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffe94,"Importing %s",param_6);
+  crt_stdio_c_sprintf_FUN_005fdbd0(local_184,"Importing %s",in_stack_00000008);
   shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004a0430
-            (g_CEditorToolsPtr,&stack0xfffffe98);
-  core_course_cpp_CCourse_importMatrices_FUN_00442ea0(in_stack_00000024);
+            (g_CEditorToolsPtr,local_184);
+  core_course_cpp_CCourse_importMatrices_FUN_00442ea0(in_stack_00000004);
   shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(g_CEditorToolsPtr);
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\course.cpp",0x178);
   return 1;

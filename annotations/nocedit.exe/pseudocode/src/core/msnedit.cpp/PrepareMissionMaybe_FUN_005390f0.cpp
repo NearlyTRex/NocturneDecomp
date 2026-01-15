@@ -21,7 +21,6 @@ uint core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(void)
   CVector3f *pCVar5;
   undefined3 extraout_var_01;
   int iVar6;
-  BADSPACEBASE *in_ESP;
   int iVar7;
   uint *puVar8;
   CMatrix3x3i *pCVar9;

@@ -16,14 +16,13 @@ uint core_netgame_cpp_FUN_00541390(void)
   SNetPlayer *pSVar3;
   int iVar4;
   CNetGame *pCVar5;
-  BADSPACEBASE *in_ESP;
   char *pcVar6;
   int iVar7;
   uchar *puVar8;
   double dVar9;
   CNetGame *in_stack_00000004;
   uint uVar10;
-  float fVar11;
+  float local_134;
   float local_130;
   uchar auStack_12c [256];
   int local_2c;
@@ -59,7 +58,7 @@ uint core_netgame_cpp_FUN_00541390(void)
     local_28 = in_stack_00000004->field7_0x118;
     while (in_stack_00000004->connection_type != 0) {
       wincore_windll_cpp_clearScreen_FUN_005b3e70();
-      crt_stdio_c_sprintf_FUN_005fdbd0((char *)(auStack_12c + 4),"Mission: %s",local_24);
+      crt_stdio_c_sprintf_FUN_005fdbd0((char *)auStack_12c,"Mission: %s",local_28);
       engine_2d_c_drawText_FUN_00401fd0((char *)auStack_12c,0,0xb);
       crt_stdio_c_sprintf_FUN_005fdbd0
                 ((char *)auStack_12c,"MyGameSettigsId: %d",DAT_02f7c8c4);
@@ -193,14 +192,14 @@ LAB_005415cb:
             }
             if (DAT_02f7c8c4 != pCVar5->players[0].player_id) {
               iStack_14 = g_CurrentGameTime - *(int *)pCVar5->players[0].field5_0x38;
-              fVar11 = (float)iStack_14 * (float)1.52587890625e-05;
-              if (fVar11 < 0.0) {
-                fVar11 = 0.0;
+              local_134 = (float)iStack_14 * (float)1.52587890625e-05;
+              if (local_134 < 0.0) {
+                local_134 = 0.0;
               }
-              if ((float)30 < fVar11) {
-                fVar11 = 30.0;
+              if ((float)30 < local_134) {
+                local_134 = 30.0;
               }
-              if ((float)0.20000000000000001 < fVar11) {
+              if ((float)0.20000000000000001 < local_134) {
                 core_netgame_cpp_CNetGame_sendGameSetting_FUN_00542dd0();
               }
               bVar2 = false;
@@ -310,7 +309,7 @@ LAB_005416d1:
     engine_2d_c_clearInputAndWait_FUN_00403260();
     core_netgame_cpp_CNetGame_FUN_0053fd00(in_stack_00000004);
     engine_2d_c_clearInputAndWait_FUN_00403260();
-    g_ForceMessagePump = (int)local_28;
+    g_ForceMessagePump = local_2c;
   }
   return 0;
 }

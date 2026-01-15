@@ -14,13 +14,12 @@ void __cdecl core_bodypart_cpp_CBodyPart_process_FUN_00419be0(CBodyPart *this_pt
   CVector3f *pCVar3;
   float fVar4;
   int iVar5;
-  BADSPACEBASE *in_ESP;
-  float in_stack_0000000c;
-  byte auStack_3c [4];
-  float fStack_38;
+  float in_stack_00000008;
+  SDamageInfo local_54;
+  float local_18;
   float local_14;
-  CDemonActor *local_10;
-  CDemonActor *local_c;
+  float local_10;
+  float local_c;
   
   if ((*(int *)(this_ptr->field1_0x158 + 0x1c) < 3) || (*(int *)(this_ptr->field1_0x158 + 0x28) < 1)
      ) {
@@ -50,15 +49,15 @@ void __cdecl core_bodypart_cpp_CBodyPart_process_FUN_00419be0(CBodyPart *this_pt
       core_bodypart_cpp_FUN_0041b1b0();
     }
     if (*(int *)(this_ptr->field1_0x158 + 0xdd0) == 0) {
-      fVar4 = *(float *)(this_ptr->field1_0x158 + 0xb64) - in_stack_0000000c;
+      fVar4 = *(float *)(this_ptr->field1_0x158 + 0xb64) - in_stack_00000008;
       *(float *)(this_ptr->field1_0x158 + 0xb64) = fVar4;
       if (0.0 <= fVar4) {
         pCVar1 = &(this_ptr->base_actor).location;
-        local_14 = (pCVar1->position).x;
-        local_10 = (CDemonActor *)(this_ptr->base_actor).location.position.y;
-        local_c = (CDemonActor *)(this_ptr->base_actor).location.position.z;
+        local_18 = (pCVar1->position).x;
+        local_14 = (this_ptr->base_actor).location.position.y;
+        local_10 = (this_ptr->base_actor).location.position.z;
         core_box_cpp_CBox_process_FUN_0041e2f0
-                  ((CBox *)(this_ptr->field1_0x158 + 0xb74),in_stack_0000000c);
+                  ((CBox *)(this_ptr->field1_0x158 + 0xb74),in_stack_00000008);
         (pCVar1->position).x = (((CBox *)(this_ptr->field1_0x158 + 0xb74))->position).x;
         (this_ptr->base_actor).location.position.y = *(float *)(this_ptr->field1_0x158 + 0xb78);
         (this_ptr->base_actor).location.position.z = *(float *)(this_ptr->field1_0x158 + 0xb7c);
@@ -78,11 +77,14 @@ void __cdecl core_bodypart_cpp_CBodyPart_process_FUN_00419be0(CBodyPart *this_pt
                   *(float *)(this_ptr->field1_0x158 + 3000))) &&
            (iVar5 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                               (g_CEventListPtr,"disableBodyPartDamage"), iVar5 == 0)) {
-          core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xffffffbc);
-          fStack_38 = core_actor_cpp_getRandomFloat_FUN_0040cc10(10.0,15.0);
+          core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_54);
+          local_54.damage_amount = core_actor_cpp_getRandomFloat_FUN_0040cc10(10.0,15.0);
+          local_54.attacker = &this_ptr->base_actor;
+          local_54.wielder = &this_ptr->base_actor;
+          local_c = local_54.damage_amount;
           core_setcolid_cpp_CDemonSet_notifyDamageListeners_FUN_005742b0
-                    (g_CDemonSetPtr,(SDamageInfo *)&stack0x00000000,
-                     &(this_ptr->base_actor).location.position,auStack_3c);
+                    (g_CDemonSetPtr,(SDamageInfo *)&local_18,
+                     &(this_ptr->base_actor).location.position,&local_54);
           core_bodypart_cpp_FUN_00419e10();
           return;
         }

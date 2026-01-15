@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 182,
-    "complexity_score": 434,
+    "complexity_score": 257,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 24,
-    "pseudocode_lines": 89,
-    "suspect_count": 33,
+    "pseudocode_lines": 87,
+    "suspect_count": 16,
     "suspect_types": [
       "call_esp_preserve",
-      "pointer_cast",
-      "stack_param"
+      "pointer_cast"
     ],
-    "total_lines": 271
+    "total_lines": 269
   },
   "cross_references": [
     {
@@ -297,200 +296,81 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000008",
-      "text": "CLodMesh *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_0000000c",
-      "text": "CLodMesh *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 21,
+      "line": 19,
       "match": "(int *)((int)",
-      "text": "iVar6 = iVar6 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar2 + -0x14) + -2;",
+      "text": "iVar4 = iVar4 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar1 + -0x14) + -2;",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 24,
-      "match": "in_stack_00000008",
-      "text": "(in_stack_00000008,g_ModelPolygonData[0].texture_name + iVar2);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_00000008",
-      "text": "(in_stack_00000008,g_VertexCount,iVar6,in_stack_00000008->submesh_count);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_00000008",
-      "text": "(in_stack_00000008,g_VertexCount,iVar6,in_stack_00000008->submesh_count);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_00000008",
-      "text": "if (0 < in_stack_00000008->vertex_count) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 37,
-      "match": "in_stack_0000000c",
-      "text": "*(uint *)(in_stack_0000000c->vertex_data->lod_workspace + iVar2 + -0x10) =",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 36,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&g_LoadedVertices[0].vertex.x + iVar4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 38,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&g_LoadedVertices[0].vertex.x + iVar6);",
+      "text": "*(uint *)((int)&g_LoadedVertices[0].vertex.y + iVar4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 39,
-      "match": "in_stack_0000000c",
-      "text": "*(uint *)(in_stack_0000000c->vertex_data->lod_workspace + iVar2 + -0xc) =",
-      "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
       "line": 40,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&g_LoadedVertices[0].vertex.y + iVar6);",
+      "text": "*(uint *)((int)&g_LoadedVertices[0].vertex.z + iVar4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 41,
-      "match": "in_stack_0000000c",
-      "text": "*(uint *)(in_stack_0000000c->vertex_data->lod_workspace + iVar2 + -8) =",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 42,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&g_LoadedVertices[0].vertex.z + iVar6);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 46,
-      "match": "in_stack_0000000c",
-      "text": "} while (iVar4 < in_stack_0000000c->vertex_count);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 51,
-      "match": "in_stack_0000000c",
-      "text": "in_stack_0000000c->submesh_count = 0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 60,
-      "match": "in_stack_0000000c",
-      "text": "piVar3 = (int *)((int)in_stack_0000000c->tri_data->attribute_indices + iVar2);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 60,
+      "line": 58,
       "match": "(int *)((int)",
-      "text": "piVar3 = (int *)((int)in_stack_0000000c->tri_data->attribute_indices + iVar2);",
+      "text": "piVar2 = (int *)((int)this_ptr->tri_data->attribute_indices + iVar3);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 67,
-      "match": "in_stack_0000000c",
-      "text": "(in_stack_0000000c,g_ModelPolygonData[local_14].texture_name);",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 72,
+      "match": "(int *)((int)",
+      "text": "piVar2[5] = *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar4 + -4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 73,
+      "match": "(int *)((int)",
+      "text": "piVar2[9] = *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar4 + 0x3c);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 74,
       "match": "(int *)((int)",
-      "text": "piVar3[5] = *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar5 + -4);",
+      "text": "piVar2[10] = *(int *)((int)g_ModelPolygonData[0].uv_u + iVar4 + 0x3c);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 75,
       "match": "(int *)((int)",
-      "text": "piVar3[9] = *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar5 + 0x3c);",
+      "text": "piVar2[6] = *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 76,
       "match": "(int *)((int)",
-      "text": "piVar3[10] = *(int *)((int)g_ModelPolygonData[0].uv_u + iVar5 + 0x3c);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 77,
-      "match": "(int *)((int)",
-      "text": "piVar3[6] = *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar5);",
+      "text": "piVar2[0xb] = *(int *)((int)g_ModelPolygonData[0].uv_u + iVar4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 78,
       "match": "(int *)((int)",
-      "text": "piVar3[0xb] = *(int *)((int)g_ModelPolygonData[0].uv_u + iVar5);",
+      "text": "piVar2[0xc] = *(int *)((int)g_ModelPolygonData[0].uv_v + iVar4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 80,
-      "match": "(int *)((int)",
-      "text": "piVar3[0xc] = *(int *)((int)g_ModelPolygonData[0].uv_v + iVar5);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 87,
-      "match": "in_stack_0000000c",
-      "text": "in_stack_0000000c->active_attribute_count = 2;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 88,
-      "match": "in_stack_0000000c",
-      "text": "in_stack_0000000c->sort_attribute_count = 2;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 89,
-      "match": "in_stack_0000000c",
-      "text": "in_stack_0000000c->reserved_attribute_count = 0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 90,
-      "match": "in_stack_0000000c",
-      "text": "shape_meshlod_cpp_CLodMesh_postprocessMesh_FUN_0051b330(in_stack_0000000c);",
-      "type": "stack_param"
     },
     {
       "add_esp_value": 4,

@@ -1,24 +1,21 @@
 {
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 286,
+    "complexity_score": 244,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 0,
-    "pseudocode_lines": 31,
-    "suspect_count": 21,
+    "pseudocode_lines": 24,
+    "suspect_count": 19,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "concat_artifact",
       "param_count_too_few",
-      "pointer_cast",
-      "register_param",
       "special_crt_function",
-      "stack_ref",
-      "unaffected_reg"
+      "stack_param",
+      "stack_ref"
     ],
-    "total_lines": 85
+    "total_lines": 78
   },
   "cross_references": [
     {
@@ -145,88 +142,74 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 5,
-      "match": "unaff_EBX",
-      "text": "(uint param_1,uint param_2,char *unaff_EBX,uint param_4,",
-      "type": "unaffected_reg"
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000004",
+      "text": "char *in_stack_00000004;",
+      "type": "stack_param"
     },
     {
-      "description": "Ghidra failed to resolve stack frame",
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_fffffff4",
+      "text": "char *in_stack_fffffff4;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
       "line": 14,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
+      "match": "in_stack_00000004",
+      "text": "str = in_stack_00000004;",
+      "type": "stack_param"
     },
     {
-      "description": "Inferred register parameter",
-      "line": 14,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 23,
-      "match": "unaff_EBX",
-      "text": "((char *)CONCAT22 /* combine 2-byte values */(extraout_var,wVar2),unaff_EBX);",
-      "type": "unaffected_reg"
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_fffffff4",
+      "text": "((char *)CONCAT22 /* combine 2-byte values */(extraout_var,wVar1),in_stack_fffffff4);",
+      "type": "stack_param"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 23,
+      "line": 20,
       "match": "CONCAT22",
-      "text": "((char *)CONCAT22 /* combine 2-byte values */(extraout_var,wVar2),unaff_EBX);",
+      "text": "((char *)CONCAT22 /* combine 2-byte values */(extraout_var,wVar1),in_stack_fffffff4);",
       "type": "concat_artifact"
     },
     {
       "description": "Direct stack address reference",
+      "line": 21,
+      "match": "&stack0xfffffff4",
+      "text": "crt_locale_c_wchar_to_bytes_FUN_00605a20(wVar1,&stack0xfffffff4);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 22,
+      "match": "&stack0xfffffff4",
+      "text": "iVar2 = crt_locale_c_mblen_FUN_00605a40(&stack0xfffffff4);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 23,
+      "match": "&stack0xfffffff4",
+      "text": "(&stack0xfffffff4)[iVar2] = 0;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
       "line": 24,
-      "match": "&stack0x00000000",
-      "text": "crt_locale_c_wchar_to_bytes_FUN_00605a20(wVar2,&stack0x00000000);",
+      "match": "&stack0xfffffff4",
+      "text": "crt_mbstring_c_copyMbChar_FUN_0060e590(str,&stack0xfffffff4);",
       "type": "stack_ref"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 25,
-      "match": "&stack0x00000004",
-      "text": "iVar3 = crt_locale_c_mblen_FUN_00605a40(&stack0x00000004);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 26,
-      "match": "&stack0x00000008",
-      "text": "param_5 = &stack0x00000008;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
+      "description": "Unresolved stack parameter",
       "line": 27,
-      "match": "&stack0x00000008",
-      "text": "*(byte *)((int)&stack0x00000008 + iVar3) = 0;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 27,
-      "match": "(byte *)((int)",
-      "text": "*(byte *)((int)&stack0x00000008 + iVar3) = 0;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 28,
-      "match": "unaff_EBX",
-      "text": "unaff_EBX = (char *)0x60e61f;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 29,
-      "match": "&stack0x00000008",
-      "text": "crt_mbstring_c_copyMbChar_FUN_0060e590(str,&stack0x00000008);",
-      "type": "stack_ref"
+      "match": "in_stack_00000004",
+      "text": "return in_stack_00000004;",
+      "type": "stack_param"
     },
     {
       "call_site_count": 2,

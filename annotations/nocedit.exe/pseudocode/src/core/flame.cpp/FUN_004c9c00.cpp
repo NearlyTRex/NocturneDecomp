@@ -17,7 +17,6 @@ void core_flame_cpp_FUN_004c9c00(void)
   int iVar1;
   int extraout_EAX;
   uint uVar2;
-  BADSPACEBASE *in_ESP;
   float10 fVar3;
   double dVar4;
   int in_stack_00000004;

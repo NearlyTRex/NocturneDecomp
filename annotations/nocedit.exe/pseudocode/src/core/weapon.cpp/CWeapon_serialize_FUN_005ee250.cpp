@@ -9,8 +9,7 @@
 void __cdecl core_weapon_cpp_CWeapon_serialize_FUN_005ee250(CWeapon *this_ptr)
 
 {
-  BADSPACEBASE *in_ESP;
-  char *apcStack_f8 [61];
+  char *local_104 [64];
   
   core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(&this_ptr->base_actor);
   core_actor_cpp_serializeKeyframedModelInstance_FUN_0040b8f0(&this_ptr->model,"modelName")
@@ -25,7 +24,7 @@ void __cdecl core_weapon_cpp_CWeapon_serialize_FUN_005ee250(CWeapon *this_ptr)
     core_actor_cpp_serializeInteger_FUN_0040b7f0(&this_ptr->ammo_type,"ammoType");
   }
   if (g_CWeaponClassVersion == 5) {
-    core_actor_cpp_serializeLocalizedString_FUN_0040b6e0(apcStack_f8,"descriptiveName");
+    core_actor_cpp_serializeLocalizedString_FUN_0040b6e0(local_104,"descriptiveName");
   }
   if (g_CWeaponClassVersion < 7) {
     return;

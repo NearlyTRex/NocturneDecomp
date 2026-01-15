@@ -12,35 +12,34 @@
 void core_flies_cpp_FUN_004cc760(void)
 
 {
-  uint *puVar1;
-  uint *puVar2;
+  float *pfVar1;
+  float *pfVar2;
   float fVar3;
-  int iVar4;
-  float *unaff_EDI;
+  float *pfVar4;
+  float *pfVar5;
   int in_stack_00000004;
   int in_stack_00000008;
-  int local_14;
   
-  iVar4 = in_stack_00000004 + 0x168 + in_stack_00000008 * 0x34;
-  puVar1 = (uint *)core_flies_cpp_FUN_004cc820();
-  if ((uint *)(iVar4 + 4) != puVar1) {
-    *(uint *)(iVar4 + 4) = *puVar1;
-    *(uint *)(iVar4 + 8) = puVar1[1];
-    *(uint *)(iVar4 + 0xc) = puVar1[2];
+  pfVar4 = (float *)(in_stack_00000004 + 0x168 + in_stack_00000008 * 0x34);
+  pfVar1 = (float *)core_flies_cpp_FUN_004cc820();
+  if (pfVar4 + 1 != pfVar1) {
+    pfVar4[1] = *pfVar1;
+    pfVar4[2] = pfVar1[1];
+    pfVar4[3] = pfVar1[2];
   }
-  iVar4 = local_14 + 4;
-  puVar1 = (uint *)(local_14 + 0x10);
+  pfVar5 = pfVar4 + 1;
+  pfVar1 = pfVar4 + 4;
   do {
-    puVar2 = (uint *)core_flies_cpp_FUN_004cc820();
-    if (puVar1 != puVar2) {
-      *puVar1 = *puVar2;
-      puVar1[1] = puVar2[1];
-      puVar1[2] = puVar2[2];
+    pfVar2 = (float *)core_flies_cpp_FUN_004cc820();
+    if (pfVar1 != pfVar2) {
+      *pfVar1 = *pfVar2;
+      pfVar1[1] = pfVar2[1];
+      pfVar1[2] = pfVar2[2];
     }
-    iVar4 = iVar4 + 0xc;
-    puVar1 = puVar1 + 3;
-  } while (iVar4 != local_14 + 0x28);
+    pfVar5 = pfVar5 + 3;
+    pfVar1 = pfVar1 + 3;
+  } while (pfVar5 != pfVar4 + 10);
   fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,1.0);
-  *unaff_EDI = fVar3;
+  *pfVar4 = fVar3;
   return;
 }

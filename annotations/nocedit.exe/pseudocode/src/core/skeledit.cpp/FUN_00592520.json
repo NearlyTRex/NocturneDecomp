@@ -1,19 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 78,
-    "complexity_score": 273,
+    "complexity_score": 257,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 4,
-    "pseudocode_lines": 33,
-    "suspect_count": 22,
+    "pseudocode_lines": 32,
+    "suspect_count": 21,
     "suspect_types": [
       "call_esp_preserve",
-      "format_string_mismatch",
       "stack_param",
       "variadic_preserve"
     ],
-    "total_lines": 111
+    "total_lines": 110
   },
   "cross_references": [
     {
@@ -121,120 +120,120 @@
     {
       "description": "Unresolved stack parameter",
       "line": 6,
-      "match": "in_stack_0000000c",
-      "text": "char *in_stack_0000000c;",
+      "match": "in_stack_00000004",
+      "text": "char *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 7,
-      "match": "in_stack_00000010",
-      "text": "int *in_stack_00000010;",
+      "match": "in_stack_00000008",
+      "text": "int *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 8,
-      "match": "in_stack_0000001c",
-      "text": "int in_stack_0000001c;",
+      "match": "in_stack_0000000c",
+      "text": "int in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 9,
-      "match": "in_stack_00000020",
-      "text": "int in_stack_00000020;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000024",
-      "text": "int in_stack_00000024;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_0000000c",
-      "text": "iVar1 = crt_string_c_strcmp_FUN_005fef20(in_stack_0000000c,\"(\");",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
       "match": "in_stack_00000010",
-      "text": "*in_stack_00000010 = 0;",
+      "text": "int in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 12,
+      "match": "in_stack_00000004",
+      "text": "iVar1 = crt_string_c_strcmp_FUN_005fef20(in_stack_00000004,\"(\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000008",
+      "text": "*in_stack_00000008 = 0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000004",
+      "text": "iVar1 = crt_string_c_strcmp_FUN_005fef20(in_stack_00000004,\")\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000008",
+      "text": "*in_stack_00000008 = in_stack_0000000c + -1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
       "match": "in_stack_0000000c",
-      "text": "iVar1 = crt_string_c_strcmp_FUN_005fef20(in_stack_0000000c,\")\");",
+      "text": "*in_stack_00000008 = in_stack_0000000c + -1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 22,
       "match": "in_stack_00000010",
-      "text": "*in_stack_00000010 = in_stack_0000001c + -1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_0000001c",
-      "text": "*in_stack_00000010 = in_stack_0000001c + -1;",
+      "text": "if (in_stack_00000010 != 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 23,
-      "match": "in_stack_00000020",
-      "text": "if (in_stack_00000020 != 0) {",
+      "match": "in_stack_00000004",
+      "text": "iVar1 = crt_string_c_stricmp_FUN_005fe7f0(in_stack_00000004,\"patch\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
-      "match": "in_stack_0000000c",
-      "text": "iVar1 = crt_string_c_stricmp_FUN_005fe7f0(in_stack_0000000c,\"patch\");",
+      "line": 25,
+      "match": "in_stack_00000008",
+      "text": "*in_stack_00000008 = -1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_00000010",
-      "text": "*in_stack_00000010 = -1;",
+      "line": 29,
+      "match": "in_stack_00000004",
+      "text": "iVar1 = crt_stdio_c_sscanf_FUN_0060013c(in_stack_00000004,\"%d\",in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 29,
+      "match": "in_stack_00000008",
+      "text": "iVar1 = crt_stdio_c_sscanf_FUN_0060013c(in_stack_00000004,\"%d\",in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 30,
+      "match": "in_stack_00000008",
+      "text": "if (((iVar1 != 1) || (*in_stack_00000008 < 0)) || (in_stack_0000000c <= *in_stack_00000008)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 30,
       "match": "in_stack_0000000c",
-      "text": "iVar1 = crt_stdio_c_sscanf_FUN_0060013c(in_stack_0000000c,\"%d\");",
+      "text": "if (((iVar1 != 1) || (*in_stack_00000008 < 0)) || (in_stack_0000000c <= *in_stack_00000008)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_00000010",
-      "text": "if (((iVar1 != 1) || (*in_stack_00000010 < 0)) || (in_stack_00000024 <= *in_stack_00000010)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_00000024",
-      "text": "if (((iVar1 != 1) || (*in_stack_00000010 < 0)) || (in_stack_00000024 <= *in_stack_00000010)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_00000010",
-      "text": "if (((iVar1 != 1) || (*in_stack_00000010 < 0)) || (in_stack_00000024 <= *in_stack_00000010)) {",
+      "line": 30,
+      "match": "in_stack_00000008",
+      "text": "if (((iVar1 != 1) || (*in_stack_00000008 < 0)) || (in_stack_0000000c <= *in_stack_00000008)) {",
       "type": "stack_param"
     },
     {
@@ -250,17 +249,6 @@
       "target_function": "crt_stdio.c_sscanf_FUN_0060013c",
       "text": "Call to variadic function crt_stdio.c_sscanf_FUN_0060013c at 00592582 (no EBP frame)",
       "type": "variadic_preserve"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d",
-      "function_name": "crt_stdio_c_sscanf_FUN_0060013c",
-      "line_number": 30,
-      "match": "iVar1 = crt_stdio_c_sscanf_FUN_0060013c(in_stack_0000000c,\"%d\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 8,

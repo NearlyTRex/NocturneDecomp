@@ -11,7 +11,6 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056aca0(CDemonSet *this_ptr)
 {
   int iVar1;
   uint *puVar2;
-  BADSPACEBASE *in_ESP;
   int iVar3;
   CDemonSet *pCVar4;
   uint uStack_28;

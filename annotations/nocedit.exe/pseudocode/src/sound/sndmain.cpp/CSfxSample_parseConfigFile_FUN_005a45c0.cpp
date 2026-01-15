@@ -20,7 +20,6 @@ void __cdecl sound_sndmain_cpp_CSfxSample_parseConfigFile_FUN_005a45c0(CSfxSampl
   char *pcVar8;
   char *pcVar9;
   uint uVar10;
-  BADSPACEBASE *in_ESP;
   byte bVar11;
   uint uStack_47c;
   uint local_478;

@@ -14,14 +14,13 @@ shape_meshlod_cpp_CLodMesh_allocate_FUN_00515ac0
   CLodVert *pCVar1;
   CLodFace *pCVar2;
   SLodSubmesh *pSVar3;
-  int in_stack_00000014;
   
   shape_meshlod_cpp_CLodMesh_free_FUN_00515970(this_ptr);
-  this_ptr->max_vertex_count = tri_count;
-  this_ptr->vertex_count = tri_count;
-  this_ptr->max_tri_count = submesh_count;
-  this_ptr->tri_count = submesh_count;
-  this_ptr->submesh_count = in_stack_00000014;
+  this_ptr->max_vertex_count = vertex_count;
+  this_ptr->vertex_count = vertex_count;
+  this_ptr->max_tri_count = tri_count;
+  this_ptr->tri_count = tri_count;
+  this_ptr->submesh_count = submesh_count;
   pCVar1 = shape_memdbg_cpp_debugCalloc_FUN_0050f350
                      (this_ptr->max_vertex_count,0x4c4,"..\\shape\\meshlod.cpp",0x231);
   this_ptr->vertex_data = pCVar1;

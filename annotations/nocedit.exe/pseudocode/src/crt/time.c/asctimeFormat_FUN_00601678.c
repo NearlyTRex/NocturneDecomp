@@ -11,7 +11,6 @@ char * __watcallStack crt_time_c_asctimeFormat_FUN_00601678(tm *timeptr,char *bu
 {
   char cVar1;
   int iVar2;
-  int unaff_retaddr;
   
   iVar2 = timeptr->tm_wday;
   *buffer = g_WeekdayInitial[iVar2];
@@ -36,8 +35,9 @@ char * __watcallStack crt_time_c_asctimeFormat_FUN_00601678(tm *timeptr,char *bu
   buffer[0x10] = ':';
   crt_time_c_formatTwoDigits_FUN_00601640(timeptr->tm_sec,0x11,buffer);
   buffer[0x13] = ' ';
-  crt_time_c_formatTwoDigits_FUN_00601640(timeptr->tm_year / 100 + 0x13,0x14,buffer);
-  crt_time_c_formatTwoDigits_FUN_00601640(unaff_retaddr,0x16,buffer);
+  iVar2 = timeptr->tm_year;
+  crt_time_c_formatTwoDigits_FUN_00601640(iVar2 / 100 + 0x13,0x14,buffer);
+  crt_time_c_formatTwoDigits_FUN_00601640(iVar2 % 100,0x16,buffer);
   buffer[0x18] = '\n';
   buffer[0x19] = '\0';
   return buffer;

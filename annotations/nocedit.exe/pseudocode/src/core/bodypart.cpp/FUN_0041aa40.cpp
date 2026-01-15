@@ -18,7 +18,6 @@ void core_bodypart_cpp_FUN_0041aa40(void)
   int *piVar3;
   int extraout_EDX;
   float fVar4;
-  BADSPACEBASE *in_ESP;
   int iVar5;
   int iVar6;
   byte bVar7;

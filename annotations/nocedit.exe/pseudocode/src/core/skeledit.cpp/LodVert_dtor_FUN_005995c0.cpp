@@ -11,5 +11,5 @@ core_skeledit_cpp_LodVert_dtor_FUN_005995c0(CLodVert *this_ptr,CLodVert *other,C
 
 {
   crt_stack_c_stack_probe_FUN_005ff9f3(4);
-  return other2;
+  return this_ptr;
 }

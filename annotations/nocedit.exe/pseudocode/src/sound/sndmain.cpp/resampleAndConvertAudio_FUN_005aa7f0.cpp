@@ -55,7 +55,7 @@ sound_sndmain_cpp_resampleAndConvertAudio_FUN_005aa7f0
   short *psVar8;
   float10 fVar9;
   double dVar10;
-  byte local_18;
+  byte local_1c;
   
   if (0 < num_output_samples) {
     if (((src_sample_rate == dst_sample_rate) && (src_bit_depth == dst_bit_depth)) &&
@@ -116,11 +116,11 @@ sound_sndmain_cpp_resampleAndConvertAudio_FUN_005aa7f0
               psVar8 = dst_buffer;
               do {
                 dVar10 = crt_math_c_round_FUN_005fe6b0((double)((float10)iVar7 * fVar9));
-                local_18 = (byte)
+                local_1c = (byte)
                            ((int)*(char *)(extraout_EAX_01 + (int)ROUND(dVar10) * 2) +
                             (int)*(char *)(extraout_EAX_01 + 1 + (int)ROUND(dVar10) * 2) >> 1);
                 iVar7 = extraout_EDX_01 + 1;
-                *(byte *)psVar8 = local_18;
+                *(byte *)psVar8 = local_1c;
                 psVar8 = (short *)((int)psVar8 + 1);
               } while (iVar7 < num_output_samples);
             }
@@ -219,11 +219,11 @@ sound_sndmain_cpp_resampleAndConvertAudio_FUN_005aa7f0
               fVar9 = (float10)fVar3;
               do {
                 dVar10 = crt_math_c_round_FUN_005fe6b0((double)((float10)iVar7 * fVar9));
-                local_18 = (byte)
+                local_1c = (byte)
                            ((ushort)*(ushort *)(extraout_EAX_08 + (int)ROUND(dVar10) * 2) >> 8);
-                extraout_EDX_08[1] = local_18;
+                extraout_EDX_08[1] = local_1c;
                 iVar7 = iVar7 + 1;
-                *extraout_EDX_08 = local_18;
+                *extraout_EDX_08 = local_1c;
               } while (iVar7 < num_output_samples);
             }
           }
@@ -250,13 +250,13 @@ sound_sndmain_cpp_resampleAndConvertAudio_FUN_005aa7f0
             psVar8 = dst_buffer;
             do {
               dVar10 = crt_math_c_round_FUN_005fe6b0((double)((float10)iVar7 * fVar9));
-              local_18 = (byte)
+              local_1c = (byte)
                          ((ushort)*(ushort *)(extraout_EAX_10 + (int)ROUND(dVar10) * 4) >> 8);
-              *(byte *)psVar8 = local_18;
-              local_18 = (byte)
+              *(byte *)psVar8 = local_1c;
+              local_1c = (byte)
                          ((uint)*(uint *)(extraout_EAX_10 + (int)ROUND(dVar10) * 4) >> 0x18);
               iVar7 = extraout_EDX_10 + 1;
-              *(byte *)((int)psVar8 + 1) = local_18;
+              *(byte *)((int)psVar8 + 1) = local_1c;
               psVar8 = psVar8 + 1;
             } while (iVar7 < num_output_samples);
           }

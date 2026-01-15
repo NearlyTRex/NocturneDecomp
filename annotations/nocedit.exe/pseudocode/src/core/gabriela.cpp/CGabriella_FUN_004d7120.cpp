@@ -13,17 +13,15 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d7120(CGabriella *this_ptr)
   CDemonActor *pCVar1;
   CVector3f *pCVar2;
   int iVar3;
-  BADSPACEBASE *in_ESP;
   float *unaff_ESI;
   CMatrix3x4f *pCVar4;
   float *pfVar5;
   byte bVar6;
   float in_stack_00000008;
   CMatrix3x4f *in_stack_fffffe70;
-  float afStack_18c [11];
   CMatrix3x4f local_160;
-  float afStack_130 [13];
-  float afStack_fc [11];
+  float afStack_130 [12];
+  float afStack_100 [12];
   CMatrix3x4f CStack_d0;
   CBoundingBox3D local_a0;
   CVector3f CStack_88;
@@ -32,8 +30,7 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d7120(CGabriella *this_ptr)
   uint local_74;
   CVector3f local_70;
   uint local_64 [3];
-  byte local_58 [8];
-  float local_50;
+  CVector3f local_58;
   CMatrix3x3f CStack_4c;
   float fStack_28;
   float fStack_24;
@@ -45,9 +42,9 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d7120(CGabriella *this_ptr)
   actor_ptr = (this_ptr->base_hero).base_character.carry_hands[(int)in_stack_00000008].carry_actor;
   local_10 = *(int *)(this_ptr->base_hero).base_character.carry_hands[(int)in_stack_00000008].
                      field0_0x0;
-  local_50 = 0.0;
-  local_58._4_4_ = 0.0;
-  local_58._0_4_ = 0.0;
+  local_58.z = 0.0;
+  local_58.y = 0.0;
+  local_58.x = 0.0;
   local_1c.z = 0.0;
   local_1c.y = 0.0;
   local_1c.x = 0.0;
@@ -83,7 +80,7 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d7120(CGabriella *this_ptr)
   }
   if (in_stack_00000008 == 0.0) {
     core_xform_cpp_buildRotationY_FUN_005f6cc0((CMatrix3x4f *)0xbfc90fdb,(float)in_stack_fffffe70);
-    pfVar5 = afStack_18c;
+    pfVar5 = (float *)&stack0xfffffe70;
 LAB_004d73e5:
     pCVar4 = &CStack_d0;
     for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -96,7 +93,7 @@ LAB_004d73e5:
     if (in_stack_00000008 == 1.4013e-45) {
       core_xform_cpp_buildRotationY_FUN_005f6cc0((CMatrix3x4f *)0x3fc90fdb,(float)in_stack_fffffe70)
       ;
-      pfVar5 = afStack_fc;
+      pfVar5 = afStack_100;
       goto LAB_004d73e5;
     }
     core_xform_cpp_setIdentityMatrix3x4_FUN_005f5100(&CStack_d0);
@@ -114,10 +111,10 @@ LAB_004d73e5:
     pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);
   }
   pCVar2 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690((CVector3f *)&CStack_d0,&CStack_4c);
-  if ((CVector3f *)(local_58 + 4) != pCVar2) {
-    local_58._0_4_ = pCVar2->x;
-    local_58._4_4_ = pCVar2->y;
-    local_50 = pCVar2->z;
+  if (&local_58 != pCVar2) {
+    local_58.x = pCVar2->x;
+    local_58.y = pCVar2->y;
+    local_58.z = pCVar2->z;
   }
   local_1c.z = local_a0.max.z * (float)0.29999999999999999 + local_a0.min.z * (float)0.69999999999999996;
 LAB_004d719a:
@@ -150,7 +147,7 @@ LAB_004d719a:
              (this_ptr->base_hero).base_character.model.bone_transform.bone_world_matrices[local_10]
              .m);
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
-            (&local_160,CStack_4c.m + 2,(CVector3f *)local_58);
+            (&local_160,CStack_4c.m + 2,&local_58);
   pCVar2 = core_xform_cpp_transformVector3x4_FUN_005f4dc0(&local_70,&local_1c,&local_160);
   CStack_4c.m[1].x = CStack_4c.m[2].x - pCVar2->x;
   CStack_4c.m[1].y = CStack_4c.m[2].y - pCVar2->y;

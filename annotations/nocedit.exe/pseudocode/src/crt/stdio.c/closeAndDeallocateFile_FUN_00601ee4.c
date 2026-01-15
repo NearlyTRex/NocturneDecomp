@@ -12,6 +12,6 @@ int __cdecl crt_stdio_c_closeAndDeallocateFile_FUN_00601ee4(FILE *file_handle,in
   int iVar1;
   
   iVar1 = crt_stdio_c_fclose_force_FUN_00601fd0(file_handle,close_flags);
-  crt_stdio_c_DeallocateFileStruct_FUN_006093b0((FILE *)close_flags);
+  crt_stdio_c_DeallocateFileStruct_FUN_006093b0(file_handle);
   return iVar1;
 }

@@ -13,7 +13,6 @@ shape_superopt_cpp_CPoly_getCentroid_FUN_005d0d30(CPoly *this_ptr,CVector3d *out
   CVert *pCVar1;
   CVert *pCVar2;
   int iVar3;
-  BADSPACEBASE *in_ESP;
   CVector3d *unaff_ESI;
   double *pdVar4;
   double *pdVar5;

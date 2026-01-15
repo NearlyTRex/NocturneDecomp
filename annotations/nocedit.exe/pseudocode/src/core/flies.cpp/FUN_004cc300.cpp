@@ -19,13 +19,22 @@ int core_flies_cpp_FUN_004cc300(void)
   uint uVar4;
   float fVar5;
   int iVar6;
-  BADSPACEBASE *in_ESP;
   SRenderVertex *pSVar7;
   SRenderVertex *vertices;
   SRenderVertex *pSVar8;
   byte bVar9;
   double dVar10;
   CDemonActor *in_stack_00000004;
+  SMRGLHeaderPrimitive SStack_9c;
+  uint uStack_84;
+  uint uStack_80;
+  uint uStack_7c;
+  uint uStack_78;
+  uint uStack_74;
+  uint uStack_70;
+  uint uStack_6c;
+  uint uStack_68;
+  uint uStack_64;
   CBoundingBox3D CStack_54;
   float fStack_3c;
   float fStack_38;
@@ -33,8 +42,7 @@ int core_flies_cpp_FUN_004cc300(void)
   CVector3i CStack_30;
   int iStack_24;
   int iStack_20;
-  int iStack_1c;
-  char *pcStack_18;
+  char *pcStack_1c;
   int iStack_14;
   
   bVar9 = 0;
@@ -67,6 +75,20 @@ int core_flies_cpp_FUN_004cc300(void)
       DAT_02d7a804 = DAT_02d7a800 ^ 0xffffff;
     }
     else {
+      SStack_9c.base.count = 3;
+      SStack_9c.surface_normal.D = 0;
+      SStack_9c.surface_normal.C = 0;
+      SStack_9c.surface_normal.B = 0;
+      SStack_9c.surface_normal.A = 0;
+      uStack_84 = 0;
+      uStack_80 = 0x800000;
+      uStack_7c = 0x800000;
+      uStack_74 = 0x800000;
+      uStack_70 = 0x800000;
+      uStack_68 = 0x800000;
+      uStack_64 = 0x800000;
+      uStack_78 = 1;
+      uStack_6c = 2;
       g_CDemonRendererPtr->vertex_buffer_ptr->light = 0.0;
       pCVar2->vertex_buffer_ptr->color = 0;
       pCVar2->vertex_buffer_ptr->fog = 0.0;
@@ -83,22 +105,22 @@ int core_flies_cpp_FUN_004cc300(void)
       pCVar2->vertex_buffer_ptr[2].w_recip = fVar5;
       engine_texture_cpp_ensureTextureLoaded_FUN_005dd800(&DAT_0067b514);
     }
-    iStack_1c = 0;
+    iStack_20 = 0;
     if (0 < *(int *)(in_stack_00000004[1].actor_name + 0xc)) {
-      pcStack_18 = in_stack_00000004[1].actor_name + 0x10;
+      pcStack_1c = in_stack_00000004[1].actor_name + 0x10;
       do {
-        dVar10 = crt_math_c_round_FUN_005fe6b0((double)(*(float *)pcStack_18 * 64f));
-        pcStack_18 = (char *)(int)ROUND(dVar10);
-        if ((int)pcStack_18 < 0) {
-          pcStack_18 = (char *)0x0;
+        dVar10 = crt_math_c_round_FUN_005fe6b0((double)(*(float *)pcStack_1c * 64f));
+        pcStack_1c = (char *)(int)ROUND(dVar10);
+        if ((int)pcStack_1c < 0) {
+          pcStack_1c = (char *)0x0;
         }
-        else if (0x3f < (int)pcStack_18) {
-          pcStack_18 = (char *)0x3f;
+        else if (0x3f < (int)pcStack_1c) {
+          pcStack_1c = (char *)0x3f;
         }
         core_spline_cpp_FUN_005b92d0();
-        CStack_30.x = (int)ROUND(fStack_3c * _DAT_0065e500);
-        CStack_30.y = (int)ROUND(fStack_38 * _DAT_0065e500);
-        CStack_30.z = (int)ROUND(fStack_34 * _DAT_0065e500);
+        fStack_34 = (float)(int)ROUND(fStack_3c * _DAT_0065e500);
+        CStack_30.x = (int)ROUND(fStack_38 * _DAT_0065e500);
+        CStack_30.y = (int)ROUND(fStack_34 * _DAT_0065e500);
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,&CStack_30);
         pCVar2 = g_CDemonRendererPtr;
@@ -134,10 +156,10 @@ int core_flies_cpp_FUN_004cc300(void)
             *(short *)((int)&pCVar2->vertex_buffer_ptr[2].projected_vertex.screen_y + 2) =
                  *(short *)((int)&pCVar2->vertex_buffer_ptr[2].projected_vertex.screen_y + 2) + 1;
             engine_drender_cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0
-                      (pCVar2,(SMRGLHeaderPrimitive *)&stack0xffffff64,999);
+                      (pCVar2,&SStack_9c,999);
           }
         }
-        iStack_1c = iStack_1c + 0x34;
+        pcStack_1c = (char *)((int)pcStack_1c + 0x34);
         iStack_20 = iStack_20 + 1;
       } while (iStack_20 < *(int *)(in_stack_00000004[1].actor_name + 0xc));
     }

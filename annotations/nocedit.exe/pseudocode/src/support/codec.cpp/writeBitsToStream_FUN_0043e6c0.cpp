@@ -53,6 +53,7 @@ support_codec_cpp_writeBitsToStream_FUN_0043e6c0
 LAB_0043e753:
   for (; 7 < bit_count; bit_count = bit_count + -8) {
     crt_stdio_c_fputc_FUN_005ff2d7(output_stream,bit_value & 0xff);
+    bit_value = (uint)bit_value >> 8;
   }
   bit_buffer->bits_available = bit_count;
   bit_buffer->accumulated_bits = bit_value;

@@ -22,7 +22,7 @@ core_wateract_cpp_CWaterActor_dtor_FUN_005ebc60(CWaterActor *this_ptr,uint d1,ui
   iVar1 = core_wateract_cpp_FUN_005ebcf0();
   ptr = (CWaterActor *)
         core_actor_cpp_CDemonActor_dtor_FUN_00408a30((CDemonActor *)(iVar1 + -0x29c),1);
-  if ((d3 & 2) == 0) {
+  if ((d1 & 2) == 0) {
     return ptr;
   }
   shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);

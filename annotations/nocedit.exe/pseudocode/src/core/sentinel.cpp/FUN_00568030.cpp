@@ -25,7 +25,6 @@ void core_sentinel_cpp_FUN_00568030(void)
   CVector3f *pCVar10;
   int extraout_EAX;
   int extraout_EAX_00;
-  BADSPACEBASE *in_ESP;
   CEnemy *in_stack_00000004;
   float in_stack_00000008;
   CVector3f *in_stack_fffffde6;

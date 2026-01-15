@@ -1,15 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 16,
-    "complexity_score": 49,
+    "complexity_score": 74,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
     "pseudocode_lines": 9,
-    "suspect_count": 3,
+    "suspect_count": 5,
     "suspect_types": [
       "call_esp_preserve",
-      "negative_offset"
+      "negative_offset",
+      "unaffected_reg"
     ],
     "total_lines": 25
   },
@@ -85,6 +86,20 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 6,
+      "match": "unaff_EBX",
+      "text": "uint unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 10,
+      "match": "unaff_EBX",
+      "text": "((CStrList *)(this_ptr->padding_0x18 + 0x20),0,unaff_EBX);",
+      "type": "unaffected_reg"
+    },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 11,

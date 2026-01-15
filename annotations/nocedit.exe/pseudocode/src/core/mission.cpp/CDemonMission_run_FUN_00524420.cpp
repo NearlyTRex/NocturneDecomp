@@ -11,13 +11,12 @@ void __cdecl core_mission_cpp_CDemonMission_run_FUN_00524420(CDemonMission *this
 {
   CHero *actor_ptr;
   int iVar1;
-  int iVar2;
-  char *color_value;
-  int unaff_retaddr;
-  CDemonActor *in_stack_00000008;
-  CLevelLoader *this_ptr_00;
-  int in_stack_0000002c;
-  char *in_stack_00000044;
+  char *text_string;
+  int unaff_EBP;
+  CDemonActor *unaff_ESI;
+  SDamageInfo *unaff_EDI;
+  CDemonActor *color_value;
+  bool bVar2;
   
   while( true ) {
     if (g_HeroCount < 1) {
@@ -37,37 +36,40 @@ void __cdecl core_mission_cpp_CDemonMission_run_FUN_00524420(CDemonMission *this
     actor_ptr = g_HeroActors[g_LocalHeroIndex];
     core_mission_cpp_CDemonMission_setupActorMaybe_FUN_00523be0(this_ptr,(CDemonActor *)actor_ptr);
     (*(actor_ptr->base_character).base_actor.vtable[1].fillAttackDamageInfo)
-              ((CDemonActor *)actor_ptr,unaff_retaddr,(SDamageInfo *)this_ptr,in_stack_00000008);
+              ((CDemonActor *)actor_ptr,unaff_EBP,unaff_EDI,unaff_ESI);
     core_mission_cpp_CDemonMission_checkMemory2_FUN_00522d30(this_ptr);
     if ((iVar1 == 0) || (DAT_02f35f10 == '\0')) break;
     iVar1 = crt_string_c_stricmp_FUN_005fe7f0(g_CDemonSetPtr->geometry_filename,"hq.geo");
-    if (iVar1 != 0) {
+    bVar2 = iVar1 != 0;
+    if (bVar2) {
       core_game_cpp_CGame_displayActStats_FUN_004e3800(g_CGamePtr);
-      in_stack_0000002c = -1;
-      iVar2 = 9;
-      this_ptr_00 = g_CLevelLoaderPtr;
+      iVar1 = -1;
     }
     else {
-      iVar2 = 0;
-      this_ptr_00 = (CLevelLoader *)0x9;
+      iVar1 = 1;
     }
-    core_level_cpp_CLevelLoader_show_FUN_00503dc0(this_ptr_00,iVar2,1,in_stack_0000002c);
+    color_value = (CDemonActor *)(uint)!bVar2;
+    core_level_cpp_CLevelLoader_show_FUN_00503dc0(g_CLevelLoaderPtr,9,(uint)bVar2,iVar1);
+    unaff_EBP = 0x524571;
     core_mission_cpp_CDemonMission_load_FUN_00522d90(this_ptr,&DAT_02f35f10,0);
-    in_stack_0000002c = 0x52457b;
-    iVar2 = core_mission_cpp_CDemonMission_createHeros_FUN_00524a80(this_ptr,(int)actor_ptr);
-    if (iVar2 == 0) goto LAB_005244ee;
-    iVar2 = core_mission_cpp_CDemonMission_FUN_00524760(this_ptr);
-    if (iVar2 == 0) goto LAB_005244ee;
-    if (iVar1 != 0) {
-      color_value = support_newmsg_cpp_getLocalizedString_FUN_005441f0
+    unaff_EDI = (SDamageInfo *)0x52457b;
+    iVar1 = core_mission_cpp_CDemonMission_createHeros_FUN_00524a80(this_ptr,(int)actor_ptr);
+    if (iVar1 == 0) goto LAB_005244ee;
+    unaff_ESI = (CDemonActor *)0x52458c;
+    iVar1 = core_mission_cpp_CDemonMission_FUN_00524760(this_ptr);
+    if (iVar1 == 0) goto LAB_005244ee;
+    if (color_value == (CDemonActor *)0x0) {
+      text_string = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                               ("Press any key to continue...");
-      iVar1 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(g_ThemeFont,0x58);
-      in_stack_0000002c = 0x5245e0;
+      unaff_EDI = (SDamageInfo *)0xf8;
+      unaff_EBP = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(g_ThemeFont,0x58);
+      unaff_EBP = 0x1db - unaff_EBP;
       engine_font_cpp_CBitFont_drawTextRight_FUN_004cdce0
-                (g_ThemeFont,0x27f,0x1db - iVar1,0,(int)color_value,in_stack_00000044);
+                (g_ThemeFont,0x27f,unaff_EBP,(int)unaff_EDI,(int)color_value,text_string);
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
       engine_2d_c_clearInputAndWait_FUN_00403260();
       wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
+      unaff_ESI = color_value;
     }
   }
   core_mission_cpp_CDemonMission_FUN_00523f20(this_ptr);

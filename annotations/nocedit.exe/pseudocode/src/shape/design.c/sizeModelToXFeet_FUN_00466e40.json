@@ -1,17 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 190,
-    "complexity_score": 134,
+    "complexity_score": 69,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 8,
     "pseudocode_lines": 69,
-    "suspect_count": 5,
-    "suspect_types": [
-      "badspacebase",
-      "register_param",
-      "stack_ref"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 259
   },
   "cross_references": [
@@ -194,7 +190,7 @@
     {
       "add_esp_value": 20,
       "call_address": "00466ea3",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -312,41 +308,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 8,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 8,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 23,
-      "match": "&stack0xffffff84",
-      "text": "(&stack0xffffff84,0x14,0,0x16,\"Enter X distance in feet (,min,max for user-defined min/max points) : \");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 25,
-      "match": "&stack0xffffff84",
-      "text": "pcVar4 = &stack0xffffff84;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 36,
-      "match": "&stack0xffffff84",
-      "text": "(&stack0xffffff84,\"%f,%d,%d\",local_20,&local_24,&local_28);",
-      "type": "stack_ref"
-    }
-  ]
+  "suspects": []
 }

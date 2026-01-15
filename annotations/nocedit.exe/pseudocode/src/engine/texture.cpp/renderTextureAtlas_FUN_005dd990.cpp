@@ -9,18 +9,13 @@
 void __cdecl engine_texture_cpp_renderTextureAtlas_FUN_005dd990(void)
 
 {
-  uint uStack00000004;
-  uint uStack00000008;
-  
   if (g_UseExternalRenderer == 0) {
     return;
   }
   wincore_wddvmem_cpp_openScreenDevice_FUN_005ed580();
   engine_texture_cpp_CTextureCache_renderAllTextures_FUN_005dd580(g_TextureCacheInstance);
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
-  uStack00000004 = 0x5dd9b9;
   wincore_wddvmem_cpp_closeScreenDevice_FUN_005ed630();
-  uStack00000008 = 0x5dd9be;
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
   return;
 }

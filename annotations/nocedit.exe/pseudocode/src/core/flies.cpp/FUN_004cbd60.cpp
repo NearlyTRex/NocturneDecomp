@@ -11,15 +11,14 @@ CFlies * __cdecl core_flies_cpp_FUN_004cbd60(CFlies *this_ptr)
 {
   CDemonActor *pCVar1;
   void *pvVar2;
-  BADSPACEBASE *in_ESP;
-  uint local_4;
+  uint local_c [3];
   
   pCVar1 = core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base_actor);
   pvVar2 = crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
                      (pCVar1[1].actor_name + 0x10,200,&g_SFlyTypeInfo);
   *(CDemonActor_vtable **)((int)pvVar2 + -0x14) = &PTR_core_flies_cpp_FUN_004cbe20_0065e524;
   *(uint *)((int)pvVar2 + -4) = 0x14;
-  if ((uint *)((int)pvVar2 + -0x10) != &local_4) {
+  if ((uint *)((int)pvVar2 + -0x10) != local_c) {
     *(uint *)((int)pvVar2 + -0x10) = 0x40a00000;
     *(uint *)((int)pvVar2 + -0xc) = 0x40a00000;
     *(uint *)((int)pvVar2 + -8) = 0x40a00000;

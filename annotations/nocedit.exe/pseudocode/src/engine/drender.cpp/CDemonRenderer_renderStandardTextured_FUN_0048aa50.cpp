@@ -15,7 +15,7 @@ engine_drender_cpp_CDemonRenderer_renderStandardTextured_FUN_0048aa50
   int iVar2;
   int iVar3;
   SMRGLHeaderPrimitive *pSVar4;
-  uint uVar5;
+  uint local_14;
   
   g_RenderPixelCounter = 0;
   if ((this_ptr->plane_culling_enabled != 0) &&
@@ -23,7 +23,7 @@ engine_drender_cpp_CDemonRenderer_renderStandardTextured_FUN_0048aa50
     return 0;
   }
   iVar2 = 0;
-  uVar5 = 0xffffffff;
+  local_14 = 0xffffffff;
   if (0 < (polygon_info->base).count) {
     iVar3 = 0;
     pSVar4 = polygon_info;
@@ -33,10 +33,10 @@ engine_drender_cpp_CDemonRenderer_renderStandardTextured_FUN_0048aa50
       iVar3 = iVar3 + 4;
       pSVar4 = (SMRGLHeaderPrimitive *)&(pSVar4->surface_normal).B;
       iVar2 = iVar2 + 1;
-      uVar5 = uVar5 & this_ptr->vertex_buffer_ptr[iVar1].projected_vertex.screen_x;
+      local_14 = local_14 & this_ptr->vertex_buffer_ptr[iVar1].projected_vertex.screen_x;
     } while (iVar2 < (polygon_info->base).count);
   }
-  if (((uVar5 & 0x80000000) == 0) || ((uVar5 & 0x1f) == 0)) {
+  if (((local_14 & 0x80000000) == 0) || ((local_14 & 0x1f) == 0)) {
     if (this_ptr->face_count == 0) {
       g_RenderStateFlags = RENDER_TEXTURE_BASE;
       g_RenderStateFlag2 = PREPROCESS_W_DEPTH_REPLACEMENT;

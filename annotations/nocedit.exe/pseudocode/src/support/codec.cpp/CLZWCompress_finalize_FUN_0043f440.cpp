@@ -10,15 +10,12 @@ int __cdecl
 support_codec_cpp_CLZWCompress_finalize_FUN_0043f440(CLZWCompress *this_ptr,FILE *output_file)
 
 {
-  FILE *in_stack_0000000c;
-  
   if (-1 < this_ptr->current_code) {
     support_codec_cpp_CLZWDictionary_writeCodeBits_FUN_0043f170
               (&this_ptr->dictionary,this_ptr->current_code,&(this_ptr->dictionary).bit_state,
                output_file);
     this_ptr->current_code = -1;
   }
-  support_codec_cpp_flushBitBuffer_FUN_0043e7e0(&(this_ptr->dictionary).bit_state,in_stack_0000000c)
-  ;
+  support_codec_cpp_flushBitBuffer_FUN_0043e7e0(&(this_ptr->dictionary).bit_state,output_file);
   return 1;
 }

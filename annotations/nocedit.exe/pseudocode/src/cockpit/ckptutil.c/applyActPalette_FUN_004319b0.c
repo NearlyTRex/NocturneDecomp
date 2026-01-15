@@ -11,25 +11,20 @@ cockpit_ckptutil_c_applyActPalette_FUN_004319b0
           (char *filename,void *bitmap_buffer,int bitmap_size,int palette_index)
 
 {
-  byte *pbVar1;
-  uint uVar2;
-  BADSPACEBASE *in_ESP;
-  byte bStack00000014;
-  char acStack_104 [4];
-  byte abStack_100 [252];
+  uint uVar1;
+  byte abStack_104 [256];
   
-  cockpit_ckptutil_c_loadACTToIndexedPalette_FUN_00431a30(filename,acStack_104);
-  if ((-1 < _bStack00000014) && (_bStack00000014 < 0x100)) {
-    abStack_100[_bStack00000014] = bStack00000014;
+  cockpit_ckptutil_c_loadACTToIndexedPalette_FUN_00431a30(filename,(char *)abStack_104);
+  if ((-1 < palette_index) && (palette_index < 0x100)) {
+    abStack_104[palette_index] = (byte)palette_index;
   }
-  uVar2 = 0;
-  pbVar1 = (byte *)bitmap_size;
+  uVar1 = 0;
   if (bitmap_size != 0) {
     do {
-      uVar2 = uVar2 + 1;
-      *pbVar1 = abStack_100[*pbVar1];
-      pbVar1 = pbVar1 + 1;
-    } while (uVar2 < (uint)bitmap_size);
+      uVar1 = uVar1 + 1;
+      *(byte *)bitmap_buffer = abStack_104[*(byte *)bitmap_buffer];
+      bitmap_buffer = (byte *)((int)bitmap_buffer + 1);
+    } while (uVar1 < (uint)bitmap_size);
   }
   return;
 }

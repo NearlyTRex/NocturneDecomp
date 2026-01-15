@@ -15,34 +15,34 @@ engine_drender_cpp_CDemonRenderer_renderAlternativeDepth_FUN_0048a950
   int iVar2;
   SMRGLHeaderPrimitive *pSVar3;
   int iVar4;
-  int local_14;
-  uint uVar5;
+  int local_18;
+  uint local_14;
   
   if ((this_ptr->plane_culling_enabled == 0) ||
      (iVar4 = engine_3d_c_isVisiblePlane_FUN_00403950(&polygon_info->surface_normal), iVar4 != 0)) {
     iVar4 = 0;
-    uVar5 = 0xffffffff;
-    local_14 = 0;
+    local_14 = 0xffffffff;
+    local_18 = 0;
     if (0 < (polygon_info->base).count) {
       iVar2 = 0;
       pSVar3 = polygon_info;
       do {
         iVar1 = pSVar3[1].base.type;
         *(int *)((int)g_VertexIndexBuffer + iVar2) = iVar1;
-        uVar5 = uVar5 & this_ptr->vertex_buffer_ptr[iVar1].projected_vertex.screen_x;
+        local_14 = local_14 & this_ptr->vertex_buffer_ptr[iVar1].projected_vertex.screen_x;
         if ((int)(this_ptr->vertex_buffer_ptr[iVar1].projected_vertex.screen_x & -0x80000000) != 0)
         {
-          local_14 = 1;
+          local_18 = 1;
         }
         iVar2 = iVar2 + 4;
         iVar4 = iVar4 + 1;
         pSVar3 = (SMRGLHeaderPrimitive *)&(pSVar3->surface_normal).B;
       } while (iVar4 < (polygon_info->base).count);
     }
-    if (((uVar5 & 0x80000000) == 0) || ((uVar5 & 0x1f) == 0)) {
+    if (((local_14 & 0x80000000) == 0) || ((local_14 & 0x1f) == 0)) {
       iVar4 = this_ptr->face_capture_enabled;
       if ((iVar4 != 0) && (this_ptr->face_count != 0)) {
-        this_ptr->face_capture_enabled = local_14;
+        this_ptr->face_capture_enabled = local_18;
       }
       if (this_ptr->face_count == 0) {
         g_RenderStateFlags = RENDER_ALTERNATIVE_DEPTH;

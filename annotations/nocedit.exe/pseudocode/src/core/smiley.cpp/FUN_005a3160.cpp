@@ -14,7 +14,6 @@ uint core_smiley_cpp_FUN_005a3160(void)
 {
   int iVar1;
   CVector3f *input_local_point;
-  BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000004;
   int in_stack_00000008;
   SCollisionInfo *in_stack_ffffffe0;

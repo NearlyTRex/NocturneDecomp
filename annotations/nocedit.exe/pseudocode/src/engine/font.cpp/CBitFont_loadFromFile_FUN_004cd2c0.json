@@ -1,23 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 171,
-    "complexity_score": 732,
+    "complexity_score": 414,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 9,
-    "pseudocode_lines": 52,
-    "suspect_count": 64,
+    "pseudocode_lines": 44,
+    "suspect_count": 35,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
-      "format_string_mismatch",
       "lea_esp_stack_addr",
-      "register_param",
-      "stack_param",
-      "stack_ref",
+      "unaffected_reg",
       "variadic_preserve"
     ],
-    "total_lines": 223
+    "total_lines": 215
   },
   "cross_references": [],
   "function": {
@@ -247,190 +243,22 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
+      "description": "Unaffected register variable",
       "line": 6,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
+      "match": "unaff_EDI",
+      "text": "int unaff_EDI;",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Inferred register parameter",
-      "line": 6,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 7,
-      "match": "in_stack_0000000c",
-      "text": "int in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_00000010",
-      "text": "int in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000014",
-      "text": "int in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000018",
-      "text": "int in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_0000001c",
-      "text": "int in_stack_0000001c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000024",
-      "text": "int in_stack_00000024;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000028",
-      "text": "int in_stack_00000028;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_0000002c",
-      "text": "int in_stack_0000002c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_fffffe08",
-      "text": "int in_stack_fffffe08;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 30,
-      "match": "&stack0xfffffddc",
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(stream,\"%s\\n\",&stack0xfffffddc);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 42,
-      "match": "in_stack_00000014",
-      "text": "if ((in_stack_00000014 == 0x20) && (in_stack_00000018 == 0xff)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 42,
-      "match": "in_stack_00000018",
-      "text": "if ((in_stack_00000014 == 0x20) && (in_stack_00000018 == 0xff)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 44,
-      "match": "in_stack_0000000c",
-      "text": "(this_ptr,acStack_1f4,in_stack_0000000c,in_stack_00000010,in_stack_0000001c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 44,
-      "match": "in_stack_00000010",
-      "text": "(this_ptr,acStack_1f4,in_stack_0000000c,in_stack_00000010,in_stack_0000001c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 44,
-      "match": "in_stack_0000001c",
-      "text": "(this_ptr,acStack_1f4,in_stack_0000000c,in_stack_00000010,in_stack_0000001c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 48,
-      "match": "in_stack_0000000c",
-      "text": "(this_ptr,acStack_1f4,in_stack_0000000c,in_stack_00000010,in_stack_00000014,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 48,
-      "match": "in_stack_00000010",
-      "text": "(this_ptr,acStack_1f4,in_stack_0000000c,in_stack_00000010,in_stack_00000014,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 48,
-      "match": "in_stack_00000014",
-      "text": "(this_ptr,acStack_1f4,in_stack_0000000c,in_stack_00000010,in_stack_00000014,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 49,
-      "match": "in_stack_00000018",
-      "text": "in_stack_00000018,in_stack_0000001c,in_stack_fffffe08);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 49,
-      "match": "in_stack_0000001c",
-      "text": "in_stack_00000018,in_stack_0000001c,in_stack_fffffe08);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 49,
-      "match": "in_stack_fffffe08",
-      "text": "in_stack_00000018,in_stack_0000001c,in_stack_fffffe08);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 51,
-      "match": "in_stack_00000024",
-      "text": "this_ptr->char_widths[0x20] = in_stack_00000024;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 52,
-      "match": "in_stack_00000028",
-      "text": "this_ptr->font_type = in_stack_00000028;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 53,
-      "match": "in_stack_0000002c",
-      "text": "this_ptr->font_enabled = in_stack_0000002c;",
-      "type": "stack_param"
+      "description": "Unaffected register variable",
+      "line": 41,
+      "match": "unaff_EDI",
+      "text": "(this_ptr,local_22c,local_2c,local_28,local_24,local_20,local_1c,unaff_EDI);",
+      "type": "unaffected_reg"
     },
     {
       "call_address": "004cd31c",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -444,7 +272,7 @@
     },
     {
       "call_address": "004cd350",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -458,7 +286,7 @@
     },
     {
       "call_address": "004cd384",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -472,7 +300,7 @@
     },
     {
       "call_address": "004cd3b0",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -486,7 +314,7 @@
     },
     {
       "call_address": "004cd3dc",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -500,7 +328,7 @@
     },
     {
       "call_address": "004cd410",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -511,61 +339,6 @@
       "target_function": "crt_stdio.c_fscanf_FUN_005fe7c0",
       "text": "Call to variadic function crt_stdio.c_fscanf_FUN_005fe7c0 at 004cd410 (no EBP frame)",
       "type": "variadic_preserve"
-    },
-    {
-      "actual_args": 1,
-      "description": "Format \"%d,%d\\n\" has 2 specifiers but 1 arguments after it",
-      "expected_args": 2,
-      "format_string": "%d,%d\\n",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 32,
-      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(stream,\"%d,%d\\n\",local_1c);",
-      "text": "Format string expects 2 args but got 1",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d,%d\\n\" has 2 specifiers but 0 arguments after it",
-      "expected_args": 2,
-      "format_string": "%d,%d\\n",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 34,
-      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(stream,\"%d,%d\\n\");",
-      "text": "Format string expects 2 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 36,
-      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(stream,\"%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 38,
-      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(stream,\"%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d,%d\\n\" has 2 specifiers but 0 arguments after it",
-      "expected_args": 2,
-      "format_string": "%d,%d\\n",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 40,
-      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(stream,\"%d,%d\\n\");",
-      "text": "Format string expects 2 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 12,

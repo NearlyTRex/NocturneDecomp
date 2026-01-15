@@ -15,7 +15,6 @@ core_actor_cpp_CDemonActor_getAllowedMeleeAttackTypes_FUN_0040a0f0(CDemonActor *
   float fVar3;
   CBoundingBox3D *pCVar4;
   uint uVar5;
-  BADSPACEBASE *in_ESP;
   CBoundingBox3D local_30;
   
   core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80

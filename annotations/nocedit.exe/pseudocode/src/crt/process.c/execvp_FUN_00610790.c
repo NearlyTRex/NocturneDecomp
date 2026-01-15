@@ -10,7 +10,6 @@ int __cdecl crt_process_c_execvp_FUN_00610790(int argc,char *program,char *arg1,
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   
   iVar1 = crt_process_c_spawnvp_FUN_0060f39c(argc,program,&arg1);
   return iVar1;

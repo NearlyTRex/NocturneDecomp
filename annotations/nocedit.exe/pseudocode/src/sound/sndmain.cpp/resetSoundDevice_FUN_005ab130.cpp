@@ -10,7 +10,6 @@ int __cdecl sound_sndmain_cpp_resetSoundDevice_FUN_005ab130(void)
 
 {
   int iVar1;
-  uint uStack0000000c;
   
   sound_sndmain_cpp_killAllSfx_FUN_005a9cc0();
   if (g_CSoundDevicePtr != (CSoundDevice *)0x0) {
@@ -20,7 +19,6 @@ int __cdecl sound_sndmain_cpp_resetSoundDevice_FUN_005ab130(void)
     }
   }
   g_SoundBusyFlag = 0;
-  uStack0000000c = 0x5ab15c;
   sound_sndmain_cpp_freeMixBuffers_FUN_005a5900();
   return 1;
 }

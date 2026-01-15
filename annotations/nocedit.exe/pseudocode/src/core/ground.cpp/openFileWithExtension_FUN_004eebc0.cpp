@@ -13,52 +13,49 @@ core_ground_cpp_openFileWithExtension_FUN_004eebc0
 {
   char cVar1;
   FILE *pFVar2;
-  BADSPACEBASE *in_ESP;
   char *pcVar3;
   char *pcVar4;
-  char *pcVar5;
   char *in_stack_00000010;
-  char *in_stack_00000014;
+  char local_60 [80];
   
-  pcVar5 = &stack0xffffffa0;
-  pcVar3 = file_extension;
+  pcVar4 = local_60;
   do {
-    cVar1 = *pcVar3;
-    *pcVar5 = cVar1;
-    pcVar4 = &stack0xffffffa0;
+    cVar1 = *file_extension;
+    *pcVar4 = cVar1;
+    pcVar3 = local_60;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar3[1];
-    pcVar3 = pcVar3 + 2;
-    pcVar5[1] = cVar1;
-    pcVar5 = pcVar5 + 2;
-    pcVar4 = &stack0xffffffa0;
+    cVar1 = file_extension[1];
+    file_extension = file_extension + 2;
+    pcVar4[1] = cVar1;
+    pcVar4 = pcVar4 + 2;
+    pcVar3 = local_60;
   } while (cVar1 != '\0');
   do {
-    pcVar3 = pcVar4;
-    if (*pcVar4 == '.') goto LAB_004eec03;
-    if (*pcVar4 == '\0') break;
-    pcVar3 = pcVar4 + 1;
+    pcVar4 = pcVar3;
     if (*pcVar3 == '.') goto LAB_004eec03;
-    pcVar4 = pcVar4 + 2;
-  } while (*pcVar3 != '\0');
-  pcVar3 = (char *)0x0;
+    if (*pcVar3 == '\0') break;
+    pcVar4 = pcVar3 + 1;
+    if (*pcVar4 == '.') goto LAB_004eec03;
+    pcVar3 = pcVar3 + 2;
+  } while (*pcVar4 != '\0');
+  pcVar4 = (char *)0x0;
 LAB_004eec03:
-  if (pcVar3 == (char *)0x0) {
+  if (pcVar4 == (char *)0x0) {
     g_CurrentFilename = "..\\core\\ground.cpp";
     g_CurrentLineNumber = 0x40;
     core_main_c_displayErrorAndQuit_FUN_00506f10("eopen - ext not found!");
   }
-  pcVar3 = pcVar3 + 1;
+  pcVar4 = pcVar4 + 1;
   do {
-    cVar1 = *in_stack_00000010;
-    *pcVar3 = cVar1;
+    cVar1 = *open_mode;
+    *pcVar4 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = in_stack_00000010[1];
-    in_stack_00000010 = in_stack_00000010 + 2;
-    pcVar3[1] = cVar1;
-    pcVar3 = pcVar3 + 2;
+    cVar1 = open_mode[1];
+    open_mode = open_mode + 2;
+    pcVar4[1] = cVar1;
+    pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  pFVar2 = engine_dosio_c_getFile_FUN_00481a50(file_extension,&stack0xffffffa4,in_stack_00000014);
+  pFVar2 = engine_dosio_c_getFile_FUN_00481a50(base_filename,local_60,in_stack_00000010);
   if (pFVar2 == (FILE *)0x0) {
     g_CurrentFilename = "..\\core\\ground.cpp";
     g_CurrentLineNumber = 0x44;

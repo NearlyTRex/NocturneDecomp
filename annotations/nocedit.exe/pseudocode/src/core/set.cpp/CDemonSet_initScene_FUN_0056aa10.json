@@ -1,16 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 226,
-    "complexity_score": 313,
+    "complexity_score": 288,
     "cross_reference_count": 16,
     "function_call_count": 17,
     "global_count": 22,
     "pseudocode_lines": 103,
-    "suspect_count": 19,
+    "suspect_count": 17,
     "suspect_types": [
       "call_esp_preserve",
       "pointer_cast",
-      "stack_param",
       "variadic_preserve"
     ],
     "total_lines": 329
@@ -402,29 +401,15 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_ffffffec",
-      "text": "int in_stack_ffffffec;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_ffffffec",
-      "text": "core_level_cpp_CLevelLoader_update_FUN_00504160(g_CLevelLoaderPtr,text,in_stack_ffffffec);",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 45,
       "match": "(int *)((int)",
-      "text": "if (*(int *)((int)g_MasterLightList + iVar3) != 0) {",
+      "text": "if (*(int *)((int)g_MasterLightList + iVar4) != 0) {",
       "type": "pointer_cast"
     },
     {
       "call_address": "0056aaff",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -438,7 +423,7 @@
     },
     {
       "call_address": "0056ac91",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

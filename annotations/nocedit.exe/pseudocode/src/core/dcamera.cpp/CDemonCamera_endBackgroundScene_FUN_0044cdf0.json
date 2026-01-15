@@ -1,19 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 100,
-    "complexity_score": 186,
+    "complexity_score": 160,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 24,
-    "pseudocode_lines": 66,
-    "suspect_count": 10,
+    "pseudocode_lines": 65,
+    "suspect_count": 8,
     "suspect_types": [
       "call_esp_preserve",
       "pointer_cast",
-      "register_param",
-      "stack_param"
+      "register_param"
     ],
-    "total_lines": 166
+    "total_lines": 165
   },
   "cross_references": [
     {
@@ -271,50 +270,36 @@
       "type": "register_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_0000000c",
-      "text": "int in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
       "description": "Inferred register parameter",
-      "line": 45,
+      "line": 44,
       "match": "in_EAX",
       "text": "in_EAX = g_BackgroundSavedBlueBitPosition;",
       "type": "register_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 46,
-      "match": "in_stack_0000000c",
-      "text": "if (in_stack_0000000c != 0) {",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 52,
+      "line": 51,
       "match": "(int *)((int)",
       "text": "piVar1 = (int *)((int)g_ZBufferScanlineArray + iVar7);",
       "type": "pointer_cast"
     },
     {
       "description": "Inferred register parameter",
-      "line": 59,
+      "line": 58,
       "match": "in_EAX",
       "text": "in_EAX = this_ptr->framebuffer_height;",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 60,
+      "line": 59,
       "match": "in_EAX",
       "text": "} while (iVar3 < in_EAX);",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 68,
+      "line": 67,
       "match": "in_EAX",
       "text": "return in_EAX;",
       "type": "register_param"

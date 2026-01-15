@@ -1,25 +1,21 @@
 {
   "complexity": {
     "assembly_lines": 259,
-    "complexity_score": 623,
+    "complexity_score": 475,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 19,
-    "pseudocode_lines": 103,
-    "suspect_count": 47,
+    "pseudocode_lines": 115,
+    "suspect_count": 33,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "concat_artifact",
-      "format_string_mismatch",
       "lea_esp_stack_addr",
       "param_count_too_few",
-      "register_param",
       "stack_param",
-      "stack_ref",
       "variadic_preserve"
     ],
-    "total_lines": 362
+    "total_lines": 374
   },
   "cross_references": [
     {
@@ -345,20 +341,6 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 12,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 12,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
       "line": 15,
       "match": "in_stack_00000004",
@@ -367,164 +349,87 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000008",
-      "text": "int in_stack_00000008;",
+      "line": 26,
+      "match": "in_stack_00000004",
+      "text": "iVar6 = in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000010",
-      "text": "int in_stack_00000010;",
+      "line": 36,
+      "match": "in_stack_00000004",
+      "text": "} while (iVar7 != in_stack_00000004 + 0x200);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00000020",
-      "text": "int in_stack_00000020;",
+      "line": 37,
+      "match": "in_stack_00000004",
+      "text": "local_28 = (void *)(in_stack_00000004 + 8);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_00000040",
-      "text": "int in_stack_00000040;",
+      "line": 38,
+      "match": "in_stack_00000004",
+      "text": "local_20 = in_stack_00000004 + 0x10000;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 39,
+      "match": "in_stack_00000004",
+      "text": "local_24 = in_stack_00000004 + 0x200;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 40,
+      "match": "in_stack_00000004",
+      "text": "local_30 = in_stack_00000004 + 0x100;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 46,
       "match": "in_stack_00000004",
       "text": "iVar7 = in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 33,
+      "line": 52,
       "match": "in_stack_00000004",
-      "text": "} while (iVar6 != in_stack_00000004 + 0x200);",
+      "text": "iVar9 = in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 36,
-      "match": "in_stack_00000008",
-      "text": "iVar7 = in_stack_00000008;",
+      "line": 53,
+      "match": "in_stack_00000004",
+      "text": "iVar5 = in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 41,
-      "match": "in_stack_00000008",
-      "text": "iVar2 = in_stack_00000008;",
+      "line": 55,
+      "match": "in_stack_00000004",
+      "text": "iVar8 = in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 42,
-      "match": "in_stack_00000008",
-      "text": "iVar6 = in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 43,
-      "match": "in_stack_00000010",
-      "text": "iVar9 = in_stack_00000010 + 0x100;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 44,
-      "match": "in_stack_00000008",
-      "text": "iVar8 = in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 45,
-      "match": "in_stack_00000010",
-      "text": "} while (iVar7 != in_stack_00000010 + 0x100);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 61,
-      "match": "in_stack_00000010",
-      "text": "} while (iVar2 != in_stack_00000010 + 0x10000);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 63,
-      "match": "in_stack_00000010",
-      "text": "(&stack0xfffffedc,\"water%d.raw\",(void *)(in_stack_00000010 + 0x200));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 63,
-      "match": "&stack0xfffffedc",
-      "text": "(&stack0xfffffedc,\"water%d.raw\",(void *)(in_stack_00000010 + 0x200));",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 64,
-      "match": "&stack0xfffffee0",
-      "text": "pFVar4 = engine_dosio_c_getFile_FUN_00481a50(\"art\",&stack0xfffffee0,\"wb\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 70,
-      "match": "in_stack_00000010",
-      "text": "crt_stdio_c_fwrite_FUN_005fdc00((void *)(in_stack_00000010 + 0x200),0x100,0x100,pFVar4);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 72,
-      "match": "&stack0xfffffef0",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffef0,\"water%d.act\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 73,
-      "match": "&stack0xfffffef4",
-      "text": "pFVar4 = engine_dosio_c_getFile_FUN_00481a50(\"art\",&stack0xfffffef4,\"wb\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 89,
-      "match": "in_stack_00000010",
-      "text": "iStack00000024 = in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 91,
-      "match": "in_stack_00000040",
-      "text": "iVar6 = in_stack_00000040 + iVar2 * 0x100;",
+      "line": 101,
+      "match": "in_stack_00000004",
+      "text": "iVar9 = in_stack_00000004 + iVar7 * 0x100;",
       "type": "stack_param"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 96,
+      "line": 106,
       "match": "CONCAT11",
-      "text": "*piVar5 = (uint)bVar1 * 0x10000 + (uint)CONCAT11 /* combine 2-byte values */(bVar1,bVar1);",
+      "text": "*piVar4 = (uint)bVar1 * 0x10000 + (uint)CONCAT11 /* combine 2-byte values */(bVar1,bVar1);",
       "type": "concat_artifact"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 104,
-      "match": "in_stack_00000020",
-      "text": "} while (in_stack_00000020 + 1 < 0x10);",
-      "type": "stack_param"
     },
     {
       "call_site_count": 1,
@@ -592,17 +497,6 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00554604 (no EBP frame)",
       "type": "variadic_preserve"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"water%d.act\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "water%d.act",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 72,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffef0,\"water%d.act\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 12,

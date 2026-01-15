@@ -1,22 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 822,
-    "complexity_score": 3327,
+    "complexity_score": 2165,
     "cross_reference_count": 0,
     "function_call_count": 26,
     "global_count": 33,
-    "pseudocode_lines": 232,
-    "suspect_count": 306,
+    "pseudocode_lines": 175,
+    "suspect_count": 197,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
-      "register_param",
-      "stack_param",
-      "stack_ref",
+      "unaffected_reg",
       "variadic_preserve"
     ],
-    "total_lines": 1054
+    "total_lines": 997
   },
   "cross_references": [],
   "function": {
@@ -500,806 +497,43 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 10,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
+      "description": "Unaffected register variable",
+      "line": 9,
+      "match": "unaff_EBX",
+      "text": "char *unaff_EBX;",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Inferred register parameter",
-      "line": 10,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_000000d8",
-      "text": "int in_stack_000000d8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_000000ec",
-      "text": "int in_stack_000000ec;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_000000fc",
-      "text": "int in_stack_000000fc;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_0000012c",
-      "text": "int in_stack_0000012c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_00000138",
-      "text": "int in_stack_00000138;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_0000013c",
-      "text": "int in_stack_0000013c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_00000158",
-      "text": "int in_stack_00000158;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_00000160",
-      "text": "int in_stack_00000160;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 24,
-      "match": "in_stack_ffffff80",
-      "text": "char *in_stack_ffffff80;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_ffffff84",
-      "text": "char *in_stack_ffffff84;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_ffffffa0",
-      "text": "char *in_stack_ffffffa0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_ffffffa4",
-      "text": "char *in_stack_ffffffa4;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 32,
-      "match": "&stack0xffffff9c",
-      "text": "((CDrawSurface *)&stack0xffffff9c,g_WindowWidth / 2,g_WindowHeight / 2,0xc9,0x65,",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 35,
-      "match": "&stack0xffffff60",
-      "text": "((CDrawSurface *)&stack0xffffff60,0xc,8,0x15,0xb,(CDrawSurface *)&stack0xffffffa0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 35,
-      "match": "&stack0xffffffa0",
-      "text": "((CDrawSurface *)&stack0xffffff60,0xc,8,0x15,0xb,(CDrawSurface *)&stack0xffffffa0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 37,
-      "match": "&stack0xffffff44",
-      "text": "((CDrawSurface *)&stack0xffffff44,0xbe,0x5f,0x14,10,(CDrawSurface *)&stack0xffffffa4);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 37,
-      "match": "&stack0xffffffa4",
-      "text": "((CDrawSurface *)&stack0xffffff44,0xbe,0x5f,0x14,10,(CDrawSurface *)&stack0xffffffa4);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 39,
-      "match": "&stack0xffffffac",
-      "text": "cockpit_drawsurf_cpp_CDrawSurface_fillFullSurface_FUN_00488c70((CDrawSurface *)&stack0xffffffac)",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 43,
-      "match": "&stack0xffffffb4",
-      "text": "((CDrawSurface *)&stack0xffffffb4);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 45,
-      "match": "&stack0xffffffb8",
-      "text": "((CDrawSurface *)&stack0xffffffb8,0,0,200,100);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 47,
-      "match": "&stack0xffffffbc",
-      "text": "((CDrawSurface *)&stack0xffffffbc,100,0x32,100);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
+      "description": "Unaffected register variable",
       "line": 49,
-      "match": "&stack0xffffffc0",
-      "text": "((CDrawSurface *)&stack0xffffffc0,100,0x32,0x32);",
-      "type": "stack_ref"
+      "match": "unaff_EBX",
+      "text": "(&local_64,100,0x11,0x621ed1,unaff_EBX);",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Direct stack address reference",
+      "description": "Unaffected register variable",
       "line": 51,
-      "match": "&stack0xffffffc4",
-      "text": "((CDrawSurface *)&stack0xffffffc4,0,0,0x32);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 53,
-      "match": "&stack0xffffffc8",
-      "text": "((CDrawSurface *)&stack0xffffffc8,200,0,0x32);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 55,
-      "match": "&stack0xffffffcc",
-      "text": "((CDrawSurface *)&stack0xffffffcc,0,100,0x32);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 57,
-      "match": "&stack0xffffffd0",
-      "text": "((CDrawSurface *)&stack0xffffffd0,200,100,0x32);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 61,
-      "match": "&stack0xffffffdc",
-      "text": "((CDrawSurface *)&stack0xffffffdc,5,2,\"Hello\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 63,
-      "match": "&stack0xffffffe0",
-      "text": "((CDrawSurface *)&stack0xffffffe0,-5,0x11,\"Hello\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 65,
-      "match": "&stack0xffffffe4",
-      "text": "((CDrawSurface *)&stack0xffffffe4,0xb9,0x11,\"Hello\\nworld\\n...\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 67,
-      "match": "in_stack_ffffff80",
-      "text": "((CDrawSurface *)&stack0xffffffe8,100,0x11,0x621ed1,in_stack_ffffff80);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 67,
-      "match": "&stack0xffffffe8",
-      "text": "((CDrawSurface *)&stack0xffffffe8,100,0x11,0x621ed1,in_stack_ffffff80);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 69,
-      "match": "in_stack_ffffff84",
-      "text": "((CDrawSurface *)&stack0xffffffec,0x5c,0x6c,0x20,0x621ed3,in_stack_ffffff84);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 69,
-      "match": "&stack0xffffffec",
-      "text": "((CDrawSurface *)&stack0xffffffec,0x5c,0x6c,0x20,0x621ed3,in_stack_ffffff84);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 73,
-      "match": "&stack0xfffffff4",
-      "text": "((CDrawSurface *)&stack0xfffffff4,5,0x2a,\"Hello\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 75,
-      "match": "&stack0xfffffff8",
-      "text": "((CDrawSurface *)&stack0xfffffff8,-5,0x39,\"Hello\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 77,
-      "match": "&stack0xfffffffc",
-      "text": "((CDrawSurface *)&stack0xfffffffc,0xb9,0x39,\"Hello\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 80,
-      "match": "&stack0x00000000",
-      "text": "((CDrawSurface *)&stack0x00000000,-5,0x48,\"Hello\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 84,
-      "match": "in_stack_ffffffa0",
-      "text": "((CDrawSurface *)&stack0x00000008,100,0x48,0x621ef3,in_stack_ffffffa0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 84,
-      "match": "&stack0x00000008",
-      "text": "((CDrawSurface *)&stack0x00000008,100,0x48,0x621ef3,in_stack_ffffffa0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 86,
-      "match": "in_stack_ffffffa4",
-      "text": "((CDrawSurface *)&stack0x0000000c,0x5c,0x6c,0x57,0x621ef5,in_stack_ffffffa4);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 86,
-      "match": "&stack0x0000000c",
-      "text": "((CDrawSurface *)&stack0x0000000c,0x5c,0x6c,0x57,0x621ef5,in_stack_ffffffa4);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 89,
-      "match": "&stack0x00000014",
-      "text": "((CDrawSurface *)&stack0x00000014,100,0x14);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 91,
-      "match": "&stack0x00000018",
-      "text": "((CDrawSurface *)&stack0x00000018,100,0x23);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 93,
-      "match": "&stack0x0000001c",
-      "text": "((CDrawSurface *)&stack0x0000001c,100,0x4f);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 95,
-      "match": "&stack0x00000020",
-      "text": "((CDrawSurface *)&stack0x00000020,100,0x5e);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 97,
-      "match": "&stack0xffffffe8",
-      "text": "cockpit_drawsurf_cpp_CDrawSurface_fillFullSurface_FUN_00488c70((CDrawSurface *)&stack0xffffffe8)",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 101,
-      "match": "&stack0xfffffff0",
-      "text": "((CDrawSurface *)&stack0xfffffff0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 103,
-      "match": "&stack0xfffffff4",
-      "text": "((CDrawSurface *)&stack0xfffffff4,-0x15,-0xb,0x29,0x15);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 105,
-      "match": "&stack0xfffffff8",
-      "text": "((CDrawSurface *)&stack0xfffffff8,10,5,6);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 107,
-      "match": "&stack0xffffffe0",
-      "text": "cockpit_drawsurf_cpp_CDrawSurface_fillFullSurface_FUN_00488c70((CDrawSurface *)&stack0xffffffe0)",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 111,
-      "match": "&stack0xffffffe8",
-      "text": "((CDrawSurface *)&stack0xffffffe8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 113,
-      "match": "&stack0xffffffec",
-      "text": "((CDrawSurface *)&stack0xffffffec,0,0,0x13,9);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 118,
-      "match": "&stack0x00000070",
-      "text": "((CDrawSurface *)&stack0x00000070,g_WindowWidth / 2,iVar2,0xc9,iVar3,",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 121,
-      "match": "&stack0x00000078",
-      "text": "cockpit_drawsurf_cpp_CDrawSurface_fillFullSurface_FUN_00488c70((CDrawSurface *)&stack0x00000078)",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 125,
-      "match": "&stack0x00000080",
-      "text": "((CDrawSurface *)&stack0x00000080);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 130,
-      "match": "&stack0x0000008c",
-      "text": "((CDrawSurface *)&stack0x0000008c,1,1,\"%s\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 131,
-      "match": "&stack0x000000b0",
-      "text": "test_font = (CBitFont *)&stack0x000000b0;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 133,
-      "match": "&stack0x00000090",
-      "text": "((CDrawSurface *)&stack0x00000090,199,1,0x621efa,(char *)test_font);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 136,
-      "match": "&stack0x00000094",
-      "text": "((CDrawSurface *)&stack0x00000094,100,1,0x621efd,&stack0x000000b4);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 136,
-      "match": "&stack0x000000b4",
-      "text": "((CDrawSurface *)&stack0x00000094,100,1,0x621efd,&stack0x000000b4);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 140,
-      "match": "&stack0x00000098",
-      "text": "((CDrawSurface *)&stack0x00000098,100,(int)y,0x621f00,&stack0x000000b8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 140,
-      "match": "&stack0x000000b8",
-      "text": "((CDrawSurface *)&stack0x00000098,100,(int)y,0x621f00,&stack0x000000b8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 145,
-      "match": "&stack0x0000009c",
-      "text": "((CDrawSurface *)&stack0x0000009c,100,iStack000000d4,0x621f03,&stack0x000000bc);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 145,
-      "match": "&stack0x000000bc",
-      "text": "((CDrawSurface *)&stack0x0000009c,100,iStack000000d4,0x621f03,&stack0x000000bc);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 150,
-      "match": "&stack0x000000a0",
-      "text": "((CDrawSurface *)&stack0x000000a0,0x32,0x96,iStack000000c4,0x621f06,&stack0x000000c0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 150,
-      "match": "&stack0x000000c0",
-      "text": "((CDrawSurface *)&stack0x000000a0,0x32,0x96,iStack000000c4,0x621f06,&stack0x000000c0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 151,
-      "match": "in_stack_000000d8",
-      "text": "iStack000000d4 = iVar3 - in_stack_000000d8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 152,
-      "match": "&stack0x000000a4",
-      "text": "test_font = (CBitFont *)&stack0x000000a4;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 157,
-      "match": "&stack0x000000a8",
-      "text": "test_font = (CBitFont *)&stack0x000000a8;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 161,
-      "match": "&stack0x000000ac",
-      "text": "((CDrawSurface *)&stack0x000000ac,\"%s\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 163,
-      "match": "&stack0x000000b4",
-      "text": "cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_004874d0((CDrawSurface *)&stack0x000000b4,1,1);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 164,
-      "match": "&stack0x000000b8",
-      "text": "cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_004874d0((CDrawSurface *)&stack0x000000b8,199,1)",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 166,
-      "match": "&stack0x000000bc",
-      "text": "cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_004874d0((CDrawSurface *)&stack0x000000bc,100,1)",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 169,
-      "match": "&stack0x000000c0",
-      "text": "((CDrawSurface *)&stack0x000000c0,100,(int)y);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 171,
-      "match": "in_stack_000000fc",
-      "text": "((CDrawSurface *)&stack0x000000c4,100,in_stack_000000fc);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 171,
-      "match": "&stack0x000000c4",
-      "text": "((CDrawSurface *)&stack0x000000c4,100,in_stack_000000fc);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 173,
-      "match": "in_stack_000000ec",
-      "text": "((CDrawSurface *)&stack0x000000c8,100,in_stack_000000ec);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 173,
-      "match": "&stack0x000000c8",
-      "text": "((CDrawSurface *)&stack0x000000c8,100,in_stack_000000ec);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 175,
-      "match": "in_stack_000000fc",
-      "text": "((CDrawSurface *)&stack0x000000cc,100,in_stack_000000fc);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 175,
-      "match": "&stack0x000000cc",
-      "text": "((CDrawSurface *)&stack0x000000cc,100,in_stack_000000fc);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 177,
-      "match": "&stack0x000000d0",
-      "text": "((CDrawSurface *)&stack0x000000d0,100,iVar3);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 181,
-      "match": "&stack0x00000094",
-      "text": "((CDrawSurface *)&stack0x00000094,g_WindowWidth / 2 + -0xca,iVar2,0xc9,iVar3,",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 184,
-      "match": "&stack0x0000009c",
-      "text": "cockpit_drawsurf_cpp_CDrawSurface_fillFullSurface_FUN_00488c70((CDrawSurface *)&stack0x0000009c)",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 188,
-      "match": "&stack0x000000a4",
-      "text": "((CDrawSurface *)&stack0x000000a4);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 193,
-      "match": "&stack0x000000b0",
-      "text": "((CDrawSurface *)&stack0x000000b0,1,1,\"%s\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 195,
-      "match": "&stack0x000000b4",
-      "text": "((CDrawSurface *)&stack0x000000b4,199,1,0x621f15,&stack0x00000114);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 195,
-      "match": "&stack0x00000114",
-      "text": "((CDrawSurface *)&stack0x000000b4,199,1,0x621f15,&stack0x00000114);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 197,
-      "match": "&stack0x000000b8",
-      "text": "((CDrawSurface *)&stack0x000000b8,100,1,0x621f18,&stack0x00000118);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 197,
-      "match": "&stack0x00000118",
-      "text": "((CDrawSurface *)&stack0x000000b8,100,1,0x621f18,&stack0x00000118);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 199,
-      "match": "&stack0x000000bc",
-      "text": "((CDrawSurface *)&stack0x000000bc,100,(int)y,0x621f1b,&stack0x0000011c);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 199,
-      "match": "&stack0x0000011c",
-      "text": "((CDrawSurface *)&stack0x000000bc,100,(int)y,0x621f1b,&stack0x0000011c);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 201,
-      "match": "in_stack_00000138",
-      "text": "((CDrawSurface *)&stack0x000000c0,100,in_stack_00000138,0x621f1e,&stack0x00000120);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 201,
-      "match": "&stack0x000000c0",
-      "text": "((CDrawSurface *)&stack0x000000c0,100,in_stack_00000138,0x621f1e,&stack0x00000120);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 201,
-      "match": "&stack0x00000120",
-      "text": "((CDrawSurface *)&stack0x000000c0,100,in_stack_00000138,0x621f1e,&stack0x00000120);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 202,
-      "match": "in_stack_0000012c",
-      "text": "iStack00000130 = iVar3 - in_stack_0000012c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 204,
-      "match": "&stack0x000000c4",
-      "text": "((CDrawSurface *)&stack0x000000c4,0x32,0x96,iStack00000130,0x621f21,&stack0x00000124);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 204,
-      "match": "&stack0x00000124",
-      "text": "((CDrawSurface *)&stack0x000000c4,0x32,0x96,iStack00000130,0x621f21,&stack0x00000124);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 205,
-      "match": "in_stack_0000013c",
-      "text": "iVar2 = iVar3 - in_stack_0000013c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 207,
-      "match": "&stack0x000000c8",
-      "text": "((CDrawSurface *)&stack0x000000c8,100,iVar2 + -0x32,iVar2 + 0x32,\"%s\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 210,
-      "match": "&stack0x000000cc",
-      "text": "((CDrawSurface *)&stack0x000000cc,0x32,0x96,iVar3 + -0x32,iVar3 + 0x32,\"%s\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 212,
-      "match": "&stack0x000000d0",
-      "text": "((CDrawSurface *)&stack0x000000d0,\"%s\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 214,
-      "match": "&stack0x000000d8",
-      "text": "cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_004874d0((CDrawSurface *)&stack0x000000d8,1,1);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 215,
-      "match": "&stack0x000000dc",
-      "text": "cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_004874d0((CDrawSurface *)&stack0x000000dc,199,1)",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 217,
-      "match": "&stack0x000000e0",
-      "text": "cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_004874d0((CDrawSurface *)&stack0x000000e0,100,1)",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 220,
-      "match": "&stack0x000000e4",
-      "text": "((CDrawSurface *)&stack0x000000e4,100,(int)y);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 222,
-      "match": "in_stack_00000160",
-      "text": "((CDrawSurface *)&stack0x000000e8,100,in_stack_00000160);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 222,
-      "match": "&stack0x000000e8",
-      "text": "((CDrawSurface *)&stack0x000000e8,100,in_stack_00000160);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 224,
-      "match": "in_stack_00000158",
-      "text": "((CDrawSurface *)&stack0x000000ec,100,in_stack_00000158);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 224,
-      "match": "&stack0x000000ec",
-      "text": "((CDrawSurface *)&stack0x000000ec,100,in_stack_00000158);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 226,
-      "match": "&stack0x000000f0",
-      "text": "((CDrawSurface *)&stack0x000000f0,100,iVar2);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 228,
-      "match": "&stack0x000000f4",
-      "text": "((CDrawSurface *)&stack0x000000f4,100,iVar3);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 231,
-      "match": "&stack0x000000fc",
-      "text": "((CDrawSurface *)&stack0x000000fc);",
-      "type": "stack_ref"
+      "match": "unaff_EBX",
+      "text": "(&local_64,0x5c,0x6c,0x20,0x621ed3,unaff_EBX);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 66,
+      "match": "unaff_EBX",
+      "text": "(&local_64,100,0x48,0x621ef3,unaff_EBX);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 68,
+      "match": "unaff_EBX",
+      "text": "(&local_64,0x5c,0x6c,0x57,0x621ef5,unaff_EBX);",
+      "type": "unaffected_reg"
     },
     {
       "call_address": "0048a1b0",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1313,7 +547,7 @@
     },
     {
       "call_address": "0048a1d4",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1327,7 +561,7 @@
     },
     {
       "call_address": "0048a1f5",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1341,7 +575,7 @@
     },
     {
       "call_address": "0048a218",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1355,7 +589,7 @@
     },
     {
       "call_address": "0048a24a",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1369,7 +603,7 @@
     },
     {
       "call_address": "0048a291",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1383,7 +617,7 @@
     },
     {
       "call_address": "0048a2d1",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1397,7 +631,7 @@
     },
     {
       "call_address": "0048a2ff",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1411,7 +645,7 @@
     },
     {
       "call_address": "0048a31c",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1425,7 +659,7 @@
     },
     {
       "call_address": "0048a49e",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1439,7 +673,7 @@
     },
     {
       "call_address": "0048a4bf",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1453,7 +687,7 @@
     },
     {
       "call_address": "0048a4dd",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1467,7 +701,7 @@
     },
     {
       "call_address": "0048a4fa",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1481,7 +715,7 @@
     },
     {
       "call_address": "0048a51e",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1495,7 +729,7 @@
     },
     {
       "call_address": "0048a554",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1509,7 +743,7 @@
     },
     {
       "call_address": "0048a581",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1523,7 +757,7 @@
     },
     {
       "call_address": "0048a5ac",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1537,7 +771,7 @@
     },
     {
       "call_address": "0048a5c6",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

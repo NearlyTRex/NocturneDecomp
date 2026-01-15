@@ -13,9 +13,10 @@ void core_ghoul_cpp_FUN_004e8520(void)
 
 {
   int iVar1;
+  float fVar2;
   CCharacter *in_stack_00000004;
   float *in_stack_00000008;
-  float fVar2;
+  float local_14;
   
   if ((0.0 < in_stack_00000008[0xb]) && (*in_stack_00000008 == -NAN)) {
     iVar1 = crt_stdlib_c_rand_FUN_005feb5c();
@@ -51,20 +52,20 @@ switchD_004e8556_default:
       ((fVar2 == *(float *)(in_stack_00000004[1].base_actor.create_event + 0x50) ||
        (fVar2 == in_stack_00000004[1].base_actor.field12_0xe0.x)))) ||
      (fVar2 == in_stack_00000004[1].base_actor.field12_0xe0.y)) {
-    fVar2 = in_stack_00000008[0xb];
+    local_14 = in_stack_00000008[0xb];
     if (in_stack_00000004[1].base_actor.field12_0xe0.y == *in_stack_00000008) {
-      fVar2 = 0.05;
+      local_14 = 0.05;
     }
     if (in_stack_00000004[1].base_actor.field12_0xe0.x == *in_stack_00000008) {
-      fVar2 = 0.02;
+      local_14 = 0.02;
     }
     if (g_CGamePtr->field57_0x1e0 != 0) {
-      fVar2 = 1.0;
+      local_14 = 1.0;
     }
     if (g_CGamePtr->blood_flag == 0) {
-      fVar2 = 0.0;
+      local_14 = 0.0;
     }
-    iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(fVar2);
+    iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(local_14);
     if (iVar1 != 0) {
       core_bodypart_cpp_CreateBodyPart_FUN_00418e10();
       core_charactr_cpp_CCharacter_FUN_0042bd30(in_stack_00000004);

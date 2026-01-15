@@ -1,23 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 106,
-    "complexity_score": 306,
+    "complexity_score": 224,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 15,
-    "pseudocode_lines": 46,
-    "suspect_count": 22,
+    "pseudocode_lines": 44,
+    "suspect_count": 16,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
-      "format_string_mismatch",
       "lea_esp_stack_addr",
       "pointer_cast",
-      "register_param",
-      "stack_ref",
       "variadic_preserve"
     ],
-    "total_lines": 152
+    "total_lines": 150
   },
   "cross_references": [
     {
@@ -200,85 +196,50 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 9,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 9,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 18,
+      "line": 17,
       "match": "(int *)((int)",
       "text": "piVar1 = (int *)((int)&DAT_0068125c + iVar4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 19,
+      "line": 18,
       "match": "(int *)((int)",
       "text": "piVar2 = (int *)((int)&DAT_006810dc + iVar4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 20,
+      "line": 19,
       "match": "(uint *)((int)",
       "text": "puVar3 = (uint *)((int)g_ActiveLightList + iVar4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 32,
+      "line": 31,
       "match": "(int *)((int)",
       "text": "piVar1 = (int *)((int)&DAT_0068125c + iVar5);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 33,
+      "line": 32,
       "match": "(int *)((int)",
       "text": "piVar2 = (int *)((int)&DAT_006810dc + iVar5);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 34,
+      "line": 33,
       "match": "(uint *)((int)",
       "text": "puVar3 = (uint *)((int)g_DynamicLights + iVar6);",
       "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 43,
-      "match": "&stack0xfffffef0",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffef0,\"%d omni lights\",DAT_03277d80);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 44,
-      "match": "&stack0xfffffef4",
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffef4,(&DAT_006810dc)[iVar5],(&DAT_0068125c)[iVar5]);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 45,
-      "match": "&stack0xfffffef8",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffef8,\"%d spot lights\");",
-      "type": "stack_ref"
-    },
-    {
       "call_address": "0056d24f",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -292,7 +253,7 @@
     },
     {
       "call_address": "0056d284",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "unknown",
       "esp_certainty_at_call": "known",
@@ -303,17 +264,6 @@
       "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
       "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 0056d284 (no EBP frame)",
       "type": "variadic_preserve"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d spot lights\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d spot lights",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 45,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffef8,\"%d spot lights\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 16,

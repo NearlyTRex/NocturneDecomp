@@ -22,7 +22,7 @@ core_stone_cpp_CTempleStone_dtor_FUN_005bae10(CTempleStone *this_ptr,uint d1,uin
   pCVar1 = core_box_cpp_CBox_dtor_FUN_0041dd00((CBox *)(this_ptr->field0_0x0 + 0x394));
   ptr = core_actor_cpp_CDemonActor_dtor_FUN_00408a30
                   ((CDemonActor *)(pCVar1[-2].scrape_points + 2),1);
-  if ((d3 & 2) == 0) {
+  if ((d1 & 2) == 0) {
     return (CTempleStone *)ptr;
   }
   shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);

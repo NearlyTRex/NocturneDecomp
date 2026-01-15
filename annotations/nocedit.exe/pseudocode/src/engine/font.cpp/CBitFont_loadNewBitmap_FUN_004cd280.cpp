@@ -13,8 +13,7 @@ engine_font_cpp_CBitFont_loadNewBitmap_FUN_004cd280
 
 {
   engine_font_cpp_CBitFont_free_FUN_004cd4e0(this_ptr);
-  this_ptr->load_flags = other;
-  engine_font_cpp_CBitFont_loadBitmap_FUN_004ccff0
-            (this_ptr,(char *)width,height,first_char,last_char);
+  this_ptr->load_flags = load_flags;
+  engine_font_cpp_CBitFont_loadBitmap_FUN_004ccff0(this_ptr,filename,width,height,first_char);
   return;
 }

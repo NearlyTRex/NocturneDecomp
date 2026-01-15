@@ -13,18 +13,16 @@ void core_crate_cpp_FUN_00448530(void)
 {
   float fVar1;
   float fVar2;
-  BADSPACEBASE *in_ESP;
-  float unaff_retaddr;
   CDemonActor *in_stack_00000004;
-  float in_stack_0000000c;
-  CBoundingBox3D CStack_1c;
+  CBoundingBox3D CStack_24;
+  float fStack_8;
   
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(in_stack_00000004);
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
             ((CKeyFramedModelInstance *)(in_stack_00000004 + 1));
-  (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,&CStack_1c);
-  fVar1 = ((float)in_stack_00000004 - CStack_1c.max.z) * (float)0.5;
-  fVar2 = (in_stack_0000000c - unaff_retaddr) * (float)0.5;
+  (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,&CStack_24);
+  fVar1 = (CStack_24.max.z - CStack_24.min.z) * (float)0.5;
+  fVar2 = (fStack_8 - CStack_24.max.y) * (float)0.5;
   if (fVar1 < fVar2) {
     fVar2 = fVar1;
   }

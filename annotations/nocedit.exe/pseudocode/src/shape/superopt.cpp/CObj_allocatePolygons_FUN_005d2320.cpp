@@ -11,7 +11,6 @@ int __cdecl shape_superopt_cpp_CObj_allocatePolygons_FUN_005d2320(CObj *this_ptr
 {
   CPoly *pCVar1;
   int iVar2;
-  BADSPACEBASE *in_ESP;
   int iVar3;
   uint *puVar4;
   byte bVar5;

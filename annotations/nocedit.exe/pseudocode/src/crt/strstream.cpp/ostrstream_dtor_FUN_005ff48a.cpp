@@ -12,13 +12,10 @@ ostrstream * __cdecl crt_strstream_cpp_ostrstream_dtor_FUN_005ff48a(ostrstream *
   int iVar1;
   WatcomVirtualBaseDescriptor *pWVar2;
   ostream *poVar3;
-  ostrstream *ptr;
-  void *ptr_00;
+  void *ptr;
   ios *piVar4;
   uint unaff_EBX;
   uint unaff_retaddr;
-  byte in_stack_00000010;
-  byte in_stack_00000014;
   
   if ((d1 & 4U) == 0) {
     iVar1 = ((this_ptr->strstreambase_core).layout_info)->offset_to_vbase;
@@ -29,23 +26,22 @@ ostrstream * __cdecl crt_strstream_cpp_ostrstream_dtor_FUN_005ff48a(ostrstream *
     *(void ***)((this_ptr->field_80).padding + pWVar2->offset_to_vbase + -0x49) = &PTR_FUN_00665b8c;
     poVar3 = crt_iostream_cpp_ostream_dtor_FUN_00606231
                        ((ostream *)&(this_ptr->field_68).destructor_vtable,1,unaff_EBX);
-    ptr = (ostrstream *)
-          crt_strstream_cpp_strstreambase_dtor_FUN_006062a6
-                    ((strstreambase *)&poVar3[-2].ios.__xalloc_list,1,unaff_retaddr,(uint)this_ptr);
-    if ((in_stack_00000010 & 1) == 0) {
+    this_ptr = (ostrstream *)
+               crt_strstream_cpp_strstreambase_dtor_FUN_006062a6
+                         ((strstreambase *)&poVar3[-2].ios.__xalloc_list,1,unaff_EBX,unaff_retaddr);
+    if ((d1 & 1U) == 0) {
       piVar4 = crt_iostream_cpp_ios_dtor_FUN_0060632c
-                         ((ios *)&(ptr->field_80).__tied_stream,1,(uint)this_ptr);
-      ptr = (ostrstream *)&piVar4[-2].__tied_stream;
+                         ((ios *)&(this_ptr->field_80).__tied_stream,1,unaff_EBX);
+      this_ptr = (ostrstream *)&piVar4[-2].__tied_stream;
     }
-    if ((in_stack_00000014 & 2) == 0) {
-      return ptr;
+    if ((d1 & 2U) == 0) {
+      return this_ptr;
     }
-    shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
-    this_ptr = ptr;
+    shape_memdbg_cpp_debugFree_FUN_0050f210(this_ptr);
   }
   else {
-    ptr_00 = crt_memory_c_freeSingleInstance_FUN_005fe632(this_ptr,&g_OStrStreamTypeInfo);
-    crt_memory_c_free_FUN_005fe659(ptr_00);
+    ptr = crt_memory_c_freeSingleInstance_FUN_005fe632(this_ptr,&g_OStrStreamTypeInfo);
+    crt_memory_c_free_FUN_005fe659(ptr);
   }
   return this_ptr;
 }

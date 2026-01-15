@@ -15,14 +15,13 @@ core_dcamera_cpp_CDemonCamera_transformVectorWithAlpha_FUN_0044dbd0
   longlong lVar2;
   longlong lVar3;
   int iVar4;
-  BADSPACEBASE *in_ESP;
   uint *unaff_ESI;
   byte bVar5;
-  uint auStackY_ffc [1013];
+  uint auStackY_1000 [1014];
   uint local_24;
   uint local_20;
   uint local_1c;
-  int local_18;
+  uint local_18;
   uint local_14;
   uint local_10;
   
@@ -41,35 +40,51 @@ core_dcamera_cpp_CDemonCamera_transformVectorWithAlpha_FUN_0044dbd0
   local_1c = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
   iVar4 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00(g_CDemonRendererPtr);
   if (iVar4 == 0) {
-    lVar1 = (longlong)(int)local_1c * (longlong)input_vector[0x23].y +
-            (longlong)(int)local_20 * (longlong)input_vector[0x22].y +
-            (longlong)local_18 * (longlong)input_vector[0x24].y;
+    lVar1 = (longlong)(int)local_20 * (longlong)(this_ptr->inverted_matrix).m[1].x +
+            (longlong)(int)local_24 * (longlong)(this_ptr->inverted_matrix).m[0].x +
+            (longlong)(int)local_1c * (longlong)(this_ptr->inverted_matrix).m[2].x;
+    local_18 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
+    lVar1 = (longlong)(int)local_20 * (longlong)(this_ptr->inverted_matrix).m[1].y +
+            (longlong)(int)local_24 * (longlong)(this_ptr->inverted_matrix).m[0].y +
+            (longlong)(int)local_1c * (longlong)(this_ptr->inverted_matrix).m[2].y;
     local_14 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    lVar1 = (longlong)(int)local_1c * (longlong)input_vector[0x23].z +
-            (longlong)(int)local_20 * (longlong)input_vector[0x22].z +
-            (longlong)local_18 * (longlong)input_vector[0x24].z;
+    lVar1 = (longlong)(int)local_20 * (longlong)(this_ptr->inverted_matrix).m[1].z +
+            (longlong)(int)local_24 * (longlong)(this_ptr->inverted_matrix).m[0].z +
+            (longlong)(int)local_1c * (longlong)(this_ptr->inverted_matrix).m[2].z;
     local_10 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    *unaff_ESI = local_14;
-    unaff_ESI[(uint)bVar5 * -2 + 1] = *(uint *)((int)&stack0xfffffff0 + (uint)bVar5 * -8);
+    *unaff_ESI = local_18;
+    unaff_ESI[(uint)bVar5 * -2 + 1] = *(uint *)((int)&stack0xffffffec + (uint)bVar5 * -8);
     (unaff_ESI + (uint)bVar5 * -2 + 1)[(uint)bVar5 * -2 + 1] =
-         *(uint *)(&stack0xfffffff4 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
+         *(uint *)((int)&stack0xfffffff0 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
     return;
   }
-  lVar1 = (longlong)(&input_vector[0x19e].y)[iVar4] * (longlong)(int)local_20;
-  lVar2 = (longlong)(&input_vector[0x1a6].y)[iVar4] * (longlong)(int)local_1c;
-  lVar3 = (longlong)(&input_vector[0x1ae].y)[iVar4] * (longlong)local_18;
+  lVar1 = (longlong)this_ptr->alpha_transform_matrices[9][iVar4] * (longlong)(int)local_24;
+  lVar2 = (longlong)this_ptr->alpha_transform_matrices[0xc][iVar4] * (longlong)(int)local_20;
+  lVar3 = (longlong)
+          *(int *)((int)((this_ptr->transform_state).saved_source_matrix.m + -10) + iVar4 * 4) *
+          (longlong)(int)local_1c;
+  local_18 = ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +
+             ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
+             ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10);
+  lVar1 = (longlong)this_ptr->alpha_transform_matrices[10][iVar4] * (longlong)(int)local_24;
+  lVar2 = (longlong)this_ptr->alpha_transform_matrices[0xd][iVar4] * (longlong)(int)local_20;
+  lVar3 = (longlong)
+          *(int *)((int)(this_ptr->transform_state).saved_source_matrix.m + iVar4 * 4 + -0x58) *
+          (longlong)(int)local_1c;
   local_14 = ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +
              ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
              ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10);
-  lVar1 = (longlong)(&input_vector[0x1a1].x)[iVar4] * (longlong)(int)local_20;
-  lVar2 = (longlong)(&input_vector[0x1a9].x)[iVar4] * (longlong)(int)local_1c;
-  lVar3 = (longlong)(&input_vector[0x1b1].x)[iVar4] * (longlong)local_18;
+  lVar1 = (longlong)this_ptr->alpha_transform_matrices[0xb][iVar4] * (longlong)(int)local_24;
+  lVar2 = (longlong)this_ptr->alpha_transform_matrices[0xe][iVar4] * (longlong)(int)local_20;
+  lVar3 = (longlong)
+          *(int *)((int)(this_ptr->transform_state).saved_source_matrix.m + iVar4 * 4 + -0x38) *
+          (longlong)(int)local_1c;
   local_10 = ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +
              ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
              ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10);
-  *unaff_ESI = local_14;
-  unaff_ESI[(uint)bVar5 * -2 + 1] = *(uint *)((int)&stack0xfffffff0 + (uint)bVar5 * -8);
+  *unaff_ESI = local_18;
+  unaff_ESI[(uint)bVar5 * -2 + 1] = *(uint *)((int)&stack0xffffffec + (uint)bVar5 * -8);
   (unaff_ESI + (uint)bVar5 * -2 + 1)[(uint)bVar5 * -2 + 1] =
-       *(uint *)(&stack0xfffffff4 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
+       *(uint *)((int)&stack0xfffffff0 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
   return;
 }

@@ -1,18 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 259,
-    "complexity_score": 585,
+    "complexity_score": 520,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 37,
     "pseudocode_lines": 130,
-    "suspect_count": 42,
+    "suspect_count": 37,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
-      "register_param",
       "stack_param",
-      "stack_ref",
       "suspect_float",
       "warning_overlapping_globals"
     ],
@@ -354,136 +351,101 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 9,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 9,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000004",
+      "text": "uint *in_stack_00000004;",
+      "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 12,
-      "match": "in_stack_00000004",
-      "text": "int in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000010",
-      "text": "int in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000014",
-      "text": "uint *in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_00000018",
-      "text": "int in_stack_00000018;",
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 22,
+      "line": 20,
       "match": "7.34684e-40",
       "text": "g_RenderVertexBuffer[0].u = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 23,
+      "line": 21,
       "match": "7.34684e-40",
       "text": "g_RenderVertexBuffer[0].v = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 24,
+      "line": 22,
       "match": "2.2775203e-38",
       "text": "g_RenderVertexBuffer[1].u = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 25,
+      "line": 23,
       "match": "2.2775203e-38",
       "text": "g_RenderVertexBuffer[2].u = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 26,
+      "line": 24,
       "match": "2.2775203e-38",
       "text": "g_RenderVertexBuffer[2].v = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 27,
+      "line": 25,
       "match": "2.2775203e-38",
       "text": "g_RenderVertexBuffer[3].v = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 28,
+      "line": 26,
       "match": "7.34684e-40",
       "text": "g_RenderVertexBuffer[1].v = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 29,
+      "line": 27,
       "match": "7.34684e-40",
       "text": "g_RenderVertexBuffer[3].u = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 32,
+      "line": 30,
       "match": "in_stack_00000004",
-      "text": "(g_CDemonRendererPtr,*(int *)(in_stack_00000004 + 0x38));",
+      "text": "(g_CDemonRendererPtr,in_stack_00000004[0xe]);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 38,
+      "line": 36,
       "match": "in_stack_00000004",
-      "text": "iVar2 = in_stack_00000004 + 8;",
+      "text": "pfVar2 = (float *)(in_stack_00000004 + 2);",
       "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 42,
-      "match": "&stack0xffffffec",
-      "text": "(&output->projected_vertex,(CVector3i *)&stack0xffffffec);",
-      "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 44,
       "match": "in_stack_00000004",
-      "text": "} while (iVar2 != in_stack_00000004 + 0x38);",
+      "text": "} while (pfVar2 != (float *)(in_stack_00000004 + 0xe));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 45,
-      "match": "in_stack_00000010",
-      "text": "if (*(int *)(in_stack_00000010 + 0x3c) == 0) {",
+      "match": "in_stack_00000004",
+      "text": "if (in_stack_00000004[0xf] == 0) {",
       "type": "stack_param"
     },
     {
@@ -545,8 +507,8 @@
     {
       "description": "Unresolved stack parameter",
       "line": 60,
-      "match": "in_stack_00000010",
-      "text": "uVar1 = *(uint *)(in_stack_00000010 + 4);",
+      "match": "in_stack_00000004",
+      "text": "uVar1 = in_stack_00000004[1];",
       "type": "stack_param"
     },
     {
@@ -559,8 +521,8 @@
     {
       "description": "Unresolved stack parameter",
       "line": 76,
-      "match": "in_stack_00000010",
-      "text": "uVar1 = *(uint *)(in_stack_00000010 + 4);",
+      "match": "in_stack_00000004",
+      "text": "uVar1 = in_stack_00000004[1];",
       "type": "stack_param"
     },
     {
@@ -573,8 +535,8 @@
     {
       "description": "Unresolved stack parameter",
       "line": 92,
-      "match": "in_stack_00000010",
-      "text": "uVar1 = *(uint *)(in_stack_00000010 + 4);",
+      "match": "in_stack_00000004",
+      "text": "uVar1 = in_stack_00000004[1];",
       "type": "stack_param"
     },
     {
@@ -587,8 +549,8 @@
     {
       "description": "Unresolved stack parameter",
       "line": 108,
-      "match": "in_stack_00000010",
-      "text": "uVar1 = *(uint *)(in_stack_00000010 + 4);",
+      "match": "in_stack_00000004",
+      "text": "uVar1 = in_stack_00000004[1];",
       "type": "stack_param"
     },
     {
@@ -601,15 +563,15 @@
     {
       "description": "Unresolved stack parameter",
       "line": 129,
-      "match": "in_stack_00000018",
-      "text": "if (in_stack_00000018 != 0) {",
+      "match": "in_stack_00000008",
+      "text": "if (in_stack_00000008 != 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 130,
-      "match": "in_stack_00000014",
-      "text": "*in_stack_00000014 = 1;",
+      "match": "in_stack_00000004",
+      "text": "*in_stack_00000004 = 1;",
       "type": "stack_param"
     },
     {

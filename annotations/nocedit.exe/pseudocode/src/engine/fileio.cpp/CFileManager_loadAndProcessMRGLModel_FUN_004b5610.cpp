@@ -14,7 +14,7 @@ engine_fileio_cpp_CFileManager_loadAndProcessMRGLModel_FUN_004b5610
   SMRGLHeaderExtended *mrgl_node;
   
   mrgl_node = engine_model_c_loadModelFile_FUN_00527ec0(filename);
-  engine_fileio_cpp_CFileManager_processMRGLNode_FUN_004b54e0((CFileManager *)filename,mrgl_node);
+  engine_fileio_cpp_CFileManager_processMRGLNode_FUN_004b54e0(this_ptr,mrgl_node);
   engine_model_c_freeMRGLData_FUN_005280b0(mrgl_node);
   return;
 }

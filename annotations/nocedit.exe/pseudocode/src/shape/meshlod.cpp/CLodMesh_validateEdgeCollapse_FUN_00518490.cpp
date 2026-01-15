@@ -15,116 +15,116 @@ shape_meshlod_cpp_CLodMesh_validateEdgeCollapse_FUN_00518490
   int iVar2;
   int iVar3;
   int iVar4;
-  CLodFace *pCVar5;
-  int unaff_ESI;
+  CLodEdge *pCVar5;
   int iVar6;
-  int in_stack_00000014;
-  int local_2c;
-  int local_18;
+  CLodFace *pCVar7;
+  int iVar8;
+  CLodEdge *pCVar9;
+  int local_1c;
   
   iVar2 = shape_meshlod_cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0
                     (this_ptr,vertex_idx_1,vertex_idx_2,0);
   if (iVar2 < 0) {
     return -1;
   }
-  if (this_ptr->edges_ptr[iVar2].deletion_flag != 0) {
+  pCVar5 = this_ptr->edges_ptr + iVar2;
+  if (pCVar5->deletion_flag != 0) {
     return -1;
   }
-  if (this_ptr->edges_ptr[iVar2].adjacent_tri_count < 2) {
+  if (pCVar5->adjacent_tri_count < 2) {
     return -1;
   }
-  for (local_18 = 0; local_18 < this_ptr->vertex_data[vertex_idx_1].adjacent_edge_count;
-      local_18 = local_18 + 1) {
-    iVar2 = shape_meshlod_cpp_CLodMesh_getOtherVertexOnEdge_FUN_0051a980
-                      (this_ptr,vertex_idx_1,local_18);
-    if ((iVar2 != in_stack_00000014) &&
-       (iVar2 = shape_meshlod_cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0
-                          (this_ptr,iVar2,in_stack_00000014,0), -1 < iVar2)) {
-      iVar4 = 0;
+  for (local_1c = 0; local_1c < this_ptr->vertex_data[vertex_idx_1].adjacent_edge_count;
+      local_1c = local_1c + 1) {
+    iVar3 = shape_meshlod_cpp_CLodMesh_getOtherVertexOnEdge_FUN_0051a980
+                      (this_ptr,vertex_idx_1,local_1c);
+    if ((iVar3 != vertex_idx_2) &&
+       (iVar3 = shape_meshlod_cpp_CLodMesh_findOrCreateEdge_FUN_00515ec0
+                          (this_ptr,iVar3,vertex_idx_2,0), -1 < iVar3)) {
       iVar6 = 0;
+      iVar8 = 0;
       while( true ) {
-        if (this_ptr->edges_ptr[iVar2].adjacent_tri_count <= iVar4) {
+        if (this_ptr->edges_ptr[iVar3].adjacent_tri_count <= iVar6) {
           return -1;
         }
-        iVar3 = shape_meshlod_cpp_CLodFace_findVertexIndex_FUN_00515e90
+        iVar4 = shape_meshlod_cpp_CLodFace_findVertexIndex_FUN_00515e90
                           (this_ptr->tri_data +
-                           *(int *)((int)this_ptr->edges_ptr[iVar2].adjacent_tri_indices + iVar6),
+                           *(int *)((int)this_ptr->edges_ptr[iVar3].adjacent_tri_indices + iVar8),
                            vertex_idx_1);
-        if (-1 < iVar3) break;
-        iVar4 = iVar4 + 1;
-        iVar6 = iVar6 + 4;
+        if (-1 < iVar4) break;
+        iVar6 = iVar6 + 1;
+        iVar8 = iVar8 + 4;
       }
     }
   }
-  iVar2 = shape_meshlod_cpp_CLodMesh_hasVertexBoundaryEdge_FUN_00518740(this_ptr,vertex_idx_1);
-  if (((iVar2 != 0) &&
-      (iVar2 = shape_meshlod_cpp_CLodMesh_hasVertexBoundaryEdge_FUN_00518740
-                         (this_ptr,in_stack_00000014), iVar2 != 0)) &&
-     (1 < this_ptr->edges_ptr[unaff_ESI].adjacent_tri_count)) {
+  iVar3 = shape_meshlod_cpp_CLodMesh_hasVertexBoundaryEdge_FUN_00518740(this_ptr,vertex_idx_1);
+  if (((iVar3 != 0) &&
+      (iVar3 = shape_meshlod_cpp_CLodMesh_hasVertexBoundaryEdge_FUN_00518740(this_ptr,vertex_idx_2),
+      iVar3 != 0)) && (1 < this_ptr->edges_ptr[iVar2].adjacent_tri_count)) {
     return -1;
   }
   if (g_LodReplayMode != 0) {
-    return unaff_ESI;
+    return iVar2;
   }
-  iVar2 = 0;
-  if (0 < *(int *)(local_18 + 0x24)) {
-    iVar4 = local_18;
+  iVar3 = 0;
+  if (0 < pCVar5->adjacent_tri_count) {
+    pCVar9 = pCVar5;
     do {
-      pCVar5 = this_ptr->tri_data + *(int *)(iVar4 + 0x28);
-      iVar3 = 0;
-      iVar6 = pCVar5->edge_idx_0;
-      pCVar1 = pCVar5;
-      while (iVar6 != unaff_ESI) {
-        iVar3 = iVar3 + 1;
-        if (2 < iVar3) goto LAB_0051865b;
+      pCVar7 = this_ptr->tri_data + pCVar9->adjacent_tri_indices[0];
+      iVar8 = 0;
+      iVar6 = pCVar7->edge_idx_0;
+      pCVar1 = pCVar7;
+      while (iVar6 != iVar2) {
+        iVar8 = iVar8 + 1;
+        if (2 < iVar8) goto LAB_0051865b;
         iVar6 = pCVar1->edge_idx_1;
         pCVar1 = (CLodFace *)(pCVar1->attribute_indices + 1);
       }
-      iVar6 = iVar3 + -1;
+      iVar6 = iVar8 + -1;
       if (iVar6 < 0) {
         iVar6 = 2;
       }
-      iVar6 = *(int *)((int)(pCVar5->uv_coords + 3) + iVar6 * 4);
-      local_2c = iVar6 * 0xf0;
-      iVar3 = iVar3 + 1;
-      if (2 < iVar3) {
-        iVar3 = 0;
+      iVar8 = iVar8 + 1;
+      if (2 < iVar8) {
+        iVar8 = 0;
       }
-      if ((this_ptr->edges_ptr[iVar6].collapse_viability != 0) &&
-         (this_ptr->edges_ptr[*(int *)((int)(pCVar5->uv_coords + 3) + iVar3 * 4)].collapse_viability
+      if ((this_ptr->edges_ptr[*(int *)((int)(pCVar7->uv_coords + 3) + iVar6 * 4)].
+           collapse_viability != 0) &&
+         (this_ptr->edges_ptr[*(int *)((int)(pCVar7->uv_coords + 3) + iVar8 * 4)].collapse_viability
           != 0)) {
         return -1;
       }
-      if (1 < this_ptr->edges_ptr[iVar6].collapse_viability) {
+      if (1 < this_ptr->edges_ptr[*(int *)((int)(pCVar7->uv_coords + 3) + iVar6 * 4)].
+              collapse_viability) {
         return -1;
       }
-      if (1 < this_ptr->edges_ptr[*(int *)((int)(pCVar5->uv_coords + 3) + iVar3 * 4)].
+      if (1 < this_ptr->edges_ptr[*(int *)((int)(pCVar7->uv_coords + 3) + iVar8 * 4)].
               collapse_viability) {
         return -1;
       }
 LAB_0051865b:
-      iVar2 = iVar2 + 1;
-      iVar4 = iVar4 + 4;
-    } while (iVar2 < *(int *)(local_18 + 0x24));
+      iVar3 = iVar3 + 1;
+      pCVar9 = (CLodEdge *)&pCVar9->vertex_idx_2;
+    } while (iVar3 < pCVar5->adjacent_tri_count);
   }
-  iVar2 = shape_meshlod_cpp_CLodMesh_countNonCollapsibleEdgesForVertex_FUN_00516420
+  iVar3 = shape_meshlod_cpp_CLodMesh_countNonCollapsibleEdgesForVertex_FUN_00516420
                     (this_ptr,vertex_idx_1);
-  iVar4 = shape_meshlod_cpp_CLodMesh_countNonCollapsibleEdgesForVertex_FUN_00516420
-                    (this_ptr,local_2c);
-  if (*(int *)(local_18 + 0x18) == 0) {
-    if (iVar4 < 1) {
-      return unaff_ESI;
+  iVar6 = shape_meshlod_cpp_CLodMesh_countNonCollapsibleEdgesForVertex_FUN_00516420
+                    (this_ptr,vertex_idx_2);
+  if (pCVar5->collapse_viability == 0) {
+    if (iVar6 < 1) {
+      return iVar2;
     }
-    if (iVar2 < 1) {
-      return unaff_ESI;
+    if (iVar3 < 1) {
+      return iVar2;
     }
   }
-  else if (((iVar2 < 3) || (iVar4 < 3)) && ((iVar2 != 1 || (iVar4 == 2)))) {
-    if (iVar4 != 1) {
-      return unaff_ESI;
+  else if (((iVar3 < 3) || (iVar6 < 3)) && ((iVar3 != 1 || (iVar6 == 2)))) {
+    if (iVar6 != 1) {
+      return iVar2;
     }
-    if (iVar2 == 2) {
-      return unaff_ESI;
+    if (iVar3 == 2) {
+      return iVar2;
     }
     return -1;
   }

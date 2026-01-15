@@ -1,19 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 167,
+    "complexity_score": 105,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 10,
-    "pseudocode_lines": 37,
-    "suspect_count": 11,
+    "pseudocode_lines": 35,
+    "suspect_count": 6,
     "suspect_types": [
       "call_esp_preserve",
-      "stack_param",
-      "unaffected_reg",
       "variadic_preserve"
     ],
-    "total_lines": 111
+    "total_lines": 109
   },
   "cross_references": [
     {
@@ -189,43 +187,8 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 7,
-      "match": "unaff_ESI",
-      "text": "uint unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000014",
-      "text": "int in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 14,
-      "match": "unaff_ESI",
-      "text": "pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790(pCVar2,unaff_ESI);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_00000014",
-      "text": "core_inv_cpp_CInventory_addItem_FUN_004fd600((CInventory *)(in_stack_00000014 + 0x1f738),pCVar2,1)",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 34,
-      "match": "in_stack_00000014",
-      "text": "((CInventory *)(in_stack_00000014 + 0x1f738),(CDemonActor *)0x0,5,1);",
-      "type": "stack_param"
-    },
-    {
       "call_address": "004f2ad7",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

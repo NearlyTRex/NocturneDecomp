@@ -17,19 +17,23 @@ core_level_cpp_CLevelLoader_update_FUN_00504160(CLevelLoader *this_ptr,char *tex
   int iVar5;
   int iVar6;
   int iVar7;
-  BADSPACEBASE *in_ESP;
-  float unaff_ESI;
-  float unaff_retaddr;
-  CBitFont *in_stack_00000030;
-  CBitFont *pCStack00000034;
-  CBitFont *pCStack00000038;
-  char *in_stack_00000048;
   ushort angle;
-  CVector3i local_40;
-  uint local_34;
-  CVector3i local_30;
-  CVector3i local_1c;
-  float local_10;
+  SMRGLHeaderPrimitive local_88;
+  uint local_70;
+  uint local_6c;
+  uint local_68;
+  uint local_64;
+  CVector3i local_60;
+  CVector3i local_54;
+  CVector3i local_48;
+  CVector3i local_3c;
+  float local_30;
+  float local_2c;
+  float local_28;
+  CVector3f local_24;
+  float local_18;
+  int local_14;
+  CBitFont *local_10;
   
   if (this_ptr->enabled != 0) {
     if (clear_screen != 0) {
@@ -42,16 +46,17 @@ core_level_cpp_CLevelLoader_update_FUN_00504160(CLevelLoader *this_ptr,char *tex
     }
     engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
               (g_CDemonRendererPtr,(CVector3i *)&g_ZeroVector);
-    local_10 = 56.0;
+    local_18 = 56.0;
     if (this_ptr->use_custom_viewport != 0) {
-      local_10 = 84.0;
+      local_18 = 84.0;
     }
-    engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0048c650(g_CDemonRendererPtr,local_10);
+    engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0048c650(g_CDemonRendererPtr,local_18);
     engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_0048c1d0(g_CDemonRendererPtr);
-    local_1c.z = 0;
-    local_10 = 0.0;
+    local_24.x = 0.0;
+    local_24.y = 0.0;
+    local_24.z = 36.0;
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-              (g_CDemonRendererPtr,(CVector3f *)&local_1c.z);
+              (g_CDemonRendererPtr,&local_24);
     g_CDemonSetPtr->rendering_mode = 1;
     angle = 0x8000 - (short)((this_ptr->current_frame << 0xf) / this_ptr->total_frames);
     iVar3 = engine_matrix_c_interpolatedSin_FUN_0050c5c0(angle);
@@ -67,27 +72,32 @@ core_level_cpp_CLevelLoader_update_FUN_00504160(CLevelLoader *this_ptr,char *tex
          (uint)((longlong)iVar3 * 37000) >> 0x10 |
          (int)((ulonglong)((longlong)iVar3 * 37000) >> 0x20) << 0x10;
     core_set_cpp_CDemonSet_FUN_00570ca0(pCVar2);
-    local_10 = 7.25;
-    local_40.x = (int)ROUND(256f * 7.25);
-    local_40.y = (int)ROUND(256f * 7.25);
-    local_40.z = (int)ROUND(256f * 0.0);
+    local_30 = 7.25;
+    local_2c = 7.25;
+    local_28 = 0.0;
+    local_60.x = (int)ROUND(256f * 7.25);
+    local_60.y = (int)ROUND(256f * 7.25);
+    local_60.z = (int)ROUND(256f * 0.0);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-              (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,&local_40);
-    local_30.x = (int)ROUND(256f * -7.25);
-    local_30.y = (int)ROUND(256f * 0.0);
-    local_30.z = (int)ROUND(unaff_ESI * 256f);
+              (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,&local_60);
+    local_30 = -local_30;
+    local_54.x = (int)ROUND(local_30 * 256f);
+    local_54.y = (int)ROUND(local_2c * 256f);
+    local_54.z = (int)ROUND(local_28 * 256f);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-              (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,&local_30);
-    local_1c.z = (int)ROUND(256f * 0.0);
-    local_10 = (float)(int)ROUND(-unaff_ESI * 256f);
+              (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,&local_54);
+    local_2c = -local_2c;
+    local_3c.x = (int)ROUND(local_30 * 256f);
+    local_3c.y = (int)ROUND(local_2c * 256f);
+    local_3c.z = (int)ROUND(local_28 * 256f);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-              (&g_CDemonRendererPtr->vertex_buffer_ptr[2].projected_vertex,(CVector3i *)&local_1c.z)
-    ;
-    local_1c.x = (int)ROUND(--unaff_ESI * 256f);
-    local_1c.y = (int)ROUND(unaff_retaddr * 256f);
-    local_1c.z = (int)ROUND((float)this_ptr * 256f);
+              (&g_CDemonRendererPtr->vertex_buffer_ptr[2].projected_vertex,&local_3c);
+    local_30 = -local_30;
+    local_48.x = (int)ROUND(local_30 * 256f);
+    local_48.y = (int)ROUND(local_2c * 256f);
+    local_48.z = (int)ROUND(local_28 * 256f);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-              (&g_CDemonRendererPtr->vertex_buffer_ptr[3].projected_vertex,&local_1c);
+              (&g_CDemonRendererPtr->vertex_buffer_ptr[3].projected_vertex,&local_48);
     pCVar1 = g_CDemonRendererPtr;
     g_CDemonRendererPtr->vertex_buffer_ptr->u = 2.3509887e-38;
     pCVar1->vertex_buffer_ptr->v = 0.0;
@@ -116,15 +126,20 @@ core_level_cpp_CLevelLoader_update_FUN_00504160(CLevelLoader *this_ptr,char *tex
       *(int *)((int)&pCVar1->vertex_buffer_ptr->fog + iVar3) = (this_ptr->color).b << 8;
       iVar3 = iVar5;
     } while (iVar5 != 0xc0);
-    local_40.x = 0;
-    local_40.z = 2;
-    local_34 = 3;
-    local_40.y = 1;
+    local_88.surface_normal.D = 0;
+    local_88.surface_normal.C = 0;
+    local_88.surface_normal.B = 0;
+    local_88.surface_normal.A = 0;
+    local_70 = 0;
+    local_88.base.count = 4;
+    local_68 = 2;
+    local_64 = 3;
+    local_6c = 1;
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(pCVar1,1);
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
               (g_CDemonRendererPtr,&g_LoadingMoonGlowTexture);
     engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
-              (g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)&stack0xffffffb0,0x327);
+              (g_CDemonRendererPtr,&local_88,0x327);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr,0);
     core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00477850
               (&g_LoadingMoonModel,(CKeyFramedModelInstance *)0x0,0,0x205);
@@ -132,11 +147,11 @@ core_level_cpp_CLevelLoader_update_FUN_00504160(CLevelLoader *this_ptr,char *tex
       engine_drender_cpp_CDemonRenderer_popViewport_FUN_0050e480(g_CDemonRendererPtr);
     }
     g_CDemonSetPtr->rendering_mode = 0;
-    pCStack00000038 = g_ThemeFont;
+    local_10 = g_ThemeFont;
     iVar3 = (g_WindowWidth * 0x240) / 0x280;
     iVar5 = (g_WindowHeight * 0x18) / 0x1e0;
     iVar6 = (g_WindowWidth << 5) / 0x280;
-    pCStack00000034 = (CBitFont *)((g_WindowHeight * 0x1c0) / 0x1e0);
+    local_14 = (g_WindowHeight * 0x1c0) / 0x1e0;
     iVar7 = this_ptr->current_frame + 1;
     this_ptr->current_frame = iVar7;
     if (this_ptr->total_frames < iVar7) {
@@ -144,15 +159,12 @@ core_level_cpp_CLevelLoader_update_FUN_00504160(CLevelLoader *this_ptr,char *tex
     }
     if (this_ptr->use_custom_viewport == 0) {
       engine_2d_c_fillRectColor_FUN_00403170
-                (iVar6 + -1,(int)((int)&pCStack00000034[-1].win_font_helper + 3),iVar3 + 1 + iVar6,
-                 (int)(pCStack00000034->bitmap_files + -1) + 0x4d + iVar5,0);
-      if (in_stack_00000048 != (char *)0x0) {
-        iVar7 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80
-                          (in_stack_00000030,in_stack_00000048);
+                (iVar6 + -1,local_14 + -1,iVar3 + 1 + iVar6,local_14 + iVar5 + 1,0);
+      if (text != (char *)0x0) {
+        iVar7 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(local_10,text);
         engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
-                  (pCStack00000034,in_stack_00000048,(iVar6 + iVar3 / 2) - iVar7 / 2,
-                   (int)in_stack_00000030 + (iVar5 / 2 - pCStack00000034->max_char_width / 2),0xf8,
-                   -1);
+                  (local_10,text,(iVar6 + iVar3 / 2) - iVar7 / 2,
+                   (local_14 + iVar5 / 2) - local_10->max_char_width / 2,0xf8,-1);
       }
     }
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();

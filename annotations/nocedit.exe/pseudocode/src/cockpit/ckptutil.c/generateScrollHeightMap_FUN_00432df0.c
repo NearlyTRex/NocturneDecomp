@@ -12,19 +12,16 @@ cockpit_ckptutil_c_generateScrollHeightMap_FUN_00432df0
           int num_height_rows,int transparency_color)
 
 {
-  void *pvVar1;
-  int *piVar2;
-  int iVar3;
+  int *ptr;
+  int *piVar1;
+  int iVar2;
+  byte *pbVar3;
   int iVar4;
-  byte *pbVar5;
-  int iVar6;
-  int iVar7;
-  int *in_stack_00000020;
-  int in_stack_00000024;
-  int local_30;
-  int local_18;
-  int *local_14;
-  int *local_10;
+  int iVar5;
+  int local_24;
+  int *local_1c;
+  int *local_18;
+  int local_14;
   
   if (bitmap_data != (void *)0x0) {
     if (num_height_rows < (end_x - bitmap_height) + 1) {
@@ -32,71 +29,72 @@ cockpit_ckptutil_c_generateScrollHeightMap_FUN_00432df0
       g_CurrentLineNumber = 0x3f8;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Invalid height array size.");
     }
-    pvVar1 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
-                       (bitmap_height * 4,"..\\cockpit\\ckptutil.c",0x3fc);
-    if (pvVar1 == (void *)0x0) {
+    ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
+                    (bitmap_height * 4,"..\\cockpit\\ckptutil.c",0x3fc);
+    if (ptr == (int *)0x0) {
       g_CurrentFilename = "..\\cockpit\\ckptutil.c";
       g_CurrentLineNumber = 0x3fe;
       core_main_c_displayErrorAndQuit_FUN_00506f10("No room for scroll bitmap height table.");
     }
-    iVar7 = 0;
-    local_18 = 0;
+    iVar5 = 0;
+    local_24 = 0;
     if (0 < bitmap_height) {
-      local_10 = local_14;
+      local_1c = ptr;
       do {
-        iVar3 = num_height_rows + -1;
-        for (pbVar5 = (byte *)(local_30 + (num_height_rows + -1) * end_x + iVar7);
-            (-1 < iVar3 && ((uint)*pbVar5 != transparency_color)); pbVar5 = pbVar5 + -end_x) {
-          iVar3 = iVar3 + -1;
+        iVar4 = start_x + -1;
+        for (pbVar3 = (byte *)((int)bitmap_data + iVar5 + (start_x + -1) * end_x);
+            (-1 < iVar4 && ((uint)*pbVar3 != transparency_color)); pbVar3 = pbVar3 + -end_x) {
+          iVar4 = iVar4 + -1;
         }
-        *local_10 = iVar3 + 1;
-        if (local_18 <= iVar3) {
-          local_18 = iVar3;
+        *local_1c = iVar4 + 1;
+        if (local_24 <= iVar4) {
+          local_24 = iVar4;
         }
-        local_10 = local_10 + 1;
-        iVar7 = iVar7 + 1;
-      } while (iVar7 < bitmap_height);
+        local_1c = local_1c + 1;
+        iVar5 = iVar5 + 1;
+      } while (iVar5 < bitmap_height);
     }
-    *in_stack_00000020 = local_18;
-    iVar7 = 1;
-    if (1 < in_stack_00000024) {
-      iVar3 = bitmap_height + -1;
+    *height_output = local_24;
+    local_14 = 1;
+    if (1 < num_height_rows) {
+      iVar5 = bitmap_height + -1;
       do {
-        in_stack_00000020 = in_stack_00000020 + 1;
-        iVar6 = num_height_rows + -1;
-        for (pbVar5 = (byte *)(iVar3 + (num_height_rows + -1) * end_x + local_30 + iVar7);
-            (-1 < iVar6 && ((uint)*pbVar5 != transparency_color)); pbVar5 = pbVar5 + -end_x) {
-          iVar6 = iVar6 + -1;
+        local_18 = height_output + 1;
+        iVar4 = start_x + -1;
+        for (pbVar3 = (byte *)((int)bitmap_data + local_14 + iVar5 + (start_x + -1) * end_x);
+            (-1 < iVar4 && ((uint)*pbVar3 != transparency_color)); pbVar3 = pbVar3 + -end_x) {
+          iVar4 = iVar4 + -1;
         }
-        iVar4 = 0;
-        piVar2 = local_14;
-        if (0 < iVar3) {
+        iVar2 = 0;
+        piVar1 = ptr;
+        if (0 < iVar5) {
           do {
-            iVar4 = iVar4 + 1;
-            *piVar2 = piVar2[1];
-            piVar2 = piVar2 + 1;
-          } while (iVar4 < iVar3);
+            iVar2 = iVar2 + 1;
+            *piVar1 = piVar1[1];
+            piVar1 = piVar1 + 1;
+          } while (iVar2 < iVar5);
         }
+        iVar2 = 0;
+        ptr[bitmap_height + -1] = iVar4 + 1;
         iVar4 = 0;
-        local_14[bitmap_height + -1] = iVar6 + 1;
-        iVar6 = 0;
-        piVar2 = local_14;
+        piVar1 = ptr;
         if (0 < bitmap_height) {
           do {
-            if (iVar4 <= *piVar2) {
-              iVar4 = *piVar2;
+            if (iVar2 <= *piVar1) {
+              iVar2 = *piVar1;
             }
-            iVar6 = iVar6 + 1;
-            piVar2 = piVar2 + 1;
-          } while (iVar6 < bitmap_height);
+            iVar4 = iVar4 + 1;
+            piVar1 = piVar1 + 1;
+          } while (iVar4 < bitmap_height);
         }
-        iVar7 = iVar7 + 1;
-        *in_stack_00000020 = iVar4;
-      } while (iVar7 < in_stack_00000024);
+        local_14 = local_14 + 1;
+        *local_18 = iVar2;
+        height_output = local_18;
+      } while (local_14 < num_height_rows);
     }
     g_CurrentDebugFilename = "..\\cockpit\\ckptutil.c";
     g_CurrentDebugLine = 0x439;
-    shape_memdbg_cpp_debugFree_FUN_0050f210(local_14);
+    shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
   }
   return;
 }

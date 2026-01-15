@@ -12,34 +12,36 @@ void __cdecl core_mirror_cpp_CMirror_renderMirrorQuadDepth_FUN_00522800(CMirror 
   int *piVar1;
   int iVar2;
   int iVar3;
-  BADSPACEBASE *in_ESP;
-  SMRGLHeaderPrimitive local_78;
-  uint uStack_60;
-  uint uStack_54;
-  uint uStack_48;
-  byte local_3c [12];
-  int local_30;
-  int local_2c;
+  SMRGLHeaderPrimitive SStack_88;
+  uint local_70;
+  uint local_64;
+  uint local_58;
+  uint local_4c;
+  CVector3i local_40;
+  CVector3i local_34;
+  CVector3i local_28;
   CVector3i local_1c;
   
-  local_3c._8_4_ = (uint)ROUND((this_ptr->reflection).corner1.x * 256f);
-  local_30 = (int)ROUND((this_ptr->reflection).corner1.y * 256f);
-  local_2c = (int)ROUND((this_ptr->reflection).corner1.z * 256f);
+  local_34.x = (int)ROUND((this_ptr->reflection).corner1.x * 256f);
+  local_34.y = (int)ROUND((this_ptr->reflection).corner1.y * 256f);
+  local_34.z = (int)ROUND((this_ptr->reflection).corner1.z * 256f);
   wincore_windll_cpp_transformPoint_FUN_005b5a25
-            (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,(CVector3i *)(local_3c + 8));
-  local_3c._0_4_ = (uint)ROUND((this_ptr->reflection).corner2.x * 256f);
-  local_3c._4_4_ = (uint)ROUND((this_ptr->reflection).corner2.y * 256f);
-  local_3c._8_4_ = (uint)ROUND((this_ptr->reflection).corner2.z * 256f);
+            (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,&local_34);
+  local_40.x = (int)ROUND((this_ptr->reflection).corner2.x * 256f);
+  local_40.y = (int)ROUND((this_ptr->reflection).corner2.y * 256f);
+  local_40.z = (int)ROUND((this_ptr->reflection).corner2.z * 256f);
   wincore_windll_cpp_transformPoint_FUN_005b5a25
-            (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,(CVector3i *)local_3c);
-  local_1c.z = (int)ROUND((this_ptr->reflection).corner3.x * 256f);
+            (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,&local_40);
+  local_1c.x = (int)ROUND((this_ptr->reflection).corner3.x * 256f);
+  local_1c.y = (int)ROUND((this_ptr->reflection).corner3.y * 256f);
+  local_1c.z = (int)ROUND((this_ptr->reflection).corner3.z * 256f);
   wincore_windll_cpp_transformPoint_FUN_005b5a25
-            (&g_CDemonRendererPtr->vertex_buffer_ptr[2].projected_vertex,(CVector3i *)&local_1c.z);
-  local_1c.x = (int)ROUND((this_ptr->reflection).corner4.x * 256f);
-  local_1c.y = (int)ROUND((this_ptr->reflection).corner4.y * 256f);
-  local_1c.z = (int)ROUND((this_ptr->reflection).corner4.z * 256f);
+            (&g_CDemonRendererPtr->vertex_buffer_ptr[2].projected_vertex,&local_1c);
+  local_28.x = (int)ROUND((this_ptr->reflection).corner4.x * 256f);
+  local_28.y = (int)ROUND((this_ptr->reflection).corner4.y * 256f);
+  local_28.z = (int)ROUND((this_ptr->reflection).corner4.z * 256f);
   wincore_windll_cpp_transformPoint_FUN_005b5a25
-            (&g_CDemonRendererPtr->vertex_buffer_ptr[3].projected_vertex,&local_1c);
+            (&g_CDemonRendererPtr->vertex_buffer_ptr[3].projected_vertex,&local_28);
   iVar2 = 0;
   do {
     piVar1 = (int *)((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).transformed_x
@@ -57,16 +59,16 @@ void __cdecl core_mirror_cpp_CMirror_renderMirrorQuadDepth_FUN_00522800(CMirror 
          >> 4;
     iVar2 = iVar3;
   } while (iVar3 != 0xc0);
-  local_78.base.count = 4;
-  local_78.surface_normal.D = 0;
-  local_78.surface_normal.C = 0;
-  local_78.surface_normal.B = 0;
-  uStack_48 = 2;
-  local_78.surface_normal.A = 0;
-  uStack_60 = 0;
-  local_3c._0_4_ = 3;
-  uStack_54 = 1;
+  SStack_88.base.count = 4;
+  SStack_88.surface_normal.D = 0;
+  SStack_88.surface_normal.C = 0;
+  SStack_88.surface_normal.B = 0;
+  local_58 = 2;
+  SStack_88.surface_normal.A = 0;
+  local_70 = 0;
+  local_4c = 3;
+  local_64 = 1;
   engine_drender_cpp_CDemonRenderer_renderAlternativeDepth_FUN_0048a950
-            (g_CDemonRendererPtr,&local_78);
+            (g_CDemonRendererPtr,&SStack_88);
   return;
 }

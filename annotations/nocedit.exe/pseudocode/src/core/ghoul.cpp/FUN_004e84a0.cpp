@@ -13,7 +13,6 @@ CVector3f * core_ghoul_cpp_FUN_004e84a0(void)
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   uint *puVar2;
   uint *puVar3;
   byte bVar4;

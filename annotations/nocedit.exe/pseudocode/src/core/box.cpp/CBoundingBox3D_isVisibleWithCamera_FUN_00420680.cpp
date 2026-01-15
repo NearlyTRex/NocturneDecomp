@@ -12,7 +12,6 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisibleWithCamera_FUN_00420680(CBoundi
   SRenderVertex *pSVar1;
   int iVar2;
   int iVar3;
-  BADSPACEBASE *in_ESP;
   uint uVar4;
   uint corner_index;
   int iVar5;

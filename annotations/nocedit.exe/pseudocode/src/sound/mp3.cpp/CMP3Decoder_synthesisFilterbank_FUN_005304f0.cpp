@@ -21,7 +21,6 @@ sound_mp3_cpp_CMP3Decoder_synthesisFilterbank_FUN_005304f0
   float *extraout_EBX;
   float *pfVar8;
   float *extraout_EBX_00;
-  BADSPACEBASE *in_ESP;
   float *pfVar9;
   float10 fVar10;
   int aiStack_e4 [32];

@@ -1,23 +1,21 @@
 {
   "complexity": {
     "assembly_lines": 181,
-    "complexity_score": 307,
+    "complexity_score": 265,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 24,
-    "pseudocode_lines": 47,
-    "suspect_count": 22,
+    "pseudocode_lines": 45,
+    "suspect_count": 19,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
-      "register_param",
       "stack_param",
       "stack_ref",
       "unknown_field",
       "variadic_preserve"
     ],
-    "total_lines": 228
+    "total_lines": 226
   },
   "cross_references": [
     {
@@ -290,66 +288,45 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 9,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 9,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_fffffe18",
-      "text": "CDemonRenderer *in_stack_fffffe18;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_fffffe28",
-      "text": "CDemonRenderer *in_stack_fffffe28;",
+      "line": 10,
+      "match": "in_stack_fffffdfc",
+      "text": "CDemonRenderer *in_stack_fffffdfc;",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 30,
+      "line": 28,
       "match": "._1_1_",
       "text": "if ((DAT_0310fd40._1_1_ & 0x40) == 0) {",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 42,
-      "match": "in_stack_fffffe18",
-      "text": "engine_matrix_c_popViewport_FUN_0050e480(in_stack_fffffe18);",
+      "line": 40,
+      "match": "in_stack_fffffdfc",
+      "text": "engine_matrix_c_popViewport_FUN_0050e480(in_stack_fffffdfc);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 44,
-      "match": "&stack0xfffffe1c",
-      "text": "(&stack0xfffffe1c,\"Ln %d, Col %d\",DAT_0310fd48 + 1,DAT_0310fd44 + 1);",
+      "line": 42,
+      "match": "&stack0xfffffdfc",
+      "text": "(&stack0xfffffdfc,\"Ln %d, Col %d\",DAT_0310fd48 + 1,DAT_0310fd44 + 1);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 46,
-      "match": "&stack0xfffffe20",
-      "text": "(DAT_03114200,DAT_031141f8,DAT_031141f4,0xff,-1,&stack0xfffffe20);",
+      "line": 44,
+      "match": "&stack0xfffffdfc",
+      "text": "(DAT_03114200,DAT_031141f8,DAT_031141f4,0xff,-1,&stack0xfffffdfc);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 49,
-      "match": "in_stack_fffffe28",
-      "text": "engine_matrix_c_popViewport_FUN_0050e480(in_stack_fffffe28);",
+      "line": 47,
+      "match": "in_stack_fffffdfc",
+      "text": "engine_matrix_c_popViewport_FUN_0050e480(in_stack_fffffdfc);",
       "type": "stack_param"
     },
     {

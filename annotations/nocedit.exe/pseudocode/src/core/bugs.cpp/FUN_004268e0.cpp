@@ -22,7 +22,6 @@ void core_bugs_cpp_FUN_004268e0(void)
   CDeformableModel *pCVar7;
   ushort *puVar8;
   int iVar9;
-  BADSPACEBASE *in_ESP;
   int in_stack_00000004;
   int in_stack_00000008;
   float in_stack_0000000c;

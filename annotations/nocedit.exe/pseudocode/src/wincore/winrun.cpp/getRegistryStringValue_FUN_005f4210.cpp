@@ -12,25 +12,20 @@ wincore_winrun_cpp_getRegistryStringValue_FUN_005f4210
 
 {
   LSTATUS LVar1;
-  BADSPACEBASE *in_ESP;
   LPCSTR in_stack_00000004;
-  LPCSTR in_stack_00000020;
-  HKEY in_stack_00000024;
-  char *in_stack_00000028;
+  HKEY pHStack_10;
+  char *pcStack_c;
+  DWORD DStack_8;
   
   *value_name = '\0';
-  LVar1 = (*PTR_RegOpenKeyExA_00611474)
-                    ((HKEY)&DAT_80000002,in_stack_00000004,0,1,(PHKEY)&stack0xfffffff0);
+  LVar1 = (*PTR_RegOpenKeyExA_00611474)((HKEY)&DAT_80000002,in_stack_00000004,0,1,&pHStack_10);
   if (LVar1 != 0) {
     return;
   }
-  value_name = in_stack_00000028;
-  output_buffer = &DAT_00000001;
+  pcStack_c = output_buffer;
+  DStack_8 = 1;
   (*PTR_RegQueryValueExA_00611478)
-            ((HKEY)key_path,in_stack_00000020,(LPDWORD)0x0,(LPDWORD)&output_buffer,
-             (LPBYTE)in_stack_00000024,(LPDWORD)&value_name);
-  buffer_size = (uint *)in_stack_00000024;
-  output_buffer = (char *)0x5f427e;
-  (*RegCloseKey)(in_stack_00000024);
+            (pHStack_10,key_path,(LPDWORD)0x0,&DStack_8,(LPBYTE)value_name,(LPDWORD)&pcStack_c);
+  (*RegCloseKey)(pHStack_10);
   return;
 }

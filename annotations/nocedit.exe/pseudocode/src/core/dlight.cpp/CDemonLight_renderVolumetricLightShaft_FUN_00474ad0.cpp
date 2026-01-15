@@ -13,11 +13,10 @@ core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0(CDemonLight 
   SRenderVertex *pSVar1;
   CVector3f *pCVar2;
   CDemonRenderer *this_ptr_00;
-  BADSPACEBASE *in_ESP;
   int iVar3;
   byte bVar4;
   double dVar5;
-  int aiStackY_10b8 [989];
+  int aiStackY_10bc [990];
   CVector3i *in_stack_fffffec8;
   float fVar6;
   SMRGLHeaderPrimitive local_130;
@@ -29,8 +28,8 @@ core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0(CDemonLight 
   CVector3i local_f8;
   CVector3f local_ec;
   CVector3f local_e0;
-  int iStack_d0;
-  int iStack_cc;
+  int local_d4;
+  int aiStack_d0 [2];
   CVector3i local_c8;
   float local_bc;
   float local_b8;
@@ -40,8 +39,7 @@ core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0(CDemonLight 
   float local_a8;
   CVector3f local_a4;
   CVector3i local_98;
-  byte local_8c [8];
-  float local_84;
+  CVector3f local_8c;
   float local_80;
   float local_7c;
   float local_78;
@@ -66,31 +64,30 @@ core_dlight_cpp_CDemonLight_renderVolumetricLightShaft_FUN_00474ad0(CDemonLight 
   bVar4 = 0;
   if ((this_ptr->field17_0x1cbc != 0) && (g_CGamePtr->halo_mode == 2)) {
     engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
-              (g_CDemonRendererPtr,(float *)local_8c);
-    local_8c._0_4_ = (float)local_8c._0_4_ - (float)(this_ptr->base).base.position.x;
-    local_8c._4_4_ = (float)local_8c._4_4_ - (float)(this_ptr->base).base.position.y;
-    local_84 = local_84 - (float)(this_ptr->base).base.position.z;
+              (g_CDemonRendererPtr,&local_8c.x);
+    local_8c.x = local_8c.x - (float)(this_ptr->base).base.position.x;
+    local_8c.y = local_8c.y - (float)(this_ptr->base).base.position.y;
+    local_8c.z = local_8c.z - (float)(this_ptr->base).base.position.z;
     pCVar2 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
-                       ((CMatrix3x3f *)&(this_ptr->base).base.rotation_matrix,&local_68,
-                        (CVector3f *)local_8c);
-    if ((CVector3f *)(local_8c + 4) != pCVar2) {
-      local_8c._0_4_ = pCVar2->x;
-      local_8c._4_4_ = pCVar2->y;
-      local_84 = pCVar2->z;
+                       ((CMatrix3x3f *)&(this_ptr->base).base.rotation_matrix,&local_68,&local_8c);
+    if (&local_8c != pCVar2) {
+      local_8c.x = pCVar2->x;
+      local_8c.y = pCVar2->y;
+      local_8c.z = pCVar2->z;
     }
-    local_28 = (float)local_8c._4_4_ * (float)local_8c._4_4_;
-    local_20 = ((local_84 * (float)18) / (this_ptr->base).base.projection_scale) *
+    local_28 = local_8c.y * local_8c.y;
+    local_20 = ((local_8c.z * (float)18) / (this_ptr->base).base.projection_scale) *
                (float)2;
-    local_1c = (float)local_8c._0_4_ * (float)local_8c._0_4_ + local_28;
+    local_1c = local_8c.x * local_8c.x + local_28;
     local_24 = local_20 * local_20;
     if (local_1c <= local_24) {
       local_130.base.type = (int)(1.0 - local_1c / local_24);
       engine_drender_cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760
                 (g_CDemonRendererPtr,in_stack_fffffec8);
-      local_5c = iStack_d0;
-      local_58[(uint)bVar4 * -2] = (&iStack_cc)[(uint)bVar4 * -2];
+      local_5c = local_d4;
+      local_58[(uint)bVar4 * -2] = aiStack_d0[(uint)bVar4 * -2];
       local_58[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
-           *(int *)((int)&local_c8 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
+           aiStack_d0[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
       local_80 = (float)local_5c * 0.00390625f;
       local_7c = (float)local_58[0] * 0.00390625f;
       local_78 = (float)local_58[1] * 0.00390625f;

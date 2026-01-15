@@ -12,12 +12,12 @@ core_particle_cpp_CParticle_setup_FUN_00545680
 
 {
   float fVar1;
-  float10 fVar2;
+  float fVar2;
   float10 fVar3;
   float10 fVar4;
   float10 fVar5;
   float10 fVar6;
-  float fStack_14;
+  float10 fVar7;
   
   this_ptr->gravity_acceleration = -32.0;
   if (this_ptr != (CParticle *)position) {
@@ -35,16 +35,16 @@ core_particle_cpp_CParticle_setup_FUN_00545680
     this_ptr->collision_result = 0;
     return;
   }
-  core_actor_cpp_getRandomFloat_FUN_0040cc10(0.7853982,1.5707964);
-  fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,6.2831855);
-  fVar2 = (float10)fcos((float10)fVar1);
-  fVar3 = (float10)fcos((float10)fStack_14);
-  fVar4 = (float10)fsin((float10)fVar1);
-  fVar5 = (float10)fsin((float10)fStack_14);
-  fVar6 = (float10)10f;
-  (this_ptr->velocity).y = (float)(fVar5 * fVar6);
-  (this_ptr->velocity).x = (float)(fVar2 * fVar6 * fVar3);
-  (this_ptr->velocity).z = (float)(fVar4 * fVar6 * fVar3);
+  fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.7853982,1.5707964);
+  fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,6.2831855);
+  fVar3 = (float10)fcos((float10)fVar2);
+  fVar4 = (float10)fcos((float10)fVar1);
+  fVar5 = (float10)fsin((float10)fVar2);
+  fVar6 = (float10)fsin((float10)fVar1);
+  fVar7 = (float10)10f;
+  (this_ptr->velocity).y = (float)(fVar6 * fVar7);
+  (this_ptr->velocity).x = (float)(fVar3 * fVar7 * fVar4);
+  (this_ptr->velocity).z = (float)(fVar5 * fVar7 * fVar4);
   this_ptr->lifetime_remaining = 5.0;
   this_ptr->collision_result = 0;
   return;

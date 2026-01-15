@@ -12,7 +12,6 @@ void __cdecl core_door_cpp_CDoor_reposition_FUN_0047fd20(CDoor *this_ptr)
   CLocation *pCVar1;
   float fVar2;
   CVector3f *pCVar3;
-  BADSPACEBASE *in_ESP;
   CBoundingBox3D local_c8;
   float fStack_b0;
   float fStack_ac;
@@ -31,6 +30,7 @@ void __cdecl core_door_cpp_CDoor_reposition_FUN_0047fd20(CDoor *this_ptr)
   CVector3f CStack_38;
   CVector3f CStack_2c;
   CVector3f CStack_20;
+  float fStack_14;
   
   (*((this_ptr->base_actor).vtable)->getBoundingBox)(&this_ptr->base_actor,&local_c8);
   switch(this_ptr->door_type) {
@@ -125,8 +125,10 @@ LAB_0047fe19:
     CStack_20.x = core_actor_cpp_getRandomFloat_FUN_0040cc10
                             (-*(float *)this_ptr->field19_0x9cc,*(float *)this_ptr->field19_0x9cc);
     CStack_20.y = 0.0;
+    fStack_14 = CStack_20.x;
     CStack_20.z = core_actor_cpp_getRandomFloat_FUN_0040cc10
                             (-*(float *)this_ptr->field19_0x9cc,*(float *)this_ptr->field19_0x9cc);
+    fStack_14 = CStack_20.z;
     pCVar3 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
                        (&this_ptr->base_actor,&CStack_98,&CStack_20);
     pCVar1 = &(this_ptr->base_actor).location;

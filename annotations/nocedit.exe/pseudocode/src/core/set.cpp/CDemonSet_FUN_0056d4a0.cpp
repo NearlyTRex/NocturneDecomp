@@ -17,7 +17,6 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056d4a0(CDemonSet *this_ptr)
   CVector3f *pCVar6;
   int iVar7;
   int iVar8;
-  BADSPACEBASE *in_ESP;
   CVector3f *in_stack_00000008;
   CVector3f *in_stack_0000000c;
   CVector3f *in_stack_00000010;
@@ -34,8 +33,7 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056d4a0(CDemonSet *this_ptr)
   int local_78;
   int local_74;
   int local_70;
-  byte local_60 [8];
-  float local_58;
+  CVector3f local_60;
   CVector3f aCStack_54 [3];
   int local_28;
   int local_24;
@@ -142,22 +140,22 @@ int __cdecl core_set_cpp_CDemonSet_FUN_0056d4a0(CDemonSet *this_ptr)
       local_28 = 0;
       do {
         iVar8 = *(int *)((int)&DAT_03277d84 + local_28);
-        local_60._0_4_ = *(float *)(iVar8 + 0x104) - in_stack_00000008->x;
-        local_60._4_4_ = *(float *)(iVar8 + 0x108) - in_stack_00000008->y;
-        local_58 = *(float *)(iVar8 + 0x10c) - in_stack_00000008->z;
+        local_60.x = *(float *)(iVar8 + 0x104) - in_stack_00000008->x;
+        local_60.y = *(float *)(iVar8 + 0x108) - in_stack_00000008->y;
+        local_60.z = *(float *)(iVar8 + 0x10c) - in_stack_00000008->z;
         pCVar6 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
-                           (in_stack_00000018,aCStack_9c,(CVector3f *)local_60);
-        if ((CVector3f *)(local_60 + 4) != pCVar6) {
-          local_60._0_4_ = pCVar6->x;
-          local_60._4_4_ = pCVar6->y;
-          local_58 = pCVar6->z;
+                           (in_stack_00000018,aCStack_9c,&local_60);
+        if (&local_60 != pCVar6) {
+          local_60.x = pCVar6->x;
+          local_60.y = pCVar6->y;
+          local_60.z = pCVar6->z;
         }
-        if ((((in_stack_00000010->x <= (float)local_60._0_4_ + *(float *)(iVar8 + 0x11d4)) &&
-             (in_stack_00000010->y <= (float)local_60._4_4_ + *(float *)(iVar8 + 0x11d4))) &&
-            (in_stack_00000010->z <= local_58 + *(float *)(iVar8 + 0x11d4))) &&
-           ((((float)local_60._0_4_ - *(float *)(iVar8 + 0x11d4) <= in_stack_00000014->x &&
-             ((float)local_60._4_4_ - *(float *)(iVar8 + 0x11d4) <= in_stack_00000014->y)) &&
-            (local_58 - *(float *)(iVar8 + 0x11d4) <= in_stack_00000014->z)))) {
+        if ((((in_stack_00000010->x <= local_60.x + *(float *)(iVar8 + 0x11d4)) &&
+             (in_stack_00000010->y <= local_60.y + *(float *)(iVar8 + 0x11d4))) &&
+            (in_stack_00000010->z <= local_60.z + *(float *)(iVar8 + 0x11d4))) &&
+           (((local_60.x - *(float *)(iVar8 + 0x11d4) <= in_stack_00000014->x &&
+             (local_60.y - *(float *)(iVar8 + 0x11d4) <= in_stack_00000014->y)) &&
+            (local_60.z - *(float *)(iVar8 + 0x11d4) <= in_stack_00000014->z)))) {
           (&DAT_032c1944)[g_ColorCorrectionEnabled] = iVar8;
           g_ColorCorrectionEnabled = g_ColorCorrectionEnabled + 1;
         }

@@ -22,7 +22,7 @@ engine_drender_cpp_CDemonRenderer_depthTest_FUN_0048dc50
   }
   iVar1 = (vertex_ptr->projected_vertex).screen_x >> 0x10;
   iVar2 = (vertex_ptr->projected_vertex).screen_y >> 0x10;
-  if ((vertex_ptr->projected_vertex).transformed_y == 0) {
+  if (this_ptr->face_count == 0) {
     if ((vertex_ptr->projected_vertex).transformed_z < (int)g_ZBufferScanlineArray[iVar2][iVar1]) {
       return 0;
     }

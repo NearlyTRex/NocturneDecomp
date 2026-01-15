@@ -12,17 +12,15 @@ void core_actor_cpp_CActorPropertyList_FUN_0040e770(void)
   int iVar1;
   int iVar2;
   int iVar3;
-  int unaff_EDI;
   int in_stack_00000004;
+  int in_stack_00000008;
   int in_stack_0000000c;
   uint in_stack_00000010;
-  int in_stack_00000014;
-  uint in_stack_00000018;
-  int iVar4;
+  int local_14;
   
   iVar2 = 0;
   iVar3 = 0;
-  iVar4 = 0;
+  local_14 = 0;
   if (0 < *(int *)(in_stack_00000004 + 4)) {
     do {
       iVar1 = core_actor_cpp_FUN_0040ee30();
@@ -30,20 +28,20 @@ void core_actor_cpp_CActorPropertyList_FUN_0040e770(void)
         iVar2 = iVar1;
       }
       iVar1 = core_actor_cpp_FUN_0040ee50();
-      if (iVar4 < iVar1) {
-        iVar4 = iVar1;
+      if (local_14 < iVar1) {
+        local_14 = iVar1;
       }
       iVar3 = iVar3 + 1;
     } while (iVar3 < *(int *)(in_stack_00000004 + 4));
   }
-  iVar4 = engine_2d_c_getStringWidth_FUN_004018a0(": ");
-  *(int *)(in_stack_00000004 + 0x24f0) = in_stack_0000000c + iVar2 + iVar4 + 2;
   iVar3 = engine_2d_c_getStringWidth_FUN_004018a0(": ");
-  *(int *)(in_stack_00000004 + 0x24f4) = *(int *)(in_stack_00000004 + 0x24f0) + iVar3;
-  *(uint *)(in_stack_00000004 + 0x24f8) = in_stack_00000010;
-  *(uint *)(in_stack_00000004 + 0x24fc) = in_stack_00000018;
-  *(int *)(in_stack_00000004 + 0x2500) = in_stack_00000014 + 3;
-  *(int *)(in_stack_00000004 + 0x24e8) = unaff_EDI + iVar2 + iVar4;
+  *(int *)(in_stack_00000004 + 0x24f0) = in_stack_00000008 + iVar2 + iVar3 + 2;
+  iVar1 = engine_2d_c_getStringWidth_FUN_004018a0(": ");
+  *(int *)(in_stack_00000004 + 0x24f4) = *(int *)(in_stack_00000004 + 0x24f0) + iVar1;
+  *(int *)(in_stack_00000004 + 0x24f8) = in_stack_00000008;
+  *(uint *)(in_stack_00000004 + 0x24fc) = in_stack_00000010;
+  *(int *)(in_stack_00000004 + 0x2500) = in_stack_0000000c + 3;
+  *(int *)(in_stack_00000004 + 0x24e8) = local_14 + iVar2 + iVar3;
   *(int *)(in_stack_00000004 + 0x24ec) = *(int *)(in_stack_00000004 + 4) * 0xe + 6;
   return;
 }

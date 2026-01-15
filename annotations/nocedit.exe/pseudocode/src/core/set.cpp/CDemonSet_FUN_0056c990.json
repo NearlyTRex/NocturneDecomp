@@ -1,19 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 352,
-    "complexity_score": 185,
+    "complexity_score": 154,
     "cross_reference_count": 1,
     "function_call_count": 25,
     "global_count": 36,
-    "pseudocode_lines": 115,
-    "suspect_count": 5,
+    "pseudocode_lines": 114,
+    "suspect_count": 3,
     "suspect_types": [
-      "badspacebase",
-      "register_param",
       "stack_ref",
       "unresolved_funcptr"
     ],
-    "total_lines": 467
+    "total_lines": 466
   },
   "cross_references": [
     {
@@ -909,36 +907,22 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 17,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 17,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 43,
+      "line": 42,
       "match": "&stack0x00000000",
       "text": "if ((int *)&stack0x00000000 != &g_CDemonLightInstance.base.base.rotation_matrix.m[2].z) {",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 55,
+      "line": 54,
       "match": "&stack0x00000000",
       "text": "if ((int *)&stack0x00000000 != &g_CDemonCameraInstance.base.rotation_matrix.m[2].z) {",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 74,
+      "line": 73,
       "match": "code *",
       "text": "(**(code **)(*(int *)(*(int *)(pCVar5->field73_0x15f6e4 + 4) + 0x154) + 8))();",
       "type": "unresolved_funcptr"

@@ -14,7 +14,6 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c8230(CFireEffect *this_ptr)
   CVector3f *pCVar2;
   CDemonActor *this_ptr_01;
   int iVar3;
-  BADSPACEBASE *in_ESP;
   double dVar4;
   CVector3f *in_stack_00000008;
   float *in_stack_0000000c;

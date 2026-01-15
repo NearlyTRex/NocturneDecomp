@@ -1,22 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 384,
-    "complexity_score": 682,
+    "complexity_score": 445,
     "cross_reference_count": 7,
     "function_call_count": 16,
     "global_count": 29,
-    "pseudocode_lines": 157,
-    "suspect_count": 49,
+    "pseudocode_lines": 155,
+    "suspect_count": 27,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
-      "register_param",
       "stack_param",
-      "stack_ref",
       "variadic_preserve"
     ],
-    "total_lines": 541
+    "total_lines": 539
   },
   "cross_references": [
     {
@@ -481,171 +478,17 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 8,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 8,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 14,
       "match": "in_stack_00000008",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_0000000c",
-      "text": "int in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_00000014",
-      "text": "int *in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000018",
-      "text": "int *in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000038",
-      "text": "CDemonSet *in_stack_00000038;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_0000003c",
-      "text": "CDemonSet *in_stack_0000003c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 23,
-      "match": "&stack0xfffffeec",
-      "text": "pcVar7 = &stack0xfffffeec;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 24,
-      "match": "&stack0xfffffeec",
-      "text": "pcVar5 = &stack0xfffffeec;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 25,
+      "line": 68,
       "match": "in_stack_00000008",
-      "text": "pcVar4 = (char *)(in_stack_00000008 + 0x14d0f0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 29,
-      "match": "&stack0xfffffeec",
-      "text": "pcVar6 = &stack0xfffffeec;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 35,
-      "match": "&stack0xfffffeec",
-      "text": "pcVar6 = &stack0xfffffeec;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 69,
-      "match": "in_stack_0000000c",
-      "text": "if ((in_stack_0000000c == 0) &&",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 70,
-      "match": "&stack0xfffffeec",
-      "text": "(pFVar2 = engine_dosio_c_getFile_FUN_00481a50(\"data\",&stack0xfffffeec,\"rb\"),",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 81,
-      "match": "in_stack_00000018",
-      "text": "piVar8 = in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 82,
-      "match": "in_stack_00000018",
-      "text": "if (0 < *in_stack_00000018) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 91,
-      "match": "in_stack_00000014",
-      "text": "(g_CEditorToolsPtr,(float)iVar3,(float)*in_stack_00000014);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 94,
-      "match": "in_stack_00000018",
-      "text": "} while (iVar3 < *in_stack_00000018);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 103,
-      "match": "&stack0xffffff0c",
-      "text": "pFVar2 = engine_dosio_c_getFile_FUN_00481a50(\"data\",&stack0xffffff0c,\"wb\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 111,
-      "match": "&stack0xffffff1c",
-      "text": "pcVar7 = &stack0xffffff1c;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 112,
-      "match": "in_stack_00000038",
-      "text": "core_setdir_cpp_CDemonSet_saveThumbs_FUN_00575f60(in_stack_00000038);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 114,
-      "match": "in_stack_00000038",
-      "text": "pcVar5 = in_stack_00000038->geometry_filename;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 158,
-      "match": "in_stack_0000003c",
-      "text": "core_setdir_cpp_CDemonSet_writeThumbs_FUN_00575e40(in_stack_0000003c,acStack_e0);",
+      "text": "if ((in_stack_00000008 == 0) &&",
       "type": "stack_param"
     },
     {

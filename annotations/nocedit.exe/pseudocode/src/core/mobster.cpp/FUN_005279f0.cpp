@@ -17,7 +17,6 @@ void core_mobster_cpp_FUN_005279f0(void)
   int iVar3;
   uint uVar4;
   int iVar5;
-  BADSPACEBASE *in_ESP;
   int iVar6;
   int in_stack_00000004;
   int in_stack_00000008;

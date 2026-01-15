@@ -18,7 +18,6 @@ void core_path_cpp_FUN_00547fc0(void)
   int *extraout_EDX_00;
   int *extraout_EDX_01;
   CVector3i *input;
-  BADSPACEBASE *in_ESP;
   byte bVar2;
   float10 fVar3;
   float10 fVar4;

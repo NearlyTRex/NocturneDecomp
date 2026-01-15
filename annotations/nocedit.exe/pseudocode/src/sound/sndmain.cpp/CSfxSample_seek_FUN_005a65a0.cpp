@@ -12,24 +12,21 @@ sound_sndmain_cpp_CSfxSample_seek_FUN_005a65a0
 
 {
   int iVar1;
-  int iVar2;
-  double value;
-  double dVar3;
-  uint in_stack_ffffffe8;
-  uint in_stack_ffffffec;
+  double dVar2;
+  CMP3Decoder *this_ptr_00;
+  ulonglong in_stack_ffffffe4;
   
   if (this_ptr->streaming_slot_index < 0) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 0x797;
     core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSample::seek - '%s' isn't streamed!",this_ptr);
   }
-  value = sound_sndmain_cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0
-                    (SUB84 /* extract 2-byte value */((double)dest_buffer_offset,0),
-                     (double)((ulonglong)(double)dest_buffer_offset >> 0x20),in_stack_ffffffe8,
-                     in_stack_ffffffec);
-  dVar3 = crt_math_c_round_FUN_005fe6b0(value);
-  iVar2 = SUB84 /* extract 2-byte value */(value,0);
-  this_ptr->stream_read_position = (int)ROUND(dVar3);
+  dVar2 = sound_sndmain_cpp_CSampleInfo_normalizePlaybackPos_FUN_005a86f0
+                    (SUB84 /* extract 2-byte value */((double)playback_position,0),
+                     (double)((ulonglong)(double)playback_position >> 0x20),(uint)in_stack_ffffffe4,
+                     (uint)((ulonglong)in_stack_ffffffe4 >> 0x20));
+  dVar2 = crt_math_c_round_FUN_005fe6b0(dVar2);
+  this_ptr->stream_read_position = (int)ROUND(dVar2);
   if (this_ptr->stream_read_position < 0) {
     this_ptr->stream_read_position = 0;
   }
@@ -39,7 +36,8 @@ sound_sndmain_cpp_CSfxSample_seek_FUN_005a65a0
     core_main_c_displayErrorAndQuit_FUN_00506f10("SfxSample::seek - invalid destPtr");
   }
   this_ptr->stream_write_position = dest_buffer_offset;
-  if (this_ptr->mp3_data == (CMP3Decoder *)0x0) {
+  this_ptr_00 = this_ptr->mp3_data;
+  if (this_ptr_00 == (CMP3Decoder *)0x0) {
     if (this_ptr->file_handle == (FILE *)0x0) {
       g_CurrentFilename = "..\\sound\\sndmain.cpp";
       g_CurrentLineNumber = 0x7b6;
@@ -49,12 +47,11 @@ sound_sndmain_cpp_CSfxSample_seek_FUN_005a65a0
     iVar1 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550(this_ptr);
     crt_stdio_c_fseek_FUN_005ffacc
               (this_ptr->file_handle,iVar1 * this_ptr->stream_read_position + this_ptr->file_offset,
-               iVar2);
+               (int)this_ptr_00);
   }
   else {
-    iVar2 = sound_mp3_cpp_CMP3Decoder_seek_FUN_00534ba0
-                      (this_ptr->mp3_data,this_ptr->stream_read_position);
-    if (iVar2 == 0) {
+    iVar1 = sound_mp3_cpp_CMP3Decoder_seek_FUN_00534ba0(this_ptr_00,this_ptr->stream_read_position);
+    if (iVar1 == 0) {
       g_CurrentFilename = "..\\sound\\sndmain.cpp";
       g_CurrentLineNumber = 0x7ab;
       core_main_c_displayErrorAndQuit_FUN_00506f10

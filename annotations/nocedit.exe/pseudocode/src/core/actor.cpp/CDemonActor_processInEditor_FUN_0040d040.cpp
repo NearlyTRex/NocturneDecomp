@@ -10,50 +10,44 @@ void __cdecl core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(CDemonActor
 
 {
   CDemonActor *pCVar1;
-  CDemonActor *pCVar2;
-  int iVar3;
-  BADSPACEBASE *in_ESP;
-  float in_stack_00000008;
-  float in_stack_0000000c;
-  CDemonMission *in_stack_00000010;
-  CDemonMission *in_stack_00000014;
-  float in_stack_00000018;
+  int iVar2;
+  float unaff_EBX;
+  float unaff_retaddr;
+  float in_stack_ffffffec;
+  float fStack_10;
+  float fStack_c;
+  float fStack_8;
   
-  pCVar1 = this_ptr;
   this_ptr->was_created = 0;
-  pCVar2 = (*this_ptr->vtable->getCarrier)(this_ptr);
-  if (pCVar2 == (CDemonActor *)0x0) {
-    iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x29);
-    if (iVar3 == 0) {
-      if ((CLocation *)&stack0x00000000 != &this_ptr->location) {
-        in_stack_00000008 = (this_ptr->location).position.z;
-        this_ptr = (CDemonActor *)(this_ptr->location).position.y;
+  pCVar1 = (*this_ptr->vtable->getCarrier)(this_ptr);
+  if (pCVar1 == (CDemonActor *)0x0) {
+    iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x29);
+    if (iVar2 == 0) {
+      if ((CLocation *)&stack0xffffffec != &this_ptr->location) {
+        in_stack_ffffffec = (this_ptr->location).position.x;
+        fStack_10 = (this_ptr->location).position.y;
+        fStack_c = (this_ptr->location).position.z;
       }
-      if ((COrientation *)&stack0x0000000c != &pCVar1->orient) {
-        in_stack_0000000c = (pCVar1->orient).pitch;
-        in_stack_00000010 = (CDemonMission *)(pCVar1->orient).bank;
-        in_stack_00000014 = (CDemonMission *)(pCVar1->orient).heading;
+      if ((COrientation *)&fStack_8 != &this_ptr->orient) {
+        fStack_8 = (this_ptr->orient).pitch;
+        unaff_EBX = (this_ptr->orient).bank;
+        unaff_retaddr = (this_ptr->orient).heading;
       }
-      core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)&stack0x00000000);
-      (pCVar1->location).position.x = (float)this_ptr;
-      (pCVar1->location).position.y = in_stack_00000008;
-      (pCVar1->location).position.z = in_stack_0000000c;
-      if (&pCVar1->orient != (COrientation *)&stack0x00000010) {
-        (pCVar1->orient).pitch = (float)in_stack_00000010;
-        (pCVar1->orient).bank = (float)in_stack_00000014;
-        (pCVar1->orient).heading = in_stack_00000018;
+      core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)&stack0xffffffec);
+      (this_ptr->location).position.x = in_stack_ffffffec;
+      (this_ptr->location).position.y = fStack_10;
+      (this_ptr->location).position.z = fStack_c;
+      if (&this_ptr->orient != (COrientation *)&fStack_8) {
+        (this_ptr->orient).pitch = fStack_8;
+        (this_ptr->orient).bank = unaff_EBX;
+        (this_ptr->orient).heading = unaff_retaddr;
       }
     }
-    iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x22);
-    if (iVar3 != 0) {
-      in_stack_00000014 = (CDemonMission *)pCVar1;
-      in_stack_00000010 = g_CDemonMissionPtr;
-      in_stack_0000000c = 5.952307e-39;
+    iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x22);
+    if (iVar2 != 0) {
       core_msnedit_cpp_CDemonMission_FUN_0053c8d0(g_CDemonMissionPtr);
     }
     if (((byte)g_MouseButtonFlags & 2) != 0) {
-      in_stack_00000014 = g_CDemonMissionPtr;
-      in_stack_00000010 = (CDemonMission *)0x40d0b5;
       core_msnedit_cpp_CDemonMission_FUN_0053ca00(g_CDemonMissionPtr);
       return;
     }

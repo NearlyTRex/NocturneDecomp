@@ -11,7 +11,6 @@ crt_fstream_cpp_filebuf_open_FUN_00608c15(filebuf *this_ptr,char *filename,int m
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   
   if (this_ptr->__file_handle == -1) {
     if ((mode & 8U) != 0) {
@@ -25,10 +24,10 @@ crt_fstream_cpp_filebuf_open_FUN_00608c15(filebuf *this_ptr,char *filename,int m
       iVar1 = crt_fstream_cpp_convertModesAndOpenFile_FUN_0060c340(filename,&mode,permissions);
       this_ptr->__file_handle = iVar1;
       if (-1 < iVar1) {
-        this_ptr->__file_mode = permissions;
+        this_ptr->__file_mode = mode;
         this_ptr->__attached = this_ptr->__attached & 0xfe;
-        if ((permissions & 4U) != 0) {
-          (*this_ptr->__vtable->seekoff)(&this_ptr->streambuf,0,2,permissions);
+        if ((mode & 4U) != 0) {
+          (*this_ptr->__vtable->seekoff)(&this_ptr->streambuf,0,2,mode);
         }
         return (int)this_ptr;
       }

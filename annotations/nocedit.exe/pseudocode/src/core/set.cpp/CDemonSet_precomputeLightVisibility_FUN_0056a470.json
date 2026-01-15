@@ -1,25 +1,22 @@
 {
   "complexity": {
     "assembly_lines": 398,
-    "complexity_score": 923,
+    "complexity_score": 708,
     "cross_reference_count": 6,
     "function_call_count": 17,
     "global_count": 15,
-    "pseudocode_lines": 203,
-    "suspect_count": 67,
+    "pseudocode_lines": 193,
+    "suspect_count": 48,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "format_string_mismatch",
       "lea_esp_stack_addr",
       "pointer_cast",
-      "register_param",
       "stack_param",
       "stack_ref",
-      "unaffected_reg",
       "variadic_preserve"
     ],
-    "total_lines": 601
+    "total_lines": 591
   },
   "cross_references": [
     {
@@ -469,242 +466,109 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 10,
-      "match": "unaff_EBX",
-      "text": "int unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 13,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 13,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 19,
       "match": "in_stack_00000008",
-      "text": "CDemonSet *in_stack_00000008;",
+      "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_0000000c",
-      "text": "int in_stack_0000000c;",
+      "line": 21,
+      "match": "in_stack_fffffe8c",
+      "text": "CBoundingBox3D *in_stack_fffffe8c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_fffffe74",
-      "text": "ulonglong in_stack_fffffe74;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 54,
+      "line": 53,
       "match": "in_stack_00000008",
-      "text": "if (0 < in_stack_00000008->camera_count) {",
+      "text": "local_48 = in_stack_00000008 + 1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 55,
-      "match": "in_stack_00000008",
-      "text": "local_34 = in_stack_00000008->lights;",
+      "line": 68,
+      "match": "in_stack_fffffe8c",
+      "text": "(&g_CDemonCameraInstance,local_74,in_stack_fffffe8c);",
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 56,
-      "match": "in_stack_0000000c",
-      "text": "local_44 = (CDemonSet *)(in_stack_0000000c + 1);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 57,
-      "match": "in_stack_00000008",
-      "text": "local_40 = in_stack_00000008->cameras;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 59,
-      "match": "in_stack_00000008",
-      "text": "local_38 = in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 62,
-      "match": "in_stack_fffffe74",
-      "text": "bounding_box = (CBoundingBox3D *)((ulonglong)in_stack_fffffe74 >> 0x20);",
-      "type": "stack_param"
+      "description": "Direct stack address reference",
+      "line": 80,
+      "match": "&stack0xfffffe8c",
+      "text": "(&stack0xfffffe8c,\"Camera box (%7.2f, %7.2f, %7.2f) - (%7.2f, %7.2f, %7.2f)\",",
+      "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 84,
-      "match": "&stack0xfffffe7c",
-      "text": "(&stack0xfffffe7c,\"Camera box (%7.2f, %7.2f, %7.2f) - (%7.2f, %7.2f, %7.2f)\",",
+      "match": "&stack0xfffffe8c",
+      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe8c,0,0x16);",
       "type": "stack_ref"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 88,
-      "match": "&stack0xfffffe80",
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe80,0,0x16);",
-      "type": "stack_ref"
+      "description": "Unresolved stack parameter",
+      "line": 89,
+      "match": "in_stack_00000008",
+      "text": "if (in_stack_00000008 != -1) {",
+      "type": "stack_param"
     },
     {
-      "description": "Unaffected register variable",
+      "description": "Unresolved stack parameter",
       "line": 91,
-      "match": "unaff_EBX",
-      "text": "local_2c = *(int *)(unaff_EBX + 0x19a2c);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 101,
-      "match": "unaff_EBX",
-      "text": "local_20 = (int)local_1c * 0x1898 + local_28 + unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 102,
-      "match": "unaff_EBX",
-      "text": "iVar6 = local_48 + (int)local_1c * 0x1898 + unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 106,
-      "match": "unaff_EBX",
-      "text": "if (*(int *)(unaff_EBX + iVar7 + 0x19a30) == 0) {",
-      "type": "unaffected_reg"
+      "match": "in_stack_00000008",
+      "text": "local_14 = in_stack_00000008;",
+      "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 113,
+      "line": 109,
       "match": "(int *)((int)",
-      "text": "((char *)(*(int *)((int)g_MasterLightList + iVar8) + 0x40),",
+      "text": "((char *)(*(int *)((int)g_MasterLightList + iVar7) + 0x40),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 137,
+      "line": 133,
       "match": "(uint *)((int)",
-      "text": "puVar9 = (uint *)((int)aCStack_70 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 0xc)",
+      "text": "puVar8 = (uint *)((int)&local_5c + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 139,
+      "line": 134,
       "match": "(uint *)((int)",
-      "text": "*puVar10 = *(uint *)((int)aCStack_70 + (uint)bVar12 * -8 + 8);",
+      "text": "*puVar9 = *(uint *)((int)&local_5c + (uint)bVar12 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 143,
-      "match": "&stack0xfffffe7c",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffe7c,\"Light %d, Box : %d,%d,%d,%d\");",
+      "line": 138,
+      "match": "&stack0xfffffe8c",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffe8c,\"Light %d, Box : %d,%d,%d,%d\");",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 145,
-      "match": "&stack0xfffffe80",
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe80,0,local_28);",
+      "line": 140,
+      "match": "&stack0xfffffe8c",
+      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe8c,0,local_1c);",
       "type": "stack_ref"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 151,
-      "match": "unaff_EBX",
-      "text": "iVar5 = local_28 + unaff_EBX + iVar7;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 158,
-      "match": "unaff_EBX",
-      "text": "pcVar2 = local_34[(int)pCVar1 + 0x10].filter_names[5] + unaff_EBX + 0x18;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 163,
-      "match": "unaff_EBX",
-      "text": "pcVar2 = local_34[(int)pCVar1 + 0x10].filter_names[5] + unaff_EBX + 0x1c;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 168,
-      "match": "unaff_EBX",
-      "text": "pcVar2 = local_34[(int)pCVar1 + 0x10].filter_names[5] + unaff_EBX + 0x20;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 173,
-      "match": "unaff_EBX",
-      "text": "pcVar2 = local_34[(int)pCVar1 + 0x10].filter_names[5] + unaff_EBX + 0x24;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 185,
-      "match": "(CDemonSet *)((int)",
-      "text": "local_1c = (CDemonSet *)((int)local_1c + 1);",
-      "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 189,
-      "match": "&stack0xfffffe84",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffe84,\"Precomputing lights from camera : %d\");",
+      "line": 180,
+      "match": "&stack0xfffffe8c",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffe8c,\"Precomputing lights from camera : %d\");",
       "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 190,
-      "match": "in_stack_fffffe74",
-      "text": "in_stack_fffffe74 = 0x56a6c600000000;",
-      "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 191,
-      "match": "&stack0xfffffe88",
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe88,0,0);",
+      "line": 181,
+      "match": "&stack0xfffffe8c",
+      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe8c,0,0);",
       "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 197,
-      "match": "in_stack_00000008",
-      "text": "} while ((int)pCVar1 < in_stack_00000008->camera_count);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 200,
-      "match": "in_stack_00000008",
-      "text": "core_set_cpp_CDemonSet_FUN_0056d2d0(in_stack_00000008);",
-      "type": "stack_param"
     },
     {
       "call_address": "0056a643",
@@ -768,8 +632,8 @@
       "expected_args": 5,
       "format_string": "Light %d, Box : %d,%d,%d,%d",
       "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 143,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffe7c,\"Light %d, Box : %d,%d,%d,%d\");",
+      "line_number": 138,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffe8c,\"Light %d, Box : %d,%d,%d,%d\");",
       "text": "Format string expects 5 args but got 0",
       "type": "format_string_mismatch"
     },
@@ -779,8 +643,8 @@
       "expected_args": 1,
       "format_string": "Precomputing lights from camera : %d",
       "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 189,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffe84,\"Precomputing lights from camera : %d\");",
+      "line_number": 180,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffe8c,\"Precomputing lights from camera : %d\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
     },

@@ -12,10 +12,8 @@
 float core_stairs_cpp_FUN_005ba590(void)
 
 {
-  float fVar1;
   CDemonTriangle *triangle;
-  BADSPACEBASE *in_ESP;
-  int iVar2;
+  int iVar1;
   int in_stack_00000004;
   CVector3f *in_stack_00000008;
   CVector3f *in_stack_0000000c;
@@ -24,17 +22,18 @@ float core_stairs_cpp_FUN_005ba590(void)
   float local_20;
   float local_1c;
   float local_18;
+  float local_14;
   
   local_18 = 1.01;
   triangle = (CDemonTriangle *)(in_stack_00000004 + 0x170);
-  for (iVar2 = 0; iVar2 < *(int *)(in_stack_00000004 + 0x16c) * 2; iVar2 = iVar2 + 1) {
-    fVar1 = core_dtri_cpp_rayTriangleIntersection_FUN_0049a800
-                      (triangle,in_stack_00000008,in_stack_0000000c);
-    if (((0.0 <= fVar1) && (fVar1 < local_18)) && (fVar1 <= 1.0)) {
+  for (iVar1 = 0; iVar1 < *(int *)(in_stack_00000004 + 0x16c) * 2; iVar1 = iVar1 + 1) {
+    local_14 = core_dtri_cpp_rayTriangleIntersection_FUN_0049a800
+                         (triangle,in_stack_00000008,in_stack_0000000c);
+    if (((0.0 <= local_14) && (local_14 < local_18)) && (local_14 <= 1.0)) {
       local_24 = -(triangle->normal).x;
       local_20 = -(triangle->normal).y;
       local_1c = -(triangle->normal).z;
-      local_18 = fVar1;
+      local_18 = local_14;
       if (in_stack_00000010 != &local_24) {
         *in_stack_00000010 = local_24;
         in_stack_00000010[1] = local_20;

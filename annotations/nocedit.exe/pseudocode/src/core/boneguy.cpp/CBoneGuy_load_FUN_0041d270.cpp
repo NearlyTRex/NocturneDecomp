@@ -11,72 +11,77 @@
 void core_boneguy_cpp_CBoneGuy_load_FUN_0041d270(void)
 
 {
-  CQuaternion4f *quat_ptr;
+  CDeformableModelInstance *motion_controller;
   int iVar1;
   CVector3f *vector_ptr;
   CVector3f *vector_ptr_00;
-  CQuaternion4f *quat_ptr_00;
+  CQuaternion4f *quat_ptr;
   CEnemy *in_stack_00000004;
-  int in_stack_00000008;
-  int in_stack_0000000c;
-  int in_stack_00000010;
-  CDemonActor *in_stack_00000014;
-  int in_stack_00000018;
-  int in_stack_0000001c;
-  int in_stack_00000020;
-  int in_stack_00000024;
-  int in_stack_00000028;
-  int in_stack_00000030;
+  CQuaternion4f *local_18;
+  CDemonActor *local_14;
   
   core_enemy_cpp_CEnemy_serialize_FUN_004a9660(in_stack_00000004);
-  core_actor_cpp_serializeFloat_FUN_0040b770((float *)(in_stack_00000008 + 0xbe24),"speed")
-  ;
+  core_actor_cpp_serializeFloat_FUN_0040b770(&in_stack_00000004->speed,"speed");
   core_actor_cpp_serializedDeformableModelInstance_FUN_0040b970
-            ((CDeformableModelInstance *)(in_stack_0000000c + 0x158),"modelName");
+            (&(in_stack_00000004->base_character).model,"modelName");
   if (g_CBoneGuyClassVersion < 4) {
     core_actor_cpp_serializeFloat_FUN_0040b770
-              ((float *)(in_stack_00000010 + 0xbe34),"guardDistance");
+              (&in_stack_00000004->guard_distance,"guardDistance");
   }
+  motion_controller = &(in_stack_00000004->base_character).model;
   core_actor_cpp_serializeMotionState_FUN_0040b9f0
-            ((CMotionController *)((int)in_stack_00000014 + 0x158),"motion state");
+            (&motion_controller->motion_controller,"motion state");
   if (1 < g_CBoneGuyClassVersion) {
     core_actor_cpp_serializeString_FUN_0040b5c0
-              ((char **)(in_stack_00000018 + 0xbed0),"deathEvent");
+              ((char **)(in_stack_00000004[1].base_character.base_actor.actor_name + 0x1c),
+               "deathEvent");
     core_actor_cpp_serializeFloat_FUN_0040b770
-              ((float *)(in_stack_0000001c + 0xbf34),"recombineTime");
+              ((float *)(in_stack_00000004[1].base_character.base_actor.create_event + 8),
+               "recombineTime");
     core_actor_cpp_serializeInteger_FUN_0040b7f0
-              ((int *)(in_stack_00000020 + 0xc4dc),"blownUp");
+              ((int *)&in_stack_00000004[1].base_character.model.transformed_vertices[0x5f].y,
+               "blownUp");
     core_actor_cpp_serializeFloat_FUN_0040b770
-              ((float *)(in_stack_00000024 + 0xc4e0),"param");
+              (&in_stack_00000004[1].base_character.model.transformed_vertices[0x5f].z,
+               "param");
     core_actor_cpp_serializeInteger_FUN_0040b7f0
-              ((int *)(in_stack_00000028 + 0xbf38),"boxCount");
-    core_actor_cpp_serializePartStatus_FUN_0040bae0
-              ((CMotionController *)((int)in_stack_00000014 + 0x158),"partStatus");
+              ((int *)(in_stack_00000004[1].base_character.base_actor.create_event + 0xc),
+               "boxCount");
+    core_actor_cpp_serializePartStatus_FUN_0040bae0(motion_controller,"partStatus");
     iVar1 = 0;
-    if (0 < *(int *)(in_stack_00000030 + 0xbf38)) {
-      vector_ptr_00 = (CVector3f *)(in_stack_00000030 + 0xbf74);
-      quat_ptr_00 = (CQuaternion4f *)(in_stack_00000030 + 0xbf54);
-      in_stack_00000014 = (CDemonActor *)(in_stack_00000030 + 0xbf64);
-      vector_ptr = (CVector3f *)(in_stack_00000030 + 0xbf48);
+    if (0 < *(int *)(in_stack_00000004[1].base_character.base_actor.create_event + 0xc)) {
+      local_14 = (CDemonActor *)(in_stack_00000004[1].base_character.base_actor.create_event + 0x54)
+      ;
+      vector_ptr_00 =
+           (CVector3f *)(in_stack_00000004[1].base_character.base_actor.create_event + 0x48);
+      quat_ptr = (CQuaternion4f *)
+                 (in_stack_00000004[1].base_character.base_actor.create_event + 0x28);
+      local_18 = (CQuaternion4f *)
+                 (in_stack_00000004[1].base_character.base_actor.create_event + 0x38);
+      vector_ptr = (CVector3f *)(in_stack_00000004[1].base_character.base_actor.create_event + 0x1c)
+      ;
       do {
-        quat_ptr = (CQuaternion4f *)(iVar1 * 0x48 + in_stack_00000030 + 0xbf3c);
-        core_actor_cpp_serializeVector_FUN_0040b340((CVector3f *)quat_ptr,"boxListPos");
+        core_actor_cpp_serializeVector_FUN_0040b340
+                  ((CVector3f *)
+                   (in_stack_00000004[1].base_character.base_actor.create_event +
+                   iVar1 * 0x48 + 0x10),"boxListPos");
         core_actor_cpp_serializeVector_FUN_0040b340(vector_ptr,"boxListOrient");
-        core_actor_cpp_serializeQuaternion_FUN_0040b520(quat_ptr_00,"boxListDestOrient");
-        core_actor_cpp_serializeQuaternion_FUN_0040b520(quat_ptr,"boxListStartOrient");
+        core_actor_cpp_serializeQuaternion_FUN_0040b520(quat_ptr,"boxListDestOrient");
+        core_actor_cpp_serializeQuaternion_FUN_0040b520(local_18,"boxListStartOrient");
         core_actor_cpp_serializeVector_FUN_0040b340(vector_ptr_00,"sourcePos");
         iVar1 = iVar1 + 1;
         vector_ptr = vector_ptr + 6;
-        quat_ptr_00 = (CQuaternion4f *)&quat_ptr_00[4].y;
-        core_actor_cpp_serializeActor_FUN_0040b870(in_stack_00000014,"boxListPart");
+        quat_ptr = (CQuaternion4f *)&quat_ptr[4].y;
+        core_actor_cpp_serializeActor_FUN_0040b870(local_14,"boxListPart");
         vector_ptr_00 = vector_ptr_00 + 6;
-        in_stack_00000014 = (CDemonActor *)((in_stack_00000014->orient_matrix).m + 1);
-      } while (iVar1 < *(int *)(in_stack_00000030 + 0xbf38));
+        local_14 = (CDemonActor *)((local_14->orient_matrix).m + 1);
+        local_18 = (CQuaternion4f *)&local_18[4].y;
+      } while (iVar1 < *(int *)(in_stack_00000004[1].base_character.base_actor.create_event + 0xc));
     }
   }
   if ((2 < g_CBoneGuyClassVersion) && (g_CBoneGuyClassVersion < 5)) {
     core_actor_cpp_serializeFloat_FUN_0040b770
-              ((float *)(in_stack_00000030 + 0xbeb0),"victimHeight");
+              (&in_stack_00000004->victim_height,"victimHeight");
     return;
   }
   return;

@@ -9,7 +9,6 @@
 void crt_unknown_c_FUN_005ff0d0(void)
 
 {
-  BADSPACEBASE *in_ESP;
   char *in_stack_00000004;
   byte *local_4;
   

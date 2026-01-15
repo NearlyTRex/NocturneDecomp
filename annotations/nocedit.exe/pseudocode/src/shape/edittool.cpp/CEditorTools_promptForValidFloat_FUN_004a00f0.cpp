@@ -13,7 +13,6 @@ shape_edittool_cpp_CEditorTools_promptForValidFloat_FUN_004a00f0
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   undefined3 in_stack_00000011;
   char acStack_34 [32];
   float fStack_14;

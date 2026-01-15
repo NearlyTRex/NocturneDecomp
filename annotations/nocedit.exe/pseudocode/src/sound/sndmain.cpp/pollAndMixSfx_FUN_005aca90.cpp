@@ -14,62 +14,62 @@ sound_sndmain_cpp_pollAndMixSfx_FUN_005aca90
 {
   int *piVar1;
   SMixBuffer mix_buffer;
-  float fVar2;
-  float fVar3;
-  int iVar4;
-  int iVar5;
+  int iVar2;
+  int iVar3;
   CSfxSlot *this_ptr;
-  CSfxSlot *pCVar6;
-  int iVar7;
-  int iVar8;
-  BADSPACEBASE *in_ESP;
+  CSfxSlot *pCVar4;
+  int iVar5;
+  int iVar6;
   ulong count;
-  uint *puVar9;
-  uint *puVar10;
-  byte bVar11;
-  int in_stack_0000001c;
-  int in_stack_00000020;
-  byte in_stack_ffffff70 [20];
-  uint in_stack_ffffff84;
-  float *in_stack_ffffff88;
-  void *in_stack_ffffff8c;
-  uint uVar12;
-  CSfxSlot *pCVar13;
-  float fVar14;
-  int aiStack_3c [9];
-  int local_18;
-  CSfxSlot *local_14;
+  uint *puVar7;
+  uint *puVar8;
+  byte bVar9;
+  byte in_stack_ffffff68 [20];
+  uint in_stack_ffffff7c;
+  float *in_stack_ffffff80;
+  void *in_stack_ffffff84;
+  uint uVar10;
+  CSfxSlot *pCVar11;
+  float fVar12;
+  uint local_6c [8];
+  int local_4c;
+  int local_48;
+  int local_44 [9];
+  int local_20;
+  CSfxSlot *local_1c;
+  CSfxSlot *local_18;
+  float local_14;
   
-  bVar11 = 0;
+  bVar9 = 0;
   if (g_SoundLockCount < 1) {
     g_CurrentFilename = "..\\sound\\sndmain.cpp";
     g_CurrentLineNumber = 0x16ce;
-    in_stack_ffffff8c = (void *)0x5acd6b;
     core_main_c_displayErrorAndQuit_FUN_00506f10("pollSfx - must be locked!");
   }
-  if (0 < samples_per_sec) {
-    iVar4 = 0;
+  if (0 < num_channels) {
+    iVar2 = 0;
     do {
-      if (*(int *)((int)g_ChannelPrimaryBuffers + iVar4) == 0) {
+      if (*(int *)((int)g_ChannelPrimaryBuffers + iVar2) == 0) {
         return;
       }
-      iVar4 = iVar4 + 4;
-    } while (iVar4 < samples_per_sec * 4);
+      iVar2 = iVar2 + 4;
+    } while (iVar2 < num_channels * 4);
   }
-  if (((num_channels == g_AudioBitsPerSample) && (samples_per_sec == g_AudioChannelCount)) &&
-     (samples_per_block == g_AudioSampleRate)) {
+  if (((bits_per_sample == g_AudioBitsPerSample) && (num_channels == g_AudioChannelCount)) &&
+     (samples_per_sec == g_AudioSampleRate)) {
     sound_sndmain_cpp_calculateVirtualSpeakerPositions_FUN_005a5530();
-    iVar4 = 0;
-    if (0 < samples_per_block) {
+    iVar2 = 0;
+    if (0 < num_channels) {
       do {
-        iVar4 = iVar4 + 1;
-        aiStack_3c[iVar4] = *(int *)num_channels;
-        num_channels = num_channels + 4;
-      } while (iVar4 < samples_per_block);
+        iVar2 = iVar2 + 1;
+        local_44[iVar2] = (int)*channel_buffers;
+        channel_buffers = channel_buffers + 1;
+      } while (iVar2 < num_channels);
     }
-    local_18 = samples_per_block << 2;
-    local_14 = (CSfxSlot *)&g_SfxLastSlot;
-    for (; 0 < in_stack_0000001c; in_stack_0000001c = in_stack_0000001c - iVar5) {
+    local_20 = num_channels << 2;
+    local_18 = (CSfxSlot *)&g_SfxLastSlot;
+    local_1c = (CSfxSlot *)&g_SfxLastSlot;
+    for (; 0 < samples_per_block; samples_per_block = samples_per_block - iVar3) {
       if (g_MixBufferReadIndex < 1) {
         if (g_SoundLockCount < 1) {
           g_CurrentFilename = "..\\sound\\sndmain.cpp";
@@ -81,95 +81,96 @@ sound_sndmain_cpp_pollAndMixSfx_FUN_005aca90
           g_CurrentLineNumber = 0x4e2;
           core_main_c_displayErrorAndQuit_FUN_00506f10("nextMixingBuffer - shouldn't have any data pending!");
         }
-        iVar4 = 0;
+        iVar2 = 0;
         count = g_MixBufferSize * 4;
         if (0 < g_AudioChannelCount) {
-          iVar5 = 0;
+          iVar3 = 0;
           do {
-            in_stack_ffffff8c = (void *)0x5acbca;
             crt_string_c_memmove_FUN_005fe5e0
-                      (*(void **)((int)g_ChannelPrimaryBuffers + iVar5),
+                      (*(void **)((int)g_ChannelPrimaryBuffers + iVar3),
                        (void *)(g_MixBufferSize * 4 +
-                               (int)*(void **)((int)g_ChannelPrimaryBuffers + iVar5)),
+                               (int)*(void **)((int)g_ChannelPrimaryBuffers + iVar3)),
                        (g_NumMixBuffers + -1) * count);
-            piVar1 = (int *)((int)g_ChannelPrimaryBuffers + iVar5);
-            iVar5 = iVar5 + 4;
-            iVar4 = iVar4 + 1;
+            piVar1 = (int *)((int)g_ChannelPrimaryBuffers + iVar3);
+            iVar3 = iVar3 + 4;
+            iVar2 = iVar2 + 1;
+            in_stack_ffffff84 = (void *)0x5acbf4;
             crt_memory_c_memset_FUN_005fde40
                       ((void *)((g_NumMixBuffers + -1) * g_MixBufferSize * 4 + *piVar1),0,count);
-          } while (iVar4 < g_AudioChannelCount);
+          } while (iVar2 < g_AudioChannelCount);
         }
-        aiStack_3c[0] = g_AudioSampleRate;
+        local_4c = g_MixBufferSize;
+        local_48 = g_AudioChannelCount;
+        local_44[0] = g_AudioSampleRate;
         if (0 < g_AudioChannelCount) {
-          iVar4 = 0;
+          iVar2 = 0;
           do {
-            iVar5 = iVar4 + 4;
-            *(uint *)(&stack0xffffff9c + iVar4) =
-                 *(uint *)((int)g_ChannelPrimaryBuffers + iVar4);
-            iVar4 = iVar5;
-          } while (iVar5 < g_AudioChannelCount * 4);
+            iVar3 = iVar2 + 4;
+            *(uint *)((int)local_6c + iVar2) =
+                 *(uint *)((int)g_ChannelPrimaryBuffers + iVar2);
+            iVar2 = iVar3;
+          } while (iVar3 < g_AudioChannelCount * 4);
         }
-        pCVar6 = local_14;
-        fVar3 = (float)g_MixBufferSize;
-        fVar2 = (float)g_AudioSampleRate;
+        pCVar4 = local_1c;
+        local_14 = (float)g_MixBufferSize / (float)g_AudioSampleRate;
         this_ptr = g_SfxSlots;
         do {
-          uVar12 = 0x5acc5f;
-          pCVar13 = this_ptr;
-          fVar14 = fVar3 / fVar2;
-          sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(this_ptr,fVar3 / fVar2);
+          uVar10 = 0x5acc5f;
+          pCVar11 = this_ptr;
+          fVar12 = local_14;
+          sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(this_ptr,local_14);
           this_ptr = this_ptr + 1;
-        } while (this_ptr != pCVar6);
-        pCVar6 = g_SfxSlots;
+        } while (this_ptr != pCVar4);
+        pCVar4 = g_SfxSlots;
         do {
-          puVar9 = (uint *)&stack0xffffff9c;
-          puVar10 = (uint *)&stack0xffffff70;
-          for (iVar4 = 0xb; iVar4 != 0; iVar4 = iVar4 + -1) {
-            *puVar10 = *puVar9;
-            puVar9 = puVar9 + (uint)bVar11 * -2 + 1;
-            puVar10 = puVar10 + (uint)bVar11 * -2 + 1;
+          puVar7 = local_6c;
+          puVar8 = (uint *)&stack0xffffff68;
+          for (iVar2 = 0xb; iVar2 != 0; iVar2 = iVar2 + -1) {
+            *puVar8 = *puVar7;
+            puVar7 = puVar7 + (uint)bVar9 * -2 + 1;
+            puVar8 = puVar8 + (uint)bVar9 * -2 + 1;
           }
-          mix_buffer.channel_buffers[5] = (float *)in_stack_ffffff84;
-          mix_buffer.channel_buffers[0] = (float *)in_stack_ffffff70._0_4_;
-          mix_buffer.channel_buffers[1] = (float *)in_stack_ffffff70._4_4_;
-          mix_buffer.channel_buffers[2] = (float *)in_stack_ffffff70._8_4_;
-          mix_buffer.channel_buffers[3] = (float *)in_stack_ffffff70._12_4_;
-          mix_buffer.channel_buffers[4] = (float *)in_stack_ffffff70._16_4_;
-          mix_buffer.channel_buffers[6] = in_stack_ffffff88;
-          mix_buffer.channel_buffers[7] = in_stack_ffffff8c;
-          mix_buffer.num_output_samples = uVar12;
-          mix_buffer.num_channels = (int)pCVar13;
-          mix_buffer.output_sample_rate = (int)fVar14;
-          sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(pCVar6,mix_buffer);
-          pCVar6 = pCVar6 + 1;
-        } while (pCVar6 != (CSfxSlot *)&g_SfxLastSlot);
+          mix_buffer.channel_buffers[5] = (float *)in_stack_ffffff7c;
+          mix_buffer.channel_buffers[0] = (float *)in_stack_ffffff68._0_4_;
+          mix_buffer.channel_buffers[1] = (float *)in_stack_ffffff68._4_4_;
+          mix_buffer.channel_buffers[2] = (float *)in_stack_ffffff68._8_4_;
+          mix_buffer.channel_buffers[3] = (float *)in_stack_ffffff68._12_4_;
+          mix_buffer.channel_buffers[4] = (float *)in_stack_ffffff68._16_4_;
+          mix_buffer.channel_buffers[6] = in_stack_ffffff80;
+          mix_buffer.channel_buffers[7] = in_stack_ffffff84;
+          mix_buffer.num_output_samples = uVar10;
+          mix_buffer.num_channels = (int)pCVar11;
+          mix_buffer.output_sample_rate = (int)fVar12;
+          sound_sndmain_cpp_CSfxSlot_mix_FUN_005a75e0(pCVar4,mix_buffer);
+          pCVar4 = pCVar4 + 1;
+        } while (pCVar4 != local_18);
         g_MixBufferReadIndex = g_MixBufferSize;
         g_MixBufferCount = g_MixBufferCount + 1;
         g_MixBufferWriteIndex = 0;
       }
-      iVar4 = local_18;
-      iVar5 = g_MixBufferReadIndex;
-      if (in_stack_0000001c < g_MixBufferReadIndex) {
-        iVar5 = in_stack_0000001c;
+      iVar2 = local_20;
+      iVar3 = g_MixBufferReadIndex;
+      if (samples_per_block < g_MixBufferReadIndex) {
+        iVar3 = samples_per_block;
       }
-      if (0 < samples_per_block) {
-        iVar7 = 0;
+      if (0 < num_channels) {
+        iVar5 = 0;
         do {
-          in_stack_ffffff8c = *(void **)((int)aiStack_3c + iVar7 + 4);
-          in_stack_ffffff88 =
-               (float *)(g_MixBufferWriteIndex * 4 + *(int *)((int)g_ChannelPrimaryBuffers + iVar7))
+          in_stack_ffffff84 = *(void **)((int)local_44 + iVar5 + 4);
+          in_stack_ffffff80 =
+               (float *)(g_MixBufferWriteIndex * 4 + *(int *)((int)g_ChannelPrimaryBuffers + iVar5))
           ;
-          in_stack_ffffff84 = 0x5acd06;
+          in_stack_ffffff7c = 0x5acd06;
           sound_sndmain_cpp_convertMixBufToOutput_FUN_005a5b80
-                    (in_stack_ffffff88,in_stack_ffffff8c,samples_per_sec,iVar5,in_stack_00000020);
-          iVar8 = iVar7 + 4;
-          *(int *)((int)aiStack_3c + iVar7 + 8) =
-               *(int *)((int)aiStack_3c + iVar7 + 8) + in_stack_00000020 * iVar5;
-          iVar7 = iVar8;
-        } while (iVar8 < iVar4);
+                    (in_stack_ffffff80,in_stack_ffffff84,bits_per_sample,iVar3,block_align);
+          iVar6 = iVar5 + 4;
+          *(int *)((int)local_44 + iVar5 + 4) =
+               *(int *)((int)local_44 + iVar5 + 4) + block_align * iVar3;
+          iVar5 = iVar6;
+        } while (iVar6 < iVar2);
       }
-      g_MixBufferReadIndex = g_MixBufferReadIndex - iVar5;
-      g_MixBufferWriteIndex = g_MixBufferWriteIndex + iVar5;
+      g_MixBufferReadIndex = g_MixBufferReadIndex - iVar3;
+      g_MixBufferWriteIndex = g_MixBufferWriteIndex + iVar3;
     }
   }
   return;

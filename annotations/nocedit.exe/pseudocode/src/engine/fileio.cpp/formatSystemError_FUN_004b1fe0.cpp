@@ -11,6 +11,7 @@ void __cdecl engine_fileio_cpp_formatSystemError_FUN_004b1fe0(char *dest_buffer)
 {
   int *piVar1;
   char *pcVar2;
+  char *buffer;
   
   piVar1 = (int *)crt_errno_c_errno_FUN_00601450();
   pcVar2 = crt_string_c_strerror_FUN_00601470(*piVar1);
@@ -18,15 +19,15 @@ void __cdecl engine_fileio_cpp_formatSystemError_FUN_004b1fe0(char *dest_buffer)
     return;
   }
   do {
-    pcVar2 = dest_buffer;
+    buffer = dest_buffer;
     if (*dest_buffer == '\0') goto LAB_004b201b;
     if (*dest_buffer == '\0') break;
-    pcVar2 = dest_buffer + 1;
-    if (*pcVar2 == '\0') goto LAB_004b201b;
+    buffer = dest_buffer + 1;
+    if (*buffer == '\0') goto LAB_004b201b;
     dest_buffer = dest_buffer + 2;
-  } while (*pcVar2 != '\0');
-  pcVar2 = (char *)0x0;
+  } while (*buffer != '\0');
+  buffer = (char *)0x0;
 LAB_004b201b:
-  crt_stdio_c_sprintf_FUN_005fdbd0(pcVar2,"\n%s");
+  crt_stdio_c_sprintf_FUN_005fdbd0(buffer,"\n%s",pcVar2);
   return;
 }

@@ -1,23 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 112,
-    "complexity_score": 589,
+    "complexity_score": 495,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 1,
-    "pseudocode_lines": 79,
-    "suspect_count": 47,
+    "pseudocode_lines": 70,
+    "suspect_count": 40,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
       "pointer_cast",
-      "register_param",
       "stack_param",
-      "stack_ref",
-      "unknown_field"
+      "unaffected_reg"
     ],
-    "total_lines": 191
+    "total_lines": 182
   },
   "cross_references": [],
   "function": {
@@ -263,143 +260,94 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
+      "description": "Unaffected register variable",
       "line": 9,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 9,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
+      "match": "unaff_EDI",
+      "text": "CQuaternion4f *unaff_EDI;",
+      "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 12,
-      "match": "in_stack_00000028",
-      "text": "CQuaternion4f *in_stack_00000028;",
+      "match": "in_stack_00000018",
+      "text": "CDeformableModel_MotionBlendWeightFunc *in_stack_00000018;",
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_0000002c",
-      "text": "int in_stack_0000002c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000034",
-      "text": "CDeformableModel_MotionBlendWeightFunc *in_stack_00000034;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_ffffff5c",
-      "text": "float in_stack_ffffff5c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_ffffff64",
-      "text": "CQuaternion4f *in_stack_ffffff64;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_ffffff68",
-      "text": "CQuaternion4f *in_stack_ffffff68;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 46,
-      "match": "in_stack_ffffff5c",
-      "text": "core_xform_cpp_quaternionFromAngleX_FUN_005f79b0((CQuaternion4f *)CStack_18.y,in_stack_ffffff5c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 47,
-      "match": "&stack0xffffff64",
-      "text": "angle_radians = &stack0xffffff64;",
-      "type": "stack_ref"
+      "description": "Unaffected register variable",
+      "line": 39,
+      "match": "unaff_EDI",
+      "text": "core_xform_cpp_quaternionFromAngleX_FUN_005f79b0((CQuaternion4f *)local_20.x,(float)unaff_EDI);",
+      "type": "unaffected_reg"
     },
     {
       "description": "Complex pointer cast",
-      "line": 48,
-      "match": "(uint *)((int)",
-      "text": "puVar2 = (uint *)((int)&local_24 + (uint)bVar3 * -8 + (uint)bVar3 * -8);",
+      "line": 42,
+      "match": "(float *)((int)",
+      "text": "pfVar2 = (float *)((int)&local_ac + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 49,
-      "match": "&stack0xffffff64",
-      "text": "*(CQuaternion4f **)(&stack0xffffff64 + (uint)bVar3 * -8) = local_2c[(uint)bVar3 * -2 + 1];",
-      "type": "stack_ref"
+      "description": "Complex pointer cast",
+      "line": 43,
+      "match": "(float *)((int)",
+      "text": "*(float *)((int)&local_ac + (uint)bVar3 * -8 + 4) = afStack_68[(uint)bVar3 * -2 + 0xc];",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 57,
-      "match": "._4_4_",
-      "text": "auStack_80._4_4_ = CStack_64.z;",
-      "type": "unknown_field"
+      "description": "Complex pointer cast",
+      "line": 50,
+      "match": "(float *)((int)",
+      "text": "pfVar2 = (float *)((int)&local_8c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Complex pointer cast",
+      "line": 51,
+      "match": "(float *)((int)",
+      "text": "*(float *)((int)&local_8c + (uint)bVar3 * -8 + 4) = afStack_68[(uint)bVar3 * -2];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 58,
+      "match": "(float *)((int)",
+      "text": "pfVar2 = (float *)((int)&local_7c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 59,
+      "match": "(float *)((int)",
+      "text": "*(float *)((int)&local_7c + (uint)bVar3 * -8 + 4) = afStack_68[(uint)bVar3 * -2 + 4];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
       "line": 63,
-      "match": "in_stack_00000028",
-      "text": "core_xform_cpp_multiplyQuaternion_FUN_005f7640(in_stack_00000028,quat1_ptr,quat2_ptr);",
-      "type": "stack_param"
+      "match": "unaff_EDI",
+      "text": "core_xform_cpp_multiplyQuaternion_FUN_005f7640(&local_7c,quat2_ptr,unaff_EDI);",
+      "type": "unaffected_reg"
     },
     {
       "description": "Complex pointer cast",
       "line": 65,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&CStack_64 + (uint)bVar3 * -8) = auStack_40[(uint)bVar3 * -2];",
+      "match": "(float *)((int)",
+      "text": "pfVar2 = (float *)((int)&local_9c + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 66,
+      "match": "(float *)((int)",
+      "text": "*(float *)((int)&local_9c + (uint)bVar3 * -8 + 4) = afStack_68[(uint)bVar3 * -2 + 8];",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 70,
-      "match": "in_stack_ffffff64",
-      "text": "core_xform_cpp_multiplyQuaternion_FUN_005f7640(&CStack_64,in_stack_ffffff64,in_stack_ffffff68);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 70,
-      "match": "in_stack_ffffff68",
-      "text": "core_xform_cpp_multiplyQuaternion_FUN_005f7640(&CStack_64,in_stack_ffffff64,in_stack_ffffff68);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 79,
-      "match": "in_stack_00000028",
-      "text": "(this_ptr,(CQuaternion4f *)auStack_80,(float)in_stack_00000028,in_stack_0000002c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 79,
-      "match": "in_stack_0000002c",
-      "text": "(this_ptr,(CQuaternion4f *)auStack_80,(float)in_stack_00000028,in_stack_0000002c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 80,
-      "match": "in_stack_00000034",
-      "text": "in_stack_00000034);",
+      "line": 71,
+      "match": "in_stack_00000018",
+      "text": "(this_ptr,&local_9c,blend_weight,bone_index,in_stack_00000018);",
       "type": "stack_param"
     },
     {

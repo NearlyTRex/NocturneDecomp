@@ -16,15 +16,8 @@ engine_winfont_cpp_CWinFont_createTextBackground_FUN_005f2860
   HBITMAP h;
   HBRUSH h_00;
   HGDIOBJ pvVar3;
-  BADSPACEBASE *in_ESP;
-  uint uStack0000002c;
-  ULONG_PTR UStack0000003c;
-  DWORD DStack_38;
-  int iStack_34;
-  int iStack_30;
-  WORD WStack_2c;
-  WORD WStack_2a;
-  DWORD DStack_28;
+  BITMAPINFO BStack_48;
+  LOGBRUSH LStack_1c;
   
   if (width < 1) {
     width = g_WindowWidth;
@@ -37,27 +30,32 @@ engine_winfont_cpp_CWinFont_createTextBackground_FUN_005f2860
     engine_winfont_cpp_CWinFont_reset_FUN_005f2a30(this_ptr);
     pHVar2 = (*CreateCompatibleDC)((HDC)0x0);
     this_ptr->deviceContextHandle = pHVar2;
-    crt_memory_c_memset_FUN_005fde40(&stack0xffffffc4,0,0x2c);
-    DStack_38 = 0x28;
-    WStack_2c = 1;
-    iStack_30 = -height;
-    WStack_2a = (WORD)g_BitsPerPixel;
-    DStack_28 = 0;
-    iStack_34 = width;
-    h = (*CreateDIBSection)(this_ptr->deviceContextHandle,(BITMAPINFO *)&DStack_38,0,
-                            &this_ptr->ppvBits,(HANDLE)0x0,0);
+    crt_memory_c_memset_FUN_005fde40(&BStack_48,0,0x2c);
+    BStack_48.bmiHeader.biSize = 0x28;
+    BStack_48.bmiHeader.biPlanes = 1;
+    BStack_48.bmiHeader.biSizeImage = 0;
+    BStack_48.bmiHeader.biClrUsed = 0;
+    BStack_48.bmiHeader.biHeight = -height;
+    BStack_48.bmiHeader.biBitCount = (WORD)g_BitsPerPixel;
+    BStack_48.bmiHeader.biCompression = 0;
+    BStack_48.bmiHeader.biXPelsPerMeter = 0;
+    BStack_48.bmiHeader.biYPelsPerMeter = 0;
+    BStack_48.bmiHeader.biClrImportant = 0;
+    BStack_48.bmiHeader.biWidth = width;
+    h = (*CreateDIBSection)(this_ptr->deviceContextHandle,&BStack_48,0,&this_ptr->ppvBits,
+                            (HANDLE)0x0,0);
     this_ptr->dibHandle = h;
     iVar1 = 0;
     if (h != (HBITMAP)0x0) {
-      DStack_28 = 0x5f2976;
       (*SelectObject)(this_ptr->deviceContextHandle,h);
       (*SetBkMode)(this_ptr->deviceContextHandle,2);
       (*SetBkColor)(this_ptr->deviceContextHandle,0xff00ff);
-      UStack0000003c = 0;
-      h_00 = (*CreateBrushIndirect)((LOGBRUSH *)&stack0x00000034);
+      LStack_1c.lbStyle = 0;
+      LStack_1c.lbColor = 0xff00ff;
+      LStack_1c.lbHatch = 0;
+      h_00 = (*CreateBrushIndirect)(&LStack_1c);
       (*SelectObject)(this_ptr->deviceContextHandle,h_00);
       (*Rectangle)(this_ptr->deviceContextHandle,0,-this_ptr->top,this_ptr->right,0);
-      uStack0000002c = 0x5f29e7;
       (*DeleteObject)(h_00);
       pvVar3 = (*SelectObject)(this_ptr->deviceContextHandle,this_ptr->fontHandle);
       this_ptr->objectHandle = pvVar3;

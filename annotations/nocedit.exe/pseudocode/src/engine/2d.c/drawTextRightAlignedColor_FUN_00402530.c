@@ -10,9 +10,8 @@ void __cdecl engine_2d_c_drawTextRightAlignedColor_FUN_00402530(char *text,int y
 
 {
   int iVar1;
-  int unaff_EBX;
   
   iVar1 = engine_2d_c_getStringWidth_FUN_004018a0(text);
-  engine_2d_c_drawTextColor_FUN_00402430((char *)y_pos,(right_x - iVar1) + 2,unaff_EBX);
+  engine_2d_c_drawTextColor_FUN_00402430(text,(y_pos - iVar1) + 2,right_x);
   return;
 }

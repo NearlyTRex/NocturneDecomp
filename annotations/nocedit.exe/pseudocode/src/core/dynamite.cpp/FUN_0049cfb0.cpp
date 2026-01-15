@@ -19,13 +19,11 @@ void core_dynamite_cpp_FUN_0049cfb0(void)
   int iVar2;
   CBoundingBox3D *pCVar3;
   CVector3f *pCVar4;
-  BADSPACEBASE *in_ESP;
   CWeapon *in_stack_00000004;
   float in_stack_00000008;
   CBoundingBox3D CStack_60;
   CBoundingBox3D local_48;
-  byte auStack_30 [8];
-  float fStack_28;
+  CVector3f CStack_30;
   float fStack_24;
   float fStack_20;
   float fStack_1c;
@@ -57,19 +55,19 @@ void core_dynamite_cpp_FUN_0049cfb0(void)
                            (&in_stack_00000004->base_actor,&local_48);
         fStack_24 = (pCVar3->min).x + (pCVar3->max).x;
         fStack_20 = (pCVar3->min).y + (pCVar3->max).y;
-        auStack_30._0_4_ = fStack_24 * 0.5f;
+        CStack_30.x = fStack_24 * 0.5f;
         fStack_1c = (pCVar3->min).z + (pCVar3->max).z;
-        auStack_30._4_4_ = fStack_20 * 0.5f;
-        fStack_28 = fStack_1c * 0.5f;
+        CStack_30.y = fStack_20 * 0.5f;
+        CStack_30.z = fStack_1c * 0.5f;
         pCVar3 = (*((in_stack_00000004->base_actor).vtable)->getBoundingBox)
                            (&in_stack_00000004->base_actor,&CStack_60);
-        fStack_28 = (pCVar3->max).z;
+        CStack_30.z = (pCVar3->max).z;
         pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                           (&in_stack_00000004->base_actor,&CStack_18,(CVector3f *)auStack_30);
-        if ((CVector3f *)(auStack_30 + 4) != pCVar4) {
-          auStack_30._0_4_ = pCVar4->x;
-          auStack_30._4_4_ = pCVar4->y;
-          fStack_28 = pCVar4->z;
+                           (&in_stack_00000004->base_actor,&CStack_18,&CStack_30);
+        if (&CStack_30 != pCVar4) {
+          CStack_30.x = pCVar4->x;
+          CStack_30.y = pCVar4->y;
+          CStack_30.z = pCVar4->z;
         }
         core_fire_cpp_CFireEffect_FUN_004c79d0(g_CFireEffectPtr);
         return;

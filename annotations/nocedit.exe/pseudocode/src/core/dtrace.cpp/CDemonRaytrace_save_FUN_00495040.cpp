@@ -11,7 +11,6 @@ core_dtrace_cpp_CDemonRaytrace_save_FUN_00495040(CDemonRaytrace *this_ptr,char *
 
 {
   FILE *file_handle;
-  CDemonRaytrace *in_stack_0000000c;
   
   file_handle = engine_dosio_c_getFile_FUN_00481a50("data",filename,"wb");
   if (file_handle == (FILE *)0x0) {
@@ -19,7 +18,7 @@ core_dtrace_cpp_CDemonRaytrace_save_FUN_00495040(CDemonRaytrace *this_ptr,char *
     g_CurrentLineNumber = 0x25f;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonRaytrace::save - Unable to save file");
   }
-  core_dtrace_cpp_CDemonRaytrace_saveBinary_FUN_00494f50(in_stack_0000000c,file_handle);
+  core_dtrace_cpp_CDemonRaytrace_saveBinary_FUN_00494f50(this_ptr,file_handle);
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\core\\dtrace.cpp",0x261);
   return;
 }

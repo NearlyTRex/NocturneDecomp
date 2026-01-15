@@ -1,21 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 509,
-    "complexity_score": 342,
+    "complexity_score": 311,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 21,
-    "pseudocode_lines": 242,
-    "suspect_count": 7,
+    "pseudocode_lines": 241,
+    "suspect_count": 5,
     "suspect_types": [
-      "badspacebase",
       "pointer_cast",
-      "register_param",
       "stack_param",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 751
+    "total_lines": 750
   },
   "cross_references": [],
   "function": {
@@ -715,43 +713,29 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 18,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 18,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 18,
       "match": "in_stack_00000008",
       "text": "float in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 55,
+      "line": 54,
       "match": "(uint *)((int)",
       "text": "uVar4 = *(uint *)((int)g_HeroActors + iVar10);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 138,
+      "line": 137,
       "match": "in_stack_00000008",
       "text": "fVar1 = *(float *)(this_ptr->field1_0x158 + 0x214) - in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 159,
+      "line": 158,
       "match": "code *",
       "text": "iVar8 = (**(code **)(*(int *)(iVar10 + 0x154) + 0x54))();",
       "type": "unresolved_funcptr"

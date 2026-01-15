@@ -19,7 +19,6 @@ void core_scat_cpp_FUN_00558720(void)
   CVector3f *pCVar5;
   float *pfVar6;
   float fVar7;
-  BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000004;
   float in_stack_00000008;
   int in_stack_0000000c;

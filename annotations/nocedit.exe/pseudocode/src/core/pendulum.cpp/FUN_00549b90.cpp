@@ -17,7 +17,6 @@ void core_pendulum_cpp_FUN_00549b90(void)
   CVector3f *pCVar3;
   int extraout_EBX;
   CDemonActor *this_ptr;
-  BADSPACEBASE *in_ESP;
   float10 fVar4;
   float10 fVar5;
   float10 fVar6;

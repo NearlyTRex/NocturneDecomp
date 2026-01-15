@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 179,
-    "complexity_score": 150,
+    "complexity_score": 106,
     "cross_reference_count": 11,
     "function_call_count": 2,
     "global_count": 7,
-    "pseudocode_lines": 75,
-    "suspect_count": 6,
+    "pseudocode_lines": 76,
+    "suspect_count": 2,
     "suspect_types": [
       "call_esp_preserve",
-      "unaffected_reg",
       "variadic_preserve"
     ],
-    "total_lines": 254
+    "total_lines": 255
   },
   "cross_references": [
     {
@@ -214,34 +213,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 9,
-      "match": "unaff_EBP",
-      "text": "uint unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 20,
-      "match": "unaff_EBP",
-      "text": "return unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 72,
-      "match": "unaff_EBP",
-      "text": "unaff_EBP = unaff_EBP |",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 72,
-      "match": "unaff_EBP",
-      "text": "unaff_EBP = unaff_EBP |",
-      "type": "unaffected_reg"
-    },
     {
       "call_address": "0052efdb",
       "caller_has_stack_issues": false,

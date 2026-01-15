@@ -15,7 +15,6 @@ int __cdecl crt_process_c_spawnvp_with_path_search_FUN_0060e6a0(int mode,char *p
   int iVar3;
   char *pcVar4;
   char *dest;
-  BADSPACEBASE *in_ESP;
   uint count;
   char acStack_11c [260];
   uint uStack_18;

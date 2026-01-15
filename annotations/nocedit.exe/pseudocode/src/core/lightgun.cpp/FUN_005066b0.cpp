@@ -15,22 +15,25 @@ void core_lightgun_cpp_FUN_005066b0(void)
   float fVar1;
   int iVar2;
   CVector3f *input_local_point;
-  BADSPACEBASE *in_ESP;
-  float unaff_EBP;
-  float unaff_ESI;
-  float unaff_EDI;
   CDemonActor *in_stack_00000004;
+  float fStack_74;
+  float fStack_70;
+  float fStack_6c;
+  float fStack_68;
+  float fStack_64;
+  float fStack_60;
   CVector3f CStack_5c;
-  CVector3f CStack_50;
-  float fStack_40;
-  CVector3f CStack_3c;
+  float fStack_50;
+  float fStack_4c;
+  float fStack_48;
+  CVector3f CStack_44;
+  float fStack_38;
+  float fStack_34;
   float fStack_30;
   float fStack_2c;
   float fStack_28;
   float fStack_24;
-  float fStack_20;
-  float fStack_1c;
-  float fStack_18;
+  CVector3f CStack_20;
   float fStack_14;
   
   iVar2 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
@@ -38,34 +41,34 @@ void core_lightgun_cpp_FUN_005066b0(void)
     input_local_point = (CVector3f *)(*in_stack_00000004->vtable[1].renderOpaque)(in_stack_00000004)
     ;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-              (in_stack_00000004,&CStack_3c,input_local_point);
-    CStack_50.z = in_stack_00000004[2].orient.heading;
-    CStack_50.x = 0.0;
-    CStack_50.y = 0.0;
-    core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
-              (in_stack_00000004,(CVector3f *)&fStack_14,&CStack_50);
-    fStack_40 = -unaff_EBP;
-    CStack_3c.x = -unaff_EDI;
-    CStack_3c.y = -unaff_ESI;
-    fStack_28 = CStack_3c.z + unaff_EBP;
-    fStack_24 = fStack_30 + unaff_EDI;
-    fStack_20 = fStack_2c + unaff_ESI;
-    if (&fStack_20 != &fStack_40) {
-      fStack_1c = fStack_40;
-      fStack_18 = CStack_3c.x;
-      fStack_14 = CStack_3c.y;
+              (in_stack_00000004,&CStack_44,input_local_point);
+    CStack_5c.z = in_stack_00000004[2].orient.heading;
+    CStack_5c.x = 0.0;
+    CStack_5c.y = 0.0;
+    core_actor_cpp_CDemonActor_transformVector_FUN_00408e80(in_stack_00000004,&CStack_20,&CStack_5c)
+    ;
+    fStack_50 = -CStack_20.x;
+    fStack_4c = -CStack_20.y;
+    fStack_48 = -CStack_20.z;
+    fStack_38 = CStack_44.x + CStack_20.x;
+    fStack_34 = CStack_44.y + CStack_20.y;
+    fStack_30 = CStack_44.z + CStack_20.z;
+    if (&fStack_2c != &fStack_50) {
+      fStack_2c = fStack_50;
+      fStack_28 = fStack_4c;
+      fStack_24 = fStack_48;
     }
-    fVar1 = SQRT(fStack_14 * fStack_14 + fStack_1c * fStack_1c + fStack_18 * fStack_18);
+    fVar1 = SQRT(fStack_24 * fStack_24 + fStack_2c * fStack_2c + fStack_28 * fStack_28);
     if (fVar1 <= 0.0) {
-      fStack_18 = 0.0;
-      fStack_1c = 0.0;
-      fStack_14 = 0.0;
+      fStack_28 = 0.0;
+      fStack_2c = 0.0;
+      fStack_24 = 0.0;
     }
     else {
       fVar1 = 1.0 / fVar1;
-      fStack_1c = fStack_1c * fVar1;
-      fStack_18 = fStack_18 * fVar1;
-      fStack_14 = fStack_14 * fVar1;
+      fStack_2c = fStack_2c * fVar1;
+      fStack_28 = fStack_28 * fVar1;
+      fStack_24 = fStack_24 * fVar1;
     }
     fpatan((float10)18 / (float10)_DAT_00660a44,(float10)1);
     core_fire_cpp_CFireEffect_FUN_004c7f20(g_CFireEffectPtr);
@@ -76,29 +79,30 @@ void core_lightgun_cpp_FUN_005066b0(void)
         iVar2 = iVar2 + 1;
         core_fire_cpp_CFireEffect_FUN_004c7f20(g_CFireEffectPtr);
       } while (iVar2 < 10);
-      CStack_50.y = fStack_1c - fStack_28;
-      fStack_2c = fStack_20 - fStack_2c;
-      CStack_50.z = fStack_18 - fStack_24;
-      fVar1 = SQRT(CStack_50.z * CStack_50.z + fStack_2c * fStack_2c + CStack_50.y * CStack_50.y);
-      if (0.0 < fVar1) {
-        fVar1 = 1.0 / fVar1;
-        CStack_50.x = fStack_2c * fVar1;
-        CStack_50.y = CStack_50.y * fVar1;
-        CStack_50.z = CStack_50.z * fVar1;
+      CStack_44.y = fStack_34 - CStack_44.y;
+      CStack_44.x = fStack_38 - CStack_44.x;
+      CStack_44.z = fStack_30 - CStack_44.z;
+      fStack_60 = SQRT(CStack_44.z * CStack_44.z +
+                       CStack_44.x * CStack_44.x + CStack_44.y * CStack_44.y);
+      if (0.0 < fStack_60) {
+        fStack_60 = 1.0 / fStack_60;
+        fStack_68 = CStack_44.x * fStack_60;
+        fStack_64 = CStack_44.y * fStack_60;
+        fStack_60 = CStack_44.z * fStack_60;
       }
       else {
-        CStack_50.y = 0.0;
-        CStack_50.x = 0.0;
-        CStack_50.z = 0.0;
+        fStack_64 = 0.0;
+        fStack_68 = 0.0;
+        fStack_60 = 0.0;
       }
-      CStack_5c.z = (float)in_stack_00000004[4].location.area_id * (float)0.015625;
-      CStack_5c.x = CStack_50.x * CStack_5c.z;
-      CStack_5c.y = CStack_50.y * CStack_5c.z;
-      CStack_5c.z = CStack_50.z * CStack_5c.z;
-      if (&CStack_50 != &CStack_5c) {
-        CStack_50.x = CStack_5c.x;
-        CStack_50.y = CStack_5c.y;
-        CStack_50.z = CStack_5c.z;
+      fStack_14 = (float)in_stack_00000004[4].location.area_id * (float)0.015625;
+      fStack_74 = fStack_68 * fStack_14;
+      fStack_70 = fStack_64 * fStack_14;
+      fStack_6c = fStack_60 * fStack_14;
+      if (&fStack_68 != &fStack_74) {
+        fStack_68 = fStack_74;
+        fStack_64 = fStack_70;
+        fStack_60 = fStack_6c;
       }
       iVar2 = 0;
       do {

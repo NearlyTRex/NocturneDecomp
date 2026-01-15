@@ -12,12 +12,11 @@ void core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_00543970(void)
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   int *piVar2;
   int *piVar3;
   byte bVar4;
   int *in_stack_00000004;
-  int aiStack_3b [10];
+  int local_3f [11];
   
   bVar4 = 0;
   if (*in_stack_00000004 != 2) {
@@ -41,7 +40,7 @@ void core_netgame_cpp_CNetGame_sendSimFrameAck_FUN_00543970(void)
     core_main_c_displayErrorAndQuit_FUN_00506f10("CNetGame::sendSimFrameAck - I'm not in player list");
   }
   piVar2 = in_stack_00000004 + in_stack_00000004[0x45] * 0x1e + 0x1b;
-  piVar3 = aiStack_3b;
+  piVar3 = local_3f;
   for (iVar1 = 0xb; iVar1 != 0; iVar1 = iVar1 + -1) {
     *piVar3 = *piVar2;
     piVar2 = piVar2 + (uint)bVar4 * -2 + 1;

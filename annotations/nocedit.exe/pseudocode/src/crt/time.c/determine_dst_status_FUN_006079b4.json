@@ -1,19 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 320,
-    "complexity_score": 489,
+    "complexity_score": 236,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 19,
-    "pseudocode_lines": 119,
-    "suspect_count": 35,
+    "pseudocode_lines": 121,
+    "suspect_count": 10,
     "suspect_types": [
       "call_esp_preserve",
       "pointer_cast",
-      "special_crt_function",
-      "unaffected_reg"
+      "special_crt_function"
     ],
-    "total_lines": 439
+    "total_lines": 441
   },
   "cross_references": [
     {
@@ -279,200 +278,25 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 7,
-      "match": "unaff_EBP",
-      "text": "int unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 10,
-      "match": "unaff_ESI",
-      "text": "int unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 12,
-      "match": "unaff_EDI",
-      "text": "uint unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 29,
-      "match": "unaff_EBP",
-      "text": "iVar1 = *(int *)(&g_DaysInMonth_Normal + unaff_EBP);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 30,
-      "match": "unaff_EBP",
-      "text": "iVar4 = *(int *)((int)&inf + unaff_EBP * 2 + 6);",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 31,
       "match": "(int *)((int)",
-      "text": "iVar4 = *(int *)((int)&inf + unaff_EBP * 2 + 6);",
+      "text": "iVar4 = *(int *)((int)&inf + iVar5 * 2 + 6);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 33,
-      "match": "unaff_EBP",
-      "text": "iVar1 = *(int *)(&g_DaysInMonth_Leap + unaff_EBP);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 34,
-      "match": "unaff_EBP",
-      "text": "iVar4 = *(int *)(&DAT_00665f50 + unaff_EBP * 2);",
-      "type": "unaffected_reg"
     },
     {
       "description": "Complex pointer cast",
-      "line": 36,
+      "line": 38,
       "match": "(dst_rule *)((int)",
-      "text": "if (((dst_rule *)((int)piVar3 + 0x20))->seconds == 0) {",
+      "text": "if (((dst_rule *)((int)piVar7 + 0x20))->seconds == 0) {",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 37,
-      "match": "unaff_EBP",
-      "text": "if (((dst_rule *)piVar3)->month < unaff_EBP) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 41,
-      "match": "unaff_EBP",
-      "text": "if (unaff_EBP != ((dst_rule *)piVar3)->month) goto LAB_00607b4e;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 58,
-      "match": "unaff_EDI",
-      "text": "unaff_EDI = ((dst_rule *)piVar3)->rule_type;",
-      "type": "unaffected_reg"
     },
     {
       "description": "Complex pointer cast",
-      "line": 59,
+      "line": 62,
       "match": "(dst_rule *)((int)",
-      "text": "if (((dst_rule *)((int)piVar3 + 0x20))->seconds == 1) {",
+      "text": "if (((dst_rule *)((int)piVar7 + 0x20))->seconds == 1) {",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 61,
-      "match": "unaff_ESI",
-      "text": "if ((iVar1 != 0) && (DAT_00665f3a >> 0x10 < unaff_ESI)) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 62,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI = unaff_ESI + 1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 62,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI = unaff_ESI + 1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 64,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI = unaff_ESI + -1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 64,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI = unaff_ESI + -1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 66,
-      "match": "unaff_ESI",
-      "text": "if ((unaff_ESI <= timeptr->tm_yday) && (uVar5 = 1, timeptr->tm_yday == unaff_ESI))",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 66,
-      "match": "unaff_ESI",
-      "text": "if ((unaff_ESI <= timeptr->tm_yday) && (uVar5 = 1, timeptr->tm_yday == unaff_ESI))",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 72,
-      "match": "unaff_EDI",
-      "text": "if (unaff_EDI != 0) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 73,
-      "match": "unaff_EDI",
-      "text": "uVar5 = unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 78,
-      "match": "unaff_ESI",
-      "text": "if (pdVar6->month < unaff_ESI) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 81,
-      "match": "unaff_ESI",
-      "text": "else if (unaff_ESI == pdVar6->month) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 86,
-      "match": "unaff_EBP",
-      "text": "if (unaff_EBP + -7 < iVar4) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 87,
-      "match": "unaff_EBP",
-      "text": "if (iVar1 <= unaff_EBP + -7) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 116,
-      "match": "unaff_ESI",
-      "text": "if (unaff_ESI != 0) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 117,
-      "match": "unaff_ESI",
-      "text": "uVar5 = unaff_ESI - uVar5;",
-      "type": "unaffected_reg"
     },
     {
       "add_esp_value": 12,

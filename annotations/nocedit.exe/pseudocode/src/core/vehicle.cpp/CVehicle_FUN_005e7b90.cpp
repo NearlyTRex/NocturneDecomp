@@ -12,39 +12,38 @@ void __cdecl core_vehicle_cpp_CVehicle_FUN_005e7b90(CVehicle *this_ptr)
   CVector3f *pCVar1;
   float fVar2;
   float fVar3;
-  float fVar4;
-  float fVar5;
-  CKeyFramedModel *pCVar6;
+  CKeyFramedModel *pCVar4;
+  char *pcVar5;
+  char *pcVar6;
   char *pcVar7;
-  char *pcVar8;
-  char *pcVar9;
-  BADSPACEBASE *in_ESP;
   CKeyFramedModelInstance *this_ptr_00;
-  int iVar10;
+  int iVar8;
+  float local_1c;
+  float local_18;
+  float local_14;
   
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base_actor);
-  iVar10 = 0;
+  iVar8 = 0;
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
             ((CKeyFramedModelInstance *)this_ptr->field1_0x158);
   if (0 < this_ptr->tire_count) {
     this_ptr_00 = (CKeyFramedModelInstance *)(this_ptr->field3_0x93c + 0x14);
     do {
       core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(this_ptr_00);
-      iVar10 = iVar10 + 1;
+      iVar8 = iVar8 + 1;
       this_ptr_00 = (CKeyFramedModelInstance *)(this_ptr_00[1].part_visibility_flags + 0xe);
-    } while (iVar10 < this_ptr->tire_count);
+    } while (iVar8 < this_ptr->tire_count);
   }
-  pCVar6 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
+  pCVar4 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
                      ((CKeyFramedModelInstance *)this_ptr->field1_0x158);
-  pCVar1 = pCVar6->frame_bounds;
-  fVar2 = pCVar1->y;
-  fVar3 = pCVar1->z;
-  fVar4 = pCVar1[1].y;
-  fVar5 = pCVar1[1].z;
-  if (this_ptr->field1_0x158 + 0x7d4 != &stack0xfffffff0) {
-    *(float *)(this_ptr->field1_0x158 + 0x7d4) = pCVar1[1].x - pCVar1->x;
-    *(float *)(this_ptr->field1_0x158 + 0x7d8) = fVar4 - fVar2;
-    *(float *)(this_ptr->field1_0x158 + 0x7dc) = fVar5 - fVar3;
+  pCVar1 = pCVar4->frame_bounds;
+  local_1c = pCVar1[1].x - pCVar1->x;
+  local_18 = pCVar1[1].y - pCVar1->y;
+  local_14 = pCVar1[1].z - pCVar1->z;
+  if ((float *)(this_ptr->field1_0x158 + 0x7d4) != &local_1c) {
+    *(float *)(this_ptr->field1_0x158 + 0x7d4) = local_1c;
+    *(float *)(this_ptr->field1_0x158 + 0x7d8) = local_18;
+    *(float *)(this_ptr->field1_0x158 + 0x7dc) = local_14;
   }
   fVar2 = *(float *)(this_ptr->field1_0x158 + 0x7c0) * (float)0.03125;
   *(float *)(this_ptr->field1_0x158 + 0x7c4) = fVar2;
@@ -103,33 +102,33 @@ void __cdecl core_vehicle_cpp_CVehicle_FUN_005e7b90(CVehicle *this_ptr)
   this_ptr->field1_0x158[0x777] = '\0';
   *(uint *)(this_ptr->field1_0x158 + 0x770) = *(uint *)(this_ptr->field1_0x158 + 0x774);
   *(uint *)(this_ptr->field1_0x158 + 0x76c) = *(uint *)(this_ptr->field1_0x158 + 0x770);
-  iVar10 = 0;
+  iVar8 = 0;
   if (0 < this_ptr->tire_count) {
-    pcVar9 = this_ptr->field3_0x93c + 0x19c;
-    pcVar7 = this_ptr->field3_0x93c + 400;
+    pcVar7 = this_ptr->field3_0x93c + 0x19c;
+    pcVar5 = this_ptr->field3_0x93c + 400;
     do {
-      pcVar8 = this_ptr->field3_0x93c + iVar10 * 0x1b4;
-      if (pcVar9 != pcVar8) {
-        *(uint *)pcVar9 = *(uint *)pcVar8;
-        *(uint *)(pcVar9 + 4) = *(uint *)(pcVar8 + 4);
-        *(uint *)(pcVar9 + 8) = *(uint *)(pcVar8 + 8);
+      pcVar6 = this_ptr->field3_0x93c + iVar8 * 0x1b4;
+      if (pcVar7 != pcVar6) {
+        *(uint *)pcVar7 = *(uint *)pcVar6;
+        *(uint *)(pcVar7 + 4) = *(uint *)(pcVar6 + 4);
+        *(uint *)(pcVar7 + 8) = *(uint *)(pcVar6 + 8);
       }
-      pcVar7[8] = '\0';
-      pcVar7[9] = '\0';
-      pcVar7[10] = '\0';
-      pcVar7[0xb] = '\0';
-      pcVar9 = pcVar9 + 0x1b4;
-      pcVar7[0x20] = '\0';
-      pcVar7[0x21] = '\0';
-      pcVar7[0x22] = '\0';
-      pcVar7[0x23] = '\0';
-      iVar10 = iVar10 + 1;
-      *(uint *)(pcVar7 + 4) = *(uint *)(pcVar7 + 8);
-      *(uint *)(pcVar7 + 0x1c) = *(uint *)(pcVar7 + 0x20);
-      *(uint *)pcVar7 = *(uint *)(pcVar7 + 4);
-      *(uint *)(pcVar7 + 0x18) = *(uint *)(pcVar7 + 0x20);
+      pcVar5[8] = '\0';
+      pcVar5[9] = '\0';
+      pcVar5[10] = '\0';
+      pcVar5[0xb] = '\0';
       pcVar7 = pcVar7 + 0x1b4;
-    } while (iVar10 < this_ptr->tire_count);
+      pcVar5[0x20] = '\0';
+      pcVar5[0x21] = '\0';
+      pcVar5[0x22] = '\0';
+      pcVar5[0x23] = '\0';
+      iVar8 = iVar8 + 1;
+      *(uint *)(pcVar5 + 4) = *(uint *)(pcVar5 + 8);
+      *(uint *)(pcVar5 + 0x1c) = *(uint *)(pcVar5 + 0x20);
+      *(uint *)pcVar5 = *(uint *)(pcVar5 + 4);
+      *(uint *)(pcVar5 + 0x18) = *(uint *)(pcVar5 + 0x20);
+      pcVar5 = pcVar5 + 0x1b4;
+    } while (iVar8 < this_ptr->tire_count);
   }
   this_ptr->field3_0x93c[0x6d0] = '\0';
   this_ptr->field3_0x93c[0x6d1] = '\0';

@@ -11,19 +11,15 @@ CVampireBoss * __cdecl core_vampboss_cpp_CVampireBoss_ctor_FUN_005e5590(CVampire
 {
   CEnemy *pCVar1;
   int iVar2;
-  int iStack00000008;
   
   pCVar1 = core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base_enemy);
   core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0059ddc0
             ((CDeformableModelInstance *)(pCVar1[1].base_character.base_actor.actor_name + 8));
   core_cloth_cpp_FUN_00438ba0();
-  iStack00000008 = core_cloth_cpp_FUN_00438ba0();
-  iStack00000008 = iStack00000008 + 0x3fe70;
   core_cloth_cpp_FUN_00438ba0();
-  iStack00000008 = 0x5e55e1;
+  core_cloth_cpp_FUN_00438ba0();
   iVar2 = core_morph_cpp_FUN_0052b310();
   *(CDemonActor_vtable **)(iVar2 + -0xcdb70) = &g_CVampireBossVTable;
-  iStack00000008 = 0x5e5605;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
             ((CDeformableModelInstance *)(iVar2 + -0xcdb6c),"nosfer.dfm");
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840

@@ -1,7 +1,7 @@
 {
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 182,
+    "complexity_score": 187,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
@@ -10,7 +10,8 @@
     "suspect_types": [
       "call_esp_preserve",
       "callind_preserve",
-      "stack_param"
+      "stack_param",
+      "unaffected_reg"
     ],
     "total_lines": 98
   },
@@ -127,67 +128,67 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unaffected register variable",
       "line": 7,
-      "match": "in_stack_00000008",
-      "text": "CVector3f *in_stack_00000008;",
-      "type": "stack_param"
+      "match": "unaff_EBX",
+      "text": "CVector3f *unaff_EBX;",
+      "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 8,
-      "match": "in_stack_00000014",
-      "text": "uint in_stack_00000014;",
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 9,
-      "match": "in_stack_00000018",
-      "text": "uint in_stack_00000018;",
+      "match": "in_stack_0000000c",
+      "text": "uint in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 10,
-      "match": "in_stack_0000001c",
-      "text": "uint in_stack_0000001c;",
+      "match": "in_stack_00000010",
+      "text": "uint in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 12,
       "match": "in_stack_00000008",
-      "text": "if (in_stack_00000008 == (CVector3f *)0x0) {",
+      "text": "if (in_stack_00000008 == 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 34,
-      "match": "in_stack_00000014",
-      "text": "*(uint *)this_ptr->field11_0x25a0 = in_stack_00000014;",
+      "match": "in_stack_00000008",
+      "text": "*(int *)this_ptr->field11_0x25a0 = in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 35,
-      "match": "in_stack_00000018",
-      "text": "*(uint *)(this_ptr->field11_0x25a0 + 4) = in_stack_00000018;",
+      "match": "in_stack_0000000c",
+      "text": "*(uint *)(this_ptr->field11_0x25a0 + 4) = in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 36,
-      "match": "in_stack_0000001c",
-      "text": "*(uint *)(this_ptr->field11_0x25a0 + 8) = in_stack_0000001c;",
+      "match": "in_stack_00000010",
+      "text": "*(uint *)(this_ptr->field11_0x25a0 + 8) = in_stack_00000010;",
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unaffected register variable",
       "line": 38,
-      "match": "in_stack_00000008",
-      "text": "(&this_ptr->base_actor,(CVector3f *)0xbf800000,in_stack_00000008);",
-      "type": "stack_param"
+      "match": "unaff_EBX",
+      "text": "(&this_ptr->base_actor,(CVector3f *)0xbf800000,unaff_EBX);",
+      "type": "unaffected_reg"
     },
     {
       "add_esp_value": 8,

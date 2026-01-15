@@ -83,8 +83,7 @@ shape_meshlod_cpp_CLodMesh_computeClosestPointOnTriangle_FUN_0051a6b0
     g_CurrentFilename = "..\\shape\\meshlod.cpp";
     g_CurrentLineNumber = 0xf22;
     core_main_c_displayErrorAndQuit_FUN_00506f10("!");
-    shape_meshlod_cpp_CLodMesh_computeFaceCentroid_FUN_00518870
-              ((CLodMesh *)output_point,output_point,triangle_ptr);
+    shape_meshlod_cpp_CLodMesh_computeFaceCentroid_FUN_00518870(this_ptr,output_point,triangle_ptr);
     return output_point;
   }
 }

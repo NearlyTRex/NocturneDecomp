@@ -1,19 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 152,
-    "complexity_score": 291,
+    "complexity_score": 359,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 11,
-    "pseudocode_lines": 51,
-    "suspect_count": 22,
+    "pseudocode_lines": 64,
+    "suspect_count": 27,
     "suspect_types": [
       "call_esp_preserve",
       "format_string_mismatch",
       "pointer_cast",
+      "sub_artifact",
       "variadic_preserve"
     ],
-    "total_lines": 203
+    "total_lines": 216
   },
   "cross_references": [
     {
@@ -212,52 +213,87 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 25,
-      "match": "(int *)((int)",
-      "text": "if (*(int *)((int)pCVar1->edge_perpendiculars + iVar3 + -0x14) == 0) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 28,
-      "match": "(uint *)((int)",
-      "text": ",*(uint *)((int)(pCVar1->uv_coords + -2) + iVar3 + 4),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 29,
-      "match": "(float *)((int)",
-      "text": "(double)*(float *)((int)pCVar1->uv_coords[0] + iVar3),",
+      "match": "(int *)((int)",
+      "text": "if (*(int *)((int)pCVar2->edge_perpendiculars + iVar7 + -0x14) == 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 30,
       "match": "(float *)((int)",
-      "text": "(double)*(float *)((int)pCVar1->uv_coords[0] + iVar3 + 4),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 31,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)(pCVar1->uv_coords + -1) + iVar3),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 32,
-      "match": "(float *)((int)",
-      "text": "(double)*(float *)((int)pCVar1->uv_coords[1] + iVar3),",
+      "text": "dVar1 = (double)*(float *)((int)pCVar2->uv_coords[1] + iVar7 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 33,
-      "match": "(float *)((int)",
-      "text": "(double)*(float *)((int)pCVar1->uv_coords[1] + iVar3 + 4));",
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)(pCVar2->uv_coords + -2) + iVar7 + 4),",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 34,
+      "match": "(float *)((int)",
+      "text": "(double)*(float *)((int)pCVar2->uv_coords[0] + iVar7),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 35,
+      "match": "(float *)((int)",
+      "text": "(double)*(float *)((int)pCVar2->uv_coords[0] + iVar7 + 4),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 36,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)(pCVar2->uv_coords + -1) + iVar7),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(float *)((int)",
+      "text": "(double)*(float *)((int)pCVar2->uv_coords[1] + iVar7),SUB84 /* extract 2-byte value */(dVar1,0),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 37,
+      "match": "SUB84",
+      "text": "(double)*(float *)((int)pCVar2->uv_coords[1] + iVar7),SUB84 /* extract 2-byte value */(dVar1,0),",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 39,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)(pCVar2->uv_coords + -1) + iVar7 + 4),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 40,
+      "match": "(float *)((int)",
+      "text": "(double)*(float *)((int)pCVar2->uv_coords[2] + iVar7),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 41,
+      "match": "(float *)((int)",
+      "text": "(double)*(float *)((int)pCVar2->uv_coords[2] + iVar7 + 4));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 60,
+      "match": "SUB84",
+      "text": "SUB84 /* extract 2-byte value */((double)*(float *)(pCVar3->lod_workspace + iVar5),0),",
+      "type": "sub_artifact"
     },
     {
       "call_address": "0051c112",
@@ -414,36 +450,36 @@
       "type": "variadic_preserve"
     },
     {
+      "actual_args": 0,
+      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%d\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 15,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_ptr,\"%d\\n\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
       "actual_args": 1,
       "description": "Format \"0,%d,%d,1,1,0,0\\n\" has 2 specifiers but 1 arguments after it",
       "expected_args": 2,
       "format_string": "0,%d,%d,1,1,0,0\\n",
       "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 15,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_ptr,\"0,%d,%d,1,1,0,0\\n\",iVar2);",
+      "line_number": 18,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_ptr,\"0,%d,%d,1,1,0,0\\n\",iVar6);",
       "text": "Format string expects 2 args but got 1",
       "type": "format_string_mismatch"
     },
     {
-      "actual_args": 0,
-      "description": "Format \"0,%d,0,%d, \\\"TheOnlyPart\\\"\\n\" has 2 specifiers but 0 arguments after it",
+      "actual_args": 1,
+      "description": "Format \"0,%d,0,%d, \\\"TheOnlyPart\\\"\\n\" has 2 specifiers but 1 arguments after it",
       "expected_args": 2,
       "format_string": "0,%d,0,%d, \\\"TheOnlyPart\\\"\\n",
       "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 17,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_ptr,\"0,%d,0,%d, \\\"TheOnlyPart\\\"\\n\");",
-      "text": "Format string expects 2 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%f,%f,%f\\n\" has 3 specifiers but 0 arguments after it",
-      "expected_args": 3,
-      "format_string": "%f,%f,%f\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 50,
-      "match": "iVar2 = crt_stdio_c_fprintf_FUN_005fe6d0(file_ptr,\"%f,%f,%f\\n\");",
-      "text": "Format string expects 3 args but got 0",
+      "line_number": 20,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_ptr,\"0,%d,0,%d, \\\"TheOnlyPart\\\"\\n\",this_ptr->vertex_count)",
+      "text": "Format string expects 2 args but got 1",
       "type": "format_string_mismatch"
     },
     {

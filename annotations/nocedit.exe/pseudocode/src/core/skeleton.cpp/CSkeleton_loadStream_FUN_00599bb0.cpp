@@ -11,117 +11,142 @@ core_skeleton_cpp_CSkeleton_loadStream_FUN_00599bb0(CSkeleton *this_ptr,FILE *fi
 
 {
   int iVar1;
-  int unaff_EBX;
-  int unaff_ESI;
-  FILE *in_stack_0000000c;
-  FILE *in_stack_00000010;
-  FILE *in_stack_00000018;
-  CSkeleton *in_stack_0000001c;
-  CMotionList *in_stack_00000020;
-  FILE *in_stack_00000024;
-  FILE *in_stack_00000028;
-  int in_stack_ffffffe8;
-  int in_stack_ffffffec;
+  int iVar2;
+  CQuaternion4f *pCVar3;
+  int *piVar4;
+  int iVar5;
+  float *pfVar6;
+  float *pfVar7;
+  int local_24;
+  int local_20;
+  int local_1c;
+  int local_18;
+  float *local_14;
   
   core_skeleton_cpp_CSkeleton_free_FUN_00599a50(this_ptr);
+  local_24 = -1;
   do {
-    iVar1 = crt_stdio_c_fgetc_FUN_005fe840(in_stack_0000000c);
+    iVar1 = crt_stdio_c_fgetc_FUN_005fe840(file_handle);
     if (iVar1 < 0) break;
   } while (iVar1 != 10);
-  crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000010,"%d\n");
-  if (in_stack_ffffffe8 < 1) {
+  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%d\n",&local_24);
+  if (local_24 < 1) {
     g_CurrentFilename = "..\\core\\skeleton.cpp";
     g_CurrentLineNumber = 0x10d;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Invalid skeleton version");
   }
-  if (in_stack_ffffffec < 2) {
+  if (local_24 < 2) {
     g_CurrentFilename = "..\\core\\skeleton.cpp";
     g_CurrentLineNumber = 0x10e;
-    core_main_c_displayErrorAndQuit_FUN_00506f10("Old skeleton version %d not supported");
+    core_main_c_displayErrorAndQuit_FUN_00506f10("Old skeleton version %d not supported",local_24);
   }
-  if (g_CSkeletonVersion < in_stack_ffffffec) {
+  if (g_CSkeletonVersion < local_24) {
     g_CurrentFilename = "..\\core\\skeleton.cpp";
     g_CurrentLineNumber = 0x10f;
-    core_main_c_displayErrorAndQuit_FUN_00506f10("Skeleton version %d is newer than .EXE, which can only process up to version %d");
+    core_main_c_displayErrorAndQuit_FUN_00506f10
+              ("Skeleton version %d is newer than .EXE, which can only process up to version %d",local_24,g_CSkeletonVersion);
   }
   do {
-    iVar1 = crt_stdio_c_fgetc_FUN_005fe840(in_stack_00000018);
+    iVar1 = crt_stdio_c_fgetc_FUN_005fe840(file_handle);
     if (iVar1 < 0) break;
   } while (iVar1 != 10);
-  crt_stdio_c_fscanf_FUN_005fe7c0((FILE *)in_stack_0000001c,"%d,%d\n");
-  core_skeleton_cpp_CSkeleton_allocMemory_FUN_00599910(in_stack_0000001c,unaff_ESI,unaff_EBX);
+  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%d,%d\n",&local_20,&local_1c);
+  core_skeleton_cpp_CSkeleton_allocMemory_FUN_00599910(this_ptr,local_20,local_1c);
   do {
-    iVar1 = crt_stdio_c_fgetc_FUN_005fe840(in_stack_00000024);
+    iVar1 = crt_stdio_c_fgetc_FUN_005fe840(file_handle);
     if (iVar1 < 0) break;
   } while (iVar1 != 10);
   iVar1 = 0;
-  if (0 < (int)in_stack_00000024[0x170c]._link) {
+  if (0 < this_ptr->bone_count) {
+    piVar4 = &this_ptr->bone_list[0].parent_index;
     do {
-      crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000024,"\"%[^\"]\",%d\n");
+      crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"\"%[^\"]\",%d\n",this_ptr->bone_list + iVar1,piVar4);
       iVar1 = iVar1 + 1;
-    } while (iVar1 < *(int *)(in_stack_00000020[1].state_names[2] + 0x10));
+      piVar4 = piVar4 + 9;
+    } while (iVar1 < this_ptr->bone_count);
   }
   do {
-    iVar1 = crt_stdio_c_fgetc_FUN_005fe840(in_stack_00000024);
+    iVar1 = crt_stdio_c_fgetc_FUN_005fe840(file_handle);
     if (iVar1 < 0) break;
   } while (iVar1 != 10);
-  if (0 < (int)in_stack_00000024[0x178d]._ptr) {
+  local_18 = 0;
+  pCVar3 = this_ptr->bone_angle_frames;
+  if (0 < this_ptr->frame_count) {
     do {
       iVar1 = 0;
-      if (0 < *(int *)(in_stack_00000020[1].state_names[2] + 0x10)) {
+      if (0 < this_ptr->bone_count) {
+        pfVar6 = &pCVar3->x;
+        local_14 = &pCVar3->y;
+        pfVar7 = &pCVar3->z;
         do {
           iVar1 = iVar1 + 1;
-          crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000024,"%f,%f,%f,%f\n");
-        } while (iVar1 < *(int *)(in_stack_00000020[1].state_names[2] + 0x10));
+          crt_stdio_c_fscanf_FUN_005fe7c0
+                    (file_handle,"%f,%f,%f,%f\n",pCVar3,pfVar6,local_14,pfVar7);
+          pfVar6 = pfVar6 + 4;
+          pCVar3 = pCVar3 + 1;
+          local_14 = local_14 + 4;
+          pfVar7 = pfVar7 + 4;
+        } while (iVar1 < this_ptr->bone_count);
       }
-      this_ptr = (CSkeleton *)((int)&(this_ptr->motion_list).state_count + 1);
-    } while ((int)this_ptr < in_stack_00000020[1].motions[0].signals[10].value);
+      local_18 = local_18 + 1;
+    } while (local_18 < this_ptr->frame_count);
   }
   do {
-    iVar1 = crt_stdio_c_fgetc_FUN_005fe840(in_stack_00000024);
+    iVar1 = crt_stdio_c_fgetc_FUN_005fe840(file_handle);
     if (iVar1 < 0) break;
   } while (iVar1 != 10);
   iVar1 = 0;
-  if (0 < (int)in_stack_00000024[0x178d]._ptr) {
+  if (0 < this_ptr->frame_count) {
+    iVar5 = 0;
     do {
-      crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000024,"%f,%f,%f\n");
+      iVar2 = (int)&this_ptr->frame_positions_1->x + iVar5;
+      crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%f,%f,%f\n",iVar2,iVar2 + 4,iVar2 + 8);
       iVar1 = iVar1 + 1;
-    } while (iVar1 < in_stack_00000020[1].motions[0].signals[10].value);
+      iVar5 = iVar5 + 0xc;
+    } while (iVar1 < this_ptr->frame_count);
   }
   do {
-    iVar1 = crt_stdio_c_fgetc_FUN_005fe840(in_stack_00000024);
+    iVar1 = crt_stdio_c_fgetc_FUN_005fe840(file_handle);
     if (iVar1 < 0) break;
   } while (iVar1 != 10);
   iVar1 = 0;
-  if (0 < (int)in_stack_00000024[0x178d]._ptr) {
+  if (0 < this_ptr->frame_count) {
+    iVar5 = 0;
     do {
-      crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000024,"%f,%f,%f\n");
+      iVar2 = (int)&this_ptr->frame_positions_2->x + iVar5;
+      crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%f,%f,%f\n",iVar2,iVar2 + 4,iVar2 + 8);
       iVar1 = iVar1 + 1;
-    } while (iVar1 < in_stack_00000020[1].motions[0].signals[10].value);
+      iVar5 = iVar5 + 0xc;
+    } while (iVar1 < this_ptr->frame_count);
   }
-  if ((in_stack_00000024->_flag & 0x20) != 0) {
+  if ((file_handle->_flag & 0x20) != 0) {
     g_CurrentFilename = "..\\core\\skeleton.cpp";
     g_CurrentLineNumber = 0x144;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CSkeleton::loadStream - error reading file.");
   }
-  core_motion_cpp_CMotionList_load_FUN_0052cd70(in_stack_00000020,in_stack_00000024);
-  if (unaff_EBX < 3) {
-    in_stack_00000024[0x178d]._handle = -0x383cb080;
+  core_motion_cpp_CMotionList_load_FUN_0052cd70(&this_ptr->motion_list,file_handle);
+  if (local_24 < 3) {
+    this_ptr->bone_scales[0].x = -99999.0;
   }
   else {
     do {
-      iVar1 = crt_stdio_c_fgetc_FUN_005fe840(in_stack_00000028);
+      iVar1 = crt_stdio_c_fgetc_FUN_005fe840(file_handle);
       if (iVar1 < 0) break;
     } while (iVar1 != 10);
     iVar1 = 0;
-    if (0 < (int)in_stack_00000024[0x170c]._link) {
+    if (0 < this_ptr->bone_count) {
+      pfVar6 = &this_ptr->bone_scales[0].y;
+      pfVar7 = &this_ptr->bone_scales[0].z;
       do {
-        crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000028,"%f,%f,%f\n");
+        crt_stdio_c_fscanf_FUN_005fe7c0
+                  (file_handle,"%f,%f,%f\n",this_ptr->bone_scales + iVar1,pfVar6,pfVar7);
+        pfVar7 = pfVar7 + 3;
         iVar1 = iVar1 + 1;
-      } while (iVar1 < (int)in_stack_00000024[0x170c]._link);
+        pfVar6 = pfVar6 + 3;
+      } while (iVar1 < this_ptr->bone_count);
     }
   }
-  if ((in_stack_00000028->_flag & 0x20) != 0) {
+  if ((file_handle->_flag & 0x20) != 0) {
     g_CurrentFilename = "..\\core\\skeleton.cpp";
     g_CurrentLineNumber = 0x15f;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CSkeleton::loadStream - error reading file.");

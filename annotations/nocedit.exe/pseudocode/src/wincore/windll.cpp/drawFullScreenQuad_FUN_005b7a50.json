@@ -1,21 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 46,
-    "complexity_score": 151,
+    "complexity_score": 79,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 6,
-    "pseudocode_lines": 31,
-    "suspect_count": 9,
+    "pseudocode_lines": 29,
+    "suspect_count": 4,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
-      "lea_esp_stack_addr",
-      "register_param",
-      "stack_param",
-      "stack_ref"
+      "lea_esp_stack_addr"
     ],
-    "total_lines": 77
+    "total_lines": 75
   },
   "cross_references": [
     {
@@ -228,41 +224,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 5,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 5,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 6,
-      "match": "in_stack_00000008",
-      "text": "int in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 18,
-      "match": "&stack0xffffff40",
-      "text": "crt_memory_c_memset_FUN_005fde40(&stack0xffffff40,0,0xc0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_00000008",
-      "text": "g_ActiveRenderColor = in_stack_00000008;",
-      "type": "stack_param"
-    },
     {
       "add_esp_value": 12,
       "call_address": "005b7a62",

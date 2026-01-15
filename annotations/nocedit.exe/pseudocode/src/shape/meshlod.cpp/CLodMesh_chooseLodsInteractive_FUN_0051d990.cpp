@@ -9,19 +9,18 @@
 int __cdecl shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(CLodMesh *this_ptr)
 
 {
-  int iVar1;
-  uint uVar2;
+  float *pfVar1;
+  float fVar2;
   uchar uVar3;
   int iVar4;
-  CVector3f *pCVar5;
-  float fVar6;
+  CBoundingBox3D *pCVar5;
+  CVector3f *pCVar6;
   CSpotView *this_ptr_00;
   undefined3 extraout_var;
   undefined3 extraout_var_00;
   int *piVar7;
   int *piVar8;
   int iVar9;
-  BADSPACEBASE *in_ESP;
   int iVar10;
   SIZE_T n;
   bool bVar11;
@@ -32,39 +31,28 @@ int __cdecl shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(CLodMe
   uint in_stack_00000014;
   char *text;
   CGame *in_stack_fffff880;
-  CSpotView *this_ptr_01;
-  CGame *d2;
   uint in_stack_fffff884;
   char **in_stack_fffff888;
   CStrList_vtable *in_stack_fffff88c;
   uint in_stack_fffff890;
-  float local_3d8;
-  char acStack_3d4 [4];
-  uint auStack_3d0 [98];
+  float local_3d8 [100];
   char local_248 [200];
-  byte local_180 [8];
-  int local_178;
-  byte local_10c [8];
-  char local_104 [4];
-  char local_100 [4];
-  char local_fc [4];
-  char local_f8 [4];
+  CLodMesh local_180;
+  byte local_10c [24];
   float local_f4;
   float local_f0;
   float local_ec;
   char local_e8 [8];
-  char local_e0 [4];
+  float local_e0;
   char local_dc [12];
   byte local_d0 [24];
   float local_b8;
   float local_b4;
   float local_b0;
   char local_a8 [4];
-  char local_a4 [4];
-  char acStack_a0 [8];
+  float local_a4;
   char local_98 [4];
-  byte local_94 [20];
-  float local_80;
+  CBoundingBox3D local_94;
   float local_7c;
   float local_78;
   float local_74;
@@ -98,28 +86,28 @@ int __cdecl shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(CLodMe
   local_30 = 1;
   iVar4 = shape_meshlod_cpp_CLodMesh_countUnprocessedFaces_FUN_005164d0(this_ptr->next_lod);
   *in_stack_0000000c = iVar4;
-  shape_meshlod_cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500
-            (this_ptr,(CBoundingBox3D *)local_94);
+  shape_meshlod_cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500(this_ptr,&local_94);
   shape_spotview_cpp_CSpotView_ctor_FUN_005b95c0((CSpotView *)local_d0);
   shape_spotview_cpp_CSpotView_FUN_005b9620((CSpotView *)local_d0);
-  pCVar5 = shape_meshlod_cpp_CLodMesh_worldToNormalizedSpace_FUN_0051b2e0
-                     (this_ptr,&local_70,(CVector3f *)local_94);
-  if ((CVector3f *)(local_94 + 4) != pCVar5) {
-    local_94._0_4_ = pCVar5->x;
-    local_94._4_4_ = pCVar5->y;
-    local_94._8_4_ = pCVar5->z;
+  pCVar5 = (CBoundingBox3D *)
+           shape_meshlod_cpp_CLodMesh_worldToNormalizedSpace_FUN_0051b2e0
+                     (this_ptr,&local_70,&local_94.min);
+  if (&local_94 != pCVar5) {
+    local_94.min.x = (pCVar5->min).x;
+    local_94.min.y = (pCVar5->min).y;
+    local_94.min.z = (pCVar5->min).z;
   }
-  pCVar5 = shape_meshlod_cpp_CLodMesh_worldToNormalizedSpace_FUN_0051b2e0
-                     (this_ptr,&local_58,(CVector3f *)(local_94 + 0xc));
-  if ((CVector3f *)(local_94 + 0x10) != pCVar5) {
-    local_94._12_4_ = pCVar5->x;
-    local_94._16_4_ = pCVar5->y;
-    local_80 = pCVar5->z;
+  pCVar6 = shape_meshlod_cpp_CLodMesh_worldToNormalizedSpace_FUN_0051b2e0
+                     (this_ptr,&local_58,&local_94.max);
+  if (&local_94.max != pCVar6) {
+    local_94.max.x = pCVar6->x;
+    local_94.max.y = pCVar6->y;
+    local_94.max.z = pCVar6->z;
   }
-  local_4c = (float)local_94._0_4_ + (float)local_94._12_4_;
+  local_4c = local_94.min.x + local_94.max.x;
   local_7c = local_4c * 0.5f;
-  local_48 = (float)local_94._4_4_ + (float)local_94._16_4_;
-  local_44 = (float)local_94._8_4_ + local_80;
+  local_48 = local_94.min.y + local_94.max.y;
+  local_44 = local_94.min.z + local_94.max.z;
   local_78 = local_48 * 0.5f;
   local_74 = local_44 * 0.5f;
   if (&local_b8 != &local_7c) {
@@ -128,41 +116,25 @@ int __cdecl shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(CLodMe
     local_b0 = local_74;
   }
   core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_fffff880);
-  shape_meshlod_cpp_CLodMesh_ctor_FUN_00515840((CLodMesh *)local_180);
-  local_60 = (float)local_94._16_4_ - (float)local_94._4_4_;
-  local_3d8 = local_60 * (float)0.75;
+  shape_meshlod_cpp_CLodMesh_ctor_FUN_00515840(&local_180);
+  local_60 = local_94.max.y - local_94.min.y;
+  local_3d8[0] = local_60 * (float)0.75;
   iVar4 = -1;
-  local_64 = (float)local_94._12_4_ - (float)local_94._0_4_;
-  local_5c = local_80 - (float)local_94._8_4_;
+  local_64 = local_94.max.x - local_94.min.x;
+  local_5c = local_94.max.z - local_94.min.z;
   do {
     engine_2d_c_fillRectColor_FUN_00403170(0,0,g_WindowWidth + -1,g_WindowHeight + -1,0xfc);
     wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
     if (iVar4 == 0) {
-      acStack_a0[0] = acStack_3d4[0];
-      acStack_a0[1] = acStack_3d4[1];
-      acStack_a0[2] = acStack_3d4[2];
-      acStack_a0[3] = acStack_3d4[3];
+      local_a4 = local_3d8[0];
     }
-    this_ptr_01 = (CSpotView *)(local_10c + 4);
-    shape_spotview_cpp_CSpotView_ctor_FUN_005b95c0(this_ptr_01);
+    shape_spotview_cpp_CSpotView_ctor_FUN_005b95c0((CSpotView *)local_10c);
     local_10c._0_4_ = local_d0._0_4_;
     local_10c._4_4_ = local_d0._4_4_;
-    local_104[0] = local_d0[8];
-    local_104[1] = local_d0[9];
-    local_104[2] = local_d0[10];
-    local_104[3] = local_d0[0xb];
-    local_100[0] = local_d0[0xc];
-    local_100[1] = local_d0[0xd];
-    local_100[2] = local_d0[0xe];
-    local_100[3] = local_d0[0xf];
-    local_fc[0] = local_d0[0x10];
-    local_fc[1] = local_d0[0x11];
-    local_fc[2] = local_d0[0x12];
-    local_fc[3] = local_d0[0x13];
-    local_f8[0] = local_d0[0x14];
-    local_f8[1] = local_d0[0x15];
-    local_f8[2] = local_d0[0x16];
-    local_f8[3] = local_d0[0x17];
+    local_10c._8_4_ = local_d0._8_4_;
+    local_10c._12_4_ = local_d0._12_4_;
+    local_10c._16_4_ = local_d0._16_4_;
+    local_10c._20_4_ = local_d0._20_4_;
     if (&local_f4 != &local_b8) {
       local_f4 = local_b8;
       local_f0 = local_b4;
@@ -172,10 +144,7 @@ int __cdecl shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(CLodMe
     local_e8[5] = local_a8[1];
     local_e8[6] = local_a8[2];
     local_e8[7] = local_a8[3];
-    local_e0[0] = local_a4[0];
-    local_e0[1] = local_a4[1];
-    local_e0[2] = local_a4[2];
-    local_e0[3] = local_a4[3];
+    local_e0 = local_a4;
     local_dc[8] = local_98[0];
     local_dc[9] = local_98[1];
     local_dc[10] = local_98[2];
@@ -195,9 +164,8 @@ int __cdecl shape_meshlod_cpp_CLodMesh_chooseLodsInteractive_FUN_0051d990(CLodMe
     shape_spotview_cpp_CSpotView_FUN_005b9a20((CSpotView *)local_10c);
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
               (g_CDemonRendererPtr,&g_ZeroVector);
-    fVar6 = core_box_cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_00420840
-                      ((CBoundingBox3D *)local_94);
-    dVar12 = crt_math_c_round_FUN_005fe6b0((double)fVar6);
+    local_14 = (int *)core_box_cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_00420840(&local_94);
+    dVar12 = crt_math_c_round_FUN_005fe6b0((double)(float)local_14);
     local_38 = (int)ROUND(dVar12);
     shape_spotview_cpp_CSpotView_FUN_005b9a20(this_ptr_00);
     engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
@@ -224,17 +192,17 @@ LAB_0051e453:
     else {
       iVar9 = in_stack_0000000c[iVar4];
     }
-    if (((local_178 < iVar9 + -1) || (iVar9 < local_178)) &&
+    if (((local_180.tri_count < iVar9 + -1) || (iVar9 < local_180.tri_count)) &&
        (shape_meshlod_cpp_CLodMesh_getLOD_FUN_0051b920(this_ptr), iVar9 = INT_0067d39c,
        INT_0067d39c = iVar9, in_stack_00000014 == 2)) {
       INT_0067d39c = 0;
-      shape_meshlod_cpp_CLodMesh_fixupAfterCram_FUN_0051bac0((CLodMesh *)local_180);
+      shape_meshlod_cpp_CLodMesh_fixupAfterCram_FUN_0051bac0(&local_180);
       INT_0067d39c = iVar9;
     }
     if (0 < iVar4) {
-      in_stack_0000000c[iVar4] = local_178;
+      in_stack_0000000c[iVar4] = local_180.tri_count;
       in_stack_00000008[iVar4] = local_34;
-      *(char (*) [4])(acStack_3d4 + iVar4 * 4 + -4) = local_a4;
+      local_3d8[iVar4] = local_a4;
     }
     if (iVar4 < 0) {
       engine_2d_c_drawText_FUN_00401fd0("TEST MODE: Adjust view to test LODs.",0,0);
@@ -254,10 +222,10 @@ LAB_0051e453:
       text = "Press TAB/SHIFT-TAB for prev/next LOD.";
     }
     engine_2d_c_drawText_FUN_00401fd0(text,0,iVar9);
-    local_2c = (int *)(g_WindowHeight + -0x18);
+    local_24 = g_WindowHeight + -0x18;
     g_ActiveRenderColor = 1;
     engine_2d_c_drawLine_FUN_004011b0(0,0x2b,10,0x2b);
-    engine_2d_c_drawLine_FUN_004011b0(0,iStack_28 + 0xb,10,iStack_28 + 0xb);
+    engine_2d_c_drawLine_FUN_004011b0(0,local_24 + 0xb,10,local_24 + 0xb);
     iVar9 = 0;
     if (0 < local_30) {
       local_38 = local_24 + -0x2c;
@@ -283,7 +251,7 @@ LAB_0051e453:
                             (g_CEditorToolsPtr);
           g_ActiveRenderColor = CONCAT31 /* combine 2-byte values */(extraout_var,uVar3);
         }
-        else if (local_178 == *local_20) {
+        else if (local_180.tri_count == *local_20) {
           g_ActiveRenderColor = 0xfa;
         }
         else {
@@ -309,30 +277,28 @@ LAB_0051e453:
       g_ActiveRenderColor = CONCAT31 /* combine 2-byte values */(extraout_var_00,uVar3);
       engine_2d_c_drawLine_FUN_004011b0(0,iVar9,10,iVar9);
     }
-    shape_meshlod_cpp_CLodMesh_transformVerticesForPreview_FUN_0051e6b0((CLodMesh *)local_180);
+    shape_meshlod_cpp_CLodMesh_transformVerticesForPreview_FUN_0051e6b0(&local_180);
     if (in_stack_00000014 == 0) {
-      shape_meshlod_cpp_CLodMesh_renderShadedTriangles_FUN_0051e990((CLodMesh *)local_180,0);
+      shape_meshlod_cpp_CLodMesh_renderShadedTriangles_FUN_0051e990(&local_180,0);
     }
     else if ((in_stack_00000014 < 2) || (in_stack_00000014 == 2)) {
       shape_meshlod_cpp_CLodMesh_renderTexturedTriangles_FUN_0051ead0
-                ((CLodMesh *)local_180,0,(int)this_ptr_01);
+                (&local_180,0,(int)in_stack_fffff880);
     }
-    iVar9 = shape_meshlod_cpp_CLodMesh_countUnprocessedFaces_FUN_005164d0
-                      ((CLodMesh *)(local_180 + 4));
+    iVar9 = shape_meshlod_cpp_CLodMesh_countUnprocessedFaces_FUN_005164d0(&local_180);
     crt_stdio_c_sprintf_FUN_005fdbd0(local_248,"Current: %d pixelHeight, %d faces",local_34,iVar9);
     engine_2d_c_drawText_FUN_00401fd0(local_248,0,g_WindowHeight + -0xb);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-    d2 = g_CGamePtr;
     core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
     iVar10 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x31);
     iVar9 = local_30;
     if (iVar10 != 0) {
       if (local_30 < in_stack_00000010) {
-        in_stack_0000000c[local_30] = local_178;
+        in_stack_0000000c[local_30] = local_180.tri_count;
         in_stack_00000008[local_30] = local_34;
-        iVar4 = local_30 * 4;
+        pfVar1 = local_3d8 + local_30;
         local_30 = local_30 + 1;
-        *(char (*) [4])(acStack_3d4 + iVar4 + -4) = local_a4;
+        *pfVar1 = local_a4;
         iVar4 = iVar9;
       }
       else {
@@ -379,7 +345,7 @@ LAB_0051e453:
         crt_string_c_memmove_FUN_005fe5e0
                   (in_stack_0000000c + iVar4,(void *)((int)in_stack_0000000c + (int)local_14),n);
         crt_string_c_memmove_FUN_005fe5e0
-                  (acStack_3d4 + iVar4 * 4 + -4,(void *)((int)&local_3d8 + (int)local_14),n);
+                  (local_3d8 + iVar4,(void *)((int)local_3d8 + (int)local_14),n);
       }
     }
     iStack_28 = 0;
@@ -392,8 +358,7 @@ LAB_0051e453:
         if (1 < iStack_1c) {
           do {
             piVar8 = piVar7 + 1;
-            iVar1 = iVar10 * 4;
-            iStack_18 = iVar1;
+            iStack_18 = iVar10 * 4;
             iVar4 = iVar9;
             if (*piVar8 < piVar7[2]) {
               iStack_40 = *piVar8;
@@ -403,10 +368,10 @@ LAB_0051e453:
               iStack_3c = in_stack_0000000c[iVar10];
               in_stack_0000000c[iVar10] = *local_14;
               *local_14 = iStack_3c;
-              uVar2 = *(uint *)(acStack_3d4 + iVar1 + -4);
-              *(uint *)(acStack_3d4 + iVar1 + -4) = *(uint *)(acStack_3d4 + iVar1);
+              fVar2 = local_3d8[iVar10];
+              local_3d8[iVar10] = local_3d8[iVar10 + 1];
               iVar4 = iVar10 + 1;
-              *(uint *)(acStack_3d4 + iVar1) = uVar2;
+              local_3d8[iVar10 + 1] = fVar2;
               if ((iVar9 != iVar10) && (bVar11 = iVar9 == iVar4, iVar4 = iVar9, bVar11)) {
                 iVar4 = iVar10;
               }
@@ -458,24 +423,24 @@ LAB_0051e453:
       iVar9 = local_30;
       if (iVar10 == 0) {
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                  ((CPickList *)&stack0xfffff880,0,(uint)d2,in_stack_fffff884,
+                  ((CPickList *)&stack0xfffff880,0,(uint)in_stack_fffff880,in_stack_fffff884,
                    (uint)in_stack_fffff888,(uint)in_stack_fffff88c,in_stack_fffff890);
-        shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950((CLodMesh *)local_180);
+        shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950(&local_180);
         return iVar9;
       }
       if (iVar10 == 1) {
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                  ((CPickList *)&stack0xfffff880,0,(uint)d2,in_stack_fffff884,
+                  ((CPickList *)&stack0xfffff880,0,(uint)in_stack_fffff880,in_stack_fffff884,
                    (uint)in_stack_fffff888,(uint)in_stack_fffff88c,in_stack_fffff890);
-        shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950((CLodMesh *)local_180);
+        shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950(&local_180);
         return -1;
       }
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                ((CPickList *)&stack0xfffff880,0,(uint)d2,in_stack_fffff884,(uint)in_stack_fffff888,
-                 (uint)in_stack_fffff88c,in_stack_fffff890);
+                ((CPickList *)&stack0xfffff880,0,(uint)in_stack_fffff880,in_stack_fffff884,
+                 (uint)in_stack_fffff888,(uint)in_stack_fffff88c,in_stack_fffff890);
     }
     if (-1 < iVar4) {
-      local_a4 = *(char (*) [4])(acStack_3d4 + iVar4 * 4 + -4);
+      local_a4 = local_3d8[iVar4];
     }
     shape_spotview_cpp_CSpotView_FUN_005b9670((CSpotView *)local_d0);
   } while( true );

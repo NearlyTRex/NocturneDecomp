@@ -16,7 +16,6 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042ca70(CCharacter *this_ptr)
   float fVar5;
   float fVar6;
   CDemonActor *pCVar7;
-  BADSPACEBASE *in_ESP;
   float in_stack_00000008;
   CVector3f aCStack_30 [2];
   float fStack_18;

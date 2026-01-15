@@ -19,7 +19,6 @@ void core_stranger_cpp_CStranger_FUN_005bdd20(void)
   int iVar4;
   CVector3f *pCVar5;
   CDemonActor *pCVar6;
-  BADSPACEBASE *in_ESP;
   int unaff_EDI;
   double dVar7;
   CCharacter *in_stack_00000004;

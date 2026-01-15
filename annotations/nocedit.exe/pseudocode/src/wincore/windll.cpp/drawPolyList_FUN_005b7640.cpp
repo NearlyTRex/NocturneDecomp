@@ -12,7 +12,6 @@ wincore_windll_cpp_drawPolyList_FUN_005b7640
 
 {
   void *pvVar1;
-  BADSPACEBASE *in_ESP;
   int iVar2;
   void *local_20;
   void *local_1c;

@@ -1,20 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 171,
+    "complexity_score": 69,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 4,
-    "pseudocode_lines": 36,
-    "suspect_count": 11,
+    "pseudocode_lines": 29,
+    "suspect_count": 3,
     "suspect_types": [
-      "badspacebase",
       "callind_preserve",
-      "lea_esp_stack_addr",
-      "register_param",
-      "stack_param"
+      "lea_esp_stack_addr"
     ],
-    "total_lines": 87
+    "total_lines": 80
   },
   "cross_references": [
     {
@@ -169,62 +166,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 10,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 10,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_0000001c",
-      "text": "HKEY in_stack_0000001c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_00000030",
-      "text": "LPCSTR in_stack_00000030;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000038",
-      "text": "HKEY in_stack_00000038;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 35,
-      "match": "in_stack_0000001c",
-      "text": "(*RegSetValueExA)(in_stack_0000001c,in_stack_00000030,0,1,(BYTE *)value_data,~uVar3);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 35,
-      "match": "in_stack_00000030",
-      "text": "(*RegSetValueExA)(in_stack_0000001c,in_stack_00000030,0,1,(BYTE *)value_data,~uVar3);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 37,
-      "match": "in_stack_00000038",
-      "text": "(*RegCloseKey)(in_stack_00000038);",
-      "type": "stack_param"
-    },
     {
       "add_esp_value": 8,
       "call_target_type": "mem_absolute",

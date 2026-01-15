@@ -1,15 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 98,
+    "complexity_score": 208,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 4,
     "pseudocode_lines": 33,
-    "suspect_count": 5,
+    "suspect_count": 16,
     "suspect_types": [
       "call_esp_preserve",
-      "unaffected_reg",
+      "stack_param",
       "variadic_preserve"
     ],
     "total_lines": 99
@@ -110,22 +110,99 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 6,
-      "match": "unaff_EBX",
-      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,",
-      "type": "unaffected_reg"
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
     },
     {
-      "description": "Unaffected register variable",
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000008",
+      "text": "char *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
       "line": 17,
-      "match": "unaff_EBX",
-      "text": "(g_CEditorToolsPtr,\"I'm not going to add %s into the set list because it's already there!\",param_6,unaff_EBX);",
-      "type": "unaffected_reg"
+      "match": "in_stack_00000008",
+      "text": "(g_CEditorToolsPtr,\"I'm not going to add %s into the set list because it's already there!\",in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_00000004",
+      "text": "if (3 < *(int *)(in_stack_00000004 + 0x144)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000008",
+      "text": "(g_CEditorToolsPtr,\"Can't add %s to set list - too many sets (%d)!\",in_stack_00000008,4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_00000004",
+      "text": "pcVar3 = (char *)(*(int *)(in_stack_00000004 + 0x144) * 0x100 + in_stack_00000004 + 0x148);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_00000004",
+      "text": "pcVar3 = (char *)(*(int *)(in_stack_00000004 + 0x144) * 0x100 + in_stack_00000004 + 0x148);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 27,
+      "match": "in_stack_00000008",
+      "text": "cVar1 = *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 30,
+      "match": "in_stack_00000008",
+      "text": "cVar1 = in_stack_00000008[1];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 31,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008 = in_stack_00000008 + 2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 31,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008 = in_stack_00000008 + 2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 35,
+      "match": "in_stack_00000004",
+      "text": "*(int *)(in_stack_00000004 + 0x144) = *(int *)(in_stack_00000004 + 0x144) + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 35,
+      "match": "in_stack_00000004",
+      "text": "*(int *)(in_stack_00000004 + 0x144) = *(int *)(in_stack_00000004 + 0x144) + 1;",
+      "type": "stack_param"
     },
     {
       "call_address": "00538d92",
-      "caller_has_stack_issues": false,
+      "caller_has_stack_issues": true,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -139,7 +216,7 @@
     },
     {
       "call_address": "00538daa",
-      "caller_has_stack_issues": false,
+      "caller_has_stack_issues": true,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

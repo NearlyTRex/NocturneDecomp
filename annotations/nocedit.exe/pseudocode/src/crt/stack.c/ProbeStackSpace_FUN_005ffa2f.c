@@ -12,7 +12,6 @@ void __stdcall crt_stack_c_ProbeStackSpace_FUN_005ffa2f(uint size)
   bool bVar1;
   uint uVar2;
   int iVar3;
-  BADSPACEBASE *in_ESP;
   
   iVar3 = -4;
   do {

@@ -24,55 +24,50 @@ void core_bugs_cpp_FUN_00427400(void)
   int iVar9;
   int in_stack_00000004;
   CDemonActor *in_stack_00000008;
-  int in_stack_0000000c;
-  int in_stack_00000010;
-  int in_stack_00000014;
-  int in_stack_00000020;
-  int in_stack_00000024;
   
   class_name_hash = g_CHeroClassInfo.name_hash;
   *(uint *)(in_stack_00000004 + 0x12afc) = 0;
   *(uint *)(in_stack_00000004 + 0x12af8) = 0;
   pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790(in_stack_00000008,class_name_hash);
   if (pCVar3 != (CDemonActor *)0x0) {
-    *(CDemonActor **)(in_stack_00000008[0xde].create_event + 0x34) = pCVar3 + 1;
+    *(CDemonActor **)(in_stack_00000004 + 0x12afc) = pCVar3 + 1;
   }
   pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790
                      (in_stack_00000008,g_CEnemyClassInfo.name_hash);
   if ((pCVar3 != (CDemonActor *)0x0) && (pCVar3[0x1a].create_event[0x50] != '\0')) {
-    *(CDemonActor **)(in_stack_0000000c + 0x12afc) = pCVar3 + 1;
+    *(CDemonActor **)(in_stack_00000004 + 0x12afc) = pCVar3 + 1;
   }
-  if (*(int *)(in_stack_0000000c + 0x12afc) != 0) {
-    *(uint *)(in_stack_0000000c + 0xbebc) = 1;
-    *(CDemonActor **)(in_stack_0000000c + 0x12af8) = in_stack_00000008;
-    iVar1 = *(int *)(*(int *)(in_stack_0000000c + 0x12af8) + 100);
-    *(uint *)(in_stack_0000000c + 0x12b30) = 0;
-    *(int *)(in_stack_0000000c + 100) = iVar1 + 1;
+  if (*(int *)(in_stack_00000004 + 0x12afc) != 0) {
+    *(uint *)(in_stack_00000004 + 0xbebc) = 1;
+    *(CDemonActor **)(in_stack_00000004 + 0x12af8) = in_stack_00000008;
+    iVar1 = *(int *)(*(int *)(in_stack_00000004 + 0x12af8) + 100);
+    *(uint *)(in_stack_00000004 + 0x12b30) = 0;
+    *(int *)(in_stack_00000004 + 100) = iVar1 + 1;
     do {
       pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
-                         (*(CDeformableModelInstance **)(in_stack_0000000c + 0x12afc));
-      iVar1 = *(int *)(in_stack_00000010 + 0x12b30);
+                         (*(CDeformableModelInstance **)(in_stack_00000004 + 0x12afc));
+      iVar1 = *(int *)(in_stack_00000004 + 0x12b30);
       if (pCVar4->vertex_count[iVar1] < 0x2bd) {
         engine_console_cpp_CConsole_printf_FUN_00441890
-                  (g_CConsolePtr,"%s swarming on %s at LOD %d\n",in_stack_00000010,
+                  (g_CConsolePtr,"%s swarming on %s at LOD %d\n",in_stack_00000004,
                    in_stack_00000008,iVar1);
         core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
-                  (*(CDeformableModelInstance **)(in_stack_00000010 + 0x12afc));
+                  (*(CDeformableModelInstance **)(in_stack_00000004 + 0x12afc));
         core_bugs_cpp_FUN_00425660();
         core_skeleton_cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0
-                  (*(CDeformableModelInstance **)(in_stack_00000010 + 0x12afc),
-                   *(int *)(in_stack_00000010 + 0x12b30));
+                  (*(CDeformableModelInstance **)(in_stack_00000004 + 0x12afc),
+                   *(int *)(in_stack_00000004 + 0x12b30));
         iVar5 = 0;
-        iVar1 = *(int *)(*(int *)(in_stack_00000010 + 0x12afc) + 0x2234);
-        if (0 < *(int *)(in_stack_00000010 + 0x12b34)) {
+        iVar1 = *(int *)(*(int *)(in_stack_00000004 + 0x12afc) + 0x2234);
+        if (0 < *(int *)(in_stack_00000004 + 0x12b34)) {
           iVar7 = 0;
           do {
             *(int *)((int)&DAT_00822f48 + iVar7) = iVar5;
             iVar5 = iVar5 + 1;
             iVar7 = iVar7 + 4;
-          } while (iVar5 < *(int *)(in_stack_00000020 + 0x12b34));
+          } while (iVar5 < *(int *)(in_stack_00000004 + 0x12b34));
         }
-        for (iVar5 = *(int *)(in_stack_00000020 + 0x12b34) + -2; -1 < iVar5; iVar5 = iVar5 + -1) {
+        for (iVar5 = *(int *)(in_stack_00000004 + 0x12b34) + -2; -1 < iVar5; iVar5 = iVar5 + -1) {
           if (-1 < iVar5) {
             iVar7 = 0;
             do {
@@ -90,32 +85,32 @@ void core_bugs_cpp_FUN_00427400(void)
         iVar5 = *(int *)(iVar1 + 4 + DAT_00822f48 * 0xc);
         iVar9 = 0;
         iVar8 = 0;
-        iVar7 = in_stack_00000020;
-        if (*(int *)(in_stack_00000020 + 0xbec0) < 1) {
+        iVar7 = in_stack_00000004;
+        if (*(int *)(in_stack_00000004 + 0xbec0) < 1) {
           return;
         }
         do {
           *(uint *)(iVar7 + 0xbef0) = 0xffffffff;
           *(int *)(iVar7 + 0xbef4) = (&DAT_00822f48)[iVar9];
           iVar6 = core_actor_cpp_getRandomInt_FUN_0040cc70
-                            (0,(int)(CONCAT44 /* combine 2-byte values */(*(int *)(in_stack_00000020 + 0x12b34) >> 0x1f,
-                                              *(uint *)(in_stack_00000020 + 0x12b34)) / 0xf));
+                            (0,(int)(CONCAT44 /* combine 2-byte values */(*(int *)(in_stack_00000004 + 0x12b34) >> 0x1f,
+                                              *(uint *)(in_stack_00000004 + 0x12b34)) / 0xf));
           *(int *)(iVar7 + 0xbf00) = iVar6;
           iVar9 = iVar9 + 1;
-          if ((*(int *)(in_stack_00000024 + 0x12b34) <= iVar9) ||
+          if ((*(int *)(in_stack_00000004 + 0x12b34) <= iVar9) ||
              (iVar5 + 0x2a < *(int *)(iVar1 + 4 + (&DAT_00822f48)[iVar9] * 0xc))) {
             iVar9 = 0;
           }
           iVar8 = iVar8 + 1;
           iVar7 = iVar7 + 0x40;
-        } while (iVar8 < *(int *)(in_stack_00000024 + 0xbec0));
+        } while (iVar8 < *(int *)(in_stack_00000004 + 0xbec0));
         return;
       }
-      *(int *)(in_stack_00000010 + 0x12b30) = iVar1 + 1;
+      *(int *)(in_stack_00000004 + 0x12b30) = iVar1 + 1;
       pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
-                         (*(CDeformableModelInstance **)(in_stack_00000010 + 0x12afc));
-    } while (*(int *)(in_stack_00000014 + 0x12b30) < pCVar4->num_lods);
-    *(uint *)(in_stack_00000014 + 0x12afc) = 0;
+                         (*(CDeformableModelInstance **)(in_stack_00000004 + 0x12afc));
+    } while (*(int *)(in_stack_00000004 + 0x12b30) < pCVar4->num_lods);
+    *(uint *)(in_stack_00000004 + 0x12afc) = 0;
   }
   return;
 }

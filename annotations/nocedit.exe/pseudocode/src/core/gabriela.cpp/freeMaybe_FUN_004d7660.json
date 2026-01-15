@@ -1,7 +1,7 @@
 {
   "complexity": {
     "assembly_lines": 47,
-    "complexity_score": 124,
+    "complexity_score": 129,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 1,
@@ -9,7 +9,8 @@
     "suspect_count": 9,
     "suspect_types": [
       "call_esp_preserve",
-      "stack_param"
+      "stack_param",
+      "unaffected_reg"
     ],
     "total_lines": 71
   },
@@ -129,31 +130,31 @@
   },
   "suspects": [
     {
+      "description": "Unaffected register variable",
+      "line": 9,
+      "match": "unaff_EBX",
+      "text": "uint unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
       "description": "Unresolved stack parameter",
-      "line": 10,
+      "line": 11,
       "match": "in_stack_00000014",
       "text": "uint in_stack_00000014;",
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000018",
-      "text": "uint in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
+      "description": "Unaffected register variable",
       "line": 20,
-      "match": "in_stack_00000014",
-      "text": "((CHero *)(iVar1 + -0x1fc14),1,unaff_retaddr,(uint)this_ptr,d1,d2,d3,in_stack_00000014,",
-      "type": "stack_param"
+      "match": "unaff_EBX",
+      "text": "((CHero *)(iVar1 + -0x1fc14),1,unaff_EBX,unaff_retaddr,(uint)this_ptr,d1,d2,d3,",
+      "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 21,
-      "match": "in_stack_00000018",
-      "text": "in_stack_00000018);",
+      "match": "in_stack_00000014",
+      "text": "in_stack_00000014);",
       "type": "stack_param"
     },
     {

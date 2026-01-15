@@ -1,21 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 50,
-    "complexity_score": 150,
+    "complexity_score": 118,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 30,
-    "suspect_count": 9,
+    "pseudocode_lines": 28,
+    "suspect_count": 7,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
       "param_count_too_few",
-      "register_param",
       "stack_param"
     ],
-    "total_lines": 80
+    "total_lines": 78
   },
   "cross_references": [
     {
@@ -123,45 +121,31 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 10,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 10,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 11,
       "match": "in_stack_00000004",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 16,
       "match": "in_stack_00000004",
       "text": "if (0 < *(int *)(in_stack_00000004 + 0x30)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 19,
       "match": "in_stack_00000004",
-      "text": "pbVar2 = *(byte **)(iVar4 + 4 + *(int *)(in_stack_00000004 + 0x34));",
+      "text": "pbVar2 = *(byte **)(iVar3 + 4 + *(int *)(in_stack_00000004 + 0x34));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 31,
+      "line": 29,
       "match": "in_stack_00000004",
-      "text": "} while (iVar5 < *(int *)(in_stack_00000004 + 0x30));",
+      "text": "} while (iVar4 < *(int *)(in_stack_00000004 + 0x30));",
       "type": "stack_param"
     },
     {

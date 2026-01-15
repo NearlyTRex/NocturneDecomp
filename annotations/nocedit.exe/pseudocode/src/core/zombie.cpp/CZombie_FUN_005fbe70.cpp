@@ -11,7 +11,6 @@ int __cdecl core_zombie_cpp_CZombie_FUN_005fbe70(CZombie *this_ptr)
 {
   CVector3f *pCVar1;
   int iVar2;
-  BADSPACEBASE *in_ESP;
   uint *puVar3;
   uint *puVar4;
   byte bVar5;

@@ -1,21 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 92,
-    "complexity_score": 228,
+    "complexity_score": 124,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 28,
-    "suspect_count": 17,
+    "pseudocode_lines": 24,
+    "suspect_count": 9,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
-      "lea_esp_stack_addr",
-      "register_param",
-      "stack_param",
-      "stack_ref"
+      "lea_esp_stack_addr"
     ],
-    "total_lines": 120
+    "total_lines": 116
   },
   "cross_references": [],
   "function": {
@@ -192,62 +188,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 10,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 10,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000024",
-      "text": "CVector3f *in_stack_00000024;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 15,
-      "match": "&stack0xffffffac",
-      "text": "((CDemonTriangle *)&stack0xffffffac,vertex1,vertex2,vertex3);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 17,
-      "match": "&stack0xffffffb0",
-      "text": "((CDemonTriangle *)&stack0xffffffb0,z,(float)out_height,&vertex1->x);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_00000024",
-      "text": "((CDemonTriangle *)&stack0xffffffb4,vertex3,out_transformed_normal,in_stack_00000024);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 19,
-      "match": "&stack0xffffffb4",
-      "text": "((CDemonTriangle *)&stack0xffffffb4,vertex3,out_transformed_normal,in_stack_00000024);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 23,
-      "match": "&stack0xfffffff4",
-      "text": "if (out_transformed_normal != (CVector3f *)&stack0xfffffff4) {",
-      "type": "stack_ref"
-    },
     {
       "add_esp_value": 16,
       "call_address": "005715ef",

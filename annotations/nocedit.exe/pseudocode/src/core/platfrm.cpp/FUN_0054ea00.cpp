@@ -14,7 +14,6 @@ void core_platfrm_cpp_FUN_0054ea00(void)
   char *pcVar1;
   int iVar2;
   CVector3f *pCVar3;
-  BADSPACEBASE *in_ESP;
   float *pfVar4;
   uint *puVar5;
   uint *puVar6;
@@ -23,28 +22,28 @@ void core_platfrm_cpp_FUN_0054ea00(void)
   CMatrix3x4f *pCVar9;
   byte bVar10;
   CDemonActor *in_stack_00000004;
-  float afStackY_18a0 [1386];
+  float afStackY_18a4 [1387];
   CVector3f *euler_angles;
   double dVar11;
   float fStack_2e4;
   CMatrix3x4f CStack_2b0;
-  float afStack_27c [11];
+  float afStack_280 [12];
   CMatrix3x4f CStack_250;
   CMatrix3x4f CStack_220;
   CMatrix3x4f CStack_1f0;
-  float afStack_1bc [11];
+  float afStack_1c0 [12];
   CMatrix3x4f CStack_190;
   float afStack_160 [12];
   CMatrix3x4f CStack_130;
-  byte auStack_100 [16];
-  CVector3f CStack_f0;
-  byte auStack_e4 [16];
-  CVector3f CStack_d4;
-  uint uStack_c4;
-  uint auStack_c0 [7];
-  uint uStack_a4;
-  uint uStack_94;
-  uint uStack_84;
+  byte auStack_100 [12];
+  CQuaternion4f CStack_f4;
+  byte auStack_e4 [12];
+  CQuaternion4f CStack_d8;
+  uint uStack_c8;
+  uint auStack_c4 [7];
+  uint uStack_a8;
+  uint uStack_98;
+  uint uStack_88;
   CVector3f CStack_78;
   float fStack_6c;
   float fStack_68;
@@ -97,12 +96,12 @@ void core_platfrm_cpp_FUN_0054ea00(void)
         core_xform_cpp_eulerToQuaternion_FUN_005f7b20
                   ((CQuaternion4f *)&in_stack_00000004->orient,euler_angles);
         puVar5 = (uint *)((int)in_stack_00000004 + (uint)bVar10 * -8 + 0x348);
-        *(uint *)(in_stack_00000004[2].create_event + 0x1c) = uStack_94;
+        *(uint *)(in_stack_00000004[2].create_event + 0x1c) = uStack_98;
         puVar6 = puVar5 + (uint)bVar10 * -2 + 1;
-        *puVar5 = auStack_c0[(uint)bVar10 * -2 + 0xc];
-        *puVar6 = auStack_c0[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0xd];
+        *puVar5 = auStack_c4[(uint)bVar10 * -2 + 0xc];
+        *puVar6 = auStack_c4[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0xd];
         puVar6[(uint)bVar10 * -2 + 1] =
-             (auStack_c0 + (uint)bVar10 * -2 + (uint)bVar10 * -2 + 0xd)[(uint)bVar10 * -2 + 1];
+             (auStack_c4 + (uint)bVar10 * -2 + (uint)bVar10 * -2 + 0xd)[(uint)bVar10 * -2 + 1];
         puVar7 = (uint *)((int)in_stack_00000004 + (uint)bVar10 * -8 + 0x338);
         puVar5 = (uint *)((int)in_stack_00000004 + (uint)bVar10 * -8 + 0x348);
         *(uint *)(in_stack_00000004[2].create_event + 0xc) =
@@ -126,13 +125,13 @@ void core_platfrm_cpp_FUN_0054ea00(void)
         }
         pCVar3 = core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0
                            (&CStack_30,(CQuaternion4f *)(in_stack_00000004[2].create_event + 0xc));
-        if (&CStack_f0 != pCVar3) {
-          auStack_100._12_4_ = pCVar3->x;
-          CStack_f0.x = pCVar3->y;
-          CStack_f0.y = pCVar3->z;
+        if ((CVector3f *)(auStack_100 + 0xc) != pCVar3) {
+          CStack_f4.w = pCVar3->x;
+          CStack_f4.x = pCVar3->y;
+          CStack_f4.y = pCVar3->z;
         }
         core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)auStack_100);
-        if (&in_stack_00000004[2].field7_0x6c != (int *)(auStack_100 + 4)) {
+        if (&in_stack_00000004[2].field7_0x6c != (int *)auStack_100) {
           in_stack_00000004[2].field7_0x6c = auStack_100._0_4_;
           in_stack_00000004[2].was_created = auStack_100._4_4_;
           in_stack_00000004[2].create_prob = (float)auStack_100._8_4_;
@@ -140,12 +139,12 @@ void core_platfrm_cpp_FUN_0054ea00(void)
         core_xform_cpp_eulerToQuaternion_FUN_005f7b20
                   ((CQuaternion4f *)(auStack_100 + 0xc),euler_angles);
         puVar5 = (uint *)((int)in_stack_00000004 + (uint)bVar10 * -8 + 0x338);
-        *(uint *)(in_stack_00000004[2].create_event + 0xc) = auStack_c0[3];
+        *(uint *)(in_stack_00000004[2].create_event + 0xc) = auStack_c4[3];
         puVar6 = puVar5 + (uint)bVar10 * -2 + 1;
-        *puVar5 = auStack_c0[(uint)bVar10 * -2 + 4];
-        *puVar6 = auStack_c0[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 5];
+        *puVar5 = auStack_c4[(uint)bVar10 * -2 + 4];
+        *puVar6 = auStack_c4[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 5];
         puVar6[(uint)bVar10 * -2 + 1] =
-             (auStack_c0 + (uint)bVar10 * -2 + (uint)bVar10 * -2 + 5)[(uint)bVar10 * -2 + 1];
+             (auStack_c4 + (uint)bVar10 * -2 + (uint)bVar10 * -2 + 5)[(uint)bVar10 * -2 + 1];
         break;
       case 2:
         if (auStack_e4 != in_stack_00000004[2].create_event) {
@@ -155,13 +154,13 @@ void core_platfrm_cpp_FUN_0054ea00(void)
         }
         pCVar3 = core_xform_cpp_quaternionToEulerAngles_FUN_005f7ac0
                            (&CStack_78,(CQuaternion4f *)(in_stack_00000004[2].create_event + 0x1c));
-        if (&CStack_d4 != pCVar3) {
-          auStack_e4._12_4_ = pCVar3->x;
-          CStack_d4.x = pCVar3->y;
-          CStack_d4.y = pCVar3->z;
+        if ((CVector3f *)(auStack_e4 + 0xc) != pCVar3) {
+          CStack_d8.w = pCVar3->x;
+          CStack_d8.x = pCVar3->y;
+          CStack_d8.y = pCVar3->z;
         }
         core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)auStack_e4);
-        if (in_stack_00000004[2].create_event != auStack_e4 + 4) {
+        if (in_stack_00000004[2].create_event != auStack_e4) {
           *(uint *)in_stack_00000004[2].create_event = auStack_e4._0_4_;
           *(uint *)(in_stack_00000004[2].create_event + 4) = auStack_e4._4_4_;
           *(uint *)(in_stack_00000004[2].create_event + 8) = auStack_e4._8_4_;
@@ -169,12 +168,12 @@ void core_platfrm_cpp_FUN_0054ea00(void)
         core_xform_cpp_eulerToQuaternion_FUN_005f7b20
                   ((CQuaternion4f *)(auStack_e4 + 0xc),euler_angles);
         puVar5 = (uint *)((int)in_stack_00000004 + (uint)bVar10 * -8 + 0x348);
-        *(uint *)(in_stack_00000004[2].create_event + 0x1c) = uStack_a4;
+        *(uint *)(in_stack_00000004[2].create_event + 0x1c) = uStack_a8;
         puVar6 = puVar5 + (uint)bVar10 * -2 + 1;
-        *puVar5 = auStack_c0[(uint)bVar10 * -2 + 8];
-        *puVar6 = auStack_c0[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 9];
+        *puVar5 = auStack_c4[(uint)bVar10 * -2 + 8];
+        *puVar6 = auStack_c4[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 9];
         puVar6[(uint)bVar10 * -2 + 1] =
-             (auStack_c0 + (uint)bVar10 * -2 + (uint)bVar10 * -2 + 9)[(uint)bVar10 * -2 + 1];
+             (auStack_c4 + (uint)bVar10 * -2 + (uint)bVar10 * -2 + 9)[(uint)bVar10 * -2 + 1];
         break;
       case 3:
         pCStack_1c = (CVector3f *)&in_stack_00000004->orient;
@@ -213,7 +212,7 @@ void core_platfrm_cpp_FUN_0054ea00(void)
                   (&CStack_220,pCStack_14,pCStack_1c);
         core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
                   (&CStack_250,&CStack_220,(CMatrix3x4f *)euler_angles);
-        pfVar4 = afStack_27c;
+        pfVar4 = afStack_280;
         pCVar9 = &CStack_2b0;
         for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
           pCVar9->m[0].w = *pfVar4;
@@ -230,15 +229,15 @@ void core_platfrm_cpp_FUN_0054ea00(void)
         }
         core_xform_cpp_matrixToQuaternion_FUN_005f7420(CStack_2b0.m,(CMatrix3x3f *)euler_angles);
         puVar5 = (uint *)((int)in_stack_00000004 + (uint)bVar10 * -8 + 0x338);
-        *(uint *)(in_stack_00000004[2].create_event + 0xc) = uStack_84;
+        *(uint *)(in_stack_00000004[2].create_event + 0xc) = uStack_88;
         puVar6 = puVar5 + (uint)bVar10 * -2 + 1;
-        *puVar5 = auStack_c0[(uint)bVar10 * -2 + 0x10];
-        *puVar6 = auStack_c0[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x11];
+        *puVar5 = auStack_c4[(uint)bVar10 * -2 + 0x10];
+        *puVar6 = auStack_c4[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x11];
         puVar6[(uint)bVar10 * -2 + 1] =
-             (auStack_c0 + (uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x11)[(uint)bVar10 * -2 + 1];
+             (auStack_c4 + (uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x11)[(uint)bVar10 * -2 + 1];
         core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
                   (&CStack_130,&CStack_220,(CMatrix3x4f *)euler_angles);
-        pfVar4 = afStack_1bc;
+        pfVar4 = afStack_1c0;
         pCVar9 = &CStack_1f0;
         for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
           pCVar9->m[0].w = *pfVar4;
@@ -255,12 +254,12 @@ void core_platfrm_cpp_FUN_0054ea00(void)
         }
         core_xform_cpp_matrixToQuaternion_FUN_005f7420(CStack_1f0.m,(CMatrix3x3f *)euler_angles);
         puVar5 = (uint *)((int)in_stack_00000004 + (uint)bVar10 * -8 + 0x348);
-        *(uint *)(in_stack_00000004[2].create_event + 0x1c) = uStack_c4;
+        *(uint *)(in_stack_00000004[2].create_event + 0x1c) = uStack_c8;
         puVar6 = puVar5 + (uint)bVar10 * -2 + 1;
-        *puVar5 = auStack_c0[(uint)bVar10 * -2];
-        *puVar6 = auStack_c0[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
+        *puVar5 = auStack_c4[(uint)bVar10 * -2];
+        *puVar6 = auStack_c4[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1];
         puVar6[(uint)bVar10 * -2 + 1] =
-             (auStack_c0 + (uint)bVar10 * -2 + (uint)bVar10 * -2 + 1)[(uint)bVar10 * -2 + 1];
+             (auStack_c4 + (uint)bVar10 * -2 + (uint)bVar10 * -2 + 1)[(uint)bVar10 * -2 + 1];
       }
     }
     else {

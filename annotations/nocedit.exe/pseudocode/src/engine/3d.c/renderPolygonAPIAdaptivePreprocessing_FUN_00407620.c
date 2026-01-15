@@ -34,16 +34,16 @@ engine_3d_c_renderPolygonAPIAdaptivePreprocessing_FUN_00407620
     else {
       g_ScanlineRenderFunc = wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
     }
-    g_RenderStateFlags = render_state_flags;
-    if ((render_state_flags & 0x10U) != 0) {
+    g_RenderStateFlags = render_flags;
+    if ((render_flags & 0x10U) != 0) {
       g_CurrentLightingValue =
            engine_light_cpp_calculateLighting_FUN_00505780
                      ((primitive->surface_normal).A,(primitive->surface_normal).B,
                       (primitive->surface_normal).C);
     }
-    g_RenderStateFlag2 = special_render_mode;
-    if (special_render_mode == 0) {
-      if ((alpha_blend_flags & 0xc0U) != 0) {
+    g_RenderStateFlag2 = render_state_flags;
+    if (render_state_flags == 0) {
+      if ((render_flags & 0xc0U) != 0) {
         g_RenderStateFlag2 = PREPROCESS_DEPTH_BUFFER_PREP;
       }
     }

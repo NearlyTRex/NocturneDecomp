@@ -16,18 +16,16 @@ core_fire_cpp_CShell_onCollision_FUN_004c6380(CShell *this_ptr,CVector3f *collis
   uint extraout_EAX_00;
   int iVar3;
   int iVar4;
-  float fVar5;
-  float fVar6;
+  float local_18;
   
-  fVar5 = (float)(4 - *(int *)(this_ptr->field1_0x38 + 0x18)) * (float)0.25;
-  if (fVar5 < 0.0) {
-    fVar5 = 0.0;
+  local_18 = (float)(4 - *(int *)(this_ptr->field1_0x38 + 0x18)) * (float)0.25;
+  if (local_18 < 0.0) {
+    local_18 = 0.0;
   }
   fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-6.2831855,6.2831855);
-  fVar6 = 3.1415927;
-  *(float *)(this_ptr->field1_0x38 + 0xc) = fVar1 * fVar5;
-  fVar5 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-3.1415927,3.1415927);
-  *(float *)(this_ptr->field1_0x38 + 0x10) = fVar5 * fVar6;
+  *(float *)(this_ptr->field1_0x38 + 0xc) = fVar1 * local_18;
+  fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-3.1415927,3.1415927);
+  *(float *)(this_ptr->field1_0x38 + 0x10) = fVar1 * local_18;
   if (*(int *)(this_ptr->field1_0x38 + 0x18) == 0) {
     iVar4 = 0;
     iVar3 = 0;

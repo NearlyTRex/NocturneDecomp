@@ -1,19 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 926,
-    "complexity_score": 958,
+    "complexity_score": 741,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 100,
-    "pseudocode_lines": 428,
-    "suspect_count": 51,
+    "pseudocode_lines": 406,
+    "suspect_count": 32,
     "suspect_types": [
       "call_esp_preserve",
       "pointer_cast",
-      "stack_param",
       "variadic_preserve"
     ],
-    "total_lines": 1354
+    "total_lines": 1332
   },
   "cross_references": [
     {
@@ -924,218 +923,85 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_00000034",
-      "text": "int in_stack_00000034;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 34,
-      "match": "in_stack_0000004c",
-      "text": "int *in_stack_0000004c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 35,
-      "match": "in_stack_00000050",
-      "text": "int *in_stack_00000050;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 36,
-      "match": "in_stack_ffffffec",
-      "text": "uint in_stack_ffffffec;",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 51,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)&g_CramSortedTextureEntries[0].source_entry_ptr + iVar18) = atlas_width;",
+      "text": "*(int *)((int)&g_CramSortedTextureEntries[0].width + iVar14) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 52,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&g_CramSortedTextureEntries[0].width + iVar18) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 57,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&g_CramSortedTextureEntries[0].height + iVar18) = *puVar7;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 122,
-      "match": "(byte *)((int)",
-      "text": "puVar16 = (byte *)((int)ppcVar9 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 131,
-      "match": "in_stack_ffffffec",
-      "text": "in_stack_ffffffec = 0x20b;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 178,
+      "line": 56,
       "match": "(int *)((int)",
-      "text": "if (((*(int *)((int)&g_CramRectangles[0].left + iVar13) == 0) &&",
+      "text": "*(int *)((int)&g_CramSortedTextureEntries[0].height + iVar14) = *piVar6;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 179,
+      "line": 174,
       "match": "(int *)((int)",
-      "text": "(*(int *)((int)&g_CramRectangles[0].top + iVar13) == 0)) &&",
+      "text": "if (((*(int *)((int)&g_CramRectangles[0].left + iVar18) == 0) &&",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 181,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)&g_CramRectangles[0].right + iVar13))) goto LAB_004451a8;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 185,
-      "match": "in_stack_ffffffec",
-      "text": "in_stack_ffffffec = 0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 190,
-      "match": "in_stack_ffffffec",
-      "text": "if (in_stack_ffffffec != 0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 214,
-      "match": "in_stack_ffffffec",
-      "text": "pSVar23->orientation = in_stack_ffffffec;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 219,
-      "match": "in_stack_ffffffec",
-      "text": "in_stack_ffffffec = in_stack_ffffffec + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 219,
-      "match": "in_stack_ffffffec",
-      "text": "in_stack_ffffffec = in_stack_ffffffec + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 221,
-      "match": "in_stack_ffffffec",
-      "text": "} while ((int)in_stack_ffffffec < 2);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 228,
-      "match": "(int *)((int)",
-      "text": "if (((*(int *)((int)&g_CramRectangles[0].left + iVar19) == 0) &&",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 230,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)&g_CramRectangles[0].top + iVar19))) &&",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 232,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)&g_CramRectangles[0].right + iVar19))) goto LAB_004451f7;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 278,
-      "match": "(int *)((int)",
-      "text": "if (((atlas_width == *(int *)((int)&g_CramRectangles[0].left + iVar18)) &&",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 279,
+      "line": 175,
       "match": "(int *)((int)",
       "text": "(*(int *)((int)&g_CramRectangles[0].top + iVar18) == 0)) &&",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 280,
+      "line": 177,
       "match": "(int *)((int)",
-      "text": "(*(int *)((int)&g_CramRectangles[0].right + iVar18) == 0)) goto LAB_00445252;",
+      "text": "*(int *)((int)&g_CramRectangles[0].right + iVar18))) goto LAB_004451a8;",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 384,
-      "match": "in_stack_ffffffec",
-      "text": "crt_stdlib_c_srand_FUN_005feb80(in_stack_ffffffec);",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 222,
+      "match": "(int *)((int)",
+      "text": "if (((*(int *)((int)&g_CramRectangles[0].left + iVar15) == 0) &&",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 386,
-      "match": "in_stack_00000034",
-      "text": "if (0 < in_stack_00000034) {",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 224,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)&g_CramRectangles[0].top + iVar15))) &&",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 408,
-      "match": "in_stack_00000034",
-      "text": "} while (iVar18 < in_stack_00000034);",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 226,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)&g_CramRectangles[0].right + iVar15))) goto LAB_004451f7;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 411,
-      "match": "in_stack_00000050",
-      "text": "*in_stack_00000050 = g_CramCurrentAcceptableSize;",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 272,
+      "match": "(int *)((int)",
+      "text": "if (((local_14 == *(int *)((int)&g_CramRectangles[0].left + iVar11)) &&",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 412,
-      "match": "in_stack_0000004c",
-      "text": "*in_stack_0000004c = iVar18;",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 273,
+      "match": "(int *)((int)",
+      "text": "(*(int *)((int)&g_CramRectangles[0].top + iVar11) == 0)) &&",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 426,
-      "match": "in_stack_ffffffec",
-      "text": "in_stack_ffffffec = 0x253;",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 274,
+      "match": "(int *)((int)",
+      "text": "(*(int *)((int)&g_CramRectangles[0].right + iVar11) == 0)) goto LAB_00445252;",
+      "type": "pointer_cast"
     },
     {
       "call_address": "00445027",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1149,7 +1015,7 @@
     },
     {
       "call_address": "0044503b",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1163,7 +1029,7 @@
     },
     {
       "call_address": "0044504a",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1177,7 +1043,7 @@
     },
     {
       "call_address": "00445375",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1191,7 +1057,7 @@
     },
     {
       "call_address": "004453a5",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1205,7 +1071,7 @@
     },
     {
       "call_address": "0044546f",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1219,7 +1085,7 @@
     },
     {
       "call_address": "00445780",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1233,7 +1099,7 @@
     },
     {
       "call_address": "00445795",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

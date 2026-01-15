@@ -13,7 +13,6 @@ CVector3f * core_bride_cpp_FUN_00424aa0(void)
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   uint *puVar2;
   uint *puVar3;
   byte bVar4;

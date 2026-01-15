@@ -1,21 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 100,
-    "complexity_score": 246,
+    "complexity_score": 170,
     "cross_reference_count": 2,
     "function_call_count": 8,
     "global_count": 4,
-    "pseudocode_lines": 36,
-    "suspect_count": 18,
+    "pseudocode_lines": 35,
+    "suspect_count": 12,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
-      "register_param",
-      "stack_ref",
       "variadic_preserve"
     ],
-    "total_lines": 136
+    "total_lines": 135
   },
   "cross_references": [
     {
@@ -207,50 +204,8 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 8,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 8,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 14,
-      "match": "&stack0xfffffbc8",
-      "text": "engine_pod_cpp_CPodFile_ctor_FUN_0054f5a0((CPodFile *)&stack0xfffffbc8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 16,
-      "match": "&stack0xfffffbcc",
-      "text": "((CPodFile *)&stack0xfffffbcc,pod_filename);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 20,
-      "match": "&stack0xfffffbd4",
-      "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xfffffbd4);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 37,
-      "match": "&stack0xfffffbe0",
-      "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xfffffbe0);",
-      "type": "stack_ref"
-    },
-    {
       "call_address": "004bcb42",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

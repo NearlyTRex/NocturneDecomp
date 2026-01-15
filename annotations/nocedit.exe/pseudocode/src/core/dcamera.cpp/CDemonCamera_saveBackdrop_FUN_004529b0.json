@@ -1,26 +1,23 @@
 {
   "complexity": {
     "assembly_lines": 445,
-    "complexity_score": 1151,
+    "complexity_score": 978,
     "cross_reference_count": 1,
     "function_call_count": 18,
     "global_count": 41,
-    "pseudocode_lines": 226,
-    "suspect_count": 87,
+    "pseudocode_lines": 228,
+    "suspect_count": 71,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "extra_output",
-      "format_string_mismatch",
       "lea_esp_stack_addr",
       "pointer_cast",
-      "register_param",
       "stack_param",
       "stack_ref",
       "unaffected_reg",
       "variadic_preserve"
     ],
-    "total_lines": 671
+    "total_lines": 673
   },
   "cross_references": [
     {
@@ -636,247 +633,170 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 13,
-      "match": "unaff_EBX",
-      "text": "int unaff_EBX;",
+      "line": 15,
+      "match": "unaff_ESI",
+      "text": "CDemonCamera *unaff_ESI;",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 16,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 16,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 24,
-      "match": "in_stack_00000008",
-      "text": "int in_stack_00000008;",
+      "match": "in_stack_fffffd8c",
+      "text": "uint in_stack_fffffd8c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 25,
-      "match": "in_stack_00000018",
-      "text": "CDemonCamera *in_stack_00000018;",
+      "match": "in_stack_fffffd90",
+      "text": "uint in_stack_fffffd90;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 26,
-      "match": "in_stack_0000001c",
-      "text": "int in_stack_0000001c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_00000024",
-      "text": "int in_stack_00000024;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 28,
-      "match": "in_stack_fffffd9c",
-      "text": "SIZE_T in_stack_fffffd9c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_fffffda8",
-      "text": "byte *in_stack_fffffda8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_fffffdac",
-      "text": "uint in_stack_fffffdac;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_fffffdb0",
-      "text": "uint in_stack_fffffdb0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 62,
-      "match": "in_stack_00000008",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffd90,\"%s.fog\",in_stack_00000008 + 0x40);",
+      "match": "in_stack_fffffd94",
+      "text": "uint in_stack_fffffd94;",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 62,
-      "match": "&stack0xfffffd90",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffd90,\"%s.fog\",in_stack_00000008 + 0x40);",
+      "line": 59,
+      "match": "&stack0xfffffd8c",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffd8c,\"%s.fog\",this_ptr->camera_name);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 60,
+      "match": "&stack0xfffffd8c",
+      "text": "file_ptr = engine_dosio_c_getFile_FUN_00481a50(\"backdrop\",&stack0xfffffd8c,\"rb\")",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 63,
-      "match": "&stack0xfffffd94",
-      "text": "file_ptr = engine_dosio_c_getFile_FUN_00481a50(\"backdrop\",&stack0xfffffd94,\"rb\")",
+      "match": "&stack0xfffffd8c",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(local_f8,\"backdrop\\\\%s\",&stack0xfffffd8c);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 72,
-      "match": "in_stack_fffffd9c",
-      "text": "in_stack_fffffd9c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 88,
-      "match": "in_stack_00000024",
-      "text": "((double)((float10)*(float *)(in_stack_00000024 + 4) * fVar10));",
+      "line": 66,
+      "match": "in_stack_fffffd8c",
+      "text": "in_stack_fffffd8c);",
       "type": "stack_param"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 90,
+      "line": 89,
       "match": "extraout_EAX",
-      "text": "dVar11 = crt_math_c_round_FUN_005fe6b0((double)((float10)*(float *)(extraout_EAX + 8) * fVar10))",
+      "text": "((double)((float10)*(float *)(extraout_EAX + 8) * fVar10));",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 94,
+      "line": 92,
       "match": "extraout_EAX_00",
       "text": "((double)(fVar10 * (float10)*(float *)(extraout_EAX_00 + 0xc)));",
       "type": "extra_output"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 108,
-      "match": "in_stack_00000018",
-      "text": "if (1 < in_stack_00000018->display_height) {",
-      "type": "stack_param"
+      "description": "Unaffected register variable",
+      "line": 106,
+      "match": "unaff_ESI",
+      "text": "if (1 < unaff_ESI->display_height) {",
+      "type": "unaffected_reg"
     },
     {
       "description": "Complex pointer cast",
-      "line": 113,
+      "line": 111,
       "match": "(CVector3i *)((int)",
-      "text": "end_pos = (CVector3i *)((int)&g_PrecomputedWorldPositions[0].x + local_20);",
+      "text": "end_pos = (CVector3i *)((int)&g_PrecomputedWorldPositions[0].x + local_40);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 114,
+      "line": 112,
       "match": "(int *)((int)",
-      "text": "piVar5 = (int *)((int)g_PrecomputedDepthBuffer + local_1c);",
+      "text": "piVar5 = (int *)((int)g_PrecomputedDepthBuffer + local_3c);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 117,
-      "match": "in_stack_00000018",
-      "text": "if (1 < in_stack_00000018->display_width) {",
-      "type": "stack_param"
+      "description": "Unaffected register variable",
+      "line": 115,
+      "match": "unaff_ESI",
+      "text": "if (1 < unaff_ESI->display_width) {",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 135,
-      "match": "in_stack_00000018",
-      "text": "} while (iVar7 < in_stack_00000018->display_width);",
-      "type": "stack_param"
+      "description": "Unaffected register variable",
+      "line": 133,
+      "match": "unaff_ESI",
+      "text": "} while (iVar6 < unaff_ESI->display_width);",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unaffected register variable",
+      "line": 139,
+      "match": "unaff_ESI",
+      "text": "} while (local_34 < unaff_ESI->display_height);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
       "line": 141,
-      "match": "in_stack_00000018",
-      "text": "} while (local_14 < in_stack_00000018->display_height);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 143,
-      "match": "in_stack_00000018",
-      "text": "core_dcamera_cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00453020(in_stack_00000018,unaff_EBX)",
-      "type": "stack_param"
+      "match": "unaff_ESI",
+      "text": "core_dcamera_cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00453020(unaff_ESI,local_24);",
+      "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
       "line": 143,
-      "match": "unaff_EBX",
-      "text": "core_dcamera_cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00453020(in_stack_00000018,unaff_EBX)",
+      "match": "unaff_ESI",
+      "text": "if (0 < unaff_ESI->display_height) {",
       "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 146,
-      "match": "in_stack_00000018",
-      "text": "if (0 < in_stack_00000018->display_height) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 155,
-      "match": "in_stack_0000001c",
-      "text": "if (0 < *(int *)(in_stack_0000001c + 0x150)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 181,
-      "match": "in_stack_0000001c",
-      "text": "} while (iVar3 < *(int *)(in_stack_0000001c + 0x150));",
-      "type": "stack_param"
+      "description": "Unaffected register variable",
+      "line": 158,
+      "match": "unaff_ESI",
+      "text": "if (0 < unaff_ESI->display_width) {",
+      "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
       "line": 187,
-      "match": "unaff_EBX",
-      "text": "unaff_EBX = local_28;",
+      "match": "unaff_ESI",
+      "text": "} while (iVar3 < unaff_ESI->display_width);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 192,
+      "match": "unaff_ESI",
+      "text": "} while (local_38 < unaff_ESI->display_height);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 188,
-      "match": "in_stack_0000001c",
-      "text": "} while (local_14 < *(int *)(in_stack_0000001c + 0x154));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 204,
-      "match": "in_stack_fffffda8",
-      "text": "in_stack_fffffda8 = auStack_d8;",
+      "line": 226,
+      "match": "in_stack_fffffd8c",
+      "text": "((ofstream *)local_174,d1,in_stack_fffffd8c,in_stack_fffffd90,in_stack_fffffd94);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 226,
-      "match": "in_stack_fffffda8",
-      "text": "((ofstream *)(auStack_164 + 0xc),0,(uint)in_stack_fffffda8,in_stack_fffffdac,",
+      "match": "in_stack_fffffd90",
+      "text": "((ofstream *)local_174,d1,in_stack_fffffd8c,in_stack_fffffd90,in_stack_fffffd94);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 226,
-      "match": "in_stack_fffffdac",
-      "text": "((ofstream *)(auStack_164 + 0xc),0,(uint)in_stack_fffffda8,in_stack_fffffdac,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 227,
-      "match": "in_stack_fffffdb0",
-      "text": "in_stack_fffffdb0);",
+      "match": "in_stack_fffffd94",
+      "text": "((ofstream *)local_174,d1,in_stack_fffffd8c,in_stack_fffffd90,in_stack_fffffd94);",
       "type": "stack_param"
     },
     {
@@ -962,61 +882,6 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00453004 (no EBP frame)",
       "type": "variadic_preserve"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"backdrop\\\\%s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "backdrop\\\\%s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 69,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_ec,\"backdrop\\\\%s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Can't create %s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Can't create %s",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 76,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Can't create %s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Error compressing %s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Error compressing %s",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 201,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Error compressing %s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Not all bytes consumed compressing %s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Not all bytes consumed compressing %s",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 208,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Not all bytes consumed compressing %s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Error writing compressed file %s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Error writing compressed file %s",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 213,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Error writing compressed file %s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 4,

@@ -13,7 +13,6 @@ void __cdecl core_ground_cpp_CGround_transformAndStoreVertices_FUN_004ef490(CGro
   int iVar2;
   int iVar3;
   int iVar4;
-  BADSPACEBASE *in_ESP;
   int iVar5;
   int local_6c [6];
   int local_54;

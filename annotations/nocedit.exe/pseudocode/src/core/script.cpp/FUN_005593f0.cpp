@@ -19,7 +19,7 @@ char * core_script_cpp_FUN_005593f0(void)
   int iVar5;
   int *in_stack_00000004;
   int in_stack_00000008;
-  int in_stack_00000010;
+  int in_stack_0000000c;
   
   pcVar2 = (char *)core_script_cpp_FUN_005593d0();
   *in_stack_00000004 = (int)pcVar2;
@@ -28,7 +28,7 @@ char * core_script_cpp_FUN_005593f0(void)
   }
   iVar3 = 0;
   iVar4 = 0;
-  if (0 < in_stack_00000010) {
+  if (0 < in_stack_0000000c) {
     do {
       iVar5 = *in_stack_00000004;
       pcVar2 = (char *)(iVar5 + 1);
@@ -54,7 +54,7 @@ char * core_script_cpp_FUN_005593f0(void)
       iVar5 = iVar4 + 1;
       *(byte *)(iVar4 + in_stack_00000008) = *(byte *)*in_stack_00000004;
       iVar4 = iVar5;
-    } while (iVar5 < in_stack_00000010);
+    } while (iVar5 < in_stack_0000000c);
   }
   return "Argument too long";
 }

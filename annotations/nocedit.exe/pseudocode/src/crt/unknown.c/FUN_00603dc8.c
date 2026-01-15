@@ -16,7 +16,6 @@ void crt_unknown_c_FUN_00603dc8(void)
   char *pcVar5;
   uint uVar6;
   int iVar7;
-  BADSPACEBASE *in_ESP;
   int iVar8;
   ushort in_FPUControlWord;
   float10 fVar9;

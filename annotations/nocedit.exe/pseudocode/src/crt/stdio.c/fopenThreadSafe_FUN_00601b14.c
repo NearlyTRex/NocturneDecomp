@@ -14,9 +14,8 @@ crt_stdio_c_fopenThreadSafe_FUN_00601b14(char *filename,char *mode,FILE **output
   int parsed_mode_flags;
   FILE *file_struct;
   FILE *pFVar1;
-  BADSPACEBASE *in_ESP;
-  char *in_stack_00000024;
-  char *in_stack_00000028;
+  int unaff_EDI;
+  char *in_stack_00000010;
   
   parsed_mode_flags = crt_stdio_c_OpenModeStringParser_FUN_006017d0(mode,&stack0xffffffec);
   pFVar1 = (FILE *)0x0;
@@ -31,8 +30,8 @@ crt_stdio_c_fopenThreadSafe_FUN_00601b14(char *filename,char *mode,FILE **output
     if (file_struct != (FILE *)0x0) {
       file_struct->_flag = file_struct->_flag & 0x4000;
       pFVar1 = crt_stdio_c_OpenFileAndInitialize_FUN_0060190c
-                         (in_stack_00000024,*in_stack_00000028,parsed_mode_flags,
-                          (int)output_file_ptr,0,file_struct);
+                         ((char *)output_file_ptr,*in_stack_00000010,parsed_mode_flags,unaff_EDI,0,
+                          file_struct);
     }
     (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)((int)file_index);
   }

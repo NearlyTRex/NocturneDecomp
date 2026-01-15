@@ -15,7 +15,7 @@ byte * core_script_cpp_CScript_StepThroughWholeScript_FUN_0055a4b0(void)
   int iVar1;
   int iVar2;
   int in_stack_00000004;
-  int *in_stack_00000010;
+  int *in_stack_00000008;
   
   DAT_0310ec9c = 1;
   core_script_cpp_FUN_0055a540();
@@ -25,7 +25,7 @@ byte * core_script_cpp_CScript_StepThroughWholeScript_FUN_0055a4b0(void)
       iVar2 = *(int *)(in_stack_00000004 + 0x48);
       iVar1 = core_script_cpp_CScript_step_FUN_0055a810();
       if (iVar1 < 0) {
-        *in_stack_00000010 = *(int *)(*(int *)(in_stack_00000004 + 0x34) + iVar2 * 8) + -1;
+        *in_stack_00000008 = *(int *)(*(int *)(in_stack_00000004 + 0x34) + iVar2 * 8) + -1;
         return &DAT_0310eca0;
       }
       iVar2 = iVar2 + 1;

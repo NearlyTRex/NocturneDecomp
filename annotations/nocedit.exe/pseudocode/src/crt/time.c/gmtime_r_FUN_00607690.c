@@ -15,7 +15,7 @@ crt_time_c_gmtime_r_FUN_00607690(int days,uint seconds,int timezone_offset,uint 
   int iVar3;
   uint uVar4;
   uint uVar5;
-  short *unaff_EDI;
+  short *local_14;
   
   if ((seconds < 0xa8c0) && (0 < timezone_offset)) {
     seconds = (seconds + 0x15180) - timezone_offset;
@@ -40,16 +40,17 @@ crt_time_c_gmtime_r_FUN_00607690(int days,uint seconds,int timezone_offset,uint 
   }
   param_4[5] = uVar2;
   param_4[7] = uVar4;
+  local_14 = &g_DaysInMonth_Normal;
   iVar3 = crt_time_c_is_leap_year_FUN_00607820(uVar2 + 0x76c);
   if (iVar3 != 0) {
-    unaff_EDI = &g_DaysInMonth_Leap;
+    local_14 = &g_DaysInMonth_Leap;
   }
   uVar2 = uVar4 / 0x1f;
-  if ((uint)(*(int *)(unaff_EDI + uVar2) >> 0x10) <= uVar4) {
+  if ((uint)(*(int *)(local_14 + uVar2) >> 0x10) <= uVar4) {
     uVar2 = uVar2 + 1;
   }
   param_4[4] = uVar2;
-  param_4[3] = (uVar4 - (int)unaff_EDI[uVar2]) + 1;
+  param_4[3] = (uVar4 - (int)local_14[uVar2]) + 1;
   param_4[6] = (uVar5 + 1) % 7;
   return param_4;
 }

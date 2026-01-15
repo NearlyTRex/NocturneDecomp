@@ -18,12 +18,9 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004a4d40(CPickList *t
   char *pcVar7;
   int iVar8;
   char *pcVar9;
-  BADSPACEBASE *in_ESP;
-  int unaff_ESI;
-  int unaff_retaddr;
-  CPickList *in_stack_00000008;
-  int *in_stack_0000000c;
-  char acStack_150 [292];
+  char *pcVar10;
+  char local_15c [300];
+  int local_30;
   int local_2c;
   int local_28;
   int local_24;
@@ -34,44 +31,45 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004a4d40(CPickList *t
   
   shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(g_CEditorToolsPtr);
   shape_edittool_cpp_CEditorTools_drawWindowSeparator_FUN_004a1230(g_CEditorToolsPtr,1);
-  local_20 = g_ClipLeft;
-  local_1c = in_stack_0000000c[0x60];
-  local_28 = 0;
-  if (0 < in_stack_0000000c[100]) {
+  local_28 = g_ClipLeft;
+  local_24 = this_ptr->scroll_top;
+  local_30 = 0;
+  if (0 < this_ptr->column_count) {
     do {
-      local_14 = g_ClipTop;
-      local_24 = 0;
-      if (0 < in_stack_0000000c[0x62]) {
+      local_1c = g_ClipTop;
+      local_2c = 0;
+      if (0 < this_ptr->vertical_page_size) {
         do {
-          iVar8 = local_14;
-          if (*in_stack_0000000c <= local_1c) break;
-          if (local_1c == in_stack_0000000c[0x5f]) {
-            iVar3 = local_20 + in_stack_0000000c[99] + -1;
-            iVar5 = local_14 + in_stack_0000000c[0x5d] + -1;
+          iVar8 = local_1c;
+          if ((this_ptr->base_strlist).item_count <= local_24) break;
+          if (local_24 == this_ptr->current_index) {
+            iVar3 = local_28 + this_ptr->total_content_width + -1;
+            iVar5 = local_1c + this_ptr->character_width + -1;
             iVar4 = g_SelectionHighlightColor;
-            if (in_stack_0000000c[0x5c] != 0) {
+            if (this_ptr->confirmed_flag != 0) {
               iVar4 = g_HighlightColor1;
             }
-            engine_2d_c_fillRectColor_FUN_00403170(local_20,local_14,iVar3,iVar5,iVar4);
-            if (*(int *)(unaff_retaddr + 0x3a4) == -1) {
+            engine_2d_c_fillRectColor_FUN_00403170(local_28,local_1c,iVar3,iVar5,iVar4);
+            if (this_ptr->selection_state == -1) {
               g_ActiveRenderColor = 0;
-              shape_edittool_cpp_drawDashedLine_FUN_0049d290(local_2c,iVar8,iVar3,iVar5,1);
+              shape_edittool_cpp_drawDashedLine_FUN_0049d290(local_28,iVar8,iVar3,iVar5,1);
             }
           }
           iVar8 = local_24;
           local_18 = 0;
           pcVar7 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
                              (&this_ptr->base_strlist,local_24);
-          iVar4 = local_24 + in_stack_00000008->field9_0x178;
-          local_1c = g_EnabledTextColor;
-          iVar8 = shape_edittool_cpp_CPickList_isItemEnabled_FUN_004a54e0(in_stack_00000008,iVar8);
+          local_14 = local_28 + this_ptr->field9_0x178;
+          local_20 = g_EnabledTextColor;
+          iVar8 = shape_edittool_cpp_CPickList_isItemEnabled_FUN_004a54e0(this_ptr,iVar8);
           if (iVar8 == 0) {
-            local_18 = g_BackgroundColor1;
+            local_20 = g_BackgroundColor1;
           }
+          pcVar10 = this_ptr->field1_0x10 + local_18 * 4 + -0x10;
           do {
-            pcVar9 = &stack0xfffffeac;
             cVar1 = *pcVar7;
             pcVar2 = pcVar7;
+            pcVar9 = local_15c;
             while ((pcVar7 = pcVar2, cVar1 != '\0' && (pcVar7 = pcVar2 + 1, *pcVar2 != '\t'))) {
               *pcVar9 = *pcVar2;
               pcVar9 = pcVar9 + 1;
@@ -81,16 +79,18 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004a4d40(CPickList *t
             *pcVar9 = '\0';
             engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
             engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
-                      (g_EditorFont,acStack_150,unaff_ESI,iVar4,local_14,-1);
-            iVar4 = iVar4 + 1;
+                      (g_EditorFont,local_15c,local_14,local_1c,local_20,-1);
+            local_18 = local_18 + 1;
+            local_14 = local_14 + *(int *)(pcVar10 + 0x10);
+            pcVar10 = pcVar10 + 4;
           } while (*pcVar7 != '\0');
-          local_14 = local_14 + in_stack_0000000c[0x5d];
-          local_1c = local_1c + 1;
+          local_1c = local_1c + this_ptr->character_width;
           local_24 = local_24 + 1;
-        } while (local_24 < in_stack_0000000c[0x62]);
+          local_2c = local_2c + 1;
+        } while (local_2c < this_ptr->vertical_page_size);
       }
       iVar8 = g_ActiveRenderColor;
-      if (0 < local_28) {
+      if (0 < local_30) {
         g_ActiveRenderColor = g_HighlightColor2;
         iVar3 = shape_edittool_cpp_calculateGridHeight_FUN_004a64b0();
         iVar4 = g_WindowHeight / 0x60;
@@ -101,40 +101,41 @@ void __cdecl shape_edittool_cpp_CPickList_renderDialog_FUN_004a4d40(CPickList *t
           iVar5 = 1;
         }
         iVar6 = shape_edittool_cpp_calculateButtonHeight_FUN_004a6970((char *)0x0);
-        if (in_stack_00000008->dialog_result != 2) {
+        if (this_ptr->dialog_result != 2) {
           iVar3 = 0;
         }
         engine_2d_c_drawLine_FUN_004011b0
-                  (local_24,g_ClipTop,local_24,g_ClipBottom - (iVar3 + iVar4 * iVar5 + iVar6));
+                  (local_28,g_ClipTop,local_28,g_ClipBottom - (iVar3 + iVar4 * iVar5 + iVar6));
       }
-      local_28 = local_28 + 1;
-      local_20 = local_20 + in_stack_0000000c[99];
+      local_30 = local_30 + 1;
+      local_28 = local_28 + this_ptr->total_content_width;
       g_ActiveRenderColor = iVar8;
-    } while (local_28 < in_stack_0000000c[100]);
+    } while (local_30 < this_ptr->column_count);
   }
-  if (in_stack_0000000c[0x76] == 1) {
-    in_stack_0000000c[0x69] = in_stack_0000000c[0x60];
-    in_stack_0000000c[0x6a] = *in_stack_0000000c;
-    in_stack_0000000c[0x6b] = in_stack_0000000c[0x62];
+  if (this_ptr->dialog_result == 1) {
+    (this_ptr->scrollbar).scroll_position = this_ptr->scroll_top;
+    (this_ptr->scrollbar).current_value = (this_ptr->base_strlist).item_count;
+    (this_ptr->scrollbar).max_value = this_ptr->vertical_page_size;
   }
   else {
-    if (in_stack_0000000c[0x76] != 2) goto LAB_004a4f19;
-    in_stack_0000000c[0x69] = in_stack_0000000c[0x60] / in_stack_0000000c[0x62];
-    in_stack_0000000c[0x6a] =
-         (*in_stack_0000000c + in_stack_0000000c[0x62] + -1) / in_stack_0000000c[0x62];
-    in_stack_0000000c[0x6b] = in_stack_0000000c[100];
+    if (this_ptr->dialog_result != 2) goto LAB_004a4f19;
+    (this_ptr->scrollbar).scroll_position = this_ptr->scroll_top / this_ptr->vertical_page_size;
+    (this_ptr->scrollbar).current_value =
+         ((this_ptr->base_strlist).item_count + this_ptr->vertical_page_size + -1) /
+         this_ptr->vertical_page_size;
+    (this_ptr->scrollbar).max_value = this_ptr->column_count;
   }
-  shape_edittool_cpp_CEdScrollBar_render_FUN_004a5c10((CEdScrollBar *)(in_stack_0000000c + 0x69));
+  shape_edittool_cpp_CEdScrollBar_render_FUN_004a5c10(&this_ptr->scrollbar);
 LAB_004a4f19:
-  if ((char)in_stack_0000000c[0x11] != '\0') {
+  if (this_ptr->ok_button_text[0] != '\0') {
     shape_edittool_cpp_CEdButton_paint_FUN_004a65e0
-              ((CEdButton *)(in_stack_0000000c + 0x77),(uint)(in_stack_0000000c[0xe9] == 0));
+              (&this_ptr->ok_button,(uint)(this_ptr->selection_state == 0));
   }
-  if ((char)in_stack_0000000c[0x2a] != '\0') {
+  if (this_ptr->cancel_button_text[0] != '\0') {
     shape_edittool_cpp_CEdButton_paint_FUN_004a65e0
-              ((CEdButton *)(in_stack_0000000c + 0xb0),(uint)(in_stack_0000000c[0xe9] == 1));
+              (&this_ptr->cancel_button,(uint)(this_ptr->selection_state == 1));
   }
-  if (in_stack_0000000c[0x10] != 0) {
+  if (this_ptr->state_flag != 0) {
     return;
   }
   shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(g_CEditorToolsPtr,false);

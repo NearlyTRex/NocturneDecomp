@@ -25,7 +25,7 @@ shape_superopt_cpp_segmentIntersectsPolygon2D_FUN_005d5de0
     if (vertCount != 0) {
       do {
         iVar1 = shape_superopt_cpp_segmentsIntersect2D_FUN_005d5bb0
-                          (point_a,polyVerts,segStart2,segEnd);
+                          (point_a,polyVerts,segStart,segEnd);
         if (iVar1 != 0) {
           return 1;
         }

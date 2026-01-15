@@ -13,7 +13,6 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_0042e050(CCharacter *this_ptr)
   float fVar1;
   int iVar2;
   uint uVar3;
-  BADSPACEBASE *in_ESP;
   int iVar4;
   int iVar5;
   float in_stack_00000008;

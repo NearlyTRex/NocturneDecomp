@@ -1,22 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 95,
-    "complexity_score": 200,
+    "complexity_score": 167,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 6,
-    "pseudocode_lines": 55,
-    "suspect_count": 11,
+    "pseudocode_lines": 52,
+    "suspect_count": 9,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "callind_preserve",
       "lea_esp_stack_addr",
-      "register_param",
       "stack_param",
       "unaffected_reg"
     ],
-    "total_lines": 150
+    "total_lines": 147
   },
   "cross_references": [],
   "function": {
@@ -180,45 +178,31 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 9,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 9,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 10,
-      "match": "unaff_EDI",
-      "text": "float unaff_EDI;",
+      "line": 9,
+      "match": "unaff_ESI",
+      "text": "float unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_0000000c",
-      "text": "float in_stack_0000000c;",
+      "line": 10,
+      "match": "in_stack_00000008",
+      "text": "float in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_0000000c",
-      "text": "fVar2 = this_ptr->yvel - in_stack_0000000c * (float)32;",
+      "line": 30,
+      "match": "in_stack_00000008",
+      "text": "fVar2 = this_ptr->yvel - in_stack_00000008 * (float)32;",
       "type": "stack_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 53,
-      "match": "unaff_EDI",
-      "text": "unaff_EDI);",
+      "line": 50,
+      "match": "unaff_ESI",
+      "text": "((CDemonActor *)g_HeroActors[g_LocalHeroIndex],(char *)&local_48,unaff_ESI);",
       "type": "unaffected_reg"
     },
     {

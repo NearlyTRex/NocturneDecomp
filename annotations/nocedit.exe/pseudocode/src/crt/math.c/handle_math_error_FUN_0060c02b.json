@@ -1,22 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 79,
-    "complexity_score": 232,
+    "complexity_score": 201,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 37,
-    "suspect_count": 16,
+    "pseudocode_lines": 36,
+    "suspect_count": 14,
     "suspect_types": [
-      "badspacebase",
       "concat_artifact",
-      "register_param",
       "special_crt_function",
       "stack_param",
       "stack_ref",
       "sub_artifact"
     ],
-    "total_lines": 116
+    "total_lines": 115
   },
   "cross_references": [
     {
@@ -155,106 +153,92 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 6,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 6,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 8,
+      "line": 7,
       "match": "in_stack_00000004",
       "text": "double in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 9,
+      "line": 8,
       "match": "in_stack_0000000c",
       "text": "byte in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 14,
       "match": "in_stack_0000000c",
       "text": "if (in_stack_0000000c == 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 16,
       "match": "in_stack_0000000c",
       "text": "errorFlags = in_stack_0000000c | 0x8100;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 17,
       "match": "in_stack_0000000c",
       "text": "if ((in_stack_0000000c == 6) && (in_stack_00000004 < 0.0)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 17,
       "match": "in_stack_00000004",
       "text": "if ((in_stack_0000000c == 6) && (in_stack_00000004 < 0.0)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 22,
       "match": "in_stack_0000000c",
       "text": "if (3 < in_stack_0000000c) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
+      "line": 23,
       "match": "in_stack_0000000c",
       "text": "if ((in_stack_0000000c == 4) && (in_stack_00000004 < 0.0)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
+      "line": 23,
       "match": "in_stack_00000004",
       "text": "if ((in_stack_0000000c == 4) && (in_stack_00000004 < 0.0)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 31,
+      "line": 30,
       "match": "in_stack_0000000c",
       "text": "errorFlags = in_stack_0000000c | 0x2040;",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 33,
+      "line": 32,
       "match": "&stack0x00000004",
       "text": "dVar1 = crt_math_c_set_math_errno_FUN_0060befa(errorFlags,&stack0x00000004);",
       "type": "stack_ref"
     },
     {
       "description": "Decompiler double/longlong extraction artifact",
-      "line": 34,
+      "line": 33,
       "match": "SUB84",
       "text": "local_10 = SUB84 /* extract 2-byte value */(dVar1,0);",
       "type": "sub_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 39,
+      "line": 38,
       "match": "CONCAT44",
       "text": "return (double)CONCAT44 /* combine 2-byte values */(local_14,local_18);",
       "type": "concat_artifact"

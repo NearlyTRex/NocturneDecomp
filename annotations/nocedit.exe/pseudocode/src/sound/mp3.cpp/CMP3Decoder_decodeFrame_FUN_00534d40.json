@@ -1,22 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 1125,
-    "complexity_score": 1065,
+    "complexity_score": 1036,
     "cross_reference_count": 3,
     "function_call_count": 29,
     "global_count": 13,
-    "pseudocode_lines": 520,
-    "suspect_count": 51,
+    "pseudocode_lines": 521,
+    "suspect_count": 49,
     "suspect_types": [
-      "badspacebase",
       "extra_output",
       "format_string_mismatch",
       "pointer_cast",
-      "register_param",
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 1645
+    "total_lines": 1646
   },
   "cross_references": [
     {
@@ -1556,309 +1554,295 @@
       "type": "extra_output"
     },
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 21,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 21,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 29,
+      "line": 28,
       "match": "in_stack_00000008",
       "text": "ushort *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 30,
+      "line": 29,
       "match": "in_stack_ffff9f14",
       "text": "int in_stack_ffff9f14;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 31,
+      "line": 30,
       "match": "in_stack_ffff9f18",
       "text": "uint in_stack_ffff9f18;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 36,
+      "line": 35,
       "match": "in_stack_ffff9f30",
       "text": "uint in_stack_ffff9f30;",
       "type": "stack_param"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
+      "line": 138,
+      "match": "extraout_EAX",
+      "text": "if (((local_94 == 0x30) && (0x37 < extraout_EAX)) ||",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
       "line": 139,
       "match": "extraout_EAX",
-      "text": "if (((local_90 == 0x30) && (0x37 < extraout_EAX)) ||",
+      "text": "((0x37 < extraout_EAX && (extraout_EAX < 0x51)))) {",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 140,
+      "line": 139,
       "match": "extraout_EAX",
       "text": "((0x37 < extraout_EAX && (extraout_EAX < 0x51)))) {",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 140,
+      "line": 142,
       "match": "extraout_EAX",
-      "text": "((0x37 < extraout_EAX && (extraout_EAX < 0x51)))) {",
+      "text": "else if ((local_94 == 0x30) || (extraout_EAX < 0x60)) {",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 143,
       "match": "extraout_EAX",
-      "text": "else if ((local_90 == 0x30) || (extraout_EAX < 0x60)) {",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 144,
-      "match": "extraout_EAX",
-      "text": "if ((local_90 == 0x20) || (0x30 < extraout_EAX)) {",
+      "text": "if ((local_94 == 0x20) || (0x30 < extraout_EAX)) {",
       "type": "extra_output"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 184,
+      "line": 183,
       "match": "in_stack_ffff9f30",
       "text": "in_stack_ffff9f30 = 0x20;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 202,
+      "line": 201,
       "match": "(int *)((int)",
       "text": "piVar9 = (int *)((int)local_7c->codes[0] + local_5c);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 203,
+      "line": 202,
       "match": "(float *)((int)",
       "text": "pfVar4 = (float *)((int)local_80->codes[0] + local_5c);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 233,
+      "line": 232,
       "match": "in_stack_ffff9f30",
       "text": "in_stack_ffff9f30 = 8;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 248,
+      "line": 247,
       "match": "in_stack_00000008",
       "text": "if (in_stack_00000008 != (ushort *)0x0) {",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 254,
+      "line": 253,
       "match": "(float *)((int)",
       "text": "pfVar4 = (float *)((int)local_9c8[0].codes[0] + local_2c);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 255,
+      "line": 254,
       "match": "(short *)((int)",
       "text": "local_30 = (short *)((int)local_33c8 + local_28);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 275,
+      "line": 274,
       "match": "in_stack_00000008",
       "text": "puVar10 = in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 277,
+      "line": 276,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008 = puVar10 + 1;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 279,
+      "line": 278,
       "match": "(ushort *)((int)",
       "text": "*puVar10 = *(ushort *)((int)local_33c8 + iVar7);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 281,
+      "line": 280,
       "match": "in_stack_00000008",
       "text": "puVar10 = in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 293,
+      "line": 292,
       "match": "in_stack_ffff9f30",
       "text": "in_stack_ffff9f30 = 8;",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 309,
+      "line": 308,
       "match": "&stack0xffff9f14",
       "text": "piVar9 = (int *)&stack0xffff9f14;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 312,
+      "line": 311,
       "match": "(SMpegFrameHeader *)((int)",
       "text": "pSVar11 = (SMpegFrameHeader *)((int)pSVar11 + ((uint)bVar15 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 315,
+      "line": 314,
       "match": "in_stack_ffff9f18",
       "text": "frame_info.channel_mode = in_stack_ffff9f18;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 316,
+      "line": 315,
       "match": "in_stack_ffff9f14",
       "text": "frame_info.header = (SMpegFrameHeader *)in_stack_ffff9f14;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 328,
+      "line": 327,
       "match": "in_stack_ffff9f30",
       "text": "sound_mp3_cpp_CMP3Decoder_putByte_FUN_0052f260(this_ptr,uVar8,in_stack_ffff9f30);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 335,
+      "line": 334,
       "match": "in_stack_ffff9f30",
       "text": "if (uVar2 % in_stack_ffff9f30 != 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 336,
+      "line": 335,
       "match": "in_stack_ffff9f30",
       "text": "num_bits = (CMP3Decoder *)(in_stack_ffff9f30 - uVar2 % in_stack_ffff9f30);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 336,
+      "line": 335,
       "match": "in_stack_ffff9f30",
       "text": "num_bits = (CMP3Decoder *)(in_stack_ffff9f30 - uVar2 % in_stack_ffff9f30);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 351,
+      "line": 350,
       "match": "&stack0xffff9f14",
       "text": "piVar9 = (int *)&stack0xffff9f14;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 354,
+      "line": 353,
       "match": "(SMpegFrameHeader *)((int)",
       "text": "pSVar12 = (SMpegFrameHeader *)((int)pSVar12 + ((uint)bVar15 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 357,
+      "line": 356,
       "match": "in_stack_ffff9f18",
       "text": "frame_info_00.channel_mode = in_stack_ffff9f18;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 358,
+      "line": 357,
       "match": "in_stack_ffff9f14",
       "text": "frame_info_00.header = (SMpegFrameHeader *)in_stack_ffff9f14;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 375,
+      "line": 374,
       "match": "in_stack_00000008",
       "text": "if ((in_stack_00000008 != (ushort *)0x0) && (local_74 = 0, 0 < local_ac)) {",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 440,
+      "line": 439,
       "match": "(float *)((int)",
       "text": "*(float *)((int)local_18c8 + iVar6) = -*(float *)((int)local_18c8 + iVar6);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 440,
+      "line": 439,
       "match": "(float *)((int)",
       "text": "*(float *)((int)local_18c8 + iVar6) = -*(float *)((int)local_18c8 + iVar6);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 455,
+      "line": 454,
       "match": "(uint *)((int)",
       "text": "puVar1 = (uint *)((int)local_18c8 + iVar7);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 457,
+      "line": 456,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)local_190 + iVar3) = *puVar1;",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 479,
+      "line": 478,
       "match": "in_stack_00000008",
       "text": "puVar10 = in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 481,
+      "line": 480,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008 = puVar10 + 1;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 483,
+      "line": 482,
       "match": "(ushort *)((int)",
       "text": "*puVar10 = *(ushort *)((int)local_33c8 + iVar7);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 485,
+      "line": 484,
       "match": "in_stack_00000008",
       "text": "puVar10 = in_stack_00000008;",
       "type": "stack_param"
@@ -1878,11 +1862,11 @@
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 509,
-      "match": "in_stack_ffff9f30",
-      "text": "local_60 = local_60 * in_stack_ffff9f30 -",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 507,
+      "match": "(SMpegFrame *)((int)",
+      "text": "local_64 = (SMpegFrame *)((int)local_64 + 1);",
+      "type": "pointer_cast"
     },
     {
       "actual_args": 0,
@@ -1890,7 +1874,7 @@
       "expected_args": 1,
       "format_string": "MPEG Layer 2 - pick_table - can't load tables!  File: %s",
       "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 161,
+      "line_number": 160,
       "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"MPEG Layer 2 - pick_table - can't load tables!  File: ",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
@@ -1901,7 +1885,7 @@
       "expected_args": 3,
       "format_string": "js_bound bad layer/modext (%d/%d)  File: %s",
       "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 175,
+      "line_number": 174,
       "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"js_bound bad layer/modext (%d/%d)  File: %s\");",
       "text": "Format string expects 3 args but got 0",
       "type": "format_string_mismatch"
@@ -1912,7 +1896,7 @@
       "expected_args": 1,
       "format_string": "Not enough main data to decode frame %d.",
       "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 369,
+      "line_number": 368,
       "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Not enough main data to decode frame %d.\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"

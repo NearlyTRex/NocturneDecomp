@@ -11,28 +11,25 @@ void __cdecl support_newmsg_cpp_CMouse_load_FUN_00544420(CMouse *this_ptr)
 {
   int iVar1;
   CAlphaBitmap *pCVar2;
-  BADSPACEBASE *in_ESP;
   CMouse *this_ptr_00;
-  char acStack_38 [12];
-  char local_2c [4];
-  char acStack_28 [12];
-  char local_1c [4];
-  char acStack_18 [12];
+  char local_3c [16];
+  char local_2c [16];
+  char local_1c [16];
   
   iVar1 = 0;
   this_ptr_00 = this_ptr;
   do {
     iVar1 = iVar1 + 1;
     crt_stdio_c_sprintf_FUN_005fdbd0(local_1c,"crsr%d",iVar1);
-    engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0(this_ptr_00->cursors,acStack_18,0x36,0x37);
+    engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0(this_ptr_00->cursors,local_1c,0x36,0x37);
     this_ptr_00 = (CMouse *)(this_ptr_00->cursors + 1);
   } while (iVar1 < 8);
   pCVar2 = this_ptr->flames;
   iVar1 = 0;
   do {
     iVar1 = iVar1 + 1;
-    crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffc4,"flame%d",iVar1);
-    engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0(pCVar2,acStack_38,0x36,0x37);
+    crt_stdio_c_sprintf_FUN_005fdbd0(local_3c,"flame%d",iVar1);
+    engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0(pCVar2,local_3c,0x36,0x37);
     pCVar2 = pCVar2 + 1;
   } while (iVar1 < 7);
   pCVar2 = this_ptr->skulls;
@@ -40,7 +37,7 @@ void __cdecl support_newmsg_cpp_CMouse_load_FUN_00544420(CMouse *this_ptr)
   do {
     iVar1 = iVar1 + 1;
     crt_stdio_c_sprintf_FUN_005fdbd0(local_2c,"crsrskll%d",iVar1);
-    engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0(pCVar2,acStack_28,0x36,0x37);
+    engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0(pCVar2,local_2c,0x36,0x37);
     pCVar2 = pCVar2 + 1;
   } while (iVar1 < 7);
   pCVar2 = this_ptr->skulls + 7;

@@ -15,7 +15,7 @@ uint core_stone_cpp_FUN_005bad70(void)
   CDemonActor *pCVar1;
   int iVar2;
   int in_stack_00000004;
-  CDemonActor *in_stack_0000000c;
+  CDemonActor *in_stack_00000008;
   
   pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c790
                      (*(CDemonActor **)(in_stack_00000004 + 0x66c),
@@ -24,7 +24,7 @@ uint core_stone_cpp_FUN_005bad70(void)
     return 0;
   }
   if (*(int *)(in_stack_00000004 + 0x314) != 3) {
-    iVar2 = core_actor_cpp_isOfClass_FUN_0040c6d0(in_stack_0000000c,"CHero");
+    iVar2 = core_actor_cpp_isOfClass_FUN_0040c6d0(in_stack_00000008,"CHero");
     if (iVar2 == 0) {
       return 0;
     }

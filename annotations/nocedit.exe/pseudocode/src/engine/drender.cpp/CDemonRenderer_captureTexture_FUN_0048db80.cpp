@@ -17,7 +17,7 @@ engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
   char *pcVar4;
   
   engine_texture_cpp_ensureTextureLoaded_FUN_005dd800(texture);
-  if (texture[1].base.count != 0) {
+  if (this_ptr->texture_capture_enabled != 0) {
     g_CaptureTextureCount = g_CaptureTextureCount + 1;
     if (100 < g_CaptureTextureCount) {
       g_CurrentFilename = "..\\engine\\drender.cpp";

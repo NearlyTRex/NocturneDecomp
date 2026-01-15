@@ -6,13 +6,14 @@
 
 #include "nocturne.h"
 
-void core_skeledit_cpp_FUN_005897b0(uint param_1,uint param_2,int unaff_EBX)
+void core_skeledit_cpp_FUN_005897b0(void)
 
 {
   FILE *file;
   int iVar1;
   int iVar2;
   byte *puVar3;
+  int local_10;
   
   crt_stack_c_stack_probe_FUN_005ff9f3(0x28);
   file = shape_memdbg_cpp_openFile_FUN_0050f7a0
@@ -26,11 +27,11 @@ void core_skeledit_cpp_FUN_005897b0(uint param_1,uint param_2,int unaff_EBX)
     iVar1 = crt_stdio_c_fgetc_FUN_005fe840(file);
     if (iVar1 < 0) break;
   } while ((iVar1 != 10) || (iVar2 = iVar2 + -1, 0 < iVar2));
-  crt_stdio_c_fscanf_FUN_005fe7c0(file,"%d\n");
-  if (unaff_EBX != 1) {
+  crt_stdio_c_fscanf_FUN_005fe7c0(file,"%d\n",&local_10);
+  if (local_10 != 1) {
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\skeledit.cpp",0x12d);
     shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
-              (g_CEditorToolsPtr,"Deleting old %s file.");
+              (g_CEditorToolsPtr,"Deleting old %s file.","skeledit.ini");
     crt_io_c_deleteFile_FUN_005ff9d0("skeledit.ini");
     return;
   }

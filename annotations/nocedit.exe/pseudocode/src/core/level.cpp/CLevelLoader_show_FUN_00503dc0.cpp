@@ -12,11 +12,10 @@ core_level_cpp_CLevelLoader_show_FUN_00503dc0
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
-  byte auStack_40 [8];
-  byte auStack_38 [12];
-  byte auStack_2c [8];
-  byte auStack_24 [28];
+  CAlphaBitmap local_58;
+  CAlphaBitmap local_44;
+  CAlphaBitmap local_30;
+  CAlphaBitmap local_1c;
   
   this_ptr->version = 0;
   this_ptr->enabled = 1;
@@ -47,11 +46,9 @@ core_level_cpp_CLevelLoader_show_FUN_00503dc0
     image_variant = iVar1 % 3;
   }
   if (image_variant == 0) {
-    engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520((CAlphaBitmap *)(auStack_38 + 4));
-    engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0
-              ((CAlphaBitmap *)auStack_40,"load1",0x280,0x1e0);
-    engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950
-              ((CAlphaBitmap *)(auStack_40 + 4),0,0,0xffff);
+    engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520(&local_44);
+    engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0(&local_44,"load1",0x280,0x1e0);
+    engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(&local_44,0,0,0xffff);
     this_ptr->viewport_x = 0x78;
     this_ptr->viewport_y = 0x82;
     this_ptr->viewport_width = 0x5a;
@@ -60,14 +57,12 @@ core_level_cpp_CLevelLoader_show_FUN_00503dc0
     (this_ptr->color).r = 0x82;
     (this_ptr->color).g = 200;
     (this_ptr->color).b = 0xf4;
-    engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540((CAlphaBitmap *)auStack_38);
+    engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540(&local_44);
   }
   if (image_variant == 1) {
-    engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520((CAlphaBitmap *)(auStack_24 + 4));
-    engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0
-              ((CAlphaBitmap *)auStack_2c,"load2",0x280,0x1e0);
-    engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950
-              ((CAlphaBitmap *)(auStack_2c + 4),0,0,0xffff);
+    engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520(&local_30);
+    engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0(&local_30,"load2",0x280,0x1e0);
+    engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(&local_30,0,0,0xffff);
     this_ptr->viewport_x = 0x1e4;
     this_ptr->viewport_y = 0x42;
     this_ptr->viewport_width = 0x5a;
@@ -76,14 +71,12 @@ core_level_cpp_CLevelLoader_show_FUN_00503dc0
     (this_ptr->color).g = 0xbd;
     (this_ptr->color).b = 0xff;
     this_ptr->use_custom_viewport = 1;
-    engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540((CAlphaBitmap *)auStack_24);
+    engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540(&local_30);
   }
   if (image_variant == 2) {
-    engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520((CAlphaBitmap *)(auStack_24 + 0x18));
-    engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0
-              ((CAlphaBitmap *)(auStack_24 + 0xc),"load3",0x280,0x1e0);
-    engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950
-              ((CAlphaBitmap *)(auStack_24 + 0x10),0,0,0xffff);
+    engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520(&local_1c);
+    engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0(&local_1c,"load3",0x280,0x1e0);
+    engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(&local_1c,0,0,0xffff);
     this_ptr->viewport_x = 0x9f;
     this_ptr->viewport_y = 1;
     this_ptr->viewport_width = 0x5a;
@@ -92,24 +85,22 @@ core_level_cpp_CLevelLoader_show_FUN_00503dc0
     (this_ptr->color).r = 0x9e;
     (this_ptr->color).g = 0xe1;
     (this_ptr->color).b = 0xff;
-    engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540((CAlphaBitmap *)(auStack_24 + 0x14));
+    engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540(&local_1c);
   }
   if (image_variant != 3) {
     return;
   }
-  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520((CAlphaBitmap *)&stack0xffffffb8);
-  engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0
-            ((CAlphaBitmap *)&stack0xffffffbc,"load4",0x280,0x1e0);
-  engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950((CAlphaBitmap *)auStack_40,0,0,0xffff);
+  engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_00410520(&local_58);
+  engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0(&local_58,"load4",0x280,0x1e0);
+  engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(&local_58,0,0,0xffff);
   this_ptr->viewport_x = 0x17b;
   this_ptr->viewport_y = 0x44;
   this_ptr->viewport_width = 0x5a;
   this_ptr->viewport_height = 0x5a;
   this_ptr->use_custom_viewport = 1;
   (this_ptr->color).r = 0x6b;
-  auStack_40._0_4_ = (uint *)0x0;
   (this_ptr->color).g = 0x9a;
   (this_ptr->color).b = 0xff;
-  engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540((CAlphaBitmap *)(auStack_40 + 4));
+  engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540(&local_58);
   return;
 }

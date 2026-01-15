@@ -14,16 +14,15 @@ void core_script_cpp_FUN_00565ae0(void)
 {
   char cVar1;
   int iVar2;
-  BADSPACEBASE *in_ESP;
   char *pcVar3;
   char *pcVar4;
   char *pcVar5;
   byte bVar6;
   int in_stack_00000004;
   int in_stack_0000000c;
-  char acStack_5d4 [500];
-  char acStack_3e0 [500];
-  char acStack_1ec [480];
+  char local_5e8 [500];
+  char local_3f4 [500];
+  char local_200 [500];
   
   bVar6 = 0;
   if (-1 < in_stack_0000000c) {
@@ -37,7 +36,7 @@ void core_script_cpp_FUN_00565ae0(void)
       if (0 < iVar2) {
         iVar2 = core_script_cpp_FUN_00562920();
         if (iVar2 != 0) {
-          pcVar3 = acStack_1ec;
+          pcVar3 = local_200;
           pcVar4 = &DAT_031101c0;
           do {
             cVar1 = *pcVar3;
@@ -48,7 +47,7 @@ void core_script_cpp_FUN_00565ae0(void)
             pcVar4[1] = cVar1;
             pcVar4 = pcVar4 + 2;
           } while (cVar1 != '\0');
-          pcVar3 = acStack_3e0;
+          pcVar3 = local_3f4;
           iVar2 = -1;
           pcVar4 = &DAT_031101c0;
           do {
@@ -69,7 +68,7 @@ void core_script_cpp_FUN_00565ae0(void)
             pcVar5[1] = cVar1;
             pcVar5 = pcVar5 + 2;
           } while (cVar1 != '\0');
-          pcVar3 = acStack_5d4;
+          pcVar3 = local_5e8;
           iVar2 = -1;
           pcVar4 = &DAT_031101c0;
           do {
@@ -93,7 +92,7 @@ void core_script_cpp_FUN_00565ae0(void)
           core_script_cpp_CScript_editorPutLine_FUN_005662a0();
           DAT_0310fd48 = in_stack_0000000c;
           iVar2 = -1;
-          pcVar3 = acStack_1ec + 4;
+          pcVar3 = local_200;
           do {
             if (iVar2 == 0) break;
             iVar2 = iVar2 + -1;
@@ -101,7 +100,7 @@ void core_script_cpp_FUN_00565ae0(void)
             pcVar3 = pcVar3 + (uint)bVar6 * -2 + 1;
           } while (cVar1 != '\0');
           iVar2 = -1;
-          pcVar3 = acStack_3e0 + 4;
+          pcVar3 = local_3f4;
           do {
             if (iVar2 == 0) break;
             iVar2 = iVar2 + -1;

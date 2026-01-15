@@ -1,17 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 1168,
-    "complexity_score": 982,
+    "complexity_score": 952,
     "cross_reference_count": 8,
     "function_call_count": 5,
     "global_count": 64,
     "pseudocode_lines": 682,
-    "suspect_count": 28,
+    "suspect_count": 26,
     "suspect_types": [
-      "badspacebase",
       "extra_output",
-      "pointer_cast",
-      "register_param"
+      "pointer_cast"
     ],
     "total_lines": 1850
   },
@@ -595,7 +593,7 @@
     {
       "add_esp_value": 12,
       "call_address": "0056eafb",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -611,7 +609,7 @@
     {
       "add_esp_value": 4,
       "call_address": "0056f4c5",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -627,7 +625,7 @@
     {
       "add_esp_value": 4,
       "call_address": "0056f4f1",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1359,24 +1357,10 @@
       "type": "extra_output"
     },
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 24,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 24,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 129,
+      "line": 128,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)&CStack_15c + (uint)bVar20 * -8 + 4) = local_148[(uint)bVar20 * -2];",
+      "text": "*(int *)((int)&CStack_15c + (uint)bVar20 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
@@ -1439,7 +1423,7 @@
       "description": "Complex pointer cast",
       "line": 573,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)&CStack_174 + (uint)bVar20 * -8 + 4) = local_148[(uint)bVar20 * -2 + 2];",
+      "text": "*(int *)((int)&CStack_174 + (uint)bVar20 * -8 + 4) = aiStack_14c[(uint)bVar20 * -2 + 3];",
       "type": "pointer_cast"
     },
     {

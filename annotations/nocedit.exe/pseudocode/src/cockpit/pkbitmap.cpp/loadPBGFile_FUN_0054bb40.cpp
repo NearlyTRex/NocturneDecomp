@@ -13,56 +13,50 @@ cockpit_pkbitmap_cpp_loadPBGFile_FUN_0054bb40
 
 {
   FILE *file_handle;
-  CPackedBitmap *this_ptr;
-  int iVar1;
-  BADSPACEBASE *in_ESP;
-  CPackedBitmapSet *this_ptr_00;
-  int unaff_retaddr;
-  char *in_stack_0000001c;
-  int in_stack_00000020;
-  uchar auStack_160 [236];
-  char acStack_74 [4];
-  char acStack_70 [96];
+  CPackedBitmap *pCVar1;
+  int iVar2;
+  uchar auStack_178 [256];
+  char local_78 [100];
+  CPackedBitmap *local_14;
   
   file_handle = engine_dosio_c_getFile_FUN_00481a50("art",pbg_filename,"rb");
   if (file_handle == (FILE *)0x0) {
-    crt_stdio_c_sprintf_FUN_005fdbd0
-              (acStack_74,"Unable to open PBG file %s",palette_filename);
+    crt_stdio_c_sprintf_FUN_005fdbd0(local_78,"Unable to open PBG file %s",pbg_filename);
     g_CurrentLineNumber = 0x595;
     g_CurrentFilename = "..\\cockpit\\pkbitmap.cpp";
-    core_main_c_displayErrorAndQuit_FUN_00506f10(acStack_70);
+    core_main_c_displayErrorAndQuit_FUN_00506f10(local_78);
   }
-  this_ptr = cockpit_pkbitmap_cpp_parsePBGFile_FUN_0054b9b0
-                       (bitmap_set,file_handle,(int)in_stack_0000001c,in_stack_00000020,
-                        selected_bitmap_index);
+  pCVar1 = cockpit_pkbitmap_cpp_parsePBGFile_FUN_0054b9b0
+                     (bitmap_set,file_handle,param3,param4,selected_bitmap_index);
+  local_14 = pCVar1;
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\cockpit\\pkbitmap.cpp",0x59a);
-  iVar1 = 0;
+  iVar2 = 0;
   if (0 < bitmap_set->bitmap_count) {
     do {
-      iVar1 = iVar1 + 1;
-      cockpit_pkbitmap_cpp_CPackedBitmap_setFilename_FUN_0054a990(this_ptr,in_stack_0000001c);
-      this_ptr = this_ptr + 1;
-    } while (iVar1 < bitmap_set->bitmap_count);
+      iVar2 = iVar2 + 1;
+      cockpit_pkbitmap_cpp_CPackedBitmap_setFilename_FUN_0054a990(pCVar1,pbg_filename);
+      pCVar1 = pCVar1 + 1;
+    } while (iVar2 < bitmap_set->bitmap_count);
   }
-  if (in_stack_00000020 != 0) {
-    iVar1 = 0;
-    cockpit_ckptutil_c_loadACTToIndexedPalette_FUN_00431a30(in_stack_0000001c,&stack0xfffffe9c);
-    this_ptr_00 = bitmap_set;
+  if (palette_filename != (char *)0x0) {
+    iVar2 = 0;
+    cockpit_ckptutil_c_loadACTToIndexedPalette_FUN_00431a30(pbg_filename,(char *)auStack_178);
+    pCVar1 = local_14;
     if (0 < bitmap_set->bitmap_count) {
       do {
-        while ((-1 < selected_bitmap_index && (iVar1 != selected_bitmap_index))) {
-          iVar1 = iVar1 + 1;
-          this_ptr_00 = (CPackedBitmapSet *)&this_ptr_00->config_param;
-          if (bitmap_set->bitmap_count <= iVar1) {
-            return unaff_retaddr;
+        while ((-1 < selected_bitmap_index && (iVar2 != selected_bitmap_index))) {
+          iVar2 = iVar2 + 1;
+          pCVar1 = pCVar1 + 1;
+          if (bitmap_set->bitmap_count <= iVar2) {
+            return (int)local_14;
           }
         }
-        cockpit_pkbitmap_cpp_CPackedBitmap_applyPaletteToPackedData_FUN_0054b440
-                  ((CPackedBitmap *)this_ptr_00,auStack_160);
-        iVar1 = iVar1 + 1;
-        this_ptr_00 = (CPackedBitmapSet *)&this_ptr_00->config_param;
-      } while (iVar1 < bitmap_set->bitmap_count);
+        cockpit_pkbitmap_cpp_CPackedBitmap_applyPaletteToPackedData_FUN_0054b440(pCVar1,auStack_178)
+        ;
+        iVar2 = iVar2 + 1;
+        pCVar1 = pCVar1 + 1;
+      } while (iVar2 < bitmap_set->bitmap_count);
     }
   }
-  return unaff_retaddr;
+  return (int)local_14;
 }

@@ -1,19 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 82,
-    "complexity_score": 119,
+    "complexity_score": 88,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 49,
-    "suspect_count": 5,
+    "pseudocode_lines": 48,
+    "suspect_count": 3,
     "suspect_types": [
-      "badspacebase",
       "param_count_too_many",
-      "pointer_cast",
-      "register_param"
+      "pointer_cast"
     ],
-    "total_lines": 131
+    "total_lines": 130
   },
   "cross_references": [
     {
@@ -138,29 +136,15 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 14,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 14,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 23,
+      "line": 22,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)local_1a4 + iVar5) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 45,
+      "line": 44,
       "match": "(float *)((int)",
       "text": "if (local_1a4[iVar5] < *(float *)((int)local_1a4 + iVar3)) {",
       "type": "pointer_cast"

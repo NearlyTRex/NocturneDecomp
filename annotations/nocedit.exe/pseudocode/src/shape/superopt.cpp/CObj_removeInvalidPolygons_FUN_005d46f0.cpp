@@ -12,18 +12,20 @@ int __cdecl shape_superopt_cpp_CObj_removeInvalidPolygons_FUN_005d46f0(CObj *thi
   int iVar1;
   uint index;
   uint uVar2;
-  BADSPACEBASE *in_ESP;
   void *ptr;
+  int iVar3;
   
   ptr = (void *)0x0;
   if (1000 < (uint)this_ptr->poly_count) {
     ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1d0(4);
   }
   index = 0;
+  iVar3 = 0;
   if (this_ptr->poly_count != 0) {
     do {
       if ((ptr != (void *)0x0) && ((char)index == '\0')) {
-        crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff98,"Deleting invalid polygons (%d deleted so far)");
+        crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff94,"Deleting invalid polygons (%d deleted so far)",iVar3)
+        ;
       }
       iVar1 = (*(this_ptr->poly_array[index].vtable)->isValid)(this_ptr->poly_array + index);
       uVar2 = index;
@@ -34,11 +36,12 @@ int __cdecl shape_superopt_cpp_CObj_removeInvalidPolygons_FUN_005d46f0(CObj *thi
           shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
           return 0;
         }
+        iVar3 = iVar3 + 1;
       }
       index = uVar2 + 1;
     } while (index < (uint)this_ptr->poly_count);
   }
   shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
-  iVar1 = (*this_ptr->vtable->removeUnusedVertices)(this_ptr);
-  return iVar1;
+  iVar3 = (*this_ptr->vtable->removeUnusedVertices)(this_ptr);
+  return iVar3;
 }

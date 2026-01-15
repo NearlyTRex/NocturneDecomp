@@ -1,17 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 19,
-    "complexity_score": 84,
+    "complexity_score": 40,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
-    "pseudocode_lines": 14,
-    "suspect_count": 6,
+    "pseudocode_lines": 15,
+    "suspect_count": 2,
     "suspect_types": [
-      "call_esp_preserve",
-      "stack_param"
+      "call_esp_preserve"
     ],
-    "total_lines": 33
+    "total_lines": 34
   },
   "cross_references": [
     {
@@ -112,34 +111,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_0000000c",
-      "text": "CDeformableModelInstance *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_0000000c",
-      "text": "core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_0000000c",
-      "text": "(this_ptr_00,(char *)(in_stack_0000000c->bone_transform).bone_world_matrices,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_0000000c",
-      "text": "(int)filename,(CMatrix3x4f *)in_stack_0000000c);",
-      "type": "stack_param"
-    },
     {
       "add_esp_value": 4,
       "call_address": "00598efd",

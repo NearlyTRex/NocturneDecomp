@@ -10,7 +10,6 @@ void __cdecl core_baron_cpp_CBaronWeapon_setWeaponState_FUN_00413e90(CBaronWeapo
 
 {
   CDemonActor *pCVar1;
-  CDemonActor *pCStack00000008;
   
   core_weapon_cpp_CWeapon_FUN_005ee640(&this_ptr->base_weapon);
   pCVar1 = (*((this_ptr->base_weapon).base_actor.vtable)->getCarrier)((CDemonActor *)this_ptr);
@@ -21,7 +20,6 @@ void __cdecl core_baron_cpp_CBaronWeapon_setWeaponState_FUN_00413e90(CBaronWeapo
       core_main_c_displayErrorAndQuit_FUN_00506f10("CBaronWeapon::setWeaponState - I'm drawn, but nobody's carrying me??");
     }
     core_baron_cpp_FUN_00413f20();
-    pCStack00000008 = pCVar1;
     core_baron_cpp_FUN_00413470();
   }
   else if (this_ptr->field1_0x578 != 0) {

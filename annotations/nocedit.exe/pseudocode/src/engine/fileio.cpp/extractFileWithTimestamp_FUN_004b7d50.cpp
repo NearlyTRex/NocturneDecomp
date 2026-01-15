@@ -18,7 +18,6 @@ engine_fileio_cpp_extractFileWithTimestamp_FUN_004b7d50
   int iVar4;
   FILE *file_ptr;
   uint uVar6;
-  BADSPACEBASE *in_ESP;
   uint uVar7;
   char *pcVar8;
   byte bVar9;

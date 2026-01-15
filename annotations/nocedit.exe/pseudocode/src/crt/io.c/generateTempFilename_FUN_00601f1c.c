@@ -16,8 +16,6 @@ void __watcallStack crt_io_c_generateTempFilename_FUN_00601f1c(char *buffer,int 
   char *pcVar5;
   char *pcVar6;
   byte bVar7;
-  int in_stack_00000014;
-  uint in_stack_00000018;
   
   bVar7 = 0;
   uVar2 = crt_process_c_getpid_FUN_006099c0();
@@ -53,9 +51,9 @@ void __watcallStack crt_io_c_generateTempFilename_FUN_00601f1c(char *buffer,int 
     pcVar3 = pcVar5;
   } while (pcVar5 != pcVar6);
   pcVar6[5] = '_';
-  cVar1 = crt_string_c_hexDigitToChar_FUN_00601f0c(in_stack_00000014 >> 4 & 0xf);
+  cVar1 = crt_string_c_hexDigitToChar_FUN_00601f0c(file_handle >> 4 & 0xf);
   pcVar6[6] = cVar1;
-  cVar1 = crt_string_c_hexDigitToChar_FUN_00601f0c(in_stack_00000018 & 0xf);
+  cVar1 = crt_string_c_hexDigitToChar_FUN_00601f0c(file_handle & 0xf);
   pcVar6[8] = '.';
   pcVar6[9] = 't';
   pcVar6[10] = 'm';

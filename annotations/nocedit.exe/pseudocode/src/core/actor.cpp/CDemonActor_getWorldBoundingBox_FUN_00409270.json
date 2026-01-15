@@ -1,22 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 168,
-    "complexity_score": 309,
+    "complexity_score": 229,
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 0,
-    "pseudocode_lines": 74,
-    "suspect_count": 20,
+    "pseudocode_lines": 69,
+    "suspect_count": 14,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "callind_preserve",
       "lea_esp_stack_addr",
-      "register_param",
-      "stack_ref",
-      "suspect_float"
+      "stack_ref"
     ],
-    "total_lines": 242
+    "total_lines": 237
   },
   "cross_references": [
     {
@@ -138,59 +135,17 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 13,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 13,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 44,
+      "line": 43,
       "match": "&stack0xffffffac",
       "text": "(*this_ptr->vtable->getBoundingBox)(this_ptr,(CBoundingBox3D *)&stack0xffffffac);",
       "type": "stack_ref"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 45,
-      "match": "5.930106e-39",
-      "text": "fStack_50 = 5.930106e-39;",
-      "type": "suspect_float"
-    },
-    {
       "description": "Direct stack address reference",
       "line": 47,
-      "match": "&stack0xffffffc0",
-      "text": "((CBoundingBox3D *)&stack0xffffffc0,aCStack_28,0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 50,
-      "match": "&stack0x00000000",
-      "text": "(this_ptr,(CVector3f *)&stack0x00000000,pCVar1);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 64,
-      "match": "&stack0xffffffc8",
-      "text": "((CBoundingBox3D *)&stack0xffffffc8,(CVector3f *)&aCStack_28[1].z,",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 67,
-      "match": "&stack0xfffffffc",
-      "text": "(this_ptr,(CVector3f *)&stack0xfffffffc,pCVar1);",
+      "match": "&stack0xfffffff0",
+      "text": "(this_ptr,(CVector3f *)&stack0xfffffff0,pCVar1);",
       "type": "stack_ref"
     },
     {

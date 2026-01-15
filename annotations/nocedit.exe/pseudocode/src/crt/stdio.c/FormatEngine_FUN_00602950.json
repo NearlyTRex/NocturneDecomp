@@ -1,25 +1,22 @@
 {
   "complexity": {
     "assembly_lines": 475,
-    "complexity_score": 786,
+    "complexity_score": 1096,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 0,
-    "pseudocode_lines": 216,
-    "suspect_count": 52,
+    "pseudocode_lines": 251,
+    "suspect_count": 81,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "callind_preserve",
       "extra_output",
       "lea_esp_stack_addr",
       "pointer_cast",
-      "register_param",
       "special_crt_function",
-      "stack_ref",
       "unknown_field"
     ],
-    "total_lines": 691
+    "total_lines": 726
   },
   "cross_references": [
     {
@@ -269,136 +266,339 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 18,
+      "line": 24,
       "match": "extraout_EDX",
       "text": "uint extraout_EDX;",
       "type": "extra_output"
     },
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 19,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 19,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 44,
-      "match": "&stack0xffffff78",
-      "text": "(*callback)(&stack0xffffff78,(uint)bVar1);",
-      "type": "stack_ref"
+      "description": "Unknown/mangled field access",
+      "line": 34,
+      "match": "._0_2_",
+      "text": "local_88.flags._0_2_ = 0;",
+      "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 47,
+      "line": 45,
+      "match": "._16_4_",
+      "text": "return local_88._16_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 55,
       "match": "._0_1_",
-      "text": "iVar7._0_1_ = local_84.padding1;",
+      "text": "iVar12._0_1_ = local_88.padding1;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 48,
-      "match": "._1_1_",
-      "text": "iVar7._1_1_ = local_84.format_char;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 49,
-      "match": "._2_1_",
-      "text": "iVar7._2_1_ = local_84.padding_char;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 50,
-      "match": "._3_1_",
-      "text": "iVar7._3_1_ = local_84.padding2[0];",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Direct stack address reference",
       "line": 56,
-      "match": "&stack0xffffff78",
-      "text": "(format,&local_28,(FormatSpec *)&stack0xffffff78);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 70,
-      "match": "&stack0xffffff78",
-      "text": "(FormatSpec *)&stack0xffffff78);",
-      "type": "stack_ref"
+      "match": "._1_1_",
+      "text": "iVar12._1_1_ = local_88.format_char;",
+      "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 74,
+      "line": 57,
+      "match": "._2_1_",
+      "text": "iVar12._2_1_ = local_88.padding_char;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 58,
+      "match": "._3_1_",
+      "text": "iVar12._3_1_ = local_88.padding2[0];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 68,
+      "match": "._0_1_",
+      "text": "uVar13._0_1_ = local_88.padding1;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 69,
+      "match": "._1_1_",
+      "text": "uVar13._1_1_ = local_88.format_char;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 70,
+      "match": "._2_1_",
+      "text": "uVar13._2_1_ = local_88.padding_char;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 71,
+      "match": "._3_1_",
+      "text": "uVar13._3_1_ = local_88.padding2[0];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 83,
       "match": "._32_4_",
-      "text": "(local_84._32_4_ + local_84.padding_needed + local_84.content_length +",
+      "text": "(local_88._32_4_ + local_88.padding_needed + local_88.content_length +",
       "type": "unknown_field"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 76,
+      "line": 85,
       "match": "extraout_EDX",
-      "text": "local_18 = extraout_EDX;",
+      "text": "local_1c = extraout_EDX;",
       "type": "extra_output"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 85,
+      "line": 93,
       "match": "._32_4_",
-      "text": "for (; 0 < (int)local_84._32_4_; local_84._32_4_ = local_84._32_4_ + -1) {",
+      "text": "iVar11 = local_88._32_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 110,
+      "match": "(wchar_t *)((int)",
+      "text": "wide_string_offset = (wchar_t *)((int)wide_string_offset + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 126,
+      "match": "(wchar_t *)((int)",
+      "text": "wide_string_offset = (wchar_t *)((int)wide_string_offset + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 136,
+      "match": "(wchar_t *)((int)",
+      "text": "wide_string_offset = (wchar_t *)((int)wide_string_offset + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 156,
+      "match": "._16_4_",
+      "text": "*(uint *)*puVar3 = local_88._16_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 85,
-      "match": "._32_4_",
-      "text": "for (; 0 < (int)local_84._32_4_; local_84._32_4_ = local_84._32_4_ + -1) {",
+      "line": 158,
+      "match": "._0_1_",
+      "text": "iVar11._0_1_ = local_88.padding1;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 85,
-      "match": "._32_4_",
-      "text": "for (; 0 < (int)local_84._32_4_; local_84._32_4_ = local_84._32_4_ + -1) {",
+      "line": 159,
+      "match": "._1_1_",
+      "text": "iVar11._1_1_ = local_88.format_char;",
       "type": "unknown_field"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 87,
-      "match": "(uint *)((int)",
-      "text": "local_1c = (uint *)((int)local_1c + 1);",
-      "type": "pointer_cast"
+      "description": "Unknown/mangled field access",
+      "line": 160,
+      "match": "._2_1_",
+      "text": "iVar11._2_1_ = local_88.padding_char;",
+      "type": "unknown_field"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 99,
-      "match": "(wchar_t *)((int)",
-      "text": "wide_string_offset = (wchar_t *)((int)wide_string_offset + 1);",
-      "type": "pointer_cast"
+      "description": "Unknown/mangled field access",
+      "line": 161,
+      "match": "._3_1_",
+      "text": "iVar11._3_1_ = local_88.padding2[0];",
+      "type": "unknown_field"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 115,
-      "match": "(wchar_t *)((int)",
-      "text": "wide_string_offset = (wchar_t *)((int)wide_string_offset + 1);",
-      "type": "pointer_cast"
+      "description": "Unknown/mangled field access",
+      "line": 168,
+      "match": "._16_4_",
+      "text": "*(uint *)*puVar3 = local_88._16_4_;",
+      "type": "unknown_field"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 125,
-      "match": "(wchar_t *)((int)",
-      "text": "wide_string_offset = (wchar_t *)((int)wide_string_offset + 1);",
-      "type": "pointer_cast"
+      "description": "Unknown/mangled field access",
+      "line": 170,
+      "match": "._0_1_",
+      "text": "iVar10._0_1_ = local_88.padding1;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 171,
+      "match": "._1_1_",
+      "text": "iVar10._1_1_ = local_88.format_char;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 172,
+      "match": "._2_1_",
+      "text": "iVar10._2_1_ = local_88.padding_char;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 173,
+      "match": "._3_1_",
+      "text": "iVar10._3_1_ = local_88.padding2[0];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 181,
+      "match": "._16_4_",
+      "text": "*(int *)*puVar2 = local_88._16_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 183,
+      "match": "._0_1_",
+      "text": "iVar9._0_1_ = local_88.padding1;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 184,
+      "match": "._1_1_",
+      "text": "iVar9._1_1_ = local_88.format_char;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 185,
+      "match": "._2_1_",
+      "text": "iVar9._2_1_ = local_88.padding_char;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 186,
+      "match": "._3_1_",
+      "text": "iVar9._3_1_ = local_88.padding2[0];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 192,
+      "match": "._16_2_",
+      "text": "uVar4 = local_88._16_2_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 199,
+      "match": "._0_1_",
+      "text": "iVar8._0_1_ = local_88.padding1;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 200,
+      "match": "._1_1_",
+      "text": "iVar8._1_1_ = local_88.format_char;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 201,
+      "match": "._2_1_",
+      "text": "iVar8._2_1_ = local_88.padding_char;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 202,
+      "match": "._3_1_",
+      "text": "iVar8._3_1_ = local_88.padding2[0];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 211,
+      "match": "._0_1_",
+      "text": "iVar7._0_1_ = local_88.padding1;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 212,
+      "match": "._1_1_",
+      "text": "iVar7._1_1_ = local_88.format_char;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 213,
+      "match": "._2_1_",
+      "text": "iVar7._2_1_ = local_88.padding_char;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 214,
+      "match": "._3_1_",
+      "text": "iVar7._3_1_ = local_88.padding2[0];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 224,
+      "match": "._0_1_",
+      "text": "iVar6._0_1_ = local_88.padding1;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 225,
+      "match": "._1_1_",
+      "text": "iVar6._1_1_ = local_88.format_char;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 226,
+      "match": "._2_1_",
+      "text": "iVar6._2_1_ = local_88.padding_char;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 227,
+      "match": "._3_1_",
+      "text": "iVar6._3_1_ = local_88.padding2[0];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 238,
+      "match": "._16_4_",
+      "text": "*(uint *)*puVar3 = local_88._16_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 244,
+      "match": "._16_4_",
+      "text": "*(uint *)*puVar3 = local_88._16_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 251,
+      "match": "._16_4_",
+      "text": "*(int *)*puVar2 = local_88._16_4_;",
+      "type": "unknown_field"
     },
     {
       "add_esp_value": 8,

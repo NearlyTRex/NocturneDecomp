@@ -16,7 +16,6 @@ void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_0041bd90(CBoneGuy *this_ptr)
   int iVar1;
   CSkeleton *this_ptr_01;
   CDeformableModel *pCVar2;
-  uint uStack00000034;
   
   this_ptr_00 = &(this_ptr->base_enemy).base_character.model;
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(this_ptr_00);
@@ -51,10 +50,8 @@ void __cdecl core_boneguy_cpp_CBoneGuy_explode_FUN_0041bd90(CBoneGuy *this_ptr)
                            (this_ptr_01,"Bip01 R UpperArm");
   DAT_00822968 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
                            (this_ptr_01,"Bip01 Spine");
-  uStack00000034 = 1;
   DAT_0082296c = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0
                            (this_ptr_01,"Bip01 Spine2");
-  uStack00000034 = 0x41bf07;
   pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr_00);
   iVar1 = pCVar2->num_parts;
   this_ptr->box_count = iVar1;

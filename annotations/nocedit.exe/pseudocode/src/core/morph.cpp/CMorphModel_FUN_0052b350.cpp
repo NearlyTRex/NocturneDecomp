@@ -9,9 +9,7 @@
 void __cdecl core_morph_cpp_CMorphModel_FUN_0052b350(CMorphModel *this_ptr)
 
 {
-  int in_stack_00000008;
-  
   core_morph_cpp_CMorphModel_free_FUN_0052a510(this_ptr);
-  core_morph_cpp_CMorphModel_free_FUN_0052a510((CMorphModel *)(in_stack_00000008 + 0x608));
+  core_morph_cpp_CMorphModel_free_FUN_0052a510(this_ptr + 1);
   return;
 }

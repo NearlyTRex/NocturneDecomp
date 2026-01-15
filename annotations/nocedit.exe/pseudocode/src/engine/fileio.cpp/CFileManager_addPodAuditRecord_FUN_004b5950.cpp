@@ -14,8 +14,7 @@ engine_fileio_cpp_CFileManager_addPodAuditRecord_FUN_004b5950
   char cVar1;
   CPodAuditRecord *pCVar2;
   int iVar3;
-  BADSPACEBASE *in_ESP;
-  char **ppcVar4;
+  CFileManager **ppCVar4;
   char *pcVar5;
   CPodAuditRecord *pCVar6;
   char *pcVar7;
@@ -33,15 +32,15 @@ engine_fileio_cpp_CFileManager_addPodAuditRecord_FUN_004b5950
     core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory for pod audit list.");
   }
   pCVar2 = g_AuditRecordsArray + g_AuditRecordCount + -1;
-  ppcVar4 = &filename_path;
+  ppCVar4 = &this_ptr;
   pCVar6 = pCVar2;
   for (iVar3 = 0x4e; iVar3 != 0; iVar3 = iVar3 + -1) {
-    pCVar6->day = (int)*ppcVar4;
-    ppcVar4 = ppcVar4 + (uint)bVar8 * -2 + 1;
+    pCVar6->day = (int)*ppCVar4;
+    ppCVar4 = ppCVar4 + (uint)bVar8 * -2 + 1;
     pCVar6 = (CPodAuditRecord *)((int)pCVar6 + (uint)bVar8 * -8 + 4);
   }
   crt_memory_c_memset_FUN_005fde40(pCVar2->filename_path,0,0x100);
-  pcVar5 = &stack0x00000038;
+  pcVar5 = &stack0x0000002c;
   pcVar7 = g_AuditRecordsArray[g_AuditRecordCount + -1].filename_path;
   do {
     cVar1 = *pcVar5;

@@ -1,20 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 162,
-    "complexity_score": 238,
+    "complexity_score": 153,
     "cross_reference_count": 28,
     "function_call_count": 3,
     "global_count": 4,
-    "pseudocode_lines": 73,
-    "suspect_count": 14,
+    "pseudocode_lines": 68,
+    "suspect_count": 7,
     "suspect_types": [
       "call_esp_preserve",
       "extra_output",
-      "stack_param",
-      "unaffected_reg",
       "variadic_preserve"
     ],
-    "total_lines": 235
+    "total_lines": 230
   },
   "cross_references": [
     {
@@ -446,71 +444,22 @@
       "type": "extra_output"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 13,
-      "match": "unaff_EDI",
-      "text": "char *unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_0000001c",
-      "text": "int in_stack_0000001c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_00000020",
-      "text": "int in_stack_00000020;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 59,
-      "match": "in_stack_0000001c",
-      "text": "in_stack_0000001c);",
-      "type": "stack_param"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 60,
+      "line": 55,
       "match": "extraout_EAX",
       "text": "iVar1 = extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 61,
+      "line": 56,
       "match": "extraout_EAX",
       "text": "if (extraout_EAX == -1) {",
       "type": "extra_output"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 64,
-      "match": "in_stack_0000001c",
-      "text": "(this_ptr,unaff_EDI,x_pos,y_pos,in_stack_0000001c,in_stack_00000020);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 64,
-      "match": "in_stack_00000020",
-      "text": "(this_ptr,unaff_EDI,x_pos,y_pos,in_stack_0000001c,in_stack_00000020);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 64,
-      "match": "unaff_EDI",
-      "text": "(this_ptr,unaff_EDI,x_pos,y_pos,in_stack_0000001c,in_stack_00000020);",
-      "type": "unaffected_reg"
-    },
-    {
       "call_address": "004cdb74",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

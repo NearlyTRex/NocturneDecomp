@@ -12,96 +12,94 @@
 void core_ammo_cpp_CAmmo_FUN_00410fd0(void)
 
 {
-  CKeyFramedModelInstance *this_ptr;
   char cVar1;
   int iVar2;
-  int iVar3;
-  char *pcVar4;
-  char *in_stack_00000004;
+  char *pcVar3;
+  int in_stack_00000004;
   char *in_stack_00000008;
-  char *pcVar5;
+  char *pcVar4;
   
-  iVar2 = (int)in_stack_00000004;
-  pcVar5 = (char *)((int)in_stack_00000004 + 0x2d4);
-  pcVar4 = in_stack_00000008;
-  if (pcVar5 != in_stack_00000008) {
+  pcVar4 = (char *)(in_stack_00000004 + 0x2d4);
+  pcVar3 = in_stack_00000008;
+  if (pcVar4 != in_stack_00000008) {
     do {
-      cVar1 = *pcVar4;
-      *pcVar5 = cVar1;
+      cVar1 = *pcVar3;
+      *pcVar4 = cVar1;
       if (cVar1 == '\0') break;
-      cVar1 = pcVar4[1];
-      pcVar5[1] = cVar1;
-      pcVar5 = pcVar5 + 2;
+      cVar1 = pcVar3[1];
+      pcVar4[1] = cVar1;
       pcVar4 = pcVar4 + 2;
+      pcVar3 = pcVar3 + 2;
     } while (cVar1 != '\0');
   }
-  iVar3 = crt_string_c_strcmp_FUN_005fef20(in_stack_00000008,"CGun");
-  if (iVar3 == 0) {
-    switch(*(uint *)((int)in_stack_00000004 + 0x318)) {
+  iVar2 = crt_string_c_strcmp_FUN_005fef20(in_stack_00000008,"CGun");
+  if (iVar2 == 0) {
+    switch(*(uint *)(in_stack_00000004 + 0x318)) {
     case 1:
-      pcVar5 = "holybullet.kfm";
+      pcVar4 = "holybullet.kfm";
       break;
     case 2:
-      pcVar5 = "woodbullet.kfm";
+      pcVar4 = "woodbullet.kfm";
       break;
     case 3:
-      pcVar5 = "silverbullet.kfm";
+      pcVar4 = "silverbullet.kfm";
       break;
     case 4:
-      pcVar5 = "goldbullet.kfm";
+      pcVar4 = "goldbullet.kfm";
       break;
     default:
-      pcVar5 = "gatbullet.kfm";
+      pcVar4 = "gatbullet.kfm";
       break;
     case 7:
-      pcVar5 = "lithiumbullet.kfm";
+      pcVar4 = "lithiumbullet.kfm";
       break;
     case 8:
-      pcVar5 = "mercurybullet.kfm";
+      pcVar4 = "mercurybullet.kfm";
     }
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
-              ((CKeyFramedModelInstance *)((int)in_stack_00000004 + 0x158),pcVar5);
+              ((CKeyFramedModelInstance *)(in_stack_00000004 + 0x158),pcVar4);
   }
-  iVar3 = crt_string_c_strcmp_FUN_005fef20(in_stack_00000008,"CShotgun");
-  if (iVar3 == 0) {
+  iVar2 = crt_string_c_strcmp_FUN_005fef20(in_stack_00000008,"CShotgun");
+  if (iVar2 == 0) {
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
-              ((CKeyFramedModelInstance *)((int)in_stack_00000004 + 0x158),"shell.kfm");
+              ((CKeyFramedModelInstance *)(in_stack_00000004 + 0x158),"shell.kfm");
   }
-  iVar3 = crt_string_c_strcmp_FUN_005fef20(in_stack_00000008,"CCrossbow");
-  if (iVar3 == 0) {
-    this_ptr = (CKeyFramedModelInstance *)((int)in_stack_00000004 + 0x158);
-    if (*(int *)((int)in_stack_00000004 + 0x318) == 1) {
-      in_stack_00000004 = "holystake.kfm";
+  iVar2 = crt_string_c_strcmp_FUN_005fef20(in_stack_00000008,"CCrossbow");
+  if (iVar2 == 0) {
+    if (*(int *)(in_stack_00000004 + 0x318) == 1) {
+      pcVar4 = "holystake.kfm";
     }
     else {
-      in_stack_00000004 = "stake.kfm";
+      pcVar4 = "stake.kfm";
     }
-    core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(this_ptr,in_stack_00000004);
-  }
-  iVar3 = crt_string_c_strcmp_FUN_005fef20(in_stack_00000008,"CDynamite");
-  if (iVar3 == 0) {
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
-              ((CKeyFramedModelInstance *)(iVar2 + 0x158),"dynamitebundle.kfm");
+              ((CKeyFramedModelInstance *)(in_stack_00000004 + 0x158),pcVar4);
   }
-  iVar3 = crt_string_c_strcmp_FUN_005fef20(in_stack_00000008,"CTommyGun");
-  if (iVar3 == 0) {
+  iVar2 = crt_string_c_strcmp_FUN_005fef20(in_stack_00000008,"CDynamite");
+  if (iVar2 == 0) {
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
-              ((CKeyFramedModelInstance *)(iVar2 + 0x158),"tommybullet.kfm");
+              ((CKeyFramedModelInstance *)(in_stack_00000004 + 0x158),"dynamitebundle.kfm")
+    ;
   }
-  iVar3 = crt_string_c_strcmp_FUN_005fef20(in_stack_00000008,"CFlameThrower");
-  if (iVar3 == 0) {
+  iVar2 = crt_string_c_strcmp_FUN_005fef20(in_stack_00000008,"CTommyGun");
+  if (iVar2 == 0) {
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
-              ((CKeyFramedModelInstance *)(iVar2 + 0x158),"fgunammo.kfm");
+              ((CKeyFramedModelInstance *)(in_stack_00000004 + 0x158),"tommybullet.kfm");
   }
-  iVar3 = crt_string_c_strcmp_FUN_005fef20(in_stack_00000008,"CElephantGun");
-  if (iVar3 != 0) {
+  iVar2 = crt_string_c_strcmp_FUN_005fef20(in_stack_00000008,"CFlameThrower");
+  if (iVar2 == 0) {
+    core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
+              ((CKeyFramedModelInstance *)(in_stack_00000004 + 0x158),"fgunammo.kfm");
+  }
+  iVar2 = crt_string_c_strcmp_FUN_005fef20(in_stack_00000008,"CElephantGun");
+  if (iVar2 != 0) {
     core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
-              ((CKeyFramedModelInstance *)(iVar2 + 0x158));
+              ((CKeyFramedModelInstance *)(in_stack_00000004 + 0x158));
     return;
   }
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
-            ((CKeyFramedModelInstance *)(iVar2 + 0x158),"eleshell.kfm");
+            ((CKeyFramedModelInstance *)(in_stack_00000004 + 0x158),"eleshell.kfm");
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
-            ((CKeyFramedModelInstance *)(iVar2 + 0x158));
+            ((CKeyFramedModelInstance *)(in_stack_00000004 + 0x158));
   return;
 }

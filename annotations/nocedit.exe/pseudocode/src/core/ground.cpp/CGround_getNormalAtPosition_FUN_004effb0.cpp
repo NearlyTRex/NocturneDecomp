@@ -16,7 +16,6 @@ core_ground_cpp_CGround_getNormalAtPosition_FUN_004effb0
   uint uVar3;
   uint uVar4;
   int iVar5;
-  BADSPACEBASE *in_ESP;
   int *unaff_ESI;
   int *piVar6;
   uint uVar7;
@@ -58,7 +57,7 @@ core_ground_cpp_CGround_getNormalAtPosition_FUN_004effb0
                                   ((uVar1 & this_ptr->height_minus_1) +
                                   (uVar4 & this_ptr->height_minus_1) * this_ptr->width) * 4);
       engine_matrix_c_normalizeVector3DFloat_FUN_0050d9f0(&local_3c);
-      piVar6 = (int *)&stack0xffffffb0;
+      piVar6 = (int *)&stack0xffffffac;
     }
     else {
       local_1c = this_ptr->terrain_data;
@@ -72,7 +71,7 @@ core_ground_cpp_CGround_getNormalAtPosition_FUN_004effb0
       local_3c.y = this_ptr->vertical_scale << 8;
       local_3c.z = local_30[3] - local_3c.z;
       engine_matrix_c_normalizeVector3DFloat_FUN_0050d9f0(&local_3c);
-      piVar6 = local_30 + 1;
+      piVar6 = local_30;
     }
   }
   else if (local_10 < 0x10000 - local_14) {
@@ -89,7 +88,7 @@ core_ground_cpp_CGround_getNormalAtPosition_FUN_004effb0
                  (int)*(short *)((uVar7 + (uVar4 & this_ptr->height_minus_1) * this_ptr->width) * 4
                                 + (int)local_18);
     engine_matrix_c_normalizeVector3DFloat_FUN_0050d9f0(&local_3c);
-    piVar6 = (int *)&stack0xffffffa4;
+    piVar6 = (int *)&stack0xffffffa0;
   }
   else {
     local_18 = (void *)(this_ptr->width_minus_1 & uVar1);
@@ -104,15 +103,15 @@ core_ground_cpp_CGround_getNormalAtPosition_FUN_004effb0
     local_3c.y = this_ptr->vertical_scale << 8;
     local_3c.z = local_20 - local_3c.z;
     engine_matrix_c_normalizeVector3DFloat_FUN_0050d9f0(&local_3c);
-    piVar6 = (int *)&stack0xffffffbc;
+    piVar6 = (int *)&stack0xffffffb8;
   }
   local_3c.x = *piVar6;
   local_30[(uint)bVar8 * -2 + -2] = piVar6[(uint)bVar8 * -2 + 1];
   local_30[(uint)bVar8 * -2 + (uint)bVar8 * -2 + -1] =
        (piVar6 + (uint)bVar8 * -2 + 1)[(uint)bVar8 * -2 + 1];
-  *unaff_ESI = local_3c.y;
-  unaff_ESI[(uint)bVar8 * -2 + 1] = local_30[(uint)bVar8 * -2 + -1];
+  *unaff_ESI = local_3c.x;
+  unaff_ESI[(uint)bVar8 * -2 + 1] = local_30[(uint)bVar8 * -2 + -2];
   (unaff_ESI + (uint)bVar8 * -2 + 1)[(uint)bVar8 * -2 + 1] =
-       local_30[(uint)bVar8 * -2 + (uint)bVar8 * -2];
+       local_30[(uint)bVar8 * -2 + (uint)bVar8 * -2 + -1];
   return;
 }

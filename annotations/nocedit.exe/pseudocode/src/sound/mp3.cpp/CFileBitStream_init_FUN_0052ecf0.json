@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 88,
-    "complexity_score": 154,
+    "complexity_score": 96,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 8,
-    "pseudocode_lines": 39,
-    "suspect_count": 10,
+    "pseudocode_lines": 36,
+    "suspect_count": 5,
     "suspect_types": [
       "call_esp_preserve",
-      "stack_param",
       "variadic_preserve"
     ],
-    "total_lines": 127
+    "total_lines": 124
   },
   "cross_references": [],
   "function": {
@@ -178,43 +177,8 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000014",
-      "text": "int in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000018",
-      "text": "int in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_00000018",
-      "text": "this_ptr->stream_length = in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 24,
-      "match": "in_stack_00000014",
-      "text": "this_ptr->buffer_size = in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_00000014",
-      "text": "(in_stack_00000014,\"..\\\\sound\\\\mp3.cpp\",0x1ff);",
-      "type": "stack_param"
-    },
-    {
       "call_address": "0052eddc",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

@@ -11,7 +11,6 @@ engine_font_cpp_CBitFont_printfRight_FUN_004cdd20
           (CBitFont *font_ptr,int x,int y,int color,char *format,...)
 
 {
-  BADSPACEBASE *in_ESP;
   uint in_stack_00000018;
   byte *local_14;
   

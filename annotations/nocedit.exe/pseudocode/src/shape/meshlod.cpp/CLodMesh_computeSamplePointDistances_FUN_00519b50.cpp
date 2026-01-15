@@ -11,23 +11,23 @@ shape_meshlod_cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
           (CLodMesh *this_ptr,double max_search_radius)
 
 {
+  float fVar1;
   int extraout_EAX;
   int extraout_EAX_00;
   int extraout_EAX_01;
   int extraout_EAX_02;
   int extraout_EAX_03;
   int extraout_EAX_04;
-  uint uVar1;
-  CVector3f *pCVar2;
-  BADSPACEBASE *in_ESP;
+  uint uVar2;
+  CVector3f *pCVar3;
   int grid_y;
-  int iVar3;
   int iVar4;
-  float10 fVar5;
+  int iVar5;
   float10 fVar6;
   float10 fVar7;
   float10 fVar8;
-  double dVar9;
+  float10 fVar9;
+  double dVar10;
   CBoundingBox3D local_8c;
   float local_74;
   float local_70;
@@ -66,46 +66,45 @@ shape_meshlod_cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
     local_8c.max.y = g_SamplePointArray[0].y;
     local_8c.max.z = g_SamplePointArray[0].z;
   }
-  iVar4 = 0;
+  iVar5 = 0;
   if (0 < g_SamplePointCount) {
-    iVar3 = 0;
-    pCVar2 = g_SamplePointArray;
+    iVar4 = 0;
+    pCVar3 = g_SamplePointArray;
     do {
-      *(uint *)((int)g_SampleDistances + iVar3) = 0;
-      iVar4 = iVar4 + 1;
-      *(uint *)((int)g_SampleDistances + iVar3 + 4) = 0x3ff00000;
-      core_box_cpp_CBoundingBox3D_expand_FUN_00420240(&local_8c,pCVar2);
-      iVar3 = iVar3 + 8;
-      pCVar2 = pCVar2 + 1;
-    } while (iVar4 < g_SamplePointCount);
+      *(uint *)((int)g_SampleDistances + iVar4) = 0;
+      iVar5 = iVar5 + 1;
+      *(uint *)((int)g_SampleDistances + iVar4 + 4) = 0x3ff00000;
+      core_box_cpp_CBoundingBox3D_expand_FUN_00420240(&local_8c,pCVar3);
+      iVar4 = iVar4 + 8;
+      pCVar3 = pCVar3 + 1;
+    } while (iVar5 < g_SamplePointCount);
   }
   local_50 = (float)((float10)local_8c.min.x + (float10)local_8c.max.x);
-  fVar5 = (float10)0.5f;
+  fVar6 = (float10)0.5f;
   local_4c = (float)((float10)local_8c.min.y + (float10)local_8c.max.y);
-  fVar6 = ((float10)local_8c.min.y + (float10)local_8c.max.y) * fVar5;
+  fVar7 = ((float10)local_8c.min.y + (float10)local_8c.max.y) * fVar6;
   local_48 = (float)((float10)local_8c.min.z + (float10)local_8c.max.z);
-  fVar8 = ((float10)local_8c.min.z + (float10)local_8c.max.z) * fVar5;
-  local_74 = (float)(((float10)local_8c.min.x + (float10)local_8c.max.x) * fVar5);
-  local_70 = (float)fVar6;
-  fVar5 = (float10)0.5;
-  fVar7 = (float10)16;
-  fVar6 = (fVar6 + fVar5) * fVar7;
-  local_6c = (float)fVar8;
+  fVar9 = ((float10)local_8c.min.z + (float10)local_8c.max.z) * fVar6;
+  local_74 = (float)(((float10)local_8c.min.x + (float10)local_8c.max.x) * fVar6);
+  local_70 = (float)fVar7;
+  fVar6 = (float10)0.5;
+  fVar8 = (float10)16;
+  fVar7 = (fVar7 + fVar6) * fVar8;
+  local_6c = (float)fVar9;
   g_LodGenerationStamp = g_LodGenerationStamp + 1;
-  fVar8 = fVar7 * (fVar8 + fVar5);
-  dVar9 = crt_math_c_round_FUN_005fe6b0((double)(((float10)local_74 + fVar5) * fVar7));
-  fVar5 = (float10)dVar9;
-  local_8c.min.y = 7.494825e-39;
-  dVar9 = crt_math_c_round_FUN_005fe6b0((double)fVar6);
-  fVar6 = (float10)dVar9;
-  local_8c.min.x = 7.494835e-39;
-  dVar9 = crt_math_c_round_FUN_005fe6b0((double)fVar8);
-  local_30 = (int)ROUND(fVar5);
-  local_34 = (int)ROUND(fVar6);
-  local_2c = (int)ROUND(dVar9);
-  if ((((-1 < local_30) && (local_30 < 0x10)) && (-1 < local_34)) &&
-     (((local_34 < 0x10 && (-1 < local_2c)) && (local_2c < 0x10)))) {
-    shape_meshlod_cpp_CLodMesh_processGridCell_FUN_0051a030(this_ptr,local_30,local_34,local_2c);
+  fVar9 = fVar8 * (fVar9 + fVar6);
+  dVar10 = crt_math_c_round_FUN_005fe6b0((double)(((float10)local_74 + fVar6) * fVar8));
+  fVar6 = (float10)dVar10;
+  dVar10 = crt_math_c_round_FUN_005fe6b0((double)fVar7);
+  fVar7 = (float10)dVar10;
+  dVar10 = crt_math_c_round_FUN_005fe6b0((double)fVar9);
+  local_44.z = (float)(int)ROUND(fVar6);
+  local_44.y = (float)(int)ROUND(fVar7);
+  local_38 = (int)ROUND(dVar10);
+  if ((((-1 < (int)local_44.z) && ((int)local_44.z < 0x10)) && (-1 < (int)local_44.y)) &&
+     ((((int)local_44.y < 0x10 && (-1 < local_38)) && (local_38 < 0x10)))) {
+    shape_meshlod_cpp_CLodMesh_processGridCell_FUN_0051a030
+              (this_ptr,(int)local_44.z,(int)local_44.y,local_38);
   }
   local_28 = 1;
   while( true ) {
@@ -129,22 +128,22 @@ shape_meshlod_cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
     if (local_18 < 0) {
       local_18 = 0;
     }
-    iVar4 = local_2c + local_28;
-    if (0xf < iVar4) {
-      iVar4 = 0xf;
+    iVar5 = local_2c + local_28;
+    if (0xf < iVar5) {
+      iVar5 = 0xf;
     }
     if (iStack_14 <= local_24) {
       do {
-        iVar3 = local_18;
+        iVar4 = local_18;
         grid_y = local_20;
         if (local_20 <= local_1c) {
           do {
-            for (; iVar3 <= iVar4; iVar3 = iVar3 + 1) {
+            for (; iVar4 <= iVar5; iVar4 = iVar4 + 1) {
               shape_meshlod_cpp_CLodMesh_processGridCell_FUN_0051a030
-                        (this_ptr,iStack_14,grid_y,iVar3);
+                        (this_ptr,iStack_14,grid_y,iVar4);
             }
             grid_y = grid_y + 1;
-            iVar3 = local_18;
+            iVar4 = local_18;
           } while (grid_y <= local_1c);
         }
         iStack_14 = iStack_14 + 1;
@@ -160,84 +159,84 @@ shape_meshlod_cpp_CLodMesh_computeSamplePointDistances_FUN_00519b50
       local_8c.max.y = g_SamplePointArray[0].y;
       local_8c.max.z = g_SamplePointArray[0].z;
     }
-    iVar4 = 0;
+    iVar5 = 0;
     if (0 < g_SamplePointCount) {
-      iVar3 = 0;
-      pCVar2 = g_SamplePointArray;
+      iVar4 = 0;
+      pCVar3 = g_SamplePointArray;
       do {
-        local_68 = SQRT((float)*(double *)((int)g_SampleDistances + iVar3));
-        iVar3 = iVar3 + 8;
-        iVar4 = iVar4 + 1;
-        local_44.x = pCVar2->x - local_68;
-        local_44.y = pCVar2->y - local_68;
-        local_44.z = pCVar2->z - local_68;
+        local_68 = SQRT((float)*(double *)((int)g_SampleDistances + iVar4));
+        iVar4 = iVar4 + 8;
+        iVar5 = iVar5 + 1;
+        local_44.x = pCVar3->x - local_68;
+        local_44.y = pCVar3->y - local_68;
+        local_44.z = pCVar3->z - local_68;
         local_64 = local_68;
         local_60 = local_68;
         core_box_cpp_CBoundingBox3D_expand_FUN_00420240(&local_8c,&local_44);
-        local_5c.x = pCVar2->x + local_68;
-        local_5c.y = pCVar2->y + local_64;
-        local_5c.z = pCVar2->z + local_60;
+        local_5c.x = pCVar3->x + local_68;
+        local_5c.y = pCVar3->y + local_64;
+        local_5c.z = pCVar3->z + local_60;
         core_box_cpp_CBoundingBox3D_expand_FUN_00420240(&local_8c,&local_5c);
-        pCVar2 = pCVar2 + 1;
-      } while (iVar4 < g_SamplePointCount);
+        pCVar3 = pCVar3 + 1;
+      } while (iVar5 < g_SamplePointCount);
     }
-    dVar9 = crt_math_c_round_FUN_005fe6b0
-                      ((double)((local_8c.min.x + (float)0.5) * (float)16))
-    ;
-    local_44.z = (float)(int)ROUND(dVar9);
-    uVar1 = extraout_EAX - (int)local_44.z >> 0x1f;
-    iVar3 = (extraout_EAX - (int)local_44.z ^ uVar1) - uVar1;
-    iVar4 = -1;
-    if (-1 < iVar3) {
-      iVar4 = iVar3;
+    dVar10 = crt_math_c_round_FUN_005fe6b0
+                       ((double)((local_8c.min.x + (float)0.5) * (float)16)
+                       );
+    local_44.z = (float)(int)ROUND(dVar10);
+    uVar2 = extraout_EAX - (int)local_44.z >> 0x1f;
+    iVar4 = (extraout_EAX - (int)local_44.z ^ uVar2) - uVar2;
+    iVar5 = -1;
+    if (-1 < iVar4) {
+      iVar5 = iVar4;
     }
-    dVar9 = crt_math_c_round_FUN_005fe6b0
-                      ((double)((local_8c.min.x + (float)0.5) * (float)16))
-    ;
-    local_44.y = (float)(int)ROUND(dVar9);
-    uVar1 = extraout_EAX_00 - (int)local_44.y >> 0x1f;
-    iVar3 = (extraout_EAX_00 - (int)local_44.y ^ uVar1) - uVar1;
-    if (iVar4 < iVar3) {
-      iVar4 = iVar3;
+    dVar10 = crt_math_c_round_FUN_005fe6b0
+                       ((double)((local_8c.min.x + (float)0.5) * (float)16)
+                       );
+    local_44.y = (float)(int)ROUND(dVar10);
+    uVar2 = extraout_EAX_00 - (int)local_44.y >> 0x1f;
+    iVar4 = (extraout_EAX_00 - (int)local_44.y ^ uVar2) - uVar2;
+    if (iVar5 < iVar4) {
+      iVar5 = iVar4;
     }
-    dVar9 = crt_math_c_round_FUN_005fe6b0
-                      ((double)((local_8c.min.x + (float)0.5) * (float)16))
-    ;
-    local_44.x = (float)(int)ROUND(dVar9);
-    uVar1 = extraout_EAX_01 - (int)local_44.x >> 0x1f;
-    iVar3 = (extraout_EAX_01 - (int)local_44.x ^ uVar1) - uVar1;
-    if (iVar4 < iVar3) {
-      iVar4 = iVar3;
+    dVar10 = crt_math_c_round_FUN_005fe6b0
+                       ((double)((local_8c.min.x + (float)0.5) * (float)16)
+                       );
+    local_44.x = (float)(int)ROUND(dVar10);
+    uVar2 = extraout_EAX_01 - (int)local_44.x >> 0x1f;
+    iVar4 = (extraout_EAX_01 - (int)local_44.x ^ uVar2) - uVar2;
+    if (iVar5 < iVar4) {
+      iVar5 = iVar4;
     }
-    dVar9 = crt_math_c_round_FUN_005fe6b0
-                      ((double)((local_8c.min.x + (float)0.5) * (float)16))
-    ;
-    local_48 = (float)(int)ROUND(dVar9);
-    uVar1 = extraout_EAX_02 - (int)local_48 >> 0x1f;
-    iVar3 = (extraout_EAX_02 - (int)local_48 ^ uVar1) - uVar1;
-    if (iVar4 < iVar3) {
-      iVar4 = iVar3;
+    dVar10 = crt_math_c_round_FUN_005fe6b0
+                       ((double)((local_8c.min.x + (float)0.5) * (float)16)
+                       );
+    local_48 = (float)(int)ROUND(dVar10);
+    uVar2 = extraout_EAX_02 - (int)local_48 >> 0x1f;
+    iVar4 = (extraout_EAX_02 - (int)local_48 ^ uVar2) - uVar2;
+    if (iVar5 < iVar4) {
+      iVar5 = iVar4;
     }
-    dVar9 = crt_math_c_round_FUN_005fe6b0
-                      ((double)((local_8c.min.x + (float)0.5) * (float)16))
-    ;
-    local_4c = (float)(int)ROUND(dVar9);
-    uVar1 = extraout_EAX_03 - (int)local_4c >> 0x1f;
-    iVar3 = (extraout_EAX_03 - (int)local_4c ^ uVar1) - uVar1;
-    if (iVar4 < iVar3) {
-      iVar4 = iVar3;
+    dVar10 = crt_math_c_round_FUN_005fe6b0
+                       ((double)((local_8c.min.x + (float)0.5) * (float)16)
+                       );
+    local_4c = (float)(int)ROUND(dVar10);
+    uVar2 = extraout_EAX_03 - (int)local_4c >> 0x1f;
+    iVar4 = (extraout_EAX_03 - (int)local_4c ^ uVar2) - uVar2;
+    if (iVar5 < iVar4) {
+      iVar5 = iVar4;
     }
-    dVar9 = crt_math_c_round_FUN_005fe6b0
-                      ((double)((local_8c.min.x + (float)0.5) * (float)16))
-    ;
-    local_38 = (int)ROUND(dVar9);
-    uVar1 = extraout_EAX_04 - local_38 >> 0x1f;
-    iVar3 = (extraout_EAX_04 - local_38 ^ uVar1) - uVar1;
-    if (iVar4 < iVar3) {
-      iVar4 = iVar3;
+    fVar1 = local_8c.min.x + (float)0.5;
+    local_8c.min.x = 7.495882e-39;
+    dVar10 = crt_math_c_round_FUN_005fe6b0((double)(fVar1 * (float)16));
+    local_50 = (float)(int)ROUND(dVar10);
+    uVar2 = extraout_EAX_04 - (int)local_50 >> 0x1f;
+    iVar4 = (extraout_EAX_04 - (int)local_50 ^ uVar2) - uVar2;
+    if (iVar5 < iVar4) {
+      iVar5 = iVar4;
     }
-    if (iVar4 + 1 < local_28) break;
-    local_28 = local_28 + 1;
+    if (iVar5 + 1 < (int)local_44.y) break;
+    local_44.y = (float)((int)local_44.y + 1);
   }
   return;
 }

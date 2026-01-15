@@ -14,43 +14,40 @@ uint core_zombie_cpp_CZombie_FUN_005fc120(void)
 
 {
   CDeformableModelInstance *this_ptr;
-  float fVar1;
-  CVector3f *pCVar2;
-  BADSPACEBASE *in_ESP;
+  CVector3f *pCVar1;
   CDemonActor *in_stack_00000004;
   CVector3f *in_stack_00000008;
-  float local_40;
-  float fStack_3c;
-  float fStack_38;
-  byte local_34 [12];
-  float local_28;
-  float local_24;
-  float local_20;
-  CVector3f local_1c;
+  CVector3f local_4c;
+  CVector3f local_40;
+  CVector3f local_34;
+  CVector3f local_28;
+  float local_1c;
+  float local_18;
+  float local_14;
   float local_10;
   
   this_ptr = (CDeformableModelInstance *)(in_stack_00000004 + 1);
-  fVar1 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-                    ((CMotionController *)this_ptr,3);
-  if (fVar1 <= 0.0) {
+  local_10 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
+                       ((CMotionController *)this_ptr,3);
+  if (local_10 <= 0.0) {
     return 0;
   }
   core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-            (this_ptr,(CVector3f *)(local_34 + 4),*(int *)(in_stack_00000004[0x8e].create_event + 8)
-            );
+            (this_ptr,&local_34,*(int *)(in_stack_00000004[0x8e].create_event + 8));
   core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-            (this_ptr,(CVector3f *)&stack0xffffffbc,
-             *(int *)(in_stack_00000004[0x8e].create_event + 0xc));
-  local_10 = local_28 + local_40;
-  local_1c.x = local_10 * _DAT_006589b5;
-  local_1c.y = (local_24 + fStack_3c) * _DAT_006589b5;
-  local_1c.z = (local_20 + fStack_38) * _DAT_006589b5;
-  pCVar2 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                     (in_stack_00000004,(CVector3f *)local_34,&local_1c);
-  if (in_stack_00000008 != pCVar2) {
-    in_stack_00000008->x = pCVar2->x;
-    in_stack_00000008->y = pCVar2->y;
-    in_stack_00000008->z = pCVar2->z;
+            (this_ptr,&local_4c,*(int *)(in_stack_00000004[0x8e].create_event + 0xc));
+  local_1c = local_34.x + local_4c.x;
+  local_18 = local_34.y + local_4c.y;
+  local_28.x = local_1c * _DAT_006589b5;
+  local_28.y = local_18 * _DAT_006589b5;
+  local_14 = local_34.z + local_4c.z;
+  local_28.z = local_14 * _DAT_006589b5;
+  pCVar1 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                     (in_stack_00000004,&local_40,&local_28);
+  if (in_stack_00000008 != pCVar1) {
+    in_stack_00000008->x = pCVar1->x;
+    in_stack_00000008->y = pCVar1->y;
+    in_stack_00000008->z = pCVar1->z;
   }
   return 1;
 }

@@ -27,7 +27,6 @@ void __cdecl core_dog_cpp_CZombieDog_process_FUN_0047f140(CZombieDog *this_ptr)
   int extraout_EAX_00;
   int extraout_EAX_01;
   int extraout_EAX_02;
-  BADSPACEBASE *in_ESP;
   float in_stack_00000008;
   SDamageInfo local_e0;
   uint local_a4;

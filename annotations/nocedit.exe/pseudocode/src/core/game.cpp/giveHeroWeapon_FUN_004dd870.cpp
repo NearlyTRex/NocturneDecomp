@@ -13,7 +13,6 @@ void __cdecl core_game_cpp_giveHeroWeapon_FUN_004dd870(char *p1)
 {
   CDemonActor *this_ptr;
   CDemonActor *pCVar1;
-  uint uStack00000010;
   
   this_ptr = core_actor_cpp_createActorByName_FUN_0040c430(p1);
   core_mission_cpp_CDemonMission_initNewActorMaybe_FUN_00524700(g_CDemonMissionPtr);
@@ -29,7 +28,6 @@ void __cdecl core_game_cpp_giveHeroWeapon_FUN_004dd870(char *p1)
   pCVar1[4].actor_name[10] = '\0';
   pCVar1[4].actor_name[0xb] = '\0';
   (*this_ptr->vtable->pickup)(this_ptr,(CDemonActor *)g_HeroActors[g_LocalHeroIndex]);
-  uStack00000010 = 0x4dd8f9;
   core_inv_cpp_CInventory_addItem_FUN_004fd600
             (&g_HeroActors[g_LocalHeroIndex]->inventory,this_ptr,1);
   return;

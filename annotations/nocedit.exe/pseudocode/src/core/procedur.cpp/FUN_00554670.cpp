@@ -27,8 +27,7 @@ void core_procedur_cpp_FUN_00554670(void)
   float local_40;
   int local_30;
   int local_28;
-  int local_20;
-  int local_1c;
+  int iStack_24;
   byte local_18;
   
   local_40 = in_stack_00000010 + -32f;
@@ -66,20 +65,21 @@ void core_procedur_cpp_FUN_00554670(void)
       fVar6 = (float10)local_28;
       crt_math_c_round_FUN_005fe6b0((double)((float)iVar4 - in_stack_00000008));
       dVar7 = crt_math_c_round_FUN_005fe6b0((double)(fVar6 - (float10)in_stack_0000000c));
-      local_20 = (int)ROUND(dVar7);
-      if (local_1c < 0) {
-        local_1c = local_1c + 0x100;
+      local_28 = (int)ROUND(dVar7);
+      if (iStack_24 < 0) {
+        iStack_24 = iStack_24 + 0x100;
       }
-      if (0xff < local_1c) {
-        local_1c = local_1c + -0x100;
+      if (0xff < iStack_24) {
+        iStack_24 = iStack_24 + -0x100;
       }
-      if (local_20 < 0) {
-        local_20 = local_20 + 0x100;
+      if (local_28 < 0) {
+        local_28 = local_28 + 0x100;
       }
-      if (0xff < local_20) {
-        local_20 = local_20 + -0x100;
+      if (0xff < local_28) {
+        local_28 = local_28 + -0x100;
       }
-      uVar3 = (uint)*(byte *)(iVar5 + 8) + (uint)(byte)(&DAT_030f6158)[local_20 * 0x100 + local_1c];
+      uVar3 = (uint)*(byte *)(iVar5 + 8) + (uint)(byte)(&DAT_030f6158)[local_28 * 0x100 + iStack_24]
+      ;
       if (0xff < uVar3) {
         uVar3 = 0xff;
       }
@@ -87,8 +87,7 @@ void core_procedur_cpp_FUN_00554670(void)
       iVar4 = extraout_EDX + 1;
       *(char *)(extraout_ECX + 8) = (char)uVar3;
     } while (iVar4 < 0x100);
-    local_28 = local_28 + 1;
-    local_30 = local_30 + 0x100;
-  } while (local_28 < 0x100);
+    local_30 = local_30 + 1;
+  } while (local_30 < 0x100);
   return;
 }

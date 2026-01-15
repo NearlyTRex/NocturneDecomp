@@ -17,16 +17,17 @@ void core_manpuz_cpp_FUN_00509b20(void)
   float fVar2;
   int iVar3;
   CVector3f *pCVar4;
-  BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000004;
-  float in_stack_00000008;
-  CVector3f CStack_24;
-  float local_10;
+  int in_stack_00000008;
+  CVector3f local_34;
+  CVector3f local_28;
+  CVector3f local_1c;
+  int local_10;
   
-  iVar3 = (int)in_stack_00000008 * 100;
+  iVar3 = in_stack_00000008 * 100;
   local_10 = in_stack_00000008;
-  fVar2 = ((float)(int)in_stack_00000008 +
-          *(float *)(in_stack_00000004[4].create_event + iVar3 + 0x1c)) * _DAT_00660d8c;
+  fVar2 = ((float)in_stack_00000008 + *(float *)(in_stack_00000004[4].create_event + iVar3 + 0x1c))
+          * _DAT_00660d8c;
   pcVar1 = in_stack_00000004[4].create_event + iVar3 + 0x30;
   pcVar1[0] = '\0';
   pcVar1[1] = '\0';
@@ -41,16 +42,19 @@ void core_manpuz_cpp_FUN_00509b20(void)
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
             ((CMatrix3x3f *)(in_stack_00000004[4].create_event + iVar3 + 0x3c),
              (CVector3f *)(in_stack_00000004[4].create_event + iVar3 + 0x30));
+  local_34.z = in_stack_00000004[0xf].field12_0xe0.y;
+  local_34.x = 0.0;
+  local_34.y = 0.0;
   pCVar4 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
-                     ((CMatrix3x3f *)(in_stack_00000004[4].create_event + iVar3 + 0x3c),&CStack_24,
-                      (CVector3f *)&stack0xffffffd0);
+                     ((CMatrix3x3f *)(in_stack_00000004[4].create_event + iVar3 + 0x3c),&local_28,
+                      &local_34);
   if ((CVector3f *)(in_stack_00000004[4].create_event + iVar3 + 0x24) != pCVar4) {
     ((CVector3f *)(in_stack_00000004[4].create_event + iVar3 + 0x24))->x = pCVar4->x;
     *(float *)(in_stack_00000004[4].create_event + iVar3 + 0x28) = pCVar4->y;
     *(float *)(in_stack_00000004[4].create_event + iVar3 + 0x2c) = pCVar4->z;
   }
   pCVar4 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                     (in_stack_00000004,(CVector3f *)&stack0xffffffec,
+                     (in_stack_00000004,&local_1c,
                       (CVector3f *)(in_stack_00000004[4].create_event + iVar3 + 0x24));
   if ((CVector3f *)(in_stack_00000004[4].create_event + iVar3 + 0x70) == pCVar4) {
     return;

@@ -1,21 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 50,
-    "complexity_score": 208,
+    "complexity_score": 95,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 38,
-    "suspect_count": 14,
+    "pseudocode_lines": 35,
+    "suspect_count": 5,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
-      "lea_esp_stack_addr",
-      "register_param",
-      "stack_param",
-      "stack_ref"
+      "lea_esp_stack_addr"
     ],
-    "total_lines": 88
+    "total_lines": 85
   },
   "cross_references": [],
   "function": {
@@ -121,69 +117,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 8,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 8,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000010",
-      "text": "char *in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 16,
-      "match": "&stack0xfffffef4",
-      "text": "engine_dosio_c_ensureTrailingSlash_FUN_00481f80(base_dir,local_c,&stack0xfffffef4);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 18,
-      "match": "&stack0xfffffff8",
-      "text": "(dest_path,&stack0xfffffff8,acStack_108,(char *)0x0,(char *)0x0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_00000010",
-      "text": "cVar1 = *in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 35,
-      "match": "in_stack_00000010",
-      "text": "cVar1 = in_stack_00000010[1];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 36,
-      "match": "in_stack_00000010",
-      "text": "in_stack_00000010 = in_stack_00000010 + 2;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 36,
-      "match": "in_stack_00000010",
-      "text": "in_stack_00000010 = in_stack_00000010 + 2;",
-      "type": "stack_param"
-    },
     {
       "add_esp_value": 12,
       "call_address": "004b1e02",

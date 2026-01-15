@@ -11,16 +11,14 @@ core_xform_cpp_multiplyMatrix3x4InPlace_FUN_005f50c0(CMatrix3x4f *matrix_a,CMatr
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   float *pfVar2;
   CMatrix3x4f *pCVar3;
   byte bVar4;
   CMatrix3x4f *in_stack_ffffffc4;
-  float afStack_38 [11];
   
   bVar4 = 0;
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(matrix_a,matrix_b,in_stack_ffffffc4);
-  pfVar2 = afStack_38;
+  pfVar2 = (float *)&stack0xffffffc4;
   pCVar3 = matrix_a;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
     pCVar3->m[0].w = *pfVar2;

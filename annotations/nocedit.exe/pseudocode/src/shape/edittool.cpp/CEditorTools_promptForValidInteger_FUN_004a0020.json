@@ -1,25 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 97,
-    "complexity_score": 291,
+    "complexity_score": 169,
     "cross_reference_count": 8,
     "function_call_count": 4,
     "global_count": 4,
-    "pseudocode_lines": 31,
-    "suspect_count": 21,
+    "pseudocode_lines": 34,
+    "suspect_count": 11,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
-      "format_string_mismatch",
       "lea_esp_stack_addr",
-      "register_param",
       "stack_param",
-      "stack_ref",
-      "unaffected_reg",
       "undefined_type",
       "variadic_preserve"
     ],
-    "total_lines": 128
+    "total_lines": 131
   },
   "cross_references": [
     {
@@ -233,81 +228,18 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 9,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 9,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 10,
-      "match": "unaff_ESI",
-      "text": "int unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_0000001d",
-      "text": "undefined3 in_stack_0000001d;",
+      "line": 9,
+      "match": "in_stack_00000011",
+      "text": "undefined3 in_stack_00000011;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved type",
-      "line": 11,
-      "match": "undefined3 in_stack_0000001d",
-      "text": "undefined3 in_stack_0000001d;",
+      "line": 9,
+      "match": "undefined3 in_stack_00000011",
+      "text": "undefined3 in_stack_00000011;",
       "type": "undefined_type"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 14,
-      "match": "&stack0xffffffcc",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffcc,\"%d\",*result_ptr);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 19,
-      "match": "&stack0xffffffd0",
-      "text": "(this_ptr,prompt_text,&stack0xffffffd0,0x1e,1);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 23,
-      "match": "&stack0xffffffd4",
-      "text": "iVar1 = crt_stdio_c_sscanf_FUN_0060013c(&stack0xffffffd4,\"%d\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 28,
-      "match": "unaff_ESI",
-      "text": "if ((_show_current_value == 0) || ((min_value <= unaff_ESI && (unaff_ESI <= max_value)))) break;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 28,
-      "match": "unaff_ESI",
-      "text": "if ((_show_current_value == 0) || ((min_value <= unaff_ESI && (unaff_ESI <= max_value)))) break;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 32,
-      "match": "unaff_ESI",
-      "text": "*(int *)max_value = unaff_ESI;",
-      "type": "unaffected_reg"
     },
     {
       "call_address": "004a0073",
@@ -364,17 +296,6 @@
       "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
       "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 004a00de (no EBP frame)",
       "type": "variadic_preserve"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d",
-      "function_name": "crt_stdio_c_sscanf_FUN_0060013c",
-      "line_number": 23,
-      "match": "iVar1 = crt_stdio_c_sscanf_FUN_0060013c(&stack0xffffffd4,\"%d\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 20,

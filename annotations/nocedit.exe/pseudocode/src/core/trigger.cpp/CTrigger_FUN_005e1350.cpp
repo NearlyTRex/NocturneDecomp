@@ -10,7 +10,6 @@ void __cdecl core_trigger_cpp_CTrigger_FUN_005e1350(CTrigger *this_ptr)
 
 {
   int *in_stack_00000008;
-  uint uStack00000028;
   
   core_actor_cpp_CDemonActor_showEditorHelp_FUN_0040d150(&this_ptr->base_actor,in_stack_00000008);
   *in_stack_00000008 = *in_stack_00000008 + 0xb;
@@ -30,7 +29,6 @@ void __cdecl core_trigger_cpp_CTrigger_FUN_005e1350(CTrigger *this_ptr)
   core_actor_cpp_drawTextLine_FUN_0040d240(in_stack_00000008,"        name is inside the trigger.");
   core_actor_cpp_drawTextLine_FUN_0040d240(in_stack_00000008,"   Light triggers me");
   core_actor_cpp_drawTextLine_FUN_0040d240(in_stack_00000008,"        The trigger is active when the amount of light on the center point");
-  uStack00000028 = 0x5e144c;
   core_actor_cpp_drawTextLine_FUN_0040d240(in_stack_00000008,"        is in a given range.");
   core_actor_cpp_drawTextLine_FUN_0040d240(in_stack_00000008,"   The action button triggers me");
   core_actor_cpp_drawTextLine_FUN_0040d240(in_stack_00000008,"        The trigger is active when the hero presses the action button");

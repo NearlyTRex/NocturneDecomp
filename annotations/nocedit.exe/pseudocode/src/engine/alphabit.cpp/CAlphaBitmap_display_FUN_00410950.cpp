@@ -15,25 +15,24 @@ engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(CAlphaBitmap *this_ptr,int
   ushort *destPixels_00;
   int iVar2;
   char *pcVar3;
-  char *pcVar4;
-  int in_stack_00000014;
+  int local_24;
   int local_20;
   int local_1c;
   int local_18;
-  int local_14;
+  char *local_14;
   
   if ((((-1 < this_ptr->width + x) && (x < g_WindowWidth)) && (-1 < y + this_ptr->height)) &&
      (y < g_WindowHeight)) {
     engine_alphabit_cpp_CAlphaBitmap_initPalette_FUN_00410cf0(this_ptr);
-    pcVar3 = this_ptr->ptrRaw;
-    pcVar4 = this_ptr->ptrOpa;
+    local_14 = this_ptr->ptrRaw;
+    pcVar3 = this_ptr->ptrOpa;
     if (g_BitsPerPixel == 0x20) {
-      local_20 = 0;
+      local_24 = 0;
       if (0 < this_ptr->height) {
-        local_14 = alpha;
+        local_18 = y;
         do {
-          if ((-1 < local_14) && (local_14 < g_WindowHeight)) {
-            destPixels = g_ScreenBufferArray[local_14];
+          if ((-1 < local_18) && (local_18 < g_WindowHeight)) {
+            destPixels = g_ScreenBufferArray[local_18];
             iVar1 = this_ptr->width;
             iVar2 = 0;
             if (x < 0) {
@@ -47,23 +46,23 @@ engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(CAlphaBitmap *this_ptr,int
               iVar1 = g_WindowWidth - x;
             }
             wincore_windll_cpp_renderAlphaRow32_FUN_005b555c
-                      (destPixels,(uchar *)(pcVar3 + iVar2),(uchar *)(pcVar4 + iVar2),
-                       in_stack_00000014,iVar1);
+                      (destPixels,(uchar *)(local_14 + iVar2),(uchar *)(pcVar3 + iVar2),alpha,iVar1)
+            ;
           }
-          local_14 = local_14 + 1;
+          local_18 = local_18 + 1;
+          local_14 = local_14 + this_ptr->width;
           pcVar3 = pcVar3 + this_ptr->width;
-          pcVar4 = pcVar4 + this_ptr->width;
-          local_20 = local_20 + 1;
-        } while (local_20 < this_ptr->height);
+          local_24 = local_24 + 1;
+        } while (local_24 < this_ptr->height);
       }
     }
     else {
-      local_1c = 0;
+      local_20 = 0;
       if (0 < this_ptr->height) {
-        local_18 = alpha;
+        local_1c = y;
         do {
-          if ((-1 < local_18) && (local_18 < g_WindowHeight)) {
-            destPixels_00 = g_ScreenBufferArray[local_18];
+          if ((-1 < local_1c) && (local_1c < g_WindowHeight)) {
+            destPixels_00 = g_ScreenBufferArray[local_1c];
             iVar1 = this_ptr->width;
             iVar2 = 0;
             if (x < 0) {
@@ -77,14 +76,14 @@ engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(CAlphaBitmap *this_ptr,int
               iVar1 = g_WindowWidth - x;
             }
             wincore_windll_cpp_renderAlphaRow16_FUN_005b55f7
-                      (destPixels_00,(uchar *)(pcVar3 + iVar2),(uchar *)(pcVar4 + iVar2),
-                       in_stack_00000014,iVar1);
+                      (destPixels_00,(uchar *)(local_14 + iVar2),(uchar *)(pcVar3 + iVar2),alpha,
+                       iVar1);
           }
-          local_18 = local_18 + 1;
-          pcVar3 = pcVar3 + this_ptr->width;
-          pcVar4 = pcVar4 + this_ptr->width;
           local_1c = local_1c + 1;
-        } while (local_1c < this_ptr->height);
+          local_14 = local_14 + this_ptr->width;
+          pcVar3 = pcVar3 + this_ptr->width;
+          local_20 = local_20 + 1;
+        } while (local_20 < this_ptr->height);
       }
     }
   }

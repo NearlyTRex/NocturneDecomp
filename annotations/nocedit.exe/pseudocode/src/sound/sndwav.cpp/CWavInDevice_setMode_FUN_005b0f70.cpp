@@ -20,7 +20,6 @@ sound_sndwav_cpp_CWavInDevice_setMode_FUN_005b0f70
   LPVOID pvVar6;
   int iVar7;
   int iVar8;
-  BADSPACEBASE *in_ESP;
   uint uVar9;
   int in_stack_00000018;
   tagWAVEINCAPSA tStack_54;

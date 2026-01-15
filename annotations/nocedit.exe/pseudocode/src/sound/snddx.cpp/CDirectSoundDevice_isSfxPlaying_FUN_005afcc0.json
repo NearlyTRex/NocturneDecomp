@@ -1,21 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 140,
+    "complexity_score": 94,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 4,
-    "pseudocode_lines": 30,
-    "suspect_count": 8,
+    "pseudocode_lines": 29,
+    "suspect_count": 5,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
-      "register_param",
-      "stack_ref",
       "variadic_preserve"
     ],
-    "total_lines": 88
+    "total_lines": 87
   },
   "cross_references": [],
   "function": {
@@ -141,29 +138,8 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 10,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 10,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 23,
-      "match": "&stack0xfffffe7c",
-      "text": "(&stack0xfffffe7c,\"DirectSux: Unable to %s.  (%s)\",",
-      "type": "stack_ref"
-    },
-    {
       "call_address": "005afd43",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -177,7 +153,7 @@
     },
     {
       "call_address": "005afd4e",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

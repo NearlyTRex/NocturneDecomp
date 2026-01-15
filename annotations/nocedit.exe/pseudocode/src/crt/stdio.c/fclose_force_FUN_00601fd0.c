@@ -12,11 +12,8 @@ int __cdecl crt_stdio_c_fclose_force_FUN_00601fd0(FILE *file_handle,int force_cl
   uint uVar1;
   long distance_to_move;
   uint uVar2;
-  BADSPACEBASE *in_ESP;
-  int in_stack_00000020;
-  int in_stack_0000002c;
-  char acStack_10c [4];
-  uint uStack_108;
+  int in_stack_0000000c;
+  int in_stack_00000010;
   
   if (file_handle->_flag == 0) {
     uVar1 = 0xffffffff;
@@ -31,7 +28,7 @@ int __cdecl crt_stdio_c_fclose_force_FUN_00601fd0(FILE *file_handle,int force_cl
     if (distance_to_move != -1) {
       crt_stdio_c_lseek_FUN_00606690(file_handle->_handle,distance_to_move,0);
     }
-    if (in_stack_00000020 != 0) {
+    if (in_stack_0000000c != 0) {
       uVar2 = crt_io_c_close_FUN_00609bd0(file_handle->_handle);
       uVar1 = uVar1 | uVar2;
     }
@@ -41,12 +38,11 @@ int __cdecl crt_stdio_c_fclose_force_FUN_00601fd0(FILE *file_handle,int force_cl
     }
     if ((file_handle->_flag & 0x800) != 0) {
       crt_io_c_generateTempFilename_FUN_00601f1c
-                (acStack_10c,(uint)*(byte *)&file_handle->_link->__get_ptr);
-      crt_io_c_deleteFile_FUN_005ff9d0(&stack0xfffffef0);
+                (&stack0xfffffee0,(uint)*(byte *)&file_handle->_link->__get_ptr);
+      crt_io_c_deleteFile_FUN_005ff9d0(&stack0xfffffee0);
     }
     (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(file_handle->_handle);
-    if (in_stack_0000002c != 0) {
-      uStack_108 = 0x6020b2;
+    if (in_stack_00000010 != 0) {
       (*PTR_crt_sync_c_InvalidateHandle_FUN_00602448_00684ef4)(file_handle->_handle);
     }
   }

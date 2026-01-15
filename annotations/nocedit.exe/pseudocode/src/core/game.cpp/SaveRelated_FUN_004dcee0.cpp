@@ -17,9 +17,8 @@ void __cdecl core_game_cpp_SaveRelated_FUN_004dcee0(CGame *this_ptr)
   int iVar4;
   FILE *file_ptr;
   char *pcVar5;
-  BADSPACEBASE *in_ESP;
   int *piVar6;
-  CSound *in_stack_fffffde4;
+  float in_stack_fffffde4;
   char acStack_218 [256];
   char acStack_118 [256];
   int iStack_18;
@@ -91,12 +90,10 @@ void __cdecl core_game_cpp_SaveRelated_FUN_004dcee0(CGame *this_ptr)
         (iVar4 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x32), iVar4 != 0)))) {
       iVar4 = sound_sndmain_cpp_isSoundEnabled_FUN_005a96b0();
       if (iVar4 == 0) {
-        in_stack_fffffde4 = g_CSoundPtr;
         core_sound_cpp_CSound_shutdown_FUN_005b2f70(g_CSoundPtr);
         sound_sndmain_cpp_setSoundEnabled_FUN_005a96c0(1);
       }
       else {
-        in_stack_fffffde4 = (CSound *)0x0;
         sound_sndmain_cpp_setSoundEnabled_FUN_005a96c0(0);
         core_sound_cpp_CSound_init_FUN_005b2dd0(g_CSoundPtr);
       }
@@ -132,7 +129,7 @@ void __cdecl core_game_cpp_SaveRelated_FUN_004dcee0(CGame *this_ptr)
     if ((iVar4 != 0) && (this_ptr->letterbox_mode == 0)) {
       core_game_cpp_CGame_saveGame_FUN_004e0cd0(this_ptr,"quicksavedgame.noc");
       pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Quick Save");
-      core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar5,(float)in_stack_fffffde4);
+      core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar5,in_stack_fffffde4);
     }
     if ((this_ptr->subtitle_system_enabled == 0) &&
        (iVar4 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x43), iVar4 != 0)) {
@@ -141,7 +138,7 @@ void __cdecl core_game_cpp_SaveRelated_FUN_004dcee0(CGame *this_ptr)
       if (file_ptr == (FILE *)0x0) {
         pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                            ("No quicked saved game to load");
-        core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar5,(float)in_stack_fffffde4);
+        core_game_cpp_CGame_displayMessage_FUN_004d7f20(this_ptr,pcVar5,in_stack_fffffde4);
       }
       else {
         shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\core\\game.cpp",0x975);

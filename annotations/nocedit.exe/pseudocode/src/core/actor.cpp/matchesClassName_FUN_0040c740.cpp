@@ -10,7 +10,6 @@ int __cdecl core_actor_cpp_matchesClassName_FUN_0040c740(CDemonActorType *type_p
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   
   iVar1 = core_actor_cpp_matchClassExpression_FUN_0040c610(type_ptr,&class_name);
   return (uint)(0 < iVar1);

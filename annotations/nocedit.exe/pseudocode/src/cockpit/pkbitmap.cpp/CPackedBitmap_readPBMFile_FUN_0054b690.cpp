@@ -17,30 +17,29 @@ cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_0054b690
   void **ppvVar3;
   char *buffer;
   int iVar4;
-  BADSPACEBASE *in_ESP;
-  char *unaff_EBP;
   byte *pbVar5;
-  int unaff_EDI;
   byte *pbVar6;
   bool bVar7;
   bool bVar8;
   byte bVar9;
-  int in_stack_0000001c;
-  int in_stack_ffffffe0;
-  int in_stack_ffffffe4;
-  int in_stack_ffffffe8;
-  int in_stack_ffffffec;
+  byte local_2c [4];
+  int local_28;
+  int local_24;
+  int local_20;
+  int local_1c;
+  int local_18;
+  int local_14;
   
   bVar9 = 0;
   cockpit_pkbitmap_cpp_CPackedBitmap_free_FUN_0054a8e0(this_ptr);
   do {
-    SVar1 = crt_stdio_c_fread_FUN_005fd990(&stack0xffffffd8,0x1c,1,file_handle);
+    SVar1 = crt_stdio_c_fread_FUN_005fd990(local_2c,0x1c,1,file_handle);
     if (SVar1 != 1) goto LAB_0054b71f;
     iVar4 = 4;
     bVar7 = false;
     iVar2 = 0;
     bVar8 = true;
-    pbVar5 = &stack0xffffffdc;
+    pbVar5 = local_2c;
     pbVar6 = (byte *)"PBM\032PBG\032";
     do {
       if (iVar4 == 0) break;
@@ -53,11 +52,11 @@ cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_0054b690
     if (!bVar8) {
       iVar2 = (1 - (uint)bVar7) - (uint)(bVar7 != 0);
     }
-    if (((iVar2 == 0) && (in_stack_ffffffe0 != 0)) && (in_stack_ffffffe4 != 0)) {
-      this_ptr->width = in_stack_ffffffe0;
-      this_ptr->height = in_stack_ffffffe4;
-      if (((in_stack_ffffffe8 != 0) || (in_stack_ffffffec != 0)) ||
-         (((char *)(this_ptr->width + -1) != unaff_EBP || (this_ptr->height + -1 != unaff_EDI))))
+    if (((iVar2 == 0) && (local_28 != 0)) && (local_24 != 0)) {
+      this_ptr->width = local_28;
+      this_ptr->height = local_24;
+      if (((local_20 != 0) || (local_1c != 0)) ||
+         ((this_ptr->width + -1 != local_18 || (this_ptr->height + -1 != local_14))))
       goto LAB_0054b6da;
       ppvVar3 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
                           ((this_ptr->height + 1) * 4,"..\\cockpit\\pkbitmap.cpp",0x4c6);
@@ -76,16 +75,14 @@ cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_0054b690
             } while (iVar2 < this_ptr->height);
           }
           size = this_ptr->row_pointers[this_ptr->height];
-          if (in_stack_0000001c != 0) {
+          if (skip_data_load != 0) {
             crt_stdio_c_fseek_FUN_005ffacc(file_handle,(long)size,1);
             return;
           }
-          in_stack_ffffffe0 = 0x4de;
           buffer = shape_memdbg_cpp_debugMalloc_FUN_0050f250
                              ((int)size,"..\\cockpit\\pkbitmap.cpp",0x4de);
           this_ptr->packed_data = buffer;
           if (buffer == (char *)0x0) goto LAB_0054b6fd;
-          in_stack_ffffffe0 = 1;
           SVar1 = crt_stdio_c_fread_FUN_005fd990(buffer,(SIZE_T)size,1,file_handle);
           if (SVar1 == 1) {
             return;
@@ -94,7 +91,6 @@ cockpit_pkbitmap_cpp_CPackedBitmap_readPBMFile_FUN_0054b690
 LAB_0054b71f:
         g_CurrentFilename = "..\\cockpit\\pkbitmap.cpp";
         g_CurrentLineNumber = 0x4ad;
-        in_stack_ffffffe4 = 0x54b73e;
         core_main_c_displayErrorAndQuit_FUN_00506f10("IO error reading PBM (possibly corrupt file).");
         goto LAB_0054b6da;
       }
@@ -103,14 +99,11 @@ LAB_0054b71f:
 LAB_0054b6da:
       g_CurrentFilename = "..\\cockpit\\pkbitmap.cpp";
       g_CurrentLineNumber = 0x4ae;
-      in_stack_ffffffe8 = 0x54b6fa;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Corrupt data detected reading PBM.");
     }
 LAB_0054b6fd:
-    unaff_EBP = "Out of memory reading PBM";
     g_CurrentFilename = "..\\cockpit\\pkbitmap.cpp";
     g_CurrentLineNumber = 0x4af;
-    in_stack_ffffffec = 0x54b71d;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory reading PBM");
   } while( true );
 }

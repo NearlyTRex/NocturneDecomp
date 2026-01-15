@@ -18,7 +18,7 @@ core_dfilter_cpp_CDemonFilter_init_FUN_004705a0(CDemonFilter *this_ptr,float ini
   int iVar5;
   double dVar6;
   float fStack_24;
-  byte local_18;
+  byte local_1c;
   
   if (flags == 0) {
     core_dfilter_cpp_CDemonFilter_allocMemory_FUN_00470260(this_ptr);
@@ -45,11 +45,11 @@ core_dfilter_cpp_CDemonFilter_init_FUN_004705a0(CDemonFilter *this_ptr,float ini
                     fVar1;
           }
           dVar6 = crt_math_c_round_FUN_005fe6b0((double)fVar1);
-          local_18 = (byte)(int)ROUND(dVar6);
-          if (0x3f < local_18) {
-            local_18 = 0x3f;
+          local_1c = (byte)(int)ROUND(dVar6);
+          if (0x3f < local_1c) {
+            local_1c = 0x3f;
           }
-          *(byte *)(this_ptr->size * iVar5 + extraout_ECX + (int)this_ptr->data_buffer) = local_18;
+          *(byte *)(this_ptr->size * iVar5 + extraout_ECX + (int)this_ptr->data_buffer) = local_1c;
           iVar4 = extraout_ECX + 1;
         } while (iVar4 < this_ptr->size);
       }

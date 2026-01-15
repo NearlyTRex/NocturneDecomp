@@ -18,21 +18,21 @@ float * core_flies_cpp_FUN_004cc820(void)
   float fVar4;
   float fVar5;
   float fVar6;
-  BADSPACEBASE *in_ESP;
   int in_stack_00000004;
   float *in_stack_00000008;
   float *in_stack_0000000c;
-  float local_34 [6];
-  float afStack_1c [3];
+  float local_40 [6];
+  float local_28 [5];
+  float fStack_14;
   
-  fVar6 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,1.0);
-  in_stack_00000008[1] = fVar6;
+  fStack_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,1.0);
+  in_stack_00000008[1] = fStack_14;
   in_stack_00000008[1] =
        in_stack_00000008[1] * in_stack_00000008[1] * *(float *)(in_stack_00000004 + 0x15c);
-  fVar6 = core_actor_cpp_getRandomFloat_FUN_0040cc10
-                    (*(float *)(in_stack_00000004 + 0x158) * (float)-0.5,
-                     *(float *)(in_stack_00000004 + 0x158) * (float)0.5);
-  *in_stack_00000008 = fVar6;
+  fStack_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10
+                        (*(float *)(in_stack_00000004 + 0x158) * (float)-0.5,
+                         *(float *)(in_stack_00000004 + 0x158) * (float)0.5);
+  *in_stack_00000008 = fStack_14;
   fVar6 = core_actor_cpp_getRandomFloat_FUN_0040cc10
                     (*(float *)(in_stack_00000004 + 0x160) * (float)-0.5,
                      *(float *)(in_stack_00000004 + 0x160) * (float)0.5);
@@ -48,7 +48,7 @@ float * core_flies_cpp_FUN_004cc820(void)
       fVar3 = 1.0 / fVar3;
       fVar1 = in_stack_0000000c[1];
       fVar2 = in_stack_0000000c[2];
-      if (in_stack_00000008 != afStack_1c) {
+      if (in_stack_00000008 != local_28) {
         *in_stack_00000008 = *in_stack_0000000c + fVar6 * 4f * fVar3;
         in_stack_00000008[1] = fVar1 + fVar4 * fVar3;
         in_stack_00000008[2] = fVar2 + fVar5 * fVar3;
@@ -59,7 +59,7 @@ float * core_flies_cpp_FUN_004cc820(void)
       fVar3 = 1.0 / fVar3;
       fVar1 = in_stack_0000000c[1];
       fVar2 = in_stack_0000000c[2];
-      if (in_stack_00000008 != local_34) {
+      if (in_stack_00000008 != local_40) {
         *in_stack_00000008 = *in_stack_0000000c + fVar6 * fVar3;
         in_stack_00000008[1] = fVar1 + fVar4 * fVar3;
         in_stack_00000008[2] = fVar2 + fVar5 * fVar3;

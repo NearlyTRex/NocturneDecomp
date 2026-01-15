@@ -1,23 +1,22 @@
 {
   "complexity": {
     "assembly_lines": 204,
-    "complexity_score": 347,
+    "complexity_score": 349,
     "cross_reference_count": 2,
     "function_call_count": 9,
     "global_count": 8,
-    "pseudocode_lines": 107,
-    "suspect_count": 20,
+    "pseudocode_lines": 104,
+    "suspect_count": 21,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "extra_output",
       "lea_esp_stack_addr",
       "param_count_too_many",
       "pointer_cast",
-      "register_param",
-      "stack_ref"
+      "stack_ref",
+      "unaffected_reg"
     ],
-    "total_lines": 311
+    "total_lines": 308
   },
   "cross_references": [
     {
@@ -339,63 +338,70 @@
       "description": "Inferred extra output (wrong calling convention)",
       "line": 11,
       "match": "extraout_ECX",
-      "text": "int *extraout_ECX;",
+      "text": "float *extraout_ECX;",
       "type": "extra_output"
     },
     {
-      "description": "Ghidra failed to resolve stack frame",
+      "description": "Unaffected register variable",
       "line": 12,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 12,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
+      "match": "unaff_EBX",
+      "text": "int unaff_EBX;",
+      "type": "unaffected_reg"
     },
     {
       "description": "Complex pointer cast",
-      "line": 41,
-      "match": "(int *)((int)",
-      "text": "local_18 = (int *)((int)this_ptr->tri_data->attribute_indices + local_20);",
+      "line": 37,
+      "match": "(float *)((int)",
+      "text": "local_18 = (float *)((int)this_ptr->tri_data->attribute_indices + local_20);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 54,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)aiStack_5c + iVar2 + -4) = piVar4[4];",
+      "line": 50,
+      "match": "(float *)((int)",
+      "text": "*(float *)((int)afStack_60 + iVar2) = pfVar4[4];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 67,
+      "line": 63,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)aiStack_5c + iVar2) = (int)ROUND(fVar7);",
+      "text": "*(int *)((int)afStack_60 + iVar2 + -4) = (int)ROUND(fVar7);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 69,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)aiStack_5c + iVar2 + 4) = local_28;",
+      "line": 65,
+      "match": "(float *)((int)",
+      "text": "*(float *)((int)afStack_60 + iVar2) = local_30;",
       "type": "pointer_cast"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 71,
+      "line": 67,
       "match": "extraout_ECX",
-      "text": "} while (piVar4 != extraout_ECX);",
+      "text": "} while (pfVar4 != extraout_ECX);",
       "type": "extra_output"
     },
     {
       "description": "Direct stack address reference",
-      "line": 102,
-      "match": "&stack0xffffff88",
-      "text": "(g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)&stack0xffffff88);",
+      "line": 72,
+      "match": "&stack0xffffff80",
+      "text": "(g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)&stack0xffffff80);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 78,
+      "match": "unaff_EBX",
+      "text": "((int)atlas_texture_index * 0x48 + *(int *)(unaff_EBX + 0x14));",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 99,
+      "match": "&stack0xffffff80",
+      "text": "(g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)&stack0xffffff80);",
       "type": "stack_ref"
     },
     {

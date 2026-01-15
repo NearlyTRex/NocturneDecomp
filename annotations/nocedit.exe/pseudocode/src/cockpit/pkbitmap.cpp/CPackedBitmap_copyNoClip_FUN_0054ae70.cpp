@@ -12,15 +12,13 @@ cockpit_pkbitmap_cpp_CPackedBitmap_copyNoClip_FUN_0054ae70
 
 {
   ushort uVar1;
-  int iVar2;
+  char *pcVar2;
   int iVar3;
   int iVar4;
   ushort *puVar5;
-  OptimizedMemcpyFunc *unaff_EBP;
-  uchar *puVar6;
-  int in_stack_00000014;
+  int local_1c;
   int local_18;
-  int local_14;
+  OptimizedMemcpyFunc *local_14;
   
   if (this_ptr->row_pointers == (void **)0x0) {
     return;
@@ -31,21 +29,22 @@ cockpit_pkbitmap_cpp_CPackedBitmap_copyNoClip_FUN_0054ae70
   if (dest_buffer == (uchar *)0x0) {
     return;
   }
+  local_18 = 0;
   if ((uint)row_stride < 0x10) {
     if (row_stride == 8) {
-      unaff_EBP = cockpit_ckptutil_c_getOptimizedMemcpyFunction_FUN_00431780();
+      local_14 = cockpit_ckptutil_c_getOptimizedMemcpyFunction_FUN_00431780();
       goto LAB_0054aec0;
     }
   }
   else {
     if ((uint)row_stride < 0x11) {
-      unaff_EBP = (OptimizedMemcpyFunc *)
-                  cockpit_ckptutil_c_get16BitConversionFunction_FUN_004317a0();
+      local_14 = (OptimizedMemcpyFunc *)cockpit_ckptutil_c_get16BitConversionFunction_FUN_004317a0()
+      ;
       goto LAB_0054aec0;
     }
     if (row_stride == 0x20) {
-      unaff_EBP = (OptimizedMemcpyFunc *)
-                  cockpit_ckptutil_c_getRGBConvertersionFunction_FUN_00431770();
+      local_14 = (OptimizedMemcpyFunc *)
+                 cockpit_ckptutil_c_getRGBConvertersionFunction_FUN_00431770();
       goto LAB_0054aec0;
     }
   }
@@ -53,22 +52,22 @@ cockpit_pkbitmap_cpp_CPackedBitmap_copyNoClip_FUN_0054ae70
   g_CurrentLineNumber = 0x29e;
   core_main_c_displayErrorAndQuit_FUN_00506f10("CPackedBitmap::copyNoClip - invalid destBitsPerPixel: %d",row_stride);
 LAB_0054aec0:
-  local_18 = local_14 << 2;
-  puVar5 = (ushort *)(*(int *)(dest_buffer + 0x14) + **(int **)(dest_buffer + 0x20));
-  puVar6 = dest_buffer;
+  local_1c = 0;
+  puVar5 = (ushort *)(this_ptr->packed_data + (int)*this_ptr->row_pointers);
   do {
-    iVar2 = *(int *)(dest_buffer + 0x14);
-    iVar3 = *(int *)(*(int *)(dest_buffer + 0x20) + local_18 + 4);
-    for (; puVar5 < (ushort *)(iVar2 + iVar3);
+    pcVar2 = this_ptr->packed_data;
+    iVar3 = *(int *)((int)this_ptr->row_pointers + local_1c + 4);
+    for (; puVar5 < pcVar2 + iVar3;
         puVar5 = (ushort *)((uVar1 + 3 & 0xfffffffc) + (int)(puVar5 + 2))) {
-      iVar4 = (int)((uint)*puVar5 * in_stack_00000014) >> 0x1f;
+      iVar4 = (int)((uint)*puVar5 * row_stride) >> 0x1f;
       uVar1 = puVar5[1];
-      (*unaff_EBP)(puVar6 + ((int)(((uint)*puVar5 * in_stack_00000014 + iVar4 * -8) -
-                                  (uint)(iVar4 << 2 < 0)) >> 3),puVar5 + 2,(uint)uVar1);
+      (*local_14)(dest_buffer +
+                  ((int)(((uint)*puVar5 * row_stride + iVar4 * -8) - (uint)(iVar4 << 2 < 0)) >> 3),
+                  puVar5 + 2,(uint)uVar1);
     }
-    local_18 = local_18 + 4;
-    local_14 = local_14 + 1;
-    puVar6 = puVar6 + row_stride;
-  } while (local_14 < *(int *)(dest_buffer + 0x1c));
+    local_1c = local_1c + 4;
+    local_18 = local_18 + 1;
+    dest_buffer = dest_buffer + bits_per_pixel;
+  } while (local_18 < this_ptr->height);
   return;
 }

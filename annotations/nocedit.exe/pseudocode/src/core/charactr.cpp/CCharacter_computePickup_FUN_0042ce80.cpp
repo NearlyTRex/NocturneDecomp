@@ -11,7 +11,6 @@ void __cdecl core_charactr_cpp_CCharacter_computePickup_FUN_0042ce80(CCharacter 
 {
   int iVar1;
   SCarryHand *pSVar2;
-  BADSPACEBASE *in_ESP;
   float *pfVar3;
   int *piVar4;
   CMatrix3x4f *pCVar5;
@@ -20,13 +19,13 @@ void __cdecl core_charactr_cpp_CCharacter_computePickup_FUN_0042ce80(CCharacter 
   int in_stack_00000008;
   float in_stack_0000000c;
   CMatrix3x4f *in_stack_fffffe98;
-  int aiStack_15c [12];
-  float afStack_12c [11];
+  int local_160 [12];
+  float local_130 [12];
   CMatrix3x4f local_100;
   CMatrix3x4f local_d0;
   CMatrix3x4f local_a0;
   CMatrix3x4f local_70;
-  float afStack_3c [11];
+  float local_40 [12];
   
   bVar7 = 0;
   pSVar2 = this_ptr->carry_hands + in_stack_00000008;
@@ -42,7 +41,7 @@ void __cdecl core_charactr_cpp_CCharacter_computePickup_FUN_0042ce80(CCharacter 
             (&local_d0,&(this_ptr->base_actor).location.position,
              (CVector3f *)&(this_ptr->base_actor).orient);
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_d0,&local_100,in_stack_fffffe98);
-  pfVar3 = afStack_12c;
+  pfVar3 = local_130;
   pCVar5 = &local_a0;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
     pCVar5->m[0].w = *pfVar3;
@@ -52,7 +51,7 @@ void __cdecl core_charactr_cpp_CCharacter_computePickup_FUN_0042ce80(CCharacter 
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
             ((this_ptr->model).bone_transform.bone_world_matrices + *(int *)pSVar2->field0_0x0,
              &local_a0,in_stack_fffffe98);
-  pfVar3 = afStack_3c;
+  pfVar3 = local_40;
   pCVar5 = &local_70;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
     pCVar5->m[0].w = *pfVar3;
@@ -60,7 +59,7 @@ void __cdecl core_charactr_cpp_CCharacter_computePickup_FUN_0042ce80(CCharacter 
     pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar7 * -2 + 1) * 4);
   }
   core_xform_cpp_inverse_FUN_005f6210(&local_70,in_stack_fffffe98);
-  piVar4 = aiStack_15c;
+  piVar4 = local_160;
   pcVar6 = pSVar2->field2_0xc;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
     *(int *)pcVar6 = *piVar4;

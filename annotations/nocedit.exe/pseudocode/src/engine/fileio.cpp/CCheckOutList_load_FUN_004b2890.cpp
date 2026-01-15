@@ -12,16 +12,15 @@ int __cdecl engine_fileio_cpp_CCheckOutList_load_FUN_004b2890(CCheckOutList *thi
 
 {
   char cVar1;
-  FILE *stream_ptr;
   int *piVar2;
   int iVar3;
-  BADSPACEBASE *in_ESP;
   char *pcVar4;
   char *pcVar5;
   byte bVar7;
-  CCheckOutList *in_stack_0000001c;
-  char acStack_110 [4];
-  char acStack_10c [252];
+  char local_21c [260];
+  char local_118 [256];
+  FILE *local_18;
+  char local_14 [4];
   char *pcVar6;
   
   bVar7 = 0;
@@ -29,13 +28,11 @@ int __cdecl engine_fileio_cpp_CCheckOutList_load_FUN_004b2890(CCheckOutList *thi
   if (g_VersionControlDirectory[0] == '\0') {
     return 1;
   }
-  engine_dosio_c_ensureTrailingSlash_FUN_00481f80
-            (g_VersionControlDirectory,&stack0xfffffff4,acStack_110);
-  engine_dosio_c_makePath_FUN_00481f50
-            (&stack0xfffffde8,&stack0xfffffff8,acStack_10c,(char *)0x0,(char *)0x0);
+  engine_dosio_c_ensureTrailingSlash_FUN_00481f80(g_VersionControlDirectory,local_14,local_118);
+  engine_dosio_c_makePath_FUN_00481f50(local_21c,local_14,local_118,(char *)0x0,(char *)0x0);
   pcVar4 = "checkout.txt";
   iVar3 = -1;
-  pcVar6 = &stack0xfffffde8;
+  pcVar6 = local_21c;
   do {
     pcVar5 = pcVar6;
     if (iVar3 == 0) break;
@@ -56,11 +53,10 @@ int __cdecl engine_fileio_cpp_CCheckOutList_load_FUN_004b2890(CCheckOutList *thi
   } while (cVar1 != '\0');
   iVar3 = 0;
   do {
-    stream_ptr = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                           (&stack0xfffffdf4,(char *)0x0,"rt","..\\engine\\fileio.cpp",
-                            0x153);
-    if (stream_ptr != (FILE *)0x0) {
-      crt_stdio_c_setvbuf_FUN_00601490(stream_ptr,(char *)0x0,0,0x400);
+    local_18 = shape_memdbg_cpp_openFile_FUN_0050f7a0
+                         (local_21c,(char *)0x0,"rt","..\\engine\\fileio.cpp",0x153);
+    if (local_18 != (FILE *)0x0) {
+      crt_stdio_c_setvbuf_FUN_00601490(local_18,(char *)0x0,0,0x400);
       goto LAB_004b295b;
     }
     piVar2 = (int *)crt_errno_c_errno_FUN_00601450();
@@ -68,20 +64,19 @@ int __cdecl engine_fileio_cpp_CCheckOutList_load_FUN_004b2890(CCheckOutList *thi
     iVar3 = iVar3 + 1;
     (*Sleep)(500);
   } while (iVar3 < 10);
-  stream_ptr = (FILE *)0x0;
+  local_18 = (FILE *)0x0;
 LAB_004b295b:
-  if (stream_ptr != (FILE *)0x0) {
-    iVar3 = engine_fileio_cpp_CCheckOutList_parse_FUN_004b2a60
-                      (in_stack_0000001c,(FILE **)&stack0x00000000);
-    if (this_ptr != (CCheckOutList *)0x0) {
-      shape_memdbg_cpp_closeFile_FUN_0050f9b0((FILE *)this_ptr,"..\\engine\\fileio.cpp",0xc4);
+  if (local_18 != (FILE *)0x0) {
+    iVar3 = engine_fileio_cpp_CCheckOutList_parse_FUN_004b2a60(this_ptr,&local_18);
+    if (local_18 != (FILE *)0x0) {
+      shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_18,"..\\engine\\fileio.cpp",0xc4);
     }
     return iVar3;
   }
   piVar2 = (int *)crt_errno_c_errno_FUN_00601450();
   if (*piVar2 != 1) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-              (g_CEditorToolsPtr,"Can't access %s.");
+              (g_CEditorToolsPtr,"Can't access %s.",local_21c);
     return 0;
   }
   return 1;

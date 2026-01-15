@@ -1,21 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 272,
-    "complexity_score": 361,
+    "complexity_score": 323,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 35,
-    "pseudocode_lines": 141,
-    "suspect_count": 19,
+    "pseudocode_lines": 138,
+    "suspect_count": 16,
     "suspect_types": [
-      "badspacebase",
       "extra_output",
       "pointer_cast",
-      "register_param",
       "sborrow_artifact",
+      "stack_param",
       "stack_ref"
     ],
-    "total_lines": 413
+    "total_lines": 410
   },
   "cross_references": [
     {
@@ -526,127 +525,106 @@
       "type": "extra_output"
     },
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 12,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 12,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_ffffffa0",
+      "text": "CVector3i *in_stack_ffffffa0;",
+      "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 51,
+      "line": 50,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_DitherPatternTable + iVar2) = uVar1 & 0xff;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 58,
+      "line": 57,
       "match": "(int *)((int)",
       "text": "*(int *)((int)g_CoronaLeftExtent + iVar2) = this_ptr->display_width;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 59,
+      "line": 58,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_CoronaRightExtent + iVar2) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 80,
+      "line": 78,
       "match": "extraout_EAX",
-      "text": "local_30 = extraout_EAX;",
+      "text": "local_38 = extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Complex pointer cast",
-      "line": 82,
+      "line": 80,
       "match": "(int *)((int)",
       "text": "if (this_ptr->display_width != *(int *)((int)g_CoronaLeftExtent + local_2c)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 83,
+      "line": 81,
       "match": "(int *)((int)",
       "text": "local_18 = *(int *)((int)g_CoronaLeftExtent + local_2c);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 84,
+      "line": 82,
       "match": "(int *)((int)",
       "text": "local_28 = *(int *)((int)g_CoronaRightExtent + local_2c);",
       "type": "pointer_cast"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 84,
+      "match": "(char *)((int)",
+      "text": "local_14 = (char *)((int)&local_40->x + local_18);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Decompiler signed borrow artifact",
-      "line": 92,
+      "line": 90,
       "match": "SBORROW",
       "text": "bVar8 = SBORROW /* signed borrow */4(local_18,local_28);",
       "type": "sborrow_artifact"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 97,
+      "match": "in_stack_ffffffa0",
+      "text": "(&g_CurrentLightForCorona->base,local_1c,in_stack_ffffffa0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 98,
+      "match": "in_stack_ffffffa0",
+      "text": "local_54 = in_stack_ffffffa0;",
+      "type": "stack_param"
+    },
+    {
       "description": "Direct stack address reference",
-      "line": 101,
-      "match": "&stack0xffffffb0",
-      "text": "*(uint *)((int)&stack0xffffffb0 + (uint)bVar7 * -8) =",
+      "line": 99,
+      "match": "&stack0xffffffa4",
+      "text": "local_50[(uint)bVar7 * -2] = *(int *)(&stack0xffffffa4 + (uint)bVar7 * -8);",
       "type": "stack_ref"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 101,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&stack0xffffffb0 + (uint)bVar7 * -8) =",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 102,
+      "line": 101,
       "match": "&stack0xffffffa8",
-      "text": "*(uint *)(&stack0xffffffa8 + (uint)bVar7 * -8);",
+      "text": "*(int *)(&stack0xffffffa8 + (uint)bVar7 * -8 + (uint)bVar7 * -8);",
       "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 103,
-      "match": "&stack0xffffffb4",
-      "text": "*(uint *)((int)&stack0xffffffb4 + (uint)bVar7 * -8 + (uint)bVar7 * -8) =",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 103,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&stack0xffffffb4 + (uint)bVar7 * -8 + (uint)bVar7 * -8) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 104,
-      "match": "&stack0xffffffac",
-      "text": "*(uint *)((int)&stack0xffffffac + (uint)bVar7 * -8 + (uint)bVar7 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 104,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&stack0xffffffac + (uint)bVar7 * -8 + (uint)bVar7 * -8);",
-      "type": "pointer_cast"
     },
     {
       "description": "Decompiler signed borrow artifact",
-      "line": 131,
+      "line": 128,
       "match": "SBORROW",
       "text": "bVar8 = SBORROW /* signed borrow */4(local_18,local_28);",
       "type": "sborrow_artifact"

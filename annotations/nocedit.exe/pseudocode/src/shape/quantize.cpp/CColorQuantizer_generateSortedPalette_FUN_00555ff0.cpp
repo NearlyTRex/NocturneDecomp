@@ -28,9 +28,9 @@ shape_quantize_cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0
   int extraout_EDX_01;
   int iVar10;
   double dVar11;
+  byte uStack_20;
   byte uStack_1c;
   byte uStack_18;
-  byte local_14;
   
   iVar10 = 0;
   if (0 < this_ptr->num_colors) {
@@ -110,9 +110,9 @@ shape_quantize_cpp_CColorQuantizer_generateSortedPalette_FUN_00555ff0
       uStack_1c = (byte)(int)ROUND(dVar11);
       *(byte *)(extraout_EAX_00 + -2) = uStack_1c;
       dVar11 = crt_math_c_round_FUN_005fe6b0((double)*(float *)(extraout_EDX_00 + 0x1038));
-      local_14 = (byte)(int)ROUND(dVar11);
+      uStack_20 = (byte)(int)ROUND(dVar11);
       iVar8 = iVar8 + 1;
-      *(byte *)(extraout_EAX_01 + -3) = local_14;
+      *(byte *)(extraout_EAX_01 + -3) = uStack_20;
       iVar10 = extraout_EAX_01;
       pCVar7 = (CColorQuantizer *)(extraout_EDX_01 + 0x10);
     } while (iVar8 < this_ptr->num_colors);

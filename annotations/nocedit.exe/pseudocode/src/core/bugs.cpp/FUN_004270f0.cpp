@@ -17,14 +17,13 @@ void core_bugs_cpp_FUN_004270f0(void)
   int iVar3;
   int *piVar4;
   int iVar5;
-  BADSPACEBASE *in_ESP;
   int iVar6;
   int *piVar7;
   byte bVar8;
   int in_stack_00000004;
   int in_stack_00000008;
-  int in_stack_0000000c;
-  int aiStackY_102c [1007];
+  int aiStackY_1030 [1008];
+  int local_48;
   int local_44;
   int local_40;
   int local_3c;
@@ -82,24 +81,24 @@ void core_bugs_cpp_FUN_004270f0(void)
   }
   else {
     iVar5 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,iVar6 + -1);
-    *(uint *)(in_stack_0000000c + 0x30) = *(uint *)(&stack0xffffff9c + iVar5 * 4);
+    *(uint *)(in_stack_00000008 + 0x30) = *(uint *)(&stack0xffffff98 + iVar5 * 4);
   }
-  iVar5 = *(int *)(*(int *)(in_stack_00000008 + 0x12afc) + 0x2234);
-  piVar4 = (int *)(iVar5 + *(int *)(in_stack_0000000c + 0x2c) * 0xc);
+  iVar5 = *(int *)(*(int *)(in_stack_00000004 + 0x12afc) + 0x2234);
+  piVar4 = (int *)(iVar5 + *(int *)(in_stack_00000008 + 0x2c) * 0xc);
   piVar7 = piVar4 + (uint)bVar8 * -2 + 1;
-  local_38 = *piVar4;
-  *(int *)((int)&stack0xffffffcc + (uint)bVar8 * -8) = *piVar7;
-  *(int *)((int)&stack0xffffffd0 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =
+  local_3c = *piVar4;
+  *(int *)((int)&stack0xffffffc8 + (uint)bVar8 * -8) = *piVar7;
+  *(int *)((int)&stack0xffffffcc + (uint)bVar8 * -8 + (uint)bVar8 * -8) =
        piVar7[(uint)bVar8 * -2 + 1];
-  piVar4 = (int *)(iVar5 + *(int *)(in_stack_0000000c + 0x30) * 0xc);
+  piVar4 = (int *)(iVar5 + *(int *)(in_stack_00000008 + 0x30) * 0xc);
   piVar7 = piVar4 + (uint)bVar8 * -2 + 1;
-  local_44 = *piVar4;
-  *(int *)((int)&stack0xffffffc0 + (uint)bVar8 * -8) = *piVar7;
-  *(int *)((int)&stack0xffffffc4 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =
+  local_48 = *piVar4;
+  *(int *)((int)&stack0xffffffbc + (uint)bVar8 * -8) = *piVar7;
+  *(int *)((int)&stack0xffffffc0 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =
        piVar7[(uint)bVar8 * -2 + 1];
-  *(float *)(in_stack_0000000c + 0x38) =
-       SQRT((float)((local_30 - local_3c) * (local_30 - local_3c) +
-                   (local_38 - local_44) * (local_38 - local_44) +
-                   (local_34 - local_40) * (local_34 - local_40))) * (float)0.00390625;
+  *(float *)(in_stack_00000008 + 0x38) =
+       SQRT((float)((local_34 - local_40) * (local_34 - local_40) +
+                   (local_3c - local_48) * (local_3c - local_48) +
+                   (local_38 - local_44) * (local_38 - local_44))) * (float)0.00390625;
   return;
 }

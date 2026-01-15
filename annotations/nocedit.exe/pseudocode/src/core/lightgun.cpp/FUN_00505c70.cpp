@@ -11,14 +11,13 @@
 uint core_lightgun_cpp_FUN_00505c70(void)
 
 {
+  float fVar1;
   CDemonActor *actor_ptr;
   CDemonSet *this_ptr;
   CVector3f *input_local_point;
-  float fVar1;
   CBoundingBox3D *pCVar2;
   CDemonActor *pCVar3;
   int iVar4;
-  BADSPACEBASE *in_ESP;
   int iVar5;
   CDemonActor *in_stack_00000004;
   double dVar6;
@@ -35,8 +34,7 @@ uint core_lightgun_cpp_FUN_00505c70(void)
   CVector3f CStack_60;
   CVector3f CStack_54;
   CVector3f CStack_48;
-  byte auStack_3c [8];
-  float fStack_34;
+  CVector3f CStack_3c;
   float fStack_30;
   CDemonActor *pCStack_2c;
   int iStack_28;
@@ -66,9 +64,9 @@ uint core_lightgun_cpp_FUN_00505c70(void)
   fStack_a8 = CStack_90.x * fStack_30;
   fStack_a4 = CStack_90.y * fStack_30;
   fStack_a0 = CStack_90.z * fStack_30;
-  auStack_3c._0_4_ = CStack_6c.x - fStack_a8;
-  auStack_3c._4_4_ = CStack_6c.y - fStack_a4;
-  fStack_34 = CStack_6c.z - fStack_a0;
+  CStack_3c.x = CStack_6c.x - fStack_a8;
+  CStack_3c.y = CStack_6c.y - fStack_a4;
+  CStack_3c.z = CStack_6c.z - fStack_a0;
   core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
   core_setcolid_cpp_CDemonSet_setRayType_FUN_00574230(g_CDemonSetPtr,1);
   core_setcolid_cpp_CDemonSet_FUN_00574170(g_CDemonSetPtr);
@@ -80,11 +78,13 @@ uint core_lightgun_cpp_FUN_00505c70(void)
   iVar5 = 0;
   core_setcolid_cpp_CDemonSet_pushRaytraceState_FUN_00573e10(g_CDemonSetPtr);
   do {
-    fVar1 = core_setcolid_cpp_CDemonSet_raycast_FUN_00572530
-                      (g_CDemonSetPtr,(CVector3f *)auStack_3c,&CStack_9c);
-    dVar6 = (double)fVar1;
+    pCStack_14 = (CVector3f *)
+                 core_setcolid_cpp_CDemonSet_raycast_FUN_00572530
+                           (g_CDemonSetPtr,&CStack_3c,&CStack_9c);
+    dVar6 = (double)(float)pCStack_14;
     if ((dVar6 < 0.0) || (1.0 < dVar6)) break;
-    in_stack_00000004[4].location.area_id = (int)(in_stack_00000004[2].orient.heading * fVar1);
+    in_stack_00000004[4].location.area_id =
+         (int)(in_stack_00000004[2].orient.heading * (float)pCStack_14);
     pCStack_1c = core_actor_cpp_castToClassHash_FUN_0040c790
                            (g_CDemonSetPtr->collision_actor,g_CCharacterClassInfo.name_hash);
     if ((pCStack_1c != (CDemonActor *)0x0) &&
@@ -164,7 +164,7 @@ uint core_lightgun_cpp_FUN_00505c70(void)
       if (iVar5 != 0) {
         engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"%s in volume\n",pCVar3)
         ;
-        pCStack_18 = (CVector3f *)(auStack_3c + 4);
+        pCStack_18 = &CStack_3c;
         core_setcolid_cpp_CDemonSet_pushRaytraceState_FUN_00573e10(g_CDemonSetPtr);
         pCVar2 = (*pCVar3->vtable->getBoundingBox)(pCVar3,&CStack_c0);
         pCStack_14 = &pCVar2->max;

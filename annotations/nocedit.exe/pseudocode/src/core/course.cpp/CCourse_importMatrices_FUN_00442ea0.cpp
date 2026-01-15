@@ -10,88 +10,79 @@ void __cdecl core_course_cpp_CCourse_importMatrices_FUN_00442ea0(CCourse *this_p
 
 {
   CQuaternion4f *pCVar1;
-  CCourse *pCVar2;
-  FILE *file;
-  int iVar3;
-  CCourseFrame *pCVar4;
-  float fVar5;
-  float fVar6;
-  BADSPACEBASE *in_ESP;
-  float unaff_EDI;
-  uint *puVar7;
-  uint *puVar8;
-  byte bVar9;
-  CCourse *in_stack_00000008;
-  float in_stack_0000000c;
-  FILE *in_stack_00000010;
-  FILE *in_stack_00000014;
-  FILE *in_stack_00000018;
-  uint auStackY_17e4 [509];
-  uint auStackY_ff0 [993];
-  CMatrix3x3f *in_stack_ffffffbc;
-  byte local_40 [8];
-  byte local_38 [8];
-  CCourse *local_30 [2];
-  byte local_28 [8];
-  CCourse *apCStack_20 [4];
+  int iVar2;
+  CCourseFrame *pCVar3;
+  int iVar4;
+  CMatrix3x3f *unaff_ESI;
+  uint unaff_EDI;
+  float *pfVar5;
+  float *pfVar6;
+  byte bVar7;
+  FILE *in_stack_00000008;
+  float afStackY_1804 [1508];
+  CMatrix3x3f local_58;
+  byte local_34 [4];
+  byte local_30 [4];
+  float local_2c;
+  float local_28;
+  float afStack_24 [4];
+  float local_14;
   float local_10;
+  int local_c;
   
-  pCVar2 = this_ptr;
-  bVar9 = 0;
+  bVar7 = 0;
+  iVar4 = 0;
   core_course_cpp_CCourse_allocMemory_FUN_00442500(this_ptr);
-  fVar5 = 0.0;
-  if (pCVar2->len < 1) {
+  if (this_ptr->len < 1) {
     return;
   }
   do {
+    local_c = iVar4;
     shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
-              (g_CEditorToolsPtr,(float)(int)fVar5,(float)pCVar2->len);
-    iVar3 = crt_stdio_c_fscanf_FUN_005fe7c0
-                      (in_stack_00000010,"%f,%f,%f\n",&stack0xffffffb0,local_40,local_30,
-                       unaff_EDI);
-    if (iVar3 == 3) goto LAB_00442f35;
+              (g_CEditorToolsPtr,(float)iVar4,(float)this_ptr->len);
+    iVar2 = crt_stdio_c_fscanf_FUN_005fe7c0
+                      (in_stack_00000008,"%f,%f,%f\n",&local_58,&local_58.m[1].y,
+                       &local_58.m[2].z,unaff_ESI,unaff_EDI);
+    if (iVar2 == 3) goto LAB_00442f35;
     do {
       do {
         do {
           g_CurrentFilename = "..\\core\\course.cpp";
           g_CurrentLineNumber = 0x1c2;
-          core_main_c_displayErrorAndQuit_FUN_00506f10
-                    ("CCourse::importMatrices - file is corrupt on frame %d!","CCourse::importMatrices - file is corrupt on frame %d!",fVar5);
+          core_main_c_displayErrorAndQuit_FUN_00506f10("CCourse::importMatrices - file is corrupt on frame %d!",iVar4);
 LAB_00442f35:
-          iVar3 = crt_stdio_c_fscanf_FUN_005fe7c0
-                            (in_stack_00000014,"%f,%f,%f\n",&stack0xffffffb8,local_38,local_28);
-          file = in_stack_00000018;
-        } while (iVar3 != 3);
-        iVar3 = crt_stdio_c_fscanf_FUN_005fe7c0
-                          (in_stack_00000018,"%f,%f,%f\n",local_40,local_30,apCStack_20);
-      } while (iVar3 != 3);
-      iVar3 = crt_stdio_c_fscanf_FUN_005fe7c0(file,"%f,%f,%f\n",local_38,local_28);
-    } while (iVar3 != 3);
-    core_xform_cpp_orthonormalizeMatrix3x3_FUN_005f6690((CMatrix3x3f *)local_40,0);
-    this_ptr = local_30[0];
-    in_stack_00000008 = apCStack_20[0];
-    in_stack_0000000c = local_10;
-    pCVar4 = &pCVar2->frame_list->frame1 + (int)fVar5;
-    if (pCVar4 != (CCourseFrame *)&this_ptr) {
-      (pCVar4->pos).x = (float)local_30[0];
-      (pCVar4->pos).y = (float)apCStack_20[0];
-      (pCVar4->pos).z = local_10;
+          iVar2 = crt_stdio_c_fscanf_FUN_005fe7c0
+                            (in_stack_00000008,"%f,%f,%f\n",&local_58.m[0].y,&local_58.m[1].z,
+                             local_34,unaff_ESI,unaff_EDI);
+        } while (iVar2 != 3);
+        iVar2 = crt_stdio_c_fscanf_FUN_005fe7c0
+                          (in_stack_00000008,"%f,%f,%f\n",&local_58.m[0].z,local_58.m + 2,
+                           local_30,unaff_ESI,unaff_EDI);
+      } while (iVar2 != 3);
+      iVar2 = crt_stdio_c_fscanf_FUN_005fe7c0
+                        (in_stack_00000008,"%f,%f,%f\n",local_58.m + 1,&local_58.m[2].y,
+                         &local_2c);
+    } while (iVar2 != 3);
+    core_xform_cpp_orthonormalizeMatrix3x3_FUN_005f6690(&local_58,0);
+    afStack_24[3] = local_58.m[1].x;
+    local_14 = local_58.m[2].y;
+    local_10 = local_2c;
+    pCVar3 = &this_ptr->frame_list->frame1 + iVar4;
+    if (pCVar3 != (CCourseFrame *)(afStack_24 + 3)) {
+      (pCVar3->pos).x = local_58.m[1].x;
+      (pCVar3->pos).y = local_58.m[2].y;
+      (pCVar3->pos).z = local_2c;
     }
-    core_xform_cpp_matrixToQuaternion_FUN_005f7420
-              ((CQuaternion4f *)(local_40 + 4),in_stack_ffffffbc);
-    pCVar1 = &(&pCVar2->frame_list->frame1)[(int)fVar5].orient;
-    fVar6 = (float)((int)fVar5 + 1);
-    puVar7 = (uint *)((int)pCVar1 + ((uint)bVar9 * -2 + 1) * 4);
-    pCVar1->w = fVar5;
-    puVar8 = puVar7 + (uint)bVar9 * -2 + 1;
-    *puVar7 = *(uint *)(&stack0xfffffffc + (uint)bVar9 * -8);
-    *puVar8 = *(uint *)(&stack0x00000000 + (uint)bVar9 * -8 + (uint)bVar9 * -8);
-    puVar8[(uint)bVar9 * -2 + 1] =
-         *(uint *)
-          ((int)(&stack0x00000000 + (uint)bVar9 * -8 + (uint)bVar9 * -8) +
-          ((uint)bVar9 * -2 + 1) * 4);
-    fVar5 = fVar6;
-    unaff_EDI = (float)local_40._4_4_;
-  } while ((int)fVar6 < pCVar2->len);
+    core_xform_cpp_matrixToQuaternion_FUN_005f7420((CQuaternion4f *)&local_58,unaff_ESI);
+    pCVar1 = &(&this_ptr->frame_list->frame1)[iVar4].orient;
+    iVar4 = iVar4 + 1;
+    pfVar5 = (float *)((int)pCVar1 + ((uint)bVar7 * -2 + 1) * 4);
+    pCVar1->w = local_28;
+    pfVar6 = pfVar5 + (uint)bVar7 * -2 + 1;
+    *pfVar5 = afStack_24[(uint)bVar7 * -2];
+    *pfVar6 = afStack_24[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
+    pfVar6[(uint)bVar7 * -2 + 1] =
+         (afStack_24 + (uint)bVar7 * -2 + (uint)bVar7 * -2 + 1)[(uint)bVar7 * -2 + 1];
+  } while (iVar4 < this_ptr->len);
   return;
 }

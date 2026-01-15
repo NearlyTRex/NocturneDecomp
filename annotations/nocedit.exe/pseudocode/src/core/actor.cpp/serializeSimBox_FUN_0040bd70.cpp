@@ -10,13 +10,12 @@ void __cdecl core_actor_cpp_serializeSimBox_FUN_0040bd70(CSimBox *simbox_ptr,cha
 
 {
   int iVar1;
-  CBox *in_stack_0000000c;
   
   if (g_ActorReadingMode != 1) {
     crt_stdio_c_fprintf_FUN_005fe6d0
               (g_ActorDataFile,"%s{ // %s\n",g_PropertyNamePrefix,property_name);
     core_actor_cpp_adjustIndentationLevel_FUN_0040aee0(1);
-    core_box_cpp_CBox_saveToFile_FUN_00420020(in_stack_0000000c,g_ActorDataFile);
+    core_box_cpp_CBox_saveToFile_FUN_00420020((CBox *)simbox_ptr,g_ActorDataFile);
     core_actor_cpp_adjustIndentationLevel_FUN_0040aee0(-1);
     crt_stdio_c_fprintf_FUN_005fe6d0(g_ActorDataFile,"%s}\n",g_PropertyNamePrefix);
     return;

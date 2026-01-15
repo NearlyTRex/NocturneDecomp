@@ -12,7 +12,6 @@ shape_edittool_cpp_CPickList_setItemHotKey_FUN_004a5540
 
 {
   int *piVar1;
-  int in_stack_00000010;
   
   if ((item_index < 0) || ((this_ptr->base_strlist).item_count <= item_index)) {
     g_CurrentFilename = "..\\shape\\edittool.cpp";
@@ -34,6 +33,6 @@ shape_edittool_cpp_CPickList_setItemHotKey_FUN_004a5540
       this_ptr->hotkey_capacity = this_ptr->hotkey_capacity + 1;
     }
   }
-  this_ptr->hotkey_array[item_index] = in_stack_00000010;
+  this_ptr->hotkey_array[item_index] = hotkey_code;
   return;
 }

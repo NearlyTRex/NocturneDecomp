@@ -10,9 +10,7 @@ void __cdecl shape_design_c_showShapeEditorMenu_FUN_0046f290(void)
 
 {
   uint uVar1;
-  BADSPACEBASE *in_ESP;
-  char *local_64;
-  char *pcStack_60;
+  char local_64 [80];
   int local_14;
   
   engine_2d_c_setupViewportAndClipping_FUN_00401800(0,0,g_WindowWidth + -1,g_WindowHeight + -1);
@@ -45,12 +43,11 @@ void __cdecl shape_design_c_showShapeEditorMenu_FUN_0046f290(void)
   g_LightDirectionY2 = -0xb4fd;
   g_LightDirectionZ2 = 0;
   do {
-    local_64 = (char *)0x46f3cf;
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
-    pcStack_60 = "12:03:47";
-    local_64 = "Jan 10 2000";
-    crt_stdio_c_sprintf_FUN_005fdbd0((char *)&local_64,"Demented Shape Editor    Build date: %s %s");
-    engine_2d_c_drawText_FUN_00401fd0((char *)&local_64,0,0);
+    crt_stdio_c_sprintf_FUN_005fdbd0
+              (local_64,"Demented Shape Editor    Build date: %s %s","Jan 10 2000",
+               "12:03:47");
+    engine_2d_c_drawText_FUN_00401fd0(local_64,0,0);
     engine_2d_c_drawText_FUN_00401fd0("1. Point Editor",0,0x16);
     engine_2d_c_drawText_FUN_00401fd0("2. Facet/Part Editor",0,0x21);
     engine_2d_c_drawText_FUN_00401fd0("3. Model Editor",0,0x2c);
@@ -179,7 +176,6 @@ void __cdecl shape_design_c_showShapeEditorMenu_FUN_0046f290(void)
     engine_2d_c_clearInputAndWait_FUN_00403260();
     shape_design_c_handleEditorHotkeys_FUN_0045b990();
   } while (local_14 != 0x1b);
-  local_64 = (char *)0x46f889;
   engine_2d_c_clearInputAndWait_FUN_00403260();
   return;
 }

@@ -17,7 +17,6 @@ uint core_script_cpp_FUN_005677a0(void)
   int iVar3;
   int iVar4;
   int iVar5;
-  BADSPACEBASE *in_ESP;
   char *pcVar6;
   char *pcVar7;
   uint uVar8;

@@ -9,9 +9,7 @@
 CLodMesh * __cdecl shape_meshlod_cpp_CLodMesh_copy_FUN_00515860(CLodMesh *this_ptr,CLodMesh *other)
 
 {
-  CLodMesh *in_stack_0000000c;
-  
   shape_meshlod_cpp_CLodMesh_init_FUN_00515880(this_ptr);
-  shape_meshlod_cpp_CLodMesh_copyFrom_FUN_0051a8c0(this_ptr,in_stack_0000000c);
+  shape_meshlod_cpp_CLodMesh_copyFrom_FUN_0051a8c0(this_ptr,other);
   return this_ptr;
 }

@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 170,
-    "complexity_score": 233,
+    "complexity_score": 206,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 30,
-    "pseudocode_lines": 68,
-    "suspect_count": 15,
+    "pseudocode_lines": 66,
+    "suspect_count": 13,
     "suspect_types": [
       "call_esp_preserve",
-      "stack_param",
       "variadic_preserve"
     ],
-    "total_lines": 238
+    "total_lines": 236
   },
   "cross_references": [],
   "function": {
@@ -321,22 +320,8 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000018",
-      "text": "CLeakChecker *in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 70,
-      "match": "in_stack_00000018",
-      "text": "return in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
       "call_address": "0050fc09",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -350,7 +335,7 @@
     },
     {
       "call_address": "0050fc44",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -364,7 +349,7 @@
     },
     {
       "call_address": "0050fc68",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "unknown",
       "esp_certainty_at_call": "known",
@@ -378,7 +363,7 @@
     },
     {
       "call_address": "0050fca9",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -392,7 +377,7 @@
     },
     {
       "call_address": "0050fcbf",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -406,7 +391,7 @@
     },
     {
       "call_address": "0050fcf9",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -420,7 +405,7 @@
     },
     {
       "call_address": "0050fd3e",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -434,7 +419,7 @@
     },
     {
       "call_address": "0050fd80",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -448,7 +433,7 @@
     },
     {
       "call_address": "0050fda3",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

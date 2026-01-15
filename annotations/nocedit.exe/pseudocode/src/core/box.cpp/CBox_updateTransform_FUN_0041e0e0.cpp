@@ -24,13 +24,12 @@ core_box_cpp_CBox_updateTransform_FUN_0041e0e0
   float fVar11;
   CVector3f *pCVar12;
   CVector3f *pCVar13;
-  BADSPACEBASE *in_ESP;
   int iVar14;
-  float in_stack_00000014;
-  CVector3f CStack_28;
+  CVector3f local_2c;
+  float local_20;
+  float local_1c;
   float local_18;
-  float local_14;
-  SScrape *pSVar15;
+  SScrape *local_14;
   
   if (this_ptr != (CBox *)new_position) {
     (this_ptr->position).x = new_position->x;
@@ -52,12 +51,11 @@ core_box_cpp_CBox_updateTransform_FUN_0041e0e0
   fVar5 = (this_ptr->extents).z;
   fVar6 = (this_ptr->extents).z;
   fVar7 = (this_ptr->extents).y;
-  this_ptr->mass = (int)(in_stack_00000014 * fVar11);
+  this_ptr->mass = (int)(speed * fVar11);
   fVar10 = (float)0.083333333333333301;
   fVar8 = (float)this_ptr->mass;
   fVar9 = (float)this_ptr->mass;
-  (this_ptr->moment_of_inertia).x =
-       in_stack_00000014 * fVar11 * fVar10 * (fVar5 * fVar5 + fVar1 * fVar1);
+  (this_ptr->moment_of_inertia).x = speed * fVar11 * fVar10 * (fVar5 * fVar5 + fVar1 * fVar1);
   (this_ptr->moment_of_inertia).y = fVar8 * fVar10 * (fVar6 * fVar6 + fVar2 * fVar2);
   (this_ptr->moment_of_inertia).z = fVar9 * fVar10 * (fVar7 * fVar7 + fVar3 * fVar4);
   (this_ptr->linear_momentum).z = 0.0;
@@ -83,18 +81,18 @@ core_box_cpp_CBox_updateTransform_FUN_0041e0e0
   (this_ptr->linear_velocity).x = (this_ptr->linear_velocity).y;
   iVar14 = 0;
   if (0 < this_ptr->scrape_point_count) {
-    pSVar15 = this_ptr->scrape_points;
+    local_14 = this_ptr->scrape_points;
     pCVar13 = &this_ptr->scrape_points[0].transformed_position;
     do {
       pCVar12 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
-                          (&this_ptr->rotation_matrix,&CStack_28,&pSVar15[iVar14].local_position);
-      local_18 = (this_ptr->position).x + pCVar12->x;
-      local_14 = (this_ptr->position).y + pCVar12->y;
-      pSVar15 = (SScrape *)((this_ptr->position).z + pCVar12->z);
-      if (pCVar13 != (CVector3f *)&local_18) {
-        pCVar13->x = local_18;
-        pCVar13->y = local_14;
-        pCVar13->z = (float)pSVar15;
+                          (&this_ptr->rotation_matrix,&local_2c,&local_14[iVar14].local_position);
+      local_20 = (this_ptr->position).x + pCVar12->x;
+      local_1c = (this_ptr->position).y + pCVar12->y;
+      local_18 = (this_ptr->position).z + pCVar12->z;
+      if (pCVar13 != (CVector3f *)&local_20) {
+        pCVar13->x = local_20;
+        pCVar13->y = local_1c;
+        pCVar13->z = local_18;
       }
       iVar14 = iVar14 + 1;
       pCVar13 = (CVector3f *)((int)(pCVar13 + 4) + 4);

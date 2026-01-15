@@ -16,7 +16,6 @@ int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0(CCharacter *th
   int iVar5;
   float fVar6;
   float fVar7;
-  BADSPACEBASE *in_ESP;
   CVector3f *in_stack_00000008;
   CPathMap *in_stack_0000000c;
   CVector3f *in_stack_00000010;
@@ -69,8 +68,8 @@ int __cdecl core_charactr_cpp_CCharacter_walkToPoint_FUN_004286e0(CCharacter *th
   if (0.0 < SQRT(in_stack_00000010->z * in_stack_00000010->z +
                  in_stack_00000010->x * in_stack_00000010->x +
                  in_stack_00000010->y * in_stack_00000010->y)) {
-    local_f8 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(local_1c - fVar7);
-    local_f8 = ABS(local_f8);
+    fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(local_1c - fVar7);
+    local_f8 = ABS(fStack_14);
   }
   if (((ABS(fVar3 - fVar2) < in_stack_00000014 + (float)0.01) &&
       (local_f8 < in_stack_00000018 + (float)0.01)) &&

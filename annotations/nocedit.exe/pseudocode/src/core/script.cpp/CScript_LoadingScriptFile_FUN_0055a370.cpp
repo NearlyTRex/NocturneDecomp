@@ -13,32 +13,31 @@ void core_script_cpp_CScript_LoadingScriptFile_FUN_0055a370(void)
 {
   char cVar1;
   int iVar2;
-  CBitFont *font_ptr;
   void *pvVar3;
   uint uVar4;
   int index;
   char *pcVar5;
-  CStrList *unaff_EDI;
   char *pcVar6;
   byte bVar7;
   int in_stack_00000004;
   
   bVar7 = 0;
   core_script_cpp_CScript_FreeSomething2_FUN_005598f0();
-  font_ptr = (CBitFont *)(in_stack_00000004 + 0x38);
   index = 0;
   do {
-    iVar2 = shape_edittool_cpp_getFontBitmapCount_FUN_004a6ed0(font_ptr);
+    iVar2 = shape_edittool_cpp_getFontBitmapCount_FUN_004a6ed0
+                      ((CBitFont *)(in_stack_00000004 + 0x38));
     if (iVar2 <= index) {
       return;
     }
-    font_ptr = (CBitFont *)shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(unaff_EDI,index);
+    shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
+              ((CStrList *)(in_stack_00000004 + 0x38),index);
     core_script_cpp_FUN_005592c0();
     if (DAT_031091e8 != '\0') {
-      font_ptr = (CBitFont *)((*(int *)(in_stack_00000004 + 0x30) + 1) * 8);
       pvVar3 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                         (*(void **)(in_stack_00000004 + 0x34),(int)font_ptr,
-                          "..\\core\\script.cpp",0x397);
+                         (*(void **)(in_stack_00000004 + 0x34),
+                          (*(int *)(in_stack_00000004 + 0x30) + 1) * 8,"..\\core\\script.cpp",
+                          0x397);
       *(void **)(in_stack_00000004 + 0x34) = pvVar3;
       if (pvVar3 == (void *)0x0) {
         g_CurrentFilename = "..\\core\\script.cpp";
@@ -55,14 +54,13 @@ void core_script_cpp_CScript_LoadingScriptFile_FUN_0055a370(void)
         cVar1 = *pcVar6;
         pcVar6 = pcVar6 + (uint)bVar7 * -2 + 1;
       } while (cVar1 != '\0');
-      unaff_EDI = (CStrList *)0x55a445;
       pvVar3 = shape_memdbg_cpp_debugMalloc_FUN_0050f250(~uVar4,"..\\core\\script.cpp",0x39a);
       *(void **)(*(int *)(in_stack_00000004 + 0x34) + 4 + *(int *)(in_stack_00000004 + 0x30) * 8) =
            pvVar3;
       if (*(int *)(in_stack_00000004 + 0x34) == 0) {
         g_CurrentFilename = "..\\core\\script.cpp";
         g_CurrentLineNumber = 0x39b;
-        core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory loading script at line %d");
+        core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory loading script at line %d",index + 1);
       }
       pcVar5 = &DAT_031091e8;
       pcVar6 = *(char **)(*(int *)(in_stack_00000004 + 0x34) + 4 +

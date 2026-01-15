@@ -10,7 +10,6 @@ void __cdecl shape_design_c_renderPolygonWireframe_FUN_0045d300(SMRGLHeaderPrimi
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   SRenderVertex *pSVar2;
   int *piVar3;
   uint *puVar4;

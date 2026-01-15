@@ -12,7 +12,6 @@ void __cdecl shape_design_c_processVerticesAndRenderPolygons_FUN_0045d5d0(void)
   int iVar1;
   int iVar2;
   float fVar3;
-  BADSPACEBASE *in_ESP;
   double dVar4;
   double dVar5;
   double dVar6;

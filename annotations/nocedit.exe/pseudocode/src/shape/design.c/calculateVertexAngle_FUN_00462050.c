@@ -11,7 +11,6 @@ shape_design_c_calculateVertexAngle_FUN_00462050
           (int vertex1_index,int vertex2_index,int vertex3_index)
 
 {
-  BADSPACEBASE *in_ESP;
   double dVar1;
   int in_stack_00000004;
   uint in_stack_ffffff74;

@@ -72,12 +72,12 @@ sound_mp3_cpp_CFileBitStream_readQuantizedSamplesGrouped_FUN_0052fc50
           else {
             uVar5 = *puVar4;
             uVar6 = sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(this_ptr,puVar4[1]);
-            puVar4 = (uint *)(local_2c + (int)local_4c);
+            puVar4 = (uint *)((int)local_18->codes[0] + local_48);
             do {
               *puVar4 = uVar6 % uVar5;
               uVar6 = uVar6 / uVar5;
               puVar4 = puVar4 + 0x20;
-            } while (puVar4 != (uint *)(local_2c + 0x180 + (int)local_4c));
+            } while (puVar4 != (uint *)((int)local_18[1].codes[0] + local_48));
           }
         }
         if ((iVar1 == 2) && (iVar9 <= local_2c)) {

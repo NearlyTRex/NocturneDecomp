@@ -20,39 +20,37 @@ void __cdecl engine_matrix_c_buildRotationMatrix_FUN_0050c920(ushort pitch,ushor
   int iVar9;
   int iVar10;
   int iVar11;
-  ushort in_stack_0000000a;
-  ushort in_stack_0000001c;
-  ushort in_stack_00000020;
+  int iVar12;
   
   iVar6 = engine_matrix_c_interpolatedSin_FUN_0050c5c0(pitch);
-  engine_matrix_c_interpolatedCos_FUN_0050c600(pitch);
-  iVar7 = engine_matrix_c_interpolatedSin_FUN_0050c5c0(yaw);
-  iVar8 = engine_matrix_c_interpolatedCos_FUN_0050c600(yaw);
-  iVar9 = engine_matrix_c_interpolatedSin_FUN_0050c5c0(in_stack_0000001c);
-  iVar10 = engine_matrix_c_interpolatedCos_FUN_0050c600(in_stack_00000020);
+  iVar7 = engine_matrix_c_interpolatedCos_FUN_0050c600(pitch);
+  iVar8 = engine_matrix_c_interpolatedSin_FUN_0050c5c0(yaw);
+  iVar9 = engine_matrix_c_interpolatedCos_FUN_0050c600(yaw);
+  iVar10 = engine_matrix_c_interpolatedSin_FUN_0050c5c0(roll);
+  iVar11 = engine_matrix_c_interpolatedCos_FUN_0050c600(roll);
   lVar1 = (longlong)
-          (int)((uint)((longlong)iVar7 * (longlong)iVar6) >> 0x10 |
-               (int)((ulonglong)((longlong)iVar7 * (longlong)iVar6) >> 0x20) << 0x10) *
-          (longlong)iVar9;
-  lVar2 = (longlong)
           (int)((uint)((longlong)iVar8 * (longlong)iVar6) >> 0x10 |
                (int)((ulonglong)((longlong)iVar8 * (longlong)iVar6) >> 0x20) << 0x10) *
-          (longlong)iVar9;
+          (longlong)iVar10;
+  lVar2 = (longlong)
+          (int)((uint)((longlong)iVar9 * (longlong)iVar6) >> 0x10 |
+               (int)((ulonglong)((longlong)iVar9 * (longlong)iVar6) >> 0x20) << 0x10) *
+          (longlong)iVar10;
   g_TransformMatrix.m[0].z =
-       (uint)((longlong)_yaw * (longlong)iVar9) >> 0x10 |
-       (int)((ulonglong)((longlong)_yaw * (longlong)iVar9) >> 0x20) << 0x10;
+       (uint)((longlong)iVar7 * (longlong)iVar10) >> 0x10 |
+       (int)((ulonglong)((longlong)iVar7 * (longlong)iVar10) >> 0x20) << 0x10;
   g_TransformMatrix.m[1].z = -iVar6;
   lVar3 = (longlong)
-          (int)((uint)((longlong)iVar7 * (longlong)iVar6) >> 0x10 |
-               (int)((ulonglong)((longlong)iVar7 * (longlong)iVar6) >> 0x20) << 0x10) *
-          (longlong)iVar10;
-  lVar4 = (longlong)
           (int)((uint)((longlong)iVar8 * (longlong)iVar6) >> 0x10 |
                (int)((ulonglong)((longlong)iVar8 * (longlong)iVar6) >> 0x20) << 0x10) *
-          (longlong)iVar10;
+          (longlong)iVar11;
+  lVar4 = (longlong)
+          (int)((uint)((longlong)iVar9 * (longlong)iVar6) >> 0x10 |
+               (int)((ulonglong)((longlong)iVar9 * (longlong)iVar6) >> 0x20) << 0x10) *
+          (longlong)iVar11;
   g_TransformMatrix.m[2].z =
-       (uint)((longlong)_yaw * (longlong)iVar10) >> 0x10 |
-       (int)((ulonglong)((longlong)_yaw * (longlong)iVar10) >> 0x20) << 0x10;
+       (uint)((longlong)iVar7 * (longlong)iVar11) >> 0x10 |
+       (int)((ulonglong)((longlong)iVar7 * (longlong)iVar11) >> 0x20) << 0x10;
   if (199 < (uint)g_WindowHeight) {
     if ((uint)g_WindowHeight < 0xc9) {
       g_PixelAspectCorrection = 0x15555;
@@ -70,29 +68,29 @@ LAB_0050ca9c:
           3) / (g_WindowHeight << 2);
   lVar1 = (longlong)iVar6 *
           (longlong)
-          (int)(((uint)((longlong)iVar8 * (longlong)iVar10) >> 0x10 |
-                (int)((ulonglong)((longlong)iVar8 * (longlong)iVar10) >> 0x20) << 0x10) +
+          (int)(((uint)((longlong)iVar9 * (longlong)iVar11) >> 0x10 |
+                (int)((ulonglong)((longlong)iVar9 * (longlong)iVar11) >> 0x20) << 0x10) +
                ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10));
   lVar5 = (longlong)iVar6 *
           (longlong)
-          (int)((uint)((longlong)_yaw * (longlong)iVar7) >> 0x10 |
-               (int)((ulonglong)((longlong)_yaw * (longlong)iVar7) >> 0x20) << 0x10);
+          (int)((uint)((longlong)iVar7 * (longlong)iVar8) >> 0x10 |
+               (int)((ulonglong)((longlong)iVar7 * (longlong)iVar8) >> 0x20) << 0x10);
   lVar3 = (longlong)iVar6 *
           (longlong)
-          (int)(((uint)((longlong)iVar8 * (longlong)-iVar9) >> 0x10 |
-                (int)((ulonglong)((longlong)iVar8 * (longlong)-iVar9) >> 0x20) << 0x10) +
+          (int)(((uint)((longlong)iVar9 * (longlong)-iVar10) >> 0x10 |
+                (int)((ulonglong)((longlong)iVar9 * (longlong)-iVar10) >> 0x20) << 0x10) +
                ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10));
   iVar6 = ((((g_ClipRight - g_ClipLeft) * 0x280) / g_WindowWidth) * 0x30000) /
           (((g_ClipBottom - g_ClipTop) * 0x1e0) / g_WindowHeight);
-  iVar11 = iVar6 >> 0x1f;
-  iVar6 = (int)((iVar6 + iVar11 * -4) - (uint)(iVar11 << 1 < 0)) >> 2;
+  iVar12 = iVar6 >> 0x1f;
+  iVar6 = (int)((iVar6 + iVar12 * -4) - (uint)(iVar12 << 1 < 0)) >> 2;
   g_TransformMatrix.m[0].x =
        (int)(((longlong)(int)((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) *
              (longlong)iVar6) / (longlong)g_ProjectionScale);
   g_TransformMatrix.m[0].y =
        (int)(((longlong)
-              (int)(((uint)((longlong)iVar7 * (longlong)-iVar10) >> 0x10 |
-                    (int)((ulonglong)((longlong)iVar7 * (longlong)-iVar10) >> 0x20) << 0x10) +
+              (int)(((uint)((longlong)iVar8 * (longlong)-iVar11) >> 0x10 |
+                    (int)((ulonglong)((longlong)iVar8 * (longlong)-iVar11) >> 0x20) << 0x10) +
                    ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10)) *
              (longlong)iVar6) / (longlong)g_ProjectionScale);
   g_TransformMatrix.m[1].x =
@@ -100,16 +98,16 @@ LAB_0050ca9c:
              (longlong)iVar6) / (longlong)g_ProjectionScale);
   g_TransformMatrix.m[1].y =
        (int)(((longlong)
-              (int)((uint)((longlong)_yaw * (longlong)iVar8) >> 0x10 |
-                   (int)((ulonglong)((longlong)_yaw * (longlong)iVar8) >> 0x20) << 0x10) *
+              (int)((uint)((longlong)iVar7 * (longlong)iVar9) >> 0x10 |
+                   (int)((ulonglong)((longlong)iVar7 * (longlong)iVar9) >> 0x20) << 0x10) *
              (longlong)iVar6) / (longlong)g_ProjectionScale);
   g_TransformMatrix.m[2].x =
        (int)(((longlong)(int)((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) *
              (longlong)iVar6) / (longlong)g_ProjectionScale);
   g_TransformMatrix.m[2].y =
        (int)(((longlong)
-              (int)(((uint)((longlong)iVar9 * (longlong)iVar7) >> 0x10 |
-                    (int)((ulonglong)((longlong)iVar9 * (longlong)iVar7) >> 0x20) << 0x10) +
+              (int)(((uint)((longlong)iVar10 * (longlong)iVar8) >> 0x10 |
+                    (int)((ulonglong)((longlong)iVar10 * (longlong)iVar8) >> 0x20) << 0x10) +
                    ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10)) *
              (longlong)iVar6) / (longlong)g_ProjectionScale);
   engine_matrix_c_invertTransformMatrix_FUN_0050c640();

@@ -12,13 +12,13 @@ int core_stranger_cpp_CStranger_FUN_005c67c0(void)
 
 {
   int iVar1;
-  CCharacter *in_stack_00000008;
+  CCharacter *in_stack_00000004;
   
   iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                     (g_CEventListPtr,"strangerCannotDie");
   if (iVar1 != 0) {
     return 0;
   }
-  iVar1 = core_charactr_cpp_CCharacter_FUN_0042c580(in_stack_00000008);
+  iVar1 = core_charactr_cpp_CCharacter_FUN_0042c580(in_stack_00000004);
   return iVar1;
 }

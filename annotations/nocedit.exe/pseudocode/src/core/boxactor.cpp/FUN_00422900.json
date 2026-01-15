@@ -1,18 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 28,
-    "complexity_score": 133,
+    "complexity_score": 107,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 1,
-    "pseudocode_lines": 18,
-    "suspect_count": 10,
+    "pseudocode_lines": 17,
+    "suspect_count": 7,
     "suspect_types": [
       "call_esp_preserve",
-      "stack_param",
+      "format_string_mismatch",
+      "unaffected_reg",
       "variadic_preserve"
     ],
-    "total_lines": 46
+    "total_lines": 45
   },
   "cross_references": [],
   "function": {
@@ -89,50 +90,22 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000004",
-      "text": "int in_stack_00000004;",
-      "type": "stack_param"
+      "description": "Unaffected register variable",
+      "line": 6,
+      "match": "unaff_EBX",
+      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_0000000c",
-      "text": "FILE *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000004",
-      "text": "((CKeyFramedModelInstance *)(in_stack_00000004 + 0x158));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
+      "description": "Unaffected register variable",
       "line": 15,
-      "match": "in_stack_0000000c",
-      "text": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_0000000c,\"MODELS\\\\%s\\n\",pCVar1);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00000004",
-      "text": "((CKeyFramedModelInstance *)(in_stack_00000004 + 0x158));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_00000004",
-      "text": "(pCVar1,dependency_file,in_stack_00000004);",
-      "type": "stack_param"
+      "match": "unaff_EBX",
+      "text": "crt_stdio_c_fprintf_FUN_005fe6d0(param_6,\"MODELS\\\\%s\\n\",pCVar1,unaff_EBX);",
+      "type": "unaffected_reg"
     },
     {
       "call_address": "0042291f",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -143,6 +116,17 @@
       "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
       "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 0042291f (no EBP frame)",
       "type": "variadic_preserve"
+    },
+    {
+      "actual_args": 2,
+      "description": "Format \"MODELS\\\\%s\\n\" has 1 specifiers but 2 arguments after it",
+      "expected_args": 1,
+      "format_string": "MODELS\\\\%s\\n",
+      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
+      "line_number": 15,
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(param_6,\"MODELS\\\\%s\\n\",pCVar1,unaff_EBX);",
+      "text": "Format string expects 1 args but got 2",
+      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 4,

@@ -13,12 +13,11 @@ int __cdecl core_werewolf_cpp_CWerewolf_FUN_005f1820(CWerewolf *this_ptr)
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   CMatrix3x4f *pCVar2;
-  uint *puVar3;
+  CVector3f *pCVar3;
   byte bVar4;
-  CWerewolf *pCStack_48;
-  byte *puStack_44;
+  CVector3f local_50 [4];
+  CVector3i local_20;
   CVector3i local_14;
   
   bVar4 = 0;
@@ -34,26 +33,20 @@ int __cdecl core_werewolf_cpp_CWerewolf_FUN_005f1820(CWerewolf *this_ptr)
       core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
       pCVar2 = (this_ptr->base_enemy).base_character.model.bone_transform.bone_world_matrices +
                *(int *)(this_ptr->field4_0xbec0 + 0x10);
-      puVar3 = (uint *)&stack0xffffffb4;
+      pCVar3 = local_50;
       for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-        *puVar3 = pCVar2->m[0].w;
+        pCVar3->x = pCVar2->m[0].w;
         pCVar2 = (CMatrix3x4f *)((int)pCVar2 + ((uint)bVar4 * -2 + 1) * 4);
-        puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
+        pCVar3 = (CVector3f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
       }
-      core_xform_cpp_matrixToEulerAngles_FUN_005f5690
-                ((CVector3f *)&stack0xffffffb4,(CMatrix3x3f *)&local_14.y);
-      core_xform_cpp_getTranslation_FUN_005f6110
-                ((CVector3f *)&pCStack_48,(CMatrix3x4f *)&stack0xffffffe8);
+      core_xform_cpp_matrixToEulerAngles_FUN_005f5690(local_50,(CMatrix3x3f *)&local_14);
+      core_xform_cpp_getTranslation_FUN_005f6110(local_50,(CMatrix3x4f *)&local_20);
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-                (g_CDemonRendererPtr,(CVector3i *)&g_ZeroVector,&local_14);
+                (g_CDemonRendererPtr,(CVector3i *)&g_ZeroVector,&local_20);
       engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-                (g_CDemonRendererPtr,(CVector3i *)&stack0xfffffffc,(CVector3i *)0x0);
-      pCStack_48 = (CWerewolf *)&DAT_03f96b44;
+                (g_CDemonRendererPtr,&local_14,(CVector3i *)0x0);
       core_werewolf_cpp_FUN_005f1230();
-      puStack_44 = &DAT_03f96b50;
-      pCStack_48 = this_ptr;
       core_werewolf_cpp_FUN_005f1230();
-      puStack_44 = (byte *)0x5f191c;
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);
       core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);

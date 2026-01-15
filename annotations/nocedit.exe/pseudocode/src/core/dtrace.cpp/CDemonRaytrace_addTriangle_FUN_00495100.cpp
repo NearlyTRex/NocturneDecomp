@@ -13,11 +13,10 @@ core_dtrace_cpp_CDemonRaytrace_addTriangle_FUN_00495100
 
 {
   int iVar1;
-  uchar in_stack_00000018;
   
   core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0049a790
             (this_ptr->triangle_list + this_ptr->triangle_count,vertex1,vertex2,vertex3);
-  this_ptr->triangle_flags[this_ptr->triangle_count] = in_stack_00000018;
+  this_ptr->triangle_flags[this_ptr->triangle_count] = triangle_flags;
   iVar1 = this_ptr->triangle_count + 1;
   this_ptr->triangle_count = iVar1;
   if (199999 < iVar1) {

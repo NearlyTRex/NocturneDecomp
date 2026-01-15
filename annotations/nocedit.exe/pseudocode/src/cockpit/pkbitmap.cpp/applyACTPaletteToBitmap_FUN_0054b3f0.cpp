@@ -11,10 +11,10 @@ cockpit_pkbitmap_cpp_applyACTPaletteToBitmap_FUN_0054b3f0
           (char *act_filename,CPackedBitmap *bitmap_ptr)
 
 {
-  BADSPACEBASE *in_ESP;
-  uchar auStack_fc [252];
+  uchar auStack_100 [256];
   
-  cockpit_ckptutil_c_loadACTToIndexedPalette_FUN_00431a30(bitmap_ptr->filename,&stack0xffffff00);
-  cockpit_pkbitmap_cpp_CPackedBitmap_applyPaletteToPackedData_FUN_0054b440(bitmap_ptr,auStack_fc);
+  cockpit_ckptutil_c_loadACTToIndexedPalette_FUN_00431a30(bitmap_ptr->filename,(char *)auStack_100);
+  cockpit_pkbitmap_cpp_CPackedBitmap_applyPaletteToPackedData_FUN_0054b440
+            ((CPackedBitmap *)act_filename,auStack_100);
   return;
 }

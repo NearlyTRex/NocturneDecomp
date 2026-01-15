@@ -13,7 +13,6 @@ void core_stranger_cpp_CStranger_aimLeftPistol_FUN_005c4370(void)
 {
   float fVar1;
   int bone_index;
-  BADSPACEBASE *in_ESP;
   double dVar2;
   CDemonActor *in_stack_00000004;
   float fStack_bc;

@@ -15,7 +15,6 @@ void core_setedit_cpp_FUN_005817d0(void *unk)
   float *pfVar1;
   int *extraout_EAX;
   CVector3i *input;
-  BADSPACEBASE *in_ESP;
   int iVar2;
   uint uVar3;
   double dVar4;
@@ -73,11 +72,11 @@ void core_setedit_cpp_FUN_005817d0(void *unk)
       this_ptr = g_CDemonRendererPtr;
       *(uint *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->u + iVar2) = 0x80000;
       *(uint *)((int)&this_ptr->vertex_buffer_ptr->v + iVar2) = 0x80000;
-      *(uint *)((int)&this_ptr->vertex_buffer_ptr->light + iVar2) = local_2c;
-      *(uint *)((int)&this_ptr->vertex_buffer_ptr->color + iVar2) = local_28;
-      *(int *)((int)&this_ptr->vertex_buffer_ptr->fog + iVar2) = local_24;
+      *(uint *)((int)&this_ptr->vertex_buffer_ptr->light + iVar2) = local_30;
+      *(uint *)((int)&this_ptr->vertex_buffer_ptr->color + iVar2) = local_2c;
+      *(uint *)((int)&this_ptr->vertex_buffer_ptr->fog + iVar2) = local_28;
       uVar3 = uVar3 + 1;
-      *(int *)((int)&this_ptr->vertex_buffer_ptr->w_recip + iVar2) = local_20;
+      *(int *)((int)&this_ptr->vertex_buffer_ptr->w_recip + iVar2) = local_24;
       if (7 < (int)uVar3) {
         engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80(this_ptr,&DAT_006816c0);
         local_54.surface_normal.D = 0;

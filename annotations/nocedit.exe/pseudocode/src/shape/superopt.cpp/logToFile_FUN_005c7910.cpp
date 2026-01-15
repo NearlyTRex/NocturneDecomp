@@ -10,8 +10,7 @@ void __cdecl shape_superopt_cpp_logToFile_FUN_005c7910(char *format,...)
 
 {
   FILE *stream;
-  BADSPACEBASE *in_ESP;
-  char *in_stack_0000000c;
+  byte *local_8;
   
   if (g_LogInitialized == 0) {
     crt_io_c_deleteFile_FUN_005ff9d0("log.txt");
@@ -23,7 +22,9 @@ void __cdecl shape_superopt_cpp_logToFile_FUN_005c7910(char *format,...)
   if (stream == (FILE *)0x0) {
     return;
   }
-  crt_stdio_c_fprintf_FUN_006021c0(stream,in_stack_0000000c,&stack0x00000000);
+  local_8 = &stack0x00000008;
+  crt_stdio_c_fprintf_FUN_006021c0(stream,format,&local_8);
+  local_8 = (byte *)0x0;
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream,"..\\shape\\superopt.cpp",0x3a);
   return;
 }

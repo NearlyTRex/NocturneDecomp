@@ -13,7 +13,6 @@ shape_superopt_cpp_CObj_transformMasked_FUN_005d2dd0
 {
   int iVar1;
   CVert *pCVar2;
-  BADSPACEBASE *in_ESP;
   double *pdVar3;
   double *pdVar4;
   uint *puVar5;

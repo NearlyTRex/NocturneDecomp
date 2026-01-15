@@ -9,11 +9,11 @@
 void __cdecl sound_sndmain_cpp_setAudioBitDepth_FUN_005ab280(int bit_depth)
 
 {
+  int sample_rate;
   int channels;
-  int in_stack_0000000c;
   
-  sound_sndmain_cpp_getAudioSampleRate_FUN_005ab260();
+  sample_rate = sound_sndmain_cpp_getAudioSampleRate_FUN_005ab260();
   channels = sound_sndmain_cpp_getAudioChannelCount_FUN_005ab270();
-  sound_sndmain_cpp_setSoundOutputMode_FUN_005ab170(in_stack_0000000c,channels,bit_depth);
+  sound_sndmain_cpp_setSoundOutputMode_FUN_005ab170(bit_depth,channels,sample_rate);
   return;
 }

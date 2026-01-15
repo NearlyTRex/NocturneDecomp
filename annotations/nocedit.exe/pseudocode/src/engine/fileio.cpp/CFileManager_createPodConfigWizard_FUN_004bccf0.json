@@ -1,22 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 146,
-    "complexity_score": 815,
+    "complexity_score": 636,
     "cross_reference_count": 5,
     "function_call_count": 13,
     "global_count": 9,
-    "pseudocode_lines": 60,
-    "suspect_count": 72,
+    "pseudocode_lines": 51,
+    "suspect_count": 56,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
       "param_count_too_few",
-      "register_param",
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 206
+    "total_lines": 197
   },
   "cross_references": [
     {
@@ -303,276 +301,164 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
+      "description": "Unresolved stack parameter",
       "line": 8,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 8,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
+      "match": "in_stack_fffffb30",
+      "text": "uint in_stack_fffffb30;",
+      "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 9,
-      "match": "in_stack_0000002c",
-      "text": "CFileManager *in_stack_0000002c;",
+      "match": "in_stack_fffffb34",
+      "text": "uint in_stack_fffffb34;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 10,
-      "match": "in_stack_fffffb48",
-      "text": "CStrList_vtable *in_stack_fffffb48;",
+      "match": "in_stack_fffffb38",
+      "text": "char **in_stack_fffffb38;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 11,
-      "match": "in_stack_fffffb4c",
-      "text": "CStrList_vtable *in_stack_fffffb4c;",
+      "match": "in_stack_fffffb3c",
+      "text": "CStrList_vtable *in_stack_fffffb3c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 12,
-      "match": "in_stack_fffffb50",
-      "text": "CStrList_vtable *in_stack_fffffb50;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_fffffb54",
-      "text": "CStrList_vtable *in_stack_fffffb54;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_fffffb58",
-      "text": "uint in_stack_fffffb58;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_fffffb5c",
-      "text": "uint in_stack_fffffb5c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_fffffb60",
-      "text": "uint in_stack_fffffb60;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_fffffb64",
-      "text": "uint in_stack_fffffb64;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_fffffb68",
-      "text": "char **in_stack_fffffb68;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_fffffb6c",
-      "text": "CStrList_vtable *in_stack_fffffb6c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_fffffb70",
-      "text": "uint in_stack_fffffb70;",
+      "match": "in_stack_fffffb40",
+      "text": "uint in_stack_fffffb40;",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 30,
-      "match": "&stack0xfffffb34",
-      "text": "shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffffb34);",
+      "line": 23,
+      "match": "&stack0xfffffb30",
+      "text": "shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffffb30);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 32,
-      "match": "&stack0xfffffb38",
-      "text": "((CStrList *)&stack0xfffffb38,\"Create a POD.INI file now with all pods mounted.\");",
+      "line": 25,
+      "match": "&stack0xfffffb30",
+      "text": "((CStrList *)&stack0xfffffb30,\"Create a POD.INI file now with all pods mounted.\");",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 34,
-      "match": "&stack0xfffffb3c",
-      "text": "((CStrList *)&stack0xfffffb3c,\"Create a POD.INI file now with no pods mounted.\");",
+      "line": 27,
+      "match": "&stack0xfffffb30",
+      "text": "((CStrList *)&stack0xfffffb30,\"Create a POD.INI file now with no pods mounted.\");",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 36,
-      "match": "&stack0xfffffb40",
-      "text": "((CStrList *)&stack0xfffffb40,\"Oops - forget about it.\");",
+      "line": 29,
+      "match": "&stack0xfffffb30",
+      "text": "((CStrList *)&stack0xfffffb30,\"Oops - forget about it.\");",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 38,
-      "match": "&stack0xfffffb44",
-      "text": "((CPickList *)&stack0xfffffb44,\"You do not have a POD.INI file.\\nThe file manager requires a POD.INI\\nfile to operate properly.\",-1,0);",
+      "line": 31,
+      "match": "&stack0xfffffb30",
+      "text": "((CPickList *)&stack0xfffffb30,\"You do not have a POD.INI file.\\nThe file manager requires a POD.INI\\nfile to operate properly.\",-1,0);",
       "type": "stack_ref"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 42,
-      "match": "&stack0xfffffef4",
-      "text": "engine_dosio_c_CFileFinder_ctor_FUN_00481c30((CFileFinder *)&stack0xfffffef4);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
+      "description": "Unresolved stack parameter",
       "line": 44,
-      "match": "&stack0xfffffef8",
-      "text": "((CFileFinder *)&stack0xfffffef8,\"*.pod\");",
-      "type": "stack_ref"
+      "match": "in_stack_fffffb30",
+      "text": "shape_edittool_cpp_CStrList_dtor_FUN_004a2a40(&local_14,0,in_stack_fffffb30);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 46,
+      "match": "in_stack_fffffb30",
+      "text": "((CPickList *)&stack0xfffffb30,0,in_stack_fffffb30,in_stack_fffffb34,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 46,
+      "match": "in_stack_fffffb34",
+      "text": "((CPickList *)&stack0xfffffb30,0,in_stack_fffffb30,in_stack_fffffb34,",
+      "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
       "line": 46,
-      "match": "&stack0x00000010",
-      "text": "shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0x00000010,acStack_104);",
+      "match": "&stack0xfffffb30",
+      "text": "((CPickList *)&stack0xfffffb30,0,in_stack_fffffb30,in_stack_fffffb34,",
       "type": "stack_ref"
     },
     {
-      "description": "Direct stack address reference",
+      "description": "Unresolved stack parameter",
       "line": 47,
-      "match": "&stack0xfffffef8",
-      "text": "engine_dosio_c_CFileFinder_findNext_FUN_00481cf0((CFileFinder *)&stack0xfffffef8);",
+      "match": "in_stack_fffffb38",
+      "text": "(uint)in_stack_fffffb38,(uint)in_stack_fffffb3c,in_stack_fffffb40);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 47,
+      "match": "in_stack_fffffb3c",
+      "text": "(uint)in_stack_fffffb38,(uint)in_stack_fffffb3c,in_stack_fffffb40);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 47,
+      "match": "in_stack_fffffb40",
+      "text": "(uint)in_stack_fffffb38,(uint)in_stack_fffffb3c,in_stack_fffffb40);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 51,
+      "match": "in_stack_fffffb30",
+      "text": "((CPickList *)&stack0xfffffb30,0,in_stack_fffffb30,in_stack_fffffb34,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 51,
+      "match": "in_stack_fffffb34",
+      "text": "((CPickList *)&stack0xfffffb30,0,in_stack_fffffb30,in_stack_fffffb34,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 51,
+      "match": "&stack0xfffffb30",
+      "text": "((CPickList *)&stack0xfffffb30,0,in_stack_fffffb30,in_stack_fffffb34,",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 52,
-      "match": "in_stack_0000002c",
-      "text": "(in_stack_0000002c,(CStrList *)&stack0x00000014);",
+      "match": "in_stack_fffffb38",
+      "text": "(uint)in_stack_fffffb38,(uint)in_stack_fffffb3c,in_stack_fffffb40);",
       "type": "stack_param"
     },
     {
-      "description": "Direct stack address reference",
+      "description": "Unresolved stack parameter",
       "line": 52,
-      "match": "&stack0x00000014",
-      "text": "(in_stack_0000002c,(CStrList *)&stack0x00000014);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 53,
-      "match": "in_stack_fffffb5c",
-      "text": "shape_edittool_cpp_CStrList_dtor_FUN_004a2a40((CStrList *)&stack0x00000018,0,in_stack_fffffb5c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 53,
-      "match": "&stack0x00000018",
-      "text": "shape_edittool_cpp_CStrList_dtor_FUN_004a2a40((CStrList *)&stack0x00000018,0,in_stack_fffffb5c);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 55,
-      "match": "in_stack_fffffb60",
-      "text": "((CPickList *)&stack0xfffffb60,0,in_stack_fffffb60,in_stack_fffffb64,",
+      "match": "in_stack_fffffb3c",
+      "text": "(uint)in_stack_fffffb38,(uint)in_stack_fffffb3c,in_stack_fffffb40);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 55,
-      "match": "in_stack_fffffb64",
-      "text": "((CPickList *)&stack0xfffffb60,0,in_stack_fffffb60,in_stack_fffffb64,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 55,
-      "match": "&stack0xfffffb60",
-      "text": "((CPickList *)&stack0xfffffb60,0,in_stack_fffffb60,in_stack_fffffb64,",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 56,
-      "match": "in_stack_fffffb68",
-      "text": "(uint)in_stack_fffffb68,(uint)in_stack_fffffb6c,in_stack_fffffb70);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 56,
-      "match": "in_stack_fffffb6c",
-      "text": "(uint)in_stack_fffffb68,(uint)in_stack_fffffb6c,in_stack_fffffb70);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 56,
-      "match": "in_stack_fffffb70",
-      "text": "(uint)in_stack_fffffb68,(uint)in_stack_fffffb6c,in_stack_fffffb70);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 60,
-      "match": "in_stack_fffffb48",
-      "text": "((CPickList *)&stack0xfffffb48,0,(uint)in_stack_fffffb48,(uint)in_stack_fffffb4c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 60,
-      "match": "in_stack_fffffb4c",
-      "text": "((CPickList *)&stack0xfffffb48,0,(uint)in_stack_fffffb48,(uint)in_stack_fffffb4c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 60,
-      "match": "&stack0xfffffb48",
-      "text": "((CPickList *)&stack0xfffffb48,0,(uint)in_stack_fffffb48,(uint)in_stack_fffffb4c,",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 61,
-      "match": "in_stack_fffffb50",
-      "text": "(uint)in_stack_fffffb50,(uint)in_stack_fffffb54,in_stack_fffffb58);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 61,
-      "match": "in_stack_fffffb54",
-      "text": "(uint)in_stack_fffffb50,(uint)in_stack_fffffb54,in_stack_fffffb58);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 61,
-      "match": "in_stack_fffffb58",
-      "text": "(uint)in_stack_fffffb50,(uint)in_stack_fffffb54,in_stack_fffffb58);",
+      "line": 52,
+      "match": "in_stack_fffffb40",
+      "text": "(uint)in_stack_fffffb38,(uint)in_stack_fffffb3c,in_stack_fffffb40);",
       "type": "stack_param"
     },
     {

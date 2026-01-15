@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 111,
-    "complexity_score": 183,
+    "complexity_score": 106,
     "cross_reference_count": 3,
     "function_call_count": 4,
     "global_count": 13,
-    "pseudocode_lines": 48,
-    "suspect_count": 12,
+    "pseudocode_lines": 46,
+    "suspect_count": 5,
     "suspect_types": [
       "call_esp_preserve",
-      "stack_param",
       "variadic_preserve"
     ],
-    "total_lines": 159
+    "total_lines": 157
   },
   "cross_references": [
     {
@@ -222,57 +221,8 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_0000000c",
-      "text": "int *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000010",
-      "text": "uint in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_0000000c",
-      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Can't create %s\",in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_0000000c",
-      "text": "if (0 < *in_stack_0000000c) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 24,
-      "match": "in_stack_0000000c",
-      "text": "piVar3 = in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 42,
-      "match": "in_stack_0000000c",
-      "text": "} while (iVar4 < *in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 47,
-      "match": "in_stack_00000010",
-      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Error writing %s\",in_stack_00000010);",
-      "type": "stack_param"
-    },
-    {
       "call_address": "00575f25",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -286,7 +236,7 @@
     },
     {
       "call_address": "00575f51",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

@@ -11,13 +11,13 @@ cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedVCenteredPrintf_FUN_004896
           (CDrawSurface *this_ptr,int x,int y,int height,char *format,...)
 
 {
-  BADSPACEBASE *in_ESP;
-  char *in_stack_ffffeff4;
+  char *in_stack_ffffeff0;
   char **local_10;
   
   local_10 = &format;
   crt_stdio_c_vsprintf_FUN_005fdba8(&stack0xffffeff0,(char *)height,(va_list_t *)&local_10);
+  local_10 = (char **)0x0;
   cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedVCentered_FUN_00489660
-            ((CDrawSurface *)x,(int)&stack0xffffeff4,y,height,in_stack_ffffeff4);
+            (this_ptr,(int)&stack0xffffeff0,x,y,in_stack_ffffeff0);
   return;
 }

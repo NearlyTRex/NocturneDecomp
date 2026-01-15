@@ -14,7 +14,6 @@ shape_superopt_cpp_CObj_scaleMasked_FUN_005d2ac0
   uint uVar1;
   int iVar2;
   CVert *pCVar3;
-  BADSPACEBASE *in_ESP;
   double *pdVar4;
   double *pdVar5;
   uint *puVar6;

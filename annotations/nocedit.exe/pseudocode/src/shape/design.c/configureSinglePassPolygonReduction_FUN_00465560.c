@@ -11,7 +11,6 @@ void __cdecl shape_design_c_configureSinglePassPolygonReduction_FUN_00465560(int
 {
   byte bVar1;
   int iVar2;
-  BADSPACEBASE *in_ESP;
   char *pcVar3;
   byte *pbVar4;
   byte bVar6;
@@ -34,7 +33,6 @@ void __cdecl shape_design_c_configureSinglePassPolygonReduction_FUN_00465560(int
   }
   else {
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
-    in_stack_ffffff84 = "Enter tolerance angle [8.5] : ";
     engine_2d_c_getInputWithPrompt_FUN_004032c0
               ((char *)local_74,0x14,0,0,"Enter tolerance angle [8.5] : ");
   }
@@ -91,7 +89,8 @@ void __cdecl shape_design_c_configureSinglePassPolygonReduction_FUN_00465560(int
   shape_design_c_removeDegeneratePolygons_FUN_00465310();
   shape_design_c_removeUnusedVertices_FUN_00463830();
   g_PolygonOptimizationPasses = g_PolygonOptimizationPasses + 1;
-  crt_stdio_c_sprintf_FUN_005fdbd0((char *)local_74,"Original polygons: %d    New total: %d\n\nTotal passes: %d");
+  crt_stdio_c_sprintf_FUN_005fdbd0
+            ((char *)local_74,"Original polygons: %d    New total: %d\n\nTotal passes: %d",local_20,g_PolygonCount);
   if (0 < ui_mode) {
     pcVar3 = "\n\nHit a key...";
     iVar2 = -1;

@@ -16,7 +16,6 @@ void core_course_cpp_CCourse_FUN_004427a0(void)
   float *pfVar5;
   float *extraout_EBX;
   float *extraout_EBX_00;
-  BADSPACEBASE *in_ESP;
   uint *puVar6;
   int iVar8;
   byte bVar9;
@@ -127,7 +126,7 @@ LAB_004427da:
               ((CQuaternion4f *)(local_1c * 0x1c + in_stack_00000004[1] + 0xc),
                (CQuaternion4f *)(iVar8 * 0x1c + in_stack_00000004[1] + 0xc),local_7c,SUB84 /* extract 2-byte value */(dVar11,0)
               );
-    puVar6 = (uint *)&stack0xffffff9c;
+    puVar6 = (uint *)&stack0xffffff98;
   }
   puVar7 = puVar6 + (uint)bVar9 * -2 + 1;
   uVar1 = *puVar6;

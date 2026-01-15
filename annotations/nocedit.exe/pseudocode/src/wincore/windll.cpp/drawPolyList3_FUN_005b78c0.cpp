@@ -11,7 +11,6 @@ wincore_windll_cpp_drawPolyList3_FUN_005b78c0
           (void *vertex_buffer,void *polygons,int polygon_count,int render_flags)
 
 {
-  BADSPACEBASE *in_ESP;
   int iVar1;
   void *local_1c;
   void *local_18;

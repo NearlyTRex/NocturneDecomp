@@ -15,18 +15,17 @@ uint core_npc_cpp_FUN_00544c50(void)
   CMotionList *this_ptr;
   int iVar2;
   int iVar3;
-  BADSPACEBASE *in_ESP;
   char *pcVar4;
   CMotionController *in_stack_00000004;
   char *in_stack_00000008;
-  CMotionController *in_stack_0000001c;
+  char local_d8 [200];
   
   iVar3 = 0;
   this_ptr = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0(in_stack_00000004);
+  pcVar4 = local_d8;
   while( true ) {
-    crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff2c,"%s_%d",in_stack_00000008,iVar3 + 1);
+    crt_stdio_c_sprintf_FUN_005fdbd0(local_d8,"%s_%d",in_stack_00000008,iVar3 + 1);
     iVar2 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(this_ptr);
-    pcVar4 = &stack0xffffff2c;
     if (iVar2 < 0) break;
     iVar3 = iVar3 + 1;
   }
@@ -42,12 +41,12 @@ uint core_npc_cpp_FUN_00544c50(void)
     } while (cVar1 != '\0');
   }
   else {
-    core_actor_cpp_getRandomInt_FUN_0040cc70(1,iVar3);
-    crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff38,"%s_%d");
+    iVar3 = core_actor_cpp_getRandomInt_FUN_0040cc70(1,iVar3);
+    crt_stdio_c_sprintf_FUN_005fdbd0(local_d8,"%s_%d",in_stack_00000008,iVar3);
   }
   iVar3 = core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(this_ptr);
   if (-1 < iVar3) {
-    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(in_stack_0000001c,iVar3,1);
+    core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00(in_stack_00000004,iVar3,1);
     return 1;
   }
   return 0;

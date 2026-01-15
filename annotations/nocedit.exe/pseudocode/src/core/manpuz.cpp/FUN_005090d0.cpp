@@ -15,25 +15,18 @@ int core_manpuz_cpp_FUN_005090d0(void)
   CBoundingBox3D *this_ptr;
   int iVar1;
   int iVar2;
-  BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000004;
-  int in_stack_00000008;
-  int in_stack_0000000c;
-  int in_stack_00000010;
-  float fStack_20;
+  int iStack_c;
   
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);
   this_ptr = (*in_stack_00000004->vtable->getBoundingBox)
-                       (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffd8);
+                       (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffd4);
   iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr);
   if (iVar1 != 0) {
-    in_stack_00000008 = (int)ROUND(g_ZeroVector.x * _DAT_00660d70);
-    in_stack_0000000c = (int)ROUND(g_ZeroVector.y * _DAT_00660d70);
-    in_stack_00000010 = (int)ROUND(g_ZeroVector.z * _DAT_00660d70);
-    fStack_20 = 7.398976e-39;
+    iStack_c = (int)ROUND(g_ZeroVector.x * _DAT_00660d70);
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-              (&g_CDemonRendererPtr->vertex_buffer_ptr[1000].projected_vertex,
-               (CVector3i *)&stack0x00000008);
+              (&g_CDemonRendererPtr->vertex_buffer_ptr[1000].projected_vertex,(CVector3i *)&iStack_c
+              );
     iVar2 = 0;
     do {
       core_manpuz_cpp_FUN_00509bf0();

@@ -10,9 +10,8 @@ void __cdecl core_hero_cpp_CHeroPlaceholder_FUN_004f3f60(CHeroPlaceholder *this_
 
 {
   CActorPropertyList *in_stack_00000008;
-  CActorPropertyList *in_stack_0000000c;
   
   core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290(&this_ptr->base_actor,in_stack_00000008);
-  core_actor_cpp_CActorPropertyList_FUN_0040e220(in_stack_0000000c);
+  core_actor_cpp_CActorPropertyList_FUN_0040e220(in_stack_00000008);
   return;
 }

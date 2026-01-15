@@ -21,10 +21,10 @@ int core_netgame_cpp_CNetGame_addPlayer_FUN_005412b0(void)
   char *pcVar6;
   byte bVar7;
   int in_stack_00000004;
-  uint *in_stack_00000010;
-  char *in_stack_00000014;
-  uint in_stack_00000018;
-  uint in_stack_0000001c;
+  uint *in_stack_00000008;
+  char *in_stack_0000000c;
+  uint in_stack_00000010;
+  uint in_stack_00000014;
   
   bVar7 = 0;
   if (1 < *(int *)(in_stack_00000004 + 0x1c)) {
@@ -38,16 +38,16 @@ int core_netgame_cpp_CNetGame_addPlayer_FUN_005412b0(void)
   crt_memory_c_memset_FUN_005fde40(dest,0,0x78);
   pcVar6 = dest;
   do {
-    cVar1 = *in_stack_00000014;
+    cVar1 = *in_stack_0000000c;
     *pcVar6 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = in_stack_00000014[1];
-    in_stack_00000014 = in_stack_00000014 + 2;
+    cVar1 = in_stack_0000000c[1];
+    in_stack_0000000c = in_stack_0000000c + 2;
     pcVar6[1] = cVar1;
     pcVar6 = pcVar6 + 2;
   } while (cVar1 != '\0');
-  *(uint *)(dest + 0x1c) = *in_stack_00000010;
-  *(uint *)(dest + (uint)bVar7 * -8 + 0x20) = in_stack_00000010[(uint)bVar7 * -2 + 1];
+  *(uint *)(dest + 0x1c) = *in_stack_00000008;
+  *(uint *)(dest + (uint)bVar7 * -8 + 0x20) = in_stack_00000008[(uint)bVar7 * -2 + 1];
   dest[0x28] = '\0';
   dest[0x29] = '\0';
   dest[0x2a] = -0x80;
@@ -64,8 +64,8 @@ int core_netgame_cpp_CNetGame_addPlayer_FUN_005412b0(void)
   dest[0x3d] = '\0';
   dest[0x3e] = '\0';
   dest[0x3f] = '\0';
-  *(uint *)(dest + 0x14) = in_stack_00000018;
-  *(uint *)(dest + 0x18) = in_stack_0000001c;
+  *(uint *)(dest + 0x14) = in_stack_00000010;
+  *(uint *)(dest + 0x18) = in_stack_00000014;
   uVar3 = g_CurrentGameTime;
   *(uint *)(dest + 0x24) = g_CurrentGameTime;
   iVar5 = uVar3 - 0x1e0000;

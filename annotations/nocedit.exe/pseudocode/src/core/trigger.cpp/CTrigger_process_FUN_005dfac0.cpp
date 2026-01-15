@@ -22,7 +22,6 @@ void __cdecl core_trigger_cpp_CTrigger_process_FUN_005dfac0(CTrigger *this_ptr)
   int iVar8;
   int iVar9;
   int iVar10;
-  BADSPACEBASE *in_ESP;
   float in_stack_00000008;
   CBoundingBox3D CStack_b4;
   CBoundingBox3D CStack_9c;

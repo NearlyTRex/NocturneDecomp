@@ -15,7 +15,7 @@ void core_netgame_cpp_CNetGame_FUN_0053f780(void)
   int iVar2;
   char *pcVar3;
   char *pcVar4;
-  CNetGame *in_stack_00000018;
+  CNetGame *in_stack_00000004;
   
   crt_io_c_deleteFile_FUN_005ff9d0("netlog.txt");
   g_CurrentGameTime = 1;
@@ -29,7 +29,7 @@ void core_netgame_cpp_CNetGame_FUN_0053f780(void)
   if (pcVar3 == (char *)0x0) {
     pcVar3 = "MyComputer";
   }
-  pcVar4 = in_stack_00000018->network_data;
+  pcVar4 = in_stack_00000004->network_data;
   do {
     cVar1 = *pcVar3;
     *pcVar4 = cVar1;
@@ -41,6 +41,6 @@ void core_netgame_cpp_CNetGame_FUN_0053f780(void)
   } while (cVar1 != '\0');
   g_ChatHistoryCount = 0;
   DAT_02f98ad0 = 0;
-  core_netgame_cpp_CNetGame_FUN_0053fd00(in_stack_00000018);
+  core_netgame_cpp_CNetGame_FUN_0053fd00(in_stack_00000004);
   return;
 }

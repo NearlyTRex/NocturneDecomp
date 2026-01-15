@@ -18,7 +18,7 @@ void core_ammobox_cpp_AllocateMemoryMaybe_FUN_00411700(void)
   char *pcVar3;
   int in_stack_00000004;
   CInventory *in_stack_00000008;
-  CInventory *in_stack_0000002c;
+  CInventory *in_stack_0000000c;
   
   if (*(CDemonActor **)(in_stack_00000004 + 800) != (CDemonActor *)0x0) {
     core_inv_cpp_CInventory_addItem_FUN_004fd600
@@ -56,7 +56,7 @@ void core_ammobox_cpp_AllocateMemoryMaybe_FUN_00411700(void)
     (pCVar2->base_actor).actor_name[1] = cVar1;
     pCVar2 = (CAmmo *)((pCVar2->base_actor).actor_name + 2);
   } while (cVar1 != '\0');
-  core_inv_cpp_CInventory_addItem_FUN_004fd600(in_stack_0000002c,&this_ptr->base_actor,1);
+  core_inv_cpp_CInventory_addItem_FUN_004fd600(in_stack_0000000c,&this_ptr->base_actor,1);
   *(uint *)(in_stack_00000004 + 0x314) = 0;
   return;
 }

@@ -12,16 +12,16 @@ int __cdecl core_vessel_cpp_CCryptVessel_FUN_005e9750(CCryptVessel *this_ptr)
   COrientation *position;
   CBoundingBox3D *this_ptr_00;
   int iVar1;
-  BADSPACEBASE *in_ESP;
   double dVar2;
+  CBoundingBox3D CStack_2c;
   
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
             (g_CDemonRendererPtr,&(this_ptr->base_actor).location.position);
   position = &(this_ptr->base_actor).orient;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
             (g_CDemonRendererPtr,(CVector3i *)position,(CVector3i *)0x0);
-  this_ptr_00 = (*((this_ptr->base_actor).vtable)->getBoundingBox)
-                          (&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffd4);
+  this_ptr_00 = (*((this_ptr->base_actor).vtable)->getBoundingBox)(&this_ptr->base_actor,&CStack_2c)
+  ;
   iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
   *(int *)(this_ptr->field14_0x3c0 + 0x428) = iVar1;
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
@@ -38,8 +38,9 @@ int __cdecl core_vessel_cpp_CCryptVessel_FUN_005e9750(CCryptVessel *this_ptr)
   else {
     dVar2 = crt_math_c_round_FUN_005fe6b0
                       (65535 - (double)this_ptr->timer * 65535);
+    CStack_2c.max.z = (float)(int)ROUND(dVar2);
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60
-              (g_CDemonRendererPtr,(int)ROUND(dVar2));
+              (g_CDemonRendererPtr,(int)CStack_2c.max.z);
     engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0048d6c0(g_CDemonRendererPtr,0);
     core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
               ((CKeyFramedModelInstance *)&this_ptr->model_name,0.0,0x2e7);

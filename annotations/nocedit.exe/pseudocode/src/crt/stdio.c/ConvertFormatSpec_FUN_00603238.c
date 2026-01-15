@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Variable defined which should be unmapped: value_64bit */
-/* WARNING: Variable defined which should be unmapped: mb_char_buffer */
 /* WARNING: Struct "FormatSpec": ignoring multiple overlapping fields */
 /* NOTE: Ghidra decompilation artifacts in this function:
    
@@ -42,7 +40,6 @@ crt_stdio_c_ConvertFormatSpec_FUN_00603238
   char *pcVar9;
   int iVar10;
   int integer_value;
-  BADSPACEBASE *in_ESP;
   int iVar11;
   ushort segment_es;
   ushort segment_ds;
@@ -84,7 +81,7 @@ LAB_0060330e:
     else {
       puVar3 = (uint *)*args;
       *args = (va_list_t)(puVar3 + 1);
-      value_64bit._0_4_ = (FormatSpec *)*puVar3;
+      value_64bit._0_4_ = *puVar3;
       puVar3 = (uint *)*args;
       *args = (va_list_t)(puVar3 + 1);
       value_64bit._4_4_ = *puVar3;
@@ -116,8 +113,8 @@ LAB_006033ac:
     }
     else {
       value_64bit._4_4_ = ~value_64bit._4_4_;
-      value_64bit._0_4_ = (FormatSpec *)(~(uint)(FormatSpec *)value_64bit + 1);
-      if ((FormatSpec *)value_64bit == (FormatSpec *)0x0) {
+      value_64bit._0_4_ = ~(uint)value_64bit + 1;
+      if ((uint)value_64bit == 0) {
         value_64bit._4_4_ = value_64bit._4_4_ + 1;
       }
     }
@@ -145,7 +142,7 @@ LAB_006032b4:
     else {
       puVar3 = (uint *)*args;
       *args = (va_list_t)(puVar3 + 1);
-      value_64bit._0_4_ = (FormatSpec *)*puVar3;
+      value_64bit._0_4_ = *puVar3;
       puVar3 = (uint *)*args;
       *args = (va_list_t)(puVar3 + 1);
       value_64bit._4_4_ = *puVar3;
@@ -177,14 +174,12 @@ LAB_00603493:
         piVar4 = (int *)*args;
         *args = (va_list_t)(piVar4 + 1);
         crt_stdio_c_FormatFixedPoint_FUN_0060305c(output_buffer,*piVar4,spec_info);
-        value_64bit._0_4_ = (FormatSpec *)0xffffffff;
         iVar11 = crt_string_c_strlen_far_FUN_00602f4c(output_buffer,segment_ds,-1);
         spec_info->content_length = iVar11;
         return output_buffer;
       }
 LAB_006034c9:
       crt_stdio_c_FloatingPointStub_FUN_00603160(output_buffer,args,spec_info);
-      value_64bit._0_4_ = spec_info;
       crt_stdio_c_CalculateZeroPadding_FUN_0060317c(spec_info);
       return output_buffer + 1;
     }
@@ -215,12 +210,9 @@ LAB_00603702:
         }
         crt_stdio_c_FormatHexWithPadding_FUN_00602ff8(iVar11,pcVar9,8);
         if (spec_info->conversion_char == 'P') {
-          value_64bit._0_4_ = (FormatSpec *)output_buffer;
           crt_string_c_strupr_FUN_0060389c(output_buffer);
         }
-        value_64bit._4_4_ = 0xffffffff;
-        value_64bit._0_4_ = (FormatSpec *)(uint)segment_es;
-        iVar11 = crt_string_c_strlen_far_FUN_00602f4c(output_buffer,segment_es,-1);
+        iVar11 = crt_string_c_strlen_far_FUN_00602f4c(output_buffer,segment_ds,-1);
         *(int *)((int)&spec_info->flags + 2) = iVar11;
         return output_buffer;
       }
@@ -240,6 +232,7 @@ LAB_006034f3:
           *args = (va_list_t)(piVar4 + 1);
           pwVar5 = (wchar_t *)*piVar4;
         }
+        segment_storage = segment_ds;
         if (pwVar5 != (wchar_t *)0x0) {
           output_buffer = (char *)pwVar5;
         }
@@ -247,15 +240,16 @@ LAB_006034f3:
       else {
         piVar4 = (int *)*args;
         *args = (va_list_t)(piVar4 + 2);
-        if (((wchar_t *)*piVar4 != (wchar_t *)0x0) || (*(ushort *)(piVar4 + 1) != 0)) {
+        if (((wchar_t *)*piVar4 != (wchar_t *)0x0) ||
+           (segment_storage = segment_ds, *(ushort *)(piVar4 + 1) != 0)) {
           output_buffer = (char *)*piVar4;
-          segment_ds = *(ushort *)(piVar4 + 1);
+          segment_storage = *(ushort *)(piVar4 + 1);
         }
       }
       if (spec_info->conversion_char == 'S') {
         if ((spec_info->flags & SHORT_MODIFIER) == 0) {
           iVar11 = crt_stdio_c_WideStringToMultiByteLen_FUN_00602f7c
-                             ((wchar_t *)output_buffer,segment_ds,spec_info->precision);
+                             ((wchar_t *)output_buffer,segment_storage,spec_info->precision);
           goto LAB_0060359a;
         }
         iVar11 = spec_info->precision;
@@ -263,12 +257,12 @@ LAB_006034f3:
       else {
         if ((spec_info->flags & LONG_MODIFIER) != 0) {
           iVar11 = crt_stdio_c_WideStringToMultiByteLen_FUN_00602f7c
-                             ((wchar_t *)output_buffer,segment_ds,spec_info->precision);
+                             ((wchar_t *)output_buffer,segment_storage,spec_info->precision);
           goto LAB_0060359a;
         }
         iVar11 = spec_info->precision;
       }
-      iVar11 = crt_string_c_strlen_far_FUN_00602f4c(output_buffer,segment_ds,iVar11);
+      iVar11 = crt_string_c_strlen_far_FUN_00602f4c(output_buffer,segment_storage,iVar11);
 LAB_0060359a:
       iVar10 = spec_info->precision;
       spec_info->content_length = iVar11;
@@ -306,16 +300,14 @@ LAB_0060387a:
         if (iVar10 == -1) {
           return output_buffer;
         }
-        segment_storage._0_1_ = (byte)segment_ds;
-        *output_buffer = (byte)segment_storage;
+        *output_buffer = mb_char_buffer[0];
         if (iVar11 == 0) {
           return output_buffer;
         }
-        if ((g_LeadByteTable[(byte)segment_storage] & 1U) == 0) {
+        if ((g_LeadByteTable[(byte)mb_char_buffer[0]] & 1U) == 0) {
           return output_buffer;
         }
-        segment_storage._1_1_ = (char)(segment_ds >> 8);
-        output_buffer[1] = segment_storage._1_1_;
+        output_buffer[1] = mb_char_buffer[1];
         pbVar1 = (byte *)((int)&spec_info->flags + 2);
         *(int *)pbVar1 = *(int *)pbVar1 + 1;
         return output_buffer;
@@ -325,8 +317,7 @@ LAB_0060387a:
 LAB_006035c5:
     if (((spec_info->flags & ALTERNATE_FORM) != 0) &&
        (((uVar7 = integer_value, (spec_info->flags & 0x100) != 0 &&
-         (uVar7 = value_64bit._4_4_, (FormatSpec *)value_64bit != (FormatSpec *)0x0)) ||
-        (uVar7 != 0)))) {
+         (uVar7 = value_64bit._4_4_, (uint)value_64bit != 0)) || (uVar7 != 0)))) {
       iVar11 = *(int *)((int)&spec_info->flags + 2);
       *(int *)((int)&spec_info->flags + 2) = iVar11 + 1;
       output_buffer[iVar11] = '0';
@@ -374,13 +365,11 @@ LAB_00603607:
     crt_stdlib_c_utoa_FUN_0060ae50
               (integer_value,output_buffer + *(int *)((int)&spec_info->flags + 2),iVar11);
     if (spec_info->conversion_char == 'X') {
-      value_64bit._0_4_ = (FormatSpec *)output_buffer;
       crt_string_c_strupr_FUN_0060389c(output_buffer);
     }
   }
   else {
-    if (((spec_info->precision == 0) && ((FormatSpec *)value_64bit == (FormatSpec *)0x0)) &&
-       (value_64bit._4_4_ == 0)) {
+    if (((spec_info->precision == 0) && ((uint)value_64bit == 0)) && (value_64bit._4_4_ == 0)) {
       *pcVar9 = '\0';
       iVar11 = 0;
       goto LAB_006036cd;
@@ -388,13 +377,10 @@ LAB_00603607:
     crt_stdlib_c_i64toa_FUN_0060ad40
               (&value_64bit,output_buffer + *(int *)((int)&spec_info->flags + 2),iVar11);
     if (spec_info->conversion_char == 'X') {
-      value_64bit._0_4_ = (FormatSpec *)output_buffer;
       crt_string_c_strupr_FUN_0060389c(output_buffer);
     }
   }
-  value_64bit._4_4_ = 0xffffffff;
-  value_64bit._0_4_ = (FormatSpec *)(uint)segment_es;
-  iVar11 = crt_string_c_strlen_far_FUN_00602f4c(pcVar9,segment_es,-1);
+  iVar11 = crt_string_c_strlen_far_FUN_00602f4c(pcVar9,segment_ds,-1);
 LAB_006036cd:
   spec_info->content_length = iVar11;
   if (iVar11 < spec_info->precision) {
@@ -403,8 +389,6 @@ LAB_006036cd:
   if (spec_info->precision != -1) {
     return pcVar9;
   }
-  _mb_char_buffer = spec_info;
-  value_64bit._4_4_ = 0x6036f0;
   crt_stdio_c_CalculateZeroPadding_FUN_0060317c(spec_info);
   return pcVar9;
 }

@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 147,
-    "complexity_score": 182,
+    "complexity_score": 167,
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 22,
     "pseudocode_lines": 32,
-    "suspect_count": 13,
+    "suspect_count": 12,
     "suspect_types": [
       "call_esp_preserve",
-      "format_string_mismatch",
       "param_count_too_few",
       "variadic_preserve"
     ],
@@ -298,17 +297,6 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 004fcee6 (no EBP frame)",
       "type": "variadic_preserve"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"getModel - Can't classify : %s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "getModel - Can't classify : %s",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 30,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"getModel - Can't classify : %s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 8,

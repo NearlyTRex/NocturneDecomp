@@ -10,15 +10,14 @@ void __cdecl core_mission_cpp_CDemonMission_initNewActorMaybe_FUN_00524700(CDemo
 
 {
   char cVar1;
-  BADSPACEBASE *in_ESP;
   char *pcVar2;
   CDemonActor *in_stack_00000008;
-  char acStack_24 [24];
+  char local_2c [32];
   
   in_stack_00000008->actor_name[0] = '\0';
   core_actor_cpp_CDemonActor_getActorClassName_FUN_00408b90(in_stack_00000008);
   core_mission_cpp_FUN_00524660();
-  pcVar2 = acStack_24;
+  pcVar2 = local_2c;
   do {
     cVar1 = *pcVar2;
     in_stack_00000008->actor_name[0] = cVar1;

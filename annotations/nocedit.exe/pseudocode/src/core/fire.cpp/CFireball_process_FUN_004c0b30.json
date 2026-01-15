@@ -1,20 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 208,
-    "complexity_score": 227,
+    "complexity_score": 196,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 7,
-    "pseudocode_lines": 82,
-    "suspect_count": 12,
+    "pseudocode_lines": 81,
+    "suspect_count": 10,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "callind_preserve",
-      "register_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 290
+    "total_lines": 289
   },
   "cross_references": [],
   "function": {
@@ -194,22 +192,8 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 11,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 11,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 82,
+      "line": 81,
       "match": "code *",
       "text": "(**(code **)(*(int *)(iVar1 + 0x154) + 0x114))();",
       "type": "unresolved_funcptr"

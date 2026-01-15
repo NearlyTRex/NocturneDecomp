@@ -12,7 +12,6 @@ shape_design_c_embedCopyrightWatermark_FUN_0046b9a0
 
 {
   tm *time_ptr;
-  BADSPACEBASE *in_ESP;
   char local_4dc [1024];
   char local_dc [200];
   time_t local_14;

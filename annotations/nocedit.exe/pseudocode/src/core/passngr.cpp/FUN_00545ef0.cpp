@@ -20,7 +20,6 @@ void core_passngr_cpp_FUN_00545ef0(void)
   SMotion *pSVar4;
   int iVar5;
   CVector3f *pCVar6;
-  BADSPACEBASE *in_ESP;
   CCharacter *in_stack_00000004;
   float in_stack_00000008;
   CVector3f local_1c;

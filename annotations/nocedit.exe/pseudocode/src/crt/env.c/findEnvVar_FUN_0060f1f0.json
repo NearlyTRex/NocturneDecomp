@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 128,
-    "complexity_score": 151,
+    "complexity_score": 125,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
-    "pseudocode_lines": 66,
-    "suspect_count": 7,
+    "pseudocode_lines": 65,
+    "suspect_count": 5,
     "suspect_types": [
       "call_esp_preserve",
-      "special_crt_function",
-      "stack_param"
+      "special_crt_function"
     ],
-    "total_lines": 194
+    "total_lines": 193
   },
   "cross_references": [
     {
@@ -136,20 +135,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000010",
-      "text": "int in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_00000010",
-      "text": "if (in_stack_00000010 == 0) {",
-      "type": "stack_param"
-    },
     {
       "add_esp_value": 4,
       "call_address": "0060f211",

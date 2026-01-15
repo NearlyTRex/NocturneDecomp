@@ -10,8 +10,6 @@ void __cdecl
 shape_meshlod_cpp_CLodVert_addAdjacentEdge_FUN_00515d90(CLodVert *this_ptr,int edge_index)
 
 {
-  int in_stack_00000010;
-  
   if (0x31 < this_ptr->adjacent_edge_count) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
               (g_CEditorToolsPtr,"Too many adj edges!");
@@ -19,7 +17,7 @@ shape_meshlod_cpp_CLodVert_addAdjacentEdge_FUN_00515d90(CLodVert *this_ptr,int e
     g_CurrentLineNumber = 0x2c1;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Too many adj edges!");
   }
-  this_ptr->adjacent_edge_indices[this_ptr->adjacent_edge_count] = in_stack_00000010;
+  this_ptr->adjacent_edge_indices[this_ptr->adjacent_edge_count] = edge_index;
   this_ptr->adjacent_edge_count = this_ptr->adjacent_edge_count + 1;
   return;
 }

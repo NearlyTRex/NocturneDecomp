@@ -15,7 +15,6 @@ double __cdecl crt_string_c_strtod_main_FUN_00605d5d(char *str,char **endptr)
   int iVar4;
   uint uVar5;
   uint uVar6;
-  BADSPACEBASE *in_ESP;
   char *in_stack_00000004;
   ulonglong local_34;
   byte uStack_2c;

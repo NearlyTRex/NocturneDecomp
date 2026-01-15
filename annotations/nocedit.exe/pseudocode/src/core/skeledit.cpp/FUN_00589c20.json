@@ -1,23 +1,21 @@
 {
   "complexity": {
     "assembly_lines": 300,
-    "complexity_score": 1012,
+    "complexity_score": 979,
     "cross_reference_count": 1,
     "function_call_count": 21,
     "global_count": 22,
-    "pseudocode_lines": 112,
-    "suspect_count": 86,
+    "pseudocode_lines": 109,
+    "suspect_count": 84,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
       "param_count_too_few",
-      "register_param",
       "stack_param",
       "stack_ref",
       "variadic_preserve"
     ],
-    "total_lines": 412
+    "total_lines": 409
   },
   "cross_references": [
     {
@@ -368,276 +366,262 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
+      "description": "Unresolved stack parameter",
       "line": 9,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 9,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
+      "match": "in_stack_00000004",
+      "text": "CLodMesh *in_stack_00000004;",
+      "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 10,
-      "match": "in_stack_0000000c",
-      "text": "CLodMesh *in_stack_0000000c;",
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 11,
-      "match": "in_stack_00000010",
-      "text": "int in_stack_00000010;",
+      "match": "in_stack_0000000c",
+      "text": "uint in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 12,
-      "match": "in_stack_00000014",
-      "text": "uint in_stack_00000014;",
+      "match": "in_stack_fffff590",
+      "text": "uint in_stack_fffff590;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 13,
-      "match": "in_stack_fffff5b4",
-      "text": "CStrList_vtable *in_stack_fffff5b4;",
+      "match": "in_stack_fffff594",
+      "text": "uint in_stack_fffff594;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 14,
-      "match": "in_stack_fffff5b8",
-      "text": "CStrList_vtable *in_stack_fffff5b8;",
+      "match": "in_stack_fffff598",
+      "text": "char **in_stack_fffff598;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 15,
-      "match": "in_stack_fffff5bc",
-      "text": "CStrList_vtable *in_stack_fffff5bc;",
+      "match": "in_stack_fffff59c",
+      "text": "CStrList_vtable *in_stack_fffff59c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 16,
-      "match": "in_stack_fffff5c0",
-      "text": "CStrList_vtable *in_stack_fffff5c0;",
+      "match": "in_stack_fffff5a0",
+      "text": "uint in_stack_fffff5a0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_fffff5c4",
-      "text": "uint in_stack_fffff5c4;",
+      "line": 20,
+      "match": "in_stack_00000008",
+      "text": "if (*(int *)(in_stack_00000008 + 0x308) != 1) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 22,
-      "match": "in_stack_00000010",
-      "text": "if (*(int *)(in_stack_00000010 + 0x308) != 1) {",
+      "match": "in_stack_00000004",
+      "text": "(in_stack_00000004,0,in_stack_0000000c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
+      "line": 22,
       "match": "in_stack_0000000c",
-      "text": "(in_stack_0000000c,0,in_stack_00000014);",
+      "text": "(in_stack_00000004,0,in_stack_0000000c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
-      "match": "in_stack_00000014",
-      "text": "(in_stack_0000000c,0,in_stack_00000014);",
+      "line": 23,
+      "match": "in_stack_00000004",
+      "text": "iVar1 = shape_meshlod_cpp_CLodMesh_loadPrecomputeFile_FUN_0051b6f0(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 25,
-      "match": "in_stack_0000000c",
-      "text": "iVar1 = shape_meshlod_cpp_CLodMesh_loadPrecomputeFile_FUN_0051b6f0(in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_00000010",
-      "text": "if (*(int *)(in_stack_00000010 + 0x30c) == 0) {",
+      "match": "in_stack_00000008",
+      "text": "if (*(int *)(in_stack_00000008 + 0x30c) == 0) {",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 41,
-      "match": "&stack0xfffff5a0",
-      "text": "shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff5a0);",
+      "line": 38,
+      "match": "&stack0xfffff590",
+      "text": "shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff590);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 43,
-      "match": "&stack0xfffff5a4",
-      "text": "((CStrList *)&stack0xfffff5a4,\"Use the file and select a shadow LOD now.\");",
+      "line": 40,
+      "match": "&stack0xfffff590",
+      "text": "((CStrList *)&stack0xfffff590,\"Use the file and select a shadow LOD now.\");",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 45,
-      "match": "&stack0xfffff5a8",
-      "text": "((CStrList *)&stack0xfffff5a8,\"Rebuild shadow LOD, recreating the precompute file.\");",
+      "line": 42,
+      "match": "&stack0xfffff590",
+      "text": "((CStrList *)&stack0xfffff590,\"Rebuild shadow LOD, recreating the precompute file.\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 44,
+      "match": "&stack0xfffff590",
+      "text": "((CStrList *)&stack0xfffff590,\"Don't select a shadow LOD at this time.  I can always use the precompute file later.\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 46,
+      "match": "&stack0xfffff590",
+      "text": "((CPickList *)&stack0xfffff590,\"Precomputed LOD exists for this model for shadow LOD\",-1,0);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 47,
-      "match": "&stack0xfffff5ac",
-      "text": "((CStrList *)&stack0xfffff5ac,\"Don't select a shadow LOD at this time.  I can always use the precompute file later.\");",
+      "match": "&stack0xfffff590",
+      "text": "this_ptr = (CPickList *)&stack0xfffff590;",
       "type": "stack_ref"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 49,
-      "match": "&stack0xfffff5b0",
-      "text": "((CPickList *)&stack0xfffff5b0,\"Precomputed LOD exists for this model for shadow LOD\",-1,0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
+      "description": "Unresolved stack parameter",
       "line": 50,
-      "match": "&stack0xfffff5b4",
-      "text": "this_ptr = (CPickList *)&stack0xfffff5b4;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 53,
-      "match": "in_stack_fffff5b4",
-      "text": "(this_ptr,0,(uint)in_stack_fffff5b4,(uint)in_stack_fffff5b8,(uint)in_stack_fffff5bc,",
+      "match": "in_stack_fffff590",
+      "text": "(this_ptr,0,in_stack_fffff590,in_stack_fffff594,(uint)in_stack_fffff598,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 53,
-      "match": "in_stack_fffff5b8",
-      "text": "(this_ptr,0,(uint)in_stack_fffff5b4,(uint)in_stack_fffff5b8,(uint)in_stack_fffff5bc,",
+      "line": 50,
+      "match": "in_stack_fffff594",
+      "text": "(this_ptr,0,in_stack_fffff590,in_stack_fffff594,(uint)in_stack_fffff598,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 53,
-      "match": "in_stack_fffff5bc",
-      "text": "(this_ptr,0,(uint)in_stack_fffff5b4,(uint)in_stack_fffff5b8,(uint)in_stack_fffff5bc,",
+      "line": 50,
+      "match": "in_stack_fffff598",
+      "text": "(this_ptr,0,in_stack_fffff590,in_stack_fffff594,(uint)in_stack_fffff598,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 54,
-      "match": "in_stack_fffff5c0",
-      "text": "(uint)in_stack_fffff5c0,in_stack_fffff5c4);",
+      "line": 51,
+      "match": "in_stack_fffff59c",
+      "text": "(uint)in_stack_fffff59c,in_stack_fffff5a0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 54,
-      "match": "in_stack_fffff5c4",
-      "text": "(uint)in_stack_fffff5c0,in_stack_fffff5c4);",
+      "line": 51,
+      "match": "in_stack_fffff5a0",
+      "text": "(uint)in_stack_fffff59c,in_stack_fffff5a0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 58,
+      "line": 55,
+      "match": "in_stack_00000004",
+      "text": "(in_stack_00000004,\"wt\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 56,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004->precompute_file = pFVar2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 63,
+      "match": "in_stack_00000004",
+      "text": "shape_meshlod_cpp_CLodMesh_generateLOD_FUN_00516ba0(in_stack_00000004,0,in_stack_0000000c)",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 63,
       "match": "in_stack_0000000c",
-      "text": "(in_stack_0000000c,\"wt\");",
+      "text": "shape_meshlod_cpp_CLodMesh_generateLOD_FUN_00516ba0(in_stack_00000004,0,in_stack_0000000c)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 59,
+      "line": 75,
+      "match": "in_stack_00000004",
+      "text": "(in_stack_00000004,\"rt\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 76,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004->precompute_file = pFVar2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 85,
+      "match": "in_stack_00000004",
+      "text": "(in_stack_00000004,in_stack_00000004->precompute_file);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 85,
+      "match": "in_stack_00000004",
+      "text": "(in_stack_00000004,in_stack_00000004->precompute_file);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 87,
+      "match": "in_stack_00000004",
+      "text": "shape_meshlod_cpp_CLodMesh_closePrecomputeFile_FUN_0051b870(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 92,
+      "match": "in_stack_00000004",
+      "text": "shape_meshlod_cpp_CLodMesh_closePrecomputeFile_FUN_0051b870(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 96,
+      "match": "in_stack_00000008",
+      "text": "if (*(int *)(in_stack_00000008 + 0x30c) != 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 102,
+      "match": "in_stack_00000004",
+      "text": "shape_meshlod_cpp_CLodMesh_generateLOD_FUN_00516ba0(in_stack_00000004,0,in_stack_0000000c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 102,
       "match": "in_stack_0000000c",
-      "text": "in_stack_0000000c->precompute_file = pFVar2;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 66,
-      "match": "in_stack_0000000c",
-      "text": "shape_meshlod_cpp_CLodMesh_generateLOD_FUN_00516ba0(in_stack_0000000c,0,in_stack_00000014)",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 66,
-      "match": "in_stack_00000014",
-      "text": "shape_meshlod_cpp_CLodMesh_generateLOD_FUN_00516ba0(in_stack_0000000c,0,in_stack_00000014)",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 78,
-      "match": "in_stack_0000000c",
-      "text": "(in_stack_0000000c,\"rt\");",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 79,
-      "match": "in_stack_0000000c",
-      "text": "in_stack_0000000c->precompute_file = pFVar2;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 88,
-      "match": "in_stack_0000000c",
-      "text": "(in_stack_0000000c,in_stack_0000000c->precompute_file);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 88,
-      "match": "in_stack_0000000c",
-      "text": "(in_stack_0000000c,in_stack_0000000c->precompute_file);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 90,
-      "match": "in_stack_0000000c",
-      "text": "shape_meshlod_cpp_CLodMesh_closePrecomputeFile_FUN_0051b870(in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 95,
-      "match": "in_stack_0000000c",
-      "text": "shape_meshlod_cpp_CLodMesh_closePrecomputeFile_FUN_0051b870(in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 99,
-      "match": "in_stack_00000010",
-      "text": "if (*(int *)(in_stack_00000010 + 0x30c) != 0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 105,
-      "match": "in_stack_0000000c",
-      "text": "shape_meshlod_cpp_CLodMesh_generateLOD_FUN_00516ba0(in_stack_0000000c,0,in_stack_00000014);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 105,
-      "match": "in_stack_00000014",
-      "text": "shape_meshlod_cpp_CLodMesh_generateLOD_FUN_00516ba0(in_stack_0000000c,0,in_stack_00000014);",
+      "text": "shape_meshlod_cpp_CLodMesh_generateLOD_FUN_00516ba0(in_stack_00000004,0,in_stack_0000000c);",
       "type": "stack_param"
     },
     {

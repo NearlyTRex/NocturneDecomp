@@ -1,23 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 150,
-    "complexity_score": 367,
+    "complexity_score": 245,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 16,
-    "pseudocode_lines": 77,
-    "suspect_count": 25,
+    "pseudocode_lines": 75,
+    "suspect_count": 15,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
-      "format_string_mismatch",
       "lea_esp_stack_addr",
-      "register_param",
       "stack_param",
-      "stack_ref",
       "variadic_preserve"
     ],
-    "total_lines": 227
+    "total_lines": 225
   },
   "cross_references": [
     {
@@ -224,94 +220,38 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 9,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 9,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 12,
       "match": "in_stack_00000004",
       "text": "char *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_0000000c",
-      "text": "uint in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_00000014",
-      "text": "byte in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 20,
       "match": "in_stack_00000004",
-      "text": "(in_stack_00000004,(char *)0x0,(char *)0x0,&stack0xfffffdf4,(char *)0x0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 23,
-      "match": "&stack0xfffffdf4",
-      "text": "(in_stack_00000004,(char *)0x0,(char *)0x0,&stack0xfffffdf4,(char *)0x0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_0000000c",
-      "text": "if ((byte)(&DAT_03659190)[iVar4] != in_stack_0000000c) {",
+      "text": "(in_stack_00000004,(char *)0x0,(char *)0x0,local_20c,(char *)0x0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 34,
+      "line": 31,
       "match": "in_stack_00000004",
-      "text": "(\"Tried to define texture %s as ground type %d, but it was already defined as %d\",in_stack_00000004,in_stack_0000000c);",
+      "text": "(\"Tried to define texture %s as ground type %d, but it was already defined as %d\",in_stack_00000004,_uStack00000008,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 34,
-      "match": "in_stack_0000000c",
-      "text": "(\"Tried to define texture %s as ground type %d, but it was already defined as %d\",in_stack_00000004,in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 46,
+      "line": 44,
       "match": "in_stack_00000004",
-      "text": "(in_stack_00000004,(char *)0x0,(char *)0x0,acStack_108,(char *)0x0);",
+      "text": "(in_stack_00000004,(char *)0x0,(char *)0x0,local_10c,(char *)0x0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 61,
+      "line": 62,
       "match": "in_stack_00000004",
-      "text": "apcStack_208[0] = in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 77,
-      "match": "in_stack_00000014",
-      "text": "(&DAT_03659190)[DAT_03654368] = in_stack_00000014;",
+      "text": "(\"Texture filename %s is too long to add to CGroundTypeList!\",in_stack_00000004);",
       "type": "stack_param"
     },
     {
@@ -355,28 +295,6 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0057840c (no EBP frame)",
       "type": "variadic_preserve"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Ground type list is full!  (Max is %d)\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Ground type list is full!  (Max is %d)",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 50,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Ground type list is full!  (Max is %d)\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Texture filename %s is too long to add to CGroundT...\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Texture filename %s is too long to add to CGroundTypeList!",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 64,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Texture filename %s is too long to add to CGroundTypeL",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 20,

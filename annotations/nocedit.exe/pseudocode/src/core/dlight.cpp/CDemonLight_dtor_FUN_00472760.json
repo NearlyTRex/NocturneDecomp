@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 45,
-    "complexity_score": 77,
+    "complexity_score": 102,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 2,
     "pseudocode_lines": 22,
-    "suspect_count": 5,
+    "suspect_count": 7,
     "suspect_types": [
-      "call_esp_preserve"
+      "call_esp_preserve",
+      "unaffected_reg"
     ],
     "total_lines": 67
   },
@@ -133,6 +134,20 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 8,
+      "match": "unaff_EBX",
+      "text": "uint unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 19,
+      "match": "unaff_EBX",
+      "text": "core_dcamera_cpp_CDemonCamera_dtor_FUN_0044c090(&this_ptr->base,1,unaff_EBX,unaff_retaddr);",
+      "type": "unaffected_reg"
+    },
     {
       "add_esp_value": 4,
       "call_address": "00472774",

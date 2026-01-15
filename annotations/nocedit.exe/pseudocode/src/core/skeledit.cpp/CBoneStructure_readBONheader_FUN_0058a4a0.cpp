@@ -18,25 +18,23 @@ core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0
   int iVar5;
   char *pcVar6;
   int *piVar7;
-  int *piVar8;
-  BADSPACEBASE *in_ESP;
-  uint *puVar9;
-  char *pcVar10;
-  streambuf **ppsVar11;
+  uint *puVar8;
+  int *piVar9;
+  int *piVar10;
+  char *pcVar11;
   int *piVar12;
-  char (*pacVar13) [30];
-  char *pcVar14;
-  streambuf **ppsVar15;
-  byte bVar16;
-  streambuf **str2;
-  streambuf **ppsVar17;
-  FILE *in_stack_00000014;
-  int *in_stack_00000018;
-  FILE *in_stack_0000001c;
-  int *in_stack_00000020;
-  char (*pacVar18) [30];
-  int aiStack_22c [100];
-  int aiStack_9c [8];
+  int *piVar13;
+  byte bVar14;
+  int *in_stack_00000004;
+  int local_248 [100];
+  int local_b8 [8];
+  int local_98;
+  int local_94;
+  int local_90;
+  int local_8c;
+  int local_88;
+  int local_84;
+  int local_80;
   int local_7c;
   int local_78;
   int local_74;
@@ -55,194 +53,188 @@ core_skeledit_cpp_CBoneStructure_readBONheader_FUN_0058a4a0
   int local_40;
   int local_3c;
   int local_38;
-  int local_34;
-  int local_30;
-  int local_2c;
-  int local_28;
+  int *local_34;
+  int *local_30;
+  int *local_2c;
+  int *local_28;
   int local_24;
-  int local_20;
+  int *local_20;
   int *local_1c;
-  int local_18;
-  streambuf **local_14;
-  streambuf **ppsStack_c;
-  streambuf **str1;
+  int *local_18;
+  int local_14;
   
-  bVar16 = 0;
+  bVar14 = 0;
   crt_stack_c_stack_probe_FUN_005ff9f3(0x25c);
   iVar5 = 1;
   do {
-    iVar4 = crt_stdio_c_fgetc_FUN_005fe840((FILE *)frame_count_out);
+    iVar4 = crt_stdio_c_fgetc_FUN_005fe840((FILE *)this_ptr);
     if (iVar4 < 0) break;
   } while ((iVar4 != 10) || (iVar5 = iVar5 + -1, 0 < iVar5));
-  crt_stdio_c_fscanf_FUN_005fe7c0
-            (in_stack_00000014,"%d,%d\n",frame_count_out,in_stack_00000018);
-  if (100 < (int)in_stack_00000014->_ptr) {
+  crt_stdio_c_fscanf_FUN_005fe7c0((FILE *)this_ptr,"%d,%d\n",in_stack_00000004,file);
+  if (100 < *in_stack_00000004) {
     g_CurrentFilename = "..\\core\\skeledit.cpp";
     g_CurrentLineNumber = 0x2a6;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Too bony!");
   }
   iVar5 = 1;
   do {
-    iVar4 = crt_stdio_c_fgetc_FUN_005fe840(in_stack_0000001c);
+    iVar4 = crt_stdio_c_fgetc_FUN_005fe840((FILE *)this_ptr);
     if (iVar4 < 0) break;
   } while ((iVar4 != 10) || (iVar5 = iVar5 + -1, 0 < iVar5));
   iVar5 = 0;
-  if (0 < (int)in_stack_0000001c->_ptr) {
-    local_1c = &in_stack_0000001c->_cnt;
-    local_14 = &in_stack_0000001c[1]._link;
-    pcVar14 = g_BoneNameBuffer[0];
+  if (0 < *in_stack_00000004) {
+    local_34 = in_stack_00000004 + 1;
+    local_2c = in_stack_00000004 + 9;
+    pcVar11 = g_BoneNameBuffer[0];
     do {
-      pcVar10 = (char *)(iVar5 * 0x84 + local_20);
-      crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_0000001c,"\"%[^\"]\",%d\n","\"%[^\"]\",%d\n",pcVar10,local_18);
-      pcVar6 = pcVar14 + 0x1e;
+      piVar9 = local_34 + iVar5 * 0x21;
+      crt_stdio_c_fscanf_FUN_005fe7c0((FILE *)this_ptr,"\"%[^\"]\",%d\n",piVar9,local_2c);
+      pcVar6 = pcVar11 + 0x1e;
       do {
-        cVar1 = *pcVar10;
-        *pcVar14 = cVar1;
-        if (cVar1 == '\0') break;
-        cVar1 = pcVar10[1];
-        pcVar10 = pcVar10 + 2;
-        pcVar14[1] = cVar1;
-        pcVar14 = pcVar14 + 2;
+        iVar4 = *piVar9;
+        *pcVar11 = (char)iVar4;
+        if ((char)iVar4 == '\0') break;
+        cVar1 = *(char *)((int)piVar9 + 1);
+        piVar9 = (int *)((int)piVar9 + 2);
+        pcVar11[1] = cVar1;
+        pcVar11 = pcVar11 + 2;
       } while (cVar1 != '\0');
       iVar5 = iVar5 + 1;
-      local_18 = local_18 + 0x84;
-      pcVar14 = pcVar6;
-    } while (iVar5 < *in_stack_00000018);
+      local_2c = local_2c + 0x21;
+      pcVar11 = pcVar6;
+    } while (iVar5 < *in_stack_00000004);
   }
   iVar5 = 1;
   do {
-    iVar4 = crt_stdio_c_fgetc_FUN_005fe840(in_stack_0000001c);
+    iVar4 = crt_stdio_c_fgetc_FUN_005fe840((FILE *)this_ptr);
     if (iVar4 < 0) break;
   } while ((iVar4 != 10) || (iVar5 = iVar5 + -1, 0 < iVar5));
-  if ((*(byte *)(in_stack_00000020 + 3) & 0x20) != 0) {
+  if ((this_ptr->bones[0].name[8] & 0x20U) != 0) {
     g_CurrentFilename = "..\\core\\skeledit.cpp";
     g_CurrentLineNumber = 699;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CBoneStructure::readBONheader - error reading file!");
   }
   iVar5 = 0;
-  if (0 < *in_stack_00000020) {
+  if (0 < *in_stack_00000004) {
     iVar4 = 0;
     do {
-      *(uint *)((int)aiStack_22c + iVar4) = 0;
-      for (iVar2 = iVar5; -1 < iVar2; iVar2 = in_stack_00000020[iVar2 * 0x21 + 9]) {
-        *(int *)((int)aiStack_22c + iVar4) = *(int *)((int)aiStack_22c + iVar4) + 1;
+      *(uint *)((int)local_248 + iVar4) = 0;
+      for (iVar2 = iVar5; -1 < iVar2; iVar2 = in_stack_00000004[iVar2 * 0x21 + 9]) {
+        *(int *)((int)local_248 + iVar4) = *(int *)((int)local_248 + iVar4) + 1;
       }
       iVar5 = iVar5 + 1;
       iVar4 = iVar4 + 4;
-    } while (iVar5 < *in_stack_00000020);
+    } while (iVar5 < *in_stack_00000004);
   }
-  iVar5 = *in_stack_00000020 + -1;
-  if (-1 < iVar5) {
-    local_14 = (streambuf **)(in_stack_00000020 + 1);
-    ppsStack_c = (streambuf **)(in_stack_00000020 + 1);
+  local_24 = *in_stack_00000004 + -1;
+  if (-1 < *in_stack_00000004 + -1) {
+    local_30 = in_stack_00000004 + 1;
+    local_28 = in_stack_00000004 + 1;
     do {
-      this_ptr = (CBoneStructure *)0x0;
-      if (0 < iVar5) {
-        piVar7 = (int *)(ppsStack_c + 9);
-        piVar8 = aiStack_22c;
-        str1 = local_14;
-        str2 = local_14;
-        ppsVar17 = ppsStack_c;
+      local_14 = 0;
+      if (0 < local_24) {
+        local_20 = local_30;
+        local_1c = local_30 + 0x21;
+        piVar7 = local_28 + 9;
+        local_18 = local_28 + 0x21;
+        piVar9 = local_248;
         do {
-          ppsVar17 = ppsVar17 + 0x21;
-          str2 = str2 + 0x21;
-          puVar9 = piVar8 + 1;
-          iVar4 = aiStack_22c[(int)this_ptr] - aiStack_22c[(int)((int)&this_ptr->bone_count + 1)];
-          if (iVar4 == 0) {
-            iVar4 = crt_string_c_stricmp_FUN_005fe7f0((char *)str1,(char *)str2);
+          puVar8 = piVar9 + 1;
+          iVar5 = local_248[local_14] - local_248[local_14 + 1];
+          if (iVar5 == 0) {
+            iVar5 = crt_string_c_stricmp_FUN_005fe7f0((char *)local_20,(char *)local_1c);
           }
-          if (0 < iVar4) {
-            ppsVar15 = ppsStack_c + (int)this_ptr * 0x21;
-            ppsVar11 = ppsVar15;
-            piVar12 = aiStack_9c;
-            for (iVar4 = 7; iVar4 != 0; iVar4 = iVar4 + -1) {
-              *piVar12 = (int)*ppsVar11;
-              ppsVar11 = ppsVar11 + (uint)bVar16 * -2 + 1;
-              piVar12 = piVar12 + (uint)bVar16 * -2 + 1;
+          if (0 < iVar5) {
+            piVar13 = local_28 + local_14 * 0x21;
+            piVar10 = piVar13;
+            piVar12 = local_b8;
+            for (iVar5 = 7; iVar5 != 0; iVar5 = iVar5 + -1) {
+              *piVar12 = *piVar10;
+              piVar10 = piVar10 + (uint)bVar14 * -2 + 1;
+              piVar12 = piVar12 + (uint)bVar14 * -2 + 1;
             }
-            *(ushort *)piVar12 = *(ushort *)ppsVar11;
-            local_7c = (int)ppsVar15[8];
-            local_78 = *piVar7;
-            local_74 = piVar7[1];
-            local_70 = piVar7[2];
-            local_6c = piVar7[3];
-            local_68 = piVar7[4];
-            local_64 = piVar7[5];
-            local_60 = piVar7[6];
-            local_5c = piVar7[7];
-            local_58 = piVar7[8];
-            local_54 = piVar7[9];
-            local_50 = piVar7[10];
-            local_4c = piVar7[0xb];
-            local_48 = piVar7[0xc];
-            local_44 = piVar7[0xd];
-            local_40 = piVar7[0xe];
-            local_3c = piVar7[0xf];
-            local_38 = piVar7[0x10];
-            local_34 = piVar7[0x11];
-            local_30 = piVar7[0x12];
-            local_2c = piVar7[0x13];
-            local_28 = piVar7[0x14];
-            local_24 = piVar7[0x15];
-            local_20 = piVar7[0x16];
-            local_1c = (int *)piVar7[0x17];
-            ppsVar11 = ppsVar17;
-            for (iVar4 = 0x21; iVar4 != 0; iVar4 = iVar4 + -1) {
-              *ppsVar15 = *ppsVar11;
-              ppsVar11 = ppsVar11 + (uint)bVar16 * -2 + 1;
-              ppsVar15 = ppsVar15 + (uint)bVar16 * -2 + 1;
+            *(short *)piVar12 = (short)*piVar10;
+            local_98 = piVar13[8];
+            local_94 = *piVar7;
+            local_90 = piVar7[1];
+            local_8c = piVar7[2];
+            local_88 = piVar7[3];
+            local_84 = piVar7[4];
+            local_80 = piVar7[5];
+            local_7c = piVar7[6];
+            local_78 = piVar7[7];
+            local_74 = piVar7[8];
+            local_70 = piVar7[9];
+            local_6c = piVar7[10];
+            local_68 = piVar7[0xb];
+            local_64 = piVar7[0xc];
+            local_60 = piVar7[0xd];
+            local_5c = piVar7[0xe];
+            local_58 = piVar7[0xf];
+            local_54 = piVar7[0x10];
+            local_50 = piVar7[0x11];
+            local_4c = piVar7[0x12];
+            local_48 = piVar7[0x13];
+            local_44 = piVar7[0x14];
+            local_40 = piVar7[0x15];
+            local_3c = piVar7[0x16];
+            local_38 = piVar7[0x17];
+            piVar10 = local_18;
+            for (iVar5 = 0x21; iVar5 != 0; iVar5 = iVar5 + -1) {
+              *piVar13 = *piVar10;
+              piVar10 = piVar10 + (uint)bVar14 * -2 + 1;
+              piVar13 = piVar13 + (uint)bVar14 * -2 + 1;
             }
-            piVar12 = aiStack_9c;
-            ppsVar11 = ppsVar17;
-            for (iVar4 = 0x21; iVar4 != 0; iVar4 = iVar4 + -1) {
-              *ppsVar11 = (streambuf *)*piVar12;
-              piVar12 = piVar12 + (uint)bVar16 * -2 + 1;
-              ppsVar11 = ppsVar11 + (uint)bVar16 * -2 + 1;
+            piVar10 = local_b8;
+            piVar13 = local_18;
+            for (iVar5 = 0x21; iVar5 != 0; iVar5 = iVar5 + -1) {
+              *piVar13 = *piVar10;
+              piVar10 = piVar10 + (uint)bVar14 * -2 + 1;
+              piVar13 = piVar13 + (uint)bVar14 * -2 + 1;
             }
-            uVar3 = *piVar8;
-            *piVar8 = *puVar9;
-            *puVar9 = uVar3;
+            uVar3 = *piVar9;
+            *piVar9 = *puVar8;
+            *puVar8 = uVar3;
           }
           piVar7 = piVar7 + 0x21;
-          str1 = str1 + 0x21;
-          this_ptr = (CBoneStructure *)((int)&this_ptr->bone_count + 1);
-          piVar8 = puVar9;
-        } while ((int)this_ptr < iVar5);
+          local_14 = local_14 + 1;
+          local_20 = local_20 + 0x21;
+          local_1c = local_1c + 0x21;
+          local_18 = local_18 + 0x21;
+          piVar9 = puVar8;
+        } while (local_14 < local_24);
       }
-      iVar5 = iVar5 + -1;
-    } while (-1 < iVar5);
+      local_24 = local_24 + -1;
+    } while (-1 < local_24);
   }
   iVar5 = 0;
-  if (0 < *in_stack_00000020) {
-    pacVar13 = g_BoneNameBuffer;
-    piVar8 = in_stack_00000020;
+  piVar9 = in_stack_00000004;
+  if (0 < *in_stack_00000004) {
     do {
-      pacVar18 = pacVar13;
       iVar4 = core_skeledit_cpp_FUN_0058ac30();
-      piVar8[0xce5] = iVar4;
+      piVar9[0xce5] = iVar4;
       if (iVar4 < 0) {
         g_CurrentFilename = "..\\core\\skeledit.cpp";
         g_CurrentLineNumber = 0x2e8;
-        core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze while shuffling bones...",pacVar18);
+        core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze while shuffling bones...");
       }
-      piVar8 = piVar8 + 1;
       iVar5 = iVar5 + 1;
-      pacVar13 = pacVar13 + 1;
-    } while (iVar5 < *in_stack_00000020);
+      piVar9 = piVar9 + 1;
+    } while (iVar5 < *in_stack_00000004);
   }
   iVar5 = 0;
-  piVar8 = in_stack_00000020;
-  if (0 < *in_stack_00000020) {
+  piVar9 = in_stack_00000004;
+  if (0 < *in_stack_00000004) {
     do {
-      if ((-1 < piVar8[9]) &&
-         (iVar4 = in_stack_00000020[piVar8[9] + 0xce5], piVar8[9] = iVar4, iVar5 <= iVar4)) {
+      if ((-1 < piVar9[9]) &&
+         (iVar4 = in_stack_00000004[piVar9[9] + 0xce5], piVar9[9] = iVar4, iVar5 <= iVar4)) {
         g_CurrentFilename = "..\\core\\skeledit.cpp";
         g_CurrentLineNumber = 0x2f0;
         core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze while shuffling parent bones...");
       }
       iVar5 = iVar5 + 1;
-      piVar8 = piVar8 + 0x21;
-    } while (iVar5 < *in_stack_00000020);
+      piVar9 = piVar9 + 0x21;
+    } while (iVar5 < *in_stack_00000004);
   }
   return;
 }

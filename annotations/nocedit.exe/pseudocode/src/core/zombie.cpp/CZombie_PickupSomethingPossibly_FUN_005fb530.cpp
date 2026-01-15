@@ -24,7 +24,6 @@ uint core_zombie_cpp_CZombie_PickupSomethingPossibly_FUN_005fb530(void)
   int iVar9;
   int iVar10;
   CBoundingBox3D *pCVar11;
-  BADSPACEBASE *in_ESP;
   int iVar12;
   CCharacter *in_stack_00000004;
   float in_stack_00000008;

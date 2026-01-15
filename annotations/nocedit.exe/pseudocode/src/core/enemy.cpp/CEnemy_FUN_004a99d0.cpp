@@ -10,7 +10,6 @@ float * __cdecl core_enemy_cpp_CEnemy_FUN_004a99d0(CEnemy *this_ptr)
 
 {
   float fVar1;
-  BADSPACEBASE *in_ESP;
   float *in_stack_00000008;
   CBoundingBox3D CStack_2c;
   

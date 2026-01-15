@@ -1,17 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 112,
-    "complexity_score": 111,
+    "complexity_score": 74,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 6,
-    "pseudocode_lines": 51,
-    "suspect_count": 5,
+    "pseudocode_lines": 49,
+    "suspect_count": 2,
     "suspect_types": [
-      "call_esp_preserve",
-      "unaffected_reg"
+      "call_esp_preserve"
     ],
-    "total_lines": 163
+    "total_lines": 161
   },
   "cross_references": [
     {
@@ -155,27 +154,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 10,
-      "match": "unaff_EBP",
-      "text": "CStrList *unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 19,
-      "match": "unaff_EBP",
-      "text": "(wildcard_pattern,pcVar4,(int)unaff_EBP);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 21,
-      "match": "unaff_EBP",
-      "text": "unaff_EBP = &g_SoundFileList;",
-      "type": "unaffected_reg"
-    },
     {
       "add_esp_value": 8,
       "call_address": "005b1f0c",

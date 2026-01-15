@@ -13,64 +13,76 @@ core_fire_cpp_CStake_spawn_FUN_004bfe90
 
 {
   CKeyFramedModel *pCVar1;
-  BADSPACEBASE *in_ESP;
-  CVector3f local_68;
-  float local_5c;
-  float local_58;
-  float local_48;
-  byte local_44 [8];
-  float local_3c;
-  float local_38;
-  byte local_34 [20];
+  CMatrix3x3f local_b4;
+  float local_8c;
+  float local_88;
+  float local_84;
+  float local_80;
+  float local_7c;
+  float local_78;
+  CVector3f local_74;
+  float local_68;
+  float local_64;
+  float local_60;
+  CVector3f local_5c;
+  CVector3f local_50;
+  CVector3f local_44;
+  CVector3f local_38;
+  CVector3f local_2c;
   CVector3f local_20;
   float local_14;
   float local_10;
   
-  core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
-            ((CMatrix3x3f *)&stack0xffffff4c,orientation_angles);
-  local_34._0_4_ = 0.0;
-  local_34._4_4_ = 0.0;
-  local_34._8_4_ = 10.0;
-  core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
-            ((CMatrix3x3f *)&stack0xffffff50,(CVector3f *)(local_44 + 4),(CVector3f *)local_34);
-  local_58 = (launch_direction->z * (float)local_34._0_4_ +
-             launch_direction->x * local_3c + launch_direction->y * local_38) * 2f;
-  local_68.z = launch_direction->x * local_58;
-  local_5c = launch_direction->y * local_58;
-  local_58 = launch_direction->z * local_58;
-  local_20.z = local_68.z - local_3c;
-  local_14 = local_5c - local_38;
-  local_10 = local_58 - (float)local_34._0_4_;
-  if (&local_3c != &local_20.z) {
-    local_3c = local_20.z;
-    local_38 = local_14;
-    local_34._0_4_ = local_10;
+  core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(&local_b4,orientation_angles);
+  local_38.x = 0.0;
+  local_38.y = 0.0;
+  local_38.z = 10.0;
+  core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0(&local_b4,&local_44,&local_38);
+  local_14 = (launch_direction->z * local_44.z +
+             launch_direction->x * local_44.x + launch_direction->y * local_44.y) * 2f;
+  local_68 = launch_direction->x * local_14;
+  local_64 = launch_direction->y * local_14;
+  local_60 = launch_direction->z * local_14;
+  local_20.x = local_68 - local_44.x;
+  local_20.y = local_64 - local_44.y;
+  local_20.z = local_60 - local_44.z;
+  if (&local_44 != &local_20) {
+    local_44.x = local_20.x;
+    local_44.y = local_20.y;
+    local_44.z = local_20.z;
   }
-  local_48 = -local_3c;
-  local_44._0_4_ = -local_38;
-  local_44._4_4_ = -(float)local_34._0_4_;
-  if (&local_3c != &local_48) {
-    local_3c = local_48;
-    local_38 = (float)local_44._0_4_;
-    local_34._0_4_ = local_44._4_4_;
+  local_50.x = -local_44.x;
+  local_50.y = -local_44.y;
+  local_50.z = -local_44.z;
+  if (&local_44 != &local_50) {
+    local_44.x = local_50.x;
+    local_44.y = local_50.y;
+    local_44.z = local_50.z;
   }
-  orientation_angles->x = 0.0;
+  this_ptr->active = 0;
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
                      (&g_FireEffectFlamingStakeModel);
-  local_20.x = (pCVar1->bounds_max).x - (pCVar1->bounds_min).x;
-  local_20.y = (pCVar1->bounds_max).y - (pCVar1->bounds_min).y;
-  local_20.z = (pCVar1->bounds_max).z - (pCVar1->bounds_min).z;
-  if (&local_68 != &local_20) {
-    local_68.x = local_20.x;
-    local_68.y = local_20.y;
-    local_68.z = local_20.z;
+  local_8c = (pCVar1->bounds_min).x;
+  local_88 = (pCVar1->bounds_min).y;
+  local_84 = (pCVar1->bounds_min).z;
+  local_80 = (pCVar1->bounds_max).x;
+  local_7c = (pCVar1->bounds_max).y;
+  local_2c.x = local_80 - local_8c;
+  local_2c.y = local_7c - local_88;
+  local_78 = (pCVar1->bounds_max).z;
+  local_2c.z = local_78 - local_84;
+  if (&local_74 != &local_2c) {
+    local_74.x = local_2c.x;
+    local_74.y = local_2c.y;
+    local_74.z = local_2c.z;
   }
   core_box_cpp_CBox_setupCorners_FUN_0041dd20
-            ((CBox *)&launch_direction->y,spawn_position,spawn_velocity,&local_68,2.0);
-  local_48 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-9.424778,9.424778);
-  local_44._4_4_ = 0.0;
-  local_44._4_4_ = core_actor_cpp_getRandomFloat_FUN_0040cc10(-9.424778,9.424778);
-  core_box_cpp_CBox_setupVelocities_FUN_00420180
-            ((CBox *)&launch_direction->y,(CVector3f *)(local_34 + 8),(CVector3f *)local_44);
+            (&this_ptr->box,(CVector3f *)spawn_scale,orientation_angles,&local_74,2.0);
+  local_5c.x = core_actor_cpp_getRandomFloat_FUN_0040cc10(-9.424778,9.424778);
+  local_5c.z = 0.0;
+  local_10 = local_5c.x;
+  local_5c.y = core_actor_cpp_getRandomFloat_FUN_0040cc10(-9.424778,9.424778);
+  local_10 = local_5c.y;
+  core_box_cpp_CBox_setupVelocities_FUN_00420180(&this_ptr->box,&local_44,&local_5c);
   return;
 }

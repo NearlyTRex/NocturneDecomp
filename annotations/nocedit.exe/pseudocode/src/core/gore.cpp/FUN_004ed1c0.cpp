@@ -15,11 +15,11 @@ void core_gore_cpp_FUN_004ed1c0(void)
   FILE *in_stack_00000008;
   
   crt_stdio_c_fprintf_FUN_005fe6d0
-            (in_stack_00000008,"%f,%f,%f\n",(double)(float)in_stack_00000004[1],
+            (in_stack_00000008,"%f,%f,%f\n",SUB84 /* extract 2-byte value */((double)(float)in_stack_00000004[1],0),
+             (int)((ulonglong)(double)(float)in_stack_00000004[1] >> 0x20),
              SUB84 /* extract 2-byte value */((double)(float)in_stack_00000004[2],0),
              (int)((ulonglong)(double)(float)in_stack_00000004[2] >> 0x20),
-             SUB84 /* extract 2-byte value */((double)(float)in_stack_00000004[3],0),
-             (int)((ulonglong)(double)(float)in_stack_00000004[3] >> 0x20));
+             (double)(float)in_stack_00000004[3]);
   crt_stdio_c_fprintf_FUN_005fe6d0
             (in_stack_00000008,"%d,%d\n",*in_stack_00000004,in_stack_00000004[4]);
   crt_stdio_c_fprintf_FUN_005fe6d0

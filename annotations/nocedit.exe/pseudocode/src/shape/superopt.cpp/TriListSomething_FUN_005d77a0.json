@@ -1,22 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 511,
-    "complexity_score": 741,
+    "complexity_score": 561,
     "cross_reference_count": 1,
     "function_call_count": 27,
     "global_count": 51,
-    "pseudocode_lines": 206,
-    "suspect_count": 50,
+    "pseudocode_lines": 201,
+    "suspect_count": 34,
     "suspect_types": [
-      "badspacebase",
-      "concat_artifact",
       "format_string_mismatch",
       "param_count_too_few",
       "pointer_cast",
-      "register_param",
       "unknown_field"
     ],
-    "total_lines": 717
+    "total_lines": 712
   },
   "cross_references": [
     {
@@ -641,7 +638,7 @@
     {
       "add_esp_value": 12,
       "call_address": "005d77de",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -657,7 +654,7 @@
     {
       "add_esp_value": 8,
       "call_address": "005d7851",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -673,7 +670,7 @@
     {
       "add_esp_value": 16,
       "call_address": "005d786e",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -689,7 +686,7 @@
     {
       "add_esp_value": 8,
       "call_address": "005d78b3",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -705,7 +702,7 @@
     {
       "add_esp_value": 32,
       "call_address": "005d7936",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -721,7 +718,7 @@
     {
       "add_esp_value": 8,
       "call_address": "005d7960",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -737,7 +734,7 @@
     {
       "add_esp_value": 20,
       "call_address": "005d7ad2",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -753,7 +750,7 @@
     {
       "add_esp_value": 4,
       "call_address": "005d7d97",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1350,325 +1347,213 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 8,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 8,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 47,
+      "line": 43,
       "match": "(int *)((int)",
-      "text": "iVar7 = iVar7 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar4) + -2;",
+      "text": "iVar6 = iVar6 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar3) + -2;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 64,
+      "line": 60,
       "match": "(double *)((int)",
-      "text": "*(double *)((int)&((CVector3d *)local_58._4_4_)->x + iVar4) =",
+      "text": "*(double *)((int)&((local_58.vertex_data)->position).x + iVar3) =",
       "type": "pointer_cast"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 64,
-      "match": "._4_4_",
-      "text": "*(double *)((int)&((CVector3d *)local_58._4_4_)->x + iVar4) =",
-      "type": "unknown_field"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 65,
+      "line": 61,
       "match": "(float *)((int)",
       "text": "(double)*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 66,
+      "line": 62,
       "match": "(double *)((int)",
-      "text": "*(double *)((int)&((CVector3d *)local_58._4_4_)->y + iVar4) =",
+      "text": "*(double *)((int)&((local_58.vertex_data)->position).y + iVar3) =",
       "type": "pointer_cast"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 66,
-      "match": "._4_4_",
-      "text": "*(double *)((int)&((CVector3d *)local_58._4_4_)->y + iVar4) =",
-      "type": "unknown_field"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 67,
+      "line": 63,
       "match": "(float *)((int)",
       "text": "(double)*(float *)((int)&g_LoadedVertices[0].vertex.y + iVar2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 68,
+      "line": 64,
       "match": "(double *)((int)",
-      "text": "*(double *)((int)&((CVector3d *)local_58._4_4_)->z + iVar4) =",
+      "text": "*(double *)((int)&((local_58.vertex_data)->position).z + iVar3) =",
       "type": "pointer_cast"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 68,
-      "match": "._4_4_",
-      "text": "*(double *)((int)&((CVector3d *)local_58._4_4_)->z + iVar4) =",
-      "type": "unknown_field"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 69,
+      "line": 65,
       "match": "(float *)((int)",
       "text": "(double)*(float *)((int)&g_LoadedVertices[0].vertex.z + iVar2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 73,
+      "line": 69,
       "match": "(float *)((int)",
       "text": "(double)*(float *)((int)&g_LoadedVertices[0].vertex.x + iVar2),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 74,
+      "line": 70,
       "match": "(float *)((int)",
       "text": "(double)*(float *)((int)&g_LoadedVertices[0].vertex.y + iVar2),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 75,
+      "line": 71,
       "match": "(float *)((int)",
       "text": "(double)*(float *)((int)&g_LoadedVertices[0].vertex.z + iVar2));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 94,
+      "line": 90,
       "match": "(int *)((int)",
       "text": "local_168.vertex_idx_0 = *(int *)((int)g_ModelPolygonData[0].vertex_indices + local_28);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 96,
+      "line": 92,
       "match": "(float *)((int)",
       "text": "(double)*(float *)((int)g_ModelPolygonData[0].uv_u + local_28) * 0.00390625;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 98,
+      "line": 94,
       "match": "(float *)((int)",
       "text": "(double)*(float *)((int)g_ModelPolygonData[0].uv_v + local_28) * 0.00390625;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 136,
+      "line": 132,
       "match": "(int *)((int)",
       "text": "if (2 < *(int *)((int)g_ModelPolygonData[0].vertex_indices + local_28 + -0x14)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 139,
+      "line": 135,
       "match": "(float *)((int)",
       "text": "(double)*(float *)((int)g_ModelPolygonData[0].vertex_indices + iVar2 + 0x3c) *",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 142,
+      "line": 138,
       "match": "(float *)((int)",
       "text": "(double)*(float *)((int)g_ModelPolygonData[0].uv_u + iVar2 + 0x3c) * 0.00390625;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 144,
+      "line": 140,
       "match": "(float *)((int)",
       "text": "(double)*(float *)((int)g_ModelPolygonData[0].uv_u + iVar2) * 0.00390625;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 146,
+      "line": 142,
       "match": "(float *)((int)",
       "text": "(double)*(float *)((int)g_ModelPolygonData[0].uv_v + iVar2) * 0.00390625;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 147,
+      "line": 143,
       "match": "(int *)((int)",
       "text": "local_168.vertex_idx_1 = *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar2 + -4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 148,
+      "line": 144,
       "match": "(int *)((int)",
       "text": "local_168.vertex_idx_2 = *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
+      "line": 149,
+      "match": "(int *)((int)",
+      "text": "local_34 = (int *)((int)&((CPoly *)((local_58.poly_array)->uv_coords + -1))->parent_obj +",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 153,
       "match": "(int *)((int)",
-      "text": "piVar3 = (int *)((int)&((CPoly *)(local_4c->uv_coords + -1))->parent_obj + local_14);",
+      "text": "local_34[(uint)bVar7 * -2 + 2] = *(int *)((int)&local_168 + (uint)bVar7 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 154,
-      "match": "CONCAT44",
-      "text": "uStack_38 = (double)CONCAT44 /* combine 2-byte values */(piVar3,(uint)uStack_38);",
-      "type": "concat_artifact"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 157,
+      "line": 155,
       "match": "(int *)((int)",
-      "text": "piVar3[(uint)bVar8 * -2 + 2] = *(int *)((int)&local_168 + (uint)bVar8 * -8 + 8);",
+      "text": "*(int *)((int)&local_168 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 0xc);",
       "type": "pointer_cast"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Unknown/mangled field access",
+      "line": 158,
+      "match": "._0_4_",
+      "text": "local_34[0x10] = local_168.normal.x._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
       "line": 159,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)&local_168 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 0xc);",
-      "type": "pointer_cast"
+      "match": "._4_4_",
+      "text": "local_34[0x11] = local_168.normal.x._4_4_;",
+      "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 162,
+      "line": 160,
+      "match": "._0_4_",
+      "text": "local_34[0x12] = local_168.normal.y._0_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 161,
       "match": "._4_4_",
-      "text": "*(uint *)(uStack_38._4_4_ + 0x40) = local_168.normal.x._0_4_;",
+      "text": "local_34[0x13] = local_168.normal.y._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 162,
       "match": "._0_4_",
-      "text": "*(uint *)(uStack_38._4_4_ + 0x40) = local_168.normal.x._0_4_;",
+      "text": "local_34[0x14] = local_168.normal.z._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 163,
       "match": "._4_4_",
-      "text": "*(uint *)(uStack_38._4_4_ + 0x44) = local_168.normal.x._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 163,
-      "match": "._4_4_",
-      "text": "*(uint *)(uStack_38._4_4_ + 0x44) = local_168.normal.x._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 164,
-      "match": "._4_4_",
-      "text": "*(uint *)(uStack_38._4_4_ + 0x48) = local_168.normal.y._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 164,
-      "match": "._0_4_",
-      "text": "*(uint *)(uStack_38._4_4_ + 0x48) = local_168.normal.y._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 165,
-      "match": "._4_4_",
-      "text": "*(uint *)(uStack_38._4_4_ + 0x4c) = local_168.normal.y._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 165,
-      "match": "._4_4_",
-      "text": "*(uint *)(uStack_38._4_4_ + 0x4c) = local_168.normal.y._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 166,
-      "match": "._4_4_",
-      "text": "*(uint *)(uStack_38._4_4_ + 0x50) = local_168.normal.z._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 166,
-      "match": "._0_4_",
-      "text": "*(uint *)(uStack_38._4_4_ + 0x50) = local_168.normal.z._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 167,
-      "match": "._4_4_",
-      "text": "*(uint *)(uStack_38._4_4_ + 0x54) = local_168.normal.z._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 167,
-      "match": "._4_4_",
-      "text": "*(uint *)(uStack_38._4_4_ + 0x54) = local_168.normal.z._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 168,
-      "match": "._4_4_",
-      "text": "*(int *)(uStack_38._4_4_ + 0x58) = local_168.adjacency_flags;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 169,
-      "match": "._4_4_",
-      "text": "*(int *)(uStack_38._4_4_ + 0x5c) = local_168.material_id;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 170,
-      "match": "._4_4_",
-      "text": "*(uint *)(uStack_38._4_4_ + 0x60) = local_168.flags;",
+      "text": "local_34[0x15] = local_168.normal.z._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 175,
+      "line": 171,
       "match": "(int *)((int)",
       "text": "} while (local_18 < *(int *)((int)g_ModelPolygonData[0].vertex_indices + local_24 + -0x14));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 198,
-      "match": "(CObj *)((int)",
-      "text": "DAT_03f6bbe4 = (CObj *)((int)&DAT_03f6bbe4->vertex_count + 1);",
       "type": "pointer_cast"
     },
     {
@@ -1688,8 +1573,8 @@
       "expected_args": 1,
       "format_string": "reduce\\\\cube%04d.txt",
       "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 38,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_fc,\"reduce\\\\cube%04d.txt\");",
+      "line_number": 34,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_100,\"reduce\\\\cube%04d.txt\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
     },
@@ -1699,7 +1584,7 @@
       "expected_args": 2,
       "format_string": "%d %d\\n",
       "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 52,
+      "line_number": 48,
       "match": "crt_stdio_c_fprintf_FUN_005fe6d0(local_1c,\"%d %d\\n\",g_VertexCount);",
       "text": "Format string expects 2 args but got 1",
       "type": "format_string_mismatch"
@@ -1710,7 +1595,7 @@
       "expected_args": 3,
       "format_string": "%d %d %d\\n",
       "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 150,
+      "line_number": 146,
       "match": "crt_stdio_c_fprintf_FUN_005fe6d0(local_1c,\"%d %d %d\\n\");",
       "text": "Format string expects 3 args but got 0",
       "type": "format_string_mismatch"

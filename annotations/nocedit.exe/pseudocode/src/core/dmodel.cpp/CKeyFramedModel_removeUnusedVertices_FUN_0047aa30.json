@@ -1,19 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 337,
-    "complexity_score": 686,
+    "complexity_score": 289,
     "cross_reference_count": 2,
     "function_call_count": 7,
     "global_count": 13,
-    "pseudocode_lines": 166,
-    "suspect_count": 50,
+    "pseudocode_lines": 164,
+    "suspect_count": 11,
     "suspect_types": [
       "call_esp_preserve",
-      "stack_param",
-      "unaffected_reg",
+      "pointer_cast",
       "variadic_preserve"
     ],
-    "total_lines": 503
+    "total_lines": 501
   },
   "cross_references": [
     {
@@ -292,295 +291,22 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 11,
-      "match": "unaff_EBP",
-      "text": "void *unaff_EBP;",
-      "type": "unaffected_reg"
+      "description": "Complex pointer cast",
+      "line": 67,
+      "match": "(byte *)((int)",
+      "text": "local_14 = (byte *)((int)local_14 + 1);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 16,
-      "match": "unaff_EDI",
-      "text": "int *unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_00000008",
-      "text": "CKeyFramedModel *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_0000000c",
-      "text": "int in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_00000010",
-      "text": "int in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_00000014",
-      "text": "int in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 24,
-      "match": "in_stack_00000018",
-      "text": "int in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_0000001c",
-      "text": "CKeyFramedModel *in_stack_0000001c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_00000008",
-      "text": "core_dmodel_cpp_CKeyFramedModel_validatePartList_FUN_0047bf40(in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_0000000c",
-      "text": "if ((0 < *(int *)(in_stack_0000000c + 0x104)) && (0 < *(int *)(in_stack_0000000c + 0x100))) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_0000000c",
-      "text": "if ((0 < *(int *)(in_stack_0000000c + 0x104)) && (0 < *(int *)(in_stack_0000000c + 0x100))) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 34,
-      "match": "in_stack_0000000c",
-      "text": "(*(int *)(in_stack_0000000c + 0x104) * 4,\"..\\\\core\\\\dmodel.cpp\",0x868);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 39,
-      "match": "in_stack_00000010",
-      "text": "(\"CKeyFramedModel::removeUnusedVertices out of memory for auxArray, vertexCount = %d\",*(uint *)(in_stack_00000010 + 0x104));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 41,
-      "match": "in_stack_00000014",
-      "text": "crt_memory_c_memset_FUN_005fde40(unaff_EBP,0,*(int *)(in_stack_00000014 + 0x104) << 2);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 41,
-      "match": "unaff_EBP",
-      "text": "crt_memory_c_memset_FUN_005fde40(unaff_EBP,0,*(int *)(in_stack_00000014 + 0x104) << 2);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 43,
-      "match": "in_stack_00000018",
-      "text": "if (0 < *(int *)(in_stack_00000018 + 0x110)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 46,
-      "match": "in_stack_00000018",
-      "text": "iVar8 = *(int *)(in_stack_00000018 + 0x114) + iVar10;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 51,
-      "match": "unaff_EDI",
-      "text": "unaff_EDI[*(int *)(iVar4 + 0x18)] = 1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 58,
-      "match": "in_stack_00000018",
-      "text": "} while (iVar6 < *(int *)(in_stack_00000018 + 0x110));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 62,
-      "match": "unaff_EDI",
-      "text": "piVar3 = unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 63,
-      "match": "in_stack_00000018",
-      "text": "if (0 < *(int *)(in_stack_00000018 + 0x104)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 74,
-      "match": "in_stack_00000018",
-      "text": "} while (iVar10 < *(int *)(in_stack_00000018 + 0x104));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 76,
-      "match": "in_stack_00000018",
-      "text": "if (iVar6 < *(int *)(in_stack_00000018 + 0x104)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 78,
-      "match": "in_stack_00000018",
-      "text": "if (0 < *(int *)(in_stack_00000018 + 0x110)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 81,
-      "match": "in_stack_00000018",
-      "text": "iVar9 = *(int *)(in_stack_00000018 + 0x114) + iVar4;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 86,
-      "match": "unaff_EDI",
-      "text": "*(int *)(iVar2 + 0x18) = unaff_EDI[*(int *)(iVar2 + 0x18)];",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 93,
-      "match": "in_stack_00000018",
-      "text": "} while (iVar10 < *(int *)(in_stack_00000018 + 0x110));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 96,
-      "match": "in_stack_00000018",
-      "text": "puVar5 = *(uint **)(in_stack_00000018 + 0x10c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 98,
-      "match": "in_stack_00000018",
-      "text": "if (0 < *(int *)(in_stack_00000018 + 0x100)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 101,
-      "match": "unaff_EDI",
-      "text": "piVar3 = unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 102,
-      "match": "in_stack_00000018",
-      "text": "if (0 < *(int *)(in_stack_00000018 + 0x104)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 116,
-      "match": "in_stack_00000018",
-      "text": "} while (iVar4 < *(int *)(in_stack_00000018 + 0x104));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 119,
-      "match": "in_stack_00000018",
-      "text": "} while (iVar10 < *(int *)(in_stack_00000018 + 0x100));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 121,
-      "match": "in_stack_00000018",
-      "text": "*(int *)(in_stack_00000018 + 0x104) = iVar6;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 123,
-      "match": "in_stack_00000018",
-      "text": "this_ptr = *(CKeyFramedModel **)(in_stack_00000018 + 0x114);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 124,
-      "match": "in_stack_00000018",
-      "text": "if (0 < *(int *)(in_stack_00000018 + 0x5584)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 125,
-      "match": "in_stack_00000018",
-      "text": "local_10 = (int *)(in_stack_00000018 + 0x5588);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 158,
-      "match": "in_stack_00000018",
-      "text": "} while (iVar6 < *(int *)(in_stack_00000018 + 0x5584));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 163,
-      "match": "unaff_EDI",
-      "text": "crt_memory_c_free_FUN_005fe659(unaff_EDI);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 164,
-      "match": "in_stack_0000001c",
-      "text": "core_dmodel_cpp_CKeyFramedModel_validatePartList_FUN_0047bf40(in_stack_0000001c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 165,
-      "match": "in_stack_0000001c",
-      "text": "core_dmodel_cpp_CKeyFramedModel_calcNormals_FUN_00477e60(in_stack_0000001c);",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 142,
+      "match": "(byte *)((int)",
+      "text": "puVar8 = (byte *)((int)&(pSVar1->base).base.type + 1);",
+      "type": "pointer_cast"
     },
     {
       "call_address": "0047aabe",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -594,7 +320,7 @@
     },
     {
       "call_address": "0047acd5",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

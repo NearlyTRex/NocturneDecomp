@@ -21,7 +21,6 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056c990(CDemonSet *this_ptr)
   CVector3f *input_local_point;
   int iVar4;
   CDemonSet *pCVar5;
-  BADSPACEBASE *in_ESP;
   CVector3i local_5c;
   CVector3f local_50;
   CVector3f local_44;

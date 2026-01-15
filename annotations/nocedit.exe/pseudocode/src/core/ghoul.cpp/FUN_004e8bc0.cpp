@@ -16,14 +16,12 @@ int core_ghoul_cpp_FUN_004e8bc0(void)
   CVector3f *pCVar1;
   CVector3f *pCVar2;
   int iVar3;
-  BADSPACEBASE *in_ESP;
   int in_stack_00000004;
   CVector3f *in_stack_00000008;
   int bone_index;
   CVector3f CStack_5c;
   CVector3f CStack_50;
-  byte local_44 [8];
-  float local_3c;
+  CVector3f local_44;
   CVector3f CStack_38;
   CVector3f local_2c;
   CVector3f CStack_20;
@@ -48,20 +46,18 @@ int core_ghoul_cpp_FUN_004e8bc0(void)
 LAB_004e8c4c:
         pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
                            (this_ptr,pCVar1,bone_index);
-        if ((CVector3f *)(local_44 + 4) != pCVar1) {
-          local_44._0_4_ = pCVar1->x;
-          local_44._4_4_ = pCVar1->y;
-          local_3c = pCVar1->z;
+        if (&local_44 != pCVar1) {
+          local_44.x = pCVar1->x;
+          local_44.y = pCVar1->y;
+          local_44.z = pCVar1->z;
         }
-        local_44._4_4_ =
-             local_2c.y * (float)0.29999999999999999 + (float)local_44._4_4_ * (float)0.69999999999999996;
-        local_44._0_4_ =
-             local_2c.x * (float)0.5 + (float)local_44._0_4_ * (float)0.5;
+        local_44.y = local_2c.y * (float)0.29999999999999999 + local_44.y * (float)0.69999999999999996;
+        local_44.x = local_2c.x * (float)0.5 + local_44.x * (float)0.5;
         pCVar1 = in_stack_00000008 + iVar3;
-        if (pCVar1 != (CVector3f *)local_44) {
-          pCVar1->x = (float)local_44._0_4_;
-          pCVar1->y = (float)local_44._4_4_;
-          pCVar1->z = local_3c;
+        if (pCVar1 != &local_44) {
+          pCVar1->x = local_44.x;
+          pCVar1->y = local_44.y;
+          pCVar1->z = local_44.z;
         }
 LAB_004e8cce:
         iVar3 = iVar3 + 1;

@@ -10,10 +10,10 @@ void __cdecl engine_matrix_c_normalizeVector3DFixed_FUN_0050d970(CVector3i vecto
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   int *unaff_ESI;
   byte bVar2;
-  int aiStackY_ffc [1016];
+  int aiStackY_1000 [1017];
+  int local_18;
   int local_14;
   int local_10;
   
@@ -22,11 +22,12 @@ void __cdecl engine_matrix_c_normalizeVector3DFixed_FUN_0050d970(CVector3i vecto
                     (*(int *)(vector.x + 4) * *(int *)(vector.x + 4) +
                      *(int *)vector.x * *(int *)vector.x +
                      *(int *)(vector.x + 8) * *(int *)(vector.x + 8));
-  local_14 = (int)(((longlong)*(int *)vector.x * 0x7fff) / (longlong)iVar1) * 2;
-  local_10 = (int)(((longlong)*(int *)(vector.x + 4) * 0x7fff) / (longlong)iVar1) * 2;
-  *unaff_ESI = local_14;
-  unaff_ESI[(uint)bVar2 * -2 + 1] = *(int *)((int)&stack0xfffffff0 + (uint)bVar2 * -8);
+  local_18 = (int)(((longlong)*(int *)vector.x * 0x7fff) / (longlong)iVar1) * 2;
+  local_14 = (int)(((longlong)*(int *)(vector.x + 4) * 0x7fff) / (longlong)iVar1) * 2;
+  local_10 = (int)(((longlong)*(int *)(vector.x + 8) * 0x7fff) / (longlong)iVar1) * 2;
+  *unaff_ESI = local_18;
+  unaff_ESI[(uint)bVar2 * -2 + 1] = *(int *)((int)&stack0xffffffec + (uint)bVar2 * -8);
   (unaff_ESI + (uint)bVar2 * -2 + 1)[(uint)bVar2 * -2 + 1] =
-       *(int *)(&stack0xfffffff4 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
+       *(int *)((int)&stack0xfffffff0 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
   return;
 }

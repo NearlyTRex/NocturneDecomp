@@ -12,28 +12,27 @@ int __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e350(CActorPropertyList *t
   char cVar1;
   int iVar2;
   char *pcVar3;
-  char *pcVar4;
   char *in_stack_00000008;
   void *in_stack_0000000c;
+  uint in_stack_00000010;
   char *in_stack_00000014;
   void *in_stack_00000018;
   
   iVar2 = core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0
                     (this_ptr,5,in_stack_00000008,in_stack_0000000c,in_stack_00000018);
-  pcVar3 = in_stack_00000014;
   if (in_stack_00000014 == (char *)0x0) {
-    pcVar3 = &DAT_00614464;
+    in_stack_00000014 = &DAT_00614464;
   }
-  pcVar4 = (char *)(iVar2 + 0x84);
+  pcVar3 = (char *)(iVar2 + 0x84);
   do {
-    cVar1 = *pcVar3;
-    *pcVar4 = cVar1;
+    cVar1 = *in_stack_00000014;
+    *pcVar3 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar3[1];
+    cVar1 = in_stack_00000014[1];
+    in_stack_00000014 = in_stack_00000014 + 2;
+    pcVar3[1] = cVar1;
     pcVar3 = pcVar3 + 2;
-    pcVar4[1] = cVar1;
-    pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  *(char **)(iVar2 + 0x5c) = in_stack_00000014;
+  *(uint *)(iVar2 + 0x5c) = in_stack_00000010;
   return iVar2;
 }

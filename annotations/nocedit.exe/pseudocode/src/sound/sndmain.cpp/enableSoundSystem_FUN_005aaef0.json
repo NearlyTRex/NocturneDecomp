@@ -1,11 +1,11 @@
 {
   "complexity": {
     "assembly_lines": 209,
-    "complexity_score": 580,
+    "complexity_score": 583,
     "cross_reference_count": 9,
     "function_call_count": 9,
     "global_count": 47,
-    "pseudocode_lines": 75,
+    "pseudocode_lines": 78,
     "suspect_count": 48,
     "suspect_types": [
       "call_esp_preserve",
@@ -14,7 +14,7 @@
       "pointer_cast",
       "unknown_field"
     ],
-    "total_lines": 284
+    "total_lines": 287
   },
   "cross_references": [
     {
@@ -459,280 +459,280 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 30,
+      "line": 31,
       "match": "(uint *)((int)",
       "text": "puVar1 = (uint *)((int)g_ChannelPrimaryBuffers + iVar4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 40,
+      "line": 41,
       "match": "._4_4_",
       "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerPos.x._4_4_,g_Cached3DListenerPos.x._0_4_),",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 40,
+      "line": 41,
       "match": "._0_4_",
       "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerPos.x._4_4_,g_Cached3DListenerPos.x._0_4_),",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 40,
+      "line": 41,
       "match": "CONCAT44",
       "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerPos.x._4_4_,g_Cached3DListenerPos.x._0_4_),",
       "type": "concat_artifact"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 41,
-      "match": "._4_4_",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerPos.y._4_4_,g_Cached3DListenerPos.y._0_4_),",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 41,
-      "match": "._0_4_",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerPos.y._4_4_,g_Cached3DListenerPos.y._0_4_),",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 41,
-      "match": "CONCAT44",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerPos.y._4_4_,g_Cached3DListenerPos.y._0_4_),",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Unknown/mangled field access",
       "line": 42,
       "match": "._4_4_",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerPos.z._4_4_,g_Cached3DListenerPos.z._0_4_));",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerPos.y._4_4_,g_Cached3DListenerPos.y._0_4_),",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 42,
       "match": "._0_4_",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerPos.z._4_4_,g_Cached3DListenerPos.z._0_4_));",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerPos.y._4_4_,g_Cached3DListenerPos.y._0_4_),",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
       "line": 42,
       "match": "CONCAT44",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerPos.z._4_4_,g_Cached3DListenerPos.z._0_4_));",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerPos.y._4_4_,g_Cached3DListenerPos.y._0_4_),",
       "type": "concat_artifact"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 45,
+      "line": 43,
       "match": "._4_4_",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerOrientFront.x._4_4_,",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerPos.z._4_4_,g_Cached3DListenerPos.z._0_4_));",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 43,
+      "match": "._0_4_",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerPos.z._4_4_,g_Cached3DListenerPos.z._0_4_));",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 45,
+      "line": 43,
       "match": "CONCAT44",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerOrientFront.x._4_4_,",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerPos.z._4_4_,g_Cached3DListenerPos.z._0_4_));",
       "type": "concat_artifact"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 46,
+      "match": "._4_4_",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerOrientFront.x._4_4_,",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 46,
+      "match": "CONCAT44",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerOrientFront.x._4_4_,",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 47,
       "match": "._0_4_",
       "text": "g_Cached3DListenerOrientFront.x._0_4_),",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 47,
+      "line": 48,
       "match": "._4_4_",
       "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerOrientFront.y._4_4_,",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 47,
+      "line": 48,
       "match": "CONCAT44",
       "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerOrientFront.y._4_4_,",
       "type": "concat_artifact"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 48,
+      "line": 49,
       "match": "._0_4_",
       "text": "g_Cached3DListenerOrientFront.y._0_4_),",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 49,
+      "line": 50,
       "match": "._4_4_",
       "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerOrientFront.z._4_4_,",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 49,
+      "line": 50,
       "match": "CONCAT44",
       "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerOrientFront.z._4_4_,",
       "type": "concat_artifact"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 50,
+      "line": 51,
       "match": "._0_4_",
       "text": "g_Cached3DListenerOrientFront.z._0_4_),",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 51,
+      "line": 52,
       "match": "._4_4_",
       "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerOrientUp.x._4_4_,",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 51,
+      "line": 52,
       "match": "CONCAT44",
       "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerOrientUp.x._4_4_,",
       "type": "concat_artifact"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 52,
+      "line": 53,
       "match": "._0_4_",
       "text": "g_Cached3DListenerOrientUp.x._0_4_),",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 53,
+      "line": 54,
       "match": "._4_4_",
       "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerOrientUp.y._4_4_,",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 53,
+      "line": 54,
       "match": "CONCAT44",
       "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerOrientUp.y._4_4_,",
       "type": "concat_artifact"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 54,
+      "line": 55,
       "match": "._0_4_",
       "text": "g_Cached3DListenerOrientUp.y._0_4_),",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 55,
+      "line": 56,
       "match": "._4_4_",
       "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerOrientUp.z._4_4_,",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 55,
+      "line": 56,
       "match": "CONCAT44",
       "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerOrientUp.z._4_4_,",
       "type": "concat_artifact"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 56,
+      "line": 57,
       "match": "._0_4_",
       "text": "g_Cached3DListenerOrientUp.z._0_4_));",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 59,
+      "line": 60,
       "match": "._4_4_",
       "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerVelocity.x._4_4_,",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 59,
+      "line": 60,
       "match": "CONCAT44",
       "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerVelocity.x._4_4_,",
       "type": "concat_artifact"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 60,
+      "line": 61,
       "match": "._0_4_",
       "text": "g_Cached3DListenerVelocity.x._0_4_),",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 61,
+      "line": 62,
       "match": "._4_4_",
       "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerVelocity.y._4_4_,",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 61,
+      "line": 62,
       "match": "CONCAT44",
       "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerVelocity.y._4_4_,",
       "type": "concat_artifact"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 62,
+      "line": 63,
       "match": "._0_4_",
       "text": "g_Cached3DListenerVelocity.y._0_4_),",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 63,
+      "line": 64,
       "match": "._4_4_",
       "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerVelocity.z._4_4_,",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 63,
+      "line": 64,
       "match": "CONCAT44",
       "text": "(double)CONCAT44 /* combine 2-byte values */(g_Cached3DListenerVelocity.z._4_4_,",
       "type": "concat_artifact"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 64,
+      "line": 65,
       "match": "._0_4_",
       "text": "g_Cached3DListenerVelocity.z._0_4_));",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 66,
+      "line": 67,
       "match": "._4_4_",
       "text": "(g_CSoundDevicePtr,(double)CONCAT44 /* combine 2-byte values */(1._4_4_,1._0_4_));",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 66,
+      "line": 67,
       "match": "._0_4_",
       "text": "(g_CSoundDevicePtr,(double)CONCAT44 /* combine 2-byte values */(1._4_4_,1._0_4_));",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 66,
+      "line": 67,
       "match": "CONCAT44",
       "text": "(g_CSoundDevicePtr,(double)CONCAT44 /* combine 2-byte values */(1._4_4_,1._0_4_));",
       "type": "concat_artifact"

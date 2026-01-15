@@ -19,7 +19,6 @@ core_netgame_cpp_CNetGame_allocSimFrame_FUN_005406a0
   int iVar4;
   int iVar5;
   SChatHistory *pSVar6;
-  BADSPACEBASE *in_ESP;
   char *pcVar7;
   char *pcVar8;
   SNetPlayer *pSVar9;

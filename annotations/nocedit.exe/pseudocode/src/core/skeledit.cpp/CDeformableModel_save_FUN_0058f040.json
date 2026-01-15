@@ -1,18 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 134,
+    "complexity_score": 176,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 15,
-    "pseudocode_lines": 29,
-    "suspect_count": 9,
+    "pseudocode_lines": 31,
+    "suspect_count": 13,
     "suspect_types": [
       "call_esp_preserve",
-      "format_string_mismatch",
+      "stack_param",
       "variadic_preserve"
     ],
-    "total_lines": 114
+    "total_lines": 116
   },
   "cross_references": [
     {
@@ -215,8 +215,43 @@
   },
   "suspects": [
     {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000008",
+      "text": "char *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000008",
+      "text": "((CPod *)g_CDemonPodPtr,\"models\",in_stack_00000008,(int *)0x0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000008",
+      "text": "in_stack_00000008,pCVar1->filename);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000008",
+      "text": "(\"models\",in_stack_00000008,\"wt\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 27,
+      "match": "in_stack_00000008",
+      "text": "(\"CDeformableModel::save - Can't create %s\",in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
       "call_address": "0058f097",
-      "caller_has_stack_issues": false,
+      "caller_has_stack_issues": true,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -230,7 +265,7 @@
     },
     {
       "call_address": "0058f10f",
-      "caller_has_stack_issues": false,
+      "caller_has_stack_issues": true,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -241,17 +276,6 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0058f10f (no EBP frame)",
       "type": "variadic_preserve"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"CDeformableModel::save - Can't create %s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "CDeformableModel::save - Can't create %s",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 24,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"CDeformableModel::save - Can't create %s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 12,

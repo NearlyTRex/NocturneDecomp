@@ -14,7 +14,6 @@ bool core_waypoint_cpp_FUN_005ebd40(void)
 {
   CPathMap *this_ptr;
   int iVar1;
-  BADSPACEBASE *in_ESP;
   float *in_stack_00000004;
   float *in_stack_00000008;
   int in_stack_0000000c;

@@ -9,17 +9,17 @@
 void __cdecl shape_design_c_crushModel_FUN_00469bd0(void)
 
 {
-  int iVar1;
+  int local_18;
   float local_14;
   
   local_14 = 9999.0;
-  for (iVar1 = 0; iVar1 < g_VertexCount; iVar1 = iVar1 + 1) {
-    if (g_LoadedVertices[iVar1].vertex.y < local_14) {
-      local_14 = g_LoadedVertices[iVar1].vertex.y;
+  for (local_18 = 0; local_18 < g_VertexCount; local_18 = local_18 + 1) {
+    if (g_LoadedVertices[local_18].vertex.y < local_14) {
+      local_14 = g_LoadedVertices[local_18].vertex.y;
     }
   }
-  for (iVar1 = 0; iVar1 < g_VertexCount; iVar1 = iVar1 + 1) {
-    g_LoadedVertices[iVar1].vertex.y = local_14;
+  for (local_18 = 0; local_18 < g_VertexCount; local_18 = local_18 + 1) {
+    g_LoadedVertices[local_18].vertex.y = local_14;
   }
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_drawText_FUN_00401fd0("Model crushed.  Hit a key...",0,0);

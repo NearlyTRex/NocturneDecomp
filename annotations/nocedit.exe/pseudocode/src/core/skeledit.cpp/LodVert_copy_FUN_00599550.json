@@ -1,14 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 31,
+    "complexity_score": 155,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 31,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 65
+    "pseudocode_lines": 30,
+    "suspect_count": 12,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 64
   },
   "cross_references": [],
   "function": {
@@ -101,7 +103,92 @@
       }
     ]
   },
-  "suspects": [],
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 14,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)n1 + 4) = *(uint *)((int)n2 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 14,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)n1 + 4) = *(uint *)((int)n2 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 15,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)n1 + 8) = *(uint *)((int)n2 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 15,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)n1 + 8) = *(uint *)((int)n2 + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 16,
+      "match": "(uint *)((int)",
+      "text": "puVar2 = (uint *)((int)n2 + 0xc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(uint *)((int)",
+      "text": "puVar3 = (uint *)((int)n1 + 0xc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 23,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)n1 + 0x3f4) = *(uint *)((int)n2 + 0x3f4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 23,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)n1 + 0x3f4) = *(uint *)((int)n2 + 0x3f4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 24,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)n1 + 0x3f8) = *(uint *)((int)n2 + 0x3f8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 24,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)n1 + 0x3f8) = *(uint *)((int)n2 + 0x3f8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 25,
+      "match": "(uint *)((int)",
+      "text": "puVar2 = (uint *)((int)n2 + 0x3fc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 26,
+      "match": "(uint *)((int)",
+      "text": "puVar3 = (uint *)((int)n1 + 0x3fc);",
+      "type": "pointer_cast"
+    }
+  ],
   "vtable_info": {
     "entries": [
       {

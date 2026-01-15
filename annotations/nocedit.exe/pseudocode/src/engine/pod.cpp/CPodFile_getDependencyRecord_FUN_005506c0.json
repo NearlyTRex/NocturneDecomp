@@ -1,24 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 102,
-    "complexity_score": 278,
+    "complexity_score": 192,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 11,
-    "pseudocode_lines": 43,
-    "suspect_count": 19,
+    "pseudocode_lines": 42,
+    "suspect_count": 13,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
-      "format_string_mismatch",
       "lea_esp_stack_addr",
-      "register_param",
-      "stack_param",
-      "stack_ref",
       "unaffected_reg",
       "variadic_preserve"
     ],
-    "total_lines": 145
+    "total_lines": 144
   },
   "cross_references": [
     {
@@ -205,71 +200,36 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 9,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 9,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 10,
+      "line": 9,
       "match": "unaff_ESI",
       "text": "uint *unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000014",
-      "text": "int in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_00000014",
-      "text": "(file,in_stack_00000014 * 0x108 + this_ptr->dependency_records_offset,0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 32,
-      "match": "&stack0xfffffefc",
-      "text": "crt_stdio_c_fread_FUN_005fd990(&stack0xfffffefc,0x108,1,file);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 41,
+      "line": 40,
       "match": "unaff_ESI",
       "text": "*unaff_ESI = *puVar2;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 43,
+      "line": 42,
       "match": "unaff_ESI",
       "text": "unaff_ESI = unaff_ESI + (uint)bVar3 * -2 + 1;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 43,
+      "line": 42,
       "match": "unaff_ESI",
       "text": "unaff_ESI = unaff_ESI + (uint)bVar3 * -2 + 1;",
       "type": "unaffected_reg"
     },
     {
       "call_address": "00550700",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -283,7 +243,7 @@
     },
     {
       "call_address": "00550746",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -297,7 +257,7 @@
     },
     {
       "call_address": "005507da",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -308,17 +268,6 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 005507da (no EBP frame)",
       "type": "variadic_preserve"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"CPodFile::getDependencyRecord - error reading %s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "CPodFile::getDependencyRecord - error reading %s",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 36,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"CPodFile::getDependencyRecord - error reading %s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 20,

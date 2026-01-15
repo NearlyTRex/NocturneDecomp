@@ -1,20 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 203,
-    "complexity_score": 196,
+    "complexity_score": 152,
     "cross_reference_count": 13,
     "function_call_count": 2,
     "global_count": 4,
-    "pseudocode_lines": 91,
-    "suspect_count": 8,
+    "pseudocode_lines": 87,
+    "suspect_count": 5,
     "suspect_types": [
-      "badspacebase",
       "pointer_cast",
-      "register_param",
       "sub_artifact",
       "unaffected_reg"
     ],
-    "total_lines": 294
+    "total_lines": 290
   },
   "cross_references": [
     {
@@ -196,7 +194,7 @@
     {
       "add_esp_value": 4,
       "call_address": "005f644c",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -429,57 +427,36 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 8,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 8,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 9,
+      "line": 7,
       "match": "unaff_ESI",
       "text": "CMatrix3x4f *unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Decompiler double/longlong extraction artifact",
-      "line": 38,
+      "line": 37,
       "match": "SUB84",
-      "text": "iStack_1c = SUB84 /* extract 2-byte value */(dVar6,0);",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 64,
-      "match": "SUB84",
-      "text": "local_18 = SUB84 /* extract 2-byte value */(dVar1,0);",
+      "text": "local_98 = SUB84 /* extract 2-byte value */(dVar5,0);",
       "type": "sub_artifact"
     },
     {
       "description": "Unaffected register variable",
-      "line": 87,
+      "line": 83,
       "match": "unaff_ESI",
-      "text": "pCVar4 = unaff_ESI;",
+      "text": "pCVar3 = unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Complex pointer cast",
-      "line": 91,
+      "line": 87,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar5 * -2 + 1) * 4);",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unaffected register variable",
-      "line": 93,
+      "line": 89,
       "match": "unaff_ESI",
       "text": "return unaff_ESI;",
       "type": "unaffected_reg"

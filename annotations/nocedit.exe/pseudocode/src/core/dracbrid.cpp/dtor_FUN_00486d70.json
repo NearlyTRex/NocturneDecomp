@@ -1,17 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 150,
+    "complexity_score": 178,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 1,
-    "pseudocode_lines": 30,
-    "suspect_count": 11,
+    "pseudocode_lines": 33,
+    "suspect_count": 13,
     "suspect_types": [
       "call_esp_preserve",
-      "negative_offset"
+      "negative_offset",
+      "unaffected_reg"
     ],
-    "total_lines": 107
+    "total_lines": 110
   },
   "cross_references": [],
   "function": {
@@ -186,8 +187,22 @@
   },
   "suspects": [
     {
+      "description": "Unaffected register variable",
+      "line": 11,
+      "match": "unaff_EBX",
+      "text": "uint unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 26,
+      "match": "unaff_EBX",
+      "text": "((CDeformableModelInstance *)(iVar1 + -0x293c),0,unaff_EBX,unaff_retaddr,",
+      "type": "unaffected_reg"
+    },
+    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 27,
+      "line": 30,
       "match": "pCVar2[-1].",
       "text": "((CDemonActor *)(pCVar2[-1].part_visibility_flags + 7),1);",
       "type": "negative_offset"

@@ -13,7 +13,7 @@ support_trisock_cpp_convertSockAddr_FUN_005e1960(SOCKADDR_IN *dest_addr,SOCKADDR
   uint uVar1;
   ushort uVar2;
   uint *puVar3;
-  BADSPACEBASE *in_ESP;
+  uint uStack_c;
   
   if (src_addr->sa_family != 2) {
     g_CurrentFilename = "..\\support\\trisock.cpp";
@@ -22,8 +22,8 @@ support_trisock_cpp_convertSockAddr_FUN_005e1960(SOCKADDR_IN *dest_addr,SOCKADDR
   }
   uVar2 = crt_wsock32_c_ntohs(*(ushort *)src_addr->sa_data);
   *(ushort *)&dest_addr->sin_addr = uVar2;
-  puVar3 = support_trisock_cpp_copyIPAddress_FUN_005e16f0
-                     ((uint *)&stack0x00000000,(uint *)(src_addr->sa_data + 2));
+  puVar3 = support_trisock_cpp_copyIPAddress_FUN_005e16f0(&uStack_c,(uint *)(src_addr->sa_data + 2))
+  ;
   uVar1 = *puVar3;
   dest_addr->sin_family = (short)uVar1;
   dest_addr->sin_port = (short)(uVar1 >> 0x10);

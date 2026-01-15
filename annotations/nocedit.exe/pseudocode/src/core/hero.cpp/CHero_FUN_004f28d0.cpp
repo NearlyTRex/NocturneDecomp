@@ -13,11 +13,9 @@ int __cdecl core_hero_cpp_CHero_FUN_004f28d0(CHero *this_ptr)
   CMotionList *pCVar1;
   int iVar2;
   CVector3f *pCVar3;
-  BADSPACEBASE *in_ESP;
+  CDemonActor *in_stack_00000008;
   int in_stack_0000000c;
-  int in_stack_00000018;
-  CDemonActor *in_stack_0000001c;
-  int in_stack_00000020;
+  CVector3f local_14;
   
   if (in_stack_0000000c == 0) {
     this_ptr_00 = &(this_ptr->base_character).model;
@@ -36,8 +34,8 @@ int __cdecl core_hero_cpp_CHero_FUN_004f28d0(CHero *this_ptr)
     }
     else {
       pCVar3 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                         ((CDemonActor *)this_ptr,(CVector3f *)&stack0xfffffffc,
-                          (CVector3f *)(in_stack_00000018 + 0x20));
+                         ((CDemonActor *)this_ptr,&local_14,&(in_stack_00000008->location).position)
+      ;
       if (pCVar3->z <= 0.0) {
         core_motion_cpp_CMotionController_setDesiredStateByName_FUN_0052db90
                   (&this_ptr_00->motion_controller,"GETGRABBED_BACK",1);
@@ -48,7 +46,7 @@ int __cdecl core_hero_cpp_CHero_FUN_004f28d0(CHero *this_ptr)
       }
     }
   }
-  (this_ptr->base_character).grabbed_by = in_stack_0000001c;
-  (this_ptr->base_character).grabbed_type = in_stack_00000020;
+  (this_ptr->base_character).grabbed_by = in_stack_00000008;
+  (this_ptr->base_character).grabbed_type = in_stack_0000000c;
   return 1;
 }

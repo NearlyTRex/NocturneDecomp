@@ -13,22 +13,15 @@ shape_edittool_cpp_CStrList_populateFromFileSearch_FUN_004a35b0
 {
   char cVar1;
   uint uVar2;
-  BADSPACEBASE *in_ESP;
   char *pcVar3;
   byte bVar4;
-  char in_stack_fffff7c0;
-  byte auStack_830 [784];
-  byte auStack_520 [8];
-  CFileFinder CStack_518;
-  char acStack_404 [244];
-  char local_310 [8];
-  char acStack_308 [252];
-  char acStack_20c [4];
-  char cStack_208;
-  byte auStack_207 [3];
-  char acStack_204 [248];
-  char acStack_10c [8];
-  char acStack_104 [244];
+  CPodSearchContext local_844;
+  CFileFinder local_528;
+  char local_414 [260];
+  char local_310 [256];
+  char local_210;
+  byte local_20f [255];
+  char local_110 [256];
   
   bVar4 = 0;
   if ((directory_path == (char *)0x0) || (*directory_path == '\0')) {
@@ -47,40 +40,36 @@ shape_edittool_cpp_CStrList_populateFromFileSearch_FUN_004a35b0
     crt_stdio_c_sprintf_FUN_005fdbd0(local_310,"%s\\%s",directory_path,file_pattern);
   }
   if (g_CDemonPodPtr != (CDemonPod *)0x0) {
-    engine_pod_cpp_CPod_initSearch_FUN_00550ea0
-              ((CPod *)g_CDemonPodPtr,local_310 + 4,(CPodSearchContext *)&stack0xfffff7c0);
-    while (in_stack_fffff7c0 != '\0') {
+    engine_pod_cpp_CPod_initSearch_FUN_00550ea0((CPod *)g_CDemonPodPtr,local_310,&local_844);
+    while (local_844.current_file_info.found_path[0] != '\0') {
       engine_dosio_c_splitPath_FUN_00481f20
-                (&stack0xfffff7c0,(char *)0x0,(char *)0x0,acStack_10c,acStack_20c);
-      if (cStack_208 == '.') {
+                ((char *)&local_844,(char *)0x0,(char *)0x0,local_110,&local_210);
+      if (local_210 == '.') {
         uVar2 = 0xffffffff;
-        pcVar3 = &cStack_208;
+        pcVar3 = &local_210;
         do {
           if (uVar2 == 0) break;
           uVar2 = uVar2 - 1;
           cVar1 = *pcVar3;
           pcVar3 = pcVar3 + (uint)bVar4 * -2 + 1;
         } while (cVar1 != '\0');
-        crt_string_c_memmove_FUN_005fe5e0(&cStack_208,auStack_207,~uVar2 - 1);
+        crt_string_c_memmove_FUN_005fe5e0(&local_210,local_20f,~uVar2 - 1);
       }
-      engine_dosio_c_makePath_FUN_00481f50
-                ((char *)&CStack_518.search_handle,(char *)0x0,(char *)0x0,acStack_104,acStack_204);
-      pcVar3 = auStack_830 + 0xfc;
+      engine_dosio_c_makePath_FUN_00481f50(local_414,(char *)0x0,(char *)0x0,local_110,&local_210);
       shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_004a3360
-                (this_ptr,acStack_404,pcVar3,auStack_830._512_4_);
-      in_stack_fffff7c0 = (char)pcVar3;
-      engine_pod_cpp_CPod_getNextSearchResult_FUN_00550ef0
-                ((CPod *)g_CDemonPodPtr,(CPodSearchContext *)auStack_830);
+                (this_ptr,local_414,local_844.current_file_info.target_path,
+                 local_844.current_file_info.file_size);
+      engine_pod_cpp_CPod_getNextSearchResult_FUN_00550ef0((CPod *)g_CDemonPodPtr,&local_844);
     }
   }
-  engine_dosio_c_CFileFinder_ctor_FUN_00481c30((CFileFinder *)(auStack_830 + 0x30c));
-  engine_dosio_c_CFileFinder_openSearch_FUN_00481c70((CFileFinder *)auStack_520,acStack_308);
-  while (auStack_520[4] != '\0') {
+  engine_dosio_c_CFileFinder_ctor_FUN_00481c30(&local_528);
+  engine_dosio_c_CFileFinder_openSearch_FUN_00481c70(&local_528,local_310);
+  while (local_528.filename[0] != '\0') {
     shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_004a3360
-              (this_ptr,auStack_520 + 4,(char *)0x0,CStack_518.file_size);
-    engine_dosio_c_CFileFinder_findNext_FUN_00481cf0((CFileFinder *)auStack_520);
+              (this_ptr,local_528.filename,(char *)0x0,local_528.timestamp);
+    engine_dosio_c_CFileFinder_findNext_FUN_00481cf0(&local_528);
   }
-  engine_dosio_c_CFileFinder_closeSearch_FUN_00481d70((CFileFinder *)(auStack_520 + 4));
-  engine_dosio_c_CFileFinder_dtor_FUN_00481c50(&CStack_518,0);
+  engine_dosio_c_CFileFinder_closeSearch_FUN_00481d70(&local_528);
+  engine_dosio_c_CFileFinder_dtor_FUN_00481c50(&local_528,0);
   return;
 }

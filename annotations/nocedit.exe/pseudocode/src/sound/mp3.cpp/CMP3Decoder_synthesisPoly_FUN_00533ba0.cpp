@@ -14,11 +14,9 @@ sound_mp3_cpp_CMP3Decoder_synthesisPoly_FUN_00533ba0
 {
   int iVar1;
   int iVar2;
-  float *pfVar3;
-  BADSPACEBASE *in_ESP;
-  float local_94;
-  float afStack_90 [18];
-  float afStack_48 [17];
+  float (*pafVar3) [18];
+  float local_94 [18];
+  float local_4c [18];
   
   if (((frame_info->samples_per_granule == 0) || (frame_info->sblimit == 0)) || (1 < subband_index))
   {
@@ -27,16 +25,16 @@ sound_mp3_cpp_CMP3Decoder_synthesisPoly_FUN_00533ba0
   else {
     iVar1 = 0;
   }
-  sound_mp3_cpp_applyPolyphaseWindow_FUN_00533690(unknown_param2,&local_94,iVar1);
+  sound_mp3_cpp_applyPolyphaseWindow_FUN_00533690(unknown_param2,local_94,iVar1);
   iVar1 = 0;
-  pfVar3 = (float *)((int)unknown_param2 + subband_index * 0x48 + (int)frame_info * 0x900 + 0x7430);
+  pafVar3 = this_ptr->synthesis_history[channel * 2] + subband_index;
   do {
     iVar2 = iVar1 + 1;
-    *(float *)subband_index = afStack_90[iVar1] + *pfVar3;
-    *pfVar3 = afStack_90[iVar1 + 0x12];
+    *output_buffer = local_94[iVar1] + (*pafVar3)[0];
+    (*pafVar3)[0] = local_94[iVar1 + 0x12];
     iVar1 = iVar2;
-    subband_index = (int)(subband_index + 4);
-    pfVar3 = pfVar3 + 1;
+    output_buffer = output_buffer + 1;
+    pafVar3 = (float (*) [18])(*pafVar3 + 1);
   } while (iVar2 < 0x12);
   return;
 }

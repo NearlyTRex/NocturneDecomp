@@ -19,7 +19,7 @@ float core_stranger_cpp_FUN_005bb010(void)
   int iVar6;
   int iVar7;
   CDemonActor *in_stack_00000004;
-  int iVar8;
+  int local_14;
   
   pCVar5 = (CKeyFramedModel *)0x0;
   pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c790
@@ -38,11 +38,11 @@ float core_stranger_cpp_FUN_005bb010(void)
     iVar7 = 0;
     iVar6 = 0;
     iVar4 = 0;
-    iVar8 = 0;
+    local_14 = 0;
     for (iVar3 = 0; iVar3 < pCVar5->vertex_count; iVar3 = iVar3 + 1) {
       piVar2 = (int *)((int)pCVar5->vertex_list + iVar4);
       if (iVar7 < *piVar2) {
-        iVar8 = piVar2[1];
+        local_14 = piVar2[1];
         iVar7 = *piVar2;
       }
       if (iVar6 < piVar2[1]) {
@@ -50,7 +50,7 @@ float core_stranger_cpp_FUN_005bb010(void)
       }
       iVar4 = iVar4 + 0xc;
     }
-    return (float)(iVar6 - iVar8) * (float)0.00390625;
+    return (float)(iVar6 - local_14) * (float)0.00390625;
   }
   return 0.0;
 }

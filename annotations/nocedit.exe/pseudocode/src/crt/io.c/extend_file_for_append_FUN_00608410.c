@@ -13,9 +13,8 @@ int __cdecl crt_io_c_extend_file_for_append_FUN_00608410(int fd)
   int iVar1;
   uint uVar2;
   SIZE_T SVar3;
-  BADSPACEBASE *in_ESP;
   SIZE_T count;
-  byte auStack_1f8 [492];
+  byte local_20c [512];
   
   distance_to_move = crt_stdio_c_lseek_FUN_00606690(fd,0,1);
   iVar1 = distance_to_move;
@@ -25,13 +24,13 @@ int __cdecl crt_io_c_extend_file_for_append_FUN_00608410(int fd)
       uVar2 = crt_io_c_getFileTypeFlags_FUN_006088b0(fd);
       crt_io_c_setFileDescriptorFlags_FUN_00608908(fd,uVar2 & 0xffff7fff);
       if (0 < (int)SVar3) {
-        crt_memory_c_memset_FUN_005fde40(&stack0xfffffe04,0,0x200);
+        crt_memory_c_memset_FUN_005fde40(local_20c,0,0x200);
         do {
           count = SVar3;
           if (0x200 < (int)SVar3) {
             count = 0x200;
           }
-          iVar1 = crt_io_c_write_FUN_006084ec(fd,auStack_1f8,count);
+          iVar1 = crt_io_c_write_FUN_006084ec(fd,local_20c,count);
           if (iVar1 < 0) {
             return iVar1;
           }

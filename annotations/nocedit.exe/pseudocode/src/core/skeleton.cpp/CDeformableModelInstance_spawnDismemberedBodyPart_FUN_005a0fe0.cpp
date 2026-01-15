@@ -16,7 +16,7 @@ core_skeleton_cpp_CDeformableModelInstance_spawnDismemberedBodyPart_FUN_005a0fe0
   
   body_part = (CBodyPart *)core_bodypart_cpp_CreateBodyPart_FUN_00418e10();
   core_skeleton_cpp_CDeformableModelInstance_dismemberPart_FUN_005a1040
-            ((CDeformableModelInstance *)part_index,body_part,(int)orientation);
+            (this_ptr,body_part,part_index);
   if (body_part == (CBodyPart *)0x0) {
     return (CBodyPart *)0x0;
   }

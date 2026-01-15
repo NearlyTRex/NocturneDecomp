@@ -31,7 +31,7 @@ shape_edittool_cpp_CPickList_setOkButtonText_FUN_004a3d20(CPickList *this_ptr,ch
     g_CurrentLineNumber = 0xd78;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CPickList::setOkButtonText - too long!");
   }
-  pcVar3 = text + 0x44;
+  pcVar3 = this_ptr->ok_button_text;
   do {
     cVar1 = *text;
     *pcVar3 = cVar1;

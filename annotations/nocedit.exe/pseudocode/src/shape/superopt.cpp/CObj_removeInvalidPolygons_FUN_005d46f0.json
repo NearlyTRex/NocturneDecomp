@@ -1,23 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 100,
-    "complexity_score": 194,
+    "complexity_score": 152,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 1,
-    "pseudocode_lines": 34,
-    "suspect_count": 12,
+    "pseudocode_lines": 37,
+    "suspect_count": 9,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "callind_preserve",
-      "format_string_mismatch",
       "lea_esp_stack_addr",
-      "register_param",
       "stack_ref",
       "variadic_preserve"
     ],
-    "total_lines": 134
+    "total_lines": 137
   },
   "cross_references": [
     {
@@ -121,24 +118,10 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 8,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 8,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 19,
-      "match": "&stack0xffffff98",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff98,\"Deleting invalid polygons (%d deleted so far)\");",
+      "line": 20,
+      "match": "&stack0xffffff94",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff94,\"Deleting invalid polygons (%d deleted so far)\",iVar3)",
       "type": "stack_ref"
     },
     {
@@ -200,7 +183,7 @@
     },
     {
       "call_address": "005d4772",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -211,17 +194,6 @@
       "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
       "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 005d4772 (no EBP frame)",
       "type": "variadic_preserve"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Deleting invalid polygons (%d deleted so far)\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Deleting invalid polygons (%d deleted so far)",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 19,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff98,\"Deleting invalid polygons (%d deleted so far)\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 4,

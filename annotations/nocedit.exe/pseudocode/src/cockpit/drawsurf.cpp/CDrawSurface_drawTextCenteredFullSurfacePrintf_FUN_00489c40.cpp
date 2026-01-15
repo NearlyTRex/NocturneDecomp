@@ -11,13 +11,12 @@ cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_00489c40
           (CDrawSurface *this_ptr,char *format,...)
 
 {
-  BADSPACEBASE *in_ESP;
-  char acStack_1004 [4092];
+  char local_1008 [4096];
   va_list_t local_8;
   
   local_8 = &stack0x0000000c;
-  crt_stdio_c_vsprintf_FUN_005fdba8(&stack0xffffeff8,format,&local_8);
-  cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullSurface_FUN_00489c20
-            ((CDrawSurface *)format,acStack_1004);
+  crt_stdio_c_vsprintf_FUN_005fdba8(local_1008,format,&local_8);
+  local_8 = (va_list_t)0x0;
+  cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredFullSurface_FUN_00489c20(this_ptr,local_1008);
   return;
 }

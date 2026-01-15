@@ -1,23 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 71,
-    "complexity_score": 382,
+    "complexity_score": 246,
     "cross_reference_count": 6,
     "function_call_count": 5,
     "global_count": 4,
-    "pseudocode_lines": 32,
-    "suspect_count": 31,
+    "pseudocode_lines": 21,
+    "suspect_count": 21,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
-      "register_param",
-      "stack_param",
-      "stack_ref",
-      "unaffected_reg",
       "variadic_preserve"
     ],
-    "total_lines": 103
+    "total_lines": 92
   },
   "cross_references": [
     {
@@ -219,78 +214,8 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 7,
-      "match": "unaff_EBX",
-      "text": "uint unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 8,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 8,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_0000000c",
-      "text": "CLodMesh *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_0000001c",
-      "text": "char *in_stack_0000001c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_0000000c",
-      "text": "(in_stack_0000000c,(uint *)&stack0xfffffff8);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 27,
-      "match": "&stack0xfffffff8",
-      "text": "(in_stack_0000000c,(uint *)&stack0xfffffff8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 28,
-      "match": "unaff_EBX",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_304,\"%08X\",unaff_EBX);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 30,
-      "match": "&stack0xfffffafc",
-      "text": "(&stack0xfffffafc,(char *)&this_ptr,acStack_400,acStack_300,\"lod\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_0000001c",
-      "text": "(acStack_500,(char *)0x0,in_stack_0000001c,\"..\\\\shape\\\\meshlod.cpp\",0x1239)",
-      "type": "stack_param"
-    },
-    {
       "call_address": "0051b805",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",

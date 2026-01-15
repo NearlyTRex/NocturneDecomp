@@ -12,33 +12,23 @@
 CVector3f * core_emitter_cpp_FUN_004a8d20(void)
 
 {
-  CVector3f *output_world_point;
-  float max_value;
-  BADSPACEBASE *in_ESP;
-  float unaff_ESI;
   CDemonActor *in_stack_00000004;
   CVector3f *in_stack_00000008;
-  float in_stack_0000000c;
-  float in_stack_00000010;
-  float in_stack_00000014;
   float fStack_28;
-  float in_stack_ffffffe4;
-  float in_stack_ffffffec;
+  float fStack_24;
+  float fStack_20;
+  float fStack_1c;
+  float fStack_18;
+  float fStack_14;
   float fStack_10;
   float fStack_c;
   
-  output_world_point = in_stack_00000008;
   (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,(CBoundingBox3D *)&stack0xffffffd0)
   ;
-  fStack_28 = 6.846512e-39;
-  max_value = core_actor_cpp_getRandomFloat_FUN_0040cc10(in_stack_ffffffe4,fStack_10);
-  in_stack_0000000c = max_value;
-  in_stack_00000008 =
-       (CVector3f *)core_actor_cpp_getRandomFloat_FUN_0040cc10(in_stack_ffffffec,unaff_ESI);
-  in_stack_00000010 = (float)in_stack_00000008;
-  in_stack_00000010 = core_actor_cpp_getRandomFloat_FUN_0040cc10(fStack_c,max_value);
-  in_stack_00000014 = in_stack_00000010;
+  fStack_10 = core_actor_cpp_getRandomFloat_FUN_0040cc10(fStack_28,fStack_1c);
+  fStack_c = core_actor_cpp_getRandomFloat_FUN_0040cc10(fStack_24,fStack_18);
+  core_actor_cpp_getRandomFloat_FUN_0040cc10(fStack_20,fStack_14);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-            (in_stack_00000004,output_world_point,(CVector3f *)&stack0x00000008);
-  return output_world_point;
+            (in_stack_00000004,in_stack_00000008,(CVector3f *)&fStack_10);
+  return in_stack_00000008;
 }

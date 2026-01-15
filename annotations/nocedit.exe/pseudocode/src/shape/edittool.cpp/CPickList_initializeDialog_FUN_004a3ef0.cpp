@@ -13,7 +13,7 @@ shape_edittool_cpp_CPickList_initializeDialog_FUN_004a3ef0
 {
   shape_edittool_cpp_CPickList_calculateLayoutAndCreateComponents_FUN_004a45d0
             (this_ptr,dialog_title,config_parameter);
-  this_ptr->current_index = config_parameter;
+  this_ptr->current_index = initial_selected_index;
   shape_edittool_cpp_CPickList_validateScrollBounds_FUN_004a5240(this_ptr);
   return;
 }

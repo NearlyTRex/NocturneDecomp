@@ -14,8 +14,8 @@ void __cdecl core_event_cpp_CEventList_setCounter_FUN_004b0720(CEventList *this_
   int iVar3;
   int iVar4;
   char *pcVar5;
+  char *in_stack_00000008;
   int in_stack_0000000c;
-  char *in_stack_00000010;
   
   iVar3 = core_event_cpp_CEventList_FUN_004b0950(this_ptr);
   if (iVar3 < 0) {
@@ -27,11 +27,11 @@ void __cdecl core_event_cpp_CEventList_setCounter_FUN_004b0720(CEventList *this_
       }
       pcVar5 = this_ptr->field16_0x3380 + this_ptr->counter_count * 0x20;
       do {
-        cVar2 = *in_stack_00000010;
+        cVar2 = *in_stack_00000008;
         *pcVar5 = cVar2;
         if (cVar2 == '\0') break;
-        cVar2 = in_stack_00000010[1];
-        in_stack_00000010 = in_stack_00000010 + 2;
+        cVar2 = in_stack_00000008[1];
+        in_stack_00000008 = in_stack_00000008 + 2;
         pcVar5[1] = cVar2;
         pcVar5 = pcVar5 + 2;
       } while (cVar2 != '\0');

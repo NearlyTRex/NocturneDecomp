@@ -14,17 +14,18 @@ core_actor_cpp_draw3DPointMarker_FUN_00409930(CVector3f *world_position,int mark
   int iVar2;
   SRenderVertex *pSVar3;
   int iVar4;
-  BADSPACEBASE *in_ESP;
   int iVar5;
-  int in_stack_0000000c;
+  CVector3i local_14;
   
+  local_14.x = (int)ROUND(world_position->x * 256f);
+  local_14.y = (int)ROUND(world_position->y * 256f);
+  local_14.z = (int)ROUND(world_position->z * 256f);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-            (&g_CDemonRendererPtr->vertex_buffer_ptr[19999].projected_vertex,
-             (CVector3i *)&stack0xffffffec);
+            (&g_CDemonRendererPtr->vertex_buffer_ptr[19999].projected_vertex,&local_14);
   pSVar3 = g_CDemonRendererPtr->vertex_buffer_ptr;
   if ((int)(pSVar3[19999].projected_vertex.screen_x & -0x80000000) == 0) {
     iVar5 = pSVar3[19999].projected_vertex.screen_x >> 0x10;
-    g_ActiveRenderColor = in_stack_0000000c;
+    g_ActiveRenderColor = marker_color;
     iVar4 = pSVar3[19999].projected_vertex.screen_y >> 0x10;
     if ((((-1 < iVar5) && (-1 < iVar4)) && (iVar5 < g_WindowWidth)) && (iVar4 < g_WindowHeight)) {
       engine_2d_c_plotPixel_FUN_00401140(iVar5,iVar4);

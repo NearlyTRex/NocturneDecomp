@@ -13,7 +13,6 @@ sound_sndmain_cpp_getSfxOptions_FUN_005a97e0(uint sfx_handle,CSfxOptions *output
   CSfxSlot *this_ptr;
   int iVar1;
   byte bVar2;
-  int *in_stack_00000010;
   
   bVar2 = 0;
   this_ptr = sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005a5d00(sfx_handle,1);
@@ -22,9 +21,9 @@ sound_sndmain_cpp_getSfxOptions_FUN_005a97e0(uint sfx_handle,CSfxOptions *output
   }
   sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(this_ptr,0.0);
   for (iVar1 = 0x1c; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *in_stack_00000010 = (this_ptr->options).channel_index;
+    output_options->channel_index = (this_ptr->options).channel_index;
     this_ptr = (CSfxSlot *)((int)this_ptr + (uint)bVar2 * -8 + 4);
-    in_stack_00000010 = in_stack_00000010 + (uint)bVar2 * -2 + 1;
+    output_options = (CSfxOptions *)((int)output_options + (uint)bVar2 * -8 + 4);
   }
   sound_sndmain_cpp_unlockSound_FUN_005abdc0();
   return 1;

@@ -1,17 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 299,
-    "complexity_score": 106,
+    "complexity_score": 75,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 23,
-    "pseudocode_lines": 76,
-    "suspect_count": 2,
-    "suspect_types": [
-      "badspacebase",
-      "register_param"
-    ],
-    "total_lines": 375
+    "pseudocode_lines": 75,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 374
   },
   "cross_references": [
     {
@@ -294,7 +291,7 @@
     {
       "add_esp_value": 12,
       "call_address": "0045c2b8",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -433,20 +430,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 5,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 5,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    }
-  ]
+  "suspects": []
 }

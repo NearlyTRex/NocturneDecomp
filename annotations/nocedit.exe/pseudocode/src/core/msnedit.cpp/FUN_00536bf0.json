@@ -1,17 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 97,
-    "complexity_score": 61,
+    "complexity_score": 238,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 3,
-    "pseudocode_lines": 1,
-    "suspect_count": 5,
+    "pseudocode_lines": 43,
+    "suspect_count": 18,
     "suspect_types": [
       "call_esp_preserve",
-      "lea_esp_stack_addr"
+      "lea_esp_stack_addr",
+      "stack_param"
     ],
-    "total_lines": 98
+    "total_lines": 140
   },
   "cross_references": [],
   "function": {
@@ -123,6 +124,97 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000004",
+      "text": "char *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000008",
+      "text": "CStrList *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000004",
+      "text": "cVar2 = *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_00000004",
+      "text": "while (((cVar2 = *in_stack_00000004, pcVar4 = local_d8,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_00000004",
+      "text": "*pcVar4 = *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 27,
+      "match": "in_stack_00000004",
+      "text": "pbVar1 = (byte *)(in_stack_00000004 + 1);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 29,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004 = in_stack_00000004 + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 29,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004 = in_stack_00000004 + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 38,
+      "match": "in_stack_00000008",
+      "text": "shape_edittool_cpp_CStrList_add_FUN_004a2b80(in_stack_00000008,local_d8);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 39,
+      "match": "in_stack_00000004",
+      "text": "if (*in_stack_00000004 == '\\0') {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 43,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004 = in_stack_00000004 + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 43,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004 = in_stack_00000004 + 1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 45,
+      "match": "in_stack_00000004",
+      "text": "cVar2 = *in_stack_00000004;",
+      "type": "stack_param"
+    },
     {
       "add_esp_value": 8,
       "call_address": "00536c6a",

@@ -1,20 +1,22 @@
 {
   "complexity": {
     "assembly_lines": 223,
-    "complexity_score": 286,
+    "complexity_score": 318,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 8,
-    "pseudocode_lines": 101,
-    "suspect_count": 16,
+    "pseudocode_lines": 103,
+    "suspect_count": 18,
     "suspect_types": [
       "call_esp_preserve",
       "callind_preserve",
+      "concat_artifact",
       "extra_output",
       "pointer_cast",
+      "unknown_field",
       "variadic_preserve"
     ],
-    "total_lines": 324
+    "total_lines": 326
   },
   "cross_references": [
     {
@@ -244,79 +246,93 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 12,
+      "line": 11,
       "match": "extraout_CX",
       "text": "ushort extraout_CX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 14,
+      "line": 13,
       "match": "extraout_EDX",
       "text": "int extraout_EDX;",
       "type": "extra_output"
     },
     {
       "description": "Complex pointer cast",
+      "line": 67,
+      "match": "(uint *)((int)",
+      "text": "puVar6 = (uint *)((int)puVar6 + (uint)bVar10 * -2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 68,
       "match": "(uint *)((int)",
-      "text": "puVar7 = (uint *)((int)puVar7 + (uint)bVar11 * -2 + 1);",
+      "text": "puVar9 = (uint *)((int)puVar9 + (uint)bVar10 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 69,
-      "match": "(uint *)((int)",
-      "text": "puVar10 = (uint *)((int)puVar10 + (uint)bVar11 * -2 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 80,
-      "match": "(byte *)((int)",
-      "text": "*(byte *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4) = bVar1;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
+      "description": "Unknown/mangled field access",
       "line": 81,
+      "match": "._1_3_",
+      "text": "local_1c = CONCAT31 /* combine 2-byte values */(local_1c._1_3_,(byte)local_2c);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 81,
+      "match": "CONCAT31",
+      "text": "local_1c = CONCAT31 /* combine 2-byte values */(local_1c._1_3_,(byte)local_2c);",
+      "type": "concat_artifact"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 82,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4) = local_18;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 83,
       "match": "(char *)((int)",
       "text": "*(char *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4 + 1) =",
       "type": "pointer_cast"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 82,
+      "line": 84,
       "match": "extraout_CX",
       "text": "(char)((ushort)extraout_CX >> 8);",
       "type": "extra_output"
     },
     {
       "description": "Complex pointer cast",
-      "line": 83,
+      "line": 85,
       "match": "(char *)((int)",
       "text": "*(char *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4 + 2) =",
       "type": "pointer_cast"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 84,
+      "line": 86,
       "match": "extraout_CX",
       "text": "(char)extraout_CX;",
       "type": "extra_output"
     },
     {
       "description": "Complex pointer cast",
-      "line": 85,
+      "line": 87,
       "match": "(byte *)((int)",
       "text": "*(byte *)((int)this_ptr->pixel_data + this_ptr->current_pixel_index * 4 + 3) =",
       "type": "pointer_cast"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 87,
+      "line": 89,
       "match": "extraout_EDX",
-      "text": "iVar9 = extraout_EDX + 3;",
+      "text": "iVar8 = extraout_EDX + 3;",
       "type": "extra_output"
     },
     {

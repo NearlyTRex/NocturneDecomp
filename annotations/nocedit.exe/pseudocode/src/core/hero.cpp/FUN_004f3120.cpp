@@ -15,9 +15,7 @@ uint core_hero_cpp_FUN_004f3120(void)
   CDemonActor *pCVar2;
   uint uVar3;
   CVector3f *pCVar4;
-  float fVar5;
-  BADSPACEBASE *in_ESP;
-  int iVar6;
+  int iVar5;
   CCharacter *in_stack_00000004;
   CBoundingBox3D local_80;
   float fStack_68;
@@ -33,12 +31,13 @@ uint core_hero_cpp_FUN_004f3120(void)
   float fStack_20;
   float fStack_1c;
   float fStack_18;
+  float fStack_14;
   
   iVar1 = core_charactr_cpp_CCharacter_FUN_0042d360(in_stack_00000004);
   if (iVar1 == 0) {
     if (*(int *)(in_stack_00000004[2].cloth_data + 0x54c4) == 0) {
       iVar1 = 0;
-      for (iVar6 = 0; iVar6 < (int)g_CDemonSetPtr->actor_list_ptr; iVar6 = iVar6 + 1) {
+      for (iVar5 = 0; iVar5 < (int)g_CDemonSetPtr->actor_list_ptr; iVar5 = iVar5 + 1) {
         pCVar2 = core_actor_cpp_castToClassHash_FUN_0040c790
                            (*(CDemonActor **)(g_CDemonSetPtr->actor_list_data + iVar1),
                             g_CBoxActorClassInfo.name_hash);
@@ -65,8 +64,8 @@ uint core_hero_cpp_FUN_004f3120(void)
              ((double)CStack_38.y <= 5)) {
             pCVar4 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                                (&CStack_2c,&CStack_38);
-            fVar5 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(pCVar4->y);
-            if (ABS(fVar5) <= (float)0.61086523818055505) {
+            fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(pCVar4->y);
+            if (ABS(fStack_14) <= (float)0.61086523818055505) {
               *(CDemonActor **)(in_stack_00000004[2].cloth_data + 0x54c4) = pCVar2;
               break;
             }

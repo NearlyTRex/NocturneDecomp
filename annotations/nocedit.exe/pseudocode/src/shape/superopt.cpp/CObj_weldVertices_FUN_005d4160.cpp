@@ -16,7 +16,6 @@ shape_superopt_cpp_CObj_weldVertices_FUN_005d4160
   double *pdVar3;
   uint uVar4;
   uint uVar5;
-  BADSPACEBASE *in_ESP;
   double *pdVar6;
   double *pdVar7;
   byte bVar8;

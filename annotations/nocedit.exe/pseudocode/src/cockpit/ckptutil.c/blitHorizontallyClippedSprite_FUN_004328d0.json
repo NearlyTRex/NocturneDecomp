@@ -1,19 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 131,
-    "complexity_score": 264,
+    "complexity_score": 215,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 4,
-    "pseudocode_lines": 44,
-    "suspect_count": 20,
+    "pseudocode_lines": 45,
+    "suspect_count": 15,
     "suspect_types": [
       "callind_preserve",
       "pointer_cast",
       "stack_param",
       "unaffected_reg"
     ],
-    "total_lines": 175
+    "total_lines": 176
   },
   "cross_references": [],
   "function": {
@@ -212,129 +212,94 @@
   "suspects": [
     {
       "description": "Unaffected register variable",
-      "line": 9,
-      "match": "unaff_EBX",
-      "text": "int unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 11,
+      "line": 12,
       "match": "unaff_EBP",
       "text": "int unaff_EBP;",
       "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000024",
-      "text": "int in_stack_00000024;",
-      "type": "stack_param"
+      "description": "Unaffected register variable",
+      "line": 13,
+      "match": "unaff_EDI",
+      "text": "int unaff_EDI;",
+      "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 15,
-      "match": "in_stack_00000040",
-      "text": "int in_stack_00000040;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_00000024",
-      "text": "src_buffer = (void *)((int)sprite_data + start_x + g_WindowWidth / 2 + end_x * in_stack_00000024",
+      "match": "in_stack_0000002c",
+      "text": "int in_stack_0000002c;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 19,
+      "line": 21,
       "match": "(void *)((int)",
-      "text": "src_buffer = (void *)((int)sprite_data + start_x + g_WindowWidth / 2 + end_x * in_stack_00000024",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 25,
-      "match": "(void *)((int)",
-      "text": "pvVar2 = (void *)((int)pvVar2 + start_x);",
+      "text": "src_buffer = (void *)((int)sprite_data + start_x + g_WindowWidth / 2 + dest_y * src_stride);",
       "type": "pointer_cast"
     },
     {
       "description": "Unaffected register variable",
-      "line": 26,
-      "match": "unaff_EBP",
-      "text": "(*pCVar1)((void *)((int)pvVar2 - src_y_offset),src_buffer,unaff_EBP);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 26,
-      "match": "(void *)((int)",
-      "text": "(*pCVar1)((void *)((int)pvVar2 - src_y_offset),src_buffer,unaff_EBP);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 28,
-      "match": "in_stack_00000040",
-      "text": "src_buffer = (void *)((int)src_buffer + in_stack_00000040);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 28,
-      "match": "(void *)((int)",
-      "text": "src_buffer = (void *)((int)src_buffer + in_stack_00000040);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 34,
-      "match": "(void *)((int)",
-      "text": "pvVar2 = (void *)((int)g_ScreenBufferArray[end_x + src_y_offset] + start_x * 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 37,
-      "match": "unaff_EBP",
-      "text": "(*pCVar1)((void *)((int)pvVar2 + src_y_offset * -2),src_buffer,unaff_EBP);",
+      "match": "unaff_EDI",
+      "text": "iVar1 = iVar1 + unaff_EDI;",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 37,
-      "match": "(void *)((int)",
-      "text": "(*pCVar1)((void *)((int)pvVar2 + src_y_offset * -2),src_buffer,unaff_EBP);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 39,
-      "match": "unaff_EBX",
-      "text": "pvVar2 = (void *)((int)pvVar2 + unaff_EBX);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 39,
-      "match": "(void *)((int)",
-      "text": "pvVar2 = (void *)((int)pvVar2 + unaff_EBX);",
-      "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 40,
-      "match": "in_stack_00000040",
-      "text": "src_buffer = (void *)((int)src_buffer + in_stack_00000040);",
+      "line": 29,
+      "match": "in_stack_0000002c",
+      "text": "src_buffer = (void *)((int)src_buffer + in_stack_0000002c);",
       "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 29,
+      "match": "(void *)((int)",
+      "text": "src_buffer = (void *)((int)src_buffer + in_stack_0000002c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 35,
+      "match": "(void *)((int)",
+      "text": "pvVar3 = (void *)((int)g_ScreenBufferArray[dest_y + src_y_offset] + start_x * 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 38,
+      "match": "(void *)((int)",
+      "text": "(*pCVar2)((void *)((int)pvVar3 + unused_param * -2),src_buffer,count);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 40,
       "match": "(void *)((int)",
-      "text": "src_buffer = (void *)((int)src_buffer + in_stack_00000040);",
+      "text": "pvVar3 = (void *)((int)pvVar3 + iVar1 / 2);",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 41,
+      "match": "in_stack_0000002c",
+      "text": "src_buffer = (void *)((int)src_buffer + in_stack_0000002c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 41,
+      "match": "(void *)((int)",
+      "text": "src_buffer = (void *)((int)src_buffer + in_stack_0000002c);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 42,
+      "match": "unaff_EBP",
+      "text": "} while (dest_y < unaff_EBP);",
+      "type": "unaffected_reg"
     },
     {
       "add_esp_value": 12,

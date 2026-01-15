@@ -1,22 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 322,
-    "complexity_score": 391,
+    "complexity_score": 378,
     "cross_reference_count": 0,
     "function_call_count": 13,
     "global_count": 18,
-    "pseudocode_lines": 136,
-    "suspect_count": 22,
+    "pseudocode_lines": 158,
+    "suspect_count": 20,
     "suspect_types": [
-      "badspacebase",
       "pointer_cast",
-      "register_param",
       "stack_param",
-      "stack_ref",
       "suspect_float",
       "warning_overlapping_globals"
     ],
-    "total_lines": 458
+    "total_lines": 480
   },
   "cross_references": [],
   "function": {
@@ -505,148 +502,134 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 15,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 15,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 20,
       "match": "in_stack_00000004",
       "text": "CDemonActor *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 38,
+      "line": 46,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[0x1f].create_prob = 0.0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 39,
+      "line": 47,
       "match": "in_stack_00000004",
       "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 40,
+      "line": 48,
       "match": "in_stack_00000004",
       "text": "this_ptr = (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,&CStack_54);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 40,
+      "line": 48,
       "match": "in_stack_00000004",
       "text": "this_ptr = (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,&CStack_54);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 44,
+      "line": 52,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[0x1f].create_prob = 1.4013e-45;",
       "type": "stack_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 44,
+      "line": 52,
       "match": "1.4013e-45",
       "text": "in_stack_00000004[0x1f].create_prob = 1.4013e-45;",
       "type": "suspect_float"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 80,
+      "line": 102,
       "match": "in_stack_00000004",
       "text": "if (0 < *(int *)(in_stack_00000004[1].actor_name + 0xc)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 81,
+      "line": 103,
       "match": "in_stack_00000004",
-      "text": "pcStack_18 = in_stack_00000004[1].actor_name + 0x10;",
+      "text": "pcStack_1c = in_stack_00000004[1].actor_name + 0x10;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 116,
+      "line": 138,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + (uint)bVar9 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 117,
+      "line": 139,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar9 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 122,
+      "line": 144,
       "match": "(SRenderVertex *)((int)",
       "text": "vertices = (SRenderVertex *)((int)vertices + (uint)bVar9 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 123,
+      "line": 145,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar9 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 125,
+      "line": 147,
       "match": "(short *)((int)",
       "text": "psVar1 = (short *)((int)&pCVar2->vertex_buffer_ptr[1].projected_vertex.screen_x + 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 127,
+      "line": 149,
       "match": "(short *)((int)",
       "text": "*(short *)((int)&pCVar2->vertex_buffer_ptr[2].projected_vertex.screen_y + 2) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 128,
+      "line": 150,
       "match": "(short *)((int)",
       "text": "*(short *)((int)&pCVar2->vertex_buffer_ptr[2].projected_vertex.screen_y + 2) + 1;",
       "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 130,
-      "match": "&stack0xffffff64",
-      "text": "(pCVar2,(SMRGLHeaderPrimitive *)&stack0xffffff64,999);",
-      "type": "stack_ref"
+      "description": "Complex pointer cast",
+      "line": 155,
+      "match": "(char *)((int)",
+      "text": "pcStack_1c = (char *)((int)pcStack_1c + 0x34);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 135,
+      "line": 157,
       "match": "in_stack_00000004",
       "text": "} while (iStack_20 < *(int *)(in_stack_00000004[1].actor_name + 0xc));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 138,
+      "line": 160,
       "match": "in_stack_00000004",
       "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_00000004);",
       "type": "stack_param"

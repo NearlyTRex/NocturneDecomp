@@ -407,7 +407,7 @@ engine_clipper_c_clipPolygonToViewFrustumAdvanced_FUN_00437ca0(int vertex_count,
             iVar10 = iVar10 + 4;
           } while (iVar10 < iVar8);
         }
-        if (iVar11 == local_28) {
+        if (iVar11 == vertex_count + -2) {
           return 1;
         }
       }

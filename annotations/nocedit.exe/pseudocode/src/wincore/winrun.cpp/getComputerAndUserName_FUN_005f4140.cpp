@@ -11,13 +11,15 @@ void __cdecl wincore_winrun_cpp_getComputerAndUserName_FUN_005f4140(char *buffer
 {
   char cVar1;
   char *pcVar2;
-  BADSPACEBASE *in_ESP;
   LPSTR lpBuffer;
+  DWORD local_10;
   
   crt_memory_c_memset_FUN_005fde40(buffer,0,0x200);
   lpBuffer = buffer + 0x100;
-  (*GetComputerNameA)(lpBuffer,(LPDWORD)&stack0xfffffff4);
-  (*GetUserNameA)(buffer,(LPDWORD)&stack0x00000000);
+  local_10 = 0x100;
+  (*GetComputerNameA)(lpBuffer,&local_10);
+  local_10 = 0x100;
+  (*GetUserNameA)(buffer,&local_10);
   if ((buffer[0x100] == '\0') &&
      (pcVar2 = crt_env_c_getenv_FUN_006013f0("COMPUTERNAME"), pcVar2 != (char *)0x0)) {
     do {

@@ -13,15 +13,13 @@ void core_imp_cpp_FUN_004fa920(void)
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   uint *unaff_ESI;
   uint *puVar2;
   byte bVar3;
   int in_stack_00000004;
   int in_stack_00000008;
-  CMatrix3x4f *in_stack_ffffff44;
-  uint auStack_b8 [10];
-  byte local_90 [48];
+  CMatrix3x4f *in_stack_ffffff40;
+  CMatrix3x4f local_90;
   CVector3f local_60 [2];
   CVector3f local_48;
   CVector3f local_3c;
@@ -67,12 +65,10 @@ void core_imp_cpp_FUN_004fa920(void)
       local_3c.y = 0.439;
     }
   }
-  core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
-            ((CMatrix3x4f *)local_90,&local_18,&local_3c);
+  core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0(&local_90,&local_18,&local_3c);
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
-            ((CMatrix3x4f *)(local_90 + 4),(CMatrix3x4f *)(iVar1 * 0x30 + in_stack_00000008 + 0xfd8)
-             ,in_stack_ffffff44);
-  puVar2 = auStack_b8;
+            (&local_90,(CMatrix3x4f *)(iVar1 * 0x30 + in_stack_00000004 + 0xfd8),in_stack_ffffff40);
+  puVar2 = (uint *)&stack0xffffff40;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
     *unaff_ESI = *puVar2;
     puVar2 = puVar2 + (uint)bVar3 * -2 + 1;

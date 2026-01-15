@@ -1,12 +1,12 @@
 {
   "complexity": {
     "assembly_lines": 91,
-    "complexity_score": 169,
+    "complexity_score": 209,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 15,
     "pseudocode_lines": 49,
-    "suspect_count": 11,
+    "suspect_count": 15,
     "suspect_types": [
       "call_esp_preserve",
       "stack_param"
@@ -186,57 +186,85 @@
     {
       "description": "Unresolved stack parameter",
       "line": 14,
-      "match": "in_stack_0000000c",
-      "text": "uint *in_stack_0000000c;",
+      "match": "in_stack_00000008",
+      "text": "uint *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 15,
-      "match": "in_stack_00000010",
-      "text": "uint in_stack_00000010;",
+      "match": "in_stack_0000000c",
+      "text": "uint in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 16,
+      "match": "in_stack_00000010",
+      "text": "char *in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
       "match": "in_stack_00000014",
       "text": "char *in_stack_00000014;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_0000000c",
-      "text": "*(uint *)g_ChatHistory[g_ChatHistoryCount].field0_0x0 = *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 26,
-      "match": "in_stack_0000000c",
-      "text": "*(uint *)(iVar3 + 0x2f7c8d4 + (uint)bVar6 * -8) = in_stack_0000000c[(uint)bVar6 * -2 + 1];",
+      "match": "in_stack_00000008",
+      "text": "*(uint *)g_ChatHistory[g_ChatHistoryCount].field0_0x0 = *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 27,
-      "match": "in_stack_00000010",
-      "text": "*(uint *)(g_ChatHistory[iVar2].field0_0x0 + 8) = in_stack_00000010;",
+      "match": "in_stack_00000008",
+      "text": "*(uint *)(iVar3 + 0x2f7c8d4 + (uint)bVar6 * -8) = in_stack_00000008[(uint)bVar6 * -2 + 1];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 29,
-      "match": "in_stack_00000014",
-      "text": "pcVar4 = in_stack_00000014;",
+      "line": 28,
+      "match": "in_stack_0000000c",
+      "text": "*(uint *)(g_ChatHistory[iVar2].field0_0x0 + 8) = in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 31,
+      "match": "in_stack_00000010",
+      "text": "cVar1 = *in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 34,
+      "match": "in_stack_00000010",
+      "text": "cVar1 = in_stack_00000010[1];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 35,
+      "match": "in_stack_00000010",
+      "text": "in_stack_00000010 = in_stack_00000010 + 2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 35,
+      "match": "in_stack_00000010",
+      "text": "in_stack_00000010 = in_stack_00000010 + 2;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 40,
       "match": "in_stack_00000014",
-      "text": "pcVar5 = in_stack_00000014;",
+      "text": "pcVar4 = in_stack_00000014;",
       "type": "stack_param"
     },
     {

@@ -1,21 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 197,
-    "complexity_score": 355,
+    "complexity_score": 281,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 2,
-    "pseudocode_lines": 95,
-    "suspect_count": 23,
+    "pseudocode_lines": 91,
+    "suspect_count": 17,
     "suspect_types": [
       "call_esp_preserve",
       "pointer_cast",
       "register_param",
-      "special_crt_function",
-      "stack_param",
-      "unaffected_reg"
+      "special_crt_function"
     ],
-    "total_lines": 292
+    "total_lines": 288
   },
   "cross_references": [
     {
@@ -176,112 +174,70 @@
   "suspects": [
     {
       "description": "Inferred register parameter",
-      "line": 7,
+      "line": 6,
       "match": "in_EAX",
       "text": "char *in_EAX;",
       "type": "register_param"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 15,
-      "match": "unaff_EDI",
-      "text": "int unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_00000010",
-      "text": "char *in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
       "description": "Inferred register parameter",
-      "line": 27,
+      "line": 24,
       "match": "in_EAX",
       "text": "in_EAX = envstr + 1;",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 28,
+      "line": 25,
       "match": "in_EAX",
       "text": "cVar1 = *in_EAX;",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 29,
+      "line": 26,
       "match": "in_EAX",
       "text": "for (; (cVar1 != '\\0' && (*in_EAX != '=')); in_EAX = in_EAX + 1) {",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 29,
+      "line": 26,
       "match": "in_EAX",
       "text": "for (; (cVar1 != '\\0' && (*in_EAX != '=')); in_EAX = in_EAX + 1) {",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 29,
+      "line": 26,
       "match": "in_EAX",
       "text": "for (; (cVar1 != '\\0' && (*in_EAX != '=')); in_EAX = in_EAX + 1) {",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 30,
+      "line": 27,
       "match": "in_EAX",
       "text": "cVar1 = in_EAX[1];",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 33,
+      "line": 30,
       "match": "in_EAX",
       "text": "if (*in_EAX == '\\0') {",
       "type": "register_param"
     },
     {
       "description": "Inferred register parameter",
-      "line": 36,
+      "line": 33,
       "match": "in_EAX",
       "text": "bVar7 = in_EAX[1] == '\\0';",
       "type": "register_param"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 77,
-      "match": "unaff_EDI",
-      "text": "g_EnvironStringArea = (char **)(unaff_EDI + (int)ptr);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 85,
-      "match": "unaff_EDI",
-      "text": "crt_string_c_memmove_FUN_005fe5e0((char **)(unaff_EDI + (int)ptr),g_EnvironStringArea,n);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 86,
-      "match": "unaff_EDI",
-      "text": "g_EnvironStringArea = (char **)(unaff_EDI + (int)ptr);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 95,
-      "match": "in_stack_00000010",
-      "text": "ptr[n] = in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 96,
+      "line": 92,
       "match": "(byte *)((int)",
       "text": "*(byte *)((int)g_EnvironStringArea + n) = 0;",
       "type": "pointer_cast"

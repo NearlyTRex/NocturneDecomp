@@ -26,7 +26,6 @@ void core_scat_cpp_FUN_005571f0(void)
   CVector3f *pCVar11;
   float fVar12;
   SMotion *pSVar13;
-  BADSPACEBASE *in_ESP;
   int desired_state_index;
   float *pfVar14;
   byte bVar15;

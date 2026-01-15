@@ -11,7 +11,6 @@ uint core_setdir_cpp_FUN_005763a0(void)
 {
   CVector3f *pCVar1;
   uint uVar2;
-  BADSPACEBASE *in_ESP;
   uint uVar3;
   CVector3f *pCVar4;
   float *in_stack_00000004;

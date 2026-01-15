@@ -13,7 +13,6 @@ core_dcube_cpp_CDemonCube_rotateVertices_FUN_00457650(CDemonCube *this_ptr,uint 
   float *pfVar1;
   CDemonCubeTriangle *pCVar2;
   int iVar3;
-  BADSPACEBASE *in_ESP;
   CVector3f *pCVar4;
   int iVar5;
   SRenderVertex *output;

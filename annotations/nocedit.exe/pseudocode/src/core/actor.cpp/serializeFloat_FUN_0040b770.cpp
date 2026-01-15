@@ -10,7 +10,6 @@ void __cdecl core_actor_cpp_serializeFloat_FUN_0040b770(float *float_ptr,char *p
 
 {
   int iVar1;
-  char *in_stack_0000000c;
   
   if (g_ActorReadingMode == 1) {
     iVar1 = crt_stdio_c_fscanf_FUN_005fe7c0(g_ActorDataFile,"%f");
@@ -23,7 +22,6 @@ void __cdecl core_actor_cpp_serializeFloat_FUN_0040b770(float *float_ptr,char *p
     crt_stdio_c_fprintf_FUN_005fe6d0
               (g_ActorDataFile,"%s%g",g_PropertyNamePrefix,(double)*float_ptr);
   }
-  core_actor_cpp_serializeDescription_FUN_0040b290
-            ("Floating point value",in_stack_0000000c);
+  core_actor_cpp_serializeDescription_FUN_0040b290("Floating point value",property_name);
   return;
 }

@@ -15,7 +15,7 @@ void __cdecl core_turret_cpp_CTurret_FUN_005e2240(CTurret *this_ptr)
   CKeyFramedModel *this_ptr_00;
   CVector3i *pCVar2;
   int iVar3;
-  float fVar4;
+  float local_18;
   
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
             ((CKeyFramedModelInstance *)(this_ptr->field1_0x578 + 0xc));
@@ -24,14 +24,14 @@ void __cdecl core_turret_cpp_CTurret_FUN_005e2240(CTurret *this_ptr)
                           (&(this_ptr->base_weapon).model);
   pCVar2 = core_dmodel_cpp_CKeyFramedModel_getFrameVertices_FUN_00477890
                      (this_ptr_00,this_ptr_00->frame_count + -1);
-  fVar4 = -1e+30;
+  local_18 = -1e+30;
   for (iVar3 = 0; iVar3 < this_ptr_00->vertex_count; iVar3 = iVar3 + 1) {
     fVar1 = (float)pCVar2->z + (float)pCVar2->y * (float)0.20000000000000001;
-    if (fVar4 < fVar1) {
+    if (local_18 < fVar1) {
       *(float *)(this_ptr->field12_0x85c + 4) = (float)pCVar2->x * _DAT_00664b58;
       *(float *)(this_ptr->field12_0x85c + 8) = (float)pCVar2->y * _DAT_00664b58;
       *(float *)(this_ptr->field12_0x85c + 0xc) = (float)pCVar2->z * _DAT_00664b58;
-      fVar4 = fVar1;
+      local_18 = fVar1;
     }
     pCVar2 = pCVar2 + 1;
   }

@@ -16,7 +16,6 @@ void core_werewolf_cpp_FUN_005f1e40(void)
   float fVar2;
   float fVar3;
   float fVar4;
-  BADSPACEBASE *in_ESP;
   CCharacter *in_stack_00000004;
   CVector3f local_68;
   CVector3f local_5c;

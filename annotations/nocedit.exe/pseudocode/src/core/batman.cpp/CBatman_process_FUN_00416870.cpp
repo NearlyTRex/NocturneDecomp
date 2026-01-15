@@ -27,7 +27,6 @@ void __cdecl core_batman_cpp_CBatman_process_FUN_00416870(CBatman *this_ptr)
   int extraout_EAX;
   CDemonActor *pCVar15;
   int extraout_EAX_00;
-  BADSPACEBASE *in_ESP;
   float in_stack_00000008;
   SCollisionInfo *in_stack_fffffdfe;
   SDamageInfo local_188;

@@ -12,7 +12,6 @@ crt_process_c_spawnCommand_FUN_00609c90
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   
   iVar1 = crt_process_c_spawnvp_FUN_0060ca20(mode,cmdPath,&cmdName);
   return iVar1;

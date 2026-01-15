@@ -1,19 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 131,
-    "complexity_score": 200,
+    "complexity_score": 146,
     "cross_reference_count": 6,
     "function_call_count": 4,
     "global_count": 1,
-    "pseudocode_lines": 60,
-    "suspect_count": 12,
+    "pseudocode_lines": 61,
+    "suspect_count": 7,
     "suspect_types": [
       "call_esp_preserve",
       "callind_preserve",
-      "stack_param",
       "unaffected_reg"
     ],
-    "total_lines": 191
+    "total_lines": 192
   },
   "cross_references": [
     {
@@ -172,51 +171,16 @@
   "suspects": [
     {
       "description": "Unaffected register variable",
-      "line": 12,
-      "match": "unaff_ESI",
-      "text": "CWeapon *unaff_ESI;",
+      "line": 11,
+      "match": "unaff_EBP",
+      "text": "CWeapon *unaff_EBP;",
       "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000014",
-      "text": "CDemonActor *in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_00000014",
-      "text": "pcVar2 = in_stack_00000014->actor_name + (int)pcVar2;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 45,
-      "match": "in_stack_00000014",
-      "text": "(this_ptr,weapon_actor,(int)in_stack_00000014), iVar1 != 0)) &&",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 46,
-      "match": "in_stack_00000014",
-      "text": "((in_stack_00000014 == (CDemonActor *)0x0 || (weapon_actor == in_stack_00000014)))) break;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 46,
-      "match": "in_stack_00000014",
-      "text": "((in_stack_00000014 == (CDemonActor *)0x0 || (weapon_actor == in_stack_00000014)))) break;",
-      "type": "stack_param"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 53,
-      "match": "unaff_ESI",
-      "text": "if (this_ptr_00 != unaff_ESI) {",
+      "line": 58,
+      "match": "unaff_EBP",
+      "text": "this_ptr->selected_weapon = unaff_EBP;",
       "type": "unaffected_reg"
     },
     {

@@ -13,7 +13,6 @@ void core_vampboss_cpp_FUN_005e6ca0(void)
 
 {
   uint uVar1;
-  BADSPACEBASE *in_ESP;
   int in_stack_00000004;
   float in_stack_00000008;
   float local_74;

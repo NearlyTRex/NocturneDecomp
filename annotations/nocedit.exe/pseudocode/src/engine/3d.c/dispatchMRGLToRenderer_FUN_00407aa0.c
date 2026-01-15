@@ -13,7 +13,6 @@ void __cdecl engine_3d_c_dispatchMRGLToRenderer_FUN_00407aa0(SVertexBatch *cmd)
   char cVar2;
   byte bVar3;
   int iVar4;
-  BADSPACEBASE *in_ESP;
   int iVar5;
   SVertexBatch *in_stack_fffffef0;
   
@@ -56,10 +55,12 @@ void __cdecl engine_3d_c_dispatchMRGLToRenderer_FUN_00407aa0(SVertexBatch *cmd)
         }
         else {
 LAB_00407c82:
-          crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffef0,"Unknown primitive : %d");
+          crt_stdio_c_sprintf_FUN_005fdbd0
+                    (&stack0xfffffef0,"Unknown primitive : %d",(uint)(byte)cmd->primitive_type
+                    );
           g_CurrentLineNumber = 0xcf1;
           g_CurrentFilename = "..\\engine\\3d.c";
-          core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xfffffee8);
+          core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xfffffef0);
         }
       }
       else if (bVar3 < 4) {

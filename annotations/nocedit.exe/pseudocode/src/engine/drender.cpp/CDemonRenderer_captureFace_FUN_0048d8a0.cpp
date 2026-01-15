@@ -24,7 +24,6 @@ engine_drender_cpp_CDemonRenderer_captureFace_FUN_0048d8a0
   uint *puVar11;
   uint *puVar12;
   byte bVar13;
-  int in_stack_00000014;
   
   bVar13 = 0;
   if (this_ptr->face_capture_enabled == 0) {
@@ -63,7 +62,7 @@ engine_drender_cpp_CDemonRenderer_captureFace_FUN_0048d8a0
   *(ushort *)(puVar12 + (uint)bVar13 * -2 + 1 + (uint)bVar13 * -2 + 1) =
        *(ushort *)(puVar10 + (uint)bVar13 * -2 + 1 + (uint)bVar13 * -2 + 1);
   g_CapturedFaces[iVar6].texture_index = iVar8;
-  g_CapturedFaces[iVar6].render_flags = in_stack_00000014;
+  g_CapturedFaces[iVar6].render_flags = render_flags;
   pSVar1 = this_ptr->vertex_buffer_ptr;
   iVar8 = pSVar1[triangle_indices->vertex_index_0].projected_vertex.transformed_z;
   iVar2 = pSVar1[triangle_indices->vertex_index_1].projected_vertex.transformed_z;

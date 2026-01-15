@@ -11,12 +11,12 @@ void __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e670(CActorPropertyList *
 {
   int iVar1;
   char *in_stack_00000008;
+  uint in_stack_0000000c;
   uint in_stack_00000010;
-  uint in_stack_00000014;
   
   iVar1 = core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0
                     (this_ptr,0x11,in_stack_00000008,(void *)0x0,(void *)0x0);
-  *(uint *)(iVar1 + 0x68) = in_stack_00000010;
-  *(uint *)(iVar1 + 0xe8) = in_stack_00000014;
+  *(uint *)(iVar1 + 0x68) = in_stack_0000000c;
+  *(uint *)(iVar1 + 0xe8) = in_stack_00000010;
   return;
 }

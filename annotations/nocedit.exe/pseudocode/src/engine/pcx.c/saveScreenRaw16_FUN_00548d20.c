@@ -10,81 +10,85 @@ void __cdecl engine_pcx_c_saveScreenRaw16_FUN_00548d20(char *filename)
 
 {
   char cVar1;
+  ushort uVar2;
   FILE *file;
-  int iVar2;
-  BADSPACEBASE *in_ESP;
-  uint uVar3;
-  char *pcVar4;
-  ushort *puVar5;
-  char *pcVar6;
-  int character;
-  int iVar7;
+  int iVar3;
+  uint uVar4;
+  char *pcVar5;
+  ushort *puVar6;
+  char *pcVar7;
+  char local_70 [80];
+  uint local_20;
+  uint local_1c;
+  int local_18;
+  int local_14;
   
-  pcVar6 = &stack0xffffff90;
+  pcVar7 = local_70;
   do {
     cVar1 = *filename;
-    *pcVar6 = cVar1;
-    pcVar4 = &stack0xffffff90;
+    *pcVar7 = cVar1;
+    pcVar5 = local_70;
     if (cVar1 == '\0') break;
     cVar1 = filename[1];
     filename = filename + 2;
-    pcVar6[1] = cVar1;
-    pcVar6 = pcVar6 + 2;
-    pcVar4 = &stack0xffffff90;
+    pcVar7[1] = cVar1;
+    pcVar7 = pcVar7 + 2;
+    pcVar5 = local_70;
   } while (cVar1 != '\0');
   do {
-    pcVar6 = pcVar4;
-    if (*pcVar4 == '.') goto LAB_00548d63;
-    if (*pcVar4 == '\0') break;
-    pcVar6 = pcVar4 + 1;
-    if (*pcVar6 == '.') goto LAB_00548d63;
-    pcVar4 = pcVar4 + 2;
-  } while (*pcVar6 != '\0');
-  pcVar6 = (char *)0x0;
+    pcVar7 = pcVar5;
+    if (*pcVar5 == '.') goto LAB_00548d63;
+    if (*pcVar5 == '\0') break;
+    pcVar7 = pcVar5 + 1;
+    if (*pcVar7 == '.') goto LAB_00548d63;
+    pcVar5 = pcVar5 + 2;
+  } while (*pcVar7 != '\0');
+  pcVar7 = (char *)0x0;
 LAB_00548d63:
-  if (pcVar6 == (char *)0x0) {
+  if (pcVar7 == (char *)0x0) {
     g_CurrentFilename = "..\\engine\\pcx.c";
     g_CurrentLineNumber = 0x67;
     core_main_c_displayErrorAndQuit_FUN_00506f10("saveScreenRaw16 - No ext found");
   }
-  pcVar4 = ".RAW";
+  pcVar5 = ".RAW";
   do {
-    cVar1 = *pcVar4;
-    *pcVar6 = cVar1;
+    cVar1 = *pcVar5;
+    *pcVar7 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar4[1];
-    pcVar4 = pcVar4 + 2;
-    pcVar6[1] = cVar1;
-    pcVar6 = pcVar6 + 2;
+    cVar1 = pcVar5[1];
+    pcVar5 = pcVar5 + 2;
+    pcVar7[1] = cVar1;
+    pcVar7 = pcVar7 + 2;
   } while (cVar1 != '\0');
   file = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                   (&stack0xffffff94,(char *)0x0,"wb","..\\engine\\pcx.c",0x6c);
+                   (local_70,(char *)0x0,"wb","..\\engine\\pcx.c",0x6c);
   if (file == (FILE *)0x0) {
     g_CurrentFilename = "..\\engine\\pcx.c";
     g_CurrentLineNumber = 0x6d;
     core_main_c_displayErrorAndQuit_FUN_00506f10("saveScreenRaw16 - Unable to open output");
   }
-  iVar7 = 0;
+  local_14 = 0;
   if (0 < g_WindowHeight) {
-    character = 0;
+    local_18 = 0;
     do {
-      iVar2 = 0;
-      puVar5 = *(ushort **)((int)g_ScreenBufferArray + character);
+      iVar3 = 0;
+      puVar6 = *(ushort **)((int)g_ScreenBufferArray + local_18);
       if (0 < g_WindowWidth) {
         do {
-          uVar3 = (uint)(*puVar5 >> ((byte)g_BlueBitPosition & 0x1f)) * g_BlueScaleFactor;
-          crt_stdio_c_fputc_FUN_006007a0
-                    ((uint)(*puVar5 >> ((byte)g_RedBitPosition & 0x1f)) * g_RedScaleFactor & 0xff,
-                     file);
-          crt_stdio_c_fputc_FUN_006007a0(character,file);
-          puVar5 = puVar5 + 1;
-          iVar2 = iVar2 + 1;
-          crt_stdio_c_fputc_FUN_006007a0(uVar3 & 0xff,file);
-        } while (iVar2 < g_WindowWidth);
+          uVar2 = *puVar6;
+          local_20 = (uint)(uVar2 >> ((byte)g_RedBitPosition & 0x1f)) * g_RedScaleFactor & 0xff;
+          local_1c = (uint)(uVar2 >> ((byte)g_GreenBitPosition & 0x1f)) * g_GreenScaleFactor & 0xff;
+          uVar4 = (uint)(uVar2 >> ((byte)g_BlueBitPosition & 0x1f)) * g_BlueScaleFactor;
+          crt_stdio_c_fputc_FUN_006007a0(local_20,file);
+          crt_stdio_c_fputc_FUN_006007a0(local_1c,file);
+          puVar6 = puVar6 + 1;
+          iVar3 = iVar3 + 1;
+          crt_stdio_c_fputc_FUN_006007a0(uVar4 & 0xff,file);
+        } while (iVar3 < g_WindowWidth);
       }
-      character = character + 4;
-      iVar7 = iVar7 + 1;
-    } while (iVar7 < g_WindowHeight);
+      local_18 = local_18 + 4;
+      local_14 = local_14 + 1;
+    } while (local_14 < g_WindowHeight);
   }
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\pcx.c",0x84);
   return;

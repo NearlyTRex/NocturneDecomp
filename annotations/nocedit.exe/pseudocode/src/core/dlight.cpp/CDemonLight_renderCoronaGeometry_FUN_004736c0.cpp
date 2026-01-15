@@ -9,25 +9,32 @@
 void __cdecl core_dlight_cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0(CDemonLight *this_ptr)
 
 {
-  CDemonRenderer *pCVar1;
-  float *pfVar2;
-  CVector3f *pCVar3;
-  bool bVar4;
-  int iVar5;
-  BADSPACEBASE *in_ESP;
-  int iVar6;
-  float10 fVar7;
-  float10 fVar8;
-  float fVar9;
-  byte local_78 [20];
+  float fVar1;
+  float fVar2;
+  float fVar3;
+  CDemonRenderer *pCVar4;
+  float *pfVar5;
+  CVector3f *pCVar6;
+  bool bVar7;
+  int iVar8;
+  int iVar9;
+  float10 fVar10;
+  float10 fVar11;
+  float10 fVar12;
+  double dVar13;
+  SMRGLHeaderPrimitive local_a4;
+  int local_8c;
+  int local_88;
+  int local_84;
+  CVector3i local_7c;
+  CVector3f local_70;
   CVector3i local_64;
   float local_58 [3];
   CVector3f local_4c;
   float local_40;
   float local_3c;
   float local_38;
-  byte local_34 [8];
-  float local_2c;
+  CVector3f local_34 [2];
   float local_18;
   int local_14;
   
@@ -37,82 +44,103 @@ void __cdecl core_dlight_cpp_CDemonLight_renderCoronaGeometry_FUN_004736c0(CDemo
             ((CMatrix3x3f *)&(this_ptr->base).base.rotation_matrix,&local_4c);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
             (g_CDemonRendererPtr,(CVector3i *)&local_4c,(CVector3i *)0x0);
-  fVar9 = ((float)18 / (this_ptr->base).base.projection_scale) *
-          (this_ptr->base).max_distance;
-  iVar6 = 0;
+  fVar1 = (this_ptr->base).base.projection_scale;
+  fVar3 = (float)18;
+  fVar2 = (this_ptr->base).max_distance;
+  iVar9 = 0;
   local_38 = (this_ptr->base).max_distance;
-  iVar5 = 0;
+  iVar8 = 0;
   do {
-    fVar7 = (float10)iVar6 * (float10)6.2831853070000001 * (float10)0.0625;
-    fVar8 = (float10)fcos(fVar7);
-    fVar7 = (float10)fsin(fVar7);
-    local_40 = (float)(fVar8 * (float10)fVar9);
-    local_3c = (float)(fVar7 * (float10)fVar9);
+    fVar10 = (float10)iVar9 * (float10)6.2831853070000001 * (float10)0.0625;
+    fVar11 = (float10)fcos(fVar10);
+    fVar10 = (float10)fsin(fVar10);
+    fVar12 = (float10)((fVar3 / fVar1) * fVar2);
+    local_40 = (float)(fVar11 * fVar12);
+    local_3c = (float)(fVar10 * fVar12);
     local_64.x = (int)ROUND(local_40 * 256f);
     local_64.y = (int)ROUND(local_3c * 256f);
     local_64.z = (int)ROUND(local_38 * 256f);
-    local_14 = iVar6;
+    local_14 = iVar9;
     wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
               ((SProjectedVertex *)
                ((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).transformed_x +
-               iVar5),&local_64);
-    pCVar1 = g_CDemonRendererPtr;
-    iVar6 = iVar6 + 1;
-    *(uint *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->light + iVar5) = 0;
-    iVar5 = iVar5 + 0x30;
-  } while (iVar6 < 0x10);
-  local_78._0_4_ = (uint)ROUND(DAT_026a72d8 * 256f);
-  local_78._4_4_ = (uint)ROUND(DAT_026a72dc * 256f);
-  local_78._8_4_ = (uint)ROUND(DAT_026a72e0 * 256f);
+               iVar8),&local_64);
+    pCVar4 = g_CDemonRendererPtr;
+    iVar9 = iVar9 + 1;
+    *(uint *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->light + iVar8) = 0;
+    iVar8 = iVar8 + 0x30;
+  } while (iVar9 < 0x10);
+  local_7c.x = (int)ROUND(DAT_026a72d8 * 256f);
+  local_7c.y = (int)ROUND(DAT_026a72dc * 256f);
+  local_7c.z = (int)ROUND(DAT_026a72e0 * 256f);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-            (&pCVar1->vertex_buffer_ptr[0x10].projected_vertex,(CVector3i *)local_78);
-  pCVar1 = g_CDemonRendererPtr;
+            (&pCVar4->vertex_buffer_ptr[0x10].projected_vertex,&local_7c);
+  pCVar4 = g_CDemonRendererPtr;
   g_CDemonRendererPtr->vertex_buffer_ptr[0x10].light = 9.18341e-41;
-  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(pCVar1,1);
-  pfVar2 = engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
+  engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(pCVar4,1);
+  pfVar5 = engine_drender_cpp_CDemonRenderer_getCameraOriginScaled_FUN_0048c780
                      (g_CDemonRendererPtr,local_58);
-  local_34._0_4_ = *pfVar2 - (float)(this_ptr->base).base.position.x;
-  local_34._4_4_ = pfVar2[1] - (float)(this_ptr->base).base.position.y;
-  bVar4 = false;
-  local_2c = pfVar2[2] - (float)(this_ptr->base).base.position.z;
-  pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
-                     ((CMatrix3x3f *)&(this_ptr->base).base.rotation_matrix,
-                      (CVector3f *)(local_78 + 8),(CVector3f *)local_34);
-  if ((CVector3f *)(local_34 + 4) != pCVar3) {
-    local_34._0_4_ = pCVar3->x;
-    local_34._4_4_ = pCVar3->y;
-    local_2c = pCVar3->z;
+  local_34[0].x = *pfVar5 - (float)(this_ptr->base).base.position.x;
+  local_34[0].y = pfVar5[1] - (float)(this_ptr->base).base.position.y;
+  bVar7 = false;
+  local_34[0].z = pfVar5[2] - (float)(this_ptr->base).base.position.z;
+  pCVar6 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
+                     ((CMatrix3x3f *)&(this_ptr->base).base.rotation_matrix,&local_70,local_34);
+  if (local_34 != pCVar6) {
+    local_34[0].x = pCVar6->x;
+    local_34[0].y = pCVar6->y;
+    local_34[0].z = pCVar6->z;
   }
-  local_34._0_4_ =
-       (this_ptr->base).base.projection_scale * (float)0.055555555555555601 * (float)local_34._0_4_;
-  local_34._4_4_ =
-       (float)0.055555555555555601 * (this_ptr->base).base.projection_scale * (float)local_34._4_4_;
-  if (((((float)local_34._0_4_ < local_2c) &&
-       (local_18 = -local_2c, local_18 < (float)local_34._0_4_)) &&
-      ((float)local_34._4_4_ < local_2c)) &&
-     ((local_18 < (float)local_34._4_4_ && (local_2c < (this_ptr->base).max_distance)))) {
-    bVar4 = true;
+  local_34[0].x = (this_ptr->base).base.projection_scale * (float)0.055555555555555601 * local_34[0].x;
+  local_34[0].y = (float)0.055555555555555601 * (this_ptr->base).base.projection_scale * local_34[0].y;
+  if ((((local_34[0].x < local_34[0].z) && (local_18 = -local_34[0].z, local_18 < local_34[0].x)) &&
+      (local_34[0].y < local_34[0].z)) &&
+     ((local_18 < local_34[0].y && (local_34[0].z < (this_ptr->base).max_distance)))) {
+    bVar7 = true;
   }
-  if (bVar4) {
+  local_a4.surface_normal.D = 0;
+  local_a4.surface_normal.C = 0;
+  local_a4.surface_normal.B = 0;
+  local_a4.surface_normal.A = 0;
+  local_a4.base.count = 3;
+  if (bVar7) {
     core_dcamera_cpp_initializeCoronaBuffers_FUN_004502e0();
   }
   else {
-    iVar5 = 0;
+    local_84 = 0x10;
+    iVar8 = 0;
     do {
-      iVar5 = iVar5 + 1;
+      if (iVar8 == 0xf) {
+        local_8c = 0;
+      }
+      else {
+        local_8c = iVar8 + 1;
+      }
+      iVar9 = iVar8 + 1;
+      local_88 = iVar8;
       engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0
-                (g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)&stack0xffffff5c,
+                (g_CDemonRendererPtr,&local_a4,
                  core_dcamera_cpp_renderCoronaDepthScanline_FUN_00450320);
-    } while (iVar5 < 0x10);
+      iVar8 = iVar9;
+    } while (iVar9 < 0x10);
   }
-  iVar5 = 0;
-  crt_math_c_round_FUN_005fe6b0((double)((this_ptr->base).max_distance * (float)256));
+  local_a4.surface_normal.A = 0;
+  local_a4.surface_normal.B = 0;
+  local_a4.surface_normal.C = 0xffff;
+  dVar13 = crt_math_c_round_FUN_005fe6b0
+                     ((double)((this_ptr->base).max_distance * (float)256));
+  local_a4.surface_normal.C = (int)ROUND(dVar13);
+  iVar8 = 0;
   do {
-    iVar5 = iVar5 + 1;
+    iVar9 = iVar8 + 1;
+    local_8c = 0;
+    local_88 = iVar8;
+    local_84 = iVar9;
     engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0
-              (g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)&stack0xffffff5c,
-               core_dcamera_cpp_renderCoronaDepthScanline_FUN_00450320);
-  } while (iVar5 < 0xe);
+              (g_CDemonRendererPtr,&local_a4,core_dcamera_cpp_renderCoronaDepthScanline_FUN_00450320
+              );
+    iVar8 = iVar9;
+  } while (iVar9 < 0xe);
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr,0);
   core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0(this_ptr);

@@ -14,7 +14,6 @@ float * __cdecl core_door_cpp_CDoor_getOpenStandPos_FUN_00480e20(CDoor *this_ptr
   float fVar3;
   float fVar4;
   CVector3f *pCVar5;
-  BADSPACEBASE *in_ESP;
   float *in_stack_00000008;
   float *in_stack_0000000c;
   CVector3f *in_stack_00000010;

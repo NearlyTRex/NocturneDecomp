@@ -13,23 +13,22 @@ engine_fileio_cpp_CFileManager_extractTexture_FUN_004b53e0
 {
   char cVar1;
   FILE *file_ptr;
-  BADSPACEBASE *in_ESP;
   char *pcVar2;
   char *pcVar3;
-  uint *in_stack_00000014;
+  char local_58 [80];
   
   crt_stdio_c_fprintf_FUN_005fe6d0(this_ptr->file_ptr,"ART\\%s\n",texture_filename);
-  pcVar3 = &stack0xffffffac;
+  pcVar3 = local_58;
   do {
     cVar1 = *texture_filename;
     *pcVar3 = cVar1;
-    pcVar2 = &stack0xffffffac;
+    pcVar2 = local_58;
     if (cVar1 == '\0') break;
     cVar1 = texture_filename[1];
     texture_filename = texture_filename + 2;
     pcVar3[1] = cVar1;
     pcVar3 = pcVar3 + 2;
-    pcVar2 = &stack0xffffffac;
+    pcVar2 = local_58;
   } while (cVar1 != '\0');
   do {
     pcVar3 = pcVar2;
@@ -56,10 +55,10 @@ LAB_004b5436:
     pcVar3[1] = cVar1;
     pcVar3 = pcVar3 + 2;
   } while (cVar1 != '\0');
-  file_ptr = engine_dosio_c_getFile_FUN_00481a50("art",&stack0xffffffb0,"rb");
+  file_ptr = engine_dosio_c_getFile_FUN_00481a50("art",local_58,"rb");
   if (file_ptr != (FILE *)0x0) {
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\engine\\fileio.cpp",0x6e7);
-    crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)*in_stack_00000014,"ART\\%s\n");
+    crt_stdio_c_fprintf_FUN_005fe6d0(this_ptr->file_ptr,"ART\\%s\n",local_58);
     return;
   }
   return;

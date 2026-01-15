@@ -9,18 +9,18 @@
 void __cdecl core_fire_cpp_CFireEffect_FUN_004c8f50(CFireEffect *this_ptr)
 
 {
-  int in_stack_00000014;
+  int in_stack_00000010;
   
   core_fire_cpp_CLightningBolt_FUN_004c5640(g_LightningBoltPool + (int)g_GunFlameActiveListHead);
   g_GunFlameActiveListHead = (CGunFlame *)(g_GunFlameActiveListHead->field0_0x0 + 1);
   if ((int)g_GunFlameActiveListHead < 10) {
-    if (in_stack_00000014 == 0) {
+    if (in_stack_00000010 == 0) {
       return;
     }
   }
   else {
     g_GunFlameActiveListHead = (CGunFlame *)0x0;
-    if (in_stack_00000014 == 0) {
+    if (in_stack_00000010 == 0) {
       return;
     }
   }

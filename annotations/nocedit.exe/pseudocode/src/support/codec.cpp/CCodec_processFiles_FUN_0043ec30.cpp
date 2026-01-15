@@ -12,52 +12,46 @@ support_codec_cpp_CCodec_processFiles_FUN_0043ec30
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
-  int in_stack_00000010;
-  void *d2;
-  CCodec *in_stack_fffffef4;
+  FILE *in_stack_fffffef0;
+  void *in_stack_fffffef4;
   char *in_stack_fffffef8;
-  char *in_stack_fffffefc;
-  char *in_stack_ffffff00;
-  CCodec *pCStack_a8;
-  byte local_90 [12];
-  FILE FStack_84;
-  FILE aFStack_60 [2];
-  int iStack_28;
+  FILE FStack_c8;
+  int local_ac;
+  byte local_90 [88];
+  FILE FStack_38;
   
   crt_fstream_cpp_ifstream_constructor_FUN_005ff664
             ((ifstream *)&stack0xfffffef0,0,(int)input_file_path,(char *)0x101,
              g_DefaultStreamBufferSize);
-  if (pCStack_a8 == (CCodec *)0x0) {
-    d2 = (void *)g_DefaultStreamBufferSize;
+  if (local_ac == 0) {
     crt_fstream_cpp_ofstream_constructor_FUN_005ff710
-              ((ofstream *)(local_90 + 4),0,in_stack_00000010,0x112,
-               (char *)g_DefaultStreamBufferSize,(SIZE_T)in_stack_fffffef4);
-    if (iStack_28 == 0) {
-      pCStack_a8 = this_ptr;
+              ((ofstream *)local_90,0,(int)output_file_path,0x112,(char *)g_DefaultStreamBufferSize,
+               (SIZE_T)in_stack_fffffef0);
+    if (FStack_38._link == (streambuf *)0x0) {
       (*this_ptr->vtable->init)(this_ptr);
-      aFStack_60[0]._bufsize = 0x7fffffff;
+      in_stack_fffffef0 = (FILE *)(local_90 + 0x48);
       iVar1 = (*this_ptr->vtable->process)
-                        (this_ptr,(FILE *)&stack0xfffffefc,(int)&aFStack_60[0]._bufsize,&FStack_84);
+                        (this_ptr,&FStack_c8,(int)&stack0xfffffff0,in_stack_fffffef0);
       if (iVar1 != 0) {
-        (*this_ptr->vtable->finalize)(this_ptr,aFStack_60);
+        in_stack_fffffef8 = (char *)0x43ecea;
+        (*this_ptr->vtable->finalize)(this_ptr,&FStack_38);
       }
       crt_fstream_cpp_ofstream_dtor_FUN_005ff7bc
-                ((ofstream *)local_90,0,(uint)d2,(uint)pCStack_a8,(uint)in_stack_fffffef8);
+                ((ofstream *)local_90,0,(uint)in_stack_fffffef0,(uint)in_stack_fffffef4,
+                 (uint)in_stack_fffffef8);
     }
     else {
       crt_fstream_cpp_ofstream_dtor_FUN_005ff7bc
-                ((ofstream *)(local_90 + 8),0,(uint)in_stack_fffffef8,(uint)in_stack_fffffefc,
-                 (uint)in_stack_ffffff00);
+                ((ofstream *)local_90,0,(uint)in_stack_fffffef0,(uint)in_stack_fffffef4,
+                 (uint)in_stack_fffffef8);
       iVar1 = 0;
     }
   }
   else {
     iVar1 = 0;
-    pCStack_a8 = in_stack_fffffef4;
   }
   crt_fstream_cpp_ifstream_dtor_FUN_005ff856
-            ((ifstream *)&stack0xfffffef4,0,(uint)pCStack_a8,(uint)in_stack_fffffef8,
-             (uint)in_stack_fffffefc);
+            ((ifstream *)&stack0xfffffef0,0,(uint)in_stack_fffffef0,(uint)in_stack_fffffef4,
+             (uint)in_stack_fffffef8);
   return iVar1;
 }

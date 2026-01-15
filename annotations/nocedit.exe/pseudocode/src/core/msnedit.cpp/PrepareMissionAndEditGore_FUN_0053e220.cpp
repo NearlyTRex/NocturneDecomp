@@ -13,19 +13,17 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
 
 {
   float fVar1;
+  CGame *this_ptr;
   CDemonSet *pCVar2;
   CBoxActor *pCVar3;
   CBoxActor *pCVar4;
   int iVar5;
-  BADSPACEBASE *in_ESP;
   byte bVar6;
   CDemonMission *in_stack_00000004;
-  int aiStackY_1038 [3];
-  float afStackY_102c [981];
+  int aiStackY_103c [984];
   CVector3i *output_ptr;
-  CGame *pCVar7;
+  double in_stack_ffffff34;
   float fStack_c4;
-  float local_c0;
   float local_bc;
   CSlew CStack_b8;
   CVector3f CStack_9c;
@@ -38,16 +36,19 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
   float fStack_60;
   float fStack_5c;
   float fStack_58;
-  int iStack_50;
-  int aiStack_4c [4];
-  float afStack_3c [3];
+  int iStack_54;
+  int aiStack_50 [5];
+  float fStack_3c;
+  float fStack_38;
+  float fStack_34;
   CVector3i CStack_30;
   int iStack_24;
   CLocation *pCStack_20;
   COrientation *pCStack_1c;
   CBoxActor *pCStack_18;
+  float fStack_14;
   
-  pCVar7 = g_CGamePtr;
+  this_ptr = g_CGamePtr;
   bVar6 = 0;
   local_bc = 0.0;
   fStack_c4 = 0.0;
@@ -56,7 +57,7 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
   in_stack_00000004->field0_0x0[5] = '\0';
   in_stack_00000004->field0_0x0[6] = '\0';
   in_stack_00000004->field0_0x0[7] = '\0';
-  core_game_cpp_CGame_setGameRes_FUN_004dade0(pCVar7);
+  core_game_cpp_CGame_setGameRes_FUN_004dade0(this_ptr);
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Preparing set.");
   core_dlight_cpp_CDemonLight_init_FUN_004727c0(&g_CDemonLightInstance);
@@ -79,9 +80,8 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
   core_mission_cpp_CDemonMission_buildSetActorList_FUN_00523e60(in_stack_00000004);
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_clearInputAndWait_FUN_00403260();
-  pCVar7 = (CGame *)0x53e32e;
   core_fire_cpp_CFireEffect_init_FUN_004c6c80(g_CFireEffectPtr);
-  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,pCVar7);
+  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,SUB84 /* extract 2-byte value */(in_stack_ffffff34,0));
   core_slew_cpp_CSlew_init_FUN_005a2060(&CStack_b8);
   iStack_24 = g_CDemonCameraInstance.corona_blend_factor;
   pCVar4 = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x66c,"..\\core\\msnedit.cpp",0xe7b);
@@ -129,7 +129,7 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
     pCVar2 = g_CDemonSetPtr;
     if (*(int *)(in_stack_00000004->field2_0xc + 0x2c) == 0) {
-      g_CDemonCameraInstance.corona_blend_factor = (int)pCStack_20;
+      g_CDemonCameraInstance.corona_blend_factor = iStack_24;
       g_CDemonSetPtr->lighting_quality_mode = 0;
       pCVar2->unk_lighting_param1 = 0;
     }
@@ -147,7 +147,6 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
     core_gore_cpp_CGore_process_FUN_004ed9e0();
     shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(g_CEditorToolsPtr,false);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-    pCVar7 = g_CGamePtr;
     core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
     core_setcolid_cpp_CDemonSet_FUN_005743e0(g_CDemonSetPtr);
     iVar5 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
@@ -157,18 +156,19 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
       if ((((0 < g_MouseX) && (g_MouseX < g_WindowWidth + -2)) && (0 < g_MouseY)) &&
          (g_MouseY < g_WindowHeight + -2)) {
         core_dcamera_cpp_CDemonCamera_screenToWorldCoord_FUN_0044d2a0
-                  (&g_CDemonCameraInstance,(CVector3i *)g_MouseX,g_MouseY,(int)pCVar7);
+                  (&g_CDemonCameraInstance,(CVector3i *)g_MouseX,g_MouseY,SUB84 /* extract 2-byte value */(in_stack_ffffff34,0)
+                  );
         output_ptr = &CStack_30;
-        CStack_30.x = aiStack_4c[2];
-        *(float *)((int)&CStack_30 + (uint)bVar6 * -8 + 4) = afStack_3c[(uint)bVar6 * -2 + -1];
-        *(float *)((int)&CStack_30 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
-             afStack_3c[(uint)bVar6 * -2 + (uint)bVar6 * -2];
-        core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370
-                  (&g_CDemonCameraInstance,output_ptr,(CVector3i *)pCVar7);
-        CStack_30.x = iStack_50;
-        *(int *)((int)&CStack_30 + (uint)bVar6 * -8 + 4) = aiStack_4c[(uint)bVar6 * -2];
+        CStack_30.x = aiStack_50[2];
+        *(int *)((int)&CStack_30 + (uint)bVar6 * -8 + 4) = aiStack_50[(uint)bVar6 * -2 + 3];
         *(int *)((int)&CStack_30 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
-             aiStack_4c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
+             aiStack_50[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4];
+        core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370
+                  (&g_CDemonCameraInstance,output_ptr,SUB84 /* extract 2-byte value */(in_stack_ffffff34,0));
+        CStack_30.x = iStack_54;
+        *(int *)((int)&CStack_30 + (uint)bVar6 * -8 + 4) = aiStack_50[(uint)bVar6 * -2];
+        *(int *)((int)&CStack_30 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
+             aiStack_50[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
         auStack_90._0_4_ = (float)CStack_30.x * _DAT_00661c30;
         auStack_90._4_4_ = (float)CStack_30.y * _DAT_00661c30;
         auStack_90._8_4_ = (float)CStack_30.z * _DAT_00661c30;
@@ -215,15 +215,16 @@ void core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220(void)
       CStack_9c.y = CStack_b8.position.y + -100f;
       CStack_9c.z = CStack_b8.position.z;
       core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
-      local_c0 = core_setcolid_cpp_CDemonSet_raycast_FUN_00572530
-                           (g_CDemonSetPtr,(CVector3f *)(auStack_90 + 0x18),&CStack_9c);
-      if ((0.0 < local_c0) && (local_c0 < 1.0)) {
-        afStack_3c[0] = CStack_9c.x - (float)auStack_90._24_4_;
-        fStack_6c = afStack_3c[0] * local_c0;
-        afStack_3c[1] = CStack_9c.y - fStack_74;
-        afStack_3c[2] = CStack_9c.z - fStack_70;
-        fStack_68 = afStack_3c[1] * local_c0;
-        fStack_64 = afStack_3c[2] * local_c0;
+      fStack_14 = core_setcolid_cpp_CDemonSet_raycast_FUN_00572530
+                            (g_CDemonSetPtr,(CVector3f *)(auStack_90 + 0x18),&CStack_9c);
+      in_stack_ffffff34 = (double)fStack_14;
+      if ((0.0 < in_stack_ffffff34) && (in_stack_ffffff34 < 1.0)) {
+        fStack_3c = CStack_9c.x - (float)auStack_90._24_4_;
+        fStack_6c = fStack_3c * fStack_14;
+        fStack_38 = CStack_9c.y - fStack_74;
+        fStack_34 = CStack_9c.z - fStack_70;
+        fStack_68 = fStack_38 * fStack_14;
+        fStack_64 = fStack_34 * fStack_14;
         auStack_90._12_4_ = (float)auStack_90._24_4_ + fStack_6c;
         auStack_90._16_4_ = fStack_74 + fStack_68;
         auStack_90._20_4_ = fStack_70 + fStack_64;

@@ -10,14 +10,12 @@ int __cdecl wincore_windll_cpp_setColorTable16_FUN_005b7579(void)
 
 {
   int iVar1;
-  uint uStack0000000c;
   
   if (g_UseExternalRenderer == 0) {
     return 0;
   }
   iVar1 = (*g_APIDLL_setColorTable16)(g_SourcePaletteData,g_ColorTable16);
   if (iVar1 != 0) {
-    uStack0000000c = 0x5b75ab;
     wincore_wddvmem_cpp_convertPaletteToDirectColor_FUN_004f41c0();
   }
   return iVar1;

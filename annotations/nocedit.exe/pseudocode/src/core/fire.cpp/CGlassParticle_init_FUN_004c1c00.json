@@ -1,21 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 71,
-    "complexity_score": 262,
+    "complexity_score": 164,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
-    "pseudocode_lines": 112,
-    "suspect_count": 12,
+    "pseudocode_lines": 114,
+    "suspect_count": 4,
     "suspect_types": [
-      "badspacebase",
       "lea_esp_stack_addr",
-      "pointer_cast",
-      "register_param",
-      "stack_param",
-      "stack_ref"
+      "pointer_cast"
     ],
-    "total_lines": 183
+    "total_lines": 185
   },
   "cross_references": [
     {
@@ -345,74 +341,18 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 13,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 13,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_0000001c",
-      "text": "int *in_stack_0000001c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000020",
-      "text": "int in_stack_00000020;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 78,
-      "match": "&stack0xffffff64",
-      "text": "if (pCVar1 != (CVector3f *)&stack0xffffff64) {",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 94,
-      "match": "in_stack_0000001c",
-      "text": "(pSVar6->base).type = *in_stack_0000001c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 95,
-      "match": "in_stack_0000001c",
-      "text": "in_stack_0000001c = in_stack_0000001c + (uint)bVar7 * -2 + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 95,
-      "match": "in_stack_0000001c",
-      "text": "in_stack_0000001c = in_stack_0000001c + (uint)bVar7 * -2 + 1;",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 96,
       "match": "(SMRGLTextureBasic *)((int)",
-      "text": "pSVar6 = (SMRGLTextureBasic *)((int)pSVar6 + (uint)bVar7 * -8 + 4);",
+      "text": "texture = (SMRGLTextureBasic *)((int)texture + (uint)bVar4 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 98,
-      "match": "in_stack_00000020",
-      "text": "this_ptr->lifetime = in_stack_00000020;",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 97,
+      "match": "(SMRGLTextureBasic *)((int)",
+      "text": "pSVar3 = (SMRGLTextureBasic *)((int)pSVar3 + (uint)bVar4 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
       "address": "004c1c83",

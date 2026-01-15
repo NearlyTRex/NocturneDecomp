@@ -10,9 +10,9 @@ void __cdecl core_set_cpp_CDemonSet_FUN_00570870(CDemonSet *this_ptr)
 
 {
   int iVar1;
-  SInputFace *in_stack_0000000c;
+  SInputFace *in_stack_00000008;
+  int in_stack_0000000c;
   int in_stack_00000010;
-  int in_stack_00000014;
   
   if (g_CGamePtr->scripted_sequence_active == 0) {
     if (g_CGamePtr->field62_0x1f4 != 0) {
@@ -23,7 +23,7 @@ void __cdecl core_set_cpp_CDemonSet_FUN_00570870(CDemonSet *this_ptr)
       }
     }
     engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_0048d170
-              (g_CDemonRendererPtr,in_stack_0000000c,in_stack_00000010,in_stack_00000014);
+              (g_CDemonRendererPtr,in_stack_00000008,in_stack_0000000c,in_stack_00000010);
   }
   return;
 }

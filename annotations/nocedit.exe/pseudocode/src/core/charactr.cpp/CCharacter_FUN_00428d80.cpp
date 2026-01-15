@@ -9,24 +9,23 @@
 void __cdecl core_charactr_cpp_CCharacter_FUN_00428d80(CCharacter *this_ptr)
 
 {
-  float angle_radians;
   CVector3f *pCVar1;
   float fVar2;
   float fVar3;
-  BADSPACEBASE *in_ESP;
   CVector3f *in_stack_00000008;
-  CVector3f local_24 [2];
-  uint local_8;
+  CVector3f local_30;
+  CVector3f local_24;
+  float local_10;
+  float local_c;
   
   pCVar1 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-                     (&this_ptr->base_actor,local_24,in_stack_00000008);
-  pCVar1 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
-                     ((CVector3f *)&stack0xffffffd4,pCVar1);
-  angle_radians = pCVar1->y;
-  local_8 = *(uint *)(this_ptr->field2_0x240c + 0x2c);
-  fVar2 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(angle_radians);
-  fVar3 = -angle_radians;
-  if ((-angle_radians <= fVar2) && (fVar3 = angle_radians, fVar2 <= angle_radians)) {
+                     (&this_ptr->base_actor,&local_24,in_stack_00000008);
+  pCVar1 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_30,pCVar1);
+  local_c = pCVar1->y;
+  local_10 = *(float *)(this_ptr->field2_0x240c + 0x2c);
+  fVar2 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(local_c);
+  fVar3 = -local_10;
+  if ((-local_10 <= fVar2) && (fVar3 = local_10, fVar2 <= local_10)) {
     *(float *)(this_ptr->field2_0x240c + 0xc) = fVar2;
     return;
   }

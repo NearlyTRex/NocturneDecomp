@@ -11,12 +11,11 @@ core_setdir_cpp_CDemonSet_refreshThumbs_FUN_00575b40(CDemonSet *this_ptr,char *f
 
 {
   FILE *file_handle;
-  char *in_stack_00000010;
   
   file_handle = engine_dosio_c_getFile_FUN_00481a50("data",filename,"rb");
   if (file_handle == (FILE *)0x0) {
     core_setdir_cpp_CDemonSet_saveThumbs_FUN_00575f60(this_ptr);
-    core_setdir_cpp_CDemonSet_writeThumbs_FUN_00575e40(this_ptr,in_stack_00000010);
+    core_setdir_cpp_CDemonSet_writeThumbs_FUN_00575e40(this_ptr,filename);
     return;
   }
   core_setdir_cpp_CDemonSet_saveThumbs_FUN_00575bc0(this_ptr,file_handle);

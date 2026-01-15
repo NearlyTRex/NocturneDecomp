@@ -17,9 +17,8 @@ void core_charactr_cpp_CCharacter_FUN_0042e670(void)
   int iVar5;
   int *piVar6;
   int in_stack_00000004;
-  int in_stack_00000008;
-  int local_1c;
-  int local_14;
+  int local_20;
+  int local_18;
   
   if (*(char *)(in_stack_00000004 + 0x23b8) != '\0') {
     iVar5 = 0;
@@ -37,41 +36,41 @@ void core_charactr_cpp_CCharacter_FUN_0042e670(void)
     this_ptr = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
                          ((CMotionController *)(in_stack_00000004 + 0x158));
     iVar2 = 0;
-    if (0 < *(int *)(in_stack_00000008 + 0x2628)) {
+    if (0 < *(int *)(in_stack_00000004 + 0x2628)) {
       do {
-        piVar6 = (int *)(iVar2 * 0x38 + in_stack_00000008 + 0x262c);
+        piVar6 = (int *)(iVar2 * 0x38 + in_stack_00000004 + 0x262c);
         iVar5 = core_motion_cpp_CMotionList_findMotionIndex_FUN_0052d460(this_ptr);
         piVar6[0xb] = iVar5;
         piVar6[0xc] = this_ptr->motions[iVar5].frame_count;
         piVar6[0xd] = (int)((float)piVar6[0xc] / this_ptr->motions[piVar6[0xb]].fps);
         if (-1 < piVar6[10]) {
-          *(int *)(in_stack_00000008 + *piVar6 * 0x50 + 0xb7e4 + piVar6[1] * 4) = piVar6[0xd];
+          *(int *)(in_stack_00000004 + *piVar6 * 0x50 + 0xb7e4 + piVar6[1] * 4) = piVar6[0xd];
         }
         if (piVar6[10] < 1) {
-          *(int *)(in_stack_00000008 + piVar6[1] * 0x50 + 0xb7e4 + *piVar6 * 4) = piVar6[0xd];
+          *(int *)(in_stack_00000004 + piVar6[1] * 0x50 + 0xb7e4 + *piVar6 * 4) = piVar6[0xd];
         }
         iVar2 = iVar2 + 1;
-      } while (iVar2 < *(int *)(in_stack_00000008 + 0x2628));
+      } while (iVar2 < *(int *)(in_stack_00000004 + 0x2628));
     }
     iVar5 = 0;
-    iVar2 = in_stack_00000008;
+    iVar2 = in_stack_00000004;
     do {
       iVar4 = iVar2 + iVar5;
       iVar5 = iVar5 + 4;
       iVar2 = iVar2 + 0x50;
       *(uint *)(iVar4 + 0xb7e4) = 0;
     } while (iVar5 != 0x50);
-    local_1c = in_stack_00000008;
+    local_20 = in_stack_00000004;
     do {
       iVar5 = 0;
-      local_14 = local_1c;
-      iVar2 = in_stack_00000008;
+      local_18 = local_20;
+      iVar2 = in_stack_00000004;
       do {
         iVar2 = iVar2 + 0x50;
-        iVar3 = iVar5 * 0x50 + in_stack_00000008;
-        iVar4 = local_1c;
+        iVar3 = iVar5 * 0x50 + in_stack_00000004;
+        iVar4 = local_20;
         do {
-          fVar1 = *(float *)(local_14 + 0xb7e4) + *(float *)(iVar3 + 0xb7e4);
+          fVar1 = *(float *)(local_18 + 0xb7e4) + *(float *)(iVar3 + 0xb7e4);
           if (fVar1 < *(float *)(iVar4 + 0xb7e4)) {
             *(float *)(iVar4 + 0xb7e4) = fVar1;
           }
@@ -79,10 +78,10 @@ void core_charactr_cpp_CCharacter_FUN_0042e670(void)
           iVar4 = iVar4 + 4;
         } while (iVar3 != iVar2);
         iVar5 = iVar5 + 1;
-        local_14 = local_14 + 4;
+        local_18 = local_18 + 4;
       } while (iVar5 < 0x14);
-      local_1c = local_1c + 0x50;
-    } while (local_1c != in_stack_00000008 + 0x640);
+      local_20 = local_20 + 0x50;
+    } while (local_20 != in_stack_00000004 + 0x640);
   }
   return;
 }

@@ -14,7 +14,6 @@ uint shape_superopt_cpp_EdgeListCheckPlusFreesLarge_FUN_005c84c0(void)
   uint *puVar3;
   int iVar4;
   uint uVar5;
-  BADSPACEBASE *in_ESP;
   double *pdVar6;
   uint *puVar7;
   byte bVar8;

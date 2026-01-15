@@ -1,20 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 225,
-    "complexity_score": 190,
+    "complexity_score": 159,
     "cross_reference_count": 1,
     "function_call_count": 20,
     "global_count": 13,
-    "pseudocode_lines": 95,
-    "suspect_count": 7,
+    "pseudocode_lines": 94,
+    "suspect_count": 5,
     "suspect_types": [
-      "badspacebase",
       "pointer_cast",
-      "register_param",
       "stack_param",
       "unknown_field"
     ],
-    "total_lines": 320
+    "total_lines": 319
   },
   "cross_references": [
     {
@@ -699,50 +697,36 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 8,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 8,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_fffffe92",
-      "text": "CMatrix3x4f *in_stack_fffffe92;",
+      "line": 11,
+      "match": "in_stack_fffffe8e",
+      "text": "CMatrix3x4f *in_stack_fffffe8e;",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 50,
+      "line": 49,
       "match": "._12_4_",
       "text": "local_4c._12_4_ = 0.0;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 59,
-      "match": "in_stack_fffffe92",
-      "text": "[DAT_02f33378].m,in_stack_fffffe92);",
+      "line": 58,
+      "match": "in_stack_fffffe8e",
+      "text": "[DAT_02f33378].m,in_stack_fffffe8e);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 65,
+      "line": 64,
       "match": "(CVector3f *)((int)",
       "text": "pCVar3 = (CVector3f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 73,
+      "line": 72,
       "match": "(CDemonActor *)((int)",
       "text": "&(((CDemonActor *)((int)local_34.m[2].z + 0x1fbf0))->field12_0xe0).z,0.0,-1);",
       "type": "pointer_cast"

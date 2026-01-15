@@ -1,22 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 195,
-    "complexity_score": 254,
+    "complexity_score": 210,
     "cross_reference_count": 2,
     "function_call_count": 9,
     "global_count": 6,
-    "pseudocode_lines": 79,
-    "suspect_count": 14,
+    "pseudocode_lines": 80,
+    "suspect_count": 11,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
       "pointer_cast",
-      "register_param",
-      "stack_ref",
       "variadic_preserve"
     ],
-    "total_lines": 274
+    "total_lines": 275
   },
   "cross_references": [
     {
@@ -251,36 +248,15 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 10,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 10,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 25,
       "match": "(int *)((int)",
-      "text": "piVar5 = (int *)((int)this_ptr->tri_data->attribute_indices + local_20);",
+      "text": "piVar5 = (int *)((int)this_ptr->tri_data->attribute_indices + (int)local_20);",
       "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 58,
-      "match": "&stack0xffffffd0",
-      "text": "shape_design_c_fixupCramUV_FUN_0046e090(iVar2,(float *)&stack0xffffffd0,local_2c);",
-      "type": "stack_ref"
-    },
-    {
       "call_address": "0051bc9a",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

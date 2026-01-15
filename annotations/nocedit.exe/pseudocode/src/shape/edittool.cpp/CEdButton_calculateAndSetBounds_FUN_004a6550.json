@@ -1,16 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 31,
-    "complexity_score": 120,
+    "complexity_score": 50,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 0,
     "pseudocode_lines": 15,
-    "suspect_count": 9,
+    "suspect_count": 3,
     "suspect_types": [
-      "call_esp_preserve",
-      "stack_param",
-      "unaffected_reg"
+      "call_esp_preserve"
     ],
     "total_lines": 46
   },
@@ -161,48 +159,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 8,
-      "match": "unaff_EBX",
-      "text": "char *unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 9,
-      "match": "unaff_EDI",
-      "text": "int unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000014",
-      "text": "int in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_00000014",
-      "text": "((CEdButton *)y_pos,(int)button_text,in_stack_00000014,(int)(button_text + iVar1 + -1),",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 16,
-      "match": "unaff_EDI",
-      "text": "unaff_EDI,unaff_EBX);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 16,
-      "match": "unaff_EBX",
-      "text": "unaff_EDI,unaff_EBX);",
-      "type": "unaffected_reg"
-    },
     {
       "add_esp_value": 4,
       "call_address": "004a6558",

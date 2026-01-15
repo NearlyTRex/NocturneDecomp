@@ -1,22 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 73,
-    "complexity_score": 181,
+    "complexity_score": 133,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
-    "pseudocode_lines": 56,
-    "suspect_count": 9,
+    "pseudocode_lines": 53,
+    "suspect_count": 6,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
       "negative_offset",
-      "pointer_cast",
-      "register_param",
-      "stack_ref"
+      "pointer_cast"
     ],
-    "total_lines": 129
+    "total_lines": 126
   },
   "cross_references": [
     {
@@ -141,45 +138,24 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 10,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 10,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 18,
-      "match": "&stack0xffffffc8",
-      "text": "MVar2 = (*waveInGetDevCapsA)(device_id,(LPWAVEINCAPSA)&stack0xffffffc8,0x30);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 42,
+      "line": 39,
       "match": "(SRecordingDeviceInfo *)((int)",
-      "text": "pSVar5 = (SRecordingDeviceInfo *)((int)device_info + (uint)bVar7 * -2 + 1);",
+      "text": "pSVar6 = (SRecordingDeviceInfo *)((int)device_info + (uint)bVar7 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 46,
-      "match": "pSVar5[-1].",
-      "text": "pcVar6 = (char *)((int)&pSVar5[-1].device_id + 3);",
+      "line": 43,
+      "match": "pSVar6[-1].",
+      "text": "pcVar3 = (char *)((int)&pSVar6[-1].device_id + 3);",
       "type": "negative_offset"
     },
     {
       "description": "Complex pointer cast",
-      "line": 46,
+      "line": 43,
       "match": "(char *)((int)",
-      "text": "pcVar6 = (char *)((int)&pSVar5[-1].device_id + 3);",
+      "text": "pcVar3 = (char *)((int)&pSVar6[-1].device_id + 3);",
       "type": "pointer_cast"
     },
     {

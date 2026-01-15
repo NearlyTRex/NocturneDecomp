@@ -1,21 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 1782,
-    "complexity_score": 1026,
+    "complexity_score": 880,
     "cross_reference_count": 4,
     "function_call_count": 3,
     "global_count": 27,
-    "pseudocode_lines": 546,
-    "suspect_count": 45,
+    "pseudocode_lines": 545,
+    "suspect_count": 32,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
-      "pointer_cast",
-      "register_param",
-      "stack_param"
+      "pointer_cast"
     ],
-    "total_lines": 2328
+    "total_lines": 2327
   },
   "cross_references": [
     {
@@ -679,235 +676,144 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 18,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 18,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_ffffff2c",
-      "text": "int in_stack_ffffff2c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 59,
-      "match": "in_stack_ffffff2c",
-      "text": "return in_stack_ffffff2c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 62,
-      "match": "in_stack_ffffff2c",
-      "text": "return in_stack_ffffff2c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 65,
-      "match": "in_stack_ffffff2c",
-      "text": "return in_stack_ffffff2c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 68,
-      "match": "in_stack_ffffff2c",
-      "text": "return in_stack_ffffff2c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 83,
-      "match": "in_stack_ffffff2c",
-      "text": "in_stack_ffffff2c);",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 92,
+      "line": 91,
       "match": "(int *)((int)",
-      "text": "pbVar2 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar12) + y_pos);",
+      "text": "pbVar2 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar12) + x_pos);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 111,
+      "line": 110,
       "match": "(int *)((int)",
-      "text": "puVar7 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar12) + y_pos);",
+      "text": "puVar7 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar12) + x_pos);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 130,
+      "line": 129,
       "match": "(int *)((int)",
-      "text": "puVar7 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar12) + y_pos);",
+      "text": "puVar7 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar12) + x_pos);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 149,
+      "line": 148,
       "match": "(int *)((int)",
-      "text": "puVar7 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar12) + y_pos);",
+      "text": "puVar7 = (byte *)(*(int *)((int)g_ScreenBufferArray + iVar12) + x_pos);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 172,
+      "line": 171,
       "match": "(int *)((int)",
-      "text": "puVar4 = (ushort *)(*(int *)((int)g_ScreenBufferArray + iVar12) + y_pos * 2);",
+      "text": "puVar4 = (ushort *)(*(int *)((int)g_ScreenBufferArray + iVar12) + x_pos * 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 191,
+      "line": 190,
       "match": "(int *)((int)",
-      "text": "puVar11 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_24) + y_pos * 2);",
+      "text": "puVar11 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_28) + x_pos * 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 237,
+      "line": 236,
       "match": "(int *)((int)",
-      "text": "puVar11 = (ushort *)(*(int *)((int)g_ScreenBufferArray + iVar12) + y_pos * 2);",
+      "text": "puVar11 = (ushort *)(*(int *)((int)g_ScreenBufferArray + iVar12) + x_pos * 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 256,
+      "line": 255,
       "match": "(int *)((int)",
-      "text": "puVar11 = (ushort *)(y_pos * 2 + *(int *)((int)g_ScreenBufferArray + local_28));",
+      "text": "puVar11 = (ushort *)(x_pos * 2 + *(int *)((int)g_ScreenBufferArray + local_2c));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 300,
+      "line": 299,
       "match": "(int *)((int)",
-      "text": "puVar4 = (ushort *)(y_pos * 2 + *(int *)((int)g_ScreenBufferArray + iVar12));",
+      "text": "puVar4 = (ushort *)(x_pos * 2 + *(int *)((int)g_ScreenBufferArray + iVar12));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 319,
+      "line": 318,
       "match": "(int *)((int)",
-      "text": "puVar11 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_2c) + y_pos * 2);",
+      "text": "puVar11 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_30) + x_pos * 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 364,
+      "line": 363,
       "match": "(int *)((int)",
-      "text": "puVar11 = (ushort *)(y_pos * 2 + *(int *)((int)g_ScreenBufferArray + iVar12));",
+      "text": "puVar11 = (ushort *)(x_pos * 2 + *(int *)((int)g_ScreenBufferArray + iVar12));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 381,
+      "line": 380,
       "match": "(int *)((int)",
-      "text": "puVar11 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_30) + y_pos * 2);",
+      "text": "puVar11 = (ushort *)(*(int *)((int)g_ScreenBufferArray + local_34) + x_pos * 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 427,
+      "line": 426,
       "match": "(int *)((int)",
-      "text": "puVar10 = (uint *)(*(int *)((int)g_ScreenBufferArray + iVar12) + y_pos * 4);",
+      "text": "puVar10 = (uint *)(*(int *)((int)g_ScreenBufferArray + iVar12) + x_pos * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 444,
+      "line": 443,
       "match": "(int *)((int)",
-      "text": "((uint *)(*(int *)((int)g_ScreenBufferArray + iVar12) + y_pos * 4),local_d0,",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 451,
-      "match": "in_stack_ffffff2c",
-      "text": "return in_stack_ffffff2c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 458,
-      "match": "(int *)((int)",
-      "text": "piVar5 = (int *)(y_pos * 4 + *(int *)((int)g_ScreenBufferArray + iVar12));",
+      "text": "((uint *)(*(int *)((int)g_ScreenBufferArray + iVar12) + x_pos * 4),local_d4,",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 475,
+      "line": 457,
       "match": "(int *)((int)",
-      "text": "((uint *)(y_pos * 4 + *(int *)((int)g_ScreenBufferArray + iVar12)),local_d0,",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 481,
-      "match": "in_stack_ffffff2c",
-      "text": "return in_stack_ffffff2c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 488,
-      "match": "(int *)((int)",
-      "text": "piVar5 = (int *)(y_pos * 4 + *(int *)((int)g_ScreenBufferArray + iVar12));",
+      "text": "piVar5 = (int *)(x_pos * 4 + *(int *)((int)g_ScreenBufferArray + iVar12));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 505,
+      "line": 474,
       "match": "(int *)((int)",
-      "text": "((uint *)(*(int *)((int)g_ScreenBufferArray + iVar12) + y_pos * 4),local_d0,",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 511,
-      "match": "in_stack_ffffff2c",
-      "text": "return in_stack_ffffff2c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 519,
-      "match": "(int *)((int)",
-      "text": "puVar10 = (uint *)(*(int *)((int)g_ScreenBufferArray + iVar12) + y_pos * 4);",
+      "text": "((uint *)(x_pos * 4 + *(int *)((int)g_ScreenBufferArray + iVar12)),local_d4,",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 536,
+      "line": 487,
       "match": "(int *)((int)",
-      "text": "((uint *)(y_pos * 4 + *(int *)((int)g_ScreenBufferArray + iVar12)),local_d0,",
+      "text": "piVar5 = (int *)(x_pos * 4 + *(int *)((int)g_ScreenBufferArray + iVar12));",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 542,
-      "match": "in_stack_ffffff2c",
-      "text": "return in_stack_ffffff2c;",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 504,
+      "match": "(int *)((int)",
+      "text": "((uint *)(*(int *)((int)g_ScreenBufferArray + iVar12) + x_pos * 4),local_d4,",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 548,
-      "match": "in_stack_ffffff2c",
-      "text": "return in_stack_ffffff2c;",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 518,
+      "match": "(int *)((int)",
+      "text": "puVar10 = (uint *)(*(int *)((int)g_ScreenBufferArray + iVar12) + x_pos * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 535,
+      "match": "(int *)((int)",
+      "text": "((uint *)(x_pos * 4 + *(int *)((int)g_ScreenBufferArray + iVar12)),local_d4,",
+      "type": "pointer_cast"
     },
     {
       "add_esp_value": 24,

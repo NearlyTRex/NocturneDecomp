@@ -15,14 +15,14 @@ void core_frankgen_cpp_SoundPushPlayPopAgain_FUN_004d1f20(void)
 {
   int in_stack_00000004;
   float in_stack_00000008;
-  char *in_stack_00000014;
+  char *in_stack_0000000c;
   
   if ((_DAT_02d7b7f0 <= in_stack_00000008) &&
      (in_stack_00000008 < *(float *)(in_stack_00000004 + 0x15c))) {
     sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
     sound_sndmain_cpp_setNextSfxTrackedFloatPosition_FUN_005a8940
-              ((CVector3f *)((int)in_stack_00000008 + 0x490));
-    sound_sndmain_cpp_startSfx_FUN_005a8e90(in_stack_00000014);
+              ((CVector3f *)(in_stack_00000004 + 0x490));
+    sound_sndmain_cpp_startSfx_FUN_005a8e90(in_stack_0000000c);
     sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
     return;
   }

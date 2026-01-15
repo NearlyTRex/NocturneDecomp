@@ -1,19 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 11,
-    "complexity_score": 252,
+    "complexity_score": 235,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 4,
-    "pseudocode_lines": 92,
-    "suspect_count": 14,
+    "pseudocode_lines": 90,
+    "suspect_count": 13,
     "suspect_types": [
-      "badspacebase",
-      "register_param",
       "stack_param",
-      "stack_ref"
+      "stack_ref",
+      "unaffected_reg"
     ],
-    "total_lines": 103
+    "total_lines": 101
   },
   "cross_references": [],
   "function": {
@@ -92,101 +91,94 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
+      "description": "Unaffected register variable",
       "line": 8,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
+      "match": "unaff_EBX",
+      "text": "int unaff_EBX;",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Inferred register parameter",
-      "line": 8,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
+      "description": "Unaffected register variable",
+      "line": 11,
+      "match": "unaff_ESI",
+      "text": "DWORD unaff_ESI;",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000028",
-      "text": "int in_stack_00000028;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
+      "description": "Unaffected register variable",
       "line": 13,
-      "match": "in_stack_00000054",
-      "text": "int in_stack_00000054;",
-      "type": "stack_param"
+      "match": "unaff_EDI",
+      "text": "DWORD unaff_EDI;",
+      "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 14,
-      "match": "in_stack_00000058",
-      "text": "int in_stack_00000058;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_0000005c",
-      "text": "int in_stack_0000005c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000070",
-      "text": "DWORD in_stack_00000070;",
+      "match": "in_stack_00000004",
+      "text": "DWORD in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 39,
-      "match": "&stack0xfffffdf0",
-      "text": "(&stack0xfffffdf0,\"%d,%d,%x\",g_JoyXPos,g_JoyYPos,g_JoyButtons);",
+      "line": 36,
+      "match": "&stack0xfffffddc",
+      "text": "(&stack0xfffffddc,\"%d,%d,%x\",g_JoyXPos,g_JoyYPos,g_JoyButtons);",
       "type": "stack_ref"
     },
     {
+      "description": "Direct stack address reference",
+      "line": 37,
+      "match": "&stack0xfffffddc",
+      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffddc,0,0);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 44,
+      "match": "unaff_EDI",
+      "text": "unaff_EDI = g_JoyXPos;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 45,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI = g_JoyYPos;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 69,
+      "match": "unaff_EDI",
+      "text": "g_CGamePtr->x_center = unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 73,
+      "match": "unaff_ESI",
+      "text": "pCVar1->y_center = unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 74,
+      "match": "unaff_EBX",
+      "text": "pCVar1->y_stick_min = unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
       "description": "Unresolved stack parameter",
-      "line": 63,
-      "match": "in_stack_00000028",
-      "text": "(g_MediumFont,pcVar2,in_stack_00000028,0xf0 - iVar3 / 2,7,0);",
+      "line": 85,
+      "match": "in_stack_00000004",
+      "text": "if ((int)g_JoyYPos < (int)in_stack_00000004) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 71,
-      "match": "in_stack_00000054",
-      "text": "g_CGamePtr->x_center = in_stack_00000054;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 75,
-      "match": "in_stack_00000058",
-      "text": "pCVar1->y_center = in_stack_00000058;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 76,
-      "match": "in_stack_0000005c",
-      "text": "pCVar1->y_stick_min = in_stack_0000005c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 87,
-      "match": "in_stack_00000070",
-      "text": "if ((int)g_JoyYPos < (int)in_stack_00000070) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 88,
-      "match": "in_stack_00000070",
-      "text": "in_stack_00000070 = g_JoyYPos;",
+      "line": 86,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004 = g_JoyYPos;",
       "type": "stack_param"
     }
   ]

@@ -17,10 +17,14 @@ core_dcamera_cpp_CDemonCamera_testBoxOcclusion_FUN_004544f0
   int extraout_EAX_02;
   int extraout_EAX_03;
   int extraout_EAX_04;
-  BADSPACEBASE *in_ESP;
   CVector3i *pCVar1;
   int iVar2;
   SRenderVertex *output;
+  SMRGLHeaderPrimitive local_38;
+  int local_20;
+  uint local_1c;
+  uint local_18;
+  uint local_14;
   
   engine_drender_cpp_CDemonRenderer_getCameraAndViewportState_FUN_0048de20
             (g_CDemonRendererPtr,&g_SavedCameraState);
@@ -33,23 +37,50 @@ core_dcamera_cpp_CDemonCamera_testBoxOcclusion_FUN_004544f0
     corners = corners + 1;
     output = output + 1;
   } while (corners != pCVar1);
+  local_38.surface_normal.D = (uint)corners ^ (uint)pCVar1;
+  local_38.base.count = 4;
+  local_38.surface_normal.C = 0;
+  local_38.surface_normal.B = 0;
+  local_38.surface_normal.A = 0;
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr,1);
   iVar2 = 0;
-  core_set_cpp_CDemonSet_FUN_00570df0(g_CDemonSetPtr,(SMRGLHeaderPrimitive *)&stack0xffffffd8);
+  local_20 = 0;
+  local_1c = 4;
+  local_14 = 2;
+  local_18 = 6;
+  core_set_cpp_CDemonSet_FUN_00570df0(g_CDemonSetPtr,&local_38);
   if (extraout_EAX == 0) {
-    core_set_cpp_CDemonSet_FUN_00570df0(g_CDemonSetPtr,(SMRGLHeaderPrimitive *)&stack0xffffffdc);
+    local_20 = 1;
+    local_1c = 3;
+    local_18 = 7;
+    local_14 = 5;
+    core_set_cpp_CDemonSet_FUN_00570df0(g_CDemonSetPtr,&local_38);
     if (extraout_EAX_00 == 0) {
-      core_set_cpp_CDemonSet_FUN_00570df0(g_CDemonSetPtr,(SMRGLHeaderPrimitive *)&stack0xffffffe0);
+      local_18 = 5;
+      local_1c = 1;
+      local_14 = 4;
+      local_20 = extraout_EAX_00;
+      core_set_cpp_CDemonSet_FUN_00570df0(g_CDemonSetPtr,&local_38);
       if (extraout_EAX_01 == 0) {
-        core_set_cpp_CDemonSet_FUN_00570df0(g_CDemonSetPtr,(SMRGLHeaderPrimitive *)&stack0xffffffe4)
-        ;
+        local_1c = 6;
+        local_20 = 2;
+        local_18 = 7;
+        local_14 = 3;
+        core_set_cpp_CDemonSet_FUN_00570df0(g_CDemonSetPtr,&local_38);
         if (extraout_EAX_02 == 0) {
-          core_set_cpp_CDemonSet_FUN_00570df0
-                    (g_CDemonSetPtr,(SMRGLHeaderPrimitive *)&stack0xffffffe8);
-          if ((extraout_EAX_03 == 0) &&
-             (core_set_cpp_CDemonSet_FUN_00570df0
-                        (g_CDemonSetPtr,(SMRGLHeaderPrimitive *)&stack0xffffffec),
-             extraout_EAX_04 == 0)) goto LAB_004545a7;
+          local_18 = 3;
+          local_20 = 0;
+          local_1c = 2;
+          local_14 = 1;
+          core_set_cpp_CDemonSet_FUN_00570df0(g_CDemonSetPtr,&local_38);
+          if (extraout_EAX_03 == 0) {
+            local_14 = 6;
+            local_20 = 4;
+            local_1c = 5;
+            local_18 = 7;
+            core_set_cpp_CDemonSet_FUN_00570df0(g_CDemonSetPtr,&local_38);
+            if (extraout_EAX_04 == 0) goto LAB_004545a7;
+          }
         }
       }
     }

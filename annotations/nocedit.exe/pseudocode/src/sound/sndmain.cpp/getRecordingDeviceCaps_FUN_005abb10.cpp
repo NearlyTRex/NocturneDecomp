@@ -11,13 +11,13 @@ HRESULT __cdecl sound_sndmain_cpp_getRecordingDeviceCaps_FUN_005abb10(LPDSCCAPS 
 {
   int iVar1;
   HRESULT HVar2;
-  LPDSCCAPS in_stack_0000000c;
+  LPDSCCAPS in_stack_00000004;
   
   sound_sndmain_cpp_lockSound_FUN_005abd30();
   iVar1 = sound_sndmain_cpp_isRecordingStarted_FUN_005ab980();
   if ((iVar1 != 0) && (g_RecordingDeviceInterface != (IDirectSoundCapture *)0x0)) {
     HVar2 = (*g_RecordingDeviceInterface->vtable->GetCaps)
-                      (g_RecordingDeviceInterface,in_stack_0000000c);
+                      (g_RecordingDeviceInterface,in_stack_00000004);
     sound_sndmain_cpp_unlockSound_FUN_005abdc0();
     return HVar2;
   }

@@ -10,7 +10,7 @@ void __cdecl shape_design_c_squashShapeFor3DMorph_FUN_004685e0(void)
 
 {
   uint uVar1;
-  int iVar2;
+  int local_1c;
   
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
   engine_2d_c_clearInputAndWait_FUN_00403260();
@@ -20,19 +20,19 @@ void __cdecl shape_design_c_squashShapeFor3DMorph_FUN_004685e0(void)
   uVar1 = crt_ctype_c_toupper_FUN_005ff9e0(uVar1 & 0xff);
   if (uVar1 < 0x59) {
     if (uVar1 == 0x58) {
-      for (iVar2 = 0; iVar2 < g_VertexCount; iVar2 = iVar2 + 1) {
-        g_LoadedVertices[iVar2].vertex.x = 0.0;
+      for (local_1c = 0; local_1c < g_VertexCount; local_1c = local_1c + 1) {
+        g_LoadedVertices[local_1c].vertex.x = 0.0;
       }
     }
   }
   else if (uVar1 < 0x5a) {
-    for (iVar2 = 0; iVar2 < g_VertexCount; iVar2 = iVar2 + 1) {
-      g_LoadedVertices[iVar2].vertex.y = 0.0;
+    for (local_1c = 0; local_1c < g_VertexCount; local_1c = local_1c + 1) {
+      g_LoadedVertices[local_1c].vertex.y = 0.0;
     }
   }
   else if (uVar1 == 0x5a) {
-    for (iVar2 = 0; iVar2 < g_VertexCount; iVar2 = iVar2 + 1) {
-      g_LoadedVertices[iVar2].vertex.z = 0.0;
+    for (local_1c = 0; local_1c < g_VertexCount; local_1c = local_1c + 1) {
+      g_LoadedVertices[local_1c].vertex.z = 0.0;
     }
   }
   return;

@@ -14,7 +14,7 @@ uint core_vehicle_cpp_FUN_005e8b50(void)
 {
   uint uVar1;
   CDemonActor *in_stack_00000004;
-  char *in_stack_00000014;
+  char *in_stack_00000008;
   
   sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
   sound_sndmain_cpp_setNextSfxTrackedFloatPosition_FUN_005a8940
@@ -22,7 +22,7 @@ uint core_vehicle_cpp_FUN_005e8b50(void)
   sound_sndmain_cpp_setNextSfxTrackedVelocity_FUN_005a8a00
             ((CVector3f *)&in_stack_00000004[0xc].orient_matrix.m[0].y);
   uVar1 = core_sound_cpp_CSound_playTrackedActorSound_FUN_005b3a70
-                    (g_CSoundPtr,in_stack_00000004,in_stack_00000014,
+                    (g_CSoundPtr,in_stack_00000004,in_stack_00000008,
                      &(in_stack_00000004->location).position);
   sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
   return uVar1;

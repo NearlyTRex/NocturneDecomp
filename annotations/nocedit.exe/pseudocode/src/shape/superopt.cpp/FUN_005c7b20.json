@@ -1,17 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 248,
-    "complexity_score": 297,
+    "complexity_score": 286,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 0,
-    "pseudocode_lines": 107,
-    "suspect_count": 18,
+    "pseudocode_lines": 106,
+    "suspect_count": 17,
     "suspect_types": [
       "call_esp_preserve",
       "stack_param"
     ],
-    "total_lines": 355
+    "total_lines": 354
   },
   "cross_references": [
     {
@@ -122,19 +122,19 @@
       "description": "Unresolved stack parameter",
       "line": 9,
       "match": "in_stack_00000004",
-      "text": "int *in_stack_00000004;",
+      "text": "uint *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000008",
-      "text": "uint *in_stack_00000008;",
+      "line": 13,
+      "match": "in_stack_00000004",
+      "text": "if ((*in_stack_00000004 != 0) && (in_stack_00000004[1] != 0)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 13,
       "match": "in_stack_00000004",
       "text": "if ((*in_stack_00000004 != 0) && (in_stack_00000004[1] != 0)) {",
       "type": "stack_param"
@@ -143,12 +143,12 @@
       "description": "Unresolved stack parameter",
       "line": 14,
       "match": "in_stack_00000004",
-      "text": "if ((*in_stack_00000004 != 0) && (in_stack_00000004[1] != 0)) {",
+      "text": "in_stack_00000004[0xb] = *in_stack_00000004 * 3;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 14,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[0xb] = *in_stack_00000004 * 3;",
       "type": "stack_param"
@@ -156,57 +156,50 @@
     {
       "description": "Unresolved stack parameter",
       "line": 15,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004[0xb] = *in_stack_00000004 * 3;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
       "match": "in_stack_00000004",
       "text": "piVar2 = crt_memory_c_malloc_FUN_006021da(*in_stack_00000004 * 0x120);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000008",
-      "text": "in_stack_00000008[0xc] = (uint)piVar2;",
+      "line": 16,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004[0xc] = (uint)piVar2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000004",
+      "text": "iVar3 = *(int *)(**(int **)in_stack_00000004[1] + 4);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 20,
-      "match": "in_stack_00000008",
-      "text": "iVar3 = *(int *)(**(int **)in_stack_00000008[1] + 4);",
+      "match": "in_stack_00000004",
+      "text": "if (*in_stack_00000004 != 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000008",
-      "text": "if (*in_stack_00000008 != 0) {",
+      "line": 23,
+      "match": "in_stack_00000004",
+      "text": "iVar1 = *(int *)(in_stack_00000004[1] + local_10);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
-      "match": "in_stack_00000008",
-      "text": "iVar1 = *(int *)(in_stack_00000008[1] + iVar5);",
+      "line": 96,
+      "match": "in_stack_00000004",
+      "text": "} while (local_14 < *in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 97,
-      "match": "in_stack_00000008",
-      "text": "} while (local_10 < *in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 103,
-      "match": "in_stack_00000008",
-      "text": "crt_memory_c_free_FUN_005fe659((void *)in_stack_00000008[0xc]);",
+      "line": 102,
+      "match": "in_stack_00000004",
+      "text": "crt_memory_c_free_FUN_005fe659((void *)in_stack_00000004[0xc]);",
       "type": "stack_param"
     },
     {

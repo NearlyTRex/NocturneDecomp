@@ -12,19 +12,20 @@ engine_3d_c_renderPolygonUVTextureNormalized_FUN_00405430(SMRGLHeaderPrimitive *
 {
   CVector3i vector;
   int iVar1;
-  BADSPACEBASE *in_ESP;
   byte bVar2;
-  uint auStackY_1010 [1017];
+  int aiStackY_1010 [1016];
+  int local_20;
   
   bVar2 = 0;
+  local_20 = (polygon_info->surface_normal).C;
   vector.y = (polygon_info->surface_normal).A;
   vector.x = (int)&stack0xffffffd8;
   vector.z = (polygon_info->surface_normal).B;
   engine_matrix_c_normalizeVector3DFixed_FUN_0050d970(vector);
   *(uint *)(&stack0xffffffdc + (uint)bVar2 * -8) =
-       *(uint *)(&stack0xffffffec + (uint)bVar2 * -8);
-  *(uint *)(&stack0xffffffe0 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
-       *(uint *)(&stack0xfffffff0 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
+       *(uint *)(&stack0xffffffe8 + (uint)bVar2 * -8);
+  *(uint *)((int)&stack0xffffffe0 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
+       *(uint *)(&stack0xffffffec + (uint)bVar2 * -8 + (uint)bVar2 * -8);
   iVar1 = engine_3d_c_isVisiblePlane_FUN_00403950(&polygon_info->surface_normal);
   if (iVar1 != 0) {
     if (g_MMXSupported == 0) {

@@ -10,7 +10,6 @@ int __cdecl core_setdir_cpp_CDemonSet_FUN_005762a0(CDemonSet *this_ptr)
 
 {
   SVDBox *pSVar1;
-  BADSPACEBASE *in_ESP;
   int in_stack_00000008;
   float *in_stack_0000000c;
   CVector3f local_20;

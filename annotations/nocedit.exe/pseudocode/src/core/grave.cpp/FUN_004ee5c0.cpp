@@ -17,7 +17,7 @@ void core_grave_cpp_FUN_004ee5c0(void)
   int iVar3;
   CKeyFramedModel *pCVar4;
   int in_stack_00000004;
-  float in_stack_00000014;
+  float in_stack_00000008;
   
   if (*(int *)(in_stack_00000004 + 0x2dc) == 0) {
     if (*(int *)(in_stack_00000004 + 0x2e0) == 0) {
@@ -31,7 +31,7 @@ void core_grave_cpp_FUN_004ee5c0(void)
       pCVar4 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
                          ((CKeyFramedModelInstance *)(in_stack_00000004 + 0x158));
       fVar2 = (float)(pCVar4->frame_count + -1);
-      fVar1 = *(float *)(in_stack_00000004 + 0x2d8) * in_stack_00000014 +
+      fVar1 = *(float *)(in_stack_00000004 + 0x2d8) * in_stack_00000008 +
               *(float *)(in_stack_00000004 + 0x2d4);
       *(float *)(in_stack_00000004 + 0x2d4) = fVar1;
       if (fVar2 <= fVar1) {

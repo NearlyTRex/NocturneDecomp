@@ -12,7 +12,6 @@ core_xform_cpp_buildTranslationMatrix_FUN_005f6dc0
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   uint *unaff_ESI;
   float *pfVar2;
   float local_38 [4];

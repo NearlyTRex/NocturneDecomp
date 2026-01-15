@@ -13,16 +13,15 @@ int core_msnedit_cpp_DisplayTextNoSetsDefinedAndAllowCancel_FUN_00538f90(void)
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   char *string_data;
   int in_stack_00000004;
-  char *in_stack_0000000c;
-  int in_stack_00000010;
+  char *in_stack_00000008;
+  int in_stack_0000000c;
+  uint in_stack_fffffc48;
+  uint in_stack_fffffc4c;
   char **in_stack_fffffc50;
   CStrList_vtable *in_stack_fffffc54;
-  CStrList_vtable *in_stack_fffffc58;
-  CStrList_vtable *in_stack_fffffc5c;
-  uint in_stack_fffffc60;
+  uint in_stack_fffffc58;
   
   if (*(int *)(in_stack_00000004 + 0x144) < 1) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
@@ -35,14 +34,14 @@ int core_msnedit_cpp_DisplayTextNoSetsDefinedAndAllowCancel_FUN_00538f90(void)
     string_data = (char *)(in_stack_00000004 + 0x148);
     do {
       iVar1 = iVar1 + 1;
-      shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffffc4c,string_data);
+      shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffffc48,string_data);
       string_data = string_data + 0x100;
     } while (iVar1 < *(int *)(in_stack_00000004 + 0x144));
   }
   iVar1 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                    ((CPickList *)&stack0xfffffc4c,in_stack_0000000c,in_stack_00000010,0);
+                    ((CPickList *)&stack0xfffffc48,in_stack_00000008,in_stack_0000000c,0);
   shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-            ((CPickList *)&stack0xfffffc50,0,(uint)in_stack_fffffc50,(uint)in_stack_fffffc54,
-             (uint)in_stack_fffffc58,(uint)in_stack_fffffc5c,in_stack_fffffc60);
+            ((CPickList *)&stack0xfffffc48,0,in_stack_fffffc48,in_stack_fffffc4c,
+             (uint)in_stack_fffffc50,(uint)in_stack_fffffc54,in_stack_fffffc58);
   return iVar1;
 }

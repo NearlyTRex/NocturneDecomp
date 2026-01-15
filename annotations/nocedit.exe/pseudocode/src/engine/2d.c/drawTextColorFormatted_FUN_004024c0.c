@@ -10,12 +10,12 @@ void __cdecl
 engine_2d_c_drawTextColorFormatted_FUN_004024c0(char *format_string,int x_pos,int y_pos,...)
 
 {
-  BADSPACEBASE *in_ESP;
-  char acStack_1008 [4092];
+  char local_100c [4096];
   va_list_t local_c;
   
   local_c = &stack0x00000010;
-  crt_stdio_c_vsprintf_FUN_005fdba8(&stack0xffffeff4,(char *)y_pos,&local_c);
-  engine_2d_c_drawTextColor_FUN_00402430(acStack_1008,x_pos,y_pos);
+  crt_stdio_c_vsprintf_FUN_005fdba8(local_100c,(char *)y_pos,&local_c);
+  local_c = (va_list_t)0x0;
+  engine_2d_c_drawTextColor_FUN_00402430(local_100c,(int)format_string,x_pos);
   return;
 }

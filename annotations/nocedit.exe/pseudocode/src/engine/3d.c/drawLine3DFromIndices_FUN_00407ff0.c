@@ -10,7 +10,6 @@ void __cdecl engine_3d_c_drawLine3DFromIndices_FUN_00407ff0(int vertex_index1,in
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   SRenderVertex *pSVar2;
   int *piVar3;
   int *piVar4;

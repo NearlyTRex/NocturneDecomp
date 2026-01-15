@@ -13,7 +13,6 @@ void core_boneguy_cpp_FUN_0041d8a0(void)
 {
   int iVar1;
   int iVar2;
-  BADSPACEBASE *in_ESP;
   uint *puVar3;
   uint *puVar4;
   uint *puVar5;

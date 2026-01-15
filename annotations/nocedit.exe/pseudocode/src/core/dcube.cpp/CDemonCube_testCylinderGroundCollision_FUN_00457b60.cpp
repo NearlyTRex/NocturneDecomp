@@ -18,7 +18,6 @@ core_dcube_cpp_CDemonCube_testCylinderGroundCollision_FUN_00457b60
   CDemonCubeTriangle *pCVar4;
   uint uVar5;
   int iVar6;
-  BADSPACEBASE *in_ESP;
   int iVar7;
   int iVar8;
   CVector3f local_1c;

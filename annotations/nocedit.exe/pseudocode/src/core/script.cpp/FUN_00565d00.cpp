@@ -14,6 +14,7 @@ void core_script_cpp_FUN_00565d00(void)
 {
   int iVar1;
   char *pcVar2;
+  int iVar3;
   int in_stack_00000004;
   int in_stack_0000000c;
   
@@ -31,16 +32,16 @@ void core_script_cpp_FUN_00565d00(void)
           pcVar2 = core_mission_cpp_CDemonMission_FUN_00524030(g_CDemonMissionPtr);
           if (pcVar2 == (char *)0x0) {
             shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-                      (g_CEditorToolsPtr,"No such actor %s");
+                      (g_CEditorToolsPtr,"No such actor %s",iVar1 * 0x328 + 0x310ab80);
             return;
           }
           core_msnedit_cpp_UndoTmp_BuildActorList_CreateTmp_FUN_0053c140();
           return;
         case 5:
           core_script_cpp_CScript_LoadingScriptFile_FUN_0055a370();
-          iVar1 = core_script_cpp_FUN_00560160();
-          if (-1 < iVar1) {
-            DAT_0310fd48 = *(int *)(*(int *)(in_stack_00000004 + 0x34) + iVar1 * 8) + -1;
+          iVar3 = core_script_cpp_FUN_00560160();
+          if (-1 < iVar3) {
+            DAT_0310fd48 = *(int *)(*(int *)(in_stack_00000004 + 0x34) + iVar3 * 8) + -1;
             DAT_0310fd44 = 0;
             core_script_cpp_FUN_005644e0();
             core_script_cpp_CScript_CallingScriptEditorX2_2_FUN_00566910();
@@ -48,7 +49,7 @@ void core_script_cpp_FUN_00565d00(void)
             return;
           }
           shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-                    (g_CEditorToolsPtr,"No such label %s");
+                    (g_CEditorToolsPtr,"No such label %s",iVar1 * 0x328 + 0x310ab80);
           return;
         case 0xd:
         case 0x19:

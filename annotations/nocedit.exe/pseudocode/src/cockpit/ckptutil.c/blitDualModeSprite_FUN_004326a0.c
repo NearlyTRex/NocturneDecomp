@@ -14,71 +14,71 @@ cockpit_ckptutil_c_blitDualModeSprite_FUN_004326a0
   int iVar1;
   int iVar2;
   int iVar3;
-  ColorConversionFunc *pCVar4;
-  int *piVar5;
-  void *dest_buffer;
-  int iVar6;
+  int iVar4;
+  ColorConversionFunc *pCVar5;
+  int *piVar6;
   int iVar7;
-  int in_stack_0000001c;
+  int iVar8;
   int local_28;
   int local_24;
-  int local_20;
+  void *local_18;
   void *local_14;
   
+  iVar4 = (int)g_ScreenBufferArray[1] - (int)g_ScreenBufferArray[0];
   if (sprite_data != (void *)0x0) {
-    pCVar4 = cockpit_ckptutil_c_getColorConversionFunction_FUN_00431760();
+    pCVar5 = cockpit_ckptutil_c_getColorConversionFunction_FUN_00431760();
     if (g_BitsPerPixel == 8) {
-      local_14 = (void *)(dest_y + (int)g_ScreenBufferArray[width]);
-      if (0 < in_stack_0000001c) {
-        local_24 = 0;
+      local_18 = (void *)(dest_x + (int)g_ScreenBufferArray[dest_y]);
+      if (0 < height) {
+        local_28 = 0;
         do {
-          if (dest_x == 0) {
-            (*pCVar4)(local_14,sprite_data,height);
+          if (span_data == (void *)0x0) {
+            (*pCVar5)(local_18,sprite_data,width);
           }
           else {
-            iVar7 = 0;
-            for (iVar6 = 0; piVar5 = (int *)(dest_x + local_24), iVar6 < *piVar5; iVar6 = iVar6 + 1)
-            {
-              iVar1 = iVar7 + 0x44;
-              iVar2 = iVar7 + 4;
-              iVar3 = iVar7 + 4;
-              iVar7 = iVar7 + 4;
-              (*pCVar4)((void *)((int)local_14 + *(int *)(iVar3 + (int)piVar5)),
-                        (void *)(*(int *)(iVar2 + (int)piVar5) + (int)sprite_data),
-                        *(int *)(iVar1 + (int)piVar5));
+            iVar8 = 0;
+            for (iVar7 = 0; piVar6 = (int *)((int)span_data + local_28), iVar7 < *piVar6;
+                iVar7 = iVar7 + 1) {
+              iVar1 = iVar8 + 0x44;
+              iVar2 = iVar8 + 4;
+              iVar3 = iVar8 + 4;
+              iVar8 = iVar8 + 4;
+              (*pCVar5)((void *)((int)local_18 + *(int *)(iVar3 + (int)piVar6)),
+                        (void *)(*(int *)(iVar2 + (int)piVar6) + (int)sprite_data),
+                        *(int *)(iVar1 + (int)piVar6));
             }
           }
-          local_24 = local_24 + 0x84;
-          local_14 = (void *)((int)local_14 + local_28);
-          sprite_data = (void *)((int)sprite_data + height);
-        } while (local_24 < in_stack_0000001c * 0x84);
+          local_28 = local_28 + 0x84;
+          local_18 = (void *)((int)local_18 + iVar4);
+          sprite_data = (void *)((int)sprite_data + width);
+        } while (local_28 < height * 0x84);
       }
     }
     else {
-      dest_buffer = (void *)((int)g_ScreenBufferArray[width] + dest_y * 2);
-      if (0 < in_stack_0000001c) {
-        local_20 = 0;
+      local_14 = (void *)((int)g_ScreenBufferArray[dest_y] + dest_x * 2);
+      if (0 < height) {
+        local_24 = 0;
         do {
-          if (dest_x == 0) {
-            (*pCVar4)(dest_buffer,sprite_data,height);
+          if (span_data == (void *)0x0) {
+            (*pCVar5)(local_14,sprite_data,width);
           }
           else {
-            iVar7 = 0;
-            for (iVar6 = 0; piVar5 = (int *)(dest_x + local_20), iVar6 < *piVar5; iVar6 = iVar6 + 1)
-            {
-              iVar1 = iVar7 + 0x44;
-              iVar2 = iVar7 + 4;
-              iVar3 = iVar7 + 4;
-              iVar7 = iVar7 + 4;
-              (*pCVar4)((void *)(*(int *)(iVar3 + (int)piVar5) * 2 + (int)dest_buffer),
-                        (void *)(*(int *)(iVar2 + (int)piVar5) + (int)sprite_data),
-                        *(int *)(iVar1 + (int)piVar5));
+            iVar8 = 0;
+            for (iVar7 = 0; piVar6 = (int *)((int)span_data + local_24), iVar7 < *piVar6;
+                iVar7 = iVar7 + 1) {
+              iVar1 = iVar8 + 0x44;
+              iVar2 = iVar8 + 4;
+              iVar3 = iVar8 + 4;
+              iVar8 = iVar8 + 4;
+              (*pCVar5)((void *)(*(int *)(iVar3 + (int)piVar6) * 2 + (int)local_14),
+                        (void *)(*(int *)(iVar2 + (int)piVar6) + (int)sprite_data),
+                        *(int *)(iVar1 + (int)piVar6));
             }
           }
-          local_20 = local_20 + 0x84;
-          dest_buffer = (void *)((int)dest_buffer + (local_28 / 2) * 2);
-          sprite_data = (void *)((int)sprite_data + height);
-        } while (local_20 < in_stack_0000001c * 0x84);
+          local_24 = local_24 + 0x84;
+          local_14 = (void *)((int)local_14 + (iVar4 / 2) * 2);
+          sprite_data = (void *)((int)sprite_data + width);
+        } while (local_24 < height * 0x84);
       }
     }
   }

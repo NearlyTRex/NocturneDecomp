@@ -1,16 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 123,
-    "complexity_score": 201,
+    "complexity_score": 166,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 1,
     "pseudocode_lines": 61,
-    "suspect_count": 12,
+    "suspect_count": 9,
     "suspect_types": [
       "call_esp_preserve",
       "callind_preserve",
-      "stack_param",
       "unaffected_reg"
     ],
     "total_lines": 184
@@ -134,37 +133,16 @@
     {
       "description": "Unaffected register variable",
       "line": 12,
-      "match": "unaff_ESI",
-      "text": "char *unaff_ESI;",
+      "match": "unaff_EBP",
+      "text": "CWeapon *unaff_EBP;",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_0000000c",
-      "text": "CWeapon *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 29,
-      "match": "in_stack_0000000c",
-      "text": "pcVar2 = (in_stack_0000000c->base_actor).actor_name + (int)pcVar2;",
-      "type": "stack_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 46,
-      "match": "unaff_ESI",
-      "text": "iVar1 = crt_string_c_strcmp_FUN_005fef20(str1,unaff_ESI);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 55,
-      "match": "in_stack_0000000c",
-      "text": "this_ptr->selected_weapon = in_stack_0000000c;",
-      "type": "stack_param"
+      "match": "unaff_EBP",
+      "text": "this_ptr->selected_weapon = unaff_EBP;",
+      "type": "unaffected_reg"
     },
     {
       "add_esp_value": 8,

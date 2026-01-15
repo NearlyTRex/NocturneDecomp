@@ -19,10 +19,10 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
   DWORD DVar7;
   int iVar8;
   char *pcVar9;
-  BADSPACEBASE *in_ESP;
   int iVar10;
   char *pcVar11;
   byte bVar12;
+  char acStack_728 [512];
   char low_memory_message [512];
   char temp_buffer [256];
   char loading_text [256];
@@ -316,7 +316,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
   }
   if (g_MessageFlags[0] < 0xc800000) {
     pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Windows is reporting ");
-    pcVar9 = &stack0xfffff8d8;
+    pcVar9 = acStack_728;
     do {
       cVar2 = *pcVar6;
       *pcVar9 = cVar2;
@@ -331,7 +331,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
                (double)((float)g_MessageFlags[0] * 9.536743e-07f));
     pcVar6 = temp_buffer;
     iVar8 = -1;
-    pcVar9 = &stack0xfffff8d8;
+    pcVar9 = acStack_728;
     do {
       pcVar11 = pcVar9;
       if (iVar8 == 0) break;
@@ -353,7 +353,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
     pcVar9 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("MB of free swap disk space.")
     ;
     iVar8 = -1;
-    pcVar6 = &stack0xfffff8d8;
+    pcVar6 = acStack_728;
     do {
       pcVar11 = pcVar6;
       if (iVar8 == 0) break;
@@ -374,7 +374,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
     } while (cVar2 != '\0');
     pcVar9 = &DAT_00635507;
     iVar8 = -1;
-    pcVar6 = &stack0xfffff8d8;
+    pcVar6 = acStack_728;
     do {
       pcVar11 = pcVar6;
       if (iVar8 == 0) break;
@@ -396,7 +396,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
     pcVar9 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Nocturne runs best with at least 200MB free.")
     ;
     iVar8 = -1;
-    pcVar6 = &stack0xfffff8d8;
+    pcVar6 = acStack_728;
     do {
       pcVar11 = pcVar6;
       if (iVar8 == 0) break;
@@ -417,7 +417,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
     } while (cVar2 != '\0');
     pcVar9 = &DAT_00635536;
     iVar8 = -1;
-    pcVar6 = &stack0xfffff8d8;
+    pcVar6 = acStack_728;
     do {
       pcVar11 = pcVar6;
       if (iVar8 == 0) break;
@@ -439,7 +439,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
     pcVar9 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("See README.TXT for more information.")
     ;
     iVar8 = -1;
-    pcVar6 = &stack0xfffff8d8;
+    pcVar6 = acStack_728;
     do {
       pcVar11 = pcVar6;
       if (iVar8 == 0) break;
@@ -458,7 +458,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
       pcVar11[1] = cVar2;
       pcVar11 = pcVar11 + 2;
     } while (cVar2 != '\0');
-    shape_edittool_cpp_CEditorTools_showWarning_FUN_0049e6f0(g_CEditorToolsPtr,&stack0xfffff8d8);
+    shape_edittool_cpp_CEditorTools_showWarning_FUN_0049e6f0(g_CEditorToolsPtr,acStack_728);
   }
   pCVar5 = g_CGamePtr;
   if (g_SkipIntroVideo != 0) {
@@ -488,7 +488,7 @@ void __cdecl core_main_c_initializeGameSystems_FUN_00507a60(void)
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_004105d0(&loading_bitmap,"fangs",0x280,0x1e0);
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_00410950(&loading_bitmap,0,0,0x8000);
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-  engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540((CAlphaBitmap *)&loading_bitmap.ptrOpa);
+  engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_00410540(&loading_bitmap);
   core_sound_cpp_CSound_findAllSoundFiles_FUN_005b2d00(g_CSoundPtr);
   iVar8 = 0;
   core_mission_cpp_CDemonMission_clearMaybe_FUN_00522c80(g_CDemonMissionPtr);

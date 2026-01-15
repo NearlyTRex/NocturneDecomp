@@ -12,16 +12,22 @@ shape_edittool_cpp_CEditorTools_draw3DAxisLabelsAt_FUN_004a1e90
           CQuaternion4f *label_offset,void *param5)
 
 {
-  BADSPACEBASE *in_ESP;
-  float *in_stack_00000018;
+  CQuaternion4f CStack_28;
+  int local_18;
+  int local_14;
+  int local_10;
   
-  engine_3d_c_processCameraRelativePoint_FUN_004037e0((CQuaternion4f *)&stack0xffffffd8);
+  CStack_28.x = (float)(int)ROUND(label_offset->w * 256f);
+  CStack_28.y = (float)(int)ROUND(label_offset->x * 256f);
+  CStack_28.z = (float)(int)ROUND(label_offset->y * 256f);
+  engine_3d_c_processCameraRelativePoint_FUN_004037e0(&CStack_28);
+  local_18 = (int)ROUND(*(float *)param5 * 10430.38f);
+  local_14 = (int)ROUND(*(float *)((int)param5 + 8) * 10430.38f);
+  local_10 = (int)ROUND(*(float *)((int)param5 + 4) * 10430.38f);
   engine_matrix_c_matrixPushAndTransform_FUN_0050cee0
-            ((ushort)(int)ROUND(*in_stack_00000018 * 10430.38f),
-             (ushort)(int)ROUND(in_stack_00000018[2] * 10430.38f),
-             (ushort)(int)ROUND(in_stack_00000018[1] * 10430.38f),0,0,0);
+            ((ushort)local_18,(ushort)local_14,(ushort)local_10,0,0,0);
   shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0
-            ((CEditorTools *)world_position,(float)label_offset,(int)param5);
+            (this_ptr,(float)param2,(int)world_position);
   engine_matrix_c_pop_FUN_0050d720();
   return;
 }

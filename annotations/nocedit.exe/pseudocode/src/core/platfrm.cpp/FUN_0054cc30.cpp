@@ -21,7 +21,6 @@ void core_platfrm_cpp_FUN_0054cc30(void)
   uint uVar5;
   int iVar6;
   char *pcVar7;
-  BADSPACEBASE *in_ESP;
   char *pcVar8;
   float *pfVar9;
   char *pcVar10;

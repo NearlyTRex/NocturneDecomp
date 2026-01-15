@@ -18,34 +18,30 @@ engine_fileio_cpp_getLatestFileFromRepository_FUN_004b3220(char *base_directory,
   uint uVar4;
   undefined3 extraout_var;
   int iVar5;
-  BADSPACEBASE *in_ESP;
   char *pcVar6;
   char *pcVar7;
-  byte bVar8;
-  uint uStack_320;
-  uint uStack_318;
-  byte auStack_314 [20];
-  char acStack_300 [4];
-  char acStack_2fc [488];
-  char local_114 [4];
-  char acStack_110 [4];
-  uint uStack_10c;
-  uint uStack_104;
+  SFoundFileInfo *pSVar9;
+  byte bVar10;
+  SFoundFileInfo local_53c;
+  SFoundFileInfo local_328;
+  char local_114 [256];
   char local_14 [4];
+  SFoundFileInfo *pSVar8;
   
-  bVar8 = 0;
+  bVar10 = 0;
   engine_dosio_c_ensureTrailingSlash_FUN_00481f80(base_directory,local_14,local_114);
   engine_dosio_c_makePath_FUN_00481f50
-            (&stack0xfffffac8,&stack0xfffffff0,acStack_110,(char *)0x0,(char *)0x0);
+            (local_53c.found_path,local_14,local_114,(char *)0x0,(char *)0x0);
+  pSVar9 = &local_53c;
   iVar5 = -1;
-  pcVar6 = &stack0xfffffacc;
+  pSVar8 = &local_53c;
   do {
-    pcVar7 = pcVar6;
+    pcVar7 = pSVar8->found_path;
     if (iVar5 == 0) break;
     iVar5 = iVar5 + -1;
-    pcVar7 = pcVar6 + (uint)bVar8 * -2 + 1;
-    cVar1 = *pcVar6;
-    pcVar6 = pcVar7;
+    pcVar7 = (char *)((int)pSVar8 + (uint)bVar10 * -2 + 1);
+    cVar1 = pSVar8->found_path[0];
+    pSVar8 = (SFoundFileInfo *)pcVar7;
   } while (cVar1 != '\0');
   pcVar7 = pcVar7 + -1;
   pcVar6 = filename;
@@ -61,8 +57,8 @@ engine_fileio_cpp_getLatestFileFromRepository_FUN_004b3220(char *base_directory,
   iVar5 = 0;
   do {
     stream_ptr = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                           (&stack0xfffffacc,(char *)0x0,"rb","..\\engine\\fileio.cpp",
-                            0x153);
+                           (local_53c.found_path,(char *)0x0,"rb",
+                            "..\\engine\\fileio.cpp",0x153);
     if (stream_ptr != (FILE *)0x0) {
       crt_stdio_c_setvbuf_FUN_00601490(stream_ptr,(char *)0x0,0,0x400);
       goto LAB_004b32cc;
@@ -75,47 +71,48 @@ engine_fileio_cpp_getLatestFileFromRepository_FUN_004b3220(char *base_directory,
   stream_ptr = (FILE *)0x0;
 LAB_004b32cc:
   if ((stream_ptr == (FILE *)0x0) ||
-     (iVar5 = engine_dosio_c_findFileNormally_FUN_004817c0((SFoundFileInfo *)&stack0xfffffad4),
-     iVar5 == 0)) {
+     (iVar5 = engine_dosio_c_findFileNormally_FUN_004817c0(&local_53c), iVar5 == 0)) {
     if (stream_ptr != (FILE *)0x0) {
       shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream_ptr,"..\\engine\\fileio.cpp",0xc4);
       stream_ptr = (FILE *)0x0;
     }
-    pcVar6 = "Can't access %s.\nPerhaps someone else is checking it in, and it's taking a while?\nTry again in a few minutes, and if that doesn't work, get Fletch";
+    pcVar7 = "Can't access %s.\nPerhaps someone else is checking it in, and it's taking a while?\nTry again in a few minutes, and if that doesn't work, get Fletch";
   }
   else {
-    pcVar6 = auStack_314;
+    pSVar9 = &local_328;
     do {
       cVar1 = *filename;
-      *pcVar6 = cVar1;
+      pSVar9->found_path[0] = cVar1;
       if (cVar1 == '\0') break;
       cVar1 = filename[1];
       filename = filename + 2;
-      pcVar6[1] = cVar1;
-      pcVar6 = pcVar6 + 2;
+      pSVar9->found_path[1] = cVar1;
+      pSVar9 = (SFoundFileInfo *)(pSVar9->found_path + 2);
     } while (cVar1 != '\0');
-    iVar5 = engine_dosio_c_findFileNormally_FUN_004817c0((SFoundFileInfo *)auStack_314);
+    iVar5 = engine_dosio_c_findFileNormally_FUN_004817c0(&local_328);
     if (iVar5 == 0) {
-      uStack_10c = 0xffffffff;
+      local_328.file_size = 0xffffffff;
     }
-    if (((uStack_10c != uStack_320) || (uStack_318 + 2 < uStack_104)) ||
-       (uStack_104 + 2 < uStack_318)) {
-      engine_dosio_c_setFileAttributes_FUN_004819f0(auStack_314 + 4,0);
-      crt_io_c_deleteFile_FUN_005ff9d0(auStack_314 + 8);
+    if (((local_328.file_size != local_53c.file_size) ||
+        ((char *)(local_53c.timestamp + 2) < local_328.timestamp)) ||
+       ((char *)(local_328.timestamp + 2) < local_53c.timestamp)) {
+      engine_dosio_c_setFileAttributes_FUN_004819f0(local_328.found_path,0);
+      crt_io_c_deleteFile_FUN_005ff9d0(local_328.found_path);
       dest_file = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                            (auStack_314 + 0xc,(char *)0x0,"wb",
+                            (local_328.found_path,(char *)0x0,"wb",
                              "..\\engine\\fileio.cpp",0x3c5);
       if (dest_file == (FILE *)0x0) {
         if (stream_ptr != (FILE *)0x0) {
           shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream_ptr,"..\\engine\\fileio.cpp",0xc4);
           stream_ptr = (FILE *)0x0;
         }
-        pcVar6 = "Can't create %s.";
+        pSVar9 = &local_328;
+        pcVar7 = "Can't create %s.";
         goto LAB_004b32fe;
       }
-      pcVar6 = engine_fileio_cpp_copyFileWithProgress_FUN_004b2030
-                         (stream_ptr,dest_file,&stack0xfffffae8,auStack_314 + 0x10,auStack_314._0_4_
-                         );
+      pcVar7 = engine_fileio_cpp_copyFileWithProgress_FUN_004b2030
+                         (stream_ptr,dest_file,local_53c.found_path,local_328.found_path,
+                          local_53c.file_size);
       if (stream_ptr != (FILE *)0x0) {
         shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream_ptr,"..\\engine\\fileio.cpp",0xc4);
         stream_ptr = (FILE *)0x0;
@@ -123,14 +120,15 @@ LAB_004b32cc:
       if (dest_file != (FILE *)0x0) {
         shape_memdbg_cpp_closeFile_FUN_0050f9b0(dest_file,"..\\engine\\fileio.cpp",0xc4);
       }
-      if (pcVar6 != (char *)0x0) {
-        shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,pcVar6);
+      if (pcVar7 != (char *)0x0) {
+        shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,pcVar7);
         goto LAB_004b3306;
       }
-      iVar5 = engine_dosio_c_copyFileTimestamp_FUN_00481910(acStack_2fc,(char *)auStack_314._16_4_);
+      iVar5 = engine_dosio_c_copyFileTimestamp_FUN_00481910
+                        (local_328.found_path,(char *)local_53c.timestamp);
       if (iVar5 == 0) {
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-                  (g_CEditorToolsPtr,"WARNING: Error setting date/time on %s.\n(Most likely reason: Tried to set the file time to a time\nnewer than the current system time on your computer)");
+                  (g_CEditorToolsPtr,"WARNING: Error setting date/time on %s.\n(Most likely reason: Tried to set the file time to a time\nnewer than the current system time on your computer)",&local_328);
         return 0;
       }
     }
@@ -138,16 +136,17 @@ LAB_004b32cc:
       shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream_ptr,"..\\engine\\fileio.cpp",0xc4);
     }
     stream_ptr = (FILE *)0x0;
-    uVar4 = engine_dosio_c_getFileTimestamp_FUN_00481960((char *)0x0,auStack_314 + 0x10);
+    uVar4 = engine_dosio_c_getFileTimestamp_FUN_00481960((char *)0x0,local_328.found_path);
     if (((((int)uVar4 < 0) || ((uVar4 & 8) != 0)) ||
-        (bVar2 = engine_dosio_c_setFileAttributes_FUN_004819f0(acStack_300,(byte)uVar4 | 8),
-        CONCAT31 /* combine 2-byte values */(extraout_var,bVar2) != 0)) && (-1 < (int)uVar4)) {
+        (bVar2 = engine_dosio_c_setFileAttributes_FUN_004819f0(local_328.found_path,(byte)uVar4 | 8)
+        , CONCAT31 /* combine 2-byte values */(extraout_var,bVar2) != 0)) && (-1 < (int)uVar4)) {
       return 1;
     }
-    pcVar6 = "Error turning on read-only bit for %s.";
+    pSVar9 = &local_328;
+    pcVar7 = "Error turning on read-only bit for %s.";
   }
 LAB_004b32fe:
-  shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,pcVar6);
+  shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,pcVar7,pSVar9);
 LAB_004b3306:
   if (stream_ptr != (FILE *)0x0) {
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream_ptr,"..\\engine\\fileio.cpp",0xc4);

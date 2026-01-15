@@ -12,14 +12,13 @@ void __cdecl core_mission_cpp_CDemonMission_markActorToDelete_FUN_005240a0(CDemo
   int iVar1;
   CDemonActor *in_stack_00000008;
   uint in_stack_0000000c;
-  uint in_stack_00000010;
   
   core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
             (in_stack_00000008,"..\\core\\mission.cpp",0x403);
-  *(uint *)(this_ptr->field6_0x54c + *(int *)(this_ptr->field6_0x54c + 0x14) * 4 + 0x18) =
-       in_stack_0000000c;
+  *(CDemonActor **)(this_ptr->field6_0x54c + *(int *)(this_ptr->field6_0x54c + 0x14) * 4 + 0x18) =
+       in_stack_00000008;
   *(uint *)(this_ptr->field6_0x54c + *(int *)(this_ptr->field6_0x54c + 0x14) * 4 + 0x1a8) =
-       in_stack_00000010;
+       in_stack_0000000c;
   iVar1 = *(int *)(this_ptr->field6_0x54c + 0x14) + 1;
   *(int *)(this_ptr->field6_0x54c + 0x14) = iVar1;
   if (iVar1 < 100) {

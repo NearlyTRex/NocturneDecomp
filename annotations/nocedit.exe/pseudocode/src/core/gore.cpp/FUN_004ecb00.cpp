@@ -8,18 +8,24 @@
 
 /* Signature: byte core_gore.cpp_FUN_004ecb00(uint param_1, uint param_2) */
 
-void core_gore_cpp_FUN_004ecb00
-               (uint param_1,uint param_2,uint unaff_EBX,uint param_4,
-               int param_5,FILE *param_6)
+void core_gore_cpp_FUN_004ecb00(void)
 
 {
-  crt_stdio_c_fscanf_FUN_005fe7c0(param_6,"%f,%f,%f\n",param_5 + 4,param_5 + 8,param_5 + 0xc);
+  int in_stack_00000004;
+  FILE *in_stack_00000008;
+  
   crt_stdio_c_fscanf_FUN_005fe7c0
-            (param_6,"%d,%d,%d\n",param_5 + 0x10,param_5 + 0x14,param_5,unaff_EBX);
+            (in_stack_00000008,"%f,%f,%f\n",in_stack_00000004 + 4,in_stack_00000004 + 8,
+             in_stack_00000004 + 0xc);
   crt_stdio_c_fscanf_FUN_005fe7c0
-            (param_6,"%f,%f,%f\n",param_5 + 0x18,param_5 + 0x20,param_5 + 0x1c);
+            (in_stack_00000008,"%d,%d,%d\n",in_stack_00000004 + 0x10,in_stack_00000004 + 0x14,
+             in_stack_00000004);
   crt_stdio_c_fscanf_FUN_005fe7c0
-            (param_6,"%d,%d,%d,%d,%d,%d,%d\n",param_5 + 0x28,param_5 + 0x2c,param_5 + 0x30,
-             param_5 + 0x34,param_5 + 0x38,param_5 + 0x3c);
+            (in_stack_00000008,"%f,%f,%f\n",in_stack_00000004 + 0x18,in_stack_00000004 + 0x20,
+             in_stack_00000004 + 0x1c);
+  crt_stdio_c_fscanf_FUN_005fe7c0
+            (in_stack_00000008,"%d,%d,%d,%d,%d,%d,%d\n",in_stack_00000004 + 0x28,
+             in_stack_00000004 + 0x2c,in_stack_00000004 + 0x30,in_stack_00000004 + 0x34,
+             in_stack_00000004 + 0x38,in_stack_00000004 + 0x3c,in_stack_00000004 + 0x40);
   return;
 }

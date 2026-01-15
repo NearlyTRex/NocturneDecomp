@@ -10,16 +10,14 @@ int __cdecl sound_sndmain_cpp_isStreamableFile_FUN_005a5180(char *filename,char 
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
-  char acStack_f4 [244];
+  char local_100 [256];
   
   iVar1 = engine_dosio_c_getFileSize_FUN_00481880("sound",filename);
   if (iVar1 < 0x200001) {
-    engine_dosio_c_splitPath_FUN_00481f20
-              (filepath,(char *)0x0,(char *)0x0,(char *)0x0,&stack0xffffff04);
-    iVar1 = crt_string_c_stricmp_FUN_005fe7f0(&stack0xffffff08,"mp3");
+    engine_dosio_c_splitPath_FUN_00481f20(filename,(char *)0x0,(char *)0x0,(char *)0x0,local_100);
+    iVar1 = crt_string_c_stricmp_FUN_005fe7f0(local_100,"mp3");
     if (iVar1 != 0) {
-      iVar1 = crt_string_c_stricmp_FUN_005fe7f0(acStack_f4,".mp3");
+      iVar1 = crt_string_c_stricmp_FUN_005fe7f0(local_100,".mp3");
       if (iVar1 != 0) {
         return 0;
       }

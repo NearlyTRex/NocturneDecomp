@@ -14,8 +14,7 @@ core_skeleton_cpp_CDeformableModelInstance_dismemberPart_FUN_005a1040
   CDeformableModel *this_ptr_00;
   uint lod_index;
   int *piVar1;
-  CVector3i *unaff_EDI;
-  CBodyPart *in_stack_00000010;
+  CVector3i *unaff_ESI;
   
   if (body_part == (CBodyPart *)0x0) {
     this_ptr->part_visibility_flags[part_index] = 0;
@@ -31,9 +30,9 @@ core_skeleton_cpp_CDeformableModelInstance_dismemberPart_FUN_005a1040
     core_skeleton_cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005a01d0(this_ptr,lod_index);
   }
   core_skeleton_cpp_CDeformableModel_dismember_FUN_0059c5e0
-            (this_ptr_00,this_ptr->cached_skinned_lod_index,in_stack_00000010,part_index,
+            (this_ptr_00,this_ptr->cached_skinned_lod_index,body_part,part_index,
              (int)this_ptr->skinned_vertices_buffer,this_ptr->texture_set_indices[part_index],
-             unaff_EDI);
+             unaff_ESI);
   this_ptr->part_visibility_flags[part_index] = 0;
   return;
 }

@@ -11,7 +11,6 @@ core_xform_cpp_buildUniformScaleMatrix_FUN_005f6e20(CMatrix3x4f *output_matrix,f
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   uint *unaff_ESI;
   CMatrix3x4f **ppCVar2;
   CMatrix3x4f *local_34 [6];

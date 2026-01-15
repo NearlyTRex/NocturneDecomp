@@ -1,20 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 116,
-    "complexity_score": 228,
+    "complexity_score": 147,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 3,
-    "pseudocode_lines": 43,
-    "suspect_count": 16,
+    "pseudocode_lines": 47,
+    "suspect_count": 8,
     "suspect_types": [
       "call_esp_preserve",
       "param_count_too_many",
       "pointer_cast",
-      "stack_param",
-      "unaffected_reg"
+      "stack_param"
     ],
-    "total_lines": 159
+    "total_lines": 163
   },
   "cross_references": [
     {
@@ -231,95 +230,39 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 9,
-      "match": "unaff_EBP",
-      "text": "int unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 12,
-      "match": "unaff_EDI",
-      "text": "int unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000024",
-      "text": "int in_stack_00000024;",
+      "line": 13,
+      "match": "in_stack_00000020",
+      "text": "int in_stack_00000020;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 26,
-      "match": "(uint *)((int)",
-      "text": "((uint *)((int)g_ScreenBufferArray[left_x] + dest_x * 4),srcIndices,srcAlpha,",
+      "line": 29,
+      "match": "(int *)((int)",
+      "text": "((uint *)(*(int *)((int)g_ScreenBufferArray + local_18) + dest_y * 4),srcIndices,",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_00000024",
-      "text": "in_stack_00000024,local_18);",
+      "line": 30,
+      "match": "in_stack_00000020",
+      "text": "srcAlpha,in_stack_00000020,pixelCount);",
       "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 29,
-      "match": "unaff_EBP",
-      "text": "unaff_EBP = unaff_EBP + 4;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 29,
-      "match": "unaff_EBP",
-      "text": "unaff_EBP = unaff_EBP + 4;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 31,
-      "match": "unaff_EBP",
-      "text": "} while (unaff_EBP < iVar1 * 4 + left_x * 4);",
-      "type": "unaffected_reg"
     },
     {
       "description": "Complex pointer cast",
-      "line": 37,
-      "match": "(ushort *)((int)",
-      "text": "((ushort *)((int)g_ScreenBufferArray[left_x] + dest_x * 2),srcIndices,srcAlpha,",
+      "line": 41,
+      "match": "(int *)((int)",
+      "text": "((ushort *)(*(int *)((int)g_ScreenBufferArray + local_14) + dest_y * 2),srcIndices,",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 38,
-      "match": "in_stack_00000024",
-      "text": "in_stack_00000024,local_18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 40,
-      "match": "unaff_EDI",
-      "text": "unaff_EDI = unaff_EDI + 4;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 40,
-      "match": "unaff_EDI",
-      "text": "unaff_EDI = unaff_EDI + 4;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
       "line": 42,
-      "match": "unaff_EDI",
-      "text": "} while (unaff_EDI < local_18);",
-      "type": "unaffected_reg"
+      "match": "in_stack_00000020",
+      "text": "srcAlpha,in_stack_00000020,pixelCount);",
+      "type": "stack_param"
     },
     {
       "call_site_count": 1,

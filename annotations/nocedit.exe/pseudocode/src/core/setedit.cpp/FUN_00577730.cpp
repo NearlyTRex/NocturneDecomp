@@ -118,7 +118,7 @@ uint core_setedit_cpp_FUN_00577730(void)
   engine_2d_c_drawRect_FUN_00403120
             (in_stack_0000000c,in_stack_00000010,iVar5 + -1,in_stack_00000010 + 0x2f);
   if (((in_stack_0000000c <= g_MouseX) && (g_MouseX < iVar5)) &&
-     ((in_stack_00000010 <= g_MouseY && (g_MouseY < in_stack_00000004)))) {
+     ((in_stack_00000010 <= g_MouseY && (g_MouseY < in_stack_00000010 + 0x30)))) {
     return 1;
   }
   return 0;

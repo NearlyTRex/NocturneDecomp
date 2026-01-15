@@ -1,19 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 32,
-    "complexity_score": 123,
+    "complexity_score": 87,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 0,
-    "pseudocode_lines": 13,
-    "suspect_count": 9,
+    "pseudocode_lines": 12,
+    "suspect_count": 6,
     "suspect_types": [
       "call_esp_preserve",
       "register_param",
-      "special_crt_function",
-      "stack_param"
+      "special_crt_function"
     ],
-    "total_lines": 45
+    "total_lines": 44
   },
   "cross_references": [
     {
@@ -138,32 +137,11 @@
       "type": "register_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 7,
-      "match": "in_stack_0000000c",
-      "text": "int in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
       "description": "Inferred register parameter",
-      "line": 9,
+      "line": 8,
       "match": "in_DS",
       "text": "iVar1 = crt_debug_c_TriggerDebuggerBreak_FUN_0060b500(error_message,in_DS);",
       "type": "register_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_0000000c",
-      "text": "crt_startup_c_ExitApplication_FUN_0060b534(in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_0000000c",
-      "text": "crt_startup_c_WriteErrorAndExit_FUN_00606620((char *)exit_code,in_stack_0000000c);",
-      "type": "stack_param"
     },
     {
       "add_esp_value": 8,

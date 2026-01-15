@@ -25,7 +25,7 @@ istream * __cdecl crt_iostream_cpp_istream_dtor_FUN_006063e1(istream *this_ptr,u
       piVar2 = crt_iostream_cpp_ios_dtor_FUN_0060632c(&this_ptr->ios,1,unaff_EBX);
       this_ptr = (istream *)&piVar2[-1].__xalloc_list;
     }
-    if ((d2 & 2) == 0) {
+    if ((d1 & 2) == 0) {
       return this_ptr;
     }
     shape_memdbg_cpp_debugFree_FUN_0050f210(this_ptr);

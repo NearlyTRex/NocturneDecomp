@@ -12,7 +12,6 @@ int __cdecl wincore_windll_cpp_initializeExternalRenderer_FUN_005b5ec0(void)
   bool bVar1;
   FARPROC pFVar2;
   undefined3 extraout_var;
-  BADSPACEBASE *in_ESP;
   CExternalRenderer CStack_3ba0;
   
   g_RendererDLLHandle = wincore_wddvmem_cpp_loadLibrary_FUN_005ede10(g_RendererDllName);

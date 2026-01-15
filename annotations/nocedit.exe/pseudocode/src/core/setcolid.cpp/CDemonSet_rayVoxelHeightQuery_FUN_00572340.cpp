@@ -12,10 +12,10 @@ core_setcolid_cpp_CDemonSet_rayVoxelHeightQuery_FUN_00572340
 
 {
   float fVar1;
-  BADSPACEBASE *in_ESP;
   float local_2c;
   CVector3f local_28;
   CVector3f local_1c;
+  float fStack_c;
   
   if (&local_1c != position) {
     local_1c.x = position->x;
@@ -29,10 +29,11 @@ core_setcolid_cpp_CDemonSet_rayVoxelHeightQuery_FUN_00572340
   }
   local_1c.y = local_1c.y + -1f;
   local_28.y = local_28.y + 150f;
-  local_2c = core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70
+  fStack_c = core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70
                        (&g_CDemonRaytraceInstance,&local_1c,&local_28,&this_ptr->collision_normal,
                         &this_ptr->ground_type);
-  if (local_2c < 0.0) {
+  local_2c = fStack_c;
+  if (fStack_c < 0.0) {
     local_2c = 1.01;
   }
   if ((local_2c < 1.0) && (this_ptr->ground_type == 0)) {

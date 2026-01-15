@@ -1,17 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 9,
-    "complexity_score": 47,
+    "complexity_score": 21,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 7,
-    "suspect_count": 3,
+    "pseudocode_lines": 6,
+    "suspect_count": 1,
     "suspect_types": [
-      "call_esp_preserve",
-      "stack_param"
+      "call_esp_preserve"
     ],
-    "total_lines": 16
+    "total_lines": 15
   },
   "cross_references": [
     {
@@ -78,20 +77,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 6,
-      "match": "in_stack_00000008",
-      "text": "int in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000008",
-      "text": "return (SMRGLHeaderExtended *)(in_stack_00000008 + 0x48);",
-      "type": "stack_param"
-    },
     {
       "add_esp_value": 4,
       "call_address": "005dd8c5",

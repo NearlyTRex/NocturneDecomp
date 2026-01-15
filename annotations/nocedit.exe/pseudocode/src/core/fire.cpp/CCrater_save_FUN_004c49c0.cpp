@@ -16,18 +16,12 @@ void __cdecl core_fire_cpp_CCrater_save_FUN_004c49c0(CCrater *this_ptr,FILE *fil
   
   crt_stdio_c_fprintf_FUN_005fe6d0
             (file_handle,"%d,%d,%f,%f\n",*(uint *)this_ptr->field0_0x0,
-             *(uint *)(this_ptr->field0_0x0 + 4),
-             SUB84 /* extract 2-byte value */((double)*(float *)(this_ptr->field0_0x0 + 8),0),
-             (int)((ulonglong)(double)*(float *)(this_ptr->field0_0x0 + 8) >> 0x20),
-             SUB84 /* extract 2-byte value */((double)*(float *)(this_ptr->field0_0x0 + 0x18),0),
-             (int)((ulonglong)(double)*(float *)(this_ptr->field0_0x0 + 0x18) >> 0x20));
+             *(uint *)(this_ptr->field0_0x0 + 4),(double)*(float *)(this_ptr->field0_0x0 + 8),
+             (double)*(float *)(this_ptr->field0_0x0 + 0x18));
   crt_stdio_c_fprintf_FUN_005fe6d0
-            (file_handle,"%f,%f,%f\n",SUB84 /* extract 2-byte value */((double)*(float *)(this_ptr->field0_0x0 + 0xc),0),
-             (int)((ulonglong)(double)*(float *)(this_ptr->field0_0x0 + 0xc) >> 0x20),
-             SUB84 /* extract 2-byte value */((double)*(float *)(this_ptr->field0_0x0 + 0x10),0),
-             (int)((ulonglong)(double)*(float *)(this_ptr->field0_0x0 + 0x10) >> 0x20),
-             SUB84 /* extract 2-byte value */((double)*(float *)(this_ptr->field0_0x0 + 0x14),0),
-             (int)((ulonglong)(double)*(float *)(this_ptr->field0_0x0 + 0x14) >> 0x20));
+            (file_handle,"%f,%f,%f\n",(double)*(float *)(this_ptr->field0_0x0 + 0xc),
+             (double)*(float *)(this_ptr->field0_0x0 + 0x10),
+             (double)*(float *)(this_ptr->field0_0x0 + 0x14));
   pcVar4 = this_ptr->field0_0x0;
   do {
     pcVar1 = pcVar4 + 0x24;
@@ -35,35 +29,24 @@ void __cdecl core_fire_cpp_CCrater_save_FUN_004c49c0(CCrater *this_ptr,FILE *fil
     pcVar3 = pcVar4 + 0x1c;
     pcVar4 = pcVar4 + 0xc;
     crt_stdio_c_fprintf_FUN_005fe6d0
-              (file_handle,"%f,%f,%f\n",SUB84 /* extract 2-byte value */((double)*(float *)pcVar3,0),
-               (int)((ulonglong)(double)*(float *)pcVar3 >> 0x20),SUB84 /* extract 2-byte value */((double)*(float *)pcVar2,0),
-               (int)((ulonglong)(double)*(float *)pcVar2 >> 0x20),SUB84 /* extract 2-byte value */((double)*(float *)pcVar1,0),
-               (int)((ulonglong)(double)*(float *)pcVar1 >> 0x20));
+              (file_handle,"%f,%f,%f\n",(double)*(float *)pcVar3,(double)*(float *)pcVar2,
+               (double)*(float *)pcVar1);
   } while (pcVar4 != this_ptr->field0_0x0 + 0x24);
   crt_stdio_c_fprintf_FUN_005fe6d0
-            (file_handle,"%f,%f,%f\n",SUB84 /* extract 2-byte value */((double)*(float *)(this_ptr->field0_0x0 + 0x40),0),
-             (int)((ulonglong)(double)*(float *)(this_ptr->field0_0x0 + 0x40) >> 0x20),
-             SUB84 /* extract 2-byte value */((double)*(float *)(this_ptr->field0_0x0 + 0x44),0),
-             (int)((ulonglong)(double)*(float *)(this_ptr->field0_0x0 + 0x44) >> 0x20),
-             SUB84 /* extract 2-byte value */((double)*(float *)(this_ptr->field0_0x0 + 0x48),0),
-             (int)((ulonglong)(double)*(float *)(this_ptr->field0_0x0 + 0x48) >> 0x20));
+            (file_handle,"%f,%f,%f\n",(double)*(float *)(this_ptr->field0_0x0 + 0x40),
+             (double)*(float *)(this_ptr->field0_0x0 + 0x44),
+             (double)*(float *)(this_ptr->field0_0x0 + 0x48));
   crt_stdio_c_fprintf_FUN_005fe6d0
-            (file_handle,"%f,%f,%f\n",SUB84 /* extract 2-byte value */((double)*(float *)(this_ptr->field0_0x0 + 0x4c),0),
-             (int)((ulonglong)(double)*(float *)(this_ptr->field0_0x0 + 0x4c) >> 0x20),
-             SUB84 /* extract 2-byte value */((double)*(float *)(this_ptr->field0_0x0 + 0x50),0),
-             (int)((ulonglong)(double)*(float *)(this_ptr->field0_0x0 + 0x50) >> 0x20),
-             SUB84 /* extract 2-byte value */((double)*(float *)(this_ptr->field0_0x0 + 0x54),0),
-             (int)((ulonglong)(double)*(float *)(this_ptr->field0_0x0 + 0x54) >> 0x20));
+            (file_handle,"%f,%f,%f\n",(double)*(float *)(this_ptr->field0_0x0 + 0x4c),
+             (double)*(float *)(this_ptr->field0_0x0 + 0x50),
+             (double)*(float *)(this_ptr->field0_0x0 + 0x54));
   crt_stdio_c_fprintf_FUN_005fe6d0
-            (file_handle,"%f,%f,%f\n",SUB84 /* extract 2-byte value */((double)*(float *)(this_ptr->field0_0x0 + 0x58),0),
-             (int)((ulonglong)(double)*(float *)(this_ptr->field0_0x0 + 0x58) >> 0x20),
-             SUB84 /* extract 2-byte value */((double)*(float *)(this_ptr->field0_0x0 + 0x5c),0),
-             (int)((ulonglong)(double)*(float *)(this_ptr->field0_0x0 + 0x5c) >> 0x20),
-             SUB84 /* extract 2-byte value */((double)*(float *)(this_ptr->field0_0x0 + 0x60),0));
+            (file_handle,"%f,%f,%f\n",(double)*(float *)(this_ptr->field0_0x0 + 0x58),
+             (double)*(float *)(this_ptr->field0_0x0 + 0x5c),
+             (double)*(float *)(this_ptr->field0_0x0 + 0x60));
   crt_stdio_c_fprintf_FUN_005fe6d0
-            (file_handle,"%f,%f,%f\n",SUB84 /* extract 2-byte value */((double)*(float *)(this_ptr->field0_0x0 + 100),0),
-             (int)((ulonglong)(double)*(float *)(this_ptr->field0_0x0 + 100) >> 0x20),
-             SUB84 /* extract 2-byte value */((double)*(float *)(this_ptr->field0_0x0 + 0x68),0),
-             (int)((ulonglong)(double)*(float *)(this_ptr->field0_0x0 + 0x68) >> 0x20));
+            (file_handle,"%f,%f,%f\n",(double)*(float *)(this_ptr->field0_0x0 + 100),
+             (double)*(float *)(this_ptr->field0_0x0 + 0x68),
+             (double)*(float *)(this_ptr->field0_0x0 + 0x6c));
   return;
 }

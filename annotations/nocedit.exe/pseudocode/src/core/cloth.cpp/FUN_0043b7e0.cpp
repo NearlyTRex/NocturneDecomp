@@ -15,7 +15,6 @@ void core_cloth_cpp_FUN_0043b7e0(void)
 {
   uchar uVar1;
   undefined3 extraout_var;
-  BADSPACEBASE *in_ESP;
   int vertex_index1;
   int iVar2;
   float10 fVar3;
@@ -30,7 +29,6 @@ void core_cloth_cpp_FUN_0043b7e0(void)
   float local_40;
   float local_3c;
   float local_38;
-  int iStack_2c;
   int local_28;
   int local_24;
   int local_20;
@@ -76,9 +74,9 @@ void core_cloth_cpp_FUN_0043b7e0(void)
       engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0
                 (g_CDemonRendererPtr,vertex_index1,local_28);
       engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0
-                (g_CDemonRendererPtr,vertex_index1,local_20);
+                (g_CDemonRendererPtr,vertex_index1,local_18);
       engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0048caf0
-                (g_CDemonRendererPtr,iStack_2c,local_28);
+                (g_CDemonRendererPtr,local_28,local_24);
     }
     vertex_index1 = vertex_index1 + 1;
     local_20 = local_20 + 0x30;

@@ -9,13 +9,11 @@
 SMemHead * __cdecl shape_memdbg_cpp_getMemoryHeaderFromPtr_FUN_0050efa0(void *user_ptr)
 
 {
-  int in_stack_00000008;
-  
   if (user_ptr != (void *)0x0) {
     return (SMemHead *)((int)user_ptr + -0x28);
   }
   g_CurrentFilename = "..\\shape\\memdbg.cpp";
   g_CurrentLineNumber = 0x99;
   core_main_c_displayErrorAndQuit_FUN_00506f10("headFromPtr - NULL ptr");
-  return (SMemHead *)(in_stack_00000008 + -0x28);
+  return (SMemHead *)0xffffffd8;
 }

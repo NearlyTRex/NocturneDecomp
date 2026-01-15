@@ -11,7 +11,6 @@ core_box_cpp_CBoundingBox3D_getBoundingBoxScreenSize_FUN_00420840(CBoundingBox3D
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   CVector3i local_30;
   float local_24;
   float local_20;

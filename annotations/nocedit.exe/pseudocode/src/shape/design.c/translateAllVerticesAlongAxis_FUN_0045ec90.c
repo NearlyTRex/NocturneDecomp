@@ -12,11 +12,10 @@ void shape_design_c_translateAllVerticesAlongAxis_FUN_0045ec90(void)
   char cVar1;
   uint uVar2;
   int iVar3;
-  BADSPACEBASE *in_ESP;
   char *pcVar4;
   byte bVar5;
   double dVar6;
-  char *str;
+  char *in_stack_ffffffac;
   char local_48 [40];
   int local_20;
   float local_1c;
@@ -24,7 +23,6 @@ void shape_design_c_translateAllVerticesAlongAxis_FUN_0045ec90(void)
   
   bVar5 = 0;
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
-  str = "Enter distance or location in feet : ";
   engine_2d_c_getInputWithPrompt_FUN_004032c0(local_48,10,0,0,"Enter distance or location in feet : ");
   iVar3 = -1;
   pcVar4 = local_48;
@@ -35,7 +33,7 @@ void shape_design_c_translateAllVerticesAlongAxis_FUN_0045ec90(void)
     pcVar4 = pcVar4 + (uint)bVar5 * -2 + 1;
   } while (cVar1 != '\0');
   if (iVar3 != -2) {
-    dVar6 = crt_string_c_strtod_FUN_005ff0f3(str);
+    dVar6 = crt_string_c_strtod_FUN_005ff0f3(in_stack_ffffffac);
     local_1c = (float)dVar6;
     iVar3 = engine_2d_c_getInputWithPrompt_FUN_004032c0
                       (local_48,0x14,0,0x16,"Press <Enter> or enter point to set to location : ");

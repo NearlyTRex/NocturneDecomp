@@ -11,7 +11,6 @@ core_xform_cpp_buildYFlipMatrix_FUN_005f6f40(CMatrix3x4f *matrix_out,float y_off
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   float *unaff_ESI;
   float *pfVar2;
   float *pfVar3;

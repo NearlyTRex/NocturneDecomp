@@ -51,7 +51,7 @@ cockpit_ckptutil_c_drawClippedEdges_FUN_004335f0(SEdge *edges,int count,int x_of
       engine_2d_c_drawLine_FUN_004011b0(x1,y1,x2,y2);
       iVar1 = iVar1 + 1;
       edges = edges + 1;
-    } while (iVar1 < x_offset);
+    } while (iVar1 < count);
   }
   return;
 }

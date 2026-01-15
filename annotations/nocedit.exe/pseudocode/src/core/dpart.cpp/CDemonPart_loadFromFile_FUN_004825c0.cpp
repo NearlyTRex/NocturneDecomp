@@ -23,7 +23,6 @@ core_dpart_cpp_CDemonPart_loadFromFile_FUN_004825c0
   float10 fVar9;
   float10 fVar10;
   double dVar11;
-  float *in_stack_00000044;
   
   crt_stdio_c_fread_FUN_005fd990(this_ptr,0x20,1,file_handle);
   crt_stdio_c_fread_FUN_005fd990(&this_ptr->vertex_count,4,1,file_handle);
@@ -85,13 +84,13 @@ core_dpart_cpp_CDemonPart_loadFromFile_FUN_004825c0
       } while (iVar7 < this_ptr->face_count);
     }
   }
-  if (in_stack_00000044 != (float *)0x0) {
+  if (offset_position != (CVector3f *)0x0) {
     fVar8 = (float10)256;
-    fVar9 = (float10)in_stack_00000044[1] * fVar8;
-    fVar10 = (float10)in_stack_00000044[2] * fVar8;
+    fVar9 = (float10)offset_position->y * fVar8;
+    fVar10 = (float10)offset_position->z * fVar8;
     iVar7 = this_ptr->vertex_count;
     iVar5 = 0;
-    dVar11 = crt_math_c_round_FUN_005fe6b0((double)((float10)*in_stack_00000044 * fVar8));
+    dVar11 = crt_math_c_round_FUN_005fe6b0((double)((float10)offset_position->x * fVar8));
     fVar8 = (float10)dVar11;
     dVar11 = crt_math_c_round_FUN_005fe6b0((double)fVar9);
     fVar9 = (float10)dVar11;

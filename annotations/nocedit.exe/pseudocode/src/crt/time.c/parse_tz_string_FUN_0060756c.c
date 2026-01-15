@@ -10,8 +10,7 @@ void __cdecl crt_time_c_parse_tz_string_FUN_0060756c(char *tz_string)
 
 {
   char *pcVar1;
-  BADSPACEBASE *in_ESP;
-  int unaff_EDI;
+  int local_14;
   
   g_DaylightSavingActive = 0;
   pcVar1 = crt_time_c_parse_timezone_spec_FUN_00607348(tz_string,"EST",&g_TimezoneOffset);
@@ -19,10 +18,10 @@ void __cdecl crt_time_c_parse_tz_string_FUN_0060756c(char *tz_string)
     "EDT"[0] = '\0';
   }
   else {
+    local_14 = g_TimezoneOffset + -0xe10;
     g_DaylightSavingActive = 1;
-    pcVar1 = crt_time_c_parse_timezone_spec_FUN_00607348
-                       (pcVar1,"EDT",(int *)&stack0xfffffff0);
-    g_DaylightSavingOffset = g_TimezoneOffset - unaff_EDI;
+    pcVar1 = crt_time_c_parse_timezone_spec_FUN_00607348(pcVar1,"EDT",&local_14);
+    g_DaylightSavingOffset = g_TimezoneOffset - local_14;
     if (*pcVar1 == ',') {
       pcVar1 = crt_time_c_parse_dst_rule_FUN_00607464(pcVar1 + 1,&g_DstStartRule);
     }

@@ -1,16 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 63,
-    "complexity_score": 151,
+    "complexity_score": 101,
     "cross_reference_count": 8,
     "function_call_count": 7,
     "global_count": 10,
     "pseudocode_lines": 21,
-    "suspect_count": 11,
+    "suspect_count": 7,
     "suspect_types": [
       "call_esp_preserve",
-      "stack_param",
-      "unaffected_reg",
       "variadic_preserve"
     ],
     "total_lines": 84
@@ -230,36 +228,8 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 9,
-      "match": "unaff_EBX",
-      "text": "int unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000014",
-      "text": "CDemonMission *in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 19,
-      "match": "unaff_EBX",
-      "text": "core_level_cpp_CLevelLoader_update_FUN_00504160(g_CLevelLoaderPtr,text,unaff_EBX);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_00000014",
-      "text": "core_mission_cpp_CDemonMission_readMissionFile_FUN_00522eb0(in_stack_00000014);",
-      "type": "stack_param"
-    },
-    {
       "call_address": "00522e22",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

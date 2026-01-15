@@ -1,23 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 170,
-    "complexity_score": 503,
+    "complexity_score": 352,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 13,
-    "pseudocode_lines": 73,
-    "suspect_count": 39,
+    "pseudocode_lines": 62,
+    "suspect_count": 27,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
-      "format_string_mismatch",
       "lea_esp_stack_addr",
-      "register_param",
-      "stack_ref",
-      "unaffected_reg",
+      "pointer_cast",
       "variadic_preserve"
     ],
-    "total_lines": 243
+    "total_lines": 232
   },
   "cross_references": [
     {
@@ -334,92 +330,22 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 8,
-      "match": "unaff_EBX",
-      "text": "int unaff_EBX;",
-      "type": "unaffected_reg"
+      "description": "Complex pointer cast",
+      "line": 35,
+      "match": "(char *)((int)",
+      "text": "cVar1 = *(char *)((int)pSVar3 + 1);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 10,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 10,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 11,
-      "match": "unaff_ESI",
-      "text": "int unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 13,
-      "match": "unaff_EDI",
-      "text": "int unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Direct stack address reference",
+      "description": "Complex pointer cast",
       "line": 36,
-      "match": "&stack0xfffffd68",
-      "text": "(g_CurrentSoundDevice,(SSoundDeviceInfo *)&stack0xfffffd68);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 37,
-      "match": "&stack0xfffffd6c",
-      "text": "pcVar3 = &stack0xfffffd6c;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 52,
-      "match": "&stack0xfffffff4",
-      "text": "((int *)&stack0xfffffff4,&local_14,(int *)&stack0xfffffff0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 52,
-      "match": "&stack0xfffffff0",
-      "text": "((int *)&stack0xfffffff4,&local_14,(int *)&stack0xfffffff0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 53,
-      "match": "unaff_ESI",
-      "text": "engine_ini_cpp_CIniFile_setInteger_FUN_004fbc90(ini_file,\"Bits\",unaff_ESI);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 54,
-      "match": "unaff_EDI",
-      "text": "engine_ini_cpp_CIniFile_setInteger_FUN_004fbc90(ini_file,\"Channels\",unaff_EDI);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 55,
-      "match": "unaff_EBX",
-      "text": "engine_ini_cpp_CIniFile_setInteger_FUN_004fbc90(ini_file,\"Hz\",unaff_EBX);",
-      "type": "unaffected_reg"
+      "match": "(SSoundDeviceInfo *)((int)",
+      "text": "pSVar3 = (SSoundDeviceInfo *)((int)pSVar3 + 2);",
+      "type": "pointer_cast"
     },
     {
       "call_address": "005ac371",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -433,7 +359,7 @@
     },
     {
       "call_address": "005ac3a2",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -444,28 +370,6 @@
       "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
       "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 005ac3a2 (no EBP frame)",
       "type": "variadic_preserve"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"SfxChannel%dEnabled\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "SfxChannel%dEnabled",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 66,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_50,\"SfxChannel%dEnabled\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"SfxChannel%dVol\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "SfxChannel%dVol",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 69,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_44,\"SfxChannel%dVol\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 8,

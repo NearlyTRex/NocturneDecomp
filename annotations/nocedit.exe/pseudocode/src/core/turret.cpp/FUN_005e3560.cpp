@@ -21,7 +21,6 @@ void core_turret_cpp_FUN_005e3560(void)
   float fVar6;
   int iVar7;
   CVector3f *pCVar8;
-  BADSPACEBASE *in_ESP;
   int in_stack_00000004;
   float fStack_54;
   uint uStack_50;

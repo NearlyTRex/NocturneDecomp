@@ -13,6 +13,7 @@ CDemonTriangle * __cdecl core_dtri_cpp_buildClipTriangleFan_FUN_0049cb5a(int tri
   int unaff_EBP;
   CVector3f *vertex2;
   CVector3f *vertex3;
+  int unaff_retaddr;
   
   this_ptr = g_ClippedTriangleBuffer;
   vertex2 = g_ClipOutputVertices;
@@ -24,6 +25,6 @@ CDemonTriangle * __cdecl core_dtri_cpp_buildClipTriangleFan_FUN_0049cb5a(int tri
               (this_ptr,g_ClipOutputVertices,vertex2,vertex3);
     this_ptr = this_ptr + 1;
     vertex3 = vertex3 + 1;
-  } while (unaff_EBP < triangle_count);
+  } while (unaff_EBP < unaff_retaddr);
   return g_ClippedTriangleBuffer;
 }

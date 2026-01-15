@@ -1,16 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 247,
-    "complexity_score": 114,
+    "complexity_score": 130,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 32,
-    "pseudocode_lines": 69,
+    "pseudocode_lines": 80,
     "suspect_count": 4,
     "suspect_types": [
+      "concat_artifact",
       "format_string_mismatch"
     ],
-    "total_lines": 316
+    "total_lines": 327
   },
   "cross_references": [],
   "function": {
@@ -585,15 +586,11 @@
   },
   "suspects": [
     {
-      "actual_args": 0,
-      "description": "Format \"\\tCOLOR\\t%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "\\tCOLOR\\t%d\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 27,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(output_file,\"\\tCOLOR\\t%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
+      "description": "Decompiler double/longlong composition artifact",
+      "line": 23,
+      "match": "CONCAT44",
+      "text": "uVar10 = CONCAT44 /* combine 2-byte values */(uVar8,0x45a376);",
+      "type": "concat_artifact"
     },
     {
       "actual_args": 0,
@@ -601,7 +598,7 @@
       "expected_args": 1,
       "format_string": ",%d",
       "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 36,
+      "line_number": 47,
       "match": "crt_stdio_c_fprintf_FUN_005fe6d0(output_file,\",%d\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
@@ -612,7 +609,7 @@
       "expected_args": 1,
       "format_string": "\\tTEXTURE\\t'%s'\\n",
       "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 55,
+      "line_number": 66,
       "match": "crt_stdio_c_fprintf_FUN_005fe6d0(output_file,\"\\tTEXTURE\\t'%s'\\n\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
@@ -623,7 +620,7 @@
       "expected_args": 1,
       "format_string": ",%d",
       "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 63,
+      "line_number": 74,
       "match": "crt_stdio_c_fprintf_FUN_005fe6d0(output_file,\",%d\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"

@@ -21,7 +21,6 @@ uint crt_unknown_c_ReadFileBytesMaybe_FUN_0060e930
   DWORD DVar5;
   char *pcVar6;
   uint uVar7;
-  BADSPACEBASE *in_ESP;
   DWORD unaff_ESI;
   uint unaff_EDI;
   HANDLE unaff_retaddr;

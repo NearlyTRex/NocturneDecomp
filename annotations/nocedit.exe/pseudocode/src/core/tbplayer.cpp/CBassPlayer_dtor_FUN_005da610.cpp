@@ -14,11 +14,9 @@ CBassPlayer * __cdecl core_tbplayer_cpp_CBassPlayer_dtor_FUN_005da610(CBassPlaye
   CDeformableModelInstance *pCVar3;
   CBassPlayer *ptr;
   void *ptr_00;
-  uint in_stack_00000008;
-  uint in_stack_00000014;
-  uint in_stack_00000018;
-  uint in_stack_0000001c;
-  byte in_stack_00000028;
+  uint unaff_EBX;
+  uint unaff_retaddr;
+  byte in_stack_00000008;
   
   if ((in_stack_00000008 & 4) != 0) {
     ptr_00 = crt_memory_c_freeSingleInstance_FUN_005fe632(this_ptr,&g_CBassPlayerTypeInfo);
@@ -33,12 +31,12 @@ CBassPlayer * __cdecl core_tbplayer_cpp_CBassPlayer_dtor_FUN_005da610(CBassPlaye
   core_backgnd_cpp_cleanupVector_FUN_004126e0((CVector3f **)(iVar2 + -0xb4));
   iVar2 = core_cloth_cpp_FUN_0043bf80();
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40
-                     ((CDeformableModelInstance *)(iVar2 + -0x293c),0,in_stack_00000014,
-                      in_stack_00000018,in_stack_0000001c);
+                     ((CDeformableModelInstance *)(iVar2 + -0x293c),0,unaff_EBX,unaff_retaddr,
+                      (uint)this_ptr);
   ptr = (CBassPlayer *)
         core_actor_cpp_CDemonActor_dtor_FUN_00408a30
                   ((CDemonActor *)(pCVar3[-1].part_visibility_flags + 7),1);
-  if ((in_stack_00000028 & 2) == 0) {
+  if ((in_stack_00000008 & 2) == 0) {
     return ptr;
   }
   shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);

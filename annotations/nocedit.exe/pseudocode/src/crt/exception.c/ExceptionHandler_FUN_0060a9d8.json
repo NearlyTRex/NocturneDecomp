@@ -1,22 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 196,
-    "complexity_score": 220,
+    "complexity_score": 177,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 6,
-    "pseudocode_lines": 95,
-    "suspect_count": 9,
+    "pseudocode_lines": 97,
+    "suspect_count": 6,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "callind_preserve",
-      "register_param",
       "special_crt_function",
-      "stack_ref",
       "warning_unreachable"
     ],
-    "total_lines": 291
+    "total_lines": 293
   },
   "cross_references": [
     {
@@ -197,27 +194,6 @@
       "match": "WARNING: Removing unreachable block",
       "text": "/* WARNING: Removing unreachable block (ram,0x0060aa79) */",
       "type": "warning_unreachable"
-    },
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 15,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 15,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 93,
-      "match": "&stack0xfffffff4",
-      "text": "lVar3 = (*PTR_SetUnhandledExceptionFilter_0061165c)((_EXCEPTION_POINTERS *)&stack0xfffffff4);",
-      "type": "stack_ref"
     },
     {
       "add_esp_value": 8,

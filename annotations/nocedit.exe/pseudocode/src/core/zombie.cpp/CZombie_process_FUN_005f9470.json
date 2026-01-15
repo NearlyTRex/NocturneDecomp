@@ -1,16 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 2463,
-    "complexity_score": 1658,
+    "complexity_score": 1627,
     "cross_reference_count": 0,
     "function_call_count": 48,
     "global_count": 72,
-    "pseudocode_lines": 1073,
-    "suspect_count": 54,
+    "pseudocode_lines": 1072,
+    "suspect_count": 52,
     "suspect_types": [
-      "badspacebase",
       "extra_output",
-      "register_param",
       "stack_param",
       "unknown_field",
       "unresolved_funcptr",
@@ -18,7 +16,7 @@
       "warning_overlapping_globals",
       "warning_unreachable"
     ],
-    "total_lines": 3536
+    "total_lines": 3535
   },
   "cross_references": [],
   "function": {
@@ -4067,344 +4065,330 @@
       "type": "extra_output"
     },
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 29,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 29,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 37,
+      "line": 36,
       "match": "in_stack_00000008",
       "text": "float in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 38,
+      "line": 37,
       "match": "in_stack_fffffbda",
       "text": "SCollisionInfo *in_stack_fffffbda;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 169,
+      "line": 168,
       "match": "in_stack_00000008",
       "text": "*(float *)(this_ptr->field4_0xbf48 + 0x4c) - in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 172,
+      "line": 171,
       "match": "in_stack_00000008",
       "text": "local_7c = in_stack_00000008 * (this_ptr->base_enemy).speed;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 230,
+      "line": 229,
       "match": "code *",
       "text": "(iVar13 = (**(code **)(*(int *)(*(int *)((this_ptr->base_enemy).field6_0xbe38 + 4) +",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 262,
+      "line": 261,
       "match": "code *",
       "text": "(**(code **)(*(int *)(*(int *)((this_ptr->base_enemy).field6_0xbe38 + 4) + 0x154",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 274,
+      "line": 273,
       "match": "code *",
       "text": "(**(code **)(*(int *)(*(int *)((this_ptr->base_enemy).field6_0xbe38 + 4) + 0x154) + 0x11c))",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 282,
+      "line": 281,
       "match": "code *",
       "text": "iVar7 = (**(code **)(*(int *)(*(int *)((this_ptr->base_enemy).field6_0xbe38 + 4) + 0x154) +",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 285,
+      "line": 284,
       "match": "code *",
       "text": "(**(code **)(*(int *)(*(int *)((this_ptr->base_enemy).field6_0xbe38 + 4) + 0x154) + 0x104)",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 338,
+      "line": 337,
       "match": "in_stack_fffffbda",
       "text": "in_stack_fffffbda = (SCollisionInfo *)local_c8;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 341,
+      "line": 340,
       "match": "in_stack_fffffbda",
       "text": "(CVector3f *)in_stack_fffffbda,&local_ec);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 342,
+      "line": 341,
       "match": "code *",
       "text": "pfVar15 = (float *)(**(code **)(*(int *)(*(int *)((this_ptr->base_enemy).field6_0xbe38 + 4",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 384,
+      "line": 383,
       "match": "code *",
       "text": "(**(code **)(*(int *)(*(int *)(this_ptr->field1_0xbeb4 + 0x24) + 0x154) + 0x24))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 436,
+      "line": 435,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008 * fVar5 * fVar10 * fVar4;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 443,
+      "line": 442,
       "match": "in_stack_00000008",
       "text": "(fVar10 = *(float *)(this_ptr->field4_0xbf48 + 0x50) + in_stack_00000008,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 450,
+      "line": 449,
       "match": "in_stack_fffffbda",
       "text": "((CDemonActor *)this_ptr,(char *)&local_370,(float)in_stack_fffffbda);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 470,
+      "line": 469,
       "match": "in_stack_00000008",
       "text": "iVar7 = core_actor_cpp_randomChance_FUN_0040cd10(in_stack_00000008 * (float)_DAT_006587bd);",
       "type": "stack_param"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 482,
+      "line": 481,
       "match": "extraout_EAX",
       "text": "if (extraout_EAX != 0) {",
       "type": "extra_output"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 489,
+      "line": 488,
       "match": "in_stack_fffffbda",
       "text": "hasCollision)((CDemonActor *)g_HeroActors[g_LocalHeroIndex],in_stack_fffffbda);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 518,
+      "line": 517,
       "match": "in_stack_fffffbda",
       "text": "hasCollision)((CDemonActor *)g_HeroActors[g_LocalHeroIndex],in_stack_fffffbda",
       "type": "stack_param"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 525,
+      "line": 524,
       "match": "extraout_EAX_00",
       "text": "if (extraout_EAX_00 == 0) {",
       "type": "extra_output"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 582,
+      "line": 581,
       "match": "code *",
       "text": "(**(code **)(*(int *)(*(int *)((this_ptr->base_enemy).field6_0xbe38 + 4) + 0x154) + 0xbc",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 632,
+      "line": 631,
       "match": "code *",
       "text": "&& (iVar7 = (**(code **)(*(int *)(*(int *)((this_ptr->base_enemy).field6_0xbe38",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 639,
+      "line": 638,
       "match": "code *",
       "text": "(iVar7 = (**(code **)(*(int *)(*(int *)((this_ptr->base_enemy).field6_0xbe38 + 4)",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 674,
+      "line": 673,
       "match": "code *",
       "text": "(iVar13 = (**(code **)(*(int *)(*(int *)((this_ptr->base_enemy).field6_0xbe38 + 4) +",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 678,
+      "line": 677,
       "match": "code *",
       "text": "(iVar13 = (**(code **)(*(int *)(*(int *)((this_ptr->base_enemy).field6_0xbe38 + 4) +",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 710,
+      "line": 709,
       "match": "code *",
       "text": "if ((iVar7 == 0) || (iVar7 = (**(code **)(*(int *)(iVar7 + 0x154) + 0x120))(), 0 < iVar7))",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 713,
+      "line": 712,
       "match": "code *",
       "text": "(**(code **)(*(int *)(*(int *)((this_ptr->base_enemy).field6_0xbe38 + 4) + 0x154)",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 741,
+      "line": 740,
       "match": "in_stack_00000008",
       "text": "(fVar10 = *(float *)(this_ptr->field4_0xbf48 + 0x5c) - in_stack_00000008,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 750,
+      "line": 749,
       "match": "code *",
       "text": "iVar21 = (**(code **)(*(int *)(iVar13 + 0x154) + 0xf8))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 798,
+      "line": 797,
       "match": "in_stack_fffffbda",
       "text": ")((CDemonActor *)g_HeroActors[g_LocalHeroIndex],in_stack_fffffbda);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 809,
+      "line": 808,
       "match": "in_stack_00000008",
       "text": "(fVar10 = *(float *)(this_ptr->field4_0xbf48 + 0x60) - in_stack_00000008,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 888,
+      "line": 887,
       "match": "in_stack_00000008",
       "text": "local_4c * (this_ptr->base_enemy).speed * in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 890,
+      "line": 889,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008 * fVar10 * fVar4;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 894,
+      "line": 893,
       "match": "code *",
       "text": "(**(code **)(*(int *)(*(int *)((this_ptr->base_enemy).field6_0xbe38 + 4) + 0x154) + 0xbc))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 939,
+      "line": 938,
       "match": "in_stack_00000008",
       "text": "*(float *)(this_ptr->base_enemy).field6_0xbe38 - in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 954,
+      "line": 953,
       "match": "code *",
       "text": "(pCVar12 = (CZombie *)(**(code **)(*(int *)(iVar13 + 0x154) + 0x108))(),",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 961,
+      "line": 960,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008 * (float)_DAT_006587f5;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 963,
+      "line": 962,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 965,
+      "line": 964,
       "match": "in_stack_00000008",
       "text": "in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 967,
+      "line": 966,
       "match": "in_stack_00000008",
       "text": "local_258 = in_stack_00000008 *",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 998,
+      "line": 997,
       "match": "._12_4_",
       "text": "local_c8._12_4_ = (pCVar14->min).x + (pCVar14->max).x;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 999,
+      "line": 998,
       "match": "._16_4_",
       "text": "local_c8._16_4_ = (pCVar14->min).y + (pCVar14->max).y;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 1000,
+      "line": 999,
       "match": "._12_4_",
       "text": "local_164.x = (float)local_c8._12_4_ * _DAT_006587c5;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 1001,
+      "line": 1000,
       "match": "._16_4_",
       "text": "local_164.y = (float)local_c8._16_4_ * _DAT_006587c5;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 1002,
+      "line": 1001,
       "match": "._20_4_",
       "text": "local_c8._20_4_ = (pCVar14->min).z + (pCVar14->max).z;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 1003,
+      "line": 1002,
       "match": "._20_4_",
       "text": "local_164.z = (float)local_c8._20_4_ * _DAT_006587c5;",
       "type": "unknown_field"

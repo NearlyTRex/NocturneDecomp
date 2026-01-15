@@ -1,22 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 151,
-    "complexity_score": 238,
+    "complexity_score": 243,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 2,
-    "pseudocode_lines": 63,
+    "pseudocode_lines": 78,
     "suspect_count": 14,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
       "pointer_cast",
-      "register_param",
       "stack_ref",
       "unaffected_reg"
     ],
-    "total_lines": 214
+    "total_lines": 229
   },
   "cross_references": [],
   "function": {
@@ -207,87 +205,87 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 11,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 11,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unaffected register variable",
       "line": 12,
-      "match": "unaff_EBP",
-      "text": "CVector3i *unaff_EBP;",
+      "match": "unaff_ESI",
+      "text": "CVector3i *unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Complex pointer cast",
-      "line": 44,
+      "line": 49,
       "match": "(int *)((int)",
       "text": "*(int *)((int)((this_ptr->transform_state).saved_source_matrix.m + -10) + iVar4 * 4) *",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 53,
+      "line": 58,
       "match": "(int *)((int)",
       "text": "*(int *)((int)(this_ptr->transform_state).saved_source_matrix.m + iVar4 * 4 + -0x58) *",
       "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 60,
-      "match": "unaff_EBP",
-      "text": "puVar5 = (uint *)((int)unaff_EBP + (uint)bVar6 * -8 + 4);",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 60,
-      "match": "(uint *)((int)",
-      "text": "puVar5 = (uint *)((int)unaff_EBP + (uint)bVar6 * -8 + 4);",
+      "line": 67,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)(this_ptr->transform_state).saved_source_matrix.m + iVar4 * 4 + -0x38) *",
       "type": "pointer_cast"
     },
     {
       "description": "Unaffected register variable",
-      "line": 61,
-      "match": "unaff_EBP",
-      "text": "unaff_EBP->x = local_18;",
+      "line": 75,
+      "match": "unaff_ESI",
+      "text": "puVar6 = (uint *)((int)unaff_ESI + (uint)bVar7 * -8 + 4);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 75,
+      "match": "(uint *)((int)",
+      "text": "puVar6 = (uint *)((int)unaff_ESI + (uint)bVar7 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 76,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI->x = local_1c;",
       "type": "unaffected_reg"
     },
     {
       "description": "Direct stack address reference",
-      "line": 62,
+      "line": 77,
+      "match": "&stack0xffffffe8",
+      "text": "*puVar6 = *(uint *)((int)&stack0xffffffe8 + (uint)bVar7 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 77,
+      "match": "(uint *)((int)",
+      "text": "*puVar6 = *(uint *)((int)&stack0xffffffe8 + (uint)bVar7 * -8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 79,
       "match": "&stack0xffffffec",
-      "text": "*puVar5 = *(uint *)((int)&stack0xffffffec + (uint)bVar6 * -8);",
+      "text": "*(uint *)((int)&stack0xffffffec + (uint)bVar7 * -8 + (uint)bVar7 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 62,
+      "line": 79,
       "match": "(uint *)((int)",
-      "text": "*puVar5 = *(uint *)((int)&stack0xffffffec + (uint)bVar6 * -8);",
+      "text": "*(uint *)((int)&stack0xffffffec + (uint)bVar7 * -8 + (uint)bVar7 * -8);",
       "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 64,
-      "match": "&stack0xfffffff0",
-      "text": "*(uint *)(&stack0xfffffff0 + (uint)bVar6 * -8 + (uint)bVar6 * -8);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 65,
-      "match": "unaff_EBP",
-      "text": "return unaff_EBP;",
+      "line": 80,
+      "match": "unaff_ESI",
+      "text": "return unaff_ESI;",
       "type": "unaffected_reg"
     },
     {

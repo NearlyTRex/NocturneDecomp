@@ -22,7 +22,6 @@ engine_ini_cpp_CIniFile_getString_FUN_004fbb20
     core_main_c_displayErrorAndQuit_FUN_00506f10("CIniFile::getString - section not write!");
   }
   engine_ini_cpp_getProfileString_FUN_004fb960
-            (this->section,output_buffer,(char *)buffer_size,(char *)buffer_size,(int)default_value,
-             this->filename);
+            (this->section,key,output_buffer,output_buffer,buffer_size,this->filename);
   return;
 }

@@ -16,7 +16,6 @@ void core_main_c_finalizeGameSystems_FUN_00508570(void)
   int iVar4;
   char *text;
   int iVar5;
-  BADSPACEBASE *in_ESP;
   
   shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0("..\\core\\main.c",0x4f9);
   file_ptr = engine_dosio_c_getFile_FUN_00481a50

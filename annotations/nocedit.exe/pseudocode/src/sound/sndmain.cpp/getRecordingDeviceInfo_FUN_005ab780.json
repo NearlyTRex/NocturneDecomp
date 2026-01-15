@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 97,
+    "complexity_score": 61,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 6,
-    "pseudocode_lines": 22,
-    "suspect_count": 6,
+    "pseudocode_lines": 21,
+    "suspect_count": 3,
     "suspect_types": [
       "pointer_cast",
-      "stack_param",
       "variadic_preserve"
     ],
-    "total_lines": 58
+    "total_lines": 57
   },
   "cross_references": [
     {
@@ -146,43 +145,22 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000010",
-      "text": "uint *in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_00000010",
-      "text": "*in_stack_00000010 = *(uint *)pSVar2->device_name;",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 21,
+      "line": 20,
       "match": "(SRecordingDeviceInfo *)((int)",
       "text": "pSVar2 = (SRecordingDeviceInfo *)((int)pSVar2 + ((uint)bVar3 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_00000010",
-      "text": "in_stack_00000010 = in_stack_00000010 + (uint)bVar3 * -2 + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_00000010",
-      "text": "in_stack_00000010 = in_stack_00000010 + (uint)bVar3 * -2 + 1;",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(SRecordingDeviceInfo *)((int)",
+      "text": "device_info = (SRecordingDeviceInfo *)((int)device_info + (uint)bVar3 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
       "call_address": "005ab7cc",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

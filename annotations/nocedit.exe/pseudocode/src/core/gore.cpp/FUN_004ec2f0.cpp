@@ -16,7 +16,7 @@ void core_gore_cpp_FUN_004ec2f0(void)
   int iVar1;
   uint *in_stack_00000004;
   float *in_stack_00000008;
-  uint in_stack_00000010;
+  uint in_stack_0000000c;
   
   in_stack_00000004[4] = 0;
   if ((float *)(in_stack_00000004 + 1) != in_stack_00000008) {
@@ -35,7 +35,7 @@ void core_gore_cpp_FUN_004ec2f0(void)
   in_stack_00000004[0x10] = 0;
   *in_stack_00000004 = 0;
   in_stack_00000004[8] = 0;
-  in_stack_00000004[5] = in_stack_00000010;
+  in_stack_00000004[5] = in_stack_0000000c;
   in_stack_00000004[7] = in_stack_00000004[8];
   in_stack_00000004[6] = in_stack_00000004[7];
   return;

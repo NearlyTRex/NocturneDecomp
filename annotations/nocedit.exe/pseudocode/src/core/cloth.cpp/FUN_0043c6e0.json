@@ -1,17 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 151,
-    "complexity_score": 142,
+    "complexity_score": 141,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 4,
-    "pseudocode_lines": 42,
+    "pseudocode_lines": 41,
     "suspect_count": 9,
     "suspect_types": [
       "call_esp_preserve",
       "stack_param"
     ],
-    "total_lines": 193
+    "total_lines": 192
   },
   "cross_references": [
     {
@@ -135,7 +135,7 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 13,
       "match": "in_stack_00000004",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
@@ -151,7 +151,7 @@
       "description": "Unresolved stack parameter",
       "line": 17,
       "match": "in_stack_00000004",
-      "text": "iVar2 = pSVar1[in_stack_00000004].projected_vertex.screen_y >> 0x10;",
+      "text": "y = pSVar1[in_stack_00000004].projected_vertex.screen_y >> 0x10;",
       "type": "stack_param"
     },
     {

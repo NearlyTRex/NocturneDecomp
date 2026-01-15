@@ -13,52 +13,54 @@
 void core_lightgun_cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450(void)
 
 {
-  float volume;
-  int iVar1;
+  float base_frequency;
+  float fVar1;
+  int iVar2;
   CDemonFilter *filter_ptr;
-  uint uVar2;
+  uint uVar3;
   int extraout_EDX;
-  double dVar3;
+  int unaff_ESI;
+  double dVar4;
   CWeapon *in_stack_00000004;
-  int in_stack_00000008;
-  float in_stack_0000000c;
-  float in_stack_00000010;
-  float fVar4;
+  float in_stack_00000008;
   
   core_weapon_cpp_CWeapon_process_FUN_005ee110(in_stack_00000004);
-  volume = core_inv_cpp_CInventory_calculateTotalBatteryCharge_FUN_004ffda0
-                     (&g_HeroActors[g_LocalHeroIndex]->inventory,DAT_00660a40);
-  fVar4 = (DAT_00660a40 / volume) * in_stack_00000010 +
+  fVar1 = core_inv_cpp_CInventory_calculateTotalBatteryCharge_FUN_004ffda0
+                    (&g_HeroActors[g_LocalHeroIndex]->inventory,DAT_00660a40);
+  fVar1 = (DAT_00660a40 / fVar1) * in_stack_00000008 +
           *(float *)(in_stack_00000004[1].base_actor.actor_name + 8);
-  *(float *)(in_stack_00000004[1].base_actor.actor_name + 8) = fVar4;
-  if (DAT_00660a40 < fVar4) {
+  *(float *)(in_stack_00000004[1].base_actor.actor_name + 8) = fVar1;
+  if (DAT_00660a40 < fVar1) {
     *(float *)(in_stack_00000004[1].base_actor.actor_name + 8) = DAT_00660a40;
   }
-  fVar4 = *(float *)(in_stack_00000004[1].base_actor.actor_name + 8) / DAT_00660a40;
-  *(float *)(in_stack_00000004[1].base_actor.actor_name + 0xc) = fVar4;
-  dVar3 = crt_math_c_round_FUN_005fe6b0((double)(fVar4 * (float)100));
-  in_stack_00000004->ammo_count = (int)ROUND(dVar3);
+  fVar1 = *(float *)(in_stack_00000004[1].base_actor.actor_name + 8) / DAT_00660a40;
+  *(float *)(in_stack_00000004[1].base_actor.actor_name + 0xc) = fVar1;
+  dVar4 = crt_math_c_round_FUN_005fe6b0((double)(fVar1 * (float)100));
+  in_stack_00000004->ammo_count = (int)ROUND(dVar4);
   if (extraout_EDX == 2) {
-    fVar4 = _DAT_00660a50 +
-            (_DAT_00660a54 - _DAT_00660a50) *
-            *(float *)(in_stack_00000004[1].base_actor.actor_name + 0xc);
-    iVar1 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
+    fVar1 = (_DAT_00660a4c - DAT_00660a48) *
+            *(float *)(in_stack_00000004[1].base_actor.actor_name + 0xc) + DAT_00660a48;
+    base_frequency =
+         _DAT_00660a50 +
+         (_DAT_00660a54 - _DAT_00660a50) *
+         *(float *)(in_stack_00000004[1].base_actor.actor_name + 0xc);
+    iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
                       (*(uint *)(in_stack_00000004[1].base_actor.actor_name + 4));
-    if (iVar1 == 0) {
+    if (iVar2 == 0) {
       sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
       sound_sndmain_cpp_setNextSfxTrackedFloatPosition_FUN_005a8940
                 (&(in_stack_00000004->base_actor).location.position);
-      sound_sndmain_cpp_setNextSfxVolume_FUN_005a8a60(volume);
-      sound_sndmain_cpp_setNextSfxBaseFrequency_FUN_005a8a80((float)in_stack_00000004);
-      uVar2 = sound_sndmain_cpp_startSfx_FUN_005a8e90("cre-charge.wav");
-      *(uint *)(in_stack_00000004[1].base_actor.actor_name + 4) = uVar2;
+      sound_sndmain_cpp_setNextSfxVolume_FUN_005a8a60(fVar1);
+      sound_sndmain_cpp_setNextSfxBaseFrequency_FUN_005a8a80(base_frequency);
+      uVar3 = sound_sndmain_cpp_startSfx_FUN_005a8e90("cre-charge.wav");
+      *(uint *)(in_stack_00000004[1].base_actor.actor_name + 4) = uVar3;
       sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
     }
     else {
       sound_sndmain_cpp_setSfxVolume_FUN_005a9ae0
-                (*(uint *)(in_stack_00000004[1].base_actor.actor_name + 4),fVar4);
+                (*(uint *)(in_stack_00000004[1].base_actor.actor_name + 4),fVar1);
       sound_sndmain_cpp_setSfxBaseFrequency_FUN_005a9b40
-                (*(uint *)(in_stack_00000004[1].base_actor.actor_name + 4),in_stack_0000000c);
+                (*(uint *)(in_stack_00000004[1].base_actor.actor_name + 4),base_frequency);
     }
     core_lightgun_cpp_FUN_00505ac0();
     if (*(int *)in_stack_00000004[1].base_actor.actor_name == 0) {
@@ -67,8 +69,7 @@ void core_lightgun_cpp_ChargedRadianceEmitterGunMaybe_FUN_00506450(void)
     else {
       g_CDemonLightInstance.antialiasing_enabled = 1;
       filter_ptr = core_dfilter_cpp_CFilterCache_getFilter_FUN_00470060
-                             (g_CFilterCachePtr,"lgunmask.raw",(char *)0x0,
-                              in_stack_00000008);
+                             (g_CFilterCachePtr,"lgunmask.raw",(char *)0x0,unaff_ESI);
       core_dlight_cpp_CDemonLight_applyFilter_FUN_00474770(&g_CDemonLightInstance,filter_ptr,0,0,0);
       core_weather_cpp_CWeather_AnotherLightningThunderThing_FUN_005eeeb0();
     }

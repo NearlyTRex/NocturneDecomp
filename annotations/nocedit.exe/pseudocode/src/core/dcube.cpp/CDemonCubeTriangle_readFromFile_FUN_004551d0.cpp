@@ -15,6 +15,6 @@ core_dcube_cpp_CDemonCubeTriangle_readFromFile_FUN_004551d0
   this_ptr->vertices[0] = vertex_buffer_base + g_TempTriangleIndices[0];
   this_ptr->vertices[1] = vertex_buffer_base + g_TempTriangleIndices[1];
   this_ptr->vertices[2] = vertex_buffer_base + g_TempTriangleIndices[2];
-  crt_stdio_c_fread_FUN_005fd990(&this_ptr->normal,0x14,1,(FILE *)vertex_buffer_base);
+  crt_stdio_c_fread_FUN_005fd990(&this_ptr->normal,0x14,1,file_handle);
   return;
 }

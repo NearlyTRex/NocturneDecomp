@@ -11,7 +11,6 @@ support_trisock_cpp_parseIPAddress_FUN_005e1700(uint *result_ptr,char *dotted_de
 
 {
   int iVar1;
-  uint in_stack_0000000c;
   
   iVar1 = support_trisock_cpp_parseIPComponents_FUN_005e1800(result_ptr,dotted_decimal_string);
   if (iVar1 != 0) {
@@ -20,6 +19,6 @@ support_trisock_cpp_parseIPAddress_FUN_005e1700(uint *result_ptr,char *dotted_de
   g_CurrentFilename = "..\\support\\trisock.cpp";
   g_CurrentLineNumber = 0x36;
   core_main_c_displayErrorAndQuit_FUN_00506f10
-            ("Invalid dotted decimal string: %s",in_stack_0000000c);
+            ("Invalid dotted decimal string: %s",dotted_decimal_string);
   return (uint)result_ptr;
 }

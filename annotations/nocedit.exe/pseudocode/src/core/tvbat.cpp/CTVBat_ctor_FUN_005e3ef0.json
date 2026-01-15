@@ -1,17 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 21,
-    "complexity_score": 89,
+    "complexity_score": 86,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 1,
-    "pseudocode_lines": 49,
+    "pseudocode_lines": 46,
     "suspect_count": 3,
     "suspect_types": [
       "call_esp_preserve",
       "negative_offset"
     ],
-    "total_lines": 70
+    "total_lines": 67
   },
   "cross_references": [
     {
@@ -129,7 +129,7 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 16,
+      "line": 14,
       "match": "this_ptr_00[-1].",
       "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)0x0;",
       "type": "negative_offset"

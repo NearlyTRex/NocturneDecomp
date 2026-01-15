@@ -12,7 +12,6 @@ int __cdecl shape_design_c_generateOctant_FUN_00469420(void)
   char cVar1;
   int iVar2;
   int iVar3;
-  BADSPACEBASE *in_ESP;
   char *pcVar4;
   byte bVar5;
   double dVar6;

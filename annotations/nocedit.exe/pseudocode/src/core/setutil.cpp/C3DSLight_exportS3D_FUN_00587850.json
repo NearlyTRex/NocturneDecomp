@@ -1,17 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 167,
+    "complexity_score": 69,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 7,
-    "pseudocode_lines": 37,
-    "suspect_count": 12,
+    "pseudocode_lines": 24,
+    "suspect_count": 4,
     "suspect_types": [
-      "sub_artifact",
       "variadic_preserve"
     ],
-    "total_lines": 124
+    "total_lines": 111
   },
   "cross_references": [
     {
@@ -180,62 +179,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 16,
-      "match": "SUB84",
-      "text": "SUB84 /* extract 2-byte value */(dVar3,0),(int)((ulonglong)dVar3 >> 0x20),SUB84 /* extract 2-byte value */(dVar2,0),",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 16,
-      "match": "SUB84",
-      "text": "SUB84 /* extract 2-byte value */(dVar3,0),(int)((ulonglong)dVar3 >> 0x20),SUB84 /* extract 2-byte value */(dVar2,0),",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 17,
-      "match": "SUB84",
-      "text": "(int)((ulonglong)dVar2 >> 0x20),SUB84 /* extract 2-byte value */(dVar1,0),(int)((ulonglong)dVar1 >> 0x20));",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 23,
-      "match": "SUB84",
-      "text": "(file_handle,\",%g,%g,%g\\n\",SUB84 /* extract 2-byte value */(dVar3,0),(int)((ulonglong)dVar3 >> 0x20),",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 24,
-      "match": "SUB84",
-      "text": "SUB84 /* extract 2-byte value */(dVar2,0),(int)((ulonglong)dVar2 >> 0x20),SUB84 /* extract 2-byte value */(dVar1,0),",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 24,
-      "match": "SUB84",
-      "text": "SUB84 /* extract 2-byte value */(dVar2,0),(int)((ulonglong)dVar2 >> 0x20),SUB84 /* extract 2-byte value */(dVar1,0),",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 30,
-      "match": "SUB84",
-      "text": "(file_handle,\",%g,%g\\n\",SUB84 /* extract 2-byte value */((double)this_ptr->atten_start,0),",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 32,
-      "match": "SUB84",
-      "text": "SUB84 /* extract 2-byte value */((double)this_ptr->atten_end,0),",
-      "type": "sub_artifact"
-    },
     {
       "call_address": "005878b0",
       "caller_has_stack_issues": false,

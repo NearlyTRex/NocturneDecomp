@@ -12,18 +12,16 @@ core_dmodel_cpp_CKeyFramedModelInstance_writeDependencies_FUN_0047edd0
 
 {
   CKeyFramedModel *pCVar1;
-  FILE *dependency_file;
-  FILE *in_stack_00000010;
+  int skip_raw_files;
   
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(this_ptr);
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(this_ptr);
   if (pCVar1->poly_count < 1) {
     return;
   }
-  crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000010,"MODELS\\%s\n",this_ptr->model_name);
-  dependency_file = (FILE *)0x0;
+  crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"MODELS\\%s\n",this_ptr->model_name);
+  skip_raw_files = 0;
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80(this_ptr);
-  core_dmodel_cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00
-            (pCVar1,dependency_file,(int)this_ptr);
+  core_dmodel_cpp_CKeyFramedModel_writeDependencies_FUN_0047ed00(pCVar1,file_handle,skip_raw_files);
   return;
 }

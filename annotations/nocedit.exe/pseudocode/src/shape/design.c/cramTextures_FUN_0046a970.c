@@ -13,7 +13,6 @@ shape_design_c_cramTextures_FUN_0046a970
 {
   char cVar1;
   int iVar2;
-  BADSPACEBASE *in_ESP;
   char *pcVar3;
   char *pcVar4;
   STextureAtlasEntry *pSVar5;

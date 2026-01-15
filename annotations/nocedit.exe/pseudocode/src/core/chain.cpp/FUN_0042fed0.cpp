@@ -18,7 +18,6 @@ void core_chain_cpp_FUN_0042fed0(void)
   float fVar4;
   float fVar5;
   float fVar6;
-  BADSPACEBASE *in_ESP;
   int in_stack_00000004;
   float *in_stack_00000008;
   float *in_stack_0000000c;

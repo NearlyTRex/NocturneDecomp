@@ -13,7 +13,6 @@ void __cdecl sound_mp3_cpp_initializeSynthesisDctTable_FUN_00530400(float *outpu
   float *extraout_EBX;
   float *pfVar2;
   float *extraout_EBX_00;
-  BADSPACEBASE *in_ESP;
   int iVar3;
   float *pfVar4;
   float10 fVar5;

@@ -1,20 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 124,
-    "complexity_score": 159,
+    "complexity_score": 153,
     "cross_reference_count": 2,
     "function_call_count": 12,
     "global_count": 9,
-    "pseudocode_lines": 44,
-    "suspect_count": 9,
+    "pseudocode_lines": 43,
+    "suspect_count": 10,
     "suspect_types": [
-      "badspacebase",
       "param_count_too_few",
-      "register_param",
-      "stack_param",
-      "stack_ref"
+      "stack_param"
     ],
-    "total_lines": 168
+    "total_lines": 167
   },
   "cross_references": [
     {
@@ -490,24 +487,17 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
+      "description": "Unresolved stack parameter",
       "line": 9,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 9,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
+      "match": "in_stack_00000008",
+      "text": "char *in_stack_00000008;",
+      "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000008",
-      "text": "char *in_stack_00000008;",
+      "line": 10,
+      "match": "in_stack_fffffeb8",
+      "text": "float in_stack_fffffeb8;",
       "type": "stack_param"
     },
     {
@@ -519,31 +509,45 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 28,
+      "line": 27,
       "match": "in_stack_00000008",
       "text": "(g_CEditorToolsPtr,\"Failed to play \\\"%s\\\"\",in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 31,
+      "line": 30,
       "match": "in_stack_00000008",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffebc,\"Playing %s\",in_stack_00000008);",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(local_144,\"Playing %s\",in_stack_00000008);",
       "type": "stack_param"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 31,
-      "match": "&stack0xfffffebc",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffebc,\"Playing %s\",in_stack_00000008);",
-      "type": "stack_ref"
+      "description": "Unresolved stack parameter",
+      "line": 34,
+      "match": "in_stack_fffffeb8",
+      "text": "local_18 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(2,(uint)in_stack_fffffeb8);",
+      "type": "stack_param"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 33,
-      "match": "&stack0xfffffebc",
-      "text": "(g_CEditorToolsPtr,&stack0xfffffebc);",
-      "type": "stack_ref"
+      "description": "Unresolved stack parameter",
+      "line": 35,
+      "match": "in_stack_fffffeb8",
+      "text": "in_stack_fffffeb8 = (float)local_18;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 36,
+      "match": "in_stack_fffffeb8",
+      "text": "if (in_stack_fffffeb8 < 0.0) break;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 38,
+      "match": "in_stack_fffffeb8",
+      "text": "(g_CEditorToolsPtr,in_stack_fffffeb8,1.0);",
+      "type": "stack_param"
     },
     {
       "call_site_count": 2,

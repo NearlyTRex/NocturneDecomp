@@ -23,7 +23,6 @@ core_actor_cpp_rayCylinderIntersect_FUN_00408340
   float fVar9;
   float fVar10;
   float fVar11;
-  BADSPACEBASE *in_ESP;
   CVector3f local_60 [7];
   
   fVar1 = collision_info->cylinder_radius * collision_info->cylinder_radius;

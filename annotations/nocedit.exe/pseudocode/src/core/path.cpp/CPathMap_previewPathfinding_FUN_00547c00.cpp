@@ -11,14 +11,13 @@ void __cdecl core_path_cpp_CPathMap_previewPathfinding_FUN_00547c00(CPathMap *th
 {
   int x_pos;
   int iVar1;
-  BADSPACEBASE *in_ESP;
   int iVar2;
   int iVar3;
   int iVar4;
-  char acStack_118 [252];
-  uint local_1c;
+  char local_11c [256];
+  int local_1c;
   int local_18;
-  uint local_14;
+  int local_14;
   
   iVar2 = 0;
   local_18 = 0;
@@ -30,21 +29,23 @@ void __cdecl core_path_cpp_CPathMap_previewPathfinding_FUN_00547c00(CPathMap *th
     iVar4 = local_18;
     do {
       crt_stdio_c_sprintf_FUN_005fdbd0
-                (&stack0xfffffee4,"%s",
-                 g_DirectionCharacters[(byte)g_PathfindingVisited[0][iVar4]]);
+                (local_11c,"%s",g_DirectionCharacters[(byte)g_PathfindingVisited[0][iVar4]])
+      ;
       if ((iVar1 == g_PathfindingCurrentX) && (iVar2 == g_PathfindingCurrentZ)) {
-        acStack_118[0] = 's';
+        local_11c[0] = 's';
       }
       if ((iVar1 == g_PathfindingDestX) && (iVar2 == g_PathfindingDestZ)) {
-        acStack_118[0] = 'd';
+        local_11c[0] = 'd';
       }
       x_pos = g_WindowWidth / 2 + iVar3;
       iVar4 = iVar4 + 1;
       iVar1 = iVar1 + 1;
       iVar3 = iVar3 + 0xe;
-      engine_2d_c_drawText_FUN_00401fd0(acStack_118,x_pos,local_18);
+      engine_2d_c_drawText_FUN_00401fd0(local_11c,x_pos,local_1c);
     } while (iVar1 < 100);
     iVar2 = iVar2 + 1;
+    local_14 = local_14 + -0xb;
+    local_18 = local_18 + 100;
   } while (iVar2 < 100);
   return;
 }

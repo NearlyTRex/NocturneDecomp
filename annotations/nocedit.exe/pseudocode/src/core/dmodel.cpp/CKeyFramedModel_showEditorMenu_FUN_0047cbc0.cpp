@@ -18,15 +18,15 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
   uint uVar5;
   bool bVar6;
   CVector3f *pCVar7;
+  uint extraout_EAX;
   undefined3 extraout_var;
   undefined3 extraout_var_00;
   undefined3 extraout_var_01;
   undefined3 extraout_var_02;
-  int extraout_EAX;
+  int extraout_EAX_00;
   undefined3 extraout_var_03;
   int iVar8;
   CKeyFramedModel *pCVar9;
-  BADSPACEBASE *in_ESP;
   int iVar10;
   char *pcVar11;
   uint *puVar12;
@@ -37,7 +37,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
   float10 fVar16;
   double dVar17;
   uint uVar18;
-  CGame *in_stack_fffff154;
+  CGame *in_stack_fffff150;
   int local_ca8;
   char local_c9c [260];
   char local_b98 [256];
@@ -148,7 +148,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
   local_d8.y = 0.0;
   local_80 = 28.0;
   local_7c = 15.0;
-  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_fffff154);
+  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_fffff150);
   local_6c = 0;
   local_68 = 0;
   local_64 = (uint)(0 < this_ptr->poly_count);
@@ -212,7 +212,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
             local_4c = *(int *)((int)&(pSVar2->projected_vertex).screen_y + iVar10) >> 0x10;
             x_pos = *(int *)((int)&(pSVar2->projected_vertex).screen_x + iVar10) >> 0x10;
             if (-1 < x_pos) {
-              crt_stdio_c_sprintf_FUN_005fdbd0(local_2dc,"%d",local_2dc,"%d",iVar8);
+              crt_stdio_c_sprintf_FUN_005fdbd0(local_2dc,"%d",iVar8);
               engine_2d_c_drawText_FUN_00401fd0(local_2dc,x_pos,local_4c);
             }
           }
@@ -224,9 +224,11 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
         shape_edittool_cpp_CEditorTools_draw3DAxisLabels_FUN_004a1ca0(g_CEditorToolsPtr,4.0,3);
       }
       if (local_60 == 0) {
+        uVar18 = 0x47d215;
         dVar17 = crt_math_c_round_FUN_005fe6b0((double)local_70);
         local_1c = (CKeyFramedModelInstance *)(int)ROUND(dVar17);
-        crt_stdio_c_sprintf_FUN_005fdbd0(local_408,"Frame: %d of %d");
+        crt_stdio_c_sprintf_FUN_005fdbd0
+                  (local_408,"Frame: %d of %d",local_1c,extraout_EAX,uVar18);
         engine_2d_c_drawText_FUN_00401fd0(local_408,0,g_WindowHeight + -0x37);
       }
     }
@@ -775,7 +777,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_showEditorMenu_FUN_0047cbc0(CKeyFra
                 *(CKeyFramedModelInstance **)(iVar8 + (int)ppCVar3) = local_1c;
                 dVar17 = crt_math_c_round_FUN_005fe6b0((double)((float10)local_108.y * fVar16));
                 local_1c = (CKeyFramedModelInstance *)(int)ROUND(dVar17);
-                *(CKeyFramedModelInstance **)(extraout_EAX + iVar8 + 4) = local_1c;
+                *(CKeyFramedModelInstance **)(extraout_EAX_00 + iVar8 + 4) = local_1c;
                 ppCVar3 = this_ptr->vertex_list;
                 dVar17 = crt_math_c_round_FUN_005fe6b0((double)(fVar16 * (float10)local_108.z));
                 local_1c = (CKeyFramedModelInstance *)(int)ROUND(dVar17);

@@ -1,16 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 240,
-    "complexity_score": 97,
+    "complexity_score": 84,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 14,
-    "pseudocode_lines": 82,
-    "suspect_count": 1,
-    "suspect_types": [
-      "sub_artifact"
-    ],
-    "total_lines": 322
+    "pseudocode_lines": 84,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 324
   },
   "cross_references": [
     {
@@ -488,13 +486,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 67,
-      "match": "SUB84",
-      "text": "format_string = SUB84 /* extract 2-byte value */((double)iVar3 * 1.52587890625e-05,0);",
-      "type": "sub_artifact"
-    }
-  ]
+  "suspects": []
 }

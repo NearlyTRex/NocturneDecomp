@@ -1,21 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 56,
-    "complexity_score": 195,
+    "complexity_score": 161,
     "cross_reference_count": 3,
     "function_call_count": 5,
     "global_count": 9,
-    "pseudocode_lines": 25,
-    "suspect_count": 14,
+    "pseudocode_lines": 21,
+    "suspect_count": 12,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
-      "register_param",
       "stack_param",
       "variadic_preserve"
     ],
-    "total_lines": 81
+    "total_lines": 77
   },
   "cross_references": [
     {
@@ -175,18 +173,11 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
+      "description": "Unresolved stack parameter",
       "line": 9,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 9,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
+      "match": "in_stack_00000004",
+      "text": "CDemonMission *in_stack_00000004;",
+      "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
@@ -197,37 +188,30 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_0000000c",
-      "text": "CDemonMission *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 14,
       "match": "in_stack_00000008",
       "text": "((CPod *)g_CDemonPodPtr,\"world\",in_stack_00000008,(int *)0x0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 17,
       "match": "in_stack_00000008",
       "text": "(g_CEditorToolsPtr,\"Warning: %s exists in mounted pod %s.\\n\\nI'm saving the mission to local file, anyway.\\n\\nJust thought you'd like to know.\",in_stack_00000008,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_0000000c",
-      "text": "core_mission_cpp_CDemonMission_save_FUN_00522e30(in_stack_0000000c);",
+      "line": 20,
+      "match": "in_stack_00000004",
+      "text": "core_mission_cpp_CDemonMission_save_FUN_00522e30(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
-      "match": "in_stack_0000000c",
-      "text": "((char *)&puStack_100,(char *)0x0,(char *)0x0,in_stack_0000000c->field2_0xc + 0x38,",
+      "line": 22,
+      "match": "in_stack_00000004",
+      "text": "(local_10c,(char *)0x0,(char *)0x0,in_stack_00000004->field2_0xc + 0x38,\"scr\");",
       "type": "stack_param"
     },
     {

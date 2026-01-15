@@ -16,17 +16,14 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCh
   CDemonActor *pCVar5;
   CVector3f *pCVar6;
   float fVar7;
-  BADSPACEBASE *in_ESP;
   float in_stack_00000008;
   int in_stack_0000000c;
   SCollisionInfo *in_stack_ffffff00;
   float fVar8;
   CVector3f CStack_f8;
-  byte auStack_ec [8];
-  float fStack_e4;
+  CVector3f CStack_ec;
   CVector3f CStack_e0;
-  byte auStack_d4 [8];
-  float fStack_cc;
+  CVector3f CStack_d4;
   CVector3f CStack_c8;
   CVector3f CStack_bc;
   CVector3f CStack_b0;
@@ -34,8 +31,8 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCh
   CVector3f CStack_98;
   CVector3f CStack_8c;
   CVector3f CStack_80;
-  float fStack_74;
-  byte auStack_70 [20];
+  CVector3f CStack_74;
+  CVector3f CStack_68;
   CVector3f CStack_5c;
   CVector3f CStack_50;
   CVector3f CStack_44;
@@ -71,27 +68,27 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCh
                                 (&pCVar2->base_actor,in_stack_ffffff00);
           if ((iStack_1c == 0) || ((pCVar2->model).model_name[0] == '\0')) {
             pCVar1 = &(pCVar2->base_actor).location;
-            if ((CLocation *)auStack_ec != pCVar1) {
-              auStack_ec._0_4_ = (pCVar1->position).x;
-              auStack_ec._4_4_ = (pCVar2->base_actor).location.position.y;
-              fStack_e4 = (pCVar2->base_actor).location.position.z;
+            if ((CLocation *)&CStack_ec != pCVar1) {
+              CStack_ec.x = (pCVar1->position).x;
+              CStack_ec.y = (pCVar2->base_actor).location.position.y;
+              CStack_ec.z = (pCVar2->base_actor).location.position.z;
             }
-            auStack_ec._4_4_ = (float)auStack_ec._4_4_ + 5.5f;
+            CStack_ec.y = CStack_ec.y + 5.5f;
           }
           else {
             pCVar6 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
                                (&pCVar2->model,&CStack_80,0);
             pCVar6 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                               (&pCVar2->base_actor,(CVector3f *)(auStack_70 + 8),pCVar6);
-            if ((CVector3f *)(auStack_ec + 4) != pCVar6) {
-              auStack_ec._0_4_ = pCVar6->x;
-              auStack_ec._4_4_ = pCVar6->y;
-              fStack_e4 = pCVar6->z;
+                               (&pCVar2->base_actor,&CStack_68,pCVar6);
+            if (&CStack_ec != pCVar6) {
+              CStack_ec.x = pCVar6->x;
+              CStack_ec.y = pCVar6->y;
+              CStack_ec.z = pCVar6->z;
             }
           }
-          CStack_b0.x = (float)auStack_ec._0_4_ - CStack_5c.x;
-          CStack_b0.y = (float)auStack_ec._4_4_ - CStack_5c.y;
-          CStack_b0.z = fStack_e4 - CStack_5c.z;
+          CStack_b0.x = CStack_ec.x - CStack_5c.x;
+          CStack_b0.y = CStack_ec.y - CStack_5c.y;
+          CStack_b0.z = CStack_ec.z - CStack_5c.z;
           core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
                     (&this_ptr->base_actor,&CStack_50,&CStack_b0);
           if ((((0.0 <= CStack_50.z) &&
@@ -129,11 +126,11 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCh
               core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,&pCVar2->base_actor);
               core_setcolid_cpp_CDemonSet_setRayType_FUN_00574230(g_CDemonSetPtr,2);
               iVar4 = core_setcolid_cpp_CDemonSet_testLineOcclusion_FUN_00572460
-                                (g_CDemonSetPtr,&CStack_5c,(CVector3f *)auStack_ec);
-              if ((iVar4 == 0) && (pCStack_20 = pCVar2, (CVector3f *)auStack_d4 != &CStack_44)) {
-                auStack_d4._0_4_ = CStack_44.x;
-                auStack_d4._4_4_ = CStack_44.y;
-                fStack_cc = CStack_44.z;
+                                (g_CDemonSetPtr,&CStack_5c,&CStack_ec);
+              if ((iVar4 == 0) && (pCStack_20 = pCVar2, &CStack_d4 != &CStack_44)) {
+                CStack_d4.x = CStack_44.x;
+                CStack_d4.y = CStack_44.y;
+                CStack_d4.z = CStack_44.z;
               }
             }
           }
@@ -174,42 +171,42 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCh
     }
     iVar3 = (*pCVar5->vtable[1].hasCollision)(pCVar5,in_stack_ffffff00);
     if ((iVar3 == 0) || (pCVar5[0x1a].create_event[0x50] == '\0')) {
-      if ((CLocation *)&fStack_74 != &pCVar5->location) {
-        fStack_74 = (pCVar5->location).position.x;
-        auStack_70._0_4_ = (pCVar5->location).position.y;
-        auStack_70._4_4_ = (pCVar5->location).position.z;
+      if ((CLocation *)&CStack_74 != &pCVar5->location) {
+        CStack_74.x = (pCVar5->location).position.x;
+        CStack_74.y = (pCVar5->location).position.y;
+        CStack_74.z = (pCVar5->location).position.z;
       }
-      auStack_70._0_4_ = (float)auStack_70._0_4_ + 5.5f;
+      CStack_74.y = CStack_74.y + 5.5f;
     }
     else {
       pCVar6 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
                          ((CDeformableModelInstance *)(pCVar5 + 1),&CStack_38,0);
       pCVar6 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(pCVar5,&CStack_98,pCVar6);
-      if ((CVector3f *)auStack_70 != pCVar6) {
-        fStack_74 = pCVar6->x;
-        auStack_70._0_4_ = pCVar6->y;
-        auStack_70._4_4_ = pCVar6->z;
+      if (&CStack_74 != pCVar6) {
+        CStack_74.x = pCVar6->x;
+        CStack_74.y = pCVar6->y;
+        CStack_74.z = pCVar6->z;
       }
     }
-    CStack_f8.x = fStack_74 - CStack_8c.x;
-    CStack_f8.y = (float)auStack_70._0_4_ - CStack_8c.y;
-    CStack_f8.z = (float)auStack_70._4_4_ - CStack_8c.z;
+    CStack_f8.x = CStack_74.x - CStack_8c.x;
+    CStack_f8.y = CStack_74.y - CStack_8c.y;
+    CStack_f8.z = CStack_74.z - CStack_8c.z;
     core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
               (&this_ptr->base_actor,&CStack_e0,&CStack_f8);
     pCVar6 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                        (&CStack_bc,&CStack_e0);
-    if ((CVector3f *)(auStack_d4 + 4) != pCVar6) {
-      auStack_d4._0_4_ = pCVar6->x;
-      auStack_d4._4_4_ = pCVar6->y;
-      fStack_cc = pCVar6->z;
+    if (&CStack_d4 != pCVar6) {
+      CStack_d4.x = pCVar6->x;
+      CStack_d4.y = pCVar6->y;
+      CStack_d4.z = pCVar6->z;
     }
-    if ((float)1.3962634015555599 < ABS((float)auStack_d4._4_4_)) {
+    if ((float)1.3962634015555599 < ABS(CStack_d4.y)) {
       this_ptr->field11_0x25a0[0x30] = '\0';
       this_ptr->field11_0x25a0[0x31] = '\0';
       this_ptr->field11_0x25a0[0x32] = '\0';
       this_ptr->field11_0x25a0[0x33] = '\0';
     }
-    if ((float)0.78539816337500001 < ABS((float)auStack_d4._0_4_)) {
+    if ((float)0.78539816337500001 < ABS(CStack_d4.x)) {
       this_ptr->field11_0x25a0[0x30] = '\0';
       this_ptr->field11_0x25a0[0x31] = '\0';
       this_ptr->field11_0x25a0[0x32] = '\0';
@@ -226,12 +223,12 @@ void __cdecl core_charactr_cpp_CCharacter_findSomethingToLookAt_FUN_0042d5a0(CCh
       this_ptr->field11_0x25a0[0x42] = -0x80;
       this_ptr->field11_0x25a0[0x43] = '?';
     }
-    fVar7 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                      ((float)auStack_d4._4_4_ - *(float *)(this_ptr->field11_0x25a0 + 0x38));
+    fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
+                          (CStack_d4.y - *(float *)(this_ptr->field11_0x25a0 + 0x38));
     *(float *)(this_ptr->field11_0x25a0 + 0x38) =
-         fVar7 * (float)0.40000000000000002 + *(float *)(this_ptr->field11_0x25a0 + 0x38);
+         fStack_14 * (float)0.40000000000000002 + *(float *)(this_ptr->field11_0x25a0 + 0x38);
     fVar7 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                      ((float)auStack_d4._0_4_ - *(float *)(this_ptr->field11_0x25a0 + 0x3c));
+                      (CStack_d4.x - *(float *)(this_ptr->field11_0x25a0 + 0x3c));
     *(float *)(this_ptr->field11_0x25a0 + 0x3c) =
          fVar7 * (float)0.40000000000000002 + *(float *)(this_ptr->field11_0x25a0 + 0x3c);
     return;

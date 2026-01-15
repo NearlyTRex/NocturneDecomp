@@ -13,10 +13,8 @@ engine_fileio_cpp_checkFileOverwriteCondition_FUN_004b3120
 {
   uint uVar1;
   int iVar2;
-  BADSPACEBASE *in_ESP;
-  int aiStack_3e8 [124];
-  char acStack_1f8 [4];
-  int aiStack_1f4 [122];
+  int local_3f4 [125];
+  int local_200 [125];
   
   uVar1 = engine_dosio_c_getFileTimestamp_FUN_00481960((char *)0x0,target_filename);
   if (-1 < (int)uVar1) {
@@ -25,16 +23,16 @@ engine_fileio_cpp_checkFileOverwriteCondition_FUN_004b3120
                           (source_directory,g_VersionControlSession.primary_username), iVar2 == 0))
     {
       crt_stdio_c_sprintf_FUN_005fdbd0
-                (&stack0xfffffc14,"You currently have %s checked out.  Replace local copy with network copy?",target_filename);
+                ((char *)local_3f4,"You currently have %s checked out.  Replace local copy with network copy?",target_filename);
       iVar2 = engine_fileio_cpp_showOverwriteConfirmationDialog_FUN_004b2f90
-                        (aiStack_3e8,g_VersionControlSession.field1_0x20);
+                        (local_3f4,g_VersionControlSession.field1_0x20);
       return iVar2;
     }
     if ((uVar1 & 8) == 0) {
       crt_stdio_c_sprintf_FUN_005fdbd0
-                (acStack_1f8,"A writable copy of %s exists.  Replace it?",target_filename);
+                ((char *)local_200,"A writable copy of %s exists.  Replace it?",target_filename);
       iVar2 = engine_fileio_cpp_showOverwriteConfirmationDialog_FUN_004b2f90
-                        (aiStack_1f4,g_VersionControlSession.field1_0x20 + 4);
+                        (local_200,g_VersionControlSession.field1_0x20 + 4);
       return iVar2;
     }
   }

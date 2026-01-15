@@ -13,7 +13,6 @@ void __cdecl shape_design_c_centerKeyframeModels_FUN_004681a0(SMRGLKeyframeModel
   SIZE_T size;
   FILE *file;
   int iVar2;
-  BADSPACEBASE *in_ESP;
   char *pcVar3;
   byte bVar4;
   char local_74 [80];

@@ -1,17 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 11,
-    "complexity_score": 48,
+    "complexity_score": 22,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 4,
-    "pseudocode_lines": 8,
-    "suspect_count": 3,
+    "pseudocode_lines": 7,
+    "suspect_count": 1,
     "suspect_types": [
-      "stack_param",
       "variadic_preserve"
     ],
-    "total_lines": 19
+    "total_lines": 18
   },
   "cross_references": [],
   "function": {
@@ -104,22 +103,8 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 5,
-      "match": "in_stack_00000008",
-      "text": "SMRGLHeaderExtended *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000008",
-      "text": "return in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
       "call_address": "004037cb",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",

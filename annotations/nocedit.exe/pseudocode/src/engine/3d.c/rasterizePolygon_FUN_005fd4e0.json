@@ -1,18 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 464,
-    "complexity_score": 315,
+    "complexity_score": 273,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 20,
-    "pseudocode_lines": 210,
-    "suspect_count": 9,
+    "pseudocode_lines": 208,
+    "suspect_count": 6,
     "suspect_types": [
-      "call_esp_preserve",
-      "stack_param",
-      "unresolved_funcptr"
+      "call_esp_preserve"
     ],
-    "total_lines": 674
+    "total_lines": 672
   },
   "cross_references": [
     {
@@ -284,27 +282,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_00000010",
-      "text": "code *in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 19,
-      "match": "code *",
-      "text": "code *in_stack_00000010;",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 202,
-      "match": "in_stack_00000010",
-      "text": "(*in_stack_00000010)((void *)iVar12,pSVar4,(int)pSVar5);",
-      "type": "stack_param"
-    },
     {
       "add_esp_value": 12,
       "call_address": "005fd743",

@@ -11,14 +11,14 @@ int __cdecl core_barrier_cpp_CBarrier_FUN_00414240(CBarrier *this_ptr)
 {
   int iVar1;
   CBoundingBox3D *this_ptr_00;
-  BADSPACEBASE *in_ESP;
+  CBoundingBox3D local_20;
   
   if ((*(int *)(g_CDemonMissionPtr->field0_0x0 + 4) != 0) &&
      (iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr),
      iVar1 == 0)) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base_actor);
     this_ptr_00 = (*((this_ptr->base_actor).vtable)->getBoundingBox)
-                            (&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffe8);
+                            (&this_ptr->base_actor,&local_20);
     iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base_actor);
     if (iVar1 != 0) {

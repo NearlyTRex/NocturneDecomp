@@ -1,22 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 199,
-    "complexity_score": 419,
+    "complexity_score": 297,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 36,
-    "pseudocode_lines": 114,
-    "suspect_count": 27,
+    "pseudocode_lines": 112,
+    "suspect_count": 17,
     "suspect_types": [
-      "badspacebase",
       "lea_esp_stack_addr",
       "pointer_cast",
-      "register_param",
-      "stack_param",
-      "unaffected_reg",
       "variadic_preserve"
     ],
-    "total_lines": 313
+    "total_lines": 311
   },
   "cross_references": [],
   "function": {
@@ -340,148 +336,78 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 9,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 9,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 10,
-      "match": "unaff_EBP",
-      "text": "int unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_00000004",
-      "text": "int in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 29,
+      "line": 27,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&g_HuffmanTables[0].table_size + iVar3) =",
       "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 30,
-      "match": "unaff_EBP",
-      "text": "*(uint *)((int)&g_HuffmanTableSources[0].table_size + unaff_EBP);",
-      "type": "unaffected_reg"
+      "description": "Complex pointer cast",
+      "line": 28,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&g_HuffmanTableSources[0].table_size + local_8);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 30,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&g_HuffmanTableSources[0].table_size + unaff_EBP);",
+      "text": "*(uint *)((int)&g_HuffmanTableSources[0].field1_0x4 + local_8);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 32,
-      "match": "unaff_EBP",
-      "text": "*(uint *)((int)&g_HuffmanTableSources[0].field1_0x4 + unaff_EBP);",
-      "type": "unaffected_reg"
     },
     {
       "description": "Complex pointer cast",
       "line": 32,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&g_HuffmanTableSources[0].field1_0x4 + unaff_EBP);",
+      "text": "*(uint *)((int)&g_HuffmanTableSources[0].field2_0x8 + local_8);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 34,
-      "match": "unaff_EBP",
-      "text": "*(uint *)((int)&g_HuffmanTableSources[0].field2_0x8 + unaff_EBP);",
-      "type": "unaffected_reg"
     },
     {
       "description": "Complex pointer cast",
       "line": 34,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&g_HuffmanTableSources[0].field2_0x8 + unaff_EBP);",
+      "text": "*(uint *)((int)&g_HuffmanTableSources[0].bits + local_8);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 36,
-      "match": "unaff_EBP",
-      "text": "*(uint *)((int)&g_HuffmanTableSources[0].bits + unaff_EBP);",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 36,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&g_HuffmanTableSources[0].bits + unaff_EBP);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 46,
-      "match": "in_stack_00000004",
-      "text": "iVar2 = *(int *)((int)&g_HuffmanTableSources[0].reference_index + in_stack_00000004);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 46,
+      "line": 44,
       "match": "(int *)((int)",
-      "text": "iVar2 = *(int *)((int)&g_HuffmanTableSources[0].reference_index + in_stack_00000004);",
+      "text": "iVar2 = *(int *)((int)&g_HuffmanTableSources[0].reference_index + local_8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 54,
+      "line": 52,
       "match": "(uint *)((int)",
       "text": "uVar5 = *(uint *)((int)&g_HuffmanTables[0].table_size + iVar3);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 67,
-      "match": "in_stack_00000004",
-      "text": "pcVar8 = *(char **)((int)&g_HuffmanTableSources[0].huffman_data_ptr + in_stack_00000004);",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 69,
+      "line": 67,
       "match": "(int *)((int)",
       "text": "if (*(int *)((int)&g_HuffmanTables[0].table_size + iVar3) != 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 76,
+      "line": 74,
       "match": "(uint *)((int)",
       "text": "} while (uVar5 < *(uint *)((int)&g_HuffmanTables[0].table_size + iVar3));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 93,
+      "line": 91,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&g_HuffmanTables[0].table_size + iVar3) = g_HuffmanTables[iVar2].table_size;",
       "type": "pointer_cast"
     },
     {
       "call_address": "00533fb1",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -495,7 +421,7 @@
     },
     {
       "call_address": "00534018",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -509,7 +435,7 @@
     },
     {
       "call_address": "005340af",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "conflict",
       "esp_certainty_at_call": "conflict",
@@ -523,7 +449,7 @@
     },
     {
       "call_address": "00534102",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -537,7 +463,7 @@
     },
     {
       "call_address": "0053413d",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -551,7 +477,7 @@
     },
     {
       "call_address": "005341e6",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

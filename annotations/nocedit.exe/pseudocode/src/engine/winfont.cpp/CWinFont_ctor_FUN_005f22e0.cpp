@@ -13,8 +13,7 @@ engine_winfont_cpp_CWinFont_ctor_FUN_005f22e0
 {
   CWinFont *pCVar1;
   HFONT pHVar2;
-  int in_stack_00000050;
-  int in_stack_00000054;
+  int in_stack_00000014;
   
   pCVar1 = (CWinFont *)engine_palette_cpp_CFont_ctor_FUN_00544eb0(&this_ptr->base_font);
   (pCVar1->base_font).vtable = &g_CWinFontVTable;
@@ -27,9 +26,9 @@ engine_winfont_cpp_CWinFont_ctor_FUN_005f22e0
   pCVar1->bpp = 0;
   pCVar1->cached_foreground_color = 0;
   pCVar1->cached_background_color = 0;
-  pHVar2 = (*CreateFontA)(-font_width,0,0,0,400,0,0,0,1,0,0,0,0,(LPCSTR)font_height);
+  pHVar2 = (*CreateFontA)(-font_height,0,0,0,400,0,0,0,1,0,0,0,0,font_name);
   pCVar1->fontHandle = pHVar2;
-  pCVar1->yOffset1 = in_stack_00000050;
-  pCVar1->yOffset2 = in_stack_00000054;
+  pCVar1->yOffset1 = font_width;
+  pCVar1->yOffset2 = in_stack_00000014;
   return pCVar1;
 }

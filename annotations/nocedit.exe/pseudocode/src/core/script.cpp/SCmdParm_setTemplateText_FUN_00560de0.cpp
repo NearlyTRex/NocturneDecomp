@@ -352,7 +352,7 @@ LAB_00560e30:
 LAB_00560ead:
   if (pcVar3 == (char *)0x0) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-              (g_CEditorToolsPtr,"SCmdParm::setTemplateText - %s unknown template type!");
+              (g_CEditorToolsPtr,"SCmdParm::setTemplateText - %s unknown template type!",in_stack_00000004 + 500);
     return 0;
   }
   *(byte *)(in_stack_00000004 + 0x25c) = 0;
@@ -375,7 +375,7 @@ LAB_00560ead:
       else {
         if (cVar1 != '\'') {
           shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-                    (g_CEditorToolsPtr,"SCmdParm::setTemplateText - Invalid template string: %s");
+                    (g_CEditorToolsPtr,"SCmdParm::setTemplateText - Invalid template string: %s",in_stack_00000004 + 500);
           return 0;
         }
         cVar1 = *pcVar3;
@@ -384,7 +384,8 @@ LAB_00560ead:
           if (*pcVar3 == '\0') {
             g_CurrentFilename = "..\\core\\script.cpp";
             g_CurrentLineNumber = 0x1188;
-            core_main_c_displayErrorAndQuit_FUN_00506f10("Missing closing ' in template string: %s");
+            core_main_c_displayErrorAndQuit_FUN_00506f10
+                      ("Missing closing ' in template string: %s",in_stack_00000004 + 500);
           }
           cVar1 = *pcVar3;
           pcVar3 = pcVar3 + 1;

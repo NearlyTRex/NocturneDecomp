@@ -11,7 +11,6 @@ crt_stdio_c_CreateFileVariadic_FUN_00609074(char *filename,int access_mode,int s
 
 {
   HANDLE pvVar1;
-  BADSPACEBASE *in_ESP;
   va_list_t variadic_args;
   
   variadic_args = &stack0x00000010;

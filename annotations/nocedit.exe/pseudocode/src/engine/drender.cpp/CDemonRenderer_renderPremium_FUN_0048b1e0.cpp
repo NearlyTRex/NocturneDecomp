@@ -13,41 +13,40 @@ engine_drender_cpp_CDemonRenderer_renderPremium_FUN_0048b1e0
 {
   int iVar1;
   int iVar2;
-  int iVar3;
+  SMRGLHeaderPrimitive *pSVar3;
   int iVar4;
-  int in_stack_0000000c;
   
   if ((this_ptr->plane_culling_enabled == 0) ||
      (iVar4 = engine_3d_c_isVisiblePlane_FUN_00403950(&polygon_info->surface_normal), iVar4 != 0)) {
     if (this_ptr->face_count == 0) {
-      if (0 < *(int *)(in_stack_0000000c + 4)) {
+      if (0 < (polygon_info->base).count) {
         iVar2 = 0;
         iVar4 = 0;
-        iVar3 = in_stack_0000000c;
+        pSVar3 = polygon_info;
         do {
-          iVar1 = *(int *)(iVar3 + 0x18);
+          iVar1 = pSVar3[1].base.type;
           if (this_ptr->field8_0x20 == 0) {
-            this_ptr->vertex_buffer_ptr[iVar1].u = *(float *)(iVar3 + 0x1c);
-            this_ptr->vertex_buffer_ptr[iVar1].v = *(float *)(iVar3 + 0x20);
+            this_ptr->vertex_buffer_ptr[iVar1].u = (float)pSVar3[1].base.count;
+            this_ptr->vertex_buffer_ptr[iVar1].v = (float)pSVar3[1].surface_normal.A;
           }
           *(int *)((int)g_VertexIndexBuffer + iVar2) = iVar1;
-          iVar3 = iVar3 + 0xc;
+          pSVar3 = (SMRGLHeaderPrimitive *)&(pSVar3->surface_normal).B;
           iVar4 = iVar4 + 1;
           iVar2 = iVar2 + 4;
-        } while (iVar4 < *(int *)(in_stack_0000000c + 4));
+        } while (iVar4 < (polygon_info->base).count);
       }
     }
     else {
       iVar4 = 0;
-      if (0 < *(int *)(in_stack_0000000c + 4)) {
+      if (0 < (polygon_info->base).count) {
         iVar2 = 0;
-        iVar3 = in_stack_0000000c;
+        pSVar3 = polygon_info;
         do {
-          *(uint *)((int)g_VertexIndexBuffer + iVar2) = *(uint *)(iVar3 + 0x18);
+          *(int *)((int)g_VertexIndexBuffer + iVar2) = pSVar3[1].base.type;
           iVar2 = iVar2 + 4;
           iVar4 = iVar4 + 1;
-          iVar3 = iVar3 + 0xc;
-        } while (iVar4 < *(int *)(in_stack_0000000c + 4));
+          pSVar3 = (SMRGLHeaderPrimitive *)&(pSVar3->surface_normal).B;
+        } while (iVar4 < (polygon_info->base).count);
       }
     }
     if (this_ptr->face_count == 0) {
@@ -66,7 +65,7 @@ engine_drender_cpp_CDemonRenderer_renderPremium_FUN_0048b1e0
       g_ScanlineRenderFunc = core_dstrender_cpp_renderDepthOnlyStandard_FUN_0049072f;
     }
     engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740
-              (this_ptr,*(int *)(in_stack_0000000c + 4),g_VertexIndexBuffer);
+              (this_ptr,(polygon_info->base).count,g_VertexIndexBuffer);
   }
   return;
 }

@@ -11,7 +11,6 @@ core_actor_cpp_serializeOrientation_FUN_0040b3e0(COrientation *orient_ptr,char *
 
 {
   int iVar1;
-  char *in_stack_0000000c;
   
   if (g_ActorReadingMode == 1) {
     iVar1 = crt_stdio_c_fscanf_FUN_005fe7c0(g_ActorDataFile,"%f,%f,%f");
@@ -25,7 +24,6 @@ core_actor_cpp_serializeOrientation_FUN_0040b3e0(COrientation *orient_ptr,char *
               (g_ActorDataFile,"%s%g,%g,%g",g_PropertyNamePrefix,(double)orient_ptr->pitch,
                (double)orient_ptr->heading,(double)orient_ptr->bank);
   }
-  core_actor_cpp_serializeDescription_FUN_0040b290
-            ("Euler PBH orientation",in_stack_0000000c);
+  core_actor_cpp_serializeDescription_FUN_0040b290("Euler PBH orientation",property_name);
   return;
 }

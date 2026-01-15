@@ -1,16 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 105,
-    "complexity_score": 158,
+    "complexity_score": 118,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 9,
     "pseudocode_lines": 48,
-    "suspect_count": 9,
+    "suspect_count": 6,
     "suspect_types": [
       "call_esp_preserve",
-      "format_string_mismatch",
-      "stack_param",
       "variadic_preserve"
     ],
     "total_lines": 153
@@ -179,22 +177,8 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000014",
-      "text": "int in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_00000014",
-      "text": "this_ptr->frame_count = in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
       "call_address": "00599a0c",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -208,7 +192,7 @@
     },
     {
       "call_address": "00599a42",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -219,17 +203,6 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00599a42 (no EBP frame)",
       "type": "variadic_preserve"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Out of hunk in CSkeleton::allocMemory.  boneCount=...\" has 2 specifiers but 0 arguments after it",
-      "expected_args": 2,
-      "format_string": "Out of hunk in CSkeleton::allocMemory.  boneCount=%d, frameCount=%d",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 49,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Out of hunk in CSkeleton::allocMemory.  boneCount=%d, ",
-      "text": "Format string expects 2 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 4,

@@ -23,7 +23,6 @@ void core_stranger_cpp_CStranger_FUN_005c5270(void)
   uint uVar8;
   CVector3f *pCVar9;
   CDemonActor *pCVar10;
-  BADSPACEBASE *in_ESP;
   CCharacter *in_stack_00000004;
   float in_stack_00000008;
   CVector3f CStack_5c;

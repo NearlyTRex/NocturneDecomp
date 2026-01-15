@@ -1,21 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 547,
-    "complexity_score": 709,
+    "complexity_score": 463,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 19,
-    "pseudocode_lines": 259,
-    "suspect_count": 42,
+    "pseudocode_lines": 258,
+    "suspect_count": 19,
     "suspect_types": [
-      "badspacebase",
       "pointer_cast",
-      "register_param",
       "suspect_float",
-      "unknown_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 806
+    "total_lines": 805
   },
   "cross_references": [
     {
@@ -892,290 +889,129 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 12,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 12,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 76,
+      "line": 73,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->u + iVar7) = 0x800000;",
+      "text": "*(uint *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->u + iVar9) = 0x800000;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 78,
+      "line": 75,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&pCVar3->vertex_buffer_ptr->v + iVar7) = 0x800000;",
+      "text": "*(uint *)((int)&pCVar5->vertex_buffer_ptr->v + iVar9) = 0x800000;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 96,
+      "line": 93,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->light + iVar7) = 0;",
+      "text": "*(uint *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->light + iVar9) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 97,
+      "line": 94,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&pCVar3->vertex_buffer_ptr->color + iVar7) = 0xffff;",
+      "text": "*(uint *)((int)&pCVar5->vertex_buffer_ptr->color + iVar9) = 0xffff;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 98,
+      "line": 95,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&pCVar3->vertex_buffer_ptr->fog + iVar7) = 0;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 103,
-      "match": "._0_4_",
-      "text": "local_7c._0_4_ = pCVar5->y;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 104,
-      "match": "._4_4_",
-      "text": "local_7c._4_4_ = pCVar5->z;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 106,
-      "match": "._8_4_",
-      "text": "local_7c._8_4_ = (uint)ROUND(local_80 * _DAT_0065b810);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 107,
-      "match": "._0_4_",
-      "text": "local_70 = (int)ROUND((float)local_7c._0_4_ * _DAT_0065b810);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 108,
-      "match": "._4_4_",
-      "text": "local_6c = (int)ROUND((float)local_7c._4_4_ * _DAT_0065b810);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 130,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->light + iVar7) = 0;",
+      "text": "*(uint *)((int)&pCVar5->vertex_buffer_ptr->fog + iVar9) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 131,
+      "line": 127,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&pCVar3->vertex_buffer_ptr->color + iVar7) = 0;",
+      "text": "*(uint *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->light + iVar9) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 132,
+      "line": 128,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&pCVar3->vertex_buffer_ptr->fog + iVar7) = 0xffff;",
+      "text": "*(uint *)((int)&pCVar5->vertex_buffer_ptr->color + iVar9) = 0;",
       "type": "pointer_cast"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 137,
-      "match": "._0_4_",
-      "text": "local_7c._0_4_ = pCVar5->y;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 138,
-      "match": "._4_4_",
-      "text": "local_7c._4_4_ = pCVar5->z;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 140,
-      "match": "._0_4_",
-      "text": "local_68._0_4_ = (uint)ROUND(local_80 * _DAT_0065b810);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 141,
-      "match": "._4_4_",
-      "text": "local_68._4_4_ = (uint)ROUND((float)local_7c._0_4_ * _DAT_0065b810);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 141,
-      "match": "._0_4_",
-      "text": "local_68._4_4_ = (uint)ROUND((float)local_7c._0_4_ * _DAT_0065b810);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 142,
-      "match": "._8_4_",
-      "text": "local_68._8_4_ = (uint)ROUND((float)local_7c._4_4_ * _DAT_0065b810);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 142,
-      "match": "._4_4_",
-      "text": "local_68._8_4_ = (uint)ROUND((float)local_7c._4_4_ * _DAT_0065b810);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 174,
-      "match": "._0_4_",
-      "text": "local_7c._0_4_ = (uint)(fVar10 * (float10)(float)input);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 175,
-      "match": "._8_4_",
-      "text": "local_68._8_4_ = (uint)ROUND(CStack_8c.z * _DAT_0065b810);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 177,
-      "match": "._0_4_",
-      "text": "local_58 = (int)ROUND((float)local_7c._0_4_ * _DAT_0065b810);",
-      "type": "unknown_field"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 183,
+      "line": 129,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->light + iVar4) = 0xffff;",
+      "text": "*(uint *)((int)&pCVar5->vertex_buffer_ptr->fog + iVar9) = 0xffff;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 184,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&pCVar3->vertex_buffer_ptr->color + iVar4) = 0;",
+      "text": "*(uint *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->light + iVar6) = 0xffff;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 185,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&pCVar3->vertex_buffer_ptr->fog + iVar4) = 0;",
+      "text": "*(uint *)((int)&pCVar5->vertex_buffer_ptr->color + iVar6) = 0;",
       "type": "pointer_cast"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 186,
-      "match": "._0_4_",
-      "text": "local_7c._0_4_ = local_34;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 190,
-      "match": "._4_4_",
-      "text": "local_b0.z = (int)ROUND((float)local_7c._4_4_ * _DAT_0065b810);",
-      "type": "unknown_field"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 196,
+      "line": 186,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->light + iVar7) = 0xffff;",
+      "text": "*(uint *)((int)&pCVar5->vertex_buffer_ptr->fog + iVar6) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 197,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&pCVar3->vertex_buffer_ptr->color + iVar7) = 0;",
+      "text": "*(uint *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->light + iVar9) = 0xffff;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 198,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&pCVar3->vertex_buffer_ptr->fog + iVar7) = 0;",
+      "text": "*(uint *)((int)&pCVar5->vertex_buffer_ptr->color + iVar9) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 210,
-      "match": "(CVector3f *)((int)",
-      "text": "local_1c = (CVector3f *)((int)&local_1c->x + 1);",
+      "line": 199,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&pCVar5->vertex_buffer_ptr->fog + iVar9) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 219,
+      "line": 220,
       "match": "9.18341e-41",
       "text": "g_CDemonRendererPtr->vertex_buffer_ptr->light = 9.18341e-41;",
       "type": "suspect_float"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 232,
-      "match": "._0_4_",
-      "text": "local_7c._0_4_ = 0.0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 233,
-      "match": "._4_4_",
-      "text": "local_7c._4_4_ =",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 239,
-      "match": "._4_4_",
-      "text": "local_a4.z = (int)ROUND((float)local_7c._4_4_ * _DAT_0065b810);",
-      "type": "unknown_field"
+      "description": "Complex pointer cast",
+      "line": 244,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->light + iVar9) = 0xffff;",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 245,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&g_CDemonRendererPtr->vertex_buffer_ptr->light + iVar7) = 0xffff;",
+      "text": "*(uint *)((int)&pCVar5->vertex_buffer_ptr->color + iVar9) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 246,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&pCVar3->vertex_buffer_ptr->color + iVar7) = 0;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 247,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&pCVar3->vertex_buffer_ptr->fog + iVar7) = 0;",
+      "text": "*(uint *)((int)&pCVar5->vertex_buffer_ptr->fog + iVar9) = 0;",
       "type": "pointer_cast"
     }
   ]

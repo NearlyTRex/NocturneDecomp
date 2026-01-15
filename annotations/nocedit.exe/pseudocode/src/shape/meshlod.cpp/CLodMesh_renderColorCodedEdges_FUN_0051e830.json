@@ -1,21 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 142,
-    "complexity_score": 242,
+    "complexity_score": 211,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 3,
-    "pseudocode_lines": 92,
-    "suspect_count": 12,
+    "pseudocode_lines": 91,
+    "suspect_count": 10,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "pointer_cast",
-      "register_param",
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 234
+    "total_lines": 233
   },
   "cross_references": [
     {
@@ -164,71 +162,57 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 10,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 10,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 15,
       "match": "in_stack_ffffff88",
       "text": "SRenderVertex *in_stack_ffffff88;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 16,
       "match": "in_stack_ffffff8c",
       "text": "SRenderVertex *in_stack_ffffff8c;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 28,
+      "line": 27,
       "match": "(int *)((int)",
       "text": "piVar7 = (int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + local_18 + -0x28);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 77,
+      "line": 76,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 81,
+      "line": 80,
       "match": "&stack0xffffff88",
       "text": "piVar7 = (int *)&stack0xffffff88;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 84,
+      "line": 83,
       "match": "(SRenderVertex *)((int)",
       "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 87,
+      "line": 86,
       "match": "in_stack_ffffff88",
       "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff88,in_stack_ffffff8c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 87,
+      "line": 86,
       "match": "in_stack_ffffff8c",
       "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_ffffff88,in_stack_ffffff8c);",
       "type": "stack_param"

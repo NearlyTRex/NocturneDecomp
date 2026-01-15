@@ -1,21 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 141,
+    "complexity_score": 59,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 1,
-    "pseudocode_lines": 31,
-    "suspect_count": 8,
+    "pseudocode_lines": 29,
+    "suspect_count": 2,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
-      "lea_esp_stack_addr",
-      "register_param",
-      "stack_param",
-      "stack_ref"
+      "lea_esp_stack_addr"
     ],
-    "total_lines": 75
+    "total_lines": 73
   },
   "cross_references": [],
   "function": {
@@ -117,48 +113,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 10,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 10,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_0000000c",
-      "text": "int in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 29,
-      "match": "&stack0xfffffff8",
-      "text": "(*(HDC *)(text_string + 4),text_string,~uVar4 - 1,(LPSIZE)&stack0xfffffff8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_0000000c",
-      "text": "in_stack_0000000c = 0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_0000000c",
-      "text": "return in_stack_0000000c;",
-      "type": "stack_param"
-    },
     {
       "add_esp_value": 12,
       "call_address": "005f2ab1",

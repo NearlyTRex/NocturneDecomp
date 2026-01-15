@@ -1,20 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 126,
-    "complexity_score": 199,
+    "complexity_score": 123,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 4,
-    "pseudocode_lines": 64,
-    "suspect_count": 11,
+    "pseudocode_lines": 63,
+    "suspect_count": 4,
     "suspect_types": [
       "callind_preserve",
       "param_count_too_few",
-      "stack_param",
-      "unaffected_reg",
+      "pointer_cast",
       "variadic_preserve"
     ],
-    "total_lines": 190
+    "total_lines": 189
   },
   "cross_references": [
     {
@@ -198,60 +197,11 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 12,
-      "match": "unaff_EBP",
-      "text": "OptimizedMemcpyFunc *unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000014",
-      "text": "int in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 29,
-      "match": "unaff_EBP",
-      "text": "unaff_EBP = cockpit_ckptutil_c_getOptimizedMemcpyFunction_FUN_00431780();",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 35,
-      "match": "unaff_EBP",
-      "text": "unaff_EBP = (OptimizedMemcpyFunc *)",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 40,
-      "match": "unaff_EBP",
-      "text": "unaff_EBP = (OptimizedMemcpyFunc *)",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 57,
-      "match": "in_stack_00000014",
-      "text": "iVar4 = (int)((uint)*puVar5 * in_stack_00000014) >> 0x1f;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 59,
-      "match": "in_stack_00000014",
-      "text": "(*unaff_EBP)(puVar6 + ((int)(((uint)*puVar5 * in_stack_00000014 + iVar4 * -8) -",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 59,
-      "match": "unaff_EBP",
-      "text": "(*unaff_EBP)(puVar6 + ((int)(((uint)*puVar5 * in_stack_00000014 + iVar4 * -8) -",
-      "type": "unaffected_reg"
+      "description": "Complex pointer cast",
+      "line": 52,
+      "match": "(int *)((int)",
+      "text": "iVar3 = *(int *)((int)this_ptr->row_pointers + local_1c + 4);",
+      "type": "pointer_cast"
     },
     {
       "add_esp_value": 12,
@@ -285,7 +235,7 @@
     },
     {
       "call_address": "0054af96",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

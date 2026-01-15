@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 45,
-    "complexity_score": 86,
+    "complexity_score": 58,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 1,
-    "pseudocode_lines": 21,
-    "suspect_count": 5,
+    "pseudocode_lines": 18,
+    "suspect_count": 3,
     "suspect_types": [
       "call_esp_preserve",
-      "callind_preserve",
-      "stack_param"
+      "callind_preserve"
     ],
-    "total_lines": 66
+    "total_lines": 63
   },
   "cross_references": [],
   "function": {
@@ -106,20 +105,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_0000000c",
-      "text": "CVector3d *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_0000000c",
-      "text": "(this_ptr->options).position_source_ptr = in_stack_0000000c;",
-      "type": "stack_param"
-    },
     {
       "add_esp_value": 12,
       "call_target_type": "reg_offset",

@@ -17,12 +17,11 @@ core_dmodel_cpp_CKeyFramedModel_applyVertexBias_FUN_0047c2d0
   int iVar2;
   CKeyFramedModel *model_ptr;
   double dVar3;
-  int in_stack_0000000c;
   
   core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_00478010(this_ptr);
   dVar3 = crt_math_c_floor_FUN_005feb90
-                    ((double)(this_ptr->frame_bounds[in_stack_0000000c * 2].y *
-                              (float)256 + (float)0.5));
+                    ((double)(this_ptr->frame_bounds[frame_index * 2].y * (float)256 +
+                             (float)0.5));
   dVar3 = crt_math_c_round_FUN_005fe6b0(-dVar3);
   iVar2 = extraout_EDX;
   for (iVar1 = extraout_ECX; iVar1 < model_ptr->frame_count * model_ptr->vertex_count;

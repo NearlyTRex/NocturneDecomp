@@ -11,10 +11,8 @@ core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(CDeformableMode
 
 {
   CDeformableModel *model_ptr;
-  CDeformableModelInstance *in_stack_00000008;
   
   model_ptr = core_skeleton_cpp_getDeformableModel_FUN_005a1cf0(this_ptr->model_name);
-  core_skeleton_cpp_CDeformableModelInstance_initializeFromModel_FUN_005a0480
-            (in_stack_00000008,model_ptr);
+  core_skeleton_cpp_CDeformableModelInstance_initializeFromModel_FUN_005a0480(this_ptr,model_ptr);
   return;
 }

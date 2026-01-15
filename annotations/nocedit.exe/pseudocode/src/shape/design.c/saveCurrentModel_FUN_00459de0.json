@@ -1,18 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 93,
-    "complexity_score": 146,
+    "complexity_score": 60,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 5,
-    "pseudocode_lines": 61,
-    "suspect_count": 7,
-    "suspect_types": [
-      "badspacebase",
-      "register_param",
-      "stack_ref"
-    ],
-    "total_lines": 154
+    "pseudocode_lines": 60,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 153
   },
   "cross_references": [
     {
@@ -190,55 +186,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 8,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 8,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 17,
-      "match": "&stack0xffffffa0",
-      "text": "(&stack0xffffffa0,0x28,0,0,\"Model name to save : \");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 18,
-      "match": "&stack0xffffffa0",
-      "text": "pcVar5 = &stack0xffffffa0;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 31,
-      "match": "&stack0xffffffa0",
-      "text": "pcVar5 = &stack0xffffffa0;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 41,
-      "match": "&stack0xffffffa0",
-      "text": "pcVar5 = &stack0xffffffa0;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 62,
-      "match": "&stack0xffffffa0",
-      "text": "shape_design_c_exportModelToMDL_FUN_00459e80(&stack0xffffffa0);",
-      "type": "stack_ref"
-    }
-  ]
+  "suspects": []
 }

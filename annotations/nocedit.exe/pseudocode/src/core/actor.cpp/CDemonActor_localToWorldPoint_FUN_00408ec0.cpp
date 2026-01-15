@@ -12,13 +12,12 @@ core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
 
 {
   CVector3f *pCVar1;
-  BADSPACEBASE *in_ESP;
   CVector3f local_10;
   
   pCVar1 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
                      (&this_ptr->orient_matrix,&local_10,input_local_point);
-  output_world_point->x = pCVar1->x + output_world_point[2].z;
-  output_world_point->y = pCVar1->y + output_world_point[3].x;
-  output_world_point->z = pCVar1->z + output_world_point[3].y;
+  output_world_point->x = pCVar1->x + (this_ptr->location).position.x;
+  output_world_point->y = pCVar1->y + (this_ptr->location).position.y;
+  output_world_point->z = pCVar1->z + (this_ptr->location).position.z;
   return output_world_point;
 }

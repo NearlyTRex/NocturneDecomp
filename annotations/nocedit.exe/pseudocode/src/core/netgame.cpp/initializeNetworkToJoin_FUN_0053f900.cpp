@@ -13,14 +13,13 @@ uint core_netgame_cpp_initializeNetworkToJoin_FUN_0053f900(void)
   CEditorTools *this_ptr;
   int iVar2;
   uint uVar3;
-  BADSPACEBASE *in_ESP;
   char *pcVar4;
   uint uVar5;
   char *pcVar6;
   byte bVar7;
   CNetGame *in_stack_00000004;
   uint32_t *in_stack_00000008;
-  float fVar8;
+  float local_5c;
   uint local_4f;
   char acStack_4b [20];
   uint local_37;
@@ -58,14 +57,14 @@ uint core_netgame_cpp_initializeNetworkToJoin_FUN_0053f900(void)
     pcStack_14 = in_stack_00000004->network_data;
     do {
       local_1c = g_CurrentGameTime - uVar5;
-      fVar8 = (float)(int)(g_CurrentGameTime - uVar5) * (float)1.52587890625e-05;
-      if (fVar8 < 0.0) {
-        fVar8 = 0.0;
+      local_5c = (float)(int)(g_CurrentGameTime - uVar5) * (float)1.52587890625e-05;
+      if (local_5c < 0.0) {
+        local_5c = 0.0;
       }
-      if ((float)30 < fVar8) {
-        fVar8 = 30.0;
+      if ((float)30 < local_5c) {
+        local_5c = 30.0;
       }
-      if ((float)0.20000000000000001 < fVar8) {
+      if ((float)0.20000000000000001 < local_5c) {
         (&local_4f)[(uint)bVar7 * -2] = *(uint *)&(&SStack_24)[-(uint)bVar7].port;
         local_37 = *(uint *)
                     (in_stack_00000004->players[in_stack_00000004->local_player_index].name + 0x14);

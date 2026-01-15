@@ -11,30 +11,28 @@
 
 void core_curtain_cpp_FindCurtainTextures_FUN_0044b960
                (uint param_1,uint param_2,uint unaff_EBX,uint param_4,
-               int param_5,FILE *param_6,uint param_7,FILE *param_8)
+               int param_5,FILE *param_6)
 
 {
   char cVar1;
-  BADSPACEBASE *in_ESP;
   char *pcVar2;
   char *pcVar3;
   char *pcVar4;
-  uint uStack_104;
-  byte auStack_100 [248];
+  char local_108 [256];
   
   pcVar2 = (char *)(param_5 + 0x16c);
   crt_stdio_c_fprintf_FUN_005fe6d0(param_6,"ART\\%s\n",pcVar2);
-  pcVar4 = (char *)&uStack_104;
+  pcVar4 = local_108;
   do {
     cVar1 = *pcVar2;
     *pcVar4 = cVar1;
-    pcVar3 = (char *)&uStack_104;
+    pcVar3 = local_108;
     if (cVar1 == '\0') break;
     cVar1 = pcVar2[1];
     pcVar2 = pcVar2 + 2;
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
-    pcVar3 = (char *)&uStack_104;
+    pcVar3 = local_108;
   } while (cVar1 != '\0');
   do {
     pcVar4 = pcVar3;
@@ -61,7 +59,6 @@ LAB_0044b9c3:
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  uStack_104 = auStack_100;
-  crt_stdio_c_fprintf_FUN_005fe6d0(param_8,"ART\\%s\n");
+  crt_stdio_c_fprintf_FUN_005fe6d0(param_6,"ART\\%s\n",local_108);
   return;
 }

@@ -1,23 +1,21 @@
 {
   "complexity": {
     "assembly_lines": 115,
-    "complexity_score": 360,
+    "complexity_score": 337,
     "cross_reference_count": 4,
     "function_call_count": 5,
     "global_count": 2,
-    "pseudocode_lines": 90,
-    "suspect_count": 23,
+    "pseudocode_lines": 87,
+    "suspect_count": 22,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
       "negative_offset",
       "pointer_cast",
-      "register_param",
-      "stack_param",
-      "stack_ref"
+      "stack_ref",
+      "unaffected_reg"
     ],
-    "total_lines": 205
+    "total_lines": 202
   },
   "cross_references": [
     {
@@ -194,120 +192,113 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
+      "description": "Unaffected register variable",
       "line": 11,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 11,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_fffffff4",
-      "text": "CVector3f *in_stack_fffffff4;",
-      "type": "stack_param"
+      "match": "unaff_ESI",
+      "text": "CVector3f *unaff_ESI;",
+      "type": "unaffected_reg"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 37,
+      "line": 35,
       "match": "pCVar5[-5].",
       "text": "pCVar5[-5].len = 0;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 38,
+      "line": 36,
       "match": "pCVar5[-5].",
       "text": "pCVar5[-5].loop = 0;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 39,
+      "line": 37,
       "match": "pCVar5[-3].",
       "text": "pCVar5[-3].len = 0x40000000;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 40,
+      "line": 38,
       "match": "pCVar5[-4].",
       "text": "pCVar5[-4].loop = 0x40000000;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 41,
+      "line": 39,
       "match": "pCVar5[-5].",
       "text": "pCVar5[-5].frame_list = (CCourseFrameList *)0x0;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 43,
+      "line": 41,
       "match": "pCVar5[-3].",
       "text": "*(byte *)&pCVar5[-3].frame_list = 0;",
       "type": "negative_offset"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 55,
-      "match": "in_stack_fffffff4",
-      "text": "((CQuaternion4f *)&pCVar5[-0x3e].loop,in_stack_fffffff4);",
-      "type": "stack_param"
+      "description": "Unaffected register variable",
+      "line": 52,
+      "match": "unaff_ESI",
+      "text": "core_xform_cpp_eulerToQuaternion_FUN_005f7b20((CQuaternion4f *)&pCVar5[-0x3e].loop,unaff_ESI);",
+      "type": "unaffected_reg"
     },
     {
       "description": "Complex pointer cast",
-      "line": 56,
+      "line": 53,
       "match": "(uint *)((int)",
       "text": "puVar7 = (uint *)((int)pCVar5 + (uint)bVar11 * -8 + 0x38);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 60,
-      "match": "&stack0x00000008",
-      "text": "*puVar8 = *(uint *)(&stack0x00000008 + (uint)bVar11 * -8 + (uint)bVar11 * -8);",
+      "line": 56,
+      "match": "&stack0xfffffff0",
+      "text": "*puVar7 = *(uint *)(&stack0xfffffff0 + (uint)bVar11 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 63,
-      "match": "&stack0x00000008",
-      "text": "((int)(&stack0x00000008 + (uint)bVar11 * -8 + (uint)bVar11 * -8) +",
+      "line": 57,
+      "match": "&stack0xfffffff4",
+      "text": "*puVar8 = *(uint *)(&stack0xfffffff4 + (uint)bVar11 * -8 + (uint)bVar11 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 60,
+      "match": "&stack0xfffffff4",
+      "text": "((int)(&stack0xfffffff4 + (uint)bVar11 * -8 + (uint)bVar11 * -8) +",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 65,
+      "line": 62,
       "match": "(uint *)((int)",
       "text": "puVar9 = (uint *)((int)pCVar5 + (uint)bVar11 * -8 + 0x28);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 66,
+      "line": 63,
       "match": "(uint *)((int)",
       "text": "puVar7 = (uint *)((int)pCVar5 + (uint)bVar11 * -8 + 0x38);",
       "type": "pointer_cast"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 81,
+      "line": 78,
       "match": "pCVar5[-4].",
       "text": "pCVar5[-4].len = 0;",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 82,
+      "line": 79,
       "match": "pCVar5[-4].",
       "text": "pCVar5[-4].frame_list = (CCourseFrameList *)0x0;",
       "type": "negative_offset"

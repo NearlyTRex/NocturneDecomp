@@ -30,7 +30,6 @@ void core_gabriela_cpp_FUN_004d2ea0(void)
   CDemonActor *pCVar15;
   float fVar16;
   SMotion *pSVar17;
-  BADSPACEBASE *in_ESP;
   bool bVar18;
   bool bVar19;
   bool bVar20;

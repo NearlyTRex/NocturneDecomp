@@ -1,18 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 153,
+    "complexity_score": 113,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "pseudocode_lines": 13,
-    "suspect_count": 11,
+    "suspect_count": 8,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
       "param_count_too_few",
-      "register_param",
       "stack_ref"
     ],
     "total_lines": 51
@@ -159,31 +157,10 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 7,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 7,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 11,
+      "line": 10,
       "match": "&stack0x00000018",
       "text": "local_14 = &stack0x00000018;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 12,
-      "match": "&stack0xffffefec",
-      "text": "crt_stdio_c_vsprintf_FUN_005fdba8(&stack0xffffefec,format,&local_14);",
       "type": "stack_ref"
     },
     {

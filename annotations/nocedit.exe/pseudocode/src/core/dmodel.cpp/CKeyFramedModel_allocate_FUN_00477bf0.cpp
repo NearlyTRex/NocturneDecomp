@@ -18,14 +18,13 @@ core_dmodel_cpp_CKeyFramedModel_allocate_FUN_00477bf0
   int *piVar4;
   CVector3f *pCVar5;
   CVector3f *pCVar6;
-  int in_stack_0000001c;
   
   core_dmodel_cpp_CKeyFramedModel_free_FUN_00477690(this_ptr);
-  this_ptr->vertex_count = poly_count;
-  this_ptr->poly_count = texture_count;
-  this_ptr->texture_count = part_count;
-  this_ptr->part_count = frame_count;
-  this_ptr->frame_count = in_stack_0000001c;
+  this_ptr->vertex_count = vertex_count;
+  this_ptr->poly_count = poly_count;
+  this_ptr->texture_count = texture_count;
+  this_ptr->part_count = part_count;
+  this_ptr->frame_count = frame_count;
   if (300 < this_ptr->texture_count) {
     g_CurrentFilename = "..\\core\\dmodel.cpp";
     g_CurrentLineNumber = 0x2c0;
@@ -62,7 +61,9 @@ core_dmodel_cpp_CKeyFramedModel_allocate_FUN_00477bf0
     core_dmodel_cpp_CKeyFramedModel_free_FUN_00477690(this_ptr);
     g_CurrentLineNumber = 0x2d3;
     g_CurrentFilename = "..\\core\\dmodel.cpp";
-    core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory in CKeyFramedModel::allocate.  frameCount=%d, vertexCount=%d, polyCount=%d");
+    core_main_c_displayErrorAndQuit_FUN_00506f10
+              ("Out of memory in CKeyFramedModel::allocate.  frameCount=%d, vertexCount=%d, polyCount=%d",this_ptr->frame_count,this_ptr->vertex_count,
+               this_ptr->poly_count);
     if (this_ptr->frame_count != 1) {
       return;
     }
@@ -78,6 +79,7 @@ core_dmodel_cpp_CKeyFramedModel_allocate_FUN_00477bf0
   }
   g_CurrentFilename = "..\\core\\dmodel.cpp";
   g_CurrentLineNumber = 0x2db;
-  core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory for vertex normals in CKeyFramedModel::allocate.  vertexCount=%d");
+  core_main_c_displayErrorAndQuit_FUN_00506f10
+            ("Out of memory for vertex normals in CKeyFramedModel::allocate.  vertexCount=%d",this_ptr->vertex_count);
   return;
 }

@@ -1,17 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 94,
-    "complexity_score": 428,
+    "complexity_score": 383,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
     "pseudocode_lines": 78,
-    "suspect_count": 32,
+    "suspect_count": 28,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
-      "register_param",
+      "pointer_cast",
       "stack_param",
       "stack_ref"
     ],
@@ -240,59 +239,31 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 10,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 10,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 15,
       "match": "in_stack_00000004",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 16,
       "match": "in_stack_00000008",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 17,
       "match": "in_stack_0000000c",
       "text": "int in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 18,
       "match": "in_stack_fffffec8",
       "text": "CMatrix3x4f *in_stack_fffffec8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_fffffecc",
-      "text": "CMatrix3x4f *in_stack_fffffecc;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_fffffed0",
-      "text": "CMatrix3x4f *in_stack_fffffed0;",
       "type": "stack_param"
     },
     {
@@ -324,45 +295,45 @@
       "type": "stack_param"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 47,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar5 = (CMatrix3x4f *)((int)pCVar5 + ((uint)bVar7 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Unresolved stack parameter",
       "line": 50,
-      "match": "in_stack_fffffecc",
-      "text": "(&CStack_74,(CMatrix3x4f *)(iVar2 + 0x48),in_stack_fffffecc);",
+      "match": "in_stack_fffffec8",
+      "text": "(&local_78,(CMatrix3x4f *)(iVar2 + 0x48),in_stack_fffffec8);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
       "line": 52,
-      "match": "&stack0xfffffecc",
-      "text": "puVar4 = (uint *)&stack0xfffffecc;",
+      "match": "&stack0xfffffec8",
+      "text": "puVar6 = (uint *)&stack0xfffffec8;",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 58,
-      "match": "in_stack_fffffed0",
-      "text": "*(CMatrix3x4f **)(iVar2 + 0x78) = in_stack_fffffed0;",
+      "match": "in_stack_fffffec8",
+      "text": "*(CMatrix3x4f **)(iVar2 + 0x78) = in_stack_fffffec8;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 67,
-      "match": "in_stack_fffffed0",
-      "text": "core_xform_cpp_inverse_FUN_005f6210((CMatrix3x4f *)&stack0xfffffed0,in_stack_fffffed0);",
+      "match": "in_stack_fffffec8",
+      "text": "core_xform_cpp_inverse_FUN_005f6210((CMatrix3x4f *)&stack0xfffffec8,in_stack_fffffec8);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
       "line": 67,
-      "match": "&stack0xfffffed0",
-      "text": "core_xform_cpp_inverse_FUN_005f6210((CMatrix3x4f *)&stack0xfffffed0,in_stack_fffffed0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 75,
-      "match": "&stack0xfffffff4",
-      "text": "if ((uint *)(iVar2 + 0xa0) == (uint *)&stack0xfffffff4) {",
+      "match": "&stack0xfffffec8",
+      "text": "core_xform_cpp_inverse_FUN_005f6210((CMatrix3x4f *)&stack0xfffffec8,in_stack_fffffec8);",
       "type": "stack_ref"
     },
     {

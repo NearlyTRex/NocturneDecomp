@@ -1,17 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 33,
-    "complexity_score": 115,
+    "complexity_score": 58,
     "cross_reference_count": 3,
     "function_call_count": 4,
     "global_count": 3,
-    "pseudocode_lines": 15,
-    "suspect_count": 9,
+    "pseudocode_lines": 13,
+    "suspect_count": 4,
     "suspect_types": [
-      "call_esp_preserve",
-      "stack_param"
+      "call_esp_preserve"
     ],
-    "total_lines": 48
+    "total_lines": 46
   },
   "cross_references": [
     {
@@ -163,41 +162,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 6,
-      "match": "in_stack_00000008",
-      "text": "int in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 7,
-      "match": "in_stack_00000010",
-      "text": "CDemonSet *in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000008",
-      "text": "this_ptr_00 = (C3DSCamera *)(in_stack_00000008 + 4);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000008",
-      "text": "} while (this_ptr_00 != (C3DSCamera *)(in_stack_00000008 + 0x19a2c));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000010",
-      "text": "core_setdir_cpp_CDemonSet_freeThumbs_FUN_00575df0(in_stack_00000010);",
-      "type": "stack_param"
-    },
     {
       "add_esp_value": 4,
       "call_address": "005693c7",

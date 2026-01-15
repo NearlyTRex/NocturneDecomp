@@ -1,19 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 116,
-    "complexity_score": 235,
+    "complexity_score": 173,
     "cross_reference_count": 9,
     "function_call_count": 8,
     "global_count": 6,
-    "pseudocode_lines": 45,
-    "suspect_count": 17,
+    "pseudocode_lines": 43,
+    "suspect_count": 12,
     "suspect_types": [
       "call_esp_preserve",
-      "format_string_mismatch",
-      "stack_param",
       "variadic_preserve"
     ],
-    "total_lines": 161
+    "total_lines": 159
   },
   "cross_references": [
     {
@@ -231,36 +229,8 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000018",
-      "text": "uint in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000024",
-      "text": "int in_stack_00000024;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000018",
-      "text": "(\"debugCalloc(%d, %d, %s, %d)\",count,size,filename,in_stack_00000018);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_00000024",
-      "text": "header->source_line = in_stack_00000024;",
-      "type": "stack_param"
-    },
-    {
       "call_address": "0050f39b",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -274,7 +244,7 @@
     },
     {
       "call_address": "0050f3be",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -288,7 +258,7 @@
     },
     {
       "call_address": "0050f3e1",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -302,7 +272,7 @@
     },
     {
       "call_address": "0050f442",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -313,17 +283,6 @@
       "target_function": "shape_memdbg.cpp_traceMemory_FUN_0050f150",
       "text": "Call to variadic function shape_memdbg.cpp_traceMemory_FUN_0050f150 at 0050f442 (no EBP frame)",
       "type": "variadic_preserve"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"   Returns %08X\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "   Returns %08X",
-      "function_name": "shape_memdbg_cpp_traceMemory_FUN_0050f150",
-      "line_number": 41,
-      "match": "shape_memdbg_cpp_traceMemory_FUN_0050f150(\"   Returns %08X\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 4,

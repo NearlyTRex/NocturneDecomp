@@ -13,10 +13,12 @@ void core_flies_cpp_FUN_004ccaf0(void)
 {
   int iVar1;
   CDemonActor *in_stack_00000004;
+  float in_stack_00000008;
   float in_stack_00000010;
-  float fStack_54;
-  float fStack_40;
-  float fStack_2c;
+  float in_stack_00000018;
+  float in_stack_00000020;
+  float in_stack_00000028;
+  float in_stack_00000030;
   
   iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
   if (iVar1 == 0) {
@@ -26,32 +28,32 @@ void core_flies_cpp_FUN_004ccaf0(void)
     iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
     if (iVar1 != 0) {
       *(float *)in_stack_00000004[1].actor_name =
-           *(float *)in_stack_00000004[1].actor_name - fStack_54;
+           *(float *)in_stack_00000004[1].actor_name - in_stack_00000008;
     }
     iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4d);
     if (iVar1 != 0) {
       *(float *)in_stack_00000004[1].actor_name =
-           *(float *)in_stack_00000004[1].actor_name + fStack_40;
+           *(float *)in_stack_00000004[1].actor_name + in_stack_00000010;
     }
     iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1e);
     if (iVar1 != 0) {
       *(float *)(in_stack_00000004[1].actor_name + 4) =
-           *(float *)(in_stack_00000004[1].actor_name + 4) - fStack_2c;
+           *(float *)(in_stack_00000004[1].actor_name + 4) - in_stack_00000018;
     }
     iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x10);
     if (iVar1 != 0) {
       *(float *)(in_stack_00000004[1].actor_name + 4) =
-           *(float *)(in_stack_00000004[1].actor_name + 4) + 7.052326e-39;
+           *(float *)(in_stack_00000004[1].actor_name + 4) + in_stack_00000020;
     }
     iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x50);
     if (iVar1 != 0) {
       *(float *)(in_stack_00000004[1].actor_name + 8) =
-           *(float *)(in_stack_00000004[1].actor_name + 8) - 7.052388e-39;
+           *(float *)(in_stack_00000004[1].actor_name + 8) - in_stack_00000028;
     }
     iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x48);
     if (iVar1 != 0) {
       *(float *)(in_stack_00000004[1].actor_name + 8) =
-           *(float *)(in_stack_00000004[1].actor_name + 8) + in_stack_00000010;
+           *(float *)(in_stack_00000004[1].actor_name + 8) + in_stack_00000030;
     }
     if (*(int *)in_stack_00000004[1].actor_name < 0x3f000000) {
       in_stack_00000004[1].actor_name[0] = '\0';

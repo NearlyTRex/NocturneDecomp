@@ -30,14 +30,18 @@ core_setcolid_cpp_CDemonSet_testCapsuleCollision_FUN_00573470
   CBoundingBox3D *pCVar14;
   int iVar15;
   CKeyFramedModel *this_ptr_00;
-  BADSPACEBASE *in_ESP;
+  CVector3f *pCVar16;
   double in_stack_fffffd58;
   double dStack_278;
   SIntersectXZCylinder SStack_204;
   byte auStack_1a8 [92];
   byte local_14c [4];
-  float local_148;
-  CBoundingBox3D local_144;
+  byte local_148 [8];
+  float local_140;
+  float local_13c;
+  float local_138;
+  float local_134;
+  float local_130;
   float local_12c;
   void *local_128;
   void *local_124;
@@ -67,23 +71,23 @@ core_setcolid_cpp_CDemonSet_testCapsuleCollision_FUN_00573470
   this_ptr->field12_0x14d14c = -1;
   this_ptr->collision_actor = (CDemonActor *)0x0;
   if (-1 < this_ptr->ignore_list_count) {
-    local_98.min.x = local_144.min.z - local_12c;
-    local_98.max.x = local_144.min.z + local_12c;
-    if (local_144.max.y <= 0.0) {
-      local_98.min.x = local_98.min.x + local_144.max.y;
+    local_98.min.x = local_13c - local_12c;
+    local_98.max.x = local_13c + local_12c;
+    if (local_134 <= 0.0) {
+      local_98.min.x = local_98.min.x + local_134;
     }
     else {
-      local_98.max.x = local_98.max.x + local_144.max.y;
+      local_98.max.x = local_98.max.x + local_134;
     }
     local_98.min.y = (float)local_124;
-    local_98.min.z = local_144.max.x - local_12c;
-    local_98.max.z = local_144.max.x + local_12c;
+    local_98.min.z = local_138 - local_12c;
+    local_98.max.z = local_138 + local_12c;
     local_98.max.y = (float)local_128;
-    if (local_144.max.z <= 0.0) {
-      local_98.min.z = local_98.min.z + local_144.max.z;
+    if (local_130 <= 0.0) {
+      local_98.min.z = local_98.min.z + local_130;
     }
     else {
-      local_98.max.z = local_98.max.z + local_144.max.z;
+      local_98.max.z = local_98.max.z + local_130;
     }
     core_setcolid_cpp_SCollisionInfo_ctor_FUN_005743c0(&local_f0);
     local_f0.ray_type = this_ptr->ray_type;
@@ -111,8 +115,8 @@ core_setcolid_cpp_CDemonSet_testCapsuleCollision_FUN_00573470
                 if (bounding_box_type == 1) {
                   pCVar14 = (*actor->vtable->getBoundingBox)(actor,&CStack_c8);
                   iVar15 = core_setcolid_cpp_CDemonSet_testOBBCylinderCollision_FUN_00573140
-                                     (this_ptr,&local_144,(CMatrix3x3f *)pCVar14,
-                                      SUB84 /* extract 2-byte value */(in_stack_fffffd58,0),
+                                     (this_ptr,(CBoundingBox3D *)(local_148 + 4),
+                                      (CMatrix3x3f *)pCVar14,SUB84 /* extract 2-byte value */(in_stack_fffffd58,0),
                                       (SIntersectXZCylinder *)((ulonglong)in_stack_fffffd58 >> 0x20)
                                      );
                   if (iVar15 != 0) {
@@ -134,8 +138,8 @@ LAB_00573d6f:
                 fVar4 = (actor->location).position.z;
                 if ((local_f0.cylinder_bottom_y < (float)local_128) &&
                    ((float)local_124 < local_f0.cylinder_top_y)) {
-                  fVar5 = fVar3 - local_144.min.z;
-                  fVar7 = fVar4 - local_144.max.x;
+                  fVar5 = fVar3 - local_13c;
+                  fVar7 = fVar4 - local_138;
                   fVar8 = local_f0.cylinder_radius + local_12c;
                   fVar9 = fVar8 * fVar8;
                   fVar6 = fVar7 * fVar7 + fVar5 * fVar5;
@@ -144,28 +148,27 @@ LAB_00573d6f:
                     dVar2 = (double)fStack_114;
                     dVar10 = (double)fVar7 * dVar2 + (double)fVar5 * dVar1;
                     if (0.0 < dVar10) {
-                      dVar11 = dVar1 * dVar10 + (double)local_144.min.z;
+                      dVar11 = dVar1 * dVar10 + (double)local_13c;
                       fVar5 = fVar3 - (float)dVar11;
-                      dVar10 = dVar2 * dVar10 + (double)local_144.max.x;
+                      dVar10 = dVar2 * dVar10 + (double)local_138;
                       fVar6 = fVar4 - (float)dVar10;
                       fVar5 = fVar6 * fVar6 + fVar5 * fVar5;
                       if (fVar5 < fVar9) {
                         dVar12 = SQRT((double)fVar9 - (double)fVar5);
                         in_stack_fffffd58 = dVar11 - dVar1 * dVar12;
                         dVar10 = dVar10 - dVar2 * dVar12;
-                        if (ABS(local_144.max.y) <= ABS(local_144.max.z)) {
-                          dVar1 = (dVar10 - (double)local_144.max.x) / (double)local_144.max.z;
+                        if (ABS(local_134) <= ABS(local_130)) {
+                          dVar1 = (dVar10 - (double)local_138) / (double)local_130;
                         }
                         else {
-                          dVar1 = (in_stack_fffffd58 - (double)local_144.min.z) /
-                                  (double)local_144.max.y;
+                          dVar1 = (in_stack_fffffd58 - (double)local_13c) / (double)local_134;
                         }
                         if (((0.0 <= dVar1) && ((float)dVar1 < (float)local_14c)) && (dVar1 <= 1.0))
                         {
                           local_14c = (byte  [4])(float)dVar1;
-                          local_148 = (float)in_stack_fffffd58 - fVar3;
-                          local_144.min.y = (float)dVar10 - fVar4;
-                          local_144.min.x = 0.0;
+                          local_148._0_4_ = (float)in_stack_fffffd58 - fVar3;
+                          local_140 = (float)dVar10 - fVar4;
+                          local_148._4_4_ = 0.0;
                           this_ptr->collision_actor = actor;
                         }
                       }
@@ -178,9 +181,9 @@ LAB_00573d6f:
                     }
                     if ((float)dStack_278 < (float)local_14c) {
                       local_14c = (byte  [4])(float)dStack_278;
-                      local_148 = -fVar5;
-                      local_144.min.y = -fVar7;
-                      local_144.min.x = 0.0;
+                      local_148._0_4_ = -fVar5;
+                      local_140 = -fVar7;
+                      local_148._4_4_ = 0.0;
                       this_ptr->collision_actor = actor;
                     }
                   }
@@ -188,13 +191,13 @@ LAB_00573d6f:
               }
               else {
                 if (bounding_box_type != 3) goto LAB_00573d6f;
-                CStack_68.x = local_144.min.z;
-                CStack_68.z = local_144.max.x;
+                CStack_68.x = local_13c;
+                CStack_68.z = local_138;
                 CStack_68.y = (float)local_f0.field9_0x24;
                 core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                           (actor,&CStack_80,&CStack_68);
-                CStack_74.x = local_144.max.y;
-                CStack_74.z = local_144.max.z;
+                CStack_74.x = local_134;
+                CStack_74.z = local_130;
                 CStack_74.y = 0.0;
                 core_actor_cpp_CDemonActor_inverseTransformVector_FUN_00408ea0
                           (actor,&CStack_5c,&CStack_74);
@@ -208,13 +211,12 @@ LAB_00573d6f:
                           (actor,(SIntersectXZCylinder *)auStack_1a8);
                 if ((float)auStack_1a8._0_4_ < (float)local_14c) {
                   local_14c = (byte  [4])auStack_1a8._0_4_;
-                  pCVar14 = (CBoundingBox3D *)
-                            core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
+                  pCVar16 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
                                       (actor,aCStack_50,(CVector3f *)(auStack_1a8 + 4));
-                  if (&local_144 != pCVar14) {
-                    local_148 = (pCVar14->min).x;
-                    local_144.min.x = (pCVar14->min).y;
-                    local_144.min.y = (pCVar14->min).z;
+                  if ((CVector3f *)local_148 != pCVar16) {
+                    local_148._0_4_ = pCVar16->x;
+                    local_148._4_4_ = pCVar16->y;
+                    local_140 = pCVar16->z;
                   }
                   this_ptr->collision_actor = actor;
                 }
@@ -230,10 +232,8 @@ LAB_00573d6f:
                           ("info.keyFramedModelInstancePtr != NULL, but %s doesn't have exact collision",this_ptr_00);
               }
               core_dtrace_cpp_initCapsuleCollisionData_FUN_00496b90
-                        ((SCapsuleCollision *)&SStack_204,
-                         local_144.min.z - (actor->location).position.x,
-                         local_144.max.x - (actor->location).position.z,local_144.max.y,
-                         local_144.max.z,radius,
+                        ((SCapsuleCollision *)&SStack_204,local_13c - (actor->location).position.x,
+                         local_138 - (actor->location).position.z,local_134,local_130,radius,
                          (void *)((float)user_data1 - (actor->location).position.y),
                          (void *)((float)user_data2 - (actor->location).position.y));
               SStack_204.max_distance = (float)local_14c;
@@ -241,10 +241,10 @@ LAB_00573d6f:
                         (this_ptr_00,0,&SStack_204,(CVector3f *)&actor->orient);
               if (SStack_204.max_distance < (float)local_14c) {
                 local_14c = (byte  [4])SStack_204.max_distance;
-                if (&local_148 != &SStack_204.push_z) {
-                  local_148 = SStack_204.push_z;
-                  local_144.min.x = (float)SStack_204.flags;
-                  local_144.min.y = SStack_204.push_x;
+                if ((float *)local_148 != &SStack_204.push_z) {
+                  local_148._0_4_ = SStack_204.push_z;
+                  local_148._4_4_ = SStack_204.flags;
+                  local_140 = SStack_204.push_x;
                 }
                 this_ptr->collision_actor = actor;
               }
@@ -257,23 +257,24 @@ LAB_00573d6f:
     }
   }
   if ((float)local_14c <= 1.0) {
-    fVar3 = SQRT(local_144.min.y * local_144.min.y +
-                 local_144.min.x * local_144.min.x + local_148 * local_148);
+    fVar3 = SQRT(local_140 * local_140 +
+                 (float)local_148._4_4_ * (float)local_148._4_4_ +
+                 (float)local_148._0_4_ * (float)local_148._0_4_);
     if (0.0 < fVar3) {
       fVar3 = 1.0 / fVar3;
-      local_148 = local_148 * fVar3;
-      local_144.min.x = local_144.min.x * fVar3;
-      local_144.min.y = local_144.min.y * fVar3;
+      local_148._0_4_ = (float)local_148._0_4_ * fVar3;
+      local_148._4_4_ = (float)local_148._4_4_ * fVar3;
+      local_140 = local_140 * fVar3;
     }
     else {
-      local_144.min.x = 0.0;
-      local_148 = 0.0;
-      local_144.min.y = 0.0;
+      local_148._4_4_ = 0.0;
+      local_148._0_4_ = 0.0;
+      local_140 = 0.0;
     }
-    if (&this_ptr->collision_normal != (CVector3f *)&local_148) {
-      (this_ptr->collision_normal).x = local_148;
-      (this_ptr->collision_normal).y = local_144.min.x;
-      (this_ptr->collision_normal).z = local_144.min.y;
+    if (&this_ptr->collision_normal != (CVector3f *)local_148) {
+      (this_ptr->collision_normal).x = (float)local_148._0_4_;
+      (this_ptr->collision_normal).y = (float)local_148._4_4_;
+      (this_ptr->collision_normal).z = local_140;
       return (float)local_14c;
     }
   }

@@ -17,12 +17,10 @@ void core_bride_cpp_FUN_00424830(void)
   SMotion *pSVar1;
   int iVar2;
   uint uVar3;
-  BADSPACEBASE *in_ESP;
   CCharacter *in_stack_00000004;
   int in_stack_00000008;
   char *sound_name;
-  CDeformableModelInstance *force_immediate;
-  float force_immediate_00;
+  float in_stack_ffffffc4;
   CVector3f local_30;
   CVector3f local_24;
   
@@ -55,10 +53,9 @@ void core_bride_cpp_FUN_00424830(void)
   }
   this_ptr = &in_stack_00000004->model;
   if (0.0 < in_stack_00000004->hit_points) {
-    force_immediate_00 = 1.4013e-45;
     iVar2 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              (&this_ptr->motion_controller,(iVar2 == 0) + 7,(int)force_immediate_00);
+              (&this_ptr->motion_controller,(iVar2 == 0) + 7,(int)in_stack_ffffffc4);
     iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660
                       (*(uint *)(in_stack_00000004[1].base_actor.create_event + 0x48));
     if (iVar2 != 0) goto LAB_00424955;
@@ -66,13 +63,12 @@ void core_bride_cpp_FUN_00424830(void)
   }
   else {
     in_stack_00000004->hit_points = 0.0;
-    force_immediate = this_ptr;
     pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                        (&this_ptr->motion_controller);
     if ((pSVar1->state_index == 0xe) || (pSVar1->state_index == 0xd)) goto LAB_00424955;
     iVar2 = core_actor_cpp_randomChance_FUN_0040cd10(0.5);
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-              (&this_ptr->motion_controller,(iVar2 == 0) + 0xb,(int)force_immediate);
+              (&this_ptr->motion_controller,(iVar2 == 0) + 0xb,(int)in_stack_ffffffc4);
     sound_sndmain_cpp_killSfx_FUN_005a9c40
               (*(uint *)(in_stack_00000004[1].base_actor.create_event + 0x48));
     sound_name = "ub-die?.wav";

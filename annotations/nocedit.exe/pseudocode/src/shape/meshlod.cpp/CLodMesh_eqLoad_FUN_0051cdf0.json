@@ -1,20 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 261,
-    "complexity_score": 283,
+    "complexity_score": 252,
     "cross_reference_count": 2,
     "function_call_count": 7,
     "global_count": 15,
-    "pseudocode_lines": 108,
-    "suspect_count": 15,
+    "pseudocode_lines": 107,
+    "suspect_count": 13,
     "suspect_types": [
-      "badspacebase",
       "concat_artifact",
       "pointer_cast",
-      "register_param",
       "unknown_field"
     ],
-    "total_lines": 369
+    "total_lines": 368
   },
   "cross_references": [
     {
@@ -277,7 +275,7 @@
     {
       "add_esp_value": 12,
       "call_address": "0051ce16",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -293,7 +291,7 @@
     {
       "add_esp_value": 24,
       "call_address": "0051cec6",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "unknown",
       "esp_certainty_at_call": "known",
@@ -309,7 +307,7 @@
     {
       "add_esp_value": 4,
       "call_address": "0051d068",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -325,7 +323,7 @@
     {
       "add_esp_value": 4,
       "call_address": "0051d098",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -341,7 +339,7 @@
     {
       "add_esp_value": 4,
       "call_address": "0051d0c0",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -542,85 +540,78 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 10,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 10,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 36,
+      "line": 35,
       "match": "._4_4_",
       "text": "dVar2 = (double)CONCAT44 /* combine 2-byte values */(9.9999999999999997e+34._4_4_,9.9999999999999997e+34._0_4_) *",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 36,
+      "line": 35,
       "match": "._0_4_",
       "text": "dVar2 = (double)CONCAT44 /* combine 2-byte values */(9.9999999999999997e+34._4_4_,9.9999999999999997e+34._0_4_) *",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 36,
+      "line": 35,
       "match": "CONCAT44",
       "text": "dVar2 = (double)CONCAT44 /* combine 2-byte values */(9.9999999999999997e+34._4_4_,9.9999999999999997e+34._0_4_) *",
       "type": "concat_artifact"
     },
     {
       "description": "Complex pointer cast",
-      "line": 42,
+      "line": 41,
       "match": "(int *)((int)",
       "text": "piStack_14 = (int *)((int)local_30 + local_18);",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 54,
+      "line": 53,
       "match": "._0_4_",
       "text": "piStack_14[2] = 9.9999999999999997e+34._0_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 55,
+      "line": 54,
       "match": "._4_4_",
       "text": "piStack_14[3] = 9.9999999999999997e+34._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 65,
+      "line": 64,
       "match": "(int *)((int)",
       "text": "if (*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + local_18 + -0x28) !=",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 70,
+      "line": 69,
       "match": "(int *)((int)",
       "text": "*(int *)((int)this_ptr->edges_ptr->adjacent_tri_indices + local_18 + -0x24)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 93,
+      "line": 92,
       "match": "(uint *)((int)",
       "text": "*(uint *)&pCVar1[iVar3].collapse_cost = *(uint *)((int)pvVar5 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 94,
+      "line": 93,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&pCVar1[iVar3].collapse_cost + 4) = *(uint *)((int)pvVar5 + 0xc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 93,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&pCVar1[iVar3].collapse_cost + 4) = *(uint *)((int)pvVar5 + 0xc);",
       "type": "pointer_cast"
@@ -628,20 +619,13 @@
     {
       "description": "Complex pointer cast",
       "line": 94,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&pCVar1[iVar3].collapse_cost + 4) = *(uint *)((int)pvVar5 + 0xc);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 95,
       "match": "(float *)((int)",
       "text": "this_ptr->edges_ptr[iVar3].collapse_error = *(float *)((int)pvVar5 + 0x10);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 98,
+      "line": 97,
       "match": "(void *)((int)",
       "text": "pvVar5 = (void *)((int)pvVar5 + 0xf0);",
       "type": "pointer_cast"

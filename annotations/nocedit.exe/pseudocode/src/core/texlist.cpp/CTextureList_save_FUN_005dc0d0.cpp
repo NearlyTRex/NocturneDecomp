@@ -9,66 +9,71 @@
 void __cdecl core_texlist_cpp_CTextureList_save_FUN_005dc0d0(CTextureList *this_ptr,char *filename)
 
 {
-  char cVar1;
-  FILE *pFVar2;
-  FILE *unaff_EBX;
-  BADSPACEBASE *in_ESP;
-  FILE *unaff_ESI;
-  char *pcVar3;
+  int *piVar1;
+  char cVar2;
+  CTextureList *pCVar3;
   char *pcVar4;
-  int iVar5;
+  char *pcVar5;
+  int iVar6;
+  char local_114 [256];
+  FILE *local_14;
   
-  pcVar4 = &stack0xfffffeec;
+  pcVar5 = local_114;
   do {
-    cVar1 = *filename;
-    *pcVar4 = cVar1;
-    pcVar3 = &stack0xfffffeec;
-    if (cVar1 == '\0') break;
-    cVar1 = filename[1];
+    cVar2 = *filename;
+    *pcVar5 = cVar2;
+    pcVar4 = local_114;
+    if (cVar2 == '\0') break;
+    cVar2 = filename[1];
     filename = filename + 2;
-    pcVar4[1] = cVar1;
-    pcVar4 = pcVar4 + 2;
-    pcVar3 = &stack0xfffffeec;
-  } while (cVar1 != '\0');
+    pcVar5[1] = cVar2;
+    pcVar5 = pcVar5 + 2;
+    pcVar4 = local_114;
+  } while (cVar2 != '\0');
   do {
-    pcVar4 = pcVar3;
-    if (*pcVar3 == '.') goto LAB_005dc120;
-    if (*pcVar3 == '\0') break;
-    pcVar4 = pcVar3 + 1;
+    pcVar5 = pcVar4;
     if (*pcVar4 == '.') goto LAB_005dc120;
-    pcVar3 = pcVar3 + 2;
-  } while (*pcVar4 != '\0');
-  pcVar4 = (char *)0x0;
+    if (*pcVar4 == '\0') break;
+    pcVar5 = pcVar4 + 1;
+    if (*pcVar5 == '.') goto LAB_005dc120;
+    pcVar4 = pcVar4 + 2;
+  } while (*pcVar5 != '\0');
+  pcVar5 = (char *)0x0;
 LAB_005dc120:
-  if (pcVar4 == (char *)0x0) {
+  if (pcVar5 == (char *)0x0) {
     g_CurrentFilename = "..\\core\\texlist.cpp";
     g_CurrentLineNumber = 0xad;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CTextureList::save - No extension found");
   }
-  pcVar3 = ".tex";
+  pcVar4 = ".tex";
   do {
-    cVar1 = *pcVar3;
-    *pcVar4 = cVar1;
-    if (cVar1 == '\0') break;
-    cVar1 = pcVar3[1];
-    pcVar3 = pcVar3 + 2;
-    pcVar4[1] = cVar1;
+    cVar2 = *pcVar4;
+    *pcVar5 = cVar2;
+    if (cVar2 == '\0') break;
+    cVar2 = pcVar4[1];
     pcVar4 = pcVar4 + 2;
-  } while (cVar1 != '\0');
-  pFVar2 = engine_dosio_c_getFile_FUN_00481a50("data",&stack0xfffffef0,"wt");
-  if (pFVar2 == (FILE *)0x0) {
+    pcVar5[1] = cVar2;
+    pcVar5 = pcVar5 + 2;
+  } while (cVar2 != '\0');
+  local_14 = engine_dosio_c_getFile_FUN_00481a50("data",local_114,"wt");
+  if (local_14 == (FILE *)0x0) {
     g_CurrentFilename = "..\\core\\texlist.cpp";
     g_CurrentLineNumber = 0xb6;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CTextureList::save - Bad filename!");
   }
-  iVar5 = 0;
-  crt_stdio_c_fprintf_FUN_005fe6d0(unaff_ESI,"%d\n");
+  iVar6 = 0;
+  crt_stdio_c_fprintf_FUN_005fe6d0(local_14,"%d\n",this_ptr->texture_count);
   if (0 < this_ptr->texture_count) {
+    pCVar3 = this_ptr;
+    pcVar5 = this_ptr->texture_entries[0].texture_name;
     do {
-      iVar5 = iVar5 + 1;
-      crt_stdio_c_fprintf_FUN_005fe6d0(unaff_EBX,"%s,%d\n");
-    } while (iVar5 < this_ptr->texture_count);
+      piVar1 = pCVar3->texture_values;
+      pCVar3 = (CTextureList *)pCVar3->texture_entries;
+      iVar6 = iVar6 + 1;
+      crt_stdio_c_fprintf_FUN_005fe6d0(local_14,"%s,%d\n",pcVar5,*piVar1);
+      pcVar5 = pcVar5 + 0x18;
+    } while (iVar6 < this_ptr->texture_count);
   }
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(unaff_EBX,"..\\core\\texlist.cpp",0xc3);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(local_14,"..\\core\\texlist.cpp",0xc3);
   return;
 }

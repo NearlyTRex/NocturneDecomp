@@ -15,7 +15,6 @@ shape_superopt_cpp_CObj_scale_FUN_005d2940(CObj *this_ptr,CVector3d *scale,CVect
   double dVar3;
   int iVar4;
   CVert *pCVar5;
-  BADSPACEBASE *in_ESP;
   double *pdVar6;
   double *pdVar7;
   uint *puVar8;

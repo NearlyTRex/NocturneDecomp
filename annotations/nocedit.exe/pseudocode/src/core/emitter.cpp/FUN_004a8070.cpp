@@ -19,7 +19,6 @@ void core_emitter_cpp_FUN_004a8070(void)
   float *pfVar3;
   CVector3f *pCVar4;
   uint uVar5;
-  BADSPACEBASE *in_ESP;
   int iVar6;
   float10 fVar7;
   float10 fVar8;

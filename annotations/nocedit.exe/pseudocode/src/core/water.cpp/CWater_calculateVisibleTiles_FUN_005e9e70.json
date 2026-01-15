@@ -1,26 +1,23 @@
 {
   "complexity": {
     "assembly_lines": 347,
-    "complexity_score": 622,
+    "complexity_score": 618,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 28,
-    "pseudocode_lines": 147,
-    "suspect_count": 42,
+    "pseudocode_lines": 148,
+    "suspect_count": 43,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "extra_output",
       "lea_esp_stack_addr",
-      "register_param",
       "sborrow_artifact",
       "stack_ref",
-      "suspect_float",
       "unknown_field",
       "variadic_preserve",
       "warning_overlapping_globals"
     ],
-    "total_lines": 494
+    "total_lines": 495
   },
   "cross_references": [
     {
@@ -638,106 +635,113 @@
       "type": "extra_output"
     },
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 14,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
+      "description": "Unknown/mangled field access",
+      "line": 53,
+      "match": "._0_4_",
+      "text": "_DAT_03f875f0 = ((float)local_44._0_4_ + (float)local_8c._0_4_) * fVar1;",
+      "type": "unknown_field"
     },
     {
-      "description": "Inferred register parameter",
-      "line": 14,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
+      "description": "Unknown/mangled field access",
+      "line": 53,
+      "match": "._0_4_",
+      "text": "_DAT_03f875f0 = ((float)local_44._0_4_ + (float)local_8c._0_4_) * fVar1;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 54,
+      "match": "._8_4_",
+      "text": "_DAT_03f875f8 = ((float)local_44._8_4_ + (float)local_8c._8_4_) * fVar1;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 54,
+      "match": "._8_4_",
+      "text": "_DAT_03f875f8 = ((float)local_44._8_4_ + (float)local_8c._8_4_) * fVar1;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 55,
+      "match": "._0_4_",
+      "text": "local_28 = ((float)local_8c._0_4_ - (float)local_44._0_4_) * fVar1 * (float)1.1000000000000001;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 55,
+      "match": "._0_4_",
+      "text": "local_28 = ((float)local_8c._0_4_ - (float)local_44._0_4_) * fVar1 * (float)1.1000000000000001;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 61,
+      "match": "._4_4_",
+      "text": "local_24 = (float)local_8c._4_4_ - (float)local_44._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 61,
+      "match": "._4_4_",
+      "text": "local_24 = (float)local_8c._4_4_ - (float)local_44._4_4_;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 65,
+      "match": "._8_4_",
+      "text": "local_2c = ((float)local_8c._8_4_ - (float)local_44._8_4_) * (float)0.5 *",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 65,
+      "match": "._8_4_",
+      "text": "local_2c = ((float)local_8c._8_4_ - (float)local_44._8_4_) * (float)0.5 *",
+      "type": "unknown_field"
     },
     {
       "description": "Decompiler signed borrow artifact",
-      "line": 70,
+      "line": 75,
       "match": "SBORROW",
-      "text": "if (SBORROW /* signed borrow */4(iVar7,(int)local_18) != (int)local_18 * -2 < 0) {",
+      "text": "if (SBORROW /* signed borrow */4(iVar7,(int)local_20) != (int)local_20 * -2 < 0) {",
       "type": "sborrow_artifact"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 75,
+      "line": 98,
       "match": "._8_4_",
-      "text": "local_54._8_4_ = (float)iVar7 * this_ptr->tile_size + _DAT_03f875f0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 86,
-      "match": "._0_4_",
-      "text": "local_54._0_4_ = (uint)ROUND(256f * 0.0);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 87,
-      "match": "._4_4_",
-      "text": "local_54._4_4_ = (uint)ROUND(256f * 0.0);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 88,
-      "match": "._8_4_",
-      "text": "local_54._8_4_ = (uint)ROUND(256f * 0.0);",
+      "text": "local_8c._8_4_ = (uint)ROUND(local_54.x * 256f);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
       "line": 105,
-      "match": "._0_4_",
-      "text": "local_54._0_4_ = (uint)ROUND(256f * 0.0);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 106,
-      "match": "._4_4_",
-      "text": "local_54._4_4_ = (uint)ROUND(local_38 * 256f);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 107,
       "match": "._8_4_",
-      "text": "local_54._8_4_ = (uint)ROUND(local_34 * 256f);",
+      "text": "local_44._8_4_ = (uint)ROUND(local_54.x * 256f);",
       "type": "unknown_field"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 121,
-      "match": "1.4013e-45",
-      "text": "local_88.z = 1.4013e-45;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 122,
-      "match": "2.8026e-45",
-      "text": "local_7c = 2.8026e-45;",
-      "type": "suspect_float"
     },
     {
       "description": "Direct stack address reference",
-      "line": 124,
-      "match": "&stack0xffffff50",
-      "text": "(g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)&stack0xffffff50);",
+      "line": 125,
+      "match": "&stack0xffffff48",
+      "text": "(g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)&stack0xffffff48);",
       "type": "stack_ref"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 148,
+      "line": 149,
       "match": "extraout_EAX",
       "text": "return extraout_EAX;",
       "type": "extra_output"
     },
     {
       "call_address": "005ea257",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "conflict",
       "esp_certainty_at_call": "conflict",
@@ -751,7 +755,7 @@
     },
     {
       "call_address": "005ea2f0",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "conflict",
       "esp_certainty_at_call": "conflict",

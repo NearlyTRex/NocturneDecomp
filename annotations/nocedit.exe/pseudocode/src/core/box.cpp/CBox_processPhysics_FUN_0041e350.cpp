@@ -23,7 +23,6 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
   SScrape *pSVar12;
   SScrape *pSVar13;
   CBox *pCVar14;
-  BADSPACEBASE *in_ESP;
   float *pfVar15;
   CMatrix3x3f *pCVar16;
   int iVar17;
@@ -38,13 +37,13 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
   float local_3dc;
   float local_3d8;
   float fStack_3d4;
-  float local_3cc [7];
-  float local_3b0;
+  float local_3cc [8];
   float local_3ac;
   float local_3a8;
   float local_3a4;
   float local_3a0;
   float local_39c;
+  float local_398;
   float local_394;
   float local_390;
   float local_38c;
@@ -62,6 +61,7 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
   float local_35c;
   float local_358;
   float local_354;
+  float local_350;
   float local_34c;
   float local_348;
   float local_344;
@@ -77,6 +77,7 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
   float local_c8;
   float local_c4;
   float local_c0;
+  float local_bc;
   float local_b8;
   float local_b4;
   float local_b0;
@@ -89,8 +90,7 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
   float local_94;
   float local_90;
   float local_8c;
-  byte local_88 [8];
-  float local_80;
+  CVector3f local_88;
   float local_7c;
   float local_78;
   float fStack_74;
@@ -99,6 +99,7 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
   float local_60;
   float local_5c;
   float local_58;
+  float local_54;
   SScrape *local_4c;
   float local_48;
   float local_44;
@@ -130,16 +131,17 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
     local_340.scrape_points[7].previous_position.x =
          local_340.scrape_points[7].previous_position.x + 1.0;
     local_340.position.y = local_340.position.y + -100f;
-    fVar8 = core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70
-                      (&g_CDemonRaytraceInstance,
-                       (CVector3f *)&local_340.scrape_points[7].transformed_position.z,
-                       &local_340.position,&local_340.scrape_points[3].local_position,(int *)0x0);
-    if ((fVar8 <= 0.0) || (1.0 <= fVar8)) {
+    fStack_14 = core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70
+                          (&g_CDemonRaytraceInstance,
+                           (CVector3f *)&local_340.scrape_points[7].transformed_position.z,
+                           &local_340.position,&local_340.scrape_points[3].local_position,(int *)0x0
+                          );
+    if ((fStack_14 <= 0.0) || (1.0 <= fStack_14)) {
       this_ptr[1].position.x = -9999.0;
     }
     else {
       this_ptr[1].position.x =
-           (local_340.position.y - local_340.scrape_points[7].previous_position.x) * fVar8 +
+           (local_340.position.y - local_340.scrape_points[7].previous_position.x) * fStack_14 +
            local_340.scrape_points[7].previous_position.x;
     }
     pCVar10 = &this_ptr->scrape_points[0].transformed_position;
@@ -164,22 +166,22 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
     (this_ptr->linear_momentum).y = pCVar9->y + (this_ptr->linear_momentum).y;
     piVar1 = &this_ptr->mass;
     (this_ptr->linear_momentum).z = pCVar9->z + (this_ptr->linear_momentum).z;
-    local_340.linear_momentum.x = pCVar10->x / (float)*piVar1;
-    local_340.linear_momentum.y = (this_ptr->linear_momentum).y / (float)*piVar1;
-    local_340.linear_momentum.z = (this_ptr->linear_momentum).z / (float)*piVar1;
-    if (&this_ptr->linear_velocity_temp != &local_340.linear_momentum) {
-      (this_ptr->linear_velocity_temp).x = local_340.linear_momentum.x;
-      (this_ptr->linear_velocity_temp).y = local_340.linear_momentum.y;
-      (this_ptr->linear_velocity_temp).z = local_340.linear_momentum.z;
+    local_340.linear_velocity_temp.z = pCVar10->x / (float)*piVar1;
+    local_340.linear_momentum.x = (this_ptr->linear_momentum).y / (float)*piVar1;
+    local_340.linear_momentum.y = (this_ptr->linear_momentum).z / (float)*piVar1;
+    if (&this_ptr->linear_velocity_temp != (CVector3f *)&local_340.linear_velocity_temp.z) {
+      (this_ptr->linear_velocity_temp).x = local_340.linear_velocity_temp.z;
+      (this_ptr->linear_velocity_temp).y = local_340.linear_momentum.x;
+      (this_ptr->linear_velocity_temp).z = local_340.linear_momentum.y;
     }
-    fVar8 = (this_ptr->angular_momentum).y;
-    fVar2 = (this_ptr->moment_of_inertia).y;
-    fVar3 = (this_ptr->angular_momentum).z;
-    fVar4 = (this_ptr->moment_of_inertia).z;
+    fVar2 = (this_ptr->angular_momentum).y;
+    fVar3 = (this_ptr->moment_of_inertia).y;
+    fVar4 = (this_ptr->angular_momentum).z;
+    fVar5 = (this_ptr->moment_of_inertia).z;
     (this_ptr->angular_velocity_temp).x =
          (this_ptr->angular_momentum).x / (this_ptr->moment_of_inertia).x;
-    (this_ptr->angular_velocity_temp).y = fVar8 / fVar2;
-    (this_ptr->angular_velocity_temp).z = fVar3 / fVar4;
+    (this_ptr->angular_velocity_temp).y = fVar2 / fVar3;
+    (this_ptr->angular_velocity_temp).z = fVar4 / fVar5;
     (this_ptr->linear_momentum).z = 0.0;
     (this_ptr->linear_momentum).y = (this_ptr->linear_momentum).z;
     (this_ptr->linear_momentum).x = (this_ptr->linear_momentum).y;
@@ -187,7 +189,7 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
     (this_ptr->angular_momentum).y = (this_ptr->angular_momentum).z;
     (this_ptr->angular_momentum).x = (this_ptr->angular_momentum).y;
     pCVar10 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
-                        (&this_ptr->rotation_matrix,&local_340.angular_momentum,
+                        (&this_ptr->rotation_matrix,(CVector3f *)&local_340.angular_velocity_temp.z,
                          &this_ptr->linear_velocity_temp);
     local_340.extents.y = pCVar10->x * delta_time;
     local_340.extents.z = pCVar10->y * delta_time;
@@ -210,14 +212,14 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
     local_340.rotation_matrix.m[0].z = delta_time * (this_ptr->angular_velocity_temp).z;
     pCVar10 = &this_ptr->angular_velocity;
     pCVar10->x = pCVar10->x + local_340.rotation_matrix.m[0].x;
-    fVar8 = (this_ptr->angular_velocity).y + local_340.rotation_matrix.m[0].y;
-    (this_ptr->angular_velocity).y = fVar8;
-    fVar2 = (this_ptr->angular_velocity).z + local_340.rotation_matrix.m[0].z;
-    (this_ptr->angular_velocity).z = fVar2;
-    fVar8 = SQRT(fVar2 * (this_ptr->angular_velocity).z +
-                 pCVar10->x * pCVar10->x + fVar8 * (this_ptr->angular_velocity).y);
-    if ((float)25.132741228 < fVar8) {
-      local_5c = (float)25.132741228 / fVar8;
+    fVar2 = (this_ptr->angular_velocity).y + local_340.rotation_matrix.m[0].y;
+    (this_ptr->angular_velocity).y = fVar2;
+    fVar3 = (this_ptr->angular_velocity).z + local_340.rotation_matrix.m[0].z;
+    (this_ptr->angular_velocity).z = fVar3;
+    fVar2 = SQRT(fVar3 * (this_ptr->angular_velocity).z +
+                 pCVar10->x * pCVar10->x + fVar2 * (this_ptr->angular_velocity).y);
+    if ((float)25.132741228 < fVar2) {
+      local_5c = (float)25.132741228 / fVar2;
       pCVar10->x = pCVar10->x * local_5c;
       (this_ptr->angular_velocity).y = (this_ptr->angular_velocity).y * local_5c;
       (this_ptr->angular_velocity).z = (this_ptr->angular_velocity).z * local_5c;
@@ -319,8 +321,8 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
                                   (&g_CDemonRaytraceInstance,local_68,pCVar10,
                                    &local_24->raytrace_normal,(int *)0x0);
             pCVar14->scrape_points[0].raytrace_intersection = fStack_14;
-            fVar8 = pCVar14->scrape_points[0].raytrace_intersection;
-            if ((0.0 < fVar8) && (fVar8 < 1.0)) {
+            fVar2 = pCVar14->scrape_points[0].raytrace_intersection;
+            if ((0.0 < fVar2) && (fVar2 < 1.0)) {
               local_3cc[local_18] = local_1c;
               local_18 = local_18 + 1;
             }
@@ -332,16 +334,16 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
             local_68->y = pCVar10->y;
             local_68->z = pCVar10->z;
           }
-          fVar8 = pCVar14->scrape_points[0].transformed_position.y;
+          fVar2 = pCVar14->scrape_points[0].transformed_position.y;
           pCVar14->scrape_points[0].previous_position.y =
                this_ptr[1].position.x + (float)0.5;
-          fVar2 = pCVar14->scrape_points[0].previous_position.y;
-          fVar3 = this_ptr[1].position.x;
-          fVar4 = pCVar14->scrape_points[0].previous_position.y;
+          fVar3 = pCVar14->scrape_points[0].previous_position.y;
+          fVar4 = this_ptr[1].position.x;
+          fVar5 = pCVar14->scrape_points[0].previous_position.y;
           pCVar14->scrape_points[0].raytrace_normal.x = 0.0;
           pCVar14->scrape_points[0].raytrace_normal.y = 1.0;
           pCVar14->scrape_points[0].raytrace_normal.z = 0.0;
-          pCVar14->scrape_points[0].raytrace_intersection = (fVar3 - fVar4) / (fVar8 - fVar2);
+          pCVar14->scrape_points[0].raytrace_intersection = (fVar4 - fVar5) / (fVar2 - fVar3);
           local_3cc[local_18] = local_1c;
           local_18 = local_18 + 1;
         }
@@ -353,7 +355,7 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
         pSVar12 = local_24;
       } while ((int)local_1c < this_ptr->scrape_point_count);
     }
-    fVar8 = local_3cc[0];
+    fVar2 = local_3cc[0];
     if (local_18 == 1) {
       local_340.scrape_points[3].previous_position.x =
            local_4c[(int)local_3cc[0]].transformed_position.x -
@@ -443,7 +445,7 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
       (this_ptr->angular_velocity).z = 0.0;
       (this_ptr->angular_velocity).y = (this_ptr->angular_velocity).z;
       (this_ptr->angular_velocity).x = (this_ptr->angular_velocity).y;
-      pSVar12 = this_ptr->scrape_points + (int)fVar8;
+      pSVar12 = this_ptr->scrape_points + (int)fVar2;
       local_340.scrape_points[7].local_position.z =
            (pSVar12->local_position).y * local_340.linear_velocity.y -
            (pSVar12->local_position).z * local_340.linear_velocity.x;
@@ -462,21 +464,20 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
       local_388 = (pSVar12->local_position).x;
       local_384 = (pSVar12->local_position).y;
       local_380 = (pSVar12->local_position).z;
-      local_88._0_4_ = 0.0;
-      local_80 = 0.0;
-      local_88._4_4_ = (float)this_ptr->mass * (float)32;
+      local_88.x = 0.0;
+      local_88.z = 0.0;
+      local_88.y = (float)this_ptr->mass * (float)32;
       pCVar10 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
                           (&this_ptr->rotation_matrix,
-                           (CVector3f *)&local_340.scrape_points[5].local_position.y,
-                           (CVector3f *)local_88);
-      if ((CVector3f *)(local_88 + 4) != pCVar10) {
-        local_88._0_4_ = pCVar10->x;
-        local_88._4_4_ = pCVar10->y;
-        local_80 = pCVar10->z;
+                           (CVector3f *)&local_340.scrape_points[5].local_position.y,&local_88);
+      if (&local_88 != pCVar10) {
+        local_88.x = pCVar10->x;
+        local_88.y = pCVar10->y;
+        local_88.z = pCVar10->z;
       }
-      local_34c = local_384 * local_80 - local_380 * (float)local_88._4_4_;
-      local_348 = local_380 * (float)local_88._0_4_ - local_388 * local_80;
-      local_344 = local_388 * (float)local_88._4_4_ - local_384 * (float)local_88._0_4_;
+      local_34c = local_384 * local_88.z - local_380 * local_88.y;
+      local_348 = local_380 * local_88.x - local_388 * local_88.z;
+      local_344 = local_388 * local_88.y - local_384 * local_88.x;
       (this_ptr->angular_momentum).x = (this_ptr->angular_momentum).x + local_34c;
       (this_ptr->angular_momentum).y = (this_ptr->angular_momentum).y + local_348;
       (this_ptr->angular_momentum).z = (this_ptr->angular_momentum).z + local_344;
@@ -524,7 +525,7 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
         (this_ptr->position).x = (this_ptr->position).x + local_a0;
         pCVar10 = (CVector3f *)&local_340.scrape_points[7].raytrace_normal.y;
         (this_ptr->position).y = (this_ptr->position).y + local_9c;
-        fVar8 = (this_ptr->position).z + local_98;
+        fVar2 = (this_ptr->position).z + local_98;
       }
       else {
         (this_ptr->position).x =
@@ -532,114 +533,114 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
         pCVar10 = (CVector3f *)&local_340.scrape_points[3].raytrace_normal.z;
         (this_ptr->position).y =
              (this_ptr->position).y + local_340.scrape_points[4].previous_position.x;
-        fVar8 = (this_ptr->position).z + local_340.scrape_points[4].previous_position.y;
+        fVar2 = (this_ptr->position).z + local_340.scrape_points[4].previous_position.y;
         local_3cc[1] = local_3cc[0];
       }
-      (this_ptr->position).z = fVar8;
+      (this_ptr->position).z = fVar2;
       pCVar10 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
                           (&this_ptr->rotation_matrix,pCVar10,
                            &this_ptr->scrape_points[(int)local_3cc[1]].raytrace_normal);
-      if ((CVector3f *)&local_340.position.z != pCVar10) {
-        local_340.position.z = pCVar10->x;
-        local_340.orientation.x = pCVar10->y;
-        local_340.orientation.y = pCVar10->z;
+      if (&local_340.orientation != pCVar10) {
+        local_340.orientation.x = pCVar10->x;
+        local_340.orientation.y = pCVar10->y;
+        local_340.orientation.z = pCVar10->z;
       }
       pCVar10 = &this_ptr->linear_velocity_local;
-      local_368 = pCVar10->x;
-      local_364 = (this_ptr->linear_velocity_local).y;
-      local_360 = (this_ptr->linear_velocity_local).z;
-      local_58 = (local_340.orientation.y * (this_ptr->linear_velocity_local).z +
-                 local_340.position.z * pCVar10->x +
-                 local_340.orientation.x * (this_ptr->linear_velocity_local).y) *
+      local_364 = pCVar10->x;
+      local_360 = (this_ptr->linear_velocity_local).y;
+      local_35c = (this_ptr->linear_velocity_local).z;
+      local_54 = (local_340.orientation.z * (this_ptr->linear_velocity_local).z +
+                 local_340.orientation.x * pCVar10->x +
+                 local_340.orientation.y * (this_ptr->linear_velocity_local).y) *
                  2f;
-      local_340.linear_momentum.y = local_340.position.z * local_58;
-      local_340.linear_momentum.z = local_340.orientation.x * local_58;
-      local_340.angular_velocity.x = local_340.orientation.y * local_58;
-      local_d4 = local_340.linear_momentum.y - pCVar10->x;
-      local_d0 = local_340.linear_momentum.z - (this_ptr->linear_velocity_local).y;
-      local_cc = local_340.angular_velocity.x - (this_ptr->linear_velocity_local).z;
-      if (&local_340.scrape_points[3].previous_position.z != &local_d4) {
-        local_340.scrape_points[3].previous_position.z = local_d4;
+      local_340.linear_momentum.z = local_340.orientation.x * local_54;
+      local_340.angular_velocity.x = local_340.orientation.y * local_54;
+      local_340.angular_velocity.y = local_340.orientation.z * local_54;
+      local_d0 = local_340.linear_momentum.z - pCVar10->x;
+      local_cc = local_340.angular_velocity.x - (this_ptr->linear_velocity_local).y;
+      local_c8 = local_340.angular_velocity.y - (this_ptr->linear_velocity_local).z;
+      if (&local_340.scrape_points[3].raytrace_intersection != &local_d0) {
         local_340.scrape_points[3].raytrace_intersection = local_d0;
         local_340.scrape_points[3].raytrace_normal.x = local_cc;
+        local_340.scrape_points[3].raytrace_normal.y = local_c8;
       }
-      local_340.scrape_points[3].previous_position.z =
-           local_340.scrape_points[3].previous_position.z * -1f *
-           0.25f;
       local_340.scrape_points[3].raytrace_intersection =
            local_340.scrape_points[3].raytrace_intersection * -1f *
            0.25f;
       local_340.scrape_points[3].raytrace_normal.x =
            local_340.scrape_points[3].raytrace_normal.x * -1f *
            0.25f;
+      local_340.scrape_points[3].raytrace_normal.y =
+           local_340.scrape_points[3].raytrace_normal.y * -1f *
+           0.25f;
       piVar1 = &this_ptr->mass;
-      local_340.scrape_points[0].raytrace_normal.y =
-           local_340.scrape_points[3].previous_position.z - (this_ptr->linear_velocity_local).x;
       local_340.scrape_points[0].raytrace_normal.z =
-           local_340.scrape_points[3].raytrace_intersection - (this_ptr->linear_velocity_local).y;
+           local_340.scrape_points[3].raytrace_intersection - (this_ptr->linear_velocity_local).x;
       local_340.scrape_points[1].local_position.x =
-           local_340.scrape_points[3].raytrace_normal.x - (this_ptr->linear_velocity_local).z;
-      local_c8 = local_340.scrape_points[0].raytrace_normal.y * (float)*piVar1;
+           local_340.scrape_points[3].raytrace_normal.x - (this_ptr->linear_velocity_local).y;
+      local_340.scrape_points[1].local_position.y =
+           local_340.scrape_points[3].raytrace_normal.y - (this_ptr->linear_velocity_local).z;
       local_c4 = local_340.scrape_points[0].raytrace_normal.z * (float)*piVar1;
       local_c0 = local_340.scrape_points[1].local_position.x * (float)*piVar1;
-      local_340.scrape_points[6].raytrace_normal.x = 1.0 / delta_time;
-      local_340.scrape_points[6].previous_position.z =
-           local_c8 * local_340.scrape_points[6].raytrace_normal.x;
+      local_bc = local_340.scrape_points[1].local_position.y * (float)*piVar1;
+      local_340.scrape_points[6].raytrace_normal.y = 1.0 / delta_time;
       local_340.scrape_points[6].raytrace_intersection =
-           local_c4 * local_340.scrape_points[6].raytrace_normal.x;
+           local_c4 * local_340.scrape_points[6].raytrace_normal.y;
       local_340.scrape_points[6].raytrace_normal.x =
-           local_c0 * local_340.scrape_points[6].raytrace_normal.x;
+           local_c0 * local_340.scrape_points[6].raytrace_normal.y;
+      local_340.scrape_points[6].raytrace_normal.y =
+           local_bc * local_340.scrape_points[6].raytrace_normal.y;
       (this_ptr->linear_momentum).x =
-           (this_ptr->linear_momentum).x + local_340.scrape_points[6].previous_position.z;
+           (this_ptr->linear_momentum).x + local_340.scrape_points[6].raytrace_intersection;
       (this_ptr->linear_momentum).y =
-           (this_ptr->linear_momentum).y + local_340.scrape_points[6].raytrace_intersection;
+           (this_ptr->linear_momentum).y + local_340.scrape_points[6].raytrace_normal.x;
       (this_ptr->linear_momentum).z =
-           (this_ptr->linear_momentum).z + local_340.scrape_points[6].raytrace_normal.x;
+           (this_ptr->linear_momentum).z + local_340.scrape_points[6].raytrace_normal.y;
       (this_ptr->angular_velocity).z = 0.0;
       (this_ptr->angular_velocity).y = (this_ptr->angular_velocity).z;
       (this_ptr->angular_velocity).x = (this_ptr->angular_velocity).y;
       pSVar12 = this_ptr->scrape_points + (int)local_3cc[0];
-      local_340.scrape_points[2].raytrace_intersection =
-           (pSVar12->local_position).y * local_340.scrape_points[6].raytrace_normal.x -
-           (pSVar12->local_position).z * local_340.scrape_points[6].raytrace_intersection;
       local_340.scrape_points[2].raytrace_normal.x =
-           (pSVar12->local_position).z * local_340.scrape_points[6].previous_position.z -
-           (pSVar12->local_position).x * local_340.scrape_points[6].raytrace_normal.x;
-      local_3a4 = local_340.scrape_points[2].raytrace_intersection * 0.1f;
-      local_3a0 = local_340.scrape_points[2].raytrace_normal.x * 0.1f;
+           (pSVar12->local_position).y * local_340.scrape_points[6].raytrace_normal.y -
+           (pSVar12->local_position).z * local_340.scrape_points[6].raytrace_normal.x;
       local_340.scrape_points[2].raytrace_normal.y =
-           (pSVar12->local_position).x * local_340.scrape_points[6].raytrace_intersection -
-           (pSVar12->local_position).y * local_340.scrape_points[6].previous_position.z;
+           (pSVar12->local_position).z * local_340.scrape_points[6].raytrace_intersection -
+           (pSVar12->local_position).x * local_340.scrape_points[6].raytrace_normal.y;
+      local_3a0 = local_340.scrape_points[2].raytrace_normal.x * 0.1f;
       local_39c = local_340.scrape_points[2].raytrace_normal.y * 0.1f;
+      local_340.scrape_points[2].raytrace_normal.z =
+           (pSVar12->local_position).x * local_340.scrape_points[6].raytrace_normal.x -
+           (pSVar12->local_position).y * local_340.scrape_points[6].raytrace_intersection;
+      local_398 = local_340.scrape_points[2].raytrace_normal.z * 0.1f;
       pCVar10 = &this_ptr->angular_momentum;
-      pCVar10->x = pCVar10->x + local_3a4;
-      (this_ptr->angular_momentum).y = (this_ptr->angular_momentum).y + local_3a0;
-      pSVar13 = this_ptr->scrape_points + (int)local_68;
-      (this_ptr->angular_momentum).z = (this_ptr->angular_momentum).z + local_39c;
-      local_35c = (pSVar13->local_position).y * local_340.scrape_points[6].raytrace_normal.x -
-                  (pSVar13->local_position).z * local_340.scrape_points[6].raytrace_intersection;
-      local_358 = (pSVar13->local_position).z * local_340.scrape_points[6].previous_position.z -
-                  (pSVar13->local_position).x * local_340.scrape_points[6].raytrace_normal.x;
-      local_354 = (pSVar13->local_position).x * local_340.scrape_points[6].raytrace_intersection -
-                  (pSVar13->local_position).y * local_340.scrape_points[6].previous_position.z;
-      local_3b0 = local_35c * 0.1f;
+      pCVar10->x = pCVar10->x + local_3a0;
+      (this_ptr->angular_momentum).y = (this_ptr->angular_momentum).y + local_39c;
+      pSVar13 = this_ptr->scrape_points + (int)local_64;
+      (this_ptr->angular_momentum).z = (this_ptr->angular_momentum).z + local_398;
+      local_358 = (pSVar13->local_position).y * local_340.scrape_points[6].raytrace_normal.y -
+                  (pSVar13->local_position).z * local_340.scrape_points[6].raytrace_normal.x;
+      local_354 = (pSVar13->local_position).z * local_340.scrape_points[6].raytrace_intersection -
+                  (pSVar13->local_position).x * local_340.scrape_points[6].raytrace_normal.y;
+      local_350 = (pSVar13->local_position).x * local_340.scrape_points[6].raytrace_normal.x -
+                  (pSVar13->local_position).y * local_340.scrape_points[6].raytrace_intersection;
       local_3ac = local_358 * 0.1f;
       local_3a8 = local_354 * 0.1f;
-      pCVar10->x = pCVar10->x + local_3b0;
-      (this_ptr->angular_momentum).y = (this_ptr->angular_momentum).y + local_3ac;
-      (this_ptr->angular_momentum).z = (this_ptr->angular_momentum).z + local_3a8;
-      local_340.scrape_point_count = (int)(pSVar12->local_position).x;
-      local_340.scrape_points[0].local_position.x = (pSVar12->local_position).y;
-      local_340.scrape_points[0].local_position.y = (pSVar12->local_position).z;
-      local_340.is_valid = (int)(pSVar13->local_position).x;
-      local_e8 = (pSVar13->local_position).y;
-      local_e4 = (pSVar13->local_position).z;
-      local_340.linear_velocity_local.y = 0.0;
-      local_340.linear_velocity_temp.x = 0.0;
-      local_340.linear_velocity_local.z = (float)this_ptr->mass * (float)32;
+      local_3a4 = local_350 * 0.1f;
+      pCVar10->x = pCVar10->x + local_3ac;
+      (this_ptr->angular_momentum).y = (this_ptr->angular_momentum).y + local_3a8;
+      (this_ptr->angular_momentum).z = (this_ptr->angular_momentum).z + local_3a4;
+      local_340.scrape_points[0].local_position.x = (pSVar12->local_position).x;
+      local_340.scrape_points[0].local_position.y = (pSVar12->local_position).y;
+      local_340.scrape_points[0].local_position.z = (pSVar12->local_position).z;
+      local_e8 = (pSVar13->local_position).x;
+      local_e4 = (pSVar13->local_position).y;
+      local_e0 = (pSVar13->local_position).z;
+      local_340.linear_velocity_local.z = 0.0;
+      local_340.linear_velocity_temp.y = 0.0;
+      local_340.linear_velocity_temp.x = (float)this_ptr->mass * (float)32;
       pCVar10 = core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
-                          (&this_ptr->rotation_matrix,(CVector3f *)&local_340.angular_velocity.y,
-                           (CVector3f *)&local_340.linear_velocity_local.y);
+                          (&this_ptr->rotation_matrix,(CVector3f *)&local_340.angular_velocity.z,
+                           (CVector3f *)&local_340.linear_velocity_local.z);
       local_340.scrape_points[1].transformed_position.y = 0.5f;
       if ((CVector3f *)&local_340.linear_velocity_local.z != pCVar10) {
         local_340.linear_velocity_local.z = pCVar10->x;
@@ -734,44 +735,44 @@ void __cdecl core_box_cpp_CBox_processPhysics_FUN_0041e350(CBox *this_ptr,float 
       core_dirmat_cpp_CMatrix3x3f_transformVectorTranspose_FUN_00472030
                 (&this_ptr->rotation_matrix,&local_340.scrape_points[0].previous_position,
                  &local_34[local_38].raytrace_normal);
-      fVar8 = (local_340.scrape_points[0].previous_position.z * (this_ptr->linear_velocity_local).z
+      fVar2 = (local_340.scrape_points[0].previous_position.z * (this_ptr->linear_velocity_local).z
               + local_340.scrape_points[0].previous_position.x * pCVar10->x +
                 local_340.scrape_points[0].previous_position.y * (this_ptr->linear_velocity_local).y
               ) * 2f;
       if (&local_340.moment_of_inertia.y != &local_340.scrape_points[2].transformed_position.y) {
         local_340.moment_of_inertia.y =
-             local_340.scrape_points[0].previous_position.x * fVar8 - pCVar10->x;
+             local_340.scrape_points[0].previous_position.x * fVar2 - pCVar10->x;
         local_340.moment_of_inertia.z =
-             local_340.scrape_points[0].previous_position.y * fVar8 -
+             local_340.scrape_points[0].previous_position.y * fVar2 -
              (this_ptr->linear_velocity_local).y;
         local_340.extents.x =
-             local_340.scrape_points[0].previous_position.z * fVar8 -
+             local_340.scrape_points[0].previous_position.z * fVar2 -
              (this_ptr->linear_velocity_local).z;
       }
-      fVar7 = local_340.moment_of_inertia.z * -1f * 0.2f;
-      fVar6 = local_340.extents.x * -1f * 0.2f;
+      fVar8 = local_340.moment_of_inertia.z * -1f * 0.2f;
+      fVar7 = local_340.extents.x * -1f * 0.2f;
       piVar1 = &this_ptr->mass;
-      fVar8 = (this_ptr->linear_velocity_local).y;
-      fVar2 = (this_ptr->linear_velocity_local).z;
-      fVar3 = (float)*piVar1;
+      fVar2 = (this_ptr->linear_velocity_local).y;
+      fVar3 = (this_ptr->linear_velocity_local).z;
       fVar4 = (float)*piVar1;
-      fVar5 = 1.0 / delta_time;
+      fVar5 = (float)*piVar1;
+      fVar6 = 1.0 / delta_time;
       (this_ptr->linear_momentum).x =
            (this_ptr->linear_momentum).x +
            (local_340.moment_of_inertia.y * -1f * 0.2f -
-           (this_ptr->linear_velocity_local).x) * (float)*piVar1 * fVar5;
+           (this_ptr->linear_velocity_local).x) * (float)*piVar1 * fVar6;
       (this_ptr->linear_momentum).y =
-           (this_ptr->linear_momentum).y + (fVar7 - fVar8) * fVar3 * fVar5;
+           (this_ptr->linear_momentum).y + (fVar8 - fVar2) * fVar4 * fVar6;
       (this_ptr->linear_momentum).z =
-           (this_ptr->linear_momentum).z + (fVar6 - fVar2) * fVar4 * fVar5;
+           (this_ptr->linear_momentum).z + (fVar7 - fVar3) * fVar5 * fVar6;
       (this_ptr->angular_velocity).z = 0.0;
       (this_ptr->angular_velocity).y = (this_ptr->angular_velocity).z;
       (this_ptr->angular_velocity).x = (this_ptr->angular_velocity).y;
     }
     if ((0 < local_18) &&
-       (fVar8 = (this_ptr->linear_velocity_local).y, fVar2 = (this_ptr->linear_velocity_local).x,
-       fVar3 = (this_ptr->linear_velocity_local).z,
-       SQRT(fVar3 * fVar3 + fVar2 * fVar2 + fVar8 * fVar8) < 1.0)) {
+       (fVar2 = (this_ptr->linear_velocity_local).y, fVar3 = (this_ptr->linear_velocity_local).x,
+       fVar4 = (this_ptr->linear_velocity_local).z,
+       SQRT(fVar4 * fVar4 + fVar3 * fVar3 + fVar2 * fVar2) < 1.0)) {
       iVar11 = 0;
       iVar17 = 0;
       pCVar14 = this_ptr;

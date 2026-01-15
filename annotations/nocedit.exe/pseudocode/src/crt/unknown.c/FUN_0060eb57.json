@@ -1,17 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 14,
-    "complexity_score": 47,
+    "complexity_score": 21,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 7,
-    "suspect_count": 3,
+    "pseudocode_lines": 6,
+    "suspect_count": 1,
     "suspect_types": [
-      "special_crt_function",
-      "stack_param"
+      "special_crt_function"
     ],
-    "total_lines": 21
+    "total_lines": 20
   },
   "cross_references": [
     {
@@ -88,20 +87,6 @@
     "variables": []
   },
   "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 5,
-      "match": "in_stack_00000004",
-      "text": "uint in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000004",
-      "text": "return (ulonglong)(in_stack_00000004 & 0x80000000) << 0x20 | 0x7ff0000000000000;",
-      "type": "stack_param"
-    },
     {
       "address": "0060eb57",
       "crt_type": "runtime support",

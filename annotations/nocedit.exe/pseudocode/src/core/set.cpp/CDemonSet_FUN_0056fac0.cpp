@@ -10,7 +10,6 @@ float __cdecl core_set_cpp_CDemonSet_FUN_0056fac0(CDemonSet *this_ptr)
 
 {
   SRoom *pSVar1;
-  BADSPACEBASE *in_ESP;
   int iVar2;
   CMatrix3x3f *matrix;
   float *in_stack_00000008;

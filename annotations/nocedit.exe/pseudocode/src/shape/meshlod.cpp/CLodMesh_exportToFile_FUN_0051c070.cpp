@@ -10,7 +10,6 @@ void __cdecl shape_meshlod_cpp_CLodMesh_exportToFile_FUN_0051c070(CLodMesh *this
 
 {
   FILE *file_ptr;
-  CLodMesh *in_stack_00000010;
   
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Exporting %s");
@@ -21,7 +20,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_exportToFile_FUN_0051c070(CLodMesh *this
     g_CurrentLineNumber = 0x133f;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't create %s",filename);
   }
-  shape_meshlod_cpp_CLodMesh_exportToS3D_FUN_0051c100(in_stack_00000010,file_ptr);
+  shape_meshlod_cpp_CLodMesh_exportToS3D_FUN_0051c100(this_ptr,file_ptr);
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_ptr,"..\\shape\\meshlod.cpp",0x1347);
   return;
 }

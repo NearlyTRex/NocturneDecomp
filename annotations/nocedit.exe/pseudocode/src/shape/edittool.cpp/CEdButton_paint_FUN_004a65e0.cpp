@@ -16,16 +16,17 @@ shape_edittool_cpp_CEdButton_paint_FUN_004a65e0(CEdButton *this_ptr,int draw_bor
   int iVar4;
   uint uVar5;
   uint uVar6;
-  BADSPACEBASE *in_ESP;
   char *pcVar7;
-  char *pcVar8;
+  byte *pbVar8;
   char *pcVar9;
-  byte bVar10;
-  int in_stack_00000018;
-  int in_stack_0000001c;
+  byte *pbVar10;
+  byte *pbVar11;
+  byte bVar12;
+  byte local_dc [200];
+  int local_14;
   
   iVar2 = g_ClipTop;
-  bVar10 = 0;
+  bVar12 = 0;
   g_ClipTop = this_ptr->top;
   shape_edittool_cpp_draw3DBorder_FUN_004a58f0
             (this_ptr->left,g_ClipTop,this_ptr->right,this_ptr->bottom,this_ptr->button_state);
@@ -35,80 +36,80 @@ shape_edittool_cpp_CEdButton_paint_FUN_004a65e0(CEdButton *this_ptr,int draw_bor
   iVar3 = engine_font_cpp_CBitFont_getCharWidth_FUN_004cff40(g_EditorFont,pcVar7);
   iVar4 = engine_font_cpp_CBitFont_getCharXAdvance_FUN_004d0200(g_EditorFont,0x41);
   iVar2 = this_ptr->button_state + ((this_ptr->right + this_ptr->left) - iVar2) / 2;
+  local_14 = this_ptr->button_state + ((this_ptr->top + this_ptr->bottom) - (iVar3 + iVar4)) / 2;
   engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
-            (g_EditorFont,pcVar7,iVar2,
-             this_ptr->button_state + ((this_ptr->top + this_ptr->bottom) - (iVar3 + iVar4)) / 2,
-             g_UITextColor,-1);
+            (g_EditorFont,pcVar7,iVar2,local_14,g_UITextColor,-1);
   g_ActiveRenderColor = g_UITextColor;
-  if (in_stack_0000001c != 0) {
+  if (draw_border_flag != 0) {
     shape_edittool_cpp_drawDashedLine_FUN_0049d290
               (this_ptr->left + 3,this_ptr->top + 3,this_ptr->right + -5,this_ptr->bottom + -4,1);
   }
-  pcVar9 = &stack0xffffff3c;
+  pbVar10 = local_dc;
+  pbVar8 = local_dc;
+  pbVar11 = local_dc;
   pcVar7 = this_ptr->button_text;
   do {
     cVar1 = *pcVar7;
-    *pcVar9 = cVar1;
+    *pbVar10 = cVar1;
     if (cVar1 == '\0') break;
     cVar1 = pcVar7[1];
     pcVar7 = pcVar7 + 2;
-    pcVar9[1] = cVar1;
-    pcVar9 = pcVar9 + 2;
+    ((char *)pbVar10)[1] = cVar1;
+    pbVar10 = (byte *)((char *)pbVar10 + 2);
   } while (cVar1 != '\0');
   uVar5 = 0;
   do {
     uVar6 = 0xffffffff;
-    pcVar7 = &stack0xffffff3c;
+    pbVar10 = local_dc;
     do {
       if (uVar6 == 0) break;
       uVar6 = uVar6 - 1;
-      cVar1 = *pcVar7;
-      pcVar7 = pcVar7 + (uint)bVar10 * -2 + 1;
+      cVar1 = *pbVar10;
+      pbVar10 = (byte *)((char *)pbVar10 + (uint)bVar12 * -2 + 1);
     } while (cVar1 != '\0');
     if (~uVar6 - 1 <= uVar5) break;
-    iVar3 = crt_ctype_c_toupper_FUN_005ff9e0((uint)(byte)(&stack0xffffff3c)[uVar5]);
-    (&stack0xffffff40)[uVar5] = (char)iVar3;
+    iVar3 = crt_ctype_c_toupper_FUN_005ff9e0((uint)local_dc[uVar5]);
+    local_dc[uVar5] = (byte)iVar3;
     uVar5 = uVar5 + 1;
   } while( true );
   iVar3 = crt_ctype_c_toupper_FUN_005ff9e0((uint)(byte)this_ptr->shortcut_key);
-  pcVar7 = &stack0xffffff40;
-  pcVar9 = &stack0xffffff40;
   do {
-    pcVar8 = pcVar7;
+    pcVar7 = (char *)pbVar8;
+    if (*pbVar8 == (char)iVar3) goto LAB_004a6754;
+    if (*pbVar8 == '\0') break;
+    pcVar7 = (char *)pbVar8 + 1;
     if (*pcVar7 == (char)iVar3) goto LAB_004a6754;
-    if (*pcVar7 == '\0') break;
-    pcVar8 = pcVar7 + 1;
-    if (*pcVar8 == (char)iVar3) goto LAB_004a6754;
-    pcVar7 = pcVar7 + 2;
-  } while (*pcVar8 != '\0');
-  pcVar8 = (char *)0x0;
+    pbVar8 = (byte *)((char *)pbVar8 + 2);
+  } while (*pcVar7 != '\0');
+  pcVar7 = (char *)0x0;
 LAB_004a6754:
-  if (pcVar8 == (char *)0x0) {
+  if (pcVar7 == (char *)0x0) {
     return;
   }
-  pcVar7 = this_ptr->button_text;
+  pcVar9 = this_ptr->button_text;
   do {
-    cVar1 = *pcVar7;
-    *pcVar9 = cVar1;
+    cVar1 = *pcVar9;
+    *pbVar11 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar7[1];
-    pcVar7 = pcVar7 + 2;
-    pcVar9[1] = cVar1;
+    cVar1 = pcVar9[1];
     pcVar9 = pcVar9 + 2;
+    ((char *)pbVar11)[1] = cVar1;
+    pbVar11 = (byte *)((char *)pbVar11 + 2);
   } while (cVar1 != '\0');
-  *pcVar8 = '\0';
-  iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_EditorFont,&stack0xffffff40);
+  *pcVar7 = '\0';
+  iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_EditorFont,(char *)local_dc);
   uVar5 = iVar3 + g_EditorFont->char_spacing;
-  bVar10 = this_ptr->button_text[0];
+  bVar12 = this_ptr->button_text[0];
   uVar6 = crt_ctype_c_toupper_FUN_005ff9e0((uint)(byte)this_ptr->shortcut_key);
-  if (uVar6 == bVar10) {
-    uVar5 = uVar6 ^ bVar10;
+  if (uVar6 == bVar12) {
+    uVar5 = uVar6 ^ bVar12;
   }
   iVar2 = iVar2 + uVar5;
-  engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(g_EditorFont,0x41);
+  iVar3 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(g_EditorFont,0x41);
+  local_14 = local_14 + iVar3 + 1;
   g_ActiveRenderColor = g_UITextColor;
   iVar3 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01a0
                     (g_EditorFont,(uint)(byte)this_ptr->shortcut_key);
-  engine_2d_c_drawHLine_FUN_00402ee0(iVar2,in_stack_00000018,iVar3 + iVar2 + -1);
+  engine_2d_c_drawHLine_FUN_00402ee0(iVar2,local_14,iVar3 + iVar2 + -1);
   return;
 }

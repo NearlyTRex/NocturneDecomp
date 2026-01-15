@@ -1,17 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 846,
-    "complexity_score": 748,
+    "complexity_score": 698,
     "cross_reference_count": 2,
     "function_call_count": 10,
     "global_count": 48,
     "pseudocode_lines": 383,
-    "suspect_count": 33,
+    "suspect_count": 29,
     "suspect_types": [
-      "badspacebase",
       "concat_artifact",
       "pointer_cast",
-      "register_param",
       "stack_param",
       "sub_artifact",
       "unknown_field"
@@ -1156,22 +1154,8 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 15,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 15,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 19,
       "match": "in_stack_fffffedc",
       "text": "double in_stack_fffffedc;",
       "type": "stack_param"
@@ -1189,13 +1173,6 @@
       "match": "SUB84",
       "text": "SUB84 /* extract 2-byte value */(in_stack_fffffedc,0));",
       "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 79,
-      "match": "CONCAT44",
-      "text": "local_84 = (double)CONCAT44 /* combine 2-byte values */(iVar3,(uint)local_84);",
-      "type": "concat_artifact"
     },
     {
       "description": "Complex pointer cast",
@@ -1259,13 +1236,6 @@
       "match": "(int *)((int)",
       "text": "*(int *)((int)g_TempNeighborFaces[0].edge_dot_products + iVar10 + 0xc) =",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 203,
-      "match": "._4_4_",
-      "text": "(((local_60 == 0 || (local_84._4_4_ == 0)) && ((local_60 == 4 || (local_7c == 0)))))) {",
-      "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
@@ -1355,14 +1325,14 @@
       "description": "Decompiler double/longlong composition artifact",
       "line": 343,
       "match": "CONCAT44",
-      "text": "if (local_84 < (double)CONCAT44 /* combine 2-byte values */(local_110,uStack_114)) {",
+      "text": "if (dStack_88 < (double)CONCAT44 /* combine 2-byte values */(local_110,uStack_114)) {",
       "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong extraction artifact",
       "line": 344,
       "match": "SUB84",
-      "text": "uStack_104 = SUB84 /* extract 2-byte value */(local_84,0);",
+      "text": "uStack_104 = SUB84 /* extract 2-byte value */(dStack_88,0);",
       "type": "sub_artifact"
     },
     {

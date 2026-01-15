@@ -11,8 +11,6 @@ void __cdecl wincore_wddvmem_cpp_resetGraphicsSystem_FUN_005ed2a0(void)
 {
   int iVar1;
   HRESULT HVar2;
-  uint uStack00000010;
-  uint uStack0000003c;
   
   g_GraphicsResetFlag = 1;
   if (g_FullscreenMode != 0) {
@@ -27,10 +25,8 @@ void __cdecl wincore_wddvmem_cpp_resetGraphicsSystem_FUN_005ed2a0(void)
       wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
       wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
     }
-    uStack00000010 = 0x5ed2cf;
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
     if (g_DirectDrawUnknown != (IUnknown *)0x0) {
-      uStack00000010 = 0x5ed2e0;
       (*g_DirectDrawUnknown->vtable->Release)(g_DirectDrawUnknown);
       g_DirectDrawUnknown = (IUnknown *)0x0;
     }
@@ -44,11 +40,9 @@ void __cdecl wincore_wddvmem_cpp_resetGraphicsSystem_FUN_005ed2a0(void)
     }
     if (g_DirectDrawObject != (IDirectDraw *)0x0) {
       (*g_DirectDrawObject->vtable->RestoreDisplayMode)(g_DirectDrawObject);
-      uStack00000010 = 0x5ed336;
       (*g_DirectDrawObject->vtable->Release)((IUnknown *)g_DirectDrawObject);
       g_DirectDrawObject = (IDirectDraw *)0x0;
     }
-    uStack00000010 = 0x5ed355;
     iVar1 = wincore_windll_cpp_setResolutionAndColorTable_FUN_005b7460
                       (g_WindowWidth,g_WindowHeight,g_BitsPerPixel);
     if (iVar1 == 0) {
@@ -76,7 +70,6 @@ void __cdecl wincore_wddvmem_cpp_resetGraphicsSystem_FUN_005ed2a0(void)
         (*g_DirectDrawObject->vtable->SetCooperativeLevel)
                   (g_DirectDrawObject,g_MainWindowHandle,0x11);
       }
-      uStack0000003c = 0x5ed409;
       wincore_wddvmem_cpp_setScreenResolution_FUN_005ecef0
                 (g_WindowWidth,g_WindowHeight,g_BitsPerPixel);
     }

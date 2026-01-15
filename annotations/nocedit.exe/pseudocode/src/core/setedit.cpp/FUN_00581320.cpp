@@ -10,7 +10,6 @@ void core_setedit_cpp_FUN_00581320(void)
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   CDemonSet *in_stack_00000004;
   int in_stack_00000008;
   
@@ -23,9 +22,9 @@ void core_setedit_cpp_FUN_00581320(void)
     shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
               (g_CEditorToolsPtr,"Computing fog for camera %s");
     crt_stdio_c_sprintf_FUN_005fdbd0
-              (&stack0xffffff00,"backdrop\\%s.fog",
+              (&stack0xfffffef0,"backdrop\\%s.fog",
                in_stack_00000004->cameras + in_stack_00000008);
-    crt_io_c_deleteFile_FUN_005ff9d0(&stack0xffffff04);
+    crt_io_c_deleteFile_FUN_005ff9d0(&stack0xfffffef0);
     do {
       core_set_cpp_CDemonSet_setCameraView_FUN_0056ae50(in_stack_00000004,in_stack_00000008);
       core_set_cpp_CDemonSet_FUN_0056c1a0(in_stack_00000004);

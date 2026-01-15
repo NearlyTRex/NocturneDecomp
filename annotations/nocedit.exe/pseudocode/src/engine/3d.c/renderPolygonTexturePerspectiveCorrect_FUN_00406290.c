@@ -17,8 +17,6 @@ engine_3d_c_renderPolygonTexturePerspectiveCorrect_FUN_00406290(SMRGLHeaderPrimi
   float fVar5;
   int iVar6;
   int vertex_count;
-  int in_stack_0000000c;
-  int in_stack_00000010;
   
   pSVar4 = polygon_info + 1;
   iVar2 = engine_3d_c_isVisiblePlane_FUN_00403950(&polygon_info->surface_normal);
@@ -42,7 +40,7 @@ engine_3d_c_renderPolygonTexturePerspectiveCorrect_FUN_00406290(SMRGLHeaderPrimi
     engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
     g_RenderStateFlag2 = PREPROCESS_DEPTH_BUFFER_PREP;
     iVar2 = 0;
-    for (iVar6 = 0; iVar6 < *(int *)(in_stack_0000000c + 4) * 3; iVar6 = iVar6 + 3) {
+    for (iVar6 = 0; iVar6 < (polygon_info->base).count * 3; iVar6 = iVar6 + 3) {
       *(int *)((int)g_ProcessedVertexIndices + iVar2) = (pSVar4->base).type;
       fVar3 = (float)(pSVar4->base).count;
       fVar5 = (float)(pSVar4->surface_normal).A;
@@ -83,5 +81,5 @@ engine_3d_c_renderPolygonTexturePerspectiveCorrect_FUN_00406290(SMRGLHeaderPrimi
     }
     engine_clipper_c_clipAndRasterize_FUN_004371b0(vertex_count,g_ProcessedVertexIndices);
   }
-  return (SMRGLHeaderExtended *)(*(int *)(in_stack_00000010 + 4) * 0xc + in_stack_00000010 + 0x18);
+  return (SMRGLHeaderExtended *)((int)&polygon_info[1].base + (polygon_info->base).count * 0xc);
 }

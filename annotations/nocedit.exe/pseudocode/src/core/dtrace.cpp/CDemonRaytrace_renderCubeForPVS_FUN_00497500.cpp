@@ -11,127 +11,121 @@ core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
           (CDemonRaytrace *this_ptr,int grid_x,int grid_y,int grid_z,int render_mode)
 
 {
-  float fVar1;
-  uint uVar2;
-  int iVar3;
+  uint uVar1;
+  int iVar2;
   CDemonRenderer *this_ptr_00;
   CDemonRenderer *this_ptr_01;
   CDemonRenderer *this_ptr_02;
   CDemonRenderer *this_ptr_03;
   CDemonRenderer *this_ptr_04;
   CDemonRenderer *this_ptr_05;
-  CDemonCube *unaff_EBX;
-  BADSPACEBASE *in_ESP;
-  int in_stack_00000020;
-  int in_stack_00000030;
-  int in_stack_00000038;
-  SMRGLHeaderPrimitive *pSVar4;
-  CVector3i local_8c;
-  byte local_7c [12];
-  int local_70;
-  int local_6c;
-  byte local_68 [12];
-  int local_5c;
-  int local_58;
-  CVector3i local_54;
-  CVector3i local_48;
-  CVector3i local_34;
-  CVector3f local_28;
-  CVector3f local_1c;
+  int unaff_EBX;
+  float unaff_ESI;
+  int unaff_EDI;
+  SMRGLHeaderPrimitive *pSVar3;
+  CVector3i local_a0;
+  CVector3i local_94;
+  CVector3i local_88;
+  CVector3i local_7c;
+  CVector3i local_70;
+  CVector3f local_64;
+  CVector3i local_58;
+  CDemonCube *local_4c;
+  CVector3i local_40;
+  CDemonCube *local_34;
+  float local_30;
+  float local_2c;
+  float local_28;
+  float local_24;
+  float local_20;
+  float local_1c;
+  int local_18;
+  int local_14;
   
   g_CubesTestedCount = g_CubesTestedCount + 1;
   if ((((((this_ptr->grid_bounds_min).x <= grid_x) && ((this_ptr->grid_bounds_min).y <= grid_y)) &&
        ((this_ptr->grid_bounds_min).z <= grid_z)) &&
       ((grid_x <= (this_ptr->grid_bounds_max).x && (grid_y <= (this_ptr->grid_bounds_max).y)))) &&
      (grid_z <= (this_ptr->grid_bounds_max).z)) {
-    local_34.y = (int)core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_004952b0
-                                (this_ptr,grid_x,grid_y,grid_z);
-    if (((CDemonCube *)local_34.y != (CDemonCube *)0x0) &&
-       (((CDemonCube *)local_34.y)->voxel_buffer1 != (SVoxelGrid *)0x0)) {
-      local_28.y = (float)grid_x;
-      local_1c.z = (float)grid_z;
-      local_1c.x = (float)grid_z;
-      local_34.z = (int)(float)grid_z;
+    local_34 = core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_004952b0(this_ptr,grid_x,grid_y,grid_z);
+    if ((local_34 != (CDemonCube *)0x0) && (local_34->voxel_buffer1 != (SVoxelGrid *)0x0)) {
+      local_28 = (float)grid_x;
+      local_18 = grid_y;
+      local_14 = grid_z;
+      local_20 = (float)grid_y;
+      local_30 = (float)grid_z;
       g_CubesWithVoxelsCount = g_CubesWithVoxelsCount + 1;
-      local_68._8_4_ =
-           (uint)
-           ROUND((local_28.y * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
-                 256f);
-      local_5c = (int)ROUND((local_1c.x * (this_ptr->cell_size).y + (this_ptr->bbox_min).y) *
-                            256f);
-      local_58 = (int)ROUND(((float)local_34.z * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
-                            256f);
+      local_64.x = (float)(int)ROUND((local_28 * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
+                                     256f);
+      local_64.y = (float)(int)ROUND((local_20 * (this_ptr->cell_size).y + (this_ptr->bbox_min).y) *
+                                     256f);
+      local_64.z = (float)(int)ROUND((local_30 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
+                                     256f);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,
-                 (CVector3i *)(local_68 + 8));
-      local_28.y = (float)(grid_x + 1);
-      local_7c._8_4_ =
-           (uint)
-           ROUND((local_28.y * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
-                 256f);
-      local_70 = (int)ROUND((local_1c.y * (this_ptr->cell_size).y + (this_ptr->bbox_min).y) *
-                            256f);
-      local_6c = (int)ROUND((local_28.x * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
-                            256f);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,
-                 (CVector3i *)(local_7c + 8));
-      local_1c.y = (float)(grid_z + 1);
-      local_34.x = (int)ROUND((local_28.z * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
+                (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,(CVector3i *)&local_64);
+      local_14 = grid_x + 1;
+      local_2c = (float)local_14;
+      local_7c.x = (int)ROUND((local_2c * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
                               256f);
-      local_34.y = (int)ROUND((local_1c.z * (this_ptr->cell_size).y + (this_ptr->bbox_min).y) *
+      local_7c.y = (int)ROUND((local_20 * (this_ptr->cell_size).y + (this_ptr->bbox_min).y) *
                               256f);
-      local_34.z = (int)ROUND((local_1c.y * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
+      local_7c.z = (int)ROUND((local_30 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
                               256f);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                (&g_CDemonRendererPtr->vertex_buffer_ptr[2].projected_vertex,&local_34);
-      local_48.x = (int)ROUND((local_1c.y * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
+                (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,&local_7c);
+      local_14 = grid_z + 1;
+      local_24 = (float)local_14;
+      local_40.x = (int)ROUND((local_2c * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
                               256f);
-      local_48.y = (int)ROUND(((float)grid_z * (this_ptr->cell_size).y + (this_ptr->bbox_min).y) *
+      local_40.y = (int)ROUND((local_20 * (this_ptr->cell_size).y + (this_ptr->bbox_min).y) *
                               256f);
-      local_48.z = (int)ROUND((local_1c.z * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
-                              256f);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                (&g_CDemonRendererPtr->vertex_buffer_ptr[3].projected_vertex,&local_48);
-      fVar1 = (float)(in_stack_00000020 + 1);
-      local_8c.x = (int)ROUND((local_1c.z * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
-                              256f);
-      local_8c.y = (int)ROUND((fVar1 * (this_ptr->cell_size).y + (this_ptr->bbox_min).y) *
-                              256f);
-      local_8c.z = (int)ROUND((local_1c.x * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
+      local_40.z = (int)ROUND((local_24 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
                               256f);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                (&g_CDemonRendererPtr->vertex_buffer_ptr[4].projected_vertex,&local_8c);
-      local_8c.x = (int)(local_1c.y * (this_ptr->cell_size).z + (this_ptr->bbox_min).z);
-      local_7c._0_4_ =
-           (uint)
-           ROUND((local_1c.z * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
-                 256f);
-      local_7c._4_4_ =
-           (uint)
-           ROUND(((float)unaff_EBX * (this_ptr->cell_size).y + (this_ptr->bbox_min).y) *
-                 256f);
-      local_7c._8_4_ = (uint)ROUND((float)local_8c.x * 256f);
-      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                (&g_CDemonRendererPtr->vertex_buffer_ptr[5].projected_vertex,(CVector3i *)local_7c);
-      local_8c.x = (int)((float)(in_stack_00000020 + 1) * (this_ptr->cell_size).y +
-                        (this_ptr->bbox_min).y);
-      local_8c.y = (int)(fVar1 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z);
-      local_54.x = (int)ROUND(((float)grid_z * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
+                (&g_CDemonRendererPtr->vertex_buffer_ptr[2].projected_vertex,&local_40);
+      local_58.x = (int)ROUND((local_28 * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
                               256f);
-      local_54.y = (int)ROUND((float)local_8c.x * 256f);
-      local_54.z = (int)ROUND((float)local_8c.y * 256f);
+      local_58.y = (int)ROUND((local_20 * (this_ptr->cell_size).y + (this_ptr->bbox_min).y) *
+                              256f);
+      local_58.z = (int)ROUND((local_24 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
+                              256f);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                (&g_CDemonRendererPtr->vertex_buffer_ptr[6].projected_vertex,&local_54);
-      local_8c.x = (int)(fVar1 * (this_ptr->cell_size).x + (this_ptr->bbox_min).x);
-      local_8c.y = (int)((float)this_ptr * (this_ptr->cell_size).y + (this_ptr->bbox_min).y);
-      local_8c.z = (int)((float)unaff_EBX * (this_ptr->cell_size).z + (this_ptr->bbox_min).z);
-      local_68._0_4_ = (uint)ROUND((float)local_8c.x * 256f);
-      local_68._4_4_ = (uint)ROUND((float)local_8c.y * 256f);
-      local_68._8_4_ = (uint)ROUND((float)local_8c.z * 256f);
+                (&g_CDemonRendererPtr->vertex_buffer_ptr[3].projected_vertex,&local_58);
+      local_14 = grid_y + 1;
+      local_1c = (float)local_14;
+      local_a0.x = (int)ROUND((local_28 * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
+                              256f);
+      local_a0.y = (int)ROUND((local_1c * (this_ptr->cell_size).y + (this_ptr->bbox_min).y) *
+                              256f);
+      local_a0.z = (int)ROUND((local_30 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
+                              256f);
       wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
-                (&g_CDemonRendererPtr->vertex_buffer_ptr[7].projected_vertex,(CVector3i *)local_68);
-      uVar2 = g_RenderVertexBuffer[0].projected_vertex.screen_x &
+                (&g_CDemonRendererPtr->vertex_buffer_ptr[4].projected_vertex,&local_a0);
+      local_94.x = (int)ROUND((local_2c * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
+                              256f);
+      local_94.y = (int)ROUND((local_1c * (this_ptr->cell_size).y + (this_ptr->bbox_min).y) *
+                              256f);
+      local_94.z = (int)ROUND((local_30 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
+                              256f);
+      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+                (&g_CDemonRendererPtr->vertex_buffer_ptr[5].projected_vertex,&local_94);
+      local_70.x = (int)ROUND((local_2c * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
+                              256f);
+      local_70.y = (int)ROUND((local_1c * (this_ptr->cell_size).y + (this_ptr->bbox_min).y) *
+                              256f);
+      local_70.z = (int)ROUND((local_24 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
+                              256f);
+      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+                (&g_CDemonRendererPtr->vertex_buffer_ptr[6].projected_vertex,&local_70);
+      local_88.x = (int)ROUND((local_28 * (this_ptr->cell_size).x + (this_ptr->bbox_min).x) *
+                              256f);
+      local_88.y = (int)ROUND((local_1c * (this_ptr->cell_size).y + (this_ptr->bbox_min).y) *
+                              256f);
+      local_88.z = (int)ROUND((local_24 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
+                              256f);
+      wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
+                (&g_CDemonRendererPtr->vertex_buffer_ptr[7].projected_vertex,&local_88);
+      uVar1 = g_RenderVertexBuffer[0].projected_vertex.screen_x &
               g_RenderVertexBuffer[1].projected_vertex.screen_x &
               g_RenderVertexBuffer[2].projected_vertex.screen_x &
               g_RenderVertexBuffer[3].projected_vertex.screen_x &
@@ -139,57 +133,57 @@ core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
               g_RenderVertexBuffer[5].projected_vertex.screen_x &
               g_RenderVertexBuffer[6].projected_vertex.screen_x &
               g_RenderVertexBuffer[7].projected_vertex.screen_x;
-      if (((uVar2 & 0x80000000) == 0) || ((char)uVar2 == '\0')) {
+      if (((uVar1 & 0x80000000) == 0) || ((char)uVar1 == '\0')) {
         g_CubesVisibleCount = g_CubesVisibleCount + 1;
-        if (1 < in_stack_00000038) {
-          local_8c.x = 4;
-          pSVar4 = (SMRGLHeaderPrimitive *)0x497be4;
+        if (1 < render_mode) {
+          local_14 = grid_z;
+          pSVar3 = (SMRGLHeaderPrimitive *)0x497be4;
           crt_math_c_round_FUN_005fe6b0
                     ((double)(((float)grid_z * (this_ptr->cell_size).z + (this_ptr->bbox_min).z) *
                              (float)-256));
-          iVar3 = engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50
-                            (this_ptr_00,pSVar4);
-          if (iVar3 == 0) {
-            local_8c.x = 6;
-            pSVar4 = (SMRGLHeaderPrimitive *)0x497c58;
+          iVar2 = engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50
+                            (this_ptr_00,pSVar3);
+          if (iVar2 == 0) {
+            local_18 = grid_z + 1;
+            pSVar3 = (SMRGLHeaderPrimitive *)0x497c58;
             crt_math_c_round_FUN_005fe6b0
-                      ((double)(((float)(grid_z + 1) * (this_ptr->cell_size).z +
-                                (this_ptr->bbox_min).z) * (float)256));
-            iVar3 = engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50
-                              (this_ptr_01,pSVar4);
-            if (iVar3 == 0) {
-              local_8c.x = 3;
-              pSVar4 = (SMRGLHeaderPrimitive *)0x497cc5;
+                      ((double)(((float)local_18 * (this_ptr->cell_size).z + (this_ptr->bbox_min).z)
+                               * (float)256));
+            iVar2 = engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50
+                              (this_ptr_01,pSVar3);
+            if (iVar2 == 0) {
+              local_1c = (float)grid_x;
+              pSVar3 = (SMRGLHeaderPrimitive *)0x497cc5;
               crt_math_c_round_FUN_005fe6b0
                         ((double)(((float)grid_x * (this_ptr->cell_size).x + (this_ptr->bbox_min).x)
                                  * (float)-256));
-              iVar3 = engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50
-                                (this_ptr_02,pSVar4);
-              if (iVar3 == 0) {
-                local_8c.x = 5;
-                pSVar4 = (SMRGLHeaderPrimitive *)0x497d31;
+              iVar2 = engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50
+                                (this_ptr_02,pSVar3);
+              if (iVar2 == 0) {
+                local_20 = (float)(grid_x + 1);
+                pSVar3 = (SMRGLHeaderPrimitive *)0x497d31;
                 crt_math_c_round_FUN_005fe6b0
-                          ((double)(((float)(grid_x + 1) * (this_ptr->cell_size).x +
+                          ((double)(((float)(int)local_20 * (this_ptr->cell_size).x +
                                     (this_ptr->bbox_min).x) * (float)256));
-                iVar3 = engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50
-                                  (this_ptr_03,pSVar4);
-                if (iVar3 == 0) {
-                  local_8c.x = 7;
-                  pSVar4 = (SMRGLHeaderPrimitive *)0x497db0;
+                iVar2 = engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50
+                                  (this_ptr_03,pSVar3);
+                if (iVar2 == 0) {
+                  local_24 = (float)(unaff_EBX + 1);
+                  pSVar3 = (SMRGLHeaderPrimitive *)0x497db0;
                   crt_math_c_round_FUN_005fe6b0
-                            ((double)(((float)(in_stack_00000030 + 1) * (this_ptr->cell_size).y +
+                            ((double)(((float)(int)local_24 * (this_ptr->cell_size).y +
                                       (this_ptr->bbox_min).y) * (float)256));
-                  iVar3 = engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50
-                                    (this_ptr_04,pSVar4);
-                  if (iVar3 == 0) {
-                    local_8c.x = 3;
-                    pSVar4 = (SMRGLHeaderPrimitive *)0x497e23;
+                  iVar2 = engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50
+                                    (this_ptr_04,pSVar3);
+                  if (iVar2 == 0) {
+                    pSVar3 = (SMRGLHeaderPrimitive *)0x497e23;
+                    local_28 = unaff_ESI;
                     crt_math_c_round_FUN_005fe6b0
-                              ((double)(((float)in_stack_00000030 * (this_ptr->cell_size).y +
+                              ((double)(((float)(int)unaff_ESI * (this_ptr->cell_size).y +
                                         (this_ptr->bbox_min).y) * (float)-256));
-                    iVar3 = engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50
-                                      (this_ptr_05,pSVar4);
-                    if (iVar3 == 0) {
+                    iVar2 = engine_drender_cpp_CDemonRenderer_renderTexturedBasic_FUN_0048ab50
+                                      (this_ptr_05,pSVar3);
+                    if (iVar2 == 0) {
                       return;
                     }
                   }
@@ -198,22 +192,22 @@ core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
             }
           }
         }
-        local_28.x = (float)grid_x * (this_ptr->cell_size).x + (this_ptr->bbox_min).x;
-        local_28.y = (float)in_stack_00000030 * (this_ptr->cell_size).y + (this_ptr->bbox_min).y;
+        local_64.x = (float)grid_x * (this_ptr->cell_size).x + (this_ptr->bbox_min).x;
+        local_2c = (float)grid_z;
+        local_64.y = (float)unaff_EDI * (this_ptr->cell_size).y + (this_ptr->bbox_min).y;
         g_CubesRenderedCount = g_CubesRenderedCount + 1;
-        local_28.z = (float)grid_z * (this_ptr->cell_size).z + (this_ptr->bbox_min).z;
+        local_64.z = (float)grid_z * (this_ptr->cell_size).z + (this_ptr->bbox_min).z;
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
-                  (g_CDemonRendererPtr,&local_28);
-        core_dcube_cpp_CDemonCube_rotateVertices_FUN_00457650
-                  ((CDemonCube *)(grid_x + 1),this_ptr->rendering_mode);
+                  (g_CDemonRendererPtr,&local_64);
+        core_dcube_cpp_CDemonCube_rotateVertices_FUN_00457650(local_4c,this_ptr->rendering_mode);
         engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0048c450
                   (g_CDemonRendererPtr,&g_ZeroVector);
-        iVar3 = g_PVSDrawnCubeCount;
-        g_PVSCubePointers[g_PVSDrawnCubeCount] = unaff_EBX;
-        if (g_PVSCubePositions + iVar3 != &local_1c) {
-          g_PVSCubePositions[iVar3].x = local_1c.x;
-          g_PVSCubePositions[iVar3].y = local_1c.y;
-          g_PVSCubePositions[iVar3].z = local_1c.z;
+        iVar2 = g_PVSDrawnCubeCount;
+        g_PVSCubePointers[g_PVSDrawnCubeCount] = local_4c;
+        if (g_PVSCubePositions + iVar2 != &local_64) {
+          g_PVSCubePositions[iVar2].x = local_64.x;
+          g_PVSCubePositions[iVar2].y = local_64.y;
+          g_PVSCubePositions[iVar2].z = local_64.z;
         }
         g_PVSDrawnCubeCount = g_PVSDrawnCubeCount + 1;
         if (19999 < g_PVSDrawnCubeCount) {

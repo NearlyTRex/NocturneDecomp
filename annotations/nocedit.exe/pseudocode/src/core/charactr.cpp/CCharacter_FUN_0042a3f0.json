@@ -1,16 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 15,
-    "complexity_score": 35,
+    "complexity_score": 61,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 10,
-    "suspect_count": 2,
+    "pseudocode_lines": 11,
+    "suspect_count": 4,
     "suspect_types": [
-      "call_esp_preserve"
+      "call_esp_preserve",
+      "stack_param"
     ],
-    "total_lines": 25
+    "total_lines": 26
   },
   "cross_references": [],
   "function": {
@@ -82,6 +83,20 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_00000008",
+      "text": "int in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000008",
+      "text": "pSVar1 = core_skeleton_cpp_CDeformableModel_getPartPtr_FUN_0059c220(this_ptr_00,in_stack_00000008)",
+      "type": "stack_param"
+    },
     {
       "add_esp_value": 4,
       "call_address": "0042a3ff",

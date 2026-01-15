@@ -17,16 +17,6 @@ int __cdecl shape_edittool_cpp_CPickList_handleInput_FUN_004a3f20(CPickList *thi
   int iVar5;
   int iVar6;
   byte bVar7;
-  uint uStack00000010;
-  uint uStack00000054;
-  uint uStack0000007c;
-  uint uStack000000bc;
-  uint uStack000000d0;
-  uint uStack000000e4;
-  uint uStack000000f8;
-  uint uStack0000010c;
-  uint uStack00000120;
-  uint uStack00000134;
   
   bVar7 = 0;
   iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x1c);
@@ -45,7 +35,6 @@ int __cdecl shape_edittool_cpp_CPickList_handleInput_FUN_004a3f20(CPickList *thi
   if (iVar2 != 0) {
     return -1;
   }
-  uStack00000010 = 0x4a3f94;
   iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
   if (iVar2 != 0) {
     iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x52);
@@ -54,18 +43,15 @@ int __cdecl shape_edittool_cpp_CPickList_handleInput_FUN_004a3f20(CPickList *thi
     }
     iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x2e);
     if (iVar2 != 0) {
-      uStack00000054 = 0x4a3fd2;
       shape_edittool_cpp_CStrList_copyToClipboard_FUN_004a3270(&this_ptr->base_strlist);
     }
   }
   iVar5 = 0;
-  uStack00000054 = 0x4a3fe3;
   iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
   if ((iVar2 == 0) &&
      (iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0xf), iVar2 != 0)) {
     iVar5 = 1;
   }
-  uStack0000007c = 0x4a3ffa;
   iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
   if ((iVar2 != 0) &&
      (iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0xf), iVar2 != 0)) {
@@ -113,46 +99,39 @@ LAB_004a402a:
                 this_ptr->search_text_buffer[0] = '\0';
                 this_ptr->current_index = this_ptr->current_index + -1;
               }
-              uStack000000bc = 0x4a41ed;
               iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x50);
               if (iVar2 != 0) {
                 this_ptr->search_text_buffer[0] = '\0';
                 this_ptr->current_index = this_ptr->current_index + 1;
               }
-              uStack000000d0 = 0x4a4215;
               iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x47);
               if (iVar2 != 0) {
                 this_ptr->search_text_buffer[0] = '\0';
                 this_ptr->current_index = 0;
               }
-              uStack000000e4 = 0x4a423a;
               iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x4f);
               if (iVar2 != 0) {
                 iVar2 = (this_ptr->base_strlist).item_count;
                 this_ptr->search_text_buffer[0] = '\0';
                 this_ptr->current_index = iVar2;
               }
-              uStack000000f8 = 0x4a425d;
               iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x49);
               if (iVar2 != 0) {
                 this_ptr->search_text_buffer[0] = '\0';
                 this_ptr->current_index = this_ptr->current_index - this_ptr->page_size;
                 this_ptr->scroll_top = this_ptr->scroll_top - this_ptr->page_size;
               }
-              uStack0000010c = 0x4a42a0;
               iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x51);
               if (iVar2 != 0) {
                 this_ptr->search_text_buffer[0] = '\0';
                 this_ptr->current_index = this_ptr->current_index + this_ptr->page_size;
                 this_ptr->scroll_top = this_ptr->scroll_top + this_ptr->page_size;
               }
-              uStack00000120 = 0x4a42e3;
               iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x4b);
               if (iVar2 != 0) {
                 this_ptr->search_text_buffer[0] = '\0';
                 this_ptr->current_index = this_ptr->current_index - this_ptr->vertical_page_size;
               }
-              uStack00000134 = 0x4a4312;
               iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x4d);
               if (iVar2 != 0) {
                 this_ptr->search_text_buffer[0] = '\0';

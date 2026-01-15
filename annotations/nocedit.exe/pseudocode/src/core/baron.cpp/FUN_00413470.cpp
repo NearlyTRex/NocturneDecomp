@@ -12,17 +12,17 @@
 void core_baron_cpp_FUN_00413470(void)
 
 {
-  float fVar1;
-  float fVar2;
-  float fVar3;
-  float fVar4;
   CDemonActor *this_ptr;
-  CVector3f *pCVar5;
-  int iVar6;
-  BADSPACEBASE *in_ESP;
+  CVector3f *pCVar1;
+  int iVar2;
   int in_stack_00000004;
   CDemonActor *in_stack_00000008;
-  SCollisionInfo *in_stack_ffffffd0;
+  SCollisionInfo *in_stack_ffffffcc;
+  CVector3f CStack_2c;
+  float local_20;
+  float local_1c;
+  float local_18;
+  float local_14;
   
   if ((((in_stack_00000008 != (CDemonActor *)0x0) &&
        (in_stack_00000008 != *(CDemonActor **)(in_stack_00000004 + 0x1fcac))) &&
@@ -30,24 +30,24 @@ void core_baron_cpp_FUN_00413470(void)
      ((this_ptr = core_actor_cpp_castToClassHash_FUN_0040c790
                             (in_stack_00000008,g_CCharacterClassInfo.name_hash),
       this_ptr == (CDemonActor *)0x0 ||
-      (iVar6 = (*this_ptr->vtable[1].hasCollision)(this_ptr,in_stack_ffffffd0), iVar6 < 1)))) {
+      (iVar2 = (*this_ptr->vtable[1].hasCollision)(this_ptr,in_stack_ffffffcc), iVar2 < 1)))) {
     *(CDemonActor **)(in_stack_00000004 + 0x1fcac) = in_stack_00000008;
-    pCVar5 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
-                       (*(CDemonActor **)(in_stack_00000004 + 0x1fcac),(CVector3f *)&stack0xffffffe4
-                        ,(CVector3f *)&stack0xfffffffc);
-    iVar6 = *(int *)(in_stack_00000004 + 0x1fcac);
-    fVar1 = *(float *)(iVar6 + 0x24);
-    fVar2 = pCVar5->y;
-    fVar3 = *(float *)(iVar6 + 0x28);
-    fVar4 = pCVar5->z;
-    *(float *)(in_stack_00000004 + 0x20) = *(float *)(iVar6 + 0x20) + pCVar5->x;
-    *(float *)(in_stack_00000004 + 0x24) = fVar1 + fVar2;
-    *(float *)(in_stack_00000004 + 0x28) = fVar3 + fVar4;
-    iVar6 = *(int *)(in_stack_00000004 + 0x1fcac);
-    if ((uint *)(in_stack_00000004 + 0x30) != (uint *)(iVar6 + 0x30)) {
-      *(uint *)(in_stack_00000004 + 0x30) = *(uint *)(iVar6 + 0x30);
-      *(uint *)(in_stack_00000004 + 0x34) = *(uint *)(iVar6 + 0x34);
-      *(uint *)(in_stack_00000004 + 0x38) = *(uint *)(iVar6 + 0x38);
+    local_14 = 0.0;
+    pCVar1 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
+                       (*(CDemonActor **)(in_stack_00000004 + 0x1fcac),&CStack_2c,
+                        (CVector3f *)&local_14);
+    iVar2 = *(int *)(in_stack_00000004 + 0x1fcac);
+    local_20 = *(float *)(iVar2 + 0x20) + pCVar1->x;
+    local_1c = *(float *)(iVar2 + 0x24) + pCVar1->y;
+    local_18 = *(float *)(iVar2 + 0x28) + pCVar1->z;
+    *(float *)(in_stack_00000004 + 0x20) = local_20;
+    *(float *)(in_stack_00000004 + 0x24) = local_1c;
+    *(float *)(in_stack_00000004 + 0x28) = local_18;
+    iVar2 = *(int *)(in_stack_00000004 + 0x1fcac);
+    if ((uint *)(in_stack_00000004 + 0x30) != (uint *)(iVar2 + 0x30)) {
+      *(uint *)(in_stack_00000004 + 0x30) = *(uint *)(iVar2 + 0x30);
+      *(uint *)(in_stack_00000004 + 0x34) = *(uint *)(iVar2 + 0x34);
+      *(uint *)(in_stack_00000004 + 0x38) = *(uint *)(iVar2 + 0x38);
     }
     crt_memory_c_memset_FUN_005fde40((void *)(in_stack_00000004 + 0xbe2c),0,0x2c);
     core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00

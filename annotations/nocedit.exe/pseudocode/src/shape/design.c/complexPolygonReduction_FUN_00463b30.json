@@ -1,19 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 1138,
-    "complexity_score": 454,
+    "complexity_score": 423,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 26,
-    "pseudocode_lines": 324,
-    "suspect_count": 11,
+    "pseudocode_lines": 323,
+    "suspect_count": 9,
     "suspect_types": [
-      "badspacebase",
       "pointer_cast",
-      "register_param",
       "suspect_float"
     ],
-    "total_lines": 1462
+    "total_lines": 1461
   },
   "cross_references": [
     {
@@ -372,7 +370,7 @@
     {
       "add_esp_value": 4,
       "call_address": "00463ba1",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -388,7 +386,7 @@
     {
       "add_esp_value": 4,
       "call_address": "004646a1",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -763,78 +761,64 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 9,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 9,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Likely misinterpreted integer as float",
-      "line": 70,
+      "line": 69,
       "match": "3.58732e-43",
       "text": "3.58732e-43,8);",
       "type": "suspect_float"
     },
     {
       "description": "Complex pointer cast",
-      "line": 258,
+      "line": 257,
       "match": "(int *)((int)",
       "text": "*(int *)((int)local_20 + local_18 * 4) = local_14[local_1c * 3];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 270,
+      "line": 269,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)local_20 + local_1c * 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 271,
+      "line": 270,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)local_20 + local_1c * 4 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 272,
+      "line": 271,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)local_20 + local_1c * 4 + 4) = uVar1;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 283,
+      "line": 282,
       "match": "(SShapeEditorPolygon *)((int)",
       "text": "pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + ((uint)bVar9 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 284,
+      "line": 283,
       "match": "(SShapeEditorPolygon *)((int)",
       "text": "pSVar8 = (SShapeEditorPolygon *)((int)pSVar8 + ((uint)bVar9 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 288,
+      "line": 287,
       "match": "(int *)((int)",
       "text": "if (*(int *)((int)local_20 + local_48 * 4 + -8) < selected_polygon_index) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 289,
+      "line": 288,
       "match": "(int *)((int)",
       "text": "selected_polygon_index = *(int *)((int)local_20 + local_48 * 4 + -8);",
       "type": "pointer_cast"

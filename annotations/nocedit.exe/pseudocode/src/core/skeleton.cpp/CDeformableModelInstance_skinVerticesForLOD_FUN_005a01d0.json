@@ -1,17 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 23,
-    "complexity_score": 68,
+    "complexity_score": 42,
     "cross_reference_count": 17,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 18,
-    "suspect_count": 4,
+    "pseudocode_lines": 17,
+    "suspect_count": 2,
     "suspect_types": [
-      "call_esp_preserve",
-      "stack_param"
+      "call_esp_preserve"
     ],
-    "total_lines": 41
+    "total_lines": 40
   },
   "cross_references": [
     {
@@ -186,20 +185,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_00000010",
-      "text": "int in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_00000010",
-      "text": "this_ptr->cached_skinned_lod_index = in_stack_00000010;",
-      "type": "stack_param"
-    },
     {
       "add_esp_value": 4,
       "call_address": "005a01f0",

@@ -12,11 +12,10 @@ core_motion_cpp_CMotionController_setDesiredStateByName_FUN_0052db90
 
 {
   int desired_state_index;
-  int in_stack_00000010;
   
   desired_state_index =
        core_motion_cpp_CMotionList_findStateIndex_FUN_0052d4f0(this_ptr->motion_list_ptr);
   core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-            ((CMotionController *)state_name,desired_state_index,in_stack_00000010);
+            (this_ptr,desired_state_index,force_immediate);
   return;
 }

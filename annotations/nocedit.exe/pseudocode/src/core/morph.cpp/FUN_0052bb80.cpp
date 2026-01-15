@@ -11,42 +11,41 @@
 void core_morph_cpp_FUN_0052bb80(void)
 
 {
-  int iVar1;
-  int x;
   int y;
+  int x;
+  int y_00;
+  int x_00;
   int in_stack_00000004;
-  int in_stack_0000000c;
-  uint local_14;
+  int in_stack_00000008;
   
   if ((*(byte *)(in_stack_00000004 + 0x13) & 0x80) == 0) {
-    iVar1 = *(int *)(in_stack_00000004 + 0x14) >> 0x10;
+    y = *(int *)(in_stack_00000004 + 0x14) >> 0x10;
     x = *(int *)(in_stack_00000004 + 0x10) >> 0x10;
-    if ((((-1 < x) && (x < g_WindowWidth)) && (-1 < iVar1)) && (iVar1 < g_WindowHeight)) {
-      engine_2d_c_plotPixel_FUN_00401140(x,iVar1);
+    if ((((-1 < x) && (x < g_WindowWidth)) && (-1 < y)) && (y < g_WindowHeight)) {
+      engine_2d_c_plotPixel_FUN_00401140(x,y);
     }
-    if (0 < in_stack_0000000c) {
-      in_stack_0000000c = local_14 + in_stack_0000000c;
-      y = local_14 + 1;
-      iVar1 = x;
+    if (0 < in_stack_00000008) {
+      in_stack_00000008 = y + in_stack_00000008;
+      y_00 = y + 1;
+      x_00 = x;
       do {
-        local_14 = local_14 + -1;
-        iVar1 = iVar1 + -1;
+        y = y + -1;
+        x_00 = x_00 + -1;
         x = x + 1;
-        if (((-1 < iVar1) && (iVar1 < g_WindowWidth)) &&
-           ((-1 < local_14 && (local_14 < g_WindowHeight)))) {
-          engine_2d_c_plotPixel_FUN_00401140(iVar1,local_14);
+        if (((-1 < x_00) && (x_00 < g_WindowWidth)) && ((-1 < y && (y < g_WindowHeight)))) {
+          engine_2d_c_plotPixel_FUN_00401140(x_00,y);
         }
-        if (((-1 < iVar1) && (iVar1 < g_WindowWidth)) && ((-1 < y && (y < g_WindowHeight)))) {
-          engine_2d_c_plotPixel_FUN_00401140(iVar1,y);
+        if (((-1 < x_00) && (x_00 < g_WindowWidth)) && ((-1 < y_00 && (y_00 < g_WindowHeight)))) {
+          engine_2d_c_plotPixel_FUN_00401140(x_00,y_00);
         }
-        if ((((-1 < x) && (x < g_WindowWidth)) && (-1 < local_14)) && (local_14 < g_WindowHeight)) {
-          engine_2d_c_plotPixel_FUN_00401140(x,local_14);
-        }
-        if (((-1 < x) && (x < g_WindowWidth)) && ((-1 < y && (y < g_WindowHeight)))) {
+        if ((((-1 < x) && (x < g_WindowWidth)) && (-1 < y)) && (y < g_WindowHeight)) {
           engine_2d_c_plotPixel_FUN_00401140(x,y);
         }
-        y = y + 1;
-      } while (y <= in_stack_0000000c);
+        if (((-1 < x) && (x < g_WindowWidth)) && ((-1 < y_00 && (y_00 < g_WindowHeight)))) {
+          engine_2d_c_plotPixel_FUN_00401140(x,y_00);
+        }
+        y_00 = y_00 + 1;
+      } while (y_00 <= in_stack_00000008);
     }
   }
   return;

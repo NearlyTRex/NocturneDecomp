@@ -6,9 +6,7 @@
 
 #include "nocturne.h"
 
-void core_setedit_cpp_FUN_00576950
-               (uint param_1,uint param_2,uint unaff_EBX,uint param_4,
-               char *param_5)
+void core_setedit_cpp_FUN_00576950(void)
 
 {
   char cVar1;
@@ -17,9 +15,10 @@ void core_setedit_cpp_FUN_00576950
   uint uVar4;
   int iVar5;
   char *pcVar6;
+  char *in_stack_00000004;
   
   uVar4 = 0xffffffff;
-  pcVar6 = param_5;
+  pcVar6 = in_stack_00000004;
   do {
     if (uVar4 == 0) break;
     uVar4 = uVar4 - 1;
@@ -28,14 +27,14 @@ void core_setedit_cpp_FUN_00576950
   } while (cVar1 != '\0');
   iVar5 = ~uVar4 - 2;
   if (0 < iVar5) {
-    pbVar2 = (byte *)(param_5 + iVar5);
+    pbVar2 = (byte *)(in_stack_00000004 + iVar5);
     do {
       if ((*pbVar2 < 0x30) || (0x39 < *pbVar2)) break;
       iVar5 = iVar5 + -1;
       pbVar2 = pbVar2 + -1;
     } while (0 < iVar5);
   }
-  iVar3 = crt_stdlib_c_atoi_FUN_005ffef0(param_5 + iVar5 + 1);
-  crt_stdio_c_sprintf_FUN_005fdbd0(param_5 + iVar5 + 1,"%d",iVar3 + 1,unaff_EBX);
+  iVar3 = crt_stdlib_c_atoi_FUN_005ffef0(in_stack_00000004 + iVar5 + 1);
+  crt_stdio_c_sprintf_FUN_005fdbd0(in_stack_00000004 + iVar5 + 1,"%d",iVar3 + 1);
   return;
 }

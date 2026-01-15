@@ -24,12 +24,12 @@ support_codec_cpp_CLZWDictionary_init_FUN_0043ee60
       g_CurrentFilename = "..\\support\\codec.cpp";
       g_CurrentLineNumber = 0x2c7;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CLZWDictionary::init - out of memory");
-      this_ptr->num_bits = fallback_code_width;
+      this_ptr->num_bits = new_num_bits;
       support_codec_cpp_CLZWDictionary_initTable_FUN_0043eef0(this_ptr);
       return;
     }
   }
-  this_ptr->num_bits = normal_code_width;
+  this_ptr->num_bits = new_num_bits;
   support_codec_cpp_CLZWDictionary_initTable_FUN_0043eef0(this_ptr);
   return;
 }

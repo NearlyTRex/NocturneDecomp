@@ -14,8 +14,6 @@ void __cdecl engine_model_c_loadMRGLTextures_FUN_00528870(SMRGLHeaderExtended *b
   SMRGLTextureBasic *pSVar3;
   int iVar4;
   int *piVar5;
-  BADSPACEBASE *in_ESP;
-  int unaff_EBP;
   int *piVar6;
   char *pcVar7;
   SMRGLTextureBasic SStack_30;
@@ -29,7 +27,7 @@ void __cdecl engine_model_c_loadMRGLTextures_FUN_00528870(SMRGLHeaderExtended *b
   }
   else {
     while (iVar4 != 0) {
-      iVar4 = (((SMRGLTextureBasic *)block)->base).type;
+      iVar4 = (local_18->base).type;
       if ((iVar4 == 0xd) || (iVar4 == 0x40)) {
         engine_texture_cpp_ensureTextureLoaded_FUN_005dd800(local_18);
       }
@@ -52,13 +50,12 @@ void __cdecl engine_model_c_loadMRGLTextures_FUN_00528870(SMRGLHeaderExtended *b
           engine_texture_cpp_ensureTextureLoaded_FUN_005dd800(&SStack_30);
           iVar4 = iVar4 + 1;
           piVar5 = piVar5 + 8;
-        } while (iVar4 < *(int *)(unaff_EBP + 8));
+        } while (iVar4 < *(int *)local_14->texture_name);
       }
       pSVar3 = local_18;
       iVar4 = engine_model_c_getMRGLSize_FUN_00528700((SMRGLHeaderExtended *)local_18);
-      block = (SMRGLHeaderExtended *)(pSVar3->texture_name + iVar4 + -8);
-      local_14 = (SMRGLTextureBasic *)block;
-      iVar4 = (((SMRGLTextureBasic *)block)->base).type;
+      local_18 = (SMRGLTextureBasic *)(pSVar3->texture_name + iVar4 + -8);
+      iVar4 = (local_18->base).type;
     }
   }
   return;

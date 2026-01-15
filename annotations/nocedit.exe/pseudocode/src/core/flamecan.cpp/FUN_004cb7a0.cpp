@@ -23,7 +23,7 @@ CFlameCan * __cdecl core_flamecan_cpp_FUN_004cb7a0(CFlameCan *this_ptr,uint d1,u
   ptr = (CFlameCan *)
         core_actor_cpp_CDemonActor_dtor_FUN_00408a30
                   ((CDemonActor *)(pCVar1[-3].create_event + 0x50),1);
-  if ((d3 & 2) == 0) {
+  if ((d1 & 2) == 0) {
     return ptr;
   }
   shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);

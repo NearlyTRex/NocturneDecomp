@@ -9,8 +9,6 @@
 void __cdecl engine_matrix_c_pushViewport_FUN_0050e320(int x,int y,int width,int height)
 
 {
-  int in_stack_00000014;
-  
   g_ViewportStack_CameraX[g_ViewportStackIndex] = g_CameraOriginX;
   g_ViewportStack_CameraY[g_ViewportStackIndex] = g_CameraOriginY;
   g_ViewportStack_CameraZ[g_ViewportStackIndex] = g_CameraOriginZ;
@@ -35,7 +33,7 @@ void __cdecl engine_matrix_c_pushViewport_FUN_0050e320(int x,int y,int width,int
     g_CurrentLineNumber = 0x540;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Too many 3D windows");
   }
-  engine_2d_c_setupViewportAndClipping_FUN_00401800(y,width,y + height,width + in_stack_00000014);
+  engine_2d_c_setupViewportAndClipping_FUN_00401800(x,y,x + width,y + height);
   g_ProjectionScale = 0x10000;
   return;
 }

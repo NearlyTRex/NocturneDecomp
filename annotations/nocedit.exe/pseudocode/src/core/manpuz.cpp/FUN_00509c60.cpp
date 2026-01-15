@@ -13,13 +13,23 @@
 void core_manpuz_cpp_FUN_00509c60(void)
 
 {
-  BADSPACEBASE *in_ESP;
   int in_stack_00000004;
+  int in_stack_00000008;
+  CVector3i local_28;
+  CVector3i local_1c;
+  int local_10;
   
+  local_10 = in_stack_00000008;
+  local_1c.y = (int)((float)in_stack_00000008 * _DAT_00660d8c);
+  local_1c.x = 0;
+  local_1c.z = 0;
+  local_28.z = *(int *)(in_stack_00000004 + 0x150c);
+  local_28.x = 0;
+  local_28.y = 0;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-            (g_CDemonRendererPtr,(CVector3i *)&stack0xffffffe4,(CVector3i *)0x0);
+            (g_CDemonRendererPtr,&local_1c,(CVector3i *)0x0);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
-            (g_CDemonRendererPtr,(CVector3i *)&g_ZeroVector,(CVector3i *)&stack0xffffffdc);
+            (g_CDemonRendererPtr,(CVector3i *)&g_ZeroVector,&local_28);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
             (g_CDemonRendererPtr,(CVector3i *)&g_ZeroVector,(CVector3i *)(in_stack_00000004 + 0x5e4)
             );

@@ -9,9 +9,8 @@
 void core_health_cpp_CHealthItem_serialize_FUN_004f1f20(void)
 
 {
-  BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000004;
-  char *apcStack_f4 [60];
+  char *local_104 [64];
   
   core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(in_stack_00000004);
   core_actor_cpp_serializeKeyframedModelInstance_FUN_0040b8f0
@@ -23,6 +22,6 @@ void core_health_cpp_CHealthItem_serialize_FUN_004f1f20(void)
   if (g_CHealthItemClassVersion != 2) {
     return;
   }
-  core_actor_cpp_serializeLocalizedString_FUN_0040b6e0(apcStack_f4,"descriptiveName");
+  core_actor_cpp_serializeLocalizedString_FUN_0040b6e0(local_104,"descriptiveName");
   return;
 }

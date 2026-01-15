@@ -14,7 +14,6 @@ void __cdecl crt_thread_c_threadStartupWrapper_FUN_0060f8c0(ThreadStartupInfo *i
   int iVar1;
   BOOL BVar2;
   ThreadData *pTVar3;
-  BADSPACEBASE *in_ESP;
   uint uStackY_38;
   int aiStackY_34 [2];
   ExceptionFrame local_28;

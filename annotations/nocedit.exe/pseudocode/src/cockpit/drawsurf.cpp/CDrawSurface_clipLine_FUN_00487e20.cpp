@@ -21,7 +21,6 @@ cockpit_drawsurf_cpp_CDrawSurface_clipLine_FUN_00487e20
   byte bVar5;
   int iVar6;
   int local_40;
-  int local_3c;
   int local_20;
   
   bVar2 = clip_bottom < *y1;
@@ -112,7 +111,6 @@ cockpit_drawsurf_cpp_CDrawSurface_clipLine_FUN_00487e20
     else {
       *x1 = in_EDX;
       *y1 = in_EAX;
-      local_3c = clip_top;
       bVar2 = clip_bottom < in_EAX;
       if (in_EAX < clip_top) {
         bVar2 = bVar2 | 2;
@@ -130,7 +128,7 @@ cockpit_drawsurf_cpp_CDrawSurface_clipLine_FUN_00487e20
     g_CurrentFilename = "..\\cockpit\\drawsurf.cpp";
     g_CurrentLineNumber = 0x369;
     core_main_c_displayErrorAndQuit_FUN_00506f10("2d line clipping exceeded max iterations");
-    return local_3c;
+    return local_40;
   }
   return local_40;
 }

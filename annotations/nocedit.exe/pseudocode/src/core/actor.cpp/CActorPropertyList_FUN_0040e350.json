@@ -1,17 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 47,
-    "complexity_score": 149,
+    "complexity_score": 198,
     "cross_reference_count": 20,
     "function_call_count": 1,
     "global_count": 4,
-    "pseudocode_lines": 29,
-    "suspect_count": 11,
+    "pseudocode_lines": 28,
+    "suspect_count": 16,
     "suspect_types": [
       "call_esp_preserve",
       "stack_param"
     ],
-    "total_lines": 76
+    "total_lines": 75
   },
   "cross_references": [
     {
@@ -223,16 +223,23 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 9,
+      "line": 8,
       "match": "in_stack_00000008",
       "text": "char *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 10,
+      "line": 9,
       "match": "in_stack_0000000c",
       "text": "void *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000010",
+      "text": "uint in_stack_00000010;",
       "type": "stack_param"
     },
     {
@@ -274,21 +281,49 @@
       "description": "Unresolved stack parameter",
       "line": 16,
       "match": "in_stack_00000014",
-      "text": "pcVar3 = in_stack_00000014;",
+      "text": "if (in_stack_00000014 == (char *)0x0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 17,
       "match": "in_stack_00000014",
-      "text": "if (in_stack_00000014 == (char *)0x0) {",
+      "text": "in_stack_00000014 = &DAT_00614464;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 30,
+      "line": 21,
       "match": "in_stack_00000014",
-      "text": "*(char **)(iVar2 + 0x5c) = in_stack_00000014;",
+      "text": "cVar1 = *in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_00000014",
+      "text": "cVar1 = in_stack_00000014[1];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_00000014",
+      "text": "in_stack_00000014 = in_stack_00000014 + 2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_00000014",
+      "text": "in_stack_00000014 = in_stack_00000014 + 2;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 29,
+      "match": "in_stack_00000010",
+      "text": "*(uint *)(iVar2 + 0x5c) = in_stack_00000010;",
       "type": "stack_param"
     },
     {

@@ -17,18 +17,18 @@ void core_script_cpp_CScript_unk50_FUN_00566660(void)
   int iVar2;
   int in_stack_00000004;
   int in_stack_00000008;
-  int in_stack_00000018;
-  int in_stack_0000001c;
-  int in_stack_00000020;
+  int in_stack_0000000c;
+  int in_stack_00000010;
+  int in_stack_00000014;
   
   DAT_03114200 = g_ConsoleFont;
   iVar1 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01a0(g_ConsoleFont,0x4d);
   iVar2 = shape_edittool_cpp_getFontCharSpacing_FUN_004a6f00(DAT_03114200);
   DAT_03114204 = iVar1 + iVar2;
   DAT_03114208 = shape_edittool_cpp_getFontMaxCharWidth_FUN_004a6ef0(DAT_03114200);
-  DAT_031141d4 = in_stack_00000018;
-  DAT_031141d8 = in_stack_0000001c + 1;
-  DAT_031141dc = in_stack_00000020 + 1;
+  DAT_031141d4 = in_stack_0000000c;
+  DAT_031141d8 = in_stack_00000010 + 1;
+  DAT_031141dc = in_stack_00000014 + 1;
   DAT_031141d0 = in_stack_00000008;
   DAT_031141f4 = DAT_031141dc - DAT_03114208;
   DAT_031141f0 = in_stack_00000008;

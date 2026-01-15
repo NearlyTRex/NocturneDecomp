@@ -22,9 +22,9 @@ core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
     iVar1 = 0;
     if (iVar2 != 0) {
       DAT_02d0a45c = 0;
-      iVar1 = core_event_cpp_CEventList_FUN_004add80((CEventList *)condition_expression);
+      iVar1 = core_event_cpp_CEventList_FUN_004add80(this_ptr);
       if (iVar1 < 0) {
-        engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"%s\n");
+        engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,"%s\n",&DAT_02d0a460);
         return 0;
       }
     }

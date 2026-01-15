@@ -1,19 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 22,
-    "complexity_score": 131,
+    "complexity_score": 120,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
-    "pseudocode_lines": 11,
-    "suspect_count": 10,
+    "pseudocode_lines": 10,
+    "suspect_count": 9,
     "suspect_types": [
       "call_esp_preserve",
       "param_count_too_few",
       "stack_param",
       "variadic_preserve"
     ],
-    "total_lines": 33
+    "total_lines": 32
   },
   "cross_references": [
     {
@@ -108,49 +108,42 @@
       "description": "Unresolved stack parameter",
       "line": 7,
       "match": "in_stack_00000004",
-      "text": "uint in_stack_00000004;",
+      "text": "CKeyFramedModel *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 8,
       "match": "in_stack_00000008",
-      "text": "CKeyFramedModel *in_stack_00000008;",
+      "text": "FILE *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_0000000c",
-      "text": "FILE *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
+      "line": 10,
       "match": "in_stack_00000008",
-      "text": "crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)in_stack_00000008,\"models\\\\%s\\n\",in_stack_00000004);",
+      "text": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"models\\\\%s\\n\",in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 11,
+      "line": 10,
       "match": "in_stack_00000004",
-      "text": "crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)in_stack_00000008,\"models\\\\%s\\n\",in_stack_00000004);",
+      "text": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"models\\\\%s\\n\",in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 12,
+      "match": "in_stack_00000004",
+      "text": "(in_stack_00000004,in_stack_00000008,0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
       "match": "in_stack_00000008",
-      "text": "(in_stack_00000008,in_stack_0000000c,0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_0000000c",
-      "text": "(in_stack_00000008,in_stack_0000000c,0);",
+      "text": "(in_stack_00000004,in_stack_00000008,0);",
       "type": "stack_param"
     },
     {

@@ -1,19 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 109,
-    "complexity_score": 174,
+    "complexity_score": 143,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 3,
-    "pseudocode_lines": 54,
-    "suspect_count": 10,
+    "pseudocode_lines": 53,
+    "suspect_count": 8,
     "suspect_types": [
-      "badspacebase",
       "lea_esp_stack_addr",
-      "register_param",
       "unaffected_reg"
     ],
-    "total_lines": 163
+    "total_lines": 162
   },
   "cross_references": [],
   "function": {
@@ -189,50 +187,36 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 11,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 11,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 12,
+      "line": 11,
       "match": "unaff_ESI",
       "text": "CVector3i *unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 53,
+      "line": 52,
       "match": "unaff_ESI",
       "text": "unaff_ESI->x = pCVar5->x;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 54,
+      "line": 53,
       "match": "unaff_ESI",
       "text": "unaff_ESI->y = iStack_20;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 55,
+      "line": 54,
       "match": "unaff_ESI",
       "text": "unaff_ESI->z = iVar1;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 56,
+      "line": 55,
       "match": "unaff_ESI",
       "text": "return unaff_ESI;",
       "type": "unaffected_reg"

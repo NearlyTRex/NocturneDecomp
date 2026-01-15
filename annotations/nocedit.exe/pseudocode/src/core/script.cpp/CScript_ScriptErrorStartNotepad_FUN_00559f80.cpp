@@ -20,49 +20,38 @@ uint core_script_cpp_CScript_ScriptErrorStartNotepad_FUN_00559f80(void)
   long lVar6;
   int iVar7;
   int iVar8;
-  BADSPACEBASE *in_ESP;
   char *pcVar9;
   char *pcVar10;
   byte bVar12;
   int in_stack_00000004;
-  char *in_stack_0000000c;
-  char *in_stack_00000010;
-  char *in_stack_00000018;
-  int in_stack_0000001c;
-  uint in_stack_00000030;
-  int in_stack_0000003c;
-  uint in_stack_00000040;
-  CStrList_vtable *in_stack_fffff8c4;
-  CStrList_vtable *in_stack_fffff8c8;
-  CStrList_vtable *in_stack_fffff8cc;
-  CStrList_vtable *in_stack_fffff8d0;
-  CStrList_vtable *in_stack_fffff8d4;
-  CStrList_remove *in_stack_fffff8d8;
-  char **in_stack_fffff8dc;
-  CStrList_vtable *in_stack_fffff8e0;
-  CStrList_swap *in_stack_fffff8e4;
-  char acStack_3cc [4];
-  byte auStack_3c8 [488];
-  char acStack_1e0 [4];
-  char acStack_1dc [336];
-  char acStack_8c [4];
-  char acStack_88 [112];
-  int local_18;
+  char *in_stack_00000008;
+  int in_stack_0000000c;
+  uint in_stack_fffff870;
+  uint in_stack_fffff874;
+  char **in_stack_fffff878;
+  CStrList_vtable *in_stack_fffff87c;
+  uint in_stack_fffff880;
+  char local_3e8 [512];
+  char local_1e8 [260];
+  char local_e4 [200];
+  int local_1c;
+  CStrList *local_18;
+  int local_14;
   char *pcVar11;
   
   bVar12 = 0;
-  local_18 = in_stack_00000004 + 0x38;
+  local_18 = (CStrList *)(in_stack_00000004 + 0x38);
   do {
     core_script_cpp_CScript_FreeSomething1_FUN_00559870();
-    iVar3 = engine_dosio_c_getFileSize_FUN_00481880("world",in_stack_0000000c);
+    iVar3 = engine_dosio_c_getFileSize_FUN_00481880("world",in_stack_00000008);
     if (iVar3 < 1) {
       return 1;
     }
     crt_string_c_splitpath_FUN_005ff178
-              (in_stack_00000010,(char *)0x0,(char *)0x0,acStack_1e0,(char *)0x0);
+              (in_stack_00000008,(char *)0x0,(char *)0x0,local_1e8,(char *)0x0);
     pcVar9 = ".txt";
     iVar8 = -1;
-    pcVar11 = acStack_1dc;
+    pcVar11 = local_1e8;
     do {
       pcVar10 = pcVar11;
       if (iVar8 == 0) break;
@@ -82,37 +71,38 @@ uint core_script_cpp_CScript_ScriptErrorStartNotepad_FUN_00559f80(void)
       pcVar10 = pcVar10 + 2;
     } while (cVar2 != '\0');
     core_script_cpp_CScript_dbLoad_FUN_005603c0();
-    pFVar4 = engine_dosio_c_getFile_FUN_00481a50("world",in_stack_00000018,"rt");
+    pFVar4 = engine_dosio_c_getFile_FUN_00481a50("world",in_stack_00000008,"rt");
     if (pFVar4 == (FILE *)0x0) {
       return 1;
     }
     lVar5 = crt_stdio_c_ftell_FUN_00601560(pFVar4);
+    local_14 = 1;
     do {
       iVar8 = 0;
-      while( true ) {
-        do {
-          lVar6 = crt_stdio_c_ftell_FUN_00601560(pFVar4);
-          if ((iVar3 + lVar5 <= lVar6) ||
-             (iVar7 = crt_stdio_c_fgetc_FUN_005fe840(pFVar4), iVar7 == -1)) goto LAB_0055a085;
-        } while (iVar7 == 0xd);
-        if (iVar7 == 10) break;
-        if (iVar7 == 0) {
-          shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar4,"..\\core\\script.cpp",0x31b);
-          iVar3 = shape_edittool_cpp_getFontBitmapCount_FUN_004a6ed0
-                            ((CBitFont *)(in_stack_00000004 + 0x38));
-          shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-                    (g_CEditorToolsPtr,"Probable non-text file %s detected near line %d.  Cannot use script.",in_stack_00000030,
-                     iVar3 + 1);
-          core_script_cpp_CScript_FreeSomething1_FUN_00559870();
-          return 0;
+      while (lVar6 = crt_stdio_c_ftell_FUN_00601560(pFVar4), lVar6 < iVar3 + lVar5) {
+        iVar7 = crt_stdio_c_fgetc_FUN_005fe840(pFVar4);
+        if (iVar7 == -1) goto LAB_0055a085;
+        if (iVar7 != 0xd) {
+          if (iVar7 == 10) goto LAB_0055a085;
+          if (iVar7 == 0) {
+            shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar4,"..\\core\\script.cpp",0x31b);
+            iVar3 = shape_edittool_cpp_getFontBitmapCount_FUN_004a6ed0
+                              ((CBitFont *)(in_stack_00000004 + 0x38));
+            shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
+                      (g_CEditorToolsPtr,"Probable non-text file %s detected near line %d.  Cannot use script.",in_stack_00000008,
+                       iVar3 + 1);
+            core_script_cpp_CScript_FreeSomething1_FUN_00559870();
+            return 0;
+          }
+          local_3e8[iVar8] = (char)iVar7;
+          iVar8 = iVar8 + 1;
         }
-        auStack_3c8[iVar8] = (char)iVar7;
-        iVar8 = iVar8 + 1;
       }
+      local_14 = 0;
 LAB_0055a085:
-      acStack_3cc[iVar8] = '\0';
-      shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&DAT_00000001,acStack_3cc);
-    } while (in_stack_0000000c != (char *)0x0);
+      local_3e8[iVar8] = '\0';
+      shape_edittool_cpp_CStrList_add_FUN_004a2b80(local_18,local_3e8);
+    } while (local_14 != 0);
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar4,"..\\core\\script.cpp",0x32d);
     core_script_cpp_CScript_LoadingScriptFile_FUN_0055a370();
     iVar3 = 0;
@@ -127,12 +117,12 @@ LAB_0055a085:
         iVar8 = iVar8 + 8;
         iVar3 = iVar3 + 1;
         crt_stdio_c_fprintf_FUN_005fe6d0
-                  (pFVar4,"%4d | %s\n","%4d | %s\n",*puVar1,
+                  (pFVar4,"%4d | %s\n",*puVar1,
                    *(uint *)(iVar7 + *(int *)(in_stack_00000004 + 0x34)));
       } while (iVar3 < *(int *)(in_stack_00000004 + 0x30));
     }
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar4,"..\\core\\script.cpp",0x33a);
-    if (in_stack_0000003c != 0) {
+    if (in_stack_0000000c != 0) {
 LAB_0055a34a:
       core_script_cpp_FUN_0055a540();
       return 1;
@@ -142,47 +132,43 @@ LAB_0055a34a:
     if (iVar3 == 0) goto LAB_0055a34a;
     while( true ) {
       crt_stdio_c_sprintf_FUN_005fdbd0
-                (&DAT_031089e8,"Syntax error on %s line %d:\n%s",in_stack_00000040,
-                 in_stack_0000001c + 1,iVar3);
-      shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff8ac);
+                (&DAT_031089e8,"Syntax error on %s line %d:\n%s",in_stack_00000008,local_1c + 1,
+                 iVar3);
+      shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff870);
       shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                ((CStrList *)&stack0xfffff8b0,"Try to load the script again.  (You can ALT-TAB and edit the script now.)");
+                ((CStrList *)&stack0xfffff870,"Try to load the script again.  (You can ALT-TAB and edit the script now.)");
       shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                ((CStrList *)&stack0xfffff8b4,"Don't use the script, just keep going.");
+                ((CStrList *)&stack0xfffff870,"Don't use the script, just keep going.");
       shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                ((CStrList *)&stack0xfffff8b8,"Execute NOTEPAD on the script right now.");
-      shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff8bc,"Cancel");
+                ((CStrList *)&stack0xfffff870,"Execute NOTEPAD on the script right now.");
+      shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff870,"Cancel");
       iVar8 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                        ((CPickList *)&stack0xfffff8c0,&DAT_031089e8,-1,0);
+                        ((CPickList *)&stack0xfffff870,&DAT_031089e8,-1,0);
       if (iVar8 == 0) break;
       if (iVar8 == 1) {
         core_script_cpp_CScript_FreeSomething1_FUN_00559870();
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                  ((CPickList *)&stack0xfffff8c8,0,(uint)in_stack_fffff8c8,(uint)in_stack_fffff8cc,
-                   (uint)in_stack_fffff8d0,(uint)in_stack_fffff8d4,(uint)in_stack_fffff8d8);
+                  ((CPickList *)&stack0xfffff870,0,in_stack_fffff870,in_stack_fffff874,
+                   (uint)in_stack_fffff878,(uint)in_stack_fffff87c,in_stack_fffff880);
         return 1;
       }
       if (iVar8 != 2) {
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                  ((CPickList *)&stack0xfffff8c4,0,(uint)in_stack_fffff8c4,(uint)in_stack_fffff8c8,
-                   (uint)in_stack_fffff8cc,(uint)in_stack_fffff8d0,(uint)in_stack_fffff8d4);
+                  ((CPickList *)&stack0xfffff870,0,in_stack_fffff870,in_stack_fffff874,
+                   (uint)in_stack_fffff878,(uint)in_stack_fffff87c,in_stack_fffff880);
         return 0;
       }
       shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
                 (g_CEditorToolsPtr,"Note: This only works in NT.\nWhen you are done editing the script, close notepad\nand ALT-TAB back to Nocturne.\nThen you can try to reload the script.");
-      crt_stdio_c_sprintf_FUN_005fdbd0(acStack_8c,"start notepad world\\%s");
-      in_stack_fffff8c4 = (CStrList_vtable *)0x55a249;
-      crt_stdlib_c_system_FUN_00602130(acStack_88);
+      crt_stdio_c_sprintf_FUN_005fdbd0(local_e4,"start notepad world\\%s",in_stack_00000008);
+      crt_stdlib_c_system_FUN_00602130(local_e4);
       engine_2d_c_clearInputAndWait_FUN_00403260();
-      in_stack_fffff8cc = (CStrList_vtable *)&stack0xfffff8d4;
-      in_stack_fffff8d0 = (CStrList_vtable *)0x0;
-      in_stack_fffff8c8 = (CStrList_vtable *)0x55a25c;
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                ((CPickList *)&stack0xfffff8d4,0,(uint)in_stack_fffff8d4,(uint)in_stack_fffff8d8,
-                 (uint)in_stack_fffff8dc,(uint)in_stack_fffff8e0,(uint)in_stack_fffff8e4);
+                ((CPickList *)&stack0xfffff870,0,in_stack_fffff870,in_stack_fffff874,
+                 (uint)in_stack_fffff878,(uint)in_stack_fffff87c,in_stack_fffff880);
     }
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-              ((CPickList *)&stack0xfffff8c4,0,(uint)in_stack_fffff8c4,(uint)in_stack_fffff8c8,
-               (uint)in_stack_fffff8cc,(uint)in_stack_fffff8d0,(uint)in_stack_fffff8d4);
+              ((CPickList *)&stack0xfffff870,0,in_stack_fffff870,in_stack_fffff874,
+               (uint)in_stack_fffff878,(uint)in_stack_fffff87c,in_stack_fffff880);
   } while( true );
 }

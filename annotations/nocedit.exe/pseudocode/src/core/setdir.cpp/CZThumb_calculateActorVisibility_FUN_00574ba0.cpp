@@ -19,7 +19,6 @@ core_setdir_cpp_CZThumb_calculateActorVisibility_FUN_00574ba0
   double dVar5;
   int iVar6;
   SProjectedVertex *point;
-  BADSPACEBASE *in_ESP;
   int iVar7;
   int iVar8;
   float fStack_4c;

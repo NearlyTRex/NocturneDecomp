@@ -13,9 +13,8 @@ core_setutil_cpp_C3DSLight_addFilter_FUN_00586fa0
 {
   char cVar1;
   CDemonFilter *pCVar2;
-  int unaff_EDI;
+  int unaff_EBP;
   char (*pacVar3) [40];
-  int in_stack_00000014;
   
   if (0x1f < this_ptr->filter_count) {
     g_CurrentFilename = "..\\core\\setutil.cpp";
@@ -24,19 +23,19 @@ core_setutil_cpp_C3DSLight_addFilter_FUN_00586fa0
   }
   pacVar3 = this_ptr->filter_names + this_ptr->filter_count;
   do {
-    cVar1 = *(char *)duration;
+    cVar1 = *filter_name;
     (*pacVar3)[0] = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = *(char *)((int)duration + 1);
-    duration = (float)((int)duration + 2);
+    cVar1 = filter_name[1];
+    filter_name = filter_name + 2;
     (*pacVar3)[1] = cVar1;
     pacVar3 = (char (*) [40])(*pacVar3 + 2);
   } while (cVar1 != '\0');
-  this_ptr->filter_durations[this_ptr->filter_count] = (float)filter_mode;
-  this_ptr->filter_indices[this_ptr->filter_count] = in_stack_00000014;
+  this_ptr->filter_durations[this_ptr->filter_count] = duration;
+  this_ptr->filter_indices[this_ptr->filter_count] = filter_mode;
   pCVar2 = core_dfilter_cpp_CFilterCache_getFilter_FUN_00470060
                      (g_CFilterCachePtr,this_ptr->filter_names[this_ptr->filter_count],
-                      (char *)this_ptr->blend_filter,unaff_EDI);
+                      (char *)this_ptr->blend_filter,unaff_EBP);
   this_ptr->filters[this_ptr->filter_count] = pCVar2;
   this_ptr->filter_count = this_ptr->filter_count + 1;
   return;

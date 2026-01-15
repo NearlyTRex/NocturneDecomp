@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 162,
-    "complexity_score": 195,
+    "complexity_score": 171,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 27,
-    "pseudocode_lines": 90,
-    "suspect_count": 9,
+    "pseudocode_lines": 91,
+    "suspect_count": 7,
     "suspect_types": [
       "call_esp_preserve",
-      "pointer_cast",
-      "unaffected_reg"
+      "pointer_cast"
     ],
-    "total_lines": 252
+    "total_lines": 253
   },
   "cross_references": [
     {
@@ -299,50 +298,36 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 15,
-      "match": "unaff_EDI",
-      "text": "uint unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 63,
+      "line": 64,
       "match": "(int *)((int)",
-      "text": "pSVar9 = g_RenderVertexBuffer + *(int *)((int)g_ProcessedVertexIndices + iVar2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 67,
-      "match": "(SRenderVertex *)((int)",
-      "text": "pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar11 * -2 + 1) * 4);",
+      "text": "pSVar10 = g_RenderVertexBuffer + *(int *)((int)g_ProcessedVertexIndices + iVar3);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 68,
       "match": "(SRenderVertex *)((int)",
-      "text": "pSVar10 = (SRenderVertex *)((int)pSVar10 + ((uint)bVar11 * -2 + 1) * 4);",
+      "text": "pSVar10 = (SRenderVertex *)((int)pSVar10 + ((uint)bVar13 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 84,
+      "line": 69,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar11 = (SRenderVertex *)((int)pSVar11 + ((uint)bVar13 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 85,
       "match": "(SMRGLTextureBasic *)((int)",
-      "text": "pSVar5 = (SMRGLTextureBasic *)((int)pSVar5 + (uint)bVar11 * -8 + 4);",
+      "text": "pSVar6 = (SMRGLTextureBasic *)((int)pSVar6 + (uint)bVar13 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 89,
-      "match": "unaff_EDI",
-      "text": "*(uint *)(iVar12 + 0x114) = unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 92,
+      "line": 93,
       "match": "(SMRGLHeaderExtended *)((int)",
       "text": "return (SMRGLHeaderExtended *)((int)&polygon_info[1].base + (polygon_info->base).count * 0xc);",
       "type": "pointer_cast"

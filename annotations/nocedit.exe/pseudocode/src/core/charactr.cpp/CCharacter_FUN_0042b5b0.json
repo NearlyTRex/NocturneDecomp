@@ -1,17 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 81,
-    "complexity_score": 154,
+    "complexity_score": 165,
     "cross_reference_count": 8,
     "function_call_count": 4,
     "global_count": 1,
-    "pseudocode_lines": 34,
-    "suspect_count": 11,
+    "pseudocode_lines": 35,
+    "suspect_count": 12,
     "suspect_types": [
       "call_esp_preserve",
       "stack_param"
     ],
-    "total_lines": 115
+    "total_lines": 116
   },
   "cross_references": [
     {
@@ -153,50 +153,57 @@
     {
       "description": "Unresolved stack parameter",
       "line": 8,
-      "match": "in_stack_0000000c",
-      "text": "CVector3f *in_stack_0000000c;",
+      "match": "in_stack_00000008",
+      "text": "CVector3f *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 9,
+      "match": "in_stack_00000010",
+      "text": "uint in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 10,
+      "match": "in_stack_00000014",
+      "text": "uint in_stack_00000014;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
       "match": "in_stack_00000018",
       "text": "int in_stack_00000018;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_0000001c",
-      "text": "uint in_stack_0000001c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 14,
       "match": "in_stack_00000018",
       "text": "(((in_stack_00000018 != 0 ||",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_0000000c",
-      "text": "(&this_ptr->model,in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 29,
-      "match": "in_stack_00000018",
-      "text": "*(int *)(this_ptr->cloth_data + 0x47c) = in_stack_00000018;",
+      "line": 18,
+      "match": "in_stack_00000008",
+      "text": "(&this_ptr->model,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 30,
-      "match": "in_stack_0000001c",
-      "text": "*(uint *)(this_ptr->cloth_data + 0x480) = in_stack_0000001c;",
+      "match": "in_stack_00000010",
+      "text": "*(uint *)(this_ptr->cloth_data + 0x47c) = in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 31,
+      "match": "in_stack_00000014",
+      "text": "*(uint *)(this_ptr->cloth_data + 0x480) = in_stack_00000014;",
       "type": "stack_param"
     },
     {

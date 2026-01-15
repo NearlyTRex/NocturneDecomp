@@ -9,12 +9,12 @@
 void __cdecl core_actor_cpp_deleteActor_FUN_00408820(CDemonActor *actor_ptr)
 
 {
+  uint unaff_EBX;
   uint unaff_retaddr;
   uint in_stack_00000008;
   uint in_stack_0000000c;
   uint in_stack_00000010;
   uint in_stack_00000014;
-  uint in_stack_00000018;
   
   if (actor_ptr != (CDemonActor *)0x0) {
     core_actor_cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040ac80
@@ -23,8 +23,8 @@ void __cdecl core_actor_cpp_deleteActor_FUN_00408820(CDemonActor *actor_ptr)
     g_CurrentDebugLine = 0x149;
     if (actor_ptr != (CDemonActor *)0x0) {
       (*actor_ptr->vtable->dtor)
-                (actor_ptr,2,unaff_retaddr,(uint)actor_ptr,in_stack_00000008,in_stack_0000000c,
-                 in_stack_00000010,in_stack_00000014,in_stack_00000018);
+                (actor_ptr,2,unaff_EBX,unaff_retaddr,(uint)actor_ptr,in_stack_00000008,
+                 in_stack_0000000c,in_stack_00000010,in_stack_00000014);
       return;
     }
   }

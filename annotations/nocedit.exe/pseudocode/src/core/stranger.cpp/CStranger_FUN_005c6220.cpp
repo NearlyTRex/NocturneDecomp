@@ -17,7 +17,6 @@ void core_stranger_cpp_CStranger_FUN_005c6220(void)
   int iVar3;
   SMotion *pSVar4;
   CCloth *pCVar5;
-  BADSPACEBASE *in_ESP;
   int in_stack_00000004;
   
   if (0 < *(int *)(in_stack_00000004 + 0x2a94)) {

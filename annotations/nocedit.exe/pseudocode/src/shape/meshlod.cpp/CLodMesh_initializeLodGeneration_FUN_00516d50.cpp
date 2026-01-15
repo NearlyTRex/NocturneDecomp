@@ -10,7 +10,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_initializeLodGeneration_FUN_00516d50(CLo
 
 {
   FILE *pFVar1;
-  CLodMesh *unaff_EDI;
+  CLodMesh *unaff_ESI;
   
   if (this_ptr->next_lod != (CLodMesh *)0x0) {
     return;
@@ -22,7 +22,7 @@ void __cdecl shape_meshlod_cpp_CLodMesh_initializeLodGeneration_FUN_00516d50(CLo
     this_ptr->precompute_file = pFVar1;
   }
   shape_meshlod_cpp_CLodMesh_normalizeAndCenterMesh_FUN_00516e10(this_ptr);
-  shape_meshlod_cpp_CLodMesh_createNextLOD_FUN_00516f50(unaff_EDI);
+  shape_meshlod_cpp_CLodMesh_createNextLOD_FUN_00516f50(unaff_ESI);
   shape_meshlod_cpp_CLodMesh_buildSpatialGrid_FUN_00516620(this_ptr->next_lod);
   shape_meshlod_cpp_CLodMesh_gridSave_FUN_0051d420(this_ptr->next_lod,this_ptr->precompute_file);
   shape_meshlod_cpp_CLodMesh_buildEdges_FUN_00515ba0(this_ptr);

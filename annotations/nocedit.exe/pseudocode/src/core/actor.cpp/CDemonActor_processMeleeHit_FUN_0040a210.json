@@ -1,23 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 767,
-    "complexity_score": 486,
+    "complexity_score": 509,
     "cross_reference_count": 0,
     "function_call_count": 21,
     "global_count": 30,
-    "pseudocode_lines": 276,
-    "suspect_count": 17,
+    "pseudocode_lines": 274,
+    "suspect_count": 21,
     "suspect_types": [
-      "badspacebase",
       "extra_output",
-      "register_param",
       "stack_param",
-      "stack_ref",
       "sub_artifact",
       "suspect_float",
       "unknown_field"
     ],
-    "total_lines": 1043
+    "total_lines": 1041
   },
   "cross_references": [],
   "function": {
@@ -1474,115 +1471,143 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 15,
+      "line": 14,
       "match": "extraout_EAX_00",
       "text": "int extraout_EAX_00;",
       "type": "extra_output"
     },
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 16,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 16,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 17,
       "match": "in_stack_fffffd64",
       "text": "ulonglong in_stack_fffffd64;",
       "type": "stack_param"
     },
     {
+      "description": "Likely misinterpreted integer as float",
+      "line": 60,
+      "match": "1.4013e-45",
+      "text": "if (fStack_40 == 1.4013e-45) {",
+      "type": "suspect_float"
+    },
+    {
       "description": "Unknown/mangled field access",
-      "line": 63,
+      "line": 62,
       "match": "._20_4_",
       "text": "auStack_f0._20_4_ = 0.0;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 103,
+      "line": 101,
       "match": "in_stack_fffffd64",
       "text": "(pCVar1,(CVector3f *)in_stack_fffffd64,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 104,
+      "line": 102,
       "match": "in_stack_fffffd64",
       "text": "(float)((ulonglong)in_stack_fffffd64 >> 0x20));",
       "type": "stack_param"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 112,
+      "line": 110,
       "match": "extraout_EAX",
       "text": "if (extraout_EAX != 0) {",
       "type": "extra_output"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 125,
+      "line": 123,
       "match": "in_stack_fffffd64",
       "text": "(pCVar1,(CVector3f *)in_stack_fffffd64,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 126,
+      "line": 124,
       "match": "in_stack_fffffd64",
       "text": "(float)((ulonglong)in_stack_fffffd64 >> 0x20));",
       "type": "stack_param"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 128,
-      "match": "&stack0xfffffd74",
-      "text": "core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0((SDamageInfo *)&stack0xfffffd74);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 130,
-      "match": "&stack0xfffffd74",
-      "text": "(this_ptr,hit_type,(SDamageInfo *)&stack0xfffffd74,pCVar3);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 136,
-      "match": "&stack0xfffffd74",
-      "text": "(this_ptr,hit_type,(SDamageInfo *)&stack0xfffffd74,pCVar3);",
-      "type": "stack_ref"
+      "description": "Likely misinterpreted integer as float",
+      "line": 156,
+      "match": "1.4013e-45",
+      "text": "if (fStack_40 == 1.4013e-45) {",
+      "type": "suspect_float"
     },
     {
       "description": "Decompiler double/longlong extraction artifact",
-      "line": 175,
+      "line": 172,
       "match": "SUB84",
-      "text": "collision_info = SUB84 /* extract 2-byte value */(dVar8,0);",
+      "text": "(iVar4 = (*pCVar3->vtable[1].hasCollision)(pCVar3,SUB84 /* extract 2-byte value */(dVar7,0)), 0 < iVar4)) {",
       "type": "sub_artifact"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 227,
+      "line": 223,
       "match": "extraout_EAX_00",
       "text": "if (extraout_EAX_00 == 0) {",
       "type": "extra_output"
     },
     {
+      "description": "Unknown/mangled field access",
+      "line": 235,
+      "match": "._0_4_",
+      "text": "auStack_214._0_4_ = g_CDemonSetPtr->field11_0x14d148;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 252,
+      "match": "._28_4_",
+      "text": "auStack_214._28_4_ = fStack_48;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 253,
+      "match": "._32_4_",
+      "text": "auStack_214._32_4_ = local_44;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 254,
+      "match": "._36_4_",
+      "text": "auStack_214._36_4_ = fStack_40;",
+      "type": "unknown_field"
+    },
+    {
       "description": "Likely misinterpreted integer as float",
-      "line": 258,
+      "line": 256,
       "match": "5.938417e-39",
-      "text": "fStack_288 = 5.938417e-39;",
+      "text": "volume = 5.938417e-39;",
       "type": "suspect_float"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 260,
+      "match": "._28_4_",
+      "text": "auStack_214._28_4_ = pCVar2->x;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 261,
+      "match": "._32_4_",
+      "text": "auStack_214._32_4_ = pCVar2->y;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 262,
+      "match": "._36_4_",
+      "text": "auStack_214._36_4_ = pCVar2->z;",
+      "type": "unknown_field"
     }
   ],
   "vtable_info": {

@@ -9,8 +9,6 @@
 void __cdecl core_sound_cpp_resetTrainSounds_FUN_005b26f0(void)
 
 {
-  BADSPACEBASE *in_ESP;
-  
   if ((float *)&stack0x00000000 == &g_TrainNoiseCooldown) {
     g_TrainLastCameraIndex = -1;
     return;

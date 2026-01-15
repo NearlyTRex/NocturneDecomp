@@ -14,8 +14,6 @@ void __cdecl core_charactr_cpp_CCharacter_computePickupInLoop_FUN_0042f800(CChar
   float fVar1;
   int iVar2;
   CCharacter *pCVar3;
-  uint uStack0000000c;
-  uint uStack00000014;
   
   core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(&this_ptr->base_actor);
   if (*(float *)(this_ptr->field2_0x240c + 8) == _DAT_0065b834) {
@@ -33,10 +31,7 @@ void __cdecl core_charactr_cpp_CCharacter_computePickupInLoop_FUN_0042f800(CChar
                        (CVector3f *)0x0);
     *(float *)(this_ptr->field2_0x240c + 8) = fVar1;
   }
-  uStack00000014 = 0;
-  uStack0000000c = 0x42f82a;
   core_charactr_cpp_CCharacter_FUN_0042d090(this_ptr);
-  uStack00000014 = 0x42f833;
   core_charactr_cpp_CCharacter_FUN_0042d530(this_ptr);
   this_ptr->max_hit_points = this_ptr->hit_points;
   return;

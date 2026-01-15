@@ -25,7 +25,7 @@ void core_manpuz_cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_0050aba0(void)
      ((piVar1[2] & 0x7fffffffU) != 0)) {
     g_CurrentFilename = "..\\core\\manpuz.cpp";
     g_CurrentLineNumber = 0x554;
-    core_main_c_displayErrorAndQuit_FUN_00506f10("CMansionPuzzleCircle::shiftPanelLeft - fubared.",iVar2);
+    core_main_c_displayErrorAndQuit_FUN_00506f10("CMansionPuzzleCircle::shiftPanelLeft - fubared.");
   }
   *piVar3 = *piVar1;
   piVar3[1] = piVar1[1];

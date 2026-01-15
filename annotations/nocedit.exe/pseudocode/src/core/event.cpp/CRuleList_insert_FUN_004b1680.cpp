@@ -10,12 +10,11 @@ void __cdecl core_event_cpp_CRuleList_insert_FUN_004b1680(CRuleList *this_ptr)
 
 {
   char cVar1;
-  int unaff_EDI;
   CRuleList *src;
   CRuleList *src_00;
   int in_stack_00000008;
-  char *in_stack_00000018;
-  char *in_stack_0000001c;
+  char *in_stack_0000000c;
+  char *in_stack_00000010;
   
   if ((in_stack_00000008 < 0) || (this_ptr->list_size < in_stack_00000008)) {
     g_CurrentFilename = "..\\core\\event.cpp";
@@ -31,28 +30,28 @@ void __cdecl core_event_cpp_CRuleList_insert_FUN_004b1680(CRuleList *this_ptr)
   crt_string_c_memmove_FUN_005fe5e0
             (this_ptr + (in_stack_00000008 + 1) * 0x19 + 1,src,
              (this_ptr->list_size - in_stack_00000008) * 100);
-  src_00 = this_ptr + (in_stack_00000008 + 1) * 0x19 + 0x7e;
+  src_00 = this_ptr + in_stack_00000008 * 0x19 + 0x7e;
   crt_string_c_memmove_FUN_005fe5e0
-            ((void *)((int)&this_ptr[0x7e].list_size + unaff_EDI),src_00,
+            (this_ptr + (in_stack_00000008 + 1) * 0x19 + 0x7e,src_00,
              (this_ptr->list_size - in_stack_00000008) * 100);
   this_ptr->list_size = this_ptr->list_size + 1;
   do {
-    cVar1 = *in_stack_00000018;
+    cVar1 = *in_stack_0000000c;
     *(char *)&src->list_size = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = in_stack_00000018[1];
-    in_stack_00000018 = in_stack_00000018 + 2;
+    cVar1 = in_stack_0000000c[1];
+    in_stack_0000000c = in_stack_0000000c + 2;
     *(char *)((int)&src->list_size + 1) = cVar1;
     src = (CRuleList *)((int)&src->list_size + 2);
   } while (cVar1 != '\0');
   do {
-    cVar1 = *in_stack_0000001c;
+    cVar1 = *in_stack_00000010;
     *(char *)&src_00->list_size = cVar1;
     if (cVar1 == '\0') {
       return;
     }
-    cVar1 = in_stack_0000001c[1];
-    in_stack_0000001c = in_stack_0000001c + 2;
+    cVar1 = in_stack_00000010[1];
+    in_stack_00000010 = in_stack_00000010 + 2;
     *(char *)((int)&src_00->list_size + 1) = cVar1;
     src_00 = (CRuleList *)((int)&src_00->list_size + 2);
   } while (cVar1 != '\0');

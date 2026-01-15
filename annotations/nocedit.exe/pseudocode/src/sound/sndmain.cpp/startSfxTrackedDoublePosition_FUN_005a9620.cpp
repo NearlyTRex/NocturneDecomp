@@ -12,12 +12,11 @@ sound_sndmain_cpp_startSfxTrackedDoublePosition_FUN_005a9620
 
 {
   uint uVar1;
-  CVector3d *in_stack_00000010;
   
   sound_sndmain_cpp_pushSfxOptions_FUN_005a8c30();
   sound_sndmain_cpp_clearNextSfxFlagBits_FUN_005a8bb0(1);
-  sound_sndmain_cpp_setNextSfxTrackedDoublePosition_FUN_005a8970(in_stack_00000010);
-  uVar1 = sound_sndmain_cpp_startSfx_FUN_005a8e90((char *)in_stack_00000010);
+  sound_sndmain_cpp_setNextSfxTrackedDoublePosition_FUN_005a8970(position_source_ptr);
+  uVar1 = sound_sndmain_cpp_startSfx_FUN_005a8e90(filename);
   sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
   return uVar1;
 }

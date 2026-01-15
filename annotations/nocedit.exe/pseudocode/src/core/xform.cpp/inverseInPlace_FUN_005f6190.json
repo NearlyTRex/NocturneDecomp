@@ -1,21 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 17,
-    "complexity_score": 128,
+    "complexity_score": 111,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 18,
-    "suspect_count": 8,
+    "pseudocode_lines": 16,
+    "suspect_count": 7,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
       "pointer_cast",
-      "register_param",
-      "stack_param"
+      "stack_param",
+      "stack_ref"
     ],
-    "total_lines": 35
+    "total_lines": 33
   },
   "cross_references": [],
   "function": {
@@ -96,36 +95,29 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 6,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 6,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 9,
+      "line": 8,
       "match": "in_stack_ffffffc8",
       "text": "CMatrix3x4f *in_stack_ffffffc8;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 11,
       "match": "in_stack_ffffffc8",
       "text": "core_xform_cpp_inverse_FUN_005f6210(matrix,in_stack_ffffffc8);",
       "type": "stack_param"
     },
     {
+      "description": "Direct stack address reference",
+      "line": 12,
+      "match": "&stack0xffffffc8",
+      "text": "pfVar2 = (float *)&stack0xffffffc8;",
+      "type": "stack_ref"
+    },
+    {
       "description": "Complex pointer cast",
-      "line": 18,
+      "line": 16,
       "match": "(CMatrix3x4f *)((int)",
       "text": "matrix = (CMatrix3x4f *)((int)matrix + ((uint)bVar3 * -2 + 1) * 4);",
       "type": "pointer_cast"

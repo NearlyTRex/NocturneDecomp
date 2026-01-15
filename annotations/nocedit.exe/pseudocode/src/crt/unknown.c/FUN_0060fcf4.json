@@ -1,19 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 190,
-    "complexity_score": 287,
+    "complexity_score": 230,
     "cross_reference_count": 3,
     "function_call_count": 6,
     "global_count": 2,
-    "pseudocode_lines": 77,
-    "suspect_count": 19,
+    "pseudocode_lines": 75,
+    "suspect_count": 14,
     "suspect_types": [
       "call_esp_preserve",
       "special_crt_function",
-      "stack_param",
-      "unaffected_reg"
+      "stack_param"
     ],
-    "total_lines": 267
+    "total_lines": 265
   },
   "cross_references": [
     {
@@ -151,80 +150,45 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 11,
-      "match": "unaff_EDI",
-      "text": "ulong unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 11,
       "match": "in_stack_00000004",
       "text": "short *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000010",
-      "text": "uint in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 14,
       "match": "in_stack_00000004",
       "text": "if (in_stack_00000004 == (short *)0x0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 17,
       "match": "in_stack_00000004",
       "text": "if (*in_stack_00000004 != 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 18,
       "match": "in_stack_00000004",
       "text": "sVar1 = in_stack_00000004[1];",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 19,
       "match": "in_stack_00000004",
-      "text": "while ((param_1 = in_stack_00000004 + 1, sVar1 != 0 && (*param_1 != 0x3d))) {",
+      "text": "psVar2 = in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 75,
       "match": "in_stack_00000004",
-      "text": "sVar1 = in_stack_00000004[2];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004 = param_1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 60,
-      "match": "unaff_EDI",
-      "text": "crt_memory_c_memset_FUN_005fde40(g_EnvironStringArea,0,unaff_EDI);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 77,
-      "match": "in_stack_00000010",
-      "text": "ptr[n] = in_stack_00000010;",
+      "text": "ptr[n] = in_stack_00000004;",
       "type": "stack_param"
     },
     {

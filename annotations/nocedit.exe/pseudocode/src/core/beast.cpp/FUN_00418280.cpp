@@ -11,11 +11,10 @@
 void core_beast_cpp_FUN_00418280(void)
 
 {
-  int in_stack_00000004;
-  CEnemy *in_stack_00000008;
+  CEnemy *in_stack_00000004;
   
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450
-            ((CDeformableModelInstance *)(in_stack_00000004 + 0x158));
-  core_enemy_cpp_CEnemy_FUN_004a9650(in_stack_00000008);
+            (&(in_stack_00000004->base_character).model);
+  core_enemy_cpp_CEnemy_FUN_004a9650(in_stack_00000004);
   return;
 }

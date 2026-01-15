@@ -1,24 +1,21 @@
 {
   "complexity": {
     "assembly_lines": 139,
-    "complexity_score": 437,
+    "complexity_score": 379,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 11,
-    "pseudocode_lines": 52,
-    "suspect_count": 34,
+    "pseudocode_lines": 49,
+    "suspect_count": 30,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "callind_preserve",
       "lea_esp_stack_addr",
-      "register_param",
       "stack_param",
       "stack_ref",
-      "suspect_float",
       "variadic_preserve"
     ],
-    "total_lines": 191
+    "total_lines": 188
   },
   "cross_references": [],
   "function": {
@@ -221,127 +218,99 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 10,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 10,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 11,
+      "line": 10,
       "match": "in_stack_00000004",
       "text": "CDemonActor *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 16,
       "match": "in_stack_00000004",
       "text": "if (*(CDemonActor **)in_stack_00000004[1].actor_name != (CDemonActor *)0x0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 18,
       "match": "in_stack_00000004",
       "text": "(*(CDemonActor **)in_stack_00000004[1].actor_name,\"CBoxActor\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 20,
       "match": "in_stack_00000004",
       "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_00000004",
+      "text": "pCVar2 = (*in_stack_00000004->vtable->getBoundingBox)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 22,
       "match": "in_stack_00000004",
-      "text": "pCVar2 = (*in_stack_00000004->vtable->getBoundingBox)",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_00000004",
-      "text": "(in_stack_00000004,(CBoundingBox3D *)&stack0xffffffd0);",
+      "text": "(in_stack_00000004,(CBoundingBox3D *)&stack0xffffffc4);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 23,
-      "match": "&stack0xffffffd0",
-      "text": "(in_stack_00000004,(CBoundingBox3D *)&stack0xffffffd0);",
+      "line": 22,
+      "match": "&stack0xffffffc4",
+      "text": "(in_stack_00000004,(CBoundingBox3D *)&stack0xffffffc4);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 27,
+      "line": 26,
       "match": "in_stack_00000004",
       "text": "(*(CDemonActor **)in_stack_00000004[1].actor_name,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 39,
+      "line": 38,
       "match": "in_stack_00000004",
       "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 43,
+      "line": 42,
       "match": "in_stack_00000004",
       "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 44,
+      "line": 43,
       "match": "in_stack_00000004",
-      "text": "pCVar2 = (*in_stack_00000004->vtable->getBoundingBox)",
+      "text": "pCVar2 = (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,&local_24);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 43,
+      "match": "in_stack_00000004",
+      "text": "pCVar2 = (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,&local_24);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 45,
-      "match": "in_stack_00000004",
-      "text": "(in_stack_00000004,(CBoundingBox3D *)&stack0xffffffe8);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 45,
-      "match": "&stack0xffffffe8",
-      "text": "(in_stack_00000004,(CBoundingBox3D *)&stack0xffffffe8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 47,
       "match": "in_stack_00000004",
       "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_00000004);",
       "type": "stack_param"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 49,
-      "match": "6.518866e-39",
-      "text": "fStack_2c = 6.518866e-39;",
-      "type": "suspect_float"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 50,
+      "line": 47,
       "match": "in_stack_00000004",
       "text": "core_actor_cpp_CDemonActor_FUN_0040dec0(in_stack_00000004);",
       "type": "stack_param"

@@ -14,15 +14,12 @@ engine_2d_c_wrapTextToWidth_FUN_00401d80(char *input_text,int max_width,char *ou
   int iVar2;
   uint uVar3;
   uint uVar4;
-  BADSPACEBASE *in_ESP;
-  int unaff_EBP;
   char *pcVar5;
   char *pcVar6;
   char *pcVar7;
   byte bVar8;
-  int in_stack_00000010;
-  char acStack_110 [252];
-  uint local_14;
+  char acStack_114 [256];
+  int local_14;
   
   bVar8 = 0;
   local_14 = 1;
@@ -42,14 +39,14 @@ engine_2d_c_wrapTextToWidth_FUN_00401d80(char *input_text,int max_width,char *ou
     } while (cVar1 != '\0');
     iVar2 = engine_2d_c_getStringWidth_FUN_004018a0(output_buffer);
     pcVar5 = output_buffer;
-    if ((int)output_buffer < iVar2) {
+    if (max_width < iVar2) {
       do {
         cVar1 = *output_buffer;
         if (((cVar1 == '\0') || ((g_CharacterClassificationTable[(byte)(cVar1 + 1)] & 2U) != 0)) ||
            (cVar1 == '\n')) {
           uVar4 = (int)output_buffer - (int)pcVar5;
           pcVar6 = pcVar5;
-          pcVar7 = acStack_110;
+          pcVar7 = acStack_114;
           for (uVar3 = uVar4 >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
             *(uint *)pcVar7 = *(uint *)pcVar6;
             pcVar6 = pcVar6 + (uint)bVar8 * -8 + 4;
@@ -60,9 +57,9 @@ engine_2d_c_wrapTextToWidth_FUN_00401d80(char *input_text,int max_width,char *ou
             pcVar6 = pcVar6 + (uint)bVar8 * -2 + 1;
             pcVar7 = pcVar7 + (uint)bVar8 * -2 + 1;
           }
-          acStack_110[uVar4] = '\0';
-          iVar2 = engine_2d_c_getStringWidth_FUN_004018a0(acStack_110);
-          if (in_stack_00000010 < iVar2) {
+          acStack_114[uVar4] = '\0';
+          iVar2 = engine_2d_c_getStringWidth_FUN_004018a0(acStack_114);
+          if (max_width < iVar2) {
             cVar1 = output_buffer[-1];
             pcVar6 = output_buffer;
             while ((output_buffer = pcVar6 + -1, cVar1 != '\n' && (*output_buffer != ' '))) {
@@ -74,9 +71,12 @@ engine_2d_c_wrapTextToWidth_FUN_00401d80(char *input_text,int max_width,char *ou
           if (*output_buffer == '\n') {
             pcVar5 = output_buffer + 1;
           }
+          if (*output_buffer == '\0') {
+            local_14 = 0;
+          }
         }
         output_buffer = output_buffer + 1;
-      } while (unaff_EBP != 0);
+      } while (local_14 != 0);
       return;
     }
   }

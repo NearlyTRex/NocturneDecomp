@@ -13,7 +13,6 @@ support_codec_cpp_CCodec_processBuffer_FUN_0043eba0
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   istrstream local_94;
   
   crt_strstream_cpp_istrstream_constructor_FUN_005ff524(&local_94,0,(char *)input,*input_length);

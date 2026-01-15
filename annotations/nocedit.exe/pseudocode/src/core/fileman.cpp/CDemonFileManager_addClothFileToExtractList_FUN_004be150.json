@@ -1,16 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 89,
-    "complexity_score": 171,
+    "complexity_score": 131,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 12,
     "pseudocode_lines": 31,
-    "suspect_count": 12,
+    "suspect_count": 9,
     "suspect_types": [
       "call_esp_preserve",
-      "format_string_mismatch",
-      "stack_param",
       "variadic_preserve"
     ],
     "total_lines": 120
@@ -204,22 +202,8 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000014",
-      "text": "uint *in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 24,
-      "match": "in_stack_00000014",
-      "text": "crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)*in_stack_00000014,\"models\\\\%s\\n\");",
-      "type": "stack_param"
-    },
-    {
       "call_address": "004be1ad",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -233,7 +217,7 @@
     },
     {
       "call_address": "004be1cd",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -244,17 +228,6 @@
       "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
       "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 004be1cd (no EBP frame)",
       "type": "variadic_preserve"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"models\\\\%s\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "models\\\\%s\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 24,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)*in_stack_00000014,\"models\\\\%s\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 12,

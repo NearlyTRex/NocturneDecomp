@@ -19,18 +19,17 @@ core_dtri_cpp_cylinderTriangleTest_FUN_0049ad80
   uint uVar6;
   uint uVar7;
   int iVar8;
-  BADSPACEBASE *in_ESP;
   CDemonTriangle *pCVar9;
   CDemonTriangle *pCVar10;
   CDemonTriangle *vertex2;
   bool bVar11;
-  float in_stack_ffffff84;
-  float in_stack_ffffff88;
-  float local_6c [10];
+  float local_7c [6];
+  float local_64 [3];
+  float local_58 [5];
   float local_44;
   CDemonTriangle *local_40;
   float local_3c;
-  CVector3f *local_38;
+  uint local_38;
   uint local_34;
   uint local_30;
   float local_2c;
@@ -82,7 +81,7 @@ core_dtri_cpp_cylinderTriangleTest_FUN_0049ad80
   if ((triangle->vertex1).y <= cylinder->top_y) {
     bVar1 = bVar1 | 2;
   }
-  local_38 = (CVector3f *)(uint)bVar1;
+  local_38 = (uint)bVar1;
   bVar2 = cylinder->bottom_y <= (triangle->vertex2).y;
   if ((triangle->vertex2).y <= cylinder->top_y) {
     bVar2 = bVar2 | 2;
@@ -101,74 +100,73 @@ core_dtri_cpp_cylinderTriangleTest_FUN_0049ad80
     if (bVar11) {
       fVar4 = (cylinder->bottom_y - (triangle->vertex1).y) /
               ((triangle->vertex2).y - (triangle->vertex1).y);
-      in_stack_ffffff84 =
-           ((triangle->vertex2).x - (triangle->vertex1).x) * fVar4 + (triangle->vertex1).x;
-      local_6c[5] = ((triangle->vertex2).z - (triangle->vertex1).z) * fVar4 + (triangle->vertex1).z;
+      local_7c[0] = ((triangle->vertex2).x - (triangle->vertex1).x) * fVar4 + (triangle->vertex1).x;
+      local_58[0] = ((triangle->vertex2).z - (triangle->vertex1).z) * fVar4 + (triangle->vertex1).z;
     }
     uVar7 = (uint)bVar11;
     uVar6 = uVar7;
     if (((bVar2 ^ bVar3) & 1) != 0) {
       fVar4 = (cylinder->bottom_y - (triangle->vertex2).y) /
               ((triangle->vertex3).y - (triangle->vertex2).y);
-      *(float *)(&stack0xffffff84 + uVar7 * 4) =
+      local_7c[uVar7] =
            ((triangle->vertex3).x - (triangle->vertex2).x) * fVar4 + (triangle->vertex2).x;
       uVar6 = uVar7 + 1;
-      local_6c[uVar7 + 5] =
+      local_7c[uVar7 + 9] =
            ((triangle->vertex3).z - (triangle->vertex2).z) * fVar4 + (triangle->vertex2).z;
     }
     uVar7 = uVar6;
     if (((bVar3 ^ bVar1) & 1) != 0) {
       fVar4 = (cylinder->bottom_y - (triangle->vertex3).y) /
               ((triangle->vertex1).y - (triangle->vertex3).y);
-      *(float *)(&stack0xffffff84 + uVar6 * 4) =
+      local_7c[uVar6] =
            ((triangle->vertex1).x - (triangle->vertex3).x) * fVar4 + (triangle->vertex3).x;
       uVar7 = uVar6 + 1;
-      local_6c[uVar6 + 5] =
+      local_7c[uVar6 + 9] =
            ((triangle->vertex1).z - (triangle->vertex3).z) * fVar4 + (triangle->vertex3).z;
     }
     if (1 < uVar7) {
-      cylinder->edge_x1 = in_stack_ffffff84;
-      cylinder->edge_z1 = local_6c[5];
-      cylinder->edge_x2 = in_stack_ffffff88;
-      cylinder->edge_z2 = local_6c[6];
+      cylinder->edge_x1 = local_7c[0];
+      cylinder->edge_z1 = local_58[0];
+      cylinder->edge_x2 = local_7c[1];
+      cylinder->edge_z2 = local_58[1];
       iVar8 = core_dtri_cpp_cylinderEdgeIntersection_FUN_0049aa00(cylinder);
       if (iVar8 != 0) goto LAB_0049b0c8;
     }
   }
   if ((triangle->normal).y <= 0.0) {
-    bVar11 = ((local_34 ^ (uint)local_2c) & 2) != 0;
+    bVar11 = ((local_38 ^ local_30) & 2) != 0;
     if (bVar11) {
       fVar4 = (cylinder->top_y - (triangle->vertex1).y) /
               ((triangle->vertex2).y - (triangle->vertex1).y);
-      local_6c[0] = ((triangle->vertex2).x - (triangle->vertex1).x) * fVar4 + (triangle->vertex1).x;
-      local_6c[3] = ((triangle->vertex2).z - (triangle->vertex1).z) * fVar4 + (triangle->vertex1).z;
+      local_7c[3] = ((triangle->vertex2).x - (triangle->vertex1).x) * fVar4 + (triangle->vertex1).x;
+      local_64[0] = ((triangle->vertex2).z - (triangle->vertex1).z) * fVar4 + (triangle->vertex1).z;
     }
     uVar7 = (uint)bVar11;
     uVar6 = uVar7;
-    if ((((uint)local_2c ^ local_30) & 2) != 0) {
+    if (((local_30 ^ local_34) & 2) != 0) {
       fVar4 = (cylinder->top_y - (triangle->vertex2).y) /
               ((triangle->vertex3).y - (triangle->vertex2).y);
-      local_6c[uVar7] =
+      local_7c[uVar7 + 3] =
            ((triangle->vertex3).x - (triangle->vertex2).x) * fVar4 + (triangle->vertex2).x;
       uVar6 = uVar7 + 1;
-      local_6c[uVar7 + 3] =
+      local_7c[uVar7 + 6] =
            ((triangle->vertex3).z - (triangle->vertex2).z) * fVar4 + (triangle->vertex2).z;
     }
     uVar7 = uVar6;
-    if (((local_30 ^ local_34) & 2) != 0) {
+    if (((local_34 ^ local_38) & 2) != 0) {
       fVar4 = (cylinder->top_y - (triangle->vertex3).y) /
               ((triangle->vertex1).y - (triangle->vertex3).y);
-      local_6c[uVar6] =
+      local_7c[uVar6 + 3] =
            ((triangle->vertex1).x - (triangle->vertex3).x) * fVar4 + (triangle->vertex3).x;
       uVar7 = uVar6 + 1;
-      local_6c[uVar6 + 3] =
+      local_7c[uVar6 + 6] =
            ((triangle->vertex1).z - (triangle->vertex3).z) * fVar4 + (triangle->vertex3).z;
     }
     if (1 < uVar7) {
-      cylinder->edge_x1 = local_6c[0];
-      cylinder->edge_z1 = local_6c[3];
-      cylinder->edge_x2 = local_6c[1];
-      cylinder->edge_z2 = local_6c[4];
+      cylinder->edge_x1 = local_7c[3];
+      cylinder->edge_z1 = local_64[0];
+      cylinder->edge_x2 = local_7c[4];
+      cylinder->edge_z2 = local_64[1];
       iVar8 = core_dtri_cpp_cylinderEdgeIntersection_FUN_0049aa00(cylinder);
       if (iVar8 != 0) {
 LAB_0049b0c8:
@@ -184,6 +182,7 @@ LAB_0049b0c8:
   }
   core_dtri_cpp_cylinderEdgeTestWithHeight_FUN_0049ace0
             (cylinder,&pCVar10->vertex1,&vertex2->vertex1);
-  core_dtri_cpp_cylinderEdgeTestWithHeight_FUN_0049ace0(cylinder,&pCVar10->vertex1,local_38);
+  core_dtri_cpp_cylinderEdgeTestWithHeight_FUN_0049ace0
+            (cylinder,&pCVar10->vertex1,&local_40->vertex1);
   return;
 }

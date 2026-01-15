@@ -14,7 +14,6 @@ void __cdecl core_fire_cpp_CGunFlame_FUN_004c4c00(CGunFlame *this_ptr)
   float fVar2;
   float fVar3;
   float fVar4;
-  BADSPACEBASE *in_ESP;
   int iVar5;
   int iVar6;
   CVector3f aCStack_3c [2];

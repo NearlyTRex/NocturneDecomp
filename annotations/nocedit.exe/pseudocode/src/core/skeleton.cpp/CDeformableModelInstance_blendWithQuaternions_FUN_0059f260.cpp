@@ -18,160 +18,142 @@ core_skeleton_cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0059f260
   float fVar3;
   float fVar4;
   float fVar5;
+  float fVar6;
+  float fVar7;
   CSkeleton *this_ptr_00;
   int hierarchy_distance;
-  int iVar6;
-  CQuaternion4f *result_out;
-  BADSPACEBASE *in_ESP;
+  CQuaternion4f *pCVar8;
+  int iVar9;
   int unaff_EBP;
-  float *pfVar7;
-  int unaff_EDI;
-  CDeformableModel_MotionBlendWeightFunc *pCVar9;
-  float *pfVar10;
+  CQuaternion4f *unaff_ESI;
+  CQuaternion4f *pCVar10;
+  uint *puVar11;
   uint *puVar12;
-  uint *puVar13;
-  byte bVar14;
-  int unaff_retaddr;
-  CQuaternion4f *in_stack_0000001c;
-  CQuaternion4f *in_stack_00000024;
-  CQuaternion4f *in_stack_00000028;
-  float afStackY_18a8 [1518];
-  float fVar15;
-  CQuaternion4f *in_stack_ffffff24;
-  CQuaternion4f *in_stack_ffffff28;
-  CQuaternion4f *in_stack_ffffff2c;
-  float in_stack_ffffff30;
-  float fStack_c0;
-  float in_stack_ffffff48;
-  float in_stack_ffffff50;
-  uint local_a8;
-  byte auStack_a4 [16];
-  uint auStack_94 [5];
-  CQuaternion4f CStack_80;
-  uint uStack_6c;
-  uint auStack_68 [11];
-  float afStack_3c [3];
+  float *pfVar13;
+  float *pfVar14;
+  byte bVar15;
+  float afStackY_18b4 [1518];
+  CQuaternion4f *in_stack_ffffff18;
+  uint uStack_e4;
+  float in_stack_ffffff2c;
+  float local_c8;
+  CQuaternion4f local_b8;
+  CQuaternion4f local_a8;
+  CQuaternion4f local_98;
+  float local_88;
+  float afStack_84 [16];
+  float afStack_44 [4];
+  CQuaternion4f *local_34;
   CQuaternion4f *local_30;
   CQuaternion4f *local_2c;
-  CQuaternion4f *local_28;
-  CQuaternion4f *local_24;
-  CQuaternion4f *local_20;
-  CSkeleton *local_1c;
+  CDeformableModelInstance *local_28;
+  CDeformableModelInstance *local_24;
+  CSkeleton *local_20;
+  CQuaternion4f *local_1c;
   CQuaternion4f *local_18;
   int local_14;
-  CQuaternion4f *pCVar8;
-  float *pfVar11;
   
-  bVar14 = 0;
+  bVar15 = 0;
   if ((float)0.001 < blend_weight) {
     this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
-    local_30 = source_quaternions + 0x6b;
-    if (source_quaternions[0x225].w == 0.0) {
-      iVar6 = 0;
+    local_34 = (this_ptr->bone_transform).bone_rotations;
+    if (this_ptr->field11_0x2250 == 0) {
+      iVar9 = 0;
       if (0 < this_ptr_00->bone_count) {
-        local_20 = source_quaternions;
-        local_18 = (CQuaternion4f *)source_position;
-        local_28 = local_30;
+        local_24 = this_ptr;
+        local_1c = source_quaternions;
+        local_2c = local_34;
         do {
           hierarchy_distance =
                core_skeleton_cpp_CSkeleton_getHierarchyDistance_FUN_0059a100
-                         (this_ptr_00,iVar6,(int)in_stack_0000001c);
+                         (this_ptr_00,iVar9,bone_index);
           if (-1 < hierarchy_distance) {
-            fVar15 = blend_weight;
-            in_stack_00000024 =
-                 (CQuaternion4f *)
-                 (*(code *)in_stack_00000024)
-                           (iVar6,(int)in_stack_0000001c,(float)in_stack_0000001c,hierarchy_distance
-                            ,(CDeformableModelInstance *)blend_weight);
-            fStack_c0 = 8.260639e-39;
-            core_xform_cpp_slerpQuaternion_FUN_005f77e0
-                      ((CQuaternion4f *)source_position,in_stack_0000001c,in_stack_00000024,
-                       in_stack_ffffff50);
-            pCVar9 = blend_callback + (uint)bVar14 * -8 + 0x6b4;
-            *(float *)(blend_callback + 0x6b0) = fVar15;
-            *(uint *)pCVar9 = *(uint *)(auStack_a4 + (uint)bVar14 * -8 + -4);
-            *(uint *)(pCVar9 + (uint)bVar14 * -8 + 4) =
-                 *(uint *)(auStack_a4 + (uint)bVar14 * -8 + (uint)bVar14 * -8);
-            *(uint *)(pCVar9 + (uint)bVar14 * -8 + 4 + (uint)bVar14 * -8 + 4) =
+            pCVar8 = (CQuaternion4f *)
+                     (*blend_callback)(iVar9,bone_index,blend_weight,hierarchy_distance,this_ptr);
+            uStack_e4 = 0x59f34d;
+            core_xform_cpp_slerpQuaternion_FUN_005f77e0(local_18,unaff_ESI,pCVar8,in_stack_ffffff2c)
+            ;
+            puVar11 = (uint *)(unaff_EBP + 0x6b4 + (uint)bVar15 * -8);
+            *(CQuaternion4f **)(unaff_EBP + 0x6b0) = in_stack_ffffff18;
+            puVar12 = puVar11 + (uint)bVar15 * -2 + 1;
+            *puVar11 = *(uint *)(&stack0xffffff30 + (uint)bVar15 * -8);
+            *puVar12 = *(uint *)(&stack0xffffff34 + (uint)bVar15 * -8 + (uint)bVar15 * -8);
+            puVar12[(uint)bVar15 * -2 + 1] =
                  *(uint *)
-                  ((int)(auStack_a4 + (uint)bVar14 * -8 + (uint)bVar14 * -8) +
-                  ((uint)bVar14 * -2 + 1) * 4);
+                  ((int)(&stack0xffffff34 + (uint)bVar15 * -8 + (uint)bVar15 * -8) +
+                  ((uint)bVar15 * -2 + 1) * 4);
           }
-          iVar6 = iVar6 + 1;
-          local_1c = (CSkeleton *)((int)local_1c + 0x10);
-          local_24 = (CQuaternion4f *)((int)local_24 + 0x10);
-          local_14 = local_14 + 0x10;
-        } while (iVar6 < this_ptr_00->bone_count);
+          iVar9 = iVar9 + 1;
+          local_24 = (CDeformableModelInstance *)&(local_24->motion_controller).tween_speed;
+          local_2c = local_2c + 1;
+          local_1c = local_1c + 1;
+        } while (iVar9 < this_ptr_00->bone_count);
       }
     }
-    else if (source_quaternions[0x225].w == 1.4013e-45) {
-      local_14 = 0;
+    else if (this_ptr->field11_0x2250 == 1) {
+      local_18 = (CQuaternion4f *)0x0;
       if (0 < this_ptr_00->bone_count) {
-        local_24 = source_quaternions;
-        result_out = (CQuaternion4f *)source_position;
-        local_2c = local_30;
-        local_1c = this_ptr_00;
+        local_28 = this_ptr;
+        pCVar8 = source_quaternions;
+        local_30 = local_34;
+        local_20 = this_ptr_00;
         do {
-          iVar6 = core_skeleton_cpp_CSkeleton_getHierarchyDistance_FUN_0059a100
-                            (this_ptr_00,unaff_EBP,(int)in_stack_0000001c);
-          if (-1 < iVar6) {
-            if (*(int *)(local_14 + 0x2857c) < 0) {
-              pfVar10 = (float *)&stack0xffffff34;
-              pCVar8 = result_out;
-            }
-            else {
+          iVar9 = core_skeleton_cpp_CSkeleton_getHierarchyDistance_FUN_0059a100
+                            (this_ptr_00,(int)local_18,bone_index);
+          if (-1 < iVar9) {
+            iVar9 = local_20->bone_list[0].parent_index;
+            pCVar10 = pCVar8;
+            if (-1 < iVar9) {
+              local_14 = iVar9 * 0x10;
               core_xform_cpp_negateFirstComponent_FUN_005f75e0
-                        ((CQuaternion4f *)(bone_index + *(int *)(local_14 + 0x2857c) * 0x10),
-                         in_stack_ffffff24);
-              pCVar8 = (CQuaternion4f *)(auStack_a4 + 0xc);
-              auStack_a4._8_4_ = in_stack_ffffff48;
-              auStack_94[(uint)bVar14 * -2 + -1] = auStack_94[(uint)bVar14 * -2 + -8];
-              auStack_94[(uint)bVar14 * -2 + (uint)bVar14 * -2] =
-                   auStack_94[(uint)bVar14 * -2 + (uint)bVar14 * -2 + -7];
-              (auStack_94 + (uint)bVar14 * -2 + (uint)bVar14 * -2)[(uint)bVar14 * -2 + 1] =
-                   (auStack_94 + (uint)bVar14 * -2 + (uint)bVar14 * -2 + -7)[(uint)bVar14 * -2 + 1];
-              core_xform_cpp_multiplyQuaternion_FUN_005f7640(result_out,pCVar8,in_stack_ffffff28);
-              local_a8 = auStack_68[1];
-              *(uint *)(auStack_a4 + (uint)bVar14 * -8) = auStack_68[(uint)bVar14 * -2 + 2];
-              *(uint *)(auStack_a4 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 4) =
-                   auStack_68[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 3];
-              *(uint *)
-               ((int)(auStack_a4 + (uint)bVar14 * -8 + (uint)bVar14 * -8 + 4) +
-               ((uint)bVar14 * -2 + 1) * 4) =
-                   (auStack_68 + (uint)bVar14 * -2 + (uint)bVar14 * -2 + 3)[(uint)bVar14 * -2 + 1];
-              pfVar10 = (float *)&stack0xffffff3c;
+                        (source_quaternions + iVar9,in_stack_ffffff18);
+              pCVar10 = &local_a8;
+              local_a8.w = local_c8;
+              puVar11 = (uint *)((int)&local_a8 + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 8);
+              *(uint *)((int)&local_a8 + (uint)bVar15 * -8 + 4) =
+                   *(uint *)(&stack0xffffff3c + (uint)bVar15 * -8);
+              *puVar11 = *(uint *)(&stack0xffffff40 + (uint)bVar15 * -8 + (uint)bVar15 * -8);
+              puVar11[(uint)bVar15 * -2 + 1] =
+                   *(uint *)
+                    ((int)(&stack0xffffff40 + (uint)bVar15 * -8 + (uint)bVar15 * -8) +
+                    ((uint)bVar15 * -2 + 1) * 4);
+              core_xform_cpp_multiplyQuaternion_FUN_005f7640(pCVar8,pCVar10,in_stack_ffffff18);
+              local_b8.w = afStack_84[3];
+              pfVar13 = (float *)((int)&local_b8 + (uint)bVar15 * -8 + (uint)bVar15 * -8 + 8);
+              *(float *)((int)&local_b8 + (uint)bVar15 * -8 + 4) = afStack_84[(uint)bVar15 * -2 + 4]
+              ;
+              *pfVar13 = afStack_84[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 5];
+              pfVar13[(uint)bVar15 * -2 + 1] =
+                   (afStack_84 + (uint)bVar15 * -2 + (uint)bVar15 * -2 + 5)[(uint)bVar15 * -2 + 1];
               core_xform_cpp_multiplyQuaternion_FUN_005f7640
-                        ((CQuaternion4f *)auStack_a4,
-                         (CQuaternion4f *)((int)local_20 + unaff_retaddr),in_stack_ffffff2c);
-              pCVar8 = &CStack_80;
+                        (&local_b8,(CQuaternion4f *)((int)&local_34->w + local_14),in_stack_ffffff18
+                        );
+              pCVar10 = &local_98;
             }
-            pfVar11 = pfVar10 + (uint)bVar14 * -2 + 1;
-            pfVar7 = (float *)((int)pCVar8 + (uint)bVar14 * -8 + 4);
-            *pfVar10 = pCVar8->w;
-            pfVar10 = pfVar7 + (uint)bVar14 * -2 + 1;
-            *pfVar11 = *pfVar7;
-            pfVar11[(uint)bVar14 * -2 + 1] = *pfVar10;
-            (pfVar11 + (uint)bVar14 * -2 + 1)[(uint)bVar14 * -2 + 1] =
-                 pfVar10[(uint)bVar14 * -2 + 1];
-            in_stack_ffffff28 = (CQuaternion4f *)&stack0xffffff40;
-            in_stack_ffffff24 = local_18;
-            in_stack_ffffff2c = in_stack_00000028;
+            puVar11 = (uint *)((int)pCVar10 + (uint)bVar15 * -8 + 4);
+            puVar12 = puVar11 + (uint)bVar15 * -2 + 1;
+            *(uint *)(&stack0xffffff2c + (uint)bVar15 * -8) = *puVar11;
+            *(uint *)(&stack0xffffff30 + (uint)bVar15 * -8 + (uint)bVar15 * -8) = *puVar12;
+            *(uint *)
+             ((int)(&stack0xffffff30 + (uint)bVar15 * -8 + (uint)bVar15 * -8) +
+             ((uint)bVar15 * -2 + 1) * 4) = puVar12[(uint)bVar15 * -2 + 1];
             core_xform_cpp_slerpQuaternion_FUN_005f77e0
-                      (local_18,in_stack_ffffff28,in_stack_00000028,in_stack_ffffff30);
-            puVar12 = (uint *)(unaff_EDI + 0x6b4 + (uint)bVar14 * -8);
-            *(uint *)(unaff_EDI + 0x6b0) = uStack_6c;
-            puVar13 = puVar12 + (uint)bVar14 * -2 + 1;
-            *puVar12 = auStack_68[(uint)bVar14 * -2];
-            *puVar13 = auStack_68[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 1];
-            puVar13[(uint)bVar14 * -2 + 1] =
-                 (auStack_68 + (uint)bVar14 * -2 + (uint)bVar14 * -2 + 1)[(uint)bVar14 * -2 + 1];
+                      (local_30,(CQuaternion4f *)&stack0xffffff28,(CQuaternion4f *)blend_weight,
+                       (float)in_stack_ffffff18);
+            pfVar13 = (float *)((int)local_28 + (uint)bVar15 * -8 + 0x6b4);
+            (local_28->bone_transform).bone_rotations[0].w = local_88;
+            pfVar14 = pfVar13 + (uint)bVar15 * -2 + 1;
+            *pfVar13 = afStack_84[(uint)bVar15 * -2];
+            *pfVar14 = afStack_84[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 1];
+            pfVar14[(uint)bVar15 * -2 + 1] =
+                 (afStack_84 + (uint)bVar15 * -2 + (uint)bVar15 * -2 + 1)[(uint)bVar15 * -2 + 1];
           }
-          result_out = result_out + 1;
-          local_18 = (CQuaternion4f *)&local_18[2].x;
-          local_20 = (CQuaternion4f *)((int)local_20 + 0x10);
-          local_28 = (CQuaternion4f *)((int)local_28 + 0x10);
-          unaff_EBP = unaff_EBP + 1;
-        } while (unaff_EBP < this_ptr_00->bone_count);
+          pCVar8 = pCVar8 + 1;
+          local_20 = (CSkeleton *)((local_20->motion_list).state_names[1] + 2);
+          local_28 = (CDeformableModelInstance *)&(local_28->motion_controller).tween_speed;
+          local_30 = local_30 + 1;
+          local_18 = (CQuaternion4f *)((int)local_18 + 1);
+        } while ((int)local_18 < this_ptr_00->bone_count);
       }
     }
     else {
@@ -179,20 +161,20 @@ core_skeleton_cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0059f260
       g_CurrentLineNumber = 0xad5;
       core_main_c_displayErrorAndQuit_FUN_00506f10("Write me!");
     }
-    if ((int)in_stack_0000001c < 0) {
-      fVar4 = source_position[0x6c].x;
-      fVar15 = *(float *)(bone_index + 4);
-      fVar1 = *(float *)(bone_index + 8);
-      fVar5 = 1.0 - (float)blend_callback;
-      fVar2 = source_position[0x8e].x;
-      fVar3 = source_position[0x8e].y;
-      if (&source_position[0x8d].z != afStack_3c) {
-        source_position[0x8d].z =
-             source_position[0x8d].z * fVar5 +
-             source_position[0x6b].y * *(float *)bone_index * (float)blend_callback;
-        source_position[0x8e].x =
-             fVar2 * fVar5 + source_position[0x6b].z * fVar15 * (float)blend_callback;
-        source_position[0x8e].y = fVar3 * fVar5 + fVar4 * fVar1 * (float)blend_callback;
+    if (bone_index < 0) {
+      fVar5 = (this_ptr->scaled_model_dimensions).y;
+      fVar6 = (this_ptr->scaled_model_dimensions).z;
+      fVar1 = source_position->y;
+      fVar2 = source_position->z;
+      fVar7 = 1.0 - blend_weight;
+      fVar3 = (this_ptr->bone_transform).root_position.y;
+      fVar4 = (this_ptr->bone_transform).root_position.z;
+      if (&this_ptr->bone_transform != (SBoneTransformData *)afStack_44) {
+        (this_ptr->bone_transform).root_position.x =
+             (this_ptr->bone_transform).root_position.x * fVar7 +
+             (this_ptr->scaled_model_dimensions).x * source_position->x * blend_weight;
+        (this_ptr->bone_transform).root_position.y = fVar3 * fVar7 + fVar5 * fVar1 * blend_weight;
+        (this_ptr->bone_transform).root_position.z = fVar4 * fVar7 + fVar6 * fVar2 * blend_weight;
         return;
       }
     }

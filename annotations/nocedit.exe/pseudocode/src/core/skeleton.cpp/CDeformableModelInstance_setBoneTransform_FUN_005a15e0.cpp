@@ -13,23 +13,22 @@ core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0
 {
   int iVar1;
   CSkeleton *pCVar2;
-  SBoneTransformData *pSVar3;
+  CDeformableModelInstance *pCVar3;
   int iVar4;
   int iVar5;
-  SBoneTransformData *pSVar6;
-  SBoneTransformData *pSVar7;
+  CDeformableModelInstance *pCVar6;
+  uint *puVar7;
   uint *puVar8;
-  uint *puVar9;
-  CMatrix3x4f *pCVar10;
+  CMatrix3x4f *pCVar9;
+  uint *puVar10;
   uint *puVar11;
-  uint *puVar12;
-  float *pfVar13;
-  byte bVar14;
+  CMatrix3x4f *pCVar12;
+  byte bVar13;
+  SBoneTransformData *local_14;
   SBoneTransformData *local_10;
-  SBoneTransformData *local_c;
-  SBoneTransformData *pSVar15;
+  CDeformableModelInstance *local_c;
   
-  bVar14 = 0;
+  bVar13 = 0;
   if (&this_ptr->bone_transform != bone_transform) {
     (this_ptr->bone_transform).root_position.x = (bone_transform->root_position).x;
     (this_ptr->bone_transform).root_position.y = (bone_transform->root_position).y;
@@ -39,38 +38,37 @@ core_skeleton_cpp_CDeformableModelInstance_setBoneTransform_FUN_005a15e0
   iVar1 = pCVar2->bone_count;
   iVar5 = 0;
   if (0 < iVar1) {
-    local_c = bone_transform;
     local_10 = bone_transform;
-    pSVar3 = bone_transform;
-    pSVar6 = bone_transform;
-    pSVar7 = bone_transform;
-    pSVar15 = bone_transform;
+    local_14 = bone_transform;
+    local_c = this_ptr;
+    pCVar3 = this_ptr;
+    pCVar6 = this_ptr;
     do {
-      puVar11 = (uint *)((int)pSVar7 + (uint)bVar14 * -8 + 0x6b4);
-      puVar8 = (uint *)((int)local_10 + (uint)bVar14 * -8 + 0x10);
-      pSVar7->current_pose_data[0x19] = local_10->bone_rotations[0].w;
-      puVar12 = puVar11 + (uint)bVar14 * -2 + 1;
-      puVar9 = puVar8 + (uint)bVar14 * -2 + 1;
+      puVar10 = (uint *)((int)pCVar6 + (uint)bVar13 * -8 + 0x6b4);
+      puVar7 = (uint *)((int)local_14 + (uint)bVar13 * -8 + 0x10);
+      (pCVar6->bone_transform).bone_rotations[0].w = local_14->bone_rotations[0].w;
+      puVar11 = puVar10 + (uint)bVar13 * -2 + 1;
+      puVar8 = puVar7 + (uint)bVar13 * -2 + 1;
+      *puVar10 = *puVar7;
       *puVar11 = *puVar8;
-      *puVar12 = *puVar9;
-      puVar12[(uint)bVar14 * -2 + 1] = puVar9[(uint)bVar14 * -2 + 1];
-      pSVar15->bone_world_matrices[0x1b].m[0].x = pSVar6->current_pose_data[0];
-      pSVar6 = (SBoneTransformData *)&(pSVar6->root_position).y;
-      pSVar7 = (SBoneTransformData *)&pSVar7->bone_rotations[0].x;
-      pCVar10 = local_c->bone_world_matrices;
-      pfVar13 = &pSVar3->bone_world_matrices[0x23].m[1].x;
+      puVar11[(uint)bVar13 * -2 + 1] = puVar8[(uint)bVar13 * -2 + 1];
+      (local_c->bone_transform).current_pose_data[0] = bone_transform->current_pose_data[0];
+      bone_transform = (SBoneTransformData *)&(bone_transform->root_position).y;
+      pCVar6 = (CDeformableModelInstance *)&(pCVar6->motion_controller).tween_speed;
+      pCVar9 = local_10->bone_world_matrices;
+      pCVar12 = (pCVar3->bone_transform).bone_world_matrices;
       for (iVar4 = 0xc; iVar4 != 0; iVar4 = iVar4 + -1) {
-        *pfVar13 = pCVar10->m[0].w;
-        pCVar10 = (CMatrix3x4f *)((int)pCVar10 + (uint)bVar14 * -8 + 4);
-        pfVar13 = pfVar13 + (uint)bVar14 * -2 + 1;
+        pCVar12->m[0].w = pCVar9->m[0].w;
+        pCVar9 = (CMatrix3x4f *)((int)pCVar9 + (uint)bVar13 * -8 + 4);
+        pCVar12 = (CMatrix3x4f *)((int)pCVar12 + (uint)bVar13 * -8 + 4);
       }
       iVar5 = iVar5 + 1;
-      local_c = (SBoneTransformData *)&local_c->bone_rotations[2].x;
-      pSVar15 = (SBoneTransformData *)&(pSVar15->root_position).y;
-      local_10 = (SBoneTransformData *)&local_10->bone_rotations[0].x;
-      pSVar3 = (SBoneTransformData *)&pSVar3->bone_rotations[2].x;
+      local_10 = (SBoneTransformData *)&local_10->bone_rotations[2].x;
+      local_c = (CDeformableModelInstance *)&(local_c->motion_controller).current_motion_index;
+      local_14 = (SBoneTransformData *)&local_14->bone_rotations[0].x;
+      pCVar3 = (CDeformableModelInstance *)(pCVar3->motion_controller).current_motion_name;
     } while (iVar5 < iVar1);
   }
-  bone_transform[1].current_pose_data[0x52] = -NAN;
+  this_ptr->cached_skinned_lod_index = -1;
   return;
 }

@@ -1,20 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 397,
-    "complexity_score": 454,
+    "complexity_score": 425,
     "cross_reference_count": 0,
     "function_call_count": 17,
     "global_count": 22,
-    "pseudocode_lines": 159,
-    "suspect_count": 27,
+    "pseudocode_lines": 160,
+    "suspect_count": 25,
     "suspect_types": [
-      "badspacebase",
       "extra_output",
-      "register_param",
       "stack_param",
       "sub_artifact"
     ],
-    "total_lines": 556
+    "total_lines": 557
   },
   "cross_references": [],
   "function": {
@@ -763,22 +761,8 @@
       "type": "extra_output"
     },
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 14,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 14,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 14,
       "match": "in_stack_00000004",
       "text": "CDemonActor *in_stack_00000004;",
       "type": "stack_param"
@@ -787,21 +771,21 @@
       "description": "Unresolved stack parameter",
       "line": 40,
       "match": "in_stack_00000004",
-      "text": "pCVar1 = (CVector3f *)(*in_stack_00000004->vtable[1].renderOpaque)(in_stack_00000004);",
+      "text": "pCVar2 = (CVector3f *)(*in_stack_00000004->vtable[1].renderOpaque)(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 40,
       "match": "in_stack_00000004",
-      "text": "pCVar1 = (CVector3f *)(*in_stack_00000004->vtable[1].renderOpaque)(in_stack_00000004);",
+      "text": "pCVar2 = (CVector3f *)(*in_stack_00000004->vtable[1].renderOpaque)(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 41,
       "match": "in_stack_00000004",
-      "text": "core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(in_stack_00000004,&CStack_a0,pCVar1);",
+      "text": "core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(in_stack_00000004,&CStack_a0,pCVar2);",
       "type": "stack_param"
     },
     {
@@ -827,121 +811,121 @@
     },
     {
       "description": "Decompiler double/longlong extraction artifact",
-      "line": 61,
+      "line": 62,
       "match": "SUB84",
       "text": "collision_info = SUB84 /* extract 2-byte value */(dVar7,0);",
       "type": "sub_artifact"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 82,
+      "line": 84,
       "match": "in_stack_00000004",
       "text": "(*in_stack_00000004->vtable[1].getBoundingBox)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 83,
+      "line": 85,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004,(CBoundingBox3D *)collision_info);",
       "type": "stack_param"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 102,
+      "line": 104,
       "match": "extraout_EAX",
       "text": "if (extraout_EAX == 0) break;",
       "type": "extra_output"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 111,
+      "line": 113,
       "match": "in_stack_00000004",
       "text": "(float)(*in_stack_00000004->vtable[1].getBoundingBox)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 112,
+      "line": 114,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004,(CBoundingBox3D *)collision_info);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 138,
+      "line": 139,
       "match": "in_stack_00000004",
       "text": "SStack_dc.ammo_type = *(int *)(in_stack_00000004[4].actor_name + 0xc);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 140,
+      "line": 141,
       "match": "in_stack_00000004",
       "text": "SStack_dc.attacker = in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 142,
+      "line": 143,
       "match": "in_stack_00000004",
       "text": "SStack_dc.wielder = (*in_stack_00000004->vtable->getCarrier)(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 142,
+      "line": 143,
       "match": "in_stack_00000004",
       "text": "SStack_dc.wielder = (*in_stack_00000004->vtable->getCarrier)(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 145,
+      "line": 146,
       "match": "in_stack_00000004",
       "text": "if (in_stack_00000004[2].orient.bank == 0.0) break;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 156,
-      "match": "in_stack_00000004",
-      "text": "fVar2 = *(float *)(in_stack_00000004[5].create_event + 0x44);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 157,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[6].create_event[0x28] = '\\x02';",
+      "text": "fVar1 = *(float *)(in_stack_00000004[5].create_event + 0x44);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 158,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[6].create_event[0x29] = '\\0';",
+      "text": "in_stack_00000004[6].create_event[0x28] = '\\x02';",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 159,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[6].create_event[0x2a] = '\\0';",
+      "text": "in_stack_00000004[6].create_event[0x29] = '\\0';",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 160,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[6].create_event[0x2b] = '\\0';",
+      "text": "in_stack_00000004[6].create_event[0x2a] = '\\0';",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 161,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[2].orient_matrix.m[1].z = fVar2;",
+      "text": "in_stack_00000004[6].create_event[0x2b] = '\\0';",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 162,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004[2].orient_matrix.m[1].z = fVar1;",
       "type": "stack_param"
     }
   ],

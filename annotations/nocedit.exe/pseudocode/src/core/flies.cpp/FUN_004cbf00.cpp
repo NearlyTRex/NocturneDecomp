@@ -24,7 +24,6 @@ void core_flies_cpp_FUN_004cbf00(void)
   float *pfVar8;
   int iVar9;
   char *extraout_EBX;
-  BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000004;
   float in_stack_00000008;
   CVector3f local_40;

@@ -14,8 +14,6 @@ cockpit_pkbitmap_cpp_CPackedBitmap_loadByFileExtension_FUN_0054b4b0
   int iVar1;
   CPackedBitmap *pCVar2;
   CPackedBitmap *str1;
-  int in_stack_0000000c;
-  int in_stack_00000010;
   
   pCVar2 = this_ptr;
   do {
@@ -32,12 +30,12 @@ LAB_0054b4d2:
     iVar1 = crt_string_c_stricmp_FUN_005fe7f0(str1->filename,".raw");
     if (iVar1 == 0) {
       cockpit_pkbitmap_cpp_CPackedBitmap_loadAndCompressBitmap_FUN_0054b080
-                (this_ptr,in_stack_0000000c);
+                (this_ptr,processing_flags);
       return;
     }
     iVar1 = crt_string_c_stricmp_FUN_005fe7f0(str1->filename,".pbm");
     if (iVar1 == 0) {
-      cockpit_pkbitmap_cpp_CPackedBitmap_loadStoredPBMFile_FUN_0054b910(this_ptr,in_stack_00000010);
+      cockpit_pkbitmap_cpp_CPackedBitmap_loadStoredPBMFile_FUN_0054b910(this_ptr,processing_flags);
       return;
     }
   }

@@ -18,7 +18,6 @@ shape_meshlod_cpp_CLodMesh_evaluateEdgeCollapse_FUN_00516000
   int iVar5;
   CLodMesh *pCVar6;
   int corner_idx;
-  BADSPACEBASE *in_ESP;
   CLodFace *this_ptr_00;
   int *piVar7;
   int *piVar8;
@@ -107,12 +106,12 @@ shape_meshlod_cpp_CLodMesh_evaluateEdgeCollapse_FUN_00516000
             }
             if (((g_LodReplayMode == 0) && (this_ptr->attribute_enabled_flags[0] != 0)) &&
                (local_28->collapse_viability < 2)) {
-              shape_meshlod_cpp_CLodFace_findVertexIndex_FUN_00515e90
-                        (local_2c,local_28->vertex_idx_1);
+              iStack_14 = shape_meshlod_cpp_CLodFace_findVertexIndex_FUN_00515e90
+                                    (local_2c,local_28->vertex_idx_1);
               iVar4 = shape_meshlod_cpp_CLodFace_findVertexIndex_FUN_00515e90
                                 (pCVar1,local_28->vertex_idx_2);
-              local_58 = (float)shape_meshlod_cpp_CLodFace_findVertexIndex_FUN_00515e90
-                                          (this_ptr_00,local_28->vertex_idx_1);
+              local_5c = shape_meshlod_cpp_CLodFace_findVertexIndex_FUN_00515e90
+                                   (this_ptr_00,local_28->vertex_idx_1);
               corner_idx = 0;
               iVar5 = shape_meshlod_cpp_CLodFace_findVertexIndex_FUN_00515e90
                                 (this_ptr_00,local_28->vertex_idx_2);

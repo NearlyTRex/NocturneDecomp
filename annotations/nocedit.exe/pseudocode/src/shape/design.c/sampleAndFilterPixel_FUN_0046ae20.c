@@ -17,7 +17,6 @@ shape_design_c_sampleAndFilterPixel_FUN_0046ae20
   int *extraout_EAX_00;
   int *extraout_EAX_01;
   int *extraout_EAX_02;
-  BADSPACEBASE *in_ESP;
   double dVar1;
   double dVar2;
   uint in_stack_ffffff98;

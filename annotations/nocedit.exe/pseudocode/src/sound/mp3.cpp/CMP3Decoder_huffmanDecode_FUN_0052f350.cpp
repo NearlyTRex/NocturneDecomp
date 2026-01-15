@@ -21,10 +21,11 @@ sound_mp3_cpp_CMP3Decoder_huffmanDecode_FUN_0052f350
   int extraout_EAX_04;
   uint uVar2;
   uint uVar3;
-  char *local_14;
+  int local_14;
   
   uVar3 = 0x80000000;
   uVar2 = 0;
+  local_14 = 1;
   if (huffman_table == (SHuffmanTable *)0xffffffe0) {
     return 2;
   }
@@ -37,7 +38,7 @@ sound_mp3_cpp_CMP3Decoder_huffmanDecode_FUN_0052f350
     if (huffman_table->huffman_data[uVar2 * 2] == '\0') {
       *x_out = (int)(uint)(byte)huffman_table->huffman_data[uVar2 * 2 + 1] >> 4;
       *y_out = (uint)(huffman_table->huffman_data[uVar2 * 2 + 1] & 0xf);
-      local_14 = (char *)0x0;
+      local_14 = 0;
       goto LAB_0052f3b9;
     }
     sound_mp3_cpp_CMP3Decoder_readBit_FUN_0052f250(this_ptr);
@@ -55,10 +56,10 @@ sound_mp3_cpp_CMP3Decoder_huffmanDecode_FUN_0052f350
     }
     uVar3 = uVar3 >> 1;
   } while ((uVar3 != 0) || (uVar2 < (uint)g_HuffmanTables[0].table_size));
-  local_14 = g_CurrentMp3Filename;
   g_CurrentFilename = "..\\sound\\mp3.cpp";
   g_CurrentLineNumber = 0x321;
-  core_main_c_displayErrorAndQuit_FUN_00506f10("Illegal Huffman code in data.  File: %s");
+  core_main_c_displayErrorAndQuit_FUN_00506f10
+            ("Illegal Huffman code in data.  File: %s",g_CurrentMp3Filename);
 LAB_0052f3b9:
   if ((huffman_table->table_id[0] == '3') &&
      ((huffman_table->table_id[1] == '2' || (huffman_table->table_id[1] == '3')))) {
@@ -97,5 +98,5 @@ LAB_0052f3b9:
      (sound_mp3_cpp_CMP3Decoder_readBit_FUN_0052f250(this_ptr), extraout_EAX_02 == 1)) {
     *y_out = -*y_out;
   }
-  return (int)local_14;
+  return local_14;
 }

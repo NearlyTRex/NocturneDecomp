@@ -11,7 +11,6 @@ void __cdecl shape_design_c_selectVertexToDelete_FUN_0045c5b0(void)
 {
   char cVar1;
   int iVar2;
-  BADSPACEBASE *in_ESP;
   uint *puVar3;
   uint *puVar4;
   char *pcVar5;

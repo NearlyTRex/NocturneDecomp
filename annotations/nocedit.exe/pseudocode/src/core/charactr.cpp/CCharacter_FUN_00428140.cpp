@@ -45,7 +45,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00428140(CCharacter *this_ptr)
         g_CurrentFilename = "..\\core\\charactr.cpp";
         g_CurrentLineNumber = 0x10b;
         core_main_c_displayErrorAndQuit_FUN_00506f10
-                  ("%s is carrying %s, but %s thinks it is being carried by %s",this_ptr,this_ptr_00);
+                  ("%s is carrying %s, but %s thinks it is being carried by %s",this_ptr,this_ptr_00,this_ptr_00,pCVar6);
       }
     }
     pCVar5 = (CCharacter *)&(pCVar5->base_actor).orient_matrix.m[0].z;
@@ -53,7 +53,7 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_00428140(CCharacter *this_ptr)
   if ((this_ptr->model).model_name[0] != '\0') {
     (this_ptr->model).scale_factor = this_ptr->size_scale;
     core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(&this_ptr->model);
-    pcVar8 = (char *)0x0;
+    pcVar8 = "bip01 head";
     pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
                        (&this_ptr->model);
     iVar4 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(pCVar3,pcVar8);

@@ -1,21 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 105,
-    "complexity_score": 193,
+    "complexity_score": 108,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 6,
-    "pseudocode_lines": 43,
-    "suspect_count": 12,
+    "pseudocode_lines": 38,
+    "suspect_count": 6,
     "suspect_types": [
-      "badspacebase",
-      "format_string_mismatch",
       "lea_esp_stack_addr",
-      "register_param",
-      "stack_ref",
       "variadic_preserve"
     ],
-    "total_lines": 148
+    "total_lines": 143
   },
   "cross_references": [],
   "function": {
@@ -177,36 +173,8 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 8,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 8,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 24,
-      "match": "&stack0xfffffeec",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffeec,\"Edge out of range: edge %d\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 33,
-      "match": "&stack0xfffffeec",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffeec,\"Edge out of range: edge %d\");",
-      "type": "stack_ref"
-    },
-    {
       "call_address": "00433758",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "unknown",
       "esp_certainty_at_call": "known",
@@ -220,7 +188,7 @@
     },
     {
       "call_address": "00433778",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -234,7 +202,7 @@
     },
     {
       "call_address": "004337c0",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "unknown",
       "esp_certainty_at_call": "known",
@@ -248,7 +216,7 @@
     },
     {
       "call_address": "004337e0",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -259,28 +227,6 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 004337e0 (no EBP frame)",
       "type": "variadic_preserve"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Edge out of range: edge %d\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Edge out of range: edge %d",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 24,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffeec,\"Edge out of range: edge %d\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Edge out of range: edge %d\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Edge out of range: edge %d",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 33,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffeec,\"Edge out of range: edge %d\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "address": "00433753",

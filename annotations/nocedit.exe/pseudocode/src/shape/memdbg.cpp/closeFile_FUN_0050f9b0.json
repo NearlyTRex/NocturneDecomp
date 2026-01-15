@@ -1,19 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 180,
-    "complexity_score": 262,
+    "complexity_score": 195,
     "cross_reference_count": 181,
     "function_call_count": 7,
     "global_count": 23,
-    "pseudocode_lines": 62,
-    "suspect_count": 18,
+    "pseudocode_lines": 60,
+    "suspect_count": 12,
     "suspect_types": [
       "call_esp_preserve",
       "pointer_cast",
-      "stack_param",
       "variadic_preserve"
     ],
-    "total_lines": 242
+    "total_lines": 240
   },
   "cross_references": [
     {
@@ -1362,64 +1361,22 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_00000010",
-      "text": "uint in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000014",
-      "text": "uint in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_00000014",
-      "text": "(\"Tried to close NULL file pointer at %s line %d\",in_stack_00000014,line_number);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 35,
-      "match": "in_stack_00000010",
-      "text": "in_stack_00000010,line_number,iVar1 + 0x2f0db54,iVar1 + 0x2f0db68,",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 36,
+      "line": 34,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&g_FileRegistry[0].line_number + iVar1));",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 41,
-      "match": "in_stack_00000010",
-      "text": "g_FileRegistry[0].filename + iVar1,in_stack_00000010,line_number,",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 43,
+      "line": 40,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&g_FileRegistry[0].line_number + iVar1));",
+      "text": "iVar1 + 0x2f0db68,*(uint *)((int)&g_FileRegistry[0].line_number + iVar1))",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 62,
-      "match": "in_stack_00000014",
-      "text": "(\"Tried to close file which which was never opened.  (Possibly closing a file twice?)\\n%s line %d\",in_stack_00000014,line_number);",
-      "type": "stack_param"
     },
     {
       "call_address": "0050fa34",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -1433,7 +1390,7 @@
     },
     {
       "call_address": "0050fb02",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1447,7 +1404,7 @@
     },
     {
       "call_address": "0050fb56",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1461,7 +1418,7 @@
     },
     {
       "call_address": "0050fb88",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

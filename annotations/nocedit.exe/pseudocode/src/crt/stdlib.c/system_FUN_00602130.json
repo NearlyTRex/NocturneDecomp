@@ -1,21 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 65,
-    "complexity_score": 155,
+    "complexity_score": 124,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 5,
-    "pseudocode_lines": 35,
-    "suspect_count": 9,
+    "pseudocode_lines": 34,
+    "suspect_count": 7,
     "suspect_types": [
-      "badspacebase",
       "concat_artifact",
-      "register_param",
       "special_crt_function",
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 100
+    "total_lines": 99
   },
   "cross_references": [
     {
@@ -214,57 +212,43 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 10,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 10,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 11,
+      "line": 10,
       "match": "in_stack_ffffffe8",
       "text": "void *in_stack_ffffffe8;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 11,
       "match": "in_stack_ffffffec",
       "text": "uint in_stack_ffffffec;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 20,
       "match": "in_stack_ffffffec",
       "text": "result = (int *)CONCAT31 /* combine 2-byte values */((int3)((uint)in_stack_ffffffec >> 8),1);",
       "type": "stack_param"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 21,
+      "line": 20,
       "match": "CONCAT31",
       "text": "result = (int *)CONCAT31 /* combine 2-byte values */((int3)((uint)in_stack_ffffffec >> 8),1);",
       "type": "concat_artifact"
     },
     {
       "description": "Direct stack address reference",
-      "line": 26,
+      "line": 25,
       "match": "&stack0xffffffe8",
       "text": "crt_process_c_set_shell_execute_flag_FUN_00609c80(&stack0xffffffe8);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 33,
+      "line": 32,
       "match": "in_stack_ffffffe8",
       "text": "iVar2 = crt_process_c_spawnCommand_FUN_00609c90(0,cmdPath,cmdName,args,in_stack_ffffffe8,result)",
       "type": "stack_param"

@@ -1,21 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 12,
-    "complexity_score": 602,
+    "complexity_score": 423,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 272,
-    "suspect_count": 30,
+    "pseudocode_lines": 273,
+    "suspect_count": 13,
     "suspect_types": [
-      "badspacebase",
       "extra_output",
       "pointer_cast",
-      "register_param",
       "stack_ref",
-      "unknown_field"
+      "suspect_float"
     ],
-    "total_lines": 284
+    "total_lines": 285
   },
   "cross_references": [],
   "function": {
@@ -412,210 +410,91 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 9,
+      "line": 8,
       "match": "extraout_ECX",
       "text": "int extraout_ECX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
+      "line": 9,
       "match": "extraout_ECX_00",
       "text": "int extraout_ECX_00;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 11,
+      "line": 10,
       "match": "extraout_EDX",
       "text": "int extraout_EDX;",
       "type": "extra_output"
     },
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 14,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 14,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 51,
-      "match": "._0_4_",
-      "text": "local_74._0_4_ = 0.0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 52,
-      "match": "._4_4_",
-      "text": "local_7c._4_4_ = 0.0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 53,
-      "match": "._0_4_",
-      "text": "local_7c._0_4_ = (this_ptr->glass_size).x * 0.5f;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 65,
-      "match": "._4_4_",
-      "text": "local_7c._4_4_ = local_7c._4_4_ ^ 0x80000000;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 65,
-      "match": "._4_4_",
-      "text": "local_7c._4_4_ = local_7c._4_4_ ^ 0x80000000;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 76,
-      "match": "._4_4_",
-      "text": "local_74._4_4_ = (this_ptr->glass_size).y;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 79,
-      "match": "&stack0xffffff48",
-      "text": "if (&local_ac != (float *)&stack0xffffff48) {",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 81,
-      "match": "._0_4_",
-      "text": "local_a8._0_4_ = (this_ptr->base).location.position.y + pCVar5->y;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 82,
-      "match": "._4_4_",
-      "text": "local_a8._4_4_ = (this_ptr->base).location.position.z + pCVar5->z;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 84,
-      "match": "._4_4_",
-      "text": "local_74._4_4_ = local_74._4_4_ ^ 0x80000000;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 84,
-      "match": "._4_4_",
-      "text": "local_74._4_4_ = local_74._4_4_ ^ 0x80000000;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 87,
-      "match": "._4_4_",
-      "text": "local_7c._4_4_ = (this_ptr->base).location.position.x + pCVar5->x;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 88,
-      "match": "._0_4_",
-      "text": "local_74._0_4_ = (this_ptr->base).location.position.y + pCVar5->y;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 89,
-      "match": "._4_4_",
-      "text": "local_74._4_4_ = (this_ptr->base).location.position.z + pCVar5->z;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 91,
-      "match": "._4_4_",
-      "text": "local_9c.x = (float)local_7c._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 92,
-      "match": "._0_4_",
-      "text": "local_9c.y = (float)local_74._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 93,
-      "match": "._4_4_",
-      "text": "local_9c.z = (float)local_74._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 130,
-      "match": "&stack0xffffff3c",
-      "text": "if (pCVar5 != (CVector3f *)&stack0xffffff3c) {",
+      "line": 127,
+      "match": "&stack0xffffff20",
+      "text": "if (pCVar4 != (CVector3f *)&stack0xffffff20) {",
       "type": "stack_ref"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 140,
+      "line": 138,
       "match": "extraout_ECX",
-      "text": "*(int *)(extraout_ECX + 0x5e4) = (int)ROUND(dVar13);",
+      "text": "*(int *)(extraout_ECX + 0x5e4) = (int)ROUND(dVar10);",
       "type": "extra_output"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 144,
-      "match": "extraout_EDX",
-      "text": "pCVar5 = (CVector3f *)(extraout_EDX + 0xc);",
-      "type": "extra_output"
+      "description": "Likely misinterpreted integer as float",
+      "line": 140,
+      "match": "7.216921e-39",
+      "text": "fVar11 = 7.216921e-39;",
+      "type": "suspect_float"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 145,
+      "match": "extraout_EDX",
+      "text": "pCVar4 = (CVector3f *)(extraout_EDX + 0xc);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 146,
       "match": "extraout_ECX_00",
-      "text": "*(int *)(extraout_ECX_00 + 0x644) = (int)ROUND(dVar13);",
+      "text": "*(int *)(extraout_ECX_00 + 0x644) = local_24;",
       "type": "extra_output"
     },
     {
       "description": "Complex pointer cast",
-      "line": 170,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)this_ptr->broken_quads[0].vertices + iVar6 * 4 + -0x7c);",
+      "line": 159,
+      "match": "(SMRGLPrimitiveQuad *)((int)",
+      "text": "pSVar3 = (SMRGLPrimitiveQuad *)((int)local_3c.z + local_20 * 0x48);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 174,
+      "line": 171,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)(this_ptr->broken_quads[0].vertices + -10) + iVar6 * 4);",
+      "text": "*(int *)((int)this_ptr->broken_quads[0].vertices + iVar5 * 4 + -0x7c);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 179,
+      "line": 175,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)(this_ptr->broken_quads[0].vertices + -10) + iVar5 * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 180,
       "match": "(int *)((int)",
       "text": "*(int *)((int)this_ptr->broken_quads[0].vertices +",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 185,
+      "line": 186,
       "match": "(int *)((int)",
       "text": "*(int *)((int)(this_ptr->broken_quads[0].vertices + -10) +",
       "type": "pointer_cast"

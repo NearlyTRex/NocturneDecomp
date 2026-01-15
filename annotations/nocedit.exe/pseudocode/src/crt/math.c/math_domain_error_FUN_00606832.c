@@ -10,7 +10,6 @@ double __cdecl crt_math_c_math_domain_error_FUN_00606832(double x,double y,uchar
 
 {
   int errorFlags;
-  BADSPACEBASE *in_ESP;
   double dVar1;
   uint in_stack_00000004;
   uint local_18;

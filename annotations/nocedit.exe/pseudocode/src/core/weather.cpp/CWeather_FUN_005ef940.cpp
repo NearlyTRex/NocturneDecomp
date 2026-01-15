@@ -14,21 +14,18 @@ void core_weather_cpp_CWeather_FUN_005ef940(void)
 
 {
   float fVar1;
-  float fVar2;
-  CVector3f *pCVar3;
-  BADSPACEBASE *in_ESP;
-  uint unaff_ESI;
-  int iVar4;
+  CVector3f *pCVar2;
+  int iVar3;
+  float10 fVar4;
   float10 fVar5;
-  float10 fVar6;
   int *in_stack_00000004;
   float *in_stack_00000008;
   int *in_stack_0000000c;
-  float local_3c;
-  float local_38;
-  CVector3f local_34;
-  float fStack_28;
-  CVector3f CStack_20;
+  CVector3f local_50;
+  CVector3f local_44;
+  CVector3f local_38;
+  double local_24;
+  float local_18;
   float local_14;
   
   if ((float *)(in_stack_00000004 + 2) != in_stack_00000008) {
@@ -42,44 +39,50 @@ void core_weather_cpp_CWeather_FUN_005ef940(void)
     in_stack_00000004[7] = in_stack_0000000c[2];
   }
   if (*in_stack_00000004 != 0) {
-    pCVar3 = DAT_03f95df8;
-    iVar4 = 0;
+    pCVar2 = DAT_03f95df8;
+    iVar3 = 0;
     do {
-      fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(5.0,50.0);
-      local_14 = fVar1;
-      fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10
-                        ((float)in_stack_0000000c[1] + (float)_DAT_00657c24,
-                         (float)in_stack_0000000c[1] + (float)_DAT_00657c1c);
-      fVar5 = (float10)fsin((float10)fVar2);
-      fVar6 = (float10)fcos((float10)fVar2);
-      local_34.y = (float)(fVar5 * (float10)fVar1 + (float10)*in_stack_00000008);
-      local_34.z = in_stack_00000008[1];
-      fStack_28 = (float)(fVar6 * (float10)fVar1 + (float10)in_stack_00000008[2]);
-      if (&local_3c != &local_34.y) {
-        local_3c = local_34.y;
-        local_38 = local_34.z;
-        local_34.x = fStack_28;
+      local_18 = core_actor_cpp_getRandomFloat_FUN_0040cc10(5.0,50.0);
+      local_14 = local_18;
+      local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10
+                           ((float)in_stack_0000000c[1] + (float)_DAT_00657c24,
+                            (float)in_stack_0000000c[1] + (float)_DAT_00657c1c);
+      fVar4 = (float10)fsin((float10)local_14);
+      fVar5 = (float10)fcos((float10)local_14);
+      local_38.x = (float)(fVar4 * (float10)local_18 + (float10)*in_stack_00000008);
+      local_38.y = in_stack_00000008[1];
+      local_38.z = (float)(fVar5 * (float10)local_18 + (float10)in_stack_00000008[2]);
+      if (&local_50 != &local_38) {
+        local_50.x = local_38.x;
+        local_50.y = local_38.y;
+        local_50.z = local_38.z;
       }
-      local_38 = local_38 + _DAT_00657c30;
+      if (&local_44 != &local_38) {
+        local_44.x = local_38.x;
+        local_44.y = local_38.y;
+        local_44.z = local_38.z;
+      }
+      local_50.y = local_50.y + _DAT_00657c2c;
+      local_44.y = local_44.y + _DAT_00657c30;
       core_setcolid_cpp_CDemonSet_initMaybe_FUN_00574180(g_CDemonSetPtr);
       core_setcolid_cpp_CDemonSet_disableIgnore_FUN_00574210(g_CDemonSetPtr);
-      fVar1 = core_setcolid_cpp_CDemonSet_raycast_FUN_00572530
-                        (g_CDemonSetPtr,(CVector3f *)&stack0xffffffc0,&local_34);
-      fVar1 = (local_34.z - local_38) * fVar1 + local_38;
-      *(float *)((int)&DAT_03f96758 + iVar4) = fVar1;
-      fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,1.0);
-      CStack_20.y = fVar2 * (float)_DAT_00657c14 +
-                    (float)(double)CONCAT44 /* combine 2-byte values */(unaff_ESI,(int)((ulonglong)(double)fVar1 >> 0x20));
-      if (pCVar3 != &CStack_20) {
-        pCVar3->x = CStack_20.x;
-        pCVar3->y = CStack_20.y;
-        pCVar3->z = CStack_20.z;
+      local_14 = core_setcolid_cpp_CDemonSet_raycast_FUN_00572530
+                           (g_CDemonSetPtr,&local_50,&local_44);
+      fVar1 = (local_44.y - local_50.y) * local_14 + local_50.y;
+      *(float *)((int)&DAT_03f96758 + iVar3) = fVar1;
+      local_24 = (double)fVar1;
+      local_14 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,1.0);
+      local_38.y = local_14 * (float)_DAT_00657c14 + (float)local_24;
+      if (pCVar2 != &local_38) {
+        pCVar2->x = local_38.x;
+        pCVar2->y = local_38.y;
+        pCVar2->z = local_38.z;
       }
-      iVar4 = iVar4 + 4;
-      pCVar3 = pCVar3 + 1;
-    } while (iVar4 != 800);
-    *(uint *)((int)fVar2 + 0x28) = 0;
-    *(uint *)((int)fVar2 + 0x24) = 0;
+      iVar3 = iVar3 + 4;
+      pCVar2 = pCVar2 + 1;
+    } while (iVar3 != 800);
+    in_stack_00000004[10] = 0;
+    in_stack_00000004[9] = 0;
   }
   return;
 }

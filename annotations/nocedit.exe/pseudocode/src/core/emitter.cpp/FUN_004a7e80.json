@@ -1,20 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 40,
-    "complexity_score": 229,
+    "complexity_score": 182,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 1,
-    "pseudocode_lines": 74,
-    "suspect_count": 13,
+    "pseudocode_lines": 72,
+    "suspect_count": 10,
     "suspect_types": [
-      "badspacebase",
       "extra_output",
-      "register_param",
-      "stack_param",
-      "suspect_float"
+      "stack_param"
     ],
-    "total_lines": 114
+    "total_lines": 112
   },
   "cross_references": [
     {
@@ -269,43 +266,29 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 9,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 9,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 13,
+      "line": 12,
       "match": "extraout_ST1",
       "text": "float10 extraout_ST1;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 14,
+      "line": 13,
       "match": "extraout_ST2",
       "text": "float10 extraout_ST2;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 16,
+      "line": 15,
       "match": "extraout_ST3",
       "text": "unkbyte10 extraout_ST3;",
       "type": "extra_output"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 16,
       "match": "in_stack_00000004",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
@@ -314,49 +297,42 @@
       "description": "Unresolved stack parameter",
       "line": 35,
       "match": "in_stack_00000004",
-      "text": "local_5c = *(float *)(iVar1 + 0x20) - *(float *)(in_stack_00000004 + 0x20);",
+      "text": "local_5c = *(float *)(iVar2 + 0x20) - *(float *)(in_stack_00000004 + 0x20);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 36,
       "match": "in_stack_00000004",
-      "text": "local_58 = *(float *)(iVar1 + 0x24) - *(float *)(in_stack_00000004 + 0x24);",
+      "text": "local_58 = *(float *)(iVar2 + 0x24) - *(float *)(in_stack_00000004 + 0x24);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 37,
       "match": "in_stack_00000004",
-      "text": "local_54 = *(float *)(iVar1 + 0x28) - *(float *)(in_stack_00000004 + 0x28);",
+      "text": "local_54 = *(float *)(iVar2 + 0x28) - *(float *)(in_stack_00000004 + 0x28);",
       "type": "stack_param"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 51,
-      "match": "6.841488e-39",
-      "text": "local_68 = 6.841488e-39;",
-      "type": "suspect_float"
-    },
-    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 54,
+      "line": 53,
       "match": "extraout_ST3",
       "text": "fVar4 = (float10)fcos(extraout_ST3);",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 60,
+      "line": 59,
       "match": "extraout_ST1",
-      "text": "(extraout_ST1 * (float10)fVar2 - (float10)local_60);",
+      "text": "(extraout_ST1 * (float10)fVar1 - (float10)local_68);",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 61,
+      "line": 60,
       "match": "extraout_ST2",
-      "text": "fStack_3c = (float)-extraout_ST2;",
+      "text": "local_44 = (float)-extraout_ST2;",
       "type": "extra_output"
     }
   ]

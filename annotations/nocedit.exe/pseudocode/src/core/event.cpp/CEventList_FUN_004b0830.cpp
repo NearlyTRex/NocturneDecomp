@@ -10,11 +10,10 @@ int __cdecl core_event_cpp_CEventList_FUN_004b0830(CEventList *this_ptr)
 
 {
   int iVar1;
-  int in_stack_00000008;
   
   iVar1 = core_event_cpp_CEventList_FUN_004b0950(this_ptr);
   if (-1 < iVar1) {
-    return *(int *)(iVar1 * 4 + in_stack_00000008 + 0x34c0);
+    return *(int *)(this_ptr->variablesVarName1 + iVar1 * 4 + -0x2c);
   }
   return 0;
 }

@@ -14,7 +14,6 @@ void __cdecl sound_mp3_cpp_testMP3DecoderBenchmark_FUN_00534210(void)
   SIZE_T samples_requested;
   SIZE_T size;
   int iVar2;
-  BADSPACEBASE *in_ESP;
   int local_38;
   int local_34;
   FILE *local_30;

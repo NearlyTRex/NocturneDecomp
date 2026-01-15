@@ -18,176 +18,160 @@ sound_sndmain_cpp_analyzeFrequencyBand_FUN_005ac400
   double dVar3;
   float fVar4;
   double dVar5;
-  int iVar6;
-  uint uVar7;
-  float *pfVar8;
+  double dVar6;
+  double dVar7;
+  double dVar8;
   int iVar9;
-  float *pfVar10;
+  uint uVar10;
   float *pfVar11;
-  uint uVar12;
+  int iVar12;
   float *pfVar13;
   float *pfVar14;
-  float *pfVar15;
-  uint uVar16;
-  int iVar17;
-  float10 fVar18;
-  float10 fVar19;
-  float10 fVar20;
+  uint uVar15;
+  float *pfVar16;
+  float *pfVar17;
+  float *pfVar18;
+  uint uVar19;
+  int iVar20;
   float10 fVar21;
   float10 fVar22;
   float10 fVar23;
   float10 fVar24;
   float10 fVar25;
-  double dVar26;
-  uint uStack_bc;
-  uint local_84;
-  uint uStack_80;
-  uint local_7c;
-  uint uStack_78;
-  uint local_74;
-  uint uStack_70;
-  uint local_6c;
-  uint uStack_68;
-  uint local_40;
+  float10 fVar26;
+  float10 fVar27;
+  float10 fVar28;
+  double dVar29;
   int local_3c;
   int local_38;
+  int local_2c;
   int local_28;
-  int local_24;
-  float fStack_14;
+  int local_18;
   
   if ((((g_ChannelPrimaryBuffers[channel] == (void *)0x0) ||
        (g_ChannelSecondaryBuffersA[channel] == (float *)0x0)) ||
       (g_ChannelSecondaryBuffersB[channel] == (float *)0x0)) || (g_MixBufferSize < 1)) {
     return 0;
   }
-  iVar6 = sound_sndmain_cpp_getMixBufferCount_FUN_005ab6d0();
-  iVar9 = g_MixBufferSize;
-  if (iVar6 != g_ChannelFFTTimestamps[channel]) {
-    pfVar11 = g_ChannelSecondaryBuffersA[channel];
-    pfVar14 = g_ChannelSecondaryBuffersB[channel];
-    pfVar8 = g_ChannelPrimaryBuffers[channel];
-    for (local_24 = 1; 1 << ((byte)local_24 & 0x1f) < g_MixBufferSize; local_24 = local_24 + 1) {
+  iVar9 = sound_sndmain_cpp_getMixBufferCount_FUN_005ab6d0();
+  iVar12 = g_MixBufferSize;
+  if (iVar9 != g_ChannelFFTTimestamps[channel]) {
+    pfVar14 = g_ChannelSecondaryBuffersA[channel];
+    pfVar17 = g_ChannelSecondaryBuffersB[channel];
+    pfVar11 = g_ChannelPrimaryBuffers[channel];
+    for (local_28 = 1; 1 << ((byte)local_28 & 0x1f) < g_MixBufferSize; local_28 = local_28 + 1) {
     }
-    uVar16 = 0;
+    uVar19 = 0;
     if (0 < g_MixBufferSize) {
       do {
-        iVar6 = 0;
-        uVar7 = 0;
-        uVar12 = uVar16;
-        if (0 < local_24) {
+        iVar9 = 0;
+        uVar10 = 0;
+        uVar15 = uVar19;
+        if (0 < local_28) {
           do {
-            iVar6 = iVar6 + 1;
-            uVar7 = uVar7 * 2 | uVar12 & 1;
-            uVar12 = (int)uVar12 >> 1;
-          } while (iVar6 < local_24);
+            iVar9 = iVar9 + 1;
+            uVar10 = uVar10 * 2 | uVar15 & 1;
+            uVar15 = (int)uVar15 >> 1;
+          } while (iVar9 < local_28);
         }
-        pfVar11[uVar7] = *pfVar8;
-        pfVar14[uVar7] = 0.0;
-        uVar16 = uVar16 + 1;
-        pfVar8 = pfVar8 + 1;
-      } while ((int)uVar16 < iVar9);
+        pfVar14[uVar10] = *pfVar11;
+        pfVar17[uVar10] = 0.0;
+        uVar19 = uVar19 + 1;
+        pfVar11 = pfVar11 + 1;
+      } while ((int)uVar19 < iVar12);
     }
-    local_28 = 2;
-    if (1 < iVar9) {
+    local_2c = 2;
+    if (1 < iVar12) {
       do {
-        iVar6 = local_28 / 2;
-        fVar18 = (float10)3.1415926535000001 / (float10)iVar6;
-        fVar25 = (float10)fcos(fVar18);
-        fVar19 = (float10)fsin(fVar18);
-        fVar20 = (float10)2;
-        fVar18 = fVar18 * fVar20;
-        fVar21 = (float10)fsin(fVar18);
-        fVar18 = (float10)fcos(fVar18);
-        uStack_bc = (uint)((ulonglong)(double)fVar19 >> 0x20);
-        local_40 = (uint)((ulonglong)(double)fVar18 >> 0x20);
-        fStack_14 = 0.0;
-        if (0 < iVar9) {
+        iVar9 = local_2c / 2;
+        fVar21 = (float10)3.1415926535000001 / (float10)iVar9;
+        fVar28 = (float10)fcos(fVar21);
+        fVar22 = (float10)fsin(fVar21);
+        fVar23 = (float10)2;
+        fVar21 = fVar21 * fVar23;
+        fVar24 = (float10)fsin(fVar21);
+        fVar21 = (float10)fcos(fVar21);
+        local_18 = 0;
+        if (0 < iVar12) {
           do {
-            uStack_78 = local_40;
-            uStack_68 = uStack_bc;
-            iVar17 = 0;
-            if (0 < iVar6) {
-              fVar22 = (float10)(double)((float10)(double)fVar25 * fVar20);
-              pfVar8 = pfVar11 + (int)fStack_14;
-              pfVar10 = pfVar11 + iVar6 + (int)fStack_14;
-              pfVar13 = pfVar14 + (int)fStack_14;
-              pfVar15 = pfVar14 + iVar6 + (int)fStack_14;
-              local_7c = SUB84 /* extract 2-byte value */((double)fVar18,0);
-              local_6c = SUB84 /* extract 2-byte value */((double)fVar19,0);
-              dVar26 = (double)fVar25;
-              dVar5 = (double)fVar21;
+            iVar20 = 0;
+            if (0 < iVar9) {
+              fVar25 = (float10)(double)((float10)(double)fVar28 * fVar23);
+              pfVar11 = pfVar14 + local_18;
+              pfVar13 = pfVar14 + iVar9 + local_18;
+              pfVar16 = pfVar17 + local_18;
+              pfVar18 = pfVar17 + iVar9 + local_18;
+              dVar29 = (double)fVar28;
+              dVar3 = (double)fVar22;
+              dVar7 = (double)fVar24;
+              dVar8 = (double)fVar21;
               do {
-                uStack_80 = (uint)((ulonglong)dVar26 >> 0x20);
-                local_84 = SUB84 /* extract 2-byte value */(dVar26,0);
-                fVar23 = fVar22 * (float10)dVar26 - (float10)(double)CONCAT44 /* combine 2-byte values */(uStack_78,local_7c);
-                dVar26 = (double)fVar23;
-                fVar24 = fVar22 * (float10)(double)CONCAT44 /* combine 2-byte values */(uStack_68,local_6c) - (float10)dVar5;
-                dVar3 = (double)fVar24;
-                local_7c = local_84;
-                uStack_78 = uStack_80;
-                iVar17 = iVar17 + 1;
-                fVar24 = fVar23 * (float10)*pfVar10 - fVar24 * (float10)*pfVar15;
-                fVar23 = (float10)dVar3 * (float10)*pfVar10 + (float10)dVar26 * (float10)*pfVar15;
-                *pfVar10 = (float)((float10)*pfVar8 - fVar24);
-                dVar5 = (double)CONCAT44 /* combine 2-byte values */(uStack_68,local_6c);
-                local_74 = SUB84 /* extract 2-byte value */(dVar3,0);
-                *pfVar15 = (float)((float10)*pfVar13 - fVar23);
-                local_6c = local_74;
-                uStack_70 = (uint)((ulonglong)dVar3 >> 0x20);
-                uStack_68 = uStack_70;
-                *pfVar8 = (float)((float10)*pfVar8 + fVar24);
-                *pfVar13 = (float)(fVar23 + (float10)*pfVar13);
-                pfVar8 = pfVar8 + 1;
-                pfVar10 = pfVar10 + 1;
+                dVar6 = dVar3;
+                dVar5 = dVar29;
+                fVar26 = fVar25 * (float10)dVar5 - (float10)dVar8;
+                dVar29 = (double)fVar26;
+                fVar27 = fVar25 * (float10)dVar6 - (float10)dVar7;
+                dVar3 = (double)fVar27;
+                iVar20 = iVar20 + 1;
+                fVar27 = fVar26 * (float10)*pfVar13 - fVar27 * (float10)*pfVar18;
+                fVar26 = (float10)dVar3 * (float10)*pfVar13 + (float10)dVar29 * (float10)*pfVar18;
+                *pfVar13 = (float)((float10)*pfVar11 - fVar27);
+                *pfVar18 = (float)((float10)*pfVar16 - fVar26);
+                *pfVar11 = (float)((float10)*pfVar11 + fVar27);
+                *pfVar16 = (float)(fVar26 + (float10)*pfVar16);
+                pfVar11 = pfVar11 + 1;
                 pfVar13 = pfVar13 + 1;
-                pfVar15 = pfVar15 + 1;
-              } while (iVar17 < iVar6);
+                pfVar16 = pfVar16 + 1;
+                pfVar18 = pfVar18 + 1;
+                dVar7 = dVar6;
+                dVar8 = dVar5;
+              } while (iVar20 < iVar9);
             }
-            fStack_14 = (float)((int)fStack_14 + local_28);
-          } while ((int)fStack_14 < iVar9);
+            local_18 = local_18 + local_2c;
+          } while (local_18 < iVar12);
         }
-        local_28 = local_28 * 2;
-      } while (local_28 <= iVar9);
+        local_2c = local_2c * 2;
+      } while (local_2c <= iVar12);
     }
-    iVar9 = sound_sndmain_cpp_getMixBufferCount_FUN_005ab6d0();
-    g_ChannelFFTTimestamps[channel] = iVar9;
+    iVar12 = sound_sndmain_cpp_getMixBufferCount_FUN_005ab6d0();
+    g_ChannelFFTTimestamps[channel] = iVar12;
   }
-  iVar6 = g_MixBufferSize / 2;
-  iVar9 = iVar6 + 1;
-  dVar26 = crt_math_c_floor_FUN_005feb90
-                     ((double)((freq_start_hz * (float)iVar9) / (float)g_AudioSampleRate));
-  fVar25 = ((float10)freq_end_hz * (float10)fStack_14) / (float10)g_AudioSampleRate;
-  dVar26 = crt_math_c_round_FUN_005fe6b0(dVar26);
-  local_38 = (int)ROUND(dVar26);
-  dVar26 = crt_math_c_floor_FUN_005feb90((double)fVar25);
-  dVar26 = crt_math_c_round_FUN_005fe6b0(dVar26);
-  local_3c = (int)ROUND(dVar26);
-  if ((local_38 < iVar9) && (0 < local_3c)) {
-    if (iVar9 <= local_3c) {
-      local_3c = iVar9;
+  iVar9 = g_MixBufferSize / 2;
+  iVar12 = iVar9 + 1;
+  dVar29 = crt_math_c_floor_FUN_005feb90
+                     ((double)((freq_start_hz * (float)iVar12) / (float)g_AudioSampleRate));
+  fVar28 = ((float10)freq_end_hz * (float10)iVar12) / (float10)g_AudioSampleRate;
+  dVar29 = crt_math_c_round_FUN_005fe6b0(dVar29);
+  local_38 = (int)ROUND(dVar29);
+  dVar29 = crt_math_c_floor_FUN_005feb90((double)fVar28);
+  dVar29 = crt_math_c_round_FUN_005fe6b0(dVar29);
+  local_3c = (int)ROUND(dVar29);
+  if ((local_38 < iVar12) && (0 < local_3c)) {
+    if (iVar12 <= local_3c) {
+      local_3c = iVar12;
     }
     if (local_38 < 0) {
       local_38 = 0;
     }
-    iVar17 = local_3c - local_38;
-    if ((iVar17 < 1) && (iVar17 = 1, iVar9 <= local_3c)) {
-      local_38 = iVar6;
+    iVar20 = local_3c - local_38;
+    if ((iVar20 < 1) && (iVar20 = 1, iVar12 <= local_3c)) {
+      local_38 = iVar9;
     }
-    iVar6 = 0;
+    iVar9 = 0;
     fVar4 = 0.0;
-    if (0 < iVar17) {
-      pfVar14 = g_ChannelSecondaryBuffersB[channel] + local_38;
-      pfVar11 = g_ChannelSecondaryBuffersA[channel] + local_38;
+    if (0 < iVar20) {
+      pfVar17 = g_ChannelSecondaryBuffersB[channel] + local_38;
+      pfVar14 = g_ChannelSecondaryBuffersA[channel] + local_38;
       do {
-        fVar1 = *pfVar11;
-        fVar2 = *pfVar14;
+        fVar1 = *pfVar14;
+        fVar2 = *pfVar17;
+        pfVar17 = pfVar17 + 1;
         pfVar14 = pfVar14 + 1;
-        pfVar11 = pfVar11 + 1;
-        iVar6 = iVar6 + 1;
+        iVar9 = iVar9 + 1;
         fVar4 = SQRT(fVar2 * fVar2 + fVar1 * fVar1) + fVar4;
-      } while (iVar6 < iVar17);
+      } while (iVar9 < iVar20);
     }
-    return (int)(SQRT((fVar4 / (float)iVar17) / (float)iVar9) * (float)2);
+    return (int)(SQRT((fVar4 / (float)iVar20) / (float)iVar12) * (float)2);
   }
   return 0;
 }

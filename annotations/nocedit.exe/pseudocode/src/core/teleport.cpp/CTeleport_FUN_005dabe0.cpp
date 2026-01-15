@@ -10,16 +10,12 @@ void __cdecl core_teleport_cpp_CTeleport_FUN_005dabe0(CTeleport *this_ptr)
 
 {
   int iVar1;
+  float unaff_retaddr;
+  float in_stack_00000008;
+  float in_stack_00000010;
   float in_stack_00000018;
-  uint uStack0000001c;
-  float in_stack_0000002c;
-  uint uStack00000030;
-  float in_stack_00000040;
-  uint uStack00000044;
-  float in_stack_00000054;
-  uint uStack00000058;
-  float in_stack_00000068;
-  float in_stack_0000007c;
+  float in_stack_00000020;
+  float in_stack_00000028;
   
   iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
   if (iVar1 == 0) {
@@ -34,7 +30,8 @@ void __cdecl core_teleport_cpp_CTeleport_FUN_005dabe0(CTeleport *this_ptr)
       return;
     }
     iVar1 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
-                      (g_CEditorToolsPtr,"Switch to destination %s");
+                      (g_CEditorToolsPtr,"Switch to destination %s",
+                       *(int *)(this_ptr->field1_0x158 + 0xc));
     if (iVar1 != 0) {
       core_msnedit_cpp_UndoTmp_BuildActorList_CreateTmp_FUN_0053c140();
       return;
@@ -43,35 +40,31 @@ void __cdecl core_teleport_cpp_CTeleport_FUN_005dabe0(CTeleport *this_ptr)
   else {
     iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
     if (iVar1 != 0) {
-      *(float *)this_ptr->field1_0x158 = *(float *)this_ptr->field1_0x158 - in_stack_00000018;
+      *(float *)this_ptr->field1_0x158 = *(float *)this_ptr->field1_0x158 - unaff_retaddr;
     }
     iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4d);
     if (iVar1 != 0) {
-      *(float *)this_ptr->field1_0x158 = *(float *)this_ptr->field1_0x158 + in_stack_0000002c;
+      *(float *)this_ptr->field1_0x158 = *(float *)this_ptr->field1_0x158 + in_stack_00000008;
     }
-    uStack0000001c = 0x5dac68;
     iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1e);
     if (iVar1 != 0) {
       *(float *)(this_ptr->field1_0x158 + 4) =
-           *(float *)(this_ptr->field1_0x158 + 4) - in_stack_00000040;
+           *(float *)(this_ptr->field1_0x158 + 4) - in_stack_00000010;
     }
-    uStack00000030 = 0x5dac8b;
     iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x10);
     if (iVar1 != 0) {
       *(float *)(this_ptr->field1_0x158 + 4) =
-           *(float *)(this_ptr->field1_0x158 + 4) + in_stack_00000054;
+           *(float *)(this_ptr->field1_0x158 + 4) + in_stack_00000018;
     }
-    uStack00000044 = 0x5dacae;
     iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x50);
     if (iVar1 != 0) {
       *(float *)(this_ptr->field1_0x158 + 8) =
-           *(float *)(this_ptr->field1_0x158 + 8) - in_stack_00000068;
+           *(float *)(this_ptr->field1_0x158 + 8) - in_stack_00000020;
     }
-    uStack00000058 = 0x5dacd1;
     iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x48);
     if (iVar1 != 0) {
       *(float *)(this_ptr->field1_0x158 + 8) =
-           *(float *)(this_ptr->field1_0x158 + 8) + in_stack_0000007c;
+           *(float *)(this_ptr->field1_0x158 + 8) + in_stack_00000028;
     }
     if (*(int *)this_ptr->field1_0x158 < 0x3f000000) {
       this_ptr->field1_0x158[0] = '\0';

@@ -22,7 +22,6 @@ void core_bride_cpp_FUN_00423a30(void)
   CVector3f *pCVar7;
   int extraout_EAX_00;
   float fVar8;
-  BADSPACEBASE *in_ESP;
   CEnemy *in_stack_00000004;
   float in_stack_00000008;
   SDamageInfo local_1f4;

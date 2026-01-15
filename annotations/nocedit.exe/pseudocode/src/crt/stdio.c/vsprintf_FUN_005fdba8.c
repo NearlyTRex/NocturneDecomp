@@ -13,6 +13,6 @@ int __cdecl crt_stdio_c_vsprintf_FUN_005fdba8(char *buffer,char *format,va_list_
   
   iVar1 = crt_stdio_c_FormatEngine_FUN_00602950
                     (buffer,format,(va_list_t)args,crt_stdio_c_StringBufferCallback_FUN_005fdb90);
-  format[iVar1] = '\0';
+  buffer[iVar1] = '\0';
   return iVar1;
 }

@@ -18,7 +18,6 @@ core_dcamera_cpp_CDemonCamera_restoreZBufferRectArray_FUN_0044c860(CDemonCamera 
   CRect *pCVar6;
   int iVar7;
   int iVar8;
-  BADSPACEBASE *in_ESP;
   int iVar9;
   int iVar10;
   CRect local_34;

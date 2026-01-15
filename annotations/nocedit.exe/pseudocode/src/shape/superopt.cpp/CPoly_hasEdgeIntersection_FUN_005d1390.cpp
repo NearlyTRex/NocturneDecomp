@@ -14,7 +14,6 @@ int __cdecl shape_superopt_cpp_CPoly_hasEdgeIntersection_FUN_005d1390(CPoly *thi
   CVert *pCVar3;
   int iVar4;
   CVert *pCVar5;
-  BADSPACEBASE *in_ESP;
   double dStack_1cc;
   double dStack_1c4;
   double dStack_1ac;

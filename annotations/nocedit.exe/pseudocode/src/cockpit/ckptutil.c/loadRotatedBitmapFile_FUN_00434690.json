@@ -1,23 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 180,
-    "complexity_score": 489,
+    "complexity_score": 251,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 13,
-    "pseudocode_lines": 69,
-    "suspect_count": 38,
+    "pseudocode_lines": 61,
+    "suspect_count": 17,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
-      "format_string_mismatch",
       "lea_esp_stack_addr",
-      "register_param",
       "stack_param",
-      "stack_ref",
       "variadic_preserve"
     ],
-    "total_lines": 249
+    "total_lines": 241
   },
   "cross_references": [],
   "function": {
@@ -261,150 +257,17 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 11,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 11,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000020",
-      "text": "char *in_stack_00000020;",
+      "line": 10,
+      "match": "in_stack_00000018",
+      "text": "int in_stack_00000018;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_00000024",
-      "text": "char *in_stack_00000024;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000028",
-      "text": "char *in_stack_00000028;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000030",
-      "text": "int in_stack_00000030;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00000034",
-      "text": "int in_stack_00000034;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 29,
-      "match": "&stack0xffffff98",
-      "text": "(&stack0xffffff98,\"Unable to allocate %u bytes for rotated bitmap file (%s).\",local_18,0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 32,
-      "match": "&stack0xffffff9c",
-      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xffffff9c);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 37,
-      "match": "&stack0xffffffa4",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffa4,\"Unable to open bitmap file (%s).\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 40,
-      "match": "&stack0xffffffa8",
-      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xffffffa8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 46,
-      "match": "in_stack_00000020",
-      "text": "pcVar4 = in_stack_00000020 + (height - bitmap_size) + -1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 47,
-      "match": "in_stack_00000024",
-      "text": "if (in_stack_00000024 != (char *)0x0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 51,
-      "match": "&stack0xffffffb0",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffb0,\"Unable to read bitmap file (%s).\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 60,
-      "match": "in_stack_00000024",
-      "text": "} while (pcVar3 < in_stack_00000024);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 66,
-      "match": "in_stack_00000030",
-      "text": "if (in_stack_00000030 == 0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 67,
-      "match": "in_stack_00000024",
-      "text": "return in_stack_00000024;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 70,
-      "match": "in_stack_00000020",
-      "text": "(in_stack_00000020,in_stack_00000024,bitmap_size,in_stack_00000034);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 70,
-      "match": "in_stack_00000024",
-      "text": "(in_stack_00000020,in_stack_00000024,bitmap_size,in_stack_00000034);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 70,
-      "match": "in_stack_00000034",
-      "text": "(in_stack_00000020,in_stack_00000024,bitmap_size,in_stack_00000034);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 71,
-      "match": "in_stack_00000028",
-      "text": "return in_stack_00000028;",
+      "line": 62,
+      "match": "in_stack_00000018",
+      "text": "cockpit_ckptutil_c_applyActPalette_FUN_004319b0(filename,buffer,local_1c,in_stack_00000018);",
       "type": "stack_param"
     },
     {
@@ -490,28 +353,6 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00434835 (no EBP frame)",
       "type": "variadic_preserve"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Unable to open bitmap file (%s).\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Unable to open bitmap file (%s).",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 37,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffa4,\"Unable to open bitmap file (%s).\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Unable to read bitmap file (%s).\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Unable to read bitmap file (%s).",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 51,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffb0,\"Unable to read bitmap file (%s).\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 12,

@@ -12,7 +12,6 @@ void core_bodypart_cpp_FUN_00419e10(void)
   float fVar1;
   CVector3f *pCVar2;
   CVector3f *input_local_point;
-  BADSPACEBASE *in_ESP;
   char *pcVar3;
   int iVar4;
   CDemonActor *in_stack_00000004;

@@ -13,7 +13,6 @@ char * __cdecl crt_stdlib_c_utoa_FUN_0060ae50(uint value,char *buffer,int base)
   uint uVar2;
   char *pcVar3;
   char *pcVar4;
-  BADSPACEBASE *in_ESP;
   char *pcVar5;
   char local_37 [39];
   

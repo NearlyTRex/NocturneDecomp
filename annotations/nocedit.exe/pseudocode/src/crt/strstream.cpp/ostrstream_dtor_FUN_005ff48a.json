@@ -1,20 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 206,
+    "complexity_score": 177,
     "cross_reference_count": 4,
     "function_call_count": 6,
     "global_count": 4,
-    "pseudocode_lines": 41,
-    "suspect_count": 14,
+    "pseudocode_lines": 37,
+    "suspect_count": 12,
     "suspect_types": [
       "call_esp_preserve",
       "negative_offset",
       "special_crt_function",
-      "stack_param",
       "unaffected_reg"
     ],
-    "total_lines": 110
+    "total_lines": 106
   },
   "cross_references": [
     {
@@ -206,59 +205,45 @@
   "suspects": [
     {
       "description": "Unaffected register variable",
-      "line": 11,
+      "line": 10,
       "match": "unaff_EBX",
       "text": "uint unaff_EBX;",
       "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000010",
-      "text": "byte in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000014",
-      "text": "byte in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 24,
+      "line": 21,
       "match": "unaff_EBX",
       "text": "((ostream *)&(this_ptr->field_68).destructor_vtable,1,unaff_EBX);",
       "type": "unaffected_reg"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 27,
+      "line": 24,
       "match": "poVar3[-2].",
-      "text": "((strstreambase *)&poVar3[-2].ios.__xalloc_list,1,unaff_retaddr,(uint)this_ptr);",
+      "text": "((strstreambase *)&poVar3[-2].ios.__xalloc_list,1,unaff_EBX,unaff_retaddr);",
       "type": "negative_offset"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 28,
-      "match": "in_stack_00000010",
-      "text": "if ((in_stack_00000010 & 1) == 0) {",
-      "type": "stack_param"
+      "description": "Unaffected register variable",
+      "line": 24,
+      "match": "unaff_EBX",
+      "text": "((strstreambase *)&poVar3[-2].ios.__xalloc_list,1,unaff_EBX,unaff_retaddr);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 27,
+      "match": "unaff_EBX",
+      "text": "((ios *)&(this_ptr->field_80).__tied_stream,1,unaff_EBX);",
+      "type": "unaffected_reg"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 31,
+      "line": 28,
       "match": "piVar4[-2].",
-      "text": "ptr = (ostrstream *)&piVar4[-2].__tied_stream;",
+      "text": "this_ptr = (ostrstream *)&piVar4[-2].__tied_stream;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_00000014",
-      "text": "if ((in_stack_00000014 & 2) == 0) {",
-      "type": "stack_param"
     },
     {
       "add_esp_value": 8,

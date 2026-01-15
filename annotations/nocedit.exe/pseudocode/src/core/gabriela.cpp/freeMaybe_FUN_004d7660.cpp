@@ -13,9 +13,9 @@ core_gabriela_cpp_freeMaybe_FUN_004d7660(CGabriella *this_ptr,uint d1,uint d2,ui
   int iVar1;
   CGabriella *ptr;
   void *ptr_00;
+  uint unaff_EBX;
   uint unaff_retaddr;
   uint in_stack_00000014;
-  uint in_stack_00000018;
   
   if ((d1 & 4) != 0) {
     ptr_00 = crt_memory_c_freeSingleInstance_FUN_005fe632(this_ptr,&g_CGabriellaTypeInfo);
@@ -24,9 +24,9 @@ core_gabriela_cpp_freeMaybe_FUN_004d7660(CGabriella *this_ptr,uint d1,uint d2,ui
   }
   iVar1 = core_cloth_cpp_CallToUnknownSomethingFreeMem_FUN_00438c00();
   core_hero_cpp_CHero_dtor_FUN_004f2470
-            ((CHero *)(iVar1 + -0x1fc14),1,unaff_retaddr,(uint)this_ptr,d1,d2,d3,in_stack_00000014,
-             in_stack_00000018);
-  if ((d3 & 2) == 0) {
+            ((CHero *)(iVar1 + -0x1fc14),1,unaff_EBX,unaff_retaddr,(uint)this_ptr,d1,d2,d3,
+             in_stack_00000014);
+  if ((d1 & 2) == 0) {
     return ptr;
   }
   shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);

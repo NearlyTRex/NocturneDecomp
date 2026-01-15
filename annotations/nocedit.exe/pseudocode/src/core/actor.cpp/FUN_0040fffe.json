@@ -1,24 +1,22 @@
 {
   "complexity": {
     "assembly_lines": 103,
-    "complexity_score": 638,
+    "complexity_score": 606,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 4,
-    "pseudocode_lines": 143,
-    "suspect_count": 45,
+    "pseudocode_lines": 141,
+    "suspect_count": 43,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
       "pointer_cast",
-      "register_param",
       "stack_param",
       "stack_ref",
       "unaffected_reg",
       "variadic_preserve"
     ],
-    "total_lines": 246
+    "total_lines": 244
   },
   "cross_references": [
     {
@@ -137,64 +135,57 @@
       "type": "unaffected_reg"
     },
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 11,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 11,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_000033a8",
+      "text": "char in_stack_000033a8;",
+      "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 16,
-      "match": "in_stack_000033b4",
-      "text": "char in_stack_000033b4;",
+      "match": "in_stack_00003614",
+      "text": "char in_stack_00003614;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 17,
-      "match": "in_stack_00003624",
-      "text": "char in_stack_00003624;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00003688",
-      "text": "char in_stack_00003688;",
+      "match": "in_stack_00003678",
+      "text": "char in_stack_00003678;",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 28,
-      "match": "&stack0x00003554",
-      "text": "(g_CEditorToolsPtr,&stack0x00003554,&stack0x000033b0,0xdc,1);",
+      "line": 27,
+      "match": "&stack0x0000354c",
+      "text": "(g_CEditorToolsPtr,&stack0x0000354c,&stack0x000033a8,0xdc,1);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 28,
-      "match": "&stack0x000033b0",
-      "text": "(g_CEditorToolsPtr,&stack0x00003554,&stack0x000033b0,0xdc,1);",
+      "line": 27,
+      "match": "&stack0x000033a8",
+      "text": "(g_CEditorToolsPtr,&stack0x0000354c,&stack0x000033a8,0xdc,1);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
+      "line": 31,
+      "match": "in_stack_000033a8",
+      "text": "if (in_stack_000033a8 == '\\0') {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unaffected register variable",
       "line": 32,
-      "match": "in_stack_000033b4",
-      "text": "if (in_stack_000033b4 == '\\0') {",
-      "type": "stack_param"
+      "match": "unaff_EBX",
+      "text": "if (*(int *)(unaff_EBX + 0x5c) < (*(CRuleList **)(unaff_EBX + 0x68))->list_size) {",
+      "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 33,
+      "line": 32,
       "match": "unaff_EBX",
       "text": "if (*(int *)(unaff_EBX + 0x5c) < (*(CRuleList **)(unaff_EBX + 0x68))->list_size) {",
       "type": "unaffected_reg"
@@ -202,188 +193,181 @@
     {
       "description": "Unaffected register variable",
       "line": 33,
-      "match": "unaff_EBX",
-      "text": "if (*(int *)(unaff_EBX + 0x5c) < (*(CRuleList **)(unaff_EBX + 0x68))->list_size) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 34,
       "match": "unaff_EBX",
       "text": "core_event_cpp_CRuleList_remove_FUN_004b17c0(*(CRuleList **)(unaff_EBX + 0x68));",
       "type": "unaffected_reg"
     },
     {
       "description": "Direct stack address reference",
-      "line": 38,
-      "match": "&stack0x000033b4",
-      "text": "pcVar4 = crt_string_c_strstr_FUN_005fedd0(&stack0x000033b4,\"=>\");",
+      "line": 37,
+      "match": "&stack0x000033a8",
+      "text": "pcVar4 = crt_string_c_strstr_FUN_005fedd0(&stack0x000033a8,\"=>\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 42,
+      "match": "&stack0x000033a8",
+      "text": "pcVar9 = &stack0x000033a8;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 43,
-      "match": "&stack0x000033b8",
-      "text": "pcVar9 = &stack0x000033b8;",
+      "match": "&stack0x00003614",
+      "text": "pcVar7 = &stack0x00003614;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 44,
-      "match": "&stack0x00003624",
-      "text": "pcVar7 = &stack0x00003624;",
+      "line": 55,
+      "match": "&stack0x00003614",
+      "text": "pcVar9 = &stack0x00003614;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 56,
-      "match": "&stack0x00003624",
-      "text": "pcVar9 = &stack0x00003624;",
+      "line": 64,
+      "match": "&stack0x00003613",
+      "text": "puVar3 = &stack0x00003613 + ~uVar5;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 65,
-      "match": "&stack0x00003623",
-      "text": "puVar3 = &stack0x00003623 + ~uVar5;",
+      "line": 71,
+      "match": "&stack0x00003614",
+      "text": "(&stack0x00003614)[SVar6] = 0;",
       "type": "stack_ref"
     },
     {
-      "description": "Direct stack address reference",
+      "description": "Unresolved stack parameter",
       "line": 72,
-      "match": "&stack0x00003624",
-      "text": "(&stack0x00003624)[SVar6] = 0;",
+      "match": "in_stack_00003614",
+      "text": "while ((g_CharacterClassificationTable[(byte)(in_stack_00003614 + 1)] & 2U) != 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 73,
+      "match": "&stack0x00003614",
+      "text": "crt_string_c_memmove_FUN_005fe5e0(&stack0x00003614,&stack0x00003615,SVar6);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 73,
-      "match": "&stack0x00003625",
-      "text": "puVar3 = &stack0x00003625;",
+      "match": "&stack0x00003615",
+      "text": "crt_string_c_memmove_FUN_005fe5e0(&stack0x00003614,&stack0x00003615,SVar6);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 76,
+      "match": "&stack0x00003678",
+      "text": "pcVar9 = &stack0x00003678;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 88,
+      "match": "&stack0x00003678",
+      "text": "pcVar4 = &stack0x00003678;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 97,
+      "match": "&stack0x00003677",
+      "text": "puVar3 = &stack0x00003677 + ~uVar5;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 104,
+      "match": "&stack0x00003678",
+      "text": "(&stack0x00003678)[SVar6] = 0;",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 74,
-      "match": "in_stack_00003624",
-      "text": "while ((g_CharacterClassificationTable[(byte)(in_stack_00003624 + 1)] & 2U) != 0) {",
+      "line": 105,
+      "match": "in_stack_00003678",
+      "text": "while ((g_CharacterClassificationTable[(byte)(in_stack_00003678 + 1)] & 2U) != 0) {",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 75,
-      "match": "&stack0x00003624",
-      "text": "crt_string_c_memmove_FUN_005fe5e0(&stack0x00003624,puVar3,SVar6);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 78,
-      "match": "&stack0x00003688",
-      "text": "pcVar9 = &stack0x00003688;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 90,
-      "match": "&stack0x00003688",
-      "text": "pcVar4 = &stack0x00003688;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 99,
-      "match": "&stack0x00003687",
-      "text": "puVar3 = &stack0x00003687 + ~uVar5;",
+      "line": 106,
+      "match": "&stack0x00003678",
+      "text": "crt_string_c_memmove_FUN_005fe5e0(&stack0x00003678,&stack0x00003679,SVar6);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 106,
-      "match": "&stack0x00003688",
-      "text": "(&stack0x00003688)[SVar6] = 0;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 107,
-      "match": "in_stack_00003688",
-      "text": "while ((g_CharacterClassificationTable[(byte)(in_stack_00003688 + 1)] & 2U) != 0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 108,
-      "match": "&stack0x00003688",
-      "text": "crt_string_c_memmove_FUN_005fe5e0(&stack0x00003688,&stack0x00003689,SVar6);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 108,
-      "match": "&stack0x00003689",
-      "text": "crt_string_c_memmove_FUN_005fe5e0(&stack0x00003688,&stack0x00003689,SVar6);",
+      "match": "&stack0x00003679",
+      "text": "crt_string_c_memmove_FUN_005fe5e0(&stack0x00003678,&stack0x00003679,SVar6);",
       "type": "stack_ref"
     },
     {
       "description": "Unaffected register variable",
-      "line": 116,
+      "line": 114,
       "match": "unaff_EBX",
       "text": "pCVar8 = *(CRuleList **)(unaff_EBX + 0x68);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 117,
+      "line": 115,
       "match": "unaff_EBX",
       "text": "if (pCVar8->list_size <= *(int *)(unaff_EBX + 0x5c)) {",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 121,
+      "line": 119,
       "match": "unaff_EBX",
       "text": "pCVar8 = pCVar8 + *(int *)(unaff_EBX + 0x5c) * 0x19 + 1;",
       "type": "unaffected_reg"
     },
     {
       "description": "Direct stack address reference",
-      "line": 122,
-      "match": "&stack0x00003618",
-      "text": "pcVar4 = &stack0x00003618;",
+      "line": 120,
+      "match": "&stack0x00003614",
+      "text": "pcVar4 = &stack0x00003614;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 129,
+      "line": 127,
       "match": "(char *)((int)",
       "text": "*(char *)((int)&pCVar8->list_size + 1) = cVar1;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 130,
+      "line": 128,
       "match": "(CRuleList *)((int)",
       "text": "pCVar8 = (CRuleList *)((int)&pCVar8->list_size + 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 132,
-      "match": "&stack0x0000367c",
-      "text": "pcVar4 = &stack0x0000367c;",
+      "line": 130,
+      "match": "&stack0x00003678",
+      "text": "pcVar4 = &stack0x00003678;",
       "type": "stack_ref"
     },
     {
       "description": "Unaffected register variable",
-      "line": 133,
+      "line": 131,
       "match": "unaff_EBX",
       "text": "pcVar9 = (char *)(*(int *)(unaff_EBX + 0x68) + 0x1f8 + *(int *)(unaff_EBX + 0x5c) * 100);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 133,
+      "line": 131,
       "match": "unaff_EBX",
       "text": "pcVar9 = (char *)(*(int *)(unaff_EBX + 0x68) + 0x1f8 + *(int *)(unaff_EBX + 0x5c) * 100);",
       "type": "unaffected_reg"

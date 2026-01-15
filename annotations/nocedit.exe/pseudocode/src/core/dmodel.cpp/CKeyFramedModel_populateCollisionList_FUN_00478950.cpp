@@ -11,28 +11,25 @@ core_dmodel_cpp_CKeyFramedModel_populateCollisionList_FUN_00478950
           (CKeyFramedModel *this_ptr,CVector3f *transform_vector)
 
 {
-  int *piVar1;
+  CVector3i **ppCVar1;
   CVector3f *pCVar2;
-  CMatrix3x3f *pCVar3;
-  BADSPACEBASE *in_ESP;
-  CDemonTriangle *this_ptr_00;
-  int unaff_ESI;
+  CMatrix3x3f *this_ptr_00;
+  CDemonTriangle *this_ptr_01;
+  int iVar3;
   int iVar4;
-  int unaff_EDI;
-  int iVar5;
-  int unaff_retaddr;
+  CVector3f local_78;
+  CVector3f local_6c;
   CVector3f local_60;
-  byte local_54 [8];
-  byte local_4c [8];
-  byte local_44 [8];
-  float local_3c;
-  CVector3f CStack_38;
-  int local_2c;
+  CVector3f local_54;
+  CVector3f local_48;
+  CVector3f local_3c;
+  int local_30;
+  CMatrix3x3f *local_2c;
   CMatrix3x3f *local_28;
-  CMatrix3x3f *local_24;
+  int local_24;
   int local_20;
-  int local_1c;
-  CMatrix3x3f *local_18;
+  CMatrix3x3f *local_1c;
+  CVector3i **local_18;
   int local_14;
   
   if (&this_ptr->transform_vector != transform_vector) {
@@ -40,76 +37,77 @@ core_dmodel_cpp_CKeyFramedModel_populateCollisionList_FUN_00478950
     (this_ptr->transform_vector).y = transform_vector->y;
     (this_ptr->transform_vector).z = transform_vector->z;
   }
-  pCVar3 = &this_ptr->rotation_matrix_workspace;
-  core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30(pCVar3,&this_ptr->transform_vector);
-  local_2c = 0;
-  this_ptr_00 = (CDemonTriangle *)transform_vector[0x737].y;
-  local_28 = pCVar3;
-  local_24 = pCVar3;
-  local_18 = pCVar3;
-  if (0 < (int)transform_vector[0x15].y) {
+  this_ptr_00 = &this_ptr->rotation_matrix_workspace;
+  core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
+            (this_ptr_00,&this_ptr->transform_vector);
+  local_30 = 0;
+  this_ptr_01 = this_ptr->collision_triangle_list;
+  local_2c = this_ptr_00;
+  local_28 = this_ptr_00;
+  local_1c = this_ptr_00;
+  if (0 < this_ptr->frame_count) {
     do {
-      local_14 = (int)transform_vector[0x16].y + (int)transform_vector[0x15].z * local_2c * 0xc;
-      local_1c = 0;
-      if (0 < (int)transform_vector[0x16].z) {
-        local_20 = 0;
+      local_18 = this_ptr->vertex_list + this_ptr->vertex_count * local_30 * 3;
+      local_20 = 0;
+      if (0 < this_ptr->poly_count) {
+        local_24 = 0;
         do {
-          pCVar3 = (CMatrix3x3f *)(local_20 + (int)transform_vector[0x17].x);
-          piVar1 = (int *)((int)pCVar3->m[2].x * 0xc + local_14);
-          local_44._0_4_ = (float)*piVar1 * 0.00390625f;
-          local_44._4_4_ = (float)piVar1[1] * 0.00390625f;
-          local_3c = (float)piVar1[2] * 0.00390625f;
-          piVar1 = (int *)((int)pCVar3[1].m[0].x * 0xc + local_14);
-          local_54._4_4_ = (float)*piVar1 * 0.00390625f;
-          local_4c._0_4_ = (float)piVar1[1] * 0.00390625f;
-          local_4c._4_4_ = (float)piVar1[2] * 0.00390625f;
+          local_14 = local_24 + (int)this_ptr->poly_vert_list;
+          ppCVar1 = local_18 + *(int *)(local_14 + 0x18) * 3;
+          local_48.x = (float)(int)*ppCVar1 * 0.00390625f;
+          local_48.y = (float)(int)ppCVar1[1] * 0.00390625f;
+          local_48.z = (float)(int)ppCVar1[2] * 0.00390625f;
+          ppCVar1 = local_18 + *(int *)(local_14 + 0x24) * 3;
+          local_54.x = (float)(int)*ppCVar1 * 0.00390625f;
+          local_54.y = (float)(int)ppCVar1[1] * 0.00390625f;
+          local_54.z = (float)(int)ppCVar1[2] * 0.00390625f;
           pCVar2 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
-                             (local_24,&CStack_38,(CVector3f *)local_44);
-          if ((CVector3f *)(local_44 + 4) != pCVar2) {
-            local_44._4_4_ = pCVar2->x;
-            local_3c = pCVar2->y;
-            CStack_38.x = pCVar2->z;
+                             (local_28,&local_3c,&local_48);
+          if (&local_48 != pCVar2) {
+            local_48.x = pCVar2->x;
+            local_48.y = pCVar2->y;
+            local_48.z = pCVar2->z;
           }
           pCVar2 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
-                             (local_24,(CVector3f *)&stack0xffffff90,(CVector3f *)local_4c);
-          if ((CVector3f *)(local_4c + 4) != pCVar2) {
-            local_4c._4_4_ = pCVar2->x;
-            local_44._0_4_ = pCVar2->y;
-            local_44._4_4_ = pCVar2->z;
+                             (local_2c,&local_78,&local_54);
+          if (&local_54 != pCVar2) {
+            local_54.x = pCVar2->x;
+            local_54.y = pCVar2->y;
+            local_54.z = pCVar2->z;
           }
-          iVar5 = 2;
-          if (2 < *(int *)(unaff_ESI + 4)) {
-            iVar4 = unaff_ESI + 0x18;
+          iVar4 = 2;
+          if (2 < *(int *)(local_14 + 4)) {
+            iVar3 = local_14 + 0x18;
             do {
-              piVar1 = (int *)(*(int *)(iVar4 + 0x18) * 0xc + unaff_EDI);
-              local_54._0_4_ = (float)*piVar1 * 0.00390625f;
-              local_54._4_4_ = (float)piVar1[1] * 0.00390625f;
-              local_4c._0_4_ = (float)piVar1[2] * 0.00390625f;
+              ppCVar1 = local_18 + *(int *)(iVar3 + 0x18) * 3;
+              local_60.x = (float)(int)*ppCVar1 * 0.00390625f;
+              local_60.y = (float)(int)ppCVar1[1] * 0.00390625f;
+              local_60.z = (float)(int)ppCVar1[2] * 0.00390625f;
               pCVar2 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
-                                 (pCVar3,&local_60,(CVector3f *)local_54);
-              if ((CVector3f *)(local_54 + 4) != pCVar2) {
-                local_54._4_4_ = pCVar2->x;
-                local_4c._0_4_ = pCVar2->y;
-                local_4c._4_4_ = pCVar2->z;
+                                 (local_1c,&local_6c,&local_60);
+              if (&local_60 != pCVar2) {
+                local_60.x = pCVar2->x;
+                local_60.y = pCVar2->y;
+                local_60.z = pCVar2->z;
               }
               core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0049a790
-                        (this_ptr_00,&CStack_38,(CVector3f *)local_44,(CVector3f *)(local_54 + 4));
-              this_ptr_00 = this_ptr_00 + 1;
-              if (local_44 + 4 != local_4c) {
-                local_44._4_4_ = local_4c._0_4_;
-                local_3c = (float)local_4c._4_4_;
-                CStack_38.x = (float)local_44._0_4_;
+                        (this_ptr_01,&local_48,&local_54,&local_60);
+              this_ptr_01 = this_ptr_01 + 1;
+              if (&local_54 != &local_60) {
+                local_54.x = local_60.x;
+                local_54.y = local_60.y;
+                local_54.z = local_60.z;
               }
-              iVar5 = iVar5 + 1;
-              iVar4 = iVar4 + 0xc;
-            } while (iVar5 < *(int *)(unaff_retaddr + 4));
+              iVar4 = iVar4 + 1;
+              iVar3 = iVar3 + 0xc;
+            } while (iVar4 < *(int *)(local_14 + 4));
           }
-          local_20 = local_20 + 0x48;
-          local_1c = local_1c + 1;
-        } while (local_1c < (int)transform_vector[0x16].z);
+          local_24 = local_24 + 0x48;
+          local_20 = local_20 + 1;
+        } while (local_20 < this_ptr->poly_count);
       }
-      local_2c = local_2c + 1;
-    } while (local_2c < (int)transform_vector[0x15].y);
+      local_30 = local_30 + 1;
+    } while (local_30 < this_ptr->frame_count);
   }
   return;
 }

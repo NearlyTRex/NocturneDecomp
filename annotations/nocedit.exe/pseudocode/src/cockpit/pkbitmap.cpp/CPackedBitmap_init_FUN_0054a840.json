@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 99,
+    "complexity_score": 72,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 0,
-    "pseudocode_lines": 14,
-    "suspect_count": 7,
+    "pseudocode_lines": 12,
+    "suspect_count": 5,
     "suspect_types": [
       "call_esp_preserve",
-      "stack_param",
       "unaffected_reg"
     ],
-    "total_lines": 50
+    "total_lines": 48
   },
   "cross_references": [],
   "function": {
@@ -134,29 +133,15 @@
     {
       "description": "Unaffected register variable",
       "line": 8,
-      "match": "unaff_ESI",
-      "text": "int unaff_ESI;",
+      "match": "unaff_EBP",
+      "text": "int unaff_EBP;",
       "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000020",
-      "text": "int in_stack_00000020;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000020",
-      "text": "(this_ptr,(char *)height,transparency_color,stride,apply_palette_flag,in_stack_00000020,",
-      "type": "stack_param"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 15,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI);",
+      "line": 13,
+      "match": "unaff_EBP",
+      "text": "(this_ptr,filename,width,height,transparency_color,stride,unaff_EBP);",
       "type": "unaffected_reg"
     },
     {

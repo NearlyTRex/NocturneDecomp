@@ -16,7 +16,6 @@ void core_msnedit_cpp_FUN_00536e20(void)
   int iVar1;
   SMotion *motion_name;
   int y1;
-  BADSPACEBASE *in_ESP;
   float local_f8;
   char local_f4 [196];
   double dStack_30;

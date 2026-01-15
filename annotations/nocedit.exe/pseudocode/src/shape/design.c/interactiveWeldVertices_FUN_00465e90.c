@@ -11,9 +11,9 @@ void __cdecl shape_design_c_interactiveWeldVertices_FUN_00465e90(int polygon_ind
 {
   char cVar1;
   int iVar2;
-  BADSPACEBASE *in_ESP;
   char *pcVar3;
   byte bVar4;
+  char local_70 [80];
   uint local_20;
   uint local_1c;
   int local_18;
@@ -21,10 +21,10 @@ void __cdecl shape_design_c_interactiveWeldVertices_FUN_00465e90(int polygon_ind
   
   bVar4 = 0;
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
-  engine_2d_c_getInputWithPrompt_FUN_004032c0
-            (&stack0xffffff90,0x32,0,0,"Enter weld points a,b (weld a -> b) : ");
+  engine_2d_c_getInputWithPrompt_FUN_004032c0(local_70,0x32,0,0,"Enter weld points a,b (weld a -> b) : ")
+  ;
   iVar2 = -1;
-  pcVar3 = &stack0xffffff90;
+  pcVar3 = local_70;
   do {
     if (iVar2 == 0) break;
     iVar2 = iVar2 + -1;
@@ -32,8 +32,8 @@ void __cdecl shape_design_c_interactiveWeldVertices_FUN_00465e90(int polygon_ind
     pcVar3 = pcVar3 + (uint)bVar4 * -2 + 1;
   } while (cVar1 != '\0');
   if ((iVar2 != -2) &&
-     (local_18 = crt_stdio_c_sscanf_FUN_0060013c
-                           (&stack0xffffff90,"%d,%d",&local_20,&local_1c), local_18 == 2)) {
+     (local_18 = crt_stdio_c_sscanf_FUN_0060013c(local_70,"%d,%d",&local_20,&local_1c),
+     local_18 == 2)) {
     if (((int)local_20 < 0) ||
        ((((int)local_1c < 0 || (g_VertexCount + -1 < (int)local_20)) ||
         (g_VertexCount + -1 < (int)local_1c)))) {

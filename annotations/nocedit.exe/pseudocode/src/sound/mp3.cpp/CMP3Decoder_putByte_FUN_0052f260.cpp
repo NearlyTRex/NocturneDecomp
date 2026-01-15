@@ -18,7 +18,7 @@ sound_mp3_cpp_CMP3Decoder_putByte_FUN_0052f260
               ("hputbuf - Not Supported yet!!  File: %s",g_CurrentMp3Filename);
   }
   (this_ptr->memory_bitstream).frame_buffer[(this_ptr->memory_bitstream).buffer_size_limit & 0xfff]
-       = bits_per_byte;
+       = byte_value;
   (this_ptr->memory_bitstream).buffer_size_limit =
        (this_ptr->memory_bitstream).buffer_size_limit + 1;
   return;

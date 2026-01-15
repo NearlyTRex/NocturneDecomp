@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 114,
+    "complexity_score": 88,
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 0,
-    "pseudocode_lines": 29,
-    "suspect_count": 7,
+    "pseudocode_lines": 28,
+    "suspect_count": 5,
     "suspect_types": [
       "call_esp_preserve",
-      "stack_param",
       "unaffected_reg"
     ],
-    "total_lines": 104
+    "total_lines": 103
   },
   "cross_references": [
     {
@@ -127,29 +126,15 @@
     {
       "description": "Unaffected register variable",
       "line": 10,
-      "match": "unaff_EDI",
-      "text": "CVector3i *unaff_EDI;",
+      "match": "unaff_ESI",
+      "text": "CVector3i *unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000010",
-      "text": "CBodyPart *in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_00000010",
-      "text": "(this_ptr_00,this_ptr->cached_skinned_lod_index,in_stack_00000010,part_index,",
-      "type": "stack_param"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 29,
-      "match": "unaff_EDI",
-      "text": "unaff_EDI);",
+      "line": 28,
+      "match": "unaff_ESI",
+      "text": "unaff_ESI);",
       "type": "unaffected_reg"
     },
     {

@@ -1,24 +1,22 @@
 {
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 345,
+    "complexity_score": 314,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 50,
-    "suspect_count": 25,
+    "pseudocode_lines": 49,
+    "suspect_count": 23,
     "suspect_types": [
-      "badspacebase",
       "concat_artifact",
       "pointer_cast",
-      "register_param",
       "special_crt_function",
       "stack_param",
       "stack_ref",
       "sub_artifact",
       "unknown_field"
     ],
-    "total_lines": 137
+    "total_lines": 136
   },
   "cross_references": [
     {
@@ -172,169 +170,155 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 6,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 6,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 8,
+      "line": 7,
       "match": "in_stack_00000004",
       "text": "uint in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 13,
+      "line": 12,
       "match": "._4_1_",
       "text": "if (y._4_1_ < 2) {",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 14,
+      "line": 13,
       "match": "._4_1_",
       "text": "if (y._4_1_ == 0) {",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 15,
+      "line": 14,
       "match": "._0_4_",
       "text": "if (0.0 < (double)CONCAT44 /* combine 2-byte values */(y._0_4_,x._4_4_)) {",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 15,
+      "line": 14,
       "match": "._4_4_",
       "text": "if (0.0 < (double)CONCAT44 /* combine 2-byte values */(y._0_4_,x._4_4_)) {",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 15,
+      "line": 14,
       "match": "CONCAT44",
       "text": "if (0.0 < (double)CONCAT44 /* combine 2-byte values */(y._0_4_,x._4_4_)) {",
       "type": "concat_artifact"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 20,
+      "line": 19,
       "match": "._0_4_",
       "text": "if (0.0 <= (double)CONCAT44 /* combine 2-byte values */(y._0_4_,x._4_4_)) {",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 20,
+      "line": 19,
       "match": "._4_4_",
       "text": "if (0.0 <= (double)CONCAT44 /* combine 2-byte values */(y._0_4_,x._4_4_)) {",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 20,
+      "line": 19,
       "match": "CONCAT44",
       "text": "if (0.0 <= (double)CONCAT44 /* combine 2-byte values */(y._0_4_,x._4_4_)) {",
       "type": "concat_artifact"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 32,
+      "line": 31,
       "match": "._0_4_",
       "text": "if ((double)CONCAT44 /* combine 2-byte values */(y._0_4_,x._4_4_) <= 0.0) {",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 32,
+      "line": 31,
       "match": "._4_4_",
       "text": "if ((double)CONCAT44 /* combine 2-byte values */(y._0_4_,x._4_4_) <= 0.0) {",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 32,
+      "line": 31,
       "match": "CONCAT44",
       "text": "if ((double)CONCAT44 /* combine 2-byte values */(y._0_4_,x._4_4_) <= 0.0) {",
       "type": "concat_artifact"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 37,
+      "line": 36,
       "match": "in_stack_00000004",
       "text": "if ((double)CONCAT44 /* combine 2-byte values */(x._0_4_,in_stack_00000004) <= 0.0) {",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 37,
+      "line": 36,
       "match": "._0_4_",
       "text": "if ((double)CONCAT44 /* combine 2-byte values */(x._0_4_,in_stack_00000004) <= 0.0) {",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 37,
+      "line": 36,
       "match": "CONCAT44",
       "text": "if ((double)CONCAT44 /* combine 2-byte values */(x._0_4_,in_stack_00000004) <= 0.0) {",
       "type": "concat_artifact"
     },
     {
       "description": "Direct stack address reference",
-      "line": 45,
+      "line": 44,
       "match": "&stack0x00000004",
       "text": "(errorFlags,(double *)&stack0x00000004,(double *)((int)&x + 4));",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 45,
+      "line": 44,
       "match": "(double *)((int)",
       "text": "(errorFlags,(double *)&stack0x00000004,(double *)((int)&x + 4));",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 46,
+      "line": 45,
       "match": "._0_4_",
       "text": "local_10._0_4_ = SUB84 /* extract 2-byte value */(dVar1,0);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler double/longlong extraction artifact",
-      "line": 46,
+      "line": 45,
       "match": "SUB84",
       "text": "local_10._0_4_ = SUB84 /* extract 2-byte value */(dVar1,0);",
       "type": "sub_artifact"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 48,
+      "line": 47,
       "match": "._4_4_",
       "text": "local_10._4_4_ = (uint)((ulonglong)dVar1 >> 0x20);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 49,
+      "line": 48,
       "match": "._4_4_",
       "text": "local_14 = local_10._4_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 51,
+      "line": 50,
       "match": "CONCAT44",
       "text": "local_10 = (double)CONCAT44 /* combine 2-byte values */(local_14,local_18);",
       "type": "concat_artifact"

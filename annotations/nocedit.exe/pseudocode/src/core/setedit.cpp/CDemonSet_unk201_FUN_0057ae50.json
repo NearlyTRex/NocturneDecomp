@@ -1,18 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 511,
-    "complexity_score": 873,
+    "complexity_score": 798,
     "cross_reference_count": 3,
     "function_call_count": 23,
     "global_count": 35,
     "pseudocode_lines": 178,
-    "suspect_count": 67,
+    "suspect_count": 61,
     "suspect_types": [
-      "badspacebase",
       "pointer_cast",
-      "register_param",
-      "stack_param",
-      "stack_ref"
+      "stack_param"
     ],
     "total_lines": 689
   },
@@ -1020,36 +1017,22 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 10,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 10,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 13,
       "match": "in_stack_00000004",
       "text": "CDemonSet *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 14,
       "match": "in_stack_00000008",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 17,
       "match": "in_stack_fffffe78",
       "text": "CGame *in_stack_fffffe78;",
       "type": "stack_param"
@@ -1286,31 +1269,10 @@
       "type": "stack_param"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 113,
-      "match": "&stack0xfffffe7c",
-      "text": "(&stack0xfffffe7c,\"%f\",(double)(1.0 / g_CGamePtr->delta_time_float));",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 114,
-      "match": "&stack0xfffffe7c",
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe7c,0,g_WindowHeight + -0xb);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 116,
-      "match": "&stack0xfffffe7c",
-      "text": "(&stack0xfffffe7c,\"pos: %4.1f %4.1f %4.1f   pbh: %3.1f %3.1f %6.3f   fov : %2.1f\",(double)*(float *)PTR_DAT_00681ab8",
-      "type": "stack_ref"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 117,
       "match": "(float *)((int)",
-      "text": ",(double)*(float *)((int)PTR_DAT_00681ab8 + 4),",
+      "text": "(double)*(float *)((int)PTR_DAT_00681ab8 + 4),",
       "type": "pointer_cast"
     },
     {
@@ -1347,13 +1309,6 @@
       "match": "(float *)((int)",
       "text": "(double)*(float *)((int)PTR_DAT_00681ab8 + 0x18));",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 123,
-      "match": "&stack0xfffffe7c",
-      "text": "engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffe7c,0,0x16);",
-      "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
@@ -1485,7 +1440,7 @@
       "description": "Unresolved stack parameter",
       "line": 180,
       "match": "in_stack_00000008",
-      "text": "*(uint *)(in_stack_00000008 + 0x11e0) = local_1c;",
+      "text": "*(uint *)(in_stack_00000008 + 0x11e0) = local_20;",
       "type": "stack_param"
     }
   ]

@@ -1,25 +1,23 @@
 {
   "complexity": {
     "assembly_lines": 674,
-    "complexity_score": 717,
+    "complexity_score": 595,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 41,
-    "pseudocode_lines": 267,
-    "suspect_count": 40,
+    "pseudocode_lines": 265,
+    "suspect_count": 29,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
       "pointer_cast",
-      "register_param",
       "sborrow_artifact",
       "stack_param",
       "stack_ref",
       "unknown_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 941
+    "total_lines": 939
   },
   "cross_references": [
     {
@@ -602,227 +600,150 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 18,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 18,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
       "line": 23,
-      "match": "in_stack_00000010",
-      "text": "uint in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 25,
       "match": "in_stack_ffffff6c",
       "text": "CVector3i *in_stack_ffffff6c;",
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_ffffff70",
-      "text": "int in_stack_ffffff70;",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 57,
+      "line": 54,
       "match": "(int *)((int)",
       "text": "if ((g_CGamePtr->halo_mode != 0) || ((p2 == 0 && (*(int *)((int)p1 + 0x20) != 0)))) {",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 59,
-      "match": "in_stack_ffffff70",
-      "text": "iVar5 = in_stack_ffffff70;",
+      "line": 56,
+      "match": "in_stack_ffffff6c",
+      "text": "pCVar9 = in_stack_ffffff6c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 61,
+      "line": 58,
       "match": "in_stack_ffffff6c",
       "text": "(this_ptr,p1,in_stack_ffffff6c);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 63,
-      "match": "&stack0xffffff74",
-      "text": "(&g_CoronaTargetY)[(uint)bVar2 * -2] = *(int *)(&stack0xffffff74 + (uint)bVar2 * -8);",
+      "line": 60,
+      "match": "&stack0xffffff70",
+      "text": "(&g_CoronaTargetY)[(uint)bVar2 * -2] = *(int *)(&stack0xffffff70 + (uint)bVar2 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 65,
-      "match": "&stack0xffffff78",
-      "text": "*(int *)(&stack0xffffff78 + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
+      "line": 62,
+      "match": "&stack0xffffff74",
+      "text": "*(int *)(&stack0xffffff74 + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
       "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 63,
+      "match": "(int *)((int)",
+      "text": "if (*(int *)((int)p1 + 0x20) == 0) {",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 79,
       "match": "(int *)((int)",
-      "text": "if (0 < *(int *)((int)p1 + 0x154)) {",
+      "text": "*(int *)((int)g_CoronaLeftExtent + iVar3) = this_ptr->framebuffer_width;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 82,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)g_CoronaLeftExtent + iVar3) = *(uint *)((int)p1 + 0x144);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 82,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)g_CoronaLeftExtent + iVar3) = *(uint *)((int)p1 + 0x144);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 83,
+      "line": 80,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_CoronaRightExtent + iVar3) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
+      "line": 85,
+      "match": "(int *)((int)",
+      "text": "if (((p2 == 0) && (*(int *)((int)p1 + 0x20) != 0)) &&",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 86,
       "match": "(int *)((int)",
-      "text": "} while (iVar5 < *(int *)((int)p1 + 0x154));",
+      "text": "(_DAT_0066ed68 = 0xffffffff, *(int *)((int)p1 + 0x20) == 2)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 89,
+      "line": 87,
       "match": "._0_4_",
       "text": "if (g_LightBufferPool[0x18]._0_4_ != 0) {",
       "type": "unknown_field"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 95,
-      "match": "(int *)((int)",
-      "text": "if (*(int *)((int)p1 + 0x154) < 1) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 100,
-      "match": "(int *)((int)",
-      "text": "if (*(int *)(iVar3 + 4) != *(int *)((int)p1 + 0x144)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 106,
-      "match": "(int *)((int)",
-      "text": "} while (iVar11 < *(int *)((int)p1 + 0x154));",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 110,
+      "line": 108,
       "match": "._0_4_",
       "text": "} while (iVar5 < g_LightBufferPool[0x18]._0_4_ * 0x13384);",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 112,
+      "line": 110,
       "match": "._0_4_",
       "text": "if ((uint)g_LightBufferPool[0x18]._0_4_ < 8) {",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 113,
+      "line": 111,
       "match": "._0_4_",
-      "text": "local_7c = g_LightBufferPool[0x18]._0_4_ * 0x13384;",
+      "text": "iVar5 = g_LightBufferPool[0x18]._0_4_ * 0x13384;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 114,
+      "line": 112,
       "match": "._0_4_",
       "text": "g_LightBufferPool[0x18]._0_4_ = g_LightBufferPool[0x18]._0_4_ + 1;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 114,
+      "line": 112,
       "match": "._0_4_",
       "text": "g_LightBufferPool[0x18]._0_4_ = g_LightBufferPool[0x18]._0_4_ + 1;",
       "type": "unknown_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 134,
-      "match": "(byte *)((int)",
-      "text": "local_28 = (byte *)((int)local_64 + local_80);",
+      "line": 223,
+      "match": "(int *)((int)",
+      "text": "if (this_ptr->framebuffer_width != *(int *)((int)g_CoronaLeftExtent + local_58)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 188,
-      "match": "(char *)((int)",
-      "text": "for (pcVar10 = (char *)((int)local_78 + iVar5 + local_4c * 0x140 + 0x784);",
+      "line": 224,
+      "match": "(int *)((int)",
+      "text": "local_28 = *(int *)((int)g_CoronaLeftExtent + local_58);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 192,
-      "match": "(char *)((int)",
-      "text": "for (pcVar10 = (char *)((int)local_78 + iVar3 + local_4c * 0x140 + 0x783);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 212,
-      "match": "in_stack_00000010",
-      "text": "*local_78 = in_stack_00000010;",
-      "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
       "line": 225,
       "match": "(int *)((int)",
-      "text": "if (*(int *)(p2 + 0x144) != *(int *)((int)g_CoronaLeftExtent + local_50)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 226,
-      "match": "(int *)((int)",
-      "text": "local_20 = *(int *)((int)g_CoronaLeftExtent + local_50);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 227,
-      "match": "(int *)((int)",
-      "text": "iVar5 = *(int *)((int)g_CoronaRightExtent + local_50);",
+      "text": "iVar5 = *(int *)((int)g_CoronaRightExtent + local_58);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler signed borrow artifact",
-      "line": 234,
+      "line": 232,
       "match": "SBORROW",
-      "text": "while (SBORROW /* signed borrow */4(local_20,iVar5) != iVar3 < 0) {",
+      "text": "while (SBORROW /* signed borrow */4(local_28,iVar5) != iVar3 < 0) {",
       "type": "sborrow_artifact"
     },
     {

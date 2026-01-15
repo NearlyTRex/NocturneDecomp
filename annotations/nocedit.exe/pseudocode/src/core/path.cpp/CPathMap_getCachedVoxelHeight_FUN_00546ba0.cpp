@@ -12,7 +12,6 @@ core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   CVector3i local_18;
   
   if ((((grid_x < 0) || (99 < grid_x)) || (grid_z < 0)) || (99 < grid_z)) {

@@ -9,31 +9,34 @@
 void core_weapon_cpp_FUN_005ee740(void)
 
 {
-  BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000004;
-  float fStack_4c;
-  float in_stack_ffffffc8;
+  float fStack_44;
+  float fStack_40;
+  float fStack_3c;
+  float fStack_38;
   float fStack_34;
   float fStack_30;
-  float fStack_2c;
-  float fStack_28;
-  float fStack_24;
-  byte auStack_20 [16];
-  CVector3f CStack_10;
+  CVector3f CStack_2c;
+  CVector3f CStack_20;
+  CVector3f CStack_14;
+  float fStack_8;
   
   if ((in_stack_00000004[2].location.position.x != 0.0) &&
      ((byte *)in_stack_00000004->field6_0x68 == &DAT_0078a123)) {
-    (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,(CBoundingBox3D *)&fStack_4c);
-    CStack_10.z = (in_stack_ffffffc8 + fStack_2c) * 0.5f;
+    (*in_stack_00000004->vtable->getBoundingBox)
+              (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffb4);
+    fStack_8 = fStack_44 + fStack_38;
+    CStack_14.x = fStack_8 * 0.5f;
+    CStack_14.y = (fStack_40 + fStack_34) * 0.5f;
+    CStack_14.z = (fStack_3c + fStack_30) * 0.5f;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-              (in_stack_00000004,(CVector3f *)auStack_20,(CVector3f *)&CStack_10.z);
-    CStack_10.x = fStack_28 - fStack_34;
-    CStack_10.y = fStack_24 - fStack_30;
-    CStack_10.z = (float)auStack_20._0_4_ - fStack_2c;
-    fStack_4c = 8.715802e-39;
+              (in_stack_00000004,&CStack_2c,&CStack_14);
+    CStack_20.x = fStack_38 - fStack_44;
+    CStack_20.y = fStack_34 - fStack_40;
+    CStack_20.z = fStack_30 - fStack_3c;
     core_box_cpp_CBox_setupCorners_FUN_0041dd20
-              ((CBox *)&in_stack_00000004[2].orient_matrix.m[2].y,(CVector3f *)(auStack_20 + 4),
-               (CVector3f *)&in_stack_00000004->orient,&CStack_10,
+              ((CBox *)&in_stack_00000004[2].orient_matrix.m[2].y,&CStack_2c,
+               (CVector3f *)&in_stack_00000004->orient,&CStack_20,
                *(float *)(in_stack_00000004[4].actor_name + 4));
     return;
   }

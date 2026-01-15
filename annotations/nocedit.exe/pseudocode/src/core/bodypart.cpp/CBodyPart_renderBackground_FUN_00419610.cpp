@@ -14,7 +14,6 @@ core_bodypart_cpp_CBodyPart_renderBackground_FUN_00419610(CBodyPart *this_ptr,in
   CBoundingBox3D *this_ptr_01;
   int iVar1;
   int iVar2;
-  BADSPACEBASE *in_ESP;
   
   if (*(int *)this_ptr->field1_0x158 == 0) {
     if ((((layer_flag != 0) && (*(int *)(this_ptr->field1_0x158 + 0xdd0) == 0)) &&
@@ -40,7 +39,7 @@ core_bodypart_cpp_CBodyPart_renderBackground_FUN_00419610(CBodyPart *this_ptr,in
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base_actor);
     g_CDemonSetPtr->unk_lighting_param2 = *(int *)(this_ptr->field1_0x158 + 0xb58);
     this_ptr_01 = (*((this_ptr->base_actor).vtable)->getBoundingBox)
-                            (&this_ptr->base_actor,(CBoundingBox3D *)&stack0xfffffff4);
+                            (&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffe4);
     iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_01);
     if ((iVar1 != 0) &&
        ((*(int *)(this_ptr->field1_0x158 + 0xb5c) == 0 ||

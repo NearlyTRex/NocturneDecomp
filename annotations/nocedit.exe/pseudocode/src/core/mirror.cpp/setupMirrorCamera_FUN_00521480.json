@@ -1,16 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 25,
-    "complexity_score": 45,
+    "complexity_score": 71,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
-    "pseudocode_lines": 10,
-    "suspect_count": 3,
+    "pseudocode_lines": 11,
+    "suspect_count": 5,
     "suspect_types": [
-      "call_esp_preserve"
+      "call_esp_preserve",
+      "unaffected_reg"
     ],
-    "total_lines": 35
+    "total_lines": 36
   },
   "cross_references": [
     {
@@ -100,6 +101,20 @@
     ]
   },
   "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 5,
+      "match": "unaff_EBX",
+      "text": "CVector3f *unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 12,
+      "match": "unaff_EBX",
+      "text": "(g_CDemonRendererPtr,&reflection->reflection_matrix,unaff_EBX);",
+      "type": "unaffected_reg"
+    },
     {
       "add_esp_value": 8,
       "call_address": "00521490",

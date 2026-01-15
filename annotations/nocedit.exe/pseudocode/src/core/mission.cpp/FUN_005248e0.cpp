@@ -9,17 +9,11 @@
 void __cdecl core_mission_cpp_FUN_005248e0(void)
 
 {
-  uint uStack00000004;
-  uint uStack00000008;
-  
   shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0("..\\core\\mission.cpp",0x5d4);
   engine_texture_cpp_clearTextureCache_FUN_005dd8e0();
-  uStack00000004 = 0x5248fc;
   core_dmodel_cpp_freeAllModels_FUN_00478cb0();
-  uStack00000008 = 0x524901;
   core_skeleton_cpp_freeAllModels_FUN_005a1dc0();
   core_skeleton_cpp_freeAllSkeletons_FUN_005a1ea0();
-  uStack00000008 = 0x524915;
   shape_memdbg_cpp_SMemHead_checkAllMemory_FUN_0050efe0("..\\core\\mission.cpp",0x5e2);
   return;
 }

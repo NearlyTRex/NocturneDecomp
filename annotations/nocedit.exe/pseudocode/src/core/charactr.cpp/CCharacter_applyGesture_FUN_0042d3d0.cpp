@@ -13,7 +13,7 @@ void __cdecl core_charactr_cpp_CCharacter_applyGesture_FUN_0042d3d0(CCharacter *
   float fVar2;
   float fVar3;
   CMotionList *pCVar4;
-  float blend_weight;
+  float local_8;
   
   if (-1 < *(int *)(this_ptr->field11_0x25a0 + 0x28)) {
     if (*(int *)(this_ptr->field11_0x25a0 + 0x24) < -1) {
@@ -28,16 +28,16 @@ void __cdecl core_charactr_cpp_CCharacter_applyGesture_FUN_0042d3d0(CCharacter *
     fVar3 = *(float *)(this_ptr->field11_0x25a0 + 0x2c) * fVar2;
     fVar2 = ((float)pCVar4->motions[iVar1].frame_count - *(float *)(this_ptr->field11_0x25a0 + 0x2c)
             ) * fVar2;
-    blend_weight = 0.85;
+    local_8 = 0.85;
     if (fVar3 < 0.85f) {
-      blend_weight = fVar3;
+      local_8 = fVar3;
     }
-    if (fVar2 < blend_weight) {
-      blend_weight = fVar2;
+    if (fVar2 < local_8) {
+      local_8 = fVar2;
     }
     core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0059eb50
               (&this_ptr->model,*(int *)(this_ptr->field11_0x25a0 + 0x28),
-               *(float *)(this_ptr->field11_0x25a0 + 0x2c),blend_weight,
+               *(float *)(this_ptr->field11_0x25a0 + 0x2c),local_8,
                *(int *)(this_ptr->field11_0x25a0 + 0x24),
                core_skeleton_cpp_defaultBlendWeight_FUN_0059ddb0);
   }

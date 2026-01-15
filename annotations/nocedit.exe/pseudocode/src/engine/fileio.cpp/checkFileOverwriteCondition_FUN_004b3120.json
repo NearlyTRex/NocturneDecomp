@@ -1,21 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 192,
+    "complexity_score": 145,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 5,
-    "pseudocode_lines": 32,
-    "suspect_count": 13,
+    "pseudocode_lines": 30,
+    "suspect_count": 10,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
-      "register_param",
-      "stack_ref",
       "variadic_preserve"
     ],
-    "total_lines": 109
+    "total_lines": 107
   },
   "cross_references": [],
   "function": {
@@ -155,29 +152,8 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 9,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 9,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 21,
-      "match": "&stack0xfffffc14",
-      "text": "(&stack0xfffffc14,\"You currently have %s checked out.  Replace local copy with network copy?\",target_filename);",
-      "type": "stack_ref"
-    },
-    {
       "call_address": "004b3182",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -191,7 +167,7 @@
     },
     {
       "call_address": "004b31ac",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

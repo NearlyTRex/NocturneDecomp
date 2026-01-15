@@ -11,7 +11,6 @@ int __cdecl shape_superopt_cpp_FUN_005cbf90(void)
 {
   bool bVar1;
   uint uVar2;
-  BADSPACEBASE *in_ESP;
   int iVar3;
   double *in_stack_00000008;
   uint in_stack_0000000c;
@@ -41,7 +40,8 @@ int __cdecl shape_superopt_cpp_FUN_005cbf90(void)
   uint local_a8;
   uint local_a4;
   uint local_a0;
-  ulonglong local_98;
+  double dStack_9c;
+  uint local_94;
   uint local_90;
   uint local_8c;
   uint local_88;
@@ -132,10 +132,10 @@ int __cdecl shape_superopt_cpp_FUN_005cbf90(void)
           }
           else {
             CStack_d4.x._0_4_ = *(uint *)(local_24 + 0x10);
-            local_98 = (double)CONCAT44 /* combine 2-byte values */(CStack_d4.x._0_4_,(uint)local_98);
             CStack_d4.x._4_4_ = *(uint *)(local_24 + 0x14);
             CStack_d4.y._0_4_ = *(uint *)(local_24 + 0x20);
             CStack_d4.y._4_4_ = *(uint *)(local_24 + 0x24);
+            local_94 = CStack_d4.x._0_4_;
             local_90 = CStack_d4.x._4_4_;
             local_8c = CStack_d4.y._0_4_;
             local_88 = CStack_d4.y._4_4_;
@@ -223,14 +223,14 @@ int __cdecl shape_superopt_cpp_FUN_005cbf90(void)
                  (double)CONCAT44 /* combine 2-byte values */(CStack_d4.x._4_4_,CStack_d4.x._0_4_) ||
                 ((double)CONCAT44 /* combine 2-byte values */(CStack_e4.y._4_4_,CStack_e4.y._0_4_) !=
                  (double)CONCAT44 /* combine 2-byte values */(CStack_d4.y._4_4_,CStack_d4.y._0_4_))))) {
-              local_98 = shape_superopt_cpp_getSignedTriangleArea2D_FUN_005d6640
-                                   (&CStack_e4,&CStack_d4,SUB84 /* extract 2-byte value */(dVar4,0));
-              local_128 = (uint)((ulonglong)local_98 >> 0x20);
-              iStack_12c = SUB84 /* extract 2-byte value */(local_98,0);
-              if ((((ulonglong)local_98 & 0x7fffffff00000000) != 0) || (iStack_12c != 0)) {
+              dStack_9c = shape_superopt_cpp_getSignedTriangleArea2D_FUN_005d6640
+                                    (&CStack_e4,&CStack_d4,SUB84 /* extract 2-byte value */(dVar4,0));
+              local_128 = (uint)((ulonglong)dStack_9c >> 0x20);
+              iStack_12c = SUB84 /* extract 2-byte value */(dStack_9c,0);
+              if ((((ulonglong)dStack_9c & 0x7fffffff00000000) != 0) || (iStack_12c != 0)) {
                 if (bVar1) {
-                  if ((((double)CONCAT44 /* combine 2-byte values */(local_110,iStack_114) < 0.0) && (0.0 < local_98)) ||
-                     ((0.0 < (double)CONCAT44 /* combine 2-byte values */(local_110,iStack_114) && (local_98 < 0.0)))) break;
+                  if ((((double)CONCAT44 /* combine 2-byte values */(local_110,iStack_114) < 0.0) && (0.0 < dStack_9c)) ||
+                     ((0.0 < (double)CONCAT44 /* combine 2-byte values */(local_110,iStack_114) && (dStack_9c < 0.0)))) break;
                 }
                 else {
                   iStack_114 = iStack_12c;

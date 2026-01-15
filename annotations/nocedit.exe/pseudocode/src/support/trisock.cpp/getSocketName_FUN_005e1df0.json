@@ -1,22 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 186,
+    "complexity_score": 116,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 21,
-    "suspect_count": 13,
+    "pseudocode_lines": 26,
+    "suspect_count": 7,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
       "pointer_cast",
-      "register_param",
-      "stack_param",
       "stack_ref"
     ],
-    "total_lines": 59
+    "total_lines": 64
   },
   "cross_references": [
     {
@@ -116,59 +113,17 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 8,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 8,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_0000001c",
-      "text": "uint *in_stack_0000001c;",
-      "type": "stack_param"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 15,
-      "match": "&stack0xffffffe4",
-      "text": "iVar1 = crt_wsock32_c_getsockname(*socket_handle,(SOCKADDR *)&stack0xffffffe4,&local_4);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 20,
-      "match": "&stack0xfffffff4",
-      "text": "((SOCKADDR_IN *)&socket_handle,(SOCKADDR *)&stack0xfffffff4);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 21,
-      "match": "in_stack_0000001c",
-      "text": "*in_stack_0000001c = *(uint *)pSVar2;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_0000001c",
-      "text": "in_stack_0000001c[(uint)bVar3 * -2 + 1] = *(uint *)((int)pSVar2 + (uint)bVar3 * -8 + 4);",
-      "type": "stack_param"
+      "match": "&stack0xfffffff4",
+      "text": "((SOCKADDR_IN *)&stack0xfffffff4,&local_1c);",
+      "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 22,
+      "line": 24,
       "match": "(uint *)((int)",
-      "text": "in_stack_0000001c[(uint)bVar3 * -2 + 1] = *(uint *)((int)pSVar2 + (uint)bVar3 * -8 + 4);",
+      "text": "uVar1 = *(uint *)((int)pSVar4 + (uint)bVar5 * -8 + 4);",
       "type": "pointer_cast"
     },
     {

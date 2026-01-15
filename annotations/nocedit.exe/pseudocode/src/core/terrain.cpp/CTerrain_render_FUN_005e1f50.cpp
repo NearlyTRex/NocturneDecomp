@@ -12,7 +12,6 @@ void __cdecl core_terrain_cpp_CTerrain_render_FUN_005e1f50(CTerrain *this_ptr)
   int iVar1;
   int extraout_EAX;
   int extraout_EDX;
-  BADSPACEBASE *in_ESP;
   float10 fVar2;
   float10 fVar3;
   float10 fVar4;

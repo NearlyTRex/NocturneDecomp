@@ -9,10 +9,8 @@
 CLeakChecker * __cdecl shape_memdbg_cpp_CLeakChecker_ctor_FUN_0050fba0(CLeakChecker *this_ptr)
 
 {
-  BADSPACEBASE *in_ESP;
-  CLeakChecker *in_stack_00000008;
   char local_64 [100];
   
   crt_stdio_c_sprintf_FUN_005fdbd0(local_64,"ags");
-  return in_stack_00000008;
+  return this_ptr;
 }

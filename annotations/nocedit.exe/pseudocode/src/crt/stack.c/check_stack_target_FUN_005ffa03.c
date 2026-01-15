@@ -14,7 +14,6 @@ void crt_stack_c_check_stack_target_FUN_005ffa03(void *target_stack_ptr)
   ThreadData *pTVar3;
   int iVar4;
   int iVar5;
-  BADSPACEBASE *in_ESP;
   
   if (target_stack_ptr < &stack0xfffffffc) {
     iVar2 = (int)target_stack_ptr - (int)&stack0xfffffffc;

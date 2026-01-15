@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 154,
+    "complexity_score": 94,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 6,
-    "pseudocode_lines": 19,
-    "suspect_count": 12,
+    "pseudocode_lines": 14,
+    "suspect_count": 7,
     "suspect_types": [
       "format_string_mismatch",
-      "sub_artifact",
       "variadic_preserve"
     ],
-    "total_lines": 83
+    "total_lines": 78
   },
   "cross_references": [
     {
@@ -180,34 +179,6 @@
   },
   "suspects": [
     {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 14,
-      "match": "SUB84",
-      "text": "(file_handle,\"%f,%f,%f\\n\",(double)(fog->scroll).x,SUB84 /* extract 2-byte value */(dVar2,0),",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 15,
-      "match": "SUB84",
-      "text": "(int)((ulonglong)dVar2 >> 0x20),SUB84 /* extract 2-byte value */(dVar1,0),(int)((ulonglong)dVar1 >> 0x20));",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 17,
-      "match": "SUB84",
-      "text": "(file_handle,\"%f,%f\\n\",SUB84 /* extract 2-byte value */((double)fog->height_threshold,0),",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 19,
-      "match": "SUB84",
-      "text": "SUB84 /* extract 2-byte value */((double)fog->density_multiplier,0));",
-      "type": "sub_artifact"
-    },
-    {
       "call_address": "00453f21",
       "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
@@ -297,20 +268,9 @@
       "expected_args": 3,
       "format_string": "%d,%d,%d\\n",
       "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 9,
+      "line_number": 6,
       "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%d,%d,%d\\n\");",
       "text": "Format string expects 3 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%f\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%f\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 20,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%f\\n\");",
-      "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
     }
   ]

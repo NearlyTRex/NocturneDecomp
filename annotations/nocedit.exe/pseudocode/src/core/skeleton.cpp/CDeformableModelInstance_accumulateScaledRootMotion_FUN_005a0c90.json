@@ -1,21 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 192,
+    "complexity_score": 50,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 22,
-    "suspect_count": 14,
+    "pseudocode_lines": 20,
+    "suspect_count": 2,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
-      "lea_esp_stack_addr",
-      "pointer_cast",
-      "register_param",
-      "stack_param"
+      "lea_esp_stack_addr"
     ],
-    "total_lines": 56
+    "total_lines": 54
   },
   "cross_references": [],
   "function": {
@@ -136,90 +132,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 10,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 10,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000014",
-      "text": "float in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 18,
-      "match": "(float *)((int)",
-      "text": "*(float *)((int)start_frame + 0x2254) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_00000014",
-      "text": "*(float *)((int)start_frame + 0x2254) + pCVar3->x * in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 19,
-      "match": "(float *)((int)",
-      "text": "*(float *)((int)start_frame + 0x2254) + pCVar3->x * in_stack_00000014;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 20,
-      "match": "(float *)((int)",
-      "text": "*(float *)((int)start_frame + 0x2258) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000014",
-      "text": "*(float *)((int)start_frame + 0x2258) + fVar1 * in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 21,
-      "match": "(float *)((int)",
-      "text": "*(float *)((int)start_frame + 0x2258) + fVar1 * in_stack_00000014;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 22,
-      "match": "(float *)((int)",
-      "text": "*(float *)((int)start_frame + 0x225c) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_00000014",
-      "text": "*(float *)((int)start_frame + 0x225c) + in_stack_00000014 * fVar2;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 23,
-      "match": "(float *)((int)",
-      "text": "*(float *)((int)start_frame + 0x225c) + in_stack_00000014 * fVar2;",
-      "type": "pointer_cast"
-    },
     {
       "add_esp_value": 16,
       "call_address": "005a0ca5",

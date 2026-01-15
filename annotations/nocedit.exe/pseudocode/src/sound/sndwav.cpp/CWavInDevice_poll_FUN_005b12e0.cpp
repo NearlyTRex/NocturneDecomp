@@ -16,14 +16,12 @@ int __cdecl sound_sndwav_cpp_CWavInDevice_poll_FUN_005b12e0(CWavInDevice *this_p
   bool bVar5;
   short *in_stack_00000008;
   int in_stack_0000000c;
-  int iVar6;
   
   iVar3 = g_WaveInChannels *
           ((int)((g_WaveInBitsPerSample + (g_WaveInBitsPerSample >> 0x1f) * -8) -
                 (uint)((g_WaveInBitsPerSample >> 0x1f) << 2 < 0)) >> 3);
   iVar4 = 0;
   bVar5 = g_WaveInBitsPerSample == 0x10;
-  iVar6 = iVar3;
   while( true ) {
     if (g_WaveInBuffers[g_WaveInCurrentBufferIndex] == (LPVOID)0x0) {
       return -1;
@@ -40,7 +38,7 @@ int __cdecl sound_sndwav_cpp_CWavInDevice_poll_FUN_005b12e0(CWavInDevice *this_p
                           (int)g_WaveInBuffers[g_WaveInCurrentBufferIndex]),
                  g_WaveInRequestedChannels,g_WaveInRequestedSampleRate,
                  g_WaveInRequestedBitsPerSample,g_WaveInStereoRequested,in_stack_00000008,iVar1);
-      in_stack_00000008 = (short *)((int)in_stack_00000008 + iVar6 * iVar1);
+      in_stack_00000008 = (short *)((int)in_stack_00000008 + iVar3 * iVar1);
       in_stack_0000000c = in_stack_0000000c - iVar1;
       g_WaveInCurrentSampleOffset =
            g_WaveInCurrentSampleOffset +

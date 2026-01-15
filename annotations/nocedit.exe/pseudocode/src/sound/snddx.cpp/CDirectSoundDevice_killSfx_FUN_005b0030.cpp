@@ -16,8 +16,7 @@ sound_snddx_cpp_CDirectSoundDevice_killSfx_FUN_005b0030(CDirectSoundDevice *this
   IDirectSoundBuffer *this_ptr_02;
   uint error_code;
   char *pcVar2;
-  BADSPACEBASE *in_ESP;
-  char acStack_190 [384];
+  char acStack_1a0 [400];
   
   iVar1 = slot->hardware_buffer_handle;
   if ((((iVar1 < 1) || (0x1e < iVar1)) ||
@@ -32,9 +31,9 @@ sound_snddx_cpp_CDirectSoundDevice_killSfx_FUN_005b0030(CDirectSoundDevice *this
       if (error_code != 0) {
         pcVar2 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(error_code);
         crt_stdio_c_sprintf_FUN_005fdbd0
-                  (&stack0xfffffe6c,"DirectSux: Unable to %s.  (%s)",
+                  (acStack_1a0,"DirectSux: Unable to %s.  (%s)",
                    "Stop hardware sfx secondary buffer",pcVar2);
-        sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_190);
+        sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_1a0);
         return;
       }
     }

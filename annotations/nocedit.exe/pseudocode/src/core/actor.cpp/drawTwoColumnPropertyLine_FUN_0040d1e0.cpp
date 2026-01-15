@@ -11,11 +11,9 @@ core_actor_cpp_drawTwoColumnPropertyLine_FUN_0040d1e0
           (int *y_position,char *left_text,char *right_text)
 
 {
-  char *in_stack_00000010;
-  
   engine_2d_c_drawText_FUN_00401fd0(left_text,g_ClipLeft,*y_position);
   engine_2d_c_drawText_FUN_00401fd0
-            (in_stack_00000010,
+            (right_text,
              ((int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -8) -
                    (uint)((g_WindowWidth >> 0x1f) << 2 < 0)) >> 3) + g_ClipLeft,*y_position);
   *y_position = *y_position + 0xb;

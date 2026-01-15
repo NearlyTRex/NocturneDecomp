@@ -10,19 +10,13 @@ void __cdecl core_main_c_displayErrorAndQuit_FUN_00506f10(char *format,...)
 
 {
   FILE *pFVar1;
+  tm *timeptr;
   int *piVar2;
   uint *puVar3;
-  BADSPACEBASE *in_ESP;
   char *pcVar4;
   char *pcVar5;
-  FILE *in_stack_0000000c;
-  char *in_stack_00000010;
-  char *in_stack_00000014;
-  FILE *in_stack_00000018;
-  char *in_stack_0000001c;
-  FILE *in_stack_00000020;
-  char *in_stack_00000024;
-  uint in_stack_00000028;
+  va_list_t local_14;
+  time_t local_10;
   
   if (g_RecursiveCallFlag != 0) {
     pFVar1 = shape_memdbg_cpp_openFile_FUN_0050f7a0
@@ -33,9 +27,10 @@ void __cdecl core_main_c_displayErrorAndQuit_FUN_00506f10(char *format,...)
     }
     crt_startup_c_notifyAbnormalTermination_FUN_00601620();
   }
+  local_14 = &stack0x00000008;
   g_RecursiveCallFlag = 1;
-  crt_stdio_c_vsprintf_FUN_005fdba8
-            (g_ErrorMessageBuffer,in_stack_00000014,(va_list_t *)&stack0xfffffffc);
+  crt_stdio_c_vsprintf_FUN_005fdba8(g_ErrorMessageBuffer,format,&local_14);
+  local_14 = (va_list_t)0x0;
   pcVar5 = g_CurrentFilename;
   do {
     pcVar4 = pcVar5;
@@ -54,32 +49,17 @@ LAB_00506f71:
                             0xa4);
         if (pFVar1 != (FILE *)0x0) {
           crt_stdio_c_fprintf_FUN_005fe6d0(pFVar1,"----------------------------------------------------------------\n");
-          crt_time_c_time_with_rounding_FUN_006001f0((time_t *)&stack0x0000000c);
-          crt_stdio_c_fprintf_FUN_005fe6d0(pFVar1,"Msg: %s\n");
-          crt_stdio_c_fprintf_FUN_005fe6d0(pFVar1,"File: %s line %d\n");
-          in_stack_0000000c = (FILE *)&stack0x00000018;
-          in_stack_00000010 = (char *)crt_time_c_localtime_FUN_00600288((time_t *)in_stack_0000000c)
-          ;
-          in_stack_0000000c = (FILE *)0x507099;
-          crt_time_c_asctime_FUN_00601768((tm *)in_stack_00000010);
-          in_stack_00000010 = "Time: %s";
-          in_stack_0000000c = pFVar1;
-          crt_stdio_c_fprintf_FUN_005fe6d0(pFVar1,"Time: %s");
-          in_stack_00000018 = (FILE *)0x5070b0;
+          crt_time_c_time_with_rounding_FUN_006001f0(&local_10);
+          crt_stdio_c_fprintf_FUN_005fe6d0(pFVar1,"Msg: %s\n",g_ErrorMessageBuffer);
+          crt_stdio_c_fprintf_FUN_005fe6d0
+                    (pFVar1,"File: %s line %d\n",g_CurrentFilename,g_CurrentLineNumber);
+          timeptr = crt_time_c_localtime_FUN_00600288(&local_10);
+          pcVar5 = crt_time_c_asctime_FUN_00601768(timeptr);
+          crt_stdio_c_fprintf_FUN_005fe6d0(pFVar1,"Time: %s",pcVar5);
           piVar2 = (int *)crt_errno_c_errno_FUN_00601450();
-          in_stack_0000001c = (char *)*piVar2;
-          in_stack_00000018 = (FILE *)0x5070b8;
-          in_stack_00000020 = (FILE *)crt_string_c_strerror_FUN_00601470((int)in_stack_0000001c);
-          in_stack_0000001c = (char *)0x5070c1;
+          pcVar5 = crt_string_c_strerror_FUN_00601470(*piVar2);
           puVar3 = (uint *)crt_errno_c_errno_FUN_00601450();
-          in_stack_00000020 = (FILE *)*puVar3;
-          in_stack_0000001c = "errno = %d (%s)\n";
-          in_stack_00000018 = pFVar1;
-          crt_stdio_c_fprintf_FUN_005fe6d0(pFVar1,"errno = %d (%s)\n");
-          in_stack_00000028 = 0xad;
-          in_stack_00000024 = "..\\core\\main.c";
-          in_stack_0000001c = (char *)0x5070e2;
-          in_stack_00000020 = pFVar1;
+          crt_stdio_c_fprintf_FUN_005fe6d0(pFVar1,"errno = %d (%s)\n",*puVar3,pcVar5);
           shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFVar1,"..\\core\\main.c",0xad);
         }
         core_sound_cpp_CSound_dtor_FUN_005aaeb0();

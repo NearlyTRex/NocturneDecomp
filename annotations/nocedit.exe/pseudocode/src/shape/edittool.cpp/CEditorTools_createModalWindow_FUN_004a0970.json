@@ -1,19 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 359,
-    "complexity_score": 432,
+    "complexity_score": 312,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 52,
-    "pseudocode_lines": 162,
-    "suspect_count": 25,
+    "pseudocode_lines": 157,
+    "suspect_count": 14,
     "suspect_types": [
       "call_esp_preserve",
       "pointer_cast",
-      "stack_param",
       "variadic_preserve"
     ],
-    "total_lines": 521
+    "total_lines": 516
   },
   "cross_references": [
     {
@@ -532,106 +531,29 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_00000020",
-      "text": "int in_stack_00000020;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_00000028",
-      "text": "byte in_stack_00000028;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 52,
-      "match": "in_stack_00000020",
-      "text": "in_stack_00000020 = in_stack_00000020 + local_1c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 52,
-      "match": "in_stack_00000020",
-      "text": "in_stack_00000020 = in_stack_00000020 + local_1c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 88,
-      "match": "in_stack_00000020",
-      "text": "in_stack_00000020 = in_stack_00000020 + local_18 / 2;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 88,
-      "match": "in_stack_00000020",
-      "text": "in_stack_00000020 = in_stack_00000020 + local_18 / 2;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 96,
-      "match": "in_stack_00000020",
-      "text": "if (g_WindowHeight < in_stack_00000020) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 97,
-      "match": "in_stack_00000020",
-      "text": "in_stack_00000020 = g_WindowHeight;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 99,
-      "match": "in_stack_00000028",
-      "text": "if ((in_stack_00000028 & 1) == 0) {",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 136,
+      "line": 132,
       "match": "(uint *)((int)",
       "text": "puVar12 = (uint *)((int)puVar12 + (uint)bVar15 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 137,
+      "line": 133,
       "match": "(uint *)((int)",
       "text": "puVar14 = (uint *)((int)puVar14 + (uint)bVar15 * -2 + 1);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 139,
+      "line": 135,
       "match": "(uint *)((int)",
-      "text": "puVar16 = (uint *)((int)puVar16 + uVar6);",
+      "text": "local_14 = (uint *)((int)local_14 + uVar7);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 160,
-      "match": "in_stack_00000020",
-      "text": "g_WindowStack[iVar2].bottom = in_stack_00000020;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 163,
-      "match": "in_stack_00000020",
-      "text": "(in_stack_00000020 - local_1c) + -1);",
-      "type": "stack_param"
-    },
-    {
       "call_address": "004a09ce",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -645,7 +567,7 @@
     },
     {
       "call_address": "004a0ad4",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -659,7 +581,7 @@
     },
     {
       "call_address": "004a0c30",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -673,7 +595,7 @@
     },
     {
       "call_address": "004a0d91",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

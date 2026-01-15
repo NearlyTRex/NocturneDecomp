@@ -13,12 +13,12 @@ int __cdecl shape_design_c_loadModelFile_FUN_00458ac0(char *filename)
   char cVar2;
   int iVar3;
   uint uVar4;
-  BADSPACEBASE *in_ESP;
   byte *pbVar5;
   char *pcVar6;
   char *pcVar7;
   SModelPartName *pSVar8;
   byte bVar9;
+  char local_170 [84];
   char local_11c [80];
   char local_cc [88];
   byte local_74 [80];
@@ -152,8 +152,8 @@ LAB_00458b67:
       crt_stdio_c_fscanf_FUN_005fe7c0(local_18,"%d\n",&g_PolygonCount);
       if (g_PolygonCount < 0x4e21) {
         for (local_20 = 0; (int)local_20 < g_PolygonCount; local_20 = local_20 + 1) {
-          crt_stdio_c_fgets_FUN_005fefd0(&stack0xfffffe90,0x51,local_18);
-          local_14 = (byte *)crt_string_c_strtok_FUN_005fff50(&stack0xfffffe90,",");
+          crt_stdio_c_fgets_FUN_005fefd0(local_170,0x51,local_18);
+          local_14 = (byte *)crt_string_c_strtok_FUN_005fff50(local_170,",");
           uVar4 = crt_stdlib_c_atoi_FUN_005ffef0((char *)local_14);
           g_ModelPolygonData[local_20].polygon_type = uVar4;
           local_14 = (byte *)crt_string_c_strtok_FUN_005fff50((char *)0x0,",");

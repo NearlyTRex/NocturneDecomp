@@ -1,20 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 191,
-    "complexity_score": 232,
+    "complexity_score": 198,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 0,
-    "pseudocode_lines": 117,
-    "suspect_count": 9,
+    "pseudocode_lines": 113,
+    "suspect_count": 7,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
-      "pointer_cast",
-      "register_param"
+      "pointer_cast"
     ],
-    "total_lines": 308
+    "total_lines": 304
   },
   "cross_references": [],
   "function": {
@@ -246,24 +244,10 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 15,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 15,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 68,
+      "line": 64,
       "match": "(int *)((int)",
-      "text": "iVar3 = *(int *)((int)pod_array + local_2c + 4);",
+      "text": "for (local_18 = 0; iVar3 = *(int *)((int)pod_array + local_2c + 4),",
       "type": "pointer_cast"
     },
     {

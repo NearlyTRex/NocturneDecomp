@@ -1,23 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 337,
-    "complexity_score": 963,
+    "complexity_score": 746,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 19,
-    "pseudocode_lines": 93,
-    "suspect_count": 83,
+    "pseudocode_lines": 121,
+    "suspect_count": 60,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "format_string_mismatch",
       "lea_esp_stack_addr",
-      "register_param",
       "stack_param",
-      "stack_ref",
       "variadic_preserve"
     ],
-    "total_lines": 430
+    "total_lines": 458
   },
   "cross_references": [
     {
@@ -259,269 +256,171 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 5,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 5,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 8,
+      "line": 10,
       "match": "in_stack_00000008",
       "text": "FILE *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 18,
       "match": "in_stack_00000008",
-      "text": "crt_stdio_c_fgets_FUN_005fefd0(&stack0xfffffee4,0xff,in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 13,
-      "match": "&stack0xfffffee4",
-      "text": "crt_stdio_c_fgets_FUN_005fefd0(&stack0xfffffee4,0xff,in_stack_00000008);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000008",
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%d\\n\");",
+      "text": "crt_stdio_c_fgets_FUN_005fefd0(local_120,0xff,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 19,
       "match": "in_stack_00000008",
-      "text": "crt_stdio_c_fgets_FUN_005fefd0(&stack0xfffffef0,0xff,in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 20,
-      "match": "&stack0xfffffef0",
-      "text": "crt_stdio_c_fgets_FUN_005fefd0(&stack0xfffffef0,0xff,in_stack_00000008);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_00000008",
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%d\\n\");",
+      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%d\\n\",&local_20);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 26,
+      "line": 25,
       "match": "in_stack_00000008",
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%[^\\n]\\n\");",
+      "text": "crt_stdio_c_fgets_FUN_005fefd0(local_120,0xff,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 29,
+      "line": 27,
       "match": "in_stack_00000008",
-      "text": "crt_stdio_c_fgets_FUN_005fefd0(&stack0xfffffef8,0xff,in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 29,
-      "match": "&stack0xfffffef8",
-      "text": "crt_stdio_c_fgets_FUN_005fefd0(&stack0xfffffef8,0xff,in_stack_00000008);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_00000008",
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%d\\n\");",
+      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%d\\n\",this_ptr);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 35,
+      "line": 32,
       "match": "in_stack_00000008",
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%[^\\n]\\n\");",
+      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%[^\\n]\\n\",pCVar4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 36,
+      "match": "in_stack_00000008",
+      "text": "crt_stdio_c_fgets_FUN_005fefd0(local_120,0xff,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 38,
       "match": "in_stack_00000008",
-      "text": "crt_stdio_c_fgets_FUN_005fefd0(&stack0xffffff00,0xff,in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 38,
-      "match": "&stack0xffffff00",
-      "text": "crt_stdio_c_fgets_FUN_005fefd0(&stack0xffffff00,0xff,in_stack_00000008);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 40,
-      "match": "in_stack_00000008",
-      "text": "iVar1 = crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%d\\n\");",
+      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%d\\n\",&this_ptr->current_event_count);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 44,
+      "line": 43,
       "match": "in_stack_00000008",
-      "text": "iVar1 = crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%[^\\n]\\n\");",
+      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%[^\\n]\\n\",pCVar4);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 47,
       "match": "in_stack_00000008",
-      "text": "if (1 < (int)in_stack_00000008) {",
+      "text": "crt_stdio_c_fgets_FUN_005fefd0(local_120,0xff,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 48,
+      "line": 50,
       "match": "in_stack_00000008",
-      "text": "crt_stdio_c_fgets_FUN_005fefd0(&stack0xffffff08,0xff,in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 48,
-      "match": "&stack0xffffff08",
-      "text": "crt_stdio_c_fgets_FUN_005fefd0(&stack0xffffff08,0xff,in_stack_00000008);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 49,
-      "match": "in_stack_00000008",
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%d\\n\");",
+      "text": "(in_stack_00000008,\"%d\\n\",&this_ptr->persistent_event_count);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 54,
+      "line": 55,
       "match": "in_stack_00000008",
-      "text": "iVar1 = crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%f, %[^\\n]\\n\");",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 59,
-      "match": "in_stack_00000008",
-      "text": "if (2 < (int)in_stack_00000008) {",
+      "text": "iVar1 = crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%[^\\n]\\n\",pCVar4);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 60,
       "match": "in_stack_00000008",
-      "text": "crt_stdio_c_fgets_FUN_005fefd0(&stack0xffffff08,0xff,in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 60,
-      "match": "&stack0xffffff08",
-      "text": "crt_stdio_c_fgets_FUN_005fefd0(&stack0xffffff08,0xff,in_stack_00000008);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 62,
-      "match": "in_stack_00000008",
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%d\\n\");",
+      "text": "crt_stdio_c_fgets_FUN_005fefd0(local_120,0xff,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 66,
+      "line": 61,
       "match": "in_stack_00000008",
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%d, %[^\\n]\\n\");",
+      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%d\\n\",&this_ptr->timer_count);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 72,
+      "line": 68,
       "match": "in_stack_00000008",
-      "text": "if (3 < (int)in_stack_00000008) {",
+      "text": "iVar1 = crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%f, %[^\\n]\\n\",pcVar3,piVar5);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 73,
+      "line": 76,
       "match": "in_stack_00000008",
-      "text": "crt_stdio_c_fgets_FUN_005fefd0(&stack0xffffff08,0xff,in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 73,
-      "match": "&stack0xffffff08",
-      "text": "crt_stdio_c_fgets_FUN_005fefd0(&stack0xffffff08,0xff,in_stack_00000008);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 75,
-      "match": "in_stack_00000008",
-      "text": "iVar1 = crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%d\\n\");",
+      "text": "crt_stdio_c_fgets_FUN_005fefd0(local_120,0xff,in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 78,
       "match": "in_stack_00000008",
-      "text": "iVar1 = crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"\\\"%[^\\\"]\\\" , \\\"%[^\\\"]\\\"\\n\");",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 83,
-      "match": "in_stack_00000008",
-      "text": "if (4 < (int)in_stack_00000008) {",
+      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%d\\n\",&this_ptr->counter_count);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 84,
       "match": "in_stack_00000008",
-      "text": "crt_stdio_c_fgets_FUN_005fefd0(&stack0xffffff08,0xff,in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 84,
-      "match": "&stack0xffffff08",
-      "text": "crt_stdio_c_fgets_FUN_005fefd0(&stack0xffffff08,0xff,in_stack_00000008);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 86,
-      "match": "in_stack_00000008",
-      "text": "iVar1 = crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%d\\n\");",
+      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%d, %[^\\n]\\n\",pcVar3,local_18);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 90,
+      "line": 93,
       "match": "in_stack_00000008",
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%[^\\n]\\n\");",
+      "text": "crt_stdio_c_fgets_FUN_005fefd0(local_120,0xff,in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 96,
+      "match": "in_stack_00000008",
+      "text": "(in_stack_00000008,\"%d\\n\",&this_ptr->actor_var_count);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 101,
+      "match": "in_stack_00000008",
+      "text": "iVar1 = crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"\\\"%[^\\\"]\\\" , \\\"%[^\\\"]\\\"\\n\",pcVar3,local_1c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 109,
+      "match": "in_stack_00000008",
+      "text": "crt_stdio_c_fgets_FUN_005fefd0(local_120,0xff,in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 112,
+      "match": "in_stack_00000008",
+      "text": "(in_stack_00000008,\"%d\\n\",&this_ptr->game_flag_count);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 117,
+      "match": "in_stack_00000008",
+      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%[^\\n]\\n\",pCVar4);",
       "type": "stack_param"
     },
     {
@@ -749,124 +648,25 @@
       "type": "variadic_preserve"
     },
     {
-      "actual_args": 0,
-      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 14,
-      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"CEventList::loadState - file version %d is newer t...\" has 2 specifiers but 0 arguments after it",
-      "expected_args": 2,
-      "format_string": "CEventList::loadState - file version %d is newer than .EXE, which can only handle up to version %d",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 18,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"CEventList::loadState - file version %d is newer than ",
-      "text": "Format string expects 2 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 22,
-      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 31,
-      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 40,
-      "match": "iVar1 = crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 49,
-      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%f, %[^\\n]\\n\" has 1 specifiers but 0 arguments after it",
+      "actual_args": 2,
+      "description": "Format \"%f, %[^\\n]\\n\" has 1 specifiers but 2 arguments after it",
       "expected_args": 1,
       "format_string": "%f, %[^\\n]\\n",
       "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 54,
-      "match": "iVar1 = crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%f, %[^\\n]\\n\");",
-      "text": "Format string expects 1 args but got 0",
+      "line_number": 68,
+      "match": "iVar1 = crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%f, %[^\\n]\\n\",pcVar3,piVar5);",
+      "text": "Format string expects 1 args but got 2",
       "type": "format_string_mismatch"
     },
     {
-      "actual_args": 0,
-      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 62,
-      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d, %[^\\n]\\n\" has 1 specifiers but 0 arguments after it",
+      "actual_args": 2,
+      "description": "Format \"%d, %[^\\n]\\n\" has 1 specifiers but 2 arguments after it",
       "expected_args": 1,
       "format_string": "%d, %[^\\n]\\n",
       "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 66,
-      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%d, %[^\\n]\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 75,
-      "match": "iVar1 = crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 86,
-      "match": "iVar1 = crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
+      "line_number": 84,
+      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,\"%d, %[^\\n]\\n\",pcVar3,local_18);",
+      "text": "Format string expects 1 args but got 2",
       "type": "format_string_mismatch"
     },
     {

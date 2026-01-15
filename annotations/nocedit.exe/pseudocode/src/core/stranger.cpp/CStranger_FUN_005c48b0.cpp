@@ -20,10 +20,11 @@ void core_stranger_cpp_CStranger_FUN_005c48b0(void)
   int iVar3;
   SMotion *pSVar4;
   uint uVar5;
-  CDemonActor *pCVar6;
+  float fVar6;
+  CDemonActor *pCVar7;
   CCharacter *in_stack_00000004;
   int in_stack_00000008;
-  CMotionController *this_ptr_01;
+  int desired_state_index;
   float in_stack_ffffffec;
   
   if (g_CGamePtr->field53_0x1d0 != 0) {
@@ -73,18 +74,18 @@ void core_stranger_cpp_CStranger_FUN_005c48b0(void)
         if ((*(int *)(in_stack_00000004[2].cloth_data + 0x54cc) == 0) &&
            (*(int *)(in_stack_00000004[2].cloth_data + 0x5548) == 0)) {
           if (*(int *)(in_stack_00000008 + 0x30) == 1) {
-            this_ptr_01 = (CMotionController *)0x27;
+            desired_state_index = 0x27;
             iVar3 = 1;
           }
           else {
-            in_stack_ffffffec = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,100.0);
-            iVar3 = (in_stack_ffffffec <= 50f) + 0x25;
-            this_ptr_01 = &(in_stack_00000004->model).motion_controller;
+            iVar3 = 1;
+            fVar6 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,100.0);
+            desired_state_index = (fVar6 <= 50f) + 0x25;
           }
         }
         else {
           iVar3 = 1;
-          this_ptr_01 = (CMotionController *)0xf;
+          desired_state_index = 0xf;
           in_stack_00000004[2].cloth_data[0x54cc] = '\0';
           in_stack_00000004[2].cloth_data[0x54cd] = '\0';
           in_stack_00000004[2].cloth_data[0x54ce] = '\0';
@@ -95,7 +96,7 @@ void core_stranger_cpp_CStranger_FUN_005c48b0(void)
           in_stack_00000004[2].cloth_data[0x554b] = '\0';
         }
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00
-                  (this_ptr_01,iVar3,(int)in_stack_ffffffec);
+                  (&(in_stack_00000004->model).motion_controller,desired_state_index,iVar3);
         sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(in_stack_00000004[2].cloth_data + 0x5788));
         if (*(int *)(in_stack_00000008 + 0x30) != 1) {
           uVar5 = (*((in_stack_00000004->base_actor).vtable)->playSound)
@@ -128,9 +129,9 @@ void core_stranger_cpp_CStranger_FUN_005c48b0(void)
       (*(int *)(in_stack_00000004[2].cloth_data + 0x54cc) == 0)) &&
      ((*(int *)(in_stack_00000004[2].cloth_data + 0x5548) == 0 &&
       (*(int *)(in_stack_00000004[2].cloth_data + 0x5558) == 0)))) {
-    pCVar6 = core_actor_cpp_castToClassHash_FUN_0040c790
+    pCVar7 = core_actor_cpp_castToClassHash_FUN_0040c790
                        (*(CDemonActor **)(in_stack_00000008 + 0x34),g_CTommyGunClassInfo.name_hash);
-    if (pCVar6 != (CDemonActor *)0x0) {
+    if (pCVar7 != (CDemonActor *)0x0) {
       iVar3 = core_actor_cpp_randomChance_FUN_0040cd10(0.333);
       if (iVar3 == 0) goto LAB_005c4be2;
     }

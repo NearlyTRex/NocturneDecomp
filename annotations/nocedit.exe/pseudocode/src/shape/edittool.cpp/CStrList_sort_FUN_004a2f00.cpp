@@ -17,7 +17,7 @@ shape_edittool_cpp_CStrList_sort_FUN_004a2f00(CStrList *this_ptr,int sort_type,i
       core_main_c_displayErrorAndQuit_FUN_00506f10("CStrList::sort - invalid range!");
     }
     crt_stdlib_c_qsort_FUN_005fdf38
-              ((void *)(*(int *)(sort_type + 8) + sort_type * 4),(sort_order - sort_type) + 1,4,
+              (this_ptr->data_array + sort_type,(sort_order - sort_type) + 1,4,
                shape_edittool_cpp_CStrList_qsortByString_FUN_004a2ee0);
   }
   return;

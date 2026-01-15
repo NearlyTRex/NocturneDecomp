@@ -18,7 +18,6 @@ void core_zombie_cpp_CZombie_FUN_005fb1f0(void)
   CVector3f *pCVar3;
   float *pfVar4;
   int iVar5;
-  BADSPACEBASE *in_ESP;
   float *unaff_ESI;
   CMatrix3x4f *pCVar6;
   byte bVar7;

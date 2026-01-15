@@ -12,9 +12,7 @@ void __cdecl crt_startup_c_WriteErrorAndExit_FUN_00606620(char *error_message,in
   char cVar1;
   char *pcVar2;
   DWORD nNumberOfBytesToWrite;
-  BADSPACEBASE *in_ESP;
-  int in_stack_00000010;
-  DWORD local_8;
+  DWORD in_stack_fffffff8;
   
   nNumberOfBytesToWrite = 0;
   pcVar2 = error_message;
@@ -22,8 +20,8 @@ void __cdecl crt_startup_c_WriteErrorAndExit_FUN_00606620(char *error_message,in
     nNumberOfBytesToWrite = nNumberOfBytesToWrite + 1;
   }
   (*PTR_WriteFile_00611678)
-            (g_IOControlBlock->standard_handles[2],error_message,nNumberOfBytesToWrite,&local_8,
-             (LPOVERLAPPED)0x0);
+            (g_IOControlBlock->standard_handles[2],error_message,nNumberOfBytesToWrite,
+             (LPDWORD)&stack0xfffffff8,(LPOVERLAPPED)0x0);
                     /* WARNING: Subroutine does not return */
-  crt_exit_c_ExitProcess_FUN_00602700(in_stack_00000010);
+  crt_exit_c_ExitProcess_FUN_00602700(in_stack_fffffff8);
 }

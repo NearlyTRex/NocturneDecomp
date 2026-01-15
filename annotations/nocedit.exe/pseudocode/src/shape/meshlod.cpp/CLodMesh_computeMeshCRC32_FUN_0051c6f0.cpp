@@ -14,7 +14,6 @@ shape_meshlod_cpp_CLodMesh_computeMeshCRC32_FUN_0051c6f0(CLodMesh *this_ptr,uint
   int iVar2;
   char *pcVar3;
   uint uVar4;
-  BADSPACEBASE *in_ESP;
   int iVar5;
   uint local_4c;
   uint local_48;

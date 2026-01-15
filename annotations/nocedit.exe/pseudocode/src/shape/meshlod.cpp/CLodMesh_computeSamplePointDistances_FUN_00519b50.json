@@ -1,21 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 446,
-    "complexity_score": 553,
+    "complexity_score": 512,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 18,
-    "pseudocode_lines": 233,
-    "suspect_count": 29,
+    "pseudocode_lines": 232,
+    "suspect_count": 26,
     "suspect_types": [
-      "badspacebase",
       "extra_output",
       "pointer_cast",
-      "register_param",
       "stack_ref",
       "suspect_float"
     ],
-    "total_lines": 679
+    "total_lines": 678
   },
   "cross_references": [
     {
@@ -234,7 +232,7 @@
     {
       "add_esp_value": 4,
       "call_address": "00519fbf",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -583,59 +581,45 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 7,
+      "line": 8,
       "match": "extraout_EAX",
       "text": "int extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 8,
+      "line": 9,
       "match": "extraout_EAX_00",
       "text": "int extraout_EAX_00;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 9,
+      "line": 10,
       "match": "extraout_EAX_01",
       "text": "int extraout_EAX_01;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 10,
+      "line": 11,
       "match": "extraout_EAX_02",
       "text": "int extraout_EAX_02;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 11,
+      "line": 12,
       "match": "extraout_EAX_03",
       "text": "int extraout_EAX_03;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 12,
+      "line": 13,
       "match": "extraout_EAX_04",
       "text": "int extraout_EAX_04;",
       "type": "extra_output"
-    },
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 15,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 15,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
     },
     {
       "description": "Direct stack address reference",
@@ -655,133 +639,126 @@
       "description": "Complex pointer cast",
       "line": 67,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)g_SampleDistances + iVar3) = 0;",
+      "text": "*(uint *)((int)g_SampleDistances + iVar4) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 69,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)g_SampleDistances + iVar3 + 4) = 0x3ff00000;",
+      "text": "*(uint *)((int)g_SampleDistances + iVar4 + 4) = 0x3ff00000;",
       "type": "pointer_cast"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 91,
-      "match": "7.494825e-39",
-      "text": "local_8c.min.y = 7.494825e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 94,
-      "match": "7.494835e-39",
-      "text": "local_8c.min.x = 7.494835e-39;",
-      "type": "suspect_float"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 146,
+      "line": 145,
       "match": "&stack0x00000000",
       "text": "if ((float *)&stack0x00000000 != &g_SamplePointArray[0xb].z) {",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 151,
+      "line": 150,
       "match": "&stack0x00000000",
       "text": "if ((float *)&stack0x00000000 != &g_SamplePointArray[10].z) {",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 161,
+      "line": 160,
       "match": "(double *)((int)",
-      "text": "local_68 = SQRT((float)*(double *)((int)g_SampleDistances + iVar3));",
+      "text": "local_68 = SQRT((float)*(double *)((int)g_SampleDistances + iVar4));",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 180,
+      "match": "extraout_EAX",
+      "text": "uVar2 = extraout_EAX - (int)local_44.z >> 0x1f;",
+      "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 181,
       "match": "extraout_EAX",
-      "text": "uVar1 = extraout_EAX - (int)local_44.z >> 0x1f;",
+      "text": "iVar4 = (extraout_EAX - (int)local_44.z ^ uVar2) - uVar2;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 182,
-      "match": "extraout_EAX",
-      "text": "iVar3 = (extraout_EAX - (int)local_44.z ^ uVar1) - uVar1;",
+      "line": 190,
+      "match": "extraout_EAX_00",
+      "text": "uVar2 = extraout_EAX_00 - (int)local_44.y >> 0x1f;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 191,
       "match": "extraout_EAX_00",
-      "text": "uVar1 = extraout_EAX_00 - (int)local_44.y >> 0x1f;",
+      "text": "iVar4 = (extraout_EAX_00 - (int)local_44.y ^ uVar2) - uVar2;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 192,
-      "match": "extraout_EAX_00",
-      "text": "iVar3 = (extraout_EAX_00 - (int)local_44.y ^ uVar1) - uVar1;",
+      "line": 199,
+      "match": "extraout_EAX_01",
+      "text": "uVar2 = extraout_EAX_01 - (int)local_44.x >> 0x1f;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 200,
       "match": "extraout_EAX_01",
-      "text": "uVar1 = extraout_EAX_01 - (int)local_44.x >> 0x1f;",
+      "text": "iVar4 = (extraout_EAX_01 - (int)local_44.x ^ uVar2) - uVar2;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 201,
-      "match": "extraout_EAX_01",
-      "text": "iVar3 = (extraout_EAX_01 - (int)local_44.x ^ uVar1) - uVar1;",
+      "line": 208,
+      "match": "extraout_EAX_02",
+      "text": "uVar2 = extraout_EAX_02 - (int)local_48 >> 0x1f;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 209,
       "match": "extraout_EAX_02",
-      "text": "uVar1 = extraout_EAX_02 - (int)local_48 >> 0x1f;",
+      "text": "iVar4 = (extraout_EAX_02 - (int)local_48 ^ uVar2) - uVar2;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 210,
-      "match": "extraout_EAX_02",
-      "text": "iVar3 = (extraout_EAX_02 - (int)local_48 ^ uVar1) - uVar1;",
+      "line": 217,
+      "match": "extraout_EAX_03",
+      "text": "uVar2 = extraout_EAX_03 - (int)local_4c >> 0x1f;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 218,
       "match": "extraout_EAX_03",
-      "text": "uVar1 = extraout_EAX_03 - (int)local_4c >> 0x1f;",
+      "text": "iVar4 = (extraout_EAX_03 - (int)local_4c ^ uVar2) - uVar2;",
       "type": "extra_output"
     },
     {
+      "description": "Likely misinterpreted integer as float",
+      "line": 223,
+      "match": "7.495882e-39",
+      "text": "local_8c.min.x = 7.495882e-39;",
+      "type": "suspect_float"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 219,
-      "match": "extraout_EAX_03",
-      "text": "iVar3 = (extraout_EAX_03 - (int)local_4c ^ uVar1) - uVar1;",
+      "line": 226,
+      "match": "extraout_EAX_04",
+      "text": "uVar2 = extraout_EAX_04 - (int)local_50 >> 0x1f;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 227,
       "match": "extraout_EAX_04",
-      "text": "uVar1 = extraout_EAX_04 - local_38 >> 0x1f;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 228,
-      "match": "extraout_EAX_04",
-      "text": "iVar3 = (extraout_EAX_04 - local_38 ^ uVar1) - uVar1;",
+      "text": "iVar4 = (extraout_EAX_04 - (int)local_50 ^ uVar2) - uVar2;",
       "type": "extra_output"
     }
   ]

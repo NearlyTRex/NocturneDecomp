@@ -13,6 +13,7 @@ core_crossbow_cpp_CCrossbow_dtor_FUN_004495a0(CCrossbow *this_ptr,uint d1,uint d
   CDemonActor *pCVar1;
   CCrossbow *ptr;
   void *ptr_00;
+  uint unaff_EBX;
   uint unaff_retaddr;
   
   if ((d1 & 4) != 0) {
@@ -24,9 +25,9 @@ core_crossbow_cpp_CCrossbow_dtor_FUN_004495a0(CCrossbow *this_ptr,uint d1,uint d
                      ((CDemonActor *)(this_ptr->field1_0x578 + 4),1);
   ptr = (CCrossbow *)
         core_weapon_cpp_CWeapon_dtor_FUN_005edf80
-                  ((CWeapon *)&pCVar1[-5].previous_transform_state.orientation.z,1,unaff_retaddr,
-                   (uint)this_ptr);
-  if ((d3 & 2) == 0) {
+                  ((CWeapon *)&pCVar1[-5].previous_transform_state.orientation.z,1,unaff_EBX,
+                   unaff_retaddr);
+  if ((d1 & 2) == 0) {
     return ptr;
   }
   shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);

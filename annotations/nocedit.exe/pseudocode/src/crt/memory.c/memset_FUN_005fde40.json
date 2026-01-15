@@ -1,18 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 14,
-    "complexity_score": 85,
+    "complexity_score": 84,
     "cross_reference_count": 138,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 10,
+    "pseudocode_lines": 9,
     "suspect_count": 6,
     "suspect_types": [
       "concat_artifact",
       "special_crt_function",
       "unaffected_reg"
     ],
-    "total_lines": 24
+    "total_lines": 23
   },
   "cross_references": [
     {
@@ -927,28 +927,28 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 11,
+      "line": 10,
       "match": "unaff_EBX",
       "text": "(dest,CONCAT31 /* combine 2-byte values */(CONCAT21 /* combine 2-byte values */(CONCAT11 /* combine 2-byte values */(uVar1,uVar1),uVar1),uVar1),unaff_EBX);",
       "type": "unaffected_reg"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 11,
+      "line": 10,
       "match": "CONCAT31",
       "text": "(dest,CONCAT31 /* combine 2-byte values */(CONCAT21 /* combine 2-byte values */(CONCAT11 /* combine 2-byte values */(uVar1,uVar1),uVar1),uVar1),unaff_EBX);",
       "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 11,
+      "line": 10,
       "match": "CONCAT21",
       "text": "(dest,CONCAT31 /* combine 2-byte values */(CONCAT21 /* combine 2-byte values */(CONCAT11 /* combine 2-byte values */(uVar1,uVar1),uVar1),uVar1),unaff_EBX);",
       "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 11,
+      "line": 10,
       "match": "CONCAT11",
       "text": "(dest,CONCAT31 /* combine 2-byte values */(CONCAT21 /* combine 2-byte values */(CONCAT11 /* combine 2-byte values */(uVar1,uVar1),uVar1),uVar1),unaff_EBX);",
       "type": "concat_artifact"

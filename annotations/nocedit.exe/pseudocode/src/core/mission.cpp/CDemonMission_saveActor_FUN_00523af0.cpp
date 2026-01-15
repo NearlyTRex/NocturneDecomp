@@ -13,7 +13,6 @@ core_mission_cpp_CDemonMission_saveActor_FUN_00523af0
 
 {
   char *pcVar1;
-  int in_stack_00000018;
   char *format;
   
   if (actor_ptr < (CDemonActor *)0xff000000) {
@@ -30,8 +29,8 @@ core_mission_cpp_CDemonMission_saveActor_FUN_00523af0
     pcVar1 = actor_ptr->actor_name;
   }
   crt_stdio_c_fprintf_FUN_005fe6d0(file,format,pcVar1);
-  if (in_stack_00000018 != 0) {
-    crt_stdio_c_fprintf_FUN_005fe6d0(file,"\t\t// %s\n",in_stack_00000018);
+  if (description != (char *)0x0) {
+    crt_stdio_c_fprintf_FUN_005fe6d0(file,"\t\t// %s\n",description);
     return;
   }
   crt_stdio_c_fprintf_FUN_005fe6d0(file,"\n");

@@ -10,7 +10,6 @@ int __cdecl crt_stdio_c_sprintf_FUN_005fdbd0(char *buffer,char *format,...)
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   va_list_t args;
   
   args = &stack0x0000000c;

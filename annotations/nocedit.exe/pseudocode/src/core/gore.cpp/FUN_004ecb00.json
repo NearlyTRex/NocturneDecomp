@@ -1,17 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 59,
-    "complexity_score": 85,
+    "complexity_score": 290,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 4,
-    "pseudocode_lines": 15,
-    "suspect_count": 6,
+    "pseudocode_lines": 20,
+    "suspect_count": 26,
     "suspect_types": [
-      "unaffected_reg",
+      "stack_param",
       "variadic_preserve"
     ],
-    "total_lines": 74
+    "total_lines": 79
   },
   "cross_references": [
     {
@@ -96,22 +96,162 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 5,
-      "match": "unaff_EBX",
-      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,",
-      "type": "unaffected_reg"
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
     },
     {
-      "description": "Unaffected register variable",
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000008",
+      "text": "FILE *in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
       "line": 11,
-      "match": "unaff_EBX",
-      "text": "(param_6,\"%d,%d,%d\\n\",param_5 + 0x10,param_5 + 0x14,param_5,unaff_EBX);",
-      "type": "unaffected_reg"
+      "match": "in_stack_00000008",
+      "text": "(in_stack_00000008,\"%f,%f,%f\\n\",in_stack_00000004 + 4,in_stack_00000004 + 8,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000004",
+      "text": "(in_stack_00000008,\"%f,%f,%f\\n\",in_stack_00000004 + 4,in_stack_00000004 + 8,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000004",
+      "text": "(in_stack_00000008,\"%f,%f,%f\\n\",in_stack_00000004 + 4,in_stack_00000004 + 8,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004 + 0xc);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000008",
+      "text": "(in_stack_00000008,\"%d,%d,%d\\n\",in_stack_00000004 + 0x10,in_stack_00000004 + 0x14,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000004",
+      "text": "(in_stack_00000008,\"%d,%d,%d\\n\",in_stack_00000004 + 0x10,in_stack_00000004 + 0x14,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_00000004",
+      "text": "(in_stack_00000008,\"%d,%d,%d\\n\",in_stack_00000004 + 0x10,in_stack_00000004 + 0x14,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000008",
+      "text": "(in_stack_00000008,\"%f,%f,%f\\n\",in_stack_00000004 + 0x18,in_stack_00000004 + 0x20,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000004",
+      "text": "(in_stack_00000008,\"%f,%f,%f\\n\",in_stack_00000004 + 0x18,in_stack_00000004 + 0x20,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000004",
+      "text": "(in_stack_00000008,\"%f,%f,%f\\n\",in_stack_00000004 + 0x18,in_stack_00000004 + 0x20,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004 + 0x1c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_00000008",
+      "text": "(in_stack_00000008,\"%d,%d,%d,%d,%d,%d,%d\\n\",in_stack_00000004 + 0x28,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_00000004",
+      "text": "(in_stack_00000008,\"%d,%d,%d,%d,%d,%d,%d\\n\",in_stack_00000004 + 0x28,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004 + 0x2c,in_stack_00000004 + 0x30,in_stack_00000004 + 0x34,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004 + 0x2c,in_stack_00000004 + 0x30,in_stack_00000004 + 0x34,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004 + 0x2c,in_stack_00000004 + 0x30,in_stack_00000004 + 0x34,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004 + 0x38,in_stack_00000004 + 0x3c,in_stack_00000004 + 0x40);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004 + 0x38,in_stack_00000004 + 0x3c,in_stack_00000004 + 0x40);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004 + 0x38,in_stack_00000004 + 0x3c,in_stack_00000004 + 0x40);",
+      "type": "stack_param"
     },
     {
       "call_address": "004ecb1c",
-      "caller_has_stack_issues": false,
+      "caller_has_stack_issues": true,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -125,7 +265,7 @@
     },
     {
       "call_address": "004ecb33",
-      "caller_has_stack_issues": false,
+      "caller_has_stack_issues": true,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -139,7 +279,7 @@
     },
     {
       "call_address": "004ecb4d",
-      "caller_has_stack_issues": false,
+      "caller_has_stack_issues": true,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -153,7 +293,7 @@
     },
     {
       "call_address": "004ecb77",
-      "caller_has_stack_issues": false,
+      "caller_has_stack_issues": true,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",

@@ -11,62 +11,64 @@ void __cdecl engine_2d_c_drawLine3D_FUN_00401320(int x1,int y1,uint z1,int x2,in
 {
   uint uVar1;
   int iVar2;
-  int unaff_EBP;
   int iVar3;
+  int iVar4;
   int local_24;
   int local_20;
   int local_1c;
-  int local_18;
   int local_14;
   
   local_24 = 1;
   uVar1 = z2;
   local_14 = x2;
-  local_18 = y2;
+  iVar3 = y2;
   if (y2 < y1) {
     uVar1 = z1;
     local_14 = x1;
-    local_18 = y1;
+    iVar3 = y1;
     z1 = z2;
     y1 = y2;
     x1 = x2;
   }
   local_14 = local_14 - x1;
-  local_18 = local_18 - y1;
+  iVar3 = iVar3 - y1;
   if (local_14 < 0) {
     local_14 = -local_14;
     local_24 = -1;
   }
   iVar2 = uVar1 - z1;
-  if (local_18 < local_14) {
-    iVar3 = local_18 * 2 - local_14;
+  if (iVar3 < local_14) {
+    iVar4 = iVar3 * 2 - local_14;
+    local_1c = 0;
     if (-1 < local_14) {
       do {
         engine_2d_c_plotPixelWithDepth_FUN_00401290(x1,y1,z1);
-        if (0 < iVar3) {
+        if (0 < iVar4) {
           y1 = y1 + 1;
-          iVar3 = iVar3 - unaff_EBP;
+          iVar4 = iVar4 - local_14;
         }
-        x1 = x1 + local_20;
-        iVar3 = iVar3 + local_14;
+        x1 = x1 + local_24;
+        iVar4 = iVar4 + iVar3;
         z1 = z1 + iVar2 / (local_14 + 1);
-        local_18 = local_18 + 1;
-      } while (local_18 <= unaff_EBP);
+        local_1c = local_1c + 1;
+      } while (local_1c <= local_14);
     }
   }
   else {
-    iVar2 = local_14 * 2 - local_18;
-    if (-1 < local_18) {
+    iVar4 = local_14 * 2 - iVar3;
+    local_20 = 0;
+    if (-1 < iVar3) {
       do {
         engine_2d_c_plotPixelWithDepth_FUN_00401290(x1,y1,z1);
-        if (0 < iVar2) {
-          iVar2 = iVar2 - local_14;
+        if (0 < iVar4) {
+          iVar4 = iVar4 - iVar3;
+          x1 = x1 + local_24;
         }
         y1 = y1 + 1;
-        local_1c = local_1c + 1;
-        iVar2 = iVar2 + unaff_EBP;
-        z1 = z1 + local_24;
-      } while (local_1c <= local_14);
+        local_20 = local_20 + 1;
+        iVar4 = iVar4 + local_14;
+        z1 = z1 + iVar2 / (iVar3 + 1);
+      } while (local_20 <= iVar3);
     }
   }
   return;

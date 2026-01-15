@@ -21,7 +21,7 @@ engine_winfont_cpp_CWinFont_dtor_FUN_005f2390(CWinFont *this_ptr,uint d1,uint d2
   (this_ptr->base_font).vtable = &g_CWinFontVTable;
   engine_winfont_cpp_CWinFont_reset_FUN_005f2a30(this_ptr);
   ptr = (CWinFont *)engine_palette_cpp_CFont_dtor_FUN_00544ec0(&this_ptr->base_font);
-  if ((d3 & 2) == 0) {
+  if ((d1 & 2) == 0) {
     return ptr;
   }
   shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);

@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 33,
-    "complexity_score": 70,
+    "complexity_score": 44,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 4,
-    "pseudocode_lines": 15,
-    "suspect_count": 4,
+    "pseudocode_lines": 14,
+    "suspect_count": 2,
     "suspect_types": [
       "call_esp_preserve",
-      "stack_param",
       "variadic_preserve"
     ],
-    "total_lines": 48
+    "total_lines": 47
   },
   "cross_references": [
     {
@@ -135,22 +134,8 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 7,
-      "match": "in_stack_0000000c",
-      "text": "uint in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_0000000c",
-      "text": "(\"Invalid dotted decimal string: %s\",in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
       "call_address": "005e173d",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

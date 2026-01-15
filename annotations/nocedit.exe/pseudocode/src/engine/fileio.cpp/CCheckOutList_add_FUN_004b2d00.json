@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 46,
-    "complexity_score": 99,
+    "complexity_score": 63,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 1,
-    "pseudocode_lines": 24,
-    "suspect_count": 6,
+    "pseudocode_lines": 23,
+    "suspect_count": 3,
     "suspect_types": [
       "call_esp_preserve",
-      "pointer_cast",
-      "stack_param"
+      "pointer_cast"
     ],
-    "total_lines": 70
+    "total_lines": 69
   },
   "cross_references": [
     {
@@ -117,36 +116,15 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_0000000c",
-      "text": "uint *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
+      "description": "Complex pointer cast",
       "line": 21,
-      "match": "in_stack_0000000c",
-      "text": "*(uint *)pCVar1->name = *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_0000000c",
-      "text": "in_stack_0000000c = in_stack_0000000c + (uint)bVar3 * -2 + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_0000000c",
-      "text": "in_stack_0000000c = in_stack_0000000c + (uint)bVar3 * -2 + 1;",
-      "type": "stack_param"
+      "match": "(CCheckOutItem *)((int)",
+      "text": "new_entry = (CCheckOutItem *)((int)new_entry + (uint)bVar3 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 23,
+      "line": 22,
       "match": "(CCheckOutItem *)((int)",
       "text": "pCVar1 = (CCheckOutItem *)((int)pCVar1 + (uint)bVar3 * -8 + 4);",
       "type": "pointer_cast"

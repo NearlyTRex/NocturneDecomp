@@ -20,7 +20,6 @@ void __cdecl shape_meshlod_cpp_CLodMesh_buildSpatialGrid_FUN_00516620(CLodMesh *
   int *piVar9;
   CLodVert *pCVar10;
   int iVar11;
-  BADSPACEBASE *in_ESP;
   int iVar12;
   int local_78;
   int local_74;

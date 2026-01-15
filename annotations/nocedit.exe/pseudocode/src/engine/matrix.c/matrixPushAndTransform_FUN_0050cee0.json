@@ -1,19 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 510,
-    "complexity_score": 552,
+    "complexity_score": 359,
     "cross_reference_count": 4,
     "function_call_count": 3,
     "global_count": 38,
-    "pseudocode_lines": 242,
-    "suspect_count": 29,
+    "pseudocode_lines": 244,
+    "suspect_count": 10,
     "suspect_types": [
       "call_esp_preserve",
       "stack_param",
-      "unaffected_reg",
       "variadic_preserve"
     ],
-    "total_lines": 752
+    "total_lines": 754
   },
   "cross_references": [
     {
@@ -472,158 +471,25 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 20,
-      "match": "unaff_EBX",
-      "text": "int unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 21,
-      "match": "unaff_EDI",
-      "text": "int unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 25,
       "match": "in_stack_00000006",
       "text": "ushort in_stack_00000006;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 26,
       "match": "in_stack_0000000a",
       "text": "ushort in_stack_0000000a;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
+      "line": 27,
       "match": "in_stack_0000000e",
       "text": "ushort in_stack_0000000e;",
       "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 59,
-      "match": "unaff_EDI",
-      "text": "(int)((uint)((longlong)iVar3 * (longlong)unaff_EDI) >> 0x10 |",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 60,
-      "match": "unaff_EDI",
-      "text": "(int)((ulonglong)((longlong)iVar3 * (longlong)unaff_EDI) >> 0x20) << 0x10) *",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 61,
-      "match": "unaff_EBX",
-      "text": "(longlong)unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 66,
-      "match": "unaff_EDI",
-      "text": "(int)((uint)((longlong)iVar4 * (longlong)unaff_EDI) >> 0x10 |",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 67,
-      "match": "unaff_EDI",
-      "text": "(int)((ulonglong)((longlong)iVar4 * (longlong)unaff_EDI) >> 0x20) << 0x10) *",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 68,
-      "match": "unaff_EBX",
-      "text": "(longlong)unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 72,
-      "match": "unaff_EBX",
-      "text": "uVar6 = (uint)((longlong)local_1c * (longlong)unaff_EBX) >> 0x10 |",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 73,
-      "match": "unaff_EBX",
-      "text": "(int)((ulonglong)((longlong)local_1c * (longlong)unaff_EBX) >> 0x20) << 0x10;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 78,
-      "match": "unaff_EDI",
-      "text": "iVar9 = -unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 80,
-      "match": "unaff_EDI",
-      "text": "(int)((uint)((longlong)iVar3 * (longlong)unaff_EDI) >> 0x10 |",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 81,
-      "match": "unaff_EDI",
-      "text": "(int)((ulonglong)((longlong)iVar3 * (longlong)unaff_EDI) >> 0x20) << 0x10) *",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 83,
-      "match": "unaff_EBX",
-      "text": "iVar13 = ((uint)((longlong)iVar4 * (longlong)-unaff_EBX) >> 0x10 |",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 84,
-      "match": "unaff_EBX",
-      "text": "(int)((ulonglong)((longlong)iVar4 * (longlong)-unaff_EBX) >> 0x20) << 0x10) +",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 87,
-      "match": "unaff_EDI",
-      "text": "(int)((uint)((longlong)iVar4 * (longlong)unaff_EDI) >> 0x10 |",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 88,
-      "match": "unaff_EDI",
-      "text": "(int)((ulonglong)((longlong)iVar4 * (longlong)unaff_EDI) >> 0x20) << 0x10) *",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 90,
-      "match": "unaff_EBX",
-      "text": "iVar4 = ((uint)((longlong)unaff_EBX * (longlong)iVar3) >> 0x10 |",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 91,
-      "match": "unaff_EBX",
-      "text": "(int)((ulonglong)((longlong)unaff_EBX * (longlong)iVar3) >> 0x20) << 0x10) +",
-      "type": "unaffected_reg"
     },
     {
       "call_address": "0050d610",

@@ -16,12 +16,12 @@ void __cdecl core_event_cpp_CEventList_FUN_004b0470(CEventList *this_ptr)
   CEvent *pCVar5;
   byte bVar6;
   CEvent *in_stack_00000008;
-  int in_stack_00000010;
+  int in_stack_0000000c;
   
   bVar6 = 0;
   if ((in_stack_00000008 != (CEvent *)0x0) && (*in_stack_00000008 != (CEvent)0x0)) {
     iVar2 = core_event_cpp_CEventList_FUN_004b08b0(this_ptr);
-    if (in_stack_00000010 == 0) {
+    if (in_stack_0000000c == 0) {
       if (-1 < iVar2) {
         iVar4 = this_ptr->game_flag_count + -1;
         this_ptr->game_flag_count = iVar4;

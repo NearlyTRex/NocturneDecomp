@@ -16,6 +16,6 @@ int __cdecl engine_fileio_cpp_copyFileTimestamp_FUN_004b31e0(char *source_file,c
     return 1;
   }
   shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-            (g_CEditorToolsPtr,"WARNING: Error setting date/time on %s.\n(Most likely reason: Tried to set the file time to a time\nnewer than the current system time on your computer)",dest_file);
+            (g_CEditorToolsPtr,"WARNING: Error setting date/time on %s.\n(Most likely reason: Tried to set the file time to a time\nnewer than the current system time on your computer)",source_file);
   return 0;
 }

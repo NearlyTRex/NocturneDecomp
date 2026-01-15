@@ -38,32 +38,35 @@ void __cdecl core_menu_cpp_configureCustomKeyBindings_FUN_005138e0(void)
   int *piVar27;
   char (*pacVar28) [40];
   int iVar29;
-  BADSPACEBASE *in_ESP;
+  CPickList *unaff_ESI;
   int iVar30;
+  uint unaff_EDI;
   char *pcVar31;
   int iVar32;
   char *pcVar33;
   bool bVar34;
   byte bVar35;
-  int in_stack_000000f0;
-  char **in_stack_fffff670;
-  CPickList *in_stack_fffff674;
-  CPickList *in_stack_fffff678;
-  CStrList_vtable *in_stack_fffff67c;
-  CStrList_vtable *in_stack_fffff680;
-  CStrList_vtable *in_stack_fffff684;
-  CStrList_vtable *in_stack_fffff688;
-  CStrList_vtable *in_stack_fffff68c;
-  CStrList_vtable *in_stack_fffff690;
-  char acStack_5d8 [504];
-  char acStack_3e0 [520];
-  char acStack_1d8 [464];
+  CKeys *in_stack_fffff584;
+  uint in_stack_fffff588;
+  CPickList *in_stack_fffff58c;
+  CStrList_vtable *in_stack_fffff590;
+  char **in_stack_fffff594;
+  CStrList_vtable *in_stack_fffff598;
+  uint in_stack_fffff59c;
+  uint in_stack_fffff5a0;
+  char **in_stack_fffff5a4;
+  char local_6d4 [520];
+  char acStack_4cc [504];
+  char local_2d4 [512];
+  char local_d4 [200];
+  int local_c;
   
   bVar35 = 0;
   if (((g_CGamePtr->game_control == 2) && (g_CGamePtr->x_center == 0)) &&
      (iVar30 = core_menu_cpp_calibrateGamepad_FUN_005104d0(), iVar30 == 0)) {
     return;
   }
+  local_c = 0;
 LAB_0051390e:
   do {
     g_CustomKeyCount = 0;
@@ -588,32 +591,33 @@ LAB_0051390e:
     g_CustomKeyCount = g_CustomKeyCount + 1;
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-    shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff668);
+    shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff584);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Restore defaults");
     iVar30 = 0;
-    shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff670,pcVar2);
+    shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff584,pcVar2);
     if (0 < g_CustomKeyCount) {
       pacVar28 = g_CustomKeyNames;
       iVar32 = 0;
       do {
         pcVar2 = core_menu_cpp_getKeyDisplayName_FUN_005134e0
                            (**(int **)((int)g_CustomKeyPointers + iVar32));
-        crt_stdio_c_sprintf_FUN_005fdbd0(&stack0x00000014,"%s\t%s",pacVar28,pcVar2);
+        crt_stdio_c_sprintf_FUN_005fdbd0(local_d4,"%s\t%s",pacVar28,pcVar2);
         iVar32 = iVar32 + 4;
         iVar30 = iVar30 + 1;
         pacVar28 = pacVar28 + 1;
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff670,&stack0x00000018);
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff584,local_d4);
       } while (iVar30 < g_CustomKeyCount);
     }
-    shape_edittool_cpp_CPickList_setSelectedResult_FUN_004a3e10((CPickList *)&stack0xfffff674,1);
-    iVar30 = 0;
+    shape_edittool_cpp_CPickList_setSelectedResult_FUN_004a3e10((CPickList *)&stack0xfffff584,1);
+    iVar32 = 0;
+    iVar30 = local_c;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Edit key settings");
     iVar30 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                       ((CPickList *)&stack0xfffff67c,pcVar2,iVar30,(int)in_stack_fffff670);
+                       ((CPickList *)&stack0xfffff584,pcVar2,iVar30,iVar32);
     if (iVar30 < 0) {
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                ((CPickList *)&stack0xfffff680,0,(uint)in_stack_fffff678,(uint)in_stack_fffff67c,
-                 (uint)in_stack_fffff680,(uint)in_stack_fffff684,(uint)in_stack_fffff688);
+                ((CPickList *)&stack0xfffff584,0,(uint)unaff_ESI,unaff_EDI,(uint)in_stack_fffff584,
+                 in_stack_fffff588,(uint)in_stack_fffff58c);
       pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Forward");
       iVar30 = core_menu_cpp_isKeyCodeValidForMode_FUN_00513720(&g_CGamePtr->key_walk,pcVar2);
       pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Back");
@@ -694,13 +698,13 @@ LAB_0051390e:
     }
     if (iVar30 != 0) {
       iVar32 = iVar30 + -1;
-      in_stack_000000f0 = iVar30;
+      local_c = iVar30;
       switch(*g_CustomKeyPointers[iVar32]) {
       case 0x251:
       case 0x252:
       case 0x253:
       case 0x254:
-        pcVar2 = acStack_5d8;
+        pcVar2 = local_6d4;
         pcVar31 = g_CustomKeyNames[iVar32];
         do {
           cVar1 = *pcVar31;
@@ -714,7 +718,7 @@ LAB_0051390e:
         pcVar31 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                             (" is assigned to the gamepad.  Can't assign a key.");
         iVar30 = -1;
-        pcVar2 = acStack_5d8 + 4;
+        pcVar2 = local_6d4;
         do {
           pcVar33 = pcVar2;
           if (iVar30 == 0) break;
@@ -733,13 +737,12 @@ LAB_0051390e:
           pcVar33[1] = cVar1;
           pcVar33 = pcVar33 + 2;
         } while (cVar1 != '\0');
-        in_stack_fffff670 = (char **)0x5148df;
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-                  (g_CEditorToolsPtr,acStack_5d8 + 4);
+                  (g_CEditorToolsPtr,local_6d4);
         break;
       case 0x255:
       case 0x256:
-        pcVar2 = acStack_1d8;
+        pcVar2 = local_2d4;
         pcVar31 = g_CustomKeyNames[iVar32];
         do {
           cVar1 = *pcVar31;
@@ -753,7 +756,7 @@ LAB_0051390e:
         pcVar31 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                             (" is assigned to the mouse.  Can't assign a key.");
         iVar30 = -1;
-        pcVar2 = acStack_1d8 + 4;
+        pcVar2 = local_2d4;
         do {
           pcVar33 = pcVar2;
           if (iVar30 == 0) break;
@@ -772,8 +775,7 @@ LAB_0051390e:
           pcVar33[1] = cVar1;
           pcVar33 = pcVar33 + 2;
         } while (cVar1 != '\0');
-        in_stack_fffff670 = (char **)0x514852;
-        shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,acStack_1d8 + 4);
+        shape_edittool_cpp_CEditorTools_showError_FUN_0049e740(g_CEditorToolsPtr,local_2d4);
         break;
       default:
         while( true ) {
@@ -795,19 +797,22 @@ LAB_00514913:
                     (g_CEditorToolsPtr,pcVar2);
           iVar30 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,1);
           if (iVar30 != 0) break;
+          in_stack_fffff588 = 0x514948;
           wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
         }
         iVar30 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,1);
         if (iVar30 != 0) {
           engine_2d_c_clearInputAndWait_FUN_00403260();
+          unaff_EDI = 0;
+          unaff_ESI = (CPickList *)&stack0xfffff58c;
           shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                    ((CPickList *)&stack0xfffff678,0,(uint)in_stack_fffff670,(uint)in_stack_fffff674
-                     ,(uint)in_stack_fffff678,(uint)in_stack_fffff67c,(uint)in_stack_fffff680);
+                    (unaff_ESI,0,(uint)unaff_ESI,in_stack_fffff588,(uint)in_stack_fffff58c,
+                     (uint)in_stack_fffff590,(uint)in_stack_fffff594);
           goto LAB_0051390e;
         }
         pcVar31 = support_newmsg_cpp_getLocalizedString_FUN_005441f0
                             ("Press new key or button for ");
-        pcVar2 = acStack_3e0;
+        pcVar2 = acStack_4cc;
         do {
           cVar1 = *pcVar31;
           *pcVar2 = cVar1;
@@ -819,7 +824,7 @@ LAB_00514913:
         } while (cVar1 != '\0');
         pcVar31 = g_CustomKeyNames[iVar32];
         iVar30 = -1;
-        pcVar2 = acStack_3e0;
+        pcVar2 = acStack_4cc;
         do {
           pcVar33 = pcVar2;
           if (iVar30 == 0) break;
@@ -839,7 +844,7 @@ LAB_00514913:
           pcVar33 = pcVar33 + 2;
         } while (cVar1 != '\0');
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
-                  (g_CEditorToolsPtr,acStack_3e0);
+                  (g_CEditorToolsPtr,acStack_4cc);
         engine_keys_cpp_CKeys_toggleInputMask_FUN_005024b0(g_CKeysPtr,1);
 LAB_00514a04:
         do {
@@ -850,6 +855,7 @@ LAB_00514a04:
           iVar30 = -1;
           iVar29 = 0;
           do {
+            unaff_ESI = (CPickList *)g_CKeysPtr;
             iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,iVar29);
             if ((iVar3 != 0) && (bVar34 = -1 < iVar30, iVar30 = iVar29, bVar34)) goto LAB_00514a04;
             iVar29 = iVar29 + 1;
@@ -867,6 +873,8 @@ LAB_00514a04:
           iVar30 = -1;
           iVar29 = 0;
           do {
+            unaff_EDI = 0x514a8d;
+            in_stack_fffff584 = g_CKeysPtr;
             iVar3 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,iVar29);
             if ((iVar3 != 0) && (bVar34 = -1 < iVar30, iVar30 = iVar29, bVar34)) goto LAB_00514a9c;
             iVar29 = iVar29 + 1;
@@ -887,23 +895,19 @@ LAB_00514a9c:
             iVar29 = iVar29 + 4;
           } while (iVar30 < g_CustomKeyCount);
         }
-        in_stack_fffff670 = (char **)0x514b1f;
         engine_keys_cpp_CKeys_toggleInputMask_FUN_005024b0(g_CKeysPtr,0);
       }
-      in_stack_fffff67c = (CStrList_vtable *)0x0;
-      in_stack_fffff678 = (CPickList *)&stack0xfffff688;
-      in_stack_fffff674 = (CPickList *)0x514861;
+      in_stack_fffff590 = (CStrList_vtable *)0x0;
+      in_stack_fffff58c = (CPickList *)&stack0xfffff59c;
+      in_stack_fffff588 = 0x514861;
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                (in_stack_fffff678,0,(uint)in_stack_fffff680,(uint)in_stack_fffff684,
-                 (uint)in_stack_fffff688,(uint)in_stack_fffff68c,(uint)in_stack_fffff690);
+                (in_stack_fffff58c,0,(uint)in_stack_fffff594,(uint)in_stack_fffff598,
+                 in_stack_fffff59c,in_stack_fffff5a0,(uint)in_stack_fffff5a4);
       goto LAB_0051390e;
     }
     core_game_cpp_CGame_restoreDefaultControls_FUN_004dbbc0();
-    in_stack_fffff678 = (CPickList *)0x0;
-    in_stack_fffff674 = (CPickList *)&stack0xfffff684;
-    in_stack_fffff670 = (char **)0x5147b4;
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-              (in_stack_fffff674,0,(uint)in_stack_fffff67c,(uint)in_stack_fffff680,
-               (uint)in_stack_fffff684,(uint)in_stack_fffff688,(uint)in_stack_fffff68c);
+              ((CPickList *)&stack0xfffff584,0,(uint)unaff_ESI,unaff_EDI,(uint)in_stack_fffff584,
+               in_stack_fffff588,(uint)in_stack_fffff58c);
   } while( true );
 }

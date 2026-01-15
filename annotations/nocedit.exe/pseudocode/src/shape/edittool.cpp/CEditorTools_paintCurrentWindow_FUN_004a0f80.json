@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 260,
-    "complexity_score": 316,
+    "complexity_score": 231,
     "cross_reference_count": 8,
     "function_call_count": 13,
     "global_count": 23,
     "pseudocode_lines": 81,
-    "suspect_count": 22,
+    "suspect_count": 14,
     "suspect_types": [
       "call_esp_preserve",
-      "stack_param",
       "variadic_preserve"
     ],
     "total_lines": 341
@@ -342,64 +341,8 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_0000000c",
-      "text": "CDemonRenderer *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000010",
-      "text": "int in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000018",
-      "text": "int in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000030",
-      "text": "int in_stack_00000030;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 46,
-      "match": "in_stack_0000000c",
-      "text": "engine_matrix_c_popViewport_FUN_0050e480(in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 49,
-      "match": "in_stack_00000010",
-      "text": "g_ActiveRenderColor = in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 67,
-      "match": "in_stack_00000018",
-      "text": "(g_EditorFont,text,((iVar4 + iVar5) - iVar3) / 2,y_pos,color_mode,in_stack_00000018);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 82,
-      "match": "in_stack_00000030",
-      "text": "g_ActiveRenderColor = in_stack_00000030;",
-      "type": "stack_param"
-    },
-    {
       "call_address": "004a0fdb",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -413,7 +356,7 @@
     },
     {
       "call_address": "004a10bf",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

@@ -12,7 +12,6 @@ core_box_cpp_CBox_setupVelocities_FUN_00420180
 
 {
   CVector3f *pCVar1;
-  BADSPACEBASE *in_ESP;
   CVector3f local_14;
   
   if (linear_velocity != (CVector3f *)0x0) {

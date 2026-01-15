@@ -14,21 +14,20 @@ shape_edittool_cpp_CStrList_insertRange_FUN_004a2d80
   CStrList_vtable *pCVar1;
   char *string_data;
   int index;
-  CStrList *in_stack_00000010;
-  int *in_stack_00000030;
+  int *in_stack_00000018;
   
   shape_edittool_cpp_CStrList_allocate_FUN_004a2cc0
             (this_ptr,source_list->item_count + this_ptr->item_count);
   index = 0;
-  if (in_stack_00000010->item_count < 1) {
+  if (source_list->item_count < 1) {
     return;
   }
   do {
     pCVar1 = this_ptr->vtable;
-    string_data = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(in_stack_00000010,index);
+    string_data = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(source_list,index);
     index = index + 1;
-    (*pCVar1->insert)(this_ptr,(int)source_list,string_data);
-    source_list = (CStrList *)((int)&source_list->item_count + 1);
-  } while (index < *in_stack_00000030);
+    (*pCVar1->insert)(this_ptr,insertion_index,string_data);
+    insertion_index = insertion_index + 1;
+  } while (index < *in_stack_00000018);
   return;
 }

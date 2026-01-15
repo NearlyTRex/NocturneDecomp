@@ -12,7 +12,6 @@ core_mirror_cpp_computePlaneFromTriangle_FUN_00520fe0
 
 {
   float fVar1;
-  BADSPACEBASE *in_ESP;
   float local_50;
   float local_4c;
   float local_48;

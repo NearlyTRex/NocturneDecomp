@@ -14,8 +14,7 @@ core_dlight_cpp_CDemonLight_beginScene_FUN_00472a80(CDemonLight *this_ptr,int sk
   CDemonRenderer *this_ptr_00;
   int iVar2;
   CDemonLight *pCVar3;
-  int in_stack_0000000c;
-  int in_stack_00000028;
+  CVector3f *unaff_EBP;
   
   if ((this_ptr->base).scene_open_flag != 0) {
     g_CurrentFilename = "..\\core\\dlight.cpp";
@@ -23,7 +22,7 @@ core_dlight_cpp_CDemonLight_beginScene_FUN_00472a80(CDemonLight *this_ptr,int sk
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonLight::beginScene - Scene already open");
   }
   (this_ptr->base).scene_open_flag = 1;
-  core_dcamera_cpp_CDemonCamera_setSceneCamera_FUN_0044c3e0(&this_ptr->base,in_stack_0000000c);
+  core_dcamera_cpp_CDemonCamera_setSceneCamera_FUN_0044c3e0(&this_ptr->base,skip_clear_buffers);
   engine_drender_cpp_CDemonRenderer_pushViewport_FUN_0048c890
             (g_CDemonRendererPtr,0,0,this_ptr->shadow_map_width + -1,
              this_ptr->shadow_map_height + -1);
@@ -34,21 +33,20 @@ core_dlight_cpp_CDemonLight_beginScene_FUN_00472a80(CDemonLight *this_ptr,int sk
   (this_ptr->base).viewport_rect.top = 0;
   this_ptr_00 = g_CDemonRendererPtr;
   (this_ptr->base).rect_array_count = 0;
-  (this_ptr->base).skip_clear_buffer_flag = in_stack_0000000c;
+  (this_ptr->base).skip_clear_buffer_flag = skip_clear_buffers;
   engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0048c150
             (this_ptr_00,&(this_ptr->base).base.position);
   engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0048c650
             (g_CDemonRendererPtr,(this_ptr->base).base.projection_scale);
   engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200
-            (g_CDemonRendererPtr,(CMatrix3x3f *)&(this_ptr->base).base.rotation_matrix,
-             (CVector3f *)this_ptr);
+            (g_CDemonRendererPtr,(CMatrix3x3f *)&(this_ptr->base).base.rotation_matrix,unaff_EBP);
   lVar1 = (longlong)this_ptr->transform_scale_factor * (longlong)g_TransformMatrix.m[0].y;
   g_TransformMatrix.m[0].y = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
   lVar1 = (longlong)this_ptr->transform_scale_factor * (longlong)g_TransformMatrix.m[1].y;
   g_TransformMatrix.m[1].y = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
   lVar1 = (longlong)this_ptr->transform_scale_factor * (longlong)g_TransformMatrix.m[2].y;
   g_TransformMatrix.m[2].y = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-  if (in_stack_0000000c == 0) {
+  if (skip_clear_buffers == 0) {
     core_event_cpp_FUN_004b19d0();
   }
   iVar2 = 0;
@@ -64,8 +62,8 @@ core_dlight_cpp_CDemonLight_beginScene_FUN_00472a80(CDemonLight *this_ptr,int sk
   }
   core_dcamera_cpp_CDemonCamera_updateTransformMatrices_FUN_0044d1c0(&this_ptr->base);
   engine_drender_cpp_CDemonRenderer_setFaceCount_FUN_0048cac0(g_CDemonRendererPtr,1);
-  if (in_stack_00000028 == 0) {
-    g_RasterizerDepthBias = in_stack_00000028;
+  if (this_ptr == (CDemonLight *)0x0) {
+    g_RasterizerDepthBias = (int)this_ptr;
     return;
   }
   g_RasterizerDepthBias = 0x8000;

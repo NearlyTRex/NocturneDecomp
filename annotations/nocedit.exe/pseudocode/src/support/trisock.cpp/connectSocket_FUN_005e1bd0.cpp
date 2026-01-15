@@ -10,25 +10,27 @@ int __cdecl
 support_trisock_cpp_connectSocket_FUN_005e1bd0(SOCKET *socket_handle,SNetworkAddr *dest_addr)
 
 {
-  BADSPACEBASE *in_ESP;
-  byte bVar1;
-  uint auStackY_1800 [1524];
-  SOCKADDR *name;
-  int iVar2;
-  byte auStack_24 [20];
-  uint auStack_10 [2];
+  uint *puVar1;
+  uint *puVar2;
+  byte bVar3;
+  uint auStackY_1804 [1524];
+  SOCKADDR_IN *name;
+  int iVar4;
+  SOCKADDR_IN local_28;
+  SOCKADDR_IN local_18;
   
-  bVar1 = 0;
-  support_trisock_cpp_buildSockaddrIn_FUN_005e19d0(dest_addr,(SOCKADDR_IN *)(auStack_24 + 0xc));
-  name = (SOCKADDR *)auStack_24;
-  iVar2 = 0x10;
-  auStack_24._0_4_ = auStack_24._16_4_;
-  *(uint *)(auStack_24 + (uint)bVar1 * -8 + 4) = auStack_10[(uint)bVar1 * -2];
-  *(uint *)(auStack_24 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8) =
-       auStack_10[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1];
-  *(uint *)
-   ((int)(auStack_24 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8) + ((uint)bVar1 * -2 + 1) * 4) =
-       (auStack_10 + (uint)bVar1 * -2 + (uint)bVar1 * -2 + 1)[(uint)bVar1 * -2 + 1];
-  iVar2 = crt_wsock32_c_connect(dest_addr->ip_address,name,iVar2);
-  return (uint)(iVar2 == 0);
+  bVar3 = 0;
+  support_trisock_cpp_buildSockaddrIn_FUN_005e19d0(dest_addr,&local_18);
+  name = &local_28;
+  iVar4 = 0x10;
+  local_28.sin_family = local_18.sin_family;
+  local_28.sin_port = local_18.sin_port;
+  puVar2 = (uint *)((int)&local_28 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
+  puVar1 = (uint *)((int)&local_18 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
+  *(uint *)((int)&local_28 + (uint)bVar3 * -8 + 4) =
+       *(uint *)((int)&local_18 + (uint)bVar3 * -8 + 4);
+  *puVar2 = *puVar1;
+  puVar2[(uint)bVar3 * -2 + 1] = puVar1[(uint)bVar3 * -2 + 1];
+  iVar4 = crt_wsock32_c_connect(*socket_handle,(SOCKADDR *)name,iVar4);
+  return (uint)(iVar4 == 0);
 }

@@ -13,7 +13,6 @@ void __cdecl shape_design_c_combineTextureMaps_FUN_00469ee0(void)
   char cVar2;
   float fVar3;
   int iVar4;
-  BADSPACEBASE *in_ESP;
   char *pcVar5;
   char *pcVar6;
   byte bVar7;

@@ -9,10 +9,9 @@
 void * __cdecl shape_memdbg_cpp_debugMalloc_FUN_0050f250(int size,char *filename,int line_number)
 
 {
-  char *pcVar1;
+  SMemHead *pSVar1;
+  char *pcVar2;
   SMemHead *header;
-  char *in_stack_00000010;
-  int in_stack_00000014;
   
   if (g_RecursiveCallFlag == 0) {
     if (g_FileMutex == (HANDLE)0x0) {
@@ -20,8 +19,7 @@ void * __cdecl shape_memdbg_cpp_debugMalloc_FUN_0050f250(int size,char *filename
     }
     wincore_winrun_cpp_waitForMutex_FUN_005f3ff0(g_FileMutex);
   }
-  shape_memdbg_cpp_traceMemory_FUN_0050f150
-            ("debugMalloc(%d, %s, %d)",size,in_stack_00000010,in_stack_00000014);
+  shape_memdbg_cpp_traceMemory_FUN_0050f150("debugMalloc(%d, %s, %d)",size,filename,line_number);
   if (size != 0) {
     header = crt_memory_c_malloc_FUN_00601bb0(size + GAME_SMEMHEAD_AND_BACKGUARD_SIZE);
     if (header == (SMemHead *)0x0) {
@@ -30,18 +28,19 @@ void * __cdecl shape_memdbg_cpp_debugMalloc_FUN_0050f250(int size,char *filename
       return (void *)0x0;
     }
     header->num_bytes = size;
-    shape_memdbg_cpp_SMemHead_recordSourceFile_FUN_0050eea0(header,in_stack_00000010);
+    shape_memdbg_cpp_SMemHead_recordSourceFile_FUN_0050eea0(header,filename);
+    pSVar1 = header + 1;
     header->front_guard = GAME_DEADBEEF;
-    header->source_line = in_stack_00000014;
-    pcVar1 = header[1].source_file + header->num_bytes + -0xc;
-    pcVar1[0] = -0x53;
-    pcVar1[1] = -0x22;
-    pcVar1[2] = -0x11;
-    pcVar1[3] = -0x42;
+    header->source_line = line_number;
+    pcVar2 = pSVar1->source_file + header->num_bytes + -0xc;
+    pcVar2[0] = -0x53;
+    pcVar2[1] = -0x22;
+    pcVar2[2] = -0x11;
+    pcVar2[3] = -0x42;
     shape_memdbg_cpp_SMemHead_add_FUN_0050eef0(header);
-    shape_memdbg_cpp_traceMemory_FUN_0050f150("   Returns %08X");
+    shape_memdbg_cpp_traceMemory_FUN_0050f150("   Returns %08X",pSVar1);
     wincore_winrun_cpp_releaseMutex_FUN_005f4050(g_FileMutex);
-    return header + 1;
+    return pSVar1;
   }
   shape_memdbg_cpp_traceMemory_FUN_0050f150("   Returns NULL");
   wincore_winrun_cpp_releaseMutex_FUN_005f4050(g_FileMutex);

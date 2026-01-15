@@ -9,10 +9,8 @@
 void __cdecl core_anvil_cpp_CAnvil_FUN_00411d70(CAnvil *this_ptr)
 
 {
-  int in_stack_00000008;
-  
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base_actor);
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60
-            ((CKeyFramedModelInstance *)(in_stack_00000008 + 0x158));
+            ((CKeyFramedModelInstance *)this_ptr->model_name);
   return;
 }

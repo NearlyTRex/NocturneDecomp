@@ -14,8 +14,8 @@ core_dcamera_cpp_CDemonCamera_beginScene_FUN_0044c430(CDemonCamera *this_ptr,int
   uint uVar1;
   uint uVar2;
   int iVar3;
+  CVector3f *unaff_EBP;
   bool bVar4;
-  uint uStack00000014;
   char *format;
   
   iVar3 = 0;
@@ -106,8 +106,7 @@ switchD_0044c448_caseD_3:
   engine_drender_cpp_CDemonRenderer_setProjectionScale_FUN_0048c650
             (g_CDemonRendererPtr,(this_ptr->base).projection_scale);
   engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_0048c200
-            (g_CDemonRendererPtr,(CMatrix3x3f *)&(this_ptr->base).rotation_matrix,
-             (CVector3f *)this_ptr);
+            (g_CDemonRendererPtr,(CMatrix3x3f *)&(this_ptr->base).rotation_matrix,unaff_EBP);
   if (skip_clear_buffers == 0) {
     if (g_FullscreenMode != 0) {
       wincore_windll_cpp_beginScene_FUN_005b7280();
@@ -116,11 +115,9 @@ switchD_0044c448_caseD_3:
     wincore_windll_cpp_clearZBuffer_FUN_005b3ed4();
     if (g_UseExternalRenderer != 0) {
       wincore_windll_cpp_clear_FUN_005b7a30();
-      uStack00000014 = 0x44c670;
       wincore_windll_cpp_clearZBuffer_FUN_005b7be0();
     }
   }
-  uStack00000014 = 0x44c676;
   core_dcamera_cpp_CDemonCamera_updateTransformMatrices_FUN_0044d1c0(this_ptr);
   return;
 }

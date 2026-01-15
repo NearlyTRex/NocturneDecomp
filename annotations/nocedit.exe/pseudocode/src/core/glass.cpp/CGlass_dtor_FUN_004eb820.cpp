@@ -25,7 +25,7 @@ core_glass_cpp_CGlass_dtor_FUN_004eb820(CGlass *this_ptr,uint d1,uint d2,uint d3
   ptr = (CGlass *)
         core_actor_cpp_CDemonActor_dtor_FUN_00408a30
                   ((CDemonActor *)&pCVar1[-2].reflection.mirror_transform_matrix.m[2].x,1);
-  if ((d4 & 2) == 0) {
+  if ((d1 & 2) == 0) {
     return ptr;
   }
   shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);

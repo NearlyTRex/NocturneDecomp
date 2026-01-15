@@ -1,19 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 130,
-    "complexity_score": 313,
+    "complexity_score": 258,
     "cross_reference_count": 1,
     "function_call_count": 14,
     "global_count": 12,
     "pseudocode_lines": 48,
-    "suspect_count": 23,
+    "suspect_count": 19,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
       "pointer_cast",
-      "register_param",
-      "stack_param",
       "stack_ref"
     ],
     "total_lines": 178
@@ -250,39 +247,11 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 10,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 10,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_ffffe568",
-      "text": "CBoundingBox3D *in_stack_ffffe568;",
-      "type": "stack_param"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 28,
-      "match": "&stack0xffffe560",
-      "text": "(this_ptr_00,(SBoneTransformData *)&stack0xffffe560);",
+      "line": 27,
+      "match": "&stack0xffffe550",
+      "text": "(this_ptr_00,(SBoneTransformData *)&stack0xffffe550);",
       "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_ffffe568",
-      "text": "iVar2 = core_skeleton_cpp_CDeformableModel_selectLOD_FUN_0059ce40(this_ptr_01,in_stack_ffffe568);",
-      "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
@@ -308,8 +277,8 @@
     {
       "description": "Direct stack address reference",
       "line": 48,
-      "match": "&stack0xffffe580",
-      "text": "(&this_ptr->model,(SBoneTransformData *)&stack0xffffe580);",
+      "match": "&stack0xffffe550",
+      "text": "(&this_ptr->model,(SBoneTransformData *)&stack0xffffe550);",
       "type": "stack_ref"
     },
     {

@@ -12,17 +12,17 @@ void core_lever_cpp_CLever_load_FUN_00504e80(void)
 
 {
   char cVar1;
-  BADSPACEBASE *in_ESP;
   char *pcVar2;
   char *pcVar3;
   CDemonActor *in_stack_00000004;
+  uint local_d4;
   
   core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(in_stack_00000004);
-  pcVar3 = &stack0xffffff30;
+  pcVar3 = (char *)&local_d4;
   if (g_ActorReadingMode == 1) {
-    core_actor_cpp_serializeString_FUN_0040b5c0((char **)&stack0xffffff30,"modelName");
+    core_actor_cpp_serializeString_FUN_0040b5c0((char **)&local_d4,"modelName");
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
-              ((CKeyFramedModelInstance *)(in_stack_00000004 + 1),&stack0xffffff34);
+              ((CKeyFramedModelInstance *)(in_stack_00000004 + 1),(char *)&local_d4);
   }
   else {
     pcVar2 = in_stack_00000004[1].create_event;
@@ -35,7 +35,7 @@ void core_lever_cpp_CLever_load_FUN_00504e80(void)
       pcVar3[1] = cVar1;
       pcVar3 = pcVar3 + 2;
     } while (cVar1 != '\0');
-    core_actor_cpp_serializeString_FUN_0040b5c0((char **)&stack0xffffff30,"modelName");
+    core_actor_cpp_serializeString_FUN_0040b5c0((char **)&local_d4,"modelName");
   }
   core_actor_cpp_serializeInteger_FUN_0040b7f0
             ((int *)&in_stack_00000004[2].location.position.z,"leverType");

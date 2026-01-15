@@ -14,23 +14,20 @@ cockpit_ckptutil_c_loadACTToIndexedPalette_FUN_00431a30(char *filename,char *out
   byte *pbVar2;
   byte bVar3;
   byte *pbVar4;
-  BADSPACEBASE *in_ESP;
-  uchar *in_stack_0000000c;
-  char local_30c [4];
-  byte abStack_308 [764];
+  byte local_30c [768];
   
-  cockpit_ckptutil_c_loadACTPaletteFile_FUN_00431ac0(filename,local_30c);
-  pbVar4 = abStack_308;
+  cockpit_ckptutil_c_loadACTPaletteFile_FUN_00431ac0(filename,(char *)local_30c);
+  pbVar4 = local_30c;
   do {
     bVar3 = *pbVar4;
     pbVar1 = pbVar4 + 1;
     pbVar2 = pbVar4 + 2;
     pbVar4 = pbVar4 + 3;
-    *in_stack_0000000c =
+    *output_palette =
          g_ColorCubeLookup
          [((int)(uint)*pbVar2 >> 3) +
           ((int)(uint)bVar3 >> 3) * 0x400 + ((int)(uint)*pbVar1 >> 3) * 0x20];
-    in_stack_0000000c = in_stack_0000000c + 1;
-  } while (pbVar4 != &stack0xfffffff8);
+    output_palette = (char *)((uchar *)output_palette + 1);
+  } while (pbVar4 != &stack0xfffffff4);
   return;
 }

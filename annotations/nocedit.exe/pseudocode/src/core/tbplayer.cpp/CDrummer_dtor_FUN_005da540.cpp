@@ -17,6 +17,8 @@ core_tbplayer_cpp_CDrummer_dtor_FUN_005da540
   CDeformableModelInstance *pCVar3;
   CDrummer *ptr;
   void *ptr_00;
+  uint unaff_EBX;
+  uint unaff_retaddr;
   
   if ((d1 & 4) != 0) {
     ptr_00 = crt_memory_c_freeSingleInstance_FUN_005fe632(this_ptr,&g_CDrummerTypeInfo);
@@ -31,11 +33,12 @@ core_tbplayer_cpp_CDrummer_dtor_FUN_005da540
   core_backgnd_cpp_cleanupVector_FUN_004126e0((CVector3f **)(iVar2 + -0xb4));
   iVar2 = core_cloth_cpp_FUN_0043bf80();
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40
-                     ((CDeformableModelInstance *)(iVar2 + -0x293c),0,d4,d5,d6);
+                     ((CDeformableModelInstance *)(iVar2 + -0x293c),0,unaff_EBX,unaff_retaddr,
+                      (uint)this_ptr);
   ptr = (CDrummer *)
         core_actor_cpp_CDemonActor_dtor_FUN_00408a30
                   ((CDemonActor *)(pCVar3[-1].part_visibility_flags + 7),1);
-  if ((d9 & 2) == 0) {
+  if ((d1 & 2) == 0) {
     return ptr;
   }
   shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);

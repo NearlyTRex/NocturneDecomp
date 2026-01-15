@@ -11,7 +11,6 @@ int __cdecl core_box_cpp_CBoundingBox3D_isVisibleWithShadow_FUN_00420320(CBoundi
 {
   int iVar1;
   int iVar2;
-  BADSPACEBASE *in_ESP;
   SRenderVertex *pSVar3;
   CRect local_20;
   SRenderVertex *local_10;

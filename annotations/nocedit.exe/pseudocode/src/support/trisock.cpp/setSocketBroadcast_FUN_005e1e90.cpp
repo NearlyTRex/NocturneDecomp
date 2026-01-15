@@ -11,7 +11,6 @@ support_trisock_cpp_setSocketBroadcast_FUN_005e1e90(SOCKET *socket_handle,int br
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   
   iVar1 = crt_wsock32_c_setsockopt(*socket_handle,0xffff,0x20,(char *)&broadcast_flag,4);
   return (uint)(iVar1 == 0);

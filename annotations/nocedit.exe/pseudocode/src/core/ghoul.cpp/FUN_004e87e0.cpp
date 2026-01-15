@@ -22,7 +22,6 @@ void core_ghoul_cpp_FUN_004e87e0(void)
   float fVar8;
   int extraout_EAX;
   CMotionList *this_ptr;
-  BADSPACEBASE *in_ESP;
   int iVar9;
   double dVar10;
   CCharacter *in_stack_00000004;

@@ -9,25 +9,21 @@
 void core_skeledit_cpp_FUN_005896b0(void)
 
 {
-  BADSPACEBASE *in_ESP;
-  char *in_stack_0000000c;
-  char *in_stack_00000010;
-  char *in_stack_00000014;
-  char acStack_2f8 [252];
-  char acStack_1fc [4];
-  char cStack_1f8;
-  char acStack_fc [4];
-  char acStack_f8 [240];
+  char *in_stack_00000004;
+  char *in_stack_00000008;
+  char local_304 [256];
+  char local_204 [256];
+  char local_104 [252];
   uint uStack_8;
   
   uStack_8 = 0x5896ba;
   crt_stack_c_stack_probe_FUN_005ff9f3(0x31c);
   crt_string_c_splitpath_FUN_005ff178
-            (in_stack_0000000c,&stack0x00000004,acStack_fc,&stack0xfffffd04,acStack_1fc);
-  if (cStack_1f8 != '\0') {
+            (in_stack_00000004,&stack0xfffffffc,local_104,local_304,local_204);
+  if (local_204[0] != '\0') {
     return;
   }
   crt_file_c_makepath_FUN_005febfc
-            (in_stack_00000010,&stack0x00000008,acStack_f8,acStack_2f8,in_stack_00000014);
+            (in_stack_00000004,&stack0xfffffffc,local_104,local_304,in_stack_00000008);
   return;
 }

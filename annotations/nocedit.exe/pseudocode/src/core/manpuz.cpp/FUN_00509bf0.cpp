@@ -23,7 +23,7 @@ void core_manpuz_cpp_FUN_00509bf0(void)
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0048c4f0
             (g_CDemonRendererPtr,(CVector3i *)(piVar1 + 6),(CVector3i *)(piVar1 + 3));
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
-            ((CKeyFramedModelInstance *)(in_stack_00000008 + 0x158),0.0,-1);
+            ((CKeyFramedModelInstance *)(in_stack_00000004 + 0x158),0.0,-1);
   engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
   return;
 }

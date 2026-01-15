@@ -1,22 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 149,
-    "complexity_score": 221,
+    "complexity_score": 150,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 13,
-    "pseudocode_lines": 56,
-    "suspect_count": 13,
+    "pseudocode_lines": 55,
+    "suspect_count": 8,
     "suspect_types": [
-      "badspacebase",
       "lea_esp_stack_addr",
       "pointer_cast",
-      "register_param",
-      "stack_param",
-      "stack_ref",
       "variadic_preserve"
     ],
-    "total_lines": 205
+    "total_lines": 204
   },
   "cross_references": [
     {
@@ -231,71 +227,36 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 11,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 11,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000010",
-      "text": "int in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
+      "description": "Complex pointer cast",
       "line": 35,
-      "match": "&stack0xffffffdc",
-      "text": "*(int *)(&stack0xffffffdc + iVar6) = iVar1;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 40,
-      "match": "&stack0xffffffdc",
-      "text": "((LPVOID *)&stack0xffffffdc,g_WaveOutBitsPerSample,g_WaveOutChannels,g_WaveOutSampleRate",
-      "type": "stack_ref"
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)apvStack_34 + iVar6) = iVar1;",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 42,
       "match": "(int *)((int)",
-      "text": "*(int *)(*(int *)((int)g_WaveOutHeaders + unaff_retaddr) + 4) =",
+      "text": "*(int *)(*(int *)((int)g_WaveOutHeaders + iStack_14) + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 47,
       "match": "(LPWAVEHDR *)((int)",
-      "text": "(g_WaveOutHandle,*(LPWAVEHDR *)((int)g_WaveOutHeaders + unaff_retaddr),0x20);",
+      "text": "(g_WaveOutHandle,*(LPWAVEHDR *)((int)g_WaveOutHeaders + iStack_14),0x20);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 52,
-      "match": "in_stack_00000010",
-      "text": "MVar3 = (*waveOutWrite)(g_WaveOutHandle,*(LPWAVEHDR *)((int)g_WaveOutHeaders + in_stack_00000010),",
-      "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
       "line": 52,
       "match": "(LPWAVEHDR *)((int)",
-      "text": "MVar3 = (*waveOutWrite)(g_WaveOutHandle,*(LPWAVEHDR *)((int)g_WaveOutHeaders + in_stack_00000010),",
+      "text": "MVar3 = (*waveOutWrite)(g_WaveOutHandle,*(LPWAVEHDR *)((int)g_WaveOutHeaders + iStack_14),0x20);",
       "type": "pointer_cast"
     },
     {
       "call_address": "005b07f9",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -309,7 +270,7 @@
     },
     {
       "call_address": "005b0810",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -323,7 +284,7 @@
     },
     {
       "call_address": "005b0827",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

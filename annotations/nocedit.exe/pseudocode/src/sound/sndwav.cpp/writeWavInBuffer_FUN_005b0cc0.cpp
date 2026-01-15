@@ -10,7 +10,6 @@ int __cdecl sound_sndwav_cpp_writeWavInBuffer_FUN_005b0cc0(int buffer_index)
 
 {
   MMRESULT MVar1;
-  uint uStack0000000c;
   
   if ((g_WaveInBuffers[buffer_index] == (LPVOID)0x0) ||
      (g_WaveInHeaders[buffer_index] == (LPWAVEHDR)0x0)) {
@@ -29,7 +28,6 @@ int __cdecl sound_sndwav_cpp_writeWavInBuffer_FUN_005b0cc0(int buffer_index)
   if (MVar1 == 0) {
     return 1;
   }
-  uStack0000000c = 0x5b0d64;
   sound_sndmain_cpp_logSoundError_FUN_005adba0("waveOutWrite failed!");
   return 0;
 }

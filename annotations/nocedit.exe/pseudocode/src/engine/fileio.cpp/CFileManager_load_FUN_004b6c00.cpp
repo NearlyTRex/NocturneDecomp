@@ -14,21 +14,19 @@ void __cdecl engine_fileio_cpp_CFileManager_load_FUN_004b6c00(CFileManager *this
   int iVar2;
   int iVar3;
   uint uVar4;
-  int unaff_EBX;
   uint uVar5;
   char (*str2) [128];
-  BADSPACEBASE *in_ESP;
   char *pcVar6;
   char (*pacVar7) [128];
-  char *pcVar8;
-  char *pcVar9;
+  byte *pbVar8;
   char *str1;
+  char (*pacVar9) [128];
   byte bVar10;
-  CFileManager *in_stack_00000010;
-  int in_stack_00000014;
-  uint uStack_218;
-  byte auStack_214 [508];
-  int local_18;
+  byte local_224 [512];
+  int local_24;
+  int local_20;
+  int local_1c;
+  char (*local_18) [128];
   int local_14;
   
   bVar10 = 0;
@@ -42,83 +40,85 @@ void __cdecl engine_fileio_cpp_CFileManager_load_FUN_004b6c00(CFileManager *this
     core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to open read level.lst");
   }
 LAB_004b6c3c:
-  iVar2 = crt_stdio_c_fscanf_FUN_005fe7c0(file," %[^\n]\n",&stack0xfffffde4);
+  iVar2 = crt_stdio_c_fscanf_FUN_005fe7c0(file," %[^\n]\n",local_224);
   if (iVar2 != -1) {
     uVar5 = 0;
     do {
       uVar4 = 0xffffffff;
-      pcVar6 = (char *)&uStack_218;
+      pbVar8 = local_224;
       do {
         if (uVar4 == 0) break;
         uVar4 = uVar4 - 1;
-        cVar1 = *pcVar6;
-        pcVar6 = pcVar6 + (uint)bVar10 * -2 + 1;
+        cVar1 = *pbVar8;
+        pbVar8 = (byte *)((char *)pbVar8 + (uint)bVar10 * -2 + 1);
       } while (cVar1 != '\0');
       if (~uVar4 - 1 <= uVar5) goto LAB_004b6ca0;
-      iVar3 = crt_ctype_c_toupper_FUN_005ff9e0((uint)(byte)auStack_214[uVar5 - 4]);
-      auStack_214[uVar5] = (char)iVar3;
+      iVar3 = crt_ctype_c_toupper_FUN_005ff9e0((uint)local_224[uVar5]);
+      local_224[uVar5] = (byte)iVar3;
       uVar5 = uVar5 + 1;
     } while( true );
   }
   goto LAB_004b6cb3;
 LAB_004b6ca0:
-  engine_fileio_cpp_CFileManager_registerFiles_FUN_004b5640(in_stack_00000010,(char *)&uStack_218);
+  engine_fileio_cpp_CFileManager_registerFiles_FUN_004b5640(this_ptr,(char *)local_224);
 LAB_004b6cb3:
   if (iVar2 == -1) {
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\fileio.cpp",0x914);
-    local_14 = 0;
-    local_18 = 0;
+    local_20 = 0;
+    local_18 = this_ptr->file_entries;
+    local_24 = 0;
     do {
-      iVar2 = local_18;
-      if (in_stack_00000010->tracked_file_count + -1 <= local_14) {
+      if (this_ptr->tracked_file_count + -1 <= local_20) {
         return;
       }
-      if (local_14 + 1 < in_stack_00000010->tracked_file_count) {
-        str2 = in_stack_00000010->file_entries + local_14 + 1;
+      local_14 = local_20 + 1;
+      if (local_14 < this_ptr->tracked_file_count) {
+        local_1c = local_24;
+        str2 = local_18 + local_14;
         do {
-          str1 = in_stack_00000010->file_entries[0] + iVar2;
-          iVar3 = crt_string_c_stricmp_FUN_005fe7f0(str1,*str2);
-          pcVar9 = (char *)&uStack_218;
-          pcVar8 = (char *)&uStack_218;
+          str1 = *local_18 + local_1c;
+          iVar2 = crt_string_c_stricmp_FUN_005fe7f0(str1,*str2);
           pcVar6 = str1;
-          if (0 < iVar3) {
+          pbVar8 = local_224;
+          if (0 < iVar2) {
             do {
               cVar1 = *pcVar6;
-              *pcVar9 = cVar1;
+              *pbVar8 = cVar1;
               pacVar7 = str2;
               if (cVar1 == '\0') break;
               cVar1 = pcVar6[1];
-              pcVar9[1] = cVar1;
-              pcVar9 = pcVar9 + 2;
+              ((char *)pbVar8)[1] = cVar1;
               pcVar6 = pcVar6 + 2;
+              pbVar8 = (byte *)((char *)pbVar8 + 2);
             } while (cVar1 != '\0');
             do {
               cVar1 = (*pacVar7)[0];
               *str1 = cVar1;
+              pbVar8 = local_224;
+              pacVar9 = str2;
               if (cVar1 == '\0') break;
               cVar1 = (*pacVar7)[1];
               str1[1] = cVar1;
               str1 = str1 + 2;
+              pbVar8 = local_224;
               pacVar7 = (char (*) [128])(*pacVar7 + 2);
             } while (cVar1 != '\0');
-            uStack_218 = str2;
-            pacVar7 = str2;
             do {
-              cVar1 = *pcVar8;
-              (*pacVar7)[0] = cVar1;
+              cVar1 = *pbVar8;
+              (*pacVar9)[0] = cVar1;
               if (cVar1 == '\0') break;
-              cVar1 = pcVar8[1];
-              pcVar8 = pcVar8 + 2;
-              (*pacVar7)[1] = cVar1;
-              pacVar7 = (char (*) [128])(*pacVar7 + 2);
+              cVar1 = ((char *)pbVar8)[1];
+              (*pacVar9)[1] = cVar1;
+              pbVar8 = (byte *)((char *)pbVar8 + 2);
+              pacVar9 = (char (*) [128])(*pacVar9 + 2);
             } while (cVar1 != '\0');
           }
-          unaff_EBX = unaff_EBX + 1;
+          local_14 = local_14 + 1;
           str2 = str2 + 1;
-        } while (unaff_EBX < *(int *)(in_stack_00000014 + 4));
+        } while (local_14 < this_ptr->tracked_file_count);
       }
-      local_14 = local_14 + 1;
-      local_18 = local_18 + 0x80;
+      local_20 = local_20 + 1;
+      local_24 = local_24 + 0x80;
     } while( true );
   }
   goto LAB_004b6c3c;

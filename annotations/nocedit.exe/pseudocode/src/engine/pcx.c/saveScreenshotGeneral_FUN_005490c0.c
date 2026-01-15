@@ -11,16 +11,21 @@ void __cdecl engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(char *filename)
 {
   byte bVar1;
   FILE *file;
-  BADSPACEBASE *in_ESP;
   int iVar2;
   uint character;
-  short sStack_7c;
-  short sStack_7a;
-  byte uStack_43;
+  byte local_88;
+  byte local_87;
+  byte local_86;
+  byte local_85;
+  ushort local_84;
+  ushort local_82;
+  short local_80;
+  short local_7e;
+  byte local_47;
+  short local_46;
+  ushort local_44;
   short local_42;
-  ushort local_40;
-  short sStack_3e;
-  short sStack_3c;
+  short local_40;
   
   if (g_BitsPerPixel == 0x10) {
     engine_pcx_c_saveScreenRaw16_FUN_00548d20(filename);
@@ -30,17 +35,23 @@ void __cdecl engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(char *filename)
     engine_pcx_c_saveScreenRaw32_FUN_00548f00(filename);
     return;
   }
-  crt_memory_c_memset_FUN_005fde40(&stack0xffffff78,0,0x80);
-  local_40 = 1;
-  sStack_7c = (short)g_WindowWidth + -1;
-  uStack_43 = 1;
-  sStack_7a = (short)g_WindowHeight + -1;
+  crt_memory_c_memset_FUN_005fde40(&local_88,0,0x80);
+  local_88 = 10;
+  local_87 = 5;
+  local_85 = 8;
+  local_44 = 1;
+  local_80 = (short)g_WindowWidth + -1;
+  local_86 = 1;
+  local_47 = 1;
+  local_7e = (short)g_WindowHeight + -1;
+  local_84 = 0;
+  local_46 = (short)g_WindowWidth;
   local_42 = (short)g_WindowWidth;
-  sStack_3e = (short)g_WindowWidth;
-  sStack_3c = (short)g_WindowHeight;
+  local_82 = 0;
+  local_40 = (short)g_WindowHeight;
   if ((g_WindowWidth == 0x280) && (g_WindowHeight == 0xf0)) {
-    sStack_3c = 0x1e0;
-    sStack_7a = 0x1df;
+    local_40 = 0x1e0;
+    local_7e = 0x1df;
   }
   file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                    (filename,(char *)0x0,"wb","..\\engine\\pcx.c",0xec);
@@ -50,7 +61,7 @@ void __cdecl engine_pcx_c_saveScreenshotGeneral_FUN_005490c0(char *filename)
     core_main_c_displayErrorAndQuit_FUN_00506f10("Cannot write .PCX");
   }
   iVar2 = 0;
-  crt_stdio_c_fwrite_FUN_005fdc00(&sStack_7c,1,0x80,file);
+  crt_stdio_c_fwrite_FUN_005fdc00(&local_88,1,0x80,file);
   if (0 < g_WindowHeight) {
     do {
       engine_pcx_c_writePCXScanline_FUN_00548c50(iVar2,file);

@@ -30,7 +30,6 @@ uint core_script_cpp_CScript_step_FUN_0055a810(void)
   uint uVar15;
   uint uVar16;
   byte *pbVar17;
-  BADSPACEBASE *in_ESP;
   char *pcVar18;
   char *pcVar19;
   char *pcVar20;

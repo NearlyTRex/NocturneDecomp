@@ -11,7 +11,7 @@ void __cdecl core_dpart_cpp_CDemonPart_alloc_FUN_00482180(CDemonPart *this_ptr)
 {
   CVector3i *pCVar1;
   SSurfacePlane *pSVar2;
-  BADSPACEBASE *in_ESP;
+  char local_10c [256];
   
   core_dpart_cpp_CDemonPart_free_FUN_004822b0(this_ptr);
   if (this_ptr->vertex_count != 0) {
@@ -20,10 +20,10 @@ void __cdecl core_dpart_cpp_CDemonPart_alloc_FUN_00482180(CDemonPart *this_ptr)
     this_ptr->vertex_positions = pCVar1;
     if (pCVar1 == (CVector3i *)0x0) {
       crt_stdio_c_sprintf_FUN_005fdbd0
-                (&stack0xfffffefc,"CDemonPart::alloc - Out of vertex %d memory!",this_ptr->vertex_count);
+                (local_10c,"CDemonPart::alloc - Out of vertex %d memory!",this_ptr->vertex_count);
       g_CurrentLineNumber = 0x8b;
       g_CurrentFilename = "..\\core\\dpart.cpp";
-      core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xffffff00);
+      core_main_c_displayErrorAndQuit_FUN_00506f10(local_10c);
     }
     pCVar1 = shape_memdbg_cpp_debugCalloc_FUN_0050f350
                        (this_ptr->vertex_count,0xc,"..\\core\\dpart.cpp",0x90);

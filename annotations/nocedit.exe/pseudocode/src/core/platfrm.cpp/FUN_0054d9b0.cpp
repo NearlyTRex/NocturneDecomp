@@ -16,7 +16,6 @@ void core_platfrm_cpp_FUN_0054d9b0(void)
   float fVar1;
   int iVar2;
   CBoundingBox3D *this_ptr;
-  BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000004;
   int in_stack_00000008;
   

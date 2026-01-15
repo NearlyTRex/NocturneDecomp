@@ -15,6 +15,7 @@ shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
   CEdScrollBar *pCVar2;
   CPickList *ptr;
   void *ptr_00;
+  uint unaff_EBX;
   
   if ((d1 & 4) != 0) {
     ptr_00 = crt_memory_c_freeSingleInstance_FUN_005fe632(this_ptr,&g_CPickListTypeInfo);
@@ -28,8 +29,9 @@ shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
   pCVar2 = shape_edittool_cpp_CEdScrollBar_dtor_FUN_004a5b20
                      ((CEdScrollBar *)(pCVar1[-1].button_text + 0x90));
   ptr = (CPickList *)
-        shape_edittool_cpp_CStrList_dtor_FUN_004a2a40((CStrList *)&pCVar2[-9].thumb_end,1,d2);
-  if ((d6 & 2) == 0) {
+        shape_edittool_cpp_CStrList_dtor_FUN_004a2a40((CStrList *)&pCVar2[-9].thumb_end,1,unaff_EBX)
+  ;
+  if ((d1 & 2) == 0) {
     return ptr;
   }
   shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);

@@ -13,11 +13,9 @@ void __cdecl core_anvil_cpp_CAnvil_process_FUN_00411d90(CAnvil *this_ptr)
   float fVar2;
   int iVar3;
   int iVar4;
-  BADSPACEBASE *in_ESP;
-  float unaff_EDI;
-  float in_stack_0000000c;
-  SDamageInfo local_44;
-  CAnvil *pCStack_8;
+  float unaff_ESI;
+  float in_stack_00000008;
+  SDamageInfo local_48;
   
   iVar4 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
                     (g_CEventListPtr,this_ptr->drop_condition);
@@ -36,7 +34,7 @@ void __cdecl core_anvil_cpp_CAnvil_process_FUN_00411d90(CAnvil *this_ptr)
          this_ptr->drop_height + (this_ptr->base_actor).location.position.y;
   }
   if (this_ptr->triggered != 0) {
-    fVar2 = this_ptr->yvel - in_stack_0000000c * (float)32;
+    fVar2 = this_ptr->yvel - in_stack_00000008 * (float)32;
     this_ptr->yvel = fVar2;
     iVar3 = g_LocalHeroIndex;
     (this_ptr->base_actor).location.position.y = fVar2 + (this_ptr->base_actor).location.position.y;
@@ -49,15 +47,14 @@ void __cdecl core_anvil_cpp_CAnvil_process_FUN_00411d90(CAnvil *this_ptr)
     if ((this_ptr->base_actor).location.position.y <
         (g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.location.position.y +
         (float)6) {
-      core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_44);
-      local_44.damage_flags = 0x461c3f9a;
-      local_44.attacker = (CDemonActor *)&DAT_00000008;
-      local_44.wielder = &this_ptr->base_actor;
-      pCStack_8 = this_ptr;
+      core_charactr_cpp_SDamageInfo_ctor_FUN_00427db0(&local_48);
+      local_48.damage_amount = 9999.9;
+      local_48.damage_type = 8;
+      local_48.attacker = &this_ptr->base_actor;
+      local_48.wielder = &this_ptr->base_actor;
       (*(g_HeroActors[g_LocalHeroIndex]->base_character).base_actor.vtable[1].
         playAmbientSoundWithVolume)
-                ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],(char *)&local_44.damage_amount,
-                 unaff_EDI);
+                ((CDemonActor *)g_HeroActors[g_LocalHeroIndex],(char *)&local_48,unaff_ESI);
       return;
     }
   }

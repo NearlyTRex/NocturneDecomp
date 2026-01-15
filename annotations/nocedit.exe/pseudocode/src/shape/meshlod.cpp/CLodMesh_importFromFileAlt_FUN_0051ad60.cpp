@@ -11,7 +11,6 @@ shape_meshlod_cpp_CLodMesh_importFromFileAlt_FUN_0051ad60(CLodMesh *this_ptr,cha
 
 {
   FILE *file_handle;
-  CLodMesh *in_stack_00000010;
   
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Importing %s");
@@ -22,7 +21,7 @@ shape_meshlod_cpp_CLodMesh_importFromFileAlt_FUN_0051ad60(CLodMesh *this_ptr,cha
     g_CurrentLineNumber = 0x10cf;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't open %s",filename);
   }
-  shape_meshlod_cpp_CLodMesh_parseS3DFileVariant_FUN_0051adf0(in_stack_00000010,file_handle);
+  shape_meshlod_cpp_CLodMesh_parseS3DFileVariant_FUN_0051adf0(this_ptr,file_handle);
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\shape\\meshlod.cpp",0x10d7);
   return;
 }

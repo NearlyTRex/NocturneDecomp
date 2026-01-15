@@ -14,7 +14,6 @@ core_fire_cpp_CSmokeParticle_init_FUN_004bf2f0
 {
   CVector3f *pCVar1;
   float fVar2;
-  int in_stack_00000018;
   
   if (&this_ptr->position != position) {
     (this_ptr->position).x = position->x;
@@ -37,6 +36,6 @@ core_fire_cpp_CSmokeParticle_init_FUN_004bf2f0
   fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.95,1.05);
   this_ptr->active = 1;
   this_ptr->vertical_accel = fVar2;
-  this_ptr->alpha_value = in_stack_00000018;
+  this_ptr->alpha_value = alpha_value;
   return;
 }

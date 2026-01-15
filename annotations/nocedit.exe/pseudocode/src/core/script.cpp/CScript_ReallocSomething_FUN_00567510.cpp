@@ -17,7 +17,7 @@ void core_script_cpp_CScript_ReallocSomething_FUN_00567510(void)
   uint *puVar3;
   byte bVar4;
   int in_stack_00000004;
-  uint *in_stack_00000010;
+  uint *in_stack_00000008;
   
   bVar4 = 0;
   pvVar1 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
@@ -33,8 +33,8 @@ void core_script_cpp_CScript_ReallocSomething_FUN_00567510(void)
   puVar3 = (uint *)
            (*(int *)(in_stack_00000004 + 0x2c) + *(int *)(in_stack_00000004 + 0x28) * 0x114);
   for (iVar2 = 0x45; iVar2 != 0; iVar2 = iVar2 + -1) {
-    *puVar3 = *in_stack_00000010;
-    in_stack_00000010 = in_stack_00000010 + (uint)bVar4 * -2 + 1;
+    *puVar3 = *in_stack_00000008;
+    in_stack_00000008 = in_stack_00000008 + (uint)bVar4 * -2 + 1;
     puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
   }
   *(int *)(in_stack_00000004 + 0x28) = *(int *)(in_stack_00000004 + 0x28) + 1;

@@ -18,7 +18,6 @@ CDemonActor * core_hero_cpp_FUN_004f3960(void)
   float fVar3;
   CDemonActor *pCVar4;
   int iVar5;
-  BADSPACEBASE *in_ESP;
   int iVar6;
   int iVar7;
   int in_stack_00000004;

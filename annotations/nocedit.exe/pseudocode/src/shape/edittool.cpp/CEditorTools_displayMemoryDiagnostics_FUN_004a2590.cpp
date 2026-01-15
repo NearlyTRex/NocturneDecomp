@@ -14,7 +14,6 @@ shape_edittool_cpp_CEditorTools_displayMemoryDiagnostics_FUN_004a2590
   char cVar1;
   int iVar2;
   int iVar3;
-  BADSPACEBASE *in_ESP;
   uint uVar4;
   char *pcVar5;
   int iVar6;

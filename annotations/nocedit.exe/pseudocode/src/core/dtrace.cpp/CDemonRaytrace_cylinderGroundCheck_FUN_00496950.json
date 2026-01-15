@@ -1,18 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 221,
-    "complexity_score": 484,
+    "complexity_score": 474,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
     "pseudocode_lines": 119,
     "suspect_count": 33,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "extra_output",
       "lea_esp_stack_addr",
-      "register_param",
       "suspect_float",
       "unaffected_reg"
     ],
@@ -325,42 +323,42 @@
       "description": "Unaffected register variable",
       "line": 12,
       "match": "unaff_EBX",
-      "text": "uint *unaff_EBX;",
+      "text": "CVector3f *unaff_EBX;",
       "type": "unaffected_reg"
     },
     {
-      "description": "Ghidra failed to resolve stack frame",
+      "description": "Unaffected register variable",
       "line": 14,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 14,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
+      "match": "unaff_ESI",
+      "text": "float *unaff_ESI;",
+      "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 15,
-      "match": "unaff_ESI",
-      "text": "float *unaff_ESI;",
+      "line": 16,
+      "match": "unaff_EDI",
+      "text": "float unaff_EDI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Likely misinterpreted integer as float",
       "line": 56,
       "match": "6.742069e-39",
-      "text": "CStack_6c.y = 6.742069e-39;",
+      "text": "CStack_70.z = 6.742069e-39;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
       "line": 59,
       "match": "6.742079e-39",
-      "text": "CStack_6c.x = 6.742079e-39;",
+      "text": "CStack_70.y = 6.742079e-39;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 63,
+      "match": "6.742122e-39",
+      "text": "CStack_70.x = 6.742122e-39;",
       "type": "suspect_float"
     },
     {
@@ -380,43 +378,43 @@
     {
       "description": "Unaffected register variable",
       "line": 87,
-      "match": "unaff_ESI",
-      "text": "(this_ptr_00,&local_60,(float)unaff_ESI,&local_50,&CStack_6c,",
+      "match": "unaff_EDI",
+      "text": "(this_ptr_00,&local_64,unaff_EDI,&local_54,&CStack_70,",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
       "line": 100,
       "match": "unaff_EBX",
-      "text": "if ((unaff_EBX != (uint *)0x0) && (&uStack_70 != unaff_EBX)) {",
+      "text": "if ((unaff_EBX != (CVector3f *)0x0) && (&CStack_70 != unaff_EBX)) {",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
       "line": 100,
       "match": "unaff_EBX",
-      "text": "if ((unaff_EBX != (uint *)0x0) && (&uStack_70 != unaff_EBX)) {",
+      "text": "if ((unaff_EBX != (CVector3f *)0x0) && (&CStack_70 != unaff_EBX)) {",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
       "line": 101,
       "match": "unaff_EBX",
-      "text": "*unaff_EBX = uStack_70;",
+      "text": "unaff_EBX->x = CStack_70.x;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
       "line": 102,
       "match": "unaff_EBX",
-      "text": "unaff_EBX[1] = CStack_6c.x;",
+      "text": "unaff_EBX->y = CStack_70.y;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
       "line": 103,
       "match": "unaff_EBX",
-      "text": "unaff_EBX[2] = CStack_6c.y;",
+      "text": "unaff_EBX->z = CStack_70.z;",
       "type": "unaffected_reg"
     },
     {
@@ -430,7 +428,7 @@
       "description": "Unaffected register variable",
       "line": 106,
       "match": "unaff_ESI",
-      "text": "*unaff_ESI = local_50.z;",
+      "text": "*unaff_ESI = local_48;",
       "type": "unaffected_reg"
     },
     {
@@ -458,28 +456,28 @@
       "description": "Unaffected register variable",
       "line": 116,
       "match": "unaff_EBX",
-      "text": "if (unaff_EBX != (uint *)0x0) {",
+      "text": "if (unaff_EBX != (CVector3f *)0x0) {",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
       "line": 117,
       "match": "unaff_EBX",
-      "text": "unaff_EBX[1] = 0x3f800000;",
+      "text": "unaff_EBX->y = 1.0;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
       "line": 118,
       "match": "unaff_EBX",
-      "text": "unaff_EBX[2] = 0;",
+      "text": "unaff_EBX->z = 0.0;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
       "line": 119,
       "match": "unaff_EBX",
-      "text": "*unaff_EBX = 0;",
+      "text": "unaff_EBX->x = 0.0;",
       "type": "unaffected_reg"
     },
     {

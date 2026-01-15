@@ -13,20 +13,18 @@ engine_pod_cpp_CPod_locateFile_FUN_005512f0
 {
   int iVar1;
   int iVar2;
-  BADSPACEBASE *in_ESP;
   CPod *pCVar3;
-  int *in_stack_00000018;
-  char acStack_220 [528];
+  char local_224 [532];
   
   iVar2 = 0;
-  engine_dosio_c_getRelativeFilePath_FUN_004816c0(&stack0xfffffddc,base_path,filename);
+  engine_dosio_c_getRelativeFilePath_FUN_004816c0(local_224,base_path,filename);
   pCVar3 = this_ptr;
   if (0 < this_ptr->pod_file_count) {
     do {
-      iVar1 = engine_pod_cpp_CPodFile_findFileIndex_FUN_00550140(pCVar3->pod_files[0],acStack_220);
+      iVar1 = engine_pod_cpp_CPodFile_findFileIndex_FUN_00550140(pCVar3->pod_files[0],local_224);
       if (-1 < iVar1) {
-        if (in_stack_00000018 != (int *)0x0) {
-          *in_stack_00000018 = iVar1;
+        if (file_index_out != (int *)0x0) {
+          *file_index_out = iVar1;
         }
         return this_ptr->pod_files[iVar2];
       }

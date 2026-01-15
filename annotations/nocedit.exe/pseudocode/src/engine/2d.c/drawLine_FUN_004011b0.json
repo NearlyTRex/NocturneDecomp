@@ -1,17 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 110,
-    "complexity_score": 126,
+    "complexity_score": 83,
     "cross_reference_count": 15,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 56,
-    "suspect_count": 6,
+    "pseudocode_lines": 58,
+    "suspect_count": 2,
     "suspect_types": [
-      "call_esp_preserve",
-      "unaffected_reg"
+      "call_esp_preserve"
     ],
-    "total_lines": 166
+    "total_lines": 168
   },
   "cross_references": [
     {
@@ -222,34 +221,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 5,
-      "match": "unaff_EBP",
-      "text": "int unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 39,
-      "match": "unaff_EBP",
-      "text": "iVar2 = iVar2 + unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 49,
-      "match": "unaff_EBP",
-      "text": "iVar2 = iVar2 - unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 55,
-      "match": "unaff_EBP",
-      "text": "} while (local_18 <= unaff_EBP);",
-      "type": "unaffected_reg"
-    },
     {
       "add_esp_value": 8,
       "call_address": "00401206",

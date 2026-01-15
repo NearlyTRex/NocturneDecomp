@@ -13,19 +13,21 @@ core_dcube_cpp_CDemonCube_loadGeometryFromTriangleList_FUN_004570a0
 
 {
   char *pcVar1;
-  float fVar2;
-  int iVar3;
-  CVector3f *pCVar4;
+  uint uVar2;
+  CVector3f *pCVar3;
+  uint *puVar4;
   int iVar5;
   int iVar6;
-  BADSPACEBASE *in_ESP;
   uint *puVar7;
   int iVar8;
   int iVar9;
   SVoxelGrid *pSVar10;
   byte bVar11;
-  byte *in_stack_0000002c;
-  uchar *in_stack_00000030;
+  char local_120 [256];
+  uchar *local_20;
+  int local_1c;
+  int local_18;
+  int local_14;
   
   bVar11 = 0;
   if (&this_ptr->min_bounds != min_bounds) {
@@ -43,29 +45,31 @@ core_dcube_cpp_CDemonCube_loadGeometryFromTriangleList_FUN_004570a0
     g_PolygonCount = triangle_count;
     if ((20000 < g_VertexCount) || (20000 < triangle_count)) {
       crt_stdio_c_sprintf_FUN_005fdbd0
-                (&stack0xfffffee0,"Too many! %d, %d",g_VertexCount,triangle_count);
+                (local_120,"Too many! %d, %d",g_VertexCount,triangle_count);
       g_CurrentFilename = "..\\core\\dcube.cpp";
       g_CurrentLineNumber = 0x716;
-      core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xfffffee4);
+      core_main_c_displayErrorAndQuit_FUN_00506f10(local_120);
     }
     iVar6 = 0;
-    if (0 < (int)max_bounds) {
+    if (0 < triangle_count) {
       iVar9 = 0;
-      pCVar4 = min_bounds + 1;
+      puVar4 = (uint *)((int)triangle_data + 0xc);
       iVar8 = 0;
       iVar5 = 0x14;
       do {
-        puVar7 = (uint *)((int)min_bounds + iVar6 * 0x38);
+        puVar7 = (uint *)((int)triangle_data + iVar6 * 0x38);
         *(uint *)((int)&g_LoadedVertices[0].vertex.x + iVar9) = *puVar7;
         *(uint *)((int)&g_LoadedVertices[0].vertex.y + iVar9) = puVar7[1];
         *(uint *)((int)&g_LoadedVertices[0].vertex.z + iVar9) = puVar7[2];
-        iVar3 = iVar6 * 3;
-        *(float *)((int)&g_LoadedVertices[0].vertex.x + iVar5) = pCVar4->x;
-        *(float *)((int)&g_LoadedVertices[0].vertex.y + iVar5) = pCVar4->y;
-        *(float *)((int)&g_LoadedVertices[0].vertex.z + iVar5) = pCVar4->z;
-        *(float *)((int)&g_LoadedVertices[1].vertex.x + iVar5) = pCVar4[1].x;
-        *(float *)((int)&g_LoadedVertices[1].vertex.y + iVar5) = pCVar4[1].y;
-        fVar2 = pCVar4[1].z;
+        local_1c = iVar6 * 3;
+        *(uint *)((int)&g_LoadedVertices[0].vertex.x + iVar5) = *puVar4;
+        *(uint *)((int)&g_LoadedVertices[0].vertex.y + iVar5) = puVar4[1];
+        local_18 = local_1c + 1;
+        *(uint *)((int)&g_LoadedVertices[0].vertex.z + iVar5) = puVar4[2];
+        *(uint *)((int)&g_LoadedVertices[1].vertex.x + iVar5) = puVar4[3];
+        *(uint *)((int)&g_LoadedVertices[1].vertex.y + iVar5) = puVar4[4];
+        local_14 = local_1c + 2;
+        uVar2 = puVar4[5];
         g_ModelPolygonData[0].texture_name[iVar8] = '\0';
         *(uint *)((int)g_ModelPolygonData[0].vertex_indices + iVar8 + -0x14) = 3;
         pcVar1 = g_ModelPolygonData[0].texture_name + iVar8 + -4;
@@ -73,24 +77,24 @@ core_dcube_cpp_CDemonCube_loadGeometryFromTriangleList_FUN_004570a0
         pcVar1[1] = '\0';
         pcVar1[2] = '\0';
         pcVar1[3] = '\0';
-        *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar8) = iVar3;
-        *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar8 + 4) = iVar3 + 1;
-        *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar8 + 8) = iVar3 + 2;
+        *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar8) = local_1c;
+        *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar8 + 4) = local_18;
+        *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar8 + 8) = local_14;
         *(uint *)((int)g_ModelPolygonData[0].uv_u + iVar8) = 0;
         *(uint *)((int)g_ModelPolygonData[0].uv_v + iVar8) = 0;
         *(uint *)((int)g_ModelPolygonData[0].uv_u + iVar8 + 4) = 0;
-        pCVar4 = (CVector3f *)&pCVar4[4].z;
+        puVar4 = puVar4 + 0xe;
         *(uint *)((int)g_ModelPolygonData[0].uv_v + iVar8 + 4) = 0;
         iVar9 = iVar9 + 0x3c;
         *(uint *)((int)g_ModelPolygonData[0].uv_u + iVar8 + 8) = 0;
         iVar6 = iVar6 + 1;
         *(uint *)((int)g_ModelPolygonData[0].uv_v + iVar8 + 8) = 0;
-        *(float *)((int)&g_LoadedVertices[1].vertex.z + iVar5) = fVar2;
+        *(uint *)((int)&g_LoadedVertices[1].vertex.z + iVar5) = uVar2;
         *(uint *)((int)g_ModelPolygonData[0].uv_v + iVar8 + 0x40) = 0;
         g_ModelPolygonData[0].lightmap_name[iVar8] = '\0';
         iVar8 = iVar8 + 0x184;
         iVar5 = iVar5 + 0x3c;
-      } while (iVar6 < (int)max_bounds);
+      } while (iVar6 < triangle_count);
     }
     shape_design_c_calculateVertexNormals_FUN_0045be40();
     shape_design_c_vertexReducer_FUN_00467850(0.01,-1.0,-1);
@@ -123,29 +127,30 @@ core_dcube_cpp_CDemonCube_loadGeometryFromTriangleList_FUN_004570a0
     if (0 < this_ptr->triangle_count) {
       iVar8 = 0;
       iVar5 = 0;
+      local_20 = ground_types;
       do {
-        pCVar4 = this_ptr->vertex_buffer;
+        pCVar3 = this_ptr->vertex_buffer;
         core_dcube_cpp_CDemonCubeTriangle_ctor_FUN_00455430
                   ((CDemonCubeTriangle *)((int)this_ptr->triangle_buffer->vertices + iVar8),
-                   pCVar4 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar5),
-                   pCVar4 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar5 + 4),
-                   pCVar4 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar5 + 8));
+                   pCVar3 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar5),
+                   pCVar3 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar5 + 4),
+                   pCVar3 + *(int *)((int)g_ModelPolygonData[0].vertex_indices + iVar5 + 8));
         iVar5 = iVar5 + 0x184;
         iVar8 = iVar8 + 0x20;
-        *(byte *)((int)this_ptr->ground_type_memory + iVar6) = *in_stack_0000002c;
+        *(uchar *)((int)this_ptr->ground_type_memory + iVar6) = *local_20;
         iVar6 = iVar6 + 1;
-        in_stack_0000002c = in_stack_0000002c + 1;
+        local_20 = local_20 + 1;
       } while (iVar6 < this_ptr->triangle_count);
     }
     pSVar10 = this_ptr->voxel_buffer1;
     for (iVar6 = 0x10; iVar6 != 0; iVar6 = iVar6 + -1) {
-      *(uint *)pSVar10->voxels[0] = *(uint *)in_stack_00000030;
-      in_stack_00000030 = in_stack_00000030 + ((uint)bVar11 * -2 + 1) * 4;
+      *(uint *)pSVar10->voxels[0] = *voxel_data;
+      voxel_data = voxel_data + (uint)bVar11 * -2 + 1;
       pSVar10 = (SVoxelGrid *)((int)pSVar10 + ((uint)bVar11 * -2 + 1) * 4);
     }
     for (iVar6 = 0; iVar6 != 0; iVar6 = iVar6 + -1) {
-      pSVar10->voxels[0][0] = *in_stack_00000030;
-      in_stack_00000030 = in_stack_00000030 + (uint)bVar11 * -2 + 1;
+      pSVar10->voxels[0][0] = (uchar)*voxel_data;
+      voxel_data = (uint *)((int)voxel_data + (uint)bVar11 * -2 + 1);
       pSVar10 = (SVoxelGrid *)((int)pSVar10 + (uint)bVar11 * -2 + 1);
     }
   }

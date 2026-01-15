@@ -14,10 +14,8 @@ void __cdecl core_glass_cpp_CGlass_renderBackground_FUN_004e9e90(CGlass *this_pt
   CVector3f *pCVar1;
   char *pcVar2;
   CGlass *pCVar3;
-  BADSPACEBASE *in_ESP;
   int iVar4;
   SMRGLHeaderPrimitive *polygon_info;
-  float fStack_18;
   SMRGLTextureBasic *texture;
   
   if (this_ptr->background_flag == 0) {
@@ -30,7 +28,7 @@ void __cdecl core_glass_cpp_CGlass_renderBackground_FUN_004e9e90(CGlass *this_pt
     this_ptr->field18_0xb3c = 0;
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base);
     this_ptr_01 = (*((this_ptr->base).vtable)->getBoundingBox)
-                            (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe4);
+                            (&this_ptr->base,(CBoundingBox3D *)&stack0xffffffe0);
     core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_01);
     if (this_ptr->shattered == 0) {
       texture = &this_ptr->glass_texture;
@@ -53,7 +51,6 @@ void __cdecl core_glass_cpp_CGlass_renderBackground_FUN_004e9e90(CGlass *this_pt
       } while (iVar4 < this_ptr->broken_vertex_count);
     }
     iVar4 = 0;
-    fStack_18 = 7.220373e-39;
     core_set_cpp_CDemonSet_rotateVertices_FUN_0056e7c0
               (g_CDemonSetPtr,this_ptr->broken_vertex_count,(int *)this_ptr->field12_0x4b8);
     if (0 < this_ptr->broken_polygon_count) {
@@ -67,7 +64,6 @@ void __cdecl core_glass_cpp_CGlass_renderBackground_FUN_004e9e90(CGlass *this_pt
         pCVar3->broken_quads[0].base.surface_normal.C = 0;
         pCVar3->broken_quads[0].base.surface_normal.D = 0;
         pCVar3 = (CGlass *)((pCVar3->base).orient_matrix.m + 1);
-        fStack_18 = 7.220487e-39;
         engine_drender_cpp_CDemonRenderer_renderWireframeVariant_FUN_0048aeb0
                   (this_ptr_00,polygon_info,0xc1);
         polygon_info = polygon_info + 3;

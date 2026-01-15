@@ -1,19 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 108,
+    "complexity_score": 82,
     "cross_reference_count": 24,
     "function_call_count": 4,
     "global_count": 6,
-    "pseudocode_lines": 18,
-    "suspect_count": 7,
+    "pseudocode_lines": 17,
+    "suspect_count": 5,
     "suspect_types": [
       "call_esp_preserve",
       "format_string_mismatch",
-      "stack_param",
       "variadic_preserve"
     ],
-    "total_lines": 79
+    "total_lines": 78
   },
   "cross_references": [
     {
@@ -305,22 +304,8 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 6,
-      "match": "in_stack_0000000c",
-      "text": "char *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_0000000c",
-      "text": "core_actor_cpp_serializeDescription_FUN_0040b290(\"3D vector\",in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
       "call_address": "0040b364",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -334,7 +319,7 @@
     },
     {
       "call_address": "0040b3c7",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -352,7 +337,7 @@
       "expected_args": 3,
       "format_string": "%f,%f,%f",
       "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 9,
+      "line_number": 8,
       "match": "iVar1 = crt_stdio_c_fscanf_FUN_005fe7c0(g_ActorDataFile,\"%f,%f,%f\");",
       "text": "Format string expects 3 args but got 0",
       "type": "format_string_mismatch"

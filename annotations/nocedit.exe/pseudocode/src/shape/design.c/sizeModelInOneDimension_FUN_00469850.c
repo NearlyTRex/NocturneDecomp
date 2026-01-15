@@ -12,9 +12,9 @@ void __cdecl shape_design_c_sizeModelInOneDimension_FUN_00469850(void)
   char cVar1;
   uint uVar2;
   int iVar3;
-  BADSPACEBASE *in_ESP;
   char *pcVar4;
   byte bVar5;
+  char local_f4 [80];
   char local_a4 [80];
   int local_54;
   int local_50;
@@ -68,8 +68,8 @@ void __cdecl shape_design_c_sizeModelInOneDimension_FUN_00469850(void)
   uVar2 = wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
   local_48 = crt_ctype_c_toupper_FUN_005ff9e0(uVar2 & 0xff);
   if ((0x57 < (int)local_48) && ((int)local_48 < 0x5b)) {
-    crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff0c,"Enter %c distance in feet (,min,max for user-defined min/max points) : ",local_48);
-    engine_2d_c_getInputWithPrompt_FUN_004032c0(local_a4,0x14,0,0x16,&stack0xffffff0c);
+    crt_stdio_c_sprintf_FUN_005fdbd0(local_f4,"Enter %c distance in feet (,min,max for user-defined min/max points) : ",local_48);
+    engine_2d_c_getInputWithPrompt_FUN_004032c0(local_a4,0x14,0,0x16,local_f4);
     iVar3 = -1;
     pcVar4 = local_a4;
     do {

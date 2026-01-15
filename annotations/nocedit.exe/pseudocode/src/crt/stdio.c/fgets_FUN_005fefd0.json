@@ -1,17 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 71,
-    "complexity_score": 150,
+    "complexity_score": 85,
     "cross_reference_count": 32,
     "function_call_count": 2,
     "global_count": 2,
     "pseudocode_lines": 30,
-    "suspect_count": 10,
+    "suspect_count": 4,
     "suspect_types": [
       "call_esp_preserve",
       "callind_preserve",
-      "special_crt_function",
-      "unaffected_reg"
+      "special_crt_function"
     ],
     "total_lines": 101
   },
@@ -308,48 +307,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 8,
-      "match": "unaff_EDI",
-      "text": "int unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 18,
-      "match": "unaff_EDI",
-      "text": "unaff_EDI = crt_stdio_c_fgetc_FUN_005fe840(stream);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 19,
-      "match": "unaff_EDI",
-      "text": "if (unaff_EDI == -1) break;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 21,
-      "match": "unaff_EDI",
-      "text": "*pcVar2 = (char)unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 23,
-      "match": "unaff_EDI",
-      "text": "} while ((char)unaff_EDI != '\\n');",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 24,
-      "match": "unaff_EDI",
-      "text": "if ((unaff_EDI == -1) && ((pcVar3 == str || ((stream->_flag & 0x20) != 0)))) {",
-      "type": "unaffected_reg"
-    },
     {
       "add_esp_value": 4,
       "call_target_type": "mem_absolute",

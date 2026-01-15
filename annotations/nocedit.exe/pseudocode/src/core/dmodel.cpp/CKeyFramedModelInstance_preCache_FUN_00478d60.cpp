@@ -11,9 +11,8 @@ core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(CKeyFramedModelIns
 
 {
   CKeyFramedModel *pCVar1;
-  int in_stack_00000008;
   
   pCVar1 = core_dmodel_cpp_loadModel_FUN_00478c00(this_ptr->model_name);
-  *(CKeyFramedModel **)(in_stack_00000008 + 0x178) = pCVar1;
+  this_ptr->model_ptr = pCVar1;
   return pCVar1;
 }

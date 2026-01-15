@@ -1,27 +1,22 @@
 {
   "complexity": {
     "assembly_lines": 732,
-    "complexity_score": 828,
+    "complexity_score": 737,
     "cross_reference_count": 1,
     "function_call_count": 17,
     "global_count": 40,
-    "pseudocode_lines": 298,
-    "suspect_count": 47,
+    "pseudocode_lines": 282,
+    "suspect_count": 42,
     "suspect_types": [
-      "badspacebase",
       "extra_output",
       "format_string_mismatch",
       "param_count_too_few",
-      "register_param",
       "stack_param",
       "stack_ref",
       "sub_artifact",
-      "suspect_float",
-      "unaffected_reg",
-      "unknown_field",
       "variadic_preserve_ebp"
     ],
-    "total_lines": 1030
+    "total_lines": 1014
   },
   "cross_references": [
     {
@@ -1244,266 +1239,252 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 7,
+      "line": 6,
       "match": "extraout_EAX",
       "text": "int extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 8,
+      "line": 7,
       "match": "extraout_EAX_00",
       "text": "int extraout_EAX_00;",
       "type": "extra_output"
     },
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 12,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 12,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 13,
-      "match": "unaff_EBP",
-      "text": "int unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 16,
       "match": "in_stack_00000004",
       "text": "CDemonSet *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 17,
       "match": "in_stack_00000008",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 56,
+      "line": 22,
+      "match": "in_stack_fffff75c",
+      "text": "float in_stack_fffff75c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 23,
+      "match": "in_stack_fffff760",
+      "text": "uint in_stack_fffff760;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_fffff764",
+      "text": "uint in_stack_fffff764;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_fffff768",
+      "text": "char **in_stack_fffff768;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 26,
+      "match": "in_stack_fffff76c",
+      "text": "CStrList_vtable *in_stack_fffff76c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 45,
       "match": "in_stack_00000004",
       "text": "pCStack_14 = in_stack_00000004->lights + in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 56,
+      "line": 45,
       "match": "in_stack_00000008",
       "text": "pCStack_14 = in_stack_00000004->lights + in_stack_00000008;",
       "type": "stack_param"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 71,
-      "match": "SUB84",
-      "text": "(acStack_150,\"A.  On time : %f\",SUB84 /* extract 2-byte value */((double)pCStack_14->on_time,0),",
-      "type": "sub_artifact"
+      "description": "Unresolved stack parameter",
+      "line": 195,
+      "match": "in_stack_fffff75c",
+      "text": "(&CStack_4f8,0,(uint)in_stack_fffff75c,in_stack_fffff760,in_stack_fffff764,",
+      "type": "stack_param"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 75,
-      "match": "SUB84",
-      "text": "(acStack_150,\"B.  Total time : %f\",SUB84 /* extract 2-byte value */((double)pCStack_14->cycle_time,0),",
-      "type": "sub_artifact"
+      "description": "Unresolved stack parameter",
+      "line": 195,
+      "match": "in_stack_fffff760",
+      "text": "(&CStack_4f8,0,(uint)in_stack_fffff75c,in_stack_fffff760,in_stack_fffff764,",
+      "type": "stack_param"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 89,
-      "match": "unaff_EBP",
-      "text": "if (*(int *)(unaff_EBP + 0x17f4) == 0) {",
-      "type": "unaffected_reg"
+      "description": "Unresolved stack parameter",
+      "line": 195,
+      "match": "in_stack_fffff764",
+      "text": "(&CStack_4f8,0,(uint)in_stack_fffff75c,in_stack_fffff760,in_stack_fffff764,",
+      "type": "stack_param"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 99,
-      "match": "unaff_EBP",
-      "text": "SUB84 /* extract 2-byte value */((double)*(int *)(unaff_EBP + 0x17f8) * 0.00390625,0));",
-      "type": "unaffected_reg"
+      "description": "Unresolved stack parameter",
+      "line": 196,
+      "match": "in_stack_fffff768",
+      "text": "(uint)in_stack_fffff768,(uint)in_stack_fffff76c);",
+      "type": "stack_param"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 99,
-      "match": "SUB84",
-      "text": "SUB84 /* extract 2-byte value */((double)*(int *)(unaff_EBP + 0x17f8) * 0.00390625,0));",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 106,
-      "match": "._0_4_",
-      "text": "uVar13._0_4_ = 0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 107,
-      "match": "._4_4_",
-      "text": "uVar13._4_4_ = 0x57bef5;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 109,
-      "match": "._4_4_",
-      "text": "uVar15._4_4_ = (CStrList_vtable *)0x57bf19;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 110,
-      "match": "._0_4_",
-      "text": "uVar15._0_4_ = buffer;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 114,
-      "match": "SUB84",
-      "text": "iVar2 = SUB84 /* extract 2-byte value */(uVar13,4);",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 124,
-      "match": "SUB84",
-      "text": "SUB84 /* extract 2-byte value */((double)pCVar5->filter_durations[0],0),",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 129,
-      "match": "SUB84",
-      "text": "iVar2 = SUB84 /* extract 2-byte value */(uVar13,4);",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 137,
-      "match": "._4_4_",
-      "text": "uVar14._4_4_ = iVar2;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 138,
-      "match": "._0_4_",
-      "text": "uVar14._0_4_ = (int)g_CKeysPtr;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 139,
-      "match": "8.058612e-39",
-      "text": "fVar12 = 8.058612e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 214,
-      "match": "SUB84",
-      "text": "(&CStack_4f8,0,(uint)fVar12,(uint)uVar14,SUB84 /* extract 2-byte value */(uVar14,4),(uint)(char **)uVar15,",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 215,
-      "match": "SUB84",
-      "text": "(uint)SUB84 /* extract 2-byte value */(uVar15,4));",
-      "type": "sub_artifact"
+      "description": "Unresolved stack parameter",
+      "line": 196,
+      "match": "in_stack_fffff76c",
+      "text": "(uint)in_stack_fffff768,(uint)in_stack_fffff76c);",
+      "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 224,
+      "line": 205,
       "match": "&stack0xfffff760",
       "text": "shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff760);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 229,
+      "line": 210,
       "match": "&stack0xfffff760",
-      "text": "shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff760,*pacVar3);",
+      "text": "shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff760,*pacVar2);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 235,
+      "line": 216,
       "match": "&stack0xfffff760",
       "text": "((CPickList *)&stack0xfffff760,\"Select filter to edit\",-1,0);",
       "type": "stack_ref"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 226,
+      "match": "in_stack_fffff75c",
+      "text": "((CPickList *)&stack0xfffff760,0,(uint)in_stack_fffff75c,in_stack_fffff760,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 226,
+      "match": "in_stack_fffff760",
+      "text": "((CPickList *)&stack0xfffff760,0,(uint)in_stack_fffff75c,in_stack_fffff760,",
+      "type": "stack_param"
+    },
+    {
       "description": "Direct stack address reference",
-      "line": 245,
+      "line": 226,
       "match": "&stack0xfffff760",
-      "text": "((CPickList *)&stack0xfffff760,0,(uint)fVar12,(uint)uVar14,SUB84 /* extract 2-byte value */(uVar14,4),",
+      "text": "((CPickList *)&stack0xfffff760,0,(uint)in_stack_fffff75c,in_stack_fffff760,",
       "type": "stack_ref"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 245,
-      "match": "SUB84",
-      "text": "((CPickList *)&stack0xfffff760,0,(uint)fVar12,(uint)uVar14,SUB84 /* extract 2-byte value */(uVar14,4),",
-      "type": "sub_artifact"
+      "description": "Unresolved stack parameter",
+      "line": 227,
+      "match": "in_stack_fffff764",
+      "text": "in_stack_fffff764,(uint)in_stack_fffff768,(uint)in_stack_fffff76c);",
+      "type": "stack_param"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
+      "description": "Unresolved stack parameter",
+      "line": 227,
+      "match": "in_stack_fffff768",
+      "text": "in_stack_fffff764,(uint)in_stack_fffff768,(uint)in_stack_fffff76c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 227,
+      "match": "in_stack_fffff76c",
+      "text": "in_stack_fffff764,(uint)in_stack_fffff768,(uint)in_stack_fffff76c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 237,
+      "match": "in_stack_fffff75c",
+      "text": "in_stack_fffff75c = (float)(pCStack_14->filter_vel).x * (float)0.00390625;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 240,
+      "match": "&stack0xfffff75c",
+      "text": "(float *)&stack0xfffff75c,false,0.0,0.0,true);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 243,
+      "match": "in_stack_fffff75c",
+      "text": "((double)(in_stack_fffff75c * (float)256 +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
       "line": 246,
-      "match": "SUB84",
-      "text": "(uint)(char **)uVar15,(uint)SUB84 /* extract 2-byte value */(uVar15,4));",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 259,
-      "match": "&stack0xfffff75c",
-      "text": "(float *)&stack0xfffff75c,false,0.0,0.0,true);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 264,
       "match": "extraout_EAX",
-      "text": "*(int *)(extraout_EAX + 0x17f8) = (int)ROUND(dVar10);",
-      "type": "extra_output"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 271,
-      "match": "&stack0xfffff75c",
-      "text": "(float *)&stack0xfffff75c,false,0.0,0.0,true);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 276,
-      "match": "extraout_EAX_00",
-      "text": "*(int *)(extraout_EAX_00 + 0x17fc) = (int)ROUND(dVar10);",
+      "text": "*(int *)(extraout_EAX + 0x17f8) = (int)ROUND(dVar9);",
       "type": "extra_output"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 296,
+      "line": 250,
+      "match": "in_stack_fffff75c",
+      "text": "in_stack_fffff75c = (float)(pCStack_14->filter_vel).y * (float)0.00390625;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 253,
+      "match": "&stack0xfffff75c",
+      "text": "(float *)&stack0xfffff75c,false,0.0,0.0,true);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 256,
+      "match": "in_stack_fffff75c",
+      "text": "((double)(in_stack_fffff75c * (float)256 +",
+      "type": "stack_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 259,
+      "match": "extraout_EAX_00",
+      "text": "*(int *)(extraout_EAX_00 + 0x17fc) = (int)ROUND(dVar9);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Decompiler double/longlong extraction artifact",
+      "line": 277,
+      "match": "SUB81",
+      "text": "SUB81 /* extract 2-byte value */((ulonglong)uVar11 >> 0x20,0));",
+      "type": "sub_artifact"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 280,
       "match": "in_stack_00000004",
       "text": "core_set_cpp_CDemonSet_FUN_0056d2d0(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 297,
+      "line": 281,
       "match": "in_stack_00000004",
       "text": "core_set_cpp_CDemonSet_initScene_FUN_0056aa10(in_stack_00000004);",
       "type": "stack_param"
@@ -1577,45 +1558,12 @@
     },
     {
       "actual_args": 0,
-      "description": "Format \"I. Velocity Y : %f\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "I. Velocity Y : %f",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 101,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_144,\"I. Velocity Y : %f\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"J. Aspect (Y/X) : %f\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "J. Aspect (Y/X) : %f",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 103,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_13c,\"J. Aspect (Y/X) : %f\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"K. Intensity : %f\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "K. Intensity : %f",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 108,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0((char *)buffer,\"K. Intensity : %f\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
       "description": "Format \"Filter count = %d\" has 1 specifiers but 0 arguments after it",
       "expected_args": 1,
       "format_string": "Filter count = %d",
       "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 112,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_12c,\"Filter count = %d\");",
+      "line_number": 99,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_150,\"Filter count = %d\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
     }

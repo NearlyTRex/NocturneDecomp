@@ -11,7 +11,7 @@
       "call_esp_preserve",
       "callind_preserve",
       "special_crt_function",
-      "stack_param"
+      "unaffected_reg"
     ],
     "total_lines": 106
   },
@@ -151,18 +151,18 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unaffected register variable",
       "line": 8,
-      "match": "in_stack_00000010",
-      "text": "HANDLE in_stack_00000010;",
-      "type": "stack_param"
+      "match": "unaff_ESI",
+      "text": "HANDLE unaff_ESI;",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unaffected register variable",
       "line": 18,
-      "match": "in_stack_00000010",
-      "text": "BVar2 = (*CloseHandle)(in_stack_00000010);",
-      "type": "stack_param"
+      "match": "unaff_ESI",
+      "text": "BVar2 = (*CloseHandle)(unaff_ESI);",
+      "type": "unaffected_reg"
     },
     {
       "add_esp_value": 4,

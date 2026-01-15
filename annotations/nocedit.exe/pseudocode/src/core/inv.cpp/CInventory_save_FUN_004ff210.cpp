@@ -12,15 +12,13 @@ void __cdecl core_inv_cpp_CInventory_save_FUN_004ff210(CInventory *this_ptr,FILE
   int iVar1;
   CInventory *pCVar2;
   
-  crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%s{ // Inventory\n",g_PropertyNamePrefix);
+  crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%s{ // Inventory\n");
   core_actor_cpp_adjustIndentationLevel_FUN_0040aee0(1);
   this_ptr->save_version = 2;
-  crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%s// fileVersion\n",g_PropertyNamePrefix);
-  crt_stdio_c_fprintf_FUN_005fe6d0
-            (file_handle,"%s%d\n",g_PropertyNamePrefix,this_ptr->save_version);
-  crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%s// itemCount\n",g_PropertyNamePrefix);
-  crt_stdio_c_fprintf_FUN_005fe6d0
-            (file_handle,"%s%d\n",g_PropertyNamePrefix,this_ptr->item_count);
+  crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%s// fileVersion\n");
+  crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%s%d\n",g_PropertyNamePrefix);
+  crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%s// itemCount\n");
+  crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%s%d\n",g_PropertyNamePrefix);
   iVar1 = 0;
   pCVar2 = this_ptr;
   if (0 < this_ptr->item_count) {
@@ -30,10 +28,11 @@ void __cdecl core_inv_cpp_CInventory_save_FUN_004ff210(CInventory *this_ptr,FILE
       pCVar2 = (CInventory *)&pCVar2->owner;
     } while (iVar1 < this_ptr->item_count);
   }
-  crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%s// currentWeapon\n",this_ptr);
-  crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%s%d\n",file_handle);
+  crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%s// currentWeapon\n");
+  crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%s%d\n",g_PropertyNamePrefix);
   crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%s// battery strength\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%s%f\n");
+  crt_stdio_c_fprintf_FUN_005fe6d0
+            (file_handle,"%s%f\n",g_PropertyNamePrefix,(double)this_ptr->battery_charge);
   crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%s// actor name list\n");
   core_inv_cpp_CInventory_saveItems_FUN_004ff3b0(this_ptr,file_handle);
   iVar1 = 0;

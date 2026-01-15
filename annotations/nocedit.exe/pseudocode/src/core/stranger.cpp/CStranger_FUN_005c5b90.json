@@ -1,16 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 320,
-    "complexity_score": 697,
+    "complexity_score": 672,
     "cross_reference_count": 1,
     "function_call_count": 16,
     "global_count": 9,
     "pseudocode_lines": 117,
-    "suspect_count": 56,
+    "suspect_count": 54,
     "suspect_types": [
       "call_esp_preserve",
       "stack_param",
-      "unaffected_reg",
       "variadic_preserve"
     ],
     "total_lines": 437
@@ -234,13 +233,6 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 9,
-      "match": "unaff_ESI",
-      "text": "float unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Unresolved stack parameter",
       "line": 10,
       "match": "in_stack_00000004",
@@ -274,13 +266,6 @@
       "match": "in_stack_00000004",
       "text": "this_ptr = (CMotionController *)(in_stack_00000004 + 0x158);",
       "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 18,
-      "match": "unaff_ESI",
-      "text": "if ((float)0.99990000000000001 < fVar2 + unaff_ESI) {",
-      "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",

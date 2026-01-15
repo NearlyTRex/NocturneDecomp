@@ -15,7 +15,6 @@ CLightActor * __cdecl core_boxactor_cpp_CLightActor_dtor_FUN_004235f0(CLightActo
   void *ptr_00;
   uint unaff_EBX;
   uint unaff_retaddr;
-  byte in_stack_00000014;
   
   if ((d1 & 4) != 0) {
     ptr_00 = crt_memory_c_freeSingleInstance_FUN_005fe632(this_ptr,&g_CLightActorTypeInfo);
@@ -29,7 +28,7 @@ CLightActor * __cdecl core_boxactor_cpp_CLightActor_dtor_FUN_004235f0(CLightActo
   ptr = (CLightActor *)
         core_actor_cpp_CDemonActor_dtor_FUN_00408a30
                   ((CDemonActor *)(pCVar2[-2].scrape_points + 2),1);
-  if ((in_stack_00000014 & 2) == 0) {
+  if ((d1 & 2) == 0) {
     return ptr;
   }
   shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);

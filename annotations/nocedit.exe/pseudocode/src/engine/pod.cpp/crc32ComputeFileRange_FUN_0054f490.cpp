@@ -14,7 +14,6 @@ uint __cdecl engine_pod_cpp_crc32ComputeFileRange_FUN_0054f490(char *filename,in
   FILE *file;
   SIZE_T size;
   char *pcVar3;
-  FILE *unaff_ESI;
   uint current_crc;
   uint uVar4;
   
@@ -46,6 +45,6 @@ uint __cdecl engine_pod_cpp_crc32ComputeFileRange_FUN_0054f490(char *filename,in
       uVar4 = uVar4 + 1;
     } while (uVar4 < size);
   }
-  shape_memdbg_cpp_closeFile_FUN_0050f9b0(unaff_ESI,"..\\engine\\pod.cpp",0xfb);
+  shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\pod.cpp",0xfb);
   return current_crc;
 }

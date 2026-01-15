@@ -12,20 +12,19 @@
 void core_boxactor_cpp_FUN_004224f0(void)
 
 {
-  BADSPACEBASE *in_ESP;
   int in_stack_00000004;
-  CVector3f *in_stack_0000000c;
-  float local_c;
-  float local_8;
+  CVector3f *in_stack_00000008;
+  CVector3f local_10;
   
   *(uint *)(in_stack_00000004 + 0x318) = 0;
   core_boxactor_cpp_FUN_004218d0();
-  if (in_stack_0000000c == (CVector3f *)0x0) {
+  if (in_stack_00000008 == (CVector3f *)0x0) {
     return;
   }
-  local_8 = 0.0;
-  local_c = 9.424778;
+  local_10.z = 0.0;
+  local_10.y = 0.0;
+  local_10.x = 9.424778;
   core_box_cpp_CBox_setupVelocities_FUN_00420180
-            ((CBox *)(in_stack_00000004 + 0x394),in_stack_0000000c,(CVector3f *)&local_c);
+            ((CBox *)(in_stack_00000004 + 0x394),in_stack_00000008,&local_10);
   return;
 }

@@ -21,7 +21,6 @@ core_dmodel_cpp_CKeyFramedModel_snapRotationToAxis_FUN_0047c5f0
   int extraout_EBX;
   int extraout_EBX_00;
   int extraout_EBX_01;
-  BADSPACEBASE *in_ESP;
   int *piVar6;
   int *piVar7;
   byte bVar8;

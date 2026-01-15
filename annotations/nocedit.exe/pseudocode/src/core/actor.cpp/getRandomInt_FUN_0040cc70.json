@@ -1,16 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 41,
+    "complexity_score": 22,
     "cross_reference_count": 36,
     "function_call_count": 3,
     "global_count": 6,
-    "pseudocode_lines": 26,
-    "suspect_count": 1,
-    "suspect_types": [
-      "concat_artifact"
-    ],
-    "total_lines": 94
+    "pseudocode_lines": 22,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 90
   },
   "cross_references": [
     {
@@ -413,13 +411,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 22,
-      "match": "CONCAT44",
-      "text": "((double)((float)min_value + fVar1 * (float)(double)CONCAT44 /* combine 2-byte values */(local_18,uStack_1c)",
-      "type": "concat_artifact"
-    }
-  ]
+  "suspects": []
 }

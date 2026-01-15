@@ -1,17 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 137,
+    "complexity_score": 164,
     "cross_reference_count": 73,
     "function_call_count": 7,
     "global_count": 2,
-    "pseudocode_lines": 27,
-    "suspect_count": 10,
+    "pseudocode_lines": 29,
+    "suspect_count": 12,
     "suspect_types": [
       "call_esp_preserve",
-      "negative_offset"
+      "negative_offset",
+      "unaffected_reg"
     ],
-    "total_lines": 91
+    "total_lines": 93
   },
   "cross_references": [
     {
@@ -600,18 +601,32 @@
   },
   "suspects": [
     {
+      "description": "Unaffected register variable",
+      "line": 11,
+      "match": "unaff_EBX",
+      "text": "uint unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 22,
+      "line": 23,
       "match": "pCVar1[-1].",
       "text": "((CEdScrollBar *)(pCVar1[-1].button_text + 0x90));",
       "type": "negative_offset"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 24,
+      "line": 25,
       "match": "pCVar2[-9].",
-      "text": "shape_edittool_cpp_CStrList_dtor_FUN_004a2a40((CStrList *)&pCVar2[-9].thumb_end,1,d2);",
+      "text": "shape_edittool_cpp_CStrList_dtor_FUN_004a2a40((CStrList *)&pCVar2[-9].thumb_end,1,unaff_EBX)",
       "type": "negative_offset"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 25,
+      "match": "unaff_EBX",
+      "text": "shape_edittool_cpp_CStrList_dtor_FUN_004a2a40((CStrList *)&pCVar2[-9].thumb_end,1,unaff_EBX)",
+      "type": "unaffected_reg"
     },
     {
       "add_esp_value": 4,

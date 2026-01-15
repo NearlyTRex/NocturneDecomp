@@ -1,17 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 147,
+    "complexity_score": 69,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 1,
-    "pseudocode_lines": 27,
-    "suspect_count": 11,
+    "pseudocode_lines": 24,
+    "suspect_count": 4,
     "suspect_types": [
-      "call_esp_preserve",
-      "stack_param"
+      "call_esp_preserve"
     ],
-    "total_lines": 94
+    "total_lines": 91
   },
   "cross_references": [],
   "function": {
@@ -141,55 +140,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_0000001c",
-      "text": "int in_stack_0000001c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000020",
-      "text": "int in_stack_00000020;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000024",
-      "text": "int in_stack_00000024;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_00000020",
-      "text": "cockpit_ckptutil_c_applyActPalette_FUN_004319b0(filename,pvVar1,size,in_stack_00000020);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 24,
-      "match": "in_stack_0000001c",
-      "text": "if (in_stack_0000001c != 0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_0000001c",
-      "text": "(pvVar1,filename,in_stack_0000001c,(int)buffer,(void *)transparent_color_index,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_00000024",
-      "text": "in_stack_00000024);",
-      "type": "stack_param"
-    },
     {
       "add_esp_value": 12,
       "call_address": "004317cc",

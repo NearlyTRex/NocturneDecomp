@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 55,
-    "complexity_score": 103,
+    "complexity_score": 77,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 10,
-    "pseudocode_lines": 18,
-    "suspect_count": 7,
+    "pseudocode_lines": 17,
+    "suspect_count": 5,
     "suspect_types": [
       "call_esp_preserve",
-      "stack_param",
       "variadic_preserve"
     ],
-    "total_lines": 73
+    "total_lines": 72
   },
   "cross_references": [],
   "function": {
@@ -170,22 +169,8 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 7,
-      "match": "in_stack_00000010",
-      "text": "CLodMesh *in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00000010",
-      "text": "shape_meshlod_cpp_CLodMesh_parseS3DFile_FUN_0051aa60(in_stack_00000010,file_handle);",
-      "type": "stack_param"
-    },
-    {
       "call_address": "0051aa4e",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

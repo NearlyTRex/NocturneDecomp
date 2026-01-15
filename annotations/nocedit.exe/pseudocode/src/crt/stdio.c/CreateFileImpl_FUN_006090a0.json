@@ -1,25 +1,23 @@
 {
   "complexity": {
     "assembly_lines": 258,
-    "complexity_score": 425,
+    "complexity_score": 394,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 8,
-    "pseudocode_lines": 115,
-    "suspect_count": 26,
+    "pseudocode_lines": 114,
+    "suspect_count": 24,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "callind_preserve",
       "lea_esp_stack_addr",
       "param_count_too_few",
-      "register_param",
       "special_crt_function",
       "stack_ref",
       "unaffected_reg",
       "unresolved_funcptr"
     ],
-    "total_lines": 373
+    "total_lines": 372
   },
   "cross_references": [
     {
@@ -287,57 +285,43 @@
       "type": "unaffected_reg"
     },
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 14,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 14,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 32,
+      "line": 31,
       "match": "code *",
       "text": "if ((DAT_0068528c == (code *)0x0) ||",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unaffected register variable",
-      "line": 54,
+      "line": 53,
       "match": "unaff_EBX",
       "text": "unaff_EBX = 4;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 57,
+      "line": 56,
       "match": "unaff_EBX",
       "text": "unaff_EBX = 2;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 61,
+      "line": 60,
       "match": "unaff_EBX",
       "text": "unaff_EBX = 1;",
       "type": "unaffected_reg"
     },
     {
       "description": "Direct stack address reference",
-      "line": 67,
+      "line": 66,
       "match": "&stack0xffffffd8",
       "text": "(LPSECURITY_ATTRIBUTES)&stack0xffffffd8,dwCreationDisposition,",
       "type": "stack_ref"
     },
     {
       "description": "Unaffected register variable",
-      "line": 73,
+      "line": 72,
       "match": "unaff_EBX",
       "text": "unaff_EBX,dwFlagsAndAttributes,(HANDLE)0x0);",
       "type": "unaffected_reg"

@@ -11,7 +11,6 @@ engine_drender_cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0048c420
           (CDemonRenderer *this_ptr,CVector3f *input_point)
 
 {
-  BADSPACEBASE *in_ESP;
   CQuaternion4f CStack_10;
   
   CStack_10.x = input_point->x;

@@ -11,7 +11,6 @@ void shape_design_c_showPolygonDetailsList_FUN_0045d9c0(void)
 {
   char cVar1;
   int iVar2;
-  BADSPACEBASE *in_ESP;
   char *pcVar3;
   char *pcVar4;
   char *pcVar5;
@@ -29,17 +28,9 @@ void shape_design_c_showPolygonDetailsList_FUN_0045d9c0(void)
   local_1c = 0;
   do {
     if (g_PolygonCount <= local_1c) {
-      local_11c[4] = -0x2a;
-      local_11c[5] = -0x25;
-      local_11c[6] = 'E';
-      local_11c[7] = '\0';
       engine_2d_c_clearInputAndWait_FUN_00403260();
       return;
     }
-    local_11c[4] = '\x06';
-    local_11c[5] = -0x26;
-    local_11c[6] = 'E';
-    local_11c[7] = '\0';
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
     local_20 = 0;
     for (local_18 = local_1c; local_18 < g_WindowHeight / 0xb + local_1c; local_18 = local_18 + 1) {
@@ -125,10 +116,6 @@ void shape_design_c_showPolygonDetailsList_FUN_0045d9c0(void)
       }
     }
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-    local_11c[0] = -0x34;
-    local_11c[1] = -0x25;
-    local_11c[2] = 'E';
-    local_11c[3] = '\0';
     wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
     local_1c = local_1c + g_WindowHeight / 0xb;
   } while( true );

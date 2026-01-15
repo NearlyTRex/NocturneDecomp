@@ -11,12 +11,12 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042c920(CCharacter *this_ptr)
 {
   CMotionList *this_ptr_00;
   int iVar1;
-  CVector3f *in_stack_00000008;
-  uint in_stack_00000014;
-  uint in_stack_00000018;
-  uint in_stack_0000001c;
+  CVector3f *unaff_EBX;
+  int in_stack_00000008;
+  uint in_stack_0000000c;
+  uint in_stack_00000010;
   
-  if (in_stack_00000008 == (CVector3f *)0x0) {
+  if (in_stack_00000008 == 0) {
     if (((*(int *)(this_ptr->field11_0x25a0 + 0x10) != 0) && (*(int *)this_ptr->field11_0x25a0 != 0)
         ) && ((this_ptr->model).model_name[0] != '\0')) {
       this_ptr_00 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0
@@ -38,10 +38,10 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042c920(CCharacter *this_ptr)
     this_ptr->field11_0x25a0[0x12] = '\0';
     this_ptr->field11_0x25a0[0x13] = '\0';
   }
-  *(uint *)this_ptr->field11_0x25a0 = in_stack_00000014;
-  *(uint *)(this_ptr->field11_0x25a0 + 4) = in_stack_00000018;
-  *(uint *)(this_ptr->field11_0x25a0 + 8) = in_stack_0000001c;
+  *(int *)this_ptr->field11_0x25a0 = in_stack_00000008;
+  *(uint *)(this_ptr->field11_0x25a0 + 4) = in_stack_0000000c;
+  *(uint *)(this_ptr->field11_0x25a0 + 8) = in_stack_00000010;
   (*(this_ptr->base_actor).vtable[1].setPositionAndOrientation)
-            (&this_ptr->base_actor,(CVector3f *)0xbf800000,in_stack_00000008);
+            (&this_ptr->base_actor,(CVector3f *)0xbf800000,unaff_EBX);
   return;
 }

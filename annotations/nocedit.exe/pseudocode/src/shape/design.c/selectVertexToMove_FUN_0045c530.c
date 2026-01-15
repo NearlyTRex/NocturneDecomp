@@ -13,7 +13,6 @@ void __cdecl shape_design_c_selectVertexToMove_FUN_0045c530(void)
 {
   char cVar1;
   int iVar2;
-  BADSPACEBASE *in_ESP;
   char *pcVar3;
   byte bVar4;
   char local_28 [20];

@@ -10,20 +10,20 @@ void core_skeledit_cpp_FUN_005894c0(void)
 
 {
   int iVar1;
-  FILE *in_stack_0000000c;
-  int in_stack_00000010;
+  FILE *in_stack_00000004;
+  int in_stack_00000008;
   
   crt_stack_c_stack_probe_FUN_005ff9f3(0x10);
   do {
-    if (in_stack_00000010 < 1) {
+    if (in_stack_00000008 < 1) {
       return;
     }
     do {
-      iVar1 = crt_stdio_c_fgetc_FUN_005fe840(in_stack_0000000c);
+      iVar1 = crt_stdio_c_fgetc_FUN_005fe840(in_stack_00000004);
       if (iVar1 < 0) {
         return;
       }
     } while (iVar1 != 10);
-    in_stack_00000010 = in_stack_00000010 + -1;
+    in_stack_00000008 = in_stack_00000008 + -1;
   } while( true );
 }

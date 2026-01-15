@@ -1,22 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 72,
-    "complexity_score": 150,
+    "complexity_score": 99,
     "cross_reference_count": 9,
     "function_call_count": 2,
     "global_count": 10,
-    "pseudocode_lines": 35,
-    "suspect_count": 8,
+    "pseudocode_lines": 29,
+    "suspect_count": 5,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
       "pointer_cast",
-      "register_param",
-      "stack_ref",
       "variadic_preserve"
     ],
-    "total_lines": 107
+    "total_lines": 101
   },
   "cross_references": [
     {
@@ -207,36 +204,15 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 8,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 8,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 15,
-      "match": "&stack0xffffff8c",
-      "text": "crt_memory_c_memset_FUN_005fde40(&stack0xffffff8c,0,0x6c);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 30,
-      "match": "(DWORD *)((int)",
-      "text": "*(DWORD *)((int)g_ScreenBufferArray + iVar3) = DStack_30;",
+      "line": 24,
+      "match": "(LPVOID *)((int)",
+      "text": "*(LPVOID *)((int)g_ScreenBufferArray + iVar3) = local_74.lpSurface;",
       "type": "pointer_cast"
     },
     {
       "call_address": "005ed5f6",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

@@ -17,7 +17,6 @@ cockpit_drawsurf_cpp_CDrawSurface_fillPoly_FUN_00488cd0
   int iVar4;
   int iVar5;
   int iVar6;
-  BADSPACEBASE *in_ESP;
   int iVar7;
   int iVar8;
   int *piVar9;
@@ -137,13 +136,12 @@ cockpit_drawsurf_cpp_CDrawSurface_fillPoly_FUN_00488cd0
         do {
           local_18 = iVar8 << 4;
           do {
-            while( true ) {
-              if ((local_20 <= iVar8) ||
-                 (local_14 < *(int *)((int)&g_GlobalEdgeTable[0].x_start + local_18))) break;
+            for (; (iVar8 < local_20 &&
+                   (*(int *)((int)&g_GlobalEdgeTable[0].x_start + local_18) <= local_14));
+                local_18 = local_18 + 0x10) {
               aiStack_d8[iVar7 + -1] = iVar8;
               iVar7 = iVar7 + 1;
               iVar8 = iVar8 + 1;
-              local_18 = local_18 + 0x10;
             }
             local_1c = iVar7 + -1;
             do {
@@ -167,13 +165,13 @@ cockpit_drawsurf_cpp_CDrawSurface_fillPoly_FUN_00488cd0
             if (1 < iVar7) {
               iVar4 = 4;
               do {
-                iVar6 = iVar4 + -4;
-                iVar5 = iVar4 + -8;
+                iVar5 = iVar4 + -4;
+                iVar6 = iVar4 + -8;
                 iVar4 = iVar4 + 8;
                 cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLine_FUN_00488110
-                          (this_ptr,(g_GlobalEdgeTable[*(int *)((int)aiStack_d8 + iVar5)].
+                          (this_ptr,(g_GlobalEdgeTable[*(int *)((int)aiStack_d8 + iVar6)].
                                      x_fixed_point >> 0x10) - this_ptr->x,local_14 - this_ptr->y,
-                           (g_GlobalEdgeTable[*(int *)((int)aiStack_d8 + iVar6)].x_fixed_point >>
+                           (g_GlobalEdgeTable[*(int *)((int)aiStack_d8 + iVar5)].x_fixed_point >>
                            0x10) - this_ptr->x);
               } while (iVar4 < iVar7 * 4);
             }

@@ -13,7 +13,6 @@ int __cdecl sound_sndwav_cpp_CWavOutDevice_start_FUN_005b08f0(CWavOutDevice *thi
   HANDLE pvVar2;
   int iVar3;
   int buffer_index;
-  CSoundDevice *in_stack_00000008;
   
   buffer_index = 0;
   if (0 < g_WaveOutNumBuffers) {
@@ -40,6 +39,6 @@ int __cdecl sound_sndwav_cpp_CWavOutDevice_start_FUN_005b08f0(CWavOutDevice *thi
     return 1;
   }
 LAB_005b09a0:
-  (*in_stack_00000008->vtable->reset)(in_stack_00000008);
+  (*((this_ptr->base).vtable)->reset)(&this_ptr->base);
   return 0;
 }

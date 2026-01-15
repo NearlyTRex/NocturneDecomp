@@ -1,17 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 19,
-    "complexity_score": 63,
+    "complexity_score": 37,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 13,
-    "suspect_count": 4,
+    "pseudocode_lines": 12,
+    "suspect_count": 2,
     "suspect_types": [
-      "call_esp_preserve",
-      "unaffected_reg"
+      "call_esp_preserve"
     ],
-    "total_lines": 32
+    "total_lines": 31
   },
   "cross_references": [
     {
@@ -97,20 +96,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 8,
-      "match": "unaff_EBX",
-      "text": "int unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 14,
-      "match": "unaff_EBX",
-      "text": "(this_ptr_00,(int)color_00,(CMatrix3x4f *)render_flags,unaff_EBX);",
-      "type": "unaffected_reg"
-    },
     {
       "add_esp_value": 4,
       "call_address": "005a17c7",

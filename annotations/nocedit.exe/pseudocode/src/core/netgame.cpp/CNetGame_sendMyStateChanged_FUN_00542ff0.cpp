@@ -14,22 +14,14 @@ void core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_00542ff0(void)
   char cVar1;
   int iVar2;
   int iVar3;
-  BADSPACEBASE *in_ESP;
-  uint unaff_EBP;
   int *piVar4;
-  uint unaff_EDI;
   char *pcVar5;
   int *in_stack_00000004;
-  char acStack_2b [20];
+  char local_33 [20];
+  int local_1f;
+  int local_1b;
   int local_17;
-  uint uStack_13;
-  int iStack_f;
-  undefined3 uStack_b;
   
-  uStack_b = (undefined3)((uint)unaff_EDI >> 8);
-  uStack_13._3_1_ = (byte)unaff_EBP;
-  iStack_f._0_3_ = (undefined3)((uint)unaff_EBP >> 8);
-  iStack_f = CONCAT13 /* combine 2-byte values */((char)unaff_EDI,(undefined3)iStack_f);
   if ((*in_stack_00000004 != 2) || (in_stack_00000004[1] != 1)) {
     g_CurrentFilename = "..\\core\\netgame.cpp";
     g_CurrentLineNumber = 0x8d0;
@@ -44,10 +36,10 @@ void core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_00542ff0(void)
     iVar3 = 0x20000;
   }
   g_CurrentGameTime = g_CurrentGameTime + iVar3;
-  local_17 = in_stack_00000004[in_stack_00000004[0x45] * 0x1e + 0x19];
-  uStack_13 = in_stack_00000004[in_stack_00000004[0x45] * 0x1e + 0xd];
-  iStack_f = in_stack_00000004[in_stack_00000004[0x45] * 0x1e + 0xe];
-  pcVar5 = acStack_2b;
+  local_1f = in_stack_00000004[in_stack_00000004[0x45] * 0x1e + 0x19];
+  local_1b = in_stack_00000004[in_stack_00000004[0x45] * 0x1e + 0xd];
+  local_17 = in_stack_00000004[in_stack_00000004[0x45] * 0x1e + 0xe];
+  pcVar5 = local_33;
   piVar4 = in_stack_00000004 + in_stack_00000004[0x45] * 0x1e + 8;
   do {
     iVar3 = *piVar4;

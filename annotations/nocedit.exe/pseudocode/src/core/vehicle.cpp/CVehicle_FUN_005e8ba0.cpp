@@ -10,26 +10,28 @@ void __cdecl core_vehicle_cpp_CVehicle_FUN_005e8ba0(CVehicle *this_ptr)
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   int iVar2;
   CActorPropertyList *in_stack_00000008;
-  int in_stack_0000000c;
-  int in_stack_00000018;
+  char local_110 [256];
+  char *local_10;
+  char *local_c;
   
   core_actor_cpp_CDemonActor_getPropertyList_FUN_0040d290(&this_ptr->base_actor,in_stack_00000008);
   core_actor_cpp_CActorPropertyList_FUN_0040e3b0(in_stack_00000008);
   iVar1 = 0;
-  if (0 < *(int *)(in_stack_0000000c + 0x938)) {
+  if (0 < this_ptr->tire_count) {
+    local_c = this_ptr->field3_0x93c;
     iVar2 = 0;
     do {
       crt_stdio_c_sprintf_FUN_005fdbd0
-                (&stack0xfffffef8,"%s tire",
+                (local_110,"%s tire",
                  *(uint *)((int)&PTR_s_Left_front_00684480 + iVar2));
+      local_10 = local_c + iVar1 * 0x1b4;
       core_actor_cpp_CActorPropertyList_FUN_0040e3b0(in_stack_00000008);
       core_actor_cpp_CActorPropertyList_FUN_0040e260(in_stack_00000008);
       iVar2 = iVar2 + 4;
       iVar1 = iVar1 + 1;
-    } while (iVar1 < *(int *)(in_stack_00000018 + 0x938));
+    } while (iVar1 < this_ptr->tire_count);
   }
   core_actor_cpp_CActorPropertyList_FUN_0040e160(in_stack_00000008);
   core_actor_cpp_CActorPropertyList_FUN_0040e160(in_stack_00000008);

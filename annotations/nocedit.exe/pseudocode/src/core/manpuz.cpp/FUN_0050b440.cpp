@@ -18,80 +18,80 @@ void core_manpuz_cpp_FUN_0050b440(void)
   float fVar5;
   float fVar6;
   float fVar7;
-  BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000004;
-  float in_stack_ffffff8c;
-  float fStack_70;
-  float fStack_6c;
-  float fStack_68;
-  float fStack_64;
-  float fStack_60;
-  CSlew local_5c;
-  CSlew local_40;
-  CSlew local_24;
+  byte auStack_74 [28];
+  byte auStack_58 [28];
+  byte auStack_3c [28];
+  float fStack_20;
+  float fStack_1c;
+  float fStack_18;
+  float fStack_14;
+  float fStack_10;
+  float fStack_c;
   
   if (DAT_02f0cb1c == 1) {
-    core_slew_cpp_CSlew_init_FUN_005a2060(&local_40);
-    if (&local_40 != (CSlew *)(in_stack_00000004[4].create_event + 0xc)) {
-      local_40.position.x = (((CSlew *)(in_stack_00000004[4].create_event + 0xc))->position).x;
-      local_40.position.y = *(float *)(in_stack_00000004[4].create_event + 0x10);
-      local_40.position.z = *(float *)(in_stack_00000004[4].create_event + 0x14);
+    core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)(auStack_58 + 0x18));
+    if (auStack_3c != in_stack_00000004[4].create_event + 0xc) {
+      auStack_3c._0_4_ = *(uint *)(in_stack_00000004[4].create_event + 0xc);
+      auStack_3c._4_4_ = *(uint *)(in_stack_00000004[4].create_event + 0x10);
+      auStack_3c._8_4_ = *(uint *)(in_stack_00000004[4].create_event + 0x14);
     }
-    local_40.roll = 0.0;
-    local_40.yaw = 0.0;
-    local_40.pitch = 0.0;
-    core_slew_cpp_CSlew_processInput_FUN_005a20b0(&local_40);
-    if ((float *)(in_stack_00000004[4].create_event + 0xc) != &local_40.position.y) {
-      *(float *)(in_stack_00000004[4].create_event + 0xc) = local_40.position.y;
-      *(float *)(in_stack_00000004[4].create_event + 0x10) = local_40.position.z;
-      *(float *)(in_stack_00000004[4].create_event + 0x14) = local_40.pitch;
+    auStack_3c._20_4_ = 0.0;
+    auStack_3c._16_4_ = 0.0;
+    auStack_3c._12_4_ = 0.0;
+    core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)auStack_3c);
+    if (in_stack_00000004[4].create_event + 0xc != auStack_3c) {
+      *(uint *)(in_stack_00000004[4].create_event + 0xc) = auStack_3c._0_4_;
+      *(uint *)(in_stack_00000004[4].create_event + 0x10) = auStack_3c._4_4_;
+      *(uint *)(in_stack_00000004[4].create_event + 0x14) = auStack_3c._8_4_;
     }
   }
   else if (DAT_02f0cb1c == 2) {
-    core_slew_cpp_CSlew_init_FUN_005a2060(&local_24);
-    if (&local_24 != (CSlew *)&in_stack_00000004[4].field7_0x6c) {
-      local_24.position.x = (float)in_stack_00000004[4].field7_0x6c;
-      local_24.position.y = (float)in_stack_00000004[4].was_created;
-      local_24.position.z = in_stack_00000004[4].create_prob;
+    core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)(auStack_3c + 0x18));
+    if (&fStack_20 != (float *)&in_stack_00000004[4].field7_0x6c) {
+      fStack_20 = (float)in_stack_00000004[4].field7_0x6c;
+      fStack_1c = (float)in_stack_00000004[4].was_created;
+      fStack_18 = in_stack_00000004[4].create_prob;
     }
-    if (&local_24.pitch != (float *)in_stack_00000004[4].create_event) {
-      local_24.pitch = *(float *)in_stack_00000004[4].create_event;
-      local_24.yaw = *(float *)(in_stack_00000004[4].create_event + 4);
-      local_24.roll = *(float *)(in_stack_00000004[4].create_event + 8);
+    if (&fStack_14 != (float *)in_stack_00000004[4].create_event) {
+      fStack_14 = *(float *)in_stack_00000004[4].create_event;
+      fStack_10 = *(float *)(in_stack_00000004[4].create_event + 4);
+      fStack_c = *(float *)(in_stack_00000004[4].create_event + 8);
     }
-    core_slew_cpp_CSlew_processInput_FUN_005a20b0(&local_24);
-    if ((float *)&in_stack_00000004[4].field7_0x6c != &local_24.position.y) {
-      in_stack_00000004[4].field7_0x6c = (int)local_24.position.y;
-      in_stack_00000004[4].was_created = (int)local_24.position.z;
-      in_stack_00000004[4].create_prob = local_24.pitch;
+    core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)&fStack_20);
+    if ((float *)&in_stack_00000004[4].field7_0x6c != &fStack_20) {
+      in_stack_00000004[4].field7_0x6c = (int)fStack_20;
+      in_stack_00000004[4].was_created = (int)fStack_1c;
+      in_stack_00000004[4].create_prob = fStack_18;
     }
-    if ((float *)in_stack_00000004[4].create_event != &local_24.yaw) {
-      *(float *)in_stack_00000004[4].create_event = local_24.yaw;
-      *(float *)(in_stack_00000004[4].create_event + 4) = local_24.roll;
-      *(float *)(in_stack_00000004[4].create_event + 8) = local_24.slew_rate;
+    if ((float *)in_stack_00000004[4].create_event != &fStack_14) {
+      *(float *)in_stack_00000004[4].create_event = fStack_14;
+      *(float *)(in_stack_00000004[4].create_event + 4) = fStack_10;
+      *(float *)(in_stack_00000004[4].create_event + 8) = fStack_c;
     }
   }
   else if (DAT_02f0cb1c == 3) {
     core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)&stack0xffffff88);
-    if ((int *)&stack0xffffff88 != &in_stack_00000004[0xe].was_created) {
-      in_stack_ffffff8c = in_stack_00000004[0xe].create_prob;
-      fStack_70 = *(float *)in_stack_00000004[0xe].create_event;
+    if ((int *)auStack_74 != &in_stack_00000004[0xe].was_created) {
+      auStack_74._0_4_ = in_stack_00000004[0xe].was_created;
+      auStack_74._4_4_ = in_stack_00000004[0xe].create_prob;
+      auStack_74._8_4_ = *(uint *)in_stack_00000004[0xe].create_event;
     }
-    if (&fStack_6c != (float *)(in_stack_00000004[0xe].create_event + 0x20)) {
-      fStack_6c = *(float *)(in_stack_00000004[0xe].create_event + 0x20);
-      fStack_68 = *(float *)(in_stack_00000004[0xe].create_event + 0x24);
-      fStack_64 = *(float *)(in_stack_00000004[0xe].create_event + 0x28);
+    if (auStack_74 + 0xc != in_stack_00000004[0xe].create_event + 0x20) {
+      auStack_74._12_4_ = *(uint *)(in_stack_00000004[0xe].create_event + 0x20);
+      auStack_74._16_4_ = *(uint *)(in_stack_00000004[0xe].create_event + 0x24);
+      auStack_74._20_4_ = *(uint *)(in_stack_00000004[0xe].create_event + 0x28);
     }
-    core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)&stack0xffffff88);
-    if (&in_stack_00000004[0xe].was_created != (int *)&stack0xffffff8c) {
-      in_stack_00000004[0xe].was_created = (int)in_stack_ffffff8c;
-      in_stack_00000004[0xe].create_prob = fStack_70;
-      *(float *)in_stack_00000004[0xe].create_event = fStack_6c;
+    core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)auStack_74);
+    if (&in_stack_00000004[0xe].was_created != (int *)auStack_74) {
+      in_stack_00000004[0xe].was_created = auStack_74._0_4_;
+      in_stack_00000004[0xe].create_prob = (float)auStack_74._4_4_;
+      *(uint *)in_stack_00000004[0xe].create_event = auStack_74._8_4_;
     }
-    if ((float *)(in_stack_00000004[0xe].create_event + 0x20) != &fStack_68) {
-      *(float *)(in_stack_00000004[0xe].create_event + 0x20) = fStack_68;
-      *(float *)(in_stack_00000004[0xe].create_event + 0x24) = fStack_64;
-      *(float *)(in_stack_00000004[0xe].create_event + 0x28) = fStack_60;
+    if (in_stack_00000004[0xe].create_event + 0x20 != auStack_74 + 0xc) {
+      *(uint *)(in_stack_00000004[0xe].create_event + 0x20) = auStack_74._12_4_;
+      *(uint *)(in_stack_00000004[0xe].create_event + 0x24) = auStack_74._16_4_;
+      *(uint *)(in_stack_00000004[0xe].create_event + 0x28) = auStack_74._20_4_;
     }
     in_stack_00000004[0xe].create_event[0x10] = '\0';
     in_stack_00000004[0xe].create_event[0x11] = '\0';
@@ -102,27 +102,27 @@ void core_manpuz_cpp_FUN_0050b440(void)
     *(uint *)(in_stack_00000004[0xe].create_event + 0xc) = uVar1;
   }
   else if (DAT_02f0cb1c == 4) {
-    core_slew_cpp_CSlew_init_FUN_005a2060(&local_5c);
-    if (&local_5c != (CSlew *)(in_stack_00000004[0xe].create_event + 4)) {
-      local_5c.position.x = (((CSlew *)(in_stack_00000004[0xe].create_event + 4))->position).x;
-      local_5c.position.y = *(float *)(in_stack_00000004[0xe].create_event + 8);
-      local_5c.position.z = *(float *)(in_stack_00000004[0xe].create_event + 0xc);
+    core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)(auStack_74 + 0x18));
+    if (auStack_58 != in_stack_00000004[0xe].create_event + 4) {
+      auStack_58._0_4_ = *(uint *)(in_stack_00000004[0xe].create_event + 4);
+      auStack_58._4_4_ = *(uint *)(in_stack_00000004[0xe].create_event + 8);
+      auStack_58._8_4_ = *(uint *)(in_stack_00000004[0xe].create_event + 0xc);
     }
-    if (&local_5c.pitch != (float *)(in_stack_00000004[0xe].create_event + 0x20)) {
-      local_5c.pitch = *(float *)(in_stack_00000004[0xe].create_event + 0x20);
-      local_5c.yaw = *(float *)(in_stack_00000004[0xe].create_event + 0x24);
-      local_5c.roll = *(float *)(in_stack_00000004[0xe].create_event + 0x28);
+    if (auStack_58 + 0xc != in_stack_00000004[0xe].create_event + 0x20) {
+      auStack_58._12_4_ = *(uint *)(in_stack_00000004[0xe].create_event + 0x20);
+      auStack_58._16_4_ = *(uint *)(in_stack_00000004[0xe].create_event + 0x24);
+      auStack_58._20_4_ = *(uint *)(in_stack_00000004[0xe].create_event + 0x28);
     }
-    core_slew_cpp_CSlew_processInput_FUN_005a20b0(&local_5c);
-    if ((float *)(in_stack_00000004[0xe].create_event + 4) != &local_5c.position.y) {
-      *(float *)(in_stack_00000004[0xe].create_event + 4) = local_5c.position.y;
-      *(float *)(in_stack_00000004[0xe].create_event + 8) = local_5c.position.z;
-      *(float *)(in_stack_00000004[0xe].create_event + 0xc) = local_5c.pitch;
+    core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)auStack_58);
+    if (in_stack_00000004[0xe].create_event + 4 != auStack_58) {
+      *(uint *)(in_stack_00000004[0xe].create_event + 4) = auStack_58._0_4_;
+      *(uint *)(in_stack_00000004[0xe].create_event + 8) = auStack_58._4_4_;
+      *(uint *)(in_stack_00000004[0xe].create_event + 0xc) = auStack_58._8_4_;
     }
-    if ((float *)(in_stack_00000004[0xe].create_event + 0x20) != &local_5c.yaw) {
-      *(float *)(in_stack_00000004[0xe].create_event + 0x20) = local_5c.yaw;
-      *(float *)(in_stack_00000004[0xe].create_event + 0x24) = local_5c.roll;
-      *(float *)(in_stack_00000004[0xe].create_event + 0x28) = local_5c.slew_rate;
+    if (in_stack_00000004[0xe].create_event + 0x20 != auStack_58 + 0xc) {
+      *(uint *)(in_stack_00000004[0xe].create_event + 0x20) = auStack_58._12_4_;
+      *(uint *)(in_stack_00000004[0xe].create_event + 0x24) = auStack_58._16_4_;
+      *(uint *)(in_stack_00000004[0xe].create_event + 0x28) = auStack_58._20_4_;
     }
     in_stack_00000004[0xe].create_event[0x10] = '\0';
     in_stack_00000004[0xe].create_event[0x11] = '\0';

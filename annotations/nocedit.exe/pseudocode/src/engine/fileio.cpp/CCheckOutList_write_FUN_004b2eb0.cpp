@@ -24,8 +24,7 @@ engine_fileio_cpp_CCheckOutList_write_FUN_004b2eb0(CCheckOutList *this_ptr,FILE 
         pcVar2 = this_ptr->items->name + iVar3;
         iVar1 = iVar1 + 1;
         iVar3 = iVar3 + 0x168;
-        crt_stdio_c_fprintf_FUN_005fe6d0
-                  (*file_handle,"%s = %s\n","%s = %s\n",pcVar2,pcVar2 + 0x104);
+        crt_stdio_c_fprintf_FUN_005fe6d0(*file_handle,"%s = %s\n",pcVar2,pcVar2 + 0x104);
       } while (iVar1 < this_ptr->count);
     }
     crt_stdio_c_fflush_FUN_00601540(*file_handle);

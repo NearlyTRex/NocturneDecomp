@@ -10,13 +10,12 @@ void __cdecl core_waypoint_cpp_CWayPoint_FUN_005ec280(CWayPoint *this_ptr)
 
 {
   CDemonActor *actor_ptr;
-  BADSPACEBASE *in_ESP;
   int iVar1;
   
   core_trigger_cpp_CTrigger_serialize_FUN_005e0690(&this_ptr->base_trigger);
   if (g_CWayPointClassVersion < 2) {
     core_actor_cpp_serializeActor_FUN_0040b870
-              ((CDemonActor *)&stack0xfffffff0,"nextWayPoint");
+              ((CDemonActor *)&stack0xffffffec,"nextWayPoint");
   }
   if (1 < g_CWayPointClassVersion) {
     iVar1 = 0;

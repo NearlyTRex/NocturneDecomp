@@ -11,7 +11,6 @@ core_actor_cpp_serializeLocation_FUN_0040b480(CLocation *location_ptr,char *prop
 
 {
   int iVar1;
-  char *in_stack_0000000c;
   
   if (g_ActorReadingMode == 1) {
     iVar1 = crt_stdio_c_fscanf_FUN_005fe7c0(g_ActorDataFile,"%d,%f,%f,%f");
@@ -26,6 +25,6 @@ core_actor_cpp_serializeLocation_FUN_0040b480(CLocation *location_ptr,char *prop
                (double)(location_ptr->position).x,(double)(location_ptr->position).y,
                (double)(location_ptr->position).z);
   }
-  core_actor_cpp_serializeDescription_FUN_0040b290("4D location",in_stack_0000000c);
+  core_actor_cpp_serializeDescription_FUN_0040b290("4D location",property_name);
   return;
 }

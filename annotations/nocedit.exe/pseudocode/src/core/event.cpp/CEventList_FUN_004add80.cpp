@@ -11,14 +11,13 @@ int __cdecl core_event_cpp_CEventList_FUN_004add80(CEventList *this_ptr)
 {
   char cVar1;
   int iVar2;
-  int unaff_EBX;
   char *pcVar3;
   char *pcVar4;
-  int in_stack_0000000c;
+  char *in_stack_00000008;
   
   DAT_02d0a460 = 0;
   iVar2 = core_event_cpp_CEventList_FUN_004b0270(this_ptr);
-  if ((-1 < iVar2) && (*(char *)(in_stack_0000000c + unaff_EBX) != '\0')) {
+  if ((-1 < iVar2) && (*in_stack_00000008 != '\0')) {
     pcVar3 = "Syntax error";
     pcVar4 = &DAT_02d0a460;
     do {

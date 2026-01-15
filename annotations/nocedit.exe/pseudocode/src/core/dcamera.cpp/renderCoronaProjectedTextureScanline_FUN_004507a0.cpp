@@ -13,14 +13,13 @@ core_dcamera_cpp_renderCoronaProjectedTextureScanline_FUN_004507a0
 {
   uint uVar1;
   CVector3f *pCVar2;
-  BADSPACEBASE *in_ESP;
   byte bVar3;
   uint auStackY_1024 [1016];
   CVector3i *in_stack_ffffffc4;
   int local_38;
   int local_34;
-  CVector3i *pCStack_2c;
-  uint local_28 [2];
+  CVector3i *pCStack_30;
+  uint auStack_2c [3];
   CVector3i *local_20;
   uint *local_1c;
   int *local_18;
@@ -40,18 +39,18 @@ core_dcamera_cpp_renderCoronaProjectedTextureScanline_FUN_004507a0
                pCVar2->y * (float)g_CoronaCameraRotationMatrix.m[1].z)) {
       core_dcamera_cpp_CDemonCamera_worldToScreenWithFrustumCull_FUN_0044d7d0
                 (&g_CurrentLightForCorona->base,local_20,in_stack_ffffffc4);
-      in_stack_ffffffc4 = pCStack_2c;
-      *(uint *)((int)&stack0xffffffc8 + (uint)bVar3 * -8) = local_28[(uint)bVar3 * -2];
+      in_stack_ffffffc4 = pCStack_30;
+      *(uint *)((int)&stack0xffffffc8 + (uint)bVar3 * -8) = auStack_2c[(uint)bVar3 * -2];
       *(uint *)((int)&stack0xffffffcc + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
-           local_28[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
+           auStack_2c[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
       if ((0 < local_34) &&
          ((uVar1 = (uint)g_CurrentLightForCorona->shadow_depth_buffer
                          [((int)in_stack_ffffffc4 >> 0x10) +
                           (local_38 >> 0x10) * g_CurrentLightForCorona->shadow_map_width],
           (int)uVar1 < g_CoronaMaxDepth && (local_34 < (int)(uVar1 + 0x80))))) {
-        local_28[1] = g_CurrentLightForCorona->teture_coord_mask &
-                      (int)in_stack_ffffffc4 >>
-                      ((byte)g_CurrentLightForCorona->shadow_x_shift & 0x1f);
+        auStack_2c[2] =
+             g_CurrentLightForCorona->teture_coord_mask &
+             (int)in_stack_ffffffc4 >> ((byte)g_CurrentLightForCorona->shadow_x_shift & 0x1f);
         *pcStack_14 = *pcStack_14 +
                       (char)((int)((g_CoronaMaxDepth - uVar1) *
                                   (uint)g_CurrentLightForCorona->precomputed_lighting_textures
@@ -59,7 +58,7 @@ core_dcamera_cpp_renderCoronaProjectedTextureScanline_FUN_004507a0
                                            ((byte)g_CurrentLightForCorona->shadow_y_shift & 0x1f) &
                                           g_CurrentLightForCorona->teture_coord_mask) <<
                                          ((byte)g_CurrentLightForCorona->texture_row_shift & 0x1f))
-                                         + local_28[1]]) >> ((byte)g_CoronaDepthShift & 0x1f));
+                                         + auStack_2c[2]]) >> ((byte)g_CoronaDepthShift & 0x1f));
       }
     }
     pCVar2 = pCVar2 + 1;

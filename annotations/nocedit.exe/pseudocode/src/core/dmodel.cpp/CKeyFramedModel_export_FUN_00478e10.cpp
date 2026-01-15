@@ -10,45 +10,46 @@ void __cdecl
 core_dmodel_cpp_CKeyFramedModel_export_FUN_00478e10(CKeyFramedModel *this_ptr,char *output_filename)
 
 {
-  FILE *file;
-  char *pcVar1;
-  char *pcVar2;
-  int iVar3;
+  uint *puVar1;
+  CDemonTriangle *pCVar2;
+  CVector3i **ppCVar3;
   int iVar4;
-  uint in_stack_0000000c;
-  int in_stack_00000014;
-  int in_stack_0000001c;
-  int in_stack_00000024;
-  int iStack00000028;
-  int in_stack_0000003c;
-  int in_stack_00000040;
-  int in_stack_00000044;
-  int in_stack_00000048;
+  FILE *file;
+  uint uVar5;
+  CKeyFramedModel *pCVar6;
+  int iVar7;
+  char *pcVar8;
+  char *pcVar9;
+  int iVar10;
+  int iVar11;
+  int local_1c;
+  int local_18;
+  int local_14;
   
-  pcVar2 = output_filename;
+  pcVar9 = output_filename;
   do {
-    pcVar1 = pcVar2;
-    if (*pcVar2 == ':') goto LAB_00478e35;
-    if (*pcVar2 == '\0') break;
-    pcVar1 = pcVar2 + 1;
-    if (*pcVar1 == ':') goto LAB_00478e35;
-    pcVar2 = pcVar2 + 2;
-  } while (*pcVar1 != '\0');
-  pcVar1 = (char *)0x0;
+    pcVar8 = pcVar9;
+    if (*pcVar9 == ':') goto LAB_00478e35;
+    if (*pcVar9 == '\0') break;
+    pcVar8 = pcVar9 + 1;
+    if (*pcVar8 == ':') goto LAB_00478e35;
+    pcVar9 = pcVar9 + 2;
+  } while (*pcVar8 != '\0');
+  pcVar8 = (char *)0x0;
 LAB_00478e35:
-  pcVar2 = output_filename;
-  if (pcVar1 == (char *)0x0) {
+  pcVar9 = output_filename;
+  if (pcVar8 == (char *)0x0) {
     do {
-      pcVar1 = pcVar2;
-      if (*pcVar2 == '\\') goto LAB_00478e57;
-      if (*pcVar2 == '\0') break;
-      pcVar1 = pcVar2 + 1;
-      if (*pcVar1 == '\\') goto LAB_00478e57;
-      pcVar2 = pcVar2 + 2;
-    } while (*pcVar1 != '\0');
-    pcVar1 = (char *)0x0;
+      pcVar8 = pcVar9;
+      if (*pcVar9 == '\\') goto LAB_00478e57;
+      if (*pcVar9 == '\0') break;
+      pcVar8 = pcVar9 + 1;
+      if (*pcVar8 == '\\') goto LAB_00478e57;
+      pcVar9 = pcVar9 + 2;
+    } while (*pcVar8 != '\0');
+    pcVar8 = (char *)0x0;
 LAB_00478e57:
-    if (pcVar1 == (char *)0x0) {
+    if (pcVar8 == (char *)0x0) {
       file = engine_dosio_c_getFile_FUN_00481a50("models",output_filename,"wt");
       goto LAB_00478e7f;
     }
@@ -60,79 +61,102 @@ LAB_00478e7f:
     g_CurrentFilename = "..\\core\\dmodel.cpp";
     g_CurrentLineNumber = 0x56d;
     core_main_c_displayErrorAndQuit_FUN_00506f10
-              ("Can't create demon model %s",in_stack_0000000c);
+              ("Can't create demon model %s",output_filename);
   }
-  iVar3 = *(int *)(output_filename + 0x5698);
+  pCVar2 = this_ptr->collision_triangle_list;
   crt_stdio_c_fprintf_FUN_005fe6d0(file,"// .KFM version\n");
   crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n",8);
   crt_stdio_c_fprintf_FUN_005fe6d0(file,"// vertexCount,polyCount,textureCount,partCount,frameCount\n");
   crt_stdio_c_fprintf_FUN_005fe6d0
-            (file,"%d,%d,%d,%d,%d\n",*(uint *)(in_stack_00000014 + 0x104),
-             *(uint *)(in_stack_00000014 + 0x110),*(uint *)(in_stack_00000014 + 0x120),
-             *(uint *)(in_stack_00000014 + 0x5584),*(uint *)(in_stack_00000014 + 0x100))
-  ;
+            (file,"%d,%d,%d,%d,%d\n",this_ptr->vertex_count,this_ptr->poly_count,
+             this_ptr->texture_count,this_ptr->part_count,this_ptr->frame_count);
   crt_stdio_c_fprintf_FUN_005fe6d0(file,"// useCollisionListFlag\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n",(uint)(iVar3 != 0));
+  crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n",(uint)(pCVar2 != (CDemonTriangle *)0x0));
   crt_stdio_c_fprintf_FUN_005fe6d0(file,"// transparentPixelFlag\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n",*(uint *)(in_stack_00000024 + 0x569c));
+  crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n",this_ptr->transparent_pixel_flag);
   crt_stdio_c_fprintf_FUN_005fe6d0(file,"// disableBackfaceCulling\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n");
+  crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n",this_ptr->disable_backface_culling);
+  uVar5 = (uint)(this_ptr->env_map_opac_list != (uchar *)0x0);
   crt_stdio_c_fprintf_FUN_005fe6d0(file,"// envMapListFlag\n");
-  crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n");
+  crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n",uVar5);
+  iVar7 = 0;
   crt_stdio_c_fprintf_FUN_005fe6d0(file,"// vertex list: x,y,z\n");
-  for (iVar3 = 0; iVar3 < *(int *)(in_stack_0000003c + 0x104) * *(int *)(in_stack_0000003c + 0x100);
-      iVar3 = iVar3 + 1) {
-    crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d,%d,%d\n");
+  for (iVar10 = 0; iVar10 < this_ptr->vertex_count * this_ptr->frame_count; iVar10 = iVar10 + 1) {
+    ppCVar3 = this_ptr->vertex_list;
+    iVar11 = iVar7 + 8;
+    iVar4 = iVar7 + 4;
+    puVar1 = (uint *)((int)ppCVar3 + iVar7);
+    iVar7 = iVar7 + 0xc;
+    crt_stdio_c_fprintf_FUN_005fe6d0
+              (file,"%d,%d,%d\n",*puVar1,*(uint *)((int)ppCVar3 + iVar4),
+               *(uint *)((int)ppCVar3 + iVar11));
   }
   crt_stdio_c_fprintf_FUN_005fe6d0(file,"// poly list: textureIndex, n, verts(index,x2s,y2s)\n");
-  iStack00000028 = 0;
-  if (0 < *(int *)(in_stack_00000040 + 0x110)) {
-    in_stack_00000024 = 0;
+  local_14 = 0;
+  if (0 < this_ptr->poly_count) {
+    local_18 = 0;
+    local_1c = 0;
     do {
-      iVar3 = *(int *)(in_stack_00000040 + 0x114) + in_stack_00000024;
-      iVar4 = 0;
-      crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d,%d");
-      if (0 < *(int *)(iVar3 + 4)) {
+      iVar10 = (int)this_ptr->poly_vert_list + local_18;
+      iVar11 = 0;
+      crt_stdio_c_fprintf_FUN_005fe6d0
+                (file,"%d,%d",
+                 *(uint *)((int)this_ptr->poly_texture_index_list + local_1c),
+                 *(uint *)(iVar10 + 4));
+      iVar7 = iVar10;
+      if (0 < *(int *)(iVar10 + 4)) {
         do {
-          iVar4 = iVar4 + 1;
-          crt_stdio_c_fprintf_FUN_005fe6d0(file,", %d,%d,%d");
-        } while (iVar4 < *(int *)(iVar3 + 4));
+          iVar11 = iVar11 + 1;
+          crt_stdio_c_fprintf_FUN_005fe6d0
+                    (file,", %d,%d,%d",*(uint *)(iVar7 + 0x18),
+                     *(uint *)(iVar7 + 0x1c),*(uint *)(iVar7 + 0x20));
+          iVar7 = iVar7 + 0xc;
+        } while (iVar11 < *(int *)(iVar10 + 4));
       }
       crt_stdio_c_fprintf_FUN_005fe6d0(file,"\n");
-      in_stack_00000024 = in_stack_00000024 + 0x48;
-      iStack00000028 = iStack00000028 + 1;
-    } while (iStack00000028 < *(int *)(in_stack_00000040 + 0x110));
+      local_1c = local_1c + 4;
+      local_18 = local_18 + 0x48;
+      local_14 = local_14 + 1;
+    } while (local_14 < this_ptr->poly_count);
   }
-  if (in_stack_0000001c != 0) {
+  if (uVar5 != 0) {
     crt_stdio_c_fprintf_FUN_005fe6d0(file,"// envMapOpacity list\n");
-    iVar3 = 0;
-    if (0 < *(int *)(in_stack_00000040 + 0x110)) {
+    iVar7 = 0;
+    if (0 < this_ptr->poly_count) {
       do {
-        crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n");
-        iVar3 = iVar3 + 1;
-      } while (iVar3 < *(int *)(in_stack_00000040 + 0x110));
+        crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d\n",(uint)this_ptr->env_map_opac_list[iVar7])
+        ;
+        iVar7 = iVar7 + 1;
+      } while (iVar7 < this_ptr->poly_count);
     }
   }
   crt_stdio_c_fprintf_FUN_005fe6d0(file,"// texture list\n");
-  iVar3 = 0;
-  if (0 < *(int *)(in_stack_00000044 + 0x120)) {
+  iVar7 = 0;
+  if (0 < this_ptr->texture_count) {
+    pcVar9 = this_ptr->texture_list[0].base.texture_name;
     do {
-      crt_stdio_c_fprintf_FUN_005fe6d0(file,"%s\n");
-      iVar3 = iVar3 + 1;
-    } while (iVar3 < *(int *)(in_stack_00000044 + 0x120));
+      crt_stdio_c_fprintf_FUN_005fe6d0(file,"%s\n",pcVar9);
+      iVar7 = iVar7 + 1;
+      pcVar9 = pcVar9 + 0x48;
+    } while (iVar7 < this_ptr->texture_count);
   }
   crt_stdio_c_fprintf_FUN_005fe6d0(file,"// part list (vertexCount, polyCount)\n");
-  iVar3 = 0;
-  if (0 < *(int *)(in_stack_00000048 + 0x5584)) {
+  iVar7 = 0;
+  pCVar6 = this_ptr;
+  if (0 < this_ptr->part_count) {
     do {
-      crt_stdio_c_fprintf_FUN_005fe6d0(file,"%d,%d\n");
-      iVar3 = iVar3 + 1;
-    } while (iVar3 < *(int *)(in_stack_00000048 + 0x5584));
+      crt_stdio_c_fprintf_FUN_005fe6d0
+                (file,"%d,%d\n",pCVar6->part_list[0].vertex_count,
+                 pCVar6->part_list[0].poly_count);
+      iVar7 = iVar7 + 1;
+      pCVar6 = (CKeyFramedModel *)(pCVar6->model_filename + 8);
+    } while (iVar7 < this_ptr->part_count);
   }
   if ((file->_flag & 0x20) != 0) {
     g_CurrentFilename = "..\\core\\dmodel.cpp";
     g_CurrentLineNumber = 0x5e1;
-    core_main_c_displayErrorAndQuit_FUN_00506f10("Error writing model to %s");
+    core_main_c_displayErrorAndQuit_FUN_00506f10
+              ("Error writing model to %s",output_filename);
   }
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\core\\dmodel.cpp",0x5e5);
   return;

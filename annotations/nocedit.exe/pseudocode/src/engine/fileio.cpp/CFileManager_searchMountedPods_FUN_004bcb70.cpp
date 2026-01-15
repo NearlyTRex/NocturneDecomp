@@ -13,22 +13,15 @@ engine_fileio_cpp_CFileManager_searchMountedPods_FUN_004bcb70
 {
   char cVar1;
   int iVar2;
-  BADSPACEBASE *in_ESP;
   char *pcVar3;
-  char **in_stack_fffff64c;
-  CStrList_vtable *in_stack_fffff650;
-  char **in_stack_fffff654;
-  CStrList_vtable *in_stack_fffff658;
-  CStrList_vtable *in_stack_fffff65c;
-  CStrList_vtable *in_stack_fffff660;
-  uint in_stack_fffff664;
-  byte auStack_61c [16];
-  char cStack_60c;
-  char acStack_2fc [4];
-  char acStack_2f8 [496];
-  char local_108 [8];
-  char acStack_100 [20];
-  char acStack_ec [228];
+  uint in_stack_fffff634;
+  uint in_stack_fffff638;
+  char **in_stack_fffff63c;
+  CStrList_vtable *in_stack_fffff640;
+  uint in_stack_fffff644;
+  CPodSearchContext local_624;
+  char local_308 [512];
+  char local_108 [256];
   
   if (default_wildcard == (char *)0x0) {
     default_wildcard = "*";
@@ -48,29 +41,27 @@ engine_fileio_cpp_CFileManager_searchMountedPods_FUN_004bcb70
   if (iVar2 == 0) {
     return;
   }
-  shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff638);
-  engine_pod_cpp_CPod_initSearch_FUN_00550ea0
-            ((CPod *)g_CDemonPodPtr,acStack_100,(CPodSearchContext *)auStack_61c);
-  while (auStack_61c[4] != '\0') {
-    crt_stdio_c_sprintf_FUN_005fdbd0(acStack_2fc,"%s\t%s",auStack_61c + 4);
-    shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff644,acStack_2f8);
-    engine_pod_cpp_CPod_getNextSearchResult_FUN_00550ef0
-              ((CPod *)g_CDemonPodPtr,(CPodSearchContext *)(auStack_61c + 0xc));
-    auStack_61c[4] = cStack_60c;
+  shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff634);
+  engine_pod_cpp_CPod_initSearch_FUN_00550ea0((CPod *)g_CDemonPodPtr,local_108,&local_624);
+  while (local_624.current_file_info.found_path[0] != '\0') {
+    crt_stdio_c_sprintf_FUN_005fdbd0
+              (local_308,"%s\t%s",&local_624,local_624.current_file_info.target_path);
+    shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffff634,local_308);
+    engine_pod_cpp_CPod_getNextSearchResult_FUN_00550ef0((CPod *)g_CDemonPodPtr,&local_624);
   }
-  if ((int)in_stack_fffff64c < 1) {
+  if ((int)in_stack_fffff634 < 1) {
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-              (g_CEditorToolsPtr,"No files found matching %s");
+              (g_CEditorToolsPtr,"No files found matching %s",local_108);
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-              ((CPickList *)&stack0xfffff650,0,(uint)in_stack_fffff650,(uint)in_stack_fffff654,
-               (uint)in_stack_fffff658,(uint)in_stack_fffff65c,(uint)in_stack_fffff660);
+              ((CPickList *)&stack0xfffff634,0,in_stack_fffff634,in_stack_fffff638,
+               (uint)in_stack_fffff63c,(uint)in_stack_fffff640,in_stack_fffff644);
     return;
   }
-  shape_edittool_cpp_CStrList_sort_FUN_004a2ec0((CStrList *)&stack0xfffff64c);
+  shape_edittool_cpp_CStrList_sort_FUN_004a2ec0((CStrList *)&stack0xfffff634);
   shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-            ((CPickList *)&stack0xfffff650,acStack_ec,-1,0);
+            ((CPickList *)&stack0xfffff634,local_108,-1,0);
   shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-            ((CPickList *)&stack0xfffff654,0,(uint)in_stack_fffff654,(uint)in_stack_fffff658,
-             (uint)in_stack_fffff65c,(uint)in_stack_fffff660,in_stack_fffff664);
+            ((CPickList *)&stack0xfffff634,0,in_stack_fffff634,in_stack_fffff638,
+             (uint)in_stack_fffff63c,(uint)in_stack_fffff640,in_stack_fffff644);
   return;
 }

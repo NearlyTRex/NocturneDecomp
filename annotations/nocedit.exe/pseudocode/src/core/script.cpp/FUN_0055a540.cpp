@@ -15,13 +15,12 @@ void core_script_cpp_FUN_0055a540(void)
   char cVar1;
   CGame *pCVar2;
   int iVar3;
-  BADSPACEBASE *in_ESP;
   char *pcVar4;
   char *pcVar5;
   char *pcVar6;
   byte bVar7;
   uint *in_stack_00000004;
-  char acStack_64 [88];
+  char local_70 [100];
   
   bVar7 = 0;
   in_stack_00000004[0x12] = 0;
@@ -44,10 +43,10 @@ void core_script_cpp_FUN_0055a540(void)
   in_stack_00000004[0x117] = 0;
   DAT_0310f4a8 = 0;
   in_stack_00000004[5] = 0;
-  crt_string_c_splitpath_FUN_005ff178(pcVar6,(char *)0x0,(char *)0x0,&stack0xffffff90,(char *)0x0);
+  crt_string_c_splitpath_FUN_005ff178(pcVar6,(char *)0x0,(char *)0x0,local_70,(char *)0x0);
   pcVar4 = ".wav";
   iVar3 = -1;
-  pcVar6 = &stack0xffffff94;
+  pcVar6 = local_70;
   do {
     pcVar5 = pcVar6;
     if (iVar3 == 0) break;
@@ -66,11 +65,11 @@ void core_script_cpp_FUN_0055a540(void)
     pcVar5[1] = cVar1;
     pcVar5 = pcVar5 + 2;
   } while (cVar1 != '\0');
-  iVar3 = crt_string_c_stricmp_FUN_005fe7f0(&stack0xffffff94,"smill.wav");
+  iVar3 = crt_string_c_stricmp_FUN_005fe7f0(local_70,"smill.wav");
   if (iVar3 == 0) {
     pcVar4 = "@0.85";
     iVar3 = -1;
-    pcVar6 = &stack0xffffff98;
+    pcVar6 = local_70;
     do {
       pcVar5 = pcVar6;
       if (iVar3 == 0) break;
@@ -90,11 +89,11 @@ void core_script_cpp_FUN_0055a540(void)
       pcVar5 = pcVar5 + 2;
     } while (cVar1 != '\0');
   }
-  iVar3 = crt_string_c_stricmp_FUN_005fe7f0(&stack0xffffff98,"town.wav");
+  iVar3 = crt_string_c_stricmp_FUN_005fe7f0(local_70,"town.wav");
   if (iVar3 == 0) {
     pcVar4 = "@0.85";
     iVar3 = -1;
-    pcVar6 = acStack_64;
+    pcVar6 = local_70;
     do {
       pcVar5 = pcVar6;
       if (iVar3 == 0) break;
@@ -114,7 +113,7 @@ void core_script_cpp_FUN_0055a540(void)
       pcVar5 = pcVar5 + 2;
     } while (cVar1 != '\0');
   }
-  core_sound_cpp_CSound_playAmbientSound_FUN_005b39b0(g_CSoundPtr,acStack_64);
+  core_sound_cpp_CSound_playAmbientSound_FUN_005b39b0(g_CSoundPtr,local_70);
   in_stack_00000004[6] = 0;
   return;
 }

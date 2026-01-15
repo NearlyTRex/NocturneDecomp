@@ -23,7 +23,7 @@ crt_fstream_cpp_filebuf_dtor_FUN_0060bdf9(filebuf *this_ptr,uint d1,uint d2,uint
       }
     }
     this_ptr = (filebuf *)crt_iostream_cpp_streambuf_destructor_FUN_0060d64f(&this_ptr->streambuf);
-    if ((d3 & 2) == 0) {
+    if ((d1 & 2) == 0) {
       return this_ptr;
     }
     shape_memdbg_cpp_debugFree_FUN_0050f210(this_ptr);

@@ -18,7 +18,6 @@ shape_superopt_cpp_isPointOnLineSegment_FUN_005d6c10
   uint uVar5;
   uint uVar6;
   int iVar7;
-  BADSPACEBASE *in_ESP;
   double *pdVar8;
   uint *puVar9;
   uint local_f8;

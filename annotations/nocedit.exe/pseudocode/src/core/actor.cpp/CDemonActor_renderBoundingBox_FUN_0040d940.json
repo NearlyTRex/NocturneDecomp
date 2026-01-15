@@ -1,25 +1,21 @@
 {
   "complexity": {
     "assembly_lines": 442,
-    "complexity_score": 1546,
+    "complexity_score": 1277,
     "cross_reference_count": 9,
     "function_call_count": 10,
     "global_count": 5,
-    "pseudocode_lines": 166,
-    "suspect_count": 133,
+    "pseudocode_lines": 177,
+    "suspect_count": 107,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "callind_preserve",
       "lea_esp_stack_addr",
       "pointer_cast",
-      "register_param",
       "stack_param",
-      "stack_ref",
-      "suspect_float",
-      "unresolved_funcptr"
+      "stack_ref"
     ],
-    "total_lines": 608
+    "total_lines": 619
   },
   "cross_references": [
     {
@@ -282,346 +278,164 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 13,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 13,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000020",
-      "text": "int in_stack_00000020;",
+      "line": 16,
+      "match": "in_stack_0000000c",
+      "text": "CDemonActor *in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_00000038",
-      "text": "CBoundingBox3D *in_stack_00000038;",
+      "line": 17,
+      "match": "in_stack_00000010",
+      "text": "int in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_0000003c",
-      "text": "CBoundingBox3D *in_stack_0000003c;",
+      "line": 18,
+      "match": "in_stack_fffffe5c",
+      "text": "SRenderVertex *in_stack_fffffe5c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
-      "match": "in_stack_0000006c",
-      "text": "CBoundingBox3D *in_stack_0000006c;",
+      "line": 19,
+      "match": "in_stack_fffffe60",
+      "text": "SRenderVertex *in_stack_fffffe60;",
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_00000070",
-      "text": "CBoundingBox3D *in_stack_00000070;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_000000b8",
-      "text": "CDemonActor *in_stack_000000b8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_fffffe9c",
-      "text": "SRenderVertex *in_stack_fffffe9c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 28,
-      "match": "in_stack_fffffea0",
-      "text": "SRenderVertex *in_stack_fffffea0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
+      "description": "Direct stack address reference",
       "line": 46,
-      "match": "code *",
-      "text": "(**(code **)(*(int *)(color + 0x154) + 0x14))",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 47,
-      "match": "&stack0xfffffeb8",
-      "text": "((CDemonActor *)color,(CBoundingBox3D *)&stack0xfffffeb8);",
+      "match": "&stack0xfffffeb4",
+      "text": "this_ptr_00 = (*this_ptr->vtable->getBoundingBox)(this_ptr,(CBoundingBox3D *)&stack0xfffffeb4);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 49,
-      "match": "in_stack_00000020",
-      "text": "g_ActiveRenderColor = in_stack_00000020;",
+      "line": 48,
+      "match": "in_stack_00000010",
+      "text": "g_ActiveRenderColor = in_stack_00000010;",
       "type": "stack_param"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 51,
-      "match": "5.955552e-39",
-      "text": "fStack_144 = 5.955552e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 53,
-      "match": "&stack0xffffff5c",
-      "text": "((CBoundingBox3D *)this_ptr,(CVector3f *)&stack0xffffff5c,corner_index ^ 1);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 55,
-      "match": "&stack0xffffff54",
-      "text": "((CBoundingBox3D *)color,(CVector3f *)&stack0xffffff54,corner_index);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 58,
+      "line": 82,
       "match": "(SRenderVertex *)((int)",
-      "text": "pSVar9 = (SRenderVertex *)((int)(aCStack_30 + 1) + 4);",
+      "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 61,
-      "match": "&stack0x00000000",
-      "text": "core_actor_cpp_CVector_ctor_FUN_00410340((CVector3f *)&stack0x00000000);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 63,
-      "match": "&stack0xffffff50",
-      "text": "core_actor_cpp_CVector_ctor_FUN_00410340((CVector3f *)&stack0xffffff50);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 64,
-      "match": "&stack0xffffff18",
-      "text": "core_actor_cpp_CVector_ctor_FUN_00410340((CVector3f *)&stack0xffffff18);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 68,
-      "match": "&stack0xfffffff8",
-      "text": "(&pCVar2->vertex_buffer_ptr->projected_vertex,(CVector3i *)&stack0xfffffff8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 72,
-      "match": "&stack0xffffffe8",
-      "text": "(&pCVar2->vertex_buffer_ptr[1].projected_vertex,(CVector3i *)&stack0xffffffe8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 75,
-      "match": "&stack0xfffffecc",
-      "text": "piVar10 = (int *)&stack0xfffffecc;",
+      "line": 85,
+      "match": "&stack0xfffffe5c",
+      "text": "piVar7 = (int *)&stack0xfffffe5c;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 78,
+      "line": 88,
       "match": "(SRenderVertex *)((int)",
-      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar11 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 81,
-      "match": "&stack0xfffffe9c",
-      "text": "piVar10 = (int *)&stack0xfffffe9c;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 84,
-      "match": "(SRenderVertex *)((int)",
-      "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar11 * -2 + 1) * 4);",
+      "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 87,
-      "match": "in_stack_fffffe9c",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffe9c,in_stack_fffffea0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 87,
-      "match": "in_stack_fffffea0",
-      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffe9c,in_stack_fffffea0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 89,
-      "match": "in_stack_00000038",
-      "text": "(in_stack_00000038,(CVector3f *)&fStack_a0,corner_index ^ 2);",
+      "line": 91,
+      "match": "in_stack_fffffe5c",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffe5c,in_stack_fffffe60);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 91,
-      "match": "in_stack_0000003c",
-      "text": "(in_stack_0000003c,(CVector3f *)&stack0xffffff28,corner_index);",
+      "match": "in_stack_fffffe60",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffe5c,in_stack_fffffe60);",
       "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 91,
-      "match": "&stack0xffffff28",
-      "text": "(in_stack_0000003c,(CVector3f *)&stack0xffffff28,corner_index);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 94,
-      "match": "&stack0xfffffffc",
-      "text": "pSVar6 = (SRenderVertex *)&stack0xfffffffc;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 103,
-      "match": "&stack0xffffffe8",
-      "text": "core_actor_cpp_CVector_ctor_FUN_00410340((CVector3f *)&stack0xffffffe8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 115,
-      "match": "&stack0xffffff00",
-      "text": "piVar10 = (int *)&stack0xffffff00;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 118,
-      "match": "(SRenderVertex *)((int)",
-      "text": "pSVar7 = (SRenderVertex *)((int)pSVar7 + ((uint)bVar11 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 121,
-      "match": "&stack0xfffffed0",
-      "text": "piVar10 = (int *)&stack0xfffffed0;",
-      "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
       "line": 124,
       "match": "(SRenderVertex *)((int)",
-      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar11 * -2 + 1) * 4);",
+      "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 129,
-      "match": "in_stack_0000006c",
-      "text": "(in_stack_0000006c,(CVector3f *)&stack0xfffffff4,corner_index ^ 4);",
-      "type": "stack_param"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 129,
-      "match": "&stack0xfffffff4",
-      "text": "(in_stack_0000006c,(CVector3f *)&stack0xfffffff4,corner_index ^ 4);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 131,
-      "match": "in_stack_00000070",
-      "text": "(in_stack_00000070,(CVector3f *)&fStack_14,corner_index);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 139,
-      "match": "&stack0xffffff64",
-      "text": "core_actor_cpp_CVector_ctor_FUN_00410340((CVector3f *)&stack0xffffff64);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 140,
-      "match": "&stack0xfffffff8",
-      "text": "core_actor_cpp_CVector_ctor_FUN_00410340((CVector3f *)&stack0xfffffff8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 149,
-      "match": "&stack0x0000008c",
-      "text": "(&pCVar2->vertex_buffer_ptr[1].projected_vertex,(CVector3i *)&stack0x0000008c);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 152,
-      "match": "&stack0xffffff34",
-      "text": "piVar10 = (int *)&stack0xffffff34;",
+      "line": 127,
+      "match": "&stack0xfffffe5c",
+      "text": "piVar7 = (int *)&stack0xfffffe5c;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 155,
+      "line": 130,
       "match": "(SRenderVertex *)((int)",
-      "text": "pSVar8 = (SRenderVertex *)((int)pSVar8 + ((uint)bVar11 * -2 + 1) * 4);",
+      "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 133,
+      "match": "in_stack_fffffe5c",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffe5c,in_stack_fffffe60);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 133,
+      "match": "in_stack_fffffe60",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffe5c,in_stack_fffffe60);",
+      "type": "stack_param"
+    },
+    {
       "description": "Direct stack address reference",
-      "line": 159,
-      "match": "&stack0xffffff04",
-      "text": "piVar10 = (int *)&stack0xffffff04;",
+      "line": 160,
+      "match": "&stack0xffffffe8",
+      "text": "(&pCVar1->vertex_buffer_ptr[1].projected_vertex,(CVector3i *)&stack0xffffffe8);",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 162,
+      "line": 166,
       "match": "(SRenderVertex *)((int)",
-      "text": "pSVar9 = (SRenderVertex *)((int)pSVar9 + ((uint)bVar11 * -2 + 1) * 4);",
+      "text": "pSVar5 = (SRenderVertex *)((int)pSVar5 + ((uint)bVar8 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 167,
-      "match": "5.957353e-39",
-      "text": "fStack_a0 = 5.957353e-39;",
-      "type": "suspect_float"
+      "description": "Direct stack address reference",
+      "line": 170,
+      "match": "&stack0xfffffe5c",
+      "text": "piVar7 = (int *)&stack0xfffffe5c;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 173,
+      "match": "(SRenderVertex *)((int)",
+      "text": "pSVar6 = (SRenderVertex *)((int)pSVar6 + ((uint)bVar8 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 168,
-      "match": "in_stack_000000b8",
-      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_000000b8);",
+      "line": 176,
+      "match": "in_stack_fffffe5c",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffe5c,in_stack_fffffe60);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 176,
+      "match": "in_stack_fffffe60",
+      "text": "engine_3d_c_clipAndDrawLine2D_FUN_00407d70(in_stack_fffffe5c,in_stack_fffffe60);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 178,
+      "match": "in_stack_0000000c",
+      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_0000000c);",
       "type": "stack_param"
     },
     {

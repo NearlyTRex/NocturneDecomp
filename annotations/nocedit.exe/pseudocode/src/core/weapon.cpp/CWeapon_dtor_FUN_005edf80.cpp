@@ -24,7 +24,7 @@ core_weapon_cpp_CWeapon_dtor_FUN_005edf80(CWeapon *this_ptr,uint d1,uint d2,uint
   ptr = (CWeapon *)
         core_actor_cpp_CDemonActor_dtor_FUN_00408a30
                   ((CDemonActor *)&pCVar1[-2].scrape_points[4].raytrace_intersection,1);
-  if ((d3 & 2) == 0) {
+  if ((d1 & 2) == 0) {
     return ptr;
   }
   shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);

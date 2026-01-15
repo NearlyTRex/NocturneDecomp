@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 112,
-    "complexity_score": 81,
+    "complexity_score": 56,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
     "pseudocode_lines": 41,
-    "suspect_count": 3,
+    "suspect_count": 1,
     "suspect_types": [
-      "call_esp_preserve",
-      "unaffected_reg"
+      "call_esp_preserve"
     ],
     "total_lines": 153
   },
@@ -135,20 +134,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 13,
-      "match": "unaff_EBP",
-      "text": "int unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 33,
-      "match": "unaff_EBP",
-      "text": "((pCVar2->voxel_buffer1->voxels[0][unaff_EBP + uVar6] & g_VoxelYBitMasks[uVar1 & 7]) != 0",
-      "type": "unaffected_reg"
-    },
     {
       "add_esp_value": 16,
       "call_address": "00499ae2",

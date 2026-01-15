@@ -1,19 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 88,
-    "complexity_score": 120,
+    "complexity_score": 89,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 30,
-    "suspect_count": 7,
+    "pseudocode_lines": 29,
+    "suspect_count": 5,
     "suspect_types": [
-      "badspacebase",
       "pointer_cast",
-      "register_param",
       "stack_param"
     ],
-    "total_lines": 118
+    "total_lines": 117
   },
   "cross_references": [
     {
@@ -199,50 +197,36 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 6,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 6,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 9,
+      "line": 8,
       "match": "in_stack_00000008",
       "text": "float *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 19,
       "match": "in_stack_00000008",
       "text": "local_20.x = *in_stack_00000008 - (pSVar1->position).x;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 20,
       "match": "in_stack_00000008",
       "text": "local_20.y = in_stack_00000008[1] - (pSVar1->position).y;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 21,
       "match": "in_stack_00000008",
       "text": "local_20.z = in_stack_00000008[2] - (pSVar1->position).z;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 29,
+      "line": 28,
       "match": "(CMatrix3x3f *)((int)",
       "text": "matrix = (CMatrix3x3f *)((int)(matrix + 1) + 0x20);",
       "type": "pointer_cast"

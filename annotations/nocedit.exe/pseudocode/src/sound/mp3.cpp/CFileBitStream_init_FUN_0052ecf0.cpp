@@ -13,8 +13,6 @@ sound_mp3_cpp_CFileBitStream_init_FUN_0052ecf0
 {
   long lVar1;
   char *pcVar2;
-  int in_stack_00000014;
-  int in_stack_00000018;
   
   if (this_ptr->file_handle != (FILE *)0x0) {
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(this_ptr->file_handle,"..\\sound\\mp3.cpp",0x20b);
@@ -24,13 +22,12 @@ sound_mp3_cpp_CFileBitStream_init_FUN_0052ecf0
     shape_memdbg_cpp_debugFree_FUN_0050f460(this_ptr->buffer,"..\\sound\\mp3.cpp",0x210);
     this_ptr->buffer = (char *)0x0;
   }
-  this_ptr->file_handle = (FILE *)buffer_size;
-  lVar1 = crt_stdio_c_ftell_FUN_00601560((FILE *)buffer_size);
+  this_ptr->file_handle = file_handle;
+  lVar1 = crt_stdio_c_ftell_FUN_00601560(file_handle);
   this_ptr->stream_start_position = lVar1;
-  this_ptr->stream_length = in_stack_00000018;
-  this_ptr->buffer_size = in_stack_00000014;
-  pcVar2 = shape_memdbg_cpp_debugMalloc_FUN_0050f250
-                     (in_stack_00000014,"..\\sound\\mp3.cpp",0x1ff);
+  this_ptr->stream_length = stream_length;
+  this_ptr->buffer_size = buffer_size;
+  pcVar2 = shape_memdbg_cpp_debugMalloc_FUN_0050f250(buffer_size,"..\\sound\\mp3.cpp",0x1ff);
   this_ptr->buffer = pcVar2;
   if (pcVar2 == (char *)0x0) {
     g_CurrentFilename = "..\\sound\\mp3.cpp";

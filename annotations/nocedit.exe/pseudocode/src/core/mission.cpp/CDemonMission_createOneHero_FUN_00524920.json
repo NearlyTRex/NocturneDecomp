@@ -1,19 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 138,
-    "complexity_score": 303,
+    "complexity_score": 327,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 14,
-    "pseudocode_lines": 53,
-    "suspect_count": 23,
+    "pseudocode_lines": 52,
+    "suspect_count": 25,
     "suspect_types": [
       "call_esp_preserve",
       "callind_preserve",
       "stack_param",
+      "unaffected_reg",
       "variadic_preserve"
     ],
-    "total_lines": 191
+    "total_lines": 190
   },
   "cross_references": [
     {
@@ -206,15 +207,22 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unaffected register variable",
       "line": 7,
+      "match": "unaff_EBX",
+      "text": "CHero *unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
       "match": "in_stack_00000008",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 8,
+      "line": 9,
       "match": "in_stack_00000010",
       "text": "CDemonActor *in_stack_00000010;",
       "type": "stack_param"
@@ -234,71 +242,78 @@
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000008",
-      "text": "actor_ptr = *(CDemonActor **)(in_stack_00000008 + 0x548);",
-      "type": "stack_param"
+      "description": "Unaffected register variable",
+      "line": 25,
+      "match": "unaff_EBX",
+      "text": "if (unaff_EBX == (CHero *)0x0) {",
+      "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 31,
+      "line": 30,
       "match": "in_stack_00000008",
-      "text": "g_HeroActors[in_stack_00000008] = pCVar1;",
+      "text": "g_HeroActors[in_stack_00000008] = unaff_EBX;",
       "type": "stack_param"
     },
     {
+      "description": "Unaffected register variable",
+      "line": 30,
+      "match": "unaff_EBX",
+      "text": "g_HeroActors[in_stack_00000008] = unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
       "description": "Unresolved stack parameter",
-      "line": 37,
+      "line": 36,
       "match": "in_stack_00000008",
       "text": "if ((this_ptr_00 != (CHeroPlaceholder *)0x0) && (in_stack_00000008 == this_ptr_00->field1_0x158)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 39,
+      "line": 38,
       "match": "in_stack_00000010",
       "text": "if (in_stack_00000010 == (CDemonActor *)0x0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 43,
+      "line": 42,
       "match": "in_stack_00000010",
       "text": "(*in_stack_00000010->vtable->setPositionAndOrientation)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 44,
+      "line": 43,
       "match": "in_stack_00000010",
       "text": "(in_stack_00000010,&(this_ptr_00->base_actor).location.position,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 46,
+      "line": 45,
       "match": "in_stack_00000010",
       "text": "(in_stack_00000010->location).area_id = (this_ptr_00->base_actor).location.area_id;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 48,
+      "line": 47,
       "match": "in_stack_00000010",
       "text": "((CMotionController *)(in_stack_00000010 + 1),0,0.0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 49,
+      "line": 48,
       "match": "in_stack_00000010",
       "text": "(*in_stack_00000010->vtable[1].evaluateTriggerCondition)(in_stack_00000010);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 49,
+      "line": 48,
       "match": "in_stack_00000010",
       "text": "(*in_stack_00000010->vtable[1].evaluateTriggerCondition)(in_stack_00000010);",
       "type": "stack_param"

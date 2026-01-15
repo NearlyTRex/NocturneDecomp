@@ -1,17 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 391,
-    "complexity_score": 178,
+    "complexity_score": 147,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 5,
-    "pseudocode_lines": 148,
-    "suspect_count": 2,
-    "suspect_types": [
-      "badspacebase",
-      "register_param"
-    ],
-    "total_lines": 539
+    "pseudocode_lines": 147,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 538
   },
   "cross_references": [
     {
@@ -476,20 +473,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 14,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 14,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    }
-  ]
+  "suspects": []
 }

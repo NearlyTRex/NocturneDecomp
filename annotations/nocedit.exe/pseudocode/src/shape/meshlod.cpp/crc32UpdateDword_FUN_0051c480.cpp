@@ -11,7 +11,6 @@ void __cdecl shape_meshlod_cpp_crc32UpdateDword_FUN_0051c480(uint *crc_ptr,uint 
 {
   uint *puVar1;
   uint uVar2;
-  BADSPACEBASE *in_ESP;
   int iVar3;
   
   iVar3 = 4;

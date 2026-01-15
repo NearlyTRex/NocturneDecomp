@@ -1,18 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 429,
-    "complexity_score": 277,
+    "complexity_score": 181,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 8,
-    "pseudocode_lines": 182,
-    "suspect_count": 8,
+    "pseudocode_lines": 166,
+    "suspect_count": 1,
     "suspect_types": [
-      "concat_artifact",
-      "sub_artifact",
       "warning_unreachable"
     ],
-    "total_lines": 611
+    "total_lines": 595
   },
   "cross_references": [
     {
@@ -444,55 +442,6 @@
       "match": "WARNING: Removing unreachable block",
       "text": "/* WARNING: Removing unreachable block (ram,0x005ac957) */",
       "type": "warning_unreachable"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 108,
-      "match": "SUB84",
-      "text": "local_7c = SUB84 /* extract 2-byte value */((double)fVar18,0);",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 109,
-      "match": "SUB84",
-      "text": "local_6c = SUB84 /* extract 2-byte value */((double)fVar19,0);",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 114,
-      "match": "SUB84",
-      "text": "local_84 = SUB84 /* extract 2-byte value */(dVar26,0);",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 115,
-      "match": "CONCAT44",
-      "text": "fVar23 = fVar22 * (float10)dVar26 - (float10)(double)CONCAT44 /* combine 2-byte values */(uStack_78,local_7c);",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 117,
-      "match": "CONCAT44",
-      "text": "fVar24 = fVar22 * (float10)(double)CONCAT44 /* combine 2-byte values */(uStack_68,local_6c) - (float10)dVar5;",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 125,
-      "match": "CONCAT44",
-      "text": "dVar5 = (double)CONCAT44 /* combine 2-byte values */(uStack_68,local_6c);",
-      "type": "concat_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 126,
-      "match": "SUB84",
-      "text": "local_74 = SUB84 /* extract 2-byte value */(dVar3,0);",
-      "type": "sub_artifact"
     }
   ]
 }

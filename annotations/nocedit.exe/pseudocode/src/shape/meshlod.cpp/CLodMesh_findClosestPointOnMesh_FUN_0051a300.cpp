@@ -16,7 +16,6 @@ shape_meshlod_cpp_CLodMesh_findClosestPointOnMesh_FUN_0051a300
   float fVar3;
   float fVar4;
   CLodFace *triangle_ptr;
-  BADSPACEBASE *in_ESP;
   int iVar5;
   CVector3f local_2c [2];
   int iStack_14;

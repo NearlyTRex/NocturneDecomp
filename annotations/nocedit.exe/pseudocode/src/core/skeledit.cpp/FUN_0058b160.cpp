@@ -17,19 +17,19 @@ void core_skeledit_cpp_FUN_0058b160(void)
   int *piVar6;
   char *pcVar7;
   int *piVar8;
-  int *in_stack_0000000c;
-  int in_stack_00000010;
-  int iStackY_8;
+  int *in_stack_00000004;
+  int in_stack_00000008;
+  int local_10;
   
   crt_stack_c_stack_probe_FUN_005ff9f3(0x14);
-  iVar2 = *(int *)(in_stack_00000010 + 0x28558);
+  iVar2 = *(int *)(in_stack_00000008 + 0x28558);
   iVar5 = 0;
-  *in_stack_0000000c = iVar2;
+  *in_stack_00000004 = iVar2;
   if (0 < iVar2) {
-    pcVar7 = (char *)(in_stack_00000010 + 0x2855c);
-    piVar8 = in_stack_0000000c + 1;
-    iStackY_8 = in_stack_00000010;
-    piVar6 = in_stack_0000000c;
+    pcVar7 = (char *)(in_stack_00000008 + 0x2855c);
+    piVar8 = in_stack_00000004 + 1;
+    local_10 = in_stack_00000008;
+    piVar6 = in_stack_00000004;
     pcVar4 = pcVar7;
     piVar3 = piVar8;
 LAB_0058b1a1:
@@ -45,13 +45,13 @@ LAB_0058b1a1:
       }
       iVar5 = iVar5 + 1;
       piVar8 = piVar3 + 0x21;
-      piVar6[9] = *(int *)(iStackY_8 + 0x2857c);
+      piVar6[9] = *(int *)(local_10 + 0x2857c);
       pcVar7 = pcVar4 + 0x24;
-      iStackY_8 = iStackY_8 + 0x24;
+      local_10 = local_10 + 0x24;
       piVar6 = piVar6 + 0x21;
       pcVar4 = pcVar7;
       piVar3 = piVar8;
-    } while (iVar5 < *in_stack_0000000c);
+    } while (iVar5 < *in_stack_00000004);
   }
   return;
 }

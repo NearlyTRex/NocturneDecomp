@@ -1,20 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 27,
-    "complexity_score": 114,
+    "complexity_score": 105,
     "cross_reference_count": 25,
     "function_call_count": 4,
     "global_count": 1,
-    "pseudocode_lines": 9,
-    "suspect_count": 8,
+    "pseudocode_lines": 10,
+    "suspect_count": 7,
     "suspect_types": [
       "call_esp_preserve",
       "format_string_mismatch",
       "param_count_too_few",
-      "stack_param",
+      "unaffected_reg",
       "variadic_preserve"
     ],
-    "total_lines": 36
+    "total_lines": 37
   },
   "cross_references": [
     {
@@ -368,25 +368,18 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 5,
-      "match": "in_stack_00000010",
-      "text": "CDeformableModelInstance *in_stack_00000010;",
-      "type": "stack_param"
+      "description": "Unaffected register variable",
+      "line": 3,
+      "match": "unaff_EBX",
+      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unaffected register variable",
       "line": 8,
-      "match": "in_stack_00000010",
-      "text": "crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)in_stack_00000010,\"MODELS\\\\%s\\n\");",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000010",
-      "text": "core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(in_stack_00000010);",
-      "type": "stack_param"
+      "match": "unaff_EBX",
+      "text": "crt_stdio_c_fprintf_FUN_005fe6d0(param_6,\"MODELS\\\\%s\\n\",param_5->model_name,unaff_EBX);",
+      "type": "unaffected_reg"
     },
     {
       "call_site_count": 25,
@@ -401,7 +394,7 @@
     },
     {
       "call_address": "0058a27f",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -414,14 +407,14 @@
       "type": "variadic_preserve"
     },
     {
-      "actual_args": 0,
-      "description": "Format \"MODELS\\\\%s\\n\" has 1 specifiers but 0 arguments after it",
+      "actual_args": 2,
+      "description": "Format \"MODELS\\\\%s\\n\" has 1 specifiers but 2 arguments after it",
       "expected_args": 1,
       "format_string": "MODELS\\\\%s\\n",
       "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
       "line_number": 8,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0((FILE *)in_stack_00000010,\"MODELS\\\\%s\\n\");",
-      "text": "Format string expects 1 args but got 0",
+      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(param_6,\"MODELS\\\\%s\\n\",param_5->model_name,unaff_EBX);",
+      "text": "Format string expects 1 args but got 2",
       "type": "format_string_mismatch"
     },
     {

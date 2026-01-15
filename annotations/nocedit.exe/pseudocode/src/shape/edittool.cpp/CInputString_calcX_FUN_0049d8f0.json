@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 76,
-    "complexity_score": 106,
+    "complexity_score": 84,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 6,
-    "pseudocode_lines": 31,
-    "suspect_count": 6,
+    "pseudocode_lines": 34,
+    "suspect_count": 4,
     "suspect_types": [
       "call_esp_preserve",
-      "unaffected_reg",
       "variadic_preserve"
     ],
-    "total_lines": 107
+    "total_lines": 110
   },
   "cross_references": [
     {
@@ -182,20 +181,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 8,
-      "match": "unaff_BP",
-      "text": "char unaff_BP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 21,
-      "match": "unaff_BP",
-      "text": "this_ptr->string_data[char_index] = unaff_BP;",
-      "type": "unaffected_reg"
-    },
     {
       "call_address": "0049d93e",
       "caller_has_stack_issues": false,

@@ -10,18 +10,17 @@ void __cdecl core_actor_cpp_serializeActor_FUN_0040b870(CDemonActor *actor_ptr,c
 
 {
   CDemonActor *pCVar1;
-  char *in_stack_0000000c;
   
   if (g_ActorReadingMode == 1) {
     pCVar1 = core_mission_cpp_CDemonMission_loadActor_FUN_00523990
                        (g_CDemonMissionPtr,g_ActorDataFile,g_CurrentActorBeingProcessed,
                         property_name);
-    *(CDemonActor **)property_name = pCVar1;
+    *(CDemonActor **)actor_ptr->actor_name = pCVar1;
     return;
   }
   crt_stdio_c_fprintf_FUN_005fe6d0(g_ActorDataFile,"%s",g_PropertyNamePrefix);
   core_mission_cpp_CDemonMission_saveActor_FUN_00523af0
-            (g_CDemonMissionPtr,*(CDemonActor **)property_name,g_ActorDataFile,
-             g_CurrentActorBeingProcessed,in_stack_0000000c);
+            (g_CDemonMissionPtr,*(CDemonActor **)actor_ptr->actor_name,g_ActorDataFile,
+             g_CurrentActorBeingProcessed,property_name);
   return;
 }

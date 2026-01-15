@@ -1,17 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 90,
-    "complexity_score": 126,
+    "complexity_score": 69,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 8,
-    "pseudocode_lines": 36,
-    "suspect_count": 8,
+    "pseudocode_lines": 34,
+    "suspect_count": 3,
     "suspect_types": [
-      "unaffected_reg",
       "variadic_preserve"
     ],
-    "total_lines": 126
+    "total_lines": 124
   },
   "cross_references": [
     {
@@ -159,41 +158,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 7,
-      "match": "unaff_DI",
-      "text": "byte unaff_DI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 20,
-      "match": "unaff_DI",
-      "text": "*puVar2 = bVar1 ^ unaff_DI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 21,
-      "match": "unaff_DI",
-      "text": "if ((bVar1 ^ unaff_DI) == 0) break;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 22,
-      "match": "unaff_DI",
-      "text": "unaff_DI = unaff_DI * -0x43 + 1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 22,
-      "match": "unaff_DI",
-      "text": "unaff_DI = unaff_DI * -0x43 + 1;",
-      "type": "unaffected_reg"
-    },
     {
       "call_address": "005442e2",
       "caller_has_stack_issues": false,

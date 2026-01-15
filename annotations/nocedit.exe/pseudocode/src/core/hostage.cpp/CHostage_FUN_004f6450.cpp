@@ -14,8 +14,6 @@ void __cdecl core_hostage_cpp_CHostage_FUN_004f6450(CHostage *this_ptr)
   int iVar2;
   uint uVar3;
   int in_stack_00000008;
-  uint uStack0000001c;
-  uint uStack00000030;
   
   if (*(int *)this_ptr->field4_0x1fab8 == 0) {
     *(uint *)(in_stack_00000008 + 4) = 0;
@@ -43,20 +41,16 @@ void __cdecl core_hostage_cpp_CHostage_FUN_004f6450(CHostage *this_ptr)
       this_ptr->field8_0x1fae0[0xf] = '@';
       *(uint *)(this_ptr->field8_0x1fae0 + 8) = uVar3;
     }
-    uStack0000001c = 0x4f64ca;
     iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(*(uint *)(this_ptr->field2_0x1f70c + 0x3a4))
     ;
     if (iVar2 == 0) {
-      uStack0000001c = 0x4f6539;
       uVar3 = (*((this_ptr->base_npc).base_character.base_actor.vtable)->playSound)
                         ((CDemonActor *)this_ptr,this_ptr->field2_0x1f70c + 0x2dc);
       *(uint *)(this_ptr->field2_0x1f70c + 0x3a4) = uVar3;
-      uStack00000030 = 0x4f6549;
       core_npc_cpp_CNPC_FUN_00544d30(&this_ptr->base_npc);
       return;
     }
   }
-  uStack0000001c = 0x4f64d8;
   core_npc_cpp_CNPC_FUN_00544d30(&this_ptr->base_npc);
   return;
 }

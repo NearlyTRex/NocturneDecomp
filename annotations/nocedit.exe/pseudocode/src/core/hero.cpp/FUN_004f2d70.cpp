@@ -16,7 +16,6 @@ int core_hero_cpp_FUN_004f2d70(void)
   CDoor *this_ptr;
   CVector3f *pCVar5;
   int iVar6;
-  BADSPACEBASE *in_ESP;
   int iVar7;
   CDemonActor *in_stack_00000004;
   CVector3f local_24;

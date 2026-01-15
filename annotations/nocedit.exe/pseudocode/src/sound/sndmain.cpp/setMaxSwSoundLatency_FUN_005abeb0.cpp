@@ -10,7 +10,6 @@ void __cdecl sound_sndmain_cpp_setMaxSwSoundLatency_FUN_005abeb0(float latency)
 
 {
   int iVar1;
-  float in_stack_0000000c;
   
   iVar1 = sound_sndmain_cpp_isSoundBusy_FUN_005ab540();
   if (iVar1 != 0) {
@@ -18,11 +17,11 @@ void __cdecl sound_sndmain_cpp_setMaxSwSoundLatency_FUN_005abeb0(float latency)
     g_CurrentLineNumber = 0x15a2;
     core_main_c_displayErrorAndQuit_FUN_00506f10("setMaxSwSoundLatency - can't do this while sound is active");
   }
-  if (in_stack_0000000c < (float)0.050000000000000003) {
-    in_stack_0000000c = 0.05;
+  if (latency < (float)0.050000000000000003) {
+    latency = 0.05;
   }
-  if (in_stack_0000000c <= (float)2) {
-    0.5f = in_stack_0000000c;
+  if (latency <= (float)2) {
+    0.5f = latency;
     return;
   }
   0.5f = 2.0;

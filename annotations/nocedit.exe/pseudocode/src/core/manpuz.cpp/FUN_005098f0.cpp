@@ -13,7 +13,6 @@ void core_manpuz_cpp_FUN_005098f0(void)
   int iVar2;
   int iVar3;
   int in_stack_00000004;
-  int in_stack_00000008;
   
   iVar3 = in_stack_00000004;
   iVar2 = in_stack_00000004;
@@ -70,9 +69,9 @@ void core_manpuz_cpp_FUN_005098f0(void)
     *(uint *)(iVar2 + 0xc) = *(uint *)(iVar2 + 0x10);
     *(uint *)(iVar2 + 0x18) = *(uint *)(iVar2 + 0x20);
   } while (iVar3 < 0xc);
-  *(uint *)(in_stack_00000008 + 0x139c) = 1;
-  *(uint *)(in_stack_00000008 + 0x13b8) = 0;
-  *(uint *)(in_stack_00000008 + 0x13fc) = 0xb;
-  *(uint *)(in_stack_00000008 + 0x1358) = 0;
+  *(uint *)(in_stack_00000004 + 0x139c) = 1;
+  *(uint *)(in_stack_00000004 + 0x13b8) = 0;
+  *(uint *)(in_stack_00000004 + 0x13fc) = 0xb;
+  *(uint *)(in_stack_00000004 + 0x1358) = 0;
   return;
 }

@@ -13,10 +13,8 @@ core_box_cpp_CBox_setupN_FUN_0041df50
 
 {
   int iVar1;
-  float *pfVar2;
-  SScrape *pSVar3;
-  BADSPACEBASE *in_ESP;
-  float in_stack_0000001c;
+  CVector3f *pCVar2;
+  float fStack_34;
   float fStack_30;
   float fStack_2c;
   float local_28;
@@ -31,62 +29,61 @@ core_box_cpp_CBox_setupN_FUN_0041df50
     g_CurrentLineNumber = 0x80;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CBox::setupN - Too many scrape points");
   }
+  local_18 = 999.0;
   local_14 = 999.0;
-  local_28 = 999.0;
+  local_28 = -999.0;
   local_24 = -999.0;
   local_20 = -999.0;
-  local_1c = -999.0;
-  local_18 = 999.0;
+  local_1c = 999.0;
   iVar1 = 0;
-  pfVar2 = (float *)volume;
+  pCVar2 = point_array;
   if (0 < point_count) {
     do {
-      if (*pfVar2 < local_18) {
-        local_18 = *pfVar2;
+      if (pCVar2->x < local_1c) {
+        local_1c = pCVar2->x;
       }
-      if (pfVar2[1] < local_14) {
-        local_14 = pfVar2[1];
+      if (pCVar2->y < local_18) {
+        local_18 = pCVar2->y;
       }
-      if (pfVar2[2] < local_28) {
-        local_28 = pfVar2[2];
+      if (pCVar2->z < local_14) {
+        local_14 = pCVar2->z;
       }
-      if (local_24 < *pfVar2) {
-        local_24 = *pfVar2;
+      if (local_28 < pCVar2->x) {
+        local_28 = pCVar2->x;
       }
-      if (local_20 < pfVar2[1]) {
-        local_20 = pfVar2[1];
+      if (local_24 < pCVar2->y) {
+        local_24 = pCVar2->y;
       }
-      if (local_1c < pfVar2[2]) {
-        local_1c = pfVar2[2];
+      if (local_20 < pCVar2->z) {
+        local_20 = pCVar2->z;
       }
       iVar1 = iVar1 + 1;
-      pfVar2 = pfVar2 + 3;
+      pCVar2 = pCVar2 + 1;
     } while (iVar1 < point_count);
   }
+  fStack_34 = local_28 - local_1c;
   fStack_30 = local_24 - local_18;
   fStack_2c = local_20 - local_14;
-  local_28 = local_1c - local_28;
-  if (&this_ptr->extents != (CVector3f *)&fStack_30) {
-    (this_ptr->extents).x = fStack_30;
-    (this_ptr->extents).y = fStack_2c;
-    (this_ptr->extents).z = local_28;
+  if (&this_ptr->extents != (CVector3f *)&fStack_34) {
+    (this_ptr->extents).x = fStack_34;
+    (this_ptr->extents).y = fStack_30;
+    (this_ptr->extents).z = fStack_2c;
   }
   iVar1 = 0;
   this_ptr->scrape_point_count = point_count;
   if (0 < point_count) {
-    pSVar3 = this_ptr->scrape_points;
+    pCVar2 = &this_ptr->scrape_points[0].local_position;
     do {
-      if (pSVar3 != (SScrape *)volume) {
-        (pSVar3->local_position).x = *(float *)volume;
-        (pSVar3->local_position).y = *(float *)((int)volume + 4);
-        (pSVar3->local_position).z = *(float *)((int)volume + 8);
+      if (pCVar2 != point_array) {
+        ((CVector3f *)&pCVar2->x)->x = point_array->x;
+        pCVar2->y = point_array->y;
+        pCVar2->z = point_array->z;
       }
-      pSVar3 = pSVar3 + 1;
+      pCVar2 = (CVector3f *)&pCVar2[4].y;
       iVar1 = iVar1 + 1;
-      volume = (float)((int)volume + 0xc);
+      point_array = point_array + 1;
     } while (iVar1 < point_count);
   }
-  core_box_cpp_CBox_updateTransform_FUN_0041e0e0
-            (this_ptr,orientation,(CVector3f *)point_count,in_stack_0000001c);
+  core_box_cpp_CBox_updateTransform_FUN_0041e0e0(this_ptr,position,orientation,volume);
   return;
 }

@@ -30,7 +30,7 @@ shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a2920
       g_CurrentLineNumber = 0xab3;
       core_main_c_displayErrorAndQuit_FUN_00506f10("CEditorTools::setMousePointerType - invalid type!");
       g_CursorSizeHorizontal = height;
-      g_CursorSizeVertical = height;
+      g_CursorSizeVertical = width;
       return;
     }
   }

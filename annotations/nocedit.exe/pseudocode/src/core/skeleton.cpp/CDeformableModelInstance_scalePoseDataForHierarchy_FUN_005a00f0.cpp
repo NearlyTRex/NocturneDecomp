@@ -14,7 +14,6 @@ core_skeleton_cpp_CDeformableModelInstance_scalePoseDataForHierarchy_FUN_005a00f
   CSkeleton *this_ptr_00;
   int iVar1;
   int start_bone_index;
-  float in_stack_00000010;
   
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(this_ptr);
   start_bone_index = 0;
@@ -24,7 +23,7 @@ core_skeleton_cpp_CDeformableModelInstance_scalePoseDataForHierarchy_FUN_005a00f
                         (this_ptr_00,start_bone_index,target_bone_index);
       if (-1 < iVar1) {
         (this_ptr->bone_transform).current_pose_data[0] =
-             (this_ptr->bone_transform).current_pose_data[0] * in_stack_00000010;
+             (this_ptr->bone_transform).current_pose_data[0] * scale_factor;
       }
       start_bone_index = start_bone_index + 1;
       this_ptr = (CDeformableModelInstance *)&(this_ptr->motion_controller).current_motion_index;

@@ -11,7 +11,6 @@ int __cdecl core_hostage_cpp_CHostage_FUN_004f63e0(CHostage *this_ptr)
 {
   CDemonActor *in_stack_00000008;
   int in_stack_0000000c;
-  uint in_stack_00000010;
   
   (this_ptr->base_npc).base_character.grabbed_type = in_stack_0000000c;
   (this_ptr->base_npc).base_character.grabbed_by = in_stack_00000008;
@@ -24,6 +23,6 @@ int __cdecl core_hostage_cpp_CHostage_FUN_004f63e0(CHostage *this_ptr)
   this_ptr->field8_0x1fae0[0xd] = '\0';
   this_ptr->field8_0x1fae0[0xe] = '@';
   this_ptr->field8_0x1fae0[0xf] = '@';
-  *(uint *)(this_ptr->field8_0x1fae0 + 8) = in_stack_00000010;
+  *(CDemonActor **)(this_ptr->field8_0x1fae0 + 8) = in_stack_00000008;
   return 1;
 }

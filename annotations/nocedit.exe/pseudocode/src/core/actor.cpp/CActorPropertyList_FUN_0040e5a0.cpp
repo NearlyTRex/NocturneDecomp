@@ -11,11 +11,9 @@ int __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e5a0(CActorPropertyList *t
 {
   int in_EAX;
   int iVar1;
-  BADSPACEBASE *in_ESP;
-  CActorPropertyList *in_stack_00000008;
   int *in_stack_0000000c;
   int in_stack_00000010;
-  char acStack_d4 [196];
+  char local_d8 [200];
   
   if (in_stack_00000010 < 0) {
     in_stack_00000010 = 5;
@@ -29,9 +27,9 @@ int __cdecl core_actor_cpp_CActorPropertyList_FUN_0040e5a0(CActorPropertyList *t
   iVar1 = 0;
   if (0 < in_stack_00000010) {
     do {
-      crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff28,"%s %d");
+      crt_stdio_c_sprintf_FUN_005fdbd0(local_d8,"%s %d");
       in_EAX = core_actor_cpp_CActorPropertyList_snag_FUN_0040e6c0
-                         (in_stack_00000008,0x10,acStack_d4,in_stack_0000000c,(void *)0x0);
+                         (this_ptr,0x10,local_d8,in_stack_0000000c,(void *)0x0);
       *(int *)(in_EAX + 0x5c) = iVar1;
       iVar1 = iVar1 + 1;
     } while (iVar1 < in_stack_00000010);

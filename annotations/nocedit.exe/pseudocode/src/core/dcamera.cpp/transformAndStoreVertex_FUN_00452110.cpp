@@ -10,7 +10,6 @@ void __cdecl
 core_dcamera_cpp_transformAndStoreVertex_FUN_00452110(int vertex_index,float x,float y,float z)
 
 {
-  BADSPACEBASE *in_ESP;
   CVector3i local_1c;
   float local_10;
   float local_c;

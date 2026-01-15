@@ -10,10 +10,9 @@ CVector3f * __cdecl
 core_xform_cpp_quaternionToEulerAnglesZYX_FUN_005f7af0(CVector3f *euler_out,CQuaternion4f *quat_ptr)
 
 {
-  BADSPACEBASE *in_ESP;
-  CVector3f aCStack_30 [3];
+  CMatrix3x3f local_34;
   
-  core_xform_cpp_quaternionToMatrix3x3_FUN_005f7280((CMatrix3x3f *)&stack0xffffffcc,quat_ptr);
-  core_xform_cpp_matrixToEulerAnglesZYX_FUN_005f5bd0(aCStack_30,(CMatrix3x3f *)euler_out);
+  core_xform_cpp_quaternionToMatrix3x3_FUN_005f7280(&local_34,quat_ptr);
+  core_xform_cpp_matrixToEulerAnglesZYX_FUN_005f5bd0(local_34.m,(CMatrix3x3f *)euler_out);
   return euler_out;
 }

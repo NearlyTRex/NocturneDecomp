@@ -11,9 +11,8 @@ STreeNode * __cdecl shape_design_c_parseSpatialTreeFromFile_FUN_004580a0(FILE *f
 {
   int extraout_EAX;
   STreeNode *pSVar1;
-  BADSPACEBASE *in_ESP;
   double dVar2;
-  STreeNode *pSVar3;
+  STreeNode *local_34;
   byte local_2c [4];
   int local_28;
   int local_24;
@@ -26,25 +25,25 @@ STreeNode * __cdecl shape_design_c_parseSpatialTreeFromFile_FUN_004580a0(FILE *f
                        (file,"%d,%d,%f,%f,%f,%f\n",local_2c,&local_28,&local_20,&local_1c,&local_18
                         ,&local_14);
   if ((local_24 == 0) || (local_24 == -1)) {
-    pSVar3 = (STreeNode *)0x0;
+    local_34 = (STreeNode *)0x0;
   }
   else {
-    pSVar3 = shape_design_c_allocateSpatialTreeNode_FUN_00457ed0();
-    pSVar3->node_type = local_28;
+    local_34 = shape_design_c_allocateSpatialTreeNode_FUN_00457ed0();
+    local_34->node_type = local_28;
     if (local_24 == 3) {
       dVar2 = crt_math_c_round_FUN_005fe6b0((double)local_20);
       *(int *)(extraout_EAX + 0xc) = (int)ROUND(dVar2);
     }
     else {
-      pSVar3->data1 = local_20;
-      pSVar3->data2 = local_1c;
-      pSVar3->data3 = local_18;
-      pSVar3->data4 = local_14;
+      local_34->data1 = local_20;
+      local_34->data2 = local_1c;
+      local_34->data3 = local_18;
+      local_34->data4 = local_14;
       pSVar1 = shape_design_c_parseSpatialTreeFromFile_FUN_004580a0(file);
-      pSVar3->left_child = pSVar1;
+      local_34->left_child = pSVar1;
       pSVar1 = shape_design_c_parseSpatialTreeFromFile_FUN_004580a0(file);
-      pSVar3->right_child = pSVar1;
+      local_34->right_child = pSVar1;
     }
   }
-  return pSVar3;
+  return local_34;
 }

@@ -1,22 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 572,
-    "complexity_score": 562,
+    "complexity_score": 531,
     "cross_reference_count": 0,
     "function_call_count": 21,
     "global_count": 13,
-    "pseudocode_lines": 297,
-    "suspect_count": 23,
+    "pseudocode_lines": 296,
+    "suspect_count": 21,
     "suspect_types": [
-      "badspacebase",
       "pointer_cast",
-      "register_param",
       "stack_param",
       "unknown_field",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 869
+    "total_lines": 868
   },
   "cross_references": [],
   "function": {
@@ -886,155 +884,141 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 16,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 16,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 24,
+      "line": 23,
       "match": "in_stack_00000008",
       "text": "float in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 25,
+      "line": 24,
       "match": "in_stack_fffffda4",
       "text": "CMatrix3x4f *in_stack_fffffda4;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 26,
+      "line": 25,
       "match": "in_stack_fffffda8",
       "text": "CMatrix3x4f *in_stack_fffffda8;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 68,
+      "line": 67,
       "match": "in_stack_00000008",
       "text": "while (0.0 < in_stack_00000008 * fVar1) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 74,
+      "line": 73,
       "match": "code *",
       "text": "if ((iVar3 != 0) && (iVar3 = (**(code **)(*(int *)(iVar3 + 0x154) + 0x108))(), iVar3 == 0)",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Complex pointer cast",
-      "line": 84,
+      "line": 83,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar11 = (CMatrix3x4f *)((int)pCVar11 + ((uint)bVar14 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 96,
+      "line": 95,
       "match": "code *",
       "text": "(iVar3 = (**(code **)(*(int *)(*(int *)((this_ptr->base_enemy).field6_0xbe38 + 4) +",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 107,
+      "line": 106,
       "match": "in_stack_fffffda4",
       "text": "core_xform_cpp_inverse_FUN_005f6210(&CStack_1ec,in_stack_fffffda4);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 113,
+      "line": 112,
       "match": "(CMatrix3x4f *)((int)",
       "text": "pCVar11 = (CMatrix3x4f *)((int)pCVar11 + ((uint)bVar14 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 124,
+      "line": 123,
       "match": "in_stack_fffffda4",
       "text": "(&CStack_128,in_stack_fffffda4,in_stack_fffffda8);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 124,
+      "line": 123,
       "match": "in_stack_fffffda8",
       "text": "(&CStack_128,in_stack_fffffda4,in_stack_fffffda8);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 156,
+      "line": 155,
       "match": "code *",
       "text": "(pCVar5 = (CTentacle *)(**(code **)(*(int *)(iVar3 + 0x154) + 0x108))(),",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 174,
+      "line": 173,
       "match": "in_stack_00000008",
       "text": "*(float *)(this_ptr->field1_0xbeb4 + 8) - in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 209,
+      "line": 208,
       "match": "in_stack_00000008",
       "text": "fVar1 = *(float *)(this_ptr->field1_0xbeb4 + 0xc) + in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 216,
+      "line": 215,
       "match": "._12_4_",
       "text": "auStack_90._12_4_ = *(float *)(iVar3 + 0x20) - ((CVector3f *)&local_1c->x)->x;",
       "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 224,
+      "line": 223,
       "match": "in_stack_00000008",
       "text": "local_28 = in_stack_00000008 * (float)0.78539816337500001;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 265,
+      "line": 264,
       "match": "code *",
       "text": "(iVar3 = (**(code **)(*(int *)(iVar3 + 0x154) + 0x120))(), iVar3 < 1)) &&",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 266,
+      "line": 265,
       "match": "code *",
       "text": "(iVar3 = (**(code **)(*(int *)(*(int *)((this_ptr->base_enemy).field6_0xbe38 + 4) +",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 277,
+      "line": 276,
       "match": "in_stack_00000008",
       "text": "fStack_2c = in_stack_00000008 * (float)1.04719755116667;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 287,
+      "line": 286,
       "match": "in_stack_00000008",
       "text": "fVar1 = in_stack_00000008 / _DAT_00664468 + *(float *)(this_ptr->field1_0xbeb4 + 0x14);",
       "type": "stack_param"

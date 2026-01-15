@@ -9,8 +9,6 @@
 SMRGLHeaderExtended * __cdecl engine_3d_c_setRenderAlpha_FUN_00406d60(SMRGLHeaderExtended *block)
 
 {
-  int in_stack_00000008;
-  
   engine_3d_c_setRenderAlpha_FUN_00406d80((block->base).count);
-  return (SMRGLHeaderExtended *)(in_stack_00000008 + 8);
+  return (SMRGLHeaderExtended *)&block->child_count;
 }

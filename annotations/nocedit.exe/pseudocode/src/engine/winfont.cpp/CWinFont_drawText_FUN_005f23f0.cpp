@@ -13,14 +13,13 @@ engine_winfont_cpp_CWinFont_drawText_FUN_005f23f0
 
 {
   int iVar1;
-  int in_stack_0000001c;
   
   iVar1 = engine_winfont_cpp_CWinFont_createTextBackground_FUN_005f2860(this_ptr,-1,-1);
   if (iVar1 == 0) {
     return 0;
   }
   engine_winfont_cpp_CWinFont_setColorAndDrawText_FUN_005f2440
-            (this_ptr,this_ptr->deviceContextHandle,y_position,(int)text_string,(char *)text_color,
-             draw_flags,in_stack_0000001c);
+            (this_ptr,this_ptr->deviceContextHandle,x_position,y_position,text_string,text_color,
+             draw_flags);
   return 0;
 }

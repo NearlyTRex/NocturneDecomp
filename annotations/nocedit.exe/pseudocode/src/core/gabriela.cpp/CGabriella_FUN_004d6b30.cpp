@@ -50,7 +50,7 @@ void __cdecl core_gabriela_cpp_CGabriella_FUN_004d6b30(CGabriella *this_ptr)
       pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
                          (&this_ptr_00->motion_controller);
       if (pSVar2->state_index != 0xb) {
-        force_immediate = 0;
+        force_immediate = 1;
         (this_ptr->base_hero).base_character.grabbed_by = (CDemonActor *)0x0;
         fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,100.0);
         core_motion_cpp_CMotionController_setDesiredState_FUN_0052db00

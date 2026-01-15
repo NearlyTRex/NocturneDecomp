@@ -17,7 +17,6 @@ void core_setedit_cpp_FUN_0057b500(void)
   int unaff_EDI;
   CDemonSet *in_stack_00000004;
   int in_stack_00000008;
-  CDemonSet *in_stack_00000014;
   
   if ((-1 < in_stack_00000008) && (in_stack_00000008 < in_stack_00000004->light_count)) {
     if (in_stack_00000004->lights[in_stack_00000008].light_type == 0) {
@@ -46,7 +45,7 @@ void core_setedit_cpp_FUN_0057b500(void)
         if (iVar3 != 0) {
           core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(in_stack_00000004);
         }
-        core_set_cpp_CDemonSet_initScene_FUN_0056aa10(in_stack_00000014);
+        core_set_cpp_CDemonSet_initScene_FUN_0056aa10(in_stack_00000004);
         return;
       }
     }

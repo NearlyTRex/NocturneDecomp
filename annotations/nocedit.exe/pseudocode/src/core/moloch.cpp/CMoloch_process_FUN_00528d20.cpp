@@ -18,7 +18,6 @@ void __cdecl core_moloch_cpp_CMoloch_process_FUN_00528d20(CMoloch *this_ptr)
   CVector3f *pCVar6;
   float fVar7;
   SMotion *pSVar8;
-  BADSPACEBASE *in_ESP;
   char *pcVar9;
   float in_stack_00000008;
   uint uVar10;
@@ -40,7 +39,7 @@ void __cdecl core_moloch_cpp_CMoloch_process_FUN_00528d20(CMoloch *this_ptr)
   char *pcStack_20;
   SCollisionInfo *local_1c;
   SCollisionInfo *local_18;
-  CDemonActor_vtable *local_14;
+  SMotion *local_14;
   
   if ((this_ptr->base_hero).ai_task == 4) {
     return;
@@ -170,10 +169,10 @@ LAB_00528e3a:
       pCVar6 = core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
                          ((CDemonActor *)this_ptr,&local_5c,&(pCVar2->location).position);
       pCVar6 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&local_50,pCVar6);
-      in_stack_ffffe4e8 =
-           (SCollisionInfo *)core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(pCVar6->y);
-      if ((float)in_stack_ffffe4e8 < (float)-1.57079632675) {
-        in_stack_ffffe4e8 = (SCollisionInfo *)((float)in_stack_ffffe4e8 + 3.141593f);
+      local_14 = (SMotion *)core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(pCVar6->y);
+      in_stack_ffffe4e8 = (SCollisionInfo *)local_14;
+      if ((float)local_14 < (float)-1.57079632675) {
+        in_stack_ffffe4e8 = (SCollisionInfo *)((float)local_14 + 3.141593f);
       }
       if ((float)1.57079632675 < (float)in_stack_ffffe4e8) {
         in_stack_ffffe4e8 = (SCollisionInfo *)((float)in_stack_ffffe4e8 + -3.141593f);
@@ -191,10 +190,11 @@ LAB_00528e3a:
       core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408c10((CDemonActor *)this_ptr);
     }
     pCVar2 = (this_ptr->base_hero).base_character.grabbed_by;
-    local_14 = pCVar2->vtable;
+    local_14 = (SMotion *)pCVar2->vtable;
     pCVar6 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
                        (&(this_ptr->base_hero).base_character.model,&local_44,0);
-    fVar7 = (*local_14[1].cylinderGroundCheck)(pCVar2,(float)this_ptr,pCVar6);
+    fVar7 = (*((CDemonActor_vtable *)((int)local_14 + 0xec))->cylinderGroundCheck)
+                      (pCVar2,(float)this_ptr,pCVar6);
     if (fVar7 == 0.0) {
       (this_ptr->base_hero).base_character.grabbed_by = (CDemonActor *)0x0;
     }
@@ -254,14 +254,14 @@ LAB_00528f8e:
       this_ptr->morph_timer = 0.0;
       core_skeleton_cpp_CDeformableModelInstance_getBoneTransform_FUN_005a1510
                 ((CDeformableModelInstance *)this_ptr_00,&SStack_1b10);
-      core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
-                ((CMotionController *)this_ptr_00);
+      local_14 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0
+                           ((CMotionController *)this_ptr_00);
       pCVar1 = &(this_ptr->base_hero).base_character.model;
       fStack_24 = *(float *)(this_ptr->field1_0x1fbd4 + 8);
       core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(pCVar1,pcVar9);
       core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(pCVar1);
       core_motion_cpp_CMotionController_jumpToMotionByName_FUN_0052ddb0
-                (&pCVar1->motion_controller,(char *)local_14,fStack_24);
+                (&pCVar1->motion_controller,local_14->motion_name,fStack_24);
       core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840
                 ((CDeformableModelInstance *)this_ptr_00,pcStack_20);
       core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450

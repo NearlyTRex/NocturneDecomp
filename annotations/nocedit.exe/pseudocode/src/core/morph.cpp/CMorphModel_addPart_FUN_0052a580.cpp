@@ -10,55 +10,56 @@ void __cdecl core_morph_cpp_CMorphModel_addPart_FUN_0052a580(CMorphModel *this_p
 
 {
   int *piVar1;
-  int iVar2;
-  void *pvVar3;
+  void *pvVar2;
+  int iVar3;
   int iVar4;
-  int iVar5;
-  uint in_stack_0000000c;
+  uint in_stack_00000008;
+  int in_stack_0000000c;
+  int in_stack_00000010;
   int in_stack_00000014;
-  int in_stack_0000001c;
+  int in_stack_00000018;
   
   if (4 < *(int *)this_ptr->field0_0x0) {
     g_CurrentFilename = "..\\core\\morph.cpp";
     g_CurrentLineNumber = 0x77;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CMorphModel::addPart - too many parts!");
   }
-  iVar4 = 0;
-  iVar5 = in_stack_00000014;
-  for (iVar2 = in_stack_00000014; 0 < iVar2; iVar2 = iVar2 + -1) {
-    piVar1 = (int *)(iVar5 + 4);
-    iVar5 = iVar5 + in_stack_0000001c;
-    iVar4 = iVar4 + *piVar1 + -2;
+  iVar3 = 0;
+  iVar4 = in_stack_00000014;
+  for (; 0 < in_stack_00000010; in_stack_00000010 = in_stack_00000010 + -1) {
+    piVar1 = (int *)(iVar4 + 4);
+    iVar4 = iVar4 + in_stack_00000018;
+    iVar3 = iVar3 + *piVar1 + -2;
   }
   *(int *)(this_ptr->field0_0x0 + *(int *)this_ptr->field0_0x0 * 0x10 + 0xc) = this_ptr->num_points;
   *(uint *)(this_ptr->field0_0x0 + *(int *)this_ptr->field0_0x0 * 0x10 + 4) =
-       in_stack_0000000c;
+       in_stack_00000008;
   *(uint *)(this_ptr->field0_0x0 + *(int *)this_ptr->field0_0x0 * 0x10 + 0x10) =
        *(uint *)(this_ptr->field2_0x58 + 4);
-  *(int *)(this_ptr->field0_0x0 + *(int *)this_ptr->field0_0x0 * 0x10 + 8) = iVar4;
+  *(int *)(this_ptr->field0_0x0 + *(int *)this_ptr->field0_0x0 * 0x10 + 8) = iVar3;
   this_ptr->num_points =
        this_ptr->num_points +
        *(int *)(this_ptr->field0_0x0 + *(int *)this_ptr->field0_0x0 * 0x10 + 4);
-  iVar4 = this_ptr->num_points;
-  pvVar3 = *(void **)this_ptr->field2_0x58;
+  iVar3 = this_ptr->num_points;
+  pvVar2 = *(void **)this_ptr->field2_0x58;
   *(int *)(this_ptr->field2_0x58 + 4) =
        *(int *)(this_ptr->field2_0x58 + 4) +
        *(int *)(this_ptr->field0_0x0 + *(int *)this_ptr->field0_0x0 * 0x10 + 8);
-  pvVar3 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
-                     (pvVar3,iVar4 << 4,"..\\core\\morph.cpp",0x89);
-  *(void **)this_ptr->field2_0x58 = pvVar3;
-  pvVar3 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
+  pvVar2 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
+                     (pvVar2,iVar3 << 4,"..\\core\\morph.cpp",0x89);
+  *(void **)this_ptr->field2_0x58 = pvVar2;
+  pvVar2 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
                      (*(void **)(this_ptr->field2_0x58 + 8),
                       *(int *)(this_ptr->field2_0x58 + 4) * 0x3c,"..\\core\\morph.cpp",0x8a);
-  iVar4 = *(int *)this_ptr->field0_0x0;
-  *(void **)(this_ptr->field2_0x58 + 8) = pvVar3;
-  *(int *)this_ptr->field0_0x0 = iVar4 + 1;
+  iVar3 = *(int *)this_ptr->field0_0x0;
+  *(void **)(this_ptr->field2_0x58 + 8) = pvVar2;
+  *(int *)this_ptr->field0_0x0 = iVar3 + 1;
   if ((*(int *)this_ptr->field2_0x58 == 0) || (*(int *)(this_ptr->field2_0x58 + 8) == 0)) {
     g_CurrentFilename = "..\\core\\morph.cpp";
     g_CurrentLineNumber = 0x90;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CMorphModel::setup - out of memory!");
   }
-  if (in_stack_0000001c != 0) {
+  if (in_stack_0000000c != 0) {
     core_morph_cpp_CMorphModel_animate_FUN_0052a920(this_ptr);
   }
   if (in_stack_00000014 == 0) {

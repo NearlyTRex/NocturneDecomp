@@ -11,10 +11,9 @@ CSkeleton * __cdecl core_skeleton_cpp_CSkeleton_ctor_FUN_00599880(CSkeleton *thi
 {
   int extraout_EAX;
   uint *puVar1;
-  CMotionList *in_stack_0000000c;
   
   crt_stack_c_stack_probe_FUN_005ff9f3(0x10);
-  core_motion_cpp_CMotionList_ctor_FUN_0052cd50(in_stack_0000000c);
+  core_motion_cpp_CMotionList_ctor_FUN_0052cd50(&this_ptr->motion_list);
   puVar1 = crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
                      ((void *)(extraout_EAX + 0x2937c),100,&g_CVectorTypeInfo);
   puVar1[-0x389] = 0;

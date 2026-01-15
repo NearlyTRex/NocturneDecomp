@@ -13,9 +13,9 @@ void core_bride_cpp_FUN_00424b10(void)
 
 {
   CEnemy *in_stack_00000004;
-  CActorPropertyList *in_stack_00000014;
+  CActorPropertyList *in_stack_0000000c;
   
   core_enemy_cpp_CEnemy_FUN_004aa170(in_stack_00000004);
-  core_actor_cpp_CActorPropertyList_FUN_0040e4a0(in_stack_00000014);
+  core_actor_cpp_CActorPropertyList_FUN_0040e4a0(in_stack_0000000c);
   return;
 }

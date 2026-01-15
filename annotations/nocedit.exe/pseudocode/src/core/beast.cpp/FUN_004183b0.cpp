@@ -13,7 +13,6 @@ uint core_beast_cpp_FUN_004183b0(void)
 
 {
   CVector3f *pCVar1;
-  BADSPACEBASE *in_ESP;
   int in_stack_00000004;
   CVector3f *in_stack_00000008;
   CVector3f local_10;

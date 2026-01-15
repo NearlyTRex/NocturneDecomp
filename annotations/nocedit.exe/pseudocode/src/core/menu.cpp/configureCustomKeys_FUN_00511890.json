@@ -1,24 +1,21 @@
 {
   "complexity": {
     "assembly_lines": 505,
-    "complexity_score": 713,
+    "complexity_score": 661,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 54,
-    "pseudocode_lines": 228,
-    "suspect_count": 44,
+    "pseudocode_lines": 231,
+    "suspect_count": 40,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "callind_preserve",
-      "format_string_mismatch",
       "lea_esp_stack_addr",
-      "register_param",
       "stack_param",
       "stack_ref",
       "variadic_preserve"
     ],
-    "total_lines": 733
+    "total_lines": 736
   },
   "cross_references": [
     {
@@ -533,66 +530,45 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 11,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 11,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 17,
       "match": "in_stack_fffffeec",
       "text": "CGame *in_stack_fffffeec;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 23,
       "match": "in_stack_fffffeec",
       "text": "core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_fffffeec);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 93,
-      "match": "&stack0xffffff28",
-      "text": "(&stack0xffffff28,\"%5.2f\",",
+      "line": 31,
+      "match": "&stack0xfffffeec",
+      "text": "pcVar8 = &stack0xfffffeec;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 95,
-      "match": "&stack0xffffff2c",
-      "text": "pcVar11 = &stack0xffffff2c;",
+      "line": 32,
+      "match": "&stack0xfffffeec",
+      "text": "pcVar9 = &stack0xfffffeec;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 117,
-      "match": "&stack0xffffff30",
-      "text": "pcVar7 = &stack0xffffff30;",
+      "line": 97,
+      "match": "&stack0xfffffeec",
+      "text": "(&stack0xfffffeec,\"%5.2f\",",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 129,
-      "match": "&stack0xffffff30",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff30,\"%5.2f\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 168,
-      "match": "&stack0x00000040",
-      "text": "(g_ControlOptionsMenuPointers,iVar4,(int *)&stack0x00000040,0xfa,(int)pcVar11)",
+      "line": 132,
+      "match": "&stack0xfffffeec",
+      "text": "(&stack0xfffffeec,\"%5.2f\",",
       "type": "stack_ref"
     },
     {
@@ -725,17 +701,6 @@
       "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
       "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00511b58 (no EBP frame)",
       "type": "variadic_preserve"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%5.2f\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%5.2f",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 129,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff30,\"%5.2f\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 4,

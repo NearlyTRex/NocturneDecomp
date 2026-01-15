@@ -12,12 +12,12 @@
 void core_dest_cpp_CActorDestination_load_FUN_0046fdb0(void)
 
 {
-  BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000004;
+  char *local_104 [64];
   
   core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0(in_stack_00000004);
   if (g_CActorDestinationClassVersion < 2) {
-    core_actor_cpp_serializeString_FUN_0040b5c0((char **)&stack0xffffff00,"whoGoesHere");
+    core_actor_cpp_serializeString_FUN_0040b5c0(local_104,"whoGoesHere");
     in_stack_00000004[1].actor_name[0] = '\0';
     in_stack_00000004[1].actor_name[1] = '\0';
     in_stack_00000004[1].actor_name[2] = '\0';

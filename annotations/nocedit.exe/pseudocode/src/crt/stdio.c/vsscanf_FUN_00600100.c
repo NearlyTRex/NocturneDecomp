@@ -10,7 +10,6 @@ int __cdecl crt_stdio_c_vsscanf_FUN_00600100(char *str,char *format,va_list_t ar
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   code *local_1c;
   code *local_18;
   char *local_14;

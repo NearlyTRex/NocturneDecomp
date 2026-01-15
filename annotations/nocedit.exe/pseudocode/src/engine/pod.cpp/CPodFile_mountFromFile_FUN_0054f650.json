@@ -1,24 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 834,
-    "complexity_score": 1436,
+    "complexity_score": 1134,
     "cross_reference_count": 15,
     "function_call_count": 14,
     "global_count": 27,
-    "pseudocode_lines": 391,
-    "suspect_count": 100,
+    "pseudocode_lines": 379,
+    "suspect_count": 73,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
       "pointer_cast",
-      "register_param",
-      "stack_param",
-      "stack_ref",
-      "unaffected_reg",
+      "sborrow_artifact",
       "variadic_preserve"
     ],
-    "total_lines": 1225
+    "total_lines": 1213
   },
   "cross_references": [
     {
@@ -778,302 +774,113 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 13,
-      "match": "unaff_EBX",
-      "text": "int unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 14,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 14,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 17,
-      "match": "unaff_EDI",
-      "text": "uint unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_0000000c",
-      "text": "FILE *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_00000018",
-      "text": "char *in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 64,
-      "match": "in_stack_0000000c",
-      "text": "(&stack0xfffff960,(char *)0x0,(char *)in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 64,
-      "match": "&stack0xfffff960",
-      "text": "(&stack0xfffff960,(char *)0x0,(char *)in_stack_0000000c);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 65,
-      "match": "&stack0xfffff964",
-      "text": "iVar1 = engine_dosio_c_findFileNormally_FUN_004817c0((SFoundFileInfo *)&stack0xfffff964);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 85,
-      "match": "in_stack_00000018",
-      "text": "(in_stack_00000018,(char *)0x0,(char *)0x0,(char *)0x0,acStack_250);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 112,
-      "match": "in_stack_0000000c",
-      "text": "crt_stdio_c_fread_FUN_005fd990(acStack_80,1,0x50,in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 113,
-      "match": "in_stack_00000018",
-      "text": "*(SIZE_T *)(in_stack_00000018 + (int)&this_ptr_00->directory_entries->name_or_offset) =",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 119,
+      "match": "(SIZE_T *)((int)",
+      "text": "*(SIZE_T *)((int)&this_ptr->directory_entries->name_or_offset + local_18) = size;",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 138,
+      "line": 142,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)&this_ptr_00->directory_entries->name_or_offset + iStack00000014)",
+      "text": "*(int *)((int)&this_ptr->directory_entries->name_or_offset + local_18);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 149,
+      "line": 152,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&this_ptr_00->directory_entries->size + iStack00000014) = uStack_40",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 151,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&this_ptr_00->directory_entries->offset + iStack00000014) =",
+      "text": "*(uint *)((int)&this_ptr->directory_entries->size + local_18) = local_6c;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 153,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&this_ptr_00->directory_entries->checksum + iStack00000014) =",
+      "text": "*(uint *)((int)&this_ptr->directory_entries->offset + local_18) = local_68;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 155,
-      "match": "(CPodFile *)((int)",
-      "text": "this_ptr = (CPodFile *)((int)&this_ptr->pod_format_version + 1);",
+      "line": 154,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&this_ptr->directory_entries->checksum + local_18) = local_60;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 156,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&this_ptr_00->directory_entries->timestamp + iStack00000014) =",
+      "text": "*(uint *)((int)&this_ptr->directory_entries->timestamp + local_18) = this_ptr->filesize;",
       "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 167,
-      "match": "unaff_EDI",
-      "text": "cVar9 = (char)((uint)unaff_EDI >> 8);",
-      "type": "unaffected_reg"
+      "description": "Decompiler signed borrow artifact",
+      "line": 160,
+      "match": "SBORROW",
+      "text": "bVar11 = SBORROW /* signed borrow */4(size,local_2c);",
+      "type": "sborrow_artifact"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 168,
-      "match": "unaff_EDI",
-      "text": "cVar10 = (char)((uint)unaff_EDI >> 0x10);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 169,
-      "match": "unaff_EDI",
-      "text": "cVar11 = (char)((uint)unaff_EDI >> 0x18);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 170,
-      "match": "unaff_EDI",
-      "text": "if (((((char)unaff_EDI == 'P') && (cVar9 == 'O')) && (cVar10 == 'D')) && (cVar11 == '3')) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 240,
-      "match": "unaff_EDI",
-      "text": "else if ((((char)unaff_EDI == 'P') && (cVar9 == 'O')) && ((cVar10 == 'D' && (cVar11 == '2'))))",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 305,
-      "match": "in_stack_00000018",
-      "text": "in_stack_00000018 = (char *)0x0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
+      "description": "Complex pointer cast",
       "line": 307,
-      "match": "in_stack_0000000c",
-      "text": "crt_stdio_c_fread_FUN_005fd990(local_30,1,0x28,in_stack_0000000c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 332,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)&this_ptr->directory_entries->name_or_offset +",
+      "match": "(SIZE_T *)((int)",
+      "text": "*(SIZE_T *)((int)&this_ptr->directory_entries->name_or_offset + local_14) = size;",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 333,
-      "match": "in_stack_00000018",
-      "text": "(int)in_stack_00000018);",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 330,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)&this_ptr->directory_entries->name_or_offset + local_14);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 343,
-      "match": "in_stack_00000018",
-      "text": "*(FILE **)((int)&this_ptr->directory_entries->size + (int)in_stack_00000018) = file;",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 340,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&this_ptr->directory_entries->size + local_14) = local_3c;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 344,
-      "match": "in_stack_00000018",
-      "text": "*(uint *)((int)&this_ptr->directory_entries->offset + (int)in_stack_00000018)",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 341,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&this_ptr->directory_entries->offset + local_14) = local_38;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 342,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&this_ptr->directory_entries->checksum + local_14) = 0;",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 344,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&this_ptr->directory_entries->offset + (int)in_stack_00000018)",
+      "text": "*(uint *)((int)&this_ptr->directory_entries->timestamp + local_14) = this_ptr->filesize;",
       "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 345,
-      "match": "unaff_EDI",
-      "text": "= unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 347,
-      "match": "in_stack_00000018",
-      "text": "((int)&this_ptr->directory_entries->checksum + (int)in_stack_00000018) = 0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 348,
-      "match": "in_stack_00000018",
-      "text": "*(uint *)((int)&this_ptr->directory_entries->timestamp + (int)in_stack_00000018) =",
-      "type": "stack_param"
+      "description": "Decompiler signed borrow artifact",
+      "line": 349,
+      "match": "SBORROW",
+      "text": "bVar11 = SBORROW /* signed borrow */4(size,local_1c);",
+      "type": "sborrow_artifact"
     },
     {
       "description": "Complex pointer cast",
-      "line": 348,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&this_ptr->directory_entries->timestamp + (int)in_stack_00000018) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 351,
-      "match": "in_stack_00000018",
-      "text": "in_stack_00000018 = (char *)((int)in_stack_00000018 + 0x14);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 351,
-      "match": "in_stack_00000018",
-      "text": "in_stack_00000018 = (char *)((int)in_stack_00000018 + 0x14);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 351,
-      "match": "(char *)((int)",
-      "text": "in_stack_00000018 = (char *)((int)in_stack_00000018 + 0x14);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 356,
-      "match": "in_stack_0000000c",
-      "text": "(in_stack_0000000c,\"..\\\\engine\\\\pod.cpp\",0x22d);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 357,
-      "match": "unaff_EBX",
-      "text": "if (unaff_EBX != 0) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 372,
+      "line": 371,
       "match": "(int *)((int)",
-      "text": "piVar3 = (int *)((int)&this_ptr_00->directory_entries->name_or_offset + iVar5);",
+      "text": "piVar5 = (int *)((int)&this_ptr->directory_entries->name_or_offset + iVar7);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 389,
-      "match": "in_stack_0000000c",
-      "text": "if (in_stack_0000000c != (FILE *)0x0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 390,
-      "match": "in_stack_0000000c",
-      "text": "shape_memdbg_cpp_closeFile_FUN_0050f9b0(in_stack_0000000c,\"..\\\\engine\\\\pod.cpp\",0x153);",
-      "type": "stack_param"
     },
     {
       "call_address": "0054f8d4",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1087,7 +894,7 @@
     },
     {
       "call_address": "0054fa0b",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1101,7 +908,7 @@
     },
     {
       "call_address": "0054fc1e",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1115,7 +922,7 @@
     },
     {
       "call_address": "0054fdf8",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1129,7 +936,7 @@
     },
     {
       "call_address": "0054ffbe",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

@@ -1,18 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 24,
-    "complexity_score": 140,
+    "complexity_score": 151,
     "cross_reference_count": 4,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 15,
-    "suspect_count": 11,
+    "pseudocode_lines": 16,
+    "suspect_count": 12,
     "suspect_types": [
       "call_esp_preserve",
       "param_count_too_few",
       "stack_param"
     ],
-    "total_lines": 39
+    "total_lines": 40
   },
   "cross_references": [
     {
@@ -158,50 +158,57 @@
     {
       "description": "Unresolved stack parameter",
       "line": 8,
+      "match": "in_stack_00000010",
+      "text": "uint in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 9,
       "match": "in_stack_00000014",
       "text": "uint in_stack_00000014;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 9,
+      "line": 10,
       "match": "in_stack_00000018",
       "text": "void *in_stack_00000018;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 13,
       "match": "in_stack_00000008",
       "text": "(this_ptr,0,in_stack_00000008,in_stack_0000000c,in_stack_00000018);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 13,
       "match": "in_stack_0000000c",
       "text": "(this_ptr,0,in_stack_00000008,in_stack_0000000c,in_stack_00000018);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 13,
       "match": "in_stack_00000018",
       "text": "(this_ptr,0,in_stack_00000008,in_stack_0000000c,in_stack_00000018);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_00000014",
-      "text": "*(uint *)(iVar1 + 0x60) = in_stack_00000014;",
+      "line": 16,
+      "match": "in_stack_00000010",
+      "text": "*(uint *)(iVar1 + 0x60) = in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000018",
-      "text": "*(void **)(iVar1 + 100) = in_stack_00000018;",
+      "line": 17,
+      "match": "in_stack_00000014",
+      "text": "*(uint *)(iVar1 + 100) = in_stack_00000014;",
       "type": "stack_param"
     },
     {

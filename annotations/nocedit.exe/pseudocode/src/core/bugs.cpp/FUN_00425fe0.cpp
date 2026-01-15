@@ -18,7 +18,6 @@ void core_bugs_cpp_FUN_00425fe0(void)
   int iVar1;
   CDemonActor *pCVar2;
   CPathMap *this_ptr;
-  BADSPACEBASE *in_ESP;
   CCharacter *pCVar3;
   uint *puVar4;
   float *pfVar5;

@@ -15,18 +15,19 @@ int core_imp_cpp_FUN_004faf40(void)
   CVector3f *pCVar1;
   CVector3f *pCVar2;
   int iVar3;
-  BADSPACEBASE *in_ESP;
   int in_stack_00000004;
   CVector3f *in_stack_00000008;
-  CVector3f CStack_44;
-  byte auStack_38 [24];
-  CVector3f CStack_20;
+  CVector3f local_48;
+  CVector3f local_3c;
+  CVector3f local_30;
+  CVector3f local_24;
+  CVector3f local_18;
   
   iVar3 = 0;
   if (*(int *)(in_stack_00000004 + 0x2298 + *(int *)(in_stack_00000004 + 0xbef0) * 4) != 0) {
     pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-                       ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),
-                        (CVector3f *)(auStack_38 + 8),DAT_02db89f4);
+                       ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),&local_30,
+                        DAT_02db89f4);
     if (in_stack_00000008 != pCVar1) {
       in_stack_00000008->x = pCVar1->x;
       in_stack_00000008->y = pCVar1->y;
@@ -36,8 +37,8 @@ int core_imp_cpp_FUN_004faf40(void)
   }
   if (*(int *)(in_stack_00000004 + 0x2298 + *(int *)(in_stack_00000004 + 0xbec8) * 4) != 0) {
     pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-                       ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),
-                        (CVector3f *)auStack_38,DAT_02db8a08);
+                       ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),&local_3c,
+                        DAT_02db8a08);
     pCVar2 = in_stack_00000008 + iVar3;
     if (pCVar2 != pCVar1) {
       pCVar2->x = pCVar1->x;
@@ -48,8 +49,8 @@ int core_imp_cpp_FUN_004faf40(void)
   }
   if (*(int *)(in_stack_00000004 + 0x2298 + *(int *)(in_stack_00000004 + 0xbed0) * 4) != 0) {
     pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-                       ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),
-                        (CVector3f *)&stack0xffffffec,DAT_02db8a0c);
+                       ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),&local_18,
+                        DAT_02db8a0c);
     pCVar2 = in_stack_00000008 + iVar3;
     if (pCVar2 != pCVar1) {
       pCVar2->x = pCVar1->x;
@@ -60,7 +61,7 @@ int core_imp_cpp_FUN_004faf40(void)
   }
   if (*(int *)(in_stack_00000004 + 0x2298 + *(int *)(in_stack_00000004 + 0xbee8) * 4) != 0) {
     pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-                       ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),&CStack_44,
+                       ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),&local_48,
                         DAT_02db8a18);
     pCVar2 = in_stack_00000008 + iVar3;
     if (pCVar2 != pCVar1) {
@@ -74,8 +75,8 @@ int core_imp_cpp_FUN_004faf40(void)
     return iVar3;
   }
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-                     ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),&CStack_20,
-                      DAT_02db8a20);
+                     ((CDeformableModelInstance *)(in_stack_00000004 + 0x158),&local_24,DAT_02db8a20
+                     );
   in_stack_00000008 = in_stack_00000008 + iVar3;
   if (in_stack_00000008 != pCVar1) {
     in_stack_00000008->x = pCVar1->x;

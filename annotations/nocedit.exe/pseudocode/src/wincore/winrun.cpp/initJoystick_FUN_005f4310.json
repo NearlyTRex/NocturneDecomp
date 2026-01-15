@@ -1,19 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 84,
+    "complexity_score": 37,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 10,
-    "pseudocode_lines": 24,
-    "suspect_count": 4,
+    "pseudocode_lines": 22,
+    "suspect_count": 1,
     "suspect_types": [
-      "badspacebase",
-      "lea_esp_stack_addr",
-      "register_param",
-      "stack_ref"
+      "lea_esp_stack_addr"
     ],
-    "total_lines": 68
+    "total_lines": 66
   },
   "cross_references": [
     {
@@ -155,27 +152,6 @@
     "variables": []
   },
   "suspects": [
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 6,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 6,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 14,
-      "match": "&stack0xfffffe80",
-      "text": "MVar1 = (*joyGetDevCapsA)(0,(LPJOYCAPSA)&stack0xfffffe80,0x194);",
-      "type": "stack_ref"
-    },
     {
       "address": "005f4342",
       "description": "Takes address of stack variable via ESP in non-EBP-frame function",

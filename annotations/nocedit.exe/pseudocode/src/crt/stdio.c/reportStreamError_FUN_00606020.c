@@ -11,7 +11,6 @@ crt_stdio_c_reportStreamError_FUN_00606020(FileEmbeddedData *embedded_data,uint 
 
 {
   uint uVar1;
-  BADSPACEBASE *in_ESP;
   uint local_8;
   
   uVar1 = embedded_data->state_field | error_flags;

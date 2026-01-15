@@ -11,9 +11,9 @@
 void core_minecar_cpp_FUN_00520e90(void)
 
 {
-  int in_stack_00000008;
+  int in_stack_00000004;
   
   core_platfrm_cpp_CPlatform_LoadCourseSomething_FUN_0054ca20();
-  *(uint *)(in_stack_00000008 + 0x72c) = 0;
+  *(uint *)(in_stack_00000004 + 0x72c) = 0;
   return;
 }

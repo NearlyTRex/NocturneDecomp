@@ -13,14 +13,13 @@ shape_design_c_vertexReducer_FUN_00467850
 {
   byte bVar1;
   int iVar2;
-  BADSPACEBASE *in_ESP;
-  char *pcVar3;
-  byte *pbVar4;
-  byte bVar6;
-  float10 fVar7;
-  double dVar8;
+  int iVar3;
+  char *pcVar4;
+  byte *pbVar5;
+  byte bVar7;
+  float10 fVar8;
+  double dVar9;
   char *in_stack_fffffebc;
-  SVertexData *pSVar9;
   byte local_134 [256];
   int local_34;
   int local_30;
@@ -31,9 +30,9 @@ shape_design_c_vertexReducer_FUN_00467850
   int local_1c;
   void *local_18;
   void *local_14;
-  byte *pbVar5;
+  byte *pbVar6;
   
-  bVar6 = 0;
+  bVar7 = 0;
   local_24 = g_VertexCount;
   local_20 = 0;
   local_1c = g_PolygonCount;
@@ -43,7 +42,6 @@ shape_design_c_vertexReducer_FUN_00467850
     }
     else {
       wincore_windll_cpp_clearScreen_FUN_005b3e70();
-      in_stack_fffffebc = "Enter tolerance [.1] : ";
       iVar2 = engine_2d_c_getInputWithPrompt_FUN_004032c0
                         ((char *)local_134,0x14,0,0,"Enter tolerance [.1] : ");
       if (iVar2 == 0x1b) {
@@ -51,16 +49,16 @@ shape_design_c_vertexReducer_FUN_00467850
       }
     }
     iVar2 = -1;
-    pbVar5 = local_134;
+    pbVar6 = local_134;
     do {
       if (iVar2 == 0) break;
       iVar2 = iVar2 + -1;
-      bVar1 = *pbVar5;
-      pbVar5 = pbVar5 + (uint)bVar6 * -2 + 1;
+      bVar1 = *pbVar6;
+      pbVar6 = pbVar6 + (uint)bVar7 * -2 + 1;
     } while (bVar1 != 0);
     if (iVar2 != -2) {
-      dVar8 = crt_string_c_strtod_FUN_005ff0f3(in_stack_fffffebc);
-      tolerance = (float)dVar8;
+      dVar9 = crt_string_c_strtod_FUN_005ff0f3(in_stack_fffffebc);
+      tolerance = (float)dVar9;
     }
     if (display_progress < 1) {
       if (0.0 <= angle_tolerance) {
@@ -79,16 +77,16 @@ shape_design_c_vertexReducer_FUN_00467850
                   ((char *)local_134,0x14,0,0x2c,"Enter angle tolerance [90.0] : ");
         angle_tolerance = 90.0;
         iVar2 = -1;
-        pbVar5 = local_134;
+        pbVar6 = local_134;
         do {
           if (iVar2 == 0) break;
           iVar2 = iVar2 + -1;
-          bVar1 = *pbVar5;
-          pbVar5 = pbVar5 + (uint)bVar6 * -2 + 1;
+          bVar1 = *pbVar6;
+          pbVar6 = pbVar6 + (uint)bVar7 * -2 + 1;
         } while (bVar1 != 0);
         if (iVar2 != -2) {
-          dVar8 = crt_string_c_strtod_FUN_005ff0f3(in_stack_fffffebc);
-          angle_tolerance = (float)dVar8;
+          dVar9 = crt_string_c_strtod_FUN_005ff0f3(in_stack_fffffebc);
+          angle_tolerance = (float)dVar9;
         }
       }
     }
@@ -135,30 +133,33 @@ shape_design_c_vertexReducer_FUN_00467850
       }
       for (local_34 = 0; local_34 < g_VertexCount + -1; local_34 = local_34 + 1) {
         if (*(int *)((int)local_18 + local_34 * 8 + 4) == *(int *)((int)local_18 + local_34 * 8)) {
-          pSVar9 = g_LoadedVertices + *(int *)(local_34 * 8 + (int)local_18);
+          iVar2 = *(int *)(local_34 * 8 + (int)local_18);
           local_30 = local_34;
 LAB_00467ba8:
           local_30 = local_30 + 1;
           if (local_30 < g_VertexCount) {
             if (*(int *)((int)local_18 + local_30 * 8 + 4) == *(int *)((int)local_18 + local_30 * 8)
                ) {
-              iVar2 = *(int *)(local_30 * 8 + (int)local_18);
-              if ((pSVar9->vertex).x + tolerance < g_LoadedVertices[iVar2].vertex.x)
+              iVar3 = *(int *)(local_30 * 8 + (int)local_18);
+              if (g_LoadedVertices[iVar2].vertex.x + tolerance < g_LoadedVertices[iVar3].vertex.x)
               goto LAB_00467b49;
-              if (((ABS((pSVar9->vertex).x - g_LoadedVertices[iVar2].vertex.x) < tolerance) &&
-                  (ABS((pSVar9->vertex).y - g_LoadedVertices[iVar2].vertex.y) < tolerance)) &&
-                 (ABS((pSVar9->vertex).z - g_LoadedVertices[iVar2].vertex.z) < tolerance)) {
+              if (((ABS(g_LoadedVertices[iVar2].vertex.x - g_LoadedVertices[iVar3].vertex.x) <
+                    tolerance) &&
+                  (ABS(g_LoadedVertices[iVar2].vertex.y - g_LoadedVertices[iVar3].vertex.y) <
+                   tolerance)) &&
+                 (ABS(g_LoadedVertices[iVar2].vertex.z - g_LoadedVertices[iVar3].vertex.z) <
+                  tolerance)) {
                 if (local_20 != 0) {
-                  fVar7 = (float10)fcos((float10)angle_tolerance *
+                  fVar8 = (float10)fcos((float10)angle_tolerance *
                                         (float10)0.01745329252);
-                  iVar2 = shape_design_c_validatePolygonNormals_FUN_00461d80
+                  iVar3 = shape_design_c_validatePolygonNormals_FUN_00461d80
                                     (g_ModelPolygonData +
                                      *(int *)(*(int *)(local_34 * 8 + (int)local_18) * 4 +
                                              (int)local_14),
                                      g_ModelPolygonData +
                                      *(int *)(*(int *)(local_30 * 8 + (int)local_18) * 4 +
-                                             (int)local_14),(double)fVar7);
-                  if (iVar2 == 0) goto LAB_00467ba8;
+                                             (int)local_14),(double)fVar8);
+                  if (iVar3 == 0) goto LAB_00467ba8;
                 }
                 *(uint *)((int)local_18 + local_30 * 8 + 4) =
                      *(uint *)((int)local_18 + local_34 * 8);
@@ -189,29 +190,29 @@ LAB_00467b49:
     g_VertexOptimizationPasses = g_VertexOptimizationPasses + 1;
     crt_stdio_c_sprintf_FUN_005fdbd0
               ((char *)local_134,"Original vertices: %d    New total: %d\n\nTotal passes: %d\n\nPolys removed: %d",local_24,g_VertexCount,
-               g_VertexOptimizationPasses,local_1c - g_PolygonCount);
+               g_VertexOptimizationPasses);
     if (0 < display_progress) {
-      pcVar3 = "\n\nHit a key...";
+      pcVar4 = "\n\nHit a key...";
       iVar2 = -1;
-      pbVar5 = local_134;
+      pbVar6 = local_134;
       do {
-        pbVar4 = pbVar5;
+        pbVar5 = pbVar6;
         if (iVar2 == 0) break;
         iVar2 = iVar2 + -1;
-        pbVar4 = pbVar5 + (uint)bVar6 * -2 + 1;
-        bVar1 = *pbVar5;
-        pbVar5 = pbVar4;
+        pbVar5 = pbVar6 + (uint)bVar7 * -2 + 1;
+        bVar1 = *pbVar6;
+        pbVar6 = pbVar5;
       } while (bVar1 != 0);
-      pbVar4 = pbVar4 + -1;
+      pbVar5 = pbVar5 + -1;
       do {
-        bVar6 = *pcVar3;
-        *pbVar4 = bVar6;
-        if (bVar6 == 0) break;
-        bVar6 = ((byte *)pcVar3)[1];
-        pcVar3 = (char *)((byte *)pcVar3 + 2);
-        pbVar4[1] = bVar6;
-        pbVar4 = pbVar4 + 2;
-      } while (bVar6 != 0);
+        bVar7 = *pcVar4;
+        *pbVar5 = bVar7;
+        if (bVar7 == 0) break;
+        bVar7 = ((byte *)pcVar4)[1];
+        pcVar4 = (char *)((byte *)pcVar4 + 2);
+        pbVar5[1] = bVar7;
+        pbVar5 = pbVar5 + 2;
+      } while (bVar7 != 0);
     }
     if (-1 < display_progress) {
       engine_2d_c_drawText_FUN_00401fd0((char *)local_134,0,0);

@@ -17,7 +17,6 @@ void core_msnedit_cpp_FUN_0053d3b0(void)
   uint uVar3;
   CDemonActor *pCVar4;
   int iVar5;
-  BADSPACEBASE *in_ESP;
   float10 fVar6;
   double dVar7;
   int in_stack_00000004;

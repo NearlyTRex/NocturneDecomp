@@ -12,14 +12,13 @@ int __cdecl core_biggs_cpp_CBiggs_renderOpaque_FUN_004189b0(CBiggs *this_ptr)
   CBoundingBox3D *this_ptr_00;
   int iVar1;
   int iVar2;
-  BADSPACEBASE *in_ESP;
   
   if (*(int *)(this_ptr->base_enemy).base_character.field2_0x240c != 0) {
     return 0;
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
   this_ptr_00 = (*((this_ptr->base_enemy).base_character.base_actor.vtable)->getBoundingBox)
-                          ((CDemonActor *)this_ptr,(CBoundingBox3D *)&stack0xffffffe4);
+                          ((CDemonActor *)this_ptr,(CBoundingBox3D *)&stack0xffffffe0);
   iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
   if (iVar1 != 0) {
     iVar2 = this_ptr->morphing;

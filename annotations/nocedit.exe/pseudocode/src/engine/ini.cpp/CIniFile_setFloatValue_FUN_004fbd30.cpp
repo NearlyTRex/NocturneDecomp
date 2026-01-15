@@ -10,10 +10,10 @@ void __cdecl
 engine_ini_cpp_CIniFile_setFloatValue_FUN_004fbd30(CIniFile *this,char *key,float value)
 
 {
-  BADSPACEBASE *in_ESP;
+  char local_64 [4];
   char local_60;
   
-  crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff9c,"%g",(double)value);
-  engine_ini_cpp_CIniFile_setString_FUN_004fbbb0((CIniFile *)key,(char *)value,&local_60);
+  crt_stdio_c_sprintf_FUN_005fdbd0(local_64,"%g",(double)value);
+  engine_ini_cpp_CIniFile_setString_FUN_004fbbb0(this,key,local_64);
   return;
 }

@@ -1,21 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 1112,
-    "complexity_score": 1730,
+    "complexity_score": 1643,
     "cross_reference_count": 1,
     "function_call_count": 42,
     "global_count": 75,
-    "pseudocode_lines": 440,
-    "suspect_count": 126,
+    "pseudocode_lines": 433,
+    "suspect_count": 119,
     "suspect_types": [
-      "badspacebase",
+      "format_string_mismatch",
       "pointer_cast",
-      "register_param",
       "stack_param",
-      "stack_ref",
-      "sub_artifact"
+      "stack_ref"
     ],
-    "total_lines": 1552
+    "total_lines": 1545
   },
   "cross_references": [
     {
@@ -1845,886 +1843,845 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 16,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 16,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 24,
+      "line": 23,
       "match": "in_stack_00000004",
       "text": "CDemonSet *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 25,
+      "line": 24,
       "match": "in_stack_00000008",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_ffffee88",
-      "text": "CGame *in_stack_ffffee88;",
+      "line": 25,
+      "match": "in_stack_ffffee84",
+      "text": "CGame *in_stack_ffffee84;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 28,
+      "line": 26,
+      "match": "in_stack_ffffee88",
+      "text": "uint in_stack_ffffee88;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 27,
       "match": "in_stack_ffffee8c",
       "text": "uint in_stack_ffffee8c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 29,
+      "line": 28,
       "match": "in_stack_ffffee90",
       "text": "uint in_stack_ffffee90;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 30,
+      "line": 29,
       "match": "in_stack_ffffee94",
       "text": "uint in_stack_ffffee94;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 77,
+      "line": 76,
       "match": "in_stack_00000004",
       "text": "pcVar11 = in_stack_00000004->geometry_filename;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 108,
+      "line": 107,
       "match": "in_stack_00000004",
       "text": "pCVar7 = &in_stack_00000004->cameras[in_stack_00000008].position;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 108,
+      "line": 107,
       "match": "in_stack_00000008",
       "text": "pCVar7 = &in_stack_00000004->cameras[in_stack_00000008].position;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 111,
+      "line": 110,
       "match": "in_stack_00000004",
       "text": "*(float *)((int)pvVar3 + 4) = in_stack_00000004->cameras[in_stack_00000008].position.y;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 111,
+      "line": 110,
       "match": "in_stack_00000008",
       "text": "*(float *)((int)pvVar3 + 4) = in_stack_00000004->cameras[in_stack_00000008].position.y;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 111,
+      "line": 110,
       "match": "(float *)((int)",
       "text": "*(float *)((int)pvVar3 + 4) = in_stack_00000004->cameras[in_stack_00000008].position.y;",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 112,
+      "line": 111,
       "match": "in_stack_00000004",
       "text": "*(float *)((int)pvVar3 + 8) = in_stack_00000004->cameras[in_stack_00000008].position.z;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 112,
+      "line": 111,
       "match": "in_stack_00000008",
       "text": "*(float *)((int)pvVar3 + 8) = in_stack_00000004->cameras[in_stack_00000008].position.z;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 112,
+      "line": 111,
       "match": "(float *)((int)",
       "text": "*(float *)((int)pvVar3 + 8) = in_stack_00000004->cameras[in_stack_00000008].position.z;",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 115,
+      "line": 114,
       "match": "in_stack_00000004",
       "text": "pCVar7 = &in_stack_00000004->cameras[in_stack_00000008].orientation;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 115,
+      "line": 114,
       "match": "in_stack_00000008",
       "text": "pCVar7 = &in_stack_00000004->cameras[in_stack_00000008].orientation;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 116,
+      "line": 115,
       "match": "(CVector3f *)((int)",
       "text": "if ((CVector3f *)((int)PTR_DAT_00681ab8 + 0xc) != pCVar7) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 117,
+      "line": 116,
       "match": "(float *)((int)",
       "text": "*(float *)((int)PTR_DAT_00681ab8 + 0xc) = pCVar7->x;",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 118,
+      "line": 117,
       "match": "in_stack_00000004",
       "text": "*(float *)((int)pvVar3 + 0x10) = in_stack_00000004->cameras[in_stack_00000008].orientation.y;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 118,
+      "line": 117,
       "match": "in_stack_00000008",
       "text": "*(float *)((int)pvVar3 + 0x10) = in_stack_00000004->cameras[in_stack_00000008].orientation.y;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 118,
+      "line": 117,
       "match": "(float *)((int)",
       "text": "*(float *)((int)pvVar3 + 0x10) = in_stack_00000004->cameras[in_stack_00000008].orientation.y;",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 119,
+      "line": 118,
       "match": "in_stack_00000004",
       "text": "*(float *)((int)pvVar3 + 0x14) = in_stack_00000004->cameras[in_stack_00000008].orientation.z;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 119,
+      "line": 118,
       "match": "in_stack_00000008",
       "text": "*(float *)((int)pvVar3 + 0x14) = in_stack_00000004->cameras[in_stack_00000008].orientation.z;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 119,
+      "line": 118,
       "match": "(float *)((int)",
       "text": "*(float *)((int)pvVar3 + 0x14) = in_stack_00000004->cameras[in_stack_00000008].orientation.z;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 121,
+      "line": 120,
       "match": "(float *)((int)",
       "text": "*(float *)((int)PTR_DAT_00681ab8 + 0x18) =",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 122,
+      "line": 121,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->cameras[in_stack_00000008].projection_scale;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 122,
+      "line": 121,
       "match": "in_stack_00000008",
       "text": "in_stack_00000004->cameras[in_stack_00000008].projection_scale;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 125,
-      "match": "in_stack_00000004",
-      "text": "(acStack_ec,\"%s.raw\",in_stack_00000004->cameras + in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 125,
-      "match": "in_stack_00000008",
-      "text": "(acStack_ec,\"%s.raw\",in_stack_00000004->cameras + in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 136,
-      "match": "in_stack_00000004",
-      "text": "(acStack_ec,\"%s.act\",in_stack_00000004->cameras + in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 136,
-      "match": "in_stack_00000008",
-      "text": "(acStack_ec,\"%s.act\",in_stack_00000004->cameras + in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 156,
+      "line": 153,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)auStack_d7c + iVar8) = uVar12 | uVar9;",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 158,
+      "line": 155,
       "match": "&stack0xffffee84",
       "text": "*(int *)(&stack0xffffee84 + iVar8) = (int)uVar6 / 3 + iStack_4c + iStack_48;",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 165,
-      "match": "in_stack_ffffee88",
-      "text": "core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_ffffee88);",
+      "line": 162,
+      "match": "in_stack_ffffee84",
+      "text": "core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_ffffee84);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 176,
+      "line": 173,
       "match": "in_stack_00000004",
       "text": "piStack_2c = &in_stack_00000004->cameras[in_stack_00000008 + -1].field17_0x1a0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 176,
+      "line": 173,
       "match": "in_stack_00000008",
       "text": "piStack_2c = &in_stack_00000004->cameras[in_stack_00000008 + -1].field17_0x1a0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 177,
+      "line": 174,
       "match": "in_stack_00000004",
       "text": "pCStack_30 = in_stack_00000004->cameras;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 186,
+      "line": 183,
       "match": "(float *)((int)",
       "text": "fStack_98 = *(float *)((int)PTR_DAT_00681ab8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 187,
+      "line": 184,
       "match": "(float *)((int)",
       "text": "fStack_94 = *(float *)((int)PTR_DAT_00681ab8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 188,
+      "line": 185,
       "match": "(float *)((int)",
       "text": "fStack_90 = *(float *)((int)PTR_DAT_00681ab8 + 0xc);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 189,
+      "line": 186,
       "match": "(float *)((int)",
       "text": "fStack_8c = *(float *)((int)PTR_DAT_00681ab8 + 0x10);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 190,
+      "line": 187,
       "match": "(float *)((int)",
       "text": "fStack_88 = *(float *)((int)PTR_DAT_00681ab8 + 0x14);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 191,
+      "line": 188,
       "match": "(float *)((int)",
       "text": "fStack_84 = *(float *)((int)PTR_DAT_00681ab8 + 0x18);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 195,
+      "line": 192,
       "match": "(int *)((int)",
       "text": "g_CDemonCameraInstance.base.position.z = *(int *)((int)PTR_DAT_00681ab8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 196,
+      "line": 193,
       "match": "(int *)((int)",
       "text": "g_CDemonCameraInstance.base.position.y = *(int *)((int)PTR_DAT_00681ab8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 200,
+      "line": 197,
       "match": "(CVector3f *)((int)",
       "text": "(CVector3f *)((int)PTR_DAT_00681ab8 + 0xc));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 201,
+      "line": 198,
       "match": "(float *)((int)",
       "text": "g_CDemonCameraInstance.base.projection_scale = *(float *)((int)PTR_DAT_00681ab8 + 0x18);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 211,
+      "line": 208,
       "match": "in_stack_00000004",
       "text": "core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0056a190(in_stack_00000004,9999.9,0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 216,
+      "line": 213,
       "match": "in_stack_00000004",
       "text": "pCVar7 = &in_stack_00000004->cameras[in_stack_00000008].position;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 216,
+      "line": 213,
       "match": "in_stack_00000008",
       "text": "pCVar7 = &in_stack_00000004->cameras[in_stack_00000008].position;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 219,
+      "line": 216,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->cameras[in_stack_00000008].position.y = *(float *)((int)pvVar3 + 4);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 219,
+      "line": 216,
       "match": "in_stack_00000008",
       "text": "in_stack_00000004->cameras[in_stack_00000008].position.y = *(float *)((int)pvVar3 + 4);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 219,
+      "line": 216,
       "match": "(float *)((int)",
       "text": "in_stack_00000004->cameras[in_stack_00000008].position.y = *(float *)((int)pvVar3 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 220,
+      "line": 217,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->cameras[in_stack_00000008].position.z = *(float *)((int)pvVar3 + 8);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 220,
+      "line": 217,
       "match": "in_stack_00000008",
       "text": "in_stack_00000004->cameras[in_stack_00000008].position.z = *(float *)((int)pvVar3 + 8);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 220,
+      "line": 217,
       "match": "(float *)((int)",
       "text": "in_stack_00000004->cameras[in_stack_00000008].position.z = *(float *)((int)pvVar3 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 223,
+      "line": 220,
       "match": "in_stack_00000004",
       "text": "pCVar7 = &in_stack_00000004->cameras[in_stack_00000008].orientation;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 223,
+      "line": 220,
       "match": "in_stack_00000008",
       "text": "pCVar7 = &in_stack_00000004->cameras[in_stack_00000008].orientation;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 224,
+      "line": 221,
       "match": "(CVector3f *)((int)",
       "text": "if (pCVar7 != (CVector3f *)((int)PTR_DAT_00681ab8 + 0xc)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 225,
+      "line": 222,
       "match": "(float *)((int)",
       "text": "pCVar7->x = *(float *)((int)PTR_DAT_00681ab8 + 0xc);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 226,
+      "line": 223,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->cameras[in_stack_00000008].orientation.y =",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 226,
+      "line": 223,
       "match": "in_stack_00000008",
       "text": "in_stack_00000004->cameras[in_stack_00000008].orientation.y =",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 227,
+      "line": 224,
       "match": "(float *)((int)",
       "text": "*(float *)((int)pvVar3 + 0x10);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 228,
+      "line": 225,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->cameras[in_stack_00000008].orientation.z =",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 228,
+      "line": 225,
       "match": "in_stack_00000008",
       "text": "in_stack_00000004->cameras[in_stack_00000008].orientation.z =",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 229,
+      "line": 226,
       "match": "(float *)((int)",
       "text": "*(float *)((int)pvVar3 + 0x14);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 231,
+      "line": 228,
       "match": "(CVector3f *)((int)",
       "text": "pCVar7 = (CVector3f *)((int)PTR_DAT_00681ab8 + 0xc);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 232,
+      "line": 229,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->cameras[in_stack_00000008].projection_scale =",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 232,
+      "line": 229,
       "match": "in_stack_00000008",
       "text": "in_stack_00000004->cameras[in_stack_00000008].projection_scale =",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 233,
+      "line": 230,
       "match": "(float *)((int)",
       "text": "*(float *)((int)PTR_DAT_00681ab8 + 0x18);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 235,
+      "line": 232,
       "match": "in_stack_00000004",
       "text": "(&in_stack_00000004->cameras[in_stack_00000008].rotation_matrix,pCVar7);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 235,
+      "line": 232,
       "match": "in_stack_00000008",
       "text": "(&in_stack_00000004->cameras[in_stack_00000008].rotation_matrix,pCVar7);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 239,
+      "line": 236,
       "match": "in_stack_00000004",
       "text": "fStack_68 = in_stack_00000004->cameras[in_stack_00000008].position.x + -500f;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 239,
+      "line": 236,
       "match": "in_stack_00000008",
       "text": "fStack_68 = in_stack_00000004->cameras[in_stack_00000008].position.x + -500f;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 240,
+      "line": 237,
       "match": "in_stack_00000004",
       "text": "fStack_64 = in_stack_00000004->cameras[in_stack_00000008].position.y + -500f;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 240,
+      "line": 237,
       "match": "in_stack_00000008",
       "text": "fStack_64 = in_stack_00000004->cameras[in_stack_00000008].position.y + -500f;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 241,
+      "line": 238,
       "match": "in_stack_00000004",
       "text": "pCVar7 = &in_stack_00000004->cameras[in_stack_00000008].box_min;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 241,
+      "line": 238,
       "match": "in_stack_00000008",
       "text": "pCVar7 = &in_stack_00000004->cameras[in_stack_00000008].box_min;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 242,
+      "line": 239,
       "match": "in_stack_00000004",
       "text": "local_60 = -500f + in_stack_00000004->cameras[in_stack_00000008].position.z;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 242,
+      "line": 239,
       "match": "in_stack_00000008",
       "text": "local_60 = -500f + in_stack_00000004->cameras[in_stack_00000008].position.z;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 245,
+      "line": 242,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->cameras[in_stack_00000008].box_min.y = fStack_64;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 245,
+      "line": 242,
       "match": "in_stack_00000008",
       "text": "in_stack_00000004->cameras[in_stack_00000008].box_min.y = fStack_64;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 246,
+      "line": 243,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->cameras[in_stack_00000008].box_min.z = local_60;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 246,
+      "line": 243,
       "match": "in_stack_00000008",
       "text": "in_stack_00000004->cameras[in_stack_00000008].box_min.z = local_60;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 248,
+      "line": 245,
       "match": "in_stack_00000004",
       "text": "fStack_74 = in_stack_00000004->cameras[in_stack_00000008].position.x + 500.0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 248,
+      "line": 245,
       "match": "in_stack_00000008",
       "text": "fStack_74 = in_stack_00000004->cameras[in_stack_00000008].position.x + 500.0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 249,
+      "line": 246,
       "match": "in_stack_00000004",
       "text": "fStack_70 = in_stack_00000004->cameras[in_stack_00000008].position.y + 500.0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 249,
+      "line": 246,
       "match": "in_stack_00000008",
       "text": "fStack_70 = in_stack_00000004->cameras[in_stack_00000008].position.y + 500.0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 250,
+      "line": 247,
       "match": "in_stack_00000004",
       "text": "pCVar7 = &in_stack_00000004->cameras[in_stack_00000008].box_max;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 250,
+      "line": 247,
       "match": "in_stack_00000008",
       "text": "pCVar7 = &in_stack_00000004->cameras[in_stack_00000008].box_max;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 251,
+      "line": 248,
       "match": "in_stack_00000004",
       "text": "fStack_6c = in_stack_00000004->cameras[in_stack_00000008].position.z + 500.0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 251,
+      "line": 248,
       "match": "in_stack_00000008",
       "text": "fStack_6c = in_stack_00000004->cameras[in_stack_00000008].position.z + 500.0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 254,
+      "line": 251,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->cameras[in_stack_00000008].box_max.y = fStack_70;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 254,
+      "line": 251,
       "match": "in_stack_00000008",
       "text": "in_stack_00000004->cameras[in_stack_00000008].box_max.y = fStack_70;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 255,
+      "line": 252,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->cameras[in_stack_00000008].box_max.z = fStack_6c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 255,
+      "line": 252,
       "match": "in_stack_00000008",
       "text": "in_stack_00000004->cameras[in_stack_00000008].box_max.z = fStack_6c;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 280,
+      "line": 277,
       "match": "(float *)((int)",
       "text": "(fStack_98 != *(float *)((int)PTR_DAT_00681ab8 + 4))) ||",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 281,
+      "line": 278,
       "match": "(float *)((int)",
       "text": "((fStack_94 != *(float *)((int)PTR_DAT_00681ab8 + 8) ||",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 282,
+      "line": 279,
       "match": "(float *)((int)",
       "text": "((fStack_90 != *(float *)((int)PTR_DAT_00681ab8 + 0xc) ||",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 283,
+      "line": 280,
       "match": "(float *)((int)",
       "text": "(fStack_8c != *(float *)((int)PTR_DAT_00681ab8 + 0x10))))))) ||",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 284,
+      "line": 281,
       "match": "(float *)((int)",
       "text": "(fStack_88 != *(float *)((int)PTR_DAT_00681ab8 + 0x14))) ||",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 285,
+      "line": 282,
       "match": "(float *)((int)",
       "text": "(fStack_84 != *(float *)((int)PTR_DAT_00681ab8 + 0x18))) {",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 293,
+      "line": 290,
       "match": "in_stack_00000004",
       "text": "core_setedit_cpp_CDemonSet_FUN_0057ff70(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 294,
+      "line": 291,
       "match": "in_stack_00000004",
       "text": "iVar8 = core_setedit_cpp_CDemonSet_FUN_005800d0(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 299,
+      "line": 296,
       "match": "(int *)((int)",
       "text": "piVar1 = (int *)((int)aiStack_97c + iVar5);",
       "type": "pointer_cast"
     },
     {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 309,
-      "match": "SUB84",
-      "text": "(acStack_1ec + 4,\"%f\",SUB84 /* extract 2-byte value */((double)(1.0 / g_CGamePtr->delta_time_float),0))",
-      "type": "sub_artifact"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 315,
+      "line": 311,
       "match": "(float *)((int)",
       "text": "(double)*(float *)PTR_DAT_00681ab8,(double)*(float *)((int)PTR_DAT_00681ab8 + 4),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 316,
+      "line": 312,
       "match": "(float *)((int)",
       "text": "(double)*(float *)((int)PTR_DAT_00681ab8 + 8),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 318,
+      "line": 314,
       "match": "(float *)((int)",
       "text": "(double)*(float *)((int)PTR_DAT_00681ab8 + 0xc) * 0.31830988619288902,",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 319,
+      "line": 315,
       "match": "(float *)((int)",
       "text": "(double)*(float *)((int)PTR_DAT_00681ab8 + 0x10) * 0.31830988619288902 *",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 320,
+      "line": 316,
       "match": "(float *)((int)",
-      "text": "180,SUB84 /* extract 2-byte value */((double)*(float *)((int)PTR_DAT_00681ab8 + 0x18),0),",
+      "text": "180,(double)*(float *)((int)PTR_DAT_00681ab8 + 0x18));",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 320,
-      "match": "SUB84",
-      "text": "180,SUB84 /* extract 2-byte value */((double)*(float *)((int)PTR_DAT_00681ab8 + 0x18),0),",
-      "type": "sub_artifact"
     },
     {
       "description": "Complex pointer cast",
       "line": 321,
-      "match": "(float *)((int)",
-      "text": "(int)((ulonglong)(double)*(float *)((int)PTR_DAT_00681ab8 + 0x18) >> 0x20));",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 326,
       "match": "(float *)((int)",
       "text": "(double)*(float *)PTR_DAT_00681ab8,(double)*(float *)((int)PTR_DAT_00681ab8 + 4),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 327,
+      "line": 322,
       "match": "(float *)((int)",
-      "text": "SUB84 /* extract 2-byte value */((double)*(float *)((int)PTR_DAT_00681ab8 + 8),0),",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 327,
-      "match": "SUB84",
-      "text": "SUB84 /* extract 2-byte value */((double)*(float *)((int)PTR_DAT_00681ab8 + 8),0),",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 328,
-      "match": "(float *)((int)",
-      "text": "(int)((ulonglong)(double)*(float *)((int)PTR_DAT_00681ab8 + 8) >> 0x20));",
+      "text": "(double)*(float *)((int)PTR_DAT_00681ab8 + 8));",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 351,
+      "line": 345,
       "match": "&stack0xffffee84",
       "text": "local_40 = *(int *)(&stack0xffffee84 + (uint)*pbVar14 * 4);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 398,
+      "line": 391,
+      "match": "in_stack_ffffee84",
+      "text": "(&CStack_594,0,(uint)in_stack_ffffee84,in_stack_ffffee88,in_stack_ffffee8c,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 391,
       "match": "in_stack_ffffee88",
-      "text": "(&CStack_594,0,(uint)d2,(uint)in_stack_ffffee88,in_stack_ffffee8c,in_stack_ffffee90,",
+      "text": "(&CStack_594,0,(uint)in_stack_ffffee84,in_stack_ffffee88,in_stack_ffffee8c,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 398,
+      "line": 391,
       "match": "in_stack_ffffee8c",
-      "text": "(&CStack_594,0,(uint)d2,(uint)in_stack_ffffee88,in_stack_ffffee8c,in_stack_ffffee90,",
+      "text": "(&CStack_594,0,(uint)in_stack_ffffee84,in_stack_ffffee88,in_stack_ffffee8c,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 398,
+      "line": 392,
       "match": "in_stack_ffffee90",
-      "text": "(&CStack_594,0,(uint)d2,(uint)in_stack_ffffee88,in_stack_ffffee8c,in_stack_ffffee90,",
+      "text": "in_stack_ffffee90,in_stack_ffffee94);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 399,
+      "line": 392,
       "match": "in_stack_ffffee94",
-      "text": "in_stack_ffffee94);",
+      "text": "in_stack_ffffee90,in_stack_ffffee94);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 416,
+      "line": 409,
       "match": "(float *)((int)",
       "text": "(g_CEditorToolsPtr,\"Enter FOV\",(float *)((int)PTR_DAT_00681ab8 + 0x18),",
       "type": "pointer_cast"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s.raw\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%s.raw",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 123,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_ec,\"%s.raw\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"%s.act\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "%s.act",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 133,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_ec,\"%s.act\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

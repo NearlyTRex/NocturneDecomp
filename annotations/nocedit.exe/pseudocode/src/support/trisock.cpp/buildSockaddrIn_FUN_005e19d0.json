@@ -1,23 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 196,
+    "complexity_score": 104,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 0,
-    "pseudocode_lines": 26,
-    "suspect_count": 13,
+    "pseudocode_lines": 24,
+    "suspect_count": 6,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
       "param_count_too_many",
-      "pointer_cast",
-      "register_param",
-      "stack_ref",
-      "unknown_field"
+      "pointer_cast"
     ],
-    "total_lines": 64
+    "total_lines": 62
   },
   "cross_references": [
     {
@@ -139,60 +135,11 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 6,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 6,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 17,
-      "match": "&stack0xfffffffc",
-      "text": "crt_memory_c_memset_FUN_005fde40(&stack0xfffffffc,0,8);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 18,
       "match": "(uint *)((int)",
-      "text": "puVar1 = (uint *)((int)dest_buffer + (uint)bVar3 * -8 + 4);",
+      "text": "puVar2 = (uint *)((int)dest_buffer + (uint)bVar4 * -8 + 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 20,
-      "match": "._2_2_",
-      "text": "dest_buffer->sin_port = uStack_c._2_2_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 22,
-      "match": "&stack0xfffffff8",
-      "text": "*puVar1 = *(uint *)(&stack0xfffffff8 + (uint)bVar3 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 23,
-      "match": "&stack0xfffffffc",
-      "text": "*puVar2 = *(uint *)(&stack0xfffffffc + (uint)bVar3 * -8 + (uint)bVar3 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 26,
-      "match": "&stack0xfffffffc",
-      "text": "((int)(&stack0xfffffffc + (uint)bVar3 * -8 + (uint)bVar3 * -8) + ((uint)bVar3 * -2 + 1) * 4)",
-      "type": "stack_ref"
     },
     {
       "call_site_count": 2,

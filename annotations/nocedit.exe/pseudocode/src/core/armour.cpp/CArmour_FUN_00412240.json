@@ -1,17 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 13,
-    "complexity_score": 58,
+    "complexity_score": 32,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 8,
-    "suspect_count": 4,
+    "pseudocode_lines": 7,
+    "suspect_count": 2,
     "suspect_types": [
-      "call_esp_preserve",
-      "stack_param"
+      "call_esp_preserve"
     ],
-    "total_lines": 21
+    "total_lines": 20
   },
   "cross_references": [],
   "function": {
@@ -83,20 +82,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 5,
-      "match": "in_stack_00000008",
-      "text": "int in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000008",
-      "text": "((CDeformableModelInstance *)(in_stack_00000008 + 0x158));",
-      "type": "stack_param"
-    },
     {
       "add_esp_value": 4,
       "call_address": "00412245",

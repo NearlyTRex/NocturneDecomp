@@ -14,6 +14,8 @@ core_hero_cpp_CHero_dtor_FUN_004f2470
   int iVar1;
   CPathMap *pCVar2;
   CDeformableModelInstance *pCVar3;
+  uint unaff_EBX;
+  uint unaff_retaddr;
   
   (this_ptr->base_character).base_actor.vtable = &g_CHeroVTable;
   iVar1 = 0;
@@ -32,7 +34,8 @@ core_hero_cpp_CHero_dtor_FUN_004f2470
   core_backgnd_cpp_cleanupVector_FUN_004126e0((CVector3f **)(iVar1 + -0xb4));
   iVar1 = core_cloth_cpp_FUN_0043bf80();
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_0059de40
-                     ((CDeformableModelInstance *)(iVar1 + -0x293c),0,d5,d6,d7);
+                     ((CDeformableModelInstance *)(iVar1 + -0x293c),0,unaff_EBX,unaff_retaddr,
+                      (uint)this_ptr);
   core_actor_cpp_CDemonActor_dtor_FUN_00408a30
             ((CDemonActor *)(pCVar3[-1].part_visibility_flags + 7),1);
   return;

@@ -1,19 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 408,
-    "complexity_score": 296,
+    "complexity_score": 225,
     "cross_reference_count": 4,
     "function_call_count": 7,
     "global_count": 15,
-    "pseudocode_lines": 176,
-    "suspect_count": 10,
+    "pseudocode_lines": 170,
+    "suspect_count": 5,
     "suspect_types": [
-      "badspacebase",
-      "register_param",
-      "stack_param",
-      "unknown_field"
+      "stack_param"
     ],
-    "total_lines": 584
+    "total_lines": 578
   },
   "cross_references": [
     {
@@ -535,73 +532,38 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 10,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 10,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 10,
       "match": "in_stack_00000008",
       "text": "float in_stack_00000008;",
       "type": "stack_param"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 50,
-      "match": "._0_4_",
-      "text": "local_40._0_4_ = (pCVar6->position).x - (pCVar2->location).position.x;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 51,
-      "match": "._4_4_",
-      "text": "local_40._4_4_ = (this_ptr->base_actor).location.position.y - (pCVar2->location).position.y;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 52,
-      "match": "._8_4_",
-      "text": "local_40._8_4_ = (this_ptr->base_actor).location.position.z - (pCVar2->location).position.z;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 69,
-      "match": "._8_4_",
-      "text": "auStack_88._8_4_ = 0.0;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 109,
-      "match": "in_stack_00000008",
-      "text": "fVar7 = *(float *)(this_ptr->cloth_data + 0x32c) + in_stack_00000008;",
+      "line": 11,
+      "match": "in_stack_fffffee8",
+      "text": "int in_stack_fffffee8;",
       "type": "stack_param"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 127,
-      "match": "._8_4_",
-      "text": "local_40._8_4_ = 0.0;",
-      "type": "unknown_field"
+      "description": "Unresolved stack parameter",
+      "line": 52,
+      "match": "in_stack_fffffee8",
+      "text": "iVar1 = (*pCVar2->vtable[1].processMeleeHit)(pCVar2,in_stack_fffffee8);",
+      "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 167,
+      "line": 103,
       "match": "in_stack_00000008",
-      "text": "fVar7 = *(float *)(this_ptr->cloth_data + 0x32c) + in_stack_00000008;",
+      "text": "fVar6 = *(float *)(this_ptr->cloth_data + 0x32c) + in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 161,
+      "match": "in_stack_00000008",
+      "text": "fVar6 = *(float *)(this_ptr->cloth_data + 0x32c) + in_stack_00000008;",
       "type": "stack_param"
     }
   ]

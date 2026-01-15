@@ -1,18 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 232,
-    "complexity_score": 314,
+    "complexity_score": 285,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 12,
-    "pseudocode_lines": 89,
-    "suspect_count": 21,
+    "pseudocode_lines": 90,
+    "suspect_count": 19,
     "suspect_types": [
-      "badspacebase",
-      "register_param",
       "stack_param"
     ],
-    "total_lines": 321
+    "total_lines": 322
   },
   "cross_references": [
     {
@@ -433,43 +431,29 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 14,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 14,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 14,
       "match": "in_stack_00000004",
       "text": "CDemonActor *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 15,
       "match": "in_stack_00000008",
       "text": "CDemonActor *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 16,
       "match": "in_stack_0000000c",
       "text": "int in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 17,
       "match": "in_stack_fffffef0",
       "text": "SCollisionInfo *in_stack_fffffef0;",
       "type": "stack_param"
@@ -574,7 +558,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 88,
+      "line": 89,
       "match": "in_stack_00000008",
       "text": "if ((fStack_1c <= 1.0) && (in_stack_00000008 == g_CDemonSetPtr->collision_actor)) {",
       "type": "stack_param"

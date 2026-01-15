@@ -11,7 +11,6 @@ void __cdecl core_set_cpp_CDemonSet_FUN_00570cd0(CDemonSet *this_ptr)
 {
   float fVar1;
   float fVar2;
-  BADSPACEBASE *in_ESP;
   float *in_stack_00000008;
   CVector3i local_10;
   

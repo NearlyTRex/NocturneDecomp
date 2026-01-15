@@ -12,7 +12,6 @@ core_dog_cpp_CZombieDog_getTargetPoints_FUN_0047f8d0
 
 {
   CVector3f *pCVar1;
-  BADSPACEBASE *in_ESP;
   CVector3f local_10;
   
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00

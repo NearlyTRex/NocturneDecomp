@@ -21,7 +21,7 @@ shape_meshlod_cpp_CLodMesh_saveReplayData_FUN_0051d250(CLodMesh *this_ptr,FILE *
   
   if (file_handle != (FILE *)0x0) {
     iVar7 = 0;
-    crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%d\n");
+    crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,"%d\n",this_ptr->lod_level_count);
     if (0 < this_ptr->lod_level_count) {
       iVar8 = 0;
       do {

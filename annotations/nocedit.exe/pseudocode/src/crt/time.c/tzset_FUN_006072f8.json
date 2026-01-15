@@ -1,23 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 103,
-    "complexity_score": 211,
+    "complexity_score": 109,
     "cross_reference_count": 3,
     "function_call_count": 4,
     "global_count": 10,
-    "pseudocode_lines": 51,
-    "suspect_count": 12,
+    "pseudocode_lines": 44,
+    "suspect_count": 5,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
-      "register_param",
-      "special_crt_function",
-      "stack_param",
-      "stack_ref",
-      "unaffected_reg"
+      "special_crt_function"
     ],
-    "total_lines": 154
+    "total_lines": 147
   },
   "cross_references": [
     {
@@ -215,55 +210,6 @@
     "variables": []
   },
   "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 8,
-      "match": "unaff_EBX",
-      "text": "int unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 9,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 9,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_ffffff58",
-      "text": "int in_stack_ffffff58;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 24,
-      "match": "&stack0xffffff50",
-      "text": "DVar1 = (*PTR_GetTimeZoneInformation_006115c4)((LPTIME_ZONE_INFORMATION)&stack0xffffff50);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 34,
-      "match": "unaff_EBX",
-      "text": "g_DaylightSavingOffset = unaff_EBX * -0x3c;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 36,
-      "match": "in_stack_ffffff58",
-      "text": "g_TimezoneOffset = (iStack_54 + in_stack_ffffff58) * 0x3c;",
-      "type": "stack_param"
-    },
     {
       "add_esp_value": 12,
       "call_address": "006072a0",

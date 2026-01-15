@@ -13,7 +13,6 @@ core_dcube_cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0(SVoxelGridParams 
   int iVar1;
   int iVar2;
   int iVar3;
-  BADSPACEBASE *in_ESP;
   int iVar4;
   uint *puVar5;
   uint *puVar6;
@@ -84,9 +83,11 @@ core_dcube_cpp_CDemonCube_buildVoxelOccupancyGrid_FUN_00457cf0(SVoxelGridParams 
         } while (iVar3 < 8);
         iVar4 = iVar4 + 1;
         local_10 = local_10 + 1;
+        local_14 = local_14 + 1;
       } while (iVar4 < 8);
-      local_18 = local_18 + 8;
-    } while (local_14 + 1 < 8);
+      local_18 = local_18 + 1;
+      local_1c = local_1c + 8;
+    } while (local_18 < 8);
     puVar5 = *(uint **)params;
     puVar6 = *(uint **)(params + 4);
     for (iVar4 = 0x10; iVar4 != 0; iVar4 = iVar4 + -1) {

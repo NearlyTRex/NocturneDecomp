@@ -11,7 +11,6 @@ char * __cdecl crt_stdlib_c_itoa_FUN_00607cc0(int value,char *buffer,int base)
 {
   char cVar1;
   char *pcVar2;
-  BADSPACEBASE *in_ESP;
   char *pcVar3;
   char local_37 [35];
   uint local_14;

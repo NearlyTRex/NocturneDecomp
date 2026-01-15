@@ -1,23 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 234,
-    "complexity_score": 650,
+    "complexity_score": 583,
     "cross_reference_count": 0,
     "function_call_count": 13,
     "global_count": 15,
-    "pseudocode_lines": 90,
-    "suspect_count": 52,
+    "pseudocode_lines": 88,
+    "suspect_count": 47,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "callind_preserve",
       "lea_esp_stack_addr",
-      "register_param",
       "stack_param",
-      "stack_ref",
-      "suspect_float"
+      "stack_ref"
     ],
-    "total_lines": 324
+    "total_lines": 322
   },
   "cross_references": [],
   "function": {
@@ -254,20 +251,6 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 13,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 13,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
       "line": 14,
       "match": "in_stack_00000004",
@@ -283,198 +266,177 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 17,
       "match": "in_stack_00000008",
       "text": "if (*(int *)(in_stack_00000008 + 0x28) == 7) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 19,
       "match": "in_stack_00000008",
       "text": "*(float *)(in_stack_00000008 + 4) = *(float *)(in_stack_00000008 + 4) * (float)2;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 19,
       "match": "in_stack_00000008",
       "text": "*(float *)(in_stack_00000008 + 4) = *(float *)(in_stack_00000008 + 4) * (float)2;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 21,
       "match": "in_stack_00000004",
       "text": "(&in_stack_00000004->base_actor,(CVector3f *)&stack0xffffffdc,",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 22,
+      "line": 21,
       "match": "&stack0xffffffdc",
       "text": "(&in_stack_00000004->base_actor,(CVector3f *)&stack0xffffffdc,",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 22,
       "match": "in_stack_00000008",
       "text": "(CVector3f *)(in_stack_00000008 + 0x1c));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 29,
+      "line": 28,
       "match": "in_stack_00000004",
       "text": "if (*(int *)(in_stack_00000004[0x11].cloth_data + 0x11c4) == 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 30,
+      "line": 29,
       "match": "in_stack_00000008",
       "text": "if ((*(int *)(in_stack_00000008 + 0x28) == 1) &&",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 32,
+      "line": 31,
       "match": "in_stack_00000008",
       "text": "(*(CDemonActor **)(in_stack_00000008 + 0x34),",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 35,
+      "line": 34,
       "match": "in_stack_00000004",
       "text": "(&(in_stack_00000004->model).motion_controller,10,1);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 51,
+      "line": 50,
       "match": "in_stack_00000004",
       "text": "core_charactr_cpp_CCharacter_pickupObjectNow_FUN_0042cdb0(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 53,
+      "line": 52,
       "match": "in_stack_00000004",
       "text": "sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(in_stack_00000004[0x11].cloth_data + 0x1e04))",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 56,
+      "line": 55,
       "match": "in_stack_00000004",
       "text": "(g_CSoundPtr,in_stack_00000004,\"voicudeath.wav @ 2.5\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 57,
+      "line": 56,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->hit_points = 0.0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 62,
+      "line": 61,
       "match": "in_stack_00000004",
       "text": "if (*(int *)(in_stack_00000004[0x11].cloth_data + 0x11c4) != 2) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 63,
+      "line": 62,
       "match": "in_stack_00000008",
       "text": "*(uint *)(in_stack_00000008 + 4) = 0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 66,
+      "line": 65,
       "match": "in_stack_00000004",
-      "text": "fVar5 = in_stack_00000004->hit_points - *(float *)(in_stack_00000008 + 4);",
+      "text": "fVar1 = in_stack_00000004->hit_points - *(float *)(in_stack_00000008 + 4);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 66,
+      "line": 65,
       "match": "in_stack_00000008",
-      "text": "fVar5 = in_stack_00000004->hit_points - *(float *)(in_stack_00000008 + 4);",
+      "text": "fVar1 = in_stack_00000004->hit_points - *(float *)(in_stack_00000008 + 4);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 67,
+      "line": 66,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004->hit_points = fVar5;",
+      "text": "in_stack_00000004->hit_points = fVar1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 69,
+      "line": 68,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004->hit_points = 24.999;",
       "type": "stack_param"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 73,
-      "match": "4.2039e-45",
-      "text": "fVar5 = 4.2039e-45;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 76,
-      "match": "5.60519e-45",
-      "text": "fVar5 = 5.60519e-45;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 79,
-      "match": "7.00649e-45",
-      "text": "fVar5 = 7.00649e-45;",
-      "type": "suspect_float"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 82,
+      "line": 81,
       "match": "in_stack_00000004",
-      "text": "((CMotionController *)(in_stack_00000004[1].base_actor.create_event + 0x20),(int)fVar5",
+      "text": "((CMotionController *)(in_stack_00000004[1].base_actor.create_event + 0x20),iVar2,1);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 85,
+      "line": 83,
       "match": "in_stack_00000004",
       "text": "(*(uint *)(in_stack_00000004[0x11].cloth_data + 0x1e04));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 87,
+      "line": 85,
       "match": "in_stack_00000004",
-      "text": "uVar2 = (*((in_stack_00000004->base_actor).vtable)->playSound)",
+      "text": "uVar3 = (*((in_stack_00000004->base_actor).vtable)->playSound)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 88,
+      "line": 86,
       "match": "in_stack_00000004",
       "text": "(&in_stack_00000004->base_actor,\"voicuhurt.wav\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 89,
+      "line": 87,
       "match": "in_stack_00000004",
-      "text": "*(uint *)(in_stack_00000004[0x11].cloth_data + 0x1e04) = uVar2;",
+      "text": "*(uint *)(in_stack_00000004[0x11].cloth_data + 0x1e04) = uVar3;",
       "type": "stack_param"
     },
     {

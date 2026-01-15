@@ -1,19 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 156,
-    "complexity_score": 288,
+    "complexity_score": 241,
     "cross_reference_count": 35,
     "function_call_count": 12,
     "global_count": 9,
-    "pseudocode_lines": 58,
-    "suspect_count": 21,
+    "pseudocode_lines": 56,
+    "suspect_count": 17,
     "suspect_types": [
       "call_esp_preserve",
       "pointer_cast",
-      "stack_param",
       "variadic_preserve"
     ],
-    "total_lines": 214
+    "total_lines": 212
   },
   "cross_references": [
     {
@@ -423,43 +422,15 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000014",
-      "text": "int in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000018",
-      "text": "int in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_00000014",
-      "text": "if (in_stack_00000014 == 0) {",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 31,
+      "line": 29,
       "match": "(SMemHead *)((int)",
       "text": "pSVar1 = (SMemHead *)((int)ptr + -0x28);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 59,
-      "match": "in_stack_00000018",
-      "text": "pvVar3 = shape_memdbg_cpp_debugMalloc_FUN_0050f250(in_stack_00000018,filename,line_number);",
-      "type": "stack_param"
-    },
-    {
       "call_address": "0050f588",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -473,7 +444,7 @@
     },
     {
       "call_address": "0050f5c4",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -487,7 +458,7 @@
     },
     {
       "call_address": "0050f608",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -501,7 +472,7 @@
     },
     {
       "call_address": "0050f693",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

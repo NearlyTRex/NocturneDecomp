@@ -1,25 +1,22 @@
 {
   "complexity": {
     "assembly_lines": 507,
-    "complexity_score": 750,
+    "complexity_score": 692,
     "cross_reference_count": 1,
     "function_call_count": 22,
     "global_count": 49,
-    "pseudocode_lines": 180,
-    "suspect_count": 52,
+    "pseudocode_lines": 177,
+    "suspect_count": 48,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "callind_preserve",
-      "format_string_mismatch",
       "lea_esp_stack_addr",
-      "register_param",
       "stack_param",
       "stack_ref",
       "sub_artifact",
       "variadic_preserve"
     ],
-    "total_lines": 687
+    "total_lines": 684
   },
   "cross_references": [
     {
@@ -520,59 +517,38 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 12,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 12,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_ffffff28",
-      "text": "CDeformableModelInstance *in_stack_ffffff28;",
+      "line": 14,
+      "match": "in_stack_fffffee8",
+      "text": "CDeformableModelInstance *in_stack_fffffee8;",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 143,
-      "match": "&stack0xffffff14",
-      "text": "\"*.dfm\",SUB41 /* extract 2-byte value */(&stack0xffffff14,0)), iVar3 != 0)) {",
+      "line": 141,
+      "match": "&stack0xfffffee8",
+      "text": "\"*.dfm\",SUB41 /* extract 2-byte value */(&stack0xfffffee8,0)), iVar3 != 0)) {",
       "type": "stack_ref"
     },
     {
       "description": "Decompiler double/longlong extraction artifact",
-      "line": 143,
+      "line": 141,
       "match": "SUB41",
-      "text": "\"*.dfm\",SUB41 /* extract 2-byte value */(&stack0xffffff14,0)), iVar3 != 0)) {",
+      "text": "\"*.dfm\",SUB41 /* extract 2-byte value */(&stack0xfffffee8,0)), iVar3 != 0)) {",
       "type": "sub_artifact"
     },
     {
       "description": "Direct stack address reference",
-      "line": 155,
-      "match": "&stack0xffffff18",
-      "text": "core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(this_ptr_00,&stack0xffffff18);",
+      "line": 153,
+      "match": "&stack0xfffffee8",
+      "text": "core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(this_ptr_00,&stack0xfffffee8);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 157,
-      "match": "in_stack_ffffff28",
-      "text": "core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(in_stack_ffffff28);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 161,
-      "match": "in_stack_ffffff28",
-      "text": "in_stack_ffffff28 = (CDeformableModelInstance *)&DAT_00000002;",
+      "line": 155,
+      "match": "in_stack_fffffee8",
+      "text": "core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(in_stack_fffffee8);",
       "type": "stack_param"
     },
     {
@@ -744,17 +720,6 @@
       "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
       "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 0059944e (no EBP frame)",
       "type": "variadic_preserve"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"\\\"%s\\\"\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "\\\"%s\\\"\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 178,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(pFVar2,\"\\\"%s\\\"\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 20,

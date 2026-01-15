@@ -1,20 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 717,
-    "complexity_score": 1655,
+    "complexity_score": 1671,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 108,
-    "pseudocode_lines": 390,
-    "suspect_count": 124,
+    "pseudocode_lines": 391,
+    "suspect_count": 126,
     "suspect_types": [
       "call_esp_preserve",
-      "format_string_mismatch",
       "param_count_too_few",
       "stack_param",
       "variadic_preserve"
     ],
-    "total_lines": 1107
+    "total_lines": 1108
   },
   "cross_references": [
     {
@@ -1375,6 +1374,13 @@
     },
     {
       "description": "Unresolved stack parameter",
+      "line": 348,
+      "match": "in_stack_00000004",
+      "text": "(g_CEditorToolsPtr,\"SCmdParm::setTemplateText - %s unknown template type!\",in_stack_00000004 + 500);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
       "line": 351,
       "match": "in_stack_00000004",
       "text": "*(byte *)(in_stack_00000004 + 0x25c) = 0;",
@@ -1389,9 +1395,23 @@
     },
     {
       "description": "Unresolved stack parameter",
+      "line": 371,
+      "match": "in_stack_00000004",
+      "text": "(g_CEditorToolsPtr,\"SCmdParm::setTemplateText - Invalid template string: %s\",in_stack_00000004 + 500);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
       "line": 375,
       "match": "in_stack_00000004",
       "text": "pcVar5 = (char *)(in_stack_00000004 + 0x2c0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 381,
+      "match": "in_stack_00000004",
+      "text": "(\"Missing closing ' in template string: %s\",in_stack_00000004 + 500);",
       "type": "stack_param"
     },
     {
@@ -1460,17 +1480,6 @@
       "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
       "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 005615f7 (no EBP frame)",
       "type": "variadic_preserve"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Missing closing ' in template string: %s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Missing closing ' in template string: %s",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 380,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Missing closing ' in template string: %s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 12,

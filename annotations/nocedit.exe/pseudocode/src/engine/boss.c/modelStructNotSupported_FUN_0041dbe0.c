@@ -11,7 +11,6 @@ engine_boss_c_modelStructNotSupported_FUN_0041dbe0(SMRGLHeaderExtended *header)
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   SMRGLHeaderExtended *unaff_ESI;
   int *piVar2;
   SMRGLHeaderExtended *pSVar3;

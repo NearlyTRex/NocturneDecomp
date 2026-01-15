@@ -22,7 +22,7 @@ CMineCar * __cdecl core_minecar_cpp_FUN_00520f40(CMineCar *this_ptr,uint d1,uint
                      ((CCourse *)((this_ptr->base_platform).field9_0x2f0 + 0x20));
   ptr = (CMineCar *)
         core_actor_cpp_CDemonActor_dtor_FUN_00408a30((CDemonActor *)&pCVar1[-0x42].loop,1);
-  if ((d3 & 2) == 0) {
+  if ((d1 & 2) == 0) {
     return ptr;
   }
   shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);

@@ -1,24 +1,21 @@
 {
   "complexity": {
     "assembly_lines": 190,
-    "complexity_score": 717,
+    "complexity_score": 536,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 9,
-    "pseudocode_lines": 112,
-    "suspect_count": 56,
+    "pseudocode_lines": 96,
+    "suspect_count": 41,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "callind_preserve",
-      "format_string_mismatch",
       "lea_esp_stack_addr",
-      "register_param",
-      "stack_param",
+      "pointer_cast",
       "stack_ref",
       "variadic_preserve"
     ],
-    "total_lines": 302
+    "total_lines": 286
   },
   "cross_references": [
     {
@@ -304,116 +301,18 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 13,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 13,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000014",
-      "text": "char *in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00000018",
-      "text": "char *in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_00000024",
-      "text": "CStrList *in_stack_00000024;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_fffff4e4",
-      "text": "char *in_stack_fffff4e4;",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 51,
+      "match": "(char *)((int)",
+      "text": "pcVar2 = (char *)((int)pcVar2 + ((uint)bVar8 * -2 + 1) * 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 58,
-      "match": "&stack0xfffff4fc",
-      "text": "puVar6 = (uint *)&stack0xfffff4fc;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 67,
-      "match": "in_stack_fffff4e4",
-      "text": "crt_stdio_c_sscanf_FUN_0060013c(pcVar2,in_stack_fffff4e4,pCVar8,iVar3,pcVar9);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 68,
-      "match": "in_stack_fffff4e4",
-      "text": "in_stack_fffff4e4 = (char *)0x0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 70,
-      "match": "&stack0xfffff4f4",
-      "text": "(acStack_608,(char *)0x0,(char *)0x0,acStack_90c,&stack0xfffff4f4);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 83,
+      "line": 69,
       "match": "&stack0x00000014",
       "text": "time_ptr = crt_time_c_localtime_FUN_00600288((time_t *)&stack0x00000014);",
       "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 92,
-      "match": "in_stack_00000014",
-      "text": "if (in_stack_00000014 != (char *)0x0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 94,
-      "match": "in_stack_00000014",
-      "text": "(in_stack_00000014,(char *)0x0,(char *)0x0,acStack_1f4,acStack_4f4);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 99,
-      "match": "in_stack_00000018",
-      "text": "(in_stack_00000018,(char *)0x0,(char *)0x0,acStack_2ec,acStack_3ec);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 113,
-      "match": "in_stack_00000024",
-      "text": "(*in_stack_00000024->vtable->insert)(in_stack_00000024,(int)file_path,acStack_dc);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 113,
-      "match": "in_stack_00000024",
-      "text": "(*in_stack_00000024->vtable->insert)(in_stack_00000024,(int)file_path,acStack_dc);",
-      "type": "stack_param"
     },
     {
       "add_esp_value": 12,
@@ -436,7 +335,7 @@
     },
     {
       "call_address": "004a33df",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -450,7 +349,7 @@
     },
     {
       "call_address": "004a3555",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -461,17 +360,6 @@
       "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
       "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 004a3555 (no EBP frame)",
       "type": "variadic_preserve"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s\\t%s\\t%d\\t%s\\t%s\" has 5 specifiers but 0 arguments after it",
-      "expected_args": 5,
-      "format_string": "%s\\t%s\\t%d\\t%s\\t%s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 111,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_e4,\"%s\\t%s\\t%d\\t%s\\t%s\");",
-      "text": "Format string expects 5 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 8,

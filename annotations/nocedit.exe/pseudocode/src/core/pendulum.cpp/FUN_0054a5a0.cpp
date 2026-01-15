@@ -9,17 +9,16 @@
 /* Signature: byte actors_other_pendulum.cpp_FUN_0054a5a0(uint param_1, byte
    param_2, uint param_3) */
 
-void core_pendulum_cpp_FUN_0054a5a0(void)
+void core_pendulum_cpp_FUN_0054a5a0
+               (uint param_1,uint param_2,uint unaff_EBX,uint param_4,
+               CDemonActor *param_5,uint param_6,char *param_7)
 
 {
   CDemonActor *pCVar1;
-  CDemonActor *in_stack_00000004;
-  char *in_stack_00000010;
   
-  pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c790
-                     (in_stack_00000004,g_CPendulumClassInfo.name_hash);
+  pCVar1 = core_actor_cpp_castToClassHash_FUN_0040c790(param_5,g_CPendulumClassInfo.name_hash);
   crt_stdio_c_sprintf_FUN_005fdbd0
-            (in_stack_00000010,"%f",
-             (double)(pCVar1[2].field13_0xec.z * (float)0.5));
+            (param_7,"%f",(double)(pCVar1[2].field13_0xec.z * (float)0.5),
+             unaff_EBX);
   return;
 }

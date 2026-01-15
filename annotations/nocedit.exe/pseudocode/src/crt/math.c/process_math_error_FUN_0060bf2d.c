@@ -11,7 +11,6 @@ crt_math_c_process_math_error_FUN_0060bf2d(int errorFlags,double *value1,double 
 
 {
   int unaff_EBX;
-  BADSPACEBASE *in_ESP;
   double dVar1;
   MathErrorContext local_3c;
   

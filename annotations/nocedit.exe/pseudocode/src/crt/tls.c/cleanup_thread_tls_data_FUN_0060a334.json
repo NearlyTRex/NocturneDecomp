@@ -1,19 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 90,
+    "complexity_score": 62,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 4,
-    "pseudocode_lines": 20,
-    "suspect_count": 5,
+    "pseudocode_lines": 17,
+    "suspect_count": 3,
     "suspect_types": [
       "call_esp_preserve",
       "pointer_cast",
-      "special_crt_function",
-      "stack_param"
+      "special_crt_function"
     ],
-    "total_lines": 54
+    "total_lines": 51
   },
   "cross_references": [
     {
@@ -131,25 +130,11 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_0000001c",
-      "text": "int in_stack_0000001c;",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 13,
+      "line": 11,
       "match": "(HANDLE *)((int)",
       "text": "hObject = *(HANDLE *)((int)pvVar1 + 0xde);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_0000001c",
-      "text": "if ((hObject != (HANDLE)0x0) && (in_stack_0000001c != 0)) {",
-      "type": "stack_param"
     },
     {
       "add_esp_value": 4,

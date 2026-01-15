@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 91,
+    "complexity_score": 65,
     "cross_reference_count": 11,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 16,
-    "suspect_count": 6,
+    "pseudocode_lines": 15,
+    "suspect_count": 4,
     "suspect_types": [
       "call_esp_preserve",
-      "stack_param",
       "unaffected_reg"
     ],
-    "total_lines": 50
+    "total_lines": 49
   },
   "cross_references": [
     {
@@ -269,29 +268,15 @@
     {
       "description": "Unaffected register variable",
       "line": 8,
-      "match": "unaff_EDI",
-      "text": "CKeyFramedModelInstance *unaff_EDI;",
+      "match": "unaff_ESI",
+      "text": "CKeyFramedModelInstance *unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000014",
-      "text": "int in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000014",
-      "text": "(this_ptr,render_flags,in_stack_00000014,unaff_EDI);",
-      "type": "stack_param"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 17,
-      "match": "unaff_EDI",
-      "text": "(this_ptr,render_flags,in_stack_00000014,unaff_EDI);",
+      "line": 16,
+      "match": "unaff_ESI",
+      "text": "(this_ptr,frame_index,render_flags,unaff_ESI);",
       "type": "unaffected_reg"
     },
     {

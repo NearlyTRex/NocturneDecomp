@@ -18,7 +18,6 @@ crt_stdio_c_CreateFileImpl_FUN_006090a0
   DWORD dwCreationDisposition;
   DWORD unaff_EBX;
   uint uVar4;
-  BADSPACEBASE *in_ESP;
   DWORD dwFlagsAndAttributes;
   uint access_mode_00;
   DWORD creation_disposition;

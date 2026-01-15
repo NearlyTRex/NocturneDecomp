@@ -1,25 +1,23 @@
 {
   "complexity": {
     "assembly_lines": 451,
-    "complexity_score": 1630,
+    "complexity_score": 1599,
     "cross_reference_count": 4,
     "function_call_count": 17,
     "global_count": 39,
-    "pseudocode_lines": 290,
-    "suspect_count": 129,
+    "pseudocode_lines": 289,
+    "suspect_count": 127,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "callind_preserve",
       "lea_esp_stack_addr",
       "pointer_cast",
-      "register_param",
       "stack_param",
       "suspect_float",
       "unaffected_reg",
       "warning_overlapping_globals"
     ],
-    "total_lines": 741
+    "total_lines": 740
   },
   "cross_references": [
     {
@@ -467,561 +465,547 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 15,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 15,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 16,
+      "line": 15,
       "match": "unaff_EBP",
       "text": "int unaff_EBP;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 17,
+      "line": 16,
       "match": "unaff_ESI",
       "text": "CVector3i *unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 19,
       "match": "in_stack_00000004",
       "text": "CDemonActor *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 57,
+      "line": 56,
       "match": "in_stack_00000004",
       "text": "if (((in_stack_00000004[1].orient_matrix.m[2].z != 0.0) ||",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 62,
+      "line": 61,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004 == *(CDemonActor **)(g_CDemonMissionPtr->field2_0xc + 0x1c))) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 67,
+      "line": 66,
       "match": "in_stack_00000004",
       "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 68,
+      "line": 67,
       "match": "in_stack_00000004",
       "text": "if (in_stack_00000004[1].previous_transform_state.dirty_flags != 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 69,
+      "line": 68,
       "match": "in_stack_00000004",
       "text": "this_ptr_00 = (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,&local_f4);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 69,
+      "line": 68,
       "match": "in_stack_00000004",
       "text": "this_ptr_00 = (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,&local_f4);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 71,
+      "line": 70,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[1].previous_transform_state.orientation.y = fVar4;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 73,
+      "line": 72,
       "match": "in_stack_00000004",
       "text": "if ((in_stack_00000004[1].previous_transform_state.orientation.y != 0.0) &&",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 74,
+      "line": 73,
       "match": "in_stack_00000004",
       "text": "(1.0 < SQRT(*(float *)(in_stack_00000004[1].actor_name + 8) *",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 75,
+      "line": 74,
       "match": "in_stack_00000004",
       "text": "*(float *)(in_stack_00000004[1].actor_name + 8) +",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 76,
+      "line": 75,
       "match": "in_stack_00000004",
       "text": "*(float *)in_stack_00000004[1].actor_name *",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 77,
+      "line": 76,
       "match": "in_stack_00000004",
       "text": "*(float *)in_stack_00000004[1].actor_name +",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 78,
+      "line": 77,
       "match": "in_stack_00000004",
       "text": "*(float *)(in_stack_00000004[1].actor_name + 4) *",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 79,
+      "line": 78,
       "match": "in_stack_00000004",
       "text": "*(float *)(in_stack_00000004[1].actor_name + 4)) *",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 80,
+      "line": 79,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[1].orient_matrix.m[2].x)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 83,
+      "line": 82,
       "match": "in_stack_00000004",
       "text": "if ((in_stack_00000004[1].previous_transform_state.orientation.y != 0.0) &&",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 84,
+      "line": 83,
       "match": "in_stack_00000004",
       "text": "(in_stack_00000004[1].orient_matrix.m[1].z != 4.2039e-45)) {",
       "type": "stack_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 84,
+      "line": 83,
       "match": "4.2039e-45",
       "text": "(in_stack_00000004[1].orient_matrix.m[1].z != 4.2039e-45)) {",
       "type": "suspect_float"
     },
     {
       "description": "Unaffected register variable",
-      "line": 86,
+      "line": 85,
       "match": "unaff_ESI",
       "text": "(g_CDemonRendererPtr,unaff_ESI);",
       "type": "unaffected_reg"
     },
     {
       "description": "Complex pointer cast",
-      "line": 88,
+      "line": 87,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&CStack_50 + (uint)bVar5 * -8 + 4) = aiStack_58[(uint)bVar5 * -2];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 89,
+      "line": 88,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&CStack_50 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
       "type": "pointer_cast"
     },
     {
       "description": "Unaffected register variable",
-      "line": 99,
+      "line": 98,
       "match": "unaff_ESI",
       "text": "(g_CDemonRendererPtr,unaff_ESI);",
       "type": "unaffected_reg"
     },
     {
       "description": "Complex pointer cast",
-      "line": 102,
+      "line": 101,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&CStack_50 + (uint)bVar5 * -8 + 4) = aiStack_94[(uint)bVar5 * -2];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 103,
+      "line": 102,
       "match": "(int *)((int)",
       "text": "*(int *)((int)&CStack_50 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 113,
+      "line": 112,
       "match": "in_stack_00000004",
       "text": "fStack_74 = *(float *)in_stack_00000004[1].actor_name * 0.5f;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 121,
+      "line": 120,
       "match": "in_stack_00000004",
       "text": "fStack_70 = *(float *)(in_stack_00000004[1].actor_name + 4);",
       "type": "stack_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 141,
+      "line": 140,
       "match": "unaff_EBP",
       "text": "if (unaff_EBP == 3) {",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 144,
+      "line": 143,
       "match": "in_stack_00000004",
       "text": "if (in_stack_00000004[1].orient_matrix.m[1].z == 5.60519e-45) {",
       "type": "stack_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 144,
+      "line": 143,
       "match": "5.60519e-45",
       "text": "if (in_stack_00000004[1].orient_matrix.m[1].z == 5.60519e-45) {",
       "type": "suspect_float"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 147,
+      "line": 146,
       "match": "in_stack_00000004",
       "text": "if (in_stack_00000004[1].orient_matrix.m[1].z == 1.4013e-45) {",
       "type": "stack_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 147,
+      "line": 146,
       "match": "1.4013e-45",
       "text": "if (in_stack_00000004[1].orient_matrix.m[1].z == 1.4013e-45) {",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 150,
+      "line": 149,
       "match": "9.18341e-41",
       "text": "g_RenderVertexBuffer[0].light = 9.18341e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 152,
+      "line": 151,
       "match": "9.18341e-41",
       "text": "g_RenderVertexBuffer[0].fog = 9.18341e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 153,
+      "line": 152,
       "match": "9.18341e-41",
       "text": "g_RenderVertexBuffer[1].light = 9.18341e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 155,
+      "line": 154,
       "match": "9.18341e-41",
       "text": "g_RenderVertexBuffer[1].fog = 9.18341e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 156,
+      "line": 155,
       "match": "9.18341e-41",
       "text": "g_RenderVertexBuffer[2].light = 9.18341e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 158,
+      "line": 157,
       "match": "9.18341e-41",
       "text": "g_RenderVertexBuffer[2].fog = 9.18341e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 159,
+      "line": 158,
       "match": "9.18341e-41",
       "text": "g_RenderVertexBuffer[3].light = 9.18341e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 161,
+      "line": 160,
       "match": "9.18341e-41",
       "text": "g_RenderVertexBuffer[3].fog = 9.18341e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 162,
+      "line": 161,
       "match": "in_stack_00000004",
       "text": "if (in_stack_00000004[1].previous_transform_state.orientation.z == 0.0) {",
       "type": "stack_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 163,
+      "line": 162,
       "match": "7.34684e-40",
       "text": "g_RenderVertexBuffer[0].u = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 164,
+      "line": 163,
       "match": "7.34684e-40",
       "text": "g_RenderVertexBuffer[1].u = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 165,
+      "line": 164,
       "match": "2.2775203e-38",
       "text": "g_RenderVertexBuffer[2].u = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 166,
+      "line": 165,
       "match": "2.2775203e-38",
       "text": "g_RenderVertexBuffer[3].u = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 169,
+      "line": 168,
       "match": "2.2775203e-38",
       "text": "g_RenderVertexBuffer[0].u = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 170,
+      "line": 169,
       "match": "2.2775203e-38",
       "text": "g_RenderVertexBuffer[1].u = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 171,
+      "line": 170,
       "match": "7.34684e-40",
       "text": "g_RenderVertexBuffer[2].u = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 172,
+      "line": 171,
       "match": "7.34684e-40",
       "text": "g_RenderVertexBuffer[3].u = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 174,
+      "line": 173,
       "match": "2.2775203e-38",
       "text": "g_RenderVertexBuffer[3].v = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 175,
+      "line": 174,
       "match": "7.34684e-40",
       "text": "g_RenderVertexBuffer[2].v = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 176,
+      "line": 175,
       "match": "7.34684e-40",
       "text": "g_RenderVertexBuffer[1].v = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 177,
+      "line": 176,
       "match": "2.2775203e-38",
       "text": "g_RenderVertexBuffer[0].v = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 182,
+      "line": 181,
       "match": "in_stack_00000004",
       "text": "((double)*(float *)(in_stack_00000004[1].actor_name + 0xc));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 186,
+      "line": 185,
       "match": "in_stack_00000004",
       "text": "(int)in_stack_00000004[1].orient_matrix.m[1].z * 8 + (int)ROUND(dVar6) % 8);",
       "type": "stack_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 193,
+      "line": 192,
       "match": "2.8026e-45",
       "text": "local_f4.min.x = 2.8026e-45;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 196,
+      "line": 195,
       "match": "4.2039e-45",
       "text": "local_f4.min.y = 4.2039e-45;",
       "type": "suspect_float"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 207,
+      "line": 206,
       "match": "in_stack_00000004",
       "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 208,
+      "line": 207,
       "match": "in_stack_00000004",
       "text": "if ((in_stack_00000004[1].orient_matrix.m[1].z == 1.4013e-45) &&",
       "type": "stack_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 208,
+      "line": 207,
       "match": "1.4013e-45",
       "text": "if ((in_stack_00000004[1].orient_matrix.m[1].z == 1.4013e-45) &&",
       "type": "suspect_float"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 209,
+      "line": 208,
       "match": "in_stack_00000004",
       "text": "(fStack_14 = *(float *)(in_stack_00000004[1].actor_name + 4) * (float)2,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 210,
+      "line": 209,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[1].previous_transform_state.orientation.y != 0.0)) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 213,
+      "line": 212,
       "match": "in_stack_00000004",
       "text": "CStack_20.y = (int)(*(float *)(in_stack_00000004[1].actor_name + 4) * (float)0.5);",
       "type": "stack_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 263,
+      "line": 262,
       "match": "2.29589e-41",
       "text": "g_CDemonRendererPtr->vertex_buffer_ptr->w_recip = 2.29589e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 264,
+      "line": 263,
       "match": "2.29589e-41",
       "text": "this_ptr->vertex_buffer_ptr[1].w_recip = 2.29589e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 265,
+      "line": 264,
       "match": "2.29589e-41",
       "text": "this_ptr->vertex_buffer_ptr[2].w_recip = 2.29589e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 266,
+      "line": 265,
       "match": "2.29589e-41",
       "text": "this_ptr->vertex_buffer_ptr[3].w_recip = 2.29589e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 267,
+      "line": 266,
       "match": "7.34684e-40",
       "text": "this_ptr->vertex_buffer_ptr->u = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 268,
+      "line": 267,
       "match": "2.2775203e-38",
       "text": "this_ptr->vertex_buffer_ptr->v = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 269,
+      "line": 268,
       "match": "2.2775203e-38",
       "text": "this_ptr->vertex_buffer_ptr[1].u = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 270,
+      "line": 269,
       "match": "2.2775203e-38",
       "text": "this_ptr->vertex_buffer_ptr[1].v = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 271,
+      "line": 270,
       "match": "2.2775203e-38",
       "text": "this_ptr->vertex_buffer_ptr[2].u = 2.2775203e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 272,
+      "line": 271,
       "match": "7.34684e-40",
       "text": "this_ptr->vertex_buffer_ptr[2].v = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 273,
+      "line": 272,
       "match": "7.34684e-40",
       "text": "this_ptr->vertex_buffer_ptr[3].u = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 274,
+      "line": 273,
       "match": "7.34684e-40",
       "text": "this_ptr->vertex_buffer_ptr[3].v = 7.34684e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 291,
+      "line": 290,
       "match": "in_stack_00000004",
       "text": "return in_stack_00000004[1].previous_transform_state.orientation.y;",
       "type": "stack_param"

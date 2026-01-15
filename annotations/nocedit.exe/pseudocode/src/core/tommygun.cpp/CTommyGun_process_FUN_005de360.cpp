@@ -13,7 +13,6 @@ void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_005de360(CTommyGun *this_pt
   int iVar1;
   uint uVar2;
   int extraout_EBX;
-  BADSPACEBASE *in_ESP;
   double dVar3;
   double dVar4;
   uint in_stack_fffffe14;

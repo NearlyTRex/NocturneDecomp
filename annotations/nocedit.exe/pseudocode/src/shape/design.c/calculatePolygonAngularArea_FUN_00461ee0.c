@@ -10,7 +10,6 @@ double __cdecl
 shape_design_c_calculatePolygonAngularArea_FUN_00461ee0(SShapeEditorPolygon *polygon_ptr)
 
 {
-  BADSPACEBASE *in_ESP;
   float *pfVar1;
   float *pfVar2;
   float *pfVar3;

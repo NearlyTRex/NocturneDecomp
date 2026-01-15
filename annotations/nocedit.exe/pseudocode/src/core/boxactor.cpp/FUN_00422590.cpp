@@ -13,7 +13,6 @@ void core_boxactor_cpp_FUN_00422590(void)
 {
   CBoundingBox3D *this_ptr;
   CVector3f *pCVar1;
-  BADSPACEBASE *in_ESP;
   int in_stack_00000004;
   CVector3f *out_point;
   CVector3f CStack_28;

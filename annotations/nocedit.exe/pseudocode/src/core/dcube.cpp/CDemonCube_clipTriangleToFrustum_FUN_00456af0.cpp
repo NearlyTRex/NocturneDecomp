@@ -12,16 +12,17 @@ core_dcube_cpp_CDemonCube_clipTriangleToFrustum_FUN_00456af0
           uchar texture_id)
 
 {
-  float fVar1;
+  uint uVar1;
   float fVar2;
-  int iVar3;
+  float fVar3;
   int iVar4;
-  byte bVar5;
-  uint uVar6;
-  CVector3f *pCVar7;
-  int iVar8;
+  int iVar5;
+  byte bVar6;
+  uint uVar7;
+  CVector3f *pCVar8;
   int iVar9;
-  uint uVar10;
+  int iVar10;
+  uint local_14;
   
   g_CubeInputTriangleCount = 3;
   if (vertex1 != g_CubeInputTriangleBuffer) {
@@ -39,33 +40,33 @@ core_dcube_cpp_CDemonCube_clipTriangleToFrustum_FUN_00456af0
     g_CubeInputTriangleBuffer[2].z = vertex3->z;
     g_CubeInputTriangleBuffer[2].y = vertex3->y;
   }
-  uVar6 = 0xffffffff;
-  iVar9 = 0;
-  uVar10 = 0;
-  pCVar7 = g_CubeInputTriangleBuffer;
+  uVar7 = 0xffffffff;
+  iVar10 = 0;
+  local_14 = 0;
+  pCVar8 = g_CubeInputTriangleBuffer;
   do {
-    bVar5 = (frustum->max).x < pCVar7->x;
-    if ((frustum->max).y < pCVar7->y) {
-      bVar5 = bVar5 | 2;
+    bVar6 = (frustum->max).x < pCVar8->x;
+    if ((frustum->max).y < pCVar8->y) {
+      bVar6 = bVar6 | 2;
     }
-    if ((frustum->max).z < pCVar7->z) {
-      bVar5 = bVar5 | 4;
+    if ((frustum->max).z < pCVar8->z) {
+      bVar6 = bVar6 | 4;
     }
-    if (pCVar7->x < (frustum->min).x) {
-      bVar5 = bVar5 | 8;
+    if (pCVar8->x < (frustum->min).x) {
+      bVar6 = bVar6 | 8;
     }
-    if (pCVar7->y < (frustum->min).y) {
-      bVar5 = bVar5 | 0x10;
+    if (pCVar8->y < (frustum->min).y) {
+      bVar6 = bVar6 | 0x10;
     }
-    if (pCVar7->z < (frustum->min).z) {
-      bVar5 = bVar5 | 0x20;
+    if (pCVar8->z < (frustum->min).z) {
+      bVar6 = bVar6 | 0x20;
     }
-    pCVar7 = pCVar7 + 1;
-    iVar9 = iVar9 + 1;
-    uVar10 = uVar10 | bVar5;
-    uVar6 = uVar6 & bVar5;
-  } while (iVar9 < 3);
-  if (uVar10 == 0) {
+    pCVar8 = pCVar8 + 1;
+    iVar10 = iVar10 + 1;
+    local_14 = local_14 | bVar6;
+    uVar7 = uVar7 & bVar6;
+  } while (iVar10 < 3);
+  if (local_14 == 0) {
     g_CubeClippedTriangleCount = 3;
     if (vertex1 != g_CubeClippedTriangleBuffer) {
       g_CubeClippedTriangleBuffer[0].x = vertex1->x;
@@ -84,16 +85,16 @@ core_dcube_cpp_CDemonCube_clipTriangleToFrustum_FUN_00456af0
     }
   }
   else {
-    if (uVar6 != 0) {
+    if (uVar7 != 0) {
       g_CubeInputTriangleCount = 3;
       return;
     }
-    g_CubeClipStage1Count = uVar6;
-    g_CubeClipStage2Count = uVar6;
-    g_CubeClipStage3Count = uVar6;
-    g_CubeClipStage4Count = uVar6;
-    g_CubeClipStage5Count = uVar6;
-    g_CubeClippedTriangleCount = uVar6;
+    g_CubeClipStage1Count = uVar7;
+    g_CubeClipStage2Count = uVar7;
+    g_CubeClipStage3Count = uVar7;
+    g_CubeClipStage4Count = uVar7;
+    g_CubeClipStage5Count = uVar7;
+    g_CubeClippedTriangleCount = uVar7;
     core_dcube_cpp_clipPolygonAgainstMaxY_FUN_00454970((frustum->max).y);
     if ((int)g_CubeClipStage1Count < 3) {
       return;
@@ -120,41 +121,43 @@ core_dcube_cpp_CDemonCube_clipTriangleToFrustum_FUN_00456af0
     }
   }
   if (2 < (int)g_CubeClippedTriangleCount) {
-    iVar9 = 0xc;
-    for (iVar8 = 0; iVar3 = g_VertexCount, fVar2 = g_CubeClippedTriangleBuffer[0].z,
-        fVar1 = g_CubeClippedTriangleBuffer[0].y, iVar8 < (int)(g_CubeClippedTriangleCount - 2);
-        iVar8 = iVar8 + 1) {
+    iVar10 = 0xc;
+    for (iVar9 = 0; iVar4 = g_VertexCount, fVar3 = g_CubeClippedTriangleBuffer[0].z,
+        fVar2 = g_CubeClippedTriangleBuffer[0].y, iVar9 < (int)(g_CubeClippedTriangleCount - 2);
+        iVar9 = iVar9 + 1) {
       g_LoadedVertices[g_VertexCount].vertex.x = g_CubeClippedTriangleBuffer[0].x;
-      g_LoadedVertices[iVar3].vertex.y = fVar1;
-      uVar10 = iVar3 + 1;
-      g_LoadedVertices[iVar3].vertex.z = fVar2;
-      fVar1 = *(float *)((int)&g_CubeClippedTriangleBuffer[0].y + iVar9);
-      fVar2 = *(float *)((int)&g_CubeClippedTriangleBuffer[0].z + iVar9);
-      uVar6 = iVar3 + 2;
-      g_LoadedVertices[uVar10].vertex.x = *(float *)((int)&g_CubeClippedTriangleBuffer[0].x + iVar9)
+      g_LoadedVertices[iVar4].vertex.y = fVar2;
+      uVar7 = iVar4 + 1;
+      g_LoadedVertices[iVar4].vertex.z = fVar3;
+      fVar2 = *(float *)((int)&g_CubeClippedTriangleBuffer[0].y + iVar10);
+      fVar3 = *(float *)((int)&g_CubeClippedTriangleBuffer[0].z + iVar10);
+      uVar1 = iVar4 + 2;
+      g_LoadedVertices[uVar7].vertex.x = *(float *)((int)&g_CubeClippedTriangleBuffer[0].x + iVar10)
       ;
-      g_LoadedVertices[uVar10].vertex.y = fVar1;
-      g_LoadedVertices[uVar10].vertex.z = fVar2;
-      iVar4 = g_PolygonCount;
-      fVar1 = *(float *)((int)&g_CubeClippedTriangleBuffer[1].y + iVar9);
-      fVar2 = *(float *)((int)&g_CubeClippedTriangleBuffer[1].z + iVar9);
-      g_LoadedVertices[uVar6].vertex.x = *(float *)((int)&g_CubeClippedTriangleBuffer[1].x + iVar9);
-      g_LoadedVertices[uVar6].vertex.y = fVar1;
-      g_LoadedVertices[uVar6].vertex.z = fVar2;
-      g_ModelPolygonData[iVar4].vertex_indices[0] = iVar3;
-      g_ModelPolygonData[iVar4].vertex_indices[1] = uVar10;
-      g_ModelPolygonData[iVar4].vertex_indices[2] = uVar6;
-      g_ModelPolygonData[iVar4].uv_u[0] = 0.0;
-      g_ModelPolygonData[iVar4].uv_v[0] = 0.0;
-      g_ModelPolygonData[iVar4].uv_u[1] = 0.0;
-      g_ModelPolygonData[iVar4].uv_v[1] = 0.0;
-      g_ModelPolygonData[iVar4].uv_u[2] = 0.0;
-      g_ModelPolygonData[iVar4].uv_v[2] = 0.0;
-      g_ModelPolygonData[iVar4].lightmap_name[0] = '\0';
-      g_ModelPolygonData[iVar4].vertex_indices_count = 3;
-      g_ModelPolygonData[iVar4].polygon_type = 1;
-      crt_stdio_c_sprintf_FUN_005fdbd0(g_ModelPolygonData[iVar4].texture_name,"%d");
-      iVar9 = iVar9 + 0xc;
+      g_LoadedVertices[uVar7].vertex.y = fVar2;
+      g_LoadedVertices[uVar7].vertex.z = fVar3;
+      iVar5 = g_PolygonCount;
+      fVar2 = *(float *)((int)&g_CubeClippedTriangleBuffer[1].y + iVar10);
+      fVar3 = *(float *)((int)&g_CubeClippedTriangleBuffer[1].z + iVar10);
+      g_LoadedVertices[uVar1].vertex.x = *(float *)((int)&g_CubeClippedTriangleBuffer[1].x + iVar10)
+      ;
+      g_LoadedVertices[uVar1].vertex.y = fVar2;
+      g_LoadedVertices[uVar1].vertex.z = fVar3;
+      g_ModelPolygonData[iVar5].vertex_indices[0] = iVar4;
+      g_ModelPolygonData[iVar5].vertex_indices[1] = uVar7;
+      g_ModelPolygonData[iVar5].vertex_indices[2] = uVar1;
+      g_ModelPolygonData[iVar5].uv_u[0] = 0.0;
+      g_ModelPolygonData[iVar5].uv_v[0] = 0.0;
+      g_ModelPolygonData[iVar5].uv_u[1] = 0.0;
+      g_ModelPolygonData[iVar5].uv_v[1] = 0.0;
+      g_ModelPolygonData[iVar5].uv_u[2] = 0.0;
+      g_ModelPolygonData[iVar5].uv_v[2] = 0.0;
+      g_ModelPolygonData[iVar5].lightmap_name[0] = '\0';
+      g_ModelPolygonData[iVar5].vertex_indices_count = 3;
+      g_ModelPolygonData[iVar5].polygon_type = 1;
+      crt_stdio_c_sprintf_FUN_005fdbd0
+                (g_ModelPolygonData[iVar5].texture_name,"%d",(uint)texture_id);
+      iVar10 = iVar10 + 0xc;
       g_ModelPolygonData[g_PolygonCount].part_assignment = 0;
       g_PolygonCount = g_PolygonCount + 1;
       g_VertexCount = g_VertexCount + 3;

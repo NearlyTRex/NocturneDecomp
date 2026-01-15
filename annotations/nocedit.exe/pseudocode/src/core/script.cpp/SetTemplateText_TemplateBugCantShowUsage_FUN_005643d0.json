@@ -1,20 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 88,
-    "complexity_score": 249,
+    "complexity_score": 235,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 5,
-    "pseudocode_lines": 44,
-    "suspect_count": 18,
+    "pseudocode_lines": 45,
+    "suspect_count": 17,
     "suspect_types": [
       "call_esp_preserve",
-      "format_string_mismatch",
       "lea_esp_stack_addr",
       "stack_param",
       "variadic_preserve"
     ],
-    "total_lines": 132
+    "total_lines": 133
   },
   "cross_references": [
     {
@@ -154,70 +153,70 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 21,
       "match": "in_stack_00000008",
       "text": "if (*(char *)(local_14 + in_stack_00000008) == '\\0') {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 22,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[iVar3] = '\\0';",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
+      "line": 25,
       "match": "in_stack_00000008",
       "text": "if (*(char *)(local_14 + in_stack_00000008) == '<') break;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 25,
+      "line": 26,
       "match": "in_stack_00000004",
       "text": "pcVar4 = in_stack_00000004 + iVar3;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 27,
+      "line": 28,
       "match": "in_stack_00000008",
       "text": "*pcVar4 = *(char *)(in_stack_00000008 + local_14);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 32,
+      "line": 33,
       "match": "in_stack_00000004",
-      "text": "iVar2 = crt_stdio_c_sprintf_FUN_005fdbd0(in_stack_00000004 + iVar3,\"<%s>\");",
+      "text": "iVar2 = crt_stdio_c_sprintf_FUN_005fdbd0(in_stack_00000004 + iVar3,\"<%s>\",local_7c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 38,
+      "line": 39,
       "match": "in_stack_00000004",
       "text": "*in_stack_00000004 = cVar1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 44,
+      "line": 45,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[1] = cVar1;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 45,
+      "line": 46,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004 = in_stack_00000004 + 2;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 45,
+      "line": 46,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004 = in_stack_00000004 + 2;",
       "type": "stack_param"
@@ -235,17 +234,6 @@
       "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
       "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00564456 (no EBP frame)",
       "type": "variadic_preserve"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"<%s>\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "<%s>",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 32,
-      "match": "iVar2 = crt_stdio_c_sprintf_FUN_005fdbd0(in_stack_00000004 + iVar3,\"<%s>\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 12,

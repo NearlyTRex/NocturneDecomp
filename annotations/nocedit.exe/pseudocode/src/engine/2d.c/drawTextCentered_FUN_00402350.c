@@ -10,9 +10,8 @@ void __cdecl engine_2d_c_drawTextCentered_FUN_00402350(char *text,int left_x,int
 
 {
   int iVar1;
-  int unaff_ESI;
   
   iVar1 = engine_2d_c_getStringWidth_FUN_004018a0(text);
-  engine_2d_c_drawText_FUN_00401fd0(text,(((left_x + right_x) - iVar1) + 2) / 2,unaff_ESI);
+  engine_2d_c_drawText_FUN_00401fd0(text,(((left_x + right_x) - iVar1) + 2) / 2,y_pos);
   return;
 }

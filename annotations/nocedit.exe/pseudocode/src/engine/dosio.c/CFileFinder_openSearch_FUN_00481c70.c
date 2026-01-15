@@ -11,12 +11,10 @@ engine_dosio_c_CFileFinder_openSearch_FUN_00481c70(CFileFinder *this_ptr,char *s
 
 {
   HANDLE pvVar1;
-  BADSPACEBASE *in_ESP;
-  LPCSTR in_stack_0000000c;
-  DWORD DStack_140;
+  _WIN32_FIND_DATAA _Stack_144;
   
   engine_dosio_c_CFileFinder_closeSearch_FUN_00481d70(this_ptr);
-  pvVar1 = (*PTR_FindFirstFileA_0061154c)(in_stack_0000000c,(LPWIN32_FIND_DATAA)&DStack_140);
+  pvVar1 = (*PTR_FindFirstFileA_0061154c)(search_pattern,&_Stack_144);
   if (pvVar1 == (HANDLE)0xffffffff) {
     if (this_ptr->has_results == 0) {
       engine_dosio_c_CFileFinder_reset_FUN_00481db0(this_ptr);
@@ -25,9 +23,7 @@ engine_dosio_c_CFileFinder_openSearch_FUN_00481c70(CFileFinder *this_ptr,char *s
   }
   else {
     this_ptr->search_handle = pvVar1;
-    DStack_140 = 0x481cc4;
-    engine_dosio_c_CFileFinder_convertStruct_FUN_00481dc0
-              (this_ptr,(LPWIN32_FIND_DATAA)&stack0xfffffecc);
+    engine_dosio_c_CFileFinder_convertStruct_FUN_00481dc0(this_ptr,&_Stack_144);
     this_ptr->has_results = 1;
   }
   return this_ptr->has_results;

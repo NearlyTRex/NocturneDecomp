@@ -9,121 +9,123 @@
 int __cdecl crt_time_c_determine_dst_status_FUN_006079b4(tm *timeptr)
 
 {
-  int iVar1;
+  uint uVar1;
   int iVar2;
-  int unaff_EBP;
-  int *piVar3;
+  int iVar3;
   int iVar4;
-  int unaff_ESI;
-  uint uVar5;
-  uint unaff_EDI;
-  dst_rule *pdVar6;
-  int local_1c;
+  int iVar5;
+  int iVar6;
+  int *piVar7;
+  uint uVar8;
+  dst_rule *pdVar9;
+  int local_14;
   
-  uVar5 = 0;
+  uVar8 = 0;
   if (*(char *)PTR_s_EDT_006851c4 == '\0') goto LAB_00607c7b;
-  iVar1 = crt_unknown_c_FUN_00607958();
-  if (iVar1 == 0) {
-    piVar3 = &g_DstStartRule.seconds;
-    pdVar6 = (dst_rule *)&g_DstTransitionSecond;
+  uVar1 = crt_unknown_c_FUN_00607958();
+  if (uVar1 == 0) {
+    piVar7 = &g_DstStartRule.seconds;
+    pdVar9 = (dst_rule *)&g_DstTransitionSecond;
   }
   else {
-    piVar3 = &g_DstTransitionSecond;
-    pdVar6 = &g_DstStartRule;
+    piVar7 = &g_DstTransitionSecond;
+    pdVar9 = &g_DstStartRule;
   }
-  iVar1 = crt_time_c_is_leap_year_FUN_00607820(timeptr->tm_year + 0x76c);
-  if (iVar1 == 0) {
-    iVar1 = *(int *)(&g_DaysInMonth_Normal + unaff_EBP);
-    iVar4 = *(int *)((int)&inf + unaff_EBP * 2 + 6);
+  iVar5 = timeptr->tm_mon;
+  iVar2 = crt_time_c_is_leap_year_FUN_00607820(timeptr->tm_year + 0x76c);
+  if (iVar2 == 0) {
+    iVar2 = *(int *)(&g_DaysInMonth_Normal + iVar5);
+    iVar4 = *(int *)((int)&inf + iVar5 * 2 + 6);
   }
   else {
-    iVar1 = *(int *)(&g_DaysInMonth_Leap + unaff_EBP);
-    iVar4 = *(int *)(&DAT_00665f50 + unaff_EBP * 2);
+    iVar2 = *(int *)(&g_DaysInMonth_Leap + iVar5);
+    iVar4 = *(int *)(&DAT_00665f50 + iVar5 * 2);
   }
-  if (((dst_rule *)((int)piVar3 + 0x20))->seconds == 0) {
-    if (((dst_rule *)piVar3)->month < unaff_EBP) {
-      uVar5 = 1;
-      goto LAB_00607b4e;
+  iVar2 = (iVar2 >> 0x10) - (iVar4 >> 0x10);
+  if (((dst_rule *)((int)piVar7 + 0x20))->seconds == 0) {
+    if (((dst_rule *)piVar7)->month < iVar5) {
+      uVar8 = 1;
     }
-    if (unaff_EBP != ((dst_rule *)piVar3)->month) goto LAB_00607b4e;
-    local_1c = timeptr->tm_mday - ((timeptr->tm_wday + 7) - ((dst_rule *)piVar3)->day_of_year) % 7;
-    iVar2 = (timeptr->tm_mday + -1) -
-            ((timeptr->tm_wday + 6) - ((dst_rule *)piVar3)->day_of_year) % 7;
-    if (((dst_rule *)piVar3)->day == 5) {
-      iVar1 = ((iVar1 >> 0x10) - (iVar4 >> 0x10)) + -7;
-      if ((local_1c <= iVar1) || (uVar5 = 1, iVar1 < iVar2)) goto LAB_00607b4e;
-    }
-    else {
-      iVar1 = (((dst_rule *)piVar3)->day + -1) * 7 + 1;
-      if ((local_1c < iVar1) || (uVar5 = 1, iVar1 <= iVar2)) goto LAB_00607b4e;
-    }
+    else if (iVar5 == ((dst_rule *)piVar7)->month) {
+      iVar4 = timeptr->tm_mday - ((timeptr->tm_wday + 7) - ((dst_rule *)piVar7)->day_of_year) % 7;
+      iVar6 = (timeptr->tm_mday + -1) -
+              ((timeptr->tm_wday + 6) - ((dst_rule *)piVar7)->day_of_year) % 7;
+      if (((dst_rule *)piVar7)->day == 5) {
+        iVar3 = iVar2 + -7;
+        if ((iVar3 < iVar4) && (uVar8 = 1, iVar6 <= iVar3)) {
 LAB_00607b55:
-    iVar1 = crt_unknown_c_FUN_00607c88();
-    uVar5 = (uint)(iVar1 == 0);
-  }
-  else {
-    unaff_EDI = ((dst_rule *)piVar3)->rule_type;
-    if (((dst_rule *)((int)piVar3 + 0x20))->seconds == 1) {
-      iVar1 = crt_time_c_is_leap_year_FUN_00607820(timeptr->tm_year + 0x76c);
-      if ((iVar1 != 0) && (DAT_00665f3a >> 0x10 < unaff_ESI)) {
-        unaff_ESI = unaff_ESI + 1;
-      }
-      unaff_ESI = unaff_ESI + -1;
-    }
-    if ((unaff_ESI <= timeptr->tm_yday) && (uVar5 = 1, timeptr->tm_yday == unaff_ESI))
-    goto LAB_00607b55;
-LAB_00607b4e:
-    if (local_1c != 0) goto LAB_00607b55;
-  }
-  if (uVar5 == 0) {
-    if (unaff_EDI != 0) {
-      uVar5 = unaff_EDI;
-    }
-    goto LAB_00607c7b;
-  }
-  if (pdVar6[1].seconds == 0) {
-    if (pdVar6->month < unaff_ESI) {
-      uVar5 = 0;
-    }
-    else if (unaff_ESI == pdVar6->month) {
-      iVar4 = timeptr->tm_mday - ((timeptr->tm_wday + 7) - pdVar6->day_of_year) % 7;
-      uVar5 = 0;
-      iVar1 = (timeptr->tm_mday + -1) - ((timeptr->tm_wday + 6) - pdVar6->day_of_year) % 7;
-      if (pdVar6->day == 5) {
-        if (unaff_EBP + -7 < iVar4) {
-          if (iVar1 <= unaff_EBP + -7) {
-LAB_00607c63:
-            uVar5 = crt_unknown_c_FUN_00607c88();
-          }
-        }
-        else {
-          uVar5 = 1;
+          iVar4 = crt_unknown_c_FUN_00607c88();
+          uVar8 = (uint)(iVar4 == 0);
         }
       }
       else {
-        iVar2 = (pdVar6->day + -1) * 7 + 1;
-        if (iVar4 < iVar2) {
-          uVar5 = 1;
-        }
-        else if (iVar1 < iVar2) goto LAB_00607c63;
+        iVar3 = (((dst_rule *)piVar7)->day + -1) * 7 + 1;
+        if ((iVar3 <= iVar4) && (uVar8 = 1, iVar6 < iVar3)) goto LAB_00607b55;
       }
     }
   }
   else {
-    iVar1 = pdVar6->rule_type;
-    if (pdVar6[1].seconds == 1) {
+    local_14 = ((dst_rule *)piVar7)->rule_type;
+    if (((dst_rule *)((int)piVar7 + 0x20))->seconds == 1) {
       iVar4 = crt_time_c_is_leap_year_FUN_00607820(timeptr->tm_year + 0x76c);
-      if ((iVar4 != 0) && (DAT_00665f3a >> 0x10 < iVar1)) {
-        iVar1 = iVar1 + 1;
+      if ((iVar4 != 0) && (DAT_00665f3a >> 0x10 < local_14)) {
+        local_14 = local_14 + 1;
       }
-      iVar1 = iVar1 + -1;
+      local_14 = local_14 + -1;
     }
-    if ((iVar1 <= timeptr->tm_yday) && (uVar5 = 0, iVar1 == timeptr->tm_yday)) goto LAB_00607c63;
+    if ((local_14 <= timeptr->tm_yday) && (uVar8 = 1, timeptr->tm_yday == local_14))
+    goto LAB_00607b55;
   }
-  if (unaff_ESI != 0) {
-    uVar5 = unaff_ESI - uVar5;
+  if (uVar8 == 0) {
+    if (uVar1 != 0) {
+      uVar8 = uVar1;
+    }
+    goto LAB_00607c7b;
+  }
+  if (pdVar9[1].seconds == 0) {
+    if (pdVar9->month < iVar5) {
+      uVar8 = 0;
+    }
+    else if (iVar5 == pdVar9->month) {
+      iVar4 = timeptr->tm_mday - ((timeptr->tm_wday + 7) - pdVar9->day_of_year) % 7;
+      uVar8 = 0;
+      iVar5 = (timeptr->tm_mday + -1) - ((timeptr->tm_wday + 6) - pdVar9->day_of_year) % 7;
+      if (pdVar9->day == 5) {
+        iVar2 = iVar2 + -7;
+        if (iVar2 < iVar4) {
+          if (iVar5 <= iVar2) {
+LAB_00607c63:
+            uVar8 = crt_unknown_c_FUN_00607c88();
+          }
+        }
+        else {
+          uVar8 = 1;
+        }
+      }
+      else {
+        iVar2 = (pdVar9->day + -1) * 7 + 1;
+        if (iVar4 < iVar2) {
+          uVar8 = 1;
+        }
+        else if (iVar5 < iVar2) goto LAB_00607c63;
+      }
+    }
+  }
+  else {
+    iVar5 = pdVar9->rule_type;
+    if (pdVar9[1].seconds == 1) {
+      iVar2 = crt_time_c_is_leap_year_FUN_00607820(timeptr->tm_year + 0x76c);
+      if ((iVar2 != 0) && (DAT_00665f3a >> 0x10 < iVar5)) {
+        iVar5 = iVar5 + 1;
+      }
+      iVar5 = iVar5 + -1;
+    }
+    if ((iVar5 <= timeptr->tm_yday) && (uVar8 = 0, iVar5 == timeptr->tm_yday)) goto LAB_00607c63;
+  }
+  if (uVar1 != 0) {
+    uVar8 = uVar1 - uVar8;
   }
 LAB_00607c7b:
-  timeptr->tm_isdst = uVar5;
-  return uVar5;
+  timeptr->tm_isdst = uVar8;
+  return uVar8;
 }

@@ -10,7 +10,6 @@ int __cdecl core_door_cpp_CDoor_getMoveType_FUN_00481070(CDoor *this_ptr)
 
 {
   char *message;
-  BADSPACEBASE *in_ESP;
   int in_stack_00000008;
   CVector3f local_18;
   

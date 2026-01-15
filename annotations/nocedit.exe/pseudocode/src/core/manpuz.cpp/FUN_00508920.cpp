@@ -15,9 +15,6 @@ CMansionPuzzleCircle * __cdecl core_manpuz_cpp_FUN_00508920(CMansionPuzzleCircle
   void *pvVar4;
   char *pcVar5;
   char *pcVar6;
-  char *pcStack00000018;
-  uint uStack0000001c;
-  CMansionPuzzleCircle *pCStack00000020;
   
   pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base_actor);
   pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0
@@ -38,8 +35,7 @@ CMansionPuzzleCircle * __cdecl core_manpuz_cpp_FUN_00508920(CMansionPuzzleCircle
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0
             ((CKeyFramedModelInstance *)((int)pvVar4 + -0xef0),"mirrhack.kfm");
   pcVar5 = "headlite.raw";
-  pcStack00000018 = (char *)((int)pvVar4 + 0x188);
-  pcVar6 = pcStack00000018;
+  pcVar6 = (char *)((int)pvVar4 + 0x188);
   do {
     cVar1 = *pcVar5;
     *pcVar6 = cVar1;
@@ -58,8 +54,6 @@ CMansionPuzzleCircle * __cdecl core_manpuz_cpp_FUN_00508920(CMansionPuzzleCircle
   *(uint *)((int)pvVar4 + -0xd54) = 0;
   *(uint *)((int)pvVar4 + -0xd58) = *(uint *)((int)pvVar4 + -0xd54);
   *(uint *)((int)pvVar4 + -0xd5c) = *(uint *)((int)pvVar4 + -0xd58);
-  uStack0000001c = 0x508a5a;
-  pCStack00000020 = (CMansionPuzzleCircle *)((int)pvVar4 + -0x1340);
   core_manpuz_cpp_FUN_005098f0();
   return (CMansionPuzzleCircle *)((int)pvVar4 + -0x1340);
 }

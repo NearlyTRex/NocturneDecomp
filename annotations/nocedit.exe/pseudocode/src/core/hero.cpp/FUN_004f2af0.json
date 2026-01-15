@@ -1,19 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 126,
-    "complexity_score": 196,
+    "complexity_score": 165,
     "cross_reference_count": 6,
     "function_call_count": 1,
     "global_count": 4,
-    "pseudocode_lines": 56,
-    "suspect_count": 12,
+    "pseudocode_lines": 55,
+    "suspect_count": 10,
     "suspect_types": [
-      "badspacebase",
-      "register_param",
       "stack_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 182
+    "total_lines": 181
   },
   "cross_references": [
     {
@@ -249,85 +247,71 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 9,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 9,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 11,
       "match": "in_stack_00000004",
       "text": "CDemonActor *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 25,
+      "line": 24,
       "match": "in_stack_00000004",
       "text": "pCVar1 = (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,&CStack_60);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 25,
+      "line": 24,
       "match": "in_stack_00000004",
       "text": "pCVar1 = (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,&CStack_60);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 36,
+      "line": 35,
       "match": "in_stack_00000004",
       "text": "core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0(in_stack_00000004,&CStack_48,&CStack_3c)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 41,
+      "line": 40,
       "match": "code *",
       "text": "fStack_14 = (float)(**(code **)(*(int *)(*(int *)(g_CDemonSetPtr->actor_list_data + iVar2) +",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 50,
+      "line": 49,
       "match": "code *",
       "text": "iVar4 = (**(code **)(*(int *)(iVar4 + 0x154) + 0x5c))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 52,
+      "line": 51,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[0x8d].create_event[0x48] = '\\0';",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 53,
+      "line": 52,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[0x8d].create_event[0x49] = '\\0';",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 54,
+      "line": 53,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[0x8d].create_event[0x4a] = '\\0';",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 55,
+      "line": 54,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[0x8d].create_event[0x4b] = '\\0';",
       "type": "stack_param"

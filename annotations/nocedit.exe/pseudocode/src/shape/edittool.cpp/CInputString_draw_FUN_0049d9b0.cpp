@@ -10,14 +10,15 @@ void __cdecl
 shape_edittool_cpp_CInputString_draw_FUN_0049d9b0(CInputString *this_ptr,int x_pos,int y_pos)
 
 {
+  int y2;
   uint uVar1;
   int iVar2;
   int x2;
   int iVar3;
-  int unaff_EDI;
   CBitFont *this_ptr_00;
   char *text_string;
   
+  y2 = g_FontCharacterWidth + y_pos;
   if (this_ptr->selection_start != this_ptr->cursor_position) {
     iVar3 = shape_edittool_cpp_CInputString_calcX_FUN_0049d8f0(this_ptr,this_ptr->selection_start);
     iVar3 = x_pos + iVar3;
@@ -28,7 +29,7 @@ shape_edittool_cpp_CInputString_draw_FUN_0049d9b0(CInputString *this_ptr,int x_p
       x2 = iVar3;
       iVar3 = iVar2;
     }
-    engine_2d_c_fillRectColor_FUN_00403170(iVar3,y_pos,x2,unaff_EDI,g_SelectionColor);
+    engine_2d_c_fillRectColor_FUN_00403170(iVar3,y_pos,x2,y2,g_SelectionColor);
   }
   engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
   this_ptr_00 = g_EditorFont;
@@ -51,7 +52,7 @@ shape_edittool_cpp_CInputString_draw_FUN_0049d9b0(CInputString *this_ptr,int x_p
   if ((uVar1 & 0x40000) != 0) {
     g_ActiveRenderColor = g_CursorColor;
     iVar3 = shape_edittool_cpp_CInputString_calcX_FUN_0049d8f0(this_ptr,this_ptr->cursor_position);
-    engine_2d_c_drawLine_FUN_004011b0(iVar3 + x_pos,y_pos,iVar3 + x_pos,x_pos);
+    engine_2d_c_drawLine_FUN_004011b0(iVar3 + x_pos,y_pos,iVar3 + x_pos,y2);
     return;
   }
   return;

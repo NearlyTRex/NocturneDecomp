@@ -13,7 +13,6 @@ void core_platfrm_cpp_FUN_0054cab0(void)
 {
   float *pfVar1;
   CVector3f *pCVar2;
-  BADSPACEBASE *in_ESP;
   uint *puVar3;
   byte bVar4;
   int in_stack_00000004;

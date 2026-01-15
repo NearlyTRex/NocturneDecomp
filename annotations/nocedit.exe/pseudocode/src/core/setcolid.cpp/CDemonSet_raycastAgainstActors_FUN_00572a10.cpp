@@ -12,10 +12,9 @@ core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_00572a10
 
 {
   CDemonActor *pCVar1;
-  void *pvVar2;
-  int iVar3;
-  float fVar4;
-  BADSPACEBASE *in_ESP;
+  float fVar2;
+  void *pvVar3;
+  int iVar4;
   SCollisionInfo local_cc;
   CVector3f CStack_a4;
   int iStack_98;
@@ -35,6 +34,7 @@ core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_00572a10
   CDemonSet *local_20;
   int local_1c;
   CVector3f *local_18;
+  float fStack_14;
   
   this_ptr->field11_0x14d148 = -1;
   this_ptr->field12_0x14d14c = -1;
@@ -82,15 +82,17 @@ core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_00572a10
       local_20 = this_ptr;
       do {
         pCVar1 = *(CDemonActor **)(local_20->field19_0x14f0a0 + 0x7d0c);
-        pvVar2 = (void *)core_setcolid_cpp_CDemonSet_isActorIgnored_FUN_00572e20(this_ptr,pCVar1);
-        if (pvVar2 == (void *)0x0) {
-          local_cc.result_ptr = pvVar2;
-          local_cc.field9_0x24 = pvVar2;
-          iVar3 = (*pCVar1->vtable->hasCollision)(pCVar1,&local_cc);
-          if (iVar3 != 0) {
-            fVar4 = core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470
-                              (pCVar1,ray_origin,&local_64,&CStack_a4,&local_cc,iVar3,&local_88);
-            if (((fVar4 <= 1.0) && (fVar4 = fVar4 * local_24, fVar4 < max_t)) && (min_t < fVar4)) {
+        pvVar3 = (void *)core_setcolid_cpp_CDemonSet_isActorIgnored_FUN_00572e20(this_ptr,pCVar1);
+        if (pvVar3 == (void *)0x0) {
+          local_cc.result_ptr = pvVar3;
+          local_cc.field9_0x24 = pvVar3;
+          iVar4 = (*pCVar1->vtable->hasCollision)(pCVar1,&local_cc);
+          if (iVar4 != 0) {
+            fStack_14 = core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470
+                                  (pCVar1,ray_origin,&local_64,&CStack_a4,&local_cc,iVar4,&local_88)
+            ;
+            if (((fStack_14 <= 1.0) && (fVar2 = fStack_14 * local_24, fVar2 < max_t)) &&
+               (min_t < fVar2)) {
               if (&CStack_a4 != local_18) {
                 local_18->x = CStack_a4.x;
                 local_18->y = CStack_a4.y;
@@ -101,10 +103,10 @@ core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_00572a10
               this_ptr->field12_0x14d14c = iStack_8c;
               fStack_40 = ray_target->x - ray_origin->x;
               fStack_3c = ray_target->y - ray_origin->y;
-              CStack_58.x = fStack_40 * fVar4;
+              CStack_58.x = fStack_40 * fVar2;
               fStack_38 = ray_target->z - ray_origin->z;
-              CStack_58.y = fStack_3c * fVar4;
-              CStack_58.z = fStack_38 * fVar4;
+              CStack_58.y = fStack_3c * fVar2;
+              CStack_58.z = fStack_38 * fVar2;
               if (&local_64 != &CStack_58) {
                 local_64.x = CStack_58.x;
                 local_64.y = CStack_58.y;
@@ -123,9 +125,9 @@ core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_00572a10
               CStack_34.x = ray_origin->x + local_64.x;
               CStack_34.y = ray_origin->y + local_64.y;
               CStack_34.z = ray_origin->z + local_64.z;
-              local_24 = fVar4;
+              local_24 = fVar2;
               core_box_cpp_CBoundingBox3D_expand_FUN_00420240(&local_88,&CStack_34);
-              max_t = fVar4;
+              max_t = fVar2;
             }
           }
         }
@@ -135,8 +137,8 @@ core_setcolid_cpp_CDemonSet_raycastAgainstActors_FUN_00572a10
     }
     pCVar1 = this_ptr->collision_actor;
     if (pCVar1 != (CDemonActor *)0x0) {
-      iVar3 = (*pCVar1->vtable->getGroundType)(pCVar1);
-      this_ptr->ground_type = iVar3;
+      iVar4 = (*pCVar1->vtable->getGroundType)(pCVar1);
+      this_ptr->ground_type = iVar4;
     }
   }
   return max_t;

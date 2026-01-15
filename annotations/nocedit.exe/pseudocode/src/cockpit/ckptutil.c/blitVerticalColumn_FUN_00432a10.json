@@ -170,16 +170,16 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 20,
+      "line": 21,
       "match": "(int *)((int)",
       "text": "piVar1 = (int *)((int)g_ScreenBufferArray + iVar4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 23,
+      "line": 24,
       "match": "(void *)((int)",
-      "text": "(*pCVar2)((void *)(*piVar1 + start_x),(void *)((int)unused_param + iVar3 + start_x),",
+      "text": "(*pCVar2)((void *)(*piVar1 + start_x),(void *)((int)sprite_data + iVar3 + start_x),count);",
       "type": "pointer_cast"
     },
     {

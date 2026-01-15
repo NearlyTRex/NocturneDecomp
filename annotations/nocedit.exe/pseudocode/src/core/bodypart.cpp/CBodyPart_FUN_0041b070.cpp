@@ -10,41 +10,35 @@ void __cdecl core_bodypart_cpp_CBodyPart_FUN_0041b070(CBodyPart *this_ptr)
 
 {
   CVector3f *pCVar1;
-  BADSPACEBASE *in_ESP;
-  float fStack00000008;
-  float fStack0000000c;
-  float fStack00000010;
-  float fStack_4c;
-  float in_stack_ffffffc8;
+  float fStack_44;
+  float fStack_40;
+  float fStack_3c;
+  float fStack_38;
   float fStack_34;
   float fStack_30;
-  float fStack_2c;
-  float fStack_28;
-  float fStack_24;
-  CVector3f CStack_20;
-  float fStack_14;
-  float fStack_10;
-  float fStack_c;
+  CVector3f CStack_2c;
+  float fStack_20;
+  float fStack_1c;
+  float fStack_18;
+  CVector3f CStack_14;
+  float fStack_8;
   
   if ((2 < *(int *)(this_ptr->field1_0x158 + 0x1c)) && (0 < *(int *)(this_ptr->field1_0x158 + 0x28))
      ) {
     (*((this_ptr->base_actor).vtable)->getBoundingBox)
-              (&this_ptr->base_actor,(CBoundingBox3D *)&fStack_4c);
-    fStack_14 = in_stack_ffffffc8 + fStack_2c;
-    fStack_10 = fStack_34 + fStack_28;
-    CStack_20.x = fStack_14 * 0.5f;
-    CStack_20.y = fStack_10 * 0.5f;
-    fStack_c = fStack_30 + fStack_24;
-    CStack_20.z = fStack_c * 0.5f;
+              (&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffb4);
+    fStack_20 = fStack_44 + fStack_38;
+    fStack_1c = fStack_40 + fStack_34;
+    CStack_2c.x = fStack_20 * 0.5f;
+    CStack_2c.y = fStack_1c * 0.5f;
+    fStack_18 = fStack_3c + fStack_30;
+    CStack_2c.z = fStack_18 * 0.5f;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-              (&this_ptr->base_actor,(CVector3f *)&stack0xfffffff8,&CStack_20);
-    fStack00000008 = fStack_28 - fStack_34;
-    fStack0000000c = fStack_24 - fStack_30;
-    fStack00000010 = CStack_20.x - fStack_2c;
-    fStack_4c = 6.03303e-39;
+              (&this_ptr->base_actor,&CStack_14,&CStack_2c);
+    fStack_8 = fStack_38 - fStack_44;
     core_box_cpp_CBox_setupCorners_FUN_0041dd20
-              ((CBox *)(this_ptr->field1_0x158 + 0xb74),(CVector3f *)&stack0xfffffffc,
-               (CVector3f *)&(this_ptr->base_actor).orient,(CVector3f *)&stack0x00000008,5.0);
+              ((CBox *)(this_ptr->field1_0x158 + 0xb74),&CStack_14,
+               (CVector3f *)&(this_ptr->base_actor).orient,(CVector3f *)&fStack_8,5.0);
     return;
   }
   (this_ptr->base_actor).was_created = 2;

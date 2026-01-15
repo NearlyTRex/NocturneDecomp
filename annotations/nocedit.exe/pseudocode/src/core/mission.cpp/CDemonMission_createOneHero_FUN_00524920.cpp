@@ -11,9 +11,9 @@ int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_00524920(CDemonMiss
 {
   CDemonActor *actor_ptr;
   CHeroPlaceholder *this_ptr_00;
+  CHero *unaff_EBX;
   int in_stack_00000008;
   CDemonActor *in_stack_00000010;
-  CHero *pCVar1;
   
   if (g_HeroCount <= in_stack_00000008) {
     g_CurrentFilename = "..\\core\\mission.cpp";
@@ -25,17 +25,16 @@ int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_00524920(CDemonMiss
     g_CurrentLineNumber = 0x5f2;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CDemonMission::createOneHero - hero already created!");
   }
-  actor_ptr = *(CDemonActor **)(in_stack_00000008 + 0x548);
-  pCVar1 = (CHero *)0x0;
+  actor_ptr = this_ptr->first_actor;
   do {
     if (actor_ptr == (CDemonActor *)0x0) {
 LAB_0052499a:
-      if (pCVar1 == (CHero *)0x0) {
+      if (unaff_EBX == (CHero *)0x0) {
         shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                   (g_CEditorToolsPtr,"Can't find hero placeholder for hero %d");
         return 0;
       }
-      g_HeroActors[in_stack_00000008] = pCVar1;
+      g_HeroActors[in_stack_00000008] = unaff_EBX;
       return 1;
     }
     this_ptr_00 = (CHeroPlaceholder *)

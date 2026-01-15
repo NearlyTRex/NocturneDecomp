@@ -13,8 +13,8 @@ void __cdecl core_simbox_cpp_CSimBox_process_FUN_00588f20(CSimBox *this_ptr)
   CDemonActor_vtable *pCVar2;
   int iVar3;
   CVector3f *pCVar4;
-  BADSPACEBASE *in_ESP;
-  float in_stack_00000010;
+  float in_stack_00000014;
+  float local_18;
   
   if ((*(int *)(this_ptr->field1_0x158 + 0x17c) == 1) &&
      (*(int *)(this_ptr->field1_0x158 + 0x454) == 0)) {
@@ -42,8 +42,7 @@ void __cdecl core_simbox_cpp_CSimBox_process_FUN_00588f20(CSimBox *this_ptr)
              *(uint *)(this_ptr->field1_0x158 + 0x1fc);
       }
       pCVar4 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
-                         ((CMatrix3x3f *)(this_ptr->field1_0x158 + 0x218),
-                          (CVector3f *)&stack0xffffffec,
+                         ((CMatrix3x3f *)(this_ptr->field1_0x158 + 0x218),(CVector3f *)&local_18,
                           (CVector3f *)(this_ptr->field1_0x158 + 0x24c));
       if ((CVector3f *)(this_ptr->field1_0x158 + 0x240) != pCVar4) {
         ((CVector3f *)(this_ptr->field1_0x158 + 0x240))->x = pCVar4->x;
@@ -68,12 +67,14 @@ void __cdecl core_simbox_cpp_CSimBox_process_FUN_00588f20(CSimBox *this_ptr)
       pCVar2 = (this_ptr->base_actor).vtable;
       (this_ptr->base_actor).orient.bank =
            (float)iVar3 * 3.051851e-05f * (float)3.1415926535000001 * (float)2;
+      local_18 = 8.133377e-39;
       (*pCVar2->setup)(&this_ptr->base_actor);
     }
   }
   if (*(int *)(this_ptr->field1_0x158 + 0x454) != 0) {
+    local_18 = 8.133425e-39;
     core_box_cpp_CBox_process_FUN_0041e2f0
-              ((CBox *)(this_ptr->field1_0x158 + 0x200),in_stack_00000010);
+              ((CBox *)(this_ptr->field1_0x158 + 0x200),in_stack_00000014);
     (this_ptr->base_actor).location.position.x =
          (((CBox *)(this_ptr->field1_0x158 + 0x200))->position).x;
     (this_ptr->base_actor).location.position.y = *(float *)(this_ptr->field1_0x158 + 0x204);

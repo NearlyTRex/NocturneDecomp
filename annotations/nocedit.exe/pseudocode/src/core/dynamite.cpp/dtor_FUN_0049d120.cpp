@@ -21,7 +21,7 @@ CDynamite * __cdecl core_dynamite_cpp_dtor_FUN_0049d120(CDynamite *this_ptr,uint
   }
   ptr = (CDynamite *)
         core_weapon_cpp_CWeapon_dtor_FUN_005edf80(&this_ptr->base_weapon,1,unaff_EBX,unaff_retaddr);
-  if ((d2 & 2) == 0) {
+  if ((d1 & 2) == 0) {
     return ptr;
   }
   shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);

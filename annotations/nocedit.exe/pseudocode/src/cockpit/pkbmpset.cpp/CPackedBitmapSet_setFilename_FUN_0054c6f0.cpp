@@ -12,6 +12,6 @@ cockpit_pkbmpset_cpp_CPackedBitmapSet_setFilename_FUN_0054c6f0
 
 {
   crt_string_c_strncpy_FUN_00600f40(this_ptr->filename,filename,0x13);
-  filename[0x1b] = '\0';
+  this_ptr->filename[0x13] = '\0';
   return;
 }

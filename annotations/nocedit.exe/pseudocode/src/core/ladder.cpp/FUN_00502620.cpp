@@ -14,7 +14,6 @@ int core_ladder_cpp_FUN_00502620(void)
 {
   CBoundingBox3D *this_ptr;
   int iVar1;
-  BADSPACEBASE *in_ESP;
   SRenderVertex *pSVar2;
   SRenderVertex *pSVar3;
   int *piVar4;
@@ -103,9 +102,9 @@ int core_ladder_cpp_FUN_00502620(void)
         CStack_38.z = (int)ROUND(_DAT_006605d0 * 0.0);
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex,&CStack_38);
-        CStack_5c.y = (int)ROUND(fStack_2c * _DAT_006605d0);
-        CStack_5c.z = (int)ROUND(fStack_28 * _DAT_006605d0);
-        CStack_50.x = (int)ROUND(fStack_24 * _DAT_006605d0);
+        CStack_5c.x = (int)ROUND(fStack_2c * _DAT_006605d0);
+        CStack_5c.y = (int)ROUND(fStack_28 * _DAT_006605d0);
+        CStack_5c.z = (int)ROUND(fStack_24 * _DAT_006605d0);
         wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
                   (&g_CDemonRendererPtr->vertex_buffer_ptr[1].projected_vertex,&CStack_5c);
         pSVar3 = g_CDemonRendererPtr->vertex_buffer_ptr;

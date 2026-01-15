@@ -18,8 +18,9 @@ void core_netgame_cpp_CNetGame_FUN_00542370(void)
   char *pcVar4;
   char *pcVar5;
   byte bVar6;
-  uint *in_stack_0000000c;
-  uint in_stack_00000010;
+  uint *in_stack_00000008;
+  uint in_stack_0000000c;
+  char *in_stack_00000010;
   char *in_stack_00000014;
   
   bVar6 = 0;
@@ -29,10 +30,20 @@ void core_netgame_cpp_CNetGame_FUN_00542370(void)
   }
   iVar2 = g_ChatHistoryCount;
   iVar3 = g_ChatHistoryCount * 0x120;
-  *(uint *)g_ChatHistory[g_ChatHistoryCount].field0_0x0 = *in_stack_0000000c;
-  *(uint *)(iVar3 + 0x2f7c8d4 + (uint)bVar6 * -8) = in_stack_0000000c[(uint)bVar6 * -2 + 1];
-  *(uint *)(g_ChatHistory[iVar2].field0_0x0 + 8) = in_stack_00000010;
-  pcVar5 = g_ChatHistory[iVar2].field0_0x0 + 0xc;
+  *(uint *)g_ChatHistory[g_ChatHistoryCount].field0_0x0 = *in_stack_00000008;
+  *(uint *)(iVar3 + 0x2f7c8d4 + (uint)bVar6 * -8) = in_stack_00000008[(uint)bVar6 * -2 + 1];
+  *(uint *)(g_ChatHistory[iVar2].field0_0x0 + 8) = in_stack_0000000c;
+  pcVar4 = g_ChatHistory[iVar2].field0_0x0 + 0xc;
+  do {
+    cVar1 = *in_stack_00000010;
+    *pcVar4 = cVar1;
+    if (cVar1 == '\0') break;
+    cVar1 = in_stack_00000010[1];
+    in_stack_00000010 = in_stack_00000010 + 2;
+    pcVar4[1] = cVar1;
+    pcVar4 = pcVar4 + 2;
+  } while (cVar1 != '\0');
+  pcVar5 = g_ChatHistory[g_ChatHistoryCount].field0_0x0 + 0x20;
   pcVar4 = in_stack_00000014;
   do {
     cVar1 = *pcVar4;
@@ -42,17 +53,6 @@ void core_netgame_cpp_CNetGame_FUN_00542370(void)
     pcVar4 = pcVar4 + 2;
     pcVar5[1] = cVar1;
     pcVar5 = pcVar5 + 2;
-  } while (cVar1 != '\0');
-  pcVar4 = g_ChatHistory[g_ChatHistoryCount].field0_0x0 + 0x20;
-  pcVar5 = in_stack_00000014;
-  do {
-    cVar1 = *pcVar5;
-    *pcVar4 = cVar1;
-    if (cVar1 == '\0') break;
-    cVar1 = pcVar5[1];
-    pcVar5 = pcVar5 + 2;
-    pcVar4[1] = cVar1;
-    pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
   g_ChatHistoryCount = g_ChatHistoryCount + 1;
   core_game_cpp_CGame_displayMessage_FUN_004d7f20(g_CGamePtr,in_stack_00000014,5.0);

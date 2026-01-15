@@ -51,7 +51,7 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_kill_FUN_005a7e60(CSfxSlot *slot)
       if ((int)&slot[-0x36cd9].options.current_volume / 0x128 != pCVar2->streaming_slot_index) {
         g_CurrentFilename = "..\\sound\\sndmain.cpp";
         g_CurrentLineNumber = 0xb51;
-        core_main_c_displayErrorAndQuit_FUN_00506f10("streaming sample sfx index mismatch on %s");
+        core_main_c_displayErrorAndQuit_FUN_00506f10("streaming sample sfx index mismatch on %s",pCVar2);
       }
       sound_sndmain_cpp_CSfxSample_freeMemory_FUN_005a62c0(pCVar2);
     }

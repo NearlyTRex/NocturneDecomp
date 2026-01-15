@@ -14,10 +14,9 @@ engine_winfont_cpp_CWinFont_getStringWidth_FUN_005f2aa0(CWinFont *this_ptr,char 
   int iVar2;
   BOOL BVar3;
   uint uVar4;
-  BADSPACEBASE *in_ESP;
   char *pcVar5;
   byte bVar6;
-  int in_stack_0000000c;
+  tagSIZE local_c;
   
   bVar6 = 0;
   iVar2 = engine_winfont_cpp_CWinFont_createTextBackground_FUN_005f2860(this_ptr,-1,-1);
@@ -32,10 +31,9 @@ engine_winfont_cpp_CWinFont_getStringWidth_FUN_005f2aa0(CWinFont *this_ptr,char 
     cVar1 = *pcVar5;
     pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
   } while (cVar1 != '\0');
-  BVar3 = (*GetTextExtentPoint32A)
-                    (*(HDC *)(text_string + 4),text_string,~uVar4 - 1,(LPSIZE)&stack0xfffffff8);
+  BVar3 = (*GetTextExtentPoint32A)(this_ptr->deviceContextHandle,text_string,~uVar4 - 1,&local_c);
   if (BVar3 == 0) {
-    in_stack_0000000c = 0;
+    local_c.cx = 0;
   }
-  return in_stack_0000000c;
+  return local_c.cx;
 }

@@ -14,11 +14,11 @@ void core_boneguy_cpp_ExplodeAndSoundSomething_FUN_0041d4d0(void)
 {
   float fVar1;
   CBoneGuy *in_stack_00000004;
-  int in_stack_0000000c;
+  int in_stack_00000008;
   
   sound_sndmain_cpp_killSfx_FUN_005a9c40(*(uint *)(in_stack_00000004->field1_0xbeb4 + 0x18));
   fVar1 = (in_stack_00000004->base_enemy).base_character.hit_points -
-          *(float *)(in_stack_0000000c + 4);
+          *(float *)(in_stack_00000008 + 4);
   (in_stack_00000004->base_enemy).base_character.hit_points = fVar1;
   if (fVar1 <= 0.0) {
     (in_stack_00000004->base_enemy).base_character.hit_points = 1.0;

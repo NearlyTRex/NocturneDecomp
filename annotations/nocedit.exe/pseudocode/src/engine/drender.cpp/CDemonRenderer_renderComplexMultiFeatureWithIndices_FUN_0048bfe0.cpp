@@ -12,29 +12,28 @@ engine_drender_cpp_CDemonRenderer_renderComplexMultiFeatureWithIndices_FUN_0048b
 
 {
   int iVar1;
-  int iVar2;
+  SMRGLHeaderPrimitive *pSVar2;
   int iVar3;
   int iVar4;
-  int in_stack_0000000c;
-  uint uVar5;
+  uint local_14;
   
   if ((this_ptr->plane_culling_enabled == 0) ||
      (iVar4 = engine_3d_c_isVisiblePlane_FUN_00403950(&prim->surface_normal), iVar4 != 0)) {
     iVar4 = 0;
-    uVar5 = 0xffffffff;
-    if (0 < *(int *)(in_stack_0000000c + 4)) {
+    local_14 = 0xffffffff;
+    if (0 < (prim->base).count) {
       iVar3 = 0;
-      iVar2 = in_stack_0000000c;
+      pSVar2 = prim;
       do {
-        iVar1 = *(int *)(iVar2 + 0x18);
+        iVar1 = pSVar2[1].base.type;
         *(int *)((int)g_VertexIndexBuffer + iVar3) = iVar1;
         iVar3 = iVar3 + 4;
-        uVar5 = uVar5 & this_ptr->vertex_buffer_ptr[iVar1].projected_vertex.screen_x;
-        iVar2 = iVar2 + 0xc;
+        local_14 = local_14 & this_ptr->vertex_buffer_ptr[iVar1].projected_vertex.screen_x;
+        pSVar2 = (SMRGLHeaderPrimitive *)&(pSVar2->surface_normal).B;
         iVar4 = iVar4 + 1;
-      } while (iVar4 < *(int *)(in_stack_0000000c + 4));
+      } while (iVar4 < (prim->base).count);
     }
-    if (((uVar5 & 0x80000000) == 0) || ((uVar5 & 0x1f) == 0)) {
+    if (((local_14 & 0x80000000) == 0) || ((local_14 & 0x1f) == 0)) {
       if (this_ptr->face_count == 0) {
         if (g_BitsPerPixel == 0x20) {
           g_ScanlineRenderFunc = wincore_windll_cpp_renderMMXPerspectiveScanline32_FUN_005b4031;
@@ -44,17 +43,17 @@ engine_drender_cpp_CDemonRenderer_renderComplexMultiFeatureWithIndices_FUN_0048b
         }
         g_RenderStateFlag2 = PREPROCESS_NONE;
         g_RenderStateFlags = RENDER_ENGINE_CORE_COMPLEX;
-        if ((this_ptr->field8_0x20 == 0) && (iVar4 = 0, 0 < *(int *)(in_stack_0000000c + 4))) {
+        if ((this_ptr->field8_0x20 == 0) && (iVar4 = 0, 0 < (prim->base).count)) {
           iVar3 = 0;
-          iVar2 = in_stack_0000000c;
+          pSVar2 = prim;
           do {
             iVar1 = *(int *)((int)g_VertexIndexBuffer + iVar3);
-            this_ptr->vertex_buffer_ptr[iVar1].u = *(float *)(iVar2 + 0x1c);
-            this_ptr->vertex_buffer_ptr[iVar1].v = *(float *)(iVar2 + 0x20);
-            iVar2 = iVar2 + 0xc;
+            this_ptr->vertex_buffer_ptr[iVar1].u = (float)pSVar2[1].base.count;
+            this_ptr->vertex_buffer_ptr[iVar1].v = (float)pSVar2[1].surface_normal.A;
+            pSVar2 = (SMRGLHeaderPrimitive *)&(pSVar2->surface_normal).B;
             iVar4 = iVar4 + 1;
             iVar3 = iVar3 + 4;
-          } while (iVar4 < *(int *)(in_stack_0000000c + 4));
+          } while (iVar4 < (prim->base).count);
         }
       }
       else {
@@ -63,7 +62,7 @@ engine_drender_cpp_CDemonRenderer_renderComplexMultiFeatureWithIndices_FUN_0048b
         g_ScanlineRenderFunc = core_dstrender_cpp_renderDepthOnlyStandard_FUN_0049072f;
       }
       engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740
-                (this_ptr,*(int *)(in_stack_0000000c + 4),g_VertexIndexBuffer);
+                (this_ptr,(prim->base).count,g_VertexIndexBuffer);
     }
   }
   return;

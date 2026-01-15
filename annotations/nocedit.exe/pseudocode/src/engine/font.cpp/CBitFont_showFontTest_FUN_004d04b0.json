@@ -1,18 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 375,
-    "complexity_score": 229,
+    "complexity_score": 106,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 22,
-    "pseudocode_lines": 104,
-    "suspect_count": 11,
-    "suspect_types": [
-      "badspacebase",
-      "register_param",
-      "stack_ref"
-    ],
-    "total_lines": 479
+    "pseudocode_lines": 106,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 481
   },
   "cross_references": [],
   "function": {
@@ -640,83 +636,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 9,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 9,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 83,
-      "match": "&stack0xffffffd0",
-      "text": "puVar7 = (uint *)&stack0xffffffd0;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 89,
-      "match": "&stack0xffffffd0",
-      "text": "engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80(this_ptr,&stack0xffffffd0,0x82,iVar3,0xf8,0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 91,
-      "match": "&stack0xffffffd0",
-      "text": "(this_ptr,&stack0xffffffd0,0x82,iVar3 + iVar1,0xf9,0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 93,
-      "match": "&stack0xffffffd0",
-      "text": "engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80(this_ptr,&stack0xffffffd0,0x82,iVar3,0xfa,0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 95,
-      "match": "&stack0xffffffd0",
-      "text": "engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80(this_ptr,&stack0xffffffd0,0x82,iVar3,0xfb,0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 97,
-      "match": "&stack0xffffffd0",
-      "text": "engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80(this_ptr,&stack0xffffffd0,0x82,iVar3,0xfc,0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 99,
-      "match": "&stack0xffffffd0",
-      "text": "engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80(this_ptr,&stack0xffffffd0,0x82,iVar3,0xfd,0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 101,
-      "match": "&stack0xffffffd0",
-      "text": "engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80(this_ptr,&stack0xffffffd0,0x82,iVar3,0xfe,0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 103,
-      "match": "&stack0xffffffd0",
-      "text": "engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80(this_ptr,&stack0xffffffd0,0x82,iVar3,0xff,0);",
-      "type": "stack_ref"
-    }
-  ]
+  "suspects": []
 }

@@ -1,21 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 1620,
-    "complexity_score": 1291,
+    "complexity_score": 797,
     "cross_reference_count": 1,
     "function_call_count": 39,
     "global_count": 135,
-    "pseudocode_lines": 601,
-    "suspect_count": 66,
+    "pseudocode_lines": 592,
+    "suspect_count": 19,
     "suspect_types": [
-      "badspacebase",
       "format_string_mismatch",
       "pointer_cast",
-      "register_param",
-      "stack_ref",
       "sub_artifact"
     ],
-    "total_lines": 2221
+    "total_lines": 2212
   },
   "cross_references": [
     {
@@ -1333,7 +1330,7 @@
     {
       "add_esp_value": 16,
       "call_address": "0045f838",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1349,7 +1346,7 @@
     {
       "add_esp_value": 12,
       "call_address": "0045f88f",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1365,7 +1362,7 @@
     {
       "add_esp_value": 8,
       "call_address": "0045f9d0",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1381,7 +1378,7 @@
     {
       "add_esp_value": 12,
       "call_address": "0045f9f6",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1397,7 +1394,7 @@
     {
       "add_esp_value": 8,
       "call_address": "0045fa2f",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1413,7 +1410,7 @@
     {
       "add_esp_value": 12,
       "call_address": "0045fa71",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1429,7 +1426,7 @@
     {
       "add_esp_value": 8,
       "call_address": "0045fab0",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1445,7 +1442,7 @@
     {
       "add_esp_value": 12,
       "call_address": "0045faf2",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1461,7 +1458,7 @@
     {
       "add_esp_value": 8,
       "call_address": "0045fb31",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1477,7 +1474,7 @@
     {
       "add_esp_value": 12,
       "call_address": "0045fb73",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1493,7 +1490,7 @@
     {
       "add_esp_value": 24,
       "call_address": "0045fbf8",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1509,7 +1506,7 @@
     {
       "add_esp_value": 8,
       "call_address": "0045fe73",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1525,7 +1522,7 @@
     {
       "add_esp_value": 12,
       "call_address": "0045fe90",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1541,7 +1538,7 @@
     {
       "add_esp_value": 32,
       "call_address": "0045feec",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1557,7 +1554,7 @@
     {
       "add_esp_value": 20,
       "call_address": "0045ff4e",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1573,7 +1570,7 @@
     {
       "add_esp_value": 8,
       "call_address": "0045ff86",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1589,7 +1586,7 @@
     {
       "add_esp_value": 12,
       "call_address": "0045ffa3",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1605,7 +1602,7 @@
     {
       "add_esp_value": 24,
       "call_address": "00460063",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1621,7 +1618,7 @@
     {
       "add_esp_value": 32,
       "call_address": "004600e8",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1637,7 +1634,7 @@
     {
       "add_esp_value": 16,
       "call_address": "0046015d",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1653,7 +1650,7 @@
     {
       "add_esp_value": 16,
       "call_address": "004601fa",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1669,7 +1666,7 @@
     {
       "add_esp_value": 16,
       "call_address": "0046027a",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1685,7 +1682,7 @@
     {
       "add_esp_value": 12,
       "call_address": "004602d0",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1701,7 +1698,7 @@
     {
       "add_esp_value": 44,
       "call_address": "00460413",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -1717,7 +1714,7 @@
     {
       "add_esp_value": 36,
       "call_address": "00460553",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -2599,396 +2596,71 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 9,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 9,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 233,
-      "match": "&stack0xffffff48",
-      "text": "(&stack0xffffff48,\"Detail : %04x / %05d\",g_EditorDetailLevel);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 235,
-      "match": "&stack0xffffff48",
-      "text": "(&stack0xffffff48,",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 240,
-      "match": "&stack0xffffff48",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff48,\"Renderer : %s\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 242,
-      "match": "&stack0xffffff48",
-      "text": "(&stack0xffffff48,",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 274,
-      "match": "&stack0xffffff48",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff48,&s_EmptyChar_0061b79a);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 277,
-      "match": "&stack0xffffff48",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff48,\"Current part : %s\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 279,
-      "match": "&stack0xffffff48",
-      "text": "engine_2d_c_drawTextColor_FUN_00402430(&stack0xffffff48,0,0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 281,
-      "match": "&stack0xffffff48",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff48,\"Points\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 282,
-      "match": "&stack0xffffff48",
-      "text": "engine_2d_c_drawTextColor_FUN_00402430(&stack0xffffff48,g_WindowWidth / 2 + 10,0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 283,
-      "match": "&stack0xffffff48",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff48,\" : %d\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 284,
-      "match": "&stack0xffffff48",
-      "text": "engine_2d_c_drawTextColor_FUN_00402430(&stack0xffffff48,g_WindowWidth / 2 + 10 + local_44,0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 285,
-      "match": "&stack0xffffff48",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff48,\"Polygons\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 286,
-      "match": "&stack0xffffff48",
-      "text": "engine_2d_c_drawTextColor_FUN_00402430(&stack0xffffff48,g_WindowWidth / 2 + 10,0xb);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 287,
-      "match": "&stack0xffffff48",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff48,\" : %d\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 288,
-      "match": "&stack0xffffff48",
-      "text": "engine_2d_c_drawTextColor_FUN_00402430(&stack0xffffff48,g_WindowWidth / 2 + 10 + local_44,0xb)",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 290,
-      "match": "&stack0xffffff48",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff48,\"Parts\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 291,
-      "match": "&stack0xffffff48",
-      "text": "engine_2d_c_drawTextColor_FUN_00402430(&stack0xffffff48,g_WindowWidth / 2 + 10,0x16);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 292,
-      "match": "&stack0xffffff48",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff48,\" : %d\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 294,
-      "match": "&stack0xffffff48",
-      "text": "(&stack0xffffff48,g_WindowWidth / 2 + 10 + local_44,0x16);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Decompiler double/longlong extraction artifact",
-      "line": 299,
+      "line": 294,
       "match": "SUB84",
       "text": "local_d8 = SUB84 /* extract 2-byte value */((double)local_2c,0);",
       "type": "sub_artifact"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 302,
-      "match": "&stack0xffffff48",
-      "text": "(&stack0xffffff48,\"Zoom : %4.2f  FOV : %4.1f\",",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 304,
-      "match": "&stack0xffffff48",
-      "text": "engine_2d_c_drawTextColor_FUN_00402430(&stack0xffffff48,g_WindowWidth / 2 + 10,0x2c);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 372,
-      "match": "&stack0xffffff48",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff48,\"No model loaded\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 375,
-      "match": "&stack0xffffff48",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff48,\"%s\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 377,
-      "match": "&stack0xffffff48",
-      "text": "engine_2d_c_drawTextColor_FUN_00402430(&stack0xffffff48,0,g_WindowHeight + -0x21);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 379,
-      "match": "&stack0xffffff48",
-      "text": "(&stack0xffffff48,\"X: %0.4f Y: %0.4f Z: %0.4f\",",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 384,
-      "match": "&stack0xffffff48",
-      "text": "(&stack0xffffff48,",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 388,
-      "match": "&stack0xffffff48",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff48,\"P: %x B: %x H: %x\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 389,
-      "match": "&stack0xffffff48",
-      "text": "engine_2d_c_drawTextColor_FUN_00402430(&stack0xffffff48,0,g_WindowHeight + -0xb);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 391,
-      "match": "&stack0xffffff48",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff48,\"No polygon selected\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 394,
-      "match": "&stack0xffffff48",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff48,\"Selected polygon : %d\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 396,
-      "match": "&stack0xffffff48",
-      "text": "engine_2d_c_drawTextColor_FUN_00402430(&stack0xffffff48,0,g_WindowHeight + -0x16);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 407,
-      "match": "&stack0xffffff48",
-      "text": "(&stack0xffffff48,\"V order : %3d %3d %3d   N : %d\",",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 412,
-      "match": "&stack0xffffff48",
-      "text": "(&stack0xffffff48,g_WindowWidth / 2 + 10,g_WindowHeight + -0x16);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 414,
-      "match": "&stack0xffffff48",
-      "text": "(&stack0xffffff48,\"Normal : %6.2f %6.2f %6.2f\",",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 419,
-      "match": "&stack0xffffff48",
-      "text": "(&stack0xffffff48,g_WindowWidth / 2 + 10,g_WindowHeight + -0xb);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 422,
-      "match": "&stack0xffffff48",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff48,\"Angle sum : %10.6lf\",dVar9);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 424,
-      "match": "&stack0xffffff48",
-      "text": "(&stack0xffffff48,g_WindowWidth / 2 + 10,g_WindowHeight + -0x21);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 426,
-      "match": "&stack0xffffff48",
-      "text": "(&stack0xffffff48,\"Part number : %d (%s)\",",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 429,
-      "match": "&stack0xffffff48",
-      "text": "(&stack0xffffff48,g_WindowWidth / 2 + 10,g_WindowHeight + -0x37);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 431,
-      "match": "&stack0xffffff48",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff48,\"Texture : %s\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 435,
-      "match": "&stack0xffffff48",
-      "text": "(&stack0xffffff48,\"Texture : %s (%s)\",",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 439,
-      "match": "&stack0xffffff48",
-      "text": "(&stack0xffffff48,g_WindowWidth / 2 + 10,g_WindowHeight + -0x42);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 447,
-      "match": "&stack0xffffff48",
-      "text": "(&stack0xffffff48,\"%03d : %010.6f %010.6f / %08.6f %08.6f\",",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 456,
-      "match": "&stack0xffffff48",
-      "text": "(&stack0xffffff48,g_WindowWidth / 2 + 10,",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 466,
-      "match": "&stack0xffffff48",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff48,\"%03d : %+011.6f %+011.6f %+011.6f\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 468,
-      "match": "&stack0xffffff48",
-      "text": "(&stack0xffffff48,g_WindowWidth / 2 + 10,",
-      "type": "stack_ref"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 484,
+      "line": 475,
       "match": "(SShapeEditorPolygon *)((int)",
       "text": "pSVar5 = (SShapeEditorPolygon *)((int)pSVar5 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 485,
+      "line": 476,
       "match": "(SShapeEditorPolygon *)((int)",
       "text": "pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 490,
+      "line": 481,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)g_ModelPolygonData +",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 493,
+      "line": 484,
       "match": "(float *)((int)",
       "text": "*(float *)((int)g_ModelPolygonData +",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 496,
+      "line": 487,
       "match": "(float *)((int)",
       "text": "*(float *)((int)g_ModelPolygonData +",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 555,
+      "line": 546,
       "match": "(SShapeEditorPolygon *)((int)",
       "text": "pSVar5 = (SShapeEditorPolygon *)((int)pSVar5 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 556,
+      "line": 547,
       "match": "(SShapeEditorPolygon *)((int)",
       "text": "pSVar6 = (SShapeEditorPolygon *)((int)pSVar6 + ((uint)bVar7 * -2 + 1) * 4);",
       "type": "pointer_cast"
+    },
+    {
+      "actual_args": 1,
+      "description": "Format \"Detail : %04x / %05d\" has 2 specifiers but 1 arguments after it",
+      "expected_args": 2,
+      "format_string": "Detail : %04x / %05d",
+      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
+      "line_number": 232,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_b8,\"Detail : %04x / %05d\",g_EditorDetailLevel);",
+      "text": "Format string expects 2 args but got 1",
+      "type": "format_string_mismatch"
     },
     {
       "actual_args": 0,
@@ -2996,8 +2668,8 @@
       "expected_args": 1,
       "format_string": "Renderer : %s",
       "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 240,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff48,\"Renderer : %s\");",
+      "line_number": 238,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_b8,\"Renderer : %s\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
     },
@@ -3007,8 +2679,8 @@
       "expected_args": 1,
       "format_string": "Current part : %s",
       "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 277,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff48,\"Current part : %s\");",
+      "line_number": 274,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_b8,\"Current part : %s\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
     },
@@ -3018,8 +2690,8 @@
       "expected_args": 1,
       "format_string": " : %d",
       "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 283,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff48,\" : %d\");",
+      "line_number": 280,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_b8,\" : %d\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
     },
@@ -3029,8 +2701,8 @@
       "expected_args": 1,
       "format_string": " : %d",
       "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 287,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff48,\" : %d\");",
+      "line_number": 284,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_b8,\" : %d\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
     },
@@ -3040,8 +2712,8 @@
       "expected_args": 1,
       "format_string": " : %d",
       "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 292,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff48,\" : %d\");",
+      "line_number": 288,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_b8,\" : %d\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
     },
@@ -3051,8 +2723,8 @@
       "expected_args": 1,
       "format_string": "%s",
       "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 375,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff48,\"%s\");",
+      "line_number": 370,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_b8,\"%s\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
     },
@@ -3062,8 +2734,8 @@
       "expected_args": 3,
       "format_string": "P: %x B: %x H: %x",
       "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 388,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff48,\"P: %x B: %x H: %x\");",
+      "line_number": 382,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_b8,\"P: %x B: %x H: %x\");",
       "text": "Format string expects 3 args but got 0",
       "type": "format_string_mismatch"
     },
@@ -3073,8 +2745,8 @@
       "expected_args": 1,
       "format_string": "Selected polygon : %d",
       "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 394,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff48,\"Selected polygon : %d\");",
+      "line_number": 388,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_b8,\"Selected polygon : %d\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
     },
@@ -3084,8 +2756,8 @@
       "expected_args": 1,
       "format_string": "Texture : %s",
       "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 431,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff48,\"Texture : %s\");",
+      "line_number": 425,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_b8,\"Texture : %s\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
     },
@@ -3095,8 +2767,8 @@
       "expected_args": 4,
       "format_string": "%03d : %+011.6f %+011.6f %+011.6f",
       "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 466,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff48,\"%03d : %+011.6f %+011.6f %+011.6f\");",
+      "line_number": 458,
+      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(local_b8,\"%03d : %+011.6f %+011.6f %+011.6f\");",
       "text": "Format string expects 4 args but got 0",
       "type": "format_string_mismatch"
     }

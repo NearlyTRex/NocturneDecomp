@@ -9,7 +9,6 @@
 void core_fire_cpp_FUN_004c9400(void)
 
 {
-  BADSPACEBASE *in_ESP;
   SProjectedVertex *in_stack_00000008;
   float *in_stack_0000000c;
   CVector3i local_10;

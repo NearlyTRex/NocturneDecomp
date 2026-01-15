@@ -43,7 +43,7 @@ core_dcamera_cpp_CDemonCamera_blendFogPlanes_FUN_00453160
       source2_buffer = source2_buffer + 1;
       source1_buffer = source1_buffer + 1;
       output_buffer = (SFogImagePlane *)((int)output_buffer + 0x140);
-    } while (iVar2 < *(int *)(plane_index + 0x154));
+    } while (iVar2 < this_ptr->display_height);
   }
   return;
 }

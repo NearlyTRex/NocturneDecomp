@@ -1,17 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 48,
-    "complexity_score": 94,
+    "complexity_score": 73,
     "cross_reference_count": 6,
     "function_call_count": 3,
     "global_count": 5,
-    "pseudocode_lines": 14,
-    "suspect_count": 7,
+    "pseudocode_lines": 13,
+    "suspect_count": 5,
     "suspect_types": [
       "call_esp_preserve",
       "stack_param"
     ],
-    "total_lines": 62
+    "total_lines": 61
   },
   "cross_references": [
     {
@@ -161,28 +161,14 @@
       "description": "Unresolved stack parameter",
       "line": 5,
       "match": "in_stack_00000008",
-      "text": "CDemonActor *in_stack_00000008;",
+      "text": "CVector3f *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 13,
       "match": "in_stack_00000008",
-      "text": "(g_CSoundPtr,in_stack_00000008,\"xplode?.wav @ 6.0\",(CVector3f *)in_stack_00000008)",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000008",
-      "text": "(g_CSoundPtr,in_stack_00000008,\"xplode?.wav @ 6.0\",(CVector3f *)in_stack_00000008)",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_00000008",
-      "text": "core_fire_cpp_CFireEffect_FUN_004c8ea0((CFireEffect *)in_stack_00000008);",
+      "text": "(g_CSoundPtr,(CDemonActor *)this_ptr,\"xplode?.wav @ 6.0\",in_stack_00000008);",
       "type": "stack_param"
     },
     {

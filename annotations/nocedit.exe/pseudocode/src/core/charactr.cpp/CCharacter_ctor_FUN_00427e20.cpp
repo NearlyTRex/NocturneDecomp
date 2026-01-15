@@ -13,7 +13,7 @@ CCharacter * __cdecl core_charactr_cpp_CCharacter_ctor_FUN_00427e20(CCharacter *
   int iVar2;
   void *pvVar3;
   CCharacter *pCVar4;
-  BADSPACEBASE *in_ESP;
+  uint local_c [3];
   float *pfVar5;
   
   pCVar1 = core_actor_cpp_CDemonActor_ctor_FUN_004088b0(&this_ptr->base_actor);
@@ -53,7 +53,7 @@ CCharacter * __cdecl core_charactr_cpp_CCharacter_ctor_FUN_00427e20(CCharacter *
   *(uint *)((int)pvVar3 + -0xe20) = 0xbf800000;
   *(uint *)((int)pvVar3 + -0xe18) = 0;
   *(uint *)((int)pvVar3 + -0xf90) = 0x42c80000;
-  if ((uint *)((int)pvVar3 + -0xe14) != (uint *)&stack0x00000010) {
+  if ((uint *)((int)pvVar3 + -0xe14) != local_c) {
     *(uint *)((int)pvVar3 + -0xe14) = 0;
     *(uint *)((int)pvVar3 + -0xe10) = 0;
     *(uint *)((int)pvVar3 + -0xe0c) = 0x40000000;

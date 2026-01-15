@@ -1,19 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 307,
-    "complexity_score": 314,
+    "complexity_score": 302,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 44,
-    "pseudocode_lines": 154,
-    "suspect_count": 14,
+    "pseudocode_lines": 157,
+    "suspect_count": 13,
     "suspect_types": [
       "call_esp_preserve",
-      "format_string_mismatch",
       "pointer_cast",
       "variadic_preserve"
     ],
-    "total_lines": 461
+    "total_lines": 464
   },
   "cross_references": [
     {
@@ -430,44 +429,44 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
-      "line": 124,
-      "match": "(float *)((int)",
-      "text": "fVar1 = *(float *)((int)&g_CubeClippedTriangleBuffer[0].y + iVar9);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 125,
       "match": "(float *)((int)",
-      "text": "fVar2 = *(float *)((int)&g_CubeClippedTriangleBuffer[0].z + iVar9);",
+      "text": "fVar2 = *(float *)((int)&g_CubeClippedTriangleBuffer[0].y + iVar10);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 127,
+      "line": 126,
       "match": "(float *)((int)",
-      "text": "g_LoadedVertices[uVar10].vertex.x = *(float *)((int)&g_CubeClippedTriangleBuffer[0].x + iVar9)",
+      "text": "fVar3 = *(float *)((int)&g_CubeClippedTriangleBuffer[0].z + iVar10);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 132,
+      "line": 128,
       "match": "(float *)((int)",
-      "text": "fVar1 = *(float *)((int)&g_CubeClippedTriangleBuffer[1].y + iVar9);",
+      "text": "g_LoadedVertices[uVar7].vertex.x = *(float *)((int)&g_CubeClippedTriangleBuffer[0].x + iVar10)",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 133,
       "match": "(float *)((int)",
-      "text": "fVar2 = *(float *)((int)&g_CubeClippedTriangleBuffer[1].z + iVar9);",
+      "text": "fVar2 = *(float *)((int)&g_CubeClippedTriangleBuffer[1].y + iVar10);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 134,
       "match": "(float *)((int)",
-      "text": "g_LoadedVertices[uVar6].vertex.x = *(float *)((int)&g_CubeClippedTriangleBuffer[1].x + iVar9);",
+      "text": "fVar3 = *(float *)((int)&g_CubeClippedTriangleBuffer[1].z + iVar10);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 135,
+      "match": "(float *)((int)",
+      "text": "g_LoadedVertices[uVar1].vertex.x = *(float *)((int)&g_CubeClippedTriangleBuffer[1].x + iVar10)",
       "type": "pointer_cast"
     },
     {
@@ -483,17 +482,6 @@
       "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
       "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 00456e88 (no EBP frame)",
       "type": "variadic_preserve"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 149,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(g_ModelPolygonData[iVar4].texture_name,\"%d\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 4,

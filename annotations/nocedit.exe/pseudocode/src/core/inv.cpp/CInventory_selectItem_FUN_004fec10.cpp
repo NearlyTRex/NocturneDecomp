@@ -13,7 +13,6 @@ void __cdecl core_inv_cpp_CInventory_selectItem_FUN_004fec10(CInventory *this_pt
   int iVar2;
   CInventory *pCVar3;
   int iVar4;
-  int in_stack_0000000c;
   
   core_inv_cpp_CInventory_resetItemSwitchTimers_FUN_004ffff0(this_ptr);
   if (this_ptr->selected_item == (CDemonActor *)0x0) {
@@ -47,7 +46,7 @@ void __cdecl core_inv_cpp_CInventory_selectItem_FUN_004fec10(CInventory *this_pt
     } while (iVar4 < this_ptr->item_count);
   }
   while( true ) {
-    iVar4 = iVar4 + in_stack_0000000c;
+    iVar4 = iVar4 + direction;
     if (iVar4 < this_ptr->item_count) {
       if (iVar4 < 0) {
         iVar4 = this_ptr->item_count + -1;

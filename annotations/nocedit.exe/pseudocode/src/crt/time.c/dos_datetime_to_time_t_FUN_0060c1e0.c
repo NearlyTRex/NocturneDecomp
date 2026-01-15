@@ -10,7 +10,6 @@ time_t __cdecl crt_time_c_dos_datetime_to_time_t_FUN_0060c1e0(WORD dos_date,WORD
 
 {
   time_t tVar1;
-  BADSPACEBASE *in_ESP;
   tm local_28;
   
   local_28.tm_year = (dos_date >> 9) + 0x50;

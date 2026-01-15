@@ -14,6 +14,7 @@ shape_superopt_cpp_CObj_setStateFlagIfCondition_FUN_005d34d0
   uint uVar1;
   CVert *pCVar2;
   CPoly *this_ptr_00;
+  int in_stack_00000010;
   uint set_mask;
   uint clear_mask;
   
@@ -46,7 +47,7 @@ shape_superopt_cpp_CObj_setStateFlagIfCondition_FUN_005d34d0
       (*this_ptr_00->vtable->setVertexStateFlags)(this_ptr_00,set_mask,clear_mask);
       uVar1 = uVar1 + 1;
       this_ptr_00 = this_ptr_00 + 1;
-    } while (uVar1 < (uint)this_ptr->poly_count);
+    } while (uVar1 < *(uint *)(in_stack_00000010 + 8));
   }
   if ((this_ptr->flags & condition_mask) == condition_mask) {
     this_ptr->flags = this_ptr->flags | flag_to_set;

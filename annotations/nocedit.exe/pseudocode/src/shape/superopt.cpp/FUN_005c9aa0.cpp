@@ -16,7 +16,6 @@ void shape_superopt_cpp_FUN_005c9aa0(void)
   uint *puVar5;
   int iVar6;
   uint *puVar7;
-  BADSPACEBASE *in_ESP;
   double *pdVar8;
   double *pdVar9;
   int in_stack_00000004;

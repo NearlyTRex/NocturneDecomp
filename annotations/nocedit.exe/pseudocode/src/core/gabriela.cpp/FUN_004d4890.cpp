@@ -18,7 +18,6 @@ void core_gabriela_cpp_FUN_004d4890(void)
   int bone_index;
   CDemonActor *pCVar3;
   CVector3f *pCVar4;
-  BADSPACEBASE *in_ESP;
   double dVar5;
   CCharacter *in_stack_00000004;
   float in_stack_00000008;

@@ -12,47 +12,44 @@ int __cdecl core_menu_cpp_checkAndCalibrateGamepad_FUN_00511840(void)
   CGame *pCVar1;
   char *pcVar2;
   int iVar3;
-  BADSPACEBASE *in_ESP;
+  int unaff_EBX;
   DWORD DVar4;
   DWORD DVar5;
+  DWORD unaff_ESI;
   DWORD DVar6;
-  int in_stack_00000028;
-  int in_stack_00000054;
-  int in_stack_00000058;
-  int in_stack_0000005c;
-  DWORD in_stack_00000070;
-  CGame *pCStack_20c;
-  char acStack_d8 [4];
-  char acStack_d4 [188];
+  DWORD unaff_EDI;
+  DWORD in_stack_00000004;
+  char acStack_11c [248];
+  int iStack_24;
   int iStack_18;
-  int iStack_14;
+  uint uStack_14;
   
   if ((g_CGamePtr->game_control != 2) || (g_CGamePtr->x_center != 0)) {
     return 1;
   }
   DVar5 = 0x7fffffff;
   DVar4 = 0;
-  iStack_14 = 0x7fffffff;
+  uStack_14 = 0x7fffffff;
   do {
     core_moon_cpp_CMoon_renderJoystickCalibration_FUN_0052a2c0(&g_CMoonInstance);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Center gamepad, press ENTER")
     ;
     iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_MediumFont,pcVar2);
-    iStack_18 = 0x140 - iVar3 / 2;
+    iStack_24 = 0x140 - iVar3 / 2;
     iVar3 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(g_MediumFont,0x58);
     engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
-              (g_MediumFont,pcVar2,iStack_14,0xf0 - iVar3 / 2,7,0);
+              (g_MediumFont,pcVar2,iStack_24,0xf0 - iVar3 / 2,7,0);
     crt_stdio_c_sprintf_FUN_005fdbd0
-              (&stack0xfffffdf0,"%d,%d,%x",g_JoyXPos,g_JoyYPos,g_JoyButtons);
-    engine_2d_c_drawText_FUN_00401fd0((char *)&pCStack_20c,0,0);
-    pCStack_20c = g_CGamePtr;
+              (&stack0xfffffddc,"%d,%d,%x",g_JoyXPos,g_JoyYPos,g_JoyButtons);
+    engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffddc,0,0);
     core_game_cpp_CGame_resetKeyState_FUN_004dbe60();
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-    pCStack_20c = (CGame *)0x5105c2;
     iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x1c);
     DVar6 = 0;
     if (iVar3 != 0) goto LAB_005105cd;
     iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
+    unaff_EDI = g_JoyXPos;
+    unaff_ESI = g_JoyYPos;
   } while (iVar3 == 0);
 LAB_00510743:
   pCVar1 = g_CGamePtr;
@@ -64,23 +61,24 @@ LAB_005105cd:
     core_moon_cpp_CMoon_renderJoystickCalibration_FUN_0052a2c0(&g_CMoonInstance);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("Move gamepad in all directions, press ENTER")
     ;
-    engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_MediumFont,pcVar2);
+    iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(g_MediumFont,pcVar2);
+    iStack_18 = 0x140 - iVar3 / 2;
     iVar3 = engine_font_cpp_CBitFont_getCharWidth_FUN_004d01d0(g_MediumFont,0x58);
     engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
-              (g_MediumFont,pcVar2,in_stack_00000028,0xf0 - iVar3 / 2,7,0);
-    crt_stdio_c_sprintf_FUN_005fdbd0(acStack_d8,"%d,%d,%x");
-    engine_2d_c_drawText_FUN_00401fd0(acStack_d4,0,0);
+              (g_MediumFont,pcVar2,iStack_18,0xf0 - iVar3 / 2,7,0);
+    crt_stdio_c_sprintf_FUN_005fdbd0(acStack_11c,"%d,%d,%x",g_JoyXPos);
+    engine_2d_c_drawText_FUN_00401fd0(acStack_11c,0,0);
     core_game_cpp_CGame_resetKeyState_FUN_004dbe60();
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x1c);
     pCVar1 = g_CGamePtr;
     if (iVar3 != 0) {
-      g_CGamePtr->x_center = in_stack_00000054;
+      g_CGamePtr->x_center = unaff_EDI;
       pCVar1->x_stick_min = DVar5;
       pCVar1->x_stick_max = DVar4;
       pCVar1->y_stick_max = DVar6;
-      pCVar1->y_center = in_stack_00000058;
-      pCVar1->y_stick_min = in_stack_0000005c;
+      pCVar1->y_center = unaff_ESI;
+      pCVar1->y_stick_min = unaff_EBX;
       return 1;
     }
     iVar3 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
@@ -91,8 +89,8 @@ LAB_005105cd:
     if ((int)DVar4 < (int)g_JoyXPos) {
       DVar4 = g_JoyXPos;
     }
-    if ((int)g_JoyYPos < (int)in_stack_00000070) {
-      in_stack_00000070 = g_JoyYPos;
+    if ((int)g_JoyYPos < (int)in_stack_00000004) {
+      in_stack_00000004 = g_JoyYPos;
     }
     if ((int)DVar6 < (int)g_JoyYPos) {
       DVar6 = g_JoyYPos;

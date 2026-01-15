@@ -16,12 +16,7 @@ core_mirror_cpp_CMirror_reflectAndClipPrimitive_FUN_00522310
   SMRGLHeaderPrimitive *pSVar3;
   CVector3f *pCVar4;
   int iVar5;
-  int iVar6;
-  int in_stack_0000000c;
-  int in_stack_00000010;
-  int in_stack_00000014;
-  int in_stack_00000018;
-  int in_stack_0000001c;
+  int local_14;
   
   g_MirrorInputVertexCount = (primitive->base).count;
   iVar5 = 0;
@@ -43,26 +38,25 @@ core_mirror_cpp_CMirror_reflectAndClipPrimitive_FUN_00522310
              g_MirrorOutputVertices,&g_MirrorOutputVertexCount);
   if ((((2 < g_MirrorOutputVertexCount) &&
        (core_mirror_cpp_clipPolygonAgainstPlane_FUN_00521290
-                  ((SClipPlane *)(primitive + 7),g_MirrorOutputVertices,g_MirrorOutputVertexCount,
+                  (this_ptr->clip_planes + 1,g_MirrorOutputVertices,g_MirrorOutputVertexCount,
                    g_MirrorInputVertices,&g_MirrorInputVertexCount), 2 < g_MirrorInputVertexCount))
       && (core_mirror_cpp_clipPolygonAgainstPlane_FUN_00521290
-                    ((SClipPlane *)(in_stack_0000000c + 0xb8),g_MirrorInputVertices,
-                     g_MirrorInputVertexCount,g_MirrorOutputVertices,&g_MirrorOutputVertexCount),
+                    (this_ptr->clip_planes + 2,g_MirrorInputVertices,g_MirrorInputVertexCount,
+                     g_MirrorOutputVertices,&g_MirrorOutputVertexCount),
          2 < g_MirrorOutputVertexCount)) &&
      ((core_mirror_cpp_clipPolygonAgainstPlane_FUN_00521290
-                 ((SClipPlane *)(in_stack_00000010 + 200),g_MirrorOutputVertices,
-                  g_MirrorOutputVertexCount,g_MirrorInputVertices,&g_MirrorInputVertexCount),
-      2 < g_MirrorInputVertexCount &&
+                 (this_ptr->clip_planes + 3,g_MirrorOutputVertices,g_MirrorOutputVertexCount,
+                  g_MirrorInputVertices,&g_MirrorInputVertexCount), 2 < g_MirrorInputVertexCount &&
       (core_mirror_cpp_clipPolygonAgainstPlane_FUN_00521290
-                 ((SClipPlane *)(in_stack_00000014 + 0xd8),g_MirrorInputVertices,
-                  g_MirrorInputVertexCount,g_MirrorOutputVertices,&g_MirrorOutputVertexCount),
+                 (this_ptr->clip_planes + 4,g_MirrorInputVertices,g_MirrorInputVertexCount,
+                  g_MirrorOutputVertices,&g_MirrorOutputVertexCount),
       iVar5 = g_MirrorOutputVertexCount, 2 < g_MirrorOutputVertexCount)))) {
-    *(int *)(in_stack_00000018 + 0xec) = g_MirrorOutputVertexCount;
-    *(uint *)(in_stack_00000018 + 0xf0) = *(uint *)(in_stack_0000001c + 8);
-    *(uint *)(in_stack_00000018 + 0xf4) = *(uint *)(in_stack_0000001c + 0xc);
-    *(uint *)(in_stack_00000018 + 0xf8) = *(uint *)(in_stack_0000001c + 0x10);
-    iVar6 = 0;
-    *(uint *)(in_stack_00000018 + 0xfc) = *(uint *)(in_stack_0000001c + 0x14);
+    *(int *)(this_ptr->additional_data + 4) = g_MirrorOutputVertexCount;
+    *(int *)(this_ptr->additional_data + 8) = (primitive->surface_normal).A;
+    *(int *)(this_ptr->additional_data + 0xc) = (primitive->surface_normal).B;
+    *(int *)(this_ptr->additional_data + 0x10) = (primitive->surface_normal).C;
+    local_14 = 0;
+    *(int *)(this_ptr->additional_data + 0x14) = (primitive->surface_normal).D;
     if (0 < iVar5) {
       pCVar4 = g_MirrorOutputVertices;
       iVar5 = 0xea000;
@@ -75,13 +69,13 @@ core_mirror_cpp_CMirror_reflectAndClipPrimitive_FUN_00522310
         *(uint *)
          ((int)&(g_CDemonRendererPtr->vertex_buffer_ptr->projected_vertex).screen_x + iVar5) =
              0xffffffff;
-        *(int *)(in_stack_00000018 + 0x100) = iVar6 + 0x4e00;
-        engine_matrix_c_projectCachedPoint_FUN_0050cda0(iVar6 + 0x4e00);
+        *(int *)(this_ptr->additional_data + 0x18) = local_14 + 0x4e00;
+        engine_matrix_c_projectCachedPoint_FUN_0050cda0(local_14 + 0x4e00);
         pCVar4 = pCVar4 + 1;
         iVar5 = iVar5 + 0x30;
-        iVar6 = iVar6 + 1;
-        in_stack_00000018 = in_stack_00000018 + 4;
-      } while (iVar6 < g_MirrorOutputVertexCount);
+        local_14 = local_14 + 1;
+        this_ptr = (CMirror *)&(this_ptr->reflection).corner1.y;
+      } while (local_14 < g_MirrorOutputVertexCount);
     }
     return 1;
   }

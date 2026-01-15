@@ -13,14 +13,13 @@ void core_set_cpp_FUN_005702b0(void)
   longlong lVar2;
   int iVar3;
   int iVar4;
-  BADSPACEBASE *in_ESP;
   int iVar5;
   byte bVar6;
   int in_stack_00000004;
   ushort *in_stack_00000008;
   int in_stack_0000000c;
   int in_stack_00000010;
-  int aiStackY_101c [959];
+  int aiStackY_1020 [960];
   CVector3i *in_stack_fffffee8;
   int local_114;
   int local_110;
@@ -42,9 +41,10 @@ void core_set_cpp_FUN_005702b0(void)
   uint local_90;
   uint uStack_8c;
   CVector3i local_50 [2];
-  int iStack_34;
-  int aiStack_30 [4];
-  uint local_20;
+  int local_38;
+  int aiStack_34 [4];
+  int local_24;
+  int local_20;
   int local_1c;
   int local_18;
   int local_14;
@@ -93,9 +93,9 @@ void core_set_cpp_FUN_005702b0(void)
                (1.0 <= ABS(g_VertexNormalArray[iVar3].x))) ||
               (1.0 <= ABS(g_VertexNormalArray[iVar3].y))) ||
              (1.0 <= ABS(g_VertexNormalArray[iVar3].z))) {
-            aiStack_30[1] = (int)ROUND(g_VertexNormalArray[iVar3].x);
-            aiStack_30[2] = (int)ROUND(g_VertexNormalArray[iVar3].y);
-            aiStack_30[3] = (int)ROUND(g_VertexNormalArray[iVar3].z);
+            aiStack_34[2] = (int)ROUND(g_VertexNormalArray[iVar3].x);
+            aiStack_34[3] = (int)ROUND(g_VertexNormalArray[iVar3].y);
+            local_24 = (int)ROUND(g_VertexNormalArray[iVar3].z);
           }
           else {
             local_50[0].x =
@@ -105,14 +105,14 @@ void core_set_cpp_FUN_005702b0(void)
             local_50[0].z =
                  (int)ROUND(DAT_032c1c70 * 256f) - g_TransformedVertexArray[iVar3].z;
             engine_matrix_c_normalizeVector3DFloat_FUN_0050d9f0(local_50);
-            aiStack_30[1] = iStack_34;
-            aiStack_30[(uint)bVar6 * -2 + 2] = aiStack_30[(uint)bVar6 * -2];
-            aiStack_30[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 3] =
-                 aiStack_30[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
+            aiStack_34[2] = local_38;
+            aiStack_34[(uint)bVar6 * -2 + 3] = aiStack_34[(uint)bVar6 * -2];
+            aiStack_34[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4] =
+                 aiStack_34[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
           }
           iVar5 = local_18 + 1;
-          iVar3 = 0x8000 - aiStack_30[2];
-          *(int *)((int)&stack0xffffff30 + local_14) = aiStack_30[1] + 0x8000;
+          iVar3 = 0x8000 - aiStack_34[3];
+          *(int *)((int)&stack0xffffff30 + local_14) = aiStack_34[2] + 0x8000;
           *(int *)((int)&local_90 + local_14) = iVar3;
           local_18 = iVar5;
           local_14 = local_14 + 4;
@@ -166,8 +166,8 @@ void core_set_cpp_FUN_005702b0(void)
                   (g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)&stack0xfffffee8);
       }
       in_stack_00000008 = in_stack_00000008 + 9;
-      local_1c = local_1c + 1;
-    } while (local_1c < in_stack_0000000c);
+      local_20 = local_20 + 1;
+    } while (local_20 < in_stack_0000000c);
   }
   return;
 }

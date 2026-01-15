@@ -12,12 +12,11 @@ engine_2d_c_fillRectWithBorder_FUN_00403200
 
 {
   int iVar1;
-  int in_stack_0000001c;
   
   engine_2d_c_fillRectColor_FUN_00403170(x1,y1,x2,y2,fill_color);
   iVar1 = g_ActiveRenderColor;
-  g_ActiveRenderColor = in_stack_0000001c;
-  engine_2d_c_drawRect_FUN_00403120(x1 + -1,y1 + -1,y2 + 1,fill_color + 1);
+  g_ActiveRenderColor = border_color;
+  engine_2d_c_drawRect_FUN_00403120(x1 + -1,y1 + -1,x2 + 1,y2 + 1);
   g_ActiveRenderColor = iVar1;
   return;
 }

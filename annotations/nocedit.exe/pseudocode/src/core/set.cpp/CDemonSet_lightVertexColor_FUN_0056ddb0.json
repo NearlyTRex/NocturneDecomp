@@ -1,19 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 317,
-    "complexity_score": 294,
+    "complexity_score": 193,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 19,
-    "pseudocode_lines": 154,
-    "suspect_count": 12,
+    "pseudocode_lines": 153,
+    "suspect_count": 3,
     "suspect_types": [
       "call_esp_preserve",
-      "stack_param",
-      "unaffected_reg",
       "variadic_preserve"
     ],
-    "total_lines": 471
+    "total_lines": 470
   },
   "cross_references": [
     {
@@ -280,71 +278,8 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 16,
-      "match": "unaff_EBP",
-      "text": "int unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_00000018",
-      "text": "int in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 56,
-      "match": "unaff_EBP",
-      "text": "unaff_EBP = g_CDemonCameraInstance.corona_blend_factor;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 90,
-      "match": "unaff_EBP",
-      "text": "iVar8 = iVar8 + unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 101,
-      "match": "unaff_EBP",
-      "text": "0x20) << 0x10) + unaff_EBP) * (longlong)this_ptr->light_scale_factor;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 106,
-      "match": "unaff_EBP",
-      "text": "0x20) << 0x10) + unaff_EBP) * (longlong)this_ptr->color_scale_factor;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 111,
-      "match": "unaff_EBP",
-      "text": "<< 0x10) + unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 115,
-      "match": "in_stack_00000018",
-      "text": "if ((this_ptr->rendering_flags_ptr != (int *)0x0) && (in_stack_00000018 == 0)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 118,
-      "match": "unaff_EBP",
-      "text": "uVar9 = unaff_EBP + iVar8;",
-      "type": "unaffected_reg"
-    },
-    {
       "call_address": "0056ddec",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",

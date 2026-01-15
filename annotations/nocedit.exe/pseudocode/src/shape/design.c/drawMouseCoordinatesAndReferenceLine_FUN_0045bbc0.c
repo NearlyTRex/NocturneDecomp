@@ -9,7 +9,6 @@
 void __cdecl shape_design_c_drawMouseCoordinatesAndReferenceLine_FUN_0045bbc0(void)
 
 {
-  BADSPACEBASE *in_ESP;
   char local_70 [80];
   float local_20;
   float local_1c;

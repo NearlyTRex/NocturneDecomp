@@ -11,14 +11,14 @@
 int core_gore_cpp_FUN_004ee1e0(void)
 
 {
-  BADSPACEBASE *in_ESP;
   int iVar1;
   int iVar2;
   FILE *in_stack_00000008;
+  char local_110 [256];
   
-  crt_stdio_c_fgets_FUN_005fefd0(&stack0xfffffef0,0xff,in_stack_00000008);
+  crt_stdio_c_fgets_FUN_005fefd0(local_110,0xff,in_stack_00000008);
   iVar1 = 0;
-  crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,"%d\n");
+  crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,"%d\n",&DAT_02da8720);
   if (0 < DAT_02da8720) {
     do {
       iVar1 = iVar1 + 1;
@@ -26,7 +26,7 @@ int core_gore_cpp_FUN_004ee1e0(void)
     } while (iVar1 < DAT_02da8720);
   }
   iVar2 = 0;
-  iVar1 = crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,"%d\n");
+  iVar1 = crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000008,"%d\n",&DAT_02d873d8);
   if (0 < DAT_02d873d8) {
     do {
       iVar2 = iVar2 + 1;

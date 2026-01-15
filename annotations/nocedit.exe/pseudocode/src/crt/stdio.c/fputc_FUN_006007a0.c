@@ -13,8 +13,7 @@ int __cdecl crt_stdio_c_fputc_FUN_006007a0(int character,FILE *file)
   int iVar2;
   uint uVar3;
   uint uVar4;
-  char cStack00000014;
-  byte in_stack_00000020;
+  byte in_stack_0000000c;
   
   (*PTR_crt_sync_c_EnterCriticalSection_FUN_00602434_00684ee8)(file->_handle);
   pcVar1 = file->_link->__get_base;
@@ -35,24 +34,22 @@ int __cdecl crt_stdio_c_fputc_FUN_006007a0(int character,FILE *file)
     crt_stdio_c_InitializeFileBuffer_FUN_006027e0(file);
   }
   uVar4 = 0x400;
-  if ((_cStack00000014 == 10) && (uVar4 = 0x600, (file->_flag & 0x40) == 0)) {
-    pcVar1 = file->_ptr;
-    *(byte *)((int)&file->_flag + 1) = *(byte *)((int)&file->_flag + 1) | 0x10;
-    *pcVar1 = '\r';
-    file->_ptr = file->_ptr + 1;
-    uVar3 = file->_cnt + 1;
-    file->_cnt = uVar3;
-    if (uVar3 == file->_bufsize) {
-      iVar2 = crt_stdio_c_fflushInternal_FUN_006039d0(file);
+  if ((file == (FILE *)0xa) && (uVar4 = 0x600, (bRam00000016 & 0x40) == 0)) {
+    bRam00000017 = bRam00000017 | 0x10;
+    *puRam0000000a = 0xd;
+    puRam0000000a = puRam0000000a + 1;
+    iRam0000000e = iRam0000000e + 1;
+    if (iRam0000000e == iRam0000001e) {
+      iVar2 = crt_stdio_c_fflushInternal_FUN_006039d0((FILE *)0xa);
       if (iVar2 != 0) {
-        (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(file->_handle);
+        (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(iRam0000001a);
         return -1;
       }
     }
   }
   pcVar1 = file->_ptr;
   *(byte *)((int)&file->_flag + 1) = *(byte *)((int)&file->_flag + 1) | 0x10;
-  *pcVar1 = cStack00000014;
+  *pcVar1 = (char)file;
   file->_ptr = file->_ptr + 1;
   uVar3 = file->_cnt + 1;
   file->_cnt = uVar3;
@@ -64,5 +61,5 @@ int __cdecl crt_stdio_c_fputc_FUN_006007a0(int character,FILE *file)
     }
   }
   (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(file->_handle);
-  return (uint)in_stack_00000020;
+  return (uint)in_stack_0000000c;
 }

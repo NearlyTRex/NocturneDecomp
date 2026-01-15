@@ -19,7 +19,6 @@ void core_stranger_cpp_CStranger_FUN_005be520(void)
   CVector3f *pCVar5;
   CSkeleton *this_ptr;
   int iVar6;
-  BADSPACEBASE *in_ESP;
   float *pfVar7;
   uint *puVar8;
   CQuaternion4f *pCVar9;

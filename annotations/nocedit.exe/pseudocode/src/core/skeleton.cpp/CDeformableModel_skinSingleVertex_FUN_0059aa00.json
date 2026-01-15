@@ -1,21 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 110,
-    "complexity_score": 196,
+    "complexity_score": 92,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 0,
-    "pseudocode_lines": 56,
-    "suspect_count": 11,
+    "pseudocode_lines": 52,
+    "suspect_count": 3,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
-      "lea_esp_stack_addr",
-      "register_param",
-      "stack_param",
-      "unaffected_reg"
+      "lea_esp_stack_addr"
     ],
-    "total_lines": 166
+    "total_lines": 162
   },
   "cross_references": [
     {
@@ -187,62 +183,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 10,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 10,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 11,
-      "match": "unaff_EBP",
-      "text": "byte *unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_00000018",
-      "text": "int in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 39,
-      "match": "unaff_EBP",
-      "text": "if ((int)(uint)*unaff_EBP <= iVar4) break;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 42,
-      "match": "in_stack_00000018",
-      "text": "(CMatrix3x4f *)((uint)pSVar3->bone_indices[0] * 0x30 + in_stack_00000018))",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 46,
-      "match": "unaff_EBP",
-      "text": "unaff_EBP = (byte *)(pCVar1->z * *(float *)pSVar2);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 52,
-      "match": "unaff_EBP",
-      "text": "local_1c = local_1c + (float)unaff_EBP;",
-      "type": "unaffected_reg"
-    },
     {
       "add_esp_value": 12,
       "call_address": "0059aa9f",

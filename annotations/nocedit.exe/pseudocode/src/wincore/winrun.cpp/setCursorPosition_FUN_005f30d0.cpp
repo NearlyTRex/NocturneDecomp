@@ -9,11 +9,8 @@
 void __cdecl wincore_winrun_cpp_setCursorPosition_FUN_005f30d0(int x,int y)
 
 {
-  int in_stack_00000010;
-  int in_stack_00000014;
-  
   (*SetCursorPos)(x,y);
-  g_MouseX = in_stack_00000010;
-  g_MouseY = in_stack_00000014;
+  g_MouseX = x;
+  g_MouseY = y;
   return;
 }

@@ -12,7 +12,6 @@ core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   float *unaff_ESI;
   float *pfVar2;
   float *pfVar3;

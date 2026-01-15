@@ -1,24 +1,21 @@
 {
   "complexity": {
     "assembly_lines": 285,
-    "complexity_score": 427,
+    "complexity_score": 376,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 12,
-    "pseudocode_lines": 122,
-    "suspect_count": 26,
+    "pseudocode_lines": 116,
+    "suspect_count": 23,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
       "pointer_cast",
-      "register_param",
       "stack_param",
       "stack_ref",
-      "unaffected_reg",
       "variadic_preserve"
     ],
-    "total_lines": 407
+    "total_lines": 401
   },
   "cross_references": [],
   "function": {
@@ -250,129 +247,108 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 13,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 13,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 14,
-      "match": "unaff_EBP",
-      "text": "int unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 15,
-      "match": "unaff_EDI",
-      "text": "int unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_ffffffa0",
-      "text": "int in_stack_ffffffa0;",
+      "line": 12,
+      "match": "in_stack_ffffff98",
+      "text": "int in_stack_ffffff98;",
       "type": "stack_param"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 47,
-      "match": "unaff_EDI",
-      "text": "puVar5 = (ushort *)((int)puVar5 + unaff_EDI);",
-      "type": "unaffected_reg"
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(ushort *)((int)",
+      "text": "(pSVar4 = this_ptr->vertex_buffer_ptr + *(ushort *)((int)vertex_indices + 2),",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 47,
-      "match": "(ushort *)((int)",
-      "text": "puVar5 = (ushort *)((int)puVar5 + unaff_EDI);",
+      "line": 42,
+      "match": "(int *)((int)",
+      "text": "vertex_indices = (int *)((int)vertex_indices + vertices_per_face * 2);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 59,
-      "match": "&stack0xffffff9c",
-      "text": "*(uint *)(&stack0xffffff9c + iVar2) = (uint)*puVar1;",
+      "line": 54,
+      "match": "&stack0xffffff98",
+      "text": "*(uint *)(&stack0xffffff98 + iVar2) = (uint)*puVar1;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 67,
-      "match": "&stack0xffffff9c",
-      "text": "core_xform_cpp_transformAndClipGeometry_FUN_005f8550(iVar3,(int *)&stack0xffffff9c);",
+      "line": 62,
+      "match": "&stack0xffffff98",
+      "text": "core_xform_cpp_transformAndClipGeometry_FUN_005f8550(iVar3,(int *)&stack0xffffff98);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 70,
-      "match": "in_stack_ffffffa0",
-      "text": "(g_ClippedVertexBuffer,g_ClippedVertexCount,in_stack_ffffffa0);",
+      "line": 65,
+      "match": "in_stack_ffffff98",
+      "text": "(g_ClippedVertexBuffer,g_ClippedVertexCount,in_stack_ffffff98);",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 74,
-      "match": "&stack0xffffff9c",
-      "text": "engine_clipper_c_clipAndRasterize_FUN_004371b0(iVar3,(int *)&stack0xffffff9c);",
+      "line": 69,
+      "match": "&stack0xffffff98",
+      "text": "engine_clipper_c_clipAndRasterize_FUN_004371b0(iVar3,(int *)&stack0xffffff98);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 77,
-      "match": "&stack0xffffff9c",
-      "text": "engine_clipper_c_clipPolygonToViewport_FUN_00438420(iVar3,(int *)&stack0xffffff9c);",
+      "line": 72,
+      "match": "&stack0xffffff98",
+      "text": "engine_clipper_c_clipPolygonToViewport_FUN_00438420(iVar3,(int *)&stack0xffffff98);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 75,
+      "match": "(int *)((int)",
+      "text": "vertex_indices = (int *)((int)vertex_indices + vertices_per_face * 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 88,
+      "match": "(ushort *)((int)",
+      "text": "(pSVar4 = this_ptr->vertex_buffer_ptr + *(ushort *)((int)vertex_indices + 2),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 99,
+      "match": "&stack0xffffff98",
+      "text": "*(uint *)(&stack0xffffff98 + iVar2) = (uint)*puVar1;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 105,
-      "match": "&stack0xffffff9c",
-      "text": "*(uint *)(&stack0xffffff9c + iVar2) = (uint)*puVar1;",
+      "match": "&stack0xffffff98",
+      "text": "engine_drender_cpp_renderTriangleSimple_FUN_004839f0((int *)&stack0xffffff98,iVar3);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 111,
-      "match": "&stack0xffffff9c",
-      "text": "engine_drender_cpp_renderTriangleSimple_FUN_004839f0((int *)&stack0xffffff9c,iVar3);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 114,
-      "match": "&stack0xffffff9c",
-      "text": "core_xform_cpp_transformAndClipGeometry_FUN_005f8550(iVar3,(int *)&stack0xffffff9c);",
+      "line": 108,
+      "match": "&stack0xffffff98",
+      "text": "core_xform_cpp_transformAndClipGeometry_FUN_005f8550(iVar3,(int *)&stack0xffffff98);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 117,
-      "match": "in_stack_ffffffa0",
-      "text": "(g_ClippedVertexBuffer,g_ClippedVertexCount,in_stack_ffffffa0);",
+      "line": 111,
+      "match": "in_stack_ffffff98",
+      "text": "(g_ClippedVertexBuffer,g_ClippedVertexCount,in_stack_ffffff98);",
       "type": "stack_param"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 121,
-      "match": "unaff_EBP",
-      "text": "puVar5 = (ushort *)((int)puVar5 + unaff_EBP);",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 121,
-      "match": "(ushort *)((int)",
-      "text": "puVar5 = (ushort *)((int)puVar5 + unaff_EBP);",
+      "line": 115,
+      "match": "(int *)((int)",
+      "text": "vertex_indices = (int *)((int)vertex_indices + vertices_per_face * 2);",
       "type": "pointer_cast"
     },
     {

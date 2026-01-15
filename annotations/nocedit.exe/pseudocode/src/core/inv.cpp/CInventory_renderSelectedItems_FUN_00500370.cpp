@@ -11,90 +11,83 @@ void __cdecl core_inv_cpp_CInventory_renderSelectedItems_FUN_00500370(CInventory
 {
   int iVar1;
   int iVar2;
-  int alpha;
   int iVar3;
   int iVar4;
+  int iVar5;
   int extraout_ECX;
   int extraout_ECX_00;
-  int iVar5;
-  double dVar6;
-  int local_30;
-  int local_2c;
-  int local_1c;
-  int local_18;
-  int local_14;
+  int iVar6;
+  double dVar7;
+  int iStack_40;
+  int local_34;
+  int local_20;
   
   if ((g_CGamePtr->letterbox_mode == 0) &&
      ((CHero *)this_ptr->owner == g_HeroActors[g_LocalHeroIndex])) {
     if (g_WindowHeight != g_InventoryScreenHeight) {
+      iStack_40 = 0x5005f6;
       core_inv_cpp_loadInventory_FUN_004fd220();
     }
     if ((this_ptr->selected_weapon != (CWeapon *)0x0) && (0.0 < this_ptr->weapon_highlight_timer)) {
-      iVar1 = 8;
-      iVar5 = 0x50;
-      iVar4 = g_InventoryHeight;
-      iVar3 = g_InventoryWidth;
+      iVar6 = 0x50;
+      iVar5 = g_InventoryHeight;
+      iVar4 = g_InventoryWidth;
       if ((g_WindowHeight < 0x180) && (this_ptr->render_mode_flag == 0)) {
-        iVar3 = g_InventoryWidth / 2;
-        iVar4 = g_InventoryHeight / 2;
-        iVar5 = 0x28;
-        iVar1 = 4;
+        iVar4 = g_InventoryWidth / 2;
+        iVar5 = g_InventoryHeight / 2;
+        iVar6 = 0x28;
       }
-      local_2c = (g_WindowHeight - iVar5) - iVar1;
-      local_18 = 0xffff;
       if (this_ptr->weapon_highlight_timer < 1.0) {
-        dVar6 = crt_math_c_round_FUN_005fe6b0
+        iStack_40 = 0x50044a;
+        dVar7 = crt_math_c_round_FUN_005fe6b0
                           ((double)(this_ptr->weapon_highlight_timer * 65535f));
-        local_18 = (int)ROUND(dVar6);
-        iVar4 = extraout_ECX;
+        local_20 = (int)ROUND(dVar7);
+        iVar5 = extraout_ECX;
       }
-      iVar1 = (local_18 * 2) / 3;
+      iVar1 = (local_20 * 2) / 3;
       if (this_ptr->render_mode_flag == 0) {
         core_inv_cpp_drawWeaponIconBackground_FUN_00500050
-                  (g_WindowWidth - iVar4,g_WindowHeight - iVar4,g_WindowWidth + -1,
+                  (g_WindowWidth - iVar5,g_WindowHeight - iVar5,g_WindowWidth + -1,
                    g_WindowHeight + -1,iVar1);
       }
       else {
         core_inv_cpp_drawItemIconBackground_FUN_005001e0
-                  (g_WindowWidth - iVar3,g_WindowHeight - iVar4,g_WindowWidth + -1,
+                  (g_WindowWidth - iVar4,g_WindowHeight - iVar5,g_WindowWidth + -1,
                    g_WindowHeight + -1,iVar1);
       }
       core_inv_cpp_CInventory_renderItemModel_FUN_004fee00
-                (this_ptr,&this_ptr->selected_weapon->base_actor,iVar1,local_30,iVar5,0x3fc90fdb,
-                 local_1c);
+                (this_ptr,&this_ptr->selected_weapon->base_actor,iStack_40,local_34,iVar6,0x3fc90fdb
+                 ,local_20);
     }
     if ((this_ptr->selected_item != (CDemonActor *)0x0) && (0.0 < this_ptr->item_highlight_timer)) {
-      iVar1 = 0x10;
-      iVar5 = 0x40;
-      iVar4 = g_InventoryHeight;
-      iVar3 = g_InventoryWidth;
+      iVar6 = 0x10;
+      iVar1 = 0x40;
+      iVar5 = g_InventoryHeight;
+      iVar4 = g_InventoryWidth;
       if ((g_WindowHeight < 0x180) && (this_ptr->render_mode_flag == 0)) {
-        iVar3 = g_InventoryWidth / 2;
-        iVar4 = g_InventoryHeight / 2;
-        iVar5 = 0x20;
-        iVar1 = 8;
+        iVar4 = g_InventoryWidth / 2;
+        iVar5 = g_InventoryHeight / 2;
+        iVar1 = 0x20;
+        iVar6 = 8;
       }
-      iVar2 = g_WindowWidth - iVar5;
-      local_14 = 0xffff;
+      iVar2 = g_WindowWidth - iVar1;
+      iVar3 = g_WindowHeight - iVar1;
       if (this_ptr->item_highlight_timer < 1.0) {
-        dVar6 = crt_math_c_round_FUN_005fe6b0
-                          ((double)(this_ptr->item_highlight_timer * 65535f));
-        local_14 = (int)ROUND(dVar6);
-        iVar4 = extraout_ECX_00;
+        crt_math_c_round_FUN_005fe6b0((double)(this_ptr->item_highlight_timer * 65535f));
+        iVar5 = extraout_ECX_00;
       }
-      alpha = (local_14 * 2) / 3;
       if (this_ptr->render_mode_flag == 0) {
         core_inv_cpp_drawWeaponIconBackground_FUN_00500050
-                  (g_WindowWidth - iVar4,g_WindowHeight - iVar4,g_WindowWidth + -1,
-                   g_WindowHeight + -1,alpha);
+                  (g_WindowWidth - iVar5,g_WindowHeight - iVar5,g_WindowWidth + -1,
+                   g_WindowHeight + -1,0xaaaa);
       }
       else {
         core_inv_cpp_drawItemIconBackground_FUN_005001e0
-                  (g_WindowWidth - iVar3,g_WindowHeight - iVar4,g_WindowWidth + -1,
-                   g_WindowHeight + -1,alpha);
+                  (g_WindowWidth - iVar4,g_WindowHeight - iVar5,g_WindowWidth + -1,
+                   g_WindowHeight + -1,0xaaaa);
       }
       core_inv_cpp_CInventory_renderItemModel_FUN_004fee00
-                (this_ptr,this_ptr->selected_item,local_2c,iVar2 - iVar1,iVar5,0,3);
+                (this_ptr,this_ptr->selected_item,iVar2 - iVar6,iVar3 - iVar6,iVar1,0,0xffff);
     }
   }
   return;

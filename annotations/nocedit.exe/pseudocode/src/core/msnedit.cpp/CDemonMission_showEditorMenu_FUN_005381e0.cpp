@@ -16,24 +16,21 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
   undefined3 extraout_var;
   CPodFile *pCVar4;
   int iVar5;
-  BADSPACEBASE *in_ESP;
   char *pcVar6;
   char *pcVar7;
   int iVar8;
-  uint in_stack_00000008;
-  char *in_stack_00000054;
-  char *in_stack_00000068;
-  CDemonMission *in_stack_fffff8a8;
-  CDemonMission *in_stack_fffff8ac;
-  CDemonMission *in_stack_fffff8b0;
-  CStrList_vtable *in_stack_fffff8b4;
-  CDemonMission *in_stack_fffff8b8;
-  byte auStack_3b8 [8];
-  CFileFinder CStack_3b0;
-  char acStack_200 [96];
-  char acStack_1a0 [8];
-  char acStack_198 [248];
-  char acStack_a0 [144];
+  uint in_stack_fffff824;
+  uint in_stack_fffff828;
+  char **in_stack_fffff82c;
+  CStrList_vtable *in_stack_fffff830;
+  uint in_stack_fffff834;
+  CFileFinder local_434;
+  char local_320 [260];
+  char local_21c [256];
+  char local_11c [256];
+  char *local_1c;
+  char *local_18;
+  char *local_14;
   
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Sec...");
@@ -41,7 +38,10 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
   core_mission_cpp_FUN_005248e0();
   crt_io_c_deleteFile_FUN_005ff9d0("$$UNDO$$.TMP");
   core_inivar_cpp_readIniData_FUN_004fbd90();
+  local_14 = this_ptr->field2_0xc + 0x38;
+  local_1c = this_ptr->field4_0x148;
   g_IncludeCommentsWhenWriting = 0;
+  local_18 = local_1c;
   do {
     this_ptr->field0_0x0[4] = '\x01';
     this_ptr->field0_0x0[5] = '\0';
@@ -55,7 +55,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
     engine_2d_c_drawText_FUN_00401fd0("Demented(R) Mission editor",0,0);
     if (this_ptr->field2_0xc[0x38] == '\0') {
       pcVar6 = "No misison loaded";
-      pcVar7 = acStack_200;
+      pcVar7 = local_21c;
       do {
         cVar1 = *pcVar6;
         *pcVar7 = cVar1;
@@ -67,10 +67,9 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
       } while (cVar1 != '\0');
     }
     else {
-      crt_stdio_c_sprintf_FUN_005fdbd0
-                (acStack_200,"Current mission: %s.msn",in_stack_00000008);
+      crt_stdio_c_sprintf_FUN_005fdbd0(local_21c,"Current mission: %s.msn",local_14);
     }
-    engine_2d_c_drawText_FUN_00401fd0(acStack_200 + 4,0,0x16);
+    engine_2d_c_drawText_FUN_00401fd0(local_21c,0,0x16);
     engine_2d_c_drawText_FUN_00401fd0("1. Load mission",0,0x2c);
     engine_2d_c_drawText_FUN_00401fd0("2. Save mission",0,0x37);
     engine_2d_c_drawText_FUN_00401fd0("3. Create mission from single set",0,0x42);
@@ -96,7 +95,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
       iVar5 = 0x113;
       iVar8 = 0;
       engine_2d_c_drawText_FUN_00401fd0("Sets in mission:",0,0xfd);
-      pcVar7 = in_stack_00000054;
+      pcVar7 = local_1c;
       if (0 < (int)this_ptr->set_list) {
         do {
           iVar8 = iVar8 + 1;
@@ -115,9 +114,8 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
           if ((uVar3 == 0x31) &&
              (iVar5 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                                 (g_CEditorToolsPtr,"Load mission","world",
-                                 "*.msn",(bool)((char)&CStack_3b0 + '\f')), iVar5 != 0)) {
-            core_mission_cpp_CDemonMission_load_FUN_00522d90
-                      (this_ptr,(char *)&CStack_3b0.search_handle,0);
+                                 "*.msn",SUB41 /* extract 2-byte value */(local_320,0)), iVar5 != 0)) {
+            core_mission_cpp_CDemonMission_load_FUN_00522d90(this_ptr,local_320,0);
             core_mission_cpp_CDemonMission_FUN_005235b0(this_ptr);
           }
         }
@@ -127,9 +125,9 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
                       (g_CEditorToolsPtr,"No mission loaded.");
           }
           else {
-            crt_stdio_c_sprintf_FUN_005fdbd0((char *)&CStack_3b0.has_results,"%s.msn");
+            crt_stdio_c_sprintf_FUN_005fdbd0(local_320,"%s.msn",local_14);
             iVar5 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
-                              (g_CEditorToolsPtr,"Save mission to %s");
+                              (g_CEditorToolsPtr,"Save mission to %s",local_320);
             if (iVar5 != 0) {
               core_msnedit_cpp_CheckWorldMountedAndSave_FUN_0053d190();
             }
@@ -137,12 +135,11 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
         }
         else {
           iVar5 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
-                            (g_CEditorToolsPtr,"Enter mission name",in_stack_00000068,0xf,0
-                            );
+                            (g_CEditorToolsPtr,"Enter mission name",local_14,0xf,0);
           if ((iVar5 != 0) &&
              (iVar5 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                                 (g_CEditorToolsPtr,"Enter set name","models",
-                                 "*.set",(bool)((char)&CStack_3b0 + '\x10')), iVar5 != 0)) {
+                                 "*.set",SUB41 /* extract 2-byte value */(local_320,0)), iVar5 != 0)) {
             core_mission_cpp_CDemonMission_FUN_005243a0(this_ptr);
           }
         }
@@ -150,7 +147,7 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
       else if (uVar3 < 0x35) {
         iVar5 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0049f270
                           (g_CEditorToolsPtr,"Enter set name to add","models",
-                           "*.set",(bool)((char)&CStack_3b0 + '\f'));
+                           "*.set",SUB41 /* extract 2-byte value */(local_320,0));
         if (iVar5 != 0) {
           core_msnedit_cpp_NotGoingtoAddToList_CantAdd_FUN_00538d60();
         }
@@ -159,8 +156,8 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
         iVar5 = core_msnedit_cpp_DisplayTextNoSetsDefinedAndAllowCancel_FUN_00538f90();
         if ((-1 < iVar5) &&
            (iVar5 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
-                              (g_CEditorToolsPtr,"This is going to remove set %s from the mission and delete all the actors in the set."), iVar5 != 0))
-        {
+                              (g_CEditorToolsPtr,"This is going to remove set %s from the mission and delete all the actors in the set.",
+                               local_18 + iVar5 * 0x100), iVar5 != 0)) {
           core_msnedit_cpp_FUN_00538df0();
         }
       }
@@ -173,17 +170,9 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
           shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                     (g_CEditorToolsPtr,"Loading set.");
           core_mission_cpp_CDemonMission_FUN_00523fb0(this_ptr);
-          in_stack_fffff8b0 = (CDemonMission *)&DAT_00000001;
-          while( true ) {
-            in_stack_fffff8a8 = (CDemonMission *)0x538712;
-            in_stack_fffff8ac = this_ptr;
-            iVar5 = core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0();
-            if (iVar5 != 2) break;
+          while (iVar5 = core_msnedit_cpp_PrepareMissionMaybe_FUN_005390f0(), iVar5 == 2) {
             core_msnedit_cpp_CheckWorldMountedAndSave_FUN_0053d190();
-            in_stack_fffff8b4 = (CStrList_vtable *)0x538735;
-            in_stack_fffff8b8 = this_ptr;
             core_msnedit_cpp_WalkAroundOnSet_FUN_00538ba0();
-            in_stack_fffff8b0 = (CDemonMission *)0x0;
           }
         }
       }
@@ -193,22 +182,19 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
         if (iVar5 != 0) {
           core_set_cpp_CDemonSet_precomputeLightVisibility_FUN_0056a470(g_CDemonSetPtr);
           wincore_windll_cpp_clearScreen_FUN_005b3e70();
-          in_stack_fffff8a8 = (CDemonMission *)0x0;
           engine_2d_c_drawText_FUN_00401fd0("You must now go into set editor and save!",0,0);
-          in_stack_fffff8ac = (CDemonMission *)0x538786;
           wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-          in_stack_fffff8b0 = (CDemonMission *)0x53878b;
           wincore_winrun_cpp_getNextKeypress_FUN_005f2e90();
         }
       }
       else if ((uVar3 == 0x38) &&
               (bVar2 = shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_0049fb70
                                  (g_CEditorToolsPtr,"Save mission to new name",
-                                  "world",0x63c162,(bool)((char)&CStack_3b0 + '\f')),
+                                  "world",0x63c162,SUB41 /* extract 2-byte value */(local_320,0)),
               CONCAT31 /* combine 2-byte values */(extraout_var,bVar2) != 0)) {
-        crt_string_c_splitpath_FUN_005ff178
-                  ((char *)&CStack_3b0.has_results,(char *)0x0,(char *)0x0,acStack_a0,(char *)0x0);
-        crt_stdio_c_sprintf_FUN_005fdbd0((char *)&CStack_3b0.search_handle,"%s.msn");
+        crt_string_c_splitpath_FUN_005ff178(local_320,(char *)0x0,(char *)0x0,local_11c,(char *)0x0)
+        ;
+        crt_stdio_c_sprintf_FUN_005fdbd0(local_320,"%s.msn",local_11c);
         core_msnedit_cpp_OpenAndCreateWorld_FUN_00537f60();
       }
     }
@@ -233,24 +219,21 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
         core_mission_cpp_CDemonMission_FUN_00523cf0(this_ptr);
         shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                   (g_CEditorToolsPtr,"Loading set.");
-        in_stack_fffff8a8 = this_ptr;
         core_mission_cpp_CDemonMission_FUN_00523fb0(this_ptr);
-        in_stack_fffff8ac = (CDemonMission *)0x5388a6;
-        in_stack_fffff8b0 = this_ptr;
         core_msnedit_cpp_PrepareMissionAndEditGore_FUN_0053e220();
       }
     }
     else if (uVar3 < 0x49) {
-      shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff8a0);
+      shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffff824);
       core_msnedit_cpp_FUN_00537330();
-      shape_edittool_cpp_CPickList_setSelectedResult_FUN_004a3e10((CPickList *)&stack0xfffff89c,1);
+      shape_edittool_cpp_CPickList_setSelectedResult_FUN_004a3e10((CPickList *)&stack0xfffff824,1);
       shape_edittool_cpp_CPickList_setCancelButtonText_FUN_004a3d90
-                ((CPickList *)&stack0xfffff8a0,(char *)0x0);
+                ((CPickList *)&stack0xfffff824,(char *)0x0);
       shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                ((CPickList *)&stack0xfffff8a4,"Actor class heirarchy.",-1,0);
+                ((CPickList *)&stack0xfffff824,"Actor class heirarchy.",-1,0);
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                ((CPickList *)&stack0xfffff8a8,0,(uint)in_stack_fffff8a8,(uint)in_stack_fffff8ac,
-                 (uint)in_stack_fffff8b0,(uint)in_stack_fffff8b4,(uint)in_stack_fffff8b8);
+                ((CPickList *)&stack0xfffff824,0,in_stack_fffff824,in_stack_fffff828,
+                 (uint)in_stack_fffff82c,(uint)in_stack_fffff830,in_stack_fffff834);
     }
     else if (uVar3 < 0x55) {
       if (uVar3 == 0x53) {
@@ -261,30 +244,28 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
       iVar5 = shape_edittool_cpp_CEditorTools_showConfirmationDialog_FUN_0049f060
                         (g_CEditorToolsPtr,"Update ALL mission files to latest version?");
       if (iVar5 != 0) {
-        engine_dosio_c_CFileFinder_ctor_FUN_00481c30((CFileFinder *)auStack_3b8);
-        engine_dosio_c_CFileFinder_openSearch_FUN_00481c70
-                  ((CFileFinder *)(auStack_3b8 + 4),"world\\*.msn");
-        while (CStack_3b0.filename[0] != '\0') {
+        engine_dosio_c_CFileFinder_ctor_FUN_00481c30(&local_434);
+        engine_dosio_c_CFileFinder_openSearch_FUN_00481c70(&local_434,"world\\*.msn");
+        while (local_434.filename[0] != '\0') {
           pCVar4 = engine_pod_cpp_CPod_locateFile_FUN_005512f0
-                             ((CPod *)g_CDemonPodPtr,"world",CStack_3b0.filename,(int *)0x0
-                             );
+                             ((CPod *)g_CDemonPodPtr,"world",local_434.filename,(int *)0x0)
+          ;
           if (pCVar4 == (CPodFile *)0x0) {
             shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                       (g_CEditorToolsPtr,"Loading %s...");
-            core_mission_cpp_CDemonMission_load_FUN_00522d90(g_CDemonMissionPtr,auStack_3b8 + 4,0);
+            core_mission_cpp_CDemonMission_load_FUN_00522d90
+                      (g_CDemonMissionPtr,local_434.filename,0);
             shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
                       (g_CEditorToolsPtr,"Saving %s...");
             core_mission_cpp_CDemonMission_save_FUN_00522e30(g_CDemonMissionPtr);
           }
           else {
             shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
-                      (g_CEditorToolsPtr,"Not converting local file %s - it is also in a pod");
+                      (g_CEditorToolsPtr,"Not converting local file %s - it is also in a pod",&local_434);
           }
-          in_stack_fffff8ac = (CDemonMission *)(CStack_3b0.filename + 8);
-          in_stack_fffff8a8 = (CDemonMission *)0x538a05;
-          engine_dosio_c_CFileFinder_findNext_FUN_00481cf0((CFileFinder *)in_stack_fffff8ac);
+          engine_dosio_c_CFileFinder_findNext_FUN_00481cf0(&local_434);
         }
-        engine_dosio_c_CFileFinder_dtor_FUN_00481c50(&CStack_3b0,0);
+        engine_dosio_c_CFileFinder_dtor_FUN_00481c50(&local_434,0);
       }
     }
     else if (0x56 < uVar3) {
@@ -293,8 +274,8 @@ void __cdecl core_msnedit_cpp_CDemonMission_showEditorMenu_FUN_005381e0(CDemonMi
       }
       else if (uVar3 == 0x5a) {
         shape_edittool_cpp_CEditorTools_displayMemoryDiagnostics_FUN_004a2590
-                  (g_CEditorToolsPtr,acStack_1a0);
-        shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0(g_CEditorToolsPtr,acStack_198);
+                  (g_CEditorToolsPtr,local_21c);
+        shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0(g_CEditorToolsPtr,local_21c);
       }
     }
     if (uVar3 == 0x1b) {

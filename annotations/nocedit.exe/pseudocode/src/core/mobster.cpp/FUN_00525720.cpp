@@ -13,8 +13,8 @@ void core_mobster_cpp_FUN_00525720(void)
 {
   float fVar1;
   CVector3f *pCVar2;
-  BADSPACEBASE *in_ESP;
   int in_stack_00000004;
+  CVector3f local_3c;
   CVector3f local_30;
   CVector3f local_24;
   CVector3f local_18;
@@ -31,7 +31,10 @@ void core_mobster_cpp_FUN_00525720(void)
     fVar1 = *(float *)(*(int *)(in_stack_00000004 + 0xbee0) + 0x34) + (float)1.57079632675;
   }
   else {
-    if (&local_24 != (CVector3f *)&stack0xffffffc4) {
+    local_3c.y = -2.35;
+    local_3c.z = -1.6;
+    local_3c.x = -4.2;
+    if (&local_24 != &local_3c) {
       local_24.y = -2.35;
       local_24.z = -1.6;
       local_24.x = -4.2;

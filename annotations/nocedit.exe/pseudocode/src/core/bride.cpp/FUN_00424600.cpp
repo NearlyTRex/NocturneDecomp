@@ -15,7 +15,7 @@ void core_bride_cpp_FUN_00424600(void)
   int iVar1;
   CCharacter *in_stack_00000004;
   int *in_stack_00000008;
-  float fStack_1c;
+  float local_20;
   
   if ((0.0 < (float)in_stack_00000008[0xb]) && (*in_stack_00000008 == -1)) {
     iVar1 = crt_stdlib_c_rand_FUN_005feb5c();
@@ -47,17 +47,17 @@ switchD_00424639_default:
       (iVar1 == *(int *)(in_stack_00000004[1].base_actor.create_event + 0x28))) ||
      ((iVar1 == *(int *)(in_stack_00000004[1].base_actor.create_event + 0x2c) ||
       (iVar1 == *(int *)(in_stack_00000004[1].base_actor.create_event + 0x40))))) {
-    fStack_1c = (float)in_stack_00000008[0xb];
+    local_20 = (float)in_stack_00000008[0xb];
     if (*(int *)(in_stack_00000004[1].base_actor.create_event + 0x40) == *in_stack_00000008) {
-      fStack_1c = fStack_1c * (float)0.33300000000000002;
+      local_20 = local_20 * (float)0.33300000000000002;
     }
     if (g_CGamePtr->field57_0x1e0 != 0) {
-      fStack_1c = 1.0;
+      local_20 = 1.0;
     }
     if (g_CGamePtr->blood_flag == 0) {
-      fStack_1c = 0.0;
+      local_20 = 0.0;
     }
-    iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(fStack_1c);
+    iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(local_20);
     if (iVar1 != 0) {
       core_bodypart_cpp_CreateBodyPart_FUN_00418e10();
       core_charactr_cpp_CCharacter_FUN_0042bd30(in_stack_00000004);

@@ -12,7 +12,6 @@ core_dglobe_cpp_CDemonGlobe_getAttenuationAtVertex_FUN_00471850
 
 {
   float fVar1;
-  BADSPACEBASE *in_ESP;
   float local_48 [6];
   float local_30;
   float local_2c;

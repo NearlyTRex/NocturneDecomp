@@ -1,19 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 283,
-    "complexity_score": 623,
+    "complexity_score": 592,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
-    "pseudocode_lines": 223,
-    "suspect_count": 38,
+    "pseudocode_lines": 222,
+    "suspect_count": 36,
     "suspect_types": [
-      "badspacebase",
       "concat_artifact",
-      "pointer_cast",
-      "register_param"
+      "pointer_cast"
     ],
-    "total_lines": 506
+    "total_lines": 505
   },
   "cross_references": [],
   "function": {
@@ -657,267 +655,253 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 11,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 11,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 91,
+      "line": 90,
       "match": "(uint *)((int)",
       "text": "local_b8 = *(uint *)((int)&scale->x + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 93,
+      "line": 92,
       "match": "(uint *)((int)",
       "text": "local_b0 = *(uint *)((int)&scale->y + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 95,
+      "line": 94,
       "match": "(uint *)((int)",
       "text": "local_a8 = *(uint *)((int)&scale->z + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 104,
+      "line": 103,
       "match": "(double *)((int)",
       "text": "pdVar6 = (double *)((int)pdVar6 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 105,
+      "line": 104,
       "match": "(double *)((int)",
       "text": "pdVar7 = (double *)((int)pdVar7 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 107,
+      "line": 106,
       "match": "CONCAT44",
       "text": "dStack_5c = dStack_20c * (double)CONCAT44 /* combine 2-byte values */(local_b8,uStack_bc);",
       "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 108,
+      "line": 107,
       "match": "CONCAT44",
       "text": "dStack_54 = dStack_204 * (double)CONCAT44 /* combine 2-byte values */(local_b0,uStack_b4);",
       "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 109,
+      "line": 108,
       "match": "CONCAT44",
       "text": "dStack_4c = dStack_1fc * (double)CONCAT44 /* combine 2-byte values */(local_a8,uStack_ac);",
       "type": "concat_artifact"
     },
     {
       "description": "Complex pointer cast",
-      "line": 114,
+      "line": 113,
       "match": "(double *)((int)",
       "text": "pdVar6 = (double *)((int)pdVar6 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 115,
+      "line": 114,
       "match": "(double *)((int)",
       "text": "pdVar7 = (double *)((int)pdVar7 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 124,
+      "line": 123,
       "match": "(double *)((int)",
       "text": "pdVar6 = (double *)((int)pdVar6 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 128,
+      "line": 127,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&(pCVar5->position).x + 4) = local_8c[1];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 130,
+      "line": 129,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&(pCVar5->position).y + 4) = local_8c[3];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 132,
+      "line": 131,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&(pCVar5->position).z + 4) = local_78;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 135,
+      "line": 134,
       "match": "(uint *)((int)",
       "text": "local_178 = *(uint *)((int)&scale->x + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 138,
+      "line": 137,
       "match": "(uint *)((int)",
       "text": "local_170 = *(uint *)((int)&scale->y + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 141,
+      "line": 140,
       "match": "(uint *)((int)",
       "text": "local_168 = *(uint *)((int)&scale->z + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 150,
+      "line": 149,
       "match": "(double *)((int)",
       "text": "pdVar6 = (double *)((int)pdVar6 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 151,
+      "line": 150,
       "match": "(double *)((int)",
       "text": "pdVar7 = (double *)((int)pdVar7 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 159,
+      "match": "(double *)((int)",
+      "text": "pdVar6 = (double *)((int)pdVar6 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 160,
       "match": "(double *)((int)",
-      "text": "pdVar6 = (double *)((int)pdVar6 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 161,
-      "match": "(double *)((int)",
       "text": "pdVar7 = (double *)((int)pdVar7 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 170,
+      "line": 169,
       "match": "(double *)((int)",
       "text": "pdVar6 = (double *)((int)pdVar6 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 174,
+      "line": 173,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&(pCVar5->position).x + 4) = local_14c[1];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 176,
+      "line": 175,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&(pCVar5->position).y + 4) = local_14c[3];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 178,
+      "line": 177,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&(pCVar5->position).z + 4) = local_138;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 181,
+      "line": 180,
       "match": "(uint *)((int)",
       "text": "local_1a8 = *(uint *)((int)&scale->x + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 184,
+      "line": 183,
       "match": "(uint *)((int)",
       "text": "local_1a0 = *(uint *)((int)&scale->y + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 187,
+      "line": 186,
       "match": "(uint *)((int)",
       "text": "local_198 = *(uint *)((int)&scale->z + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 196,
+      "line": 195,
       "match": "(double *)((int)",
       "text": "pdVar6 = (double *)((int)pdVar6 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 197,
+      "line": 196,
       "match": "(double *)((int)",
       "text": "pdVar7 = (double *)((int)pdVar7 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 205,
+      "match": "(double *)((int)",
+      "text": "pdVar6 = (double *)((int)pdVar6 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 206,
       "match": "(double *)((int)",
-      "text": "pdVar6 = (double *)((int)pdVar6 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 207,
-      "match": "(double *)((int)",
       "text": "pdVar7 = (double *)((int)pdVar7 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 216,
+      "line": 215,
       "match": "(double *)((int)",
       "text": "pdVar6 = (double *)((int)pdVar6 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 220,
+      "line": 219,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&(pCVar5->position).x + 4) = local_1c4[1];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 222,
+      "line": 221,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&(pCVar5->position).y + 4) = local_1c4[3];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 224,
+      "line": 223,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&(pCVar5->position).z + 4) = local_1b0;",
       "type": "pointer_cast"

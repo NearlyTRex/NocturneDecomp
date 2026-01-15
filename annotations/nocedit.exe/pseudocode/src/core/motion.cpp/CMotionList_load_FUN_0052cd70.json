@@ -1,25 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 435,
-    "complexity_score": 942,
+    "complexity_score": 473,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 20,
-    "pseudocode_lines": 142,
-    "suspect_count": 75,
+    "pseudocode_lines": 158,
+    "suspect_count": 30,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
-      "format_string_mismatch",
       "lea_esp_stack_addr",
-      "pointer_cast",
-      "register_param",
-      "stack_param",
-      "stack_ref",
-      "unaffected_reg",
       "variadic_preserve"
     ],
-    "total_lines": 577
+    "total_lines": 593
   },
   "cross_references": [
     {
@@ -324,225 +317,8 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 8,
-      "match": "unaff_EBX",
-      "text": "FILE *unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 9,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 9,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_0000000c",
-      "text": "FILE *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000014",
-      "text": "int *in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000018",
-      "text": "FILE *in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000020",
-      "text": "int in_stack_00000020;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_ffffffd4",
-      "text": "int in_stack_ffffffd4;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_ffffffd8",
-      "text": "int in_stack_ffffffd8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 26,
-      "match": "&stack0xffffffd0",
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,\"%d\\n\",&stack0xffffffd0,uVar4);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_ffffffd4",
-      "text": "if (in_stack_ffffffd4 < 0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_ffffffd8",
-      "text": "if (2 < in_stack_ffffffd8) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 36,
-      "match": "in_stack_ffffffd8",
-      "text": "(\"Can't read motion list - it's version %d, and I can only handle up to version %d.  (Probably you have an old .exe)\",in_stack_ffffffd8);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 44,
-      "match": "in_stack_00000014",
-      "text": "if (0 < *in_stack_00000014) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 48,
-      "match": "in_stack_00000018",
-      "text": "} while (iVar1 < (int)in_stack_00000018->_ptr);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 55,
-      "match": "in_stack_00000020",
-      "text": "if (0 < *(int *)(in_stack_00000020 + 0x964)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 56,
-      "match": "in_stack_00000020",
-      "text": "puVar2 = (uint *)(in_stack_00000020 + 0x968);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 74,
-      "match": "unaff_EBX",
-      "text": "puVar2[0xc] = (uint)unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 87,
-      "match": "unaff_EBX",
-      "text": "unaff_EBX = file_handle;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 90,
-      "match": "in_stack_00000020",
-      "text": "in_stack_00000020 = (int)(puVar2 + 0x1b);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 93,
-      "match": "in_stack_00000020",
-      "text": "pcVar3 = (char *)(in_stack_00000020 + iVar1 * 0x18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 96,
-      "match": "unaff_EBX",
-      "text": "unaff_EBX = pFStack00000028;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 99,
-      "match": "in_stack_0000000c",
-      "text": "*(FILE **)(pcVar3 + 4) = in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 107,
-      "match": "in_stack_0000000c",
-      "text": "in_stack_0000000c = (FILE *)(puVar2 + 0x129);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 112,
-      "match": "in_stack_0000000c",
-      "text": "in_stack_0000000c = (FILE *)(puVar2 + iVar1 * 2 + 0x12a);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 114,
-      "match": "unaff_EBX",
-      "text": "unaff_EBX = (FILE *)0x52d054;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 118,
-      "match": "in_stack_00000018",
-      "text": "if ((int)in_stack_00000018 < 2) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 126,
-      "match": "in_stack_0000000c",
-      "text": "in_stack_0000000c = file_handle;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 136,
-      "match": "in_stack_00000018",
-      "text": "in_stack_00000018 = file_handle;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 141,
-      "match": "(FILE *)((int)",
-      "text": "puVar2 = &((FILE *)((int)pcVar5 + 0x540))->_flag;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 142,
-      "match": "in_stack_00000020",
-      "text": "} while ((int)(pcVar6 + 1) < *(int *)(in_stack_00000020 + 0x964));",
-      "type": "stack_param"
-    },
-    {
       "call_address": "0052cda3",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -556,7 +332,7 @@
     },
     {
       "call_address": "0052cde4",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "unknown",
       "esp_certainty_at_call": "known",
@@ -570,7 +346,7 @@
     },
     {
       "call_address": "0052cdfc",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -584,7 +360,7 @@
     },
     {
       "call_address": "0052ce44",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -598,7 +374,7 @@
     },
     {
       "call_address": "0052ce9e",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -612,7 +388,7 @@
     },
     {
       "call_address": "0052cecc",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -626,7 +402,7 @@
     },
     {
       "call_address": "0052cef9",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -640,7 +416,7 @@
     },
     {
       "call_address": "0052cf2b",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -654,7 +430,7 @@
     },
     {
       "call_address": "0052cf51",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "unknown",
       "esp_certainty_at_call": "known",
@@ -668,7 +444,7 @@
     },
     {
       "call_address": "0052cfb6",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -682,7 +458,7 @@
     },
     {
       "call_address": "0052d014",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "unknown",
       "esp_certainty_at_call": "known",
@@ -696,7 +472,7 @@
     },
     {
       "call_address": "0052d04f",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "unknown",
       "esp_certainty_at_call": "known",
@@ -710,7 +486,7 @@
     },
     {
       "call_address": "0052d08f",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "unknown",
       "esp_certainty_at_call": "known",
@@ -724,7 +500,7 @@
     },
     {
       "call_address": "0052d0b2",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "unknown",
       "esp_certainty_at_call": "known",
@@ -738,7 +514,7 @@
     },
     {
       "call_address": "0052d124",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -752,7 +528,7 @@
     },
     {
       "call_address": "0052d14e",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -763,160 +539,6 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0052d14e (no EBP frame)",
       "type": "variadic_preserve"
-    },
-    {
-      "actual_args": 2,
-      "description": "Format \"%d\\n\" has 1 specifiers but 2 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 26,
-      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,\"%d\\n\",&stack0xffffffd0,uVar4);",
-      "text": "Format string expects 1 args but got 2",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 43,
-      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,\"%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%s\\n",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 46,
-      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,\"%s\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 54,
-      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,\"%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"\\\"%[^\\\"]\\\",%f,%d,%d,%d\\n\" has 4 specifiers but 0 arguments after it",
-      "expected_args": 4,
-      "format_string": "\\\"%[^\\\"]\\\",%f,%d,%d,%d\\n",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 63,
-      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,\"\\\"%[^\\\"]\\\",%f,%d,%d,%d\\n\");",
-      "text": "Format string expects 4 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d,%d,%f\\n\" has 3 specifiers but 0 arguments after it",
-      "expected_args": 3,
-      "format_string": "%d,%d,%f\\n",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 68,
-      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,\"%d,%d,%f\\n\");",
-      "text": "Format string expects 3 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d,%f,%d\\n\" has 3 specifiers but 0 arguments after it",
-      "expected_args": 3,
-      "format_string": "%d,%f,%d\\n",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 73,
-      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,\"%d,%f,%d\\n\");",
-      "text": "Format string expects 3 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d,%f\\n\" has 2 specifiers but 0 arguments after it",
-      "expected_args": 2,
-      "format_string": "%d,%f\\n",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 81,
-      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,\"%d,%f\\n\");",
-      "text": "Format string expects 2 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 88,
-      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,\"%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d,%d,%d,%f,%f,%d\\n\" has 6 specifiers but 0 arguments after it",
-      "expected_args": 6,
-      "format_string": "%d,%d,%d,%f,%f,%d\\n",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 97,
-      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,\"%d,%d,%d,%f,%f,%d\\n\");",
-      "text": "Format string expects 6 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 109,
-      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,\"%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d,%d\\n\" has 2 specifiers but 0 arguments after it",
-      "expected_args": 2,
-      "format_string": "%d,%d\\n",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 115,
-      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,\"%d,%d\\n\");",
-      "text": "Format string expects 2 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 128,
-      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,\"%d\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 132,
-      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,\"%d\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 4,

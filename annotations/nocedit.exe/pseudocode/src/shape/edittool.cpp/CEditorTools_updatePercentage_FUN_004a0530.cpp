@@ -11,23 +11,21 @@ shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
           (CEditorTools *this_ptr,float progress_min,float progress_max)
 
 {
-  int y2;
   float fVar1;
   int iVar2;
   int iVar3;
   int iVar4;
   int y;
-  int y2_00;
+  int y2;
   int iVar5;
   int x1;
   int x2;
   double dVar6;
-  uint uStack_3c;
   double dVar7;
+  ulonglong local_40;
   float local_34;
-  uint local_28;
+  int local_24;
   int local_1c;
-  int local_18;
   
   if (g_WindowStackCount < 1) {
     g_CurrentFilename = "..\\shape\\edittool.cpp";
@@ -46,9 +44,8 @@ shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
   }
   dVar6 = crt_math_c_round_FUN_005fe6b0
                     ((double)(local_34 * (float)100 + (float)0.5));
-  y2 = (int)ROUND(dVar6);
   iVar4 = wincore_winrun_cpp_getTime_FUN_005f2dc0();
-  if ((local_1c != g_WindowStack[g_WindowStackCount + -1].progress_percentage) ||
+  if (((int)ROUND(dVar6) != g_WindowStack[g_WindowStackCount + -1].progress_percentage) ||
      (0x47ffff < iVar4 - g_WindowStack[g_WindowStackCount + -1].progress_timestamp)) {
     shape_edittool_cpp_CEditorTools_paintCurrentWindow_FUN_004a0f80(this_ptr);
     engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
@@ -58,11 +55,11 @@ shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
     iVar2 = g_ClipRight;
     iVar5 = g_ClipLeft;
     y = g_FontCharacterWidth * 2 + g_ClipTop;
-    y2_00 = g_FontCharacterWidth * 4 + g_ClipTop + -1;
+    y2 = g_FontCharacterWidth * 4 + g_ClipTop + -1;
     x2 = g_ClipRight + -1;
     x1 = g_ClipLeft + 1;
     engine_2d_c_fillRectWithBorder_FUN_00403200
-              (x1,y + 1,x2,y2_00,g_ProgressBarBackgroundColor,g_ProgressBarBorderColor);
+              (x1,y + 1,x2,y2,g_ProgressBarBackgroundColor,g_ProgressBarBorderColor);
     iVar3 = g_ActiveRenderColor;
     g_ActiveRenderColor = g_ProgressBarTextColor;
     engine_2d_c_drawHLine_FUN_00402ee0(iVar5,y,x2);
@@ -75,31 +72,31 @@ shape_edittool_cpp_CEditorTools_updatePercentage_FUN_004a0530
       if (x2 <= iVar5) {
         iVar5 = iVar2 + -2;
       }
-      engine_2d_c_fillRectColor_FUN_00403170(x1,y + 1,iVar5,y2,g_ProgressBarFillColor);
+      engine_2d_c_fillRectColor_FUN_00403170(x1,y + 1,iVar5,local_24,g_ProgressBarFillColor);
     }
-    if (0 < y2_00) {
-      fVar1 = (float)(iVar4 - g_WindowStack[g_WindowStackCount + -1].progress_start_time) *
+    if (0 < local_1c) {
+      fVar1 = (float)(local_24 - g_WindowStack[g_WindowStackCount + -1].progress_start_time) *
               (float)8.4771050347222196e-07;
       if ((float)5 < fVar1) {
-        dVar7 = (double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)(double)fVar1 >> 0x20),0x4a077d);
-        dVar6 = crt_math_c_round_FUN_005fe6b0
+        local_40 = (double)CONCAT44 /* combine 2-byte values */((int)((ulonglong)(double)fVar1 >> 0x20),0x4a077d);
+        dVar7 = crt_math_c_round_FUN_005fe6b0
                           ((double)(((progress_max - progress_min) * fVar1) / progress_min +
                                    (float)0.5));
-        local_18 = (int)ROUND(dVar6);
-        if (0 < local_18) {
-          dVar6 = crt_math_c_round_FUN_005fe6b0(dVar7 + 0.5);
+        local_1c = (int)ROUND(dVar7);
+        if (0 < local_1c) {
+          dVar7 = crt_math_c_round_FUN_005fe6b0(local_40 + 0.5);
           engine_3d_c_setRenderAlpha_FUN_00406d80(0xffff);
           engine_font_cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004cdf30
                     (g_EditorFont,g_ClipLeft,g_ClipRight,g_ClipBottom - g_FontCharacterWidth,
                      g_WindowStatusTextColor,-1,"%d:%02d elapsed, approximately %d:%02d remaining",
-                     (int)ROUND(dVar6) / 0x3c,local_28,local_18 / 0x3c,local_18);
+                     (int)ROUND(dVar7) / 0x3c,iVar4,local_1c / 0x3c,(int)ROUND(dVar6));
         }
       }
     }
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     iVar4 = g_WindowStackCount + -1;
-    g_WindowStack[iVar4].progress_percentage = local_18;
-    g_WindowStack[iVar4].progress_timestamp = y2;
+    g_WindowStack[iVar4].progress_percentage = local_1c;
+    g_WindowStack[iVar4].progress_timestamp = local_24;
   }
   return;
 }

@@ -10,82 +10,80 @@ long __cdecl
 crt_stdlib_c_strtol_internal_FUN_0060ec70(char *str,char **endptr,int base,int is_signed)
 
 {
-  int iVar1;
-  char unaff_BP;
-  void *pvVar2;
-  void *pvVar3;
-  char unaff_DI;
-  int iVar4;
-  int in_stack_00000014;
-  int in_stack_00000018;
-  char **ppcVar5;
-  char local_14;
+  char cVar1;
+  bool bVar2;
+  int iVar3;
+  char *pcVar4;
+  char *pcVar5;
+  void *pvVar6;
+  void *pvVar7;
   
+  pcVar4 = str;
   if (endptr != (char **)0x0) {
     *endptr = str;
   }
-  while ((g_CharacterClassificationTable[(byte)(*str + 1)] & 2U) != 0) {
-    str = (char *)((int)str + 1);
+  while ((g_CharacterClassificationTable[(byte)(*pcVar4 + 1)] & 2U) != 0) {
+    pcVar4 = pcVar4 + 1;
   }
-  local_14 = *str;
-  if ((local_14 == '+') || (local_14 == '-')) {
-    str = (char *)((int)str + 1);
+  cVar1 = *pcVar4;
+  if ((cVar1 == '+') || (cVar1 == '-')) {
+    pcVar4 = pcVar4 + 1;
   }
   if (base == 0) {
-    if ((*str != '0') || ((*(char *)((int)str + 1) != 'x' && (*(char *)((int)str + 1) != 'X')))) {
-      if (*str == '0') {
-        iVar4 = 8;
+    if ((*pcVar4 != '0') || ((pcVar4[1] != 'x' && (pcVar4[1] != 'X')))) {
+      if (*pcVar4 == '0') {
+        base = 8;
       }
       else {
-        iVar4 = 10;
+        base = 10;
       }
       goto LAB_0060ed14;
     }
-    iVar4 = 0x10;
+    base = 0x10;
   }
   else {
     if ((base < 2) || (0x24 < base)) {
       crt_errno_c_setErrno_FUN_00602790(0xd);
       return 0;
     }
-    iVar4 = base;
     if (base != 0x10) goto LAB_0060ed14;
   }
-  if ((*str == '0') && ((*(char *)((int)str + 1) == 'x' || (*(char *)((int)str + 1) == 'X')))) {
-    str = (char *)((int)str + 2);
+  if ((*pcVar4 == '0') && ((pcVar4[1] == 'x' || (pcVar4[1] == 'X')))) {
+    pcVar4 = pcVar4 + 2;
   }
 LAB_0060ed14:
-  pvVar3 = (void *)0x0;
-  ppcVar5 = (char **)str;
-  while (iVar1 = crt_stdlib_c_charToDigit_FUN_0060ee18(*str), iVar1 < iVar4) {
-    if ((&PTR_crt_thread_c_exit_thread_FUN_0060fa58_00685598)[iVar4] < pvVar3) {
-      local_14 = '\x01';
+  bVar2 = false;
+  pcVar5 = pcVar4;
+  pvVar7 = (void *)0x0;
+  while (iVar3 = crt_stdlib_c_charToDigit_FUN_0060ee18(*pcVar5), iVar3 < base) {
+    if ((&PTR_crt_thread_c_exit_thread_FUN_0060fa58_00685598)[base] < pvVar7) {
+      bVar2 = true;
     }
-    pvVar2 = (void *)((int)pvVar3 * iVar4 + iVar1);
-    if (pvVar2 < pvVar3) {
-      local_14 = '\x01';
+    pvVar6 = (void *)((int)pvVar7 * base + iVar3);
+    if (pvVar6 < pvVar7) {
+      bVar2 = true;
     }
-    str = (char *)((int)str + 1);
-    pvVar3 = pvVar2;
+    pcVar5 = pcVar5 + 1;
+    pvVar7 = pvVar6;
   }
-  if ((char **)str == ppcVar5) {
-    str = (char *)endptr;
+  if (pcVar5 == pcVar4) {
+    pcVar5 = str;
   }
-  if (base != 0) {
-    *(char **)base = str;
+  if (endptr != (char **)0x0) {
+    *endptr = pcVar5;
   }
-  if ((((in_stack_00000014 != 1) || (pvVar3 < (void *)0x80000000)) ||
-      ((pvVar3 == (void *)0x80000000 && (unaff_BP == '-')))) && (local_14 == '\0')) {
-    if (unaff_BP == '-') {
-      pvVar3 = (void *)-(int)pvVar3;
+  if ((((is_signed != 1) || (pvVar7 < (void *)0x80000000)) ||
+      ((pvVar7 == (void *)0x80000000 && (cVar1 == '-')))) && (!bVar2)) {
+    if (cVar1 == '-') {
+      pvVar7 = (void *)-(int)pvVar7;
     }
-    return (long)pvVar3;
+    return (long)pvVar7;
   }
   crt_errno_c_setErrno_FUN_00602790(0xe);
-  if (in_stack_00000018 == 0) {
+  if (is_signed == 0) {
     return -1;
   }
-  if (unaff_DI == '-') {
+  if (cVar1 == '-') {
     return -0x80000000;
   }
   return 0x7fffffff;

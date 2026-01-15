@@ -12,18 +12,16 @@ core_setdir_cpp_CDemonSet_saveThumbs_FUN_00575bc0(CDemonSet *this_ptr,FILE *file
 {
   int iVar1;
   int iVar2;
-  BADSPACEBASE *in_ESP;
+  uint unaff_ESI;
   uint uVar3;
-  float unaff_EDI;
-  FILE *in_stack_0000000c;
-  CVector3f CStack_58;
-  CVector3f CStack_4c;
-  CVector3f CStack_40;
-  CVector3f CStack_34;
-  CVector3f CStack_28;
-  CVector3f CStack_1c;
-  float fStack_10;
-  float fStack_c;
+  uint unaff_EDI;
+  CVector3f CStack_5c;
+  CVector3f CStack_50;
+  CVector3f CStack_44;
+  CVector3f CStack_38;
+  CVector3f CStack_2c;
+  CVector3f CStack_20;
+  CVector3f CStack_14;
   
   core_setdir_cpp_CDemonSet_freeThumbs_FUN_00575df0(this_ptr);
   iVar2 = 0;
@@ -36,69 +34,68 @@ LAB_00575bd4:
     core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00574910
               (g_CZThumbPool + iVar2 * 6,&this_ptr->cameras[iVar2].position,
                &this_ptr->cameras[iVar2].orientation,0x40,0x30,
-               this_ptr->cameras[iVar2].projection_scale * (float)0.055555555555555601,in_stack_0000000c)
-    ;
+               this_ptr->cameras[iVar2].projection_scale * (float)0.055555555555555601,file_handle);
     iVar2 = iVar2 + 1;
-    unaff_EDI = CStack_58.x;
   }
   uVar3 = 0;
   do {
     switch(uVar3) {
     default:
-      CStack_58.z = 0.0;
-      CStack_58.y = 0.0;
-      CStack_58.x = 0.0;
-      if (&CStack_28 != &CStack_58) {
-        CStack_28.y = 0.0;
+      CStack_5c.z = 0.0;
+      CStack_5c.y = 0.0;
+      CStack_5c.x = 0.0;
+      if (&CStack_2c != &CStack_5c) {
+        CStack_2c.y = 0.0;
 LAB_00575c20:
-        CStack_28.x = 0.0;
+        CStack_2c.x = 0.0;
 LAB_00575c24:
-        CStack_28.z = 0.0;
+        CStack_2c.z = 0.0;
       }
       break;
     case 1:
-      fStack_10 = 0.0;
-      fStack_c = 3.1415927;
-      if (&CStack_28 != (CVector3f *)&fStack_10) {
-        CStack_28.y = 3.1415927;
+      CStack_14.z = 0.0;
+      CStack_14.x = 0.0;
+      CStack_14.y = 3.1415927;
+      if (&CStack_2c != &CStack_14) {
+        CStack_2c.y = 3.1415927;
         goto LAB_00575c20;
       }
       break;
     case 2:
-      CStack_4c.z = 0.0;
-      CStack_4c.x = 0.0;
-      CStack_4c.y = 1.5707964;
-      if (&CStack_28 != &CStack_4c) {
-        CStack_28.y = 1.5707964;
+      CStack_50.z = 0.0;
+      CStack_50.x = 0.0;
+      CStack_50.y = 1.5707964;
+      if (&CStack_2c != &CStack_50) {
+        CStack_2c.y = 1.5707964;
         goto LAB_00575c20;
       }
       break;
     case 3:
-      CStack_40.z = 0.0;
-      CStack_40.x = 0.0;
-      CStack_40.y = -1.5707964;
-      if (&CStack_28 != &CStack_40) {
-        CStack_28.y = -1.5707964;
+      CStack_44.z = 0.0;
+      CStack_44.x = 0.0;
+      CStack_44.y = -1.5707964;
+      if (&CStack_2c != &CStack_44) {
+        CStack_2c.y = -1.5707964;
         goto LAB_00575c20;
       }
       break;
     case 4:
-      CStack_1c.z = 0.0;
-      CStack_1c.y = 0.0;
-      CStack_1c.x = -1.5707964;
-      if (&CStack_28 != &CStack_1c) {
-        CStack_28.x = -1.5707964;
-        CStack_28.y = 0.0;
+      CStack_20.z = 0.0;
+      CStack_20.y = 0.0;
+      CStack_20.x = -1.5707964;
+      if (&CStack_2c != &CStack_20) {
+        CStack_2c.x = -1.5707964;
+        CStack_2c.y = 0.0;
         goto LAB_00575c24;
       }
       break;
     case 5:
-      CStack_34.x = 1.5707964;
-      CStack_34.z = 0.0;
-      CStack_34.y = 0.0;
-      if (&CStack_28 != &CStack_34) {
-        CStack_28.x = 1.5707964;
-        CStack_28.y = 0.0;
+      CStack_38.x = 1.5707964;
+      CStack_38.z = 0.0;
+      CStack_38.y = 0.0;
+      if (&CStack_2c != &CStack_38) {
+        CStack_2c.x = 1.5707964;
+        CStack_2c.y = 0.0;
         goto LAB_00575c24;
       }
     }
@@ -106,17 +103,16 @@ LAB_00575c24:
       iVar1 = iVar2 * 6 + uVar3;
       uVar3 = uVar3 + 1;
       core_setdir_cpp_CZThumb_saveZBufferTable_FUN_00574910
-                (g_CZThumbPool + iVar1,&this_ptr->cameras[iVar2].position,&CStack_28,0x40,0x40,1.0,
-                 in_stack_0000000c);
+                (g_CZThumbPool + iVar1,&this_ptr->cameras[iVar2].position,&CStack_2c,0x40,0x40,1.0,
+                 file_handle);
       if (5 < (int)uVar3) {
         iVar2 = iVar2 + 1;
-        unaff_EDI = CStack_58.x;
         goto LAB_00575bd4;
       }
       if (uVar3 < 6) break;
       g_CurrentFilename = "..\\core\\setdir.cpp";
       g_CurrentLineNumber = 0x39d;
-      core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze",unaff_EDI);
+      core_main_c_displayErrorAndQuit_FUN_00506f10("Hell froze",unaff_ESI,unaff_EDI);
     }
   } while( true );
 }

@@ -13,10 +13,8 @@ void core_script_cpp_FUN_005645d0(void)
 {
   int iVar1;
   int x1;
-  BADSPACEBASE *in_ESP;
   int y;
-  CDemonRenderer *in_stack_fffffe18;
-  CDemonRenderer *in_stack_fffffe28;
+  CDemonRenderer *in_stack_fffffdfc;
   
   core_script_cpp_FUN_00564500();
   engine_matrix_c_pushViewport_FUN_0050e320
@@ -46,13 +44,13 @@ void core_script_cpp_FUN_005645d0(void)
       engine_2d_c_drawVLine_FUN_00402ff0(x1,iVar1,y);
     }
   }
-  engine_matrix_c_popViewport_FUN_0050e480(in_stack_fffffe18);
+  engine_matrix_c_popViewport_FUN_0050e480(in_stack_fffffdfc);
   crt_stdio_c_sprintf_FUN_005fdbd0
-            (&stack0xfffffe1c,"Ln %d, Col %d",DAT_0310fd48 + 1,DAT_0310fd44 + 1);
+            (&stack0xfffffdfc,"Ln %d, Col %d",DAT_0310fd48 + 1,DAT_0310fd44 + 1);
   engine_font_cpp_CBitFont_drawTextRight_FUN_004cdce0
-            (DAT_03114200,DAT_031141f8,DAT_031141f4,0xff,-1,&stack0xfffffe20);
+            (DAT_03114200,DAT_031141f8,DAT_031141f4,0xff,-1,&stack0xfffffdfc);
   engine_font_cpp_CBitFont_drawTextRight_FUN_004cdbf0
             (DAT_03114200,DAT_031141f0,DAT_031141f4,0xff,-1,0x310fdc0);
-  engine_matrix_c_popViewport_FUN_0050e480(in_stack_fffffe28);
+  engine_matrix_c_popViewport_FUN_0050e480(in_stack_fffffdfc);
   return;
 }

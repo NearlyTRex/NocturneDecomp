@@ -1,20 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 144,
-    "complexity_score": 202,
+    "complexity_score": 152,
     "cross_reference_count": 8,
     "function_call_count": 1,
     "global_count": 1,
-    "pseudocode_lines": 57,
-    "suspect_count": 12,
+    "pseudocode_lines": 62,
+    "suspect_count": 8,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
-      "register_param",
-      "stack_ref",
-      "unaffected_reg"
+      "pointer_cast"
     ],
-    "total_lines": 201
+    "total_lines": 206
   },
   "cross_references": [
     {
@@ -187,67 +184,39 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 12,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
+      "description": "Complex pointer cast",
+      "line": 17,
+      "match": "(CBoundingBox3D *)((int)",
+      "text": "this_ptr_00 = (CBoundingBox3D *)((int)&model_ptr->frame_bounds->x + (int)local_28.max.x);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Inferred register parameter",
-      "line": 12,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
+      "description": "Complex pointer cast",
+      "line": 51,
+      "match": "(CBoundingBox3D *)((int)",
+      "text": "if ((CBoundingBox3D *)((int)local_28.max.z + 0xc) != this_ptr_00) {",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 13,
-      "match": "unaff_EBP",
-      "text": "int unaff_EBP;",
-      "type": "unaffected_reg"
+      "description": "Complex pointer cast",
+      "line": 52,
+      "match": "(CVector3f *)((int)",
+      "text": "((CVector3f *)((int)local_28.max.z + 0xc))->x = (this_ptr_00->min).x;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 26,
-      "match": "&stack0xffffffd8",
-      "text": "if (this_ptr != (CBoundingBox3D *)&stack0xffffffd8) {",
-      "type": "stack_ref"
+      "description": "Complex pointer cast",
+      "line": 53,
+      "match": "(CVector3f *)((int)",
+      "text": "((CVector3f *)((int)local_28.max.z + 0xc))->y = (this_ptr_00->min).y;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 31,
-      "match": "&stack0xffffffd8",
-      "text": "if (&this_ptr->max != (CVector3f *)&stack0xffffffd8) {",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 40,
-      "match": "&stack0xffffffd8",
-      "text": "core_box_cpp_CBoundingBox3D_expand_FUN_00420240(this_ptr,(CVector3f *)&stack0xffffffd8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 56,
-      "match": "unaff_EBP",
-      "text": "unaff_EBP = unaff_EBP + 1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 56,
-      "match": "unaff_EBP",
-      "text": "unaff_EBP = unaff_EBP + 1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 57,
-      "match": "unaff_EBP",
-      "text": "} while (unaff_EBP < model_ptr->frame_count);",
-      "type": "unaffected_reg"
+      "description": "Complex pointer cast",
+      "line": 54,
+      "match": "(CVector3f *)((int)",
+      "text": "((CVector3f *)((int)local_28.max.z + 0xc))->z = (this_ptr_00->min).z;",
+      "type": "pointer_cast"
     },
     {
       "add_esp_value": 8,

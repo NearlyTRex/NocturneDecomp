@@ -20,7 +20,7 @@ CCurtain * __cdecl core_curtain_cpp_FUN_0044ba30(CCurtain *this_ptr,uint d1,uint
   }
   iVar1 = core_curtain_cpp_FUN_0044bad0();
   ptr = (CCurtain *)core_actor_cpp_CDemonActor_dtor_FUN_00408a30((CDemonActor *)(iVar1 + -0x208),1);
-  if ((d3 & 2) == 0) {
+  if ((d1 & 2) == 0) {
     return ptr;
   }
   shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);

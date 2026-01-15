@@ -1,19 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 338,
-    "complexity_score": 389,
+    "complexity_score": 195,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 6,
-    "pseudocode_lines": 139,
-    "suspect_count": 23,
+    "pseudocode_lines": 130,
+    "suspect_count": 6,
     "suspect_types": [
-      "badspacebase",
-      "pointer_cast",
-      "register_param",
-      "unknown_field"
+      "pointer_cast"
     ],
-    "total_lines": 477
+    "total_lines": 468
   },
   "cross_references": [
     {
@@ -457,165 +454,46 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 16,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 16,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 33,
+      "line": 27,
       "match": "(float *)((int)",
       "text": "fVar2 = (triangle->vertex1).z - *(float *)((int)x + 8);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 34,
-      "match": "._8_4_",
-      "text": "local_60._8_4_ = (triangle->vertex2).x - *(float *)x;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 36,
+      "line": 30,
       "match": "(float *)((int)",
-      "text": "local_50 = (triangle->vertex2).z - *(float *)((int)x + 8);",
+      "text": "local_58.z = (triangle->vertex2).z - *(float *)((int)x + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 39,
+      "line": 33,
       "match": "(float *)((int)",
       "text": "local_70.z = (triangle->vertex3).z - *(float *)((int)x + 8);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 45,
-      "match": "._8_4_",
-      "text": "local_4c.x = (float)local_60._8_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 53,
-      "match": "._8_4_",
-      "text": "local_60._8_4_ = fVar1;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 63,
-      "match": "._8_4_",
-      "text": "uVar3 = local_60._8_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 65,
-      "match": "._8_4_",
-      "text": "local_34[0].x = (float)local_60._8_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 69,
-      "match": "._8_4_",
-      "text": "local_60._8_4_ = local_70.x;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 79,
+      "line": 73,
       "match": "(float *)((int)",
       "text": "if (local_70.y <= *(float *)((int)x + 4)) {",
       "type": "pointer_cast"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 85,
-      "match": "._8_4_",
-      "text": "local_4c.x = (float)local_60._8_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 90,
-      "match": "._8_4_",
-      "text": "local_60._8_4_ = fVar2;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 117,
-      "match": "._0_4_",
-      "text": "local_60._0_4_ = (triangle->normal).x * fVar9 + *(float *)x;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 118,
+      "line": 110,
       "match": "(float *)((int)",
-      "text": "local_60._8_4_ = fVar9 * (triangle->normal).z + *(float *)((int)x + 8);",
+      "text": "local_64.z = fVar9 * (triangle->normal).z + *(float *)((int)x + 8);",
       "type": "pointer_cast"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 118,
-      "match": "._8_4_",
-      "text": "local_60._8_4_ = fVar9 * (triangle->normal).z + *(float *)((int)x + 8);",
-      "type": "unknown_field"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 119,
+      "line": 111,
       "match": "(float *)((int)",
-      "text": "local_60._4_4_ = *(float *)((int)x + 4);",
+      "text": "local_64.y = *(float *)((int)x + 4);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 119,
-      "match": "._4_4_",
-      "text": "local_60._4_4_ = *(float *)((int)x + 4);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 123,
-      "match": "._0_4_",
-      "text": "(local_60._0_4_ = fVar9 * g_FloorRayDirection.y + (float)local_60._0_4_,",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 123,
-      "match": "._0_4_",
-      "text": "(local_60._0_4_ = fVar9 * g_FloorRayDirection.y + (float)local_60._0_4_,",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 124,
-      "match": "._0_4_",
-      "text": "*out_height < (float)local_60._0_4_)) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 125,
-      "match": "._0_4_",
-      "text": "*out_height = (float)local_60._0_4_;",
-      "type": "unknown_field"
     }
   ]
 }

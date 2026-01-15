@@ -10,7 +10,6 @@ void __cdecl core_actor_cpp_serializeVector_FUN_0040b340(CVector3f *vector_ptr,c
 
 {
   int iVar1;
-  char *in_stack_0000000c;
   
   if (g_ActorReadingMode == 1) {
     iVar1 = crt_stdio_c_fscanf_FUN_005fe7c0(g_ActorDataFile,"%f,%f,%f");
@@ -23,6 +22,6 @@ void __cdecl core_actor_cpp_serializeVector_FUN_0040b340(CVector3f *vector_ptr,c
               (g_ActorDataFile,"%s%g,%g,%g",g_PropertyNamePrefix,(double)vector_ptr->x,
                (double)vector_ptr->y,(double)vector_ptr->z);
   }
-  core_actor_cpp_serializeDescription_FUN_0040b290("3D vector",in_stack_0000000c);
+  core_actor_cpp_serializeDescription_FUN_0040b290("3D vector",property_name);
   return;
 }

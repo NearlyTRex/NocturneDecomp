@@ -1,21 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 1063,
-    "complexity_score": 1453,
+    "complexity_score": 1553,
     "cross_reference_count": 2,
     "function_call_count": 13,
     "global_count": 15,
-    "pseudocode_lines": 573,
-    "suspect_count": 85,
+    "pseudocode_lines": 588,
+    "suspect_count": 94,
     "suspect_types": [
-      "badspacebase",
+      "format_string_mismatch",
       "pointer_cast",
-      "register_param",
       "stack_param",
       "suspect_float",
       "unaffected_reg"
     ],
-    "total_lines": 1636
+    "total_lines": 1651
   },
   "cross_references": [
     {
@@ -2315,178 +2314,171 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 15,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 15,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 16,
+      "line": 14,
       "match": "unaff_ESI",
       "text": "float *unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 23,
+      "line": 21,
       "match": "in_stack_00000004",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
+      "line": 22,
       "match": "in_stack_00000008",
       "text": "CDemonActor *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 25,
+      "line": 23,
       "match": "in_stack_0000000c",
       "text": "float in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 26,
+      "line": 24,
       "match": "in_stack_fffff22a",
-      "text": "CMatrix3x4f *in_stack_fffff22a;",
+      "text": "char *in_stack_fffff22a;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 27,
+      "line": 25,
       "match": "in_stack_fffff22e",
-      "text": "CMatrix3x4f *in_stack_fffff22e;",
+      "text": "CDemonActor *in_stack_fffff22e;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 136,
+      "line": 26,
+      "match": "in_stack_fffff232",
+      "text": "float in_stack_fffff232;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 132,
       "match": "in_stack_00000004",
       "text": "iVar1 = *(int *)(in_stack_00000004 + 0x24ac + (int)in_stack_0000000c * 0x44);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 136,
+      "line": 132,
       "match": "in_stack_0000000c",
       "text": "iVar1 = *(int *)(in_stack_00000004 + 0x24ac + (int)in_stack_0000000c * 0x44);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 137,
+      "line": 133,
       "match": "in_stack_00000004",
-      "text": "iVar7 = in_stack_00000004 + 0xfd8;",
+      "text": "iVar6 = in_stack_00000004 + 0xfd8;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 139,
+      "line": 135,
       "match": "in_stack_00000008",
       "text": "(in_stack_00000008,g_CWeaponClassInfo.name_hash);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 141,
+      "line": 137,
       "match": "(CDemonActor *)((int)",
       "text": "fVar2 = (((CDemonActor *)((int)local_180.x + 0x2b0))->orient).pitch;",
       "type": "pointer_cast"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 143,
+      "line": 139,
       "match": "1.4013e-45",
       "text": "if (fVar2 == 1.4013e-45) {",
       "type": "suspect_float"
     },
     {
       "description": "Complex pointer cast",
-      "line": 167,
+      "line": 163,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar13 * -2 + 1) * 4);",
+      "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar12 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 169,
+      "line": 166,
       "match": "in_stack_fffff22a",
-      "text": "core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_a8c,in_stack_fffff22a,in_stack_fffff22e);",
+      "text": "(&local_a8c,(CMatrix3x4f *)in_stack_fffff22a,(CMatrix3x4f *)in_stack_fffff22e);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 169,
+      "line": 166,
       "match": "in_stack_fffff22e",
-      "text": "core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_a8c,in_stack_fffff22a,in_stack_fffff22e);",
+      "text": "(&local_a8c,(CMatrix3x4f *)in_stack_fffff22a,(CMatrix3x4f *)in_stack_fffff22e);",
       "type": "stack_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 172,
+      "line": 169,
       "match": "2.8026e-45",
       "text": "else if (fVar2 == 2.8026e-45) {",
       "type": "suspect_float"
     },
     {
       "description": "Complex pointer cast",
-      "line": 196,
+      "line": 194,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar13 * -2 + 1) * 4);",
+      "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar12 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 198,
+      "line": 197,
       "match": "in_stack_fffff22a",
-      "text": "core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_b1c,in_stack_fffff22a,in_stack_fffff22e);",
+      "text": "(&local_b1c,(CMatrix3x4f *)in_stack_fffff22a,(CMatrix3x4f *)in_stack_fffff22e);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 198,
+      "line": 197,
       "match": "in_stack_fffff22e",
-      "text": "core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_b1c,in_stack_fffff22a,in_stack_fffff22e);",
+      "text": "(&local_b1c,(CMatrix3x4f *)in_stack_fffff22a,(CMatrix3x4f *)in_stack_fffff22e);",
       "type": "stack_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 201,
+      "line": 200,
       "match": "5.60519e-45",
       "text": "else if (fVar2 == 5.60519e-45) {",
       "type": "suspect_float"
     },
     {
       "description": "Complex pointer cast",
-      "line": 225,
+      "line": 224,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar13 * -2 + 1) * 4);",
+      "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar12 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 227,
       "match": "in_stack_fffff22a",
-      "text": "core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_63c,in_stack_fffff22a,in_stack_fffff22e);",
+      "text": "(&local_63c,(CMatrix3x4f *)in_stack_fffff22a,(CMatrix3x4f *)in_stack_fffff22e);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 227,
       "match": "in_stack_fffff22e",
-      "text": "core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_63c,in_stack_fffff22a,in_stack_fffff22e);",
+      "text": "(&local_63c,(CMatrix3x4f *)in_stack_fffff22a,(CMatrix3x4f *)in_stack_fffff22e);",
       "type": "stack_param"
     },
     {
@@ -2498,416 +2490,490 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 239,
+      "line": 240,
       "match": "in_stack_fffff22a",
-      "text": "core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_7ec,pCVar8,in_stack_fffff22a);",
+      "text": "(&local_7ec,pCVar7,(CMatrix3x4f *)in_stack_fffff22a);",
       "type": "stack_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 242,
+      "line": 243,
       "match": "7.00649e-45",
       "text": "else if (fVar2 == 7.00649e-45) {",
       "type": "suspect_float"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 251,
+      "line": 253,
       "match": "in_stack_fffff22a",
-      "text": "core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_33c,pCVar8,in_stack_fffff22a);",
+      "text": "(&local_33c,pCVar7,(CMatrix3x4f *)in_stack_fffff22a);",
       "type": "stack_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 254,
+      "line": 256,
       "match": "9.80909e-45",
       "text": "else if (fVar2 == 9.80909e-45) {",
       "type": "suspect_float"
     },
     {
       "description": "Complex pointer cast",
-      "line": 278,
+      "line": 280,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar13 * -2 + 1) * 4);",
+      "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar12 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 280,
+      "line": 283,
       "match": "in_stack_fffff22a",
-      "text": "core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_8ac,in_stack_fffff22a,in_stack_fffff22e);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 280,
-      "match": "in_stack_fffff22e",
-      "text": "core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_8ac,in_stack_fffff22a,in_stack_fffff22e);",
+      "text": "(&local_8ac,(CMatrix3x4f *)in_stack_fffff22a,(CMatrix3x4f *)in_stack_fffff22e);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 283,
+      "match": "in_stack_fffff22e",
+      "text": "(&local_8ac,(CMatrix3x4f *)in_stack_fffff22a,(CMatrix3x4f *)in_stack_fffff22e);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 286,
       "match": "in_stack_0000000c",
       "text": "else if (in_stack_0000000c == 0.0) {",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 300,
+      "line": 303,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar13 * -2 + 1) * 4);",
+      "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar12 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 302,
+      "line": 306,
       "match": "in_stack_fffff22a",
-      "text": "core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_c9c,in_stack_fffff22a,in_stack_fffff22e);",
+      "text": "(&local_c9c,(CMatrix3x4f *)in_stack_fffff22a,(CMatrix3x4f *)in_stack_fffff22e);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 302,
+      "line": 306,
       "match": "in_stack_fffff22e",
-      "text": "core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_c9c,in_stack_fffff22a,in_stack_fffff22e);",
+      "text": "(&local_c9c,(CMatrix3x4f *)in_stack_fffff22a,(CMatrix3x4f *)in_stack_fffff22e);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 308,
+      "line": 312,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar13 * -2 + 1) * 4);",
+      "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar12 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 310,
+      "line": 315,
       "match": "in_stack_fffff22a",
-      "text": "core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_6fc,in_stack_fffff22a,in_stack_fffff22e);",
+      "text": "(&local_6fc,(CMatrix3x4f *)in_stack_fffff22a,(CMatrix3x4f *)in_stack_fffff22e);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 310,
+      "line": 315,
       "match": "in_stack_fffff22e",
-      "text": "core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_6fc,in_stack_fffff22a,in_stack_fffff22e);",
+      "text": "(&local_6fc,(CMatrix3x4f *)in_stack_fffff22a,(CMatrix3x4f *)in_stack_fffff22e);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 316,
+      "line": 321,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar13 * -2 + 1) * 4);",
+      "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar12 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 318,
+      "line": 324,
       "match": "in_stack_fffff22a",
-      "text": "core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_69c,in_stack_fffff22a,in_stack_fffff22e);",
+      "text": "(&local_69c,(CMatrix3x4f *)in_stack_fffff22a,(CMatrix3x4f *)in_stack_fffff22e);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 318,
+      "line": 324,
       "match": "in_stack_fffff22e",
-      "text": "core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_69c,in_stack_fffff22a,in_stack_fffff22e);",
+      "text": "(&local_69c,(CMatrix3x4f *)in_stack_fffff22a,(CMatrix3x4f *)in_stack_fffff22e);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 338,
+      "line": 344,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar13 * -2 + 1) * 4);",
+      "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar12 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 340,
+      "line": 347,
       "match": "in_stack_fffff22a",
-      "text": "core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_abc,in_stack_fffff22a,in_stack_fffff22e);",
+      "text": "(&local_abc,(CMatrix3x4f *)in_stack_fffff22a,(CMatrix3x4f *)in_stack_fffff22e);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 340,
+      "line": 347,
       "match": "in_stack_fffff22e",
-      "text": "core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_abc,in_stack_fffff22a,in_stack_fffff22e);",
+      "text": "(&local_abc,(CMatrix3x4f *)in_stack_fffff22a,(CMatrix3x4f *)in_stack_fffff22e);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 346,
+      "line": 353,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar13 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 348,
-      "match": "in_stack_fffff22a",
-      "text": "core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_4ec,in_stack_fffff22a,in_stack_fffff22e);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 348,
-      "match": "in_stack_fffff22e",
-      "text": "core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_4ec,in_stack_fffff22a,in_stack_fffff22e);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 354,
-      "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar13 * -2 + 1) * 4);",
+      "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar12 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 356,
       "match": "in_stack_fffff22a",
-      "text": "core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_4bc,in_stack_fffff22a,in_stack_fffff22e);",
+      "text": "(&local_4ec,(CMatrix3x4f *)in_stack_fffff22a,(CMatrix3x4f *)in_stack_fffff22e);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 356,
       "match": "in_stack_fffff22e",
-      "text": "core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_4bc,in_stack_fffff22a,in_stack_fffff22e);",
+      "text": "(&local_4ec,(CMatrix3x4f *)in_stack_fffff22a,(CMatrix3x4f *)in_stack_fffff22e);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 362,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar12 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 365,
+      "match": "in_stack_fffff22a",
+      "text": "(&local_4bc,(CMatrix3x4f *)in_stack_fffff22a,(CMatrix3x4f *)in_stack_fffff22e);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 368,
+      "line": 365,
+      "match": "in_stack_fffff22e",
+      "text": "(&local_4bc,(CMatrix3x4f *)in_stack_fffff22a,(CMatrix3x4f *)in_stack_fffff22e);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 377,
       "match": "in_stack_00000004",
       "text": "if (*(int *)(in_stack_00000004 + 0x2a8c) == 0xe) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 380,
+      "line": 388,
       "match": "in_stack_00000008",
-      "text": "(*in_stack_00000008->vtable->getBoundingBox)(in_stack_00000008,out_box);",
+      "text": "(*in_stack_00000008->vtable->getBoundingBox)(in_stack_00000008,&local_204);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 380,
+      "line": 388,
       "match": "in_stack_00000008",
-      "text": "(*in_stack_00000008->vtable->getBoundingBox)(in_stack_00000008,out_box);",
+      "text": "(*in_stack_00000008->vtable->getBoundingBox)(in_stack_00000008,&local_204);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 389,
+      "line": 397,
       "match": "in_stack_00000004",
       "text": "if (*(int *)(in_stack_00000004 + 0x1fc88) != 0) {",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 397,
+      "line": 404,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar13 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 405,
-      "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar13 * -2 + 1) * 4);",
+      "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar12 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 414,
+      "line": 407,
+      "match": "in_stack_fffff22a",
+      "text": "(&local_96c,(CMatrix3x4f *)in_stack_fffff22a,(CMatrix3x4f *)in_stack_fffff22e);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 407,
+      "match": "in_stack_fffff22e",
+      "text": "(&local_96c,(CMatrix3x4f *)in_stack_fffff22a,(CMatrix3x4f *)in_stack_fffff22e);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 413,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar12 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 422,
       "match": "in_stack_00000008",
       "text": "(in_stack_00000008,g_CLightActorClassInfo.name_hash);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 416,
+      "line": 424,
       "match": "in_stack_00000008",
       "text": "(*in_stack_00000008->vtable->getBoundingBox)(in_stack_00000008,&local_21c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 416,
+      "line": 424,
       "match": "in_stack_00000008",
       "text": "(*in_stack_00000008->vtable->getBoundingBox)(in_stack_00000008,&local_21c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 431,
+      "line": 439,
       "match": "in_stack_0000000c",
       "text": "if (in_stack_0000000c == 0.0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 433,
-      "match": "in_stack_fffff22a",
-      "text": "((CMatrix3x4f *)0xbfc90fdb,(float)in_stack_fffff22a);",
+      "line": 440,
+      "match": "in_stack_fffff22e",
+      "text": "in_stack_fffff22e = (CDemonActor *)0xbfc90fdb;",
       "type": "stack_param"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 440,
-      "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar13 * -2 + 1) * 4);",
-      "type": "pointer_cast"
+      "description": "Unresolved stack parameter",
+      "line": 441,
+      "match": "in_stack_fffff22a",
+      "text": "in_stack_fffff22a = (char *)0x5c14f9;",
+      "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 444,
+      "line": 442,
+      "match": "in_stack_fffff232",
+      "text": "core_xform_cpp_buildRotationY_FUN_005f6cc0((CMatrix3x4f *)0xbfc90fdb,in_stack_fffff232);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 453,
       "match": "in_stack_0000000c",
       "text": "if (in_stack_0000000c == 1.4013e-45) {",
       "type": "stack_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 444,
+      "line": 453,
       "match": "1.4013e-45",
       "text": "if (in_stack_0000000c == 1.4013e-45) {",
       "type": "suspect_float"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 446,
-      "match": "in_stack_fffff22a",
-      "text": "((CMatrix3x4f *)0x3fc90fdb,(float)in_stack_fffff22a);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 453,
-      "match": "in_stack_00000004",
-      "text": "(&local_45c,(CMatrix3x4f *)(iVar1 * 0x30 + in_stack_00000004 + 0xfd8),",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 454,
-      "match": "in_stack_fffff22a",
-      "text": "in_stack_fffff22a);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 460,
-      "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar13 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 482,
-      "match": "in_stack_00000008",
-      "text": "iVar7 = (*in_stack_00000008->vtable->getAllowedMeleeAttackTypes)(in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 482,
-      "match": "in_stack_00000008",
-      "text": "iVar7 = (*in_stack_00000008->vtable->getAllowedMeleeAttackTypes)(in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 500,
-      "match": "in_stack_00000004",
-      "text": "pCVar4 = (CMatrix3x4f *)(iVar1 * 0x30 + in_stack_00000004 + 0xfd8);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 508,
-      "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar13 * -2 + 1) * 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 510,
       "match": "in_stack_fffff22e",
-      "text": "core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_99c,pCVar4,in_stack_fffff22e);",
+      "text": "in_stack_fffff22e = (CDemonActor *)0x3fc90fdb;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 455,
+      "match": "in_stack_fffff22a",
+      "text": "in_stack_fffff22a = (char *)0x5c15b5;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 456,
+      "match": "in_stack_fffff232",
+      "text": "core_xform_cpp_buildRotationY_FUN_005f6cc0((CMatrix3x4f *)0x3fc90fdb,in_stack_fffff232);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 460,
+      "match": "in_stack_fffff22e",
+      "text": "in_stack_fffff22e = (CDemonActor *)local_45c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 461,
+      "match": "in_stack_fffff22a",
+      "text": "in_stack_fffff22a = (char *)0x5c15d1;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 462,
+      "match": "in_stack_fffff22e",
+      "text": "core_xform_cpp_setIdentityMatrix3x4_FUN_005f5100((CMatrix3x4f *)in_stack_fffff22e);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 466,
+      "match": "in_stack_00000004",
+      "text": "(CMatrix3x4f *)(iVar1 * 0x30 + in_stack_00000004 + 0xfd8),",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 467,
+      "match": "in_stack_fffff22a",
+      "text": "(CMatrix3x4f *)in_stack_fffff22a);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 486,
+      "match": "in_stack_fffff22a",
+      "text": "in_stack_fffff22a = \"Don't know how to carry light %s\";",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 490,
+      "match": "in_stack_fffff22e",
+      "text": "in_stack_fffff22e = pCVar3;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 497,
+      "match": "in_stack_00000008",
+      "text": "iVar6 = (*in_stack_00000008->vtable->getAllowedMeleeAttackTypes)(in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 497,
+      "match": "in_stack_00000008",
+      "text": "iVar6 = (*in_stack_00000008->vtable->getAllowedMeleeAttackTypes)(in_stack_00000008);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 516,
-      "match": "(CVector3f *)((int)",
-      "text": "pCVar5 = (CVector3f *)((int)pCVar5 + ((uint)bVar13 * -2 + 1) * 4);",
+      "line": 522,
+      "match": "(CMatrix3x4f *)((int)",
+      "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar12 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 525,
+      "match": "in_stack_fffff22a",
+      "text": "(&local_99c,(CMatrix3x4f *)in_stack_fffff22a,(CMatrix3x4f *)in_stack_fffff22e);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 525,
+      "match": "in_stack_fffff22e",
+      "text": "(&local_99c,(CMatrix3x4f *)in_stack_fffff22a,(CMatrix3x4f *)in_stack_fffff22e);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 531,
+      "match": "(CVector3f *)((int)",
+      "text": "pCVar4 = (CVector3f *)((int)pCVar4 + ((uint)bVar12 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 540,
       "match": "in_stack_0000000c",
       "text": "if (in_stack_0000000c == 0.0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 526,
+      "line": 541,
       "match": "in_stack_0000000c",
       "text": "local_b4.y = in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 527,
+      "line": 542,
       "match": "in_stack_0000000c",
       "text": "local_b4.z = in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 535,
+      "line": 550,
       "match": "in_stack_0000000c",
       "text": "else if (in_stack_0000000c == 1.4013e-45) {",
       "type": "stack_param"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 535,
+      "line": 550,
       "match": "1.4013e-45",
       "text": "else if (in_stack_0000000c == 1.4013e-45) {",
       "type": "suspect_float"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 551,
+      "line": 566,
       "match": "in_stack_00000004",
       "text": "(&local_e4,(CMatrix3x4f *)(iVar1 * 0x30 + in_stack_00000004 + 0xfd8));",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 566,
+      "line": 581,
       "match": "(CMatrix3x4f *)((int)",
-      "text": "pCVar8 = (CMatrix3x4f *)((int)pCVar8 + ((uint)bVar13 * -2 + 1) * 4);",
+      "text": "pCVar7 = (CMatrix3x4f *)((int)pCVar7 + ((uint)bVar12 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unaffected register variable",
-      "line": 570,
+      "line": 585,
       "match": "unaff_ESI",
-      "text": "pfVar11 = unaff_ESI;",
+      "text": "pfVar10 = unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 576,
+      "line": 591,
       "match": "unaff_ESI",
       "text": "return unaff_ESI;",
       "type": "unaffected_reg"
+    },
+    {
+      "actual_args": 0,
+      "description": "Format \"Don't know how to carry light %s\" has 1 specifiers but 0 arguments after it",
+      "expected_args": 1,
+      "format_string": "Don't know how to carry light %s",
+      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
+      "line_number": 489,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Don't know how to carry light %s\");",
+      "text": "Format string expects 1 args but got 0",
+      "type": "format_string_mismatch"
     }
   ]
 }

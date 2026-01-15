@@ -12,8 +12,6 @@ cockpit_drawsurf_cpp_CDrawSurface_drawClippedLine_FUN_00487990
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
-  int in_stack_00000018;
   
   x1 = x1 + this_ptr->x;
   y1 = y1 + this_ptr->y;
@@ -25,7 +23,6 @@ cockpit_drawsurf_cpp_CDrawSurface_drawClippedLine_FUN_00487990
   if (iVar1 == 0) {
     return;
   }
-  cockpit_drawsurf_cpp_CDrawSurface_drawLineBresenham_FUN_00487ad0
-            (this_ptr,y1,x2,y2,in_stack_00000018);
+  cockpit_drawsurf_cpp_CDrawSurface_drawLineBresenham_FUN_00487ad0(this_ptr,x1,y1,x2,y2);
   return;
 }

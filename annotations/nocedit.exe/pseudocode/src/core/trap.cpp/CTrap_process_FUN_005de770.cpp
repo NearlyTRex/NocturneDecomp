@@ -11,7 +11,6 @@ void __cdecl core_trap_cpp_CTrap_process_FUN_005de770(CTrap *this_ptr)
 {
   CDemonActor *this_ptr_00;
   float unaff_EBX;
-  BADSPACEBASE *in_ESP;
   float unaff_EBP;
   int iVar1;
   float unaff_EDI;

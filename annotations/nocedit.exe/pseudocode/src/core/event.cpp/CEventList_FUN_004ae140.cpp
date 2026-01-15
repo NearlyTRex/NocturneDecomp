@@ -23,7 +23,6 @@ int __cdecl core_event_cpp_CEventList_FUN_004ae140(CEventList *this_ptr)
   CVector3f *pCVar11;
   uint uVar12;
   SIZE_T SVar13;
-  BADSPACEBASE *in_ESP;
   char *pcVar14;
   char *pcVar15;
   byte bVar16;

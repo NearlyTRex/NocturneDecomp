@@ -13,10 +13,9 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056d190(CDemonSet *this_ptr)
   int *piVar2;
   uint *puVar3;
   int iVar4;
-  BADSPACEBASE *in_ESP;
   int iVar5;
   int iVar6;
-  char acStack_104 [244];
+  char local_110 [256];
   
   iVar5 = 0;
   if (0 < g_ActiveLightCount) {
@@ -47,10 +46,9 @@ void __cdecl core_set_cpp_CDemonSet_FUN_0056d190(CDemonSet *this_ptr)
     } while (iVar4 < g_DynamicLightCount);
   }
   iVar5 = g_ActiveLightCount + g_DynamicLightCount;
-  crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffef0,"%d omni lights",DAT_03277d80);
-  engine_2d_c_drawText_FUN_00401fd0(&stack0xfffffef4,(&DAT_006810dc)[iVar5],(&DAT_0068125c)[iVar5]);
-  crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffef8,"%d spot lights");
-  engine_2d_c_drawText_FUN_00401fd0(acStack_104,(&DAT_006810dc)[iVar5],(&DAT_0068125c)[iVar5] + 0xb)
-  ;
+  crt_stdio_c_sprintf_FUN_005fdbd0(local_110,"%d omni lights",DAT_03277d80);
+  engine_2d_c_drawText_FUN_00401fd0(local_110,(&DAT_006810dc)[iVar5],(&DAT_0068125c)[iVar5]);
+  crt_stdio_c_sprintf_FUN_005fdbd0(local_110,"%d spot lights",g_ActiveLightCount);
+  engine_2d_c_drawText_FUN_00401fd0(local_110,(&DAT_006810dc)[iVar5],(&DAT_0068125c)[iVar5] + 0xb);
   return;
 }

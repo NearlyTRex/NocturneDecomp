@@ -16,7 +16,6 @@ shape_superopt_cpp_closestPointOnSegment3D_FUN_005d6020
   double dVar3;
   double dVar4;
   int iVar5;
-  BADSPACEBASE *in_ESP;
   CVector2d *unaff_ESI;
   double *pdVar6;
   uint *puVar7;

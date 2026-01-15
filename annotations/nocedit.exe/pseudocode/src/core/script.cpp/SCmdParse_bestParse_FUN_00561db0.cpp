@@ -17,21 +17,19 @@ uint core_script_cpp_SCmdParse_bestParse_FUN_00561db0(void)
   int iVar3;
   uint uVar4;
   int iVar5;
-  BADSPACEBASE *in_ESP;
   int iVar6;
-  int in_stack_00000008;
+  int in_stack_00000010;
   int in_stack_00000014;
-  byte *d2;
-  char **in_stack_fffffb9c;
-  CStrList_vtable *in_stack_fffffba0;
-  CStrList_vtable *in_stack_fffffba4;
+  uint in_stack_fffffb9c;
+  uint in_stack_fffffba0;
+  char **in_stack_fffffba4;
   CStrList_vtable *in_stack_fffffba8;
-  int aiStack_c4 [22];
-  int local_6c [19];
-  int iStack_20;
+  uint in_stack_fffffbac;
+  int aiStack_bc [20];
+  int local_6c [20];
   int local_1c;
   int local_18;
-  uint local_14;
+  int local_14;
   
   iVar5 = 0;
   iVar6 = 0;
@@ -40,13 +38,13 @@ uint core_script_cpp_SCmdParse_bestParse_FUN_00561db0(void)
   if (0 < in_stack_00000014) {
     do {
       iVar3 = core_script_cpp_SCmdParse_parse_FUN_00561fd0();
-      if (local_1c <= iVar3) {
-        iStack_20 = core_script_cpp_FUN_00562620();
-        if (-1 < iStack_20) {
-          if (local_18 < iVar3) {
+      if (local_14 <= iVar3) {
+        local_1c = core_script_cpp_FUN_00562620();
+        if (-1 < local_1c) {
+          if (local_14 < iVar3) {
             iVar5 = 0;
-            local_18 = iVar3;
-            local_1c = 0;
+            local_14 = iVar3;
+            local_18 = 0;
           }
           else if (0x13 < iVar5) {
             g_CurrentFilename = "..\\core\\script.cpp";
@@ -56,7 +54,7 @@ uint core_script_cpp_SCmdParse_bestParse_FUN_00561db0(void)
           iVar2 = local_1c;
           local_6c[iVar5] = local_1c;
           iVar3 = local_6c[0];
-          local_6c[iVar5 + -0x14] = iVar6;
+          aiStack_bc[iVar5] = iVar6;
           if (iVar2 != iVar3) {
             local_18 = 1;
           }
@@ -66,7 +64,6 @@ uint core_script_cpp_SCmdParse_bestParse_FUN_00561db0(void)
       iVar6 = iVar6 + 1;
     } while (iVar6 < in_stack_00000014);
   }
-  d2 = &stack0xfffffb9c;
   if (iVar5 < 1) {
     return 0xffffffff;
   }
@@ -75,23 +72,23 @@ uint core_script_cpp_SCmdParse_bestParse_FUN_00561db0(void)
     shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffffb9c);
     if (0 < iVar5) {
       do {
-        piVar1 = (int *)((int)aiStack_c4 + iVar6);
+        piVar1 = (int *)((int)aiStack_bc + iVar6);
         iVar6 = iVar6 + 4;
         shape_edittool_cpp_CStrList_add_FUN_004a2b80
-                  ((CStrList *)&stack0xfffffb94,*(char **)(*piVar1 * 4 + in_stack_00000008));
+                  ((CStrList *)&stack0xfffffb9c,*(char **)(*piVar1 * 4 + in_stack_00000010));
       } while (iVar6 < iVar5 * 4);
     }
     iVar5 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-                      ((CPickList *)&stack0xfffffb94,"Choose command form",-1,0);
+                      ((CPickList *)&stack0xfffffb9c,"Choose command form",-1,0);
     if (iVar5 < 0) {
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                ((CPickList *)&stack0xfffffb98,0,(uint)d2,(uint)in_stack_fffffb9c,
-                 (uint)in_stack_fffffba0,(uint)in_stack_fffffba4,(uint)in_stack_fffffba8);
+                ((CPickList *)&stack0xfffffb9c,0,in_stack_fffffb9c,in_stack_fffffba0,
+                 (uint)in_stack_fffffba4,(uint)in_stack_fffffba8,in_stack_fffffbac);
       return 0xffffffff;
     }
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-              ((CPickList *)&stack0xfffffb98,0,(uint)d2,(uint)in_stack_fffffb9c,
-               (uint)in_stack_fffffba0,(uint)in_stack_fffffba4,(uint)in_stack_fffffba8);
+              ((CPickList *)&stack0xfffffb9c,0,in_stack_fffffb9c,in_stack_fffffba0,
+               (uint)in_stack_fffffba4,(uint)in_stack_fffffba8,in_stack_fffffbac);
   }
   core_script_cpp_SCmdParse_parse_FUN_00561fd0();
   uVar4 = core_script_cpp_FUN_00562620();

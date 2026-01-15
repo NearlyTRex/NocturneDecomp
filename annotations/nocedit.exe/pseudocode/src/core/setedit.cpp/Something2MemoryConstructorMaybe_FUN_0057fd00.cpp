@@ -6,6 +6,7 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* Signature: byte core_setedit.cpp_Something2MemoryConstructorMaybe(uint param_1,
    uint param_2, uint param_3) */
 
@@ -17,7 +18,6 @@ void core_setedit_cpp_Something2MemoryConstructorMaybe_FUN_0057fd00(void)
   char *pcVar3;
   int *piVar4;
   int iVar5;
-  BADSPACEBASE *in_ESP;
   byte bVar6;
   int *in_stack_00000004;
   void *in_stack_00000008;
@@ -25,8 +25,7 @@ void core_setedit_cpp_Something2MemoryConstructorMaybe_FUN_0057fd00(void)
   int aiStackY_1038 [6];
   int *apiStackY_1020 [1009];
   CVector3i *in_stack_ffffffb0;
-  CVector3i *in_stack_ffffffb4;
-  int iStack_48;
+  int aiStack_4c [2];
   CVector3i local_44;
   int local_38;
   int *apiStack_34 [3];
@@ -62,13 +61,12 @@ void core_setedit_cpp_Something2MemoryConstructorMaybe_FUN_0057fd00(void)
       *(int **)((int)&local_44 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
            apiStack_34[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
       if (local_44.z < 0x40000000) {
-        in_stack_ffffffb0 = &local_44;
         core_dcamera_cpp_CDemonCamera_screenToWorldTransform_FUN_0044d370
-                  (&g_CDemonCameraInstance,in_stack_ffffffb0,in_stack_ffffffb4);
+                  (&g_CDemonCameraInstance,&local_44,in_stack_ffffffb0);
         *piVar4 = (int)in_stack_ffffffb0;
-        piVar4[(uint)bVar6 * -2 + 1] = *(int *)(&stack0xffffffb4 + (uint)bVar6 * -8);
+        piVar4[(uint)bVar6 * -2 + 1] = aiStack_4c[(uint)bVar6 * -2];
         (piVar4 + (uint)bVar6 * -2 + 1)[(uint)bVar6 * -2 + 1] =
-             (&iStack_48)[(uint)bVar6 * -2 + (uint)bVar6 * -2];
+             aiStack_4c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
       }
       else {
         *piVar4 = 0x7fffffff;

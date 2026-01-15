@@ -1,19 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 169,
-    "complexity_score": 423,
+    "complexity_score": 781,
     "cross_reference_count": 3,
     "function_call_count": 6,
     "global_count": 10,
-    "pseudocode_lines": 63,
-    "suspect_count": 34,
+    "pseudocode_lines": 81,
+    "suspect_count": 68,
     "suspect_types": [
       "call_esp_preserve",
       "pointer_cast",
       "stack_param",
       "variadic_preserve"
     ],
-    "total_lines": 232
+    "total_lines": 250
   },
   "cross_references": [
     {
@@ -204,177 +204,415 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000024",
-      "text": "int in_stack_00000024;",
+      "line": 12,
+      "match": "in_stack_00000004",
+      "text": "int *in_stack_00000004;",
       "type": "stack_param"
     },
     {
-      "description": "Complex pointer cast",
+      "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000004",
+      "text": "for (iVar4 = 0; iVar4 < *in_stack_00000004; iVar4 = iVar4 + 1) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
       "line": 16,
-      "match": "(CMatrix3x4f *)((int)",
-      "text": "matrix = (CMatrix3x4f *)((int)file + iVar2 + 0x58);",
-      "type": "pointer_cast"
+      "match": "in_stack_00000004",
+      "text": "iVar2 = in_stack_00000004[iVar4 + 0xce5];",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000004",
+      "text": "matrix = (CMatrix3x4f *)(in_stack_00000004 + iVar2 * 0x21 + 0x16);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 21,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004 + iVar2 * 0x21 + 0x1a,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004 + iVar2 * 0x21 + 0x1e);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 33,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004 + iVar2 * 0x21 + 0x17,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 34,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004 + iVar2 * 0x21 + 0x1b,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 35,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004 + iVar2 * 0x21 + 0x1f);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 38,
+      "match": "in_stack_00000004",
+      "text": "((FILE *)this_ptr,\"%f,%f,%f\\n\",in_stack_00000004 + iVar2 * 0x21 + 0x18",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 39,
+      "match": "in_stack_00000004",
+      "text": ",in_stack_00000004 + iVar2 * 0x21 + 0x1c,",
+      "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 40,
-      "match": "in_stack_00000024",
-      "text": "if (in_stack_00000024 != 0) {",
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004 + iVar2 * 0x21 + 0x20);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 43,
+      "match": "in_stack_00000004",
+      "text": "((FILE *)this_ptr,\"%f,%f,%f\\n\",in_stack_00000004 + iVar2 * 0x21 + 0x19,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 44,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004 + iVar2 * 0x21 + 0x1d,",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 45,
+      "match": "in_stack_00000004",
+      "text": "in_stack_00000004 + iVar2 * 0x21 + 0x21);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 48,
+      "match": "in_stack_00000004",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x5b) =",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 41,
-      "match": "(byte *)((int)",
-      "text": "*(byte *)((int)file + iVar2 + 0x5b) = *(byte *)((int)file + iVar2 + 0x5b) ^ 0x80;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 41,
-      "match": "(byte *)((int)",
-      "text": "*(byte *)((int)file + iVar2 + 0x5b) = *(byte *)((int)file + iVar2 + 0x5b) ^ 0x80;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 42,
-      "match": "(byte *)((int)",
-      "text": "*(byte *)((int)file + iVar2 + 99) = *(byte *)((int)file + iVar2 + 99) ^ 0x80;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 42,
-      "match": "(byte *)((int)",
-      "text": "*(byte *)((int)file + iVar2 + 99) = *(byte *)((int)file + iVar2 + 99) ^ 0x80;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 43,
-      "match": "(byte *)((int)",
-      "text": "*(byte *)((int)file + iVar2 + 0x7b) = *(byte *)((int)file + iVar2 + 0x7b) ^ 0x80;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 43,
-      "match": "(byte *)((int)",
-      "text": "*(byte *)((int)file + iVar2 + 0x7b) = *(byte *)((int)file + iVar2 + 0x7b) ^ 0x80;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 44,
-      "match": "(byte *)((int)",
-      "text": "*(byte *)((int)file + iVar2 + 0x5f) = *(byte *)((int)file + iVar2 + 0x5f) ^ 0x80;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 44,
-      "match": "(byte *)((int)",
-      "text": "*(byte *)((int)file + iVar2 + 0x5f) = *(byte *)((int)file + iVar2 + 0x5f) ^ 0x80;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 45,
-      "match": "(byte *)((int)",
-      "text": "*(byte *)((int)file + iVar2 + 0x67) = *(byte *)((int)file + iVar2 + 0x67) ^ 0x80;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 45,
-      "match": "(byte *)((int)",
-      "text": "*(byte *)((int)file + iVar2 + 0x67) = *(byte *)((int)file + iVar2 + 0x67) ^ 0x80;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 46,
-      "match": "(byte *)((int)",
-      "text": "*(byte *)((int)file + iVar2 + 0x83) = *(byte *)((int)file + iVar2 + 0x83) ^ 0x80;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 46,
-      "match": "(byte *)((int)",
-      "text": "*(byte *)((int)file + iVar2 + 0x83) = *(byte *)((int)file + iVar2 + 0x83) ^ 0x80;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 47,
-      "match": "(byte *)((int)",
-      "text": "*(byte *)((int)file + iVar2 + 0x7f) = *(byte *)((int)file + iVar2 + 0x7f) ^ 0x80;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 47,
-      "match": "(byte *)((int)",
-      "text": "*(byte *)((int)file + iVar2 + 0x7f) = *(byte *)((int)file + iVar2 + 0x7f) ^ 0x80;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 48,
       "match": "(byte *)((int)",
-      "text": "*(byte *)((int)file + iVar2 + 0x87) = *(byte *)((int)file + iVar2 + 0x87) ^ 0x80;",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x5b) =",
       "type": "pointer_cast"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 49,
+      "match": "in_stack_00000004",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x5b) ^ 0x80;",
+      "type": "stack_param"
+    },
+    {
       "description": "Complex pointer cast",
-      "line": 48,
+      "line": 49,
       "match": "(byte *)((int)",
-      "text": "*(byte *)((int)file + iVar2 + 0x87) = *(byte *)((int)file + iVar2 + 0x87) ^ 0x80;",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x5b) ^ 0x80;",
       "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 50,
+      "match": "in_stack_00000004",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 99) =",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 50,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 99) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 51,
+      "match": "in_stack_00000004",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 99) ^ 0x80;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 51,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 99) ^ 0x80;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 52,
+      "match": "in_stack_00000004",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x7b) =",
+      "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
       "line": 52,
       "match": "(byte *)((int)",
-      "text": "*(byte *)((int)file + iVar2 + 0x5b) = *(byte *)((int)file + iVar2 + 0x5b) ^ 0x80;",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x7b) =",
       "type": "pointer_cast"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 52,
-      "match": "(byte *)((int)",
-      "text": "*(byte *)((int)file + iVar2 + 0x5b) = *(byte *)((int)file + iVar2 + 0x5b) ^ 0x80;",
-      "type": "pointer_cast"
+      "description": "Unresolved stack parameter",
+      "line": 53,
+      "match": "in_stack_00000004",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x7b) ^ 0x80;",
+      "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
       "line": 53,
       "match": "(byte *)((int)",
-      "text": "*(byte *)((int)file + iVar2 + 99) = *(byte *)((int)file + iVar2 + 99) ^ 0x80;",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x7b) ^ 0x80;",
       "type": "pointer_cast"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 53,
-      "match": "(byte *)((int)",
-      "text": "*(byte *)((int)file + iVar2 + 99) = *(byte *)((int)file + iVar2 + 99) ^ 0x80;",
-      "type": "pointer_cast"
+      "description": "Unresolved stack parameter",
+      "line": 54,
+      "match": "in_stack_00000004",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x5f) =",
+      "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
       "line": 54,
       "match": "(byte *)((int)",
-      "text": "*(byte *)((int)file + iVar2 + 0x5f) = *(byte *)((int)file + iVar2 + 0x5f) ^ 0x80;",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x5f) =",
       "type": "pointer_cast"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 55,
+      "match": "in_stack_00000004",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x5f) ^ 0x80;",
+      "type": "stack_param"
+    },
+    {
       "description": "Complex pointer cast",
-      "line": 54,
+      "line": 55,
       "match": "(byte *)((int)",
-      "text": "*(byte *)((int)file + iVar2 + 0x5f) = *(byte *)((int)file + iVar2 + 0x5f) ^ 0x80;",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x5f) ^ 0x80;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 56,
+      "match": "in_stack_00000004",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x67) =",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 56,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x67) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 57,
+      "match": "in_stack_00000004",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x67) ^ 0x80;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 57,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x67) ^ 0x80;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 58,
+      "match": "in_stack_00000004",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x83) =",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 58,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x83) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 59,
+      "match": "in_stack_00000004",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x83) ^ 0x80;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 59,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x83) ^ 0x80;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 60,
+      "match": "in_stack_00000004",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x7f) =",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 60,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x7f) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 61,
+      "match": "in_stack_00000004",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x7f) ^ 0x80;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 61,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x7f) ^ 0x80;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 62,
+      "match": "in_stack_00000004",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x87) =",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 62,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x87) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 63,
+      "match": "in_stack_00000004",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x87) ^ 0x80;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 63,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x87) ^ 0x80;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 67,
+      "match": "in_stack_00000004",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x5b) =",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 67,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x5b) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 68,
+      "match": "in_stack_00000004",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x5b) ^ 0x80;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 68,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x5b) ^ 0x80;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 69,
+      "match": "in_stack_00000004",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 99) =",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 69,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 99) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 70,
+      "match": "in_stack_00000004",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 99) ^ 0x80;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 70,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 99) ^ 0x80;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 71,
+      "match": "in_stack_00000004",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x5f) =",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 71,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x5f) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 72,
+      "match": "in_stack_00000004",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x5f) ^ 0x80;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 72,
+      "match": "(byte *)((int)",
+      "text": "*(byte *)((int)in_stack_00000004 + iVar3 + 0x5f) ^ 0x80;",
       "type": "pointer_cast"
     },
     {

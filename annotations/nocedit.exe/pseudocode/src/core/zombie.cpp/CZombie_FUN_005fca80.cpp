@@ -13,8 +13,6 @@ void __cdecl core_zombie_cpp_CZombie_FUN_005fca80(CZombie *this_ptr)
   CMotionList *this_ptr_00;
   int iVar2;
   CActorPropertyList *in_stack_00000008;
-  char *pcStack00000018;
-  int *piStack0000001c;
   
   core_enemy_cpp_CEnemy_FUN_004aa170(&this_ptr->base_enemy);
   core_actor_cpp_CActorPropertyList_FUN_0040e4a0(in_stack_00000008);
@@ -32,8 +30,6 @@ void __cdecl core_zombie_cpp_CZombie_FUN_005fca80(CZombie *this_ptr)
   if (iVar2 != 0x16) {
     return;
   }
-  piStack0000001c = &this_ptr->always_chase_fast;
-  pcStack00000018 = "Always fast";
   core_actor_cpp_CActorPropertyList_FUN_0040e330(in_stack_00000008);
   return;
 }

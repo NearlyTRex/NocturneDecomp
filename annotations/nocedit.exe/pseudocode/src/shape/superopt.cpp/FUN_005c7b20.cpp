@@ -13,22 +13,21 @@ uint shape_superopt_cpp_FUN_005c7b20(void)
   int *piVar2;
   int iVar3;
   int iVar4;
-  int *in_stack_00000004;
-  uint *in_stack_00000008;
-  uint local_10;
-  int iVar5;
+  uint *in_stack_00000004;
+  uint local_14;
+  int local_10;
   
   if ((*in_stack_00000004 != 0) && (in_stack_00000004[1] != 0)) {
     in_stack_00000004[0xb] = *in_stack_00000004 * 3;
     piVar2 = crt_memory_c_malloc_FUN_006021da(*in_stack_00000004 * 0x120);
-    in_stack_00000008[0xc] = (uint)piVar2;
+    in_stack_00000004[0xc] = (uint)piVar2;
     if (piVar2 != (int *)0x0) {
-      local_10 = 0;
-      iVar3 = *(int *)(**(int **)in_stack_00000008[1] + 4);
-      if (*in_stack_00000008 != 0) {
-        iVar5 = 0;
+      local_14 = 0;
+      iVar3 = *(int *)(**(int **)in_stack_00000004[1] + 4);
+      if (*in_stack_00000004 != 0) {
+        local_10 = 0;
         do {
-          iVar1 = *(int *)(in_stack_00000008[1] + iVar5);
+          iVar1 = *(int *)(in_stack_00000004[1] + local_10);
           iVar4 = *(int *)(iVar1 + 4);
           *piVar2 = iVar4;
           iVar4 = iVar4 * 0x38;
@@ -98,16 +97,16 @@ uint shape_superopt_cpp_FUN_005c7b20(void)
           *(ulonglong *)(piVar2 + 0x44) = *(ulonglong *)(iVar1 + 0x10);
           piVar2[0x46] = *(int *)(iVar1 + 0x18);
           piVar2[0x47] = *(int *)(iVar1 + 0x1c);
-          local_10 = local_10 + 1;
-          iVar5 = iVar5 + 4;
+          local_14 = local_14 + 1;
+          local_10 = local_10 + 4;
           piVar2 = piVar2 + 0x48;
-        } while (local_10 < *in_stack_00000008);
+        } while (local_14 < *in_stack_00000004);
       }
       shape_superopt_cpp_FUN_005c8160();
       shape_superopt_cpp_FUN_005c7dc0();
       iVar3 = shape_superopt_cpp_FUN_005c8280();
       if (iVar3 == 0) {
-        crt_memory_c_free_FUN_005fe659((void *)in_stack_00000008[0xc]);
+        crt_memory_c_free_FUN_005fe659((void *)in_stack_00000004[0xc]);
         return 0;
       }
       return 1;

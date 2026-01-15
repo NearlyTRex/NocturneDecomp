@@ -12,9 +12,6 @@ int __cdecl core_charactr_cpp_CCharacter_renderOpaque_FUN_0042a2c0(CCharacter *t
   int iVar1;
   CBoundingBox3D *this_ptr_00;
   int iVar2;
-  BADSPACEBASE *in_ESP;
-  uint uStack00000008;
-  float fStack_14;
   
   iVar1 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00(g_CDemonRendererPtr);
   if (iVar1 == 0) {
@@ -26,8 +23,7 @@ int __cdecl core_charactr_cpp_CCharacter_renderOpaque_FUN_0042a2c0(CCharacter *t
   if (*(int *)this_ptr->field2_0x240c == 0) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&this_ptr->base_actor);
     this_ptr_00 = (*((this_ptr->base_actor).vtable)->getBoundingBox)
-                            (&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffe8);
-    fStack_14 = 6.119639e-39;
+                            (&this_ptr->base_actor,(CBoundingBox3D *)&stack0xffffffe0);
     iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
     if (iVar1 != 0) {
       this_ptr->field13_0x2620[0] = '\x01';
@@ -44,7 +40,6 @@ int __cdecl core_charactr_cpp_CCharacter_renderOpaque_FUN_0042a2c0(CCharacter *t
         }
       }
     }
-    uStack00000008 = 0x42a36c;
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40(&this_ptr->base_actor);
     return iVar1;
   }

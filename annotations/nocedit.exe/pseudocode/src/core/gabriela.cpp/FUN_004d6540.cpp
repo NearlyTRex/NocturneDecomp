@@ -20,7 +20,6 @@ void core_gabriela_cpp_FUN_004d6540(void)
   int iVar5;
   CVector3f *pCVar6;
   float *pfVar7;
-  BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000004;
   float in_stack_00000008;
   int in_stack_0000000c;

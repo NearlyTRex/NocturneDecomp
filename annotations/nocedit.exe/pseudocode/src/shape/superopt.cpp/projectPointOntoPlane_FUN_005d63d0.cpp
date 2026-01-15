@@ -15,7 +15,6 @@ shape_superopt_cpp_projectPointOntoPlane_FUN_005d63d0
   double dVar2;
   double dVar3;
   int iVar4;
-  BADSPACEBASE *in_ESP;
   CVector3d *unaff_ESI;
   double *pdVar5;
   CVector3d *pCVar6;

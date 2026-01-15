@@ -1,24 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 144,
-    "complexity_score": 280,
+    "complexity_score": 153,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 12,
-    "pseudocode_lines": 55,
-    "suspect_count": 18,
+    "pseudocode_lines": 53,
+    "suspect_count": 8,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "callind_preserve",
       "lea_esp_stack_addr",
-      "register_param",
-      "stack_param",
-      "stack_ref",
-      "unresolved_funcptr",
       "variadic_preserve"
     ],
-    "total_lines": 199
+    "total_lines": 197
   },
   "cross_references": [],
   "function": {
@@ -193,76 +188,6 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 12,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 12,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000010",
-      "text": "uint in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 25,
-      "match": "code *",
-      "text": "iVar2 = (**(code **)((slot->options).channel_index + 0x40))((CSoundDevice *)slot,slot,-1);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 40,
-      "match": "in_stack_00000010",
-      "text": "in_stack_00000010 = in_stack_00000010 | 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 40,
-      "match": "in_stack_00000010",
-      "text": "in_stack_00000010 = in_stack_00000010 | 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 43,
-      "match": "in_stack_00000010",
-      "text": "in_stack_00000010 = in_stack_00000010 | 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 43,
-      "match": "in_stack_00000010",
-      "text": "in_stack_00000010 = in_stack_00000010 | 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 46,
-      "match": "in_stack_00000010",
-      "text": "(g_DirectSoundHardwareSfxBuffers[iVar1],0,0,in_stack_00000010);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 50,
-      "match": "&stack0xfffffe98",
-      "text": "(&stack0xfffffe98,\"DirectSux: Unable to %s.  (%s)\",",
-      "type": "stack_ref"
-    },
-    {
       "add_esp_value": 12,
       "call_target_type": "reg_offset",
       "call_target_value": {
@@ -283,7 +208,7 @@
     },
     {
       "call_address": "005afebd",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -297,7 +222,7 @@
     },
     {
       "call_address": "005aff26",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -311,7 +236,7 @@
     },
     {
       "call_address": "005affd1",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -325,7 +250,7 @@
     },
     {
       "call_address": "005b0009",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -339,7 +264,7 @@
     },
     {
       "call_address": "005b0014",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

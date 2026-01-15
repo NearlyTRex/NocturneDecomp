@@ -1,18 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 100,
-    "complexity_score": 224,
+    "complexity_score": 84,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 7,
-    "pseudocode_lines": 39,
-    "suspect_count": 17,
+    "pseudocode_lines": 29,
+    "suspect_count": 5,
     "suspect_types": [
-      "format_string_mismatch",
-      "sub_artifact",
       "variadic_preserve"
     ],
-    "total_lines": 139
+    "total_lines": 129
   },
   "cross_references": [
     {
@@ -187,83 +185,6 @@
   },
   "suspects": [
     {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 20,
-      "match": "SUB84",
-      "text": "(file_handle,\"%g,%g,%g\\n\",SUB84 /* extract 2-byte value */(dVar3,0),(int)((ulonglong)dVar3 >> 0x20),",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 21,
-      "match": "SUB84",
-      "text": "SUB84 /* extract 2-byte value */(dVar2,0),(int)((ulonglong)dVar2 >> 0x20),SUB84 /* extract 2-byte value */(dVar1,0),",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 21,
-      "match": "SUB84",
-      "text": "SUB84 /* extract 2-byte value */(dVar2,0),(int)((ulonglong)dVar2 >> 0x20),SUB84 /* extract 2-byte value */(dVar1,0),",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 27,
-      "match": "SUB84",
-      "text": "(file_handle,\"%g,%g,%g\\n\",SUB84 /* extract 2-byte value */(dVar3,0),(int)((ulonglong)dVar3 >> 0x20),",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 28,
-      "match": "SUB84",
-      "text": "SUB84 /* extract 2-byte value */(dVar2,0),(int)((ulonglong)dVar2 >> 0x20),SUB84 /* extract 2-byte value */(dVar1,0),",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 28,
-      "match": "SUB84",
-      "text": "SUB84 /* extract 2-byte value */(dVar2,0),(int)((ulonglong)dVar2 >> 0x20),SUB84 /* extract 2-byte value */(dVar1,0),",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 33,
-      "match": "SUB84",
-      "text": "(file_handle,\"%g,%g,%g\\n\",SUB84 /* extract 2-byte value */(dVar2,0),(int)((ulonglong)dVar2 >> 0x20),",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 34,
-      "match": "SUB84",
-      "text": "SUB84 /* extract 2-byte value */(dVar1,0),(int)((ulonglong)dVar1 >> 0x20),",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 35,
-      "match": "SUB84",
-      "text": "SUB84 /* extract 2-byte value */((double)(this_ptr->rotation_matrix).m[2].z,0));",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 39,
-      "match": "SUB84",
-      "text": "(file_handle,\"%g,%g,%g\\n\",SUB84 /* extract 2-byte value */(dVar2,0),(int)((ulonglong)dVar2 >> 0x20),",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 40,
-      "match": "SUB84",
-      "text": "SUB84 /* extract 2-byte value */(dVar1,0),(int)((ulonglong)dVar1 >> 0x20));",
-      "type": "sub_artifact"
-    },
-    {
       "call_address": "00586218",
       "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
@@ -332,17 +253,6 @@
       "target_function": "crt_stdio.c_fprintf_FUN_005fe6d0",
       "text": "Call to variadic function crt_stdio.c_fprintf_FUN_005fe6d0 at 005862e0 (no EBP frame)",
       "type": "variadic_preserve"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"\\\"%s\\\",%g,%g,%g,%g,%g,%g,%g\\n\" has 8 specifiers but 0 arguments after it",
-      "expected_args": 8,
-      "format_string": "\\\"%s\\\",%g,%g,%g,%g,%g,%g,%g\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 15,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"\\\"%s\\\",%g,%g,%g,%g,%g,%g,%g\\n\");",
-      "text": "Format string expects 8 args but got 0",
-      "type": "format_string_mismatch"
     }
   ]
 }

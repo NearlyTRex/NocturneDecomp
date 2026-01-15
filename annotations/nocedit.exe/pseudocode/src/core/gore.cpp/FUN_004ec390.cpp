@@ -43,6 +43,6 @@ void core_gore_cpp_FUN_004ec390(void)
   in_stack_00000004[0xf] = (int)ROUND(in_stack_0000000c[1] * _DAT_0065f028);
   in_stack_00000004[0x10] = (int)ROUND(in_stack_0000000c[2] * _DAT_0065f028);
   *in_stack_00000004 = 0;
-  in_stack_00000004[5] = in_stack_0000000c;
+  in_stack_00000004[5] = in_stack_00000008;
   return;
 }

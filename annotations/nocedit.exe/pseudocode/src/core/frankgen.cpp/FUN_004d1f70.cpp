@@ -15,7 +15,6 @@ int core_frankgen_cpp_FUN_004d1f70(void)
   int iVar2;
   CBoundingBox3D *this_ptr;
   CDemonActor *extraout_EBX;
-  BADSPACEBASE *in_ESP;
   float10 fVar3;
   CDemonActor *in_stack_00000004;
   float fVar4;

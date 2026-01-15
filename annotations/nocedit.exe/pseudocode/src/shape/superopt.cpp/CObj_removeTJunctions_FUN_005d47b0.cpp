@@ -24,7 +24,6 @@ int __cdecl shape_superopt_cpp_CObj_removeTJunctions_FUN_005d47b0(CObj *this_ptr
   int iVar13;
   uint uVar14;
   CVector2d *pCVar15;
-  BADSPACEBASE *in_ESP;
   uint *puVar16;
   CVector2d *pCVar17;
   CVector3d *pCVar18;

@@ -1,23 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 226,
-    "complexity_score": 477,
+    "complexity_score": 360,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 1,
-    "pseudocode_lines": 107,
-    "suspect_count": 33,
+    "pseudocode_lines": 110,
+    "suspect_count": 23,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
       "pointer_cast",
-      "register_param",
-      "stack_ref",
-      "unaffected_reg",
       "variadic_preserve"
     ],
-    "total_lines": 333
+    "total_lines": 336
   },
   "cross_references": [],
   "function": {
@@ -212,183 +208,113 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 14,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 14,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 15,
-      "match": "unaff_ESI",
-      "text": "int unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 31,
+      "line": 34,
       "match": "(int *)((int)",
       "text": "dest[*(int *)((int)pCVar1->uv_coords + iVar8 + -0xc)] =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 32,
+      "line": 35,
       "match": "(int *)((int)",
       "text": "*(int *)((int)pCVar1->uv_coords + iVar8 + -0xc);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 33,
+      "line": 36,
       "match": "(int *)((int)",
       "text": "dest[*(int *)((int)pCVar1->uv_coords + iVar8 + -8)] =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 34,
+      "line": 37,
       "match": "(int *)((int)",
       "text": "*(int *)((int)pCVar1->uv_coords + iVar8 + -8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 35,
+      "line": 38,
       "match": "(int *)((int)",
       "text": "iVar6 = *(int *)((int)pCVar1->uv_coords + iVar8 + -4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 61,
+      "line": 64,
       "match": "(int *)((int)",
       "text": "*(int *)((int)pCVar1->uv_coords + iVar6 + -0xc) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 62,
+      "line": 65,
       "match": "(int *)((int)",
       "text": "*(int *)((int)pCVar1->uv_coords + iVar6 + -0xc) -",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 63,
+      "line": 66,
       "match": "(int *)((int)",
       "text": "dest[*(int *)((int)pCVar1->uv_coords + iVar6 + -0xc)];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 64,
+      "line": 67,
       "match": "(int *)((int)",
       "text": "*(int *)((int)pCVar1->uv_coords + iVar6 + -8) =",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 65,
+      "line": 68,
       "match": "(int *)((int)",
       "text": "*(int *)((int)pCVar1->uv_coords + iVar6 + -8) -",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 66,
+      "line": 69,
       "match": "(int *)((int)",
       "text": "dest[*(int *)((int)pCVar1->uv_coords + iVar6 + -8)];",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 67,
+      "line": 70,
       "match": "(int *)((int)",
       "text": "piVar2 = (int *)((int)pCVar1->uv_coords + iVar6 + -4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 68,
+      "line": 71,
       "match": "(int *)((int)",
       "text": "*piVar2 = *piVar2 - dest[*(int *)((int)pCVar1->uv_coords + iVar6 + -4)];",
       "type": "pointer_cast"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 73,
-      "match": "&stack0xffffff90",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffff90,\"Deleting %d disjoing vertices\",iVar8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 77,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI = 0;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 87,
-      "match": "unaff_ESI",
-      "text": "pdVar7 = (double *)((int)&(this_ptr->vertex_data->position).x + unaff_ESI);",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 87,
+      "line": 90,
       "match": "(double *)((int)",
-      "text": "pdVar7 = (double *)((int)&(this_ptr->vertex_data->position).x + unaff_ESI);",
+      "text": "pdVar7 = (double *)((int)&(this_ptr->vertex_data->position).x + local_18);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 95,
+      "line": 98,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)pdVar7 + 0x34) = pCVar4->state_flags;",
       "type": "pointer_cast"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 96,
-      "match": "(void *)((int)",
-      "text": "pvVar9 = (void *)((int)pvVar9 + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 97,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI = unaff_ESI + 0x38;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 97,
-      "match": "unaff_ESI",
-      "text": "unaff_ESI = unaff_ESI + 0x38;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 104,
-      "match": "unaff_ESI",
-      "text": "this_ptr->vertex_count = unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
       "call_address": "005d45db",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "unknown",
       "esp_certainty_at_call": "known",

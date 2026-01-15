@@ -1,20 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 60,
-    "complexity_score": 140,
+    "complexity_score": 63,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 1,
-    "pseudocode_lines": 25,
-    "suspect_count": 9,
+    "pseudocode_lines": 23,
+    "suspect_count": 3,
     "suspect_types": [
       "call_esp_preserve",
-      "callind_preserve",
-      "pointer_cast",
-      "stack_param",
-      "unknown_field"
+      "callind_preserve"
     ],
-    "total_lines": 85
+    "total_lines": 83
   },
   "cross_references": [],
   "function": {
@@ -122,48 +119,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000020",
-      "text": "uint in_stack_00000020;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 17,
-      "match": "._4_4_",
-      "text": "*(uint *)&(this_ptr->options).velocity.x = vel_x._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 18,
-      "match": "(double *)((int)",
-      "text": "*(double *)((int)&(this_ptr->options).velocity.x + 4) = vel_y;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 19,
-      "match": "(double *)((int)",
-      "text": "*(double *)((int)&(this_ptr->options).velocity.y + 4) = vel_z;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000020",
-      "text": "*(uint *)((int)&(this_ptr->options).velocity.z + 4) = in_stack_00000020;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 21,
-      "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&(this_ptr->options).velocity.z + 4) = in_stack_00000020;",
-      "type": "pointer_cast"
-    },
     {
       "add_esp_value": 12,
       "call_target_type": "reg_offset",

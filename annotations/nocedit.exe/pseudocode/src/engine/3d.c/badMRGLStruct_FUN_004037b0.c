@@ -9,10 +9,8 @@
 SMRGLHeaderExtended * __cdecl engine_3d_c_badMRGLStruct_FUN_004037b0(SMRGLHeaderExtended *primitive)
 
 {
-  SMRGLHeaderExtended *in_stack_00000008;
-  
   g_CurrentFilename = "..\\engine\\3d.c";
   g_CurrentLineNumber = 0x11a;
   core_main_c_displayErrorAndQuit_FUN_00506f10("Bad MRGL struct");
-  return in_stack_00000008;
+  return primitive;
 }

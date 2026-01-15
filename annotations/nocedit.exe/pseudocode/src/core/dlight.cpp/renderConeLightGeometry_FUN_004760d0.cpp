@@ -16,15 +16,14 @@ core_dlight_cpp_renderConeLightGeometry_FUN_004760d0
   int iVar2;
   float *extraout_EAX;
   uint *extraout_EDX;
-  BADSPACEBASE *in_ESP;
   float10 fVar3;
   float10 fVar4;
   float10 fVar5;
   float10 fVar6;
-  unkbyte10 Var7;
-  float10 fVar8;
-  double dVar9;
-  float fVar10;
+  float10 fVar7;
+  unkbyte10 Var8;
+  float10 fVar9;
+  double dVar10;
   SMRGLHeaderPrimitive local_b4;
   uint local_9c;
   uint local_98;
@@ -64,39 +63,38 @@ core_dlight_cpp_renderConeLightGeometry_FUN_004760d0
   do {
     fVar3 = (float10)iVar1 * ((float10)18 / (float10)param_3) *
             (float10)0.125;
-    fVar10 = (float)fVar3;
-    Var7 = fpatan(fVar3,(float10)1);
-    fVar3 = (float10)fcos(Var7);
+    Var8 = fpatan(fVar3,(float10)1);
+    fVar4 = (float10)fcos(Var8);
     iVar2 = 0;
-    local_18 = (float)(fVar3 * (float10)max_distance);
+    local_18 = (float)(fVar4 * (float10)max_distance);
     do {
-      fVar3 = (float10)iVar2 * (float10)0.125f * (float10)3.1415926535000001 *
+      fVar4 = (float10)iVar2 * (float10)0.125f * (float10)3.1415926535000001 *
               (float10)2;
       iVar2 = iVar2 + 1;
-      fVar4 = (float10)fsin(fVar3);
-      fVar8 = (float10)iVar2 * (float10)0.125f * (float10)3.1415926535000001 *
+      fVar5 = (float10)fsin(fVar4);
+      fVar9 = (float10)iVar2 * (float10)0.125f * (float10)3.1415926535000001 *
               (float10)2;
-      fVar5 = (float10)fsin(fVar8);
-      fVar3 = (float10)fcos(fVar3);
-      fVar8 = (float10)fcos(fVar8);
-      fVar6 = (float10)fVar10;
-      local_28 = (float)(fVar4 * fVar6);
-      local_24 = (float)(fVar3 * fVar6);
-      local_20 = (float)(fVar5 * fVar6);
-      local_1c = (float)(fVar8 * fVar6);
+      fVar6 = (float10)fsin(fVar9);
+      fVar4 = (float10)fcos(fVar4);
+      fVar9 = (float10)fcos(fVar9);
+      fVar7 = (float10)(float)fVar3;
+      local_28 = (float)(fVar5 * fVar7);
+      local_24 = (float)(fVar4 * fVar7);
+      local_20 = (float)(fVar6 * fVar7);
+      local_1c = (float)(fVar9 * fVar7);
       local_88.y = (int)(local_18 * 0.0);
       local_8c = (float)local_88.y * local_28;
       local_88.x = (int)((float)local_88.y * local_24);
-      fVar3 = ((float10)max_distance - (float10)(float)local_88.y) * (float10)local_2c *
+      fVar4 = ((float10)max_distance - (float10)(float)local_88.y) * (float10)local_2c *
               (float10)1024;
       fStack_3c = (float)local_88.y;
       iStack_14 = iVar2;
-      dVar9 = crt_math_c_round_FUN_005fe6b0
-                        ((double)(((float10)max_distance - (float10)local_18) * (float10)local_2c *
-                                 (float10)1024));
-      local_34 = (float)(int)ROUND(dVar9);
-      dVar9 = crt_math_c_round_FUN_005fe6b0((double)fVar3);
-      fStack_3c = (float)(int)ROUND(dVar9);
+      dVar10 = crt_math_c_round_FUN_005fe6b0
+                         ((double)(((float10)max_distance - (float10)local_18) * (float10)local_2c *
+                                  (float10)1024));
+      local_34 = (float)(int)ROUND(dVar10);
+      dVar10 = crt_math_c_round_FUN_005fe6b0((double)fVar4);
+      fStack_3c = (float)(int)ROUND(dVar10);
       local_88.z = (int)ROUND(*extraout_EAX * 256f);
       local_7c = (int)ROUND(extraout_EAX[1] * 256f);
       local_78 = (int)ROUND(extraout_EAX[2] * 256f);

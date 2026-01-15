@@ -40,11 +40,8 @@ core_setdir_cpp_CZThumb_render_FUN_00574f20(CZThumb *this_ptr,int screen_x,int s
     }
     else {
       for (iVar4 = 1; local_20 = screen_y + 1, iVar4 < this_ptr->height + -1; iVar4 = iVar4 + 1) {
-        iVar3 = 1;
         iVar1 = screen_x;
-        while( true ) {
-          iVar1 = iVar1 + 1;
-          if (this_ptr->width + -1 <= iVar3) break;
+        for (iVar3 = 1; iVar1 = iVar1 + 1, iVar3 < this_ptr->width + -1; iVar3 = iVar3 + 1) {
           uVar2 = (uint)(0xffffff /
                         (ulonglong)
                         (*(int *)((int)this_ptr->zbuffer_data +
@@ -53,7 +50,6 @@ core_setdir_cpp_CZThumb_render_FUN_00574f20(CZThumb *this_ptr,int screen_x,int s
             uVar2 = 0xff;
           }
           g_ActiveRenderColor = (int)g_ColorCubeLookup[(uVar2 >> 3) * 0x421];
-          iVar3 = iVar3 + 1;
           engine_2d_c_plotPixel_FUN_00401140(iVar1,local_20);
         }
         screen_y = local_20;

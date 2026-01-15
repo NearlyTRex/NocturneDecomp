@@ -27,7 +27,6 @@ void core_cow_cpp_FUN_00444310(void)
   int extraout_EAX_00;
   uint uVar11;
   int extraout_EAX_01;
-  BADSPACEBASE *in_ESP;
   CEnemy *in_stack_00000004;
   float in_stack_00000008;
   SDamageInfo local_c0;

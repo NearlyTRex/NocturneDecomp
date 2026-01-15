@@ -1,23 +1,21 @@
 {
   "complexity": {
     "assembly_lines": 104,
-    "complexity_score": 274,
+    "complexity_score": 250,
     "cross_reference_count": 2,
     "function_call_count": 9,
     "global_count": 3,
-    "pseudocode_lines": 44,
-    "suspect_count": 19,
+    "pseudocode_lines": 40,
+    "suspect_count": 18,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "callind_preserve",
       "lea_esp_stack_addr",
-      "register_param",
       "special_crt_function",
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 148
+    "total_lines": 144
   },
   "cross_references": [
     {
@@ -165,52 +163,45 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
+      "description": "Unresolved stack parameter",
       "line": 8,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 8,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
+      "match": "in_stack_0000000c",
+      "text": "int in_stack_0000000c;",
+      "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 9,
-      "match": "in_stack_00000020",
-      "text": "int in_stack_00000020;",
+      "match": "in_stack_00000010",
+      "text": "int in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_0000002c",
-      "text": "int in_stack_0000002c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_00000020",
-      "text": "if (in_stack_00000020 != 0) {",
+      "line": 24,
+      "match": "in_stack_0000000c",
+      "text": "if (in_stack_0000000c != 0) {",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 38,
-      "match": "&stack0xfffffef0",
-      "text": "crt_io_c_deleteFile_FUN_005ff9d0(&stack0xfffffef0);",
+      "line": 34,
+      "match": "&stack0xfffffee0",
+      "text": "(&stack0xfffffee0,(uint)*(byte *)&file_handle->_link->__get_ptr);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 35,
+      "match": "&stack0xfffffee0",
+      "text": "crt_io_c_deleteFile_FUN_005ff9d0(&stack0xfffffee0);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 41,
-      "match": "in_stack_0000002c",
-      "text": "if (in_stack_0000002c != 0) {",
+      "line": 38,
+      "match": "in_stack_00000010",
+      "text": "if (in_stack_00000010 != 0) {",
       "type": "stack_param"
     },
     {

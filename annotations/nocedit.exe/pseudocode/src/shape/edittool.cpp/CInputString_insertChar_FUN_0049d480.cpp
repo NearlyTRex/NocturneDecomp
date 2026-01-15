@@ -12,7 +12,6 @@ shape_edittool_cpp_CInputString_insertChar_FUN_0049d480
 
 {
   int iVar1;
-  int in_stack_00000010;
   
   iVar1 = this_ptr->max_length + -1;
   if (this_ptr->cursor_position < iVar1) {
@@ -23,8 +22,8 @@ shape_edittool_cpp_CInputString_insertChar_FUN_0049d480
     crt_string_c_memmove_FUN_005fe5e0
               (this_ptr->string_data + iVar1 + 1,this_ptr->string_data + iVar1,
                this_ptr->current_length - iVar1);
-    this_ptr->string_data[this_ptr->cursor_position] = (char)advance_cursor;
-    if (in_stack_00000010 != 0) {
+    this_ptr->string_data[this_ptr->cursor_position] = character;
+    if (advance_cursor != 0) {
       this_ptr->cursor_position = this_ptr->cursor_position + 1;
       this_ptr->string_data[this_ptr->current_length] = '\0';
       return;

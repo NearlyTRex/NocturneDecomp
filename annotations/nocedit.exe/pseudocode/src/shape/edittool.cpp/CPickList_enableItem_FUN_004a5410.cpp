@@ -12,7 +12,7 @@ shape_edittool_cpp_CPickList_enableItem_FUN_004a5410
 
 {
   int *piVar1;
-  int in_stack_00000010;
+  undefined3 in_stack_0000000d;
   
   if ((item_index < 0) || ((this_ptr->base_strlist).item_count <= item_index)) {
     g_CurrentFilename = "..\\shape\\edittool.cpp";
@@ -34,6 +34,6 @@ shape_edittool_cpp_CPickList_enableItem_FUN_004a5410
       this_ptr->enabled_capacity = this_ptr->enabled_capacity + 1;
     }
   }
-  this_ptr->enabled_array[item_index] = (uint)(in_stack_00000010 != 0);
+  this_ptr->enabled_array[item_index] = (uint)(_enable_flag != 0);
   return;
 }

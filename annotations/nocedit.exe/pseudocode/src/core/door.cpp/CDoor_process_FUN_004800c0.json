@@ -1,23 +1,21 @@
 {
   "complexity": {
     "assembly_lines": 573,
-    "complexity_score": 553,
+    "complexity_score": 522,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 7,
-    "pseudocode_lines": 193,
-    "suspect_count": 32,
+    "pseudocode_lines": 192,
+    "suspect_count": 30,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "callind_preserve",
       "lea_esp_stack_addr",
-      "register_param",
       "stack_param",
       "unknown_field",
       "unresolved_funcptr"
     ],
-    "total_lines": 766
+    "total_lines": 765
   },
   "cross_references": [],
   "function": {
@@ -217,99 +215,85 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 10,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 10,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 11,
       "match": "in_stack_00000008",
       "text": "float in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 67,
+      "line": 66,
       "match": "in_stack_00000008",
       "text": "this_ptr->param = (in_stack_00000008 * this_ptr->max_param) / this_ptr->open_speed + local_50;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 96,
+      "line": 95,
       "match": "in_stack_00000008",
       "text": "this_ptr->param = local_50 - (in_stack_00000008 * this_ptr->max_param) / this_ptr->close_speed;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 137,
+      "line": 136,
       "match": "code *",
       "text": "iVar4 = (**(code **)(*(int *)(iVar2 + 0x154) + 0x34))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 139,
+      "line": 138,
       "match": "._20_4_",
       "text": "((float)auStack_c8._20_4_ + *(float *)(iVar2 + 0x24) <=",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 142,
+      "line": 141,
       "match": "._24_4_",
       "text": "(float)auStack_c8._24_4_ + *(float *)(iVar2 + 0x24))) {",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 153,
+      "line": 152,
       "match": "._28_4_",
       "text": "fStack_40 = CStack_64.x + (float)auStack_c8._28_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 155,
+      "line": 154,
       "match": "._28_4_",
       "text": "(fStack_3c = CStack_64.x - (float)auStack_c8._28_4_, fStack_3c <= fStack_94)) &&",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 156,
+      "line": 155,
       "match": "._28_4_",
       "text": "((fStack_38 = CStack_64.z + (float)auStack_c8._28_4_, fStack_98 <= fStack_38 &&",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 157,
+      "line": 156,
       "match": "._28_4_",
       "text": "(fStack_34 = CStack_64.z - (float)auStack_c8._28_4_, fStack_34 <= fStack_8c)))) {",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 160,
+      "line": 159,
       "match": "._28_4_",
       "text": "fVar3 = (float)auStack_c8._28_4_ * (float)auStack_c8._28_4_;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 160,
+      "line": 159,
       "match": "._28_4_",
       "text": "fVar3 = (float)auStack_c8._28_4_ * (float)auStack_c8._28_4_;",
       "type": "unknown_field"

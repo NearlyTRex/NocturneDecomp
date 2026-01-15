@@ -1,15 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 78,
+    "complexity_score": 63,
     "cross_reference_count": 48,
     "function_call_count": 3,
     "global_count": 6,
     "pseudocode_lines": 23,
-    "suspect_count": 4,
+    "suspect_count": 3,
     "suspect_types": [
       "call_esp_preserve",
-      "format_string_mismatch",
       "variadic_preserve"
     ],
     "total_lines": 67
@@ -433,17 +432,6 @@
       "target_function": "engine_console.cpp_CConsole_printf_FUN_00441890",
       "text": "Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 004adcef (no EBP frame)",
       "type": "variadic_preserve"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%s\\n",
-      "function_name": "engine_console_cpp_CConsole_printf_FUN_00441890",
-      "line_number": 20,
-      "match": "engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,\"%s\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 8,

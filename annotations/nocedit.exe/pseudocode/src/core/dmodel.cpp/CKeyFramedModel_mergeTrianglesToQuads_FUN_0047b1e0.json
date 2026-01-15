@@ -1,21 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 723,
-    "complexity_score": 701,
+    "complexity_score": 705,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 14,
-    "pseudocode_lines": 361,
-    "suspect_count": 31,
+    "pseudocode_lines": 365,
+    "suspect_count": 32,
     "suspect_types": [
-      "badspacebase",
       "concat_artifact",
       "pointer_cast",
-      "register_param",
       "stack_ref",
       "sub_artifact"
     ],
-    "total_lines": 1084
+    "total_lines": 1088
   },
   "cross_references": [
     {
@@ -287,7 +285,7 @@
     {
       "add_esp_value": 4,
       "call_address": "0047b2ce",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in EBP-frame function; fix by anchoring ESP at ADD ESP",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -833,220 +831,227 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 21,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 21,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 138,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)g_TriangleMatchTableA + local_3c) * 0xc + 0x18)",
+      "line": 127,
+      "match": "(uchar *)((int)",
+      "text": "(*(uchar *)((int)local_4c + (int)puVar2) == puVar2[local_44])))) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 140,
+      "line": 141,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)g_TriangleMatchTableB + iVar13) * 0xc + 0x18))",
+      "text": "*(int *)((int)g_TriangleMatchTableA + local_40) * 0xc + 0x18)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 143,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)g_TriangleMatchTableB + iVar14) * 0xc + 0x18))",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 160,
+      "line": 163,
+      "match": "&stack0xffffff18",
+      "text": "*(uint *)(&stack0xffffff18 + (uint)bVar19 * -8) = *puVar16;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 165,
       "match": "&stack0xffffff1c",
-      "text": "*(uint *)(&stack0xffffff1c + (uint)bVar18 * -8) = *puVar15;",
+      "text": "*(uint *)(&stack0xffffff1c + (uint)bVar19 * -8 + (uint)bVar19 * -8) =",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 162,
-      "match": "&stack0xffffff20",
-      "text": "*(uint *)(&stack0xffffff20 + (uint)bVar18 * -8 + (uint)bVar18 * -8) =",
+      "line": 171,
+      "match": "&stack0xffffff24",
+      "text": "*(uint *)(&stack0xffffff24 + (uint)bVar19 * -8) = *puVar16;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 168,
+      "line": 172,
       "match": "&stack0xffffff28",
-      "text": "*(uint *)(&stack0xffffff28 + (uint)bVar18 * -8) = *puVar15;",
+      "text": "*(uint *)(&stack0xffffff28 + (uint)bVar19 * -8 + (uint)bVar19 * -8) =",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 169,
-      "match": "&stack0xffffff2c",
-      "text": "*(uint *)(&stack0xffffff2c + (uint)bVar18 * -8 + (uint)bVar18 * -8) =",
+      "line": 177,
+      "match": "&stack0xffffff30",
+      "text": "*(uint *)(&stack0xffffff30 + (uint)bVar19 * -8) = *puVar16;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 174,
+      "line": 178,
       "match": "&stack0xffffff34",
-      "text": "*(uint *)(&stack0xffffff34 + (uint)bVar18 * -8) = *puVar15;",
+      "text": "*(uint *)(&stack0xffffff34 + (uint)bVar19 * -8 + (uint)bVar19 * -8) =",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 175,
-      "match": "&stack0xffffff38",
-      "text": "*(uint *)(&stack0xffffff38 + (uint)bVar18 * -8 + (uint)bVar18 * -8) =",
+      "line": 184,
+      "match": "&stack0xffffff3c",
+      "text": "*(uint *)(&stack0xffffff3c + (uint)bVar19 * -8) = *puVar16;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 181,
+      "line": 185,
       "match": "&stack0xffffff40",
-      "text": "*(uint *)(&stack0xffffff40 + (uint)bVar18 * -8) = *puVar15;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 182,
-      "match": "&stack0xffffff44",
-      "text": "*(uint *)(&stack0xffffff44 + (uint)bVar18 * -8 + (uint)bVar18 * -8) =",
+      "text": "*(uint *)(&stack0xffffff40 + (uint)bVar19 * -8 + (uint)bVar19 * -8) =",
       "type": "stack_ref"
     },
     {
       "description": "Decompiler double/longlong extraction artifact",
-      "line": 201,
+      "line": 204,
       "match": "SUB84",
-      "text": "local_100 = SUB84 /* extract 2-byte value */(dVar20,0);",
+      "text": "uStack_104 = SUB84 /* extract 2-byte value */(dVar21,0);",
       "type": "sub_artifact"
     },
     {
       "description": "Direct stack address reference",
-      "line": 203,
-      "match": "&stack0xffffff18",
-      "text": "*(int *)((int)&stack0xffffff18 + (int)local_18) * 3;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 203,
-      "match": "(int *)((int)",
-      "text": "*(int *)((int)&stack0xffffff18 + (int)local_18) * 3;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
       "line": 205,
-      "match": "&stack0xffffff18",
-      "text": "*(int *)((int)&stack0xffffff18 + ((iVar13 + 1) % 4) * 0xc) *",
+      "match": "&stack0xffffff14",
+      "text": "local_8c = local_20 + *(int *)((int)&stack0xffffff14 + local_1c) * 3;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
       "line": 205,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)&stack0xffffff18 + ((iVar13 + 1) % 4) * 0xc) *",
+      "text": "local_8c = local_20 + *(int *)((int)&stack0xffffff14 + local_1c) * 3;",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 208,
-      "match": "&stack0xffffff18",
-      "text": "*(int *)((int)&stack0xffffff18 + (iVar8 % 4) * 0xc) * 3;",
+      "line": 207,
+      "match": "&stack0xffffff14",
+      "text": "*(int *)((int)&stack0xffffff14 + ((iVar14 + 1) % 4) * 0xc) *",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 208,
+      "line": 207,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)&stack0xffffff18 + (iVar8 % 4) * 0xc) * 3;",
+      "text": "*(int *)((int)&stack0xffffff14 + ((iVar14 + 1) % 4) * 0xc) *",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 210,
+      "match": "&stack0xffffff14",
+      "text": "*(int *)((int)&stack0xffffff14 + (iVar9 % 4) * 0xc) * 3;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 210,
+      "match": "(int *)((int)",
+      "text": "*(int *)((int)&stack0xffffff14 + (iVar9 % 4) * 0xc) * 3;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 228,
+      "match": "(uint *)((int)",
+      "text": "puStack_14 = (uint *)((int)ppCVar18[2] - (int)ppCVar13[2]);",
       "type": "pointer_cast"
     },
     {
       "description": "Decompiler double/longlong extraction artifact",
-      "line": 244,
+      "line": 247,
       "match": "SUB84",
-      "text": "uStack_fc = SUB84 /* extract 2-byte value */(dVar20,0);",
+      "text": "local_100 = SUB84 /* extract 2-byte value */(dVar21,0);",
       "type": "sub_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 258,
+      "line": 261,
       "match": "CONCAT44",
-      "text": "dVar20 = (double)CONCAT44 /* combine 2-byte values */(uStack_fc,local_100) +",
+      "text": "dVar21 = (double)CONCAT44 /* combine 2-byte values */(local_100,uStack_104) +",
       "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 259,
+      "line": 262,
       "match": "CONCAT44",
-      "text": "(double)CONCAT44 /* combine 2-byte values */(local_f4,local_f8);",
+      "text": "(double)CONCAT44 /* combine 2-byte values */(local_f8,uStack_fc);",
       "type": "concat_artifact"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 270,
-      "match": "&stack0xffffff1c",
-      "text": "*puVar15 = *(uint *)(&stack0xffffff1c + (uint)bVar18 * -8);",
-      "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 273,
-      "match": "&stack0xffffff20",
-      "text": "(&stack0xffffff20 + (uint)bVar18 * -8 + (uint)bVar18 * -8);",
+      "match": "&stack0xffffff18",
+      "text": "*puVar16 = *(uint *)(&stack0xffffff18 + (uint)bVar19 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 276,
-      "match": "&stack0xffffff28",
-      "text": "*puVar15 = *(uint *)(&stack0xffffff28 + (uint)bVar18 * -8);",
+      "match": "&stack0xffffff1c",
+      "text": "(&stack0xffffff1c + (uint)bVar19 * -8 + (uint)bVar19 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 279,
-      "match": "&stack0xffffff2c",
-      "text": "(&stack0xffffff2c + (uint)bVar18 * -8 + (uint)bVar18 * -8);",
+      "match": "&stack0xffffff24",
+      "text": "*puVar16 = *(uint *)(&stack0xffffff24 + (uint)bVar19 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 282,
-      "match": "&stack0xffffff34",
-      "text": "*puVar15 = *(uint *)(&stack0xffffff34 + (uint)bVar18 * -8);",
+      "match": "&stack0xffffff28",
+      "text": "(&stack0xffffff28 + (uint)bVar19 * -8 + (uint)bVar19 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 285,
-      "match": "&stack0xffffff38",
-      "text": "(&stack0xffffff38 + (uint)bVar18 * -8 + (uint)bVar18 * -8);",
+      "match": "&stack0xffffff30",
+      "text": "*puVar16 = *(uint *)(&stack0xffffff30 + (uint)bVar19 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 288,
-      "match": "&stack0xffffff40",
-      "text": "*puVar15 = *(uint *)(&stack0xffffff40 + (uint)bVar18 * -8);",
+      "match": "&stack0xffffff34",
+      "text": "(&stack0xffffff34 + (uint)bVar19 * -8 + (uint)bVar19 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 291,
-      "match": "&stack0xffffff44",
-      "text": "(&stack0xffffff44 + (uint)bVar18 * -8 + (uint)bVar18 * -8);",
+      "match": "&stack0xffffff3c",
+      "text": "*puVar16 = *(uint *)(&stack0xffffff3c + (uint)bVar19 * -8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 294,
+      "match": "&stack0xffffff40",
+      "text": "(&stack0xffffff40 + (uint)bVar19 * -8 + (uint)bVar19 * -8);",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 338,
+      "line": 315,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)this_ptr->poly_texture_index_list + iVar14) =",
+      "text": "local_4c = (uint *)((int)local_4c + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 342,
+      "match": "(uint *)((int)",
+      "text": "puStack_14 = (uint *)((int)this_ptr->poly_texture_index_list + iVar15);",
       "type": "pointer_cast"
     }
   ]

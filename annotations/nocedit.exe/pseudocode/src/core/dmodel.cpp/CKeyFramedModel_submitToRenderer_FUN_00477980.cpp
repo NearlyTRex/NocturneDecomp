@@ -12,7 +12,6 @@ core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_00477980
           CKeyFramedModelInstance *instance)
 
 {
-  SMRGLTextureExtended *texture;
   float fVar1;
   float fVar2;
   float fVar3;
@@ -22,11 +21,9 @@ core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_00477980
   int iVar7;
   int iVar8;
   int iVar9;
-  int *in_stack_00000014;
-  int in_stack_00000018;
-  int local_18;
-  int *local_14;
-  CKeyFramedModel *local_10;
+  int local_24;
+  int *local_20;
+  CKeyFramedModel *local_1c;
   
   if (0 < this_ptr->poly_count) {
     if (this_ptr->disable_backface_culling == 0) {
@@ -44,31 +41,30 @@ core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_00477980
     }
     iVar9 = -1;
     iVar4 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
-    local_18 = 0;
+    local_24 = 0;
     if (0 < this_ptr->part_count) {
-      texture = this_ptr->texture_list;
-      local_10 = this_ptr;
-      local_14 = in_stack_00000014;
+      local_1c = this_ptr;
+      local_20 = (int *)frame_index;
       iVar8 = 0;
       do {
-        iVar5 = local_10->part_list[0].poly_count + iVar8;
-        if ((in_stack_00000014 == (int *)0x0) || (*local_14 != 0)) {
+        iVar5 = local_1c->part_list[0].poly_count + iVar8;
+        if ((frame_index == 0) || (*local_20 != 0)) {
           if ((this_ptr->texture_count < 2) || (iVar4 != 0)) {
             if (iVar4 == 0) {
               engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
-                        (g_CDemonRendererPtr,&texture->base);
+                        (g_CDemonRendererPtr,&this_ptr->texture_list[0].base);
             }
             core_set_cpp_CDemonSet_renderPrimitiveBatch_FUN_00570770
                       (g_CDemonSetPtr,
-                       (SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list + iVar8 * 0x12),
-                       (int)texture - iVar8,(int)in_stack_00000014);
+                       (SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list + iVar8 * 0x12),iVar5 - iVar8
+                       ,render_flags);
           }
           else {
             while (iVar8 < iVar5) {
               if (iVar9 != this_ptr->poly_texture_index_list[iVar8]) {
                 engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
                           (g_CDemonRendererPtr,
-                           &texture[this_ptr->poly_texture_index_list[iVar8]].base);
+                           &this_ptr->texture_list[this_ptr->poly_texture_index_list[iVar8]].base);
                 iVar9 = this_ptr->poly_texture_index_list[iVar8];
               }
               iVar6 = iVar8 * 4;
@@ -81,16 +77,16 @@ core_dmodel_cpp_CKeyFramedModel_submitToRenderer_FUN_00477980
               core_set_cpp_CDemonSet_renderPrimitiveBatch_FUN_00570770
                         (g_CDemonSetPtr,
                          (SMRGLPrimitiveQuad *)(this_ptr->poly_vert_list + iVar8 * 0x12),
-                         iVar7 - iVar8,in_stack_00000018);
+                         iVar7 - iVar8,render_flags);
               iVar8 = iVar7;
             }
           }
         }
-        local_10 = (CKeyFramedModel *)(local_10->model_filename + 8);
-        local_14 = local_14 + 1;
-        local_18 = local_18 + 1;
+        local_1c = (CKeyFramedModel *)(local_1c->model_filename + 8);
+        local_20 = local_20 + 1;
+        local_24 = local_24 + 1;
         iVar8 = iVar5;
-      } while (local_18 < this_ptr->part_count);
+      } while (local_24 < this_ptr->part_count);
     }
     engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0048ca00(g_CDemonRendererPtr,0);
     engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0048caa0(g_CDemonRendererPtr,1);

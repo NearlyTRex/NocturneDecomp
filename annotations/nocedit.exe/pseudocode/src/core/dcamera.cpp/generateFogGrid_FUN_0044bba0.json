@@ -1,17 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 195,
-    "complexity_score": 237,
+    "complexity_score": 108,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
-    "pseudocode_lines": 87,
-    "suspect_count": 14,
+    "pseudocode_lines": 83,
+    "suspect_count": 2,
     "suspect_types": [
-      "call_esp_preserve",
-      "stack_param"
+      "call_esp_preserve"
     ],
-    "total_lines": 282
+    "total_lines": 278
   },
   "cross_references": [
     {
@@ -223,90 +222,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00000008",
-      "text": "int in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_0000000c",
-      "text": "SFogGrid *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_00000008",
-      "text": "local_34 = in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 36,
-      "match": "in_stack_00000008",
-      "text": "puVar6 = (byte *)(iVar13 * 0x10 + iVar9 + in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 56,
-      "match": "in_stack_0000000c",
-      "text": "local_38 = in_stack_0000000c->planes[0].grid[0] + (uVar7 + 1 & 0xf) + local_14;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 57,
-      "match": "in_stack_0000000c",
-      "text": "pcVar10 = in_stack_0000000c->planes[0].grid[0] + (local_28 & 0xf) + local_14;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 58,
-      "match": "in_stack_0000000c",
-      "text": "pcVar3 = in_stack_0000000c->planes[0].grid[local_18 + 1U & 0xf] + uVar7;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 59,
-      "match": "in_stack_0000000c",
-      "text": "local_40 = in_stack_0000000c->planes[0].grid[local_1c & 0xf] + uVar7;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 61,
-      "match": "in_stack_0000000c",
-      "text": "pcVar8 = in_stack_0000000c->planes[0].grid[0] + uVar7 + local_14;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 73,
-      "match": "in_stack_0000000c",
-      "text": "(uint)(byte)in_stack_0000000c->planes[uVar4].grid[0][uVar7 + local_14] +",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 74,
-      "match": "in_stack_0000000c",
-      "text": "(uint)(byte)in_stack_0000000c->planes[uVar12 & 0xf].grid[0]",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 88,
-      "match": "in_stack_0000000c",
-      "text": "core_dcamera_cpp_resetFogSamplingOffset_FUN_0044bb70(in_stack_0000000c);",
-      "type": "stack_param"
-    },
     {
       "add_esp_value": 12,
       "call_address": "0044bbb5",

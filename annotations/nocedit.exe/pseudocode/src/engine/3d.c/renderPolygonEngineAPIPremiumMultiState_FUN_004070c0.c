@@ -21,8 +21,8 @@ engine_3d_c_renderPolygonEngineAPIPremiumMultiState_FUN_004070c0(SMRGLHeaderPrim
   int *piVar7;
   SRenderVertex *pSVar8;
   byte bVar9;
+  int local_10;
   int local_c;
-  int *local_8;
   
   bVar9 = 0;
   if (g_RenderBufferEnabled != 0) {
@@ -54,12 +54,12 @@ engine_3d_c_renderPolygonEngineAPIPremiumMultiState_FUN_004070c0(SMRGLHeaderPrim
       g_ScanlineRenderFunc = wincore_windll_cpp_renderMMXPerspectiveScanline16_FUN_005b4823;
     }
     g_RenderStateFlag2 = PREPROCESS_DEPTH_BUFFER_PREP;
-    local_8 = (int *)0x0;
+    local_c = 0;
     g_RenderStateFlags = RENDER_ENGINE_PREMIUM_QUALITY;
     if (0 < g_RenderBufferCount) {
-      local_c = 0;
+      local_10 = 0;
       do {
-        piVar1 = *(int **)((int)g_RenderBufferSortArray + local_c);
+        piVar1 = *(int **)((int)g_RenderBufferSortArray + local_10);
         iVar3 = 0;
         if (0 < *piVar1) {
           piVar6 = piVar1;
@@ -81,12 +81,12 @@ engine_3d_c_renderPolygonEngineAPIPremiumMultiState_FUN_004070c0(SMRGLHeaderPrim
           } while (iVar3 < *piVar1);
         }
         engine_texture_cpp_loadTextureAndGetData_FUN_005dd8c0((SMRGLTextureBasic *)(piVar1 + 0x31));
-        g_BlendMode = local_8[0x44];
-        g_CurrentAlphaValue = local_8[0x43];
-        engine_clipper_c_clipAndRasterize_FUN_004371b0(*local_8,g_ProcessedVertexIndices);
-        local_c = local_c + 4;
-        local_8 = (int *)((int)local_8 + 1);
-      } while ((int)local_8 < g_RenderBufferCount);
+        g_BlendMode = piVar1[0x44];
+        g_CurrentAlphaValue = piVar1[0x43];
+        engine_clipper_c_clipAndRasterize_FUN_004371b0(*piVar1,g_ProcessedVertexIndices);
+        local_10 = local_10 + 4;
+        local_c = local_c + 1;
+      } while (local_c < g_RenderBufferCount);
     }
     g_RenderBufferCount = 0;
     g_RenderBufferEnabled = 0;

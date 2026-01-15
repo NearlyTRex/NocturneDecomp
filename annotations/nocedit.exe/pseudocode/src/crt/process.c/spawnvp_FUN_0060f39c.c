@@ -21,7 +21,6 @@ int __cdecl crt_process_c_spawnvp_FUN_0060f39c(int mode,char *cmdname,char **arg
   undefined3 extraout_var_00;
   int iVar8;
   uint size_00;
-  BADSPACEBASE *in_ESP;
   char **in_stack_00000010;
   char *in_stack_fffffeca;
   char *in_stack_fffffece;

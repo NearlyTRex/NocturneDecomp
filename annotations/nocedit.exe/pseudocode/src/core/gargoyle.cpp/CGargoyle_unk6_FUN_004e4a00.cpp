@@ -24,7 +24,6 @@ void core_gargoyle_cpp_CGargoyle_unk6_FUN_004e4a00(void)
   float fVar9;
   int extraout_EAX;
   int extraout_EAX_00;
-  BADSPACEBASE *in_ESP;
   CEnemy *in_stack_00000004;
   float in_stack_00000008;
   SDamageInfo local_104;

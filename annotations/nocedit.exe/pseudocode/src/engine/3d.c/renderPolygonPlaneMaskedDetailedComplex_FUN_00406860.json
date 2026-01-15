@@ -1,19 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 151,
-    "complexity_score": 291,
+    "complexity_score": 223,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 13,
-    "pseudocode_lines": 81,
-    "suspect_count": 19,
+    "pseudocode_lines": 78,
+    "suspect_count": 13,
     "suspect_types": [
       "call_esp_preserve",
       "pointer_cast",
-      "stack_param",
       "suspect_float"
     ],
-    "total_lines": 232
+    "total_lines": 229
   },
   "cross_references": [],
   "function": {
@@ -183,116 +182,74 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000008",
-      "text": "SMRGLHeaderPrimitive *in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_0000000c",
-      "text": "int in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_00000010",
-      "text": "int in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 35,
-      "match": "in_stack_00000008",
-      "text": "engine_3d_c_calculatePolygonLighting_FUN_00403a00(in_stack_00000008);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 42,
-      "match": "in_stack_0000000c",
-      "text": "for (iVar2 = 0; iVar2 < *(int *)(in_stack_0000000c + 4) * 3; iVar2 = iVar2 + 3) {",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 43,
+      "line": 40,
       "match": "(int *)((int)",
       "text": "*(int *)((int)g_ProcessedVertexIndices + iVar6) = (pSVar4->base).type;",
       "type": "pointer_cast"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 48,
+      "line": 45,
       "match": "3.67342e-40",
       "text": "fVar3 = 3.67342e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 51,
+      "line": 48,
       "match": "3.67342e-40",
       "text": "fVar5 = 3.67342e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 54,
+      "line": 51,
       "match": "2.3142544e-38",
       "text": "fVar3 = 2.3142544e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 57,
+      "line": 54,
       "match": "2.3142544e-38",
       "text": "fVar5 = 2.3142544e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 62,
+      "line": 59,
       "match": "9.18355e-41",
       "text": "fVar3 = 9.18355e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 65,
+      "line": 62,
       "match": "9.18355e-41",
       "text": "fVar5 = 9.18355e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 68,
+      "line": 65,
       "match": "2.341805e-38",
       "text": "fVar3 = 2.341805e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 71,
+      "line": 68,
       "match": "2.341805e-38",
       "text": "fVar5 = 2.341805e-38;",
       "type": "suspect_float"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 83,
-      "match": "in_stack_00000010",
-      "text": "return (SMRGLHeaderExtended *)(in_stack_00000010 + 0x18 + *(int *)(in_stack_00000010 + 4) * 0xc);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 83,
-      "match": "in_stack_00000010",
-      "text": "return (SMRGLHeaderExtended *)(in_stack_00000010 + 0x18 + *(int *)(in_stack_00000010 + 4) * 0xc);",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 80,
+      "match": "(SMRGLHeaderExtended *)((int)",
+      "text": "return (SMRGLHeaderExtended *)((int)&polygon_info[1].base + (polygon_info->base).count * 0xc);",
+      "type": "pointer_cast"
     },
     {
       "add_esp_value": 4,

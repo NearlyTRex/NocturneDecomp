@@ -1,14 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 138,
-    "complexity_score": 255,
+    "complexity_score": 170,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 0,
     "pseudocode_lines": 55,
-    "suspect_count": 19,
+    "suspect_count": 10,
     "suspect_types": [
       "call_esp_preserve",
+      "pointer_cast",
       "register_param"
     ],
     "total_lines": 193
@@ -135,80 +136,17 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 19,
+      "line": 17,
       "match": "in_EAX",
-      "text": "in_EAX = (SMRGLHeaderExtended *)0x545122;",
+      "text": "local_14 = in_EAX;",
       "type": "register_param"
     },
     {
-      "description": "Inferred register parameter",
-      "line": 23,
-      "match": "in_EAX",
-      "text": "} while (iVar2 < in_EAX->child_count);",
-      "type": "register_param"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 27,
-      "match": "in_EAX",
-      "text": "in_EAX = unk;",
-      "type": "register_param"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 29,
-      "match": "in_EAX",
-      "text": "in_EAX = (SMRGLHeaderExtended *)unk[2].base.type;",
-      "type": "register_param"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 31,
-      "match": "in_EAX",
-      "text": "if (0 < (int)in_EAX) {",
-      "type": "register_param"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 41,
-      "match": "in_EAX",
-      "text": "while (iVar2 = (in_EAX->base).type, iVar2 != 0) {",
-      "type": "register_param"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 42,
-      "match": "in_EAX",
-      "text": "if ((iVar2 == 0xd) || (pSVar1 = in_EAX, iVar2 == 0x40)) {",
-      "type": "register_param"
-    },
-    {
-      "description": "Inferred register parameter",
+      "description": "Complex pointer cast",
       "line": 44,
-      "match": "in_EAX",
-      "text": "pSVar1 = in_EAX;",
-      "type": "register_param"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 46,
-      "match": "in_EAX",
-      "text": "in_EAX = pSVar1;",
-      "type": "register_param"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 53,
-      "match": "in_EAX",
-      "text": "engine_model_c_getMRGLSize_FUN_00528700(in_EAX);",
-      "type": "register_param"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 57,
-      "match": "in_EAX",
-      "text": "return in_EAX;",
-      "type": "register_param"
+      "match": "(SMRGLHeaderExtended *)((int)",
+      "text": "local_14 = (SMRGLHeaderExtended *)((int)&(local_14->base).type + (uVar1 & 0xfffffffc))) {",
+      "type": "pointer_cast"
     },
     {
       "add_esp_value": 8,

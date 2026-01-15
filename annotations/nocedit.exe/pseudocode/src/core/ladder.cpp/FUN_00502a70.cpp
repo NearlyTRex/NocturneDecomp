@@ -14,52 +14,47 @@ void core_ladder_cpp_FUN_00502a70(void)
   float fVar1;
   CVector3f *pCVar2;
   int iVar3;
-  BADSPACEBASE *in_ESP;
-  uint *puVar4;
-  uint *puVar5;
-  byte bVar6;
+  CMatrix3x4f *unaff_ESI;
+  float *pfVar4;
+  byte bVar5;
   CDemonActor *in_stack_00000004;
-  CMatrix3x4f *in_stack_ffffff24;
-  byte auStack_d4 [48];
-  CMatrix3x4f CStack_a4;
-  uint uStack_74;
-  CVector3f local_70;
-  float fStack_64;
-  float fStack_54;
-  float fStack_44;
-  uint auStack_40 [12];
-  float local_10;
-  float fStack_c;
-  float fStack_8;
+  CMatrix3x4f local_dc;
+  CMatrix3x4f local_ac;
+  CVector3f local_7c;
+  float local_70;
+  float local_60;
+  float local_50;
+  float local_4c [12];
+  float local_1c;
+  float local_18;
+  float local_14;
   
-  bVar6 = 0;
+  bVar5 = 0;
   if (in_stack_00000004[2].orient.pitch == 0.0) {
     return;
   }
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
-            ((CMatrix3x4f *)&stack0xffffff24,(CVector3f *)&in_stack_00000004[2].orient.bank,
+            (&local_dc,(CVector3f *)&in_stack_00000004[2].orient.bank,
              (CVector3f *)&in_stack_00000004[2].orient_matrix.m[0].y);
   fVar1 = in_stack_00000004[2].orient.pitch;
   core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
-            ((CMatrix3x4f *)(auStack_d4 + 0x2c),(CVector3f *)((int)fVar1 + 0x20),
-             (CVector3f *)((int)fVar1 + 0x30));
-  core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
-            ((CMatrix3x4f *)auStack_d4,&CStack_a4,in_stack_ffffff24);
-  puVar4 = auStack_40;
-  puVar5 = &uStack_74;
+            (&local_ac,(CVector3f *)((int)fVar1 + 0x20),(CVector3f *)((int)fVar1 + 0x30));
+  core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10(&local_dc,&local_ac,unaff_ESI);
+  pfVar4 = local_4c;
+  pCVar2 = &local_7c;
   for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar5 = *puVar4;
-    puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
-    puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
+    pCVar2->x = *pfVar4;
+    pfVar4 = pfVar4 + (uint)bVar5 * -2 + 1;
+    pCVar2 = (CVector3f *)((int)pCVar2 + ((uint)bVar5 * -2 + 1) * 4);
   }
-  local_10 = fStack_64;
-  fStack_c = fStack_54;
-  fStack_8 = fStack_44;
-  (in_stack_00000004->location).position.x = fStack_64;
-  (in_stack_00000004->location).position.y = fStack_54;
-  (in_stack_00000004->location).position.z = fStack_44;
+  local_1c = local_70;
+  local_18 = local_60;
+  local_14 = local_50;
+  (in_stack_00000004->location).position.x = local_70;
+  (in_stack_00000004->location).position.y = local_60;
+  (in_stack_00000004->location).position.z = local_50;
   pCVar2 = core_xform_cpp_matrixToEulerAngles_FUN_005f5690
-                     (&local_70,(CMatrix3x3f *)&stack0xfffffffc);
+                     (&local_7c,(CMatrix3x3f *)&stack0xfffffff0);
   if (&in_stack_00000004->orient != (COrientation *)pCVar2) {
     (in_stack_00000004->orient).pitch = pCVar2->x;
     (in_stack_00000004->orient).bank = pCVar2->y;

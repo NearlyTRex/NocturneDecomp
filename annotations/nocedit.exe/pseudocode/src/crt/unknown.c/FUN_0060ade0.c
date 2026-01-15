@@ -10,7 +10,6 @@ char * crt_unknown_c_FUN_0060ade0(void)
 
 {
   char *buffer;
-  BADSPACEBASE *in_ESP;
   uint *in_stack_00000004;
   char *in_stack_00000008;
   int in_stack_0000000c;

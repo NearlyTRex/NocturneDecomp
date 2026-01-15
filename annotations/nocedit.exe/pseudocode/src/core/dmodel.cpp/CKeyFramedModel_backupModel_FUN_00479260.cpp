@@ -13,7 +13,6 @@ core_dmodel_cpp_CKeyFramedModel_backupModel_FUN_00479260(CKeyFramedModel *this_p
   FILE *file_ptr;
   FILE *file_ptr_00;
   int iVar1;
-  char *in_stack_0000000c;
   
   file_ptr = shape_memdbg_cpp_openFile_FUN_0050f7a0
                        (this_ptr->model_filename,(char *)0x0,"rb",
@@ -22,8 +21,7 @@ core_dmodel_cpp_CKeyFramedModel_backupModel_FUN_00479260(CKeyFramedModel *this_p
     return 0;
   }
   file_ptr_00 = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                          (in_stack_0000000c,(char *)0x0,"wb","..\\core\\dmodel.cpp",
-                           0x5f2);
+                          (filename,(char *)0x0,"wb","..\\core\\dmodel.cpp",0x5f2);
   if (file_ptr_00 != (FILE *)0x0) {
     while( true ) {
       iVar1 = crt_stdio_c_fgetc_FUN_005fe840(file_ptr);

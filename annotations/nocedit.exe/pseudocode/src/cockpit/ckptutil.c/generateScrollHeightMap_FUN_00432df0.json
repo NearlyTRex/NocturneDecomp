@@ -1,18 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 223,
-    "complexity_score": 227,
+    "complexity_score": 165,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 10,
-    "pseudocode_lines": 92,
-    "suspect_count": 12,
+    "pseudocode_lines": 90,
+    "suspect_count": 6,
     "suspect_types": [
       "call_esp_preserve",
-      "stack_param",
+      "pointer_cast",
       "variadic_preserve"
     ],
-    "total_lines": 315
+    "total_lines": 313
   },
   "cross_references": [],
   "function": {
@@ -289,64 +289,22 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_00000020",
-      "text": "int *in_stack_00000020;",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 38,
+      "match": "(byte *)((int)",
+      "text": "for (pbVar3 = (byte *)((int)bitmap_data + iVar5 + (start_x + -1) * end_x);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000024",
-      "text": "int in_stack_00000024;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 53,
-      "match": "in_stack_00000020",
-      "text": "*in_stack_00000020 = local_18;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 55,
-      "match": "in_stack_00000024",
-      "text": "if (1 < in_stack_00000024) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 58,
-      "match": "in_stack_00000020",
-      "text": "in_stack_00000020 = in_stack_00000020 + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 58,
-      "match": "in_stack_00000020",
-      "text": "in_stack_00000020 = in_stack_00000020 + 1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 87,
-      "match": "in_stack_00000020",
-      "text": "*in_stack_00000020 = iVar4;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 88,
-      "match": "in_stack_00000024",
-      "text": "} while (iVar7 < in_stack_00000024);",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 57,
+      "match": "(byte *)((int)",
+      "text": "for (pbVar3 = (byte *)((int)bitmap_data + local_14 + iVar5 + (start_x + -1) * end_x);",
+      "type": "pointer_cast"
     },
     {
       "call_address": "00432fcf",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -360,7 +318,7 @@
     },
     {
       "call_address": "00432ff6",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

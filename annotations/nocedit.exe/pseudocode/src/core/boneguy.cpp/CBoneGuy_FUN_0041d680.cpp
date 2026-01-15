@@ -11,88 +11,87 @@
 void __cdecl core_boneguy_cpp_CBoneGuy_FUN_0041d680(CBoneGuy *this_ptr)
 
 {
-  CDeformableModel *pCVar1;
-  int iVar2;
-  uint *puVar3;
-  BADSPACEBASE *in_ESP;
-  char *pcVar4;
+  int iVar1;
+  CVector3f *pCVar2;
+  CBoneGuy *pCVar3;
+  CVector3f *pCVar4;
   uint *puVar5;
-  byte bVar6;
-  int in_stack_00000008;
-  int in_stack_0000000c;
-  CDemonActor *in_stack_00000010;
-  float afStackY_1818 [1519];
-  float fStack_50;
-  CVector3f *euler_angles;
+  uint *puVar6;
+  byte bVar7;
+  float afStackY_1824 [1523];
+  CVector3f *in_stack_ffffffb8;
+  float local_38;
   float local_34;
-  COrientation *local_20;
-  CDeformableModel *local_1c;
-  float local_18;
-  int *local_14;
-  CDemonActor *pCVar7;
-  int iVar8;
+  float local_30;
+  COrientation *local_2c;
+  CLocation *local_28;
+  CDeformableModel *local_24;
+  CVector3f *local_20;
+  CBoneGuy *local_1c;
+  int local_18;
+  float local_14;
   
-  bVar6 = 0;
-  fStack_50 = 6.046279e-39;
+  bVar7 = 0;
   core_charactr_cpp_CCharacter_FUN_0042d060((CCharacter *)this_ptr);
-  *(uint *)(in_stack_00000008 + 0xc4dc) = 1;
-  *(uint *)(in_stack_00000008 + 0xc4e0) = 0;
-  local_1c = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
-                       ((CDeformableModelInstance *)(in_stack_00000008 + 0x158));
-  iVar8 = local_1c->num_parts;
-  *(int *)(in_stack_0000000c + 0xbf38) = iVar8;
-  if (0x14 < iVar8) {
+  this_ptr->blown_up = 1;
+  this_ptr->param = 0.0;
+  local_24 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0
+                       (&(this_ptr->base_enemy).base_character.model);
+  iVar1 = local_24->num_parts;
+  this_ptr->box_count = iVar1;
+  if (0x14 < iVar1) {
     g_CurrentFilename = "..\\core\\boneguy.cpp";
     g_CurrentLineNumber = 0x443;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CBoneGuy::explode - Not enough containers");
   }
-  iVar8 = 0;
-  if (0 < *(int *)((int)local_18 + 0x7140)) {
-    local_14 = &in_stack_00000010[0x8e].field7_0x6c;
-    local_20 = &in_stack_00000010->orient;
-    local_1c = (CDeformableModel *)&in_stack_00000010->location;
-    pcVar4 = in_stack_00000010[0x8e].create_event;
-    pCVar7 = in_stack_00000010;
+  local_18 = 0;
+  if (0 < local_24->num_parts) {
+    local_20 = &this_ptr->box_list_pos;
+    local_2c = &(this_ptr->base_enemy).base_character.base_actor.orient;
+    local_28 = &(this_ptr->base_enemy).base_character.base_actor.location;
+    pCVar4 = &this_ptr->box_list_orient;
+    local_1c = this_ptr;
     do {
-      euler_angles = (CVector3f *)0x40a00000;
-      local_20 = (COrientation *)core_actor_cpp_getRandomFloat_FUN_0040cc10(-5.0,5.0);
-      pCVar1 = (CDeformableModel *)core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,10.0);
-      local_1c = pCVar1;
-      local_34 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-5.0,5.0);
-      fStack_50 = 2.8026e-45;
-      local_18 = local_34;
-      iVar2 = core_bodypart_cpp_CreateBodyPart_FUN_00418e10();
-      fStack_50 = local_18;
+      local_38 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-5.0,5.0);
+      local_14 = local_38;
+      local_34 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,10.0);
+      local_14 = local_34;
+      local_30 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-5.0,5.0);
+      local_14 = local_30;
+      iVar1 = core_bodypart_cpp_CreateBodyPart_FUN_00418e10();
       core_charactr_cpp_CCharacter_FUN_0042bd30((CCharacter *)this_ptr);
-      *(uint *)(iVar2 + 0xcc4) = 1;
+      *(uint *)(iVar1 + 0xcc4) = 1;
       core_bodypart_cpp_FUN_0041a050();
-      local_14[0x2fe0] = iVar2;
-      puVar3 = (uint *)((int)pCVar7 * 0x48 + (int)local_18);
-      if (puVar3 != (uint *)(iVar2 + 0x20)) {
-        *puVar3 = *(uint *)(iVar2 + 0x20);
-        puVar3[1] = *(uint *)(iVar2 + 0x24);
-        puVar3[2] = *(uint *)(iVar2 + 0x28);
+      *(int *)local_1c->field9_0xbf80 = iVar1;
+      pCVar2 = local_20 + local_18 * 6;
+      if (pCVar2 != (CVector3f *)(iVar1 + 0x20)) {
+        pCVar2->x = *(float *)(iVar1 + 0x20);
+        pCVar2->y = *(float *)(iVar1 + 0x24);
+        pCVar2->z = *(float *)(iVar1 + 0x28);
       }
-      if (pcVar4 != (char *)(iVar2 + 0x30)) {
-        *(uint *)pcVar4 = *(uint *)(iVar2 + 0x30);
-        *(uint *)(pcVar4 + 4) = *(uint *)(iVar2 + 0x34);
-        *(uint *)(pcVar4 + 8) = *(uint *)(iVar2 + 0x38);
+      if (pCVar4 != (CVector3f *)(iVar1 + 0x30)) {
+        pCVar4->x = *(float *)(iVar1 + 0x30);
+        pCVar4->y = *(float *)(iVar1 + 0x34);
+        pCVar4->z = *(float *)(iVar1 + 0x38);
       }
-      pcVar4 = pcVar4 + 0x48;
-      core_xform_cpp_eulerToQuaternion_FUN_005f7b20((CQuaternion4f *)(iVar2 + 0x30),euler_angles);
-      iVar8 = iVar8 + 1;
-      puVar3 = (uint *)((int)pCVar7 + (uint)bVar6 * -8 + 49000);
-      *(CDeformableModel **)(pCVar7[0x8e].create_event + 0x1c) = pCVar1;
-      puVar5 = puVar3 + (uint)bVar6 * -2 + 1;
-      *puVar3 = *(uint *)(&stack0xffffffc8 + (uint)bVar6 * -8);
-      *puVar5 = *(uint *)(&stack0xffffffc8 + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + 1) * 4);
-      puVar5[(uint)bVar6 * -2 + 1] =
+      pCVar4 = pCVar4 + 6;
+      core_xform_cpp_eulerToQuaternion_FUN_005f7b20
+                ((CQuaternion4f *)(iVar1 + 0x30),in_stack_ffffffb8);
+      pCVar3 = (CBoneGuy *)((local_1c->base_enemy).base_character.base_actor.orient_matrix.m + 1);
+      local_18 = local_18 + 1;
+      puVar5 = (uint *)((int)local_1c + (uint)bVar7 * -8 + 49000);
+      (local_1c->box_list_start_orient).w = (float)in_stack_ffffffb8;
+      puVar6 = puVar5 + (uint)bVar7 * -2 + 1;
+      *puVar5 = *(uint *)(&stack0xffffffbc + (uint)bVar7 * -8);
+      *puVar6 = *(uint *)(&stack0xffffffbc + ((uint)bVar7 * -2 + (uint)bVar7 * -2 + 1) * 4);
+      puVar6[(uint)bVar7 * -2 + 1] =
            *(uint *)
-            ((int)(&stack0xffffffc8 + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + 1) * 4) +
-            ((uint)bVar6 * -2 + 1) * 4);
-      pCVar7 = (CDemonActor *)((pCVar7->orient_matrix).m + 1);
-    } while (iVar8 < *(int *)((int)local_18 + 0x7140));
+            ((int)(&stack0xffffffbc + ((uint)bVar7 * -2 + (uint)bVar7 * -2 + 1) * 4) +
+            ((uint)bVar7 * -2 + 1) * 4);
+      local_1c = pCVar3;
+    } while (local_18 < local_24->num_parts);
   }
-  (*in_stack_00000010->vtable->playSound)(in_stack_00000010,"boneguy-fallapart.wav");
+  (*((this_ptr->base_enemy).base_character.base_actor.vtable)->playSound)
+            ((CDemonActor *)this_ptr,"boneguy-fallapart.wav");
   return;
 }

@@ -13,43 +13,36 @@ void core_icepick_cpp_FUN_004f8b20(void)
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   uint *unaff_ESI;
   uint *puVar2;
   byte bVar3;
   int in_stack_00000004;
   int in_stack_00000008;
-  int in_stack_0000000c;
-  CMatrix3x4f *in_stack_ffffff60;
-  uint auStack_9c [10];
-  byte auStack_74 [56];
-  uint local_3c;
-  CVector3f local_38;
-  uint local_2c;
-  uint local_28;
-  uint local_24;
-  CVector3f local_20;
-  uint local_14;
-  uint local_10;
+  CMatrix3x4f *in_stack_ffffff58;
+  CMatrix3x4f local_78;
+  CVector3f local_3c;
+  CVector3f local_30;
+  CVector3f local_24;
+  CVector3f local_18;
   
   bVar3 = 0;
   iVar1 = *(int *)(in_stack_00000008 * 0x44 + in_stack_00000004 + 0x24ac);
   if (in_stack_00000008 == 1) {
-    local_20.z = 0.45;
-    local_14 = 0xbe6a7efa;
-    local_10 = 0xbca3d70a;
-    if ((float *)&local_3c != &local_20.z) {
-      local_38.x = -0.229;
-      local_38.y = -0.02;
-      local_3c = 0x3ee66666;
+    local_18.x = 0.45;
+    local_18.y = -0.229;
+    local_18.z = -0.02;
+    if (&local_3c != &local_18) {
+      local_3c.y = -0.229;
+      local_3c.z = -0.02;
+      local_3c.x = 0.45;
     }
-    local_28 = 0x3fb76c8b;
-    local_2c = 0x3f96872b;
-    local_38.z = -0.39;
-    if ((float *)&local_24 != &local_38.z) {
-      local_20.y = 1.433;
-      local_24 = 0xbec7ae14;
-      local_20.x = 1.176;
+    local_30.z = 1.433;
+    local_30.y = 1.176;
+    local_30.x = -0.39;
+    if (&local_24 != &local_30) {
+      local_24.z = 1.433;
+      local_24.x = -0.39;
+      local_24.y = 1.176;
     }
   }
   else {
@@ -57,12 +50,10 @@ void core_icepick_cpp_FUN_004f8b20(void)
     g_CurrentLineNumber = 0x28a;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CIcePick::getCarryObjToBodyXForm - wrong hand");
   }
-  core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0
-            ((CMatrix3x4f *)auStack_74,&local_38,&local_20);
+  core_xform_cpp_buildMatrixFromEulerAndPositionDirect_FUN_005f54c0(&local_78,&local_3c,&local_24);
   core_xform_cpp_multiplyMatrix3x4_FUN_005f4f10
-            ((CMatrix3x4f *)(auStack_74 + 4),
-             (CMatrix3x4f *)(iVar1 * 0x30 + in_stack_0000000c + 0xfd8),in_stack_ffffff60);
-  puVar2 = auStack_9c;
+            (&local_78,(CMatrix3x4f *)(iVar1 * 0x30 + in_stack_00000004 + 0xfd8),in_stack_ffffff58);
+  puVar2 = (uint *)&stack0xffffff58;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
     *unaff_ESI = *puVar2;
     puVar2 = puVar2 + (uint)bVar3 * -2 + 1;

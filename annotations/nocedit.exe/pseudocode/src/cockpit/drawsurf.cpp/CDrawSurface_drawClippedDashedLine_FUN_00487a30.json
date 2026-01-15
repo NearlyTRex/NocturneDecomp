@@ -1,20 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 146,
+    "complexity_score": 88,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 21,
-    "suspect_count": 10,
+    "pseudocode_lines": 18,
+    "suspect_count": 6,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
-      "lea_esp_stack_addr",
-      "register_param",
-      "stack_param"
+      "lea_esp_stack_addr"
     ],
-    "total_lines": 89
+    "total_lines": 86
   },
   "cross_references": [],
   "function": {
@@ -116,34 +113,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 8,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 8,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000018",
-      "text": "int in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000018",
-      "text": "cockpit_drawsurf_cpp_CDrawSurface_drawDashedLine_FUN_00487bc0(this_ptr,y1,x2,y2,in_stack_00000018)",
-      "type": "stack_param"
-    },
     {
       "add_esp_value": 36,
       "call_address": "00487a91",

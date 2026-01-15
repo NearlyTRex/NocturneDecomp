@@ -12,12 +12,11 @@ void __cdecl core_fire_cpp_CToss_process_FUN_004c4000(CToss *this_ptr)
   float fVar1;
   CKeyFramedModel *pCVar2;
   CVector3f *pCVar3;
-  BADSPACEBASE *in_ESP;
-  CVector3f local_28;
+  CVector3f local_30;
+  float local_24;
+  float local_20;
   float local_1c;
-  float local_18;
-  float fStack_14;
-  float fStack_10;
+  CVector3f local_18;
   float local_c;
   
   if (0.0 < *(float *)(this_ptr->field0_0x0 + 0x3dc)) {
@@ -29,23 +28,22 @@ void __cdecl core_fire_cpp_CToss_process_FUN_004c4000(CToss *this_ptr)
       if (*(int *)this_ptr->field0_0x0 != 0) {
         return;
       }
-      local_28.x = g_ZeroVector.y;
-      local_28.y = g_ZeroVector.z;
+      local_30.x = g_ZeroVector.x;
+      local_30.y = g_ZeroVector.y;
+      local_30.z = g_ZeroVector.z;
       pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00478d80
                          ((CKeyFramedModelInstance *)(this_ptr->field0_0x0 + 4));
-      local_28.z = local_28.z + (pCVar2->bounds_max).z;
+      local_30.z = local_30.z + (pCVar2->bounds_max).z;
       pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
-                         ((CMatrix3x3f *)(this_ptr->field0_0x0 + 0x198),(CVector3f *)&fStack_10,
-                          &local_28);
-      local_18 = (((CBox *)(this_ptr->field0_0x0 + 0x180))->position).x + pCVar3->x;
-      fStack_14 = *(float *)(this_ptr->field0_0x0 + 0x184) + pCVar3->y;
-      fStack_10 = *(float *)(this_ptr->field0_0x0 + 0x188) + pCVar3->z;
-      if (&local_28.y != &local_18) {
-        local_28.y = local_18;
-        local_28.z = fStack_14;
-        local_1c = fStack_10;
+                         ((CMatrix3x3f *)(this_ptr->field0_0x0 + 0x198),&local_18,&local_30);
+      local_24 = (((CBox *)(this_ptr->field0_0x0 + 0x180))->position).x + pCVar3->x;
+      local_20 = *(float *)(this_ptr->field0_0x0 + 0x184) + pCVar3->y;
+      local_1c = *(float *)(this_ptr->field0_0x0 + 0x188) + pCVar3->z;
+      if (&local_30 != (CVector3f *)&local_24) {
+        local_30.x = local_24;
+        local_30.y = local_20;
+        local_30.z = local_1c;
       }
-      local_28.x = 9.18341e-41;
       core_fire_cpp_CFireEffect_FUN_004c79d0(g_CFireEffectPtr);
       return;
     }

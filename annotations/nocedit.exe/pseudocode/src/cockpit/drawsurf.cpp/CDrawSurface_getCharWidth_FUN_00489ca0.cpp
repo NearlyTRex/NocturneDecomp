@@ -11,7 +11,6 @@ cockpit_drawsurf_cpp_CDrawSurface_getCharWidth_FUN_00489ca0(CDrawSurface *this_p
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   char local_4 [4];
   
   if (g_CurrentFont != (CBitFont *)0x0) {

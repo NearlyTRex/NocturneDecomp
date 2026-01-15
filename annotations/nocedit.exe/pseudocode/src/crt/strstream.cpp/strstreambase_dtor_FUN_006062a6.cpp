@@ -15,7 +15,7 @@ crt_strstream_cpp_strstreambase_dtor_FUN_006062a6(strstreambase *this_ptr,uint d
   strstreambuf *psVar3;
   void *ptr;
   ios *piVar4;
-  uint unaff_retaddr;
+  uint unaff_EBX;
   
   if ((d1 & 4) == 0) {
     iVar1 = ((this_ptr->strstreambase_core).layout_info)->offset_to_vbase;
@@ -27,12 +27,12 @@ crt_strstream_cpp_strstreambase_dtor_FUN_006062a6(strstreambase *this_ptr,uint d
     psVar3 = crt_strstream_cpp_strstreambuf_dtor_FUN_0060bb7f
                        (&(this_ptr->strstreambase_core).strstreambuf,0);
     this_ptr = (strstreambase *)&psVar3[-1].__minbuf_size;
-    if ((d2 & 1) == 0) {
+    if ((d1 & 1) == 0) {
       piVar4 = crt_iostream_cpp_ios_dtor_FUN_0060632c
-                         ((ios *)&psVar3[1].streambuf.__get_base,1,unaff_retaddr);
+                         ((ios *)&psVar3[1].streambuf.__get_base,1,unaff_EBX);
       this_ptr = (strstreambase *)&piVar4[-2].__error_state;
     }
-    if ((d3 & 2) == 0) {
+    if ((d1 & 2) == 0) {
       return this_ptr;
     }
     shape_memdbg_cpp_debugFree_FUN_0050f210(this_ptr);

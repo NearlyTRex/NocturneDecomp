@@ -13,51 +13,54 @@ int __cdecl core_setedit_cpp_CDemonSet_FUN_00577af0(CDemonSet *this_ptr)
 {
   int iVar1;
   CDemonSet *pCVar2;
-  int iVar3;
-  ushort *puVar4;
-  uint uVar5;
-  uint *puVar6;
+  ushort *puVar3;
+  uint uVar4;
+  uint *puVar5;
+  int iVar6;
   int iVar7;
-  int iVar8;
-  int x_pos;
-  uchar *puVar9;
+  uchar *puVar8;
+  int iVar9;
   int iVar10;
   int iVar11;
-  char *pcVar12;
-  int *in_stack_00000018;
-  int *in_stack_0000001c;
-  int local_88;
+  int *in_stack_00000008;
+  int local_9c;
+  int local_90;
+  int *local_8c;
+  CDemonSet *local_88;
+  C3DSCamera *local_84;
   int local_80;
   int local_7c;
-  int *local_78;
-  int *local_74;
-  char *local_6c;
+  int local_70;
+  int local_6c;
   int local_68;
-  int local_5c;
-  int local_58;
-  int local_54;
+  int local_34;
+  int local_30;
+  int local_2c;
+  int local_28;
+  int local_24;
   int local_20;
   int local_1c;
   int local_18;
   int local_14;
   
-  iVar7 = -1;
+  local_9c = -1;
+  iVar6 = -1;
   if (0x1df < g_WindowHeight) {
+    iVar6 = 0;
     iVar7 = 0;
-    iVar8 = 0;
-    iVar10 = 0;
+    iVar9 = 0;
     pCVar2 = this_ptr;
     if (0 < this_ptr->camera_count) {
       do {
         if (pCVar2->cameras[0].is_panning == 0) {
-          iVar10 = iVar10 + 1;
+          iVar9 = iVar9 + 1;
         }
         else {
-          iVar7 = iVar7 + 1;
+          iVar6 = iVar6 + 1;
         }
-        iVar8 = iVar8 + 1;
+        iVar7 = iVar7 + 1;
         pCVar2 = (CDemonSet *)&pCVar2->cameras[0].field17_0x1a0;
-      } while (iVar8 < this_ptr->camera_count);
+      } while (iVar7 < this_ptr->camera_count);
     }
     if ((DAT_03364d14 & 1) == 0) {
       DAT_03364d14 = DAT_03364d14 | 1;
@@ -70,142 +73,148 @@ int __cdecl core_setedit_cpp_CDemonSet_FUN_00577af0(CDemonSet *this_ptr)
     _DAT_03364ce8 =
          (int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -0x40) -
               (uint)((g_WindowWidth >> 0x1f) << 5 < 0)) >> 6;
-    _DAT_03364ce4 = (iVar10 + 3) / 4 + ((iVar7 + 3) / 4) * 4;
+    _DAT_03364ce4 = (iVar9 + 3) / 4 + ((iVar6 + 3) / 4) * 4;
     shape_edittool_cpp_CEdScrollBar_handleInput_FUN_004a5fc0((CEdScrollBar *)&DAT_03364ce0);
     shape_edittool_cpp_CEdScrollBar_render_FUN_004a5c10((CEdScrollBar *)&DAT_03364ce0);
-    local_68 = 0;
-    local_58 = 0;
     local_7c = 0;
+    local_6c = 0;
+    local_90 = 0;
     do {
-      local_5c = 0;
-      local_6c = (char *)0x0;
-      if (0 < *in_stack_00000018) {
-        local_74 = in_stack_00000018;
-        local_78 = in_stack_0000001c;
+      local_70 = 0;
+      local_80 = 0;
+      if (0 < this_ptr->camera_count) {
+        local_88 = this_ptr;
+        local_8c = in_stack_00000008;
+        local_84 = this_ptr->cameras;
         do {
-          if (local_74[0x51] == 0) {
-            local_54 = 1;
-            if (local_7c != 1) goto LAB_00577d41;
+          if (local_88->cameras[0].is_panning == 0) {
+            local_68 = 1;
+            if (local_90 != 1) goto LAB_00577d41;
           }
           else {
-            local_54 = 4;
-            if (local_7c != 0) {
+            local_68 = 4;
+            if (local_90 != 0) {
 LAB_00577d41:
-              iVar7 = local_68 - _DAT_03364ce0;
-              if ((0 < iVar7 + local_54) &&
-                 (iVar7 < (int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -0x40) -
+              iVar6 = local_7c - _DAT_03364ce0;
+              if ((0 < iVar6 + local_68) &&
+                 (iVar6 < (int)((g_WindowWidth + (g_WindowWidth >> 0x1f) * -0x40) -
                                (uint)((g_WindowWidth >> 0x1f) << 5 < 0)) >> 6)) {
-                iVar7 = iVar7 * 0x40;
+                iVar6 = iVar6 * 0x40;
                 g_ActiveRenderColor = 0;
-                iVar8 = g_WindowHeight + -10 + (local_80 - local_58) * -0x30;
-                if ((in_stack_0000001c != (int *)0x0) && (*local_78 != 0)) {
+                iVar7 = g_WindowHeight + -10 + (4 - local_6c) * -0x30;
+                if ((in_stack_00000008 != (int *)0x0) && (*local_8c != 0)) {
                   g_ActiveRenderColor = 2;
                 }
-                if (local_5c == in_stack_00000018[0x56ba9]) {
+                if (local_70 == this_ptr->selected_camera_index) {
                   g_ActiveRenderColor = 1;
                 }
-                x_pos = iVar7 + local_54 * 0x40;
-                pcVar12 = local_6c;
-                for (iVar10 = iVar7; iVar10 < x_pos; iVar10 = iVar10 + 0x40) {
-                  if ((((-1 < iVar10) && (-1 < iVar8)) && (iVar10 + 0x40 <= g_WindowWidth)) &&
-                     (iVar8 + 0x30 <= g_WindowHeight)) {
-                    iVar3 = (int)pcVar12 * 0x3000;
-                    iVar1 = iVar3 + 0x3000;
-                    local_18 = iVar8 * 4;
-                    local_20 = iVar3 + 0x100;
+                iVar11 = local_80;
+                for (iVar9 = iVar6; iVar9 < iVar6 + local_68 * 0x40; iVar9 = iVar9 + 0x40) {
+                  if ((((-1 < iVar9) && (-1 < iVar7)) && (iVar9 + 0x40 <= g_WindowWidth)) &&
+                     (iVar7 + 0x30 <= g_WindowHeight)) {
+                    local_1c = iVar11 * 0x3000;
+                    iVar1 = local_1c + 0x3000;
+                    local_2c = iVar7 * 4;
+                    local_34 = local_1c + 0x100;
+                    local_20 = local_2c;
+                    local_18 = local_1c;
                     if (g_BitsPerPixel == 8) {
                       do {
-                        puVar9 = (uchar *)(*(int *)((int)g_ScreenBufferArray + local_18) + iVar10);
-                        iVar11 = iVar3;
+                        puVar8 = (uchar *)(*(int *)((int)g_ScreenBufferArray + local_20) + iVar9);
+                        iVar10 = local_18;
                         do {
-                          puVar9 = puVar9 + 1;
-                          uVar5 = *(uint *)(&DAT_03365cc0 + iVar11);
-                          iVar11 = iVar11 + 4;
-                          *puVar9 = g_ColorCubeLookup
-                                    [((uVar5 & 0xff) >> 3) * 0x400 +
-                                     ((uVar5 >> 8 & 0xff) >> 3) * 0x20 +
-                                     ((uVar5 >> 0x10 & 0xff) >> 3)];
-                        } while (iVar11 != local_20);
-                        local_18 = local_18 + 4;
-                        iVar3 = iVar3 + 0x100;
-                        local_20 = local_20 + 0x100;
-                      } while (iVar3 != iVar1);
+                          puVar8 = puVar8 + 1;
+                          uVar4 = *(uint *)(&DAT_03365cc0 + iVar10);
+                          iVar10 = iVar10 + 4;
+                          *puVar8 = g_ColorCubeLookup
+                                    [((uVar4 & 0xff) >> 3) * 0x400 +
+                                     ((uVar4 >> 8 & 0xff) >> 3) * 0x20 +
+                                     ((uVar4 >> 0x10 & 0xff) >> 3)];
+                        } while (iVar10 != local_34);
+                        local_20 = local_20 + 4;
+                        local_18 = local_18 + 0x100;
+                        local_34 = local_34 + 0x100;
+                      } while (local_18 != iVar1);
                     }
                     else if (g_BitsPerPixel == 0x10) {
-                      local_14 = local_20;
+                      local_28 = local_34;
+                      local_14 = local_1c;
                       do {
-                        puVar4 = (ushort *)
-                                 (*(int *)((int)g_ScreenBufferArray + local_18) + iVar10 * 2);
-                        iVar11 = iVar3;
+                        puVar3 = (ushort *)
+                                 (*(int *)((int)g_ScreenBufferArray + local_2c) + iVar9 * 2);
+                        iVar10 = local_14;
                         do {
-                          puVar4 = puVar4 + 1;
-                          uVar5 = *(uint *)(&DAT_03365cc0 + iVar11);
-                          iVar11 = iVar11 + 4;
-                          uVar5 = engine_font_cpp_packPixelScaled_FUN_004d1110
-                                            (uVar5 & 0xff,uVar5 >> 8 & 0xff,uVar5 >> 0x10 & 0xff);
-                          *puVar4 = (short)uVar5;
-                        } while (iVar11 != local_14);
-                        local_18 = local_18 + 4;
-                        iVar3 = iVar3 + 0x100;
+                          puVar3 = puVar3 + 1;
+                          uVar4 = *(uint *)(&DAT_03365cc0 + iVar10);
+                          iVar10 = iVar10 + 4;
+                          uVar4 = engine_font_cpp_packPixelScaled_FUN_004d1110
+                                            (uVar4 & 0xff,uVar4 >> 8 & 0xff,uVar4 >> 0x10 & 0xff);
+                          *puVar3 = (short)uVar4;
+                        } while (iVar10 != local_28);
+                        local_2c = local_2c + 4;
                         local_14 = local_14 + 0x100;
-                      } while (iVar3 != iVar1);
+                        local_28 = local_28 + 0x100;
+                      } while (local_14 != iVar1);
                     }
                     else if (g_BitsPerPixel == 0x20) {
-                      local_1c = local_20;
+                      local_30 = local_34;
+                      local_24 = local_2c;
                       do {
-                        puVar6 = (uint *)(*(int *)((int)g_ScreenBufferArray + local_18) + iVar10 * 4
-                                         );
-                        iVar11 = iVar3;
+                        puVar5 = (uint *)(*(int *)((int)g_ScreenBufferArray + local_24) + iVar9 * 4)
+                        ;
+                        iVar10 = local_1c;
                         do {
-                          puVar6 = puVar6 + 1;
-                          uVar5 = *(uint *)(&DAT_03365cc0 + iVar11);
-                          iVar11 = iVar11 + 4;
-                          uVar5 = engine_font_cpp_packPixelNative_FUN_004d1170
-                                            (uVar5 & 0xff,uVar5 >> 8 & 0xff,uVar5 >> 0x10 & 0xff);
-                          *puVar6 = uVar5;
-                        } while (iVar11 != local_1c);
-                        local_18 = local_18 + 4;
-                        iVar3 = iVar3 + 0x100;
+                          puVar5 = puVar5 + 1;
+                          uVar4 = *(uint *)(&DAT_03365cc0 + iVar10);
+                          iVar10 = iVar10 + 4;
+                          uVar4 = engine_font_cpp_packPixelNative_FUN_004d1170
+                                            (uVar4 & 0xff,uVar4 >> 8 & 0xff,uVar4 >> 0x10 & 0xff);
+                          *puVar5 = uVar4;
+                        } while (iVar10 != local_30);
+                        local_24 = local_24 + 4;
                         local_1c = local_1c + 0x100;
-                      } while (iVar3 != iVar1);
+                        local_30 = local_30 + 0x100;
+                      } while (local_1c != iVar1);
                     }
                   }
-                  pcVar12 = pcVar12 + 1;
+                  iVar11 = iVar11 + 1;
                 }
-                iVar10 = local_54 * 0x40 + iVar7;
-                engine_2d_c_drawRect_FUN_00403120(iVar7,iVar8,iVar10 + -1,iVar8 + 0x2f);
-                if (((iVar7 <= g_MouseX) && (g_MouseX < iVar10)) &&
-                   ((iVar8 <= g_MouseY && (g_MouseY < iVar8)))) {
-                  if (x_pos < 0) {
-                    x_pos = 0;
+                iVar9 = local_68 * 0x40 + iVar6;
+                engine_2d_c_drawRect_FUN_00403120(iVar6,iVar7,iVar9 + -1,iVar7 + 0x2f);
+                if (((iVar6 <= g_MouseX) && (g_MouseX < iVar9)) &&
+                   ((iVar7 <= g_MouseY && (g_MouseY < iVar7 + 0x30)))) {
+                  local_9c = local_70;
+                  if (iVar6 < 0) {
+                    iVar6 = 0;
                   }
-                  engine_2d_c_drawTextXY_FUN_00402130(x_pos,iVar7,local_6c);
+                  engine_2d_c_drawTextXY_FUN_00402130(iVar6,iVar7,local_84->name);
                 }
               }
-              local_58 = local_58 + 1;
-              if (local_80 <= local_58) {
-                local_68 = local_68 + local_54;
-                local_58 = 0;
+              local_6c = local_6c + 1;
+              if (3 < local_6c) {
+                local_7c = local_7c + local_68;
+                local_6c = 0;
               }
             }
           }
-          local_74 = local_74 + 0x69;
-          local_78 = local_78 + 1;
-          local_5c = local_5c + 1;
-          local_6c = local_6c + local_54;
-        } while (local_5c < *in_stack_00000018);
+          local_88 = (CDemonSet *)&local_88->cameras[0].field17_0x1a0;
+          local_8c = local_8c + 1;
+          local_84 = local_84 + 1;
+          local_70 = local_70 + 1;
+          local_80 = local_80 + local_68;
+        } while (local_70 < this_ptr->camera_count);
       }
-      if (0 < local_58) {
-        local_68 = local_68 + 1;
-        local_58 = 0;
+      if (0 < local_6c) {
+        local_7c = local_7c + 1;
+        local_6c = 0;
       }
-      local_7c = local_7c + 1;
-    } while (local_7c < 2);
-    if ((local_88 < 0) || ((g_MouseButtonFlags & 1U) == 0)) {
+      local_90 = local_90 + 1;
+    } while (local_90 < 2);
+    if ((local_9c < 0) || ((g_MouseButtonFlags & 1U) == 0)) {
       return -1;
     }
     g_MouseButtonFlags = 0;
-    iVar7 = local_88;
+    iVar6 = local_9c;
   }
-  return iVar7;
+  return iVar6;
 }

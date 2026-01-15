@@ -29,16 +29,14 @@ core_dmodel_cpp_CKeyFramedModel_importFromS3D_FUN_00479330(CKeyFramedModel *this
   int extraout_EDX_02;
   int iVar9;
   uint uVar10;
-  BADSPACEBASE *in_ESP;
   char *pcVar11;
   char *pcVar12;
   float10 fVar13;
   double dVar14;
   FILE *pFVar15;
-  CPickList *this_ptr_00;
-  uint uVar16;
-  uint d3;
-  uint d4;
+  uint in_stack_fffff302;
+  uint in_stack_fffff306;
+  uint in_stack_fffff30a;
   uint in_stack_fffff30e;
   uint in_stack_fffff312;
   CPickList local_c84;
@@ -64,7 +62,7 @@ core_dmodel_cpp_CKeyFramedModel_importFromS3D_FUN_00479330(CKeyFramedModel *this
   int local_58;
   int local_54;
   int local_50;
-  uint local_4c;
+  int local_4c;
   int local_48;
   int local_44;
   float local_40;
@@ -150,8 +148,6 @@ LAB_00479441:
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
     engine_2d_c_clearInputAndWait_FUN_00403260();
     engine_2d_c_clearInputAndWait_FUN_00403260();
-    d3 = 1;
-    d4 = local_4c;
     core_dmodel_cpp_CKeyFramedModel_allocate_FUN_00477bf0
               (this_ptr,local_34,local_48,local_50,1,local_4c);
     iVar9 = 1;
@@ -174,8 +170,7 @@ LAB_00479441:
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
     engine_2d_c_drawText_FUN_00401fd0("Importing textures",0,0);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-    this_ptr_00 = &local_c84;
-    shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(this_ptr_00);
+    shape_edittool_cpp_CPickList_ctor_FUN_004a3b90(&local_c84);
     shape_edittool_cpp_CStrList_add_FUN_004a2b80
               (&local_c84.base_strlist,"Don't copy textures.");
     shape_edittool_cpp_CStrList_add_FUN_004a2b80
@@ -188,7 +183,8 @@ LAB_00479441:
 LAB_00479719:
       core_dmodel_cpp_CKeyFramedModel_free_FUN_00477690(this_ptr);
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                (&local_c84,0,(uint)this_ptr_00,d3,d4,in_stack_fffff30e,in_stack_fffff312);
+                (&local_c84,0,in_stack_fffff302,in_stack_fffff306,in_stack_fffff30a,
+                 in_stack_fffff30e,in_stack_fffff312);
       return;
     }
     if (local_28 == 1) {
@@ -209,7 +205,8 @@ LAB_00479719:
       pcVar12 = crt_stdio_c_fgets_FUN_005fefd0(local_6ac,0x104,local_20);
       if (pcVar12 == (char *)0x0) {
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                  (&local_c84,0,(uint)this_ptr_00,d3,d4,in_stack_fffff30e,in_stack_fffff312);
+                  (&local_c84,0,in_stack_fffff302,in_stack_fffff306,in_stack_fffff30a,
+                   in_stack_fffff30e,in_stack_fffff312);
         goto LAB_00479417;
       }
       pcVar12 = local_6ac;
@@ -287,7 +284,6 @@ LAB_004797c3:
                  "raw");
     }
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
-    uVar16 = 0;
     engine_2d_c_drawText_FUN_00401fd0("Importing polygons",0,0);
     pFVar6 = local_20;
     iVar9 = 1;
@@ -302,7 +298,8 @@ LAB_004797c3:
                          &local_74,local_7c,local_64,local_70,local_78,local_60,local_6c);
       if (iVar4 != 10) {
         shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                  (&local_c84,0,uVar16,d3,d4,in_stack_fffff30e,in_stack_fffff312);
+                  (&local_c84,0,in_stack_fffff302,in_stack_fffff306,in_stack_fffff30a,
+                   in_stack_fffff30e,in_stack_fffff312);
         goto LAB_00479417;
       }
       if (local_44 < 0) {
@@ -323,6 +320,7 @@ LAB_004797c3:
         dVar14 = crt_math_c_round_FUN_005fe6b0((double)((float10)(&local_68)[iVar4] * fVar13));
         local_1c = (SMRGLPrimitiveQuad *)(int)ROUND(dVar14);
         ppSVar8[iVar4 * 3 + 7] = (SMRGLPrimitiveQuad *)(int)ROUND(dVar14);
+        in_stack_fffff302 = 0x479af8;
         dVar14 = crt_math_c_round_FUN_005fe6b0
                            ((double)(fVar13 * (float10)(&local_74)[extraout_ECX]));
         local_1c = (SMRGLPrimitiveQuad *)(int)ROUND(dVar14);
@@ -332,7 +330,6 @@ LAB_004797c3:
       }
     }
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
-    uVar16 = 0;
     engine_2d_c_drawText_FUN_00401fd0("Importing vertices",0,0);
     pFVar6 = local_20;
     iVar9 = 1;
@@ -355,18 +352,17 @@ LAB_004797c3:
       dVar14 = crt_math_c_round_FUN_005fe6b0((double)((float10)local_40 * fVar13));
       local_1c = (SMRGLPrimitiveQuad *)(int)ROUND(dVar14);
       *(SMRGLPrimitiveQuad **)(extraout_EAX + extraout_EDX_00) = local_1c;
-      d3 = 0x479be4;
       dVar14 = crt_math_c_round_FUN_005fe6b0((double)((float10)local_3c * fVar13));
       local_1c = (SMRGLPrimitiveQuad *)(int)ROUND(dVar14);
       *(SMRGLPrimitiveQuad **)(extraout_EAX_00 + extraout_EDX_01 + 4) = local_1c;
-      uVar16 = 0x479c06;
       dVar14 = crt_math_c_round_FUN_005fe6b0((double)((float10)local_38 * fVar13));
       local_1c = (SMRGLPrimitiveQuad *)(int)ROUND(dVar14);
       iVar9 = iVar9 + 1;
       *(SMRGLPrimitiveQuad **)(extraout_EDX_02 + extraout_EAX_01 + 8) = local_1c;
     }
     shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-              (&local_c84,0,uVar16,d3,d4,in_stack_fffff30e,in_stack_fffff312);
+              (&local_c84,0,in_stack_fffff302,in_stack_fffff306,in_stack_fffff30a,in_stack_fffff30e,
+               in_stack_fffff312);
   } while( true );
 LAB_00479b74:
   if (iVar9 < 1) goto LAB_00479c53;
@@ -394,7 +390,8 @@ LAB_00479c73:
       core_dmodel_cpp_CKeyFramedModel_validatePartList_FUN_0047bf40(this_ptr);
       this_ptr->transparent_pixel_flag = 0;
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                (&local_c84,0,uVar16,d3,d4,in_stack_fffff30e,in_stack_fffff312);
+                (&local_c84,0,in_stack_fffff302,in_stack_fffff306,in_stack_fffff30a,
+                 in_stack_fffff30e,in_stack_fffff312);
       return;
     }
     iVar9 = crt_string_c_stricmp_FUN_005fe7f0(local_a0,"matProp");

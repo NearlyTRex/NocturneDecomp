@@ -28,7 +28,6 @@ void core_mobster_cpp_FUN_00525840(void)
   CVector3f *pCVar13;
   int extraout_EAX;
   int extraout_EAX_00;
-  BADSPACEBASE *in_ESP;
   CEnemy *in_stack_00000004;
   float in_stack_00000008;
   float fVar14;

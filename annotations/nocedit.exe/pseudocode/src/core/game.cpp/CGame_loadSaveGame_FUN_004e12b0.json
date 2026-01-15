@@ -1,23 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 810,
-    "complexity_score": 2293,
+    "complexity_score": 1994,
     "cross_reference_count": 3,
     "function_call_count": 46,
     "global_count": 72,
-    "pseudocode_lines": 383,
-    "suspect_count": 187,
+    "pseudocode_lines": 329,
+    "suspect_count": 164,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
-      "format_string_mismatch",
       "lea_esp_stack_addr",
-      "register_param",
       "stack_param",
       "stack_ref",
       "variadic_preserve"
     ],
-    "total_lines": 1193
+    "total_lines": 1139
   },
   "cross_references": [
     {
@@ -993,389 +990,277 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 14,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 14,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
+      "description": "Unresolved stack parameter",
+      "line": 23,
+      "match": "in_stack_fffff9c8",
+      "text": "uint in_stack_fffff9c8;",
+      "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 24,
-      "match": "in_stack_00000014",
-      "text": "int in_stack_00000014;",
+      "match": "in_stack_fffff9cc",
+      "text": "uint in_stack_fffff9cc;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 25,
-      "match": "in_stack_00000018",
-      "text": "char *in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_0000001c",
-      "text": "int in_stack_0000001c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_00000034",
-      "text": "int in_stack_00000034;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 28,
-      "match": "in_stack_00000038",
-      "text": "char *in_stack_00000038;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 29,
-      "match": "in_stack_fffff998",
-      "text": "char *in_stack_fffff998;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_fffff99c",
-      "text": "void *in_stack_fffff99c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_fffff9a0",
-      "text": "char *in_stack_fffff9a0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_fffff9a4",
-      "text": "char *in_stack_fffff9a4;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 34,
-      "match": "in_stack_fffff9a8",
-      "text": "uint in_stack_fffff9a8;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 39,
-      "match": "in_stack_fffff9e0",
-      "text": "CEditorTools *in_stack_fffff9e0;",
+      "match": "in_stack_fffff9d0",
+      "text": "uint in_stack_fffff9d0;",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 89,
-      "match": "&stack0xfffff9d8",
-      "text": "pcVar9 = &stack0xfffff9d8;",
+      "line": 55,
+      "match": "&stack0xfffff9c8",
+      "text": "pcVar8 = &stack0xfffff9c8;",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 102,
-      "match": "in_stack_0000001c",
-      "text": "if (in_stack_0000001c != 0) {",
+      "line": 68,
+      "match": "in_stack_fffff9c8",
+      "text": "in_stack_fffff9c8 = in_stack_fffff9c8 & 0xffffff00;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 105,
-      "match": "in_stack_00000014",
-      "text": "local_1c = in_stack_00000014 + 0x254;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 106,
-      "match": "in_stack_00000014",
-      "text": "local_14 = in_stack_00000014 + 0x24c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 107,
-      "match": "in_stack_00000014",
-      "text": "iVar2 = in_stack_00000014 + 0x248;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 108,
-      "match": "in_stack_00000014",
-      "text": "local_18 = in_stack_00000014 + 0x250;",
+      "line": 68,
+      "match": "in_stack_fffff9c8",
+      "text": "in_stack_fffff9c8 = in_stack_fffff9c8 & 0xffffff00;",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 110,
-      "match": "&stack0xfffff9d8",
-      "text": "pcVar10 = &stack0xfffff9d8;",
+      "line": 81,
+      "match": "&stack0xfffff9c8",
+      "text": "pcVar5 = &stack0xfffff9c8;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 85,
+      "match": "&stack0xfffff9c8",
+      "text": "auto_select_flag = (char)&stack0xfffff9c8;",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 111,
-      "match": "&stack0xfffff9d8",
-      "text": "pcVar7 = &stack0xfffff9d8;",
+      "match": "&stack0xfffff9c8",
+      "text": "(\"save\",&stack0xfffff9c8,\"rt\");",
       "type": "stack_ref"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 112,
-      "match": "in_stack_00000018",
-      "text": "pcVar9 = in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
+      "description": "Direct stack address reference",
       "line": 113,
-      "match": "in_stack_00000018",
-      "text": "if (in_stack_00000018 == (char *)0x0) {",
+      "match": "&stack0xfffff9c8",
+      "text": "iVar2 = crt_string_c_stricmp_FUN_005fe7f0(&g_CurrentSaveFile,&stack0xfffff9c8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 116,
+      "match": "&stack0xfffff9c8",
+      "text": "pcVar8 = &stack0xfffff9c8;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 149,
+      "match": "&stack0xfffff9c8",
+      "text": "local_30 = engine_dosio_c_getFileSize_FUN_00481880(\"save\",&stack0xfffff9c8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 153,
+      "match": "&stack0xfffff9c8",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(local_534,\"%s\\\\%s\",\"save\",&stack0xfffff9c8);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 163,
+      "match": "in_stack_fffff9c8",
+      "text": "((ofstream *)local_e8,0,in_stack_fffff9c8,in_stack_fffff9cc,in_stack_fffff9d0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 124,
-      "match": "in_stack_0000001c",
-      "text": "*(uint *)(in_stack_0000001c + 0x234) = 0;",
+      "line": 163,
+      "match": "in_stack_fffff9cc",
+      "text": "((ofstream *)local_e8,0,in_stack_fffff9c8,in_stack_fffff9cc,in_stack_fffff9d0);",
       "type": "stack_param"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 143,
-      "match": "&stack0xfffff960",
-      "text": "(\"save\",&stack0xfffff960,\"rt\");",
-      "type": "stack_ref"
+      "description": "Unresolved stack parameter",
+      "line": 163,
+      "match": "in_stack_fffff9d0",
+      "text": "((ofstream *)local_e8,0,in_stack_fffff9c8,in_stack_fffff9cc,in_stack_fffff9d0);",
+      "type": "stack_param"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 145,
-      "match": "&stack0xfffff968",
-      "text": "iVar3 = crt_string_c_stricmp_FUN_005fe7f0(&g_CurrentSaveFile,&stack0xfffff968);",
-      "type": "stack_ref"
+      "description": "Unresolved stack parameter",
+      "line": 165,
+      "match": "in_stack_fffff9c8",
+      "text": "((ifstream *)local_168,0,in_stack_fffff9c8,in_stack_fffff9cc,in_stack_fffff9d0);",
+      "type": "stack_param"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 146,
-      "match": "&stack0xfffff96c",
-      "text": "pcVar9 = &stack0xfffff96c;",
-      "type": "stack_ref"
+      "description": "Unresolved stack parameter",
+      "line": 165,
+      "match": "in_stack_fffff9cc",
+      "text": "((ifstream *)local_168,0,in_stack_fffff9c8,in_stack_fffff9cc,in_stack_fffff9d0);",
+      "type": "stack_param"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 182,
-      "match": "&stack0xfffff978",
-      "text": "engine_dosio_c_getFileSize_FUN_00481880(\"save\",&stack0xfffff978);",
-      "type": "stack_ref"
+      "description": "Unresolved stack parameter",
+      "line": 165,
+      "match": "in_stack_fffff9d0",
+      "text": "((ifstream *)local_168,0,in_stack_fffff9c8,in_stack_fffff9cc,in_stack_fffff9d0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 177,
+      "match": "in_stack_fffff9c8",
+      "text": "((ofstream *)local_e8,0,in_stack_fffff9c8,in_stack_fffff9cc,in_stack_fffff9d0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 177,
+      "match": "in_stack_fffff9cc",
+      "text": "((ofstream *)local_e8,0,in_stack_fffff9c8,in_stack_fffff9cc,in_stack_fffff9d0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 177,
+      "match": "in_stack_fffff9d0",
+      "text": "((ofstream *)local_e8,0,in_stack_fffff9c8,in_stack_fffff9cc,in_stack_fffff9d0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 179,
+      "match": "in_stack_fffff9c8",
+      "text": "((ifstream *)local_168,0,in_stack_fffff9c8,in_stack_fffff9cc,in_stack_fffff9d0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 179,
+      "match": "in_stack_fffff9cc",
+      "text": "((ifstream *)local_168,0,in_stack_fffff9c8,in_stack_fffff9cc,in_stack_fffff9d0);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 179,
+      "match": "in_stack_fffff9d0",
+      "text": "((ifstream *)local_168,0,in_stack_fffff9c8,in_stack_fffff9cc,in_stack_fffff9d0);",
+      "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 196,
-      "match": "in_stack_fffff998",
-      "text": "((ofstream *)auStack_118,0,(uint)in_stack_fffff998,(uint)in_stack_fffff99c,",
+      "match": "in_stack_fffff9c8",
+      "text": "((ofstream *)local_e8,0,in_stack_fffff9c8,in_stack_fffff9cc,in_stack_fffff9d0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 196,
-      "match": "in_stack_fffff99c",
-      "text": "((ofstream *)auStack_118,0,(uint)in_stack_fffff998,(uint)in_stack_fffff99c,",
+      "match": "in_stack_fffff9cc",
+      "text": "((ofstream *)local_e8,0,in_stack_fffff9c8,in_stack_fffff9cc,in_stack_fffff9d0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 197,
-      "match": "in_stack_fffff9a0",
-      "text": "(uint)in_stack_fffff9a0);",
+      "line": 196,
+      "match": "in_stack_fffff9d0",
+      "text": "((ofstream *)local_e8,0,in_stack_fffff9c8,in_stack_fffff9cc,in_stack_fffff9d0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 199,
-      "match": "in_stack_fffff99c",
-      "text": "((ifstream *)auStack_194,0,(uint)in_stack_fffff99c,(uint)in_stack_fffff9a0,",
+      "line": 198,
+      "match": "in_stack_fffff9c8",
+      "text": "((ifstream *)local_168,0,in_stack_fffff9c8,in_stack_fffff9cc,in_stack_fffff9d0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 199,
-      "match": "in_stack_fffff9a0",
-      "text": "((ifstream *)auStack_194,0,(uint)in_stack_fffff99c,(uint)in_stack_fffff9a0,",
+      "line": 198,
+      "match": "in_stack_fffff9cc",
+      "text": "((ifstream *)local_168,0,in_stack_fffff9c8,in_stack_fffff9cc,in_stack_fffff9d0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 200,
-      "match": "in_stack_fffff9a4",
-      "text": "(uint)in_stack_fffff9a4);",
+      "line": 198,
+      "match": "in_stack_fffff9d0",
+      "text": "((ifstream *)local_168,0,in_stack_fffff9c8,in_stack_fffff9cc,in_stack_fffff9d0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 213,
-      "match": "in_stack_fffff99c",
-      "text": "((ofstream *)(auStack_118 + 4),0,(uint)in_stack_fffff99c,(uint)in_stack_fffff9a0,",
+      "match": "in_stack_fffff9c8",
+      "text": "((ofstream *)local_e8,0,in_stack_fffff9c8,in_stack_fffff9cc,in_stack_fffff9d0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 213,
-      "match": "in_stack_fffff9a0",
-      "text": "((ofstream *)(auStack_118 + 4),0,(uint)in_stack_fffff99c,(uint)in_stack_fffff9a0,",
+      "match": "in_stack_fffff9cc",
+      "text": "((ofstream *)local_e8,0,in_stack_fffff9c8,in_stack_fffff9cc,in_stack_fffff9d0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 214,
-      "match": "in_stack_fffff9a4",
-      "text": "(uint)in_stack_fffff9a4);",
+      "line": 213,
+      "match": "in_stack_fffff9d0",
+      "text": "((ofstream *)local_e8,0,in_stack_fffff9c8,in_stack_fffff9cc,in_stack_fffff9d0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 216,
-      "match": "in_stack_fffff9a0",
-      "text": "((ifstream *)(auStack_194 + 4),0,(uint)in_stack_fffff9a0,(uint)in_stack_fffff9a4,",
+      "line": 215,
+      "match": "in_stack_fffff9c8",
+      "text": "((ifstream *)local_168,0,in_stack_fffff9c8,in_stack_fffff9cc,in_stack_fffff9d0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 216,
-      "match": "in_stack_fffff9a4",
-      "text": "((ifstream *)(auStack_194 + 4),0,(uint)in_stack_fffff9a0,(uint)in_stack_fffff9a4,",
+      "line": 215,
+      "match": "in_stack_fffff9cc",
+      "text": "((ifstream *)local_168,0,in_stack_fffff9c8,in_stack_fffff9cc,in_stack_fffff9d0);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 217,
-      "match": "in_stack_fffff9a8",
-      "text": "in_stack_fffff9a8);",
+      "line": 215,
+      "match": "in_stack_fffff9d0",
+      "text": "((ifstream *)local_168,0,in_stack_fffff9c8,in_stack_fffff9cc,in_stack_fffff9d0);",
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 241,
-      "match": "in_stack_fffff9a4",
-      "text": "in_stack_fffff9a4 = \"..\\\\core\\\\game.cpp\";",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
+      "description": "Direct stack address reference",
       "line": 242,
-      "match": "in_stack_fffff9a0",
-      "text": "in_stack_fffff9a0 = \"rt\";",
-      "type": "stack_param"
+      "match": "&stack0xfffff9c8",
+      "text": "(g_CEditorToolsPtr,\"Can't load old save game file %s.  Sorry.\",&stack0xfffff9c8);",
+      "type": "stack_ref"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 243,
-      "match": "in_stack_fffff998",
-      "text": "in_stack_fffff998 = \"save\\\\$$SAVE$$.TMP\";",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 247,
-      "match": "in_stack_fffff99c",
-      "text": "in_stack_fffff99c = pvVar16;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 251,
-      "match": "in_stack_fffff9a4",
-      "text": "in_stack_fffff9a4 = (char *)0x4e16ae;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 253,
-      "match": "in_stack_fffff99c",
-      "text": "in_stack_fffff99c = pvVar16;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 255,
-      "match": "in_stack_fffff9a8",
-      "text": "in_stack_fffff9a8 = 0x4e16c0;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 324,
-      "match": "in_stack_fffff9e0",
-      "text": "pCVar4 = core_actor_cpp_castToClassHash_FUN_0040c790(pCVar4,(uint)in_stack_fffff9e0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 328,
-      "match": "in_stack_fffff9e0",
-      "text": "in_stack_fffff9e0 = g_CEditorToolsPtr;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 346,
-      "match": "in_stack_00000014",
-      "text": "if (in_stack_00000014 + 0x9c8 < 7) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 374,
-      "match": "in_stack_fffff9e0",
-      "text": "in_stack_fffff9e0 = (CEditorTools *)0x4e1b68;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 376,
-      "match": "in_stack_00000038",
-      "text": "if (in_stack_00000038 == (char *)0x0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 380,
-      "match": "in_stack_00000034",
-      "text": "if (*(int *)(in_stack_00000034 + 0x9c4) == 0) goto LAB_004e17ac;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 381,
-      "match": "in_stack_00000038",
-      "text": "in_stack_00000038 = chapter_name;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 382,
-      "match": "in_stack_00000034",
-      "text": "*(uint *)(in_stack_00000034 + 0x9c4) = 0;",
-      "type": "stack_param"
+      "description": "Direct stack address reference",
+      "line": 249,
+      "match": "&stack0xfffff9c8",
+      "text": "(g_CEditorToolsPtr,\"Can't load old save game file %s.  Sorry.\",&stack0xfffff9c8);",
+      "type": "stack_ref"
     },
     {
       "call_address": "004e155b",
@@ -1572,83 +1457,6 @@
       "target_function": "shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0",
       "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showMessage_FUN_0049e6a0 at 004e1be2 (no EBP frame)",
       "type": "variadic_preserve"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s\\\\%s\" has 2 specifiers but 0 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s\\\\%s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 186,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_578,\"%s\\\\%s\");",
-      "text": "Format string expects 2 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Can't reopen %s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Can't reopen %s",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 252,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Can't reopen %s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 295,
-      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,\"%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d, %d\\n\" has 2 specifiers but 0 arguments after it",
-      "expected_args": 2,
-      "format_string": "%d, %d\\n",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 311,
-      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,\"%d, %d\\n\");",
-      "text": "Format string expects 2 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 358,
-      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,\"%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 362,
-      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,\"%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%f,%f,%d,%d\\n\" has 4 specifiers but 0 arguments after it",
-      "expected_args": 4,
-      "format_string": "%f,%f,%d,%d\\n",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 369,
-      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,\"%f,%f,%d,%d\\n\");",
-      "text": "Format string expects 4 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 4,

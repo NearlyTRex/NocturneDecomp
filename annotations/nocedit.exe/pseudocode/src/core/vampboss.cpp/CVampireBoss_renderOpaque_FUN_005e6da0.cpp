@@ -11,17 +11,17 @@ int __cdecl core_vampboss_cpp_CVampireBoss_renderOpaque_FUN_005e6da0(CVampireBos
 {
   CBoundingBox3D *this_ptr_00;
   int iVar1;
-  BADSPACEBASE *in_ESP;
-  int in_stack_0000003c;
+  CBoundingBox3D local_2c;
+  int iStack_c;
   
   if (*(int *)(this_ptr->base_enemy).base_character.field2_0x240c != 0) {
     return 0;
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
   this_ptr_00 = (*((this_ptr->base_enemy).base_character.base_actor.vtable)->getBoundingBox)
-                          ((CDemonActor *)this_ptr,(CBoundingBox3D *)&stack0xffffffd8);
-  iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
-  if (iVar1 == 0) goto LAB_005e6e6c;
+                          ((CDemonActor *)this_ptr,&local_2c);
+  iStack_c = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
+  if (iStack_c == 0) goto LAB_005e6e6c;
   if (this_ptr->form == 0) {
     core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
               (&(this_ptr->base_enemy).base_character.model,-1,0xffffffff,1,0);
@@ -56,5 +56,5 @@ LAB_005e6e2e:
   }
 LAB_005e6e6c:
   core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408b40((CDemonActor *)this_ptr);
-  return in_stack_0000003c;
+  return iStack_c;
 }

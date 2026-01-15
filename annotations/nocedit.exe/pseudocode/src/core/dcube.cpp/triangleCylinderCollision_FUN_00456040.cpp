@@ -21,14 +21,13 @@ core_dcube_cpp_triangleCylinderCollision_FUN_00456040
   uint uVar7;
   uint uVar8;
   float fVar9;
-  BADSPACEBASE *in_ESP;
   CVector3f local_7c;
   CVector3f local_70;
   CVector3f local_64;
   CVector3f local_58;
   CVector3f local_4c;
   CVector3f local_40;
-  CVector3f local_30 [2];
+  CVector3f local_34 [3];
   
   if ((triangle->normal).y <= (float)-0.34000000000000002) {
     fVar1 = triangle->vertices[0]->x - cylinder_center->x;
@@ -118,15 +117,15 @@ core_dcube_cpp_triangleCylinderCollision_FUN_00456040
         }
         if (0.01 <= (double)fVar9) {
           fVar9 = cylinder_radius / fVar9;
-          local_30[0].x = (triangle->normal).x * fVar9 + cylinder_center->x;
-          local_30[0].z = fVar9 * (triangle->normal).z + cylinder_center->z;
-          local_30[0].y = cylinder_center->y;
+          local_34[0].x = (triangle->normal).x * fVar9 + cylinder_center->x;
+          local_34[0].z = fVar9 * (triangle->normal).z + cylinder_center->z;
+          local_34[0].y = cylinder_center->y;
           fVar9 = core_dcube_cpp_CDemonCubeTriangle_rayTriangleIntersection_FUN_00455460
-                            (triangle,local_30,&g_DownwardRayDirection);
+                            (triangle,local_34,&g_DownwardRayDirection);
           if ((0.0 <= fVar9) &&
-             (local_30[0].x = fVar9 * g_DownwardRayDirection.y + local_30[0].x,
-             *out_height < local_30[0].x)) {
-            *out_height = local_30[0].x;
+             (local_34[0].y = fVar9 * g_DownwardRayDirection.y + local_34[0].y,
+             *out_height < local_34[0].y)) {
+            *out_height = local_34[0].y;
             return 1;
           }
         }

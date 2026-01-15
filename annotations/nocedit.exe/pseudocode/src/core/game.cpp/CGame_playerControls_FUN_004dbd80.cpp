@@ -14,8 +14,8 @@ void __cdecl core_game_cpp_CGame_playerControls_FUN_004dbd80(CGame *this_ptr)
   uint uVar1;
   SPlayerControl *ctrl;
   int iVar2;
-  SPlayerControl *unaff_EBP;
   char *pcVar3;
+  SPlayerControl *unaff_EDI;
   char *pcVar4;
   byte bVar5;
   
@@ -35,7 +35,7 @@ void __cdecl core_game_cpp_CGame_playerControls_FUN_004dbd80(CGame *this_ptr)
       core_game_cpp_SettingCursorPos_FUN_004dccc0(this_ptr,ctrl);
     }
     else if (uVar1 == 2) {
-      core_game_cpp_CallToJoystickStuff_FUN_004dc230(this_ptr,(int)ctrl,unaff_EBP);
+      core_game_cpp_CallToJoystickStuff_FUN_004dc230(this_ptr,(int)ctrl,unaff_EDI);
     }
     else {
       g_CurrentFilename = "..\\core\\game.cpp";

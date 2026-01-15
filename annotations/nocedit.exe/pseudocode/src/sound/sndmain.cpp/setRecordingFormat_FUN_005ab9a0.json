@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 113,
+    "complexity_score": 56,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 9,
-    "pseudocode_lines": 28,
-    "suspect_count": 7,
+    "pseudocode_lines": 26,
+    "suspect_count": 2,
     "suspect_types": [
       "callind_preserve",
-      "stack_param",
       "variadic_preserve"
     ],
-    "total_lines": 92
+    "total_lines": 90
   },
   "cross_references": [
     {
@@ -182,41 +181,6 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000014",
-      "text": "LPUNKNOWN in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000018",
-      "text": "int in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_00000014",
-      "text": "g_RecordingSampleRate = (int)in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_00000018",
-      "text": "g_RecordingSamplesSigned = (int)(in_stack_00000018 != 0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_00000014",
-      "text": "(LPDIRECTSOUNDCAPTUREBUFFER *)signed_samples,in_stack_00000014);",
-      "type": "stack_param"
-    },
-    {
       "add_esp_value": 20,
       "call_target_type": "reg_offset",
       "call_target_value": {
@@ -237,7 +201,7 @@
     },
     {
       "call_address": "005aba0a",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

@@ -12,7 +12,6 @@ core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00475210(CDemon
 {
   CDemonRenderer *this_ptr_00;
   int extraout_EAX;
-  BADSPACEBASE *in_ESP;
   int iVar1;
   float10 fVar2;
   float10 fVar3;
@@ -22,7 +21,7 @@ core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00475210(CDemon
   unkbyte10 Var7;
   float10 fVar8;
   double dVar9;
-  int iVar10;
+  int local_e4;
   SMRGLHeaderPrimitive local_dc;
   uint local_c4;
   uint local_c0;
@@ -62,9 +61,9 @@ core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00475210(CDemon
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
               (g_CDemonRendererPtr,g_LightTextures);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr,1);
-    iVar10 = 1;
+    local_e4 = 1;
     do {
-      fVar2 = (float10)iVar10 *
+      fVar2 = (float10)local_e4 *
               ((float10)18 / (float10)(this_ptr->base).base.projection_scale) *
               (float10)0.0625;
       Var7 = fpatan(fVar2,(float10)1);
@@ -197,8 +196,8 @@ core_dlight_cpp_CDemonLight_renderRadialVolumetricScattering_FUN_00475210(CDemon
         } while (iVar1 < 4);
         local_48 = local_48 + 1;
       } while (local_48 < 0x10);
-      iVar10 = iVar10 + 1;
-    } while (iVar10 < 0x10);
+      local_e4 = local_e4 + 1;
+    } while (local_e4 < 0x10);
     engine_drender_cpp_CDemonRenderer_matrixPop_FUN_0050d720();
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr,0);
     return;

@@ -13,17 +13,16 @@ core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_005a0150
 
 {
   CDeformableModel *this_ptr_00;
-  CBoundingBox3D *unaff_EDI;
-  uint in_stack_00000018;
-  int in_stack_0000001c;
+  CBoundingBox3D *bounding_box;
   
   if (lod_index < 0) {
+    bounding_box = &this_ptr->bounding_box;
     this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_005a07a0(this_ptr);
-    lod_index = core_skeleton_cpp_CDeformableModel_selectLOD_FUN_0059ce40(this_ptr_00,unaff_EDI);
+    lod_index = core_skeleton_cpp_CDeformableModel_selectLOD_FUN_0059ce40(this_ptr_00,bounding_box);
   }
   core_skeleton_cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_005a0250(this_ptr,lod_index);
-  if (in_stack_0000001c == 0) {
-    if (((int)in_stack_00000018 < 0) || ((in_stack_00000018 & 0x100) == 0)) {
+  if (lighting_mode == 0) {
+    if (((int)render_flags < 0) || ((render_flags & 0x100) == 0)) {
       core_skeleton_cpp_CDeformableModelInstance_skinAndInitWRecip_FUN_005a02f0(this_ptr,lod_index);
     }
   }

@@ -14,20 +14,19 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_start_FUN_005ae340(CDirectSoundDe
   uint uVar3;
   char *pcVar4;
   int iVar5;
-  BADSPACEBASE *in_ESP;
-  double latency_seconds;
+  double local_338;
+  char acStack_330 [400];
   char acStack_1a0 [400];
   
   if (g_DirectSoundSecondaryBuffer == (IDirectSoundBuffer *)0x0) {
-    latency_seconds = 0.05;
+    local_338 = 0.05;
   }
   else {
     g_StreamBlockSizeBytes =
          ((int)((g_StreamBitsPerSample + (g_StreamBitsPerSample >> 0x1f) * -8) -
                (uint)((g_StreamBitsPerSample >> 0x1f) << 2 < 0)) >> 3) * g_StreamSamplesPerBlock *
          g_StreamChannelCount;
-    latency_seconds =
-         ((double)g_StreamSamplesPerBlock / (double)g_StreamSampleRate) * 0.5;
+    local_338 = ((double)g_StreamSamplesPerBlock / (double)g_StreamSampleRate) * 0.5;
     iVar5 = 0;
     g_StreamCurrentBlock = 0;
     if (0 < g_StreamBlockCount) {
@@ -38,7 +37,7 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_start_FUN_005ae340(CDirectSoundDe
       } while (iVar5 < g_StreamBlockCount);
     }
   }
-  pvVar2 = sound_sndmain_cpp_startSoundThread_FUN_005abc00(latency_seconds);
+  pvVar2 = sound_sndmain_cpp_startSoundThread_FUN_005abc00(local_338);
   if (pvVar2 != (HANDLE)0x0) {
     if (g_DirectSoundSecondaryBuffer == (IDirectSoundBuffer *)0x0) {
       return 1;
@@ -52,9 +51,9 @@ int __cdecl sound_snddx_cpp_CDirectSoundDevice_start_FUN_005ae340(CDirectSoundDe
       }
       pcVar4 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar3);
       crt_stdio_c_sprintf_FUN_005fdbd0
-                (&stack0xfffffcd0,"DirectSux: Unable to %s.  (%s)",
-                 "Play the secondary buffer",pcVar4);
-      pcVar4 = &stack0xfffffcd0;
+                (acStack_330,"DirectSux: Unable to %s.  (%s)","Play the secondary buffer",
+                 pcVar4);
+      pcVar4 = acStack_330;
     }
     else {
       pcVar4 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar3);

@@ -11,12 +11,12 @@ int __cdecl shape_design_c_loadS3DModelFile_FUN_004593a0(char *filename)
 {
   char cVar1;
   int iVar2;
-  BADSPACEBASE *in_ESP;
   char *pcVar3;
   char *pcVar4;
   char *pcVar5;
   byte bVar6;
-  int in_stack_fffff61c;
+  int local_9e4;
+  char local_9e0 [260];
   byte local_8dc [4];
   int local_8d8 [500];
   char local_108 [200];
@@ -101,9 +101,9 @@ int __cdecl shape_design_c_loadS3DModelFile_FUN_004593a0(char *filename)
           goto LAB_00459491;
         }
         for (local_40 = 0; (int)local_40 < local_30[2]; local_40 = local_40 + 1) {
-          pcVar3 = crt_stdio_c_fgets_FUN_005fefd0(&stack0xfffff620,0x104,local_34);
+          pcVar3 = crt_stdio_c_fgets_FUN_005fefd0(local_9e0,0x104,local_34);
           if (pcVar3 == (char *)0x0) goto LAB_00459478;
-          pcVar3 = &stack0xfffff620;
+          pcVar3 = local_9e0;
           do {
             pcVar4 = pcVar3;
             if (*pcVar3 == '\n') goto LAB_0045976f;
@@ -115,7 +115,7 @@ int __cdecl shape_design_c_loadS3DModelFile_FUN_004593a0(char *filename)
           pcVar4 = (char *)0x0;
 LAB_0045976f:
           if (pcVar4 != (char *)0x0) {
-            pcVar3 = &stack0xfffff620;
+            pcVar3 = local_9e0;
             do {
               pcVar4 = pcVar3;
               if (*pcVar3 == '\n') goto LAB_00459796;
@@ -129,8 +129,8 @@ LAB_00459796:
             *pcVar4 = '\0';
           }
           crt_string_c_splitpath_FUN_005ff178
-                    (&stack0xfffff620,(char *)0x0,(char *)0x0,
-                     (char *)(local_40 * 0x50 + (int)local_38),(char *)0x0);
+                    (local_9e0,(char *)0x0,(char *)0x0,(char *)(local_40 * 0x50 + (int)local_38),
+                     (char *)0x0);
           pcVar4 = ".raw";
           iVar2 = -1;
           pcVar3 = (char *)(local_40 * 0x50 + (int)local_38);
@@ -162,17 +162,17 @@ LAB_00459796:
           local_14->vertex_indices_count = 3;
           local_14->part_assignment = local_40;
           iVar2 = crt_stdio_c_fscanf_FUN_005fe7c0
-                            (local_34,"%d,%d,%f,%f,%d,%f,%f,%d,%f,%f\n",&stack0xfffff61c,
+                            (local_34,"%d,%d,%f,%f,%d,%f,%f,%d,%f,%f\n",&local_9e4,
                              local_14->vertex_indices,local_14->uv_u,local_14->uv_v,
                              local_14->vertex_indices + 1,local_14->uv_u + 1,local_14->uv_v + 1,
                              local_14->vertex_indices + 2,local_14->uv_u + 2,local_14->uv_v + 2);
           if (iVar2 != 10) goto LAB_00459478;
-          if (in_stack_fffff61c < 0) {
+          if (local_9e4 < 0) {
             local_14->polygon_type = 1;
           }
           else {
             local_14->polygon_type = 2;
-            pcVar3 = (char *)(in_stack_fffff61c * 0x50 + (int)local_38);
+            pcVar3 = (char *)(local_9e4 * 0x50 + (int)local_38);
             pcVar4 = local_14->lightmap_name;
             do {
               cVar1 = *pcVar3;
@@ -183,7 +183,7 @@ LAB_00459796:
               pcVar4[1] = cVar1;
               pcVar4 = pcVar4 + 2;
             } while (cVar1 != '\0');
-            pcVar3 = (char *)(in_stack_fffff61c * 0x50 + (int)local_38);
+            pcVar3 = (char *)(local_9e4 * 0x50 + (int)local_38);
             pcVar4 = local_14->texture_name;
             do {
               cVar1 = *pcVar3;

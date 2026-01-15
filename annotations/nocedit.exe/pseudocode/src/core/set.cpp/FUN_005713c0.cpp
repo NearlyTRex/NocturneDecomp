@@ -10,10 +10,9 @@ void core_set_cpp_FUN_005713c0(void)
 
 {
   CDemonSet *in_stack_00000004;
-  CDemonSet *in_stack_00000008;
   
   core_set_cpp_CDemonSet_FUN_0056fbd0(in_stack_00000004);
-  core_set_cpp_CDemonSet_FUN_0056aca0(in_stack_00000008);
+  core_set_cpp_CDemonSet_FUN_0056aca0(in_stack_00000004);
   core_gore_cpp_FUN_004ed830(g_CGorePtr);
   core_fire_cpp_CFireEffect_renderDecals_FUN_004c74a0(g_CFireEffectPtr,1,0);
   return;

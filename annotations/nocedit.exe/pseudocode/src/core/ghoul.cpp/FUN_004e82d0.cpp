@@ -12,68 +12,72 @@
 uint core_ghoul_cpp_FUN_004e82d0(void)
 
 {
-  float fVar1;
+  CVector3f *pCVar1;
   CVector3f *pCVar2;
-  CVector3f *pCVar3;
   CDeformableModelInstance *this_ptr;
-  BADSPACEBASE *in_ESP;
-  int in_stack_00000004;
+  CDemonActor *in_stack_00000004;
   CVector3f *in_stack_00000008;
-  CDemonActor *in_stack_00000018;
-  CVector3f aCStack_80 [2];
-  float local_68;
+  CVector3f local_94;
+  CVector3f local_88;
+  float local_7c;
+  float local_78;
+  float local_74;
+  CVector3f local_70;
   float local_64;
   float local_60;
-  CVector3f local_5c;
+  float local_5c;
+  float local_58;
+  float local_54;
   float local_50;
-  float local_4c;
-  float fStack_48;
-  float fStack_44;
-  float local_40;
-  CVector3f CStack_3c;
+  CVector3f local_4c;
+  CVector3f local_40;
+  float local_34;
+  float local_30;
+  float local_2c;
   float local_28;
   float local_24;
   float local_20;
-  float fStack_14;
+  CVector3f local_1c;
   float local_10;
   
-  this_ptr = (CDeformableModelInstance *)(in_stack_00000004 + 0x158);
-  fVar1 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
-                    ((CMotionController *)this_ptr,0xb);
-  if (fVar1 <= 0.0) {
+  this_ptr = (CDeformableModelInstance *)(in_stack_00000004 + 1);
+  local_10 = core_motion_cpp_CMotionController_getStateBlendWeight_FUN_0052dd20
+                       ((CMotionController *)this_ptr,0xb);
+  if (local_10 <= 0.0) {
     return 0;
   }
+  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+                     (this_ptr,&local_40,DAT_02d83300);
   pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-                     (this_ptr,&CStack_3c,DAT_02d83300);
-  pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-                     (this_ptr,aCStack_80,DAT_02d83308);
-  local_28 = pCVar3->x + pCVar2->x;
-  local_24 = pCVar3->y + pCVar2->y;
-  local_4c = local_28 * 0.5f;
-  local_20 = pCVar3->z + pCVar2->z;
-  fStack_48 = local_24 * 0.5f;
-  fStack_44 = local_20 * 0.5f;
+                     (this_ptr,&local_88,DAT_02d83308);
+  local_34 = pCVar2->x + pCVar1->x;
+  local_30 = pCVar2->y + pCVar1->y;
+  local_58 = local_34 * 0.5f;
+  local_2c = pCVar2->z + pCVar1->z;
+  local_54 = local_30 * 0.5f;
+  local_50 = local_2c * 0.5f;
+  pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
+                     (this_ptr,&local_94,DAT_02d83304);
   pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-                     (this_ptr,(CVector3f *)&stack0xffffff78,DAT_02d83304);
-  pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-                     (this_ptr,&CStack_3c,DAT_02d8330c);
-  local_68 = pCVar3->x + pCVar2->x;
-  local_64 = pCVar3->y + pCVar2->y;
-  local_50 = local_68 * 0.5f;
-  local_4c = local_64 * 0.5f;
-  local_60 = pCVar3->z + pCVar2->z;
-  fStack_14 = fStack_44 + local_50;
-  fStack_48 = local_60 * 0.5f;
-  local_5c.x = fStack_14 * 0.5f;
-  local_10 = local_40 + local_4c;
-  local_5c.y = local_10 * 0.5f;
-  local_5c.z = (CStack_3c.x + fStack_48) * 0.5f;
-  pCVar2 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                     (in_stack_00000018,(CVector3f *)&stack0xfffffff8,&local_5c);
-  if (in_stack_00000008 != pCVar2) {
-    in_stack_00000008->x = pCVar2->x;
-    in_stack_00000008->y = pCVar2->y;
-    in_stack_00000008->z = pCVar2->z;
+                     (this_ptr,&local_4c,DAT_02d8330c);
+  local_7c = pCVar2->x + pCVar1->x;
+  local_78 = pCVar2->y + pCVar1->y;
+  local_64 = local_7c * 0.5f;
+  local_60 = local_78 * 0.5f;
+  local_74 = pCVar2->z + pCVar1->z;
+  local_28 = local_58 + local_64;
+  local_5c = local_74 * 0.5f;
+  local_70.x = local_28 * 0.5f;
+  local_24 = local_54 + local_60;
+  local_70.y = local_24 * 0.5f;
+  local_20 = local_50 + local_5c;
+  local_70.z = local_20 * 0.5f;
+  pCVar1 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
+                     (in_stack_00000004,&local_1c,&local_70);
+  if (in_stack_00000008 != pCVar1) {
+    in_stack_00000008->x = pCVar1->x;
+    in_stack_00000008->y = pCVar1->y;
+    in_stack_00000008->z = pCVar1->z;
   }
   return 1;
 }

@@ -15,7 +15,7 @@ void core_imp_cpp_FUN_004fab60(void)
   int iVar1;
   CCharacter *in_stack_00000004;
   int *in_stack_00000008;
-  float probability_threshold;
+  float local_14;
   
   if ((0.0 < (float)in_stack_00000008[0xb]) && (*in_stack_00000008 == -1)) {
     iVar1 = crt_stdlib_c_rand_FUN_005feb5c();
@@ -51,20 +51,20 @@ switchD_004fab96_default:
       ((iVar1 == *(int *)(in_stack_00000004[1].base_actor.create_event + 0x38) ||
        (iVar1 == *(int *)(in_stack_00000004[1].base_actor.create_event + 0x50))))) ||
      (iVar1 == *(int *)(in_stack_00000004[1].base_actor.create_event + 0x54))) {
-    probability_threshold = (float)in_stack_00000008[0xb];
+    local_14 = (float)in_stack_00000008[0xb];
     if (*(int *)(in_stack_00000004[1].base_actor.create_event + 0x54) == *in_stack_00000008) {
-      probability_threshold = 0.05;
+      local_14 = 0.05;
     }
     if (*(int *)(in_stack_00000004[1].base_actor.create_event + 0x50) == *in_stack_00000008) {
-      probability_threshold = 0.02;
+      local_14 = 0.02;
     }
     if (g_CGamePtr->field57_0x1e0 != 0) {
-      probability_threshold = 1.0;
+      local_14 = 1.0;
     }
     if (g_CGamePtr->blood_flag == 0) {
-      probability_threshold = 0.0;
+      local_14 = 0.0;
     }
-    iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(probability_threshold);
+    iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(local_14);
     if (iVar1 != 0) {
       core_bodypart_cpp_CreateBodyPart_FUN_00418e10();
       core_charactr_cpp_CCharacter_FUN_0042bd30(in_stack_00000004);

@@ -10,7 +10,6 @@ void __cdecl shape_design_c_renderSinglePolygon_FUN_0045ce20(int polygon_index)
 
 {
   char cVar1;
-  BADSPACEBASE *in_ESP;
   char *pcVar2;
   char *pcVar3;
   double dVar4;

@@ -16,7 +16,6 @@ core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
   int extraout_ECX;
   int extraout_EDX;
   int extraout_EDX_00;
-  BADSPACEBASE *in_ESP;
   int iVar2;
   int iVar3;
   int iVar4;
@@ -28,9 +27,11 @@ core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
   float10 fVar10;
   double dVar11;
   double dVar12;
-  int aiStackY_1130 [987];
   double dVar13;
-  double dVar14;
+  int aiStackY_1134 [985];
+  uint uStack_1c4;
+  uint uVar14;
+  double dVar15;
   CVector3i *in_stack_fffffe54;
   int iStack_1a4;
   int local_1a0;
@@ -51,17 +52,16 @@ core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
   float local_154;
   float local_150;
   int iStack_14c;
-  int iStack_148;
-  int local_144 [3];
+  int aiStack_148 [4];
   int local_138;
   int local_134;
   int local_130 [4];
   int iStack_120;
   int iStack_11c;
   int iStack_118;
-  int local_114;
-  int local_110;
-  int local_10c;
+  uint local_114;
+  uint local_110;
+  uint local_10c;
   int local_f8;
   int local_f4;
   int local_f0;
@@ -131,10 +131,10 @@ core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
   g_PVSDrawnCubeCount = 0;
   engine_drender_cpp_CDemonRenderer_getCameraOriginToBuffer_FUN_0048c760
             (g_CDemonRendererPtr,in_stack_fffffe54);
-  local_134 = iStack_148;
-  local_130[(uint)bVar6 * -2] = local_144[(uint)bVar6 * -2];
+  local_134 = iStack_14c;
+  local_130[(uint)bVar6 * -2] = aiStack_148[(uint)bVar6 * -2];
   local_130[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
-       local_144[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
+       aiStack_148[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
   local_150 = (float)0.00390625;
   local_158 = (float)local_134 * local_150;
   local_1c = local_130[1];
@@ -152,10 +152,10 @@ core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
   fVar8 = (fVar9 - (float10)(this_ptr->bbox_min).z) / (float10)(this_ptr->cell_size).z;
   dVar11 = crt_math_c_round_FUN_005fe6b0((double)(fov_or_radius * 256f));
   iStack_14c = (int)ROUND(dVar11);
-  iStack_148 = iStack_14c;
-  local_144[0] = iStack_14c;
+  aiStack_148[0] = iStack_14c;
+  aiStack_148[1] = iStack_14c;
   dVar11 = crt_math_c_round_FUN_005fe6b0((double)fVar8);
-  local_144[2] = (int)ROUND(dVar11);
+  aiStack_148[3] = (int)ROUND(dVar11);
   iStack_1a4 = ((uint)((longlong)extraout_EAX * (longlong)extraout_EDX) >> 0x10 |
                (int)((ulonglong)((longlong)extraout_EAX * (longlong)extraout_EDX) >> 0x20) << 0x10)
                + ((uint)((longlong)g_InverseMatrix.m[1].x * (longlong)(int)local_150) >> 0x10 |
@@ -188,79 +188,79 @@ core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
               ) + ((uint)((longlong)g_InverseMatrix.m[1].x * (longlong)iStack_14c) >> 0x10 |
                   (int)((ulonglong)((longlong)g_InverseMatrix.m[1].x * (longlong)iStack_14c) >> 0x20
                        ) << 0x10) +
-              ((uint)((longlong)g_InverseMatrix.m[2].x * (longlong)iStack_148) >> 0x10 |
-              (int)((ulonglong)((longlong)g_InverseMatrix.m[2].x * (longlong)iStack_148) >> 0x20) <<
-              0x10);
+              ((uint)((longlong)g_InverseMatrix.m[2].x * (longlong)aiStack_148[0]) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[2].x * (longlong)aiStack_148[0]) >> 0x20
+                   ) << 0x10);
   local_194 = ((uint)((longlong)g_InverseMatrix.m[0].y * (longlong)iVar5) >> 0x10 |
               (int)((ulonglong)((longlong)g_InverseMatrix.m[0].y * (longlong)iVar5) >> 0x20) << 0x10
               ) + ((uint)((longlong)g_InverseMatrix.m[1].y * (longlong)iStack_14c) >> 0x10 |
                   (int)((ulonglong)((longlong)g_InverseMatrix.m[1].y * (longlong)iStack_14c) >> 0x20
                        ) << 0x10) +
-              ((uint)((longlong)g_InverseMatrix.m[2].y * (longlong)iStack_148) >> 0x10 |
-              (int)((ulonglong)((longlong)g_InverseMatrix.m[2].y * (longlong)iStack_148) >> 0x20) <<
-              0x10);
+              ((uint)((longlong)g_InverseMatrix.m[2].y * (longlong)aiStack_148[0]) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[2].y * (longlong)aiStack_148[0]) >> 0x20
+                   ) << 0x10);
   lVar1 = (longlong)iStack_14c;
   iStack_14c = -iStack_14c;
   local_190 = ((uint)((longlong)g_InverseMatrix.m[0].z * (longlong)iVar5) >> 0x10 |
               (int)((ulonglong)((longlong)g_InverseMatrix.m[0].z * (longlong)iVar5) >> 0x20) << 0x10
               ) + ((uint)(g_InverseMatrix.m[1].z * lVar1) >> 0x10 |
                   (int)((ulonglong)(g_InverseMatrix.m[1].z * lVar1) >> 0x20) << 0x10) +
-              ((uint)((longlong)g_InverseMatrix.m[2].z * (longlong)iStack_148) >> 0x10 |
-              (int)((ulonglong)((longlong)g_InverseMatrix.m[2].z * (longlong)iStack_148) >> 0x20) <<
-              0x10);
+              ((uint)((longlong)g_InverseMatrix.m[2].z * (longlong)aiStack_148[0]) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[2].z * (longlong)aiStack_148[0]) >> 0x20
+                   ) << 0x10);
   local_18c = ((uint)((longlong)g_InverseMatrix.m[0].x * (longlong)iVar5) >> 0x10 |
               (int)((ulonglong)((longlong)g_InverseMatrix.m[0].x * (longlong)iVar5) >> 0x20) << 0x10
               ) + ((uint)((longlong)g_InverseMatrix.m[1].x * (longlong)iStack_14c) >> 0x10 |
                   (int)((ulonglong)((longlong)g_InverseMatrix.m[1].x * (longlong)iStack_14c) >> 0x20
                        ) << 0x10) +
-              ((uint)((longlong)g_InverseMatrix.m[2].x * (longlong)iStack_148) >> 0x10 |
-              (int)((ulonglong)((longlong)g_InverseMatrix.m[2].x * (longlong)iStack_148) >> 0x20) <<
-              0x10);
+              ((uint)((longlong)g_InverseMatrix.m[2].x * (longlong)aiStack_148[0]) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[2].x * (longlong)aiStack_148[0]) >> 0x20
+                   ) << 0x10);
   local_188 = ((uint)((longlong)g_InverseMatrix.m[0].y * (longlong)iVar5) >> 0x10 |
               (int)((ulonglong)((longlong)g_InverseMatrix.m[0].y * (longlong)iVar5) >> 0x20) << 0x10
               ) + ((uint)((longlong)g_InverseMatrix.m[1].y * (longlong)iStack_14c) >> 0x10 |
                   (int)((ulonglong)((longlong)g_InverseMatrix.m[1].y * (longlong)iStack_14c) >> 0x20
                        ) << 0x10) +
-              ((uint)((longlong)g_InverseMatrix.m[2].y * (longlong)iStack_148) >> 0x10 |
-              (int)((ulonglong)((longlong)g_InverseMatrix.m[2].y * (longlong)iStack_148) >> 0x20) <<
-              0x10);
+              ((uint)((longlong)g_InverseMatrix.m[2].y * (longlong)aiStack_148[0]) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[2].y * (longlong)aiStack_148[0]) >> 0x20
+                   ) << 0x10);
   local_184 = ((uint)((longlong)g_InverseMatrix.m[0].z * (longlong)iVar5) >> 0x10 |
               (int)((ulonglong)((longlong)g_InverseMatrix.m[0].z * (longlong)iVar5) >> 0x20) << 0x10
               ) + ((uint)((longlong)g_InverseMatrix.m[1].z * (longlong)iStack_14c) >> 0x10 |
                   (int)((ulonglong)((longlong)g_InverseMatrix.m[1].z * (longlong)iStack_14c) >> 0x20
                        ) << 0x10) +
-              ((uint)((longlong)g_InverseMatrix.m[2].z * (longlong)iStack_148) >> 0x10 |
-              (int)((ulonglong)((longlong)g_InverseMatrix.m[2].z * (longlong)iStack_148) >> 0x20) <<
-              0x10);
+              ((uint)((longlong)g_InverseMatrix.m[2].z * (longlong)aiStack_148[0]) >> 0x10 |
+              (int)((ulonglong)((longlong)g_InverseMatrix.m[2].z * (longlong)aiStack_148[0]) >> 0x20
+                   ) << 0x10);
   local_180 = ((uint)((longlong)g_InverseMatrix.m[0].x * (longlong)(int)local_150) >> 0x10 |
               (int)((ulonglong)((longlong)g_InverseMatrix.m[0].x * (longlong)(int)local_150) >> 0x20
                    ) << 0x10) +
               ((uint)((longlong)g_InverseMatrix.m[1].x * (longlong)iStack_14c) >> 0x10 |
               (int)((ulonglong)((longlong)g_InverseMatrix.m[1].x * (longlong)iStack_14c) >> 0x20) <<
-              0x10) + ((uint)((longlong)g_InverseMatrix.m[2].x * (longlong)iStack_148) >> 0x10 |
-                      (int)((ulonglong)((longlong)g_InverseMatrix.m[2].x * (longlong)iStack_148) >>
-                           0x20) << 0x10);
+              0x10) + ((uint)((longlong)g_InverseMatrix.m[2].x * (longlong)aiStack_148[0]) >> 0x10 |
+                      (int)((ulonglong)((longlong)g_InverseMatrix.m[2].x * (longlong)aiStack_148[0])
+                           >> 0x20) << 0x10);
   local_17c = ((uint)((longlong)g_InverseMatrix.m[0].y * (longlong)(int)local_150) >> 0x10 |
               (int)((ulonglong)((longlong)g_InverseMatrix.m[0].y * (longlong)(int)local_150) >> 0x20
                    ) << 0x10) +
               ((uint)((longlong)g_InverseMatrix.m[1].y * (longlong)iStack_14c) >> 0x10 |
               (int)((ulonglong)((longlong)g_InverseMatrix.m[1].y * (longlong)iStack_14c) >> 0x20) <<
-              0x10) + ((uint)((longlong)g_InverseMatrix.m[2].y * (longlong)iStack_148) >> 0x10 |
-                      (int)((ulonglong)((longlong)g_InverseMatrix.m[2].y * (longlong)iStack_148) >>
-                           0x20) << 0x10);
+              0x10) + ((uint)((longlong)g_InverseMatrix.m[2].y * (longlong)aiStack_148[0]) >> 0x10 |
+                      (int)((ulonglong)((longlong)g_InverseMatrix.m[2].y * (longlong)aiStack_148[0])
+                           >> 0x20) << 0x10);
   local_178 = ((uint)((longlong)g_InverseMatrix.m[0].z * (longlong)(int)local_150) >> 0x10 |
               (int)((ulonglong)((longlong)g_InverseMatrix.m[0].z * (longlong)(int)local_150) >> 0x20
                    ) << 0x10) +
               ((uint)((longlong)g_InverseMatrix.m[1].z * (longlong)iStack_14c) >> 0x10 |
               (int)((ulonglong)((longlong)g_InverseMatrix.m[1].z * (longlong)iStack_14c) >> 0x20) <<
-              0x10) + ((uint)((longlong)g_InverseMatrix.m[2].z * (longlong)iStack_148) >> 0x10 |
-                      (int)((ulonglong)((longlong)g_InverseMatrix.m[2].z * (longlong)iStack_148) >>
-                           0x20) << 0x10);
+              0x10) + ((uint)((longlong)g_InverseMatrix.m[2].z * (longlong)aiStack_148[0]) >> 0x10 |
+                      (int)((ulonglong)((longlong)g_InverseMatrix.m[2].z * (longlong)aiStack_148[0])
+                           >> 0x20) << 0x10);
   local_174 = 0;
   local_170 = 0;
   local_16c = 0;
   dVar11 = (double)(this_ptr->cell_size).x * 256;
-  dVar14 = (double)(this_ptr->cell_size).y * 256;
+  dVar15 = (double)(this_ptr->cell_size).y * 256;
   dVar13 = (double)(this_ptr->cell_size).z * 256;
   local_114 = 999;
   local_110 = 999;
@@ -268,51 +268,54 @@ core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
   iVar2 = 0;
   iVar5 = -999;
   do {
-    local_2c = local_144[0];
-    local_28 = local_144[1];
-    local_24 = local_144[2];
-    fVar9 = (float10)local_144[1] +
-            (float10)*(int *)((int)&stack0xfffffe60 + iVar2) / (float10)dVar14;
-    fVar10 = (float10)local_144[2] +
+    local_2c = aiStack_148[1];
+    local_28 = aiStack_148[2];
+    local_24 = aiStack_148[3];
+    fVar9 = (float10)aiStack_148[2] +
+            (float10)*(int *)((int)&stack0xfffffe60 + iVar2) / (float10)dVar15;
+    fVar10 = (float10)aiStack_148[3] +
              (float10)*(int *)((int)&stack0xfffffe64 + iVar2) / (float10)dVar13;
     dVar12 = crt_math_c_round_FUN_005fe6b0
-                       ((double)local_144[0] +
+                       ((double)aiStack_148[1] +
                         (double)*(int *)((int)&stack0xfffffe5c + iVar2) / dVar11);
+    uVar14 = (uint)((ulonglong)dVar13 >> 0x20);
     fVar8 = (float10)dVar12;
-    dVar12 = crt_math_c_round_FUN_005fe6b0((double)fVar9);
-    fVar9 = (float10)dVar12;
+    uStack_1c4 = 0x4982c3;
+    dVar13 = crt_math_c_round_FUN_005fe6b0((double)fVar9);
+    fVar9 = (float10)dVar13;
+    dVar13 = (double)CONCAT44 /* combine 2-byte values */(uVar14,0x4982ca);
     dVar12 = crt_math_c_round_FUN_005fe6b0((double)fVar10);
-    iStack_120 = (int)ROUND(fVar8);
-    iStack_11c = (int)ROUND(fVar9);
-    iStack_118 = (int)ROUND(dVar12);
-    if (iStack_120 < local_114) {
-      local_114 = iStack_120;
+    local_130[1] = (int)ROUND(fVar8);
+    local_130[2] = (int)ROUND(fVar9);
+    local_130[3] = (int)ROUND(dVar12);
+    if (local_130[1] < iStack_120) {
+      iStack_120 = local_130[1];
     }
-    if (iStack_11c < local_110) {
-      local_110 = iStack_11c;
+    if (local_130[2] < iStack_11c) {
+      iStack_11c = local_130[2];
     }
-    if (iStack_118 < local_10c) {
-      local_10c = iStack_118;
+    if (local_130[3] < iStack_118) {
+      iStack_118 = local_130[3];
     }
     iVar3 = extraout_ECX;
-    if (extraout_ECX < iStack_120) {
-      iVar3 = iStack_120;
+    if (extraout_ECX < local_130[1]) {
+      iVar3 = local_130[1];
     }
     iVar4 = extraout_EDX_00;
-    if (extraout_EDX_00 < iStack_11c) {
-      iVar4 = iStack_11c;
+    if (extraout_EDX_00 < local_130[2]) {
+      iVar4 = local_130[2];
     }
-    if (iVar5 < iStack_118) {
-      iVar5 = iStack_118;
+    if (iVar5 < local_130[3]) {
+      iVar5 = local_130[3];
     }
     iVar2 = iVar2 + 0xc;
   } while (iVar2 != 0x3c);
-  (this_ptr->grid_bounds_min).x = local_114;
+  (this_ptr->grid_bounds_min).x = iStack_120;
   (this_ptr->grid_bounds_max).x = iVar3 + 1;
   (this_ptr->grid_bounds_max).y = iVar4 + 1;
   (this_ptr->grid_bounds_max).z = iVar5 + 1;
-  (this_ptr->grid_bounds_min).y = local_110;
-  (this_ptr->grid_bounds_min).z = local_10c;
+  (this_ptr->grid_bounds_min).y = iStack_11c;
+  (this_ptr->grid_bounds_min).z = iStack_118;
   if ((this_ptr->grid_bounds_min).x < 0) {
     (this_ptr->grid_bounds_min).x = 0;
   }
@@ -364,6 +367,7 @@ core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
               if (local_130[0] <= (this_ptr->grid_bounds_max).y) {
                 do {
                   iVar3 = iVar2 + 1;
+                  uStack_1c4 = 0x498b9b;
                   core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
                             (this_ptr,local_30,iVar2,iVar5,local_b4);
                   iVar2 = iVar3;
@@ -373,6 +377,7 @@ core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
               if ((this_ptr->grid_bounds_min).y <= local_94) {
                 do {
                   iVar3 = iVar2 + -1;
+                  uStack_1c4 = 0x498bca;
                   core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
                             (this_ptr,local_30,iVar2,iVar5,local_b0);
                   iVar2 = iVar3;
@@ -390,6 +395,7 @@ core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
               if (local_130[0] <= (this_ptr->grid_bounds_max).y) {
                 do {
                   iVar3 = iVar2 + 1;
+                  uStack_1c4 = 0x498c3a;
                   core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
                             (this_ptr,local_34,iVar2,iVar5,local_ac);
                   iVar2 = iVar3;
@@ -399,6 +405,7 @@ core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
               if ((this_ptr->grid_bounds_min).y <= local_94) {
                 do {
                   iVar3 = iVar2 + -1;
+                  uStack_1c4 = 0x498c69;
                   core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
                             (this_ptr,local_34,iVar2,iVar5,local_a8);
                   iVar2 = iVar3;
@@ -426,6 +433,7 @@ core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
               if (local_130[0] <= (this_ptr->grid_bounds_max).y) {
                 do {
                   iVar3 = iVar2 + 1;
+                  uStack_1c4 = 0x498df4;
                   core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
                             (this_ptr,local_38,iVar2,iVar5,local_a4);
                   iVar2 = iVar3;
@@ -437,6 +445,7 @@ core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
               iVar2 = local_8c;
               while (bVar7 == iVar3 < 0) {
                 iVar4 = iVar2 + -1;
+                uStack_1c4 = 0x498e23;
                 core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
                           (this_ptr,local_38,iVar2,iVar5,local_a0);
                 iVar2 = (this_ptr->grid_bounds_min).y;
@@ -456,6 +465,7 @@ core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
               if (local_130[0] <= (this_ptr->grid_bounds_max).y) {
                 do {
                   iVar3 = iVar2 + 1;
+                  uStack_1c4 = 0x498d49;
                   core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
                             (this_ptr,local_3c,iVar2,iVar5,local_9c);
                   iVar2 = iVar3;
@@ -465,6 +475,7 @@ core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
               if ((this_ptr->grid_bounds_min).y <= local_8c) {
                 do {
                   iVar3 = iVar2 + -1;
+                  uStack_1c4 = 0x498d78;
                   core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
                             (this_ptr,local_3c,iVar2,iVar5,local_98);
                   iVar2 = iVar3;
@@ -494,6 +505,7 @@ core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
               if (local_130[1] <= (this_ptr->grid_bounds_max).z) {
                 do {
                   iVar3 = iVar2 + 1;
+                  uStack_1c4 = 0x49886a;
                   core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
                             (this_ptr,local_40,iVar5,iVar2,local_d4);
                   iVar2 = iVar3;
@@ -503,6 +515,7 @@ core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
               if ((this_ptr->grid_bounds_min).z <= local_84) {
                 do {
                   iVar3 = iVar2 + -1;
+                  uStack_1c4 = 0x498899;
                   core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
                             (this_ptr,local_40,iVar5,iVar2,local_d0);
                   iVar2 = iVar3;
@@ -520,6 +533,7 @@ core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
               if (local_130[1] <= (this_ptr->grid_bounds_max).z) {
                 do {
                   iVar3 = iVar2 + 1;
+                  uStack_1c4 = 0x49890c;
                   core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
                             (this_ptr,local_44,iVar5,iVar2,local_cc);
                   iVar2 = iVar3;
@@ -529,6 +543,7 @@ core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
               if ((this_ptr->grid_bounds_min).z <= local_84) {
                 do {
                   iVar3 = iVar2 + -1;
+                  uStack_1c4 = 0x49893b;
                   core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
                             (this_ptr,local_44,iVar5,iVar2,local_c8);
                   iVar2 = iVar3;
@@ -556,6 +571,7 @@ core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
               if (local_130[1] <= (this_ptr->grid_bounds_max).z) {
                 do {
                   iVar3 = iVar2 + 1;
+                  uStack_1c4 = 0x498ac9;
                   core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
                             (this_ptr,local_48,iVar5,iVar2,local_c4);
                   iVar2 = iVar3;
@@ -567,6 +583,7 @@ core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
               iVar2 = local_7c;
               while (bVar7 == iVar3 < 0) {
                 iVar4 = iVar2 + -1;
+                uStack_1c4 = 0x498af8;
                 core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
                           (this_ptr,local_48,iVar5,iVar2,local_c0);
                 iVar2 = (this_ptr->grid_bounds_min).z;
@@ -586,6 +603,7 @@ core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
               if (local_130[1] <= (this_ptr->grid_bounds_max).z) {
                 do {
                   iVar3 = iVar2 + 1;
+                  uStack_1c4 = 0x498a1b;
                   core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
                             (this_ptr,local_4c,iVar5,iVar2,local_bc);
                   iVar2 = iVar3;
@@ -595,6 +613,7 @@ core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
               if ((this_ptr->grid_bounds_min).z <= local_7c) {
                 do {
                   iVar3 = iVar2 + -1;
+                  uStack_1c4 = 0x498a4a;
                   core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
                             (this_ptr,local_4c,iVar5,iVar2,local_b8);
                   iVar2 = iVar3;
@@ -625,6 +644,7 @@ core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
             if (local_130[1] <= (this_ptr->grid_bounds_max).z) {
               do {
                 iVar3 = iVar2 + 1;
+                uStack_1c4 = 0x4984da;
                 core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
                           (this_ptr,iVar5,local_20,iVar2,local_f4);
                 iVar2 = iVar3;
@@ -634,6 +654,7 @@ core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
             if ((this_ptr->grid_bounds_min).z <= local_74) {
               do {
                 iVar3 = iVar2 + -1;
+                uStack_1c4 = 0x498509;
                 core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
                           (this_ptr,iVar5,local_20,iVar2,local_f0);
                 iVar2 = iVar3;
@@ -651,6 +672,7 @@ core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
             if (local_130[1] <= (this_ptr->grid_bounds_max).z) {
               do {
                 iVar3 = iVar2 + 1;
+                uStack_1c4 = 0x49857c;
                 core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
                           (this_ptr,iVar5,local_24,iVar2,local_ec);
                 iVar2 = iVar3;
@@ -660,6 +682,7 @@ core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
             if ((this_ptr->grid_bounds_min).z <= local_74) {
               do {
                 iVar3 = iVar2 + -1;
+                uStack_1c4 = 0x4985ab;
                 core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
                           (this_ptr,iVar5,local_24,iVar2,local_e8);
                 iVar2 = iVar3;
@@ -687,6 +710,7 @@ core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
             if (local_130[1] <= (this_ptr->grid_bounds_max).z) {
               do {
                 iVar3 = iVar2 + 1;
+                uStack_1c4 = 0x498672;
                 core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
                           (this_ptr,iVar5,local_28,iVar2,local_e4);
                 iVar2 = iVar3;
@@ -696,6 +720,7 @@ core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
             if ((this_ptr->grid_bounds_min).z <= local_6c) {
               do {
                 iVar3 = iVar2 + -1;
+                uStack_1c4 = 0x4986a1;
                 core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
                           (this_ptr,iVar5,local_28,iVar2,local_e0);
                 iVar2 = iVar3;
@@ -713,6 +738,7 @@ core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
             if (local_130[1] <= (this_ptr->grid_bounds_max).z) {
               do {
                 iVar3 = iVar2 + 1;
+                uStack_1c4 = 0x498714;
                 core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
                           (this_ptr,iVar5,local_2c,iVar2,local_dc);
                 iVar2 = iVar3;
@@ -722,6 +748,7 @@ core_dtrace_cpp_CDemonRaytrace_renderFrustumCubes_FUN_00497e50
             if ((this_ptr->grid_bounds_min).z <= local_6c) {
               do {
                 iVar3 = iVar2 + -1;
+                uStack_1c4 = 0x498743;
                 core_dtrace_cpp_CDemonRaytrace_renderCubeForPVS_FUN_00497500
                           (this_ptr,iVar5,local_2c,iVar2,local_d8);
                 iVar2 = iVar3;

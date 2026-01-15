@@ -13,7 +13,6 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c76a0(CFireEffect *this_ptr)
   int iVar2;
   CSmokeParticle *this_ptr_00;
   char *pcVar3;
-  BADSPACEBASE *in_ESP;
   CBulletHole *pCVar4;
   uint *puVar5;
   byte bVar6;

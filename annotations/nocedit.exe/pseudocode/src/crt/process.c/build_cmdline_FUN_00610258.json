@@ -1,20 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 164,
-    "complexity_score": 264,
+    "complexity_score": 192,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 2,
-    "pseudocode_lines": 79,
-    "suspect_count": 16,
+    "pseudocode_lines": 77,
+    "suspect_count": 10,
     "suspect_types": [
       "call_esp_preserve",
       "param_count_too_many",
-      "special_crt_function",
-      "stack_param",
-      "unaffected_reg"
+      "special_crt_function"
     ],
-    "total_lines": 243
+    "total_lines": 241
   },
   "cross_references": [
     {
@@ -206,48 +204,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 11,
-      "match": "unaff_EBX",
-      "text": "int unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 13,
-      "match": "unaff_EDI",
-      "text": "int unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000024",
-      "text": "int in_stack_00000024;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 45,
-      "match": "unaff_EBX",
-      "text": "g_HeapFlags = unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 48,
-      "match": "unaff_EDI",
-      "text": "g_HeapFlags = unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 63,
-      "match": "in_stack_00000024",
-      "text": "if (in_stack_00000024 != 0) {",
-      "type": "stack_param"
-    },
     {
       "call_site_count": 1,
       "declared_params": 8,

@@ -12,21 +12,18 @@ core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_004781d0
           CVector3f *output_normal)
 
 {
-  float fVar1;
-  CVector3i *pCVar2;
-  CVector3f *pCVar3;
+  CVector3i *pCVar1;
+  CVector3f *pCVar2;
   CMatrix3x3f *matrix;
   CDemonTriangle *triangle;
-  BADSPACEBASE *in_ESP;
-  int iVar4;
+  int iVar3;
   CDemonTriangle CStack_cc;
   CVector3f local_94;
   CVector3f local_88;
   CVector3f CStack_7c;
   CVector3f CStack_70;
   CVector3f local_64;
-  byte local_58 [8];
-  float local_50;
+  CVector3f local_58;
   CVector3f CStack_4c;
   CVector3f local_40;
   CVector3i *local_34;
@@ -37,6 +34,7 @@ core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_004781d0
   int local_20;
   float local_1c;
   int local_18;
+  float fStack_14;
   
   if (this_ptr->frame_count <= frame_index) {
     frame_index = this_ptr->frame_count + -1;
@@ -44,10 +42,10 @@ core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_004781d0
   if (frame_index < 0) {
     frame_index = 0;
   }
-  fVar1 = core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940
-                    ((CBoundingBox3D *)(this_ptr->frame_bounds + frame_index * 2),ray_origin,
-                     ray_direction,(CVector3f *)0x0);
-  if ((fVar1 < 0.0) || (1.0 < fVar1)) {
+  fStack_14 = core_box_cpp_CBoundingBox3D_doesRayIntersect_FUN_00420940
+                        ((CBoundingBox3D *)(this_ptr->frame_bounds + frame_index * 2),ray_origin,
+                         ray_direction,(CVector3f *)0x0);
+  if ((fStack_14 < 0.0) || (1.0 < fStack_14)) {
     local_30 = 2.0;
   }
   else {
@@ -60,33 +58,34 @@ core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_004781d0
         local_24 = 0;
         do {
           local_20 = local_24 + (int)this_ptr->poly_vert_list;
-          pCVar2 = local_34 + *(int *)(local_20 + 0x18);
-          local_64.x = (float)pCVar2->x * 0.00390625f;
-          local_64.y = (float)pCVar2->y * 0.00390625f;
-          local_64.z = (float)pCVar2->z * 0.00390625f;
-          pCVar2 = local_34 + *(int *)(local_20 + 0x24);
-          local_58._0_4_ = (float)pCVar2->x * 0.00390625f;
-          local_58._4_4_ = (float)pCVar2->y * 0.00390625f;
-          local_50 = (float)pCVar2->z * 0.00390625f;
-          iVar4 = 2;
+          pCVar1 = local_34 + *(int *)(local_20 + 0x18);
+          local_64.x = (float)pCVar1->x * 0.00390625f;
+          local_64.y = (float)pCVar1->y * 0.00390625f;
+          local_64.z = (float)pCVar1->z * 0.00390625f;
+          pCVar1 = local_34 + *(int *)(local_20 + 0x24);
+          local_58.x = (float)pCVar1->x * 0.00390625f;
+          local_58.y = (float)pCVar1->y * 0.00390625f;
+          local_58.z = (float)pCVar1->z * 0.00390625f;
+          iVar3 = 2;
           if (2 < *(int *)(local_20 + 4)) {
             local_18 = local_20 + 0x18;
             do {
-              pCVar2 = local_34 + *(int *)(local_18 + 0x18);
-              local_40.x = (float)pCVar2->x * 0.00390625f;
-              local_40.y = (float)pCVar2->y * 0.00390625f;
-              local_40.z = (float)pCVar2->z * 0.00390625f;
+              pCVar1 = local_34 + *(int *)(local_18 + 0x18);
+              local_40.x = (float)pCVar1->x * 0.00390625f;
+              local_40.y = (float)pCVar1->y * 0.00390625f;
+              local_40.z = (float)pCVar1->z * 0.00390625f;
               core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0049a790
-                        (&CStack_cc,&local_64,(CVector3f *)local_58,&local_40);
-              if ((CVector3f *)(local_58 + 4) != &local_40) {
-                local_58._0_4_ = local_40.x;
-                local_58._4_4_ = local_40.y;
-                local_50 = local_40.z;
+                        (&CStack_cc,&local_64,&local_58,&local_40);
+              if (&local_58 != &local_40) {
+                local_58.x = local_40.x;
+                local_58.y = local_40.y;
+                local_58.z = local_40.z;
               }
-              fVar1 = core_dtri_cpp_rayTriangleIntersection_FUN_0049a800
-                                (&CStack_cc,ray_origin,ray_direction);
-              if (((fVar1 <= local_1c) && (0.0 <= fVar1)) &&
-                 ((fVar1 <= 1.0 && (local_1c = fVar1, output_normal != (CVector3f *)0x0)))) {
+              fStack_14 = core_dtri_cpp_rayTriangleIntersection_FUN_0049a800
+                                    (&CStack_cc,ray_origin,ray_direction);
+              if (((fStack_14 <= local_1c) && (0.0 <= fStack_14)) &&
+                 ((fStack_14 <= 1.0 && (local_1c = fStack_14, output_normal != (CVector3f *)0x0))))
+              {
                 local_94.x = -CStack_cc.normal.x;
                 local_94.y = -CStack_cc.normal.y;
                 local_94.z = -CStack_cc.normal.z;
@@ -97,8 +96,8 @@ core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_004781d0
                 }
               }
               local_18 = local_18 + 0xc;
-              iVar4 = iVar4 + 1;
-            } while (iVar4 < *(int *)(local_20 + 4));
+              iVar3 = iVar3 + 1;
+            } while (iVar3 < *(int *)(local_20 + 4));
           }
           local_24 = local_24 + 0x48;
           local_28 = local_28 + 1;
@@ -113,28 +112,28 @@ core_dmodel_cpp_CKeyFramedModel_intersectRay_FUN_004781d0
                 (matrix,&CStack_4c,ray_direction);
       triangle = this_ptr->collision_triangle_list +
                  frame_index * this_ptr->collision_triangle_count;
-      iVar4 = 0;
+      iVar3 = 0;
       local_2c = matrix;
       if (0 < this_ptr->collision_triangle_count) {
         do {
-          fVar1 = core_dtri_cpp_rayTriangleIntersection_FUN_0049a800(triangle,&CStack_7c,&CStack_4c)
-          ;
-          if ((((fVar1 <= local_1c) && (0.0 <= fVar1)) && (fVar1 <= 1.0)) &&
-             (local_1c = fVar1, output_normal != (CVector3f *)0x0)) {
+          fStack_14 = core_dtri_cpp_rayTriangleIntersection_FUN_0049a800
+                                (triangle,&CStack_7c,&CStack_4c);
+          if ((((fStack_14 <= local_1c) && (0.0 <= fStack_14)) && (fStack_14 <= 1.0)) &&
+             (local_1c = fStack_14, output_normal != (CVector3f *)0x0)) {
             local_88.x = -(triangle->normal).x;
             local_88.y = -(triangle->normal).y;
             local_88.z = -(triangle->normal).z;
-            pCVar3 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
+            pCVar2 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
                                (local_2c,&CStack_70,&local_88);
-            if (output_normal != pCVar3) {
-              output_normal->x = pCVar3->x;
-              output_normal->y = pCVar3->y;
-              output_normal->z = pCVar3->z;
+            if (output_normal != pCVar2) {
+              output_normal->x = pCVar2->x;
+              output_normal->y = pCVar2->y;
+              output_normal->z = pCVar2->z;
             }
           }
-          iVar4 = iVar4 + 1;
+          iVar3 = iVar3 + 1;
           triangle = triangle + 1;
-        } while (iVar4 < this_ptr->collision_triangle_count);
+        } while (iVar3 < this_ptr->collision_triangle_count);
       }
     }
     local_30 = local_1c;

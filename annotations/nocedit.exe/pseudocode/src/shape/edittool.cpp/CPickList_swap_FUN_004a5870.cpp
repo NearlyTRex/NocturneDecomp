@@ -10,8 +10,6 @@ void __cdecl
 shape_edittool_cpp_CPickList_swap_FUN_004a5870(CPickList *this_ptr,int index1,int index2)
 
 {
-  int in_stack_00000010;
-  
   if (0 < this_ptr->enabled_capacity) {
     g_CurrentFilename = "..\\shape\\edittool.cpp";
     g_CurrentLineNumber = 0x1093;
@@ -22,6 +20,6 @@ shape_edittool_cpp_CPickList_swap_FUN_004a5870(CPickList *this_ptr,int index1,in
     g_CurrentLineNumber = 0x1094;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CPickList::swap - can't do this after setting hotkeys (yet)");
   }
-  shape_edittool_cpp_CStrList_swap_FUN_004a31f0(&this_ptr->base_strlist,index2,in_stack_00000010);
+  shape_edittool_cpp_CStrList_swap_FUN_004a31f0(&this_ptr->base_strlist,index1,index2);
   return;
 }

@@ -21,7 +21,7 @@ CPlatform * __cdecl core_conveyor_cpp_FUN_00442380(CPlatform *this_ptr,uint d1,u
   pCVar1 = core_course_cpp_CCourse_dtor_FUN_004424e0((CCourse *)(this_ptr->field9_0x2f0 + 0x20));
   ptr = (CPlatform *)
         core_actor_cpp_CDemonActor_dtor_FUN_00408a30((CDemonActor *)&pCVar1[-0x42].loop,1);
-  if ((d3 & 2) == 0) {
+  if ((d1 & 2) == 0) {
     return ptr;
   }
   shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);

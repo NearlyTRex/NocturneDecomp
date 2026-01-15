@@ -11,7 +11,6 @@
 void core_cloth_cpp_FUN_0043c820(void)
 
 {
-  BADSPACEBASE *in_ESP;
   float *in_stack_00000004;
   CVector3i local_10;
   
@@ -20,7 +19,6 @@ void core_cloth_cpp_FUN_0043c820(void)
   local_10.z = (int)ROUND(in_stack_00000004[2] * _DAT_0065bb3c);
   wincore_windll_cpp_transformAndProjectPoint_FUN_005b575c
             (&g_CDemonRendererPtr->vertex_buffer_ptr[19999].projected_vertex,&local_10);
-  local_10.x = 19999;
   core_cloth_cpp_FUN_0043c6e0();
   return;
 }

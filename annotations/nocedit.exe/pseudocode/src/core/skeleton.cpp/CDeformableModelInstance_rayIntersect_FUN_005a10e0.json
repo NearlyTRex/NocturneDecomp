@@ -1,18 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 60,
-    "complexity_score": 143,
+    "complexity_score": 70,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
-    "pseudocode_lines": 28,
-    "suspect_count": 10,
+    "pseudocode_lines": 25,
+    "suspect_count": 4,
     "suspect_types": [
-      "call_esp_preserve",
-      "stack_param",
-      "unaffected_reg"
+      "call_esp_preserve"
     ],
-    "total_lines": 88
+    "total_lines": 85
   },
   "cross_references": [
     {
@@ -142,48 +140,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 10,
-      "match": "unaff_EBP",
-      "text": "byte *unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000010",
-      "text": "int in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000014",
-      "text": "CVector3f *in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 28,
-      "match": "in_stack_00000010",
-      "text": "(pCVar1,in_stack_00000010,in_stack_00000014,ray_direction_00,skinned_vertices,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 28,
-      "match": "in_stack_00000014",
-      "text": "(pCVar1,in_stack_00000010,in_stack_00000014,ray_direction_00,skinned_vertices,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 29,
-      "match": "unaff_EBP",
-      "text": "unaff_EBP);",
-      "type": "unaffected_reg"
-    },
     {
       "add_esp_value": 4,
       "call_address": "005a10ec",

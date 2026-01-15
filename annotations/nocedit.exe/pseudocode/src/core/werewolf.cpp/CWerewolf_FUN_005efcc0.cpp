@@ -14,8 +14,6 @@ void __cdecl core_werewolf_cpp_CWerewolf_FUN_005efcc0(CWerewolf *this_ptr)
   CSkeleton *this_ptr_01;
   int iVar2;
   float fVar3;
-  uint uStack00000008;
-  float fStack00000018;
   
   this_ptr_00 = &(this_ptr->base_enemy).base_character.model;
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(this_ptr_00);
@@ -27,16 +25,13 @@ void __cdecl core_werewolf_cpp_CWerewolf_FUN_005efcc0(CWerewolf *this_ptr)
   iVar2 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 R Finger1");
   *(int *)(this_ptr->field4_0xbec0 + 8) = iVar2;
   iVar2 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01jaw2");
-  uStack00000008 = 1;
   *(int *)(this_ptr->field4_0xbec0 + 0xc) = iVar2;
   iVar2 = core_skeleton_cpp_CSkeleton_findBone_FUN_00599fc0(this_ptr_01,"Bip01 Head");
   *(int *)(this_ptr->field4_0xbec0 + 0x10) = iVar2;
-  uStack00000008 = 0x5efd57;
   core_enemy_cpp_CEnemy_FUN_004a9650(&this_ptr->base_enemy);
   (this_ptr->base_enemy).base_character.base_actor.is_transparent = this_ptr->light_up_eyes;
-  uStack00000008 = 0x5efd72;
-  fStack00000018 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,1.0);
-  this_ptr->field11_0xbf00 = (int)fStack00000018;
+  fVar3 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,1.0);
+  this_ptr->field11_0xbf00 = (int)fVar3;
   if (this_ptr->type == 0) {
     pCVar1 = &this_ptr->base_enemy;
     (pCVar1->base_character).cloth_data[0x348] = '\0';

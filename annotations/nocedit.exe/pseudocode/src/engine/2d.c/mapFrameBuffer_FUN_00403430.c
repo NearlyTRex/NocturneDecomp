@@ -44,7 +44,7 @@ engine_2d_c_mapFrameBuffer_FUN_00403430
     g_CurrentLineNumber = 0x9a5;
     core_main_c_displayErrorAndQuit_FUN_00506f10("mapFrameBuffer - ySize too big!");
   }
-  if (height == 0) {
+  if (width == 0) {
     g_CurrentFilename = "..\\engine\\2d.c";
     g_CurrentLineNumber = 0x9a6;
     core_main_c_displayErrorAndQuit_FUN_00506f10("mapFrameBuffer - invalid buffer!");
@@ -69,9 +69,9 @@ engine_2d_c_mapFrameBuffer_FUN_00403430
   if (0 < bits_per_pixel) {
     iVar1 = 0;
     do {
-      *(int *)((int)g_ScreenBufferArray + iVar1) = height;
+      *(int *)((int)g_ScreenBufferArray + iVar1) = width;
       iVar1 = iVar1 + 4;
-      height = height + (int)frame_buffer;
+      width = width + (int)frame_buffer;
     } while (iVar1 < bits_per_pixel * 4);
   }
   return iVar1;

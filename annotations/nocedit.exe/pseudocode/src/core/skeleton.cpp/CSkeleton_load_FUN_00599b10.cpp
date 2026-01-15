@@ -13,7 +13,6 @@ void __cdecl core_skeleton_cpp_CSkeleton_load_FUN_00599b10(CSkeleton *this_ptr,c
   FILE *file_handle;
   char *pcVar2;
   char *pcVar3;
-  CSkeleton *in_stack_0000000c;
   
   pcVar3 = this_ptr->loaded_filename;
   pcVar2 = filename;
@@ -32,7 +31,7 @@ void __cdecl core_skeleton_cpp_CSkeleton_load_FUN_00599b10(CSkeleton *this_ptr,c
     g_CurrentLineNumber = 0xf6;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CSkeleton::load - Can't open %s",filename);
   }
-  core_skeleton_cpp_CSkeleton_loadStream_FUN_00599bb0(in_stack_0000000c,file_handle);
+  core_skeleton_cpp_CSkeleton_loadStream_FUN_00599bb0(this_ptr,file_handle);
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file_handle,"..\\core\\skeleton.cpp",0xf8);
   return;
 }

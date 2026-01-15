@@ -10,13 +10,11 @@ void __cdecl core_hero_cpp_CHero_serialize_FUN_004f2610(CHero *this_ptr)
 
 {
   CDeformableModelInstance *motion_controller;
-  CHero *pCVar1;
-  int iVar2;
-  BADSPACEBASE *in_ESP;
-  char acStack_64 [4];
-  char acStack_60 [88];
+  int iVar1;
+  char *local_d4 [25];
+  char local_70 [100];
+  int local_c;
   
-  pCVar1 = this_ptr;
   motion_controller = &(this_ptr->base_character).model;
   if (g_CHeroPlaceholderClassVersion < 4) {
     core_actor_cpp_CDemonActor_serialize_FUN_0040c1c0((CDemonActor *)this_ptr);
@@ -26,11 +24,11 @@ void __cdecl core_hero_cpp_CHero_serialize_FUN_004f2610(CHero *this_ptr)
     }
     if (2 < g_CHeroPlaceholderClassVersion) {
       core_actor_cpp_serializePartStatus_FUN_0040bae0
-                (&(pCVar1->base_character).model,"partStatus");
+                (&(this_ptr->base_character).model,"partStatus");
       core_actor_cpp_serializeActor_FUN_0040b870
-                ((CDemonActor *)&(pCVar1->base_character).grabbed_by,"grabbedBy");
+                ((CDemonActor *)&(this_ptr->base_character).grabbed_by,"grabbedBy");
       core_actor_cpp_serializeFloat_FUN_0040b770
-                (&(pCVar1->base_character).hit_points,"hitPoints");
+                (&(this_ptr->base_character).hit_points,"hitPoints");
     }
   }
   else {
@@ -40,48 +38,48 @@ void __cdecl core_hero_cpp_CHero_serialize_FUN_004f2610(CHero *this_ptr)
     core_actor_cpp_serializePartStatus_FUN_0040bae0(motion_controller,"partStatus");
     if (g_CHeroPlaceholderClassVersion < 8) {
       core_actor_cpp_serializeActor_FUN_0040b870
-                ((CDemonActor *)&(pCVar1->base_character).grabbed_by,"grabbedBy");
-      (pCVar1->base_character).grabbed_type = 0;
+                ((CDemonActor *)&(this_ptr->base_character).grabbed_by,"grabbedBy");
+      (this_ptr->base_character).grabbed_type = 0;
     }
     if (4 < g_CHeroPlaceholderClassVersion) {
-      core_actor_cpp_serializeInteger_FUN_0040b7f0(&pCVar1->control_type,"controlType");
+      core_actor_cpp_serializeInteger_FUN_0040b7f0(&this_ptr->control_type,"controlType");
     }
     if (6 < g_CHeroPlaceholderClassVersion) {
       core_actor_cpp_serializeActor_FUN_0040b870
-                ((CDemonActor *)(pCVar1->field6_0x1fb9c + 4),"objectToPickUp");
+                ((CDemonActor *)(this_ptr->field6_0x1fb9c + 4),"objectToPickUp");
       core_actor_cpp_serializeActor_FUN_0040b870
-                ((CDemonActor *)pCVar1->field6_0x1fb9c,"doorToOpen");
+                ((CDemonActor *)this_ptr->field6_0x1fb9c,"doorToOpen");
       core_actor_cpp_serializeActor_FUN_0040b870
-                ((CDemonActor *)(pCVar1->field6_0x1fb9c + 0xc),"leverToPull");
+                ((CDemonActor *)(this_ptr->field6_0x1fb9c + 0xc),"leverToPull");
       core_actor_cpp_serializeActor_FUN_0040b870
-                ((CDemonActor *)(pCVar1->field6_0x1fb9c + 0x10),"ladderToClimb");
+                ((CDemonActor *)(this_ptr->field6_0x1fb9c + 0x10),"ladderToClimb");
       core_actor_cpp_serializeActor_FUN_0040b870
-                ((CDemonActor *)(pCVar1->field6_0x1fb9c + 8),"pushedObject");
+                ((CDemonActor *)(this_ptr->field6_0x1fb9c + 8),"pushedObject");
     }
     if (g_CHeroPlaceholderClassVersion == 10) {
-      core_actor_cpp_serializeInteger_FUN_0040b7f0((int *)&this_ptr,"keys");
+      core_actor_cpp_serializeInteger_FUN_0040b7f0(&local_c,"keys");
     }
     if ((7 < g_CHeroPlaceholderClassVersion) && (g_CHeroPlaceholderClassVersion < 0xb)) {
-      iVar2 = 0;
+      iVar1 = 0;
       do {
-        crt_stdio_c_sprintf_FUN_005fdbd0(acStack_60,"keyNameList[%d]");
-        iVar2 = iVar2 + 1;
-        core_actor_cpp_serializeString_FUN_0040b5c0((char **)&stack0xffffff38,acStack_64);
-      } while (iVar2 < 0x20);
+        crt_stdio_c_sprintf_FUN_005fdbd0(local_70,"keyNameList[%d]",iVar1);
+        iVar1 = iVar1 + 1;
+        core_actor_cpp_serializeString_FUN_0040b5c0(local_d4,local_70);
+      } while (iVar1 < 0x20);
     }
     if (8 < g_CHeroPlaceholderClassVersion) {
-      core_actor_cpp_serializeInteger_FUN_0040b7f0(&pCVar1->ai_task,"AITask");
+      core_actor_cpp_serializeInteger_FUN_0040b7f0(&this_ptr->ai_task,"AITask");
     }
     if (0xb < g_CHeroPlaceholderClassVersion) {
       core_actor_cpp_serializeInteger_FUN_0040b7f0
-                (&pCVar1->is_wearing_gas_mask,"isWearingGasMask");
+                (&this_ptr->is_wearing_gas_mask,"isWearingGasMask");
     }
     if (5 < g_CHeroPlaceholderClassVersion) {
       if (g_ActorReadingMode != 1) {
-        core_inv_cpp_CInventory_save_FUN_004ff210(&pCVar1->inventory,g_ActorDataFile);
+        core_inv_cpp_CInventory_save_FUN_004ff210(&this_ptr->inventory,g_ActorDataFile);
         return;
       }
-      core_inv_cpp_CInventory_load_FUN_004ff400(&pCVar1->inventory);
+      core_inv_cpp_CInventory_load_FUN_004ff400(&this_ptr->inventory);
       return;
     }
   }

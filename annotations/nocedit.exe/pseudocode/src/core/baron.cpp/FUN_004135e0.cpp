@@ -14,7 +14,6 @@ void core_baron_cpp_FUN_004135e0(void)
   CVector3f *pCVar1;
   CDemonActor *this_ptr;
   int iVar2;
-  BADSPACEBASE *in_ESP;
   int in_stack_00000004;
   SCollisionInfo *collision_info;
   CVector3f local_28;

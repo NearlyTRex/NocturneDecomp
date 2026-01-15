@@ -1,18 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 41,
-    "complexity_score": 178,
+    "complexity_score": 103,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 1,
     "pseudocode_lines": 13,
-    "suspect_count": 14,
+    "suspect_count": 8,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
-      "lea_esp_stack_addr",
-      "register_param",
-      "stack_ref"
+      "lea_esp_stack_addr"
     ],
     "total_lines": 54
   },
@@ -120,48 +117,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 5,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 5,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 8,
-      "match": "&stack0xffffff90",
-      "text": "shape_meshlod_cpp_CLodMesh_ctor_FUN_00515840((CLodMesh *)&stack0xffffff90);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 10,
-      "match": "&stack0xffffff98",
-      "text": "shape_meshlod_cpp_CLodMesh_importFromEditorGlobals_FUN_0051b080((CLodMesh *)&stack0xffffff98);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 12,
-      "match": "&stack0xffffffa0",
-      "text": "shape_meshlod_cpp_CLodMesh_previewLodGeneration_FUN_0051d520((CLodMesh *)&stack0xffffffa0,1,0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 14,
-      "match": "&stack0xffffffa8",
-      "text": "shape_meshlod_cpp_CLodMesh_dtor_FUN_00515950((CLodMesh *)&stack0xffffffa8);",
-      "type": "stack_ref"
-    },
     {
       "add_esp_value": 12,
       "call_address": "0051ed6f",

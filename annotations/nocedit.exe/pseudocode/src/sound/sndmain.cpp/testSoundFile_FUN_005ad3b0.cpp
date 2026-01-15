@@ -12,12 +12,10 @@ char * __cdecl sound_sndmain_cpp_testSoundFile_FUN_005ad3b0(char *sample_name)
   char cVar1;
   int iVar2;
   uint sfx_handle;
-  BADSPACEBASE *in_ESP;
   char *pcVar3;
   char *pcVar4;
   double dVar5;
-  uint output_format;
-  uint in_stack_fffffe94;
+  uint in_stack_fffffe90;
   int local_60;
   float local_18;
   
@@ -53,22 +51,23 @@ char * __cdecl sound_sndmain_cpp_testSoundFile_FUN_005ad3b0(char *sample_name)
     sfx_handle = sound_sndmain_cpp_startSfx_FUN_005a8e90(sample_name);
     sound_sndmain_cpp_popSfxOptions_FUN_005a8cb0();
     if (sfx_handle == 0) {
-      crt_stdio_c_sprintf_FUN_005fdbd0(g_SoundTestErrorBuffer,"Error playing %s");
+      crt_stdio_c_sprintf_FUN_005fdbd0
+                (g_SoundTestErrorBuffer,"Error playing %s",sample_name);
       pcVar3 = g_SoundTestErrorBuffer;
     }
     else {
-      output_format = 0;
-      dVar5 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(0,in_stack_fffffe94);
-      if (0.0 <= (float)dVar5) {
+      dVar5 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(0,in_stack_fffffe90);
+      local_18 = (float)dVar5;
+      if (0.0 <= local_18) {
         while (iVar2 = sound_sndmain_cpp_isSfxPlaying_FUN_005a9660(sfx_handle), iVar2 != 0) {
           iVar2 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,1);
           if (iVar2 != 0) {
             return "Canceled";
           }
-          dVar5 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(0,output_format);
-          local_18 = (float)((ulonglong)dVar5 >> 0x20);
+          dVar5 = sound_sndmain_cpp_getSfxPlaybackPosition_FUN_005a9720(0,in_stack_fffffe90);
           if ((float)dVar5 < local_18) break;
           wincore_winrun_cpp_sleep_FUN_005f40e0(0.05);
+          local_18 = (float)dVar5;
         }
       }
       pcVar3 = (char *)0x0;

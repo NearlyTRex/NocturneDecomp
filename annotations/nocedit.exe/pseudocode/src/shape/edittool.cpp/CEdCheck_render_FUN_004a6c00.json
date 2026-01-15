@@ -1,18 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 135,
-    "complexity_score": 216,
+    "complexity_score": 134,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 2,
-    "pseudocode_lines": 51,
-    "suspect_count": 15,
+    "pseudocode_lines": 49,
+    "suspect_count": 8,
     "suspect_types": [
-      "call_esp_preserve",
-      "stack_param",
-      "unaffected_reg"
+      "call_esp_preserve"
     ],
-    "total_lines": 186
+    "total_lines": 184
   },
   "cross_references": [
     {
@@ -162,55 +160,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 9,
-      "match": "unaff_EBX",
-      "text": "char *unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000008",
-      "text": "int in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 29,
-      "match": "unaff_EBX",
-      "text": "(g_EditorFont,unaff_EBX,iVar4 + iVar2,iVar5,color_mode,iVar3);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_00000008",
-      "text": "in_stack_00000008 = in_stack_00000008 + -1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_00000008",
-      "text": "in_stack_00000008 = in_stack_00000008 + -1;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 49,
-      "match": "in_stack_00000008",
-      "text": "(int *)(in_stack_00000008 + -2));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 52,
-      "match": "in_stack_00000008",
-      "text": "(int *)(in_stack_00000008 + -2));",
-      "type": "stack_param"
-    },
     {
       "add_esp_value": 4,
       "call_address": "004a6c2f",

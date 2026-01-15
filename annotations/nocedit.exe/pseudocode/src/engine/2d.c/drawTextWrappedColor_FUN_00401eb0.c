@@ -15,7 +15,6 @@ engine_2d_c_drawTextWrappedColor_FUN_00401eb0
   byte bVar2;
   int iVar3;
   uint uVar4;
-  int y_pos;
   int iVar5;
   int x_pos;
   int iVar6;
@@ -30,19 +29,19 @@ engine_2d_c_drawTextWrappedColor_FUN_00401eb0
     pcVar7 = pcVar7 + 1;
   } while (cVar1 != '\0');
   iVar5 = 0;
-  y_pos = y_start;
   x_pos = x_start;
   if (0 < (int)(~uVar4 - 1)) {
     do {
-      if ((*text == 10) && (y_pos = y_pos + 0xb, x_pos = x_start, y_max < y_pos)) {
+      if ((*text == 10) && (y_start = y_start + 0xb, x_pos = x_start, y_max < y_start)) {
         return;
       }
       bVar2 = *text;
       iVar6 = x_pos;
       if ((0x1f < bVar2) && (bVar2 < 0x100)) {
-        iVar3 = engine_2d_c_drawCharacter_FUN_00401a10((uint)bVar2,x_pos,y_pos,color);
+        iVar3 = engine_2d_c_drawCharacter_FUN_00401a10((uint)bVar2,x_pos,y_start,color);
         iVar6 = x_pos + iVar3;
-        if ((y_max < x_pos + iVar3) && (y_pos = y_pos + 0xb, iVar6 = y_start, color < y_pos)) {
+        if ((x_max < x_pos + iVar3) && (y_start = y_start + 0xb, iVar6 = x_start, y_max < y_start))
+        {
           return;
         }
       }

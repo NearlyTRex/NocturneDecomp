@@ -25,9 +25,9 @@ void core_msnedit_cpp_BeginAndEndScene_FUN_0053c970(void)
        (in_stack_00000010 < *(int *)(in_stack_00000004 + 0x20))))))) {
     core_dcamera_cpp_CDemonCamera_beginScene_FUN_0044c430(&g_CDemonCameraInstance,1);
     puVar1 = (uint *)core_msnedit_cpp_FUN_00535c60();
-    *(uint *)(in_stack_00000010 + 0x20) = *puVar1;
-    *(uint *)(in_stack_00000010 + 0x24) = puVar1[1];
-    *(uint *)(in_stack_00000010 + 0x28) = puVar1[2];
+    *(uint *)(in_stack_00000008 + 0x20) = *puVar1;
+    *(uint *)(in_stack_00000008 + 0x24) = puVar1[1];
+    *(uint *)(in_stack_00000008 + 0x28) = puVar1[2];
     core_dcamera_cpp_CDemonCamera_endScene_FUN_0044cb80(&g_CDemonCameraInstance,0);
     return;
   }

@@ -12,7 +12,6 @@ float __cdecl core_actor_cpp_getRandomFloat_FUN_0040cc10(float min_value,float m
   float fVar1;
   uint uVar2;
   int iVar3;
-  float local_8;
   
   if (g_CGamePtr->is_processing == 0) {
     iVar3 = crt_stdlib_c_rand_FUN_005feb5c();
@@ -22,5 +21,5 @@ float __cdecl core_actor_cpp_getRandomFloat_FUN_0040cc10(float min_value,float m
     uVar2 = core_actor_cpp_generateRandomValue_FUN_0040cba0();
     fVar1 = (float)(int)uVar2 * (float)g_RandToFloatFixedMultiplier;
   }
-  return fVar1 * local_8 + max_value;
+  return fVar1 * (max_value - min_value) + min_value;
 }

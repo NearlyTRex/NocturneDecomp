@@ -12,9 +12,11 @@ void core_hiram_cpp_FUN_004f4530(void)
 
 {
   CNPC *in_stack_00000004;
-  int in_stack_00000008;
   
   core_npc_cpp_CNPC_FUN_00544870(in_stack_00000004);
-  *(uint *)(in_stack_00000008 + 0x25c4) = 0;
+  (in_stack_00000004->base_character).field11_0x25a0[0x24] = '\0';
+  (in_stack_00000004->base_character).field11_0x25a0[0x25] = '\0';
+  (in_stack_00000004->base_character).field11_0x25a0[0x26] = '\0';
+  (in_stack_00000004->base_character).field11_0x25a0[0x27] = '\0';
   return;
 }

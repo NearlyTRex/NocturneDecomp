@@ -9,7 +9,6 @@
 double __softfp_double crt_math_c_floor_FUN_005feb90(double input_value)
 
 {
-  BADSPACEBASE *in_ESP;
   double dVar1;
   double local_18 [2];
   

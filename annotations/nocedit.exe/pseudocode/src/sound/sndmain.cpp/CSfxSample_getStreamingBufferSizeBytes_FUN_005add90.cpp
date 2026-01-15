@@ -11,8 +11,7 @@ sound_sndmain_cpp_CSfxSample_getStreamingBufferSizeBytes_FUN_005add90(CSfxSample
 
 {
   int iVar1;
-  int in_stack_00000008;
   
   iVar1 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550(this_ptr);
-  return iVar1 * *(int *)(in_stack_00000008 + 0x160);
+  return iVar1 * this_ptr->streaming_buffer_size;
 }

@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 80,
-    "complexity_score": 147,
+    "complexity_score": 100,
     "cross_reference_count": 75,
     "function_call_count": 8,
     "global_count": 10,
-    "pseudocode_lines": 32,
-    "suspect_count": 10,
+    "pseudocode_lines": 30,
+    "suspect_count": 6,
     "suspect_types": [
       "call_esp_preserve",
-      "stack_param",
       "variadic_preserve"
     ],
-    "total_lines": 112
+    "total_lines": 110
   },
   "cross_references": [
     {
@@ -646,36 +645,8 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000014",
-      "text": "int in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000018",
-      "text": "int in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_00000014",
-      "text": "(this_ptr,(char *)config_param2,in_stack_00000014,in_stack_00000018);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_00000018",
-      "text": "(this_ptr,(char *)config_param2,in_stack_00000014,in_stack_00000018);",
-      "type": "stack_param"
-    },
-    {
       "call_address": "004a3e4c",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",

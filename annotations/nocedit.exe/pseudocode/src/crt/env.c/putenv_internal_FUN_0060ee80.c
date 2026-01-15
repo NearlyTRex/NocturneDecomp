@@ -11,20 +11,16 @@ int __cdecl crt_env_c_putenv_internal_FUN_0060ee80(char *envstr)
 {
   char *pcVar1;
   int iVar2;
-  char *pcVar3;
+  uint uVar3;
+  LPCSTR lpName;
   BOOL BVar4;
   void *ptr;
   uint uVar5;
-  uint uVar6;
-  char *unaff_ESI;
-  char *pcVar7;
-  LPCSTR unaff_EDI;
+  CHAR *pCVar6;
+  LPCSTR pCVar7;
   char *pcVar8;
   byte bVar9;
-  void *unaff_retaddr;
-  char *in_stack_00000008;
-  int in_stack_0000000c;
-  char *in_stack_00000028;
+  LPCSTR local_18;
   
   bVar9 = 0;
   pcVar1 = crt_string_c_char_in_set_FUN_0060e340(envstr,L'=');
@@ -32,64 +28,65 @@ int __cdecl crt_env_c_putenv_internal_FUN_0060ee80(char *envstr)
     iVar2 = -1;
   }
   else {
-    if (pcVar1 == in_stack_00000008) {
+    if (pcVar1 == envstr) {
       return -1;
     }
-    pcVar3 = crt_memory_c_malloc_FUN_00601bb0((ulong)(pcVar1 + (1 - (int)in_stack_00000008)));
-    if (pcVar3 == (char *)0x0) {
+    uVar3 = (int)pcVar1 - (int)envstr;
+    lpName = crt_memory_c_malloc_FUN_00601bb0(uVar3 + 1);
+    if (lpName == (LPCSTR)0x0) {
       return -1;
     }
-    pcVar7 = in_stack_00000008;
-    pcVar8 = pcVar3;
-    for (uVar5 = (uint)unaff_EDI >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *(uint *)pcVar8 = *(uint *)pcVar7;
-      pcVar7 = pcVar7 + (uint)bVar9 * -8 + 4;
-      pcVar8 = pcVar8 + (uint)bVar9 * -8 + 4;
+    pCVar6 = envstr;
+    pCVar7 = lpName;
+    for (uVar5 = uVar3 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
+      *(uint *)pCVar7 = *(uint *)pCVar6;
+      pCVar6 = pCVar6 + (uint)bVar9 * -8 + 4;
+      pCVar7 = pCVar7 + (uint)bVar9 * -8 + 4;
     }
-    for (uVar5 = (uint)unaff_EDI & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
-      *pcVar8 = *pcVar7;
-      pcVar7 = pcVar7 + (uint)bVar9 * -2 + 1;
-      pcVar8 = pcVar8 + (uint)bVar9 * -2 + 1;
+    for (uVar5 = uVar3 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
+      *pCVar7 = *pCVar6;
+      pCVar6 = pCVar6 + (uint)bVar9 * -2 + 1;
+      pCVar7 = pCVar7 + (uint)bVar9 * -2 + 1;
     }
-    pcVar3[(int)unaff_EDI] = '\0';
-    uVar5 = crt_unknown_c_FUN_0060fa90();
-    if (uVar5 == 0) {
-      unaff_EDI = (LPCSTR)0x0;
+    lpName[uVar3] = '\0';
+    uVar3 = crt_unknown_c_FUN_0060fa90();
+    if (uVar3 == 0) {
+      local_18 = (LPCSTR)0x0;
     }
     else {
-      unaff_ESI = crt_memory_c_malloc_FUN_00601bb0(uVar5 + 1);
-      if (unaff_ESI == (char *)0x0) {
-        crt_memory_c_free_FUN_00601cd0(pcVar3);
+      local_18 = crt_memory_c_malloc_FUN_00601bb0(uVar3 + 1);
+      if (local_18 == (char *)0x0) {
+        crt_memory_c_free_FUN_00601cd0(lpName);
         return -1;
       }
       pcVar1 = pcVar1 + 1;
-      pcVar3 = unaff_ESI;
-      for (uVar6 = uVar5 >> 2; uVar6 != 0; uVar6 = uVar6 - 1) {
-        *(uint *)pcVar3 = *(uint *)pcVar1;
+      pcVar8 = local_18;
+      for (uVar5 = uVar3 >> 2; uVar5 != 0; uVar5 = uVar5 - 1) {
+        *(uint *)pcVar8 = *(uint *)pcVar1;
         pcVar1 = pcVar1 + (uint)bVar9 * -8 + 4;
-        pcVar3 = pcVar3 + (uint)bVar9 * -8 + 4;
+        pcVar8 = pcVar8 + (uint)bVar9 * -8 + 4;
       }
-      for (uVar6 = uVar5 & 3; uVar6 != 0; uVar6 = uVar6 - 1) {
-        *pcVar3 = *pcVar1;
+      for (uVar5 = uVar3 & 3; uVar5 != 0; uVar5 = uVar5 - 1) {
+        *pcVar8 = *pcVar1;
         pcVar1 = pcVar1 + (uint)bVar9 * -2 + 1;
-        pcVar3 = pcVar3 + (uint)bVar9 * -2 + 1;
+        pcVar8 = pcVar8 + (uint)bVar9 * -2 + 1;
       }
-      unaff_ESI[uVar5] = '\0';
+      local_18[uVar3] = '\0';
     }
-    BVar4 = (*PTR_SetEnvironmentVariableA_0061161c)(unaff_EDI,unaff_ESI);
-    crt_memory_c_free_FUN_00601cd0(unaff_retaddr);
-    crt_memory_c_free_FUN_00601cd0(in_stack_00000008);
+    BVar4 = (*PTR_SetEnvironmentVariableA_0061161c)(lpName,local_18);
+    crt_memory_c_free_FUN_00601cd0(lpName);
+    crt_memory_c_free_FUN_00601cd0(local_18);
     if (BVar4 == 0) {
       return -1;
     }
-    iVar2 = crt_env_c_updateEnvironTable_FUN_0060f04c(in_stack_00000028);
+    iVar2 = crt_env_c_updateEnvironTable_FUN_0060f04c(envstr);
     if (iVar2 != 0) {
       return -1;
     }
     iVar2 = 0;
     if (g_EnvironInitialized != 0) {
       iVar2 = crt_unknown_c_FUN_0060fa90();
-      ptr = crt_memory_c_malloc_FUN_00601bb0(in_stack_0000000c * (iVar2 + 1));
+      ptr = crt_memory_c_malloc_FUN_00601bb0((iVar2 + 1) * 2);
       if (ptr == (void *)0x0) {
         crt_errno_c_convertWindowsErrorToErrno_FUN_00608390(5);
         return -1;

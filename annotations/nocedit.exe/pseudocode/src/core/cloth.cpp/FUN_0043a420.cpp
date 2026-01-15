@@ -17,7 +17,6 @@ void core_cloth_cpp_FUN_0043a420(void)
   CVector3f *pCVar4;
   int iVar5;
   float *pfVar6;
-  BADSPACEBASE *in_ESP;
   CVector3f *pCVar7;
   int in_stack_00000004;
   CVector3f *in_stack_00000008;

@@ -1,20 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 305,
-    "complexity_score": 336,
+    "complexity_score": 215,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 8,
-    "pseudocode_lines": 101,
-    "suspect_count": 21,
+    "pseudocode_lines": 105,
+    "suspect_count": 10,
     "suspect_types": [
-      "badspacebase",
-      "register_param",
       "stack_param",
-      "unaffected_reg",
       "warning_overlapping_globals"
     ],
-    "total_lines": 406
+    "total_lines": 410
   },
   "cross_references": [],
   "function": {
@@ -237,57 +234,15 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 11,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 11,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 12,
-      "match": "unaff_EBP",
-      "text": "float unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 13,
-      "match": "unaff_ESI",
-      "text": "float unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 14,
-      "match": "unaff_EDI",
-      "text": "float unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 11,
       "match": "in_stack_00000004",
       "text": "CDemonActor *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_00000004",
-      "text": "input_local_point = (CVector3f *)(*in_stack_00000004->vtable[1].renderOpaque)(in_stack_00000004)",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 31,
+      "line": 34,
       "match": "in_stack_00000004",
       "text": "input_local_point = (CVector3f *)(*in_stack_00000004->vtable[1].renderOpaque)(in_stack_00000004)",
       "type": "stack_param"
@@ -296,84 +251,49 @@
       "description": "Unresolved stack parameter",
       "line": 34,
       "match": "in_stack_00000004",
-      "text": "(in_stack_00000004,&CStack_3c,input_local_point);",
+      "text": "input_local_point = (CVector3f *)(*in_stack_00000004->vtable[1].renderOpaque)(in_stack_00000004)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 35,
+      "line": 37,
       "match": "in_stack_00000004",
-      "text": "CStack_50.z = in_stack_00000004[2].orient.heading;",
+      "text": "(in_stack_00000004,&CStack_44,input_local_point);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 39,
+      "line": 38,
       "match": "in_stack_00000004",
-      "text": "(in_stack_00000004,(CVector3f *)&fStack_14,&CStack_50);",
+      "text": "CStack_5c.z = in_stack_00000004[2].orient.heading;",
       "type": "stack_param"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 40,
-      "match": "unaff_EBP",
-      "text": "fStack_40 = -unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
+      "description": "Unresolved stack parameter",
       "line": 41,
-      "match": "unaff_EDI",
-      "text": "CStack_3c.x = -unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 42,
-      "match": "unaff_ESI",
-      "text": "CStack_3c.y = -unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 43,
-      "match": "unaff_EBP",
-      "text": "fStack_28 = CStack_3c.z + unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 44,
-      "match": "unaff_EDI",
-      "text": "fStack_24 = fStack_30 + unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 45,
-      "match": "unaff_ESI",
-      "text": "fStack_20 = fStack_2c + unaff_ESI;",
-      "type": "unaffected_reg"
+      "match": "in_stack_00000004",
+      "text": "core_actor_cpp_CDemonActor_transformVector_FUN_00408e80(in_stack_00000004,&CStack_20,&CStack_5c)",
+      "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 65,
+      "line": 68,
       "match": "in_stack_00000004",
       "text": "if (in_stack_00000004[4].location.position.z != 0.0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 67,
+      "line": 70,
       "match": "in_stack_00000004",
       "text": "in_stack_00000004[4].location.position.z = 0.0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 87,
+      "line": 91,
       "match": "in_stack_00000004",
-      "text": "CStack_5c.z = (float)in_stack_00000004[4].location.area_id * (float)0.015625;",
+      "text": "fStack_14 = (float)in_stack_00000004[4].location.area_id * (float)0.015625;",
       "type": "stack_param"
     }
   ],

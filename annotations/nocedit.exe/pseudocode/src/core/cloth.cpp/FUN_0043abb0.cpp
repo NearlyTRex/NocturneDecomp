@@ -22,7 +22,6 @@ void core_cloth_cpp_FUN_0043abb0(void)
   uint *puVar7;
   int iVar8;
   int *piVar9;
-  BADSPACEBASE *in_ESP;
   float *pfVar10;
   int in_stack_00000004;
   float *in_stack_00000008;

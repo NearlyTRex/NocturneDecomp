@@ -20,7 +20,6 @@ void core_chain_cpp_FUN_004300d0(void)
   CVector3f *pCVar6;
   CDemonActor **ppCVar7;
   CDemonActor *pCVar8;
-  BADSPACEBASE *in_ESP;
   int iVar9;
   COrientation *pCVar10;
   CDemonActor *in_stack_00000004;
@@ -69,9 +68,9 @@ void core_chain_cpp_FUN_004300d0(void)
   int iStack_18;
   
   if (*(float *)(in_stack_00000004[4].actor_name + 0xc) < -9900f) {
-    in_stack_00000008 =
-         (*in_stack_00000004->vtable->cylinderGroundCheck)(in_stack_00000004,0.1,(CVector3f *)0x0);
-    *(float *)(in_stack_00000004[4].actor_name + 0xc) = in_stack_00000008;
+    fVar5 = (*in_stack_00000004->vtable->cylinderGroundCheck)
+                      (in_stack_00000004,0.1,(CVector3f *)0x0);
+    *(float *)(in_stack_00000004[4].actor_name + 0xc) = fVar5;
   }
   if (*(int *)(in_stack_00000004[4].actor_name + 0x14) != 0) {
     pCVar8 = in_stack_00000004 + 2;

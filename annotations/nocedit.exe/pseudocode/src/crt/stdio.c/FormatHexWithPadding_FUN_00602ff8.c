@@ -16,7 +16,6 @@ void __cdecl crt_stdio_c_FormatHexWithPadding_FUN_00602ff8(int value,char *buffe
   char *pcVar5;
   char *pcVar6;
   byte bVar7;
-  int in_stack_00000010;
   
   bVar7 = 0;
   crt_stdio_c_IntegerToString_FUN_00607d18(value,buffer,0x10);
@@ -28,7 +27,7 @@ void __cdecl crt_stdio_c_FormatHexWithPadding_FUN_00602ff8(int value,char *buffe
     cVar2 = *pcVar5;
     pcVar5 = pcVar5 + (uint)bVar7 * -2 + 1;
   } while (cVar2 != '\0');
-  iVar3 = in_stack_00000010 + -1;
+  iVar3 = width + -1;
   if (~uVar4 - 1 != 0) {
     pcVar5 = buffer + (~uVar4 - 1);
     pcVar6 = buffer + iVar3;
@@ -45,6 +44,6 @@ void __cdecl crt_stdio_c_FormatHexWithPadding_FUN_00602ff8(int value,char *buffe
     *pcVar5 = '0';
     pcVar5 = pcVar5 + -1;
   }
-  buffer[in_stack_00000010] = '\0';
+  buffer[width] = '\0';
   return;
 }

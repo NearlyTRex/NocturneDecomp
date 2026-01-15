@@ -9,9 +9,7 @@
 void __cdecl core_ammo_cpp_CAmmo_setup_FUN_00410e50(CAmmo *this_ptr)
 
 {
-  CDemonActor *in_stack_00000008;
-  
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00478d60(&this_ptr->model);
-  core_actor_cpp_CDemonActor_setup_FUN_00408bb0(in_stack_00000008);
+  core_actor_cpp_CDemonActor_setup_FUN_00408bb0(&this_ptr->base_actor);
   return;
 }

@@ -14,13 +14,11 @@ core_fire_cpp_CFireEffect_createStake_FUN_004c7bb0
 {
   bool bVar1;
   CVector3f *pCVar2;
-  BADSPACEBASE *in_ESP;
-  CVector3f *in_stack_00000018;
-  CVector3f *in_stack_ffffffac;
-  CVector3f *in_stack_ffffffb0;
-  CVector3f local_30;
-  CVector3f CStack_24;
-  float local_14;
+  CVector3f *in_stack_ffffffa4;
+  CVector3f *in_stack_ffffffa8;
+  CVector3f local_34;
+  CVector3f local_28;
+  CVector3f local_1c;
   
   bVar1 = false;
   switch(material_type) {
@@ -43,23 +41,24 @@ core_fire_cpp_CFireEffect_createStake_FUN_004c7bb0
   }
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
             ((CMatrix3x3f *)&stack0xffffffa4,orientation_angles);
-  local_30.x = 0.0;
-  local_30.y = 0.0;
-  local_30.z = 0.7;
+  local_34.x = 0.0;
+  local_34.y = 0.0;
+  local_34.z = 0.7;
   pCVar2 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
-                     ((CMatrix3x3f *)&stack0xffffffa8,&CStack_24,&local_30);
-  local_14 = impact_position->x - pCVar2->x;
+                     ((CMatrix3x3f *)&stack0xffffffa4,&local_28,&local_34);
+  local_1c.x = impact_position->x - pCVar2->x;
+  local_1c.y = impact_position->y - pCVar2->y;
+  local_1c.z = impact_position->z - pCVar2->z;
   if (bVar1) {
     core_fire_cpp_CStake_spawn_FUN_004bfe90
-              (g_StakePool + g_StakeAllocIndex,(float)&local_14,orientation_angles,in_stack_00000018
-               ,in_stack_ffffffac,in_stack_ffffffb0);
+              (g_StakePool + g_StakeAllocIndex,(float)&local_1c,orientation_angles,surface_normal,
+               in_stack_ffffffa4,in_stack_ffffffa8);
   }
   else {
     core_sound_cpp_CSound_playActorPositionalSoundWithDelay_FUN_005b3ae0
-              (g_CSoundPtr,(CDemonActor *)orientation_angles,"a-wood?.wav",
-               (CVector3f *)&local_14,0.23);
+              (g_CSoundPtr,(CDemonActor *)this_ptr,"a-wood?.wav",&local_1c,0.23);
     core_fire_cpp_CStake_init_FUN_004bfe20
-              (g_StakePool + g_StakeAllocIndex,(CVector3f *)&stack0xfffffff0,orientation_angles);
+              (g_StakePool + g_StakeAllocIndex,&local_1c,orientation_angles);
   }
   g_StakeAllocIndex = g_StakeAllocIndex + 1;
   if (0xff < g_StakeAllocIndex) {

@@ -12,8 +12,9 @@ void __cdecl shape_meshlod_cpp_CLodMesh_gridLoad_FUN_0051d2d0(CLodMesh *this_ptr
   SSpatialGrid *pSVar1;
   int *piVar2;
   int iVar3;
-  BADSPACEBASE *in_ESP;
-  int unaff_ESI;
+  int iVar4;
+  int iVar5;
+  int local_14;
   
   pSVar1 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
                      (this_ptr->spatial_grid_ptr,0x4004,"..\\shape\\meshlod.cpp",0x146f);
@@ -23,17 +24,18 @@ void __cdecl shape_meshlod_cpp_CLodMesh_gridLoad_FUN_0051d2d0(CLodMesh *this_ptr
     g_CurrentLineNumber = 0x1470;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory!");
   }
-  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%d\n",&stack0xfffffff4);
-  if (unaff_ESI != 0x10) {
+  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%d\n",&local_14);
+  if (local_14 != 0x10) {
     g_CurrentFilename = "..\\shape\\meshlod.cpp";
     g_CurrentLineNumber = 0x1474;
     core_main_c_displayErrorAndQuit_FUN_00506f10("LodMesh::gridLoad - file is old!");
   }
-  iVar3 = 0;
+  iVar4 = 0;
   do {
-    iVar3 = iVar3 + 4;
-    crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%d\n");
-  } while (iVar3 != 0x4004);
+    iVar5 = (int)this_ptr->spatial_grid_ptr->cell_start_indices[0][0] + iVar4;
+    iVar4 = iVar4 + 4;
+    crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%d\n",iVar5);
+  } while (iVar4 != 0x4004);
   piVar2 = shape_memdbg_cpp_debugRealloc_FUN_0050f540
                      (this_ptr->spatial_grid_data,this_ptr->spatial_grid_ptr->triangle_count << 2,
                       "..\\shape\\meshlod.cpp",0x147a);
@@ -43,8 +45,11 @@ void __cdecl shape_meshlod_cpp_CLodMesh_gridLoad_FUN_0051d2d0(CLodMesh *this_ptr
     g_CurrentLineNumber = 0x147b;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory!");
   }
-  for (iVar3 = 0; iVar3 < this_ptr->spatial_grid_ptr->triangle_count; iVar3 = iVar3 + 1) {
-    crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%d\n");
+  iVar4 = 0;
+  for (iVar5 = 0; iVar5 < this_ptr->spatial_grid_ptr->triangle_count; iVar5 = iVar5 + 1) {
+    iVar3 = (int)this_ptr->spatial_grid_data + iVar4;
+    iVar4 = iVar4 + 4;
+    crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%d\n",iVar3);
   }
   return;
 }

@@ -18,7 +18,7 @@ void core_manpuz_cpp_FUN_0050b2f0(void)
   
   core_actor_cpp_CDemonActor_getInteractionInfo_FUN_0040a030(in_stack_00000004,in_stack_00000008);
   in_stack_00000008->can_interact = 1;
-  fVar1 = in_stack_00000008[0x16].yaw_max;
+  fVar1 = in_stack_00000004[2].location.position.y;
   in_stack_00000008->yaw_min = 6.2831855;
   in_stack_00000008->yaw_max = -6.2831855;
   in_stack_00000008->distance_min = -1.0;

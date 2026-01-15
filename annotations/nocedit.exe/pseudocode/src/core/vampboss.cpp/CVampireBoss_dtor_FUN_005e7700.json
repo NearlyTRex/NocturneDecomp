@@ -1,17 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 107,
-    "complexity_score": 216,
+    "complexity_score": 255,
     "cross_reference_count": 0,
     "function_call_count": 11,
     "global_count": 1,
-    "pseudocode_lines": 36,
-    "suspect_count": 17,
+    "pseudocode_lines": 40,
+    "suspect_count": 20,
     "suspect_types": [
       "call_esp_preserve",
-      "negative_offset"
+      "negative_offset",
+      "unaffected_reg"
     ],
-    "total_lines": 143
+    "total_lines": 147
   },
   "cross_references": [],
   "function": {
@@ -231,15 +232,36 @@
   },
   "suspects": [
     {
+      "description": "Unaffected register variable",
+      "line": 12,
+      "match": "unaff_EBX",
+      "text": "uint unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 25,
+      "match": "unaff_EBX",
+      "text": "((CDeformableModelInstance *)(iVar1 + -0x22b4),0,unaff_EBX,unaff_retaddr,",
+      "type": "unaffected_reg"
+    },
+    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 24,
+      "line": 27,
       "match": "pCVar2[-5].",
       "text": "iVar1 = core_backgnd_cpp_freeFlames_FUN_00412720((CFlame **)(pCVar2[-5].model_name + 0x34));",
       "type": "negative_offset"
     },
     {
-      "description": "Negative struct offset (wrong base type)",
+      "description": "Unaffected register variable",
       "line": 33,
+      "match": "unaff_EBX",
+      "text": "((CDeformableModelInstance *)(iVar1 + -0x293c),0,unaff_EBX,unaff_retaddr,",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 37,
       "match": "pCVar2[-1].",
       "text": "((CDemonActor *)(pCVar2[-1].part_visibility_flags + 7),1);",
       "type": "negative_offset"

@@ -16,7 +16,6 @@ CDemonActor * core_keyactor_cpp_FUN_005019b0(void)
   void *ptr_00;
   CDemonActor *in_stack_00000004;
   byte in_stack_00000008;
-  byte in_stack_0000000c;
   
   if ((in_stack_00000008 & 4) != 0) {
     ptr_00 = crt_memory_c_freeSingleInstance_FUN_005fe632(in_stack_00000004,&g_CKeyActorTypeInfo);
@@ -24,7 +23,7 @@ CDemonActor * core_keyactor_cpp_FUN_005019b0(void)
     return in_stack_00000004;
   }
   ptr = core_actor_cpp_CDemonActor_dtor_FUN_00408a30(in_stack_00000004,1);
-  if ((in_stack_0000000c & 2) == 0) {
+  if ((in_stack_00000008 & 2) == 0) {
     return ptr;
   }
   shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);

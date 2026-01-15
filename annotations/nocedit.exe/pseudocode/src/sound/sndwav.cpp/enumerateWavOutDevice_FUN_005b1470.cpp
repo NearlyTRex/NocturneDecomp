@@ -14,15 +14,13 @@ sound_sndwav_cpp_enumerateWavOutDevice_FUN_005b1470(UINT device_id,SSoundDeviceI
   MMRESULT MVar2;
   char *pcVar3;
   int iVar4;
-  BADSPACEBASE *in_ESP;
-  SSoundDeviceInfo *pSVar5;
-  char *pcVar6;
+  CHAR *pCVar5;
+  SSoundDeviceInfo *pSVar6;
   byte bVar7;
-  MMVERSION MStack_38;
-  char acStack_20 [24];
+  tagWAVEOUTCAPSA local_3c;
   
   bVar7 = 0;
-  MVar2 = (*waveOutGetDevCapsA)(device_id,(LPWAVEOUTCAPSA)&stack0xffffffc4,0x34);
+  MVar2 = (*waveOutGetDevCapsA)(device_id,&local_3c,0x34);
   if (MVar2 != 0) {
     return 0;
   }
@@ -30,39 +28,38 @@ sound_sndwav_cpp_enumerateWavOutDevice_FUN_005b1470(UINT device_id,SSoundDeviceI
   device_info->device_id = device_id;
   device_info->device_value1 = 0;
   device_info->flags = 0;
-  MStack_38 = 0x5b14bb;
   pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("WavOutWrite: ");
-  pSVar5 = device_info;
+  pSVar6 = device_info;
   do {
     cVar1 = *pcVar3;
-    pSVar5->device_name[0] = cVar1;
+    pSVar6->device_name[0] = cVar1;
     if (cVar1 == '\0') break;
     cVar1 = pcVar3[1];
     pcVar3 = pcVar3 + 2;
-    pSVar5->device_name[1] = cVar1;
-    pSVar5 = (SSoundDeviceInfo *)(pSVar5->device_name + 2);
+    pSVar6->device_name[1] = cVar1;
+    pSVar6 = (SSoundDeviceInfo *)(pSVar6->device_name + 2);
   } while (cVar1 != '\0');
-  pcVar3 = acStack_20;
+  pCVar5 = local_3c.szPname;
   iVar4 = -1;
   do {
-    pSVar5 = device_info;
+    pSVar6 = device_info;
     if (iVar4 == 0) break;
     iVar4 = iVar4 + -1;
-    pSVar5 = (SSoundDeviceInfo *)((int)device_info + (uint)bVar7 * -2 + 1);
-    pcVar6 = device_info->device_name;
-    device_info = pSVar5;
-  } while (*pcVar6 != '\0');
-  pcVar6 = (char *)((int)&pSVar5[-1].device_value2 + 3);
+    pSVar6 = (SSoundDeviceInfo *)((int)device_info + (uint)bVar7 * -2 + 1);
+    pcVar3 = device_info->device_name;
+    device_info = pSVar6;
+  } while (*pcVar3 != '\0');
+  pcVar3 = (char *)((int)&pSVar6[-1].device_value2 + 3);
   do {
-    cVar1 = *pcVar3;
-    *pcVar6 = cVar1;
+    cVar1 = *pCVar5;
+    *pcVar3 = cVar1;
     if (cVar1 == '\0') {
       return 1;
     }
-    cVar1 = pcVar3[1];
+    cVar1 = pCVar5[1];
+    pCVar5 = pCVar5 + 2;
+    pcVar3[1] = cVar1;
     pcVar3 = pcVar3 + 2;
-    pcVar6[1] = cVar1;
-    pcVar6 = pcVar6 + 2;
   } while (cVar1 != '\0');
   return 1;
 }

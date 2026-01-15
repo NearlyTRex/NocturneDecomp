@@ -14,12 +14,10 @@ shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(CEditorTool
   uint uVar2;
   uint uVar3;
   int iVar4;
-  BADSPACEBASE *in_ESP;
   uint *puVar5;
   uint *puVar6;
   byte bVar7;
-  CEditorTools *in_stack_00000010;
-  uint uStack_12c0;
+  uint auStack_12c4 [1200];
   
   bVar7 = 0;
   shape_edittool_cpp_paintWindowBackground_FUN_0049e590();
@@ -28,7 +26,7 @@ shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(CEditorTool
       iVar4 = 0;
       do {
         iVar1 = iVar4 + 4;
-        *(uint *)((int)&uStack_12c0 + iVar4) =
+        *(uint *)((int)auStack_12c4 + iVar4) =
              *(uint *)((int)g_ScreenBufferArray + iVar4);
         iVar4 = iVar1;
       } while (iVar1 < g_WindowHeight * 4);
@@ -40,7 +38,7 @@ shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(CEditorTool
     if (0 < g_WindowHeight) {
       iVar1 = 0;
       do {
-        puVar5 = *(uint **)(&stack0xffffed44 + iVar1);
+        puVar5 = *(uint **)((int)auStack_12c4 + iVar1);
         puVar6 = *(uint **)((int)g_ScreenBufferArray + iVar1);
         for (uVar3 = uVar2 >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
           *puVar6 = *puVar5;
@@ -58,7 +56,6 @@ shape_edittool_cpp_CEditorTools_restoreWindowAndCleanup_FUN_004a0dd0(CEditorTool
     }
     wincore_windll_cpp_unlockFrame_FUN_005b7250(1);
   }
-  uStack_12c0 = 0x4a0e86;
-  shape_edittool_cpp_CEditorTools_popWindowState_FUN_004a0ea0(in_stack_00000010);
+  shape_edittool_cpp_CEditorTools_popWindowState_FUN_004a0ea0(this_ptr);
   return;
 }

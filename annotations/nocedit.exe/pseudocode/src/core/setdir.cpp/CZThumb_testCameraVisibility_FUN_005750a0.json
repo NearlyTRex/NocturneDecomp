@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 128,
-    "complexity_score": 257,
+    "complexity_score": 264,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 2,
-    "pseudocode_lines": 42,
-    "suspect_count": 20,
+    "pseudocode_lines": 44,
+    "suspect_count": 21,
     "suspect_types": [
       "call_esp_preserve",
-      "pointer_cast",
       "stack_param"
     ],
-    "total_lines": 170
+    "total_lines": 172
   },
   "cross_references": [],
   "function": {
@@ -139,120 +138,127 @@
     {
       "description": "Unresolved stack parameter",
       "line": 10,
-      "match": "in_stack_0000000c",
-      "text": "CVector3i *in_stack_0000000c;",
+      "match": "in_stack_00000008",
+      "text": "CVector3i *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 11,
+      "match": "in_stack_0000000c",
+      "text": "SMRGLHeaderPrimitive *in_stack_0000000c;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000010",
+      "text": "int in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
       "match": "in_stack_00000014",
       "text": "C3DSCamera *in_stack_00000014;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 14,
       "match": "in_stack_00000018",
       "text": "float in_stack_00000018;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 17,
       "match": "in_stack_00000014",
       "text": "if ((in_stack_00000014->field17_0x1a0 != 0) &&",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 18,
       "match": "in_stack_00000014",
       "text": "(fVar4 = (in_stack_00000014->position).x - (float)this_ptr->projection_scale,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 19,
       "match": "in_stack_00000014",
       "text": "fVar2 = (in_stack_00000014->position).y - (float)this_ptr->zbuffer_data,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 20,
       "match": "in_stack_00000014",
       "text": "fVar1 = (in_stack_00000014->position).z - (float)this_ptr[1].width,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 24,
       "match": "in_stack_00000014",
       "text": "(in_stack_00000014,(CVector3f *)&this_ptr->projection_scale,in_stack_00000018)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 24,
       "match": "in_stack_00000018",
       "text": "(in_stack_00000014,(CVector3f *)&this_ptr->projection_scale,in_stack_00000018)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_00000014",
-      "text": "this_ptr_00 = g_CZThumbPool + (int)in_stack_00000014 * 6;",
+      "line": 28,
+      "match": "in_stack_00000010",
+      "text": "this_ptr_00 = g_CZThumbPool + in_stack_00000010 * 6;",
       "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_00000018",
-      "text": "if (*(int *)((int)in_stack_00000018 + 0x140) == 0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 27,
-      "match": "(int *)((int)",
-      "text": "if (*(int *)((int)in_stack_00000018 + 0x140) == 0) {",
-      "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 29,
-      "match": "in_stack_0000000c",
-      "text": "(this_ptr_00,(CDemonActor *)this_ptr,in_stack_0000000c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_0000000c",
-      "text": "(SMRGLHeaderPrimitive *)in_stack_0000000c,1);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 36,
-      "match": "in_stack_0000000c",
-      "text": "(this_ptr_00,(CDemonActor *)this_ptr,in_stack_0000000c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 37,
-      "match": "in_stack_0000000c",
-      "text": "(SMRGLHeaderPrimitive *)in_stack_0000000c,0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 40,
       "match": "in_stack_00000014",
-      "text": "} while (this_ptr_00 != g_CZThumbPool + (int)in_stack_00000014 * 6 + 6);",
+      "text": "if (in_stack_00000014->is_panning == 0) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 31,
+      "match": "in_stack_00000008",
+      "text": "(this_ptr_00,(CDemonActor *)this_ptr,in_stack_00000008,in_stack_0000000c,1",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 31,
+      "match": "in_stack_0000000c",
+      "text": "(this_ptr_00,(CDemonActor *)this_ptr,in_stack_00000008,in_stack_0000000c,1",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 38,
+      "match": "in_stack_00000008",
+      "text": "(this_ptr_00,(CDemonActor *)this_ptr,in_stack_00000008,in_stack_0000000c,0",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 38,
+      "match": "in_stack_0000000c",
+      "text": "(this_ptr_00,(CDemonActor *)this_ptr,in_stack_00000008,in_stack_0000000c,0",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 42,
+      "match": "in_stack_00000010",
+      "text": "} while (this_ptr_00 != g_CZThumbPool + in_stack_00000010 * 6 + 6);",
       "type": "stack_param"
     },
     {

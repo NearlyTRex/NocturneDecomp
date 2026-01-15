@@ -1,17 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 106,
+    "complexity_score": 85,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
-    "pseudocode_lines": 26,
-    "suspect_count": 7,
+    "pseudocode_lines": 25,
+    "suspect_count": 5,
     "suspect_types": [
       "call_esp_preserve",
       "unaffected_reg"
     ],
-    "total_lines": 70
+    "total_lines": 69
   },
   "cross_references": [
     {
@@ -134,29 +134,15 @@
     {
       "description": "Unaffected register variable",
       "line": 9,
-      "match": "unaff_ESI",
-      "text": "int unaff_ESI;",
+      "match": "unaff_EBP",
+      "text": "int unaff_EBP;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 10,
-      "match": "unaff_EDI",
-      "text": "int *unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 27,
-      "match": "unaff_EDI",
-      "text": "skinned_vertices,part_visibility_flags,unaff_EDI,unaff_ESI);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 27,
-      "match": "unaff_ESI",
-      "text": "skinned_vertices,part_visibility_flags,unaff_EDI,unaff_ESI);",
+      "line": 26,
+      "match": "unaff_EBP",
+      "text": "part_visibility_flags,texture_set_indices,unaff_EBP);",
       "type": "unaffected_reg"
     },
     {

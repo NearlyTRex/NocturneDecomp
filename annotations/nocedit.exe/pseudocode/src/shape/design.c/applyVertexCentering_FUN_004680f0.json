@@ -1,19 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 72,
-    "complexity_score": 120,
+    "complexity_score": 89,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 30,
-    "suspect_count": 7,
+    "pseudocode_lines": 29,
+    "suspect_count": 5,
     "suspect_types": [
-      "badspacebase",
       "pointer_cast",
-      "register_param",
       "stack_ref"
     ],
-    "total_lines": 102
+    "total_lines": 101
   },
   "cross_references": [
     {
@@ -205,50 +203,36 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 8,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 8,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 22,
+      "line": 21,
       "match": "(uint *)((int)",
       "text": "puVar1 = (uint *)((int)(local_14 + reference_vertex_id) + (uint)bVar2 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 24,
+      "line": 23,
       "match": "&stack0xffffffdc",
       "text": "*(uint *)((int)&stack0xffffffdc + (uint)bVar2 * -8) = *puVar1;",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 24,
+      "line": 23,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&stack0xffffffdc + (uint)bVar2 * -8) = *puVar1;",
       "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 25,
+      "line": 24,
       "match": "&stack0xffffffe0",
       "text": "*(uint *)((int)&stack0xffffffe0 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =",
       "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
-      "line": 25,
+      "line": 24,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&stack0xffffffe0 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =",
       "type": "pointer_cast"

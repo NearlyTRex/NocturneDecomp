@@ -1,11 +1,11 @@
 {
   "complexity": {
     "assembly_lines": 322,
-    "complexity_score": 416,
+    "complexity_score": 415,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 5,
-    "pseudocode_lines": 121,
+    "pseudocode_lines": 120,
     "suspect_count": 27,
     "suspect_types": [
       "call_esp_preserve",
@@ -14,7 +14,7 @@
       "pointer_cast",
       "unknown_field"
     ],
-    "total_lines": 443
+    "total_lines": 442
   },
   "cross_references": [
     {
@@ -298,105 +298,105 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 58,
+      "line": 55,
       "match": "extraout_ECX",
       "text": "(float)CONCAT44 /* combine 2-byte values */(extraout_ECX,this_ptr->boxes[box_index].pixel_count)))",
       "type": "extra_output"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 58,
+      "line": 55,
       "match": "CONCAT44",
       "text": "(float)CONCAT44 /* combine 2-byte values */(extraout_ECX,this_ptr->boxes[box_index].pixel_count)))",
       "type": "concat_artifact"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 62,
+      "line": 59,
       "match": "extraout_ECX_00",
       "text": "this_ptr->boxes[box_index].red_variance = extraout_ECX_00;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 63,
+      "line": 60,
       "match": "extraout_ECX_00",
       "text": "this_ptr->boxes[box_index].green_variance = extraout_ECX_00;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 64,
+      "line": 61,
       "match": "extraout_ECX_00",
       "text": "this_ptr->boxes[box_index].blue_variance = extraout_ECX_00;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 65,
+      "line": 62,
       "match": "extraout_ECX_00",
       "text": "this_ptr->boxes[box_index].intensity_variance = extraout_ECX_00;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 66,
+      "line": 63,
       "match": "extraout_ECX_00",
       "text": "this_ptr->boxes[box_index].weighted_variance = extraout_ECX_00;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 68,
+      "line": 65,
       "match": "extraout_ECX_00",
-      "text": "((double)(local_44 / (float)CONCAT44 /* combine 2-byte values */(extraout_ECX_00,iVar18)));",
+      "text": "((double)(local_44 / (float)CONCAT44 /* combine 2-byte values */(extraout_ECX_00,iVar13)));",
       "type": "extra_output"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
-      "line": 68,
+      "line": 65,
       "match": "CONCAT44",
-      "text": "((double)(local_44 / (float)CONCAT44 /* combine 2-byte values */(extraout_ECX_00,iVar18)));",
+      "text": "((double)(local_44 / (float)CONCAT44 /* combine 2-byte values */(extraout_ECX_00,iVar13)));",
       "type": "concat_artifact"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 70,
+      "line": 67,
       "match": "extraout_EDX",
-      "text": "for (iVar18 = this_ptr->boxes[box_index].start_index * 4; iVar18 < extraout_EDX;",
+      "text": "for (iVar13 = this_ptr->boxes[box_index].start_index * 4; iVar13 < extraout_EDX;",
       "type": "extra_output"
     },
     {
       "description": "Complex pointer cast",
-      "line": 72,
+      "line": 69,
       "match": "(int *)((int)",
       "text": "uVar11 = (*(int *)((int)&this_ptr->boxes[box_index + -1].pixel_count + 2) >> 0x10) -",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 75,
+      "line": 73,
       "match": "._0_2_",
       "text": "iVar10._0_2_ = this_ptr->boxes[box_index].avg_red;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 76,
+      "line": 74,
       "match": "._2_2_",
       "text": "iVar10._2_2_ = this_ptr->boxes[box_index].avg_green;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 79,
+      "line": 77,
       "match": "._0_2_",
       "text": "iVar3._0_2_ = this_ptr->boxes[box_index].avg_green;",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 80,
+      "line": 78,
       "match": "._2_2_",
       "text": "iVar3._2_2_ = this_ptr->boxes[box_index].avg_blue;",
       "type": "unknown_field"

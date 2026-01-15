@@ -15,7 +15,6 @@ core_dlight_cpp_CDemonLight_renderExternalVolumetricShafts_FUN_004758d0(CDemonLi
   CDemonRenderer *this_ptr_00;
   CVector3f *pCVar3;
   int extraout_EAX;
-  BADSPACEBASE *in_ESP;
   CMatrix3x3i *this_ptr_01;
   int iVar4;
   byte bVar5;

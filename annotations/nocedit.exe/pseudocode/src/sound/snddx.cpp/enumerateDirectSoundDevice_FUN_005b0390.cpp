@@ -26,7 +26,8 @@ sound_snddx_cpp_enumerateDirectSoundDevice_FUN_005b0390
     device_info->device_value1 = DVar1;
     device_info->device_value2 = g_DirectSoundDevices[device_id].value2;
     device_info->device_guid = g_DirectSoundDevices[device_id].device_id_part;
-    crt_stdio_c_sprintf_FUN_005fdbd0(device_info->device_name,"DirectSound: %s");
+    crt_stdio_c_sprintf_FUN_005fdbd0
+              (device_info->device_name,"DirectSound: %s",device_id * 0x11c + 0x3f69c74);
     return 1;
   }
   return 0;

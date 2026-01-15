@@ -1,23 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 221,
-    "complexity_score": 593,
+    "complexity_score": 314,
     "cross_reference_count": 2,
     "function_call_count": 13,
     "global_count": 19,
-    "pseudocode_lines": 73,
-    "suspect_count": 48,
+    "pseudocode_lines": 79,
+    "suspect_count": 22,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
-      "format_string_mismatch",
       "lea_esp_stack_addr",
-      "register_param",
-      "stack_param",
-      "stack_ref",
       "variadic_preserve"
     ],
-    "total_lines": 294
+    "total_lines": 300
   },
   "cross_references": [
     {
@@ -342,176 +337,8 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 10,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 10,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_0000000c",
-      "text": "FILE *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000010",
-      "text": "char *in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_00000014",
-      "text": "SIZE_T in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000018",
-      "text": "int in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000020",
-      "text": "char *in_stack_00000020;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00000034",
-      "text": "char *in_stack_00000034;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_fffffbc4",
-      "text": "int in_stack_fffffbc4;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 23,
-      "match": "&stack0xfffffbb8",
-      "text": "engine_pod_cpp_CPodFile_ctor_FUN_0054f5a0((CPodFile *)&stack0xfffffbb8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_00000010",
-      "text": "((CPodFile *)&stack0xfffffbbc,in_stack_00000010);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 25,
-      "match": "&stack0xfffffbbc",
-      "text": "((CPodFile *)&stack0xfffffbbc,in_stack_00000010);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 31,
-      "match": "&stack0xfffffbc4",
-      "text": "engine_pod_cpp_CPodFile_cleanup_FUN_00550090((CPodFile *)&stack0xfffffbc4);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_fffffbc4",
-      "text": "if ((in_stack_fffffbc4 != 1) && (in_stack_fffffbc4 != 200)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_fffffbc4",
-      "text": "if ((in_stack_fffffbc4 != 1) && (in_stack_fffffbc4 != 200)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_fffffbc4",
-      "text": "if (in_stack_fffffbc4 == 100) goto LAB_00551212;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 38,
-      "match": "in_stack_00000020",
-      "text": "iVar2 = engine_dosio_c_getFileSize_FUN_00481880(&s_EmptyString_0064015e,in_stack_00000020);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 41,
-      "match": "in_stack_00000020",
-      "text": "(in_stack_00000020,(char *)0x0,\"rb\",\"..\\\\engine\\\\pod.cpp\",0xf2);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 58,
-      "match": "in_stack_00000014",
-      "text": "in_stack_00000014 = size;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 67,
-      "match": "in_stack_0000000c",
-      "text": "shape_memdbg_cpp_closeFile_FUN_0050f9b0(in_stack_0000000c,\"..\\\\engine\\\\pod.cpp\",0xfb);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 69,
-      "match": "in_stack_00000034",
-      "text": "(in_stack_00000034,(char *)0x0,\"rb+\",\"..\\\\engine\\\\pod.cpp\",0x4b8);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 70,
-      "match": "in_stack_00000018",
-      "text": "crt_stdio_c_fseek_FUN_005ffacc(pFVar3,in_stack_00000018 + -4,0);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 71,
-      "match": "&stack0x00000014",
-      "text": "crt_stdio_c_fwrite_FUN_005fdc00(&stack0x00000014,4,1,pFVar3);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 74,
-      "match": "&stack0xfffffbf0",
-      "text": "engine_pod_cpp_CPodFile_dtor_FUN_0054f610((CPodFile *)&stack0xfffffbf0);",
-      "type": "stack_ref"
-    },
-    {
       "call_address": "00551066",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -525,7 +352,7 @@
     },
     {
       "call_address": "0055126d",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -536,28 +363,6 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0055126d (no EBP frame)",
       "type": "variadic_preserve"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Can't mount %s to check version\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Can't mount %s to check version",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 29,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Can't mount %s to check version\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Invalid pod version for %s: %d\" has 2 specifiers but 0 arguments after it",
-      "expected_args": 2,
-      "format_string": "Invalid pod version for %s: %d",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 36,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Invalid pod version for %s: %d\");",
-      "text": "Format string expects 2 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 12,

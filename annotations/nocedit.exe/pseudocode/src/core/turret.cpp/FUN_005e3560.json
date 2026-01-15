@@ -1,22 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 353,
+    "complexity_score": 322,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 1,
-    "pseudocode_lines": 68,
-    "suspect_count": 25,
+    "pseudocode_lines": 67,
+    "suspect_count": 23,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "callind_preserve",
       "param_count_too_few",
-      "register_param",
       "stack_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 142
+    "total_lines": 141
   },
   "cross_references": [
     {
@@ -146,148 +144,134 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 17,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 17,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 17,
       "match": "in_stack_00000004",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 28,
+      "line": 27,
       "match": "in_stack_00000004",
       "text": "if (*(float *)(in_stack_00000004 + 0x86c) <= 0.0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 29,
+      "line": 28,
       "match": "in_stack_00000004",
       "text": "if (*(int *)(in_stack_00000004 + 0x780) != 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 30,
+      "line": 29,
       "match": "in_stack_00000004",
       "text": "input_local_point = (CVector3f *)(in_stack_00000004 + 0x84c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 33,
+      "line": 32,
       "match": "in_stack_00000004",
       "text": "(**(code **)(*(int *)(*(int *)(in_stack_00000004 + 0x780) + 0x154) + 0x14))();",
       "type": "stack_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 33,
+      "line": 32,
       "match": "code *",
       "text": "(**(code **)(*(int *)(*(int *)(in_stack_00000004 + 0x780) + 0x154) + 0x14))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 35,
+      "line": 34,
       "match": "in_stack_00000004",
       "text": "fVar2 = *(float *)(in_stack_00000004 + 0x850);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 37,
+      "line": 36,
       "match": "in_stack_00000004",
       "text": "fVar3 = *(float *)(in_stack_00000004 + 0x854);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 40,
+      "line": 39,
       "match": "in_stack_00000004",
       "text": "*(float *)(in_stack_00000004 + 0x84c) =",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 44,
+      "line": 43,
       "match": "in_stack_00000004",
       "text": "*(float *)(in_stack_00000004 + 0x854) =",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 46,
+      "line": 45,
       "match": "in_stack_00000004",
       "text": "*(uint *)(in_stack_00000004 + 0x850) = uStack_50;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 49,
+      "line": 48,
       "match": "in_stack_00000004",
       "text": "(*(CDemonActor **)(in_stack_00000004 + 0x780),&CStack_30,",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 53,
+      "line": 52,
       "match": "in_stack_00000004",
       "text": "*(float *)(in_stack_00000004 + 0x850) = pCVar8->y;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 54,
+      "line": 53,
       "match": "in_stack_00000004",
       "text": "*(float *)(in_stack_00000004 + 0x854) = pCVar8->z;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 57,
+      "line": 56,
       "match": "in_stack_00000004",
       "text": "fVar6 = *(float *)(in_stack_00000004 + 0x850) - fVar2;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 58,
+      "line": 57,
       "match": "in_stack_00000004",
       "text": "fVar5 = *(float *)(in_stack_00000004 + 0x854) - fVar3;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 68,
+      "line": 67,
       "match": "in_stack_00000004",
       "text": "else if (*(float *)(in_stack_00000004 + 0x300) <= 0.0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 69,
+      "line": 68,
       "match": "in_stack_00000004",
       "text": "(**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0xf8))();",
       "type": "stack_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 69,
+      "line": 68,
       "match": "code *",
       "text": "(**(code **)(*(int *)(in_stack_00000004 + 0x154) + 0xf8))();",
       "type": "unresolved_funcptr"

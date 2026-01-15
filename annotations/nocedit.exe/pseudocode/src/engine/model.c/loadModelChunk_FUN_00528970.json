@@ -1,20 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 124,
-    "complexity_score": 291,
+    "complexity_score": 201,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 14,
     "pseudocode_lines": 41,
-    "suspect_count": 21,
+    "suspect_count": 14,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
-      "format_string_mismatch",
       "lea_esp_stack_addr",
       "pointer_cast",
-      "register_param",
-      "stack_ref",
       "variadic_preserve"
     ],
     "total_lines": 165
@@ -215,48 +211,6 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 10,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 10,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 14,
-      "match": "&stack0xffffffa4",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffa4,\"Unable to open model: %s\",filename);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 17,
-      "match": "&stack0xffffffa8",
-      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xffffffa8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 22,
-      "match": "&stack0xffffffb0",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffb0,\"Out of partial model mem : %s\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 25,
-      "match": "&stack0xffffffb4",
-      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xffffffb4);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 39,
       "match": "(uint *)((int)",
@@ -272,7 +226,7 @@
     },
     {
       "call_address": "005289c3",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "unknown",
       "esp_certainty_at_call": "known",
@@ -286,7 +240,7 @@
     },
     {
       "call_address": "005289e3",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -300,7 +254,7 @@
     },
     {
       "call_address": "00528a17",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -314,7 +268,7 @@
     },
     {
       "call_address": "00528a5a",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -328,7 +282,7 @@
     },
     {
       "call_address": "00528a7b",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -342,7 +296,7 @@
     },
     {
       "call_address": "00528aa3",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -353,17 +307,6 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 00528aa3 (no EBP frame)",
       "type": "variadic_preserve"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"Out of partial model mem : %s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Out of partial model mem : %s",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 22,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffb0,\"Out of partial model mem : %s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 12,

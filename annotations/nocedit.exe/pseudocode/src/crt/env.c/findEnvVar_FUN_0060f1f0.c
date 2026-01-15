@@ -21,7 +21,6 @@ int __cdecl crt_env_c_findEnvVar_FUN_0060f1f0(char *name,int delete_flag)
   char **dest;
   byte *pbVar9;
   SIZE_T n;
-  int in_stack_00000010;
   
   dest = g_EnvironmentBlock;
   do {
@@ -37,7 +36,7 @@ int __cdecl crt_env_c_findEnvVar_FUN_0060f1f0(char *name,int delete_flag)
       if (iVar5 != iVar6) break;
       if (*pbVar8 == 0x3d) {
         iVar5 = (int)dest - (int)g_EnvironmentBlock >> 2;
-        if (in_stack_00000010 == 0) {
+        if (delete_flag == 0) {
           return iVar5 + 1;
         }
         ptr = *dest;

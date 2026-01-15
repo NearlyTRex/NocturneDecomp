@@ -9,28 +9,28 @@
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 /* Signature: byte actors_weapon_lightgun.cpp_FUN_00505ac0(uint param_1) */
 
-void core_lightgun_cpp_FUN_00505ac0
-               (uint param_1,uint param_2,int unaff_EBX,uint param_4,
-               CDemonActor *param_5)
+void core_lightgun_cpp_FUN_00505ac0(void)
 
 {
   CVector3f *input_local_point;
-  BADSPACEBASE *in_ESP;
-  int unaff_retaddr;
+  int unaff_ESI;
+  CDemonActor *in_stack_00000004;
+  float fStack_10;
+  float fStack_c;
   
-  input_local_point = (CVector3f *)(*param_5->vtable[1].renderOpaque)(param_5);
+  input_local_point = (CVector3f *)(*in_stack_00000004->vtable[1].renderOpaque)(in_stack_00000004);
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-            (param_5,(CVector3f *)&stack0xfffffff8,input_local_point);
+            (in_stack_00000004,(CVector3f *)&fStack_10,input_local_point);
   g_CDemonLightInstance.light_enabled_flag = 1;
   g_CDemonLightInstance.field17_0x1cbc = 0;
-  if ((int *)&stack0x00000000 != &g_CDemonLightInstance.base.base.position.y) {
-    g_CDemonLightInstance.base.base.position.z = (int)param_5;
-    g_CDemonLightInstance.base.base.position.x = unaff_EBX;
-    g_CDemonLightInstance.base.base.position.y = unaff_retaddr;
+  if ((int *)&stack0x00000000 != &g_CDemonLightInstance.base.base.rotation_matrix.m[0].y) {
+    g_CDemonLightInstance.base.base.position.x = (int)fStack_10;
+    g_CDemonLightInstance.base.base.position.y = (int)fStack_c;
+    g_CDemonLightInstance.base.base.position.z = unaff_ESI;
   }
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
             ((CMatrix3x3f *)&g_CDemonLightInstance.base.base.rotation_matrix,
-             (CVector3f *)&param_5->orient);
+             (CVector3f *)&in_stack_00000004->orient);
   g_CDemonLightInstance.base.max_distance = 32.0;
   g_CDemonLightInstance.base.base.projection_scale = _DAT_00660a44;
   g_CDemonLightInstance.antialiasing_enabled = 1;

@@ -28,7 +28,6 @@ core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
   int iVar13;
   int iVar14;
   int iVar15;
-  BADSPACEBASE *in_ESP;
   int iVar16;
   float *pfVar17;
   int *piVar18;
@@ -43,8 +42,8 @@ core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
   uint local_164;
   uint local_160;
   CVector3i CStack_15c;
-  int iStack_14c;
-  int local_148 [4];
+  int iStack_150;
+  int aiStack_14c [5];
   uint local_138;
   uint local_134;
   uint local_130;
@@ -132,11 +131,12 @@ core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
                                ((int)&g_RenderVertexBuffer[0].projected_vertex.transformed_z +
                                iVar16);
                   core_set_cpp_FUN_0056e890();
-                  CStack_15c.x = iStack_14c;
-                  *(int *)((int)&CStack_15c + (uint)bVar20 * -8 + 4) = local_148[(uint)bVar20 * -2];
+                  CStack_15c.x = iStack_150;
+                  *(int *)((int)&CStack_15c + (uint)bVar20 * -8 + 4) =
+                       aiStack_14c[(uint)bVar20 * -2];
                   fVar11 = local_40;
                   *(int *)((int)&CStack_15c + (uint)bVar20 * -8 + (uint)bVar20 * -8 + 8) =
-                       local_148[(uint)bVar20 * -2 + (uint)bVar20 * -2 + 1];
+                       aiStack_14c[(uint)bVar20 * -2 + (uint)bVar20 * -2 + 1];
                   core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0
                             (this_ptr,&CStack_15c,(CVector3i *)0x0,(int)local_40,0);
                   *(float *)((int)&g_RenderVertexBuffer[0].w_recip + iVar16) =
@@ -576,10 +576,10 @@ core_set_cpp_CDemonSet_lightVerticies_FUN_0056eac0
             iVar14 = local_3c;
             iVar22 = 0;
             pCVar21 = (CVector3i *)0x0;
-            CStack_174.x = local_148[1];
-            *(int *)((int)&CStack_174 + (uint)bVar20 * -8 + 4) = local_148[(uint)bVar20 * -2 + 2];
+            CStack_174.x = aiStack_14c[2];
+            *(int *)((int)&CStack_174 + (uint)bVar20 * -8 + 4) = aiStack_14c[(uint)bVar20 * -2 + 3];
             *(int *)((int)&CStack_174 + (uint)bVar20 * -8 + (uint)bVar20 * -8 + 8) =
-                 local_148[(uint)bVar20 * -2 + (uint)bVar20 * -2 + 3];
+                 aiStack_14c[(uint)bVar20 * -2 + (uint)bVar20 * -2 + 4];
             core_set_cpp_CDemonSet_lightVertexColor_FUN_0056ddb0
                       (this_ptr,&CStack_174,pCVar21,iVar14,iVar22);
             fVar11 = g_PerspectiveReciprocal;

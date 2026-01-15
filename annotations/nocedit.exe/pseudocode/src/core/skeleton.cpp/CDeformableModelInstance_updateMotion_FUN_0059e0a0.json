@@ -1,21 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 751,
-    "complexity_score": 1329,
+    "complexity_score": 1301,
     "cross_reference_count": 4,
     "function_call_count": 7,
     "global_count": 0,
-    "pseudocode_lines": 459,
-    "suspect_count": 84,
+    "pseudocode_lines": 461,
+    "suspect_count": 82,
     "suspect_types": [
-      "badspacebase",
       "param_count_too_few",
       "pointer_cast",
-      "register_param",
       "stack_param",
       "stack_ref"
     ],
-    "total_lines": 1210
+    "total_lines": 1212
   },
   "cross_references": [
     {
@@ -1195,395 +1193,381 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 21,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 21,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 31,
+      "line": 30,
       "match": "in_stack_ffffe794",
       "text": "CQuaternion4f *in_stack_ffffe794;",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 107,
+      "line": 106,
       "match": "&stack0xffffe794",
       "text": "(float *)&stack0xffffe794);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 115,
+      "line": 114,
       "match": "in_stack_ffffe794",
       "text": "(this_ptr_00,local_30,local_80,local_84,(float)in_stack_ffffe794);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 118,
+      "line": 117,
       "match": "(float *)((int)",
       "text": "pfVar19 = (float *)((int)local_58 + (uint)bVar20 * -8 + 0x6b4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 133,
+      "line": 132,
       "match": "in_stack_ffffe794",
       "text": "fVar7 = 1.0 - (float)in_stack_ffffe794;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 139,
+      "line": 138,
       "match": "in_stack_ffffe794",
       "text": "pCVar6[local_80].x * fVar7 + pCVar5[local_84].x * (float)in_stack_ffffe794;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 140,
+      "line": 139,
       "match": "in_stack_ffffe794",
       "text": "(this_ptr->bone_transform).root_position.y = fVar3 * fVar7 + fVar1 * (float)in_stack_ffffe794;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 141,
+      "line": 140,
       "match": "in_stack_ffffe794",
       "text": "(this_ptr->bone_transform).root_position.z = fVar4 * fVar7 + fVar2 * (float)in_stack_ffffe794;",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 161,
+      "line": 160,
       "match": "(int *)((int)",
       "text": "*(int *)((int)aiStack_5a8 + local_34) = iVar11;",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 164,
+      "line": 163,
       "match": "in_stack_ffffe794",
       "text": "(this_ptr_00,local_18,local_80,local_84,(float)in_stack_ffffe794);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 165,
+      "line": 164,
       "match": "(float *)((int)",
       "text": "pfVar19 = (float *)((int)aCStack_be8 + (uint)bVar20 * -8 + local_50 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 166,
+      "line": 165,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&aCStack_be8[0].w + local_50) = uStack_c8;",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 181,
+      "line": 180,
       "match": "in_stack_ffffe794",
       "text": "(this_ptr_00,iVar11,local_80,local_84,(float)in_stack_ffffe794);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 182,
+      "line": 181,
       "match": "(float *)((int)",
       "text": "pfVar19 = (float *)((int)aCStack_be8 + (uint)bVar20 * -8 + iVar11 * 0x10 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 197,
+      "line": 196,
       "match": "(int *)((int)",
       "text": "if (-1 < *(int *)((int)aiStack_5a8 + local_54)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 205,
+      "line": 204,
       "match": "in_stack_ffffe794",
       "text": "core_xform_cpp_negateFirstComponent_FUN_005f75e0(aCStack_be8 + iVar11,in_stack_ffffe794)",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 208,
+      "line": 207,
       "match": "(CQuaternion4f *)((int)",
       "text": "result_out = (CQuaternion4f *)((int)&aCStack_be8[0].w + local_64);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 210,
+      "line": 209,
       "match": "(float *)((int)",
       "text": "pfVar19 = (float *)((int)&CStack_208 + (uint)bVar20 * -8 + (uint)bVar20 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 211,
+      "line": 210,
       "match": "(float *)((int)",
       "text": "*(float *)((int)&CStack_208 + (uint)bVar20 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 216,
+      "line": 215,
       "match": "in_stack_ffffe794",
       "text": "core_xform_cpp_multiplyQuaternion_FUN_005f7640(result_out,pCVar12,in_stack_ffffe794);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 217,
+      "line": 216,
       "match": "(CQuaternion4f *)((int)",
       "text": "pCVar12 = (CQuaternion4f *)((int)&local_70->w + local_7c);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 219,
+      "line": 218,
       "match": "(float *)((int)",
       "text": "pfVar19 = (float *)((int)aCStack_b8 + (uint)bVar20 * -8 + (uint)bVar20 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 220,
+      "line": 219,
       "match": "(float *)((int)",
-      "text": "*(float *)((int)aCStack_b8 + (uint)bVar20 * -8 + 4) =",
+      "text": "*(float *)((int)aCStack_b8 + (uint)bVar20 * -8 + 4) = afStack_164[(uint)bVar20 * -2 + 8]",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 225,
+      "line": 224,
       "match": "in_stack_ffffe794",
       "text": "core_xform_cpp_multiplyQuaternion_FUN_005f7640(aCStack_b8,pCVar12,in_stack_ffffe794);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 228,
+      "line": 227,
       "match": "(uint *)((int)",
       "text": "puVar16 = (uint *)((int)local_44 + (uint)bVar20 * -8 + 0x6b4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 229,
+      "line": 228,
       "match": "(uint *)((int)",
       "text": "puVar14 = (uint *)((int)pCVar12 + ((uint)bVar20 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 254,
+      "line": 253,
       "match": "(int *)((int)",
       "text": "*(int *)((int)aiStack_418 + local_3c) = iVar11;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 258,
+      "line": 257,
       "match": "(uint *)((int)",
       "text": "puVar16 = (uint *)((int)&CStack_1228 + (uint)bVar20 * -8 + local_40 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 259,
+      "line": 258,
       "match": "(uint *)((int)",
       "text": "puVar14 = (uint *)((int)pCVar12 + (uint)bVar20 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 260,
+      "line": 259,
       "match": "(float *)((int)",
       "text": "*(float *)((int)&CStack_1228.w + local_40) = pCVar12->w;",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 267,
+      "line": 266,
       "match": "in_stack_ffffe794",
       "text": "(this_ptr_00,iStack_14,local_80,local_84,(float)in_stack_ffffe794);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 268,
+      "line": 267,
       "match": "(float *)((int)",
       "text": "pfVar19 = (float *)((int)aCStack_1868 + (uint)bVar20 * -8 + local_40 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 269,
+      "line": 268,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&aCStack_1868[0].w + local_40) = uStack_168;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 286,
+      "line": 285,
       "match": "(uint *)((int)",
       "text": "puVar16 = (uint *)((int)&CStack_1228 + (uint)bVar20 * -8 + iVar11 * 0x10 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 287,
+      "line": 286,
       "match": "(uint *)((int)",
       "text": "puVar14 = (uint *)((int)pCVar12 + (uint)bVar20 * -8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 296,
+      "line": 295,
       "match": "in_stack_ffffe794",
       "text": "(this_ptr_00,local_74,local_80,local_84,(float)in_stack_ffffe794);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 297,
+      "line": 296,
       "match": "(float *)((int)",
       "text": "pfVar19 = (float *)((int)aCStack_1868 + (uint)bVar20 * -8 + local_7c + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 298,
+      "line": 297,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&aCStack_1868[0].w + local_7c) = uStack_228;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 313,
+      "line": 312,
       "match": "(int *)((int)",
       "text": "if (-1 < *(int *)((int)aiStack_418 + local_60)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 316,
+      "line": 315,
       "match": "(uint *)((int)",
       "text": "puVar14 = (uint *)((int)&CStack_1228 + (uint)bVar20 * -8 + iVar9 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 318,
+      "line": 317,
       "match": "(uint *)((int)",
       "text": "puVar16 = (uint *)((int)&CStack_1c8 + (uint)bVar20 * -8 + (uint)bVar20 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 320,
+      "line": 319,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&CStack_1c8 + (uint)bVar20 * -8 + 4) = *puVar14;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 323,
+      "line": 322,
       "match": "(uint *)((int)",
       "text": "puVar14 = (uint *)((int)aCStack_1868 + (uint)bVar20 * -8 + iVar9 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 325,
+      "line": 324,
       "match": "(uint *)((int)",
       "text": "puVar16 = (uint *)((int)&CStack_d8 + (uint)bVar20 * -8 + (uint)bVar20 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 327,
+      "line": 326,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&CStack_d8 + (uint)bVar20 * -8 + 4) = *puVar14;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 331,
+      "line": 330,
       "match": "(uint *)((int)",
       "text": "puVar14 = (uint *)((int)local_1c + (uint)bVar20 * -8 + 0x6b4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 333,
+      "line": 332,
       "match": "(uint *)((int)",
       "text": "puVar16 = (uint *)((int)&CStack_e8 + (uint)bVar20 * -8 + (uint)bVar20 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 335,
+      "line": 334,
       "match": "(uint *)((int)",
       "text": "*(uint *)((int)&CStack_e8 + (uint)bVar20 * -8 + 4) = *puVar14;",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 341,
+      "line": 340,
       "match": "in_stack_ffffe794",
       "text": "(&CStack_1228 + iVar11,in_stack_ffffe794);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 344,
+      "line": 343,
       "match": "(float *)((int)",
       "text": "pfVar19 = (float *)((int)&CStack_1a8 + (uint)bVar20 * -8 + (uint)bVar20 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 345,
+      "line": 344,
       "match": "(float *)((int)",
       "text": "*(float *)((int)&CStack_1a8 + (uint)bVar20 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 350,
+      "line": 349,
       "match": "in_stack_ffffe794",
       "text": "core_xform_cpp_multiplyQuaternion_FUN_005f7640(&CStack_1c8,pCVar12,in_stack_ffffe794);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 352,
+      "line": 351,
       "match": "(float *)((int)",
       "text": "pfVar19 = (float *)((int)&CStack_1c8 + (uint)bVar20 * -8 + (uint)bVar20 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 353,
+      "line": 352,
       "match": "(float *)((int)",
-      "text": "*(float *)((int)&CStack_1c8 + (uint)bVar20 * -8 + 4) = afStack_250[(uint)bVar20 * -2];",
+      "text": "*(float *)((int)&CStack_1c8 + (uint)bVar20 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
@@ -1681,96 +1665,96 @@
       "description": "Complex pointer cast",
       "line": 385,
       "match": "(float *)((int)",
-      "text": "*(float *)((int)&CStack_e8 + (uint)bVar20 * -8 + 4) = afStack_130[(uint)bVar20 * -2];",
+      "text": "*(float *)((int)&CStack_e8 + (uint)bVar20 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 390,
+      "line": 391,
       "match": "in_stack_ffffe794",
       "text": "core_xform_cpp_negateFirstComponent_FUN_005f75e0(&CStack_1c8,in_stack_ffffe794);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 393,
+      "line": 394,
       "match": "(float *)((int)",
       "text": "pfVar19 = (float *)((int)&CStack_1d8 + (uint)bVar20 * -8 + (uint)bVar20 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 394,
+      "line": 395,
       "match": "(float *)((int)",
-      "text": "*(float *)((int)&CStack_1d8 + (uint)bVar20 * -8 + 4) = afStack_130[(uint)bVar20 * -2 + 3];",
+      "text": "*(float *)((int)&CStack_1d8 + (uint)bVar20 * -8 + 4) =",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 398,
+      "line": 400,
       "match": "in_stack_ffffe794",
       "text": "core_xform_cpp_multiplyQuaternion_FUN_005f7640(&CStack_d8,pCVar12,in_stack_ffffe794);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 401,
+      "line": 403,
       "match": "(float *)((int)",
       "text": "pfVar19 = (float *)((int)&CStack_1e8 + (uint)bVar20 * -8 + (uint)bVar20 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 402,
+      "line": 404,
       "match": "(float *)((int)",
       "text": "*(float *)((int)&CStack_1e8 + (uint)bVar20 * -8 + 4) = afStack_274[(uint)bVar20 * -2];",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 406,
+      "line": 408,
       "match": "in_stack_ffffe794",
       "text": "core_xform_cpp_multiplyQuaternion_FUN_005f7640(&CStack_e8,pCVar12,in_stack_ffffe794);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 409,
+      "line": 411,
       "match": "(float *)((int)",
       "text": "pfVar19 = (float *)((int)&CStack_178 + (uint)bVar20 * -8 + (uint)bVar20 * -8 + 8);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 410,
+      "line": 412,
       "match": "(float *)((int)",
       "text": "*(float *)((int)&CStack_178 + (uint)bVar20 * -8 + 4) = afStack_274[(uint)bVar20 * -2 + 4];",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 419,
+      "line": 421,
       "match": "in_stack_ffffe794",
       "text": "(&CStack_178,local_68 + iVar11,in_stack_ffffe794);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 422,
+      "line": 424,
       "match": "(float *)((int)",
       "text": "pfVar18 = (float *)((int)local_1c + (uint)bVar20 * -8 + 0x6b4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 447,
+      "line": 449,
       "match": "in_stack_ffffe794",
       "text": "(this_ptr_00,iVar11,local_80,local_84,(float)in_stack_ffffe794);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 448,
+      "line": 450,
       "match": "(float *)((int)",
       "text": "pfVar19 = (float *)((int)local_5c + (uint)bVar20 * -8 + 0x6b4);",
       "type": "pointer_cast"

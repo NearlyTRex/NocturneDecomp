@@ -20,22 +20,17 @@ engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHeaderExtended *header,SMRGLModel
   int iVar5;
   int iVar6;
   int iVar7;
-  BADSPACEBASE *in_ESP;
-  int *unaff_ESI;
+  uint *unaff_ESI;
   int iVar8;
   uint *puVar9;
   uint *puVar10;
   int iVar11;
-  int *piVar12;
-  byte bVar13;
-  double dVar14;
-  SMRGLModelBounds *in_stack_fffffe8c;
-  char acStack_15c [64];
-  uint uStack_11c;
-  uint auStack_118 [2];
-  uint local_110 [10];
-  uint auStack_e8 [11];
-  int aiStack_bc [2];
+  byte bVar12;
+  double dVar13;
+  SMRGLModelBounds *in_stack_fffffea0;
+  uint auStack_11c [3];
+  uint local_110 [13];
+  uint local_dc [10];
   uint uStack_b4;
   uint uStack_b0;
   uint uStack_ac;
@@ -45,40 +40,39 @@ engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHeaderExtended *header,SMRGLModel
   uint local_9c;
   uint local_98;
   uint local_94;
-  uint local_90;
+  int local_8c;
   int local_88;
   int local_84;
-  int local_80;
-  uint *puStack_3c;
+  uint local_74 [15];
+  int iStack_38;
   int *local_34;
-  int *local_24;
-  float local_20;
-  int local_1c;
-  float local_18;
-  float local_10;
+  float local_24;
+  int local_20;
+  float local_1c;
+  float local_14;
   
-  bVar13 = 0;
+  bVar12 = 0;
   iVar5 = (header->base).type;
   if (iVar5 == 0x20) {
     header_00 = engine_model_c_loadModelFile_FUN_00527ec0((char *)(header + 2));
-    engine_model_c_getMRGLBounds_FUN_00528140(header_00,in_stack_fffffe8c);
-    piVar1 = &local_84;
-    piVar12 = aiStack_bc;
+    engine_model_c_getMRGLBounds_FUN_00528140(header_00,in_stack_fffffea0);
+    puVar10 = local_74;
+    puVar9 = &local_a8;
     for (iVar5 = 0xd; iVar5 != 0; iVar5 = iVar5 + -1) {
-      *piVar12 = *piVar1;
-      piVar1 = piVar1 + (uint)bVar13 * -2 + 1;
-      piVar12 = piVar12 + (uint)bVar13 * -2 + 1;
+      *puVar9 = *puVar10;
+      puVar10 = puVar10 + (uint)bVar12 * -2 + 1;
+      puVar9 = puVar9 + (uint)bVar12 * -2 + 1;
     }
     engine_model_c_freeMRGLData_FUN_005280b0(header_00);
     iVar5 = 0xd;
-    puVar10 = &uStack_11c;
-    puVar9 = &uStack_b4;
+    puVar10 = local_110;
+    puVar9 = &local_a8;
   }
   else if (iVar5 == 0x26) {
     puVar10 = local_110;
     engine_boss_c_modelStructNotSupported_FUN_0041dbe0(header);
     iVar5 = 0xd;
-    puVar9 = auStack_e8;
+    puVar9 = local_dc;
   }
   else {
     local_34 = &header[1].child_count;
@@ -88,8 +82,8 @@ engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHeaderExtended *header,SMRGLModel
       core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to read magnify!");
     }
     iVar5 = (int)(0x7fffffff / (longlong)(header->base).count) * 2;
-    if (*local_24 != 2) {
-      crt_stdio_c_sprintf_FUN_005fdbd0(acStack_15c,"Unable to read verticies in model!");
+    if (header->child_count != 2) {
+      crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffea0,"Unable to read verticies in model!");
       g_CurrentFilename = "..\\engine\\model.c";
       g_CurrentLineNumber = 0x176;
       core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xfffffea0);
@@ -97,14 +91,14 @@ engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHeaderExtended *header,SMRGLModel
     iVar6 = 0;
     iVar11 = -0x80000000;
     iVar8 = -0x80000000;
-    local_1c = 0x7fffffff;
+    local_20 = 0x7fffffff;
     iVar4 = 0x7fffffff;
     iVar7 = 0x7fffffff;
-    local_20 = -0.0;
-    local_18 = 0.0;
-    local_10 = 0.0;
-    piVar1 = unaff_ESI;
-    if (0 < local_24[2]) {
+    local_24 = -0.0;
+    local_1c = 0.0;
+    local_14 = 0.0;
+    piVar1 = local_34;
+    if (0 < header[1].base.count) {
       do {
         if (iVar8 < *piVar1) {
           iVar8 = *piVar1;
@@ -112,8 +106,8 @@ engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHeaderExtended *header,SMRGLModel
         if (iVar11 < piVar1[1]) {
           iVar11 = piVar1[1];
         }
-        if ((int)local_20 < piVar1[2]) {
-          local_20 = (float)piVar1[2];
+        if ((int)local_24 < piVar1[2]) {
+          local_24 = (float)piVar1[2];
         }
         if (*piVar1 < iVar7) {
           iVar7 = *piVar1;
@@ -121,75 +115,76 @@ engine_model_c_getMRGLBounds_FUN_00528140(SMRGLHeaderExtended *header,SMRGLModel
         if (piVar1[1] < iVar4) {
           iVar4 = piVar1[1];
         }
-        if (piVar1[2] < local_1c) {
-          local_1c = piVar1[2];
+        if (piVar1[2] < local_20) {
+          local_20 = piVar1[2];
         }
         iVar6 = iVar6 + 1;
-        local_10 = (float)*piVar1 + local_10;
-        local_18 = (float)piVar1[2] + local_18;
+        local_14 = (float)*piVar1 + local_14;
+        local_1c = (float)piVar1[2] + local_1c;
         piVar1 = piVar1 + 3;
-      } while (iVar6 < local_24[2]);
+      } while (iVar6 < header[1].base.count);
     }
     uVar2 = (uint)((longlong)iVar5 * (longlong)iVar8) >> 0x10 |
             (int)((ulonglong)((longlong)iVar5 * (longlong)iVar8) >> 0x20) << 0x10;
-    local_94 = (uint)((longlong)iVar5 * (longlong)iVar11) >> 0x10 |
+    local_98 = (uint)((longlong)iVar5 * (longlong)iVar11) >> 0x10 |
                (int)((ulonglong)((longlong)iVar5 * (longlong)iVar11) >> 0x20) << 0x10;
-    local_90 = (uint)((longlong)iVar5 * (longlong)(int)local_20) >> 0x10 |
-               (int)((ulonglong)((longlong)iVar5 * (longlong)(int)local_20) >> 0x20) << 0x10;
+    local_94 = (uint)((longlong)iVar5 * (longlong)(int)local_24) >> 0x10 |
+               (int)((ulonglong)((longlong)iVar5 * (longlong)(int)local_24) >> 0x20) << 0x10;
     uVar3 = (uint)((longlong)iVar5 * (longlong)iVar7) >> 0x10 |
             (int)((ulonglong)((longlong)iVar5 * (longlong)iVar7) >> 0x20) << 0x10;
-    local_a0 = (uint)((longlong)iVar5 * (longlong)iVar4) >> 0x10 |
+    local_a4 = (uint)((longlong)iVar5 * (longlong)iVar4) >> 0x10 |
                (int)((ulonglong)((longlong)iVar5 * (longlong)iVar4) >> 0x20) << 0x10;
-    local_9c = (uint)((longlong)iVar5 * (longlong)local_1c) >> 0x10 |
-               (int)((ulonglong)((longlong)iVar5 * (longlong)local_1c) >> 0x20) << 0x10;
-    local_a4 = uVar3;
-    local_98 = uVar2;
-    dVar14 = crt_math_c_round_FUN_005fe6b0((double)(local_10 * (1.0 / (float)local_24[2])));
-    local_90 = (uint)((longlong)extraout_EAX * (longlong)(int)ROUND(dVar14)) >> 0x10 |
-               (int)((ulonglong)((longlong)extraout_EAX * (longlong)(int)ROUND(dVar14)) >> 0x20) <<
+    local_a0 = (uint)((longlong)iVar5 * (longlong)local_20) >> 0x10 |
+               (int)((ulonglong)((longlong)iVar5 * (longlong)local_20) >> 0x20) << 0x10;
+    local_a8 = uVar3;
+    local_9c = uVar2;
+    dVar13 = crt_math_c_round_FUN_005fe6b0((double)(local_14 * (1.0 / (float)header[1].base.count)))
+    ;
+    local_94 = (uint)((longlong)extraout_EAX * (longlong)(int)ROUND(dVar13)) >> 0x10 |
+               (int)((ulonglong)((longlong)extraout_EAX * (longlong)(int)ROUND(dVar13)) >> 0x20) <<
                0x10;
-    dVar14 = crt_math_c_round_FUN_005fe6b0((double)local_18);
-    local_90 = (uint)((longlong)(int)unaff_ESI * (longlong)(int)ROUND(dVar14)) >> 0x10 |
-               (int)((ulonglong)((longlong)(int)unaff_ESI * (longlong)(int)ROUND(dVar14)) >> 0x20)
-               << 0x10;
-    dVar14 = crt_math_c_round_FUN_005fe6b0((double)local_20);
-    local_90 = (uint)((longlong)(int)local_34 * (longlong)(int)ROUND(dVar14)) >> 0x10 |
-               (int)((ulonglong)((longlong)(int)local_34 * (longlong)(int)ROUND(dVar14)) >> 0x20) <<
+    dVar13 = crt_math_c_round_FUN_005fe6b0((double)local_1c);
+    local_94 = (uint)((longlong)(int)local_34 * (longlong)(int)ROUND(dVar13)) >> 0x10 |
+               (int)((ulonglong)((longlong)(int)local_34 * (longlong)(int)ROUND(dVar13)) >> 0x20) <<
                0x10;
-    local_88 = (uVar2 ^ (int)uVar2 >> 0x1f) - ((int)uVar2 >> 0x1f);
+    dVar13 = crt_math_c_round_FUN_005fe6b0((double)local_24);
+    local_94 = (uint)((longlong)iStack_38 * (longlong)(int)ROUND(dVar13)) >> 0x10 |
+               (int)((ulonglong)((longlong)iStack_38 * (longlong)(int)ROUND(dVar13)) >> 0x20) <<
+               0x10;
+    local_8c = (uVar2 ^ (int)uVar2 >> 0x1f) - ((int)uVar2 >> 0x1f);
     uVar2 = (int)uVar3 >> 0x1f;
-    if (local_88 < (int)((uVar3 ^ uVar2) - uVar2)) {
-      local_88 = (uVar3 ^ uVar2) - uVar2;
+    if (local_8c < (int)((uVar3 ^ uVar2) - uVar2)) {
+      local_8c = (uVar3 ^ uVar2) - uVar2;
+    }
+    local_88 = (local_a4 ^ (int)local_a4 >> 0x1f) - ((int)local_a4 >> 0x1f);
+    uVar2 = (int)uStack_b0 >> 0x1f;
+    if (local_88 < (int)((uStack_b0 ^ uVar2) - uVar2)) {
+      local_88 = (uStack_b0 ^ uVar2) - uVar2;
     }
     local_84 = (local_a0 ^ (int)local_a0 >> 0x1f) - ((int)local_a0 >> 0x1f);
     uVar2 = (int)uStack_ac >> 0x1f;
     if (local_84 < (int)((uStack_ac ^ uVar2) - uVar2)) {
       local_84 = (uStack_ac ^ uVar2) - uVar2;
     }
-    local_80 = (local_9c ^ (int)local_9c >> 0x1f) - ((int)local_9c >> 0x1f);
-    uVar2 = (int)local_a8 >> 0x1f;
-    if (local_80 < (int)((local_a8 ^ uVar2) - uVar2)) {
-      local_80 = (local_a8 ^ uVar2) - uVar2;
-    }
-    dVar14 = crt_math_c_round_FUN_005fe6b0
-                       (SQRT((double)local_80 * (double)local_80 +
-                             (double)local_84 * (double)local_84 +
-                             (double)local_88 * (double)local_88));
-    local_90 = (int)ROUND(dVar14);
+    dVar13 = crt_math_c_round_FUN_005fe6b0
+                       (SQRT((double)local_84 * (double)local_84 +
+                             (double)local_88 * (double)local_88 +
+                             (double)local_8c * (double)local_8c));
+    local_94 = (int)ROUND(dVar13);
     iVar5 = extraout_ECX;
-    puVar9 = &uStack_b0;
-    puVar10 = auStack_118;
+    puVar9 = &uStack_b4;
+    puVar10 = auStack_11c;
   }
   for (; iVar5 != 0; iVar5 = iVar5 + -1) {
     *puVar10 = *puVar9;
-    puVar9 = puVar9 + (uint)bVar13 * -2 + 1;
-    puVar10 = puVar10 + (uint)bVar13 * -2 + 1;
+    puVar9 = puVar9 + (uint)bVar12 * -2 + 1;
+    puVar10 = puVar10 + (uint)bVar12 * -2 + 1;
   }
-  puVar10 = &uStack_11c;
+  puVar10 = local_110;
   for (iVar5 = 0xd; iVar5 != 0; iVar5 = iVar5 + -1) {
-    *puStack_3c = *puVar10;
-    puVar10 = puVar10 + (uint)bVar13 * -2 + 1;
-    puStack_3c = puStack_3c + (uint)bVar13 * -2 + 1;
+    *unaff_ESI = *puVar10;
+    puVar10 = puVar10 + (uint)bVar12 * -2 + 1;
+    unaff_ESI = unaff_ESI + (uint)bVar12 * -2 + 1;
   }
   return;
 }

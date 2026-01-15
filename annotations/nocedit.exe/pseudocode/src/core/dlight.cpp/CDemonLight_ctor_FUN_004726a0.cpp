@@ -10,8 +10,8 @@ CDemonLight * __cdecl core_dlight_cpp_CDemonLight_ctor_FUN_004726a0(CDemonLight 
 
 {
   CDemonLight *pCVar1;
+  int in_stack_00000008;
   int in_stack_0000000c;
-  int in_stack_00000010;
   
   pCVar1 = (CDemonLight *)core_dcamera_cpp_CDemonCamera_ctor_FUN_0044c030(&this_ptr->base);
   (pCVar1->base).base.vtable = &g_CDemonLightVTable;
@@ -29,7 +29,7 @@ CDemonLight * __cdecl core_dlight_cpp_CDemonLight_ctor_FUN_004726a0(CDemonLight 
   pCVar1->volumetric_intensity = 1.0;
   pCVar1->field17_0x1cbc = 0;
   pCVar1->antialiasing_enabled = 1;
-  pCVar1->shadow_map_width = in_stack_0000000c;
-  pCVar1->shadow_map_height = in_stack_00000010;
+  pCVar1->shadow_map_width = in_stack_00000008;
+  pCVar1->shadow_map_height = in_stack_0000000c;
   return pCVar1;
 }

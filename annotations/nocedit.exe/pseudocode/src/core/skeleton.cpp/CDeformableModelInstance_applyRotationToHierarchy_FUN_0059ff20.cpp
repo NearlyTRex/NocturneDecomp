@@ -16,7 +16,6 @@ core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20
   int hierarchy_distance;
   float fVar2;
   int iVar3;
-  BADSPACEBASE *in_ESP;
   float *pfVar4;
   float *pfVar5;
   CMatrix3x4f *pCVar6;
@@ -26,9 +25,7 @@ core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20
   CMatrix3x4f CStack_e0;
   float afStack_b0 [12];
   float fStack_80;
-  float afStack_7c [4];
-  float fStack_6c;
-  float afStack_68 [2];
+  float afStack_7c [7];
   CQuaternion4f CStack_60;
   byte auStack_50 [44];
   float local_24;
@@ -54,16 +51,16 @@ core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20
         if ((float)1.0000000000000001e-05 < ABS((float)in_stack_ffffff1c)) {
           core_xform_cpp_quaternionFromAxisAngle_FUN_005f7a70
                     (in_stack_ffffff1c,(float)(auStack_50 + 0x20),(CVector3f *)in_stack_ffffff1c);
-          CStack_60.w = (float)auStack_50._20_4_;
+          CStack_60.w = (float)auStack_50._16_4_;
           *(uint *)(auStack_50 + (uint)bVar7 * -8 + -0xc) =
-               *(uint *)(auStack_50 + (uint)bVar7 * -8 + 0x18);
+               *(uint *)(auStack_50 + (uint)bVar7 * -8 + 0x14);
           *(uint *)(auStack_50 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + -8) =
-               *(uint *)(auStack_50 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 0x1c);
+               *(uint *)(auStack_50 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 0x18);
           *(uint *)
            ((int)(auStack_50 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + -8) +
            ((uint)bVar7 * -2 + 1) * 4) =
                *(uint *)
-                ((int)(auStack_50 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 0x1c) +
+                ((int)(auStack_50 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 0x18) +
                 ((uint)bVar7 * -2 + 1) * 4);
           core_xform_cpp_multiplyQuaternion_FUN_005f7640(pCStack_18,&CStack_60,in_stack_ffffff1c);
           pfVar4 = (float *)((int)local_1c + (uint)bVar7 * -8 + 0x6b4);
@@ -86,13 +83,13 @@ core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0059ff20
   core_xform_cpp_quaternionFromAxisAngle_FUN_005f7a70
             ((CQuaternion4f *)(local_24 * blend_weight),(float)(auStack_50 + 0x20),
              (CVector3f *)in_stack_ffffff1c);
-  auStack_50._0_4_ = fStack_6c;
-  *(float *)(auStack_50 + (uint)bVar7 * -8 + 4) = afStack_68[(uint)bVar7 * -2];
+  auStack_50._0_4_ = afStack_7c[3];
+  *(float *)(auStack_50 + (uint)bVar7 * -8 + 4) = afStack_7c[(uint)bVar7 * -2 + 4];
   *(float *)(auStack_50 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
-       afStack_68[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
+       afStack_7c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 5];
   *(float *)((int)(auStack_50 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) +
             ((uint)bVar7 * -2 + 1) * 4) =
-       (afStack_68 + (uint)bVar7 * -2 + (uint)bVar7 * -2 + 1)[(uint)bVar7 * -2 + 1];
+       (afStack_7c + (uint)bVar7 * -2 + (uint)bVar7 * -2 + 5)[(uint)bVar7 * -2 + 1];
   core_xform_cpp_quaternionToMatrix3x4_FUN_005f73e0((CMatrix3x4f *)auStack_50,in_stack_ffffff1c);
   pfVar4 = afStack_b0;
   pCVar6 = &CStack_e0;

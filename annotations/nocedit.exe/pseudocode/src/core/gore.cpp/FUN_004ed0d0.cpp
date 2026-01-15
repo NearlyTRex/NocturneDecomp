@@ -18,7 +18,7 @@ void core_gore_cpp_FUN_004ed0d0(void)
   float fVar2;
   int in_stack_00000004;
   CVector3f *in_stack_00000008;
-  uint in_stack_00000014;
+  uint in_stack_0000000c;
   
   iVar1 = core_actor_cpp_getRandomInt_FUN_0040cc70(0,3);
   this_ptr = g_CDemonSetPtr;
@@ -36,6 +36,6 @@ void core_gore_cpp_FUN_004ed0d0(void)
   ;
   *(int *)(in_stack_00000004 + 0x24) =
        (int)ROUND(*(float *)(in_stack_00000004 + 0xc) * _DAT_0065f024);
-  *(uint *)(in_stack_00000004 + 0x10) = in_stack_00000014;
+  *(uint *)(in_stack_00000004 + 0x10) = in_stack_0000000c;
   return;
 }

@@ -1,18 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 117,
+    "complexity_score": 118,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 5,
-    "pseudocode_lines": 32,
+    "pseudocode_lines": 33,
     "suspect_count": 7,
     "suspect_types": [
       "call_esp_preserve",
-      "stack_param",
+      "unaffected_reg",
       "variadic_preserve"
     ],
-    "total_lines": 101
+    "total_lines": 102
   },
   "cross_references": [],
   "function": {
@@ -150,22 +150,22 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_00000014",
-      "text": "int in_stack_00000014;",
-      "type": "stack_param"
+      "description": "Unaffected register variable",
+      "line": 3,
+      "match": "unaff_EBX",
+      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000014",
-      "text": "if (in_stack_00000014 == 0) {",
-      "type": "stack_param"
+      "description": "Unaffected register variable",
+      "line": 18,
+      "match": "unaff_EBX",
+      "text": "(g_CEditorToolsPtr,\"LOD generation complete!\",unaff_EBX);",
+      "type": "unaffected_reg"
     },
     {
       "call_address": "00589b53",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -179,7 +179,7 @@
     },
     {
       "call_address": "00589ba1",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

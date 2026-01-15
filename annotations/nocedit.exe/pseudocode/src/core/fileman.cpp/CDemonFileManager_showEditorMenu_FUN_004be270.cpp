@@ -12,7 +12,7 @@ core_fileman_cpp_CDemonFileManager_showEditorMenu_FUN_004be270(CDemonFileManager
 {
   uint uVar1;
   int iVar2;
-  BADSPACEBASE *in_ESP;
+  char local_110 [256];
   
   do {
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
@@ -89,12 +89,11 @@ core_fileman_cpp_CDemonFileManager_showEditorMenu_FUN_004be270(CDemonFileManager
       }
       else {
         iVar2 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
-                          (g_CEditorToolsPtr,"Enter source directory containing sound files",&stack0xffffff54,
-                           0x100,0);
+                          (g_CEditorToolsPtr,"Enter source directory containing sound files",local_110,0x100,0);
         if (iVar2 != 0) {
           engine_fileio_cpp_CFileManager_openExtractFileForBuilding_FUN_004b7c10
                     (&this_ptr->base_filemanager);
-          core_fileman_cpp_refreshSoundDirectory_FUN_004be590((FILE *)this_ptr,&stack0xffffff5c);
+          core_fileman_cpp_refreshSoundDirectory_FUN_004be590((FILE *)this_ptr,local_110);
           engine_fileio_cpp_CFileManager_closeExtractFile_FUN_004b7c60(&this_ptr->base_filemanager);
         }
       }

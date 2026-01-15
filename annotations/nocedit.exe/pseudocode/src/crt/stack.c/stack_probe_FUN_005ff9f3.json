@@ -8,8 +8,8 @@
     "pseudocode_lines": 8,
     "suspect_count": 3,
     "suspect_types": [
-      "special_crt_function",
-      "stack_param"
+      "register_param",
+      "special_crt_function"
     ],
     "total_lines": 14
   },
@@ -730,18 +730,18 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
+      "description": "Inferred register parameter",
       "line": 5,
-      "match": "in_stack_00000008",
-      "text": "uint in_stack_00000008;",
-      "type": "stack_param"
+      "match": "in_EAX",
+      "text": "uint in_EAX;",
+      "type": "register_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Inferred register parameter",
       "line": 10,
-      "match": "in_stack_00000008",
-      "text": "return in_stack_00000008;",
-      "type": "stack_param"
+      "match": "in_EAX",
+      "text": "return in_EAX;",
+      "type": "register_param"
     },
     {
       "address": "005ff9f3",

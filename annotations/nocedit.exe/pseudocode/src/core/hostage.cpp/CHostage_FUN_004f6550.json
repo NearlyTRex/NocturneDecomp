@@ -1,24 +1,21 @@
 {
   "complexity": {
     "assembly_lines": 283,
-    "complexity_score": 925,
+    "complexity_score": 801,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 1,
-    "pseudocode_lines": 130,
-    "suspect_count": 75,
+    "pseudocode_lines": 121,
+    "suspect_count": 65,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
-      "register_param",
       "stack_param",
       "stack_ref",
       "unaffected_reg",
-      "unknown_field",
       "warning_unreachable"
     ],
-    "total_lines": 413
+    "total_lines": 404
   },
   "cross_references": [],
   "function": {
@@ -535,176 +532,106 @@
       "type": "warning_unreachable"
     },
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 13,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 13,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 14,
+      "line": 13,
       "match": "unaff_ESI",
       "text": "uint *unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 17,
       "match": "in_stack_00000008",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_fffffd74",
-      "text": "CMatrix3x4f *in_stack_fffffd74;",
+      "line": 18,
+      "match": "in_stack_fffffd6c",
+      "text": "CMatrix3x4f *in_stack_fffffd6c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_fffffd78",
-      "text": "CMatrix3x4f *in_stack_fffffd78;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 43,
+      "line": 40,
       "match": "in_stack_00000008",
       "text": "((this_ptr->base_npc).base_character.carry_hands[in_stack_00000008].",
       "type": "stack_param"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 47,
-      "match": "._8_4_",
-      "text": "local_58._8_4_ = -0.287;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 53,
-      "match": "&stack0xfffffd74",
-      "text": "puVar3 = (uint *)&stack0xfffffd74;",
-      "type": "stack_ref"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 57,
+      "line": 53,
       "match": "in_stack_00000008",
       "text": "*(int *)(this_ptr->base_npc).base_character.carry_hands[in_stack_00000008].field0_0x0",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 58,
-      "match": "in_stack_fffffd74",
-      "text": ",in_stack_fffffd74);",
+      "line": 54,
+      "match": "in_stack_fffffd6c",
+      "text": ",in_stack_fffffd6c);",
       "type": "stack_param"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 62,
-      "match": "&stack0xfffffd74",
-      "text": "puVar3 = (uint *)&stack0xfffffd74;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 82,
-      "match": "&stack0xfffffd78",
-      "text": "puVar3 = (uint *)&stack0xfffffd78;",
-      "type": "stack_ref"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 86,
+      "line": 78,
       "match": "in_stack_00000008",
-      "text": "*(int *)(this_ptr->base_npc).base_character.carry_hands[in_stack_00000008].",
+      "text": "*(int *)(this_ptr->base_npc).base_character.carry_hands[in_stack_00000008].field0_0x0",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 87,
-      "match": "in_stack_fffffd78",
-      "text": "field0_0x0,in_stack_fffffd78);",
+      "line": 79,
+      "match": "in_stack_fffffd6c",
+      "text": ",in_stack_fffffd6c);",
       "type": "stack_param"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 99,
-      "match": "._8_4_",
-      "text": "local_58._8_4_ = 0.13687;",
-      "type": "unknown_field"
+      "description": "Unresolved stack parameter",
+      "line": 104,
+      "match": "in_stack_00000008",
+      "text": "*(int *)(this_ptr->base_npc).base_character.carry_hands[in_stack_00000008].field0_0x0",
+      "type": "stack_param"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 100,
-      "match": "._4_4_",
-      "text": "local_58._4_4_ = 0.13687;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 101,
-      "match": "._0_4_",
-      "text": "local_58._0_4_ = -0.480625;",
-      "type": "unknown_field"
+      "description": "Unresolved stack parameter",
+      "line": 105,
+      "match": "in_stack_fffffd6c",
+      "text": ",in_stack_fffffd6c);",
+      "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 109,
-      "match": "&stack0xfffffd78",
-      "text": "puVar3 = (uint *)&stack0xfffffd78;",
+      "line": 112,
+      "match": "&stack0xfffffd6c",
+      "text": "puVar3 = (uint *)&stack0xfffffd6c;",
       "type": "stack_ref"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 113,
-      "match": "in_stack_00000008",
-      "text": "*(int *)(this_ptr->base_npc).base_character.carry_hands[in_stack_00000008].",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 114,
-      "match": "in_stack_fffffd78",
-      "text": "field0_0x0,in_stack_fffffd78);",
-      "type": "stack_param"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 127,
-      "match": "&stack0xfffffd78",
-      "text": "puVar3 = (uint *)&stack0xfffffd78;",
+      "line": 118,
+      "match": "&stack0xfffffd6c",
+      "text": "puVar2 = (uint *)&stack0xfffffd6c;",
       "type": "stack_ref"
     },
     {
       "description": "Unaffected register variable",
-      "line": 129,
+      "line": 120,
       "match": "unaff_ESI",
-      "text": "*unaff_ESI = *puVar3;",
+      "text": "*unaff_ESI = *puVar2;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 131,
+      "line": 122,
       "match": "unaff_ESI",
       "text": "unaff_ESI = unaff_ESI + (uint)bVar4 * -2 + 1;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 131,
+      "line": 122,
       "match": "unaff_ESI",
       "text": "unaff_ESI = unaff_ESI + (uint)bVar4 * -2 + 1;",
       "type": "unaffected_reg"

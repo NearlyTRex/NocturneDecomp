@@ -42,7 +42,7 @@ sound_mp3_cpp_CFileBitStream_readAllocationTable_FUN_0052f7a0
       uVar2 = sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(this_ptr,4);
       iVar4 = 0;
       if (0 < iVar1) {
-        puVar3 = (uint *)((int)&alloc_table->table_version + iVar5);
+        puVar3 = (uint *)((int)output_array + iVar5);
         do {
           iVar4 = iVar4 + 1;
           *puVar3 = uVar2;

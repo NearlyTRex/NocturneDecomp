@@ -12,17 +12,16 @@ int __cdecl wincore_windll_cpp_switchRenderer_FUN_005b8140(char *new_dll_name,in
   char cVar1;
   int iVar2;
   char *pcVar3;
-  int in_stack_0000000c;
   
   wincore_windll_cpp_kill_FUN_005b71e0();
   pcVar3 = g_RendererDllName;
-  g_RendererHandle = in_stack_0000000c;
+  g_RendererHandle = renderer_handle;
   do {
-    cVar1 = *(char *)renderer_handle;
+    cVar1 = *new_dll_name;
     *pcVar3 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = *(char *)(renderer_handle + 1);
-    renderer_handle = renderer_handle + 2;
+    cVar1 = new_dll_name[1];
+    new_dll_name = new_dll_name + 2;
     pcVar3[1] = cVar1;
     pcVar3 = pcVar3 + 2;
   } while (cVar1 != '\0');

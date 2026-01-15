@@ -11,7 +11,6 @@ int __cdecl core_dcamera_cpp_CDemonCamera_lockAndRenderToBuffer_FUN_004511c0(CDe
 {
   int iVar1;
   int extraout_EAX;
-  CDemonCamera *in_stack_0000000c;
   
   if (g_WindowHeight < 0x1e1) {
     wincore_windll_cpp_lockFrame_FUN_005b7210();
@@ -24,7 +23,7 @@ int __cdecl core_dcamera_cpp_CDemonCamera_lockAndRenderToBuffer_FUN_004511c0(CDe
       core_main_c_displayErrorAndQuit_FUN_00506f10("Unable to lock hold buffer.   Please set 640x480 as your resolution.");
     }
   }
-  core_dcamera_cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00453270(in_stack_0000000c);
+  core_dcamera_cpp_CDemonCamera_compositeLightmapToFramebuffer_FUN_00453270(this_ptr);
   if (g_WindowHeight < 0x1e1) {
     wincore_windll_cpp_unlockFrame_FUN_005b7250(0);
     if (g_FullscreenMode == 0) {

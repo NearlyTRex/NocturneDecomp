@@ -10,11 +10,11 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042d530(CCharacter *this_ptr)
 
 {
   CBoundingBox3D *pCVar1;
-  BADSPACEBASE *in_ESP;
+  CBoundingBox3D CStack_1c;
   
   if ((this_ptr->model).model_name[0] != '\0') {
     pCVar1 = core_skeleton_cpp_CDeformableModelInstance_computeBoundingBox_FUN_005a16c0
-                       (&this_ptr->model,(CBoundingBox3D *)&stack0xffffffe4);
+                       (&this_ptr->model,&CStack_1c);
     if ((CBoundingBox3D *)(this_ptr->field11_0x25a0 + 0x58) != pCVar1) {
       (((CBoundingBox3D *)(this_ptr->field11_0x25a0 + 0x58))->min).x = (pCVar1->min).x;
       *(float *)(this_ptr->field11_0x25a0 + 0x5c) = (pCVar1->min).y;

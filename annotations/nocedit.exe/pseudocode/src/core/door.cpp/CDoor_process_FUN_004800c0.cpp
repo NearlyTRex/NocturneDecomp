@@ -14,7 +14,6 @@ void __cdecl core_door_cpp_CDoor_process_FUN_004800c0(CDoor *this_ptr)
   float fVar3;
   int iVar4;
   CVector3f *pCVar5;
-  BADSPACEBASE *in_ESP;
   int iVar6;
   float in_stack_00000008;
   byte auStack_c8 [40];

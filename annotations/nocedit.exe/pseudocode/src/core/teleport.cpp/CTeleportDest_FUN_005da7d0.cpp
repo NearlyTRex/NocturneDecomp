@@ -11,7 +11,6 @@ int __cdecl core_teleport_cpp_CTeleportDest_FUN_005da7d0(CTeleportDest *this_ptr
 {
   int iVar1;
   uint32_t color;
-  CDemonActor *in_stack_00000008;
   
   if (*(int *)(g_CDemonMissionPtr->field0_0x0 + 4) != 0) {
     iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
@@ -22,12 +21,12 @@ int __cdecl core_teleport_cpp_CTeleportDest_FUN_005da7d0(CTeleportDest *this_ptr
                           (*(CDemonActor **)(g_CDemonMissionPtr->field2_0xc + 0x1c),
                            "CTeleport");
         if ((iVar1 != 0) &&
-           (in_stack_00000008 ==
-            *(CDemonActor **)(*(int *)(g_CDemonMissionPtr->field2_0xc + 0x1c) + 0x164))) {
+           (this_ptr == *(CTeleportDest **)(*(int *)(g_CDemonMissionPtr->field2_0xc + 0x1c) + 0x164)
+           )) {
           color = 0xf9;
         }
       }
-      core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(in_stack_00000008,color);
+      core_actor_cpp_CDemonActor_renderBoundingBox_FUN_0040d940(&this_ptr->base_actor,color);
       return 0;
     }
   }

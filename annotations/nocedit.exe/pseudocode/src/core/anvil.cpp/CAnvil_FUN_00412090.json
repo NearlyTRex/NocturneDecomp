@@ -1,12 +1,12 @@
 {
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 112,
+    "complexity_score": 122,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 1,
     "pseudocode_lines": 17,
-    "suspect_count": 8,
+    "suspect_count": 9,
     "suspect_types": [
       "call_esp_preserve",
       "stack_param",
@@ -103,7 +103,7 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 7,
+      "line": 6,
       "match": "in_stack_00000008",
       "text": "FILE *in_stack_00000008;",
       "type": "stack_param"
@@ -120,6 +120,13 @@
       "line": 13,
       "match": "in_stack_00000008",
       "text": "crt_stdio_c_fprintf_FUN_005fe6d0(in_stack_00000008,\"MODELS\\\\%s\\n\",pCVar1);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000008",
+      "text": "(pCVar1,in_stack_00000008,skip_raw_files);",
       "type": "stack_param"
     },
     {

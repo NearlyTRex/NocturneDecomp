@@ -14,7 +14,6 @@ sound_snddx_cpp_CDirectSoundDevice_initPropertySet_FUN_005ae660(CDirectSoundDevi
 {
   uint error_code;
   char *pcVar1;
-  BADSPACEBASE *in_ESP;
   char acStack_1d0 [400];
   DSBUFFERDESC DStack_40;
   byte local_2c [12];

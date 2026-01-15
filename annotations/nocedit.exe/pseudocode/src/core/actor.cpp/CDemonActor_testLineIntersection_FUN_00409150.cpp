@@ -16,7 +16,6 @@ core_actor_cpp_CDemonActor_testLineIntersection_FUN_00409150
   float fVar2;
   int iVar3;
   float fVar4;
-  BADSPACEBASE *in_ESP;
   SCollisionInfo local_6c;
   CVector3f CStack_38;
   CVector3f CStack_2c;

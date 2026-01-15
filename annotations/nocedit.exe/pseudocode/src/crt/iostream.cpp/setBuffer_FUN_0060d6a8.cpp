@@ -13,17 +13,16 @@ crt_iostream_cpp_setBuffer_FUN_0060d6a8
 {
   uint *puVar1;
   byte bVar2;
-  int in_stack_00000014;
   
   if ((this_ptr->__flags & 2) != 0) {
     crt_iostream_cpp_freeBuffer_FUN_0060d7a0(this_ptr->__reserve_base);
   }
-  if ((buffer_end != (void *)0x0) && (buffer_end < (uint)ownership_flag)) {
-    this_ptr->__reserve_base = buffer_end;
-    this_ptr->__reserve_end = (char *)ownership_flag;
+  if ((new_buffer != (void *)0x0) && (new_buffer < buffer_end)) {
+    this_ptr->__reserve_base = new_buffer;
+    this_ptr->__reserve_end = buffer_end;
     puVar1 = &this_ptr->__flags;
     *(byte *)puVar1 = (byte)*puVar1 & 0xfd;
-    *puVar1 = *puVar1 | (uint)(in_stack_00000014 != 0) * 2;
+    *puVar1 = *puVar1 | (uint)(ownership_flag != 0) * 2;
     *(byte *)&this_ptr->__flags = (byte)this_ptr->__flags & 0xfe;
     return;
   }

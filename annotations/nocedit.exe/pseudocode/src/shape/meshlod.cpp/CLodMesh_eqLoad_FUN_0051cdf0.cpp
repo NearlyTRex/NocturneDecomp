@@ -14,7 +14,6 @@ void __cdecl shape_meshlod_cpp_CLodMesh_eqLoad_FUN_0051cdf0(CLodMesh *this_ptr,F
   int iVar3;
   int iVar4;
   void *pvVar5;
-  BADSPACEBASE *in_ESP;
   SIZE_T local_34;
   void *local_30;
   int local_2c;

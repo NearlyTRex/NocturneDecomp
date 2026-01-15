@@ -11,13 +11,10 @@ char * __cdecl crt_io_c_getcwd_wrapper_FUN_00608d20(char *buffer,SIZE_T size)
 {
   DWORD DVar1;
   uint uVar2;
-  BADSPACEBASE *in_ESP;
   char *pcVar3;
   char *pcVar4;
   byte bVar5;
-  CHAR aCStack_110 [4];
-  uint uStack_10c;
-  char acStack_100 [244];
+  CHAR aCStack_110 [260];
   
   bVar5 = 0;
   DVar1 = (*GetCurrentDirectoryA)(0x104,aCStack_110);
@@ -31,7 +28,6 @@ char * __cdecl crt_io_c_getcwd_wrapper_FUN_00608d20(char *buffer,SIZE_T size)
       if (DVar1 + 1 < size) {
         uVar2 = size;
       }
-      uStack_10c = 0x608d66;
       buffer = crt_memory_c_malloc_FUN_00601bb0(uVar2);
       if (buffer == (char *)0x0) {
         crt_errno_c_setErrno_FUN_00602790(5);
@@ -39,11 +35,10 @@ char * __cdecl crt_io_c_getcwd_wrapper_FUN_00608d20(char *buffer,SIZE_T size)
       }
     }
     else if (size < DVar1) {
-      uStack_10c = 0x608d90;
       crt_errno_c_setErrno_FUN_00602790(0xe);
       return (char *)0x0;
     }
-    pcVar3 = acStack_100;
+    pcVar3 = aCStack_110;
     pcVar4 = buffer;
     for (uVar2 = DVar1 + 1 >> 2; uVar2 != 0; uVar2 = uVar2 - 1) {
       *(uint *)pcVar4 = *(uint *)pcVar3;

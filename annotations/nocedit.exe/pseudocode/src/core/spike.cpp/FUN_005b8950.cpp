@@ -15,12 +15,10 @@ void core_spike_cpp_FUN_005b8950(void)
   float fVar1;
   float fVar2;
   CVector3f *pCVar3;
-  float fVar4;
   CVector3f *point;
-  BADSPACEBASE *in_ESP;
   uint corner_index;
   CDemonActor *in_stack_00000004;
-  double dVar5;
+  float fVar4;
   CVector3f aCStack_1c8 [8];
   SDamageInfo SStack_168;
   SCollisionInfo SStack_12c;
@@ -50,6 +48,7 @@ void core_spike_cpp_FUN_005b8950(void)
   CLocation *pCStack_1c;
   int iStack_18;
   float fStack_14;
+  double dVar5;
   
   (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,&CStack_e8);
   uStack_88 = 0x3dcccccd;
@@ -122,14 +121,14 @@ void core_spike_cpp_FUN_005b8950(void)
         CStack_64.z = 0.0;
         core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                   (in_stack_00000004,&CStack_7c,&CStack_64);
-        fVar4 = core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470
-                          (this_ptr,&CStack_7c,&CStack_94,aCStack_104,&SStack_12c,iStack_24,
-                           &CStack_d0);
-        dVar5 = (double)fVar4;
+        fStack_14 = core_actor_cpp_CDemonActor_rayIntersect_FUN_00409470
+                              (this_ptr,&CStack_7c,&CStack_94,aCStack_104,&SStack_12c,iStack_24,
+                               &CStack_d0);
+        dVar5 = (double)fStack_14;
         if ((0.0 <= dVar5) && (dVar5 <= 1.0)) {
-          fStack_58 = CStack_94.x * fVar4;
-          fStack_54 = CStack_94.y * fVar4;
-          fStack_50 = CStack_94.z * fVar4;
+          fStack_58 = CStack_94.x * fStack_14;
+          fStack_54 = CStack_94.y * fStack_14;
+          fStack_50 = CStack_94.z * fStack_14;
           CStack_ac.x = CStack_7c.x + fStack_58;
           CStack_ac.y = CStack_7c.y + fStack_54;
           CStack_ac.z = CStack_7c.z + fStack_50;

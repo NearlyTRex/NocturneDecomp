@@ -9,19 +9,19 @@
 void __cdecl shape_meshlod_cpp_CLodMesh_postprocessMesh_FUN_0051b330(CLodMesh *this_ptr)
 
 {
-  float fVar1;
-  float fVar2;
-  float fVar3;
-  CBoundingBox3D *pCVar4;
-  BADSPACEBASE *in_ESP;
+  CBoundingBox3D *pCVar1;
+  CBoundingBox3D CStack_28;
+  float local_10;
+  float local_c;
+  float local_8;
   
-  pCVar4 = shape_meshlod_cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500
-                     (this_ptr,(CBoundingBox3D *)&stack0xffffffd8);
-  fVar1 = (pCVar4->max).x - (pCVar4->min).x;
-  fVar2 = (pCVar4->max).y - (pCVar4->min).y;
-  fVar3 = (pCVar4->max).z - (pCVar4->min).z;
+  pCVar1 = shape_meshlod_cpp_CLodMesh_computeVertexBoundingBox_FUN_00516500(this_ptr,&CStack_28);
+  local_10 = (pCVar1->max).x - (pCVar1->min).x;
+  local_c = (pCVar1->max).y - (pCVar1->min).y;
+  local_8 = (pCVar1->max).z - (pCVar1->min).z;
   shape_meshlod_cpp_CLodMesh_weldVertices_FUN_0051a150
-            (this_ptr,SQRT(fVar3 * fVar3 + fVar1 * fVar1 + fVar2 * fVar2) * (float)0.0001);
+            (this_ptr,SQRT(local_8 * local_8 + local_10 * local_10 + local_c * local_c) *
+                      (float)0.0001);
   shape_meshlod_cpp_CLodMesh_markDegenerateFaces_FUN_00516b40(this_ptr);
   shape_meshlod_cpp_CLodMesh_markDuplicateFaces_FUN_00516a40(this_ptr);
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790

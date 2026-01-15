@@ -13,29 +13,32 @@ shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_004a0020
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
-  int unaff_ESI;
-  undefined3 in_stack_0000001d;
+  undefined3 in_stack_00000011;
+  char local_34 [32];
+  int local_14;
   
   if (show_current_value) {
-    crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xffffffcc,"%d",*result_ptr);
+    crt_stdio_c_sprintf_FUN_005fdbd0(local_34,"%d",*result_ptr);
+  }
+  else {
+    local_34[0] = '\0';
   }
   while( true ) {
     while( true ) {
       iVar1 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_004a03d0
-                        (this_ptr,prompt_text,&stack0xffffffd0,0x1e,1);
+                        (this_ptr,prompt_text,local_34,0x1e,1);
       if (iVar1 == 0) {
         return false;
       }
-      iVar1 = crt_stdio_c_sscanf_FUN_0060013c(&stack0xffffffd4,"%d");
+      iVar1 = crt_stdio_c_sscanf_FUN_0060013c(local_34,"%d",&local_14);
       if (iVar1 == 1) break;
       shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
                 (this_ptr,"Please enter a valid integer.");
     }
-    if ((_show_current_value == 0) || ((min_value <= unaff_ESI && (unaff_ESI <= max_value)))) break;
+    if ((_enable_range_check == 0) || ((min_value <= local_14 && (local_14 <= max_value)))) break;
     shape_edittool_cpp_CEditorTools_showError_FUN_0049e740
-              (this_ptr,"Please enter a valid integer between %d and %d.");
+              (this_ptr,"Please enter a valid integer between %d and %d.",min_value,max_value);
   }
-  *(int *)max_value = unaff_ESI;
+  *result_ptr = local_14;
   return true;
 }

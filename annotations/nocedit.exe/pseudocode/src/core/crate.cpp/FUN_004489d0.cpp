@@ -15,7 +15,6 @@ uint core_crate_cpp_FUN_004489d0(void)
   float fVar1;
   float fVar2;
   float *pfVar3;
-  BADSPACEBASE *in_ESP;
   int in_stack_00000004;
   float *in_stack_00000008;
   float afStack_10 [3];

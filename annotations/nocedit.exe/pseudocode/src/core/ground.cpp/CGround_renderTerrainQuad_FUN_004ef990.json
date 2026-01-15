@@ -1,22 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 173,
-    "complexity_score": 280,
+    "complexity_score": 176,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 1,
-    "pseudocode_lines": 55,
-    "suspect_count": 19,
+    "pseudocode_lines": 66,
+    "suspect_count": 10,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
-      "lea_esp_stack_addr",
-      "register_param",
-      "stack_param",
-      "stack_ref",
-      "unaffected_reg"
+      "lea_esp_stack_addr"
     ],
-    "total_lines": 228
+    "total_lines": 239
   },
   "cross_references": [
     {
@@ -193,69 +188,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 9,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 9,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 12,
-      "match": "unaff_EDI",
-      "text": "int unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_0000001c",
-      "text": "uint in_stack_0000001c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 27,
-      "match": "unaff_EDI",
-      "text": "iVar1 = core_ground_cpp_CGround_getVertexIndex_FUN_004ef380(this_ptr,iVar3 + 1,unaff_EDI);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 39,
-      "match": "in_stack_0000001c",
-      "text": "core_ground_cpp_CGround_setQuadTextureCoordinates_FUN_004ef880(this_ptr,column,in_stack_0000001c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 40,
-      "match": "in_stack_0000001c",
-      "text": "if ((column & 1) == (in_stack_0000001c & 1)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 42,
-      "match": "&stack0xffffff90",
-      "text": "(this_ptr,(SMRGLHeaderPrimitive *)&stack0xffffff90);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 51,
-      "match": "&stack0xffffff90",
-      "text": "(this_ptr,(SMRGLHeaderPrimitive *)&stack0xffffff90);",
-      "type": "stack_ref"
-    },
     {
       "add_esp_value": 12,
       "call_address": "004ef9dd",

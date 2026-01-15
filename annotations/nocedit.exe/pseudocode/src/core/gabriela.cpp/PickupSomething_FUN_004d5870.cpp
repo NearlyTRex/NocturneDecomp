@@ -16,15 +16,13 @@ uint core_gabriela_cpp_PickupSomething_FUN_004d5870(void)
   float fVar2;
   CVector3f *pCVar3;
   CDemonActor *pCVar4;
-  BADSPACEBASE *in_ESP;
   int iVar5;
   CDemonActor *in_stack_00000004;
-  float local_bc [4];
-  CVector3f local_ac;
-  CVector3f local_a0;
-  byte local_94 [12];
-  uint local_88;
-  uint local_84;
+  float local_bc [3];
+  CVector3f local_b0;
+  CVector3f local_a4;
+  CVector3f local_98;
+  CVector3f local_8c;
   CVector3f local_80;
   CVector3f local_74;
   CVector3f CStack_68;
@@ -48,30 +46,30 @@ uint core_gabriela_cpp_PickupSomething_FUN_004d5870(void)
   local_5c.z = 1.92;
   pCVar3 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                      (in_stack_00000004,&local_74,&local_5c);
-  if (&local_ac != pCVar3) {
-    local_bc[3] = pCVar3->x;
-    local_ac.x = pCVar3->y;
-    local_ac.y = pCVar3->z;
+  if (&local_b0 != pCVar3) {
+    local_b0.x = pCVar3->x;
+    local_b0.y = pCVar3->y;
+    local_b0.z = pCVar3->z;
   }
   local_50.y = 0.0;
   local_50.x = -0.65;
   local_50.z = 2.12;
   pCVar3 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
                      (in_stack_00000004,&local_38,&local_50);
-  if (&local_a0 != pCVar3) {
-    local_ac.z = pCVar3->x;
-    local_a0.x = pCVar3->y;
-    local_a0.y = pCVar3->z;
+  if (&local_a4 != pCVar3) {
+    local_a4.x = pCVar3->x;
+    local_a4.y = pCVar3->y;
+    local_a4.z = pCVar3->z;
   }
-  local_94._8_4_ = 0.0;
-  local_88 = 0;
-  local_84 = 0x40000000;
+  local_8c.x = 0.0;
+  local_8c.y = 0.0;
+  local_8c.z = 2.0;
   pCVar3 = core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                     (in_stack_00000004,&local_80,(CVector3f *)(local_94 + 8));
-  if ((CVector3f *)local_94 != pCVar3) {
-    local_a0.z = pCVar3->x;
-    local_94._0_4_ = pCVar3->y;
-    local_94._4_4_ = pCVar3->z;
+                     (in_stack_00000004,&local_80,&local_8c);
+  if (&local_98 != pCVar3) {
+    local_98.x = pCVar3->x;
+    local_98.y = pCVar3->y;
+    local_98.z = pCVar3->z;
   }
   iVar5 = 0;
   local_24 = 4.0;

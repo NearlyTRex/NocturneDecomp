@@ -14,7 +14,6 @@ void __cdecl core_mission_cpp_FUN_00524660(void)
   int iVar2;
   char *pcVar3;
   uint uVar4;
-  BADSPACEBASE *in_ESP;
   int iVar5;
   CDemonMission *in_stack_00000004;
   char *in_stack_00000008;

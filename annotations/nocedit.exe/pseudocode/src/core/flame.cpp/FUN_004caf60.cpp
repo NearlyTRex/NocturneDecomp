@@ -13,32 +13,32 @@ void core_flame_cpp_FUN_004caf60(void)
 {
   int iVar1;
   CDemonActor *in_stack_00000004;
+  float in_stack_00000008;
+  float in_stack_00000010;
+  float in_stack_00000018;
   float in_stack_00000020;
-  float in_stack_00000034;
-  float in_stack_00000048;
-  float in_stack_0000005c;
   
   iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1d);
   if (iVar1 != 0) {
     iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4b);
     if (iVar1 != 0) {
       *(float *)in_stack_00000004[1].actor_name =
-           *(float *)in_stack_00000004[1].actor_name - in_stack_00000020;
+           *(float *)in_stack_00000004[1].actor_name - in_stack_00000008;
     }
     iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x4d);
     if (iVar1 != 0) {
       *(float *)in_stack_00000004[1].actor_name =
-           *(float *)in_stack_00000004[1].actor_name + in_stack_00000034;
+           *(float *)in_stack_00000004[1].actor_name + in_stack_00000010;
     }
     iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x1e);
     if (iVar1 != 0) {
       *(float *)(in_stack_00000004[1].actor_name + 4) =
-           *(float *)(in_stack_00000004[1].actor_name + 4) - in_stack_00000048;
+           *(float *)(in_stack_00000004[1].actor_name + 4) - in_stack_00000018;
     }
     iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x10);
     if (iVar1 != 0) {
       *(float *)(in_stack_00000004[1].actor_name + 4) =
-           *(float *)(in_stack_00000004[1].actor_name + 4) + in_stack_0000005c;
+           *(float *)(in_stack_00000004[1].actor_name + 4) + in_stack_00000020;
     }
     if (*(int *)in_stack_00000004[1].actor_name < 0x3dcccccd) {
       in_stack_00000004[1].actor_name[0] = -0x33;

@@ -10,18 +10,20 @@ void __cdecl
 core_dcamera_cpp_loadCameraFog_FUN_00453e50(SFog *fog,FILE *file_handle,int file_version)
 
 {
-  BADSPACEBASE *in_ESP;
-  int in_stack_00000020;
+  char local_108 [256];
   
-  crt_stdio_c_fgets_FUN_005fefd0(&stack0xfffffef8,0xff,file_handle);
-  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%d,%d,%d\n",fog,&(fog->color_index).g);
-  crt_stdio_c_fgets_FUN_005fefd0(&stack0xffffff00,0xff,file_handle);
-  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%f,%f,%f\n");
-  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%f,%f\n");
-  if (in_stack_00000020 < 0x1a) {
+  crt_stdio_c_fgets_FUN_005fefd0(local_108,0xff,file_handle);
+  crt_stdio_c_fscanf_FUN_005fe7c0
+            (file_handle,"%d,%d,%d\n",fog,&(fog->color_index).g,&(fog->color_index).b);
+  crt_stdio_c_fgets_FUN_005fefd0(local_108,0xff,file_handle);
+  crt_stdio_c_fscanf_FUN_005fe7c0
+            (file_handle,"%f,%f,%f\n",&fog->scroll,&(fog->scroll).y,&(fog->scroll).z);
+  crt_stdio_c_fscanf_FUN_005fe7c0
+            (file_handle,"%f,%f\n",&fog->height_threshold,&fog->density_multiplier);
+  if (file_version < 0x1a) {
     fog->reserved = 50.0;
     return;
   }
-  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%f\n");
+  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%f\n",&fog->reserved);
   return;
 }

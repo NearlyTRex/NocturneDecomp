@@ -15,7 +15,6 @@ uint core_icepick_cpp_FUN_004f8970(void)
   float fVar1;
   float fVar2;
   CDemonActor *pCVar3;
-  BADSPACEBASE *in_ESP;
   int iVar4;
   int iVar5;
   CDemonActor *in_stack_00000004;

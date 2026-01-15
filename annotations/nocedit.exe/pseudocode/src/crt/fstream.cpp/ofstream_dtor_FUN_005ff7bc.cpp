@@ -12,7 +12,6 @@ crt_fstream_cpp_ofstream_dtor_FUN_005ff7bc(ofstream *this_ptr,uint d1,uint d2,ui
 {
   int iVar1;
   ostream *poVar2;
-  ofstream *ptr;
   void *pvVar3;
   ios *piVar4;
   uint unaff_EBX;
@@ -29,19 +28,18 @@ crt_fstream_cpp_ofstream_dtor_FUN_005ff7bc(ofstream *this_ptr,uint d1,uint d2,ui
      ) = &g_OFStream_IOS;
     poVar2 = crt_iostream_cpp_ostream_dtor_FUN_00606231
                        ((ostream *)&this_ptr->ostream_core,1,unaff_EBX);
-    ptr = (ofstream *)
-          crt_fstream_cpp_fstreambase_dtor_FUN_00606509
-                    ((fstreambase *)&poVar2[-2].ios.__fill_character,1,unaff_retaddr,(uint)this_ptr)
+    this_ptr = (ofstream *)
+               crt_fstream_cpp_fstreambase_dtor_FUN_00606509
+                         ((fstreambase *)&poVar2[-2].ios.__fill_character,1,unaff_EBX,unaff_retaddr)
     ;
-    if ((d3 & 1) == 0) {
-      piVar4 = crt_iostream_cpp_ios_dtor_FUN_0060632c(&ptr->ios,1,(uint)this_ptr);
-      ptr = (ofstream *)&piVar4[-2].__format_flags;
+    if ((d1 & 1) == 0) {
+      piVar4 = crt_iostream_cpp_ios_dtor_FUN_0060632c(&this_ptr->ios,1,unaff_EBX);
+      this_ptr = (ofstream *)&piVar4[-2].__format_flags;
     }
-    if ((d4 & 2) == 0) {
-      return ptr;
+    if ((d1 & 2) == 0) {
+      return this_ptr;
     }
-    shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);
-    this_ptr = ptr;
+    shape_memdbg_cpp_debugFree_FUN_0050f210(this_ptr);
   }
   else {
     pvVar3 = crt_memory_c_freeSingleInstance_FUN_005fe632(this_ptr,&g_OFStreamTypeInfo);

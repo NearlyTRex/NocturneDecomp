@@ -1,17 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 125,
-    "complexity_score": 312,
+    "complexity_score": 112,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 7,
-    "pseudocode_lines": 42,
-    "suspect_count": 26,
+    "pseudocode_lines": 37,
+    "suspect_count": 7,
     "suspect_types": [
-      "stack_param",
       "variadic_preserve"
     ],
-    "total_lines": 167
+    "total_lines": 162
   },
   "cross_references": [
     {
@@ -161,141 +160,8 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_0000000c",
-      "text": "int in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000010",
-      "text": "int in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000014",
-      "text": "int in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000018",
-      "text": "int in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_0000001c",
-      "text": "int in_stack_0000001c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_0000000c",
-      "text": "iVar1 = in_stack_0000000c + 0x1c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 24,
-      "match": "in_stack_0000000c",
-      "text": "iVar4 = in_stack_0000000c + 0x24;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_0000000c",
-      "text": "iVar5 = in_stack_0000000c + 0x20;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 34,
-      "match": "in_stack_00000010",
-      "text": "(file_handle,\"%f,%f,%f\\n\",in_stack_00000010 + 0x40,in_stack_00000010 + 0x44,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 34,
-      "match": "in_stack_00000010",
-      "text": "(file_handle,\"%f,%f,%f\\n\",in_stack_00000010 + 0x40,in_stack_00000010 + 0x44,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 35,
-      "match": "in_stack_00000010",
-      "text": "in_stack_00000010 + 0x48);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 37,
-      "match": "in_stack_00000014",
-      "text": "(file_handle,\"%f,%f,%f\\n\",in_stack_00000014 + 0x4c,in_stack_00000014 + 0x50,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 37,
-      "match": "in_stack_00000014",
-      "text": "(file_handle,\"%f,%f,%f\\n\",in_stack_00000014 + 0x4c,in_stack_00000014 + 0x50,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 38,
-      "match": "in_stack_00000014",
-      "text": "in_stack_00000014 + 0x54);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 40,
-      "match": "in_stack_00000018",
-      "text": "(file_handle,\"%f,%f,%f\\n\",in_stack_00000018 + 0x58,in_stack_00000018 + 0x5c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 40,
-      "match": "in_stack_00000018",
-      "text": "(file_handle,\"%f,%f,%f\\n\",in_stack_00000018 + 0x58,in_stack_00000018 + 0x5c,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 41,
-      "match": "in_stack_00000018",
-      "text": "in_stack_00000018 + 0x60);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 43,
-      "match": "in_stack_0000001c",
-      "text": "(file_handle,\"%f,%f,%f\\n\",in_stack_0000001c + 100,in_stack_0000001c + 0x68);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 43,
-      "match": "in_stack_0000001c",
-      "text": "(file_handle,\"%f,%f,%f\\n\",in_stack_0000001c + 100,in_stack_0000001c + 0x68);",
-      "type": "stack_param"
-    },
-    {
       "call_address": "004c48ae",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -309,7 +175,7 @@
     },
     {
       "call_address": "004c48d4",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -323,7 +189,7 @@
     },
     {
       "call_address": "004c490f",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -337,7 +203,7 @@
     },
     {
       "call_address": "004c493a",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -351,7 +217,7 @@
     },
     {
       "call_address": "004c4960",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -365,7 +231,7 @@
     },
     {
       "call_address": "004c4986",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -379,7 +245,7 @@
     },
     {
       "call_address": "004c49ac",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",

@@ -1,20 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 86,
-    "complexity_score": 208,
+    "complexity_score": 194,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 8,
-    "pseudocode_lines": 33,
-    "suspect_count": 15,
+    "pseudocode_lines": 34,
+    "suspect_count": 14,
     "suspect_types": [
       "call_esp_preserve",
-      "format_string_mismatch",
       "param_count_too_few",
       "stack_param",
       "variadic_preserve"
     ],
-    "total_lines": 119
+    "total_lines": 120
   },
   "cross_references": [
     {
@@ -178,35 +177,35 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 11,
+      "line": 12,
       "match": "in_stack_00000004",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 13,
       "match": "in_stack_00000008",
       "text": "char *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 15,
       "match": "in_stack_00000004",
       "text": "font_ptr = (CBitFont *)(in_stack_00000004 + 0x38);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 20,
       "match": "in_stack_00000008",
       "text": "file_ptr = engine_dosio_c_getFile_FUN_00481a50(\"world\",in_stack_00000008,\"wt\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 35,
+      "line": 36,
       "match": "in_stack_00000008",
       "text": "(g_CEditorToolsPtr,\"Can't create world\\\\%s\",in_stack_00000008);",
       "type": "stack_param"
@@ -249,17 +248,6 @@
       "target_function": "shape_edittool.cpp_CEditorTools_showError_FUN_0049e740",
       "text": "Call to variadic function shape_edittool.cpp_CEditorTools_showError_FUN_0049e740 at 00566205 (no EBP frame)",
       "type": "variadic_preserve"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%s\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 29,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_ptr,\"%s\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 4,

@@ -12,12 +12,11 @@ engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_0048d170
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   int iVar2;
   uint local_24;
   uint local_20;
   uint local_1c;
-  uint local_18;
+  int local_18;
   int local_14;
   
   if (render_flags == -1) {
@@ -62,9 +61,9 @@ engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_0048d170
                                 (&face_array->vertex_indices);
               if (iVar1 != 0) {
                 iVar2 = iVar2 + 1;
-                iVar1 = local_1c + 4;
-                *(SInputFace **)((int)g_VisibleFacePointers + local_1c) = face_array;
-                local_1c = iVar1;
+                iVar1 = local_18 + 4;
+                *(SInputFace **)((int)g_VisibleFacePointers + local_18) = face_array;
+                local_18 = iVar1;
                 if (1999 < iVar2) {
                   g_CurrentFilename = "..\\engine\\drender.cpp";
                   g_CurrentLineNumber = 0xa30;

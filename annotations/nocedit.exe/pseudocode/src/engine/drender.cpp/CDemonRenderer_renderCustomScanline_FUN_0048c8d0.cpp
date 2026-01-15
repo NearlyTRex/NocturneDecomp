@@ -13,7 +13,6 @@ engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0
 
 {
   int iVar1;
-  RenderScanlineFunc *in_stack_00000014;
   
   if (this_ptr->plane_culling_enabled == 0) {
     if (this_ptr->face_count != 0) {
@@ -25,7 +24,7 @@ engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0
     if (iVar1 == 0) {
       return;
     }
-    if ((prim->base).count != 0) {
+    if (this_ptr->face_count != 0) {
       return;
     }
   }
@@ -36,6 +35,6 @@ engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0048c8d0
     return;
   }
   engine_3d_c_rasterizePolygon_FUN_005fd4e0
-            (g_ClippedVertexBuffer,g_ClippedVertexCount,in_stack_00000014);
+            (g_ClippedVertexBuffer,g_ClippedVertexCount,scanline_renderer);
   return;
 }

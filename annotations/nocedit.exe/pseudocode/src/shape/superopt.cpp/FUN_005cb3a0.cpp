@@ -10,7 +10,6 @@ uint shape_superopt_cpp_FUN_005cb3a0(void)
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   uint uVar2;
   uint uVar3;
   double dVar4;
@@ -70,7 +69,8 @@ uint shape_superopt_cpp_FUN_005cb3a0(void)
   uint local_48;
   uint local_44;
   uint local_40;
-  ulonglong local_38;
+  double dStack_3c;
+  uint local_34;
   uint local_30;
   uint local_2c;
   uint local_28;
@@ -138,7 +138,7 @@ uint shape_superopt_cpp_FUN_005cb3a0(void)
         else {
           local_bc = *(uint *)(local_1c + 0x10);
           local_b8 = *(uint *)(local_1c + 0x14);
-          local_38 = (double)CONCAT44 /* combine 2-byte values */(*(uint *)(local_1c + 0x20),(uint)local_38);
+          local_34 = *(uint *)(local_1c + 0x20);
           local_30 = *(uint *)(local_1c + 0x24);
           local_104.x._0_4_ = *(uint *)(local_1c + 0x28);
           local_104.x._4_4_ = *(uint *)(local_1c + 0x2c);
@@ -227,7 +227,7 @@ uint shape_superopt_cpp_FUN_005cb3a0(void)
             }
             dVar4 = shape_superopt_cpp_getSignedTriangleArea2D_FUN_005d6640
                               (&local_104,&local_f4,SUB84 /* extract 2-byte value */(in_stack_fffffe84,0));
-            local_38 = dVar4;
+            dStack_3c = dVar4;
             in_stack_fffffe84 =
                  shape_superopt_cpp_getSignedTriangleArea2D_FUN_005d6640
                            (&local_104,&local_114,SUB84 /* extract 2-byte value */(in_stack_fffffe84,0));
@@ -236,7 +236,7 @@ uint shape_superopt_cpp_FUN_005cb3a0(void)
                  (((ulonglong)in_stack_fffffe84 & 0x7fffffff00000000) == 0)) &&
                 (SUB84 /* extract 2-byte value */(in_stack_fffffe84,0) == 0)) ||
                (((dVar4 < 0.0 && (0.0 < in_stack_fffffe84)) ||
-                ((local_38 = in_stack_fffffe84, 0.0 < dVar4 && (in_stack_fffffe84 < 0.0)))))) {
+                ((dStack_3c = in_stack_fffffe84, 0.0 < dVar4 && (in_stack_fffffe84 < 0.0)))))) {
               return 0;
             }
           }

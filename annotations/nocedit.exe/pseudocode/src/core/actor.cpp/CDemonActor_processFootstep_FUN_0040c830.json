@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 73,
-    "complexity_score": 99,
+    "complexity_score": 73,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 7,
-    "pseudocode_lines": 24,
-    "suspect_count": 6,
+    "pseudocode_lines": 23,
+    "suspect_count": 4,
     "suspect_types": [
       "call_esp_preserve",
-      "callind_preserve",
-      "stack_param"
+      "callind_preserve"
     ],
-    "total_lines": 97
+    "total_lines": 96
   },
   "cross_references": [],
   "function": {
@@ -177,20 +176,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000014",
-      "text": "float in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_00000014",
-      "text": "(this_ptr,&position->position,g_CDemonSetPtr->ground_type,in_stack_00000014);",
-      "type": "stack_param"
-    },
     {
       "add_esp_value": 16,
       "call_target_type": "reg_offset",

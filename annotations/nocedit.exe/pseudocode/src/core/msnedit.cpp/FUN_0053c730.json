@@ -1,18 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 156,
-    "complexity_score": 677,
+    "complexity_score": 646,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 15,
-    "pseudocode_lines": 82,
-    "suspect_count": 54,
+    "pseudocode_lines": 81,
+    "suspect_count": 52,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "callind_preserve",
       "lea_esp_stack_addr",
-      "register_param",
       "stack_param",
       "stack_ref",
       "unaffected_reg",
@@ -20,7 +18,7 @@
       "variadic_preserve",
       "warning_overlapping_globals"
     ],
-    "total_lines": 238
+    "total_lines": 237
   },
   "cross_references": [
     {
@@ -239,204 +237,190 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 10,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 10,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unaffected register variable",
-      "line": 11,
+      "line": 10,
       "match": "unaff_ESI",
       "text": "uint unaff_ESI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 14,
+      "line": 13,
       "match": "unaff_EDI",
       "text": "uint unaff_EDI;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 17,
       "match": "in_stack_00000004",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 19,
       "match": "in_stack_fffffac0",
       "text": "uint in_stack_fffffac0;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 21,
+      "line": 20,
       "match": "in_stack_fffffac4",
       "text": "uint in_stack_fffffac4;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 21,
       "match": "in_stack_fffffac8",
       "text": "char **in_stack_fffffac8;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 28,
+      "line": 27,
       "match": "in_stack_00000004",
       "text": "if (*(int *)(in_stack_00000004 + 0x28) != 0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 38,
+      "line": 37,
       "match": "in_stack_00000004",
       "text": "(**(code **)(*(int *)(*(int *)(in_stack_00000004 + 0x28) + 0x154) + 0xd4))();",
       "type": "stack_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 38,
+      "line": 37,
       "match": "code *",
       "text": "(**(code **)(*(int *)(*(int *)(in_stack_00000004 + 0x28) + 0x154) + 0xd4))();",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Direct stack address reference",
-      "line": 40,
+      "line": 39,
       "match": "&stack0xfffffac0",
       "text": "shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)&stack0xfffffac0);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 48,
+      "line": 47,
       "match": "&stack0xfffffac0",
       "text": "shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)&stack0xfffffac0,&DAT_02f79c20);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 52,
+      "line": 51,
       "match": "in_stack_00000004",
       "text": "(acStack_198,\"Edit %s properties\",*(uint *)(in_stack_00000004 + 0x28))",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 56,
+      "line": 55,
       "match": "&stack0xfffffac0",
       "text": "((CStrList *)&stack0xfffffac0,local_6c);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 58,
+      "line": 57,
       "match": "&stack0xfffffac0",
       "text": "((CPickList *)&stack0xfffffac0,acStack_198,iVar2,config_param2);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 75,
+      "line": 74,
       "match": "in_stack_00000004",
       "text": "*(CDemonActor **)(in_stack_00000004 + 0x28));",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 78,
+      "line": 77,
       "match": "in_stack_fffffac0",
       "text": "((CPickList *)&stack0xfffffac0,0,unaff_ESI,unaff_EDI,in_stack_fffffac0,",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 78,
+      "line": 77,
       "match": "&stack0xfffffac0",
       "text": "((CPickList *)&stack0xfffffac0,0,unaff_ESI,unaff_EDI,in_stack_fffffac0,",
       "type": "stack_ref"
     },
     {
       "description": "Unaffected register variable",
-      "line": 78,
+      "line": 77,
       "match": "unaff_ESI",
       "text": "((CPickList *)&stack0xfffffac0,0,unaff_ESI,unaff_EDI,in_stack_fffffac0,",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 78,
+      "line": 77,
       "match": "unaff_EDI",
       "text": "((CPickList *)&stack0xfffffac0,0,unaff_ESI,unaff_EDI,in_stack_fffffac0,",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 79,
+      "line": 78,
       "match": "in_stack_fffffac4",
       "text": "in_stack_fffffac4,(uint)in_stack_fffffac8);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 79,
+      "line": 78,
       "match": "in_stack_fffffac8",
       "text": "in_stack_fffffac4,(uint)in_stack_fffffac8);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 82,
+      "line": 81,
       "match": "in_stack_fffffac0",
       "text": "((CPickList *)&stack0xfffffac0,0,unaff_ESI,unaff_EDI,in_stack_fffffac0,",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 82,
+      "line": 81,
       "match": "&stack0xfffffac0",
       "text": "((CPickList *)&stack0xfffffac0,0,unaff_ESI,unaff_EDI,in_stack_fffffac0,",
       "type": "stack_ref"
     },
     {
       "description": "Unaffected register variable",
-      "line": 82,
+      "line": 81,
       "match": "unaff_ESI",
       "text": "((CPickList *)&stack0xfffffac0,0,unaff_ESI,unaff_EDI,in_stack_fffffac0,",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 82,
+      "line": 81,
       "match": "unaff_EDI",
       "text": "((CPickList *)&stack0xfffffac0,0,unaff_ESI,unaff_EDI,in_stack_fffffac0,",
       "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 83,
+      "line": 82,
       "match": "in_stack_fffffac4",
       "text": "in_stack_fffffac4,(uint)in_stack_fffffac8);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 83,
+      "line": 82,
       "match": "in_stack_fffffac8",
       "text": "in_stack_fffffac4,(uint)in_stack_fffffac8);",
       "type": "stack_param"

@@ -10,15 +10,14 @@ uint core_netgame_cpp_initializeNetworkToHost_FUN_0053f860(void)
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   CNetGame *in_stack_00000004;
+  SNetworkAddr local_10;
   
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Initializing network to host game");
   core_netgame_cpp_CNetGame_FUN_0053fd00(in_stack_00000004);
   in_stack_00000004->player_count = 0;
-  support_trisock_cpp_createNetworkAddr_FUN_005e1940
-            ((SNetworkAddr *)&stack0xfffffff8,(uint32_t *)g_AnyAddressIP,0x1ddf);
+  support_trisock_cpp_createNetworkAddr_FUN_005e1940(&local_10,(uint32_t *)g_AnyAddressIP,0x1ddf);
   iVar1 = core_netgame_cpp_CNetGame_addPlayer_FUN_005412b0();
   in_stack_00000004->local_player_index = iVar1;
   *(int *)in_stack_00000004->padding = iVar1;

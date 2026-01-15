@@ -14,7 +14,6 @@ core_setutil_cpp_C3DSLight_process_FUN_00586cb0
   longlong lVar1;
   int iVar2;
   int iVar3;
-  int in_stack_00000010;
   
   if (light == (CDemonLight *)0x0) {
     g_CurrentFilename = "..\\core\\setutil.cpp";
@@ -46,7 +45,7 @@ core_setutil_cpp_C3DSLight_process_FUN_00586cb0
     iVar3 = (this_ptr->filter_pos).y +
             ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
     (this_ptr->filter_pos).y = iVar3;
-    if (in_stack_00000010 != 0) {
+    if (apply_filter_flag != 0) {
       core_dlight_cpp_CDemonLight_applyFilter_FUN_00474770
                 (light,this_ptr->filters[this_ptr->current_filter_frame],
                  this_ptr->filter_indices[this_ptr->current_filter_frame],(this_ptr->filter_pos).x,

@@ -14,22 +14,19 @@ core_path_cpp_CPathMap_isLineWalkable_FUN_00546c40
 {
   int iVar1;
   uint uVar2;
-  int unaff_EBP;
-  int unaff_EDI;
   int iVar3;
   int grid_z;
-  int in_stack_00000028;
-  int in_stack_ffffffc8;
-  int iVar4;
-  int local_30;
+  int local_38;
+  int local_34;
   int local_2c;
   int local_28;
+  int local_24;
   int local_1c;
   int local_18;
   int local_14;
   
   iVar3 = start_height;
-  iVar4 = 1;
+  local_34 = 1;
   grid_z = start_z;
   local_1c = end_x;
   if (end_z < start_z) {
@@ -44,7 +41,7 @@ core_path_cpp_CPathMap_isLineWalkable_FUN_00546c40
   iVar3 = end_z - grid_z;
   if (local_1c < 0) {
     local_1c = -local_1c;
-    iVar4 = -1;
+    local_34 = -1;
   }
   if (iVar3 < local_1c) {
     local_14 = iVar3 * 2 - local_1c;
@@ -64,64 +61,59 @@ core_path_cpp_CPathMap_isLineWalkable_FUN_00546c40
         if (g_PathfindingMaxClimbHeight < (int)((iVar1 - start_height ^ uVar2) - uVar2)) {
           return 0;
         }
-        in_stack_ffffffc8 =
-             core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0
-                       (this_ptr,grid_z,start_x,start_height);
-        uVar2 = in_stack_ffffffc8 - start_height >> 0x1f;
-        if (g_PathfindingMaxClimbHeight < (int)((in_stack_ffffffc8 - start_height ^ uVar2) - uVar2))
-        {
+        local_38 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0
+                             (this_ptr,grid_z,start_x,start_height);
+        uVar2 = local_38 - start_height >> 0x1f;
+        if (g_PathfindingMaxClimbHeight < (int)((local_38 - start_height ^ uVar2) - uVar2)) {
           return 0;
         }
         if (0 < local_14) {
           local_14 = local_14 - local_1c;
           local_28 = local_28 + 1;
-          grid_z = local_30;
+          grid_z = grid_z + 1;
         }
-        start_x = start_x + iVar4;
+        start_x = start_x + local_34;
         local_14 = local_14 + iVar3;
         local_2c = local_2c + 1;
-        start_height = in_stack_ffffffc8;
+        start_height = local_38;
       } while (local_2c <= local_1c);
     }
   }
   else {
     local_18 = local_1c * 2 - iVar3;
+    local_24 = 0;
     if (-1 < iVar3) {
       do {
-        iVar3 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0
+        iVar1 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0
                           (this_ptr,grid_z,start_x + 1,start_height);
-        uVar2 = iVar3 - start_height >> 0x1f;
-        if (g_PathfindingMaxClimbHeight < (int)((iVar3 - start_height ^ uVar2) - uVar2)) {
+        uVar2 = iVar1 - start_height >> 0x1f;
+        if (g_PathfindingMaxClimbHeight < (int)((iVar1 - start_height ^ uVar2) - uVar2)) {
           return 0;
         }
-        iVar3 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0
+        iVar1 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0
                           (this_ptr,grid_z,start_x + -1,start_height);
-        uVar2 = iVar3 - start_height >> 0x1f;
-        if (g_PathfindingMaxClimbHeight < (int)((iVar3 - start_height ^ uVar2) - uVar2)) {
+        uVar2 = iVar1 - start_height >> 0x1f;
+        if (g_PathfindingMaxClimbHeight < (int)((iVar1 - start_height ^ uVar2) - uVar2)) {
           return 0;
         }
-        iVar3 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0
-                          (this_ptr,grid_z,start_x,start_height);
-        uVar2 = iVar3 - start_height >> 0x1f;
-        if (g_PathfindingMaxClimbHeight < (int)((iVar3 - start_height ^ uVar2) - uVar2)) {
+        local_38 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_00546ba0
+                             (this_ptr,grid_z,start_x,start_height);
+        uVar2 = local_38 - start_height >> 0x1f;
+        if (g_PathfindingMaxClimbHeight < (int)((local_38 - start_height ^ uVar2) - uVar2)) {
           return 0;
         }
-        if (0 < unaff_EDI) {
-          unaff_EDI = unaff_EDI - local_14;
-          start_x = start_x + local_28;
+        if (0 < local_18) {
+          local_18 = local_18 - iVar3;
+          start_x = start_x + local_34;
         }
-        unaff_EDI = unaff_EDI + unaff_EBP;
+        local_18 = local_18 + local_1c;
         grid_z = grid_z + 1;
-        local_18 = local_18 + 1;
-        start_height = iVar3;
-      } while (local_18 <= local_14);
-      if (iVar3 != in_stack_00000028) {
-        return 0;
-      }
-      return 1;
+        local_24 = local_24 + 1;
+        start_height = local_38;
+      } while (local_24 <= iVar3);
     }
   }
-  if (in_stack_ffffffc8 != end_height) {
+  if (local_38 != end_height) {
     return 0;
   }
   return 1;

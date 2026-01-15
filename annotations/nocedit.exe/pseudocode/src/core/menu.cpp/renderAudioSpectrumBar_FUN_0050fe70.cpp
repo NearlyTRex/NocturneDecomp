@@ -13,8 +13,10 @@ core_menu_cpp_renderAudioSpectrumBar_FUN_0050fe70(int x_center,int y_top,int hei
   CDemonRenderer *this_ptr;
   int iVar1;
   int iVar2;
-  BADSPACEBASE *in_ESP;
-  SMRGLHeaderPrimitive local_20;
+  SMRGLHeaderPrimitive local_2c;
+  uint local_14;
+  uint local_10;
+  uint local_c;
   uint local_8;
   
   this_ptr = g_CDemonRendererPtr;
@@ -38,13 +40,15 @@ core_menu_cpp_renderAudioSpectrumBar_FUN_0050fe70(int x_center,int y_top,int hei
     this_ptr->vertex_buffer_ptr[2].v = 7.34684e-40;
     this_ptr->vertex_buffer_ptr[3].u = 7.34684e-40;
     this_ptr->vertex_buffer_ptr[3].v = 7.34684e-40;
-    local_20.surface_normal.A = 0;
-    local_20.base.count = 0;
-    local_20.base.type = 0;
-    local_20.surface_normal.B = 0;
-    local_20.surface_normal.D = 2;
+    local_2c.base.count = 4;
+    local_2c.surface_normal.D = 0;
+    local_2c.surface_normal.C = 0;
+    local_2c.surface_normal.B = 0;
+    local_2c.surface_normal.A = 0;
+    local_14 = 0;
+    local_c = 2;
     local_8 = 3;
-    local_20.surface_normal.C = 1;
+    local_10 = 1;
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(this_ptr,0x8000);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr,1);
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0048db80
@@ -55,7 +59,7 @@ core_menu_cpp_renderAudioSpectrumBar_FUN_0050fe70(int x_center,int y_top,int hei
                       (uint)((g_AudioVisualizationCounter >> 0x1f) << 0xf < 0)) >> 0x10) + x_center
                & 7));
     engine_drender_cpp_CDemonRenderer_renderPerspective_FUN_0048ae10
-              (g_CDemonRendererPtr,&local_20,0x23);
+              (g_CDemonRendererPtr,&local_2c,0x23);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0048ca50(g_CDemonRendererPtr,0);
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0048ca60(g_CDemonRendererPtr,0xffff);
   }

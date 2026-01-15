@@ -18,8 +18,8 @@ CGhoul * __cdecl core_ghoul_cpp_FUN_004e6030(CGhoul *this_ptr)
   float fVar5;
   double dVar6;
   float fVar7;
-  float max_value;
   int iVar8;
+  float max_value;
   
   pCVar4 = (CGhoul *)core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base_enemy);
   (pCVar4->base_enemy).base_character.base_actor.vtable = &PTR_core_ghoul_cpp_FUN_0065ed44;

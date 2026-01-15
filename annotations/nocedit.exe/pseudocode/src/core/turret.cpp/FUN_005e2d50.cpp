@@ -16,7 +16,6 @@ void core_turret_cpp_FUN_005e2d50(void)
   int iVar2;
   CBoundingBox3D *pCVar3;
   uint corner_index;
-  BADSPACEBASE *in_ESP;
   int iVar4;
   int iVar5;
   CDemonActor *in_stack_00000004;

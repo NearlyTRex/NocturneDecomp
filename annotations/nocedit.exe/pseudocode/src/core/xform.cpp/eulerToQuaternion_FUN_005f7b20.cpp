@@ -10,7 +10,6 @@ CQuaternion4f * __cdecl
 core_xform_cpp_eulerToQuaternion_FUN_005f7b20(CQuaternion4f *quat_out,CVector3f *euler_angles)
 
 {
-  BADSPACEBASE *in_ESP;
   CQuaternion4f *unaff_ESI;
   uint *puVar1;
   uint *puVar2;

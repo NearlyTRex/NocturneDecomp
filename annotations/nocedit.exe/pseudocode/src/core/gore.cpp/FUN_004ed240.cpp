@@ -15,7 +15,6 @@ void core_gore_cpp_FUN_004ed240(void)
   float fVar1;
   int iVar2;
   uint *puVar3;
-  BADSPACEBASE *in_ESP;
   float *pfVar4;
   float10 fVar5;
   float10 fVar6;
@@ -27,6 +26,7 @@ void core_gore_cpp_FUN_004ed240(void)
   uint in_stack_00000018;
   CVector3f local_3c;
   CVector3f local_30 [2];
+  float fStack_14;
   
   iVar2 = 0;
   pfVar4 = (float *)(in_stack_00000004 + 2);
@@ -48,9 +48,10 @@ void core_gore_cpp_FUN_004ed240(void)
     }
     local_3c.y = in_stack_00000008[1] + 1.0;
     local_30[0].y = local_30[0].y + -3f;
-    fVar1 = core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70
-                      (&g_CDemonRaytraceInstance,&local_3c,local_30,(CVector3f *)0x0,(int *)0x0);
-    fVar1 = (local_3c.y - fVar1 * (float)4) + 0.08333334f;
+    fStack_14 = core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70
+                          (&g_CDemonRaytraceInstance,&local_3c,local_30,(CVector3f *)0x0,(int *)0x0)
+    ;
+    fVar1 = (local_3c.y - fStack_14 * (float)4) + 0.08333334f;
     if ((CVector3f *)pfVar4 != &local_3c) {
       *pfVar4 = local_3c.x;
       pfVar4[1] = fVar1;

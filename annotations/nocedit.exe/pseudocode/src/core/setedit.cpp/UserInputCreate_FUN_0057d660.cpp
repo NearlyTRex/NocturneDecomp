@@ -20,7 +20,6 @@ uint core_setedit_cpp_UserInputCreate_FUN_0057d660(void)
   int iVar8;
   uint uVar9;
   uint *puVar10;
-  BADSPACEBASE *in_ESP;
   char *pcVar11;
   uint uVar12;
   byte *pbVar13;
@@ -30,8 +29,8 @@ uint core_setedit_cpp_UserInputCreate_FUN_0057d660(void)
   bool bVar16;
   CDemonSet *in_stack_00000004;
   int in_stack_00000008;
-  CGame *d2;
-  CGame *in_stack_ffffee88;
+  CGame *in_stack_ffffee84;
+  uint in_stack_ffffee88;
   uint in_stack_ffffee8c;
   uint in_stack_ffffee90;
   uint in_stack_ffffee94;
@@ -128,8 +127,7 @@ LAB_0057d6df:
   *(float *)((int)PTR_DAT_00681ab8 + 0x18) =
        in_stack_00000004->cameras[in_stack_00000008].projection_scale;
   pbStack_20 = (byte *)0x0;
-  crt_stdio_c_sprintf_FUN_005fdbd0
-            (acStack_ec,"%s.raw",in_stack_00000004->cameras + in_stack_00000008);
+  crt_stdio_c_sprintf_FUN_005fdbd0(acStack_ec,"%s.raw");
   pFVar4 = engine_dosio_c_getFile_FUN_00481a50("backdrop",acStack_ec,"rb");
   pFStack_1c = pFVar4;
   if (pFVar4 != (FILE *)0x0) {
@@ -139,8 +137,7 @@ LAB_0057d6df:
       crt_stdio_c_fread_FUN_005fd990(pbStack_20,0x280,0x1e0,pFVar4);
     }
     shape_memdbg_cpp_closeFile_FUN_0050f9b0(pFStack_1c,"..\\core\\setedit.cpp",0xc68);
-    crt_stdio_c_sprintf_FUN_005fdbd0
-              (acStack_ec,"%s.act",in_stack_00000004->cameras + in_stack_00000008);
+    crt_stdio_c_sprintf_FUN_005fdbd0(acStack_ec,"%s.act");
     pFStack_1c = engine_dosio_c_getFile_FUN_00481a50("backdrop",acStack_ec,"rb");
     if (pFStack_1c != (FILE *)0x0) {
       iVar8 = 0;
@@ -149,7 +146,7 @@ LAB_0057d6df:
         iVar5 = crt_stdio_c_fgetc_FUN_005fe840(pFStack_1c);
         iStack_4c = iVar5;
         iStack_48 = crt_stdio_c_fgetc_FUN_005fe840(pFVar4);
-        local_40 = iStack_48;
+        iStack_44 = iStack_48;
         uVar6 = crt_stdio_c_fgetc_FUN_005fe840(pFVar4);
         if (g_BitsPerPixel == 0x20) {
           uStack_34 = iVar5 << ((byte)g_RedBitPosition & 0x1f);
@@ -169,7 +166,7 @@ LAB_0057d6df:
     }
   }
   wincore_windll_cpp_clearScreen_FUN_005b3e70();
-  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_ffffee88);
+  core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr,in_stack_ffffee84);
   pvStack_18 = shape_memdbg_cpp_debugAlloc_FUN_0050f1f0
                          (g_WindowWidth * g_WindowHeight,"..\\core\\setedit.cpp",0xc81);
   if (pvStack_18 == (void *)0x0) {
@@ -313,8 +310,7 @@ LAB_0057db4e:
       }
       engine_2d_c_drawText_FUN_00401fd0("Move camera with slew keys.  Press SPACE when done.  ESC to cancel",0,0);
       crt_stdio_c_sprintf_FUN_005fdbd0
-                (acStack_1ec + 4,"%f",SUB84 /* extract 2-byte value */((double)(1.0 / g_CGamePtr->delta_time_float),0))
-      ;
+                (acStack_1ec,"%f",(double)(1.0 / g_CGamePtr->delta_time_float));
       engine_2d_c_drawText_FUN_00401fd0(acStack_1ec,0,g_WindowHeight + -0xb);
       if (piStack_2c[0x51] == 0) {
         crt_stdio_c_sprintf_FUN_005fdbd0
@@ -324,15 +320,13 @@ LAB_0057db4e:
                    180 *
                    (double)*(float *)((int)PTR_DAT_00681ab8 + 0xc) * 0.31830988619288902,
                    (double)*(float *)((int)PTR_DAT_00681ab8 + 0x10) * 0.31830988619288902 *
-                   180,SUB84 /* extract 2-byte value */((double)*(float *)((int)PTR_DAT_00681ab8 + 0x18),0),
-                   (int)((ulonglong)(double)*(float *)((int)PTR_DAT_00681ab8 + 0x18) >> 0x20));
+                   180,(double)*(float *)((int)PTR_DAT_00681ab8 + 0x18));
       }
       else {
         crt_stdio_c_sprintf_FUN_005fdbd0
                   (acStack_1ec,"PANNING CAMERA: x: %f, y: %f, z: %f",
                    (double)*(float *)PTR_DAT_00681ab8,(double)*(float *)((int)PTR_DAT_00681ab8 + 4),
-                   SUB84 /* extract 2-byte value */((double)*(float *)((int)PTR_DAT_00681ab8 + 8),0),
-                   (int)((ulonglong)(double)*(float *)((int)PTR_DAT_00681ab8 + 8) >> 0x20));
+                   (double)*(float *)((int)PTR_DAT_00681ab8 + 8));
       }
       engine_2d_c_drawText_FUN_00401fd0(acStack_1ec,0,0xb);
     }
@@ -382,7 +376,6 @@ LAB_0057db4e:
       } while (local_28 != 0x780);
     }
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-    d2 = g_CGamePtr;
     core_game_cpp_CGame_updateDeltaTime_FUN_004d7d90(g_CGamePtr);
     iVar8 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
     if (iVar8 != 0) goto LAB_0057db4e;
@@ -402,8 +395,8 @@ LAB_0057db4e:
       shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
                 (&CStack_594,"Camera editor hot keys",-1,0);
       shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-                (&CStack_594,0,(uint)d2,(uint)in_stack_ffffee88,in_stack_ffffee8c,in_stack_ffffee90,
-                 in_stack_ffffee94);
+                (&CStack_594,0,(uint)in_stack_ffffee84,in_stack_ffffee88,in_stack_ffffee8c,
+                 in_stack_ffffee90,in_stack_ffffee94);
     }
     while (iVar8 = wincore_winrun_cpp_wasKeyPressed_FUN_005f2f00(), iVar8 != 0) {
       uVar6 = engine_keys_cpp_CKeys_getUppercasedInputKey_FUN_00502470(g_CKeysPtr);

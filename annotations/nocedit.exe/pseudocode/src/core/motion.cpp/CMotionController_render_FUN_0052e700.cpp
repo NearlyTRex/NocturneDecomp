@@ -17,7 +17,6 @@ core_motion_cpp_CMotionController_render_FUN_0052e700
   SMotion *pSVar4;
   char *pcVar5;
   int iVar6;
-  BADSPACEBASE *in_ESP;
   char *pcVar7;
   char local_a8 [100];
   CBoundingBox3D local_44;

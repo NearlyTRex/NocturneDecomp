@@ -1,20 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 200,
-    "complexity_score": 235,
+    "complexity_score": 171,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 2,
-    "pseudocode_lines": 90,
-    "suspect_count": 12,
+    "pseudocode_lines": 86,
+    "suspect_count": 7,
     "suspect_types": [
-      "badspacebase",
       "pointer_cast",
-      "register_param",
       "sub_artifact",
       "unknown_field"
     ],
-    "total_lines": 290
+    "total_lines": 286
   },
   "cross_references": [],
   "function": {
@@ -294,85 +292,50 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 12,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 12,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 47,
+      "line": 46,
       "match": "(double *)((int)",
       "text": "pdVar8 = (double *)((int)pdVar8 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 48,
+      "line": 47,
       "match": "(double *)((int)",
       "text": "pdVar10 = (double *)((int)pdVar10 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 58,
+      "line": 56,
       "match": "._0_4_",
       "text": "local_c8._0_4_ = SUB84 /* extract 2-byte value */(dVar3,0);",
       "type": "unknown_field"
     },
     {
       "description": "Decompiler double/longlong extraction artifact",
-      "line": 58,
+      "line": 56,
       "match": "SUB84",
       "text": "local_c8._0_4_ = SUB84 /* extract 2-byte value */(dVar3,0);",
       "type": "sub_artifact"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 59,
+      "line": 57,
       "match": "._4_4_",
       "text": "local_c8._4_4_ = (uint)((ulonglong)dVar3 >> 0x20);",
       "type": "unknown_field"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 60,
-      "match": "._0_4_",
-      "text": "local_c0._0_4_ = SUB84 /* extract 2-byte value */(dVar4,0);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler double/longlong extraction artifact",
-      "line": 60,
-      "match": "SUB84",
-      "text": "local_c0._0_4_ = SUB84 /* extract 2-byte value */(dVar4,0);",
-      "type": "sub_artifact"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 61,
-      "match": "._4_4_",
-      "text": "local_c0._4_4_ = (uint)((ulonglong)dVar4 >> 0x20);",
-      "type": "unknown_field"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 67,
+      "line": 64,
       "match": "(ulonglong *)((int)",
       "text": "puVar9 = (ulonglong *)((int)puVar9 + 4);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 68,
+      "line": 65,
       "match": "(double *)((int)",
       "text": "pdVar8 = (double *)((int)pdVar8 + 4);",
       "type": "pointer_cast"

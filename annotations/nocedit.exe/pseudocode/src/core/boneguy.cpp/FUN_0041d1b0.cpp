@@ -14,19 +14,16 @@ int core_boneguy_cpp_FUN_0041d1b0(void)
   CDemonRenderer *pCVar1;
   CBoundingBox3D *this_ptr;
   int iVar2;
-  BADSPACEBASE *in_ESP;
   CCharacter *in_stack_00000004;
-  float fStack_18;
   
   if (*(int *)in_stack_00000004->field2_0x240c != 0) {
     return 0;
   }
   core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(&in_stack_00000004->base_actor);
   this_ptr = (*((in_stack_00000004->base_actor).vtable)->getBoundingBox)
-                       (&in_stack_00000004->base_actor,(CBoundingBox3D *)&stack0xffffffe4);
+                       (&in_stack_00000004->base_actor,(CBoundingBox3D *)&stack0xffffffe0);
   iVar2 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr);
   if (iVar2 != 0) {
-    fStack_18 = 6.044647e-39;
     engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0048d6c0(g_CDemonRendererPtr,0);
     pCVar1 = g_CDemonRendererPtr;
     g_CDemonSetPtr->unk_lighting_param2 = 1;

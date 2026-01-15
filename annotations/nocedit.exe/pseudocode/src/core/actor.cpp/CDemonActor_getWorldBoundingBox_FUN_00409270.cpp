@@ -6,8 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
-
 CBoundingBox3D * __cdecl
 core_actor_cpp_CDemonActor_getWorldBoundingBox_FUN_00409270
           (CDemonActor *this_ptr,CBoundingBox3D *output_bbox,SCollisionInfo *collision_info,
@@ -17,9 +15,10 @@ core_actor_cpp_CDemonActor_getWorldBoundingBox_FUN_00409270
   CVector3f *pCVar1;
   CBoundingBox3D *pCVar2;
   uint corner_index;
-  BADSPACEBASE *in_ESP;
-  float fStack_50;
-  CVector3f aCStack_28 [2];
+  CBoundingBox3D CStack_4c;
+  CVector3f CStack_34;
+  CVector3f CStack_28;
+  CVector3f CStack_1c;
   
   if ((uint)bounding_box_type < 2) {
     if (bounding_box_type != 1) {
@@ -49,12 +48,10 @@ LAB_004093bd:
     if (bounding_box_type != 3) goto LAB_004093bd;
   }
   (*this_ptr->vtable->getBoundingBox)(this_ptr,(CBoundingBox3D *)&stack0xffffffac);
-  fStack_50 = 5.930106e-39;
-  pCVar1 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
-                     ((CBoundingBox3D *)&stack0xffffffc0,aCStack_28,0);
+  pCVar1 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0(&CStack_4c,&CStack_34,0);
   pCVar2 = (CBoundingBox3D *)
            core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
-                     (this_ptr,(CVector3f *)&stack0x00000000,pCVar1);
+                     (this_ptr,(CVector3f *)&stack0xfffffff0,pCVar1);
   if (output_bbox != pCVar2) {
     (output_bbox->min).x = (pCVar2->min).x;
     (output_bbox->min).y = (pCVar2->min).y;
@@ -67,11 +64,8 @@ LAB_004093bd:
   }
   corner_index = 1;
   do {
-    pCVar1 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0
-                       ((CBoundingBox3D *)&stack0xffffffc8,(CVector3f *)&aCStack_28[1].z,
-                        corner_index);
-    pCVar1 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
-                       (this_ptr,(CVector3f *)&stack0xfffffffc,pCVar1);
+    pCVar1 = core_box_cpp_CBoundingBox3D_getCorner_FUN_004202b0(&CStack_4c,&CStack_28,corner_index);
+    pCVar1 = core_actor_cpp_CDemonActor_transformVector_FUN_00408e80(this_ptr,&CStack_1c,pCVar1);
     corner_index = corner_index + 1;
     core_box_cpp_CBoundingBox3D_expand_FUN_00420240(output_bbox,pCVar1);
   } while ((int)corner_index < 8);

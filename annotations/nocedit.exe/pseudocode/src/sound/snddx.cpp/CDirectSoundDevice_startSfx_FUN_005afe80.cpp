@@ -16,10 +16,8 @@ sound_snddx_cpp_CDirectSoundDevice_startSfx_FUN_005afe80
   uint error_code;
   int iVar3;
   char *pcVar4;
-  BADSPACEBASE *in_ESP;
-  uint uStack0000000c;
-  uint in_stack_00000010;
-  char acStack_164 [340];
+  char acStack_198 [392];
+  DWORD dwFlags;
   
   iVar1 = slot->hardware_buffer_handle;
   if ((((iVar1 < 1) || (0x1e < iVar1)) ||
@@ -29,10 +27,10 @@ sound_snddx_cpp_CDirectSoundDevice_startSfx_FUN_005afe80
     g_CurrentLineNumber = 1000;
     core_main_c_displayErrorAndQuit_FUN_00506f10("DirectSoundDevice::startSfx - invalid handle: %d",iVar1);
   }
-  iVar2 = (**(code **)((slot->options).channel_index + 0x40))((CSoundDevice *)slot,slot,-1);
+  iVar2 = (*((this_ptr->base).vtable)->setSfxPos)(&this_ptr->base,slot,-1);
   iVar3 = 0;
   if (iVar2 != 0) {
-    uStack0000000c = 0;
+    dwFlags = 0;
     if (slot->sample == (CSfxSample *)0x0) {
       g_CurrentFilename = "..\\sound\\snddx.cpp";
       g_CurrentLineNumber = 0x3f2;
@@ -44,19 +42,19 @@ sound_snddx_cpp_CDirectSoundDevice_startSfx_FUN_005afe80
       core_main_c_displayErrorAndQuit_FUN_00506f10("DirectSoundDevice::startSfx - exotic jump sequences not allowed for hardware mixed sounds");
     }
     if ((slot->sample->loop_marker_count == 1) && (-1 < slot->sample->loop_markers[0])) {
-      in_stack_00000010 = in_stack_00000010 | 1;
+      dwFlags = 1;
     }
     if (slot->sample->streaming_buffer_size != (slot->sample->sample_info).sample_count) {
-      in_stack_00000010 = in_stack_00000010 | 1;
+      dwFlags = 1;
     }
     error_code = (*g_DirectSoundHardwareSfxBuffers[iVar1]->vtable->Play)
-                           (g_DirectSoundHardwareSfxBuffers[iVar1],0,0,in_stack_00000010);
+                           (g_DirectSoundHardwareSfxBuffers[iVar1],0,0,dwFlags);
     if (error_code != 0) {
       pcVar4 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(error_code);
       crt_stdio_c_sprintf_FUN_005fdbd0
-                (&stack0xfffffe98,"DirectSux: Unable to %s.  (%s)",
-                 "Play hardware sfx secondary buffer",pcVar4);
-      sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_164);
+                (acStack_198,"DirectSux: Unable to %s.  (%s)","Play hardware sfx secondary buffer",
+                 pcVar4);
+      sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_198);
       return 0;
     }
     iVar3 = 1;

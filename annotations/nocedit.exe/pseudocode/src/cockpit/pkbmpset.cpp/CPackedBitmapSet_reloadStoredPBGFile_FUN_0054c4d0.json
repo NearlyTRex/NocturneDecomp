@@ -1,17 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 20,
-    "complexity_score": 61,
+    "complexity_score": 60,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 11,
+    "pseudocode_lines": 10,
     "suspect_count": 4,
     "suspect_types": [
       "call_esp_preserve",
-      "stack_param"
+      "unaffected_reg"
     ],
-    "total_lines": 31
+    "total_lines": 30
   },
   "cross_references": [
     {
@@ -91,18 +91,18 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 8,
-      "match": "in_stack_0000000c",
-      "text": "char *in_stack_0000000c;",
-      "type": "stack_param"
+      "description": "Unaffected register variable",
+      "line": 7,
+      "match": "unaff_EBX",
+      "text": "int unaff_EBX;",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_0000000c",
-      "text": "(this_ptr,this_ptr->filename,in_stack_0000000c,this_ptr->config_param,0,unaff_retaddr);",
-      "type": "stack_param"
+      "description": "Unaffected register variable",
+      "line": 11,
+      "match": "unaff_EBX",
+      "text": "(this_ptr,this_ptr->filename,pbg_filename,this_ptr->config_param,0,unaff_EBX);",
+      "type": "unaffected_reg"
     },
     {
       "add_esp_value": 4,

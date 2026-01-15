@@ -22,12 +22,11 @@ void core_chain_cpp_FUN_0042fd20(void)
   uint *puVar9;
   int iVar10;
   int *piVar11;
-  BADSPACEBASE *in_ESP;
   CDemonActor **ppCVar12;
   CDemonActor *in_stack_00000004;
+  float local_30;
+  float local_2c;
   float local_28;
-  float local_24;
-  float local_20;
   
   core_actor_cpp_CDemonActor_setup_FUN_00408bb0(in_stack_00000004);
   if (*(int *)(in_stack_00000004[1].actor_name + 0xc) != 0) {
@@ -38,9 +37,9 @@ void core_chain_cpp_FUN_0042fd20(void)
     fVar4 = (in_stack_00000004->location).position.y;
     fVar5 = pfVar8[2];
     fVar6 = (in_stack_00000004->location).position.z;
-    local_28 = (in_stack_00000004->location).position.x;
-    local_24 = (in_stack_00000004->location).position.y;
-    local_20 = (in_stack_00000004->location).position.z;
+    local_30 = (in_stack_00000004->location).position.x;
+    local_2c = (in_stack_00000004->location).position.y;
+    local_28 = (in_stack_00000004->location).position.z;
     fVar7 = 1.0 / (float)(*(int *)in_stack_00000004[1].actor_name + -1);
     iVar10 = 0;
     if (0 < *(int *)in_stack_00000004[1].actor_name) {
@@ -49,14 +48,14 @@ void core_chain_cpp_FUN_0042fd20(void)
       do {
         pfVar8 = (float *)((int)&in_stack_00000004[1].previous_transform_state + iVar10 * 0x24 + 0xc
                           );
-        if (pfVar8 != &local_28) {
-          *pfVar8 = local_28;
-          pfVar8[1] = local_24;
-          pfVar8[2] = local_20;
+        if (pfVar8 != &local_30) {
+          *pfVar8 = local_30;
+          pfVar8[1] = local_2c;
+          pfVar8[2] = local_28;
         }
-        local_28 = local_28 + (fVar1 - fVar2) * fVar7;
-        local_24 = local_24 + (fVar3 - fVar4) * fVar7;
-        local_20 = local_20 + (fVar5 - fVar6) * fVar7;
+        local_30 = local_30 + (fVar1 - fVar2) * fVar7;
+        local_2c = local_2c + (fVar3 - fVar4) * fVar7;
+        local_28 = local_28 + (fVar5 - fVar6) * fVar7;
         piVar11[2] = 0;
         piVar11[1] = piVar11[2];
         puVar9 = (uint *)

@@ -1,17 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 63,
-    "complexity_score": 89,
+    "complexity_score": 65,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 5,
-    "pseudocode_lines": 29,
-    "suspect_count": 5,
+    "pseudocode_lines": 30,
+    "suspect_count": 3,
     "suspect_types": [
-      "call_esp_preserve",
-      "unaffected_reg"
+      "call_esp_preserve"
     ],
-    "total_lines": 92
+    "total_lines": 93
   },
   "cross_references": [],
   "function": {
@@ -151,20 +150,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 7,
-      "match": "unaff_EBP",
-      "text": "float unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 30,
-      "match": "unaff_EBP",
-      "text": "core_game_cpp_CGame_slamDT_FUN_004e3080(g_CGamePtr,unaff_EBP);",
-      "type": "unaffected_reg"
-    },
     {
       "add_esp_value": 8,
       "call_address": "004c028f",

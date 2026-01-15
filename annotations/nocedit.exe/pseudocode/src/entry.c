@@ -11,75 +11,64 @@
 void entry(void)
 
 {
-  uint uVar1;
-  byte *puVar2;
-  HMODULE pHVar3;
-  int iVar4;
-  uint uVar5;
-  BADSPACEBASE *in_ESP;
-  byte *puVar6;
-  byte *puVar7;
-  uint *puVar8;
-  uint *puVar9;
-  uint *puVar10;
-  uint *puVar11;
-  uint *puVar12;
-  uint uStack_1c;
-  int aiStack_18 [3];
-  byte auStack_c [4];
+  int iVar1;
+  uint uVar2;
+  byte *puVar3;
+  HMODULE pHVar4;
+  int iVar5;
+  uint uVar6;
+  int *piVar7;
+  uint uStack_20;
+  int aiStack_1c [2];
+  uint uStack_14;
+  byte auStack_10 [8];
   
-  aiStack_18[1] = 0x609e81;
+  uStack_14 = 0x609e81;
   crt_init_c_ProcessInitTermHandlers_FUN_0060ac30(1);
-  iVar4 = -(g_RuntimeBufferSize + 3 & 0xfffffffc);
-  *(DWORD *)((int)aiStack_18 + iVar4 + 8) = g_RuntimeBufferSize;
-  *(uint *)((int)aiStack_18 + iVar4 + 4) = 0;
-  *(byte **)((int)aiStack_18 + iVar4) = auStack_c + iVar4;
-  puVar6 = (byte *)((int)&uStack_1c + iVar4);
-  *(uint *)((int)&uStack_1c + iVar4) = 0x609e9e;
+  iVar5 = -(g_RuntimeBufferSize + 3 & 0xfffffffc);
+  *(DWORD *)(auStack_10 + iVar5 + -4) = g_RuntimeBufferSize;
+  *(uint *)((int)aiStack_1c + iVar5 + 4) = 0;
+  *(byte **)((int)aiStack_1c + iVar5) = auStack_10 + iVar5;
+  *(uint *)((int)&uStack_20 + iVar5) = 0x609e9e;
   crt_memory_c_memset_FUN_005fde40
-            (*(void **)((int)aiStack_18 + iVar4),*(int *)((int)aiStack_18 + iVar4 + 4),
-             *(ulong *)((int)aiStack_18 + iVar4 + 8));
-  *(byte **)((int)puVar6 + 0xc) = auStack_c + iVar4;
-  *(DWORD *)(&stack0x000000e4 + iVar4) = g_RuntimeBufferSize;
-  *(int **)(puVar6 + 8) = aiStack_18 + 2;
-  puVar7 = puVar6 + 4;
-  *(uint *)(puVar6 + 4) = 0x609eb6;
-  crt_startup_cpp_InitializeWinAppRuntime_FUN_006026a8(aiStack_18 + 2);
-  uVar5 = g_StackAllocSize + 3 & 0xfffffffc;
-  puVar8 = (uint *)(puVar7 + 8);
-  *(uint *)(puVar7 + 8) = 0x609eca;
-  uVar1 = crt_stack_c_GetStackUsage_FUN_0060c260();
-  puVar10 = puVar8 + 1;
-  if (uVar5 < uVar1) {
-    *puVar8 = uVar5;
-    puVar9 = puVar8 + -1;
-    puVar8[-1] = 0x609ed4;
-    crt_stack_c_ProbeStackSpace_FUN_005ffa2f(*puVar8);
-    iVar4 = -(g_StackAllocSize + 3 & 0xfffffffc);
-    puVar10 = (uint *)((int)puVar9 + iVar4 + 8);
-    puVar2 = (byte *)((int)puVar9 + iVar4 + 8);
+            (*(void **)((int)aiStack_1c + iVar5),*(int *)((int)aiStack_1c + iVar5 + 4),
+             *(ulong *)(auStack_10 + iVar5 + -4));
+  *(byte **)(auStack_10 + iVar5 + -4) = auStack_10 + iVar5;
+  *(DWORD *)(&stack0x000000e0 + iVar5) = g_RuntimeBufferSize;
+  *(byte **)((int)aiStack_1c + iVar5 + 4) = auStack_10;
+  *(uint *)((int)aiStack_1c + iVar5) = 0x609eb6;
+  crt_startup_cpp_InitializeWinAppRuntime_FUN_006026a8(auStack_10);
+  piVar7 = (int *)(auStack_10 + iVar5);
+  uVar6 = g_StackAllocSize + 3 & 0xfffffffc;
+  *(uint *)(auStack_10 + iVar5 + -4) = 0x609eca;
+  uVar2 = crt_stack_c_GetStackUsage_FUN_0060c260();
+  if (uVar6 < uVar2) {
+    *(uint *)(auStack_10 + iVar5 + -4) = uVar6;
+    *(uint *)((int)aiStack_1c + iVar5 + 4) = 0x609ed4;
+    crt_stack_c_ProbeStackSpace_FUN_005ffa2f(*(uint *)(auStack_10 + iVar5 + -4));
+    iVar1 = -(g_StackAllocSize + 3 & 0xfffffffc);
+    piVar7 = (int *)(auStack_10 + iVar1 + iVar5);
+    puVar3 = auStack_10 + iVar1 + iVar5;
   }
   else {
-    puVar2 = (byte *)0x0;
+    puVar3 = (byte *)0x0;
   }
-  g_CrtStackBuffer = puVar2 + g_StackAllocSize;
-  puVar11 = (uint *)((int)puVar10 + -4);
-  *(uint *)((int)puVar10 + -4) = 0x609ef8;
+  g_CrtStackBuffer = puVar3 + g_StackAllocSize;
+  piVar7[-1] = 0x609ef8;
   crt_startup_c_PlaceholderStub_FUN_0060ca80();
-  *puVar11 = 10;
-  puVar11[-1] = g_WinMainCmdShow;
-  puVar11[-2] = 0;
-  puVar11[-3] = 0;
-  puVar12 = puVar11 + -4;
-  puVar11[-4] = 0x609f0c;
-  pHVar3 = (*GetModuleHandleA)((LPCSTR)puVar11[-3]);
-  puVar12[1] = pHVar3;
-  *puVar12 = 0x609f12;
-  iVar4 = wincore_winrun_cpp_winMain_FUN_005f3680
-                    ((HINSTANCE)puVar12[1],(HINSTANCE)puVar12[2],(LPSTR)puVar12[3],puVar12[4],
-                     puVar12[5]);
-  *(int *)((int)puVar12 + 0x10) = iVar4;
-  *(uint *)((int)puVar12 + 0xc) = 0x609f18;
-  crt_startup_c_ExitApplication_FUN_0060b534(*(int *)((int)puVar12 + 0x10));
+  piVar7[-1] = 10;
+  piVar7[-2] = g_WinMainCmdShow;
+  piVar7[-3] = 0;
+  piVar7[-4] = 0;
+  piVar7[-5] = 0x609f0c;
+  pHVar4 = (*GetModuleHandleA)((LPCSTR)piVar7[-4]);
+  piVar7[-4] = (int)pHVar4;
+  piVar7[-5] = 0x609f12;
+  iVar5 = wincore_winrun_cpp_winMain_FUN_005f3680
+                    ((HINSTANCE)piVar7[-4],(HINSTANCE)piVar7[-3],(LPSTR)piVar7[-2],piVar7[-1],
+                     *piVar7);
+  piVar7[-1] = iVar5;
+  piVar7[-2] = 0x609f18;
+  crt_startup_c_ExitApplication_FUN_0060b534(piVar7[-1]);
   return;
 }

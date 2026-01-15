@@ -23,7 +23,6 @@ wincore_winrun_cpp_winMain_FUN_005f3680
   int iVar6;
   uint uVar7;
   WNDCLASSA *stackProbe;
-  BADSPACEBASE *in_ESP;
   byte *pbVar8;
   char *pcVar9;
   byte bVar10;

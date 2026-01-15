@@ -1,24 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 360,
-    "complexity_score": 567,
+    "complexity_score": 402,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 6,
-    "pseudocode_lines": 192,
-    "suspect_count": 33,
+    "pseudocode_lines": 187,
+    "suspect_count": 19,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
       "pointer_cast",
-      "register_param",
       "stack_param",
-      "stack_ref",
-      "unknown_field",
       "variadic_preserve"
     ],
-    "total_lines": 552
+    "total_lines": 547
   },
   "cross_references": [
     {
@@ -338,127 +334,29 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 12,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 12,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 15,
       "match": "in_stack_fffff550",
       "text": "CPodDependencyRecord *in_stack_fffff550;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 49,
+      "line": 50,
       "match": "in_stack_fffff550",
       "text": "engine_pod_cpp_CPodFile_getDependencyRecord_FUN_005506c0(local_18,iVar5,in_stack_fffff550)",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 59,
-      "match": "in_stack_fffff550",
-      "text": "in_stack_fffff550 = &CStack_364;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 61,
-      "match": "in_stack_fffff550",
-      "text": "(this_ptr,in_stack_fffff550->filename);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 103,
+      "line": 101,
       "match": "in_stack_fffff550",
       "text": "(local_2c,local_30,in_stack_fffff550);",
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 116,
-      "match": "in_stack_fffff550",
-      "text": "in_stack_fffff550 = &CStack_154;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 118,
-      "match": "in_stack_fffff550",
-      "text": "(this_ptr,in_stack_fffff550->filename);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 123,
-      "match": "in_stack_fffff550",
-      "text": "in_stack_fffff550 = (CPodDependencyRecord *)0x5516e5;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 126,
-      "match": "._252_4_",
-      "text": "if ((int)CStack_154.filename._252_4_ < 0) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 127,
-      "match": "&stack0xfffff550",
-      "text": "*(CPodFile **)(&stack0xfffff550 + iVar5) = local_2c;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 131,
-      "match": "&stack0xfffff550",
-      "text": "*(CPodFile **)(&stack0xfffff550 + iVar5) = this_ptr->pod_files[iVar4];",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 134,
-      "match": "&stack0xfffff554",
-      "text": "*(CPodFile **)(&stack0xfffff554 + iVar5) = pCVar2;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 158,
-      "match": "&stack0xfffff554",
-      "text": "if (*(CPodFile **)(&stack0xfffff554 + iVar4) == local_38[1]) {",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 159,
-      "match": "&stack0xfffff554",
-      "text": "uVar3 = (uint)*(CPodFile **)(&stack0xfffff554 + iVar4) ^ (uint)local_38[1];",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 163,
-      "match": "&stack0xfffff550",
-      "text": "if (pCVar1->pod_files[0] == *(CPodFile **)(&stack0xfffff550 + iVar4)) break;",
-      "type": "stack_ref"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 188,
+      "line": 183,
       "match": "(CPod *)((int)",
       "text": "pCVar1 = (CPod *)((int)(pCVar1 + 0xffffffff) + 0x194);",
       "type": "pointer_cast"

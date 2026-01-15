@@ -1,22 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 368,
-    "complexity_score": 822,
+    "complexity_score": 596,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 7,
-    "pseudocode_lines": 127,
-    "suspect_count": 66,
+    "pseudocode_lines": 146,
+    "suspect_count": 44,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
-      "lea_esp_stack_addr",
-      "register_param",
-      "stack_ref",
-      "suspect_float",
-      "unknown_field"
+      "lea_esp_stack_addr"
     ],
-    "total_lines": 495
+    "total_lines": 514
   },
   "cross_references": [
     {
@@ -469,160 +464,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 8,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 8,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 58,
-      "match": "._8_4_",
-      "text": "local_74._8_4_ = (uint)ROUND(local_60 * 256f);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 77,
-      "match": "&stack0xfffffff0",
-      "text": "(CVector3i *)&stack0xfffffff0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 88,
-      "match": "._0_4_",
-      "text": "local_74._0_4_ = (uint)ROUND(local_50 * 256f);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 89,
-      "match": "._4_4_",
-      "text": "local_74._4_4_ = (uint)ROUND((float)local_4c.x * 256f);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 90,
-      "match": "._8_4_",
-      "text": "local_74._8_4_ = (uint)ROUND((float)local_4c.y * 256f);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 97,
-      "match": "._4_4_",
-      "text": "local_74._4_4_ = 0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 100,
-      "match": "&stack0xffffff54",
-      "text": "(g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)&stack0xffffff54);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 101,
-      "match": "._8_4_",
-      "text": "local_74._8_4_ = 2;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 105,
-      "match": "&stack0xffffff58",
-      "text": "(g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)&stack0xffffff58);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 108,
-      "match": "._0_4_",
-      "text": "local_74._0_4_ = 4;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 110,
-      "match": "&stack0xffffff5c",
-      "text": "(g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)&stack0xffffff5c);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 111,
-      "match": "1.4013e-45",
-      "text": "local_64 = 1.4013e-45;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 112,
-      "match": "._4_4_",
-      "text": "local_74._4_4_ = 2;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 115,
-      "match": "&stack0xffffff60",
-      "text": "(g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)&stack0xffffff60);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 117,
-      "match": "5.60519e-45",
-      "text": "local_60 = 5.60519e-45;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 118,
-      "match": "._8_4_",
-      "text": "local_74._8_4_ = 5;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 121,
-      "match": "&stack0xffffff64",
-      "text": "(g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)&stack0xffffff64);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 122,
-      "match": "2.8026e-45",
-      "text": "local_68 = 2.8026e-45;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 123,
-      "match": "._0_4_",
-      "text": "local_74._0_4_ = 1;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 127,
-      "match": "&stack0xffffff68",
-      "text": "(g_CDemonRendererPtr,(SMRGLHeaderPrimitive *)&stack0xffffff68);",
-      "type": "stack_ref"
-    },
     {
       "add_esp_value": 8,
       "call_address": "00496f00",

@@ -12,10 +12,9 @@ void __cdecl core_weapon_cpp_CWeapon_process_FUN_005ee110(CWeapon *this_ptr)
   COrientation *pCVar1;
   int iVar2;
   float fVar3;
-  CVector3f *unaff_retaddr;
+  float unaff_EBX;
+  CVector3f *unaff_ESI;
   float in_stack_00000008;
-  uint uStack00000010;
-  CDemonLight *pCStack00000018;
   
   if ((0.0 < *(float *)(this_ptr->field7_0x2f4 + 0xc)) &&
      (fVar3 = *(float *)(this_ptr->field7_0x2f4 + 0xc) - in_stack_00000008,
@@ -51,10 +50,8 @@ void __cdecl core_weapon_cpp_CWeapon_process_FUN_005ee110(CWeapon *this_ptr)
   if (((*(CHero **)&this_ptr->carried_by_actor == g_HeroActors[g_LocalHeroIndex]) &&
       (g_CGamePtr->auto_save_blocked != 0)) && (this_ptr->can_attach_light != 0)) {
     (*(this_ptr->base_actor).vtable[1].processFootstepAtOffset)
-              (&this_ptr->base_actor,unaff_retaddr,(float)this_ptr);
+              (&this_ptr->base_actor,unaff_ESI,unaff_EBX);
     if (0.0 < g_CDemonLightInstance.volumetric_intensity) {
-      pCStack00000018 = &g_CDemonLightInstance;
-      uStack00000010 = 0x5ee245;
       core_set_cpp_CDemonSet_SomethingDynamicLights_FUN_0056d090(g_CDemonSetPtr);
       return;
     }

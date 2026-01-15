@@ -13,15 +13,13 @@ core_skeleton_cpp_blendBoneTransformData_FUN_005a1b70
           )
 
 {
-  SBoneTransformData *pSVar1;
-  BADSPACEBASE *in_ESP;
+  CVector3f *pCVar1;
   int iVar2;
   uint *puVar3;
   uint *puVar4;
   byte bVar5;
-  CDeformableModelInstance *in_stack_00000018;
-  float afStackY_182c [1524];
-  float in_stack_ffffffb0;
+  float afStackY_1830 [1524];
+  float in_stack_ffffffac;
   CVector3f local_44;
   float local_38;
   float local_34;
@@ -30,9 +28,9 @@ core_skeleton_cpp_blendBoneTransformData_FUN_005a1b70
   float local_28;
   float local_24;
   float local_20;
-  CSkeleton *local_18;
+  CSkeleton *local_1c;
+  CQuaternion4f *local_18;
   CQuaternion4f *local_14;
-  CQuaternion4f *result_out;
   
   bVar5 = 0;
   if (blend_weight < 0.0) {
@@ -56,30 +54,31 @@ core_skeleton_cpp_blendBoneTransformData_FUN_005a1b70
     result_root_pos->y = local_44.y;
     result_root_pos->z = local_44.z;
   }
-  local_18 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(instance_ptr);
+  local_1c = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820(instance_ptr);
   iVar2 = 0;
-  if (0 < local_18->bone_count) {
-    result_out = bone_data_out->bone_rotations;
-    local_14 = bone_data_in->bone_rotations;
-    pSVar1 = bone_data_out;
+  if (0 < local_1c->bone_count) {
+    local_14 = bone_data_out->bone_rotations;
+    local_18 = bone_data_in->bone_rotations;
+    pCVar1 = result_root_pos;
     do {
       core_xform_cpp_slerpQuaternion_FUN_005f77e0
-                (result_out,local_14,(CQuaternion4f *)instance_ptr,in_stack_ffffffb0);
-      puVar3 = (uint *)((int)pSVar1 + (uint)bVar5 * -8 + 0x10);
-      pSVar1->bone_rotations[0].w = in_stack_ffffffb0;
+                (local_14,local_18,(CQuaternion4f *)blend_weight,in_stack_ffffffac);
+      puVar3 = (uint *)((int)pCVar1 + (uint)bVar5 * -8 + 0x10);
+      pCVar1[1].x = in_stack_ffffffac;
       puVar4 = puVar3 + (uint)bVar5 * -2 + 1;
-      *puVar3 = *(uint *)(&stack0xffffffb4 + (uint)bVar5 * -8);
-      *puVar4 = *(uint *)(&stack0xffffffb8 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
+      *puVar3 = *(uint *)(&stack0xffffffb0 + (uint)bVar5 * -8);
+      *puVar4 = *(uint *)(&stack0xffffffb4 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
       puVar4[(uint)bVar5 * -2 + 1] =
            *(uint *)
-            ((int)(&stack0xffffffb8 + (uint)bVar5 * -8 + (uint)bVar5 * -8) +
+            ((int)(&stack0xffffffb4 + (uint)bVar5 * -8 + (uint)bVar5 * -8) +
             ((uint)bVar5 * -2 + 1) * 4);
-      local_14 = local_14 + 1;
+      local_18 = local_18 + 1;
       iVar2 = iVar2 + 1;
-      result_out = result_out + 1;
-      pSVar1 = (SBoneTransformData *)&pSVar1->bone_rotations[0].x;
-    } while (iVar2 < local_18->bone_count);
+      local_14 = local_14 + 1;
+      pCVar1 = (CVector3f *)&pCVar1[1].y;
+    } while (iVar2 < local_1c->bone_count);
   }
-  core_skeleton_cpp_computeBoneWorldMatrices_FUN_005a1950(bone_data_out,in_stack_00000018);
+  core_skeleton_cpp_computeBoneWorldMatrices_FUN_005a1950
+            ((SBoneTransformData *)result_root_pos,instance_ptr);
   return;
 }

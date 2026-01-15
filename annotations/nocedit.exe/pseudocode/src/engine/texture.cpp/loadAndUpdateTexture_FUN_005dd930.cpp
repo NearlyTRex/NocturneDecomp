@@ -13,6 +13,6 @@ engine_texture_cpp_loadAndUpdateTexture_FUN_005dd930
 
 {
   engine_texture_cpp_ensureTextureLoaded_FUN_005dd800(tex_to_load);
-  wincore_windll_cpp_updateTexture_FUN_005b7380(tex_to_update,palette_data);
+  wincore_windll_cpp_updateTexture_FUN_005b7380(tex_to_load,(SRGBColorPalette *)tex_to_update);
   return;
 }

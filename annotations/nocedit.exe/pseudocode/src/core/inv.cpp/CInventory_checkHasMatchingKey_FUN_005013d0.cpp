@@ -14,8 +14,8 @@ core_inv_cpp_CInventory_checkHasMatchingKey_FUN_005013d0
   CDemonActor *pCVar1;
   char *pcVar2;
   CInventory *pCVar3;
-  float unaff_EBP;
   int iVar4;
+  float fVar5;
   
   if (key_mask == 0) {
     return 1;
@@ -31,8 +31,9 @@ core_inv_cpp_CInventory_checkHasMatchingKey_FUN_005013d0
         if (show_message == 0) {
           return 1;
         }
+        fVar5 = 5.0;
         pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("You used a key.");
-        core_game_cpp_CGame_displayMessage_FUN_004d7f20(g_CGamePtr,pcVar2,unaff_EBP);
+        core_game_cpp_CGame_displayMessage_FUN_004d7f20(g_CGamePtr,pcVar2,fVar5);
         pCVar1 = this_ptr->owner;
         if (pCVar1 == (CDemonActor *)0x0) {
           return 1;
@@ -45,8 +46,9 @@ core_inv_cpp_CInventory_checkHasMatchingKey_FUN_005013d0
     } while (iVar4 < this_ptr->item_count);
   }
   if (show_message != 0) {
+    fVar5 = 5.0;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("You need the right key");
-    core_game_cpp_CGame_displayMessage_FUN_004d7f20(g_CGamePtr,pcVar2,unaff_EBP);
+    core_game_cpp_CGame_displayMessage_FUN_004d7f20(g_CGamePtr,pcVar2,fVar5);
   }
   return 0;
 }

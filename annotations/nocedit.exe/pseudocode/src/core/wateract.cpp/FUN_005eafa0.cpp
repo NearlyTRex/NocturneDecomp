@@ -11,10 +11,10 @@ void core_wateract_cpp_FUN_005eafa0(void)
 {
   CVector3f *pCVar1;
   float *pfVar2;
-  BADSPACEBASE *in_ESP;
   int iVar3;
   int in_stack_00000004;
-  float local_30 [2];
+  float local_30;
+  float local_2c;
   float local_28;
   CVector3f local_24;
   int local_18;
@@ -28,13 +28,13 @@ void core_wateract_cpp_FUN_005eafa0(void)
     do {
       pCVar1 = core_dirmat_cpp_CMatrix3x3f_transformVector_FUN_00471fd0
                          (local_14,&local_24,(CVector3f *)(iVar3 * 0x20 + local_18));
-      local_30[0] = pCVar1->x + *(float *)(in_stack_00000004 + 0x20);
-      local_28 = pCVar1->y + *(float *)(in_stack_00000004 + 0x24);
-      local_24.x = pCVar1->z + *(float *)(in_stack_00000004 + 0x28);
-      if (pfVar2 != local_30) {
-        *pfVar2 = local_30[0];
-        pfVar2[1] = local_28;
-        pfVar2[2] = local_24.x;
+      local_30 = pCVar1->x + *(float *)(in_stack_00000004 + 0x20);
+      local_2c = pCVar1->y + *(float *)(in_stack_00000004 + 0x24);
+      local_28 = pCVar1->z + *(float *)(in_stack_00000004 + 0x28);
+      if (pfVar2 != &local_30) {
+        *pfVar2 = local_30;
+        pfVar2[1] = local_2c;
+        pfVar2[2] = local_28;
       }
       iVar3 = iVar3 + 1;
       pfVar2 = pfVar2 + 8;

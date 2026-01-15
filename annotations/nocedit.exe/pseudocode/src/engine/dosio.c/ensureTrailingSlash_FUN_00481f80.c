@@ -13,19 +13,16 @@ engine_dosio_c_ensureTrailingSlash_FUN_00481f80(char *input_path,char *drive,cha
   char cVar1;
   uint uVar2;
   int iVar3;
-  BADSPACEBASE *in_ESP;
   char *pcVar4;
   char *pcVar5;
   byte bVar6;
-  char local_208 [4];
-  char acStack_204 [252];
-  char local_108 [4];
-  char acStack_104 [252];
+  char acStack_308 [256];
+  char local_208 [256];
+  char local_108 [256];
   
   bVar6 = 0;
-  engine_dosio_c_splitPath_FUN_00481f20(input_path,drive,local_208,local_108,&stack0xfffffcf8);
-  engine_dosio_c_makePath_FUN_00481f50
-            (output_path,(char *)0x0,acStack_204,acStack_104,&stack0xfffffcfc);
+  engine_dosio_c_splitPath_FUN_00481f20(input_path,drive,local_208,local_108,acStack_308);
+  engine_dosio_c_makePath_FUN_00481f50(output_path,(char *)0x0,local_208,local_108,acStack_308);
   if ((output_path != (char *)0x0) && (*output_path != '\0')) {
     uVar2 = 0xffffffff;
     pcVar4 = output_path;

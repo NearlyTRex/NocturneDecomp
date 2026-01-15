@@ -1,17 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 94,
-    "complexity_score": 200,
+    "complexity_score": 155,
     "cross_reference_count": 4,
     "function_call_count": 5,
     "global_count": 12,
     "pseudocode_lines": 35,
-    "suspect_count": 14,
+    "suspect_count": 10,
     "suspect_types": [
       "call_esp_preserve",
       "callind_preserve",
-      "format_string_mismatch",
-      "stack_param",
+      "unaffected_reg",
       "variadic_preserve"
     ],
     "total_lines": 129
@@ -220,32 +219,18 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unaffected register variable",
       "line": 8,
-      "match": "in_stack_00000014",
-      "text": "int in_stack_00000014;",
-      "type": "stack_param"
+      "match": "unaff_EBP",
+      "text": "FILE *unaff_EBP;",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000018",
-      "text": "FILE *in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
+      "description": "Unaffected register variable",
       "line": 34,
-      "match": "in_stack_00000018",
-      "text": "g_ActorDataFile = in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 36,
-      "match": "in_stack_00000014",
-      "text": "g_ActorReadingMode = in_stack_00000014;",
-      "type": "stack_param"
+      "match": "unaff_EBP",
+      "text": "g_ActorDataFile = unaff_EBP;",
+      "type": "unaffected_reg"
     },
     {
       "add_esp_value": 4,
@@ -268,7 +253,7 @@
     },
     {
       "call_address": "0040af71",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -282,7 +267,7 @@
     },
     {
       "call_address": "0040af86",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -296,7 +281,7 @@
     },
     {
       "call_address": "0040afed",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "unknown",
       "esp_certainty_at_call": "known",
@@ -310,7 +295,7 @@
     },
     {
       "call_address": "0040b038",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -321,28 +306,6 @@
       "target_function": "core_main.c_displayErrorAndQuit_FUN_00506f10",
       "text": "Call to variadic function core_main.c_displayErrorAndQuit_FUN_00506f10 at 0040b038 (no EBP frame)",
       "type": "variadic_preserve"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s} %s \\\"%s\\\"\\n\" has 3 specifiers but 0 arguments after it",
-      "expected_args": 3,
-      "format_string": "%s} %s \\\"%s\\\"\\n",
-      "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 27,
-      "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file_handle,\"%s} %s \\\"%s\\\"\\n\");",
-      "text": "Format string expects 3 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"IO Error after writing actor of type %s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "IO Error after writing actor of type %s",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 32,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"IO Error after writing actor of type %s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 4,

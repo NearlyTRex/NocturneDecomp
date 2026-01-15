@@ -13,18 +13,19 @@ sound_mp3_cpp_CFileBitStream_readBits_FUN_0052ef40(CFileBitStream *bitstream,int
   SIZE_T SVar1;
   char *buffer;
   int iVar2;
-  uint unaff_EBP;
+  uint local_14;
   
+  local_14 = 0;
   if (0x20 < num_bits) {
     g_CurrentFilename = "..\\sound\\mp3.cpp";
     g_CurrentLineNumber = 0x267;
     core_main_c_displayErrorAndQuit_FUN_00506f10
-              ("Cannot read or write more than %d bits at a time.  File: %s",0x20,g_CurrentMp3Filename,0);
+              ("Cannot read or write more than %d bits at a time.  File: %s",0x20,g_CurrentMp3Filename);
   }
   bitstream->total_bits_read = bitstream->total_bits_read + num_bits;
   do {
     if (num_bits < 1) {
-      return unaff_EBP;
+      return local_14;
     }
     if (bitstream->bits_available == 0) {
       bitstream->bits_available = 8;
@@ -76,10 +77,10 @@ LAB_0052ef6c:
     }
     num_bits = num_bits - iVar2;
     iVar2 = bitstream->bits_available - iVar2;
-    unaff_EBP = unaff_EBP |
-                ((int)((uint)(byte)bitstream->buffer[bitstream->current_byte_index] &
-                      g_MpegBitMaskTableMultiBit[bitstream->bits_available]) >> ((byte)iVar2 & 0x1f)
-                ) << ((byte)num_bits & 0x1f);
+    local_14 = local_14 |
+               ((int)((uint)(byte)bitstream->buffer[bitstream->current_byte_index] &
+                     g_MpegBitMaskTableMultiBit[bitstream->bits_available]) >> ((byte)iVar2 & 0x1f))
+               << ((byte)num_bits & 0x1f);
     bitstream->bits_available = iVar2;
   } while( true );
 }

@@ -6,45 +6,42 @@
 
 #include "nocturne.h"
 
-void core_skeledit_cpp_FUN_0058e0b0
-               (uint param_1,uint param_2,int unaff_EBX,uint param_4,
-               uint param_5,int param_6,int param_7,int param_8,uint param_9,
-               char *param_10)
+void core_skeledit_cpp_FUN_0058e0b0(void)
 
 {
   char cVar1;
   int iVar2;
   char *path;
-  BADSPACEBASE *in_ESP;
   int iVar3;
   char *pcVar4;
   char *path_buffer;
-  char acStack_208 [4];
-  char acStack_204 [8];
-  char acStack_1fc [240];
-  char acStack_10c [4];
-  byte auStack_108 [252];
-  int iStack_c;
+  int in_stack_00000004;
+  char *in_stack_00000008;
+  char local_31c [260];
+  char local_218 [256];
+  char local_118 [256];
+  int local_18;
+  int local_14;
   
   crt_stack_c_stack_probe_FUN_005ff9f3(0x334);
-  if (4 < *(int *)(param_7 + 0xb8)) {
+  if (4 < *(int *)(in_stack_00000004 + 0xb8)) {
     g_CurrentFilename = "..\\core\\skeledit.cpp";
     g_CurrentLineNumber = 0x912;
     core_main_c_displayErrorAndQuit_FUN_00506f10("Can't add another texture set!");
   }
-  iStack_c = *(int *)(param_8 + 0xb8);
+  local_18 = *(int *)(in_stack_00000004 + 0xb8);
   iVar3 = 0;
-  *(int *)(param_8 + 0xb8) = iStack_c + 1;
-  if (0 < *(int *)(param_8 + 0xbc)) {
-    iStack_c = iStack_c * 0x1680;
-    path = (char *)(param_8 + 200);
+  *(int *)(in_stack_00000004 + 0xb8) = local_18 + 1;
+  if (0 < *(int *)(in_stack_00000004 + 0xbc)) {
+    local_14 = in_stack_00000004 + 0xc0;
+    local_18 = local_18 * 0x1680;
+    path = (char *)(in_stack_00000004 + 200);
     do {
-      crt_string_c_splitpath_FUN_005ff178(path,(char *)0x0,(char *)0x0,acStack_10c,(char *)0x0);
-      crt_stdio_c_sprintf_FUN_005fdbd0(acStack_208,param_10,auStack_108);
-      crt_file_c_makepath_FUN_005febfc
-                (&stack0xfffffcf8,(char *)0x0,(char *)0x0,acStack_204,".tga");
-      iVar2 = engine_dosio_c_getFileSize_FUN_00481880("art",&stack0xfffffcfc);
-      path_buffer = (char *)(iVar3 * 0x48 + param_6 + unaff_EBX + 8);
+      crt_string_c_splitpath_FUN_005ff178(path,(char *)0x0,(char *)0x0,local_118,(char *)0x0);
+      crt_stdio_c_sprintf_FUN_005fdbd0(local_218,in_stack_00000008,local_118);
+      crt_file_c_makepath_FUN_005febfc(local_31c,(char *)0x0,(char *)0x0,local_218,".tga");
+      iVar2 = engine_dosio_c_getFileSize_FUN_00481880("art",local_31c);
+      path_buffer = (char *)(iVar3 * 0x48 + local_14 + local_18 + 8);
       pcVar4 = path;
       if (iVar2 < 0) {
         do {
@@ -59,11 +56,11 @@ void core_skeledit_cpp_FUN_0058e0b0
       }
       else {
         crt_file_c_makepath_FUN_005febfc
-                  (path_buffer,(char *)0x0,(char *)0x0,acStack_1fc,".raw");
+                  (path_buffer,(char *)0x0,(char *)0x0,local_218,".raw");
       }
       iVar3 = iVar3 + 1;
       path = path + 0x48;
-    } while (iVar3 < *(int *)(param_8 + 0xbc));
+    } while (iVar3 < *(int *)(in_stack_00000004 + 0xbc));
   }
   return;
 }

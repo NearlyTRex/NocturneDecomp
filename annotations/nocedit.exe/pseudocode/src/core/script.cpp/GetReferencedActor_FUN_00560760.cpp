@@ -11,32 +11,27 @@
 void core_script_cpp_GetReferencedActor_FUN_00560760(void)
 
 {
-  uint *puVar1;
-  char *pcVar2;
-  int iVar3;
-  BADSPACEBASE *in_ESP;
-  uint *puVar4;
+  char *pcVar1;
+  int iVar2;
+  uint *puVar3;
   FILE *in_stack_00000004;
-  uint *in_stack_00000010;
-  uint *in_stack_00000014;
-  byte *puStack_cc;
-  byte auStack_c8 [192];
+  uint *in_stack_00000008;
+  char local_d0 [200];
   
-  puVar4 = &DAT_00680d60;
-  puVar1 = (uint *)&stack0xffffff30;
-  for (iVar3 = 0x32; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar1 = *puVar4;
-    puVar4 = puVar4 + 1;
-    puVar1 = puVar1 + 1;
+  puVar3 = &DAT_00680d60;
+  pcVar1 = local_d0;
+  for (iVar2 = 0x32; iVar2 != 0; iVar2 = iVar2 + -1) {
+    *(uint *)pcVar1 = *puVar3;
+    puVar3 = puVar3 + 1;
+    pcVar1 = (char *)((int)pcVar1 + 4);
   }
-  crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000004,"\"%[^\"]\"\n",&stack0xffffff30);
-  iVar3 = crt_string_c_stricmp_FUN_005fe7f0((char *)&puStack_cc,"(none)");
-  puStack_cc = auStack_c8;
-  if (iVar3 == 0) {
-    *in_stack_00000010 = 0;
+  crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000004,"\"%[^\"]\"\n",local_d0);
+  iVar2 = crt_string_c_stricmp_FUN_005fe7f0(local_d0,"(none)");
+  if (iVar2 == 0) {
+    *in_stack_00000008 = 0;
     return;
   }
-  pcVar2 = core_mission_cpp_CDemonMission_FUN_00524030(g_CDemonMissionPtr);
-  *in_stack_00000014 = pcVar2;
+  pcVar1 = core_mission_cpp_CDemonMission_FUN_00524030(g_CDemonMissionPtr);
+  *in_stack_00000008 = pcVar1;
   return;
 }

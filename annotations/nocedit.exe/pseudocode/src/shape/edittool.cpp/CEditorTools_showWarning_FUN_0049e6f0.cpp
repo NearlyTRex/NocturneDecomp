@@ -10,9 +10,11 @@ void __cdecl
 shape_edittool_cpp_CEditorTools_showWarning_FUN_0049e6f0(CEditorTools *this_ptr,char *format,...)
 
 {
-  BADSPACEBASE *in_ESP;
+  va_list_t local_8;
   
-  crt_stdio_c_vsprintf_FUN_005fdba8(g_DialogMessageBuffer,format,(va_list_t *)&stack0xfffffff8);
+  local_8 = &stack0x0000000c;
+  crt_stdio_c_vsprintf_FUN_005fdba8(g_DialogMessageBuffer,format,&local_8);
+  local_8 = (va_list_t)0x0;
   shape_edittool_cpp_drawSingleButtonPrompt_FUN_0049e130
             ("Warning",g_DialogMessageBuffer,(int)g_DialogParentWindow);
   return;

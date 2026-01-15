@@ -34,7 +34,6 @@ void core_ghoul_cpp_CGhoul_FUN_004e6600(void)
   int extraout_EAX_01;
   uint uVar16;
   CLocation *pCVar17;
-  BADSPACEBASE *in_ESP;
   char *pcVar18;
   char *pcVar19;
   char cVar20;

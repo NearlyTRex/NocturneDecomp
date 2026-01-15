@@ -17,7 +17,6 @@ shape_meshlod_cpp_CLodMesh_computePointToFaceDistance_FUN_0051a400
   CVector3f *pCVar4;
   CLodVert *pCVar5;
   byte bVar6;
-  BADSPACEBASE *in_ESP;
   CLodVert *edge_vertex_1;
   CLodMesh *in_stack_00000004;
   CVector3f local_98;

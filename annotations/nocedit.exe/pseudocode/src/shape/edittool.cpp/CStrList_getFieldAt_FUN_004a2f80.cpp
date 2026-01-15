@@ -15,13 +15,12 @@ shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80
   char *pcVar2;
   char *pcVar3;
   char *pcVar4;
-  BADSPACEBASE *in_ESP;
-  char acStack_130 [296];
+  char local_134 [300];
   
   pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(this_ptr,(int)output_buffer);
   for (; (pcVar3 != (char *)0x0 && (0 < field_number)); field_number = field_number + -1) {
     cVar1 = *pcVar3;
-    pcVar4 = acStack_130;
+    pcVar4 = local_134;
     pcVar2 = pcVar3;
     while ((pcVar3 = pcVar2, cVar1 != '\0' && (pcVar3 = pcVar2 + 1, *pcVar2 != '\t'))) {
       *pcVar4 = *pcVar2;
@@ -36,13 +35,13 @@ shape_edittool_cpp_CStrList_getFieldAt_FUN_004a2f80
     while ((cVar1 != '\0' && (*pcVar3 != '\t'))) {
       cVar1 = *pcVar3;
       pcVar3 = pcVar3 + 1;
-      *output_buffer = cVar1;
+      *(char *)string_index = cVar1;
       cVar1 = *pcVar3;
-      output_buffer = output_buffer + 1;
+      string_index = string_index + 1;
     }
-    *output_buffer = '\0';
+    *(char *)string_index = '\0';
     return;
   }
-  *output_buffer = '\0';
+  *(byte *)string_index = 0;
   return;
 }

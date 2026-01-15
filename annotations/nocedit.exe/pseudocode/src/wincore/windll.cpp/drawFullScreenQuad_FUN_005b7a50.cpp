@@ -9,33 +9,31 @@
 int __cdecl wincore_windll_cpp_drawFullScreenQuad_FUN_005b7a50(int color)
 
 {
-  BADSPACEBASE *in_ESP;
-  int in_stack_00000008;
-  SRenderVertex SStack_bc;
-  int iStack_84;
+  SRenderVertex local_c0;
+  int local_88;
+  int local_80;
   int local_7c;
-  int iStack_78;
-  int iStack_54;
+  int local_58;
+  int local_50;
   int local_4c;
-  int iStack_48;
-  int iStack_24;
+  int local_28;
+  int local_20;
   int local_1c;
-  int iStack_18;
   
-  crt_memory_c_memset_FUN_005fde40(&stack0xffffff40,0,0xc0);
-  SStack_bc.projected_vertex.screen_x = g_ClipLeft << 0x10;
-  SStack_bc.projected_vertex.screen_y = g_ClipTop << 0x10;
-  local_7c = g_ClipRight << 0x10;
-  iStack_48 = g_ClipBottom << 0x10;
-  SStack_bc.projected_vertex.transformed_z = g_SystemMemorySize;
-  iStack_84 = g_SystemMemorySize;
-  iStack_54 = g_SystemMemorySize;
-  iStack_24 = g_SystemMemorySize;
-  g_ActiveRenderColor = in_stack_00000008;
-  iStack_78 = SStack_bc.projected_vertex.screen_y;
-  local_4c = local_7c;
-  local_1c = SStack_bc.projected_vertex.screen_x;
-  iStack_18 = iStack_48;
-  wincore_windll_cpp_drawPolygon_FUN_005b75e0(&SStack_bc,4,0x10);
+  crt_memory_c_memset_FUN_005fde40(&local_c0,0,0xc0);
+  local_c0.projected_vertex.screen_x = g_ClipLeft << 0x10;
+  local_c0.projected_vertex.screen_y = g_ClipTop << 0x10;
+  local_80 = g_ClipRight << 0x10;
+  local_4c = g_ClipBottom << 0x10;
+  local_c0.projected_vertex.transformed_z = g_SystemMemorySize;
+  local_88 = g_SystemMemorySize;
+  local_58 = g_SystemMemorySize;
+  local_28 = g_SystemMemorySize;
+  g_ActiveRenderColor = color;
+  local_7c = local_c0.projected_vertex.screen_y;
+  local_50 = local_80;
+  local_20 = local_c0.projected_vertex.screen_x;
+  local_1c = local_4c;
+  wincore_windll_cpp_drawPolygon_FUN_005b75e0(&local_c0,4,0x10);
   return 1;
 }

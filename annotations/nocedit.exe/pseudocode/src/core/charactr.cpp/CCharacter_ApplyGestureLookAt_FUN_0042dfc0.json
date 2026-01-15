@@ -1,18 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 133,
+    "complexity_score": 123,
     "cross_reference_count": 37,
     "function_call_count": 6,
     "global_count": 0,
-    "pseudocode_lines": 28,
+    "pseudocode_lines": 18,
     "suspect_count": 9,
     "suspect_types": [
       "call_esp_preserve",
       "callind_preserve",
-      "stack_param"
+      "unaffected_reg"
     ],
-    "total_lines": 82
+    "total_lines": 72
   },
   "cross_references": [
     {
@@ -326,18 +326,18 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 7,
-      "match": "in_stack_00000010",
-      "text": "SCollisionInfo *in_stack_00000010;",
-      "type": "stack_param"
+      "description": "Unaffected register variable",
+      "line": 6,
+      "match": "unaff_EBX",
+      "text": "SCollisionInfo *unaff_EBX;",
+      "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_00000010",
-      "text": "(&this_ptr->base_actor,in_stack_00000010);",
-      "type": "stack_param"
+      "description": "Unaffected register variable",
+      "line": 14,
+      "match": "unaff_EBX",
+      "text": "iVar1 = (*(this_ptr->base_actor).vtable[1].hasCollision)(&this_ptr->base_actor,unaff_EBX);",
+      "type": "unaffected_reg"
     },
     {
       "add_esp_value": 4,

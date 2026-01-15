@@ -17,6 +17,7 @@ sound_sndmain_cpp_getSoundMemoryStats_FUN_005aa6a0
   int iVar2;
   int iVar3;
   int local_1c;
+  int local_18;
   int local_14;
   
   this_ptr = g_SfxSamples;
@@ -24,15 +25,17 @@ sound_sndmain_cpp_getSoundMemoryStats_FUN_005aa6a0
   iVar3 = 0;
   local_1c = 0;
   local_14 = 0;
+  local_18 = 0;
   do {
     if (0 < g_SfxSamples[iVar3].streaming_buffer_size) {
       if ((g_SfxSamples[iVar3].ref_count == 0) && (g_SfxSamples[iVar3].taken == 0)) {
         local_1c = local_1c + 1;
-        sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550(g_SfxSamples + iVar3);
+        iVar1 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550(g_SfxSamples + iVar3);
+        local_14 = local_14 + iVar1 * g_SfxSamples[iVar3].streaming_buffer_size;
       }
       else {
         iVar1 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550(this_ptr);
-        local_14 = local_14 + 1;
+        local_18 = local_18 + 1;
         iVar2 = iVar2 + iVar1 * this_ptr->streaming_buffer_size;
       }
     }
@@ -40,7 +43,7 @@ sound_sndmain_cpp_getSoundMemoryStats_FUN_005aa6a0
     this_ptr = this_ptr + 1;
   } while (iVar3 < 0x40);
   if (out_referenced_count != (int *)0x0) {
-    *out_referenced_count = 0;
+    *out_referenced_count = local_18;
   }
   if (out_total_bytes_referenced != (int *)0x0) {
     *out_total_bytes_referenced = iVar2;
@@ -52,7 +55,7 @@ sound_sndmain_cpp_getSoundMemoryStats_FUN_005aa6a0
     *out_total_bytes_unreferenced = local_14;
   }
   if (out_free_slots != (int *)0x0) {
-    *out_free_slots = 0x40 - local_1c;
+    *out_free_slots = 0x40 - (local_18 + local_1c);
   }
   if ((out_available_memory != (int *)0x0) &&
      (iVar2 = g_MaximumSoundMemoryBudget - (iVar2 + local_14), *out_available_memory = iVar2,

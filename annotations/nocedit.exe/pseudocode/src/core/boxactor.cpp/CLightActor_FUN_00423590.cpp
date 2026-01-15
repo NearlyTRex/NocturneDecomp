@@ -10,11 +10,11 @@ uint core_boxactor_cpp_CLightActor_FUN_00423590(void)
 
 {
   int iVar1;
-  int in_stack_00000008;
+  int in_stack_00000004;
   
   iVar1 = core_boxactor_cpp_FUN_00423110();
   if (-1 < iVar1) {
-    *(int *)(in_stack_00000008 + 0x66c) = iVar1;
+    *(int *)(in_stack_00000004 + 0x66c) = iVar1;
     return 1;
   }
   return 0;

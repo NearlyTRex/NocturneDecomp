@@ -1,19 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 110,
-    "complexity_score": 224,
+    "complexity_score": 203,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 12,
-    "pseudocode_lines": 44,
-    "suspect_count": 16,
+    "pseudocode_lines": 43,
+    "suspect_count": 14,
     "suspect_types": [
       "call_esp_preserve",
       "callind_preserve",
       "stack_param",
       "variadic_preserve"
     ],
-    "total_lines": 154
+    "total_lines": 153
   },
   "cross_references": [],
   "function": {
@@ -232,57 +232,43 @@
     {
       "description": "Unresolved stack parameter",
       "line": 10,
-      "match": "in_stack_0000000c",
-      "text": "CDeformableModel *in_stack_0000000c;",
+      "match": "in_stack_00000004",
+      "text": "CDeformableModel *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 11,
-      "match": "in_stack_0000001c",
-      "text": "int in_stack_0000001c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000020",
-      "text": "float in_stack_00000020;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 26,
       "match": "in_stack_0000000c",
-      "text": "(this_ptr_01,in_stack_0000000c);",
+      "text": "float in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 28,
-      "match": "in_stack_0000001c",
-      "text": "(this_ptr_01,in_stack_0000001c,in_stack_00000020);",
+      "line": 25,
+      "match": "in_stack_00000004",
+      "text": "(this_ptr_01,in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 28,
-      "match": "in_stack_00000020",
-      "text": "(this_ptr_01,in_stack_0000001c,in_stack_00000020);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 33,
+      "line": 27,
       "match": "in_stack_0000000c",
-      "text": "if (0 < in_stack_0000000c->vertex_count[0]) {",
+      "text": "(this_ptr_01,(int)this_ptr,in_stack_0000000c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 40,
-      "match": "in_stack_0000000c",
-      "text": "} while (iVar3 < in_stack_0000000c->vertex_count[0]);",
+      "line": 32,
+      "match": "in_stack_00000004",
+      "text": "if (0 < in_stack_00000004->vertex_count[0]) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 39,
+      "match": "in_stack_00000004",
+      "text": "} while (iVar3 < in_stack_00000004->vertex_count[0]);",
       "type": "stack_param"
     },
     {

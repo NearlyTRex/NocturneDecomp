@@ -9,7 +9,6 @@
 void __cdecl core_fire_cpp_CFireEffect_FUN_004c7f80(CFireEffect *this_ptr)
 
 {
-  BADSPACEBASE *in_ESP;
   float *in_stack_00000008;
   float *in_stack_0000000c;
   float in_stack_0000001c;
@@ -71,7 +70,7 @@ void __cdecl core_fire_cpp_CFireEffect_FUN_004c7f80(CFireEffect *this_ptr)
     local_38 = local_50 + local_5c;
     if (local_80 <= 0.0) break;
     core_fire_cpp_CFireEffect_FUN_004c7eb0(this_ptr);
-    if (&local_6c != &local_3c) {
+    if (&local_70 != &local_40) {
       local_70 = local_40;
       local_6c = local_3c;
       local_68 = local_38;

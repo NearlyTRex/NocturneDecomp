@@ -16,7 +16,6 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_00429870(CCharacter *this_ptr)
   int iVar3;
   CCharacter *pCVar4;
   float in_stack_00000008;
-  float in_stack_00000010;
   
   fVar2 = *(float *)(this_ptr->cloth_data + 0x340) - in_stack_00000008;
   *(float *)(this_ptr->cloth_data + 0x340) = fVar2;
@@ -28,7 +27,7 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_00429870(CCharacter *this_ptr)
   }
   core_charactr_cpp_CCharacter_FUN_0042a830(this_ptr);
   core_charactr_cpp_CCharacter_FUN_0042d4d0(this_ptr);
-  fVar2 = *(float *)(this_ptr->cloth_data + 0x8d48) - in_stack_00000010;
+  fVar2 = *(float *)(this_ptr->cloth_data + 0x8d48) - in_stack_00000008;
   *(float *)(this_ptr->cloth_data + 0x8d48) = fVar2;
   if (fVar2 < 0.0) {
     this_ptr->cloth_data[0x8d48] = '\0';
@@ -37,7 +36,7 @@ int __cdecl core_charactr_cpp_CCharacter_FUN_00429870(CCharacter *this_ptr)
     this_ptr->cloth_data[0x8d4b] = '\0';
   }
   if ((0.0 < *(float *)(this_ptr->field11_0x25a0 + 0x78)) &&
-     (fVar2 = *(float *)(this_ptr->field11_0x25a0 + 0x78) - in_stack_00000010,
+     (fVar2 = *(float *)(this_ptr->field11_0x25a0 + 0x78) - in_stack_00000008,
      *(float *)(this_ptr->field11_0x25a0 + 0x78) = fVar2, fVar2 < 0.0)) {
     this_ptr->field11_0x25a0[0x78] = '\0';
     this_ptr->field11_0x25a0[0x79] = '\0';

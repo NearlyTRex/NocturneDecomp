@@ -12,9 +12,9 @@
 void core_stone_cpp_FUN_005badd0(void)
 
 {
-  CActorPropertyList *in_stack_0000000c;
+  CActorPropertyList *in_stack_00000008;
   
   core_boxactor_cpp_FUN_004226e0();
-  core_actor_cpp_CActorPropertyList_FUN_0040e350(in_stack_0000000c);
+  core_actor_cpp_CActorPropertyList_FUN_0040e350(in_stack_00000008);
   return;
 }

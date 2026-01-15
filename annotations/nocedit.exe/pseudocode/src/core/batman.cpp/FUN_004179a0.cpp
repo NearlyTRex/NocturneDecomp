@@ -18,11 +18,11 @@ void core_batman_cpp_FUN_004179a0(void)
   int iVar2;
   SMotion *pSVar3;
   CDemonActor *pCVar4;
-  BADSPACEBASE *in_ESP;
   CCharacter *in_stack_00000004;
   float in_stack_00000008;
-  CVector3f CStack_20;
-  CCharacter *pCStack_14;
+  CVector3f local_3c;
+  CVector3f local_30;
+  CVector3f local_24;
   
   sound_sndmain_cpp_killSfx_FUN_005a9c40(in_stack_00000004[1].base_actor.field28_0x150);
   sound_sndmain_cpp_killSfx_FUN_005a9c40(in_stack_00000004[1].base_actor.field26_0x148);
@@ -31,8 +31,8 @@ void core_batman_cpp_FUN_004179a0(void)
     *(float *)((int)in_stack_00000008 + 4) =
          *(float *)((int)in_stack_00000008 + 4) * (float)2;
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-              (&in_stack_00000004->base_actor,(CVector3f *)&stack0xffffffd8,
-               (CVector3f *)((int)in_stack_00000008 + 0x1c));
+              (&in_stack_00000004->base_actor,&local_30,(CVector3f *)((int)in_stack_00000008 + 0x1c)
+              );
     do {
       iVar2 = iVar2 + 1;
       core_fire_cpp_CFireEffect_FUN_004c79d0(g_CFireEffectPtr);
@@ -41,9 +41,9 @@ void core_batman_cpp_FUN_004179a0(void)
   if (*(int *)((int)in_stack_00000008 + 0x30) == 0x6c) {
     input_local_point =
          core_skeleton_cpp_CDeformableModelInstance_getBoneCachedWorldPosition_FUN_0059fb00
-                   (&in_stack_00000004->model,(CVector3f *)&stack0xffffffd0,0);
+                   (&in_stack_00000004->model,&local_3c,0);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-              (&in_stack_00000004->base_actor,&CStack_20,input_local_point);
+              (&in_stack_00000004->base_actor,&local_24,input_local_point);
     core_charactr_cpp_CCharacter_FUN_0042b5b0(in_stack_00000004);
   }
   core_batman_cpp_FUN_00417660();
@@ -62,8 +62,8 @@ void core_batman_cpp_FUN_004179a0(void)
                (*((in_stack_00000004->base_actor).vtable)->playSound)
                          (&in_stack_00000004->base_actor,"batman-die.wav");
       in_stack_00000004[1].base_actor.next_actor = pCVar4;
-      pCStack_14 = in_stack_00000004;
-      CStack_20.z = 6.0136e-39;
+      local_3c.y = in_stack_00000008;
+      local_3c.x = (float)in_stack_00000004;
       core_enemy_cpp_FUN_004a9f10();
       return;
     }
@@ -89,9 +89,8 @@ void core_batman_cpp_FUN_004179a0(void)
                (*((in_stack_00000004->base_actor).vtable)->playSound)
                          (&in_stack_00000004->base_actor,"batman-hurt?.wav");
       in_stack_00000004[1].base_actor.next_actor = pCVar4;
-      CStack_20.z = in_stack_00000008;
-      CStack_20.y = (float)in_stack_00000004;
-      CStack_20.x = 6.013658e-39;
+      local_3c.y = in_stack_00000008;
+      local_3c.x = (float)in_stack_00000004;
       core_enemy_cpp_FUN_004a9f10();
       return;
     }

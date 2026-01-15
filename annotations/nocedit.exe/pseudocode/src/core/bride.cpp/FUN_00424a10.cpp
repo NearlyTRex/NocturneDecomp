@@ -13,7 +13,6 @@ uint core_bride_cpp_FUN_00424a10(void)
 
 {
   CVector3f *pCVar1;
-  BADSPACEBASE *in_ESP;
   int in_stack_00000004;
   CVector3f *in_stack_00000008;
   CVector3f local_1c;

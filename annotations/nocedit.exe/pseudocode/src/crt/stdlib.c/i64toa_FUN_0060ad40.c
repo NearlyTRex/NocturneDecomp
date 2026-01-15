@@ -11,15 +11,13 @@ char * __cdecl crt_stdlib_c_i64toa_FUN_0060ad40(longlong *value,char *buffer,int
 {
   char cVar1;
   int iVar2;
-  int iVar3;
-  BADSPACEBASE *in_ESP;
-  char *unaff_EBP;
+  uint uVar3;
   char *pcVar4;
   char local_53 [35];
   int local_30;
-  int local_2c;
+  uint local_2c;
   int local_28;
-  int local_24;
+  uint local_24;
   ulonglong local_20;
   char *local_18;
   
@@ -31,19 +29,19 @@ char * __cdecl crt_stdlib_c_i64toa_FUN_0060ad40(longlong *value,char *buffer,int
   do {
     do {
       iVar2 = local_28;
-      iVar3 = local_24;
+      uVar3 = local_24;
       local_20 = crt_math_c_udivmod64_FUN_0060d3ed(local_20,CONCAT44 /* combine 2-byte values */(local_24,local_28));
       local_30 = iVar2;
-      local_2c = iVar3;
-      *pcVar4 = g_AlphaNumericCharacters1[iVar3];
+      local_2c = uVar3;
+      *pcVar4 = g_AlphaNumericCharacters1[iVar2];
       pcVar4 = pcVar4 + 1;
-    } while (local_20._4_4_ != 0);
-  } while (local_18 != (char *)0x0);
+    } while ((int)local_20 != 0);
+  } while (local_20._4_4_ != 0);
   do {
     cVar1 = pcVar4[-1];
     pcVar4 = pcVar4 + -1;
-    *unaff_EBP = cVar1;
-    unaff_EBP = unaff_EBP + 1;
+    *local_18 = cVar1;
+    local_18 = local_18 + 1;
   } while (cVar1 != '\0');
-  return (char *)base;
+  return buffer;
 }

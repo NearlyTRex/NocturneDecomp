@@ -12,8 +12,6 @@ void __cdecl engine_pod_cpp_CPod_mount_FUN_00550a10(CPod *this_ptr,char *pod_fil
   CPodFile *this_ptr_00;
   CPodFile *pCVar1;
   int iVar2;
-  char *in_stack_00000014;
-  uint in_stack_00000018;
   
   if (99 < this_ptr->pod_file_count) {
     g_CurrentFilename = "..\\engine\\pod.cpp";
@@ -32,14 +30,14 @@ void __cdecl engine_pod_cpp_CPod_mount_FUN_00550a10(CPod *this_ptr,char *pod_fil
     core_main_c_displayErrorAndQuit_FUN_00506f10("Out of memory!");
   }
   iVar2 = engine_pod_cpp_CPodFile_mountFromFile_FUN_0054f650
-                    (this_ptr->pod_files[this_ptr->pod_file_count],in_stack_00000014);
+                    (this_ptr->pod_files[this_ptr->pod_file_count],pod_filename);
   if (iVar2 != 0) {
     this_ptr->pod_file_count = this_ptr->pod_file_count + 1;
     return;
   }
   g_CurrentFilename = "..\\engine\\pod.cpp";
   g_CurrentLineNumber = 0x3a1;
-  core_main_c_displayErrorAndQuit_FUN_00506f10("Can't mount %s",in_stack_00000018);
+  core_main_c_displayErrorAndQuit_FUN_00506f10("Can't mount %s",pod_filename);
   this_ptr->pod_file_count = this_ptr->pod_file_count + 1;
   return;
 }

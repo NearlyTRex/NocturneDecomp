@@ -10,7 +10,6 @@ void __cdecl wincore_wddvmem_cpp_reinitializeGraphicsSystem_FUN_005ed4b0(void)
 
 {
   HRESULT HVar1;
-  uint uStack0000000c;
   
   g_GraphicsResetFlag = 0;
   if (g_FullscreenMode == 0) {
@@ -38,7 +37,6 @@ void __cdecl wincore_wddvmem_cpp_reinitializeGraphicsSystem_FUN_005ed4b0(void)
   if (HVar1 == 0) {
     (*g_DirectDrawObject->vtable->SetCooperativeLevel)(g_DirectDrawObject,g_MainWindowHandle,0x11);
   }
-  uStack0000000c = 0x5ed576;
   wincore_wddvmem_cpp_setScreenResolution_FUN_005ecef0(g_WindowWidth,g_WindowHeight,g_BitsPerPixel);
   return;
 }

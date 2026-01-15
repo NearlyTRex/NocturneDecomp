@@ -11,8 +11,7 @@ core_motion_cpp_CMotionController_getCurrentStateName_FUN_0052dcf0(CMotionContro
 
 {
   SMotion *pSVar1;
-  int *in_stack_00000008;
   
   pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_0052dab0(this_ptr);
-  return (char *)(pSVar1->state_index * 0x1e + *in_stack_00000008 + 4);
+  return this_ptr->motion_list_ptr->state_names[pSVar1->state_index];
 }

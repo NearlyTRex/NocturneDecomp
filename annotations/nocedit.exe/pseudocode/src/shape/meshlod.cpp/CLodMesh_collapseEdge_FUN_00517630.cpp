@@ -22,7 +22,6 @@ shape_meshlod_cpp_CLodMesh_collapseEdge_FUN_00517630
   int extraout_EAX;
   int iVar9;
   CLodVert *pCVar10;
-  BADSPACEBASE *in_ESP;
   CLodEdge *pCVar11;
   int *piVar12;
   CLodEdge *pCVar13;

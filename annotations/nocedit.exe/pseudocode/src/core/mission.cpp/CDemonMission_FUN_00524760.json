@@ -1,19 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 113,
-    "complexity_score": 205,
+    "complexity_score": 178,
     "cross_reference_count": 5,
     "function_call_count": 10,
     "global_count": 20,
-    "pseudocode_lines": 45,
-    "suspect_count": 14,
+    "pseudocode_lines": 43,
+    "suspect_count": 12,
     "suspect_types": [
       "call_esp_preserve",
       "extra_output",
-      "unaffected_reg",
       "variadic_preserve"
     ],
-    "total_lines": 158
+    "total_lines": 156
   },
   "cross_references": [
     {
@@ -283,20 +282,6 @@
       "match": "extraout_EAX",
       "text": "int extraout_EAX;",
       "type": "extra_output"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 8,
-      "match": "unaff_EBX",
-      "text": "int unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 33,
-      "match": "unaff_EBX",
-      "text": "core_level_cpp_CLevelLoader_update_FUN_00504160(g_CLevelLoaderPtr,text,unaff_EBX);",
-      "type": "unaffected_reg"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",

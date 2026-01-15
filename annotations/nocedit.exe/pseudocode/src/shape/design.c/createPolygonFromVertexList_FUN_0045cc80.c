@@ -9,7 +9,6 @@
 void shape_design_c_createPolygonFromVertexList_FUN_0045cc80(void)
 
 {
-  BADSPACEBASE *in_ESP;
   char local_a8 [80];
   uint local_58;
   byte local_54 [4];

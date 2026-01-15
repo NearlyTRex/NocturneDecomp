@@ -14,7 +14,6 @@ void __cdecl core_fire_cpp_CFireball_render_FUN_004c0e70(CFireball *this_ptr)
   CKeyFramedModel *pCVar3;
   int iVar4;
   CKeyFramedModelInstance *this_ptr_00;
-  BADSPACEBASE *in_ESP;
   SMRGLTextureBasic *texture;
   float local_e4;
   float local_e0;

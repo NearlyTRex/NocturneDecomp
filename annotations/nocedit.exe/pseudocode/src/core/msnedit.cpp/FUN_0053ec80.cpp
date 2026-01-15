@@ -13,20 +13,16 @@ void core_msnedit_cpp_FUN_0053ec80(void)
 {
   CDemonActor *this_ptr;
   int *piVar1;
-  BADSPACEBASE *in_ESP;
   int iVar2;
   CDemonMission *in_stack_00000004;
-  int in_stack_ffffd564;
-  uint in_stack_ffffd570;
-  uint in_stack_ffffd574;
-  uint in_stack_ffffd578;
-  uint in_stack_ffffd57c;
-  uint in_stack_ffffd580;
-  byte local_5ac [28];
-  byte auStack_590 [916];
-  char acStack_1fc [4];
-  char acStack_1f8 [296];
-  char cStack_d0;
+  CDemonActor *in_stack_ffffd550;
+  char *in_stack_ffffd554;
+  uint in_stack_ffffd558;
+  uint in_stack_ffffd55c;
+  uint in_stack_ffffd560;
+  byte local_5ac [944];
+  char acStack_1fc [300];
+  char acStack_d0 [192];
   
   shape_edittool_cpp_CPickList_ctor_FUN_004a3b90((CPickList *)local_5ac);
   if (*(int *)(in_stack_00000004->field6_0x54c + 0x338) == 0) {
@@ -39,28 +35,36 @@ void core_msnedit_cpp_FUN_0053ec80(void)
   for (this_ptr = in_stack_00000004->first_actor; this_ptr != (CDemonActor *)0x0;
       this_ptr = this_ptr->next_actor) {
     core_actor_cpp_FUN_0040e130();
-    (*this_ptr->vtable->getPropertyList)(this_ptr,(CActorPropertyList *)&stack0xffffd54c);
+    (*this_ptr->vtable->getPropertyList)(this_ptr,(CActorPropertyList *)&stack0xffffd550);
     iVar2 = 0;
-    if (0 < in_stack_ffffd564) {
-      piVar1 = (int *)&stack0xffffd568;
+    if (0 < (int)in_stack_ffffd55c) {
+      piVar1 = (int *)&stack0xffffd560;
       do {
-        if ((*piVar1 == 8) && (core_actor_cpp_CActorProperty_FUN_0040ea50(), cStack_d0 != '\0')) {
-          crt_stdio_c_sprintf_FUN_005fdbd0(acStack_1fc,"%s\t%s %s");
-          shape_edittool_cpp_CStrList_add_FUN_004a2b80((CStrList *)(local_5ac + 0xc),acStack_1f8);
+        if (*piVar1 == 8) {
+          in_stack_ffffd554 = acStack_d0;
+          in_stack_ffffd550 = this_ptr;
+          core_actor_cpp_CActorProperty_FUN_0040ea50();
+          if (acStack_d0[0] != '\0') {
+            crt_stdio_c_sprintf_FUN_005fdbd0(acStack_1fc,"%s\t%s %s",acStack_d0);
+            in_stack_ffffd554 = acStack_1fc;
+            in_stack_ffffd550 = (CDemonActor *)(local_5ac + 8);
+            shape_edittool_cpp_CStrList_add_FUN_004a2b80
+                      ((CStrList *)in_stack_ffffd550,in_stack_ffffd554);
+          }
         }
         iVar2 = iVar2 + 1;
         piVar1 = piVar1 + 0x3b;
-      } while (iVar2 < in_stack_ffffd564);
+      } while (iVar2 < (int)in_stack_ffffd55c);
     }
   }
   shape_edittool_cpp_CEditorTools_displayCenteredStatusMessage_FUN_0049e790
             (g_CEditorToolsPtr,"Finding sound files in script...");
   core_script_cpp_FUN_00567bc0();
-  shape_edittool_cpp_CStrList_sort_FUN_004a2ec0((CStrList *)(local_5ac + 0x18));
+  shape_edittool_cpp_CStrList_sort_FUN_004a2ec0((CStrList *)local_5ac);
   shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_004a3e20
-            ((CPickList *)auStack_590,"Sound files used",-1,0);
+            ((CPickList *)local_5ac,"Sound files used",-1,0);
   shape_edittool_cpp_CPickList_dtor_FUN_004a3c80
-            ((CPickList *)(auStack_590 + 4),0,in_stack_ffffd570,in_stack_ffffd574,in_stack_ffffd578,
-             in_stack_ffffd57c,in_stack_ffffd580);
+            ((CPickList *)local_5ac,0,(uint)in_stack_ffffd550,(uint)in_stack_ffffd554,
+             in_stack_ffffd558,in_stack_ffffd55c,in_stack_ffffd560);
   return;
 }

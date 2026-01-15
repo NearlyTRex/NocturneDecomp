@@ -21,7 +21,7 @@ CLightGun * __cdecl core_lightgun_cpp_FUN_00506a50(CLightGun *this_ptr,uint d1,u
   }
   ptr = (CLightGun *)
         core_weapon_cpp_CWeapon_dtor_FUN_005edf80(&this_ptr->base_weapon,1,unaff_EBX,unaff_retaddr);
-  if ((d2 & 2) == 0) {
+  if ((d1 & 2) == 0) {
     return ptr;
   }
   shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);

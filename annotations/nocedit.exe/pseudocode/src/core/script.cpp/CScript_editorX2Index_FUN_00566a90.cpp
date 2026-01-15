@@ -15,6 +15,7 @@ int core_script_cpp_CScript_editorX2Index_FUN_00566a90(void)
   int iVar1;
   char *pcVar2;
   uint uVar3;
+  int in_stack_00000004;
   int in_stack_00000008;
   int in_stack_0000000c;
   
@@ -23,11 +24,11 @@ int core_script_cpp_CScript_editorX2Index_FUN_00566a90(void)
     g_CurrentLineNumber = 0x1bc5;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CScript::editorX2Index - invalid y");
   }
-  iVar1 = shape_edittool_cpp_getFontBitmapCount_FUN_004a6ed0((CBitFont *)(in_stack_00000008 + 0x38))
+  iVar1 = shape_edittool_cpp_getFontBitmapCount_FUN_004a6ed0((CBitFont *)(in_stack_00000004 + 0x38))
   ;
   if (in_stack_00000008 < iVar1) {
     pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70
-                       ((CStrList *)(in_stack_00000008 + 0x38),in_stack_00000008);
+                       ((CStrList *)(in_stack_00000004 + 0x38),in_stack_00000008);
     iVar1 = 0;
     uVar3 = 0;
     if (0 < in_stack_0000000c) {

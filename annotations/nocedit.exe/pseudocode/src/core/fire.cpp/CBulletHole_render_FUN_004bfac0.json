@@ -1,22 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 242,
-    "complexity_score": 559,
+    "complexity_score": 468,
     "cross_reference_count": 2,
     "function_call_count": 9,
     "global_count": 28,
-    "pseudocode_lines": 94,
-    "suspect_count": 43,
+    "pseudocode_lines": 103,
+    "suspect_count": 35,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
-      "register_param",
-      "stack_ref",
-      "suspect_float",
-      "unknown_field"
+      "suspect_float"
     ],
-    "total_lines": 336
+    "total_lines": 345
   },
   "cross_references": [
     {
@@ -483,116 +479,60 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 8,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 8,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 35,
-      "match": "._0_4_",
-      "text": "local_38._0_4_ = (uint)ROUND(256f * -0.17);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 36,
-      "match": "._4_4_",
-      "text": "local_38._4_4_ = (uint)ROUND(256f * -0.17);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 37,
-      "match": "._8_4_",
-      "text": "local_38._8_4_ = (uint)ROUND(256f * 0.0);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 48,
-      "match": "&stack0xffffff9c",
-      "text": "(CVector3i *)&stack0xffffff9c);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 54,
-      "match": "&stack0xfffffff4",
-      "text": "(CVector3i *)&stack0xfffffff4);",
-      "type": "stack_ref"
-    },
-    {
       "description": "Likely misinterpreted integer as float",
-      "line": 64,
+      "line": 74,
       "match": "9.18341e-41",
       "text": "g_RenderVertexBuffer[0].fog = 9.18341e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 65,
+      "line": 75,
       "match": "9.18341e-41",
       "text": "g_RenderVertexBuffer[1].light = 9.18341e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 67,
+      "line": 77,
       "match": "9.18341e-41",
       "text": "g_RenderVertexBuffer[1].fog = 9.18341e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 68,
+      "line": 78,
       "match": "9.18341e-41",
       "text": "g_RenderVertexBuffer[2].light = 9.18341e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 70,
+      "line": 80,
       "match": "9.18341e-41",
       "text": "g_RenderVertexBuffer[2].fog = 9.18341e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 71,
+      "line": 81,
       "match": "9.18341e-41",
       "text": "g_RenderVertexBuffer[3].light = 9.18341e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 73,
+      "line": 83,
       "match": "9.18341e-41",
       "text": "g_RenderVertexBuffer[3].fog = 9.18341e-41;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 74,
+      "line": 84,
       "match": "9.18341e-41",
       "text": "g_RenderVertexBuffer[0].light = 9.18341e-41;",
       "type": "suspect_float"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 82,
-      "match": "._8_4_",
-      "text": "local_38._8_4_ = (uint)ROUND(local_1c.y * 65536f);",
-      "type": "unknown_field"
     },
     {
       "add_esp_value": 4,

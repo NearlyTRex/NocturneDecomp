@@ -10,7 +10,6 @@ void __cdecl
 sound_snddx_cpp_CDirectSoundDevice_commitDeferredSettings_FUN_005b0340(CDirectSoundDevice *this_ptr)
 
 {
-  BADSPACEBASE *in_ESP;
   uint local_10 [4];
   
   if (g_DirectSoundPropertySet == (IKsPropertySet *)0x0) {

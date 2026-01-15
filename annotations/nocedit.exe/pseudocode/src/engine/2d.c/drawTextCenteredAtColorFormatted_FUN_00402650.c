@@ -11,12 +11,12 @@ engine_2d_c_drawTextCenteredAtColorFormatted_FUN_00402650
           (char *format_string,int center_x,int y_pos,...)
 
 {
-  BADSPACEBASE *in_ESP;
-  char acStack_1008 [4092];
+  char local_100c [4096];
   va_list_t local_c;
   
   local_c = &stack0x00000010;
-  crt_stdio_c_vsprintf_FUN_005fdba8(&stack0xffffeff4,(char *)y_pos,&local_c);
-  engine_2d_c_drawTextCenteredAtColor_FUN_004025f0(acStack_1008,center_x,y_pos);
+  crt_stdio_c_vsprintf_FUN_005fdba8(local_100c,(char *)y_pos,&local_c);
+  local_c = (va_list_t)0x0;
+  engine_2d_c_drawTextCenteredAtColor_FUN_004025f0(local_100c,(int)format_string,center_x);
   return;
 }

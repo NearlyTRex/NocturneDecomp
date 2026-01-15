@@ -20,7 +20,6 @@ void __cdecl core_tentacle_cpp_CTentacle_process_FUN_005db050(CTentacle *this_pt
   CTentacle *pCVar5;
   uint uVar6;
   CVector3f *pCVar7;
-  BADSPACEBASE *in_ESP;
   float *pfVar8;
   uint *puVar9;
   char *pcVar10;

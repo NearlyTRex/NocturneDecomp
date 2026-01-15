@@ -12,7 +12,6 @@ void __cdecl core_game_cpp_CGame_beginFadeOut_FUN_004e0960(CGame *this_ptr)
 
 {
   float *pfVar1;
-  BADSPACEBASE *in_ESP;
   byte bVar2;
   int aiStackY_1018 [1000];
   CVector3i *in_stack_ffffff94;

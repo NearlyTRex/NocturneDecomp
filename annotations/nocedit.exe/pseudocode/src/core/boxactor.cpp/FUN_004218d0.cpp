@@ -12,20 +12,18 @@ void core_boxactor_cpp_FUN_004218d0(void)
 
 {
   float fVar1;
-  BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000004;
-  float in_stack_00000008;
-  float in_stack_0000000c;
-  float in_stack_00000010;
-  float fStack_4c;
-  float in_stack_ffffffc8;
+  float fStack_44;
+  float fStack_40;
+  float fStack_3c;
+  float fStack_38;
   float fStack_34;
   float fStack_30;
-  float fStack_2c;
-  float fStack_28;
-  float fStack_24;
-  byte auStack_20 [12];
-  CVector3f CStack_14;
+  CVector3f CStack_2c;
+  CVector3f CStack_20;
+  float fStack_14;
+  float fStack_10;
+  float fStack_c;
   float fStack_8;
   
   fVar1 = in_stack_00000004[2].field12_0xe0.x;
@@ -35,20 +33,20 @@ void core_boxactor_cpp_FUN_004218d0(void)
   in_stack_00000004[4].create_event[0x13] = '\0';
   if ((0.0 < fVar1) && ((byte *)in_stack_00000004->field6_0x68 == &DAT_0078a123)) {
     if (in_stack_00000004[2].location.position.x != 0.0) {
-      (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,(CBoundingBox3D *)&fStack_4c);
-      fStack_8 = in_stack_ffffffc8 + fStack_2c;
-      CStack_14.x = fStack_8 * 0.5f;
-      CStack_14.y = (fStack_34 + fStack_28) * 0.5f;
-      CStack_14.z = (fStack_30 + fStack_24) * 0.5f;
+      (*in_stack_00000004->vtable->getBoundingBox)
+                (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffb4);
+      fStack_14 = fStack_44 + fStack_38;
+      fStack_10 = fStack_40 + fStack_34;
+      CStack_20.x = fStack_14 * 0.5f;
+      CStack_20.y = fStack_10 * 0.5f;
+      fStack_c = fStack_3c + fStack_30;
+      CStack_20.z = fStack_c * 0.5f;
       core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-                (in_stack_00000004,(CVector3f *)auStack_20,&CStack_14);
-      in_stack_00000008 = fStack_28 - fStack_34;
-      in_stack_0000000c = fStack_24 - fStack_30;
-      in_stack_00000010 = (float)auStack_20._0_4_ - fStack_2c;
-      fStack_4c = 6.070401e-39;
+                (in_stack_00000004,&CStack_2c,&CStack_20);
+      fStack_8 = fStack_38 - fStack_44;
       core_box_cpp_CBox_setupCorners_FUN_0041dd20
-                ((CBox *)&in_stack_00000004[2].field12_0xe0.y,(CVector3f *)(auStack_20 + 4),
-                 (CVector3f *)&in_stack_00000004->orient,(CVector3f *)&stack0x00000008,
+                ((CBox *)&in_stack_00000004[2].field12_0xe0.y,&CStack_2c,
+                 (CVector3f *)&in_stack_00000004->orient,(CVector3f *)&fStack_8,
                  in_stack_00000004[2].field12_0xe0.x);
       return;
     }

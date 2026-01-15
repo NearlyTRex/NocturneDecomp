@@ -1,24 +1,23 @@
 {
   "complexity": {
     "assembly_lines": 153,
-    "complexity_score": 464,
+    "complexity_score": 362,
     "cross_reference_count": 4,
     "function_call_count": 4,
     "global_count": 13,
-    "pseudocode_lines": 69,
-    "suspect_count": 35,
+    "pseudocode_lines": 62,
+    "suspect_count": 26,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "callind_preserve",
       "format_string_mismatch",
       "lea_esp_stack_addr",
-      "register_param",
       "stack_param",
       "stack_ref",
+      "unaffected_reg",
       "variadic_preserve"
     ],
-    "total_lines": 222
+    "total_lines": 215
   },
   "cross_references": [
     {
@@ -240,18 +239,11 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
+      "description": "Unaffected register variable",
       "line": 9,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 9,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
+      "match": "unaff_EBP",
+      "text": "FILE *unaff_EBP;",
+      "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",
@@ -261,81 +253,39 @@
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000014",
-      "text": "FILE *in_stack_00000014;",
-      "type": "stack_param"
+      "description": "Direct stack address reference",
+      "line": 19,
+      "match": "&stack0xffffff24",
+      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,\" { %s \\\"%[^\\\"]\\\"\\n\",&stack0xffffff24,local_78);",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 20,
+      "match": "&stack0xffffff24",
+      "text": "iVar2 = crt_string_c_stricmp_FUN_005fe7f0(str1,&stack0xffffff24);",
+      "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_00000018",
-      "text": "FILE *in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_00000024",
-      "text": "FILE *in_stack_00000024;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_00000030",
-      "text": "int in_stack_00000030;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 25,
+      "line": 48,
       "match": "in_stack_0000000c",
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_0000000c,\" { %s \\\"%[^\\\"]\\\"\\n\",&stack0xffffff28,auStack_74);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 25,
-      "match": "&stack0xffffff28",
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_0000000c,\" { %s \\\"%[^\\\"]\\\"\\n\",&stack0xffffff28,auStack_74);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 46,
-      "match": "in_stack_00000018",
-      "text": "g_ActorDataFile = in_stack_00000018;",
+      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_0000000c,\" } %s \\\"%[^\\\"]\\\"\\n\",acStack_d8);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 55,
-      "match": "in_stack_00000024",
-      "text": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000024,\" } %s \\\"%[^\\\"]\\\"\\n\");",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
       "line": 56,
-      "match": "&stack0xffffff44",
-      "text": "iVar3 = crt_string_c_stricmp_FUN_005fe7f0(str1,&stack0xffffff44);",
-      "type": "stack_ref"
+      "match": "in_stack_0000000c",
+      "text": "if ((in_stack_0000000c->_flag & 0x20) != 0) {",
+      "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unaffected register variable",
       "line": 63,
-      "match": "in_stack_00000030",
-      "text": "if ((*(byte *)(in_stack_00000030 + 0xc) & 0x20) != 0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 70,
-      "match": "in_stack_00000014",
-      "text": "g_ActorDataFile = in_stack_00000014;",
-      "type": "stack_param"
+      "match": "unaff_EBP",
+      "text": "g_ActorDataFile = unaff_EBP;",
+      "type": "unaffected_reg"
     },
     {
       "add_esp_value": 4,
@@ -432,53 +382,31 @@
       "expected_args": 1,
       "format_string": " { %s \\\"%[^\\\"]\\\"\\n",
       "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 25,
-      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_0000000c,\" { %s \\\"%[^\\\"]\\\"\\n\",&stack0xffffff28,auStack_74);",
+      "line_number": 19,
+      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,\" { %s \\\"%[^\\\"]\\\"\\n\",&stack0xffffff24,local_78);",
       "text": "Format string expects 1 args but got 2",
       "type": "format_string_mismatch"
     },
     {
-      "actual_args": 0,
-      "description": "Format \"Start of actor file tag mismatch for class %s\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "Start of actor file tag mismatch for class %s",
-      "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 31,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"Start of actor file tag mismatch for class %s\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \" } %s \\\"%[^\\\"]\\\"\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": " } %s \\\"%[^\\\"]\\\"\\n",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 55,
-      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(in_stack_00000024,\" } %s \\\"%[^\\\"]\\\"\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"End of actor file tag mismatch for class %s name \\...\" has 2 specifiers but 0 arguments after it",
+      "actual_args": 1,
+      "description": "Format \"End of actor file tag mismatch for class %s name \\...\" has 2 specifiers but 1 arguments after it",
       "expected_args": 2,
       "format_string": "End of actor file tag mismatch for class %s name \\\"%s\\\"",
       "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 61,
+      "line_number": 54,
       "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"End of actor file tag mismatch for class %s name \\\"%s\\",
-      "text": "Format string expects 2 args but got 0",
+      "text": "Format string expects 2 args but got 1",
       "type": "format_string_mismatch"
     },
     {
-      "actual_args": 0,
-      "description": "Format \"IO Error after reading %s \\\"%s\\\"\" has 2 specifiers but 0 arguments after it",
+      "actual_args": 1,
+      "description": "Format \"IO Error after reading %s \\\"%s\\\"\" has 2 specifiers but 1 arguments after it",
       "expected_args": 2,
       "format_string": "IO Error after reading %s \\\"%s\\\"",
       "function_name": "core_main_c_displayErrorAndQuit_FUN_00506f10",
-      "line_number": 66,
-      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"IO Error after reading %s \\\"%s\\\"\");",
-      "text": "Format string expects 2 args but got 0",
+      "line_number": 59,
+      "match": "core_main_c_displayErrorAndQuit_FUN_00506f10(\"IO Error after reading %s \\\"%s\\\"\",str1);",
+      "text": "Format string expects 2 args but got 1",
       "type": "format_string_mismatch"
     },
     {

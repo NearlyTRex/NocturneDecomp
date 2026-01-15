@@ -19,7 +19,7 @@ void core_bugs_cpp_CBugs_addSwarmGraphEdge_FUN_00425740(void)
   int in_stack_00000004;
   int in_stack_00000008;
   int in_stack_0000000c;
-  int in_stack_00000014;
+  int in_stack_00000010;
   
   if (*(int *)(in_stack_00000004 + 0x12b34) <= in_stack_00000008) {
     *(int *)(in_stack_00000004 + 0x12b34) = in_stack_00000008 + 1;
@@ -32,7 +32,7 @@ void core_bugs_cpp_CBugs_addSwarmGraphEdge_FUN_00425740(void)
   piVar3 = (int *)(in_stack_00000004 + 0x12b38 + in_stack_00000008 * 0x28);
   iVar1 = *piVar3;
   if (iVar1 == 0) {
-    piVar3[1] = in_stack_00000014;
+    piVar3[1] = in_stack_00000010;
   }
   else {
     if (7 < iVar1) {

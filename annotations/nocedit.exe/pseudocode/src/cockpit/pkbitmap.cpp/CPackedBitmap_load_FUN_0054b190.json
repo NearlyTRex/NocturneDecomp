@@ -1,20 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 198,
-    "complexity_score": 350,
+    "complexity_score": 260,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 9,
     "pseudocode_lines": 110,
-    "suspect_count": 20,
+    "suspect_count": 12,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
       "pointer_cast",
-      "register_param",
       "stack_param",
-      "stack_ref",
+      "undefined_type",
       "variadic_preserve"
     ],
     "total_lines": 308
@@ -289,88 +287,32 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 18,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 18,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 23,
-      "match": "in_stack_00000020",
-      "text": "uint in_stack_00000020;",
+      "line": 20,
+      "match": "in_stack_00000019",
+      "text": "undefined3 in_stack_00000019;",
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 24,
-      "match": "in_stack_00000024",
-      "text": "int in_stack_00000024;",
-      "type": "stack_param"
+      "description": "Unresolved type",
+      "line": 20,
+      "match": "undefined3 in_stack_00000019",
+      "text": "undefined3 in_stack_00000019;",
+      "type": "undefined_type"
     },
     {
       "description": "Complex pointer cast",
-      "line": 47,
+      "line": 50,
       "match": "(int *)((int)",
-      "text": "*(int *)((int)this_ptr->row_pointers + local_1c) = new_size;",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 60,
-      "match": "in_stack_00000020",
-      "text": "if (*pbVar3 == in_stack_00000020) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 69,
-      "match": "in_stack_00000020",
-      "text": "} while (*pbVar3 != in_stack_00000020);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 81,
-      "match": "&stack0xfffffeb0",
-      "text": "(&stack0xfffffeb0,\"Out of memory packing file \\\"%s\\\" on row %u trying to get %u bytes\",this_ptr,local_20,",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 85,
-      "match": "&stack0xfffffeb4",
-      "text": "core_main_c_displayErrorAndQuit_FUN_00506f10(&stack0xfffffeb4);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 101,
-      "match": "(uint *)((int)",
-      "text": "puVar12 = (uint *)((int)puVar12 + (uint)bVar13 * -2 + 1);",
+      "text": "*(int *)((int)this_ptr->row_pointers + local_28) = new_size;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 102,
+      "line": 103,
       "match": "(ushort *)((int)",
-      "text": "puVar7 = (ushort *)((int)puVar7 + (uint)bVar13 * -2 + 1);",
+      "text": "puVar6 = (ushort *)((int)puVar6 + (uint)bVar11 * -2 + 1);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 111,
-      "match": "in_stack_00000024",
-      "text": "stride_bytes = stride_bytes + in_stack_00000024;",
-      "type": "stack_param"
     },
     {
       "call_address": "0054b2ec",

@@ -14,10 +14,8 @@ void core_grave_cpp_FUN_004ee710(void)
 {
   CBoundingBox3D *this_ptr;
   int iVar1;
-  BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000004;
   int in_stack_00000008;
-  float fStack_10;
   
   if (in_stack_00000008 != 0) {
     if (in_stack_00000004[2].location.area_id == 0) {
@@ -28,10 +26,9 @@ void core_grave_cpp_FUN_004ee710(void)
     }
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00(in_stack_00000004);
     this_ptr = (*in_stack_00000004->vtable->getBoundingBox)
-                         (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffe8);
+                         (in_stack_00000004,(CBoundingBox3D *)&stack0xffffffe4);
     iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr);
     if (iVar1 != 0) {
-      fStack_10 = 7.2462e-39;
       core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00478d20
                 ((CKeyFramedModelInstance *)(in_stack_00000004 + 1),
                  in_stack_00000004[2].location.position.y,-1);

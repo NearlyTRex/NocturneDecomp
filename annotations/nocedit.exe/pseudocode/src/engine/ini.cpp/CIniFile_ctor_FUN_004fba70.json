@@ -1,17 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 18,
-    "complexity_score": 58,
+    "complexity_score": 32,
     "cross_reference_count": 6,
     "function_call_count": 2,
     "global_count": 0,
-    "pseudocode_lines": 8,
-    "suspect_count": 4,
+    "pseudocode_lines": 7,
+    "suspect_count": 2,
     "suspect_types": [
-      "call_esp_preserve",
-      "stack_param"
+      "call_esp_preserve"
     ],
-    "total_lines": 26
+    "total_lines": 25
   },
   "cross_references": [
     {
@@ -127,20 +126,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unresolved stack parameter",
-      "line": 6,
-      "match": "in_stack_00000010",
-      "text": "char *in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000010",
-      "text": "engine_ini_cpp_CIniFile_readIniHeader_FUN_004fbae0(this,in_stack_00000010);",
-      "type": "stack_param"
-    },
     {
       "add_esp_value": 8,
       "call_address": "004fba7b",

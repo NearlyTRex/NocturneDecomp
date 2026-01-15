@@ -14,7 +14,6 @@ uint core_emitter_cpp_FUN_004a8860(void)
   uchar uVar1;
   int iVar2;
   undefined3 extraout_var;
-  BADSPACEBASE *in_ESP;
   CDemonActor *in_stack_00000004;
   CQuaternion4f *in_stack_fffffeb2;
   void *in_stack_fffffeb6;

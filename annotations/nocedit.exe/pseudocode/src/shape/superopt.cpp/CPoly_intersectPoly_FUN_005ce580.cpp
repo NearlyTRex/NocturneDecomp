@@ -13,21 +13,20 @@ shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580
 {
   CVector3d *pCVar1;
   CVert *pCVar2;
-  int iVar3;
+  double dVar3;
   int iVar4;
   int iVar5;
   int iVar6;
   int iVar7;
-  BADSPACEBASE *in_ESP;
-  CVert *pCVar8;
-  double *pdVar9;
+  int iVar8;
+  CVert *pCVar9;
   double *pdVar10;
   double *pdVar11;
   double *pdVar12;
-  uint *puVar13;
-  byte bVar14;
+  double *pdVar13;
+  uint *puVar14;
+  byte bVar15;
   int aiStackY_19c0 [1261];
-  double dVar15;
   ulonglong uStack_5dc;
   ulonglong uStack_5d4;
   ulonglong uStack_5cc;
@@ -43,7 +42,6 @@ shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580
   uint uStack_5a0;
   uint uStack_59c;
   uint uStack_598;
-  uint uStack_594;
   ulonglong uStack_564;
   ulonglong uStack_55c;
   uint uStack_554;
@@ -246,43 +244,43 @@ shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580
   double *pdStack_18;
   double *pdStack_14;
   
-  bVar14 = 0;
+  bVar15 = 0;
   (*other_poly->vtable->getBounds)(other_poly,&CStack_3c4,&CStack_454);
   (*this_ptr->vtable->getBounds)(this_ptr,&CStack_4cc,&CStack_2ec);
   if (((((CStack_3c4.x <= CStack_2ec.x) && (CStack_4cc.x <= CStack_454.x)) &&
        (CStack_3c4.y <= CStack_2ec.y)) &&
       ((CStack_4cc.y <= CStack_454.y && (CStack_3c4.z <= CStack_2ec.z)))) &&
      (CStack_4cc.z <= CStack_454.z)) {
-    pCVar8 = other_poly->parent_obj->vertex_data;
-    iVar3 = (*this_ptr->vtable->rayIntersect)
-                      (this_ptr,&pCVar8[other_poly->vertex_idx_0].position,
-                       &pCVar8[other_poly->vertex_idx_1].position,&CStack_40c);
-    if (iVar3 == 0) {
-      pCVar8 = other_poly->parent_obj->vertex_data;
-      iVar3 = (*this_ptr->vtable->rayIntersect)
-                        (this_ptr,&pCVar8[other_poly->vertex_idx_1].position,
-                         &pCVar8[other_poly->vertex_idx_2].position,&CStack_40c);
-      if (iVar3 == 0) {
-        pCVar8 = other_poly->parent_obj->vertex_data;
-        iVar3 = (*this_ptr->vtable->rayIntersect)
-                          (this_ptr,&pCVar8[other_poly->vertex_idx_2].position,
-                           &pCVar8[other_poly->vertex_idx_0].position,&CStack_40c);
-        if (iVar3 == 0) {
-          pCVar8 = this_ptr->parent_obj->vertex_data;
-          iVar3 = (*other_poly->vtable->rayIntersect)
-                            (other_poly,&pCVar8[this_ptr->vertex_idx_0].position,
-                             &pCVar8[this_ptr->vertex_idx_1].position,&CStack_40c);
-          if (iVar3 == 0) {
-            pCVar8 = this_ptr->parent_obj->vertex_data;
-            iVar3 = (*other_poly->vtable->rayIntersect)
-                              (other_poly,&pCVar8[this_ptr->vertex_idx_1].position,
-                               &pCVar8[this_ptr->vertex_idx_2].position,&CStack_40c);
-            if (iVar3 == 0) {
-              pCVar8 = this_ptr->parent_obj->vertex_data;
-              iVar3 = (*other_poly->vtable->rayIntersect)
-                                (other_poly,&pCVar8[this_ptr->vertex_idx_2].position,
-                                 &pCVar8[this_ptr->vertex_idx_0].position,&CStack_40c);
-              if (iVar3 == 0) {
+    pCVar9 = other_poly->parent_obj->vertex_data;
+    iVar4 = (*this_ptr->vtable->rayIntersect)
+                      (this_ptr,&pCVar9[other_poly->vertex_idx_0].position,
+                       &pCVar9[other_poly->vertex_idx_1].position,&CStack_40c);
+    if (iVar4 == 0) {
+      pCVar9 = other_poly->parent_obj->vertex_data;
+      iVar4 = (*this_ptr->vtable->rayIntersect)
+                        (this_ptr,&pCVar9[other_poly->vertex_idx_1].position,
+                         &pCVar9[other_poly->vertex_idx_2].position,&CStack_40c);
+      if (iVar4 == 0) {
+        pCVar9 = other_poly->parent_obj->vertex_data;
+        iVar4 = (*this_ptr->vtable->rayIntersect)
+                          (this_ptr,&pCVar9[other_poly->vertex_idx_2].position,
+                           &pCVar9[other_poly->vertex_idx_0].position,&CStack_40c);
+        if (iVar4 == 0) {
+          pCVar9 = this_ptr->parent_obj->vertex_data;
+          iVar4 = (*other_poly->vtable->rayIntersect)
+                            (other_poly,&pCVar9[this_ptr->vertex_idx_0].position,
+                             &pCVar9[this_ptr->vertex_idx_1].position,&CStack_40c);
+          if (iVar4 == 0) {
+            pCVar9 = this_ptr->parent_obj->vertex_data;
+            iVar4 = (*other_poly->vtable->rayIntersect)
+                              (other_poly,&pCVar9[this_ptr->vertex_idx_1].position,
+                               &pCVar9[this_ptr->vertex_idx_2].position,&CStack_40c);
+            if (iVar4 == 0) {
+              pCVar9 = this_ptr->parent_obj->vertex_data;
+              iVar4 = (*other_poly->vtable->rayIntersect)
+                                (other_poly,&pCVar9[this_ptr->vertex_idx_2].position,
+                                 &pCVar9[this_ptr->vertex_idx_0].position,&CStack_40c);
+              if (iVar4 == 0) {
                 return 0;
               }
             }
@@ -293,29 +291,28 @@ shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580
     crt_memory_c_memset_FUN_005fde40(out_result,0,0x148);
     pCVar2 = this_ptr->parent_obj->vertex_data;
     crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(&uStack_5dc,5,&g_CP3DTypeInfo);
-    pCVar8 = pCVar2 + this_ptr->vertex_idx_0;
-    uStack_5dc._4_4_ = *(uint *)&(pCVar8->position).x;
-    uStack_5d4._0_4_ = *(uint *)((int)&(pCVar8->position).x + 4);
-    uStack_5d4._4_4_ = *(uint *)&(pCVar8->position).y;
-    uStack_5cc._0_4_ = *(uint *)((int)&(pCVar8->position).y + 4);
-    uStack_5cc._4_4_ = *(uint *)&(pCVar8->position).z;
-    uStack_5c4 = *(uint *)((int)&(pCVar8->position).z + 4);
-    pCVar8 = pCVar2 + this_ptr->vertex_idx_1;
-    uStack_5c0 = *(uint *)&(pCVar8->position).x;
-    uStack_5bc = *(uint *)((int)&(pCVar8->position).x + 4);
-    uStack_5b8 = *(uint *)&(pCVar8->position).y;
-    uStack_5b4 = *(uint *)((int)&(pCVar8->position).y + 4);
-    uStack_5b0 = *(uint *)&(pCVar8->position).z;
-    uStack_5ac = *(uint *)((int)&(pCVar8->position).z + 4);
+    pCVar9 = pCVar2 + this_ptr->vertex_idx_0;
+    uStack_5dc._0_4_ = *(uint *)&(pCVar9->position).x;
+    uStack_5dc._4_4_ = *(uint *)((int)&(pCVar9->position).x + 4);
+    uStack_5d4._0_4_ = *(uint *)&(pCVar9->position).y;
+    uStack_5d4._4_4_ = *(uint *)((int)&(pCVar9->position).y + 4);
+    uStack_5cc._0_4_ = *(uint *)&(pCVar9->position).z;
+    uStack_5cc._4_4_ = *(uint *)((int)&(pCVar9->position).z + 4);
+    pCVar9 = pCVar2 + this_ptr->vertex_idx_1;
+    uStack_5c4 = *(uint *)&(pCVar9->position).x;
+    uStack_5c0 = *(uint *)((int)&(pCVar9->position).x + 4);
+    uStack_5bc = *(uint *)&(pCVar9->position).y;
+    uStack_5b8 = *(uint *)((int)&(pCVar9->position).y + 4);
+    uStack_5b4 = *(uint *)&(pCVar9->position).z;
+    uStack_5b0 = *(uint *)((int)&(pCVar9->position).z + 4);
     pCVar2 = pCVar2 + this_ptr->vertex_idx_2;
-    uStack_5a8 = *(uint *)&(pCVar2->position).x;
-    uStack_5a4 = *(uint *)((int)&(pCVar2->position).x + 4);
-    uStack_5a0 = *(uint *)&(pCVar2->position).y;
-    uStack_59c = *(uint *)((int)&(pCVar2->position).y + 4);
-    uStack_598 = *(uint *)&(pCVar2->position).z;
-    uStack_594 = *(uint *)((int)&(pCVar2->position).z + 4);
-    crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667
-              ((void *)((int)&uStack_564 + 4),5,&g_CP2DTypeInfo);
+    uStack_5ac = *(uint *)&(pCVar2->position).x;
+    uStack_5a8 = *(uint *)((int)&(pCVar2->position).x + 4);
+    uStack_5a4 = *(uint *)&(pCVar2->position).y;
+    uStack_5a0 = *(uint *)((int)&(pCVar2->position).y + 4);
+    uStack_59c = *(uint *)&(pCVar2->position).z;
+    uStack_598 = *(uint *)((int)&(pCVar2->position).z + 4);
+    crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(&uStack_564,5,&g_CP2DTypeInfo);
     uStack_564._0_4_ = *(uint *)&this_ptr->uv_coords[0].x;
     uStack_564._4_4_ = *(uint *)((int)&this_ptr->uv_coords[0].x + 4);
     uStack_55c._0_4_ = *(uint *)&this_ptr->uv_coords[0].y;
@@ -328,67 +325,67 @@ shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580
     uStack_540 = *(uint *)((int)&this_ptr->uv_coords[2].x + 4);
     uStack_53c = *(uint *)&this_ptr->uv_coords[2].y;
     uStack_538 = *(uint *)((int)&this_ptr->uv_coords[2].y + 4);
-    pCVar8 = other_poly->parent_obj->vertex_data + other_poly->vertex_idx_0;
-    pdVar10 = &dStack_31c;
-    for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *(uint *)pdVar10 = *(uint *)&(pCVar8->position).x;
-      pCVar8 = (CVert *)((int)pCVar8 + ((uint)bVar14 * -2 + 1) * 4);
-      pdVar10 = (double *)((int)pdVar10 + (uint)bVar14 * -8 + 4);
+    pCVar9 = other_poly->parent_obj->vertex_data + other_poly->vertex_idx_0;
+    pdVar11 = &dStack_31c;
+    for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
+      *(uint *)pdVar11 = *(uint *)&(pCVar9->position).x;
+      pCVar9 = (CVert *)((int)pCVar9 + ((uint)bVar15 * -2 + 1) * 4);
+      pdVar11 = (double *)((int)pdVar11 + (uint)bVar15 * -8 + 4);
     }
     pCVar1 = &other_poly->normal;
     uStack_214 = *(uint *)&pCVar1->x;
     uStack_210 = *(uint *)((int)&(other_poly->normal).x + 4);
-    pdVar10 = &(other_poly->normal).y;
-    uStack_20c = *(uint *)pdVar10;
+    pdVar11 = &(other_poly->normal).y;
+    uStack_20c = *(uint *)pdVar11;
     uStack_208 = *(uint *)((int)&(other_poly->normal).y + 4);
-    pdVar12 = &(other_poly->normal).z;
-    dVar15 = *pdVar12;
-    uStack_204 = *(uint *)pdVar12;
+    pdVar13 = &(other_poly->normal).z;
+    dVar3 = *pdVar13;
+    uStack_204 = *(uint *)pdVar13;
     uStack_200 = *(uint *)((int)&(other_poly->normal).z + 4);
     dStack_3ac = dStack_31c * pCVar1->x;
-    dStack_3a4 = dStack_314 * *pdVar10;
-    dStack_39c = dStack_30c * *pdVar12;
+    dStack_3a4 = dStack_314 * *pdVar11;
+    dStack_39c = dStack_30c * *pdVar13;
     dStack_4e4 = pCVar1->x * (double)CONCAT44 /* combine 2-byte values */(uStack_5dc._4_4_,(uint)uStack_5dc);
-    dStack_4dc = *pdVar10 * (double)CONCAT44 /* combine 2-byte values */(uStack_5d4._4_4_,(uint)uStack_5d4);
-    dStack_4d4 = *pdVar12 * (double)CONCAT44 /* combine 2-byte values */(uStack_5cc._4_4_,(uint)uStack_5cc);
+    dStack_4dc = *pdVar11 * (double)CONCAT44 /* combine 2-byte values */(uStack_5d4._4_4_,(uint)uStack_5d4);
+    dStack_4d4 = *pdVar13 * (double)CONCAT44 /* combine 2-byte values */(uStack_5cc._4_4_,(uint)uStack_5cc);
     dStack_2d4 = pCVar1->x * (double)CONCAT44 /* combine 2-byte values */(uStack_5c0,uStack_5c4);
-    dStack_2cc = *pdVar10 * (double)CONCAT44 /* combine 2-byte values */(uStack_5b8,uStack_5bc);
-    dStack_2c4 = *pdVar12 * (double)CONCAT44 /* combine 2-byte values */(uStack_5b0,uStack_5b4);
+    dStack_2cc = *pdVar11 * (double)CONCAT44 /* combine 2-byte values */(uStack_5b8,uStack_5bc);
+    dStack_2c4 = *pdVar13 * (double)CONCAT44 /* combine 2-byte values */(uStack_5b0,uStack_5b4);
     dStack_2bc = pCVar1->x * (double)CONCAT44 /* combine 2-byte values */(uStack_5a8,uStack_5ac);
-    dStack_2b4 = *pdVar10 * (double)CONCAT44 /* combine 2-byte values */(uStack_5a0,uStack_5a4);
-    pdVar10 = &dStack_3ac;
-    pdVar12 = &dStack_244;
-    for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *(uint *)pdVar12 = *(uint *)pdVar10;
-      pdVar10 = (double *)((int)pdVar10 + (uint)bVar14 * -8 + 4);
-      pdVar12 = (double *)((int)pdVar12 + (uint)bVar14 * -8 + 4);
+    dStack_2b4 = *pdVar11 * (double)CONCAT44 /* combine 2-byte values */(uStack_5a0,uStack_5a4);
+    pdVar11 = &dStack_3ac;
+    pdVar13 = &dStack_244;
+    for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
+      *(uint *)pdVar13 = *(uint *)pdVar11;
+      pdVar11 = (double *)((int)pdVar11 + (uint)bVar15 * -8 + 4);
+      pdVar13 = (double *)((int)pdVar13 + (uint)bVar15 * -8 + 4);
     }
-    dStack_2ac = dVar15 * (double)CONCAT44 /* combine 2-byte values */(uStack_598,uStack_59c);
-    pdVar10 = &dStack_4e4;
-    pdVar12 = &dStack_394;
-    for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *(uint *)pdVar12 = *(uint *)pdVar10;
-      pdVar10 = (double *)((int)pdVar10 + (uint)bVar14 * -8 + 4);
-      pdVar12 = (double *)((int)pdVar12 + (uint)bVar14 * -8 + 4);
+    dStack_2ac = dVar3 * (double)CONCAT44 /* combine 2-byte values */(uStack_598,uStack_59c);
+    pdVar11 = &dStack_4e4;
+    pdVar13 = &dStack_394;
+    for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
+      *(uint *)pdVar13 = *(uint *)pdVar11;
+      pdVar11 = (double *)((int)pdVar11 + (uint)bVar15 * -8 + 4);
+      pdVar13 = (double *)((int)pdVar13 + (uint)bVar15 * -8 + 4);
     }
-    dVar15 = -(dStack_244 + dStack_23c + dStack_234);
-    pdVar10 = &dStack_2d4;
-    pdVar12 = &dStack_274;
-    for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *(uint *)pdVar12 = *(uint *)pdVar10;
-      pdVar10 = (double *)((int)pdVar10 + (uint)bVar14 * -8 + 4);
-      pdVar12 = (double *)((int)pdVar12 + (uint)bVar14 * -8 + 4);
+    dVar3 = -(dStack_244 + dStack_23c + dStack_234);
+    pdVar11 = &dStack_2d4;
+    pdVar13 = &dStack_274;
+    for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
+      *(uint *)pdVar13 = *(uint *)pdVar11;
+      pdVar11 = (double *)((int)pdVar11 + (uint)bVar15 * -8 + 4);
+      pdVar13 = (double *)((int)pdVar13 + (uint)bVar15 * -8 + 4);
     }
-    pdVar10 = &dStack_2bc;
-    pdVar12 = &dStack_46c;
-    for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *(uint *)pdVar12 = *(uint *)pdVar10;
-      pdVar10 = (double *)((int)pdVar10 + (uint)bVar14 * -8 + 4);
-      pdVar12 = (double *)((int)pdVar12 + (uint)bVar14 * -8 + 4);
+    pdVar11 = &dStack_2bc;
+    pdVar13 = &dStack_46c;
+    for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {
+      *(uint *)pdVar13 = *(uint *)pdVar11;
+      pdVar11 = (double *)((int)pdVar11 + (uint)bVar15 * -8 + 4);
+      pdVar13 = (double *)((int)pdVar13 + (uint)bVar15 * -8 + 4);
     }
-    dStack_3f4 = dStack_394 + dStack_38c + dStack_384 + dVar15;
-    dStack_3ec = dStack_274 + dStack_26c + dStack_264 + dVar15;
-    dStack_3e4 = dStack_46c + dStack_464 + dStack_45c + dVar15;
+    dStack_3f4 = dStack_394 + dStack_38c + dStack_384 + dVar3;
+    dStack_3ec = dStack_274 + dStack_26c + dStack_264 + dVar3;
+    dStack_3e4 = dStack_46c + dStack_464 + dStack_45c + dVar3;
     if ((dStack_3f4 < 1e-08) && (-1e-08 <= dStack_3f4)) {
       dStack_3f4 = 0.0;
     }
@@ -422,175 +419,175 @@ shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580
           iStack_54 = 1;
           iStack_4c = 2;
         }
-        iVar3 = aiStack_d0[3];
-        dVar15 = (&dStack_3f4)[aiStack_d0[3]] /
-                 ((&dStack_3f4)[aiStack_d0[3]] - (&dStack_3f4)[iStack_4c]);
+        iVar4 = aiStack_d0[3];
+        dVar3 = (&dStack_3f4)[aiStack_d0[3]] /
+                ((&dStack_3f4)[aiStack_d0[3]] - (&dStack_3f4)[iStack_4c]);
         iStack_a0 = iStack_4c * 8;
         pdStack_94 = (double *)(&uStack_5dc + iStack_4c * 3);
-        pdVar9 = (double *)(&uStack_5dc + aiStack_d0[3] * 3);
-        dStack_2a4 = *pdVar9 - (double)(&uStack_5dc)[iStack_4c * 3];
+        pdVar10 = (double *)(&uStack_5dc + aiStack_d0[3] * 3);
+        dStack_2a4 = *pdVar10 - (double)(&uStack_5dc)[iStack_4c * 3];
         dStack_29c = (double)(&uStack_5d4)[aiStack_d0[3] * 3] - (double)(&uStack_5d4)[iStack_4c * 3]
         ;
         dStack_294 = (double)(&uStack_5cc)[aiStack_d0[3] * 3] - (double)(&uStack_5cc)[iStack_4c * 3]
         ;
-        pdVar10 = &dStack_2a4;
-        pdVar12 = &dStack_484;
-        for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {
-          *(uint *)pdVar12 = *(uint *)pdVar10;
-          pdVar10 = (double *)((int)pdVar10 + (uint)bVar14 * -8 + 4);
-          pdVar12 = (double *)((int)pdVar12 + (uint)bVar14 * -8 + 4);
+        pdVar11 = &dStack_2a4;
+        pdVar13 = &dStack_484;
+        for (iVar8 = 6; iVar8 != 0; iVar8 = iVar8 + -1) {
+          *(uint *)pdVar13 = *(uint *)pdVar11;
+          pdVar11 = (double *)((int)pdVar11 + (uint)bVar15 * -8 + 4);
+          pdVar13 = (double *)((int)pdVar13 + (uint)bVar15 * -8 + 4);
         }
-        dStack_334 = dStack_484 * dVar15;
-        dStack_32c = dStack_47c * dVar15;
-        dStack_324 = dStack_474 * dVar15;
-        pdVar10 = &dStack_334;
-        pdVar12 = &dStack_49c;
-        for (iVar7 = 6; iVar6 = iStack_a8, iVar7 != 0; iVar7 = iVar7 + -1) {
-          *(uint *)pdVar12 = *(uint *)pdVar10;
-          pdVar10 = (double *)((int)pdVar10 + (uint)bVar14 * -8 + 4);
-          pdVar12 = (double *)((int)pdVar12 + (uint)bVar14 * -8 + 4);
+        dStack_334 = dStack_484 * dVar3;
+        dStack_32c = dStack_47c * dVar3;
+        dStack_324 = dStack_474 * dVar3;
+        pdVar11 = &dStack_334;
+        pdVar13 = &dStack_49c;
+        for (iVar8 = 6; iVar7 = iStack_a8, iVar8 != 0; iVar8 = iVar8 + -1) {
+          *(uint *)pdVar13 = *(uint *)pdVar11;
+          pdVar11 = (double *)((int)pdVar11 + (uint)bVar15 * -8 + 4);
+          pdVar13 = (double *)((int)pdVar13 + (uint)bVar15 * -8 + 4);
         }
-        pdStack_9c = pdVar9;
-        dStack_514 = *pdVar9 - dStack_49c;
-        dStack_50c = (double)(&uStack_5d4)[iVar3 * 3] - dStack_494;
-        dStack_504 = (double)(&uStack_5cc)[iVar3 * 3] - dStack_48c;
-        iVar3 = iStack_a8 * 0x18;
-        pdVar10 = &dStack_514;
-        puVar13 = &uStack_34c;
-        for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {
-          *puVar13 = *(uint *)pdVar10;
-          pdVar10 = (double *)((int)pdVar10 + (uint)bVar14 * -8 + 4);
-          puVar13 = puVar13 + (uint)bVar14 * -2 + 1;
+        pdStack_9c = pdVar10;
+        dStack_514 = *pdVar10 - dStack_49c;
+        dStack_50c = (double)(&uStack_5d4)[iVar4 * 3] - dStack_494;
+        dStack_504 = (double)(&uStack_5cc)[iVar4 * 3] - dStack_48c;
+        iVar4 = iStack_a8 * 0x18;
+        pdVar11 = &dStack_514;
+        puVar14 = &uStack_34c;
+        for (iVar8 = 6; iVar8 != 0; iVar8 = iVar8 + -1) {
+          *puVar14 = *(uint *)pdVar11;
+          pdVar11 = (double *)((int)pdVar11 + (uint)bVar15 * -8 + 4);
+          puVar14 = puVar14 + (uint)bVar15 * -2 + 1;
         }
-        pdVar9 = (double *)(&uStack_5dc + iVar6 * 3);
-        *(uint *)pdVar9 = uStack_34c;
-        *(uint *)((int)&uStack_5dc + iVar3 + 4) = uStack_348;
-        *(uint *)(&uStack_5d4 + iVar6 * 3) = uStack_344;
-        *(uint *)((int)&uStack_5d4 + iVar3 + 4) = uStack_340;
-        *(uint *)(&uStack_5cc + iVar6 * 3) = uStack_33c;
-        *(uint *)((int)&uStack_5cc + iVar3 + 4) = uStack_338;
+        pdVar10 = (double *)(&uStack_5dc + iVar7 * 3);
+        *(uint *)pdVar10 = uStack_34c;
+        *(uint *)((int)&uStack_5dc + iVar4 + 4) = uStack_348;
+        *(uint *)(&uStack_5d4 + iVar7 * 3) = uStack_344;
+        *(uint *)((int)&uStack_5d4 + iVar4 + 4) = uStack_340;
+        *(uint *)(&uStack_5cc + iVar7 * 3) = uStack_33c;
+        *(uint *)((int)&uStack_5cc + iVar4 + 4) = uStack_338;
         pdStack_20 = (double *)(&uStack_564 + iStack_4c * 2);
-        pdVar10 = (double *)(&uStack_564 + aiStack_d0[3] * 2);
-        uStack_184 = *pdVar10 - (double)(&uStack_564)[iStack_4c * 2];
+        pdVar11 = (double *)(&uStack_564 + aiStack_d0[3] * 2);
+        uStack_184 = *pdVar11 - (double)(&uStack_564)[iStack_4c * 2];
         dStack_17c = (double)(&uStack_55c)[aiStack_d0[3] * 2] - (double)(&uStack_55c)[iStack_4c * 2]
         ;
         uStack_1b4 = (uint)uStack_184;
-        (&uStack_1b0)[(uint)bVar14 * -2] = *(uint *)((int)&uStack_184 + (uint)bVar14 * -8 + 4)
+        (&uStack_1b0)[(uint)bVar15 * -2] = *(uint *)((int)&uStack_184 + (uint)bVar15 * -8 + 4)
         ;
-        *(uint *)(&dStack_1ac + (-(uint)bVar14 - (uint)bVar14)) =
-             *(uint *)(&dStack_17c + (-(uint)bVar14 - (uint)bVar14));
+        *(uint *)(&dStack_1ac + (-(uint)bVar15 - (uint)bVar15)) =
+             *(uint *)(&dStack_17c + (-(uint)bVar15 - (uint)bVar15));
         *(uint *)
-         ((int)(&dStack_1ac + (-(uint)bVar14 - (uint)bVar14)) + ((uint)bVar14 * -2 + 1) * 4) =
+         ((int)(&dStack_1ac + (-(uint)bVar15 - (uint)bVar15)) + ((uint)bVar15 * -2 + 1) * 4) =
              *(uint *)
-              ((int)(&dStack_17c + (-(uint)bVar14 - (uint)bVar14)) + ((uint)bVar14 * -2 + 1) * 4);
-        uStack_114 = (double)CONCAT44 /* combine 2-byte values */(uStack_1b0,uStack_1b4) * dVar15;
-        pdStack_1c = pdVar10;
-        dStack_10c = dStack_1ac * dVar15;
+              ((int)(&dStack_17c + (-(uint)bVar15 - (uint)bVar15)) + ((uint)bVar15 * -2 + 1) * 4);
+        uStack_114 = (double)CONCAT44 /* combine 2-byte values */(uStack_1b0,uStack_1b4) * dVar3;
+        pdStack_1c = pdVar11;
+        dStack_10c = dStack_1ac * dVar3;
         uStack_1c4 = (uint)uStack_114;
-        (&uStack_1c0)[(uint)bVar14 * -2] = *(uint *)((int)&uStack_114 + (uint)bVar14 * -8 + 4)
+        (&uStack_1c0)[(uint)bVar15 * -2] = *(uint *)((int)&uStack_114 + (uint)bVar15 * -8 + 4)
         ;
-        *(uint *)(&dStack_1bc + (-(uint)bVar14 - (uint)bVar14)) =
-             *(uint *)(&dStack_10c + (-(uint)bVar14 - (uint)bVar14));
+        *(uint *)(&dStack_1bc + (-(uint)bVar15 - (uint)bVar15)) =
+             *(uint *)(&dStack_10c + (-(uint)bVar15 - (uint)bVar15));
         *(uint *)
-         ((int)(&dStack_1bc + (-(uint)bVar14 - (uint)bVar14)) + ((uint)bVar14 * -2 + 1) * 4) =
+         ((int)(&dStack_1bc + (-(uint)bVar15 - (uint)bVar15)) + ((uint)bVar15 * -2 + 1) * 4) =
              *(uint *)
-              ((int)(&dStack_10c + (-(uint)bVar14 - (uint)bVar14)) + ((uint)bVar14 * -2 + 1) * 4);
-        uStack_144 = *pdVar10 - (double)CONCAT44 /* combine 2-byte values */(uStack_1c0,uStack_1c4);
+              ((int)(&dStack_10c + (-(uint)bVar15 - (uint)bVar15)) + ((uint)bVar15 * -2 + 1) * 4);
+        uStack_144 = *pdVar11 - (double)CONCAT44 /* combine 2-byte values */(uStack_1c0,uStack_1c4);
         dStack_13c = (double)(&uStack_55c)[aiStack_d0[3] * 2] - dStack_1bc;
         pdStack_b0 = (double *)(&uStack_564 + iStack_a8 * 2);
         auStack_130[3] = (uint)uStack_144;
-        auStack_130[(uint)bVar14 * -2 + 4] =
-             *(uint *)((int)&uStack_144 + (uint)bVar14 * -8 + 4);
-        pdVar10 = pdStack_b0;
-        auStack_130[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 5] =
-             *(uint *)(&dStack_13c + (-(uint)bVar14 - (uint)bVar14));
-        (auStack_130 + (uint)bVar14 * -2 + (uint)bVar14 * -2 + 5)[(uint)bVar14 * -2 + 1] =
+        auStack_130[(uint)bVar15 * -2 + 4] =
+             *(uint *)((int)&uStack_144 + (uint)bVar15 * -8 + 4);
+        pdVar11 = pdStack_b0;
+        auStack_130[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 5] =
+             *(uint *)(&dStack_13c + (-(uint)bVar15 - (uint)bVar15));
+        (auStack_130 + (uint)bVar15 * -2 + (uint)bVar15 * -2 + 5)[(uint)bVar15 * -2 + 1] =
              *(uint *)
-              ((int)(&dStack_13c + (-(uint)bVar14 - (uint)bVar14)) + ((uint)bVar14 * -2 + 1) * 4);
+              ((int)(&dStack_13c + (-(uint)bVar15 - (uint)bVar15)) + ((uint)bVar15 * -2 + 1) * 4);
         *(uint *)pdStack_b0 = auStack_130[3];
-        *(uint *)((int)pdVar10 + 4) = uStack_120;
-        *(uint *)(pdVar10 + 1) = uStack_11c;
-        *(uint *)((int)pdVar10 + 0xc) = uStack_118;
-        dVar15 = (&dStack_3f4)[iStack_54] /
-                 ((&dStack_3f4)[iStack_54] - *(double *)((int)&dStack_3f4 + iStack_a0));
+        *(uint *)((int)pdVar11 + 4) = uStack_120;
+        *(uint *)(pdVar11 + 1) = uStack_11c;
+        *(uint *)((int)pdVar11 + 0xc) = uStack_118;
+        dVar3 = (&dStack_3f4)[iStack_54] /
+                ((&dStack_3f4)[iStack_54] - *(double *)((int)&dStack_3f4 + iStack_a0));
         pdStack_90 = (double *)(&uStack_5dc + iStack_54 * 3);
         dStack_4fc = (double)(&uStack_5dc)[iStack_54 * 3] - *pdStack_94;
         dStack_4f4 = (double)(&uStack_5d4)[iStack_54 * 3] - pdStack_94[1];
         dStack_4ec = (double)(&uStack_5cc)[iStack_54 * 3] - pdStack_94[2];
-        pdVar10 = &dStack_4fc;
-        pdVar12 = &dStack_364;
-        for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {
-          *(uint *)pdVar12 = *(uint *)pdVar10;
-          pdVar10 = (double *)((int)pdVar10 + (uint)bVar14 * -8 + 4);
-          pdVar12 = (double *)((int)pdVar12 + (uint)bVar14 * -8 + 4);
+        pdVar11 = &dStack_4fc;
+        pdVar13 = &dStack_364;
+        for (iVar8 = 6; iVar8 != 0; iVar8 = iVar8 + -1) {
+          *(uint *)pdVar13 = *(uint *)pdVar11;
+          pdVar11 = (double *)((int)pdVar11 + (uint)bVar15 * -8 + 4);
+          pdVar13 = (double *)((int)pdVar13 + (uint)bVar15 * -8 + 4);
         }
-        dStack_304 = dStack_364 * dVar15;
-        dStack_2fc = dStack_35c * dVar15;
-        dStack_2f4 = dStack_354 * dVar15;
-        pdVar10 = &dStack_304;
-        pdVar12 = &dStack_1fc;
-        for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {
-          *(uint *)pdVar12 = *(uint *)pdVar10;
-          pdVar10 = (double *)((int)pdVar10 + (uint)bVar14 * -8 + 4);
-          pdVar12 = (double *)((int)pdVar12 + (uint)bVar14 * -8 + 4);
+        dStack_304 = dStack_364 * dVar3;
+        dStack_2fc = dStack_35c * dVar3;
+        dStack_2f4 = dStack_354 * dVar3;
+        pdVar11 = &dStack_304;
+        pdVar13 = &dStack_1fc;
+        for (iVar8 = 6; iVar8 != 0; iVar8 = iVar8 + -1) {
+          *(uint *)pdVar13 = *(uint *)pdVar11;
+          pdVar11 = (double *)((int)pdVar11 + (uint)bVar15 * -8 + 4);
+          pdVar13 = (double *)((int)pdVar13 + (uint)bVar15 * -8 + 4);
         }
         dStack_37c = *pdStack_90 - dStack_1fc;
         dStack_374 = pdStack_90[1] - dStack_1f4;
         dStack_36c = pdStack_90[2] - dStack_1ec;
-        pdVar10 = &dStack_37c;
-        puVar13 = &uStack_43c;
-        for (iVar7 = 6; iVar4 = iStack_ac, iVar7 != 0; iVar7 = iVar7 + -1) {
-          *puVar13 = *(uint *)pdVar10;
-          pdVar10 = (double *)((int)pdVar10 + (uint)bVar14 * -8 + 4);
-          puVar13 = puVar13 + (uint)bVar14 * -2 + 1;
+        pdVar11 = &dStack_37c;
+        puVar14 = &uStack_43c;
+        for (iVar8 = 6; iVar5 = iStack_ac, iVar8 != 0; iVar8 = iVar8 + -1) {
+          *puVar14 = *(uint *)pdVar11;
+          pdVar11 = (double *)((int)pdVar11 + (uint)bVar15 * -8 + 4);
+          puVar14 = puVar14 + (uint)bVar15 * -2 + 1;
         }
-        iVar7 = iStack_ac * 0x18;
-        pdVar12 = (double *)(&uStack_5dc + iStack_ac * 3);
-        *(uint *)pdVar12 = uStack_43c;
-        *(uint *)((int)&uStack_5dc + iVar7 + 4) = uStack_438;
-        *(uint *)(&uStack_5d4 + iVar4 * 3) = uStack_434;
-        *(uint *)((int)&uStack_5d4 + iVar7 + 4) = uStack_430;
-        *(uint *)(&uStack_5cc + iVar4 * 3) = uStack_42c;
-        *(uint *)((int)&uStack_5cc + iVar7 + 4) = uStack_428;
+        iVar8 = iStack_ac * 0x18;
+        pdVar13 = (double *)(&uStack_5dc + iStack_ac * 3);
+        *(uint *)pdVar13 = uStack_43c;
+        *(uint *)((int)&uStack_5dc + iVar8 + 4) = uStack_438;
+        *(uint *)(&uStack_5d4 + iVar5 * 3) = uStack_434;
+        *(uint *)((int)&uStack_5d4 + iVar8 + 4) = uStack_430;
+        *(uint *)(&uStack_5cc + iVar5 * 3) = uStack_42c;
+        *(uint *)((int)&uStack_5cc + iVar8 + 4) = uStack_428;
         pdStack_b4 = (double *)(&uStack_564 + iStack_54 * 2);
         uStack_164 = (double)(&uStack_564)[iStack_54 * 2] - *pdStack_20;
         dStack_15c = (double)(&uStack_55c)[iStack_54 * 2] - pdStack_20[1];
         uStack_174 = (uint)uStack_164;
-        (&uStack_170)[(uint)bVar14 * -2] = *(uint *)((int)&uStack_164 + (uint)bVar14 * -8 + 4)
+        (&uStack_170)[(uint)bVar15 * -2] = *(uint *)((int)&uStack_164 + (uint)bVar15 * -8 + 4)
         ;
-        pdVar10 = pdStack_b4;
-        *(uint *)(&dStack_16c + (-(uint)bVar14 - (uint)bVar14)) =
-             *(uint *)(&dStack_15c + (-(uint)bVar14 - (uint)bVar14));
+        pdVar11 = pdStack_b4;
+        *(uint *)(&dStack_16c + (-(uint)bVar15 - (uint)bVar15)) =
+             *(uint *)(&dStack_15c + (-(uint)bVar15 - (uint)bVar15));
         *(uint *)
-         ((int)(&dStack_16c + (-(uint)bVar14 - (uint)bVar14)) + ((uint)bVar14 * -2 + 1) * 4) =
+         ((int)(&dStack_16c + (-(uint)bVar15 - (uint)bVar15)) + ((uint)bVar15 * -2 + 1) * 4) =
              *(uint *)
-              ((int)(&dStack_15c + (-(uint)bVar14 - (uint)bVar14)) + ((uint)bVar14 * -2 + 1) * 4);
-        uStack_154 = (double)CONCAT44 /* combine 2-byte values */(uStack_170,uStack_174) * dVar15;
-        dStack_14c = dStack_16c * dVar15;
+              ((int)(&dStack_15c + (-(uint)bVar15 - (uint)bVar15)) + ((uint)bVar15 * -2 + 1) * 4);
+        uStack_154 = (double)CONCAT44 /* combine 2-byte values */(uStack_170,uStack_174) * dVar3;
+        dStack_14c = dStack_16c * dVar3;
         uStack_1a4 = (uint)uStack_154;
-        (&uStack_1a0)[(uint)bVar14 * -2] = *(uint *)((int)&uStack_154 + (uint)bVar14 * -8 + 4)
+        (&uStack_1a0)[(uint)bVar15 * -2] = *(uint *)((int)&uStack_154 + (uint)bVar15 * -8 + 4)
         ;
-        *(uint *)(&dStack_19c + (-(uint)bVar14 - (uint)bVar14)) =
-             *(uint *)(&dStack_14c + (-(uint)bVar14 - (uint)bVar14));
+        *(uint *)(&dStack_19c + (-(uint)bVar15 - (uint)bVar15)) =
+             *(uint *)(&dStack_14c + (-(uint)bVar15 - (uint)bVar15));
         *(uint *)
-         ((int)(&dStack_19c + (-(uint)bVar14 - (uint)bVar14)) + ((uint)bVar14 * -2 + 1) * 4) =
+         ((int)(&dStack_19c + (-(uint)bVar15 - (uint)bVar15)) + ((uint)bVar15 * -2 + 1) * 4) =
              *(uint *)
-              ((int)(&dStack_14c + (-(uint)bVar14 - (uint)bVar14)) + ((uint)bVar14 * -2 + 1) * 4);
-        uStack_1e4 = *pdVar10 - (double)CONCAT44 /* combine 2-byte values */(uStack_1a0,uStack_1a4);
-        dStack_1dc = pdVar10[1] - dStack_19c;
+              ((int)(&dStack_14c + (-(uint)bVar15 - (uint)bVar15)) + ((uint)bVar15 * -2 + 1) * 4);
+        uStack_1e4 = *pdVar11 - (double)CONCAT44 /* combine 2-byte values */(uStack_1a0,uStack_1a4);
+        dStack_1dc = pdVar11[1] - dStack_19c;
         uStack_d4 = (uint)uStack_1e4;
-        aiStack_d0[(uint)bVar14 * -2] = *(int *)((int)&uStack_1e4 + (uint)bVar14 * -8 + 4);
-        aiStack_d0[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 1] =
-             *(int *)(&dStack_1dc + (-(uint)bVar14 - (uint)bVar14));
-        (aiStack_d0 + (uint)bVar14 * -2 + (uint)bVar14 * -2 + 1)[(uint)bVar14 * -2 + 1] =
-             *(int *)((int)(&dStack_1dc + (-(uint)bVar14 - (uint)bVar14)) +
-                     ((uint)bVar14 * -2 + 1) * 4);
-        iVar5 = iStack_ac * 0x10;
-        pdVar10 = (double *)(&uStack_564 + iStack_ac * 2);
-        *(uint *)pdVar10 = uStack_d4;
-        *(int *)((int)&uStack_564 + iVar5 + 4) = aiStack_d0[0];
+        aiStack_d0[(uint)bVar15 * -2] = *(int *)((int)&uStack_1e4 + (uint)bVar15 * -8 + 4);
+        aiStack_d0[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 1] =
+             *(int *)(&dStack_1dc + (-(uint)bVar15 - (uint)bVar15));
+        (aiStack_d0 + (uint)bVar15 * -2 + (uint)bVar15 * -2 + 1)[(uint)bVar15 * -2 + 1] =
+             *(int *)((int)(&dStack_1dc + (-(uint)bVar15 - (uint)bVar15)) +
+                     ((uint)bVar15 * -2 + 1) * 4);
+        iVar6 = iStack_ac * 0x10;
+        pdVar11 = (double *)(&uStack_564 + iStack_ac * 2);
+        *(uint *)pdVar11 = uStack_d4;
+        *(int *)((int)&uStack_564 + iVar6 + 4) = aiStack_d0[0];
         *(int *)(&uStack_55c + iStack_ac * 2) = aiStack_d0[1];
-        *(int *)((int)&uStack_55c + iVar5 + 4) = aiStack_d0[2];
+        *(int *)((int)&uStack_55c + iVar6 + 4) = aiStack_d0[2];
         pCStack_74 = (out_result->poly2).uvs + 2;
         pCStack_40 = (out_result->poly2).vertices + 2;
         pCStack_7c = (out_result->poly2).uvs + 1;
@@ -610,20 +607,20 @@ shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580
           (out_result->poly1).vertices[0].z = pdStack_94[2];
           pCStack_60->x = *pdStack_20;
           (out_result->poly1).uvs[0].y = pdStack_20[1];
-          pCStack_2c->x = *pdVar9;
-          (out_result->poly1).vertices[1].y = (double)(&uStack_5d4)[iVar6 * 3];
-          (out_result->poly1).vertices[1].z = (double)(&uStack_5cc)[iVar6 * 3];
+          pCStack_2c->x = *pdVar10;
+          (out_result->poly1).vertices[1].y = (double)(&uStack_5d4)[iVar7 * 3];
+          (out_result->poly1).vertices[1].z = (double)(&uStack_5cc)[iVar7 * 3];
           pCStack_58->x = *pdStack_b0;
           (out_result->poly1).uvs[1].y = pdStack_b0[1];
-          pCStack_44->x = *pdVar12;
-          (out_result->poly1).vertices[2].y = (double)(&uStack_5d4)[iVar4 * 3];
-          (out_result->poly1).vertices[2].z = (double)(&uStack_5cc)[iVar4 * 3];
-          pCStack_5c->x = *pdVar10;
+          pCStack_44->x = *pdVar13;
+          (out_result->poly1).vertices[2].y = (double)(&uStack_5d4)[iVar5 * 3];
+          (out_result->poly1).vertices[2].z = (double)(&uStack_5cc)[iVar5 * 3];
+          pCStack_5c->x = *pdVar11;
           (out_result->poly1).uvs[2].y = (double)(&uStack_55c)[iStack_ac * 2];
           (out_result->poly2).vertex_count = 4;
-          pCVar1->x = *pdVar9;
-          (out_result->poly2).vertices[0].y = (double)(&uStack_5d4)[iVar6 * 3];
-          (out_result->poly2).vertices[0].z = (double)(&uStack_5cc)[iVar6 * 3];
+          pCVar1->x = *pdVar10;
+          (out_result->poly2).vertices[0].y = (double)(&uStack_5d4)[iVar7 * 3];
+          (out_result->poly2).vertices[0].z = (double)(&uStack_5cc)[iVar7 * 3];
           pCStack_88->x = *pdStack_b0;
           (out_result->poly2).uvs[0].y = pdStack_b0[1];
           pCStack_3c->x = *pdStack_9c;
@@ -636,30 +633,30 @@ shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580
           (out_result->poly2).vertices[2].z = pdStack_90[2];
           pCStack_74->x = *pdStack_b4;
           (out_result->poly2).uvs[2].y = pdStack_b4[1];
-          *(uint *)&(out_result->poly2).vertices[3].x = *(uint *)pdVar12;
+          *(uint *)&(out_result->poly2).vertices[3].x = *(uint *)pdVar13;
           *(uint *)((int)&(out_result->poly2).vertices[3].x + 4) =
-               *(uint *)((int)&uStack_5dc + iVar7 + 4);
+               *(uint *)((int)&uStack_5dc + iVar8 + 4);
           *(uint *)&(out_result->poly2).vertices[3].y =
-               *(uint *)(&uStack_5d4 + iVar4 * 3);
+               *(uint *)(&uStack_5d4 + iVar5 * 3);
           *(uint *)((int)&(out_result->poly2).vertices[3].y + 4) =
-               *(uint *)((int)&uStack_5d4 + iVar7 + 4);
+               *(uint *)((int)&uStack_5d4 + iVar8 + 4);
           *(uint *)&(out_result->poly2).vertices[3].z =
-               *(uint *)(&uStack_5cc + iVar4 * 3);
+               *(uint *)(&uStack_5cc + iVar5 * 3);
           *(uint *)((int)&(out_result->poly2).vertices[3].z + 4) =
-               *(uint *)((int)&uStack_5cc + iVar7 + 4);
-          *(uint *)&(out_result->poly2).uvs[3].x = *(uint *)pdVar10;
+               *(uint *)((int)&uStack_5cc + iVar8 + 4);
+          *(uint *)&(out_result->poly2).uvs[3].x = *(uint *)pdVar11;
           *(uint *)((int)&(out_result->poly2).uvs[3].x + 4) =
-               *(uint *)((int)&uStack_564 + iVar5 + 4);
+               *(uint *)((int)&uStack_564 + iVar6 + 4);
           *(uint *)&(out_result->poly2).uvs[3].y =
                *(uint *)(&uStack_55c + iStack_ac * 2);
           *(uint *)((int)&(out_result->poly2).uvs[3].y + 4) =
-               *(uint *)((int)&uStack_55c + iVar5 + 4);
+               *(uint *)((int)&uStack_55c + iVar6 + 4);
           return 1;
         }
         (out_result->poly1).vertex_count = 4;
-        pCStack_bc->x = *pdVar9;
-        (out_result->poly1).vertices[0].y = (double)(&uStack_5d4)[iVar6 * 3];
-        (out_result->poly1).vertices[0].z = (double)(&uStack_5cc)[iVar6 * 3];
+        pCStack_bc->x = *pdVar10;
+        (out_result->poly1).vertices[0].y = (double)(&uStack_5d4)[iVar7 * 3];
+        (out_result->poly1).vertices[0].z = (double)(&uStack_5cc)[iVar7 * 3];
         pCStack_60->x = *pdStack_b0;
         (out_result->poly1).uvs[0].y = pdStack_b0[1];
         pCStack_2c->x = *pdStack_9c;
@@ -672,10 +669,10 @@ shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580
         (out_result->poly1).vertices[2].z = pdStack_90[2];
         pCStack_5c->x = *pdStack_b4;
         (out_result->poly1).uvs[2].y = pdStack_b4[1];
-        (out_result->poly1).vertices[3].x = *pdVar12;
-        (out_result->poly1).vertices[3].y = (double)(&uStack_5d4)[iVar4 * 3];
-        (out_result->poly1).vertices[3].z = (double)(&uStack_5cc)[iVar4 * 3];
-        (out_result->poly1).uvs[3].x = *pdVar10;
+        (out_result->poly1).vertices[3].x = *pdVar13;
+        (out_result->poly1).vertices[3].y = (double)(&uStack_5d4)[iVar5 * 3];
+        (out_result->poly1).vertices[3].z = (double)(&uStack_5cc)[iVar5 * 3];
+        (out_result->poly1).uvs[3].x = *pdVar11;
         (out_result->poly1).uvs[3].y = (double)(&uStack_55c)[iStack_ac * 2];
         (out_result->poly2).vertex_count = 3;
         *(uint *)&pCVar1->x = *(uint *)pdStack_94;
@@ -687,36 +684,36 @@ shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580
         (out_result->poly2).vertices[0].z = pdStack_94[2];
         pCStack_88->x = *pdStack_20;
         (out_result->poly2).uvs[0].y = pdStack_20[1];
-        *(uint *)&pCStack_3c->x = *(uint *)pdVar9;
+        *(uint *)&pCStack_3c->x = *(uint *)pdVar10;
         *(uint *)((int)&(out_result->poly2).vertices[1].x + 4) =
-             *(uint *)((int)&uStack_5dc + iVar3 + 4);
-        *(uint *)&(out_result->poly2).vertices[1].y = *(uint *)(&uStack_5d4 + iVar6 * 3)
+             *(uint *)((int)&uStack_5dc + iVar4 + 4);
+        *(uint *)&(out_result->poly2).vertices[1].y = *(uint *)(&uStack_5d4 + iVar7 * 3)
         ;
         *(uint *)((int)&(out_result->poly2).vertices[1].y + 4) =
-             *(uint *)((int)&uStack_5d4 + iVar3 + 4);
-        *(uint *)&(out_result->poly2).vertices[1].z = *(uint *)(&uStack_5cc + iVar6 * 3)
+             *(uint *)((int)&uStack_5d4 + iVar4 + 4);
+        *(uint *)&(out_result->poly2).vertices[1].z = *(uint *)(&uStack_5cc + iVar7 * 3)
         ;
         *(uint *)((int)&(out_result->poly2).vertices[1].z + 4) =
-             *(uint *)((int)&uStack_5cc + iVar3 + 4);
+             *(uint *)((int)&uStack_5cc + iVar4 + 4);
         pCStack_7c->x = *pdStack_b0;
         (out_result->poly2).uvs[1].y = pdStack_b0[1];
-        *(uint *)&pCStack_40->x = *(uint *)pdVar12;
+        *(uint *)&pCStack_40->x = *(uint *)pdVar13;
         *(uint *)((int)&(out_result->poly2).vertices[2].x + 4) =
-             *(uint *)((int)&uStack_5dc + iVar7 + 4);
-        *(uint *)&(out_result->poly2).vertices[2].y = *(uint *)(&uStack_5d4 + iVar4 * 3)
+             *(uint *)((int)&uStack_5dc + iVar8 + 4);
+        *(uint *)&(out_result->poly2).vertices[2].y = *(uint *)(&uStack_5d4 + iVar5 * 3)
         ;
         *(uint *)((int)&(out_result->poly2).vertices[2].y + 4) =
-             *(uint *)((int)&uStack_5d4 + iVar7 + 4);
-        *(uint *)&(out_result->poly2).vertices[2].z = *(uint *)(&uStack_5cc + iVar4 * 3)
+             *(uint *)((int)&uStack_5d4 + iVar8 + 4);
+        *(uint *)&(out_result->poly2).vertices[2].z = *(uint *)(&uStack_5cc + iVar5 * 3)
         ;
         *(uint *)((int)&(out_result->poly2).vertices[2].z + 4) =
-             *(uint *)((int)&uStack_5cc + iVar7 + 4);
-        *(uint *)&pCStack_74->x = *(uint *)pdVar10;
+             *(uint *)((int)&uStack_5cc + iVar8 + 4);
+        *(uint *)&pCStack_74->x = *(uint *)pdVar11;
         *(uint *)((int)&(out_result->poly2).uvs[2].x + 4) =
-             *(uint *)((int)&uStack_564 + iVar5 + 4);
+             *(uint *)((int)&uStack_564 + iVar6 + 4);
         *(uint *)&(out_result->poly2).uvs[2].y = *(uint *)(&uStack_55c + iStack_ac * 2);
         *(uint *)((int)&(out_result->poly2).uvs[2].y + 4) =
-             *(uint *)((int)&uStack_55c + iVar5 + 4);
+             *(uint *)((int)&uStack_55c + iVar6 + 4);
         return 1;
       }
       iStack_a4 = 3;
@@ -736,85 +733,85 @@ shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580
         iStack_68 = 2;
       }
       iStack_8c = iStack_48 * 8;
-      dVar15 = (&dStack_3f4)[iStack_48] / ((&dStack_3f4)[iStack_48] - (&dStack_3f4)[iStack_50]);
+      dVar3 = (&dStack_3f4)[iStack_48] / ((&dStack_3f4)[iStack_48] - (&dStack_3f4)[iStack_50]);
       pdStack_14 = (double *)(&uStack_5dc + iStack_50 * 3);
       pdStack_98 = (double *)(&uStack_5dc + iStack_48 * 3);
       dStack_22c = (double)(&uStack_5dc)[iStack_48 * 3] - (double)(&uStack_5dc)[iStack_50 * 3];
       dStack_224 = (double)(&uStack_5d4)[iStack_48 * 3] - (double)(&uStack_5d4)[iStack_50 * 3];
       dStack_21c = (double)(&uStack_5cc)[iStack_48 * 3] - (double)(&uStack_5cc)[iStack_50 * 3];
-      pdVar10 = &dStack_22c;
-      pdVar12 = &dStack_4b4;
-      for (iVar3 = 6; pdVar9 = pdStack_98, iVar3 != 0; iVar3 = iVar3 + -1) {
-        *(uint *)pdVar12 = *(uint *)pdVar10;
-        pdVar10 = (double *)((int)pdVar10 + (uint)bVar14 * -8 + 4);
-        pdVar12 = (double *)((int)pdVar12 + (uint)bVar14 * -8 + 4);
+      pdVar11 = &dStack_22c;
+      pdVar13 = &dStack_4b4;
+      for (iVar4 = 6; pdVar10 = pdStack_98, iVar4 != 0; iVar4 = iVar4 + -1) {
+        *(uint *)pdVar13 = *(uint *)pdVar11;
+        pdVar11 = (double *)((int)pdVar11 + (uint)bVar15 * -8 + 4);
+        pdVar13 = (double *)((int)pdVar13 + (uint)bVar15 * -8 + 4);
       }
-      dStack_28c = dStack_4b4 * dVar15;
-      dStack_284 = dStack_4ac * dVar15;
-      dStack_27c = dStack_4a4 * dVar15;
-      pdVar10 = &dStack_28c;
-      pdVar12 = &dStack_25c;
-      for (iVar3 = 6; iVar7 = iStack_a4, iVar3 != 0; iVar3 = iVar3 + -1) {
-        *(uint *)pdVar12 = *(uint *)pdVar10;
-        pdVar10 = (double *)((int)pdVar10 + (uint)bVar14 * -8 + 4);
-        pdVar12 = (double *)((int)pdVar12 + (uint)bVar14 * -8 + 4);
+      dStack_28c = dStack_4b4 * dVar3;
+      dStack_284 = dStack_4ac * dVar3;
+      dStack_27c = dStack_4a4 * dVar3;
+      pdVar11 = &dStack_28c;
+      pdVar13 = &dStack_25c;
+      for (iVar4 = 6; iVar8 = iStack_a4, iVar4 != 0; iVar4 = iVar4 + -1) {
+        *(uint *)pdVar13 = *(uint *)pdVar11;
+        pdVar11 = (double *)((int)pdVar11 + (uint)bVar15 * -8 + 4);
+        pdVar13 = (double *)((int)pdVar13 + (uint)bVar15 * -8 + 4);
       }
-      dStack_424 = *pdVar9 - dStack_25c;
-      dStack_41c = pdVar9[1] - dStack_254;
-      dStack_414 = pdVar9[2] - dStack_24c;
-      iVar3 = iStack_a4 * 0x18;
-      pdVar10 = &dStack_424;
-      puVar13 = &uStack_3dc;
-      for (iVar6 = 6; iVar6 != 0; iVar6 = iVar6 + -1) {
-        *puVar13 = *(uint *)pdVar10;
-        pdVar10 = (double *)((int)pdVar10 + (uint)bVar14 * -8 + 4);
-        puVar13 = puVar13 + (uint)bVar14 * -2 + 1;
+      dStack_424 = *pdVar10 - dStack_25c;
+      dStack_41c = pdVar10[1] - dStack_254;
+      dStack_414 = pdVar10[2] - dStack_24c;
+      iVar4 = iStack_a4 * 0x18;
+      pdVar11 = &dStack_424;
+      puVar14 = &uStack_3dc;
+      for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {
+        *puVar14 = *(uint *)pdVar11;
+        pdVar11 = (double *)((int)pdVar11 + (uint)bVar15 * -8 + 4);
+        puVar14 = puVar14 + (uint)bVar15 * -2 + 1;
       }
-      pdVar12 = (double *)(&uStack_5dc + iVar7 * 3);
-      *(uint *)pdVar12 = uStack_3dc;
-      *(uint *)((int)&uStack_5dc + iVar3 + 4) = uStack_3d8;
-      *(uint *)(&uStack_5d4 + iVar7 * 3) = uStack_3d4;
-      *(uint *)((int)&uStack_5d4 + iVar3 + 4) = uStack_3d0;
-      *(uint *)(&uStack_5cc + iVar7 * 3) = uStack_3cc;
-      *(uint *)((int)&uStack_5cc + iVar3 + 4) = local_3c8;
+      pdVar13 = (double *)(&uStack_5dc + iVar8 * 3);
+      *(uint *)pdVar13 = uStack_3dc;
+      *(uint *)((int)&uStack_5dc + iVar4 + 4) = uStack_3d8;
+      *(uint *)(&uStack_5d4 + iVar8 * 3) = uStack_3d4;
+      *(uint *)((int)&uStack_5d4 + iVar4 + 4) = uStack_3d0;
+      *(uint *)(&uStack_5cc + iVar8 * 3) = uStack_3cc;
+      *(uint *)((int)&uStack_5cc + iVar4 + 4) = local_3c8;
       pdStack_30 = (double *)(&uStack_564 + iStack_50 * 2);
       pdStack_18 = (double *)(&uStack_564 + iStack_48 * 2);
       uStack_1d4 = (double)(&uStack_564)[iStack_48 * 2] - (double)(&uStack_564)[iStack_50 * 2];
       dStack_1cc = (double)(&uStack_55c)[iStack_48 * 2] - (double)(&uStack_55c)[iStack_50 * 2];
       uStack_104 = (uint)uStack_1d4;
-      (&uStack_100)[(uint)bVar14 * -2] = *(uint *)((int)&uStack_1d4 + (uint)bVar14 * -8 + 4);
-      pdVar10 = pdStack_18;
-      *(uint *)(&dStack_fc + (-(uint)bVar14 - (uint)bVar14)) =
-           *(uint *)(&dStack_1cc + (-(uint)bVar14 - (uint)bVar14));
+      (&uStack_100)[(uint)bVar15 * -2] = *(uint *)((int)&uStack_1d4 + (uint)bVar15 * -8 + 4);
+      pdVar11 = pdStack_18;
+      *(uint *)(&dStack_fc + (-(uint)bVar15 - (uint)bVar15)) =
+           *(uint *)(&dStack_1cc + (-(uint)bVar15 - (uint)bVar15));
       *(uint *)
-       ((int)(&dStack_fc + (-(uint)bVar14 - (uint)bVar14)) + ((uint)bVar14 * -2 + 1) * 4) =
+       ((int)(&dStack_fc + (-(uint)bVar15 - (uint)bVar15)) + ((uint)bVar15 * -2 + 1) * 4) =
            *(uint *)
-            ((int)(&dStack_1cc + (-(uint)bVar14 - (uint)bVar14)) + ((uint)bVar14 * -2 + 1) * 4);
-      uStack_e4 = (double)CONCAT44 /* combine 2-byte values */(uStack_100,uStack_104) * dVar15;
-      dStack_dc = dStack_fc * dVar15;
+            ((int)(&dStack_1cc + (-(uint)bVar15 - (uint)bVar15)) + ((uint)bVar15 * -2 + 1) * 4);
+      uStack_e4 = (double)CONCAT44 /* combine 2-byte values */(uStack_100,uStack_104) * dVar3;
+      dStack_dc = dStack_fc * dVar3;
       uStack_194 = (uint)uStack_e4;
-      (&uStack_190)[(uint)bVar14 * -2] = *(uint *)((int)&uStack_e4 + (uint)bVar14 * -8 + 4);
-      *(uint *)(&dStack_18c + (-(uint)bVar14 - (uint)bVar14)) =
-           *(uint *)(&dStack_dc + (-(uint)bVar14 - (uint)bVar14));
+      (&uStack_190)[(uint)bVar15 * -2] = *(uint *)((int)&uStack_e4 + (uint)bVar15 * -8 + 4);
+      *(uint *)(&dStack_18c + (-(uint)bVar15 - (uint)bVar15)) =
+           *(uint *)(&dStack_dc + (-(uint)bVar15 - (uint)bVar15));
       *(uint *)
-       ((int)(&dStack_18c + (-(uint)bVar14 - (uint)bVar14)) + ((uint)bVar14 * -2 + 1) * 4) =
+       ((int)(&dStack_18c + (-(uint)bVar15 - (uint)bVar15)) + ((uint)bVar15 * -2 + 1) * 4) =
            *(uint *)
-            ((int)(&dStack_dc + (-(uint)bVar14 - (uint)bVar14)) + ((uint)bVar14 * -2 + 1) * 4);
-      uStack_f4 = *pdVar10 - (double)CONCAT44 /* combine 2-byte values */(uStack_190,uStack_194);
-      dStack_ec = pdVar10[1] - dStack_18c;
+            ((int)(&dStack_dc + (-(uint)bVar15 - (uint)bVar15)) + ((uint)bVar15 * -2 + 1) * 4);
+      uStack_f4 = *pdVar11 - (double)CONCAT44 /* combine 2-byte values */(uStack_190,uStack_194);
+      dStack_ec = pdVar11[1] - dStack_18c;
       uStack_134 = (uint)uStack_f4;
-      auStack_130[(uint)bVar14 * -2] = *(uint *)((int)&uStack_f4 + (uint)bVar14 * -8 + 4);
-      auStack_130[(uint)bVar14 * -2 + (uint)bVar14 * -2 + 1] =
-           *(uint *)(&dStack_ec + (-(uint)bVar14 - (uint)bVar14));
-      (auStack_130 + (uint)bVar14 * -2 + (uint)bVar14 * -2 + 1)[(uint)bVar14 * -2 + 1] =
+      auStack_130[(uint)bVar15 * -2] = *(uint *)((int)&uStack_f4 + (uint)bVar15 * -8 + 4);
+      auStack_130[(uint)bVar15 * -2 + (uint)bVar15 * -2 + 1] =
+           *(uint *)(&dStack_ec + (-(uint)bVar15 - (uint)bVar15));
+      (auStack_130 + (uint)bVar15 * -2 + (uint)bVar15 * -2 + 1)[(uint)bVar15 * -2 + 1] =
            *(uint *)
-            ((int)(&dStack_ec + (-(uint)bVar14 - (uint)bVar14)) + ((uint)bVar14 * -2 + 1) * 4);
-      iVar4 = iStack_a4 * 0x10;
-      pdVar9 = (double *)(&uStack_564 + iStack_a4 * 2);
-      *(uint *)pdVar9 = uStack_134;
-      *(uint *)((int)&uStack_564 + iVar4 + 4) = auStack_130[0];
+            ((int)(&dStack_ec + (-(uint)bVar15 - (uint)bVar15)) + ((uint)bVar15 * -2 + 1) * 4);
+      iVar5 = iStack_a4 * 0x10;
+      pdVar10 = (double *)(&uStack_564 + iStack_a4 * 2);
+      *(uint *)pdVar10 = uStack_134;
+      *(uint *)((int)&uStack_564 + iVar5 + 4) = auStack_130[0];
       *(uint *)(&uStack_55c + iStack_a4 * 2) = auStack_130[1];
-      *(uint *)((int)&uStack_55c + iVar4 + 4) = auStack_130[2];
+      *(uint *)((int)&uStack_55c + iVar5 + 4) = auStack_130[2];
       pCStack_78 = (out_result->poly2).uvs + 2;
       pCStack_28 = (out_result->poly2).vertices + 2;
       pCStack_64 = (out_result->poly2).uvs + 1;
@@ -827,62 +824,62 @@ shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580
       pCStack_38 = (out_result->poly1).vertices + 1;
       pCStack_6c = (out_result->poly1).uvs;
       pCStack_c0 = (out_result->poly1).vertices;
-      iVar6 = iStack_68 * 0x18;
-      iVar5 = iStack_68 * 0x10;
-      pdVar11 = (double *)(&uStack_564 + iStack_68 * 2);
-      pdVar10 = (double *)(&uStack_5dc + iStack_68 * 3);
+      iVar7 = iStack_68 * 0x18;
+      iVar6 = iStack_68 * 0x10;
+      pdVar12 = (double *)(&uStack_564 + iStack_68 * 2);
+      pdVar11 = (double *)(&uStack_5dc + iStack_68 * 3);
       if (0.0 < *(double *)((int)&dStack_3f4 + iStack_8c)) {
         (out_result->poly1).vertex_count = 3;
-        pCStack_c0->x = *pdVar10;
+        pCStack_c0->x = *pdVar11;
         (out_result->poly1).vertices[0].y = (double)(&uStack_5d4)[iStack_68 * 3];
         (out_result->poly1).vertices[0].z = (double)(&uStack_5cc)[iStack_68 * 3];
-        pCStack_6c->x = *pdVar11;
+        pCStack_6c->x = *pdVar12;
         (out_result->poly1).uvs[0].y = (double)(&uStack_55c)[iStack_68 * 2];
         pCStack_38->x = *pdStack_98;
         (out_result->poly1).vertices[1].y = pdStack_98[1];
         (out_result->poly1).vertices[1].z = pdStack_98[2];
         pCStack_70->x = *pdStack_18;
         (out_result->poly1).uvs[1].y = pdStack_18[1];
-        pCStack_34->x = *pdVar12;
-        (out_result->poly1).vertices[2].y = (double)(&uStack_5d4)[iVar7 * 3];
-        (out_result->poly1).vertices[2].z = (double)(&uStack_5cc)[iVar7 * 3];
-        pCStack_80->x = *pdVar9;
+        pCStack_34->x = *pdVar13;
+        (out_result->poly1).vertices[2].y = (double)(&uStack_5d4)[iVar8 * 3];
+        (out_result->poly1).vertices[2].z = (double)(&uStack_5cc)[iVar8 * 3];
+        pCStack_80->x = *pdVar10;
         (out_result->poly1).uvs[2].y = (double)(&uStack_55c)[iStack_a4 * 2];
         (out_result->poly2).vertex_count = 3;
-        *(uint *)&pCStack_24->x = *(uint *)pdVar10;
+        *(uint *)&pCStack_24->x = *(uint *)pdVar11;
         *(uint *)((int)&(out_result->poly2).vertices[0].x + 4) =
-             *(uint *)((int)&uStack_5dc + iVar6 + 4);
+             *(uint *)((int)&uStack_5dc + iVar7 + 4);
         *(uint *)&(out_result->poly2).vertices[0].y =
              *(uint *)(&uStack_5d4 + iStack_68 * 3);
         *(uint *)((int)&(out_result->poly2).vertices[0].y + 4) =
-             *(uint *)((int)&uStack_5d4 + iVar6 + 4);
+             *(uint *)((int)&uStack_5d4 + iVar7 + 4);
         *(uint *)&(out_result->poly2).vertices[0].z =
              *(uint *)(&uStack_5cc + iStack_68 * 3);
         *(uint *)((int)&(out_result->poly2).vertices[0].z + 4) =
-             *(uint *)((int)&uStack_5cc + iVar6 + 4);
-        *(uint *)&pCStack_84->x = *(uint *)pdVar11;
+             *(uint *)((int)&uStack_5cc + iVar7 + 4);
+        *(uint *)&pCStack_84->x = *(uint *)pdVar12;
         *(uint *)((int)&(out_result->poly2).uvs[0].x + 4) =
-             *(uint *)((int)&uStack_564 + iVar5 + 4);
+             *(uint *)((int)&uStack_564 + iVar6 + 4);
         *(uint *)&(out_result->poly2).uvs[0].y = *(uint *)(&uStack_55c + iStack_68 * 2);
         *(uint *)((int)&(out_result->poly2).uvs[0].y + 4) =
-             *(uint *)((int)&uStack_55c + iVar5 + 4);
-        *(uint *)&pCStack_b8->x = *(uint *)pdVar12;
+             *(uint *)((int)&uStack_55c + iVar6 + 4);
+        *(uint *)&pCStack_b8->x = *(uint *)pdVar13;
         *(uint *)((int)&(out_result->poly2).vertices[1].x + 4) =
-             *(uint *)((int)&uStack_5dc + iVar3 + 4);
-        *(uint *)&(out_result->poly2).vertices[1].y = *(uint *)(&uStack_5d4 + iVar7 * 3)
+             *(uint *)((int)&uStack_5dc + iVar4 + 4);
+        *(uint *)&(out_result->poly2).vertices[1].y = *(uint *)(&uStack_5d4 + iVar8 * 3)
         ;
         *(uint *)((int)&(out_result->poly2).vertices[1].y + 4) =
-             *(uint *)((int)&uStack_5d4 + iVar3 + 4);
-        *(uint *)&(out_result->poly2).vertices[1].z = *(uint *)(&uStack_5cc + iVar7 * 3)
+             *(uint *)((int)&uStack_5d4 + iVar4 + 4);
+        *(uint *)&(out_result->poly2).vertices[1].z = *(uint *)(&uStack_5cc + iVar8 * 3)
         ;
         *(uint *)((int)&(out_result->poly2).vertices[1].z + 4) =
-             *(uint *)((int)&uStack_5cc + iVar3 + 4);
-        *(uint *)&pCStack_64->x = *(uint *)pdVar9;
+             *(uint *)((int)&uStack_5cc + iVar4 + 4);
+        *(uint *)&pCStack_64->x = *(uint *)pdVar10;
         *(uint *)((int)&(out_result->poly2).uvs[1].x + 4) =
-             *(uint *)((int)&uStack_564 + iVar4 + 4);
+             *(uint *)((int)&uStack_564 + iVar5 + 4);
         *(uint *)&(out_result->poly2).uvs[1].y = *(uint *)(&uStack_55c + iStack_a4 * 2);
         *(uint *)((int)&(out_result->poly2).uvs[1].y + 4) =
-             *(uint *)((int)&uStack_55c + iVar4 + 4);
+             *(uint *)((int)&uStack_55c + iVar5 + 4);
         pCStack_28->x = *pdStack_14;
         (out_result->poly2).vertices[2].y = pdStack_14[1];
         (out_result->poly2).vertices[2].z = pdStack_14[2];
@@ -891,54 +888,54 @@ shape_superopt_cpp_CPoly_intersectPoly_FUN_005ce580
         return 1;
       }
       (out_result->poly2).vertex_count = 3;
-      pCStack_24->x = *pdVar10;
+      pCStack_24->x = *pdVar11;
       (out_result->poly2).vertices[0].y = (double)(&uStack_5d4)[iStack_68 * 3];
       (out_result->poly2).vertices[0].z = (double)(&uStack_5cc)[iStack_68 * 3];
-      pCStack_84->x = *pdVar11;
+      pCStack_84->x = *pdVar12;
       (out_result->poly2).uvs[0].y = (double)(&uStack_55c)[iStack_68 * 2];
       pCStack_b8->x = *pdStack_98;
       (out_result->poly2).vertices[1].y = pdStack_98[1];
       (out_result->poly2).vertices[1].z = pdStack_98[2];
       pCStack_64->x = *pdStack_18;
       (out_result->poly2).uvs[1].y = pdStack_18[1];
-      pCStack_28->x = *pdVar12;
-      (out_result->poly2).vertices[2].y = (double)(&uStack_5d4)[iVar7 * 3];
-      (out_result->poly2).vertices[2].z = (double)(&uStack_5cc)[iVar7 * 3];
-      pCStack_78->x = *pdVar9;
+      pCStack_28->x = *pdVar13;
+      (out_result->poly2).vertices[2].y = (double)(&uStack_5d4)[iVar8 * 3];
+      (out_result->poly2).vertices[2].z = (double)(&uStack_5cc)[iVar8 * 3];
+      pCStack_78->x = *pdVar10;
       (out_result->poly2).uvs[2].y = (double)(&uStack_55c)[iStack_a4 * 2];
       (out_result->poly1).vertex_count = 3;
-      *(uint *)&pCStack_c0->x = *(uint *)pdVar10;
+      *(uint *)&pCStack_c0->x = *(uint *)pdVar11;
       *(uint *)((int)&(out_result->poly1).vertices[0].x + 4) =
-           *(uint *)((int)&uStack_5dc + iVar6 + 4);
+           *(uint *)((int)&uStack_5dc + iVar7 + 4);
       *(uint *)&(out_result->poly1).vertices[0].y =
            *(uint *)(&uStack_5d4 + iStack_68 * 3);
       *(uint *)((int)&(out_result->poly1).vertices[0].y + 4) =
-           *(uint *)((int)&uStack_5d4 + iVar6 + 4);
+           *(uint *)((int)&uStack_5d4 + iVar7 + 4);
       *(uint *)&(out_result->poly1).vertices[0].z =
            *(uint *)(&uStack_5cc + iStack_68 * 3);
       *(uint *)((int)&(out_result->poly1).vertices[0].z + 4) =
-           *(uint *)((int)&uStack_5cc + iVar6 + 4);
-      *(uint *)&pCStack_6c->x = *(uint *)pdVar11;
+           *(uint *)((int)&uStack_5cc + iVar7 + 4);
+      *(uint *)&pCStack_6c->x = *(uint *)pdVar12;
       *(uint *)((int)&(out_result->poly1).uvs[0].x + 4) =
-           *(uint *)((int)&uStack_564 + iVar5 + 4);
+           *(uint *)((int)&uStack_564 + iVar6 + 4);
       *(uint *)&(out_result->poly1).uvs[0].y = *(uint *)(&uStack_55c + iStack_68 * 2);
       *(uint *)((int)&(out_result->poly1).uvs[0].y + 4) =
-           *(uint *)((int)&uStack_55c + iVar5 + 4);
-      *(uint *)&pCStack_38->x = *(uint *)pdVar12;
+           *(uint *)((int)&uStack_55c + iVar6 + 4);
+      *(uint *)&pCStack_38->x = *(uint *)pdVar13;
       *(uint *)((int)&(out_result->poly1).vertices[1].x + 4) =
-           *(uint *)((int)&uStack_5dc + iVar3 + 4);
-      *(uint *)&(out_result->poly1).vertices[1].y = *(uint *)(&uStack_5d4 + iVar7 * 3);
+           *(uint *)((int)&uStack_5dc + iVar4 + 4);
+      *(uint *)&(out_result->poly1).vertices[1].y = *(uint *)(&uStack_5d4 + iVar8 * 3);
       *(uint *)((int)&(out_result->poly1).vertices[1].y + 4) =
-           *(uint *)((int)&uStack_5d4 + iVar3 + 4);
-      *(uint *)&(out_result->poly1).vertices[1].z = *(uint *)(&uStack_5cc + iVar7 * 3);
+           *(uint *)((int)&uStack_5d4 + iVar4 + 4);
+      *(uint *)&(out_result->poly1).vertices[1].z = *(uint *)(&uStack_5cc + iVar8 * 3);
       *(uint *)((int)&(out_result->poly1).vertices[1].z + 4) =
-           *(uint *)((int)&uStack_5cc + iVar3 + 4);
-      *(uint *)&pCStack_70->x = *(uint *)pdVar9;
+           *(uint *)((int)&uStack_5cc + iVar4 + 4);
+      *(uint *)&pCStack_70->x = *(uint *)pdVar10;
       *(uint *)((int)&(out_result->poly1).uvs[1].x + 4) =
-           *(uint *)((int)&uStack_564 + iVar4 + 4);
+           *(uint *)((int)&uStack_564 + iVar5 + 4);
       *(uint *)&(out_result->poly1).uvs[1].y = *(uint *)(&uStack_55c + iStack_a4 * 2);
       *(uint *)((int)&(out_result->poly1).uvs[1].y + 4) =
-           *(uint *)((int)&uStack_55c + iVar4 + 4);
+           *(uint *)((int)&uStack_55c + iVar5 + 4);
       pCStack_34->x = *pdStack_14;
       (out_result->poly1).vertices[2].y = pdStack_14[1];
       (out_result->poly1).vertices[2].z = pdStack_14[2];

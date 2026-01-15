@@ -15,7 +15,6 @@ core_dcamera_cpp_CDemonCamera_worldToCameraSpace_FUN_0044da90
   longlong lVar2;
   longlong lVar3;
   longlong lVar4;
-  BADSPACEBASE *in_ESP;
   CVector3i *unaff_ESI;
   CVector3i *pCVar5;
   CVector3i local_30;

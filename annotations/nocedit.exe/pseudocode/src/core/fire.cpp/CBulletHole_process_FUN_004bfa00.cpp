@@ -10,7 +10,6 @@ void __cdecl core_fire_cpp_CBulletHole_process_FUN_004bfa00(CBulletHole *this_pt
 
 {
   CBulletHole *pCVar1;
-  BADSPACEBASE *in_ESP;
   CVector3f local_10;
   
   if (this_ptr->actor_ptr != (CDemonActor *)0x0) {

@@ -14,12 +14,12 @@ void __cdecl shape_design_c_createKeyframeModel_FUN_00468320(void)
   char cVar1;
   byte bVar2;
   int iVar3;
-  BADSPACEBASE *in_ESP;
   byte *pbVar4;
   char *pcVar5;
   char (*pacVar6) [16];
   byte bVar7;
   double dVar8;
+  ulonglong in_stack_fffffd94;
   SMRGLKeyframeModel local_264;
   char local_10c [80];
   char local_bc [80];
@@ -55,7 +55,8 @@ void __cdecl shape_design_c_createKeyframeModel_FUN_00468320(void)
     if (((iVar3 != -2) &&
         (local_264.header.child_count = crt_stdlib_c_atoi_FUN_005ffef0((char *)local_6c),
         1 < local_264.header.child_count)) && (local_264.header.child_count < 0x11)) {
-      for (local_18 = 0; local_18 < local_264.header.child_count; local_18 = local_18 + 1) {
+      for (local_18 = 0; pcVar5 = (char *)in_stack_fffffd94, local_18 < local_264.header.child_count
+          ; local_18 = local_18 + 1) {
         wincore_windll_cpp_clearScreen_FUN_005b3e70();
         crt_stdio_c_sprintf_FUN_005fdbd0(local_bc,"Enter key frame of object %d : ",local_18 + 1);
         engine_2d_c_getInputWithPrompt_FUN_004032c0((char *)local_6c,0x14,0,0,local_bc);
@@ -94,7 +95,7 @@ void __cdecl shape_design_c_createKeyframeModel_FUN_00468320(void)
         pbVar4 = pbVar4 + (uint)bVar7 * -2 + 1;
       } while (bVar2 != 0);
       if (iVar3 != -2) {
-        dVar8 = crt_string_c_strtod_FUN_005ff0f3("Enter in time per frame in decimal : ");
+        dVar8 = crt_string_c_strtod_FUN_005ff0f3(pcVar5);
         local_14 = (float)dVar8;
         if ((0.0 < local_14) && (local_14 < (float)127)) {
           dVar8 = crt_math_c_round_FUN_005fe6b0((double)(local_14 * (float)65536));

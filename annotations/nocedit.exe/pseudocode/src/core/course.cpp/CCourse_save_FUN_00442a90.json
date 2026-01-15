@@ -1,12 +1,12 @@
 {
   "complexity": {
     "assembly_lines": 115,
-    "complexity_score": 260,
+    "complexity_score": 272,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 12,
-    "pseudocode_lines": 45,
-    "suspect_count": 19,
+    "pseudocode_lines": 47,
+    "suspect_count": 20,
     "suspect_types": [
       "call_esp_preserve",
       "format_string_mismatch",
@@ -14,7 +14,7 @@
       "stack_param",
       "variadic_preserve"
     ],
-    "total_lines": 160
+    "total_lines": 162
   },
   "cross_references": [
     {
@@ -228,58 +228,65 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 16,
       "match": "in_stack_00000008",
       "text": "char *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 18,
       "match": "in_stack_00000008",
       "text": "file = engine_dosio_c_getFile_FUN_00481a50(\"data\",in_stack_00000008,\"wt\");",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 33,
-      "match": "(float *)((int)",
-      "text": "pfVar2 = (float *)((int)&(pCVar7->frame1).orient.y + iVar8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
       "line": 34,
       "match": "(float *)((int)",
-      "text": "pfVar3 = (float *)((int)&(pCVar7->frame1).orient.x + iVar8);",
+      "text": "pfVar2 = (float *)((int)&(pCVar8->frame1).orient.z + iVar9);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 35,
       "match": "(float *)((int)",
-      "text": "pfVar4 = (float *)((int)&(pCVar7->frame1).orient.w + iVar8);",
+      "text": "pfVar3 = (float *)((int)&(pCVar8->frame1).orient.y + iVar9);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 36,
       "match": "(float *)((int)",
-      "text": "pfVar5 = (float *)((int)&(pCVar7->frame1).pos.z + iVar8);",
+      "text": "pfVar4 = (float *)((int)&(pCVar8->frame1).orient.x + iVar9);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 37,
       "match": "(float *)((int)",
-      "text": "pfVar6 = (float *)((int)&(pCVar7->frame1).pos.y + iVar8);",
+      "text": "pfVar5 = (float *)((int)&(pCVar8->frame1).orient.w + iVar9);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 38,
       "match": "(float *)((int)",
-      "text": "pfVar1 = (float *)((int)&(pCVar7->frame1).pos.x + iVar8);",
+      "text": "pfVar6 = (float *)((int)&(pCVar8->frame1).pos.z + iVar9);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 39,
+      "match": "(float *)((int)",
+      "text": "pfVar7 = (float *)((int)&(pCVar8->frame1).pos.y + iVar9);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 40,
+      "match": "(float *)((int)",
+      "text": "pfVar1 = (float *)((int)&(pCVar8->frame1).pos.x + iVar9);",
       "type": "pointer_cast"
     },
     {
@@ -386,7 +393,7 @@
       "expected_args": 1,
       "format_string": "%d\\n",
       "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 24,
+      "line_number": 25,
       "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d\\n\");",
       "text": "Format string expects 1 args but got 0",
       "type": "format_string_mismatch"
@@ -397,7 +404,7 @@
       "expected_args": 2,
       "format_string": "%d,%d\\n",
       "function_name": "crt_stdio_c_fprintf_FUN_005fe6d0",
-      "line_number": 26,
+      "line_number": 27,
       "match": "crt_stdio_c_fprintf_FUN_005fe6d0(file,\"%d,%d\\n\",this_ptr->len);",
       "text": "Format string expects 2 args but got 1",
       "type": "format_string_mismatch"

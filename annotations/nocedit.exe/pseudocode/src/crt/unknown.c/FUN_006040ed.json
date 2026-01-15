@@ -1,17 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 14,
-    "complexity_score": 109,
+    "complexity_score": 94,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "pseudocode_lines": 19,
-    "suspect_count": 7,
+    "suspect_count": 6,
     "suspect_types": [
       "concat_artifact",
       "special_crt_function",
-      "unaffected_reg",
-      "undefined_type"
+      "unaffected_reg"
     ],
     "total_lines": 33
   },
@@ -86,24 +85,17 @@
       "type": "unaffected_reg"
     },
     {
-      "description": "Unresolved type",
-      "line": 9,
-      "match": "undefined3 unaff_retaddr",
-      "text": "undefined3 unaff_retaddr;",
-      "type": "undefined_type"
-    },
-    {
       "description": "Decompiler double/longlong composition artifact",
       "line": 16,
       "match": "CONCAT31",
-      "text": "uVar1 = (ushort)CONCAT31 /* combine 2-byte values */(unaff_retaddr,(char)((uint3)unaff_retaddr >> 8));",
+      "text": "uVar1 = (ushort)CONCAT31 /* combine 2-byte values */((int3)param_1,(char)(param_1 >> 8));",
       "type": "concat_artifact"
     },
     {
       "description": "Decompiler double/longlong composition artifact",
       "line": 18,
       "match": "CONCAT11",
-      "text": "uVar1 = CONCAT11 /* combine 2-byte values */((char)((ushort)unaff_retaddr % 10),(char)((ushort)unaff_retaddr / 10));",
+      "text": "uVar1 = CONCAT11 /* combine 2-byte values */((char)((ushort)param_1 % 10),(char)((ushort)param_1 / 10));",
       "type": "concat_artifact"
     },
     {

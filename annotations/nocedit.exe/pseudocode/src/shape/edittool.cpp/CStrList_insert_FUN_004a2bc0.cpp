@@ -17,8 +17,6 @@ shape_edittool_cpp_CStrList_insert_FUN_004a2bc0
   uint uVar4;
   int iVar5;
   byte bVar6;
-  char *in_stack_00000014;
-  char *in_stack_0000001c;
   
   bVar6 = 0;
   if ((insert_index < 0) || (this_ptr->item_count < insert_index)) {
@@ -36,11 +34,12 @@ shape_edittool_cpp_CStrList_insert_FUN_004a2bc0
             (this_ptr->data_array + insert_index + 1,this_ptr->data_array + insert_index,
              (this_ptr->item_count - insert_index) * 4 - 4);
   uVar4 = 0xffffffff;
+  pcVar3 = string_data;
   do {
     if (uVar4 == 0) break;
     uVar4 = uVar4 - 1;
-    cVar1 = *in_stack_00000014;
-    in_stack_00000014 = in_stack_00000014 + (uint)bVar6 * -2 + 1;
+    cVar1 = *pcVar3;
+    pcVar3 = pcVar3 + (uint)bVar6 * -2 + 1;
   } while (cVar1 != '\0');
   pcVar3 = shape_memdbg_cpp_debugMalloc_FUN_0050f250(~uVar4,"..\\shape\\edittool.cpp",0xb3f);
   this_ptr->data_array[insert_index] = pcVar3;
@@ -51,13 +50,13 @@ shape_edittool_cpp_CStrList_insert_FUN_004a2bc0
   }
   pcVar3 = this_ptr->data_array[insert_index];
   do {
-    cVar1 = *in_stack_0000001c;
+    cVar1 = *string_data;
     *pcVar3 = cVar1;
     if (cVar1 == '\0') {
       return;
     }
-    cVar1 = in_stack_0000001c[1];
-    in_stack_0000001c = in_stack_0000001c + 2;
+    cVar1 = string_data[1];
+    string_data = string_data + 2;
     pcVar3[1] = cVar1;
     pcVar3 = pcVar3 + 2;
   } while (cVar1 != '\0');

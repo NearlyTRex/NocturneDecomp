@@ -13,7 +13,6 @@ void core_setedit_cpp_FUN_0057d340(void)
 {
   uint *puVar1;
   uint *puVar2;
-  BADSPACEBASE *in_ESP;
   int in_stack_00000008;
   char local_120 [100];
   uint local_bc;

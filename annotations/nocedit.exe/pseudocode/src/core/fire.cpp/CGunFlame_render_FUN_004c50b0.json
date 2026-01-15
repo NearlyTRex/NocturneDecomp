@@ -1,19 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 397,
-    "complexity_score": 304,
+    "complexity_score": 273,
     "cross_reference_count": 1,
     "function_call_count": 10,
     "global_count": 20,
-    "pseudocode_lines": 164,
-    "suspect_count": 12,
+    "pseudocode_lines": 163,
+    "suspect_count": 10,
     "suspect_types": [
-      "badspacebase",
       "extra_output",
-      "register_param",
       "suspect_float"
     ],
-    "total_lines": 561
+    "total_lines": 560
   },
   "cross_references": [
     {
@@ -770,71 +768,57 @@
       "type": "extra_output"
     },
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 11,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 11,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Likely misinterpreted integer as float",
-      "line": 115,
+      "line": 114,
       "match": "1.83671e-40",
       "text": "g_CDemonRendererPtr->vertex_buffer_ptr->u = 1.83671e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 117,
+      "line": 116,
       "match": "1.83671e-40",
       "text": "pCVar2->vertex_buffer_ptr->v = 1.83671e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 120,
+      "line": 119,
       "match": "2.3326216e-38",
       "text": "pCVar2->vertex_buffer_ptr[1].u = 2.3326216e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 122,
+      "line": 121,
       "match": "1.83671e-40",
       "text": "pCVar2->vertex_buffer_ptr[1].v = 1.83671e-40;",
       "type": "suspect_float"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 124,
+      "line": 123,
       "match": "2.3326216e-38",
       "text": "pCVar2->vertex_buffer_ptr[2].u = 2.3326216e-38;",
       "type": "suspect_float"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 127,
+      "line": 126,
       "match": "extraout_EAX",
       "text": "*(uint *)(extraout_EAX + 0x7c) = 0xfe0000;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 132,
+      "line": 131,
       "match": "extraout_EAX_00",
       "text": "*(uint *)(extraout_EAX_00 + 0xa8) = 0x20000;",
       "type": "extra_output"
     },
     {
       "description": "Likely misinterpreted integer as float",
-      "line": 135,
+      "line": 134,
       "match": "2.3326216e-38",
       "text": "this_ptr_00->vertex_buffer_ptr[3].v = 2.3326216e-38;",
       "type": "suspect_float"

@@ -1,16 +1,13 @@
 {
   "complexity": {
     "assembly_lines": 500,
-    "complexity_score": 1362,
+    "complexity_score": 1317,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
     "pseudocode_lines": 242,
-    "suspect_count": 109,
+    "suspect_count": 106,
     "suspect_types": [
-      "badspacebase",
-      "concat_artifact",
-      "register_param",
       "stack_param",
       "sub_artifact",
       "unknown_field"
@@ -742,43 +739,29 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 6,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 6,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 10,
+      "line": 9,
       "match": "in_stack_00000004",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 11,
+      "line": 10,
       "match": "in_stack_00000008",
       "text": "int in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 11,
       "match": "in_stack_0000000c",
       "text": "uint in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 12,
       "match": "in_stack_fffffe84",
       "text": "double in_stack_fffffe84;",
       "type": "stack_param"
@@ -936,13 +919,6 @@
       "match": "._4_4_",
       "text": "local_a0 = local_104.y._4_4_;",
       "type": "unknown_field"
-    },
-    {
-      "description": "Decompiler double/longlong composition artifact",
-      "line": 134,
-      "match": "CONCAT44",
-      "text": "local_38 = (double)CONCAT44 /* combine 2-byte values */(*(uint *)(local_1c + 0x20),(uint)local_38);",
-      "type": "concat_artifact"
     },
     {
       "description": "Unknown/mangled field access",
@@ -1480,14 +1456,14 @@
       "description": "Unresolved stack parameter",
       "line": 232,
       "match": "in_stack_fffffe84",
-      "text": "((local_38 = in_stack_fffffe84, 0.0 < dVar4 && (in_stack_fffffe84 < 0.0)))))) {",
+      "text": "((dStack_3c = in_stack_fffffe84, 0.0 < dVar4 && (in_stack_fffffe84 < 0.0)))))) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 232,
       "match": "in_stack_fffffe84",
-      "text": "((local_38 = in_stack_fffffe84, 0.0 < dVar4 && (in_stack_fffffe84 < 0.0)))))) {",
+      "text": "((dStack_3c = in_stack_fffffe84, 0.0 < dVar4 && (in_stack_fffffe84 < 0.0)))))) {",
       "type": "stack_param"
     },
     {

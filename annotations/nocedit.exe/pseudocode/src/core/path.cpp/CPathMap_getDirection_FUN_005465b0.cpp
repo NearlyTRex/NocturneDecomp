@@ -13,7 +13,6 @@ core_path_cpp_CPathMap_getDirection_FUN_005465b0
 
 {
   CVector3f *pCVar1;
-  BADSPACEBASE *in_ESP;
   CVector3f local_dc;
   uint local_d0;
   uint local_cc;

@@ -36,7 +36,7 @@ uint core_script_cpp_CScript_SkipCinematic_FUN_005602e0(void)
       g_CurrentLineNumber = 0xea5;
       g_CurrentFilename = "..\\core\\script.cpp";
       core_main_c_displayErrorAndQuit_FUN_00506f10
-                ("Infinite loop detected trying to skip cinematic, at script line %d","Infinite loop detected trying to skip cinematic, at script line %d",
+                ("Infinite loop detected trying to skip cinematic, at script line %d",
                  *(uint *)(in_stack_00000004[0xd] + in_stack_00000004[0x12] * 8));
     }
   }

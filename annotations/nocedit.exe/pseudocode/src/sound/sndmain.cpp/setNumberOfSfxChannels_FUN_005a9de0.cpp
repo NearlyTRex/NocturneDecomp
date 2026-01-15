@@ -9,8 +9,6 @@
 void __cdecl sound_sndmain_cpp_setNumberOfSfxChannels_FUN_005a9de0(int channel_count)
 
 {
-  int in_stack_00000008;
-  
   if (channel_count < 0x21) {
     g_MaxSoundChannels = channel_count;
     return;
@@ -18,6 +16,6 @@ void __cdecl sound_sndmain_cpp_setNumberOfSfxChannels_FUN_005a9de0(int channel_c
   g_CurrentFilename = "..\\sound\\sndmain.cpp";
   g_CurrentLineNumber = 0xf9b;
   core_main_c_displayErrorAndQuit_FUN_00506f10("setNumberOfSfxChannels - too many!");
-  g_MaxSoundChannels = in_stack_00000008;
+  g_MaxSoundChannels = channel_count;
   return;
 }

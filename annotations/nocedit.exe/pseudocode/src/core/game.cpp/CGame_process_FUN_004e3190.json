@@ -1,20 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 424,
-    "complexity_score": 505,
+    "complexity_score": 455,
     "cross_reference_count": 1,
     "function_call_count": 21,
     "global_count": 46,
-    "pseudocode_lines": 120,
-    "suspect_count": 36,
+    "pseudocode_lines": 135,
+    "suspect_count": 30,
     "suspect_types": [
       "call_esp_preserve",
-      "format_string_mismatch",
       "stack_param",
       "unaffected_reg",
       "variadic_preserve"
     ],
-    "total_lines": 544
+    "total_lines": 559
   },
   "cross_references": [
     {
@@ -518,13 +517,13 @@
     {
       "description": "Unresolved stack parameter",
       "line": 12,
-      "match": "in_stack_00000014",
-      "text": "CGame *in_stack_00000014;",
+      "match": "in_stack_ffffffe4",
+      "text": "CGame *in_stack_ffffffe4;",
       "type": "stack_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 17,
+      "line": 15,
       "match": "unaff_ESI",
       "text": "unaff_ESI = wincore_winrun_cpp_getTime_FUN_005f2dc0();",
       "type": "unaffected_reg"
@@ -532,15 +531,15 @@
     {
       "description": "Unresolved stack parameter",
       "line": 56,
-      "match": "in_stack_00000014",
-      "text": "core_game_cpp_CGame_saveClockTime_FUN_004d7d80(this_ptr,in_stack_00000014);",
+      "match": "in_stack_ffffffe4",
+      "text": "core_game_cpp_CGame_saveClockTime_FUN_004d7d80(this_ptr,in_stack_ffffffe4);",
       "type": "stack_param"
     },
     {
       "description": "Unaffected register variable",
-      "line": 118,
+      "line": 133,
       "match": "unaff_ESI",
-      "text": "iStack00000070 = iStack00000070 - unaff_ESI;",
+      "text": "((double)(iVar4 - unaff_ESI) * 0.055555555555555601 * 1.52587890625e-05 * 1000) /",
       "type": "unaffected_reg"
     },
     {
@@ -654,72 +653,6 @@
       "target_function": "engine_console.cpp_CConsole_printf_FUN_00441890",
       "text": "Call to variadic function engine_console.cpp_CConsole_printf_FUN_00441890 at 004e36df (no EBP frame)",
       "type": "variadic_preserve"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s : %3.2f ms\\n\" has 2 specifiers but 0 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s : %3.2f ms\\n",
-      "function_name": "engine_console_cpp_CConsole_printf_FUN_00441890",
-      "line_number": 73,
-      "match": "engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,\"%s : %3.2f ms\\n\");",
-      "text": "Format string expects 2 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s : %3.2f ms\\n\" has 2 specifiers but 0 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s : %3.2f ms\\n",
-      "function_name": "engine_console_cpp_CConsole_printf_FUN_00441890",
-      "line_number": 81,
-      "match": "engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,\"%s : %3.2f ms\\n\");",
-      "text": "Format string expects 2 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s : %3.2f ms\\n\" has 2 specifiers but 0 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s : %3.2f ms\\n",
-      "function_name": "engine_console_cpp_CConsole_printf_FUN_00441890",
-      "line_number": 90,
-      "match": "engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,\"%s : %3.2f ms\\n\");",
-      "text": "Format string expects 2 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s : %3.2f ms\\n\" has 2 specifiers but 0 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s : %3.2f ms\\n",
-      "function_name": "engine_console_cpp_CConsole_printf_FUN_00441890",
-      "line_number": 98,
-      "match": "engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,\"%s : %3.2f ms\\n\");",
-      "text": "Format string expects 2 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"%s : %3.2f ms\\n\" has 2 specifiers but 0 arguments after it",
-      "expected_args": 2,
-      "format_string": "%s : %3.2f ms\\n",
-      "function_name": "engine_console_cpp_CConsole_printf_FUN_00441890",
-      "line_number": 112,
-      "match": "engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,\"%s : %3.2f ms\\n\");",
-      "text": "Format string expects 2 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"simulate : %3.2f ms\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "simulate : %3.2f ms\\n",
-      "function_name": "engine_console_cpp_CConsole_printf_FUN_00441890",
-      "line_number": 119,
-      "match": "engine_console_cpp_CConsole_printf_FUN_00441890(g_CConsolePtr,\"simulate : %3.2f ms\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 4,

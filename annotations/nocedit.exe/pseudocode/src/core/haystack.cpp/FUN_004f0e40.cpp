@@ -22,7 +22,6 @@ void core_haystack_cpp_FUN_004f0e40(void)
   SMotion *pSVar7;
   uint uVar8;
   int iVar9;
-  BADSPACEBASE *in_ESP;
   uint *puVar10;
   byte bVar11;
   CCharacter *in_stack_00000004;
@@ -234,10 +233,11 @@ switchD_004f12ce_caseD_8:
                          (&in_stack_00000004->base_actor,&CStack_5c,
                           &(in_stack_00000004->grabbed_by->location).position);
       pCVar5 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&CStack_50,pCVar5);
-      in_stack_ffffff74 =
-           (SCollisionInfo *)core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(pCVar5->y);
-      if ((float)in_stack_ffffff74 < (float)-1.57079632675) {
-        in_stack_ffffff74 = (SCollisionInfo *)((float)in_stack_ffffff74 + 3.141593f);
+      pCStack_14 = (CDeformableModelInstance *)
+                   core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(pCVar5->y);
+      in_stack_ffffff74 = (SCollisionInfo *)pCStack_14;
+      if ((float)pCStack_14 < (float)-1.57079632675) {
+        in_stack_ffffff74 = (SCollisionInfo *)((float)pCStack_14 + 3.141593f);
       }
       if ((float)1.57079632675 < (float)in_stack_ffffff74) {
         in_stack_ffffff74 = (SCollisionInfo *)((float)in_stack_ffffff74 + -3.141593f);

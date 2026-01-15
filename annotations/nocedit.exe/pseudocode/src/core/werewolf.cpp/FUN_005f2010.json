@@ -1,18 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 40,
-    "complexity_score": 95,
+    "complexity_score": 116,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 4,
-    "pseudocode_lines": 20,
-    "suspect_count": 6,
+    "pseudocode_lines": 21,
+    "suspect_count": 8,
     "suspect_types": [
       "call_esp_preserve",
-      "unaffected_reg",
+      "stack_param",
       "variadic_preserve"
     ],
-    "total_lines": 60
+    "total_lines": 61
   },
   "cross_references": [
     {
@@ -114,29 +114,43 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 3,
-      "match": "unaff_EBX",
-      "text": "(uint param_1,uint param_2,uint unaff_EBX,uint param_4,",
-      "type": "unaffected_reg"
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_00000004",
+      "text": "CDemonActor *in_stack_00000004;",
+      "type": "stack_param"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 16,
-      "match": "unaff_EBX",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(param_7,\"Train Alpha\",unaff_EBX);",
-      "type": "unaffected_reg"
+      "description": "Unresolved stack parameter",
+      "line": 7,
+      "match": "in_stack_0000000c",
+      "text": "char *in_stack_0000000c;",
+      "type": "stack_param"
     },
     {
-      "description": "Unaffected register variable",
-      "line": 21,
-      "match": "unaff_EBX",
-      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(param_7,format,unaff_EBX);",
-      "type": "unaffected_reg"
+      "description": "Unresolved stack parameter",
+      "line": 11,
+      "match": "in_stack_00000004",
+      "text": "(in_stack_00000004,g_CWerewolfClassInfo.name_hash);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_0000000c",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(in_stack_0000000c,\"Train Alpha\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_0000000c",
+      "text": "crt_stdio_c_sprintf_FUN_005fdbd0(in_stack_0000000c,format);",
+      "type": "stack_param"
     },
     {
       "call_address": "005f203f",
-      "caller_has_stack_issues": false,
+      "caller_has_stack_issues": true,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "conflict",
       "esp_certainty_at_call": "conflict",
@@ -150,7 +164,7 @@
     },
     {
       "call_address": "005f2057",
-      "caller_has_stack_issues": false,
+      "caller_has_stack_issues": true,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

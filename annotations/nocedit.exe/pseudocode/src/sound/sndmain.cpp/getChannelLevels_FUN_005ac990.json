@@ -1,16 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 116,
-    "complexity_score": 120,
+    "complexity_score": 49,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 2,
-    "pseudocode_lines": 45,
-    "suspect_count": 7,
-    "suspect_types": [
-      "unaffected_reg"
-    ],
-    "total_lines": 161
+    "pseudocode_lines": 49,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 165
   },
   "cross_references": [],
   "function": {
@@ -184,55 +182,5 @@
     ],
     "severity": "medium"
   },
-  "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 8,
-      "match": "unaff_EBP",
-      "text": "float unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 24,
-      "match": "unaff_EBP",
-      "text": "unaff_EBP = ABS(*pfVar2);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 26,
-      "match": "unaff_EBP",
-      "text": "if (fStack_14 < unaff_EBP) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 27,
-      "match": "unaff_EBP",
-      "text": "fStack_14 = unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 34,
-      "match": "unaff_EBP",
-      "text": "if (1.0 < unaff_EBP) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 35,
-      "match": "unaff_EBP",
-      "text": "unaff_EBP = 1.0;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 41,
-      "match": "unaff_EBP",
-      "text": "*out_peak = unaff_EBP;",
-      "type": "unaffected_reg"
-    }
-  ]
+  "suspects": []
 }

@@ -16,7 +16,6 @@ shape_edittool_cpp_CEditorTools_drawWindowSeparator_FUN_004a1230
   int iVar3;
   int iVar4;
   int iVar5;
-  int in_stack_00000010;
   
   if (g_WindowStackCount < 1) {
     g_CurrentFilename = "..\\shape\\edittool.cpp";
@@ -29,8 +28,7 @@ shape_edittool_cpp_CEditorTools_drawWindowSeparator_FUN_004a1230
   g_ClipTop = g_WindowStack[iVar5].top;
   iVar3 = g_WindowHeight / 0x60;
   iVar4 = shape_edittool_cpp_calculateButtonHeight_FUN_004a6970((char *)0x0);
-  iVar3 = g_WindowStack[iVar5].bottom -
-          ((in_stack_00000010 + 1) * iVar3 + in_stack_00000010 * iVar4);
+  iVar3 = g_WindowStack[iVar5].bottom - ((line_position + 1) * iVar3 + line_position * iVar4);
   g_ActiveRenderColor = g_WindowBorderColor1;
   engine_2d_c_drawHLine_FUN_00402ee0
             (g_WindowStack[iVar5].left + 1,iVar3,g_WindowStack[iVar5].right + -2);

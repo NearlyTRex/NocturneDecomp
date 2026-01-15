@@ -1,20 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 297,
-    "complexity_score": 1513,
+    "complexity_score": 1768,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 1,
     "pseudocode_lines": 148,
-    "suspect_count": 133,
+    "suspect_count": 159,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "callind_preserve",
       "lea_esp_stack_addr",
-      "register_param",
       "stack_param",
-      "stack_ref"
+      "stack_ref",
+      "unknown_field"
     ],
     "total_lines": 445
   },
@@ -129,347 +128,445 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 14,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 14,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 14,
       "match": "in_stack_00000004",
       "text": "CDemonActor *in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_ffffff8c",
-      "text": "float in_stack_ffffff8c;",
+      "line": 27,
+      "match": "in_stack_00000004",
+      "text": "if (auStack_3c != in_stack_00000004[4].create_event + 0xc) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 28,
       "match": "in_stack_00000004",
-      "text": "if (&local_40 != (CSlew *)(in_stack_00000004[4].create_event + 0xc)) {",
+      "text": "auStack_3c._0_4_ = *(uint *)(in_stack_00000004[4].create_event + 0xc);",
       "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 28,
+      "match": "._0_4_",
+      "text": "auStack_3c._0_4_ = *(uint *)(in_stack_00000004[4].create_event + 0xc);",
+      "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 29,
       "match": "in_stack_00000004",
-      "text": "local_40.position.x = (((CSlew *)(in_stack_00000004[4].create_event + 0xc))->position).x;",
+      "text": "auStack_3c._4_4_ = *(uint *)(in_stack_00000004[4].create_event + 0x10);",
       "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 29,
+      "match": "._4_4_",
+      "text": "auStack_3c._4_4_ = *(uint *)(in_stack_00000004[4].create_event + 0x10);",
+      "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 30,
       "match": "in_stack_00000004",
-      "text": "local_40.position.y = *(float *)(in_stack_00000004[4].create_event + 0x10);",
+      "text": "auStack_3c._8_4_ = *(uint *)(in_stack_00000004[4].create_event + 0x14);",
       "type": "stack_param"
     },
     {
+      "description": "Unknown/mangled field access",
+      "line": 30,
+      "match": "._8_4_",
+      "text": "auStack_3c._8_4_ = *(uint *)(in_stack_00000004[4].create_event + 0x14);",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 32,
+      "match": "._20_4_",
+      "text": "auStack_3c._20_4_ = 0.0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 33,
+      "match": "._16_4_",
+      "text": "auStack_3c._16_4_ = 0.0;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 34,
+      "match": "._12_4_",
+      "text": "auStack_3c._12_4_ = 0.0;",
+      "type": "unknown_field"
+    },
+    {
       "description": "Unresolved stack parameter",
-      "line": 31,
+      "line": 36,
       "match": "in_stack_00000004",
-      "text": "local_40.position.z = *(float *)(in_stack_00000004[4].create_event + 0x14);",
+      "text": "if (in_stack_00000004[4].create_event + 0xc != auStack_3c) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 37,
       "match": "in_stack_00000004",
-      "text": "if ((float *)(in_stack_00000004[4].create_event + 0xc) != &local_40.position.y) {",
+      "text": "*(uint *)(in_stack_00000004[4].create_event + 0xc) = auStack_3c._0_4_;",
       "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 37,
+      "match": "._0_4_",
+      "text": "*(uint *)(in_stack_00000004[4].create_event + 0xc) = auStack_3c._0_4_;",
+      "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 38,
       "match": "in_stack_00000004",
-      "text": "*(float *)(in_stack_00000004[4].create_event + 0xc) = local_40.position.y;",
+      "text": "*(uint *)(in_stack_00000004[4].create_event + 0x10) = auStack_3c._4_4_;",
       "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 38,
+      "match": "._4_4_",
+      "text": "*(uint *)(in_stack_00000004[4].create_event + 0x10) = auStack_3c._4_4_;",
+      "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 39,
       "match": "in_stack_00000004",
-      "text": "*(float *)(in_stack_00000004[4].create_event + 0x10) = local_40.position.z;",
+      "text": "*(uint *)(in_stack_00000004[4].create_event + 0x14) = auStack_3c._8_4_;",
       "type": "stack_param"
     },
     {
+      "description": "Unknown/mangled field access",
+      "line": 39,
+      "match": "._8_4_",
+      "text": "*(uint *)(in_stack_00000004[4].create_event + 0x14) = auStack_3c._8_4_;",
+      "type": "unknown_field"
+    },
+    {
       "description": "Unresolved stack parameter",
-      "line": 40,
+      "line": 44,
       "match": "in_stack_00000004",
-      "text": "*(float *)(in_stack_00000004[4].create_event + 0x14) = local_40.pitch;",
+      "text": "if (&fStack_20 != (float *)&in_stack_00000004[4].field7_0x6c) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 45,
       "match": "in_stack_00000004",
-      "text": "if (&local_24 != (CSlew *)&in_stack_00000004[4].field7_0x6c) {",
+      "text": "fStack_20 = (float)in_stack_00000004[4].field7_0x6c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 46,
       "match": "in_stack_00000004",
-      "text": "local_24.position.x = (float)in_stack_00000004[4].field7_0x6c;",
+      "text": "fStack_1c = (float)in_stack_00000004[4].was_created;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 47,
       "match": "in_stack_00000004",
-      "text": "local_24.position.y = (float)in_stack_00000004[4].was_created;",
+      "text": "fStack_18 = in_stack_00000004[4].create_prob;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 48,
+      "line": 49,
       "match": "in_stack_00000004",
-      "text": "local_24.position.z = in_stack_00000004[4].create_prob;",
+      "text": "if (&fStack_14 != (float *)in_stack_00000004[4].create_event) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 50,
       "match": "in_stack_00000004",
-      "text": "if (&local_24.pitch != (float *)in_stack_00000004[4].create_event) {",
+      "text": "fStack_14 = *(float *)in_stack_00000004[4].create_event;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 51,
       "match": "in_stack_00000004",
-      "text": "local_24.pitch = *(float *)in_stack_00000004[4].create_event;",
+      "text": "fStack_10 = *(float *)(in_stack_00000004[4].create_event + 4);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 52,
       "match": "in_stack_00000004",
-      "text": "local_24.yaw = *(float *)(in_stack_00000004[4].create_event + 4);",
+      "text": "fStack_c = *(float *)(in_stack_00000004[4].create_event + 8);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 53,
+      "line": 55,
       "match": "in_stack_00000004",
-      "text": "local_24.roll = *(float *)(in_stack_00000004[4].create_event + 8);",
+      "text": "if ((float *)&in_stack_00000004[4].field7_0x6c != &fStack_20) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 56,
       "match": "in_stack_00000004",
-      "text": "if ((float *)&in_stack_00000004[4].field7_0x6c != &local_24.position.y) {",
+      "text": "in_stack_00000004[4].field7_0x6c = (int)fStack_20;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 57,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[4].field7_0x6c = (int)local_24.position.y;",
+      "text": "in_stack_00000004[4].was_created = (int)fStack_1c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 58,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[4].was_created = (int)local_24.position.z;",
+      "text": "in_stack_00000004[4].create_prob = fStack_18;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 59,
+      "line": 60,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[4].create_prob = local_24.pitch;",
+      "text": "if ((float *)in_stack_00000004[4].create_event != &fStack_14) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 61,
       "match": "in_stack_00000004",
-      "text": "if ((float *)in_stack_00000004[4].create_event != &local_24.yaw) {",
+      "text": "*(float *)in_stack_00000004[4].create_event = fStack_14;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 62,
       "match": "in_stack_00000004",
-      "text": "*(float *)in_stack_00000004[4].create_event = local_24.yaw;",
+      "text": "*(float *)(in_stack_00000004[4].create_event + 4) = fStack_10;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 63,
       "match": "in_stack_00000004",
-      "text": "*(float *)(in_stack_00000004[4].create_event + 4) = local_24.roll;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 64,
-      "match": "in_stack_00000004",
-      "text": "*(float *)(in_stack_00000004[4].create_event + 8) = local_24.slew_rate;",
+      "text": "*(float *)(in_stack_00000004[4].create_event + 8) = fStack_c;",
       "type": "stack_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 68,
+      "line": 67,
       "match": "&stack0xffffff88",
       "text": "core_slew_cpp_CSlew_init_FUN_005a2060((CSlew *)&stack0xffffff88);",
       "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 69,
+      "line": 68,
       "match": "in_stack_00000004",
-      "text": "if ((int *)&stack0xffffff88 != &in_stack_00000004[0xe].was_created) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 69,
-      "match": "&stack0xffffff88",
-      "text": "if ((int *)&stack0xffffff88 != &in_stack_00000004[0xe].was_created) {",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 70,
-      "match": "in_stack_ffffff8c",
-      "text": "in_stack_ffffff8c = in_stack_00000004[0xe].create_prob;",
+      "text": "if ((int *)auStack_74 != &in_stack_00000004[0xe].was_created) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
+      "line": 69,
+      "match": "in_stack_00000004",
+      "text": "auStack_74._0_4_ = in_stack_00000004[0xe].was_created;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 69,
+      "match": "._0_4_",
+      "text": "auStack_74._0_4_ = in_stack_00000004[0xe].was_created;",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
       "line": 70,
       "match": "in_stack_00000004",
-      "text": "in_stack_ffffff8c = in_stack_00000004[0xe].create_prob;",
+      "text": "auStack_74._4_4_ = in_stack_00000004[0xe].create_prob;",
       "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 70,
+      "match": "._4_4_",
+      "text": "auStack_74._4_4_ = in_stack_00000004[0xe].create_prob;",
+      "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 71,
       "match": "in_stack_00000004",
-      "text": "fStack_70 = *(float *)in_stack_00000004[0xe].create_event;",
+      "text": "auStack_74._8_4_ = *(uint *)in_stack_00000004[0xe].create_event;",
       "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 71,
+      "match": "._8_4_",
+      "text": "auStack_74._8_4_ = *(uint *)in_stack_00000004[0xe].create_event;",
+      "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 73,
       "match": "in_stack_00000004",
-      "text": "if (&fStack_6c != (float *)(in_stack_00000004[0xe].create_event + 0x20)) {",
+      "text": "if (auStack_74 + 0xc != in_stack_00000004[0xe].create_event + 0x20) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 74,
       "match": "in_stack_00000004",
-      "text": "fStack_6c = *(float *)(in_stack_00000004[0xe].create_event + 0x20);",
+      "text": "auStack_74._12_4_ = *(uint *)(in_stack_00000004[0xe].create_event + 0x20);",
       "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 74,
+      "match": "._12_4_",
+      "text": "auStack_74._12_4_ = *(uint *)(in_stack_00000004[0xe].create_event + 0x20);",
+      "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 75,
       "match": "in_stack_00000004",
-      "text": "fStack_68 = *(float *)(in_stack_00000004[0xe].create_event + 0x24);",
+      "text": "auStack_74._16_4_ = *(uint *)(in_stack_00000004[0xe].create_event + 0x24);",
       "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 75,
+      "match": "._16_4_",
+      "text": "auStack_74._16_4_ = *(uint *)(in_stack_00000004[0xe].create_event + 0x24);",
+      "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 76,
       "match": "in_stack_00000004",
-      "text": "fStack_64 = *(float *)(in_stack_00000004[0xe].create_event + 0x28);",
+      "text": "auStack_74._20_4_ = *(uint *)(in_stack_00000004[0xe].create_event + 0x28);",
       "type": "stack_param"
     },
     {
-      "description": "Direct stack address reference",
-      "line": 78,
-      "match": "&stack0xffffff88",
-      "text": "core_slew_cpp_CSlew_processInput_FUN_005a20b0((CSlew *)&stack0xffffff88);",
-      "type": "stack_ref"
+      "description": "Unknown/mangled field access",
+      "line": 76,
+      "match": "._20_4_",
+      "text": "auStack_74._20_4_ = *(uint *)(in_stack_00000004[0xe].create_event + 0x28);",
+      "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 79,
       "match": "in_stack_00000004",
-      "text": "if (&in_stack_00000004[0xe].was_created != (int *)&stack0xffffff8c) {",
+      "text": "if (&in_stack_00000004[0xe].was_created != (int *)auStack_74) {",
       "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 79,
-      "match": "&stack0xffffff8c",
-      "text": "if (&in_stack_00000004[0xe].was_created != (int *)&stack0xffffff8c) {",
-      "type": "stack_ref"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 80,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[0xe].was_created = (int)in_stack_ffffff8c;",
+      "text": "in_stack_00000004[0xe].was_created = auStack_74._0_4_;",
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
+      "description": "Unknown/mangled field access",
       "line": 80,
-      "match": "in_stack_ffffff8c",
-      "text": "in_stack_00000004[0xe].was_created = (int)in_stack_ffffff8c;",
-      "type": "stack_param"
+      "match": "._0_4_",
+      "text": "in_stack_00000004[0xe].was_created = auStack_74._0_4_;",
+      "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 81,
       "match": "in_stack_00000004",
-      "text": "in_stack_00000004[0xe].create_prob = fStack_70;",
+      "text": "in_stack_00000004[0xe].create_prob = (float)auStack_74._4_4_;",
       "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 81,
+      "match": "._4_4_",
+      "text": "in_stack_00000004[0xe].create_prob = (float)auStack_74._4_4_;",
+      "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 82,
       "match": "in_stack_00000004",
-      "text": "*(float *)in_stack_00000004[0xe].create_event = fStack_6c;",
+      "text": "*(uint *)in_stack_00000004[0xe].create_event = auStack_74._8_4_;",
       "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 82,
+      "match": "._8_4_",
+      "text": "*(uint *)in_stack_00000004[0xe].create_event = auStack_74._8_4_;",
+      "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 84,
       "match": "in_stack_00000004",
-      "text": "if ((float *)(in_stack_00000004[0xe].create_event + 0x20) != &fStack_68) {",
+      "text": "if (in_stack_00000004[0xe].create_event + 0x20 != auStack_74 + 0xc) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 85,
       "match": "in_stack_00000004",
-      "text": "*(float *)(in_stack_00000004[0xe].create_event + 0x20) = fStack_68;",
+      "text": "*(uint *)(in_stack_00000004[0xe].create_event + 0x20) = auStack_74._12_4_;",
       "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 85,
+      "match": "._12_4_",
+      "text": "*(uint *)(in_stack_00000004[0xe].create_event + 0x20) = auStack_74._12_4_;",
+      "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 86,
       "match": "in_stack_00000004",
-      "text": "*(float *)(in_stack_00000004[0xe].create_event + 0x24) = fStack_64;",
+      "text": "*(uint *)(in_stack_00000004[0xe].create_event + 0x24) = auStack_74._16_4_;",
       "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 86,
+      "match": "._16_4_",
+      "text": "*(uint *)(in_stack_00000004[0xe].create_event + 0x24) = auStack_74._16_4_;",
+      "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 87,
       "match": "in_stack_00000004",
-      "text": "*(float *)(in_stack_00000004[0xe].create_event + 0x28) = fStack_60;",
+      "text": "*(uint *)(in_stack_00000004[0xe].create_event + 0x28) = auStack_74._20_4_;",
       "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 87,
+      "match": "._20_4_",
+      "text": "*(uint *)(in_stack_00000004[0xe].create_event + 0x28) = auStack_74._20_4_;",
+      "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
@@ -531,113 +628,197 @@
       "description": "Unresolved stack parameter",
       "line": 99,
       "match": "in_stack_00000004",
-      "text": "if (&local_5c != (CSlew *)(in_stack_00000004[0xe].create_event + 4)) {",
+      "text": "if (auStack_58 != in_stack_00000004[0xe].create_event + 4) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 100,
       "match": "in_stack_00000004",
-      "text": "local_5c.position.x = (((CSlew *)(in_stack_00000004[0xe].create_event + 4))->position).x;",
+      "text": "auStack_58._0_4_ = *(uint *)(in_stack_00000004[0xe].create_event + 4);",
       "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 100,
+      "match": "._0_4_",
+      "text": "auStack_58._0_4_ = *(uint *)(in_stack_00000004[0xe].create_event + 4);",
+      "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 101,
       "match": "in_stack_00000004",
-      "text": "local_5c.position.y = *(float *)(in_stack_00000004[0xe].create_event + 8);",
+      "text": "auStack_58._4_4_ = *(uint *)(in_stack_00000004[0xe].create_event + 8);",
       "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 101,
+      "match": "._4_4_",
+      "text": "auStack_58._4_4_ = *(uint *)(in_stack_00000004[0xe].create_event + 8);",
+      "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 102,
       "match": "in_stack_00000004",
-      "text": "local_5c.position.z = *(float *)(in_stack_00000004[0xe].create_event + 0xc);",
+      "text": "auStack_58._8_4_ = *(uint *)(in_stack_00000004[0xe].create_event + 0xc);",
       "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 102,
+      "match": "._8_4_",
+      "text": "auStack_58._8_4_ = *(uint *)(in_stack_00000004[0xe].create_event + 0xc);",
+      "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 104,
       "match": "in_stack_00000004",
-      "text": "if (&local_5c.pitch != (float *)(in_stack_00000004[0xe].create_event + 0x20)) {",
+      "text": "if (auStack_58 + 0xc != in_stack_00000004[0xe].create_event + 0x20) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 105,
       "match": "in_stack_00000004",
-      "text": "local_5c.pitch = *(float *)(in_stack_00000004[0xe].create_event + 0x20);",
+      "text": "auStack_58._12_4_ = *(uint *)(in_stack_00000004[0xe].create_event + 0x20);",
       "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 105,
+      "match": "._12_4_",
+      "text": "auStack_58._12_4_ = *(uint *)(in_stack_00000004[0xe].create_event + 0x20);",
+      "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 106,
       "match": "in_stack_00000004",
-      "text": "local_5c.yaw = *(float *)(in_stack_00000004[0xe].create_event + 0x24);",
+      "text": "auStack_58._16_4_ = *(uint *)(in_stack_00000004[0xe].create_event + 0x24);",
       "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 106,
+      "match": "._16_4_",
+      "text": "auStack_58._16_4_ = *(uint *)(in_stack_00000004[0xe].create_event + 0x24);",
+      "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 107,
       "match": "in_stack_00000004",
-      "text": "local_5c.roll = *(float *)(in_stack_00000004[0xe].create_event + 0x28);",
+      "text": "auStack_58._20_4_ = *(uint *)(in_stack_00000004[0xe].create_event + 0x28);",
       "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 107,
+      "match": "._20_4_",
+      "text": "auStack_58._20_4_ = *(uint *)(in_stack_00000004[0xe].create_event + 0x28);",
+      "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 110,
       "match": "in_stack_00000004",
-      "text": "if ((float *)(in_stack_00000004[0xe].create_event + 4) != &local_5c.position.y) {",
+      "text": "if (in_stack_00000004[0xe].create_event + 4 != auStack_58) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 111,
       "match": "in_stack_00000004",
-      "text": "*(float *)(in_stack_00000004[0xe].create_event + 4) = local_5c.position.y;",
+      "text": "*(uint *)(in_stack_00000004[0xe].create_event + 4) = auStack_58._0_4_;",
       "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 111,
+      "match": "._0_4_",
+      "text": "*(uint *)(in_stack_00000004[0xe].create_event + 4) = auStack_58._0_4_;",
+      "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 112,
       "match": "in_stack_00000004",
-      "text": "*(float *)(in_stack_00000004[0xe].create_event + 8) = local_5c.position.z;",
+      "text": "*(uint *)(in_stack_00000004[0xe].create_event + 8) = auStack_58._4_4_;",
       "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 112,
+      "match": "._4_4_",
+      "text": "*(uint *)(in_stack_00000004[0xe].create_event + 8) = auStack_58._4_4_;",
+      "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 113,
       "match": "in_stack_00000004",
-      "text": "*(float *)(in_stack_00000004[0xe].create_event + 0xc) = local_5c.pitch;",
+      "text": "*(uint *)(in_stack_00000004[0xe].create_event + 0xc) = auStack_58._8_4_;",
       "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 113,
+      "match": "._8_4_",
+      "text": "*(uint *)(in_stack_00000004[0xe].create_event + 0xc) = auStack_58._8_4_;",
+      "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 115,
       "match": "in_stack_00000004",
-      "text": "if ((float *)(in_stack_00000004[0xe].create_event + 0x20) != &local_5c.yaw) {",
+      "text": "if (in_stack_00000004[0xe].create_event + 0x20 != auStack_58 + 0xc) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 116,
       "match": "in_stack_00000004",
-      "text": "*(float *)(in_stack_00000004[0xe].create_event + 0x20) = local_5c.yaw;",
+      "text": "*(uint *)(in_stack_00000004[0xe].create_event + 0x20) = auStack_58._12_4_;",
       "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 116,
+      "match": "._12_4_",
+      "text": "*(uint *)(in_stack_00000004[0xe].create_event + 0x20) = auStack_58._12_4_;",
+      "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 117,
       "match": "in_stack_00000004",
-      "text": "*(float *)(in_stack_00000004[0xe].create_event + 0x24) = local_5c.roll;",
+      "text": "*(uint *)(in_stack_00000004[0xe].create_event + 0x24) = auStack_58._16_4_;",
       "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 117,
+      "match": "._16_4_",
+      "text": "*(uint *)(in_stack_00000004[0xe].create_event + 0x24) = auStack_58._16_4_;",
+      "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 118,
       "match": "in_stack_00000004",
-      "text": "*(float *)(in_stack_00000004[0xe].create_event + 0x28) = local_5c.slew_rate;",
+      "text": "*(uint *)(in_stack_00000004[0xe].create_event + 0x28) = auStack_58._20_4_;",
       "type": "stack_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 118,
+      "match": "._20_4_",
+      "text": "*(uint *)(in_stack_00000004[0xe].create_event + 0x28) = auStack_58._20_4_;",
+      "type": "unknown_field"
     },
     {
       "description": "Unresolved stack parameter",

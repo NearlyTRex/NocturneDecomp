@@ -11,29 +11,26 @@ float __cdecl core_sound_cpp_CSound_getSoundDuration_FUN_005b3ba0(CSound *this_p
 {
   char cVar1;
   int iVar2;
-  byte **ppuVar3;
-  BADSPACEBASE *in_ESP;
+  char *pcVar3;
   double dVar4;
-  byte *puStack_15c;
-  CSampleInfo *in_stack_fffffea8;
+  CSampleInfo *in_stack_fffffea0;
   
   sound_sndmain_cpp_CSfxSample_init_FUN_005a8480((CSfxSample *)&stack0xfffffea0);
-  ppuVar3 = &puStack_15c;
+  pcVar3 = &stack0xfffffea0;
   cVar1 = *sound_name;
   while ((((cVar1 != '\0' && (cVar1 = *sound_name, cVar1 != '@')) && (cVar1 != '*')) &&
          ((g_CharacterClassificationTable[(byte)(cVar1 + 1)] & 2U) == 0))) {
     cVar1 = *sound_name;
     sound_name = sound_name + 1;
-    *(char *)ppuVar3 = cVar1;
+    *pcVar3 = cVar1;
     cVar1 = *sound_name;
-    ppuVar3 = (byte **)((int)ppuVar3 + 1);
+    pcVar3 = pcVar3 + 1;
   }
-  *(char *)ppuVar3 = '\0';
-  iVar2 = sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0((CSfxSample *)&puStack_15c);
-  puStack_15c = &stack0xfffffea8;
+  *pcVar3 = '\0';
+  iVar2 = sound_sndmain_cpp_getSampleInfo_FUN_005aa3f0((CSfxSample *)&stack0xfffffea0);
   if (iVar2 == 0) {
     return -1.0;
   }
-  dVar4 = sound_sndmain_cpp_CSampleInfo_getSampleDuration_FUN_005a84d0(in_stack_fffffea8);
+  dVar4 = sound_sndmain_cpp_CSampleInfo_getSampleDuration_FUN_005a84d0(in_stack_fffffea0);
   return (float)dVar4;
 }

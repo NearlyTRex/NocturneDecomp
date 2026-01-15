@@ -14,28 +14,26 @@ void core_script_cpp_FUN_00567010(void)
 {
   char cVar1;
   char *pcVar2;
-  char *pcVar3;
-  BADSPACEBASE *in_ESP;
   char *in_stack_00000008;
   char local_200 [500];
   
   cVar1 = *in_stack_00000008;
-  while (pcVar3 = in_stack_00000008, cVar1 != '\0') {
+  while (cVar1 != '\0') {
+    cVar1 = *in_stack_00000008;
     pcVar2 = local_200;
-    cVar1 = *pcVar3;
-    while ((cVar1 != ';' && (*pcVar3 != '\0'))) {
-      cVar1 = *pcVar3;
-      pcVar3 = pcVar3 + 1;
+    while ((cVar1 != ';' && (*in_stack_00000008 != '\0'))) {
+      cVar1 = *in_stack_00000008;
+      in_stack_00000008 = in_stack_00000008 + 1;
       *pcVar2 = cVar1;
-      cVar1 = *pcVar3;
+      cVar1 = *in_stack_00000008;
       pcVar2 = pcVar2 + 1;
     }
     *pcVar2 = '\0';
     core_script_cpp_FUN_00567080();
-    if (*pcVar3 == ';') {
-      pcVar3 = pcVar3 + 1;
+    if (*in_stack_00000008 == ';') {
+      in_stack_00000008 = in_stack_00000008 + 1;
     }
-    cVar1 = *pcVar3;
+    cVar1 = *in_stack_00000008;
   }
   return;
 }

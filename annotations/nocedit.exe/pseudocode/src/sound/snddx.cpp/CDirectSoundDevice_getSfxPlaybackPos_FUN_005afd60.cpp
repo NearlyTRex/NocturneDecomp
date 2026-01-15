@@ -14,8 +14,7 @@ sound_snddx_cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005afd60
   CSoundDeviceFull_vtable *pCVar1;
   uint uVar2;
   char *pcVar3;
-  BADSPACEBASE *in_ESP;
-  char acStack_1b0 [4];
+  char acStack_1b0 [408];
   DWORD local_18;
   uint local_14;
   
@@ -30,10 +29,6 @@ sound_snddx_cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005afd60
   uVar2 = (*g_DirectSoundHardwareSfxBuffers[(int)pCVar1]->vtable->GetCurrentPosition)
                     (g_DirectSoundHardwareSfxBuffers[(int)pCVar1],&local_14,&local_18);
   if (uVar2 != 0) {
-    acStack_1b0[0] = '6';
-    acStack_1b0[1] = -2;
-    acStack_1b0[2] = 'Z';
-    acStack_1b0[3] = '\0';
     pcVar3 = sound_snddx_cpp_getDirectSoundErrorString_FUN_005ade70(uVar2);
     crt_stdio_c_sprintf_FUN_005fdbd0
               (acStack_1b0,"DirectSux: Unable to %s.  (%s)","Get playback cursor of hardware sfx secondary buffer",
@@ -41,10 +36,6 @@ sound_snddx_cpp_CDirectSoundDevice_getSfxPlaybackPos_FUN_005afd60
     sound_sndmain_cpp_logSoundError_FUN_005adba0(acStack_1b0);
     return -1.0;
   }
-  acStack_1b0[0] = -0x2e;
-  acStack_1b0[1] = -3;
-  acStack_1b0[2] = 'Z';
-  acStack_1b0[3] = '\0';
   uVar2 = sound_sndmain_cpp_CSfxSample_getBytesPerFrame_FUN_005a8550
                     ((CSfxSample *)this_ptr[0x1e].base.vtable);
   return (double)(local_14 / uVar2);

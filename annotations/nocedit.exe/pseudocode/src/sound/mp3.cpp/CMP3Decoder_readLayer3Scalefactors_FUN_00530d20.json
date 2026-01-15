@@ -1,17 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 340,
-    "complexity_score": 255,
+    "complexity_score": 288,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 8,
-    "pseudocode_lines": 135,
-    "suspect_count": 11,
+    "pseudocode_lines": 138,
+    "suspect_count": 14,
     "suspect_types": [
       "call_esp_preserve",
       "pointer_cast"
     ],
-    "total_lines": 475
+    "total_lines": 478
   },
   "cross_references": [
     {
@@ -328,44 +328,65 @@
   "suspects": [
     {
       "description": "Complex pointer cast",
+      "line": 35,
+      "match": "(int *)((int)",
+      "text": "local_1c = *(int *)((int)g_Layer3ShortBandBoundaries + local_34);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
       "line": 37,
       "match": "(int *)((int)",
-      "text": "iVar2 = *(int *)((int)g_Layer3ShortBandBoundaries + local_34);",
+      "text": "if (local_1c < *(int *)((int)g_Layer3ShortBandBoundaries + local_34 + 4)) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 40,
-      "match": "(int *)((int)",
-      "text": "if (iVar2 < *(int *)((int)g_Layer3ShortBandBoundaries + local_34 + 4)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 46,
+      "line": 44,
       "match": "(uint *)((int)",
       "text": "(this_ptr,*(uint *)((int)g_Layer3ScalefacLengths1 +",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 117,
+      "line": 53,
       "match": "(int *)((int)",
-      "text": "iVar2 = *(int *)((int)g_Layer3LongBandBoundaries + local_38);",
+      "text": "} while (local_1c < *(int *)((int)g_Layer3ShortBandBoundaries + local_34 + 4));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 119,
+      "line": 87,
       "match": "(int *)((int)",
-      "text": "if (iVar2 < *(int *)((int)g_Layer3LongBandBoundaries + local_38 + 4)) {",
+      "text": "} while (piVar5 != (int *)((int)scalefactor_dest + local_54 + granule_index * 0xf8));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 129,
+      "line": 103,
       "match": "(int *)((int)",
-      "text": "} while (iVar2 < *(int *)((int)g_Layer3LongBandBoundaries + local_2c + 4));",
+      "text": "} while (piVar5 != (int *)((int)scalefactor_dest + local_4c + granule_index * 0xf8));",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 120,
+      "match": "(int *)((int)",
+      "text": "iVar3 = *(int *)((int)g_Layer3LongBandBoundaries + local_38);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 122,
+      "match": "(int *)((int)",
+      "text": "if (iVar3 < *(int *)((int)g_Layer3LongBandBoundaries + local_38 + 4)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 132,
+      "match": "(int *)((int)",
+      "text": "} while (iVar3 < *(int *)((int)g_Layer3LongBandBoundaries + local_38 + 4));",
       "type": "pointer_cast"
     },
     {

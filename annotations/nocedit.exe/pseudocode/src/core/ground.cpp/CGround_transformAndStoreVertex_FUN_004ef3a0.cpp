@@ -13,20 +13,19 @@ core_ground_cpp_CGround_transformAndStoreVertex_FUN_004ef3a0(CGround *this_ptr,i
   int iVar1;
   int iVar2;
   float fVar3;
-  BADSPACEBASE *in_ESP;
-  int local_18;
-  int local_14;
+  CVector3i local_1c;
   
   iVar2 = core_ground_cpp_CGround_getVertexIndex_FUN_004ef380
                     (this_ptr,(row - this_ptr->camera_y) + this_ptr->grid_height,
                      (column - this_ptr->camera_x) + this_ptr->grid_width);
-  local_18 = this_ptr->vertical_scale * column * 0x100;
-  local_14 = this_ptr->height_scale *
-             (int)*(short *)((int)this_ptr->terrain_data +
-                            ((row & this_ptr->height_minus_1) * this_ptr->width +
-                            (column & this_ptr->width_minus_1)) * 4);
+  local_1c.x = this_ptr->vertical_scale * column * 0x100;
+  local_1c.z = this_ptr->vertical_scale * row * 0x100;
+  local_1c.y = this_ptr->height_scale *
+               (int)*(short *)((int)this_ptr->terrain_data +
+                              ((row & this_ptr->height_minus_1) * this_ptr->width +
+                              (column & this_ptr->width_minus_1)) * 4);
   wincore_windll_cpp_transformPoint_FUN_005b5a25
-            (&g_RenderVertexBuffer[iVar2].projected_vertex,(CVector3i *)&local_18);
+            (&g_RenderVertexBuffer[iVar2].projected_vertex,&local_1c);
   g_RenderVertexBuffer[iVar2].light = 2.29575e-41;
   g_RenderVertexBuffer[iVar2].color = 0x3fff;
   iVar1 = g_RenderVertexBuffer[iVar2].projected_vertex.transformed_z;

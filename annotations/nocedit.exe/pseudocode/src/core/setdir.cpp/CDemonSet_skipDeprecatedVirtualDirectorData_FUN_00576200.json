@@ -1,23 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 269,
+    "complexity_score": 137,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
-    "pseudocode_lines": 29,
-    "suspect_count": 20,
+    "pseudocode_lines": 27,
+    "suspect_count": 9,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "format_string_mismatch",
       "lea_esp_stack_addr",
-      "register_param",
-      "stack_ref",
-      "unaffected_reg",
       "variadic_preserve"
     ],
-    "total_lines": 93
+    "total_lines": 91
   },
   "cross_references": [
     {
@@ -137,78 +133,8 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 7,
-      "match": "unaff_EBX",
-      "text": "int unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 9,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 9,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 10,
-      "match": "unaff_EBP",
-      "text": "int unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 11,
-      "match": "unaff_ESI",
-      "text": "int unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 15,
-      "match": "&stack0xfffffee8",
-      "text": "crt_stdio_c_fgets_FUN_005fefd0(&stack0xfffffee8,0xff,file_handle);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 18,
-      "match": "unaff_EBP",
-      "text": "if (0 < unaff_EBP) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 22,
-      "match": "unaff_ESI",
-      "text": "if (0 < unaff_ESI) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 26,
-      "match": "unaff_EBX",
-      "text": "} while (iVar1 < unaff_EBX);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 29,
-      "match": "unaff_EBP",
-      "text": "} while (iVar2 < unaff_EBP);",
-      "type": "unaffected_reg"
-    },
-    {
       "call_address": "00576232",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -222,7 +148,7 @@
     },
     {
       "call_address": "00576255",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -235,25 +161,14 @@
       "type": "variadic_preserve"
     },
     {
-      "actual_args": 0,
-      "description": "Format \"%d\\n\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "%d\\n",
-      "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 16,
-      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,\"%d\\n\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"\\\"%*[^\\\"]\\\", %d\\n\" has 2 specifiers but 0 arguments after it",
+      "actual_args": 1,
+      "description": "Format \"\\\"%*[^\\\"]\\\", %d\\n\" has 2 specifiers but 1 arguments after it",
       "expected_args": 2,
       "format_string": "\\\"%*[^\\\"]\\\", %d\\n",
       "function_name": "crt_stdio_c_fscanf_FUN_005fe7c0",
-      "line_number": 20,
-      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,\"\\\"%*[^\\\"]\\\", %d\\n\");",
-      "text": "Format string expects 2 args but got 0",
+      "line_number": 18,
+      "match": "crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,\"\\\"%*[^\\\"]\\\", %d\\n\",&local_14);",
+      "text": "Format string expects 2 args but got 1",
       "type": "format_string_mismatch"
     },
     {

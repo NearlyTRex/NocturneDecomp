@@ -11,7 +11,6 @@ int __cdecl shape_design_c_validateModelTextures_FUN_00459a20(char *directory_pa
 {
   char cVar1;
   int iVar2;
-  BADSPACEBASE *in_ESP;
   char *pcVar3;
   char *pcVar4;
   char local_3fcc [16000];

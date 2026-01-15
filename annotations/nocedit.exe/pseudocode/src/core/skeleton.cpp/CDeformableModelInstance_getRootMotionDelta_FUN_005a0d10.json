@@ -1,17 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 178,
-    "complexity_score": 148,
+    "complexity_score": 174,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 3,
-    "pseudocode_lines": 68,
-    "suspect_count": 7,
+    "pseudocode_lines": 69,
+    "suspect_count": 9,
     "suspect_types": [
       "call_esp_preserve",
-      "extra_output"
+      "extra_output",
+      "unaffected_reg"
     ],
-    "total_lines": 246
+    "total_lines": 247
   },
   "cross_references": [
     {
@@ -280,22 +281,36 @@
       "type": "extra_output"
     },
     {
+      "description": "Unaffected register variable",
+      "line": 21,
+      "match": "unaff_ESI",
+      "text": "float unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 46,
+      "line": 47,
       "match": "extraout_EBX",
       "text": "iVar8 = *(int *)(extraout_EBX + 0x29378);",
       "type": "extra_output"
     },
     {
-      "description": "Inferred extra output (wrong calling convention)",
+      "description": "Unaffected register variable",
       "line": 55,
+      "match": "unaff_ESI",
+      "text": "fVar10 = unaff_ESI - (float)iStack_20;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 56,
       "match": "extraout_EBX",
       "text": "iVar9 = *(int *)(extraout_EBX + 0x29378);",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 60,
+      "line": 61,
       "match": "extraout_EBX",
       "text": "iVar1 = *(int *)(extraout_EBX + 0x29378);",
       "type": "extra_output"

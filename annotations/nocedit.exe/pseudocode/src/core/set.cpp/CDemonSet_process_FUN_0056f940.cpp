@@ -9,62 +9,61 @@
 void __cdecl core_set_cpp_CDemonSet_process_FUN_0056f940(CDemonSet *this_ptr)
 
 {
-  CDemonLight *pCVar1;
+  CDemonLight *light;
+  int iVar1;
   int iVar2;
-  BADSPACEBASE *in_ESP;
-  int iVar3;
   C3DSLight *this_ptr_00;
-  int in_stack_0000001c;
+  char local_118 [256];
   int local_18;
+  int local_14;
   
-  iVar3 = 0;
+  iVar2 = 0;
   if (0 < this_ptr->light_count) {
+    local_14 = 0;
     this_ptr_00 = this_ptr->lights;
     do {
-      pCVar1 = g_MasterLightList[0];
       if (this_ptr_00->light_type == 0) {
-        if (g_MasterLightList[0] == (CDemonLight *)0x0) {
+        light = *(CDemonLight **)((int)g_MasterLightList + local_14);
+        if (light == (CDemonLight *)0x0) {
           return;
         }
         local_18 = 0;
         if (0 < g_ActiveLightCount) {
-          iVar2 = 0;
+          iVar1 = 0;
           do {
-            if (g_MasterLightList[0] == *(CDemonLight **)((int)g_ActiveLightList + iVar2)) {
+            if (light == *(CDemonLight **)((int)g_ActiveLightList + iVar1)) {
               local_18 = 1;
               break;
             }
-            iVar2 = iVar2 + 4;
-          } while (iVar2 < g_ActiveLightCount * 4);
+            iVar1 = iVar1 + 4;
+          } while (iVar1 < g_ActiveLightCount * 4);
         }
-        core_setutil_cpp_C3DSLight_process_FUN_00586cb0(this_ptr_00,g_MasterLightList[0],local_18);
-        crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffeec,"%son",this_ptr_00->name);
-        iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
-                          (g_CEventListPtr,&stack0xfffffef0);
-        if (iVar2 != 0) {
-          pCVar1->light_enabled_flag = 1;
+        core_setutil_cpp_C3DSLight_process_FUN_00586cb0(this_ptr_00,light,local_18);
+        crt_stdio_c_sprintf_FUN_005fdbd0(local_118,"%son",this_ptr_00->name);
+        iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0(g_CEventListPtr,local_118);
+        if (iVar1 != 0) {
+          light->light_enabled_flag = 1;
         }
-        crt_stdio_c_sprintf_FUN_005fdbd0(&stack0xfffffef4,"%soff");
-        iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0
-                          (g_CEventListPtr,&stack0xfffffef8);
-        if (iVar2 != 0) {
-          pCVar1->light_enabled_flag = 0;
+        crt_stdio_c_sprintf_FUN_005fdbd0(local_118,"%soff",this_ptr_00->name);
+        iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_004adca0(g_CEventListPtr,local_118);
+        if (iVar1 != 0) {
+          light->light_enabled_flag = 0;
         }
-        iVar2 = crt_string_c_strnicmp_FUN_005ff070(this_ptr_00->name,"moon",4);
-        if (iVar2 == 0) {
-          if (*(int *)(in_stack_0000001c + 0x15ae48) == 0) {
-            pCVar1->light_enabled_flag = 0;
-            this_ptr = (CDemonSet *)this_ptr->cameras;
+        iVar1 = crt_string_c_strnicmp_FUN_005ff070(this_ptr_00->name,"moon",4);
+        if (iVar1 == 0) {
+          if (this_ptr->last_switch_area_invalid == 0) {
+            light->light_enabled_flag = 0;
+            local_14 = local_14 + 4;
             goto LAB_0056f972;
           }
-          pCVar1->light_enabled_flag = 1;
+          light->light_enabled_flag = 1;
         }
-        this_ptr = (CDemonSet *)this_ptr->cameras;
+        local_14 = local_14 + 4;
       }
 LAB_0056f972:
-      iVar3 = iVar3 + 1;
+      iVar2 = iVar2 + 1;
       this_ptr_00 = this_ptr_00 + 1;
-    } while (iVar3 < this_ptr->light_count);
+    } while (iVar2 < this_ptr->light_count);
   }
   return;
 }

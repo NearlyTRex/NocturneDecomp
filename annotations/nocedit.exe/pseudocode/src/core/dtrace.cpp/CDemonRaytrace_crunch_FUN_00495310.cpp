@@ -17,7 +17,6 @@ core_dtrace_cpp_CDemonRaytrace_crunch_FUN_00495310(CDemonRaytrace *this_ptr,floa
   CDemonTriangle *vertex1;
   int iVar5;
   char **ppcVar6;
-  BADSPACEBASE *in_ESP;
   float *pfVar7;
   char **ppcVar8;
   float10 fVar9;

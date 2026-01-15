@@ -10,13 +10,11 @@ CSkeleton * __cdecl
 core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_0059a810(CDeformableModel *this_ptr)
 
 {
-  int in_stack_00000008;
-  
   if (this_ptr->skeleton_ptr != (CSkeleton *)0x0) {
     return this_ptr->skeleton_ptr;
   }
   g_CurrentFilename = "..\\core\\skeleton.cpp";
   g_CurrentLineNumber = 0x2e6;
   core_main_c_displayErrorAndQuit_FUN_00506f10("Tried to do something with the skeleton, but skeleton ptr not set!");
-  return *(CSkeleton **)(in_stack_00000008 + 0x8fac);
+  return this_ptr->skeleton_ptr;
 }

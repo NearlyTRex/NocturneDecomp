@@ -15,7 +15,7 @@ void core_frankgen_cpp_FUN_004d25f0(void)
   int iVar1;
   int iVar2;
   CDemonActor *in_stack_00000004;
-  float fVar3;
+  float fStack_14;
   
   switch(*(uint *)in_stack_00000004[1].actor_name) {
   case 1:
@@ -30,17 +30,23 @@ void core_frankgen_cpp_FUN_004d25f0(void)
   case 5:
     core_actor_cpp_CDemonActor_processInEditor_FUN_0040d040(in_stack_00000004);
   }
-  (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
-  (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
+  fStack_14 = 1.0;
+  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x2a);
+  if (iVar1 != 0) {
+    fStack_14 = 4.0;
+  }
+  iVar1 = (*g_CKeysPtr->vtable->getKeyState)(g_CKeysPtr,0x38);
+  if (iVar1 != 0) {
+    fStack_14 = fStack_14 * (float)0.25;
+  }
   iVar1 = core_frankgen_cpp_CFrankenstienMachine_findLeader_FUN_004d2330();
-  fVar3 = 7.28675e-44;
   iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x34);
   if (iVar2 != 0) {
-    *(float *)(iVar1 + 0x15c) = *(float *)(iVar1 + 0x15c) + fVar3;
+    *(float *)(iVar1 + 0x15c) = *(float *)(iVar1 + 0x15c) + fStack_14;
   }
   iVar2 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,0x33);
   if (iVar2 != 0) {
-    *(float *)(iVar1 + 0x15c) = *(float *)(iVar1 + 0x15c) - fVar3;
+    *(float *)(iVar1 + 0x15c) = *(float *)(iVar1 + 0x15c) - fStack_14;
   }
   if (*(float *)(iVar1 + 0x15c) < 0.0) {
     *(float *)(iVar1 + 0x15c) = _DAT_0065e670 + *(float *)(iVar1 + 0x15c);

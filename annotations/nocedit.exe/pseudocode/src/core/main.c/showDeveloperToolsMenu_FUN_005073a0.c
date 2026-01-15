@@ -20,27 +20,21 @@ void __cdecl core_main_c_showDeveloperToolsMenu_FUN_005073a0(void)
   void *ptr;
   CMorphModel *this_ptr_00;
   FILE *output_file;
-  BADSPACEBASE *in_ESP;
-  int unaff_ESI;
   byte bVar8;
-  byte uStack0000007c;
-  byte uStack0000007d;
-  byte uStack0000007e;
-  byte uStack0000007f;
-  uint auStackY_f6c [655];
-  int right_pos;
-  int in_stack_fffffaf0;
+  int aiStackY_1008 [690];
   char *directory;
   char *mode;
+  int right_pos;
   char *source_file;
-  char acStack_290 [136];
-  byte auStack_208 [28];
-  byte auStack_1ec [16];
-  byte auStack_1dc [208];
-  byte auStack_10c [12];
-  byte auStack_100 [8];
-  byte auStack_f8 [180];
-  CEdScrollBar CStack_44;
+  int bottom_pos;
+  CIniFile local_528;
+  char local_328 [256];
+  CEdButton local_228;
+  CEdButton local_144;
+  CEdScrollBar local_60;
+  CCourse local_2c;
+  char local_20 [4];
+  int aiStack_1c [3];
   
   bVar8 = 0;
   iVar1 = engine_fileio_cpp_CFileManager_createPodConfigWizard_FUN_004bccf0
@@ -48,12 +42,11 @@ void __cdecl core_main_c_showDeveloperToolsMenu_FUN_005073a0(void)
   if (iVar1 == 0) {
     return;
   }
-  engine_ini_cpp_CIniFile_ctor_FUN_004fba70
-            ((CIniFile *)&stack0xfffffadc,".\\system\\nocturne.ini",0x63169a);
+  engine_ini_cpp_CIniFile_ctor_FUN_004fba70(&local_528,".\\system\\nocturne.ini",0x63169a);
+  aiStack_1c[2] = 0;
   engine_ini_cpp_CIniFile_getInteger_FUN_004fbc30
-            ((CIniFile *)&stack0xfffffae0,"AcceptedLicenseAgreement",
-             (int *)&stack0xfffffff4);
-  if (unaff_ESI != 0) {
+            (&local_528,"AcceptedLicenseAgreement",aiStack_1c + 2);
+  if (aiStack_1c[2] != 0) {
 LAB_0050740e:
     do {
       wincore_windll_cpp_clearScreen_FUN_005b3e70();
@@ -111,9 +104,9 @@ LAB_0050740e:
         }
       }
       else if (uVar2 < 0x38) {
-        core_course_cpp_CCourse_ctor_FUN_004424c0((CCourse *)&stack0x0000006c);
-        core_course_cpp_CCourse_showEditorMenu_FUN_00443040((CCourse *)&stack0x00000070);
-        core_course_cpp_CCourse_dtor_FUN_004424e0((CCourse *)&stack0x00000074);
+        core_course_cpp_CCourse_ctor_FUN_004424c0(&local_2c);
+        core_course_cpp_CCourse_showEditorMenu_FUN_00443040(&local_2c);
+        core_course_cpp_CCourse_dtor_FUN_004424e0(&local_2c);
       }
       else if (uVar2 < 0x4d) {
         if (0x40 < uVar2) {
@@ -128,7 +121,7 @@ LAB_0050740e:
               this_ptr_00 = (CMorphModel *)core_morph_cpp_FUN_0052b310();
             }
             if (this_ptr_00 != (CMorphModel *)0x0) {
-              core_morph_cpp_FUN_0052bcb0();
+              core_morph_cpp_FUN_0052bcb0(this_ptr_00);
               g_CurrentDebugLine = 0x295;
               g_CurrentDebugFilename = "..\\core\\main.c";
               if (this_ptr_00 != (CMorphModel *)0x0) {
@@ -148,31 +141,30 @@ LAB_0050740e:
         }
         else if (uVar2 == 0x5a) {
           shape_edittool_cpp_CEditorTools_displayMemoryDiagnostics_FUN_004a2590
-                    (g_CEditorToolsPtr,acStack_290);
+                    (g_CEditorToolsPtr,local_328);
           iVar1 = 0x2c0;
           source_file = "..\\core\\main.c";
           mode = "wt";
           directory = (char *)0x0;
-          pcVar3 = &stack0x0000007c;
-          uStack0000007c = "memdump.txt"[0];
-          uStack0000007d = "memdump.txt"[1];
-          uStack0000007e = "memdump.txt"[2];
-          uStack0000007f = "memdump.txt"[3];
-          *(uint *)(&stack0x00000080 + (uint)bVar8 * -8) =
-               *(uint *)("memdump.txt" + (uint)bVar8 * -8 + 4);
-          *(uint *)(&stack0x00000084 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =
-               *(uint *)("memdump.txt" + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
+          pcVar3 = local_20;
+          local_20[0] = "memdump.txt"[0];
+          local_20[1] = "memdump.txt"[1];
+          local_20[2] = "memdump.txt"[2];
+          local_20[3] = "memdump.txt"[3];
+          aiStack_1c[(uint)bVar8 * -2] = *(int *)("memdump.txt" + (uint)bVar8 * -8 + 4);
+          aiStack_1c[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
+               *(int *)("memdump.txt" + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 8);
           output_file = shape_memdbg_cpp_openFile_FUN_0050f7a0
                                   (pcVar3,directory,mode,source_file,iVar1);
           if (output_file == (FILE *)0x0) {
             g_CurrentFilename = "..\\core\\main.c";
             g_CurrentLineNumber = 0x2c1;
-            core_main_c_displayErrorAndQuit_FUN_00506f10("Can't createpen %s");
+            core_main_c_displayErrorAndQuit_FUN_00506f10("Can't createpen %s",local_20);
           }
           shape_memdbg_cpp_debugMemdump_FUN_0050f6c0(output_file);
           shape_memdbg_cpp_closeFile_FUN_0050f9b0(output_file,"..\\core\\main.c",0x2c3);
           shape_edittool_cpp_CEditorTools_showMessage_FUN_0049e6a0
-                    (g_CEditorToolsPtr,"%s\nAlso dumped memory usage to %s");
+                    (g_CEditorToolsPtr,"%s\nAlso dumped memory usage to %s",local_328,local_20);
         }
       }
     } while (uVar2 != 0x1b);
@@ -181,49 +173,49 @@ LAB_0050740e:
   }
   pcVar3 = support_newmsg_cpp_decryptMessage_FUN_00544270((SEncryptedMessage *)g_LicenseAgreement);
   iVar4 = engine_font_cpp_CBitFont_getCharWidth_FUN_004cff40(g_EditorFont,pcVar3);
-  shape_edittool_cpp_CEdScrollBar_ctor_FUN_004a5ae0((CEdScrollBar *)(auStack_f8 + 0xac));
-  iVar1 = g_ClipRight;
-  right_pos = g_ClipBottom;
+  shape_edittool_cpp_CEdScrollBar_ctor_FUN_004a5ae0(&local_60);
+  iVar1 = g_ClipTop;
+  right_pos = g_ClipRight;
+  bottom_pos = g_ClipBottom;
   iVar5 = shape_edittool_cpp_calculateGridWidth_FUN_004a6490();
   shape_edittool_cpp_CEdScrollBar_setPosition_FUN_004a5b60
-            (&CStack_44,g_WindowWidth - iVar5,iVar1,right_pos,in_stack_fffffaf0);
-  CStack_44.scroll_increment = g_WindowHeight;
-  CStack_44.max_value = iVar4 + 100;
-  shape_edittool_cpp_CEdButton_ctor_FUN_004a64e0((CEdButton *)auStack_208);
-  shape_edittool_cpp_CEdButton_ctor_FUN_004a64e0((CEdButton *)(auStack_1dc + 0xbc));
+            (&local_60,g_WindowWidth - iVar5,iVar1,right_pos,bottom_pos);
+  local_60.max_value = g_WindowHeight;
+  local_60.current_value = iVar4 + 100;
+  shape_edittool_cpp_CEdButton_ctor_FUN_004a64e0(&local_228);
+  shape_edittool_cpp_CEdButton_ctor_FUN_004a64e0(&local_144);
   do {
     wincore_windll_cpp_clearScreen_FUN_005b3e70();
-    shape_edittool_cpp_CEdScrollBar_handleInput_FUN_004a5fc0((CEdScrollBar *)&CStack_44.orientation)
-    ;
-    shape_edittool_cpp_CEdScrollBar_render_FUN_004a5c10((CEdScrollBar *)&CStack_44.bounds_left);
+    shape_edittool_cpp_CEdScrollBar_handleInput_FUN_004a5fc0(&local_60);
+    shape_edittool_cpp_CEdScrollBar_render_FUN_004a5c10(&local_60);
     shape_edittool_cpp_CEdButton_calculateAndSetBounds_FUN_004a6550
-              ((CEdButton *)(auStack_208 + 0x14),0x1e,(iVar4 - CStack_44.bounds_top) + 10,
+              (&local_228,0x1e,(iVar4 - local_60.scroll_position) + 10,
                "I accept the terms of the license agreement");
     shape_edittool_cpp_CEdButton_calculateAndSetBounds_FUN_004a6550
-              ((CEdButton *)auStack_10c,0x1e,(iVar4 - CStack_44.bounds_right) + 0x28,
+              (&local_144,0x1e,(iVar4 - local_60.scroll_position) + 0x28,
                "I DO NOT accept the terms of the license agreement");
-    iVar1 = shape_edittool_cpp_CEdButton_wasClicked_FUN_004a6830((CEdButton *)auStack_1ec);
+    iVar1 = shape_edittool_cpp_CEdButton_wasClicked_FUN_004a6830(&local_228);
     if (iVar1 != 0) {
       engine_ini_cpp_CIniFile_setInteger_FUN_004fbc90
-                ((CIniFile *)&stack0xfffffb18,"AcceptedLicenseAgreement",1);
+                (&local_528,"AcceptedLicenseAgreement",1);
       engine_2d_c_clearInputAndWait_FUN_00403260();
-      shape_edittool_cpp_CEdButton_dtor_FUN_004a6510((CEdButton *)(auStack_100 + 4));
-      shape_edittool_cpp_CEdButton_dtor_FUN_004a6510((CEdButton *)auStack_1dc);
-      shape_edittool_cpp_CEdScrollBar_dtor_FUN_004a5b20((CEdScrollBar *)&stack0xfffffff0);
+      shape_edittool_cpp_CEdButton_dtor_FUN_004a6510(&local_144);
+      shape_edittool_cpp_CEdButton_dtor_FUN_004a6510(&local_228);
+      shape_edittool_cpp_CEdScrollBar_dtor_FUN_004a5b20(&local_60);
       goto LAB_0050740e;
     }
-    iVar1 = shape_edittool_cpp_CEdButton_wasClicked_FUN_004a6830((CEdButton *)(auStack_10c + 8));
+    iVar1 = shape_edittool_cpp_CEdButton_wasClicked_FUN_004a6830(&local_144);
     if (iVar1 != 0) break;
     engine_font_cpp_CBitFont_drawTextLeft_FUN_004cda80
-              (g_EditorFont,pcVar3,0x1e,-CStack_44.track_end,0xff,-1);
-    shape_edittool_cpp_CEdButton_paint_FUN_004a65e0((CEdButton *)(auStack_1ec + 0xc),0);
-    shape_edittool_cpp_CEdButton_paint_FUN_004a65e0((CEdButton *)auStack_f8,0);
+              (g_EditorFont,pcVar3,0x1e,-local_60.scroll_position,0xff,-1);
+    shape_edittool_cpp_CEdButton_paint_FUN_004a65e0(&local_228,0);
+    shape_edittool_cpp_CEdButton_paint_FUN_004a65e0(&local_144,0);
     shape_edittool_cpp_CEditorTools_setMousePointerType_FUN_004a1380(g_CEditorToolsPtr,false);
     wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
     iVar1 = (*g_CKeysPtr->vtable->getAndClearKeyState)(g_CKeysPtr,1);
   } while (iVar1 == 0);
-  shape_edittool_cpp_CEdButton_dtor_FUN_004a6510((CEdButton *)auStack_100);
-  shape_edittool_cpp_CEdButton_dtor_FUN_004a6510((CEdButton *)(auStack_1ec + 0xc));
-  shape_edittool_cpp_CEdScrollBar_dtor_FUN_004a5b20((CEdScrollBar *)&CStack_44.thumb_end);
+  shape_edittool_cpp_CEdButton_dtor_FUN_004a6510(&local_144);
+  shape_edittool_cpp_CEdButton_dtor_FUN_004a6510(&local_228);
+  shape_edittool_cpp_CEdScrollBar_dtor_FUN_004a5b20(&local_60);
   return;
 }

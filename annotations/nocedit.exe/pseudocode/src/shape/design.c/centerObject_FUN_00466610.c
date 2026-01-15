@@ -11,7 +11,6 @@ void __cdecl shape_design_c_centerObject_FUN_00466610(void)
 {
   int iVar1;
   uint uVar2;
-  BADSPACEBASE *in_ESP;
   char local_b8 [80];
   double local_68;
   double local_60;

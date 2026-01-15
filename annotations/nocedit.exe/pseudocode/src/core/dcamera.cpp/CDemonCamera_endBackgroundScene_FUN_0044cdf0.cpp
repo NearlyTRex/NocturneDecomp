@@ -21,7 +21,6 @@ core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0
   void **ppvVar6;
   int iVar7;
   byte bVar8;
-  int in_stack_0000000c;
   
   bVar8 = 0;
   g_BackgroundSceneDepth = g_BackgroundSceneDepth + -1;
@@ -50,7 +49,7 @@ core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_0044cdf0
     g_GreenBitPosition = g_BackgroundSavedGreenBitPosition;
     g_BlueBitPosition = g_BackgroundSavedBlueBitPosition;
     in_EAX = g_BackgroundSavedBlueBitPosition;
-    if (in_stack_0000000c != 0) {
+    if (restore_zbuffer != 0) {
       iVar3 = 0;
       if (0 < this_ptr->framebuffer_height) {
         iVar7 = 0;

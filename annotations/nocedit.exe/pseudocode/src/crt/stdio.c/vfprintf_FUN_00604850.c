@@ -14,8 +14,7 @@ int __watcallStack crt_stdio_c_vfprintf_FUN_00604850(FILE *file,char *format,va_
   int iVar3;
   byte bVar4;
   bool bVar5;
-  char *in_stack_00000018;
-  va_list_t in_stack_0000001c;
+  va_list_t in_stack_00000010;
   
   (*PTR_crt_sync_c_EnterCriticalSection_FUN_00602434_00684ee8)(file->_handle);
   pcVar1 = file->_link->__get_base;
@@ -39,8 +38,7 @@ int __watcallStack crt_stdio_c_vfprintf_FUN_00604850(FILE *file,char *format,va_
     *(byte *)((int)&file->_flag + 1) = bVar4 | 1;
   }
   iVar3 = crt_stdio_c_FormatEngine_FUN_00602950
-                    (file,in_stack_00000018,in_stack_0000001c,
-                     crt_stdio_c_OutputCallback_FUN_00604830);
+                    (file,args,in_stack_00000010,crt_stdio_c_OutputCallback_FUN_00604830);
   if (bVar5) {
     bVar4 = *(byte *)((int)&file->_flag + 1) & 0xfa;
     *(byte *)((int)&file->_flag + 1) = bVar4;

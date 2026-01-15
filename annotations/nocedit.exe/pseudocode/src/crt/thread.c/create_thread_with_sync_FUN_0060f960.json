@@ -1,22 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 98,
-    "complexity_score": 191,
+    "complexity_score": 160,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 10,
-    "pseudocode_lines": 66,
-    "suspect_count": 9,
+    "pseudocode_lines": 65,
+    "suspect_count": 7,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "callind_preserve_lost",
       "lea_esp_stack_addr",
-      "register_param",
       "special_crt_function",
       "stack_ref"
     ],
-    "total_lines": 164
+    "total_lines": 163
   },
   "cross_references": [],
   "function": {
@@ -246,22 +244,8 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 10,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 10,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 51,
+      "line": 50,
       "match": "&stack0xffffffb4",
       "text": "pvStack_20 = (*PTR_CreateEventA_0061150c)((LPSECURITY_ATTRIBUTES)0x0,0,0,&stack0xffffffb4);",
       "type": "stack_ref"

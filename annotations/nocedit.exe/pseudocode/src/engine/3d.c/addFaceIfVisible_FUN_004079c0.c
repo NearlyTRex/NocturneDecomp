@@ -12,7 +12,6 @@ engine_3d_c_addFaceIfVisible_FUN_004079c0
 
 {
   int iVar1;
-  SMRGLHeaderPrimitive *in_stack_0000000c;
   
   iVar1 = engine_3d_c_isVisiblePlane_FUN_00403950(&cull_reference->surface_normal);
   if (iVar1 != 0) {
@@ -21,7 +20,7 @@ engine_3d_c_addFaceIfVisible_FUN_004079c0
       g_CurrentLineNumber = 0xca7;
       core_main_c_displayErrorAndQuit_FUN_00506f10("renderFaceList - too many faces");
     }
-    g_RenderFaceArray[g_RenderFaceCount] = in_stack_0000000c;
+    g_RenderFaceArray[g_RenderFaceCount] = cull_reference;
     g_RenderFaceCount = g_RenderFaceCount + 1;
   }
   return;

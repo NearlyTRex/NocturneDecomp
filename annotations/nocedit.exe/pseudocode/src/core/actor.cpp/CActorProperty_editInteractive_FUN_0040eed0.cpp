@@ -24,7 +24,6 @@ core_actor_cpp_CActorProperty_editInteractive_FUN_0040eed0
   uint uVar9;
   SIZE_T SVar10;
   void *pvVar11;
-  BADSPACEBASE *in_ESP;
   byte *pbVar12;
   CClothList *pCVar13;
   char *pcVar14;

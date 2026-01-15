@@ -13,13 +13,13 @@ cockpit_drawsurf_cpp_CDrawSurface_drawAntiAliasedLine_FUN_00488410
 {
   int iVar1;
   int iVar2;
+  int iVar3;
+  int iVar4;
   int disabled;
-  int unaff_EBX;
-  int unaff_ESI;
-  int in_stack_00000018;
-  int in_stack_0000001c;
   
-  iVar2 = g_ClipRight;
+  iVar4 = g_ClipBottom;
+  iVar3 = g_ClipRight;
+  iVar2 = g_ClipTop;
   iVar1 = g_ClipLeft;
   g_ClipLeft = this_ptr->clip_left;
   g_ClipRight = this_ptr->clip_right;
@@ -28,12 +28,12 @@ cockpit_drawsurf_cpp_CDrawSurface_drawAntiAliasedLine_FUN_00488410
   disabled = cockpit_ckptutil_c_isLineClippingDisabled_FUN_00434660();
   cockpit_ckptutil_c_setLineClippingDisabled_FUN_00434680(1);
   cockpit_ckptutil_c_drawLineAA_FUN_00433c90
-            (x2 + this_ptr->x,y2 + this_ptr->y,in_stack_00000018 + this_ptr->x,
-             in_stack_0000001c + this_ptr->y,g_PaletteColorIndex);
+            (x1 + this_ptr->x,y1 + this_ptr->y,x2 + this_ptr->x,y2 + this_ptr->y,g_PaletteColorIndex
+            );
   cockpit_ckptutil_c_setLineClippingDisabled_FUN_00434680(disabled);
   g_ClipLeft = iVar1;
-  g_ClipTop = unaff_ESI;
-  g_ClipRight = iVar2;
-  g_ClipBottom = unaff_EBX;
+  g_ClipTop = iVar2;
+  g_ClipRight = iVar3;
+  g_ClipBottom = iVar4;
   return;
 }

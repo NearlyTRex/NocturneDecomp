@@ -10,8 +10,7 @@ int __cdecl crt_stdio_c_fputc_FUN_005fea10(int character,FILE *stream)
 
 {
   char *pcVar1;
-  char cStack00000014;
-  byte in_stack_00000020;
+  byte in_stack_0000000c;
   
   if (character == -1) {
     return -1;
@@ -48,13 +47,13 @@ LAB_005fea85:
     pcVar1 = stream->_ptr;
     stream->_cnt = stream->_cnt + 1;
     stream->_ptr = pcVar1 + -1;
-    if ((byte)pcVar1[-1] != _cStack00000014) {
+    if ((FILE *)(uint)(byte)pcVar1[-1] != stream) {
       *(byte *)&stream->_flag = (byte)stream->_flag | 4;
     }
     pcVar1 = stream->_ptr;
   }
-  *pcVar1 = cStack00000014;
+  *pcVar1 = (char)stream;
   *(byte *)&stream->_flag = (byte)stream->_flag & 0xef;
   (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(stream->_handle);
-  return (uint)in_stack_00000020;
+  return (uint)in_stack_0000000c;
 }

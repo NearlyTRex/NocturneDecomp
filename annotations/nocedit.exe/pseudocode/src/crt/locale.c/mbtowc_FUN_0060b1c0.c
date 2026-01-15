@@ -13,7 +13,6 @@ crt_locale_c_mbtowc_FUN_0060b1c0(wchar_t *wide_char,char *mb_string,SIZE_T max_b
   int iVar1;
   uint uVar2;
   uint cbMultiByte;
-  BADSPACEBASE *in_ESP;
   wchar_t local_14 [2];
   
   if (mb_string == (char *)0x0) {

@@ -20,10 +20,9 @@ core_dtrace_cpp_CDemonRaytrace_setPVS_FUN_00498e50
   int iVar7;
   ulonglong uVar8;
   uint uVar9;
-  BADSPACEBASE *in_ESP;
   CVector3f *pCVar10;
   int iVar11;
-  CVector3f local_1c;
+  CVector3f local_20 [2];
   
   g_PVSReadyFlag = 0;
   if ((0 < visible_cube_count) && (visible_cube_indices != (int *)0x0)) {
@@ -47,7 +46,7 @@ core_dtrace_cpp_CDemonRaytrace_setPVS_FUN_00498e50
         fVar2 = (this_ptr->bbox_min).y;
         fVar3 = (this_ptr->cell_size).z;
         fVar4 = (this_ptr->bbox_min).z;
-        if (pCVar10 != &local_1c) {
+        if (pCVar10 != local_20) {
           pCVar10->x = (float)(int)((longlong)((ulonglong)uVar9 << 0x20 | uVar8 & 0xffffffff) /
                                    (longlong)(this_ptr->grid_coord).y) * (this_ptr->cell_size).x +
                        (this_ptr->bbox_min).x;

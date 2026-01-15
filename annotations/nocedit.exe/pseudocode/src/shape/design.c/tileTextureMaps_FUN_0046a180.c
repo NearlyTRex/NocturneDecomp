@@ -12,7 +12,6 @@ void __cdecl shape_design_c_tileTextureMaps_FUN_0046a180(char *model_name,int pr
   char cVar1;
   int iVar2;
   uint uVar3;
-  BADSPACEBASE *in_ESP;
   char *pcVar4;
   char *pcVar5;
   char *pcVar6;

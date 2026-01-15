@@ -12,12 +12,12 @@ void core_boneguy_cpp_FUN_0041d180(void)
 
 {
   int iVar1;
-  CCharacter *in_stack_00000008;
+  CCharacter *in_stack_00000004;
   
   iVar1 = engine_drender_cpp_CDemonRenderer_getFaceCount_FUN_0048cae0(g_CDemonRendererPtr);
   if (iVar1 == 0) {
     return;
   }
-  core_charactr_cpp_CCharacter_renderOpaque_FUN_0042a2c0(in_stack_00000008);
+  core_charactr_cpp_CCharacter_renderOpaque_FUN_0042a2c0(in_stack_00000004);
   return;
 }

@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 198,
-    "complexity_score": 541,
+    "complexity_score": 494,
     "cross_reference_count": 5,
     "function_call_count": 3,
     "global_count": 22,
-    "pseudocode_lines": 96,
-    "suspect_count": 43,
+    "pseudocode_lines": 94,
+    "suspect_count": 39,
     "suspect_types": [
       "call_esp_preserve",
-      "pointer_cast",
       "stack_param"
     ],
-    "total_lines": 294
+    "total_lines": 292
   },
   "cross_references": [
     {
@@ -248,191 +247,163 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 11,
       "match": "in_stack_00000004",
-      "text": "char *in_stack_00000004;",
+      "text": "int in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 12,
       "match": "in_stack_00000008",
       "text": "char *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
+      "line": 15,
+      "match": "in_stack_00000004",
+      "text": "pcVar4 = (char *)(in_stack_00000004 + 0x2d4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000008",
+      "text": "pcVar3 = in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
       "line": 17,
-      "match": "in_stack_00000004",
-      "text": "iVar2 = (int)in_stack_00000004;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00000004",
-      "text": "pcVar5 = (char *)((int)in_stack_00000004 + 0x2d4);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 18,
-      "match": "(char *)((int)",
-      "text": "pcVar5 = (char *)((int)in_stack_00000004 + 0x2d4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
       "match": "in_stack_00000008",
-      "text": "pcVar4 = in_stack_00000008;",
+      "text": "if (pcVar4 != in_stack_00000008) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 20,
+      "line": 28,
       "match": "in_stack_00000008",
-      "text": "if (pcVar5 != in_stack_00000008) {",
+      "text": "iVar2 = crt_string_c_strcmp_FUN_005fef20(in_stack_00000008,\"CGun\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 31,
+      "line": 30,
+      "match": "in_stack_00000004",
+      "text": "switch(*(uint *)(in_stack_00000004 + 0x318)) {",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 53,
+      "match": "in_stack_00000004",
+      "text": "((CKeyFramedModelInstance *)(in_stack_00000004 + 0x158),pcVar4);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 55,
       "match": "in_stack_00000008",
-      "text": "iVar3 = crt_string_c_strcmp_FUN_005fef20(in_stack_00000008,\"CGun\");",
+      "text": "iVar2 = crt_string_c_strcmp_FUN_005fef20(in_stack_00000008,\"CShotgun\");",
       "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_00000004",
-      "text": "switch(*(uint *)((int)in_stack_00000004 + 0x318)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 33,
-      "match": "(uint *)((int)",
-      "text": "switch(*(uint *)((int)in_stack_00000004 + 0x318)) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 56,
-      "match": "in_stack_00000004",
-      "text": "((CKeyFramedModelInstance *)((int)in_stack_00000004 + 0x158),pcVar5);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 56,
-      "match": "(CKeyFramedModelInstance *)((int)",
-      "text": "((CKeyFramedModelInstance *)((int)in_stack_00000004 + 0x158),pcVar5);",
-      "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 58,
+      "match": "in_stack_00000004",
+      "text": "((CKeyFramedModelInstance *)(in_stack_00000004 + 0x158),\"shell.kfm\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 60,
       "match": "in_stack_00000008",
-      "text": "iVar3 = crt_string_c_strcmp_FUN_005fef20(in_stack_00000008,\"CShotgun\");",
+      "text": "iVar2 = crt_string_c_strcmp_FUN_005fef20(in_stack_00000008,\"CCrossbow\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 61,
+      "line": 62,
       "match": "in_stack_00000004",
-      "text": "((CKeyFramedModelInstance *)((int)in_stack_00000004 + 0x158),\"shell.kfm\");",
+      "text": "if (*(int *)(in_stack_00000004 + 0x318) == 1) {",
       "type": "stack_param"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 61,
-      "match": "(CKeyFramedModelInstance *)((int)",
-      "text": "((CKeyFramedModelInstance *)((int)in_stack_00000004 + 0x158),\"shell.kfm\");",
-      "type": "pointer_cast"
+      "description": "Unresolved stack parameter",
+      "line": 69,
+      "match": "in_stack_00000004",
+      "text": "((CKeyFramedModelInstance *)(in_stack_00000004 + 0x158),pcVar4);",
+      "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 63,
+      "line": 71,
       "match": "in_stack_00000008",
-      "text": "iVar3 = crt_string_c_strcmp_FUN_005fef20(in_stack_00000008,\"CCrossbow\");",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 65,
-      "match": "in_stack_00000004",
-      "text": "this_ptr = (CKeyFramedModelInstance *)((int)in_stack_00000004 + 0x158);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 65,
-      "match": "(CKeyFramedModelInstance *)((int)",
-      "text": "this_ptr = (CKeyFramedModelInstance *)((int)in_stack_00000004 + 0x158);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 66,
-      "match": "in_stack_00000004",
-      "text": "if (*(int *)((int)in_stack_00000004 + 0x318) == 1) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 66,
-      "match": "(int *)((int)",
-      "text": "if (*(int *)((int)in_stack_00000004 + 0x318) == 1) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 67,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004 = \"holystake.kfm\";",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 70,
-      "match": "in_stack_00000004",
-      "text": "in_stack_00000004 = \"stake.kfm\";",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 72,
-      "match": "in_stack_00000004",
-      "text": "core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(this_ptr,in_stack_00000004);",
+      "text": "iVar2 = crt_string_c_strcmp_FUN_005fef20(in_stack_00000008,\"CDynamite\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 74,
-      "match": "in_stack_00000008",
-      "text": "iVar3 = crt_string_c_strcmp_FUN_005fef20(in_stack_00000008,\"CDynamite\");",
+      "match": "in_stack_00000004",
+      "text": "((CKeyFramedModelInstance *)(in_stack_00000004 + 0x158),\"dynamitebundle.kfm\")",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 79,
+      "line": 77,
       "match": "in_stack_00000008",
-      "text": "iVar3 = crt_string_c_strcmp_FUN_005fef20(in_stack_00000008,\"CTommyGun\");",
+      "text": "iVar2 = crt_string_c_strcmp_FUN_005fef20(in_stack_00000008,\"CTommyGun\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 84,
-      "match": "in_stack_00000008",
-      "text": "iVar3 = crt_string_c_strcmp_FUN_005fef20(in_stack_00000008,\"CFlameThrower\");",
+      "line": 80,
+      "match": "in_stack_00000004",
+      "text": "((CKeyFramedModelInstance *)(in_stack_00000004 + 0x158),\"tommybullet.kfm\");",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 89,
+      "line": 82,
       "match": "in_stack_00000008",
-      "text": "iVar3 = crt_string_c_strcmp_FUN_005fef20(in_stack_00000008,\"CElephantGun\");",
+      "text": "iVar2 = crt_string_c_strcmp_FUN_005fef20(in_stack_00000008,\"CFlameThrower\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 85,
+      "match": "in_stack_00000004",
+      "text": "((CKeyFramedModelInstance *)(in_stack_00000004 + 0x158),\"fgunammo.kfm\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 87,
+      "match": "in_stack_00000008",
+      "text": "iVar2 = crt_string_c_strcmp_FUN_005fef20(in_stack_00000008,\"CElephantGun\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 90,
+      "match": "in_stack_00000004",
+      "text": "((CKeyFramedModelInstance *)(in_stack_00000004 + 0x158));",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 94,
+      "match": "in_stack_00000004",
+      "text": "((CKeyFramedModelInstance *)(in_stack_00000004 + 0x158),\"eleshell.kfm\");",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 96,
+      "match": "in_stack_00000004",
+      "text": "((CKeyFramedModelInstance *)(in_stack_00000004 + 0x158));",
       "type": "stack_param"
     },
     {

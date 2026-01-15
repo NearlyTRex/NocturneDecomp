@@ -1,19 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 215,
-    "complexity_score": 390,
+    "complexity_score": 337,
     "cross_reference_count": 0,
     "function_call_count": 11,
     "global_count": 1,
-    "pseudocode_lines": 70,
-    "suspect_count": 30,
+    "pseudocode_lines": 67,
+    "suspect_count": 25,
     "suspect_types": [
       "call_esp_preserve",
       "pointer_cast",
       "special_crt_function",
       "stack_param"
     ],
-    "total_lines": 285
+    "total_lines": 282
   },
   "cross_references": [],
   "function": {
@@ -178,93 +178,58 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 12,
       "match": "in_stack_00000004",
       "text": "LPWSTR in_stack_00000004;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_0000000c",
-      "text": "int in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_00000014",
-      "text": "int in_stack_00000014;",
+      "line": 19,
+      "match": "in_stack_00000004",
+      "text": "if (pWVar2 == in_stack_00000004) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 22,
       "match": "in_stack_00000004",
-      "text": "if (pWVar1 == in_stack_00000004) {",
+      "text": "SVar1 = ((int)pWVar2 - (int)in_stack_00000004 >> 1) * 2;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 25,
+      "line": 27,
       "match": "in_stack_00000004",
-      "text": "count = ((int)pWVar1 - (int)in_stack_00000004 >> 1) * 2;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_00000004",
-      "text": "crt_string_c_memcpy_FUN_0060cd60(dest,in_stack_00000004,count);",
+      "text": "crt_string_c_memcpy_FUN_0060cd60(dest,in_stack_00000004,SVar1);",
       "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 31,
+      "line": 28,
       "match": "(ushort *)((int)",
-      "text": "*(ushort *)((int)dest + count) = 0;",
+      "text": "*(ushort *)((int)dest + SVar1) = 0;",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 43,
-      "match": "in_stack_00000004",
-      "text": "*(ushort *)((int)dest_00 + (int)in_stack_00000004) = 0;",
-      "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 43,
+      "line": 41,
       "match": "(ushort *)((int)",
-      "text": "*(ushort *)((int)dest_00 + (int)in_stack_00000004) = 0;",
+      "text": "*(ushort *)((int)dest_00 + SVar1) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 58,
+      "line": 56,
       "match": "in_stack_00000004",
-      "text": "uVar3 = crt_string_c_wcslen_FUN_0060cd30(in_stack_00000004);",
+      "text": "uVar4 = crt_string_c_wcslen_FUN_0060cd30(in_stack_00000004);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 59,
-      "match": "in_stack_0000000c",
-      "text": "dest_01 = crt_memory_c_malloc_FUN_00601bb0(in_stack_0000000c * (uVar3 + 1));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 65,
+      "line": 62,
       "match": "in_stack_00000004",
-      "text": "(dest_01,in_stack_00000004,(uVar3 + 1) * in_stack_00000014);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 65,
-      "match": "in_stack_00000014",
-      "text": "(dest_01,in_stack_00000004,(uVar3 + 1) * in_stack_00000014);",
+      "text": "iVar3 = crt_string_c_wcstombs_FUN_0060c0c0(dest_01,in_stack_00000004,(uVar4 + 1) * 2);",
       "type": "stack_param"
     },
     {

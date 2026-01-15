@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 156,
-    "complexity_score": 250,
+    "complexity_score": 242,
     "cross_reference_count": 4,
     "function_call_count": 4,
     "global_count": 17,
-    "pseudocode_lines": 75,
-    "suspect_count": 16,
+    "pseudocode_lines": 82,
+    "suspect_count": 15,
     "suspect_types": [
       "call_esp_preserve",
-      "pointer_cast",
-      "warning_unreachable"
+      "pointer_cast"
     ],
-    "total_lines": 231
+    "total_lines": 238
   },
   "cross_references": [
     {
@@ -282,73 +281,66 @@
   },
   "suspects": [
     {
-      "description": "Unreachable code block removed",
-      "line": 2,
-      "match": "WARNING: Removing unreachable block",
-      "text": "/* WARNING: Removing unreachable block (ram,0x004c75bd) */",
-      "type": "warning_unreachable"
-    },
-    {
-      "description": "Unreachable code block removed",
-      "line": 3,
-      "match": "WARNING: Removing unreachable block",
-      "text": "/* WARNING: Removing unreachable block (ram,0x004c7604) */",
-      "type": "warning_unreachable"
+      "description": "Complex pointer cast",
+      "line": 19,
+      "match": "(int *)((int)",
+      "text": "if (((*(int *)((int)&g_BulletHolePool[0].active + iVar2) != 0) &&",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 21,
+      "line": 20,
       "match": "(int *)((int)",
-      "text": "if ((*(int *)((int)&g_BulletHolePool[0].active + iVar1) != 0) &&",
+      "text": "(*(int *)((int)&g_BulletHolePool[0].actor_ptr + iVar2) == 0)) &&",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 22,
-      "match": "(int *)((int)",
-      "text": "(*(int *)((int)&g_BulletHolePool[0].actor_ptr + iVar1) == 0)) {",
+      "match": "(CBulletHole *)((int)",
+      "text": "((CBulletHole *)((int)&g_BulletHolePool[0].position.x + iVar2)),",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 24,
-      "match": "(CBulletHole *)((int)",
-      "text": "((CBulletHole *)((int)&g_BulletHolePool[0].position.x + iVar1));",
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&g_BulletHolePool[0].active + iVar2) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 36,
       "match": "(int *)((int)",
-      "text": "if (*(int *)((int)&g_BulletHolePool[0].actor_ptr + iVar1) == 0) {",
+      "text": "if (*(int *)((int)&g_BulletHolePool[0].actor_ptr + iVar2) == 0) {",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 38,
       "match": "(CBulletHole *)((int)",
-      "text": "((CBulletHole *)((int)&g_BulletHolePool[0].position.x + iVar1));",
+      "text": "((CBulletHole *)((int)&g_BulletHolePool[0].position.x + iVar2));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 50,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)g_StakePool[0].box.rotation_matrix.m + iVar1 + -0x1c) = 1;",
+      "text": "*(uint *)((int)g_StakePool[0].box.rotation_matrix.m + iVar2 + -0x1c) = 1;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 53,
       "match": "(CStake *)((int)",
-      "text": "((CStake *)((int)g_StakePool[0].box.rotation_matrix.m + iVar1 + -0x1c));",
+      "text": "((CStake *)((int)g_StakePool[0].box.rotation_matrix.m + iVar2 + -0x1c));",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 55,
       "match": "(int *)((int)",
-      "text": "else if (*(int *)((int)g_StakePool[0].box.rotation_matrix.m + iVar1 + -0x1c) != 0)",
+      "text": "else if (*(int *)((int)g_StakePool[0].box.rotation_matrix.m + iVar2 + -0x1c) != 0)",
       "type": "pointer_cast"
     },
     {

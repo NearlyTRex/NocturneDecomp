@@ -11,7 +11,6 @@ void __cdecl core_fire_cpp_CShell_render_FUN_004c6200(CShell *this_ptr)
 {
   SRenderVertex *vertex_ptr;
   int iVar1;
-  BADSPACEBASE *in_ESP;
   CVector3i local_1c;
   
   if (0.0 < (this_ptr->base).lifetime_remaining) {

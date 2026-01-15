@@ -16,20 +16,14 @@ engine_ini_cpp_CIni_writeProfileString_FUN_004fb660
   FILE *stream;
   FILE *file;
   uint uVar3;
-  BADSPACEBASE *in_ESP;
   char *pcVar4;
   byte bVar5;
-  char *in_stack_00000020;
-  char *in_stack_00000034;
-  char *in_stack_00000038;
   char *pcVar6;
   int line_number;
-  char acStack_20a [26];
-  char acStack_1f0 [236];
-  char acStack_104 [4];
-  char acStack_100 [4];
-  char acStack_fc [232];
-  uint local_14;
+  char local_314 [254];
+  char acStack_216 [258];
+  char local_114 [256];
+  int local_14;
   
   bVar5 = 0;
   local_14 = 0;
@@ -45,8 +39,8 @@ engine_ini_cpp_CIni_writeProfileString_FUN_004fb660
     g_CurrentLineNumber = 0x183;
     core_main_c_displayErrorAndQuit_FUN_00506f10("cIni::writeProfileString: Unable to open input");
   }
-  pcVar6 = acStack_20a;
-  pcVar4 = in_stack_00000020;
+  pcVar6 = acStack_216;
+  pcVar4 = filename;
   do {
     pcVar6 = pcVar6 + 2;
     cVar1 = *pcVar4;
@@ -57,7 +51,7 @@ engine_ini_cpp_CIni_writeProfileString_FUN_004fb660
     pcVar6[1] = cVar1;
   } while (cVar1 != '\0');
   uVar3 = 0xffffffff;
-  pcVar6 = in_stack_00000020;
+  pcVar6 = filename;
   do {
     if (uVar3 == 0) break;
     uVar3 = uVar3 - 1;
@@ -67,51 +61,51 @@ engine_ini_cpp_CIni_writeProfileString_FUN_004fb660
   line_number = 0x186;
   pcVar4 = "..\\engine\\ini.cpp";
   pcVar6 = "wt";
-  acStack_20a[~uVar3] = 'x';
+  acStack_216[~uVar3] = 'x';
   file = shape_memdbg_cpp_openFile_FUN_0050f7a0
-                   (acStack_20a + 2,(char *)0x0,pcVar6,pcVar4,line_number);
+                   (acStack_216 + 2,(char *)0x0,pcVar6,pcVar4,line_number);
   if (file == (FILE *)0x0) {
     g_CurrentFilename = "..\\engine\\ini.cpp";
     g_CurrentLineNumber = 0x187;
     core_main_c_displayErrorAndQuit_FUN_00506f10("cIni::writeProfileString: Unable to open output");
   }
   if (iVar2 == 0) {
-    crt_stdio_c_sprintf_FUN_005fdbd0(acStack_100,"[%s]\n");
+    crt_stdio_c_sprintf_FUN_005fdbd0(local_114,"[%s]\n",section);
     bVar5 = (byte)stream->_flag;
-    while ((bVar5 & 0x10) == 0) {
-      pcVar6 = crt_stdio_c_fgets_FUN_005fefd0(&stack0xfffffd04,0xff,stream);
-      if (pcVar6 == (char *)0x0) break;
-      crt_stdio_c_fprintf_FUN_005fe6d0(file,&stack0xfffffd04);
-      iVar2 = crt_string_c_strcmp_FUN_005fef20(acStack_104,&stack0xfffffcfc);
+    while (((bVar5 & 0x10) == 0 &&
+           (pcVar6 = crt_stdio_c_fgets_FUN_005fefd0(local_314,0xff,stream), pcVar6 != (char *)0x0)))
+    {
+      crt_stdio_c_fprintf_FUN_005fe6d0(file,local_314);
+      iVar2 = crt_string_c_strcmp_FUN_005fef20(local_114,local_314);
       if (iVar2 == 0) {
-        crt_stdio_c_fprintf_FUN_005fe6d0(file,"%s=%s\n",in_stack_00000020);
-        this_ptr = (CIni *)&DAT_00000001;
+        crt_stdio_c_fprintf_FUN_005fe6d0(file,"%s=%s\n",key,value);
+        local_14 = 1;
       }
       bVar5 = (byte)stream->_flag;
     }
-    if (this_ptr == (CIni *)0x0) {
-      crt_stdio_c_fprintf_FUN_005fe6d0(file,acStack_fc);
-      crt_stdio_c_fprintf_FUN_005fe6d0(file,"%s=%s\n",in_stack_00000020);
+    if (local_14 == 0) {
+      crt_stdio_c_fprintf_FUN_005fe6d0(file,local_114);
+      crt_stdio_c_fprintf_FUN_005fe6d0(file,"%s=%s\n",key,value);
     }
   }
   else {
     for (; -1 < iVar2; iVar2 = iVar2 + -1) {
-      crt_stdio_c_fgets_FUN_005fefd0(&stack0xfffffd00,0xff,stream);
-      crt_stdio_c_fprintf_FUN_005fe6d0(file,&stack0xfffffd04);
+      crt_stdio_c_fgets_FUN_005fefd0(local_314,0xff,stream);
+      crt_stdio_c_fprintf_FUN_005fe6d0(file,local_314);
     }
-    crt_stdio_c_fprintf_FUN_005fe6d0(file,"%s=%s\n","%s=%s\n",in_stack_00000020);
-    crt_stdio_c_fgets_FUN_005fefd0(&stack0xfffffd00,0xff,stream);
+    crt_stdio_c_fprintf_FUN_005fe6d0(file,"%s=%s\n",key,value);
+    crt_stdio_c_fgets_FUN_005fefd0(local_314,0xff,stream);
     bVar5 = (byte)stream->_flag;
-    while ((bVar5 & 0x10) == 0) {
-      pcVar6 = crt_stdio_c_fgets_FUN_005fefd0(&stack0xfffffd04,0xff,stream);
-      if (pcVar6 == (char *)0x0) break;
-      crt_stdio_c_fprintf_FUN_005fe6d0(file,&stack0xfffffd04);
+    while (((bVar5 & 0x10) == 0 &&
+           (pcVar6 = crt_stdio_c_fgets_FUN_005fefd0(local_314,0xff,stream), pcVar6 != (char *)0x0)))
+    {
+      crt_stdio_c_fprintf_FUN_005fe6d0(file,local_314);
       bVar5 = (byte)stream->_flag;
     }
   }
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(stream,"..\\engine\\ini.cpp",0x1e8);
   shape_memdbg_cpp_closeFile_FUN_0050f9b0(file,"..\\engine\\ini.cpp",0x1e9);
-  crt_io_c_deleteFile_FUN_005ff9d0(in_stack_00000034);
-  crt_stdio_c_rename_FUN_006015d0(acStack_1f0,in_stack_00000038);
+  crt_io_c_deleteFile_FUN_005ff9d0(filename);
+  crt_stdio_c_rename_FUN_006015d0(acStack_216 + 2,filename);
   return 1;
 }

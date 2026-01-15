@@ -11,7 +11,7 @@ engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740
           (CDemonRenderer *this_ptr,int vertex_count,int *vertex_indices)
 
 {
-  int unaff_ESI;
+  int unaff_EBP;
   
   if (this_ptr->projection_mode != 0) {
     g_CurrentFilename = "..\\engine\\drender.cpp";
@@ -40,7 +40,7 @@ engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_0048a740
     core_xform_cpp_transformAndClipGeometry_FUN_005f8550(vertex_count,vertex_indices);
     if (2 < g_ClippedVertexCount) {
       engine_3d_c_rasterizeTriangle_FUN_005fcfc0
-                (g_ClippedVertexBuffer,g_ClippedVertexCount,unaff_ESI);
+                (g_ClippedVertexBuffer,g_ClippedVertexCount,unaff_EBP);
       return;
     }
   }

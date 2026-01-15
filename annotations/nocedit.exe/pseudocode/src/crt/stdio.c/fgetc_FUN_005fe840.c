@@ -11,13 +11,13 @@ int __cdecl crt_stdio_c_fgetc_FUN_005fe840(FILE *file)
 {
   char *pcVar1;
   int iVar2;
-  int unaff_EBX;
   uint uVar3;
   
   (*PTR_crt_sync_c_EnterCriticalSection_FUN_00602434_00684ee8)(file->_handle);
   pcVar1 = file->_link->__get_base;
   if (pcVar1 != &DAT_00000001) {
     if (pcVar1 != (char *)0x0) {
+      iVar2 = file->_handle;
       uVar3 = 0xffffffff;
       goto LAB_005fe8fe;
     }
@@ -56,8 +56,8 @@ int __cdecl crt_stdio_c_fgetc_FUN_005fe840(FILE *file)
       *(byte *)&file->_flag = (byte)file->_flag | 0x10;
     }
   }
-  unaff_EBX = file->_handle;
+  iVar2 = file->_handle;
 LAB_005fe8fe:
-  (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(unaff_EBX);
+  (*PTR_crt_sync_c_ExitCriticalSection_FUN_00602434_00684eec)(iVar2);
   return uVar3;
 }

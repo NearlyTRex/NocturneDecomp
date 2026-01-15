@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 18,
-    "complexity_score": 102,
+    "complexity_score": 55,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 1,
-    "pseudocode_lines": 17,
-    "suspect_count": 7,
+    "pseudocode_lines": 15,
+    "suspect_count": 3,
     "suspect_types": [
       "call_esp_preserve",
-      "negative_offset",
-      "stack_param"
+      "negative_offset"
     ],
-    "total_lines": 35
+    "total_lines": 33
   },
   "cross_references": [
     {
@@ -114,39 +113,11 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000010",
-      "text": "int in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_00000014",
-      "text": "int in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 15,
+      "line": 13,
       "match": "pCVar2[-1].",
       "text": "piVar3 = &pCVar2[-1].bit_state.accumulated_bits;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 17,
-      "match": "in_stack_00000010",
-      "text": "pCVar2[1].dict_size = in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00000014",
-      "text": "pCVar2[1].num_bits = in_stack_00000014;",
-      "type": "stack_param"
     },
     {
       "add_esp_value": 4,

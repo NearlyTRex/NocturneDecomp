@@ -25,7 +25,6 @@ void core_hotdemon_cpp_FUN_004f6f20(void)
   int extraout_EAX;
   int extraout_EAX_00;
   uint uVar10;
-  BADSPACEBASE *in_ESP;
   CEnemy *in_stack_00000004;
   float in_stack_00000008;
   SDamageInfo local_10c;

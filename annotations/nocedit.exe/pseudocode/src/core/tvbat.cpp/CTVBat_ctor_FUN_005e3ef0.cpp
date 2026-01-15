@@ -12,8 +12,6 @@ CTVBat * __cdecl core_tvbat_cpp_CTVBat_ctor_FUN_005e3ef0(CTVBat *this_ptr)
   CEnemy *pCVar1;
   CKeyFramedModelInstance *this_ptr_00;
   float fVar2;
-  float fStack0000000c;
-  float fStack00000010;
   
   pCVar1 = core_enemy_cpp_CEnemy_ctor_FUN_004a9500(&this_ptr->base_enemy);
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00478ce0
@@ -27,11 +25,10 @@ CTVBat * __cdecl core_tvbat_cpp_CTVBat_ctor_FUN_005e3ef0(CTVBat *this_ptr)
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00478dd0(this_ptr_00,"bat.kfm");
   this_ptr_00[1].part_visibility_flags[6] = 0x40a00000;
   this_ptr_00[1].part_visibility_flags[5] = 0x41700000;
-  fStack0000000c = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.9,1.1);
-  this_ptr_00[1].part_visibility_flags[8] = (int)(fStack0000000c * 10f);
-  fStack00000010 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.9,1.1);
-  fStack0000000c = fStack00000010 * 2f;
-  this_ptr_00[1].part_visibility_flags[7] = (int)fStack0000000c;
+  fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.9,1.1);
+  this_ptr_00[1].part_visibility_flags[8] = (int)(fVar2 * 10f);
+  fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.9,1.1);
+  this_ptr_00[1].part_visibility_flags[7] = (int)(fVar2 * 2f);
   fVar2 = core_actor_cpp_getRandomFloat_FUN_0040cc10(0.0,1.0);
   this_ptr_00[1].part_visibility_flags[10] = 0;
   this_ptr_00[1].part_visibility_flags[0xb] = 0;

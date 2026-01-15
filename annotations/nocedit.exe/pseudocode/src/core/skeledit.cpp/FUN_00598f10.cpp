@@ -11,8 +11,8 @@ void __cdecl core_skeledit_cpp_FUN_00598f10(void)
 {
   CDeformableModelInstance *this_ptr;
   CDeformableModelInstance *this_ptr_00;
-  CDeformableModelInstance *in_stack_00000008;
-  char *in_stack_00000014;
+  CDeformableModelInstance *unaff_EBP;
+  char *in_stack_00000004;
   
   crt_stack_c_stack_probe_FUN_005ff9f3(0x20);
   this_ptr = shape_memdbg_cpp_debugAlloc_FUN_0050f1b0(0x22b4,"..\\core\\skeledit.cpp",0x1b79);
@@ -25,9 +25,9 @@ void __cdecl core_skeledit_cpp_FUN_00598f10(void)
     g_CurrentLineNumber = 0x1b7a;
     core_main_c_displayErrorAndQuit_FUN_00506f10("viewModel - out of memory!");
   }
-  core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(this_ptr_00,in_stack_00000014);
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_005a0840(this_ptr_00,in_stack_00000004);
   core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_005a0450(this_ptr_00);
-  core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(in_stack_00000008);
+  core_skeledit_cpp_CDeformableModelInstance_viewModel_FUN_005968b0(unaff_EBP);
   g_CurrentDebugFilename = "..\\core\\skeledit.cpp";
   g_CurrentDebugLine = 0x1b7e;
   if (this_ptr_00 == (CDeformableModelInstance *)0x0) {

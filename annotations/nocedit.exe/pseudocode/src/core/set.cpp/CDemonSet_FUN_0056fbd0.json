@@ -1,26 +1,23 @@
 {
   "complexity": {
     "assembly_lines": 365,
-    "complexity_score": 584,
+    "complexity_score": 410,
     "cross_reference_count": 6,
     "function_call_count": 7,
     "global_count": 24,
-    "pseudocode_lines": 169,
-    "suspect_count": 36,
+    "pseudocode_lines": 170,
+    "suspect_count": 20,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "callind_preserve",
       "lea_esp_stack_addr",
       "param_count_too_few",
       "pointer_cast",
-      "register_param",
       "stack_param",
-      "suspect_float",
-      "unknown_field",
+      "stack_ref",
       "variadic_preserve"
     ],
-    "total_lines": 534
+    "total_lines": 535
   },
   "cross_references": [
     {
@@ -444,172 +441,60 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 17,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 17,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000008",
+      "text": "uint in_stack_00000008;",
+      "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 19,
-      "match": "in_stack_00000010",
-      "text": "CDemonSet *in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_00000014",
-      "text": "uint in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_ffffff7c",
-      "text": "CVector3i *in_stack_ffffff7c;",
+      "match": "in_stack_ffffff78",
+      "text": "CVector3i *in_stack_ffffff78;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 39,
-      "match": "in_stack_ffffff7c",
-      "text": "(g_CDemonRendererPtr,in_stack_ffffff7c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 42,
-      "match": "1.68156e-44",
-      "text": "CStack_20.y = 1.68156e-44;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 44,
-      "match": "1.82169e-44",
-      "text": "CStack_20.y = 1.82169e-44;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 50,
-      "match": "in_stack_00000010",
-      "text": "pCVar12 = in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 51,
-      "match": "in_stack_00000010",
-      "text": "if (0 < *(int *)(in_stack_00000010->field19_0x14f0a0 + 0x9c4c)) {",
+      "match": "in_stack_ffffff78",
+      "text": "(g_CDemonRendererPtr,in_stack_ffffff78);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 57,
-      "match": "in_stack_00000014",
-      "text": "if (in_stack_00000014 == 0xffffffff) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 61,
-      "match": "in_stack_00000010",
-      "text": "iVar7 = core_set_cpp_CDemonSet_isCameraPanning_FUN_00571320(in_stack_00000010);",
+      "match": "in_stack_00000008",
+      "text": "if (in_stack_00000008 == 0xffffffff) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 81,
-      "match": "in_stack_00000014",
-      "text": "*piVar5 = *piVar5 | in_stack_00000014;",
+      "match": "in_stack_00000008",
+      "text": "*piVar6 = *piVar6 | in_stack_00000008;",
       "type": "stack_param"
     },
     {
-      "description": "Likely misinterpreted integer as float",
-      "line": 113,
-      "match": "7.989013e-39",
-      "text": "uStack_7c._4_4_ = 7.989013e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 113,
-      "match": "._4_4_",
-      "text": "uStack_7c._4_4_ = 7.989013e-39;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 127,
-      "match": "in_stack_00000010",
-      "text": "} while ((int)CStack_20.z < *(int *)(in_stack_00000010->field19_0x14f0a0 + 0x9c4c));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 136,
-      "match": "in_stack_00000014",
-      "text": "uVar11 = in_stack_00000014;",
-      "type": "stack_param"
+      "description": "Direct stack address reference",
+      "line": 106,
+      "match": "&stack0xffffff78",
+      "text": "((CDemonActor *)this_ptr_00,(CBoundingBox3D *)&stack0xffffff78);",
+      "type": "stack_ref"
     },
     {
       "description": "Complex pointer cast",
       "line": 139,
       "match": "(uint *)((int)",
-      "text": "*(uint *)(uVar11 + 0x15f6e8) = *(uint *)((int)&DAT_03342b50 + iVar10);",
+      "text": "*(uint *)((int)&DAT_03342b50 + iVar11);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 148,
-      "match": "in_stack_00000014",
-      "text": "*(CHero **)(in_stack_00000014 + 0x15f6e8) = g_HeroActors[g_LocalHeroIndex];",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 151,
-      "match": "in_stack_00000014",
-      "text": "uVar11 = in_stack_00000014;",
-      "type": "stack_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 154,
+      "line": 155,
       "match": "(uint *)((int)",
-      "text": "*(uint *)(uVar11 + 0x15f6ec) = *(uint *)((int)&DAT_03342b50 + iVar10);",
+      "text": "*(uint *)((int)&DAT_03342b50 + iVar11);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 161,
-      "match": "in_stack_00000014",
-      "text": "*(SIZE_T *)(in_stack_00000014 + 0x15f6e4) = SVar9;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 165,
-      "match": "7.989523e-39",
-      "text": "uStack_7c._0_4_ = 7.989523e-39;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 165,
-      "match": "._0_4_",
-      "text": "uStack_7c._0_4_ = 7.989523e-39;",
-      "type": "unknown_field"
     },
     {
       "add_esp_value": 8,

@@ -1,22 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 213,
-    "complexity_score": 414,
+    "complexity_score": 352,
     "cross_reference_count": 9,
     "function_call_count": 11,
     "global_count": 20,
-    "pseudocode_lines": 79,
-    "suspect_count": 30,
+    "pseudocode_lines": 77,
+    "suspect_count": 26,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
-      "format_string_mismatch",
       "lea_esp_stack_addr",
-      "register_param",
-      "stack_ref",
       "variadic_preserve"
     ],
-    "total_lines": 292
+    "total_lines": 290
   },
   "cross_references": [
     {
@@ -420,29 +416,8 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 8,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 8,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 62,
-      "match": "&stack0xffffff38",
-      "text": "core_actor_cpp_serializeString_FUN_0040b5c0((char **)&stack0xffffff38,acStack_64);",
-      "type": "stack_ref"
-    },
-    {
       "call_address": "004f27b4",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -453,17 +428,6 @@
       "target_function": "crt_stdio.c_sprintf_FUN_005fdbd0",
       "text": "Call to variadic function crt_stdio.c_sprintf_FUN_005fdbd0 at 004f27b4 (no EBP frame)",
       "type": "variadic_preserve"
-    },
-    {
-      "actual_args": 0,
-      "description": "Format \"keyNameList[%d]\" has 1 specifiers but 0 arguments after it",
-      "expected_args": 1,
-      "format_string": "keyNameList[%d]",
-      "function_name": "crt_stdio_c_sprintf_FUN_005fdbd0",
-      "line_number": 60,
-      "match": "crt_stdio_c_sprintf_FUN_005fdbd0(acStack_60,\"keyNameList[%d]\");",
-      "text": "Format string expects 1 args but got 0",
-      "type": "format_string_mismatch"
     },
     {
       "add_esp_value": 4,

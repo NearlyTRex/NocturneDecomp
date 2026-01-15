@@ -15,16 +15,9 @@ int crt_unknown_c_FUN_00607858(void)
   int iVar2;
   int iVar3;
   int iVar4;
-  BADSPACEBASE *in_ESP;
   int in_stack_00000004;
   int in_stack_00000008;
-  int local_30;
-  int local_2c;
-  int local_28;
-  int local_24;
-  int local_20;
-  int local_1c;
-  int local_14;
+  tm local_34;
   
   if (*(int *)(in_stack_00000004 + 0x20) == 0) {
     iVar1 = crt_time_c_is_leap_year_FUN_00607820(in_stack_00000008 + 0x76c);
@@ -36,14 +29,15 @@ int crt_unknown_c_FUN_00607858(void)
       iVar1 = *(int *)(&g_DaysInMonth_Leap + *(int *)(in_stack_00000004 + 0x10));
       iVar2 = *(int *)(&DAT_00665f50 + *(int *)(in_stack_00000004 + 0x10) * 2);
     }
-    local_30 = 0;
-    local_2c = 0;
-    local_28 = 0;
-    local_24 = 1;
-    local_20 = *(int *)(in_stack_00000004 + 0x10);
-    local_1c = in_stack_00000008;
-    crt_time_c_mktime_FUN_00600f80((tm *)&local_30);
-    iVar4 = ((*(int *)(in_stack_00000004 + 0x18) - local_14) + 7) % 7;
+    local_34.tm_sec = 0;
+    local_34.tm_min = 0;
+    local_34.tm_hour = 0;
+    local_34.tm_mday = 1;
+    local_34.tm_mon = *(int *)(in_stack_00000004 + 0x10);
+    local_34.tm_year = in_stack_00000008;
+    local_34.tm_isdst = 0;
+    crt_time_c_mktime_FUN_00600f80(&local_34);
+    iVar4 = ((*(int *)(in_stack_00000004 + 0x18) - local_34.tm_wday) + 7) % 7;
     if (*(int *)(in_stack_00000004 + 0xc) == 5) {
       iVar3 = 4;
       if ((iVar1 >> 0x10) - (iVar2 >> 0x10) < iVar4 + 0x1d) {
@@ -53,7 +47,7 @@ int crt_unknown_c_FUN_00607858(void)
     else {
       iVar3 = *(int *)(in_stack_00000004 + 0xc) + -1;
     }
-    return iVar3 * 7 + iVar4;
+    return iVar3 * 7 + local_34.tm_yday + iVar4;
   }
   if (*(int *)(in_stack_00000004 + 0x20) != 1) {
     return *(int *)(in_stack_00000004 + 0x1c);

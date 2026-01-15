@@ -34,7 +34,6 @@ void core_stranger_cpp_CStranger_FUN_005bb960(void)
   int iVar20;
   float fVar21;
   uint uVar22;
-  BADSPACEBASE *in_ESP;
   CCharacter *in_stack_00000004;
   float in_stack_00000008;
   float in_stack_fffffd08;

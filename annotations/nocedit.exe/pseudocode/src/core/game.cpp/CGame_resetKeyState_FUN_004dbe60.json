@@ -1,16 +1,15 @@
 {
   "complexity": {
     "assembly_lines": 347,
-    "complexity_score": 528,
+    "complexity_score": 403,
     "cross_reference_count": 5,
     "function_call_count": 3,
     "global_count": 7,
     "pseudocode_lines": 93,
-    "suspect_count": 42,
+    "suspect_count": 30,
     "suspect_types": [
       "call_esp_preserve",
-      "stack_param",
-      "unaffected_reg"
+      "stack_param"
     ],
     "total_lines": 440
   },
@@ -166,95 +165,11 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 7,
-      "match": "unaff_EBP",
-      "text": "uint unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 8,
-      "match": "unaff_EDI",
-      "text": "uint unaff_EDI;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 9,
+      "line": 8,
       "match": "in_stack_00000004",
       "text": "int in_stack_00000004;",
       "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 16,
-      "match": "unaff_EBP",
-      "text": "else if ((unaff_EBP & 1) == 0) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 22,
-      "match": "unaff_EDI",
-      "text": "else if ((unaff_EDI & 2) == 0) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 28,
-      "match": "unaff_EDI",
-      "text": "else if ((unaff_EDI & 4) == 0) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 34,
-      "match": "unaff_EDI",
-      "text": "else if ((unaff_EDI & 8) == 0) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 40,
-      "match": "unaff_EDI",
-      "text": "else if ((unaff_EDI & 0x10) == 0) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 46,
-      "match": "unaff_EDI",
-      "text": "else if ((unaff_EDI & 0x20) == 0) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 52,
-      "match": "unaff_EDI",
-      "text": "else if ((unaff_EDI & 0x40) == 0) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 58,
-      "match": "unaff_EDI",
-      "text": "else if ((unaff_EDI & 0x80) == 0) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 64,
-      "match": "unaff_EDI",
-      "text": "else if ((unaff_EDI & 0x100) == 0) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 70,
-      "match": "unaff_EDI",
-      "text": "else if ((unaff_EDI & 0x200) == 0) {",
-      "type": "unaffected_reg"
     },
     {
       "description": "Unresolved stack parameter",

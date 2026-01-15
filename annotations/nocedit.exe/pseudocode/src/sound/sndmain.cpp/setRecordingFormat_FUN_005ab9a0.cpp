@@ -13,8 +13,6 @@ sound_sndmain_cpp_setRecordingFormat_FUN_005ab9a0
 {
   int iVar1;
   HRESULT HVar2;
-  LPUNKNOWN in_stack_00000014;
-  int in_stack_00000018;
   
   iVar1 = sound_sndmain_cpp_isRecordingStarted_FUN_005ab980();
   if (iVar1 != 0) {
@@ -22,14 +20,14 @@ sound_sndmain_cpp_setRecordingFormat_FUN_005ab9a0
     g_CurrentLineNumber = 0x14ad;
     core_main_c_displayErrorAndQuit_FUN_00506f10("setRecordingFormat - can't do this while recording active!");
   }
-  g_RecordingBitsPerSample = sample_rate;
-  g_RecordingChannelCount = signed_samples;
-  g_RecordingSampleRate = (int)in_stack_00000014;
-  g_RecordingSamplesSigned = (int)(in_stack_00000018 != 0);
+  g_RecordingBitsPerSample = bits_per_sample;
+  g_RecordingChannelCount = channels;
+  g_RecordingSampleRate = sample_rate;
+  g_RecordingSamplesSigned = (int)(signed_samples != 0);
   if (g_RecordingDeviceInterface != (IDirectSoundCapture *)0x0) {
     HVar2 = (*g_RecordingDeviceInterface->vtable->CreateCaptureBuffer)
-                      (g_RecordingDeviceInterface,(void *)sample_rate,
-                       (LPDIRECTSOUNDCAPTUREBUFFER *)signed_samples,in_stack_00000014);
+                      (g_RecordingDeviceInterface,(void *)bits_per_sample,
+                       (LPDIRECTSOUNDCAPTUREBUFFER *)channels,(LPUNKNOWN)sample_rate);
     if (HVar2 == 0) {
       return 0;
     }

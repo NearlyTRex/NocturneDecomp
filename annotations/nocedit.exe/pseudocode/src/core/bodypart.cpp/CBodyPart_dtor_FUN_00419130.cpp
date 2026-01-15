@@ -29,7 +29,7 @@ core_bodypart_cpp_CBodyPart_dtor_FUN_00419130
   iVar2 = core_bodypart_cpp_freeBodyPartModels_FUN_0041b690((SBodyPartModel **)(iVar2 + -0x4c0));
   ptr = (CBodyPart *)core_actor_cpp_CDemonActor_dtor_FUN_00408a30((CDemonActor *)(iVar2 + -0x290),1)
   ;
-  if ((d6 & 2) == 0) {
+  if ((d1 & 2) == 0) {
     return ptr;
   }
   shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);

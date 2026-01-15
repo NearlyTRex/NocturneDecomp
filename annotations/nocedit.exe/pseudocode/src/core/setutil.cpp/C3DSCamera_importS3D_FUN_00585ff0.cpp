@@ -10,41 +10,40 @@ void __cdecl
 core_setutil_cpp_C3DSCamera_importS3D_FUN_00585ff0(C3DSCamera *this_ptr,FILE *file_handle)
 
 {
-  C3DSCamera *pCVar1;
-  FILE *file;
-  int iVar2;
-  BADSPACEBASE *in_ESP;
-  float10 fVar3;
+  int iVar1;
+  float10 fVar2;
+  byte local_18 [4];
+  byte local_14 [4];
+  byte local_10 [4];
   
-  file = file_handle;
-  pCVar1 = this_ptr;
   core_setutil_cpp_C3DSCamera_reset_FUN_005853b0(this_ptr);
-  iVar2 = crt_stdio_c_fscanf_FUN_005fe7c0
-                    (file,"\"%[^\"]\",%f,%f,%f,%f,%f,%f,%f\n",pCVar1,&pCVar1->position,&(pCVar1->position).y,
-                     &(pCVar1->position).z,&pCVar1->orientation,&(pCVar1->orientation).z,
-                     &(pCVar1->orientation).y,&pCVar1->projection_scale);
-  if (iVar2 != 8) {
+  iVar1 = crt_stdio_c_fscanf_FUN_005fe7c0
+                    (file_handle,"\"%[^\"]\",%f,%f,%f,%f,%f,%f,%f\n",this_ptr,&this_ptr->position,
+                     &(this_ptr->position).y,&(this_ptr->position).z,&this_ptr->orientation,
+                     &(this_ptr->orientation).z,&(this_ptr->orientation).y,
+                     &this_ptr->projection_scale);
+  if (iVar1 != 8) {
     g_CurrentFilename = "..\\core\\setutil.cpp";
     g_CurrentLineNumber = 0x1d3;
     core_main_c_displayErrorAndQuit_FUN_00506f10("File is corrupt in C3DSCamera::importS3D");
   }
-  fVar3 = (float10)fptan((float10)pCVar1->projection_scale * (float10)0.5);
-  pCVar1->projection_scale = (float)((float10)18 / fVar3);
+  fVar2 = (float10)fptan((float10)this_ptr->projection_scale * (float10)0.5);
+  this_ptr->projection_scale = (float)((float10)18 / fVar2);
   crt_stdio_c_fscanf_FUN_005fe7c0
-            (file,"%f,%f,%f\n",&pCVar1->rotation_matrix,(pCVar1->rotation_matrix).m + 1,
-             (pCVar1->rotation_matrix).m + 2);
+            (file_handle,"%f,%f,%f\n",&this_ptr->rotation_matrix,
+             (this_ptr->rotation_matrix).m + 1,(this_ptr->rotation_matrix).m + 2);
   crt_stdio_c_fscanf_FUN_005fe7c0
-            (file,"%f,%f,%f\n",&(pCVar1->rotation_matrix).m[0].y,
-             &(pCVar1->rotation_matrix).m[1].y,&(pCVar1->rotation_matrix).m[2].y);
+            (file_handle,"%f,%f,%f\n",&(this_ptr->rotation_matrix).m[0].y,
+             &(this_ptr->rotation_matrix).m[1].y,&(this_ptr->rotation_matrix).m[2].y);
   crt_stdio_c_fscanf_FUN_005fe7c0
-            (file,"%f,%f,%f\n",&(pCVar1->rotation_matrix).m[0].z,
-             &(pCVar1->rotation_matrix).m[1].z,&(pCVar1->rotation_matrix).m[2].z);
-  crt_stdio_c_fscanf_FUN_005fe7c0(file,"%f,%f,%f\n",&stack0x00000000,&this_ptr,&file_handle);
+            (file_handle,"%f,%f,%f\n",&(this_ptr->rotation_matrix).m[0].z,
+             &(this_ptr->rotation_matrix).m[1].z,&(this_ptr->rotation_matrix).m[2].z);
+  crt_stdio_c_fscanf_FUN_005fe7c0(file_handle,"%f,%f,%f\n",local_18,local_14,local_10);
   core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00471d30
-            (&pCVar1->rotation_matrix,&pCVar1->orientation);
-  if ((float)11 < pCVar1->projection_scale) {
+            (&this_ptr->rotation_matrix,&this_ptr->orientation);
+  if ((float)11 < this_ptr->projection_scale) {
     return;
   }
-  pCVar1->is_panning = 0;
+  this_ptr->is_panning = 0;
   return;
 }

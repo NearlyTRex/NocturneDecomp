@@ -1,16 +1,14 @@
 {
   "complexity": {
     "assembly_lines": 63,
-    "complexity_score": 154,
+    "complexity_score": 64,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 5,
     "pseudocode_lines": 29,
-    "suspect_count": 11,
+    "suspect_count": 3,
     "suspect_types": [
-      "call_esp_preserve",
-      "stack_param",
-      "unaffected_reg"
+      "call_esp_preserve"
     ],
     "total_lines": 92
   },
@@ -164,62 +162,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 10,
-      "match": "unaff_EBX",
-      "text": "int unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 11,
-      "match": "unaff_ESI",
-      "text": "int unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000018",
-      "text": "int in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_0000001c",
-      "text": "int in_stack_0000001c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 24,
-      "match": "in_stack_00000018",
-      "text": "(x2 + this_ptr->x,y2 + this_ptr->y,in_stack_00000018 + this_ptr->x,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 25,
-      "match": "in_stack_0000001c",
-      "text": "in_stack_0000001c + this_ptr->y,g_PaletteColorIndex);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 28,
-      "match": "unaff_ESI",
-      "text": "g_ClipTop = unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 30,
-      "match": "unaff_EBX",
-      "text": "g_ClipBottom = unaff_EBX;",
-      "type": "unaffected_reg"
-    },
     {
       "add_esp_value": 4,
       "call_address": "00488463",

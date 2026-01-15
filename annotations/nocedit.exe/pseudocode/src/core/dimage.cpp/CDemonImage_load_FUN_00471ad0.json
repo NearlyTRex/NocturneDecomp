@@ -1,22 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 208,
-    "complexity_score": 520,
+    "complexity_score": 301,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 19,
-    "pseudocode_lines": 95,
-    "suspect_count": 39,
+    "pseudocode_lines": 91,
+    "suspect_count": 19,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
-      "register_param",
       "stack_param",
-      "stack_ref",
       "variadic_preserve"
     ],
-    "total_lines": 303
+    "total_lines": 299
   },
   "cross_references": [],
   "function": {
@@ -302,185 +299,45 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 10,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 10,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
+      "description": "Unresolved stack parameter",
+      "line": 14,
+      "match": "in_stack_0000000c",
+      "text": "SIZE_T in_stack_0000000c;",
+      "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 15,
+      "match": "in_stack_00000010",
+      "text": "SIZE_T in_stack_00000010;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 38,
       "match": "in_stack_0000000c",
-      "text": "CDemonImage *in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00000018",
-      "text": "CDemonImage *in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_0000001c",
-      "text": "SIZE_T in_stack_0000001c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_00000024",
-      "text": "int in_stack_00000024;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 21,
-      "match": "in_stack_0000002c",
-      "text": "CDemonImage *in_stack_0000002c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 23,
-      "match": "&stack0xfffffee4",
-      "text": "pcVar8 = &stack0xfffffee4;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 33,
-      "match": "&stack0xfffffee4",
-      "text": "pFVar4 = engine_dosio_c_getFile_FUN_00481a50(\"art\",&stack0xfffffee4,\"rb\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 39,
-      "match": "in_stack_0000000c",
-      "text": "in_stack_0000000c->width = (int)in_stack_0000000c;",
+      "text": "this_ptr->width = in_stack_0000000c;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 39,
-      "match": "in_stack_0000000c",
-      "text": "in_stack_0000000c->width = (int)in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 40,
-      "match": "in_stack_0000000c",
-      "text": "in_stack_0000000c->height = (int)in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 40,
-      "match": "in_stack_00000018",
-      "text": "in_stack_0000000c->height = (int)in_stack_00000018;",
+      "match": "in_stack_00000010",
+      "text": "this_ptr->height = in_stack_00000010;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 41,
       "match": "in_stack_0000000c",
-      "text": "core_dimage_cpp_CDemonImage_allocMemory_FUN_004719e0(in_stack_0000000c);",
+      "text": "crt_stdio_c_fread_FUN_005fd990(this_ptr->data,in_stack_0000000c,in_stack_00000010,pFVar4);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 43,
-      "match": "in_stack_0000000c",
-      "text": "(in_stack_0000000c->data,(SIZE_T)in_stack_0000000c,in_stack_0000001c,pFVar4);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 43,
-      "match": "in_stack_0000000c",
-      "text": "(in_stack_0000000c->data,(SIZE_T)in_stack_0000000c,in_stack_0000001c,pFVar4);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 43,
-      "match": "in_stack_0000001c",
-      "text": "(in_stack_0000000c->data,(SIZE_T)in_stack_0000000c,in_stack_0000001c,pFVar4);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 45,
-      "match": "&stack0xfffffef8",
-      "text": "pcVar8 = &stack0xfffffef8;",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 71,
-      "match": "&stack0xfffffefc",
-      "text": "pFVar4 = engine_dosio_c_getFile_FUN_00481a50(\"art\",&stack0xfffffefc,\"rb\");",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 77,
-      "match": "in_stack_00000024",
-      "text": "crt_stdio_c_fread_FUN_005fd990((void *)(in_stack_00000024 + 0x30c),0x100,3,pFVar4);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 79,
-      "match": "in_stack_0000002c",
-      "text": "puStack00000014 = in_stack_0000002c->color_values + 0x80;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 80,
-      "match": "in_stack_0000002c",
-      "text": "pCVar5 = in_stack_0000002c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 81,
-      "match": "in_stack_0000002c",
-      "text": "pCVar7 = in_stack_0000002c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 82,
-      "match": "in_stack_0000002c",
-      "text": "pCVar9 = in_stack_0000002c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 87,
-      "match": "in_stack_0000002c",
-      "text": "(in_stack_0000002c,(uint)(pCVar5->palette).colors[0].r,(uint)bVar2,",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 96,
-      "match": "in_stack_00000018",
-      "text": "} while (pCVar7 != in_stack_00000018);",
+      "line": 41,
+      "match": "in_stack_00000010",
+      "text": "crt_stdio_c_fread_FUN_005fd990(this_ptr->data,in_stack_0000000c,in_stack_00000010,pFVar4);",
       "type": "stack_param"
     },
     {

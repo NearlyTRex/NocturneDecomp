@@ -19,7 +19,6 @@ uint core_boneguy_cpp_FUN_0041cc40(void)
   CDemonActor *pCVar5;
   int iVar6;
   CBoundingBox3D *pCVar7;
-  BADSPACEBASE *in_ESP;
   int iVar8;
   CCharacter *in_stack_00000004;
   float in_stack_00000008;

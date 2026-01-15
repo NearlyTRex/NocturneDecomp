@@ -1,20 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 188,
-    "complexity_score": 227,
+    "complexity_score": 161,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 4,
-    "pseudocode_lines": 92,
-    "suspect_count": 11,
+    "pseudocode_lines": 91,
+    "suspect_count": 6,
     "suspect_types": [
-      "badspacebase",
       "extra_output",
-      "register_param",
-      "suspect_float",
       "unknown_field"
     ],
-    "total_lines": 280
+    "total_lines": 279
   },
   "cross_references": [
     {
@@ -430,80 +427,45 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 6,
+      "line": 7,
       "match": "extraout_EDX",
       "text": "int extraout_EDX;",
       "type": "extra_output"
     },
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 7,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 7,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 36,
+      "line": 35,
       "match": "._0_4_",
       "text": "local_7c._0_4_ =",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 38,
+      "line": 37,
       "match": "._0_4_",
       "text": "if (0.0 < (float)local_7c._0_4_) {",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 42,
+      "line": 41,
       "match": "._0_4_",
       "text": "((double)((float)local_7c._0_4_ / *(float *)(this_ptr->field0_0x0 + 0x1c)));",
       "type": "unknown_field"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 44,
+      "line": 43,
       "match": "extraout_EDX",
-      "text": "local_24 = (float)extraout_EDX;",
+      "text": "local_24 = extraout_EDX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 45,
+      "line": 44,
       "match": "extraout_EDX",
-      "text": "if ((extraout_EDX <= iVar2) && (local_24 = (float)iVar2, 100 < iVar2)) {",
+      "text": "if ((extraout_EDX <= iVar3) && (local_24 = iVar3, 100 < iVar3)) {",
       "type": "extra_output"
-    },
-    {
-      "description": "Likely misinterpreted integer as float",
-      "line": 46,
-      "match": "1.4013e-43",
-      "text": "local_24 = 1.4013e-43;",
-      "type": "suspect_float"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 63,
-      "match": "._0_4_",
-      "text": "local_7c._0_4_ = ((float)iVar2 * 0.2f) / (float)iVar1;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 64,
-      "match": "._0_4_",
-      "text": "if ((float)local_7c._0_4_ <= (float)0.01) break;",
-      "type": "unknown_field"
     }
   ]
 }

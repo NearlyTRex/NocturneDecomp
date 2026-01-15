@@ -15,7 +15,7 @@ void __cdecl core_event_cpp_CEventList_setSfxHandle_FUN_004b0c80(CEventList *thi
   CEvent *pCVar4;
   byte bVar5;
   CEvent *in_stack_00000008;
-  uint in_stack_00000018;
+  uint in_stack_0000000c;
   
   bVar5 = 0;
   core_event_cpp_CEventList_FUN_004b0db0(this_ptr);
@@ -52,7 +52,7 @@ void __cdecl core_event_cpp_CEventList_setSfxHandle_FUN_004b0c80(CEventList *thi
     pCVar4[1] = CVar1;
     pCVar4 = pCVar4 + 2;
   } while (CVar1 != (CEvent)0x0);
-  *(uint *)(this_ptr[1].event_list + iVar2 * 0x120) = in_stack_00000018;
+  *(uint *)(this_ptr[1].event_list + iVar2 * 0x120) = in_stack_0000000c;
   core_event_cpp_CEventList_FUN_004b0db0(this_ptr);
   return;
 }

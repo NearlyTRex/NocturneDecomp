@@ -16,7 +16,6 @@ void __cdecl core_npc_cpp_CNPC_process_FUN_005448b0(CNPC *this_ptr)
   int iVar5;
   CVector3f *input_local_point;
   CMotionList *this_ptr_00;
-  BADSPACEBASE *in_ESP;
   SCollisionInfo *in_stack_00000008;
   char *pcVar6;
   SCollisionInfo *collision_info;

@@ -23,7 +23,6 @@ void core_smiley_cpp_FUN_005a2800(void)
   CVector3f *pCVar9;
   CVector3f *pCVar10;
   CCharacter *pCVar11;
-  BADSPACEBASE *in_ESP;
   CCharacter *in_stack_00000004;
   float in_stack_00000008;
   float in_stack_fffffdba;

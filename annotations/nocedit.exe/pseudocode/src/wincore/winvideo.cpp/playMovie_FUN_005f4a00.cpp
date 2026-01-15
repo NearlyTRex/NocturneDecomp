@@ -16,7 +16,6 @@ int __cdecl wincore_winvideo_cpp_playMovie_FUN_005f4a00(char *directory_path,cha
   byte *pbVar4;
   HANDLE hThread;
   int iVar5;
-  BADSPACEBASE *in_ESP;
   bool bVar6;
   char *lpstrCommand;
   HWND pHVar7;

@@ -14,9 +14,8 @@ shape_meshlod_cpp_CLodMesh_extractFaceTexCoordGradient_FUN_00517530
 {
   CLodFace *pCVar1;
   CLodVert *pCVar2;
-  BADSPACEBASE *in_ESP;
-  float *in_stack_00000018;
-  CVector3f local_34;
+  CVector3f local_38;
+  float local_2c;
   float local_28;
   float local_24;
   float local_20;
@@ -27,29 +26,29 @@ shape_meshlod_cpp_CLodMesh_extractFaceTexCoordGradient_FUN_00517530
   float local_c;
   
   pCVar1 = this_ptr->tri_data;
-  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(&stack0xffffffc8,3,&g_CVectorTypeInfo);
+  crt_memory_c_constructObjectArray_DefaultCtor_FUN_005fe667(&local_38,3,&g_CVectorTypeInfo);
   pCVar2 = this_ptr->vertex_data + pCVar1[tri_index].vertex_idx_0;
-  if ((CLodVert *)&local_34 != pCVar2) {
-    local_34.x = (pCVar2->position).x;
-    local_34.y = (pCVar2->position).y;
-    local_34.z = (pCVar2->position).z;
+  if ((CLodVert *)&local_38 != pCVar2) {
+    local_38.x = (pCVar2->position).x;
+    local_38.y = (pCVar2->position).y;
+    local_38.z = (pCVar2->position).z;
   }
   pCVar2 = this_ptr->vertex_data + pCVar1[tri_index].vertex_idx_1;
-  if ((CLodVert *)&local_28 != pCVar2) {
-    local_28 = (pCVar2->position).x;
-    local_24 = (pCVar2->position).y;
-    local_20 = (pCVar2->position).z;
+  if ((CLodVert *)&local_2c != pCVar2) {
+    local_2c = (pCVar2->position).x;
+    local_28 = (pCVar2->position).y;
+    local_24 = (pCVar2->position).z;
   }
   pCVar2 = this_ptr->vertex_data + pCVar1[tri_index].vertex_idx_2;
-  if ((CLodVert *)&local_1c != pCVar2) {
-    local_1c = (pCVar2->position).x;
-    local_18 = (pCVar2->position).y;
-    local_14 = (pCVar2->position).z;
+  if ((CLodVert *)&local_20 != pCVar2) {
+    local_20 = (pCVar2->position).x;
+    local_1c = (pCVar2->position).y;
+    local_18 = (pCVar2->position).z;
   }
-  local_10 = pCVar1[tri_index].uv_coords[0][(int)out_gradient];
-  local_c = pCVar1[tri_index].uv_coords[1][(int)out_gradient];
+  local_14 = pCVar1[tri_index].uv_coords[0][corner_idx];
+  local_10 = pCVar1[tri_index].uv_coords[1][corner_idx];
+  local_c = pCVar1[tri_index].uv_coords[2][corner_idx];
   shape_meshlod_cpp_fitLeastSquaresPlane_FUN_005151e0
-            (3,&local_34,&local_10,&pCVar1[tri_index].normal,(CVector3f *)out_offset,
-             in_stack_00000018);
+            (3,&local_38,&local_14,&pCVar1[tri_index].normal,out_gradient,out_offset);
   return;
 }

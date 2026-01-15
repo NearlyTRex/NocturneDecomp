@@ -12,7 +12,6 @@ core_dtrace_cpp_CDemonRaytrace_worldPositionToGridCoords_FUN_004997d0
 
 {
   uint *extraout_EBX;
-  BADSPACEBASE *in_ESP;
   byte bVar1;
   float10 fVar2;
   double dVar3;

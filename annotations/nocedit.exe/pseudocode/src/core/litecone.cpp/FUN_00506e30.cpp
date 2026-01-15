@@ -18,7 +18,7 @@ CLightCone * __cdecl core_litecone_cpp_FUN_00506e30(CLightCone *this_ptr,uint d1
     return this_ptr;
   }
   ptr = (CLightCone *)core_actor_cpp_CDemonActor_dtor_FUN_00408a30(&this_ptr->base_actor,1);
-  if ((d2 & 2) == 0) {
+  if ((d1 & 2) == 0) {
     return ptr;
   }
   shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);

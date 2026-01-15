@@ -12,20 +12,17 @@ sound_sndmain_cpp_setSfxTrackedDoublePosition_FUN_005a9910
 
 {
   CSfxSlot *this_ptr;
-  CVector3d *in_stack_0000000c;
-  uint uStack00000018;
   
   this_ptr = sound_sndmain_cpp_getSfxSlotFromHandle_FUN_005a5d00(sfx_handle,1);
   if (this_ptr == (CSfxSlot *)0x0) {
     return 0;
   }
   (this_ptr->options).position_format = 2;
-  (this_ptr->options).position_source_ptr = in_stack_0000000c;
+  (this_ptr->options).position_source_ptr = position_source_ptr;
   sound_sndmain_cpp_CSfxSlot_compute_FUN_005a7100(this_ptr,0.0);
   if ((this_ptr->hardware_buffer_handle != 0) && (g_CSoundDevicePtr != (CSoundDevice *)0x0)) {
     (*g_CSoundDevicePtr->vtable->setSfxPos)(g_CSoundDevicePtr,this_ptr,2);
   }
-  uStack00000018 = 0x5a9964;
   sound_sndmain_cpp_unlockSound_FUN_005abdc0();
   return 1;
 }

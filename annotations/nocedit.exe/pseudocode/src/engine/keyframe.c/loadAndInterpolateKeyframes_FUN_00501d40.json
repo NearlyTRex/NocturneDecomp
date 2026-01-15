@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 201,
-    "complexity_score": 356,
+    "complexity_score": 169,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 6,
-    "pseudocode_lines": 101,
-    "suspect_count": 24,
+    "pseudocode_lines": 99,
+    "suspect_count": 6,
     "suspect_types": [
       "call_esp_preserve",
-      "stack_param",
       "variadic_preserve"
     ],
-    "total_lines": 302
+    "total_lines": 300
   },
   "cross_references": [
     {
@@ -169,134 +168,8 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00000008",
-      "text": "int in_stack_00000008;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_0000000c",
-      "text": "int in_stack_0000000c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_00000010",
-      "text": "int in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 24,
-      "match": "in_stack_00000008",
-      "text": "*(SMRGLHeaderExtended **)(in_stack_00000008 + 0x14) = pSVar4;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 27,
-      "match": "in_stack_00000008",
-      "text": "(*(SMRGLHeaderExtended **)(in_stack_00000008 + 0x14));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 29,
-      "match": "in_stack_0000000c",
-      "text": "((SMRGLHeaderExtended *)(*(int *)(in_stack_0000000c + 0x14) + iVar2));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 31,
-      "match": "in_stack_00000010",
-      "text": "if (0 < *(int *)(in_stack_00000010 + 8)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 32,
-      "match": "in_stack_00000010",
-      "text": "filename = (char *)(in_stack_00000010 + 0x18);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 33,
-      "match": "in_stack_00000010",
-      "text": "iVar9 = in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 42,
-      "match": "in_stack_00000010",
-      "text": "} while (iVar10 < *(int *)(in_stack_00000010 + 8));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 45,
-      "match": "in_stack_00000010",
-      "text": "iVar2 = *(int *)(in_stack_00000010 + 0x14);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 46,
-      "match": "in_stack_00000010",
-      "text": "iVar3 = in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 47,
-      "match": "in_stack_00000010",
-      "text": "if (0 < *(int *)(in_stack_00000010 + 8)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 62,
-      "match": "in_stack_00000010",
-      "text": "} while (iVar10 < *(int *)(in_stack_00000010 + 8));",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 64,
-      "match": "in_stack_00000010",
-      "text": "iVar2 = *(int *)(in_stack_00000010 + 0x14);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 66,
-      "match": "in_stack_00000010",
-      "text": "iVar3 = in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 67,
-      "match": "in_stack_00000010",
-      "text": "if (0 < *(int *)(in_stack_00000010 + 8)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 101,
-      "match": "in_stack_00000010",
-      "text": "} while (iVar10 < *(int *)(in_stack_00000010 + 8));",
-      "type": "stack_param"
-    },
-    {
       "call_address": "00501dfd",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",
@@ -310,7 +183,7 @@
     },
     {
       "call_address": "00501e28",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "computed",
       "esp_certainty_at_call": "known",

@@ -13,11 +13,9 @@ void core_curtain_cpp_FUN_00449f10(void)
 {
   CVector3f *pCVar1;
   float *pfVar2;
-  BADSPACEBASE *in_ESP;
   CVector3f *pCVar3;
   int iVar4;
   int in_stack_00000004;
-  int in_stack_00000008;
   CVector3f local_30;
   CVector3f local_24;
   CMatrix3x3f *local_18;
@@ -42,7 +40,7 @@ void core_curtain_cpp_FUN_00449f10(void)
       }
       iVar4 = iVar4 + 1;
       pfVar2 = pfVar2 + 0x1d;
-    } while (iVar4 < *(int *)(in_stack_00000008 + 0x204));
+    } while (iVar4 < *(int *)(in_stack_00000004 + 0x204));
   }
   return;
 }

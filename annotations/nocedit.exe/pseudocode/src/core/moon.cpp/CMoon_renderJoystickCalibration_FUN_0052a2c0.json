@@ -1,21 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 86,
-    "complexity_score": 274,
+    "complexity_score": 210,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 12,
-    "pseudocode_lines": 34,
-    "suspect_count": 21,
+    "pseudocode_lines": 40,
+    "suspect_count": 15,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
-      "register_param",
-      "stack_param",
+      "pointer_cast",
       "stack_ref"
     ],
-    "total_lines": 120
+    "total_lines": 126
   },
   "cross_references": [
     {
@@ -245,74 +243,32 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 7,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 7,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 9,
-      "match": "in_stack_00000020",
-      "text": "int in_stack_00000020;",
-      "type": "stack_param"
+      "description": "Complex pointer cast",
+      "line": 31,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&local_28 + (uint)bVar2 * -8 + 4) =",
+      "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 20,
-      "match": "&stack0xfffffff8",
-      "text": "(g_CDemonRendererPtr,(CVector3f *)&stack0xfffffff8);",
+      "line": 32,
+      "match": "&stack0xffffffd0",
+      "text": "*(uint *)(&stack0xffffffd0 + (uint)bVar2 * -8);",
       "type": "stack_ref"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 33,
+      "match": "(uint *)((int)",
+      "text": "*(uint *)((int)&local_28 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =",
+      "type": "pointer_cast"
     },
     {
       "description": "Direct stack address reference",
-      "line": 23,
-      "match": "&stack0xfffffff0",
-      "text": "engine_matrix_c_normalizeVector3DFloat_FUN_0050d9f0((CVector3i *)&stack0xfffffff0);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 25,
-      "match": "&stack0xfffffff4",
-      "text": "*(uint *)(&stack0xfffffff4 + (uint)bVar3 * -8) =",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 26,
-      "match": "&stack0xffffffec",
-      "text": "*(uint *)(&stack0xffffffec + (uint)bVar3 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 27,
-      "match": "&stack0xfffffff8",
-      "text": "*(uint *)(&stack0xfffffff8 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 28,
-      "match": "&stack0xfffffff0",
-      "text": "*(uint *)(&stack0xfffffff0 + (uint)bVar3 * -8 + (uint)bVar3 * -8);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
       "line": 34,
-      "match": "in_stack_00000020",
-      "text": "((CKeyFramedModel *)(in_stack_00000020 + 8),(CKeyFramedModelInstance *)0x0,0,0x205);",
-      "type": "stack_param"
+      "match": "&stack0xffffffd4",
+      "text": "*(uint *)(&stack0xffffffd4 + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
+      "type": "stack_ref"
     },
     {
       "add_esp_value": 8,

@@ -1,17 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 111,
-    "complexity_score": 151,
+    "complexity_score": 125,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 6,
-    "pseudocode_lines": 41,
-    "suspect_count": 10,
+    "pseudocode_lines": 40,
+    "suspect_count": 8,
     "suspect_types": [
-      "call_esp_preserve",
-      "unaffected_reg"
+      "call_esp_preserve"
     ],
-    "total_lines": 152
+    "total_lines": 151
   },
   "cross_references": [],
   "function": {
@@ -167,20 +166,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Unaffected register variable",
-      "line": 10,
-      "match": "unaff_ESI",
-      "text": "FILE *unaff_ESI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 42,
-      "match": "unaff_ESI",
-      "text": "shape_memdbg_cpp_closeFile_FUN_0050f9b0(unaff_ESI,\"..\\\\engine\\\\pod.cpp\",0xfb);",
-      "type": "unaffected_reg"
-    },
     {
       "add_esp_value": 8,
       "call_address": "0054f4a5",

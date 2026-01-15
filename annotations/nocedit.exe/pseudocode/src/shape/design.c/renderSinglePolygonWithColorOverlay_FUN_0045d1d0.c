@@ -10,7 +10,6 @@ void __cdecl
 shape_design_c_renderSinglePolygonWithColorOverlay_FUN_0045d1d0(int polygon_index,int *color_value)
 
 {
-  BADSPACEBASE *in_ESP;
   double dVar1;
   SMRGLHeaderPrimitive local_6c;
   uint auStack_54 [16];

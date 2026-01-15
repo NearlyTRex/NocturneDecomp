@@ -24,7 +24,7 @@ core_vessel_cpp_CCryptVessel_dtor_FUN_005e9d30(CCryptVessel *this_ptr,uint d1,ui
   ptr = (CCryptVessel *)
         core_actor_cpp_CDemonActor_dtor_FUN_00408a30
                   ((CDemonActor *)&pCVar1[-3].orient_matrix.m[0].z,1);
-  if ((d3 & 2) == 0) {
+  if ((d1 & 2) == 0) {
     return ptr;
   }
   shape_memdbg_cpp_debugFree_FUN_0050f210(ptr);

@@ -13,20 +13,20 @@ void __cdecl shape_design_c_detachFaces_FUN_0046eba0(void)
   SVertexData *pSVar2;
   int iVar3;
   int iVar4;
-  int iVar5;
+  int local_20;
   int local_1c;
   
   iVar3 = g_VertexCount;
-  iVar5 = 0;
+  local_20 = 0;
   do {
-    if (g_PolygonCount <= iVar5) {
+    if (g_PolygonCount <= local_20) {
       for (local_1c = iVar3; local_1c < g_VertexCount; local_1c = local_1c + 1) {
-        iVar5 = local_1c - iVar3;
-        g_LoadedVertices[iVar5].vertex.x = g_LoadedVertices[local_1c].vertex.x;
-        g_LoadedVertices[iVar5].vertex.y = g_LoadedVertices[local_1c].vertex.y;
-        g_LoadedVertices[iVar5].vertex.z = g_LoadedVertices[local_1c].vertex.z;
-        g_LoadedVertices[iVar5].u = g_LoadedVertices[local_1c].u;
-        g_LoadedVertices[iVar5].v = g_LoadedVertices[local_1c].v;
+        iVar4 = local_1c - iVar3;
+        g_LoadedVertices[iVar4].vertex.x = g_LoadedVertices[local_1c].vertex.x;
+        g_LoadedVertices[iVar4].vertex.y = g_LoadedVertices[local_1c].vertex.y;
+        g_LoadedVertices[iVar4].vertex.z = g_LoadedVertices[local_1c].vertex.z;
+        g_LoadedVertices[iVar4].u = g_LoadedVertices[local_1c].u;
+        g_LoadedVertices[iVar4].v = g_LoadedVertices[local_1c].v;
       }
       g_VertexCount = g_VertexCount - iVar3;
       wincore_windll_cpp_clearScreen_FUN_005b3e70();
@@ -35,15 +35,16 @@ void __cdecl shape_design_c_detachFaces_FUN_0046eba0(void)
       return;
     }
     for (local_1c = 0; iVar4 = g_VertexCount,
-        local_1c < (int)g_ModelPolygonData[iVar5].vertex_indices_count; local_1c = local_1c + 1) {
-      uVar1 = g_ModelPolygonData[iVar5].vertex_indices[local_1c];
+        local_1c < (int)g_ModelPolygonData[local_20].vertex_indices_count; local_1c = local_1c + 1)
+    {
+      uVar1 = g_ModelPolygonData[local_20].vertex_indices[local_1c];
       pSVar2 = g_LoadedVertices + g_VertexCount;
       g_LoadedVertices[g_VertexCount].vertex.x = g_LoadedVertices[uVar1].vertex.x;
       (pSVar2->vertex).y = g_LoadedVertices[uVar1].vertex.y;
       g_LoadedVertices[iVar4].vertex.z = g_LoadedVertices[uVar1].vertex.z;
       g_LoadedVertices[iVar4].u = g_LoadedVertices[uVar1].u;
       g_LoadedVertices[iVar4].v = g_LoadedVertices[uVar1].v;
-      g_ModelPolygonData[iVar5].vertex_indices[local_1c] = g_VertexCount - iVar3;
+      g_ModelPolygonData[local_20].vertex_indices[local_1c] = g_VertexCount - iVar3;
       g_VertexCount = g_VertexCount + 1;
       if (20000 < g_VertexCount) {
         wincore_windll_cpp_clearScreen_FUN_005b3e70();
@@ -54,6 +55,6 @@ void __cdecl shape_design_c_detachFaces_FUN_0046eba0(void)
         return;
       }
     }
-    iVar5 = iVar5 + 1;
+    local_20 = local_20 + 1;
   } while( true );
 }

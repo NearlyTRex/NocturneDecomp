@@ -15,10 +15,9 @@ void core_gabriela_cpp_FUN_004d4190(void)
   CDemonSet *this_ptr;
   SMotion *pSVar2;
   CVector3f *pCVar3;
-  float fVar4;
-  CBoundingBox3D *pCVar5;
-  int iVar6;
-  BADSPACEBASE *in_ESP;
+  CBoundingBox3D *pCVar4;
+  int iVar5;
+  float fVar6;
   CDemonActor *this_ptr_00;
   CDemonActor *in_stack_00000004;
   float local_11c;
@@ -57,6 +56,7 @@ void core_gabriela_cpp_FUN_004d4190(void)
   float local_24;
   float local_20;
   float local_18;
+  float fStack_14;
   
   local_18 = 0.25;
   crt_memory_c_memset_FUN_005fde40(in_stack_00000004[0x8d].create_event + 0x3c,0,0x2c);
@@ -73,27 +73,27 @@ void core_gabriela_cpp_FUN_004d4190(void)
       local_11c = 0.0;
     }
     if ((float)4 <= local_11c) {
-      iVar6 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00
+      iVar5 = core_path_cpp_CPathMap_findPathWithRetry_FUN_00547d00
                         ((CPathMap *)(g_HeroActors[g_LocalHeroIndex]->field3_0xbe2c + 0x2c),
                          &(in_stack_00000004->location).position,&local_bc,
                          in_stack_00000004->field7_0x6c);
-      if (iVar6 != 0) {
-        fVar4 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
+      if (iVar5 != 0) {
+        fVar6 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
                           (local_bc.y - (in_stack_00000004->orient).bank);
-        fVar4 = fVar4 * (float)0.31830988619288902 * (float)4;
-        *(float *)(in_stack_00000004[0x8d].create_event + 0x60) = fVar4;
-        if (fVar4 < -local_18) {
+        fVar6 = fVar6 * (float)0.31830988619288902 * (float)4;
+        *(float *)(in_stack_00000004[0x8d].create_event + 0x60) = fVar6;
+        if (fVar6 < -local_18) {
           *(float *)(in_stack_00000004[0x8d].create_event + 0x60) = -local_18;
         }
         if (local_18 < *(float *)(in_stack_00000004[0x8d].create_event + 0x60)) {
           *(float *)(in_stack_00000004[0x8d].create_event + 0x60) = local_18;
         }
-        iVar6 = g_LocalHeroIndex;
+        iVar5 = g_LocalHeroIndex;
         in_stack_00000004[0x8d].create_event[0x3c] = '\x01';
         in_stack_00000004[0x8d].create_event[0x3d] = '\0';
         in_stack_00000004[0x8d].create_event[0x3e] = '\0';
         in_stack_00000004[0x8d].create_event[0x3f] = '\0';
-        pCVar1 = g_HeroActors[iVar6];
+        pCVar1 = g_HeroActors[iVar5];
         if (&local_98 != local_b0) {
           local_98 = (in_stack_00000004->location).position.x -
                      (pCVar1->base_character).base_actor.location.position.x;
@@ -113,9 +113,9 @@ void core_gabriela_cpp_FUN_004d4190(void)
       }
     }
     else {
-      fVar4 = in_stack_00000004[0x179].previous_transform_state.orientation.y;
+      fVar6 = in_stack_00000004[0x179].previous_transform_state.orientation.y;
       this_ptr_00 = (CDemonActor *)0x0;
-      if ((fVar4 == 2.8026e-45) || (fVar4 == 4.2039e-45)) {
+      if ((fVar6 == 2.8026e-45) || (fVar6 == 4.2039e-45)) {
         this_ptr_00 = (CDemonActor *)core_hero_cpp_FUN_004f3960();
       }
       if ((this_ptr_00 == (CDemonActor *)0x0) || ((float)30 <= 9999.9)) {
@@ -147,12 +147,12 @@ void core_gabriela_cpp_FUN_004d4190(void)
         local_68.z = (this_ptr_00->location).position.z - (in_stack_00000004->location).position.z;
         pCVar3 = core_vehicle_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830
                            (&CStack_e0,&local_68);
-        fVar4 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
-                          (pCVar3->y - (in_stack_00000004->orient).bank);
-        fVar4 = fVar4 * (float)0.31830988619288902 * (float)4;
+        fStack_14 = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70
+                              (pCVar3->y - (in_stack_00000004->orient).bank);
+        fVar6 = fStack_14 * (float)0.31830988619288902 * (float)4;
         local_20 = -local_18;
-        *(float *)(in_stack_00000004[0x8d].create_event + 0x60) = fVar4;
-        if (fVar4 < local_20) {
+        *(float *)(in_stack_00000004[0x8d].create_event + 0x60) = fVar6;
+        if (fVar6 < local_20) {
           *(float *)(in_stack_00000004[0x8d].create_event + 0x60) = local_20;
         }
         if (local_18 < *(float *)(in_stack_00000004[0x8d].create_event + 0x60)) {
@@ -160,21 +160,21 @@ void core_gabriela_cpp_FUN_004d4190(void)
         }
         if (((float)-0.050000000000000003 < *(float *)(in_stack_00000004[0x8d].create_event + 0x60)) &&
            ((double)*(float *)(in_stack_00000004[0x8d].create_event + 0x60) < 0.050000000000000003)) {
-          pCVar5 = (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,&CStack_f8);
-          fStack_d4 = (pCVar5->min).x + (pCVar5->max).x;
-          fStack_d0 = (pCVar5->min).y + (pCVar5->max).y;
+          pCVar4 = (*in_stack_00000004->vtable->getBoundingBox)(in_stack_00000004,&CStack_f8);
+          fStack_d4 = (pCVar4->min).x + (pCVar4->max).x;
+          fStack_d0 = (pCVar4->min).y + (pCVar4->max).y;
           fStack_50 = fStack_d4 * 0.5f;
-          fStack_cc = (pCVar5->min).z + (pCVar5->max).z;
+          fStack_cc = (pCVar4->min).z + (pCVar4->max).z;
           fStack_4c = fStack_d0 * 0.5f;
           fStack_48 = fStack_cc * 0.5f;
           CStack_74.x = (in_stack_00000004->location).position.x + fStack_50;
           CStack_74.y = (in_stack_00000004->location).position.y + fStack_4c;
           CStack_74.z = (in_stack_00000004->location).position.z + fStack_48;
-          pCVar5 = (*this_ptr_00->vtable->getBoundingBox)(this_ptr_00,&CStack_110);
-          fStack_2c = (pCVar5->min).x + (pCVar5->max).x;
-          fStack_28 = (pCVar5->min).y + (pCVar5->max).y;
+          pCVar4 = (*this_ptr_00->vtable->getBoundingBox)(this_ptr_00,&CStack_110);
+          fStack_2c = (pCVar4->min).x + (pCVar4->max).x;
+          fStack_28 = (pCVar4->min).y + (pCVar4->max).y;
           fStack_5c = fStack_2c * 0.5f;
-          local_24 = (pCVar5->min).z + (pCVar5->max).z;
+          local_24 = (pCVar4->min).z + (pCVar4->max).z;
           fStack_58 = fStack_28 * 0.5f;
           fStack_54 = local_24 * 0.5f;
           CStack_44.x = (this_ptr_00->location).position.x + fStack_5c;
@@ -183,17 +183,17 @@ void core_gabriela_cpp_FUN_004d4190(void)
           fStack_c4 = CStack_44.y - CStack_74.y;
           CStack_44.z = (this_ptr_00->location).position.z + fStack_54;
           local_c0 = CStack_44.z - CStack_74.z;
-          fVar4 = SQRT(local_c0 * local_c0 + fStack_c8 * fStack_c8 + fStack_c4 * fStack_c4);
-          if (fVar4 <= 0.0) {
+          fVar6 = SQRT(local_c0 * local_c0 + fStack_c8 * fStack_c8 + fStack_c4 * fStack_c4);
+          if (fVar6 <= 0.0) {
             fStack_c4 = 0.0;
             fStack_c8 = 0.0;
             local_c0 = 0.0;
           }
           else {
-            fVar4 = 1.0 / fVar4;
-            fStack_c8 = fStack_c8 * fVar4;
-            fStack_c4 = fStack_c4 * fVar4;
-            local_c0 = local_c0 * fVar4;
+            fVar6 = 1.0 / fVar6;
+            fStack_c8 = fStack_c8 * fVar6;
+            fStack_c4 = fStack_c4 * fVar6;
+            local_c0 = local_c0 * fVar6;
           }
           fStack_38 = fStack_c8 * 3f;
           fStack_34 = fStack_c4 * 3f;

@@ -10,7 +10,6 @@ int __cdecl support_trisock_cpp_startupWinsock_FUN_005e1ec0(void)
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   WSADATA WStack_190;
   
   iVar1 = crt_wsock32_c_WSAStartup(0x101,&WStack_190);

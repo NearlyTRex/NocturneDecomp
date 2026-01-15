@@ -14,8 +14,8 @@ core_netgame_cpp_CNetGame_updatePing_FUN_00541c80
   int iVar1;
   int iVar2;
   uint uVar3;
+  float local_28;
   float local_24;
-  float local_20;
   
   if ((player_index < 0) || (this_ptr->player_count <= player_index)) {
     g_CurrentFilename = "..\\core\\netgame.cpp";
@@ -35,25 +35,25 @@ core_netgame_cpp_CNetGame_updatePing_FUN_00541c80
   g_LastPingTime = iVar1;
   g_CurrentGameTime = uVar3;
   if (player_index != this_ptr->local_player_index) {
-    local_20 = (float)(int)(uVar3 - this_ptr->players[player_index].last_ping_sent) *
+    local_24 = (float)(int)(uVar3 - this_ptr->players[player_index].last_ping_sent) *
                (float)1.52587890625e-05;
-    if (local_20 < 0.0) {
-      local_20 = 0.0;
+    if (local_24 < 0.0) {
+      local_24 = 0.0;
     }
-    if ((float)30 < local_20) {
-      local_20 = 30.0;
+    if ((float)30 < local_24) {
+      local_24 = 30.0;
     }
-    if ((float)0.40000000000000002 <= local_20) {
-      local_24 = (float)(int)(uVar3 - this_ptr->players[player_index].last_ping_response) *
+    if ((float)0.40000000000000002 <= local_24) {
+      local_28 = (float)(int)(uVar3 - this_ptr->players[player_index].last_ping_response) *
                  (float)1.52587890625e-05;
-      if (local_24 < 0.0) {
-        local_24 = 0.0;
+      if (local_28 < 0.0) {
+        local_28 = 0.0;
       }
-      if ((float)30 < local_24) {
-        local_24 = 30.0;
+      if ((float)30 < local_28) {
+        local_28 = 30.0;
       }
-      if ((this_ptr->players[player_index].ping_quality < 0.0) || (max_ping <= local_24)) {
-        if ((float)5 < local_24) {
+      if ((this_ptr->players[player_index].ping_quality < 0.0) || (max_ping <= local_28)) {
+        if ((float)5 < local_28) {
           this_ptr->players[player_index].ping_quality = -1.0;
         }
         this_ptr->players[player_index].last_ping_sent = g_CurrentGameTime;

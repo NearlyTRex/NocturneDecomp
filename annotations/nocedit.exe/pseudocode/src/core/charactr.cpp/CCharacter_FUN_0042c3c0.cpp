@@ -10,22 +10,20 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042c3c0(CCharacter *this_ptr)
 
 {
   uint uVar1;
-  BADSPACEBASE *in_ESP;
   double dVar2;
-  uint *in_stack_00000008;
-  CCharacter *in_stack_ffffffc8;
+  int in_stack_00000008;
+  CVector3f *output_world_point;
   CVector3f *input_local_point;
-  CVector3f CStack_24;
-  int iStack_14;
+  CVector3f local_28;
+  CVector3f local_1c;
   
-  if ((float)in_stack_00000008[1] <= 0.0) {
+  if (*(float *)(in_stack_00000008 + 4) <= 0.0) {
     return;
   }
-  uVar1 = in_stack_00000008[0xc];
+  uVar1 = *(uint *)(in_stack_00000008 + 0x30);
   if (uVar1 < 6) {
     if (uVar1 < 4) {
       if (uVar1 == 3) {
-        in_stack_ffffffc8 = (CCharacter *)0x42c426;
         core_charactr_cpp_CCharacter_FUN_0042b930(this_ptr);
       }
       goto LAB_0042c429;
@@ -35,7 +33,6 @@ void __cdecl core_charactr_cpp_CCharacter_FUN_0042c3c0(CCharacter *this_ptr)
       goto LAB_0042c429;
     }
 LAB_0042c50c:
-    in_stack_ffffffc8 = this_ptr;
     core_charactr_cpp_CCharacter_FUN_0042b9e0(this_ptr);
   }
   else {
@@ -56,19 +53,20 @@ LAB_0042c50c:
     this_ptr->cloth_data[0x8d4b] = '@';
   }
 LAB_0042c429:
-  if (in_stack_00000008[10] == 5) {
+  if (*(int *)(in_stack_00000008 + 0x28) == 5) {
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-              (&this_ptr->base_actor,&CStack_24,(CVector3f *)(in_stack_00000008 + 7));
-    in_stack_ffffffc8 = (CCharacter *)*in_stack_00000008;
+              (&this_ptr->base_actor,&local_28,(CVector3f *)(in_stack_00000008 + 0x1c));
     core_charactr_cpp_CCharacter_FUN_0042b5b0(this_ptr);
   }
-  if (0.0 < (float)in_stack_00000008[2]) {
-    input_local_point = (CVector3f *)0x42c47c;
+  if (0.0 < *(float *)(in_stack_00000008 + 8)) {
+    input_local_point = &local_1c;
+    output_world_point = (CVector3f *)0x42c47c;
     dVar2 = crt_math_c_round_FUN_005fe6b0
-                      ((double)((float)in_stack_00000008[1] * (float)in_stack_00000008[2]));
-    iStack_14 = (int)ROUND(dVar2);
+                      ((double)(*(float *)(in_stack_00000008 + 4) *
+                               *(float *)(in_stack_00000008 + 8)));
+    local_1c.z = (float)(int)ROUND(dVar2);
     core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-              (&this_ptr->base_actor,(CVector3f *)in_stack_ffffffc8,input_local_point);
+              (&this_ptr->base_actor,output_world_point,input_local_point);
     core_gore_cpp_FUN_004edbb0();
   }
   if ((this_ptr->health_bar_mode == 1) && ((CHero *)this_ptr != g_HeroActors[g_LocalHeroIndex])) {

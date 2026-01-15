@@ -11,7 +11,6 @@ core_dcube_cpp_buildAndRenderTrianglePrimitive_FUN_004566e0
           (CVector3f **triangle_vertex_pointers,CVector3f *vertex_buffer)
 
 {
-  BADSPACEBASE *in_ESP;
   SMRGLHeaderPrimitive local_30;
   uint local_18;
   uint local_14;

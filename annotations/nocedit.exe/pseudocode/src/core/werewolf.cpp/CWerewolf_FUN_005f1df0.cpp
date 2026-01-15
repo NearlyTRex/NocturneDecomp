@@ -10,7 +10,6 @@ int __cdecl core_werewolf_cpp_CWerewolf_FUN_005f1df0(CWerewolf *this_ptr)
 
 {
   CVector3f *pCVar1;
-  BADSPACEBASE *in_ESP;
   CVector3f *in_stack_00000008;
   CVector3f local_10;
   

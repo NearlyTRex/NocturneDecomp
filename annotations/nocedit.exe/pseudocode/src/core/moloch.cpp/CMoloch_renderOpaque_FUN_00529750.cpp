@@ -12,7 +12,6 @@ int __cdecl core_moloch_cpp_CMoloch_renderOpaque_FUN_00529750(CMoloch *this_ptr)
   int iVar1;
   CBoundingBox3D *this_ptr_00;
   int iVar2;
-  BADSPACEBASE *in_ESP;
   
   iVar1 = engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_0048ce00(g_CDemonRendererPtr);
   if (iVar1 == 0) {
@@ -24,7 +23,7 @@ int __cdecl core_moloch_cpp_CMoloch_renderOpaque_FUN_00529750(CMoloch *this_ptr)
   if (*(int *)(this_ptr->base_hero).base_character.field2_0x240c == 0) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_00408b00((CDemonActor *)this_ptr);
     this_ptr_00 = (*((this_ptr->base_hero).base_character.base_actor.vtable)->getBoundingBox)
-                            ((CDemonActor *)this_ptr,(CBoundingBox3D *)&stack0xffffffec);
+                            ((CDemonActor *)this_ptr,(CBoundingBox3D *)&stack0xffffffe4);
     iVar1 = core_box_cpp_CBoundingBox3D_isVisible_FUN_004204f0(this_ptr_00);
     if (iVar1 != 0) {
       iVar2 = this_ptr->morphing;

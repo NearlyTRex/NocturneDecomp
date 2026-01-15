@@ -1,17 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 148,
-    "complexity_score": 224,
+    "complexity_score": 168,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 17,
-    "pseudocode_lines": 54,
-    "suspect_count": 16,
+    "pseudocode_lines": 48,
+    "suspect_count": 11,
     "suspect_types": [
       "call_esp_preserve",
       "stack_param"
     ],
-    "total_lines": 202
+    "total_lines": 196
   },
   "cross_references": [],
   "function": {
@@ -257,79 +257,44 @@
   "suspects": [
     {
       "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_00000004",
+      "text": "SCramWorkingEntry *in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
       "line": 14,
-      "match": "in_stack_0000001c",
-      "text": "int in_stack_0000001c;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 15,
-      "match": "in_stack_00000020",
-      "text": "int in_stack_00000020;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 16,
-      "match": "in_stack_fffffff4",
-      "text": "int in_stack_fffffff4;",
+      "match": "in_stack_ffffffe8",
+      "text": "int in_stack_ffffffe8;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 20,
-      "match": "in_stack_0000001c",
-      "text": "engine_2d_c_fillRectColor_FUN_00403170(width,height,render_mode + -1,in_stack_0000001c + -1,1);",
+      "match": "in_stack_00000004",
+      "text": "if (in_stack_00000004 != (SCramWorkingEntry *)0x0) {",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_0000001c",
-      "text": "((SCramWorkingEntry *)y,height,render_mode,in_stack_0000001c,in_stack_00000020,",
+      "line": 28,
+      "match": "in_stack_00000004",
+      "text": "(in_stack_00000004,x,y,width,height,in_stack_ffffffe8);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 30,
-      "match": "in_stack_00000020",
-      "text": "((SCramWorkingEntry *)y,height,render_mode,in_stack_0000001c,in_stack_00000020,",
+      "line": 28,
+      "match": "in_stack_ffffffe8",
+      "text": "(in_stack_00000004,x,y,width,height,in_stack_ffffffe8);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 31,
-      "match": "in_stack_fffffff4",
-      "text": "in_stack_fffffff4);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 35,
-      "match": "in_stack_0000001c",
-      "text": "iVar2 = in_stack_0000001c - height;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 36,
-      "match": "in_stack_00000020",
-      "text": "y_00 = in_stack_00000020 - render_mode;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 42,
-      "match": "in_stack_0000001c",
-      "text": "if ((x_00 < in_stack_0000001c) && (y_01 < in_stack_00000020)) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 42,
-      "match": "in_stack_00000020",
-      "text": "if ((x_00 < in_stack_0000001c) && (y_01 < in_stack_00000020)) {",
+      "match": "in_stack_00000004",
+      "text": "if ((in_stack_00000004 == (SCramWorkingEntry *)0x0) && (iVar3 = 0, 0 < g_CramRectangleCount)) {",
       "type": "stack_param"
     },
     {

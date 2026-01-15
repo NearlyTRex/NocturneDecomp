@@ -14,105 +14,101 @@ engine_2d_c_clipAndDrawLine_FUN_00402ca0
   longlong lVar1;
   byte bVar2;
   undefined3 extraout_var;
-  int *piVar4;
-  int *piVar5;
-  int iVar6;
-  int *unaff_EBX;
-  int iVar7;
-  int *unaff_EDI;
-  int *in_stack_00000024;
-  int *in_stack_00000028;
-  int local_18;
-  int local_14;
-  int *piVar3;
   undefined3 extraout_var_00;
+  uint uVar3;
+  undefined3 extraout_var_01;
+  undefined3 extraout_var_02;
+  int iVar4;
+  int *unaff_EBX;
+  int iVar5;
+  int *unaff_EDI;
+  int local_20;
+  int local_1c;
+  uint local_18;
+  uint local_14;
   
-  engine_2d_c_computeOutcode_FUN_00402c10((int)x1,(int)y1,x_min,y_min,x_max,y_max);
-  bVar2 = engine_2d_c_computeOutcode_FUN_00402c10
-                    ((int)y2,x_min,y_min,x_max,y_max,(int)in_stack_00000024);
-  piVar3 = (int *)CONCAT31 /* combine 2-byte values */(extraout_var,bVar2);
-  local_14 = 0;
-  piVar5 = unaff_EDI;
+  bVar2 = engine_2d_c_computeOutcode_FUN_00402c10((int)x1,(int)y1,x_min,y_min,x_max,y_max);
+  local_14 = CONCAT31 /* combine 2-byte values */(extraout_var,bVar2);
+  bVar2 = engine_2d_c_computeOutcode_FUN_00402c10((int)x2,(int)y2,x_min,y_min,x_max,y_max);
+  local_18 = CONCAT31 /* combine 2-byte values */(extraout_var_00,bVar2);
+  local_1c = 0;
   do {
-    iVar7 = y_min - (int)y1;
-    iVar6 = x_min - (int)x2;
-    if ((piVar5 == (int *)0x0) && (piVar3 == (int *)0x0)) {
-      local_18 = 1;
+    iVar5 = (int)y2 - (int)y1;
+    iVar4 = (int)x2 - (int)x1;
+    if ((local_14 == 0) && (local_18 == 0)) {
+      local_20 = 1;
       break;
     }
-    if (((uint)piVar5 & (uint)piVar3) != 0) {
-      local_18 = 0;
+    if ((local_14 & local_18) != 0) {
+      local_20 = 0;
       break;
     }
-    piVar4 = piVar5;
-    if (piVar5 == (int *)0x0) {
-      piVar4 = piVar3;
+    uVar3 = local_14;
+    if (local_14 == 0) {
+      uVar3 = local_18;
     }
-    if (((uint)piVar4 & 1) == 0) {
-      if (((uint)piVar4 & 2) == 0) {
-        if (((uint)piVar4 & 4) == 0) {
-          if ((((uint)piVar4 & 8) != 0) && (unaff_EBX = (int *)x_max, iVar6 != 0)) {
-            lVar1 = (longlong)(int)(((longlong)(x_max - (int)x2) * 0x10000) / (longlong)iVar6) *
-                    (longlong)iVar7;
+    if ((uVar3 & 1) == 0) {
+      if ((uVar3 & 2) == 0) {
+        if ((uVar3 & 4) == 0) {
+          if (((uVar3 & 8) != 0) && (unaff_EBX = (int *)x_min, iVar4 != 0)) {
+            lVar1 = (longlong)(int)(((longlong)(x_min - (int)x1) * 0x10000) / (longlong)iVar4) *
+                    (longlong)iVar5;
             unaff_EDI = (int *)(((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +
                                (int)y1);
           }
         }
         else {
-          unaff_EBX = in_stack_00000024;
-          if (iVar6 != 0) {
-            lVar1 = (longlong)
-                    (int)(((longlong)((int)in_stack_00000024 - (int)x2) * 0x10000) / (longlong)iVar6
-                         ) * (longlong)iVar7;
+          unaff_EBX = (int *)x_max;
+          if (iVar4 != 0) {
+            lVar1 = (longlong)(int)(((longlong)(x_max - (int)x1) * 0x10000) / (longlong)iVar4) *
+                    (longlong)iVar5;
             unaff_EDI = (int *)(((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +
                                (int)y1);
           }
         }
       }
       else {
-        unaff_EDI = (int *)y_max;
-        if (iVar7 != 0) {
-          lVar1 = (longlong)(int)(((longlong)(y_max - (int)y1) * 0x10000) / (longlong)iVar7) *
-                  (longlong)iVar6;
-          unaff_EBX = (int *)((int)x2 +
+        unaff_EDI = (int *)y_min;
+        if (iVar5 != 0) {
+          lVar1 = (longlong)(int)(((longlong)(y_min - (int)y1) * 0x10000) / (longlong)iVar5) *
+                  (longlong)iVar4;
+          unaff_EBX = (int *)((int)x1 +
                              ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10));
         }
       }
     }
     else {
-      unaff_EDI = in_stack_00000028;
-      if (iVar7 != 0) {
-        lVar1 = (longlong)
-                (int)(((longlong)((int)in_stack_00000028 - (int)y1) * 0x10000) / (longlong)iVar7) *
-                (longlong)iVar6;
-        unaff_EBX = (int *)((int)x2 +
+      unaff_EDI = (int *)y_max;
+      if (iVar5 != 0) {
+        lVar1 = (longlong)(int)(((longlong)(y_max - (int)y1) * 0x10000) / (longlong)iVar5) *
+                (longlong)iVar4;
+        unaff_EBX = (int *)((int)x1 +
                            ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10));
       }
     }
-    if (piVar5 == (int *)0x0) {
+    if (local_14 == 0) {
       bVar2 = engine_2d_c_computeOutcode_FUN_00402c10
-                        ((int)unaff_EBX,(int)unaff_EDI,x_max,y_max,(int)in_stack_00000024,
-                         (int)in_stack_00000028);
-      piVar5 = (int *)CONCAT31 /* combine 2-byte values */(extraout_var_00,bVar2);
-      x_min = (int)unaff_EBX;
-      y_min = (int)unaff_EDI;
+                        ((int)unaff_EBX,(int)unaff_EDI,x_min,y_min,x_max,y_max);
+      local_18 = CONCAT31 /* combine 2-byte values */(extraout_var_02,bVar2);
+      x2 = unaff_EBX;
+      y2 = unaff_EDI;
     }
     else {
-      engine_2d_c_computeOutcode_FUN_00402c10
-                ((int)unaff_EBX,(int)unaff_EDI,x_max,y_max,(int)in_stack_00000024,
-                 (int)in_stack_00000028);
+      bVar2 = engine_2d_c_computeOutcode_FUN_00402c10
+                        ((int)unaff_EBX,(int)unaff_EDI,x_min,y_min,x_max,y_max);
+      local_14 = CONCAT31 /* combine 2-byte values */(extraout_var_01,bVar2);
       y1 = unaff_EDI;
-      x2 = unaff_EBX;
+      x1 = unaff_EBX;
     }
-    local_14 = local_14 + 1;
-  } while (local_14 < 100);
-  if (local_14 == 100) {
+    local_1c = local_1c + 1;
+  } while (local_1c < 100);
+  if (local_1c == 100) {
     g_CurrentFilename = "..\\engine\\2d.c";
     g_CurrentLineNumber = 0x870;
     core_main_c_displayErrorAndQuit_FUN_00506f10("2d line clipping exceeded max iterations");
   }
-  if (local_18 != 0) {
-    engine_2d_c_drawLine_FUN_004011b0((int)x2,(int)y1,x_min,y_min);
+  if (local_20 != 0) {
+    engine_2d_c_drawLine_FUN_004011b0((int)x1,(int)y1,(int)x2,(int)y2);
     return;
   }
   return;

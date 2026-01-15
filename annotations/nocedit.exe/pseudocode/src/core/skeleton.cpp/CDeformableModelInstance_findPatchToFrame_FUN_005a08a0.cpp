@@ -15,16 +15,16 @@ core_skeleton_cpp_CDeformableModelInstance_findPatchToFrame_FUN_005a08a0
   int iVar1;
   CMotionList *pCVar2;
   CSkeleton *pCVar3;
-  byte *puVar4;
+  CMatrix3x4f *pCVar4;
   int iVar5;
-  float *pfVar6;
-  BADSPACEBASE *in_ESP;
-  int unaff_EBP;
+  CMatrix3x4f *pCVar6;
   int iVar7;
-  float in_stack_00000014;
-  int in_stack_00000020;
-  byte auStack_3588 [6808];
-  SBoneTransformData SStack_1af0;
+  SBoneTransformData local_3598;
+  SBoneTransformData local_1afc;
+  float local_60;
+  float local_5c;
+  float local_58;
+  float local_54;
   float local_50;
   float local_4c;
   float local_48;
@@ -33,68 +33,64 @@ core_skeleton_cpp_CDeformableModelInstance_findPatchToFrame_FUN_005a08a0
   float local_3c;
   float local_38;
   float local_34;
-  float fStack_30;
-  float fStack_2c;
-  float fStack_28;
-  float local_24;
-  int local_1c;
+  int local_24;
+  int local_20;
+  float local_1c;
+  float local_18;
   int local_14;
-  float fVar8;
-  float fVar9;
   
   pCVar2 = core_motion_cpp_CMotionController_getMotionList_FUN_0052dce0(this_ptr);
-  local_1c = pCVar2->motions[(int)in_stack_00000014].frame_count;
+  local_20 = pCVar2->motions[target_motion_index].frame_count;
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_005a0820
                      ((CDeformableModelInstance *)this_ptr);
   iVar1 = pCVar3->bone_count;
   core_skeleton_cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0
-            ((CDeformableModelInstance *)this_ptr,target_motion_index,in_stack_00000014,
-             (SBoneTransformData *)(auStack_3588 + 0x1a94));
+            ((CDeformableModelInstance *)this_ptr,source_motion_index,source_frame,&local_1afc);
   iVar7 = 0;
   core_skeleton_cpp_computeBoneWorldMatrices_FUN_005a1950
-            (&SStack_1af0,(CDeformableModelInstance *)this_ptr);
-  local_14 = -1;
-  fVar8 = 1e+30;
-  if (0 < unaff_EBP) {
+            (&local_1afc,(CDeformableModelInstance *)this_ptr);
+  local_24 = -1;
+  local_1c = 1e+30;
+  if (0 < local_20) {
     do {
+      local_14 = iVar7;
       core_skeleton_cpp_CDeformableModelInstance_computeBoneTransformsForFrame_FUN_005a0ad0
-                ((CDeformableModelInstance *)this_ptr,in_stack_00000020,(float)iVar7,
-                 (SBoneTransformData *)auStack_3588);
+                ((CDeformableModelInstance *)this_ptr,target_motion_index,(float)iVar7,&local_3598);
       core_skeleton_cpp_computeBoneWorldMatrices_FUN_005a1950
-                ((SBoneTransformData *)&stack0xffffca74,(CDeformableModelInstance *)this_ptr);
+                (&local_3598,(CDeformableModelInstance *)this_ptr);
       iVar5 = 0;
-      fVar9 = 0.0;
+      local_18 = 0.0;
       if (0 < iVar1) {
-        fVar9 = 0.0;
-        puVar4 = auStack_3588 + 0x7dc;
-        pfVar6 = &SStack_1af0.bone_world_matrices[0].m[0].x;
+        local_18 = 0.0;
+        pCVar4 = local_3598.bone_world_matrices;
+        pCVar6 = local_1afc.bone_world_matrices;
         do {
-          local_44 = *(float *)(puVar4 + 0xc);
-          local_40 = *(float *)(puVar4 + 0x1c);
-          local_3c = *(float *)(puVar4 + 0x2c);
-          local_50 = pfVar6[3];
-          local_4c = pfVar6[7];
-          local_48 = pfVar6[0xb];
-          pfVar6 = pfVar6 + 0xc;
-          puVar4 = puVar4 + 0x30;
+          local_54 = pCVar4->m[0].z;
+          local_50 = pCVar4->m[1].z;
+          local_4c = pCVar4->m[2].z;
+          local_60 = pCVar6->m[0].z;
+          local_5c = pCVar6->m[1].z;
+          local_58 = pCVar6->m[2].z;
+          pCVar6 = pCVar6 + 1;
+          pCVar4 = pCVar4 + 1;
           iVar5 = iVar5 + 1;
-          fVar9 = (local_48 - local_3c) * (local_48 - local_3c) +
-                  (local_4c - local_40) * (local_4c - local_40) +
-                  (local_50 - local_44) * (local_50 - local_44) + fVar9;
-          local_38 = local_44;
-          local_34 = local_40;
-          fStack_30 = local_3c;
-          fStack_2c = local_50;
-          fStack_28 = local_4c;
-          local_24 = local_48;
+          local_18 = (local_58 - local_4c) * (local_58 - local_4c) +
+                     (local_5c - local_50) * (local_5c - local_50) +
+                     (local_60 - local_54) * (local_60 - local_54) + local_18;
+          local_48 = local_54;
+          local_44 = local_50;
+          local_40 = local_4c;
+          local_3c = local_60;
+          local_38 = local_5c;
+          local_34 = local_58;
         } while (iVar5 < iVar1);
       }
-      if (fVar9 < fVar8) {
-        local_14 = iVar7;
-        fVar8 = fVar9;
+      if (local_18 < local_1c) {
+        local_1c = local_18;
+        local_24 = iVar7;
       }
       iVar7 = iVar7 + 1;
-    } while (iVar7 < unaff_EBP);
+    } while (iVar7 < local_20);
   }
-  return local_14;
+  return local_24;
 }

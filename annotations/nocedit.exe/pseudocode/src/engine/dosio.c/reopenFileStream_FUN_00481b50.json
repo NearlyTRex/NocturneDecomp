@@ -1,23 +1,20 @@
 {
   "complexity": {
     "assembly_lines": 88,
-    "complexity_score": 308,
+    "complexity_score": 198,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 1,
-    "pseudocode_lines": 38,
-    "suspect_count": 23,
+    "pseudocode_lines": 33,
+    "suspect_count": 14,
     "suspect_types": [
-      "badspacebase",
       "call_esp_preserve",
       "lea_esp_stack_addr",
       "pointer_cast",
-      "register_param",
       "stack_param",
-      "stack_ref",
-      "unaffected_reg"
+      "undefined_type"
     ],
-    "total_lines": 126
+    "total_lines": 121
   },
   "cross_references": [],
   "function": {
@@ -167,88 +164,25 @@
   },
   "suspects": [
     {
-      "description": "Ghidra failed to resolve stack frame",
-      "line": 8,
-      "match": "BADSPACEBASE",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "badspacebase"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 8,
-      "match": "in_ESP",
-      "text": "BADSPACEBASE *in_ESP;",
-      "type": "register_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 9,
-      "match": "unaff_EBP",
-      "text": "int unaff_EBP;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_00000018",
-      "text": "byte in_stack_00000018;",
+      "line": 8,
+      "match": "in_stack_0000000d",
+      "text": "undefined3 in_stack_0000000d;",
       "type": "stack_param"
     },
     {
-      "description": "Unresolved stack parameter",
-      "line": 11,
-      "match": "in_stack_0000001c",
-      "text": "int in_stack_0000001c;",
-      "type": "stack_param"
+      "description": "Unresolved type",
+      "line": 8,
+      "match": "undefined3 in_stack_0000000d",
+      "text": "undefined3 in_stack_0000000d;",
+      "type": "undefined_type"
     },
     {
       "description": "Complex pointer cast",
-      "line": 19,
+      "line": 15,
       "match": "(int *)((int)",
       "text": "*(int *)((int)(file_stream->fstreambase_core).layout_info + 4) + -0x38),0);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 21,
-      "match": "&stack0xfffffde8",
-      "text": "(&stack0xfffffde8,directory_path,(char *)file_stream);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 22,
-      "match": "in_stack_00000018",
-      "text": "if ((in_stack_00000018 & 0x52) == 0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 23,
-      "match": "&stack0xfffffdec",
-      "text": "iVar1 = engine_dosio_c_findFile_FUN_00481760((SFoundFileInfo *)&stack0xfffffdec);",
-      "type": "stack_ref"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 26,
-      "match": "in_stack_0000001c",
-      "text": "(file_stream,acStack_110,in_stack_0000001c,g_DefaultStreamBufferSize);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 27,
-      "match": "unaff_EBP",
-      "text": "if (unaff_EBP != 0) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 38,
-      "match": "in_stack_0000001c",
-      "text": "(file_stream,acStack_210,in_stack_0000001c,g_DefaultStreamBufferSize);",
-      "type": "stack_param"
     },
     {
       "add_esp_value": 4,

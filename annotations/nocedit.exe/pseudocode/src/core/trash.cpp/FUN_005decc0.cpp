@@ -10,9 +10,9 @@ void core_trash_cpp_FUN_005decc0(void)
 
 {
   float fVar1;
-  float *in_stack_00000008;
+  float *in_stack_00000004;
   
   fVar1 = core_actor_cpp_getRandomFloat_FUN_0040cc10(-0.05,0.05);
-  *in_stack_00000008 = fVar1 + *in_stack_00000008;
+  *in_stack_00000004 = fVar1 + *in_stack_00000004;
   return;
 }

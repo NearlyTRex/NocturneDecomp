@@ -12,7 +12,6 @@ int __cdecl core_batman_cpp_CBatman_renderOpaque_FUN_004173b0(CBatman *this_ptr)
   int iVar1;
   int iVar2;
   CBoundingBox3D *this_ptr_00;
-  BADSPACEBASE *in_ESP;
   uint render_flags;
   float local_2c;
   CBoundingBox3D CStack_28;

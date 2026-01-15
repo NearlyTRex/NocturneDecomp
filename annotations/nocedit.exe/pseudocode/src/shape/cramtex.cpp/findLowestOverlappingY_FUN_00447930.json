@@ -1,14 +1,16 @@
 {
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 23,
+    "complexity_score": 79,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 11,
-    "pseudocode_lines": 23,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 74
+    "pseudocode_lines": 24,
+    "suspect_count": 5,
+    "suspect_types": [
+      "stack_param"
+    ],
+    "total_lines": 75
   },
   "cross_references": [
     {
@@ -154,5 +156,41 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 8,
+      "match": "in_stack_00000004",
+      "text": "int in_stack_00000004;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000004",
+      "text": "if ((((*(int *)(in_stack_00000004 + 0x10) == pSVar1->assigned_map_number) &&",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 17,
+      "match": "in_stack_00000004",
+      "text": "(pSVar1->final_top < iVar3)) && (*(int *)(in_stack_00000004 + 0x3c) <= pSVar1->final_top)",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000004",
+      "text": ") && ((pSVar1->final_left < *(int *)(in_stack_00000004 + 0x38) &&",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 19,
+      "match": "in_stack_00000004",
+      "text": "(*(int *)(in_stack_00000004 + 0x30) < pSVar1->final_right)))) {",
+      "type": "stack_param"
+    }
+  ]
 }

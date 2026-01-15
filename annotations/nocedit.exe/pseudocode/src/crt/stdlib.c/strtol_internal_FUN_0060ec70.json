@@ -1,21 +1,19 @@
 {
   "complexity": {
     "assembly_lines": 205,
-    "complexity_score": 342,
+    "complexity_score": 160,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 2,
-    "pseudocode_lines": 82,
-    "suspect_count": 23,
+    "pseudocode_lines": 80,
+    "suspect_count": 6,
     "suspect_types": [
       "call_esp_preserve",
       "param_count_too_few",
       "pointer_cast",
-      "special_crt_function",
-      "stack_param",
-      "unaffected_reg"
+      "special_crt_function"
     ],
-    "total_lines": 287
+    "total_lines": 285
   },
   "cross_references": [
     {
@@ -187,130 +185,11 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 7,
-      "match": "unaff_BP",
-      "text": "char unaff_BP;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 10,
-      "match": "unaff_DI",
-      "text": "char unaff_DI;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 12,
-      "match": "in_stack_00000014",
-      "text": "int in_stack_00000014;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 13,
-      "match": "in_stack_00000018",
-      "text": "int in_stack_00000018;",
-      "type": "stack_param"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 21,
-      "match": "(char *)((int)",
-      "text": "str = (char *)((int)str + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 25,
-      "match": "(char *)((int)",
-      "text": "str = (char *)((int)str + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 28,
-      "match": "(char *)((int)",
-      "text": "if ((*str != '0') || ((*(char *)((int)str + 1) != 'x' && (*(char *)((int)str + 1) != 'X')))) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 28,
-      "match": "(char *)((int)",
-      "text": "if ((*str != '0') || ((*(char *)((int)str + 1) != 'x' && (*(char *)((int)str + 1) != 'X')))) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 47,
-      "match": "(char *)((int)",
-      "text": "if ((*str == '0') && ((*(char *)((int)str + 1) == 'x' || (*(char *)((int)str + 1) == 'X')))) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 47,
-      "match": "(char *)((int)",
-      "text": "if ((*str == '0') && ((*(char *)((int)str + 1) == 'x' || (*(char *)((int)str + 1) == 'X')))) {",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 48,
-      "match": "(char *)((int)",
-      "text": "str = (char *)((int)str + 2);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 57,
+      "line": 55,
       "match": "(void *)((int)",
-      "text": "pvVar2 = (void *)((int)pvVar3 * iVar4 + iVar1);",
+      "text": "pvVar6 = (void *)((int)pvVar7 * base + iVar3);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 61,
-      "match": "(char *)((int)",
-      "text": "str = (char *)((int)str + 1);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 70,
-      "match": "in_stack_00000014",
-      "text": "if ((((in_stack_00000014 != 1) || (pvVar3 < (void *)0x80000000)) ||",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 71,
-      "match": "unaff_BP",
-      "text": "((pvVar3 == (void *)0x80000000 && (unaff_BP == '-')))) && (local_14 == '\\0')) {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 72,
-      "match": "unaff_BP",
-      "text": "if (unaff_BP == '-') {",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 78,
-      "match": "in_stack_00000018",
-      "text": "if (in_stack_00000018 == 0) {",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 81,
-      "match": "unaff_DI",
-      "text": "if (unaff_DI == '-') {",
-      "type": "unaffected_reg"
     },
     {
       "call_site_count": 2,

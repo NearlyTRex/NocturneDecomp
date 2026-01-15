@@ -12,11 +12,11 @@ void shape_design_c_loadPalette_FUN_0046e810(void)
   char cVar1;
   int iVar2;
   uint uVar3;
-  BADSPACEBASE *in_ESP;
   char *pcVar4;
   char *pcVar5;
   char *pcVar6;
   byte bVar7;
+  char local_b8 [80];
   char local_68 [80];
   char *local_18;
   int local_14;
@@ -27,14 +27,13 @@ void shape_design_c_loadPalette_FUN_0046e810(void)
   engine_2d_c_drawText_FUN_00401fd0("  2) Load .ACT file palette",0,0x21);
   engine_2d_c_drawText_FUN_00401fd0("  3) Load default editor palette",0,0x2c);
   wincore_wddvmem_cpp_swapBuffers_FUN_005eda20();
-  iVar2 = engine_2d_c_getInputWithPrompt_FUN_004032c0
-                    (&stack0xffffff48,0x14,0,0,"Enter option [1] : ");
+  iVar2 = engine_2d_c_getInputWithPrompt_FUN_004032c0(local_b8,0x14,0,0,"Enter option [1] : ");
   if (iVar2 == 0x1b) {
     return;
   }
   local_14 = 1;
   iVar2 = -1;
-  pcVar5 = &stack0xffffff48;
+  pcVar5 = local_b8;
   do {
     if (iVar2 == 0) break;
     iVar2 = iVar2 + -1;
@@ -42,7 +41,7 @@ void shape_design_c_loadPalette_FUN_0046e810(void)
     pcVar5 = pcVar5 + (uint)bVar7 * -2 + 1;
   } while (cVar1 != '\0');
   if (iVar2 != -2) {
-    local_14 = crt_stdlib_c_atoi_FUN_005ffef0(&stack0xffffff48);
+    local_14 = crt_stdlib_c_atoi_FUN_005ffef0(local_b8);
   }
   if (local_14 == 1) {
     if (g_LoadedModelName[0] == '\0') {

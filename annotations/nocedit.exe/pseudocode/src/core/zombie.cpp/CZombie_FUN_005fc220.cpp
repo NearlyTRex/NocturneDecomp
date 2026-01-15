@@ -13,62 +13,63 @@
 void core_zombie_cpp_CZombie_FUN_005fc220(void)
 
 {
-  int iVar1;
-  CMotionList *pCVar2;
+  float fVar1;
+  int iVar2;
+  CMotionList *pCVar3;
   CCharacter *in_stack_00000004;
   float *in_stack_00000008;
-  float fVar3;
+  float local_14;
   
   if ((0.0 < in_stack_00000008[0xb]) && (*in_stack_00000008 == -NAN)) {
-    iVar1 = crt_stdlib_c_rand_FUN_005feb5c();
-    switch(iVar1 % 6) {
+    iVar2 = crt_stdlib_c_rand_FUN_005feb5c();
+    switch(iVar2 % 6) {
     case 0:
-      pCVar2 = (CMotionList *)in_stack_00000004[1].base_actor.vtable;
+      pCVar3 = (CMotionList *)in_stack_00000004[1].base_actor.vtable;
       break;
     case 1:
-      pCVar2 = in_stack_00000004[1].model.motion_controller.motion_list_ptr;
+      pCVar3 = in_stack_00000004[1].model.motion_controller.motion_list_ptr;
       break;
     case 2:
-      pCVar2 = (CMotionList *)in_stack_00000004[1].model.motion_controller.current_motion_index;
+      pCVar3 = (CMotionList *)in_stack_00000004[1].model.motion_controller.current_motion_index;
       break;
     case 3:
-      pCVar2 = (CMotionList *)in_stack_00000004[1].model.motion_controller.current_frame_number;
+      pCVar3 = (CMotionList *)in_stack_00000004[1].model.motion_controller.current_frame_number;
       break;
     case 4:
-      pCVar2 = (CMotionList *)in_stack_00000004[1].model.motion_controller.tween_progress;
+      pCVar3 = (CMotionList *)in_stack_00000004[1].model.motion_controller.tween_progress;
       break;
     case 5:
-      pCVar2 = (CMotionList *)in_stack_00000004[1].model.motion_controller.tween_speed;
+      pCVar3 = (CMotionList *)in_stack_00000004[1].model.motion_controller.tween_speed;
       break;
     default:
       goto switchD_005fc256_default;
     }
-    *in_stack_00000008 = (float)pCVar2;
+    *in_stack_00000008 = (float)pCVar3;
   }
 switchD_005fc256_default:
-  pCVar2 = (CMotionList *)*in_stack_00000008;
-  if (((((pCVar2 == (CMotionList *)in_stack_00000004[1].base_actor.vtable) ||
-        (pCVar2 == in_stack_00000004[1].model.motion_controller.motion_list_ptr)) ||
-       (pCVar2 == (CMotionList *)in_stack_00000004[1].model.motion_controller.current_motion_index))
-      || ((pCVar2 == (CMotionList *)
+  pCVar3 = (CMotionList *)*in_stack_00000008;
+  if (((((pCVar3 == (CMotionList *)in_stack_00000004[1].base_actor.vtable) ||
+        (pCVar3 == in_stack_00000004[1].model.motion_controller.motion_list_ptr)) ||
+       (pCVar3 == (CMotionList *)in_stack_00000004[1].model.motion_controller.current_motion_index))
+      || ((pCVar3 == (CMotionList *)
                      in_stack_00000004[1].model.motion_controller.current_frame_number ||
-          (pCVar2 == (CMotionList *)in_stack_00000004[1].model.motion_controller.tween_speed)))) ||
-     (pCVar2 == (CMotionList *)in_stack_00000004[1].model.motion_controller.tween_progress)) {
-    fVar3 = in_stack_00000008[0xb];
+          (pCVar3 == (CMotionList *)in_stack_00000004[1].model.motion_controller.tween_speed)))) ||
+     (pCVar3 == (CMotionList *)in_stack_00000004[1].model.motion_controller.tween_progress)) {
+    local_14 = in_stack_00000008[0xb];
     if (in_stack_00000004[1].model.motion_controller.tween_progress == *in_stack_00000008) {
-      fVar3 = 0.05;
+      local_14 = 0.05;
     }
     if (in_stack_00000004[1].model.motion_controller.tween_speed == *in_stack_00000008) {
-      fVar3 = 0.02;
+      local_14 = 0.02;
     }
     if (g_CGamePtr->field57_0x1e0 != 0) {
-      fVar3 = 1.0;
+      local_14 = 1.0;
     }
     if (g_CGamePtr->blood_flag == 0) {
-      fVar3 = 0.0;
+      local_14 = 0.0;
     }
-    iVar1 = core_actor_cpp_randomChance_FUN_0040cd10(fVar3);
-    if (iVar1 != 0) {
+    iVar2 = core_actor_cpp_randomChance_FUN_0040cd10(local_14);
+    if (iVar2 != 0) {
       core_bodypart_cpp_CreateBodyPart_FUN_00418e10();
       core_charactr_cpp_CCharacter_FUN_0042bd30(in_stack_00000004);
       if ((CDemonActor_vtable *)*in_stack_00000008 == in_stack_00000004[1].base_actor.vtable) {
@@ -97,13 +98,13 @@ switchD_005fc256_default:
       }
     }
   }
-  fVar3 = *in_stack_00000008;
-  if (fVar3 == in_stack_00000004[1].model.motion_controller.tween_progress) {
+  fVar1 = *in_stack_00000008;
+  if (fVar1 == in_stack_00000004[1].model.motion_controller.tween_progress) {
     in_stack_00000008[1] = in_stack_00000008[1] * (float)_DAT_006589d5;
     return;
   }
-  if ((fVar3 != (float)in_stack_00000004[1].model.motion_controller.tween_type) &&
-     (fVar3 != in_stack_00000004[1].model.motion_controller.tween_speed)) {
+  if ((fVar1 != (float)in_stack_00000004[1].model.motion_controller.tween_type) &&
+     (fVar1 != in_stack_00000004[1].model.motion_controller.tween_speed)) {
     in_stack_00000008[1] = in_stack_00000008[1] * (float)_DAT_006589cd;
     return;
   }

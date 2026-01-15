@@ -20,7 +20,6 @@ void core_bugs_cpp_FUN_00425cc0(void)
   int iVar3;
   int extraout_EDX;
   int extraout_EDX_00;
-  BADSPACEBASE *in_ESP;
   int iVar4;
   CCharacter *in_stack_00000004;
   float in_stack_00000008;

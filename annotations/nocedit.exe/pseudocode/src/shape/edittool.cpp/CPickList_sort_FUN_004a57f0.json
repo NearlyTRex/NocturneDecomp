@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 47,
-    "complexity_score": 83,
+    "complexity_score": 56,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 6,
-    "pseudocode_lines": 18,
-    "suspect_count": 5,
+    "pseudocode_lines": 16,
+    "suspect_count": 3,
     "suspect_types": [
       "call_esp_preserve",
-      "stack_param",
       "variadic_preserve"
     ],
-    "total_lines": 65
+    "total_lines": 63
   },
   "cross_references": [
     {
@@ -142,22 +141,8 @@
   },
   "suspects": [
     {
-      "description": "Unresolved stack parameter",
-      "line": 6,
-      "match": "in_stack_00000010",
-      "text": "int in_stack_00000010;",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 19,
-      "match": "in_stack_00000010",
-      "text": "(&this_ptr->base_strlist,sort_order,in_stack_00000010);",
-      "type": "stack_param"
-    },
-    {
       "call_address": "004a583a",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",
@@ -171,7 +156,7 @@
     },
     {
       "call_address": "004a585f",
-      "caller_has_stack_issues": true,
+      "caller_has_stack_issues": false,
       "description": "Variadic call in non-EBP-frame function; fix by preserving ESP across CALL",
       "esp_certainty_after": "cfg_resolved",
       "esp_certainty_at_call": "cfg_resolved",

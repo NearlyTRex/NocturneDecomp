@@ -22,7 +22,7 @@ int crt_unknown_c_FUN_0060fe94(void)
   int iVar8;
   short *psVar9;
   short *in_stack_00000004;
-  int in_stack_00000010;
+  int in_stack_00000008;
   
   dest = (char **)g_EnvironInitialized;
   do {
@@ -38,7 +38,7 @@ int crt_unknown_c_FUN_0060fe94(void)
       if (sVar4 != sVar5) break;
       if (*psVar7 == 0x3d) {
         iVar8 = (int)dest - g_EnvironInitialized >> 2;
-        if (in_stack_00000010 == 0) {
+        if (in_stack_00000008 == 0) {
           return iVar8 + 1;
         }
         ptr = *dest;

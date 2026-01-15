@@ -21,8 +21,8 @@ core_setcolid_cpp_CDemonSet_raycast_FUN_00572530
   float fVar7;
   float fVar8;
   float fVar9;
-  BADSPACEBASE *in_ESP;
-  float local_18 [2];
+  float local_20 [3];
+  float local_14;
   
   if (&this_ptr->collision_result_vec1 != ray_origin) {
     (this_ptr->collision_result_vec1).x = ray_origin->x;
@@ -35,10 +35,10 @@ core_setcolid_cpp_CDemonSet_raycast_FUN_00572530
     (this_ptr->collision_result_vec2).z = ray_target->z;
   }
   out_intersection_point = &this_ptr->voxel_hit_point;
-  fVar9 = core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70
-                    (&g_CDemonRaytraceInstance,ray_origin,ray_target,out_intersection_point,
-                     &this_ptr->voxel_surface_type);
-  this_ptr->voxel_distance = (int)fVar9;
+  local_14 = core_dtrace_cpp_CDemonRaytrace_rayVoxelIntersection_FUN_00495b70
+                       (&g_CDemonRaytraceInstance,ray_origin,ray_target,out_intersection_point,
+                        &this_ptr->voxel_surface_type);
+  this_ptr->voxel_distance = (int)local_14;
   if (&this_ptr->collision_normal != out_intersection_point) {
     (this_ptr->collision_normal).x = out_intersection_point->x;
     (this_ptr->collision_normal).y = (this_ptr->voxel_hit_point).y;
@@ -61,7 +61,7 @@ core_setcolid_cpp_CDemonSet_raycast_FUN_00572530
     fVar6 = *pfVar1;
     fVar7 = ray_origin->y;
     fVar8 = ray_origin->z;
-    if (&this_ptr->collision_impact_position != (CVector3f *)local_18) {
+    if (&this_ptr->collision_impact_position != (CVector3f *)local_20) {
       (this_ptr->collision_impact_position).x =
            ray_origin->x + (ray_target->x - ray_origin->x) * *pfVar1;
       (this_ptr->collision_impact_position).y = fVar7 + (fVar9 - fVar2) * fVar5;

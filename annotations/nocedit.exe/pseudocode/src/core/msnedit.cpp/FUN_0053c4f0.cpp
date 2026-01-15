@@ -12,7 +12,6 @@ void core_msnedit_cpp_FUN_0053c4f0(void)
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   CDemonRenderer *unaff_EDI;
   int x;
   int in_stack_00000004;

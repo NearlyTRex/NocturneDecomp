@@ -13,12 +13,11 @@ engine_font_cpp_CBitFont_drawTextCenterInClip_FUN_004cdff0
 {
   int iVar1;
   int iVar2;
-  int unaff_EBP;
   
   iVar2 = g_ClipLeft + g_ClipRight;
   iVar1 = engine_font_cpp_CBitFont_getTextWidth_FUN_004cfe80(this_ptr,text_string);
   iVar1 = engine_font_cpp_CBitFont_drawTextRight_FUN_004cdbf0
-                    (this_ptr,(char *)(((iVar2 + 1) - iVar1) / 2),color_mode,color_value,
-                     (int)text_string,unaff_EBP);
+                    (this_ptr,(char *)(((iVar2 + 1) - iVar1) / 2),y_pos,color_mode,color_value,
+                     (int)text_string);
   return iVar1;
 }

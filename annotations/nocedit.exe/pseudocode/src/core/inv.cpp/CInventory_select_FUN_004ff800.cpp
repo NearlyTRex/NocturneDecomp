@@ -14,10 +14,11 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004ff800(CInventory *this_ptr,CDe
   CDemonActor *pCVar3;
   char *pcVar4;
   CLightGun *pCVar5;
-  BADSPACEBASE *in_ESP;
   char *pcVar6;
   char *pcVar7;
   byte bVar8;
+  char local_114 [256];
+  CDemonActor *local_14;
   
   bVar8 = 0;
   iVar2 = core_actor_cpp_isOfClass_FUN_0040c6d0(actor_ptr,"CAmmo");
@@ -46,9 +47,9 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004ff800(CInventory *this_ptr,CDe
       }
     }
     else {
-      pCVar3 = core_actor_cpp_castToClassHash_FUN_0040c790
-                         (actor_ptr,g_CHealthItemClassInfo.name_hash);
-      if (pCVar3 == (CDemonActor *)0x0) {
+      local_14 = core_actor_cpp_castToClassHash_FUN_0040c790
+                           (actor_ptr,g_CHealthItemClassInfo.name_hash);
+      if (local_14 == (CDemonActor *)0x0) {
         g_CurrentFilename = "..\\core\\inv.cpp";
         g_CurrentLineNumber = 0x5c9;
         core_main_c_displayErrorAndQuit_FUN_00506f10("CInventory::select - Catch 22");
@@ -57,7 +58,7 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004ff800(CInventory *this_ptr,CDe
         return 1;
       }
       pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_005441f0("You have used : ");
-      pcVar6 = &stack0xffffff04;
+      pcVar6 = local_114;
       do {
         cVar1 = *pcVar4;
         *pcVar6 = cVar1;
@@ -69,7 +70,7 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004ff800(CInventory *this_ptr,CDe
       } while (cVar1 != '\0');
       pcVar6 = core_inv_cpp_getItemDisplayName_FUN_004fcf00(actor_ptr);
       iVar2 = -1;
-      pcVar4 = &stack0xffffff08;
+      pcVar4 = local_114;
       do {
         pcVar7 = pcVar4;
         if (iVar2 == 0) break;
@@ -90,7 +91,7 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004ff800(CInventory *this_ptr,CDe
       } while (cVar1 != '\0');
       pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_005441f0(".");
       iVar2 = -1;
-      pcVar4 = &stack0xffffff0c;
+      pcVar4 = local_114;
       do {
         pcVar7 = pcVar4;
         if (iVar2 == 0) break;
@@ -109,7 +110,7 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004ff800(CInventory *this_ptr,CDe
         pcVar7[1] = cVar1;
         pcVar7 = pcVar7 + 2;
       } while (cVar1 != '\0');
-      core_game_cpp_CGame_displayMessage_FUN_004d7f20(g_CGamePtr,&stack0xffffff0c,5.0);
+      core_game_cpp_CGame_displayMessage_FUN_004d7f20(g_CGamePtr,local_114,5.0);
       iVar2 = core_health_cpp_FUN_004f1fd0();
       if (iVar2 < 1) {
         core_inv_cpp_CInventory_removeItem_FUN_004fea70(this_ptr,actor_ptr,1);

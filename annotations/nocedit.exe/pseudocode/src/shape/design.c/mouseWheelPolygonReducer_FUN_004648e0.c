@@ -19,11 +19,12 @@ int __cdecl shape_design_c_mouseWheelPolygonReducer_FUN_004648e0(int selected_po
   SVertexData *pSVar8;
   SShapeEditorPolygon *pSVar9;
   byte bVar10;
+  int local_18;
   
   bVar10 = 0;
   iVar2 = crt_string_c_strcmp_FUN_005fef20(g_LoadedModelName,&s_EmptyChar_0061c2ba);
   if (iVar2 == 0) {
-    selected_polygon_index = -1;
+    local_18 = -1;
   }
   else {
     if ((g_KeyboardState[0x11] != '\0') && (g_KeyboardState[0x2a] != '\0')) {
@@ -75,7 +76,10 @@ int __cdecl shape_design_c_mouseWheelPolygonReducer_FUN_004648e0(int selected_po
     if ((g_PolygonReducerEnabled == 0) ||
        (((iVar2 = crt_string_c_strcmp_FUN_005fef20(g_BackupModelName,g_LoadedModelName), iVar2 == 0
          && (g_VertexCount <= g_BackupVertexCount)) && (g_PolygonCount <= g_BackupPolygonCount)))) {
-      if (g_PolygonReducerEnabled != 0) {
+      if (g_PolygonReducerEnabled == 0) {
+        local_18 = selected_polygon_index;
+      }
+      else {
         selected_polygon_index = shape_design_c_findClosestPolygonToMouse_FUN_00466250();
         engine_2d_c_drawTextColor_FUN_00402430
                   ("Wheel polygon reducer on",0,g_WindowHeight + -0x4d);
@@ -143,6 +147,7 @@ int __cdecl shape_design_c_mouseWheelPolygonReducer_FUN_004648e0(int selected_po
           g_VertexCount = g_BackupVertexCount;
           g_PolygonCount = g_BackupPolygonCount;
         }
+        local_18 = selected_polygon_index;
       }
     }
     else {
@@ -155,8 +160,8 @@ int __cdecl shape_design_c_mouseWheelPolygonReducer_FUN_004648e0(int selected_po
         g_BackupVertices = (SVertexData *)0x0;
       }
       g_PolygonReducerEnabled = 0;
-      selected_polygon_index = -1;
+      local_18 = -1;
     }
   }
-  return selected_polygon_index;
+  return local_18;
 }

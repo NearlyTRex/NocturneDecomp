@@ -11,7 +11,6 @@ core_xform_cpp_buildRotationX_FUN_005f6c40(CMatrix3x4f *output_matrix,float angl
 
 {
   int iVar1;
-  BADSPACEBASE *in_ESP;
   uint *unaff_ESI;
   float *pfVar2;
   float10 fVar3;

@@ -1,18 +1,17 @@
 {
   "complexity": {
     "assembly_lines": 55,
-    "complexity_score": 93,
+    "complexity_score": 67,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 8,
-    "pseudocode_lines": 28,
-    "suspect_count": 5,
+    "pseudocode_lines": 27,
+    "suspect_count": 3,
     "suspect_types": [
       "call_esp_preserve",
-      "stack_param",
-      "unaffected_reg"
+      "stack_param"
     ],
-    "total_lines": 83
+    "total_lines": 82
   },
   "cross_references": [
     {
@@ -148,32 +147,18 @@
   },
   "suspects": [
     {
-      "description": "Unaffected register variable",
-      "line": 7,
-      "match": "unaff_EBX",
-      "text": "int unaff_EBX;",
-      "type": "unaffected_reg"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 10,
-      "match": "in_stack_0000000c",
-      "text": "int in_stack_0000000c;",
+      "line": 9,
+      "match": "in_stack_00000008",
+      "text": "char *in_stack_00000008;",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
-      "match": "in_stack_0000000c",
-      "text": "if ((-1 < iVar2) && (*(char *)(in_stack_0000000c + unaff_EBX) != '\\0')) {",
+      "line": 13,
+      "match": "in_stack_00000008",
+      "text": "if ((-1 < iVar2) && (*in_stack_00000008 != '\\0')) {",
       "type": "stack_param"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 14,
-      "match": "unaff_EBX",
-      "text": "if ((-1 < iVar2) && (*(char *)(in_stack_0000000c + unaff_EBX) != '\\0')) {",
-      "type": "unaffected_reg"
     },
     {
       "add_esp_value": 12,

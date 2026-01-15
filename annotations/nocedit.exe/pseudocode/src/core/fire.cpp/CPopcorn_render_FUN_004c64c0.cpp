@@ -11,7 +11,6 @@ void __cdecl core_fire_cpp_CPopcorn_render_FUN_004c64c0(CPopcorn *this_ptr)
 {
   SRenderVertex *vertex_ptr;
   int iVar1;
-  BADSPACEBASE *in_ESP;
   CVector3i *unaff_EDI;
   byte bVar2;
   int aiStackY_1060 [1002];

@@ -14,7 +14,6 @@ void core_script_cpp_FUN_00566390(void)
 {
   char cVar1;
   int iVar2;
-  byte *dest;
   SIZE_T n;
   uint uVar3;
   int iVar4;
@@ -23,19 +22,19 @@ void core_script_cpp_FUN_00566390(void)
   byte *src;
   byte bVar7;
   char *in_stack_00000008;
-  int in_stack_00000010;
+  int in_stack_0000000c;
+  byte *local_18;
   int local_14;
-  int iVar8;
   
   bVar7 = 0;
   iVar2 = core_script_cpp_CScript_editorX2Index_FUN_00566a90();
   cVar1 = *in_stack_00000008;
-  iVar8 = DAT_0310fd48;
+  local_14 = DAT_0310fd48;
   do {
     if (cVar1 == '\0') {
-      if (in_stack_00000010 != 0) {
+      if (in_stack_0000000c != 0) {
         DAT_0310fd44 = core_script_cpp_CScript_editorIndex2X_FUN_00566b30();
-        DAT_0310fd48 = iVar8;
+        DAT_0310fd48 = local_14;
         return;
       }
       return;
@@ -52,7 +51,7 @@ void core_script_cpp_FUN_00566390(void)
     for (iVar4 = ~uVar3 - 1; iVar4 < iVar2; iVar4 = iVar4 + 1) {
       (&DAT_031101c0)[iVar4] = 0x20;
     }
-    dest = &DAT_031101c1 + iVar2;
+    local_18 = &DAT_031101c1 + iVar2;
     src = &DAT_031101c0 + iVar2;
     for (; (cVar1 = *in_stack_00000008, cVar1 != '\0' && (cVar1 != '\n'));
         in_stack_00000008 = in_stack_00000008 + 1) {
@@ -61,8 +60,9 @@ void core_script_cpp_FUN_00566390(void)
         n = iVar4 - iVar2;
         iVar4 = iVar4 + 1;
         iVar5 = iVar2 + 1;
-        crt_string_c_memmove_FUN_005fe5e0(dest,src,n);
+        crt_string_c_memmove_FUN_005fe5e0(local_18,src,n);
         src = src + 1;
+        local_18 = local_18 + 1;
         (&DAT_031101c0)[iVar2] = *in_stack_00000008;
       }
       iVar2 = iVar5;
@@ -72,7 +72,7 @@ void core_script_cpp_FUN_00566390(void)
     if (*in_stack_00000008 == '\n') {
       in_stack_00000008 = in_stack_00000008 + 1;
       core_script_cpp_CScript_insertAndEditorPutLine_FUN_00566330();
-      iVar8 = local_14 + 1;
+      local_14 = local_14 + 1;
       iVar2 = 0;
     }
     cVar1 = *in_stack_00000008;

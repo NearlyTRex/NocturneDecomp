@@ -13,7 +13,6 @@ void core_bugs_cpp_FUN_00425340(void)
 {
   float fVar1;
   float fVar2;
-  BADSPACEBASE *in_ESP;
   int iVar3;
   int iVar4;
   int iVar5;

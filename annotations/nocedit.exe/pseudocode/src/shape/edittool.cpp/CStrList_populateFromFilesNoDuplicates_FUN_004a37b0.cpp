@@ -17,23 +17,15 @@ shape_edittool_cpp_CStrList_populateFromFilesNoDuplicates_FUN_004a37b0
   int iVar4;
   uint uVar5;
   int index;
-  BADSPACEBASE *in_ESP;
   byte bVar6;
-  char in_stack_fffff7c0;
-  CStrList *in_stack_fffff7c4;
-  byte auStack_82c [780];
-  byte auStack_520 [8];
-  CFileFinder CStack_518;
-  char acStack_404 [4];
-  char acStack_400 [244];
-  char acStack_30c [4];
-  char cStack_308;
-  byte auStack_307 [3];
-  char acStack_304 [248];
-  char acStack_20c [8];
-  char acStack_204 [244];
-  char local_110 [8];
-  char acStack_108 [248];
+  CFileFinder *str2;
+  CPodSearchContext local_844;
+  CFileFinder local_528;
+  char local_414 [260];
+  char local_310;
+  byte local_30f [255];
+  char local_210 [256];
+  char local_110 [256];
   
   bVar6 = 0;
   if ((directory_path == (char *)0x0) || (*directory_path == '\0')) {
@@ -52,55 +44,50 @@ shape_edittool_cpp_CStrList_populateFromFilesNoDuplicates_FUN_004a37b0
     crt_stdio_c_sprintf_FUN_005fdbd0(local_110,"%s\\%s",directory_path,file_pattern);
   }
   if (g_CDemonPodPtr != (CDemonPod *)0x0) {
-    engine_pod_cpp_CPod_initSearch_FUN_00550ea0
-              ((CPod *)g_CDemonPodPtr,local_110 + 4,(CPodSearchContext *)&stack0xfffff7c0);
-    while (in_stack_fffff7c0 != '\0') {
+    engine_pod_cpp_CPod_initSearch_FUN_00550ea0((CPod *)g_CDemonPodPtr,local_110,&local_844);
+    while (local_844.current_file_info.found_path[0] != '\0') {
       engine_dosio_c_splitPath_FUN_00481f20
-                (&stack0xfffff7c0,(char *)0x0,(char *)0x0,acStack_20c,acStack_30c);
-      if (cStack_308 == '.') {
+                ((char *)&local_844,(char *)0x0,(char *)0x0,local_210,&local_310);
+      if (local_310 == '.') {
         uVar5 = 0xffffffff;
-        pcVar3 = &cStack_308;
+        pcVar3 = &local_310;
         do {
           if (uVar5 == 0) break;
           uVar5 = uVar5 - 1;
           cVar1 = *pcVar3;
           pcVar3 = pcVar3 + (uint)bVar6 * -2 + 1;
         } while (cVar1 != '\0');
-        crt_string_c_memmove_FUN_005fe5e0(&cStack_308,auStack_307,~uVar5 - 1);
+        crt_string_c_memmove_FUN_005fe5e0(&local_310,local_30f,~uVar5 - 1);
       }
-      engine_dosio_c_makePath_FUN_00481f50
-                ((char *)&CStack_518.search_handle,(char *)0x0,(char *)0x0,acStack_204,acStack_304);
-      in_stack_fffff7c0 = -0x56;
-      in_stack_fffff7c4 = this_ptr;
-      iVar2 = shape_edittool_cpp_CStrList_findString_FUN_004a3030(this_ptr,acStack_404);
+      engine_dosio_c_makePath_FUN_00481f50(local_414,(char *)0x0,(char *)0x0,local_210,&local_310);
+      iVar2 = shape_edittool_cpp_CStrList_findString_FUN_004a3030(this_ptr,local_414);
       if (iVar2 < 0) {
-        in_stack_fffff7c4 = (CStrList *)0x4a39b0;
-        shape_edittool_cpp_CStrList_add_FUN_004a2b80(this_ptr,acStack_400);
+        shape_edittool_cpp_CStrList_add_FUN_004a2b80(this_ptr,local_414);
       }
-      engine_pod_cpp_CPod_getNextSearchResult_FUN_00550ef0
-                ((CPod *)g_CDemonPodPtr,(CPodSearchContext *)auStack_82c);
+      engine_pod_cpp_CPod_getNextSearchResult_FUN_00550ef0((CPod *)g_CDemonPodPtr,&local_844);
     }
   }
   iVar2 = this_ptr->item_count;
-  engine_dosio_c_CFileFinder_ctor_FUN_00481c30((CFileFinder *)(auStack_82c + 0x308));
-  engine_dosio_c_CFileFinder_openSearch_FUN_00481c70((CFileFinder *)auStack_520,acStack_108);
+  engine_dosio_c_CFileFinder_ctor_FUN_00481c30(&local_528);
+  engine_dosio_c_CFileFinder_openSearch_FUN_00481c70(&local_528,local_110);
   do {
-    if (auStack_520[4] == '\0') {
-      engine_dosio_c_CFileFinder_closeSearch_FUN_00481d70((CFileFinder *)(auStack_520 + 4));
-      engine_dosio_c_CFileFinder_dtor_FUN_00481c50(&CStack_518,0);
+    if (local_528.filename[0] == '\0') {
+      engine_dosio_c_CFileFinder_closeSearch_FUN_00481d70(&local_528);
+      engine_dosio_c_CFileFinder_dtor_FUN_00481c50(&local_528,0);
       return;
     }
     index = 0;
     if (0 < iVar2) {
       do {
+        str2 = &local_528;
         pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_004a2f70(this_ptr,index);
-        iVar4 = crt_string_c_stricmp_FUN_005fe7f0(pcVar3,(char *)in_stack_fffff7c4);
+        iVar4 = crt_string_c_stricmp_FUN_005fe7f0(pcVar3,str2->filename);
         if (iVar4 == 0) goto LAB_004a3935;
         index = index + 1;
       } while (index < iVar2);
     }
-    shape_edittool_cpp_CStrList_add_FUN_004a2b80(this_ptr,auStack_520);
+    shape_edittool_cpp_CStrList_add_FUN_004a2b80(this_ptr,local_528.filename);
 LAB_004a3935:
-    engine_dosio_c_CFileFinder_findNext_FUN_00481cf0((CFileFinder *)auStack_520);
+    engine_dosio_c_CFileFinder_findNext_FUN_00481cf0(&local_528);
   } while( true );
 }

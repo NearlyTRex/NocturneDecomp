@@ -14,10 +14,9 @@ engine_winfont_cpp_CWinFont_getStringHeight_FUN_005f2b00(CWinFont *this_ptr,char
   int iVar2;
   BOOL BVar3;
   uint uVar4;
-  BADSPACEBASE *in_ESP;
   char *pcVar5;
   byte bVar6;
-  int in_stack_0000000c;
+  tagSIZE local_10;
   
   bVar6 = 0;
   iVar2 = engine_winfont_cpp_CWinFont_createTextBackground_FUN_005f2860(this_ptr,-1,-1);
@@ -32,10 +31,9 @@ engine_winfont_cpp_CWinFont_getStringHeight_FUN_005f2b00(CWinFont *this_ptr,char
     cVar1 = *pcVar5;
     pcVar5 = pcVar5 + (uint)bVar6 * -2 + 1;
   } while (cVar1 != '\0');
-  BVar3 = (*GetTextExtentPoint32A)
-                    (this_ptr->deviceContextHandle,text_string,~uVar4 - 1,(LPSIZE)&stack0xfffffff4);
+  BVar3 = (*GetTextExtentPoint32A)(this_ptr->deviceContextHandle,text_string,~uVar4 - 1,&local_10);
   if (BVar3 == 0) {
-    in_stack_0000000c = 0;
+    local_10.cy = 0;
   }
-  return in_stack_0000000c + this_ptr->yOffset1 + this_ptr->yOffset2;
+  return local_10.cy + this_ptr->yOffset1 + this_ptr->yOffset2;
 }

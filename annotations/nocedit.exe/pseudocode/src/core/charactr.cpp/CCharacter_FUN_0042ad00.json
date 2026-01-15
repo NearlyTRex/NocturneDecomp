@@ -1,17 +1,18 @@
 {
   "complexity": {
     "assembly_lines": 232,
-    "complexity_score": 208,
+    "complexity_score": 234,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 7,
-    "pseudocode_lines": 108,
-    "suspect_count": 9,
+    "pseudocode_lines": 109,
+    "suspect_count": 11,
     "suspect_types": [
       "extra_output",
-      "pointer_cast"
+      "pointer_cast",
+      "suspect_float"
     ],
-    "total_lines": 340
+    "total_lines": 341
   },
   "cross_references": [
     {
@@ -329,28 +330,28 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 11,
+      "line": 10,
       "match": "extraout_EAX",
       "text": "int *extraout_EAX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 12,
+      "line": 11,
       "match": "extraout_ECX",
       "text": "int extraout_ECX;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 14,
+      "line": 13,
       "match": "extraout_ECX_00",
       "text": "int extraout_ECX_00;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 17,
+      "line": 16,
       "match": "extraout_EDX",
       "text": "int extraout_EDX;",
       "type": "extra_output"
@@ -359,35 +360,49 @@
       "description": "Complex pointer cast",
       "line": 43,
       "match": "(uint *)((int)",
-      "text": "*(uint *)((int)&DAT_00823c54 + iVar8) = 0;",
+      "text": "*(uint *)((int)&DAT_00823c54 + iVar7) = 0;",
       "type": "pointer_cast"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 96,
       "match": "extraout_ECX",
-      "text": "puVar7 = (uchar *)(extraout_ECX + 4);",
+      "text": "puVar6 = (uchar *)(extraout_ECX + 4);",
       "type": "extra_output"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 98,
+      "match": "6.123774e-39",
+      "text": "local_30 = (float)(int)ROUND(dVar12) + 6.123774e-39;",
+      "type": "suspect_float"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 99,
       "match": "extraout_EDX",
-      "text": "iVar8 = extraout_EDX + 1;",
-      "type": "extra_output"
-    },
-    {
-      "description": "Inferred extra output (wrong calling convention)",
-      "line": 106,
-      "match": "extraout_EAX",
-      "text": "*(int *)(*extraout_EAX + extraout_ECX_00 + 0x2c) = (int)ROUND(dVar13);",
+      "text": "iVar7 = extraout_EDX + 1;",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
       "line": 106,
       "match": "extraout_ECX_00",
-      "text": "*(int *)(*extraout_EAX + extraout_ECX_00 + 0x2c) = (int)ROUND(dVar13);",
+      "text": "local_1c = extraout_ECX_00 + 0x30;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 107,
+      "match": "extraout_EAX",
+      "text": "*(int *)(*extraout_EAX + extraout_ECX_00 + 0x2c) = (int)ROUND(dVar12);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 107,
+      "match": "extraout_ECX_00",
+      "text": "*(int *)(*extraout_EAX + extraout_ECX_00 + 0x2c) = (int)ROUND(dVar12);",
       "type": "extra_output"
     }
   ]

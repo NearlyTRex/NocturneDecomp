@@ -22,7 +22,6 @@ core_xform_cpp_transformVector3x4InPlace_FUN_005f4e20
   float fVar9;
   float fVar10;
   float fVar11;
-  BADSPACEBASE *in_ESP;
   CVector3f local_c;
   
   fVar1 = matrix->m[1].x;
