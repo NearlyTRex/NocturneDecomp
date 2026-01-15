@@ -42,8 +42,17 @@ Example (global decompiler_fixes.json):
     {
         "multiequal_stack_trace": [
             "0x00401000",
-            "0x00402500",
+            "0x00402500"
+        ],
+        "force_spacebase": [
+            "0x00401000",
             "0x00405a00"
+        ],
+        "alias_recovery": [
+            "0x00401000"
+        ],
+        "spacebase_propagation": [
+            "0x004319b0"
         ]
     }
 
@@ -79,7 +88,9 @@ Example (FUN_00401000.json):
             "address": "0x00401000"
         },
         "decompiler_fixes": [
-            "multiequal_stack_trace"
+            "multiequal_stack_trace",
+            "force_spacebase",
+            "alias_recovery"
         ]
     }
 
@@ -96,6 +107,64 @@ multiequal_stack_trace (DFIX_MULTIEQUAL_STACK_TRACE = 1 << 0)
     - Function has BADSPACEBASE errors
     - Function has complex control flow (loops, switches, multiple returns)
     - Standard decompilation produces incorrect stack variable references
+
+force_spacebase (DFIX_FORCE_SPACEBASE = 1 << 1)
+    Forces construction of the spacebase input varnode during type inference
+    if it doesn't already exist. This is applied in ActionInferTypes::apply
+    (coreaction.cc) and enables type propagation for stack-relative accesses
+    even when the stack pointer wasn't initially recognized as a function input.
+
+    Use when:
+    - Function has BADSPACEBASE errors
+    - Stack pointer (ESP) wasn't marked as function input by calling convention
+    - Type inference fails to propagate types to stack variables
+
+    Location: coreaction.cc (ActionInferTypes::apply)
+
+stack_symbol_lookup (DFIX_STACK_SYMBOL_LOOKUP = 1 << 2)
+    Improves variable recognition by trying harder to find containing symbols
+    when a direct symbol lookup fails. Instead of immediately returning a 1-byte
+    TYPE_UNKNOWN, this fix:
+    1. Queries with a larger size to find containing symbols
+    2. Calculates offset within containing symbol and gets subtype
+    3. Falls back to pointer-sized TYPE_UNKNOWN instead of 1-byte
+
+    Use when:
+    - Function shows TYPE_UNKNOWN for stack variables that should have types
+    - Local variables weren't fully enumerated but context suggests types
+    - Decompiled output has many 1-byte unknown references
+
+    Location: type.cc (TypeSpacebase::getSubType)
+
+alias_recovery (DFIX_ALIAS_RECOVERY = 1 << 3)
+    Attempts to construct the spacebase input varnode in the alias checker
+    before bailing out. Without this fix, AliasChecker::gatherInternal returns
+    early if no spacebase input exists, skipping alias analysis entirely.
+    This fix tries to construct the spacebase so alias analysis can proceed.
+
+    Use when:
+    - Function has BADSPACEBASE errors
+    - Alias analysis appears to be missing (incorrect pointer aliasing)
+    - Stack pointer wasn't recognized as input during initial analysis
+
+    Location: varmap.cc (AliasChecker::gatherInternal)
+
+spacebase_propagation (DFIX_SPACEBASE_PROPAGATION = 1 << 4)
+    Adds a new rule (RuleSpacebaseCopy) that propagates the spacebase flag
+    when the stack pointer is copied to another register. This handles the
+    common pattern:
+        MOV EAX, ESP    ; Copy stack pointer to general register
+        PUSH EAX        ; Pass as argument
+
+    Without this fix, the copy loses spacebase typing and subsequent uses
+    of EAX aren't recognized as stack references.
+
+    Use when:
+    - Function copies ESP to another register before use
+    - Stack pointer is passed as an argument to another function
+    - Decompiler loses track of stack references after MOV ESP pattern
+
+    Location: ruleaction.cc/hh (RuleSpacebaseCopy), coreaction.cc (rule registration)
 
 ================================================================================
 USAGE
@@ -135,10 +204,18 @@ from ghidra_annotations.util.log import log_info
 # Fix flag constants - must match DecompilerFixFlags in decompiler_fixes.hh
 DFIX_NONE = 0
 DFIX_MULTIEQUAL_STACK_TRACE = 1 << 0
+DFIX_FORCE_SPACEBASE = 1 << 1
+DFIX_STACK_SYMBOL_LOOKUP = 1 << 2
+DFIX_ALIAS_RECOVERY = 1 << 3
+DFIX_SPACEBASE_PROPAGATION = 1 << 4
 
 # Mapping from JSON key names to flag values
 FIX_NAME_TO_FLAG = {
     "multiequal_stack_trace": DFIX_MULTIEQUAL_STACK_TRACE,
+    "force_spacebase": DFIX_FORCE_SPACEBASE,
+    "stack_symbol_lookup": DFIX_STACK_SYMBOL_LOOKUP,
+    "alias_recovery": DFIX_ALIAS_RECOVERY,
+    "spacebase_propagation": DFIX_SPACEBASE_PROPAGATION,
 }
 
 # Cache of loaded fixes configuration (global file)
