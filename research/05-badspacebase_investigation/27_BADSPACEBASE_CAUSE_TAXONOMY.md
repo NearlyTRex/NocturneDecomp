@@ -118,6 +118,32 @@ All checks pass - spacebase exists and is found, yet BADSPACEBASE still appears.
 
 **Investigation needed**: Why does the decompiler create `in_ESP` as a parameter?
 
+**ROOT CAUSE FOUND (2026-01-14)**:
+
+The issue is in `HighVariable::hasName()` (variable.cc:737-744):
+```cpp
+if (isUnaffected()) {
+  if (!isInput()) return false;
+  if (indirectonly) return false;
+  Varnode *vn = getInputVarnode();
+  if (!vn->isIllegalInput()) {
+    if (vn->isSpacebase())   // Skip naming for spacebase
+      return false;
+  }
+}
+```
+
+The spacebase check only applies when `isUnaffected()` is true. In `x86watcom.cspec`,
+ESP is NOT listed in `<unaffected>` (unlike `x86gcc.cspec` which includes it).
+
+Since ESP isn't marked as unaffected:
+1. `isUnaffected()` returns false
+2. The spacebase check is skipped entirely
+3. `hasName()` returns true
+4. A symbol is created for ESP → `in_ESP`
+
+**FIX**: Add `<register name="ESP"/>` to all `<unaffected>` sections in `x86watcom.cspec`.
+
 ---
 
 ## Category E Deep Dive: `applyActPalette_FUN_004319b0`
@@ -198,18 +224,19 @@ The `in_ESP` variable suggests the decompiler's **parameter inference** phase in
 
 ## Fix Applicability Matrix
 
-| Cause Category | Force Spacebase | Alias Recovery | Multiequal Trace | Spacebase Propagation | Callfixup |
-|----------------|-----------------|----------------|------------------|----------------------|-----------|
-| A: Missing Spacebase | ✓ | ✓ | - | - | - |
-| B: MULTIEQUAL Loss | - | - | ✓ | - | - |
-| C: ESP Copied | - | - | - | ✓ | - |
-| D: Stack Probe | - | - | - | - | ✓ |
-| E: Register Param | ✗ | ✗ | ✗ | ✗ | ✗ |
+| Cause Category | Force Spacebase | Alias Recovery | Multiequal Trace | Spacebase Propagation | Callfixup | Cspec Fix |
+|----------------|-----------------|----------------|------------------|----------------------|-----------|-----------|
+| A: Missing Spacebase | ✓ | ✓ | - | - | - | - |
+| B: MULTIEQUAL Loss | - | - | ✓ | - | - | - |
+| C: ESP Copied | - | - | - | ✓ | - | - |
+| D: Stack Probe | - | - | - | - | ✓ | - |
+| E: Register Param | ✗ | ✗ | ✗ | ✗ | ✗ | ✓ |
 
 Legend:
 - ✓ = Fix applies
 - ✗ = Fix does not apply (tested and confirmed)
 - `-` = Fix not applicable to this category
+- Cspec Fix = Add ESP to `<unaffected>` in cspec
 
 ---
 
@@ -223,7 +250,7 @@ From `test_decompile_scenarios.py`:
 | scenario2_ebp_call_anchor | B | MULTIEQUAL trace |
 | scenario3_stack_probe_before_frame | D | Callfixup |
 | scenario4_ebp_variadic | B + variadic | MULTIEQUAL + proto override |
-| scenario5_non_ebp_badspacebase | **E** (some) | **UNKNOWN** |
+| scenario5_non_ebp_badspacebase | **E** (some) | **Cspec fix** (add ESP to unaffected) |
 | scenario6_ebp_variadic_errors | variadic only | Proto override |
 
 ---

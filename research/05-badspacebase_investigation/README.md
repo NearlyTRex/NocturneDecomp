@@ -121,9 +121,12 @@ Since we use Ghidra 12.1 built from source, any SLEIGH or decompiler changes req
 | Binary patching | Not attempted | Can't change instruction sizes |
 | GhidraCraft P-code | Not attempted | Powerful but fork is outdated (Ghidra 9.x) |
 | PcodeInjectLibrary | Investigated | **Not suitable** - designed for custom processors |
+| **ESP Unaffected in Cspec** | **IMPLEMENTED** | Fixes Category E BADSPACEBASE (in_ESP declaration) |
 
 ## Changelog
 
+- 2026-01-14: **FIX** - Added ESP to `<unaffected>` in x86watcom.cspec - fixes Category E BADSPACEBASE
+- 2026-01-14: **ROOT CAUSE** - Found Category E BADSPACEBASE cause: ESP not in cspec unaffected → hasName() skips spacebase check
 - 2026-01-14: **RESEARCH** - Document 27: BADSPACEBASE Cause Taxonomy - categorizes 5 distinct root causes
 - 2026-01-14: **IMPLEMENTED** - Build script `scripts/build_decompiler.sh` for quick C++ iteration
 - 2026-01-14: **IMPLEMENTED** - Debug logging in decomp_fixes for tracing fix application
