@@ -296,6 +296,7 @@ def generate_decompiler_fixes_file(pseudocode_dir):
     try:
         with open(fixes_path, 'w') as f:
             json.dump(output, f, indent=2)
+            f.write("\n")
     except Exception as e:
         log_info("Error writing decompiler_fixes.json: %s" % str(e))
 

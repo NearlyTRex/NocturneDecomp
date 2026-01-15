@@ -160,6 +160,7 @@ def generate_callfixups_file(pseudocode_dir):
     try:
         with open(callfixups_path, 'w') as f:
             json.dump(callfixups, f, indent=2)
+            f.write("\n")
         log_info("Generated %s with %d callfixups" % (callfixups_path, len(callfixups)))
     except Exception as e:
         log_info("Failed to write callfixups.json: %s" % str(e))

@@ -308,6 +308,7 @@ def generate_proto_overrides_file(pseudocode_dir):
     try:
         with open(proto_overrides_path, 'w') as f:
             json.dump(proto_overrides, f, indent=2)
+            f.write("\n")
         log_info("Generated %s with %d proto overrides" % (proto_overrides_path, len(proto_overrides)))
     except Exception as e:
         log_info("Failed to write proto_overrides.json: %s" % str(e))
