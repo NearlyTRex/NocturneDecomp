@@ -54,6 +54,7 @@ The binary is believed to be compiled with **Watcom C/C++ 11** (released ~1996-1
 | [24_STACK_PROBE_CALLFIXUP_FIX.md](24_STACK_PROBE_CALLFIXUP_FIX.md) | **IMPLEMENTED** - Callfixup for _chkstk |
 | [25_STACK_PROBE_CPP_FIX_IMPLEMENTATION.md](25_STACK_PROBE_CPP_FIX_IMPLEMENTATION.md) | C++ implementation of stack probe fix |
 | [26_VARIADIC_ARGUMENT_LOSS_FIX.md](26_VARIADIC_ARGUMENT_LOSS_FIX.md) | **IMPLEMENTED** - Proto overrides for variadics |
+| [27_BADSPACEBASE_CAUSE_TAXONOMY.md](27_BADSPACEBASE_CAUSE_TAXONOMY.md) | **KEY** - Categorizes different BADSPACEBASE root causes and which fixes apply |
 | [pcode_patching/](pcode_patching/) | Implementation files: patch, modified Java source, examples |
 
 ## Per-Function Decompiler Helpers
@@ -123,6 +124,9 @@ Since we use Ghidra 12.1 built from source, any SLEIGH or decompiler changes req
 
 ## Changelog
 
+- 2026-01-14: **RESEARCH** - Document 27: BADSPACEBASE Cause Taxonomy - categorizes 5 distinct root causes
+- 2026-01-14: **IMPLEMENTED** - Build script `scripts/build_decompiler.sh` for quick C++ iteration
+- 2026-01-14: **IMPLEMENTED** - Debug logging in decomp_fixes for tracing fix application
 - 2026-01-11: **CORRECTED** - Document 18 status changed from "IMPLEMENTED" to "PROPOSED" - `fspec.cc` changes were never committed
 - 2026-01-11: **RESEARCH** - Added `06-per_function_decompiler_helpers/` documenting expansion opportunities
 - 2026-01-11: **IMPLEMENTED** - Pseudocode annotation support (callfixups, proto_overrides, decompiler_fixes, transforms)
