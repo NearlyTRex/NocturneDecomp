@@ -315,7 +315,6 @@ def register_decompiler_fixes(decompiler_interface):
         Number of functions registered
     """
     global _fixes_cache
-
     if not _fixes_cache:
         return 0
 
@@ -328,9 +327,7 @@ def register_decompiler_fixes(decompiler_interface):
 
     total_registered = 0
     for flags, addresses in by_flags.items():
-        # Convert to Java long array
-        addr_array = [long(addr) for addr in addresses]
-
+        addr_array = [int(addr) for addr in addresses]
         try:
             success = decompiler_interface.setDecompilerFixes(flags, addr_array)
             if success:
@@ -340,7 +337,6 @@ def register_decompiler_fixes(decompiler_interface):
                 log_info("Failed to register decompiler fixes with flags 0x%x" % flags)
         except Exception as e:
             log_info("Error registering decompiler fixes: %s" % str(e))
-
     return total_registered
 
 
@@ -455,7 +451,7 @@ def preload_per_function_decompiler_fixes(base_dir):
                                     if func_addr_str.startswith('0x') or func_addr_str.startswith('0X'):
                                         func_addr = int(func_addr_str, 16)
                                     else:
-                                        func_addr = int(func_addr_str)
+                                        func_addr = int(func_addr_str, 16)
 
                                     # Add each fix name to the cache
                                     for fix_name in decompiler_fixes:
